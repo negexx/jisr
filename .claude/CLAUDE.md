@@ -142,6 +142,10 @@ Invoke the skill BEFORE acting. A ≥1% chance it applies means you MUST invoke 
 
 **Library docs:** before writing against a library API (Next 16, Drizzle, Better Auth, next-intl, shadcn, Biome), use the `ctx7` CLI, not training data: `npx ctx7@latest library "<name>" "<query>"`, then `npx ctx7@latest docs <libraryId> "<query>"`. Pin the major version in the ID when known (e.g. `/vercel/next.js/v16.2.9`). In Git Bash prefix with `MSYS_NO_PATHCONV=1` so the leading `/` in the ID isn't rewritten as a Windows path.
 
+## Code discovery (codebase-memory)
+
+This repo is indexed in the `codebase-memory-mcp` knowledge graph as project `jisr` (skill: `codebase-memory`; `.claude`, `.git`, `.next`, `.superpowers`, `node_modules` and `public/snapshots` are excluded). For code questions use the graph first: `search_graph(project="jisr", query|name_pattern=…)` to find symbols, `trace_path(function_name=…, direction="both")` for callers/callees (exact names: search first), `get_code_snippet` for a symbol's source, `get_architecture` for structure, `detect_changes` to map a diff to affected symbols. Use Grep/Read for text, config, YAML data, ADRs and docs (the graph indexes code, not prose). Re-index after substantial changes with `index_repository(repo_path="C:/Users/dagda/Downloads/nex/UniWay", name="jisr")`; never pass `persistence: true` (it writes an artifact into the repo). The graph can be stale between re-indexes: verify by reading the file before editing.
+
 ## What "done" means
 
 1. `pnpm typecheck` passes
