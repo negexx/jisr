@@ -8,7 +8,7 @@ import type { CheckOutput } from "./report";
 import { formatReport } from "./report";
 import { validateData } from "./validate";
 
-function todayUtc(): IsoDate {
+export function todayUtc(): IsoDate {
   return new Date().toISOString().slice(0, 10);
 }
 

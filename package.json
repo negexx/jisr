@@ -8,12 +8,13 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm data:check && pnpm data:build && next build",
     "start": "next start",
     "typecheck": "next typegen && tsc --noEmit",
     "lint": "biome check .",
     "test": "vitest run",
     "data:check": "tsx scripts/data/check.ts",
+    "data:build": "tsx scripts/data/build.ts",
     "format": "biome format --write .",
     "db:generate": "node scripts/not-configured.mjs db:generate",
     "db:migrate": "node scripts/not-configured.mjs db:migrate"
