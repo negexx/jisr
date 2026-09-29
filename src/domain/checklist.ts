@@ -1,6 +1,7 @@
 import type { IsoDate } from "@/data-schema/dates";
 import type { Profile } from "@/data-schema/profile";
 import type { ApplicationChannel, Program, Scholarship } from "@/data-schema/resolved";
+import { cefrAtLeast } from "./cefr";
 import { isDecisive, toFactRef } from "./facts";
 import { nextIntake } from "./intakes";
 import type { Checklist, ChecklistStep, FactRef, MatchResult } from "./types";
@@ -45,7 +46,7 @@ function translationStep({ program, now }: ChecklistInput): Outcome {
   return todo(someRequired ? "applies" : "unknown_data", [ref]);
 }
 
-function languageExamStep({ profile, program, now }: ChecklistInput): Outcome {
+function languageExamStep({ profile, program, match, now }: ChecklistInput): Outcome {
   const record = `programs/${program.slug}`;
   const { requirements } = program;
   const languageRules = requirements.rules.flatMap((r) =>
@@ -56,30 +57,32 @@ function languageExamStep({ profile, program, now }: ChecklistInput): Outcome {
     toFactRef(record, "requirements", requirements.fact, now),
   ];
 
-  const certificateHeld = (language: string, acceptedTests: readonly string[]): boolean => {
-    const certificate = profile.languages.find((l) => l.language === language)?.certificate;
-    return (
-      certificate !== undefined &&
-      certificate !== null &&
-      (acceptedTests.length === 0 || acceptedTests.includes(certificate))
-    );
+  const languageReasons = match.reasons.filter((r) => r.kind === "language_proficiency");
+  const requirementMet = (rule: (typeof languageRules)[number]): boolean => {
+    const entry = profile.languages.find((l) => l.language === rule.language);
+    if (!entry || entry.certificate === null || rule.minCefr === null) return false;
+    if (entry.level === "unknown" || !cefrAtLeast(entry.level, rule.minCefr)) return false;
+    return rule.acceptedTests.length === 0 || rule.acceptedTests.includes(entry.certificate);
   };
   if (
     languageRules.length > 0 &&
-    languageRules.every(
-      (r) => isDecisive(r.fact, now) && certificateHeld(r.language, r.acceptedTests),
-    )
+    languageRules.every((r) => isDecisive(r.fact, now) && requirementMet(r)) &&
+    languageReasons.every((r) => r.outcome === "pass")
   ) {
     return { status: "skipped", reason: "certificate_held", facts };
   }
+  const routeConditionsEvaluated = match.route === "direct" || match.route === "check";
   if (
     languageRules.length === 0 &&
     requirements.coverage === "complete" &&
-    isDecisive(requirements.fact, now)
+    isDecisive(requirements.fact, now) &&
+    routeConditionsEvaluated &&
+    languageReasons.length === 0
   ) {
     return { status: "skipped", reason: "not_required_by_source", facts };
   }
-  return todo(languageRules.length > 0 ? "applies" : "unknown_data", facts);
+  const applies = languageRules.length > 0 || languageReasons.length > 0;
+  return todo(applies ? "applies" : "unknown_data", facts);
 }
 
 function applicationAccountStep({ program, channel, now }: ChecklistInput): Outcome {
