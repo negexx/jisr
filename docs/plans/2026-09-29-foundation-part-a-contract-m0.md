@@ -605,7 +605,7 @@ export function evaluateRules(rules: readonly ResolvedRule[], ctx: RuleContext):
 export type MatchReference = Pick<CoreShard, "credentialTypes" | "gradingScales" | "gradeConversions">;
 export type MatchInput = { profile: Profile; program: Program; routes: readonly AdmissionRoute[]; reference: MatchReference; now: IsoDate };
 export function matchProgram(input: MatchInput): MatchResult;
-export function aggregateMatchStatus(reasons: readonly Reason[]): MatchStatus; // any fail → not_satisfied; else any unknown → check; else satisfied
+export function aggregateMatchStatus(reasons: readonly Reason[]): MatchStatus; // any fail → not_satisfied; else any unknown → check; else satisfied; an EMPTY reasons array → check (no evidence evaluated is never satisfied; decision 2026-09-29)
 // intakes.ts
 export function nextIntake(program: Program, now: IsoDate): IntakeStatus;
 // filter.ts (added 2026-09-29; see Part C T16A)
@@ -637,6 +637,7 @@ export function generateChecklist(input: ChecklistInput): Checklist;
   - `credential_track_in`: pass if `credential.track ∈ tracks`, else fail with `track_not_accepted`.
   - `overall_grade_min` and `subject_grade_min`:
     - Missing student value (`overall` null, or no subject entry): unknown `missing_student_value`.
+    - The student's own grade scale is unknown in reference data, or the value lies outside that scale's `[min, max]`: unknown `missing_student_value` (a typo or stale profile must never yield ✅ or ❌; decision 2026-09-29 after final review).
     - `threshold` null: unknown `threshold_unpublished`.
     - Rule scale unknown or no conversion: unknown `no_scale_conversion`.
     - Otherwise compare using the target scale `direction` (`>=` for higher_better, `<=` for lower_better). Pass gives `ok`; fail gives `below_threshold`.
@@ -684,10 +685,10 @@ export function generateChecklist(input: ChecklistInput): Checklist;
 - **Checklist.**
   - `translation` is skipped (`not_required_by_source`) only when the documents value is non-null and non-empty, every `translationRequired === false`, and the fact is decisive.
   - `language_exam` is skipped:
-    - with `certificate_held` when at least one program `language_proficiency` rule exists, every one is decisive, the student's certificate for its language is non-null and in its `acceptedTests` (empty `acceptedTests` = any certificate, as in `evaluateRules`), AND the level meets the rule (`minCefr` non-null, level not `"unknown"`, `cefrAtLeast(level, minCefr)`), AND no `language_proficiency` reason in `match.reasons` (including route conditions `route:<id>`) has an outcome other than `pass`; or
+    - with `certificate_held` when at least one program `language_proficiency` rule exists, every one is decisive, the student's certificate for its language is non-null and in its `acceptedTests` (empty `acceptedTests` = any certificate, as in `evaluateRules`), AND the level meets the rule (`minCefr` non-null, level not `"unknown"`, `cefrAtLeast(level, minCefr)`), AND `match.route` is `direct` or `check` (route conditions were evaluated), AND no `language_proficiency` reason in `match.reasons` (including route conditions `route:<id>`) has an outcome other than `pass`; or
     - with `not_required_by_source` when coverage is `complete`, the requirements fact is decisive, there are zero program language rules, `match.route` is `direct` or `check` (route conditions were evaluated; on `foundation`, `not_eligible` or a missing route they are not, so the step stays todo `unknown_data`), and `match.reasons` contains no `language_proficiency` reason.
     (Decision 2026-09-29 after review: a certificate below the required level, or a language condition on the admission route, must never make the exam step disappear.)
-  - `application_account` is skipped (`no_account_required`) only when the channel is non-null, `accountRequired === false` and the channel fact is decisive. A null channel gives todo `unknown_data`.
+  - `application_account` is skipped (`no_account_required`) only when the channel is non-null, `channel.slug === program.applicationChannel.value`, `program.applicationChannel` is decisive, `accountRequired === false` and the channel fact is decisive. A null channel gives todo `unknown_data`.
   - `submit` is todo; its `deadline` comes from `nextIntake` when upcoming, else null.
   - `scholarships` is skipped (`no_scholarships_listed`) when the list is empty. The UI wording is "none listed in Jisr".
   - All other steps are todo `applies`, or `unknown_data` when their input fact value is null.
