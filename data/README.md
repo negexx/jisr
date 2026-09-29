@@ -26,6 +26,10 @@ Every record other than the vocabulary collections (`countries`, `fields`, `subj
 - `info_kind` is `official`, `estimate` or `guidance`. An `estimate` also needs a `basis` explaining how the range was derived.
 - A source key that is used but not declared is an error. A declared key that is never used is a warning.
 
+## Tuition
+
+A program has a single `tuition` figure, by convention the fee that applies to the Release 1 audience: students from outside the EU/EEA (for example Moroccan students). It must be an official published fee (`info_kind: official`); when the university does not publish one, leave the value `null` and the app shows it as to-be-checked. An estimate is never accepted here, because it would be turned into a single-number range.
+
 ## Checking
 
 ```
@@ -34,4 +38,4 @@ pnpm data:check --strict     # additionally fail when any fact is stale
 pnpm data:build              # publish immutable JSON snapshots (runs after data:check)
 ```
 
-`data:check` fails on invalid or provenance-less records, dangling references, unknown keys and future dates. Aging and stale facts are reported, and only fail the run under `--strict`. It also warns (without failing) about unused sources, `complete` coverage with no rules or a `manual_check` rule, a `language_proficiency` rule that requires a certificate but lists no `acceptedTests`, and a cost profile whose `city` matches no institution city.
+`data:check` fails on invalid or provenance-less records, dangling references, unknown keys, future dates, a non-null program `tuition` that is not `official`, and `complete` coverage with no rules. Aging and stale facts are reported, and only fail the run under `--strict`. It also warns (without failing) about unused sources, `complete` coverage with a `manual_check` rule, a `complete` program that has teaching languages but no `language_proficiency` rule, a `language_proficiency` rule that requires a certificate but lists no `acceptedTests`, and a cost profile whose `city` matches no institution city.

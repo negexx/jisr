@@ -199,10 +199,11 @@ describe("validateData mutations of valid-minimal", () => {
     {
       name: "complete coverage without rules",
       build: () => mutateFile(base, SCHOL, (raw) => setRules(raw, () => [])),
-      kind: "warnings",
+      kind: "errors",
       file: SCHOL,
-      path: "requirements",
-      message: "coverage is complete but there are no rules",
+      path: "requirements.coverage",
+      message:
+        "complete coverage needs at least one rule; use partial while requirements are unpublished",
     },
     {
       name: "complete coverage with a manual_check rule",
@@ -861,6 +862,160 @@ describe("validateData referential checks: one failing row per reference", () =>
       file: "grading-scales/xx-test-scale-5.yaml",
       path: "sources.main.url",
       message: "Expected an https URL",
+    });
+  });
+});
+
+describe("validateData product decisions", () => {
+  const base = load("valid-minimal");
+  const PROG = "programs/xx-test-prog.yaml";
+  const SCHOL = "scholarships/xx-test-schol.yaml";
+  const NO_RULES =
+    "complete coverage needs at least one rule; use partial while requirements are unpublished";
+  const NOT_OFFICIAL =
+    "tuition must be an official published fee; leave the value null when it is not published, the app then shows it as to-be-checked";
+  const NO_LANGUAGE_RULE = (langs: string) =>
+    `program teaches in ${langs} but declares no language requirement; confirm the published requirement or mark coverage partial`;
+  const basis = { fr: { text: "Base test", status: "draft" } };
+  const tuitionWith = (fields: Raw) => (raw: Raw) => {
+    raw.tuition = { ...asMap(raw.tuition, "tuition"), ...fields };
+  };
+  const setCoverage = (coverage: string) => (raw: Raw) => {
+    raw.requirements = { ...asMap(raw.requirements, "requirements"), coverage };
+  };
+  const dropRules =
+    (...ids: string[]) =>
+    (raw: Raw) =>
+      setRules(raw, (rules) => rules.filter((r) => !ids.includes(String(r.id))));
+
+  describe("tuition must be official", () => {
+    it.each([
+      ["estimate", { info_kind: "estimate", basis }],
+      ["guidance", { info_kind: "guidance" }],
+    ])("errors on a non-null %s tuition", (_n, fields) => {
+      const result = validateData(mutateFile(base, PROG, tuitionWith(fields)), { now: NOW });
+      expect(result.errors).toEqual([
+        { file: PROG, path: "tuition.info_kind", message: NOT_OFFICIAL },
+      ]);
+    });
+
+    it.each([
+      ["official", { value: null }],
+      ["estimate", { value: null, info_kind: "estimate", basis }],
+      ["guidance", { value: null, info_kind: "guidance" }],
+    ])("accepts a null tuition with info_kind %s", (_n, fields) => {
+      const result = validateData(mutateFile(base, PROG, tuitionWith(fields)), { now: NOW });
+      expect(result.errors).toEqual([]);
+    });
+  });
+
+  describe("complete coverage needs rules", () => {
+    it("errors on a program with complete coverage and no rules", () => {
+      const result = validateData(
+        mutateFile(base, PROG, (raw) => {
+          setCoverage("complete")(raw);
+          setRules(raw, () => []);
+        }),
+        { now: NOW },
+      );
+      expect(result.errors).toEqual([
+        { file: PROG, path: "requirements.coverage", message: NO_RULES },
+      ]);
+    });
+
+    it("errors on a scholarship with complete coverage and no rules", () => {
+      const result = validateData(
+        mutateFile(base, SCHOL, (raw) => setRules(raw, () => [])),
+        { now: NOW },
+      );
+      expect(result.errors).toEqual([
+        { file: SCHOL, path: "requirements.coverage", message: NO_RULES },
+      ]);
+    });
+
+    it("accepts partial coverage with no rules", () => {
+      const result = validateData(
+        mutateFile(
+          base,
+          PROG,
+          dropRules(
+            "xx-test-rule-grade",
+            "xx-test-rule-subject",
+            "xx-test-rule-language",
+            "xx-test-rule-manual",
+          ),
+        ),
+        { now: NOW },
+      );
+      expect(result.errors).toEqual([]);
+    });
+  });
+
+  describe("teaching language without a language rule", () => {
+    const complete = (raw: Raw) => {
+      setCoverage("complete")(raw);
+      dropRules("xx-test-rule-manual")(raw);
+    };
+
+    it("warns when coverage is complete and no language rule exists", () => {
+      const result = validateData(
+        mutateFile(base, PROG, (raw) => {
+          complete(raw);
+          dropRules("xx-test-rule-language")(raw);
+        }),
+        { now: NOW },
+      );
+      expect(result.errors).toEqual([]);
+      expect(result.warnings).toEqual([
+        { file: PROG, path: "requirements", message: NO_LANGUAGE_RULE("xx") },
+      ]);
+    });
+
+    it("lists every teaching language", () => {
+      const result = validateData(
+        mutateFile(base, PROG, (raw) => {
+          complete(raw);
+          dropRules("xx-test-rule-language")(raw);
+          raw.teachingLanguages = {
+            ...asMap(raw.teachingLanguages, "teachingLanguages"),
+            value: ["xx", "yy"],
+          };
+        }),
+        { now: NOW },
+      );
+      expect(result.warnings).toEqual([
+        { file: PROG, path: "requirements", message: NO_LANGUAGE_RULE("xx, yy") },
+      ]);
+    });
+
+    it("does not warn when a language rule is present", () => {
+      const result = validateData(mutateFile(base, PROG, complete), { now: NOW });
+      expect(result.warnings).toEqual([]);
+    });
+
+    it("does not warn when teachingLanguages is unpublished", () => {
+      const result = validateData(
+        mutateFile(base, PROG, (raw) => {
+          complete(raw);
+          dropRules("xx-test-rule-language")(raw);
+          raw.teachingLanguages = {
+            ...asMap(raw.teachingLanguages, "teachingLanguages"),
+            value: null,
+          };
+        }),
+        { now: NOW },
+      );
+      expect(result.warnings).toEqual([]);
+    });
+
+    it("does not warn when coverage is partial", () => {
+      const result = validateData(
+        mutateFile(base, PROG, (raw) => {
+          dropRules("xx-test-rule-manual", "xx-test-rule-language")(raw);
+        }),
+        { now: NOW },
+      );
+      expect(result.warnings).toEqual([]);
     });
   });
 });

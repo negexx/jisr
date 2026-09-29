@@ -10,6 +10,7 @@ import { freshnessOf } from "@/data-schema/staleness";
 import type { FactUse } from "./facts";
 import { factUses, localizedTexts } from "./facts";
 import type { Issue, LoadedFile, LoadResult } from "./load-data";
+import { productRuleErrors, productRuleWarnings } from "./product-rules";
 import { checkReferences } from "./references";
 
 export type { FactUse } from "./facts";
@@ -175,13 +176,6 @@ function coverageWarnings(catalog: Catalog): Issue[] {
   ];
   for (const { file, req } of requirementsOf) {
     if (req.coverage !== "complete") continue;
-    if (req.rules.length === 0) {
-      warnings.push({
-        file,
-        path: "requirements",
-        message: "coverage is complete but there are no rules",
-      });
-    }
     for (const rule of req.rules) {
       if (rule.kind === "manual_check") {
         warnings.push({
@@ -276,12 +270,19 @@ export function validateData(loaded: LoadResult, opts: { now: IsoDate }): Valida
   return {
     recordCount: loaded.files.length,
     catalog,
-    errors: [...loaded.errors, ...schemaErrors, ...prov.errors, ...checkReferences(catalog)],
+    errors: [
+      ...loaded.errors,
+      ...schemaErrors,
+      ...prov.errors,
+      ...checkReferences(catalog),
+      ...productRuleErrors(catalog),
+    ],
     warnings: [
       ...prov.warnings,
       ...coverageWarnings(catalog),
       ...unrestrictedCertificateWarnings(catalog),
       ...unmatchedCostCityWarnings(catalog),
+      ...productRuleWarnings(catalog),
     ],
     freshness: prov.freshness,
     translations: translationCoverage(catalog),
