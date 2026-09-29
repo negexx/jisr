@@ -1,0 +1,12 @@
+slug: xx-test-conv
+from: xx-test-scale-nope
+to: xx-test-scale-a
+conversion:
+  method: identity
+  params: {}
+source: main
+info_kind: official
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01

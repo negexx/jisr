@@ -1,0 +1,14 @@
+slug: xx-test-channel
+name: XX Test Channel
+country: XB
+kind: national_portal
+url: https://example.org/portal
+accountRequired: true
+summary:
+  fr: { text: Portail test, status: draft }
+source: main
+info_kind: official
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01

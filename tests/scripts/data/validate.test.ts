@@ -1,0 +1,463 @@
+import path from "node:path";
+import type { LoadedFile, LoadResult } from "@scripts/data/load-data";
+import { loadData } from "@scripts/data/load-data";
+import { validateData } from "@scripts/data/validate";
+import { describe, expect, it } from "vitest";
+
+const FIXTURES = path.join(process.cwd(), "tests/fixtures/data");
+const NOW = "2026-09-29";
+
+function load(name: string): LoadResult {
+  return loadData(path.join(FIXTURES, name));
+}
+
+function validate(name: string, now = NOW) {
+  return validateData(load(name), { now });
+}
+
+type Raw = Record<string, unknown>;
+
+function asMap(value: unknown, what: string): Raw {
+  if (typeof value !== "object" || value === null || Array.isArray(value)) {
+    throw new Error(`${what} is not a map`);
+  }
+  return { ...value };
+}
+
+function mutateFile(loaded: LoadResult, file: string, edit: (raw: Raw) => void): LoadResult {
+  const files = loaded.files.map((f) => {
+    if (f.file !== file) return f;
+    const raw = asMap(structuredClone(f.raw), file);
+    edit(raw);
+    return { ...f, raw };
+  });
+  return { ...loaded, files };
+}
+
+function addFile(loaded: LoadResult, extra: LoadedFile): LoadResult {
+  return { ...loaded, files: [...loaded.files, extra].sort((a, b) => (a.file < b.file ? -1 : 1)) };
+}
+
+function copyOf(loaded: LoadResult, file: string, as: { file: string; id: string }): LoadedFile {
+  const original = loaded.files.find((f) => f.file === file);
+  if (!original) throw new Error(`fixture ${file} missing`);
+  const raw = asMap(structuredClone(original.raw), file);
+  return { ...original, ...as, raw: { ...raw, slug: as.id } };
+}
+
+function setRules(raw: Raw, edit: (rules: Raw[]) => Raw[]) {
+  const requirements = asMap(raw.requirements, "requirements");
+  const rules = requirements.rules;
+  if (!Array.isArray(rules)) throw new Error("rules is not a list");
+  raw.requirements = { ...requirements, rules: edit(rules.map((r) => asMap(r, "rule"))) };
+}
+
+describe("validateData on fixtures", () => {
+  it("accepts valid-minimal with no errors and no warnings", () => {
+    const result = validate("valid-minimal");
+    expect(result.errors).toEqual([]);
+    expect(result.warnings).toEqual([]);
+    expect(result.recordCount).toBe(16);
+    expect(result.freshness.length).toBeGreaterThan(0);
+    expect(result.freshness.every((row) => row.freshness === "fresh")).toBe(true);
+    expect(result.translations.fr.total).toBeGreaterThan(0);
+    expect(result.translations.fr.present).toBe(result.translations.fr.total);
+    expect(result.translations.en.present).toBeLessThan(result.translations.en.total);
+  });
+
+  it("puts every valid record in the catalog", () => {
+    const { catalog } = validate("valid-minimal");
+    expect([...catalog.countries.keys()]).toEqual(["XA", "XB", "XC"]);
+    expect(catalog.programs.get("xx-test-prog")?.file).toBe("programs/xx-test-prog.yaml");
+  });
+
+  it("rejects a source verified after now", () => {
+    const { errors } = validate("valid-minimal", "2026-08-01");
+    expect(errors).toContainEqual(
+      expect.objectContaining({
+        path: "sources.main.last_verified_at",
+        message: expect.stringContaining("is in the future"),
+      }),
+    );
+  });
+
+  it("rejects unknown source keys and provenance-less records", () => {
+    const { errors, catalog } = validate("invalid-missing-source");
+    expect(errors).toContainEqual({
+      file: "grading-scales/xx-test-scale-a.yaml",
+      path: "source",
+      message: 'unknown source key "nope"',
+    });
+    const scaleB = errors.filter((e) => e.file === "grading-scales/xx-test-scale-b.yaml");
+    expect(scaleB.map((e) => e.path)).toEqual(expect.arrayContaining(["info_kind", "sources"]));
+    expect(catalog["grading-scales"].has("xx-test-scale-b")).toBe(false);
+  });
+
+  it("rejects dangling references with file and field path", () => {
+    const { errors } = validate("invalid-bad-reference");
+    expect(errors).toEqual([
+      {
+        file: "grade-conversions/xx-test-conv.yaml",
+        path: "from",
+        message: 'unknown grading-scales "xx-test-scale-nope"',
+      },
+    ]);
+  });
+
+  it("rejects duplicate ids and ids that differ from the file name", () => {
+    const { errors, recordCount } = validate("invalid-structure");
+    expect(errors).toContainEqual({
+      file: "fields/b/xx-test-dup.yaml",
+      path: "",
+      message: 'duplicate id "xx-test-dup" (also in fields/a/xx-test-dup.yaml)',
+    });
+    expect(errors).toContainEqual({
+      file: "fields/xx-test-renamed.yaml",
+      path: "",
+      message: 'id "xx-test-other" must equal the file name "xx-test-renamed"',
+    });
+    expect(recordCount).toBe(3);
+  });
+
+  it("carries structural load errors through", () => {
+    const { errors } = validate("invalid-structure");
+    expect(errors).toContainEqual(
+      expect.objectContaining({
+        file: "stray.yaml",
+        message: expect.stringContaining("collection"),
+      }),
+    );
+  });
+
+  it("classifies freshness per fact with the age in days", () => {
+    const { errors, freshness } = validate("stale");
+    expect(errors).toEqual([]);
+    expect(freshness).toEqual([
+      expect.objectContaining({
+        file: "grading-scales/xx-test-scale-aging.yaml",
+        path: "",
+        class: "stable",
+        freshness: "aging",
+        ageDays: 271,
+        lastVerifiedAt: "2026-01-01",
+      }),
+      expect.objectContaining({
+        file: "grading-scales/xx-test-scale-old.yaml",
+        freshness: "stale",
+        lastVerifiedAt: "2020-01-01",
+      }),
+    ]);
+  });
+
+  it("counts translation coverage per locale", () => {
+    expect(validate("missing-translation").translations).toEqual({
+      fr: { present: 2, reviewed: 2, total: 2 },
+      en: { present: 1, reviewed: 0, total: 2 },
+      ar: { present: 0, reviewed: 0, total: 2 },
+    });
+  });
+
+  it("reports empty data as zero records", () => {
+    const result = validateData({ files: [], errors: [] }, { now: NOW });
+    expect(result.recordCount).toBe(0);
+    expect(result.errors).toEqual([]);
+    expect(result.warnings).toEqual([]);
+  });
+});
+
+describe("validateData mutations of valid-minimal", () => {
+  const base = load("valid-minimal");
+  const PROG = "programs/xx-test-prog.yaml";
+  const SCHOL = "scholarships/xx-test-schol.yaml";
+  const ROUTE = "admission-routes/xx-test-route-xa-xb.yaml";
+  const CRED = "credential-types/xx-test-cred.yaml";
+
+  type Case = {
+    name: string;
+    build: () => LoadResult;
+    kind: "errors" | "warnings";
+    file: string;
+    path: string;
+    message: string;
+  };
+
+  const cases: Case[] = [
+    {
+      name: "unused source",
+      build: () =>
+        mutateFile(base, "grading-scales/xx-test-scale-5.yaml", (raw) => {
+          raw.sources = {
+            main: { url: "https://example.org/xx-test", last_verified_at: "2026-09-01" },
+            extra: { url: "https://example.org/xx-extra", last_verified_at: "2026-09-01" },
+          };
+        }),
+      kind: "warnings",
+      file: "grading-scales/xx-test-scale-5.yaml",
+      path: "sources.extra",
+      message: 'source "extra" is never used',
+    },
+    {
+      name: "complete coverage without rules",
+      build: () => mutateFile(base, SCHOL, (raw) => setRules(raw, () => [])),
+      kind: "warnings",
+      file: SCHOL,
+      path: "requirements",
+      message: "coverage is complete but there are no rules",
+    },
+    {
+      name: "complete coverage with a manual_check rule",
+      build: () =>
+        mutateFile(base, SCHOL, (raw) =>
+          setRules(raw, (rules) => [
+            ...rules,
+            {
+              id: "xx-test-rule-manual",
+              kind: "manual_check",
+              source: "main",
+              info_kind: "official",
+              note: { fr: { text: "A verifier test", status: "draft" } },
+            },
+          ]),
+        ),
+      kind: "warnings",
+      file: SCHOL,
+      path: "requirements",
+      message: 'coverage is complete but rule "xx-test-rule-manual" is manual_check',
+    },
+    {
+      name: "program city that differs from its institution",
+      build: () =>
+        mutateFile(base, PROG, (raw) => {
+          raw.city = "xx-test-other";
+        }),
+      kind: "errors",
+      file: PROG,
+      path: "city",
+      message: "program country/city must match institution xx-test-inst",
+    },
+    {
+      name: "duplicate admission route",
+      build: () =>
+        addFile(
+          base,
+          copyOf(base, ROUTE, {
+            file: "admission-routes/xx-test-zz-route.yaml",
+            id: "xx-test-zz-route",
+          }),
+        ),
+      kind: "errors",
+      file: "admission-routes/xx-test-zz-route.yaml",
+      path: "",
+      message: "duplicate admission route (also admission-routes/xx-test-route-xa-xb.yaml)",
+    },
+    {
+      name: "duplicate cost profile",
+      build: () =>
+        addFile(
+          base,
+          copyOf(base, "cost-profiles/xx-test-costs-xb.yaml", {
+            file: "cost-profiles/xx-test-zz-costs.yaml",
+            id: "xx-test-zz-costs",
+          }),
+        ),
+      kind: "errors",
+      file: "cost-profiles/xx-test-zz-costs.yaml",
+      path: "",
+      message:
+        "duplicate cost profile for XB/country-wide (also cost-profiles/xx-test-costs-xb.yaml)",
+    },
+    {
+      name: "duplicate grade conversion",
+      build: () =>
+        addFile(
+          base,
+          copyOf(base, "grade-conversions/xx-test-conv-20-to-5.yaml", {
+            file: "grade-conversions/xx-test-zz-conv.yaml",
+            id: "xx-test-zz-conv",
+          }),
+        ),
+      kind: "errors",
+      file: "grade-conversions/xx-test-zz-conv.yaml",
+      path: "",
+      message: "duplicate grade conversion (also grade-conversions/xx-test-conv-20-to-5.yaml)",
+    },
+    {
+      name: "unknown accepted language test",
+      build: () =>
+        mutateFile(base, PROG, (raw) =>
+          setRules(raw, (rules) =>
+            rules.map((r) =>
+              r.id === "xx-test-rule-language" ? { ...r, acceptedTests: ["xx-test-nope"] } : r,
+            ),
+          ),
+        ),
+      kind: "errors",
+      file: PROG,
+      path: "requirements.rules.xx-test-rule-language.acceptedTests.0",
+      message: 'unknown language-certificates "xx-test-nope"',
+    },
+    {
+      name: "unknown track in a route condition",
+      build: () =>
+        mutateFile(base, ROUTE, (raw) => {
+          raw.conditions = [
+            {
+              id: "xx-test-cond-track",
+              kind: "credential_track_in",
+              source: "main",
+              info_kind: "official",
+              tracks: ["xx-test-nope"],
+            },
+          ];
+        }),
+      kind: "errors",
+      file: ROUTE,
+      path: "conditions.xx-test-cond-track.tracks.0",
+      message: 'unknown track "xx-test-nope"',
+    },
+    {
+      name: "unknown scholarship on a program",
+      build: () =>
+        mutateFile(base, PROG, (raw) => {
+          raw.scholarships = ["xx-test-nope"];
+        }),
+      kind: "errors",
+      file: PROG,
+      path: "scholarships.0",
+      message: 'unknown scholarships "xx-test-nope"',
+    },
+    {
+      name: "unknown grading scale on a credential type",
+      build: () =>
+        mutateFile(base, CRED, (raw) => {
+          raw.gradingScale = "xx-test-nope";
+        }),
+      kind: "errors",
+      file: CRED,
+      path: "gradingScale",
+      message: 'unknown grading-scales "xx-test-nope"',
+    },
+    {
+      name: "unknown subject on a track",
+      build: () =>
+        mutateFile(base, CRED, (raw) => {
+          raw.tracks = [
+            { slug: "xx-test-track", name: "XX Test Track", subjects: ["xx-test-nope"] },
+          ];
+        }),
+      kind: "errors",
+      file: CRED,
+      path: "tracks.xx-test-track.subjects.0",
+      message: 'unknown subjects "xx-test-nope"',
+    },
+    {
+      name: "unknown credential type in a rule",
+      build: () =>
+        mutateFile(base, SCHOL, (raw) =>
+          setRules(raw, (rules) => rules.map((r) => ({ ...r, types: ["xx-test-nope"] }))),
+        ),
+      kind: "errors",
+      file: SCHOL,
+      path: "requirements.rules.xx-test-rule-cred.types.0",
+      message: 'unknown credential-types "xx-test-nope"',
+    },
+    {
+      name: "unknown country in scholarship destinations",
+      build: () =>
+        mutateFile(base, SCHOL, (raw) => {
+          raw.destinations = ["XZ"];
+        }),
+      kind: "errors",
+      file: SCHOL,
+      path: "destinations.0",
+      message: 'unknown countries "XZ"',
+    },
+    {
+      name: "unknown country on an institution",
+      build: () =>
+        mutateFile(base, "institutions/xx-test-inst.yaml", (raw) => {
+          raw.country = "XZ";
+        }),
+      kind: "errors",
+      file: "institutions/xx-test-inst.yaml",
+      path: "country",
+      message: 'unknown countries "XZ"',
+    },
+    {
+      name: "unknown field on a scholarship",
+      build: () =>
+        mutateFile(base, SCHOL, (raw) => {
+          raw.fields = ["xx-test-nope"];
+        }),
+      kind: "errors",
+      file: SCHOL,
+      path: "fields.0",
+      message: 'unknown fields "xx-test-nope"',
+    },
+    {
+      name: "unknown application channel on a program",
+      build: () =>
+        mutateFile(base, PROG, (raw) => {
+          raw.applicationChannel = { value: "xx-test-nope", source: "main", info_kind: "official" };
+        }),
+      kind: "errors",
+      file: PROG,
+      path: "applicationChannel.value",
+      message: 'unknown application-channels "xx-test-nope"',
+    },
+    {
+      name: "unknown source key on a rule",
+      build: () =>
+        mutateFile(base, SCHOL, (raw) =>
+          setRules(raw, (rules) => rules.map((r) => ({ ...r, source: "nope" }))),
+        ),
+      kind: "errors",
+      file: SCHOL,
+      path: "requirements.rules.xx-test-rule-cred.source",
+      message: 'unknown source key "nope"',
+    },
+    {
+      name: "estimate cost line without a basis",
+      build: () =>
+        mutateFile(base, "cost-profiles/xx-test-costs-xb.yaml", (raw) => {
+          raw.lines = {
+            housing: {
+              value: { min: 40000, max: 70000, currency: "XTS", per: "month" },
+              source: "main",
+              info_kind: "estimate",
+            },
+          };
+        }),
+      kind: "errors",
+      file: "cost-profiles/xx-test-costs-xb.yaml",
+      path: "lines.housing.basis",
+      message: "basis is required when info_kind is estimate",
+    },
+    {
+      name: "unknown key on a record",
+      build: () =>
+        mutateFile(base, "fields/xx-test-field.yaml", (raw) => {
+          raw.extra = 1;
+        }),
+      kind: "errors",
+      file: "fields/xx-test-field.yaml",
+      path: "",
+      message: "Unrecognized key",
+    },
+  ];
+
+  it.each(cases)("$name", ({ build, kind, file, path: issuePath, message }) => {
+    const result = validateData(build(), { now: NOW });
+    expect(result[kind]).toContainEqual({
+      file,
+      path: issuePath,
+      message: expect.stringContaining(message),
+    });
+  });
+
+  it("leaves the untouched base clean", () => {
+    const result = validateData(base, { now: NOW });
+    expect(result.errors).toEqual([]);
+    expect(result.warnings).toEqual([]);
+  });
+});

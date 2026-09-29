@@ -13,6 +13,7 @@
     "typecheck": "next typegen && tsc --noEmit",
     "lint": "biome check .",
     "test": "vitest run",
+    "data:check": "tsx scripts/data/check.ts",
     "format": "biome format --write .",
     "db:generate": "node scripts/not-configured.mjs db:generate",
     "db:migrate": "node scripts/not-configured.mjs db:migrate"
