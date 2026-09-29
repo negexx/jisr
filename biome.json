@@ -9,6 +9,7 @@
       "!node_modules",
       "!public/snapshots",
       "!.claude",
+      "!.impeccable",
       "!pnpm-lock.yaml"
     ]
   },
