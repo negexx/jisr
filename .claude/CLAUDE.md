@@ -67,7 +67,7 @@ Data flow: YAML → `data:check` → `data:build` → snapshots on the CDN → t
 
 Resolved in ADR 0004: analytics, error reporting, staleness thresholds, translation storage, privacy/CNDP plan, Vercel limits. What remains is the ADR's "Before launch" checklist (verify Vercel/Sentry limits, CNDP declaration before accounts, privacy notice).
 
-Deeper notes: `.claude/docs/architecture.md`. Decisions: `.claude/docs/decisions/` (0002 stack, 0003 scalable solo architecture, 0004 operations/privacy/freshness).
+Deeper notes: `.claude/docs/architecture.md`. Decisions: `.claude/docs/decisions/` (0002 stack, 0003 scalable solo architecture, 0004 operations/privacy/freshness, 0005 domain semantics and data rules).
 
 ## Conventions
 
