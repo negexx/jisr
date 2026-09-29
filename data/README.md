@@ -10,7 +10,7 @@ One record per file: `data/<collection>/**/<id>.yaml`.
 
 - The collection is the first folder under `data/`. Deeper folders are organisational only.
 - The file name (without `.yaml`) equals the record's id: `slug`, or `code` for `countries`.
-- Slugs are never renamed. Saved user data refers to them; add an alias entry instead.
+- Do not rename a slug. Saved user data will refer to it, and the slug alias/redirect mechanism is not yet supported (to be built before accounts persist slugs, phase 2), so a rename breaks saved data.
 - Use the `.yaml` extension. `README.md` and dotfiles are ignored; anything else is an error.
 
 The 13 collections:
@@ -34,4 +34,4 @@ pnpm data:check --strict     # additionally fail when any fact is stale
 pnpm data:build              # publish immutable JSON snapshots (runs after data:check)
 ```
 
-`data:check` fails on invalid or provenance-less records, dangling references, unknown keys and future dates. Aging and stale facts are reported, and only fail the run under `--strict`.
+`data:check` fails on invalid or provenance-less records, dangling references, unknown keys and future dates. Aging and stale facts are reported, and only fail the run under `--strict`. It also warns (without failing) about unused sources, `complete` coverage with no rules or a `manual_check` rule, a `language_proficiency` rule that requires a certificate but lists no `acceptedTests`, and a cost profile whose `city` matches no institution city.
