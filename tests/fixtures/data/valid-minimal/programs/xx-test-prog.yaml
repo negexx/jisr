@@ -1,0 +1,81 @@
+slug: xx-test-prog
+institution: xx-test-inst
+country: XB
+city: xx-test-city
+field: xx-test-field
+level: bachelor
+name: XX Test Programme
+summary:
+  fr: { text: Programme test, status: draft }
+  ar: { text: برنامج الاختبار, status: draft }
+officialUrl: https://example.org/prog
+durationYears:
+  value: 3
+  source: main
+  info_kind: official
+teachingLanguages:
+  value: [xx]
+  source: main
+  info_kind: official
+tuition:
+  value: { amountMinor: 100000, currency: XTS, period: year }
+  source: fees
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-09-01
+      applicationOpens: 2026-11-01
+      applicationDeadline: 2027-01-15
+  source: main
+  info_kind: official
+applicationChannel:
+  value: xx-test-channel
+  source: main
+  info_kind: official
+documents:
+  value:
+    - slug: xx-test-doc
+      name:
+        fr: { text: Document test, status: draft }
+      translationRequired: null
+  source: main
+  info_kind: official
+requirements:
+  coverage: partial
+  source: main
+  info_kind: official
+  rules:
+    - id: xx-test-rule-grade
+      kind: overall_grade_min
+      source: main
+      info_kind: official
+      scale: xx-test-scale-5
+      threshold: null
+    - id: xx-test-rule-subject
+      kind: subject_taken
+      source: main
+      info_kind: official
+      subjects: [xx-test-subject-math]
+      mode: all
+    - id: xx-test-rule-language
+      kind: language_proficiency
+      source: main
+      info_kind: official
+      language: xx
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests: [xx-test-cert]
+    - id: xx-test-rule-manual
+      kind: manual_check
+      source: main
+      info_kind: official
+      note:
+        fr: { text: A verifier test, status: draft }
+scholarships: [xx-test-schol]
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01
+  fees:
+    url: https://example.org/xx-test-fees
+    last_verified_at: 2026-09-01

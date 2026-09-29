@@ -1,0 +1,15 @@
+slug: xx-test-scale-w
+country: null
+min: 0
+max: 20
+pass: 10
+direction: higher_better
+source: main
+info_kind: official
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01
+  extra:
+    url: https://example.org/xx-test-extra
+    last_verified_at: 2026-09-01

@@ -1,0 +1,4 @@
+slug: xx-test-subject-b
+name:
+  fr: { text: Matiere test, status: reviewed }
+  en: { text: Test subject, status: draft }

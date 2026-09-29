@@ -19,3 +19,25 @@ next-env.d.ts
 coverage/
 playwright-report/
 test-results/
+
+# Subagent-driven-development scratch (briefs, reports, ledger)
+.superpowers/
+
+# Next.js scaffold extras
+/build
+.pnp
+.pnp.*
+*.pem
+npm-debug.log*
+.pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+.DS_Store
+
+# Built data snapshots (pnpm data:build output)
+/public/snapshots/
