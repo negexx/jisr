@@ -82,6 +82,11 @@ const tables: ReadonlyArray<readonly [string, ZodType, readonly Row[]]> = [
       ["https://example.org/a", true],
       ["http://example.org", false],
       ["example.org", false],
+      ["https://example.org/a ", false],
+      [" https://example.org/a", false],
+      ["https://user:pw@example.org/", false],
+      ["https://example.org@evil.example/", false],
+      ["https://localhost/", false],
     ],
   ],
   [

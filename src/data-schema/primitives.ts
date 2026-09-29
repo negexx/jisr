@@ -12,9 +12,19 @@ export const SourceKeySchema = z.string().regex(/^[a-z0-9]+(?:[-_][a-z0-9]+)*$/)
 export const CountryCodeSchema = z.string().regex(/^[A-Z]{2}$/, "ISO 3166-1 alpha-2");
 export const LanguageCodeSchema = z.string().regex(/^[a-z]{2}$/, "ISO 639-1");
 export const CurrencySchema = z.string().regex(/^[A-Z]{3}$/, "ISO 4217");
-export const HttpsUrlSchema = z
-  .string()
-  .refine((v) => URL.canParse(v) && v.startsWith("https://"), { message: "Expected an https URL" });
+function isPlainHttpsUrl(v: string): boolean {
+  if (v !== v.trim() || !URL.canParse(v)) return false;
+  const url = new URL(v);
+  return (
+    url.protocol === "https:" &&
+    url.username === "" &&
+    url.password === "" &&
+    url.hostname.includes(".")
+  );
+}
+export const HttpsUrlSchema = z.string().refine(isPlainHttpsUrl, {
+  message: "Expected an https URL",
+});
 export const CEFR_LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"] as const;
 export const CefrSchema = z.enum(CEFR_LEVELS);
 export const INFO_KINDS = ["official", "estimate", "guidance"] as const;
