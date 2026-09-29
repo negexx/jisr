@@ -325,7 +325,7 @@ Each file exports `XxxRecordSchema` and `type XxxRecord`. Every record is `z.str
 | `subject.ts` / `subjects` | `slug, name: LocalizedText` (vocabulary) |
 | `language-certificate.ts` / `language-certificates` | `slug, name: string (official), language: LanguageCode, url: HttpsUrl` (vocabulary) |
 | `grading-scale.ts` / `grading-scales` | `slug, country: CountryCode\|null, min: number, max: number, pass: number, direction: "higher_better"\|"lower_better", ...RecordProvenanceShape, sources`; refine `min < max`, `min <= pass <= max` |
-| `grade-conversion.ts` / `grade-conversions` | `slug, from: Slug, to: Slug, method` (discriminated on `method`, see below), `...RecordProvenanceShape, sources` |
+| `grade-conversion.ts` / `grade-conversions` | `slug, from: Slug, to: Slug, conversion: GradeConversionMethod` (`{ method, params }` discriminated on `method`, see below), `...RecordProvenanceShape, sources` |
 | `credential-type.ts` / `credential-types` | `slug, country, name: string (official, never translated), gloss: LocalizedText, gradingScale: Slug, tracks: Array<{slug, name: string, gloss?: LocalizedText, subjects: Slug[] \| null}>.min(1), ...RecordProvenanceShape, sources` |
 | `application-channel.ts` / `application-channels` | `slug, name: string, country, kind: "national_portal"\|"intermediary"\|"direct", url: HttpsUrl, accountRequired: boolean\|null, summary: LocalizedText, ...RecordProvenanceShape, sources` |
 | `admission-route.ts` / `admission-routes` | `slug, origin: CountryCode, credentialType: Slug, destination: CountryCode, level: "bachelor", outcome: "direct"\|"foundation"\|"not_eligible"\|"check", conditions: RuleRecord[] (default []), note?: LocalizedText, applicationChannels: Slug[], ...RecordProvenanceShape, sources` |
@@ -376,7 +376,8 @@ export type CostAmount = z.infer<typeof CostAmountSchema>;
 // scholarship.ts
 export const SUPPORT_COVERS = ["tuition", "living", "housing", "travel", "insurance", "other"] as const;
 export const ScholarshipSupportSchema = z.strictObject({
-  amount: z.strictObject({ min: MinorAmountSchema, max: MinorAmountSchema, currency: CurrencySchema, per: z.enum(["month", "year", "once", "total"]) }).nullable(),
+  amount: z.strictObject({ min: MinorAmountSchema, max: MinorAmountSchema, currency: CurrencySchema, per: z.enum(["month", "year", "once", "total"]) })
+    .refine((a) => a.min <= a.max, { message: "min must be <= max" }).nullable(),
   covers: z.array(z.enum(SUPPORT_COVERS)),
 });
 export const ScholarshipRecordSchema = z.strictObject({
