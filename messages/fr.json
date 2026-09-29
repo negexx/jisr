@@ -16,6 +16,189 @@
     },
     "comingSoon": "Jisr est en construction. Le parcours complet arrive bientôt."
   },
+  "domain": {
+    "status": {
+      "satisfied": "Les conditions publiées semblent remplies",
+      "check": "À vérifier",
+      "not_satisfied": "Conditions publiées non remplies",
+      "short": {
+        "satisfied": "Semblent remplies",
+        "check": "À vérifier",
+        "not_satisfied": "Non remplies"
+      },
+      "hint": {
+        "satisfied": "Tout ce que nous avons publié pour ce programme semble correspondre à votre profil. Confirmez-le sur la page officielle avant de candidater.",
+        "check": "Nous n'avons pas pu tout confirmer. Voyez ci-dessous ce qu'il faut vérifier, puis confirmez-le sur la page officielle.",
+        "not_satisfied": "Au moins une condition publiée ne correspond pas à votre profil. Les conditions peuvent changer : vérifiez la page officielle."
+      }
+    },
+    "route": {
+      "direct": "D'après les règles que nous avons publiées, votre Bac semble donner un accès direct à une licence dans ce pays. Confirmez les conditions actuelles sur la page d'admission officielle.",
+      "foundation": "Dans ce pays, votre Bac peut ne pas donner un accès direct à une licence. Une année de fondation peut être nécessaire d'abord : une année préparatoire avant la licence, comme le Studienkolleg allemand. Vérifiez sur la page d'admission officielle du programme ou de l'université si cela vous concerne et comment obtenir une place.",
+      "not_eligible": "Selon les règles que nous avons publiées, votre Bac ne donne pas accès à une licence dans ce pays. Les règles peuvent changer : vérifiez la page d'admission officielle.",
+      "check": "Nous n'avons pas confirmé comment votre Bac est traité dans ce pays. Vérifiez la page d'admission officielle.",
+      "missing": "Nous n'avons pas encore publié comment votre Bac est traité pour ce pays : vérifiez la page d'admission officielle."
+    },
+    "reason": {
+      "kind": {
+        "credential_type_in": "Type de Bac",
+        "credential_track_in": "Filière du Bac",
+        "overall_grade_min": "Moyenne générale",
+        "subject_grade_min": "Note dans une matière",
+        "subject_taken": "Matières étudiées",
+        "language_proficiency": "Niveau de langue",
+        "prior_study_years_min": "Années d'études antérieures",
+        "manual_check": "Autre condition",
+        "route": "Accès avec votre Bac",
+        "coverage": "Conditions publiées"
+      },
+      "code": {
+        "ok": "Cette condition semble remplie.",
+        "below_threshold": "Votre valeur ({student}) est inférieure au minimum publié ({required}). Les conditions peuvent changer : vérifiez la page officielle.",
+        "track_not_accepted": "Votre filière de Bac ({student}) ne figure pas dans la liste publiée pour ce programme ({required}). Vérifiez la page officielle au cas où elle aurait changé.",
+        "missing_student_value": "Il nous manque une information de votre part pour cette condition. Complétez votre profil, puis vérifiez la source officielle.",
+        "threshold_unpublished": "Le minimum de cette condition n'est pas publié. Vérifiez-le sur la page d'admission officielle.",
+        "no_scale_conversion": "Nous n'avons pas de méthode publiée pour convertir votre note vers l'échelle utilisée ici. Vérifiez sur la page d'admission officielle comment votre note est traitée.",
+        "stale_source": "La source de cette condition n'a pas été vérifiée récemment. Vérifiez la page officielle avant de vous y fier.",
+        "non_official_source": "Cette condition ne vient pas d'une source officielle. Vérifiez la page officielle pour la confirmer.",
+        "route_foundation": "Votre Bac peut mener à une année de fondation avant la licence. Vérifiez sur la page d'admission officielle ce qui s'applique à vous.",
+        "route_not_eligible": "Selon les règles publiées, votre Bac ne donne pas accès à une licence ici. Les règles peuvent changer : vérifiez la page officielle.",
+        "route_check": "Nous n'avons pas confirmé comment votre Bac est traité dans ce pays. Vérifiez la page d'admission officielle.",
+        "coverage_partial": "Nous n'avons pas publié toutes les conditions de ce programme. Vérifiez la page officielle pour le reste.",
+        "manual_check": "Cette condition demande une vérification manuelle. Lisez-la sur la page de la source officielle."
+      },
+      "outcome": {
+        "pass": "Semble remplie",
+        "fail": "Non remplie",
+        "unknown": "À vérifier"
+      }
+    },
+    "checklist": {
+      "step": {
+        "documents": {
+          "title": "Réunir vos documents",
+          "meaning": "Rassemblez les documents demandés par le programme."
+        },
+        "translation": {
+          "title": "Traduire les documents",
+          "meaning": "Certains documents peuvent demander une traduction. Vérifiez ce que le programme exige."
+        },
+        "language_exam": {
+          "title": "Examen de langue",
+          "meaning": "Passez ou réservez le test de langue accepté par le programme."
+        },
+        "application_account": {
+          "title": "Créer le compte de candidature",
+          "meaning": "Ouvrez un compte sur la plateforme utilisée pour candidater, si elle en demande un."
+        },
+        "submit": {
+          "title": "Envoyer la candidature",
+          "meaning": "Envoyez votre candidature avant la date limite."
+        },
+        "scholarships": {
+          "title": "Demander des bourses",
+          "meaning": "Vérifiez les bourses qui peuvent vous convenir et leurs dates limites."
+        },
+        "financial_documents": {
+          "title": "Justifier vos ressources",
+          "meaning": "Préparez les documents qui montrent comment vos études sont financées."
+        },
+        "accommodation": {
+          "title": "Trouver un logement",
+          "meaning": "Cherchez un logement avant votre arrivée."
+        },
+        "visa": {
+          "title": "Visa ou titre de séjour",
+          "meaning": "Vérifiez les règles officielles de visa du pays de destination et faites la demande à temps."
+        },
+        "departure": {
+          "title": "Préparer le départ",
+          "meaning": "Organisez votre voyage et ce que vous emportez."
+        }
+      },
+      "reason": {
+        "applies": "Cette étape concerne votre candidature.",
+        "unknown_data": "Nous n'avons pas assez de données publiées pour savoir si cette étape s'applique. Vérifiez la page officielle.",
+        "not_required_by_source": "La source publiée ne demande pas cette étape.",
+        "certificate_held": "Le certificat de langue que vous avez semble accepté : un nouvel examen n'est peut-être pas nécessaire. Confirmez-le sur la page officielle.",
+        "no_account_required": "Selon la source publiée, aucun compte de candidature n'est nécessaire.",
+        "no_scholarships_listed": "Nous n'avons listé aucune bourse pour ce programme. Consultez les pages officielles pour les autres financements."
+      }
+    },
+    "mismatch": {
+      "destination": "Pas dans un pays que vous avez choisi",
+      "field": "Pas dans un domaine que vous avez choisi",
+      "institution_type": "Pas du type d'établissement que vous avez choisi",
+      "study_language": "Pas enseigné dans une langue que vous avez choisie"
+    },
+    "cost": {
+      "category": {
+        "tuition": "Frais de scolarité",
+        "housing": "Logement",
+        "food": "Alimentation",
+        "transport": "Transport",
+        "insurance": "Assurance",
+        "application_visa": "Frais de dossier et de visa",
+        "setup": "Frais d'installation"
+      },
+      "per": {
+        "month": "par mois",
+        "year": "par an",
+        "semester": "par semestre",
+        "once": "une seule fois"
+      },
+      "scope": {
+        "program": "Selon le programme",
+        "city": "Selon la ville",
+        "country": "Selon le pays"
+      },
+      "tenMonthNote": "Les coûts mensuels sont comptés sur {months} mois d'études. Le logement se paie souvent 12 mois : vérifiez la période de loyer.",
+      "missingLine": "Non publié, à vérifier",
+      "partialTotal": "Total partiel : certains coûts ne sont pas inclus",
+      "estimateTag": "Estimation"
+    },
+    "budgetFit": {
+      "within": "L'estimation est dans votre budget.",
+      "straddles": "Votre budget se situe dans la fourchette estimée : il peut suffire ou non.",
+      "above": "L'estimation dépasse votre budget.",
+      "unknown": "Nous ne pouvons pas comparer l'estimation à votre budget."
+    },
+    "intake": {
+      "upcoming": "Prochaine date limite : {date}",
+      "closed": "Clos, prochaines dates pas encore publiées",
+      "unknown": "Date limite non publiée, à vérifier"
+    },
+    "infoKind": {
+      "official": {
+        "label": "Officiel",
+        "meaning": "Publié par une source officielle, comme une université ou un organisme public."
+      },
+      "estimate": {
+        "label": "Estimation",
+        "meaning": "Notre estimation à partir de chiffres publiés. Le montant réel peut différer."
+      },
+      "guidance": {
+        "label": "Conseil général",
+        "meaning": "Conseil pour vous aider à planifier. Ce n'est pas une condition."
+      }
+    },
+    "freshness": {
+      "fresh": "Vérifié récemment",
+      "aging": "Vérifié il y a un certain temps",
+      "stale": "Peut être dépassé, vérifiez la page officielle",
+      "verifiedOn": "Vérifié le {date}",
+      "bannerAging": "Certaines informations de cette page ont été vérifiées il y a un certain temps. Consultez les pages officielles avant de décider.",
+      "bannerStale": "Certaines informations de cette page peuvent être dépassées. Consultez les pages officielles avant de vous y fier."
+    },
+    "coverage": {
+      "partial": "Nous n'avons pas publié toutes les conditions de ce programme. Vérifiez la page officielle avant de vous y fier.",
+      "complete": "Nous avons publié toutes les conditions que nous connaissons pour ce programme. La page officielle reste la référence."
+    },
+    "textNote": {
+      "french_fallback": "Affiché en français : pas encore traduit",
+      "machine_translated": "Traduit automatiquement, pas encore relu"
+    }
+  },
   "localeSwitcher": {
     "label": "Langue",
     "names": { "fr": "Français", "en": "English", "ar": "العربية" }

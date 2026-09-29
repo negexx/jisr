@@ -16,6 +16,189 @@
     },
     "comingSoon": "Jisr is being built. The full journey is coming soon."
   },
+  "domain": {
+    "status": {
+      "satisfied": "Published requirements appear to be met",
+      "check": "Something to check",
+      "not_satisfied": "Published requirements not met",
+      "short": {
+        "satisfied": "Appears to be met",
+        "check": "To check",
+        "not_satisfied": "Not met"
+      },
+      "hint": {
+        "satisfied": "Everything we published for this program appears to match your profile. Confirm it on the official page before you apply.",
+        "check": "We could not confirm everything. See what to check below, then confirm it on the official page.",
+        "not_satisfied": "At least one published requirement does not match your profile. Requirements can change, so check the official page."
+      }
+    },
+    "route": {
+      "direct": "Based on the rules we published, your Bac appears to give direct access to a Bachelor's in this country. Confirm the current conditions on the official admission page.",
+      "foundation": "In this country, your Bac may not give direct access to a Bachelor's. You may need a foundation year first: a preparatory year before the Bachelor's, like the German Studienkolleg. Check on the official admission page of the program or university whether it applies to you and how to get a place.",
+      "not_eligible": "The rules we published say your Bac does not give access to a Bachelor's in this country. Rules can change, so check the official admission page.",
+      "check": "We have not confirmed how your Bac is treated in this country. Check the official admission page.",
+      "missing": "We have not published how your Bac is treated for this country yet: check the official admission page."
+    },
+    "reason": {
+      "kind": {
+        "credential_type_in": "Type of Bac",
+        "credential_track_in": "Bac track",
+        "overall_grade_min": "Overall grade",
+        "subject_grade_min": "Subject grade",
+        "subject_taken": "Subjects studied",
+        "language_proficiency": "Language level",
+        "prior_study_years_min": "Years of previous study",
+        "manual_check": "Other requirement",
+        "route": "Access with your Bac",
+        "coverage": "Published requirements"
+      },
+      "code": {
+        "ok": "This requirement appears to be met.",
+        "below_threshold": "Your value ({student}) is below the published minimum ({required}). Requirements can change, so check the official page.",
+        "track_not_accepted": "Your Bac track ({student}) is not in the list published for this program ({required}). Check the official page in case it has changed.",
+        "missing_student_value": "We do not have the information from you that this requirement needs. Complete your profile, then check the official source.",
+        "threshold_unpublished": "The minimum for this requirement is not published. Check it on the official admission page.",
+        "no_scale_conversion": "We have no published way to convert your grade to the scale used here. Check on the official admission page how your grade is treated.",
+        "stale_source": "The source for this requirement was not verified recently. Check the official page before you rely on it.",
+        "non_official_source": "This requirement does not come from an official source. Check the official page to confirm it.",
+        "route_foundation": "Your Bac may lead to a foundation year before the Bachelor's. Check on the official admission page what applies to you.",
+        "route_not_eligible": "The published rules say your Bac does not give access to a Bachelor's here. Rules can change, so check the official page.",
+        "route_check": "We have not confirmed how your Bac is treated in this country. Check the official admission page.",
+        "coverage_partial": "We have not published all the requirements for this program. Check the official page for the rest.",
+        "manual_check": "This requirement needs a manual check. Read it on the official source page."
+      },
+      "outcome": {
+        "pass": "Appears met",
+        "fail": "Not met",
+        "unknown": "To check"
+      }
+    },
+    "checklist": {
+      "step": {
+        "documents": {
+          "title": "Gather your documents",
+          "meaning": "Collect the documents the program asks for."
+        },
+        "translation": {
+          "title": "Translate documents",
+          "meaning": "Some documents may need a translation. Check what the program asks for."
+        },
+        "language_exam": {
+          "title": "Language exam",
+          "meaning": "Take or book the language test the program accepts."
+        },
+        "application_account": {
+          "title": "Create your application account",
+          "meaning": "Open an account on the platform used to apply, if it asks for one."
+        },
+        "submit": {
+          "title": "Submit your application",
+          "meaning": "Send your application before the deadline."
+        },
+        "scholarships": {
+          "title": "Apply for scholarships",
+          "meaning": "Check which scholarships may suit you and their deadlines."
+        },
+        "financial_documents": {
+          "title": "Show your funds",
+          "meaning": "Prepare the documents that show how your studies are paid for."
+        },
+        "accommodation": {
+          "title": "Find housing",
+          "meaning": "Look for a place to live before you arrive."
+        },
+        "visa": {
+          "title": "Visa or residence permit",
+          "meaning": "Check the official visa rules of the destination country and apply in time."
+        },
+        "departure": {
+          "title": "Prepare your departure",
+          "meaning": "Plan your trip and what to bring."
+        }
+      },
+      "reason": {
+        "applies": "This step applies to your application.",
+        "unknown_data": "We do not have enough published data to know if this step applies. Check the official page.",
+        "not_required_by_source": "The published source does not ask for this step.",
+        "certificate_held": "The language certificate you hold appears to be accepted, so a new exam may not be needed. Confirm it on the official page.",
+        "no_account_required": "According to the published source, no application account is needed.",
+        "no_scholarships_listed": "We have not listed any scholarship for this program. Check the official pages for other funding."
+      }
+    },
+    "mismatch": {
+      "destination": "Not in a country you chose",
+      "field": "Not in a field you chose",
+      "institution_type": "Not the type of institution you chose",
+      "study_language": "Not taught in a language you chose"
+    },
+    "cost": {
+      "category": {
+        "tuition": "Tuition",
+        "housing": "Housing",
+        "food": "Food",
+        "transport": "Transport",
+        "insurance": "Insurance",
+        "application_visa": "Application and visa fees",
+        "setup": "Setup costs"
+      },
+      "per": {
+        "month": "per month",
+        "year": "per year",
+        "semester": "per semester",
+        "once": "one time"
+      },
+      "scope": {
+        "program": "Based on this program",
+        "city": "Based on the city",
+        "country": "Based on the country"
+      },
+      "tenMonthNote": "Monthly costs are counted for {months} months of study. Housing is often paid for 12 months, so check the rent period.",
+      "missingLine": "Not published, to be checked",
+      "partialTotal": "Partial total: some costs are not included",
+      "estimateTag": "Estimate"
+    },
+    "budgetFit": {
+      "within": "The estimate is within your budget.",
+      "straddles": "Your budget falls inside the estimated range: it may or may not be enough.",
+      "above": "The estimate is above your budget.",
+      "unknown": "We cannot compare the estimate with your budget."
+    },
+    "intake": {
+      "upcoming": "Next deadline: {date}",
+      "closed": "Closed, next dates not yet published",
+      "unknown": "Deadline not published, to be checked"
+    },
+    "infoKind": {
+      "official": {
+        "label": "Official",
+        "meaning": "Published by an official source, such as a university or a public body."
+      },
+      "estimate": {
+        "label": "Estimate",
+        "meaning": "Our estimate from published figures. The real amount may differ."
+      },
+      "guidance": {
+        "label": "General guidance",
+        "meaning": "Advice to help you plan. It is not a requirement."
+      }
+    },
+    "freshness": {
+      "fresh": "Verified recently",
+      "aging": "Verified a while ago",
+      "stale": "May be outdated, check the official page",
+      "verifiedOn": "Verified on {date}",
+      "bannerAging": "Some information on this page was verified a while ago. Check the official pages before you decide.",
+      "bannerStale": "Some information on this page may be outdated. Check the official pages before you rely on it."
+    },
+    "coverage": {
+      "partial": "We have not published all the requirements for this program. Check the official page before you rely on this.",
+      "complete": "We have published all the requirements we know of for this program. The official page remains the reference."
+    },
+    "textNote": {
+      "french_fallback": "Shown in French: not translated yet",
+      "machine_translated": "Translated automatically, not yet reviewed"
+    }
+  },
   "localeSwitcher": {
     "label": "Language",
     "names": { "fr": "Français", "en": "English", "ar": "العربية" }
