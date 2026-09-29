@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -23,12 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@scripts/*": [
-        "./scripts/*"
-      ]
+      "@/*": ["./src/*"],
+      "@scripts/*": ["./scripts/*"]
     },
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
@@ -42,8 +34,5 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": [
-    "node_modules",
-    "public/snapshots"
-  ]
+  "exclude": ["node_modules", "public/snapshots"]
 }
