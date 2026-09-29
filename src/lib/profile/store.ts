@@ -13,6 +13,9 @@ import {
   writeProfile,
 } from "./storage";
 
+// `storageAvailable` means "this device can reliably read and write local storage", NOT "this
+// save was persisted" (`save()` returns `persisted` for that). Use it for the standing
+// "we cannot save on this device" notice, and `persisted` for the outcome of one save.
 export type ProfileState =
   | { status: "unhydrated" }
   | (StoredProfile & { storageAvailable: boolean });
@@ -64,6 +67,8 @@ export function createProfileStore(getStorage: () => StorageLike | null): Profil
 
     let state: ProfileState;
     let evidence: string;
+    // A getItem that throws only intermittently could flip between these states; real
+    // SecurityErrors (blocked storage) are persistent, so this is accepted.
     if (memoryProfile && (writeFailed || !readable)) {
       state = { status: "ok", profile: memoryProfile, storageAvailable };
       evidence = "memory";
@@ -118,7 +123,9 @@ export function createProfileStore(getStorage: () => StorageLike | null): Profil
 
   return {
     getSnapshot() {
-      if (current === null) refresh();
+      // With no subscriber no storage event keeps the cache fresh, and React reads the snapshot in
+      // the first render, before `subscribe` runs, so re-read here (the object is kept if unchanged).
+      if (current === null || listeners.size === 0) refresh();
       return current ?? UNHYDRATED;
     },
     getServerSnapshot: () => UNHYDRATED,

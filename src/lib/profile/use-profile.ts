@@ -12,7 +12,8 @@ export type UseProfile = {
 };
 
 // The server snapshot is `unhydrated`, so the first client render matches the server HTML and
-// localStorage is only read after hydration.
+// localStorage is only read after hydration. `state.storageAvailable` is "this device can reliably
+// read and write", not "the last save was persisted": that is `save()`'s `persisted` result.
 export function useProfile(): UseProfile {
   const state = useSyncExternalStore(
     profileStore.subscribe,

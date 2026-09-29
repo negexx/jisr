@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { act, cleanup, renderHook } from "@testing-library/react";
+import { act, cleanup, render, renderHook } from "@testing-library/react";
 import { hydrateRoot } from "react-dom/client";
 import { renderToString } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
@@ -68,6 +68,18 @@ describe("createProfileStore", () => {
     fireStorageEvent(PROFILE_KEY);
     expect(store.getSnapshot()).toBe(first);
     unsubscribe();
+  });
+
+  it("reads fresh storage without subscribers and stays stable between calls", () => {
+    const storage = createFakeStorage();
+    storage.seed(PROFILE_KEY, JSON.stringify(profile()));
+    const store = createProfileStore(() => storage);
+    expect(store.getSnapshot().status).toBe("ok");
+    storage.removeItem(PROFILE_KEY);
+    const afterClear = store.getSnapshot();
+    expect(afterClear).toEqual({ status: "none", storageAvailable: true });
+    expect(store.getSnapshot()).toBe(afterClear);
+    expect(store.getSnapshot()).toBe(afterClear);
   });
 
   it("save validates, writes, clears the draft and notifies", () => {
@@ -458,6 +470,46 @@ describe("privacy", () => {
     store.clear();
     store.dismissReset();
     createProfileStore(() => null).save(profile());
+  });
+});
+
+describe("useProfile remount", () => {
+  async function mountProbe() {
+    const { useProfile } = await loadHookModules();
+    const rendered: string[] = [];
+    function Probe() {
+      const { state } = useProfile();
+      rendered.push(state.status === "ok" ? `ok:${state.profile.nationality}` : state.status);
+      return null;
+    }
+    return { Probe, rendered };
+  }
+
+  it("never renders a profile that another tab replaced while the hook was unmounted", async () => {
+    window.localStorage.setItem(PROFILE_KEY, JSON.stringify(profile({ nationality: "XA" })));
+    const { Probe, rendered } = await mountProbe();
+    const first = render(<Probe />);
+    expect(rendered).toEqual(["ok:XA"]);
+    first.unmount();
+
+    window.localStorage.setItem(PROFILE_KEY, JSON.stringify(profile({ nationality: "XB" })));
+    rendered.length = 0;
+    render(<Probe />);
+    expect(rendered.length).toBeGreaterThan(0);
+    expect(rendered).not.toContain("ok:XA");
+    expect(new Set(rendered)).toEqual(new Set(["ok:XB"]));
+  });
+
+  it("never renders a profile that another tab cleared while the hook was unmounted", async () => {
+    window.localStorage.setItem(PROFILE_KEY, JSON.stringify(profile({ nationality: "XA" })));
+    const { Probe, rendered } = await mountProbe();
+    render(<Probe />).unmount();
+
+    window.localStorage.removeItem(PROFILE_KEY);
+    rendered.length = 0;
+    render(<Probe />);
+    expect(rendered.length).toBeGreaterThan(0);
+    expect(new Set(rendered)).toEqual(new Set(["none"]));
   });
 });
 
