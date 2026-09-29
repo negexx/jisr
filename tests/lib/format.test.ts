@@ -14,13 +14,17 @@ import {
 
 const LOCALES: readonly AppLocale[] = ["fr", "en", "ar"];
 
+const BIDI_MARKS = /[\u200E\u200F\u061C]/g;
+
 // Bidi marks and non-breaking spaces vary by ICU version; the visible text is what we pin.
 function visible(text: string): string {
-  return text.replace(/[‎‏؜]/g, "").replace(/\s/g, " ");
+  return text.replace(BIDI_MARKS, "").replace(/\s/g, " ");
 }
 
 function expectAsciiDigitsOnly(text: string): void {
-  expect(text).not.toMatch(/[٠-٩۰-۹]/);
+  const digits = text.match(/\p{Nd}/gu) ?? [];
+  expect(digits.length).toBeGreaterThan(0);
+  expect(digits.join("")).toMatch(/^[0-9]+$/);
 }
 
 describe("intlLocale", () => {
@@ -64,7 +68,7 @@ describe("formatDate", () => {
     "2026-9-3",
     "not a date",
   ])("throws on invalid input %j", (value) => {
-    expect(() => formatDate(value as IsoDate, "fr")).toThrow();
+    expect(() => formatDate(value as IsoDate, "fr")).toThrow(RangeError);
   });
 });
 
@@ -83,7 +87,7 @@ describe("minorUnitDigits", () => {
   });
 
   it.each(["", "EU", "EURO", "E1R", "€€€"])("throws on malformed code %j", (currency) => {
-    expect(() => minorUnitDigits(currency)).toThrow();
+    expect(() => minorUnitDigits(currency)).toThrow(RangeError);
   });
 });
 
@@ -130,11 +134,11 @@ describe("formatMoney", () => {
     Number.POSITIVE_INFINITY,
     Number.NEGATIVE_INFINITY,
   ])("throws on non-integer or non-finite minor amount %s", (minor) => {
-    expect(() => formatMoney(minor, "EUR", "en")).toThrow();
+    expect(() => formatMoney(minor, "EUR", "en")).toThrow(RangeError);
   });
 
   it("throws on a malformed currency code", () => {
-    expect(() => formatMoney(100, "EU", "en")).toThrow();
+    expect(() => formatMoney(100, "EU", "en")).toThrow(RangeError);
   });
 });
 
@@ -168,14 +172,14 @@ describe("formatMoneyRange", () => {
   });
 
   it("throws when min is greater than max", () => {
-    expect(() => formatMoneyRange(2000, 1000, "EUR", "en")).toThrow();
+    expect(() => formatMoneyRange(2000, 1000, "EUR", "en")).toThrow(RangeError);
   });
 
   it.each([
     [1.5, 2000],
     [1000, Number.NaN],
   ])("throws on non-integer or non-finite ends (%s, %s)", (min, max) => {
-    expect(() => formatMoneyRange(min, max, "EUR", "en")).toThrow();
+    expect(() => formatMoneyRange(min, max, "EUR", "en")).toThrow(RangeError);
   });
 });
 
@@ -219,7 +223,11 @@ describe("parseLocaleDecimal", () => {
     ["0", 0],
     ["007", 7],
     ["20", 20],
-    ["1,000", 1],
+    ["14,50", 14.5],
+    ["1,5", 1.5],
+    ["12,345678", 12.345678],
+    ["1234,567", 1234.567],
+    ["1000", 1000],
   ])("parses %j as %d", (input, expected) => {
     expect(parseLocaleDecimal(input)).toBe(expected);
   });
@@ -229,6 +237,11 @@ describe("parseLocaleDecimal", () => {
     "   ",
     ".",
     ",",
+    // One separator + exactly three digits after 1-3 integer digits: thousands or decimal? Ask the user.
+    "1,000",
+    "10.000",
+    "999,999",
+    "0,500",
     "1,000.5",
     "1.000,5",
     "1,000,5",
@@ -249,5 +262,9 @@ describe("parseLocaleDecimal", () => {
     "14,5 pts",
   ])("rejects %j", (input) => {
     expect(parseLocaleDecimal(input)).toBeNull();
+  });
+
+  it("rejects digit strings too long to be finite instead of returning Infinity", () => {
+    expect(parseLocaleDecimal("1".repeat(400))).toBeNull();
   });
 });
