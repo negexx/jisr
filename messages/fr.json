@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "title": "Jisr | Étudier en Europe après le Bac",
+    "description": "Trouvez des licences réalistes en France, en Allemagne et aux Pays-Bas, avec les coûts, les bourses et les étapes pour candidater."
+  },
+  "home": {
+    "title": "Étudier en Europe après le Bac",
+    "lead": "Jisr vous aide à trouver des licences réalistes pour votre profil, à estimer les coûts et à préparer votre candidature.",
+    "stepsTitle": "Votre parcours",
+    "steps": {
+      "profile": "Votre profil",
+      "options": "Des options réalistes",
+      "costs": "Les coûts",
+      "scholarships": "Les bourses",
+      "plan": "Votre plan de candidature"
+    },
+    "comingSoon": "Jisr est en construction. Le parcours complet arrive bientôt."
+  },
+  "localeSwitcher": {
+    "label": "Langue",
+    "names": { "fr": "Français", "en": "English", "ar": "العربية" }
+  }
+}

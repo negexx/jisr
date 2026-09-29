@@ -128,3 +128,7 @@
     @apply font-sans;
   }
 }
+
+html[lang="ar"] body {
+  font-family: var(--font-arabic), var(--font-geist-sans), system-ui, sans-serif;
+}

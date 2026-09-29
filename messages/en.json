@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "title": "Jisr | Study in Europe after the Bac",
+    "description": "Find realistic Bachelor's programmes in France, Germany and the Netherlands, with costs, scholarships and application steps."
+  },
+  "home": {
+    "title": "Study in Europe after the Bac",
+    "lead": "Jisr helps you find Bachelor's programmes that are realistic for your profile, estimate the costs and prepare your application.",
+    "stepsTitle": "Your journey",
+    "steps": {
+      "profile": "Your profile",
+      "options": "Realistic options",
+      "costs": "Costs",
+      "scholarships": "Scholarships",
+      "plan": "Your application plan"
+    },
+    "comingSoon": "Jisr is being built. The full journey is coming soon."
+  },
+  "localeSwitcher": {
+    "label": "Language",
+    "names": { "fr": "Français", "en": "English", "ar": "العربية" }
+  }
+}
