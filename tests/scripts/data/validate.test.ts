@@ -462,6 +462,105 @@ describe("validateData mutations of valid-minimal", () => {
   });
 });
 
+describe("validateData warnings on suspicious but valid data", () => {
+  const base = load("valid-minimal");
+  const PROG = "programs/xx-test-prog.yaml";
+  const ROUTE = "admission-routes/xx-test-route-xa-xb.yaml";
+  const COSTS = "cost-profiles/xx-test-costs-xb.yaml";
+  const anyCertificate = (id: string) =>
+    `language rule "${id}" requires a certificate but lists no acceptedTests: any certificate would count regardless of language; list the accepted tests`;
+
+  it("warns on a language rule that needs a certificate but lists no accepted tests (program)", () => {
+    const result = validateData(
+      mutateFile(base, PROG, (raw) =>
+        setRules(raw, (rules) =>
+          rules.map((r) => (r.id === "xx-test-rule-language" ? { ...r, acceptedTests: [] } : r)),
+        ),
+      ),
+      { now: NOW },
+    );
+    expect(result.errors).toEqual([]);
+    expect(result.warnings).toEqual([
+      {
+        file: PROG,
+        path: "requirements.rules.xx-test-rule-language",
+        message: anyCertificate("xx-test-rule-language"),
+      },
+    ]);
+  });
+
+  it("warns on the same language rule in a route condition", () => {
+    const result = validateData(
+      mutateFile(base, ROUTE, (raw) => {
+        raw.conditions = [
+          {
+            id: "xx-test-cond-language",
+            kind: "language_proficiency",
+            source: "main",
+            info_kind: "official",
+            language: "xx",
+            minCefr: "B2",
+            certificateRequired: true,
+            acceptedTests: [],
+          },
+        ];
+      }),
+      { now: NOW },
+    );
+    expect(result.errors).toEqual([]);
+    expect(result.warnings).toEqual([
+      {
+        file: ROUTE,
+        path: "conditions.xx-test-cond-language",
+        message: anyCertificate("xx-test-cond-language"),
+      },
+    ]);
+  });
+
+  it.each([
+    ["certificate not required", { certificateRequired: false, acceptedTests: [] }],
+    ["certificate requirement unpublished", { certificateRequired: null, acceptedTests: [] }],
+  ])("does not warn when %s", (_n, fields) => {
+    const result = validateData(
+      mutateFile(base, PROG, (raw) =>
+        setRules(raw, (rules) =>
+          rules.map((r) => (r.id === "xx-test-rule-language" ? { ...r, ...fields } : r)),
+        ),
+      ),
+      { now: NOW },
+    );
+    expect(result.warnings).toEqual([]);
+  });
+
+  it("warns on a cost profile whose city matches no institution city", () => {
+    const result = validateData(
+      mutateFile(base, COSTS, (raw) => {
+        raw.city = "xx-test-typo-city";
+      }),
+      { now: NOW },
+    );
+    expect(result.errors).toEqual([]);
+    expect(result.warnings).toEqual([
+      {
+        file: COSTS,
+        path: "city",
+        message:
+          'cost profile city "xx-test-typo-city" matches no institution city; a typo would silently fall back to country-level costs',
+      },
+    ]);
+  });
+
+  it("does not warn when the cost profile city is an institution city", () => {
+    const result = validateData(
+      mutateFile(base, COSTS, (raw) => {
+        raw.city = "xx-test-city";
+      }),
+      { now: NOW },
+    );
+    expect(result.warnings).toEqual([]);
+  });
+});
+
 describe("validateData referential checks: one failing row per reference", () => {
   const base = load("valid-minimal");
   const PROG = "programs/xx-test-prog.yaml";
@@ -517,6 +616,13 @@ describe("validateData referential checks: one failing row per reference", () =>
       file: PROG,
       edit: setKey("country", "XA"),
       path: "country",
+      message: MISMATCH,
+    },
+    {
+      name: "program city differs from institution",
+      file: PROG,
+      edit: setKey("city", "xx-test-other"),
+      path: "city",
       message: MISMATCH,
     },
     {

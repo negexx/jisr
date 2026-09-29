@@ -195,6 +195,60 @@ function coverageWarnings(catalog: Catalog): Issue[] {
   return warnings;
 }
 
+function unrestrictedCertificateWarnings(catalog: Catalog): Issue[] {
+  const containers = [
+    ...[...catalog.programs.values()].map((e) => ({
+      file: e.file,
+      prefix: "requirements.rules",
+      rules: e.record.requirements.rules,
+    })),
+    ...[...catalog.scholarships.values()].map((e) => ({
+      file: e.file,
+      prefix: "requirements.rules",
+      rules: e.record.requirements.rules,
+    })),
+    ...[...catalog["admission-routes"].values()].map((e) => ({
+      file: e.file,
+      prefix: "conditions",
+      rules: e.record.conditions,
+    })),
+  ];
+  const warnings: Issue[] = [];
+  for (const { file, prefix, rules } of containers) {
+    for (const rule of rules) {
+      if (
+        rule.kind === "language_proficiency" &&
+        rule.certificateRequired === true &&
+        rule.acceptedTests.length === 0
+      ) {
+        warnings.push({
+          file,
+          path: `${prefix}.${rule.id}`,
+          message: `language rule "${rule.id}" requires a certificate but lists no acceptedTests: any certificate would count regardless of language; list the accepted tests`,
+        });
+      }
+    }
+  }
+  return warnings;
+}
+
+function unmatchedCostCityWarnings(catalog: Catalog): Issue[] {
+  const institutionCities = new Set(
+    [...catalog.institutions.values()].map((e) => e.record.city.slug),
+  );
+  return [...catalog["cost-profiles"].values()].flatMap(({ file, record }) =>
+    record.city === null || institutionCities.has(record.city)
+      ? []
+      : [
+          {
+            file,
+            path: "city",
+            message: `cost profile city "${record.city}" matches no institution city; a typo would silently fall back to country-level costs`,
+          },
+        ],
+  );
+}
+
 function translationCoverage(catalog: Catalog): TranslationCoverage {
   const coverage: TranslationCoverage = {
     fr: { present: 0, reviewed: 0, total: 0 },
@@ -223,7 +277,12 @@ export function validateData(loaded: LoadResult, opts: { now: IsoDate }): Valida
     recordCount: loaded.files.length,
     catalog,
     errors: [...loaded.errors, ...schemaErrors, ...prov.errors, ...checkReferences(catalog)],
-    warnings: [...prov.warnings, ...coverageWarnings(catalog)],
+    warnings: [
+      ...prov.warnings,
+      ...coverageWarnings(catalog),
+      ...unrestrictedCertificateWarnings(catalog),
+      ...unmatchedCostCityWarnings(catalog),
+    ],
     freshness: prov.freshness,
     translations: translationCoverage(catalog),
   };
