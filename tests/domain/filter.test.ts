@@ -1,9 +1,11 @@
 import { describe, expect, it } from "vitest";
 import { filterPrograms, preferenceMismatches } from "@/domain/filter";
 import {
+  daysAgo,
   deepFreeze,
   estimateMeta,
   fact,
+  meta,
   NOW,
   profile,
   program,
@@ -45,6 +47,12 @@ describe("preferenceMismatches", () => {
       { studyLanguages: ["fr"] },
       { teachingLanguages: fact(["de"], staleMeta()) },
       [],
+    ],
+    [
+      "language aging (not stale) still hides a definite mismatch",
+      { studyLanguages: ["fr"] },
+      { teachingLanguages: fact(["de"], meta({ last_verified_at: daysAgo(300) })) },
+      ["study_language"],
     ],
     [
       "language non-official never hides",

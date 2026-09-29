@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { Intake } from "@/data-schema/records/program";
 import { nextIntake } from "@/domain/intakes";
-import { fact, NOW, program } from "../fixtures/domain/builders";
+import { fact, NOW, program, STALE } from "../fixtures/domain/builders";
 
 const I = (applicationDeadline: string | null, startDate = "2027-09-01"): Intake => ({
   startDate,
@@ -38,6 +38,17 @@ describe("nextIntake", () => {
       class: "volatile",
       freshness: "fresh",
     });
+  });
+
+  it("a stale intakes fact still returns upcoming, with the staleness visible on the FactRef", () => {
+    const r = nextIntake(
+      program({
+        intakes: fact([I("2027-01-15")], { class: "volatile", last_verified_at: STALE }),
+      }),
+      NOW,
+    );
+    expect(r.kind).toBe("upcoming");
+    expect(r.fact).toMatchObject({ path: "intakes", freshness: "stale" });
   });
 
   it("keeps the first intake on a deadline tie", () => {

@@ -65,6 +65,14 @@ describe("scholarshipsForProgram", () => {
       ),
     ).toEqual([...expected]));
 
+  it("duplicate slugs in the input list produce one result, the first", () => {
+    const first = S("xx-test-sch-a", { provider: "First Provider" });
+    const second = S("xx-test-sch-a", { provider: "Second Provider" });
+    const out = scholarshipsForProgram(profile(), program(), [first, second]);
+    expect(out).toHaveLength(1);
+    expect(out[0]?.provider).toBe("First Provider");
+  });
+
   it("sorts by code unit, not locale", () => {
     const list = [S("xx-test-sch-b"), S("xx-test-sch-B")];
     expect(scholarshipsForProgram(profile(), program(), list).map((s) => s.slug)).toEqual([

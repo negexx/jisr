@@ -175,6 +175,32 @@ describe("estimateCost lines", () => {
     expect(r.budgetFit).toBe("unknown");
   });
 
+  it("interleaved currencies keep per-currency totals in first-appearance order", () => {
+    const r = est({
+      profiles: [
+        costProfile("xx-test-cost-city", "xx-test-city", {
+          housing: costLine(40000, 60000, "month", { currency: "XXX" }),
+          food: costLine(20000, 30000, "month"),
+        }),
+        countryP,
+      ],
+    });
+    expect(r.lines.map((l) => l.firstYear?.currency)).toEqual([
+      "XTS",
+      "XXX",
+      "XTS",
+      "XTS",
+      "XTS",
+      "XTS",
+      "XTS",
+    ]);
+    expect(r.totals).toEqual([
+      { min: 365000, max: 519000, currency: "XTS" },
+      { min: 400000, max: 600000, currency: "XXX" },
+    ]);
+    expect(r.budgetFit).toBe("unknown");
+  });
+
   it("stale line still counts, freshness visible", () => {
     const r = est({
       profiles: [
@@ -207,6 +233,8 @@ describe("budgetFit (totals 765000..1119000 XTS, 10-month academic year)", () =>
     [{ amountMinor: 1000000, currency: "XTS", period: "year" }, "straddles"],
     [{ amountMinor: 765000, currency: "XTS", period: "year" }, "straddles"],
     [{ amountMinor: 764999, currency: "XTS", period: "year" }, "above"],
+    [{ amountMinor: 111900, currency: "XTS", period: "month" }, "within"], // x10 = 1 119 000 exactly
+    [{ amountMinor: 111899, currency: "XTS", period: "month" }, "straddles"], // x10 = 1 118 990
     [{ amountMinor: 112000, currency: "XTS", period: "month" }, "within"], // x10 = 1 120 000
     [{ amountMinor: 76000, currency: "XTS", period: "month" }, "above"], // x10 = 760 000
     [{ amountMinor: 9999999, currency: "XXX", period: "year" }, "unknown"],

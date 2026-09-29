@@ -100,6 +100,14 @@ describe("downgrade", () => {
       "stale_source",
     ],
     [
+      "fail with stale",
+      "fail",
+      "below_threshold",
+      [f("stale", "official")],
+      "unknown",
+      "stale_source",
+    ],
+    [
       "fail with estimate",
       "fail",
       "below_threshold",

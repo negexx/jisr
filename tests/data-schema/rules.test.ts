@@ -64,6 +64,15 @@ describe("RuleSchema valid rules", () => {
   });
 });
 
+describe("RuleSchema explicit nulls", () => {
+  it.each([
+    ["language_proficiency minCefr", { ...VALID.language_proficiency, minCefr: null }],
+    ["overall_grade_min threshold", { ...VALID.overall_grade_min, threshold: null }],
+  ])("accepts an explicit null %s", (_label, rule) => {
+    expect(RuleSchema.safeParse(rule).success).toBe(true);
+  });
+});
+
 describe("RuleSchema invalid rules", () => {
   it.each([
     ["overall_grade_min without threshold key", without(VALID.overall_grade_min, "threshold")],

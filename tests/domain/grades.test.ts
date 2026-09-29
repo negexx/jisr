@@ -53,6 +53,14 @@ describe("convertGrade", () => {
     expect(r.via).toBe(conv);
   });
 
+  it.each([
+    ["bavarian 20/10 d=1, 21 (above nMax) → 0.7", 21, 0.7],
+    ["bavarian 20/10 d=1, 5 (below nMin) → 5.5", 5, 5.5],
+  ])("out of range passes through deterministically (range validation lives in rules.ts): %s", (_l, input, expected) => {
+    const r = convertGrade(src(input), "xx-test-scale-dst", [bav(20, 10, 1)]);
+    expect(r.kind === "converted" && r.value.value).toBeCloseTo(expected, 10);
+  });
+
   it("bavarian without truncation keeps decimals: 12.25 → 3.325", () => {
     const r = convertGrade(src(12.25), "xx-test-scale-dst", [bav(20, 10, null)]);
     expect(r.kind === "converted" && r.value.value).toBeCloseTo(3.325, 10);

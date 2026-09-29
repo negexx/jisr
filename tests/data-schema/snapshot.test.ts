@@ -52,6 +52,23 @@ describe("ManifestSchema", () => {
       false,
     ],
     ["zero bytes", { ...MANIFEST, shards: { core: { ...SHARD, bytes: 0 } } }, false],
+    [
+      "63-char hash",
+      { ...MANIFEST, shards: { core: { ...SHARD, sha256: "a".repeat(63) } } },
+      false,
+    ],
+    [
+      "65-char hash",
+      { ...MANIFEST, shards: { core: { ...SHARD, sha256: "a".repeat(65) } } },
+      false,
+    ],
+    ["zero gzipBytes", { ...MANIFEST, shards: { core: { ...SHARD, gzipBytes: 0 } } }, false],
+    [
+      "unknown key in a shard entry",
+      { ...MANIFEST, shards: { core: { ...SHARD, extra: 1 } } },
+      false,
+    ],
+    ["locale outside the enum", { ...MANIFEST, locales: ["de"] }, false],
     ["extra key", { ...MANIFEST, extra: 1 }, false],
   ])("%s", (_label, input, ok) => {
     expect(ManifestSchema.safeParse(input).success).toBe(ok);

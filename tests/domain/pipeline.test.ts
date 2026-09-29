@@ -40,6 +40,7 @@ type Built = {
 
 let outDir = "";
 let built: Built;
+let manifestShards: Record<string, { file: string }> = {};
 
 function readShard<T>(manifestShards: Record<string, { file: string }>, name: string): T {
   const entry = manifestShards[name];
@@ -62,6 +63,7 @@ beforeAll(() => {
     JSON.parse(readFileSync(path.join(outDir, "manifest.json"), "utf8")),
   );
   const shards = manifest.shards;
+  manifestShards = shards;
   const programs = readShard<ProgramsShard>(shards, shardNames.programs("XB", "xx-test-field"));
   const program = programs.programs[0];
   if (!program) throw new Error("fixture must contain a program in programs.XB.xx-test-field");
@@ -140,6 +142,34 @@ describe("snapshot shards built by the real CLI", () => {
     expect(built.program.slug).toBe("xx-test-prog");
     expect(built.costProfiles).toHaveLength(1);
     expect(built.scholarships.map((s) => s.slug)).toEqual(["xx-test-schol"]);
+  });
+});
+
+describe("manifest and shard identity", () => {
+  it("lists the core text shard for the default locale", () => {
+    expect(Object.keys(manifestShards)).toContain("text.fr.core");
+  });
+
+  it("every shard's kind (and origin or destination) matches its manifest name", () => {
+    const names = Object.keys(manifestShards);
+    expect(names.length).toBeGreaterThan(0);
+    for (const name of names) {
+      const shard = readShard<{ kind: string; origin?: string; destination?: string }>(
+        manifestShards,
+        name,
+      );
+      const [kind, ...rest] = name.split(".");
+      expect(shard.kind, name).toBe(kind);
+      if (kind === "routes") expect(shard.origin, name).toBe(rest[0]);
+      if (
+        kind === "institutions" ||
+        kind === "costs" ||
+        kind === "programs" ||
+        kind === "scholarships"
+      ) {
+        expect(shard.destination, name).toBe(rest[0]);
+      }
+    }
   });
 });
 
@@ -303,6 +333,9 @@ describe("generateChecklist on built shards", () => {
     expect(result.steps.find((s) => s.id === "translation")?.status).toBe("todo");
     expect(result.steps.find((s) => s.id === "application_account")?.status).toBe("todo");
     expect(result.steps.find((s) => s.id === "submit")?.deadline ?? null).toBeNull();
+    const listed = scholarshipsForProgram(makeProfile(), built.program, built.scholarships);
+    const skipped = result.steps.filter((s) => s.status === "skipped").map((s) => s.id);
+    expect(skipped).toEqual(listed.length === 0 ? ["scholarships"] : []);
   });
 });
 
