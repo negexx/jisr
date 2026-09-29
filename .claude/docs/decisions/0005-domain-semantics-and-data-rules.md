@@ -12,7 +12,7 @@ Building the data schema, the pure domain (`src/domain`) and the `data:check` pi
 ### Costs and matching
 1. **Living costs use a 10-month academic year.** `ACADEMIC_YEAR_MONTHS = 10` (`src/domain/costs.ts`) converts monthly amounts to yearly and is exposed on every estimate. Housing is often paid 12 months, so the UI must state the assumption next to every yearly living-cost figure.
 2. **A decisive ❌ stands even when other facts in the result are stale.** A fail is only produced from fresh official facts; anything that depends on a stale fact is already ⚠️, so the ❌ cannot rest on stale data.
-3. **The domain never skips a checklist step on unknown, stale or non-official evidence.** A `language_exam` step is skipped only when the profile level is at least the requirement, every language reason (including route conditions) passes, and the route is `direct` or `check`. An `application_account` step is skipped only with a decisive channel link and a matching program slug.
+3. **The domain never skips a checklist step on unknown, stale or non-official evidence.** A `language_exam` step has two skip paths, both fail-closed. `certificate_held`: at least one program language rule exists, every one is decisive, the student holds an accepted certificate (empty `acceptedTests` means any) at a level that meets `minCefr`, every language reason (including route conditions) passes, and the route is `direct` or `check`. `not_required_by_source`: coverage is `complete` with a decisive requirements fact, there are no program language rules and no language reasons, and the route is `direct` or `check`. An `application_account` step is skipped only with a decisive channel link and a matching program slug.
 4. **Grade values outside their own scale, or on an unknown scale, give ⚠️.** Empty match evidence also gives ⚠️.
 5. **`subject_taken` is judged on the union of the subjects the student listed and the subjects of their track curriculum.**
 6. **An empty `acceptedTests` means "any certificate counts".** The M3 profile input must therefore constrain the certificate choice to the rule's language, and `data:check` warns on a `language_proficiency` rule that requires a certificate but lists no `acceptedTests`.
@@ -37,9 +37,9 @@ Building the data schema, the pure domain (`src/domain`) and the `data:check` pi
 
 ## Consequences
 
-- Positive: the trust rules are enforced by the build (items 9-10) rather than by editor discipline; the UI has a single set of semantics to follow.
+- Positive: the tuition and coverage rules (items 7-8) are enforced by `data:check` errors, and the language-rule and certificate cases by warnings, rather than by editor discipline alone; the UI has a single set of semantics to follow.
 - Negative: universities that publish only a single blended fee cannot show tuition until a non-EU/EEA figure is found; the 10-month assumption must be surfaced in every yearly living-cost view.
-- Neutral: items 1-8 are already implemented in `src/domain`; the M3 UI must honour them (certificate choice constrained by language, excluded-program count, foundation reason, mobile-first layouts).
+- Neutral: items 1-5 and the domain half of item 6 are implemented in `src/domain`, item 6's certificate warning and items 7-8 in `data:check`; item 11's prominent reason and items 10 and 12 are UI obligations that M3 must honour (certificate choice constrained by language, excluded-program count, foundation reason, mobile-first layouts).
 
 ## Before-launch additions
 
