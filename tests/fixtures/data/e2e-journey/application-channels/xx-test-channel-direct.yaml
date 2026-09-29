@@ -1,0 +1,15 @@
+slug: xx-test-channel-direct
+name: XX Test Direct Application B
+country: XB
+kind: direct
+url: https://example.org/direct-b
+accountRequired: false
+summary:
+  fr: { text: Candidature directe test sans compte, status: reviewed }
+  en: { text: Test direct application without an account, status: draft }
+source: main
+info_kind: official
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01

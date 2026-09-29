@@ -1,0 +1,105 @@
+slug: xx-test-prog-ok
+institution: xx-test-inst-pub-b
+country: XB
+city: xx-test-city-b
+field: xx-test-field-cs
+level: bachelor
+name: XX Test Programme OK
+summary:
+  fr: { text: Programme test complet et concordant, status: reviewed }
+  en: { text: Complete matching test programme, status: reviewed }
+  ar: { text: برنامج اختبار كامل, status: draft }
+officialUrl: https://example.org/xx-test-prog-ok
+durationYears:
+  value: 3
+  source: main
+  info_kind: official
+teachingLanguages:
+  value: [fr]
+  source: main
+  info_kind: official
+tuition:
+  value: { amountMinor: 120000, currency: XTS, period: year }
+  source: fees
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2026-09-01
+      applicationOpens: 2026-01-15
+      applicationDeadline: 2026-06-01
+    - startDate: 2027-09-01
+      applicationOpens: 2026-10-01
+      applicationDeadline: 2027-01-15
+  source: dates
+  info_kind: official
+applicationChannel:
+  value: xx-test-channel-portal
+  source: main
+  info_kind: official
+documents:
+  value:
+    - slug: xx-test-doc-transcript
+      name:
+        fr: { text: Releve de notes test, status: reviewed }
+        en: { text: Test transcript, status: reviewed }
+        ar: { text: كشف نقاط الاختبار, status: draft }
+      translationRequired: true
+    - slug: xx-test-doc-identity
+      name:
+        fr: { text: Piece d identite test, status: reviewed }
+        en: { text: Test identity document, status: draft }
+      translationRequired: false
+    - slug: xx-test-doc-motivation
+      name:
+        fr: { text: Lettre de motivation test, status: draft }
+      translationRequired: null
+  source: main
+  info_kind: official
+requirements:
+  coverage: complete
+  source: main
+  info_kind: official
+  rules:
+    - id: xx-test-rule-cred
+      kind: credential_type_in
+      source: main
+      info_kind: official
+      types: [xx-test-cred]
+    - id: xx-test-rule-math
+      kind: subject_taken
+      source: main
+      info_kind: official
+      subjects: [xx-test-subject-math]
+      mode: all
+    - id: xx-test-rule-grade
+      kind: overall_grade_min
+      source: main
+      info_kind: official
+      scale: xx-test-scale-5
+      threshold: 3.0
+    - id: xx-test-rule-math-grade
+      kind: subject_grade_min
+      source: main
+      info_kind: official
+      subject: xx-test-subject-math
+      scale: xx-test-scale-20
+      threshold: 12
+    - id: xx-test-rule-language-fr
+      kind: language_proficiency
+      source: main
+      info_kind: official
+      language: fr
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests: [xx-test-cert-fr]
+scholarships: [xx-test-schol-xa, xx-test-schol-xz]
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01
+  fees:
+    url: https://example.org/xx-test-fees
+    last_verified_at: 2026-09-01
+  dates:
+    url: https://example.org/xx-test-dates
+    last_verified_at: 2026-09-01

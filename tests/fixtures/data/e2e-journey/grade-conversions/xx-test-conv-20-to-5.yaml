@@ -1,0 +1,12 @@
+slug: xx-test-conv-20-to-5
+from: xx-test-scale-20
+to: xx-test-scale-5
+conversion:
+  method: modified_bavarian
+  params: { nMax: 20, nMin: 10, truncateDecimals: 1 }
+source: main
+info_kind: official
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01

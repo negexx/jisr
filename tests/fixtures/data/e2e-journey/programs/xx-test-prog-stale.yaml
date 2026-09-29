@@ -1,0 +1,69 @@
+slug: xx-test-prog-stale
+institution: xx-test-inst-pub-b
+country: XB
+city: xx-test-city-b
+field: xx-test-field-eng
+level: bachelor
+name: XX Test Programme Stale
+summary:
+  fr: { text: Programme test dont la regle de langue n a pas ete reverifiee, status: reviewed }
+  en: { text: Test programme whose language rule was not re-verified, status: draft }
+officialUrl: https://example.org/xx-test-prog-stale
+durationYears:
+  value: 3
+  source: main
+  info_kind: official
+teachingLanguages:
+  value: [en]
+  source: main
+  info_kind: official
+tuition:
+  value: null
+  source: main
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-09-01
+      applicationOpens: 2026-10-01
+      applicationDeadline: 2027-01-15
+  source: main
+  info_kind: official
+applicationChannel:
+  value: xx-test-channel-portal
+  source: main
+  info_kind: official
+documents:
+  value:
+    - slug: xx-test-doc-identity
+      name:
+        fr: { text: Piece d identite test, status: draft }
+      translationRequired: false
+  source: main
+  info_kind: official
+requirements:
+  coverage: complete
+  source: main
+  info_kind: official
+  rules:
+    - id: xx-test-rule-math
+      kind: subject_taken
+      source: main
+      info_kind: official
+      subjects: [xx-test-subject-math]
+      mode: all
+    - id: xx-test-rule-language-en
+      kind: language_proficiency
+      source: old
+      info_kind: official
+      language: en
+      minCefr: B1
+      certificateRequired: false
+      acceptedTests: []
+scholarships: []
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01
+  old:
+    url: https://example.org/xx-test-old
+    last_verified_at: 2025-02-07

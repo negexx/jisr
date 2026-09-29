@@ -1,0 +1,6 @@
+code: XA
+name:
+  fr: { text: Pays test A, status: reviewed }
+  en: { text: Test country A, status: reviewed }
+  ar: { text: بلد الاختبار أ, status: draft }
+currency: XTS

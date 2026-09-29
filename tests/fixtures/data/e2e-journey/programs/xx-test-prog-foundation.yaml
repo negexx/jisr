@@ -1,0 +1,66 @@
+slug: xx-test-prog-foundation
+institution: xx-test-inst-pub-c
+country: XC
+city: xx-test-city-c
+field: xx-test-field-cs
+level: bachelor
+name: XX Test Programme Foundation
+summary:
+  fr: { text: Programme test precede d une annee de fondation, status: reviewed }
+  en: { text: Test programme preceded by a foundation year, status: draft }
+officialUrl: https://example.org/xx-test-prog-foundation
+durationYears:
+  value: 3
+  source: main
+  info_kind: official
+teachingLanguages:
+  value: [fr]
+  source: main
+  info_kind: official
+tuition:
+  value: { amountMinor: 80000, currency: XTS, period: year }
+  source: fees
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-09-01
+      applicationOpens: 2026-10-01
+      applicationDeadline: 2027-02-01
+  source: dates
+  info_kind: official
+applicationChannel:
+  value: xx-test-channel-portal-c
+  source: main
+  info_kind: official
+documents:
+  value:
+    - slug: xx-test-doc-identity
+      name:
+        fr: { text: Piece d identite test, status: draft }
+      translationRequired: false
+  source: main
+  info_kind: official
+requirements:
+  coverage: partial
+  source: main
+  info_kind: official
+  rules:
+    - id: xx-test-rule-language-fr
+      kind: language_proficiency
+      source: main
+      info_kind: official
+      language: fr
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests: [xx-test-cert-fr]
+scholarships: []
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01
+  fees:
+    url: https://example.org/xx-test-fees
+    last_verified_at: 2026-09-01
+  dates:
+    url: https://example.org/xx-test-dates
+    last_verified_at: 2026-09-01

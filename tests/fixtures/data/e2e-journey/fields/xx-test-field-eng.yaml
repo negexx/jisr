@@ -1,0 +1,4 @@
+slug: xx-test-field-eng
+name:
+  fr: { text: Ingenierie test, status: reviewed }
+  en: { text: Test engineering, status: draft }
