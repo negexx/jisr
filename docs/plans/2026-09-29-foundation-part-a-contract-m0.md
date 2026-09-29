@@ -225,7 +225,7 @@ export type Source = z.infer<typeof SourceSchema>;
 export type SourcesMap = z.infer<typeof SourcesSchema>;
 
 // Fact factories. YAML authors write {value, source, info_kind, basis?}; parsing adds `class`.
-// value: explicit null means "not published" (never omitted). basis is required iff info_kind === "estimate".
+// value: explicit null means "not published" (never omitted). basis is REQUIRED when info_kind === "estimate" and optional otherwise.
 export function volatileFact<T extends z.ZodType>(inner: T): z.ZodType<RawFact<z.output<T>>, unknown>;
 export function stableFact<T extends z.ZodType>(inner: T): z.ZodType<RawFact<z.output<T>>, unknown>;
 // implementation shape: z.strictObject({ value: inner.nullable(), source: SourceKeySchema, info_kind: InfoKindSchema,
