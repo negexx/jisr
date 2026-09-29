@@ -113,7 +113,7 @@ function subjectTaken(rule: RuleOf<"subject_taken">, ctx: RuleContext, ruleRef: 
 
   const credentialType = ctx.credentialTypes.find((c) => c.slug === credential.type);
   const track = credentialType?.tracks.find((t) => t.slug === credential.track);
-  if (credentialType && track?.subjects && !satisfies(track.subjects)) {
+  if (credentialType && track?.subjects && !satisfies([...taken, ...track.subjects])) {
     return {
       outcome: "fail",
       code: "track_not_accepted",

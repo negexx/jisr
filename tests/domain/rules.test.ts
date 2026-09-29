@@ -7,6 +7,7 @@ import {
   conv20toLower,
   credentialType,
   ctx,
+  daysAgo,
   deepFreeze,
   estimateMeta,
   meta,
@@ -375,6 +376,38 @@ describe("overall_grade_min", () => {
       [`${P}r`, S20],
     ],
     [
+      "aging rule fact stays decisive",
+      g("r", 12, "xx-test-scale-20", meta({ last_verified_at: daysAgo(300) })),
+      {},
+      "pass",
+      "ok",
+      [`${P}r`, S20],
+    ],
+    [
+      "aging scale fact stays decisive",
+      g("r", 12),
+      { gradingScales: [{ ...scale20, fact: meta({ last_verified_at: daysAgo(300) }) }] },
+      "pass",
+      "ok",
+      [`${P}r`, S20],
+    ],
+    [
+      "aging conversion fact stays decisive",
+      g("r", 65, "xx-test-scale-100"),
+      { gradeConversions: [{ ...conv20to100, fact: meta({ last_verified_at: daysAgo(300) }) }] },
+      "pass",
+      "ok",
+      [`${P}r`, S100, C100],
+    ],
+    [
+      "higher_better conversion boundary 14→70 >= 70",
+      g("r", 70, "xx-test-scale-100"),
+      {},
+      "pass",
+      "ok",
+      [`${P}r`, S100, C100],
+    ],
+    [
       "stale + estimate → stale_source",
       g("r", 12, "xx-test-scale-20", staleMeta({ info_kind: "estimate" })),
       {},
@@ -399,6 +432,17 @@ describe("overall_grade_min", () => {
       required: 65,
     });
   });
+  it("reports the aging freshness of an aging rule fact without downgrading", () => {
+    const r = one(g("r", 12, "xx-test-scale-20", meta({ last_verified_at: daysAgo(300) })));
+    expect(r.outcome).toBe("pass");
+    expect(r.facts[0]?.freshness).toBe("aging");
+  });
+  it("reports student as a copy, not the profile's object", () => {
+    const p = profile();
+    const r = one(g("r", 12), { profile: p });
+    expect(r.student).toEqual(p.credential.overall);
+    expect(r.student).not.toBe(p.credential.overall);
+  });
   it("omits studentConverted on the same scale", () =>
     expect(one(g("r", 12))).not.toHaveProperty("studentConverted"));
   it("omits student when missing", () =>
@@ -415,6 +459,8 @@ describe("overall_grade_min", () => {
 
 const sg = (id: string, subject: string, threshold: number | null, m = meta()) =>
   rule("subject_grade_min", { id, subject, scale: "xx-test-scale-20", threshold, fact: m });
+const sgc = (id: string, subject: string, threshold: number | null) =>
+  rule("subject_grade_min", { id, subject, scale: "xx-test-scale-100", threshold });
 describe("subject_grade_min", () => {
   check([
     ["math 15>=12", sg("s", "xx-test-math", 12), {}, "pass", "ok", [`${P}s`, S20]],
@@ -468,6 +514,32 @@ describe("subject_grade_min", () => {
       [`${P}s`, S20],
     ],
   ]);
+  it("passes through a conversion: math 15/20 → 75/100 >= 70", () => {
+    const r = one(sgc("s", "xx-test-math", 70));
+    expect({ outcome: r.outcome, code: r.code, facts: r.facts.map(refKey) }).toEqual({
+      outcome: "pass",
+      code: "ok",
+      facts: [`${P}s`, S100, C100],
+    });
+    expect(r.studentConverted).toEqual({ scale: "xx-test-scale-100", value: 75 });
+  });
+  it("fails through a conversion: math 15/20 → 75/100 < 80", () => {
+    const r = one(sgc("s", "xx-test-math", 80));
+    expect({ outcome: r.outcome, code: r.code, facts: r.facts.map(refKey) }).toEqual({
+      outcome: "fail",
+      code: "below_threshold",
+      facts: [`${P}s`, S100, C100],
+    });
+  });
+  it("downgrades a subject grade through a stale conversion", () => {
+    const r = one(sgc("s", "xx-test-math", 70), {
+      gradeConversions: [{ ...conv20to100, fact: staleMeta() }],
+    });
+    expect({ outcome: r.outcome, code: r.code }).toEqual({
+      outcome: "unknown",
+      code: "stale_source",
+    });
+  });
   it("reports student and required values", () => {
     expect(one(sg("s", "xx-test-math", 12))).toMatchObject({
       student: { scale: "xx-test-scale-20", value: 15 },
@@ -479,6 +551,23 @@ describe("subject_grade_min", () => {
 const CT = "credential-types/xx-test-cred#";
 const st = (id: string, subjects: string[], mode: "all" | "any", m = meta()) =>
   rule("subject_taken", { id, subjects, mode, fact: m });
+const listing = (subjects: string[], track = "xx-test-track-sci") =>
+  profile({
+    credential: {
+      track,
+      subjects: subjects.map((subject) => ({
+        subject,
+        grade: { scale: "xx-test-scale-20", value: 12 },
+      })),
+    },
+  });
+const emptyCurriculum = {
+  credentialTypes: [
+    credentialType({
+      tracks: [{ slug: "xx-test-track-empty", name: "XX Empty", gloss: null, subjects: [] }],
+    }),
+  ],
+};
 describe("subject_taken", () => {
   check([
     ["all [math] taken", st("t", ["xx-test-math"], "all"), {}, "pass", "ok", [`${P}t`]],
@@ -568,6 +657,73 @@ describe("subject_taken", () => {
       { credentialTypes: [credentialType({ fact: staleMeta() })] },
       "pass",
       "ok",
+      [`${P}t`],
+    ],
+    [
+      "all [physics, chem]: listed chem + curriculum physics covers it",
+      st("t", ["xx-test-physics", "xx-test-chem"], "all"),
+      { profile: listing(["xx-test-chem"]) },
+      "unknown",
+      "missing_student_value",
+      [`${P}t`],
+    ],
+    [
+      "all [chem, bio]: listed chem but union still lacks bio",
+      st("t", ["xx-test-chem", "xx-test-bio"], "all"),
+      { profile: listing(["xx-test-chem"]) },
+      "fail",
+      "track_not_accepted",
+      [`${P}t`, CT],
+    ],
+    [
+      "any [physics, bio]: listed chem, curriculum has physics",
+      st("t", ["xx-test-physics", "xx-test-bio"], "any"),
+      { profile: listing(["xx-test-chem"]) },
+      "unknown",
+      "missing_student_value",
+      [`${P}t`],
+    ],
+    [
+      "any [bio, geo]: neither listed nor in curriculum",
+      st("t", ["xx-test-bio", "xx-test-geo"], "any"),
+      { profile: listing(["xx-test-chem"]) },
+      "fail",
+      "track_not_accepted",
+      [`${P}t`, CT],
+    ],
+    [
+      "any listed subject satisfies without touching the credential type",
+      st("t", ["xx-test-chem", "xx-test-bio"], "any"),
+      {
+        profile: listing(["xx-test-chem"]),
+        credentialTypes: [credentialType({ fact: staleMeta() })],
+      },
+      "pass",
+      "ok",
+      [`${P}t`],
+    ],
+    [
+      "published-empty curriculum and no listed subjects fails mode all",
+      st("t", ["xx-test-chem"], "all"),
+      { ...emptyCurriculum, profile: listing([], "xx-test-track-empty") },
+      "fail",
+      "track_not_accepted",
+      [`${P}t`, CT],
+    ],
+    [
+      "published-empty curriculum and no listed subjects fails mode any",
+      st("t", ["xx-test-chem", "xx-test-bio"], "any"),
+      { ...emptyCurriculum, profile: listing([], "xx-test-track-empty") },
+      "fail",
+      "track_not_accepted",
+      [`${P}t`, CT],
+    ],
+    [
+      "unpublished curriculum (null) and no listed subjects stays unknown",
+      st("t", ["xx-test-chem"], "all"),
+      { profile: listing([], "xx-test-track-lit") },
+      "unknown",
+      "missing_student_value",
       [`${P}t`],
     ],
     [
