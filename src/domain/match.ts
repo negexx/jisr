@@ -22,7 +22,7 @@ export type MatchInput = {
 
 export function aggregateMatchStatus(reasons: readonly Reason[]): MatchStatus {
   if (reasons.some((r) => r.outcome === "fail")) return "not_satisfied";
-  if (reasons.some((r) => r.outcome === "unknown")) return "check";
+  if (reasons.length === 0 || reasons.some((r) => r.outcome === "unknown")) return "check";
   return "satisfied";
 }
 
@@ -59,7 +59,12 @@ function coverageReason(program: Program, now: IsoDate): Reason | null {
   const { coverage, fact } = program.requirements;
   if (coverage === "complete" && isDecisive(fact, now)) return null;
   const ref: FactRef = toFactRef(`programs/${program.slug}`, "requirements", fact, now);
-  const code = coverage === "partial" ? "coverage_partial" : downgrade("pass", "ok", [ref]).code;
+  const code =
+    coverage === "partial"
+      ? "coverage_partial"
+      : ref.freshness === "stale"
+        ? "stale_source"
+        : "non_official_source";
   return { ruleId: "coverage", kind: "coverage", outcome: "unknown", code, facts: [ref] };
 }
 

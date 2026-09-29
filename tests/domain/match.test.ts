@@ -306,7 +306,7 @@ describe("aggregateMatchStatus", () => {
     facts: [],
   });
   it.each([
-    [[], "satisfied"],
+    [[], "check"],
     [[R("pass")], "satisfied"],
     [[R("pass"), R("unknown")], "check"],
     [[R("unknown"), R("fail")], "not_satisfied"],
@@ -325,13 +325,17 @@ describe("invariants over a matrix", () => {
     [{ ...failRule, fact: staleMeta() }],
     [rule("manual_check", { id: "m", note: "k" })],
     [passRule, failRule],
+    [{ ...passRule, fact: estimateMeta() }],
   ];
+  const conditionSets = [[], [passRule], [failRule], [{ ...passRule, fact: staleMeta() }]];
   const coverages = ["complete", "partial"] as const;
   const reqMetas = [meta(), staleMeta(), estimateMeta()];
   const cases = outcomes.flatMap((o) =>
     routeMetas.flatMap((rm) =>
-      ruleSets.flatMap((rs) =>
-        coverages.flatMap((cov) => reqMetas.map((qm) => ({ o, rm, rs, cov, qm }))),
+      conditionSets.flatMap((cs) =>
+        ruleSets.flatMap((rs) =>
+          coverages.flatMap((cov) => reqMetas.map((qm) => ({ o, rm, cs, rs, cov, qm }))),
+        ),
       ),
     ),
   );
@@ -339,14 +343,14 @@ describe("invariants over a matrix", () => {
     f.info_kind === "official" && f.freshness !== "stale";
 
   it("matrix is large enough to be meaningful", () => {
-    expect(cases.length).toBe(5 * 3 * 7 * 2 * 3);
+    expect(cases.length).toBe(5 * 3 * 4 * 8 * 2 * 3);
     expect(cases.length).toBeGreaterThanOrEqual(600);
   });
 
   it(`holds for ${cases.length} combinations`, () => {
     const seen = { satisfied: 0, check: 0, not_satisfied: 0 };
-    for (const { o, rm, rs, cov, qm } of cases) {
-      const routes = o === "missing" ? [] : [route({ outcome: o, fact: rm })];
+    for (const { o, rm, cs, rs, cov, qm } of cases) {
+      const routes = o === "missing" ? [] : [route({ outcome: o, fact: rm, conditions: cs })];
       const r = run(
         routes,
         program({ requirements: requirements({ coverage: cov, fact: qm, rules: rs }) }),
