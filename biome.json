@@ -1,39 +1,120 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.4.2/schema.json",
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true
-  },
+  "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
+    "includes": [
+      "**",
+      "!.next",
+      "!node_modules",
+      "!public/snapshots",
+      "!.claude",
+      "!pnpm-lock.yaml"
+    ]
   },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "indentWidth": 2
-  },
-  "css": {
-    "parser": {
-      "tailwindDirectives": true
-    }
-  },
+  "formatter": { "enabled": true, "indentStyle": "space", "indentWidth": 2, "lineWidth": 100 },
+  "javascript": { "formatter": { "quoteStyle": "double" } },
+  "css": { "parser": { "tailwindDirectives": true } },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
     "enabled": true,
+    "domains": { "next": "recommended", "react": "recommended" },
     "rules": {
-      "recommended": true
-    },
-    "domains": {
-      "next": "recommended",
-      "react": "recommended"
-    }
-  },
-  "assist": {
-    "actions": {
-      "source": {
-        "organizeImports": "on"
+      "recommended": true,
+      "suspicious": { "noExplicitAny": "error", "noTsIgnore": "error" },
+      "style": {
+        "noNonNullAssertion": "error",
+        "useImportType": "error",
+        "noDefaultExport": "error"
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": [
+        "src/app/**/page.tsx",
+        "src/app/**/layout.tsx",
+        "src/app/**/not-found.tsx",
+        "src/app/**/error.tsx",
+        "src/app/**/loading.tsx",
+        "src/app/**/template.tsx",
+        "src/app/**/default.tsx",
+        "src/i18n/request.ts",
+        "next.config.ts",
+        "vitest.config.ts",
+        "postcss.config.mjs"
+      ],
+      "linter": { "rules": { "style": { "noDefaultExport": "off" } } }
+    },
+    {
+      "includes": ["src/domain/**", "src/data-schema/dates.ts", "src/data-schema/staleness.ts"],
+      "linter": {
+        "rules": {
+          "suspicious": { "noConsole": "error" },
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "paths": {
+                  "react": "src/domain is pure TS: no React.",
+                  "react-dom": "src/domain is pure TS: no React.",
+                  "next": "src/domain is pure TS: no Next.",
+                  "next-intl": "src/domain is pure TS: no i18n runtime.",
+                  "zod": "src/domain consumes already-validated data; import types only from @/data-schema.",
+                  "yaml": "src/domain never parses files.",
+                  "fs": "src/domain has no filesystem access.",
+                  "@/db": "src/domain has no DB access.",
+                  "@/lib": "src/domain must not import app libraries.",
+                  "@/components": "src/domain must not import UI.",
+                  "@/app": "src/domain must not import UI.",
+                  "@/i18n": "src/domain must not import i18n runtime."
+                },
+                "patterns": [
+                  {
+                    "group": [
+                      "react/*",
+                      "react-dom/*",
+                      "next/*",
+                      "next-intl/*",
+                      "zod/*",
+                      "fs/*",
+                      "node:*",
+                      "@/db/*",
+                      "@/lib/*",
+                      "@/components/*",
+                      "@/app/*",
+                      "@/i18n/*",
+                      "@scripts/*"
+                    ],
+                    "message": "src/domain is pure TS: no framework, DB, fs, network or app-layer imports."
+                  },
+                  {
+                    "group": ["../*", "../**"],
+                    "message": "src/domain is flat: import siblings with ./ and schemas via @/data-schema (types only)."
+                  }
+                ]
+              }
+            },
+            "noRestrictedGlobals": {
+              "level": "error",
+              "options": {
+                "deniedGlobals": {
+                  "Date": "Pass `now` as an IsoDate; use @/data-schema/dates for arithmetic.",
+                  "fetch": "src/domain has no network access.",
+                  "XMLHttpRequest": "src/domain has no network access.",
+                  "WebSocket": "src/domain has no network access.",
+                  "window": "src/domain has no browser access.",
+                  "document": "src/domain has no browser access.",
+                  "navigator": "src/domain has no browser access.",
+                  "localStorage": "src/domain has no storage access.",
+                  "sessionStorage": "src/domain has no storage access.",
+                  "process": "src/domain has no process/env access."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
 }
