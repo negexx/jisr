@@ -179,7 +179,21 @@ const VALID: [CollectionName, () => Obj][] = ENTRIES;
 type Expect = { path: string; code?: string };
 const E = (path: string, code?: string): Expect => (code === undefined ? { path } : { path, code });
 
+const condition = (id: string): Obj => ({
+  id,
+  kind: "prior_study_years_min",
+  source: "main",
+  info_kind: "official",
+  years: 1,
+});
+
 const INVALID: [string, CollectionName, () => Obj, Expect][] = [
+  [
+    "route duplicate condition ids",
+    "admission-routes",
+    () => admissionRoute({ conditions: [condition("xx-test-cond"), condition("xx-test-cond")] }),
+    E("conditions", "custom"),
+  ],
   ["grading scale min > max", "grading-scales", () => gradingScale({ min: 20, max: 0 }), E("min")],
   [
     "grading scale min == max",
@@ -440,6 +454,11 @@ describe("record schemas", () => {
         (expected.code === undefined || issue.code === expected.code),
     );
     expect(matched, JSON.stringify(issues.map((i) => [i.path.join("."), i.code]))).toBe(true);
+  });
+
+  it("accepts a route whose conditions have distinct ids", () => {
+    const record = admissionRoute({ conditions: [condition("xx-test-a"), condition("xx-test-b")] });
+    expect(COLLECTIONS["admission-routes"].schema.safeParse(record).success).toBe(true);
   });
 
   it("accepts a linear conversion and a modified_bavarian conversion", () => {

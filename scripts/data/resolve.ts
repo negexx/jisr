@@ -79,6 +79,7 @@ function scopeOf(collection: CollectionName, id: string, sources: SourcesMap): S
 
 function text(scope: Scope, path: string, value: LocalizedText): TextKey {
   const key = textKey(scope.collection, scope.id, path);
+  if (scope.texts.has(key)) throw new BuildError(`duplicate text key ${key}`);
   scope.texts.set(key, value);
   return key;
 }

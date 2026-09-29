@@ -3,6 +3,10 @@ import { resolveCatalog } from "@scripts/data/resolve";
 import { buildShards } from "@scripts/data/shard";
 import { validateData } from "@scripts/data/validate";
 import { describe, expect, it } from "vitest";
+import type { LocalizedText } from "@/data-schema/localized-text";
+import type { Locale } from "@/data-schema/primitives";
+import { LOCALES } from "@/data-schema/primitives";
+import { COLLECTION_NAMES } from "@/data-schema/records/collections";
 import type {
   CoreShard,
   ProgramsShard,
@@ -129,5 +133,63 @@ describe("buildShards on an empty catalog", () => {
       credentialTypes: [],
       applicationChannels: [],
     });
+  });
+});
+
+describe("text key invariant on valid-minimal", () => {
+  const { catalog } = validateData(loadData(`${FIXTURES}/valid-minimal`), { now: "2026-09-29" });
+  const resolved = resolveCatalog(catalog);
+  const shards = buildShards(resolved);
+  const sources = new Map<string, LocalizedText>();
+  for (const items of Object.values(resolved)) {
+    for (const item of items) for (const [key, text] of item.texts) sources.set(key, text);
+  }
+  const keyShape = new RegExp(`^(${COLLECTION_NAMES.join("|")})/[^#/]+#[A-Za-z0-9_.-]+$`);
+
+  function referencedKeys(value: unknown): string[] {
+    if (typeof value === "string") return keyShape.test(value) ? [value] : [];
+    if (Array.isArray(value)) return value.flatMap(referencedKeys);
+    if (typeof value === "object" && value !== null) {
+      return Object.values(value).flatMap(referencedKeys);
+    }
+    return [];
+  }
+
+  function textShardOf(structural: string, locale: Locale): TextShard | undefined {
+    const found = shards.find((s) => s.name === `text.${locale}.${structural}`);
+    return found?.shard.kind === "text" ? found.shard : undefined;
+  }
+
+  it("covers all 25 shards", () => {
+    expect(shards).toHaveLength(25);
+  });
+
+  it.each(shards.map((s) => s.name))("%s", (name) => {
+    const shard = shards.find((s) => s.name === name)?.shard;
+    if (shard === undefined) throw new Error("missing shard");
+    if (shard.kind === "text") {
+      const referenced = [
+        ...new Set(referencedKeys(shards.find((s) => s.name === shard.shard)?.shard)),
+      ].sort();
+      expect(Object.keys(shard.entries).sort()).toEqual(referenced);
+      for (const [key, entry] of Object.entries(shard.entries)) {
+        const source = sources.get(key);
+        if (source === undefined) throw new Error(`unreferenced key ${key}`);
+        const inLocale = source[shard.locale];
+        expect(entry.fallback).toBe(inLocale === undefined);
+        expect(entry.text).toBe((inLocale ?? source.fr).text);
+        expect(entry.status).toBe((inLocale ?? source.fr).status);
+      }
+      return;
+    }
+    const referenced = [...new Set(referencedKeys(shard))].sort();
+    for (const locale of LOCALES) {
+      const text = textShardOf(name, locale);
+      if (referenced.length === 0) {
+        expect(text).toBeUndefined();
+      } else {
+        expect(Object.keys(text?.entries ?? {}).sort()).toEqual(referenced);
+      }
+    }
   });
 });

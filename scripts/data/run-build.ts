@@ -13,7 +13,9 @@ import {
 import { BuildError } from "./build-error";
 import { canonicalJson } from "./canonical-json";
 import { gzipSize, sha256Hex, shortHash } from "./hash";
+import type { Issue } from "./load-data";
 import { loadData } from "./load-data";
+import { issueLine } from "./report";
 import { resolveCatalog } from "./resolve";
 import { buildShards } from "./shard";
 import { validateData } from "./validate";
@@ -48,10 +50,23 @@ function requireDataDir(dataDir: string): void {
   }
 }
 
+const LISTED_ERRORS = 5;
+
+function invalidDataMessage(errors: readonly Issue[]): string {
+  const sorted = [...errors].sort((a, b) => (a.file < b.file ? -1 : a.file > b.file ? 1 : 0));
+  const lines = sorted.slice(0, LISTED_ERRORS).map((issue) => issueLine("ERROR", issue));
+  const more = sorted.length - lines.length;
+  return [
+    "data is invalid; run pnpm data:check",
+    ...lines,
+    ...(more > 0 ? [`... and ${more} more`] : []),
+  ].join("\n");
+}
+
 function renderShards(opts: BuildOptions): Rendered[] {
   requireDataDir(opts.dataDir);
   const validation = validateData(loadData(opts.dataDir), { now: opts.now });
-  if (validation.errors.length > 0) throw new BuildError("data is invalid; run pnpm data:check");
+  if (validation.errors.length > 0) throw new BuildError(invalidDataMessage(validation.errors));
 
   const budget = opts.gzipBudgetBytes ?? SHARD_GZIP_BUDGET_BYTES;
   return buildShards(resolveCatalog(validation.catalog)).map(({ name, shard }) => {

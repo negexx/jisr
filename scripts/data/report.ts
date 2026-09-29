@@ -9,7 +9,7 @@ function compareText(a: string, b: string): number {
   return a < b ? -1 : a > b ? 1 : 0;
 }
 
-function issueLine(prefix: string, issue: Issue): string {
+export function issueLine(prefix: string, issue: Issue): string {
   const where = issue.path === "" ? "" : `${issue.path}: `;
   return `${prefix} ${issue.file}: ${where}${issue.message}`;
 }

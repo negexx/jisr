@@ -188,6 +188,41 @@ describe("runBuild", () => {
     expect(existsSync(path.join(outDir, "manifest.json"))).toBe(true);
   });
 
+  it("lists the first validation errors in the refusal message, in data:check format", () => {
+    const outDir = tempDir("invalid-lines");
+    let message = "";
+    try {
+      build(`${FIXTURES}/invalid-missing-source`, outDir);
+    } catch (error) {
+      message = error instanceof Error ? error.message : String(error);
+    }
+    const [first, ...lines] = message.split("\n");
+    expect(first).toBe("data is invalid; run pnpm data:check");
+    expect(lines.length).toBeGreaterThan(0);
+    expect(lines[0]).toBe(
+      'ERROR grading-scales/xx-test-scale-a.yaml: source: unknown source key "nope"',
+    );
+  });
+
+  it("caps the listed errors at five and says how many more", () => {
+    const outDir = tempDir("invalid-cap");
+    const dataDir = path.join(tempDir("invalid-cap-data"), "data");
+    for (let i = 0; i < 7; i++) {
+      const dir = path.join(dataDir, "grading-scales");
+      mkdirSync(dir, { recursive: true });
+      writeFileSync(path.join(dir, `xx-test-bad-${i}.yaml`), "slug: nope\n");
+    }
+    let message = "";
+    try {
+      build(dataDir, outDir);
+    } catch (error) {
+      message = error instanceof Error ? error.message : String(error);
+    }
+    const lines = message.split("\n");
+    expect(lines.filter((l) => l.startsWith("ERROR "))).toHaveLength(5);
+    expect(lines.at(-1)).toMatch(/^\.\.\. and \d+ more$/);
+  });
+
   it("refuses every invalid fixture", () => {
     for (const scenario of [
       "invalid-bad-reference",
@@ -276,6 +311,9 @@ describe("data:build CLI", () => {
     ]);
     expect(result.exit).toBe(1);
     expect(result.stderr).toContain("data:build: data is invalid; run pnpm data:check");
+    expect(result.stderr).toContain(
+      "ERROR grading-scales/xx-test-scale-a.yaml: source: unknown source key",
+    );
     expect(result.stdout).toBe("");
     expect(readdirSync(outDir)).toEqual([]);
   }, 60_000);

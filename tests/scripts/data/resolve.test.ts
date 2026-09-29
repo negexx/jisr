@@ -166,6 +166,62 @@ describe("resolveCatalog edge cases", () => {
     expect(only(only(resolved.credentialTypes).value.tracks).gloss).toBeNull();
   });
 
+  it("throws BuildError naming the key when two texts collide on a TextKey", () => {
+    const catalog = catalogOf("valid-minimal");
+    const route = only([...catalog["admission-routes"].values()]).record;
+    const manualCheck = (text: string) => ({
+      id: "xx-test-cond-dup",
+      kind: "manual_check" as const,
+      source: "main",
+      info_kind: "official" as const,
+      note: { fr: { text, status: "draft" as const } },
+    });
+    // Schema validation rejects duplicate ids; the resolver must still not overwrite silently.
+    catalog["admission-routes"].set(route.slug, {
+      file: "x",
+      record: { ...route, conditions: [manualCheck("Un"), manualCheck("Un")] },
+    });
+    expect(() => resolveCatalog(catalog)).toThrow(BuildError);
+    expect(() => resolveCatalog(catalog)).toThrow(
+      "duplicate text key admission-routes/xx-test-route-xa-xb#conditions.xx-test-cond-dup.note",
+    );
+  });
+
+  it("keeps provenance and basis text for null-valued facts and emits no document keys", () => {
+    const catalog = catalogOf("valid-minimal");
+    const program = only([...catalog.programs.values()]).record;
+    const basis = { fr: { text: "Non publie", status: "draft" as const } };
+    catalog.programs.set(program.slug, {
+      file: "x",
+      record: {
+        ...program,
+        documents: { ...program.documents, value: null, basis },
+        tuition: { ...program.tuition, value: null, info_kind: "estimate", basis },
+      },
+    });
+    const resolved = only(resolveCatalog(catalog).programs);
+    expect(resolved.value.documents).toEqual({
+      value: null,
+      source_url: "https://example.org/xx-test",
+      info_kind: "official",
+      last_verified_at: "2026-09-01",
+      class: "stable",
+      basis: "programs/xx-test-prog#documents.basis",
+    });
+    expect(resolved.value.tuition).toEqual({
+      value: null,
+      source_url: "https://example.org/xx-test-fees",
+      info_kind: "estimate",
+      last_verified_at: "2026-09-01",
+      class: "volatile",
+      basis: "programs/xx-test-prog#tuition.basis",
+    });
+    const keys = [...resolved.texts.keys()];
+    expect(keys).toContain("programs/xx-test-prog#documents.basis");
+    expect(keys).toContain("programs/xx-test-prog#tuition.basis");
+    expect(keys.some((key) => /#documents\.\d+\.name$/.test(key))).toBe(false);
+  });
+
   it("throws BuildError when a program's institution is missing", () => {
     const catalog = catalogOf("valid-minimal");
     catalog.institutions.clear();
