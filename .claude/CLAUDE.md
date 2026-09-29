@@ -43,7 +43,7 @@ Trust is the product: every important fact carries an **official source URL** an
 | Build data snapshots | `pnpm data:build` |
 | Generate / apply DB migration | `pnpm db:generate` / `pnpm db:migrate` |
 
-Scripts live in `package.json` (`typecheck` = `next typegen && tsc --noEmit`, `test` = `vitest run`, `lint` = `biome check .`, `format` = `biome format --write .`). Greenfield: if a script is missing, add it in the first setup task rather than substituting another command. `pnpm build` must run `data:check` and `data:build` first. Add `test:e2e` when Playwright arrives.
+Scripts live in `package.json` (`typecheck` = `next typegen && tsc --noEmit`, `test` = `vitest run`, `lint` = `biome check .`, `format` = `biome format --write .`). Greenfield: if a script is missing, add it in the first setup task rather than substituting another command. `pnpm build` must run `data:check` and `data:build` first. Add `test:e2e` when Playwright arrives. CI (`.github/workflows/ci.yml`, GitHub Actions, Node 24, pnpm from `packageManager`) runs typecheck, lint, test, data:check and build on every pull request and on pushes to `main`; a PR is not done until it is green.
 
 ## Architecture at a glance
 
