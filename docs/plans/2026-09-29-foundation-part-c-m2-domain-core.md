@@ -1,4 +1,4 @@
-# Jisr Foundation, Part C: Milestone 2 (domain core), T12–T19
+# Jisr Foundation, Part C: Milestone 2 (domain core), T12–T19 (incl. T16A filter)
 
 > **For agentic workers:** REQUIRED SUB-SKILL: `superpowers:subagent-driven-development`. Each task stands on its own. An implementer sees only its task, plus "Global Constraints" and the "Shared type contract" from Part A (`C:\Users\dagda\Downloads\nex\UniWay\docs\plans\2026-09-29-foundation-part-a-contract-m0.md`). Use TDD throughout: write the test, run it and see it FAIL, write the minimal code, run it and see it PASS, then commit.
 
@@ -6,7 +6,7 @@
 Build a pure, table-tested `src/domain/*` that implements Part A §11 exactly: facts/freshness, CEFR, grade conversion, the rule engine, route resolution plus matching, intakes, scholarships, costs and the checklist. T19 adds an end-to-end test that runs the Part B pipeline.
 
 ## Context I checked
-- Part A (all 1825 lines): §1–§12 contract, §11 normative semantics, M0 T1–T5 format, Risks (Part A already flags the "expected" status, missing-certificate ⚠️, `track_not_accepted` reuse, short-circuit, and month×12).
+- Part A (all 1825 lines): §1–§12 contract, §11 normative semantics, M0 T1–T5 format, Risks (Part A already flags the "expected" status, missing-certificate ⚠️, `track_not_accepted` reuse, short-circuit, and the month multiplier, now 10 per the 2026-09-29 decision).
 - `C:\Users\dagda\Downloads\nex\UniWay\.claude\rules\matching-domain.md`: its cost shape `{min,max,currency,breakdown}` differs from the contract's `CostEstimate`. T19 updates it.
 - `C:\Users\dagda\Downloads\nex\UniWay\.claude\docs\decisions\0004-operations-privacy-data-freshness.md` §4: the thresholds, and "stale → ⚠️, reason 'source not re-verified recently'" (= `stale_source`).
 - `C:\Users\dagda\Downloads\nex\UniWay\.claude\docs\architecture.md`: the domain module row agrees with the contract.
@@ -782,11 +782,104 @@ describe("scholarshipsForProgram", () => {
 
 ---
 
+### Task 16A: `filter.ts` filterPrograms (preference filter)
+
+Added 2026-09-29 at the product owner's request. M3 needs to narrow the program list by the student's stated preferences without hiding anything on weak evidence.
+
+**Files:** Create `src/domain/filter.ts`, `tests/domain/filter.test.ts`
+
+**Interfaces:**
+- Consumes: `Profile` (contract §7), `Program` (contract §9), `isDecisive` from `./facts` (T12), `IsoDate`, `Slug`.
+- Produces:
+```ts
+export type PreferenceMismatch = "destination" | "field" | "institution_type" | "study_language";
+export type ProgramFilterResult = {
+  kept: Program[];                                                          // input order preserved
+  excluded: Array<{ programSlug: Slug; mismatches: PreferenceMismatch[] }>; // mismatches in the fixed order above
+};
+export function preferenceMismatches(profile: Profile, program: Program, now: IsoDate): PreferenceMismatch[];
+export function filterPrograms(profile: Profile, programs: readonly Program[], now: IsoDate): ProgramFilterResult;
+```
+
+**Semantics (all conservative: hide only on a definite mismatch).**
+- `destination`: mismatch iff `profile.destinations.length > 0 && !profile.destinations.includes(program.country)`.
+- `field`: mismatch iff `!profile.fields.includes(program.field)`.
+- `institution_type`: mismatch iff `profile.institutionType !== "any" && program.institutionType !== profile.institutionType`.
+- `study_language`: mismatch iff `profile.studyLanguages.length > 0` AND `program.teachingLanguages.value !== null` AND `isDecisive(program.teachingLanguages, now)` AND no element of `program.teachingLanguages.value` is in `profile.studyLanguages`. A null value, a stale fact or a non-official fact never hides a program (unknown is not a mismatch).
+- Budget is NOT a filter: it only affects `budgetFit` in `estimateCost`.
+- A program is `kept` iff it has zero mismatches; otherwise it goes to `excluded` with all its mismatches. `excluded` is returned so the UI can say "N programs hidden by your preferences" instead of silently dropping them. Pure: never mutates inputs.
+- Filtering is independent of matching: `matchProgram` is unaffected by this function.
+
+- [ ] **Step 1: Failing test** `tests/domain/filter.test.ts`
+```ts
+import { describe, expect, it } from "vitest";
+import { filterPrograms, preferenceMismatches } from "@/domain/filter";
+import { deepFreeze, estimateMeta, fact, NOW, profile, program, staleMeta } from "../fixtures/domain/builders";
+
+describe("preferenceMismatches", () => {
+  it.each([
+    ["all defaults match", {}, {}, []],
+    ["destinations empty means all", { destinations: [] }, { country: "XC" }, []],
+    ["destination listed", { destinations: ["XB"] }, {}, []],
+    ["destination not listed", { destinations: ["XC"] }, {}, ["destination"]],
+    ["field not wanted", { fields: ["xx-test-field-other"] }, {}, ["field"]],
+    ["one of several fields", { fields: ["xx-test-field-other", "xx-test-field"] }, {}, []],
+    ["institution any", { institutionType: "any" }, { institutionType: "private" }, []],
+    ["institution public wanted, public", { institutionType: "public" }, {}, []],
+    ["institution private wanted, public", { institutionType: "private" }, {}, ["institution_type"]],
+    ["language empty means any", { studyLanguages: [] }, { teachingLanguages: fact(["de"]) }, []],
+    ["language overlap", { studyLanguages: ["fr", "en"] }, { teachingLanguages: fact(["en"]) }, []],
+    ["language no overlap, decisive", { studyLanguages: ["fr"] }, { teachingLanguages: fact(["de"]) }, ["study_language"]],
+    ["language unpublished never hides", { studyLanguages: ["fr"] }, { teachingLanguages: fact(null) }, []],
+    ["language stale never hides", { studyLanguages: ["fr"] }, { teachingLanguages: fact(["de"], staleMeta()) }, []],
+    ["language non-official never hides", { studyLanguages: ["fr"] }, { teachingLanguages: fact(["de"], estimateMeta()) }, []],
+    ["several mismatches in fixed order",
+      { destinations: ["XC"], fields: ["xx-test-field-other"], institutionType: "private", studyLanguages: ["fr"] },
+      { teachingLanguages: fact(["de"]) }, ["destination", "field", "institution_type", "study_language"]],
+  ] as const)("%s", (_n, p, prog, expected) =>
+    expect(preferenceMismatches(profile({ ...p } as never), program({ ...prog } as never), NOW)).toEqual([...expected]));
+
+  it("ignores budget entirely", () => {
+    const p = profile({ budget: { amountMinor: 1, currency: "XTS", period: "month" } });
+    expect(preferenceMismatches(p, program(), NOW)).toEqual([]);
+  });
+});
+
+describe("filterPrograms", () => {
+  const keep = program({ slug: "xx-test-keep" });
+  const dropA = program({ slug: "xx-test-drop-a", country: "XC" });
+  const dropB = program({ slug: "xx-test-drop-b", field: "xx-test-field-other", institutionType: "private" });
+  const p = profile({ destinations: ["XB"], institutionType: "public" });
+
+  it("splits kept and excluded, preserving input order and reporting mismatches", () => {
+    const r = filterPrograms(p, [dropA, keep, dropB], NOW);
+    expect(r.kept.map((x) => x.slug)).toEqual(["xx-test-keep"]);
+    expect(r.excluded).toEqual([
+      { programSlug: "xx-test-drop-a", mismatches: ["destination"] },
+      { programSlug: "xx-test-drop-b", mismatches: ["field", "institution_type"] },
+    ]);
+  });
+  it("returns everything kept when nothing mismatches, and handles an empty list", () => {
+    expect(filterPrograms(profile(), [keep], NOW)).toEqual({ kept: [keep], excluded: [] });
+    expect(filterPrograms(profile(), [], NOW)).toEqual({ kept: [], excluded: [] });
+  });
+  it("does not mutate inputs", () => {
+    expect(() => filterPrograms(deepFreeze(p), deepFreeze([keep, dropA]), NOW)).not.toThrow();
+  });
+});
+```
+- [ ] **Step 2:** `pnpm test tests/domain/filter.test.ts`. Expected: FAIL (cannot resolve `@/domain/filter`).
+- [ ] **Step 3: Implement** `src/domain/filter.ts` exactly per the semantics above: one small `preferenceMismatches` that pushes in the fixed order, and `filterPrograms` that folds programs into `kept` / `excluded`. No `Date`, no `zod`; type-only imports from `@/data-schema/*`; `import { isDecisive } from "./facts"`.
+- [ ] **Step 4:** run the tests (PASS), then `pnpm typecheck && pnpm lint && pnpm test`.
+- [ ] **Step 5: Commit** `feat: add program preference filter with excluded reasons` + the Co-Authored-By trailer.
+
+---
+
 ### Task 17: `costs.ts` estimateCost
 
 **Files:** Create `src/domain/costs.ts`, `tests/domain/costs.test.ts`
 
-**Interfaces:** Produces `CostInput`, `estimateCost(input): CostEstimate`. Lines always follow `["tuition","housing","food","transport","insurance","application_visa","setup"]`.
+**Interfaces:** Produces `CostInput`, `estimateCost(input): CostEstimate`, and `export const ACADEMIC_YEAR_MONTHS = 10` (decision 2026-09-29: living costs are estimated for a 10-month academic year, not 12; `CostEstimate.academicYearMonths` carries the value so the UI can state the assumption). Lines always follow `["tuition","housing","food","transport","insurance","application_visa","setup"]`.
 
 **Algorithm.**
 - Tuition:
@@ -795,13 +888,14 @@ describe("scholarshipsForProgram", () => {
 - Living category c:
   - `city = profiles.find(country === program.country && city === program.city)`; `country = profiles.find(country === program.country && city === null)`.
   - Use city if `city?.lines[c]?.value != null` (scope "city"), else country if its value is non-null (scope "country").
-  - `k = per month ? 12 : 1` (year and once both give 1). `firstYear = {min*k, max*k, currency}`, `per: amount.per`, `fact: toFactRef("cost-profiles/"+slug, "lines."+c, line, now)`.
+  - `k = per month ? ACADEMIC_YEAR_MONTHS : 1` (year and once both give 1). `firstYear = {min*k, max*k, currency}`, `per: amount.per`, `fact: toFactRef("cost-profiles/"+slug, "lines."+c, line, now)`.
   - If neither is non-null → missing. For missing lines, `fact`/`scope` point at the null-valued line (city first) if one exists, else both are null (Amendment A6). `per: null`, `firstYear: null`.
 - Totals: accumulate per currency in order of first appearance over ok lines.
 - `complete` = every line is ok.
+- `academicYearMonths` = `ACADEMIC_YEAR_MONTHS` on every estimate.
 - budgetFit:
   - `unknown` unless `budget && complete && totals.length === 1 && totals[0].currency === budget.currency`.
-  - `B = amountMinor * (period === "month" ? 12 : 1)`.
+  - `B = amountMinor * (period === "month" ? ACADEMIC_YEAR_MONTHS : 1)`.
   - `max <= B` → within; `min > B` → above; else straddles.
 - Never mutate input: build new objects only.
 
@@ -826,15 +920,16 @@ describe("estimateCost lines", () => {
     const r = est();
     expect(r.lines.map((l) => [l.category, l.status, l.firstYear?.min, l.firstYear?.max, l.per, l.scope])).toEqual([
       ["tuition", "ok", 100000, 100000, "year", "program"],
-      ["housing", "ok", 480000, 720000, "month", "city"],
-      ["food", "ok", 240000, 360000, "month", "city"],
-      ["transport", "ok", 36000, 60000, "month", "country"],
+      ["housing", "ok", 400000, 600000, "month", "city"],
+      ["food", "ok", 200000, 300000, "month", "city"],
+      ["transport", "ok", 30000, 50000, "month", "country"],
       ["insurance", "ok", 10000, 20000, "year", "country"],
       ["application_visa", "ok", 5000, 9000, "once", "country"],
       ["setup", "ok", 20000, 40000, "once", "country"],
     ]);
-    expect(r.totals).toEqual([{ min: 891000, max: 1309000, currency: "XTS" }]);
+    expect(r.totals).toEqual([{ min: 765000, max: 1119000, currency: "XTS" }]);
     expect(r.complete).toBe(true);
+    expect(r.academicYearMonths).toBe(10);
     expect(r.lines[1]?.fact).toMatchObject({ record: "cost-profiles/xx-test-cost-city", path: "lines.housing" });
     expect(r.lines[0]?.fact).toMatchObject({ record: "programs/xx-test-prog", path: "tuition", class: "volatile" });
   });
@@ -846,13 +941,13 @@ describe("estimateCost lines", () => {
     const r = est({ p: program({ tuition: fact(null, { class: "volatile" }) }), budget: { amountMinor: 9999999, currency: "XTS", period: "year" } });
     expect(r.lines[0]).toMatchObject({ status: "missing", firstYear: null, per: null, scope: "program" });
     expect(r.complete).toBe(false); expect(r.budgetFit).toBe("unknown");
-    expect(r.totals).toEqual([{ min: 791000, max: 1209000, currency: "XTS" }]);
+    expect(r.totals).toEqual([{ min: 665000, max: 1019000, currency: "XTS" }]);
   });
   it("missing living line", () => {
     const { setup: _s, ...rest } = countryP.lines;
     const r = est({ profiles: [cityP, { ...countryP, lines: rest }] });
     expect(r.lines[6]).toEqual({ category: "setup", status: "missing", firstYear: null, per: null, scope: null, fact: null });
-    expect(r.totals).toEqual([{ min: 871000, max: 1269000, currency: "XTS" }]); expect(r.complete).toBe(false);
+    expect(r.totals).toEqual([{ min: 745000, max: 1079000, currency: "XTS" }]); expect(r.complete).toBe(false);
   });
   it("ignores other cities and other countries", () => {
     const r = est({ profiles: [costProfile("xx-test-cost-other", "xx-test-other-city", { food: costLine(1, 1, "once") }),
@@ -862,7 +957,7 @@ describe("estimateCost lines", () => {
   it("multiple currencies → per-currency totals in first-appearance order, fit unknown", () => {
     const r = est({ p: program({ tuition: fact({ amountMinor: 100000, currency: "XXX", period: "year" as const }, { class: "volatile" }) }),
       budget: { amountMinor: 9999999, currency: "XTS", period: "year" } });
-    expect(r.totals).toEqual([{ min: 100000, max: 100000, currency: "XXX" }, { min: 791000, max: 1209000, currency: "XTS" }]);
+    expect(r.totals).toEqual([{ min: 100000, max: 100000, currency: "XXX" }, { min: 665000, max: 1019000, currency: "XTS" }]);
     expect(r.complete).toBe(true); expect(r.budgetFit).toBe("unknown");
   });
   it("stale line still counts, freshness visible", () => {
@@ -875,15 +970,15 @@ describe("estimateCost lines", () => {
   });
 });
 
-describe("budgetFit (totals 891000..1309000 XTS)", () => {
+describe("budgetFit (totals 765000..1119000 XTS, 10-month academic year)", () => {
   it.each([
     [null, "unknown"],
-    [{ amountMinor: 1309000, currency: "XTS", period: "year" }, "within"],
+    [{ amountMinor: 1119000, currency: "XTS", period: "year" }, "within"],
     [{ amountMinor: 1000000, currency: "XTS", period: "year" }, "straddles"],
-    [{ amountMinor: 891000, currency: "XTS", period: "year" }, "straddles"],
-    [{ amountMinor: 890999, currency: "XTS", period: "year" }, "above"],
-    [{ amountMinor: 110000, currency: "XTS", period: "month" }, "within"],   // 1 320 000
-    [{ amountMinor: 70000, currency: "XTS", period: "month" }, "above"],     // 840 000
+    [{ amountMinor: 765000, currency: "XTS", period: "year" }, "straddles"],
+    [{ amountMinor: 764999, currency: "XTS", period: "year" }, "above"],
+    [{ amountMinor: 112000, currency: "XTS", period: "month" }, "within"],   // x10 = 1 120 000
+    [{ amountMinor: 76000, currency: "XTS", period: "month" }, "above"],     // x10 = 760 000
     [{ amountMinor: 9999999, currency: "XXX", period: "year" }, "unknown"],
   ] as const)("%j → %s", (budget, fit) => expect(est({ budget: budget === null ? null : { ...budget } }).budgetFit).toBe(fit));
 });
@@ -1089,7 +1184,7 @@ pnpm typecheck; pnpm test; pnpm lint; pnpm data:check; pnpm build
 ```
 Expected: all exit 0; `data:check` prints `0 records` on the empty `data/`; `build` ends with the route table.
 - [ ] **Step 5: Docs**
-  - `.claude/rules/matching-domain.md`, cost line: replace `{ min, max, currency, breakdown }` with "`CostEstimate`: 7 `CostLine`s (tuition…setup) each with its FactRef, per-currency `totals` ranges, `complete`, `budgetFit`".
+  - `.claude/rules/matching-domain.md`, cost line: replace `{ min, max, currency, breakdown }` with "`CostEstimate`: 7 `CostLine`s (tuition…setup) each with its FactRef, per-currency `totals` ranges, `complete`, `budgetFit`". Also add to the same rules file: costs use a 10-month academic year (`ACADEMIC_YEAR_MONTHS`, exposed as `academicYearMonths`), and `filterPrograms` hides a program only on a definite preference mismatch (unknown/stale/non-official language data never hides).
   - `.claude/rules/matching-domain.md`, short-circuit line: append "(the result holds only the route reason; conditions, rules and coverage are not evaluated)".
   - `.claude/docs/architecture.md`: edit only if an accepted amendment changes behaviour it describes. As planned, nothing changes, so leave it untouched.
 - [ ] **Step 6: Commit** with message `test: add snapshot-to-domain pipeline test; docs: align matching rule notes` and the trailer.
@@ -1116,7 +1211,7 @@ Things M3 must add, none of which exist in M2:
   - (d) `subject_taken` returns ⚠️ (not ✅) when the curriculum covers the subject but the student didn't list it.
   - (e) Any non-official rule, route or scale fact makes ✅ impossible.
 - **R2. GDPR.** `Reason.student` / `studentConverted` embed grades and CEFR levels. MatchResults must never be logged, sent to Sentry or GoatCounter, or persisted server-side in the guest release. Recommend M3 test that Sentry `beforeSend` strips them. `console` is already banned in the domain.
-- **R3. Cost presentation.** month×12 (a calendar year) is still unconfirmed (Part A risk). `budgetFit` is `unknown` for any multi-currency estimate. With MAD as the secondary display, that means no FX, which is intended.
+- **R3. Cost presentation.** living costs use a 10-month academic year (decided 2026-09-29; `CostEstimate.academicYearMonths` exposes it). Housing is often paid for 12 months, so the UI must state the assumption next to the range. `budgetFit` is `unknown` for any multi-currency estimate. With MAD as the secondary display, that means no FX, which is intended.
 - **R4. Scholarships** linked in `program.scholarships` bypass the nationality filter by contract, so an ineligible-nationality scholarship can be listed. Consider intersecting with the nationality filter.
 - **R5.** No domain function filters programs by profile preferences (`studyLanguages` vs `teachingLanguages`, `institutionType`, `destinations`). M3 will need one; propose adding it to the contract before M3.
 - **Unverified tool facts:**

@@ -98,7 +98,7 @@ UniWay/
 │   │       └─ collections.ts             collection name → schema registry
 │   └─ domain/                            M2 (flat, no subfolders)
 │       ├─ types.ts facts.ts cefr.ts grades.ts route.ts rules.ts
-│       ├─ match.ts intakes.ts costs.ts scholarships.ts checklist.ts
+│       ├─ match.ts intakes.ts filter.ts costs.ts scholarships.ts checklist.ts
 └─ tests/
     ├─ domain/boundary.test.ts            M0/T3 (canary)
     ├─ i18n/direction.test.ts messages.test.ts   M0/T5
@@ -566,7 +566,8 @@ export type CostLine = { category: CostCategory; status: "ok" | "missing";
   per: "month" | "year" | "semester" | "once" | null; scope: "program" | "city" | "country" | null; fact: FactRef | null };
 export type BudgetFit = "within" | "straddles" | "above" | "unknown";
 export type CostEstimate = { programSlug: Slug; lines: CostLine[] /* 7, fixed order above */;
-  totals: Array<{ min: number; max: number; currency: Currency }>; complete: boolean; budgetFit: BudgetFit };
+  totals: Array<{ min: number; max: number; currency: Currency }>; complete: boolean; budgetFit: BudgetFit;
+  academicYearMonths: number /* 10: monthly lines are multiplied by this (decision 2026-09-29) */ };
 
 export const CHECKLIST_STEP_IDS = ["documents", "translation", "language_exam", "application_account", "submit",
   "scholarships", "financial_documents", "accommodation", "visa", "departure"] as const;
@@ -606,6 +607,13 @@ export function matchProgram(input: MatchInput): MatchResult;
 export function aggregateMatchStatus(reasons: readonly Reason[]): MatchStatus; // any fail → not_satisfied; else any unknown → check; else satisfied
 // intakes.ts
 export function nextIntake(program: Program, now: IsoDate): IntakeStatus;
+// filter.ts (added 2026-09-29; see Part C T16A)
+export type PreferenceMismatch = "destination" | "field" | "institution_type" | "study_language";
+export type ProgramFilterResult = { kept: Program[]; excluded: Array<{ programSlug: Slug; mismatches: PreferenceMismatch[] }> };
+export function preferenceMismatches(profile: Profile, program: Program, now: IsoDate): PreferenceMismatch[];
+export function filterPrograms(profile: Profile, programs: readonly Program[], now: IsoDate): ProgramFilterResult;
+  // hides a program only on a definite mismatch: destinations (empty=all), fields, institutionType (any=all),
+  // study language only when teachingLanguages is non-null AND decisive (official, not stale). Budget is not a filter.
 // costs.ts
 export type CostInput = { program: Program; costProfiles: readonly CostProfile[]; budget: Budget | null; now: IsoDate };
 export function estimateCost(input: CostInput): CostEstimate;
@@ -662,10 +670,10 @@ export function generateChecklist(input: ChecklistInput): Checklist;
   - Tuition comes from `program.tuition`: semester × 2, year × 1, null value → `missing`.
   - A cost line is present iff its key exists AND its value is non-null; a null-valued city line falls through to the country line; a missing line reports the null-valued fact (city first) as `fact`/`scope` if one exists, else null.
   - Each living category uses the city profile `(program.country, program.city)` if it has that line, else the country profile (`city: null`), else `missing`.
-  - Annualising: month × 12, year × 1, once × 1.
+  - Annualising: month × `ACADEMIC_YEAR_MONTHS` (= 10, a 10-month academic year; decision 2026-09-29), year × 1, once × 1. `CostEstimate.academicYearMonths` exposes the value so the UI states the assumption.
   - `totals` are summed per currency over `ok` lines, with no FX conversion.
   - `complete` means all 7 lines are ok.
-  - `budgetFit` is `unknown` if the budget is null, the estimate is incomplete, there is more than one currency, or the currency differs. Otherwise, with the budget annualised (month × 12): `within` if `max <= budget`, `above` if `min > budget`, else `straddles`.
+  - `budgetFit` is `unknown` if the budget is null, the estimate is incomplete, there is more than one currency, or the currency differs. Otherwise, with the budget annualised (month × `ACADEMIC_YEAR_MONTHS`): `within` if `max <= budget`, `above` if `min > budget`, else `straddles`.
   - Stale facts still count; their freshness is visible in the FactRef. `budgetFit` never affects match status.
 - **nextIntake.**
   - `upcoming` is the earliest intake with `applicationDeadline >= now` (inclusive).
@@ -1809,7 +1817,7 @@ EOF
 
   Please confirm these or say which to change before Part C is written.
 - **Sensitive territory: personal data.** `Profile` holds nationality, grades, language levels and budget. The domain override bans `console`, and the profile stays client-side (localStorage) through M2. No persistence or logging is planned in M0–M2.
-- **Cost presentation.** Living costs are annualised as month × 12 (a calendar year, not a 10-month academic year). This is an assumption that affects every displayed range. Confirm it, or make months-per-year a sourced field on the cost profile.
+- **Cost presentation.** DECIDED 2026-09-29: living costs use a 10-month academic year (`ACADEMIC_YEAR_MONTHS = 10`). Housing is often paid for 12 months, so the UI must show the assumption next to every range.
 - **Fields `min(1)`.** The profile requires at least one field; destinations may be empty (meaning all). Confirm.
 - **UI copy.** The French uses "vous". The Arabic brand is rendered "جسر". The Arabic strings were written by the planner and need a fluent MSA speaker's review; `messages/*.json` has no draft/reviewed flag, unlike data text.
 - **Tool facts I could not execute (no shell in the planner).** These were checked against web docs (2026-08/09), not run, and each task has a ctx7 step to re-verify:
