@@ -2,6 +2,10 @@ import { describe, expect, it } from "vitest";
 
 import type { CollectionName } from "@/data-schema/records/collections";
 import { COLLECTIONS } from "@/data-schema/records/collections";
+import {
+  CostProfileRecordSchema,
+  LIVING_COST_CATEGORIES,
+} from "@/data-schema/records/cost-profile";
 
 type Obj = Record<string, unknown>;
 
@@ -167,23 +171,35 @@ const BUILDERS: Record<CollectionName, () => Obj> = {
 };
 const ENTRIES = Object.entries(BUILDERS) as [CollectionName, () => Obj][];
 const WITH_SOURCES = ENTRIES.filter(([, build]) => "sources" in build());
+const WITH_RECORD_PROVENANCE = ENTRIES.filter(([, build]) => "info_kind" in build());
 
 const VALID: [CollectionName, () => Obj][] = ENTRIES;
 
-const INVALID: [string, CollectionName, () => Obj][] = [
-  ["grading scale min > max", "grading-scales", () => gradingScale({ min: 20, max: 0 })],
-  ["grading scale min == max", "grading-scales", () => gradingScale({ min: 5, max: 5, pass: 5 })],
-  ["grading scale pass above max", "grading-scales", () => gradingScale({ pass: 21 })],
-  ["grading scale pass below min", "grading-scales", () => gradingScale({ pass: -1 })],
+// Dotted issue path the schema must report (a failing row must fail for the reason it names).
+type Expect = { path: string; code?: string };
+const E = (path: string, code?: string): Expect => (code === undefined ? { path } : { path, code });
+
+const INVALID: [string, CollectionName, () => Obj, Expect][] = [
+  ["grading scale min > max", "grading-scales", () => gradingScale({ min: 20, max: 0 }), E("min")],
+  [
+    "grading scale min == max",
+    "grading-scales",
+    () => gradingScale({ min: 5, max: 5, pass: 5 }),
+    E("min"),
+  ],
+  ["grading scale pass above max", "grading-scales", () => gradingScale({ pass: 21 }), E("pass")],
+  ["grading scale pass below min", "grading-scales", () => gradingScale({ pass: -1 }), E("pass")],
   [
     "conversion linear without params",
     "grade-conversions",
     () => gradeConversion({ conversion: { method: "linear", params: {} } }),
+    E("conversion.params.fromMin", "invalid_type"),
   ],
   [
     "conversion unknown method",
     "grade-conversions",
     () => gradeConversion({ conversion: { method: "magic", params: {} } }),
+    E("conversion.method", "invalid_union"),
   ],
   [
     "conversion modified_bavarian negative truncateDecimals",
@@ -195,6 +211,7 @@ const INVALID: [string, CollectionName, () => Obj][] = [
           params: { nMax: 1, nMin: 4, truncateDecimals: -1 },
         },
       }),
+    E("conversion.params.truncateDecimals"),
   ],
   [
     "conversion linear fromMin == fromMax",
@@ -206,6 +223,7 @@ const INVALID: [string, CollectionName, () => Obj][] = [
           params: { fromMin: 5, fromMax: 5, toMin: 0, toMax: 1 },
         },
       }),
+    E("conversion.params", "custom"),
   ],
   [
     "conversion modified_bavarian nMax == nMin",
@@ -217,12 +235,19 @@ const INVALID: [string, CollectionName, () => Obj][] = [
           params: { nMax: 2, nMin: 2, truncateDecimals: null },
         },
       }),
+    E("conversion.params", "custom"),
   ],
-  ["credential type empty tracks", "credential-types", () => credentialType({ tracks: [] })],
+  [
+    "credential type empty tracks",
+    "credential-types",
+    () => credentialType({ tracks: [] }),
+    E("tracks"),
+  ],
   [
     "credential type track name as LocalizedText",
     "credential-types",
     () => credentialType({ tracks: [{ slug: "xx-test-track", name: T("Track"), subjects: null }] }),
+    E("tracks.0.name", "invalid_type"),
   ],
   [
     "credential type duplicate track slugs",
@@ -234,24 +259,52 @@ const INVALID: [string, CollectionName, () => Obj][] = [
           { slug: "xx-test-track", name: "B", subjects: ["xx-test-subject"] },
         ],
       }),
+    E("tracks", "custom"),
   ],
-  ["channel kind email", "application-channels", () => applicationChannel({ kind: "email" })],
+  [
+    "channel kind email",
+    "application-channels",
+    () => applicationChannel({ kind: "email" }),
+    E("kind"),
+  ],
   [
     "channel missing accountRequired",
     "application-channels",
     () => omit(applicationChannel(), "accountRequired"),
+    E("accountRequired", "invalid_type"),
   ],
-  ["route level master", "admission-routes", () => admissionRoute({ level: "master" })],
-  ["route outcome maybe", "admission-routes", () => admissionRoute({ outcome: "maybe" })],
-  ["institution type mixed", "institutions", () => institution({ type: "mixed" })],
+  ["route level master", "admission-routes", () => admissionRoute({ level: "master" }), E("level")],
+  [
+    "route outcome maybe",
+    "admission-routes",
+    () => admissionRoute({ outcome: "maybe" }),
+    E("outcome"),
+  ],
+  ["institution type mixed", "institutions", () => institution({ type: "mixed" }), E("type")],
   [
     "program tuition period month",
     "programs",
     () => program({ tuition: F({ amountMinor: 1, currency: CURRENCY, period: "month" }) }),
+    E("tuition.value.period"),
   ],
-  ["program missing tuition", "programs", () => omit(program(), "tuition")],
-  ["program durationYears 0", "programs", () => program({ durationYears: F(0) })],
-  ["program empty teachingLanguages", "programs", () => program({ teachingLanguages: F([]) })],
+  [
+    "program missing tuition",
+    "programs",
+    () => omit(program(), "tuition"),
+    E("tuition", "invalid_type"),
+  ],
+  [
+    "program durationYears 0",
+    "programs",
+    () => program({ durationYears: F(0) }),
+    E("durationYears.value"),
+  ],
+  [
+    "program empty teachingLanguages",
+    "programs",
+    () => program({ teachingLanguages: F([]) }),
+    E("teachingLanguages.value"),
+  ],
   [
     "program intake impossible date",
     "programs",
@@ -261,38 +314,50 @@ const INVALID: [string, CollectionName, () => Obj][] = [
           { startDate: "2027-02-30", applicationOpens: null, applicationDeadline: null },
         ]),
       }),
+    E("intakes.value.0.startDate"),
   ],
   [
     "program duplicate document slugs",
     "programs",
     () => program({ documents: F([document("xx-test-doc"), document("xx-test-doc")]) }),
+    E("documents.value", "custom"),
   ],
   [
     "program estimate fact without basis",
     "programs",
     () => program({ durationYears: { ...F(3), info_kind: "estimate" } }),
+    E("durationYears.basis", "custom"),
   ],
   [
     "cost line per week",
     "cost-profiles",
     () => costProfile({ lines: { housing: F({ ...COST, per: "week" }) } }),
+    E("lines.housing.value.per"),
   ],
   [
     "cost line min > max",
     "cost-profiles",
     () => costProfile({ lines: { housing: F({ ...COST, min: 300, max: 200 }) } }),
+    E("lines.housing.value", "custom"),
   ],
   [
     "cost line estimate without basis",
     "cost-profiles",
     () => costProfile({ lines: { housing: { ...F(COST), info_kind: "estimate" } } }),
+    E("lines.housing.basis", "custom"),
   ],
   [
     "cost lines.rent unknown category",
     "cost-profiles",
     () => costProfile({ lines: { rent: F(COST) } }),
+    E("lines", "unrecognized_keys"),
   ],
-  ["scholarship empty destinations", "scholarships", () => scholarship({ destinations: [] })],
+  [
+    "scholarship empty destinations",
+    "scholarships",
+    () => scholarship({ destinations: [] }),
+    E("destinations"),
+  ],
   [
     "scholarship support amount per decade",
     "scholarships",
@@ -303,34 +368,60 @@ const INVALID: [string, CollectionName, () => Obj][] = [
           covers: [],
         }),
       }),
+    E("support.value.amount.per"),
+  ],
+  [
+    "scholarship support amount min > max",
+    "scholarships",
+    () =>
+      scholarship({
+        support: F({
+          amount: { min: 500, max: 100, currency: CURRENCY, per: "month" },
+          covers: [],
+        }),
+      }),
+    E("support.value.amount", "custom"),
   ],
   [
     "scholarship covers food",
     "scholarships",
     () => scholarship({ support: F({ amount: null, covers: ["food"] }) }),
+    E("support.value.covers.0"),
   ],
   [
     "scholarship duplicate document slugs",
     "scholarships",
     () => scholarship({ documents: F([document("xx-test-doc"), document("xx-test-doc")]) }),
+    E("documents.value", "custom"),
   ],
-  ["country lowercase code", "countries", () => country({ code: "xa" })],
-  ...ENTRIES.map(([name, build]): [string, CollectionName, () => Obj] => [
+  ["country lowercase code", "countries", () => country({ code: "xa" }), E("code")],
+  ...ENTRIES.map(([name, build]): [string, CollectionName, () => Obj, Expect] => [
     `${name} with an extra key`,
     name,
     () => ({ ...build(), extra: true }),
+    E("", "unrecognized_keys"),
   ]),
-  ...WITH_SOURCES.map(([name, build]): [string, CollectionName, () => Obj] => [
+  ...WITH_SOURCES.map(([name, build]): [string, CollectionName, () => Obj, Expect] => [
     `${name} missing sources`,
     name,
     () => omit(build(), "sources"),
+    E("sources", "invalid_type"),
   ]),
+  ...WITH_RECORD_PROVENANCE.flatMap(([name, build]) =>
+    (["source", "info_kind"] as const).map((key): [string, CollectionName, () => Obj, Expect] => [
+      `${name} missing ${key}`,
+      name,
+      () => omit(build(), key),
+      E(key, key === "source" ? "invalid_type" : "invalid_value"),
+    ]),
+  ),
 ];
 
 describe("record schemas", () => {
   it("covers every collection with a builder", () => {
     expect(ENTRIES).toHaveLength(13);
     expect(WITH_SOURCES).toHaveLength(9);
+    expect(WITH_RECORD_PROVENANCE).toHaveLength(6);
   });
 
   it.each(VALID)("%s: accepts a minimal valid record", (collection, build) => {
@@ -339,8 +430,16 @@ describe("record schemas", () => {
     expect(result.success).toBe(true);
   });
 
-  it.each(INVALID)("rejects: %s", (_label, collection, build) => {
-    expect(COLLECTIONS[collection].schema.safeParse(build()).success).toBe(false);
+  it.each(INVALID)("rejects: %s", (_label, collection, build, expected) => {
+    const result = COLLECTIONS[collection].schema.safeParse(build());
+    expect(result.success).toBe(false);
+    const issues = result.error?.issues ?? [];
+    const matched = issues.some(
+      (issue) =>
+        issue.path.join(".") === expected.path &&
+        (expected.code === undefined || issue.code === expected.code),
+    );
+    expect(matched, JSON.stringify(issues.map((i) => [i.path.join("."), i.code]))).toBe(true);
   });
 
   it("accepts a linear conversion and a modified_bavarian conversion", () => {
@@ -359,6 +458,21 @@ describe("record schemas", () => {
     const { schema } = COLLECTIONS["grade-conversions"];
     expect(schema.safeParse(linear).success).toBe(true);
     expect(schema.safeParse(bavarian).success).toBe(true);
+  });
+
+  it("accepts a scholarship support amount with equal bounds", () => {
+    const record = scholarship({
+      support: F({
+        amount: { min: 100, max: 100, currency: CURRENCY, per: "month" },
+        covers: [],
+      }),
+    });
+    expect(COLLECTIONS.scholarships.schema.safeParse(record).success).toBe(true);
+  });
+
+  it("keeps cost profile line keys equal to LIVING_COST_CATEGORIES", () => {
+    const lineKeys = Object.keys(CostProfileRecordSchema.shape.lines.shape);
+    expect([...lineKeys].sort()).toEqual([...LIVING_COST_CATEGORIES].sort());
   });
 });
 

@@ -30,6 +30,7 @@ export const ScholarshipSupportSchema = z.strictObject({
       currency: CurrencySchema,
       per: z.enum(["month", "year", "once", "total"]),
     })
+    .refine((a) => a.min <= a.max, { message: "min must be <= max" })
     .nullable(),
   covers: z.array(z.enum(SUPPORT_COVERS)),
 });
