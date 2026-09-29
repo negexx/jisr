@@ -28,13 +28,13 @@
       },
       "hint": {
         "satisfied": "Tout ce que nous avons publié pour ce programme semble correspondre à votre profil. Confirmez-le sur la page officielle avant de candidater.",
-        "check": "Nous n'avons pas pu tout confirmer. Voyez ci-dessous ce qu'il faut vérifier, puis confirmez-le sur la page officielle.",
+        "check": "Nous n'avons pas pu tout confirmer. Consultez ci-dessous ce qu'il faut vérifier, puis confirmez-le sur la page officielle.",
         "not_satisfied": "Au moins une condition publiée ne correspond pas à votre profil. Les conditions peuvent changer : vérifiez la page officielle."
       }
     },
     "route": {
-      "direct": "D'après les règles que nous avons publiées, votre Bac semble donner un accès direct à une licence dans ce pays. Confirmez les conditions actuelles sur la page d'admission officielle.",
-      "foundation": "Dans ce pays, votre Bac peut ne pas donner un accès direct à une licence. Une année de fondation peut être nécessaire d'abord : une année préparatoire avant la licence, comme le Studienkolleg allemand. Vérifiez sur la page d'admission officielle du programme ou de l'université si cela vous concerne et comment obtenir une place.",
+      "direct": "D'après les règles que nous avons publiées, votre Bac semble donner un accès direct à une licence dans ce pays. Confirmez les conditions actuelles sur la page d'admission officielle. Vous candidatez toujours à chaque programme séparément.",
+      "foundation": "Dans ce pays, votre Bac peut ne pas donner un accès direct à une licence. Une année préparatoire peut être nécessaire d'abord : une année avant la licence, comme le Studienkolleg allemand. Vérifiez sur la page d'admission officielle du programme ou de l'université si cela vous concerne et comment obtenir une place.",
       "not_eligible": "Selon les règles que nous avons publiées, votre Bac ne donne pas accès à une licence dans ce pays. Les règles peuvent changer : vérifiez la page d'admission officielle.",
       "check": "Nous n'avons pas confirmé comment votre Bac est traité dans ce pays. Vérifiez la page d'admission officielle.",
       "missing": "Nous n'avons pas encore publié comment votre Bac est traité pour ce pays : vérifiez la page d'admission officielle."
@@ -57,11 +57,11 @@
         "below_threshold": "Votre valeur ({student}) est inférieure au minimum publié ({required}). Les conditions peuvent changer : vérifiez la page officielle.",
         "track_not_accepted": "Votre filière de Bac ({student}) ne figure pas dans la liste publiée pour ce programme ({required}). Vérifiez la page officielle au cas où elle aurait changé.",
         "missing_student_value": "Il nous manque une information de votre part pour cette condition. Complétez votre profil, puis vérifiez la source officielle.",
-        "threshold_unpublished": "Le minimum de cette condition n'est pas publié. Vérifiez-le sur la page d'admission officielle.",
+        "threshold_unpublished": "Le minimum de cette condition n'est pas publié dans les sources consultées. Vérifiez-le sur la page d'admission officielle.",
         "no_scale_conversion": "Nous n'avons pas de méthode publiée pour convertir votre note vers l'échelle utilisée ici. Vérifiez sur la page d'admission officielle comment votre note est traitée.",
         "stale_source": "La source de cette condition n'a pas été vérifiée récemment. Vérifiez la page officielle avant de vous y fier.",
         "non_official_source": "Cette condition ne vient pas d'une source officielle. Vérifiez la page officielle pour la confirmer.",
-        "route_foundation": "Votre Bac peut mener à une année de fondation avant la licence. Vérifiez sur la page d'admission officielle ce qui s'applique à vous.",
+        "route_foundation": "Votre Bac peut mener à une année préparatoire avant la licence. Vérifiez sur la page d'admission officielle ce qui s'applique à vous.",
         "route_not_eligible": "Selon les règles publiées, votre Bac ne donne pas accès à une licence ici. Les règles peuvent changer : vérifiez la page officielle.",
         "route_check": "Nous n'avons pas confirmé comment votre Bac est traité dans ce pays. Vérifiez la page d'admission officielle.",
         "coverage_partial": "Nous n'avons pas publié toutes les conditions de ce programme. Vérifiez la page officielle pour le reste.",
@@ -81,7 +81,7 @@
         },
         "translation": {
           "title": "Traduire les documents",
-          "meaning": "Certains documents peuvent demander une traduction. Vérifiez ce que le programme exige."
+          "meaning": "Des documents peuvent demander une traduction. Vérifiez ce que le programme exige."
         },
         "language_exam": {
           "title": "Examen de langue",
@@ -153,8 +153,8 @@
         "country": "Selon le pays"
       },
       "tenMonthNote": "Les coûts mensuels sont comptés sur {months} mois d'études. Le logement se paie souvent 12 mois : vérifiez la période de loyer.",
-      "missingLine": "Non publié, à vérifier",
-      "partialTotal": "Total partiel : certains coûts ne sont pas inclus",
+      "missingLine": "Non publié dans les sources consultées, à confirmer",
+      "partialTotal": "Total partiel : des coûts ne sont pas inclus",
       "estimateTag": "Estimation"
     },
     "budgetFit": {
@@ -184,11 +184,11 @@
     },
     "freshness": {
       "fresh": "Vérifié récemment",
-      "aging": "Vérifié il y a un certain temps",
+      "aging": "Vérifié il y a un moment",
       "stale": "Peut être dépassé, vérifiez la page officielle",
       "verifiedOn": "Vérifié le {date}",
-      "bannerAging": "Certaines informations de cette page ont été vérifiées il y a un certain temps. Consultez les pages officielles avant de décider.",
-      "bannerStale": "Certaines informations de cette page peuvent être dépassées. Consultez les pages officielles avant de vous y fier."
+      "bannerAging": "Des informations de cette page ont été vérifiées il y a un moment. Consultez les pages officielles avant de décider.",
+      "bannerStale": "Des informations de cette page peuvent être dépassées. Consultez les pages officielles avant de vous y fier."
     },
     "coverage": {
       "partial": "Nous n'avons pas publié toutes les conditions de ce programme. Vérifiez la page officielle avant de vous y fier.",

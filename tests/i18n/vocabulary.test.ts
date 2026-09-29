@@ -1,6 +1,12 @@
 import { describe, expect, expectTypeOf, it } from "vitest";
 
-import type { MatchStatus, ReasonCode, ReasonKind, RuleOutcome } from "@/domain/types";
+import type {
+  ChecklistReasonCode,
+  MatchStatus,
+  ReasonCode,
+  ReasonKind,
+  RuleOutcome,
+} from "@/domain/types";
 import {
   BUDGET_FITS,
   CHECKLIST_REASON_CODES,
@@ -91,18 +97,83 @@ function placeholders(message: string): string[] {
   return [...names].sort();
 }
 
-const TO_CHECK_REASON_CODES = [
-  "missing_student_value",
-  "threshold_unpublished",
-  "no_scale_conversion",
-  "stale_source",
-  "non_official_source",
-  "route_foundation",
-  "route_check",
-  "coverage_partial",
-  "manual_check",
-] as const satisfies readonly ReasonCode[];
+// Hand-maintained: no type maps a ReasonCode or ChecklistReasonCode to its outcome, so when a code
+// is added, decide here whether its message tells the student to check something.
+const TO_CHECK_REASON_KEYS = [
+  ...(
+    [
+      "missing_student_value",
+      "threshold_unpublished",
+      "no_scale_conversion",
+      "stale_source",
+      "non_official_source",
+      "route_foundation",
+      "route_check",
+      "coverage_partial",
+      "manual_check",
+    ] as const satisfies readonly ReasonCode[]
+  ).map((code) => `domain.reason.code.${code}`),
+  ...(
+    ["unknown_data", "no_scholarships_listed"] as const satisfies readonly ChecklistReasonCode[]
+  ).map((code) => `domain.checklist.reason.${code}`),
+];
 
+const CHECK_VERB: Record<Locale, RegExp> = {
+  en: /check|confirm|read/i,
+  fr: /vérifiez|confirmez|consultez|lisez/i,
+  ar: /تحقق|تأكد|اقرأ|راجع/u,
+};
+
+// One bad sentence per forbidden pattern: proves the pattern list catches the paraphrases.
+const BAD_SAMPLES: Record<Locale, string[]> = {
+  en: [
+    "You'll be fine",
+    "You qualify for this program",
+    "Qualified students only",
+    "You meet the requirements",
+    "You are accepted here",
+    "You will be accepted",
+    "You are ready to apply",
+    "This program is safe for you",
+    "It is certain that you pass",
+    "Certainly a good match",
+    "We are sure you pass",
+    "Your chances are good",
+    "You are eligible",
+    "You have been admitted",
+    "Admission guaranteed",
+    "We guarantee a place",
+    "You will get in",
+    "You can apply now",
+  ],
+  fr: [
+    "Vous êtes éligible",
+    "Un dossier admissible",
+    "Vous êtes admis",
+    "Admission garantie",
+    "Vous serez pris",
+    "Vous pouvez candidater",
+    "Vous êtes qualifié pour ce programme",
+    "Une place assurée",
+    "Vous êtes assuré de réussir",
+    "C'est certain",
+    "Certains étudiants passent",
+    "Vous êtes accepté dans ce programme",
+    "Vous êtes acceptée en licence",
+  ],
+  ar: [
+    "أنت مؤهل لهذا البرنامج",
+    "أنت مقبول",
+    "قبولك مضمون",
+    "نضمن لك مقعدًا",
+    "نحن نضمن ذلك",
+    "ضمان القبول",
+    "يحق لك التقديم",
+    "يمكنك التقديم الآن",
+  ],
+};
+
+// "accepted" stays allowed where it refers to an accepted language certificate.
 const FORBIDDEN: Record<Locale, RegExp[]> = {
   en: [
     /eligib/i,
@@ -110,11 +181,30 @@ const FORBIDDEN: Record<Locale, RegExp[]> = {
     /admission guarantee/i,
     /guarantee/i,
     /\byou will\b/i,
+    /you'?ll\b/i,
     /\byou can apply\b/i,
     /\bchances?\b/i,
+    /\bqualif/i,
+    /\byou meet\b/i,
+    /\b(you are|will be) accepted\b/i,
+    /\bready to apply\b/i,
+    /\bsafe\b/i,
+    /\bcertain(ly)?\b/i,
+    /\bsure\b/i,
   ],
-  fr: [/éligib/i, /\badmise?s?\b/i, /garanti/i, /\bvous serez\b/i],
-  ar: [/مؤهل/u, /مقبول/u, /مضمون/u],
+  fr: [
+    /éligib|eligib/i,
+    /\badmise?s?\b/i,
+    /admissib/i,
+    /garanti/i,
+    /\bvous serez\b/i,
+    /\bvous pouvez candidater\b/i,
+    /\bqualifié/i,
+    /\bassuré/i,
+    /\bcertain/i,
+    /accepté(e|s)? (dans|en)\b/i,
+  ],
+  ar: [/قبول/u, /ضمان|نضمن|تضمن|مضمون/u, /يحق لك/u, /مؤهل/u, /يمكنك التقديم/u],
 };
 
 const OFFICIAL_OR_SOURCE: Record<Locale, RegExp> = {
@@ -276,11 +366,29 @@ describe("trust wording", () => {
     for (const [key, value] of domain[locale]) expect(value, key).not.toMatch(/[–—]/);
   });
 
-  it.each(LOCALES)("%s says what to check and where for every to-check reason code", (locale) => {
-    for (const code of TO_CHECK_REASON_CODES) {
-      const key = `domain.reason.code.${code}`;
+  it.each(LOCALES)("%s says what to check and where for every to-check reason", (locale) => {
+    for (const key of TO_CHECK_REASON_KEYS) {
+      expect(domain[locale].get(key), key).toMatch(CHECK_VERB[locale]);
       expect(domain[locale].get(key), key).toMatch(OFFICIAL_OR_SOURCE[locale]);
     }
+  });
+
+  it.each(LOCALES)("%s forbidden patterns catch every sample bad sentence", (locale) => {
+    const uncaught = BAD_SAMPLES[locale].filter(
+      (sample) => !FORBIDDEN[locale].some((pattern) => pattern.test(sample)),
+    );
+    expect(uncaught).toEqual([]);
+  });
+
+  it("uses الإجازة for the Bachelor's level in Arabic, never البكالوريوس next to البكالوريا", () => {
+    const offenders = [...domain.ar].filter(
+      ([, value]) => value.includes("البكالوريوس") || value.includes("بكالوريوس"),
+    );
+    expect(offenders).toEqual([]);
+  });
+
+  it("states that the student applies to each program separately on a direct route", () => {
+    expect(domain.en.get("domain.route.direct")).toContain("You still apply to each program.");
   });
 
   it.each(LOCALES)("%s points to the official page for every route except direct", (locale) => {
@@ -335,7 +443,7 @@ describe("required wording (en)", () => {
       "domain.route.missing",
       "We have not published how your Bac is treated for this country yet: check the official admission page.",
     ],
-    ["domain.cost.missingLine", "Not published, to be checked"],
+    ["domain.cost.missingLine", "Not published in the sources we checked, to be confirmed"],
     ["domain.cost.partialTotal", "Partial total: some costs are not included"],
     ["domain.infoKind.official.label", "Official"],
     ["domain.infoKind.estimate.label", "Estimate"],

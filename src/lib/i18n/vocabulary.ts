@@ -10,6 +10,7 @@ import type {
   CostCategory,
   CostLine,
   IntakeStatus,
+  MatchResult,
   MatchStatus,
   ReasonCode,
   ReasonKind,
@@ -49,7 +50,10 @@ export const ROUTE_OUTCOMES = [
 ] as const satisfies readonly RouteOutcome[];
 
 // "missing" is UI-only: MatchResult.route is "missing" when no admission route is published.
-export const ROUTE_KEYS = [...ROUTE_OUTCOMES, "missing"] as const;
+export const ROUTE_KEYS = [
+  ...ROUTE_OUTCOMES,
+  "missing",
+] as const satisfies readonly MatchResult["route"][];
 
 export const REASON_CODES = [
   "ok",
@@ -108,6 +112,9 @@ export const COST_CATEGORIES = [
   "setup",
 ] as const satisfies readonly CostCategory[];
 
+// The `per` labels ("per month", "par mois", "في الشهر") are stand-alone phrases: render them as a
+// separate element or through a dedicated message, never concatenated to an amount (word order
+// differs in Arabic).
 export const COST_PERS = [
   "month",
   "year",
@@ -142,6 +149,7 @@ export const TEXT_NOTES = [
 export type VocabularyIsExhaustive = [
   Assert<Exhaustive<MatchStatus, typeof MATCH_STATUSES>>,
   Assert<Exhaustive<RouteOutcome, typeof ROUTE_OUTCOMES>>,
+  Assert<Exhaustive<MatchResult["route"], typeof ROUTE_KEYS>>,
   Assert<Exhaustive<ReasonCode, typeof REASON_CODES>>,
   Assert<Exhaustive<ReasonKind, typeof REASON_KINDS>>,
   Assert<Exhaustive<RuleOutcome, typeof RULE_OUTCOMES>>,

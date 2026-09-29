@@ -33,7 +33,7 @@
       }
     },
     "route": {
-      "direct": "Based on the rules we published, your Bac appears to give direct access to a Bachelor's in this country. Confirm the current conditions on the official admission page.",
+      "direct": "Based on the rules we published, your Bac appears to give direct access to a Bachelor's in this country. Confirm the current conditions on the official admission page. You still apply to each program.",
       "foundation": "In this country, your Bac may not give direct access to a Bachelor's. You may need a foundation year first: a preparatory year before the Bachelor's, like the German Studienkolleg. Check on the official admission page of the program or university whether it applies to you and how to get a place.",
       "not_eligible": "The rules we published say your Bac does not give access to a Bachelor's in this country. Rules can change, so check the official admission page.",
       "check": "We have not confirmed how your Bac is treated in this country. Check the official admission page.",
@@ -57,7 +57,7 @@
         "below_threshold": "Your value ({student}) is below the published minimum ({required}). Requirements can change, so check the official page.",
         "track_not_accepted": "Your Bac track ({student}) is not in the list published for this program ({required}). Check the official page in case it has changed.",
         "missing_student_value": "We do not have the information from you that this requirement needs. Complete your profile, then check the official source.",
-        "threshold_unpublished": "The minimum for this requirement is not published. Check it on the official admission page.",
+        "threshold_unpublished": "The minimum for this requirement is not published in the sources we checked. Check it on the official admission page.",
         "no_scale_conversion": "We have no published way to convert your grade to the scale used here. Check on the official admission page how your grade is treated.",
         "stale_source": "The source for this requirement was not verified recently. Check the official page before you rely on it.",
         "non_official_source": "This requirement does not come from an official source. Check the official page to confirm it.",
@@ -153,7 +153,7 @@
         "country": "Based on the country"
       },
       "tenMonthNote": "Monthly costs are counted for {months} months of study. Housing is often paid for 12 months, so check the rent period.",
-      "missingLine": "Not published, to be checked",
+      "missingLine": "Not published in the sources we checked, to be confirmed",
       "partialTotal": "Partial total: some costs are not included",
       "estimateTag": "Estimate"
     },
