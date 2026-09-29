@@ -3,7 +3,6 @@ import { type Profile, ProfileSchema } from "@/data-schema/profile";
 import { clearDraft } from "./draft";
 import {
   clearLocalData,
-  DRAFT_KEY,
   decodeProfile,
   getLocalStorage,
   PROFILE_KEY,
@@ -65,13 +64,15 @@ export function createProfileStore(getStorage: () => StorageLike | null): Profil
 
     let state: ProfileState;
     let evidence: string;
-    if (memoryProfile) {
+    if (memoryProfile && (writeFailed || !readable)) {
       state = { status: "ok", profile: memoryProfile, storageAvailable };
       evidence = "memory";
     } else if (!readable) {
       state = { status: "none", storageAvailable };
       evidence = "";
     } else {
+      // Storage is readable and holds the last save: it is authoritative again.
+      memoryProfile = null;
       const stored = decodeProfile(raw);
       if (stored.status === "reset" && storage) removeQuietly(storage, PROFILE_KEY);
       if (stored.status === "reset") resetReason = stored.reason;
@@ -105,13 +106,13 @@ export function createProfileStore(getStorage: () => StorageLike | null): Profil
     for (const listener of [...listeners]) listener();
   }
 
+  // The draft is not part of the state, so a draft-key event is deliberately not handled.
   function onStorageEvent(event: StorageEvent): void {
-    if (event.key !== null && event.key !== PROFILE_KEY && event.key !== DRAFT_KEY) return;
-    if (event.key !== DRAFT_KEY) {
-      memoryProfile = null;
-      writeFailed = false;
-      refresh();
-    }
+    if (event.key !== null && event.key !== PROFILE_KEY) return;
+    if (event.storageArea !== null && event.storageArea !== resolveStorage()) return;
+    memoryProfile = null;
+    writeFailed = false;
+    refresh();
     notify();
   }
 
@@ -123,8 +124,10 @@ export function createProfileStore(getStorage: () => StorageLike | null): Profil
     getServerSnapshot: () => UNHYDRATED,
     subscribe(listener) {
       listeners.add(listener);
-      if (listeners.size === 1 && typeof window !== "undefined") {
-        window.addEventListener("storage", onStorageEvent);
+      if (listeners.size === 1) {
+        // Without subscribers no storage event reaches us, so the cache may be stale.
+        refresh();
+        if (typeof window !== "undefined") window.addEventListener("storage", onStorageEvent);
       }
       return () => {
         listeners.delete(listener);
@@ -140,7 +143,9 @@ export function createProfileStore(getStorage: () => StorageLike | null): Profil
       const written = storage ? writeProfile(storage, parsed.data) : null;
       const persisted = storage !== null && written?.ok === true;
       if (storage && persisted) clearDraft(storage);
-      memoryProfile = persisted ? null : parsed.data;
+      // Removed best-effort so a reload cannot bring back the older profile this one replaced.
+      if (storage && !persisted) removeQuietly(storage, PROFILE_KEY);
+      memoryProfile = parsed.data;
       writeFailed = !persisted;
       resetReason = null;
       version += 1;

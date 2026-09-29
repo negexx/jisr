@@ -53,6 +53,8 @@ export type DraftWriteResult =
   | { ok: true }
   | { ok: false; reason: "invalid" | "storage_unavailable" };
 
+// The draft is not part of the store's state and other tabs are not told about it; only the profile
+// form should call this, and clearing the profile goes through the store (`clear`, `save`).
 export function readDraft(storage: StorageLike): ProfileDraft | null {
   let raw: string | null;
   try {
@@ -71,6 +73,8 @@ export function readDraft(storage: StorageLike): ProfileDraft | null {
   return null;
 }
 
+// The draft is not part of the store's state and other tabs are not told about it; only the profile
+// form should call this, and clearing the profile goes through the store (`clear`, `save`).
 export function writeDraft(storage: StorageLike, draft: unknown): DraftWriteResult {
   const parsed = DraftSchema.safeParse(draft);
   if (!parsed.success) return { ok: false, reason: "invalid" };
@@ -82,6 +86,8 @@ export function writeDraft(storage: StorageLike, draft: unknown): DraftWriteResu
   return { ok: true };
 }
 
+// The draft is not part of the store's state and other tabs are not told about it; only the profile
+// form should call this, and clearing the profile goes through the store (`clear`, `save`).
 export function clearDraft(storage: StorageLike): void {
   removeQuietly(storage, DRAFT_KEY);
 }

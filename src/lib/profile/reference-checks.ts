@@ -28,8 +28,9 @@ export function scaleForCredentialType(
   return type && core.gradingScales.find((scale) => scale.slug === type.gradingScale);
 }
 
-// Same bounds as the rule engine's range check (src/domain does not export it). NaN fails both
-// comparisons, so it counts as out of range.
+// Same bounds as the rule engine's range check (src/domain does not export it), deliberately
+// stricter for NaN: the engine's `value < min || value > max` lets NaN through, this rejects it.
+// Zod already rejects NaN in a profile, so it cannot occur in practice.
 function isWithinScale(value: number, scale: GradingScale): boolean {
   return value >= scale.min && value <= scale.max;
 }

@@ -72,6 +72,8 @@ export function removeQuietly(storage: StorageLike, key: string): void {
   }
 }
 
+// App code must go through the store (save/clear), not call this directly: a same-tab write fires
+// no `storage` event, so a direct write would leave the store's cached snapshot stale.
 export function readProfile(storage: StorageLike): StoredProfile {
   let raw: string | null;
   try {
@@ -84,6 +86,8 @@ export function readProfile(storage: StorageLike): StoredProfile {
   return stored;
 }
 
+// App code must go through the store (save/clear), not call this directly: a same-tab write fires
+// no `storage` event, so a direct write would leave the store's cached snapshot stale.
 export function writeProfile(storage: StorageLike, profile: unknown): WriteResult {
   const parsed = ProfileSchema.safeParse(profile);
   if (!parsed.success) return { ok: false, reason: "invalid" };
@@ -95,6 +99,8 @@ export function writeProfile(storage: StorageLike, profile: unknown): WriteResul
   return { ok: true };
 }
 
+// App code must go through the store (save/clear), not call this directly: a same-tab write fires
+// no `storage` event, so a direct write would leave the store's cached snapshot stale.
 export function clearLocalData(storage: StorageLike): void {
   const keys: string[] = [];
   try {

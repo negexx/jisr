@@ -9,7 +9,8 @@ export function forbidConsole(): void {
     spies = METHODS.map((method) => vi.spyOn(console, method).mockImplementation(() => {}));
   });
   afterEach(() => {
-    for (const spy of spies) expect(spy).not.toHaveBeenCalled();
+    const called = spies.filter((spy) => spy.mock.calls.length > 0).length;
     vi.restoreAllMocks();
+    expect(called).toBe(0);
   });
 }

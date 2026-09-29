@@ -126,12 +126,31 @@ describe("createProfileStore", () => {
       unsubscribe();
     });
 
-    it("notifies on a change to the draft key", () => {
+    it("ignores the draft key: the draft is not part of the profile state", () => {
       const store = createProfileStore(() => createFakeStorage());
       const listener = vi.fn();
       const unsubscribe = store.subscribe(listener);
       fireStorageEvent(DRAFT_KEY);
+      expect(listener).not.toHaveBeenCalled();
+      unsubscribe();
+    });
+
+    it("ignores events from a storage area other than the one in use", () => {
+      const store = createProfileStore(() => window.localStorage);
+      store.getSnapshot();
+      const listener = vi.fn();
+      const unsubscribe = store.subscribe(listener);
+      window.localStorage.setItem(PROFILE_KEY, JSON.stringify(profile()));
+      window.dispatchEvent(
+        new StorageEvent("storage", { key: PROFILE_KEY, storageArea: window.sessionStorage }),
+      );
+      expect(listener).not.toHaveBeenCalled();
+      expect(store.getSnapshot().status).toBe("none");
+      window.dispatchEvent(
+        new StorageEvent("storage", { key: PROFILE_KEY, storageArea: window.localStorage }),
+      );
       expect(listener).toHaveBeenCalledTimes(1);
+      expect(store.getSnapshot().status).toBe("ok");
       unsubscribe();
     });
 
@@ -155,6 +174,91 @@ describe("createProfileStore", () => {
       fireStorageEvent("jisr.saved-programs");
       expect(listener).not.toHaveBeenCalled();
       unsubscribe();
+    });
+  });
+
+  describe("without subscribers", () => {
+    function cachedStore() {
+      const storage = createFakeStorage();
+      storage.seed(PROFILE_KEY, JSON.stringify(profile()));
+      const store = createProfileStore(() => storage);
+      expect(store.getSnapshot().status).toBe("ok");
+      const unsubscribe = store.subscribe(() => {});
+      unsubscribe();
+      return { storage, store };
+    }
+
+    it("re-reads storage when a subscriber comes back after another tab replaced the profile", () => {
+      const { storage, store } = cachedStore();
+      const other = profile({ nationality: "XB" });
+      storage.seed(PROFILE_KEY, JSON.stringify(other));
+      fireStorageEvent(PROFILE_KEY);
+      const unsubscribe = store.subscribe(() => {});
+      expect(store.getSnapshot()).toEqual({ status: "ok", profile: other, storageAvailable: true });
+      unsubscribe();
+    });
+
+    it("re-reads storage when a subscriber comes back after another tab cleared the profile", () => {
+      const { storage, store } = cachedStore();
+      storage.removeItem(PROFILE_KEY);
+      fireStorageEvent(null);
+      const unsubscribe = store.subscribe(() => {});
+      expect(store.getSnapshot()).toEqual({ status: "none", storageAvailable: true });
+      unsubscribe();
+    });
+
+    it("keeps the same snapshot object when nothing changed while away", () => {
+      const { store } = cachedStore();
+      const before = store.getSnapshot();
+      const unsubscribe = store.subscribe(() => {});
+      expect(store.getSnapshot()).toBe(before);
+      unsubscribe();
+    });
+
+    it("keeps an unsaved in-memory profile when a subscriber comes back", () => {
+      const storage = createFakeStorage({ set: true });
+      const store = createProfileStore(() => storage);
+      store.save(profile());
+      const unsubscribe = store.subscribe(() => {});
+      expect(store.getSnapshot()).toMatchObject({ status: "ok", storageAvailable: false });
+      unsubscribe();
+    });
+  });
+
+  describe("storage event listener lifecycle", () => {
+    it("adds one listener for the first subscriber and removes it with the last", () => {
+      const add = vi.spyOn(window, "addEventListener");
+      const remove = vi.spyOn(window, "removeEventListener");
+      const storageCalls = (spy: typeof add) =>
+        spy.mock.calls.filter(([type]) => type === "storage").length;
+      const store = createProfileStore(() => createFakeStorage());
+
+      const first = store.subscribe(() => {});
+      const second = store.subscribe(() => {});
+      expect(storageCalls(add)).toBe(1);
+
+      first();
+      expect(storageCalls(remove)).toBe(0);
+      second();
+      expect(storageCalls(remove)).toBe(1);
+
+      const third = store.subscribe(() => {});
+      expect(storageCalls(add)).toBe(2);
+      third();
+      expect(storageCalls(remove)).toBe(2);
+    });
+
+    it("notifies each listener once per event even with two subscribers", () => {
+      const store = createProfileStore(() => createFakeStorage());
+      const a = vi.fn();
+      const b = vi.fn();
+      const unsubscribeA = store.subscribe(a);
+      const unsubscribeB = store.subscribe(b);
+      fireStorageEvent(PROFILE_KEY);
+      expect(a).toHaveBeenCalledTimes(1);
+      expect(b).toHaveBeenCalledTimes(1);
+      unsubscribeA();
+      unsubscribeB();
     });
   });
 
@@ -279,6 +383,32 @@ describe("createProfileStore", () => {
         profile: profile(),
         storageAvailable: false,
       });
+    });
+
+    it("removes an older stored profile the student just replaced", () => {
+      const storage = createFakeStorage({ set: true });
+      storage.seed(PROFILE_KEY, JSON.stringify(profile({ nationality: "XB" })));
+      const store = createProfileStore(() => storage);
+      expect(store.getSnapshot()).toMatchObject({ status: "ok", storageAvailable: true });
+      expect(store.save(profile())).toEqual({ ok: true, persisted: false });
+      expect(store.getSnapshot()).toEqual({
+        status: "ok",
+        profile: profile(),
+        storageAvailable: false,
+      });
+      expect(storage.raw(PROFILE_KEY)).toBeNull();
+    });
+
+    it("keeps a persisted profile when only reading throws", () => {
+      const storage = createFakeStorage({ get: true });
+      const store = createProfileStore(() => storage);
+      expect(store.save(profile())).toEqual({ ok: true, persisted: true });
+      expect(store.getSnapshot()).toEqual({
+        status: "ok",
+        profile: profile(),
+        storageAvailable: false,
+      });
+      expect(storage.raw(PROFILE_KEY)).not.toBeNull();
     });
 
     it("recovers persistence once writing works again", () => {
