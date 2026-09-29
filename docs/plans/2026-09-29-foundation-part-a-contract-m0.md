@@ -643,7 +643,7 @@ export function generateChecklist(input: ChecklistInput): Checklist;
     - If `credential.status === "expected"`, pass/fail becomes unknown `missing_student_value`.
   - `subject_taken`:
     - Pass (`ok`) if the student's subjects satisfy `mode`.
-    - Otherwise, if the student's track has non-null `subjects` that do not satisfy `mode`: fail `track_not_accepted`.
+    - Otherwise, if the student's track has non-null `subjects` AND the UNION of the student's listed subjects and the track's `subjects` does not satisfy `mode`: fail `track_not_accepted`. (Decision 2026-09-29 after review: judging listed subjects and the curriculum separately could produce a wrong ❌ when together they satisfy `mode: all`.)
     - Otherwise unknown `missing_student_value`.
   - `language_proficiency`:
     - No profile entry for the language, or level `"unknown"`: unknown `missing_student_value`.
