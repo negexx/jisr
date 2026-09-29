@@ -28,8 +28,12 @@ export default async function LocaleLayout({ children, params }: Props) {
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   return (
-    <html lang={locale} dir={localeDirection(locale)}>
-      <body className={`${geistSans.variable} ${notoSansArabic.variable} antialiased`}>
+    <html
+      lang={locale}
+      dir={localeDirection(locale)}
+      className={`${geistSans.variable} ${notoSansArabic.variable}`}
+    >
+      <body className="antialiased">
         {/* Client Link needs the locale context; messages={null} keeps message catalogs out of the client bundle. */}
         <NextIntlClientProvider messages={null}>{children}</NextIntlClientProvider>
       </body>

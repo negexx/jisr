@@ -17,6 +17,7 @@ export async function LocaleSwitcher({ current }: { current: AppLocale }) {
                 href="/"
                 locale={locale}
                 lang={locale}
+                hrefLang={locale}
                 aria-current={locale === current ? "page" : undefined}
               >
                 {t(`names.${locale}`)}
