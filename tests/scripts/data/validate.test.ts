@@ -489,6 +489,36 @@ describe("validateData warnings on suspicious but valid data", () => {
     ]);
   });
 
+  it("warns on the same language rule in scholarship requirements", () => {
+    const SCHOL = "scholarships/xx-test-schol.yaml";
+    const result = validateData(
+      mutateFile(base, SCHOL, (raw) =>
+        setRules(raw, (rules) => [
+          ...rules,
+          {
+            id: "xx-test-rule-language",
+            kind: "language_proficiency",
+            source: "main",
+            info_kind: "official",
+            language: "xx",
+            minCefr: "B2",
+            certificateRequired: true,
+            acceptedTests: [],
+          },
+        ]),
+      ),
+      { now: NOW },
+    );
+    expect(result.errors).toEqual([]);
+    expect(result.warnings).toEqual([
+      {
+        file: SCHOL,
+        path: "requirements.rules.xx-test-rule-language",
+        message: anyCertificate("xx-test-rule-language"),
+      },
+    ]);
+  });
+
   it("warns on the same language rule in a route condition", () => {
     const result = validateData(
       mutateFile(base, ROUTE, (raw) => {

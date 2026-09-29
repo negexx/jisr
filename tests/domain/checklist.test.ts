@@ -600,6 +600,14 @@ describe("generateChecklist never skips on degraded facts", () => {
     expect(skippedIds(degraded(m))).toEqual(["scholarships"]);
   });
 
+  it("control: the same inputs with fresh official facts do skip steps", () => {
+    const skipped = skippedIds(degraded(meta));
+    expect(skipped).toEqual(
+      expect.arrayContaining(["translation", "application_account", "scholarships"]),
+    );
+    expect(skipped.length).toBeGreaterThan(1);
+  });
+
   it("every fact stale, no language rules, complete coverage: still only scholarships", () => {
     const input = degraded(staleMeta);
     const noRules = {

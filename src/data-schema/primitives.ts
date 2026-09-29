@@ -13,7 +13,7 @@ export const CountryCodeSchema = z.string().regex(/^[A-Z]{2}$/, "ISO 3166-1 alph
 export const LanguageCodeSchema = z.string().regex(/^[a-z]{2}$/, "ISO 639-1");
 export const CurrencySchema = z.string().regex(/^[A-Z]{3}$/, "ISO 4217");
 function isPlainHttpsUrl(v: string): boolean {
-  if (v !== v.trim() || !URL.canParse(v)) return false;
+  if (!v.startsWith("https://") || /[\s\\]/.test(v) || !URL.canParse(v)) return false;
   const url = new URL(v);
   return (
     url.protocol === "https:" &&
