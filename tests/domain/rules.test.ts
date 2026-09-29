@@ -343,7 +343,7 @@ describe("overall_grade_min", () => {
     [
       "stale target scale fact with conversion",
       g("r", 65, "xx-test-scale-100"),
-      { gradingScales: [{ ...scale100, fact: staleMeta() }] },
+      { gradingScales: [scale20, { ...scale100, fact: staleMeta() }] },
       "unknown",
       "stale_source",
       [`${P}r`, S100, C100],
@@ -423,6 +423,98 @@ describe("overall_grade_min", () => {
       "threshold_unpublished",
       [`${P}r`, S20],
     ],
+    [
+      "25 on a /20 scale is out of range",
+      g("r", 12),
+      withOverall(25),
+      "unknown",
+      "missing_student_value",
+      [`${P}r`, S20],
+    ],
+    [
+      "-1 on a /20 scale is out of range",
+      g("r", 12),
+      withOverall(-1),
+      "unknown",
+      "missing_student_value",
+      [`${P}r`, S20],
+    ],
+    [
+      "out of range never converts: 25 on /20 against the /100 scale",
+      g("r", 65, "xx-test-scale-100"),
+      withOverall(25),
+      "unknown",
+      "missing_student_value",
+      [`${P}r`, S100],
+    ],
+    [
+      "modified Bavarian source above nMax (21 > 20)",
+      g("r", 2.5, "xx-test-scale-lower"),
+      withOverall(21),
+      "unknown",
+      "missing_student_value",
+      [`${P}r`, SL],
+    ],
+    [
+      "lower boundary 0 on /20 passes through: fails 12",
+      g("r", 12),
+      withOverall(0),
+      "fail",
+      "below_threshold",
+      [`${P}r`, S20],
+    ],
+    [
+      "upper boundary 20 on /20 passes through: passes 12",
+      g("r", 12),
+      withOverall(20),
+      "pass",
+      "ok",
+      [`${P}r`, S20],
+    ],
+    [
+      "upper boundary 20 converts: 20/20 → 100/100 >= 100",
+      g("r", 100, "xx-test-scale-100"),
+      withOverall(20),
+      "pass",
+      "ok",
+      [`${P}r`, S100, C100],
+    ],
+    [
+      "unknown student scale slug",
+      g("r", 12),
+      {
+        profile: profile({
+          credential: { overall: { scale: "xx-test-scale-unlisted", value: 14 } },
+        }),
+      },
+      "unknown",
+      "missing_student_value",
+      [`${P}r`, S20],
+    ],
+    [
+      "out of range beats unpublished threshold",
+      g("r", null),
+      withOverall(25),
+      "unknown",
+      "missing_student_value",
+      [`${P}r`, S20],
+    ],
+    [
+      "out of range stays unknown under expected status",
+      g("r", 12),
+      expectedStatus(25),
+      "unknown",
+      "missing_student_value",
+      [`${P}r`, S20],
+    ],
+    [
+      "out of range with stale rule fact keeps missing_student_value",
+      g("r", 12, "xx-test-scale-20", staleMeta()),
+      withOverall(25),
+      "unknown",
+      "missing_student_value",
+      [`${P}r`, S20],
+    ],
   ]);
 
   it("reports student, converted and required", () => {
@@ -461,6 +553,13 @@ const sg = (id: string, subject: string, threshold: number | null, m = meta()) =
   rule("subject_grade_min", { id, subject, scale: "xx-test-scale-20", threshold, fact: m });
 const sgc = (id: string, subject: string, threshold: number | null) =>
   rule("subject_grade_min", { id, subject, scale: "xx-test-scale-100", threshold });
+const withSubject = (value: number) => ({
+  profile: profile({
+    credential: {
+      subjects: [{ subject: "xx-test-math", grade: { scale: "xx-test-scale-20", value } }],
+    },
+  }),
+});
 describe("subject_grade_min", () => {
   check([
     ["math 15>=12", sg("s", "xx-test-math", 12), {}, "pass", "ok", [`${P}s`, S20]],
@@ -511,6 +610,62 @@ describe("subject_grade_min", () => {
       {},
       "unknown",
       "non_official_source",
+      [`${P}s`, S20],
+    ],
+    [
+      "subject grade 25 on /20 is out of range",
+      sg("s", "xx-test-math", 12),
+      withSubject(25),
+      "unknown",
+      "missing_student_value",
+      [`${P}s`, S20],
+    ],
+    [
+      "subject grade -1 on /20 is out of range",
+      sg("s", "xx-test-math", 12),
+      withSubject(-1),
+      "unknown",
+      "missing_student_value",
+      [`${P}s`, S20],
+    ],
+    [
+      "subject grade 0 boundary passes through",
+      sg("s", "xx-test-math", 12),
+      withSubject(0),
+      "fail",
+      "below_threshold",
+      [`${P}s`, S20],
+    ],
+    [
+      "subject grade 20 boundary passes through",
+      sg("s", "xx-test-math", 12),
+      withSubject(20),
+      "pass",
+      "ok",
+      [`${P}s`, S20],
+    ],
+    [
+      "subject grade out of range never converts to /100",
+      sgc("s", "xx-test-math", 70),
+      withSubject(25),
+      "unknown",
+      "missing_student_value",
+      [`${P}s`, S100],
+    ],
+    [
+      "subject grade on an unknown student scale slug",
+      sg("s", "xx-test-math", 12),
+      {
+        profile: profile({
+          credential: {
+            subjects: [
+              { subject: "xx-test-math", grade: { scale: "xx-test-scale-unlisted", value: 15 } },
+            ],
+          },
+        }),
+      },
+      "unknown",
+      "missing_student_value",
       [`${P}s`, S20],
     ],
   ]);

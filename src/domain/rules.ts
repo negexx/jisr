@@ -73,6 +73,11 @@ function gradeMin(rule: GradeRule, ctx: RuleContext, ruleRef: FactRef): Raw {
     student: copyGrade(grade),
     ...(rule.threshold === null ? {} : { required: rule.threshold }),
   };
+  // Conversions extrapolate linearly, so a typo or stale stored grade must never reach them.
+  const studentScale = ctx.gradingScales.find((s) => s.slug === grade.scale);
+  if (!studentScale || grade.value < studentScale.min || grade.value > studentScale.max) {
+    return { ...UNKNOWN_MISSING, relied, ...shown };
+  }
   if (rule.threshold === null) {
     return { outcome: "unknown", code: "threshold_unpublished", relied, ...shown };
   }
