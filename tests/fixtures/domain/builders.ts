@@ -16,6 +16,7 @@ import type {
   ResolvedRule,
   Scholarship,
 } from "@/data-schema/resolved";
+import type { RuleContext } from "@/domain/rules";
 
 export const NOW: IsoDate = "2026-09-29";
 export const FRESH: IsoDate = "2026-09-01";
@@ -265,6 +266,16 @@ export function reference() {
     credentialTypes: [credentialType()],
     gradingScales: [scale20, scale100, scaleLower],
     gradeConversions: [conv20to100, conv20toLower],
+  };
+}
+export function ctx(o: Partial<RuleContext> = {}): RuleContext {
+  return {
+    profile: profile(),
+    ...reference(),
+    record: "programs/xx-test-prog",
+    pathPrefix: "requirements.rules",
+    now: NOW,
+    ...o,
   };
 }
 export const refKey = (f: { record: string; path: string }) => `${f.record}#${f.path}`;
