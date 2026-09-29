@@ -1,3 +1,5 @@
+import { mkdirSync, mkdtempSync, symlinkSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import path from "node:path";
 import { loadData } from "@scripts/data/load-data";
 import { describe, expect, it } from "vitest";
@@ -60,5 +62,38 @@ describe("loadData", () => {
       files: [],
       errors: [expect.objectContaining({ message: "data dir not found" })],
     });
+  });
+});
+
+describe("loadData in a scratch directory", () => {
+  function scratch(files: Record<string, string>): string {
+    const dir = mkdtempSync(path.join(tmpdir(), "jisr-load-data-"));
+    for (const [file, text] of Object.entries(files)) {
+      mkdirSync(path.dirname(path.join(dir, file)), { recursive: true });
+      writeFileSync(path.join(dir, file), text);
+    }
+    return dir;
+  }
+
+  it("fails loudly on a symlink or junction instead of skipping it", () => {
+    const dir = scratch({ "fields/xx-test-field.yaml": "slug: xx-test-field\n" });
+    const target = scratch({ "xx-test-other.yaml": "slug: xx-test-other\n" });
+    symlinkSync(target, path.join(dir, "subjects"), "junction");
+
+    const { files, errors } = loadData(dir);
+    expect(files.map((f) => f.file)).toEqual(["fields/xx-test-field.yaml"]);
+    expect(errors).toEqual([{ file: "subjects", path: "", message: "unexpected non-file entry" }]);
+  });
+
+  it("treats YAML parser warnings as errors", () => {
+    const dir = scratch({ "fields/xx-test-field.yaml": "slug: !xx-unknown-tag xx-test-field\n" });
+    const { files, errors } = loadData(dir);
+    expect(files).toEqual([]);
+    expect(errors).toEqual([
+      expect.objectContaining({
+        file: "fields/xx-test-field.yaml",
+        message: expect.stringMatching(/^yaml: /),
+      }),
+    ]);
   });
 });

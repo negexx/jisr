@@ -461,3 +461,270 @@ describe("validateData mutations of valid-minimal", () => {
     expect(result.warnings).toEqual([]);
   });
 });
+
+describe("validateData referential checks: one failing row per reference", () => {
+  const base = load("valid-minimal");
+  const PROG = "programs/xx-test-prog.yaml";
+  const ROUTE = "admission-routes/xx-test-route-xa-xb.yaml";
+  const NOPE = "xx-test-nope";
+
+  const condition = (fields: Raw): Raw => ({
+    id: "xx-test-cond-x",
+    source: "main",
+    info_kind: "official",
+    ...fields,
+  });
+  const withCondition = (fields: Raw) => (raw: Raw) => {
+    raw.conditions = [condition(fields)];
+  };
+  const withProgramRule = (fields: Raw) => (raw: Raw) =>
+    setRules(raw, (rules) => [
+      ...rules,
+      { id: "xx-test-rule-x", source: "main", info_kind: "official", ...fields },
+    ]);
+  const setKey = (key: string, value: unknown) => (raw: Raw) => {
+    raw[key] = value;
+  };
+
+  type Row = {
+    name: string;
+    file: string;
+    edit: (raw: Raw) => void;
+    path: string;
+    message: string;
+  };
+
+  const unknown = (collection: string, slug = NOPE) => `unknown ${collection} "${slug}"`;
+  const MISMATCH = "program country/city must match institution xx-test-inst";
+
+  const rows: Row[] = [
+    {
+      name: "program institution",
+      file: PROG,
+      edit: setKey("institution", NOPE),
+      path: "institution",
+      message: unknown("institutions"),
+    },
+    {
+      name: "program field",
+      file: PROG,
+      edit: setKey("field", NOPE),
+      path: "field",
+      message: unknown("fields"),
+    },
+    {
+      name: "program country differs from institution",
+      file: PROG,
+      edit: setKey("country", "XA"),
+      path: "country",
+      message: MISMATCH,
+    },
+    {
+      name: "program country",
+      file: PROG,
+      edit: setKey("country", "XZ"),
+      path: "country",
+      message: unknown("countries", "XZ"),
+    },
+    {
+      name: "overall_grade_min scale",
+      file: PROG,
+      edit: (raw) =>
+        setRules(raw, (rules) =>
+          rules.map((r) => (r.id === "xx-test-rule-grade" ? { ...r, scale: NOPE } : r)),
+        ),
+      path: "requirements.rules.xx-test-rule-grade.scale",
+      message: unknown("grading-scales"),
+    },
+    {
+      name: "subject_grade_min subject",
+      file: PROG,
+      edit: withProgramRule({
+        kind: "subject_grade_min",
+        subject: NOPE,
+        scale: "xx-test-scale-5",
+        threshold: null,
+      }),
+      path: "requirements.rules.xx-test-rule-x.subject",
+      message: unknown("subjects"),
+    },
+    {
+      name: "subject_grade_min scale",
+      file: PROG,
+      edit: withProgramRule({
+        kind: "subject_grade_min",
+        subject: "xx-test-subject-math",
+        scale: NOPE,
+        threshold: null,
+      }),
+      path: "requirements.rules.xx-test-rule-x.scale",
+      message: unknown("grading-scales"),
+    },
+    {
+      name: "subject_taken subjects",
+      file: PROG,
+      edit: (raw) =>
+        setRules(raw, (rules) =>
+          rules.map((r) => (r.id === "xx-test-rule-subject" ? { ...r, subjects: [NOPE] } : r)),
+        ),
+      path: "requirements.rules.xx-test-rule-subject.subjects.0",
+      message: unknown("subjects"),
+    },
+    {
+      name: "route credentialType",
+      file: ROUTE,
+      edit: setKey("credentialType", NOPE),
+      path: "credentialType",
+      message: unknown("credential-types"),
+    },
+    {
+      name: "route applicationChannels",
+      file: ROUTE,
+      edit: setKey("applicationChannels", [NOPE]),
+      path: "applicationChannels.0",
+      message: unknown("application-channels"),
+    },
+    {
+      name: "route origin",
+      file: ROUTE,
+      edit: setKey("origin", "XZ"),
+      path: "origin",
+      message: unknown("countries", "XZ"),
+    },
+    {
+      name: "route destination",
+      file: ROUTE,
+      edit: setKey("destination", "XZ"),
+      path: "destination",
+      message: unknown("countries", "XZ"),
+    },
+    {
+      name: "route condition overall_grade_min scale",
+      file: ROUTE,
+      edit: withCondition({ kind: "overall_grade_min", scale: NOPE, threshold: null }),
+      path: "conditions.xx-test-cond-x.scale",
+      message: unknown("grading-scales"),
+    },
+    {
+      name: "route condition subject_grade_min subject",
+      file: ROUTE,
+      edit: withCondition({
+        kind: "subject_grade_min",
+        subject: NOPE,
+        scale: "xx-test-scale-5",
+        threshold: null,
+      }),
+      path: "conditions.xx-test-cond-x.subject",
+      message: unknown("subjects"),
+    },
+    {
+      name: "route condition subject_grade_min scale",
+      file: ROUTE,
+      edit: withCondition({
+        kind: "subject_grade_min",
+        subject: "xx-test-subject-math",
+        scale: NOPE,
+        threshold: null,
+      }),
+      path: "conditions.xx-test-cond-x.scale",
+      message: unknown("grading-scales"),
+    },
+    {
+      name: "route condition subject_taken subjects",
+      file: ROUTE,
+      edit: withCondition({ kind: "subject_taken", subjects: [NOPE], mode: "all" }),
+      path: "conditions.xx-test-cond-x.subjects.0",
+      message: unknown("subjects"),
+    },
+    {
+      name: "route condition credential_type_in types",
+      file: ROUTE,
+      edit: withCondition({ kind: "credential_type_in", types: [NOPE] }),
+      path: "conditions.xx-test-cond-x.types.0",
+      message: unknown("credential-types"),
+    },
+    {
+      name: "route condition language_proficiency acceptedTests",
+      file: ROUTE,
+      edit: withCondition({
+        kind: "language_proficiency",
+        language: "xx",
+        minCefr: null,
+        certificateRequired: null,
+        acceptedTests: [NOPE],
+      }),
+      path: "conditions.xx-test-cond-x.acceptedTests.0",
+      message: unknown("language-certificates"),
+    },
+    {
+      name: "grade conversion to",
+      file: "grade-conversions/xx-test-conv-20-to-5.yaml",
+      edit: setKey("to", NOPE),
+      path: "to",
+      message: unknown("grading-scales"),
+    },
+    {
+      name: "grade conversion from",
+      file: "grade-conversions/xx-test-conv-20-to-5.yaml",
+      edit: setKey("from", NOPE),
+      path: "from",
+      message: unknown("grading-scales"),
+    },
+    {
+      name: "application channel country",
+      file: "application-channels/xx-test-channel.yaml",
+      edit: setKey("country", "XZ"),
+      path: "country",
+      message: unknown("countries", "XZ"),
+    },
+    {
+      name: "credential type country",
+      file: "credential-types/xx-test-cred.yaml",
+      edit: setKey("country", "XZ"),
+      path: "country",
+      message: unknown("countries", "XZ"),
+    },
+    {
+      name: "cost profile country",
+      file: "cost-profiles/xx-test-costs-xb.yaml",
+      edit: setKey("country", "XZ"),
+      path: "country",
+      message: unknown("countries", "XZ"),
+    },
+    {
+      name: "grading scale country",
+      file: "grading-scales/xx-test-scale-5.yaml",
+      edit: setKey("country", "XZ"),
+      path: "country",
+      message: unknown("countries", "XZ"),
+    },
+    {
+      name: "scholarship eligibleNationalities",
+      file: "scholarships/xx-test-schol.yaml",
+      edit: setKey("eligibleNationalities", ["XZ"]),
+      path: "eligibleNationalities.0",
+      message: unknown("countries", "XZ"),
+    },
+  ];
+
+  it.each(rows)("$name", ({ file, edit, path: issuePath, message }) => {
+    const result = validateData(mutateFile(base, file, edit), { now: NOW });
+    expect(result.errors).toContainEqual({ file, path: issuePath, message });
+  });
+
+  it("rejects an http:// source URL at the schema stage", () => {
+    const result = validateData(
+      mutateFile(base, "grading-scales/xx-test-scale-5.yaml", (raw) => {
+        raw.sources = {
+          main: { url: "http://example.org/xx-test", last_verified_at: "2026-09-01" },
+        };
+      }),
+      { now: NOW },
+    );
+    expect(result.errors).toContainEqual({
+      file: "grading-scales/xx-test-scale-5.yaml",
+      path: "sources.main.url",
+      message: "Expected an https URL",
+    });
+  });
+});

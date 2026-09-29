@@ -15,18 +15,27 @@ export type LoadedFile = {
 export type Issue = { file: string; path: string; message: string };
 export type LoadResult = { files: LoadedFile[]; errors: Issue[] };
 
-const DEFAULT_DATA_DIR = "data";
+export const DEFAULT_DATA_DIR = "data";
 const IGNORED_NAMES = new Set(["README.md"]);
 
-function walk(dir: string, prefix: string): string[] {
-  const found: string[] = [];
+type Walked = { files: string[]; nonFiles: string[] };
+
+function walk(dir: string, prefix: string): Walked {
+  const walked: Walked = { files: [], nonFiles: [] };
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     if (entry.name.startsWith(".") || IGNORED_NAMES.has(entry.name)) continue;
     const relative = prefix === "" ? entry.name : `${prefix}/${entry.name}`;
-    if (entry.isDirectory()) found.push(...walk(path.join(dir, entry.name), relative));
-    else if (entry.isFile()) found.push(relative);
+    if (entry.isDirectory()) {
+      const inner = walk(path.join(dir, entry.name), relative);
+      walked.files.push(...inner.files);
+      walked.nonFiles.push(...inner.nonFiles);
+    } else if (entry.isFile()) {
+      walked.files.push(relative);
+    } else {
+      walked.nonFiles.push(relative);
+    }
   }
-  return found;
+  return walked;
 }
 
 function parseYaml(text: string): { raw: unknown } | { errors: string[] } {
@@ -36,8 +45,9 @@ function parseYaml(text: string): { raw: unknown } | { errors: string[] } {
     uniqueKeys: true,
     prettyErrors: true,
   });
-  if (doc.errors.length > 0) {
-    return { errors: doc.errors.map((e) => `yaml: ${(e.message.split("\n")[0] ?? "").trim()}`) };
+  const problems = [...doc.errors, ...doc.warnings];
+  if (problems.length > 0) {
+    return { errors: problems.map((e) => `yaml: ${(e.message.split("\n")[0] ?? "").trim()}`) };
   }
   return { raw: doc.toJS() };
 }
@@ -55,7 +65,10 @@ export function loadData(dataDir: string): LoadResult {
   const errors: Issue[] = [];
   const fail = (file: string, message: string) => errors.push({ file, path: "", message });
 
-  for (const file of walk(dataDir, "").sort()) {
+  const walked = walk(dataDir, "");
+  for (const entry of walked.nonFiles.sort()) fail(entry, "unexpected non-file entry");
+
+  for (const file of walked.files.sort()) {
     if (file.endsWith(".yml")) {
       fail(file, "use the .yaml extension");
       continue;

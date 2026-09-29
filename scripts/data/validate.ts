@@ -57,8 +57,8 @@ function compareText(a: string, b: string): number {
   return a < b ? -1 : a > b ? 1 : 0;
 }
 
-function idOf(record: RecordOf<CollectionName>): string {
-  return "code" in record ? record.code : record.slug;
+function idOf(collection: CollectionName, record: RecordOf<CollectionName>): string {
+  return String(Reflect.get(record, COLLECTIONS[collection].idKey));
 }
 
 function registerRecord(
@@ -66,7 +66,7 @@ function registerRecord(
   file: LoadedFile,
   record: RecordOf<CollectionName>,
 ): Issue | null {
-  const id = idOf(record);
+  const id = idOf(file.collection, record);
   if (id !== file.id) {
     return {
       file: file.file,
@@ -74,6 +74,7 @@ function registerRecord(
       message: `id "${id}" must equal the file name "${file.id}"`,
     };
   }
+  // The collection tag pairs this record with its own map; the union view is only for insertion.
   const entries: Map<string, Entry<CollectionName>> = catalog[file.collection];
   const existing = entries.get(id);
   if (existing !== undefined) {

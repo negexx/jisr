@@ -1,37 +1,22 @@
-import { pathToFileURL } from "node:url";
-
-import type { IsoDate } from "@/data-schema/dates";
-
-import type { DataCliArgs } from "./cli-args";
+// CLI entry, deliberately thin: it runs main() unconditionally. Do not add a "run only when
+// this file is the script" guard comparing the module URL with the script argument: Node
+// realpaths one and not the other, so under a symlink, junction or subst drive the guard
+// skips main(), prints nothing and exits 0 (fail open). Logic lives in run-check.ts, which
+// tests import.
 import { CliUsageError, parseDataCliArgs } from "./cli-args";
-import { loadData } from "./load-data";
-import type { CheckOutput } from "./report";
-import { formatReport } from "./report";
-import { validateData } from "./validate";
-
-function todayUtc(): IsoDate {
-  return new Date().toISOString().slice(0, 10);
-}
-
-export function runCheck(args: DataCliArgs): CheckOutput {
-  const result = validateData(loadData(args.dataDir), { now: args.now ?? todayUtc() });
-  return formatReport(result, { strict: args.strict });
-}
+import { runCheck } from "./run-check";
 
 function main(): void {
-  let args: DataCliArgs;
+  process.exitCode = 1;
   try {
-    args = parseDataCliArgs(process.argv.slice(2));
+    const output = runCheck(parseDataCliArgs(process.argv.slice(2)));
+    for (const line of output.stderr) console.error(line);
+    for (const line of output.stdout) console.log(line);
+    process.exitCode = output.exitCode;
   } catch (error) {
-    if (!(error instanceof CliUsageError)) throw error;
-    console.error(`data:check: ${error.message}`);
-    process.exitCode = 2;
-    return;
+    console.error(`data:check: ${error instanceof Error ? error.message : String(error)}`);
+    process.exitCode = error instanceof CliUsageError ? 2 : 1;
   }
-  const output = runCheck(args);
-  for (const line of output.stderr) console.error(line);
-  for (const line of output.stdout) console.log(line);
-  process.exitCode = output.exitCode;
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) main();
+main();
