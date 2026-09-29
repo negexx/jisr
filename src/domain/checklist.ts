@@ -64,14 +64,15 @@ function languageExamStep({ profile, program, match, now }: ChecklistInput): Out
     if (entry.level === "unknown" || !cefrAtLeast(entry.level, rule.minCefr)) return false;
     return rule.acceptedTests.length === 0 || rule.acceptedTests.includes(entry.certificate);
   };
+  const routeConditionsEvaluated = match.route === "direct" || match.route === "check";
   if (
     languageRules.length > 0 &&
+    routeConditionsEvaluated &&
     languageRules.every((r) => isDecisive(r.fact, now) && requirementMet(r)) &&
     languageReasons.every((r) => r.outcome === "pass")
   ) {
     return { status: "skipped", reason: "certificate_held", facts };
   }
-  const routeConditionsEvaluated = match.route === "direct" || match.route === "check";
   if (
     languageRules.length === 0 &&
     requirements.coverage === "complete" &&
@@ -98,7 +99,12 @@ function applicationAccountStep({ program, channel, now }: ChecklistInput): Outc
     channelRef,
     toFactRef(`application-channels/${channel.slug}`, "", channel.fact, now),
   ];
-  if (channel.accountRequired === false && isDecisive(channel.fact, now)) {
+  if (
+    channel.accountRequired === false &&
+    isDecisive(channel.fact, now) &&
+    isDecisive(program.applicationChannel, now) &&
+    channel.slug === program.applicationChannel.value
+  ) {
     return { status: "skipped", reason: "no_account_required", facts, channel: channel.slug };
   }
   return {

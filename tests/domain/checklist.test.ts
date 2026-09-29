@@ -438,6 +438,36 @@ describe("generateChecklist language_exam", () => {
       "not_required_by_source",
     ],
     [
+      "program language rule met, route foundation",
+      { profile: student(B2_CERT), program: withRules(langRule()), match: matchOf("foundation") },
+      "todo",
+      "applies",
+    ],
+    [
+      "program language rule met, route not_eligible",
+      { profile: student(B2_CERT), program: withRules(langRule()), match: matchOf("not_eligible") },
+      "todo",
+      "applies",
+    ],
+    [
+      "program language rule met, route missing",
+      { profile: student(B2_CERT), program: withRules(langRule()), match: matchOf("missing") },
+      "todo",
+      "applies",
+    ],
+    [
+      "program language rule met, route direct",
+      { profile: student(B2_CERT), program: withRules(langRule()), match: matchOf("direct") },
+      "skipped",
+      "certificate_held",
+    ],
+    [
+      "program language rule met, route check",
+      { profile: student(B2_CERT), program: withRules(langRule()), match: matchOf("check") },
+      "skipped",
+      "certificate_held",
+    ],
+    [
       "language rule is an estimate",
       {
         profile: student(B2_CERT),
@@ -507,5 +537,75 @@ describe("generateChecklist language_exam", () => {
         "application_account",
       ),
     ).toMatchObject({ status: "todo", reason: "unknown_data" });
+  });
+});
+
+describe("generateChecklist application_account", () => {
+  const noAccount = channel({ accountRequired: false });
+  it.each([
+    [
+      "program to channel link is stale",
+      { program: program({ applicationChannel: fact("xx-test-channel", staleMeta()) }) },
+      "todo",
+      "unknown_data",
+    ],
+    [
+      "program to channel link is an estimate",
+      { program: program({ applicationChannel: fact("xx-test-channel", estimateMeta()) }) },
+      "todo",
+      "unknown_data",
+    ],
+    [
+      "supplied channel is not the program channel",
+      { channel: channel({ slug: "xx-test-other-channel", accountRequired: false }) },
+      "todo",
+      "unknown_data",
+    ],
+    ["decisive link and matching slug", {}, "skipped", "no_account_required"],
+  ] as const)("no account required, %s", (_n, o, status, reason) =>
+    expect(
+      step({ channel: noAccount, ...o } as Partial<ChecklistInput>, "application_account"),
+    ).toMatchObject({ status, reason }));
+});
+
+describe("generateChecklist never skips on degraded facts", () => {
+  const degraded = (m: (o?: Partial<ReturnType<typeof meta>>) => ReturnType<typeof meta>) => ({
+    profile: profile(),
+    program: program({
+      durationYears: fact(3, m()),
+      teachingLanguages: fact(["fr"], m()),
+      intakes: fact(
+        [{ startDate: "2027-09-01", applicationOpens: null, applicationDeadline: "2027-01-15" }],
+        m({ class: "volatile" }),
+      ),
+      applicationChannel: fact("xx-test-channel", m()),
+      documents: fact([{ slug: "xx-test-doc", name: "k", translationRequired: false }], m()),
+      requirements: requirements({
+        fact: m(),
+        rules: [lang(["xx-test-cert-fr"], m())],
+      }),
+    }),
+    channel: channel({ accountRequired: false, fact: m() }),
+    scholarships: [] as const,
+  });
+  const skippedIds = (input: ReturnType<typeof degraded>) =>
+    gen({ ...input, scholarships: [] })
+      .steps.filter((s) => s.status === "skipped")
+      .map((s) => s.id);
+
+  it.each([
+    ["stale", staleMeta],
+    ["estimate", estimateMeta],
+  ] as const)("every fact %s: only scholarships (empty list) is skipped", (_n, m) => {
+    expect(skippedIds(degraded(m))).toEqual(["scholarships"]);
+  });
+
+  it("every fact stale, no language rules, complete coverage: still only scholarships", () => {
+    const input = degraded(staleMeta);
+    const noRules = {
+      ...input,
+      program: { ...input.program, requirements: requirements({ fact: staleMeta() }) },
+    };
+    expect(skippedIds(noRules)).toEqual(["scholarships"]);
   });
 });
