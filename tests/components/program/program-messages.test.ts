@@ -8,6 +8,8 @@ import { FORBIDDEN } from "../../i18n/forbidden-wording";
 import { LOCALES, namespaceMessages, placeholderNames } from "../../i18n/trust-wording";
 
 const CATALOGS = { fr, en, ar };
+// The program page and the localized not-found page it falls back to.
+const PAGE_NAMESPACES = ["program", "notFound"];
 const OFFICIAL_WORD = { en: /official/i, fr: /officiel/i, ar: /رسمي/u };
 // Only these name official pages or links; every other program string (banner, costs, estimates, personal box) must not say "official".
 const MAY_SAY_OFFICIAL = new Set(["program.sections.links", "program.requirements.none"]);
@@ -17,7 +19,7 @@ const WORST_ARABIC_LOCALE = "ar-EG" as string as "ar";
 const ARABIC_INDIC_DIGIT = /[٠-٩۰-۹]/u;
 
 describe.each(LOCALES)("program messages (%s)", (locale) => {
-  const messages = namespaceMessages(locale, ["program"]);
+  const messages = namespaceMessages(locale, PAGE_NAMESPACES);
 
   it("has the page namespaces", () => {
     for (const group of ["sections", "banner", "personal", "scholarships", "documents"]) {
@@ -88,7 +90,7 @@ describe.each(LOCALES)("program messages (%s)", (locale) => {
   });
 
   it("uses the same placeholder names as fr", () => {
-    const french = namespaceMessages("fr", ["program"]);
+    const french = namespaceMessages("fr", PAGE_NAMESPACES);
     for (const [key, value] of messages) {
       expect(placeholderNames(value).sort(), key).toEqual(
         placeholderNames(french.get(key) ?? "").sort(),
@@ -99,13 +101,13 @@ describe.each(LOCALES)("program messages (%s)", (locale) => {
 
 describe("program messages: language rules", () => {
   it("puts a no-break space before : ? ! ; in French", () => {
-    for (const [key, value] of namespaceMessages("fr", ["program"])) {
+    for (const [key, value] of namespaceMessages("fr", PAGE_NAMESPACES)) {
       expect(value, key).not.toMatch(/ [:?!;]/);
     }
   });
 
   it("uses الإجازة for the Bachelor's level and Latin digits in Arabic", () => {
-    const messages = namespaceMessages("ar", ["program"]);
+    const messages = namespaceMessages("ar", PAGE_NAMESPACES);
     expect(messages.get("program.header.level.bachelor")).toBe("الإجازة");
     for (const [key, value] of messages) {
       expect(value, key).not.toContain("بكالوريوس");
@@ -114,8 +116,8 @@ describe("program messages: language rules", () => {
   });
 
   it("translates Arabic (no French left unless marked TODO-translate)", () => {
-    const french = namespaceMessages("fr", ["program"]);
-    for (const [key, value] of namespaceMessages("ar", ["program"])) {
+    const french = namespaceMessages("fr", PAGE_NAMESPACES);
+    for (const [key, value] of namespaceMessages("ar", PAGE_NAMESPACES)) {
       if (SAME_IN_EVERY_LOCALE.has(key) || value.startsWith("TODO-translate")) continue;
       expect(value, key).not.toBe(french.get(key));
     }
@@ -132,5 +134,24 @@ describe("program messages: language rules", () => {
       const messages = namespaceMessages(locale, ["program"]);
       for (const key of keys) expect(messages.get(key), `${locale} ${key}`).toContain(term[locale]);
     }
+  });
+
+  it("states a scholarship's nationality rule without implying anyone can get it", () => {
+    const expected = {
+      en: "Open to all nationalities",
+      fr: "Ouverte à toutes les nationalités",
+      ar: "مفتوحة لجميع الجنسيات",
+    } as const;
+    for (const locale of LOCALES) {
+      expect(
+        namespaceMessages(locale, ["program"]).get("program.scholarships.openToEveryone"),
+      ).toBe(expected[locale]);
+    }
+  });
+
+  it("uses a short possessive for the Bac in Arabic", () => {
+    expect(namespaceMessages("ar", ["program"]).get("program.personal.route")).toBe(
+      "بكالوريتك في هذا البلد",
+    );
   });
 });

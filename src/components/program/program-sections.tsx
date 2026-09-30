@@ -67,11 +67,20 @@ function Fact({ label, children }: { label: string; children: ReactNode }) {
   );
 }
 
-export function institutionAndCity(data: ProgramPageData) {
-  return {
-    institution: data.institution?.name ?? data.program.institution,
-    city: data.institution?.city.name ?? data.program.city,
-  };
+// "Institution, City" with the locale's punctuation; slugs are never shown as names.
+export function InstitutionCity({ data }: { data: ProgramPageData }) {
+  const t = useTranslations("program");
+  const { institution } = data;
+  if (institution === null) return <>{t("overview.institutionUnknown")}</>;
+  return (
+    <>
+      {t.rich("header.institutionCity", {
+        institution: institution.name,
+        city: institution.city.name,
+        place: (chunks) => <bdi className="inline-block max-w-full">{chunks}</bdi>,
+      })}
+    </>
+  );
 }
 
 export function languagesOf(data: ProgramPageData, locale: AppLocale): string | null {
@@ -108,17 +117,11 @@ export function OverviewSection({ data }: { data: ProgramPageData }) {
       <dl className="grid gap-x-8 gap-y-5 md:grid-cols-2">
         <Fact label={t("overview.institution")}>
           {institution === null ? (
-            <ToCheck>
-              <bdi>{program.institution}</bdi>
-            </ToCheck>
+            <ToCheck>{t("overview.institutionUnknown")}</ToCheck>
           ) : (
             <>
-              <p className="text-base">
-                <bdi className="font-medium">{institution.name}</bdi>
-                <span className="text-muted-foreground">
-                  {", "}
-                  <bdi>{institution.city.name}</bdi>
-                </span>
+              <p data-testid="overview-institution" className="text-pretty text-base">
+                <InstitutionCity data={data} />
               </p>
               <p className="text-sm text-muted-foreground">
                 {t(`overview.institutionType.${institution.type}`)}
@@ -213,19 +216,22 @@ export function TuitionSection({ data }: { data: ProgramPageData }) {
 
   return (
     <Section id="tuition">
+      {/* A fee that is not published has no official fact (ADR 0005 item 9): no badge, as in CostBreakdown and MatchCard. */}
       {tuition === null ? (
         <ToCheck>{tDomain("domain.cost.missingLine")}</ToCheck>
       ) : (
-        <p data-testid="tuition-amount" className="flex flex-wrap items-baseline gap-x-2">
-          <span className="text-lg font-semibold tabular-nums">
-            <bdi dir="ltr">{formatMoney(tuition.amountMinor, tuition.currency, locale)}</bdi>
-          </span>{" "}
-          <span className="text-base text-muted-foreground">
-            {tDomain(`domain.cost.per.${tuition.period}`)}
-          </span>
-        </p>
+        <>
+          <p data-testid="tuition-amount" className="flex flex-wrap items-baseline gap-x-2">
+            <span className="text-lg font-semibold tabular-nums">
+              <bdi dir="ltr">{formatMoney(tuition.amountMinor, tuition.currency, locale)}</bdi>
+            </span>{" "}
+            <span className="text-base text-muted-foreground">
+              {tDomain(`domain.cost.per.${tuition.period}`)}
+            </span>
+          </p>
+          <SourceBadge meta={data.program.tuition} variant="full" />
+        </>
       )}
-      <SourceBadge meta={data.program.tuition} variant="full" />
     </Section>
   );
 }
@@ -350,7 +356,9 @@ export function ProcedureSection({ data }: { data: ProgramPageData }) {
               {t("open")}
             </ExternalLink>
             <SourceBadge meta={data.program.applicationChannel} />
-            <SourceBadge meta={channel.fact} />
+            {sameSource(data.program.applicationChannel, channel.fact) ? null : (
+              <SourceBadge meta={channel.fact} />
+            )}
           </Fact>
         </dl>
       )}

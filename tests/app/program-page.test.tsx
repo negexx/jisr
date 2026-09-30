@@ -4,8 +4,11 @@ import type { ReactElement } from "react";
 import { renderToString } from "react-dom/server";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 
+import { PROGRAM_CLIENT_NAMESPACES } from "@/components/program/client-namespaces";
+import { ProgramPageView } from "@/components/program/program-page-view";
 import type { AppLocale } from "@/i18n/routing";
 import { formatMoney } from "@/lib/format";
+import { pickMessages } from "@/lib/i18n/client-messages";
 import { describeRule } from "@/lib/journey/requirements";
 import { loadProgramPageData, type ProgramPageData } from "@/lib/snapshot/server";
 import {
@@ -45,6 +48,36 @@ vi.mock("next-intl/server", async () => {
     getTranslations: async ({ locale, namespace }: { locale: AppLocale; namespace: string }) =>
       translator({ locale, messages: messages[locale], namespace: namespace as never }),
   };
+});
+
+// Every client leaf of the page, wrapped to record its props: those are what the static page ships
+// to the browser (children excepted: server-rendered children arrive as rendered output).
+const clientProps = vi.hoisted(() => ({ sent: [] as Array<{ leaf: string; props: object }> }));
+
+function recorded<P extends object>(leaf: string, render: (props: P) => unknown) {
+  return (props: P) => {
+    const { children: _children, ...rest } = props as P & { children?: unknown };
+    clientProps.sent.push({ leaf, props: rest });
+    return render(props);
+  };
+}
+
+vi.mock("@/components/freshness-mark", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@/components/freshness-mark")>();
+  return { FreshnessMark: recorded("FreshnessMark", actual.FreshnessMark) };
+});
+vi.mock("@/components/program/personal-match", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@/components/program/personal-match")>();
+  return { ...actual, PersonalMatch: recorded("PersonalMatch", actual.PersonalMatch) };
+});
+vi.mock("@/components/program/program-deadline", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@/components/program/program-deadline")>();
+  return { ProgramDeadline: recorded("ProgramDeadline", actual.ProgramDeadline) };
+});
+vi.mock("@/components/program/page-freshness-banner", async (importOriginal) => {
+  const actual =
+    await importOriginal<typeof import("@/components/program/page-freshness-banner")>();
+  return { PageFreshnessBanner: recorded("PageFreshnessBanner", actual.PageFreshnessBanner) };
 });
 
 const page = await import("@/app/[locale]/programs/[slug]/page");
@@ -221,6 +254,67 @@ describe.each(LOCALES)("program page server render (%s)", (locale) => {
     expect(textOf(stale.document.getElementById("tuition"))).toContain(
       message(locale, "domain.cost.missingLine"),
     );
+  });
+
+  it("badges a published fee in full, and an unpublished one not at all", async () => {
+    const ok = await renderPage(E2E_SLUGS.ok, locale);
+    const okBadges = ok.document.querySelectorAll('#tuition [data-slot="source-badge"]');
+    expect(okBadges).toHaveLength(1);
+    expect(okBadges[0]?.getAttribute("data-variant")).toBe("full");
+    expect(textOf(ok.document.getElementById("tuition"))).toContain(
+      message(locale, "domain.infoKind.official.meaning"),
+    );
+
+    const stale = await renderPage(E2E_SLUGS.stale, locale);
+    const tuition = stale.document.getElementById("tuition");
+    expect(tuition?.querySelector('[data-slot="source-badge"]')).toBeNull();
+    expect(textOf(tuition)).not.toContain(message(locale, "domain.infoKind.official.meaning"));
+    expect(textOf(tuition)).not.toContain(message(locale, "domain.infoKind.official.label"));
+  });
+
+  it("ships no precomputed freshness to any client leaf", async () => {
+    for (const slug of SLUGS) {
+      clientProps.sent = [];
+      await renderPage(slug, locale);
+      const leaves = new Set(clientProps.sent.map((entry) => entry.leaf));
+      expect([...leaves].sort(), slug).toEqual([
+        "FreshnessMark",
+        "PageFreshnessBanner",
+        "PersonalMatch",
+        "ProgramDeadline",
+      ]);
+      expect(JSON.stringify(clientProps.sent), slug).not.toContain('"freshness"');
+    }
+  });
+
+  it("shows one badge under How to apply when the link and the channel share a source", async () => {
+    const { document } = await renderPage(E2E_SLUGS.ok, locale);
+    expect(document.querySelectorAll('#procedure [data-slot="source-badge"]')).toHaveLength(1);
+  });
+
+  it("writes the institution and city with the locale's punctuation", async () => {
+    const { document } = await renderPage(E2E_SLUGS.ok, locale);
+    const expected = message(locale, "program.header.institutionCity")
+      .replace("{institution}", "XX Test Public Institution B")
+      .replace("{city}", "XX Test City B")
+      .replace(/<\/?place>/g, "");
+    expect(textOf(document.querySelector('[data-testid="overview-institution"]'))).toBe(expected);
+  });
+
+  it("says the institution is not listed instead of printing its slug", async () => {
+    const data = await dataOf(E2E_SLUGS.ok, locale);
+    const element = (
+      <ProgramPageView
+        data={{ ...data, institution: null }}
+        locale={locale}
+        clientMessages={pickMessages(catalogs[locale], PROGRAM_CLIENT_NAMESPACES)}
+      />
+    );
+    const parsed = document.implementation.createHTMLDocument("");
+    parsed.body.innerHTML = withProvider(locale, element);
+    const text = textOf(parsed.body);
+    expect(text).toContain(message(locale, "program.overview.institutionUnknown"));
+    expect(text).not.toContain(data.program.institution);
   });
 
   it("lists the intake dates as published, documents with translation, and scholarships", async () => {

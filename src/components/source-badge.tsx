@@ -45,6 +45,18 @@ const KIND_STYLE: Record<Kind, { icon: ReactNode; pill: string }> = {
   },
 };
 
+// Only what freshness is computed from crosses into the client leaf: a FactRef's stored `freshness` was stamped at some other `now` (for a static page, a build-time value) and must never ship.
+function factMetaOf(meta: FactMeta | FactRef): FactMeta {
+  const fact: FactMeta = {
+    source_url: meta.source_url,
+    info_kind: meta.info_kind,
+    last_verified_at: meta.last_verified_at,
+    class: meta.class,
+  };
+  if (meta.basis !== undefined) fact.basis = meta.basis;
+  return fact;
+}
+
 export function SourceBadge({
   meta,
   variant = "compact",
@@ -99,7 +111,7 @@ export function SourceBadge({
           )}
         </ExternalLink>
         <FreshnessMark
-          meta={meta}
+          meta={factMetaOf(meta)}
           labels={{
             aging: tFreshness("aging"),
             // The T4 stale text sends people to "the official page": only an official fact may say that.

@@ -663,7 +663,8 @@
         "private": "Établissement privé"
       },
       "duration": "Durée",
-      "languages": "Langues d'enseignement"
+      "languages": "Langues d'enseignement",
+      "institutionUnknown": "Établissement pas encore référencé, à vérifier sur la page de la formation"
     },
     "requirements": {
       "intro": "Les conditions telles qu'elles sont publiées, en termes généraux. Dans cette partie de la page, elles ne sont pas comparées à votre profil.",
@@ -700,7 +701,7 @@
       "intro": "Bourses liées à cette formation ou proposées dans son pays. Chacune a ses propres conditions : vérifiez-les sur sa page.",
       "none": "Aucune bourse n'est encore publiée pour cette formation.",
       "provider": "Organisme : {provider}",
-      "openToEveryone": "Ouverte à tous",
+      "openToEveryone": "Ouverte à toutes les nationalités",
       "nationals": "Pour les ressortissants de : {countries}",
       "support": {
         "month": "Montant : <money>{amount}</money> par mois",
@@ -751,6 +752,10 @@
         "retry": "Réessayer"
       },
       "missingProgram": "Cette formation ne figure plus dans les données publiées.",
+      "computeError": {
+        "title": "Nous n'avons pas pu calculer votre résultat",
+        "description": "Les données publiées pour cette formation n'ont pas pu être comparées à votre profil. Les informations de cette page restent valables."
+      },
       "updated": {
         "notice": "Les données ont été mises à jour depuis la création de cette page. Rechargez-la pour voir la dernière version.",
         "reload": "Recharger"
@@ -763,5 +768,11 @@
       "scholarshipsCaveat": "Uniquement d'après les règles de nationalité publiées. Vérifiez les autres conditions sur la page de chaque bourse.",
       "reasons": "Les conditions publiées, comparées à votre profil"
     }
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "description": "Cette page n'existe pas ou n'est plus publiée. La formation a peut-être été retirée de nos données.",
+    "home": "Aller à l'accueil",
+    "profile": "Créer ou modifier mon profil"
   }
 }

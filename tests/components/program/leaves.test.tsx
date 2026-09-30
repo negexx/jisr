@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { act, cleanup, render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import type { ReactElement } from "react";
+import { type ReactElement, useEffect } from "react";
 import { hydrateRoot } from "react-dom/client";
 import { renderToString } from "react-dom/server";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
@@ -447,11 +447,38 @@ describe("PersonalMatch", () => {
     costs.fail = true;
     renderLeaf(personal(E2E_SLUGS.ok));
     const alert = await screen.findByRole("alert");
-    expect(alert.textContent).toContain(message("fr", "program.personal.error.title"));
+    expect(alert.textContent).toContain(message("fr", "program.personal.computeError.title"));
     expect(alert.textContent).not.toContain("estimateCost");
+    // Retrying would only recompute the same data: no Retry for a computation error.
+    expect(within(alert).queryByRole("button")).toBeNull();
   });
 
-  it("shows an error when the bundle has no core", async () => {
+  it("keeps the key facts mounted once as the result arrives", async () => {
+    saveProfile(E2E_PROFILE);
+    const mounts = { count: 0 };
+    function Counted() {
+      useEffect(() => {
+        mounts.count += 1;
+      }, []);
+      return <p data-testid="counted">key facts</p>;
+    }
+    renderLeaf(
+      <PersonalMatch
+        program={PROGRAM_REFS[E2E_SLUGS.ok] ?? { slug: "", country: "XB", field: "" }}
+        snapshotVersion={bundles[E2E_SLUGS.ok]?.snapshotVersion ?? ""}
+        scholarshipSlugs={[]}
+        locale="fr"
+        client={fixtureClient(dir)}
+      >
+        <Counted />
+      </PersonalMatch>,
+    );
+    await result();
+    expect(screen.getAllByTestId("counted")).toHaveLength(1);
+    expect(mounts.count).toBe(1);
+  });
+
+  it("shows a computation error without Retry when the bundle has no core", async () => {
     saveProfile(E2E_PROFILE);
     const base = fixtureClient(dir);
     const noCore: SnapshotClient = {
@@ -461,7 +488,9 @@ describe("PersonalMatch", () => {
       }),
     };
     renderLeaf(personal(E2E_SLUGS.ok, { client: noCore }));
-    expect(await screen.findByRole("alert")).toBeTruthy();
+    const alert = await screen.findByRole("alert");
+    expect(alert.textContent).toContain(message("fr", "program.personal.computeError.title"));
+    expect(within(alert).queryByRole("button")).toBeNull();
   });
 
   it("keeps the student's values out of the URL and the title", async () => {

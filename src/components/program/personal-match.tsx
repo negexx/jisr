@@ -3,88 +3,32 @@
 // Client leaf: the student's result for this program, computed in the browser from the profile on this device and the published snapshot. Nothing personal reaches the server, the URL or the console. Needs the namespaces in PROGRAM_CLIENT_NAMESPACES.
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { type ReactNode, useMemo } from "react";
+import { type ReactNode, useEffect, useState } from "react";
 
 import { MatchStatusBadge } from "@/components/match-status-badge";
 import { ReasonList } from "@/components/reason-list";
 import { Button } from "@/components/ui/button";
 import type { CountryCode, Slug } from "@/data-schema/primitives";
 import type { Profile } from "@/data-schema/profile";
-import { estimateCost } from "@/domain/costs";
-import { matchProgram } from "@/domain/match";
-import { resolveRoute } from "@/domain/route";
-import { scholarshipsForProgram } from "@/domain/scholarships";
-import type { BudgetFit, MatchStatus } from "@/domain/types";
 import { Link } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
 import { todayIso } from "@/lib/clock";
-import { groupOf, type MatchGroup, type RouteKey, routeKeyOf } from "@/lib/journey/matches-view";
-import { describeReason, type ReasonView, ruleIndex } from "@/lib/journey/reasons";
 import { useProfile } from "@/lib/profile/use-profile";
 import type { SnapshotBundle, SnapshotClient } from "@/lib/snapshot/client";
 import { shardsForProgram } from "@/lib/snapshot/plan";
 import { type SnapshotRequest, useSnapshotBundle } from "@/lib/snapshot/use-snapshot";
 
+import type { Outcome, PersonalResult } from "./personal-outcome";
+
 export type ProgramRef = { slug: Slug; country: CountryCode; field: Slug };
 
-type PersonalResult = {
-  group: MatchGroup;
-  status: MatchStatus;
-  routeKey: RouteKey;
-  reasons: ReasonView[];
-  budgetFit: BudgetFit;
-  scholarships: Array<{ slug: string; name: string }>;
+// "load_failed": the matching code itself could not be downloaded (a network problem: Retry helps).
+type Computed = {
+  bundle: SnapshotBundle;
+  profile: Profile;
+  locale: AppLocale;
+  outcome: Outcome | { kind: "load_failed" };
 };
-
-type Outcome = { kind: "result"; result: PersonalResult } | { kind: "missing" } | { kind: "error" };
-
-function personalOutcome(
-  profile: Profile,
-  bundle: SnapshotBundle,
-  slug: string,
-  locale: AppLocale,
-): Outcome {
-  const program = bundle.programs.flatMap((shard) => shard.programs).find((p) => p.slug === slug);
-  if (program === undefined) return { kind: "missing" };
-  const core = bundle.core;
-  if (core === undefined) return { kind: "error" };
-  try {
-    const now = todayIso();
-    const routes = bundle.routes?.routes ?? [];
-    const match = matchProgram({ profile, program, routes, reference: core, now });
-    const cost = estimateCost({
-      program,
-      costProfiles: bundle.costProfiles.flatMap((shard) => shard.profiles),
-      budget: profile.budget,
-      now,
-    });
-    const context = {
-      locale,
-      core,
-      text: bundle.text,
-      rules: ruleIndex(program, resolveRoute(profile, program.country, routes)),
-    };
-    const scholarships = scholarshipsForProgram(
-      profile,
-      program,
-      bundle.scholarships.flatMap((shard) => shard.scholarships),
-    );
-    return {
-      kind: "result",
-      result: {
-        group: groupOf(match),
-        status: match.status,
-        routeKey: routeKeyOf(match),
-        reasons: match.reasons.map((reason) => describeReason(reason, context)),
-        budgetFit: cost.budgetFit,
-        scholarships: scholarships.map((s) => ({ slug: s.slug, name: s.name })),
-      },
-    };
-  } catch {
-    // Deliberately silent: the error could carry profile values, and nothing personal is logged.
-    return { kind: "error" };
-  }
-}
 
 function useDomainText() {
   // Keys come from the domain view models (routeKeyOf, status), not literals, so the typed catalogue cannot check them.
@@ -104,6 +48,18 @@ function ResultSkeleton() {
   );
 }
 
+function Loading() {
+  const t = useTranslations("program.personal");
+  return (
+    <>
+      <div aria-busy="true">
+        <ResultSkeleton />
+      </div>
+      <output className="sr-only">{t("loading")}</output>
+    </>
+  );
+}
+
 function LoadError({ onRetry }: { onRetry: () => void }) {
   const t = useTranslations("program.personal.error");
   return (
@@ -113,6 +69,16 @@ function LoadError({ onRetry }: { onRetry: () => void }) {
       <Button type="button" variant="outline" className="mt-1 w-fit" onClick={onRetry}>
         {t("retry")}
       </Button>
+    </div>
+  );
+}
+
+function ComputeError() {
+  const t = useTranslations("program.personal.computeError");
+  return (
+    <div role="alert" className="flex flex-col gap-2">
+      <p className="text-base font-medium">{t("title")}</p>
+      <p className="text-sm text-muted-foreground">{t("description")}</p>
     </div>
   );
 }
@@ -151,16 +117,24 @@ function UpdatedNotice() {
   );
 }
 
-function ResultView({
+function ResultHead({ result }: { result: PersonalResult }) {
+  const tDomain = useDomainText();
+  return (
+    <div className="flex flex-col gap-2">
+      <MatchStatusBadge group={result.group} />
+      <p className="text-base">{tDomain(`domain.status.hint.${result.status}`)}</p>
+    </div>
+  );
+}
+
+function ResultDetails({
   result,
   budgetProvided,
   scholarshipSlugs,
-  keyFacts,
 }: {
   result: PersonalResult;
   budgetProvided: boolean;
   scholarshipSlugs: readonly string[];
-  keyFacts: ReactNode;
 }) {
   const t = useTranslations("program.personal");
   const tFit = useTranslations("domain.budgetFit");
@@ -168,12 +142,7 @@ function ResultView({
   const onPage = result.scholarships.filter((s) => scholarshipSlugs.includes(s.slug));
 
   return (
-    <div data-slot="personal-result" data-group={result.group} className="flex flex-col gap-5">
-      <div className="flex flex-col gap-2">
-        <MatchStatusBadge group={result.group} />
-        <p className="text-base">{tDomain(`domain.status.hint.${result.status}`)}</p>
-      </div>
-      {keyFacts}
+    <>
       {budgetProvided ? (
         <div data-slot="budget-fit" className="flex flex-col gap-1">
           <h3 className="text-base font-semibold">{t("budget")}</h3>
@@ -215,7 +184,7 @@ function ResultView({
         headingLevel={3}
         bodyHiddenFor={result.group === "foundation" ? ["route_foundation"] : []}
       />
-    </div>
+    </>
   );
 }
 
@@ -235,7 +204,8 @@ export function PersonalMatch({
   scholarshipSlugs: readonly string[];
   locale: AppLocale;
   client?: SnapshotClient;
-  // Server-rendered key facts (deadline, cost), placed before the long reason list so a short sticky column still shows them.
+  // Server-rendered key facts (deadline, cost), placed before the long reason list so a short sticky
+  // column still shows them. They keep one tree position in every state, so they never remount.
   children?: ReactNode;
 }) {
   const t = useTranslations("program.personal");
@@ -252,50 +222,67 @@ export function PersonalMatch({
         };
   const { state: snapshot, retry } = useSnapshotBundle(request, locale, client);
   const bundle = snapshot.status === "ready" ? snapshot.bundle : null;
-  const outcome = useMemo(
-    () =>
-      profile === null || bundle === null
-        ? null
-        : personalOutcome(profile, bundle, program.slug, locale),
-    [profile, bundle, program.slug, locale],
-  );
 
-  const withKeyFacts = (state: ReactNode) => (
-    <div className="flex flex-col gap-5">
-      {state}
-      {children}
-    </div>
-  );
+  const [computed, setComputed] = useState<Computed | null>(null);
+  useEffect(() => {
+    if (profile === null || bundle === null) return;
+    let current = true;
+    import("./personal-outcome").then(
+      (module) => {
+        const outcome = module.personalOutcome(profile, bundle, program.slug, locale, todayIso());
+        if (current) setComputed({ bundle, profile, locale, outcome });
+      },
+      () => {
+        if (current) setComputed({ bundle, profile, locale, outcome: { kind: "load_failed" } });
+      },
+    );
+    return () => {
+      current = false;
+    };
+  }, [profile, bundle, program.slug, locale]);
+  // Only a result computed for exactly this profile, bundle and locale is shown.
+  const outcome =
+    computed !== null &&
+    computed.bundle === bundle &&
+    computed.profile === profile &&
+    computed.locale === locale
+      ? computed.outcome
+      : null;
 
-  if (profileState.status === "unhydrated") return withKeyFacts(<ResultSkeleton />);
-  if (profile === null) return withKeyFacts(<ProfileCta />);
-  if (snapshot.status === "error" || outcome?.kind === "error") {
-    return withKeyFacts(<LoadError onRetry={retry} />);
-  }
-  if (bundle === null || outcome === null) {
-    return withKeyFacts(
-      <>
-        <div aria-busy="true">
-          <ResultSkeleton />
-        </div>
-        <output className="sr-only">{t("loading")}</output>
-      </>,
+  let head: ReactNode;
+  let details: ReactNode = null;
+  if (profileState.status === "unhydrated") head = <ResultSkeleton />;
+  else if (profile === null) head = <ProfileCta />;
+  else if (snapshot.status === "error" || outcome?.kind === "load_failed") {
+    head = <LoadError onRetry={retry} />;
+  } else if (outcome === null) head = <Loading />;
+  else if (outcome.kind === "compute_error") head = <ComputeError />;
+  else if (outcome.kind === "missing") {
+    head = <p className="text-base">{t("missingProgram")}</p>;
+  } else {
+    head = <ResultHead result={outcome.result} />;
+    details = (
+      <ResultDetails
+        result={outcome.result}
+        budgetProvided={profile.budget !== null}
+        scholarshipSlugs={scholarshipSlugs}
+      />
     );
   }
+  const result = outcome?.kind === "result" ? outcome.result : null;
 
   return (
-    <div className="flex flex-col gap-4">
-      {bundle.snapshotVersion === snapshotVersion ? null : <UpdatedNotice />}
-      {outcome.kind === "missing" ? (
-        withKeyFacts(<p className="text-base">{t("missingProgram")}</p>)
-      ) : (
-        <ResultView
-          result={outcome.result}
-          budgetProvided={profile.budget !== null}
-          scholarshipSlugs={scholarshipSlugs}
-          keyFacts={children}
-        />
-      )}
+    <div
+      data-slot={result === null ? "personal-match" : "personal-result"}
+      data-group={result?.group}
+      className="flex flex-col gap-5"
+    >
+      {bundle !== null && outcome !== null && bundle.snapshotVersion !== snapshotVersion ? (
+        <UpdatedNotice />
+      ) : null}
+      {head}
+      {children}
+      {details}
     </div>
   );
 }

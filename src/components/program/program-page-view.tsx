@@ -25,7 +25,7 @@ import {
   DeadlineSection,
   DocumentsSection,
   durationParams,
-  institutionAndCity,
+  InstitutionCity,
   LinksSection,
   languagesOf,
   OverviewSection,
@@ -37,9 +37,10 @@ import {
   VerifiedSection,
 } from "./program-sections";
 
-// estimateCost and pageFacts stamp a freshness on the facts they return. Nothing on this page shows
-// that stamp (SourceBadge and the banner recompute freshness in the browser), so a fixed date is
-// used and no build date reaches the HTML as if it were today.
+// estimateCost and pageFacts require a `now` only to stamp a freshness on the FactRefs they return;
+// which facts and lines they pick does not depend on it. The stamp never leaves the server:
+// SourceBadge hands the client leaf plain FactMeta and the banner gets FactMeta below, and both
+// recompute freshness from the browser's clock.
 const UNUSED_NOW: IsoDate = "2000-01-01";
 
 // The banner needs only what freshness is computed from; identical facts are sent once.
@@ -69,10 +70,7 @@ function ProgramHeader({ data }: { data: ProgramPageData }) {
         <bdi>{data.program.name}</bdi>
       </h1>
       <p className="text-pretty text-lg text-muted-foreground">
-        {t.rich("institutionCity", {
-          ...institutionAndCity(data),
-          place: (chunks) => <bdi className="inline-block max-w-full">{chunks}</bdi>,
-        })}
+        <InstitutionCity data={data} />
       </p>
       <ul className="flex flex-wrap gap-x-5 gap-y-1 text-base">
         <li className="font-medium">{t(`level.${data.program.level}`)}</li>

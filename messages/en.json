@@ -663,7 +663,8 @@
         "private": "Private institution"
       },
       "duration": "Duration",
-      "languages": "Teaching languages"
+      "languages": "Teaching languages",
+      "institutionUnknown": "Institution not listed yet, to be checked on the program page"
     },
     "requirements": {
       "intro": "The requirements as published, in general terms. On this part of the page they are not compared with your profile.",
@@ -700,7 +701,7 @@
       "intro": "Scholarships linked to this program or offered in its country. Each one has its own conditions: check them on its page.",
       "none": "No scholarship is published for this program yet.",
       "provider": "Provider: {provider}",
-      "openToEveryone": "Open to everyone",
+      "openToEveryone": "Open to all nationalities",
       "nationals": "For nationals of: {countries}",
       "support": {
         "month": "Support: <money>{amount}</money> per month",
@@ -751,6 +752,10 @@
         "retry": "Try again"
       },
       "missingProgram": "This program is no longer in the published data.",
+      "computeError": {
+        "title": "We could not work out your result",
+        "description": "The published data for this program could not be compared with your profile. The facts on this page still apply."
+      },
       "updated": {
         "notice": "The data was updated since this page was built. Reload to see the latest.",
         "reload": "Reload"
@@ -763,5 +768,11 @@
       "scholarshipsCaveat": "Based on the published nationality rules only. Check the other conditions on the page of each scholarship.",
       "reasons": "The published requirements, compared with your profile"
     }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "This page does not exist or is no longer published. The program may have been removed from our data.",
+    "home": "Go to the home page",
+    "profile": "Create or edit my profile"
   }
 }
