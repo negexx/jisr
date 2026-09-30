@@ -19,6 +19,7 @@
     "data:check": "tsx scripts/data/check.ts",
     "data:build": "tsx scripts/data/build.ts",
     "format": "biome format --write .",
+    "perf:js": "tsx scripts/perf/first-load-js.ts",
     "db:generate": "node scripts/not-configured.mjs db:generate",
     "db:migrate": "node scripts/not-configured.mjs db:migrate"
   },
