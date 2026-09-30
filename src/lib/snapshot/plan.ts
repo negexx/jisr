@@ -1,7 +1,8 @@
 import type { CountryCode, Slug } from "@/data-schema/primitives";
-import { type Manifest, shardNames } from "@/data-schema/snapshot";
+import type { Manifest } from "@/data-schema/snapshot";
 
 import { programShardsIn } from "./manifest";
+import { shardNames } from "./shard-names";
 
 // Structural shard names only; the matching text shards are derived per locale at load time.
 export type ShardPlan = { structural: string[] };

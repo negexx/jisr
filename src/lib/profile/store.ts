@@ -1,4 +1,4 @@
-import { type Profile, ProfileSchema } from "@/data-schema/profile";
+import type { Profile } from "@/data-schema/profile";
 
 import { clearDraft } from "./draft";
 import {
@@ -12,6 +12,7 @@ import {
   type StoredProfile,
   writeProfile,
 } from "./storage";
+import { parseProfile } from "./validate";
 
 // `storageAvailable` means "this device can reliably read and write local storage", NOT "this
 // save was persisted" (`save()` returns `persisted` for that). Use it for the standing
@@ -144,15 +145,15 @@ export function createProfileStore(getStorage: () => StorageLike | null): Profil
       };
     },
     save(input) {
-      const parsed = ProfileSchema.safeParse(input);
-      if (!parsed.success) return { ok: false, reason: "invalid" };
+      const parsed = parseProfile(input);
+      if (parsed === null) return { ok: false, reason: "invalid" };
       const storage = resolveStorage();
-      const written = storage ? writeProfile(storage, parsed.data) : null;
+      const written = storage ? writeProfile(storage, parsed) : null;
       const persisted = storage !== null && written?.ok === true;
       if (storage && persisted) clearDraft(storage);
       // Removed best-effort so a reload cannot bring back the older profile this one replaced.
       if (storage && !persisted) removeQuietly(storage, PROFILE_KEY);
-      memoryProfile = parsed.data;
+      memoryProfile = parsed;
       writeFailed = !persisted;
       resetReason = null;
       version += 1;

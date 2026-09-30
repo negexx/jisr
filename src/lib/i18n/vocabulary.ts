@@ -1,4 +1,3 @@
-import { INFO_KINDS } from "@/data-schema/primitives";
 import type { RouteOutcome } from "@/data-schema/resolved";
 import type { Coverage } from "@/data-schema/rules";
 import type { Freshness } from "@/data-schema/staleness";
@@ -17,6 +16,7 @@ import type {
   RuleOutcome,
 } from "@/domain/types";
 import { CHECKLIST_STEP_IDS } from "@/domain/types";
+import { INFO_KINDS } from "@/lib/constants";
 
 export { CHECKLIST_STEP_IDS, INFO_KINDS };
 

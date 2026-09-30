@@ -1,12 +1,88 @@
-import { LOCALES, type Locale } from "@/data-schema/primitives";
-import { type Manifest, ManifestSchema, type Shard } from "@/data-schema/snapshot";
+import type { Locale } from "@/data-schema/primitives";
+import type { Manifest, Shard } from "@/data-schema/snapshot";
+import { LOCALES, SNAPSHOT_FORMAT_VERSION } from "@/lib/constants";
+import {
+  hasOnlyKeys,
+  isInteger,
+  isOneOf,
+  isRecord,
+  matches,
+  parseEach,
+  type UnknownRecord,
+} from "@/lib/guards";
 
 import { SnapshotError } from "./errors";
 
+// Hand-written twin of ManifestSchema (src/data-schema/snapshot.ts): the manifest is read in the
+// browser, where importing Zod costs about 120 KB gzipped. tests/lib/snapshot/manifest-guard.test.ts
+// runs both over a built manifest, one mutation per rule and a seeded fuzzer, and fails on any
+// disagreement, so change both together.
+const SNAPSHOT_VERSION = /^[0-9a-f]{12}$/;
+const SHARD_FILE = /^s\/[A-Za-z0-9.-]+\.[0-9a-f]{12}\.json$/;
+const SHA256 = /^[0-9a-f]{64}$/;
+
+type ManifestShard = Manifest["shards"][string];
+
+function parseShardEntry(value: unknown): ManifestShard | null {
+  if (!isRecord(value) || !hasOnlyKeys(value, ["file", "sha256", "bytes", "gzipBytes"]))
+    return null;
+  const { file, sha256, bytes, gzipBytes } = value;
+  if (
+    !matches(file, SHARD_FILE) ||
+    !matches(sha256, SHA256) ||
+    !isInteger(bytes) ||
+    bytes <= 0 ||
+    !isInteger(gzipBytes) ||
+    gzipBytes <= 0
+  ) {
+    return null;
+  }
+  return { file, sha256, bytes, gzipBytes };
+}
+
+function parseLocale(value: unknown): Locale | null {
+  return isOneOf(value, LOCALES) ? value : null;
+}
+
+function parseShards(value: unknown): Manifest["shards"] | null {
+  if (!isRecord(value)) return null;
+  const shards: UnknownRecord = {};
+  for (const name of Object.keys(value)) {
+    const entry = parseShardEntry(value[name]);
+    if (entry === null) return null;
+    // defineProperty: a shard literally named "__proto__" must stay a plain own entry.
+    Object.defineProperty(shards, name, {
+      value: entry,
+      enumerable: true,
+      writable: true,
+      configurable: true,
+    });
+  }
+  return shards as Manifest["shards"];
+}
+
+// Throws a SnapshotError("format") without echoing anything from the input.
 export function parseManifest(json: unknown): Manifest {
-  const result = ManifestSchema.safeParse(json);
-  if (!result.success) throw new SnapshotError("format");
-  return result.data;
+  if (
+    !isRecord(json) ||
+    !hasOnlyKeys(json, ["formatVersion", "snapshotVersion", "generatedAt", "locales", "shards"]) ||
+    json.formatVersion !== SNAPSHOT_FORMAT_VERSION
+  ) {
+    throw new SnapshotError("format");
+  }
+  const { snapshotVersion, generatedAt } = json;
+  const locales = parseEach(json.locales, parseLocale);
+  const shards = parseShards(json.shards);
+  if (
+    !matches(snapshotVersion, SNAPSHOT_VERSION) ||
+    typeof generatedAt !== "string" ||
+    locales === null ||
+    locales.length < 1 ||
+    shards === null
+  ) {
+    throw new SnapshotError("format");
+  }
+  return { formatVersion: SNAPSHOT_FORMAT_VERSION, snapshotVersion, generatedAt, locales, shards };
 }
 
 const COUNTRY = "[A-Z]{2}";
@@ -73,10 +149,6 @@ export function destinationsIn(manifest: Manifest): string[] {
     if (identity !== null && "destination" in identity) destinations.add(identity.destination);
   }
   return [...destinations].sort();
-}
-
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
 // The structural guard behind the integrity check: a shard must be what its manifest name says,

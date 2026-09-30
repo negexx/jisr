@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
 
+import { DraftSchema } from "@/data-schema/draft";
 import {
   clearDraft,
   DRAFT_SCHEMA_VERSION,
-  DraftSchema,
   type ProfileDraft,
   readDraft,
   writeDraft,

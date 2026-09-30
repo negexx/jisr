@@ -1,4 +1,7 @@
-import { PROFILE_SCHEMA_VERSION, type Profile, ProfileSchema } from "@/data-schema/profile";
+import type { Profile } from "@/data-schema/profile";
+import { PROFILE_SCHEMA_VERSION } from "@/lib/constants";
+
+import { parseProfile } from "./validate";
 
 export const KEY_PREFIX = "jisr.";
 export const PROFILE_KEY = "jisr.profile";
@@ -44,9 +47,9 @@ export function migrateProfile(raw: unknown): MigrationResult {
     record = migrate(record);
   }
 
-  // Only the outcome leaves this function: a Zod error would echo the student's values.
-  const parsed = ProfileSchema.safeParse(record);
-  return parsed.success ? { ok: true, profile: parsed.data } : { ok: false, reason: "invalid" };
+  // Only the outcome leaves this function: nothing derived from the student's values is reported.
+  const parsed = parseProfile(record);
+  return parsed === null ? { ok: false, reason: "invalid" } : { ok: true, profile: parsed };
 }
 
 // Pure: turns the raw stored string into an outcome without touching storage.
@@ -89,10 +92,10 @@ export function readProfile(storage: StorageLike): StoredProfile {
 // App code must go through the store (save/clear), not call this directly: a same-tab write fires
 // no `storage` event, so a direct write would leave the store's cached snapshot stale.
 export function writeProfile(storage: StorageLike, profile: unknown): WriteResult {
-  const parsed = ProfileSchema.safeParse(profile);
-  if (!parsed.success) return { ok: false, reason: "invalid" };
+  const parsed = parseProfile(profile);
+  if (parsed === null) return { ok: false, reason: "invalid" };
   try {
-    storage.setItem(PROFILE_KEY, JSON.stringify(parsed.data));
+    storage.setItem(PROFILE_KEY, JSON.stringify(parsed));
   } catch {
     return { ok: false, reason: "storage_unavailable" };
   }

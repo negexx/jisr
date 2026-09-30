@@ -1,20 +1,20 @@
-import {
-  type CoreShard,
-  type CostsShard,
-  type InstitutionsShard,
-  type Manifest,
-  type ProgramsShard,
-  type RoutesShard,
-  type ScholarshipsShard,
-  type Shard,
-  shardNames,
-  type TextShard,
+import type {
+  CoreShard,
+  CostsShard,
+  InstitutionsShard,
+  Manifest,
+  ProgramsShard,
+  RoutesShard,
+  ScholarshipsShard,
+  Shard,
+  TextShard,
 } from "@/data-schema/snapshot";
 import type { AppLocale } from "@/i18n/routing";
 
 import { SnapshotError } from "./errors";
 import { checkShardShape, parseManifest, programShardsIn } from "./manifest";
 import type { ShardPlan } from "./plan";
+import { shardNames } from "./shard-names";
 import { createTextLookup, type TextLookup } from "./text";
 
 export type Digest = (bytes: ArrayBuffer) => Promise<string>;
