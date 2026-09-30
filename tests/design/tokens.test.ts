@@ -117,6 +117,16 @@ describe("design tokens", () => {
       expect(distance(first, second)).toBeGreaterThanOrEqual(CLEARLY_APART);
     });
 
+    // Pale tints cannot be as far apart as text colours (chroma this low caps the distance), so the
+    // plum estimate tint is held apart from the pink fail and destructive tints at the largest
+    // distance reachable while its text keeps 4.5:1: 0.054 today, asserted at 0.05.
+    it.each([
+      ["kind-estimate-bg", "status-fail-bg"],
+      ["kind-estimate-bg", "destructive-bg"],
+    ])("%s is at least 0.05 from the pink tint %s", (first, second) => {
+      expect(distance(first, second)).toBeGreaterThanOrEqual(0.05);
+    });
+
     it("keeps the pale official and ok tints distinguishable (they only ever carry text and an icon)", () => {
       expect(distance("kind-official-bg", "status-ok-bg")).toBeGreaterThanOrEqual(0.02);
     });

@@ -6,10 +6,14 @@ import { describe, expect, it } from "vitest";
 const ROOT = join(import.meta.dirname, "..", "..");
 const SCANNED_DIRECTORIES = ["src/components", "src/app"];
 
-// Physical utilities (`ml-`, `text-left`, `border-r`, ...) do not mirror in Arabic: use the logical
-// ones (`ms-`, `text-start`, `border-e`). A leading `-` (negative margin) and variants are matched too.
-const PHYSICAL_DIRECTION_CLASS =
-  /\b(ml|mr|pl|pr|left|right|text-left|text-right|border-l|border-r|rounded-l|rounded-r)-/;
+// Physical utilities do not mirror in Arabic: use the logical ones (`ms-`, `text-start`,
+// `border-e`, `rounded-s`). Two shapes: prefixes that always carry a value (`ml-3`, `-mr-2`,
+// `left-0`, `scroll-pl-4`), and whole tokens that are complete on their own or take a suffix
+// (`text-left`, `border-r`, `border-l-2`, `rounded-r-lg`), matched at a class boundary so
+// `rounded-lg` and `border-red-500` do not hit. Variants (`sm:`) and a leading `-` precede either.
+const VALUED_PREFIX = /\b(?:ml|mr|pl|pr|left|right|scroll-m[lr]|scroll-p[lr])-/;
+const WHOLE_TOKEN = /(?<![\w-])(?:text-(?:left|right)|(?:border|rounded)-[lr])(?![a-z0-9])/;
+const PHYSICAL_DIRECTION_CLASS = new RegExp(`${VALUED_PREFIX.source}|${WHOLE_TOKEN.source}`);
 
 // shadcn primitives keep their vendored classes only where Tailwind has no logical form; each entry
 // says why. Anything else under ui/ must be logical too.
@@ -34,10 +38,49 @@ describe("components and pages use logical direction utilities only", () => {
     expect(files.length).toBeGreaterThan(10);
   });
 
-  it("flags a physical utility in a synthetic source (the scan can fail)", () => {
-    expect(PHYSICAL_DIRECTION_CLASS.test('className="flex ml-2"')).toBe(true);
-    expect(PHYSICAL_DIRECTION_CLASS.test('className="sm:-mr-3 text-left"')).toBe(true);
-    expect(PHYSICAL_DIRECTION_CLASS.test('className="ms-2 text-start border-s"')).toBe(false);
+  it.each([
+    "ml-2",
+    "-mr-3",
+    "sm:pl-4",
+    "pr-1",
+    "left-0",
+    "md:right-2",
+    "scroll-ml-2",
+    "scroll-pr-2",
+    "text-left",
+    "text-right",
+    "border-l",
+    "border-r",
+    "border-l-2",
+    "border-r-primary",
+    "rounded-l",
+    "rounded-r",
+    "rounded-r-lg",
+    "hover:text-left",
+  ])("catches the physical utility %s on its own", (token) => {
+    expect(PHYSICAL_DIRECTION_CLASS.test(`className="flex ${token} gap-2"`)).toBe(true);
+    expect(PHYSICAL_DIRECTION_CLASS.test(`className="${token}"`)).toBe(true);
+  });
+
+  it.each([
+    "ms-3",
+    "me-3",
+    "ps-2",
+    "pe-2",
+    "start-0",
+    "end-0",
+    "text-start",
+    "text-end",
+    "border-s",
+    "border-e-2",
+    "rounded-s",
+    "rounded-e-lg",
+    "rounded-lg",
+    "border-red-500",
+    "text-lg",
+    "border",
+  ])("lets the logical or unrelated class %s through", (token) => {
+    expect(PHYSICAL_DIRECTION_CLASS.test(`className="flex ${token} gap-2"`)).toBe(false);
   });
 
   it.each(

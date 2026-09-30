@@ -11,10 +11,28 @@ import fr from "../../messages/fr.json";
 
 const catalogs = { fr, en, ar };
 
-export function IntlWrapper({ locale, children }: { locale: AppLocale; children: ReactNode }) {
+type WrapperProps = {
+  locale: AppLocale;
+  children: ReactNode;
+  // Production passes `messages={null}` at the root, so shell leaves must take strings as props. The
+  // default mirrors that: a leaf that goes back to `useTranslations` fails here too. Pass
+  // `withMessages` only to test a component that legitimately sits under a nested provider.
+  withMessages?: boolean;
+};
+
+function throwOnIntlError(error: Error): never {
+  throw error;
+}
+
+export function IntlWrapper({ locale, children, withMessages = false }: WrapperProps) {
   const dir = localeDirection(locale);
   return (
-    <NextIntlClientProvider locale={locale} messages={catalogs[locale]} timeZone="UTC">
+    <NextIntlClientProvider
+      locale={locale}
+      messages={withMessages ? catalogs[locale] : null}
+      onError={throwOnIntlError}
+      timeZone="UTC"
+    >
       <div dir={dir} data-testid="dir-root">
         <DirectionProvider dir={dir}>{children}</DirectionProvider>
       </div>
@@ -37,8 +55,16 @@ export function shellProps(locale: AppLocale) {
   };
 }
 
-export function renderIntl(ui: ReactElement, locale: AppLocale = "fr") {
+export function renderIntl(
+  ui: ReactElement,
+  locale: AppLocale = "fr",
+  options: { withMessages?: boolean } = {},
+) {
   return render(ui, {
-    wrapper: ({ children }) => <IntlWrapper locale={locale}>{children}</IntlWrapper>,
+    wrapper: ({ children }) => (
+      <IntlWrapper locale={locale} withMessages={options.withMessages}>
+        {children}
+      </IntlWrapper>
+    ),
   });
 }

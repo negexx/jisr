@@ -111,8 +111,8 @@
 
   --kind-official: oklch(0.36 0.075 205);
   --kind-official-bg: oklch(0.95 0.02 205);
-  --kind-estimate: oklch(0.42 0.06 330);
-  --kind-estimate-bg: oklch(0.94 0.04 325);
+  --kind-estimate: oklch(0.42 0.06 310);
+  --kind-estimate-bg: oklch(0.92 0.04 300);
   --kind-guidance: oklch(0.42 0.01 90);
   --kind-guidance-bg: oklch(0.95 0.005 90);
 }
