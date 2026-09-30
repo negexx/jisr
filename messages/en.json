@@ -608,5 +608,150 @@
         "description": "Change your preferences in your profile to see them. Your budget never hides a program."
       }
     }
+  },
+  "program": {
+    "meta": {
+      "title": "{program}, {institution} | Jisr",
+      "titleWithoutInstitution": "{program} | Jisr",
+      "description": "Admission requirements, costs, deadlines and how to apply for {program}, with the source of each fact."
+    },
+    "header": {
+      "level": {
+        "bachelor": "Bachelor's"
+      },
+      "institutionCity": "<place>{institution}</place>, <place>{city}</place>",
+      "duration": "{years, plural, one {{count} year} other {{count} years}}",
+      "durationUnknown": "Duration: to be checked",
+      "taughtIn": "Taught in {languages}",
+      "languagesUnknown": "Teaching languages: to be checked"
+    },
+    "banner": {
+      "aging": "Some information on this page was verified a while ago.",
+      "stale": "Some information on this page may be outdated.",
+      "check": "Check the sources linked next to each fact."
+    },
+    "jumpList": {
+      "title": "On this page",
+      "label": "Sections of this page"
+    },
+    "sections": {
+      "overview": "Overview",
+      "requirements": "Admission requirements",
+      "tuition": "Tuition",
+      "costs": "Estimated cost of living",
+      "deadline": "Application deadline",
+      "procedure": "How to apply",
+      "documents": "Required documents",
+      "scholarships": "Scholarships",
+      "links": "Official links",
+      "verified": "Last verified"
+    },
+    "overview": {
+      "institution": "Institution",
+      "institutionType": {
+        "public": "Public institution",
+        "private": "Private institution"
+      },
+      "duration": "Duration",
+      "languages": "Teaching languages"
+    },
+    "requirements": {
+      "intro": "The requirements as published, in general terms. On this part of the page they are not compared with your profile.",
+      "none": "No requirement is published for this program yet. Check the official page."
+    },
+    "costs": {
+      "caption": "Estimated cost of the first year, line by line"
+    },
+    "deadline": {
+      "asPublished": "The dates as published by the source.",
+      "start": "Studies start: {date}",
+      "opens": "Applications open: {date}",
+      "deadline": "Application deadline: {date}",
+      "startUnknown": "Studies start: not published",
+      "opensUnknown": "Applications open: not published",
+      "deadlineUnknown": "Application deadline: not published, to be checked",
+      "none": "No dates are published yet, to be checked on the program page."
+    },
+    "procedure": {
+      "where": "Where to apply",
+      "open": "Go to the application website",
+      "missing": "How to apply is not published yet, to be checked on the program page."
+    },
+    "documents": {
+      "translation": {
+        "yes": "Translation needed: yes",
+        "no": "Translation needed: no",
+        "unknown": "Translation needed: unknown, to be checked"
+      },
+      "none": "No documents are listed in the source we reviewed, to be checked.",
+      "missing": "The list of documents is not published yet, to be checked."
+    },
+    "scholarships": {
+      "intro": "Scholarships linked to this program or offered in its country. Each one has its own conditions: check them on its page.",
+      "none": "No scholarship is published for this program yet.",
+      "provider": "Provider: {provider}",
+      "openToEveryone": "Open to everyone",
+      "nationals": "For nationals of: {countries}",
+      "support": {
+        "month": "Support: <money>{amount}</money> per month",
+        "year": "Support: <money>{amount}</money> per year",
+        "once": "Support: <money>{amount}</money>, paid once",
+        "total": "Support: <money>{amount}</money> in total",
+        "unknown": "Amount: not published, to be checked"
+      },
+      "covers": "Covers: {items}",
+      "cover": {
+        "tuition": "tuition",
+        "living": "living costs",
+        "housing": "housing",
+        "travel": "travel",
+        "insurance": "insurance",
+        "other": "other costs"
+      },
+      "deadline": "Scholarship deadline: {date}",
+      "deadlineUnknown": "Scholarship deadline: not published, to be checked",
+      "link": "Scholarship website"
+    },
+    "links": {
+      "program": "Program page",
+      "institution": "Institution website",
+      "channel": "Application website"
+    },
+    "verified": {
+      "oldest": "The oldest information on this page was verified on {date}.",
+      "each": "Each fact shows its own source and verification date."
+    },
+    "aside": {
+      "label": "Your result, deadline and estimated cost",
+      "deadline": "Deadline",
+      "cost": "Estimated cost, first year",
+      "costDetails": "See each cost line"
+    },
+    "personal": {
+      "heading": "Your result",
+      "loading": "Loading your result",
+      "cta": {
+        "title": "Create your profile to see how this program fits you",
+        "description": "Your answers stay on this device.",
+        "action": "Create my profile"
+      },
+      "error": {
+        "title": "We could not load your result",
+        "description": "Check your connection, then try again.",
+        "retry": "Try again"
+      },
+      "missingProgram": "This program is no longer in the published data.",
+      "updated": {
+        "notice": "The data was updated since this page was built. Reload to see the latest.",
+        "reload": "Reload"
+      },
+      "route": "Your Bac in this country",
+      "budget": "Your budget",
+      "budgetNote": "Your budget never hides a program: it is only compared with the estimate.",
+      "scholarships": "Scholarships on this page open to your nationality",
+      "scholarshipsNone": "Based on the published nationality rules, none of the scholarships on this page is open to your nationality.",
+      "scholarshipsCaveat": "Based on the published nationality rules only. Check the other conditions on the page of each scholarship.",
+      "reasons": "The published requirements, compared with your profile"
+    }
   }
 }

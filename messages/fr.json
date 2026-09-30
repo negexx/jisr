@@ -608,5 +608,150 @@
         "description": "Modifiez vos préférences dans votre profil pour les voir. Votre budget ne masque jamais un programme."
       }
     }
+  },
+  "program": {
+    "meta": {
+      "title": "{program}, {institution} | Jisr",
+      "titleWithoutInstitution": "{program} | Jisr",
+      "description": "Conditions d'admission, coûts, dates limites et démarches pour {program}, avec la source de chaque information."
+    },
+    "header": {
+      "level": {
+        "bachelor": "Licence"
+      },
+      "institutionCity": "<place>{institution}</place>, <place>{city}</place>",
+      "duration": "{years, plural, one {{count} an} other {{count} ans}}",
+      "durationUnknown": "Durée : à vérifier",
+      "taughtIn": "Enseigné en {languages}",
+      "languagesUnknown": "Langues d'enseignement : à vérifier"
+    },
+    "banner": {
+      "aging": "Certaines informations de cette page ont été vérifiées il y a quelque temps.",
+      "stale": "Certaines informations de cette page peuvent être dépassées.",
+      "check": "Vérifiez les sources indiquées à côté de chaque information."
+    },
+    "jumpList": {
+      "title": "Sur cette page",
+      "label": "Sections de cette page"
+    },
+    "sections": {
+      "overview": "Présentation",
+      "requirements": "Conditions d'admission",
+      "tuition": "Frais de scolarité",
+      "costs": "Coût de la vie estimé",
+      "deadline": "Date limite de candidature",
+      "procedure": "Comment candidater",
+      "documents": "Documents demandés",
+      "scholarships": "Bourses",
+      "links": "Liens officiels",
+      "verified": "Dernière vérification"
+    },
+    "overview": {
+      "institution": "Établissement",
+      "institutionType": {
+        "public": "Établissement public",
+        "private": "Établissement privé"
+      },
+      "duration": "Durée",
+      "languages": "Langues d'enseignement"
+    },
+    "requirements": {
+      "intro": "Les conditions telles qu'elles sont publiées, en termes généraux. Dans cette partie de la page, elles ne sont pas comparées à votre profil.",
+      "none": "Aucune condition n'est encore publiée pour cette formation. Consultez la page officielle."
+    },
+    "costs": {
+      "caption": "Coût estimé de la première année, ligne par ligne"
+    },
+    "deadline": {
+      "asPublished": "Les dates telles que publiées par la source.",
+      "start": "Début des études : {date}",
+      "opens": "Ouverture des candidatures : {date}",
+      "deadline": "Date limite de candidature : {date}",
+      "startUnknown": "Début des études : non publié",
+      "opensUnknown": "Ouverture des candidatures : non publiée",
+      "deadlineUnknown": "Date limite de candidature : non publiée, à vérifier",
+      "none": "Aucune date n'est encore publiée, à vérifier sur la page de la formation."
+    },
+    "procedure": {
+      "where": "Où candidater",
+      "open": "Aller sur le site de candidature",
+      "missing": "La façon de candidater n'est pas encore publiée, à vérifier sur la page de la formation."
+    },
+    "documents": {
+      "translation": {
+        "yes": "Traduction nécessaire : oui",
+        "no": "Traduction nécessaire : non",
+        "unknown": "Traduction nécessaire : inconnu, à vérifier"
+      },
+      "none": "Aucun document n'est listé dans la source consultée, à vérifier.",
+      "missing": "La liste des documents n'est pas encore publiée, à vérifier."
+    },
+    "scholarships": {
+      "intro": "Bourses liées à cette formation ou proposées dans son pays. Chacune a ses propres conditions : vérifiez-les sur sa page.",
+      "none": "Aucune bourse n'est encore publiée pour cette formation.",
+      "provider": "Organisme : {provider}",
+      "openToEveryone": "Ouverte à tous",
+      "nationals": "Pour les ressortissants de : {countries}",
+      "support": {
+        "month": "Montant : <money>{amount}</money> par mois",
+        "year": "Montant : <money>{amount}</money> par an",
+        "once": "Montant : <money>{amount}</money>, versé une fois",
+        "total": "Montant : <money>{amount}</money> au total",
+        "unknown": "Montant : non publié, à vérifier"
+      },
+      "covers": "Couvre : {items}",
+      "cover": {
+        "tuition": "les frais de scolarité",
+        "living": "les frais de vie",
+        "housing": "le logement",
+        "travel": "le voyage",
+        "insurance": "l'assurance",
+        "other": "d'autres frais"
+      },
+      "deadline": "Date limite de la bourse : {date}",
+      "deadlineUnknown": "Date limite de la bourse : non publiée, à vérifier",
+      "link": "Site de la bourse"
+    },
+    "links": {
+      "program": "Page de la formation",
+      "institution": "Site de l'établissement",
+      "channel": "Site de candidature"
+    },
+    "verified": {
+      "oldest": "L'information la plus ancienne de cette page a été vérifiée le {date}.",
+      "each": "Chaque information indique sa propre source et sa date de vérification."
+    },
+    "aside": {
+      "label": "Votre résultat, la date limite et le coût estimé",
+      "deadline": "Date limite",
+      "cost": "Coût estimé, première année",
+      "costDetails": "Voir chaque ligne de coût"
+    },
+    "personal": {
+      "heading": "Votre résultat",
+      "loading": "Chargement de votre résultat",
+      "cta": {
+        "title": "Créez votre profil pour voir si cette formation vous correspond",
+        "description": "Vos réponses restent sur cet appareil.",
+        "action": "Créer mon profil"
+      },
+      "error": {
+        "title": "Nous n'avons pas pu charger votre résultat",
+        "description": "Vérifiez votre connexion, puis réessayez.",
+        "retry": "Réessayer"
+      },
+      "missingProgram": "Cette formation ne figure plus dans les données publiées.",
+      "updated": {
+        "notice": "Les données ont été mises à jour depuis la création de cette page. Rechargez-la pour voir la dernière version.",
+        "reload": "Recharger"
+      },
+      "route": "Votre Bac dans ce pays",
+      "budget": "Votre budget",
+      "budgetNote": "Votre budget ne masque jamais une formation : il est seulement comparé à l'estimation.",
+      "scholarships": "Bourses de cette page ouvertes à votre nationalité",
+      "scholarshipsNone": "D'après les règles de nationalité publiées, aucune bourse de cette page n'est ouverte à votre nationalité.",
+      "scholarshipsCaveat": "Uniquement d'après les règles de nationalité publiées. Vérifiez les autres conditions sur la page de chaque bourse.",
+      "reasons": "Les conditions publiées, comparées à votre profil"
+    }
   }
 }
