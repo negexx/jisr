@@ -72,7 +72,9 @@
       "foundation": "In this country, your Bac may not give direct access to a Bachelor's. You may need a foundation year first: a preparatory year before the Bachelor's, like the German Studienkolleg. Check on the official admission page of the program or university whether it applies to you and how to get a place.",
       "not_eligible": "The rules we published say your Bac does not give access to a Bachelor's in this country. Rules can change, so check the official admission page.",
       "check": "We have not confirmed how your Bac is treated in this country. Check the official admission page.",
-      "missing": "We have not published how your Bac is treated for this country yet: check the official admission page."
+      "missing": "We have not published how your Bac is treated for this country yet: check the official admission page.",
+      "staleSource": "The rules we published for your Bac in this country were not verified recently, so we do not state a result. Check the official admission page.",
+      "nonOfficialSource": "The rules we published for your Bac in this country do not come from an official source, so we do not state a result. Check the official admission page."
     },
     "reason": {
       "kind": {
@@ -100,12 +102,17 @@
         "route_not_eligible": "The published rules say your Bac does not give access to a Bachelor's here. Rules can change, so check the official page.",
         "route_check": "We have not confirmed how your Bac is treated in this country. Check the official admission page.",
         "coverage_partial": "We have not published all the requirements for this program. Check the official page for the rest.",
-        "manual_check": "This requirement needs a manual check. Read it on the official source page."
+        "manual_check": "This requirement needs a manual check. Read it on the official source page.",
+        "below_threshold_converted": "Your grade ({student}) converts to {studentConverted} with the published conversion table, which does not reach the published minimum ({required}). This conversion is not an official equivalence decision: check on the official admission page how your grade is treated."
       },
       "outcome": {
         "pass": "Appears met",
         "fail": "Not met",
         "unknown": "To check"
+      },
+      "kindDetail": {
+        "subject_grade_min": "Grade in {subject}",
+        "language_proficiency": "Level in {language}"
       }
     },
     "checklist": {
@@ -232,6 +239,33 @@
     "textNote": {
       "french_fallback": "Shown in French: not translated yet",
       "machine_translated": "Translated automatically, not yet reviewed"
+    },
+    "rule": {
+      "credential_type_in": "Type of Bac asked for by the official source: {types}.",
+      "credential_track_in": "Bac tracks listed by the official source: {tracks}.",
+      "overall_grade_min": {
+        "published": "Minimum overall grade published by the official source: {required}.",
+        "unpublished": "Minimum overall grade: not published, to be checked on the official page."
+      },
+      "subject_grade_min": {
+        "published": "Minimum grade in {subject} published by the official source: {required}.",
+        "unpublished": "Minimum grade in {subject}: not published, to be checked on the official page."
+      },
+      "subject_taken": {
+        "all": "Subjects to have studied, according to the official source: {subjects}.",
+        "any": "At least one of these subjects, according to the official source: {subjects}."
+      },
+      "language_proficiency": {
+        "published": "Minimum level in {language} published by the official source: {required}.",
+        "unpublished": "Minimum level in {language}: not published, to be checked on the official page.",
+        "certificateRequired": "The official source asks for a language certificate.",
+        "certificateNotRequired": "The official source does not ask for a language certificate for this requirement.",
+        "certificateUnpublished": "Whether a language certificate is needed: not published, to be checked on the official page.",
+        "certificates": "Certificates listed by the official source: {certificates}.",
+        "anyCertificate": "The official source does not list specific certificates: a recognised certificate may count. Check the official list of certificates taken into account."
+      },
+      "prior_study_years_min": "Higher education after the Bac, according to the official source: at least {count} {years, plural, one {year} other {years}}.",
+      "manual_check": "Another requirement from the official source: read it on the official page."
     }
   },
   "localeSwitcher": {

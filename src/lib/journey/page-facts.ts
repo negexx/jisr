@@ -1,3 +1,4 @@
+import type { IsoDate } from "@/data-schema/dates";
 import type {
   ApplicationChannel,
   CostProfile,
@@ -23,6 +24,8 @@ export const PAGE_SECTIONS = [
 export type PageSection = (typeof PAGE_SECTIONS)[number];
 
 // `label` identifies the fact (`<record>#<path>`, as in FactRef); it is not user-facing text.
+// `meta` is the FactMeta of a record field, or for cost lines the FactRef estimateCost gives,
+// stamped at `now` (freshnessOfFact recomputes from either shape anyway).
 export type PageFact = { section: PageSection; label: string; meta: FactMeta | FactRef };
 
 // The part of ProgramPageData the facts come from. Declared here rather than imported, because
@@ -35,10 +38,6 @@ export type ProgramFactsSource = {
   applicationChannel: ApplicationChannel | null;
 };
 
-// estimateCost stamps each FactRef's freshness with `now`; pageFacts only keeps the metadata, and
-// which line is chosen does not depend on the date, so any valid date will do.
-const ANY_DATE = "2000-01-01";
-
 function metaOf(fact: FactMeta): FactMeta {
   const meta: FactMeta = {
     source_url: fact.source_url,
@@ -50,7 +49,7 @@ function metaOf(fact: FactMeta): FactMeta {
   return meta;
 }
 
-export function pageFacts(data: ProgramFactsSource): PageFact[] {
+export function pageFacts(data: ProgramFactsSource, now: IsoDate): PageFact[] {
   const { program, institution, applicationChannel } = data;
   const record = `programs/${program.slug}`;
   const facts: PageFact[] = [];
@@ -73,10 +72,16 @@ export function pageFacts(data: ProgramFactsSource): PageFact[] {
     program,
     costProfiles: data.costProfiles,
     budget: null,
-    now: ANY_DATE,
+    now,
   });
   for (const line of cost.lines) {
-    if (line.fact !== null) add("costs", `${line.fact.record}#${line.fact.path}`, line.fact);
+    if (line.fact !== null) {
+      facts.push({
+        section: "costs",
+        label: `${line.fact.record}#${line.fact.path}`,
+        meta: line.fact,
+      });
+    }
   }
 
   add("deadline", `${record}#intakes`, program.intakes);

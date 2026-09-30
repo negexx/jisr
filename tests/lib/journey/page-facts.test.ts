@@ -33,7 +33,7 @@ function metaOnly(meta: { source_url: string; info_kind: string; last_verified_a
 
 describe("pageFacts", () => {
   it("covers every section the ok program page shows", async () => {
-    const facts = pageFacts(await pageData(E2E_SLUGS.ok));
+    const facts = pageFacts(await pageData(E2E_SLUGS.ok), E2E_NOW);
     const sections = new Set(facts.map((f) => f.section));
     for (const section of [
       "overview",
@@ -52,7 +52,7 @@ describe("pageFacts", () => {
 
   it("lists tuition, intakes, languages, duration, documents and the channel link", async () => {
     const data = await pageData(E2E_SLUGS.ok);
-    const facts = pageFacts(data);
+    const facts = pageFacts(data, E2E_NOW);
     const at = (section: string, label: string) =>
       facts.find((f) => f.section === section && f.label === label);
     const { program } = data;
@@ -72,7 +72,7 @@ describe("pageFacts", () => {
 
   it("lists the coverage fact and every requirement rule", async () => {
     const data = await pageData(E2E_SLUGS.ok);
-    const requirements = pageFacts(data).filter((f) => f.section === "requirements");
+    const requirements = pageFacts(data, E2E_NOW).filter((f) => f.section === "requirements");
     const record = `programs/${data.program.slug}`;
     expect(requirements.map((f) => f.label)).toEqual([
       `${record}#requirements`,
@@ -86,7 +86,7 @@ describe("pageFacts", () => {
 
   it("lists each cost line's fact, the tuition line included", async () => {
     const data = await pageData(E2E_SLUGS.ok);
-    const costs = pageFacts(data).filter((f) => f.section === "costs");
+    const costs = pageFacts(data, E2E_NOW).filter((f) => f.section === "costs");
     expect(costs.map((f) => f.label)).toEqual([
       `programs/${data.program.slug}#tuition`,
       ...["housing", "food", "transport", "insurance", "application_visa", "setup"].map(
@@ -94,11 +94,15 @@ describe("pageFacts", () => {
       ),
     ]);
     expect(costs.find((f) => f.label.endsWith("housing"))?.meta.info_kind).toBe("estimate");
+    // Cost lines are FactRefs stamped with the real `now`, never a placeholder date.
+    const later = pageFacts(data, "2030-01-01").filter((f) => f.section === "costs");
+    for (const fact of later) expect(fact.meta).toHaveProperty("freshness", "stale");
+    for (const fact of costs) expect(fact.meta).toHaveProperty("freshness", "fresh");
   });
 
   it("lists each scholarship's support and deadline", async () => {
     const data = await pageData(E2E_SLUGS.ok);
-    const labels = pageFacts(data)
+    const labels = pageFacts(data, E2E_NOW)
       .filter((f) => f.section === "scholarships")
       .map((f) => f.label);
     expect(data.scholarships.length).toBeGreaterThan(0);
@@ -112,7 +116,7 @@ describe("pageFacts", () => {
 
   it("carries metadata only, never values, and excludes personal route facts", async () => {
     for (const slug of Object.values(E2E_SLUGS)) {
-      const facts = pageFacts(await pageData(slug));
+      const facts = pageFacts(await pageData(slug), E2E_NOW);
       for (const fact of facts) {
         expect(fact.meta).not.toHaveProperty("value");
         expect(fact.label.startsWith("admission-routes/")).toBe(false);
@@ -124,8 +128,8 @@ describe("pageFacts", () => {
   });
 
   it("gives the page freshness: stale program stale, ok program fresh", async () => {
-    const stale = pageFacts(await pageData(E2E_SLUGS.stale)).map((f) => f.meta);
-    const ok = pageFacts(await pageData(E2E_SLUGS.ok)).map((f) => f.meta);
+    const stale = pageFacts(await pageData(E2E_SLUGS.stale), E2E_NOW).map((f) => f.meta);
+    const ok = pageFacts(await pageData(E2E_SLUGS.ok), E2E_NOW).map((f) => f.meta);
     expect(worstFreshness(stale, E2E_NOW)).toBe("stale");
     expect(worstFreshness(ok, E2E_NOW)).toBe("fresh");
   });
@@ -139,7 +143,7 @@ describe("pageFacts", () => {
       costProfiles: [],
       scholarships: [],
     };
-    const facts = pageFacts(bare);
+    const facts = pageFacts(bare, E2E_NOW);
     expect(facts.some((f) => f.label.startsWith("institutions/"))).toBe(false);
     expect(facts.some((f) => f.label.startsWith("application-channels/"))).toBe(false);
     expect(facts.filter((f) => f.section === "costs").map((f) => f.label)).toEqual([

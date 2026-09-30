@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import type { Profile } from "@/data-schema/profile";
 import type { Intake } from "@/data-schema/records/program";
-import type { Program } from "@/data-schema/resolved";
+import type { AdmissionRoute, Program } from "@/data-schema/resolved";
 import type { PreferenceMismatch } from "@/domain/filter";
 import type { MatchResult, MatchStatus, Reason, RuleOutcome } from "@/domain/types";
 import { MATCH_STATUSES, PREFERENCE_MISMATCHES } from "@/lib/i18n/vocabulary";
@@ -11,6 +11,7 @@ import {
   MATCH_GROUPS,
   type MatchCardModel,
   type MatchesView,
+  routeKeyOf,
   topReasons,
 } from "@/lib/journey/matches-view";
 import type { SnapshotBundle } from "@/lib/snapshot/client";
@@ -74,6 +75,9 @@ describe("groupOf", () => {
     ["check", "direct", "check"],
     ["check", "check", "check"],
     ["check", "missing", "check"],
+    // A stale or non-official direct / not_eligible route is downgraded to check by the domain.
+    ["check", "direct", "check"],
+    ["check", "not_eligible", "check"],
     ["check", "foundation", "foundation"],
     ["not_satisfied", "direct", "failed"],
     ["not_satisfied", "check", "failed"],
@@ -143,6 +147,20 @@ describe("topReasons", () => {
     expect(topReasons(foundation).map((r) => r.ruleId)).toEqual(["route", "f1", "f2"]);
     expect(topReasons(foundation, 0).map((r) => r.ruleId)).toEqual(["route"]);
     expect(topReasons(withReasons([route], "foundation"), 0)).toEqual([route]);
+  });
+
+  it("always keeps the coverage reason, last, whatever max is", () => {
+    const coverage = {
+      ...reason("unknown", "coverage", "coverage"),
+      code: "coverage_partial" as const,
+    };
+    const reasons = [coverage, reason("fail", "f1"), reason("fail", "f2"), reason("fail", "f3")];
+    expect(topReasons(withReasons(reasons)).map((r) => r.ruleId)).toEqual(["f1", "f2", "coverage"]);
+    expect(topReasons(withReasons(reasons), 0).map((r) => r.ruleId)).toEqual(["coverage"]);
+    expect(topReasons(withReasons([coverage, reason("pass", "p1")])).map((r) => r.ruleId)).toEqual([
+      "p1",
+      "coverage",
+    ]);
   });
 
   it("does not pin the route reason when the route is not foundation", () => {
@@ -364,10 +382,97 @@ describe("buildMatchesView on the e2e fixture", () => {
     expect(card(view, "xx-sort-a-unknown").intake.kind).toBe("unknown");
   });
 
+  it("returns no_programs_for_fields when programs exist but none for the student's fields", () => {
+    const bundle: SnapshotBundle = { ...frBundle, programs: [] };
+    expect(buildMatchesView({ profile: E2E_PROFILE, bundle, now: E2E_NOW, locale: "fr" })).toEqual({
+      kind: "no_programs_for_fields",
+    });
+  });
+
+  it("sorts hidden programs by slug", () => {
+    const priv = programOf(frBundle, E2E_SLUGS.private);
+    const programs = [
+      { ...priv, slug: "xx-z-private" },
+      programOf(frBundle, E2E_SLUGS.ok),
+      { ...priv, slug: "xx-a-private" },
+    ];
+    const view = viewFor(E2E_PROFILE, withPrograms(frBundle, programs));
+    expect(view.hidden.map((h) => h.slug)).toEqual(["xx-a-private", "xx-z-private"]);
+  });
+
   it("is JSON-serialisable, so it can cross an island boundary", () => {
     for (const [, profile] of PROFILES) {
       const view = viewFor(profile);
       expect(JSON.parse(JSON.stringify(view))).toStrictEqual(view);
+    }
+  });
+});
+
+// The XB route (direct in the fixture) with some fields replaced, for the ok program's destination.
+function withXbRoute(
+  patch: (route: AdmissionRoute) => AdmissionRoute,
+  bundle: SnapshotBundle = frBundle,
+): SnapshotBundle {
+  const routes = bundle.routes;
+  if (routes === undefined) throw new Error("fixture bundle has no routes shard");
+  return {
+    ...bundle,
+    routes: {
+      ...routes,
+      routes: routes.routes.map((r) => (r.destination === "XB" ? patch(r) : r)),
+    },
+  };
+}
+
+const STALE_DATE = "2020-01-01";
+
+describe("route message key", () => {
+  function okCard(bundle: SnapshotBundle): MatchCardModel {
+    return card(viewFor(E2E_PROFILE, bundle), E2E_SLUGS.ok);
+  }
+
+  it("names the route when its fact is decisive, or for foundation / check / missing", () => {
+    const view = viewFor(E2E_PROFILE);
+    expect(card(view, E2E_SLUGS.ok).routeKey).toBe("domain.route.direct");
+    expect(card(view, E2E_SLUGS.foundation).routeKey).toBe("domain.route.foundation");
+
+    const failed = okCard(withXbRoute((r) => ({ ...r, outcome: "not_eligible" })));
+    expect(failed.group).toBe("failed");
+    expect(failed.routeKey).toBe("domain.route.not_eligible");
+
+    const check = okCard(withXbRoute((r) => ({ ...r, outcome: "check" })));
+    expect(check.routeKey).toBe("domain.route.check");
+
+    const missing = okCard({ ...frBundle, routes: undefined });
+    expect(missing.match.route).toBe("missing");
+    expect(missing.routeKey).toBe("domain.route.missing");
+  });
+
+  it.each([
+    ["direct", "stale", "domain.route.staleSource"],
+    ["not_eligible", "stale", "domain.route.staleSource"],
+    ["direct", "guidance", "domain.route.nonOfficialSource"],
+    ["not_eligible", "guidance", "domain.route.nonOfficialSource"],
+  ] as const)("never states a %s route resting on a %s fact", (outcome, weakness, key) => {
+    const bundle = withXbRoute((r) => ({
+      ...r,
+      outcome,
+      fact:
+        weakness === "stale"
+          ? { ...r.fact, last_verified_at: STALE_DATE }
+          : { ...r.fact, info_kind: "guidance" },
+    }));
+    const ok = okCard(bundle);
+    expect(ok.match.route).toBe(outcome);
+    expect(ok.match.status).toBe("check");
+    expect(ok.group).toBe("check");
+    expect(ok.routeKey).toBe(key);
+    expect(routeKeyOf(ok.match)).toBe(key);
+  });
+
+  it("falls back to the source key, never an outcome, when the route reason is absent", () => {
+    for (const route of ["direct", "not_eligible"] as const) {
+      expect(routeKeyOf({ route, reasons: [] })).toBe("domain.route.staleSource");
     }
   });
 });

@@ -1,3 +1,4 @@
+import { createTranslator } from "next-intl";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import type { Program } from "@/data-schema/resolved";
 import { matchProgram } from "@/domain/match";
@@ -8,7 +9,7 @@ import { MESSAGE_ARGS, REASON_CODES, REASON_KINDS } from "@/lib/i18n/vocabulary"
 import {
   describeReason,
   NEUTRAL_PARAM,
-  REASON_CODE_PARAMS,
+  type Params,
   type ReasonContext,
   ruleIndex,
 } from "@/lib/journey/reasons";
@@ -72,15 +73,6 @@ function expectPlainParams(params: Record<string, unknown>) {
 }
 
 describe("describeReason: vocabulary coverage", () => {
-  it("documents the ICU arguments of every reason code exactly as T4 does", () => {
-    for (const code of REASON_CODES) {
-      expect([...REASON_CODE_PARAMS[code]].sort(), code).toEqual(
-        [...(MESSAGE_ARGS[`domain.reason.code.${code}`] ?? [])].sort(),
-      );
-    }
-    expect(Object.keys(REASON_CODE_PARAMS).sort()).toEqual([...REASON_CODES].sort());
-  });
-
   it("gives every kind x code the code's message key with its ICU arguments filled", () => {
     for (const locale of LOCALES) {
       const ctx = ctxFor(locale);
@@ -88,7 +80,9 @@ describe("describeReason: vocabulary coverage", () => {
         for (const code of REASON_CODES) {
           const view = describeReason(base(kind, code), ctx);
           expect(view.key).toBe(`domain.reason.code.${code}`);
+          expect(view.kindKey).toBe(`domain.reason.kind.${kind}`);
           expect(typeof messageAt(locale, view.key), `${locale} ${view.key}`).toBe("string");
+          expect(typeof messageAt(locale, view.kindKey), view.kindKey).toBe("string");
           expect(view.kind).toBe(kind);
           expect(view.code).toBe(code);
           for (const arg of MESSAGE_ARGS[view.key] ?? []) {
@@ -106,7 +100,12 @@ type Row = {
   slug?: string;
   reason: Reason;
   expected: Record<AppLocale, Record<string, string>>;
+  // Default: the code's key and the plain kind label.
+  key?: string;
+  kindKey?: string;
 };
+
+const FRENCH_NAME = { fr: "français", en: "French", ar: "الفرنسية" } as const;
 
 const same = (params: Record<string, string>) => ({ fr: params, en: params, ar: params });
 
@@ -142,6 +141,34 @@ const ROWS: Row[] = [
     },
   },
   {
+    name: "a converted grade below the minimum uses the conversion wording",
+    reason: {
+      ...base("overall_grade_min", "below_threshold", "xx-test-rule-grade"),
+      outcome: "fail",
+      student: { scale: "xx-test-scale-20", value: 11 },
+      studentConverted: { scale: "xx-test-scale-5", value: 4.3 },
+      required: 3,
+    },
+    key: "domain.reason.code.below_threshold_converted",
+    expected: {
+      fr: { student: "11 / 20", studentConverted: "4,3 / 5", required: "3 / 5" },
+      en: { student: "11 / 20", studentConverted: "4.3 / 5", required: "3 / 5" },
+      ar: { student: "11 / 20", studentConverted: "4,3 / 5", required: "3 / 5" },
+    },
+  },
+  {
+    name: "a converted value on the student's own scale keeps the plain wording",
+    slug: E2E_SLUGS.fail,
+    reason: {
+      ...base("overall_grade_min", "below_threshold", "xx-test-rule-grade"),
+      outcome: "fail",
+      student: { scale: "xx-test-scale-20", value: 11 },
+      studentConverted: { scale: "xx-test-scale-20", value: 11 },
+      required: 16,
+    },
+    expected: same({ student: "11 / 20", studentConverted: "11 / 20", required: "16 / 20" }),
+  },
+  {
     name: "subject grade names the subject from the text shard",
     reason: {
       ...base("subject_grade_min", "ok", "xx-test-rule-math-grade"),
@@ -149,6 +176,7 @@ const ROWS: Row[] = [
       student: { scale: "xx-test-scale-20", value: 14 },
       required: 12,
     },
+    kindKey: "domain.reason.kindDetail.subject_grade_min",
     expected: {
       fr: { student: "14 / 20", required: "12 / 20", subject: "Mathematiques test" },
       en: { student: "14 / 20", required: "12 / 20", subject: "Test mathematics" },
@@ -213,14 +241,19 @@ const ROWS: Row[] = [
     expected: same({ student: "0", required: "1" }),
   },
   {
-    name: "CEFR levels are shown as they are",
+    name: "CEFR levels are shown as they are, with the language named in the locale",
     reason: {
       ...base("language_proficiency", "below_threshold", "xx-test-rule-language-fr"),
       outcome: "fail",
       student: "B1",
       required: "B2",
     },
-    expected: same({ student: "B1", required: "B2" }),
+    kindKey: "domain.reason.kindDetail.language_proficiency",
+    expected: {
+      fr: { student: "B1", required: "B2", language: FRENCH_NAME.fr },
+      en: { student: "B1", required: "B2", language: FRENCH_NAME.en },
+      ar: { student: "B1", required: "B2", language: FRENCH_NAME.ar },
+    },
   },
   {
     name: "an unknown language level is not a value",
@@ -229,7 +262,12 @@ const ROWS: Row[] = [
       student: "unknown",
       required: "B2",
     },
-    expected: same({ required: "B2" }),
+    kindKey: "domain.reason.kindDetail.language_proficiency",
+    expected: {
+      fr: { required: "B2", language: FRENCH_NAME.fr },
+      en: { required: "B2", language: FRENCH_NAME.en },
+      ar: { required: "B2", language: FRENCH_NAME.ar },
+    },
   },
   {
     name: "an unknown slug is shown as the slug",
@@ -267,10 +305,19 @@ const ROWS: Row[] = [
 ];
 
 describe("describeReason: values", () => {
-  it.each(ROWS)("$name", ({ slug, reason, expected }) => {
+  it.each(ROWS)("$name", ({ slug, reason, expected, key, kindKey }) => {
     for (const locale of LOCALES) {
       const view = describeReason(reason, ctxFor(locale, slug));
       expect(view.params, locale).toEqual(expected[locale]);
+      expect(view.key).toBe(key ?? `domain.reason.code.${reason.code}`);
+      expect(view.kindKey).toBe(kindKey ?? `domain.reason.kind.${reason.kind}`);
+      expect(typeof messageAt(locale, view.key)).toBe("string");
+      for (const arg of [
+        ...(MESSAGE_ARGS[view.key] ?? []),
+        ...(MESSAGE_ARGS[view.kindKey] ?? []),
+      ]) {
+        expect(view.params, `${locale} ${arg}`).toHaveProperty(arg);
+      }
       expect(view.outcome).toBe(reason.outcome);
       expect(view.facts).toEqual(reason.facts);
     }
@@ -312,6 +359,26 @@ describe("describeReason: notes", () => {
   });
 });
 
+type Format = (key: string, params: Params) => string;
+
+const translatorErrors: unknown[] = [];
+
+// The typed translator only takes literal keys; view keys are runtime strings.
+function formatterFor(locale: AppLocale): Format {
+  const t = createTranslator({
+    locale,
+    messages: CATALOGS[locale] as Record<string, unknown>,
+    onError: (error) => translatorErrors.push(error),
+  });
+  return t as unknown as Format;
+}
+
+const translators: Record<AppLocale, Format> = {
+  fr: formatterFor("fr"),
+  en: formatterFor("en"),
+  ar: formatterFor("ar"),
+};
+
 describe("describeReason: real match results", () => {
   it("describes every reason of every fixture program in every locale", () => {
     for (const locale of LOCALES) {
@@ -335,9 +402,15 @@ describe("describeReason: real match results", () => {
           for (const value of Object.values(view.params)) {
             expect(value).not.toBe(NEUTRAL_PARAM);
           }
+          for (const key of [view.key, view.kindKey]) {
+            const text = translators[locale](key, view.params);
+            expect(text, key).not.toMatch(/[{}]/);
+            expect(text, key).not.toBe(key);
+          }
         }
       }
     }
+    expect(translatorErrors).toEqual([]);
   });
 
   it("indexes program rules by id and route conditions as route:<id>", () => {

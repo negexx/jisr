@@ -10,6 +10,7 @@ import type { CoreShard } from "@/data-schema/snapshot";
 import type { FactRef, Reason, ReasonCode, ReasonKind, RuleOutcome } from "@/domain/types";
 import type { AppLocale } from "@/i18n/routing";
 import { formatGrade, intlLocale } from "@/lib/format";
+import { MESSAGE_ARGS } from "@/lib/i18n/vocabulary";
 import type { TextLookup, TextLookupNote } from "@/lib/snapshot/text";
 
 export type Params = Record<string, string | number>;
@@ -21,11 +22,17 @@ export type DescribeContext = { locale: AppLocale; core: CoreShard; text: TextLo
 export type ReasonContext = DescribeContext & { rules: ReadonlyMap<string, ResolvedRule> };
 
 export type ReasonView = {
+  // `domain.reason.code.<code>`, or `domain.reason.code.below_threshold_converted` when the grade
+  // was converted to another scale.
   key: string;
+  // `domain.reason.kindDetail.<kind>` when the subject or language is known, so two rules of the
+  // same kind stay distinguishable; otherwise `domain.reason.kind.<kind>`. Both take `params`.
+  kindKey: string;
   params: Params;
   outcome: RuleOutcome;
   kind: ReasonKind;
   code: ReasonCode;
+  // `textNote` can be "none": there is NO `domain.textNote.none` key, so the UI shows no note then.
   note: TextNoteView | null;
   facts: FactRef[];
 };
@@ -34,24 +41,9 @@ export type ReasonView = {
 // cannot show), so formatting never throws and never prints a raw object.
 export const NEUTRAL_PARAM = "?";
 
-type CodeParam = "student" | "required";
-
-// ICU arguments each `domain.reason.code.*` message uses (T4's MESSAGE_ARGS); a Record, so a new
-// ReasonCode fails the typecheck until it is listed here.
-export const REASON_CODE_PARAMS: Record<ReasonCode, readonly CodeParam[]> = {
-  ok: [],
-  below_threshold: ["student", "required"],
-  track_not_accepted: ["student", "required"],
-  missing_student_value: [],
-  threshold_unpublished: [],
-  no_scale_conversion: [],
-  stale_source: [],
-  non_official_source: [],
-  route_foundation: [],
-  route_not_eligible: [],
-  route_check: [],
-  coverage_partial: [],
-  manual_check: [],
+const KIND_DETAIL_PARAM: Partial<Record<ReasonKind, string>> = {
+  subject_grade_min: "subject",
+  language_proficiency: "language",
 };
 
 export function ruleIndex(
@@ -131,6 +123,16 @@ export function certificateName(slug: string, core: CoreShard): string {
   return core.languageCertificates.find((c) => c.slug === slug)?.name ?? slug;
 }
 
+export function languageName(code: string, locale: AppLocale): string {
+  try {
+    const names = new Intl.DisplayNames(intlLocale(locale), { type: "language", fallback: "code" });
+    return names.of(code) ?? code;
+  } catch {
+    // `of` throws on a code that is not a well-formed language tag: show the code as it is.
+    return code;
+  }
+}
+
 export function textNoteOf(key: TextKey, text: TextLookup): TextNoteView | null {
   const found = text(key);
   return found === undefined ? null : { text: found.text, textNote: found.note };
@@ -156,7 +158,8 @@ function formatValue(value: unknown, spec: ValueSpec, ctx: DescribeContext): str
   return formatGradeValue(value, ctx);
 }
 
-type Specs = { student: ValueSpec; required: ValueSpec; subject: string | null };
+// `detail` names what the rule is about (subject or language) for the kindDetail label.
+type Specs = { student: ValueSpec; required: ValueSpec; detail: Params };
 
 function specsFor(reason: Reason, ctx: ReasonContext): Specs {
   const rule = ctx.rules.get(reason.ruleId);
@@ -168,7 +171,7 @@ function specsFor(reason: Reason, ctx: ReasonContext): Specs {
       return {
         student: { ...plain, name },
         required: { ...plain, name, list: "disjunction" },
-        subject: null,
+        detail: {},
       };
     }
     case "credential_track_in": {
@@ -176,7 +179,7 @@ function specsFor(reason: Reason, ctx: ReasonContext): Specs {
       return {
         student: { ...plain, name },
         required: { ...plain, name, list: "disjunction" },
-        subject: null,
+        detail: {},
       };
     }
     case "overall_grade_min":
@@ -186,26 +189,32 @@ function specsFor(reason: Reason, ctx: ReasonContext): Specs {
       // The threshold is on the rule's scale, which is also the converted grade's scale.
       const scaleSlug = gradeRule?.scale ?? convertedScale(reason);
       const scale = scaleSlug === null ? undefined : scaleOf(scaleSlug, ctx.core);
-      const subject =
-        gradeRule?.kind === "subject_grade_min" ? subjectName(gradeRule.subject, ctx) : null;
-      return { student: plain, required: { ...plain, scale }, subject };
+      const detail: Params =
+        gradeRule?.kind === "subject_grade_min"
+          ? { subject: subjectName(gradeRule.subject, ctx) }
+          : {};
+      return { student: plain, required: { ...plain, scale }, detail };
     }
     case "subject_taken": {
       const name: Namer = (slug) => subjectName(slug, ctx);
       const list: ListMode =
         rule?.kind === "subject_taken" && rule.mode === "any" ? "disjunction" : "conjunction";
-      return { student: { ...plain, name }, required: { ...plain, name, list }, subject: null };
+      return { student: { ...plain, name }, required: { ...plain, name, list }, detail: {} };
     }
     case "language_proficiency": {
       // "unknown" is the profile's "I don't know", not a level to show.
       const name: Namer = (level) => (level === "unknown" ? null : level);
-      return { student: { ...plain, name }, required: { ...plain, name }, subject: null };
+      const detail: Params =
+        rule?.kind === "language_proficiency"
+          ? { language: languageName(rule.language, ctx.locale) }
+          : {};
+      return { student: { ...plain, name }, required: { ...plain, name }, detail };
     }
     case "prior_study_years_min":
     case "manual_check":
     case "route":
     case "coverage":
-      return { student: plain, required: plain, subject: null };
+      return { student: plain, required: plain, detail: {} };
     default:
       return unknownKind(kind, plain);
   }
@@ -214,15 +223,28 @@ function specsFor(reason: Reason, ctx: ReasonContext): Specs {
 // Typed `never` so a new ReasonKind fails the typecheck; at runtime (a kind this code does not know
 // yet) values are shown plainly rather than throwing.
 function unknownKind(_kind: never, plain: ValueSpec): Specs {
-  return { student: plain, required: plain, subject: null };
+  return { student: plain, required: plain, detail: {} };
 }
 
 function convertedScale(reason: Reason): string | null {
   return isGradeValue(reason.studentConverted) ? reason.studentConverted.scale : null;
 }
 
-function neededParams(code: ReasonCode): readonly CodeParam[] {
-  return Object.hasOwn(REASON_CODE_PARAMS, code) ? REASON_CODE_PARAMS[code] : [];
+// A grade converted to another scale gets wording that names the published conversion table.
+function isConvertedFailure(reason: Reason): boolean {
+  return (
+    reason.code === "below_threshold" &&
+    isGradeValue(reason.student) &&
+    isGradeValue(reason.studentConverted) &&
+    reason.student.scale !== reason.studentConverted.scale
+  );
+}
+
+function kindKeyOf(kind: ReasonKind, params: Params): string {
+  const detail = Object.hasOwn(KIND_DETAIL_PARAM, kind) ? KIND_DETAIL_PARAM[kind] : undefined;
+  return detail !== undefined && Object.hasOwn(params, detail)
+    ? `domain.reason.kindDetail.${kind}`
+    : `domain.reason.kind.${kind}`;
 }
 
 export function describeReason(reason: Reason, ctx: ReasonContext): ReasonView {
@@ -234,13 +256,17 @@ export function describeReason(reason: Reason, ctx: ReasonContext): ReasonView {
   set("student", formatValue(reason.student, specs.student, ctx));
   set("studentConverted", formatGradeValue(reason.studentConverted, ctx));
   set("required", formatValue(reason.required, specs.required, ctx));
-  set("subject", specs.subject);
-  for (const name of neededParams(reason.code)) {
+  Object.assign(params, specs.detail);
+  const key = isConvertedFailure(reason)
+    ? "domain.reason.code.below_threshold_converted"
+    : `domain.reason.code.${reason.code}`;
+  for (const name of MESSAGE_ARGS[key] ?? []) {
     if (!Object.hasOwn(params, name)) params[name] = NEUTRAL_PARAM;
   }
 
   return {
-    key: `domain.reason.code.${reason.code}`,
+    key,
+    kindKey: kindKeyOf(reason.kind, params),
     params,
     outcome: reason.outcome,
     kind: reason.kind,

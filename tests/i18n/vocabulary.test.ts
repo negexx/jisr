@@ -75,7 +75,8 @@ function expandedKeys(): string[] {
 }
 
 // Placeholder names at the top level of each `{...}`; throws when braces are unbalanced.
-// intl-messageformat is only a transitive dependency (not importable under pnpm), and no plurals are used.
+// intl-messageformat is only a transitive dependency (not importable under pnpm). Plural branches are
+// nested braces, so only the top-level argument (the plural selector) is collected.
 function placeholders(message: string): string[] {
   const names = new Set<string>();
   let depth = 0;
@@ -116,6 +117,12 @@ const TO_CHECK_REASON_KEYS = [
   ...(
     ["unknown_data", "no_scholarships_listed"] as const satisfies readonly ChecklistReasonCode[]
   ).map((code) => `domain.checklist.reason.${code}`),
+  // Message-only keys picked by the journey view layer.
+  "domain.reason.code.below_threshold_converted",
+  "domain.route.staleSource",
+  "domain.route.nonOfficialSource",
+  "domain.rule.manual_check",
+  "domain.rule.language_proficiency.anyCertificate",
 ];
 
 // Imperative check verbs only: "we checked" must not count (Arabic has no word boundary, so the
@@ -449,7 +456,14 @@ describe("trust wording", () => {
   });
 
   it.each(LOCALES)("%s points to the official page for every route except direct", (locale) => {
-    for (const route of ["foundation", "check", "missing", "not_eligible"] as const) {
+    for (const route of [
+      "foundation",
+      "check",
+      "missing",
+      "not_eligible",
+      "staleSource",
+      "nonOfficialSource",
+    ] as const) {
       const key = `domain.route.${route}`;
       expect(domain[locale].get(key), key).toMatch(OFFICIAL_OR_SOURCE[locale]);
     }
@@ -486,6 +500,75 @@ describe("trust wording", () => {
     );
     expect(new Set(labels).size).toBe(INFO_KINDS.length);
     expect(new Set(meanings).size).toBe(INFO_KINDS.length);
+  });
+});
+
+const RULE_PREFIX = "domain.rule.";
+
+// The product term for a value that is not published (same as domain.cost.missingLine).
+const TO_BE_CHECKED: Record<Locale, string> = {
+  en: "to be checked",
+  fr: "à vérifier",
+  ar: "يجب التحقق منه",
+};
+
+const ESTIMATE_WORD: Record<Locale, RegExp> = {
+  en: /estimat/i,
+  fr: /estim/i,
+  ar: /تقدير|تقديري/u,
+};
+
+describe("trust wording: rules in general terms and journey-only keys", () => {
+  const ruleKeys = (locale: Locale) =>
+    [...domain[locale].keys()].filter((key) => key.startsWith(RULE_PREFIX));
+
+  it("declares the rule keys the program page needs", () => {
+    expect(ruleKeys("fr").length).toBe(17);
+  });
+
+  it.each(LOCALES)("%s says every rule comes from the official source", (locale) => {
+    for (const key of ruleKeys(locale)) {
+      expect(domain[locale].get(key), key).toMatch(OFFICIAL_OR_SOURCE[locale]);
+    }
+  });
+
+  it.each(LOCALES)("%s never reads an unpublished value as 'none required'", (locale) => {
+    const unpublished = ruleKeys(locale).filter(
+      (key) => key.endsWith(".unpublished") || key.endsWith(".certificateUnpublished"),
+    );
+    expect(unpublished).toHaveLength(4);
+    for (const key of unpublished) {
+      expect(domain[locale].get(key), key).toContain(TO_BE_CHECKED[locale]);
+      expect(domain[locale].get(key), key).toMatch(OFFICIAL_WORD[locale]);
+    }
+  });
+
+  it.each(LOCALES)("%s never words a requirement or its label as an estimate", (locale) => {
+    for (const [key, value] of domain[locale]) {
+      if (key.startsWith(RULE_PREFIX) || key.startsWith("domain.reason.kindDetail.")) {
+        expect(value, key).not.toMatch(ESTIMATE_WORD[locale]);
+      }
+    }
+  });
+
+  it.each([
+    ["en", /conversion table/, /not an official equivalence decision/],
+    ["fr", /table de conversion/, /pas une décision officielle d'équivalence/],
+    ["ar", /جدول التحويل/u, /ليس قرار معادلة رسميًا/u],
+  ] as const)("%s says a converted grade is not an official equivalence", (locale, table, notOfficial) => {
+    const value = domain[locale].get("domain.reason.code.below_threshold_converted");
+    expect(value).toMatch(table);
+    expect(value).toMatch(notOfficial);
+  });
+
+  it.each([
+    ["en", /direct access|does not give access|foundation/i],
+    ["fr", /accès direct|ne donne pas accès|préparatoire/i],
+    ["ar", /مباشرة|لا تتيح|تأسيسية/u],
+  ] as const)("%s route source keys never state a route outcome", (locale, outcome) => {
+    for (const key of ["domain.route.staleSource", "domain.route.nonOfficialSource"]) {
+      expect(domain[locale].get(key), key).not.toMatch(outcome);
+    }
   });
 });
 

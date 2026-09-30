@@ -166,6 +166,31 @@ export type VocabularyIsExhaustive = [
   Assert<Exhaustive<TextNote, typeof TEXT_NOTES>>,
 ];
 
+// Message-only keys (no domain type behind them): the journey view layer picks them.
+export const ROUTE_SOURCE_KEYS = ["staleSource", "nonOfficialSource"] as const;
+export const REASON_CODE_VARIANTS = ["below_threshold_converted"] as const;
+export const REASON_KIND_DETAILS = [
+  "subject_grade_min",
+  "language_proficiency",
+] as const satisfies readonly ReasonKind[];
+export const RULE_PLAIN_KINDS = [
+  "credential_type_in",
+  "credential_track_in",
+  "prior_study_years_min",
+  "manual_check",
+] as const satisfies readonly ReasonKind[];
+export const THRESHOLD_VARIANTS = ["published", "unpublished"] as const;
+export const SUBJECT_TAKEN_VARIANTS = ["all", "any"] as const;
+export const LANGUAGE_RULE_VARIANTS = [
+  "published",
+  "unpublished",
+  "certificateRequired",
+  "certificateNotRequired",
+  "certificateUnpublished",
+  "certificates",
+  "anyCertificate",
+] as const;
+
 export type MessageGroup = {
   path: string;
   values: readonly string[];
@@ -183,10 +208,15 @@ export type MessageGroup = {
  *   domain.status.short.<MatchStatus>        card label
  *   domain.status.hint.<MatchStatus>         one-line meaning and next step
  *   domain.route.<RouteOutcome|missing>      explanation paragraph
+ *   domain.route.staleSource|nonOfficialSource  replaces domain.route.<direct|not_eligible> when
+ *                                            the route fact is stale or not official (no outcome)
  *   domain.reason.kind.<ReasonKind>          what the requirement is about
+ *   domain.reason.kindDetail.<kind>          the same, naming the subject / language
  *   domain.reason.code.<ReasonCode>          why it passed, failed or is to be checked
  *                                            below_threshold, track_not_accepted: {student} {required}
+ *   domain.reason.code.below_threshold_converted  {student} {studentConverted} {required}
  *   domain.reason.outcome.<RuleOutcome>      short label
+ *   domain.rule.<kind>[.<variant>]           a rule in general terms (program page)
  *   domain.checklist.step.<id>.{title,meaning}
  *   domain.checklist.reason.<ChecklistReasonCode>
  *   domain.mismatch.<PreferenceMismatch>     why a program is hidden
@@ -205,9 +235,17 @@ export const MESSAGE_GROUPS: readonly MessageGroup[] = [
   { path: "domain.status.short", values: MATCH_STATUSES },
   { path: "domain.status.hint", values: MATCH_STATUSES },
   { path: "domain.route", values: ROUTE_KEYS },
+  { path: "domain.route", values: ROUTE_SOURCE_KEYS },
   { path: "domain.reason.kind", values: REASON_KINDS },
+  { path: "domain.reason.kindDetail", values: REASON_KIND_DETAILS },
   { path: "domain.reason.code", values: REASON_CODES },
+  { path: "domain.reason.code", values: REASON_CODE_VARIANTS },
   { path: "domain.reason.outcome", values: RULE_OUTCOMES },
+  { path: "domain.rule", values: RULE_PLAIN_KINDS },
+  { path: "domain.rule.overall_grade_min", values: THRESHOLD_VARIANTS },
+  { path: "domain.rule.subject_grade_min", values: THRESHOLD_VARIANTS },
+  { path: "domain.rule.subject_taken", values: SUBJECT_TAKEN_VARIANTS },
+  { path: "domain.rule.language_proficiency", values: LANGUAGE_RULE_VARIANTS },
   { path: "domain.checklist.step", values: CHECKLIST_STEP_IDS, leaves: ["title", "meaning"] },
   { path: "domain.checklist.reason", values: CHECKLIST_REASON_CODES },
   { path: "domain.mismatch", values: PREFERENCE_MISMATCHES },
@@ -233,6 +271,21 @@ export const MESSAGE_GROUPS: readonly MessageGroup[] = [
 export const MESSAGE_ARGS: Readonly<Record<string, readonly string[]>> = {
   "domain.reason.code.below_threshold": ["student", "required"],
   "domain.reason.code.track_not_accepted": ["student", "required"],
+  "domain.reason.code.below_threshold_converted": ["student", "studentConverted", "required"],
+  "domain.reason.kindDetail.subject_grade_min": ["subject"],
+  "domain.reason.kindDetail.language_proficiency": ["language"],
+  "domain.rule.credential_type_in": ["types"],
+  "domain.rule.credential_track_in": ["tracks"],
+  "domain.rule.overall_grade_min.published": ["required"],
+  "domain.rule.subject_grade_min.published": ["subject", "required"],
+  "domain.rule.subject_grade_min.unpublished": ["subject"],
+  "domain.rule.subject_taken.all": ["subjects"],
+  "domain.rule.subject_taken.any": ["subjects"],
+  "domain.rule.language_proficiency.published": ["language", "required"],
+  "domain.rule.language_proficiency.unpublished": ["language"],
+  "domain.rule.language_proficiency.certificates": ["certificates"],
+  // `years` (a number) selects the plural form; `count` is the same number already formatted.
+  "domain.rule.prior_study_years_min": ["count", "years"],
   "domain.cost.tenMonthNote": ["months"],
   "domain.intake.upcoming": ["date"],
   "domain.freshness.verifiedOn": ["date"],

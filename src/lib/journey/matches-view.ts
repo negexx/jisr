@@ -11,6 +11,7 @@ import { matchProgram } from "@/domain/match";
 import { resolveRoute } from "@/domain/route";
 import type { CostEstimate, FactRef, IntakeStatus, MatchResult, Reason } from "@/domain/types";
 import type { AppLocale } from "@/i18n/routing";
+import type { ROUTE_KEYS, ROUTE_SOURCE_KEYS } from "@/lib/i18n/vocabulary";
 import type { SnapshotBundle } from "@/lib/snapshot/client";
 import type { DataText } from "@/lib/snapshot/text";
 
@@ -32,6 +33,9 @@ export type MatchCardModel = {
   intake: IntakeStatus;
   match: MatchResult;
   group: MatchGroup;
+  // Use this, never `domain.route.${match.route}`: it does not state a route resting on stale or
+  // non-official evidence.
+  routeKey: RouteKey;
   topReasons: ReasonView[];
   applicationChannel: Pick<ApplicationChannel, "name" | "kind" | "accountRequired"> | null;
   summaryText: DataText | null;
@@ -41,8 +45,12 @@ export type MatchCardModel = {
 // Hidden programs are not matched: the page lists them with their mismatches only.
 export type HiddenProgram = { slug: string; name: string; mismatches: PreferenceMismatch[] };
 
+// no_programs: the snapshot publishes no program at all.
+// no_programs_for_fields: programs exist, but none in the fields the student chose (their program
+// shards were not loaded), so there is nothing to match or hide.
 export type MatchesView =
   | { kind: "no_programs" }
+  | { kind: "no_programs_for_fields" }
   | {
       kind: "ok";
       groups: Record<MatchGroup, MatchCardModel[]>;
@@ -76,21 +84,49 @@ export function groupOf(match: Pick<MatchResult, "status" | "route">): MatchGrou
   }
 }
 
+export type RouteKey = `domain.route.${
+  | (typeof ROUTE_KEYS)[number]
+  | (typeof ROUTE_SOURCE_KEYS)[number]}`;
+
+// A direct or not_eligible route is named only when its reason is decisive (pass or fail). The
+// domain downgrades a stale or non-official route fact to unknown while `match.route` keeps the
+// outcome, so the outcome must not be worded then. Foundation, check and missing state no definite
+// outcome and are always named.
+export function routeKeyOf(match: Pick<MatchResult, "route" | "reasons">): RouteKey {
+  const { route } = match;
+  if (route === "foundation" || route === "check" || route === "missing") {
+    return `domain.route.${route}`;
+  }
+  const reason = match.reasons.find((r) => r.kind === "route");
+  if (reason?.outcome === "pass" || reason?.outcome === "fail") return `domain.route.${route}`;
+  return reason?.code === "non_official_source"
+    ? "domain.route.nonOfficialSource"
+    : "domain.route.staleSource";
+}
+
 const OUTCOME_RANK: Record<Reason["outcome"], number> = { fail: 0, unknown: 1, pass: 2 };
 
+// Failures first, then to-check, then passes. The foundation route reason (first) and the coverage
+// reason (last) are always kept, whatever `max` is: truncation must never hide them.
 export function topReasons(match: MatchResult, max = 3): Reason[] {
   const pinned =
     match.route === "foundation" ? match.reasons.find((r) => r.kind === "route") : undefined;
+  const coverage = match.reasons.find((r) => r.kind === "coverage");
+  const room = Math.max(0, max - (pinned === undefined ? 0 : 1) - (coverage === undefined ? 0 : 1));
   const rest = match.reasons
-    .filter((r) => r !== pinned)
+    .filter((r) => r !== pinned && r !== coverage)
     .map((reason, index) => ({ reason, index }))
     .sort(
       (a, b) =>
         OUTCOME_RANK[a.reason.outcome] - OUTCOME_RANK[b.reason.outcome] || a.index - b.index,
     )
-    .map(({ reason }) => reason);
-  if (pinned === undefined) return rest.slice(0, Math.max(0, max));
-  return [pinned, ...rest.slice(0, Math.max(0, max - 1))];
+    .map(({ reason }) => reason)
+    .slice(0, room);
+  return [
+    ...(pinned === undefined ? [] : [pinned]),
+    ...rest,
+    ...(coverage === undefined ? [] : [coverage]),
+  ];
 }
 
 function emptyGroups<T>(value: () => T): Record<MatchGroup, T> {
@@ -173,6 +209,7 @@ function cardFor(input: CardInput): MatchCardModel {
     intake,
     match,
     group: groupOf(match),
+    routeKey: routeKeyOf(match),
     topReasons: reasons,
     applicationChannel:
       channel === null
@@ -204,6 +241,7 @@ export function buildMatchesView(input: MatchesViewInput): MatchesView {
   }
 
   const programs = bundle.programs.flatMap((shard) => shard.programs);
+  if (programs.length === 0) return { kind: "no_programs_for_fields" };
   const { kept, excluded } = filterPrograms(profile, programs, now);
 
   const groups = emptyGroups<MatchCardModel[]>(() => []);
@@ -214,11 +252,13 @@ export function buildMatchesView(input: MatchesViewInput): MatchesView {
   for (const group of MATCH_GROUPS) groups[group].sort(compareCards);
 
   const names = new Map(programs.map((p) => [p.slug, p.name]));
-  const hidden: HiddenProgram[] = excluded.map(({ programSlug, mismatches }) => ({
-    slug: programSlug,
-    name: names.get(programSlug) ?? programSlug,
-    mismatches,
-  }));
+  const hidden: HiddenProgram[] = excluded
+    .map(({ programSlug, mismatches }) => ({
+      slug: programSlug,
+      name: names.get(programSlug) ?? programSlug,
+      mismatches,
+    }))
+    .sort((a, b) => (a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0));
   const hiddenByMismatch: Record<PreferenceMismatch, number> = {
     destination: 0,
     field: 0,
