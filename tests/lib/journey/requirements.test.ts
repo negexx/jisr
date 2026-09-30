@@ -160,7 +160,8 @@ describe("describeRule", () => {
         key: "domain.rule.overall_grade_min.published",
         kindKey: "domain.reason.kind.overall_grade_min",
         params: { required: "3 / 5" },
-        details: [],
+        // xx-test-scale-5 is lower-is-better: the page says so next to the threshold.
+        details: [{ key: "domain.rule.scaleLowerBetter", params: { required: "3 / 5" } }],
       },
     ],
     [
@@ -268,7 +269,45 @@ describe("describeRule", () => {
     expect(describeRule(rule, ctxFor("ar")).note?.textNote).toBe("french_fallback");
   });
 
-  it("formats years (plural selector plus formatted count), tracks and 'any' subjects", () => {
+  it.each([
+    ["overall grade", { kind: "overall_grade_min", scale: "xx-test-scale-5", threshold: 2 }],
+    [
+      "subject grade",
+      {
+        kind: "subject_grade_min",
+        subject: "xx-test-subject-math",
+        scale: "xx-test-scale-5",
+        threshold: 2,
+      },
+    ],
+  ] as const)("says a lower grade is better on a lower-is-better scale (%s)", (_label, rule) => {
+    for (const locale of LOCALES) {
+      const view = shape({ id: "g", fact: FACT, ...rule }, locale);
+      expect(view.details).toEqual([
+        { key: "domain.rule.scaleLowerBetter", params: { required: "2 / 5" } },
+      ]);
+      expect(view.params.required).toBe("2 / 5");
+    }
+  });
+
+  it("adds no scale line on a higher-is-better scale, an unknown scale or an unpublished threshold", () => {
+    const rules: ResolvedRule[] = [
+      { id: "a", fact: FACT, kind: "overall_grade_min", scale: "xx-test-scale-20", threshold: 12 },
+      { id: "b", fact: FACT, kind: "overall_grade_min", scale: "zz-scale", threshold: 12 },
+      { id: "c", fact: FACT, kind: "overall_grade_min", scale: "xx-test-scale-5", threshold: null },
+      {
+        id: "d",
+        fact: FACT,
+        kind: "subject_grade_min",
+        subject: "xx-test-subject-math",
+        scale: "xx-test-scale-5",
+        threshold: null,
+      },
+    ];
+    for (const rule of rules) expect(shape(rule).details, rule.id).toEqual([]);
+  });
+
+  it("formats years (the plural number), tracks and 'any' subjects", () => {
     const years: ResolvedRule = { id: "y", fact: FACT, kind: "prior_study_years_min", years: 2 };
     const tracks: ResolvedRule = {
       id: "t",
@@ -283,9 +322,11 @@ describe("describeRule", () => {
       subjects: ["xx-test-subject-math", "xx-test-subject-phys"],
       mode: "any",
     };
-    expect(shape(years, "ar")).toMatchObject({
+    expect(shape(years, "ar")).toEqual({
       key: "domain.rule.prior_study_years_min",
-      params: { count: "2", years: 2 },
+      kindKey: "domain.reason.kind.prior_study_years_min",
+      params: { years: 2 },
+      details: [],
     });
     expect(shape(tracks, "en")).toMatchObject({
       key: "domain.rule.credential_track_in",

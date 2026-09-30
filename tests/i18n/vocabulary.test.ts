@@ -1,3 +1,4 @@
+import { createTranslator } from "next-intl";
 import { describe, expect, expectTypeOf, it } from "vitest";
 
 import type {
@@ -74,29 +75,75 @@ function expandedKeys(): string[] {
   );
 }
 
-// Placeholder names at the top level of each `{...}`; throws when braces are unbalanced.
-// intl-messageformat is only a transitive dependency (not importable under pnpm). Plural branches are
-// nested braces, so only the top-level argument (the plural selector) is collected.
+// Every argument name in an ICU message, including those inside plural/select branches (`#` is not
+// an argument). Throws on unbalanced braces or a malformed argument. intl-messageformat is only a
+// transitive dependency (not importable under pnpm), hence this small parser.
 function placeholders(message: string): string[] {
   const names = new Set<string>();
-  let depth = 0;
-  for (let i = 0; i < message.length; i++) {
-    const char = message[i];
-    if (char === "{") {
-      if (depth === 0) {
-        const name = /^\s*([A-Za-z_]\w*)\s*[,}]/.exec(message.slice(i + 1))?.[1];
-        if (name === undefined) throw new Error(`bad placeholder in "${message}"`);
-        names.add(name);
-      }
-      depth++;
-    } else if (char === "}") {
-      depth--;
-      if (depth < 0) throw new Error(`unbalanced braces in "${message}"`);
+  const fail = (why: string): never => {
+    throw new Error(`${why} in "${message}"`);
+  };
+
+  // Reads text from `start` up to an unmatched "}" (returned) or the end of the message.
+  const text = (start: number, nested: boolean): number => {
+    let i = start;
+    while (i < message.length) {
+      if (message[i] === "}") return nested ? i : fail("unbalanced braces");
+      i = message[i] === "{" ? argument(i + 1) : i + 1;
     }
-  }
-  if (depth !== 0) throw new Error(`unbalanced braces in "${message}"`);
+    return nested ? fail("unbalanced braces") : i;
+  };
+
+  // `start` is just after "{"; returns the index just after the argument's closing "}".
+  const argument = (start: number): number => {
+    const head = /^\s*([A-Za-z_]\w*)\s*(?:,\s*(\w+)\s*)?/.exec(message.slice(start));
+    if (head?.[1] === undefined) return fail("bad placeholder");
+    names.add(head[1]);
+    let i = start + head[0].length;
+    const type = head[2];
+    if (type === undefined) return message[i] === "}" ? i + 1 : fail("bad placeholder");
+    if (type !== "plural" && type !== "select" && type !== "selectordinal") {
+      const close = message.indexOf("}", i);
+      return close === -1 ? fail("unbalanced braces") : close + 1;
+    }
+    if (message[i] !== ",") return fail("bad branches");
+    i++;
+    for (;;) {
+      const branch = /^\s*(?:(=\d+|[A-Za-z_]\w*)\s*(\{))?\s*/.exec(message.slice(i));
+      if (branch?.[2] === undefined) {
+        i += branch?.[0].length ?? 0;
+        return message[i] === "}" ? i + 1 : fail("bad branches");
+      }
+      i = text(i + branch[0].length, true) + 1;
+    }
+  };
+
+  text(0, false);
   return [...names].sort();
 }
+
+describe("placeholders helper", () => {
+  it.each([
+    ["{a} and {b}", ["a", "b"]],
+    ["{n, plural, one {# x} other {# xs}}", ["n"]],
+    [
+      "{n, plural, =0 {none} one {{a}} other {{b} {c, select, x {{d}} other {e}}}}",
+      ["a", "b", "c", "d", "n"],
+    ],
+  ] as const)("collects %s", (message, names) => {
+    expect(placeholders(message)).toEqual(names);
+  });
+
+  it.each([
+    "{a",
+    "a}",
+    "{n, plural, one {x}",
+    "{ }",
+    "{n, plural, one x}",
+  ])("rejects %s", (message) => {
+    expect(() => placeholders(message)).toThrow();
+  });
+});
 
 // Hand-maintained: no type maps a ReasonCode or ChecklistReasonCode to its outcome, so when a code
 // is added, decide here whether its message tells the student to check something.
@@ -518,18 +565,129 @@ const ESTIMATE_WORD: Record<Locale, RegExp> = {
   ar: /تقدير|تقديري/u,
 };
 
+const SCALE_LOWER_BETTER = "domain.rule.scaleLowerBetter";
+
+const BELOW: Record<Locale, RegExp> = {
+  en: /\bbelow\b|\blower than\b/i,
+  fr: /inférieur/i,
+  ar: /أقل من/u,
+};
+
+const BELOW_OR_MINIMUM: Record<Locale, RegExp> = {
+  en: new RegExp(`${BELOW.en.source}|minimum`, "i"),
+  fr: new RegExp(`${BELOW.fr.source}|minimum|minimal`, "i"),
+  ar: new RegExp(`${BELOW.ar.source}|الحد الأدنى`, "u"),
+};
+
 describe("trust wording: rules in general terms and journey-only keys", () => {
   const ruleKeys = (locale: Locale) =>
     [...domain[locale].keys()].filter((key) => key.startsWith(RULE_PREFIX));
 
   it("declares the rule keys the program page needs", () => {
-    expect(ruleKeys("fr").length).toBe(17);
+    expect(ruleKeys("fr").length).toBe(18);
   });
 
+  // scaleLowerBetter explains how to read the grade of a rule line that already names the source.
   it.each(LOCALES)("%s says every rule comes from the official source", (locale) => {
     for (const key of ruleKeys(locale)) {
+      if (key === SCALE_LOWER_BETTER) continue;
       expect(domain[locale].get(key), key).toMatch(OFFICIAL_OR_SOURCE[locale]);
     }
+  });
+
+  it.each([
+    ["en", /lower grade is better/, /\{required\} or better/],
+    ["fr", /note plus basse est meilleure/, /\{required\} ou mieux/],
+    ["ar", /العلامة الأدنى أفضل/u, /\{required\} أو أفضل منها/u],
+  ] as const)("%s explains a lower-is-better scale without 'minimum' or 'below'", (locale, lower, needs) => {
+    const value = domain[locale].get(SCALE_LOWER_BETTER);
+    expect(value).toMatch(lower);
+    expect(value).toMatch(needs);
+    expect(value).not.toMatch(BELOW_OR_MINIMUM[locale]);
+  });
+
+  it.each(
+    LOCALES,
+  )("%s grade-threshold failures never say 'below', false on lower-is-better scales", (locale) => {
+    for (const code of ["below_threshold", "below_threshold_converted"]) {
+      const key = `domain.reason.code.${code}`;
+      expect(domain[locale].get(key), key).not.toMatch(BELOW[locale]);
+    }
+  });
+
+  it("uses one Arabic word for a grade (العلامة, never النقطة) in rules and reasons", () => {
+    const offenders = [...domain.ar].filter(
+      ([key, value]) =>
+        (key.startsWith(RULE_PREFIX) || key.startsWith("domain.reason.")) && /نقط/u.test(value),
+    );
+    expect(offenders).toEqual([]);
+  });
+
+  it("never words the Arabic grade conversion as an equivalence (no تعادل / يعادل)", () => {
+    expect(domain.ar.get("domain.reason.code.below_threshold_converted")).not.toMatch(
+      /تعادل|يعادل/u,
+    );
+  });
+
+  it("puts a no-break space before French double punctuation", () => {
+    const offenders = [...domain.fr].filter(([, value]) => / [:;!?]/.test(value));
+    expect(offenders).toEqual([]);
+  });
+
+  it.each([
+    [
+      "fr",
+      "domain.reason.code.below_threshold",
+      "Votre valeur ({student}) n'atteint pas le minimum publié ({required}). Les conditions peuvent changer : vérifiez la page officielle.",
+    ],
+    [
+      "ar",
+      "domain.reason.code.below_threshold",
+      "قيمتك ({student}) لا تبلغ الحد الأدنى المنشور ({required}). قد تتغير الشروط، لذا تحقق من الصفحة الرسمية.",
+    ],
+    [
+      "ar",
+      "domain.reason.code.below_threshold_converted",
+      "بعد التحويل حسب جدول التحويل المنشور، تصبح علامتك ({student}) {studentConverted}، وهي لا تبلغ الحد الأدنى المنشور ({required}). هذا التحويل ليس قرار معادلة رسميًا: تحقق في صفحة الالتحاق الرسمية من كيفية التعامل مع علامتك.",
+    ],
+    [
+      "ar",
+      "domain.rule.prior_study_years_min",
+      "الدراسة العليا بعد البكالوريا حسب المصدر الرسمي: {years, plural, one {سنة واحدة} two {سنتان} few {# سنوات} other {# سنة}} على الأقل.",
+    ],
+    [
+      "fr",
+      SCALE_LOWER_BETTER,
+      "Sur cette échelle, une note plus basse est meilleure : il faut {required} ou mieux (une note plus basse).",
+    ],
+    [
+      "ar",
+      SCALE_LOWER_BETTER,
+      "في هذا السلّم، العلامة الأدنى أفضل: يجب الحصول على {required} أو أفضل منها (أي علامة أدنى).",
+    ],
+  ] as const)("%s %s has the reviewed wording", (locale, key, text) => {
+    expect(domain[locale].get(key)).toBe(text);
+  });
+
+  it.each([
+    ["ar", 1, "سنة واحدة على الأقل."],
+    ["ar", 2, "سنتان على الأقل."],
+    ["ar", 3, "3 سنوات على الأقل."],
+    ["ar", 11, "11 سنة على الأقل."],
+    ["fr", 1, "au moins 1 année."],
+    ["fr", 2, "au moins 2 années."],
+    ["en", 1, "at least 1 year."],
+    ["en", 2, "at least 2 years."],
+  ] as const)("%s renders prior_study_years_min for %i years", (locale, years, ending) => {
+    const errors: unknown[] = [];
+    const t = createTranslator({
+      locale,
+      messages: catalogs[locale],
+      onError: (error) => errors.push(error),
+    }) as unknown as (key: string, params: Record<string, number>) => string;
+    const text = t("domain.rule.prior_study_years_min", { years });
+    expect(errors).toEqual([]);
+    expect(text.endsWith(ending), text).toBe(true);
   });
 
   it.each(LOCALES)("%s never reads an unpublished value as 'none required'", (locale) => {
@@ -604,6 +762,15 @@ describe("required wording (en)", () => {
       "Monthly costs are counted for {months} months of study. Housing is often paid for 12 months, so check the rent period.",
     ],
     ["domain.mismatch.destination", "Not in a country you chose"],
+    [
+      "domain.reason.code.below_threshold",
+      "Your value ({student}) does not meet the published minimum ({required}). Requirements can change, so check the official page.",
+    ],
+    ["domain.rule.credential_track_in", "Bac tracks accepted by the official source: {tracks}."],
+    [
+      "domain.rule.scaleLowerBetter",
+      "On this scale a lower grade is better: you need {required} or better (a lower grade).",
+    ],
   ])("%s", (key, text) => {
     expect(enText(key)).toBe(text);
   });

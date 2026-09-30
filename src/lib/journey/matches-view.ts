@@ -90,8 +90,9 @@ export type RouteKey = `domain.route.${
 
 // A direct or not_eligible route is named only when its reason is decisive (pass or fail). The
 // domain downgrades a stale or non-official route fact to unknown while `match.route` keeps the
-// outcome, so the outcome must not be worded then. Foundation, check and missing state no definite
-// outcome and are always named.
+// outcome, so the outcome must not be worded then: the source key says why, and any other case
+// falls back to the neutral check wording. Foundation, check and missing state no definite outcome
+// and are always named.
 export function routeKeyOf(match: Pick<MatchResult, "route" | "reasons">): RouteKey {
   const { route } = match;
   if (route === "foundation" || route === "check" || route === "missing") {
@@ -99,9 +100,9 @@ export function routeKeyOf(match: Pick<MatchResult, "route" | "reasons">): Route
   }
   const reason = match.reasons.find((r) => r.kind === "route");
   if (reason?.outcome === "pass" || reason?.outcome === "fail") return `domain.route.${route}`;
-  return reason?.code === "non_official_source"
-    ? "domain.route.nonOfficialSource"
-    : "domain.route.staleSource";
+  if (reason?.code === "non_official_source") return "domain.route.nonOfficialSource";
+  if (reason?.code === "stale_source") return "domain.route.staleSource";
+  return "domain.route.check";
 }
 
 const OUTCOME_RANK: Record<Reason["outcome"], number> = { fail: 0, unknown: 1, pass: 2 };

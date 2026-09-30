@@ -179,6 +179,9 @@ export const RULE_PLAIN_KINDS = [
   "prior_study_years_min",
   "manual_check",
 ] as const satisfies readonly ReasonKind[];
+// Extra lines of a rule, not tied to one kind: scaleLowerBetter reads a threshold on a
+// lower-is-better grading scale.
+export const RULE_DETAIL_KEYS = ["scaleLowerBetter"] as const;
 export const THRESHOLD_VARIANTS = ["published", "unpublished"] as const;
 export const SUBJECT_TAKEN_VARIANTS = ["all", "any"] as const;
 export const LANGUAGE_RULE_VARIANTS = [
@@ -217,6 +220,7 @@ export type MessageGroup = {
  *   domain.reason.code.below_threshold_converted  {student} {studentConverted} {required}
  *   domain.reason.outcome.<RuleOutcome>      short label
  *   domain.rule.<kind>[.<variant>]           a rule in general terms (program page)
+ *   domain.rule.scaleLowerBetter             {required}: the threshold's scale is lower-is-better
  *   domain.checklist.step.<id>.{title,meaning}
  *   domain.checklist.reason.<ChecklistReasonCode>
  *   domain.mismatch.<PreferenceMismatch>     why a program is hidden
@@ -242,6 +246,7 @@ export const MESSAGE_GROUPS: readonly MessageGroup[] = [
   { path: "domain.reason.code", values: REASON_CODE_VARIANTS },
   { path: "domain.reason.outcome", values: RULE_OUTCOMES },
   { path: "domain.rule", values: RULE_PLAIN_KINDS },
+  { path: "domain.rule", values: RULE_DETAIL_KEYS },
   { path: "domain.rule.overall_grade_min", values: THRESHOLD_VARIANTS },
   { path: "domain.rule.subject_grade_min", values: THRESHOLD_VARIANTS },
   { path: "domain.rule.subject_taken", values: SUBJECT_TAKEN_VARIANTS },
@@ -284,8 +289,9 @@ export const MESSAGE_ARGS: Readonly<Record<string, readonly string[]>> = {
   "domain.rule.language_proficiency.published": ["language", "required"],
   "domain.rule.language_proficiency.unpublished": ["language"],
   "domain.rule.language_proficiency.certificates": ["certificates"],
-  // `years` (a number) selects the plural form; `count` is the same number already formatted.
-  "domain.rule.prior_study_years_min": ["count", "years"],
+  "domain.rule.scaleLowerBetter": ["required"],
+  // `years` is a number: it selects the plural form and is printed by `#` in the branches.
+  "domain.rule.prior_study_years_min": ["years"],
   "domain.cost.tenMonthNote": ["months"],
   "domain.intake.upcoming": ["date"],
   "domain.freshness.verifiedOn": ["date"],

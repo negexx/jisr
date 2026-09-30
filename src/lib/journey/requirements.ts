@@ -5,7 +5,6 @@ import {
   credentialTypeName,
   type DescribeContext,
   formatList,
-  formatNumber,
   formatThreshold,
   languageName,
   type Params,
@@ -76,12 +75,16 @@ function certificateLines(
 
 function describeKind(rule: ResolvedRule, ctx: DescribeContext): Described {
   const { core, locale } = ctx;
-  const threshold = (value: number, scale: string) =>
-    formatThreshold(
-      value,
-      core.gradingScales.find((s) => s.slug === scale),
-      locale,
-    );
+  const threshold = (value: number, slug: string): Params => {
+    const scale = core.gradingScales.find((s) => s.slug === slug);
+    return withValues([["required", formatThreshold(value, scale, locale)]]);
+  };
+  // On a lower-is-better scale "minimum" reads backwards, so the page says which way is better.
+  const scaleLines = (slug: string, required: Params): RuleLine[] =>
+    core.gradingScales.find((s) => s.slug === slug)?.direction === "lower_better" &&
+    Object.hasOwn(required, "required")
+      ? [line("scaleLowerBetter", required)]
+      : [];
   const names = (slugs: readonly string[], name: (slug: string) => string, any: boolean) =>
     formatList(slugs.map(name), any ? "disjunction" : "conjunction", locale);
 
@@ -96,25 +99,24 @@ function describeKind(rule: ResolvedRule, ctx: DescribeContext): Described {
         "credential_track_in",
         withValues([["tracks", names(rule.tracks, (s) => trackName(s, core), true)]]),
       );
-    case "overall_grade_min":
-      return rule.threshold === null
-        ? main("overall_grade_min.unpublished", {})
-        : main(
-            "overall_grade_min.published",
-            withValues([["required", threshold(rule.threshold, rule.scale)]]),
-          );
+    case "overall_grade_min": {
+      if (rule.threshold === null) return main("overall_grade_min.unpublished", {});
+      const required = threshold(rule.threshold, rule.scale);
+      return {
+        ...main("overall_grade_min.published", required),
+        details: scaleLines(rule.scale, required),
+      };
+    }
     case "subject_grade_min": {
       const subject = subjectName(rule.subject, ctx);
-      return rule.threshold === null
-        ? main("subject_grade_min.unpublished", { subject }, true)
-        : main(
-            "subject_grade_min.published",
-            withValues([
-              ["subject", subject],
-              ["required", threshold(rule.threshold, rule.scale)],
-            ]),
-            true,
-          );
+      if (rule.threshold === null) {
+        return main("subject_grade_min.unpublished", { subject }, true);
+      }
+      const required = threshold(rule.threshold, rule.scale);
+      return {
+        ...main("subject_grade_min.published", { subject, ...required }, true),
+        details: scaleLines(rule.scale, required),
+      };
     }
     case "subject_taken":
       return main(
@@ -132,14 +134,8 @@ function describeKind(rule: ResolvedRule, ctx: DescribeContext): Described {
       return { ...described, details: certificateLines(rule, ctx) };
     }
     case "prior_study_years_min":
-      // `years` selects the ICU plural form; `count` is the number formatted (Latin digits in ar).
-      return main(
-        "prior_study_years_min",
-        withValues([
-          ["count", formatNumber(rule.years, locale)],
-          ["years", rule.years],
-        ]),
-      );
+      // A number, not a preformatted string: it selects the ICU plural form and `#` prints it.
+      return main("prior_study_years_min", { years: rule.years });
     case "manual_check":
       return main("manual_check", {});
     default:

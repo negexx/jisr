@@ -73,8 +73,8 @@
       "not_eligible": "Selon les règles que nous avons publiées, votre Bac ne donne pas accès à une licence dans ce pays. Les règles peuvent changer : vérifiez la page d'admission officielle.",
       "check": "Nous n'avons pas confirmé comment votre Bac est traité dans ce pays. Vérifiez la page d'admission officielle.",
       "missing": "Nous n'avons pas encore publié comment votre Bac est traité pour ce pays : vérifiez la page d'admission officielle.",
-      "staleSource": "Les règles que nous avons publiées pour votre Bac dans ce pays n'ont pas été vérifiées récemment : nous n'indiquons donc pas de résultat. Vérifiez la page d'admission officielle.",
-      "nonOfficialSource": "Les règles que nous avons publiées pour votre Bac dans ce pays ne viennent pas d'une source officielle : nous n'indiquons donc pas de résultat. Vérifiez la page d'admission officielle."
+      "staleSource": "Les règles que nous avons publiées pour votre Bac dans ce pays n'ont pas été vérifiées récemment : nous n'indiquons donc pas de résultat. Vérifiez la page d'admission officielle.",
+      "nonOfficialSource": "Les règles que nous avons publiées pour votre Bac dans ce pays ne viennent pas d'une source officielle : nous n'indiquons donc pas de résultat. Vérifiez la page d'admission officielle."
     },
     "reason": {
       "kind": {
@@ -91,7 +91,7 @@
       },
       "code": {
         "ok": "Cette condition semble remplie.",
-        "below_threshold": "Votre valeur ({student}) est inférieure au minimum publié ({required}). Les conditions peuvent changer : vérifiez la page officielle.",
+        "below_threshold": "Votre valeur ({student}) n'atteint pas le minimum publié ({required}). Les conditions peuvent changer : vérifiez la page officielle.",
         "track_not_accepted": "Votre filière de Bac ({student}) ne figure pas dans la liste publiée pour ce programme ({required}). Vérifiez la page officielle au cas où elle aurait changé.",
         "missing_student_value": "Il nous manque une information de votre part pour cette condition. Complétez votre profil, puis vérifiez la source officielle.",
         "threshold_unpublished": "Le minimum de cette condition n'est pas publié dans les sources consultées. Vérifiez-le sur la page d'admission officielle.",
@@ -103,7 +103,7 @@
         "route_check": "Nous n'avons pas confirmé comment votre Bac est traité dans ce pays. Vérifiez la page d'admission officielle.",
         "coverage_partial": "Nous n'avons pas publié toutes les conditions de ce programme. Vérifiez la page officielle pour le reste.",
         "manual_check": "Cette condition demande une vérification manuelle. Lisez-la sur la page de la source officielle.",
-        "below_threshold_converted": "Votre note ({student}) correspond à {studentConverted} selon la table de conversion publiée, ce qui n'atteint pas le minimum publié ({required}). Cette conversion n'est pas une décision officielle d'équivalence : vérifiez sur la page d'admission officielle comment votre note est traitée."
+        "below_threshold_converted": "Votre note ({student}) correspond à {studentConverted} selon la table de conversion publiée, ce qui n'atteint pas le minimum publié ({required}). Cette conversion n'est pas une décision officielle d'équivalence : vérifiez sur la page d'admission officielle comment votre note est traitée."
       },
       "outcome": {
         "pass": "Semble remplie",
@@ -241,31 +241,32 @@
       "machine_translated": "Traduit automatiquement, pas encore relu"
     },
     "rule": {
-      "credential_type_in": "Type de Bac demandé selon la source officielle : {types}.",
-      "credential_track_in": "Filières du Bac retenues selon la source officielle : {tracks}.",
+      "credential_type_in": "Type de Bac demandé selon la source officielle : {types}.",
+      "credential_track_in": "Filières du Bac retenues selon la source officielle : {tracks}.",
       "overall_grade_min": {
-        "published": "Moyenne générale minimale publiée par la source officielle : {required}.",
-        "unpublished": "Moyenne générale minimale : non publiée, à vérifier sur la page officielle."
+        "published": "Moyenne générale minimale publiée par la source officielle : {required}.",
+        "unpublished": "Moyenne générale minimale : non publiée, à vérifier sur la page officielle."
       },
       "subject_grade_min": {
-        "published": "Note minimale en {subject} publiée par la source officielle : {required}.",
-        "unpublished": "Note minimale en {subject} : non publiée, à vérifier sur la page officielle."
+        "published": "Note minimale en {subject} publiée par la source officielle : {required}.",
+        "unpublished": "Note minimale en {subject} : non publiée, à vérifier sur la page officielle."
       },
       "subject_taken": {
-        "all": "Matières à avoir étudiées selon la source officielle : {subjects}.",
-        "any": "Au moins une de ces matières selon la source officielle : {subjects}."
+        "all": "Matières à avoir étudiées selon la source officielle : {subjects}.",
+        "any": "Au moins une de ces matières selon la source officielle : {subjects}."
       },
       "language_proficiency": {
-        "published": "Niveau minimal en {language} publié par la source officielle : {required}.",
-        "unpublished": "Niveau minimal en {language} : non publié, à vérifier sur la page officielle.",
+        "published": "Niveau minimal en {language} publié par la source officielle : {required}.",
+        "unpublished": "Niveau minimal en {language} : non publié, à vérifier sur la page officielle.",
         "certificateRequired": "La source officielle demande un certificat de langue.",
         "certificateNotRequired": "La source officielle ne demande pas de certificat de langue pour cette condition.",
-        "certificateUnpublished": "Certificat de langue nécessaire ou non : non publié, à vérifier sur la page officielle.",
-        "certificates": "Certificats cités par la source officielle : {certificates}.",
-        "anyCertificate": "La source officielle ne cite pas de certificat précis : un certificat reconnu peut suffire. Vérifiez la liste officielle des certificats pris en compte."
+        "certificateUnpublished": "Certificat de langue nécessaire ou non : non publié, à vérifier sur la page officielle.",
+        "certificates": "Certificats cités par la source officielle : {certificates}.",
+        "anyCertificate": "La source officielle ne cite pas de certificat précis : un certificat reconnu peut suffire. Vérifiez la liste officielle des certificats pris en compte."
       },
-      "prior_study_years_min": "Études supérieures après le Bac selon la source officielle : au moins {count} {years, plural, one {année} other {années}}.",
-      "manual_check": "Autre condition de la source officielle : lisez-la sur la page officielle."
+      "prior_study_years_min": "Études supérieures après le Bac selon la source officielle : au moins {years, plural, one {# année} other {# années}}.",
+      "manual_check": "Autre condition de la source officielle : lisez-la sur la page officielle.",
+      "scaleLowerBetter": "Sur cette échelle, une note plus basse est meilleure : il faut {required} ou mieux (une note plus basse)."
     }
   },
   "localeSwitcher": {

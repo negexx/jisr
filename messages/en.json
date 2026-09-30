@@ -91,7 +91,7 @@
       },
       "code": {
         "ok": "This requirement appears to be met.",
-        "below_threshold": "Your value ({student}) is below the published minimum ({required}). Requirements can change, so check the official page.",
+        "below_threshold": "Your value ({student}) does not meet the published minimum ({required}). Requirements can change, so check the official page.",
         "track_not_accepted": "Your Bac track ({student}) is not in the list published for this program ({required}). Check the official page in case it has changed.",
         "missing_student_value": "We do not have the information from you that this requirement needs. Complete your profile, then check the official source.",
         "threshold_unpublished": "The minimum for this requirement is not published in the sources we checked. Check it on the official admission page.",
@@ -242,7 +242,7 @@
     },
     "rule": {
       "credential_type_in": "Type of Bac asked for by the official source: {types}.",
-      "credential_track_in": "Bac tracks listed by the official source: {tracks}.",
+      "credential_track_in": "Bac tracks accepted by the official source: {tracks}.",
       "overall_grade_min": {
         "published": "Minimum overall grade published by the official source: {required}.",
         "unpublished": "Minimum overall grade: not published, to be checked on the official page."
@@ -264,8 +264,9 @@
         "certificates": "Certificates listed by the official source: {certificates}.",
         "anyCertificate": "The official source does not list specific certificates: a recognised certificate may count. Check the official list of certificates taken into account."
       },
-      "prior_study_years_min": "Higher education after the Bac, according to the official source: at least {count} {years, plural, one {year} other {years}}.",
-      "manual_check": "Another requirement from the official source: read it on the official page."
+      "prior_study_years_min": "Higher education after the Bac, according to the official source: at least {years, plural, one {# year} other {# years}}.",
+      "manual_check": "Another requirement from the official source: read it on the official page.",
+      "scaleLowerBetter": "On this scale a lower grade is better: you need {required} or better (a lower grade)."
     }
   },
   "localeSwitcher": {

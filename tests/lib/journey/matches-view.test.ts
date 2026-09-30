@@ -75,8 +75,7 @@ describe("groupOf", () => {
     ["check", "direct", "check"],
     ["check", "check", "check"],
     ["check", "missing", "check"],
-    // A stale or non-official direct / not_eligible route is downgraded to check by the domain.
-    ["check", "direct", "check"],
+    // A stale or non-official not_eligible route is downgraded to check by the domain (like direct).
     ["check", "not_eligible", "check"],
     ["check", "foundation", "foundation"],
     ["not_satisfied", "direct", "failed"],
@@ -470,9 +469,17 @@ describe("route message key", () => {
     expect(routeKeyOf(ok.match)).toBe(key);
   });
 
-  it("falls back to the source key, never an outcome, when the route reason is absent", () => {
+  it("falls back to the neutral check key, never an outcome, without a source reason", () => {
+    const unknownRoute: Reason = {
+      ruleId: "route",
+      kind: "route",
+      outcome: "unknown",
+      code: "route_check",
+      facts: [],
+    };
     for (const route of ["direct", "not_eligible"] as const) {
-      expect(routeKeyOf({ route, reasons: [] })).toBe("domain.route.staleSource");
+      expect(routeKeyOf({ route, reasons: [] })).toBe("domain.route.check");
+      expect(routeKeyOf({ route, reasons: [unknownRoute] })).toBe("domain.route.check");
     }
   });
 });
