@@ -268,3 +268,27 @@ describe("parseLocaleDecimal", () => {
     expect(parseLocaleDecimal("1".repeat(400))).toBeNull();
   });
 });
+
+describe("direction marks", () => {
+  it.each(
+    LOCALES.flatMap((locale) =>
+      ["EUR", "JPY", "XTS"].map((currency) => [locale, currency] as const),
+    ),
+  )("formatMoney and formatMoneyRange return no bidi marks in %s for %s", (locale, currency) => {
+    expect(formatMoney(1234500, currency, locale)).not.toMatch(BIDI_MARKS);
+    expect(formatMoneyRange(810000, 1270000, currency, locale)).not.toMatch(BIDI_MARKS);
+  });
+
+  it.each(
+    LOCALES.flatMap((locale) =>
+      ["EUR", "JPY", "XTS"].map((currency) => [locale, currency] as const),
+    ),
+  )("formatMoneyRange puts the minimum before the maximum in %s for %s", (locale, currency) => {
+    const digits = formatMoneyRange(810000, 1270000, currency, locale).replace(/[^0-9]/g, "");
+    expect(digits).toBe("8100001270000");
+  });
+
+  it.each(LOCALES)("formatGrade returns no bidi marks in %s", (locale) => {
+    expect(formatGrade(14.5, { min: 0, max: 20 }, locale)).not.toMatch(BIDI_MARKS);
+  });
+});

@@ -27,6 +27,14 @@ export function minorUnitDigits(currency: string): number {
     .maximumFractionDigits as number;
 }
 
+// ICU prefixes Arabic output with RLM (U+200F), which reverses range ends next to other text.
+// Callers control direction with <bdi dir="ltr">, so no direction marks are returned.
+const DIRECTION_MARKS = /[\u200E\u200F\u061C]/g;
+
+function withoutDirectionMarks(text: string): string {
+  return text.replace(DIRECTION_MARKS, "");
+}
+
 function assertMinorAmount(minor: number): void {
   if (!Number.isInteger(minor)) {
     throw new RangeError(`Money must be an integer number of minor units, got ${minor}`);
@@ -39,7 +47,9 @@ function currencyFormat(currency: string, locale: AppLocale): Intl.NumberFormat 
 
 export function formatMoney(minor: number, currency: string, locale: AppLocale): string {
   assertMinorAmount(minor);
-  return currencyFormat(currency, locale).format(minor / 10 ** minorUnitDigits(currency));
+  return withoutDirectionMarks(
+    currencyFormat(currency, locale).format(minor / 10 ** minorUnitDigits(currency)),
+  );
 }
 
 export function formatMoneyRange(
@@ -56,7 +66,9 @@ export function formatMoneyRange(
   // ICU collapses equal ends to "~€10.00"; a plain amount reads better than an approximation sign.
   if (minMinor === maxMinor) return formatMoney(minMinor, currency, locale);
   const divisor = 10 ** minorUnitDigits(currency);
-  return currencyFormat(currency, locale).formatRange(minMinor / divisor, maxMinor / divisor);
+  return withoutDirectionMarks(
+    currencyFormat(currency, locale).formatRange(minMinor / divisor, maxMinor / divisor),
+  );
 }
 
 export function formatGrade(
@@ -65,7 +77,7 @@ export function formatGrade(
   locale: AppLocale,
 ): string {
   const numbers = new Intl.NumberFormat(intlLocale(locale), { maximumFractionDigits: 2 });
-  return `${numbers.format(grade)} / ${numbers.format(scale.max)}`;
+  return withoutDirectionMarks(`${numbers.format(grade)} / ${numbers.format(scale.max)}`);
 }
 
 // Only ASCII digits with at most one "." or ",": the profile form shows a hint for anything else
