@@ -1,5 +1,6 @@
 import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
+import ts from "typescript";
 import { describe, expect, it } from "vitest";
 
 import { ROOT } from "./snapshot/fixture";
@@ -33,39 +34,67 @@ const SERVER_ONLY_FILES = [path.join("lib", "snapshot", "server.ts")];
 
 type Import = { specifier: string; typeOnly: boolean };
 
-function stripComments(source: string): string {
-  return source.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|\s)\/\/.*$/gm, "$1");
+function isModuleName(node: ts.Node | undefined): node is ts.StringLiteral {
+  return node !== undefined && ts.isStringLiteral(node);
 }
 
-function isTypeOnlyClause(explicitType: boolean, clause: string): boolean {
-  if (explicitType) return true;
-  const named = /^\{([^}]*)\}$/.exec(clause.trim());
-  if (named?.[1] === undefined) return false;
-  const entries = named[1]
-    .split(",")
-    .map((entry) => entry.trim())
-    .filter((entry) => entry !== "");
-  return entries.length > 0 && entries.every((entry) => /^type\s/.test(entry));
+function allInlineType(elements: readonly { isTypeOnly: boolean }[]): boolean {
+  return elements.length > 0 && elements.every((element) => element.isTypeOnly);
 }
 
-// Static `import`/`export ... from`, side-effect imports, dynamic `import()` and `require()`.
+function isTypeOnlyImport(node: ts.ImportDeclaration): boolean {
+  const clause = node.importClause;
+  if (clause === undefined) return false;
+  if (clause.isTypeOnly) return true;
+  const bindings = clause.namedBindings;
+  return (
+    clause.name === undefined &&
+    bindings !== undefined &&
+    ts.isNamedImports(bindings) &&
+    allInlineType(bindings.elements)
+  );
+}
+
+function isTypeOnlyExport(node: ts.ExportDeclaration): boolean {
+  const clause = node.exportClause;
+  return (
+    node.isTypeOnly ||
+    (clause !== undefined && ts.isNamedExports(clause) && allInlineType(clause.elements))
+  );
+}
+
+function parseSource(source: string): ts.SourceFile {
+  return ts.createSourceFile("module.tsx", source, ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX);
+}
+
+// Static `import`/`export ... from`, `import x = require()`, dynamic `import()` and `require()`,
+// found on the TypeScript AST so comments and strings cannot hide or fake an import. A dynamic
+// import whose argument is not a literal cannot be resolved here and is not reported.
 export function importsOf(source: string): Import[] {
-  const code = stripComments(source);
   const found: Import[] = [];
-  for (const match of code.matchAll(
-    /\b(?:import|export)\s+(type\s+)?([\w*$\s{},]+?)\s*\bfrom\s*(["'`])([^"'`\n]+)\3/g,
-  )) {
-    found.push({
-      specifier: match[4] ?? "",
-      typeOnly: isTypeOnlyClause(match[1] !== undefined, match[2] ?? ""),
-    });
-  }
-  for (const match of code.matchAll(/\bimport\s*(["'`])([^"'`\n]+)\1/g)) {
-    found.push({ specifier: match[2] ?? "", typeOnly: false });
-  }
-  for (const match of code.matchAll(/\b(?:import|require)\s*\(\s*(["'`])([^"'`\n]+)\1/g)) {
-    found.push({ specifier: match[2] ?? "", typeOnly: false });
-  }
+  const visit = (node: ts.Node): void => {
+    if (ts.isImportDeclaration(node) && isModuleName(node.moduleSpecifier)) {
+      found.push({ specifier: node.moduleSpecifier.text, typeOnly: isTypeOnlyImport(node) });
+    } else if (ts.isExportDeclaration(node) && isModuleName(node.moduleSpecifier)) {
+      found.push({ specifier: node.moduleSpecifier.text, typeOnly: isTypeOnlyExport(node) });
+    } else if (
+      ts.isImportEqualsDeclaration(node) &&
+      ts.isExternalModuleReference(node.moduleReference) &&
+      isModuleName(node.moduleReference.expression)
+    ) {
+      found.push({ specifier: node.moduleReference.expression.text, typeOnly: node.isTypeOnly });
+    } else if (ts.isCallExpression(node)) {
+      const [argument] = node.arguments;
+      const loads =
+        node.expression.kind === ts.SyntaxKind.ImportKeyword ||
+        (ts.isIdentifier(node.expression) && node.expression.text === "require");
+      if (loads && argument !== undefined && ts.isStringLiteralLike(argument)) {
+        found.push({ specifier: argument.text, typeOnly: false });
+      }
+    }
+    ts.forEachChild(node, visit);
+  };
+  visit(parseSource(source));
   return found;
 }
 
@@ -88,20 +117,26 @@ function withoutExtension(alias: string): string {
   return alias.replace(SOURCE_EXTENSION, "");
 }
 
+function isForbidden(file: string, specifier: string): boolean {
+  const alias = withoutExtension(toAlias(file, specifier));
+  if (isZod(alias)) return true;
+  return isDataSchema(alias) && !(ZOD_FREE_DATA_SCHEMA as readonly string[]).includes(alias);
+}
+
 export function violationsIn(file: string, source: string): string[] {
-  return importsOf(source).flatMap(({ specifier, typeOnly }) => {
-    if (typeOnly) return [];
-    const alias = withoutExtension(toAlias(file, specifier));
-    if (isZod(alias)) return [specifier];
-    if (isDataSchema(alias) && !(ZOD_FREE_DATA_SCHEMA as readonly string[]).includes(alias)) {
-      return [specifier];
-    }
-    return [];
-  });
+  return importsOf(source).flatMap(({ specifier, typeOnly }) =>
+    !typeOnly && isForbidden(file, specifier) ? [specifier] : [],
+  );
 }
 
 export function hasUseClient(source: string): boolean {
-  return /^\s*(["'])use client\1/.test(stripComments(source));
+  for (const statement of parseSource(source).statements) {
+    if (!ts.isExpressionStatement(statement) || !ts.isStringLiteral(statement.expression)) {
+      return false;
+    }
+    if (statement.expression.text === "use client") return true;
+  }
+  return false;
 }
 
 export function isClientReachable(relativeToSrc: string, source: string): boolean {
@@ -109,6 +144,67 @@ export function isClientReachable(relativeToSrc: string, source: string): boolea
   if (hasUseClient(source)) return true;
   if (CLIENT_FILES.includes(relativeToSrc)) return true;
   return CLIENT_DIRECTORIES.some((dir) => relativeToSrc.startsWith(`${dir}${path.sep}`));
+}
+
+type Reader = (file: string) => string | null;
+
+const RESOLUTION_SUFFIXES = ["", ".ts", ".tsx", `${path.sep}index.ts`, `${path.sep}index.tsx`];
+
+// A local module a specifier points at (relative or `@/`), or null for packages and missing files.
+function resolveLocal(from: string, specifier: string, read: Reader): string | null {
+  const base = specifier.startsWith("@/")
+    ? path.join(SRC, specifier.slice(2))
+    : specifier.startsWith(".")
+      ? path.resolve(path.dirname(from), specifier)
+      : null;
+  if (base === null) return null;
+  const stripped = withoutExtension(base);
+  for (const candidate of [base, ...RESOLUTION_SUFFIXES.map((suffix) => `${stripped}${suffix}`)]) {
+    if (SOURCE_EXTENSION.test(candidate) && read(candidate) !== null) return candidate;
+  }
+  return null;
+}
+
+// Walks the runtime import graph from `roots`. Type-only imports are erased at build time and are
+// not followed; a dynamic import() is followed because its chunk still ships to the browser.
+// Every reachable module is checked, and a forbidden import is reported with the chain that led to it.
+export function reachableViolations(roots: readonly string[], read: Reader): string[] {
+  const parent = new Map<string, string | null>();
+  const queue: string[] = [];
+  for (const root of roots) {
+    parent.set(root, null);
+    queue.push(root);
+  }
+  const offenders: string[] = [];
+  const chain = (file: string): string => {
+    const names: string[] = [];
+    for (
+      let at: string | null | undefined = file;
+      at !== null && at !== undefined;
+      at = parent.get(at)
+    ) {
+      names.unshift(path.relative(ROOT, at).split(path.sep).join("/"));
+    }
+    return names.join(" -> ");
+  };
+  while (queue.length > 0) {
+    const file = queue.shift();
+    const source = file === undefined ? null : read(file);
+    if (file === undefined || source === null) continue;
+    for (const { specifier, typeOnly } of importsOf(source)) {
+      if (typeOnly) continue;
+      if (isForbidden(file, specifier)) {
+        offenders.push(`${chain(file)} imports ${specifier}`);
+        continue;
+      }
+      const target = resolveLocal(file, specifier, read);
+      if (target !== null && !parent.has(target)) {
+        parent.set(target, file);
+        queue.push(target);
+      }
+    }
+  }
+  return offenders;
 }
 
 function sourceFiles(dir: string): string[] {
@@ -133,6 +229,14 @@ describe("client import scanner", () => {
     ["a zod re-export", 'export { z } from "zod";'],
     ["a zod star re-export", 'export * from "zod";'],
     ["a single-quoted zod import", "import { z } from 'zod'"],
+    [
+      "a zod import after a string holding a comment opener",
+      'const a = "/*";\nimport { z } from "zod";\nconst b = "*/";',
+    ],
+    [
+      "a zod import after a string holding a line comment",
+      'const a = "//"; import { z } from "zod";',
+    ],
     ["a runtime data-schema import", 'import { ProfileSchema } from "@/data-schema/profile";'],
     [
       "a mixed value and type data-schema import",
@@ -215,6 +319,11 @@ describe("client import scanner", () => {
     expect(isClientReachable(path.join("lib", "format.ts"), "")).toBe(true);
     expect(isClientReachable(path.join("data-schema", "profile.ts"), "")).toBe(false);
   });
+
+  it("finds the use-client directive even when a later string holds a comment opener", () => {
+    expect(hasUseClient('"use client";\nconst a = "/*";')).toBe(true);
+    expect(hasUseClient('const a = "use client";')).toBe(false);
+  });
 });
 
 describe("client-reachable modules stay Zod-free", () => {
@@ -242,30 +351,80 @@ describe("client-reachable modules stay Zod-free", () => {
     expect(names.length).toBeGreaterThan(30);
   });
 
-  it("imports no zod and no Zod-building data-schema module at runtime", () => {
-    const offenders = scanned.flatMap(({ file, source }) =>
-      violationsIn(file, source).map((specifier) => `${path.relative(ROOT, file)} -> ${specifier}`),
+  const diskReader: Reader = (file) => {
+    try {
+      return readFileSync(file, "utf8");
+    } catch {
+      return null;
+    }
+  };
+
+  it("reaches no zod and no Zod-building data-schema module at runtime, transitively", () => {
+    const offenders = reachableViolations(
+      scanned.map(({ file }) => file),
+      diskReader,
     );
     expect(offenders, "client code must not reach zod (see the header of this test)").toEqual([]);
   });
 
-  it("keeps the allowlisted data-schema modules themselves free of zod", () => {
-    const seen = new Set<string>();
-    const queue: string[] = ZOD_FREE_DATA_SCHEMA.map((alias) =>
-      path.join(SRC, `${alias.slice(2)}.ts`),
-    );
-    while (queue.length > 0) {
-      const file = queue.pop();
-      if (file === undefined || seen.has(file)) continue;
-      seen.add(file);
-      for (const { specifier, typeOnly } of importsOf(readFileSync(file, "utf8"))) {
-        if (typeOnly) continue;
-        expect(isZod(specifier), `${path.relative(ROOT, file)} imports ${specifier}`).toBe(false);
-        if (specifier.startsWith("."))
-          queue.push(`${path.resolve(path.dirname(file), specifier)}.ts`);
-        else expect(specifier.startsWith("@/"), `${file} -> ${specifier}`).toBe(false);
-      }
-    }
-    expect(seen.size).toBeGreaterThanOrEqual(ZOD_FREE_DATA_SCHEMA.length);
+  it("walks through the allowlisted data-schema modules and finds them zod-free", () => {
+    const roots = ZOD_FREE_DATA_SCHEMA.map((alias) => path.join(SRC, `${alias.slice(2)}.ts`));
+    expect(reachableViolations(roots, diskReader)).toEqual([]);
+  });
+});
+
+describe("transitive import walk", () => {
+  const at = (...segments: string[]) => path.join(SRC, ...segments);
+  const files = (entries: Record<string, string>): Reader => {
+    const byPath = new Map(Object.entries(entries).map(([name, source]) => [at(name), source]));
+    return (file) => byPath.get(file) ?? null;
+  };
+
+  it("flags zod reached through a relative chain and names the chain", () => {
+    const read = files({
+      "lib/a.ts": 'import { b } from "./b";',
+      "lib/b.ts": 'import { c } from "./sub/c";',
+      "lib/sub/c.ts": 'import { z } from "zod";',
+    });
+    expect(reachableViolations([at("lib/a.ts")], read)).toEqual([
+      "src/lib/a.ts -> src/lib/b.ts -> src/lib/sub/c.ts imports zod",
+    ]);
+  });
+
+  it("follows alias imports, index files, tsx files and dynamic imports", () => {
+    const read = files({
+      "lib/a.ts": 'import { b } from "@/lib/b";\nconst c = () => import("./c");',
+      "lib/b/index.ts": 'import { S } from "@/data-schema/profile";',
+      "lib/c.tsx": 'import { z } from "zod/mini";',
+    });
+    expect(reachableViolations([at("lib/a.ts")], read)).toEqual([
+      "src/lib/a.ts -> src/lib/b/index.ts imports @/data-schema/profile",
+      "src/lib/a.ts -> src/lib/c.tsx imports zod/mini",
+    ]);
+  });
+
+  it("does not follow type-only imports, which are erased at build time", () => {
+    const read = files({
+      "lib/a.ts": 'import type { B } from "./b";\nimport { type C } from "./c";',
+      "lib/b.ts": 'import { z } from "zod";',
+      "lib/c.ts": 'import { z } from "zod";',
+    });
+    expect(reachableViolations([at("lib/a.ts")], read)).toEqual([]);
+  });
+
+  it("follows the allowlisted data-schema modules and terminates on cycles", () => {
+    const read = files({
+      "lib/a.ts": 'import { compareIso } from "@/data-schema/dates";\nimport "./b";',
+      "lib/b.ts": 'import "./a";',
+      "data-schema/dates.ts": 'import { z } from "zod";',
+    });
+    expect(reachableViolations([at("lib/a.ts")], read)).toEqual([
+      "src/lib/a.ts -> src/data-schema/dates.ts imports zod",
+    ]);
+  });
+
+  it("ignores packages and files it cannot read", () => {
+    const read = files({ "lib/a.ts": 'import { x } from "react";\nimport "./missing";' });
+    expect(reachableViolations([at("lib/a.ts")], read)).toEqual([]);
   });
 });

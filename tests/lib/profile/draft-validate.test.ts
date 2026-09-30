@@ -42,6 +42,8 @@ function edited(change: (draft: Editable) => void): unknown {
 const VALID: Array<[string, unknown]> = [
   ["full draft", FULL],
   ["bare draft", { schemaVersion: 1, step: 0 }],
+  ["inherited enumerable keys that are all in the shape", Object.create(FULL)],
+  ["symbol key is ignored", { schemaVersion: 1, step: 0, [Symbol("ignored")]: 1 }],
   ["step only large", { schemaVersion: 1, step: 9_000_000 }],
   ["explicit undefined optionals", { schemaVersion: 1, step: 1, nationality: undefined }],
   ["empty strings", { schemaVersion: 1, step: 0, nationality: "", fields: [""] }],
@@ -88,6 +90,7 @@ const INVALID: Array<[string, unknown]> = [
   ["step string", { schemaVersion: 1, step: "1" }],
   ["step null", { schemaVersion: 1, step: null }],
   ["unknown key", { schemaVersion: 1, step: 0, secret: "x" }],
+  ["inherited enumerable extra key", Object.assign(Object.create({ extra: 1 }), FULL)],
   ["own __proto__ key", JSON.parse('{"schemaVersion":1,"step":0,"__proto__":{"a":1}}')],
   ["nationality number", edited((d) => (d.nationality = 1))],
   ["nationality null", edited((d) => (d.nationality = null))],

@@ -4,9 +4,11 @@ import path from "node:path";
 import { gzipSync } from "node:zlib";
 import {
   discoverRoutes,
+  findZodMarkers,
   formatReport,
   initialScriptPaths,
   measureRoute,
+  noModuleScriptPaths,
 } from "@scripts/perf/measure";
 import { afterEach, describe, expect, it } from "vitest";
 
@@ -20,7 +22,7 @@ const HTML = [
   '<script id="_R_" src="/_next/static/chunks/boot.js" async=""></script>',
   "<script>self.__next_f=[]</script>",
   '<script src="/_next/static/chunks/a.js" async=""></script>',
-  '</head><body>text mentioning <script src="/x.js"> is not markup</body></html>',
+  "</head><body>content</body></html>",
 ].join("\n");
 
 const dirs: string[] = [];
@@ -41,11 +43,38 @@ function fakeBuild(files: Record<string, string>): string {
 
 describe("initialScriptPaths", () => {
   it("keeps same-origin scripts once, drops noModule, inline and external scripts, strips queries", () => {
-    expect(initialScriptPaths(HTML.slice(0, HTML.indexOf("</head>")))).toEqual([
+    expect(initialScriptPaths(HTML)).toEqual([
       "/_next/static/chunks/a.js",
       "/_next/static/chunks/b.js",
       "/_next/static/chunks/boot.js",
     ]);
+  });
+});
+
+describe("noModuleScriptPaths", () => {
+  it("lists only the noModule scripts, in any attribute spelling", () => {
+    expect(noModuleScriptPaths(HTML)).toEqual([
+      "/_next/static/chunks/legacy.js",
+      "/_next/static/chunks/legacy2.js",
+    ]);
+  });
+});
+
+describe("findZodMarkers", () => {
+  it("names the client chunks that contain a Zod marker, sorted", () => {
+    const dir = fakeBuild({
+      "static/chunks/b.js": "var e=new ZodError(t)",
+      "static/chunks/a.js": "t._zod.def",
+      "static/chunks/clean.js": "console.log('hello')",
+      "static/media/font.woff2": "ZodError",
+      "server/app/page.js": "ZodError",
+    });
+    expect(findZodMarkers(dir)).toEqual(["static/chunks/a.js", "static/chunks/b.js"]);
+  });
+
+  it("finds nothing in a Zod-free build and tolerates a missing static directory", () => {
+    expect(findZodMarkers(fakeBuild({ "static/chunks/a.js": "x" }))).toEqual([]);
+    expect(findZodMarkers(fakeBuild({ "server/app/fr.html": "" }))).toEqual([]);
   });
 });
 

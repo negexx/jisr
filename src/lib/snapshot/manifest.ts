@@ -5,10 +5,10 @@ import {
   hasOnlyKeys,
   isInteger,
   isOneOf,
+  isPlainObject,
   isRecord,
   matches,
   parseEach,
-  type UnknownRecord,
 } from "@/lib/guards";
 
 import { SnapshotError } from "./errors";
@@ -44,21 +44,19 @@ function parseLocale(value: unknown): Locale | null {
   return isOneOf(value, LOCALES) ? value : null;
 }
 
+// z.record(z.string(), ...): a plain object whose own enumerable keys are all valid entries. Zod
+// skips a "__proto__" key without validating or keeping it, and rejects a symbol key.
 function parseShards(value: unknown): Manifest["shards"] | null {
-  if (!isRecord(value)) return null;
-  const shards: UnknownRecord = {};
-  for (const name of Object.keys(value)) {
-    const entry = parseShardEntry(value[name]);
+  if (!isPlainObject(value)) return null;
+  const shards: Manifest["shards"] = {};
+  for (const key of Reflect.ownKeys(value)) {
+    if (key === "__proto__" || !Object.prototype.propertyIsEnumerable.call(value, key)) continue;
+    if (typeof key !== "string") return null;
+    const entry = parseShardEntry(value[key]);
     if (entry === null) return null;
-    // defineProperty: a shard literally named "__proto__" must stay a plain own entry.
-    Object.defineProperty(shards, name, {
-      value: entry,
-      enumerable: true,
-      writable: true,
-      configurable: true,
-    });
+    shards[key] = entry;
   }
-  return shards as Manifest["shards"];
+  return shards;
 }
 
 // Throws a SnapshotError("format") without echoing anything from the input.

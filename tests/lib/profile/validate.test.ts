@@ -1,10 +1,14 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  CEFR_LEVELS as ORACLE_CEFR_LEVELS,
+  INFO_KINDS as ORACLE_INFO_KINDS,
+} from "@/data-schema/primitives";
+import {
   PROFILE_SCHEMA_VERSION as ORACLE_PROFILE_VERSION,
   ProfileSchema,
 } from "@/data-schema/profile";
-import { PROFILE_SCHEMA_VERSION } from "@/lib/constants";
+import { CEFR_LEVELS, INFO_KINDS, PROFILE_SCHEMA_VERSION } from "@/lib/constants";
 import { parseProfile } from "@/lib/profile/validate";
 
 import {
@@ -57,6 +61,9 @@ function withCredential(key: string, value: unknown): unknown {
 const VALID: Array<[string, unknown]> = [
   ["base profile", BASE],
   ["e2e profile", E2E_PROFILE],
+  ["inherited enumerable keys that are all in the shape", Object.create(BASE)],
+  ["class instance root", Object.assign(new (class Loaded {})(), BASE)],
+  ["symbol key is ignored", { ...BASE, [Symbol("ignored")]: 1 }],
   ["e2e profile with budget", E2E_PROFILE_WITH_BUDGET],
   ["e2e profile, one destination", E2E_PROFILE_XB_ONLY],
   ["no overall grade", withCredential("overall", null)],
@@ -80,7 +87,7 @@ const VALID: Array<[string, unknown]> = [
   [
     "every CEFR level",
     edited((p) => {
-      p.languages = ["A1", "A2", "B1", "B2", "C1", "C2", "unknown"].map((level, index) => ({
+      p.languages = [...ORACLE_CEFR_LEVELS, "unknown"].map((level, index) => ({
         language: String.fromCharCode(97, 97 + index),
         level,
         certificate: null,
@@ -108,6 +115,7 @@ const INVALID: Array<[string, unknown]> = [
     "own constructor key",
     edited((p) => Object.defineProperty(p, "constructor", { value: {}, enumerable: true })),
   ],
+  ["inherited enumerable extra key", Object.assign(Object.create({ extra: 1 }), BASE)],
   ["nationality lowercase", edited((p) => (p.nationality = "ma"))],
   ["nationality three letters", edited((p) => (p.nationality = "MAR"))],
   ["nationality trailing newline", edited((p) => (p.nationality = "MA\n"))],
@@ -287,8 +295,10 @@ const INVALID: Array<[string, unknown]> = [
 ];
 
 describe("parseProfile against ProfileSchema", () => {
-  it("uses the same schema version as the schema", () => {
+  it("uses the same schema version and vocabularies as the schema", () => {
     expect(PROFILE_SCHEMA_VERSION).toBe(ORACLE_PROFILE_VERSION);
+    expect(CEFR_LEVELS).toEqual(ORACLE_CEFR_LEVELS);
+    expect(INFO_KINDS).toEqual(ORACLE_INFO_KINDS);
   });
 
   it.each(VALID)("accepts and returns an equal copy of %s", (_label, input) => {

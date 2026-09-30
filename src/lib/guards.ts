@@ -7,9 +7,22 @@ export function isRecord(value: unknown): value is UnknownRecord {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-// z.strictObject: no own enumerable key outside the shape.
+// z.object with unknown-key rejection. Zod walks `for...in`, so an inherited enumerable key counts
+// as present (and as unknown when it is outside the shape); own symbol keys are ignored.
 export function hasOnlyKeys(record: UnknownRecord, allowed: readonly string[]): boolean {
-  return Object.keys(record).every((key) => allowed.includes(key));
+  for (const key in record) {
+    if (!allowed.includes(key)) return false;
+  }
+  return true;
+}
+
+// z.record requires a plain object: no class instances, but null-prototype objects are fine.
+export function isPlainObject(value: unknown): value is UnknownRecord {
+  if (!isRecord(value)) return false;
+  const ctor: unknown = value.constructor;
+  if (typeof ctor !== "function") return true;
+  const prototype: unknown = ctor.prototype;
+  return isRecord(prototype) && Object.hasOwn(prototype, "isPrototypeOf");
 }
 
 export function isText(value: unknown): value is string {

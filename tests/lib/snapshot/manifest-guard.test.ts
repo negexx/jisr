@@ -52,6 +52,26 @@ function withCore(entry: Record<string, unknown>): unknown {
   });
 }
 
+// JSON.parse makes "__proto__" an own key, which is how it reaches the client from the network.
+function withProtoShard(entry: unknown, base: Record<string, unknown> = HAND_MADE): unknown {
+  const others = Object.keys(base.shards as object).length > 0 ? "," : "";
+  const json = JSON.stringify(base).replace(
+    '"shards":{',
+    `"shards":{"__proto__":${JSON.stringify(entry)}${others}`,
+  );
+  return JSON.parse(json);
+}
+
+function hasOwnProtoShard(input: unknown): boolean {
+  if (typeof input !== "object" || input === null) return false;
+  const shards: unknown = (input as { shards?: unknown }).shards;
+  return typeof shards === "object" && shards !== null && Object.hasOwn(shards, "__proto__");
+}
+
+class ShardsClass {
+  core = ENTRY;
+}
+
 function attempt(input: unknown): unknown {
   try {
     return parseManifest(input);
@@ -73,9 +93,49 @@ const VALID: Array<[string, () => unknown]> = [
     () => withCore({ ...ENTRY, file: "s/a.b-c.D.0123456789ab.json" }),
   ],
   ["odd shard name", () => edited((m) => (m.shards["a b/c"] = { ...ENTRY }))],
+  // Zod's record skips a "__proto__" key entirely: it neither validates nor keeps it.
+  ["own __proto__ shard with an invalid entry", () => withProtoShard({ bad: 1 })],
+  ["own __proto__ shard with a null entry", () => withProtoShard(null)],
+  ["own __proto__ shard with a valid entry", () => withProtoShard(ENTRY)],
+  [
+    "own __proto__ shard next to an empty shard list",
+    () => withProtoShard(ENTRY, { ...HAND_MADE, shards: {} }),
+  ],
+  [
+    "own constructor shard",
+    () => edited((m) => Reflect.set(m.shards, "constructor", { ...ENTRY })),
+  ],
+  [
+    "shards without a prototype",
+    () => edited((m) => (m.shards = Object.assign(Object.create(null), m.shards))),
+  ],
+  [
+    "inherited entries are not shards",
+    () => edited((m) => (m.shards = Object.create({ core: ENTRY }))),
+  ],
+  ["class instance as the manifest", () => Object.assign(new (class Loaded {})(), HAND_MADE)],
 ];
 
 const INVALID: Array<[string, () => unknown]> = [
+  ["shards as a class instance", () => edited((m) => (m.shards = new ShardsClass() as never))],
+  [
+    "shards with an enumerable symbol key",
+    () =>
+      edited((m) =>
+        Object.defineProperty(m.shards, Symbol("k"), { value: ENTRY, enumerable: true }),
+      ),
+  ],
+  [
+    "inherited enumerable extra manifest key",
+    () => Object.assign(Object.create({ extra: 1 }), HAND_MADE),
+  ],
+  [
+    "an own invalid shard beside an inherited one",
+    () =>
+      edited(
+        (m) => (m.shards = Object.assign(Object.create({ core: ENTRY }), { bad: { bad: 1 } })),
+      ),
+  ],
   ["null root", () => null],
   ["undefined root", () => undefined],
   ["string root", () => "not a manifest"],
@@ -203,6 +263,33 @@ describe("parseManifest against ManifestSchema", () => {
     expect(tally.disagreements).toEqual([]);
     expect(tally.accepted).toBeGreaterThan(50);
     expect(tally.rejected).toBeGreaterThan(1000);
+  });
+
+  it.each([
+    ["invalid", { bad: 1 }],
+    ["valid", ENTRY],
+  ])("drops an own __proto__ shard with a %s entry exactly like the schema", (_label, entry) => {
+    const input = withProtoShard(entry);
+    const parsed = parseManifest(input);
+    expect(Object.hasOwn(parsed.shards, "__proto__")).toBe(false);
+    expect(Object.keys(parsed.shards)).toEqual(Object.keys(HAND_MADE.shards as object));
+    expect(Object.getPrototypeOf(parsed.shards)).toBe(Object.prototype);
+  });
+
+  it.each([
+    ["invalid", { bad: 1 }],
+    ["valid", ENTRY],
+  ])("reaches an own __proto__ shard with a %s entry when fuzzing", (_label, entry) => {
+    const base = withProtoShard(entry);
+    const tally = fuzz(ManifestSchema, attempt, base, 1500, 11, hasOwnProtoShard);
+    expect(tally.disagreements).toEqual([]);
+    expect(tally.probed).toBeGreaterThan(20);
+  });
+
+  it("adds an own __proto__ shard to ordinary manifests in the plain fuzz runs", () => {
+    const tally = fuzz(ManifestSchema, attempt, HAND_MADE, 6000, 3, hasOwnProtoShard);
+    expect(tally.disagreements).toEqual([]);
+    expect(tally.probed).toBeGreaterThan(0);
   });
 
   it("agrees with the schema on 2000 seeded mutations of a hand-made manifest", () => {

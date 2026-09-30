@@ -1,5 +1,7 @@
 import { expect } from "vitest";
 
+import { CEFR_LEVELS, INFO_KINDS, LOCALES } from "@/data-schema/primitives";
+
 export type Rng = () => number;
 
 // mulberry32: tiny, deterministic, good enough to drive a mutation fuzzer.
@@ -64,14 +66,16 @@ const INTERESTING: readonly unknown[] = [
   "a--b",
   "-a",
   "a-",
-  "A1",
-  "B2",
-  "C2",
+  ...CEFR_LEVELS,
+  ...CEFR_LEVELS.map((level) => level.toLowerCase()),
   "C3",
+  "D1",
   "unknown",
   "month",
   "year",
   "week",
+  ...INFO_KINDS,
+  ...LOCALES,
   "public",
   "private",
   "any",
@@ -190,7 +194,12 @@ export function mutate(base: unknown, rng: Rng, rounds: number): unknown {
 
 type Oracle = { safeParse: (input: unknown) => { success: boolean; data?: unknown } };
 
-export type Tally = { accepted: number; rejected: number; disagreements: string[] };
+export type Tally = {
+  accepted: number;
+  rejected: number;
+  probed: number;
+  disagreements: string[];
+};
 
 export function compare(
   oracle: Oracle,
@@ -198,7 +207,7 @@ export function compare(
   input: unknown,
   label: string,
   tally: Tally,
-): void {
+): boolean {
   const expected = oracle.safeParse(input);
   const actual = validator(input);
   if (expected.success) tally.accepted += 1;
@@ -207,9 +216,10 @@ export function compare(
     tally.disagreements.push(
       `${label}: oracle ${expected.success ? "accepts" : "rejects"} ${preview(input)}`,
     );
-    return;
+    return expected.success;
   }
   if (expected.success) expect(actual, label).toEqual(expected.data);
+  return expected.success;
 }
 
 function preview(input: unknown): string {
@@ -220,7 +230,7 @@ function preview(input: unknown): string {
 }
 
 export function newTally(): Tally {
-  return { accepted: 0, rejected: 0, disagreements: [] };
+  return { accepted: 0, rejected: 0, probed: 0, disagreements: [] };
 }
 
 export function fuzz(
@@ -229,12 +239,17 @@ export function fuzz(
   base: unknown,
   cases: number,
   seed: number,
+  // Counts the cases (accepted by the oracle) for which it returns true, so a test can prove the
+  // fuzzer actually reaches an input shape.
+  probe?: (input: unknown) => boolean,
 ): Tally {
   const rng = seededRng(seed);
   const tally = newTally();
   for (let index = 0; index < cases; index += 1) {
     const rounds = 1 + Math.floor(rng() * 3);
-    compare(oracle, validator, mutate(base, rng, rounds), `fuzz#${index}`, tally);
+    const input = mutate(base, rng, rounds);
+    const accepted = compare(oracle, validator, input, `fuzz#${index}`, tally);
+    if (accepted && probe?.(input) === true) tally.probed += 1;
   }
   return tally;
 }
