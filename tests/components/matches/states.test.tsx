@@ -1,6 +1,7 @@
 // @vitest-environment jsdom
 import { act, cleanup, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { createTranslator } from "next-intl";
 import { renderToString } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -52,6 +53,7 @@ describe.each(LOCALES)("My Matches: no profile (%s)", (locale) => {
     expect(title.tagName).toBe("H2");
     const link = screen.getByRole("link", { name: texts(locale).states.none.cta });
     expect(link.getAttribute("href")).toBe(`/${locale}/profile`);
+    expect(screen.queryByText(texts(locale).lead)).toBeNull();
   });
 
   it("never asks the network for anything", async () => {
@@ -86,6 +88,47 @@ describe("My Matches: unhydrated", () => {
       </Providers>,
     );
     expect(html).not.toContain("/2026");
+  });
+});
+
+describe("My Matches: hydration with a saved profile", () => {
+  it("matches the server HTML on the first client render: skeleton, no cards, no mismatch", async () => {
+    profileStore.save(E2E_PROFILE);
+    const errors: unknown[] = [];
+    const ui = (
+      <Providers locale="fr">
+        <MatchesClient locale="fr" client={{ load: () => new Promise(() => undefined) }} />
+      </Providers>
+    );
+    const container = document.createElement("div");
+    document.body.appendChild(container);
+    container.innerHTML = renderToString(ui);
+    expect(container.querySelector("article")).toBeNull();
+    const serverHtml = container.innerHTML;
+    const { hydrateRoot } = await import("react-dom/client");
+    let root: ReturnType<typeof hydrateRoot> | undefined;
+    await act(async () => {
+      root = hydrateRoot(container, ui, { onRecoverableError: (error) => errors.push(error) });
+    });
+    // The stored profile is read after hydration, and no date is taken before an effect runs.
+    expect(errors).toEqual([]);
+    expect(container.querySelector("article")).toBeNull();
+    expect(container.querySelector('[aria-busy="true"]')).not.toBeNull();
+    expect(container.querySelector("output")?.textContent).toBe(texts("fr").loading);
+    expect(serverHtml).not.toMatch(/\d{2}\/\d{2}\/\d{4}/);
+    act(() => root?.unmount());
+    container.remove();
+  });
+
+  it("keeps one polite status region and only swaps its text", async () => {
+    profileStore.save(E2E_PROFILE);
+    const { container } = renderMatches("en", fixture.client());
+    const status = container.querySelector("output");
+    expect(status?.textContent).toBe(texts("en").loading);
+    await waitFor(() => expect(screen.getAllByRole("article").length).toBeGreaterThan(0));
+    expect(container.querySelectorAll("output.sr-only")).toHaveLength(1);
+    expect(container.querySelector("output")).toBe(status);
+    expect(status?.textContent).toBe("");
   });
 });
 
@@ -127,6 +170,7 @@ describe.each(LOCALES)("My Matches: loading and error (%s)", (locale) => {
     const alert = await screen.findByRole("alert");
     expect(within(alert).getByRole("heading").textContent).toBe(texts(locale).states.error.title);
     expect(alert.textContent).not.toMatch(/SnapshotError|network|Error|stack/i);
+    expect(screen.queryByText(texts(locale).lead)).toBeNull();
 
     await user.click(screen.getByRole("button", { name: texts(locale).states.error.retry }));
     await waitFor(() => expect(screen.getAllByRole("article").length).toBeGreaterThan(0));
@@ -146,6 +190,7 @@ describe("My Matches: data states", () => {
       name: texts(locale).states.noPrograms.title,
     });
     expect(title).toBeTruthy();
+    expect(screen.queryByText(texts(locale).lead)).toBeNull();
     expect(screen.queryByRole("article")).toBeNull();
     expect(screen.queryByRole("alert")).toBeNull();
   });
@@ -182,7 +227,12 @@ describe("My Matches: data states", () => {
     renderMatches(locale, bundleClient(bundle));
 
     const total = bundle.programs.flatMap((shard) => shard.programs).length;
-    await screen.findByRole("heading", { name: new RegExp(String(total)) });
+    const title = createTranslator({
+      locale,
+      messages: catalogs[locale],
+      namespace: "matches.states.allHidden",
+    })("title", { n: total, count: String(total) });
+    await screen.findByRole("heading", { name: title });
     expect(screen.queryByRole("article")).toBeNull();
     const details = document.querySelector("details");
     expect(details?.open).toBe(true);

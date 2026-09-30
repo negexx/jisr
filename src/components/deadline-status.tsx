@@ -57,11 +57,7 @@ export function DeadlineStatus({ intake }: { intake: IntakeStatus }) {
           </bdi>
         </p>
       ) : null}
-      {intake.fact === null ? null : (
-        <div className="ps-7">
-          <SourceBadge meta={intake.fact} variant="compact" />
-        </div>
-      )}
+      {intake.fact === null ? null : <SourceBadge meta={intake.fact} variant="compact" />}
     </div>
   );
 }

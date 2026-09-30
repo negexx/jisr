@@ -285,7 +285,11 @@
   },
   "localeSwitcher": {
     "label": "Langue",
-    "names": { "fr": "Français", "en": "English", "ar": "العربية" }
+    "names": {
+      "fr": "Français",
+      "en": "English",
+      "ar": "العربية"
+    }
   },
   "profile": {
     "meta": {
@@ -509,8 +513,12 @@
   },
   "reasonList": {
     "sources": "Sources",
-    "whySummary": "Pourquoi ? {counts}",
-    "count": "{outcome} : {count}"
+    "whySummary": "Autres conditions : {counts}",
+    "count": {
+      "pass": "{n, plural, one {{count} semble remplie} other {{count} semblent remplies}}",
+      "fail": "{n, plural, one {{count} non remplie} other {{count} non remplies}}",
+      "unknown": "{count} à vérifier"
+    }
   },
   "matchCard": {
     "level": {
@@ -551,7 +559,8 @@
       "ok": "{n, plural, one {{count} semble possible} other {{count} semblent possibles}}",
       "check": "{count} à vérifier",
       "foundation": "{count} via une année préparatoire",
-      "failed": "{count} avec des conditions publiées non remplies"
+      "failed": "{count} avec conditions non remplies",
+      "navLabel": "Aller à un groupe"
     },
     "groups": {
       "foundation": {
@@ -559,7 +568,8 @@
         "boxTitle": "À propos de l'année préparatoire"
       },
       "failed": {
-        "note": "Les conditions peuvent changer. Vérifiez la page officielle de chaque programme avant de décider."
+        "note": "Les conditions peuvent changer. Vérifiez la page officielle de chaque programme avant de décider.",
+        "show": "Afficher les programmes ({count})"
       }
     },
     "summary": {
@@ -604,7 +614,7 @@
         "description": "Nous ajoutons encore des données. Cela ne dit rien de votre profil. Vous pouvez modifier vos domaines dans votre profil."
       },
       "allHidden": {
-        "title": "{n, plural, one {Vos préférences masquent le seul programme publié pour l'instant} other {Vos préférences masquent les {count} programmes}}",
+        "title": "{n, plural, one {Vos préférences masquent le seul programme publié pour l'instant dans vos domaines} other {Vos préférences masquent les {count} programmes publiés dans vos domaines}}",
         "description": "Modifiez vos préférences dans votre profil pour les voir. Votre budget ne masque jamais un programme."
       }
     }

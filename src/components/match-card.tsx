@@ -51,11 +51,14 @@ export function MatchCard({
   model,
   budgetProvided,
   monthsLabel,
+  routeExplained = false,
 }: {
   model: MatchCardModel;
   // The profile has a budget: the domain still answers "unknown" when it cannot compare, and that is said too.
   budgetProvided: boolean;
   monthsLabel: string;
+  // The page already explains the foundation route (a box above the group): skip the long text here and keep the short reason.
+  routeExplained?: boolean;
 }) {
   const locale = useLocale();
   const t = useTranslations("matchCard");
@@ -182,7 +185,7 @@ export function MatchCard({
       </dl>
 
       <div className="flex flex-col gap-2">
-        {model.group === "foundation" ? (
+        {model.group === "foundation" && !routeExplained ? (
           <p data-testid="route-text" className="max-w-prose text-base">
             {tRoute(model.routeKey)}
           </p>

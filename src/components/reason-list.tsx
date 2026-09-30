@@ -113,14 +113,12 @@ function ReasonItem({
 function WhySummary({ hidden }: { hidden: readonly ReasonView[] }) {
   const locale = useLocale();
   const t = useTranslations("reasonList");
-  const tReason = useReasonText();
+  // Each phrase agrees with its own number, so the plural selector is numeric and the displayed
+  // number a preformatted string.
   const parts = OUTCOME_ORDER.flatMap((outcome) => {
     const count = hidden.filter((reason) => reason.outcome === outcome).length;
     if (count === 0) return [];
-    return t("count", {
-      outcome: tReason(`domain.reason.outcome.${outcome}`),
-      count: formatNumber(count, locale) ?? String(count),
-    });
+    return t(`count.${outcome}`, { n: count, count: formatNumber(count, locale) ?? String(count) });
   });
   const counts = new Intl.ListFormat(intlLocale(locale), { type: "unit", style: "short" }).format(
     parts,
@@ -144,7 +142,7 @@ export function ReasonList({
   showSources?: boolean;
   // "grouped": one deduped Sources disclosure after the list instead of one per reason.
   sources?: "per-item" | "grouped";
-  // From this many reasons up, only the first stays open and the rest folds into a "Why?" disclosure.
+  // From this many reasons up, only the first stays open and the rest folds into an "Other requirements" disclosure.
   collapseFrom?: number;
   // Reasons that appear met show only their outcome and label, not the repeated sentence.
   compact?: boolean;

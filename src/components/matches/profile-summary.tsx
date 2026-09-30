@@ -27,8 +27,8 @@ function Chip({ children, muted = false }: { children: ReactNode; muted?: boolea
 
 function Row({ label, children }: { label: string; children: ReactNode }) {
   return (
-    <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 lg:flex-col lg:items-start">
-      <dt className="text-sm font-medium text-muted-foreground">{label}</dt>
+    <div className="flex flex-wrap items-center gap-1.5 lg:flex-col lg:items-start">
+      <dt className="sr-only text-sm font-medium text-muted-foreground lg:not-sr-only">{label}</dt>
       <dd>
         <ul className="flex flex-wrap gap-1.5">{children}</ul>
       </dd>
@@ -51,15 +51,17 @@ export function ProfileSummary({
   const headingId = useId();
   const { budget } = profile;
 
+  // Phone: one wrapping strip of chips (labels stay for screen readers) and a small edit link.
+  // From lg: the labelled column, title and edit link on the first row.
   return (
-    <aside aria-labelledby={headingId} className="flex flex-col gap-3 rounded-xl bg-muted p-4">
-      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-        <h2 id={headingId} className="text-base font-semibold">
-          {t("title")}
-        </h2>
-        <EditProfileLink />
-      </div>
-      <dl className="flex flex-col gap-3">
+    <aside
+      aria-labelledby={headingId}
+      className="flex flex-wrap items-center gap-2 rounded-xl bg-muted p-3 lg:grid lg:grid-cols-1 lg:gap-y-3 lg:p-4"
+    >
+      <h2 id={headingId} className="sr-only text-base font-semibold lg:not-sr-only">
+        {t("title")}
+      </h2>
+      <dl className="flex flex-wrap gap-1.5 lg:flex-col lg:gap-3">
         <Row label={t("fields")}>
           {profile.fields.map((slug) => (
             <Chip key={slug}>
@@ -100,6 +102,9 @@ export function ProfileSummary({
           )}
         </Row>
       </dl>
+      <div className="lg:pt-1">
+        <EditProfileLink size="sm" />
+      </div>
     </aside>
   );
 }

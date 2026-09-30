@@ -5,10 +5,10 @@ import { EmptyState } from "@/components/empty-state";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 
-export function EditProfileLink({ variant = "outline" }: { variant?: "outline" | "default" }) {
+export function EditProfileLink({ size = "default" }: { size?: "default" | "sm" }) {
   const t = useTranslations("matches.summary");
   return (
-    <Link href="/profile" className={buttonVariants({ variant })}>
+    <Link href="/profile" className={buttonVariants({ variant: "outline", size })}>
       {t("edit")}
     </Link>
   );

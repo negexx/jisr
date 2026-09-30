@@ -14,6 +14,11 @@ const OFFICIAL_WORD = { en: /official/i, fr: /officiel/i, ar: /رسمي/u };
 const WORST_ARABIC_LOCALE = "ar-EG" as string as "ar";
 const ARABIC_INDIC_DIGIT = /[٠-٩۰-۹]/u;
 
+// A plural repeats {count} in every branch, so compare the names, not their occurrences.
+function distinct(message: string): string[] {
+  return [...new Set(placeholderNames(message))].sort();
+}
+
 describe.each(LOCALES)("component messages (%s)", (locale) => {
   const messages = namespaceMessages(locale, NAMESPACES);
 
@@ -60,9 +65,11 @@ describe.each(LOCALES)("component messages (%s)", (locale) => {
     };
     for (const [key, value] of messages) {
       const params = Object.fromEntries(placeholderNames(value).map((name) => [name, "Sample 12"]));
-      // `place` is the <bdi> tag of the institution and city line.
-      const text = t.rich(key, { ...params, place: (chunks: string) => chunks });
-      expect([text].flat().join(""), key).not.toMatch(ARABIC_INDIC_DIGIT);
+      // `place` is the <bdi> tag of the institution and city line; `n` is the numeric plural selector.
+      for (const n of [1, 2, 3, 11, 100]) {
+        const text = t.rich(key, { ...params, n, place: (chunks: string) => chunks });
+        expect([text].flat().join(""), `${key} ${n}`).not.toMatch(ARABIC_INDIC_DIGIT);
+      }
     }
     expect(errors).toEqual([]);
   });
@@ -70,9 +77,7 @@ describe.each(LOCALES)("component messages (%s)", (locale) => {
   it("uses the same placeholder names as fr", () => {
     const french = namespaceMessages("fr", NAMESPACES);
     for (const [key, value] of messages) {
-      expect(placeholderNames(value).sort(), key).toEqual(
-        placeholderNames(french.get(key) ?? "").sort(),
-      );
+      expect(distinct(value), key).toEqual(distinct(french.get(key) ?? ""));
     }
   });
 });

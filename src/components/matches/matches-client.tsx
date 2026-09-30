@@ -1,20 +1,20 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useEffect, useMemo, useState } from "react";
+import { type ReactNode, useEffect, useMemo, useState } from "react";
 
 import type { IsoDate } from "@/data-schema/dates";
 import type { Profile } from "@/data-schema/profile";
 import type { AppLocale } from "@/i18n/routing";
 import { todayIso } from "@/lib/clock";
 import { buildMatchesView, MATCH_GROUPS, type MatchesView } from "@/lib/journey/matches-view";
-import { formatList, formatNumber } from "@/lib/journey/reasons";
 import { useProfile } from "@/lib/profile/use-profile";
 import type { SnapshotBundle, SnapshotClient } from "@/lib/snapshot/client";
 import { shardsForMatches } from "@/lib/snapshot/plan";
 import { type SnapshotRequest, useSnapshotBundle } from "@/lib/snapshot/use-snapshot";
 
-import { GroupSection } from "./group-section";
+import { displayNumber } from "./display-number";
+import { GroupSection, groupHeadingId } from "./group-section";
 import { HiddenPrograms } from "./hidden-programs";
 import { MatchesLayout } from "./matches-layout";
 import { MatchesSkeleton } from "./matches-skeleton";
@@ -42,31 +42,43 @@ function planKey(profile: Profile): string {
 }
 
 function Loading() {
-  const t = useTranslations("matches");
   return (
-    <>
-      <output className="sr-only">{t("loading")}</output>
-      <div aria-busy="true">
-        <MatchesSkeleton />
-      </div>
-    </>
+    <div aria-busy="true">
+      <MatchesSkeleton />
+    </div>
   );
 }
 
-function CountsLine({ view, locale }: { view: OkView; locale: AppLocale }) {
+// Real in-page anchors (the ids hold no profile value): a phone shows the four groups one scroll
+// apart, so the counts double as the way to jump to one.
+function CountsNav({ view, locale }: { view: OkView; locale: AppLocale }) {
   const t = useTranslations("matches.counts");
-  const parts = MATCH_GROUPS.filter((group) => view.counts[group] > 0).map((group) =>
-    t(group, {
-      n: view.counts[group],
-      count: formatNumber(view.counts[group], locale) ?? String(view.counts[group]),
-    }),
+  const groups = MATCH_GROUPS.filter((group) => view.counts[group] > 0);
+  if (groups.length === 0) return null;
+  return (
+    <nav aria-label={t("navLabel")}>
+      <ul className="flex flex-wrap gap-2">
+        {groups.map((group) => (
+          <li key={group}>
+            <a
+              href={`#${groupHeadingId(group)}`}
+              className="inline-flex min-h-11 items-center rounded-full border border-border bg-card px-4 text-base font-medium text-primary underline-offset-4 hover:underline"
+            >
+              {t(group, {
+                n: view.counts[group],
+                count: displayNumber(view.counts[group], locale),
+              })}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
-  const line = formatList(parts, "conjunction", locale);
-  return line === null ? null : <p className="text-base font-medium">{line}</p>;
 }
 
 function Results({ view, profile, locale }: { view: OkView; profile: Profile; locale: AppLocale }) {
   const t = useTranslations("matches.states.allHidden");
+  const tPage = useTranslations("matches");
   const shown = MATCH_GROUPS.reduce((sum, group) => sum + view.counts[group], 0);
   const budgetProvided = profile.budget !== null;
   return (
@@ -75,11 +87,14 @@ function Results({ view, profile, locale }: { view: OkView; profile: Profile; lo
         <AllHiddenState
           title={t("title", {
             n: view.totalPrograms,
-            count: formatNumber(view.totalPrograms, locale) ?? String(view.totalPrograms),
+            count: displayNumber(view.totalPrograms, locale),
           })}
         />
       ) : (
-        <CountsLine view={view} locale={locale} />
+        <>
+          <p className="max-w-prose text-sm text-muted-foreground">{tPage("lead")}</p>
+          <CountsNav view={view} locale={locale} />
+        </>
       )}
       {MATCH_GROUPS.map((group) =>
         view.groups[group].length === 0 ? null : (
@@ -101,6 +116,7 @@ function Results({ view, profile, locale }: { view: OkView; profile: Profile; lo
 
 // `client` is a test seam: production always uses the shared snapshot client.
 export function MatchesClient({ locale, client }: { locale: AppLocale; client?: SnapshotClient }) {
+  const t = useTranslations("matches");
   const { state: profileState, dismissReset } = useProfile();
   const profile = profileState.status === "ok" ? profileState.profile : null;
 
@@ -135,34 +151,55 @@ export function MatchesClient({ locale, client }: { locale: AppLocale; client?: 
     }
   }, [profile, now, state, locale]);
 
-  if (profileState.status === "unhydrated") return <Loading />;
-  if (profileState.status === "none") return <NoProfileState />;
-  if (profileState.status === "reset") {
-    return (
-      <div className="flex flex-col gap-2">
-        <ResetNotice onDismiss={dismissReset} />
-        <NoProfileState />
-      </div>
-    );
-  }
-  if (outcome.status === "failed") return <ErrorState onRetry={retry} />;
-  if (outcome.status === "pending" || profile === null) return <Loading />;
+  function body(): { loading: boolean; node: ReactNode } {
+    if (profileState.status === "unhydrated") return { loading: true, node: <Loading /> };
+    if (profileState.status === "none") return { loading: false, node: <NoProfileState /> };
+    if (profileState.status === "reset") {
+      return {
+        loading: false,
+        node: (
+          <div className="flex flex-col gap-2">
+            <ResetNotice onDismiss={dismissReset} />
+            <NoProfileState />
+          </div>
+        ),
+      };
+    }
+    if (outcome.status === "failed")
+      return { loading: false, node: <ErrorState onRetry={retry} /> };
+    if (outcome.status === "pending" || profile === null) {
+      return { loading: true, node: <Loading /> };
+    }
 
-  const { view, bundle } = outcome;
-  if (view.kind === "no_programs") return <NoProgramsState />;
-  const { core } = bundle;
-  // `no_programs_for_fields` and `ok` need the core shard, which buildMatchesView already required.
-  const summary =
-    core === undefined ? null : (
-      <ProfileSummary profile={profile} core={core} text={bundle.text} locale={locale} />
-    );
+    const { view, bundle } = outcome;
+    if (view.kind === "no_programs") return { loading: false, node: <NoProgramsState /> };
+    const { core } = bundle;
+    // `no_programs_for_fields` and `ok` need the core shard, which buildMatchesView already required.
+    const summary =
+      core === undefined ? null : (
+        <ProfileSummary profile={profile} core={core} text={bundle.text} locale={locale} />
+      );
+    return {
+      loading: false,
+      node: (
+        <MatchesLayout aside={summary}>
+          {view.kind === "no_programs_for_fields" ? (
+            <NoProgramsForFieldsState />
+          ) : (
+            <Results view={view} profile={profile} locale={locale} />
+          )}
+        </MatchesLayout>
+      ),
+    };
+  }
+
+  const { loading, node } = body();
+  // One polite status region for the whole life of the island: a region inserted together with its
+  // text is skipped by some screen readers, so only its text changes.
   return (
-    <MatchesLayout aside={summary}>
-      {view.kind === "no_programs_for_fields" ? (
-        <NoProgramsForFieldsState />
-      ) : (
-        <Results view={view} profile={profile} locale={locale} />
-      )}
-    </MatchesLayout>
+    <>
+      <output className="sr-only">{loading ? t("loading") : ""}</output>
+      {node}
+    </>
   );
 }

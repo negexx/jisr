@@ -1,5 +1,7 @@
 // @vitest-environment jsdom
+
 import { cleanup } from "@testing-library/react";
+import { createTranslator } from "next-intl";
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 
 import { ReasonList } from "@/components/reason-list";
@@ -228,7 +230,7 @@ describe("ReasonList: collapsing", () => {
 
   it.each(
     LOCALES,
-  )("shows the first reason and folds the rest into a Why? details (%s)", (locale) => {
+  )("shows the first reason and folds the rest into an Other requirements details (%s)", (locale) => {
     const { container } = renderWithMessages(
       <ReasonList reasons={[unknown(), pass(), pass(), fail()]} collapseFrom={3} />,
       locale,
@@ -240,19 +242,38 @@ describe("ReasonList: collapsing", () => {
       expect(item.closest("details[data-slot='why']")).not.toBeNull();
     }
     const summary = container.querySelector("details[data-slot='why'] summary");
-    const outcomes = catalogs[locale].domain.reason.outcome;
-    const count = catalogs[locale].reasonList.count;
+    const translate = createTranslator({
+      locale,
+      messages: catalogs[locale],
+      namespace: "reasonList",
+    });
     expect(summary?.textContent).toContain(
       catalogs[locale].reasonList.whySummary.split("{counts}")[0]?.trim() ?? "?",
     );
-    expect(summary?.textContent).toContain(
-      count.replace("{outcome}", outcomes.pass).replace("{count}", "2"),
-    );
-    expect(summary?.textContent).toContain(
-      count.replace("{outcome}", outcomes.fail).replace("{count}", "1"),
-    );
-    expect(summary?.textContent).not.toContain(outcomes.unknown);
+    expect(summary?.textContent).toContain(translate("count.pass", { n: 2, count: "2" }));
+    expect(summary?.textContent).toContain(translate("count.fail", { n: 1, count: "1" }));
+    expect(summary?.textContent).not.toContain(catalogs[locale].domain.reason.outcome.unknown);
     expect(container.textContent).not.toMatch(/[٠-٩]/u);
+  });
+
+  it("makes the French counts agree with their number and leads with the new label", () => {
+    const many = renderWithMessages(
+      <ReasonList reasons={[unknown(), pass(), pass(), fail()]} collapseFrom={3} />,
+      "fr",
+    );
+    const text = many.container.querySelector("details[data-slot='why'] summary")?.textContent;
+    expect(text).toContain("Autres conditions");
+    expect(text).toContain("non remplie");
+    expect(text).not.toContain("non remplies");
+    expect(text).toContain("2 semblent remplies");
+    cleanup();
+    const one = renderWithMessages(
+      <ReasonList reasons={[unknown(), pass(), fail()]} collapseFrom={3} />,
+      "fr",
+    );
+    const single = one.container.querySelector("details[data-slot='why'] summary")?.textContent;
+    expect(single).toContain("1 semble remplie");
+    expect(single).not.toContain("semblent");
   });
 
   it("keeps the whole list open below the threshold and by default", () => {

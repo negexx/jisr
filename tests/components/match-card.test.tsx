@@ -378,7 +378,9 @@ describe("MatchCard: density and layout", () => {
     expect(detail?.querySelector("bdi")?.textContent).toBe(model.applicationChannel?.name);
   });
 
-  it.each(LOCALES)("folds the reasons from three up behind a Why? disclosure (%s)", (locale) => {
+  it.each(
+    LOCALES,
+  )("folds the reasons from three up behind an Other requirements disclosure (%s)", (locale) => {
     const model = journey.card(locale, E2E_SLUGS.ok);
     expect(model.topReasons.length).toBeGreaterThanOrEqual(3);
     const { container } = renderCard(model, locale);
@@ -422,6 +424,25 @@ describe("MatchCard: density and layout", () => {
       catalogs[locale].domain.reason.code.route_foundation,
     );
     expect(container.textContent).toContain(catalogs[locale].domain.reason.kind.route);
+  });
+
+  it.each(
+    LOCALES,
+  )("leaves the long route text to the page when routeExplained is set, keeping the short reason (%s)", (locale) => {
+    const model = journey.card(locale, E2E_SLUGS.foundation);
+    const months = formatNumber(model.cost.academicYearMonths, locale) ?? "12";
+    const { container } = renderWithMessages(
+      <MatchCard model={model} budgetProvided={false} monthsLabel={months} routeExplained />,
+      locale,
+    );
+    expect(container.textContent).not.toContain(catalogs[locale].domain.route.foundation);
+    expect(container.querySelector("[data-testid='route-text']")).toBeNull();
+    const reason = container.querySelector("li[data-code='route_foundation']");
+    expect(reason).not.toBeNull();
+    expect(reason?.textContent).toContain(catalogs[locale].domain.reason.kind.route);
+    expect(container.textContent).not.toContain(
+      catalogs[locale].domain.reason.code.route_foundation,
+    );
   });
 
   it("keeps the source badges of the facts and the cost caveats", () => {

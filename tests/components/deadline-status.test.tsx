@@ -55,6 +55,19 @@ describe("DeadlineStatus", () => {
     expectNoPhysicalDirection(container);
   });
 
+  it("lets the source badge use the full row: only the opening line is indented", () => {
+    const { container } = renderWithMessages(<DeadlineStatus intake={upcoming} />, "fr");
+    const badge = container.querySelector("[data-slot='source-badge']");
+    expect(badge).not.toBeNull();
+    for (let node = badge?.parentElement; node && node !== container; node = node.parentElement) {
+      expect(node.classList.contains("ps-7")).toBe(false);
+    }
+    const opens = [...container.querySelectorAll("p")].find((p) =>
+      p.textContent?.includes("01/11/2026"),
+    );
+    expect(opens?.className).toContain("ps-7");
+  });
+
   it("omits the opening line when the intake has no opening date", () => {
     const withoutOpening: IntakeStatus = {
       ...upcoming,

@@ -285,7 +285,11 @@
   },
   "localeSwitcher": {
     "label": "Language",
-    "names": { "fr": "Français", "en": "English", "ar": "العربية" }
+    "names": {
+      "fr": "Français",
+      "en": "English",
+      "ar": "العربية"
+    }
   },
   "profile": {
     "meta": {
@@ -509,8 +513,12 @@
   },
   "reasonList": {
     "sources": "Sources",
-    "whySummary": "Why? {counts}",
-    "count": "{outcome}: {count}"
+    "whySummary": "Other requirements: {counts}",
+    "count": {
+      "pass": "{n, plural, one {{count} appears met} other {{count} appear met}}",
+      "fail": "{count} not met",
+      "unknown": "{count} to check"
+    }
   },
   "matchCard": {
     "level": {
@@ -551,7 +559,8 @@
       "ok": "{n, plural, one {{count} looks possible} other {{count} look possible}}",
       "check": "{count} to check",
       "foundation": "{count} through a foundation year",
-      "failed": "{count} with published requirements not met"
+      "failed": "{count} with requirements not met",
+      "navLabel": "Jump to a group"
     },
     "groups": {
       "foundation": {
@@ -559,7 +568,8 @@
         "boxTitle": "About the foundation year"
       },
       "failed": {
-        "note": "Requirements can change. Check the official page of each program before you decide."
+        "note": "Requirements can change. Check the official page of each program before you decide.",
+        "show": "Show the programs ({count})"
       }
     },
     "summary": {
@@ -604,7 +614,7 @@
         "description": "We are still adding data. This says nothing about your profile. You can change your fields in your profile."
       },
       "allHidden": {
-        "title": "{n, plural, one {Your preferences hide the only program published so far} other {Your preferences hide all {count} programs}}",
+        "title": "{n, plural, one {Your preferences hide the only program published so far in your fields} other {Your preferences hide all {count} programs published in your fields}}",
         "description": "Change your preferences in your profile to see them. Your budget never hides a program."
       }
     }

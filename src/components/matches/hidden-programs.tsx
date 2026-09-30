@@ -5,8 +5,10 @@ import { DISCLOSURE_SUMMARY_CLASS, DisclosureChevron } from "@/components/disclo
 import type { PreferenceMismatch } from "@/domain/filter";
 import type { AppLocale } from "@/i18n/routing";
 import type { MatchesView } from "@/lib/journey/matches-view";
-import { formatList, formatNumber } from "@/lib/journey/reasons";
+import { formatList } from "@/lib/journey/reasons";
 import { cn } from "@/lib/utils";
+
+import { displayNumber } from "./display-number";
 
 type OkView = Extract<MatchesView, { kind: "ok" }>;
 
@@ -45,24 +47,26 @@ export function HiddenPrograms({
         <summary id={summaryId} className={cn(DISCLOSURE_SUMMARY_CLASS, "min-h-12 w-full py-2")}>
           <DisclosureChevron />
           <span className="text-base font-medium">
-            {t("summary", { n: total, count: formatNumber(total, locale) ?? String(total) })}
+            {t("summary", { n: total, count: displayNumber(total, locale) })}
           </span>
         </summary>
         <div className="flex flex-col gap-4 pb-4 pt-1">
           <p className="max-w-prose text-base text-muted-foreground">{t("note")}</p>
-          <ul className="flex flex-wrap gap-2">
-            {counted.map((mismatch) => (
-              <li
-                key={mismatch}
-                className="rounded-full border border-border bg-background px-3 py-1 text-sm"
-              >
-                {t("reasonCount", {
-                  reason: tMismatch(mismatch),
-                  count: formatNumber(view.hiddenByMismatch[mismatch], locale) ?? "?",
-                })}
-              </li>
-            ))}
-          </ul>
+          {total > 1 ? (
+            <ul className="flex flex-wrap gap-2">
+              {counted.map((mismatch) => (
+                <li
+                  key={mismatch}
+                  className="rounded-full border border-border bg-background px-3 py-1 text-sm"
+                >
+                  {t("reasonCount", {
+                    reason: tMismatch(mismatch),
+                    count: displayNumber(view.hiddenByMismatch[mismatch], locale),
+                  })}
+                </li>
+              ))}
+            </ul>
+          ) : null}
           <ul className="flex flex-col gap-3">
             {view.hidden.map((program) => (
               <li key={program.slug} className="flex flex-col gap-0.5">

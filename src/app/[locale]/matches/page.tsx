@@ -24,10 +24,7 @@ export default async function MatchesPage({ params }: Props) {
   const [messages, t] = await Promise.all([getMessages(), getTranslations("matches")]);
   return (
     <div className="flex flex-col gap-6">
-      <header className="flex flex-col gap-2">
-        <h1 className="text-2xl font-bold tracking-tight text-balance">{t("title")}</h1>
-        <p className="max-w-prose text-base text-muted-foreground">{t("lead")}</p>
-      </header>
+      <h1 className="text-2xl font-bold tracking-tight text-balance">{t("title")}</h1>
       <NextIntlClientProvider
         locale={locale}
         messages={pickMessages(messages, MATCHES_MESSAGE_NAMESPACES)}
