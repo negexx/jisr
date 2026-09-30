@@ -286,5 +286,41 @@
   "localeSwitcher": {
     "label": "Langue",
     "names": { "fr": "Français", "en": "English", "ar": "العربية" }
+  },
+  "costBreakdown": {
+    "counted": "Calculé {per}",
+    "seeNote": "Voir la note",
+    "total": "Total pour la première année",
+    "seeLines": "Voir chaque poste de coût"
+  },
+  "reasonList": {
+    "sources": "Sources"
+  },
+  "matchCard": {
+    "level": {
+      "bachelor": "Licence"
+    },
+    "taughtIn": "Enseigné en",
+    "languagesUnknown": "Langues d'enseignement : à vérifier",
+    "institutionCity": "{institution}, {city}",
+    "facts": {
+      "estimatedCost": "Coût estimé, première année",
+      "deadline": "Date limite",
+      "application": "Comment candidater"
+    },
+    "channel": {
+      "kind": {
+        "national_portal": "Portail national",
+        "intermediary": "Plateforme intermédiaire",
+        "direct": "Candidature directe auprès de l'établissement"
+      },
+      "account": {
+        "required": "Compte requis",
+        "notRequired": "Aucun compte nécessaire",
+        "unknown": "Compte : à vérifier"
+      }
+    },
+    "reasonsHeading": "Les conditions publiées, en bref",
+    "seeDetails": "Voir le détail"
   }
 }

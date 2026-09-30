@@ -286,5 +286,41 @@
   "localeSwitcher": {
     "label": "اللغة",
     "names": { "fr": "Français", "en": "English", "ar": "العربية" }
+  },
+  "costBreakdown": {
+    "counted": "يُحتسب {per}",
+    "seeNote": "انظر الملاحظة",
+    "total": "المجموع للسنة الأولى",
+    "seeLines": "عرض كل بند من بنود التكلفة"
+  },
+  "reasonList": {
+    "sources": "المصادر"
+  },
+  "matchCard": {
+    "level": {
+      "bachelor": "الإجازة"
+    },
+    "taughtIn": "لغة التدريس",
+    "languagesUnknown": "لغات التدريس: يجب التحقق منها",
+    "institutionCity": "{institution}، {city}",
+    "facts": {
+      "estimatedCost": "التكلفة التقديرية للسنة الأولى",
+      "deadline": "الموعد النهائي",
+      "application": "طريقة التقديم"
+    },
+    "channel": {
+      "kind": {
+        "national_portal": "بوابة وطنية",
+        "intermediary": "منصة وسيطة",
+        "direct": "تقديم مباشر لدى المؤسسة"
+      },
+      "account": {
+        "required": "يتطلب حسابًا",
+        "notRequired": "لا يتطلب حسابًا",
+        "unknown": "الحساب: يجب التحقق منه"
+      }
+    },
+    "reasonsHeading": "الشروط المنشورة باختصار",
+    "seeDetails": "عرض التفاصيل"
   }
 }

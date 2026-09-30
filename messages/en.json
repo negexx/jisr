@@ -286,5 +286,41 @@
   "localeSwitcher": {
     "label": "Language",
     "names": { "fr": "Français", "en": "English", "ar": "العربية" }
+  },
+  "costBreakdown": {
+    "counted": "Counted {per}",
+    "seeNote": "See note",
+    "total": "Total for the first year",
+    "seeLines": "See each cost line"
+  },
+  "reasonList": {
+    "sources": "Sources"
+  },
+  "matchCard": {
+    "level": {
+      "bachelor": "Bachelor's"
+    },
+    "taughtIn": "Taught in",
+    "languagesUnknown": "Teaching languages: to be checked",
+    "institutionCity": "{institution}, {city}",
+    "facts": {
+      "estimatedCost": "Estimated cost, first year",
+      "deadline": "Deadline",
+      "application": "How to apply"
+    },
+    "channel": {
+      "kind": {
+        "national_portal": "National portal",
+        "intermediary": "Intermediary platform",
+        "direct": "Direct application to the institution"
+      },
+      "account": {
+        "required": "Account required",
+        "notRequired": "No account needed",
+        "unknown": "Account: to be checked"
+      }
+    },
+    "reasonsHeading": "The published requirements, in short",
+    "seeDetails": "See details"
   }
 }
