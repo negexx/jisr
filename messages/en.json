@@ -264,7 +264,7 @@
         "certificates": "Certificates listed by the official source: {certificates}.",
         "anyCertificate": "The official source does not list specific certificates: a recognised certificate may count. Check the official list of certificates taken into account."
       },
-      "prior_study_years_min": "Higher education after the Bac, according to the official source: at least {years, plural, one {# year} other {# years}}.",
+      "prior_study_years_min": "Higher education after the Bac, according to the official source: at least {years, plural, one {{count} year} other {{count} years}}.",
       "manual_check": "Another requirement from the official source: read it on the official page.",
       "scaleLowerBetter": "On this scale a lower grade is better: you need {required} or better (a lower grade)."
     }

@@ -325,7 +325,7 @@ describe("describeRule", () => {
     expect(shape(years, "ar")).toEqual({
       key: "domain.rule.prior_study_years_min",
       kindKey: "domain.reason.kind.prior_study_years_min",
-      params: { years: 2 },
+      params: { years: 2, count: "2" },
       details: [],
     });
     expect(shape(tracks, "en")).toMatchObject({

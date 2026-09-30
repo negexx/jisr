@@ -5,6 +5,7 @@ import {
   credentialTypeName,
   type DescribeContext,
   formatList,
+  formatNumber,
   formatThreshold,
   languageName,
   type Params,
@@ -18,7 +19,9 @@ export type RuleLine = { key: string; params: Params };
 
 // A rule in general terms (the program page, not evaluated against a student). `key` + `params`
 // is the main line (`domain.rule.*`); `details` are further lines of the same rule (a language
-// rule's certificate requirement); `kindKey` is the heading and also takes `params`.
+// rule's certificate requirement, a lower-is-better scale); `kindKey` is the heading and also takes
+// `params`. Details are never shown on their own: render them right after the main line, because
+// some (scaleLowerBetter) do not name the official source that the main line names.
 export type RuleView = {
   kind: ResolvedRule["kind"];
   kindKey: string;
@@ -134,8 +137,14 @@ function describeKind(rule: ResolvedRule, ctx: DescribeContext): Described {
       return { ...described, details: certificateLines(rule, ctx) };
     }
     case "prior_study_years_min":
-      // A number, not a preformatted string: it selects the ICU plural form and `#` prints it.
-      return main("prior_study_years_min", { years: rule.years });
+      // `years` only selects the plural branch; `count` is what is printed (Latin digits in ar).
+      return main(
+        "prior_study_years_min",
+        withValues([
+          ["years", rule.years],
+          ["count", formatNumber(rule.years, locale)],
+        ]),
+      );
     case "manual_check":
       return main("manual_check", {});
     default:

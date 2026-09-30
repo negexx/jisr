@@ -12,19 +12,19 @@
     "questionsTitle": "Ce que Jisr vous aide à savoir",
     "questions": {
       "where": {
-        "title": "Où puis-je étudier ?",
+        "title": "Où puis-je étudier ?",
         "body": "Des licences en France, en Allemagne et aux Pays-Bas, classées selon ce qui semble réaliste pour votre profil."
       },
       "apply": {
-        "title": "Puis-je candidater ?",
+        "title": "Puis-je candidater ?",
         "body": "Ce que chaque programme demande, comparé à votre profil, avec ce qu'il reste à vérifier."
       },
       "cost": {
-        "title": "Combien cela va-t-il coûter ?",
+        "title": "Combien cela va-t-il coûter ?",
         "body": "Les frais de scolarité et le coût de la vie, en fourchettes, présentés comme chiffres officiels ou estimations."
       },
       "next": {
-        "title": "Que dois-je faire ensuite ?",
+        "title": "Que dois-je faire ensuite ?",
         "body": "Les dates limites, les documents et les étapes dans l'ordre, avec le lien officiel pour chacune."
       }
     }
@@ -42,11 +42,11 @@
   },
   "footer": {
     "privacy": "Votre profil reste sur cet appareil. Jisr n'utilise aucun cookie.",
-    "sources": "Les données et les sources sont vérifiées à la main ; chaque fait indique sa source."
+    "sources": "Les données et les sources sont vérifiées à la main ; chaque fait indique sa source."
   },
   "clearData": {
     "trigger": "Effacer mes données",
-    "title": "Effacer mes données ?",
+    "title": "Effacer mes données ?",
     "description": "Cela supprime votre profil et vos réponses non terminées de cet appareil uniquement.",
     "cancel": "Annuler",
     "confirm": "Effacer mes données"
@@ -264,7 +264,7 @@
         "certificates": "Certificats cités par la source officielle : {certificates}.",
         "anyCertificate": "La source officielle ne cite pas de certificat précis : un certificat reconnu peut suffire. Vérifiez la liste officielle des certificats pris en compte."
       },
-      "prior_study_years_min": "Études supérieures après le Bac selon la source officielle : au moins {years, plural, one {# année} other {# années}}.",
+      "prior_study_years_min": "Études supérieures après le Bac selon la source officielle : au moins {years, plural, one {{count} année} other {{count} années}}.",
       "manual_check": "Autre condition de la source officielle : lisez-la sur la page officielle.",
       "scaleLowerBetter": "Sur cette échelle, une note plus basse est meilleure : il faut {required} ou mieux (une note plus basse)."
     }

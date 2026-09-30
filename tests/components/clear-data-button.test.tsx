@@ -25,7 +25,7 @@ afterEach(() => {
 const COPY: Record<AppLocale, Copy> = {
   fr: {
     trigger: "Effacer mes données",
-    title: "Effacer mes données ?",
+    title: "Effacer mes données\u00a0?",
     description: /cet appareil uniquement/,
     cancel: "Annuler",
   },

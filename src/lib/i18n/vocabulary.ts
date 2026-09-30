@@ -233,6 +233,13 @@ export type MessageGroup = {
  *   domain.freshness.<Freshness>             plus verifiedOn {date}, bannerAging, bannerStale
  *   domain.coverage.<Coverage>
  *   domain.textNote.<TextNote>
+ *
+ * Argument contract (Latin digits in Arabic): every argument that is displayed is a string already
+ * formatted with `src/lib/format.ts` (or `formatNumber` in `src/lib/journey/reasons.ts`, same
+ * `intlLocale`). A number is passed only as a plural/select selector and never printed: messages
+ * use no ICU `#`, `, number` or `, date`. The translator locale is plain "ar", which an older
+ * browser CLDR formats with Arabic-Indic digits. Example: domain.cost.tenMonthNote takes
+ * `months: formatNumber(ACADEMIC_YEAR_MONTHS, locale)`, a string.
  */
 export const MESSAGE_GROUPS: readonly MessageGroup[] = [
   { path: "domain.status", values: MATCH_STATUSES },
@@ -290,8 +297,8 @@ export const MESSAGE_ARGS: Readonly<Record<string, readonly string[]>> = {
   "domain.rule.language_proficiency.unpublished": ["language"],
   "domain.rule.language_proficiency.certificates": ["certificates"],
   "domain.rule.scaleLowerBetter": ["required"],
-  // `years` is a number: it selects the plural form and is printed by `#` in the branches.
-  "domain.rule.prior_study_years_min": ["years"],
+  // `years` (a number) only selects the plural branch; `count` is the same number preformatted.
+  "domain.rule.prior_study_years_min": ["count", "years"],
   "domain.cost.tenMonthNote": ["months"],
   "domain.intake.upcoming": ["date"],
   "domain.freshness.verifiedOn": ["date"],

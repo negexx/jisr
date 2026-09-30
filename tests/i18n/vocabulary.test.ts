@@ -8,6 +8,7 @@ import type {
   ReasonKind,
   RuleOutcome,
 } from "@/domain/types";
+import { formatDate, formatGrade } from "@/lib/format";
 import {
   BUDGET_FITS,
   CHECKLIST_REASON_CODES,
@@ -31,6 +32,7 @@ import {
   TEXT_NOTES,
   type TextNote,
 } from "@/lib/i18n/vocabulary";
+import { formatNumber, type Params } from "@/lib/journey/reasons";
 import ar from "../../messages/ar.json";
 import en from "../../messages/en.json";
 import fr from "../../messages/fr.json";
@@ -76,10 +78,12 @@ function expandedKeys(): string[] {
 }
 
 // Every argument name in an ICU message, including those inside plural/select branches (`#` is not
-// an argument). Throws on unbalanced braces or a malformed argument. intl-messageformat is only a
-// transitive dependency (not importable under pnpm), hence this small parser.
-function placeholders(message: string): string[] {
+// an argument), and which of them select a plural/select branch. Throws on unbalanced braces or a
+// malformed argument. intl-messageformat is only a transitive dependency (not importable under
+// pnpm), hence this small parser.
+function parseArguments(message: string): { names: string[]; selectors: string[] } {
   const names = new Set<string>();
+  const selectors = new Set<string>();
   const fail = (why: string): never => {
     throw new Error(`${why} in "${message}"`);
   };
@@ -107,6 +111,7 @@ function placeholders(message: string): string[] {
       return close === -1 ? fail("unbalanced braces") : close + 1;
     }
     if (message[i] !== ",") return fail("bad branches");
+    selectors.add(head[1]);
     i++;
     for (;;) {
       const branch = /^\s*(?:(=\d+|[A-Za-z_]\w*)\s*(\{))?\s*/.exec(message.slice(i));
@@ -119,7 +124,11 @@ function placeholders(message: string): string[] {
   };
 
   text(0, false);
-  return [...names].sort();
+  return { names: [...names].sort(), selectors: [...selectors].sort() };
+}
+
+function placeholders(message: string): string[] {
+  return parseArguments(message).names;
 }
 
 describe("placeholders helper", () => {
@@ -132,6 +141,15 @@ describe("placeholders helper", () => {
     ],
   ] as const)("collects %s", (message, names) => {
     expect(placeholders(message)).toEqual(names);
+  });
+
+  it("tells plural/select selectors from displayed arguments", () => {
+    expect(
+      parseArguments("{n, plural, one {{count} x} other {{c, select, a {x} other {y}}}}"),
+    ).toEqual({
+      names: ["c", "count", "n"],
+      selectors: ["c", "n"],
+    });
   });
 
   it.each([
@@ -629,8 +647,8 @@ describe("trust wording: rules in general terms and journey-only keys", () => {
     );
   });
 
-  it("puts a no-break space before French double punctuation", () => {
-    const offenders = [...domain.fr].filter(([, value]) => / [:;!?]/.test(value));
+  it("puts a no-break space before double punctuation in the whole French catalogue", () => {
+    const offenders = [...flatten(fr, "fr")].filter(([, value]) => / [:;!?]/.test(value));
     expect(offenders).toEqual([]);
   });
 
@@ -648,12 +666,27 @@ describe("trust wording: rules in general terms and journey-only keys", () => {
     [
       "ar",
       "domain.reason.code.below_threshold_converted",
-      "بعد التحويل حسب جدول التحويل المنشور، تصبح علامتك ({student}) {studentConverted}، وهي لا تبلغ الحد الأدنى المنشور ({required}). هذا التحويل ليس قرار معادلة رسميًا: تحقق في صفحة الالتحاق الرسمية من كيفية التعامل مع علامتك.",
+      "بعد التحويل حسب جدول التحويل المنشور، تصبح علامتك ({student}) {studentConverted}، وهي لا تبلغ الحد الأدنى المنشور ({required}). هذا التحويل ليس قرار معادلة رسميًا: تحقق في صفحة الالتحاق الرسمية من كيفية احتساب علامتك.",
+    ],
+    [
+      "ar",
+      "domain.reason.code.no_scale_conversion",
+      "ليست لدينا طريقة منشورة لتحويل علامتك إلى سلّم العلامات المستعمل هنا. تحقق في صفحة الالتحاق الرسمية من كيفية احتساب علامتك.",
     ],
     [
       "ar",
       "domain.rule.prior_study_years_min",
-      "الدراسة العليا بعد البكالوريا حسب المصدر الرسمي: {years, plural, one {سنة واحدة} two {سنتان} few {# سنوات} other {# سنة}} على الأقل.",
+      "الدراسة العليا بعد البكالوريا حسب المصدر الرسمي: {years, plural, one {سنة واحدة} two {سنتان} few {{count} سنوات} other {{count} سنة}} على الأقل.",
+    ],
+    [
+      "fr",
+      "domain.rule.prior_study_years_min",
+      "Études supérieures après le Bac selon la source officielle : au moins {years, plural, one {{count} année} other {{count} années}}.",
+    ],
+    [
+      "en",
+      "domain.rule.prior_study_years_min",
+      "Higher education after the Bac, according to the official source: at least {years, plural, one {{count} year} other {{count} years}}.",
     ],
     [
       "fr",
@@ -684,8 +717,9 @@ describe("trust wording: rules in general terms and journey-only keys", () => {
       locale,
       messages: catalogs[locale],
       onError: (error) => errors.push(error),
-    }) as unknown as (key: string, params: Record<string, number>) => string;
-    const text = t("domain.rule.prior_study_years_min", { years });
+    }) as unknown as (key: string, params: Params) => string;
+    const count = formatNumber(years, locale) ?? "?";
+    const text = t("domain.rule.prior_study_years_min", { years, count });
     expect(errors).toEqual([]);
     expect(text.endsWith(ending), text).toBe(true);
   });
@@ -727,6 +761,61 @@ describe("trust wording: rules in general terms and journey-only keys", () => {
     for (const key of ["domain.route.staleSource", "domain.route.nonOfficialSource"]) {
       expect(domain[locale].get(key), key).not.toMatch(outcome);
     }
+  });
+});
+
+// Product decision: Latin digits in Arabic. The translator locale is "ar", which intl-messageformat
+// resolves through the browser's CLDR: older phones print Arabic-Indic digits for any number it
+// formats. So displayed arguments are preformatted strings and numbers only select a branch.
+// "ar-EG" prints Arabic-Indic digits under every CLDR: it stands in for the worst browser.
+// next-intl types `locale` as an app locale; "ar-EG" is a test-only stand-in.
+const WORST_ARABIC_LOCALE = "ar-EG" as string as "ar";
+const ARABIC_INDIC_DIGIT = /[٠-٩۰-۹]/u;
+const SELECTOR_SAMPLES = [1, 2, 3, 11] as const;
+
+function displaySample(name: string, selector: number): string {
+  if (name === "date") return formatDate("2027-01-15", "ar");
+  if (name === "count" || name === "months") return formatNumber(selector, "ar") ?? "?";
+  return formatGrade(14.5, { min: 0, max: 20 }, "ar");
+}
+
+describe("numbers in messages never depend on the translator locale", () => {
+  it.each(LOCALES)("%s has no ICU number formatting (#, number, date, time)", (locale) => {
+    const offenders = [...flatten(catalogs[locale], locale)].filter(
+      ([, value]) => /(?<!')#/.test(value) || /,\s*(number|date|time)\b/.test(value),
+    );
+    expect(offenders).toEqual([]);
+  });
+
+  it("the worst-case locale really prints Arabic-Indic digits for a formatted number", () => {
+    const t = createTranslator({
+      locale: WORST_ARABIC_LOCALE,
+      messages: { probe: "{n, plural, other {# x}} {m, number}" },
+    });
+    expect(t("probe", { n: 3, m: 11 })).toMatch(ARABIC_INDIC_DIGIT);
+  });
+
+  it.each(LOCALES)("%s renders every domain message without Arabic-Indic digits", (locale) => {
+    const errors: unknown[] = [];
+    const t = createTranslator({
+      locale: WORST_ARABIC_LOCALE,
+      messages: catalogs[locale],
+      onError: (error) => errors.push(error),
+    }) as unknown as (key: string, params: Params) => string;
+    const withDigits: string[] = [];
+    for (const [key, value] of domain[locale]) {
+      const { names, selectors } = parseArguments(value);
+      for (const selector of SELECTOR_SAMPLES) {
+        const params: Params = {};
+        for (const name of names) {
+          params[name] = selectors.includes(name) ? selector : displaySample(name, selector);
+        }
+        const text = t(key, params);
+        if (ARABIC_INDIC_DIGIT.test(text)) withDigits.push(`${key}: ${text}`);
+      }
+    }
+    expect(errors).toEqual([]);
+    expect(withDigits).toEqual([]);
   });
 });
 
