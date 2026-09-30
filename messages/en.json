@@ -6,15 +6,50 @@
   "home": {
     "title": "Study in Europe after the Bac",
     "lead": "Jisr helps you find Bachelor's programmes that are realistic for your profile, estimate the costs and prepare your application.",
-    "stepsTitle": "Your journey",
-    "steps": {
-      "profile": "Your profile",
-      "options": "Realistic options",
-      "costs": "Costs",
-      "scholarships": "Scholarships",
-      "plan": "Your application plan"
-    },
-    "comingSoon": "Jisr is being built. The full journey is coming soon."
+    "cta": "Create my profile",
+    "ctaNote": "Your answers stay on this device.",
+    "matchesCta": "See my matches",
+    "questionsTitle": "What Jisr helps you find out",
+    "questions": {
+      "where": {
+        "title": "Where can I study?",
+        "body": "Bachelor's programmes in France, Germany and the Netherlands, sorted by what looks realistic for your profile."
+      },
+      "apply": {
+        "title": "Can I apply?",
+        "body": "What each programme asks for, compared with your profile, and what is still left to check."
+      },
+      "cost": {
+        "title": "How much will it cost?",
+        "body": "Tuition and living costs as ranges, shown as official figures or estimates."
+      },
+      "next": {
+        "title": "What do I do next?",
+        "body": "Deadlines, documents and steps in order, with the official link for each."
+      }
+    }
+  },
+  "shell": {
+    "siteName": "Jisr",
+    "siteNameArabic": "جسر",
+    "homeLink": "Jisr, home",
+    "skipToContent": "Skip to content"
+  },
+  "nav": {
+    "label": "Main navigation",
+    "profile": "My profile",
+    "matches": "My matches"
+  },
+  "footer": {
+    "privacy": "Your profile stays on this device. Jisr uses no cookies.",
+    "sources": "Data and sources are checked by hand; every fact shows its source."
+  },
+  "clearData": {
+    "trigger": "Clear my data",
+    "title": "Clear my data?",
+    "description": "This removes your profile and any unfinished answers from this device only.",
+    "cancel": "Cancel",
+    "confirm": "Clear my data"
   },
   "domain": {
     "status": {

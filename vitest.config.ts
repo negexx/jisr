@@ -15,5 +15,7 @@ export default defineConfig({
   test: {
     include: ["tests/**/*.test.{ts,tsx}"],
     environment: "node",
+    // next-intl's ESM build imports "next/navigation" without an extension; inlining lets Vite resolve it.
+    server: { deps: { inline: ["next-intl"] } },
   },
 });

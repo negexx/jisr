@@ -6,15 +6,50 @@
   "home": {
     "title": "Étudier en Europe après le Bac",
     "lead": "Jisr vous aide à trouver des licences réalistes pour votre profil, à estimer les coûts et à préparer votre candidature.",
-    "stepsTitle": "Votre parcours",
-    "steps": {
-      "profile": "Votre profil",
-      "options": "Des options réalistes",
-      "costs": "Les coûts",
-      "scholarships": "Les bourses",
-      "plan": "Votre plan de candidature"
-    },
-    "comingSoon": "Jisr est en construction. Le parcours complet arrive bientôt."
+    "cta": "Créer mon profil",
+    "ctaNote": "Vos réponses restent sur cet appareil.",
+    "matchesCta": "Voir mes résultats",
+    "questionsTitle": "Ce que Jisr vous aide à savoir",
+    "questions": {
+      "where": {
+        "title": "Où puis-je étudier ?",
+        "body": "Des licences en France, en Allemagne et aux Pays-Bas, classées selon ce qui semble réaliste pour votre profil."
+      },
+      "apply": {
+        "title": "Puis-je candidater ?",
+        "body": "Ce que chaque programme demande, comparé à votre profil, avec ce qu'il reste à vérifier."
+      },
+      "cost": {
+        "title": "Combien cela va-t-il coûter ?",
+        "body": "Les frais de scolarité et le coût de la vie, en fourchettes, présentés comme chiffres officiels ou estimations."
+      },
+      "next": {
+        "title": "Que dois-je faire ensuite ?",
+        "body": "Les dates limites, les documents et les étapes dans l'ordre, avec le lien officiel pour chacune."
+      }
+    }
+  },
+  "shell": {
+    "siteName": "Jisr",
+    "siteNameArabic": "جسر",
+    "homeLink": "Jisr, accueil",
+    "skipToContent": "Aller au contenu"
+  },
+  "nav": {
+    "label": "Navigation principale",
+    "profile": "Mon profil",
+    "matches": "Mes résultats"
+  },
+  "footer": {
+    "privacy": "Votre profil reste sur cet appareil. Jisr n'utilise aucun cookie.",
+    "sources": "Les données et les sources sont vérifiées à la main ; chaque fait indique sa source."
+  },
+  "clearData": {
+    "trigger": "Effacer mes données",
+    "title": "Effacer mes données ?",
+    "description": "Cela supprime votre profil et vos réponses non terminées de cet appareil uniquement.",
+    "cancel": "Annuler",
+    "confirm": "Effacer mes données"
   },
   "domain": {
     "status": {
