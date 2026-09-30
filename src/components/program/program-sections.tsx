@@ -219,7 +219,7 @@ export function TuitionSection({ data }: { data: ProgramPageData }) {
         <p data-testid="tuition-amount" className="flex flex-wrap items-baseline gap-x-2">
           <span className="text-lg font-semibold tabular-nums">
             <bdi dir="ltr">{formatMoney(tuition.amountMinor, tuition.currency, locale)}</bdi>
-          </span>
+          </span>{" "}
           <span className="text-base text-muted-foreground">
             {tDomain(`domain.cost.per.${tuition.period}`)}
           </span>
@@ -428,9 +428,7 @@ function ScholarshipItem({
   );
   const deadline = scholarship.deadline.value;
   // One badge when both facts share a source, date and kind: two identical badges would only add noise.
-  const badges = sameSource(scholarship.support, scholarship.deadline)
-    ? [scholarship.support]
-    : [scholarship.support, scholarship.deadline];
+  const sharedSource = sameSource(scholarship.support, scholarship.deadline);
 
   return (
     <li
@@ -479,9 +477,8 @@ function ScholarshipItem({
       <ExternalLink href={scholarship.officialUrl} className="min-h-11 w-fit text-base md:min-h-8">
         {t("link")}
       </ExternalLink>
-      {badges.map((meta, index) => (
-        <SourceBadge key={index === 0 ? "support" : "deadline"} meta={meta} />
-      ))}
+      <SourceBadge meta={scholarship.support} />
+      {sharedSource ? null : <SourceBadge meta={scholarship.deadline} />}
     </li>
   );
 }

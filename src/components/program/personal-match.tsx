@@ -3,7 +3,7 @@
 // Client leaf: the student's result for this program, computed in the browser from the profile on this device and the published snapshot. Nothing personal reaches the server, the URL or the console. Needs the namespaces in PROGRAM_CLIENT_NAMESPACES.
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useMemo } from "react";
+import { type ReactNode, useMemo } from "react";
 
 import { MatchStatusBadge } from "@/components/match-status-badge";
 import { ReasonList } from "@/components/reason-list";
@@ -136,11 +136,8 @@ function ProfileCta() {
 function UpdatedNotice() {
   const t = useTranslations("program.personal.updated");
   return (
-    <div
-      role="status"
-      className="flex flex-col gap-2 rounded-lg border border-border bg-muted px-3 py-3"
-    >
-      <p className="text-sm">{t("notice")}</p>
+    <div className="flex flex-col gap-2 rounded-lg border border-border bg-muted px-3 py-3">
+      <output className="text-sm">{t("notice")}</output>
       <Button
         type="button"
         variant="outline"
@@ -158,10 +155,12 @@ function ResultView({
   result,
   budgetProvided,
   scholarshipSlugs,
+  keyFacts,
 }: {
   result: PersonalResult;
   budgetProvided: boolean;
   scholarshipSlugs: readonly string[];
+  keyFacts: ReactNode;
 }) {
   const t = useTranslations("program.personal");
   const tFit = useTranslations("domain.budgetFit");
@@ -174,12 +173,7 @@ function ResultView({
         <MatchStatusBadge group={result.group} />
         <p className="text-base">{tDomain(`domain.status.hint.${result.status}`)}</p>
       </div>
-      <div className="flex flex-col gap-1">
-        <h3 className="text-base font-semibold">{t("route")}</h3>
-        <p data-testid="route-text" className="text-base">
-          {tDomain(result.routeKey)}
-        </p>
-      </div>
+      {keyFacts}
       {budgetProvided ? (
         <div data-slot="budget-fit" className="flex flex-col gap-1">
           <h3 className="text-base font-semibold">{t("budget")}</h3>
@@ -187,6 +181,12 @@ function ResultView({
           <p className="text-sm text-muted-foreground">{t("budgetNote")}</p>
         </div>
       ) : null}
+      <div className="flex flex-col gap-1 border-t border-border pt-4">
+        <h3 className="text-base font-semibold">{t("route")}</h3>
+        <p data-testid="route-text" className="text-base">
+          {tDomain(result.routeKey)}
+        </p>
+      </div>
       {scholarshipSlugs.length === 0 ? null : (
         <div data-slot="personal-scholarships" className="flex flex-col gap-1">
           <h3 className="text-base font-semibold">{t("scholarships")}</h3>
@@ -226,6 +226,7 @@ export function PersonalMatch({
   scholarshipSlugs,
   locale,
   client,
+  children,
 }: {
   program: ProgramRef;
   // The snapshot the page was built from; a newer one in the browser means the page is out of date.
@@ -234,6 +235,8 @@ export function PersonalMatch({
   scholarshipSlugs: readonly string[];
   locale: AppLocale;
   client?: SnapshotClient;
+  // Server-rendered key facts (deadline, cost), placed before the long reason list so a short sticky column still shows them.
+  children?: ReactNode;
 }) {
   const t = useTranslations("program.personal");
   const { state: profileState } = useProfile();
@@ -257,21 +260,26 @@ export function PersonalMatch({
     [profile, bundle, program.slug, locale],
   );
 
-  if (profileState.status === "unhydrated") return <ResultSkeleton />;
-  if (profile === null) return <ProfileCta />;
+  const withKeyFacts = (state: ReactNode) => (
+    <div className="flex flex-col gap-5">
+      {state}
+      {children}
+    </div>
+  );
+
+  if (profileState.status === "unhydrated") return withKeyFacts(<ResultSkeleton />);
+  if (profile === null) return withKeyFacts(<ProfileCta />);
   if (snapshot.status === "error" || outcome?.kind === "error") {
-    return <LoadError onRetry={retry} />;
+    return withKeyFacts(<LoadError onRetry={retry} />);
   }
   if (bundle === null || outcome === null) {
-    return (
+    return withKeyFacts(
       <>
         <div aria-busy="true">
           <ResultSkeleton />
         </div>
-        <p role="status" className="sr-only">
-          {t("loading")}
-        </p>
-      </>
+        <output className="sr-only">{t("loading")}</output>
+      </>,
     );
   }
 
@@ -279,12 +287,13 @@ export function PersonalMatch({
     <div className="flex flex-col gap-4">
       {bundle.snapshotVersion === snapshotVersion ? null : <UpdatedNotice />}
       {outcome.kind === "missing" ? (
-        <p className="text-base">{t("missingProgram")}</p>
+        withKeyFacts(<p className="text-base">{t("missingProgram")}</p>)
       ) : (
         <ResultView
           result={outcome.result}
           budgetProvided={profile.budget !== null}
           scholarshipSlugs={scholarshipSlugs}
+          keyFacts={children}
         />
       )}
     </div>

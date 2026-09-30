@@ -109,21 +109,37 @@ function JumpList() {
   );
 }
 
-function CostSummary({ cost }: { cost: CostEstimate }) {
-  const locale = useLocale();
-  const t = useTranslations("program.aside");
-  const tCost = useTranslations("domain.cost");
-  const months = formatNumber(cost.academicYearMonths, locale) ?? String(cost.academicYearMonths);
+type CostSummaryText = {
+  heading: string;
+  estimateTag: string;
+  missingLine: string;
+  partialTotal: string;
+  tenMonthNote: string;
+  details: string;
+};
 
+// Rendered inside the client leaves' provider, so it takes its strings as props rather than reading namespaces that provider does not carry.
+function CostSummary({
+  cost,
+  text,
+  locale,
+}: {
+  cost: CostEstimate;
+  text: CostSummaryText;
+  locale: AppLocale;
+}) {
   return (
-    <section aria-labelledby="aside-cost-heading" className="flex flex-col gap-2 p-4 md:p-5">
-      <h2 id="aside-cost-heading" className="text-lg font-semibold">
-        {t("cost")}
-      </h2>
+    <section
+      aria-labelledby="aside-cost-heading"
+      className="flex flex-col gap-2 border-t border-border pt-4"
+    >
+      <h3 id="aside-cost-heading" className="text-base font-semibold">
+        {text.heading}
+      </h3>
       {cost.totals.length === 0 ? (
         <p className="flex items-start gap-2 text-base text-muted-foreground">
           <CircleHelp aria-hidden="true" className="mt-[0.2rem] size-4 shrink-0" />
-          <span>{tCost("missingLine")}</span>
+          <span>{text.missingLine}</span>
         </p>
       ) : (
         cost.totals.map((total) => (
@@ -133,7 +149,7 @@ function CostSummary({ cost }: { cost: CostEstimate }) {
             className="flex flex-wrap items-baseline gap-x-3 gap-y-1"
           >
             <span className="rounded-full border border-dashed border-kind-estimate bg-kind-estimate-bg px-2.5 py-0.5 text-sm font-medium text-kind-estimate">
-              {tCost("estimateTag")}
+              {text.estimateTag}
             </span>
             <span className="text-lg font-semibold tabular-nums">
               <bdi dir="ltr">{formatMoneyRange(total.min, total.max, total.currency, locale)}</bdi>
@@ -144,15 +160,15 @@ function CostSummary({ cost }: { cost: CostEstimate }) {
       {cost.complete || cost.totals.length === 0 ? null : (
         <p className="flex items-start gap-2 text-base">
           <CircleAlert aria-hidden="true" className="mt-[0.2rem] size-4 shrink-0" />
-          <span>{tCost("partialTotal")}</span>
+          <span>{text.partialTotal}</span>
         </p>
       )}
-      <p className="text-sm text-muted-foreground">{tCost("tenMonthNote", { months })}</p>
+      <p className="text-sm text-muted-foreground">{text.tenMonthNote}</p>
       <a
         href="#costs"
         className="flex min-h-11 w-fit items-center text-base text-primary underline underline-offset-4 md:min-h-8"
       >
-        {t("costDetails")}
+        {text.details}
       </a>
     </section>
   );
@@ -169,6 +185,7 @@ export function ProgramPageView({
   clientMessages: MessageTree;
 }) {
   const t = useTranslations("program");
+  const tCost = useTranslations("domain.cost");
   const { program } = data;
   const cost = estimateCost({
     program,
@@ -177,6 +194,15 @@ export function ProgramPageView({
     now: UNUSED_NOW,
   });
   const facts = bannerFacts(data);
+  const months = formatNumber(cost.academicYearMonths, locale) ?? String(cost.academicYearMonths);
+  const costText: CostSummaryText = {
+    heading: t("aside.cost"),
+    estimateTag: tCost("estimateTag"),
+    missingLine: tCost("missingLine"),
+    partialTotal: tCost("partialTotal"),
+    tenMonthNote: tCost("tenMonthNote", { months }),
+    details: t("aside.costDetails"),
+  };
 
   return (
     <div className="flex flex-col gap-6">
@@ -193,7 +219,7 @@ export function ProgramPageView({
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_21rem] lg:items-start lg:gap-12">
         <aside
           aria-label={t("aside.label")}
-          className="flex flex-col divide-y divide-border rounded-xl border border-border bg-card text-card-foreground lg:sticky lg:top-6 lg:col-start-2 lg:row-start-1 lg:max-h-[calc(100dvh-3rem)] lg:overflow-y-auto"
+          className="rounded-xl border border-border bg-card text-card-foreground lg:sticky lg:top-6 lg:col-start-2 lg:row-start-1 lg:max-h-[calc(100dvh-3rem)] lg:overflow-y-auto"
         >
           <NextIntlClientProvider locale={locale} messages={clientMessages}>
             <section
@@ -209,19 +235,20 @@ export function ProgramPageView({
                 snapshotVersion={data.snapshotVersion}
                 scholarshipSlugs={data.scholarships.map((s) => s.slug)}
                 locale={locale}
-              />
-            </section>
-            <section
-              aria-labelledby="aside-deadline-heading"
-              className="flex flex-col gap-2 p-4 md:p-5"
-            >
-              <h2 id="aside-deadline-heading" className="text-lg font-semibold">
-                {t("aside.deadline")}
-              </h2>
-              <ProgramDeadline program={program} />
+              >
+                <section
+                  aria-labelledby="aside-deadline-heading"
+                  className="flex flex-col gap-2 border-t border-border pt-4"
+                >
+                  <h3 id="aside-deadline-heading" className="text-base font-semibold">
+                    {t("aside.deadline")}
+                  </h3>
+                  <ProgramDeadline program={program} />
+                </section>
+                <CostSummary cost={cost} text={costText} locale={locale} />
+              </PersonalMatch>
             </section>
           </NextIntlClientProvider>
-          <CostSummary cost={cost} />
         </aside>
         <div className="flex min-w-0 flex-col gap-12 lg:col-start-1 lg:row-start-1">
           <OverviewSection data={data} />

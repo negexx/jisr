@@ -29,16 +29,15 @@ export function PageFreshnessBanner({
 
   const Icon = worst === "stale" ? ClockAlert : Clock;
   return (
-    <div
-      role="status"
+    <output
       data-freshness={worst}
       className="flex items-start gap-3 rounded-lg border border-status-check-border bg-status-check-bg px-4 py-3 text-status-check-fg"
     >
       <Icon aria-hidden="true" className="mt-[0.2rem] size-5 shrink-0 text-status-check" />
-      <p className="max-w-prose text-base">
+      <span className="max-w-prose text-base">
         <span className="font-medium">{worst === "stale" ? labels.stale : labels.aging}</span>{" "}
         {labels.check}
-      </p>
-    </div>
+      </span>
+    </output>
   );
 }

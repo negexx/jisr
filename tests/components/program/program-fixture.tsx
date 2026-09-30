@@ -21,19 +21,20 @@ import fr from "../../../messages/fr.json";
 // Works under jsdom too: paths come from the working directory (vitest runs at the repository root), never from import.meta.url.
 const ROOT = process.cwd();
 export const E2E_DATA_DIR = path.join(ROOT, "tests", "fixtures", "data", "e2e-journey");
+export const EMPTY_DATA_DIR = path.join(ROOT, "tests", "fixtures", "data", "empty");
 const BUILD_SCRIPT = path.join(ROOT, "scripts", "data", "build.ts");
 
 export const catalogs: Record<AppLocale, MessageTree> = { fr, en, ar };
 
 const dirs: string[] = [];
 
-// Runs the real data:build CLI on the e2e fixture into a temp dir.
-export function buildFixtureSnapshot(): string {
+// Runs the real data:build CLI on a fixture data dir (the e2e journey by default) into a temp dir.
+export function buildFixtureSnapshot(dataDir: string = E2E_DATA_DIR): string {
   const outDir = mkdtempSync(path.join(os.tmpdir(), "jisr-program-"));
   dirs.push(outDir);
   const run = spawnSync(
     process.execPath,
-    ["--import", "tsx", BUILD_SCRIPT, "--data-dir", E2E_DATA_DIR, "--out-dir", outDir],
+    ["--import", "tsx", BUILD_SCRIPT, "--data-dir", dataDir, "--out-dir", outDir],
     { cwd: ROOT, encoding: "utf8", timeout: 120_000 },
   );
   if (run.status !== 0) throw new Error(`data:build failed\n${run.stdout}\n${run.stderr}`);
@@ -71,6 +72,11 @@ export const PROGRAM_REFS: Record<string, ProgramRefLike> = {
     field: "xx-test-field-cs",
   },
   "xx-test-prog-fronly": { slug: "xx-test-prog-fronly", country: "XB", field: "xx-test-field-cs" },
+  "xx-test-prog-private": {
+    slug: "xx-test-prog-private",
+    country: "XB",
+    field: "xx-test-field-cs",
+  },
 };
 
 export async function loadProgramBundle(
