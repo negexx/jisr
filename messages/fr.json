@@ -538,5 +538,75 @@
     },
     "reasonsHeading": "Les conditions publiées, en bref",
     "seeDetails": "Voir le détail"
+  },
+  "matches": {
+    "meta": {
+      "title": "Jisr | Vos résultats",
+      "description": "Les programmes comparés à votre profil : ce qui semble possible, ce qu'il faut vérifier, les coûts et les échéances, avec la source de chaque information."
+    },
+    "title": "Vos résultats",
+    "lead": "D'après les conditions que nous avons publiées pour chaque programme. Confirmez-les sur la page officielle avant de candidater.",
+    "loading": "Chargement de vos résultats",
+    "counts": {
+      "ok": "{n, plural, one {{count} semble possible} other {{count} semblent possibles}}",
+      "check": "{count} à vérifier",
+      "foundation": "{count} via une année préparatoire",
+      "failed": "{count} avec des conditions publiées non remplies"
+    },
+    "groups": {
+      "foundation": {
+        "title": "Possible via une année préparatoire",
+        "boxTitle": "À propos de l'année préparatoire"
+      },
+      "failed": {
+        "note": "Les conditions peuvent changer. Vérifiez la page officielle de chaque programme avant de décider."
+      }
+    },
+    "summary": {
+      "title": "Votre profil",
+      "fields": "Domaines",
+      "destinations": "Pays",
+      "allCountries": "Tous les pays",
+      "budget": "Budget",
+      "budgetNotSet": "Non renseigné",
+      "budgetPer": {
+        "month": "<money>{amount}</money> par mois",
+        "year": "<money>{amount}</money> par an"
+      },
+      "edit": "Modifier mon profil"
+    },
+    "hidden": {
+      "summary": "{n, plural, one {{count} programme masqué par vos préférences} other {{count} programmes masqués par vos préférences}}",
+      "note": "Nous ne comparons pas ces programmes avec votre profil. Modifiez vos préférences dans votre profil pour les voir.",
+      "reasonCount": "{reason} : {count}"
+    },
+    "states": {
+      "none": {
+        "title": "Créez votre profil pour voir les programmes qui vous conviennent",
+        "description": "Répondez à quelques questions sur votre Bac et ce que vous voulez étudier. Vos réponses restent sur cet appareil.",
+        "cta": "Créer mon profil"
+      },
+      "reset": {
+        "notice": "Le profil enregistré sur cet appareil n'a pas pu être lu, nous l'avons donc supprimé. Vous pouvez le créer à nouveau.",
+        "dismiss": "Fermer ce message"
+      },
+      "error": {
+        "title": "Nous n'avons pas pu charger les programmes",
+        "description": "Vérifiez votre connexion, puis réessayez.",
+        "retry": "Réessayer"
+      },
+      "noPrograms": {
+        "title": "Nous vérifions encore les données officielles",
+        "description": "Aucun programme n'est encore publié. Le problème vient de nous, pas de vous. Revenez plus tard."
+      },
+      "noProgramsForFields": {
+        "title": "Aucun programme n'est encore publié dans les domaines que vous avez choisis",
+        "description": "Nous ajoutons encore des données. Cela ne dit rien de votre profil. Vous pouvez modifier vos domaines dans votre profil."
+      },
+      "allHidden": {
+        "title": "{n, plural, one {Vos préférences masquent le seul programme publié pour l'instant} other {Vos préférences masquent les {count} programmes}}",
+        "description": "Modifiez vos préférences dans votre profil pour les voir. Votre budget ne masque jamais un programme."
+      }
+    }
   }
 }

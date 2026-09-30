@@ -538,5 +538,75 @@
     },
     "reasonsHeading": "The published requirements, in short",
     "seeDetails": "See details"
+  },
+  "matches": {
+    "meta": {
+      "title": "Jisr | Your matches",
+      "description": "Programs compared with your profile: what looks possible, what to check, costs and deadlines, with the source of each fact."
+    },
+    "title": "Your matches",
+    "lead": "Based on the requirements we published for each program. Confirm them on the official page before you apply.",
+    "loading": "Loading your matches",
+    "counts": {
+      "ok": "{n, plural, one {{count} looks possible} other {{count} look possible}}",
+      "check": "{count} to check",
+      "foundation": "{count} through a foundation year",
+      "failed": "{count} with published requirements not met"
+    },
+    "groups": {
+      "foundation": {
+        "title": "Possible through a foundation year",
+        "boxTitle": "About the foundation year"
+      },
+      "failed": {
+        "note": "Requirements can change. Check the official page of each program before you decide."
+      }
+    },
+    "summary": {
+      "title": "Your profile",
+      "fields": "Fields",
+      "destinations": "Countries",
+      "allCountries": "All countries",
+      "budget": "Budget",
+      "budgetNotSet": "Not set",
+      "budgetPer": {
+        "month": "<money>{amount}</money> per month",
+        "year": "<money>{amount}</money> per year"
+      },
+      "edit": "Edit profile"
+    },
+    "hidden": {
+      "summary": "{n, plural, one {{count} program hidden by your preferences} other {{count} programs hidden by your preferences}}",
+      "note": "We do not compare these programs with your profile. Change your preferences in your profile to see them.",
+      "reasonCount": "{reason}: {count}"
+    },
+    "states": {
+      "none": {
+        "title": "Create your profile to see programs that fit",
+        "description": "Answer a few questions about your Bac and what you want to study. Your answers stay on this device.",
+        "cta": "Create my profile"
+      },
+      "reset": {
+        "notice": "The profile saved on this device could not be read, so we removed it. You can create it again.",
+        "dismiss": "Dismiss this message"
+      },
+      "error": {
+        "title": "We could not load the programs",
+        "description": "Check your connection, then try again.",
+        "retry": "Try again"
+      },
+      "noPrograms": {
+        "title": "We are still verifying official data",
+        "description": "No programs are published yet. This is on our side, not yours. Please come back later."
+      },
+      "noProgramsForFields": {
+        "title": "No programs are published yet for the fields you chose",
+        "description": "We are still adding data. This says nothing about your profile. You can change your fields in your profile."
+      },
+      "allHidden": {
+        "title": "{n, plural, one {Your preferences hide the only program published so far} other {Your preferences hide all {count} programs}}",
+        "description": "Change your preferences in your profile to see them. Your budget never hides a program."
+      }
+    }
   }
 }
