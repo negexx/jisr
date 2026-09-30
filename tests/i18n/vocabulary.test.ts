@@ -118,10 +118,28 @@ const TO_CHECK_REASON_KEYS = [
   ).map((code) => `domain.checklist.reason.${code}`),
 ];
 
+// Imperative check verbs only: "we checked" must not count (Arabic has no word boundary, so the
+// verb must start a word: "نتحقق" is not "تحقق").
 const CHECK_VERB: Record<Locale, RegExp> = {
-  en: /check|confirm|read/i,
-  fr: /vérifiez|confirmez|consultez|lisez/i,
-  ar: /تحقق|تأكد|اقرأ|راجع/u,
+  en: /\b(check|confirm|read)\b/i,
+  fr: /\b(vérifiez|confirmez|consultez|lisez)\b/i,
+  ar: /(^|\s)(تحقق|تأكد|اقرأ|راجع)/u,
+};
+
+const NOT_AN_INSTRUCTION: Record<Locale, string[]> = {
+  en: ["We already checked the official source", "Confirmed by the official source"],
+  fr: ["Nous avons déjà vérifié la source officielle", "Vérifiés par la source officielle"],
+  ar: ["لم نتحقق من المصدر الرسمي", "تم التأكد من المصدر الرسمي"],
+};
+
+// "some" in French is not a promise: these must stay allowed.
+const ALLOWED_SAMPLES: Record<Locale, string[]> = {
+  en: ["Some documents may need a translation"],
+  fr: [
+    "Certains documents peuvent demander une traduction",
+    "Certaines informations ont été vérifiées",
+  ],
+  ar: [],
 };
 
 // One bad sentence per forbidden pattern: proves the pattern list catches the paraphrases.
@@ -157,7 +175,7 @@ const BAD_SAMPLES: Record<Locale, string[]> = {
     "Une place assurée",
     "Vous êtes assuré de réussir",
     "C'est certain",
-    "Certains étudiants passent",
+    "C'est certainement possible",
     "Vous êtes accepté dans ce programme",
     "Vous êtes acceptée en licence",
   ],
@@ -173,7 +191,9 @@ const BAD_SAMPLES: Record<Locale, string[]> = {
   ],
 };
 
-// "accepted" stays allowed where it refers to an accepted language certificate.
+// The patterns intentionally over-ban (e.g. "make sure", "qualification", "صفحة القبول"): rephrase
+// the string rather than deleting a pattern. "accepted" stays allowed where it refers to an
+// accepted language certificate.
 const FORBIDDEN: Record<Locale, RegExp[]> = {
   en: [
     /eligib/i,
@@ -201,7 +221,7 @@ const FORBIDDEN: Record<Locale, RegExp[]> = {
     /\bvous pouvez candidater\b/i,
     /\bqualifié/i,
     /\bassuré/i,
-    /\bcertain/i,
+    /\bcertain(e|ement)?\b/i,
     /accepté(e|s)? (dans|en)\b/i,
   ],
   ar: [/قبول/u, /ضمان|نضمن|تضمن|مضمون/u, /يحق لك/u, /مؤهل/u, /يمكنك التقديم/u],
@@ -380,15 +400,52 @@ describe("trust wording", () => {
     expect(uncaught).toEqual([]);
   });
 
-  it("uses الإجازة for the Bachelor's level in Arabic, never البكالوريوس next to البكالوريا", () => {
-    const offenders = [...domain.ar].filter(
-      ([, value]) => value.includes("البكالوريوس") || value.includes("بكالوريوس"),
+  it.each(LOCALES)("%s allows the harmless sample sentences", (locale) => {
+    const caught = ALLOWED_SAMPLES[locale].filter((sample) =>
+      FORBIDDEN[locale].some((pattern) => pattern.test(sample)),
     );
+    expect(caught).toEqual([]);
+  });
+
+  it.each(LOCALES)("%s to-check rule needs an instruction, not a report", (locale) => {
+    const counted = NOT_AN_INSTRUCTION[locale].filter((sample) => CHECK_VERB[locale].test(sample));
+    expect(counted).toEqual([]);
+  });
+
+  it("uses الإجازة for the Bachelor's level everywhere in Arabic, never بكالوريوس", () => {
+    const offenders = [...flatten(ar, "ar")].filter(([, value]) => value.includes("بكالوريوس"));
     expect(offenders).toEqual([]);
   });
 
-  it("states that the student applies to each program separately on a direct route", () => {
-    expect(domain.en.get("domain.route.direct")).toContain("You still apply to each program.");
+  it("puts 'مرحلة' before الإجازة in the Arabic foundation-year strings", () => {
+    for (const key of ["domain.route.foundation", "domain.reason.code.route_foundation"]) {
+      expect(domain.ar.get(key), key).toContain("قبل مرحلة الإجازة");
+    }
+  });
+
+  it.each([
+    ["en", "You still need to apply to each program separately."],
+    ["fr", "Vous devez tout de même candidater à chaque programme séparément."],
+    ["ar", "ومع ذلك، عليك تقديم طلب إلى كل برنامج على حدة."],
+  ] as const)("%s says the student still applies to each program on a direct route", (locale, text) => {
+    expect(domain[locale].get("domain.route.direct")).toContain(text);
+  });
+
+  it.each([
+    ["en", "to be checked"],
+    ["fr", "à vérifier"],
+    ["ar", "يجب التحقق منه"],
+  ] as const)("%s keeps the product term for values that are not published", (locale, term) => {
+    for (const key of ["domain.cost.missingLine", "domain.intake.unknown"]) {
+      expect(domain[locale].get(key), key).toContain(term);
+    }
+  });
+
+  it("does not use 'a moment ago' wording for aging facts in French", () => {
+    for (const key of ["domain.freshness.aging", "domain.freshness.bannerAging"]) {
+      expect(domain.fr.get(key), key).toContain("il y a quelque temps");
+      expect(domain.fr.get(key), key).not.toContain("un moment");
+    }
   });
 
   it.each(LOCALES)("%s points to the official page for every route except direct", (locale) => {
@@ -443,7 +500,7 @@ describe("required wording (en)", () => {
       "domain.route.missing",
       "We have not published how your Bac is treated for this country yet: check the official admission page.",
     ],
-    ["domain.cost.missingLine", "Not published in the sources we checked, to be confirmed"],
+    ["domain.cost.missingLine", "Not in the sources we reviewed, to be checked"],
     ["domain.cost.partialTotal", "Partial total: some costs are not included"],
     ["domain.infoKind.official.label", "Official"],
     ["domain.infoKind.estimate.label", "Estimate"],

@@ -33,7 +33,7 @@
       }
     },
     "route": {
-      "direct": "Based on the rules we published, your Bac appears to give direct access to a Bachelor's in this country. Confirm the current conditions on the official admission page. You still apply to each program.",
+      "direct": "Based on the rules we published, your Bac appears to give direct access to a Bachelor's in this country. Confirm the current conditions on the official admission page. You still need to apply to each program separately.",
       "foundation": "In this country, your Bac may not give direct access to a Bachelor's. You may need a foundation year first: a preparatory year before the Bachelor's, like the German Studienkolleg. Check on the official admission page of the program or university whether it applies to you and how to get a place.",
       "not_eligible": "The rules we published say your Bac does not give access to a Bachelor's in this country. Rules can change, so check the official admission page.",
       "check": "We have not confirmed how your Bac is treated in this country. Check the official admission page.",
@@ -153,7 +153,7 @@
         "country": "Based on the country"
       },
       "tenMonthNote": "Monthly costs are counted for {months} months of study. Housing is often paid for 12 months, so check the rent period.",
-      "missingLine": "Not published in the sources we checked, to be confirmed",
+      "missingLine": "Not in the sources we reviewed, to be checked",
       "partialTotal": "Partial total: some costs are not included",
       "estimateTag": "Estimate"
     },

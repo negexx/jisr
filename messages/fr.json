@@ -33,7 +33,7 @@
       }
     },
     "route": {
-      "direct": "D'après les règles que nous avons publiées, votre Bac semble donner un accès direct à une licence dans ce pays. Confirmez les conditions actuelles sur la page d'admission officielle. Vous candidatez toujours à chaque programme séparément.",
+      "direct": "D'après les règles que nous avons publiées, votre Bac semble donner un accès direct à une licence dans ce pays. Confirmez les conditions actuelles sur la page d'admission officielle. Vous devez tout de même candidater à chaque programme séparément.",
       "foundation": "Dans ce pays, votre Bac peut ne pas donner un accès direct à une licence. Une année préparatoire peut être nécessaire d'abord : une année avant la licence, comme le Studienkolleg allemand. Vérifiez sur la page d'admission officielle du programme ou de l'université si cela vous concerne et comment obtenir une place.",
       "not_eligible": "Selon les règles que nous avons publiées, votre Bac ne donne pas accès à une licence dans ce pays. Les règles peuvent changer : vérifiez la page d'admission officielle.",
       "check": "Nous n'avons pas confirmé comment votre Bac est traité dans ce pays. Vérifiez la page d'admission officielle.",
@@ -81,7 +81,7 @@
         },
         "translation": {
           "title": "Traduire les documents",
-          "meaning": "Des documents peuvent demander une traduction. Vérifiez ce que le programme exige."
+          "meaning": "Certains documents peuvent demander une traduction. Vérifiez ce que le programme exige."
         },
         "language_exam": {
           "title": "Examen de langue",
@@ -153,8 +153,8 @@
         "country": "Selon le pays"
       },
       "tenMonthNote": "Les coûts mensuels sont comptés sur {months} mois d'études. Le logement se paie souvent 12 mois : vérifiez la période de loyer.",
-      "missingLine": "Non publié dans les sources consultées, à confirmer",
-      "partialTotal": "Total partiel : des coûts ne sont pas inclus",
+      "missingLine": "Non publié dans les sources consultées, à vérifier",
+      "partialTotal": "Total partiel : certains coûts ne sont pas inclus",
       "estimateTag": "Estimation"
     },
     "budgetFit": {
@@ -184,11 +184,11 @@
     },
     "freshness": {
       "fresh": "Vérifié récemment",
-      "aging": "Vérifié il y a un moment",
+      "aging": "Vérifié il y a quelque temps",
       "stale": "Peut être dépassé, vérifiez la page officielle",
       "verifiedOn": "Vérifié le {date}",
-      "bannerAging": "Des informations de cette page ont été vérifiées il y a un moment. Consultez les pages officielles avant de décider.",
-      "bannerStale": "Des informations de cette page peuvent être dépassées. Consultez les pages officielles avant de vous y fier."
+      "bannerAging": "Certaines informations de cette page ont été vérifiées il y a quelque temps. Consultez les pages officielles avant de décider.",
+      "bannerStale": "Certaines informations de cette page peuvent être dépassées. Consultez les pages officielles avant de vous y fier."
     },
     "coverage": {
       "partial": "Nous n'avons pas publié toutes les conditions de ce programme. Vérifiez la page officielle avant de vous y fier.",
