@@ -8,6 +8,8 @@ const COLD_BUILD_TIMEOUT_MS = 10 * 60 * 1000;
 export default defineConfig({
   testDir: "tests/e2e",
   forbidOnly: Boolean(process.env.CI),
+  // A retry on CI only: a spec that needs one locally is a flaky spec to fix, not to hide.
+  retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? [["list"], ["html", { open: "never" }]] : "list",
   use: {
     baseURL: `http://localhost:${PORT}`,

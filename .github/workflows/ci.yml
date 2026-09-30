@@ -54,3 +54,52 @@ jobs:
       # Runs data:check and data:build first, then next build.
       - name: Build
         run: pnpm build
+
+  # Browser specs against a production build of the synthetic fixture (journey, accessibility,
+  # privacy, errors, JavaScript ratchet). `playwright test` builds and starts the app itself
+  # (webServer in playwright.config.ts: pnpm build:e2e, then next start on port 3100).
+  # SWC_NATIVE_BINDING_CACHE is a local Windows workaround and is deliberately not set here; whether
+  # the build runs without it on ubuntu-latest is only known from a run of this job.
+  e2e:
+    name: End-to-end (Chromium)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out
+        uses: actions/checkout@v7
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Run end-to-end specs
+        run: pnpm test:e2e
+
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Upload traces
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-traces
+          path: test-results/
+          retention-days: 7
+          if-no-files-found: ignore
