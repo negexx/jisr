@@ -5,7 +5,8 @@ import { lazy, Suspense, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 
-// The dialog (Radix AlertDialog) loads on the first click, so no page pays for it up front.
+// The dialog (Radix AlertDialog, about 13 KB gzipped) loads on the first click, so no page pays for
+// it up front.
 const ClearDataDialog = lazy(() =>
   import("@/components/clear-data-dialog").then((module) => ({ default: module.ClearDataDialog })),
 );

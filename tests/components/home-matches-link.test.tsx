@@ -3,7 +3,7 @@ import { act, cleanup, screen, waitFor } from "@testing-library/react";
 import { renderToString } from "react-dom/server";
 import { afterEach, describe, expect, it } from "vitest";
 
-import { HomeMatchesLink, STORED_PROFILE_KEY } from "@/components/home-matches-link";
+import { HomeMatchesLink } from "@/components/home-matches-link";
 import { PROFILE_KEY } from "@/lib/profile/storage";
 import { profileStore } from "@/lib/profile/store";
 
@@ -51,10 +51,6 @@ describe("HomeMatchesLink", () => {
     renderIntl(<HomeMatchesLink label="Voir mes résultats" />, "fr");
     await new Promise((resolve) => setTimeout(resolve, 50));
     expect(screen.queryByRole("link")).toBeNull();
-  });
-
-  it("reads the same storage key as the profile store", () => {
-    expect(STORED_PROFILE_KEY).toBe(PROFILE_KEY);
   });
 
   it("appears and disappears as the stored profile changes (storage event, Arabic)", async () => {

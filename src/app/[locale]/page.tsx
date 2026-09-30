@@ -29,19 +29,23 @@ export default async function HomePage({ params }: Props) {
     <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] md:items-start md:gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)]">
       <section className="flex flex-col gap-6 text-start">
         <div className="flex flex-col gap-3">
-          <h1 className="text-2xl font-semibold tracking-tight text-balance">{t("title")}</h1>
+          <h1 className="text-2xl font-bold tracking-tight text-balance">{t("title")}</h1>
           <p className="max-w-[65ch] text-lg text-muted-foreground">{t("lead")}</p>
         </div>
-        <div className="flex flex-col gap-2">
-          <Button asChild size="lg" className="w-full sm:w-auto sm:self-start">
+        <div className="grid gap-2 sm:grid-cols-[auto_auto] sm:justify-start sm:gap-x-3">
+          <Button asChild size="lg" className="w-full sm:w-auto">
             <Link href="/profile">
               {t("cta")}
               <ArrowRight data-icon="inline-end" className="rtl:rotate-180" aria-hidden />
             </Link>
           </Button>
-          <p className="text-sm text-muted-foreground">{t("ctaNote")}</p>
+          {/* Reserved slot: it holds the button's height, so a saved profile shifts nothing. On a
+              phone the note reads straight after the primary button and the slot follows it. */}
+          <div className="order-last sm:order-none">
+            <HomeMatchesLink label={t("matchesCta")} />
+          </div>
+          <p className="text-sm text-muted-foreground sm:col-span-2">{t("ctaNote")}</p>
         </div>
-        <HomeMatchesLink label={t("matchesCta")} />
       </section>
       <section aria-labelledby="questions" className="flex flex-col gap-4 text-start">
         <h2 id="questions" className="text-xl font-semibold">
@@ -54,7 +58,7 @@ export default async function HomePage({ params }: Props) {
                 {index + 1}
               </span>
               <div className="flex flex-col gap-1">
-                <h3 className="text-lg font-semibold">{t(`questions.${key}.title`)}</h3>
+                <h3 className="text-lg font-medium">{t(`questions.${key}.title`)}</h3>
                 <p className="text-base text-muted-foreground">{t(`questions.${key}.body`)}</p>
               </div>
             </li>

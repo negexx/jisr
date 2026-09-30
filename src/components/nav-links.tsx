@@ -19,7 +19,8 @@ export function NavLinks() {
   const pathname = usePathname();
   return (
     <nav aria-label={t("label")}>
-      <ul className="flex gap-2">
+      {/* The links carry 12px of inline padding; pull the list back so their text lines up with the wordmark. */}
+      <ul className="-ms-3 flex gap-2 md:ms-0">
         {NAV_ITEMS.map(({ href, labelKey }) => {
           const current = isCurrent(pathname, href);
           return (

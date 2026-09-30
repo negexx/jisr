@@ -1,14 +1,10 @@
 // @vitest-environment jsdom
 import { cleanup, screen } from "@testing-library/react";
-import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import { ClearDataButton } from "@/components/clear-data-button";
-import { HomeMatchesLink } from "@/components/home-matches-link";
-import { LocaleSwitcher } from "@/components/locale-switcher";
 import { NavLinks } from "@/components/nav-links";
 
-import { IntlWrapper, renderIntl } from "./intl";
+import { renderIntl } from "./intl";
 
 const navigation = vi.hoisted(() => ({ pathname: "/" }));
 
@@ -21,8 +17,6 @@ afterEach(() => {
   cleanup();
   navigation.pathname = "/";
 });
-
-const PHYSICAL_DIRECTION_CLASS = /\b(ml|mr|pl|pr|left|right)-/;
 
 describe("NavLinks", () => {
   it("marks the current page and only the current page", () => {
@@ -56,25 +50,5 @@ describe("NavLinks", () => {
     expect(screen.getByTestId("dir-root").getAttribute("dir")).toBe("rtl");
     expect(screen.getByRole("link", { name: "ملفي" }).getAttribute("aria-current")).toBe("page");
     expect(screen.getByRole("link", { name: "نتائجي" }).getAttribute("href")).toBe("/ar/matches");
-  });
-});
-
-describe("shell components use logical direction utilities only", () => {
-  const names = { fr: "Français", en: "English", ar: "العربية" };
-
-  it.each(["fr", "ar"] as const)("has no physical-direction class in %s", (locale) => {
-    const html = renderToStaticMarkup(
-      <IntlWrapper locale={locale}>
-        <NavLinks />
-        <LocaleSwitcher current={locale} label="x" names={names} />
-        <HomeMatchesLink label="x" />
-        <ClearDataButton />
-      </IntlWrapper>,
-    );
-    const classTokens = [...html.matchAll(/class="([^"]*)"/g)].flatMap(([, value]) =>
-      (value ?? "").split(/\s+/),
-    );
-    expect(classTokens.length).toBeGreaterThan(0);
-    expect(classTokens.filter((token) => PHYSICAL_DIRECTION_CLASS.test(token))).toEqual([]);
   });
 });

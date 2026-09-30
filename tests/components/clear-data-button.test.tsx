@@ -1,12 +1,14 @@
 // @vitest-environment jsdom
-import { cleanup, screen, waitFor } from "@testing-library/react";
+import { cleanup, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { ClearDataButton } from "@/components/clear-data-button";
 import type { AppLocale } from "@/i18n/routing";
+import { DRAFT_KEY, PROFILE_KEY } from "@/lib/profile/storage";
 import { profileStore } from "@/lib/profile/store";
 
+import { profile } from "../fixtures/domain/builders";
 import { renderIntl } from "./intl";
 
 afterEach(() => {
@@ -15,6 +17,10 @@ afterEach(() => {
 });
 
 type Copy = { trigger: string; title: string; description: RegExp; cancel: string };
+
+afterEach(() => {
+  window.localStorage.clear();
+});
 
 const COPY: Record<AppLocale, Copy> = {
   fr: {
@@ -72,14 +78,33 @@ describe.each(["fr", "ar", "en"] as const)("ClearDataButton (%s)", (locale) => {
     renderIntl(<ClearDataButton />, locale);
     await user.click(screen.getByRole("button", { name: copy.trigger }));
     const dialog = await screen.findByRole("alertdialog");
-    const confirm = Array.from(dialog.querySelectorAll("button")).find(
-      (button) => button.textContent === copy.trigger,
-    );
-    if (!confirm) throw new Error("confirm button not found");
 
-    await user.click(confirm);
+    await user.click(within(dialog).getByRole("button", { name: copy.trigger }));
 
     await waitFor(() => expect(clear).toHaveBeenCalledTimes(1));
     await waitFor(() => expect(screen.queryByRole("alertdialog")).toBeNull());
+  });
+});
+
+describe("ClearDataButton with the real store", () => {
+  it("removes the saved profile and the unfinished draft, and nothing else, before it closes", async () => {
+    profileStore.save(profile());
+    window.localStorage.setItem(DRAFT_KEY, JSON.stringify({ schemaVersion: 1, step: 1 }));
+    window.localStorage.setItem("unrelated.key", "keep me");
+    expect(window.localStorage.getItem(PROFILE_KEY)).not.toBeNull();
+    const user = userEvent.setup();
+    renderIntl(<ClearDataButton />, "en");
+    const trigger = screen.getByRole("button", { name: "Clear my data" });
+    await user.click(trigger);
+    const dialog = await screen.findByRole("alertdialog");
+
+    await user.click(within(dialog).getByRole("button", { name: "Clear my data" }));
+
+    expect(window.localStorage.getItem(PROFILE_KEY)).toBeNull();
+    expect(window.localStorage.getItem(DRAFT_KEY)).toBeNull();
+    expect(window.localStorage.getItem("unrelated.key")).toBe("keep me");
+    expect(profileStore.getSnapshot().status).toBe("none");
+    await waitFor(() => expect(screen.queryByRole("alertdialog")).toBeNull());
+    expect(document.activeElement).toBe(trigger);
   });
 });

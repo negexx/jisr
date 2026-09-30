@@ -13,12 +13,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-
-// Imported on demand: the store pulls the Zod profile schema, which the shell must not ship.
-async function clearLocalProfile(): Promise<void> {
-  const { profileStore } = await import("@/lib/profile/store");
-  profileStore.clear();
-}
+import { profileStore } from "@/lib/profile/store";
 
 type Props = {
   open: boolean;
@@ -43,7 +38,15 @@ export function ClearDataDialog({ open, onOpenChange, returnFocusTo }: Props) {
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>{t("cancel")}</AlertDialogCancel>
-          <AlertDialogAction variant="destructive" onClick={clearLocalProfile}>
+          <AlertDialogAction
+            variant="destructive"
+            onClick={(event) => {
+              // Stay open until the data is gone, then close.
+              event.preventDefault();
+              profileStore.clear();
+              onOpenChange(false);
+            }}
+          >
             {t("confirm")}
           </AlertDialogAction>
         </AlertDialogFooter>
