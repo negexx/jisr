@@ -21,7 +21,7 @@ const KIND_STYLE: Record<Kind, { icon: ReactNode; pill: string }> = {
         className="size-4 shrink-0"
       />
     ),
-    pill: "bg-kind-official text-primary-foreground",
+    pill: "bg-kind-official text-kind-official-bg",
   },
   estimate: {
     icon: (
@@ -100,7 +100,11 @@ export function SourceBadge({
         </ExternalLink>
         <FreshnessMark
           meta={meta}
-          labels={{ aging: tFreshness("aging"), stale: tFreshness("stale") }}
+          labels={{
+            aging: tFreshness("aging"),
+            // The T4 stale text sends people to "the official page": only an official fact may say that.
+            stale: kind === "official" ? tFreshness("stale") : t("staleCheckSource"),
+          }}
         />
       </div>
       {full ? (

@@ -91,11 +91,12 @@ describe("DeadlineStatus", () => {
     expect(b.container.querySelector("a")).toBeNull();
   });
 
-  it("never renders the upcoming wording for a closed model, whatever the dates say", () => {
-    const closed: IntakeStatus = { kind: "closed", fact: ref() };
+  it("renders closed for a closed model even when its fact is dated in the future", () => {
+    const closed: IntakeStatus = { kind: "closed", fact: ref({ last_verified_at: "2099-01-01" }) };
     const { container } = renderWithMessages(<DeadlineStatus intake={closed} />, "en");
+    expect(container.querySelector('[data-intake="closed"]')).not.toBeNull();
+    expect(container.querySelector('[data-intake="upcoming"]')).toBeNull();
     expect(container.textContent).not.toContain("Next deadline");
-    expect(container.querySelector("time")?.getAttribute("datetime")).not.toBe("2027-01-15");
   });
 
   it("renders only from the given status: an upcoming model with a past-looking date stays upcoming", () => {

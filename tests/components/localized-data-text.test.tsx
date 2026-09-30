@@ -43,17 +43,13 @@ describe("LocalizedDataText", () => {
     expect(container.textContent).toContain(catalogs[locale].domain.textNote.french_fallback);
   });
 
-  it("ties the note to the text for screen readers", () => {
+  it("puts the note right after the text so it is read next", () => {
     renderWithMessages(
       <LocalizedDataText value={{ text: "Texte", note: "french_fallback" }} />,
       "en",
     );
-    const text = screen.getByText("Texte");
-    const noteId = text.getAttribute("aria-describedby");
-    expect(noteId).toBeTruthy();
-    expect(document.getElementById(noteId ?? "")?.textContent).toBe(
-      catalogs.en.domain.textNote.french_fallback,
-    );
+    const note = screen.getByText("Texte").nextElementSibling;
+    expect(note?.textContent).toBe(catalogs.en.domain.textNote.french_fallback);
   });
 
   it.each(LOCALES)("adds the machine translation note without changing lang in %s", (locale) => {

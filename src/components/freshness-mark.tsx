@@ -1,7 +1,7 @@
 "use client";
 
 // Client leaf: strings arrive as props from the server-rendered SourceBadge, so it needs no message provider; it renders nothing until mount because "today" is the visitor's clock.
-import { Clock, TriangleAlert } from "lucide-react";
+import { Clock, ClockAlert } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import type { IsoDate } from "@/data-schema/dates";
@@ -43,9 +43,13 @@ export function FreshnessMark({
   return (
     <span
       data-freshness="stale"
-      className="inline-flex items-center gap-1.5 rounded-md border border-status-check-border bg-status-check-bg px-2 py-0.5 text-sm font-medium text-status-check-fg"
+      className="inline-flex items-center gap-1.5 rounded-full bg-status-check-bg px-2.5 py-0.5 text-sm font-medium text-status-check-fg"
     >
-      <TriangleAlert aria-hidden="true" className="size-4 shrink-0" />
+      <ClockAlert
+        aria-hidden="true"
+        data-testid="freshness-icon-stale"
+        className="size-4 shrink-0"
+      />
       {labels.stale}
     </span>
   );

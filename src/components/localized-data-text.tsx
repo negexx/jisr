@@ -1,7 +1,6 @@
-// Shared, no "use client": needs the namespace domain.textNote.
-
+// Shared, no "use client": needs the namespace domain.textNote. Use it in body text, not inside a heading: the note is a sibling block, so in a heading it would join the heading's name.
 import { useTranslations } from "next-intl";
-import { type ReactNode, useId } from "react";
+import type { ReactNode } from "react";
 
 import type { DataText } from "@/lib/snapshot/text";
 
@@ -13,23 +12,19 @@ export function LocalizedDataText({
   fallback?: ReactNode;
 }) {
   const t = useTranslations("domain.textNote");
-  const noteId = useId();
   if (value === null || value === undefined) return <>{fallback}</>;
   if (value.note === "none") return <>{value.text}</>;
 
-  const note = t(value.note);
   return (
     <>
       {value.note === "french_fallback" ? (
-        <span lang="fr" dir="ltr" aria-describedby={noteId}>
+        <span lang="fr" dir="ltr">
           {value.text}
         </span>
       ) : (
-        <span aria-describedby={noteId}>{value.text}</span>
+        <span>{value.text}</span>
       )}
-      <small id={noteId} className="mt-1 block text-sm text-muted-foreground">
-        {note}
-      </small>
+      <small className="mt-1 block text-sm text-muted-foreground">{t(value.note)}</small>
     </>
   );
 }

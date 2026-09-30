@@ -81,6 +81,11 @@ describe("MatchStatusBadge", () => {
     }
   });
 
+  it("keeps its own width inside a stretching flex column", () => {
+    const { container } = renderWithMessages(<MatchStatusBadge group="ok" />, "en");
+    expect(container.querySelector("[data-group]")?.getAttribute("class")).toContain("w-fit");
+  });
+
   it("offers two sizes and defaults to md", () => {
     const md = renderWithMessages(<MatchStatusBadge group="ok" />, "en");
     const sm = renderWithMessages(<MatchStatusBadge group="ok" size="sm" />, "en");

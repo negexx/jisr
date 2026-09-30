@@ -65,6 +65,14 @@ describe("ExternalLink", () => {
     expect(container.innerHTML).not.toContain("href");
   });
 
+  it("never lets a source disappear: an unusable url without children shows as plain text", () => {
+    const { container } = renderWithMessages(<ExternalLink href="http://example.org/a" />);
+    expect(container.querySelector("a")).toBeNull();
+    const bdi = container.querySelector("bdi");
+    expect(bdi?.textContent).toBe("http://example.org/a");
+    expect(bdi?.getAttribute("dir")).toBe("ltr");
+  });
+
   it("passes the class name to the anchor", () => {
     renderWithMessages(<ExternalLink href="https://example.org/a" className="min-h-11" />);
     expect(screen.getByRole("link").className).toContain("min-h-11");

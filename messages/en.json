@@ -274,7 +274,8 @@
   },
   "sourceBadge": {
     "source": "Source",
-    "howWeEstimated": "How we estimated"
+    "howWeEstimated": "How we estimated",
+    "staleCheckSource": "May be outdated, check the source"
   },
   "matchStatusBadge": {
     "foundation": "Foundation year first"

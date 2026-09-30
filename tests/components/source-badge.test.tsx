@@ -82,22 +82,50 @@ describe("SourceBadge static part", () => {
     expect(labels.size).toBe(3);
   });
 
-  it.each(LOCALES)("never reads as official for estimates and guidance in %s", (locale) => {
+  it.each(
+    LOCALES,
+  )("never reads as official for fresh, aging or stale estimates and guidance in %s", (locale) => {
+    const ages = { fresh: meta, aging, stale } as const;
     for (const kind of ["estimate", "guidance"] as const) {
       for (const variant of ["compact", "full"] as const) {
-        const { container, unmount } = renderWithMessages(
-          <SourceBadge
-            meta={meta({ info_kind: kind })}
-            variant={variant}
-            label="Tuition"
-            basisText="Average of three published fees"
-          />,
-          locale,
-        );
-        expect(reachableText(container)).not.toMatch(OFFICIAL_WORD[locale]);
-        unmount();
+        for (const [age, build] of Object.entries(ages)) {
+          const { container, unmount } = renderWithMessages(
+            <SourceBadge
+              meta={build({ info_kind: kind })}
+              variant={variant}
+              label="Tuition"
+              basisText="Average of three published fees"
+            />,
+            locale,
+          );
+          if (age !== "fresh") {
+            expect(container.querySelector(`[data-freshness="${age}"]`)).not.toBeNull();
+          }
+          expect(reachableText(container)).not.toMatch(OFFICIAL_WORD[locale]);
+          unmount();
+        }
       }
     }
+  });
+
+  it.each(
+    LOCALES,
+  )("tells a stale estimate to check the source, not the official page, in %s", (locale) => {
+    const { container } = renderWithMessages(
+      <SourceBadge meta={stale({ info_kind: "estimate" })} />,
+      locale,
+    );
+    expect(container.querySelector('[data-freshness="stale"]')?.textContent).toBe(
+      catalogs[locale].sourceBadge.staleCheckSource,
+    );
+  });
+
+  it("draws the official pill only from the kind token family", () => {
+    const { container } = renderWithMessages(<SourceBadge meta={meta()} />, "en");
+    const cls = container.querySelector('[data-kind="official"]')?.getAttribute("class") ?? "";
+    expect(cls).toContain("bg-kind-official");
+    expect(cls).toContain("text-kind-official-bg");
+    expect(cls).not.toContain("primary");
   });
 
   it("does name the official kind as official (sanity check for the previous test)", () => {
@@ -198,6 +226,15 @@ describe("SourceBadge freshness", () => {
     const mark = container.querySelector('[data-freshness="stale"]');
     expect(mark?.textContent).toBe(catalogs[locale].domain.freshness.stale);
     expect(mark?.querySelector("svg")?.getAttribute("aria-hidden")).toBe("true");
+  });
+
+  it("looks different from the match status badge: other icon, other shape, no border", () => {
+    const { container } = renderWithMessages(<SourceBadge meta={stale()} />, "en");
+    const mark = container.querySelector('[data-freshness="stale"]');
+    expect(mark?.querySelector("svg")?.getAttribute("data-testid")).toBe("freshness-icon-stale");
+    expect(mark?.getAttribute("class")).toContain("rounded-full");
+    expect(mark?.getAttribute("class")).not.toMatch(/\bborder\b/);
+    expect(mark?.getAttribute("class")).not.toContain("rounded-md");
   });
 
   it("uses the class of the fact: the same age is fresh for stable and aging for volatile", () => {

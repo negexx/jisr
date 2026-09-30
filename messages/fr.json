@@ -274,7 +274,8 @@
   },
   "sourceBadge": {
     "source": "Source",
-    "howWeEstimated": "Comment nous avons estimé"
+    "howWeEstimated": "Comment nous avons estimé",
+    "staleCheckSource": "Peut être dépassé, vérifiez la source"
   },
   "matchStatusBadge": {
     "foundation": "Année préparatoire d'abord"

@@ -71,7 +71,7 @@ export function MatchStatusBadge({
       data-group={group}
       data-size={size}
       className={cn(
-        "inline-flex items-start gap-2 rounded-md border font-medium",
+        "inline-flex w-fit items-start gap-2 rounded-md border font-medium",
         size === "sm" ? "px-2 py-0.5 text-sm" : "px-3 py-1.5 text-base",
         tone,
       )}

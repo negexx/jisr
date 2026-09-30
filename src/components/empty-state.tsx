@@ -27,7 +27,6 @@ export function EmptyState({
   return (
     <div
       role={tone === "error" ? "alert" : "status"}
-      aria-busy={tone === "loading" ? true : undefined}
       data-tone={tone}
       className="flex flex-col items-center gap-4 py-10 text-center md:items-start md:text-start"
     >

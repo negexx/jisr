@@ -27,7 +27,7 @@ describe("EmptyState", () => {
   it("is a status region for the loading tone and an alert for the error tone", () => {
     const loading = renderIntl(<EmptyState title="Loading" tone="loading" />);
     expect(loading.container.querySelector('[role="status"]')).not.toBeNull();
-    expect(loading.container.querySelector('[aria-busy="true"]')).not.toBeNull();
+    expect(loading.container.querySelector("[aria-busy]")).toBeNull();
     cleanup();
     const error = renderIntl(<EmptyState title="Could not load" tone="error" />);
     expect(error.container.querySelector('[role="alert"]')).not.toBeNull();

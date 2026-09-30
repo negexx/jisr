@@ -274,7 +274,8 @@
   },
   "sourceBadge": {
     "source": "المصدر",
-    "howWeEstimated": "كيف قدّرنا"
+    "howWeEstimated": "كيف قدّرنا",
+    "staleCheckSource": "قد يكون قديمًا، تحقق من المصدر"
   },
   "matchStatusBadge": {
     "foundation": "المرحلة التحضيرية أولًا"

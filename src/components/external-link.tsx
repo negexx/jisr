@@ -26,8 +26,10 @@ export function ExternalLink({
 }) {
   const t = useTranslations("externalLink");
   const hostname = sourceHostname(href);
-  // A link that cannot be opened safely is shown as plain text, never as a clickable anchor.
-  if (hostname === null) return <span className={className}>{children}</span>;
+  // A link that cannot be opened safely is shown as plain text, never as a clickable anchor, and never dropped.
+  if (hostname === null) {
+    return <span className={className}>{children ?? <bdi dir="ltr">{href}</bdi>}</span>;
+  }
 
   return (
     <a
