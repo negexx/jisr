@@ -1,5 +1,5 @@
-import { Plus, Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
+
 import { Button } from "@/components/ui/button";
 import {
   countryOptions,
@@ -12,7 +12,13 @@ import {
 } from "@/lib/profile/form/options";
 import { cn } from "@/lib/utils";
 
-import { type Choice, hasNonLatinDigits, strongestNote, textOr } from "./display-names";
+import {
+  type Choice,
+  hasNonLatinDigits,
+  isolate,
+  lookupName,
+  strongestNote,
+} from "./display-names";
 import {
   ChoiceGroup,
   CONTROL_CLASS,
@@ -20,9 +26,11 @@ import {
   Field,
   FieldGroup,
   NativeSelect,
-  TextNote,
+  useNoteText,
 } from "./field";
+import { PlusIcon, TrashIcon } from "./icons";
 import { fieldIdForPath } from "./issues";
+import { OfficialName } from "./official-name";
 import { useStep } from "./step-context";
 
 const YEAR_CHOICES = ["0", "1", "2", "3"] as const;
@@ -61,13 +69,15 @@ function GradeControl({
   );
 }
 
-function DigitsHint({ value }: { value: string }) {
+function useDigitsHint(): (value: string) => string | undefined {
   const t = useTranslations("profile.errors");
-  return hasNonLatinDigits(value) ? <span>{t("digitsHint")}</span> : null;
+  return (value) => (hasNonLatinDigits(value) ? t("digitsHint") : undefined);
 }
 
 function SubjectRows() {
   const t = useTranslations("profile");
+  const digitsHint = useDigitsHint();
+  const noteText = useNoteText();
   const { form, update, core, text, errorFor, focusAfterRender } = useStep();
   const rows = form.credential.subjects;
   const scale = gradingScaleFor(form, core);
@@ -102,20 +112,20 @@ function SubjectRows() {
       <div className="flex flex-col gap-4">
         {rows.map((row, index) => {
           const offered = subjectOptions(form, core, index);
+          // A subject the track no longer offers stays visible (and marked) rather than blank.
           const kept = offered.some((subject) => subject.slug === row.subject);
-          const current = kept ? undefined : core.subjects.find((s) => s.slug === row.subject);
-          const named = current === undefined ? offered : [...offered, current];
+          const outside = kept ? undefined : core.subjects.find((s) => s.slug === row.subject);
           const choices: Choice[] = [
             ...offered.map((subject) => ({
               value: subject.slug,
-              label: textOr(text, subject.name, subject.slug),
+              label: lookupName(core, text, "subject", subject.slug).label,
             })),
-            ...(current === undefined
+            ...(outside === undefined
               ? []
               : [
                   {
-                    value: current.slug,
-                    label: `${textOr(text, current.name, current.slug)} (${t("fields.subjects.notInTrack")})`,
+                    value: outside.slug,
+                    label: `${lookupName(core, text, "subject", outside.slug).label} (${t("fields.subjects.notInTrack")})`,
                   },
                 ]),
           ];
@@ -123,7 +133,7 @@ function SubjectRows() {
           const rowKey = `subject-row-${index}`;
           const number = String(index + 1);
           const base = `credential.subjects.${index}`;
-          const gradeValue = row.grade;
+          const chosen = lookupName(core, text, "subject", row.subject);
           return (
             <fieldset
               key={rowKey}
@@ -138,7 +148,7 @@ function SubjectRows() {
                   aria-label={t("fields.subjects.remove", { number })}
                   onClick={() => removeRow(index)}
                 >
-                  <Trash2 aria-hidden="true" data-icon="inline-start" />
+                  <TrashIcon data-icon="inline-start" />
                   {t("common.remove")}
                 </Button>
               </div>
@@ -148,9 +158,7 @@ function SubjectRows() {
                   label={t("fields.subjects.subject")}
                   requirement="required"
                   error={errorFor(`${base}.subject`)}
-                  note={
-                    <TextNote note={strongestNote(named.map((subject) => text(subject.name)))} />
-                  }
+                  notes={[noteText(strongestNote([row.subject === "" ? undefined : chosen.data]))]}
                 >
                   {(control) => (
                     <NativeSelect
@@ -172,12 +180,12 @@ function SubjectRows() {
                   label={t("fields.subjects.grade")}
                   requirement="required"
                   error={errorFor(`${base}.grade`)}
-                  note={<DigitsHint value={gradeValue} />}
+                  notes={[digitsHint(row.grade)]}
                 >
                   {(control) => (
                     <GradeControl
                       control={control}
-                      value={gradeValue}
+                      value={row.grade}
                       max={scale?.max}
                       onChange={(value) =>
                         update((draft) => {
@@ -195,7 +203,7 @@ function SubjectRows() {
         {canAdd ? (
           <div>
             <Button id="add-subject" type="button" variant="outline" onClick={addRow}>
-              <Plus aria-hidden="true" data-icon="inline-start" />
+              <PlusIcon data-icon="inline-start" />
               {t("fields.subjects.add")}
             </Button>
           </div>
@@ -211,33 +219,30 @@ function SubjectRows() {
 
 export function StepBac() {
   const t = useTranslations("profile");
+  const digitsHint = useDigitsHint();
+  const noteText = useNoteText();
   const { form, update, core, text, errorFor } = useStep();
   const { credential } = form;
   const scale = gradingScaleFor(form, core);
   const expected = credential.status === "expected";
 
-  const countries = countryOptions(core);
-  const origins = originCountries(core);
   const types = credentialTypeOptions(form, core);
   const tracks = trackOptions(form, core);
+  const chosenType = types.find((type) => type.slug === credential.type);
+  const chosenTrack = tracks.find((track) => track.slug === credential.track);
 
-  const toCountryChoices = (list: typeof countries): Choice[] =>
+  const toCountryChoices = (list: ReturnType<typeof countryOptions>): Choice[] =>
     list.map((country) => ({
       value: country.code,
-      label: textOr(text, country.name, country.code),
+      label: lookupName(core, text, "country", country.code).label,
     }));
-  const withGloss = (name: string, gloss: string | null): string => {
-    const glossText = gloss === null ? undefined : text(gloss)?.text;
-    return glossText === undefined ? name : `${name} (${glossText})`;
-  };
-  const typeChoices: Choice[] = types.map((type) => ({
-    value: type.slug,
-    label: withGloss(type.name, type.gloss),
-  }));
-  const trackChoices: Choice[] = tracks.map((track) => ({
-    value: track.slug,
-    label: withGloss(track.name, track.gloss),
-  }));
+  const countryNote = (code: string) =>
+    noteText(
+      strongestNote([code === "" ? undefined : lookupName(core, text, "country", code).data]),
+    );
+  // In the list, the official name alone; the gloss appears below the chosen one.
+  const officialChoices = (list: readonly { slug: string; name: string }[]): Choice[] =>
+    list.map((item) => ({ value: item.slug, label: isolate(item.name) }));
 
   const statusChoices: Choice[] = [
     { value: "obtained", label: t("fields.status.obtained") },
@@ -253,13 +258,13 @@ export function StepBac() {
         requirement="required"
         hint={t("fields.nationality.hint")}
         error={errorFor("nationality")}
-        note={<TextNote note={strongestNote(countries.map((c) => text(c.name)))} />}
+        notes={[countryNote(form.nationality)]}
       >
         {(control) => (
           <NativeSelect
             control={control}
             value={form.nationality}
-            choices={toCountryChoices(countries)}
+            choices={toCountryChoices(countryOptions(core))}
             placeholder={t("common.choose")}
             onChange={(value) =>
               update((draft) => {
@@ -276,13 +281,13 @@ export function StepBac() {
         requirement="required"
         hint={t("fields.credentialCountry.hint")}
         error={errorFor("credential.country")}
-        note={<TextNote note={strongestNote(origins.map((c) => text(c.name)))} />}
+        notes={[countryNote(credential.country)]}
       >
         {(control) => (
           <NativeSelect
             control={control}
             value={credential.country}
-            choices={toCountryChoices(origins)}
+            choices={toCountryChoices(originCountries(core))}
             placeholder={t("common.choose")}
             onChange={(value) =>
               update((draft) => {
@@ -305,13 +310,17 @@ export function StepBac() {
             : t("fields.credentialType.hint")
         }
         error={errorFor("credential.type")}
-        note={<TextNote note={strongestNote(types.map((type) => text(type.gloss)))} />}
+        detail={
+          chosenType === undefined ? undefined : (
+            <OfficialName name={chosenType.name} gloss={text(chosenType.gloss)} />
+          )
+        }
       >
         {(control) => (
           <NativeSelect
             control={control}
             value={credential.type}
-            choices={typeChoices}
+            choices={officialChoices(types)}
             placeholder={t("common.choose")}
             onChange={(value) =>
               update((draft) => {
@@ -329,19 +338,20 @@ export function StepBac() {
         requirement="required"
         hint={tracks.length === 0 ? t("fields.track.chooseFirst") : t("fields.track.hint")}
         error={errorFor("credential.track")}
-        note={
-          <TextNote
-            note={strongestNote(
-              tracks.map((track) => (track.gloss === null ? undefined : text(track.gloss))),
-            )}
-          />
+        detail={
+          chosenTrack === undefined ? undefined : (
+            <OfficialName
+              name={chosenTrack.name}
+              gloss={chosenTrack.gloss === null ? undefined : text(chosenTrack.gloss)}
+            />
+          )
         }
       >
         {(control) => (
           <NativeSelect
             control={control}
             value={credential.track}
-            choices={trackChoices}
+            choices={officialChoices(tracks)}
             placeholder={t("common.choose")}
             onChange={(value) =>
               update((draft) => {
@@ -374,7 +384,7 @@ export function StepBac() {
         requirement={expected ? "optional" : "required"}
         hint={expected ? t("fields.overall.hintExpected") : t("fields.overall.hint")}
         error={errorFor("credential.overall")}
-        note={<DigitsHint value={credential.overall} />}
+        notes={[digitsHint(credential.overall)]}
       >
         {(control) => (
           <GradeControl

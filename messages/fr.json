@@ -294,7 +294,8 @@
     },
     "title": {
       "create": "Créer mon profil",
-      "edit": "Modifier mon profil"
+      "edit": "Modifier mon profil",
+      "neutral": "Votre profil"
     },
     "intro": "Quatre étapes courtes, puis une dernière vérification. Toutes les questions sont obligatoires, sauf celles marquées facultatives.",
     "progress": {
@@ -308,7 +309,7 @@
       },
       "languages": {
         "title": "Langues",
-        "why": "La plupart des programmes enseignent en français, en anglais ou en allemand et demandent un niveau. Vous ne savez pas ? Choisissez « Je ne sais pas » : le résultat sera marqué « à vérifier »."
+        "why": "Les programmes peuvent demander un niveau de langue. Vous ne savez pas ? Choisissez « Je ne sais pas » : le résultat sera marqué « à vérifier »."
       },
       "preferences": {
         "title": "Ce que vous voulez",
@@ -356,6 +357,7 @@
       },
       "status": {
         "legend": "Avez-vous déjà votre Bac ?",
+        "short": "Situation du Bac",
         "obtained": "Oui, j'ai mon résultat",
         "expected": "Pas encore, je le passe cette année"
       },
@@ -440,7 +442,7 @@
       }
     },
     "notices": {
-      "draft": "Nous avons gardé vos réponses non terminées. Vous reprenez là où vous vous étiez arrêté.",
+      "draft": "Nous avons gardé vos réponses non terminées. Vous reprenez à l'étape où vous en étiez.",
       "reset": "Nous n'avons pas pu lire votre profil enregistré, nous l'avons donc supprimé. Vous pouvez le créer à nouveau.",
       "storage": "Nous ne pouvons pas enregistrer sur cet appareil : vos réponses seront perdues à la fermeture de cette page.",
       "saveFailed": "Nous n'avons pas pu enregistrer votre profil. Réessayez."
@@ -467,7 +469,7 @@
       "duplicate_language": "Cette langue est déjà dans votre liste.",
       "too_many_rows": "Vous pouvez ajouter jusqu'à {max} matières.",
       "not_a_whole_number": "Écrivez le montant en nombre entier, sans point ni virgule, avec les chiffres de 0 à 9",
-      "years_out_of_range": "Choisissez entre {min} et {max} ans",
+      "years_out_of_range": "Choisissez entre {min} et {max} années",
       "digitsHint": "Utilisez les chiffres de 0 à 9 (1, 2, 3), pas les chiffres arabo-indiens."
     },
     "states": {
@@ -488,7 +490,7 @@
       "notGiven": "Non renseigné",
       "noPreference": "Pas de préférence",
       "allCountries": "Tous les pays",
-      "levelWithCertificate": "{level}, certificat : {certificate}",
+      "levelWithCertificate": "{level}, certificat : <cert>{certificate}</cert>",
       "budgetLine": "{amount} {period, select, month {par mois} year {par an} other {}}",
       "editStep": "Modifier : {step}"
     },

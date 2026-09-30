@@ -105,7 +105,7 @@ function labelFor(t: ProfileT, path: string, form: FormState, locale: AppLocale)
     case "credential.track":
       return t("fields.track.label");
     case "credential.status":
-      return t("fields.status.legend");
+      return t("fields.status.short");
     case "credential.overall":
       return t("fields.overall.label");
     case "credential.subjects":

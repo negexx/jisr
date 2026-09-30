@@ -1,9 +1,7 @@
-import { spawnSync } from "node:child_process";
-import { existsSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
-import os from "node:os";
+import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 
-import { render } from "@testing-library/react";
+import { configure, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { NextIntlClientProvider } from "next-intl";
 import { afterAll, beforeAll } from "vitest";
@@ -23,39 +21,18 @@ import { createTextLookup, type TextLookup } from "@/lib/snapshot/text";
 import ar from "../../../messages/ar.json";
 import en from "../../../messages/en.json";
 import fr from "../../../messages/fr.json";
+import { buildSnapshot, E2E_DATA_DIR, removeTempDirs } from "../../lib/snapshot/fixture";
 
 const catalogs = { fr, en, ar };
 
-// tests/lib/snapshot/fixture.ts resolves paths with import.meta.url, which jsdom does not give as a
-// file URL, so this builds the same fixture snapshot from the repository root (vitest's cwd).
-function buildFixtureSnapshot(): string {
-  const root = process.cwd();
-  const outDir = mkdtempSync(path.join(os.tmpdir(), "jisr-profile-form-"));
-  const run = spawnSync(
-    process.execPath,
-    [
-      "--import",
-      "tsx",
-      path.join(root, "scripts", "data", "build.ts"),
-      "--data-dir",
-      path.join(root, "tests", "fixtures", "data", "e2e-journey"),
-      "--out-dir",
-      outDir,
-    ],
-    { cwd: root, encoding: "utf8", timeout: 120_000 },
-  );
-  if (run.status !== 0) {
-    throw new Error(["data:build failed", run.stdout, run.stderr].join(String.fromCharCode(10)));
-  }
-  return outDir;
-}
+// The whole suite runs files in parallel; a form step can take longer than the 1 s default to appear.
+configure({ asyncUtilTimeout: 5000 });
 
 // The T2 fixture through the real snapshot client: only `fetch` is replaced, by files on disk.
 export function withFixtureClient(): () => SnapshotClient {
   let client: SnapshotClient | undefined;
-  let dir = "";
   beforeAll(() => {
-    dir = buildFixtureSnapshot();
+    const dir = buildSnapshot(E2E_DATA_DIR);
     client = createSnapshotClient({
       baseUrl: "/snap",
       digest: null,
@@ -65,8 +42,8 @@ export function withFixtureClient(): () => SnapshotClient {
         return new Response(new Uint8Array(readFileSync(file)));
       },
     });
-  });
-  afterAll(() => rmSync(dir, { recursive: true, force: true }));
+  }, 60_000);
+  afterAll(removeTempDirs);
   return () => {
     if (client === undefined) throw new Error("fixture client is not built yet");
     return client;

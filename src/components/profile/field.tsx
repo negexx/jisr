@@ -1,4 +1,3 @@
-import { CircleAlert } from "lucide-react";
 import { useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
@@ -6,6 +5,7 @@ import type { TextLookupNote } from "@/lib/snapshot/text";
 import { cn } from "@/lib/utils";
 
 import type { Choice } from "./display-names";
+import { AlertIcon } from "./icons";
 import { fieldIdForPath } from "./issues";
 
 // Text controls are 48px tall (phone tap target) with a border that meets 3:1 against the page.
@@ -18,9 +18,36 @@ export type ControlProps = {
   "aria-invalid": true | undefined;
 };
 
-function joinIds(...ids: (string | undefined)[]): string | undefined {
-  const joined = ids.filter(Boolean).join(" ");
-  return joined === "" ? undefined : joined;
+// The sentence for a note about the text shown, or undefined when there is nothing to say.
+export function useNoteText(): (note: TextLookupNote) => string | undefined {
+  const t = useTranslations("domain.textNote");
+  return (note) => (note === "none" ? undefined : t(note));
+}
+
+type Extras = {
+  hint?: ReactNode;
+  // Sentences that apply to the current value; blanks are dropped, and no element exists without any.
+  notes?: readonly (string | undefined)[];
+  // What the current choice looks like in full (for example an official name and its gloss).
+  detail?: ReactNode;
+  error?: string;
+};
+
+function wiring(id: string, { hint, notes = [], detail, error }: Extras) {
+  const lines = notes.filter((line): line is string => line !== undefined && line !== "");
+  const hintId = hint === undefined ? undefined : `${id}-hint`;
+  const noteId = lines.length === 0 ? undefined : `${id}-note`;
+  const detailId = detail === undefined || detail === null ? undefined : `${id}-detail`;
+  const errorId = error === undefined ? undefined : `${id}-error`;
+  const describedBy = [hintId, detailId, noteId, errorId].filter(Boolean).join(" ");
+  return {
+    lines,
+    hintId,
+    noteId,
+    detailId,
+    errorId,
+    describedBy: describedBy === "" ? undefined : describedBy,
+  };
 }
 
 function RequirementTag({ requirement }: { requirement: "required" | "optional" }) {
@@ -28,72 +55,86 @@ function RequirementTag({ requirement }: { requirement: "required" | "optional" 
   return <span className="font-normal text-muted-foreground"> ({t(requirement)})</span>;
 }
 
-function FieldError({ id, message }: { id: string; message: string }) {
+function Below({
+  ids,
+  detail,
+  error,
+}: {
+  ids: ReturnType<typeof wiring>;
+  detail: ReactNode;
+  error: string | undefined;
+}) {
   return (
-    <p id={id} className="flex items-start gap-2 text-base font-medium text-destructive">
-      <CircleAlert aria-hidden="true" className="mt-1 size-4 shrink-0" />
-      <span>{message}</span>
+    <>
+      {ids.detailId === undefined ? null : (
+        <p id={ids.detailId} className="text-sm">
+          {detail}
+        </p>
+      )}
+      {ids.noteId === undefined ? null : (
+        <p id={ids.noteId} className="text-sm text-muted-foreground">
+          {ids.lines.map((line) => (
+            <span key={line} className="block">
+              {line}
+            </span>
+          ))}
+        </p>
+      )}
+      {ids.errorId === undefined || error === undefined ? null : (
+        <p
+          id={ids.errorId}
+          className="flex items-start gap-2 text-base font-medium text-destructive"
+        >
+          <AlertIcon className="mt-1 size-4 shrink-0" />
+          <span>{error}</span>
+        </p>
+      )}
+    </>
+  );
+}
+
+function Hint({ id, hint }: { id: string | undefined; hint: ReactNode }) {
+  return hint === undefined ? null : (
+    <p id={id} className="text-sm text-muted-foreground">
+      {hint}
     </p>
   );
 }
 
-// Shown once per field when an option label came from the French fallback or a machine draft.
-export function TextNote({ note }: { note: TextLookupNote }) {
-  const t = useTranslations("domain.textNote");
-  if (note === "none") return null;
-  return <span>{t(note)}</span>;
-}
-
-type FieldProps = {
+type FieldProps = Extras & {
   path: string;
   label: ReactNode;
   requirement: "required" | "optional";
-  hint?: ReactNode;
-  note?: ReactNode;
-  error?: string;
   children: (control: ControlProps) => ReactNode;
 };
 
-export function Field({ path, label, requirement, hint, note, error, children }: FieldProps) {
+export function Field({ path, label, requirement, children, ...extras }: FieldProps) {
   const id = fieldIdForPath(path);
-  const hintId = hint === undefined ? undefined : `${id}-hint`;
-  const noteId = note === undefined || note === null || note === false ? undefined : `${id}-note`;
-  const errorId = error === undefined ? undefined : `${id}-error`;
+  const ids = wiring(id, extras);
   return (
     <div className="flex flex-col gap-1.5">
       <label htmlFor={id} className="text-base font-medium">
         {label}
         <RequirementTag requirement={requirement} />
       </label>
-      {hint === undefined ? null : (
-        <p id={hintId} className="text-sm text-muted-foreground">
-          {hint}
-        </p>
-      )}
+      <Hint id={ids.hintId} hint={extras.hint} />
       {children({
         id,
-        "aria-describedby": joinIds(hintId, noteId, errorId),
-        "aria-invalid": error === undefined ? undefined : true,
+        "aria-describedby": ids.describedBy,
+        "aria-invalid": extras.error === undefined ? undefined : true,
       })}
-      {noteId === undefined ? null : (
-        <p id={noteId} className="text-sm text-muted-foreground">
-          {note}
-        </p>
-      )}
-      {errorId === undefined || error === undefined ? null : (
-        <FieldError id={errorId} message={error} />
-      )}
+      <Below ids={ids} detail={extras.detail} error={extras.error} />
     </div>
   );
 }
 
-type FieldGroupProps = {
+type FieldGroupProps = Extras & {
   path: string;
   legend: ReactNode;
   requirement: "required" | "optional";
-  hint?: ReactNode;
-  note?: ReactNode;
-  error?: string;
+  // Rows of radios or checkboxes give their first input this id; other groups take it themselves
+  // so that a link from the error summary has something to focus.
+  ownsId?: boolean;
   children: ReactNode;
 };
 
@@ -101,38 +142,26 @@ export function FieldGroup({
   path,
   legend,
   requirement,
-  hint,
-  note,
-  error,
+  ownsId = true,
   children,
+  ...extras
 }: FieldGroupProps) {
   const id = fieldIdForPath(path);
-  const hintId = hint === undefined ? undefined : `${id}-hint`;
-  const noteId = note === undefined || note === null || note === false ? undefined : `${id}-note`;
-  const errorId = error === undefined ? undefined : `${id}-error`;
+  const ids = wiring(id, extras);
   return (
     <fieldset
-      aria-describedby={joinIds(hintId, noteId, errorId)}
-      className="flex min-w-0 flex-col gap-1.5"
+      id={ownsId ? id : undefined}
+      tabIndex={ownsId ? -1 : undefined}
+      aria-describedby={ids.describedBy}
+      className="flex min-w-0 flex-col gap-1.5 outline-none"
     >
       <legend className="mb-1.5 p-0 text-base font-medium">
         {legend}
         <RequirementTag requirement={requirement} />
       </legend>
-      {hint === undefined ? null : (
-        <p id={hintId} className="text-sm text-muted-foreground">
-          {hint}
-        </p>
-      )}
+      <Hint id={ids.hintId} hint={extras.hint} />
       {children}
-      {noteId === undefined ? null : (
-        <p id={noteId} className="text-sm text-muted-foreground">
-          {note}
-        </p>
-      )}
-      {errorId === undefined || error === undefined ? null : (
-        <FieldError id={errorId} message={error} />
-      )}
+      <Below ids={ids} detail={extras.detail} error={extras.error} />
     </fieldset>
   );
 }
@@ -148,7 +177,8 @@ export function NativeSelect({
   control: ControlProps;
   value: string;
   choices: readonly Choice[];
-  placeholder: string;
+  // Omitted when the control always has a sensible value (currency, period): no blank choice.
+  placeholder?: string;
   onChange: (value: string) => void;
   className?: string;
 }) {
@@ -157,11 +187,11 @@ export function NativeSelect({
   return (
     <select
       {...control}
-      value={shown}
+      value={placeholder === undefined && shown === "" ? (choices[0]?.value ?? "") : shown}
       onChange={(event) => onChange(event.target.value)}
       className={cn(CONTROL_CLASS, className)}
     >
-      <option value="">{placeholder}</option>
+      {placeholder === undefined ? null : <option value="">{placeholder}</option>}
       {choices.map((choice) => (
         <option key={choice.value} value={choice.value}>
           {choice.label}
@@ -179,21 +209,18 @@ export function ChoiceGroup({
   legend,
   requirement,
   hint,
-  note,
+  notes,
   error,
   choices,
   selected,
   onToggle,
   columns = false,
-}: {
+}: Extras & {
   path: string;
   name: string;
   kind: "radio" | "checkbox";
   legend: ReactNode;
   requirement: "required" | "optional";
-  hint?: ReactNode;
-  note?: ReactNode;
-  error?: string;
   choices: readonly Choice[];
   selected: readonly string[];
   onToggle: (value: string, checked: boolean) => void;
@@ -206,8 +233,9 @@ export function ChoiceGroup({
       legend={legend}
       requirement={requirement}
       hint={hint}
-      note={note}
+      notes={notes}
       error={error}
+      ownsId={false}
     >
       <div className={cn("grid gap-2", columns && "sm:grid-cols-2")}>
         {choices.map((choice, index) => (

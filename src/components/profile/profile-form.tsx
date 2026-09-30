@@ -1,9 +1,8 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import type { ReactNode } from "react";
+import { lazy, type ReactNode, Suspense } from "react";
 
-import { EmptyState } from "@/components/empty-state";
 import { Button } from "@/components/ui/button";
 import type { AppLocale } from "@/i18n/routing";
 import { useProfile } from "@/lib/profile/use-profile";
@@ -11,16 +10,26 @@ import type { SnapshotClient } from "@/lib/snapshot/client";
 import { shardsForProfileForm } from "@/lib/snapshot/plan";
 import { type SnapshotRequest, useSnapshotBundle } from "@/lib/snapshot/use-snapshot";
 
-import { PageTitle, ProfileWizard } from "./profile-wizard";
+import { PAGE_GRID, PageTitle } from "./chrome";
+import { ProfileWizard } from "./profile-wizard";
+
+// Only two rare states use it, and it would bring the icon library into the first load.
+const EmptyState = lazy(() =>
+  import("@/components/empty-state").then((module) => ({ default: module.EmptyState })),
+);
 
 // One stable key: the plan does not depend on anything the student types.
 const REQUEST: SnapshotRequest = { key: "profile-form", plan: shardsForProfileForm() };
 
-function Shell({ editing, children }: { editing: boolean; children: ReactNode }) {
+// Same grid as the wizard, so nothing moves when the form replaces a placeholder.
+function Shell({ mode, children }: { mode: "create" | "edit" | "neutral"; children: ReactNode }) {
   return (
-    <div className="mx-auto flex w-full max-w-[40rem] flex-col gap-6">
-      <PageTitle mode={editing ? "edit" : "create"} />
-      {children}
+    <div className={PAGE_GRID}>
+      <div className="flex min-w-0 flex-col gap-6">
+        <PageTitle mode={mode} />
+        {children}
+      </div>
+      <aside className="hidden lg:block" />
     </div>
   );
 }
@@ -48,21 +57,24 @@ export function ProfileForm({ locale, client }: { locale: AppLocale; client?: Sn
   const t = useTranslations("profile");
   const { state: snapshot, retry } = useSnapshotBundle(REQUEST, locale, client);
   const { state: profile } = useProfile();
-  const editing = profile.status === "ok";
+  const mode =
+    profile.status === "unhydrated" ? "neutral" : profile.status === "ok" ? "edit" : "create";
 
   if (snapshot.status === "error") {
     return (
-      <Shell editing={editing}>
-        <EmptyState
-          tone="error"
-          title={t("states.error.title")}
-          description={t("states.error.description")}
-          action={
-            <Button type="button" variant="outline" onClick={retry}>
-              {t("states.error.retry")}
-            </Button>
-          }
-        />
+      <Shell mode={mode}>
+        <Suspense fallback={null}>
+          <EmptyState
+            tone="error"
+            title={t("states.error.title")}
+            description={t("states.error.description")}
+            action={
+              <Button type="button" variant="outline" onClick={retry}>
+                {t("states.error.retry")}
+              </Button>
+            }
+          />
+        </Suspense>
       </Shell>
     );
   }
@@ -71,11 +83,13 @@ export function ProfileForm({ locale, client }: { locale: AppLocale; client?: Sn
     const { core, text } = snapshot.bundle;
     if (core === undefined || core.credentialTypes.length === 0) {
       return (
-        <Shell editing={editing}>
-          <EmptyState
-            title={t("states.unavailable.title")}
-            description={t("states.unavailable.description")}
-          />
+        <Shell mode={mode}>
+          <Suspense fallback={null}>
+            <EmptyState
+              title={t("states.unavailable.title")}
+              description={t("states.unavailable.description")}
+            />
+          </Suspense>
         </Shell>
       );
     }
@@ -85,7 +99,7 @@ export function ProfileForm({ locale, client }: { locale: AppLocale; client?: Sn
   }
 
   return (
-    <Shell editing={editing}>
+    <Shell mode={mode}>
       <FormSkeleton label={t("states.loading")} />
     </Shell>
   );

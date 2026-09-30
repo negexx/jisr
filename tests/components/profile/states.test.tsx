@@ -107,6 +107,7 @@ describe("ProfileForm: initial state and notices", () => {
     expect(
       await screen.findByRole("heading", { level: 1, name: "Edit your profile" }),
     ).toBeTruthy();
+    await screen.findByRole("heading", { level: 2, name: "Your Bac" });
     const overall = screen.getByLabelText(/Overall grade/) as HTMLInputElement;
     expect(overall.value).toBe(String(formFromProfile(profile()).credential.overall));
     expect(screen.queryByText(/We kept your unfinished answers/)).toBeNull();

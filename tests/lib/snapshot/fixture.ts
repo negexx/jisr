@@ -3,11 +3,11 @@ import { createHash } from "node:crypto";
 import { cpSync, existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 
 import { type Manifest, ManifestSchema } from "@/data-schema/snapshot";
 
-export const ROOT = fileURLToPath(new URL("../../..", import.meta.url));
+// vitest runs from the repository root; import.meta.url is not a file URL under jsdom.
+export const ROOT = process.cwd();
 const BUILD_SCRIPT = path.join(ROOT, "scripts", "data", "build.ts");
 export const E2E_DATA_DIR = path.join(ROOT, "tests", "fixtures", "data", "e2e-journey");
 export const EMPTY_DATA_DIR = path.join(ROOT, "tests", "fixtures", "data", "empty");

@@ -29,6 +29,12 @@ type User = ReturnType<typeof userEvent.setup>;
 
 const fixtureClient = withFixtureClient();
 
+function summaryBox(): HTMLElement {
+  const box = screen.getByRole("heading", { level: 2, name: "Please fix these" }).parentElement;
+  if (box === null) throw new Error("no summary");
+  return box;
+}
+
 function combobox(name: RegExp): HTMLSelectElement {
   const element = screen.getByRole("combobox", { name });
   if (!(element instanceof HTMLSelectElement)) throw new Error("not a select");
@@ -83,7 +89,7 @@ describe("step navigation", () => {
     await stepHeading("Your Bac");
     await next(user);
 
-    const summary = screen.getByRole("alert");
+    const summary = summaryBox();
     expect(within(summary).getByRole("heading", { name: "Please fix these" })).toBeTruthy();
     expect(document.activeElement).toBe(summary);
     expect(screen.getByRole("heading", { level: 2, name: "Your Bac" })).toBeTruthy();
@@ -99,7 +105,7 @@ describe("step navigation", () => {
     const { user } = renderProfileForm("en", fixtureClient());
     await stepHeading("Your Bac");
     await next(user);
-    const links = within(screen.getByRole("alert")).getAllByRole("link");
+    const links = within(summaryBox()).getAllByRole("link");
     expect(links.length).toBeGreaterThanOrEqual(3);
     expect(links.map((link) => link.textContent)).toContain("Diploma: Choose an answer");
     expect(links.map((link) => link.textContent)).toContain("Track: Choose an answer");
@@ -116,7 +122,7 @@ describe("step navigation", () => {
     await user.click(screen.getByRole("button", { name: "Add a subject" }));
     await user.click(screen.getByRole("button", { name: "Add a subject" }));
     await next(user);
-    const links = within(screen.getByRole("alert")).getAllByRole("link");
+    const links = within(summaryBox()).getAllByRole("link");
     const targets = links.map((link) => link.getAttribute("href"));
     expect(new Set(targets).size).toBe(targets.length);
   });
@@ -222,7 +228,7 @@ describe("grade entry", () => {
     await screen.findByRole("heading", { level: 2, name: "البكالوريا" });
     const input = screen.getByRole("textbox", { name: /^المعدل العام/ });
     await user.type(input, "١٤");
-    expect(screen.getAllByText(/الأرقام اللاتينية/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/الأرقام من 0 إلى 9/).length).toBeGreaterThan(0);
     await user.click(screen.getByRole("button", { name: "التالي" }));
     expect(screen.getAllByText(/بالأرقام من 0 إلى 9/).length).toBeGreaterThan(0);
   });
@@ -319,11 +325,11 @@ describe("languages step", () => {
         .map((option) => option.textContent);
     expect(optionsOf(certificates[0] as HTMLElement)).toEqual([
       "No certificate",
-      "XX Test French Certificate",
+      "⁨XX Test French Certificate⁩",
     ]);
     expect(optionsOf(certificates[1] as HTMLElement)).toEqual([
       "No certificate",
-      "XX Test English Certificate",
+      "⁨XX Test English Certificate⁩",
     ]);
   });
 
@@ -364,7 +370,7 @@ describe("languages step", () => {
       within(certificate)
         .getAllByRole("option")
         .map((o) => o.textContent),
-    ).toEqual(["No certificate", "XX German"]);
+    ).toEqual(["No certificate", "⁨XX German⁩"]);
     await user.click(screen.getByRole("button", { name: "Remove German" }));
     expect(screen.queryByRole("heading", { level: 3, name: "German" })).toBeNull();
     expect(document.activeElement).toBe(

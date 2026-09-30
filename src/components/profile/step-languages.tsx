@@ -1,4 +1,3 @@
-import { Plus, Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
@@ -6,8 +5,9 @@ import { CEFR_LEVELS } from "@/lib/constants";
 import { isOneOf } from "@/lib/guards";
 import { certificateOptionsFor, languageRowOptions } from "@/lib/profile/form/options";
 
-import { type Choice, languageName } from "./display-names";
+import { type Choice, isolate, languageName } from "./display-names";
 import { Field, NativeSelect } from "./field";
+import { PlusIcon, TrashIcon } from "./icons";
 import { fieldIdForPath } from "./issues";
 import { useStep } from "./step-context";
 
@@ -50,7 +50,7 @@ export function StepLanguages() {
         const certificates = certificateOptionsFor(row.language, core);
         const certificateChoices: Choice[] = certificates.map((certificate) => ({
           value: certificate.slug,
-          label: certificate.name,
+          label: isolate(certificate.name),
         }));
         const languageChoices: Choice[] = offered
           .filter((code) => code === row.language || unused.includes(code))
@@ -68,7 +68,7 @@ export function StepLanguages() {
                   aria-label={t("fields.language.remove", { language: name })}
                   onClick={() => removeRow(index)}
                 >
-                  <Trash2 aria-hidden="true" data-icon="inline-start" />
+                  <TrashIcon data-icon="inline-start" />
                   {t("common.remove")}
                 </Button>
               )}
@@ -149,7 +149,7 @@ export function StepLanguages() {
       {unused.length === 0 ? null : (
         <div>
           <Button id="add-language" type="button" variant="outline" onClick={addRow}>
-            <Plus aria-hidden="true" data-icon="inline-start" />
+            <PlusIcon data-icon="inline-start" />
             {t("fields.language.add")}
           </Button>
         </div>

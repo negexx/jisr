@@ -3,8 +3,8 @@ import { useTranslations } from "next-intl";
 import { isOneOf } from "@/lib/guards";
 import { destinationOptions, fieldOptions, studyLanguageOptions } from "@/lib/profile/form/options";
 
-import { type Choice, languageName, strongestNote, textOr } from "./display-names";
-import { ChoiceGroup, TextNote } from "./field";
+import { type Choice, languageName, lookupName, strongestNote } from "./display-names";
+import { ChoiceGroup, useNoteText } from "./field";
 import { useStep } from "./step-context";
 
 const INSTITUTION_TYPES = ["any", "public", "private"] as const;
@@ -17,13 +17,14 @@ function toggled(list: string[], value: string, checked: boolean): void {
 
 export function StepPreferences() {
   const t = useTranslations("profile");
+  const noteText = useNoteText();
   const { form, update, core, text, locale, errorFor } = useStep();
 
   const fields = fieldOptions(core);
   const destinations = destinationOptions(core);
   const fieldChoices: Choice[] = fields.map((field) => ({
     value: field.slug,
-    label: textOr(text, field.name, field.slug),
+    label: lookupName(core, text, "field", field.slug).label,
   }));
   const languageChoices: Choice[] = studyLanguageOptions(core).map((code) => ({
     value: code,
@@ -31,7 +32,7 @@ export function StepPreferences() {
   }));
   const destinationChoices: Choice[] = destinations.map((country) => ({
     value: country.code,
-    label: textOr(text, country.name, country.code),
+    label: lookupName(core, text, "country", country.code).label,
   }));
   const institutionChoices: Choice[] = INSTITUTION_TYPES.map((type) => ({
     value: type,
@@ -47,7 +48,11 @@ export function StepPreferences() {
         legend={t("fields.fieldsOfStudy.legend")}
         requirement="required"
         hint={t("fields.fieldsOfStudy.hint")}
-        note={<TextNote note={strongestNote(fields.map((field) => text(field.name)))} />}
+        notes={[
+          noteText(
+            strongestNote(form.fields.map((slug) => lookupName(core, text, "field", slug).data)),
+          ),
+        ]}
         error={errorFor("fields")}
         choices={fieldChoices}
         selected={form.fields}
@@ -75,7 +80,13 @@ export function StepPreferences() {
         legend={t("fields.destinations.legend")}
         requirement="optional"
         hint={t("fields.destinations.hint")}
-        note={<TextNote note={strongestNote(destinations.map((country) => text(country.name)))} />}
+        notes={[
+          noteText(
+            strongestNote(
+              form.destinations.map((code) => lookupName(core, text, "country", code).data),
+            ),
+          ),
+        ]}
         error={errorFor("destinations")}
         choices={destinationChoices}
         selected={form.destinations}

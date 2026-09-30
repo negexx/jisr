@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { act, cleanup, fireEvent, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, screen, waitFor } from "@testing-library/react";
 import type userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
@@ -63,8 +63,8 @@ describe("final submit", () => {
     await completeFixtureForm(user);
     await user.click(screen.getByRole("button", { name: "See my matches" }));
 
+    await waitFor(() => expect(navigation.push).toHaveBeenCalledWith("/matches"));
     expect(navigation.push).toHaveBeenCalledTimes(1);
-    expect(navigation.push).toHaveBeenCalledWith("/matches");
     const stored = parseProfile(JSON.parse(window.localStorage.getItem(PROFILE_KEY) ?? "null"));
     expect(stored?.credential.overall?.value).toBe(14.5);
     expect(stored?.credential.type).toBe("xx-test-cred");
@@ -78,7 +78,7 @@ describe("final submit", () => {
     const titleBefore = document.title;
     await completeFixtureForm(user);
     await user.click(screen.getByRole("button", { name: "See my matches" }));
-    expect(navigation.push).toHaveBeenCalledWith("/matches");
+    await waitFor(() => expect(navigation.push).toHaveBeenCalledWith("/matches"));
     expect(window.location.href).not.toMatch(/14|800|XA|xx-test/);
     expect(window.location.search).toBe("");
     expect(document.title).toBe(titleBefore);
@@ -94,7 +94,9 @@ describe("final submit", () => {
       target: { value: "99" },
     });
     await user.click(screen.getByRole("button", { name: "Next" }));
-    expect(screen.getAllByText("Enter a grade between 0 and 20").length).toBeGreaterThan(0);
+    expect((await screen.findAllByText("Enter a grade between 0 and 20")).length).toBeGreaterThan(
+      0,
+    );
     expect(navigation.push).not.toHaveBeenCalled();
     expect(window.localStorage.getItem(PROFILE_KEY)).toBeNull();
   });
@@ -118,6 +120,7 @@ describe("edit mode", () => {
     expect(
       await screen.findByRole("heading", { level: 1, name: "Edit your profile" }),
     ).toBeTruthy();
+    await screen.findByRole("heading", { level: 2, name: "Your Bac" });
     expect(
       (screen.getByRole("textbox", { name: /^Overall grade/ }) as HTMLInputElement).value,
     ).toBe("14");
@@ -131,7 +134,7 @@ describe("edit mode", () => {
     await user.click(screen.getByRole("button", { name: "Next" }));
     await stepHeading("Review");
     await user.click(screen.getByRole("button", { name: "Save changes" }));
-    expect(navigation.push).toHaveBeenCalledWith("/matches");
+    await waitFor(() => expect(navigation.push).toHaveBeenCalledWith("/matches"));
     const stored = parseProfile(JSON.parse(window.localStorage.getItem(PROFILE_KEY) ?? "null"));
     expect(stored?.languages.map((row) => row.level)).toEqual(["B2", "unknown"]);
   });
@@ -189,7 +192,7 @@ describe("draft autosave", () => {
     await stepHeading("Review");
     await user.click(screen.getByRole("button", { name: "See my matches" }));
 
-    expect(navigation.push).toHaveBeenCalledWith("/matches");
+    await waitFor(() => expect(navigation.push).toHaveBeenCalledWith("/matches"));
     expect(window.localStorage.getItem(DRAFT_KEY)).toBeNull();
     await new Promise((resolve) => setTimeout(resolve, AUTOSAVE_DELAY_MS + 100));
     expect(window.localStorage.getItem(DRAFT_KEY)).toBeNull();
@@ -224,7 +227,10 @@ describe("Arabic flow", () => {
     await user.type(screen.getByRole("textbox", { name: /^المعدل العام/ }), "25");
     await user.click(screen.getByRole("button", { name: "التالي" }));
     expect(screen.getAllByText("أدخل علامة بين 0 و20").length).toBeGreaterThan(0);
-    expect(screen.getByRole("alert").textContent).not.toMatch(/[٠-٩]/);
+    expect(
+      screen.getByRole("heading", { level: 2, name: "يرجى تصحيح ما يلي" }).parentElement
+        ?.textContent,
+    ).not.toMatch(/[٠-٩]/);
     expect(screen.getByTestId("dir-root").getAttribute("dir")).toBe("rtl");
   });
 });

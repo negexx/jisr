@@ -34,7 +34,7 @@ export function StepBudget() {
         requirement="optional"
         hint={t("fields.budget.amount.hint")}
         error={errorFor("budget.amount")}
-        note={hasNonLatinDigits(budget.amount) ? <span>{t("errors.digitsHint")}</span> : undefined}
+        notes={[hasNonLatinDigits(budget.amount) ? t("errors.digitsHint") : undefined]}
       >
         {(control) => (
           <input
@@ -66,7 +66,6 @@ export function StepBudget() {
               control={control}
               value={budget.currency}
               choices={currencyChoices}
-              placeholder={t("common.choose")}
               onChange={(value) =>
                 update((draft) => {
                   draft.budget.currency = value;
@@ -86,7 +85,6 @@ export function StepBudget() {
               control={control}
               value={budget.period}
               choices={periodChoices}
-              placeholder={t("common.choose")}
               onChange={(value) =>
                 update((draft) => {
                   draft.budget.period = value === "year" ? "year" : "month";

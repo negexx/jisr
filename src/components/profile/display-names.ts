@@ -1,3 +1,4 @@
+import type { CoreShard } from "@/data-schema/snapshot";
 import type { AppLocale } from "@/i18n/routing";
 import { intlLocale } from "@/lib/format";
 import type { DataText, TextLookup, TextLookupNote } from "@/lib/snapshot/text";
@@ -39,9 +40,30 @@ export function currencyName(code: string, locale: AppLocale): string {
   }
 }
 
-// Text a snapshot lacks falls back to the slug or code, never to an empty label.
-export function textOr(text: TextLookup, key: string, fallback: string): string {
-  return text(key)?.text ?? fallback;
+// Latin names inside Arabic (and the reverse) must not reorder their neighbours; option text cannot
+// carry markup, so it is isolated with the Unicode isolate marks instead.
+export function isolate(name: string): string {
+  return `⁨${name}⁩`;
+}
+
+type Kind = "country" | "subject" | "field";
+
+// A name the snapshot lacks falls back to the slug or code, never to an empty label. `data` keeps
+// the lookup's note, so a field can say when the shown text is French or a draft.
+export function lookupName(
+  core: CoreShard,
+  text: TextLookup,
+  kind: Kind,
+  id: string,
+): { label: string; data: DataText | undefined } {
+  const key =
+    kind === "country"
+      ? core.countries.find((country) => country.code === id)?.name
+      : kind === "subject"
+        ? core.subjects.find((subject) => subject.slug === id)?.name
+        : core.fields.find((field) => field.slug === id)?.name;
+  const data = key === undefined ? undefined : text(key);
+  return { label: data?.text ?? id, data };
 }
 
 const NOTE_RANK: Record<TextLookupNote, number> = {
@@ -50,7 +72,8 @@ const NOTE_RANK: Record<TextLookupNote, number> = {
   french_fallback: 2,
 };
 
-// One note per field, not per option: the most restrictive one wins.
+// The note for the text actually shown: pass the entries of the SELECTED options only. When several
+// are shown the most restrictive note wins.
 export function strongestNote(notes: readonly (DataText | undefined)[]): TextLookupNote {
   let strongest: TextLookupNote = "none";
   for (const entry of notes) {

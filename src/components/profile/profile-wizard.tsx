@@ -1,6 +1,5 @@
 "use client";
 
-import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { type FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
@@ -8,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import type { CoreShard } from "@/data-schema/snapshot";
 import { useRouter } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
-import { buildProfile } from "@/lib/profile/form/build";
 import { type FormState, STEPS, type StepId } from "@/lib/profile/form/state";
 import {
   pathStep,
@@ -20,9 +18,10 @@ import { getLocalStorage } from "@/lib/profile/storage";
 import { useProfile } from "@/lib/profile/use-profile";
 import type { TextLookup } from "@/lib/snapshot/text";
 
-import { ErrorSummary, Notice, StepHeader } from "./chrome";
+import { ErrorSummary, Notice, PAGE_GRID, PageTitle, StepHeader } from "./chrome";
+import { ArrowIcon, ChevronDownIcon } from "./icons";
 import { initialWizardState } from "./initial-state";
-import { groupKeyForPath, shownIssues } from "./issues";
+import { groupKeyForPath, type ShownIssue, shownIssues } from "./issues";
 import { StepBac } from "./step-bac";
 import { StepBudget } from "./step-budget";
 import { StepProvider } from "./step-context";
@@ -35,24 +34,17 @@ type FocusTarget = "summary" | "heading" | { id: string };
 
 const FORM_STEP_COUNT = STEPS.length - 1;
 
-export function PageTitle({ mode }: { mode: "create" | "edit" }) {
-  const t = useTranslations("profile.title");
-  return (
-    <h1 id="profile-title" className="text-2xl font-bold tracking-tight text-balance">
-      {t(mode)}
-    </h1>
-  );
+type WizardProps = { core: CoreShard; text: TextLookup; locale: AppLocale };
+
+// "Clear my data" empties the store while the form is open: the body is then rebuilt from a fresh
+// initial state (empty form, create mode), so nothing typed before can be written back.
+export function ProfileWizard(props: WizardProps) {
+  const [generation, setGeneration] = useState(0);
+  const restart = useCallback(() => setGeneration((count) => count + 1), []);
+  return <WizardBody key={generation} {...props} onCleared={restart} />;
 }
 
-export function ProfileWizard({
-  core,
-  text,
-  locale,
-}: {
-  core: CoreShard;
-  text: TextLookup;
-  locale: AppLocale;
-}) {
+function WizardBody({ core, text, locale, onCleared }: WizardProps & { onCleared: () => void }) {
   const t = useTranslations("profile");
   const router = useRouter();
   const profile = useProfile();
@@ -64,16 +56,21 @@ export function ProfileWizard({
   const [stepIndex, setStepIndex] = useState(initial.stepIndex);
   const [showErrors, setShowErrors] = useState(false);
   const [pinned, setPinned] = useState<StepIssue[] | null>(null);
+  // The list as it was at the failed attempt: it does not change while the student types.
+  const [summary, setSummary] = useState<ShownIssue[]>([]);
   const [draftNotice, setDraftNotice] = useState(initial.draftRestored);
   const [saveFailed, setSaveFailed] = useState(false);
   const [announcement, setAnnouncement] = useState("");
-  const [, setAttempts] = useState(0);
+  // Bumped to render again (and so run the focus effect) when nothing else in the state changed.
+  const [, setFocusNonce] = useState(0);
 
   const stepId: StepId = STEPS[stepIndex] ?? "bac";
   const headingRef = useRef<HTMLHeadingElement>(null);
   const summaryRef = useRef<HTMLDivElement>(null);
   const pendingFocus = useRef<FocusTarget | null>(null);
-  const autosave = useDraftAutosave(form, stepIndex, baseline);
+  const submitting = useRef(false);
+  const dismissingReset = useRef(false);
+  const { suspend, resume } = useDraftAutosave(form, stepIndex, baseline);
 
   useEffect(() => {
     const target = pendingFocus.current;
@@ -83,6 +80,25 @@ export function ProfileWizard({
     else if (target === "heading") headingRef.current?.focus();
     else document.getElementById(target.id)?.focus();
   });
+
+  // A store that went back to empty (Clear my data) while this form holds answers.
+  const storeState = profile.state;
+  const previousStore = useRef(storeState);
+  useEffect(() => {
+    const previous = previousStore.current;
+    previousStore.current = storeState;
+    if (previous === storeState || previous.status === "unhydrated") return;
+    if (storeState.status !== "none") return;
+    if (previous.status === "reset" && dismissingReset.current) {
+      dismissingReset.current = false;
+      return;
+    }
+    if (previous.status === "none" && previous.storageAvailable !== storeState.storageAvailable) {
+      return;
+    }
+    suspend();
+    onCleared();
+  }, [storeState, suspend, onCleared]);
 
   const stepTitle = (id: StepId) => t(`steps.${id}.title`);
   const progressLabel = (index: number): string => {
@@ -96,7 +112,7 @@ export function ProfileWizard({
         });
   };
 
-  // Errors are recomputed as the student edits, so a fixed field loses its message at once.
+  // Inline errors are recomputed as the student edits, so a fixed field loses its message at once.
   const issues = useMemo(() => {
     if (pinned !== null) return pinned;
     return showErrors && stepId !== "review" ? validateStep(stepId, form, core) : [];
@@ -121,7 +137,9 @@ export function ProfileWizard({
     setStepIndex(index);
     setShowErrors(false);
     setPinned(null);
+    setSummary([]);
     setSaveFailed(false);
+    setDraftNotice(false);
     setAnnouncement(progressLabel(index));
     pendingFocus.current = "heading";
   };
@@ -130,30 +148,38 @@ export function ProfileWizard({
     pendingFocus.current = { id };
   }, []);
 
-  const showSummary = (target: FocusTarget) => {
+  const showFailedAttempt = (list: readonly StepIssue[]) => {
+    setSummary(shownIssues(t, list, form, locale));
     setShowErrors(true);
-    pendingFocus.current = target;
-    setAttempts((count) => count + 1);
+    pendingFocus.current = "summary";
+    setFocusNonce((count) => count + 1);
   };
 
-  const submit = () => {
+  const submit = async () => {
+    if (submitting.current) return;
+    submitting.current = true;
+    // Loaded on demand: the review step is the only place that builds the profile.
+    const { buildProfile } = await import("@/lib/profile/form/build");
     const result = buildProfile(form, core);
     if (!result.ok) {
+      submitting.current = false;
       const target = stepOfFirstIssue(result.issues);
       if (target === "review") {
         setSaveFailed(true);
         return;
       }
+      const forStep = result.issues.filter((issue) => pathStep(issue.path) === target);
       setStepIndex(STEPS.indexOf(target));
-      setPinned(result.issues.filter((issue) => pathStep(issue.path) === target));
+      setPinned(forStep);
       setAnnouncement(progressLabel(STEPS.indexOf(target)));
-      showSummary("summary");
+      showFailedAttempt(forStep);
       return;
     }
-    autosave.suspend();
+    suspend();
     const saved = profile.save(result.profile);
     if (!saved.ok) {
-      autosave.resume();
+      submitting.current = false;
+      resume();
       setSaveFailed(true);
       return;
     }
@@ -163,14 +189,20 @@ export function ProfileWizard({
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (stepId === "review") {
-      submit();
+      void submit();
       return;
     }
-    if (validateStep(stepId, form, core).length > 0) {
-      showSummary("summary");
+    const found = validateStep(stepId, form, core);
+    if (found.length > 0) {
+      showFailedAttempt(found);
       return;
     }
     goTo(stepIndex + 1);
+  };
+
+  const dismissReset = () => {
+    dismissingReset.current = true;
+    profile.dismissReset();
   };
 
   const state = profile.state;
@@ -180,7 +212,7 @@ export function ProfileWizard({
   const why = t(`steps.${stepId}.why`);
 
   return (
-    <div className="lg:grid lg:grid-cols-[minmax(0,40rem)_minmax(0,16rem)] lg:justify-center lg:gap-12">
+    <div className={PAGE_GRID}>
       <form
         noValidate
         aria-labelledby="profile-title"
@@ -195,7 +227,7 @@ export function ProfileWizard({
         </div>
 
         {showReset ? (
-          <Notice dismissLabel={t("common.dismiss")} onDismiss={profile.dismissReset}>
+          <Notice dismissLabel={t("common.dismiss")} onDismiss={dismissReset}>
             {t("notices.reset")}
           </Notice>
         ) : null}
@@ -212,7 +244,7 @@ export function ProfileWizard({
         </div>
 
         <ErrorSummary
-          issues={shown}
+          issues={summary}
           summaryRef={summaryRef}
           onFocusField={(id) => document.getElementById(id)?.focus()}
         />
@@ -230,10 +262,7 @@ export function ProfileWizard({
             <details className="group rounded-lg border border-border lg:hidden">
               <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-2 px-4 text-base font-medium [&::-webkit-details-marker]:hidden">
                 {t("aside.whyPhone")}
-                <ChevronDown
-                  aria-hidden="true"
-                  className="size-4 transition-transform group-open:rotate-180"
-                />
+                <ChevronDownIcon className="size-4 transition-transform group-open:rotate-180" />
               </summary>
               <p className="px-4 pb-4 text-base text-muted-foreground">{why}</p>
             </details>
@@ -260,13 +289,13 @@ export function ProfileWizard({
           <div className="flex gap-3">
             {stepIndex === 0 ? null : (
               <Button type="button" variant="outline" size="lg" onClick={() => goTo(stepIndex - 1)}>
-                <ArrowLeft aria-hidden="true" data-icon="inline-start" className="rtl:rotate-180" />
+                <ArrowIcon direction="back" data-icon="inline-start" />
                 {t("common.back")}
               </Button>
             )}
             <Button type="submit" size="lg" className="flex-1 lg:flex-none">
               {stepId === "review" ? lastLabel : t("common.next")}
-              <ArrowRight aria-hidden="true" data-icon="inline-end" className="rtl:rotate-180" />
+              <ArrowIcon direction="forward" data-icon="inline-end" />
             </Button>
           </div>
         </div>

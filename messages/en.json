@@ -294,7 +294,8 @@
     },
     "title": {
       "create": "Create your profile",
-      "edit": "Edit your profile"
+      "edit": "Edit your profile",
+      "neutral": "Your profile"
     },
     "intro": "Four short steps, then a last check. Every question is required unless it says optional.",
     "progress": {
@@ -308,7 +309,7 @@
       },
       "languages": {
         "title": "Languages",
-        "why": "Most programs teach in French, English or German and ask for a level. Don't know yours? Choose \"I don't know\": the result will be marked \"to be checked\"."
+        "why": "Programs may ask for a language level. Don't know yours? Choose \"I don't know\": the result will be marked \"to be checked\"."
       },
       "preferences": {
         "title": "What you want",
@@ -356,6 +357,7 @@
       },
       "status": {
         "legend": "Do you already have your Bac?",
+        "short": "Bac status",
         "obtained": "Yes, I have my result",
         "expected": "Not yet, I am taking it this year"
       },
@@ -488,7 +490,7 @@
       "notGiven": "Not given",
       "noPreference": "No preference",
       "allCountries": "All countries",
-      "levelWithCertificate": "{level}, certificate: {certificate}",
+      "levelWithCertificate": "{level}, certificate: <cert>{certificate}</cert>",
       "budgetLine": "{amount} {period, select, month {per month} year {per year} other {}}",
       "editStep": "Edit: {step}"
     },

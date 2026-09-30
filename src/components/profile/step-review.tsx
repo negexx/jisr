@@ -6,10 +6,13 @@ import { formatGrade, intlLocale, parseLocaleDecimal } from "@/lib/format";
 import { gradingScaleFor } from "@/lib/profile/form/options";
 import type { StepId } from "@/lib/profile/form/state";
 
-import { languageName, textOr } from "./display-names";
+import { languageName, lookupName } from "./display-names";
+import { OfficialName } from "./official-name";
 import { useStep } from "./step-context";
 
 const WHOLE_AMOUNT = /^[0-9]{1,7}$/;
+// The only currencies the budget step offers; anything else in an old draft is shown as typed.
+const KNOWN_CURRENCIES = ["EUR", "MAD"];
 
 function Row({ label, children }: { label: string; children: ReactNode }) {
   return (
@@ -54,70 +57,59 @@ export function StepReview() {
     const value = parseLocaleDecimal(typed);
     return value === null || scale === undefined ? typed : formatGrade(value, scale, locale);
   };
+  const orNotGiven = (value: string, show: (value: string) => ReactNode): ReactNode =>
+    value.trim() === "" ? notGiven : show(value);
 
-  const country = (code: string): string => {
-    const found = core.countries.find((candidate) => candidate.code === code);
-    return found === undefined ? code : textOr(text, found.name, code);
-  };
+  const country = (code: string) => lookupName(core, text, "country", code).label;
   const type = core.credentialTypes.find((candidate) => candidate.slug === credential.type);
   const track = type?.tracks.find((candidate) => candidate.slug === credential.track);
-  const withGloss = (name: string, gloss: string | null | undefined): ReactNode => {
-    const glossText = gloss === null || gloss === undefined ? undefined : text(gloss)?.text;
-    return (
-      <>
-        <bdi>{name}</bdi>
-        {glossText === undefined ? null : (
-          <span className="text-muted-foreground"> ({glossText})</span>
-        )}
-      </>
-    );
-  };
-
-  const subjectName = (slug: string): string => {
-    const found = core.subjects.find((candidate) => candidate.slug === slug);
-    return found === undefined ? slug : textOr(text, found.name, slug);
-  };
-  const fieldNames = form.fields.map((slug) => {
-    const found = core.fields.find((candidate) => candidate.slug === slug);
-    return found === undefined ? slug : textOr(text, found.name, slug);
-  });
 
   const amountLine = (): ReactNode => {
     const amount = budget.amount.trim();
     if (amount === "") return notGiven;
-    if (!WHOLE_AMOUNT.test(amount)) return <bdi dir="ltr">{amount}</bdi>;
+    if (!WHOLE_AMOUNT.test(amount) || !KNOWN_CURRENCIES.includes(budget.currency)) {
+      return <bdi dir="ltr">{amount}</bdi>;
+    }
     // Whole amounts only: no cents for a budget the student typed as a whole number.
     const formatted = new Intl.NumberFormat(intlLocale(locale), {
       style: "currency",
       currency: budget.currency,
       maximumFractionDigits: 0,
     }).format(Number(amount));
-    return t("review.budgetLine", {
-      amount: formatted,
-      period: budget.period,
-    });
+    return t("review.budgetLine", { amount: formatted, period: budget.period });
   };
 
   return (
     <div className="flex flex-col gap-8">
       <Section step="bac">
-        <Row label={t("fields.nationality.label")}>{country(form.nationality)}</Row>
-        <Row label={t("fields.credentialCountry.label")}>{country(credential.country)}</Row>
+        <Row label={t("fields.nationality.label")}>{orNotGiven(form.nationality, country)}</Row>
+        <Row label={t("fields.credentialCountry.label")}>
+          {orNotGiven(credential.country, country)}
+        </Row>
         <Row label={t("fields.credentialType.label")}>
-          {type === undefined ? notGiven : withGloss(type.name, type.gloss)}
+          {type === undefined ? (
+            notGiven
+          ) : (
+            <OfficialName name={type.name} gloss={text(type.gloss)} />
+          )}
         </Row>
         <Row label={t("fields.track.label")}>
-          {track === undefined ? notGiven : withGloss(track.name, track.gloss)}
+          {track === undefined ? (
+            notGiven
+          ) : (
+            <OfficialName
+              name={track.name}
+              gloss={track.gloss === null ? undefined : text(track.gloss)}
+            />
+          )}
         </Row>
         <Row label={t("fields.status.legend")}>
           {credential.status === "" ? notGiven : t(`fields.status.${credential.status}`)}
         </Row>
         <Row label={t("fields.overall.label")}>
-          {credential.overall.trim() === "" ? (
-            notGiven
-          ) : (
-            <bdi dir="ltr">{gradeText(credential.overall.trim())}</bdi>
-          )}
+          {orNotGiven(credential.overall, (value) => (
+            <bdi dir="ltr">{gradeText(value.trim())}</bdi>
+          ))}
         </Row>
         <Row label={t("fields.subjects.legend")}>
           {credential.subjects.length === 0 ? (
@@ -127,14 +119,23 @@ export function StepReview() {
               {credential.subjects.map((row, index) => (
                 // biome-ignore lint/suspicious/noArrayIndexKey: rows are positional
                 <li key={index} className="flex justify-between gap-4">
-                  <span>{subjectName(row.subject)}</span>
-                  <bdi dir="ltr">{gradeText(row.grade.trim())}</bdi>
+                  <span>
+                    {orNotGiven(
+                      row.subject,
+                      (slug) => lookupName(core, text, "subject", slug).label,
+                    )}
+                  </span>
+                  {orNotGiven(row.grade, (value) => (
+                    <bdi dir="ltr">{gradeText(value.trim())}</bdi>
+                  ))}
                 </li>
               ))}
             </ul>
           )}
         </Row>
-        <Row label={t("fields.years.label")}>{form.priorHigherEducationYears}</Row>
+        <Row label={t("fields.years.label")}>
+          {orNotGiven(form.priorHigherEducationYears, (years) => years.trim())}
+        </Row>
       </Section>
 
       <Section step="languages">
@@ -148,7 +149,11 @@ export function StepReview() {
             <Row key={index} label={languageName(row.language, locale)}>
               {certificate === undefined
                 ? level
-                : t("review.levelWithCertificate", { level, certificate: certificate.name })}
+                : t.rich("review.levelWithCertificate", {
+                    level,
+                    certificate: certificate.name,
+                    cert: (chunks) => <bdi>{chunks}</bdi>,
+                  })}
             </Row>
           );
         })}
@@ -156,7 +161,9 @@ export function StepReview() {
 
       <Section step="preferences">
         <Row label={t("fields.fieldsOfStudy.legend")}>
-          {fieldNames.length === 0 ? notGiven : list.format(fieldNames)}
+          {form.fields.length === 0
+            ? notGiven
+            : list.format(form.fields.map((slug) => lookupName(core, text, "field", slug).label))}
         </Row>
         <Row label={t("fields.studyLanguages.legend")}>
           {form.studyLanguages.length === 0

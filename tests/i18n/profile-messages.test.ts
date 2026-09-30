@@ -77,13 +77,16 @@ describe("profile messages: contract", () => {
       locale: WORST_ARABIC_LOCALE,
       messages: catalogs[locale],
       onError: (error) => errors.push(error),
-    }) as unknown as (key: string, values: Record<string, string>) => string;
+    }) as unknown as {
+      rich: (key: string, values: Record<string, unknown>) => unknown;
+    };
     for (const [key, value] of profile[locale]) {
       const { names, selectors } = argumentsOf(value);
       for (const branch of ["month", "year"]) {
-        const values: Record<string, string> = {};
+        const values: Record<string, unknown> = { cert: (chunks: unknown) => chunks };
         for (const name of names) values[name] = selectors.includes(name) ? branch : "12";
-        expect(t(key, values), key).not.toMatch(ARABIC_INDIC_DIGIT);
+        const rendered = [t.rich(key, values)].flat(2).join("");
+        expect(rendered, key).not.toMatch(ARABIC_INDIC_DIGIT);
       }
     }
     expect(errors).toEqual([]);
