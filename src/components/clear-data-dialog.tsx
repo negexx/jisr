@@ -1,8 +1,7 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import type { RefObject } from "react";
-
+import type { ClearDataCopy } from "@/components/clear-data-button";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -16,13 +15,13 @@ import {
 import { profileStore } from "@/lib/profile/store";
 
 type Props = {
+  copy: ClearDataCopy;
   open: boolean;
   onOpenChange: (open: boolean) => void;
   returnFocusTo: RefObject<HTMLElement | null>;
 };
 
-export function ClearDataDialog({ open, onOpenChange, returnFocusTo }: Props) {
-  const t = useTranslations("clearData");
+export function ClearDataDialog({ copy, open, onOpenChange, returnFocusTo }: Props) {
   return (
     <AlertDialog open={open} onOpenChange={onOpenChange}>
       {/* There is no Radix trigger to hand focus back to, so return it to the button explicitly. */}
@@ -33,11 +32,11 @@ export function ClearDataDialog({ open, onOpenChange, returnFocusTo }: Props) {
         }}
       >
         <AlertDialogHeader>
-          <AlertDialogTitle>{t("title")}</AlertDialogTitle>
-          <AlertDialogDescription>{t("description")}</AlertDialogDescription>
+          <AlertDialogTitle>{copy.title}</AlertDialogTitle>
+          <AlertDialogDescription>{copy.description}</AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>{t("cancel")}</AlertDialogCancel>
+          <AlertDialogCancel>{copy.cancel}</AlertDialogCancel>
           <AlertDialogAction
             variant="destructive"
             onClick={(event) => {
@@ -47,7 +46,7 @@ export function ClearDataDialog({ open, onOpenChange, returnFocusTo }: Props) {
               onOpenChange(false);
             }}
           >
-            {t("confirm")}
+            {copy.confirm}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

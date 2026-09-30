@@ -9,7 +9,7 @@ import { DRAFT_KEY, PROFILE_KEY } from "@/lib/profile/storage";
 import { profileStore } from "@/lib/profile/store";
 
 import { profile } from "../fixtures/domain/builders";
-import { renderIntl } from "./intl";
+import { renderIntl, shellProps } from "./intl";
 
 afterEach(() => {
   cleanup();
@@ -49,7 +49,7 @@ describe.each(["fr", "ar", "en"] as const)("ClearDataButton (%s)", (locale) => {
   it("opens a dialog that explains what is removed, without clearing anything yet", async () => {
     const clear = vi.spyOn(profileStore, "clear");
     const user = userEvent.setup();
-    renderIntl(<ClearDataButton />, locale);
+    renderIntl(<ClearDataButton copy={shellProps(locale).clearData} />, locale);
     expect(screen.queryByRole("alertdialog")).toBeNull();
 
     await user.click(screen.getByRole("button", { name: copy.trigger }));
@@ -62,7 +62,7 @@ describe.each(["fr", "ar", "en"] as const)("ClearDataButton (%s)", (locale) => {
   it("does not clear when the student cancels, and returns focus to the trigger", async () => {
     const clear = vi.spyOn(profileStore, "clear");
     const user = userEvent.setup();
-    renderIntl(<ClearDataButton />, locale);
+    renderIntl(<ClearDataButton copy={shellProps(locale).clearData} />, locale);
     const trigger = screen.getByRole("button", { name: copy.trigger });
     await user.click(trigger);
     await user.click(await screen.findByRole("button", { name: copy.cancel }));
@@ -75,7 +75,7 @@ describe.each(["fr", "ar", "en"] as const)("ClearDataButton (%s)", (locale) => {
   it("clears exactly once on confirm, then closes", async () => {
     const clear = vi.spyOn(profileStore, "clear").mockImplementation(() => {});
     const user = userEvent.setup();
-    renderIntl(<ClearDataButton />, locale);
+    renderIntl(<ClearDataButton copy={shellProps(locale).clearData} />, locale);
     await user.click(screen.getByRole("button", { name: copy.trigger }));
     const dialog = await screen.findByRole("alertdialog");
 
@@ -93,7 +93,7 @@ describe("ClearDataButton with the real store", () => {
     window.localStorage.setItem("unrelated.key", "keep me");
     expect(window.localStorage.getItem(PROFILE_KEY)).not.toBeNull();
     const user = userEvent.setup();
-    renderIntl(<ClearDataButton />, "en");
+    renderIntl(<ClearDataButton copy={shellProps("en").clearData} />, "en");
     const trigger = screen.getByRole("button", { name: "Clear my data" });
     await user.click(trigger);
     const dialog = await screen.findByRole("alertdialog");

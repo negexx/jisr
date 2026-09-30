@@ -22,6 +22,21 @@ export function IntlWrapper({ locale, children }: { locale: AppLocale; children:
   );
 }
 
+// The shell's client leaves take formatted strings as props; tests build them from the real catalogues.
+export function shellProps(locale: AppLocale) {
+  const { nav, clearData } = catalogs[locale];
+  return {
+    nav: {
+      label: nav.label,
+      items: [
+        { href: "/profile", label: nav.profile },
+        { href: "/matches", label: nav.matches },
+      ],
+    },
+    clearData: { ...clearData },
+  };
+}
+
 export function renderIntl(ui: ReactElement, locale: AppLocale = "fr") {
   return render(ui, {
     wrapper: ({ children }) => <IntlWrapper locale={locale}>{children}</IntlWrapper>,

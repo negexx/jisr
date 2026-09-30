@@ -1,7 +1,7 @@
 import { Geist, Noto_Sans_Arabic } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { ReactNode } from "react";
 
 import { DirectionProvider } from "@/components/direction-provider";
@@ -9,7 +9,6 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { localeDirection } from "@/i18n/direction";
 import { routing } from "@/i18n/routing";
-import { pickMessages } from "@/lib/i18n/client-messages";
 
 import "../globals.css";
 
@@ -32,17 +31,16 @@ export default async function LocaleLayout({ children, params }: Props) {
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const dir = localeDirection(locale);
-  const [messages, t] = await Promise.all([
-    getMessages(),
-    getTranslations({ locale, namespace: "shell" }),
-  ]);
+  const t = await getTranslations({ locale, namespace: "shell" });
   return (
     <html lang={locale} dir={dir} className={`${geistSans.variable} ${notoSansArabic.variable}`}>
       <body className="flex min-h-dvh flex-col antialiased">
-        {/* Only the shell's namespaces reach the client; pages add their own nested provider. */}
-        <NextIntlClientProvider
-          messages={pickMessages(messages, ["shell", "footer", "clearData", "nav"])}
-        >
+        {/*
+          No catalogue at the root: the shell's client leaves get formatted strings as props (about
+          2 KB gzipped less than shipping the shell namespaces). A page that needs many client
+          strings adds its own nested provider.
+        */}
+        <NextIntlClientProvider messages={null}>
           <DirectionProvider dir={dir}>
             <a
               href="#main"
