@@ -559,7 +559,7 @@
       "ok": "{n, plural, one {{count} looks possible} other {{count} look possible}}",
       "check": "{count} to check",
       "foundation": "{count} through a foundation year",
-      "failed": "{count} with requirements not met",
+      "failed": "{count} with published requirements not met",
       "navLabel": "Jump to a group"
     },
     "groups": {

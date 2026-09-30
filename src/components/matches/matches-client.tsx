@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useMemo, useState } from "react";
 
@@ -62,12 +63,15 @@ function CountsNav({ view, locale }: { view: OkView; locale: AppLocale }) {
           <li key={group}>
             <a
               href={`#${groupHeadingId(group)}`}
-              className="inline-flex min-h-11 items-center rounded-full border border-border bg-card px-4 text-base font-medium text-primary underline-offset-4 hover:underline"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border bg-card px-4 text-base font-medium text-primary hover:bg-muted"
             >
-              {t(group, {
-                n: view.counts[group],
-                count: displayNumber(view.counts[group], locale),
-              })}
+              <span className="underline underline-offset-4">
+                {t(group, {
+                  n: view.counts[group],
+                  count: displayNumber(view.counts[group], locale),
+                })}
+              </span>
+              <ArrowDown aria-hidden="true" className="size-4 shrink-0" />
             </a>
           </li>
         ))}

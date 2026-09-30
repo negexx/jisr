@@ -77,6 +77,8 @@ function hiddenSummary(locale: AppLocale, count: number): string {
   );
 }
 
+const PUBLISHED = { en: /published/i, fr: /publiées?/i, ar: /المنشورة/u };
+
 const HIDDEN_SLUGS = {
   plain: Object.keys(E2E_EXPECTED.hidden.E2E_PROFILE),
   xb: Object.keys(E2E_EXPECTED.hidden.E2E_PROFILE_XB_ONLY),
@@ -208,6 +210,13 @@ describe.each(LOCALES)("My Matches: the four groups (%s)", (locale) => {
     expect(complete?.textContent).not.toContain(t.domain.cost.partialTotal);
   });
 
+  it("keeps the word published in the not-met chip so it never reads as a verdict", async () => {
+    await renderFor(locale, E2E_PROFILE);
+    const nav = screen.getByRole("navigation", { name: t.matches.counts.navLabel });
+    const chip = within(nav).getAllByRole("link").at(-1);
+    expect(chip?.textContent).toMatch(PUBLISHED[locale]);
+  });
+
   it("names the counts as jump links to the groups, leaving out the empty ones", async () => {
     const { container } = await renderFor(locale, E2E_PROFILE);
     const translate = createTranslator({
@@ -228,6 +237,11 @@ describe.each(LOCALES)("My Matches: the four groups (%s)", (locale) => {
       expect(links[index]?.getAttribute("href")).toBe(`#${target?.id}`);
       expect(target?.id).toMatch(/^matches-group-/);
       expect(links[index]?.className).toContain("min-h-11");
+      // Marked as links, unlike the profile chips: underlined label and a decorative down arrow.
+      expect(links[index]?.querySelector("span.underline")).not.toBeNull();
+      const arrow = links[index]?.querySelector("svg");
+      expect(arrow?.getAttribute("aria-hidden")).toBe("true");
+      expect(arrow?.getAttribute("class")).not.toMatch(/rotate/);
     }
     expect(nav.textContent).not.toMatch(/[٠-٩]/u);
   });

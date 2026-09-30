@@ -559,7 +559,7 @@
       "ok": "{n, plural, one {{count} semble possible} other {{count} semblent possibles}}",
       "check": "{count} à vérifier",
       "foundation": "{count} via une année préparatoire",
-      "failed": "{count} avec conditions non remplies",
+      "failed": "{n, plural, one {{count} à la condition publiée non remplie} other {{count} aux conditions publiées non remplies}}",
       "navLabel": "Aller à un groupe"
     },
     "groups": {
