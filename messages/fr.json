@@ -506,7 +506,9 @@
     "seeLines": "Voir chaque poste de coût"
   },
   "reasonList": {
-    "sources": "Sources"
+    "sources": "Sources",
+    "whySummary": "Pourquoi ? {counts}",
+    "count": "{outcome} : {count}"
   },
   "matchCard": {
     "level": {
@@ -514,7 +516,7 @@
     },
     "taughtIn": "Enseigné en",
     "languagesUnknown": "Langues d'enseignement : à vérifier",
-    "institutionCity": "{institution}, {city}",
+    "institutionCity": "<place>{institution}</place>, <place>{city}</place>",
     "facts": {
       "estimatedCost": "Coût estimé, première année",
       "deadline": "Date limite",

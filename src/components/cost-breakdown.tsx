@@ -6,14 +6,10 @@ import { useId } from "react";
 import type { CostCategory, CostEstimate, CostLine } from "@/domain/types";
 import { formatMoneyRange } from "@/lib/format";
 import type { DataText } from "@/lib/snapshot/text";
+import { DISCLOSURE_SUMMARY_CLASS, DisclosureChevron } from "./disclosure-chevron";
 import { SourceBadge } from "./source-badge";
 
 type Variant = "compact" | "full";
-
-// ar-MA money starts with a right-to-left mark: inside a range it flips the order of the two ends (127,00 before 81,00), so the marks are dropped and the wrapping <bdi dir="ltr"> alone sets the direction.
-export function withoutBidiMarks(text: string): string {
-  return text.replace(/[\u200e\u200f\u061c]/gu, "");
-}
 
 const CATEGORIES_WITH_NOTE: readonly CostCategory[] = ["housing", "food"];
 const COUNTED_PERS = ["month", "semester", "year"] as const;
@@ -51,12 +47,12 @@ function LineRow({
       <p className="text-base font-medium">
         {tCost(`category.${line.category}`)}
         {CATEGORIES_WITH_NOTE.includes(line.category) ? (
-          <span
-            aria-describedby={noteId}
-            className="block text-sm font-normal text-muted-foreground"
+          <a
+            href={`#${noteId}`}
+            className="flex min-h-11 w-fit items-center text-sm font-normal text-primary underline underline-offset-4 md:min-h-8"
           >
             {t("seeNote")}
-          </span>
+          </a>
         ) : null}
       </p>
       {amount === null ? (
@@ -72,9 +68,7 @@ function LineRow({
           <div className="flex flex-col text-end @md:text-start">
             <p data-testid="cost-amount" className="text-base font-medium tabular-nums">
               <bdi dir="ltr">
-                {withoutBidiMarks(
-                  formatMoneyRange(amount.min, amount.max, amount.currency, locale),
-                )}
+                {formatMoneyRange(amount.min, amount.max, amount.currency, locale)}
               </bdi>
             </p>
             {isCountedPer(line.per) ? (
@@ -126,9 +120,7 @@ function TotalRows({ cost }: { cost: CostEstimate }) {
             {tCost("estimateTag")}
           </span>
           <span className="text-lg font-semibold tabular-nums">
-            <bdi dir="ltr">
-              {withoutBidiMarks(formatMoneyRange(total.min, total.max, total.currency, locale))}
-            </bdi>
+            <bdi dir="ltr">{formatMoneyRange(total.min, total.max, total.currency, locale)}</bdi>
           </span>
         </p>
       ))}
@@ -183,7 +175,7 @@ export function CostBreakdown({
       data-slot="cost-breakdown"
       data-variant={variant}
       aria-label={caption}
-      className="@container flex flex-col gap-3"
+      className="@container flex flex-col gap-2"
     >
       {compact ? (
         <>
@@ -195,13 +187,14 @@ export function CostBreakdown({
               <span>{tCost("missingLine")}</span>
             </p>
           )}
-          {budgetProvided ? <p className="text-base">{tFit(cost.budgetFit)}</p> : null}
-          <p id={noteId} className="text-sm text-muted-foreground">
+          {budgetProvided ? <p className="text-base leading-snug">{tFit(cost.budgetFit)}</p> : null}
+          <p id={noteId} className="text-sm leading-snug text-muted-foreground">
             {tCost("tenMonthNote", { months: monthsLabel })}
           </p>
-          <details className="group">
-            <summary className="inline-flex min-h-11 cursor-pointer items-center text-base text-primary underline underline-offset-4 md:min-h-8">
-              {t("seeLines")}
+          <details>
+            <summary className={DISCLOSURE_SUMMARY_CLASS}>
+              <DisclosureChevron />
+              <span className="text-base underline underline-offset-4">{t("seeLines")}</span>
             </summary>
             {lines}
           </details>

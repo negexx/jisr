@@ -34,9 +34,12 @@ afterEach(() => {
   consoleWatch.restore();
 });
 
-function renderCard(model: MatchCardModel, locale: AppLocale) {
+function renderCard(model: MatchCardModel, locale: AppLocale, budgetProvided = false) {
   const months = formatNumber(model.cost.academicYearMonths, locale) ?? "?";
-  return renderWithMessages(<MatchCard model={model} monthsLabel={months} />, locale);
+  return renderWithMessages(
+    <MatchCard model={model} budgetProvided={budgetProvided} monthsLabel={months} />,
+    locale,
+  );
 }
 
 const GROUP_PROGRAMS = [
@@ -115,12 +118,25 @@ describe("MatchCard: header and status", () => {
     expect(container.querySelector("header [data-slot='source-badge']")).toBeNull();
   });
 
-  it("shows the summary text on desktop only, with its text note", () => {
+  it("shows the summary text on desktop only, with its text note outside any clamp", () => {
     const model = journey.card("fr", E2E_SLUGS.frOnly);
-    const { container } = renderCard(model, "en");
-    const summary = container.querySelector("header p.hidden");
-    expect(summary?.className).toContain("md:line-clamp-2");
-    expect(summary?.textContent).toContain(model.summaryText?.text ?? "missing");
+    const long: MatchCardModel = {
+      ...model,
+      summaryText: {
+        text: "Premiere ligne du resume. Deuxieme ligne du resume. Troisieme ligne du resume.",
+        note: "french_fallback",
+      },
+    };
+    const { container } = renderCard(long, "en");
+    const summary = container.querySelector('[data-testid="match-summary"]');
+    expect(summary?.className).toContain("hidden");
+    expect(summary?.className).toContain("md:block");
+    expect(summary?.textContent).toContain("Troisieme ligne du resume.");
+    const note = [...container.querySelectorAll("header small")].find(
+      (small) => small.textContent === catalogs.en.domain.textNote.french_fallback,
+    );
+    expect(note).toBeDefined();
+    expect(note?.closest("[class*='line-clamp']")).toBeNull();
   });
 });
 
@@ -207,16 +223,30 @@ describe("MatchCard: facts", () => {
     expect(detail.querySelectorAll('[data-testid="cost-row"]')).toHaveLength(7);
   });
 
-  it("shows the budget fit only when the profile has a budget", () => {
-    const fit = catalogs.en.domain.budgetFit;
-    const plain = renderCard(journey.card("en", E2E_SLUGS.ok), "en");
-    for (const sentence of Object.values(fit))
-      expect(plain.container.textContent).not.toContain(sentence);
+  it.each(
+    LOCALES,
+  )("shows the budget fit line, even when it is unknown, whenever a budget was given (%s)", (locale) => {
+    const fit = catalogs[locale].domain.budgetFit;
+    const partial = journey.card(locale, E2E_SLUGS.foundation, "budget");
+    expect(partial.cost.complete).toBe(false);
+    expect(partial.cost.budgetFit).toBe("unknown");
+    const given = renderCard(partial, locale, true);
+    expect(given.container.textContent).toContain(fit.unknown);
     cleanup();
-    const withBudget = journey.card("en", E2E_SLUGS.ok, "budget");
-    expect(withBudget.cost.budgetFit).not.toBe("unknown");
-    const { container } = renderCard(withBudget, "en");
-    expect(container.textContent).toContain(fit[withBudget.cost.budgetFit]);
+    const complete = journey.card(locale, E2E_SLUGS.ok, "budget");
+    expect(complete.cost.budgetFit).not.toBe("unknown");
+    const line = renderCard(complete, locale, true);
+    expect(line.container.textContent).toContain(fit[complete.cost.budgetFit]);
+  });
+
+  it("shows no budget fit line without a budget", () => {
+    const fit = catalogs.en.domain.budgetFit;
+    for (const slug of [E2E_SLUGS.ok, E2E_SLUGS.foundation]) {
+      const { container } = renderCard(journey.card("en", slug), "en", false);
+      for (const sentence of Object.values(fit))
+        expect(container.textContent).not.toContain(sentence);
+      cleanup();
+    }
   });
 
   it.each(
@@ -316,5 +346,114 @@ describe("MatchCard: hygiene", () => {
     const { container } = renderCard(journey.card("en", E2E_SLUGS.ok), "en");
     expect(container.querySelectorAll("article")).toHaveLength(1);
     expect(container.querySelectorAll("[data-group][data-size]")).toHaveLength(1);
+  });
+});
+
+describe("MatchCard: density and layout", () => {
+  function factLabels(container: HTMLElement): string[] {
+    return [...container.querySelectorAll("dl > div > dt")].map((dt) => dt.textContent ?? "");
+  }
+
+  it.each(LOCALES)("puts the estimated cost last and across both columns (%s)", (locale) => {
+    const { container } = renderCard(journey.card(locale, E2E_SLUGS.ok), locale);
+    const labels = catalogs[locale].matchCard.facts;
+    expect(factLabels(container)).toEqual([
+      catalogs[locale].domain.cost.category.tuition,
+      labels.deadline,
+      labels.application,
+      labels.estimatedCost,
+    ]);
+    const cost = [...container.querySelectorAll("dl > div")].at(-1);
+    expect(cost?.className).toContain("md:col-span-2");
+  });
+
+  it.each(LOCALES)("shows the application on two lines plus its source (%s)", (locale) => {
+    const model = journey.card(locale, E2E_SLUGS.ok);
+    const { container } = renderCard(model, locale);
+    const term = [...container.querySelectorAll("dt")].find(
+      (dt) => dt.textContent === catalogs[locale].matchCard.facts.application,
+    );
+    const detail = term?.nextElementSibling;
+    expect(detail?.querySelectorAll(":scope > p")).toHaveLength(2);
+    expect(detail?.querySelector("bdi")?.textContent).toBe(model.applicationChannel?.name);
+  });
+
+  it.each(LOCALES)("folds the reasons from three up behind a Why? disclosure (%s)", (locale) => {
+    const model = journey.card(locale, E2E_SLUGS.ok);
+    expect(model.topReasons.length).toBeGreaterThanOrEqual(3);
+    const { container } = renderCard(model, locale);
+    const list = container.querySelector("[data-slot='reason-list']");
+    const all = [...(list?.querySelectorAll("li[data-code]") ?? [])];
+    expect(all).toHaveLength(model.topReasons.length);
+    expect(all[0]?.closest("details")).toBeNull();
+    expect(all.slice(1).every((item) => item.closest("details[data-slot='why']") !== null)).toBe(
+      true,
+    );
+  });
+
+  it.each(
+    LOCALES,
+  )("shows one grouped Sources details for the reasons, none per item (%s)", (locale) => {
+    const model = journey.card(locale, E2E_SLUGS.ok);
+    const { container } = renderCard(model, locale);
+    const list = container.querySelector("[data-slot='reason-list']");
+    const sources = [...(list?.querySelectorAll("details") ?? [])].filter(
+      (details) =>
+        details.querySelector("summary")?.textContent === catalogs[locale].reasonList.sources,
+    );
+    expect(sources).toHaveLength(1);
+    expect(sources[0]?.closest("li")).toBeNull();
+  });
+
+  it("drops the body of passing reasons on the card", () => {
+    const model = journey.card("en", E2E_SLUGS.ok);
+    expect(model.topReasons.some((reason) => reason.outcome === "pass")).toBe(true);
+    const { container } = renderCard(model, "en");
+    expect(container.textContent).not.toContain(catalogs.en.domain.reason.code.ok);
+  });
+
+  it.each(
+    LOCALES,
+  )("says the foundation idea once: route text, no repeated reason body (%s)", (locale) => {
+    const model = journey.card(locale, E2E_SLUGS.foundation);
+    const { container } = renderCard(model, locale);
+    expect(container.textContent).toContain(catalogs[locale].domain.route.foundation);
+    expect(container.textContent).not.toContain(
+      catalogs[locale].domain.reason.code.route_foundation,
+    );
+    expect(container.textContent).toContain(catalogs[locale].domain.reason.kind.route);
+  });
+
+  it("keeps the source badges of the facts and the cost caveats", () => {
+    const model = journey.card("en", E2E_SLUGS.foundation);
+    const { container } = renderCard(model, "en");
+    const dl = container.querySelector("dl");
+    expect(dl?.querySelectorAll("[data-slot='source-badge']").length).toBeGreaterThanOrEqual(3);
+    expect(dl?.querySelector("[data-testid='cost-partial']")).not.toBeNull();
+    expect(dl?.querySelector("p[id$='-months-note']")).not.toBeNull();
+  });
+
+  it("gives the same program distinct title ids when it renders twice", () => {
+    const model = journey.card("en", E2E_SLUGS.ok);
+    const twice = renderWithMessages(
+      <>
+        <MatchCard model={model} budgetProvided={false} monthsLabel="10" />
+        <MatchCard model={model} budgetProvided={false} monthsLabel="10" />
+      </>,
+      "en",
+    );
+    const ids = [...twice.container.querySelectorAll("article")].map((a) =>
+      a.getAttribute("aria-labelledby"),
+    );
+    expect(ids).toHaveLength(2);
+    expect(new Set(ids).size).toBe(2);
+    for (const id of ids) expect(twice.container.querySelectorAll(`[id="${id}"]`)).toHaveLength(1);
+  });
+
+  it("wraps the institution and the city in their own bdi", () => {
+    const model = journey.card("ar", E2E_SLUGS.ok);
+    const { container } = renderCard(model, "ar");
+    const bdis = [...container.querySelectorAll("header p > bdi")].map((bdi) => bdi.textContent);
+    expect(bdis).toEqual([model.institutionName, model.cityName]);
   });
 });

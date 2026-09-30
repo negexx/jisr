@@ -198,14 +198,22 @@ describe("CostBreakdown rows", () => {
     expect(setup?.querySelectorAll("small")).toHaveLength(0);
   });
 
-  it("marks housing and food, and only those, with the see-note marker tied to the note", () => {
+  it("marks housing and food, and only those, with a focusable link to the note", () => {
     const { container } = renderCost(COMPLETE, "en");
     const note = container.querySelector("p[id$='-months-note']");
     expect(note).not.toBeNull();
     const marked = rows(container).filter(
-      (row) => row.querySelector(`[aria-describedby="${note?.id}"]`) !== null,
+      (row) => row.querySelector(`a[href="#${note?.id}"]`) !== null,
     );
     expect(marked.map((row) => row.dataset.category)).toEqual(["housing", "food"]);
+    const link = marked[0]?.querySelector("a");
+    expect(link?.textContent).toBe(catalogs.en.costBreakdown.seeNote);
+    expect(link?.hasAttribute("tabindex")).toBe(false);
+  });
+
+  it("shows a chevron on the see-lines disclosure so its state is visible", () => {
+    const { container } = renderCost(COMPLETE, "en", { variant: "compact" });
+    expect(container.querySelector("details > summary svg")).not.toBeNull();
   });
 });
 

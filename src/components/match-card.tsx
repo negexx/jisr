@@ -1,13 +1,15 @@
 // Shared, no "use client": needs the namespaces matchCard, costBreakdown, reasonList and every namespace of its parts (MatchStatusBadge, DeadlineStatus, SourceBadge, CostBreakdown, ReasonList) plus domain.cost and domain.route. The caller passes `monthsLabel` already formatted.
 import { ChevronRight, CircleHelp } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import { useId } from "react";
 
 import type { FactRef } from "@/domain/types";
 import { Link } from "@/i18n/navigation";
 import { formatMoney } from "@/lib/format";
 import type { MatchCardModel } from "@/lib/journey/matches-view";
 import { formatList, languageName } from "@/lib/journey/reasons";
-import { CostBreakdown, withoutBidiMarks } from "./cost-breakdown";
+import { cn } from "@/lib/utils";
+import { CostBreakdown } from "./cost-breakdown";
 import { DeadlineStatus } from "./deadline-status";
 import { LocalizedDataText } from "./localized-data-text";
 import { MatchStatusBadge } from "./match-status-badge";
@@ -15,9 +17,17 @@ import { ReasonList } from "./reason-list";
 import { SourceBadge } from "./source-badge";
 import { buttonVariants } from "./ui/button";
 
-function Fact({ label, children }: { label: string; children: React.ReactNode }) {
+function Fact({
+  label,
+  className,
+  children,
+}: {
+  label: string;
+  className?: string;
+  children: React.ReactNode;
+}) {
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className={cn("flex flex-col gap-1", className)}>
       <dt className="text-sm font-medium text-muted-foreground">{label}</dt>
       <dd className="flex flex-col gap-1.5">{children}</dd>
     </div>
@@ -37,12 +47,21 @@ function channelFact(factRefs: readonly FactRef[]): FactRef | undefined {
   return factRefs.find((fact) => fact.record.startsWith("application-channels/"));
 }
 
-export function MatchCard({ model, monthsLabel }: { model: MatchCardModel; monthsLabel: string }) {
+export function MatchCard({
+  model,
+  budgetProvided,
+  monthsLabel,
+}: {
+  model: MatchCardModel;
+  // The profile has a budget: the domain still answers "unknown" when it cannot compare, and that is said too.
+  budgetProvided: boolean;
+  monthsLabel: string;
+}) {
   const locale = useLocale();
   const t = useTranslations("matchCard");
   const tCost = useTranslations("domain.cost");
   const tRoute = useTranslations();
-  const titleId = `match-${model.slug}-title`;
+  const titleId = `${useId()}-title`;
   const href = `/programs/${model.slug}`;
 
   const languages = model.teachingLanguages.value;
@@ -63,18 +82,20 @@ export function MatchCard({ model, monthsLabel }: { model: MatchCardModel; month
       aria-labelledby={titleId}
       data-group={model.group}
       data-slug={model.slug}
-      className="flex flex-col gap-5 rounded-xl border border-border bg-card p-4 text-card-foreground md:p-6"
+      className="flex flex-col gap-4 rounded-xl border border-border bg-card p-4 text-card-foreground md:p-6"
     >
-      <header className="flex flex-col gap-2">
+      <header className="flex flex-col gap-1.5">
         <h3 id={titleId} className="text-lg font-semibold">
           <Link href={href} className="text-primary underline-offset-4 hover:underline">
             <bdi>{model.name}</bdi>
           </Link>
         </h3>
-        <p className="text-base text-muted-foreground">
-          <bdi>
-            {t("institutionCity", { institution: model.institutionName, city: model.cityName })}
-          </bdi>
+        <p className="text-pretty text-base text-muted-foreground">
+          {t.rich("institutionCity", {
+            institution: model.institutionName,
+            city: model.cityName,
+            place: (chunks) => <bdi className="inline-block max-w-full">{chunks}</bdi>,
+          })}
         </p>
         <div className="flex flex-col gap-1.5">
           <p className="flex flex-wrap items-baseline gap-x-2 text-base">
@@ -94,13 +115,16 @@ export function MatchCard({ model, monthsLabel }: { model: MatchCardModel; month
         </div>
         <MatchStatusBadge group={model.group} />
         {model.summaryText === null ? null : (
-          <p className="hidden max-w-prose text-base text-muted-foreground md:line-clamp-2">
+          <div
+            data-testid="match-summary"
+            className="hidden max-w-prose text-base text-muted-foreground md:block"
+          >
             <LocalizedDataText value={model.summaryText} />
-          </p>
+          </div>
         )}
       </header>
 
-      <dl className="grid gap-x-8 gap-y-5 md:grid-cols-2">
+      <dl className="grid gap-x-8 gap-y-3 md:grid-cols-2">
         <Fact label={tCost("category.tuition")}>
           {tuition === null ? (
             <ToCheck>{tCost("missingLine")}</ToCheck>
@@ -108,9 +132,7 @@ export function MatchCard({ model, monthsLabel }: { model: MatchCardModel; month
             <>
               <p className="flex flex-wrap items-baseline gap-x-2">
                 <span className="text-base font-medium tabular-nums">
-                  <bdi dir="ltr">
-                    {withoutBidiMarks(formatMoney(tuition.amountMinor, tuition.currency, locale))}
-                  </bdi>
+                  <bdi dir="ltr">{formatMoney(tuition.amountMinor, tuition.currency, locale)}</bdi>
                 </span>
                 <small className="text-sm text-muted-foreground">
                   {tCost(`per.${tuition.period}`)}
@@ -120,26 +142,20 @@ export function MatchCard({ model, monthsLabel }: { model: MatchCardModel; month
             </>
           )}
         </Fact>
-        <Fact label={t("facts.estimatedCost")}>
-          <CostBreakdown
-            cost={model.cost}
-            budgetProvided={model.cost.budgetFit !== "unknown"}
-            monthsLabel={monthsLabel}
-            variant="compact"
-          />
-        </Fact>
         <Fact label={t("facts.deadline")}>
           <DeadlineStatus intake={model.intake} />
         </Fact>
-        <Fact label={t("facts.application")}>
+        <Fact label={t("facts.application")} className="md:col-span-2">
           {channel === null ? (
             <ToCheck>{tCost("missingLine")}</ToCheck>
           ) : (
             <>
-              <p className="text-base font-medium">
-                <bdi>{channel.name}</bdi>
+              <p className="flex flex-wrap items-baseline gap-x-3 text-base">
+                <span className="font-medium">
+                  <bdi>{channel.name}</bdi>
+                </span>
+                <span className="text-muted-foreground">{t(`channel.kind.${channel.kind}`)}</span>
               </p>
-              <p className="text-base text-muted-foreground">{t(`channel.kind.${channel.kind}`)}</p>
               <p className="text-base text-muted-foreground">
                 {t(
                   channel.accountRequired === null
@@ -155,6 +171,14 @@ export function MatchCard({ model, monthsLabel }: { model: MatchCardModel; month
             </>
           )}
         </Fact>
+        <Fact label={t("facts.estimatedCost")} className="md:col-span-2">
+          <CostBreakdown
+            cost={model.cost}
+            budgetProvided={budgetProvided}
+            monthsLabel={monthsLabel}
+            variant="compact"
+          />
+        </Fact>
       </dl>
 
       <div className="flex flex-col gap-2">
@@ -163,7 +187,15 @@ export function MatchCard({ model, monthsLabel }: { model: MatchCardModel; month
             {tRoute(model.routeKey)}
           </p>
         ) : null}
-        <ReasonList reasons={model.topReasons} heading={t("reasonsHeading")} headingLevel={4} />
+        <ReasonList
+          reasons={model.topReasons}
+          heading={t("reasonsHeading")}
+          headingLevel={4}
+          collapseFrom={3}
+          compact
+          sources="grouped"
+          bodyHiddenFor={model.group === "foundation" ? ["route_foundation"] : []}
+        />
       </div>
 
       <Link href={href} className={buttonVariants({ variant: "outline", className: "w-fit" })}>

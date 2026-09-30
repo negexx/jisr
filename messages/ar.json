@@ -506,7 +506,9 @@
     "seeLines": "عرض كل بند من بنود التكلفة"
   },
   "reasonList": {
-    "sources": "المصادر"
+    "sources": "المصادر",
+    "whySummary": "لماذا؟ {counts}",
+    "count": "{outcome}: {count}"
   },
   "matchCard": {
     "level": {
@@ -514,7 +516,7 @@
     },
     "taughtIn": "لغة التدريس",
     "languagesUnknown": "لغات التدريس: يجب التحقق منها",
-    "institutionCity": "{institution}، {city}",
+    "institutionCity": "<place>{institution}</place>، <place>{city}</place>",
     "facts": {
       "estimatedCost": "التكلفة التقديرية للسنة الأولى",
       "deadline": "الموعد النهائي",

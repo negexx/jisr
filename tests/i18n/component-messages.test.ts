@@ -55,10 +55,14 @@ describe.each(LOCALES)("component messages (%s)", (locale) => {
       locale: WORST_ARABIC_LOCALE,
       messages: CATALOGS[locale],
       onError: (error) => errors.push(error),
-    }) as unknown as (key: string, params: Record<string, string>) => string;
+    }) as unknown as {
+      rich: (key: string, params: Record<string, unknown>) => string | string[];
+    };
     for (const [key, value] of messages) {
       const params = Object.fromEntries(placeholderNames(value).map((name) => [name, "Sample 12"]));
-      expect(t(key, params), key).not.toMatch(ARABIC_INDIC_DIGIT);
+      // `place` is the <bdi> tag of the institution and city line.
+      const text = t.rich(key, { ...params, place: (chunks: string) => chunks });
+      expect([text].flat().join(""), key).not.toMatch(ARABIC_INDIC_DIGIT);
     }
     expect(errors).toEqual([]);
   });
