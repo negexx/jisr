@@ -34,6 +34,9 @@ type FocusTarget = "summary" | "heading" | { id: string };
 
 const FORM_STEP_COUNT = STEPS.length - 1;
 
+// Loaded on demand: the review step is the only place that builds the profile.
+const loadBuilder = () => import("@/lib/profile/form/build");
+
 type WizardProps = { core: CoreShard; text: TextLookup; locale: AppLocale };
 
 // "Clear my data" empties the store while the form is open: the body is then rebuilt from a fresh
@@ -100,6 +103,11 @@ function WizardBody({ core, text, locale, onCleared }: WizardProps & { onCleared
     onCleared();
   }, [storeState, suspend, onCleared]);
 
+  // Started as the review opens, so the chunk is usually there when the student taps save.
+  useEffect(() => {
+    if (stepId === "review") loadBuilder().catch(() => undefined);
+  }, [stepId]);
+
   const stepTitle = (id: StepId) => t(`steps.${id}.title`);
   const progressLabel = (index: number): string => {
     const id = STEPS[index] ?? "bac";
@@ -158,9 +166,16 @@ function WizardBody({ core, text, locale, onCleared }: WizardProps & { onCleared
   const submit = async () => {
     if (submitting.current) return;
     submitting.current = true;
-    // Loaded on demand: the review step is the only place that builds the profile.
-    const { buildProfile } = await import("@/lib/profile/form/build");
-    const result = buildProfile(form, core);
+    let result: ReturnType<typeof import("@/lib/profile/form/build").buildProfile>;
+    try {
+      const { buildProfile } = await loadBuilder();
+      result = buildProfile(form, core);
+    } catch {
+      // The chunk did not load (a flaky connection): say so, and let the next tap try again.
+      submitting.current = false;
+      setSaveFailed(true);
+      return;
+    }
     if (!result.ok) {
       submitting.current = false;
       const target = stepOfFirstIssue(result.issues);

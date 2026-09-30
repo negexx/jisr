@@ -11,9 +11,11 @@ import { shardsForProfileForm } from "@/lib/snapshot/plan";
 import { type SnapshotRequest, useSnapshotBundle } from "@/lib/snapshot/use-snapshot";
 
 import { PAGE_GRID, PageTitle } from "./chrome";
+import { AlertIcon } from "./icons";
 import { ProfileWizard } from "./profile-wizard";
 
-// Only two rare states use it, and it would bring the icon library into the first load.
+// Only the "still verifying" state uses it, and it would bring the icon library into the first
+// load. The error state must not: it shows when the network failed, so another chunk would too.
 const EmptyState = lazy(() =>
   import("@/components/empty-state").then((module) => ({ default: module.EmptyState })),
 );
@@ -63,18 +65,16 @@ export function ProfileForm({ locale, client }: { locale: AppLocale; client?: Sn
   if (snapshot.status === "error") {
     return (
       <Shell mode={mode}>
-        <Suspense fallback={null}>
-          <EmptyState
-            tone="error"
-            title={t("states.error.title")}
-            description={t("states.error.description")}
-            action={
-              <Button type="button" variant="outline" onClick={retry}>
-                {t("states.error.retry")}
-              </Button>
-            }
-          />
-        </Suspense>
+        <div role="alert" className="flex flex-col items-start gap-4 py-10">
+          <AlertIcon className="size-10 text-destructive" />
+          <div className="flex max-w-prose flex-col gap-2">
+            <h2 className="text-xl font-semibold">{t("states.error.title")}</h2>
+            <p className="text-base text-muted-foreground">{t("states.error.description")}</p>
+          </div>
+          <Button type="button" variant="outline" onClick={retry}>
+            {t("states.error.retry")}
+          </Button>
+        </div>
       </Shell>
     );
   }

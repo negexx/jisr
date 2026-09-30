@@ -1,6 +1,10 @@
 import type { GradeValue, Profile } from "@/data-schema/profile";
-import type { GradingScale, LanguageCertificate } from "@/data-schema/resolved";
+import type { GradingScale } from "@/data-schema/resolved";
 import type { CoreShard } from "@/data-schema/snapshot";
+
+import { certificatesFor, scaleForCredentialType } from "./reference-lookups";
+
+export { certificatesFor, scaleForCredentialType };
 
 export type ProfileIssueCode =
   | "unknown_credential_type"
@@ -15,18 +19,6 @@ export type ProfileIssueCode =
 
 // A code and a path only: an issue never carries the student's value.
 export type ProfileIssue = { code: ProfileIssueCode; path: string };
-
-export function certificatesFor(language: string, core: CoreShard): LanguageCertificate[] {
-  return core.languageCertificates.filter((certificate) => certificate.language === language);
-}
-
-export function scaleForCredentialType(
-  typeSlug: string,
-  core: CoreShard,
-): GradingScale | undefined {
-  const type = core.credentialTypes.find((candidate) => candidate.slug === typeSlug);
-  return type && core.gradingScales.find((scale) => scale.slug === type.gradingScale);
-}
 
 // Same bounds as the rule engine's range check (src/domain does not export it), deliberately
 // stricter for NaN: the engine's `value < min || value > max` lets NaN through, this rejects it.

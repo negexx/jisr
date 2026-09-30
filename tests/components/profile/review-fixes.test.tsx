@@ -295,13 +295,13 @@ describe("review with an old or tampered draft", () => {
     window.localStorage.setItem(DRAFT_KEY, JSON.stringify(draftFromForm(form, 4)));
   }
 
-  it("does not throw on a blank or malformed currency and shows the raw amount", async () => {
+  it("does not throw on a blank or malformed currency: the default currency is used", async () => {
     reviewDraft((form) => {
       form.budget = { amount: "800", currency: "", period: "month" };
     });
     renderProfileForm("en", clientFor(coreShard()));
     await stepHeading("Review");
-    expect(screen.getByText("800").tagName).toBe("BDI");
+    expect(screen.getByText(/800/, { selector: "dd" }).textContent).toMatch(/€\s?800/);
   });
 
   it("shows Not given for empty nationality, years and subject", async () => {
@@ -319,6 +319,20 @@ describe("review with an old or tampered draft", () => {
       within(row("Years of higher education already done")).getByText("Not given"),
     ).toBeTruthy();
     expect(within(row("Subject grades")).getAllByText("Not given").length).toBeGreaterThan(0);
+  });
+});
+
+describe("a blank currency from an older draft", () => {
+  it("becomes the default one, so the select and the form state agree", async () => {
+    const form = emptyFormState(coreShard());
+    form.budget = { amount: "800", currency: "", period: "month" };
+    window.localStorage.setItem(DRAFT_KEY, JSON.stringify(draftFromForm(form, 3)));
+    const { user } = renderProfileForm("en", clientFor(coreShard()));
+    await stepHeading("Budget");
+    expect(combobox(/^Currency/).value).toBe("EUR");
+    await user.click(screen.getByRole("button", { name: "Next" }));
+    await stepHeading("Review");
+    expect(screen.getByText(/800/, { selector: "dd" }).textContent).toMatch(/€\s?800/);
   });
 });
 

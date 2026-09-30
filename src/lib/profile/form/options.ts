@@ -8,7 +8,7 @@ import type {
   Subject,
 } from "@/data-schema/resolved";
 import type { CoreShard } from "@/data-schema/snapshot";
-import { certificatesFor } from "@/lib/profile/reference-checks";
+import { certificatesFor } from "@/lib/profile/reference-lookups";
 
 import type { CountryOption, FormState } from "./types";
 
