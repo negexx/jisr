@@ -3,8 +3,7 @@ import { describe, expect, it } from "vitest";
 import nextConfig from "../next.config";
 
 async function cacheControlFor(source: string): Promise<string | undefined> {
-  const resolved = await nextConfig("phase-production-build", {});
-  const rules = (await resolved.headers?.()) ?? [];
+  const rules = (await nextConfig.headers?.()) ?? [];
   const rule = rules.find((candidate) => candidate.source === source);
   return rule?.headers.find((header) => header.key === "Cache-Control")?.value;
 }

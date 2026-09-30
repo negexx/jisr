@@ -8,7 +8,6 @@
   },
   "scripts": {
     "dev": "next dev",
-    "cn:build": "tsx scripts/cn/build.ts",
     "build": "pnpm data:check && pnpm data:build && next build",
     "start": "next start",
     "build:e2e": "tsx scripts/e2e/build.ts && next build",
