@@ -287,6 +287,218 @@
     "label": "Language",
     "names": { "fr": "Français", "en": "English", "ar": "العربية" }
   },
+  "profile": {
+    "meta": {
+      "title": "Jisr | Create your profile",
+      "description": "Tell us about your Bac, your languages and what you want to study. Your answers stay on your device."
+    },
+    "title": {
+      "create": "Create your profile",
+      "edit": "Edit your profile"
+    },
+    "intro": "Four short steps, then a last check. Every question is required unless it says optional.",
+    "progress": {
+      "step": "Step {current} of {total}: {title}",
+      "review": "Last check: review your answers"
+    },
+    "steps": {
+      "bac": {
+        "title": "Your Bac",
+        "why": "Each program asks for a specific diploma, track and grades. We use your answers to compare them with what the program publishes."
+      },
+      "languages": {
+        "title": "Languages",
+        "why": "Most programs teach in French, English or German and ask for a level. Don't know yours? Choose \"I don't know\": the result will be marked \"to be checked\"."
+      },
+      "preferences": {
+        "title": "What you want",
+        "why": "Your choices decide which programs we look at. Leave a group empty if you have no preference: we then keep everything open."
+      },
+      "budget": {
+        "title": "Budget",
+        "why": "A budget helps us say whether costs look within reach. It never hides a program."
+      },
+      "review": {
+        "title": "Review",
+        "why": "Read your answers. You can change any of them before saving."
+      }
+    },
+    "common": {
+      "choose": "Choose",
+      "required": "required",
+      "optional": "optional",
+      "back": "Back",
+      "next": "Next",
+      "seeMatches": "See my matches",
+      "saveChanges": "Save changes",
+      "edit": "Edit",
+      "remove": "Remove",
+      "dismiss": "Dismiss"
+    },
+    "fields": {
+      "nationality": {
+        "label": "Nationality",
+        "hint": "The country of your passport or national ID."
+      },
+      "credentialCountry": {
+        "label": "Country where you take your Bac",
+        "hint": "The country that issues your diploma."
+      },
+      "credentialType": {
+        "label": "Diploma",
+        "hint": "Choose the name written on your diploma. It is shown as published.",
+        "chooseFirst": "Choose the country first."
+      },
+      "track": {
+        "label": "Track",
+        "hint": "Your stream or option, as written on your diploma or transcript.",
+        "chooseFirst": "Choose the diploma first."
+      },
+      "status": {
+        "legend": "Do you already have your Bac?",
+        "obtained": "Yes, I have my result",
+        "expected": "Not yet, I am taking it this year"
+      },
+      "overall": {
+        "label": "Overall grade",
+        "hint": "Your final average, as written on your transcript. Use a comma or a dot for decimals, for example 14,5.",
+        "hintExpected": "You can leave this empty until you have your result.",
+        "outOf": "/ {max}"
+      },
+      "subjects": {
+        "legend": "Subject grades",
+        "hint": "Optional. Add the subjects programs often ask for, like maths or physics. A subject you leave out is shown as \"to be checked\" if a program asks for it.",
+        "subject": "Subject",
+        "grade": "Grade",
+        "rowTitle": "Subject {number}",
+        "add": "Add a subject",
+        "remove": "Remove subject {number}",
+        "cap": "You can add up to {max} subjects.",
+        "notInTrack": "not in your track"
+      },
+      "years": {
+        "label": "Years of higher education already done",
+        "hint": "After the Bac, at a university or a school. Choose 0 if none."
+      },
+      "language": {
+        "label": "Language",
+        "add": "Add another language",
+        "remove": "Remove {language}"
+      },
+      "level": {
+        "label": "Your level",
+        "hint": "From A1 (beginner) to C2 (near native). Don't know? Choose \"I don't know\"."
+      },
+      "levels": {
+        "A1": "A1 (beginner)",
+        "A2": "A2 (basic)",
+        "B1": "B1 (intermediate)",
+        "B2": "B2 (upper intermediate)",
+        "C1": "C1 (advanced)",
+        "C2": "C2 (near native)",
+        "unknown": "I don't know"
+      },
+      "certificate": {
+        "label": "Certificate",
+        "hint": "Only if you already passed an official language test.",
+        "none": "No certificate"
+      },
+      "fieldsOfStudy": {
+        "legend": "Fields of study",
+        "hint": "Choose at least one."
+      },
+      "studyLanguages": {
+        "legend": "Language of teaching",
+        "hint": "The language you want to study in. Leave everything unchecked if you have no preference."
+      },
+      "destinations": {
+        "legend": "Countries",
+        "hint": "Where you would like to study. Leave everything unchecked to see all countries."
+      },
+      "institution": {
+        "legend": "Type of university",
+        "hint": "Choose \"Public or private\" if you have no preference.",
+        "any": "Public or private",
+        "public": "Public only",
+        "private": "Private only"
+      },
+      "budget": {
+        "amount": {
+          "label": "Amount you can spend",
+          "hint": "A whole number, digits 0 to 9, for example 800. Leave it empty if you prefer not to say."
+        },
+        "currency": {
+          "label": "Currency"
+        },
+        "period": {
+          "label": "Period",
+          "month": "per month",
+          "year": "per year"
+        },
+        "madNote": "A budget in MAD cannot be compared with the costs in euros yet, so we will not show whether a program fits it.",
+        "neverHides": "Your budget never hides a program. It only tells you, program by program, whether the costs look within reach."
+      }
+    },
+    "notices": {
+      "draft": "We kept your unfinished answers. You are back where you stopped.",
+      "reset": "We could not read your saved profile, so we removed it. You can create it again.",
+      "storage": "We cannot save on this device: your answers will be lost when you close this page.",
+      "saveFailed": "We could not save your profile. Please try again."
+    },
+    "errors": {
+      "summaryTitle": "Please fix these",
+      "summaryItem": "{field}: {message}",
+      "fieldInRow": "{field} ({row})",
+      "required": {
+        "choice": "Choose an answer",
+        "grade": "Enter a grade",
+        "fields": "Choose at least one field of study"
+      },
+      "not_a_number": "Write the grade with the digits 0 to 9, for example 14,5",
+      "ambiguous_number": "Write the grade with a comma or a dot, without thousands separators (for example 14,5)",
+      "too_many_decimals": "Use at most 2 decimals, for example 14,25",
+      "out_of_range": {
+        "grade": "Enter a grade between {min} and {max}",
+        "budget": "Enter an amount of {max} at most, as a whole number"
+      },
+      "unknown_option": "Choose one of the options in the list",
+      "certificate_language_mismatch": "This certificate is not for this language. Choose another one or none.",
+      "duplicate_subject": "This subject is already in your list. Choose another one.",
+      "duplicate_language": "This language is already in your list.",
+      "too_many_rows": "You can add up to {max} subjects.",
+      "not_a_whole_number": "Write the amount as a whole number, without dots or commas, with the digits 0 to 9",
+      "years_out_of_range": "Choose between {min} and {max} years",
+      "digitsHint": "Use the digits 0 to 9 (1, 2, 3), not Arabic-Indic digits."
+    },
+    "states": {
+      "loading": "Loading the form",
+      "error": {
+        "title": "We could not load the reference data",
+        "description": "Check your connection, then try again.",
+        "retry": "Try again"
+      },
+      "unavailable": {
+        "title": "We are still verifying official data",
+        "description": "The diplomas for your country are not published yet. This is on our side, not yours. Please come back later."
+      }
+    },
+    "review": {
+      "saveTitle": "What is saved",
+      "saveBody": "Your answers are saved in this browser, on this device only. Nothing is sent to a server. You can delete them with \"Clear my data\" at the bottom of the page.",
+      "notGiven": "Not given",
+      "noPreference": "No preference",
+      "allCountries": "All countries",
+      "levelWithCertificate": "{level}, certificate: {certificate}",
+      "budgetLine": "{amount} {period, select, month {per month} year {per year} other {}}",
+      "editStep": "Edit: {step}"
+    },
+    "aside": {
+      "whyTitle": "Why we ask",
+      "whyPhone": "Why we ask?",
+      "deviceTitle": "Stays on your device",
+      "deviceBody": "Your answers are kept in this browser only. Nothing is sent to us. To delete them, use \"Clear my data\" at the bottom of the page."
+    }
+  },
   "costBreakdown": {
     "counted": "Counted {per}",
     "seeNote": "See note",

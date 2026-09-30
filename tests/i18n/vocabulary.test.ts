@@ -36,6 +36,7 @@ import { formatNumber, type Params } from "@/lib/journey/reasons";
 import ar from "../../messages/ar.json";
 import en from "../../messages/en.json";
 import fr from "../../messages/fr.json";
+import { FORBIDDEN } from "./forbidden-wording";
 
 type Tree = { [key: string]: string | Tree };
 type Locale = "fr" | "en" | "ar";
@@ -261,42 +262,6 @@ const BAD_SAMPLES: Record<Locale, string[]> = {
     "يحق لك التقديم",
     "يمكنك التقديم الآن",
   ],
-};
-
-// The patterns intentionally over-ban (e.g. "make sure", "qualification", "صفحة القبول"): rephrase
-// the string rather than deleting a pattern. "accepted" stays allowed where it refers to an
-// accepted language certificate.
-const FORBIDDEN: Record<Locale, RegExp[]> = {
-  en: [
-    /eligib/i,
-    /\badmitted\b/i,
-    /admission guarantee/i,
-    /guarantee/i,
-    /\byou will\b/i,
-    /you'?ll\b/i,
-    /\byou can apply\b/i,
-    /\bchances?\b/i,
-    /\bqualif/i,
-    /\byou meet\b/i,
-    /\b(you are|will be) accepted\b/i,
-    /\bready to apply\b/i,
-    /\bsafe\b/i,
-    /\bcertain(ly)?\b/i,
-    /\bsure\b/i,
-  ],
-  fr: [
-    /éligib|eligib/i,
-    /\badmise?s?\b/i,
-    /admissib/i,
-    /garanti/i,
-    /\bvous serez\b/i,
-    /\bvous pouvez candidater\b/i,
-    /\bqualifié/i,
-    /\bassuré/i,
-    /\bcertain(e|ement)?\b/i,
-    /accepté(e|s)? (dans|en)\b/i,
-  ],
-  ar: [/قبول/u, /ضمان|نضمن|تضمن|مضمون/u, /يحق لك/u, /مؤهل/u, /يمكنك التقديم/u],
 };
 
 const OFFICIAL_OR_SOURCE: Record<Locale, RegExp> = {

@@ -287,6 +287,218 @@
     "label": "Langue",
     "names": { "fr": "Français", "en": "English", "ar": "العربية" }
   },
+  "profile": {
+    "meta": {
+      "title": "Jisr | Créer mon profil",
+      "description": "Parlez-nous de votre Bac, de vos langues et de ce que vous voulez étudier. Vos réponses restent sur votre appareil."
+    },
+    "title": {
+      "create": "Créer mon profil",
+      "edit": "Modifier mon profil"
+    },
+    "intro": "Quatre étapes courtes, puis une dernière vérification. Toutes les questions sont obligatoires, sauf celles marquées facultatives.",
+    "progress": {
+      "step": "Étape {current} sur {total} : {title}",
+      "review": "Dernière vérification : relisez vos réponses"
+    },
+    "steps": {
+      "bac": {
+        "title": "Votre Bac",
+        "why": "Chaque programme demande un diplôme, une filière et des notes précis. Vos réponses servent à les comparer avec ce que le programme publie."
+      },
+      "languages": {
+        "title": "Langues",
+        "why": "La plupart des programmes enseignent en français, en anglais ou en allemand et demandent un niveau. Vous ne savez pas ? Choisissez « Je ne sais pas » : le résultat sera marqué « à vérifier »."
+      },
+      "preferences": {
+        "title": "Ce que vous voulez",
+        "why": "Vos choix décident des programmes que nous regardons. Laissez un groupe vide si vous n'avez pas de préférence : nous gardons alors tout ouvert."
+      },
+      "budget": {
+        "title": "Budget",
+        "why": "Un budget nous aide à dire si les coûts semblent à votre portée. Il ne masque jamais un programme."
+      },
+      "review": {
+        "title": "Vérification",
+        "why": "Relisez vos réponses. Vous pouvez en changer avant d'enregistrer."
+      }
+    },
+    "common": {
+      "choose": "Choisir",
+      "required": "obligatoire",
+      "optional": "facultatif",
+      "back": "Retour",
+      "next": "Suivant",
+      "seeMatches": "Voir mes résultats",
+      "saveChanges": "Enregistrer les modifications",
+      "edit": "Modifier",
+      "remove": "Retirer",
+      "dismiss": "Fermer"
+    },
+    "fields": {
+      "nationality": {
+        "label": "Nationalité",
+        "hint": "Le pays de votre passeport ou de votre carte d'identité."
+      },
+      "credentialCountry": {
+        "label": "Pays où vous passez votre Bac",
+        "hint": "Le pays qui délivre votre diplôme."
+      },
+      "credentialType": {
+        "label": "Diplôme",
+        "hint": "Choisissez le nom écrit sur votre diplôme. Il est affiché tel qu'il est publié.",
+        "chooseFirst": "Choisissez d'abord le pays."
+      },
+      "track": {
+        "label": "Filière",
+        "hint": "Votre série ou option, comme écrite sur votre diplôme ou votre relevé de notes.",
+        "chooseFirst": "Choisissez d'abord le diplôme."
+      },
+      "status": {
+        "legend": "Avez-vous déjà votre Bac ?",
+        "obtained": "Oui, j'ai mon résultat",
+        "expected": "Pas encore, je le passe cette année"
+      },
+      "overall": {
+        "label": "Moyenne générale",
+        "hint": "Votre moyenne finale, comme écrite sur votre relevé de notes. Utilisez une virgule ou un point pour les décimales, par exemple 14,5.",
+        "hintExpected": "Vous pouvez laisser ce champ vide tant que vous n'avez pas votre résultat.",
+        "outOf": "/ {max}"
+      },
+      "subjects": {
+        "legend": "Notes par matière",
+        "hint": "Facultatif. Ajoutez les matières que les programmes demandent souvent, comme les maths ou la physique. Une matière absente est indiquée « à vérifier » si un programme la demande.",
+        "subject": "Matière",
+        "grade": "Note",
+        "rowTitle": "Matière {number}",
+        "add": "Ajouter une matière",
+        "remove": "Retirer la matière {number}",
+        "cap": "Vous pouvez ajouter jusqu'à {max} matières.",
+        "notInTrack": "hors de votre filière"
+      },
+      "years": {
+        "label": "Années d'études supérieures déjà faites",
+        "hint": "Après le Bac, à l'université ou dans une école. Choisissez 0 s'il n'y en a pas."
+      },
+      "language": {
+        "label": "Langue",
+        "add": "Ajouter une autre langue",
+        "remove": "Retirer {language}"
+      },
+      "level": {
+        "label": "Votre niveau",
+        "hint": "De A1 (débutant) à C2 (proche du natif). Vous ne savez pas ? Choisissez « Je ne sais pas »."
+      },
+      "levels": {
+        "A1": "A1 (débutant)",
+        "A2": "A2 (élémentaire)",
+        "B1": "B1 (intermédiaire)",
+        "B2": "B2 (intermédiaire avancé)",
+        "C1": "C1 (avancé)",
+        "C2": "C2 (proche du natif)",
+        "unknown": "Je ne sais pas"
+      },
+      "certificate": {
+        "label": "Certificat",
+        "hint": "Seulement si vous avez déjà passé un test de langue officiel.",
+        "none": "Aucun certificat"
+      },
+      "fieldsOfStudy": {
+        "legend": "Domaines d'études",
+        "hint": "Choisissez-en au moins un."
+      },
+      "studyLanguages": {
+        "legend": "Langue d'enseignement",
+        "hint": "La langue dans laquelle vous voulez étudier. Ne cochez rien si vous n'avez pas de préférence."
+      },
+      "destinations": {
+        "legend": "Pays",
+        "hint": "Où vous aimeriez étudier. Ne cochez rien pour voir tous les pays."
+      },
+      "institution": {
+        "legend": "Type d'établissement",
+        "hint": "Choisissez « Public ou privé » si vous hésitez.",
+        "any": "Public ou privé",
+        "public": "Public uniquement",
+        "private": "Privé uniquement"
+      },
+      "budget": {
+        "amount": {
+          "label": "Montant que vous pouvez dépenser",
+          "hint": "Un nombre entier, chiffres de 0 à 9, par exemple 800. Laissez vide si vous préférez ne pas le dire."
+        },
+        "currency": {
+          "label": "Devise"
+        },
+        "period": {
+          "label": "Période",
+          "month": "par mois",
+          "year": "par an"
+        },
+        "madNote": "Un budget en MAD ne peut pas encore être comparé aux coûts en euros : nous n'indiquerons donc pas si un programme y correspond.",
+        "neverHides": "Votre budget ne masque jamais un programme. Il indique seulement, programme par programme, si les coûts semblent à votre portée."
+      }
+    },
+    "notices": {
+      "draft": "Nous avons gardé vos réponses non terminées. Vous reprenez là où vous vous étiez arrêté.",
+      "reset": "Nous n'avons pas pu lire votre profil enregistré, nous l'avons donc supprimé. Vous pouvez le créer à nouveau.",
+      "storage": "Nous ne pouvons pas enregistrer sur cet appareil : vos réponses seront perdues à la fermeture de cette page.",
+      "saveFailed": "Nous n'avons pas pu enregistrer votre profil. Réessayez."
+    },
+    "errors": {
+      "summaryTitle": "Veuillez corriger ces points",
+      "summaryItem": "{field} : {message}",
+      "fieldInRow": "{field} ({row})",
+      "required": {
+        "choice": "Choisissez une réponse",
+        "grade": "Saisissez une note",
+        "fields": "Choisissez au moins un domaine d'études"
+      },
+      "not_a_number": "Écrivez la note avec les chiffres de 0 à 9, par exemple 14,5",
+      "ambiguous_number": "Écrivez la note avec une virgule ou un point, sans séparateur de milliers (par exemple 14,5)",
+      "too_many_decimals": "Utilisez au plus 2 décimales, par exemple 14,25",
+      "out_of_range": {
+        "grade": "Saisissez une note entre {min} et {max}",
+        "budget": "Saisissez un montant d'au plus {max}, en nombre entier"
+      },
+      "unknown_option": "Choisissez une option de la liste",
+      "certificate_language_mismatch": "Ce certificat ne correspond pas à cette langue. Choisissez-en un autre ou aucun.",
+      "duplicate_subject": "Cette matière est déjà dans votre liste. Choisissez-en une autre.",
+      "duplicate_language": "Cette langue est déjà dans votre liste.",
+      "too_many_rows": "Vous pouvez ajouter jusqu'à {max} matières.",
+      "not_a_whole_number": "Écrivez le montant en nombre entier, sans point ni virgule, avec les chiffres de 0 à 9",
+      "years_out_of_range": "Choisissez entre {min} et {max} ans",
+      "digitsHint": "Utilisez les chiffres de 0 à 9 (1, 2, 3), pas les chiffres arabo-indiens."
+    },
+    "states": {
+      "loading": "Chargement du formulaire",
+      "error": {
+        "title": "Nous n'avons pas pu charger les données",
+        "description": "Vérifiez votre connexion, puis réessayez.",
+        "retry": "Réessayer"
+      },
+      "unavailable": {
+        "title": "Nous vérifions encore les données officielles",
+        "description": "Les diplômes de votre pays ne sont pas encore publiés. Le problème vient de nous, pas de vous. Revenez plus tard."
+      }
+    },
+    "review": {
+      "saveTitle": "Ce qui est enregistré",
+      "saveBody": "Vos réponses sont enregistrées dans ce navigateur, sur cet appareil uniquement. Rien n'est envoyé à un serveur. Vous pouvez les supprimer avec « Effacer mes données » en bas de la page.",
+      "notGiven": "Non renseigné",
+      "noPreference": "Pas de préférence",
+      "allCountries": "Tous les pays",
+      "levelWithCertificate": "{level}, certificat : {certificate}",
+      "budgetLine": "{amount} {period, select, month {par mois} year {par an} other {}}",
+      "editStep": "Modifier : {step}"
+    },
+    "aside": {
+      "whyTitle": "Pourquoi nous le demandons",
+      "whyPhone": "Pourquoi cette question ?",
+      "deviceTitle": "Reste sur votre appareil",
+      "deviceBody": "Vos réponses sont gardées dans ce navigateur seulement. Rien ne nous est envoyé. Pour les supprimer, utilisez « Effacer mes données » en bas de la page."
+    }
+  },
   "costBreakdown": {
     "counted": "Calculé {per}",
     "seeNote": "Voir la note",
