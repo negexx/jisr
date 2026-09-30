@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 
 import { describe, expect, it } from "vitest";
 
-import { contrastRatio, oklchToSrgb, parseOklch } from "@/lib/design/contrast";
+import { contrastRatio, oklabDistance, oklchToSrgb, parseOklch } from "@/lib/design/contrast";
 
 const css = readFileSync(new URL("../../src/app/globals.css", import.meta.url), "utf8");
 
@@ -94,9 +94,31 @@ describe("design tokens", () => {
     expect(ratio(foreground, background)).toBeGreaterThanOrEqual(3);
   });
 
-  it("keeps estimate visibly different from official and from the amber status", () => {
-    expect(palette.get("kind-estimate")).not.toBe(palette.get("kind-official"));
-    expect(palette.get("kind-estimate-bg")).not.toBe(palette.get("status-check-bg"));
-    expect(palette.get("kind-estimate")).not.toBe(palette.get("status-check-fg"));
+  describe("families that must not be confused", () => {
+    function distance(first: string, second: string): number {
+      const one = palette.get(first);
+      const two = palette.get(second);
+      if (!one || !two) throw new Error(`missing token: ${first} or ${second}`);
+      return oklabDistance(parseOklch(one), parseOklch(two));
+    }
+
+    // OKLab distance: about 0.02 is barely noticeable, 0.06 is clearly a different colour.
+    const CLEARLY_APART = 0.06;
+
+    it.each([
+      ["kind-estimate", "status-check-fg"],
+      ["kind-estimate", "status-check"],
+      ["kind-estimate-bg", "status-check-bg"],
+      ["kind-estimate", "kind-official"],
+      ["kind-estimate", "kind-guidance"],
+      ["kind-official", "status-ok-fg"],
+      ["kind-official", "status-ok"],
+    ])("%s is clearly apart from %s", (first, second) => {
+      expect(distance(first, second)).toBeGreaterThanOrEqual(CLEARLY_APART);
+    });
+
+    it("keeps the pale official and ok tints distinguishable (they only ever carry text and an icon)", () => {
+      expect(distance("kind-official-bg", "status-ok-bg")).toBeGreaterThanOrEqual(0.02);
+    });
   });
 });

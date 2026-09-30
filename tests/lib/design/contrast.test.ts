@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { contrastRatio, oklchToSrgb, parseOklch } from "@/lib/design/contrast";
+import { contrastRatio, oklabDistance, oklchToSrgb, parseOklch } from "@/lib/design/contrast";
 
 describe("parseOklch", () => {
   it("parses lightness, chroma and hue", () => {
@@ -59,5 +59,32 @@ describe("contrastRatio", () => {
   it("matches the published ratio for #767676 on white (4.54:1)", () => {
     const grey = { r: 0x76 / 255, g: 0x76 / 255, b: 0x76 / 255 };
     expect(contrastRatio(grey, { r: 1, g: 1, b: 1 })).toBeCloseTo(4.54, 2);
+  });
+});
+
+describe("oklabDistance", () => {
+  it("is zero for identical colours and ignores the hue of an achromatic colour", () => {
+    expect(oklabDistance({ l: 0.5, c: 0.1, h: 30 }, { l: 0.5, c: 0.1, h: 30 })).toBe(0);
+    expect(oklabDistance({ l: 0.5, c: 0, h: 10 }, { l: 0.5, c: 0, h: 200 })).toBeCloseTo(0, 12);
+  });
+
+  it("is the lightness difference for colours of equal chroma and hue", () => {
+    expect(oklabDistance({ l: 0.9, c: 0.05, h: 100 }, { l: 0.6, c: 0.05, h: 100 })).toBeCloseTo(
+      0.3,
+      10,
+    );
+  });
+
+  it("measures the chroma plane distance for equal lightness (opposite hues)", () => {
+    expect(oklabDistance({ l: 0.5, c: 0.1, h: 0 }, { l: 0.5, c: 0.1, h: 180 })).toBeCloseTo(
+      0.2,
+      10,
+    );
+  });
+
+  it("is symmetric", () => {
+    const first = { l: 0.42, c: 0.09, h: 70 };
+    const second = { l: 0.42, c: 0.035, h: 40 };
+    expect(oklabDistance(first, second)).toBeCloseTo(oklabDistance(second, first), 12);
   });
 });

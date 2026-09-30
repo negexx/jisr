@@ -111,8 +111,8 @@
 
   --kind-official: oklch(0.36 0.075 205);
   --kind-official-bg: oklch(0.95 0.02 205);
-  --kind-estimate: oklch(0.42 0.06 55);
-  --kind-estimate-bg: oklch(0.955 0.02 60);
+  --kind-estimate: oklch(0.42 0.06 330);
+  --kind-estimate-bg: oklch(0.94 0.04 325);
   --kind-guidance: oklch(0.42 0.01 90);
   --kind-guidance-bg: oklch(0.95 0.005 90);
 }
@@ -131,10 +131,18 @@
     outline: 2px solid var(--ring);
     outline-offset: 2px;
   }
+  /* Arabic text on fr and en pages (the wordmark, the language switcher) still needs the Arabic face. */
+  :lang(ar) {
+    font-family: var(--font-arabic), var(--font-geist-sans), system-ui, sans-serif;
+  }
 }
 
 html[lang="ar"] {
-  /* Arabic reads about 1px larger and needs more leading: rem-based sizes scale with the root. */
+  /*
+   * Arabic reads about 1px larger and needs more leading. Scaling the root scales every rem value,
+   * so spacing and tap targets grow with the text (48px targets become 51px); they never shrink
+   * below 48px.
+   */
   font-size: 106.25%;
   --text-sm--line-height: 1.75;
   --text-base--line-height: 1.75;
@@ -144,7 +152,6 @@ html[lang="ar"] {
 }
 
 html[lang="ar"] body {
-  font-family: var(--font-arabic), var(--font-geist-sans), system-ui, sans-serif;
   line-height: 1.75;
 }
 

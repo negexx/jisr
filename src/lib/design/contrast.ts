@@ -55,3 +55,14 @@ export function contrastRatio(first: Srgb, second: Srgb): number {
   );
   return (lighter + 0.05) / (darker + 0.05);
 }
+
+/** Euclidean distance in OKLab, where about 0.02 is the smallest difference people notice side by side. */
+export function oklabDistance(first: Oklch, second: Oklch): number {
+  const toLab = ({ l, c, h }: Oklch) => {
+    const hue = (h * Math.PI) / 180;
+    return { l, a: c * Math.cos(hue), b: c * Math.sin(hue) };
+  };
+  const one = toLab(first);
+  const two = toLab(second);
+  return Math.hypot(one.l - two.l, one.a - two.a, one.b - two.b);
+}
