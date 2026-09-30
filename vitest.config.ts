@@ -13,6 +13,7 @@ export default defineConfig({
     },
   },
   test: {
+    globalSetup: ["./tests/setup/cn-tables.ts"],
     include: ["tests/**/*.test.{ts,tsx}"],
     environment: "node",
     // next-intl's ESM build imports "next/navigation" without an extension; inlining lets Vite resolve it.
