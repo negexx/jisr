@@ -189,13 +189,19 @@ export async function loadProgramPageData(
     program,
     institution: institutions?.institutions.find((i) => i.slug === program.institution) ?? null,
     costProfiles: (costs?.profiles ?? []).filter((p) => p.city === null || p.city === program.city),
-    // Same selection as domain scholarshipsForProgram, minus its nationality filter.
-    scholarships: (scholarships?.scholarships ?? []).filter(
-      (s) =>
-        program.scholarships.includes(s.slug) ||
-        s.fields.length === 0 ||
-        s.fields.includes(program.field),
-    ),
+    // Same selection and slug order as domain scholarshipsForProgram, minus its nationality
+    // filter, so the static page and the client's personal box list scholarships alike. Only the
+    // destination's shard is read (as the client's shardsForProgram): a linked scholarship whose
+    // `destinations` omit the program's country is not found here nor on the client; data:check
+    // does not reject that yet (follow-up).
+    scholarships: (scholarships?.scholarships ?? [])
+      .filter(
+        (s) =>
+          program.scholarships.includes(s.slug) ||
+          s.fields.length === 0 ||
+          s.fields.includes(program.field),
+      )
+      .sort((a, b) => (a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0)),
     core,
     applicationChannel: core.applicationChannels.find((c) => c.slug === channelSlug) ?? null,
     text: createTextLookup(textShards, locale),

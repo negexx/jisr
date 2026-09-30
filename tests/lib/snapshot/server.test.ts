@@ -75,7 +75,8 @@ describe("loadProgramPageData", () => {
     expect(data.core.kind).toBe("core");
     expect(data.costProfiles.map((p) => p.slug)).toEqual(["xx-test-costs-xb"]);
     // No nationality filter on the server: the XZ-only scholarship is still listed.
-    expect(data.scholarships.map((s) => s.slug).sort()).toEqual(
+    // Sorted by slug, the order domain scholarshipsForProgram returns, so server and client agree.
+    expect(data.scholarships.map((s) => s.slug)).toEqual(
       Object.values(E2E_SCHOLARSHIP_SLUGS).sort(),
     );
     expect(data.text(`programs/${E2E_SLUGS.ok}#summary`)).toEqual({

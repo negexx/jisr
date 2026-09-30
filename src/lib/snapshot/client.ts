@@ -167,9 +167,21 @@ export function createSnapshotClient(options: SnapshotClientOptions): SnapshotCl
     return sessionManifest;
   }
 
-  function adoptManifest(next: Manifest, previous: Manifest): void {
-    sessionManifest = Promise.resolve(next);
-    if (next.snapshotVersion !== previous.snapshotVersion) shardCache.clear();
+  // Refetches are numbered by start order so that a slow, older response cannot replace a newer
+  // manifest another load has already adopted: the session manifest only moves forward.
+  let refetchCount = 0;
+  let adoptedRefetch = 0;
+
+  async function refetchManifest(): Promise<{ manifest: Manifest; order: number }> {
+    const order = ++refetchCount;
+    return { manifest: await fetchManifest(), order };
+  }
+
+  function adoptManifest(next: { manifest: Manifest; order: number }, previous: Manifest): void {
+    if (next.order < adoptedRefetch) return;
+    adoptedRefetch = next.order;
+    sessionManifest = Promise.resolve(next.manifest);
+    if (next.manifest.snapshotVersion !== previous.snapshotVersion) shardCache.clear();
   }
 
   // Resolves to the parsed JSON of bytes whose length and sha256 match `entry`.
@@ -245,8 +257,11 @@ export function createSnapshotClient(options: SnapshotClientOptions): SnapshotCl
     }
 
     // A missing shard usually means a new snapshot was deployed: re-read the manifest once.
-    const second = await abortable(fetchManifest(), signal);
-    adoptManifest(second, first);
+    // This load keeps using the manifest it fetched even if a newer one was adopted meanwhile: a
+    // bundle is always built from one manifest.
+    const refetched = await abortable(refetchManifest(), signal);
+    adoptManifest(refetched, first);
+    const second = refetched.manifest;
     if (second.snapshotVersion === first.snapshotVersion) throw new SnapshotError("network");
     try {
       return await build(second, plan, locale, signal);
@@ -256,10 +271,12 @@ export function createSnapshotClient(options: SnapshotClientOptions): SnapshotCl
 
     // Never mix versions and never loop: report whether the version moved again, keep the latest
     // manifest so a retry starts from it.
-    const third = await abortable(fetchManifest(), signal);
+    const third = await abortable(refetchManifest(), signal);
     adoptManifest(third, second);
     throw new SnapshotError(
-      third.snapshotVersion === second.snapshotVersion ? "network" : "version_changed_twice",
+      third.manifest.snapshotVersion === second.snapshotVersion
+        ? "network"
+        : "version_changed_twice",
     );
   }
 

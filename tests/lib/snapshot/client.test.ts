@@ -1,4 +1,4 @@
-import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import type { Manifest } from "@/data-schema/snapshot";
 import {
   createDigest,
@@ -237,6 +237,55 @@ describe("version pinning", () => {
 
     const retried = await client.load(matchesPlan, "fr");
     expectBundleFrom(retried, v3, readManifest(v3));
+  });
+});
+
+describe("session manifest", () => {
+  it("never moves back to a manifest fetched before the one already adopted", async () => {
+    const v3Manifest = readManifest(v3);
+    const server = createFakeServer(v3);
+    let releaseOld: () => void = () => {};
+    let manifestRequests = 0;
+    server.override(MANIFEST_URL, () => {
+      manifestRequests += 1;
+      if (manifestRequests === 1) return new Response(JSON.stringify(baseManifest));
+      // Load A's refetch is slow and returns v2; load B's later refetch returns v3 at once.
+      if (manifestRequests === 2) {
+        return new Promise<Response>((resolve) => {
+          releaseOld = () => resolve(new Response(JSON.stringify(v2Manifest)));
+        });
+      }
+      return new Response(JSON.stringify(v3Manifest));
+    });
+    // Hold A's rebuild from v2 so the session state can be observed while it is pending.
+    let releaseV2: () => void = () => {};
+    const heldV2 = new Promise<Response>((resolve) => {
+      releaseV2 = () => resolve(new Response(null, { status: 404 }));
+    });
+    const v2Only = Object.entries(v2Manifest.shards)
+      .filter(([name, entry]) => v3Manifest.shards[name]?.file !== entry.file)
+      .map(([name]) => shardUrl(v2Manifest, name));
+    for (const url of v2Only) server.override(url, () => heldV2);
+
+    const client = clientFor(server);
+    const loadA = client.load(matchesPlan, "fr");
+    const loadB = client.load(matchesPlan, "fr");
+    expect((await loadB).snapshotVersion).toBe(v3Manifest.snapshotVersion);
+
+    releaseOld();
+    await vi.waitFor(() => {
+      expect(server.requests.some((r) => v2Only.includes(r.url))).toBe(true);
+    });
+    const before = server.requests.length;
+    const loadC = await Promise.race([
+      client.load(matchesPlan, "fr"),
+      new Promise<null>((resolve) => setTimeout(() => resolve(null), 200)),
+    ]);
+    expect(loadC?.snapshotVersion).toBe(v3Manifest.snapshotVersion);
+    expect(server.requests.length).toBe(before);
+
+    releaseV2();
+    expect((await snapshotError(loadA)).kind).toBe("version_changed_twice");
   });
 });
 

@@ -4,7 +4,12 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import type { SnapshotBundle, SnapshotClient } from "@/lib/snapshot/client";
 import { SnapshotError } from "@/lib/snapshot/errors";
 import { shardsForProfileForm } from "@/lib/snapshot/plan";
-import { type SnapshotRequest, useSnapshotBundle } from "@/lib/snapshot/use-snapshot";
+import {
+  type SnapshotRequest,
+  type SnapshotState,
+  snapshotBaseUrl,
+  useSnapshotBundle,
+} from "@/lib/snapshot/use-snapshot";
 
 import { forbidConsole } from "../profile/no-console";
 
@@ -25,6 +30,8 @@ const BUNDLE: SnapshotBundle = {
   text: () => undefined,
   hasPrograms: false,
 };
+
+const STALE_BUNDLE: SnapshotBundle = { ...BUNDLE, snapshotVersion: "000000000000" };
 
 const REQUEST: SnapshotRequest = { key: "profile-form", plan: shardsForProfileForm() };
 
@@ -107,13 +114,93 @@ describe("useSnapshotBundle", () => {
     expect(first.signal?.aborted).toBe(true);
   });
 
-  it("aborts on unmount and never updates state afterwards", async () => {
+  it("aborts on unmount", () => {
     const { client, calls } = deferredClient();
-    const { result, unmount } = renderHook(() => useSnapshotBundle(REQUEST, "fr", client));
+    const { unmount } = renderHook(() => useSnapshotBundle(REQUEST, "fr", client));
     const call = lastCall(calls);
     unmount();
     expect(call.signal?.aborted).toBe(true);
-    await act(async () => call.resolve(BUNDLE));
+  });
+
+  it("never applies the result of an aborted load", async () => {
+    const { client, calls } = deferredClient();
+    const other: SnapshotRequest = { key: "other", plan: shardsForProfileForm() };
+    const { result, rerender } = renderHook(
+      ({ request }: { request: SnapshotRequest }) => useSnapshotBundle(request, "fr", client),
+      { initialProps: { request: REQUEST } },
+    );
+    const abandoned = lastCall(calls);
+    rerender({ request: other });
+    rerender({ request: REQUEST });
+    expect(abandoned.signal?.aborted).toBe(true);
+
+    await act(async () => abandoned.resolve(STALE_BUNDLE));
     expect(result.current.state).toEqual({ status: "loading" });
+    await act(async () => lastCall(calls).resolve(BUNDLE));
+    expect(result.current.state).toEqual({ status: "ready", bundle: BUNDLE });
+  });
+
+  it("never renders a bundle loaded for a previous key under the new key", async () => {
+    const { client, calls } = deferredClient();
+    const renders: Array<{ key: string; state: SnapshotState }> = [];
+    const { rerender } = renderHook(
+      ({ request }: { request: SnapshotRequest }) => {
+        const hook = useSnapshotBundle(request, "fr", client);
+        renders.push({ key: request.key, state: hook.state });
+        return hook;
+      },
+      { initialProps: { request: REQUEST } },
+    );
+    await act(async () => lastCall(calls).resolve(STALE_BUNDLE));
+    expect(renders.at(-1)?.state).toEqual({ status: "ready", bundle: STALE_BUNDLE });
+
+    rerender({ request: { key: "other", plan: shardsForProfileForm() } });
+    await act(async () => lastCall(calls).resolve(BUNDLE));
+
+    const underNewKey = renders.filter((r) => r.key === "other");
+    expect(underNewKey.length).toBeGreaterThan(0);
+    for (const { state } of underNewKey) {
+      expect(state.status === "ready" && state.bundle === STALE_BUNDLE).toBe(false);
+    }
+    expect(underNewKey.at(-1)?.state).toEqual({ status: "ready", bundle: BUNDLE });
+  });
+
+  it("shows loading, not the old bundle, as soon as the locale changes", async () => {
+    const { client, calls } = deferredClient();
+    const { result, rerender } = renderHook(
+      ({ locale }: { locale: "fr" | "ar" }) => useSnapshotBundle(REQUEST, locale, client),
+      { initialProps: { locale: "fr" as "fr" | "ar" } },
+    );
+    await act(async () => lastCall(calls).resolve(STALE_BUNDLE));
+    rerender({ locale: "ar" });
+    expect(result.current.state).toEqual({ status: "loading" });
+  });
+});
+
+describe("snapshotBaseUrl", () => {
+  it("defaults to /snapshots when the variable is unset or empty", () => {
+    expect(snapshotBaseUrl(undefined)).toBe("/snapshots");
+    expect(snapshotBaseUrl("")).toBe("/snapshots");
+    expect(snapshotBaseUrl("https://cdn.example.org/snapshots")).toBe(
+      "https://cdn.example.org/snapshots",
+    );
+  });
+
+  it("makes the default client request /snapshots/manifest.json when the variable is empty", async () => {
+    vi.stubEnv("NEXT_PUBLIC_SNAPSHOT_BASE_URL", "");
+    const urls: string[] = [];
+    vi.stubGlobal("fetch", async (input: RequestInfo | URL) => {
+      urls.push(String(input));
+      return new Response(null, { status: 503 });
+    });
+    try {
+      vi.resetModules();
+      const fresh = await import("@/lib/snapshot/use-snapshot");
+      await expect(fresh.getSnapshotClient().load(shardsForProfileForm(), "fr")).rejects.toThrow();
+      expect(urls).toEqual(["/snapshots/manifest.json"]);
+    } finally {
+      vi.unstubAllEnvs();
+      vi.unstubAllGlobals();
+    }
   });
 });
