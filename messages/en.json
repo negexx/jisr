@@ -269,6 +269,19 @@
       "scaleLowerBetter": "On this scale a lower grade is better: you need {required} or better (a lower grade)."
     }
   },
+  "externalLink": {
+    "opensInNewTab": "(opens in a new tab)"
+  },
+  "sourceBadge": {
+    "source": "Source",
+    "howWeEstimated": "How we estimated"
+  },
+  "matchStatusBadge": {
+    "foundation": "Foundation year first"
+  },
+  "deadline": {
+    "opensFrom": "Applications open from {date}"
+  },
   "localeSwitcher": {
     "label": "Language",
     "names": { "fr": "Français", "en": "English", "ar": "العربية" }

@@ -269,6 +269,19 @@
       "scaleLowerBetter": "في هذا السلّم، العلامة الأدنى أفضل: يجب الحصول على {required} أو أفضل منها (أي علامة أدنى)."
     }
   },
+  "externalLink": {
+    "opensInNewTab": "(يفتح في علامة تبويب جديدة)"
+  },
+  "sourceBadge": {
+    "source": "المصدر",
+    "howWeEstimated": "كيف قدّرنا"
+  },
+  "matchStatusBadge": {
+    "foundation": "المرحلة التحضيرية أولًا"
+  },
+  "deadline": {
+    "opensFrom": "التقديم مفتوح ابتداءً من {date}"
+  },
   "localeSwitcher": {
     "label": "اللغة",
     "names": { "fr": "Français", "en": "English", "ar": "العربية" }

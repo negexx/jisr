@@ -269,6 +269,19 @@
       "scaleLowerBetter": "Sur cette échelle, une note plus basse est meilleure : il faut {required} ou mieux (une note plus basse)."
     }
   },
+  "externalLink": {
+    "opensInNewTab": "(s'ouvre dans un nouvel onglet)"
+  },
+  "sourceBadge": {
+    "source": "Source",
+    "howWeEstimated": "Comment nous avons estimé"
+  },
+  "matchStatusBadge": {
+    "foundation": "Année préparatoire d'abord"
+  },
+  "deadline": {
+    "opensFrom": "Candidatures ouvertes à partir du {date}"
+  },
   "localeSwitcher": {
     "label": "Langue",
     "names": { "fr": "Français", "en": "English", "ar": "العربية" }
