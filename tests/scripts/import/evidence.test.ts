@@ -73,6 +73,7 @@ describe("checkDuration", () => {
 describe("checkLanguages", () => {
   it("requires each language to be named in the quote", () => {
     expect(checkLanguages(["en"], "Language of instruction: English").ok).toBe(true);
+    expect(checkLanguages(["nl"], "Taal Nederlands").ok).toBe(true);
     expect(checkLanguages(["en", "de"], "Taught in English and German").ok).toBe(true);
     expect(checkLanguages(["en", "de"], "Taught in English").ok).toBe(false);
     expect(checkLanguages(["fr"], "Cours dispensés en français").ok).toBe(true);
@@ -100,14 +101,18 @@ describe("checkTuition", () => {
 describe("checkDeadline", () => {
   it("matches day and month names in four languages and numeric forms", () => {
     expect(checkDeadline("2027-07-15", "Apply by 15 July 2027").ok).toBe(true);
-    expect(checkDeadline("2027-07-15", "Bewerbungsfrist: 15. Juli").ok).toBe(true);
-    expect(checkDeadline("2027-01-15", "avant le 15 janvier").ok).toBe(true);
-    expect(checkDeadline("2027-05-01", "uiterlijk 1 mei").ok).toBe(true);
+    expect(checkDeadline("2027-07-15", "Bewerbungsfrist: 15. Juli 2027").ok).toBe(true);
+    expect(checkDeadline("2027-01-15", "avant le 15 janvier 2027").ok).toBe(true);
+    expect(checkDeadline("2027-05-01", "uiterlijk 1 mei 2027").ok).toBe(true);
     expect(checkDeadline("2027-07-15", "deadline 15/07/2027").ok).toBe(true);
   });
   it("rejects a date the quote does not contain", () => {
     expect(checkDeadline("2027-07-15", "Apply by 1 June 2027").ok).toBe(false);
     expect(checkDeadline("2027-07-15", "Apply by 15 August").ok).toBe(false);
+  });
+  it("refuses a date whose year the quote does not state", () => {
+    expect(checkDeadline("2027-05-01", "uiterlijk 1 mei").ok).toBe(false);
+    expect(checkDeadline("2027-07-27", "Apply by 27 July 2026").ok).toBe(false);
   });
 });
 

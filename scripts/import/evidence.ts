@@ -149,6 +149,7 @@ const LANGUAGE_WORDS: Record<string, RegExp> = {
   de: /german|allemand|deutsch|duits/i,
   ar: /arabic|arabe|arabisch/i,
   es: /spanish|espagnol|spanisch|spaans/i,
+  nl: /dutch|n[eé]erlandais|nederlands|niederl[aä]ndisch/i,
 };
 
 function numberRegex(n: number): string {
@@ -217,7 +218,11 @@ export function checkDeadline(isoDate: string, quote: string): FactCheck {
     names.some((n) => new RegExp(`\\b${n}\\b`, "i").test(q)) ||
     new RegExp(`(?<!\\d)0?${d}\\s*[./-]\\s*0?${m}(?!\\d)`).test(q) ||
     new RegExp(`${year}-0?${m}-0?${d}`).test(q);
-  return dayOk && monthOk ? ok : fail(`the date ${isoDate} does not appear in the quote`);
+  if (!(dayOk && monthOk)) return fail(`the date ${isoDate} does not appear in the quote`);
+  // A year the page does not state is an inference, not a fact: leave it for a human.
+  return new RegExp(`(?<!\\d)${year}(?!\\d)`).test(q)
+    ? ok
+    : fail(`the quote does not state the year ${year}`);
 }
 
 const CHANNEL_WORDS: Record<string, RegExp> = {
