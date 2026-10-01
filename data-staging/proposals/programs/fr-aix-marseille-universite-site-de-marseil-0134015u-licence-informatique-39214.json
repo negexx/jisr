@@ -1,0 +1,87 @@
+{
+  "slug": "fr-aix-marseille-universite-site-de-marseil-0134015u-licence-informatique-39214",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39214&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise",
+          "quote": "La licence est un diplôme national de l’enseignement supérieur qui se prépare en six semestres au sein de l’Université."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39214&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+          "quote": "2 902 euros pour une année en cycle de Licence"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "fr-campus-france",
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces",
+          "quote": "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "tcf",
+          "delf-dalf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39214&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.",
+          "en": "Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.",
+          "ar": "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+            "quote": "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Tuition: the amount is the differentiated tuition fee for non-EU students at French public universities, quoted from a Campus France Maroc page, not from the programme's own page. The programme's Parcoursup page states 'Par année 178 euros' but that is the rate for French/EU students. Application channel: for a Moroccan Bac holder the Études en France / Campus France procedure applies (per Campus France Maroc), not Parcoursup, which is for French and European Bac holders. The Parcoursup page confirms non-EU applicants do not use Parcoursup ('les candidats non ressortissants de l'U.E ... ne passent pas par la plateforme Parcoursup, mais par la procédure DAP'), but that DAP statement is a standard note; the Campus France Maroc page for L1 with a Moroccan Bac states the Etudes en France platform. The 'Niveau de français requis ... B2' is stated for the programme; the certification obligation (TCF/DELF B2/DALF) is a general Campus France Maroc procedure requirement, with dispensations for 100% English-taught programmes other than L1 — verify with the establishment."
+}

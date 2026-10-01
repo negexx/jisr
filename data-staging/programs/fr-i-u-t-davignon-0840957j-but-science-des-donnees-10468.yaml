@@ -1,0 +1,214 @@
+slug: fr-i-u-t-davignon-0840957j-but-science-des-donnees-10468
+institution: fr-i-u-t-davignon-0840957j
+country: FR
+city: avignon
+field: computer-science
+level: bachelor
+name: BUT - Science des données
+summary:
+  fr:
+    text: BUT - Science des données, I.U.T. d'Avignon (Avignon). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Science des données, I.U.T. d'Avignon (Avignon). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Science des données, I.U.T. d'Avignon (Avignon). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10468&typeBac=0&originePc=0
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - fr
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 290200
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-11-15
+  source: page-4
+  info_kind: official
+applicationChannel:
+  value: fr-campus-france
+  source: page-4
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - tcf
+        - delf-dalf
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site."
+          status: draft
+        en:
+          text: "Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website."
+          status: draft
+        ar:
+          text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - delf-dalf
+        - tcf
+    - id: req-4
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Aucun diplôme précis (par ex. le Bac marocain) n'est nommé dans les pages : vérifiez que votre diplôme de fin d'études secondaires permet la candidature en BUT via la procédure Études en France (plateforme Campus France Maroc)."
+          status: draft
+        en:
+          text: "No specific diploma (e.g. the Moroccan Baccalauréat) is named on the pages: check that your secondary-school leaving certificate allows applying for the BUT via the Études en France procedure (Campus France Morocco platform)."
+          status: draft
+    - id: req-5
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "La sélection se fait sur dossier : résultats scolaires, méthodes de travail, savoir-être, motivation et projet de formation sont évalués (grille de 30 %, 30 %, 25 %, 12 %, 3 %). Aucun seuil de notes n'est publié : vérifiez les critères sur la fiche Parcoursup et préparez un projet de formation argumenté."
+          status: draft
+        en:
+          text: "Selection is based on the application file: academic results, working methods, behaviour, motivation and the training project are assessed (grid of 30%, 30%, 25%, 12%, 3%). No grade threshold is published: check the criteria on the Parcoursup sheet and prepare a well-argued training project."
+          status: draft
+    - id: req-6
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidatures via Études en France sont évaluées par le programme ADIUT Maroc, avec un calendrier 2026-2027 à consulter ultérieurement.
+          status: draft
+        en:
+          text: Applications via Études en France are assessed by the ADIUT Maroc programme, with a 2026-2027 calendar to be published later.
+          status: draft
+    - id: req-7
+      source: page-6
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien Campus France peut être prévu dans le cadre de la procédure Études en France.
+          status: draft
+        en:
+          text: A Campus France interview may be part of the Études en France procedure.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10468&typeBac=0&originePc=0
+    last_verified_at: null
+  page-2:
+    url: https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
+    last_verified_at: null
+  page-3:
+    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    last_verified_at: null
+  page-4:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: null
+  page-5:
+    url: https://iut.univ-avignon.fr/formations/bachelor-universitaire-de-technologie-statistique-et-informatique-decisionnelle-stid/
+    last_verified_at: null
+  page-6:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-i-u-t-davignon-0840957j-but-science-des-donnees-10468
+  name: BUT - Science des données
+  sourceId: parcoursup:10468
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
+      quote: Le BUT est un diplôme préparé en 3 ans en IUT
+    - fact: teachingLanguages
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10468&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : B2"
+    - fact: tuition
+      url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+      quote: 2 902 euros pour une année en cycle de Licence
+    - fact: intakes
+      url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+      quote: Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine).
+    - fact: applicationChannel
+      url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+      quote: Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France.
+    - fact: requirements.req-1
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10468&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : B2"
+    - fact: requirements.req-1
+      url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
+      quote: Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France.
+    - fact: requirements.req-2
+      url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+      quote: Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés.
+    - fact: requirements.req-3
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10468&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : B2"
+    - fact: requirements.req-3
+      url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
+      quote: Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France.
+    - fact: requirements.req-3
+      url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
+      quote: Les étudiants qui postulent en 1ère année de licence à l'université (L1) ne seront pas dispensés de la certification de français.
+    - fact: requirements.req-4
+      url: https://iut.univ-avignon.fr/formations/bachelor-universitaire-de-technologie-statistique-et-informatique-decisionnelle-stid/
+      quote: Présentation Condition d'admission Parcours et niveaux
+    - fact: requirements.req-5
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10468&typeBac=0&originePc=0
+      quote: Résultats scolaires 30 % Méthodes de travail 30 % Savoir-être 25 % Motivation 12 % Engagement et activités 3 %
+    - fact: requirements.req-5
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10468&typeBac=0&originePc=0
+      quote: Le projet motivé doit être personnalisé et argumenté.
+    - fact: requirements.req-6
+      url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+      quote: Le calendrier 2026-2027 sera disponible prochainement.
+    - fact: requirements.req-6
+      url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+      quote: L'ADIUT Maroc (Association des Directeurs des Instituts Universitaires de Technologie) est un programme spécifique au Maroc créé par les directeurs des IUT français
+    - fact: requirements.req-7
+      url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
+      quote: Il faudra mentionner dans vos motivations et lors de l'entretien Campus France que vous avez choisi une formation à distance.
+  notes: "Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Frais de scolarité : la fiche Parcoursup indique seulement 178 euros par an (tarif national) et « Pas de frais pour les boursiers » — ce n'est pas le tarif extra-communautaire ; le page maroc.campusfrance.org « Le coût des études » donne 2 902 euros par an en cycle Licence pour les étudiants extra communautaires mais il s'agit d'un chiffre général, non spécifique à ce BUT, donc non retenu comme frais de ce programme. Aucun tarif spécifique au BUT Science des données pour un étudiant hors UE n'est publié. Langue d'enseignement : seule la maîtrise du français est attestée ; l'anglais est une langue vivante du cursus et les attendus mentionnent un niveau d'anglais, mais aucune page ne dit que cet enseignement est en anglais. ApplicationChannel volontairement omis : le parcours pour les titulaires d'un Bac marocain passe par Études en France / Campus France Maroc, qui est géré séparément ; la fiche Parcoursup et la page campusfrance Maroc sur le BUT confirment le renvoi vers Études en France pour les bacheliers marocains. Vœux : la page mentionne « 28 places en 2026 » (et « 28 places offertes par la formation en 2025 »), chiffres informatifs, non repris comme exigences."

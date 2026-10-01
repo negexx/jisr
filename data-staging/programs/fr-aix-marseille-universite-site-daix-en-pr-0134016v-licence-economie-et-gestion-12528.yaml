@@ -1,0 +1,145 @@
+slug: fr-aix-marseille-universite-site-daix-en-pr-0134016v-licence-economie-et-gestion-12528
+institution: fr-aix-marseille-universite-site-daix-en-pr-0134016v
+country: FR
+city: aix-en-provence
+field: business-economics
+level: bachelor
+name: Licence - Portail Administration économique et sociale - Economie et Gestion - Gestion
+summary:
+  fr:
+    text: Licence - Portail Administration économique et sociale - Economie et Gestion - Gestion, Aix-Marseille Université - Site d'Aix-en-Provence (La Pauliane) (Aix-en-Provence). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Portail Administration économique et sociale - Economie et Gestion - Gestion, Aix-Marseille Université - Site d'Aix-en-Provence (La Pauliane) (Aix-en-Provence). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail Administration économique et sociale - Economie et Gestion - Gestion, Aix-Marseille Université - Site d'Aix-en-Provence (La Pauliane) (Aix-en-Provence). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12528&typeBac=0&originePc=0
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 290200
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: fr-campus-france
+  source: page-4
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - tcf
+        - delf-dalf
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site."
+          status: draft
+        en:
+          text: "Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website."
+          status: draft
+        ar:
+          text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez le calendrier de candidature (dates limites pour la DAP : dépôt avant le 15 décembre précédant l'année universitaire, décision des établissements le 30 avril, réponse de l'étudiant avant le 31 mai) ainsi que le TCF auprès du CIEP."
+          status: draft
+        en:
+          text: "Check the application calendar (DAP deadlines: submit before 15 December of the year before the academic year, institution decision on 30 April, student reply by 31 May) and the TCF with CIEP."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12528&typeBac=0&originePc=0
+    last_verified_at: null
+  page-2:
+    url: https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise
+    last_verified_at: null
+  page-3:
+    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    last_verified_at: null
+  page-4:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
+    last_verified_at: null
+  page-5:
+    url: https://feg.univ-amu.fr/fr/candidature-inscription/candidature/demande-admission-prealable-dap
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-aix-marseille-universite-site-daix-en-pr-0134016v-licence-economie-et-gestion-12528
+  name: Licence - Portail Administration économique et sociale - Economie et Gestion - Gestion
+  sourceId: parcoursup:12528
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise
+      quote: La licence est un diplôme national de l’enseignement supérieur qui se prépare en six semestres au sein de l’Université.
+    - fact: tuition
+      url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+      quote: 2 902 euros pour une année en cycle de Licence
+    - fact: applicationChannel
+      url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
+      quote: "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France"
+    - fact: requirements.req-1
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12528&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : B2"
+    - fact: requirements.req-1
+      url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
+      quote: Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France.
+    - fact: requirements.req-2
+      url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+      quote: Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés.
+    - fact: requirements.req-3
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12528&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : B2"
+    - fact: requirements.req-4
+      url: https://feg.univ-amu.fr/fr/candidature-inscription/candidature/demande-admission-prealable-dap
+      quote: Pour postuler à une première inscription en L1, vous devez justifier d'une bonne connaissance du français. N'oubliez pas de vous inscrire au Test de Connaissance du Français (TCF) auprès du CIEP.
+  notes: "Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | La page dédiée à ce programme (fiche Parcoursup) ne donne pas de frais de scolarité pour les étudiants hors UE : les 178 euros par année indiqués sont les droits nationaux, et la mention « Pas de frais pour les boursiers » ne concerne pas cet applicant. Le montant retenu pour la tuition (2 902 €/an en Licence) provient de la page institutionnelle d'Aix-Marseille Université sur les droits d'inscription différenciés 2026-27, qui précise aussi que ce montant s'applique aux étudiants extracommunautaires ; la page signale des cas d'exonération totale ou partielle (boursiers du gouvernement français, accords de coopération, exonération partielle à 75 % selon contingent), donc à vérifier avec l'université. La candidature via la plateforme Études en France / Campus France pour un titulaire de bac marocain est bien décrite sur la page « Candidature en 1ère année de licence et en PASS/L.AS à l'université » de Campus France Maroc ; applicationChannel n'est pas produit ici conformément à la consigne. Le niveau de français B2 est indiqué comme « niveau requis » dans la fiche Parcoursup, mais aucun certificat ou test précis n'y est nommé ; les certifications françaises (TCF/DELF B2/DALF) sont décrites sur les pages Campus France, dont la dispense pour les formations 100 % en anglais qui ne s'applique pas ici (formation en français)."

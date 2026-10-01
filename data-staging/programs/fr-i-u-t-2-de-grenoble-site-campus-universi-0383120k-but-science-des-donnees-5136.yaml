@@ -1,0 +1,159 @@
+slug: fr-i-u-t-2-de-grenoble-site-campus-universi-0383120k-but-science-des-donnees-5136
+institution: fr-i-u-t-2-de-grenoble-site-campus-universi-0383120k
+country: FR
+city: saint-martin-dheres
+field: computer-science
+level: bachelor
+name: BUT - Science des données
+summary:
+  fr:
+    text: BUT - Science des données, I.U.T. 2 de Grenoble - site campus universitaire (Saint-Martin-d'Hères). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Science des données, I.U.T. 2 de Grenoble - site campus universitaire (Saint-Martin-d'Hères). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Science des données, I.U.T. 2 de Grenoble - site campus universitaire (Saint-Martin-d'Hères). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5136&typeBac=0&originePc=0
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - fr
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 290200
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: fr-campus-france
+  source: page-4
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: C1
+      certificateRequired: true
+      acceptedTests:
+        - tcf
+        - delf-dalf
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site."
+          status: draft
+        en:
+          text: "Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website."
+          status: draft
+        ar:
+          text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: C1
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: subject_taken
+      subjects:
+        - mathematics
+      mode: all
+    - id: req-5
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "L'admission se fait sur dossier : résultats scolaires (50 %), méthodes de travail (10 %), savoir-être (10 %) et motivation (30 %), avec un niveau en mathématiques jugé essentiel. Vérifiez le niveau en mathématiques et les notes des enseignements de spécialité."
+          status: draft
+        en:
+          text: "Admission is based on a file review: academic results (50%), working methods (10%), behaviour (10%) and motivation (30%), with the level in mathematics considered essential. Check the mathematics level and the subject-specialism grades."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5136&typeBac=0&originePc=0
+    last_verified_at: null
+  page-2:
+    url: https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
+    last_verified_at: null
+  page-3:
+    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    last_verified_at: null
+  page-4:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-i-u-t-2-de-grenoble-site-campus-universi-0383120k-but-science-des-donnees-5136
+  name: BUT - Science des données
+  sourceId: parcoursup:5136
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
+      quote: Le BUT est un diplôme préparé en 3 ans en IUT
+    - fact: teachingLanguages
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5136&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : C1"
+    - fact: tuition
+      url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+      quote: 2 902 euros pour une année en cycle de Licence
+    - fact: applicationChannel
+      url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+      quote: Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France.
+    - fact: requirements.req-1
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5136&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : C1"
+    - fact: requirements.req-1
+      url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
+      quote: Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France.
+    - fact: requirements.req-2
+      url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+      quote: Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés.
+    - fact: requirements.req-3
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5136&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : C1"
+    - fact: requirements.req-4
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5136&typeBac=0&originePc=0
+      quote: Le suivi d'un enseignement de mathématiques tout au long du lycée est un élément essentiel de l'appréciation du dossier.
+    - fact: requirements.req-5
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5136&typeBac=0&originePc=0
+      quote: Résultats scolaires 50 % Méthodes de travail 10 % Savoir-être 10 % Motivation 30 %
+    - fact: requirements.req-5
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5136&typeBac=0&originePc=0
+      quote: Niveau en mathématiques Notes en mathématiques de 1ère et terminale, résultats aux épreuves de spécialité mathématiques le cas échéant, et notes obtenues en mathématiques dans l'enseignement supérieur le cas échéant Essentiel 4 sur 4
+  notes: "Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Durée : le BUT est un diplôme de grade licence ; la page Parcoursup précise \"un cursus en 3 années\". Langue d'enseignement : la page Parcoursup exige un niveau de français C1 et liste l'anglais comme langue vivante 1/2 (langue étudiée, pas langue d'enseignement), donc la langue d'enseignement retenue est le français. Frais de scolarité : le montant de 2 902 € (droits d'inscription différenciés pour un étudiant extra-communautaire en Licence) provient de la page Campus France Maroc ; il n'est pas confirmé sur la page propre au programme ni sur la page de l'UGA, et les pages indiquent que certains établissements exonèrent les étudiants étrangers : à vérifier auprès de l'IUT2. La page Parcoursup affiche 178 € par an, tarif national pour les étudiants français/UE, qui ne s'applique pas au profil visé. Aucun frais spécifiquement annoncé pour ce BUT pour les étudiants non-UE. Channel d'application : non inclus (la page Parcoursup dit que les candidats non-UE titulaires d'un bac étranger résidant dans un pays à procédure Etudes en France ne doivent pas s'inscrire sur Parcoursup, mais faire leurs démarches sur le site Campus France de leur pays de résidence)."

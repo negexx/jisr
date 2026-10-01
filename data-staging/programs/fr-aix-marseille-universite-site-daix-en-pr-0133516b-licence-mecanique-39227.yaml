@@ -1,0 +1,152 @@
+slug: fr-aix-marseille-universite-site-daix-en-pr-0133516b-licence-mecanique-39227
+institution: fr-aix-marseille-universite-site-daix-en-pr-0133516b
+country: FR
+city: aix-en-provence
+field: engineering
+level: bachelor
+name: Licence - Mécanique - Portail René Descartes
+summary:
+  fr:
+    text: Licence - Mécanique - Portail René Descartes, Aix-Marseille Université - Site d'Aix-en-Provence (Montperrin) (Aix-en-Provence). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Mécanique - Portail René Descartes, Aix-Marseille Université - Site d'Aix-en-Provence (Montperrin) (Aix-en-Provence). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Mécanique - Portail René Descartes, Aix-Marseille Université - Site d'Aix-en-Provence (Montperrin) (Aix-en-Provence). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39227&typeBac=0&originePc=0
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - fr
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 290200
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: fr-campus-france
+  source: page-4
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - tcf
+        - delf-dalf
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site."
+          status: draft
+        en:
+          text: "Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website."
+          status: draft
+        ar:
+          text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un bon niveau en sciences est exigé ; les résultats en mathématiques et en physique-chimie sont essentiels, et un aménagement (licence en 4 ans) peut être proposé si le profil ne correspond pas aux attendus.
+          status: draft
+        en:
+          text: A good level in sciences is required; results in mathematics and physics-chemistry are essential, and a 4-year licence may be offered if the profile does not match the expectations.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39227&typeBac=0&originePc=0
+    last_verified_at: null
+  page-2:
+    url: https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise
+    last_verified_at: null
+  page-3:
+    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    last_verified_at: null
+  page-4:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-aix-marseille-universite-site-daix-en-pr-0133516b-licence-mecanique-39227
+  name: Licence - Mécanique - Portail René Descartes
+  sourceId: parcoursup:39227
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise
+      quote: La licence est un diplôme national de l’enseignement supérieur qui se prépare en six semestres au sein de l’Université.
+    - fact: teachingLanguages
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39227&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : B2"
+    - fact: tuition
+      url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+      quote: 2 902 euros pour une année en cycle de Licence
+    - fact: applicationChannel
+      url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
+      quote: "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France"
+    - fact: requirements.req-1
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39227&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : B2"
+    - fact: requirements.req-1
+      url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
+      quote: Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France.
+    - fact: requirements.req-2
+      url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+      quote: Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés.
+    - fact: requirements.req-3
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39227&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : B2"
+    - fact: requirements.req-4
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39227&typeBac=0&originePc=0
+      quote: "La Licence Mathématiques exige un bon niveau en sciences. Elle est dans le Portail René Descartes, 1ère année commune à 4 mentions : Mathématiques, Informatique, Physique et Mécanique."
+    - fact: requirements.req-4
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39227&typeBac=0&originePc=0
+      quote: Notes en mathématiques Bulletins de 1ère, terminale et relevé de notes du bac Essentiel 4 sur 4
+    - fact: requirements.req-4
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39227&typeBac=0&originePc=0
+      quote: Si le profil de l'étudiant ne correspond pas aux attendus nationaux de la mention, un aménagement lui sera proposé qui pourra être d'effectuer une licence en 4 ans au lieu de 3 sur un site qui peut être différent du site du sous-voeu.
+  notes: "Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | La page Parcoursup s'adresse aux candidats titulaires du bac français ou européen (voir la page Campus France : les titulaires d'un bac marocain doivent passer par la procédure Études en France). Les frais de scolarité (178 euros par année, gratuits pour les boursiers) constituent un tarif général d'établissement qui ne s'applique pas nécessairement aux étudiants extra-communautaires titulaires d'un diplôme étranger, pour lesquels le site de l'université mentionne des droits d'inscription différenciés ; aucun montant spécifique à cette licence pour ce profil n'est indiqué sur les pages, donc la tuition a été laissée de côté."

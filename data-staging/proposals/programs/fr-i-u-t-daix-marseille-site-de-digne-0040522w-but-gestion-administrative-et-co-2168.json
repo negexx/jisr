@@ -1,0 +1,102 @@
+{
+  "slug": "fr-i-u-t-daix-marseille-site-de-digne-0040522w-but-gestion-administrative-et-co-2168",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2168&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie",
+          "quote": "Le BUT est un diplôme préparé en 3 ans en IUT"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+          "quote": "2 902 euros pour une année en cycle de Licence"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "fr-campus-france",
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+          "quote": "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "tcf",
+          "delf-dalf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2168&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.",
+          "en": "Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.",
+          "ar": "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+            "quote": "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2168&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Toutes les spécialités de baccalauréat permettent de candidater ; des enseignements de spécialité sont privilégiés (histoire-géographie/géopolitique/SES, LLCER, mathématiques, SES) ainsi que le bac STMG.",
+          "en": "All baccalauréat specialities allow you to apply; some are favoured (history-geography/geopolitics, languages-literatures-foreign cultures, mathematics, economics and social sciences) as well as the STMG technological bac."
+        },
+        "evidence": [
+          {
+            "url": "https://iut.univ-amu.fr/fr/formations/bachelor-universitaire-de-technologie/but-gestion-administrative-commerciale-organisations",
+            "quote": "Titulaires du baccalauréat de voie générale enseignements de spécialités privilégiés : Histoire-géographie, géopolitique et sciences politiques - Langues, littératures et cultures étrangères - Mathématiques -Sciences économiques et sociales."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Aucun frais de scolarité spécifique aux étudiants hors UE/EEE n'est indiqué pour ce BUT : la fiche du programme ne donne que « Droits d’inscription nationaux : 178€* » (tarif en formation initiale) et la fiche Parcoursup « Par année 178 euros », montants qui concernent les droits nationaux et non les droits différenciés ; le montant des droits différenciés Licence pour 2026-27 (2 902 €) figure sur une page institutionnelle générale, pas sur la page du programme, et une exonération (partielle à 75% ou de plein droit) peut s'appliquer : à vérifier auprès de l'établissement. Les langues d'enseignement ne sont pas mentionnées ; la fiche Parcoursup indique seulement « Langue vivante 1 : Anglais / Langue vivante 2 : Espagnol, Italien » (langues enseignées, pas langue d'enseignement), et le niveau de français C1 de la fiche Parcoursup n'est pas confirmé pour la voie Études en France. Le programme est dispensé en français : présenter la certification de français exigée par la procédure Campus France (TCF/DELF B2/DALF), le niveau B2 étant seulement « recommandé ». Les dates d'ouverture et de limite de dépôt des candidatures ne sont pas données sur ces pages."
+}

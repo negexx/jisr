@@ -1,0 +1,117 @@
+{
+  "slug": "fr-i-u-t-annecy-0741133e-but-informatique-8901",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie",
+          "quote": "Le BUT est un diplôme préparé en 3 ans en IUT"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+          "quote": "2 902 euros pour une année en cycle de Licence"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "fr-campus-france",
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+          "quote": "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "tcf",
+          "delf-dalf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.",
+          "en": "Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.",
+          "ar": "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+            "quote": "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": null,
+        "certificateRequired": true,
+        "acceptedTests": [
+          "delf-dalf",
+          "tcf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez auprès de l'IUT d'Annecy les attendus et les épreuves de sélection (entretiens possibles du 11 au 18 mai 2026), ainsi que les enseignements de spécialité conseillés (Mathématiques et NSI pour les bacheliers généraux, SIN pour les bacheliers STI2D).",
+          "en": "Check with IUT Annecy the expected prior subjects and the selection process (possible interviews from 11 to 18 May 2026), as well as the recommended speciality subjects (Mathematics and NSI for general baccalaureate holders, SIN for STI2D holders)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0",
+            "quote": "Les épreuves orales ou l'entretien auront lieu : Du lundi 11 mai 2026 au lundi 18 mai 2026"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0",
+            "quote": "Mathématiques spécialité et NSI pour les bacheliers généraux"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0",
+            "quote": "SIN pour les bacheliers STI2D"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Le diplôme est un BUT (Bachelor Universitaire de Technologie) en 3 ans. Les 178 €/an sur la fiche Parcoursup correspondent aux droits d'inscription des étudiants français, des étudiants de l'UE/EEE/Suisse et des étudiants exonérés ; pour un étudiant marocain non exonéré s'appliquent les droits différenciés de 2 902 €/an (confirmés par Campus France Maroc et Campus France). Un projet de réforme (Studyrama, 2026) annonce 2 895 €/an, mais les pages officielles Campus France indiquent 2 902 €. La quote 'Les frais de dossier Campus France' est un fragment de menu, utilisée uniquement pour recommander une vérification, pas comme une règle de frais de dossier. Le C1 de français sur la fiche Parcoursup est un niveau requis pour s'inscrire, sans tableau d'équivalence vers le CECRL dans les pages fournies. L'IUT d'Annecy n'apparaît pas dans les pages USMB sur les étudiants extracommunautaires ; la voie d'accès Études en France est traitée séparément. Aucun test d'anglais (TOEIC, TOEFL, IELTS) n'est exigé sur la fiche ; ils sont simplement mentionnés par Campus France pour les formations 100% anglaises, ce qui n'est pas le cas (seul le 1er semestre de 3e année d'un parcours est en anglais)."
+}

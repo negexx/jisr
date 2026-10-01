@@ -5,6 +5,7 @@ import path from "node:path";
 import { parse } from "yaml";
 
 import { checkVerified } from "./checker";
+import { enrichProposal, type National, readNational } from "./enrich-fr";
 import { CHANNEL_SLUGS, LANGUAGE_CODES, pageText, SUBJECT_SLUGS, TEST_SLUGS } from "./evidence";
 import {
   appendJsonl,
@@ -17,6 +18,7 @@ import {
   MODELS,
   type ModelSpec,
 } from "./llm";
+import { mergeProposals } from "./merge";
 import {
   type GetText,
   type Proposal,
@@ -366,6 +368,32 @@ export async function loadMeta(slug: string): Promise<ProgrammeMeta | null> {
   };
 }
 
+// For a French programme: the proposal enrich-fr makes (its Parcoursup fiche and the national
+// sentences), or null. Applying a proposal rewrites every fact field, so what is already known has
+// to travel with the reader's additions.
+export async function loadBaseProposal(slug: string, national: National): Promise<Proposal | null> {
+  const record =
+    (await readYaml(stageFile("programs", slug))) ??
+    (await readYaml(path.join(DATA_DIR, "programs", `${slug}.yaml`)));
+  const fiche = record?.officialUrl;
+  if (record === null || typeof fiche !== "string" || !fiche.startsWith("https://")) return null;
+  const institutionSlug = String(record.institution ?? "");
+  const institution =
+    (await readYaml(stageFile("institutions", institutionSlug))) ??
+    (await readYaml(path.join(DATA_DIR, "institutions", `${institutionSlug}.yaml`)));
+  try {
+    return await enrichProposal({
+      record,
+      institutionType: institution?.type,
+      fiche,
+      national,
+      getText: pageText,
+    });
+  } catch {
+    return null;
+  }
+}
+
 // The text of each url as the verifier will see it (cached on disk); a page that cannot be fetched
 // is left out and reported.
 export async function loadPages(
@@ -386,7 +414,7 @@ export async function loadPages(
 
 // --- CLI -------------------------------------------------------------------------------------------
 // Usage:
-//   data:read --model <id> --pages <pages.json> [--slugs <file>] [--out <dir>] [--max-usd 1] [--check <model>]
+//   data:read --model <id> --pages <pages.json> [--slugs <file>] [--out <dir>] [--max-usd 1] [--check <model>] [--base enrich-fr]
 //             [--max-tokens 5000000] [--concurrency 8] [--dry-run]
 // pages.json: { "shared": { "FR": [url, ...], "NL": [...] }, "programmes": { "<slug>": [url, ...] } }
 // Writes <out>/<slug>.json (the proposal), <out>/calls.jsonl (one line per call) and prints a short
@@ -408,6 +436,9 @@ async function main(argv: readonly string[]): Promise<void> {
   const model = MODELS[modelId];
   if (model === undefined)
     throw new Error(`unknown model ${modelId}; known: ${Object.keys(MODELS).join(", ")}`);
+  const baseId = flag(argv, "base");
+  if (baseId !== undefined && baseId !== "enrich-fr") throw new Error(`unknown base ${baseId}`);
+  const national = baseId === undefined ? null : await readNational(pageText);
   const checkId = flag(argv, "check");
   const checkModel = checkId === undefined ? undefined : MODELS[checkId];
   if (checkId !== undefined && checkModel === undefined)
@@ -476,6 +507,14 @@ async function main(argv: readonly string[]): Promise<void> {
         verified = checked.verified;
         proposal = keepChecked(proposal, checked.verified);
         check = { costUsd: checked.completion?.costUsd ?? null, error: checked.error };
+      }
+      // French programmes: the existing national facts come first, the checked reader facts only add
+      if (national !== null && meta.country === "FR" && proposal !== null) {
+        const base = await loadBaseProposal(slug, national);
+        if (base !== null) {
+          proposal = mergeProposals(base, proposal);
+          verified = await verifyProposal(proposal, meta.name, pageText);
+        }
       }
       const ok = verified === null ? [] : Object.keys(verified.facts);
       const bad = verified?.rejected ?? [];

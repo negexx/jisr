@@ -1,0 +1,120 @@
+{
+  "slug": "fr-i-u-t-de-bayonne-0641478j-but-informatique-7758",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7758&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie",
+          "quote": "Le BUT est un diplôme préparé en 3 ans en IUT"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://formation.univ-pau.fr/fr/catalogue/bachelor-universitaire-de-technologie-but-BUT/b-u-t-informatique-L459O6U5.html",
+          "quote": "Langue(s) d'enseignement Français"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+          "quote": "2 902 euros pour une année en cycle de Licence"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "fr-campus-france",
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+          "quote": "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "tcf",
+          "delf-dalf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7758&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.",
+          "en": "Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.",
+          "ar": "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+            "quote": "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "delf-dalf",
+          "tcf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7758&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les critères d'admission sur la fiche du programme : la commission attend un dossier de bonne qualité, un niveau correct et régulier dans toutes les matières (accent sur les matières scientifiques), un projet de formation personnalisé et argumenté. Un entretien oral peut être organisé (bacs technologiques et professionnels).",
+          "en": "Check the programme's admission criteria: the commission expects a good-quality application, a correct and steady level in all subjects (with emphasis on scientific subjects) and a personalised, well-argued study plan. An oral interview may be organised (technological and vocational baccalaureates)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7758&typeBac=0&originePc=0",
+            "quote": "L'entretien oral est organisé pour les candidats de bacs technologiques et professionnels."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | tuition: the page texts do not state a specific differentiated fee for this BUT programme. The figures quoted (EUR 2 902/year licence) are the differentiated droits d'inscription for extra-EU students in a French public establishment applying to the general licence cycle, and the university page gives 'EN LICENCE' formation continue scale; they may apply to this BUT but the pages do not say so programme-specifically - treat the tuition value as indicative and verify. The Parcoursup fiche shows only 178 EUR/year, which is the non-differentiated (French/EU) rate and does not apply to this applicant. durationYears: also supported by ECTS 180 credits. applicationChannel: not extracted per task instruction (Etudes en France / Campus France for this applicant)."
+}

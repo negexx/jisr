@@ -1,0 +1,153 @@
+slug: fr-i-u-t-annecy-0741133e-but-informatique-8901
+institution: fr-i-u-t-annecy-0741133e
+country: FR
+city: annecy
+field: computer-science
+level: bachelor
+name: BUT - Informatique
+summary:
+  fr:
+    text: BUT - Informatique, I.U.T. Annecy (Annecy). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Informatique, I.U.T. Annecy (Annecy). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Informatique, I.U.T. Annecy (Annecy). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 290200
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: fr-campus-france
+  source: page-4
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: C1
+      certificateRequired: true
+      acceptedTests:
+        - tcf
+        - delf-dalf
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site."
+          status: draft
+        en:
+          text: "Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website."
+          status: draft
+        ar:
+          text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - delf-dalf
+        - tcf
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez auprès de l'IUT d'Annecy les attendus et les épreuves de sélection (entretiens possibles du 11 au 18 mai 2026), ainsi que les enseignements de spécialité conseillés (Mathématiques et NSI pour les bacheliers généraux, SIN pour les bacheliers STI2D).
+          status: draft
+        en:
+          text: Check with IUT Annecy the expected prior subjects and the selection process (possible interviews from 11 to 18 May 2026), as well as the recommended speciality subjects (Mathematics and NSI for general baccalaureate holders, SIN for STI2D holders).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0
+    last_verified_at: null
+  page-2:
+    url: https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
+    last_verified_at: null
+  page-3:
+    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    last_verified_at: null
+  page-4:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-i-u-t-annecy-0741133e-but-informatique-8901
+  name: BUT - Informatique
+  sourceId: parcoursup:8901
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
+      quote: Le BUT est un diplôme préparé en 3 ans en IUT
+    - fact: tuition
+      url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+      quote: 2 902 euros pour une année en cycle de Licence
+    - fact: applicationChannel
+      url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+      quote: Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France.
+    - fact: requirements.req-1
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : C1"
+    - fact: requirements.req-1
+      url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
+      quote: Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France.
+    - fact: requirements.req-2
+      url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+      quote: Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés.
+    - fact: requirements.req-3
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : C1"
+    - fact: requirements.req-3
+      url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
+      quote: Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France.
+    - fact: requirements.req-4
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0
+      quote: "Les épreuves orales ou l'entretien auront lieu : Du lundi 11 mai 2026 au lundi 18 mai 2026"
+    - fact: requirements.req-4
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0
+      quote: Mathématiques spécialité et NSI pour les bacheliers généraux
+    - fact: requirements.req-4
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0
+      quote: SIN pour les bacheliers STI2D
+  notes: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Le diplôme est un BUT (Bachelor Universitaire de Technologie) en 3 ans. Les 178 €/an sur la fiche Parcoursup correspondent aux droits d'inscription des étudiants français, des étudiants de l'UE/EEE/Suisse et des étudiants exonérés ; pour un étudiant marocain non exonéré s'appliquent les droits différenciés de 2 902 €/an (confirmés par Campus France Maroc et Campus France). Un projet de réforme (Studyrama, 2026) annonce 2 895 €/an, mais les pages officielles Campus France indiquent 2 902 €. La quote 'Les frais de dossier Campus France' est un fragment de menu, utilisée uniquement pour recommander une vérification, pas comme une règle de frais de dossier. Le C1 de français sur la fiche Parcoursup est un niveau requis pour s'inscrire, sans tableau d'équivalence vers le CECRL dans les pages fournies. L'IUT d'Annecy n'apparaît pas dans les pages USMB sur les étudiants extracommunautaires ; la voie d'accès Études en France est traitée séparément. Aucun test d'anglais (TOEIC, TOEFL, IELTS) n'est exigé sur la fiche ; ils sont simplement mentionnés par Campus France pour les formations 100% anglaises, ce qui n'est pas le cas (seul le 1er semestre de 3e année d'un parcours est en anglais).

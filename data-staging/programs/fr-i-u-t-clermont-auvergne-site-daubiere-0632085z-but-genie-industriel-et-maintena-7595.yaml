@@ -1,0 +1,156 @@
+slug: fr-i-u-t-clermont-auvergne-site-daubiere-0632085z-but-genie-industriel-et-maintena-7595
+institution: fr-i-u-t-clermont-auvergne-site-daubiere-0632085z
+country: FR
+city: aubiere
+field: engineering
+level: bachelor
+name: BUT - Génie industriel et maintenance
+summary:
+  fr:
+    text: BUT - Génie industriel et maintenance, I.U.T Clermont Auvergne - site d'Aubière (Aubière). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Génie industriel et maintenance, I.U.T Clermont Auvergne - site d'Aubière (Aubière). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie industriel et maintenance, I.U.T Clermont Auvergne - site d'Aubière (Aubière). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7595&typeBac=0&originePc=0
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 290200
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: fr-campus-france
+  source: page-4
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - tcf
+        - delf-dalf
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site."
+          status: draft
+        en:
+          text: "Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website."
+          status: draft
+        ar:
+          text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Concours d'entrée : test d'admission (écrit) portant sur la motivation et la connaissance de la formation ; prise de rendez-vous obligatoire sur Parcoursup."
+          status: draft
+        en:
+          text: "Entrance exam: admission test (written) on motivation and knowledge of the programme; an appointment must be booked on Parcoursup."
+          status: draft
+    - id: req-5
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Le dossier est examiné sur la base des bulletins de première et terminale (mathématiques, physique-chimie, sciences de l'ingénieur ou enseignement technologique, niveau en anglais, résultats des épreuves de français) : fournir les relevés et les résultats du baccalauréat."
+          status: draft
+        en:
+          text: "The application is assessed on the basis of the 1ère and Terminale reports (mathematics, physics-chemistry, engineering or technology, English level, French exam results): provide transcripts and Baccalauréat results."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7595&typeBac=0&originePc=0
+    last_verified_at: null
+  page-2:
+    url: https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
+    last_verified_at: null
+  page-3:
+    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    last_verified_at: null
+  page-4:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-i-u-t-clermont-auvergne-site-daubiere-0632085z-but-genie-industriel-et-maintena-7595
+  name: BUT - Génie industriel et maintenance
+  sourceId: parcoursup:7595
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
+      quote: Le BUT est un diplôme préparé en 3 ans en IUT
+    - fact: tuition
+      url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+      quote: 2 902 euros pour une année en cycle de Licence
+    - fact: applicationChannel
+      url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+      quote: Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France.
+    - fact: requirements.req-1
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7595&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : B2"
+    - fact: requirements.req-1
+      url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
+      quote: Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France.
+    - fact: requirements.req-2
+      url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+      quote: Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés.
+    - fact: requirements.req-3
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7595&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : B2"
+    - fact: requirements.req-4
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7595&typeBac=0&originePc=0
+      quote: Tous les candidats seront invités à prendre rendez-vous pour un test d'admission via la plateforme parcoursup.
+    - fact: requirements.req-5
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7595&typeBac=0&originePc=0
+      quote: Notes en mathématiques, physique-chimie, sciences de l’ingénieur ou enseignement technologique et niveau en anglais.
+  notes: "Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Frais de scolarité : la seule fiche chiffrée est celle de Parcoursup (178 €/an, tarif national) ; les pages ne donnent aucun montant de droits différenciés pour les étudiants hors UE. Au contraire, la page « Etudiants internationaux » de l'UCA indique que tous les étudiants (hors INP) sont soumis aux mêmes droits jusqu'en 2025-2026 inclus. Les attendus/série de bac cités ne sont pas des conditions strictes : la page indique une « Admission sur dossier en GIM 1ère année » ; à vérifier. La page d'accueil du programme sur uca.fr mentionne les langues d'enseignement mais le libellé « Langues d'enseignement Français » figure sur la page qui n'était pas coupée : https://www.uca.fr/formation/nos-formations/par-ufr-ecoles-et-iut/iut-clermont-auvergne/but/but-genie-industriel-et-maintenance n'est pas la source du devis. En fait, « Langues d'enseignement » provient de la page détaillée du même programme sur uca.fr (langue : Français). Aucun canal de candidature n'est inclus, car les candidats à diplôme étranger passent par Études en France / Campus France (procédure distincte) ; Parcoursup ne concerne que les bacs français/européens."

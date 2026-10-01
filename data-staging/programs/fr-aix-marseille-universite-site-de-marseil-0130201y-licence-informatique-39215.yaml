@@ -1,0 +1,149 @@
+slug: fr-aix-marseille-universite-site-de-marseil-0130201y-licence-informatique-39215
+institution: fr-aix-marseille-universite-site-de-marseil-0130201y
+country: FR
+city: marseille
+field: computer-science
+level: bachelor
+name: Licence - Informatique - Portail René Descartes
+summary:
+  fr:
+    text: Licence - Informatique - Portail René Descartes, Aix-Marseille Université - Site de Marseille Luminy (Marseille). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Informatique - Portail René Descartes, Aix-Marseille Université - Site de Marseille Luminy (Marseille). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Informatique - Portail René Descartes, Aix-Marseille Université - Site de Marseille Luminy (Marseille). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39215&typeBac=0&originePc=0
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - fr
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 290200
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: fr-campus-france
+  source: page-4
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - tcf
+        - delf-dalf
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site."
+          status: draft
+        en:
+          text: "Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website."
+          status: draft
+        ar:
+          text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: En tant qu'étudiant marocain titulaire d'un Bac marocain, vous devez candidater via la procédure Études en France / DAP (dossier blanc) et non sur Parcoursup ; vérifiez les modalités et les éventuelles exonérations des droits différenciés auprès de Campus France Maroc et d'Aix-Marseille Université.
+          status: draft
+        en:
+          text: As a Moroccan student with a Moroccan Baccalauréat, you must apply via the Études en France / DAP procedure (dossier blanc) and not Parcoursup; check the arrangements and any exemption from the differentiated fees with Campus France Maroc and Aix-Marseille Université.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39215&typeBac=0&originePc=0
+    last_verified_at: null
+  page-2:
+    url: https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise
+    last_verified_at: null
+  page-3:
+    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    last_verified_at: null
+  page-4:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
+    last_verified_at: null
+  page-5:
+    url: https://feg.univ-amu.fr/fr/candidature-inscription/candidature/demande-admission-prealable-dap
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-aix-marseille-universite-site-de-marseil-0130201y-licence-informatique-39215
+  name: Licence - Informatique - Portail René Descartes
+  sourceId: parcoursup:39215
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise
+      quote: La licence est un diplôme national de l’enseignement supérieur qui se prépare en six semestres au sein de l’Université.
+    - fact: teachingLanguages
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39215&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : B2"
+    - fact: tuition
+      url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+      quote: 2 902 euros pour une année en cycle de Licence
+    - fact: applicationChannel
+      url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
+      quote: "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France"
+    - fact: requirements.req-1
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39215&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : B2"
+    - fact: requirements.req-1
+      url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
+      quote: Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France.
+    - fact: requirements.req-2
+      url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+      quote: Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés.
+    - fact: requirements.req-3
+      url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39215&typeBac=0&originePc=0
+      quote: "Niveau de français requis pour s'inscrire à la formation : B2"
+    - fact: requirements.req-4
+      url: https://feg.univ-amu.fr/fr/candidature-inscription/candidature/demande-admission-prealable-dap
+      quote: Vous résidez dans un pays qui relève de la procédure CEF (procédure dématérialisée)
+  notes: "Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Durée : le programme en 3 ans est mentionné, mais des aménagements « licence en 4 ans au lieu de 3 » existent ; le portail est aussi annoncé comme « 1ère année de licence » (poursuite en L2/L3). Le montant de 2 902 € (droits différenciés Licence) est le tarif forfaitaire licenceniveau ANNUEL affiché par amU ; le site Campus France Maroc indique également 2 902 euros pour une année en cycle de Licence. Aucune date d'ouverture ou de limite de candidature pour ce programme n'est donnée par les pages pour un candidat hors UE (les dates Parcoursup et DAP concernent d'autres procédures) : intakes non renseignés. La langue B2 est un niveau requis pour s'inscrire, précisé avec la mention Langue vivante 1 : Anglais ; les étudiantes et étudiants internationaux hors UE non dispensés doivent présenter une certification de français (TCF/DELF/DALF) via Campus France Maroc, mais cette obligation n'est pas propre à ce programme. La voie d'accès normale pour un titulaire de bac marocain résidant au Maroc est Études en France / Campus France (dossier blanc DAP) ; Parcoursup vaut pour les bacs français et européens. Les pages ne précisent pas d'exonération des droits différenciés applicable à ce programme au-delà des cas généraux."

@@ -1,0 +1,126 @@
+{
+  "slug": "fr-i-u-t-de-beziers-0341884n-but-reseaux-et-telecommunication-4605",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4605&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4605&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    },
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie",
+          "quote": "Le BUT est un diplôme préparé en 3 ans en IUT"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+          "quote": "2 902 euros pour une année en cycle de Licence"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "fr-campus-france",
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+          "quote": "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "tcf",
+          "delf-dalf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4605&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.",
+          "en": "Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.",
+          "ar": "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+            "quote": "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4605&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez votre éligibilité aux droits d'inscription : les 178 € par an sont les droits applicables (Parcoursup) et des droits différenciés plus élevés peuvent s'appliquer aux étudiants extracommunautaires ; renseignez-vous auprès de l'établissement et sur les exonérations.",
+          "en": "Check your eligibility for tuition: the 178 EUR per year is the applicable rate (Parcoursup) and higher differentiated fees may apply to non-EU students; inquire with the institution and about exemptions."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+            "quote": "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les modalités de candidature et le calendrier (Études en France / Campus France) auprès de l'établissement ou de Campus France.",
+          "en": "Check the application procedures and calendar (Études en France / Campus France) with the institution or Campus France."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4605&typeBac=0&originePc=0",
+            "quote": "Consulter les modalités de candidature"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Le tarif indiqué (178 €/an) est présenté comme frais de scolarité annuels de cette formation mais peut ne pas correspondre aux droits différenciés applicables aux étudiants extracommunautaires. La plateforme d'applicationChannel est volontairement omise (procédure Études en France / Campus France pour les titulaires d'un Bac marocain)."
+}
