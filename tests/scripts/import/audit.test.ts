@@ -11,6 +11,7 @@ import {
   drawSample,
   findPrepared,
   parseAudit,
+  sampleSheet,
   sampleSize,
 } from "../../../scripts/import/audit";
 import { promoteApproved } from "../../../scripts/import/promote";
@@ -212,5 +213,41 @@ describe("promotion gate for assistant-prepared records", () => {
     await stageChannel("a", true);
     await stageChannel("manual", false);
     expect(await findPrepared(stagingDir)).toEqual(["application-channels/a"]);
+  });
+});
+
+describe("sampleSheet", () => {
+  it("shows each claimed value with its quote, link and the preparer's caveats", () => {
+    const sheet = sampleSheet([
+      {
+        key: "programs/p",
+        row: {
+          key: "programs/p",
+          batch: "b1",
+          inSample: true,
+          audited: "",
+          outcome: "",
+          notes: "",
+        },
+        record: {
+          name: "Applied CS",
+          durationYears: { value: 3, source: "programme", info_kind: "official" },
+          tuition: { value: null, source: "programme", info_kind: "official" },
+          _review: {
+            institution: "Uni X",
+            evidence: [
+              { fact: "durationYears", url: "https://u.example/p", quote: "six semesters" },
+            ],
+            notes: "tuition is last year's tariff",
+            rejected: ["intakes: the quote does not state the year 2027"],
+          },
+        },
+      },
+    ]);
+    expect(sheet).toContain("**durationYears**: `3`");
+    expect(sheet).toContain('"six semesters" — https://u.example/p');
+    expect(sheet).toContain("tuition is last year's tariff");
+    expect(sheet).toContain("intakes: the quote does not state the year 2027");
+    expect(sheet).not.toContain("**tuition**");
   });
 });

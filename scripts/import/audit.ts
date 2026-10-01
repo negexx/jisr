@@ -3,7 +3,9 @@ import { existsSync } from "node:fs";
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-import { parseCsv, STAGING_DIR } from "./staging";
+import { parse } from "yaml";
+
+import { parseCsv, STAGING_DIR, stageFile } from "./staging";
 
 // Records prepared by the assistant are verified by code (quotes re-checked against the pages), but
 // no person read them one by one. The audit gate closes that gap statistically: a random sample of
@@ -127,6 +129,59 @@ export async function findPrepared(dir = STAGING_DIR): Promise<string[]> {
   return keys.sort();
 }
 
+type Loose = Record<string, unknown>;
+const asObject = (v: unknown): Loose =>
+  typeof v === "object" && v !== null && !Array.isArray(v) ? (v as Loose) : {};
+const show = (v: unknown): string => (typeof v === "string" ? v : JSON.stringify(v));
+
+// One readable page per sampled record: what is claimed, the exact quote and page behind it, and
+// the preparer's own caveats, so the reader checks the quotes instead of reading raw YAML.
+export function sampleSheet(
+  entries: readonly { key: string; record: unknown; row: AuditRow }[],
+): string {
+  const out = [
+    "# Audit sample",
+    "",
+    "For each record: open the link, confirm the quote is there and that it supports the value (right programme, right applicant group, right year). Then set `audited = y` and `outcome = ok` (or `wrong` + a note) in `AUDIT.csv`.",
+    "",
+  ];
+  for (const { key, record, row } of entries) {
+    const r = asObject(record);
+    const review = asObject(r._review);
+    const evidence = Array.isArray(review.evidence) ? review.evidence.map(asObject) : [];
+    out.push(`## ${key}  _(batch ${row.batch})_`, "");
+    const name = show(r.name ?? review.name ?? "");
+    if (name !== "")
+      out.push(`**${name}**${review.institution ? `, ${show(review.institution)}` : ""}`, "");
+    for (const fact of [
+      "durationYears",
+      "teachingLanguages",
+      "tuition",
+      "intakes",
+      "applicationChannel",
+      "type",
+      "website",
+    ]) {
+      const field = r[fact];
+      const value = "value" in asObject(field) ? asObject(field).value : field;
+      if (value === undefined || value === null) continue;
+      out.push(`- **${fact}**: \`${show(value)}\``);
+      for (const e of evidence.filter((x) => x.fact === fact)) {
+        out.push(`  - "${show(e.quote)}" — ${show(e.url)}`);
+      }
+    }
+    for (const e of evidence.filter((x) => x.fact === undefined)) {
+      out.push(`- evidence: "${show(e.quote)}" — ${show(e.url)}`);
+    }
+    if (review.officialUrl) out.push(`- **page**: ${show(review.officialUrl)}`);
+    if (review.notes) out.push("", `> Preparer's caveats: ${show(review.notes)}`);
+    if (Array.isArray(review.rejected) && review.rejected.length > 0)
+      out.push(`> Not accepted by the verifier: ${review.rejected.map(show).join("; ")}`);
+    out.push("");
+  }
+  return `${out.join("\n")}\n`;
+}
+
 async function main(argv: readonly string[]): Promise<void> {
   const [command] = argv;
   const existing = await readAudit();
@@ -159,7 +214,21 @@ async function main(argv: readonly string[]): Promise<void> {
     if (existing.length === 0) console.log("no audit batches yet (data:audit draw)");
     return;
   }
-  throw new Error("commands: draw | status");
+  if (command === "sheet") {
+    const entries = [];
+    for (const row of existing.filter((r) => r.inSample && r.audited !== "y")) {
+      const [collection, id] = row.key.split("/");
+      if (collection === undefined || id === undefined) continue;
+      const file = stageFile(collection, id, STAGING_DIR);
+      if (!existsSync(file)) continue;
+      entries.push({ key: row.key, record: parse(await readFile(file, "utf8")), row });
+    }
+    const target = path.join(STAGING_DIR, "AUDIT-SAMPLE.md");
+    await writeFile(target, sampleSheet(entries));
+    console.log(`wrote ${target}: ${entries.length} record(s) to read`);
+    return;
+  }
+  throw new Error("commands: draw | status | sheet");
 }
 
 if (process.argv[1]?.endsWith("audit.ts") === true) {
