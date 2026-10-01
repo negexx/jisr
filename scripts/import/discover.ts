@@ -35,7 +35,7 @@ export function extractLinks(html: string, base: string): Link[] {
 
 const TWO_LABEL_SLD = new Set(["co", "ac", "com", "org", "gov", "edu", "net"]);
 
-function registrable(url: string): string {
+export function registrable(url: string): string {
   const labels = new URL(url).hostname.split(".");
   const take =
     labels.length >= 3 &&
