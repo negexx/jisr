@@ -3,7 +3,7 @@ import { Slot } from "radix-ui";
 import type * as React from "react";
 import { cn } from "@/lib/utils";
 
-const buttonVariants = cva(
+const buttonClasses = cva(
   "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-base font-medium whitespace-nowrap transition-colors select-none active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
@@ -39,6 +39,12 @@ const buttonVariants = cva(
   },
 );
 
+// cva only concatenates, so "border-transparent" (base) and "border-input" (outline) would both
+// reach a plain Link; merging here makes every use of the helper correct, not just <Button>.
+function buttonVariants(props?: Parameters<typeof buttonClasses>[0]): string {
+  return cn(buttonClasses(props));
+}
+
 function Button({
   className,
   variant = "default",
@@ -56,7 +62,7 @@ function Button({
       data-slot="button"
       data-variant={variant}
       data-size={size}
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={buttonVariants({ variant, size, className })}
       {...props}
     />
   );

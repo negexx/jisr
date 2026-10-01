@@ -62,7 +62,6 @@ export default function GlobalNotFound() {
                 <p className="text-lg text-muted-foreground">{messages.description}</p>
                 <a
                   href={`/${locale}`}
-                  // cn merges the outline's border colour over the base border-transparent, as Button does.
                   className={cn(
                     buttonVariants({ variant: index === 0 ? "default" : "outline" }),
                     "w-full sm:w-fit",
