@@ -21,6 +21,7 @@ export type Candidate = {
   institutionType: "public" | "private" | null;
   institutionMatched: boolean; // linked to an official register entry
   hasDates: boolean; // the source already gave a clean deadline
+  notPubliclyFunded?: boolean; // NL: the register says NIET_BEKOSTIGD (private, statutory fee rules do not apply)
   source: "parcoursup" | "rio" | "ba" | "daad";
 };
 
@@ -41,6 +42,7 @@ export function scoreCandidate(c: Candidate): number | null {
     if (c.hasDates) score += 10;
   } else if (c.country === "NL") {
     if (!c.hasEnglishName) return null; // no sign of English teaching
+    if (c.notPubliclyFunded === true) return null; // private programme: tuition and recognition vary
     score += 20;
   } else {
     return null; // German programmes without a stated language are not shortlisted
@@ -141,6 +143,7 @@ export async function loadCandidates(dir = STAGING_DIR): Promise<Candidate[]> {
             ? /matched to HRK/.test(todo)
             : true,
       hasDates: Array.isArray(intake) && intake.length > 0,
+      notPubliclyFunded: /not publicly funded/.test(todo),
       source,
     });
   }

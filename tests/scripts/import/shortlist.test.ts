@@ -42,6 +42,19 @@ describe("scoreCandidate", () => {
       ),
     ).not.toBeNull();
   });
+  it("drops Dutch programmes that are not publicly funded", () => {
+    expect(
+      scoreCandidate(
+        c({
+          country: "NL",
+          source: "rio",
+          institutionType: null,
+          hasEnglishName: true,
+          notPubliclyFunded: true,
+        }),
+      ),
+    ).toBeNull();
+  });
   it("prefers public institutions and register-matched ones", () => {
     const pub = scoreCandidate(c({ institutionType: "public" })) ?? 0;
     const priv = scoreCandidate(c({ institutionType: "private" })) ?? 0;
