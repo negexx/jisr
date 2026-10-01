@@ -40,5 +40,49 @@
       ]
     }
   },
-  "notes": "DOUBTFUL DEADLINE: programme page says 'Non-EU applicants need to submit their university entrance qualification documents before 31st May. The interview will be held before the application deadline of 15th July.' and the Business PF FAQ says non-EU applicants with non-EU HZB have a 31st of May deadline for the winter semester. 15 July kept as the stated application deadline; the 31 May document deadline is the practical one for a Moroccan Bac holder. Year not stated; 2027 assumed. The page does not name uni-assist. OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition)."
+  "notes": "DOUBTFUL DEADLINE: programme page says 'Non-EU applicants need to submit their university entrance qualification documents before 31st May. The interview will be held before the application deadline of 15th July.' and the Business PF FAQ says non-EU applicants with non-EU HZB have a 31st of May deadline for the winter semester. 15 July kept as the stated application deadline; the 31 May document deadline is the practical one for a Moroccan Bac holder. Year not stated; 2027 assumed. The page does not name uni-assist. OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition). PFORZHEIM REQUIREMENTS: official pages used: programme page 'Admission requirements' tab and DAAD 9199. The page does not say whether the Moroccan Bac alone is enough; non-EU entrance qualifications must be recognised (via the application portal or Studienkolleg Konstanz). Admission is graded (50% overall grade, 30% mathematics grade, 20% English grade): a selection weighting, not encoded as a rule. The page also says 'The interview will be held before the application deadline of 15th July' directly after the non-EU 31 May deadline; unclear whether the interview applies to all applicants, so not encoded.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://businesspf.hs-pforzheim.de/en/studies/bachelors_programs/bba_international_marketing",
+            "quote": "Applicants must demonstrate a strong command of English: Minimum level B2 according to the Common European Framework of Reference for Languages (CEFR) Equivalent TOEFL scores: minimum 72 (IBT), 188 (PBT), 543 (ITP) Equivalent IELTS score: minimum 5.5"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/",
+            "quote": "English language skills B2 required, please provide an official language certificate"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": "Titre non-UE : faire reconnaître les documents d'accès avant de candidater (via le portail de l'université ou le Studienkolleg Konstanz, 4 à 5 semaines).",
+        "evidence": [
+          {
+            "url": "https://businesspf.hs-pforzheim.de/en/studies/bachelors_programs/bba_international_marketing",
+            "quote": "Applicants with a non-EU university entrance qualification must have their documents recognized before applying"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": "Candidats non-UE : envoyer les documents d'accès à l'enseignement supérieur avant le 31 mai (date limite supplémentaire, avant le 15 juillet).",
+        "evidence": [
+          {
+            "url": "https://businesspf.hs-pforzheim.de/en/studies/bachelors_programs/bba_international_marketing",
+            "quote": "Non-EU applicants need to submit their university entrance qualification documents before 31st May."
+          }
+        ]
+      }
+    ]
+  }
 }

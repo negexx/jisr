@@ -31,5 +31,46 @@
       ]
     }
   },
-  "notes": "Year of the deadline is not stated on the page (DAAD edition 2026/2027, applicants from all countries); 2027 chosen as the next occurrence after today. THA page lists languages 'German, English' but says the programme is generally taught in English. Tuition 'None' is page-wide, not explicitly 'for non-EU students'. uni-assist is mentioned only for certificate evaluation (VPD), not as the application channel (application via HISinOne), so applicationChannel omitted. OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition). OMITTED: tuition 0 (DAAD says Tuition fees per semester None, but no page quote with explicit wording like no tuition fees was found)."
+  "notes": "Year of the deadline is not stated on the page (DAAD edition 2026/2027, applicants from all countries); 2027 chosen as the next occurrence after today. THA page lists languages 'German, English' but says the programme is generally taught in English. Tuition 'None' is page-wide, not explicitly 'for non-EU students'. uni-assist is mentioned only for certificate evaluation (VPD), not as the application channel (application via HISinOne), so applicationChannel omitted. OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition). OMITTED: tuition 0 (DAAD says Tuition fees per semester None, but no page quote with explicit wording like no tuition fees was found). THA REQUIREMENTS: official pages used: THA programme page (FAQ and 'Your Application') and DAAD 7126. The page does not say whether a Moroccan Bac alone gives direct access or Studienkolleg/Feststellungsprüfung is needed: only that foreign diplomas need a VPD (uni-assist or Bavarian recognition office), which decides this. English B2 is required per the THA FAQ, but DAAD says 'B2 required/recommended, no proof required' (certificates only give bonus points in the aptitude assessment), so certificateRequired=false. The FAQ lists an essay and bonus points under the heading 'International Business Informatics', which looks like a copy-paste from another programme; the aptitude test itself is stated for International Information Systems.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": false,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.tha.de/en/university/faculties/computer-science/study-program/international-international-information-systems-bsc/",
+            "quote": "Please note that a good to very good command of English (at least level B2, as recommended by the CEFR) is required for this degree program."
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7126/",
+            "quote": "English language skills B2 required/recommended, no proof required"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": "Titre de fin d'études étranger : traduction certifiée et attestation préliminaire (VPD) délivrée par uni-assist ou l'office bavarois de reconnaissance des certificats.",
+        "evidence": [
+          {
+            "url": "https://www.tha.de/en/university/faculties/computer-science/study-program/international-international-information-systems-bsc/",
+            "quote": "If you have a foreign high school diploma, you must also submit an officially certified translation and the preliminary evaluation documentation (VPD) issued by www.uni-assist.de or the Bavarian Certificate Recognition Office."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": "Procédure d'aptitude (test en ligne, CV en tableau, court essai de motivation) à passer lors de la candidature sur HISinOne.",
+        "evidence": [
+          {
+            "url": "https://www.tha.de/en/university/faculties/computer-science/study-program/international-international-information-systems-bsc/",
+            "quote": "We are looking for highly motivated and dedicated applicants. To this end, we use the aptitude assessment process."
+          }
+        ]
+      }
+    ]
+  }
 }

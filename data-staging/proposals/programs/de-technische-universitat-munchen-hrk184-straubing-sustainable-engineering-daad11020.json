@@ -44,5 +44,56 @@
       ]
     }
   },
-  "notes": "Deadline year not stated on the page; 2027 chosen as the next occurrence. Application is via TUMonline (not uni-assist as far as the pages state), so applicationChannel omitted. OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition)."
+  "notes": "Deadline year not stated on the page; 2027 chosen as the next occurrence. Application is via TUMonline (not uni-assist as far as the pages state), so applicationChannel omitted. OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition). TUM REQUIREMENTS: official pages used: TUM programme page, TUM 'International Higher Education Entrance Qualification' page, DAAD 11020. The TUM pages do not say whether the Moroccan Bac is comparable to the Abitur; uni-assist (VPD) decides whether the certificate gives direct access or Studienkolleg is needed. English: TUM says no proof of language proficiency is needed but a good command of English is expected; DAAD says 'B2 required/recommended, no proof required' (ambiguous required/recommended), so minCefr B2 with certificateRequired=false.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": false,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.tum.de/en/studies/degree-programs/detail/sustainable-engineering-for-materials-and-processes-bachelor-of-science-bsc",
+            "quote": "You do not need to provide proof of language proficiency for this degree program. However, applicants should have a good command of English."
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11020/",
+            "quote": "English language skills B2 required/recommended, no proof required"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": "Si le diplôme de fin d'études étranger n'est pas comparable à l'Abitur, l'admission directe n'est possible qu'après le Studienkolleg et l'examen d'évaluation (Feststellungsprüfung).",
+        "evidence": [
+          {
+            "url": "https://www.tum.de/en/studies/application/application-info-portal/higher-education-entrance-qualification/international-higher-education-entrance-qualification",
+            "quote": "If a school-leaving degree from another country is not comparable to the German university entrance qualification, direct admission can only be granted after attending a Studienkollegs (preparatory studies) and after having taken the university qualification assessment examination."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": "Demander avant la candidature l'attestation préliminaire (VPD) à uni-assist, qui vérifie si le diplôme donne accès général ou limité à certaines matières.",
+        "evidence": [
+          {
+            "url": "https://www.tum.de/en/studies/application/application-info-portal/higher-education-entrance-qualification/international-higher-education-entrance-qualification",
+            "quote": "All applicants who have not obtained their higher education entrance qualification in Germany or have not completed their German school-leaving examination (Abitur), must apply for a Preliminary Documentation (VPD) to uni-assist before submitting an application to TUM."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": "Participation obligatoire au test d'aptitude en ligne (Aptitude Recommendation, environ 20 minutes) ; le résultat n'influence pas l'admission.",
+        "evidence": [
+          {
+            "url": "https://www.tum.de/en/studies/degree-programs/detail/sustainable-engineering-for-materials-and-processes-bachelor-of-science-bsc",
+            "quote": "However, participation in the test – and the corresponding proof – is mandatory for the application."
+          }
+        ]
+      }
+    ]
+  }
 }

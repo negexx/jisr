@@ -36,5 +36,46 @@
       ]
     }
   },
-  "notes": "Year of the deadline not stated; 2027 assumed. uni-assist applies if school-leaving qualifications were completed outside Germany. Tuition 'None' is page-wide (DAAD). OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition). OMITTED: tuition 0 (DAAD says Tuition fees per semester None, but no page quote with explicit wording like no tuition fees was found)."
+  "notes": "Year of the deadline not stated; 2027 assumed. uni-assist applies if school-leaving qualifications were completed outside Germany. Tuition 'None' is page-wide (DAAD). OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition). OMITTED: tuition 0 (DAAD says Tuition fees per semester None, but no page quote with explicit wording like no tuition fees was found). RHEIN-WAAL REQUIREMENTS: official pages used: HSRW programme page, HSRW 'Guide for international applicants', DAAD 4229. The pages do not say whether the Moroccan Bac gives direct access or Studienkolleg is needed; uni-assist assesses this depending on country of the certificate and prior studies. The 'seven years of English at school' proof on the programme page applies to German school certificates; international applicants need an English certificate at B2 (accepted-test list is on a separate page and not encoded).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.hochschule-rhein-waal.de/en/study/before-starting-university/application-process/guide-for-international-applicants",
+            "quote": "You need an English language certificate at B2 level of the Common European Framework of Reference for Languages."
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4229/",
+            "quote": "English language skills B2 required, please provide an official language certificate"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": "Titre obtenu hors d'Allemagne : candidature via uni-assist, qui vérifie si le diplôme donne accès aux études en Allemagne.",
+        "evidence": [
+          {
+            "url": "https://www.hochschule-rhein-waal.de/en/study/before-starting-university/application-process/guide-for-international-applicants",
+            "quote": "Rhine-Waal University of Applied Sciences works with uni-assist to ensure that international applications can be assessed."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": "Les diplômes internationaux doivent d'abord être vérifiés avant l'admission, même si la filière est sans restriction d'accès (pas de numerus clausus).",
+        "evidence": [
+          {
+            "url": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/agribusiness-ba",
+            "quote": "Unrestricted: enrolment is possible for nearly every German Abitur; international qualifications require verification first."
+          }
+        ]
+      }
+    ]
+  }
 }
