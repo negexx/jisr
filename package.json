@@ -22,6 +22,7 @@
     "data:promote": "tsx scripts/import/promote.ts",
     "data:listing": "tsx scripts/import/listing.ts",
     "data:linkcheck": "tsx scripts/import/linkcheck.ts",
+    "data:websites": "tsx scripts/import/websites.ts",
     "data:uniassist": "tsx scripts/import/sources/uniassist.ts",
     "data:shortlist": "tsx scripts/import/shortlist.ts",
     "data:evidence": "tsx scripts/import/evidence-cli.ts",
