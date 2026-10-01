@@ -1,0 +1,40 @@
+slug: xx-test-schol-xz
+name: XX Test XZ Scholarship
+provider: XX Test Provider
+destinations: [XB, XC]
+eligibleNationalities: [XZ]
+fields: []
+level: bachelor
+summary:
+  fr: { text: Bourse test pour les etudiants du pays Z, status: draft }
+support:
+  value:
+    amount: { min: 50000, max: 80000, currency: XTS, per: month }
+    covers: [living]
+  source: main
+  info_kind: official
+deadline:
+  value: 2027-03-01
+  source: main
+  info_kind: official
+requirements:
+  coverage: complete
+  source: main
+  info_kind: official
+  rules:
+    - id: xx-test-rule-cred
+      kind: credential_type_in
+      source: main
+      info_kind: official
+      types: [xx-test-cred]
+documents:
+  value: []
+  source: main
+  info_kind: official
+howToApply:
+  fr: { text: Postuler sur le site test, status: draft }
+officialUrl: https://example.org/xx-test-schol-xz
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01

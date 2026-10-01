@@ -1,0 +1,12 @@
+slug: xx-test-inst-pub-b
+name: XX Test Public Institution B
+country: XB
+city: { slug: xx-test-city-b, name: XX Test City B }
+type: public
+website: https://example.org/inst-pub-b
+source: main
+info_kind: official
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01

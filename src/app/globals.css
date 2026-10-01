@@ -4,29 +4,32 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  /* Fixed rem scale, ratio about 1.2. text-xs stays for tiny labels only. */
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.5;
+  --text-xl: 1.4375rem;
+  --text-xl--line-height: 1.35;
+  --text-2xl: 1.75rem;
+  --text-2xl--line-height: 1.25;
+  --default-transition-duration: 150ms;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-heading: var(--font-geist-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
+  --color-destructive-bg: var(--destructive-bg);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -39,6 +42,24 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-status-ok: var(--status-ok);
+  --color-status-ok-fg: var(--status-ok-fg);
+  --color-status-ok-bg: var(--status-ok-bg);
+  --color-status-ok-border: var(--status-ok-border);
+  --color-status-check: var(--status-check);
+  --color-status-check-fg: var(--status-check-fg);
+  --color-status-check-bg: var(--status-check-bg);
+  --color-status-check-border: var(--status-check-border);
+  --color-status-fail: var(--status-fail);
+  --color-status-fail-fg: var(--status-fail-fg);
+  --color-status-fail-bg: var(--status-fail-bg);
+  --color-status-fail-border: var(--status-fail-border);
+  --color-kind-official: var(--kind-official);
+  --color-kind-official-bg: var(--kind-official-bg);
+  --color-kind-estimate: var(--kind-estimate);
+  --color-kind-estimate-bg: var(--kind-estimate-bg);
+  --color-kind-guidance: var(--kind-guidance);
+  --color-kind-guidance-bg: var(--kind-guidance-bg);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -48,78 +69,57 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/*
+ * Light theme only. Warm neutrals (hue 90) and one deep teal-ink accent (hue 205), used for primary
+ * actions, the current nav item, links and focus. Status colours are for match status only and
+ * never carry meaning alone. tests/design/tokens.test.ts asserts the contrast of every pair.
+ */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
+  --background: oklch(0.985 0.006 90);
+  --foreground: oklch(0.22 0.02 215);
+  --card: oklch(0.995 0.003 90);
+  --card-foreground: oklch(0.22 0.02 215);
+  --popover: oklch(0.995 0.003 90);
+  --popover-foreground: oklch(0.22 0.02 215);
+  --primary: oklch(0.4 0.075 205);
+  --primary-foreground: oklch(0.985 0.006 90);
+  --secondary: oklch(0.955 0.008 90);
+  --secondary-foreground: oklch(0.22 0.02 215);
+  --muted: oklch(0.955 0.008 90);
+  --muted-foreground: oklch(0.45 0.02 215);
+  --accent: oklch(0.95 0.02 205);
+  --accent-foreground: oklch(0.3 0.06 205);
+  --destructive: oklch(0.45 0.16 25);
+  --destructive-bg: oklch(0.95 0.025 25);
+  --border: oklch(0.9 0.01 90);
+  --input: oklch(0.62 0.02 215);
+  --ring: oklch(0.55 0.1 205);
+  --radius: 0.75rem;
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --status-ok: oklch(0.5 0.11 155);
+  --status-ok-fg: oklch(0.4 0.09 155);
+  --status-ok-bg: oklch(0.96 0.03 155);
+  --status-ok-border: oklch(0.58 0.11 155);
+  --status-check: oklch(0.52 0.11 70);
+  --status-check-fg: oklch(0.42 0.09 70);
+  --status-check-bg: oklch(0.96 0.04 85);
+  --status-check-border: oklch(0.6 0.12 75);
+  --status-fail: oklch(0.5 0.16 25);
+  --status-fail-fg: oklch(0.43 0.15 25);
+  --status-fail-bg: oklch(0.955 0.03 25);
+  --status-fail-border: oklch(0.58 0.15 25);
+
+  --kind-official: oklch(0.36 0.075 205);
+  --kind-official-bg: oklch(0.95 0.02 205);
+  --kind-estimate: oklch(0.42 0.06 310);
+  --kind-estimate-bg: oklch(0.92 0.04 300);
+  --kind-guidance: oklch(0.42 0.01 90);
+  --kind-guidance-bg: oklch(0.95 0.005 90);
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
@@ -127,8 +127,42 @@
   html {
     @apply font-sans;
   }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  /* Arabic text on fr and en pages (the wordmark, the language switcher) still needs the Arabic face. */
+  :lang(ar) {
+    font-family: var(--font-arabic), var(--font-geist-sans), system-ui, sans-serif;
+  }
+}
+
+html[lang="ar"] {
+  /*
+   * Arabic reads about 1px larger and needs more leading. Scaling the root scales every rem value,
+   * so spacing and tap targets grow with the text (48px targets become 51px); they never shrink
+   * below 48px.
+   */
+  font-size: 106.25%;
+  --text-sm--line-height: 1.75;
+  --text-base--line-height: 1.75;
+  --text-lg--line-height: 1.75;
+  --text-xl--line-height: 1.6;
+  --text-2xl--line-height: 1.5;
 }
 
 html[lang="ar"] body {
-  font-family: var(--font-arabic), var(--font-geist-sans), system-ui, sans-serif;
+  line-height: 1.75;
+}
+
+/* Unlayered, so it beats every utility without !important. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
 }

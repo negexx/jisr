@@ -41,3 +41,7 @@ yarn-error.log*
 
 # Built data snapshots (pnpm data:build output)
 /public/snapshots/
+
+# Impeccable engine binary (downloaded by the launcher, do not commit)
+.claude/skills/impeccable/scripts/bin/
+/blob-report/

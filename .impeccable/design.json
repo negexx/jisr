@@ -1,0 +1,686 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-01T10:57:57.332Z",
+  "title": "Design System: Jisr",
+  "extensions": {
+    "colorMeta": {
+      "warm-paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "oklch(0.985 0.006 90)",
+        "tonalRamp": [
+          "oklch(0.150 0.006 90)",
+          "oklch(0.264 0.006 90)",
+          "oklch(0.379 0.006 90)",
+          "oklch(0.493 0.006 90)",
+          "oklch(0.607 0.006 90)",
+          "oklch(0.721 0.006 90)",
+          "oklch(0.836 0.006 90)",
+          "oklch(0.950 0.006 90)"
+        ]
+      },
+      "card-cream": {
+        "role": "neutral",
+        "displayName": "Card Cream",
+        "canonical": "oklch(0.995 0.003 90)",
+        "tonalRamp": [
+          "oklch(0.150 0.003 90)",
+          "oklch(0.264 0.003 90)",
+          "oklch(0.379 0.003 90)",
+          "oklch(0.493 0.003 90)",
+          "oklch(0.607 0.003 90)",
+          "oklch(0.721 0.003 90)",
+          "oklch(0.836 0.003 90)",
+          "oklch(0.950 0.003 90)"
+        ]
+      },
+      "sand-wash": {
+        "role": "neutral",
+        "displayName": "Sand Wash",
+        "canonical": "oklch(0.955 0.008 90)",
+        "tonalRamp": [
+          "oklch(0.150 0.008 90)",
+          "oklch(0.264 0.008 90)",
+          "oklch(0.379 0.008 90)",
+          "oklch(0.493 0.008 90)",
+          "oklch(0.607 0.008 90)",
+          "oklch(0.721 0.008 90)",
+          "oklch(0.836 0.008 90)",
+          "oklch(0.950 0.008 90)"
+        ]
+      },
+      "hairline-sand": {
+        "role": "neutral",
+        "displayName": "Hairline Sand",
+        "canonical": "oklch(0.9 0.01 90)",
+        "tonalRamp": [
+          "oklch(0.150 0.01 90)",
+          "oklch(0.264 0.01 90)",
+          "oklch(0.379 0.01 90)",
+          "oklch(0.493 0.01 90)",
+          "oklch(0.607 0.01 90)",
+          "oklch(0.721 0.01 90)",
+          "oklch(0.836 0.01 90)",
+          "oklch(0.950 0.01 90)"
+        ]
+      },
+      "ink-slate": {
+        "role": "neutral",
+        "displayName": "Ink Slate",
+        "canonical": "oklch(0.22 0.02 215)",
+        "tonalRamp": [
+          "oklch(0.150 0.02 215)",
+          "oklch(0.264 0.02 215)",
+          "oklch(0.379 0.02 215)",
+          "oklch(0.493 0.02 215)",
+          "oklch(0.607 0.02 215)",
+          "oklch(0.721 0.02 215)",
+          "oklch(0.836 0.02 215)",
+          "oklch(0.950 0.02 215)"
+        ]
+      },
+      "quiet-slate": {
+        "role": "neutral",
+        "displayName": "Quiet Slate",
+        "canonical": "oklch(0.45 0.02 215)",
+        "tonalRamp": [
+          "oklch(0.150 0.02 215)",
+          "oklch(0.264 0.02 215)",
+          "oklch(0.379 0.02 215)",
+          "oklch(0.493 0.02 215)",
+          "oklch(0.607 0.02 215)",
+          "oklch(0.721 0.02 215)",
+          "oklch(0.836 0.02 215)",
+          "oklch(0.950 0.02 215)"
+        ]
+      },
+      "control-slate": {
+        "role": "neutral",
+        "displayName": "Control Slate",
+        "canonical": "oklch(0.62 0.02 215)",
+        "tonalRamp": [
+          "oklch(0.150 0.02 215)",
+          "oklch(0.264 0.02 215)",
+          "oklch(0.379 0.02 215)",
+          "oklch(0.493 0.02 215)",
+          "oklch(0.607 0.02 215)",
+          "oklch(0.721 0.02 215)",
+          "oklch(0.836 0.02 215)",
+          "oklch(0.950 0.02 215)"
+        ]
+      },
+      "deep-teal-ink": {
+        "role": "primary",
+        "displayName": "Deep Teal Ink",
+        "canonical": "oklch(0.4 0.075 205)",
+        "tonalRamp": [
+          "oklch(0.150 0.075 205)",
+          "oklch(0.264 0.075 205)",
+          "oklch(0.379 0.075 205)",
+          "oklch(0.493 0.075 205)",
+          "oklch(0.607 0.075 205)",
+          "oklch(0.721 0.075 205)",
+          "oklch(0.836 0.075 205)",
+          "oklch(0.950 0.075 205)"
+        ]
+      },
+      "teal-mist": {
+        "role": "primary",
+        "displayName": "Teal Mist",
+        "canonical": "oklch(0.95 0.02 205)",
+        "tonalRamp": [
+          "oklch(0.150 0.02 205)",
+          "oklch(0.264 0.02 205)",
+          "oklch(0.379 0.02 205)",
+          "oklch(0.493 0.02 205)",
+          "oklch(0.607 0.02 205)",
+          "oklch(0.721 0.02 205)",
+          "oklch(0.836 0.02 205)",
+          "oklch(0.950 0.02 205)"
+        ]
+      },
+      "teal-ink-dark": {
+        "role": "primary",
+        "displayName": "Teal Ink Dark",
+        "canonical": "oklch(0.3 0.06 205)",
+        "tonalRamp": [
+          "oklch(0.150 0.06 205)",
+          "oklch(0.264 0.06 205)",
+          "oklch(0.379 0.06 205)",
+          "oklch(0.493 0.06 205)",
+          "oklch(0.607 0.06 205)",
+          "oklch(0.721 0.06 205)",
+          "oklch(0.836 0.06 205)",
+          "oklch(0.950 0.06 205)"
+        ]
+      },
+      "focus-teal": {
+        "role": "primary",
+        "displayName": "Focus Teal",
+        "canonical": "oklch(0.55 0.1 205)",
+        "tonalRamp": [
+          "oklch(0.150 0.1 205)",
+          "oklch(0.264 0.1 205)",
+          "oklch(0.379 0.1 205)",
+          "oklch(0.493 0.1 205)",
+          "oklch(0.607 0.1 205)",
+          "oklch(0.721 0.1 205)",
+          "oklch(0.836 0.1 205)",
+          "oklch(0.950 0.1 205)"
+        ]
+      },
+      "error-brick": {
+        "role": "error",
+        "displayName": "Error Brick",
+        "canonical": "oklch(0.45 0.16 25)",
+        "tonalRamp": [
+          "oklch(0.150 0.16 25)",
+          "oklch(0.264 0.16 25)",
+          "oklch(0.379 0.16 25)",
+          "oklch(0.493 0.16 25)",
+          "oklch(0.607 0.16 25)",
+          "oklch(0.721 0.16 25)",
+          "oklch(0.836 0.16 25)",
+          "oklch(0.950 0.16 25)"
+        ]
+      },
+      "error-blush": {
+        "role": "error",
+        "displayName": "Error Blush",
+        "canonical": "oklch(0.95 0.025 25)",
+        "tonalRamp": [
+          "oklch(0.150 0.025 25)",
+          "oklch(0.264 0.025 25)",
+          "oklch(0.379 0.025 25)",
+          "oklch(0.493 0.025 25)",
+          "oklch(0.607 0.025 25)",
+          "oklch(0.721 0.025 25)",
+          "oklch(0.836 0.025 25)",
+          "oklch(0.950 0.025 25)"
+        ]
+      },
+      "match-green": {
+        "role": "status",
+        "displayName": "Match Green",
+        "canonical": "oklch(0.5 0.11 155)",
+        "tonalRamp": [
+          "oklch(0.150 0.11 155)",
+          "oklch(0.264 0.11 155)",
+          "oklch(0.379 0.11 155)",
+          "oklch(0.493 0.11 155)",
+          "oklch(0.607 0.11 155)",
+          "oklch(0.721 0.11 155)",
+          "oklch(0.836 0.11 155)",
+          "oklch(0.950 0.11 155)"
+        ]
+      },
+      "match-green-text": {
+        "role": "status",
+        "displayName": "Match Green Text",
+        "canonical": "oklch(0.4 0.09 155)",
+        "tonalRamp": [
+          "oklch(0.150 0.09 155)",
+          "oklch(0.264 0.09 155)",
+          "oklch(0.379 0.09 155)",
+          "oklch(0.493 0.09 155)",
+          "oklch(0.607 0.09 155)",
+          "oklch(0.721 0.09 155)",
+          "oklch(0.836 0.09 155)",
+          "oklch(0.950 0.09 155)"
+        ]
+      },
+      "match-green-wash": {
+        "role": "status",
+        "displayName": "Match Green Wash",
+        "canonical": "oklch(0.96 0.03 155)",
+        "tonalRamp": [
+          "oklch(0.150 0.03 155)",
+          "oklch(0.264 0.03 155)",
+          "oklch(0.379 0.03 155)",
+          "oklch(0.493 0.03 155)",
+          "oklch(0.607 0.03 155)",
+          "oklch(0.721 0.03 155)",
+          "oklch(0.836 0.03 155)",
+          "oklch(0.950 0.03 155)"
+        ]
+      },
+      "match-green-edge": {
+        "role": "status",
+        "displayName": "Match Green Edge",
+        "canonical": "oklch(0.58 0.11 155)",
+        "tonalRamp": [
+          "oklch(0.150 0.11 155)",
+          "oklch(0.264 0.11 155)",
+          "oklch(0.379 0.11 155)",
+          "oklch(0.493 0.11 155)",
+          "oklch(0.607 0.11 155)",
+          "oklch(0.721 0.11 155)",
+          "oklch(0.836 0.11 155)",
+          "oklch(0.950 0.11 155)"
+        ]
+      },
+      "check-amber": {
+        "role": "status",
+        "displayName": "Check Amber",
+        "canonical": "oklch(0.52 0.11 70)",
+        "tonalRamp": [
+          "oklch(0.150 0.11 70)",
+          "oklch(0.264 0.11 70)",
+          "oklch(0.379 0.11 70)",
+          "oklch(0.493 0.11 70)",
+          "oklch(0.607 0.11 70)",
+          "oklch(0.721 0.11 70)",
+          "oklch(0.836 0.11 70)",
+          "oklch(0.950 0.11 70)"
+        ]
+      },
+      "check-amber-text": {
+        "role": "status",
+        "displayName": "Check Amber Text",
+        "canonical": "oklch(0.42 0.09 70)",
+        "tonalRamp": [
+          "oklch(0.150 0.09 70)",
+          "oklch(0.264 0.09 70)",
+          "oklch(0.379 0.09 70)",
+          "oklch(0.493 0.09 70)",
+          "oklch(0.607 0.09 70)",
+          "oklch(0.721 0.09 70)",
+          "oklch(0.836 0.09 70)",
+          "oklch(0.950 0.09 70)"
+        ]
+      },
+      "check-amber-wash": {
+        "role": "status",
+        "displayName": "Check Amber Wash",
+        "canonical": "oklch(0.96 0.04 85)",
+        "tonalRamp": [
+          "oklch(0.150 0.04 85)",
+          "oklch(0.264 0.04 85)",
+          "oklch(0.379 0.04 85)",
+          "oklch(0.493 0.04 85)",
+          "oklch(0.607 0.04 85)",
+          "oklch(0.721 0.04 85)",
+          "oklch(0.836 0.04 85)",
+          "oklch(0.950 0.04 85)"
+        ]
+      },
+      "check-amber-edge": {
+        "role": "status",
+        "displayName": "Check Amber Edge",
+        "canonical": "oklch(0.6 0.12 75)",
+        "tonalRamp": [
+          "oklch(0.150 0.12 75)",
+          "oklch(0.264 0.12 75)",
+          "oklch(0.379 0.12 75)",
+          "oklch(0.493 0.12 75)",
+          "oklch(0.607 0.12 75)",
+          "oklch(0.721 0.12 75)",
+          "oklch(0.836 0.12 75)",
+          "oklch(0.950 0.12 75)"
+        ]
+      },
+      "unmet-red": {
+        "role": "status",
+        "displayName": "Unmet Red",
+        "canonical": "oklch(0.5 0.16 25)",
+        "tonalRamp": [
+          "oklch(0.150 0.16 25)",
+          "oklch(0.264 0.16 25)",
+          "oklch(0.379 0.16 25)",
+          "oklch(0.493 0.16 25)",
+          "oklch(0.607 0.16 25)",
+          "oklch(0.721 0.16 25)",
+          "oklch(0.836 0.16 25)",
+          "oklch(0.950 0.16 25)"
+        ]
+      },
+      "unmet-red-text": {
+        "role": "status",
+        "displayName": "Unmet Red Text",
+        "canonical": "oklch(0.43 0.15 25)",
+        "tonalRamp": [
+          "oklch(0.150 0.15 25)",
+          "oklch(0.264 0.15 25)",
+          "oklch(0.379 0.15 25)",
+          "oklch(0.493 0.15 25)",
+          "oklch(0.607 0.15 25)",
+          "oklch(0.721 0.15 25)",
+          "oklch(0.836 0.15 25)",
+          "oklch(0.950 0.15 25)"
+        ]
+      },
+      "unmet-red-wash": {
+        "role": "status",
+        "displayName": "Unmet Red Wash",
+        "canonical": "oklch(0.955 0.03 25)",
+        "tonalRamp": [
+          "oklch(0.150 0.03 25)",
+          "oklch(0.264 0.03 25)",
+          "oklch(0.379 0.03 25)",
+          "oklch(0.493 0.03 25)",
+          "oklch(0.607 0.03 25)",
+          "oklch(0.721 0.03 25)",
+          "oklch(0.836 0.03 25)",
+          "oklch(0.950 0.03 25)"
+        ]
+      },
+      "unmet-red-edge": {
+        "role": "status",
+        "displayName": "Unmet Red Edge",
+        "canonical": "oklch(0.58 0.15 25)",
+        "tonalRamp": [
+          "oklch(0.150 0.15 25)",
+          "oklch(0.264 0.15 25)",
+          "oklch(0.379 0.15 25)",
+          "oklch(0.493 0.15 25)",
+          "oklch(0.607 0.15 25)",
+          "oklch(0.721 0.15 25)",
+          "oklch(0.836 0.15 25)",
+          "oklch(0.950 0.15 25)"
+        ]
+      },
+      "official-teal": {
+        "role": "fact-kind",
+        "displayName": "Official Teal",
+        "canonical": "oklch(0.36 0.075 205)",
+        "tonalRamp": [
+          "oklch(0.150 0.075 205)",
+          "oklch(0.264 0.075 205)",
+          "oklch(0.379 0.075 205)",
+          "oklch(0.493 0.075 205)",
+          "oklch(0.607 0.075 205)",
+          "oklch(0.721 0.075 205)",
+          "oklch(0.836 0.075 205)",
+          "oklch(0.950 0.075 205)"
+        ]
+      },
+      "estimate-plum": {
+        "role": "fact-kind",
+        "displayName": "Estimate Plum",
+        "canonical": "oklch(0.42 0.06 310)",
+        "tonalRamp": [
+          "oklch(0.150 0.06 310)",
+          "oklch(0.264 0.06 310)",
+          "oklch(0.379 0.06 310)",
+          "oklch(0.493 0.06 310)",
+          "oklch(0.607 0.06 310)",
+          "oklch(0.721 0.06 310)",
+          "oklch(0.836 0.06 310)",
+          "oklch(0.950 0.06 310)"
+        ]
+      },
+      "estimate-plum-wash": {
+        "role": "fact-kind",
+        "displayName": "Estimate Plum Wash",
+        "canonical": "oklch(0.92 0.04 300)",
+        "tonalRamp": [
+          "oklch(0.150 0.04 300)",
+          "oklch(0.264 0.04 300)",
+          "oklch(0.379 0.04 300)",
+          "oklch(0.493 0.04 300)",
+          "oklch(0.607 0.04 300)",
+          "oklch(0.721 0.04 300)",
+          "oklch(0.836 0.04 300)",
+          "oklch(0.950 0.04 300)"
+        ]
+      },
+      "guidance-grey": {
+        "role": "fact-kind",
+        "displayName": "Guidance Grey",
+        "canonical": "oklch(0.42 0.01 90)",
+        "tonalRamp": [
+          "oklch(0.150 0.01 90)",
+          "oklch(0.264 0.01 90)",
+          "oklch(0.379 0.01 90)",
+          "oklch(0.493 0.01 90)",
+          "oklch(0.607 0.01 90)",
+          "oklch(0.721 0.01 90)",
+          "oklch(0.836 0.01 90)",
+          "oklch(0.950 0.01 90)"
+        ]
+      },
+      "guidance-grey-wash": {
+        "role": "fact-kind",
+        "displayName": "Guidance Grey Wash",
+        "canonical": "oklch(0.95 0.005 90)",
+        "tonalRamp": [
+          "oklch(0.150 0.005 90)",
+          "oklch(0.264 0.005 90)",
+          "oklch(0.379 0.005 90)",
+          "oklch(0.493 0.005 90)",
+          "oklch(0.607 0.005 90)",
+          "oklch(0.721 0.005 90)",
+          "oklch(0.836 0.005 90)",
+          "oklch(0.950 0.005 90)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page title (h1), 28px bold."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section and empty-state headings, 23px semibold."
+      },
+      "subtitle": {
+        "displayName": "Subtitle",
+        "purpose": "Card titles, group headings, wordmark, 19px semibold."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All readable text, 16px; inputs never smaller."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Badges, source lines, hints, captions, 14px medium."
+      }
+    },
+    "shadows": [
+      {
+        "name": "dialog-scrim",
+        "value": "background: oklch(0.22 0.02 215 / 0.3)",
+        "purpose": "Full-viewport scrim behind the clear-data dialog only."
+      },
+      {
+        "name": "dialog-ring",
+        "value": "box-shadow: 0 0 0 1px oklch(0.22 0.02 215 / 0.15)",
+        "purpose": "1px ring around the dialog panel; the system has no cast shadows."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-change",
+        "value": "150ms (Tailwind default easing)",
+        "purpose": "Colour and state transitions only; dialog fade and zoom also 150ms."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation-duration: 0.01ms; transition-duration: 0.01ms",
+        "purpose": "Applied globally under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one primary action per screen: Next, See my matches.",
+      "html": "<button class=\"ds-btn-primary\">Voir mes résultats</button>",
+      "css": ".ds-btn-primary { font-family: Geist, system-ui, sans-serif; display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 20px; border-radius: 12px; border: 1px solid transparent; background: oklch(0.4 0.075 205); color: oklch(0.985 0.006 90); font-size: 16px; font-weight: 500; line-height: 1.5; cursor: pointer; transition: background-color 150ms, color 150ms; } .ds-btn-primary:hover { background: oklch(0.4 0.075 205 / 0.8); } .ds-btn-primary:focus-visible { outline: 2px solid oklch(0.55 0.1 205); outline-offset: 2px; } .ds-btn-primary:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary actions such as See details and Back.",
+      "html": "<button class=\"ds-btn-outline\">Voir le détail</button>",
+      "css": ".ds-btn-outline { font-family: Geist, system-ui, sans-serif; display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 20px; border-radius: 12px; border: 1px solid oklch(0.62 0.02 215); background: oklch(0.985 0.006 90); color: oklch(0.22 0.02 215); font-size: 16px; font-weight: 500; line-height: 1.5; cursor: pointer; transition: background-color 150ms, color 150ms; } .ds-btn-outline:hover { background: oklch(0.955 0.008 90); } .ds-btn-outline:focus-visible { outline: 2px solid oklch(0.55 0.1 205); outline-offset: 2px; } .ds-btn-outline:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "text-field",
+      "description": "48px labelled control with hint above and a visible focus ring.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field-label\" for=\"ds-g\">Moyenne générale <span class=\"ds-field-req\">(obligatoire)</span></label><p class=\"ds-field-hint\">Sur 20, par exemple 14,5.</p><input id=\"ds-g\" class=\"ds-input\" inputmode=\"decimal\" value=\"14,5\"></div>",
+      "css": ".ds-field { font-family: Geist, system-ui, sans-serif; display: flex; flex-direction: column; gap: 6px; max-width: 360px; } .ds-field-label { font-size: 16px; font-weight: 500; color: oklch(0.22 0.02 215); } .ds-field-req { font-weight: 400; color: oklch(0.45 0.02 215); } .ds-field-hint { margin: 0; font-size: 14px; color: oklch(0.45 0.02 215); } .ds-input { height: 48px; width: 100%; box-sizing: border-box; border-radius: 12px; border: 1px solid oklch(0.62 0.02 215); background: oklch(0.985 0.006 90); color: oklch(0.22 0.02 215); padding: 0 12px; font-size: 16px; font-family: inherit; transition: border-color 150ms; } .ds-input:hover { border-color: oklch(0.22 0.02 215); } .ds-input:focus-visible { outline: 2px solid oklch(0.55 0.1 205); outline-offset: 2px; }"
+    },
+    {
+      "name": "Choice Row",
+      "kind": "custom",
+      "refersTo": "choice-row-selected",
+      "description": "Whole-row 48px radio or checkbox target; selected state is a teal border on Teal Mist.",
+      "html": "<label class=\"ds-choice\"><input type=\"radio\" name=\"ds-c\" checked><span>Informatique</span></label>",
+      "css": ".ds-choice { font-family: Geist, system-ui, sans-serif; display: flex; align-items: center; gap: 12px; min-height: 48px; box-sizing: border-box; border-radius: 12px; border: 1px solid oklch(0.4 0.075 205); background: oklch(0.95 0.02 205); padding: 8px 12px; font-size: 16px; color: oklch(0.22 0.02 215); cursor: pointer; transition: background-color 150ms; } .ds-choice:hover { background: oklch(0.955 0.008 90); } .ds-choice:focus-within { outline: 2px solid oklch(0.55 0.1 205); outline-offset: 2px; } .ds-choice input { width: 20px; height: 20px; accent-color: oklch(0.4 0.075 205); flex-shrink: 0; }"
+    },
+    {
+      "name": "Source Badge",
+      "kind": "chip",
+      "refersTo": "source-badge-official",
+      "description": "Three kind pills (official filled, estimate dashed, guidance outline) with verified date and source link; the trust surface.",
+      "html": "<div class=\"ds-source\"><span class=\"ds-kind-official\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\"/><path d=\"m9 12 2 2 4-4\"/></svg>Officiel</span><span class=\"ds-kind-estimate\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\"/><line x1=\"8\" x2=\"16\" y1=\"6\" y2=\"6\"/><line x1=\"16\" x2=\"16\" y1=\"14\" y2=\"18\"/><path d=\"M16 10h.01\"/><path d=\"M12 10h.01\"/><path d=\"M8 10h.01\"/><path d=\"M12 14h.01\"/><path d=\"M8 14h.01\"/><path d=\"M12 18h.01\"/><path d=\"M8 18h.01\"/></svg>Estimation</span><span class=\"ds-kind-guidance\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 16v-4\"/><path d=\"M12 8h.01\"/></svg>Conseil</span><span class=\"ds-verified\">Vérifié le 01/09/2026</span><a class=\"ds-source-link\" href=\"#\">Source <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M15 3h6v6\"/><path d=\"M10 14 21 3\"/><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/></svg></a></div>",
+      "css": ".ds-source { font-family: Geist, system-ui, sans-serif; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; font-size: 14px; } .ds-kind-official { font-family: Geist, system-ui, sans-serif; display: inline-flex; align-items: center; gap: 6px; border-radius: 9999px; padding: 2px 10px; font-size: 14px; font-weight: 500; line-height: 1.5; background: oklch(0.36 0.075 205); color: oklch(0.95 0.02 205); } .ds-kind-estimate { font-family: Geist, system-ui, sans-serif; display: inline-flex; align-items: center; gap: 6px; border-radius: 9999px; padding: 2px 10px; font-size: 14px; font-weight: 500; line-height: 1.5; background: oklch(0.92 0.04 300); color: oklch(0.42 0.06 310); border: 1px dashed oklch(0.42 0.06 310); } .ds-kind-guidance { font-family: Geist, system-ui, sans-serif; display: inline-flex; align-items: center; gap: 6px; border-radius: 9999px; padding: 2px 10px; font-size: 14px; font-weight: 500; line-height: 1.5; background: oklch(0.95 0.005 90); color: oklch(0.42 0.01 90); border: 1px solid oklch(0.42 0.01 90 / 0.4); } .ds-verified { color: oklch(0.45 0.02 215); } .ds-source-link { display: inline-flex; align-items: center; gap: 4px; color: oklch(0.4 0.075 205); text-decoration: underline; text-underline-offset: 4px; border-radius: 4px; transition: color 150ms; } .ds-source-link:hover { text-decoration: none; } .ds-source-link:focus-visible { outline: 2px solid oklch(0.55 0.1 205); outline-offset: 2px; }"
+    },
+    {
+      "name": "Match Status Badge",
+      "kind": "chip",
+      "refersTo": "match-status-ok",
+      "description": "Icon plus words for each match group; never colour alone.",
+      "html": "<div class=\"ds-status-row\"><span class=\"ds-status-ok\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m9 12 2 2 4-4\"/></svg><span>Les conditions publiées semblent remplies</span></span><span class=\"ds-status-check\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/></svg><span>À vérifier</span></span><span class=\"ds-status-fail\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m15 9-6 6\"/><path d=\"m9 9 6 6\"/></svg><span>Conditions publiées non remplies</span></span></div>",
+      "css": ".ds-status-row { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; } .ds-status-ok { font-family: Geist, system-ui, sans-serif; display: inline-flex; align-items: flex-start; gap: 8px; border-radius: 9.6px; border: 1px solid oklch(0.58 0.11 155); background: oklch(0.96 0.03 155); color: oklch(0.4 0.09 155); padding: 6px 12px; font-size: 16px; font-weight: 500; line-height: 1.5; } .ds-status-ok svg { margin-top: 4px; color: oklch(0.5 0.11 155); flex-shrink: 0; } .ds-status-check { font-family: Geist, system-ui, sans-serif; display: inline-flex; align-items: flex-start; gap: 8px; border-radius: 9.6px; border: 1px solid oklch(0.6 0.12 75); background: oklch(0.96 0.04 85); color: oklch(0.42 0.09 70); padding: 6px 12px; font-size: 16px; font-weight: 500; line-height: 1.5; } .ds-status-check svg { margin-top: 4px; color: oklch(0.52 0.11 70); flex-shrink: 0; } .ds-status-fail { font-family: Geist, system-ui, sans-serif; display: inline-flex; align-items: flex-start; gap: 8px; border-radius: 9.6px; border: 1px solid oklch(0.58 0.15 25); background: oklch(0.955 0.03 25); color: oklch(0.43 0.15 25); padding: 6px 12px; font-size: 16px; font-weight: 500; line-height: 1.5; } .ds-status-fail svg { margin-top: 4px; color: oklch(0.5 0.16 25); flex-shrink: 0; }"
+    },
+    {
+      "name": "Match Card",
+      "kind": "card",
+      "refersTo": "match-card",
+      "description": "Flat, text-first program card: title link, status badge, captioned facts, outline action.",
+      "html": "<article class=\"ds-card\"><h3 class=\"ds-card-title\"><a href=\"#\">XX Test Programme OK</a></h3><p class=\"ds-card-sub\">XX Test Public Institution B, XX Test City B</p><span class=\"ds-card-status\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m9 12 2 2 4-4\"/></svg><span>Les conditions publiées semblent remplies</span></span><dl class=\"ds-card-facts\"><div><dt>Frais de scolarité</dt><dd>1 200,00 XTS <small>par an</small></dd></div><div><dt>Date limite</dt><dd>15/01/2027</dd></div></dl><a class=\"ds-card-btn\" href=\"#\">Voir le détail</a></article>",
+      "css": ".ds-card { font-family: Geist, system-ui, sans-serif; display: flex; flex-direction: column; gap: 16px; max-width: 420px; box-sizing: border-box; border-radius: 16.8px; border: 1px solid oklch(0.9 0.01 90); background: oklch(0.995 0.003 90); color: oklch(0.22 0.02 215); padding: 24px; } .ds-card-title { margin: 0; font-size: 19px; font-weight: 600; line-height: 1.5; } .ds-card-title a { color: oklch(0.4 0.075 205); text-underline-offset: 4px; text-decoration: none; } .ds-card-title a:hover { text-decoration: underline; } .ds-card-title a:focus-visible { outline: 2px solid oklch(0.55 0.1 205); outline-offset: 2px; } .ds-card-sub { margin: 0; font-size: 16px; color: oklch(0.45 0.02 215); } .ds-card-status { display: inline-flex; align-items: flex-start; gap: 8px; width: fit-content; border-radius: 9.6px; border: 1px solid oklch(0.58 0.11 155); background: oklch(0.96 0.03 155); color: oklch(0.4 0.09 155); padding: 6px 12px; font-size: 16px; font-weight: 500; } .ds-card-status svg { margin-top: 4px; color: oklch(0.5 0.11 155); } .ds-card-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 32px; margin: 0; } .ds-card-facts dt { font-size: 14px; font-weight: 500; color: oklch(0.45 0.02 215); } .ds-card-facts dd { margin: 4px 0 0; font-size: 16px; font-weight: 500; } .ds-card-facts small { font-size: 14px; font-weight: 400; color: oklch(0.45 0.02 215); } .ds-card-btn { display: inline-flex; align-items: center; width: fit-content; height: 48px; padding: 0 20px; border-radius: 12px; border: 1px solid oklch(0.62 0.02 215); background: oklch(0.985 0.006 90); color: oklch(0.22 0.02 215); font-size: 16px; font-weight: 500; text-decoration: none; transition: background-color 150ms; } .ds-card-btn:hover { background: oklch(0.955 0.008 90); } .ds-card-btn:focus-visible { outline: 2px solid oklch(0.55 0.1 205); outline-offset: 2px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "button-secondary",
+      "description": "Header with wordmark, underlined current link and locale switcher.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-brand\" href=\"#\">Jisr <span lang=\"ar\">جسر</span></a><nav class=\"ds-nav-links\"><a class=\"ds-nav-link ds-nav-current\" href=\"#\" aria-current=\"page\">Mon profil</a><a class=\"ds-nav-link\" href=\"#\">Mes résultats</a></nav><div class=\"ds-locales\"><a class=\"ds-locale ds-locale-current\" href=\"#\">Français</a><a class=\"ds-locale\" href=\"#\">English</a></div></header>",
+      "css": ".ds-nav { font-family: Geist, system-ui, sans-serif; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid oklch(0.9 0.01 90); background: oklch(0.985 0.006 90); padding: 0 16px; } .ds-nav-brand { display: flex; align-items: center; gap: 8px; min-height: 48px; font-size: 19px; font-weight: 600; color: oklch(0.22 0.02 215); text-decoration: none; } .ds-nav-brand span { font-weight: 400; color: oklch(0.45 0.02 215); } .ds-nav-links { display: flex; gap: 8px; margin-inline-end: auto; } .ds-nav-link { display: inline-flex; align-items: center; min-height: 48px; box-sizing: border-box; padding: 0 12px; border-bottom: 2px solid transparent; font-size: 16px; font-weight: 500; color: oklch(0.45 0.02 215); text-decoration: none; transition: color 150ms; } .ds-nav-link:hover { color: oklch(0.22 0.02 215); } .ds-nav-link:focus-visible, .ds-locale:focus-visible, .ds-nav-brand:focus-visible { outline: 2px solid oklch(0.55 0.1 205); outline-offset: 2px; } .ds-nav-current { border-bottom-color: oklch(0.4 0.075 205); color: oklch(0.4 0.075 205); } .ds-locales { display: flex; gap: 4px; } .ds-locale { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 12px; font-size: 14px; font-weight: 500; color: oklch(0.22 0.02 215); text-decoration: none; transition: background-color 150ms; } .ds-locale:hover { background: oklch(0.955 0.008 90); } .ds-locale-current { background: oklch(0.955 0.008 90); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Plain Bridge",
+    "overview": "Jisr means bridge. The interface is a calm, plainly spoken crossing from a school-leaver's profile to real, honestly labelled options. It is a product register: the student is deciding alone, on a mid-range phone, often on slow data, so every surface serves the task and none performs. Warmth lives in shape and rhythm (rounded controls, generous gaps between fields, a progress bar that also says its step in words), never in promotional copy or decoration.\n\nThe palette is Restrained: warm-tinted neutrals (hue 90) plus one deep teal-ink accent (hue 205). Status colour exists only for match status. Fact kinds (official, estimate, guidance) get three distinct treatments in shape and icon as well as colour, so an estimate can never pass for an official figure. Depth comes from tonal surfaces and hairline borders. Light theme only.\n\nThis system rejects what PRODUCT.md rejects: persuasion over trust, rounded-up certainty, and anything written for parents or counselors instead of the student. Visually that means no marketing gloss, no promise styling, no catalogue-of-universities look. Component philosophy: **calm, rounded, text-first**. Rounded controls (12px radius), 48px tap targets, status always icon plus words (never colour alone), tinted badges only where meaning needs them.",
+    "keyCharacteristics": [
+      "Warm paper ground, deep teal ink for actions, links, current nav and focus only.",
+      "Flat at rest: no shadows anywhere; tonal surfaces and 1px borders carry structure.",
+      "Fixed type scale, 14 / 16 / 19 / 23 / 28 px, Geist for Latin and Noto Sans Arabic for Arabic.",
+      "Every fact wears its kind, verified date and source link.",
+      "RTL is native: logical properties only, mirrored directional icons, Latin names, URLs and numbers isolated in `bdi`, Latin digits in Arabic.",
+      "Motion is 150 ms colour and state changes only, and none under `prefers-reduced-motion`.",
+      "Layout: one column on phone, content width capped at 64rem (matches use a 15rem sticky side column from 1024px; the profile form uses a 40rem column with a 16rem aside); prose capped at `max-w-prose`."
+    ],
+    "rules": [
+      {
+        "name": "The One Voice Rule",
+        "body": "Deep Teal Ink is the only accent. It marks what can be pressed, followed or is current. It never decorates.",
+        "section": "colors"
+      },
+      {
+        "name": "The Words-Beside-Colour Rule",
+        "body": "Status never relies on colour alone. Every status colour ships with an icon and a sentence, and the three fact kinds also differ in fill, border style and icon.",
+        "section": "colors"
+      },
+      {
+        "name": "The Status-Is-Status Rule",
+        "body": "Green, amber and red mean match status and nothing else. Do not borrow them for success toasts, tags or emphasis. Amber is also permitted for freshness warnings, because those are the same \"check this\" meaning.",
+        "section": "colors"
+      },
+      {
+        "name": "The Never-Official Rule",
+        "body": "Estimate and guidance are never styled or worded as official: no teal fill, no shield, no \"official\" language, and stale wording that says \"go to the official page\" is shown only on official facts.",
+        "section": "colors"
+      },
+      {
+        "name": "The Source-Always Rule",
+        "body": "No fact without its source badge: kind, verified date and source link travel with every important fact, in every component and on every page.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Mapping Rule",
+        "body": "Match status becomes icon, colour and text in `MatchStatusBadge` only. No other component re-implements the mapping.",
+        "section": "colors"
+      },
+      {
+        "name": "The No-Pure-Black Rule",
+        "body": "No `#000` or `#fff`. Every neutral carries warmth (hue 90) or slate (hue 215).",
+        "section": "colors"
+      },
+      {
+        "name": "The Fixed Scale Rule",
+        "body": "Only 14, 16, 19, 23 and 28 px. No fluid clamp, no in-between sizes. `text-xs` is for tiny labels inside dense controls only.",
+        "section": "typography"
+      },
+      {
+        "name": "The Isolated Latin Rule",
+        "body": "Official names, URLs, hostnames, currency codes and amounts sit in `bdi` (amounts and URLs with `dir=\"ltr\"`) so Arabic sentences never reorder them. Digits are always Latin.",
+        "section": "typography"
+      },
+      {
+        "name": "The Arabic Leading Rule",
+        "body": "Under `lang=\"ar\"` the root scales to 106.25% and line heights rise to 1.75 (1.6 and 1.5 for the two largest steps). Tap targets grow with the root and never fall below 48px.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Nothing casts a shadow. If a surface needs separation, change its tonal step or add a 1px border. The test: if a card looks like it floats, it is wrong.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Words-Not-Depth Rule",
+        "body": "Hierarchy and state are carried by text, icon and border, not by elevation or glow. The error focus ring (`ring-3` at 20% of Error Brick on invalid buttons) is the only glow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** give every important fact its kind badge, verified date (DD/MM/YYYY) and official source link: the Source-Always Rule. No fact without its source badge.",
+      "**Do** write status as icon plus words in Match Status Badge only: the One Mapping Rule. Match status maps to icon, colour and text in that one component and nowhere else.",
+      "**Do** keep estimate and guidance visibly different from official: dashed plum with calculator, grey outline with info, never the filled teal shield.",
+      "**Do** show missing, stale or ambiguous information as something to check, with a question-mark or alert icon and a sentence. Honest uncertainty is never rounded up to a yes or a no.",
+      "**Do** show costs as ranges with the 10-month assumption, and tuition as an official fee or \"to be checked\".",
+      "**Do** write for a school-leaver: plain words, short steps, one clear next action, one primary button per screen.",
+      "**Do** keep controls 12px rounded and at least 48px tall; read Arabic at root 106.25% with 1.75 leading.",
+      "**Do** use logical utilities only (`ms-`, `pe-`, `text-start`, `border-s`) and `rtl:rotate-180` on directional icons.",
+      "**Do** keep transitions to 150 ms colour and state changes and let `prefers-reduced-motion` cut them to near zero.",
+      "**Do** keep pages light: phone and desktop equally first-class, on slow connections."
+    ],
+    "donts": [
+      "**Don't** let estimates and guidance be styled as official. No teal fill, no shield, no official wording on anything that is not an official source.",
+      "**Don't** present trust as persuasion. No hype, no guarantees, never \"eligible\" or \"admitted\" as a promise, no percentages, no testimonials or usage statistics.",
+      "**Don't** round missing, stale or unofficial data up to a confirmed yes or no.",
+      "**Don't** design for parents or counselors: the student decides alone.",
+      "**Don't** make Jisr look like a university directory or catalogue: no logo grids, no identical icon-card grids, no hero-metric templates.",
+      "**Don't** convey status by colour alone, or use green, amber and red for anything but match status.",
+      "**Don't** add shadows, glassmorphism, gradient text or side-stripe borders thicker than 1px as a coloured accent.",
+      "**Don't** use `#000`, `#fff` or any cold neutral; no dark mode until a deliberate token swap.",
+      "**Don't** use `ml-`, `mr-`, `pl-`, `pr-`, `left-` or `right-`, and never let Latin names, URLs or numbers go un-isolated inside Arabic text.",
+      "**Don't** use a modal as a first thought, choreographed page-load motion, or em dashes in copy.",
+      "**Don't** add a new accent hue, a second typeface or a font size outside 14 / 16 / 19 / 23 / 28.",
+      "**Don't** put any profile value in a URL, log or analytics event."
+    ]
+  }
+}

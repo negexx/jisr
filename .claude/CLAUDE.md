@@ -20,8 +20,8 @@ Trust is the product: every important fact carries an **official source URL** an
 - **Reference data:** YAML in `data/`, Zod-validated, published as immutable JSON snapshots (ADR 0003)
 - **User data:** Neon serverless Postgres (EU) + Drizzle ORM / drizzle-kit — users only, never reference data
 - **Auth:** Better Auth (Drizzle adapter, Google + magic link), phase 2 after the guest journey; users live in our DB
-- **Validation:** Zod at every input boundary and for all data files
-- **Tests:** Vitest (Playwright once the core journey exists)
+- **Validation:** Zod at every input boundary and for all data files (server, build and test side; client code uses hand-written validators)
+- **Tests:** Vitest (jsdom per file for components) + Playwright e2e with axe (phone and desktop, fr and ar)
 - **Lint/format:** Biome
 - **Package manager:** pnpm
 - **Hosting:** Vercel Hobby (fra1; free, non-commercial, hard caps pause the site rather than bill) + Neon; no Vercel-only services; budgets and exit trigger in ADR 0004
@@ -41,9 +41,12 @@ Trust is the product: every important fact carries an **official source URL** an
 | Build | `pnpm build` |
 | Validate data + staleness report | `pnpm data:check` |
 | Build data snapshots | `pnpm data:build` |
+| E2E (builds the fixture, starts `next start` on :3100) | `pnpm test:e2e` |
+| Fixture build / dev server on the synthetic e2e data | `pnpm build:e2e` / `pnpm dev:fixture` |
+| First-load JS per route (gzip) + Zod marker scan, after a build | `pnpm perf:js` |
 | Generate / apply DB migration | `pnpm db:generate` / `pnpm db:migrate` |
 
-Scripts live in `package.json` (`typecheck` = `next typegen && tsc --noEmit`, `test` = `vitest run`, `lint` = `biome check .`, `format` = `biome format --write .`). Greenfield: if a script is missing, add it in the first setup task rather than substituting another command. `pnpm build` must run `data:check` and `data:build` first. Add `test:e2e` when Playwright arrives.
+Scripts live in `package.json` (`typecheck` = `next typegen && tsc --noEmit`, `test` = `vitest run`, `lint` = `biome check .`, `format` = `biome format --write .`). Greenfield: if a script is missing, add it in the first setup task rather than substituting another command. `pnpm build` must run `data:check` and `data:build` first. `build:e2e` and `dev:fixture` overwrite `public/snapshots` and `.next` with the synthetic fixture: run `pnpm data:build` (or a real `pnpm build`) afterwards. CI (`.github/workflows/ci.yml`, GitHub Actions, Node 24, pnpm from `packageManager`) runs typecheck, lint, test, data:check, build and `perf:js` (Zod backstop) on every pull request and on pushes to `main`, plus an `e2e` job (unverified until its first run); a PR is not done until it is green.
 
 ## Architecture at a glance
 
@@ -53,21 +56,25 @@ content/<locale>/        long-form guides (MDX) with the same provenance frontma
 src/data-schema/         Zod schemas shared by scripts, domain, tests
 scripts/data/            check, build snapshots + manifest, source-change watcher
 src/domain/              PURE TS: eligibility routes, matching (✅ ⚠️ ❌), costs, checklist — no React/Next/DB/fs/network
-src/lib/snapshot/        load manifest + snapshot shards, cache, version pinning
-src/app/[locale]/        pages: profile/ matches/ programs/[slug]/ scholarships/ compare/ plan/
+src/lib/snapshot/        browser client (manifest, shards, integrity, version pinning), hook, plans, `server.ts` (server-only build-time reader)
+src/lib/{profile,journey,i18n}/  guest profile store + form model; view models (matches, reasons, page facts); domain vocabulary + `pickMessages`
+src/lib/format.ts clock.ts constants.ts guards.ts  Intl formatting, browser date, zod-free constants/guards
+src/app/[locale]/        pages: profile/ matches/ programs/[slug]/ (built); scholarships/ compare/ plan/ (M4)
+src/app/global-not-found.tsx  the one trilingual 404 (ADR 0006)
 src/app/api/auth/[...all]/  Better Auth handler (phase 2)
 src/proxy.ts             next-intl locale routing
-src/components/          ui/ (shadcn) + SourceBadge, MatchCard, CostBreakdown…
+src/components/          ui/ (shadcn), shell, trust primitives (SourceBadge, MatchStatusBadge…), MatchCard/CostBreakdown/ReasonList, profile/ matches/ program/
 src/lib/auth/  src/db/   Better Auth instances; Drizzle schema for user data only
 src/i18n/  messages/     next-intl config; en/fr/ar messages
-tests/                   Vitest specs mirror src/
+tests/                   Vitest specs mirror src/; tests/e2e/ Playwright; tests/fixtures/ synthetic data (xx-test-*)
+scripts/                 data/, e2e/ (fixture build), perf/ (first-load JS)
 ```
 
 Data flow: YAML → `data:check` → `data:build` → snapshots on the CDN → the browser runs `src/domain` on the snapshot → results. Guest profile lives in localStorage; accounts (phase 2) persist profile, saved programs, checklist progress and feedback in Postgres, referencing program slug + snapshot version. Eligibility is origin-agnostic: `(origin credential country, type) → (destination, level)` routes first, program rules second; Morocco/Bac is only the first origin.
 
 Resolved in ADR 0004: analytics, error reporting, staleness thresholds, translation storage, privacy/CNDP plan, Vercel limits. What remains is the ADR's "Before launch" checklist (verify Vercel/Sentry limits, CNDP declaration before accounts, privacy notice).
 
-Deeper notes: `.claude/docs/architecture.md`. Decisions: `.claude/docs/decisions/` (0002 stack, 0003 scalable solo architecture, 0004 operations/privacy/freshness, 0005 domain semantics and data rules).
+Deeper notes: `.claude/docs/architecture.md` (data access boundary, no-Zod rule, JS size). Decisions: `.claude/docs/decisions/` (0002 stack, 0003 scalable solo architecture, 0004 operations/privacy/freshness, 0005 domain semantics and data rules, 0006 static program pages and 404 routing, 0007 client JS budget, proposed: needs an owner decision).
 
 ## Conventions
 
@@ -86,6 +93,12 @@ Deeper notes: `.claude/docs/architecture.md`. Decisions: `.claude/docs/decisions
 - All user-facing strings go through next-intl in all three locales; Tailwind logical utilities (`ms-`, `pe-`, `text-start`) — never `ml-`/`pr-`/`left-`.
 - Dates: ISO 8601 in code/data, DD/MM/YYYY in UI. Currency: EUR primary, MAD secondary display.
 - GDPR (and Moroccan Law 09-08): minimise personal data, never log grades/nationality, support account deletion + export.
+- Displayed ICU arguments are preformatted strings (`formatNumber`, `formatMoney`); numbers are only plural/select selectors, so `ar` keeps Latin digits.
+- Client-reachable code imports no Zod and nothing from `@/data-schema` except types and `dates`/`staleness`; use the hand-written validators (differential tests) in `src/lib`. `tests/lib/client-imports.test.ts` enforces it; details in architecture.md.
+- Route wording comes from `routeKeyOf`; `MatchStatusBadge` is the only place a match group maps to icon, colour and text. Stale estimate/guidance wording never says "official".
+- Program pages import `server-only` and keep `dynamicParams = false` (inherited from the `[locale]` layout). Anything that depends on the clock or the profile is a client leaf with a neutral server placeholder.
+- Arabic: الإجازة for the Bachelor's degree, العلامة for a grade. All `ar` copy is a machine draft until the native review.
+- Agents never amend another agent's commit (check `git log -1` before `--amend`); stage by explicit path.
 - Conventional commits: `feat: fix: chore: refactor: docs: test:`.
 
 Path-scoped rules in `.claude/rules/` load when you read matching files. Full list: `.claude/docs/conventions.md`.
@@ -141,6 +154,10 @@ Invoke the skill BEFORE acting. A ≥1% chance it applies means you MUST invoke 
 | Hard architectural or tradeoff decision | `llm-council` |
 
 **Library docs:** before writing against a library API (Next 16, Drizzle, Better Auth, next-intl, shadcn, Biome), use the `ctx7` CLI, not training data: `npx ctx7@latest library "<name>" "<query>"`, then `npx ctx7@latest docs <libraryId> "<query>"`. Pin the major version in the ID when known (e.g. `/vercel/next.js/v16.2.9`). In Git Bash prefix with `MSYS_NO_PATHCONV=1` so the leading `/` in the ID isn't rewritten as a Windows path.
+
+## Code discovery (codebase-memory)
+
+This repo is indexed in the `codebase-memory-mcp` knowledge graph as project `jisr` (skill: `codebase-memory`; `.claude`, `.git`, `.next`, `.superpowers`, `node_modules` and `public/snapshots` are excluded). For code questions use the graph first: `search_graph(project="jisr", query|name_pattern=…)` to find symbols, `trace_path(function_name=…, direction="both")` for callers/callees (exact names: search first), `get_code_snippet` for a symbol's source, `get_architecture` for structure, `detect_changes` to map a diff to affected symbols. Use Grep/Read for text, config, YAML data, ADRs and docs (the graph indexes code, not prose). Re-index after substantial changes with `index_repository(repo_path="C:/Users/dagda/Downloads/nex/UniWay", name="jisr")`; never pass `persistence: true` (it writes an artifact into the repo). The graph can be stale between re-indexes: verify by reading the file before editing.
 
 ## What "done" means
 

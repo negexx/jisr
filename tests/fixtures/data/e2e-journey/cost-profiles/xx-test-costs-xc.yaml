@@ -1,0 +1,35 @@
+slug: xx-test-costs-xc
+country: XC
+city: null
+lines:
+  housing:
+    value: { min: 35000, max: 60000, currency: XTS, per: month }
+    source: aged
+    info_kind: estimate
+    basis:
+      fr: { text: Fourchette test datee pour le logement, status: draft }
+  food:
+    value: { min: 18000, max: 28000, currency: XTS, per: month }
+    source: main
+    info_kind: estimate
+    basis:
+      fr: { text: Fourchette test pour l alimentation, status: draft }
+  transport:
+    value: { min: 2500, max: 4500, currency: XTS, per: month }
+    source: main
+    info_kind: official
+  insurance:
+    value: { min: 25000, max: 45000, currency: XTS, per: year }
+    source: main
+    info_kind: official
+  application_visa:
+    value: { min: 8000, max: 8000, currency: XTS, per: once }
+    source: main
+    info_kind: official
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01
+  aged:
+    url: https://example.org/xx-test-aged
+    last_verified_at: 2025-12-04

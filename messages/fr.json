@@ -6,18 +6,771 @@
   "home": {
     "title": "Étudier en Europe après le Bac",
     "lead": "Jisr vous aide à trouver des licences réalistes pour votre profil, à estimer les coûts et à préparer votre candidature.",
-    "stepsTitle": "Votre parcours",
-    "steps": {
-      "profile": "Votre profil",
-      "options": "Des options réalistes",
-      "costs": "Les coûts",
-      "scholarships": "Les bourses",
-      "plan": "Votre plan de candidature"
+    "cta": "Créer mon profil",
+    "ctaNote": "Vos réponses restent sur cet appareil.",
+    "matchesCta": "Voir mes résultats",
+    "questionsTitle": "Ce que Jisr vous aide à savoir",
+    "questions": {
+      "where": {
+        "title": "Où puis-je étudier ?",
+        "body": "Des licences en France, en Allemagne et aux Pays-Bas, classées selon ce qui semble réaliste pour votre profil."
+      },
+      "apply": {
+        "title": "Puis-je candidater ?",
+        "body": "Ce que chaque programme demande, comparé à votre profil, avec ce qu'il reste à vérifier."
+      },
+      "cost": {
+        "title": "Combien cela va-t-il coûter ?",
+        "body": "Les frais de scolarité et le coût de la vie, en fourchettes, présentés comme chiffres officiels ou estimations."
+      },
+      "next": {
+        "title": "Que dois-je faire ensuite ?",
+        "body": "Les dates limites, les documents et les étapes dans l'ordre, avec le lien officiel pour chacune."
+      }
+    }
+  },
+  "shell": {
+    "siteName": "Jisr",
+    "siteNameArabic": "جسر",
+    "homeLink": "Accueil",
+    "skipToContent": "Aller au contenu"
+  },
+  "nav": {
+    "label": "Navigation principale",
+    "profile": "Mon profil",
+    "matches": "Mes résultats"
+  },
+  "footer": {
+    "privacy": "Votre profil reste sur cet appareil. Jisr n'utilise aucun cookie.",
+    "sources": "Les données et les sources sont vérifiées à la main ; chaque fait indique sa source."
+  },
+  "clearData": {
+    "trigger": "Effacer mes données",
+    "title": "Effacer mes données ?",
+    "description": "Cela supprime votre profil et vos réponses non terminées de cet appareil uniquement.",
+    "cancel": "Annuler",
+    "confirm": "Effacer mes données"
+  },
+  "domain": {
+    "status": {
+      "satisfied": "Les conditions publiées semblent remplies",
+      "check": "À vérifier",
+      "not_satisfied": "Conditions publiées non remplies",
+      "short": {
+        "satisfied": "Semblent remplies",
+        "check": "À vérifier",
+        "not_satisfied": "Non remplies"
+      },
+      "hint": {
+        "satisfied": "Tout ce que nous avons publié pour ce programme semble correspondre à votre profil. Confirmez-le sur la page officielle avant de candidater.",
+        "check": "Nous n'avons pas pu tout confirmer. Consultez ci-dessous ce qu'il faut vérifier, puis confirmez-le sur la page officielle.",
+        "not_satisfied": "Au moins une condition publiée ne correspond pas à votre profil. Les conditions peuvent changer : vérifiez la page officielle."
+      }
     },
-    "comingSoon": "Jisr est en construction. Le parcours complet arrive bientôt."
+    "route": {
+      "direct": "D'après les règles que nous avons publiées, votre Bac semble donner un accès direct à une licence dans ce pays. Confirmez les conditions actuelles sur la page d'admission officielle. Vous devez tout de même candidater à chaque programme séparément.",
+      "foundation": "Dans ce pays, votre Bac peut ne pas donner un accès direct à une licence. Une année préparatoire peut être nécessaire d'abord : une année avant la licence, comme le Studienkolleg allemand. Vérifiez sur la page d'admission officielle du programme ou de l'université si cela vous concerne et comment obtenir une place.",
+      "not_eligible": "Selon les règles que nous avons publiées, votre Bac ne donne pas accès à une licence dans ce pays. Les règles peuvent changer : vérifiez la page d'admission officielle.",
+      "check": "Nous n'avons pas confirmé comment votre Bac est traité dans ce pays. Vérifiez la page d'admission officielle.",
+      "missing": "Nous n'avons pas encore publié comment votre Bac est traité pour ce pays : vérifiez la page d'admission officielle.",
+      "staleSource": "Les règles que nous avons publiées pour votre Bac dans ce pays n'ont pas été vérifiées récemment : nous n'indiquons donc pas de résultat. Vérifiez la page d'admission officielle.",
+      "nonOfficialSource": "Les règles que nous avons publiées pour votre Bac dans ce pays ne viennent pas d'une source officielle : nous n'indiquons donc pas de résultat. Vérifiez la page d'admission officielle."
+    },
+    "reason": {
+      "kind": {
+        "credential_type_in": "Type de Bac",
+        "credential_track_in": "Filière du Bac",
+        "overall_grade_min": "Moyenne générale",
+        "subject_grade_min": "Note dans une matière",
+        "subject_taken": "Matières étudiées",
+        "language_proficiency": "Niveau de langue",
+        "prior_study_years_min": "Années d'études antérieures",
+        "manual_check": "Autre condition",
+        "route": "Accès avec votre Bac",
+        "coverage": "Conditions publiées"
+      },
+      "code": {
+        "ok": "Cette condition semble remplie.",
+        "below_threshold": "Votre valeur ({student}) n'atteint pas le minimum publié ({required}). Les conditions peuvent changer : vérifiez la page officielle.",
+        "track_not_accepted": "Votre filière de Bac ({student}) ne figure pas dans la liste publiée pour ce programme ({required}). Vérifiez la page officielle au cas où elle aurait changé.",
+        "missing_student_value": "Il nous manque une information de votre part pour cette condition. Complétez votre profil, puis vérifiez la source officielle.",
+        "threshold_unpublished": "Le minimum de cette condition n'est pas publié dans les sources consultées. Vérifiez-le sur la page d'admission officielle.",
+        "no_scale_conversion": "Nous n'avons pas de méthode publiée pour convertir votre note vers l'échelle utilisée ici. Vérifiez sur la page d'admission officielle comment votre note est traitée.",
+        "stale_source": "La source de cette condition n'a pas été vérifiée récemment. Vérifiez la page officielle avant de vous y fier.",
+        "non_official_source": "Cette condition ne vient pas d'une source officielle. Vérifiez la page officielle pour la confirmer.",
+        "route_foundation": "Votre Bac peut mener à une année préparatoire avant la licence. Vérifiez sur la page d'admission officielle ce qui s'applique à vous.",
+        "route_not_eligible": "Selon les règles publiées, votre Bac ne donne pas accès à une licence ici. Les règles peuvent changer : vérifiez la page officielle.",
+        "route_check": "Nous n'avons pas confirmé comment votre Bac est traité dans ce pays. Vérifiez la page d'admission officielle.",
+        "coverage_partial": "Nous n'avons pas publié toutes les conditions de ce programme. Vérifiez la page officielle pour le reste.",
+        "manual_check": "Cette condition demande une vérification manuelle. Lisez-la sur la page de la source officielle.",
+        "below_threshold_converted": "Votre note ({student}) correspond à {studentConverted} selon la table de conversion publiée, ce qui n'atteint pas le minimum publié ({required}). Cette conversion n'est pas une décision officielle d'équivalence : vérifiez sur la page d'admission officielle comment votre note est traitée."
+      },
+      "outcome": {
+        "pass": "Semble remplie",
+        "fail": "Non remplie",
+        "unknown": "À vérifier"
+      },
+      "kindDetail": {
+        "subject_grade_min": "Note en {subject}",
+        "language_proficiency": "Niveau en {language}"
+      }
+    },
+    "checklist": {
+      "step": {
+        "documents": {
+          "title": "Réunir vos documents",
+          "meaning": "Rassemblez les documents demandés par le programme."
+        },
+        "translation": {
+          "title": "Traduire les documents",
+          "meaning": "Certains documents peuvent demander une traduction. Vérifiez ce que le programme exige."
+        },
+        "language_exam": {
+          "title": "Examen de langue",
+          "meaning": "Passez ou réservez le test de langue accepté par le programme."
+        },
+        "application_account": {
+          "title": "Créer le compte de candidature",
+          "meaning": "Ouvrez un compte sur la plateforme utilisée pour candidater, si elle en demande un."
+        },
+        "submit": {
+          "title": "Envoyer la candidature",
+          "meaning": "Envoyez votre candidature avant la date limite."
+        },
+        "scholarships": {
+          "title": "Demander des bourses",
+          "meaning": "Vérifiez les bourses qui peuvent vous convenir et leurs dates limites."
+        },
+        "financial_documents": {
+          "title": "Justifier vos ressources",
+          "meaning": "Préparez les documents qui montrent comment vos études sont financées."
+        },
+        "accommodation": {
+          "title": "Trouver un logement",
+          "meaning": "Cherchez un logement avant votre arrivée."
+        },
+        "visa": {
+          "title": "Visa ou titre de séjour",
+          "meaning": "Vérifiez les règles officielles de visa du pays de destination et faites la demande à temps."
+        },
+        "departure": {
+          "title": "Préparer le départ",
+          "meaning": "Organisez votre voyage et ce que vous emportez."
+        }
+      },
+      "reason": {
+        "applies": "Cette étape concerne votre candidature.",
+        "unknown_data": "Nous n'avons pas assez de données publiées pour savoir si cette étape s'applique. Vérifiez la page officielle.",
+        "not_required_by_source": "La source publiée ne demande pas cette étape.",
+        "certificate_held": "Le certificat de langue que vous avez semble accepté : un nouvel examen n'est peut-être pas nécessaire. Confirmez-le sur la page officielle.",
+        "no_account_required": "Selon la source publiée, aucun compte de candidature n'est nécessaire.",
+        "no_scholarships_listed": "Nous n'avons listé aucune bourse pour ce programme. Consultez les pages officielles pour les autres financements."
+      }
+    },
+    "mismatch": {
+      "destination": "Pas dans un pays que vous avez choisi",
+      "field": "Pas dans un domaine que vous avez choisi",
+      "institution_type": "Pas du type d'établissement que vous avez choisi",
+      "study_language": "Pas enseigné dans une langue que vous avez choisie"
+    },
+    "cost": {
+      "category": {
+        "tuition": "Frais de scolarité",
+        "housing": "Logement",
+        "food": "Alimentation",
+        "transport": "Transport",
+        "insurance": "Assurance",
+        "application_visa": "Frais de dossier et de visa",
+        "setup": "Frais d'installation"
+      },
+      "per": {
+        "month": "par mois",
+        "year": "par an",
+        "semester": "par semestre",
+        "once": "une seule fois"
+      },
+      "scope": {
+        "program": "Selon le programme",
+        "city": "Selon la ville",
+        "country": "Selon le pays"
+      },
+      "tenMonthNote": "Les coûts mensuels sont comptés sur {months} mois d'études. Le logement se paie souvent 12 mois : vérifiez la période de loyer.",
+      "missingLine": "Non publié dans les sources consultées, à vérifier",
+      "partialTotal": "Total partiel : certains coûts ne sont pas inclus",
+      "estimateTag": "Estimation"
+    },
+    "budgetFit": {
+      "within": "L'estimation est dans votre budget.",
+      "straddles": "Votre budget se situe dans la fourchette estimée : il peut suffire ou non.",
+      "above": "L'estimation dépasse votre budget.",
+      "unknown": "Nous ne pouvons pas comparer l'estimation à votre budget."
+    },
+    "intake": {
+      "upcoming": "Prochaine date limite : {date}",
+      "closed": "Clos, prochaines dates pas encore publiées",
+      "unknown": "Date limite non publiée, à vérifier"
+    },
+    "infoKind": {
+      "official": {
+        "label": "Officiel",
+        "meaning": "Publié par une source officielle, comme une université ou un organisme public."
+      },
+      "estimate": {
+        "label": "Estimation",
+        "meaning": "Notre estimation à partir de chiffres publiés. Le montant réel peut différer."
+      },
+      "guidance": {
+        "label": "Conseil général",
+        "meaning": "Conseil pour vous aider à planifier. Ce n'est pas une condition."
+      }
+    },
+    "freshness": {
+      "fresh": "Vérifié récemment",
+      "aging": "Vérifié il y a quelque temps",
+      "stale": "Peut être dépassé, vérifiez la page officielle",
+      "verifiedOn": "Vérifié le {date}"
+    },
+    "coverage": {
+      "partial": "Nous n'avons pas publié toutes les conditions de ce programme. Vérifiez la page officielle avant de vous y fier.",
+      "complete": "Nous avons publié toutes les conditions que nous connaissons pour ce programme. La page officielle reste la référence."
+    },
+    "textNote": {
+      "french_fallback": "Affiché en français : pas encore traduit",
+      "machine_translated": "Traduit automatiquement, pas encore relu"
+    },
+    "rule": {
+      "credential_type_in": "Type de Bac demandé selon la source officielle : {types}.",
+      "credential_track_in": "Filières du Bac retenues selon la source officielle : {tracks}.",
+      "overall_grade_min": {
+        "published": "Moyenne générale minimale publiée par la source officielle : {required}.",
+        "unpublished": "Moyenne générale minimale : non publiée, à vérifier sur la page officielle."
+      },
+      "subject_grade_min": {
+        "published": "Note minimale en {subject} publiée par la source officielle : {required}.",
+        "unpublished": "Note minimale en {subject} : non publiée, à vérifier sur la page officielle."
+      },
+      "subject_taken": {
+        "all": "Matières à avoir étudiées selon la source officielle : {subjects}.",
+        "any": "Au moins une de ces matières selon la source officielle : {subjects}."
+      },
+      "language_proficiency": {
+        "published": "Niveau minimal en {language} publié par la source officielle : {required}.",
+        "unpublished": "Niveau minimal en {language} : non publié, à vérifier sur la page officielle.",
+        "certificateRequired": "La source officielle demande un certificat de langue.",
+        "certificateNotRequired": "La source officielle ne demande pas de certificat de langue pour cette condition.",
+        "certificateUnpublished": "Certificat de langue nécessaire ou non : non publié, à vérifier sur la page officielle.",
+        "certificates": "Certificats cités par la source officielle : {certificates}.",
+        "anyCertificate": "La source officielle ne cite pas de certificat précis : un certificat reconnu peut suffire. Vérifiez la liste officielle des certificats pris en compte."
+      },
+      "prior_study_years_min": "Études supérieures après le Bac selon la source officielle : au moins {years, plural, one {{count} année} other {{count} années}}.",
+      "manual_check": "Autre condition de la source officielle : lisez-la sur la page officielle.",
+      "scaleLowerBetter": "Sur cette échelle, une note plus basse est meilleure : il faut {required} ou mieux (une note plus basse)."
+    }
+  },
+  "externalLink": {
+    "opensInNewTab": "(s'ouvre dans un nouvel onglet)"
+  },
+  "sourceBadge": {
+    "source": "Source",
+    "howWeEstimated": "Comment nous avons estimé",
+    "staleCheckSource": "Peut être dépassé, vérifiez la source"
+  },
+  "matchStatusBadge": {
+    "foundation": "Année préparatoire d'abord"
+  },
+  "deadline": {
+    "opensFrom": "Candidatures ouvertes à partir du {date}"
   },
   "localeSwitcher": {
     "label": "Langue",
-    "names": { "fr": "Français", "en": "English", "ar": "العربية" }
+    "names": {
+      "fr": "Français",
+      "en": "English",
+      "ar": "العربية"
+    }
+  },
+  "profile": {
+    "meta": {
+      "title": "Jisr | Créer mon profil",
+      "description": "Parlez-nous de votre Bac, de vos langues et de ce que vous voulez étudier. Vos réponses restent sur votre appareil."
+    },
+    "title": {
+      "create": "Créer mon profil",
+      "edit": "Modifier mon profil",
+      "neutral": "Votre profil"
+    },
+    "intro": "Quatre étapes courtes, puis une dernière vérification. Toutes les questions sont obligatoires, sauf celles marquées facultatives.",
+    "progress": {
+      "step": "Étape {current} sur {total} : {title}",
+      "review": "Dernière vérification : relisez vos réponses"
+    },
+    "steps": {
+      "bac": {
+        "title": "Votre Bac",
+        "why": "Chaque programme demande un diplôme, une filière et des notes précis. Vos réponses servent à les comparer avec ce que le programme publie."
+      },
+      "languages": {
+        "title": "Langues",
+        "why": "Les programmes peuvent demander un niveau de langue. Vous ne savez pas ? Choisissez « Je ne sais pas » : le résultat sera marqué « à vérifier »."
+      },
+      "preferences": {
+        "title": "Ce que vous voulez",
+        "why": "Vos choix décident des programmes que nous regardons. Laissez un groupe vide si vous n'avez pas de préférence : nous gardons alors tout ouvert."
+      },
+      "budget": {
+        "title": "Budget",
+        "why": "Un budget nous aide à dire si les coûts semblent à votre portée. Il ne masque jamais un programme."
+      },
+      "review": {
+        "title": "Vérification",
+        "why": "Relisez vos réponses. Vous pouvez en changer avant d'enregistrer."
+      }
+    },
+    "common": {
+      "choose": "Choisir",
+      "required": "obligatoire",
+      "optional": "facultatif",
+      "back": "Retour",
+      "next": "Suivant",
+      "seeMatches": "Voir mes résultats",
+      "saveChanges": "Enregistrer les modifications",
+      "edit": "Modifier",
+      "remove": "Retirer",
+      "dismiss": "Fermer"
+    },
+    "fields": {
+      "nationality": {
+        "label": "Nationalité",
+        "hint": "Le pays de votre passeport ou de votre carte d'identité."
+      },
+      "credentialCountry": {
+        "label": "Pays où vous passez votre Bac",
+        "hint": "Le pays qui délivre votre diplôme."
+      },
+      "credentialType": {
+        "label": "Diplôme",
+        "hint": "Choisissez le nom écrit sur votre diplôme. Il est affiché tel qu'il est publié.",
+        "chooseFirst": "Choisissez d'abord le pays."
+      },
+      "track": {
+        "label": "Filière",
+        "hint": "Votre série ou option, comme écrite sur votre diplôme ou votre relevé de notes.",
+        "chooseFirst": "Choisissez d'abord le diplôme."
+      },
+      "status": {
+        "legend": "Avez-vous déjà votre Bac ?",
+        "short": "Situation du Bac",
+        "obtained": "Oui, j'ai mon résultat",
+        "expected": "Pas encore, je le passe cette année"
+      },
+      "overall": {
+        "label": "Moyenne générale",
+        "hint": "Votre moyenne finale, comme écrite sur votre relevé de notes. Utilisez une virgule ou un point pour les décimales, par exemple 14,5.",
+        "hintExpected": "Vous pouvez laisser ce champ vide tant que vous n'avez pas votre résultat.",
+        "outOf": "/ {max}"
+      },
+      "subjects": {
+        "legend": "Notes par matière",
+        "hint": "Facultatif. Ajoutez les matières que les programmes demandent souvent, comme les maths ou la physique. Une matière absente est indiquée « à vérifier » si un programme la demande.",
+        "subject": "Matière",
+        "grade": "Note",
+        "rowTitle": "Matière {number}",
+        "add": "Ajouter une matière",
+        "remove": "Retirer la matière {number}",
+        "cap": "Vous pouvez ajouter jusqu'à {max} matières.",
+        "notInTrack": "hors de votre filière"
+      },
+      "years": {
+        "label": "Années d'études supérieures déjà faites",
+        "hint": "Après le Bac, à l'université ou dans une école. Choisissez 0 s'il n'y en a pas."
+      },
+      "language": {
+        "label": "Langue",
+        "add": "Ajouter une autre langue",
+        "remove": "Retirer {language}"
+      },
+      "level": {
+        "label": "Votre niveau",
+        "hint": "De A1 (débutant) à C2 (proche du natif). Vous ne savez pas ? Choisissez « Je ne sais pas »."
+      },
+      "levels": {
+        "A1": "A1 (débutant)",
+        "A2": "A2 (élémentaire)",
+        "B1": "B1 (intermédiaire)",
+        "B2": "B2 (intermédiaire avancé)",
+        "C1": "C1 (avancé)",
+        "C2": "C2 (proche du natif)",
+        "unknown": "Je ne sais pas"
+      },
+      "certificate": {
+        "label": "Certificat",
+        "hint": "Seulement si vous avez déjà passé un test de langue officiel.",
+        "none": "Aucun certificat"
+      },
+      "fieldsOfStudy": {
+        "legend": "Domaines d'études",
+        "hint": "Choisissez-en au moins un."
+      },
+      "studyLanguages": {
+        "legend": "Langue d'enseignement",
+        "hint": "La langue dans laquelle vous voulez étudier. Ne cochez rien si vous n'avez pas de préférence."
+      },
+      "destinations": {
+        "legend": "Pays",
+        "hint": "Où vous aimeriez étudier. Ne cochez rien pour voir tous les pays."
+      },
+      "institution": {
+        "legend": "Type d'établissement",
+        "hint": "Choisissez « Public ou privé » si vous hésitez.",
+        "any": "Public ou privé",
+        "public": "Public uniquement",
+        "private": "Privé uniquement"
+      },
+      "budget": {
+        "amount": {
+          "label": "Montant que vous pouvez dépenser",
+          "hint": "Un nombre entier, chiffres de 0 à 9, par exemple 800. Laissez vide si vous préférez ne pas le dire."
+        },
+        "currency": {
+          "label": "Devise"
+        },
+        "period": {
+          "label": "Période",
+          "month": "par mois",
+          "year": "par an"
+        },
+        "madNote": "Un budget en MAD ne peut pas encore être comparé aux coûts en euros : nous n'indiquerons donc pas si un programme y correspond.",
+        "neverHides": "Votre budget ne masque jamais un programme. Il indique seulement, programme par programme, si les coûts semblent à votre portée."
+      }
+    },
+    "notices": {
+      "draft": "Nous avons gardé vos réponses non terminées. Vous reprenez à l'étape où vous en étiez.",
+      "reset": "Nous n'avons pas pu lire votre profil enregistré, nous l'avons donc supprimé. Vous pouvez le créer à nouveau.",
+      "storage": "Nous ne pouvons pas enregistrer sur cet appareil : vos réponses seront perdues à la fermeture de cette page.",
+      "saveFailed": "Nous n'avons pas pu enregistrer votre profil. Réessayez."
+    },
+    "errors": {
+      "summaryTitle": "Veuillez corriger ces points",
+      "summaryItem": "{field} : {message}",
+      "fieldInRow": "{field} ({row})",
+      "required": {
+        "choice": "Choisissez une réponse",
+        "grade": "Saisissez une note",
+        "fields": "Choisissez au moins un domaine d'études"
+      },
+      "not_a_number": "Écrivez la note avec les chiffres de 0 à 9, par exemple 14,5",
+      "ambiguous_number": "Écrivez la note avec une virgule ou un point, sans séparateur de milliers (par exemple 14,5)",
+      "too_many_decimals": "Utilisez au plus 2 décimales, par exemple 14,25",
+      "out_of_range": {
+        "grade": "Saisissez une note entre {min} et {max}",
+        "budget": "Saisissez un montant d'au plus {max}, en nombre entier"
+      },
+      "unknown_option": "Choisissez une option de la liste",
+      "certificate_language_mismatch": "Ce certificat ne correspond pas à cette langue. Choisissez-en un autre ou aucun.",
+      "duplicate_subject": "Cette matière est déjà dans votre liste. Choisissez-en une autre.",
+      "duplicate_language": "Cette langue est déjà dans votre liste.",
+      "too_many_rows": "Vous pouvez ajouter jusqu'à {max} matières.",
+      "not_a_whole_number": "Écrivez le montant en nombre entier, sans point ni virgule, avec les chiffres de 0 à 9",
+      "years_out_of_range": "Choisissez entre {min} et {max} années",
+      "digitsHint": "Utilisez les chiffres de 0 à 9 (1, 2, 3), pas les chiffres arabo-indiens."
+    },
+    "states": {
+      "loading": "Chargement du formulaire",
+      "error": {
+        "title": "Nous n'avons pas pu charger les données",
+        "description": "Vérifiez votre connexion, puis réessayez.",
+        "retry": "Réessayer"
+      },
+      "unavailable": {
+        "title": "Nous vérifions encore les données officielles",
+        "description": "Les diplômes de votre pays ne sont pas encore publiés. Le problème vient de nous, pas de vous. Revenez plus tard."
+      }
+    },
+    "review": {
+      "saveTitle": "Ce qui est enregistré",
+      "saveBody": "Vos réponses sont enregistrées dans ce navigateur, sur cet appareil uniquement. Rien n'est envoyé à un serveur. Vous pouvez les supprimer avec « Effacer mes données » en bas de la page.",
+      "notGiven": "Non renseigné",
+      "noPreference": "Pas de préférence",
+      "allCountries": "Tous les pays",
+      "levelWithCertificate": "{level}, certificat : <cert>{certificate}</cert>",
+      "budgetLine": "{amount} {period, select, month {par mois} year {par an} other {}}",
+      "editStep": "Modifier : {step}"
+    },
+    "aside": {
+      "whyTitle": "Pourquoi nous le demandons",
+      "whyPhone": "Pourquoi cette question ?",
+      "deviceTitle": "Reste sur votre appareil",
+      "deviceBody": "Vos réponses sont gardées dans ce navigateur seulement. Rien ne nous est envoyé. Pour les supprimer, utilisez « Effacer mes données » en bas de la page."
+    }
+  },
+  "costBreakdown": {
+    "counted": "Calculé {per}",
+    "seeNote": "Voir la note",
+    "total": "Total pour la première année",
+    "seeLines": "Voir chaque poste de coût"
+  },
+  "reasonList": {
+    "sources": "Sources",
+    "whySummary": "Autres conditions : {counts}",
+    "count": {
+      "pass": "{n, plural, one {{count} semble remplie} other {{count} semblent remplies}}",
+      "fail": "{n, plural, one {{count} non remplie} other {{count} non remplies}}",
+      "unknown": "{count} à vérifier"
+    }
+  },
+  "matchCard": {
+    "level": {
+      "bachelor": "Licence"
+    },
+    "taughtIn": "Enseigné en",
+    "languagesUnknown": "Langues d'enseignement : à vérifier",
+    "institutionCity": "<place>{institution}</place>, <place>{city}</place>",
+    "facts": {
+      "estimatedCost": "Coût estimé, première année",
+      "deadline": "Date limite",
+      "application": "Comment candidater"
+    },
+    "channel": {
+      "kind": {
+        "national_portal": "Portail national",
+        "intermediary": "Plateforme intermédiaire",
+        "direct": "Candidature directe auprès de l'établissement"
+      },
+      "account": {
+        "required": "Compte requis",
+        "notRequired": "Aucun compte nécessaire",
+        "unknown": "Compte : à vérifier"
+      }
+    },
+    "reasonsHeading": "Les conditions publiées, en bref",
+    "seeDetails": "Voir le détail"
+  },
+  "matches": {
+    "meta": {
+      "title": "Jisr | Vos résultats",
+      "description": "Les programmes comparés à votre profil : ce qui semble possible, ce qu'il faut vérifier, les coûts et les échéances, avec la source de chaque information."
+    },
+    "title": "Vos résultats",
+    "lead": "D'après les conditions que nous avons publiées pour chaque programme. Confirmez-les sur la page officielle avant de candidater.",
+    "loading": "Chargement de vos résultats",
+    "counts": {
+      "ok": "{n, plural, one {{count} semble possible} other {{count} semblent possibles}}",
+      "check": "{count} à vérifier",
+      "foundation": "{count} via une année préparatoire",
+      "failed": "{n, plural, one {{count} à la condition publiée non remplie} other {{count} aux conditions publiées non remplies}}",
+      "navLabel": "Aller à un groupe"
+    },
+    "groups": {
+      "foundation": {
+        "title": "Possible via une année préparatoire",
+        "boxTitle": "À propos de l'année préparatoire"
+      },
+      "failed": {
+        "note": "Les conditions peuvent changer. Vérifiez la page officielle de chaque programme avant de décider.",
+        "show": "Afficher les programmes ({count})"
+      }
+    },
+    "summary": {
+      "title": "Votre profil",
+      "fields": "Domaines",
+      "destinations": "Pays",
+      "allCountries": "Tous les pays",
+      "budget": "Budget",
+      "budgetNotSet": "Non renseigné",
+      "budgetPer": {
+        "month": "<money>{amount}</money> par mois",
+        "year": "<money>{amount}</money> par an"
+      },
+      "edit": "Modifier mon profil"
+    },
+    "hidden": {
+      "summary": "{n, plural, one {{count} programme masqué par vos préférences} other {{count} programmes masqués par vos préférences}}",
+      "note": "Nous ne comparons pas ces programmes avec votre profil. Modifiez vos préférences dans votre profil pour les voir.",
+      "reasonCount": "{reason} : {count}"
+    },
+    "states": {
+      "none": {
+        "title": "Créez votre profil pour voir les programmes qui vous conviennent",
+        "description": "Répondez à quelques questions sur votre Bac et ce que vous voulez étudier. Vos réponses restent sur cet appareil.",
+        "cta": "Créer mon profil"
+      },
+      "reset": {
+        "notice": "Le profil enregistré sur cet appareil n'a pas pu être lu, nous l'avons donc supprimé. Vous pouvez le créer à nouveau.",
+        "dismiss": "Fermer ce message"
+      },
+      "error": {
+        "title": "Nous n'avons pas pu charger les programmes",
+        "description": "Vérifiez votre connexion, puis réessayez.",
+        "retry": "Réessayer"
+      },
+      "noPrograms": {
+        "title": "Nous vérifions encore les données officielles",
+        "description": "Aucun programme n'est encore publié. Le problème vient de nous, pas de vous. Revenez plus tard."
+      },
+      "noProgramsForFields": {
+        "title": "Aucun programme n'est encore publié dans les domaines que vous avez choisis",
+        "description": "Nous ajoutons encore des données. Cela ne dit rien de votre profil. Vous pouvez modifier vos domaines dans votre profil."
+      },
+      "allHidden": {
+        "title": "{n, plural, one {Vos préférences masquent le seul programme publié pour l'instant dans vos domaines} other {Vos préférences masquent les {count} programmes publiés dans vos domaines}}",
+        "description": "Modifiez vos préférences dans votre profil pour les voir. Votre budget ne masque jamais un programme."
+      }
+    }
+  },
+  "program": {
+    "meta": {
+      "title": "{program}, {institution} | Jisr",
+      "titleWithoutInstitution": "{program} | Jisr",
+      "description": "Conditions d'admission, coûts, dates limites et démarches pour {program}, avec la source de chaque information."
+    },
+    "header": {
+      "level": {
+        "bachelor": "Licence"
+      },
+      "institutionCity": "<place>{institution}</place>, <place>{city}</place>",
+      "duration": "{years, plural, one {{count} an} other {{count} ans}}",
+      "durationUnknown": "Durée : à vérifier",
+      "taughtIn": "Enseigné en {languages}",
+      "languagesUnknown": "Langues d'enseignement : à vérifier"
+    },
+    "banner": {
+      "aging": "Certaines informations de cette page ont été vérifiées il y a quelque temps.",
+      "stale": "Certaines informations de cette page peuvent être dépassées.",
+      "check": "Vérifiez les sources indiquées à côté de chaque information."
+    },
+    "jumpList": {
+      "title": "Sur cette page",
+      "label": "Sections de cette page"
+    },
+    "sections": {
+      "overview": "Présentation",
+      "requirements": "Conditions d'admission",
+      "tuition": "Frais de scolarité",
+      "costs": "Coût de la vie estimé",
+      "deadline": "Date limite de candidature",
+      "procedure": "Comment candidater",
+      "documents": "Documents demandés",
+      "scholarships": "Bourses",
+      "links": "Liens officiels",
+      "verified": "Dernière vérification"
+    },
+    "overview": {
+      "institution": "Établissement",
+      "institutionType": {
+        "public": "Établissement public",
+        "private": "Établissement privé"
+      },
+      "duration": "Durée",
+      "languages": "Langues d'enseignement",
+      "institutionUnknown": "Établissement pas encore référencé, à vérifier sur la page de la formation"
+    },
+    "requirements": {
+      "intro": "Les conditions telles qu'elles sont publiées, en termes généraux. Dans cette partie de la page, elles ne sont pas comparées à votre profil.",
+      "none": "Aucune condition n'est encore publiée pour cette formation. Consultez la page officielle."
+    },
+    "costs": {
+      "caption": "Coût estimé de la première année, ligne par ligne"
+    },
+    "deadline": {
+      "asPublished": "Les dates telles que publiées par la source.",
+      "start": "Début des études : {date}",
+      "opens": "Ouverture des candidatures : {date}",
+      "deadline": "Date limite de candidature : {date}",
+      "startUnknown": "Début des études : non publié",
+      "opensUnknown": "Ouverture des candidatures : non publiée",
+      "deadlineUnknown": "Date limite de candidature : non publiée, à vérifier",
+      "none": "Aucune date n'est encore publiée, à vérifier sur la page de la formation."
+    },
+    "procedure": {
+      "where": "Où candidater",
+      "open": "Aller sur le site de candidature",
+      "missing": "La façon de candidater n'est pas encore publiée, à vérifier sur la page de la formation."
+    },
+    "documents": {
+      "translation": {
+        "yes": "Traduction nécessaire : oui",
+        "no": "Traduction nécessaire : non",
+        "unknown": "Traduction nécessaire : inconnu, à vérifier"
+      },
+      "none": "Aucun document n'est listé dans la source consultée, à vérifier.",
+      "missing": "La liste des documents n'est pas encore publiée, à vérifier."
+    },
+    "scholarships": {
+      "intro": "Bourses liées à cette formation ou proposées dans son pays. Chacune a ses propres conditions : vérifiez-les sur sa page.",
+      "none": "Aucune bourse n'est encore publiée pour cette formation.",
+      "provider": "Organisme : {provider}",
+      "noNationalityRestriction": "Aucune restriction de nationalité dans les règles publiées : vérifiez la page de la bourse",
+      "nationals": "Pour les ressortissants de : {countries}",
+      "support": {
+        "month": "Montant : <money>{amount}</money> par mois",
+        "year": "Montant : <money>{amount}</money> par an",
+        "once": "Montant : <money>{amount}</money>, versé une fois",
+        "total": "Montant : <money>{amount}</money> au total",
+        "unknown": "Montant : non publié, à vérifier"
+      },
+      "covers": "Couvre : {items}",
+      "cover": {
+        "tuition": "les frais de scolarité",
+        "living": "les frais de vie",
+        "housing": "le logement",
+        "travel": "le voyage",
+        "insurance": "l'assurance",
+        "other": "d'autres frais"
+      },
+      "deadline": "Date limite de la bourse : {date}",
+      "deadlineUnknown": "Date limite de la bourse : non publiée, à vérifier",
+      "link": "Site de la bourse"
+    },
+    "links": {
+      "program": "Page de la formation",
+      "institution": "Site de l'établissement",
+      "channel": "Site de candidature"
+    },
+    "verified": {
+      "oldest": "L'information la plus ancienne de cette page a été vérifiée le {date}.",
+      "each": "Chaque information indique sa propre source et sa date de vérification."
+    },
+    "aside": {
+      "label": "Votre résultat, la date limite et le coût estimé",
+      "deadline": "Date limite",
+      "cost": "Coût estimé, première année",
+      "costDetails": "Voir chaque ligne de coût"
+    },
+    "personal": {
+      "heading": "Votre résultat",
+      "loading": "Chargement de votre résultat",
+      "cta": {
+        "title": "Créez votre profil pour voir si cette formation vous correspond",
+        "description": "Vos réponses restent sur cet appareil.",
+        "action": "Créer mon profil"
+      },
+      "error": {
+        "title": "Nous n'avons pas pu charger votre résultat",
+        "description": "Vérifiez votre connexion, puis réessayez.",
+        "retry": "Réessayer"
+      },
+      "missingProgram": "Cette formation ne figure plus dans les données publiées.",
+      "computeError": {
+        "title": "Nous n'avons pas pu calculer votre résultat",
+        "description": "Les données publiées pour cette formation n'ont pas pu être comparées à votre profil. Les informations de cette page sont affichées telles que publiées, avec leurs sources."
+      },
+      "updated": {
+        "notice": "Les données ont été mises à jour depuis la création de cette page. Rechargez-la pour voir la dernière version.",
+        "reload": "Recharger"
+      },
+      "route": "Votre Bac dans ce pays",
+      "budget": "Votre budget",
+      "budgetNote": "Votre budget ne masque jamais une formation : il est seulement comparé à l'estimation.",
+      "scholarships": "Bourses de cette page ouvertes à votre nationalité",
+      "scholarshipsNone": "D'après les règles de nationalité publiées, aucune bourse de cette page n'est ouverte à votre nationalité.",
+      "scholarshipsCaveat": "Uniquement d'après les règles de nationalité publiées. Vérifiez les autres conditions sur la page de chaque bourse.",
+      "reasons": "Les conditions publiées, comparées à votre profil"
+    }
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "description": "Cette page n'existe pas ou n'est plus publiée. La formation a peut-être été retirée de nos données.",
+    "home": "Aller à l'accueil",
+    "profile": "Créer ou modifier mon profil"
   }
 }

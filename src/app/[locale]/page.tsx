@@ -1,14 +1,17 @@
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { LocaleSwitcher } from "@/components/locale-switcher";
+import { HomeMatchesLink } from "@/components/home-matches-link";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string }> };
 
-const STEP_KEYS = ["profile", "options", "costs", "scholarships", "plan"] as const;
+const QUESTION_KEYS = ["where", "apply", "cost", "next"] as const;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -23,25 +26,45 @@ export default async function HomePage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("home");
   return (
-    <main className="mx-auto flex min-h-dvh max-w-2xl flex-col gap-8 px-4 py-10 text-start">
-      <header className="flex justify-end">
-        <LocaleSwitcher current={locale} />
-      </header>
-      <section className="flex flex-col gap-3">
-        <h1 className="text-3xl font-semibold tracking-tight">{t("title")}</h1>
-        <p className="text-lg text-muted-foreground">{t("lead")}</p>
+    <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] md:items-start md:gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)]">
+      <section className="flex flex-col gap-6 text-start">
+        <div className="flex flex-col gap-3">
+          <h1 className="text-2xl font-bold tracking-tight text-balance">{t("title")}</h1>
+          <p className="max-w-[65ch] text-lg text-muted-foreground">{t("lead")}</p>
+        </div>
+        <div className="grid gap-2 sm:grid-cols-[auto_auto] sm:justify-start sm:gap-x-3">
+          <Button asChild size="lg" className="w-full sm:w-auto">
+            <Link href="/profile">
+              {t("cta")}
+              <ArrowRight data-icon="inline-end" className="rtl:rotate-180" aria-hidden />
+            </Link>
+          </Button>
+          {/* Reserved slot: it holds the button's height, so a saved profile shifts nothing. On a
+              phone the note reads straight after the primary button and the slot follows it. */}
+          <div className="order-last sm:order-none">
+            <HomeMatchesLink label={t("matchesCta")} />
+          </div>
+          <p className="text-sm text-muted-foreground sm:col-span-2">{t("ctaNote")}</p>
+        </div>
       </section>
-      <section aria-labelledby="journey" className="flex flex-col gap-3">
-        <h2 id="journey" className="text-xl font-medium">
-          {t("stepsTitle")}
+      <section aria-labelledby="questions" className="flex flex-col gap-4 text-start">
+        <h2 id="questions" className="text-xl font-semibold">
+          {t("questionsTitle")}
         </h2>
-        <ol className="list-decimal ps-6">
-          {STEP_KEYS.map((key) => (
-            <li key={key}>{t(`steps.${key}`)}</li>
+        <ol className="divide-y divide-border border-y border-border">
+          {QUESTION_KEYS.map((key, index) => (
+            <li key={key} className="flex gap-4 py-4">
+              <span aria-hidden className="w-6 shrink-0 text-lg font-medium text-muted-foreground">
+                {index + 1}
+              </span>
+              <div className="flex flex-col gap-1">
+                <h3 className="text-lg font-medium">{t(`questions.${key}.title`)}</h3>
+                <p className="text-base text-muted-foreground">{t(`questions.${key}.body`)}</p>
+              </div>
+            </li>
           ))}
         </ol>
       </section>
-      <p className="text-sm text-muted-foreground">{t("comingSoon")}</p>
-    </main>
+    </div>
   );
 }

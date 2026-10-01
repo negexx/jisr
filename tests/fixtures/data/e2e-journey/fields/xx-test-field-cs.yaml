@@ -1,0 +1,5 @@
+slug: xx-test-field-cs
+name:
+  fr: { text: Informatique test, status: reviewed }
+  en: { text: Test computer science, status: reviewed }
+  ar: { text: علوم الحاسوب للاختبار, status: draft }

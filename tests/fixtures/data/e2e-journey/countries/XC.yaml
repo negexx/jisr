@@ -1,0 +1,5 @@
+code: XC
+name:
+  fr: { text: Pays test C, status: draft }
+  en: { text: Test country C, status: draft }
+currency: XTS

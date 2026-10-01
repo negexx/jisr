@@ -1,0 +1,25 @@
+slug: xx-test-cred
+country: XA
+name: XX Test Credential
+gloss:
+  fr: { text: Diplome test, status: reviewed }
+  en: { text: Test diploma, status: draft }
+gradingScale: xx-test-scale-20
+tracks:
+  - slug: xx-test-track-sci
+    name: XX Test Science Track
+    gloss:
+      fr: { text: Filiere scientifique test, status: reviewed }
+      en: { text: Test science track, status: draft }
+    subjects: [xx-test-subject-math, xx-test-subject-phys]
+  - slug: xx-test-track-lit
+    name: XX Test Literary Track
+    gloss:
+      fr: { text: Filiere litteraire test, status: draft }
+    subjects: null
+source: main
+info_kind: official
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01

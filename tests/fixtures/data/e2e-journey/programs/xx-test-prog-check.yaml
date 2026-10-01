@@ -1,0 +1,79 @@
+slug: xx-test-prog-check
+institution: xx-test-inst-pub-b
+country: XB
+city: xx-test-city-b
+field: xx-test-field-eng
+level: bachelor
+name: XX Test Programme Check
+summary:
+  fr: { text: Programme test dont les exigences sont partiellement publiees, status: reviewed }
+  en: { text: Test programme with partly published requirements, status: draft }
+officialUrl: https://example.org/xx-test-prog-check
+durationYears:
+  value: 3
+  source: main
+  info_kind: official
+teachingLanguages:
+  value: [en]
+  source: main
+  info_kind: official
+tuition:
+  value: null
+  source: main
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2026-09-01
+      applicationOpens: 2026-01-15
+      applicationDeadline: 2026-03-01
+  source: main
+  info_kind: official
+applicationChannel:
+  value: xx-test-channel-direct
+  source: main
+  info_kind: official
+documents:
+  value:
+    - slug: xx-test-doc-identity
+      name:
+        fr: { text: Piece d identite test, status: draft }
+      translationRequired: false
+  source: main
+  info_kind: official
+requirements:
+  coverage: partial
+  source: main
+  info_kind: official
+  rules:
+    - id: xx-test-rule-math
+      kind: subject_taken
+      source: main
+      info_kind: official
+      subjects: [xx-test-subject-math]
+      mode: all
+    - id: xx-test-rule-grade
+      kind: overall_grade_min
+      source: main
+      info_kind: official
+      scale: xx-test-scale-20
+      threshold: null
+    - id: xx-test-rule-language-en
+      kind: language_proficiency
+      source: main
+      info_kind: official
+      language: en
+      minCefr: null
+      certificateRequired: null
+      acceptedTests: [xx-test-cert-en]
+    - id: xx-test-rule-manual
+      kind: manual_check
+      source: main
+      info_kind: official
+      note:
+        fr: { text: Seuil de note et niveau d anglais non publies par l etablissement, status: reviewed }
+        en: { text: Grade threshold and English level not published by the institution, status: draft }
+scholarships: []
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01

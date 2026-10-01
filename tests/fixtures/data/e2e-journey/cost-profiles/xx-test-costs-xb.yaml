@@ -1,0 +1,39 @@
+slug: xx-test-costs-xb
+country: XB
+city: null
+lines:
+  housing:
+    value: { min: 40000, max: 70000, currency: XTS, per: month }
+    source: main
+    info_kind: estimate
+    basis:
+      fr: { text: Fourchette test fondee sur des loyers fictifs, status: reviewed }
+      en: { text: Test range based on fictional rents, status: draft }
+  food:
+    value: { min: 20000, max: 30000, currency: XTS, per: month }
+    source: main
+    info_kind: estimate
+    basis:
+      fr: { text: Fourchette test pour l alimentation, status: draft }
+  transport:
+    value: { min: 3000, max: 5000, currency: XTS, per: month }
+    source: main
+    info_kind: official
+  insurance:
+    value: { min: 30000, max: 50000, currency: XTS, per: year }
+    source: main
+    info_kind: official
+  application_visa:
+    value: { min: 10000, max: 10000, currency: XTS, per: once }
+    source: main
+    info_kind: official
+  setup:
+    value: { min: 20000, max: 40000, currency: XTS, per: once }
+    source: main
+    info_kind: estimate
+    basis:
+      fr: { text: Fourchette test pour l installation, status: draft }
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01

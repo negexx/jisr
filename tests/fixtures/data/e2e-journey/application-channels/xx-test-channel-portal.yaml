@@ -1,0 +1,16 @@
+slug: xx-test-channel-portal
+name: XX Test Portal B
+country: XB
+kind: national_portal
+url: https://example.org/portal-b
+accountRequired: true
+summary:
+  fr: { text: Portail national test avec compte, status: reviewed }
+  en: { text: Test national portal with an account, status: reviewed }
+  ar: { text: بوابة وطنية للاختبار مع حساب, status: draft }
+source: main
+info_kind: official
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01

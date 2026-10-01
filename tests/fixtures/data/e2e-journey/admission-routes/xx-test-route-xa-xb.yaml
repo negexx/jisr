@@ -1,0 +1,22 @@
+slug: xx-test-route-xa-xb
+origin: XA
+credentialType: xx-test-cred
+destination: XB
+level: bachelor
+outcome: direct
+conditions:
+  - id: xx-test-cond-track
+    kind: credential_track_in
+    source: main
+    info_kind: official
+    tracks: [xx-test-track-sci, xx-test-track-lit]
+note:
+  fr: { text: Acces direct test, status: reviewed }
+  en: { text: Test direct access, status: draft }
+applicationChannels: [xx-test-channel-portal, xx-test-channel-direct]
+source: main
+info_kind: official
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01

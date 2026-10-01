@@ -1,0 +1,17 @@
+slug: xx-test-route-xa-xc
+origin: XA
+credentialType: xx-test-cred
+destination: XC
+level: bachelor
+outcome: foundation
+conditions: []
+note:
+  fr: { text: Annee de fondation test requise, status: reviewed }
+  en: { text: Test foundation year required, status: draft }
+applicationChannels: [xx-test-channel-portal-c]
+source: main
+info_kind: official
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01

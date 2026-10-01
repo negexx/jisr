@@ -1,0 +1,14 @@
+slug: xx-test-channel-portal-c
+name: XX Test Portal C
+country: XC
+kind: national_portal
+url: https://example.org/portal-c
+accountRequired: true
+summary:
+  fr: { text: Portail test du pays C, status: draft }
+source: main
+info_kind: official
+sources:
+  main:
+    url: https://example.org/xx-test
+    last_verified_at: 2026-09-01

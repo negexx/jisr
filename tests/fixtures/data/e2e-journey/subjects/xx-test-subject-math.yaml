@@ -1,0 +1,5 @@
+slug: xx-test-subject-math
+name:
+  fr: { text: Mathematiques test, status: reviewed }
+  en: { text: Test mathematics, status: draft }
+  ar: { text: رياضيات الاختبار, status: draft }
