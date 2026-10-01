@@ -6,7 +6,7 @@ import { collapseSpaces } from "../text";
 // German higher-education institutions (tab-separated with CSV-style quoting, cp1252).
 // Licence (downloads page): "free of charge for personal use only. All other uses, in particular
 // commercial use (including individual parts), require the approval of the Foundation for the
-// Promotion of the HRK": permission is to be requested before launch.
+// Promotion of the HRK". Permission was obtained by the project owner (2026-10-01); see data/README.md.
 export const HRK_LIST_URL = "https://hs-kompass.de/kompass/xml/download/hs_liste.txt";
 export const HRK_DOWNLOADS_PAGE =
   "https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html";
