@@ -173,6 +173,16 @@ export function sampleSheet(
         out.push(`  - "${show(e.quote)}" — ${show(e.url)}`);
       }
     }
+    const rules = Array.isArray(asObject(r.requirements).rules)
+      ? (asObject(r.requirements).rules as unknown[]).map(asObject)
+      : [];
+    for (const rule of rules) {
+      const { id, source, info_kind: _kind, ...detail } = rule;
+      out.push(`- **requirement ${show(id)}**: \`${show(detail)}\``);
+      for (const e of evidence.filter((x) => x.fact === `requirements.${show(id)}`)) {
+        out.push(`  - "${show(e.quote)}" — ${show(e.url)}`);
+      }
+    }
     for (const e of evidence.filter((x) => x.fact === undefined)) {
       out.push(`- evidence: "${show(e.quote)}" — ${show(e.url)}`);
     }

@@ -1,11 +1,15 @@
 import { z } from "zod";
 
 import {
+  checkCefr,
   checkChannel,
   checkDeadline,
   checkDuration,
   checkLanguages,
+  checkSubjects,
+  checkTests,
   checkTuition,
+  checkYears,
   type FactCheck,
   programmeNameMatches,
   quoteInText,
@@ -20,6 +24,39 @@ const EvidenceSchema = z.object({ url: Https, quote: z.string().min(1) });
 const Iso = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
 const fact = <T extends z.ZodType>(value: T) =>
   z.object({ value, evidence: z.array(EvidenceSchema).min(1) });
+
+// Admission requirements are encoded only as rules the matcher can evaluate or as a manual check.
+// Grade thresholds are deliberately not offered: they depend on a destination grading scale that
+// is not in the data, so a grade requirement is written as a manual_check quoting the page.
+const RuleProposalSchema = z.discriminatedUnion("kind", [
+  z.object({
+    kind: z.literal("language_proficiency"),
+    language: z.string().regex(/^[a-z]{2}$/),
+    minCefr: z.enum(["A1", "A2", "B1", "B2", "C1", "C2"]).nullable(),
+    certificateRequired: z.boolean().nullable(),
+    acceptedTests: z.array(z.string()),
+    evidence: z.array(EvidenceSchema).min(1),
+  }),
+  z.object({
+    kind: z.literal("subject_taken"),
+    subjects: z.array(z.string()).min(1),
+    mode: z.enum(["all", "any"]),
+    evidence: z.array(EvidenceSchema).min(1),
+  }),
+  z.object({
+    kind: z.literal("prior_study_years_min"),
+    years: z.number().int().min(1),
+    evidence: z.array(EvidenceSchema).min(1),
+  }),
+  z.object({
+    kind: z.literal("manual_check"),
+    // A short French draft of what the applicant must check; the quote is the evidence.
+    note: z.string().min(1),
+    evidence: z.array(EvidenceSchema).min(1),
+  }),
+]);
+export type RuleProposal = z.infer<typeof RuleProposalSchema>;
+export type AcceptedRule = RuleProposal;
 
 export const ProposalSchema = z.object({
   slug: z.string(),
@@ -46,6 +83,7 @@ export const ProposalSchema = z.object({
     ).optional(),
     applicationChannel: fact(z.string()).optional(),
   }),
+  requirements: z.object({ rules: z.array(RuleProposalSchema) }).optional(),
   notes: z.string().optional(),
 });
 export type Proposal = z.infer<typeof ProposalSchema>;
@@ -56,6 +94,7 @@ export type Verified = {
   programmePage: string | null;
   facts: Partial<Record<FactName, AcceptedFact>>;
   rejected: { fact: string; reason: string }[];
+  requirements?: AcceptedRule[];
   // The preparer's own caveats (an indirect source, an older tariff): the auditor reads them.
   notes?: string;
 };
@@ -150,6 +189,47 @@ export async function verifyProposal(
     if (reason !== null) result.rejected.push({ fact: key, reason });
     else result.facts[key] = { value: entry.value, evidence: accepted };
   }
+
+  const accepted: AcceptedRule[] = [];
+  for (const rule of proposal.requirements?.rules ?? []) {
+    const quotes: { url: string; quote: string }[] = [];
+    for (const evidence of rule.evidence) {
+      const text = await safeText(evidence.url);
+      if (text !== null && quoteInText(evidence.quote, text)) quotes.push(evidence);
+    }
+    const label = `requirement ${rule.kind}`;
+    if (quotes.length === 0) {
+      result.rejected.push({
+        fact: label,
+        reason: "no quote was found verbatim on the cited page(s)",
+      });
+      continue;
+    }
+    const agrees = (check: (quote: string) => FactCheck): FactCheck => {
+      const results = quotes.map((e) => check(e.quote));
+      return results.find((r) => r.ok) ?? results[0] ?? { ok: false, reason: "no quote" };
+    };
+    let check: FactCheck = { ok: true };
+    if (rule.kind === "language_proficiency") {
+      const minCefr = rule.minCefr;
+      check = agrees((q) => {
+        const lang = checkLanguages([rule.language], q);
+        if (!lang.ok) return lang;
+        if (minCefr !== null) {
+          const level = checkCefr(minCefr, q);
+          if (!level.ok) return level;
+        }
+        return checkTests(rule.acceptedTests, q);
+      });
+    } else if (rule.kind === "subject_taken") {
+      check = agrees((q) => checkSubjects(rule.subjects, q));
+    } else if (rule.kind === "prior_study_years_min") {
+      check = agrees((q) => checkYears(rule.years, q));
+    }
+    if (check.ok) accepted.push({ ...rule, evidence: quotes });
+    else result.rejected.push({ fact: label, reason: check.reason });
+  }
+  if (accepted.length > 0) result.requirements = accepted;
   return result;
 }
 
@@ -203,12 +283,27 @@ export function applyVerified(staged: Staged, verified: Verified, today: string)
       next[field] = { value: null, source: "programme", info_kind: "official" };
     }
   }
-  next.requirements = {
-    coverage: "partial",
-    source: "programme",
-    info_kind: "official",
-    rules: [],
-  };
+  // Never "complete": the assistant reads the quoted passages, not the whole admission regulation.
+  const rules = (verified.requirements ?? []).map((rule, index) => {
+    const { evidence, ...encoded } = rule;
+    const first = evidence[0];
+    for (const e of evidence)
+      evidenceLog.push({ fact: `requirements.req-${index + 1}`, url: e.url, quote: e.quote });
+    const base = {
+      id: `req-${index + 1}`,
+      source: first === undefined ? "programme" : keyFor(first.url),
+      info_kind: "official",
+    };
+    if (encoded.kind === "manual_check") {
+      return {
+        ...base,
+        kind: "manual_check",
+        note: { fr: { text: encoded.note, status: "draft" } },
+      };
+    }
+    return { ...base, ...encoded };
+  });
+  next.requirements = { coverage: "partial", source: "programme", info_kind: "official", rules };
   next.sources = sources;
 
   const review = asRecord(next._review);

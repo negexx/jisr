@@ -237,3 +237,59 @@ export function checkChannel(slug: string, quote: string): FactCheck {
   if (pattern === undefined) return fail(`channel ${slug} cannot be verified automatically`);
   return pattern.test(quote) ? ok : fail(`the quote does not name the channel ${slug}`);
 }
+
+const SUBJECT_WORDS: Record<string, RegExp> = {
+  mathematics: /math/i,
+  "physics-chemistry": /physi[ck]|physique|chem|chimie|natural science/i,
+  "life-earth-sciences": /biolog|svt|life science|sciences de la vie|earth science/i,
+  arabic: /arabic|arabe|arabisch/i,
+  french: /french|fran[cç]ais|franz[oö]sisch/i,
+  english: /english|anglais|englisch/i,
+  philosophy: /philosoph/i,
+  "history-geography": /history|histoire|geschichte|geograph|g[ée]ographie/i,
+  economics: /econom|[ée]conom|wirtschaft/i,
+  "accounting-management": /accounting|comptabilit|gestion|rechnungswesen/i,
+  "islamic-education": /islam/i,
+  "computer-science": /computer|informati/i,
+};
+
+const TEST_WORDS: Record<string, RegExp> = {
+  "delf-dalf": /\bDELF\b|\bDALF\b/,
+  tcf: /\bTCF\b/,
+  ielts: /\bIELTS\b/i,
+  toefl: /\bTOEFL\b/i,
+  testdaf: /\bTestDaF\b/i,
+};
+
+export function checkCefr(level: string, quote: string): FactCheck {
+  return new RegExp(`(?<![A-Za-z0-9])${level}(?![A-Za-z0-9])`).test(quote)
+    ? ok
+    : fail(`the quote does not state the level ${level}`);
+}
+
+export function checkSubjects(slugs: readonly string[], quote: string): FactCheck {
+  for (const slug of slugs) {
+    const pattern = SUBJECT_WORDS[slug];
+    if (pattern === undefined) return fail(`unknown subject ${slug}`);
+    if (!pattern.test(quote)) return fail(`the quote does not mention the subject ${slug}`);
+  }
+  return ok;
+}
+
+export function checkTests(slugs: readonly string[], quote: string): FactCheck {
+  for (const slug of slugs) {
+    const pattern = TEST_WORDS[slug];
+    if (pattern === undefined) return fail(`unknown test ${slug}`);
+    if (!pattern.test(quote)) return fail(`the quote does not name the test ${slug}`);
+  }
+  return ok;
+}
+
+export function checkYears(years: number, quote: string): FactCheck {
+  return new RegExp(
+    `(?<![\\d.,])${numberRegex(years)}(?![\\d.,])[^.]{0,20}(year|jahr|an|jaar)`,
+    "i",
+  ).test(normalizeForMatch(quote))
+    ? ok
+    : fail(`the quote does not state ${years} year(s)`);
+}

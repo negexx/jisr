@@ -133,6 +133,162 @@ describe("verifyProposal", () => {
   });
 });
 
+describe("requirements", () => {
+  const ADMISSION = "https://uni.example/admission";
+  const text =
+    "Applicants need German language skills at level B2 (TestDaF or DSH). Mathematics must have been taken until graduation. An aptitude interview is held in June.";
+  const getAdmission = async (url: string) => {
+    if (url !== ADMISSION && url !== PAGE) throw new Error("404");
+    return url === PAGE ? (pages[PAGE] ?? "") : text;
+  };
+  const rule = (r: object) =>
+    ProposalSchema.parse({
+      slug: "p",
+      programmePage: PAGE,
+      facts: {},
+      requirements: { rules: [r] },
+    });
+
+  it("accepts rules whose quote is on the page and whose values agree with it", async () => {
+    const v = await verifyProposal(
+      ProposalSchema.parse({
+        slug: "p",
+        programmePage: PAGE,
+        facts: {},
+        requirements: {
+          rules: [
+            {
+              kind: "language_proficiency",
+              language: "de",
+              minCefr: "B2",
+              certificateRequired: null,
+              acceptedTests: ["testdaf"],
+              evidence: [
+                { url: ADMISSION, quote: "German language skills at level B2 (TestDaF or DSH)" },
+              ],
+            },
+            {
+              kind: "subject_taken",
+              subjects: ["mathematics"],
+              mode: "all",
+              evidence: [
+                { url: ADMISSION, quote: "Mathematics must have been taken until graduation" },
+              ],
+            },
+            {
+              kind: "manual_check",
+              note: "Entretien d'aptitude en juin",
+              evidence: [{ url: ADMISSION, quote: "An aptitude interview is held in June" }],
+            },
+          ],
+        },
+      }),
+      "Applied Computer Science",
+      getAdmission,
+    );
+    expect(v.requirements?.map((r) => r.kind)).toEqual([
+      "language_proficiency",
+      "subject_taken",
+      "manual_check",
+    ]);
+    expect(v.rejected).toEqual([]);
+  });
+
+  it("rejects a level, a test or a subject the quote does not state", async () => {
+    const v = await verifyProposal(
+      ProposalSchema.parse({
+        slug: "p",
+        programmePage: PAGE,
+        facts: {},
+        requirements: {
+          rules: [
+            {
+              kind: "language_proficiency",
+              language: "de",
+              minCefr: "C1",
+              certificateRequired: null,
+              acceptedTests: [],
+              evidence: [
+                { url: ADMISSION, quote: "German language skills at level B2 (TestDaF or DSH)" },
+              ],
+            },
+            {
+              kind: "subject_taken",
+              subjects: ["philosophy"],
+              mode: "any",
+              evidence: [
+                { url: ADMISSION, quote: "Mathematics must have been taken until graduation" },
+              ],
+            },
+            {
+              kind: "manual_check",
+              note: "x",
+              evidence: [{ url: ADMISSION, quote: "A quote that is not on the page at all" }],
+            },
+          ],
+        },
+      }),
+      "Applied Computer Science",
+      getAdmission,
+    );
+    expect(v.requirements).toBeUndefined();
+    expect(v.rejected).toHaveLength(3);
+    expect(v.rejected[0]?.reason).toMatch(/level C1/);
+    expect(v.rejected[1]?.reason).toMatch(/subject philosophy/);
+  });
+
+  it("writes accepted rules as official, partial coverage, cited and never complete", () => {
+    const next = applyVerified(
+      {
+        slug: "p",
+        requirements: { coverage: "partial", source: "daad", info_kind: READ_SOURCE, rules: [] },
+        _review: { todo: "t" },
+      },
+      {
+        programmePage: PAGE,
+        rejected: [],
+        facts: {},
+        requirements: [
+          {
+            kind: "language_proficiency",
+            language: "de",
+            minCefr: "B2",
+            certificateRequired: null,
+            acceptedTests: ["testdaf"],
+            evidence: [{ url: ADMISSION, quote: "q1" }],
+          },
+          {
+            kind: "manual_check",
+            note: "Entretien en juin",
+            evidence: [{ url: ADMISSION, quote: "q2" }],
+          },
+        ],
+      },
+      "2026-10-02",
+    );
+    expect(next.requirements).toMatchObject({
+      coverage: "partial",
+      info_kind: "official",
+      rules: [
+        { id: "req-1", kind: "language_proficiency", minCefr: "B2", info_kind: "official" },
+        {
+          id: "req-2",
+          kind: "manual_check",
+          note: { fr: { text: "Entretien en juin", status: "draft" } },
+        },
+      ],
+    });
+    expect(JSON.stringify(next)).not.toContain(
+      '"evidence":[{"url":"https://uni.example/admission"',
+    );
+    expect((next._review as { evidence: { fact: string }[] }).evidence.map((e) => e.fact)).toEqual([
+      "requirements.req-1",
+      "requirements.req-2",
+    ]);
+    void rule;
+  });
+});
+
 describe("applyVerified", () => {
   const staged = () => ({
     slug: "p",
