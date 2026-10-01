@@ -127,6 +127,7 @@ claims "Official, verified" for a fact that has a source quote, never for an unk
 | `audited-sample` | prepared by the assistant with a verbatim quote per fact, in a batch whose random sample was read and passed | code (quotes re-fetched) + a sample read by a person | the pilot flow (`data:evidence`, `data:audit`) |
 | `owner-waived` | same preparation, but the owner passed the sample **unread** (a preview) | code only | the 15-programme pilot, today |
 | `register-listing` | only what an official register states: name, institution, town, field, level and a link to the official page; **every other fact is "to be checked"** | the schema, `data:check` and the link check below | France (Parcoursup) and Germany (DAAD) listings, `pnpm data:listing` |
+| `machine-quoted` | a listing plus facts that code read from the official page and quoted verbatim, each re-fetched and checked by the same verifier as the pilot | code (extractor + verifier) | French listings: `pnpm data:enrich-fr` (French level required, distance learning, and the national facts below) |
 | `demoted` | a listed record whose official page no longer shows its name went back to staging | `pnpm data:linkcheck --demote` | any listed record |
 
 Principles:
@@ -150,3 +151,15 @@ service, not the institution); its deadline is never used (it can be the one for
 institution's website is listed only when the ministry's register confirmed it; a German one only when the
 HRK homepage does not redirect to another domain. The date in `last_verified_at` is the day the register
 was read by code, not a day a person read the record.
+
+### French machine-quoted facts (`pnpm data:enrich-fr`)
+
+For every French listing the extractor adds only what an official page states, with its quote:
+
+- **French level required** (and the mandatory TCF / DELF-DALF certificate): the Parcoursup fiche says "Niveau de français requis pour s'inscrire à la formation : B2" (754 of 757 fiches state a level); Campus France Maroc says the certificate is mandatory unless exempt.
+- **Distance learning**: the fiche's own sentence.
+- **Duration**: Campus France's national pages (a Licence is "six semestres", the BUT is "préparé en 3 ans").
+- **Tuition for a student from outside the EU** at a public institution: Campus France Maroc ("2 902 euros pour une année en cycle de Licence"); a note says some institutions exempt non-EU students. The 178 euros shown on every fiche is the EU rate and is never used.
+- **Application platform**: Études en France, from the Campus France Maroc Licence and BUT pages.
+
+National facts are not the programme's own page: the badge shows the Campus France page as their source. Teaching language, deadlines and documents stay "to be checked": the fiche has no clear sentence for them (its "Langue vivante 1" is a school-subject requirement, not the teaching language).

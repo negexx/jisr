@@ -110,6 +110,7 @@ export type Verified = {
 const SOFT_WORDING =
   /recommend|\bshould\b|advis|suggest|empfohlen|empfehl|\bsollte|recommand|conseill|devrait|aanbevol|bij voorkeur|\bzou\b/i;
 const fail = (reason: string): FactCheck => ({ ok: false, reason });
+const ok: FactCheck = { ok: true };
 
 const PREPARED_TEXT =
   "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw";
@@ -223,20 +224,22 @@ export async function verifyProposal(
     };
     let check: FactCheck = { ok: true };
     if (rule.kind === "language_proficiency") {
-      const minCefr = rule.minCefr;
-      check = agrees((q) => {
-        // "recommended" or "should" is advice, not a condition of admission: a failing rule would
-        // wrongly turn a student away, so the preparer must write it as a manual_check.
-        if (SOFT_WORDING.test(q))
-          return fail("soft wording (recommended/should): write a manual_check");
-        const lang = checkLanguages([rule.language], q);
-        if (!lang.ok) return lang;
-        if (minCefr !== null) {
-          const level = checkCefr(minCefr, q);
-          if (!level.ok) return level;
-        }
-        return checkTests(rule.acceptedTests, q);
-      });
+      // "recommended" or "should" is advice, not a condition of admission: a failing rule would
+      // wrongly turn a student away, so the preparer must write it as a manual_check.
+      const soft = quotes.find((e) => SOFT_WORDING.test(e.quote));
+      // Each claim (the language, the level, every accepted test) needs a quote that states it; they
+      // do not all have to be in the same sentence.
+      const supported = (claim: (q: string) => FactCheck): FactCheck => {
+        const results = quotes.map((e) => claim(e.quote));
+        return results.find((r) => r.ok) ?? results[0] ?? fail("no quote");
+      };
+      const claims: FactCheck[] = [
+        soft === undefined ? ok : fail("soft wording (recommended/should): write a manual_check"),
+        supported((q) => checkLanguages([rule.language], q)),
+        ...(rule.minCefr === null ? [] : [supported((q) => checkCefr(rule.minCefr ?? "", q))]),
+        ...rule.acceptedTests.map((test) => supported((q) => checkTests([test], q))),
+      ];
+      check = claims.find((c) => !c.ok) ?? ok;
     } else if (rule.kind === "subject_taken") {
       check = agrees((q) => checkSubjects(rule.subjects, q));
     } else if (rule.kind === "prior_study_years_min") {

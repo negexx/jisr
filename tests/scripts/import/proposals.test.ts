@@ -194,6 +194,42 @@ describe("requirements", () => {
     expect(v.rejected).toEqual([]);
   });
 
+  it("accepts a language rule whose level and accepted tests are in different quotes", async () => {
+    const A = "https://uni.example/level";
+    const B = "https://uni.example/certs";
+    const v = await verifyProposal(
+      ProposalSchema.parse({
+        slug: "p",
+        programmePage: PAGE,
+        facts: {},
+        requirements: {
+          rules: [
+            {
+              kind: "language_proficiency",
+              language: "fr",
+              minCefr: "C1",
+              certificateRequired: true,
+              acceptedTests: ["tcf", "delf-dalf"],
+              evidence: [
+                { url: A, quote: "Niveau de français requis pour s'inscrire à la formation : C1" },
+                { url: B, quote: "la certification de français (TCF, DELF, DALF) est obligatoire" },
+              ],
+            },
+          ],
+        },
+      }),
+      "Applied Computer Science",
+      async (url) =>
+        url === A
+          ? "Niveau de français requis pour s'inscrire à la formation : C1"
+          : url === B
+            ? "Sauf dispense, la certification de français (TCF, DELF, DALF) est obligatoire."
+            : (pages[url] ?? ""),
+    );
+    expect(v.requirements).toHaveLength(1);
+    expect(v.rejected).toEqual([]);
+  });
+
   it("rejects a language rule whose only support is a recommendation", async () => {
     const soft = "https://uni.example/soft";
     const v = await verifyProposal(

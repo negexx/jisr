@@ -149,7 +149,13 @@ export type LedgerRow = {
   sourceId: string;
   slug: string;
   date: string;
-  level?: "human" | "audited-sample" | "owner-waived" | "register-listing" | "demoted";
+  level?:
+    | "human"
+    | "audited-sample"
+    | "owner-waived"
+    | "register-listing"
+    | "machine-quoted"
+    | "demoted";
   batch?: string;
 };
 
