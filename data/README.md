@@ -163,3 +163,20 @@ For every French listing the extractor adds only what an official page states, w
 - **Application platform**: Études en France, from the Campus France Maroc Licence and BUT pages.
 
 National facts are not the programme's own page: the badge shows the Campus France page as their source. Teaching language, deadlines and documents stay "to be checked": the fiche has no clear sentence for them (its "Langue vivante 1" is a school-subject requirement, not the teaching language).
+
+## Reading pages with cheap models (OpenCode Go)
+
+Per-programme reading by Claude is replaced by cheap models called from scripts (they bill OpenCode, not Claude). The trust model does not change: a model only *proposes*; code decides.
+
+```
+pages we fetched ──► reader (cheap model) ──► ProposalSchema ──► verifyProposal (code: quote on page? value agrees?)
+                                                                      │
+                                                          checker (strong model, claim + ~500 chars) ──► applyVerified ──► audit sample ──► promote
+```
+
+- `scripts/import/llm.ts`: the OpenCode client (three wire formats, streaming, price table, hard `Budget` cap, idle watchdog). Key from `OPENCODE_API_KEY` (env or `.env.local`, never committed or logged).
+- `scripts/import/reader.ts` (`pnpm data:read`): prompt = fixed instruction + shared national pages first (cache hit), the programme's pages last. A badly formed fact is dropped and counted (`dropped`), never passed on without evidence. French application channel is left to the route data. Every command has `--dry-run` and `--max-usd`.
+- `scripts/import/checker.ts`: the second model judges whether the quote states the fact *for this programme and a Moroccan, non-EU applicant*. It can only remove facts; an unusable answer removes all (fail closed).
+- `pnpm data:bakeoff` / `pnpm data:checkeval`: model comparison on the 15 pilot programmes against the quote-verified pilot proposals.
+
+Bake-off result (2026-10-01, prompt v2, 40 truth facts, same pages for every model): readers DeepSeek V4.1 Flash, GPT 6 Luna, Hy3, Qwen3.8 Flash and MiMo-V2.6-Flash all agree with the truth on 29-31 facts with 0-2 wrong-but-verified (conflict); about 0.1-0.3 cent per programme. GLM-5.3-Flash and Kimi K2.7 Code reason for thousands of tokens and are not usable as readers; LongCat Free is too slow. As checker, Qwen3.7-Plus removed 4 of 4 wrong facts and kept 31 of 35 correct ones (the 4 it drops are strict "not stated for non-EU / only recommended" calls) at about 0.3 cent per call; Kimi K2.7 Code and GLM-5.2 return unusable answers more often. Muse Spark needs "models that train on request data" enabled in the OpenCode privacy settings and was not used.

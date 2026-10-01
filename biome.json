@@ -9,6 +9,8 @@
       "!node_modules",
       "!public/snapshots",
       "!data-staging/proposals",
+      "!data-staging/proposals-read",
+      "!data-staging/bakeoff",
       "!.claude",
       "!.impeccable",
       "!pnpm-lock.yaml"

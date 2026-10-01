@@ -296,3 +296,9 @@ export function checkYears(years: number, quote: string): FactCheck {
     ? ok
     : fail(`the quote does not state ${years} year(s)`);
 }
+
+// The slugs the verifier can check, for the instruction the reading model is given.
+export const CHANNEL_SLUGS = Object.keys(CHANNEL_WORDS);
+export const SUBJECT_SLUGS = Object.keys(SUBJECT_WORDS);
+export const TEST_SLUGS = Object.keys(TEST_WORDS);
+export const LANGUAGE_CODES = Object.keys(LANGUAGE_WORDS);
