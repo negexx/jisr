@@ -1,0 +1,24 @@
+slug: nl-netherlands-business-academy-30et-amsterdam
+name: Netherlands Business Academy
+country: NL
+city:
+  slug: amsterdam
+  name: Amsterdam
+type: null
+website: null
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-netherlands-business-academy-30et-amsterdam
+  name: Netherlands Business Academy
+  institution: ""
+  city: Amsterdam
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "campus in Amsterdam of \"Netherlands Business Academy\" (RIO location \"Netherlands Business Academy: Amsterdam\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"

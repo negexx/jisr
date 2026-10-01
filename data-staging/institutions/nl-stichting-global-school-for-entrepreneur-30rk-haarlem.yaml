@@ -1,0 +1,24 @@
+slug: nl-stichting-global-school-for-entrepreneur-30rk-haarlem
+name: Stichting Global School for Entrepreneurship University of Applied Sciences
+country: NL
+city:
+  slug: haarlem
+  name: Haarlem
+type: null
+website: null
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-stichting-global-school-for-entrepreneur-30rk-haarlem
+  name: Stichting Global School for Entrepreneurship University of Applied Sciences
+  institution: ""
+  city: Haarlem
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "campus in Haarlem of \"Stichting Global School for Entrepreneurship University of Applied Sciences\" (RIO location \"Stichting Global School for Entrepreneurship UAS: Haarlem\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"

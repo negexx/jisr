@@ -3,6 +3,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 
 import { importInstitutions } from "./sources/institutions";
 import { importFrance } from "./sources/parcoursup";
+import { importNetherlands } from "./sources/rio";
 import type { StagedRecord } from "./staging";
 import {
   mergeReviewSheet,
@@ -17,6 +18,7 @@ import {
 const SOURCES: Record<string, () => Promise<StagedRecord[]>> = {
   france: importFrance,
   institutions: importInstitutions,
+  netherlands: importNetherlands,
 };
 
 async function main(argv: readonly string[]): Promise<void> {

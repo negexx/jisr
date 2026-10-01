@@ -1,0 +1,26 @@
+slug: nl-studielink
+name: Studielink
+country: NL
+kind: national_portal
+url: https://www.studielink.nl/
+accountRequired: null
+summary:
+  fr:
+    text: Plateforme nationale d'inscription dans l'enseignement supérieur néerlandais.
+    status: draft
+source: main
+info_kind: TODO_read_source
+sources:
+  main:
+    url: https://www.studielink.nl/
+    last_verified_at: null
+_review:
+  kind: application-channels
+  slug: nl-studielink
+  name: Studielink
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.studielink.nl/
+  todo: confirm how applicants from outside the EU apply (institution portal first, then Studielink) and whether an account is required

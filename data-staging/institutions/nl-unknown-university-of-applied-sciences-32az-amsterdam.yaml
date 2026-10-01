@@ -1,0 +1,24 @@
+slug: nl-unknown-university-of-applied-sciences-32az-amsterdam
+name: Unknown University of Applied Sciences
+country: NL
+city:
+  slug: amsterdam
+  name: Amsterdam
+type: null
+website: null
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-unknown-university-of-applied-sciences-32az-amsterdam
+  name: Unknown University of Applied Sciences
+  institution: ""
+  city: Amsterdam
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "campus in Amsterdam of \"Unknown University of Applied Sciences\" (RIO location \"Unknown University of Applied Sciences: Amsterdam\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"

@@ -66,3 +66,32 @@ const TABLE: Readonly<Record<string, FieldMatch>> = {
 export function classifyField(parcoursupBranch: string): FieldMatch | null {
   return TABLE[parcoursupBranch.trim()] ?? null;
 }
+
+// Dutch programmes (RIO register): the official sector code (ONDERDEEL) plus the programme name.
+// `low` is a judgement call the reviewer should look at. Names are matched in Dutch and English.
+const NL_CS_HIGH =
+  /informatica|computer science|computer engineering|software|data science|artificial intelligence|kunstmatige intelligentie|cyber|\bict\b|information technology|informatiekunde|information science/;
+const NL_CS_LOW = /\bdata\b|information|digital|\bgame|bio-?informati/;
+const NL_BUSINESS =
+  /bedrijfs|business|economie|economics|management|finance|financ|accountancy|commerci|marketing|handel|fiscaal|\bbank|ondernemen|entrepreneur/;
+const NL_ENGINEERING =
+  /techniek|engineering|ingenieur|werktuig|elektro|bouwkunde|civiel|civil|mechat|luchtvaart|aerospace|technische|industrieel|industrial|chemische|chemical|mechanical|electrical|maritime|scheeps|energy|materials/;
+
+export function classifyDutchProgramme(
+  sector: string,
+  name: string,
+  internationalName: string,
+): FieldMatch | null {
+  const text = `${name} ${internationalName}`.toLowerCase();
+  if (NL_CS_HIGH.test(text)) return { field: "computer-science", confidence: "high" };
+  if (sector === "ECONOMIE") {
+    return { field: "business-economics", confidence: NL_BUSINESS.test(text) ? "high" : "low" };
+  }
+  if (sector === "TECHNIEK") {
+    if (NL_CS_LOW.test(text)) return { field: "computer-science", confidence: "low" };
+    return { field: "engineering", confidence: NL_ENGINEERING.test(text) ? "high" : "low" };
+  }
+  if (NL_BUSINESS.test(text)) return { field: "business-economics", confidence: "low" };
+  if (/engineering|ingenieur/.test(text)) return { field: "engineering", confidence: "low" };
+  return null;
+}

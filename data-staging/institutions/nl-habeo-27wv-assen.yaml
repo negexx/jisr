@@ -1,0 +1,24 @@
+slug: nl-habeo-27wv-assen
+name: Habeo+
+country: NL
+city:
+  slug: assen
+  name: Assen
+type: null
+website: null
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-habeo-27wv-assen
+  name: Habeo+
+  institution: ""
+  city: Assen
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "campus in Assen of \"Habeo+\" (RIO location \"Avans Hogeschool B.V.: Assen\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"

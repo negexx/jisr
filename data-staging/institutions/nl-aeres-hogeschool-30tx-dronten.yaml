@@ -1,0 +1,24 @@
+slug: nl-aeres-hogeschool-30tx-dronten
+name: Aeres Hogeschool
+country: NL
+city:
+  slug: dronten
+  name: Dronten
+type: null
+website: https://www.aereshogeschool.nl/
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-aeres-hogeschool-30tx-dronten
+  name: Aeres Hogeschool
+  institution: ""
+  city: Dronten
+  field: ""
+  confidence: ""
+  officialUrl: https://www.aereshogeschool.nl/
+  todo: "campus in Dronten of \"Aeres Hogeschool\" (RIO location \"Aeres Hogeschool: Dronten\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed as \"www.aereshogeschool.nl\"; the https form answers; confirm on the institution's own site, add that page as the source, then set info_kind: official"

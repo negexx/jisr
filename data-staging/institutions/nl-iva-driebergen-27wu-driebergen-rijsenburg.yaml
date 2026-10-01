@@ -1,0 +1,24 @@
+slug: nl-iva-driebergen-27wu-driebergen-rijsenburg
+name: IVA Driebergen
+country: NL
+city:
+  slug: driebergen-rijsenburg
+  name: Driebergen-Rijsenburg
+type: null
+website: null
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-iva-driebergen-27wu-driebergen-rijsenburg
+  name: IVA Driebergen
+  institution: ""
+  city: Driebergen-Rijsenburg
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "campus in Driebergen-Rijsenburg of \"IVA Driebergen\" (RIO location \"IVA Driebergen: Driebergen\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"

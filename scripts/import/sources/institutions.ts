@@ -45,7 +45,7 @@ export function resolveSite(homepage: string, probed: Probed): Site {
   };
 }
 
-function staged(input: {
+export function stagedInstitution(input: {
   slug: string;
   name: string;
   country: string;
@@ -99,7 +99,7 @@ export function buildHrkRecord(inst: HrkInstitution, probed: Probed): StagedReco
     ...(site.note === "" ? [] : [site.note]),
     CONFIRM,
   ];
-  return staged({
+  return stagedInstitution({
     slug: `de-${slugify(inst.name, 40)}-hrk${inst.hsNr}`,
     name: inst.name,
     country: "DE",
@@ -119,7 +119,7 @@ export function buildDuoRecord(inst: DuoInstitution, probed: Probed): StagedReco
     ...(site.note === "" ? [] : [site.note]),
     CONFIRM,
   ];
-  return staged({
+  return stagedInstitution({
     slug: `nl-${slugify(inst.name, 40)}-${inst.code.toLowerCase()}`,
     name: inst.name,
     country: "NL",

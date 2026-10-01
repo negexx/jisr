@@ -1,0 +1,24 @@
+slug: nl-stichting-opleidingen-musculoskeletale-t-28dw-amersfoort
+name: Stichting Opleidingen Musculoskeletale Therapie
+country: NL
+city:
+  slug: amersfoort
+  name: Amersfoort
+type: null
+website: null
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-stichting-opleidingen-musculoskeletale-t-28dw-amersfoort
+  name: Stichting Opleidingen Musculoskeletale Therapie
+  institution: ""
+  city: Amersfoort
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "campus in Amersfoort of \"Stichting Opleidingen Musculoskeletale Therapie\" (RIO location \"SOMT: Amersfoort\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"

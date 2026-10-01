@@ -1,0 +1,56 @@
+slug: nl-hogeschool-van-arnhem-en-nijmegen-25kb-technische-bedrijfskunde-1001o3675
+institution: nl-hogeschool-van-arnhem-en-nijmegen-25kb
+country: NL
+city: arnhem
+field: engineering
+level: bachelor
+name: Technische Bedrijfskunde
+summary:
+  fr:
+    text: Technische Bedrijfskunde (Industrial Engineering & Management), Hogeschool van Arnhem en Nijmegen (Arnhem). Programme recensé au registre néerlandais RIO.
+    status: draft
+officialUrl: null
+durationYears:
+  value: 4
+  source: rio
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: rio
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: nl-hogeschool-van-arnhem-en-nijmegen-25kb-technische-bedrijfskunde-1001o3675
+  name: Technische Bedrijfskunde
+  institution: Hogeschool van Arnhem en Nijmegen
+  city: Arnhem
+  field: engineering
+  confidence: high
+  officialUrl: ""
+  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Hogeschool van Arnhem en Nijmegen: Arnhem\"; international name \"Industrial Engineering & Management\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (durationYears is the register's ECTS divided by 60: confirm it)"

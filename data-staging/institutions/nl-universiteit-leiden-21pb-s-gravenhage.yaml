@@ -1,0 +1,24 @@
+slug: nl-universiteit-leiden-21pb-s-gravenhage
+name: Universiteit Leiden
+country: NL
+city:
+  slug: s-gravenhage
+  name: "'S-Gravenhage"
+type: null
+website: https://www.universiteitleiden.nl/
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-universiteit-leiden-21pb-s-gravenhage
+  name: Universiteit Leiden
+  institution: ""
+  city: "'S-Gravenhage"
+  field: ""
+  confidence: ""
+  officialUrl: https://www.universiteitleiden.nl/
+  todo: "campus in 'S-Gravenhage of \"Universiteit Leiden\" (RIO location \"Universiteit Leiden: 's-Gravenhage\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed as \"www.leidenuniv.nl\" but https redirects to a different domain (universiteitleiden.nl): check it is the same institution; confirm on the institution's own site, add that page as the source, then set info_kind: official"

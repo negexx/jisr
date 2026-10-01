@@ -1,0 +1,56 @@
+slug: nl-hogeschool-rotterdam-22oj-applied-data-science-art-1001o8776
+institution: nl-hogeschool-rotterdam-22oj
+country: NL
+city: rotterdam
+field: computer-science
+level: bachelor
+name: Applied Data Science & Artificial Intelligence
+summary:
+  fr:
+    text: Applied Data Science & Artificial Intelligence (Applied Data Science & Artificial Intelligence), Hogeschool Rotterdam (Rotterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+officialUrl: null
+durationYears:
+  value: 4
+  source: rio
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: rio
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: nl-hogeschool-rotterdam-22oj-applied-data-science-art-1001o8776
+  name: Applied Data Science & Artificial Intelligence
+  institution: Hogeschool Rotterdam
+  city: Rotterdam
+  field: computer-science
+  confidence: high
+  officialUrl: ""
+  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until 2028-06-13, funding BEKOSTIGD, location \"Hogeschool Rotterdam: Rotterdam\"; international name \"Applied Data Science & Artificial Intelligence\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (durationYears is the register's ECTS divided by 60: confirm it)"

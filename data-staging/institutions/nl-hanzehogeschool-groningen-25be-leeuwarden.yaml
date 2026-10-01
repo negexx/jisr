@@ -1,0 +1,24 @@
+slug: nl-hanzehogeschool-groningen-25be-leeuwarden
+name: Hanzehogeschool Groningen
+country: NL
+city:
+  slug: leeuwarden
+  name: Leeuwarden
+type: null
+website: https://www.hanze.nl/nl
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-hanzehogeschool-groningen-25be-leeuwarden
+  name: Hanzehogeschool Groningen
+  institution: ""
+  city: Leeuwarden
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hanze.nl/nl
+  todo: "campus in Leeuwarden of \"Hanzehogeschool Groningen\" (RIO location \"Hanzehogeschool Groningen: Leeuwarden\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed as \"www.hanze.nl/\"; the https form answers; confirm on the institution's own site, add that page as the source, then set info_kind: official"

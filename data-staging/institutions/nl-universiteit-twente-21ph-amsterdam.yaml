@@ -1,0 +1,24 @@
+slug: nl-universiteit-twente-21ph-amsterdam
+name: Universiteit Twente
+country: NL
+city:
+  slug: amsterdam
+  name: Amsterdam
+type: null
+website: https://www.utwente.nl/
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-universiteit-twente-21ph-amsterdam
+  name: Universiteit Twente
+  institution: ""
+  city: Amsterdam
+  field: ""
+  confidence: ""
+  officialUrl: https://www.utwente.nl/
+  todo: "campus in Amsterdam of \"Universiteit Twente\" (RIO location \"Universiteit Twente: Amsterdam\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed as \"www.utwente.nl\"; the https form answers; confirm on the institution's own site, add that page as the source, then set info_kind: official"

@@ -1,0 +1,56 @@
+slug: nl-faculteit-militaire-wetenschappen-van-de-30na-den-helder-militaire-systemen-techn-1001o5691
+institution: nl-faculteit-militaire-wetenschappen-van-de-30na-den-helder
+country: NL
+city: den-helder
+field: engineering
+level: bachelor
+name: Militaire Systemen & Technologie
+summary:
+  fr:
+    text: Militaire Systemen & Technologie, Faculteit Militaire Wetenschappen van de Nederlandse Defensie Academie (Den Helder). Programme recensé au registre néerlandais RIO.
+    status: draft
+officialUrl: null
+durationYears:
+  value: 3
+  source: rio
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: rio
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: nl-faculteit-militaire-wetenschappen-van-de-30na-den-helder-militaire-systemen-techn-1001o5691
+  name: Militaire Systemen & Technologie
+  institution: Faculteit Militaire Wetenschappen van de Nederlandse Defensie Academie
+  city: Den Helder
+  field: engineering
+  confidence: low
+  officialUrl: ""
+  todo: "RIO register: WO (research university), 180 ECTS, accredited until unknown, funding NIET_BEKOSTIGD, location \"Faculteit Militaire Wetenschappen NLDA: Den Helder\"; not publicly funded: a private programme, check tuition and recognition; field is a judgement call: check the programme content; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (durationYears is the register's ECTS divided by 60: confirm it)"

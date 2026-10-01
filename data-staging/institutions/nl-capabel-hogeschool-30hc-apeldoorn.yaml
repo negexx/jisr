@@ -1,0 +1,24 @@
+slug: nl-capabel-hogeschool-30hc-apeldoorn
+name: Capabel Hogeschool
+country: NL
+city:
+  slug: apeldoorn
+  name: Apeldoorn
+type: null
+website: null
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-capabel-hogeschool-30hc-apeldoorn
+  name: Capabel Hogeschool
+  institution: ""
+  city: Apeldoorn
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "campus in Apeldoorn of \"Capabel Hogeschool\" (RIO location \"Capabel Hogeschool: Apeldoorn\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"

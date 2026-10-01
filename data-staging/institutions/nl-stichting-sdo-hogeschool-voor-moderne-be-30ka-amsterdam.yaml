@@ -1,0 +1,24 @@
+slug: nl-stichting-sdo-hogeschool-voor-moderne-be-30ka-amsterdam
+name: Stichting SDO Hogeschool voor Moderne Bedrijfskunde
+country: NL
+city:
+  slug: amsterdam
+  name: Amsterdam
+type: null
+website: null
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-stichting-sdo-hogeschool-voor-moderne-be-30ka-amsterdam
+  name: Stichting SDO Hogeschool voor Moderne Bedrijfskunde
+  institution: ""
+  city: Amsterdam
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "campus in Amsterdam of \"Stichting SDO Hogeschool voor Moderne Bedrijfskunde\" (RIO location \"SDO Hogeschool: Amsterdam\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"

@@ -1,0 +1,56 @@
+slug: nl-wageningen-university-21pi-international-land-and-w-1001o5656
+institution: nl-wageningen-university-21pi
+country: NL
+city: wageningen
+field: business-economics
+level: bachelor
+name: International Land and Water Management
+summary:
+  fr:
+    text: International Land and Water Management (International Land and Water Management), Wageningen University (Wageningen). Programme recensé au registre néerlandais RIO.
+    status: draft
+officialUrl: null
+durationYears:
+  value: 3
+  source: rio
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: rio
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: nl-wageningen-university-21pi-international-land-and-w-1001o5656
+  name: International Land and Water Management
+  institution: Wageningen University
+  city: Wageningen
+  field: business-economics
+  confidence: low
+  officialUrl: ""
+  todo: "RIO register: WO (research university), 180 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Wageningen University: Wageningen\"; international name \"International Land and Water Management\"; field is a judgement call: check the programme content; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (durationYears is the register's ECTS divided by 60: confirm it)"
