@@ -1,0 +1,51 @@
+{
+  "slug": "nl-breda-university-of-applied-sciences-21ui-applied-data-science-art-1001o8756",
+  "programmePage": "https://www.buas.nl/en/programmes/applied-data-science-artificial-intelligence",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.buas.nl/en/programmes/applied-data-science-artificial-intelligence",
+          "quote": "Applied Data Science & Artificial Intelligence Bachelor 4 years Full-time English Start 30 August 2027"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.buas.nl/en/programmes/applied-data-science-artificial-intelligence",
+          "quote": "Applied Data Science & Artificial Intelligence Bachelor 4 years Full-time English Start 30 August 2027"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2027-05-01"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.buas.nl/en/programmes/artificial-intelligence-data-management/application-procedure",
+          "quote": "The deadline for applying via Studielink is 1 May, and the deadline for submitting your application in My Online Application is 4 May"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.buas.nl/en/programmes/artificial-intelligence-data-management/application-procedure",
+          "quote": "You are required to apply via Studielink, the platform for enrolment in higher education in the Netherlands."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition omitted: study-costs page gives EUR 14,650 institutional fee only 'in general' for 2027-2028, and says this programme has the 'Small-Scale and Intensive Education' feature with a HIGHER fee whose amount is not stated on any readable page (tuition fee calculator is interactive). Deadline year 2027 inferred from 'Start 30 August 2027'; the page says 1 May without year."
+}

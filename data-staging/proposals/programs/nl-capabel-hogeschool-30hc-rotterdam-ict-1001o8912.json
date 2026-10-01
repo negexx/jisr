@@ -1,0 +1,33 @@
+{
+  "slug": "nl-capabel-hogeschool-30hc-rotterdam-ict-1001o8912",
+  "programmePage": "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict",
+          "quote": "HBO Bachelor Deeltijd, Voltijd 4 jaar NVAO"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 681600,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict",
+          "quote": "Of bij betaling in één keer: € 6.816 € 6.134 10% korting"
+        },
+        {
+          "url": "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict",
+          "quote": "Genoemde bedragen lesgeld zijn per studiejaar."
+        }
+      ]
+    }
+  },
+  "notes": "Private institution: flat lesgeld EUR 6,816 per study year (12 x EUR 568), same figure shown for Voltijd and Deeltijd tabs; page does not distinguish EU/non-EU. Excluded: EUR 90 registration fee and books. Rotterdam is among the listed locations. No teaching language stated on page; no application deadline (rolling starts, e.g. 1 February 2027); no Studielink mention so applicationChannel omitted."
+}

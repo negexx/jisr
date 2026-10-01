@@ -1,0 +1,51 @@
+{
+  "slug": "nl-hogeschool-rotterdam-22oj-bouwkunde-1001o3055",
+  "programmePage": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bouwkunde/voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bouwkunde/voltijd/",
+          "quote": "Duur en startmoment 4 jaar, september Opleidingstype Voltijd Bachelor, ook beschikbaar in deeltijd Taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bouwkunde/voltijd/",
+          "quote": "Duur en startmoment 4 jaar, september Opleidingstype Voltijd Bachelor, ook beschikbaar in deeltijd Taal Nederlands"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2027-05-01"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bouwkunde/voltijd/aanmeldprocedure/",
+          "quote": "maar doe dat uiterlijk op 1 mei"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bouwkunde/voltijd/aanmeldprocedure/",
+          "quote": "Meld je aan via Studielink. Dat kan al vanaf 1 oktober, maar doe dat uiterlijk op 1 mei."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition omitted: studiekosten page says non-EEA students pay 'instellingscollegegeld' but gives no amount (only the statutory EUR 2,771 for 2027-2028 and a link to rates). The 1 May deadline is the general Studielink deadline on the programme page, not specifically worded for non-EEA applicants; year 2027 inferred from the page's 2027-2028 tuition cycle."
+}

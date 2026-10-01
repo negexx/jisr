@@ -1,0 +1,68 @@
+{
+  "slug": "nl-avans-hogeschool-07gr-bouwkunde-1001o3048",
+  "programmePage": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+          "quote": "Locatie Den Bosch, Tilburg Startmaand September Duur 4 jaar, voltijd bachelor Taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+          "quote": "Locatie Den Bosch, Tilburg Startmaand September Duur 4 jaar, voltijd bachelor Taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1030800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+          "quote": "Tarief 2026-2027 Voltijd Duaal Deeltijd Instellingscollegegeld € 10.308 € 10.308 € 10.308"
+        },
+        {
+          "url": "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+          "quote": "Avans is verplicht het instellingscollegegeld te vragen als je niet aan bovengenoemde voorwaarden voor het wettelijk collegegeld voldoet."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2027-05-01"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/praktische-zaken/aanmelden/deadlines",
+          "quote": "Start je in september met een opleiding en is jouw nationaliteit anders dan een van de EER-landen of Zwitserland? Meld je dan t/m 1 mei aan."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/praktische-zaken/aanmelden",
+          "quote": "Stap 2: Meld je aan in Studielink Doe in Studielink een verzoek tot inschrijving voor de opleiding van jouw keuze."
+        }
+      ]
+    }
+  },
+  "notes": "Programme is offered voltijd in both Den Bosch and Tilburg (page lists both). Tuition is the 2026-2027 institutional fee (page does not yet show 2027-2028); the page's non-EEA statement is indirect (institutional fee applies when statutory conditions, incl. EEA nationality, are not met). Deadline year 2027 inferred (next September intake from today 2026-10-01); page states no year."
+}
