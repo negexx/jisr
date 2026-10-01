@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { quoteFor, websiteFrom } from "../../../scripts/import/inst-proposals";
+import { pickQuote, quoteFor, websiteFrom } from "../../../scripts/import/inst-proposals";
 
 describe("websiteFrom", () => {
   it("takes the home page of the domain most of the institution's own pages are on", () => {
@@ -53,6 +53,63 @@ describe("quoteFor", () => {
         "Hogeschool Utrecht",
         "Een hogeschool is een instelling voor hoger onderwijs in Nederland.",
       ),
+    ).toBeNull();
+  });
+});
+
+describe("quoteFor prefers a quote that says what the institution is", () => {
+  const filler = "Lorem ipsum dolor sit amet. ".repeat(40);
+
+  it("skips a news headline that merely mentions the name when a better line exists", () => {
+    const page = `Aktuelles Duale Hochschule Baden-Württemberg Mosbach trauert um ihren ehemaligen Präsidenten. ${filler} Willkommen an der Dualen Hochschule Baden-Württemberg Mosbach: Studium mit Praxis.`;
+    const quote = quoteFor("Baden-Wuerttemberg Cooperative State University", page);
+    expect(quote).not.toMatch(/trauert/);
+    expect(quote).toMatch(/Baden-Württemberg Mosbach/);
+  });
+
+  it("prefers a mention that comes with an institution word and sits near the top", () => {
+    const page = `Home ${filler} Our news: Fontys sponsors a football club. ${filler} Fontys Hogeschool ICT is a university of applied sciences.`;
+    const quote = quoteFor("Fontys Hogeschool Tilburg", page);
+    expect(quote).toMatch(/Hogeschool/);
+  });
+
+  it("still returns the only mention there is, whatever it looks like", () => {
+    const quote = quoteFor("Windesheim", `${filler} Nieuws: Windesheim wint prijs voor onderwijs.`);
+    expect(quote).toMatch(/Windesheim/);
+  });
+});
+
+describe("pickQuote", () => {
+  const home = {
+    url: "https://www.uni.example/",
+    text: "Start Duale Hochschule Baden-Württemberg Mosbach trauert um ihren langjährigen Präsidenten.",
+  };
+  const programme = {
+    url: "https://www.uni.example/studium/informatik",
+    text: `${"Studium Informatik Bachelor. ".repeat(3)}Duale Hochschule Baden-Württemberg Mosbach: Studieren mit Praxis und Theorie im Wechsel.`,
+  };
+
+  it("takes the quote from the page where the name appears in the best context, with that page's url", () => {
+    const picked = pickQuote("Baden-Wuerttemberg Cooperative State University", [home, programme]);
+    expect(picked?.url).toBe("https://www.uni.example/studium/informatik");
+    expect(picked?.quote).toMatch(/Studieren mit Praxis/);
+  });
+
+  it("uses the home page when its quote is already good", () => {
+    const good = {
+      url: "https://www.uni.example/",
+      text: "Fontys Hogeschool ICT is a university of applied sciences in Tilburg.",
+    };
+    expect(pickQuote("Fontys Hogeschool Tilburg", [good, programme])?.url).toBe(
+      "https://www.uni.example/",
+    );
+  });
+
+  it("is null when no page names the institution", () => {
+    expect(
+      pickQuote("Windesheim", [
+        { url: "https://x.example/", text: "Nothing relevant here at all." },
+      ]),
     ).toBeNull();
   });
 });

@@ -4,7 +4,7 @@ import path from "node:path";
 
 import { parse } from "yaml";
 
-import { registrable } from "./discover";
+import { registrable, sameSite } from "./discover";
 import { pageText } from "./evidence";
 import { DATA_DIR, STAGING_DIR, stageFile } from "./staging";
 
@@ -51,7 +51,12 @@ const GENERIC = new Set(
   ),
 );
 
-export function quoteFor(name: string, text: string): string | null {
+const TYPE_WORD = /hogeschool|universit|hochschule|college|school|institut/i;
+const NEWSY =
+  /trauert|news|nieuws|aktuell|press|persbericht|event|agenda|sponsor|wint |award|prijs|actualit/i;
+
+// The best quote on one page and how good it looks (0-3), or null when the page does not name it.
+function scoredQuote(name: string, text: string): { quote: string; score: number } | null {
   const tokens = [
     ...new Set(
       name
@@ -63,22 +68,51 @@ export function quoteFor(name: string, text: string): string | null {
   // in the order of the name: the brand ("Fontys") comes before the town ("Tilburg")
   const lower = text.toLowerCase();
   for (const token of tokens) {
-    const at = lower.search(new RegExp(`(?<![\\p{L}\\p{N}])${token}(?![\\p{L}\\p{N}])`, "u"));
-    if (at === -1) continue;
-    let start = Math.max(0, at - 20);
-    let end = Math.min(text.length, at + token.length + 40);
-    if (start > 0) {
-      const space = text.indexOf(" ", start);
-      if (space !== -1 && space < at) start = space + 1;
+    // every mention of the brand word; the best-looking one becomes the quote
+    const pattern = new RegExp(`(?<![p{L}p{N}])${token}(?![p{L}p{N}])`, "gu");
+    let best: { quote: string; score: number } | null = null;
+    for (const match of lower.matchAll(pattern)) {
+      const at = match.index ?? 0;
+      let start = Math.max(0, at - 20);
+      let end = Math.min(text.length, at + token.length + 60);
+      if (start > 0) {
+        const space = text.indexOf(" ", start);
+        if (space !== -1 && space < at) start = space + 1;
+      }
+      if (end < text.length) {
+        const space = text.lastIndexOf(" ", end);
+        if (space > at + token.length) end = space;
+      }
+      const quote = text.slice(start, end).trim();
+      if (quote.length < 15) continue;
+      // a line that says what the institution is, near the top, and is not a news item
+      const score =
+        (TYPE_WORD.test(quote) ? 2 : 0) + (at < 400 ? 1 : 0) - (NEWSY.test(quote) ? 3 : 0);
+      if (best === null || score > best.score) best = { quote, score };
     }
-    if (end < text.length) {
-      const space = text.lastIndexOf(" ", end);
-      if (space > at + token.length) end = space;
-    }
-    const quote = text.slice(start, end).trim();
-    if (quote.length >= 15) return quote;
+    if (best !== null) return best;
   }
   return null;
+}
+
+export function quoteFor(name: string, text: string): string | null {
+  return scoredQuote(name, text)?.quote ?? null;
+}
+
+// The best quote across the institution's pages (the home page first), with the url it is on. A good
+// quote ends the search; a news headline on the home page does not.
+export function pickQuote(
+  name: string,
+  pages: readonly { url: string; text: string }[],
+): { url: string; quote: string } | null {
+  let best: { url: string; quote: string; score: number } | null = null;
+  for (const page of pages) {
+    const found = scoredQuote(name, page.text);
+    if (found === null) continue;
+    if (best === null || found.score > best.score) best = { url: page.url, ...found };
+    if (best.score >= 3) break;
+  }
+  return best === null ? null : { url: best.url, quote: best.quote };
 }
 
 type Yaml = Record<string, unknown>;
@@ -139,22 +173,34 @@ async function main(argv: readonly string[]): Promise<void> {
       );
       continue;
     }
-    let text: string;
-    try {
-      text = await pageText(website);
-    } catch {
+    // the home page, then up to four of the institution's own programme pages
+    const candidates = [
+      website,
+      ...[...new Set(urls.get(slug) ?? [])]
+        .filter((u) => u !== website && sameSite(u, website))
+        .slice(0, 4),
+    ];
+    const pages: { url: string; text: string }[] = [];
+    for (const url of candidates) {
+      try {
+        pages.push({ url, text: await pageText(url) });
+      } catch {
+        // an unreachable page just offers no quote
+      }
+    }
+    if (pages.length === 0 || pages[0]?.url !== website) {
       skipped.push(`${slug}: ${website} could not be fetched`);
       continue;
     }
-    const quote = quoteFor(String(staged.name ?? ""), text);
-    if (quote === null) {
+    const picked = pickQuote(String(staged.name ?? ""), pages);
+    if (picked === null) {
       skipped.push(`${slug}: ${website} does not name "${String(staged.name)}"`);
       continue;
     }
     if (!dryRun)
       await writeFile(
         path.join(outDir, `${slug}.json`),
-        `${JSON.stringify({ slug, website, evidence: [{ url: website, quote }] }, null, 2)}\n`,
+        `${JSON.stringify({ slug, website, evidence: [{ url: picked.url, quote: picked.quote }] }, null, 2)}\n`,
       );
     written++;
   }
