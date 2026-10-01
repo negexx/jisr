@@ -14,7 +14,7 @@ Jisr is a free web app that turns a Moroccan Bac graduate's profile into a reali
                                                                              ▼
                                                                    CDN / static assets
                                                                              │
-  Browser (en / fr / ar-RTL) ◄── Next.js 16 pages (SSG/ISR) ─────────────────┤
+  Browser (en / fr / ar-RTL) ◄── Next.js 16 pages (static generation) ─────────────────┤
      │  src/domain (pure TS) runs here on the snapshot:                      │
      │  eligibility → matching → costs → checklist                           │
      │  guest profile in localStorage                                        │
@@ -100,7 +100,7 @@ One trilingual 404 (`src/app/global-not-found.tsx`, experimental Next flag `glob
 
 ## Tests
 
-Vitest (`tests/**`, jsdom per file for components) mirrors `src/`. Playwright (`tests/e2e/`, phone and desktop projects, fr and ar) runs against `next start` on a build of the synthetic fixture `tests/fixtures/data/e2e-journey` (`pnpm build:e2e`, which overwrites `public/snapshots`; restore with `pnpm data:build`), with the clock pinned. Specs: journey, empty-and-errors, privacy, a11y (axe), perf.
+Vitest (`tests/**`, jsdom per file for components) mirrors `src/`. Playwright (`tests/e2e/`, phone and desktop projects, fr and ar) runs against `next start` on a build of the synthetic fixture `tests/fixtures/data/e2e-journey` (`pnpm build:e2e`, which overwrites `public/snapshots`; restore with `pnpm data:build`), with the clock pinned. Specs: smoke, journey, empty-and-errors, privacy, a11y (axe), perf.
 
 ## External dependencies
 

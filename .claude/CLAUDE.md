@@ -20,7 +20,7 @@ Trust is the product: every important fact carries an **official source URL** an
 - **Reference data:** YAML in `data/`, Zod-validated, published as immutable JSON snapshots (ADR 0003)
 - **User data:** Neon serverless Postgres (EU) + Drizzle ORM / drizzle-kit — users only, never reference data
 - **Auth:** Better Auth (Drizzle adapter, Google + magic link), phase 2 after the guest journey; users live in our DB
-- **Validation:** Zod at every input boundary and for all data files
+- **Validation:** Zod at every input boundary and for all data files (server, build and test side; client code uses hand-written validators)
 - **Tests:** Vitest (jsdom per file for components) + Playwright e2e with axe (phone and desktop, fr and ar)
 - **Lint/format:** Biome
 - **Package manager:** pnpm

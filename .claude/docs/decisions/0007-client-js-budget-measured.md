@@ -14,7 +14,7 @@ ADR 0004 and the M3 plan set a budget of 150 KB gzipped initial JavaScript per p
 | `/matches` | 188.2 | 188.5 | 212.9 | +38.5 |
 | `/programs/<slug>` | 180.2 | 180.5 | 234.8 | +30.5 |
 
-"Until idle" adds the chunks Next prefetches for pages the visible links lead to (about 45 to 54 KB after load, plus 15 to 17 KB of `_rsc` payload; not counted by `perf:js`). The baseline before any M3 UI was 144.7 KB for a bare page (React, Next runtime, next-intl). The shell (header, footer, locale switcher, clear-data, Home leaf) costs 17.1 KB on top of that (all four client leaves stubbed: 145.9 KB). Each page then adds its island: profile about +16.6, matches about +21.7, program about +13.7 over the shell.
+"Until idle" adds the chunks Next prefetches for pages the visible links lead to (about 45 KB after load on Home and 54 KB on the program page, but only about 29 KB on profile and 24 KB on matches, plus 15 to 17 KB of `_rsc` payload; not counted by `perf:js`). The baseline before any M3 UI was 144.7 KB for a bare page (React, Next runtime, next-intl). The shell (header, footer, locale switcher, clear-data, Home leaf) costs about 20.6 KB on top of that today (Home is 166.5 KB; with all four client leaves stubbed it was 145.9 KB when measured in T8, when Home was about 163 KB, i.e. 17.1 KB then). Each page then adds its island: profile about +16.6, matches about +21.7, program about +13.7 over today's Home.
 
 ## What was tried (with measured effect)
 
@@ -28,20 +28,20 @@ ADR 0004 and the M3 plan set a budget of 150 KB gzipped initial JavaScript per p
 
 ## Remaining levers (estimates, none implemented)
 
-1. A merge-free `buttonVariants` for the four client leaves of the shell (nav links, locale switcher, Home link, clear-data trigger): about -7.7 KB. Since the M3 cleanup `buttonVariants` merges internally (so Links keep their outline border), so this needs a separate non-merging variant for fixed class strings.
+1. A merge-free class path in the shell's client leaves (nav links, locale switcher, Home link, clear-data trigger: they reach the `cn` merge engine through `<Button>` or `cn` directly): about -7.7 KB (T8c estimate). Since the M3 cleanup `buttonVariants` itself merges (so Links keep their outline border), this needs a separate non-merging variant for fixed class strings.
 2. Dropping next-intl's client `Link`/`usePathname` and the client provider from the shell (plain anchors with the locale prefix built on the server, the pathname passed as a prop): about -5 to -10 KB (the 9.9 KB IntlMessageFormat baseline is the target).
 3. Radix `Slot` off the client path plus lazy validators for the Home link: about -2.7 KB.
 4. Code-splitting the profile steps (only step 1 is needed at load; the page's own chunk is about 15.7 KB): not measured.
 5. A dynamic import of the matching code on the matches page, as already done for the program page (that change was worth 2.8 KB there): estimate of the same order, not measured.
 
-Levers 1 and 2 together would take Home to roughly 145 to 148 KB. Pages with an island would still be above 150 KB (profile, matches and program are 14 to 22 KB over the shell), so reaching 150 KB per page also needs levers 4 and 5 and probably more; this is an extrapolation, not a measurement.
+Levers 1 and 2 together would take Home to about 149 to 154 KB (166.5 - 7.7 - 5 to 10), so possibly still over 150 KB; adding lever 3 (-2.7 KB) gives about 146 to 151 KB. Pages with an island would still be well above 150 KB (profile, matches and program are 14 to 22 KB over the shell), so reaching 150 KB per page also needs levers 4 and 5 and probably more; this is an extrapolation, not a measurement.
 
 ## DECISION REQUIRED (product owner)
 
 Choose one:
 
 - **A. Raise the per-page budget** to what M3 measured plus headroom (for example 190 KB for island pages, 170 KB for Home) and keep the ratchet in `tests/e2e/support/js-budget.ts` going down. Cheapest; students on slow mobile data pay about 15 to 40 KB more per page than the original target.
-- **B. Fund the shell refactor** (levers 1 and 2, then 4 and 5) as its own task with the perf spec as the acceptance test, accepting the 150 KB target for Home first and island pages as a later step.
+- **B. Fund the shell refactor** (levers 1, 2 and 3, then 4 and 5) as its own task with the perf spec as the acceptance test. The estimates put Home at about 146 to 151 KB at best, so Home may only just reach the target, and island pages need further work after that.
 - **C. Both:** raise the budget now and refactor opportunistically.
 
 Until a decision is recorded the ratchet is the enforced limit and no page may get heavier than its current value plus 3 KB.
