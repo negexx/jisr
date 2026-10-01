@@ -1,0 +1,19 @@
+{
+  "slug": "fr-i-u-t-clermont-auvergne-site-daurillac-0150746e",
+  "website": "https://iut.uca.fr/",
+  "evidence": [
+    {
+      "url": "https://iut.uca.fr/formations/toutes-les-formations-par-site/site-daurillac",
+      "quote": "Site d'Aurillac - IUT Clermont Auvergne"
+    }
+  ],
+  "type": {
+    "value": "public",
+    "evidence": [
+      {
+        "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24715&typeBac=0&originePc=0",
+        "quote": "Établissement Établissement public Formation"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "fr-aix-marseille-universite-site-de-marseil-0134316w-licence-sciences-pour-lingenieur-39236",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39236&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39236&typeBac=0&originePc=0",
+          "quote": "La faculté des Sciences propose un parcours de licence en 3 ans"
+        }
+      ]
+    }
+  },
+  "notes": "No tuition for non-EU, teaching language or intake dates stated. Channel omitted: Parcoursup fiche says non-EU bac-equivalent holders go through the DAP procedure, not Parcoursup."
+}

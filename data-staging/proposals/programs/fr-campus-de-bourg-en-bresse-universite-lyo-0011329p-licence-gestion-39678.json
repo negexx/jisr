@@ -1,0 +1,16 @@
+{
+  "slug": "fr-campus-de-bourg-en-bresse-universite-lyo-0011329p-licence-gestion-39678",
+  "programmePage": "https://bourgenbresse.univ-lyon3.fr/licence-de-gestion-management-bourg-en-bresse-3",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://bourgenbresse.univ-lyon3.fr/licence-de-gestion-management-bourg-en-bresse-3",
+          "quote": "Les trois années (six semestres) de ce parcours sont intégralement proposées sur le Campus de Bourg-en-Bresse."
+        }
+      ]
+    }
+  },
+  "notes": "Parcoursup fiche shows 178 EUR/year (national rate, not stated for non-EU): omitted. Channel omitted: fiche says non-EU bac-equivalent holders do not use Parcoursup but the DAP procedure. Teaching language not stated."
+}

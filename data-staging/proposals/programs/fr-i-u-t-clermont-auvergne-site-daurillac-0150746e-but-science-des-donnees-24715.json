@@ -1,0 +1,27 @@
+{
+  "slug": "fr-i-u-t-clermont-auvergne-site-daurillac-0150746e-but-science-des-donnees-24715",
+  "programmePage": "https://iut.uca.fr/formations/but-science-des-donnees-aurillac",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://iut.uca.fr/formations/but-science-des-donnees-aurillac",
+          "quote": "Les études se déroulent sur 3 ans à temps plein, découpés en 6 semestres"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://iut.uca.fr/formations/but-science-des-donnees-aurillac",
+          "quote": "Langues d'enseignement Français"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: Parcoursup fiche shows 178 EUR per year, which is the national rate and not stated for non-EU students; omitted. No intake dates stated for non-EU applicants. Application channel: official pages say non-EU applicants residing abroad use Campus France (Etudes en France), not Parcoursup; channel omitted."
+}
