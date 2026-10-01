@@ -1,0 +1,5 @@
+slug: french
+name:
+  fr: { text: Langue française, status: draft }
+  en: { text: French, status: draft }
+  ar: { text: اللغة الفرنسية, status: draft }
