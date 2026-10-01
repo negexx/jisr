@@ -70,3 +70,15 @@ export const UNI_ASSIST_SUMMARY: Localized = draft(
   "Central application service for international students of many German universities.",
   "الخدمة المركزية لطلبات التسجيل للطلبة الدوليين في عدد كبير من الجامعات الألمانية.",
 );
+
+export const UNI_ASSIST_VPD_SUMMARY: Localized = draft(
+  "uni-assist examine d'abord vos diplômes étrangers et vous remet une attestation préliminaire (VPD) ; vous déposez ensuite votre candidature avec la VPD directement auprès de l'université.",
+  "uni-assist first reviews your foreign certificates and issues a preliminary review document (VPD); you then submit your application with the VPD directly to the university.",
+  "تقوم uni-assist أولًا بمراجعة شهاداتكم الأجنبية وتمنحكم وثيقة المراجعة الأولية (VPD)، ثم تقدّمون طلبكم مع هذه الوثيقة مباشرة إلى الجامعة.",
+);
+
+export const UNIVERSITY_DIRECT_SUMMARY: Localized = draft(
+  "Candidature directement auprès de l'université, via son propre portail de candidature : renseignez-vous auprès d'elle sur la reconnaissance de votre diplôme étranger.",
+  "Apply directly to the university through its own application portal: ask the university how your foreign diploma gets recognised.",
+  "التقدّم مباشرة إلى الجامعة عبر بوابة التسجيل الخاصة بها: استفسروا لديها عن كيفية الاعتراف بشهادتكم الأجنبية.",
+);

@@ -425,7 +425,12 @@ export async function verifyChannel(
   if (evidence.length === 0)
     return { ok: false, reason: "no quote was found verbatim on the cited page(s)" };
   for (const e of evidence) {
-    if (new RegExp(channelName.replace(/[^a-z0-9]+/gi, ".?"), "i").test(e.quote))
+    // a known channel is checked by its own wording; any other by its display name
+    const byWords = checkChannel(proposal.slug, e.quote);
+    const known = byWords.ok || !/cannot be verified automatically/.test(byWords.reason);
+    if (
+      known ? byWords.ok : new RegExp(channelName.replace(/[^a-z0-9]+/gi, ".?"), "i").test(e.quote)
+    )
       return { ok: true, evidence };
   }
   return { ok: false, reason: `no quote names the channel "${channelName}"` };

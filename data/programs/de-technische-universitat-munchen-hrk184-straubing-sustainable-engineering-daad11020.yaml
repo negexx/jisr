@@ -37,8 +37,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: de-uni-assist-vpd
+  source: page-3
   info_kind: official
 documents:
   value: null
@@ -64,7 +64,7 @@ requirements:
           text: "يُتوقع مستوى جيد في اللغة الإنجليزية (يذكر DAAD المستوى B2 كشرط أو توصية)؛ ولا يُطلب إثبات: تحقّقوا من مستواكم."
           status: draft
     - id: req-2
-      source: page-3
+      source: page-4
       info_kind: official
       kind: manual_check
       note:
@@ -78,7 +78,7 @@ requirements:
           text: إذا كانت شهادتكم الأجنبية غير قابلة للمقارنة بالـ Abitur، فلا يمكن القبول المباشر إلا بعد Studienkolleg واجتياز امتحان التقييم (Feststellungsprüfung).
           status: draft
     - id: req-3
-      source: page-3
+      source: page-4
       info_kind: official
       kind: manual_check
       note:
@@ -114,5 +114,8 @@ sources:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11020/
     last_verified_at: 2026-10-01
   page-3:
+    url: https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/32/
+    last_verified_at: 2026-10-01
+  page-4:
     url: https://www.tum.de/en/studies/application/application-info-portal/higher-education-entrance-qualification/international-higher-education-entrance-qualification
     last_verified_at: 2026-10-01

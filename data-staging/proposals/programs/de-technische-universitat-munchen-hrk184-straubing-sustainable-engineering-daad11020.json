@@ -42,9 +42,22 @@
           "quote": "The tuition fees for international students from third countries for this degree program are 2,000 euros per semester."
         }
       ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/32/",
+          "quote": "We will issue you with a preliminary review documentation, the so-called Vorpüfungsdokumentation (VPD)."
+        },
+        {
+          "url": "https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/32/",
+          "quote": "You are then required to submit your application with the VPD directly to the university."
+        }
+      ]
     }
   },
-  "notes": "Deadline year not stated on the page; 2027 chosen as the next occurrence. Application is via TUMonline (not uni-assist as far as the pages state), so applicationChannel omitted. OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition). TUM REQUIREMENTS: official pages used: TUM programme page, TUM 'International Higher Education Entrance Qualification' page, DAAD 11020. The TUM pages do not say whether the Moroccan Bac is comparable to the Abitur; uni-assist (VPD) decides whether the certificate gives direct access or Studienkolleg is needed. English: TUM says no proof of language proficiency is needed but a good command of English is expected; DAAD says 'B2 required/recommended, no proof required' (ambiguous required/recommended), so minCefr B2 with certificateRequired=false.",
+  "notes": "Deadline year not stated on the page; 2027 chosen as the next occurrence. Application is via TUMonline (not uni-assist as far as the pages state), so applicationChannel omitted. OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition). TUM REQUIREMENTS: official pages used: TUM programme page, TUM 'International Higher Education Entrance Qualification' page, DAAD 11020. The TUM pages do not say whether the Moroccan Bac is comparable to the Abitur; uni-assist (VPD) decides whether the certificate gives direct access or Studienkolleg is needed. English: TUM says no proof of language proficiency is needed but a good command of English is expected; DAAD says 'B2 required/recommended, no proof required' (ambiguous required/recommended), so minCefr B2 with certificateRequired=false. CHANNEL: set from the official uni-assist university list (data-staging/UNIASSIST.csv) and the university's own page; each university decides which courses and applicant groups uni-assist handles.",
   "requirements": {
     "rules": [
       {

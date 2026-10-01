@@ -34,8 +34,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: de-uni-assist-vpd
+  source: page-3
   info_kind: official
 documents:
   value: null
@@ -95,4 +95,7 @@ sources:
     last_verified_at: 2026-10-01
   page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7126/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/18/
     last_verified_at: 2026-10-01

@@ -229,6 +229,9 @@ const CHANNEL_WORDS: Record<string, RegExp> = {
   "fr-parcoursup": /parcoursup/i,
   "fr-campus-france": /campus\s*france|[eé]tudes en france/i,
   "nl-studielink": /studielink/i,
+  "de-uni-assist-vpd": /\bVPD\b|Vorp[üu]fungsdokumentation|preliminary (review|evaluation)/i,
+  "de-university-direct":
+    /application portal|apply directly|directly (to|at) the (higher education institution|university)|application via the university/i,
   "de-uni-assist": /uni-assist|uniassist/i,
 };
 

@@ -29,9 +29,22 @@
           "quote": "In general, the program is taught in English."
         }
       ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/18/",
+          "quote": "We will issue you with a preliminary review documentation, the so-called Vorpüfungsdokumentation (VPD)."
+        },
+        {
+          "url": "https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/18/",
+          "quote": "You are then required to submit your application with the VPD directly to the university."
+        }
+      ]
     }
   },
-  "notes": "Year of the deadline is not stated on the page (DAAD edition 2026/2027, applicants from all countries); 2027 chosen as the next occurrence after today. THA page lists languages 'German, English' but says the programme is generally taught in English. Tuition 'None' is page-wide, not explicitly 'for non-EU students'. uni-assist is mentioned only for certificate evaluation (VPD), not as the application channel (application via HISinOne), so applicationChannel omitted. OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition). OMITTED: tuition 0 (DAAD says Tuition fees per semester None, but no page quote with explicit wording like no tuition fees was found). THA REQUIREMENTS: official pages used: THA programme page (FAQ and 'Your Application') and DAAD 7126. The page does not say whether a Moroccan Bac alone gives direct access or Studienkolleg/Feststellungsprüfung is needed: only that foreign diplomas need a VPD (uni-assist or Bavarian recognition office), which decides this. English B2 is required per the THA FAQ, but DAAD says 'B2 required/recommended, no proof required' (certificates only give bonus points in the aptitude assessment), so certificateRequired=false. The FAQ lists an essay and bonus points under the heading 'International Business Informatics', which looks like a copy-paste from another programme; the aptitude test itself is stated for International Information Systems.",
+  "notes": "Year of the deadline is not stated on the page (DAAD edition 2026/2027, applicants from all countries); 2027 chosen as the next occurrence after today. THA page lists languages 'German, English' but says the programme is generally taught in English. Tuition 'None' is page-wide, not explicitly 'for non-EU students'. uni-assist is mentioned only for certificate evaluation (VPD), not as the application channel (application via HISinOne), so applicationChannel omitted. OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition). OMITTED: tuition 0 (DAAD says Tuition fees per semester None, but no page quote with explicit wording like no tuition fees was found). THA REQUIREMENTS: official pages used: THA programme page (FAQ and 'Your Application') and DAAD 7126. The page does not say whether a Moroccan Bac alone gives direct access or Studienkolleg/Feststellungsprüfung is needed: only that foreign diplomas need a VPD (uni-assist or Bavarian recognition office), which decides this. English B2 is required per the THA FAQ, but DAAD says 'B2 required/recommended, no proof required' (certificates only give bonus points in the aptitude assessment), so certificateRequired=false. The FAQ lists an essay and bonus points under the heading 'International Business Informatics', which looks like a copy-paste from another programme; the aptitude test itself is stated for International Information Systems. CHANNEL: set from the official uni-assist university list (data-staging/UNIASSIST.csv) and the university's own page; each university decides which courses and applicant groups uni-assist handles.",
   "requirements": {
     "rules": [
       {

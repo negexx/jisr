@@ -1,7 +1,12 @@
 import { probeHttps } from "../http";
 import type { ReviewRow, StagedRecord } from "../staging";
 import { READ_SOURCE } from "../staging";
-import { programmeSummary, UNI_ASSIST_SUMMARY } from "../summaries";
+import {
+  programmeSummary,
+  UNI_ASSIST_SUMMARY,
+  UNI_ASSIST_VPD_SUMMARY,
+  UNIVERSITY_DIRECT_SUMMARY,
+} from "../summaries";
 import { canonicalTown, collapseSpaces, sameTown, slugify } from "../text";
 import type { BaProgramme } from "./ba";
 import {
@@ -193,6 +198,60 @@ export function buildGermanRecords(input: {
       todo: "not every university uses uni-assist (some take applications directly): confirm per institution, and whether an account is required",
     },
   });
+  const channel = (input: {
+    slug: string;
+    name: string;
+    kind: "intermediary" | "direct";
+    url: string;
+    summary: typeof UNI_ASSIST_SUMMARY;
+    todo: string;
+  }): StagedRecord => ({
+    collection: "application-channels",
+    id: input.slug,
+    data: {
+      slug: input.slug,
+      name: input.name,
+      country: "DE",
+      kind: input.kind,
+      url: input.url,
+      accountRequired: null,
+      summary: input.summary,
+      source: "main",
+      info_kind: READ_SOURCE,
+      sources: { main: { url: input.url, last_verified_at: null } },
+    },
+    review: {
+      kind: "application-channels",
+      slug: input.slug,
+      name: input.name,
+      institution: "",
+      city: "",
+      field: "",
+      confidence: "",
+      officialUrl: input.url,
+      todo: input.todo,
+    },
+  });
+  // Which of the three applies to a university comes from `pnpm data:uniassist` (its list) and the
+  // university's own page: the two channels below are only ever set with a quote.
+  records.push(
+    channel({
+      slug: "de-uni-assist-vpd",
+      name: "uni-assist (VPD)",
+      kind: "intermediary",
+      url: "https://www.uni-assist.de/en/tools/uni-assist-universities/",
+      summary: UNI_ASSIST_VPD_SUMMARY,
+      todo: "uni-assist issues the preliminary review document (VPD) and the applicant applies directly to the university: use it only for universities whose uni-assist page says so (data-staging/UNIASSIST.csv, mode vpd_only)",
+    }),
+    channel({
+      slug: "de-university-direct",
+      name: "University application portal",
+      kind: "direct",
+      url: "https://www.daad.de/en/study-and-research-in-germany/plan-your-studies/applying/",
+      summary: UNIVERSITY_DIRECT_SUMMARY,
+      todo: "the university takes applications itself: use it only where the university's own page says so, and set recognition of the foreign diploma separately",
+    }),
+  );
   return [...extras.values(), ...records];
 }
 

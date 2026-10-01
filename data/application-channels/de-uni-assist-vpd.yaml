@@ -1,0 +1,22 @@
+slug: de-uni-assist-vpd
+name: uni-assist (VPD)
+country: DE
+kind: intermediary
+url: https://www.uni-assist.de/en/tools/uni-assist-universities/
+accountRequired: null
+summary:
+  fr:
+    text: uni-assist examine d'abord vos diplômes étrangers et vous remet une attestation préliminaire (VPD) ; vous déposez ensuite votre candidature avec la VPD directement auprès de l'université.
+    status: draft
+  en:
+    text: uni-assist first reviews your foreign certificates and issues a preliminary review document (VPD); you then submit your application with the VPD directly to the university.
+    status: draft
+  ar:
+    text: تقوم uni-assist أولًا بمراجعة شهاداتكم الأجنبية وتمنحكم وثيقة المراجعة الأولية (VPD)، ثم تقدّمون طلبكم مع هذه الوثيقة مباشرة إلى الجامعة.
+    status: draft
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/32/
+    last_verified_at: 2026-10-01

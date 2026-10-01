@@ -126,6 +126,19 @@ describe("checkChannel", () => {
       true,
     );
     expect(checkChannel("nl-studielink", "Register via the portal").ok).toBe(false);
+    expect(
+      checkChannel(
+        "de-uni-assist-vpd",
+        "We will issue you with a preliminary review documentation (VPD).",
+      ).ok,
+    ).toBe(true);
+    expect(checkChannel("de-uni-assist-vpd", "Apply on our website").ok).toBe(false);
+    expect(
+      checkChannel(
+        "de-university-direct",
+        "upload the recognition results to the Pforzheim University application portal",
+      ).ok,
+    ).toBe(true);
     expect(checkChannel("unknown-channel", "anything at all here").ok).toBe(false);
   });
 });
