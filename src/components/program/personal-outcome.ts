@@ -36,11 +36,11 @@ export function personalOutcome(
   locale: AppLocale,
   now: IsoDate,
 ): Outcome {
-  const program = bundle.programs.flatMap((shard) => shard.programs).find((p) => p.slug === slug);
-  if (program === undefined) return { kind: "missing" };
-  const core = bundle.core;
-  if (core === undefined) return { kind: "compute_error" };
   try {
+    const program = bundle.programs.flatMap((shard) => shard.programs).find((p) => p.slug === slug);
+    if (program === undefined) return { kind: "missing" };
+    const core = bundle.core;
+    if (core === undefined) return { kind: "compute_error" };
     const routes = bundle.routes?.routes ?? [];
     const match = matchProgram({ profile, program, routes, reference: core, now });
     const cost = estimateCost({

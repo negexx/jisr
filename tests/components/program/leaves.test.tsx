@@ -493,6 +493,44 @@ describe("PersonalMatch", () => {
     expect(within(alert).queryByRole("button")).toBeNull();
   });
 
+  it("shows a computation error, not an unhandled rejection, when a program shard is malformed", async () => {
+    saveProfile(E2E_PROFILE);
+    const base = fixtureClient(dir);
+    const malformed: SnapshotClient = {
+      load: async (plan, locale, signal) => ({
+        ...(await base.load(plan, locale, signal)),
+        programs: [{ kind: "programs" } as unknown as SnapshotBundle["programs"][number]],
+      }),
+    };
+    renderLeaf(personal(E2E_SLUGS.ok, { client: malformed }));
+    const alert = await screen.findByRole("alert");
+    expect(alert.textContent).toContain(message("fr", "program.personal.computeError.title"));
+    expect(within(alert).queryByRole("button")).toBeNull();
+  });
+
+  it("shows the network error and imports the matching code again on Retry when its chunk fails to download", async () => {
+    saveProfile(E2E_PROFILE);
+    const imports = { count: 0 };
+    vi.doMock("@/components/program/personal-outcome", async (importOriginal) => {
+      imports.count += 1;
+      if (imports.count === 1) throw new Error("Loading chunk failed");
+      return importOriginal();
+    });
+    try {
+      renderLeaf(personal(E2E_SLUGS.ok));
+      const alert = await screen.findByRole("alert");
+      expect(alert.textContent).toContain(message("fr", "program.personal.error.title"));
+      expect(imports.count).toBe(1);
+      await userEvent.click(
+        within(alert).getByRole("button", { name: message("fr", "program.personal.error.retry") }),
+      );
+      await result();
+      expect(imports.count).toBe(2);
+    } finally {
+      vi.doUnmock("@/components/program/personal-outcome");
+    }
+  });
+
   it("keeps the student's values out of the URL and the title", async () => {
     const before = { href: window.location.href, title: document.title };
     saveProfile(E2E_PROFILE_WITH_BUDGET);
