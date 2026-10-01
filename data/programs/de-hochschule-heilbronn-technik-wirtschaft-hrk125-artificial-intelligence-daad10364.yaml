@@ -18,37 +18,58 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10364/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 teachingLanguages:
-  value:
-    - de
-    - en
-  source: daad
-  info_kind: guidance
+  value: null
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-09-28
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Diplôme étranger : faire reconnaître votre certificat par le Studienkolleg Konstanz ou par Uni-Assist (payant) avant de postuler ; sans reconnaissance, la candidature est exclue."
+          status: draft
+        en:
+          text: "Foreign certificate: have your certificate recognized by Studienkolleg Konstanz or by Uni-Assist (fee) before applying; without recognition, the application will not be considered."
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10364/
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.hs-heilbronn.de/de/kuenstliche-intelligenz-und-industrielle-digitalisierung
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.hs-heilbronn.de/en/bachelor-application
     last_verified_at: 2026-10-01

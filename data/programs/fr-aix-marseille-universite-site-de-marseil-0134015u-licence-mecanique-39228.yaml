@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -71,6 +72,25 @@ requirements:
           status: draft
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Votre dossier est examiné sur vos notes en mathématiques, physique-chimie, SI et NSI (bulletins de 1ère, terminale et relevé de notes du bac), qui comptent pour 55 % de la grille d'analyse. Aucun seuil de notes n'est publié : vérifiez l'adéquation de votre profil avec le portail René Descartes."
+          status: draft
+        en:
+          text: "Your application is assessed mainly on your grades in mathematics, physics-chemistry, computer science (SI) and digital sciences (NSI) (1ère and terminale reports and bac transcript), which count for 55% of the grid. No grade threshold is published: check how your profile fits the Portail René Descartes."
           status: draft
 scholarships: []
 sources:

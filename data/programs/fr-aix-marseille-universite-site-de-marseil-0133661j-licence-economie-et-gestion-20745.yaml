@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -71,6 +72,27 @@ requirements:
           status: draft
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - delf-dalf
+        - tcf
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Cette formation est très demandée : les résultats scolaires comptent pour 90 % dans l'analyse des candidatures. Vérifiez les attendus et les critères sur la fiche Parcoursup."
+          status: draft
+        en:
+          text: "This programme is highly competitive: academic results account for 90% of the admission analysis. Check the expectations and criteria on the Parcoursup page."
           status: draft
 scholarships: []
 sources:

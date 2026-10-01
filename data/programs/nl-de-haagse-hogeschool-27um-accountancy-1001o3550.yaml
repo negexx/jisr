@@ -1,0 +1,86 @@
+slug: nl-de-haagse-hogeschool-27um-accountancy-1001o3550
+institution: nl-de-haagse-hogeschool-27um
+country: NL
+city: s-gravenhage
+field: business-economics
+level: bachelor
+name: Accountancy
+summary:
+  fr:
+    text: Accountancy (Accountancy), De Haagse Hogeschool ('s-Gravenhage). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Accountancy (Accountancy), De Haagse Hogeschool ('s-Gravenhage). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Accountancy (Accountancy), De Haagse Hogeschool ('s-Gravenhage). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: nl
+      minCefr: null
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Avec un diplôme étranger (par ex. le baccalauréat marocain), faites une demande d'inscription via Studielink ; la Centrale Studenten Inschrijving évalue si votre diplôme est au moins équivalent à un diplôme néerlandais donnant accès à l'enseignement supérieur.
+          status: draft
+        en:
+          text: With a foreign diploma (e.g. the Moroccan Baccalauréat), submit an enrolment request via Studielink; the Centrale Studenten Inschrijving assesses whether your diploma is at least equivalent to a Dutch diploma that grants access to higher education.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La page indique que les titulaires d'un diplôme étranger doivent également prouver qu'ils maîtrisent suffisamment la langue d'enseignement, mais le niveau CEFR exact n'est pas précisé ; il détermine aussi le type de documents/examens complémentaires.
+          status: draft
+        en:
+          text: The page states that foreign diploma holders must also prove sufficient command of the language of instruction, but the exact CEFR level is not given; it also determines the type of further documents/exams.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen
+    last_verified_at: 2026-10-01

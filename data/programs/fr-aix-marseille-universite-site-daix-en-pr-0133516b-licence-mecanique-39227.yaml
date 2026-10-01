@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -71,6 +72,25 @@ requirements:
           status: draft
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un bon niveau en sciences est exigé ; les résultats en mathématiques et en physique-chimie sont essentiels, et un aménagement (licence en 4 ans) peut être proposé si le profil ne correspond pas aux attendus.
+          status: draft
+        en:
+          text: A good level in sciences is required; results in mathematics and physics-chemistry are essential, and a 4-year licence may be offered if the profile does not match the expectations.
           status: draft
 scholarships: []
 sources:

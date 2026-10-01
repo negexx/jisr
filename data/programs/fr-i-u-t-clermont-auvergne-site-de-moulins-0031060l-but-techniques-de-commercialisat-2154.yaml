@@ -72,6 +72,25 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "L'admission est sélective : les résultats scolaires sont analysés et un entretien oral d'environ 10 minutes est prévu pour les candidats retenus. Vérifiez les modalités exactes auprès de l'établissement, car la procédure pour les candidats avec un baccalauréat marocain passe par Études en France / Campus France et non par Parcoursup."
+          status: draft
+        en:
+          text: "Admission is selective: school results are reviewed and an oral interview of about 10 minutes is scheduled for shortlisted applicants. Check the exact modalities with the institution, as applicants with a Moroccan Baccalauréat apply via Études en France / Campus France and not Parcoursup."
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -85,4 +104,7 @@ sources:
     last_verified_at: 2026-10-01
   page-4:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://iut.uca.fr/formations/but-techniques-de-commercialisation-moulins
     last_verified_at: 2026-10-01

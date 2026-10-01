@@ -72,6 +72,25 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez auprès de la formation les critères d'admission applicables aux candidats titulaires d'un Bac marocain : la fiche indique que les candidats non ressortissants de l'U.E. titulaires d'un diplôme équivalent au baccalauréat français passent par la procédure DAP (Etudes en France) et non par Parcoursup."
+          status: draft
+        en:
+          text: "Check with the programme the admission criteria applicable to holders of a Moroccan Baccalauréat: the page states that non-EU candidates holding a diploma equivalent to the French baccalauréat do not go through Parcoursup but through the DAP procedure (Etudes en France)."
+          status: draft
 scholarships: []
 sources:
   programme:

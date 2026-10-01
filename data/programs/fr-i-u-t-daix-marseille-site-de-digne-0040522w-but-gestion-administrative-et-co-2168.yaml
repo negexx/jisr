@@ -72,6 +72,25 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: C1
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Toutes les spécialités de baccalauréat permettent de candidater ; des enseignements de spécialité sont privilégiés (histoire-géographie/géopolitique/SES, LLCER, mathématiques, SES) ainsi que le bac STMG.
+          status: draft
+        en:
+          text: All baccalauréat specialities allow you to apply; some are favoured (history-geography/geopolitics, languages-literatures-foreign cultures, mathematics, economics and social sciences) as well as the STMG technological bac.
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -85,4 +104,7 @@ sources:
     last_verified_at: 2026-10-01
   page-4:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://iut.univ-amu.fr/fr/formations/bachelor-universitaire-de-technologie/but-gestion-administrative-commerciale-organisations
     last_verified_at: 2026-10-01

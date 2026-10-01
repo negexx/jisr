@@ -15,39 +15,70 @@ summary:
   ar:
     text: International Tourism Management (Cruise Business / Innovation), Hochschule Bremerhaven (Bremerhaven). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7839/
+officialUrl: https://www.hs-bremerhaven.de/en/itm
 durationYears:
   value: 4
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: de
+      minCefr: A1
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez séparément l'attestation de niveau d'anglais C1 à fournir avant la fin du premier semestre.
+          status: draft
+        en:
+          text: Check separately the C1 English certificate required by the end of the first semester.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://www.hs-bremerhaven.de/en/itm
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7839/
     last_verified_at: 2026-10-01

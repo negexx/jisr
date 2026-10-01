@@ -1,0 +1,14 @@
+slug: nl-fontys-hogeschool-30gb
+name: Fontys Hogeschool
+country: NL
+city:
+  slug: eindhoven
+  name: Eindhoven
+type: null
+website: https://www.fontys.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.fontys.nl/
+    last_verified_at: 2026-10-01

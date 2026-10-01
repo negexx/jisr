@@ -2,494 +2,80 @@
 
 For each record: open the link, confirm the quote is there and that it supports the value (right programme, right applicant group, right year). Then set `audited = y` and `outcome = ok` (or `wrong` + a note) in `AUDIT.csv`.
 
-## programs/fr-aix-marseille-universite-0134009m-licence-informatique-48592  _(batch b7-983d4f)_
-
-**Licence - Informatique - Entièrement en distanciel**
-
-- **durationYears**: `3`
-  - "La licence est un diplôme national de l’enseignement supérieur qui se prépare en six semestres au sein de l’Université." — https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise
-- **teachingLanguages**: `["fr"]`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48592&typeBac=0&originePc=0
-  - "Les étudiants qui postulent en 1ère année de licence à l'université (L1) ne seront pas dispensés de la certification de français." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France" — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48592&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Formation suivie à distance : vérifiez qu'elle convient à votre projet et à votre visa.","status":"draft"},"en":{"text":"This programme is taught at a distance: check that it suits your plans and your visa.","status":"draft"},"ar":{"text":"هذا التكوين يُتابَع عن بُعد: تحقّقوا من ملاءمته لمشروعكم وللتأشيرة.","status":"draft"}}}`
-  - "Cette formation propose un enseignement à distance." — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48592&typeBac=0&originePc=0
-- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-4**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["delf-dalf","tcf"]}`
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-  - "Vous pouvez passer un TCF TP (tout public), un DELF B2 ou un DALF C1/C2 pour toutes les candidatures." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48592&typeBac=0&originePc=0
-- **requirement req-5**: `{"kind":"manual_check","note":{"fr":{"text":"L'admission en L1 Informatique à distance passe par la procédure DAP / Études en France (Campus France Maroc) ; le dossier doit être déposé selon le calendrier indiqué et il est conseillé de fournir une lettre de motivation claire, ciblée et personnalisée.","status":"draft"},"en":{"text":"Admission to the distance L1 Informatique goes through the DAP / Études en France procedure (Campus France Morocco); the application must be submitted according to the stated calendar and a clear, targeted, personalised cover letter is advised.","status":"draft"}}}`
-  - "La demande d'admission préalable (DAP) est obligatoire pour les étudiants étrangers, titulaires (ou futur titulaires) d'un diplôme étranger de fin d'études secondaires obtenu hors UE, ou un bac international, ou un diplôme donnant accès à l’enseignement supérieur européen, et sollicitant une première inscription en 1ère année de Licence (L1)." — https://feg.univ-amu.fr/fr/candidature-inscription/candidature/demande-admission-prealable-dap
-  - "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France de votre pays de résidence." — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
-  - "La lettre de motivation doit être claire, ciblée, personnalisée et doit montrer l'adéquation entre la formation visée et le cursus du secondaire." — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48592&typeBac=0&originePc=0
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | La formation est entièrement à distance et les enseignements s'étalent d'octobre à mai (au lieu de deux semestres). Les droits d'inscription différenciés de 2 902 €/an pour la Licence sont indiqués par la page Campus France Maroc pour les étudiants extra-communautaires ; des exonérations sont possibles selon l'établissement. Le B2 en français est le niveau requis par cette formation et une certification (TCF, DELF B2 ou DALF) est obligatoire pour la procédure Études en France, sauf en cas de dispense (les candidats en L1 n'en sont pas dispensés). La modalité DAP/Études en France s'applique aux candidats marocains titulaires d'un bac marocain. Les stages en présentiel pour les travaux pratiques peuvent nécessiter un visa.
-
-## programs/fr-aix-marseille-universite-site-daix-en-pr-0133516b-licence-informatique-39213  _(batch b7-983d4f)_
-
-**Licence - Informatique - Portail René Descartes**
-
-- **durationYears**: `3`
-  - "La licence est un diplôme national de l’enseignement supérieur qui se prépare en six semestres au sein de l’Université." — https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise
-- **teachingLanguages**: `["fr"]`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39213&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France" — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39213&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"language_proficiency","language":"fr","minCefr":null,"certificateRequired":null,"acceptedTests":[]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39213&typeBac=0&originePc=0
-- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"Les candidats non ressortissants de l'UE titulaires d'un diplôme étranger équivalent au bac doivent passer par la procédure DAP (dossier blanc) et non par Parcoursup : vérifiez cette procédure.","status":"draft"},"en":{"text":"Non-EU applicants holding a foreign diploma equivalent to the French bac must go through the DAP procedure (dossier blanc), not Parcoursup: check this procedure.","status":"draft"}}}`
-  - "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP." — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39213&typeBac=0&originePc=0
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Tuition left out: no programme-specific fee for non-EU students can be quoted for this programme. The Parcoursup page shows a general 178 euros/year figure, but the programme page is the Parcoursup page for French/European Bac holders, and the differentiated non-EU fee is only described institution-wide (univ-amu.fr page giving general differentiated-fee policy, amounts stated on the Campus France Maroc page as 2 902 euros for a Licence year). Language proficiency: the page gives only a required French level (B2) without naming tests; the certificate requirement is set by Campus France separately. Subject expectations are described in general terms (scientific skills, mathematics notes) rather than as a precise subject list; DAP deadlines shown (15 December 2024 etc.) are for the 2025 campaign.
-
-## programs/fr-aix-marseille-universite-site-daix-en-pr-0133516b-licence-mecanique-39227  _(batch b7-983d4f)_
-
-**Licence - Mécanique - Portail René Descartes**
-
-- **durationYears**: `3`
-  - "La licence est un diplôme national de l’enseignement supérieur qui se prépare en six semestres au sein de l’Université." — https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise
-- **teachingLanguages**: `["fr"]`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39227&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France" — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39227&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":null,"acceptedTests":[]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39227&typeBac=0&originePc=0
-- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"Un bon niveau en sciences est exigé ; les résultats en mathématiques et en physique-chimie sont essentiels, et un aménagement (licence en 4 ans) peut être proposé si le profil ne correspond pas aux attendus.","status":"draft"},"en":{"text":"A good level in sciences is required; results in mathematics and physics-chemistry are essential, and a 4-year licence may be offered if the profile does not match the expectations.","status":"draft"}}}`
-  - "La Licence Mathématiques exige un bon niveau en sciences. Elle est dans le Portail René Descartes, 1ère année commune à 4 mentions : Mathématiques, Informatique, Physique et Mécanique." — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39227&typeBac=0&originePc=0
-  - "Notes en mathématiques Bulletins de 1ère, terminale et relevé de notes du bac Essentiel 4 sur 4" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39227&typeBac=0&originePc=0
-  - "Si le profil de l'étudiant ne correspond pas aux attendus nationaux de la mention, un aménagement lui sera proposé qui pourra être d'effectuer une licence en 4 ans au lieu de 3 sur un site qui peut être différent du site du sous-voeu." — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39227&typeBac=0&originePc=0
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | La page Parcoursup s'adresse aux candidats titulaires du bac français ou européen (voir la page Campus France : les titulaires d'un bac marocain doivent passer par la procédure Études en France). Les frais de scolarité (178 euros par année, gratuits pour les boursiers) constituent un tarif général d'établissement qui ne s'applique pas nécessairement aux étudiants extra-communautaires titulaires d'un diplôme étranger, pour lesquels le site de l'université mentionne des droits d'inscription différenciés ; aucun montant spécifique à cette licence pour ce profil n'est indiqué sur les pages, donc la tuition a été laissée de côté.
-
-## programs/fr-aix-marseille-universite-site-daix-en-pr-0134016v-licence-economie-et-gestion-12528  _(batch b7-983d4f)_
-
-**Licence - Portail Administration économique et sociale - Economie et Gestion - Gestion**
-
-- **durationYears**: `3`
-  - "La licence est un diplôme national de l’enseignement supérieur qui se prépare en six semestres au sein de l’Université." — https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France" — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12528&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":null,"acceptedTests":[]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12528&typeBac=0&originePc=0
-- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez le calendrier de candidature (dates limites pour la DAP : dépôt avant le 15 décembre précédant l'année universitaire, décision des établissements le 30 avril, réponse de l'étudiant avant le 31 mai) ainsi que le TCF auprès du CIEP.","status":"draft"},"en":{"text":"Check the application calendar (DAP deadlines: submit before 15 December of the year before the academic year, institution decision on 30 April, student reply by 31 May) and the TCF with CIEP.","status":"draft"}}}`
-  - "Pour postuler à une première inscription en L1, vous devez justifier d'une bonne connaissance du français. N'oubliez pas de vous inscrire au Test de Connaissance du Français (TCF) auprès du CIEP." — https://feg.univ-amu.fr/fr/candidature-inscription/candidature/demande-admission-prealable-dap
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | La page dédiée à ce programme (fiche Parcoursup) ne donne pas de frais de scolarité pour les étudiants hors UE : les 178 euros par année indiqués sont les droits nationaux, et la mention « Pas de frais pour les boursiers » ne concerne pas cet applicant. Le montant retenu pour la tuition (2 902 €/an en Licence) provient de la page institutionnelle d'Aix-Marseille Université sur les droits d'inscription différenciés 2026-27, qui précise aussi que ce montant s'applique aux étudiants extracommunautaires ; la page signale des cas d'exonération totale ou partielle (boursiers du gouvernement français, accords de coopération, exonération partielle à 75 % selon contingent), donc à vérifier avec l'université. La candidature via la plateforme Études en France / Campus France pour un titulaire de bac marocain est bien décrite sur la page « Candidature en 1ère année de licence et en PASS/L.AS à l'université » de Campus France Maroc ; applicationChannel n'est pas produit ici conformément à la consigne. Le niveau de français B2 est indiqué comme « niveau requis » dans la fiche Parcoursup, mais aucun certificat ou test précis n'y est nommé ; les certifications françaises (TCF/DELF B2/DALF) sont décrites sur les pages Campus France, dont la dispense pour les formations 100 % en anglais qui ne s'applique pas ici (formation en français).
-
-## programs/fr-aix-marseille-universite-site-de-marseil-0130201y-licence-informatique-39215  _(batch b7-983d4f)_
-
-**Licence - Informatique - Portail René Descartes**
-
-- **durationYears**: `3`
-  - "La licence est un diplôme national de l’enseignement supérieur qui se prépare en six semestres au sein de l’Université." — https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise
-- **teachingLanguages**: `["fr"]`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39215&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France" — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39215&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":null,"acceptedTests":[]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39215&typeBac=0&originePc=0
-- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"En tant qu'étudiant marocain titulaire d'un Bac marocain, vous devez candidater via la procédure Études en France / DAP (dossier blanc) et non sur Parcoursup ; vérifiez les modalités et les éventuelles exonérations des droits différenciés auprès de Campus France Maroc et d'Aix-Marseille Université.","status":"draft"},"en":{"text":"As a Moroccan student with a Moroccan Baccalauréat, you must apply via the Études en France / DAP procedure (dossier blanc) and not Parcoursup; check the arrangements and any exemption from the differentiated fees with Campus France Maroc and Aix-Marseille Université.","status":"draft"}}}`
-  - "Vous résidez dans un pays qui relève de la procédure CEF (procédure dématérialisée)" — https://feg.univ-amu.fr/fr/candidature-inscription/candidature/demande-admission-prealable-dap
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Durée : le programme en 3 ans est mentionné, mais des aménagements « licence en 4 ans au lieu de 3 » existent ; le portail est aussi annoncé comme « 1ère année de licence » (poursuite en L2/L3). Le montant de 2 902 € (droits différenciés Licence) est le tarif forfaitaire licenceniveau ANNUEL affiché par amU ; le site Campus France Maroc indique également 2 902 euros pour une année en cycle de Licence. Aucune date d'ouverture ou de limite de candidature pour ce programme n'est donnée par les pages pour un candidat hors UE (les dates Parcoursup et DAP concernent d'autres procédures) : intakes non renseignés. La langue B2 est un niveau requis pour s'inscrire, précisé avec la mention Langue vivante 1 : Anglais ; les étudiantes et étudiants internationaux hors UE non dispensés doivent présenter une certification de français (TCF/DELF/DALF) via Campus France Maroc, mais cette obligation n'est pas propre à ce programme. La voie d'accès normale pour un titulaire de bac marocain résidant au Maroc est Études en France / Campus France (dossier blanc DAP) ; Parcoursup vaut pour les bacs français et européens. Les pages ne précisent pas d'exonération des droits différenciés applicable à ce programme au-delà des cas généraux.
-
-## programs/fr-aix-marseille-universite-site-de-marseil-0134015u-licence-informatique-39214  _(batch b7-983d4f)_
-
-**Licence - Informatique - Portail René Descartes**
-
-- **durationYears**: `3`
-  - "La licence est un diplôme national de l’enseignement supérieur qui se prépare en six semestres au sein de l’Université." — https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise
-- **teachingLanguages**: `["fr"]`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39214&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France" — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39214&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Tuition: the amount is the differentiated tuition fee for non-EU students at French public universities, quoted from a Campus France Maroc page, not from the programme's own page. The programme's Parcoursup page states 'Par année 178 euros' but that is the rate for French/EU students. Application channel: for a Moroccan Bac holder the Études en France / Campus France procedure applies (per Campus France Maroc), not Parcoursup, which is for French and European Bac holders. The Parcoursup page confirms non-EU applicants do not use Parcoursup ('les candidats non ressortissants de l'U.E ... ne passent pas par la plateforme Parcoursup, mais par la procédure DAP'), but that DAP statement is a standard note; the Campus France Maroc page for L1 with a Moroccan Bac states the Etudes en France platform. The 'Niveau de français requis ... B2' is stated for the programme; the certification obligation (TCF/DELF B2/DALF) is a general Campus France Maroc procedure requirement, with dispensations for 100% English-taught programmes other than L1 — verify with the establishment.
-
-## programs/fr-eisine-charleville-mezieres-0081149f-licence-sciences-pour-lingenieur-44611  _(batch b7-983d4f)_
-
-**Licence - Sciences pour l'ingénieur - Parcours Matériaux et Mécanique**
-
-- **durationYears**: `3`
-  - "La licence est un diplôme national de l’enseignement supérieur qui se prépare en six semestres au sein de l’Université." — https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France" — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=44611&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":null,"acceptedTests":[]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=44611&typeBac=0&originePc=0
-- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez sur le site de l'établissement le montant exact des droits d'inscription applicables aux étudiants extracommunautaires ainsi que les exonérations éventuelles.","status":"draft"},"en":{"text":"Check the institution's website for the exact tuition fees applicable to non-EU students and any possible exemptions.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés. Il faut vous renseigner sur le site de l'établissement pour plus d'informations." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Le montant de 178 € par an figure sur la fiche Parcoursup comme frais de scolarité, mais il s'agit du tarif national ; les étudiants extracommunautaires peuvent être soumis aux droits différenciés (2 902 € pour une année de Licence) ou en être exonérés. La règle language_proficiency correspond au niveau B2 indiqué pour s'inscrire à la formation. Le site charleville-mezieres de l'EiSINe mentionne pour la formation ingénieur Matériaux et Mécanique une admissibilité sur dossier, entretien et tests, mais cette page décrit le diplôme d'ingénieur, pas la licence.
-
-## programs/fr-esireims-0511933z-licence-sciences-pour-lingenieur-44617  _(batch b7-983d4f)_
-
-**Licence - Sciences pour l'ingénieur - Parcours Classe Préparatoire Intégrée à dominante Packaging, Energie, Environnement**
-
-- **durationYears**: `3`
-  - "La licence est un diplôme national de l’enseignement supérieur qui se prépare en six semestres au sein de l’Université." — https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise
-- **teachingLanguages**: `["fr","en"]`
-  - "des enseignements en anglais général et scientifique ainsi qu’en expression écrite et orale en français" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=44617&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France" — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=44617&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":null,"acceptedTests":[]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=44617&typeBac=0&originePc=0
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Frais: la fiche Parcoursup n'indique que 178 euros par an (tarif non différencié, pour les étudiants français/UE) et 'Pas de frais pour les boursiers'; aucun montant pour un étudiant extra-communautaire n'est donné, donc la tuition est laissée hors du JSON (la page Campus France Maroc donne 2902 €/an en Licence pour les étudiants extra-communautaires, mais elle ne concerne pas nommément ce programme). Durée: la classe préparatoire intégrée est 'organisée sur 2 ans' (elle valide L1 et L2 de la licence SPI); la licence complète est un diplôme national de licence. Candidature: les pages Parcoursup/Campus France Maroc indiquent que les titulaires d'un Bac marocain doivent passer par Études en France / Campus France (pas Parcoursup), applicationChannel non demandé pour ce programme.
-
-## programs/fr-i-u-t-2-de-grenoble-0381775y-but-gestion-des-entreprises-et-d-4997  _(batch b7-983d4f)_
-
-**BUT - Gestion des entreprises et des administrations**
-
-- **durationYears**: `3`
-  - "Le BUT est un diplôme préparé en 3 ans en IUT" — https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
-- **teachingLanguages**: `["fr"]`
-  - "Langue(s) d'enseignement Français" — https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/but-bachelor-universitaire-de-technologie-BUT/but-gestion-des-entreprises-et-des-administrations-gea-grenoble-KI4NLQWW.html
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France." — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"C1","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : C1" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4997&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page.
-
-## programs/fr-i-u-t-angouleme-0161125l-but-genie-electrique-et-informat-3012  _(batch b7-983d4f)_
-
-**BUT - Génie électrique et informatique industrielle**
-
-- **durationYears**: `3`
-  - "Le BUT est un diplôme préparé en 3 ans en IUT" — https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
-- **teachingLanguages**: `["fr"]`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3012&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France." — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3012&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":null,"acceptedTests":[]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3012&typeBac=0&originePc=0
-- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"La mention du lycée d'origine : le dossier scolaire est examiné par un jury (notes de première et de terminale, appréciations, absentéisme, comportement, motivation) ; les candidats internationaux non titulaires d'un bac français ou européen et résidant dans un pays relevant de la procédure Études en France doivent candidater via Campus France, et non sur Parcoursup.","status":"draft"},"en":{"text":"For a non-EU applicant with a foreign diploma: admission is decided by a jury after review of the school record; applicants who hold no French or European baccalauréat and reside in a country covered by the Études en France procedure must apply via Campus France, not Parcoursup.","status":"draft"}}}`
-  - "L’admission est prononcée par un jury après examen du dossier scolaire, sur les critères suivants : évaluations obtenues au lycée avec une attention particulière pour les matières en rapport avec la spécialité, appréciations de l'équipe pédagogique et absentéisme, comportement dans toutes les matières, motivation pour la spécialité, connaissance des disciplines et du programme enseignés dans la spécialité." — https://iut-angouleme.univ-poitiers.fr/formations/b-u-t-geii-genie-electrique-et-informatique-industrielle/
-  - "vous ne devez pas vous inscrire sur Parcoursup" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3012&typeBac=0&originePc=0
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Aucun frais de scolarité spécifique à ce BUT pour un étudiant extracommunautaire n'est indiqué : la fiche Parcoursup ne mentionne que 178 euros par an, un tarif de premier cycle qui, selon la page Campus France Maroc, ne s'applique qu'aux étudiants français ou ressortissants de l'UE/EEE/Suisse, les étudiants extracommunautaires devant acquitter des droits différenciés (2 902 euros par an en Licence) ; le montant exact relève donc de l'établissement. Aucune date d'admission (ouverture des candidatures / date limite) propre à ce programme n'est donnée avec jour, mois et année. La langue d'enseignement n'est pas explicitement déclarée ; elle est présumée être le français (niveau de français requis B2 pour s'inscrire), une partie des cours pouvant être dispensée en anglais (English Week).
-
-## programs/fr-i-u-t-annecy-0741133e-but-informatique-8901  _(batch b8-8f614c)_
-
-**BUT - Informatique**
-
-- **durationYears**: `3`
-  - "Le BUT est un diplôme préparé en 3 ans en IUT" — https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France." — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"C1","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : C1" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"language_proficiency","language":"fr","minCefr":null,"certificateRequired":true,"acceptedTests":["delf-dalf","tcf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : C1" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez auprès de l'IUT d'Annecy les attendus et les épreuves de sélection (entretiens possibles du 11 au 18 mai 2026), ainsi que les enseignements de spécialité conseillés (Mathématiques et NSI pour les bacheliers généraux, SIN pour les bacheliers STI2D).","status":"draft"},"en":{"text":"Check with IUT Annecy the expected prior subjects and the selection process (possible interviews from 11 to 18 May 2026), as well as the recommended speciality subjects (Mathematics and NSI for general baccalaureate holders, SIN for STI2D holders).","status":"draft"}}}`
-  - "Les épreuves orales ou l'entretien auront lieu : Du lundi 11 mai 2026 au lundi 18 mai 2026" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0
-  - "Mathématiques spécialité et NSI pour les bacheliers généraux" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0
-  - "SIN pour les bacheliers STI2D" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8901&typeBac=0&originePc=0
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Le diplôme est un BUT (Bachelor Universitaire de Technologie) en 3 ans. Les 178 €/an sur la fiche Parcoursup correspondent aux droits d'inscription des étudiants français, des étudiants de l'UE/EEE/Suisse et des étudiants exonérés ; pour un étudiant marocain non exonéré s'appliquent les droits différenciés de 2 902 €/an (confirmés par Campus France Maroc et Campus France). Un projet de réforme (Studyrama, 2026) annonce 2 895 €/an, mais les pages officielles Campus France indiquent 2 902 €. La quote 'Les frais de dossier Campus France' est un fragment de menu, utilisée uniquement pour recommander une vérification, pas comme une règle de frais de dossier. Le C1 de français sur la fiche Parcoursup est un niveau requis pour s'inscrire, sans tableau d'équivalence vers le CECRL dans les pages fournies. L'IUT d'Annecy n'apparaît pas dans les pages USMB sur les étudiants extracommunautaires ; la voie d'accès Études en France est traitée séparément. Aucun test d'anglais (TOEIC, TOEFL, IELTS) n'est exigé sur la fiche ; ils sont simplement mentionnés par Campus France pour les formations 100% anglaises, ce qui n'est pas le cas (seul le 1er semestre de 3e année d'un parcours est en anglais).
-
-## programs/fr-i-u-t-clermont-auvergne-site-daubiere-0632085z-but-informatique-7596  _(batch b8-8f614c)_
-
-**BUT - Informatique**
-
-- **durationYears**: `3`
-  - "Le BUT est un diplôme préparé en 3 ans en IUT" — https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
-- **teachingLanguages**: `["fr"]`
-  - "Langues d'enseignement Français" — https://www.uca.fr/formation/nos-formations/par-ufr-ecoles-et-iut/iut-clermont-auvergne/but/but-informatique-clermont
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France." — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7596&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["delf-dalf","tcf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7596&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-  - "Vous pouvez passer un TCF TP (tout public), un DELF B2 ou un DALF C1/C2 pour toutes les candidatures." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez le test d'admission : les épreuves écrites (présentiel) sont prévues du 18 au 25 avril 2026 et servent à évaluer la motivation et l'aptitude à suivre le BUT informatique.","status":"draft"},"en":{"text":"Check the admission test: written exams (on site) are scheduled 18–25 April 2026 and assess motivation and ability to follow the BUT Informatique.","status":"draft"}}}`
-  - "Les épreuves écrites auront lieu : Du samedi 18 avril 2026 au samedi 25 avril 2026" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7596&typeBac=0&originePc=0
-  - "Durant cette épreuve, seront évaluées la motivation et les capacités à suivre le BUT informatique (aucune compétence en informatique n'est évaluée)." — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7596&typeBac=0&originePc=0
-- **requirement req-5**: `{"kind":"manual_check","note":{"fr":{"text":"Les résultats scolaires (notes en mathématiques, anglais, français, philosophie) comptent pour 40 % et la motivation pour 40 % dans les critères d'analyse ; le dossier doit être argumenté.","status":"draft"},"en":{"text":"Academic results (marks in mathematics, English, French, philosophy) count for 40% and motivation for 40% of the review criteria; the application must be well argued.","status":"draft"}}}`
-  - "Prioritairement les notes en matières scientifiques dont les mathématiques ; l’anglais, le français, la philosophie lorsque ces enseignements sont suivis, ou leurs équivalents" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7596&typeBac=0&originePc=0
-  - "Veillez à bien argumenter votre projet de formation." — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7596&typeBac=0&originePc=0
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Durée : la fiche du programme indique « 3 ans » et « six semestres » ; la fiche Parcoursup confirme « décliné sur trois ans ». Langue d'enseignement : « Français » sur la fiche UCA ; l'anglais est uniquement une langue vivante (LV1), pas la langue d'enseignement. Des droits différenciés (2 902 €/année en Licence) sont dus par un étudiant extra-communautaire non exonéré : à l'UCA, « tous les étudiants (hormis ceux de l'INP) sont soumis aux mêmes droits d'inscription jusqu'en 2025-2026 inclus » et certains établissements exonèrent — vérifier sur le site de l'établissement. Aucun frais propre à ce BUT n'est indiqué sur sa fiche Parcoursup (elle affiche « 178 euros » par année, montant national non différencié, donc non retenu). Voie d'admission non extraite comme demandé : le candidat marocain avec bac marocain passe par Études en France/Campus France (voir https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces et https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut). La date limite du 15 novembre 2026 concerne le programme ADIUT Maroc et le BUT en général, pas ce BUT ; elle n'est donc pas reprise comme intake. Aucune date de début d'intake (rentrée) n'est donnée avec jour, mois et année pour ce programme.
-
-## programs/fr-i-u-t-clermont-auvergne-site-de-montluco-0031134s-but-techniques-de-commercialisat-2143  _(batch b8-8f614c)_
-
-**BUT - Techniques de commercialisation**
-
-- **durationYears**: `3`
-  - "Le BUT est un diplôme préparé en 3 ans en IUT" — https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
-- **teachingLanguages**: `["fr"]`
-  - "Langues d'enseignement Français" — https://iut.uca.fr/formations/but-techniques-de-commercialisation-montlucon
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France." — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"C1","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : C1" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2143&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"language_proficiency","language":"fr","minCefr":"C1","certificateRequired":null,"acceptedTests":[]}`
-  - "Niveau de français requis pour s'inscrire à la formation : C1" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2143&typeBac=0&originePc=0
-- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"Admission sur dossier de candidature et entretien : préparez un dossier complet et un entretien de motivation ; vérifiez les critères d'analyse des candidatures (résultats scolaires, motivation, projet).","status":"draft"},"en":{"text":"Admission is based on an application file and an interview: prepare a complete file and a motivation interview; check the stated selection criteria (academic results, motivation, project).","status":"draft"}}}`
-  - "Admission sur dossier de candidature et entretien pour les titulaires de baccalauréat (toutes filières) ou diplôme de niveau équivalent." — https://iut.uca.fr/formations/but-techniques-de-commercialisation-montlucon
-  - "Si nécessaire, un entretien pourra être mené par un enseignant du département avec le candidat afin d'apprécier sa motivation." — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2143&typeBac=0&originePc=0
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Le montant des droits différenciés pour les étudiants extra-communautaires n'est pas fixé pour la rentrée 2026-2027 : la page UCA indique que l'arrêté est à venir pour 2027-2028 et donne, à titre indicatif seulement, le montant appliqué en 2026-2027. Le tarif de 178 euros par an de la fiche Parcoursup ne concerne pas un étudiant marocain extra-communautaire (étudiants français/UE). La certification de français (TCF/DELF B2/DALF) est obligatoire pour la procédure de candidature Campus France Etudes en France pour un titulaire de bac marocain ; le BUT est une formation sélective pour laquelle un entretien peut être demandé.
-
-## programs/fr-i-u-t-clermont-auvergne-site-de-moulins-0031060l-but-techniques-de-commercialisat-2154  _(batch b8-8f614c)_
-
-**BUT - Techniques de commercialisation**
-
-- **durationYears**: `3`
-  - "Le BUT est un diplôme préparé en 3 ans en IUT" — https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France." — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2154&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":null,"acceptedTests":[]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2154&typeBac=0&originePc=0
-- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"L'admission est sélective : les résultats scolaires sont analysés et un entretien oral d'environ 10 minutes est prévu pour les candidats retenus. Vérifiez les modalités exactes auprès de l'établissement, car la procédure pour les candidats avec un baccalauréat marocain passe par Études en France / Campus France et non par Parcoursup.","status":"draft"},"en":{"text":"Admission is selective: school results are reviewed and an oral interview of about 10 minutes is scheduled for shortlisted applicants. Check the exact modalities with the institution, as applicants with a Moroccan Baccalauréat apply via Études en France / Campus France and not Parcoursup.","status":"draft"}}}`
-  - "La sélection des candidats est basée sur les dossiers des candidats (tous les bulletins scolaires sont demandés) et sur des entretiens oraux." — https://iut.uca.fr/formations/but-techniques-de-commercialisation-moulins
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Le montant des droits d'inscription différenciés pour les étudiants extra-communautaires n'est pas indiqué pour cette formation à Moulins. Les pages de l'UCA et de l'IAE mentionnent respectivement 2902€/an pour la licence (année 2026-2027, montant qui évolue à partir de 2027-2028) et des pages non mises à jour pour 2025/2026. La page Parcoursup indique des frais de 178 euros par an, mais il s'agit des droits pour les étudiants français et européens, pas pour les étudiants extra-communautaires ; à vérifier auprès de l'établissement. Les pages indiquent également que les candidats titulaires d'un bac français ou européen passent par Parcoursup, tandis que les titulaires d'un bac marocain doivent passer par la plateforme Études en France de Campus France ; la modalité d'application n'est donc pas extraite ici conformément à la tâche.
-
-## programs/fr-i-u-t-daix-marseille-site-de-digne-0040522w-but-gestion-administrative-et-co-2168  _(batch b8-8f614c)_
-
-**BUT - Gestion administrative et commerciale des organisations**
-
-- **durationYears**: `3`
-  - "Le BUT est un diplôme préparé en 3 ans en IUT" — https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France." — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"C1","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : C1" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2168&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"language_proficiency","language":"fr","minCefr":"C1","certificateRequired":null,"acceptedTests":[]}`
-  - "Niveau de français requis pour s'inscrire à la formation : C1" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2168&typeBac=0&originePc=0
-- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"Toutes les spécialités de baccalauréat permettent de candidater ; des enseignements de spécialité sont privilégiés (histoire-géographie/géopolitique/SES, LLCER, mathématiques, SES) ainsi que le bac STMG.","status":"draft"},"en":{"text":"All baccalauréat specialities allow you to apply; some are favoured (history-geography/geopolitics, languages-literatures-foreign cultures, mathematics, economics and social sciences) as well as the STMG technological bac.","status":"draft"}}}`
-  - "Titulaires du baccalauréat de voie générale enseignements de spécialités privilégiés : Histoire-géographie, géopolitique et sciences politiques - Langues, littératures et cultures étrangères - Mathématiques -Sciences économiques et sociales." — https://iut.univ-amu.fr/fr/formations/bachelor-universitaire-de-technologie/but-gestion-administrative-commerciale-organisations
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Aucun frais de scolarité spécifique aux étudiants hors UE/EEE n'est indiqué pour ce BUT : la fiche du programme ne donne que « Droits d’inscription nationaux : 178€* » (tarif en formation initiale) et la fiche Parcoursup « Par année 178 euros », montants qui concernent les droits nationaux et non les droits différenciés ; le montant des droits différenciés Licence pour 2026-27 (2 902 €) figure sur une page institutionnelle générale, pas sur la page du programme, et une exonération (partielle à 75% ou de plein droit) peut s'appliquer : à vérifier auprès de l'établissement. Les langues d'enseignement ne sont pas mentionnées ; la fiche Parcoursup indique seulement « Langue vivante 1 : Anglais / Langue vivante 2 : Espagnol, Italien » (langues enseignées, pas langue d'enseignement), et le niveau de français C1 de la fiche Parcoursup n'est pas confirmé pour la voie Études en France. Le programme est dispensé en français : présenter la certification de français exigée par la procédure Campus France (TCF/DELF B2/DALF), le niveau B2 étant seulement « recommandé ». Les dates d'ouverture et de limite de dépôt des candidatures ne sont pas données sur ces pages.
-
-## programs/fr-i-u-t-de-bayonne-0641478j-but-genie-industriel-et-maintena-7757  _(batch b8-8f614c)_
-
-**BUT - Génie industriel et maintenance**
-
-- **durationYears**: `3`
-  - "Le BUT est un diplôme préparé en 3 ans en IUT" — https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
-- **teachingLanguages**: `["fr"]`
-  - "Langue(s) d'enseignement Français" — https://formation.univ-pau.fr/fr/catalogue/bachelor-universitaire-de-technologie-but-BUT/b-u-t-genie-industriel-et-maintenance-L45ATPKW.html
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **intakes**: `[{"startDate":null,"applicationOpens":"2026-10-01","applicationDeadline":"2026-11-15"}]`
-  - "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)." — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
-- **applicationChannel**: `fr-campus-france`
-  - "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France." — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7757&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["delf-dalf","tcf"]}`
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-  - "Vous pouvez passer un TCF TP (tout public), un DELF B2 ou un DALF C1/C2 pour toutes les candidatures." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-  - "Les étudiants qui postulent en 1ère année de licence à l'université (L1) ne seront pas dispensés de la certification de français." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"La sélection se fait sur dossier : notes de 1ère et de terminale, appréciations des professeurs et lettre de motivation. Vérifiez les attendus et les critères d'analyse des candidatures auprès de l'établissement.","status":"draft"},"en":{"text":"Selection is based on the application file: 1ère and terminale grades, teachers' comments and a motivation letter. Check the entry requirements and application assessment criteria with the institution.","status":"draft"}}}`
-  - "La sélection est faite sur dossier en tenant compte de l'ensemble des notes et appréciations figurant sur les bulletins de notes et du projet de formation." — https://formation.univ-pau.fr/fr/catalogue/bachelor-universitaire-de-technologie-but-BUT/b-u-t-genie-industriel-et-maintenance-L45ATPKW.html
-  - "Résultats scolaires 25 % Méthodes de travail 25 % Savoir-être 20 % Motivation 20 % Engagement et activités 10 %" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7757&typeBac=0&originePc=0
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Le montant de 2 902 €/an correspond aux droits différenciés pour un étudiant extra-communautaire (Maroc) en licence ; il est décrit comme un minimum en formation continue, et le montant de 178 €/an figurant sur la fiche Parcoursup concerne les droits nationaux (UE). L'IUT/UPPA indique que pour les étudiants étrangers avec diplômes étrangers il faut contacter le service relations internationales : vérifier le montant exact. La date limite du 15 novembre 2026 et l'ouverture du 1er octobre 2026 proviennent du calendrier ADIUT Maroc 2026 (programme spécifique Maroc) ; le calendrier 2026-2027 pourra évoluer. Aucune date de rentrée n'est indiquée sur les pages.
-
-## programs/fr-i-u-t-de-besancon-0251018w-but-genie-mecanique-et-productiq-3506  _(batch b8-8f614c)_
-
-**BUT - Génie mécanique et productique**
-
-- **durationYears**: `3`
-  - "Le BUT est un diplôme préparé en 3 ans en IUT" — https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
-- **teachingLanguages**: `["fr"]`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3506&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **intakes**: `[{"startDate":null,"applicationOpens":"2026-10-01","applicationDeadline":"2026-11-15"}]`
-  - "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)." — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
-- **applicationChannel**: `fr-campus-france`
-  - "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France." — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3506&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Un entretien oral de sélection peut être organisé entre le 4 et le 7 mai 2026 ; consultez la convocation qui vous sera envoyée.","status":"draft"},"en":{"text":"A selection interview may be held between 4 and 7 May 2026; check the invitation that will be sent to you.","status":"draft"}}}`
-  - "Les épreuves orales ou l'entretien auront lieu : Du lundi 04 mai 2026 au jeudi 07 mai 2026" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3506&typeBac=0&originePc=0
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Le tarif de 178 €/an affiché est réservé aux étudiants de l'UE/EEE/Suisse et aux boursiers selon la fiche ; pour un étudiant marocain (hors UE), il n'est pas applicable. Les droits différenciés propres à cette formation ne sont pas indiqués ; les 2 902 €/an proviennent de la page UFR STGI de l'Université Marie et Louis Pasteur pour un Bachelor. La candidature Hors-UE / bac marocain passe par Études en France / Campus France ; non exporté conformément à la consigne.
-
-## programs/fr-i-u-t-de-besancon-antenne-de-vesoul-0701048j-but-genie-industriel-et-maintena-8604  _(batch b8-8f614c)_
-
-**BUT - Génie industriel et maintenance**
-
-- **durationYears**: `3`
-  - "Le BUT est un diplôme préparé en 3 ans en IUT" — https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
-- **teachingLanguages**: `["fr"]`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8604&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France." — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8604&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":null,"acceptedTests":[]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8604&typeBac=0&originePc=0
-- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez sur le site de l'UFR STGI et de l'université les modalités d'inscription et les frais applicables aux étudiants internationaux hors UE.","status":"draft"},"en":{"text":"Check the UFR STGI and university websites for the registration procedure and fees applicable to non-EU international students.","status":"draft"}}}`
-  - "Apply if you reside in a country affected by the “Études en France” procedure* : all information here" — https://stgi.umlp.fr/informations/inscriptions-admissions/
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | No tuition figure is stated for this specific programme for a non-EU applicant. The Parcoursup page mentions 178 euros/year, but it does not say this applies to a person with a Moroccan Baccalauréat (and the Campus France pages state 2 902 euros pour une année en cycle de Licence for extra-communautaire students, but that general figure is not specific to this BUT at this IUT). The B2 language requirement appears on the Parcoursup fiche with a B2 level, while the Campus France Maroc page describes the same level as recommended; the language proficiency rule is given as a manual check in the notes rather than as a hard requirement. No intake/application dates for this specific programme were found on the supplied pages: the ADIUT Maroc calendar is for BUT applicants generally and the quoted 2026/2027 calendar dates refer to the 2025/2026 session.
-
-## programs/fr-i-u-t-de-blagnac-0311713u-but-genie-industriel-et-maintena-4196  _(batch b8-8f614c)_
-
-**BUT - Génie industriel et maintenance**
-
-- **durationYears**: `3`
-  - "Le BUT est un diplôme préparé en 3 ans en IUT" — https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
-- **teachingLanguages**: `["fr"]`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4196&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France." — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4196&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":null,"acceptedTests":[]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4196&typeBac=0&originePc=0
-- **requirement req-4**: `{"kind":"language_proficiency","language":"en","minCefr":null,"certificateRequired":null,"acceptedTests":[]}`
-  - "Avoir une connaissance suffisante de l’anglais permettant de progresser pendant la formation" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4196&typeBac=0&originePc=0
-- **requirement req-5**: `{"kind":"manual_check","note":{"fr":{"text":"La certification de français (TCF, DELF B2, DALF) est obligatoire pour la procédure Études en France, sauf cas de dispense, mais les dossiers en première année de licence (L1) ne sont pas dispensés.","status":"draft"},"en":{"text":"The French certification (TCF, DELF B2, DALF) is mandatory for the Études en France procedure, except in exemption cases, but first-year licence (L1) applicants are not exempted.","status":"draft"}}}`
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-  - "Les étudiants qui postulent en 1ère année de licence à l'université (L1) ne seront pas dispensés de la certification de français." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Aucun frais de scolarité spécifique à ce programme pour un étudiant hors UE n'est indiqué : la fiche Parcoursup affiche 178 euros par année, un tarif national (licence) qui ne concerne pas un étudiant extracommunautaire, et les pages UT2J mentionnent des droits différenciés (2 902 € pour une licence en 2026-2027) mais sont des pages d'établissement générales. Ces deux chiffres sont donc écartés. Aucune date d'intake avec jour, mois et année n'est donnée pour ce programme. La candidature pour un étudiant marocain titulaire du Bac marocain passe par Études en France / Campus France, non par Parcoursup.
-
-## programs/fr-i-u-t-de-bordeaux-site-de-gradignan-0333357v-but-informatique-4345  _(batch b8-8f614c)_
-
-**BUT - Informatique**
-
-- **durationYears**: `3`
-  - "Le BUT est un diplôme préparé en 3 ans en IUT" — https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
-- **teachingLanguages**: `["fr"]`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4345&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}`
-  - "2 902 euros pour une année en cycle de Licence" — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **applicationChannel**: `fr-campus-france`
-  - "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France." — https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4345&typeBac=0&originePc=0
-  - "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France." — https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-  - "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés." — https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
-- **requirement req-3**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":null,"acceptedTests":[]}`
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4345&typeBac=0&originePc=0
-- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"La sélection se fait sur dossier et est très sélective pour les bacs généraux : résultats scolaires (40 %), méthodes de travail, savoir-être, motivation et engagement. Bac général ou bac technologique STI2D requis (les bacs professionnels ne sont pas recrutés).","status":"draft"},"en":{"text":"Selection is based on application files and is highly selective for general baccalaureate holders: academic results (40%), working methods, soft skills, motivation and engagement. A general baccalaureate or STI2D technological baccalaureate is required (vocational baccalaureates are not recruited).","status":"draft"}}}`
-  - "Nous ne recrutons que des bacs généraux dans cette série." — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4345&typeBac=0&originePc=0
-  - "Résultats scolaires 40 %" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4345&typeBac=0&originePc=0
-- **requirement req-5**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifier les conditions d'inscription administrative et les frais auprès de l'université de Bordeaux : un tarif spécifique s'applique à certains étudiants extra-communautaires et des exonérations sont possibles selon l'établissement.","status":"draft"},"en":{"text":"Check registration conditions and fees with the University of Bordeaux: a specific fee applies to some non-EU students and exemptions may be possible depending on the institution.","status":"draft"}}}`
-  - "Un tarif spécifique s'applique à certains étudiants extra-communautaires." — https://www.iut.u-bordeaux.fr/formations/info/
-
-> Preparer's caveats: Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Tuition: the Parcoursup fiche for this BUT states 178 € per year, but that rate applies to French and EU/EEA (and equivalent) students; for non-EU students the dedicated University of Bordeaux tuition-fees page states 2 902 € per year for a Bachelor degree / BUT for the 2026-2027 year, and Campus France Maroc confirms 2 902 euros pour une année en cycle de Licence for extra-communautaire students. No intake dates or application platform are recorded here: a Moroccan Bac holder applies via Études en France / Campus France, while the pages that mention Parcoursup or the ADIUT calendar (1er octobre 2026 au 15 novembre 2026) address French/European Bac holders. Teaching language: the programme is taught in French (B2 French required); English is only a subject (Langue vivante 1 : Anglais). Duration: 3 ans confirmed both by the Parcoursup fiche and the IUT page (Niveau Licence Bac + 3).
+## institutions/de-baden-wuerttemberg-cooperative-state-uni-daad-mosbach  _(batch b9-34f450)_
+
+**Baden-Wuerttemberg Cooperative State University**
+
+- **website**: `https://www.mosbach.dhbw.de/`
+- evidence: "| Duale Hochschule Baden-Württemberg Duale Hochschule Baden-Württemberg Logo, zur" — https://www.dhbw.de/informationen/studieninteressierte
+
+## institutions/de-hochschule-fresenius-university-of-appli-daad-koln  _(batch b9-34f450)_
+
+**Hochschule Fresenius - University of Applied Sciences**
+
+- **website**: `https://www.hs-fresenius.com/`
+- evidence: "Study at Fresenius University of Applied Sciences in Germany 🚀 Schrift" — https://www.hs-fresenius.com/
+
+## institutions/nl-avans-hogeschool-07gr-breda  _(batch b9-34f450)_
+
+**Avans Hogeschool**
+
+- **website**: `https://www.avans.nl/`
+- evidence: "Avans Hogeschool kennisinstelling-opleidingen-onderzoek Direct" — https://www.avans.nl/
+- **page**: https://www.avans.nl/
+
+## institutions/nl-de-haagse-hogeschool-27um  _(batch b9-34f450)_
+
+**De Haagse Hogeschool**
+
+- **website**: `https://www.dehaagsehogeschool.nl/`
+- evidence: "Welkom bij De Haagse | De Haagse Hogeschool Ga naar content Logo van De Haagse" — https://www.dehaagsehogeschool.nl/
+- **page**: https://www.dehaagsehogeschool.nl/
+
+## institutions/nl-erasmus-universiteit-rotterdam-21pe  _(batch b9-34f450)_
+
+**Erasmus Universiteit Rotterdam**
+
+- **website**: `https://www.eur.nl/`
+- evidence: "Erasmus University Rotterdam Overslaan en naar de inhoud gaan" — https://www.eur.nl/
+- **page**: https://www.eur.nl/
+
+## institutions/nl-hogeschool-inholland-27pz-delft  _(batch b9-34f450)_
+
+**Hogeschool Inholland**
+
+- **website**: `https://www.inholland.nl/`
+- evidence: "| Hogeschool Inholland International students Zoeken Login Opleidingen Bekijk onze" — https://www.inholland.nl/
+- **page**: https://www.inholland.nl/
+
+## institutions/nl-hogeschool-inholland-27pz-haarlem  _(batch b9-34f450)_
+
+**Hogeschool Inholland**
+
+- **website**: `https://www.inholland.nl/`
+- evidence: "| Hogeschool Inholland International students Zoeken Login Opleidingen Bekijk onze" — https://www.inholland.nl/
+- **page**: https://www.inholland.nl/
+
+## institutions/nl-hogeschool-inholland-27pz-velsen-noord  _(batch b9-34f450)_
+
+**Hogeschool Inholland**
+
+- **website**: `https://www.inholland.nl/`
+- evidence: "| Hogeschool Inholland International students Zoeken Login Opleidingen Bekijk onze" — https://www.inholland.nl/
+- **page**: https://www.inholland.nl/
+
+## institutions/nl-hogeschool-leiden-21ri  _(batch b9-34f450)_
+
+**Hogeschool Leiden**
+
+- **website**: `https://www.hsleiden.nl/`
+- evidence: "Hogeschool Leiden: opleidingen, cursussen en onderzoek met Overslaan en naar" — https://www.hsleiden.nl/
+
+## institutions/nl-hogeschool-van-arnhem-en-nijmegen-25kb  _(batch b9-34f450)_
+
+**Hogeschool van Arnhem en Nijmegen**
+
+- **website**: `https://www.han.nl/`
+- evidence: "op de HAN Campus Arnhem of Nijmegen. En na je colleges? Studeren, drankje doen… op" — https://www.han.nl/opleidingen/hbo/ict/voltijd/
+- **page**: https://www.han.nl/
 

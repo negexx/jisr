@@ -1,0 +1,63 @@
+slug: nl-hogeschool-utrecht-25dw-accountancy-1001o3544
+institution: nl-hogeschool-utrecht-25dw
+country: NL
+city: utrecht
+field: business-economics
+level: bachelor
+name: Accountancy
+summary:
+  fr:
+    text: Accountancy (Accountancy), Hogeschool Utrecht (Utrecht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Accountancy (Accountancy), Hogeschool Utrecht (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Accountancy (Accountancy), Hogeschool Utrecht (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hu.nl/voltijd-opleidingen/accountancy
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez les conditions d'admission : un diplôme havo, vwo ou mbo-4 est requis ; sans ce diplôme et si vous avez 21 ans ou plus, un toelatingsonderzoek (examen d'admission) est nécessaire. Consultez la page complète des conditions d'admission."
+          status: draft
+        en:
+          text: "Check the admission requirements: a havo, vwo or mbo-4 diploma is required; without it, if you are 21 or older, a toelatingsonderzoek (admission examination) is required. See the full admission requirements page."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hu.nl/voltijd-opleidingen/accountancy
+    last_verified_at: 2026-10-01

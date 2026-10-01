@@ -21,15 +21,16 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
-  source: programme
+  value:
+    - fr
+  source: page-3
   info_kind: official
 tuition:
   value:
     amountMinor: 290200
     currency: EUR
     period: year
-  source: page-3
+  source: page-4
   info_kind: official
 intakes:
   value: null
@@ -37,7 +38,7 @@ intakes:
   info_kind: official
 applicationChannel:
   value: fr-campus-france
-  source: page-4
+  source: page-5
   info_kind: official
 documents:
   value: null
@@ -59,7 +60,7 @@ requirements:
         - tcf
         - delf-dalf
     - id: req-2
-      source: page-3
+      source: page-4
       info_kind: official
       kind: manual_check
       note:
@@ -72,6 +73,27 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: page-6
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests:
+        - delf-dalf
+        - tcf
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "La formation est sélective : l'admission dépend de l'examen du dossier (résultats scolaires, motivation, savoir-être) et éventuellement d'un entretien. Vérifiez les modalités exactes auprès de l'IUT de Béthune et sur Études en France."
+          status: draft
+        en:
+          text: "The programme is selective: admission depends on a review of the application (academic results, motivation, soft skills) and possibly an interview. Check the exact procedures with IUT de Béthune and on Études en France."
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -81,8 +103,14 @@ sources:
     url: https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
     last_verified_at: 2026-10-01
   page-3:
-    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    url: https://formations.univ-artois.fr/fr/formations/feuilleter-le-catalogue/but-DR/but-genie-civil-construction-durable-LJ6VCW1W.html
     last_verified_at: 2026-10-01
   page-4:
+    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    last_verified_at: 2026-10-01
+  page-5:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01
+  page-6:
+    url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
     last_verified_at: 2026-10-01

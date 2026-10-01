@@ -1,0 +1,97 @@
+slug: nl-hogeschool-leiden-21ri-bio-informatica-1001o5219
+institution: nl-hogeschool-leiden-21ri
+country: NL
+city: leiden
+field: computer-science
+level: bachelor
+name: Bio-informatica
+summary:
+  fr:
+    text: Bio-informatica (Bio-informatics), Hogeschool Leiden (Leiden). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Bio-informatica (Bio-informatics), Hogeschool Leiden (Leiden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bio-informatica (Bio-informatics), Hogeschool Leiden (Leiden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hsleiden.nl/opleiding/bio-informatica
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 977500
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2027-05-01
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Pour un diplôme non néerlandais, Hogeschool Leiden évalue votre diplôme sur la base d'une évaluation Nuffic ; des délais d'inscription différents s'appliquent. Consultez la page 'Studenten uit het buitenland'.
+          status: draft
+        en:
+          text: For a non-Dutch diploma, Hogeschool Leiden assesses your diploma based on a Nuffic credential evaluation; different application deadlines apply. Check the 'Studenten uit het buitenland' page.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La page indique que les diplômes havo, vwo ou mbo niveau 4 donnent accès, avec des exigences de profil (N&G, N&T ou E&M) ; vérifiez votre éligibilité avec un Baccalauréat marocain.
+          status: draft
+        en:
+          text: The page states that havo, vwo or mbo level 4 diplomas give access, with profile requirements (N&G, N&T or E&M); check your eligibility with a Moroccan Baccalauréat.
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Sans diplôme admissible et âgé de 21 ans ou plus, vous pouvez demander le Toelatingsonderzoek 21+ ; la deadline pour Bio-informatica est le 1 juin 2026.
+          status: draft
+        en:
+          text: Without an admissible diploma and aged 21 or over, you can apply for the Toelatingsonderzoek 21+; the deadline for Bio-informatica is 1 June 2026.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hsleiden.nl/opleiding/bio-informatica
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.hsleiden.nl/studeren/inschrijven/kosten
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.hsleiden.nl/studeren/inschrijven/toelating
+    last_verified_at: 2026-10-01

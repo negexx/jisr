@@ -1,0 +1,84 @@
+slug: nl-avans-hogeschool-07gr-breda-ict-1016o4948
+institution: nl-avans-hogeschool-07gr-breda
+country: NL
+city: breda
+field: computer-science
+level: bachelor
+name: ICT
+summary:
+  fr:
+    text: ICT (ICT), Avans Hogeschool (Breda). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: ICT (ICT), Avans Hogeschool (Breda). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: ICT (ICT), Avans Hogeschool (Breda). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1030800
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez que votre diplôme (baccalauréat marocain) est accepté ; les pages ne listent que havo, vwo, mbo-niveau 4, hbo-propedeuse et wo-propedeuse. Contactez Student Support pour l'instroomcoördinator.
+          status: draft
+        en:
+          text: Check that your diploma (Moroccan Baccalauréat) is accepted; the pages only list havo, vwo, mbo-niveau 4, hbo-propedeuse and wo-propedeuse. Contact Student Support for the instroomcoördinator.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats non-EEA doivent postuler avant le 1er mai et payer les frais de scolarité avant le 15 juin ; vérifiez ces dates et le paiement.
+          status: draft
+        en:
+          text: Non-EEA applicants must apply by May 1st and pay tuition fees by June 15; check these dates and payment.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.avans.nl/en/int/studying/practical-information/tuition-fees
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.avans.nl/studeren/praktische-zaken/studiekosten
+    last_verified_at: 2026-10-01

@@ -1,0 +1,88 @@
+slug: de-hochschule-fresenius-university-of-appli-daad-koln-computer-science-bsc-daad9952
+institution: de-hochschule-fresenius-university-of-appli-daad-koln
+country: DE
+city: koln
+field: computer-science
+level: bachelor
+name: Computer Science (BSc)
+summary:
+  fr:
+    text: Computer Science (BSc), Hochschule Fresenius - University of Applied Sciences (Köln). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Computer Science (BSc), Hochschule Fresenius - University of Applied Sciences (Köln). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Computer Science (BSc), Hochschule Fresenius - University of Applied Sciences (Köln). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9952/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-university-direct
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'admission de 15 minutes est organisé ; il n'évalue pas les connaissances mais la motivation. Vérifiez aussi les exigences d'admission supplémentaires et la reconnaissance du diplôme étranger.
+          status: draft
+        en:
+          text: A 15-minute admission interview is held; it is not a knowledge test but about motivation. Also check the additional admission requirements and the recognition of your foreign school-leaving certificate.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les frais de scolarité peuvent varier ; consultez le site du programme pour le détail exact des coûts.
+          status: draft
+        en:
+          text: Tuition fees may vary; check the programme website for an exact breakdown of costs.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9952/
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.hs-fresenius.com/application-process/?crmid=aBbTjOcDaAaAaAaA
+    last_verified_at: 2026-10-01

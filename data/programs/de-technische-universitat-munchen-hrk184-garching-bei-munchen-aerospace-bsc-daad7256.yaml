@@ -15,39 +15,83 @@ summary:
   ar:
     text: Aerospace (BSc), Technische Universität München (Garching bei München). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/
+officialUrl: https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/
 durationYears:
   value: 3
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 300000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist-vpd
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: de
+      minCefr: A2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "L'admission dépend d'une procédure d'aptitude (Eignungsfeststellungsverfahren) en deux étapes : vérifiez les critères et les éventuels entretiens."
+          status: draft
+        en:
+          text: "Admission depends on a two-stage aptitude assessment procedure (Eignungsfeststellungsverfahren): check the criteria and any interviews."
+          status: draft
+    - id: req-4
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un stage préalable d'au moins huit semaines est requis ; il peut être fourni après l'inscription, à la fin de la première année d'études.
+          status: draft
+        en:
+          text: An eight-week pre-study internship is required; it can be submitted after enrolment, by the end of the first year of studies.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/
     last_verified_at: 2026-10-01

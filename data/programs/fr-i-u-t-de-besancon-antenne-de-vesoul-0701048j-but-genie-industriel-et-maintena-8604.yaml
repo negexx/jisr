@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -72,6 +73,25 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez sur le site de l'UFR STGI et de l'université les modalités d'inscription et les frais applicables aux étudiants internationaux hors UE.
+          status: draft
+        en:
+          text: Check the UFR STGI and university websites for the registration procedure and fees applicable to non-EU international students.
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -85,4 +105,7 @@ sources:
     last_verified_at: 2026-10-01
   page-4:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://stgi.umlp.fr/informations/inscriptions-admissions/
     last_verified_at: 2026-10-01

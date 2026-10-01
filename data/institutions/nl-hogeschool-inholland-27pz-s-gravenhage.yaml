@@ -1,0 +1,14 @@
+slug: nl-hogeschool-inholland-27pz-s-gravenhage
+name: Hogeschool Inholland
+country: NL
+city:
+  slug: s-gravenhage
+  name: "'s-Gravenhage"
+type: null
+website: https://www.inholland.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.inholland.nl/
+    last_verified_at: 2026-10-01

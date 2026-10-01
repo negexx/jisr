@@ -1,0 +1,63 @@
+slug: nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046
+institution: nl-christelijke-hogeschool-windesheim-01vu-almere
+country: NL
+city: almere
+field: engineering
+level: bachelor
+name: Bouwkunde
+summary:
+  fr:
+    text: Bouwkunde (Architecture and Construction Engineering), Christelijke Hogeschool Windesheim (Almere). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Bouwkunde (Architecture and Construction Engineering), Christelijke Hogeschool Windesheim (Almere). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bouwkunde (Architecture and Construction Engineering), Christelijke Hogeschool Windesheim (Almere). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier l'équivalence du diplôme marocain (baccalauréat) avec un diplôme néerlandais de havo, vwo ou mbo-4, et vérifier les exigences linguistiques (le niveau n'est pas précisé sur cette page).
+          status: draft
+        en:
+          text: Check equivalence of the Moroccan Baccalaureate with a Dutch havo, vwo or mbo-4 diploma, and check language requirements (level not specified on this page).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle
+    last_verified_at: 2026-10-01

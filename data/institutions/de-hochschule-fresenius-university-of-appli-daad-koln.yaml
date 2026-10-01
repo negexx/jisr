@@ -1,0 +1,14 @@
+slug: de-hochschule-fresenius-university-of-appli-daad-koln
+name: Hochschule Fresenius - University of Applied Sciences
+country: DE
+city:
+  slug: koln
+  name: Köln
+type: null
+website: https://www.hs-fresenius.com/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.hs-fresenius.com/
+    last_verified_at: 2026-10-01

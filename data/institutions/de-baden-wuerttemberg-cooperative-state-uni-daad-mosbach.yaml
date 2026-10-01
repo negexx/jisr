@@ -1,0 +1,14 @@
+slug: de-baden-wuerttemberg-cooperative-state-uni-daad-mosbach
+name: Baden-Wuerttemberg Cooperative State University
+country: DE
+city:
+  slug: mosbach
+  name: Mosbach
+type: null
+website: https://www.mosbach.dhbw.de/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.mosbach.dhbw.de/
+    last_verified_at: 2026-10-01

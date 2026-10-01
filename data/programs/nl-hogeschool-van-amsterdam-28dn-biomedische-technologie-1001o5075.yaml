@@ -1,0 +1,66 @@
+slug: nl-hogeschool-van-amsterdam-28dn-biomedische-technologie-1001o5075
+institution: nl-hogeschool-van-amsterdam-28dn
+country: NL
+city: amsterdam
+field: engineering
+level: bachelor
+name: Biomedische Technologie
+summary:
+  fr:
+    text: Biomedische Technologie (Biomedical Engineering), Hogeschool van Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Biomedische Technologie (Biomedical Engineering), Hogeschool van Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Biomedische Technologie (Biomedical Engineering), Hogeschool van Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hva.nl/opleidingen/biomedische-technologie
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez sur la page de l'opleiding si une admission supplémentaire ou un profil spécifique est requis pour votre diplôme de baccalauréat marocain.
+          status: draft
+        en:
+          text: Check the programme page whether additional admission requirements or a specific profile apply to your Moroccan Baccalaureate diploma.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hva.nl/opleidingen/biomedische-technologie
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/21-toelatingsonderzoek
+    last_verified_at: 2026-10-01

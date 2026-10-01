@@ -15,40 +15,81 @@ summary:
   ar:
     text: Applied Sustainable Engineering, Hochschule für angewandte Wissenschaften Ansbach (Ansbach). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/
+officialUrl: https://www.hs-ansbach.de/en/bachelor/applied-sustainable-engineering
 durationYears:
   value: 4
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
-    - de
     - en
-  source: daad
-  info_kind: guidance
+    - de
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 100000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez que vous réussissez l'examen d'entrée académique exigé, en plus de l'équivalence du diplôme d'entrée à l'université allemande.
+          status: draft
+        en:
+          text: Check that you pass the required academic entrance exam, in addition to the equivalence of the German university entrance certificate.
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Faites évaluer votre diplôme étranger par uni-assist (VPD) et joignez le VPD à votre candidature.
+          status: draft
+        en:
+          text: Have your foreign diploma assessed by uni-assist (VPD) and submit the VPD with your application.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://www.hs-ansbach.de/en/bachelor/applied-sustainable-engineering
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.hs-ansbach.de/en/info/for-prospective-students/applying-for-our-bachelors-and-masters-degree-programmes
     last_verified_at: 2026-10-01

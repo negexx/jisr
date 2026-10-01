@@ -1,0 +1,81 @@
+slug: nl-fontys-hogeschool-30gb-tilburg-technische-bedrijfskunde-1001o3682
+institution: nl-fontys-hogeschool-30gb-tilburg
+country: NL
+city: tilburg
+field: engineering
+level: bachelor
+name: Technische Bedrijfskunde
+summary:
+  fr:
+    text: Technische Bedrijfskunde (Industrial Engineering & Management), Fontys Hogeschool (Tilburg). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Technische Bedrijfskunde (Industrial Engineering & Management), Fontys Hogeschool (Tilburg). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Technische Bedrijfskunde (Industrial Engineering & Management), Fontys Hogeschool (Tilburg). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.fontys.nl/Opleidingen/Technische-Bedrijfskunde-bachelor-voltijd.htm
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez les exigences d'admission spécifiques pour les diplômés étrangers : consultez la page 'Toelating' (admission internationale) car la page du programme mentionne uniquement havo/vwo/mbo niveau 4."
+          status: draft
+        en:
+          text: "Check the specific admission requirements for foreign diploma holders: see the 'Toelating' (international admission) page, as the programme page only mentions havo/vwo/mbo level 4."
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Les frais de scolarité pour les étudiants hors EEE (instellingscollegegeld) sont fixés par le College van Bestuur et varient par programme : utilisez le collegegeldmeter pour le montant exact."
+          status: draft
+        en:
+          text: "Tuition for non-EEA students (instellingscollegegeld) is set by the Executive Board and varies per programme: use the collegegeldmeter for the exact amount."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.fontys.nl/Opleidingen/Technische-Bedrijfskunde-bachelor-voltijd.htm
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm
+    last_verified_at: 2026-10-01

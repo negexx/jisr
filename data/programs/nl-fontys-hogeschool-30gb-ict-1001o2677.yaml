@@ -1,0 +1,67 @@
+slug: nl-fontys-hogeschool-30gb-ict-1001o2677
+institution: nl-fontys-hogeschool-30gb
+country: NL
+city: eindhoven
+field: computer-science
+level: bachelor
+name: ICT
+summary:
+  fr:
+    text: ICT (Information & Communication Technology), Fontys Hogeschool (Eindhoven). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: ICT (Information & Communication Technology), Fontys Hogeschool (Eindhoven). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: ICT (Information & Communication Technology), Fontys Hogeschool (Eindhoven). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez les conditions d'admission complètes pour les étudiants internationaux titulaires d'un diplôme étranger (page 'Aanmelden internationaal' / 'Toelating') : votre Baccalauréat marocain doit être évalué."
+          status: draft
+        en:
+          text: "Check the full admission requirements for international students with a foreign diploma (page 'Aanmelden internationaal' / 'Toelating'): your Moroccan Baccalaureate must be assessed."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm
+    last_verified_at: 2026-10-01

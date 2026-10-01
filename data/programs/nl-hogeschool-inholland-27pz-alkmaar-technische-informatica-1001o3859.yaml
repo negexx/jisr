@@ -1,0 +1,52 @@
+slug: nl-hogeschool-inholland-27pz-alkmaar-technische-informatica-1001o3859
+institution: nl-hogeschool-inholland-27pz-alkmaar
+country: NL
+city: alkmaar
+field: computer-science
+level: bachelor
+name: Technische Informatica
+summary:
+  fr:
+    text: Technische Informatica (Computer Science), Hogeschool Inholland (Alkmaar). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Technische Informatica (Computer Science), Hogeschool Inholland (Alkmaar). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Technische Informatica (Computer Science), Hogeschool Inholland (Alkmaar). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.inholland.nl/opleidingen/technische-informatica-voltijd/de-opleiding/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.inholland.nl/opleidingen/technische-informatica-voltijd/de-opleiding/
+    last_verified_at: 2026-10-01

@@ -1,0 +1,92 @@
+slug: nl-de-haagse-hogeschool-27um-bouwkunde-1001o3065
+institution: nl-de-haagse-hogeschool-27um
+country: NL
+city: s-gravenhage
+field: engineering
+level: bachelor
+name: Bouwkunde
+summary:
+  fr:
+    text: Bouwkunde (Architecture and Construction Engineering), De Haagse Hogeschool ('s-Gravenhage). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Bouwkunde (Architecture and Construction Engineering), De Haagse Hogeschool ('s-Gravenhage). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bouwkunde (Architecture and Construction Engineering), De Haagse Hogeschool ('s-Gravenhage). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/bouwkunde
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez les exigences d'admission avec un diplôme étranger (Baccalauréat marocain) : le diplôme doit être au moins équivalent à un diplôme néerlandais donnant accès à l'enseignement supérieur. Contactez la Centrale Studenten Inschrijving."
+          status: draft
+        en:
+          text: "Check admission requirements with a foreign diploma (Moroccan Baccalauréat): the diploma must be at least equivalent to a Dutch diploma granting access to higher education. Contact Centrale Studenten Inschrijving."
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez le droit au tarif légal (wettelijk collegegeld) en tant qu'étudiant marocain : il faut la nationalité d'un pays de l'UE/EEE ou un permis de séjour néerlandais spécifique. Sinon, le tarif institutionnel s'applique."
+          status: draft
+        en:
+          text: "Check eligibility for the statutory tuition fee (wettelijk collegegeld) as a Moroccan student: you need EU/EEA nationality or a specific Dutch residence permit. Otherwise the institutional fee applies."
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les frais de scolarité varient selon votre situation (tarif légal ou institutionnel). Utilisez le 'collegegeldmeter' pour savoir quel tarif s'applique à vous, mais seule la Centrale Studenten Inschrijving peut confirmer.
+          status: draft
+        en:
+          text: Tuition fees vary depending on your situation (statutory or institutional rate). Use the 'collegegeldmeter' to see which rate applies to you, but only Centrale Studenten Inschrijving can confirm.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/bouwkunde
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld
+    last_verified_at: 2026-10-01

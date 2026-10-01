@@ -18,36 +18,71 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist-vpd
+  source: page-2
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si votre diplôme étranger (Baccalauréat marocain) est reconnu comme qualification d'entrée à l'université en Allemagne et si une VPD d'uni-assist est nécessaire.
+          status: draft
+        en:
+          text: Check whether your foreign certificate (Moroccan Baccalauréat) is recognised as a university entrance qualification in Germany and whether a uni-assist VPD is required.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les conditions d'admission spécifiques et, le cas échéant, l'exigence d'une convention de coopération avec une entreprise pour la variante intégrée en entreprise.
+          status: draft
+        en:
+          text: Check the specific admission requirements and, if applicable, the requirement of a cooperation agreement with a company for the work-integrated variant.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.hsbi.de/en/international-office/international-applicants/applying-for-work-integrated-programmes
     last_verified_at: 2026-10-01

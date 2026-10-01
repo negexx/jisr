@@ -1,0 +1,63 @@
+slug: nl-hogeschool-utrecht-25dw-chemische-technologie-1001o3152
+institution: nl-hogeschool-utrecht-25dw
+country: NL
+city: utrecht
+field: engineering
+level: bachelor
+name: Chemische Technologie
+summary:
+  fr:
+    text: Chemische Technologie (Chemical Engineering), Hogeschool Utrecht (Utrecht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Chemische Technologie (Chemical Engineering), Hogeschool Utrecht (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Chemische Technologie (Chemical Engineering), Hogeschool Utrecht (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hu.nl/voltijd-opleidingen/chemische-technologie
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les exigences de diplôme d'entrée (havo, vwo, mlo ou mbo Procestechniek niveau 4) et la possibilité d'un toelatingsonderzoek pour les candidats de 21 ans et plus, car votre Baccalauréat marocain peut nécessiter une évaluation.
+          status: draft
+        en:
+          text: Check the entry diploma requirements (havo, vwo, mlo or mbo Procestechniek level 4) and the possibility of a toelatingsonderzoek for applicants aged 21+, as your Moroccan Baccalauréat may need evaluation.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hu.nl/voltijd-opleidingen/chemische-technologie
+    last_verified_at: 2026-10-01

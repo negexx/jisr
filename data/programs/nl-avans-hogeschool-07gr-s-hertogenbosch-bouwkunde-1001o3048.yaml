@@ -1,0 +1,70 @@
+slug: nl-avans-hogeschool-07gr-s-hertogenbosch-bouwkunde-1001o3048
+institution: nl-avans-hogeschool-07gr-s-hertogenbosch
+country: NL
+city: s-hertogenbosch
+field: engineering
+level: bachelor
+name: Bouwkunde
+summary:
+  fr:
+    text: Bouwkunde (Architecture and Construction Engineering), Avans Hogeschool ('s-Hertogenbosch). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Bouwkunde (Architecture and Construction Engineering), Avans Hogeschool ('s-Hertogenbosch). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bouwkunde (Architecture and Construction Engineering), Avans Hogeschool ('s-Hertogenbosch). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les frais de scolarité institutionnels exacts et les modalités de paiement pour les étudiants non-EEE sur la page des frais de scolarité d'Avans.
+          status: draft
+        en:
+          text: Check the exact institutional tuition fee and payment details for non-EEA students on the Avans tuition fees page.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.avans.nl/studeren/praktische-zaken/studiekosten
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.avans.nl/en/int/studying/practical-information/tuition-fees
+    last_verified_at: 2026-10-01

@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -71,6 +72,25 @@ requirements:
           status: draft
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: null
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Les candidats non ressortissants de l'UE titulaires d'un diplôme étranger équivalent au bac doivent passer par la procédure DAP (dossier blanc) et non par Parcoursup : vérifiez cette procédure."
+          status: draft
+        en:
+          text: "Non-EU applicants holding a foreign diploma equivalent to the French bac must go through the DAP procedure (dossier blanc), not Parcoursup: check this procedure."
           status: draft
 scholarships: []
 sources:

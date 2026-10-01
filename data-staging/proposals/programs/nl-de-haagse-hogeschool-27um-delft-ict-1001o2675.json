@@ -71,7 +71,7 @@
         "kind": "language_proficiency",
         "language": "nl",
         "minCefr": null,
-        "certificateRequired": true,
+        "certificateRequired": null,
         "acceptedTests": [],
         "evidence": [
           {

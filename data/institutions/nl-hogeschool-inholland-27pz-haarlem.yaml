@@ -1,0 +1,14 @@
+slug: nl-hogeschool-inholland-27pz-haarlem
+name: Hogeschool Inholland
+country: NL
+city:
+  slug: haarlem
+  name: Haarlem
+type: null
+website: https://www.inholland.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.inholland.nl/
+    last_verified_at: 2026-10-01

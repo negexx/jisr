@@ -21,15 +21,16 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
-  source: programme
+  value:
+    - fr
+  source: page-3
   info_kind: official
 tuition:
   value:
     amountMinor: 290200
     currency: EUR
     period: year
-  source: page-3
+  source: page-4
   info_kind: official
 intakes:
   value: null
@@ -37,7 +38,7 @@ intakes:
   info_kind: official
 applicationChannel:
   value: fr-campus-france
-  source: page-4
+  source: page-5
   info_kind: official
 documents:
   value: null
@@ -59,7 +60,7 @@ requirements:
         - tcf
         - delf-dalf
     - id: req-2
-      source: page-3
+      source: page-4
       info_kind: official
       kind: manual_check
       note:
@@ -72,6 +73,38 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - delf-dalf
+        - tcf
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez le test d'admission : les épreuves écrites (présentiel) sont prévues du 18 au 25 avril 2026 et servent à évaluer la motivation et l'aptitude à suivre le BUT informatique."
+          status: draft
+        en:
+          text: "Check the admission test: written exams (on site) are scheduled 18–25 April 2026 and assess motivation and ability to follow the BUT Informatique."
+          status: draft
+    - id: req-5
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les résultats scolaires (notes en mathématiques, anglais, français, philosophie) comptent pour 40 % et la motivation pour 40 % dans les critères d'analyse ; le dossier doit être argumenté.
+          status: draft
+        en:
+          text: Academic results (marks in mathematics, English, French, philosophy) count for 40% and motivation for 40% of the review criteria; the application must be well argued.
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -81,8 +114,11 @@ sources:
     url: https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
     last_verified_at: 2026-10-01
   page-3:
-    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    url: https://www.uca.fr/formation/nos-formations/par-ufr-ecoles-et-iut/iut-clermont-auvergne/but/but-informatique-clermont
     last_verified_at: 2026-10-01
   page-4:
+    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    last_verified_at: 2026-10-01
+  page-5:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
     last_verified_at: 2026-10-01

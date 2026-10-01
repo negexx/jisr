@@ -85,7 +85,7 @@
         "kind": "language_proficiency",
         "language": "fr",
         "minCefr": "B2",
-        "certificateRequired": true,
+        "certificateRequired": null,
         "acceptedTests": [],
         "evidence": [
           {

@@ -18,36 +18,88 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 80000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: null
+      applicationOpens: 2027-04-01
+      applicationDeadline: 2027-07-15
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez sur le site du programme si un test d'anglais B2 supplémentaire (par ex. Cambridge, PTE, UNIcert) est accepté et si vous êtes exempté.
+          status: draft
+        en:
+          text: Check the programme website whether additional B2 English tests (e.g. Cambridge, PTE, UNIcert) are accepted and whether you are exempt.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: L'éligibilité à l'admission (Hochschulzugangsberechtigung) est décidée après examen de votre dossier ; vous pouvez vérifier vos qualifications sur uni-assist avant de postuler.
+          status: draft
+        en:
+          text: Admission eligibility (Hochschulzugangsberechtigung) is decided after reviewing your documents; you can check your qualifications on uni-assist before applying.
+          status: draft
+    - id: req-4
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Consultez la page « informations pour les candidats de pays tiers » du programme : un formulaire d'épreuve d'aptitude peut être demandé."
+          status: draft
+        en:
+          text: "See the programme's information page for applicants from third countries: an aptitude test form may be required."
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.thi.de/studium/studienbewerbung/bachelorbewerbung/
     last_verified_at: 2026-10-01

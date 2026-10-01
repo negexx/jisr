@@ -15,39 +15,75 @@ summary:
   ar:
     text: Bachelor of Engineering in Engineering Physics, Carl von Ossietzky Universität Oldenburg (Oldenburg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3772/
+officialUrl: https://uol.de/en/physics/studies/courseofstudies/ep
 durationYears:
   value: 3
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-2
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: de
+      minCefr: A2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez que votre diplôme de fin d'études secondaires est reconnu comme équivalent au « Abitur » ou à la « Fachhochschulreife » allemande (voir anabin).
+          status: draft
+        en:
+          text: Check that your secondary school leaving certificate is recognised as equivalent to the German "Abitur" or "Fachhochschulreife" (see anabin).
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Consultez la page du programme pour connaître les éventuelles exemptions aux exigences linguistiques.
+          status: draft
+        en:
+          text: Check the programme page for possible language requirement exemptions.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://uol.de/en/physics/studies/courseofstudies/ep
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3772/
     last_verified_at: 2026-10-01

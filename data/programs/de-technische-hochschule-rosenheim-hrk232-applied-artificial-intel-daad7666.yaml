@@ -15,39 +15,84 @@ summary:
   ar:
     text: Applied Artificial Intelligence (AAI), Technische Hochschule Rosenheim (Rosenheim). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7666/
+officialUrl: https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 50000
+    currency: EUR
+    period: semester
+  source: page-3
+  info_kind: official
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: null
+      applicationOpens: 2027-02-15
+      applicationDeadline: 2027-07-15
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-4
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: de
+      minCefr: A2
+      certificateRequired: true
+      acceptedTests:
+        - testdaf
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez que vous remplissez les conditions d'accès : qualification d'entrée à l'université, notes et éventuels entretiens ou examens."
+          status: draft
+        en:
+          text: "Check that you meet the admission requirements: university entrance qualification, grades and any interviews or exams."
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7666/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/what-are-the-costs-of-studying-at-th-rosenheim-tuition-fees-and-student-union-fees
+    last_verified_at: 2026-10-01
+  page-4:
+    url: https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme/application-for-a-degree-programme-step-by-step-explained
     last_verified_at: 2026-10-01

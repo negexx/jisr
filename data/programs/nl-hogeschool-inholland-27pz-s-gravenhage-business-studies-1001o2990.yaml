@@ -1,0 +1,73 @@
+slug: nl-hogeschool-inholland-27pz-s-gravenhage-business-studies-1001o2990
+institution: nl-hogeschool-inholland-27pz-s-gravenhage
+country: NL
+city: s-gravenhage
+field: business-economics
+level: bachelor
+name: Business Studies
+summary:
+  fr:
+    text: Business Studies (Business Studies), Hogeschool Inholland ('s-Gravenhage). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Business Studies (Business Studies), Hogeschool Inholland ('s-Gravenhage). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Business Studies (Business Studies), Hogeschool Inholland ('s-Gravenhage). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.inholland.nl/opleidingen/business-studies-voltijd/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1036000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si votre diplôme marocain (Baccalauréat) est reconnu comme équivalent à un diplôme néerlandais HAVO, VWO ou MBO-4 ; l'admission des diplômes internationaux est évaluée individuellement.
+          status: draft
+        en:
+          text: Check whether your Moroccan Baccalauréat is recognised as equivalent to a Dutch HAVO, VWO or MBO-4 diploma; international diplomas are assessed individually.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.inholland.nl/opleidingen/business-studies-voltijd/
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.inholland.nl/inschrijven/collegegeld/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/
+    last_verified_at: 2026-10-01

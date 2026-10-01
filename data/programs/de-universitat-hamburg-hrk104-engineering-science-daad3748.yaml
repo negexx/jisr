@@ -15,39 +15,80 @@ summary:
   ar:
     text: Engineering Science, Universität Hamburg (Hamburg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3748/
+officialUrl: https://www.tuhh.de/tuhh/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/engineering-science.html
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+    - de
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-university-direct
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: C1
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier si le grade d'Abitur ou un diplôme étranger équivalent (par ex. le Baccalauréat marocain) est accepté comme qualification d'entrée à l'université.
+          status: draft
+        en:
+          text: Check whether the Abitur or an equivalent foreign qualification (e.g. the Moroccan Baccalauréat) is accepted as a university entrance qualification.
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Des documents supplémentaires sont exigés des candidats titulaires d'un diplôme étranger : certificats traduits, relevés de notes, éventuellement certificat APS et preuve de connaissances en allemand ou en anglais."
+          status: draft
+        en:
+          text: "Applicants with a foreign qualification must upload additional documents: translated certificates, transcripts, possibly APS certificate and proof of German or English language skills."
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://www.tuhh.de/tuhh/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/engineering-science.html
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3748/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.tuhh.de/tuhh/en/studying/before-studying/application/bachelor.html
     last_verified_at: 2026-10-01

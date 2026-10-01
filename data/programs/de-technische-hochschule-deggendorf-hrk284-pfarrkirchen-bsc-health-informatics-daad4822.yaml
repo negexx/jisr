@@ -15,39 +15,80 @@ summary:
   ar:
     text: BSc Health Informatics, Technische Hochschule Deggendorf (Pfarrkirchen). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4822/
+officialUrl: https://th-deg.de/hi-b-en
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 50000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-university-direct
+  source: page-3
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un test d'admission doit être réussi : « A successfully completed admission test ». Vérifiez auprès de l'université les détails et les modalités de ce test."
+          status: draft
+        en:
+          text: 'An admission test must be passed: "A successfully completed admission test". Check with the university for details and how to take this test.'
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez votre éligibilité avec votre Baccalauréat marocain via la base de données DAAD ou Anabin : votre diplôme pourrait nécessiter une année d'études supplémentaires ou un Studienkolleg."
+          status: draft
+        en:
+          text: "Verify your eligibility with your Moroccan Baccalauréat via the DAAD database or Anabin: your diploma may require an additional year of study or a Studienkolleg."
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://th-deg.de/hi-b-en
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4822/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.th-deg.de/en/apply
     last_verified_at: 2026-10-01

@@ -15,39 +15,66 @@ summary:
   ar:
     text: Bioengineering BSc, Hochschule Rhein-Waal - University of Applied Sciences (Kleve). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/
+officialUrl: https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-2
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les conditions d'accès spécifiques au Maroc et les exigences de l'uni-assist.
+          status: draft
+        en:
+          text: Check the specific admission requirements for Morocco and uni-assist requirements.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/
     last_verified_at: 2026-10-01

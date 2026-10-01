@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -71,6 +72,36 @@ requirements:
           status: draft
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez votre éligibilité aux droits d'inscription : les 178 € par an sont les droits applicables (Parcoursup) et des droits différenciés plus élevés peuvent s'appliquer aux étudiants extracommunautaires ; renseignez-vous auprès de l'établissement et sur les exonérations."
+          status: draft
+        en:
+          text: "Check your eligibility for tuition: the 178 EUR per year is the applicable rate (Parcoursup) and higher differentiated fees may apply to non-EU students; inquire with the institution and about exemptions."
+          status: draft
+    - id: req-5
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les modalités de candidature et le calendrier (Études en France / Campus France) auprès de l'établissement ou de Campus France.
+          status: draft
+        en:
+          text: Check the application procedures and calendar (Études en France / Campus France) with the institution or Campus France.
           status: draft
 scholarships: []
 sources:

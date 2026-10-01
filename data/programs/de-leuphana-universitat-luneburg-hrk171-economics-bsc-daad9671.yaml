@@ -15,39 +15,68 @@ summary:
   ar:
     text: Economics (BSc), Leuphana Universität Lüneburg (Lüneburg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9671/
+officialUrl: https://www.leuphana.de/en/college/bachelor/economics-major.html?utm_source=DAAD&utm_medium=referral&utm_campaign=international-marketing
 durationYears:
   value: 3
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez sur la page des candidats internationaux si vous devez d'abord faire évaluer votre diplôme (procédure Uni-Assist, VPD) avant de déposer votre candidature via myCampus.
+          status: draft
+        en:
+          text: Check the international applicants page whether you must first have your certificate reviewed (Uni-Assist procedure, VPD) before applying via myCampus.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://www.leuphana.de/en/college/bachelor/economics-major.html?utm_source=DAAD&utm_medium=referral&utm_campaign=international-marketing
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9671/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.leuphana.de/en/college/application.html
     last_verified_at: 2026-10-01

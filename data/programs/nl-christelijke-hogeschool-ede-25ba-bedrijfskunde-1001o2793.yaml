@@ -1,0 +1,88 @@
+slug: nl-christelijke-hogeschool-ede-25ba-bedrijfskunde-1001o2793
+institution: nl-christelijke-hogeschool-ede-25ba
+country: NL
+city: ede
+field: business-economics
+level: bachelor
+name: Bedrijfskunde
+summary:
+  fr:
+    text: Bedrijfskunde (Business Administration), Christelijke Hogeschool Ede (Ede). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Bedrijfskunde (Business Administration), Christelijke Hogeschool Ede (Ede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bedrijfskunde (Business Administration), Christelijke Hogeschool Ede (Ede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://che.nl/opleidingen/bedrijfskunde-ondernemen-hrm/bachelor/bedrijfskunde
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si votre diplôme marocain (Baccalauréat) est reconnu comme équivalent à un diplôme néerlandais (havo, vwo, mbo niveau 4) ; une évaluation par Nuffic peut être nécessaire.
+          status: draft
+        en:
+          text: Check whether your Moroccan diploma (Baccalauréat) is recognised as equivalent to a Dutch diploma (havo, vwo, mbo level 4); an evaluation by Nuffic may be required.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Si vous n'avez pas le diplôme requis et que vous avez 21 ans ou plus, vous pouvez passer un examen d'admission organisé par l'établissement (toelatingsonderzoek).
+          status: draft
+        en:
+          text: If you do not have the required prior education but are 21 or older, you can take an admission examination organised by the institution (toelatingsonderzoek).
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: En tant que ressortissant d'un pays hors UE, vous devez demander votre inscription avant le 1er mai et fournir les documents requis ; un visa ou permis de séjour peut être nécessaire.
+          status: draft
+        en:
+          text: As a non-EU national, you must apply by 1 May and provide the required documents; a visa or residence permit may be required.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://che.nl/opleidingen/bedrijfskunde-ondernemen-hrm/bachelor/bedrijfskunde
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://che.nl/info-opleidingen/aanmelden-opleiding
+    last_verified_at: 2026-10-01

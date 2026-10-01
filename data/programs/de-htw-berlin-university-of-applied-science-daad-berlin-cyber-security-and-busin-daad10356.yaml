@@ -1,0 +1,94 @@
+slug: de-htw-berlin-university-of-applied-science-daad-berlin-cyber-security-and-busin-daad10356
+institution: de-htw-berlin-university-of-applied-science-daad-berlin
+country: DE
+city: berlin
+field: computer-science
+level: bachelor
+name: Cyber Security and Business
+summary:
+  fr:
+    text: Cyber Security and Business, HTW Berlin University of Applied Sciences (Berlin). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Cyber Security and Business, HTW Berlin University of Applied Sciences (Berlin). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Cyber Security and Business, HTW Berlin University of Applied Sciences (Berlin). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://cyber-security-business.htw-berlin.de/
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-uni-assist
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: C1
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier le mode de candidature via Hochschulstart (première inscription) et les dates exactes de la période de candidature pour les candidats étrangers (01.05 - 30.06).
+          status: draft
+        en:
+          text: Check the Hochschulstart registration requirement (first semester) and the exact application period for foreign applicants (01.05 - 30.06).
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifier les connaissances d'allemand : aucune compétence linguistique minimale n'est exigée, mais les détails sur le site du cours doivent être consultés."
+          status: draft
+        en:
+          text: "Check German language requirements: no minimum language level is required, but details should be checked on the course website."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://cyber-security-business.htw-berlin.de/
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10356/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://cyber-security-business.htw-berlin.de/application
+    last_verified_at: 2026-10-01

@@ -18,36 +18,77 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/
 durationYears:
   value: 3
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2027-01-15
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-2
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si vous devez passer le test d'entrée spécifique à la matière (subject-specific entrance test) et le soumettre avec votre candidature.
+          status: draft
+        en:
+          text: Check whether you are required to take the subject-specific entrance test and submit it with your application.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez auprès de l'université si vous devez fournir un justificatif de connaissances en mathématiques du niveau de l'Abitur.
+          status: draft
+        en:
+          text: Check with the university whether you need to provide proof of mathematics knowledge at the Abitur level.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.mytuc.org/qbnf
     last_verified_at: 2026-10-01

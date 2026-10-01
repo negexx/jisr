@@ -1,0 +1,14 @@
+slug: de-htw-berlin-university-of-applied-science-daad-berlin
+name: HTW Berlin University of Applied Sciences
+country: DE
+city:
+  slug: berlin
+  name: Berlin
+type: null
+website: https://cyber-security-business.htw-berlin.de/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://cyber-security-business.htw-berlin.de/
+    last_verified_at: 2026-10-01

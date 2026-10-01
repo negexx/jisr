@@ -1,0 +1,14 @@
+slug: nl-de-haagse-hogeschool-27um-zoetermeer
+name: De Haagse Hogeschool
+country: NL
+city:
+  slug: zoetermeer
+  name: Zoetermeer
+type: null
+website: https://www.dehaagsehogeschool.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.dehaagsehogeschool.nl/
+    last_verified_at: 2026-10-01

@@ -72,6 +72,17 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier le niveau de français requis (un niveau C2 est indiqué pour l'inscription à cette formation) ainsi que les attendus nationaux, les critères d'analyse des candidatures et les éventuels prérequis en langues, qui relèvent de l'appréciation de l'établissement.
+          status: draft
+        en:
+          text: Check the required French level (a C2 level is stated for enrolment in this programme), the national entry expectations, the application analysis criteria and any language prerequisites, which are for the institution to assess.
+          status: draft
 scholarships: []
 sources:
   programme:

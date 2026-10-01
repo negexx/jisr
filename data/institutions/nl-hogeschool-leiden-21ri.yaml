@@ -1,0 +1,14 @@
+slug: nl-hogeschool-leiden-21ri
+name: Hogeschool Leiden
+country: NL
+city:
+  slug: leiden
+  name: Leiden
+type: null
+website: https://www.hsleiden.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.hsleiden.nl/
+    last_verified_at: 2026-10-01

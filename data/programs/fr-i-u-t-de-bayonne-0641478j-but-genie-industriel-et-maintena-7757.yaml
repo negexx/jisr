@@ -21,23 +21,27 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
-  source: programme
+  value:
+    - fr
+  source: page-3
   info_kind: official
 tuition:
   value:
     amountMinor: 290200
     currency: EUR
     period: year
-  source: page-3
+  source: page-4
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: 2026-10-01
+      applicationDeadline: 2026-11-15
+  source: page-5
   info_kind: official
 applicationChannel:
   value: fr-campus-france
-  source: page-4
+  source: page-5
   info_kind: official
 documents:
   value: null
@@ -59,7 +63,7 @@ requirements:
         - tcf
         - delf-dalf
     - id: req-2
-      source: page-3
+      source: page-4
       info_kind: official
       kind: manual_check
       note:
@@ -72,6 +76,27 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: page-6
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - delf-dalf
+        - tcf
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "La sélection se fait sur dossier : notes de 1ère et de terminale, appréciations des professeurs et lettre de motivation. Vérifiez les attendus et les critères d'analyse des candidatures auprès de l'établissement."
+          status: draft
+        en:
+          text: "Selection is based on the application file: 1ère and terminale grades, teachers' comments and a motivation letter. Check the entry requirements and application assessment criteria with the institution."
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -81,8 +106,14 @@ sources:
     url: https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
     last_verified_at: 2026-10-01
   page-3:
-    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    url: https://formation.univ-pau.fr/fr/catalogue/bachelor-universitaire-de-technologie-but-BUT/b-u-t-genie-industriel-et-maintenance-L45ATPKW.html
     last_verified_at: 2026-10-01
   page-4:
+    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    last_verified_at: 2026-10-01
+  page-5:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01
+  page-6:
+    url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
     last_verified_at: 2026-10-01

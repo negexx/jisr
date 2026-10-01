@@ -1,0 +1,63 @@
+slug: nl-christelijke-hogeschool-windesheim-01vu-accountancy-1001o3525
+institution: nl-christelijke-hogeschool-windesheim-01vu
+country: NL
+city: zwolle
+field: business-economics
+level: bachelor
+name: Accountancy
+summary:
+  fr:
+    text: Accountancy (Accountancy), Christelijke Hogeschool Windesheim (Zwolle). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Accountancy (Accountancy), Christelijke Hogeschool Windesheim (Zwolle). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Accountancy (Accountancy), Christelijke Hogeschool Windesheim (Zwolle). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.windesheim.nl/opleidingen/voltijd/bachelor/accountancy
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Pour les candidats avec un diplôme étranger : votre diplôme doit être équivalent à un diplôme havo, vwo ou mbo-4. Consultez les exigences linguistiques sur le site web."
+          status: draft
+        en:
+          text: "For applicants with a foreign diploma: your diploma must be equivalent to a havo, vwo or mbo-4 diploma. Check the language requirements on the website."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.windesheim.nl/opleidingen/voltijd/bachelor/accountancy
+    last_verified_at: 2026-10-01

@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -72,6 +73,33 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-5
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La certification de français (TCF, DELF B2, DALF) est obligatoire pour la procédure Études en France, sauf cas de dispense, mais les dossiers en première année de licence (L1) ne sont pas dispensés.
+          status: draft
+        en:
+          text: The French certification (TCF, DELF B2, DALF) is mandatory for the Études en France procedure, except in exemption cases, but first-year licence (L1) applicants are not exempted.
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -85,4 +113,7 @@ sources:
     last_verified_at: 2026-10-01
   page-4:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
     last_verified_at: 2026-10-01

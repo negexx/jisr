@@ -1,0 +1,64 @@
+slug: nl-fontys-hogeschool-30gb-venlo-commerciele-economie-1001o3452
+institution: nl-fontys-hogeschool-30gb-venlo
+country: NL
+city: venlo
+field: business-economics
+level: bachelor
+name: Commerciële Economie
+summary:
+  fr:
+    text: Commerciële Economie (Marketing Management), Fontys Hogeschool (Venlo). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Commerciële Economie (Marketing Management), Fontys Hogeschool (Venlo). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Commerciële Economie (Marketing Management), Fontys Hogeschool (Venlo). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Votre diplôme marocain (Baccalauréat) n'étant pas un diplôme néerlandais (havo/vwo/mbo niveau 4), contactez la Fontys pour vérifier votre admissibilité (par exemple 21+ toelatingsonderzoek, certificat d'anglais).
+          status: draft
+        en:
+          text: Your Moroccan diploma (Baccalauréat) is not a Dutch diploma (havo/vwo/mbo niveau 4), so contact Fontys to check your eligibility (e.g. 21+ toelatingsonderzoek, English certificate).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm
+    last_verified_at: 2026-10-01

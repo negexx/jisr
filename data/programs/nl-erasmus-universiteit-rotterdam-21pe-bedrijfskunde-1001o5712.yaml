@@ -1,0 +1,53 @@
+slug: nl-erasmus-universiteit-rotterdam-21pe-bedrijfskunde-1001o5712
+institution: nl-erasmus-universiteit-rotterdam-21pe
+country: NL
+city: rotterdam
+field: business-economics
+level: bachelor
+name: Bedrijfskunde
+summary:
+  fr:
+    text: Bedrijfskunde (Business Administration), Erasmus Universiteit Rotterdam (Rotterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Bedrijfskunde (Business Administration), Erasmus Universiteit Rotterdam (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bedrijfskunde (Business Administration), Erasmus Universiteit Rotterdam (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.eur.nl/bachelor/bedrijfskunde
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.eur.nl/bachelor/bedrijfskunde
+    last_verified_at: 2026-10-01

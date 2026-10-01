@@ -15,39 +15,73 @@ summary:
   ar:
     text: BEng Energy Systems Engineering, Technische Hochschule Deggendorf (Pfarrkirchen). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7019/
+officialUrl: https://th-deg.de/ese-b-en
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 50000
+    currency: EUR
+    period: semester
+  source: page-3
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-university-direct
+  source: page-4
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Tous les candidats à ce programme doivent passer le test Academic Readiness Assessment et fournir le certificat obtenu avec les autres documents de candidature.
+          status: draft
+        en:
+          text: All applicants to this programme must take the Academic Readiness Assessment test and provide the resulting certificate along with the other application documents.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez votre diplôme de fin d'études secondaires (Baccalauréat marocain) dans la base de données DAAD ou sur Anabin pour savoir s'il vous donne accès à l'université ; sinon, une année d'études universitaires ou un Studienkolleg peut être nécessaire.
+          status: draft
+        en:
+          text: Check your school-leaving certificate (Moroccan Baccalauréat) in the DAAD database or Anabin to see whether it gives you university entrance eligibility; otherwise one year of university study or a Studienkolleg may be required.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://th-deg.de/ese-b-en
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7019/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://th-deg.de/en/students/documents/application-and-service-fees
+    last_verified_at: 2026-10-01
+  page-4:
+    url: https://www.th-deg.de/en/apply
     last_verified_at: 2026-10-01

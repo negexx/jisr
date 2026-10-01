@@ -15,39 +15,95 @@ summary:
   ar:
     text: Bachelor's in Management & Data Science (BSc), Technische Universität München (Heilbronn). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5704/
+officialUrl: https://www.mgt.tum.de/programs/undergraduate-programs/bachelor-management-data-science/
 durationYears:
   value: 3
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez si vous avez besoin d'un certificat APS : cela concerne uniquement les diplômes chinois, vietnamiens ou indiens ; un Baccalauréat marocain n'est pas concerné, mais confirmez-le."
+          status: draft
+        en:
+          text: "Check whether you need an APS certificate: it applies only to Chinese, Vietnamese or Indian school or university degrees; a Moroccan Baccalauréat is not covered, but confirm this."
+          status: draft
+    - id: req-2
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un programme d'admission en deux étapes (notes + éventuel entretien) s'applique : les dates d'entretien et les seuils de notes ne sont pas donnés ici, renseignez-vous auprès de l'université."
+          status: draft
+        en:
+          text: "A two-stage aptitude assessment (grades plus possible interview) applies: interview dates and grade thresholds are not given here, check with the university."
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: L'anglais est la langue d'enseignement mais aucun niveau minimum n'est exigé ; une évaluation se fait par test ou entretien.
+          status: draft
+        en:
+          text: English is the language of instruction but no minimum level is required; proficiency is assessed via test or interview.
+          status: draft
+    - id: req-4
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des frais de scolarité sont dus par les étudiants de pays hors EEE (sauf dispenses) ; vérifiez le montant et les possibilités de dispense sur la page des frais de TUM.
+          status: draft
+        en:
+          text: Tuition fees apply to students from non-EEA countries (subject to waivers); check the amount and waiver options on TUM's fee page.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://www.mgt.tum.de/programs/undergraduate-programs/bachelor-management-data-science/
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5704/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.tum.de/en/studies/application/application-info-portal/aps
+    last_verified_at: 2026-10-01
+  page-4:
+    url: https://www.mgt.tum.de/programs/bachelor-management-data-science/how-to-apply
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://www.tum.de/en/studies/fees
     last_verified_at: 2026-10-01

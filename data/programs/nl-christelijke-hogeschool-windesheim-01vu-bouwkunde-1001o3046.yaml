@@ -1,0 +1,77 @@
+slug: nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046
+institution: nl-christelijke-hogeschool-windesheim-01vu
+country: NL
+city: zwolle
+field: engineering
+level: bachelor
+name: Bouwkunde
+summary:
+  fr:
+    text: Bouwkunde (Architecture and Construction Engineering), Christelijke Hogeschool Windesheim (Zwolle). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Bouwkunde (Architecture and Construction Engineering), Christelijke Hogeschool Windesheim (Zwolle). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bouwkunde (Architecture and Construction Engineering), Christelijke Hogeschool Windesheim (Zwolle). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-09-06
+      applicationOpens: null
+      applicationDeadline: 2027-08-31
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme étranger équivalent à un diplôme néerlandais havo, vwo ou mbo-4 est requis, ainsi que la satisfaction aux exigences linguistiques (voir la page Taaleisen).
+          status: draft
+        en:
+          text: A foreign diploma equivalent to a Dutch havo, vwo or mbo-4 diploma is required, plus you must meet the language requirements (see the Taaleisen page).
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme néerlandais havo, vwo ou mbo-niveau 4 donne un accès direct; vérifiez votre situation avec le Windesheim Informatiecentrum.
+          status: draft
+        en:
+          text: A Dutch havo, vwo or mbo-level 4 diploma gives direct admission; check your situation with the Windesheim Informatiecentrum.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle
+    last_verified_at: 2026-10-01

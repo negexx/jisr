@@ -15,39 +15,56 @@ summary:
   ar:
     text: Engineering Physics, Hochschule für angewandte Wissenschaften Coburg (Coburg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10481/
+officialUrl: https://www.hs-coburg.de/en/study/bachelor-degree-programs/bachelors-degree-programs-in-engineering-and-computer-science/engineering-physics/
 durationYears:
   value: 4
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-09-30
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifier les exigences d'entrée supplémentaires : qualification d'entrée à l'université, certificat APS, VPD de uni-assist ou évaluation du ZAB, CV."
+          status: draft
+        en:
+          text: "Check additional admission requirements: university entrance qualification, APS certificate, VPD from uni-assist or ZAB evaluation, CV."
+          status: draft
 scholarships: []
 sources:
-  daad:
-    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10481/
+  programme:
+    url: https://www.hs-coburg.de/en/study/bachelor-degree-programs/bachelors-degree-programs-in-engineering-and-computer-science/engineering-physics/
     last_verified_at: 2026-10-01

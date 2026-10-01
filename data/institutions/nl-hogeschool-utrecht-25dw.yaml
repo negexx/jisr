@@ -1,0 +1,14 @@
+slug: nl-hogeschool-utrecht-25dw
+name: Hogeschool Utrecht
+country: NL
+city:
+  slug: utrecht
+  name: Utrecht
+type: null
+website: https://www.hu.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.hu.nl/
+    last_verified_at: 2026-10-01

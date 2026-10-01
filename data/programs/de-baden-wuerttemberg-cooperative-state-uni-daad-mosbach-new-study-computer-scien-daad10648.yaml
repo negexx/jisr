@@ -1,0 +1,89 @@
+slug: de-baden-wuerttemberg-cooperative-state-uni-daad-mosbach-new-study-computer-scien-daad10648
+institution: de-baden-wuerttemberg-cooperative-state-uni-daad-mosbach
+country: DE
+city: mosbach
+field: computer-science
+level: bachelor
+name: New Study Computer Science
+summary:
+  fr:
+    text: New Study Computer Science, Baden-Wuerttemberg Cooperative State University (Mosbach). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: New Study Computer Science, Baden-Wuerttemberg Cooperative State University (Mosbach). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: New Study Computer Science, Baden-Wuerttemberg Cooperative State University (Mosbach). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: false
+      acceptedTests: []
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un contrat de formation pratique avec une entreprise partenaire (Dualer Partner) doit être signé avant l'inscription ; contactez directement l'entreprise.
+          status: draft
+        en:
+          text: A training contract with a workplace training provider (Dualer Partner) must be signed before enrolment; contact the company directly.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats titulaires d'un diplôme étranger doivent faire évaluer leur diplôme par le Central International Office du DHBW ; prévoyez plusieurs semaines.
+          status: draft
+        en:
+          text: Applicants with a foreign qualification must have their credentials assessed by the Central International Office of DHBW; allow several weeks.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.dhbw.de/application
+    last_verified_at: 2026-10-01

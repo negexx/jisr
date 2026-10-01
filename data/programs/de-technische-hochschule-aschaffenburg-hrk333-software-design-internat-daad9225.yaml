@@ -18,36 +18,65 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: de
+      minCefr: A1
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez les dates limites de candidature auprès de l'université : la page DAAD indique seulement « Winter semester » et renvoie au site web de l'université. Une pré-vérification des documents (VPD) par uni-assist et des frais de candidature de 80 EUR pour les non-EU sont exigés."
+          status: draft
+        en:
+          text: "Check the application deadlines with the university: the DAAD page only says 'Winter semester' and links to the university website. A preliminary review of documents (VPD) by uni-assist and an application fee of 80 EUR for non-EU applicants are required."
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/
     last_verified_at: 2026-10-01

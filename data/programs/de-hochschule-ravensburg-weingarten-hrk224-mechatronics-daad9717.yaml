@@ -15,39 +15,85 @@ summary:
   ar:
     text: Mechatronics, Hochschule Ravensburg-Weingarten (Weingarten). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9717/
+officialUrl: https://www.rwu.de/en/studies/study-programs/mechatronics-en-0
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-university-direct
+  source: page-3
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Votre diplôme (baccalauréat marocain) doit être reconnu : vérifiez sa conformité ANABIN ; s'il n'est pas reconnu, un test d'aptitude (TestAS, ITB, SAT ou ACT) et un entretien oral de 30 minutes peuvent être exigés."
+          status: draft
+        en:
+          text: "Your diploma (Moroccan Baccalauréat) must be recognised: check ANABIN compliance; if it is not recognised, an aptitude test (TestAS, ITB, SAT or ACT) and a 30-minute oral test may be required."
+          status: draft
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Les documents doivent être envoyés par courrier postal (ou via le portail) : formulaire signé, copie certifiée du diplôme d'entrée, certificat d'anglais de moins de 2 ans, CV, copie du passeport ; les certificats de langue d'enseignement (Medium of Instruction) ne sont pas acceptés."
+          status: draft
+        en:
+          text: "Documents must be submitted by post (or via the portal): signed form, certified copy of the entrance certificate, English certificate less than 2 years old, CV, passport copy; Medium of Instruction certificates are not accepted."
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://www.rwu.de/en/studies/study-programs/mechatronics-en-0
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9717/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.rwu.de/en/application-and-enrollment
     last_verified_at: 2026-10-01

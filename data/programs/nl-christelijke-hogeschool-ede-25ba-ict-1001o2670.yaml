@@ -1,0 +1,88 @@
+slug: nl-christelijke-hogeschool-ede-25ba-ict-1001o2670
+institution: nl-christelijke-hogeschool-ede-25ba
+country: NL
+city: ede
+field: computer-science
+level: bachelor
+name: ICT
+summary:
+  fr:
+    text: ICT (Information & Communication Technology), Christelijke Hogeschool Ede (Ede). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: ICT (Information & Communication Technology), Christelijke Hogeschool Ede (Ede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: ICT (Information & Communication Technology), Christelijke Hogeschool Ede (Ede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://che.nl/opleidingen/ict/bachelor/ict
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez l'équivalence de votre Baccalauréat marocain auprès de Nuffic : envoyez un scan de votre diplôme, de vos relevés de notes et de votre passeport à stuza.aanmelden@che.nl après avoir déposé votre demande via Studielink."
+          status: draft
+        en:
+          text: "Check the equivalence of your Moroccan Baccalaureate with Nuffic: send a scan of your diploma, transcripts and passport to stuza.aanmelden@che.nl after submitting your request via Studielink."
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: En tant que candidat non-UE, vous devez demander un visa et/ou un permis de séjour via la CHE auprès de l'IND (Immigratie- en Naturalisatiedienst).
+          status: draft
+        en:
+          text: As a non-EU applicant, you need a visa and/or residence permit, applied for by CHE at the IND (Immigratie- en Naturalisatiedienst).
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Candidats non-UE : la date limite d'inscription est le 1er mai."
+          status: draft
+        en:
+          text: "Non-EU applicants: the application deadline is 1 May."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://che.nl/opleidingen/ict/bachelor/ict
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://che.nl/info-opleidingen/aanmelden-opleiding
+    last_verified_at: 2026-10-01

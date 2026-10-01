@@ -1,0 +1,74 @@
+slug: nl-christelijke-hogeschool-windesheim-01vu-ict-1001o2665
+institution: nl-christelijke-hogeschool-windesheim-01vu
+country: NL
+city: zwolle
+field: computer-science
+level: bachelor
+name: ICT
+summary:
+  fr:
+    text: ICT (Information & Communication Technology), Christelijke Hogeschool Windesheim (Zwolle). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: ICT (Information & Communication Technology), Christelijke Hogeschool Windesheim (Zwolle). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: ICT (Information & Communication Technology), Christelijke Hogeschool Windesheim (Zwolle). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez que votre diplôme marocain (Baccalauréat) est jugé équivalent à un diplôme néerlandais havo, vwo ou mbo-4 ; la page indique aussi qu'il faut satisfaire aux exigences linguistiques (voir page des taaleisen).
+          status: draft
+        en:
+          text: Check that your Moroccan diploma (Baccalauréat) is considered equivalent to a Dutch havo, vwo or mbo-4 diploma; the page also states you must meet the language requirements (see the taaleisen page).
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Aucune exigence supplémentaire concernant les matières du profil n'est mentionnée pour cette filière : « Er gelden geen extra eisen voor profielvakken. »"
+          status: draft
+        en:
+          text: 'No additional profile-subject requirements are mentioned for this programme: "Er gelden geen extra eisen voor profielvakken."'
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle
+    last_verified_at: 2026-10-01
