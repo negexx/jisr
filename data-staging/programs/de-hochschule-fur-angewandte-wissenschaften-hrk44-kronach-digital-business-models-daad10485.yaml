@@ -1,0 +1,59 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk44-kronach-digital-business-models-daad10485
+institution: de-hochschule-fur-angewandte-wissenschaften-hrk44-kronach
+country: DE
+city: kronach
+field: business-economics
+level: bachelor
+name: Digital Business – Models and Technologies
+summary:
+  fr:
+    text: Digital Business – Models and Technologies, Hochschule für angewandte Wissenschaften Coburg (Kronach). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10485/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10485/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-fur-angewandte-wissenschaften-hrk44-kronach-digital-business-models-daad10485
+  name: Digital Business – Models and Technologies
+  institution: Hochschule für angewandte Wissenschaften Coburg
+  city: Kronach
+  field: business-economics
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10485/
+  todo: "DAAD page lists: languages German, English, duration 7 semesters, starts Winter semester, Summer semester, tuition \"Tuition varies\", deadline \"Register by 28 February 2027 + 1 more\"; institution matched to HRK \"Hochschule für angewandte Wissenschaften Coburg\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; partly or fully taught in German: check the German level required"
+  sourceId: daad:10485

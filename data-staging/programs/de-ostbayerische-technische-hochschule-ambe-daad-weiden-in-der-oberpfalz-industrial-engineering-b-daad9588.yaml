@@ -1,0 +1,58 @@
+slug: de-ostbayerische-technische-hochschule-ambe-daad-weiden-in-der-oberpfalz-industrial-engineering-b-daad9588
+institution: de-ostbayerische-technische-hochschule-ambe-daad-weiden-in-der-oberpfalz
+country: DE
+city: weiden-in-der-oberpfalz
+field: engineering
+level: bachelor
+name: Industrial Engineering (BEng)
+summary:
+  fr:
+    text: Industrial Engineering (BEng), Ostbayerische Technische Hochschule Amberg-Weiden (OTH) (Weiden in der Oberpfalz). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9588/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9588/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-ostbayerische-technische-hochschule-ambe-daad-weiden-in-der-oberpfalz-industrial-engineering-b-daad9588
+  name: Industrial Engineering (BEng)
+  institution: Ostbayerische Technische Hochschule Amberg-Weiden (OTH)
+  city: Weiden in der Oberpfalz
+  field: engineering
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9588/
+  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, Summer semester, tuition \"Tuition varies\", deadline \"Winter semester application period: 15 April to 15 September Summer semester application period: 1 November to 1 March Please check our application portal for all our current application deadlines. Please note that there is a non-refundable 50 EUR application fee for each study programme application...\"; institution not matched to the HRK list (see its record); the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled"
+  sourceId: daad:9588

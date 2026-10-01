@@ -1,0 +1,25 @@
+slug: de-friedrich-alexander-universitat-erlangen-hrk70-nurnberg
+name: Friedrich-Alexander-Universität Erlangen-Nürnberg
+country: DE
+city:
+  slug: nurnberg
+  name: Nürnberg
+type: public
+website: https://www.fau.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-friedrich-alexander-universitat-erlangen-hrk70-nurnberg
+  name: Friedrich-Alexander-Universität Erlangen-Nürnberg
+  institution: ""
+  city: Nürnberg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fau.de/
+  todo: "study location in Nürnberg of \"Friedrich-Alexander-Universität Erlangen-Nürnberg\" (HRK main town Erlangen); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:70@nurnberg

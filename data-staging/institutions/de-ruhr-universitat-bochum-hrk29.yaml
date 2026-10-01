@@ -5,7 +5,7 @@ city:
   slug: bochum
   name: Bochum
 type: public
-website: null
+website: https://www.ruhr-uni-bochum.de/de
 source: hrk
 info_kind: TODO_read_source
 sources:
@@ -20,6 +20,6 @@ _review:
   city: Bochum
   field: ""
   confidence: ""
-  officialUrl: ""
-  todo: "HRK: Universitäten, Nordrhein-Westfalen, sponsor \"öffentlich-rechtlich\"; listed website \"http://www.ruhr-uni-bochum.de\" did not answer over https (probe failed): find the official https site; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  officialUrl: https://www.ruhr-uni-bochum.de/de
+  todo: "HRK: Universitäten, Nordrhein-Westfalen, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.ruhr-uni-bochum.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
   sourceId: hrk:29

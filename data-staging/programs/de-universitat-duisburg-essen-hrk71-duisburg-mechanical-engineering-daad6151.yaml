@@ -1,0 +1,62 @@
+slug: de-universitat-duisburg-essen-hrk71-duisburg-mechanical-engineering-daad6151
+institution: de-universitat-duisburg-essen-hrk71-duisburg
+country: DE
+city: duisburg
+field: engineering
+level: bachelor
+name: Mechanical Engineering
+summary:
+  fr:
+    text: Mechanical Engineering, Universität Duisburg-Essen (Duisburg). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6151/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2027-06-15
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6151/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-universitat-duisburg-essen-hrk71-duisburg-mechanical-engineering-daad6151
+  name: Mechanical Engineering
+  institution: Universität Duisburg-Essen
+  city: Duisburg
+  field: engineering
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6151/
+  todo: "DAAD page lists: languages German, English, duration 6 semesters, starts Winter semester, tuition \"No tuition fees\", deadline \"Register by 15 June 2027\"; institution matched to HRK \"Universität Duisburg-Essen\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; partly or fully taught in German: check the German level required"
+  sourceId: daad:6151

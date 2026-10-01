@@ -1,0 +1,59 @@
+slug: de-mainz-university-of-applied-sciences-daad-mainz-international-civil-engi-daad7151
+institution: de-mainz-university-of-applied-sciences-daad-mainz
+country: DE
+city: mainz
+field: engineering
+level: bachelor
+name: International Civil Engineering (ICE)
+summary:
+  fr:
+    text: International Civil Engineering (ICE), Mainz University of Applied Sciences (Mainz). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7151/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7151/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-mainz-university-of-applied-sciences-daad-mainz-international-civil-engi-daad7151
+  name: International Civil Engineering (ICE)
+  institution: Mainz University of Applied Sciences
+  city: Mainz
+  field: engineering
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7151/
+  todo: "DAAD page lists: languages German, English, duration 7 semesters, starts Winter semester, Summer semester, tuition \"No tuition fees\", deadline \"Register by 15 January 2027 + 1 more\"; institution not matched to the HRK list (see its record); the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; partly or fully taught in German: check the German level required"
+  sourceId: daad:7151

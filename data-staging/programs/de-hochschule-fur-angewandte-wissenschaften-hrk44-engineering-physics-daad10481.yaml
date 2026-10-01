@@ -1,0 +1,61 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk44-engineering-physics-daad10481
+institution: de-hochschule-fur-angewandte-wissenschaften-hrk44
+country: DE
+city: coburg
+field: engineering
+level: bachelor
+name: Engineering Physics
+summary:
+  fr:
+    text: Engineering Physics, Hochschule für angewandte Wissenschaften Coburg (Coburg). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10481/
+durationYears:
+  value: 4
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-09-30
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10481/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-fur-angewandte-wissenschaften-hrk44-engineering-physics-daad10481
+  name: Engineering Physics
+  institution: Hochschule für angewandte Wissenschaften Coburg
+  city: Coburg
+  field: engineering
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10481/
+  todo: "DAAD page lists: languages English, duration 8 semesters, starts Winter semester, tuition \"Tuition varies\", deadline \"Register by 30 September 2026\"; institution matched to HRK \"Hochschule für angewandte Wissenschaften Coburg\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; 18 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates)"
+  sourceId: daad:10481

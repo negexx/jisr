@@ -1,0 +1,25 @@
+slug: de-hochschule-merseburg-hrk180-merseburg-saale
+name: Hochschule Merseburg
+country: DE
+city:
+  slug: merseburg-saale
+  name: Merseburg / Saale
+type: public
+website: https://www.hs-merseburg.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-merseburg-hrk180-merseburg-saale
+  name: Hochschule Merseburg
+  institution: ""
+  city: Merseburg / Saale
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-merseburg.de/
+  todo: "study location in Merseburg / Saale of \"Hochschule Merseburg\" (HRK main town Merseburg); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:180@merseburg-saale

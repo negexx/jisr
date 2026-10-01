@@ -1,0 +1,59 @@
+slug: de-technische-hochschule-rosenheim-hrk232-plastics-engineering-daad8373
+institution: de-technische-hochschule-rosenheim-hrk232
+country: DE
+city: rosenheim
+field: engineering
+level: bachelor
+name: Plastics Engineering
+summary:
+  fr:
+    text: Plastics Engineering, Technische Hochschule Rosenheim (Rosenheim). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8373/
+durationYears:
+  value: 4
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8373/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-technische-hochschule-rosenheim-hrk232-plastics-engineering-daad8373
+  name: Plastics Engineering
+  institution: Technische Hochschule Rosenheim
+  city: Rosenheim
+  field: engineering
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8373/
+  todo: "DAAD page lists: languages German, English, duration 8 semesters, starts Winter semester, Summer semester, tuition \"Tuition varies\", deadline \"With a university entrance qualification from abroad via uni-assist : 1 May - 30 November for a study start in March (summer semester - bilingual track) 15 February - 15 September for a study start in October (winter semester - German track) With a German university entrance qualification via TH Ros...\"; institution matched to HRK \"Technische Hochschule Rosenheim\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; 18 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates); partly or fully taught in German: check the German level required"
+  sourceId: daad:8373

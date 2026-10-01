@@ -1,0 +1,25 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk44-kronach
+name: Hochschule für angewandte Wissenschaften Coburg
+country: DE
+city:
+  slug: kronach
+  name: Kronach
+type: public
+website: https://www.hs-coburg.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-angewandte-wissenschaften-hrk44-kronach
+  name: Hochschule für angewandte Wissenschaften Coburg
+  institution: ""
+  city: Kronach
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-coburg.de/
+  todo: "study location in Kronach of \"Hochschule für angewandte Wissenschaften Coburg\" (HRK main town Coburg); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:44@kronach

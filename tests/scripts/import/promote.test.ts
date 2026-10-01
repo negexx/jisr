@@ -11,6 +11,7 @@ import {
   appendLedger,
   ledgerFile,
   parseCsv,
+  pruneStaged,
   READ_SOURCE,
   readReviewState,
   reviewCsv,
@@ -288,5 +289,44 @@ describe("stable source ids", () => {
         date: "2026-10-01",
       },
     ]);
+  });
+});
+
+describe("pruneStaged", () => {
+  const owned = (slug: string, sourceId: string) => {
+    const record = channel("official");
+    record.id = slug;
+    record.data.slug = slug;
+    record.review.slug = slug;
+    record.sourceId = sourceId;
+    return record;
+  };
+
+  it("removes unapproved records its source no longer produces and keeps everything else", async () => {
+    await writeStaged(
+      [
+        owned("gone", "daad:1"),
+        owned("still-there", "daad:2"),
+        owned("other-source", "ba:9"),
+        owned("approved-gone", "daad:3"),
+      ],
+      { overwrite: false, stagingDir, dataDir },
+    );
+    const result = await pruneStaged({
+      owns: (id) => id.startsWith("daad:"),
+      produced: new Set(["application-channels|daad:2"]),
+      approved: new Set(["application-channels/approved-gone"]),
+      stagingDir,
+    });
+    expect(result.removed).toEqual(["application-channels/gone"]);
+    expect(result.keptApproved).toEqual(["application-channels/approved-gone"]);
+    const exists = (slug: string) =>
+      existsSync(stageFile("application-channels", slug, stagingDir));
+    expect([
+      exists("gone"),
+      exists("still-there"),
+      exists("other-source"),
+      exists("approved-gone"),
+    ]).toEqual([false, true, true, true]);
   });
 });

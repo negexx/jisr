@@ -5,7 +5,7 @@ city:
   slug: chemnitz
   name: Chemnitz
 type: public
-website: null
+website: https://www.tu-chemnitz.de/
 source: hrk
 info_kind: TODO_read_source
 sources:
@@ -20,6 +20,6 @@ _review:
   city: Chemnitz
   field: ""
   confidence: ""
-  officialUrl: ""
-  todo: "HRK: Universitäten, Sachsen, sponsor \"öffentlich-rechtlich\"; listed website \"http://www.tu-chemnitz.de\" did not answer over https (probe failed): find the official https site; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  officialUrl: https://www.tu-chemnitz.de/
+  todo: "HRK: Universitäten, Sachsen, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.tu-chemnitz.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
   sourceId: hrk:42

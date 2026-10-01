@@ -1,0 +1,59 @@
+slug: de-technische-hochschule-ingolstadt-hrk288-neuburg-an-der-donau-sustainable-civil-engine-daad8580
+institution: de-technische-hochschule-ingolstadt-hrk288-neuburg-an-der-donau
+country: DE
+city: neuburg-an-der-donau
+field: engineering
+level: bachelor
+name: Sustainable Civil Engineering
+summary:
+  fr:
+    text: Sustainable Civil Engineering, Technische Hochschule Ingolstadt (Neuburg an der Donau). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/
+durationYears:
+  value: 4
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+    - de
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-technische-hochschule-ingolstadt-hrk288-neuburg-an-der-donau-sustainable-civil-engine-daad8580
+  name: Sustainable Civil Engineering
+  institution: Technische Hochschule Ingolstadt
+  city: Neuburg an der Donau
+  field: engineering
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/
+  todo: "DAAD page lists: languages English, German, duration 8 semesters, starts Winter semester, Summer semester, tuition \"Tuition varies\", deadline \"Applications are possible from 2 May until 31 August 2026 for the winter semester 2026/2027 from 15 October 2026 until 15 January 2027 for the summer semester 2027 from 1 April 2027 until 15 July 2027 for the winter semester 2027/2028 Please note that we admit applicants already during the applicati...\"; institution matched to HRK \"Technische Hochschule Ingolstadt\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; partly or fully taught in German: check the German level required"
+  sourceId: daad:8580

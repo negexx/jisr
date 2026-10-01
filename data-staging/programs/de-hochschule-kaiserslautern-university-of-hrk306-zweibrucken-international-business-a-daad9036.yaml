@@ -1,0 +1,59 @@
+slug: de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken-international-business-a-daad9036
+institution: de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken
+country: DE
+city: zweibrucken
+field: business-economics
+level: bachelor
+name: International Business Administration
+summary:
+  fr:
+    text: International Business Administration, Hochschule Kaiserslautern (University of Applied Sciences) (Zweibrücken). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9036/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9036/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken-international-business-a-daad9036
+  name: International Business Administration
+  institution: Hochschule Kaiserslautern (University of Applied Sciences)
+  city: Zweibrücken
+  field: business-economics
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9036/
+  todo: "DAAD page lists: languages German, English, duration 7 semesters, starts Winter semester, Summer semester, tuition \"No tuition fees\", deadline \"31 August for winter semester 28./29. February for summer semester\"; institution matched to HRK \"Hochschule Kaiserslautern (University of Applied Sciences)\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; partly or fully taught in German: check the German level required"
+  sourceId: daad:9036

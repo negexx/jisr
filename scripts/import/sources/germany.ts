@@ -93,6 +93,29 @@ function programmeRecord(input: {
   };
 }
 
+// A study town of an HRK institution other than its main town gets its own institution unit: the
+// validator requires a programme's city to equal its institution's. Shared with the DAAD importer.
+export function campusUnit(
+  hrkInst: HrkInstitution,
+  city: string,
+  slug: string,
+  probed: Probed,
+): StagedRecord {
+  const site = resolveSite(hrkInst.homepage, probed);
+  return stagedInstitution({
+    slug,
+    name: hrkInst.name,
+    country: "DE",
+    city,
+    type: sectorOfSponsor(hrkInst.sponsor).type,
+    website: site.url,
+    source: "hrk",
+    sourceUrl: HRK_DOWNLOADS_PAGE,
+    sourceId: `hrk:${hrkInst.hsNr}@${slugify(city)}`,
+    todo: `study location in ${city} of "${hrkInst.name}" (HRK main town ${hrkInst.city}); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official`,
+  });
+}
+
 // One institution unit per (institution, study town): the validator requires a programme's city to
 // equal its institution's. The HRK record from `data:import institutions` covers the main town.
 export function buildGermanRecords(input: {
@@ -122,22 +145,7 @@ export function buildGermanRecords(input: {
       instName = hrkInst.name;
       instSlug = city === hrkInst.city ? matched.slug : `${matched.slug}-${slugify(city)}`;
       if (instSlug !== matched.slug && !extras.has(instSlug)) {
-        const site = resolveSite(hrkInst.homepage, probed);
-        extras.set(
-          instSlug,
-          stagedInstitution({
-            slug: instSlug,
-            name: instName,
-            country: "DE",
-            city,
-            type: sectorOfSponsor(hrkInst.sponsor).type,
-            website: site.url,
-            source: "hrk",
-            sourceUrl: HRK_DOWNLOADS_PAGE,
-            sourceId: `hrk:${hrkInst.hsNr}@${slugify(city)}`,
-            todo: `study location in ${city} of "${instName}" (HRK main town ${hrkInst.city}); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official`,
-          }),
-        );
+        extras.set(instSlug, campusUnit(hrkInst, city, instSlug, probed));
       }
     } else {
       instName = p.provider;

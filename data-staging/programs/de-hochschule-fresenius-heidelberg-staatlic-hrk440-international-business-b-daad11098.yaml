@@ -1,0 +1,58 @@
+slug: de-hochschule-fresenius-heidelberg-staatlic-hrk440-international-business-b-daad11098
+institution: de-hochschule-fresenius-heidelberg-staatlic-hrk440
+country: DE
+city: heidelberg
+field: business-economics
+level: bachelor
+name: International Business (BA) with Specialisation in International Management
+summary:
+  fr:
+    text: International Business (BA) with Specialisation in International Management, Hochschule Fresenius Heidelberg – staatlich anerkannte Hochschule der Hochschule Fresenius für Internationales Management GmbH (Heidelberg). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11098/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11098/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-fresenius-heidelberg-staatlic-hrk440-international-business-b-daad11098
+  name: International Business (BA) with Specialisation in International Management
+  institution: Hochschule Fresenius Heidelberg – staatlich anerkannte Hochschule der Hochschule Fresenius für Internationales Management GmbH
+  city: Heidelberg
+  field: business-economics
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11098/
+  todo: "DAAD page lists: languages English, duration 6 semesters, starts Winter semester, tuition \"Tuition varies\", deadline \"This programme has no deadline.\"; institution matched to HRK \"Hochschule Fresenius Heidelberg – staatlich anerkannte Hochschule der Hochschule Fresenius für Internationales Management GmbH\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; 4 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates)"
+  sourceId: daad:11098

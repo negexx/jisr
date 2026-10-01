@@ -1,0 +1,25 @@
+slug: de-hamburg-university-of-technology-daad-hamburg
+name: Hamburg University of Technology
+country: DE
+city:
+  slug: hamburg
+  name: Hamburg
+type: null
+website: null
+source: daad
+info_kind: TODO_read_source
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3748/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hamburg-university-of-technology-daad-hamburg
+  name: Hamburg University of Technology
+  institution: ""
+  city: Hamburg
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: 'institution named "Hamburg University of Technology" in the DAAD database (English name), not matched to the HRK list: it may already exist under its German name. Find its official site, check it is a recognised Hochschule, set the type, add its page as the source, then info_kind: official'
+  sourceId: daad-academy:hamburg-university-of-technology@hamburg

@@ -1,0 +1,61 @@
+slug: de-technical-university-of-applied-sciences-daad-schweinfurt-beng-in-mechanical-engin-daad9991
+institution: de-technical-university-of-applied-sciences-daad-schweinfurt
+country: DE
+city: schweinfurt
+field: engineering
+level: bachelor
+name: BEng in Mechanical Engineering
+summary:
+  fr:
+    text: BEng in Mechanical Engineering, Technical University of Applied Sciences Würzburg-Schweinfurt (THWS) (Schweinfurt). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9991/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2027-06-15
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9991/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-technical-university-of-applied-sciences-daad-schweinfurt-beng-in-mechanical-engin-daad9991
+  name: BEng in Mechanical Engineering
+  institution: Technical University of Applied Sciences Würzburg-Schweinfurt (THWS)
+  city: Schweinfurt
+  field: engineering
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9991/
+  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, tuition \"No tuition fees\", deadline \"Register by 15 June 2027\"; institution not matched to the HRK list (see its record); the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled"
+  sourceId: daad:9991

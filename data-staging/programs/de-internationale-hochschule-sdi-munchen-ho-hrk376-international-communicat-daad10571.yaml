@@ -1,0 +1,61 @@
+slug: de-internationale-hochschule-sdi-munchen-ho-hrk376-international-communicat-daad10571
+institution: de-internationale-hochschule-sdi-munchen-ho-hrk376
+country: DE
+city: munchen
+field: business-economics
+level: bachelor
+name: International Communication and Business
+summary:
+  fr:
+    text: International Communication and Business, Internationale Hochschule SDI München - Hochschule für angewandte Wissenschaften (München). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10571/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-10-15
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10571/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-internationale-hochschule-sdi-munchen-ho-hrk376-international-communicat-daad10571
+  name: International Communication and Business
+  institution: Internationale Hochschule SDI München - Hochschule für angewandte Wissenschaften
+  city: München
+  field: business-economics
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10571/
+  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, tuition \"3,120\", deadline \"Register by 15 October 2026\"; institution matched to HRK \"Internationale Hochschule SDI München - Hochschule für angewandte Wissenschaften\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; 1 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates)"
+  sourceId: daad:10571

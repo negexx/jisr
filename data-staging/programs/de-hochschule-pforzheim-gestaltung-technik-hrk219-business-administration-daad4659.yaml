@@ -1,0 +1,58 @@
+slug: de-hochschule-pforzheim-gestaltung-technik-hrk219-business-administration-daad4659
+institution: de-hochschule-pforzheim-gestaltung-technik-hrk219
+country: DE
+city: pforzheim
+field: business-economics
+level: bachelor
+name: Business Administration / Digital Business Management (BSc)
+summary:
+  fr:
+    text: Business Administration / Digital Business Management (BSc), Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht (Pforzheim). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4659/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4659/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-pforzheim-gestaltung-technik-hrk219-business-administration-daad4659
+  name: Business Administration / Digital Business Management (BSc)
+  institution: Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht
+  city: Pforzheim
+  field: business-economics
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4659/
+  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, tuition \"Tuition varies\", deadline \"Register by 31 May 2027 + 1 more\"; institution matched to HRK \"Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; 11 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates)"
+  sourceId: daad:4659

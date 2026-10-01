@@ -1,0 +1,59 @@
+slug: de-otto-friedrich-universitat-bamberg-hrk8-bachelors-in-european-ec-daad3635
+institution: de-otto-friedrich-universitat-bamberg-hrk8
+country: DE
+city: bamberg
+field: business-economics
+level: bachelor
+name: Bachelor's in European Economic Studies (BSc EES)
+summary:
+  fr:
+    text: Bachelor's in European Economic Studies (BSc EES), Otto-Friedrich-Universität Bamberg (Bamberg). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3635/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3635/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-otto-friedrich-universitat-bamberg-hrk8-bachelors-in-european-ec-daad3635
+  name: Bachelor's in European Economic Studies (BSc EES)
+  institution: Otto-Friedrich-Universität Bamberg
+  city: Bamberg
+  field: business-economics
+  confidence: low
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3635/
+  todo: "DAAD page lists: languages German, English, duration 6 semesters, starts Winter semester, Summer semester, tuition \"No tuition fees\", deadline \"15 January (summer semester), resp. 15 July (winter semester) Special case: For persons with EU/EEA citizenship, an application is possible until the end of the enrolment period.\"; institution matched to HRK \"Otto-Friedrich-Universität Bamberg\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; field is a judgement call: check the programme content; partly or fully taught in German: check the German level required"
+  sourceId: daad:3635

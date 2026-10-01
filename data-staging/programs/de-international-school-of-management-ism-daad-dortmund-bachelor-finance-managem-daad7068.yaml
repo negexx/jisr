@@ -1,0 +1,58 @@
+slug: de-international-school-of-management-ism-daad-dortmund-bachelor-finance-managem-daad7068
+institution: de-international-school-of-management-ism-daad-dortmund
+country: DE
+city: dortmund
+field: business-economics
+level: bachelor
+name: Bachelor Finance & Management
+summary:
+  fr:
+    text: Bachelor Finance & Management, International School of Management (ISM) (Dortmund). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7068/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7068/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-international-school-of-management-ism-daad-dortmund-bachelor-finance-managem-daad7068
+  name: Bachelor Finance & Management
+  institution: International School of Management (ISM)
+  city: Dortmund
+  field: business-economics
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7068/
+  todo: "DAAD page lists: languages English, duration 6 semesters, starts Winter semester, Summer semester, tuition \"5,970\", deadline \"This programme has no deadline.\"; institution not matched to the HRK list (see its record); the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled"
+  sourceId: daad:7068

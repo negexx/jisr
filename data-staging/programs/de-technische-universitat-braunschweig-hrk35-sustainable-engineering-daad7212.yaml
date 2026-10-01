@@ -1,0 +1,59 @@
+slug: de-technische-universitat-braunschweig-hrk35-sustainable-engineering-daad7212
+institution: de-technische-universitat-braunschweig-hrk35
+country: DE
+city: braunschweig
+field: engineering
+level: bachelor
+name: Sustainable Engineering of Products and Processes
+summary:
+  fr:
+    text: Sustainable Engineering of Products and Processes, Technische Universität Braunschweig (Braunschweig). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7212/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7212/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-technische-universitat-braunschweig-hrk35-sustainable-engineering-daad7212
+  name: Sustainable Engineering of Products and Processes
+  institution: Technische Universität Braunschweig
+  city: Braunschweig
+  field: engineering
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7212/
+  todo: "DAAD page lists: languages German, English, duration 6 semesters, starts Winter semester, tuition \"No tuition fees\", deadline \"Register by 15 October 2027 + 1 more\"; institution matched to HRK \"Technische Universität Braunschweig\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; partly or fully taught in German: check the German level required"
+  sourceId: daad:7212

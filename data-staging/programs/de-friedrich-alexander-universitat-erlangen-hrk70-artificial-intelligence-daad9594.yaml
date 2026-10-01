@@ -1,0 +1,58 @@
+slug: de-friedrich-alexander-universitat-erlangen-hrk70-artificial-intelligence-daad9594
+institution: de-friedrich-alexander-universitat-erlangen-hrk70
+country: DE
+city: erlangen
+field: computer-science
+level: bachelor
+name: Artificial Intelligence BSc
+summary:
+  fr:
+    text: Artificial Intelligence BSc, Friedrich-Alexander-Universität Erlangen-Nürnberg (Erlangen). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-friedrich-alexander-universitat-erlangen-hrk70-artificial-intelligence-daad9594
+  name: Artificial Intelligence BSc
+  institution: Friedrich-Alexander-Universität Erlangen-Nürnberg
+  city: Erlangen
+  field: computer-science
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/
+  todo: "DAAD page lists: languages English, duration 6 semesters, starts Winter semester, tuition \"Tuition varies\", deadline \"Start of application period: 15 April Application deadlines: 31 May for international applicants 31 August for domestic applicants\"; institution matched to HRK \"Friedrich-Alexander-Universität Erlangen-Nürnberg\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; 2 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates)"
+  sourceId: daad:9594

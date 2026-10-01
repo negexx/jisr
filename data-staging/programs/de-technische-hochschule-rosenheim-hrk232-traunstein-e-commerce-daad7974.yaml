@@ -1,0 +1,58 @@
+slug: de-technische-hochschule-rosenheim-hrk232-traunstein-e-commerce-daad7974
+institution: de-technische-hochschule-rosenheim-hrk232-traunstein
+country: DE
+city: traunstein
+field: business-economics
+level: bachelor
+name: E-Commerce
+summary:
+  fr:
+    text: E-Commerce, Technische Hochschule Rosenheim (Traunstein). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7974/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7974/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-technische-hochschule-rosenheim-hrk232-traunstein-e-commerce-daad7974
+  name: E-Commerce
+  institution: Technische Hochschule Rosenheim
+  city: Traunstein
+  field: business-economics
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7974/
+  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, tuition \"Tuition varies\", deadline \"With a university entrance qualification from abroad via uni-assist : 15 February - 15 September for a study start in October (winter semester) With a German university entrance qualification via TH Rosenheim application portal : 15 April - 15 September for a study start in October (winter semester)...\"; institution matched to HRK \"Technische Hochschule Rosenheim\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled"
+  sourceId: daad:7974

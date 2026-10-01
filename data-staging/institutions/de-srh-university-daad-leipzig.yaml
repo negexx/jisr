@@ -1,0 +1,25 @@
+slug: de-srh-university-daad-leipzig
+name: SRH University
+country: DE
+city:
+  slug: leipzig
+  name: Leipzig
+type: null
+website: null
+source: daad
+info_kind: TODO_read_source
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9698/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-srh-university-daad-leipzig
+  name: SRH University
+  institution: ""
+  city: Leipzig
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: 'institution named "SRH University" in the DAAD database (English name), not matched to the HRK list: it may already exist under its German name. Find its official site, check it is a recognised Hochschule, set the type, add its page as the source, then info_kind: official'
+  sourceId: daad-academy:srh-university@leipzig

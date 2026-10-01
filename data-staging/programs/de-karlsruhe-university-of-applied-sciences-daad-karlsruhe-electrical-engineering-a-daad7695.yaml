@@ -1,0 +1,61 @@
+slug: de-karlsruhe-university-of-applied-sciences-daad-karlsruhe-electrical-engineering-a-daad7695
+institution: de-karlsruhe-university-of-applied-sciences-daad-karlsruhe
+country: DE
+city: karlsruhe
+field: computer-science
+level: bachelor
+name: Electrical Engineering and Information Technology
+summary:
+  fr:
+    text: Electrical Engineering and Information Technology, Karlsruhe University of Applied Sciences (Karlsruhe). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7695/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-09-15
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7695/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-karlsruhe-university-of-applied-sciences-daad-karlsruhe-electrical-engineering-a-daad7695
+  name: Electrical Engineering and Information Technology
+  institution: Karlsruhe University of Applied Sciences
+  city: Karlsruhe
+  field: computer-science
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7695/
+  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, tuition \"Tuition varies\", deadline \"Register by 15 September 2026\"; institution not matched to the HRK list (see its record); the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled"
+  sourceId: daad:7695

@@ -1,6 +1,7 @@
 import { existsSync } from "node:fs";
 import { mkdir, writeFile } from "node:fs/promises";
 
+import { importDaad } from "./sources/daad";
 import { importGermany } from "./sources/germany";
 import { importInstitutions } from "./sources/institutions";
 import { importFrance } from "./sources/parcoursup";
@@ -8,6 +9,7 @@ import { importNetherlands } from "./sources/rio";
 import type { StagedRecord } from "./staging";
 import {
   mergeReviewSheet,
+  pruneStaged,
   readReviewState,
   reviewCsv,
   reviewFile,
@@ -16,11 +18,22 @@ import {
   writeStaged,
 } from "./staging";
 
+// Which source ids each source is responsible for, so a record it stopped producing can be pruned.
+const OWNS: Record<string, (sourceId: string) => boolean> = {
+  france: (id) => /^(uai|parcoursup):/.test(id),
+  institutions: (id) => /^(hrk:\d+|duo:\w+)$/.test(id),
+  netherlands: (id) => /^rio(-unit)?:/.test(id),
+  // campus units (hrk:<nr>@<town>) are shared with the DAAD importer and not pruned by either
+  germany: (id) => /^(ba|ba-provider):/.test(id),
+  daad: (id) => /^daad(-academy)?:/.test(id),
+};
+
 const SOURCES: Record<string, () => Promise<StagedRecord[]>> = {
   france: importFrance,
   institutions: importInstitutions,
   netherlands: importNetherlands,
   germany: importGermany,
+  daad: importDaad,
 };
 
 async function main(argv: readonly string[]): Promise<void> {
@@ -30,22 +43,57 @@ async function main(argv: readonly string[]): Promise<void> {
   const selected = names.length === 0 || names.includes("all") ? Object.keys(SOURCES) : names;
 
   const records: StagedRecord[] = [];
+  const produced = new Map<string, Set<string>>();
   for (const name of selected) {
     const run = SOURCES[name];
     if (run === undefined) {
       throw new Error(`unknown source "${name}" (known: ${Object.keys(SOURCES).join(", ")})`);
     }
     const staged = await run();
+    produced.set(
+      name,
+      new Set(
+        staged.flatMap((r) => (r.sourceId === undefined ? [] : [`${r.collection}|${r.sourceId}`])),
+      ),
+    );
     console.log(`${name}: ${staged.length} records`);
     records.push(...staged);
   }
 
   const state = await readReviewState();
-  const result = await writeStaged(records, { overwrite, approved: state.approved });
+  // Two sources can produce the same record (a campus unit): keep the first.
+  const seen = new Set<string>();
+  const unique = records.filter((r) => {
+    const key = `${r.collection}/${r.id}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  const result = await writeStaged(unique, { overwrite, approved: state.approved });
+  const pruned = { removed: [] as string[], keptApproved: [] as string[] };
+  for (const name of selected) {
+    const owns = OWNS[name];
+    if (owns === undefined) continue;
+    const r = await pruneStaged({
+      owns,
+      produced: produced.get(name) ?? new Set(),
+      approved: state.approved,
+    });
+    pruned.removed.push(...r.removed);
+    pruned.keptApproved.push(...r.keptApproved);
+  }
+  if (pruned.removed.length > 0) {
+    console.log(
+      `${pruned.removed.length} staged record(s) the source no longer produces were removed`,
+    );
+  }
+  for (const key of pruned.keptApproved) {
+    console.warn(`WARN ${key} is approved but its source no longer produces it: check it`);
+  }
   const { rows, approved } = mergeReviewSheet({
     existingRows: state.rows,
     approved: state.approved,
-    records,
+    records: unique,
     rewritten: result.rewritten,
     fileExists: (kind, slug) => existsSync(stageFile(kind, slug)),
   });

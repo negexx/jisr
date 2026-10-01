@@ -162,7 +162,7 @@ export async function appendLedger(rows: readonly LedgerRow[], dir = STAGING_DIR
 }
 
 // collection|sourceId -> staged files carrying it (read with a regex: thousands of files).
-async function indexStagedSourceIds(
+export async function indexStagedSourceIds(
   dir: string,
 ): Promise<Map<string, { slug: string; file: string }>> {
   const index = new Map<string, { slug: string; file: string }>();
@@ -349,4 +349,32 @@ export function mergeReviewSheet(input: {
     .filter((r) => input.fileExists(r.kind, r.slug))
     .sort((a, b) => recordKey(a.kind, a.slug).localeCompare(recordKey(b.kind, b.slug)));
   return { rows, approved };
+}
+
+export type PruneResult = { removed: string[]; keptApproved: string[] };
+
+// Removes staged records that a source used to produce but no longer does (a programme dropped by
+// a new rule, taught abroad, or gone from the register). Only records the caller says it owns, and
+// only unapproved ones: an approved record is kept and reported.
+export async function pruneStaged(input: {
+  owns: (sourceId: string) => boolean;
+  produced: ReadonlySet<string>; // "collection|sourceId"
+  approved: ReadonlySet<string>;
+  stagingDir?: string;
+}): Promise<PruneResult> {
+  const result: PruneResult = { removed: [], keptApproved: [] };
+  const index = await indexStagedSourceIds(input.stagingDir ?? STAGING_DIR);
+  for (const [key, { slug, file }] of index) {
+    const [collection, ...rest] = key.split("|");
+    const sourceId = rest.join("|");
+    if (collection === undefined || !input.owns(sourceId) || input.produced.has(key)) continue;
+    const recordKeyValue = recordKey(collection, slug);
+    if (input.approved.has(recordKeyValue)) {
+      result.keptApproved.push(recordKeyValue);
+      continue;
+    }
+    await rm(file);
+    result.removed.push(recordKeyValue);
+  }
+  return result;
 }

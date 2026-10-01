@@ -1,0 +1,59 @@
+slug: de-hochschule-fulda-university-of-applied-s-hrk92-international-business-a-daad10425
+institution: de-hochschule-fulda-university-of-applied-s-hrk92
+country: DE
+city: fulda
+field: business-economics
+level: bachelor
+name: International Business Administration
+summary:
+  fr:
+    text: International Business Administration, Hochschule Fulda - University of Applied Sciences (Fulda). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10425/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10425/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-fulda-university-of-applied-s-hrk92-international-business-a-daad10425
+  name: International Business Administration
+  institution: Hochschule Fulda - University of Applied Sciences
+  city: Fulda
+  field: business-economics
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10425/
+  todo: "DAAD page lists: languages German, English, duration 7 semesters, starts Winter semester, Summer semester, tuition \"No tuition fees\", deadline \"Register by 30 September 2026 + 1 more\"; institution matched to HRK \"Hochschule Fulda - University of Applied Sciences\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; 4 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates); partly or fully taught in German: check the German level required"
+  sourceId: daad:10425

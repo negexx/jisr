@@ -1,0 +1,61 @@
+slug: de-hochschule-ravensburg-weingarten-hrk224-mechatronics-daad9717
+institution: de-hochschule-ravensburg-weingarten-hrk224
+country: DE
+city: weingarten
+field: engineering
+level: bachelor
+name: Mechatronics
+summary:
+  fr:
+    text: Mechatronics, Hochschule Ravensburg-Weingarten (Weingarten). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9717/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-11-15
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9717/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-ravensburg-weingarten-hrk224-mechatronics-daad9717
+  name: Mechatronics
+  institution: Hochschule Ravensburg-Weingarten
+  city: Weingarten
+  field: engineering
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9717/
+  todo: "DAAD page lists: languages English, duration 7 semesters, starts Summer semester, tuition \"Tuition varies\", deadline \"Register by 15 November 2026\"; institution matched to HRK \"Hochschule Ravensburg-Weingarten\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; 8 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates)"
+  sourceId: daad:9717

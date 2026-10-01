@@ -5,7 +5,7 @@ city:
   slug: rotterdam
   name: Rotterdam
 type: null
-website: null
+website: https://www.codarts.nl/
 source: duo
 info_kind: TODO_read_source
 sources:
@@ -20,6 +20,6 @@ _review:
   city: Rotterdam
   field: ""
   confidence: ""
-  officialUrl: ""
-  todo: "DUO: hbo, denomination \"Algemeen bijzonder\"; public/private is not in the file: check the institution's legal status; listed website \"www.codarts.nl\" did not answer over https (probe failed): find the official https site; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  officialUrl: https://www.codarts.nl/
+  todo: "DUO: hbo, denomination \"Algemeen bijzonder\"; public/private is not in the file: check the institution's legal status; listed as \"www.codarts.nl\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
   sourceId: duo:14NI

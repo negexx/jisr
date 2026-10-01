@@ -12,6 +12,9 @@ export type FetchOptions = {
   accept?: string;
   // Ignore the cache (also set by JISR_IMPORT_REFRESH=1, which `pnpm data:import --refresh` sets).
   refresh?: boolean;
+  // Retry policy for flaky hosts: attempts (default 4) and the first backoff in ms (default 2000).
+  attempts?: number;
+  retryDelayMs?: number;
   // Extra request headers (an API key, for instance).
   headers?: Record<string, string>;
   // Character encoding of the response body (some official files are cp1252 / latin1).
@@ -45,10 +48,10 @@ function cachePath(url: string): string {
   return path.join(CACHE_DIR, `${createHash("sha1").update(url).digest("hex")}.txt`);
 }
 
-function retryDelayMs(response: Response | null, attempt: number): number {
+function retryDelayMs(response: Response | null, attempt: number, base: number): number {
   const header = Number(response?.headers.get("retry-after"));
   if (Number.isFinite(header) && header > 0) return Math.min(header, 120) * 1000;
-  return 2000 * 2 ** (attempt - 1);
+  return base * 2 ** (attempt - 1);
 }
 
 // Polite, cached GET: one request per URL per cache lifetime. Retries network errors, 429 and 5xx
@@ -67,7 +70,8 @@ export async function fetchText(url: string, options: FetchOptions = {}): Promis
   }
 
   let lastError = "unknown error";
-  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+  const maxAttempts = options.attempts ?? MAX_ATTEMPTS;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     let response: Response | null = null;
     try {
       response = await fetch(url, {
@@ -88,7 +92,9 @@ export async function fetchText(url: string, options: FetchOptions = {}): Promis
     } catch (error) {
       lastError = error instanceof Error ? error.message : String(error);
     }
-    if (attempt < MAX_ATTEMPTS) await sleep(retryDelayMs(response, attempt));
+    if (attempt < maxAttempts) {
+      await sleep(retryDelayMs(response, attempt, options.retryDelayMs ?? 2000));
+    }
   }
   throw new Error(`GET ${url} failed: ${lastError}`);
 }
