@@ -17,7 +17,8 @@ type Props = { children: ReactNode; params: Promise<{ locale: string }> };
 
 // A first segment that is not a locale (only paths the proxy skips, such as /robots.txt) is then
 // unmatched and gets global-not-found, rather than this layout's notFound(), which Next can only
-// answer with a blank error shell rendered in the browser.
+// answer with a blank error shell rendered in the browser. Child segments inherit this: a future
+// dynamic child under [locale] without generateStaticParams must set dynamicParams = true itself.
 export const dynamicParams = false;
 
 export function generateStaticParams() {
