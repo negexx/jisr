@@ -1,0 +1,24 @@
+slug: de-international-school-of-management-hrk285
+name: International School of Management
+country: DE
+city:
+  slug: dortmund
+  name: Dortmund
+type: private
+website: https://www.ism.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-international-school-of-management-hrk285
+  name: International School of Management
+  institution: ""
+  city: Dortmund
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ism.de
+  todo: "HRK: Fachhochschulen / HAW, Nordrhein-Westfalen"

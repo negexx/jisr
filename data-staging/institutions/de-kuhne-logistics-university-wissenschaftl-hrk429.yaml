@@ -1,0 +1,24 @@
+slug: de-kuhne-logistics-university-wissenschaftl-hrk429
+name: Kühne Logistics University - Wissenschaftliche Hochschule für Logistik und Unternehmensführung
+country: DE
+city:
+  slug: hamburg
+  name: Hamburg
+type: private
+website: https://www.klu.org/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-kuhne-logistics-university-wissenschaftl-hrk429
+  name: Kühne Logistics University - Wissenschaftliche Hochschule für Logistik und Unternehmensführung
+  institution: ""
+  city: Hamburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.klu.org/
+  todo: 'HRK: Universitäten, Hamburg; listed as "www.klu.org"; the https form answers: confirm it is the official site'

@@ -1,0 +1,24 @@
+slug: nl-hogeschool-van-hall-larenstein-30hd
+name: Hogeschool Van Hall Larenstein
+country: NL
+city:
+  slug: velp-gld
+  name: Velp Gld
+type: null
+website: null
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-hogeschool-van-hall-larenstein-30hd
+  name: Hogeschool Van Hall Larenstein
+  institution: ""
+  city: Velp Gld
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "DUO: hbo; public/private is not in the file: check the institution's legal status; listed website \"www.vanhall-larenstein.nl\" does not answer over https: find the official https site"

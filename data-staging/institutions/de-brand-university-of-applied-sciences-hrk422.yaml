@@ -1,0 +1,24 @@
+slug: de-brand-university-of-applied-sciences-hrk422
+name: Brand University of Applied Sciences
+country: DE
+city:
+  slug: hamburg
+  name: Hamburg
+type: private
+website: https://www.brand-university.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-brand-university-of-applied-sciences-hrk422
+  name: Brand University of Applied Sciences
+  institution: ""
+  city: Hamburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.brand-university.de/
+  todo: "HRK: Fachhochschulen / HAW, Hamburg"

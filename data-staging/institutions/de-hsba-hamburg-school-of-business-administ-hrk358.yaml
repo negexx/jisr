@@ -1,0 +1,24 @@
+slug: de-hsba-hamburg-school-of-business-administ-hrk358
+name: HSBA Hamburg School of Business Administration
+country: DE
+city:
+  slug: hamburg
+  name: Hamburg
+type: private
+website: https://www.hsba.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hsba-hamburg-school-of-business-administ-hrk358
+  name: HSBA Hamburg School of Business Administration
+  institution: ""
+  city: Hamburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hsba.de
+  todo: "HRK: Fachhochschulen / HAW, Hamburg"

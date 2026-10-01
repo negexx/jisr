@@ -1,0 +1,24 @@
+slug: de-steinbeis-hochschule-hrk330
+name: Steinbeis Hochschule
+country: DE
+city:
+  slug: magdeburg
+  name: Magdeburg
+type: private
+website: https://www.steinbeis-hochschule.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-steinbeis-hochschule-hrk330
+  name: Steinbeis Hochschule
+  institution: ""
+  city: Magdeburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.steinbeis-hochschule.de/
+  todo: "HRK: Fachhochschulen / HAW, Sachsen-Anhalt"

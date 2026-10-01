@@ -1,0 +1,24 @@
+slug: de-jade-hochschule-wilhelmshaven-oldenburg-hrk406
+name: Jade Hochschule -  Wilhelmshaven/Oldenburg/Elsfleth
+country: DE
+city:
+  slug: wilhelmshaven
+  name: Wilhelmshaven
+type: public
+website: https://www.jade-hs.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-jade-hochschule-wilhelmshaven-oldenburg-hrk406
+  name: Jade Hochschule -  Wilhelmshaven/Oldenburg/Elsfleth
+  institution: ""
+  city: Wilhelmshaven
+  field: ""
+  confidence: ""
+  officialUrl: https://www.jade-hs.de/
+  todo: 'HRK: Fachhochschulen / HAW, Niedersachsen; listed as "http://www.jade-hs.de"; the https form answers: confirm it is the official site'

@@ -5,7 +5,7 @@ city:
   slug: bobigny
   name: Bobigny
 type: public
-website: https://www.univ-spn.fr/
+website: https://iutb.univ-paris13.fr/formations/metiers-du-multimedia-et-de-linternet/dut-metiers-du-multimedia-et-de-linternet/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Bobigny
   field: ""
   confidence: ""
-  officialUrl: https://www.univ-spn.fr/
-  todo: "website candidate from parent university \"Université Sorbonne Paris Nord\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://iutb.univ-paris13.fr/formations/metiers-du-multimedia-et-de-linternet/dut-metiers-du-multimedia-et-de-linternet/
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

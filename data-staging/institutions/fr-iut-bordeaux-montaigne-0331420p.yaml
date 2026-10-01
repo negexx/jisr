@@ -5,7 +5,7 @@ city:
   slug: bordeaux
   name: Bordeaux
 type: public
-website: https://www.u-bordeaux-montaigne.fr/fr/index.html
+website: https://www.iut.u-bordeaux-montaigne.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Bordeaux
   field: ""
   confidence: ""
-  officialUrl: https://www.u-bordeaux-montaigne.fr/fr/index.html
-  todo: "website candidate from parent university \"Université Bordeaux Montaigne\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://www.iut.u-bordeaux-montaigne.fr/
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

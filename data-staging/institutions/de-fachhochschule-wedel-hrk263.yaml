@@ -1,0 +1,24 @@
+slug: de-fachhochschule-wedel-hrk263
+name: Fachhochschule Wedel
+country: DE
+city:
+  slug: wedel
+  name: Wedel
+type: private
+website: https://www.fh-wedel.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fachhochschule-wedel-hrk263
+  name: Fachhochschule Wedel
+  institution: ""
+  city: Wedel
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fh-wedel.de/
+  todo: 'HRK: Fachhochschulen / HAW, Schleswig-Holstein; listed as "http://www.fh-wedel.de"; the https form answers: confirm it is the official site'

@@ -1,0 +1,24 @@
+slug: de-hochschule-der-medien-stuttgart-hrk250
+name: Hochschule der Medien Stuttgart
+country: DE
+city:
+  slug: stuttgart
+  name: Stuttgart
+type: public
+website: https://hdm-stuttgart.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-der-medien-stuttgart-hrk250
+  name: Hochschule der Medien Stuttgart
+  institution: ""
+  city: Stuttgart
+  field: ""
+  confidence: ""
+  officialUrl: https://hdm-stuttgart.de/
+  todo: 'HRK: Fachhochschulen / HAW, Baden-Württemberg; listed as "http://www.hdm-stuttgart.de"; the https form answers: confirm it is the official site'

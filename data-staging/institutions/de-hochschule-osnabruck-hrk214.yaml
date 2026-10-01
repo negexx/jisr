@@ -1,0 +1,24 @@
+slug: de-hochschule-osnabruck-hrk214
+name: Hochschule Osnabrück
+country: DE
+city:
+  slug: osnabruck
+  name: Osnabrück
+type: public
+website: https://www.hs-osnabrueck.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-osnabruck-hrk214
+  name: Hochschule Osnabrück
+  institution: ""
+  city: Osnabrück
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-osnabrueck.de/
+  todo: 'HRK: Fachhochschulen / HAW, Niedersachsen; listed as "http://www.hs-osnabrueck.de"; the https form answers: confirm it is the official site'

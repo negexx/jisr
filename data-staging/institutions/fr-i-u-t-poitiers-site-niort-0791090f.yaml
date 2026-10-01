@@ -5,7 +5,7 @@ city:
   slug: niort
   name: Niort
 type: public
-website: https://www.univ-poitiers.fr/
+website: https://iutp.univ-poitiers.fr
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Niort
   field: ""
   confidence: ""
-  officialUrl: https://www.univ-poitiers.fr/
-  todo: "website candidate from parent university \"Université de Poitiers\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://iutp.univ-poitiers.fr
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

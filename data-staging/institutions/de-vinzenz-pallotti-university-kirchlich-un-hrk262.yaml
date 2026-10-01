@@ -1,0 +1,24 @@
+slug: de-vinzenz-pallotti-university-kirchlich-un-hrk262
+name: Vinzenz Pallotti University - kirchlich und staatlich anerkannte wissenschaftliche Hochschule in freier Trägerschaft
+country: DE
+city:
+  slug: vallendar
+  name: Vallendar
+type: private
+website: https://vp-uni.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-vinzenz-pallotti-university-kirchlich-un-hrk262
+  name: Vinzenz Pallotti University - kirchlich und staatlich anerkannte wissenschaftliche Hochschule in freier Trägerschaft
+  institution: ""
+  city: Vallendar
+  field: ""
+  confidence: ""
+  officialUrl: https://vp-uni.de/
+  todo: "HRK: Universitäten, Rheinland-Pfalz; church-run (state-recognised): the app only has public/private, check how to classify"

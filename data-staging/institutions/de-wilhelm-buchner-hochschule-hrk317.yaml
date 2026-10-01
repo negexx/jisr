@@ -1,0 +1,24 @@
+slug: de-wilhelm-buchner-hochschule-hrk317
+name: Wilhelm Büchner Hochschule
+country: DE
+city:
+  slug: darmstadt
+  name: Darmstadt
+type: private
+website: https://www.wb-fernstudium.de/?referrer=hochschulkompass_portal
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-wilhelm-buchner-hochschule-hrk317
+  name: Wilhelm Büchner Hochschule
+  institution: ""
+  city: Darmstadt
+  field: ""
+  confidence: ""
+  officialUrl: https://www.wb-fernstudium.de/?referrer=hochschulkompass_portal
+  todo: 'HRK: Fachhochschulen / HAW, Hessen; listed as "http://www.wb-fernstudium.de?referrer=hochschulkompass_portal"; the https form answers: confirm it is the official site'

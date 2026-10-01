@@ -1,0 +1,24 @@
+slug: de-heinrich-heine-universitat-dusseldorf-hrk59
+name: Heinrich-Heine-Universität Düsseldorf
+country: DE
+city:
+  slug: dusseldorf
+  name: Düsseldorf
+type: public
+website: https://www.hhu.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-heinrich-heine-universitat-dusseldorf-hrk59
+  name: Heinrich-Heine-Universität Düsseldorf
+  institution: ""
+  city: Düsseldorf
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hhu.de/
+  todo: 'HRK: Universitäten, Nordrhein-Westfalen; listed as "http://www.hhu.de"; the https form answers: confirm it is the official site'

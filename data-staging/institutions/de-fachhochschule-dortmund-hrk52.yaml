@@ -1,0 +1,24 @@
+slug: de-fachhochschule-dortmund-hrk52
+name: Fachhochschule Dortmund
+country: DE
+city:
+  slug: dortmund
+  name: Dortmund
+type: public
+website: https://www.fh-dortmund.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fachhochschule-dortmund-hrk52
+  name: Fachhochschule Dortmund
+  institution: ""
+  city: Dortmund
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fh-dortmund.de/
+  todo: 'HRK: Fachhochschulen / HAW, Nordrhein-Westfalen; listed as "http://www.fh-dortmund.de"; the https form answers: confirm it is the official site'

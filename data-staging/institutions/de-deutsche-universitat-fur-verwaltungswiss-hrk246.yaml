@@ -1,0 +1,24 @@
+slug: de-deutsche-universitat-fur-verwaltungswiss-hrk246
+name: Deutsche Universität für Verwaltungswissenschaften Speyer
+country: DE
+city:
+  slug: speyer
+  name: Speyer
+type: public
+website: https://www.uni-speyer.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-deutsche-universitat-fur-verwaltungswiss-hrk246
+  name: Deutsche Universität für Verwaltungswissenschaften Speyer
+  institution: ""
+  city: Speyer
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-speyer.de/
+  todo: 'HRK: Universitäten, Rheinland-Pfalz; listed as "http://www.uni-speyer.de"; the https form answers: confirm it is the official site'

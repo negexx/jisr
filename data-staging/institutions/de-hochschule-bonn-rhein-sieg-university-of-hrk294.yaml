@@ -1,0 +1,24 @@
+slug: de-hochschule-bonn-rhein-sieg-university-of-hrk294
+name: Hochschule Bonn-Rhein-Sieg, University of Applied Sciences
+country: DE
+city:
+  slug: sankt-augustin
+  name: Sankt Augustin
+type: public
+website: https://www.h-brs.de/de
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-bonn-rhein-sieg-university-of-hrk294
+  name: Hochschule Bonn-Rhein-Sieg, University of Applied Sciences
+  institution: ""
+  city: Sankt Augustin
+  field: ""
+  confidence: ""
+  officialUrl: https://www.h-brs.de/de
+  todo: 'HRK: Fachhochschulen / HAW, Nordrhein-Westfalen; listed as "www.h-brs.de"; the https form answers: confirm it is the official site'

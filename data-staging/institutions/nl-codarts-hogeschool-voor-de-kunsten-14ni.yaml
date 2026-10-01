@@ -1,0 +1,24 @@
+slug: nl-codarts-hogeschool-voor-de-kunsten-14ni
+name: Codarts, Hogeschool voor de Kunsten
+country: NL
+city:
+  slug: rotterdam
+  name: Rotterdam
+type: null
+website: null
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-codarts-hogeschool-voor-de-kunsten-14ni
+  name: Codarts, Hogeschool voor de Kunsten
+  institution: ""
+  city: Rotterdam
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "DUO: hbo; public/private is not in the file: check the institution's legal status; listed website \"www.codarts.nl\" does not answer over https: find the official https site"

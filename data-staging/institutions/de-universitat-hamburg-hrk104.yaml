@@ -1,0 +1,24 @@
+slug: de-universitat-hamburg-hrk104
+name: Universität Hamburg
+country: DE
+city:
+  slug: hamburg
+  name: Hamburg
+type: public
+website: https://www.uni-hamburg.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-universitat-hamburg-hrk104
+  name: Universität Hamburg
+  institution: ""
+  city: Hamburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-hamburg.de/
+  todo: 'HRK: Universitäten, Hamburg; listed as "http://www.uni-hamburg.de"; the https form answers: confirm it is the official site'

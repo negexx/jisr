@@ -5,7 +5,7 @@ city:
   slug: valbonne
   name: Valbonne
 type: public
-website: https://univ-cotedazur.fr/
+website: https://iut.univ-cotedazur.fr/departements-et-formations
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Valbonne
   field: ""
   confidence: ""
-  officialUrl: https://univ-cotedazur.fr/
-  todo: "website candidate from parent university \"Université Côte d'Azur\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://iut.univ-cotedazur.fr/departements-et-formations
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

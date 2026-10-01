@@ -1,0 +1,24 @@
+slug: de-code-university-of-applied-sciences-hrk506
+name: CODE University of Applied Sciences
+country: DE
+city:
+  slug: berlin
+  name: Berlin
+type: private
+website: https://code.berlin/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-code-university-of-applied-sciences-hrk506
+  name: CODE University of Applied Sciences
+  institution: ""
+  city: Berlin
+  field: ""
+  confidence: ""
+  officialUrl: https://code.berlin/
+  todo: "HRK: Fachhochschulen / HAW, Berlin"

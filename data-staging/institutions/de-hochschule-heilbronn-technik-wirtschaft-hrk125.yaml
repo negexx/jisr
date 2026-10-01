@@ -1,0 +1,24 @@
+slug: de-hochschule-heilbronn-technik-wirtschaft-hrk125
+name: Hochschule Heilbronn, Technik, Wirtschaft, Informatik
+country: DE
+city:
+  slug: heilbronn
+  name: Heilbronn
+type: public
+website: https://www.hs-heilbronn.de/de
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-heilbronn-technik-wirtschaft-hrk125
+  name: Hochschule Heilbronn, Technik, Wirtschaft, Informatik
+  institution: ""
+  city: Heilbronn
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-heilbronn.de/de
+  todo: 'HRK: Fachhochschulen / HAW, Baden-Württemberg; listed as "http://www.hs-heilbronn.de"; the https form answers: confirm it is the official site'

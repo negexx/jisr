@@ -1,0 +1,24 @@
+slug: de-universitat-koblenz-hrk146
+name: Universität Koblenz
+country: DE
+city:
+  slug: koblenz
+  name: Koblenz
+type: public
+website: https://www.uni-koblenz.de/de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-universitat-koblenz-hrk146
+  name: Universität Koblenz
+  institution: ""
+  city: Koblenz
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-koblenz.de/de
+  todo: "HRK: Universitäten, Rheinland-Pfalz"

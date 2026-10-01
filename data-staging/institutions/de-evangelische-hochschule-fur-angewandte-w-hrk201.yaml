@@ -1,0 +1,24 @@
+slug: de-evangelische-hochschule-fur-angewandte-w-hrk201
+name: Evangelische Hochschule für angewandte Wissenschaften - Evangelische Fachhochschule Nürnberg
+country: DE
+city:
+  slug: nurnberg
+  name: Nürnberg
+type: private
+website: https://www.evhn.de/de/home
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-evangelische-hochschule-fur-angewandte-w-hrk201
+  name: Evangelische Hochschule für angewandte Wissenschaften - Evangelische Fachhochschule Nürnberg
+  institution: ""
+  city: Nürnberg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.evhn.de/de/home
+  todo: 'HRK: Fachhochschulen / HAW, Bayern; church-run (state-recognised): the app only has public/private, check how to classify; listed as "http://www.evhn.de/"; the https form answers: confirm it is the official site'

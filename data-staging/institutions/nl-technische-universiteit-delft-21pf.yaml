@@ -1,0 +1,24 @@
+slug: nl-technische-universiteit-delft-21pf
+name: Technische Universiteit Delft
+country: NL
+city:
+  slug: delft
+  name: Delft
+type: null
+website: https://www.tudelft.nl/
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-technische-universiteit-delft-21pf
+  name: Technische Universiteit Delft
+  institution: ""
+  city: Delft
+  field: ""
+  confidence: ""
+  officialUrl: https://www.tudelft.nl/
+  todo: "DUO: wo; public/private is not in the file: check the institution's legal status; listed as \"www.tudelft.nl\"; the https form answers: confirm it is the official site"

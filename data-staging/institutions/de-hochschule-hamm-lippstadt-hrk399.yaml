@@ -1,0 +1,24 @@
+slug: de-hochschule-hamm-lippstadt-hrk399
+name: Hochschule Hamm-Lippstadt
+country: DE
+city:
+  slug: hamm
+  name: Hamm
+type: public
+website: https://www.hshl.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-hamm-lippstadt-hrk399
+  name: Hochschule Hamm-Lippstadt
+  institution: ""
+  city: Hamm
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hshl.de/
+  todo: 'HRK: Fachhochschulen / HAW, Nordrhein-Westfalen; listed as "http://www.hshl.de"; the https form answers: confirm it is the official site'

@@ -1,0 +1,24 @@
+slug: de-fachhochschule-erfurt-hrk67
+name: Fachhochschule Erfurt
+country: DE
+city:
+  slug: erfurt
+  name: Erfurt
+type: public
+website: https://www.fh-erfurt.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fachhochschule-erfurt-hrk67
+  name: Fachhochschule Erfurt
+  institution: ""
+  city: Erfurt
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fh-erfurt.de/
+  todo: 'HRK: Fachhochschulen / HAW, Thüringen; listed as "http://www.fh-erfurt.de"; the https form answers: confirm it is the official site'

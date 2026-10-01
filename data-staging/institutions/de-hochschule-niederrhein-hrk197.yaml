@@ -1,0 +1,24 @@
+slug: de-hochschule-niederrhein-hrk197
+name: Hochschule Niederrhein
+country: DE
+city:
+  slug: krefeld
+  name: Krefeld
+type: public
+website: https://www.hs-niederrhein.de/startseite/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-niederrhein-hrk197
+  name: Hochschule Niederrhein
+  institution: ""
+  city: Krefeld
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-niederrhein.de/startseite/
+  todo: "HRK: Fachhochschulen / HAW, Nordrhein-Westfalen"

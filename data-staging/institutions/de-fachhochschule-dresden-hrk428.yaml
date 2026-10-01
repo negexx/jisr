@@ -1,0 +1,24 @@
+slug: de-fachhochschule-dresden-hrk428
+name: Fachhochschule Dresden
+country: DE
+city:
+  slug: dresden
+  name: Dresden
+type: private
+website: https://www.fh-dresden.eu
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fachhochschule-dresden-hrk428
+  name: Fachhochschule Dresden
+  institution: ""
+  city: Dresden
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fh-dresden.eu
+  todo: "HRK: Fachhochschulen / HAW, Sachsen"

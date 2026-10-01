@@ -46,7 +46,7 @@ Official bulk datasets are pulled into `data-staging/`, never straight into `dat
 
 ```
 pnpm data:import france          # Parcoursup open data (Licence + BUT, CS/engineering/business) + institutions
-pnpm data:import institutions    # German and Dutch institution candidates from Wikidata
+pnpm data:import institutions    # German (HRK) and Dutch (DUO) institution candidates
 pnpm data:import                 # all sources; keeps staged files (--overwrite replaces them and clears their approval; --refresh bypasses the HTTP cache)
 pnpm data:promote --confirm-human-read --verified-on YYYY-MM-DD
 ```
@@ -62,10 +62,23 @@ What each source provides, and what stays for a human:
 | Parcoursup open data (fr-esr-parcoursup, Licence ouverte 2.0) | programme name, institution, city, public/private, link to the official Parcoursup page (used as the programme's source) | duration, languages, tuition, intakes, documents, requirement rules, the application channel for Moroccan applicants |
 | ESR register of establishments (same publisher) | institution website for an exact UAI match: promotable as is | other institutions get a website candidate (Wikidata or the parent university, e.g. an IUT campus) flagged for confirmation |
 | ONISEP Idéo, structures d'enseignement supérieur (ODbL) | parent university of each IUT campus or UFR by UAI code, used to find a website candidate; independent public/private cross-check (a mismatch with Parcoursup is flagged in the review sheet) | the unit's own website: the parent's site is only a candidate to confirm |
-| Wikidata (CC0), German and Dutch institutions | name in the local language, city, website candidate, ROR id | everything: it is not an official source, so every record needs an official page and `info_kind: official` |
+| ONISEP Idéo, actions de formation (ODbL) | the website each establishment lists for itself (often the IUT or faculty site): preferred over the parent university's as a website candidate | confirm it is the right site; programme-level matching (duration, cost text) is not imported |
+| HRK Hochschulkompass list, Germany (`hs_liste.txt`) | 322 universities, Fachhochschulen/HAW and other Hochschulen: official name, city, public/private sponsor, website. https websites with a public/private sponsor are promotable as is; http ones are probed once and kept as candidates | church-run institutions (app has only public/private), programmes |
+| DUO open data, Netherlands (`Hogescholen en universiteiten`) | 54 hogescholen and universities: official name, city, website (probed for https) | public/private type, programmes |
+| Wikidata (CC0) | only French UAI → website (a candidate, below ONISEP) | everything else |
 
 Field assignment for French programmes is an exact-label table in `scripts/import/fields.ts`; `confidence: low` rows are judgement calls. The HTTP cache lives in `.cache/import/` (git-ignored).
 
-ONISEP data is under the Open Database Licence: attribute ONISEP, and share alike if a database derived from it is published.
+### Source licences
 
-Known gaps: no bulk official programme dataset was reachable for Germany (Hochschulkompass forbids crawling its search in robots.txt; the DAAD database is a JavaScript app with no public API) or the Netherlands (DUO/Studiekeuze open data was not reachable), so German and Dutch programmes, all tuition fees, living costs and scholarships are not imported.
+| Source | Terms | Status |
+|---|---|---|
+| Parcoursup open data, ESR register | Licence ouverte 2.0 | free reuse with attribution |
+| ONISEP Idéo (structures, actions) | ODbL | attribute ONISEP; share alike if a derived database is published |
+| HRK Hochschulkompass list | free for personal use; any other use needs permission of the HRK foundation (imprint) | **permission to be requested before launch** (hochschulkompass@hrk.de); fine for the internal review queue |
+| DUO open data | published as open education data; the pages read here state no licence | **confirm the licence** (a research note says CC0, not verified) |
+| Wikidata | CC0 | free |
+
+Known gaps: no bulk official programme dataset was reachable for Germany (Hochschulkompass forbids crawling its search in robots.txt; the DAAD database is a JavaScript app with no public API) or the Netherlands (DUO's "Overzicht Erkenningen ho" lives on a JavaScript portal with no direct file link reachable from here). German and Dutch programmes, all tuition fees, living costs and scholarships are not imported.
+
+Deliberately not adopted (see ADR 0003, one developer, Release 1): campus and institutional-history tables, raw source snapshots, ETER (its terms forbid republishing through an online platform), Destatis codebooks and accreditation registers (NVAO). Revisit when accounts or more countries land.

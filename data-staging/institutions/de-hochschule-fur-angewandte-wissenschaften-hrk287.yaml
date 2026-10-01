@@ -1,0 +1,24 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk287
+name: Hochschule für angewandte Wissenschaften Hof
+country: DE
+city:
+  slug: hof
+  name: Hof
+type: public
+website: https://www.hof-university.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-angewandte-wissenschaften-hrk287
+  name: Hochschule für angewandte Wissenschaften Hof
+  institution: ""
+  city: Hof
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hof-university.de/
+  todo: 'HRK: Fachhochschulen / HAW, Bayern; listed as "http://www.hof-university.de"; the https form answers: confirm it is the official site'

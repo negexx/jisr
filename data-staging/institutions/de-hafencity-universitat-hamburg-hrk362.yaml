@@ -1,0 +1,24 @@
+slug: de-hafencity-universitat-hamburg-hrk362
+name: HafenCity Universität Hamburg
+country: DE
+city:
+  slug: hamburg
+  name: Hamburg
+type: public
+website: https://www.hcu-hamburg.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hafencity-universitat-hamburg-hrk362
+  name: HafenCity Universität Hamburg
+  institution: ""
+  city: Hamburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hcu-hamburg.de/
+  todo: 'HRK: Universitäten, Hamburg; listed as "http://www.hcu-hamburg.de"; the https form answers: confirm it is the official site'

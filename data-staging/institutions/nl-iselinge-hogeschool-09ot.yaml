@@ -1,0 +1,24 @@
+slug: nl-iselinge-hogeschool-09ot
+name: Iselinge Hogeschool
+country: NL
+city:
+  slug: doetinchem
+  name: Doetinchem
+type: null
+website: null
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-iselinge-hogeschool-09ot
+  name: Iselinge Hogeschool
+  institution: ""
+  city: Doetinchem
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "DUO: hbo; public/private is not in the file: check the institution's legal status; listed website \"www.iselingehogeschool.nl\" does not answer over https: find the official https site"

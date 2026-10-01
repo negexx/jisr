@@ -5,7 +5,7 @@ city:
   slug: saint-quentin
   name: Saint-Quentin
 type: public
-website: https://www.u-picardie.fr/
+website: https://www.insset.u-picardie.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Saint-Quentin
   field: ""
   confidence: ""
-  officialUrl: https://www.u-picardie.fr/
-  todo: "website candidate from parent university \"Université de Picardie Jules Verne\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://www.insset.u-picardie.fr/
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

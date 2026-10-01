@@ -1,0 +1,24 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk264
+name: Hochschule für angewandte Wissenschaften Weihenstephan-Triesdorf
+country: DE
+city:
+  slug: freising
+  name: Freising
+type: public
+website: https://www.hswt.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-angewandte-wissenschaften-hrk264
+  name: Hochschule für angewandte Wissenschaften Weihenstephan-Triesdorf
+  institution: ""
+  city: Freising
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hswt.de/
+  todo: "HRK: Fachhochschulen / HAW, Bayern"

@@ -5,7 +5,7 @@ city:
   slug: rambouillet
   name: Rambouillet
 type: public
-website: https://www.uvsq.fr/
+website: https://www.iut-velizy-rambouillet.uvsq.fr/campus-de-rambouillet-1
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Rambouillet
   field: ""
   confidence: ""
-  officialUrl: https://www.uvsq.fr/
-  todo: "website candidate from parent university \"Université de Versailles Saint-Quentin-en-Yvelines\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://www.iut-velizy-rambouillet.uvsq.fr/campus-de-rambouillet-1
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

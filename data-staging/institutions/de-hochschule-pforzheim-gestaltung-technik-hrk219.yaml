@@ -1,0 +1,24 @@
+slug: de-hochschule-pforzheim-gestaltung-technik-hrk219
+name: Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht
+country: DE
+city:
+  slug: pforzheim
+  name: Pforzheim
+type: public
+website: https://www.hs-pforzheim.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-pforzheim-gestaltung-technik-hrk219
+  name: Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht
+  institution: ""
+  city: Pforzheim
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-pforzheim.de/
+  todo: 'HRK: Fachhochschulen / HAW, Baden-Württemberg; listed as "http://www.hs-pforzheim.de/"; the https form answers: confirm it is the official site'

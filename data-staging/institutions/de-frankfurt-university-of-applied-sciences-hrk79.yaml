@@ -1,0 +1,24 @@
+slug: de-frankfurt-university-of-applied-sciences-hrk79
+name: Frankfurt University of Applied Sciences
+country: DE
+city:
+  slug: frankfurt-am-main
+  name: Frankfurt am Main
+type: public
+website: https://www.frankfurt-university.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-frankfurt-university-of-applied-sciences-hrk79
+  name: Frankfurt University of Applied Sciences
+  institution: ""
+  city: Frankfurt am Main
+  field: ""
+  confidence: ""
+  officialUrl: https://www.frankfurt-university.de/
+  todo: "HRK: Fachhochschulen / HAW, Hessen"

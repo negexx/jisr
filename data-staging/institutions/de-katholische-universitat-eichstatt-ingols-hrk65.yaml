@@ -1,0 +1,24 @@
+slug: de-katholische-universitat-eichstatt-ingols-hrk65
+name: Katholische Universität Eichstätt - Ingolstadt
+country: DE
+city:
+  slug: eichstatt
+  name: Eichstätt
+type: private
+website: https://www.ku.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-katholische-universitat-eichstatt-ingols-hrk65
+  name: Katholische Universität Eichstätt - Ingolstadt
+  institution: ""
+  city: Eichstätt
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ku.de/
+  todo: 'HRK: Universitäten, Bayern; church-run (state-recognised): the app only has public/private, check how to classify; listed as "http://www.ku.de"; the https form answers: confirm it is the official site'

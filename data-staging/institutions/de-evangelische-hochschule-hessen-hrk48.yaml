@@ -1,0 +1,24 @@
+slug: de-evangelische-hochschule-hessen-hrk48
+name: Evangelische Hochschule Hessen
+country: DE
+city:
+  slug: darmstadt
+  name: Darmstadt
+type: private
+website: https://www.eh-hessen.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-evangelische-hochschule-hessen-hrk48
+  name: Evangelische Hochschule Hessen
+  institution: ""
+  city: Darmstadt
+  field: ""
+  confidence: ""
+  officialUrl: https://www.eh-hessen.de/
+  todo: 'HRK: Fachhochschulen / HAW, Hessen; church-run (state-recognised): the app only has public/private, check how to classify; listed as "http://www.eh-darmstadt.de"; the https form answers: confirm it is the official site'

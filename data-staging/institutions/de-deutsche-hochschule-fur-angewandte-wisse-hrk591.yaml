@@ -1,0 +1,24 @@
+slug: de-deutsche-hochschule-fur-angewandte-wisse-hrk591
+name: Deutsche Hochschule für Angewandte Wissenschaften - German University of Applied Sciences
+country: DE
+city:
+  slug: potsdam
+  name: Potsdam
+type: private
+website: https://deutschehochschule.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-deutsche-hochschule-fur-angewandte-wisse-hrk591
+  name: Deutsche Hochschule für Angewandte Wissenschaften - German University of Applied Sciences
+  institution: ""
+  city: Potsdam
+  field: ""
+  confidence: ""
+  officialUrl: https://deutschehochschule.de/
+  todo: "HRK: Fachhochschulen / HAW, Brandenburg"

@@ -1,0 +1,24 @@
+slug: de-hochschule-fur-wirtschaft-und-umwelt-nur-hrk203
+name: Hochschule für Wirtschaft und Umwelt Nürtingen-Geislingen
+country: DE
+city:
+  slug: nurtingen
+  name: Nürtingen
+type: public
+website: https://www.hfwu.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-wirtschaft-und-umwelt-nur-hrk203
+  name: Hochschule für Wirtschaft und Umwelt Nürtingen-Geislingen
+  institution: ""
+  city: Nürtingen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hfwu.de/
+  todo: 'HRK: Fachhochschulen / HAW, Baden-Württemberg; listed as "http://www.hfwu.de"; the https form answers: confirm it is the official site'

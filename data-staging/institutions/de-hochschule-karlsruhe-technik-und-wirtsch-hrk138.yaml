@@ -1,0 +1,24 @@
+slug: de-hochschule-karlsruhe-technik-und-wirtsch-hrk138
+name: Hochschule Karlsruhe - Technik und Wirtschaft
+country: DE
+city:
+  slug: karlsruhe
+  name: Karlsruhe
+type: public
+website: https://www.h-ka.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-karlsruhe-technik-und-wirtsch-hrk138
+  name: Hochschule Karlsruhe - Technik und Wirtschaft
+  institution: ""
+  city: Karlsruhe
+  field: ""
+  confidence: ""
+  officialUrl: https://www.h-ka.de/
+  todo: 'HRK: Fachhochschulen / HAW, Baden-Württemberg; listed as "http://www.h-ka.de"; the https form answers: confirm it is the official site'

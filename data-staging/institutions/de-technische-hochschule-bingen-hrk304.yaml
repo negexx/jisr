@@ -1,0 +1,24 @@
+slug: de-technische-hochschule-bingen-hrk304
+name: Technische Hochschule Bingen
+country: DE
+city:
+  slug: bingen
+  name: Bingen
+type: public
+website: https://www.th-bingen.de/home/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-hochschule-bingen-hrk304
+  name: Technische Hochschule Bingen
+  institution: ""
+  city: Bingen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.th-bingen.de/home/
+  todo: "HRK: Fachhochschulen / HAW, Rheinland-Pfalz"

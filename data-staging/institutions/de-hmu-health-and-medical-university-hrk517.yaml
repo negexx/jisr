@@ -1,0 +1,24 @@
+slug: de-hmu-health-and-medical-university-hrk517
+name: HMU Health and Medical University
+country: DE
+city:
+  slug: erfurt
+  name: Erfurt
+type: private
+website: https://www.health-and-medical-university-erfurt.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hmu-health-and-medical-university-hrk517
+  name: HMU Health and Medical University
+  institution: ""
+  city: Erfurt
+  field: ""
+  confidence: ""
+  officialUrl: https://www.health-and-medical-university-erfurt.de
+  todo: "HRK: Hochschulen eigenen Typs, Thüringen"

@@ -1,0 +1,24 @@
+slug: de-universitat-greifswald-hrk99
+name: Universität Greifswald
+country: DE
+city:
+  slug: greifswald
+  name: Greifswald
+type: public
+website: https://www.uni-greifswald.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-universitat-greifswald-hrk99
+  name: Universität Greifswald
+  institution: ""
+  city: Greifswald
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-greifswald.de/
+  todo: 'HRK: Universitäten, Mecklenburg-Vorpommern; listed as "http://www.uni-greifswald.de"; the https form answers: confirm it is the official site'

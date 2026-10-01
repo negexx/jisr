@@ -1,0 +1,24 @@
+slug: nl-hogeschool-rotterdam-22oj
+name: Hogeschool Rotterdam
+country: NL
+city:
+  slug: rotterdam
+  name: Rotterdam
+type: null
+website: https://www.hogeschoolrotterdam.nl/
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-hogeschool-rotterdam-22oj
+  name: Hogeschool Rotterdam
+  institution: ""
+  city: Rotterdam
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hogeschoolrotterdam.nl/
+  todo: "DUO: hbo; public/private is not in the file: check the institution's legal status; listed as \"www.hogeschoolrotterdam.nl\"; the https form answers: confirm it is the official site"

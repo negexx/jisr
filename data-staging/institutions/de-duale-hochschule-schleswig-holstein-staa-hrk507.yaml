@@ -1,0 +1,24 @@
+slug: de-duale-hochschule-schleswig-holstein-staa-hrk507
+name: Duale Hochschule Schleswig-Holstein - staatlich anerkannte Hochschule für angewandte Wissenschaften in Trägerschaft der Wirtschaftsakademie Schleswig-Holstein
+country: DE
+city:
+  slug: kiel
+  name: Kiel
+type: private
+website: https://www.dhsh.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-duale-hochschule-schleswig-holstein-staa-hrk507
+  name: Duale Hochschule Schleswig-Holstein - staatlich anerkannte Hochschule für angewandte Wissenschaften in Trägerschaft der Wirtschaftsakademie Schleswig-Holstein
+  institution: ""
+  city: Kiel
+  field: ""
+  confidence: ""
+  officialUrl: https://www.dhsh.de
+  todo: "HRK: Fachhochschulen / HAW, Schleswig-Holstein"

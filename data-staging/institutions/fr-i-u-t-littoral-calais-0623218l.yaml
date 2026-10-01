@@ -5,7 +5,7 @@ city:
   slug: calais
   name: Calais
 type: public
-website: https://www.univ-littoral.fr/
+website: https://www.iut-littoral.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Calais
   field: ""
   confidence: ""
-  officialUrl: https://www.univ-littoral.fr/
-  todo: "website candidate from parent university \"Université du Littoral Côte d'Opale\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://www.iut-littoral.fr/
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

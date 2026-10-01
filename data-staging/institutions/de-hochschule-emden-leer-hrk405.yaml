@@ -1,0 +1,24 @@
+slug: de-hochschule-emden-leer-hrk405
+name: Hochschule Emden/Leer
+country: DE
+city:
+  slug: emden
+  name: Emden
+type: public
+website: https://www.hs-emden-leer.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-emden-leer-hrk405
+  name: Hochschule Emden/Leer
+  institution: ""
+  city: Emden
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-emden-leer.de/
+  todo: 'HRK: Fachhochschulen / HAW, Niedersachsen; listed as "http://www.hs-emden-leer.de/"; the https form answers: confirm it is the official site'

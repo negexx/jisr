@@ -1,0 +1,24 @@
+slug: de-friedrich-alexander-universitat-erlangen-hrk70
+name: Friedrich-Alexander-Universität Erlangen-Nürnberg
+country: DE
+city:
+  slug: erlangen
+  name: Erlangen
+type: public
+website: https://www.fau.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-friedrich-alexander-universitat-erlangen-hrk70
+  name: Friedrich-Alexander-Universität Erlangen-Nürnberg
+  institution: ""
+  city: Erlangen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fau.de/
+  todo: 'HRK: Universitäten, Bayern; listed as "http://www.fau.de"; the https form answers: confirm it is the official site'

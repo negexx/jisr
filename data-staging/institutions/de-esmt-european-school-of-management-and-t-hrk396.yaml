@@ -1,0 +1,24 @@
+slug: de-esmt-european-school-of-management-and-t-hrk396
+name: ESMT European School of Management and Technology
+country: DE
+city:
+  slug: berlin
+  name: Berlin
+type: private
+website: https://esmt.berlin/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-esmt-european-school-of-management-and-t-hrk396
+  name: ESMT European School of Management and Technology
+  institution: ""
+  city: Berlin
+  field: ""
+  confidence: ""
+  officialUrl: https://esmt.berlin/
+  todo: 'HRK: Universitäten, Berlin; listed as "http://www.esmt.org/en/home"; the https form answers: confirm it is the official site'

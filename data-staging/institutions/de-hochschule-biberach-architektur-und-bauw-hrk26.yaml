@@ -1,0 +1,24 @@
+slug: de-hochschule-biberach-architektur-und-bauw-hrk26
+name: Hochschule Biberach - Architektur und Bauwesen, Betriebswirtschaft und Biotechnologie
+country: DE
+city:
+  slug: biberach
+  name: Biberach
+type: public
+website: https://www.hochschule-biberach.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-biberach-architektur-und-bauw-hrk26
+  name: Hochschule Biberach - Architektur und Bauwesen, Betriebswirtschaft und Biotechnologie
+  institution: ""
+  city: Biberach
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hochschule-biberach.de/
+  todo: 'HRK: Fachhochschulen / HAW, Baden-Württemberg; listed as "http://www.hochschule-biberach.de"; the https form answers: confirm it is the official site'

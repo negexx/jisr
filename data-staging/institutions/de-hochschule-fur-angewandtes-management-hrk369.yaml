@@ -1,0 +1,24 @@
+slug: de-hochschule-fur-angewandtes-management-hrk369
+name: Hochschule für angewandtes Management
+country: DE
+city:
+  slug: teltow
+  name: Teltow
+type: private
+website: https://www.fham.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-angewandtes-management-hrk369
+  name: Hochschule für angewandtes Management
+  institution: ""
+  city: Teltow
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fham.de/
+  todo: 'HRK: Fachhochschulen / HAW, Brandenburg; listed as "http://www.fham.de"; the https form answers: confirm it is the official site'

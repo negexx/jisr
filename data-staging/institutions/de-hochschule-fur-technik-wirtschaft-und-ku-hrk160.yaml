@@ -1,0 +1,24 @@
+slug: de-hochschule-fur-technik-wirtschaft-und-ku-hrk160
+name: Hochschule für Technik, Wirtschaft und Kultur Leipzig
+country: DE
+city:
+  slug: leipzig
+  name: Leipzig
+type: public
+website: https://www.htwk-leipzig.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-technik-wirtschaft-und-ku-hrk160
+  name: Hochschule für Technik, Wirtschaft und Kultur Leipzig
+  institution: ""
+  city: Leipzig
+  field: ""
+  confidence: ""
+  officialUrl: https://www.htwk-leipzig.de/
+  todo: 'HRK: Fachhochschulen / HAW, Sachsen; listed as "http://www.htwk-leipzig.de"; the https form answers: confirm it is the official site'

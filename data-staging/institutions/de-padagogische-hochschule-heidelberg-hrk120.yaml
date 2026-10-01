@@ -1,0 +1,24 @@
+slug: de-padagogische-hochschule-heidelberg-hrk120
+name: Pädagogische Hochschule Heidelberg
+country: DE
+city:
+  slug: heidelberg
+  name: Heidelberg
+type: public
+website: https://www.ph-heidelberg.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-padagogische-hochschule-heidelberg-hrk120
+  name: Pädagogische Hochschule Heidelberg
+  institution: ""
+  city: Heidelberg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ph-heidelberg.de/
+  todo: 'HRK: Universitäten, Baden-Württemberg; listed as "http://www.ph-heidelberg.de"; the https form answers: confirm it is the official site'

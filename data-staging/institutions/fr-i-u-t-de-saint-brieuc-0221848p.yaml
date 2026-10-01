@@ -5,7 +5,7 @@ city:
   slug: saint-brieuc
   name: Saint-Brieuc
 type: public
-website: https://iut-stbrieuc.univ-rennes1.fr
+website: https://iut-stbrieuc.univ-rennes.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Saint-Brieuc
   field: ""
   confidence: ""
-  officialUrl: https://iut-stbrieuc.univ-rennes1.fr
-  todo: "website candidate from Wikidata (UAI match), not an official register: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://iut-stbrieuc.univ-rennes.fr/
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

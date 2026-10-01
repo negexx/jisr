@@ -1,0 +1,24 @@
+slug: de-hochschule-konstanz-technik-wirtschaft-u-hrk155
+name: Hochschule Konstanz Technik, Wirtschaft und Gestaltung
+country: DE
+city:
+  slug: konstanz
+  name: Konstanz
+type: public
+website: https://www.htwg-konstanz.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-konstanz-technik-wirtschaft-u-hrk155
+  name: Hochschule Konstanz Technik, Wirtschaft und Gestaltung
+  institution: ""
+  city: Konstanz
+  field: ""
+  confidence: ""
+  officialUrl: https://www.htwg-konstanz.de/
+  todo: 'HRK: Fachhochschulen / HAW, Baden-Württemberg; listed as "http://www.htwg-konstanz.de"; the https form answers: confirm it is the official site'

@@ -1,0 +1,24 @@
+slug: de-fom-hochschule-fur-oekonomie-management-hrk286
+name: FOM Hochschule für Oekonomie & Management - University of Applied Sciences
+country: DE
+city:
+  slug: essen
+  name: Essen
+type: private
+website: https://www.fom.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fom-hochschule-fur-oekonomie-management-hrk286
+  name: FOM Hochschule für Oekonomie & Management - University of Applied Sciences
+  institution: ""
+  city: Essen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fom.de
+  todo: "HRK: Fachhochschulen / HAW, Nordrhein-Westfalen"

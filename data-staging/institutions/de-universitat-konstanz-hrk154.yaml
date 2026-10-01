@@ -1,0 +1,24 @@
+slug: de-universitat-konstanz-hrk154
+name: Universität Konstanz
+country: DE
+city:
+  slug: konstanz
+  name: Konstanz
+type: public
+website: https://www.uni-konstanz.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-universitat-konstanz-hrk154
+  name: Universität Konstanz
+  institution: ""
+  city: Konstanz
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-konstanz.de/
+  todo: "HRK: Universitäten, Baden-Württemberg"

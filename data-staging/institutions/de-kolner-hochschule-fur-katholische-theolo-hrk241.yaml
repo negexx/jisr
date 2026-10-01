@@ -1,0 +1,24 @@
+slug: de-kolner-hochschule-fur-katholische-theolo-hrk241
+name: Kölner Hochschule für Katholische Theologie (KHKT)
+country: DE
+city:
+  slug: koln
+  name: Köln
+type: private
+website: https://www.khkt.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-kolner-hochschule-fur-katholische-theolo-hrk241
+  name: Kölner Hochschule für Katholische Theologie (KHKT)
+  institution: ""
+  city: Köln
+  field: ""
+  confidence: ""
+  officialUrl: https://www.khkt.de/
+  todo: 'HRK: Universitäten, Nordrhein-Westfalen; church-run (state-recognised): the app only has public/private, check how to classify; listed as "www.khkt.de"; the https form answers: confirm it is the official site'

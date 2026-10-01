@@ -5,7 +5,7 @@ city:
   slug: valence
   name: Valence
 type: public
-website: https://www.univ-grenoble-alpes.fr/
+website: https://dsda.univ-grenoble-alpes.fr
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Valence
   field: ""
   confidence: ""
-  officialUrl: https://www.univ-grenoble-alpes.fr/
-  todo: "website candidate from parent university \"Université Grenoble Alpes\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://dsda.univ-grenoble-alpes.fr
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

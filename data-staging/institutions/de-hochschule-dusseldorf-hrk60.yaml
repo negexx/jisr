@@ -1,0 +1,24 @@
+slug: de-hochschule-dusseldorf-hrk60
+name: Hochschule Düsseldorf
+country: DE
+city:
+  slug: dusseldorf
+  name: Düsseldorf
+type: public
+website: https://www.hs-duesseldorf.de/studienangebot
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-dusseldorf-hrk60
+  name: Hochschule Düsseldorf
+  institution: ""
+  city: Düsseldorf
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-duesseldorf.de/studienangebot
+  todo: "HRK: Fachhochschulen / HAW, Nordrhein-Westfalen"

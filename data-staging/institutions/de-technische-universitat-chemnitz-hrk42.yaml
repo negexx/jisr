@@ -1,0 +1,24 @@
+slug: de-technische-universitat-chemnitz-hrk42
+name: Technische Universität Chemnitz
+country: DE
+city:
+  slug: chemnitz
+  name: Chemnitz
+type: public
+website: null
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-universitat-chemnitz-hrk42
+  name: Technische Universität Chemnitz
+  institution: ""
+  city: Chemnitz
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: 'HRK: Universitäten, Sachsen; listed website "http://www.tu-chemnitz.de" does not answer over https: find the official https site'

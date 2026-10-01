@@ -5,7 +5,7 @@ city:
   slug: bron
   name: Bron
 type: public
-website: https://www.univ-lyon2.fr/
+website: https://iut.univ-lyon2.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Bron
   field: ""
   confidence: ""
-  officialUrl: https://www.univ-lyon2.fr/
-  todo: "website candidate from parent university \"Université Lumière - Lyon 2\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://iut.univ-lyon2.fr/
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

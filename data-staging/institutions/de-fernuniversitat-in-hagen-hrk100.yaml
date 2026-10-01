@@ -1,0 +1,24 @@
+slug: de-fernuniversitat-in-hagen-hrk100
+name: FernUniversität in Hagen
+country: DE
+city:
+  slug: hagen
+  name: Hagen
+type: public
+website: https://www.fernuni-hagen.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fernuniversitat-in-hagen-hrk100
+  name: FernUniversität in Hagen
+  institution: ""
+  city: Hagen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fernuni-hagen.de
+  todo: "HRK: Universitäten, Nordrhein-Westfalen"

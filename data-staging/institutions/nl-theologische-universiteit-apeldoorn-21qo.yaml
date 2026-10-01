@@ -1,0 +1,24 @@
+slug: nl-theologische-universiteit-apeldoorn-21qo
+name: Theologische Universiteit Apeldoorn
+country: NL
+city:
+  slug: apeldoorn
+  name: Apeldoorn
+type: null
+website: https://www.tua.nl/
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-theologische-universiteit-apeldoorn-21qo
+  name: Theologische Universiteit Apeldoorn
+  institution: ""
+  city: Apeldoorn
+  field: ""
+  confidence: ""
+  officialUrl: https://www.tua.nl/
+  todo: "DUO: wo; public/private is not in the file: check the institution's legal status; listed as \"www.tua.nl\"; the https form answers: confirm it is the official site"

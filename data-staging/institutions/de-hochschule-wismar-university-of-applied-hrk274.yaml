@@ -1,0 +1,24 @@
+slug: de-hochschule-wismar-university-of-applied-hrk274
+name: "Hochschule Wismar - University of Applied Sciences: Technology, Business and Design"
+country: DE
+city:
+  slug: wismar
+  name: Wismar
+type: public
+website: https://www.hs-wismar.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-wismar-university-of-applied-hrk274
+  name: "Hochschule Wismar - University of Applied Sciences: Technology, Business and Design"
+  institution: ""
+  city: Wismar
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-wismar.de
+  todo: "HRK: Fachhochschulen / HAW, Mecklenburg-Vorpommern"

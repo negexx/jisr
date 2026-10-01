@@ -1,0 +1,24 @@
+slug: de-berufliche-hochschule-hamburg-bhh-hrk519
+name: Berufliche Hochschule Hamburg (BHH)
+country: DE
+city:
+  slug: hamburg
+  name: Hamburg
+type: public
+website: https://bhh.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-berufliche-hochschule-hamburg-bhh-hrk519
+  name: Berufliche Hochschule Hamburg (BHH)
+  institution: ""
+  city: Hamburg
+  field: ""
+  confidence: ""
+  officialUrl: https://bhh.de/
+  todo: "HRK: Hochschulen eigenen Typs, Hamburg"

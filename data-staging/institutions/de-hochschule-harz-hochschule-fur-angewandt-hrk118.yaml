@@ -1,0 +1,24 @@
+slug: de-hochschule-harz-hochschule-fur-angewandt-hrk118
+name: Hochschule Harz, Hochschule für angewandte Wissenschaften (FH)
+country: DE
+city:
+  slug: wernigerode
+  name: Wernigerode
+type: public
+website: https://www.hs-harz.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-harz-hochschule-fur-angewandt-hrk118
+  name: Hochschule Harz, Hochschule für angewandte Wissenschaften (FH)
+  institution: ""
+  city: Wernigerode
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-harz.de/
+  todo: 'HRK: Fachhochschulen / HAW, Sachsen-Anhalt; listed as "http://www.hs-harz.de"; the https form answers: confirm it is the official site'

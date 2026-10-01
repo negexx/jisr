@@ -1,0 +1,24 @@
+slug: de-internationale-hochschule-sdi-munchen-ho-hrk376
+name: Internationale Hochschule SDI München - Hochschule für angewandte Wissenschaften
+country: DE
+city:
+  slug: munchen
+  name: München
+type: private
+website: https://www.sdi-muenchen.de/hochschule/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-internationale-hochschule-sdi-munchen-ho-hrk376
+  name: Internationale Hochschule SDI München - Hochschule für angewandte Wissenschaften
+  institution: ""
+  city: München
+  field: ""
+  confidence: ""
+  officialUrl: https://www.sdi-muenchen.de/hochschule/
+  todo: "HRK: Fachhochschulen / HAW, Bayern"

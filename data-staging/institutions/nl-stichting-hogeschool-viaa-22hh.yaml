@@ -1,0 +1,24 @@
+slug: nl-stichting-hogeschool-viaa-22hh
+name: Stichting Hogeschool Viaa
+country: NL
+city:
+  slug: zwolle
+  name: Zwolle
+type: null
+website: https://www.viaa.nl/
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-stichting-hogeschool-viaa-22hh
+  name: Stichting Hogeschool Viaa
+  institution: ""
+  city: Zwolle
+  field: ""
+  confidence: ""
+  officialUrl: https://www.viaa.nl/
+  todo: "DUO: hbo; public/private is not in the file: check the institution's legal status; listed as \"www.viaa.nl\"; the https form answers: confirm it is the official site"

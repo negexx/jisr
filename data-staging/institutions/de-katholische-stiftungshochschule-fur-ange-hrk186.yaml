@@ -1,0 +1,24 @@
+slug: de-katholische-stiftungshochschule-fur-ange-hrk186
+name: '"Katholische    Stiftungshochschule für   angewandte Wissenschaften München - Hochschule der Kirchlichen Stiftung des öffentlichen Rechts Katholische Bildungsstätten für Sozialberufe in Bayern"'
+country: DE
+city:
+  slug: munchen
+  name: München
+type: private
+website: https://www.ksh-muenchen.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-katholische-stiftungshochschule-fur-ange-hrk186
+  name: '"Katholische    Stiftungshochschule für   angewandte Wissenschaften München - Hochschule der Kirchlichen Stiftung des öffentlichen Rechts Katholische Bildungsstätten für Sozialberufe in Bayern"'
+  institution: ""
+  city: München
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ksh-muenchen.de/
+  todo: 'HRK: Fachhochschulen / HAW, Bayern; church-run (state-recognised): the app only has public/private, check how to classify; listed as "http://www.ksh-muenchen.de"; the https form answers: confirm it is the official site'

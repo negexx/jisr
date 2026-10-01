@@ -1,0 +1,24 @@
+slug: de-inu-innovative-university-of-applied-sci-hrk525
+name: INU - Innovative University of Applied Sciences
+country: DE
+city:
+  slug: koln
+  name: Köln
+type: private
+website: https://www.inu.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-inu-innovative-university-of-applied-sci-hrk525
+  name: INU - Innovative University of Applied Sciences
+  institution: ""
+  city: Köln
+  field: ""
+  confidence: ""
+  officialUrl: https://www.inu.de/
+  todo: "HRK: Fachhochschulen / HAW, Nordrhein-Westfalen"

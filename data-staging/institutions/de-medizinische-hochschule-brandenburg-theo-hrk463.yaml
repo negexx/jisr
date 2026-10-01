@@ -1,0 +1,24 @@
+slug: de-medizinische-hochschule-brandenburg-theo-hrk463
+name: Medizinische Hochschule Brandenburg Theodor Fontane
+country: DE
+city:
+  slug: neuruppin
+  name: Neuruppin
+type: private
+website: https://www.mhb-fontane.de/de/studieninteressierte-2
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-medizinische-hochschule-brandenburg-theo-hrk463
+  name: Medizinische Hochschule Brandenburg Theodor Fontane
+  institution: ""
+  city: Neuruppin
+  field: ""
+  confidence: ""
+  officialUrl: https://www.mhb-fontane.de/de/studieninteressierte-2
+  todo: "HRK: Universitäten, Brandenburg"

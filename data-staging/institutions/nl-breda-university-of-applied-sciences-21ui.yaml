@@ -1,0 +1,24 @@
+slug: nl-breda-university-of-applied-sciences-21ui
+name: Breda University of Applied Sciences
+country: NL
+city:
+  slug: breda
+  name: Breda
+type: null
+website: https://www.buas.nl/
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-breda-university-of-applied-sciences-21ui
+  name: Breda University of Applied Sciences
+  institution: ""
+  city: Breda
+  field: ""
+  confidence: ""
+  officialUrl: https://www.buas.nl/
+  todo: "DUO: hbo; public/private is not in the file: check the institution's legal status; listed as \"www.buas.nl\"; the https form answers: confirm it is the official site"

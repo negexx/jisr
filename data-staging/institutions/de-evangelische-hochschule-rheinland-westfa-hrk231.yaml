@@ -1,0 +1,24 @@
+slug: de-evangelische-hochschule-rheinland-westfa-hrk231
+name: Evangelische Hochschule Rheinland-Westfalen-Lippe
+country: DE
+city:
+  slug: bochum
+  name: Bochum
+type: private
+website: https://www.evh-bochum.de/startseite.html
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-evangelische-hochschule-rheinland-westfa-hrk231
+  name: Evangelische Hochschule Rheinland-Westfalen-Lippe
+  institution: ""
+  city: Bochum
+  field: ""
+  confidence: ""
+  officialUrl: https://www.evh-bochum.de/startseite.html
+  todo: 'HRK: Fachhochschulen / HAW, Nordrhein-Westfalen; church-run (state-recognised): the app only has public/private, check how to classify; listed as "http://www.EvH-Bochum.de"; the https form answers: confirm it is the official site'

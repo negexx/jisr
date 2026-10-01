@@ -5,7 +5,7 @@ city:
   slug: saint-nazaire
   name: Saint-Nazaire
 type: public
-website: https://www.univ-nantes.fr/
+website: https://iut-sn.univ-nantes.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Saint-Nazaire
   field: ""
   confidence: ""
-  officialUrl: https://www.univ-nantes.fr/
-  todo: "website candidate from parent university \"Nantes Université\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://iut-sn.univ-nantes.fr/
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

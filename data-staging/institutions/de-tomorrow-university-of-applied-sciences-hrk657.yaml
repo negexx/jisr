@@ -1,0 +1,24 @@
+slug: de-tomorrow-university-of-applied-sciences-hrk657
+name: Tomorrow University of Applied Sciences
+country: DE
+city:
+  slug: frankfurt-am-main
+  name: Frankfurt am Main
+type: private
+website: https://www.tomorrow-university
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-tomorrow-university-of-applied-sciences-hrk657
+  name: Tomorrow University of Applied Sciences
+  institution: ""
+  city: Frankfurt am Main
+  field: ""
+  confidence: ""
+  officialUrl: https://www.tomorrow-university
+  todo: "HRK: Fachhochschulen / HAW, Hessen"

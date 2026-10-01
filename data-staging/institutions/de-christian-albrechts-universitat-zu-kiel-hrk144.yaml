@@ -1,0 +1,24 @@
+slug: de-christian-albrechts-universitat-zu-kiel-hrk144
+name: Christian-Albrechts-Universität zu Kiel
+country: DE
+city:
+  slug: kiel
+  name: Kiel
+type: public
+website: https://www.uni-kiel.de/de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-christian-albrechts-universitat-zu-kiel-hrk144
+  name: Christian-Albrechts-Universität zu Kiel
+  institution: ""
+  city: Kiel
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-kiel.de/de/
+  todo: 'HRK: Universitäten, Schleswig-Holstein; listed as "http://www.uni-kiel.de"; the https form answers: confirm it is the official site'

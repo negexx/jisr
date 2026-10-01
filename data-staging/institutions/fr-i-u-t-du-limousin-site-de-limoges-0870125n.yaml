@@ -5,7 +5,7 @@ city:
   slug: limoges
   name: Limoges
 type: public
-website: https://www.unilim.fr/
+website: https://www.iut.unilim.fr
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Limoges
   field: ""
   confidence: ""
-  officialUrl: https://www.unilim.fr/
-  todo: "website candidate from parent university \"Université de Limoges\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://www.iut.unilim.fr
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

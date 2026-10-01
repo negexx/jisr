@@ -1,0 +1,24 @@
+slug: de-theologische-hochschule-elstal-hrk407
+name: Theologische Hochschule Elstal
+country: DE
+city:
+  slug: wustermark
+  name: Wustermark
+type: private
+website: https://www.th-elstal.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-theologische-hochschule-elstal-hrk407
+  name: Theologische Hochschule Elstal
+  institution: ""
+  city: Wustermark
+  field: ""
+  confidence: ""
+  officialUrl: https://www.th-elstal.de/
+  todo: 'HRK: Fachhochschulen / HAW, Brandenburg; church-run (state-recognised): the app only has public/private, check how to classify; listed as "http://www.th-elstal.de/"; the https form answers: confirm it is the official site'

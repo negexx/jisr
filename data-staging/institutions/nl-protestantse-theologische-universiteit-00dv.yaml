@@ -1,0 +1,24 @@
+slug: nl-protestantse-theologische-universiteit-00dv
+name: Protestantse Theologische Universiteit
+country: NL
+city:
+  slug: utrecht
+  name: Utrecht
+type: null
+website: https://www.pthu.nl/
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-protestantse-theologische-universiteit-00dv
+  name: Protestantse Theologische Universiteit
+  institution: ""
+  city: Utrecht
+  field: ""
+  confidence: ""
+  officialUrl: https://www.pthu.nl/
+  todo: "DUO: wo; public/private is not in the file: check the institution's legal status; listed as \"www.pthu.nl\"; the https form answers: confirm it is the official site"

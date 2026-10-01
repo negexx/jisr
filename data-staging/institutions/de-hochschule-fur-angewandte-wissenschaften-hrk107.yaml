@@ -1,0 +1,24 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk107
+name: Hochschule für Angewandte Wissenschaften Hamburg
+country: DE
+city:
+  slug: hamburg
+  name: Hamburg
+type: public
+website: https://www.haw-hamburg.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-angewandte-wissenschaften-hrk107
+  name: Hochschule für Angewandte Wissenschaften Hamburg
+  institution: ""
+  city: Hamburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.haw-hamburg.de
+  todo: "HRK: Fachhochschulen / HAW, Hamburg"

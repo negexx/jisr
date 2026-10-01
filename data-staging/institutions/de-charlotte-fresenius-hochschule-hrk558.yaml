@@ -1,0 +1,24 @@
+slug: de-charlotte-fresenius-hochschule-hrk558
+name: Charlotte Fresenius Hochschule
+country: DE
+city:
+  slug: wiesbaden
+  name: Wiesbaden
+type: private
+website: https://www.charlotte-fresenius-uni.de/?crmid=aBbWvOcHiAaAaAaA
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-charlotte-fresenius-hochschule-hrk558
+  name: Charlotte Fresenius Hochschule
+  institution: ""
+  city: Wiesbaden
+  field: ""
+  confidence: ""
+  officialUrl: https://www.charlotte-fresenius-uni.de/?crmid=aBbWvOcHiAaAaAaA
+  todo: "HRK: Universitäten, Hessen"

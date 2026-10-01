@@ -1,0 +1,24 @@
+slug: de-hochschule-merseburg-hrk180
+name: Hochschule Merseburg
+country: DE
+city:
+  slug: merseburg
+  name: Merseburg
+type: public
+website: https://www.hs-merseburg.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-merseburg-hrk180
+  name: Hochschule Merseburg
+  institution: ""
+  city: Merseburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-merseburg.de/
+  todo: 'HRK: Fachhochschulen / HAW, Sachsen-Anhalt; listed as "http://www.hs-merseburg.de"; the https form answers: confirm it is the official site'

@@ -1,0 +1,24 @@
+slug: nl-hogeschool-thomas-more-30vp
+name: Hogeschool Thomas More
+country: NL
+city:
+  slug: rotterdam
+  name: Rotterdam
+type: null
+website: null
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-hogeschool-thomas-more-30vp
+  name: Hogeschool Thomas More
+  institution: ""
+  city: Rotterdam
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "DUO: hbo; public/private is not in the file: check the institution's legal status; no website listed"

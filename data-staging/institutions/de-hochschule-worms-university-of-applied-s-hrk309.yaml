@@ -1,0 +1,24 @@
+slug: de-hochschule-worms-university-of-applied-s-hrk309
+name: Hochschule Worms, University of Applied Sciences
+country: DE
+city:
+  slug: worms
+  name: Worms
+type: public
+website: https://www.hs-worms.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-worms-university-of-applied-s-hrk309
+  name: Hochschule Worms, University of Applied Sciences
+  institution: ""
+  city: Worms
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-worms.de/
+  todo: 'HRK: Fachhochschulen / HAW, Rheinland-Pfalz; listed as "http://www.hs-worms.de"; the https form answers: confirm it is the official site'

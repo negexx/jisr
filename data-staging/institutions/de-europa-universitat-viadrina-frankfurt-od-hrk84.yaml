@@ -1,0 +1,24 @@
+slug: de-europa-universitat-viadrina-frankfurt-od-hrk84
+name: Europa-Universität Viadrina Frankfurt (Oder)
+country: DE
+city:
+  slug: frankfurt-oder
+  name: Frankfurt (Oder)
+type: public
+website: https://www.europa-uni.de/de/studium/informieren-orientieren/index.html
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-europa-universitat-viadrina-frankfurt-od-hrk84
+  name: Europa-Universität Viadrina Frankfurt (Oder)
+  institution: ""
+  city: Frankfurt (Oder)
+  field: ""
+  confidence: ""
+  officialUrl: https://www.europa-uni.de/de/studium/informieren-orientieren/index.html
+  todo: "HRK: Universitäten, Brandenburg"

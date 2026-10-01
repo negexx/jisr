@@ -1,0 +1,24 @@
+slug: de-hochschule-bielefeld-university-of-appli-hrk28
+name: Hochschule Bielefeld - University of Applied Sciences and Arts (HSBI)
+country: DE
+city:
+  slug: bielefeld
+  name: Bielefeld
+type: public
+website: https://www.hsbi.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-bielefeld-university-of-appli-hrk28
+  name: Hochschule Bielefeld - University of Applied Sciences and Arts (HSBI)
+  institution: ""
+  city: Bielefeld
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hsbi.de
+  todo: "HRK: Fachhochschulen / HAW, Nordrhein-Westfalen"

@@ -1,0 +1,24 @@
+slug: de-fachhochschule-westkuste-hochschule-fur-hrk269
+name: Fachhochschule Westküste, Hochschule für Wirtschaft und Technik
+country: DE
+city:
+  slug: heide
+  name: Heide
+type: public
+website: https://www.fh-westkueste.de/home/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fachhochschule-westkuste-hochschule-fur-hrk269
+  name: Fachhochschule Westküste, Hochschule für Wirtschaft und Technik
+  institution: ""
+  city: Heide
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fh-westkueste.de/home/
+  todo: 'HRK: Fachhochschulen / HAW, Schleswig-Holstein; listed as "http://www.fh-westkueste.de"; the https form answers: confirm it is the official site'

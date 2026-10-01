@@ -1,0 +1,24 @@
+slug: de-evangelische-hochschule-ludwigsburg-staa-hrk229
+name: Evangelische Hochschule Ludwigsburg - staatlich anerkannte Hochschule für Angewandte Wissenschaften der Evangelischen Landeskirche Württemberg
+country: DE
+city:
+  slug: ludwigsburg
+  name: Ludwigsburg
+type: private
+website: https://www.eh-ludwigsburg.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-evangelische-hochschule-ludwigsburg-staa-hrk229
+  name: Evangelische Hochschule Ludwigsburg - staatlich anerkannte Hochschule für Angewandte Wissenschaften der Evangelischen Landeskirche Württemberg
+  institution: ""
+  city: Ludwigsburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.eh-ludwigsburg.de/
+  todo: 'HRK: Fachhochschulen / HAW, Baden-Württemberg; church-run (state-recognised): the app only has public/private, check how to classify; listed as "http://www.eh-ludwigsburg.de/"; the https form answers: confirm it is the official site'

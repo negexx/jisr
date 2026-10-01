@@ -1,0 +1,24 @@
+slug: de-westsachsische-hochschule-zwickau-hrk283
+name: Westsächsische Hochschule Zwickau
+country: DE
+city:
+  slug: zwickau
+  name: Zwickau
+type: public
+website: https://www.whz.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-westsachsische-hochschule-zwickau-hrk283
+  name: Westsächsische Hochschule Zwickau
+  institution: ""
+  city: Zwickau
+  field: ""
+  confidence: ""
+  officialUrl: https://www.whz.de/
+  todo: 'HRK: Fachhochschulen / HAW, Sachsen; listed as "http://www.whz.de"; the https form answers: confirm it is the official site'

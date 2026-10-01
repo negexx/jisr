@@ -1,0 +1,24 @@
+slug: de-fachhochschule-potsdam-hrk222
+name: Fachhochschule Potsdam
+country: DE
+city:
+  slug: potsdam
+  name: Potsdam
+type: public
+website: https://www.fh-potsdam.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fachhochschule-potsdam-hrk222
+  name: Fachhochschule Potsdam
+  institution: ""
+  city: Potsdam
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fh-potsdam.de
+  todo: "HRK: Fachhochschulen / HAW, Brandenburg"

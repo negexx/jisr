@@ -1,0 +1,24 @@
+slug: de-hmu-health-and-medical-university-potsda-hrk729
+name: HMU Health and Medical University Potsdam
+country: DE
+city:
+  slug: potsdam
+  name: Potsdam
+type: private
+website: https://www.health-and-medical-university.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hmu-health-and-medical-university-potsda-hrk729
+  name: HMU Health and Medical University Potsdam
+  institution: ""
+  city: Potsdam
+  field: ""
+  confidence: ""
+  officialUrl: https://www.health-and-medical-university.de/
+  todo: "HRK: Hochschulen eigenen Typs, Brandenburg"

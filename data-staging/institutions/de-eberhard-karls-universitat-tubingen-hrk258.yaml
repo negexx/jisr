@@ -1,0 +1,24 @@
+slug: de-eberhard-karls-universitat-tubingen-hrk258
+name: Eberhard Karls Universität Tübingen
+country: DE
+city:
+  slug: tubingen
+  name: Tübingen
+type: public
+website: null
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-eberhard-karls-universitat-tubingen-hrk258
+  name: Eberhard Karls Universität Tübingen
+  institution: ""
+  city: Tübingen
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: 'HRK: Universitäten, Baden-Württemberg; listed website "http://www.uni-tuebingen.de" does not answer over https: find the official https site'

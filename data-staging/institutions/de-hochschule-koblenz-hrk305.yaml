@@ -1,0 +1,24 @@
+slug: de-hochschule-koblenz-hrk305
+name: Hochschule Koblenz
+country: DE
+city:
+  slug: koblenz
+  name: Koblenz
+type: public
+website: https://www.hs-koblenz.de/home
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-koblenz-hrk305
+  name: Hochschule Koblenz
+  institution: ""
+  city: Koblenz
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-koblenz.de/home
+  todo: 'HRK: Fachhochschulen / HAW, Rheinland-Pfalz; listed as "http://www.hs-koblenz.de"; the https form answers: confirm it is the official site'

@@ -1,0 +1,24 @@
+slug: de-albert-ludwigs-universitat-freiburg-im-b-hrk86
+name: Albert-Ludwigs-Universität Freiburg im Breisgau
+country: DE
+city:
+  slug: freiburg
+  name: Freiburg
+type: public
+website: https://www.uni-freiburg.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-albert-ludwigs-universitat-freiburg-im-b-hrk86
+  name: Albert-Ludwigs-Universität Freiburg im Breisgau
+  institution: ""
+  city: Freiburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-freiburg.de
+  todo: "HRK: Universitäten, Baden-Württemberg"

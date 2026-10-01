@@ -1,0 +1,24 @@
+slug: de-ostbayerische-technische-hochschule-rege-hrk226
+name: Ostbayerische Technische Hochschule Regensburg
+country: DE
+city:
+  slug: regensburg
+  name: Regensburg
+type: public
+website: https://www.oth-regensburg.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-ostbayerische-technische-hochschule-rege-hrk226
+  name: Ostbayerische Technische Hochschule Regensburg
+  institution: ""
+  city: Regensburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.oth-regensburg.de/
+  todo: 'HRK: Fachhochschulen / HAW, Bayern; listed as "http://www.oth-regensburg.de"; the https form answers: confirm it is the official site'

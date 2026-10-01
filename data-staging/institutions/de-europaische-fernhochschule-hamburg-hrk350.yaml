@@ -1,0 +1,24 @@
+slug: de-europaische-fernhochschule-hamburg-hrk350
+name: Europäische Fernhochschule Hamburg
+country: DE
+city:
+  slug: hamburg
+  name: Hamburg
+type: private
+website: https://www.euro-fh.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-europaische-fernhochschule-hamburg-hrk350
+  name: Europäische Fernhochschule Hamburg
+  institution: ""
+  city: Hamburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.euro-fh.de/
+  todo: 'HRK: Fachhochschulen / HAW, Hamburg; listed as "http://www.euro-fh.de"; the https form answers: confirm it is the official site'

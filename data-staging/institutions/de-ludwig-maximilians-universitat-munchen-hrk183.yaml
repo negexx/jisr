@@ -1,0 +1,24 @@
+slug: de-ludwig-maximilians-universitat-munchen-hrk183
+name: Ludwig-Maximilians-Universität München
+country: DE
+city:
+  slug: munchen
+  name: München
+type: public
+website: https://www.lmu.de/de/index.html
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-ludwig-maximilians-universitat-munchen-hrk183
+  name: Ludwig-Maximilians-Universität München
+  institution: ""
+  city: München
+  field: ""
+  confidence: ""
+  officialUrl: https://www.lmu.de/de/index.html
+  todo: 'HRK: Universitäten, Bayern; listed as "http://www.lmu.de"; the https form answers: confirm it is the official site'

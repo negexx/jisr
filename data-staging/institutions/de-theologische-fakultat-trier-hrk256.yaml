@@ -1,0 +1,24 @@
+slug: de-theologische-fakultat-trier-hrk256
+name: Theologische Fakultät Trier
+country: DE
+city:
+  slug: trier
+  name: Trier
+type: private
+website: https://theologie-trier.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-theologische-fakultat-trier-hrk256
+  name: Theologische Fakultät Trier
+  institution: ""
+  city: Trier
+  field: ""
+  confidence: ""
+  officialUrl: https://theologie-trier.de/
+  todo: "HRK: Universitäten, Rheinland-Pfalz; church-run (state-recognised): the app only has public/private, check how to classify"

@@ -1,0 +1,24 @@
+slug: de-augustana-hochschule-neuendettelsau-hrk196
+name: Augustana-Hochschule Neuendettelsau
+country: DE
+city:
+  slug: neuendettelsau
+  name: Neuendettelsau
+type: private
+website: null
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-augustana-hochschule-neuendettelsau-hrk196
+  name: Augustana-Hochschule Neuendettelsau
+  institution: ""
+  city: Neuendettelsau
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: 'HRK: Universitäten, Bayern; church-run (state-recognised): the app only has public/private, check how to classify; listed website "http://www.augustana.de" does not answer over https: find the official https site'

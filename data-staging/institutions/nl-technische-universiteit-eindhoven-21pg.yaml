@@ -1,0 +1,24 @@
+slug: nl-technische-universiteit-eindhoven-21pg
+name: Technische Universiteit Eindhoven
+country: NL
+city:
+  slug: eindhoven
+  name: Eindhoven
+type: null
+website: https://www.tue.nl/en/
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-technische-universiteit-eindhoven-21pg
+  name: Technische Universiteit Eindhoven
+  institution: ""
+  city: Eindhoven
+  field: ""
+  confidence: ""
+  officialUrl: https://www.tue.nl/en/
+  todo: "DUO: wo; public/private is not in the file: check the institution's legal status; listed as \"www.tue.nl/\"; the https form answers: confirm it is the official site"

@@ -1,0 +1,24 @@
+slug: de-technische-hochschule-mannheim-hrk177
+name: Technische Hochschule Mannheim
+country: DE
+city:
+  slug: mannheim
+  name: Mannheim
+type: public
+website: https://www.hs-mannheim.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-hochschule-mannheim-hrk177
+  name: Technische Hochschule Mannheim
+  institution: ""
+  city: Mannheim
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-mannheim.de/
+  todo: 'HRK: Fachhochschulen / HAW, Baden-Württemberg; listed as "http://www.th-mannheim.de"; the https form answers: confirm it is the official site'

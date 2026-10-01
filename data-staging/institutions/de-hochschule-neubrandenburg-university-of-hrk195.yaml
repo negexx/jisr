@@ -1,0 +1,24 @@
+slug: de-hochschule-neubrandenburg-university-of-hrk195
+name: Hochschule Neubrandenburg - University of Applied Sciences
+country: DE
+city:
+  slug: neubrandenburg
+  name: Neubrandenburg
+type: public
+website: https://www.hs-nb.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-neubrandenburg-university-of-hrk195
+  name: Hochschule Neubrandenburg - University of Applied Sciences
+  institution: ""
+  city: Neubrandenburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-nb.de/
+  todo: 'HRK: Fachhochschulen / HAW, Mecklenburg-Vorpommern; listed as "http://www.hs-nb.de"; the https form answers: confirm it is the official site'

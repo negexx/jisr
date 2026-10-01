@@ -123,6 +123,14 @@ describe("promoteApproved", () => {
 });
 
 describe("writeStaged", () => {
+  it("refuses text that was decoded with the wrong character set", async () => {
+    const record = channel("official");
+    record.data.name = "Hochschule \u0096 staatlich anerkannt";
+    await expect(writeStaged([record], { overwrite: false, stagingDir, dataDir })).rejects.toThrow(
+      /control characters/,
+    );
+  });
+
   it("keeps an existing staged file unless overwrite is asked, and reports rewrites", async () => {
     await writeStaged([channel("official")], { overwrite: false, stagingDir, dataDir });
     const again = await writeStaged([channel(READ_SOURCE)], {

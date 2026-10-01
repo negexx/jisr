@@ -1,0 +1,24 @@
+slug: nl-fontys-hogeschool-30gb
+name: Fontys Hogeschool
+country: NL
+city:
+  slug: eindhoven
+  name: Eindhoven
+type: null
+website: https://www.fontys.nl/
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-fontys-hogeschool-30gb
+  name: Fontys Hogeschool
+  institution: ""
+  city: Eindhoven
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fontys.nl/
+  todo: "DUO: hbo; public/private is not in the file: check the institution's legal status; listed as \"www.fontys.nl\"; the https form answers: confirm it is the official site"

@@ -1,0 +1,24 @@
+slug: de-duale-hochschule-sachsen-hrk727
+name: Duale Hochschule Sachsen
+country: DE
+city:
+  slug: glauchau
+  name: Glauchau
+type: public
+website: https://www.dhsn.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-duale-hochschule-sachsen-hrk727
+  name: Duale Hochschule Sachsen
+  institution: ""
+  city: Glauchau
+  field: ""
+  confidence: ""
+  officialUrl: https://www.dhsn.de/
+  todo: "HRK: Hochschulen eigenen Typs, Sachsen"

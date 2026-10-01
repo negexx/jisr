@@ -5,7 +5,7 @@ city:
   slug: bayonne
   name: Bayonne
 type: public
-website: https://www.univ-pau.fr/fr/index.html
+website: https://iae.univ-pau.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Bayonne
   field: ""
   confidence: ""
-  officialUrl: https://www.univ-pau.fr/fr/index.html
-  todo: "website candidate from parent university \"Université de Pau et des Pays de l'Adour\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://iae.univ-pau.fr/
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

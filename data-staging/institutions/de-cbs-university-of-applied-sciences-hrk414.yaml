@@ -1,0 +1,24 @@
+slug: de-cbs-university-of-applied-sciences-hrk414
+name: CBS University of Applied Sciences
+country: DE
+city:
+  slug: koln
+  name: Köln
+type: private
+website: https://www.cbs.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-cbs-university-of-applied-sciences-hrk414
+  name: CBS University of Applied Sciences
+  institution: ""
+  city: Köln
+  field: ""
+  confidence: ""
+  officialUrl: https://www.cbs.de
+  todo: "HRK: Fachhochschulen / HAW, Nordrhein-Westfalen"

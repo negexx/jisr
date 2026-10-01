@@ -1,0 +1,24 @@
+slug: de-philosophisch-theologische-hochschule-mu-hrk194
+name: Philosophisch-Theologische Hochschule Münster - Kirchlich und staatlich anerkannte Hochschule in Trägerschaft der PTH Philosophisch-Theologische Hochschule Münster gemeinnützige GmbH
+country: DE
+city:
+  slug: munster
+  name: Münster
+type: private
+website: https://www.cts-hochschule.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-philosophisch-theologische-hochschule-mu-hrk194
+  name: Philosophisch-Theologische Hochschule Münster - Kirchlich und staatlich anerkannte Hochschule in Trägerschaft der PTH Philosophisch-Theologische Hochschule Münster gemeinnützige GmbH
+  institution: ""
+  city: Münster
+  field: ""
+  confidence: ""
+  officialUrl: https://www.cts-hochschule.de/
+  todo: "HRK: Universitäten, Nordrhein-Westfalen; church-run (state-recognised): the app only has public/private, check how to classify"

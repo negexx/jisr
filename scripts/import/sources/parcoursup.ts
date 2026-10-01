@@ -9,6 +9,7 @@ import type { EsrEstablishment, EsrIndex } from "./esr";
 import { ESR_REGISTER_URL, fetchEsrIndex, findParent } from "./esr";
 import type { OnisepIndex } from "./onisep";
 import { fetchOnisepIndex, parentUais, sectorOf } from "./onisep";
+import { fetchOnisepOwnSites } from "./onisep-actions";
 import { fetchWebsitesByUai } from "./wikidata";
 
 // Official open data of the French Ministry of Higher Education (Licence ouverte 2.0).
@@ -72,6 +73,7 @@ export function resolveWebsite(
   esr: EsrIndex,
   wikidata: ReadonlyMap<string, string[]>,
   onisep: OnisepIndex,
+  ownSites: ReadonlyMap<string, string> = new Map(),
 ): Website {
   const candidate = (url: string | null, origin: string, notes: string[] = []): Website => ({
     url,
@@ -111,6 +113,11 @@ export function resolveWebsite(
     );
   }
 
+  const own = ownSites.get(row.cod_uai) ?? null;
+  if (own !== null) {
+    return candidate(own, "ONISEP training catalogue (this establishment's own site)");
+  }
+
   const fromWikidata =
     (wikidata.get(row.cod_uai) ?? []).map(httpsOrNull).find((u) => u !== null) ?? null;
   if (fromWikidata !== null) {
@@ -147,6 +154,7 @@ export async function importFrance(): Promise<StagedRecord[]> {
   const wikidata = await fetchWebsitesByUai();
   const esr = await fetchEsrIndex();
   const onisep = await fetchOnisepIndex();
+  const ownSites = await fetchOnisepOwnSites();
   const records: StagedRecord[] = [];
   const institutions = new Map<string, StagedRecord>();
 
@@ -160,7 +168,7 @@ export async function importFrance(): Promise<StagedRecord[]> {
 
     if (!institutions.has(instSlug)) {
       const mine: Sector = row.contrat_etab === "Public" ? "public" : "private";
-      const site = resolveWebsite(row, instName, mine, esr, wikidata, onisep);
+      const site = resolveWebsite(row, instName, mine, esr, wikidata, onisep, ownSites);
       const theirs = sectorOf(onisep.get(row.cod_uai)?.statut ?? "");
       const sectorNote =
         theirs !== null && theirs !== mine

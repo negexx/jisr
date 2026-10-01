@@ -1,0 +1,24 @@
+slug: de-ostbayerische-technische-hochschule-ambe-hrk280
+name: Ostbayerische Technische Hochschule Amberg-Weiden
+country: DE
+city:
+  slug: amberg
+  name: Amberg
+type: public
+website: https://www.oth-aw.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-ostbayerische-technische-hochschule-ambe-hrk280
+  name: Ostbayerische Technische Hochschule Amberg-Weiden
+  institution: ""
+  city: Amberg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.oth-aw.de/
+  todo: 'HRK: Fachhochschulen / HAW, Bayern; listed as "http://www.oth-aw.de/"; the https form answers: confirm it is the official site'

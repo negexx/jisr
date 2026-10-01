@@ -1,0 +1,24 @@
+slug: nl-radboud-universiteit-nijmegen-21pm
+name: Radboud Universiteit Nijmegen
+country: NL
+city:
+  slug: nijmegen
+  name: Nijmegen
+type: null
+website: https://www.ru.nl/
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-radboud-universiteit-nijmegen-21pm
+  name: Radboud Universiteit Nijmegen
+  institution: ""
+  city: Nijmegen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ru.nl/
+  todo: "DUO: wo; public/private is not in the file: check the institution's legal status; listed as \"www.ru.nl\"; the https form answers: confirm it is the official site"

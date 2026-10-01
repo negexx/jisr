@@ -5,7 +5,7 @@ city:
   slug: annecy
   name: Annecy
 type: public
-website: https://www.iut-acy.univ-smb.fr/
+website: https://www.univ-smb.fr/iut-annecy
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Annecy
   field: ""
   confidence: ""
-  officialUrl: https://www.iut-acy.univ-smb.fr/
-  todo: "website candidate from Wikidata (UAI match), not an official register: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://www.univ-smb.fr/iut-annecy
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

@@ -1,0 +1,24 @@
+slug: de-otto-von-guericke-universitat-magdeburg-hrk172
+name: Otto-von-Guericke-Universität Magdeburg
+country: DE
+city:
+  slug: magdeburg
+  name: Magdeburg
+type: public
+website: https://www.ovgu.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-otto-von-guericke-universitat-magdeburg-hrk172
+  name: Otto-von-Guericke-Universität Magdeburg
+  institution: ""
+  city: Magdeburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ovgu.de/
+  todo: 'HRK: Universitäten, Sachsen-Anhalt; listed as "http://www.ovgu.de"; the https form answers: confirm it is the official site'

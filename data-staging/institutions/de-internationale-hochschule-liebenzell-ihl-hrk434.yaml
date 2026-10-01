@@ -1,0 +1,24 @@
+slug: de-internationale-hochschule-liebenzell-ihl-hrk434
+name: Internationale Hochschule Liebenzell (IHL)
+country: DE
+city:
+  slug: bad-liebenzell
+  name: Bad Liebenzell
+type: private
+website: https://www.ihl.eu/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-internationale-hochschule-liebenzell-ihl-hrk434
+  name: Internationale Hochschule Liebenzell (IHL)
+  institution: ""
+  city: Bad Liebenzell
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ihl.eu/
+  todo: 'HRK: Fachhochschulen / HAW, Baden-Württemberg; listed as "http://www.ihl.eu"; the https form answers: confirm it is the official site'

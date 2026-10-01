@@ -1,0 +1,24 @@
+slug: nl-universiteit-voor-humanistiek-23bf
+name: Universiteit voor Humanistiek
+country: NL
+city:
+  slug: utrecht
+  name: Utrecht
+type: null
+website: https://www.uvh.nl/
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-universiteit-voor-humanistiek-23bf
+  name: Universiteit voor Humanistiek
+  institution: ""
+  city: Utrecht
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uvh.nl/
+  todo: "DUO: wo; public/private is not in the file: check the institution's legal status; listed as \"www.uvh.nl\"; the https form answers: confirm it is the official site"

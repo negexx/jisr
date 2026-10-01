@@ -1,0 +1,24 @@
+slug: de-hochschule-mainz-hrk310
+name: Hochschule Mainz
+country: DE
+city:
+  slug: mainz
+  name: Mainz
+type: public
+website: https://www.hs-mainz.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-mainz-hrk310
+  name: Hochschule Mainz
+  institution: ""
+  city: Mainz
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-mainz.de/
+  todo: "HRK: Fachhochschulen / HAW, Rheinland-Pfalz"

@@ -5,7 +5,7 @@ city:
   slug: montbeliard
   name: Montbéliard
 type: public
-website: https://www.umlp.fr/
+website: https://www.iut-nfc.univ-fcomte.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Montbéliard
   field: ""
   confidence: ""
-  officialUrl: https://www.umlp.fr/
-  todo: "website candidate from parent university \"Université Marie et Louis Pasteur\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://www.iut-nfc.univ-fcomte.fr/
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

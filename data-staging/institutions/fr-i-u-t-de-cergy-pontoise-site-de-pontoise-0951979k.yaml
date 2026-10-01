@@ -5,7 +5,7 @@ city:
   slug: pontoise
   name: Pontoise
 type: public
-website: https://www.cyu.fr/
+website: https://cyiut.cyu.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Pontoise
   field: ""
   confidence: ""
-  officialUrl: https://www.cyu.fr/
-  todo: "website candidate from parent university \"CY Cergy Paris Université\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://cyiut.cyu.fr/
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

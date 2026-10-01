@@ -5,7 +5,7 @@ city:
   slug: corte
   name: Corte
 type: public
-website: https://www.universita.corsica/fr/
+website: https://iut.universita.corsica/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Corte
   field: ""
   confidence: ""
-  officialUrl: https://www.universita.corsica/fr/
-  todo: "website candidate from parent university \"Université de Corse Pasquale Paoli\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://iut.universita.corsica/
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

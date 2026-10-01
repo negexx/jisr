@@ -1,0 +1,24 @@
+slug: nl-open-universiteit-22nc
+name: Open Universiteit
+country: NL
+city:
+  slug: heerlen
+  name: Heerlen
+type: null
+website: https://www.ou.nl/
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-open-universiteit-22nc
+  name: Open Universiteit
+  institution: ""
+  city: Heerlen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ou.nl/
+  todo: "DUO: wo; public/private is not in the file: check the institution's legal status; listed as \"www.ou.nl/\"; the https form answers: confirm it is the official site"

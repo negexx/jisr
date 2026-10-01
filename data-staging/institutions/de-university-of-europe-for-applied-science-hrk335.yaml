@@ -1,0 +1,24 @@
+slug: de-university-of-europe-for-applied-science-hrk335
+name: University of Europe for Applied Sciences
+country: DE
+city:
+  slug: potsdam
+  name: Potsdam
+type: private
+website: https://www.ue-germany.com/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-university-of-europe-for-applied-science-hrk335
+  name: University of Europe for Applied Sciences
+  institution: ""
+  city: Potsdam
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ue-germany.com/
+  todo: "HRK: Fachhochschulen / HAW, Brandenburg"

@@ -1,0 +1,24 @@
+slug: de-hochschule-fur-gesundheitsfachberufe-ebe-hrk692
+name: Hochschule für Gesundheitsfachberufe Eberswalde
+country: DE
+city:
+  slug: eberswalde
+  name: Eberswalde
+type: private
+website: https://gesundheit-hochschule.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-gesundheitsfachberufe-ebe-hrk692
+  name: Hochschule für Gesundheitsfachberufe Eberswalde
+  institution: ""
+  city: Eberswalde
+  field: ""
+  confidence: ""
+  officialUrl: https://gesundheit-hochschule.de/
+  todo: "HRK: Fachhochschulen / HAW, Brandenburg"

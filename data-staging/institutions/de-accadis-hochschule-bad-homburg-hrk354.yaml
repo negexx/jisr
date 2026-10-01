@@ -1,0 +1,24 @@
+slug: de-accadis-hochschule-bad-homburg-hrk354
+name: accadis Hochschule Bad Homburg
+country: DE
+city:
+  slug: bad-homburg
+  name: Bad Homburg
+type: private
+website: https://www.accadis.com/contact.aspx
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-accadis-hochschule-bad-homburg-hrk354
+  name: accadis Hochschule Bad Homburg
+  institution: ""
+  city: Bad Homburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.accadis.com/contact.aspx
+  todo: "HRK: Fachhochschulen / HAW, Hessen"

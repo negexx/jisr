@@ -1,0 +1,24 @@
+slug: de-theologische-hochschule-reutlingen-staat-hrk360
+name: Theologische Hochschule Reutlingen - staatlich anerkannte Fachhochschule der Evangelisch-methodistischen Kirche
+country: DE
+city:
+  slug: reutlingen
+  name: Reutlingen
+type: private
+website: https://www.th-reutlingen.de/de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-theologische-hochschule-reutlingen-staat-hrk360
+  name: Theologische Hochschule Reutlingen - staatlich anerkannte Fachhochschule der Evangelisch-methodistischen Kirche
+  institution: ""
+  city: Reutlingen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.th-reutlingen.de/de/
+  todo: 'HRK: Fachhochschulen / HAW, Baden-Württemberg; church-run (state-recognised): the app only has public/private, check how to classify; listed as "http://www.th-reutlingen.de"; the https form answers: confirm it is the official site'

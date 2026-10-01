@@ -5,7 +5,7 @@ city:
   slug: epinal
   name: Epinal
 type: public
-website: https://www.univ-lorraine.fr/
+website: https://iut-epinal.univ-lorraine.fr
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Epinal
   field: ""
   confidence: ""
-  officialUrl: https://www.univ-lorraine.fr/
-  todo: "website candidate from parent university \"Université de Lorraine\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://iut-epinal.univ-lorraine.fr
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

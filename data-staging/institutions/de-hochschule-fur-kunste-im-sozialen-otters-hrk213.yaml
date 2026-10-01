@@ -1,0 +1,24 @@
+slug: de-hochschule-fur-kunste-im-sozialen-otters-hrk213
+name: Hochschule für Künste im Sozialen, Ottersberg
+country: DE
+city:
+  slug: ottersberg
+  name: Ottersberg
+type: private
+website: https://www.hks-ottersberg.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-kunste-im-sozialen-otters-hrk213
+  name: Hochschule für Künste im Sozialen, Ottersberg
+  institution: ""
+  city: Ottersberg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hks-ottersberg.de
+  todo: "HRK: Fachhochschulen / HAW, Niedersachsen"

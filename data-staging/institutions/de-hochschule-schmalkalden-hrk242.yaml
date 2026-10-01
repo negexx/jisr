@@ -1,0 +1,24 @@
+slug: de-hochschule-schmalkalden-hrk242
+name: Hochschule Schmalkalden
+country: DE
+city:
+  slug: schmalkalden
+  name: Schmalkalden
+type: public
+website: https://www.hs-schmalkalden.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-schmalkalden-hrk242
+  name: Hochschule Schmalkalden
+  institution: ""
+  city: Schmalkalden
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-schmalkalden.de/
+  todo: 'HRK: Fachhochschulen / HAW, Thüringen; listed as "http://www.hs-schmalkalden.de"; the https form answers: confirm it is the official site'

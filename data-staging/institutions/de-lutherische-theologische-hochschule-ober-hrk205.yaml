@@ -1,0 +1,24 @@
+slug: de-lutherische-theologische-hochschule-ober-hrk205
+name: Lutherische Theologische Hochschule Oberursel
+country: DE
+city:
+  slug: oberursel
+  name: Oberursel
+type: private
+website: null
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-lutherische-theologische-hochschule-ober-hrk205
+  name: Lutherische Theologische Hochschule Oberursel
+  institution: ""
+  city: Oberursel
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: 'HRK: Universitäten, Hessen; church-run (state-recognised): the app only has public/private, check how to classify; listed website "http://www.lthh-oberursel.de" does not answer over https: find the official https site'

@@ -1,0 +1,24 @@
+slug: de-fachhochschule-sudwestfalen-hrk343
+name: Fachhochschule Südwestfalen
+country: DE
+city:
+  slug: iserlohn
+  name: Iserlohn
+type: public
+website: https://www.fh-swf.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fachhochschule-sudwestfalen-hrk343
+  name: Fachhochschule Südwestfalen
+  institution: ""
+  city: Iserlohn
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fh-swf.de
+  todo: "HRK: Fachhochschulen / HAW, Nordrhein-Westfalen"

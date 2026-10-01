@@ -1,10 +1,19 @@
 import { describe, expect, it } from "vitest";
 
 import { classifyField } from "../../../scripts/import/fields";
+import { decodeBytes } from "../../../scripts/import/http";
 import { stampVerified } from "../../../scripts/import/promote";
+import { parseDuoCsv, titleCase } from "../../../scripts/import/sources/duo";
 import type { EsrIndex } from "../../../scripts/import/sources/esr";
+import {
+  HRK_KINDS,
+  parseHrkList,
+  sectorOfSponsor,
+  websiteCandidates,
+} from "../../../scripts/import/sources/hrk";
 import type { OnisepIndex } from "../../../scripts/import/sources/onisep";
 import { parentUais, sectorOf } from "../../../scripts/import/sources/onisep";
+import { ownSitesByUai } from "../../../scripts/import/sources/onisep-actions";
 import { resolveWebsite } from "../../../scripts/import/sources/parcoursup";
 import { mergeReviewSheet, parseCsv, reviewCsv } from "../../../scripts/import/staging";
 import { collapseSpaces, nameKey, normalizeCityName, slugify } from "../../../scripts/import/text";
@@ -312,5 +321,136 @@ describe("mergeReviewSheet", () => {
       fileExists: (_kind, slug) => slug === "kept",
     });
     expect(rows.map((r) => r.slug)).toEqual(["kept"]);
+  });
+});
+
+describe("onisep actions", () => {
+  it("picks the https site most offers list, alphabetically on ties, and ignores http", () => {
+    const rows = [
+      { ens_code_uai: "A", ens_site_web: "https://b.example" },
+      { ens_code_uai: "A", ens_site_web: "https://a.example" },
+      { ens_code_uai: "A", ens_site_web: "https://b.example" },
+      { ens_code_uai: "B", ens_site_web: "http://insecure.example" },
+      { ens_code_uai: "C", ens_site_web: "https://c.example" },
+      { ens_code_uai: "C", ens_site_web: "https://d.example" },
+      { ens_code_uai: "", ens_site_web: "https://nouai.example" },
+    ];
+    const sites = ownSitesByUai(rows);
+    expect(sites.get("A")).toBe("https://b.example");
+    expect(sites.get("C")).toBe("https://c.example");
+    expect(sites.has("B")).toBe(false);
+    expect(sites.size).toBe(2);
+  });
+  it("ranks the establishment's own site above Wikidata and the parent", () => {
+    const own = new Map([["0000001A", "https://iut.example/"]]);
+    const wikidata = new Map([["0000001A", ["https://wd.example/"]]]);
+    const index: EsrIndex = { currentUai: new Map(), byUai: new Map(), byNameKey: new Map() };
+    const site = resolveWebsite(
+      { cod_uai: "0000001A" },
+      "IUT",
+      "public",
+      index,
+      wikidata,
+      new Map(),
+      own,
+    );
+    expect(site).toMatchObject({ url: "https://iut.example/", confirmed: false });
+    expect(site.origin).toMatch(/own site/);
+  });
+});
+
+describe("hrk list", () => {
+  const header =
+    "Hs-Nr.\tHochschulname\tHochschultyp\tTr\u00e4gerschaft\tBundesland\tOrt (Hausanschrift)\tHome Page";
+  const row = (cells: string[]) => cells.join("\t");
+  it("parses rows by column name and keeps only Bachelor-relevant kinds", () => {
+    const text = [
+      header,
+      row([
+        "1",
+        "Rheinisch-Westf\u00e4lische Technische Hochschule Aachen",
+        "Universit\u00e4ten",
+        "\u00f6ffentlich-rechtlich",
+        "Nordrhein-Westfalen",
+        "Aachen",
+        "https://www.rwth-aachen.de",
+      ]),
+      row([
+        "2",
+        "Hochschule f\u00fcr Musik",
+        "K\u00fcnstlerische Hochschulen",
+        "\u00f6ffentlich-rechtlich",
+        "Bayern",
+        "M\u00fcnchen",
+        "www.hfm.de",
+      ]),
+    ].join("\r\n");
+    const parsed = parseHrkList(text);
+    expect(parsed).toHaveLength(2);
+    expect(parsed[0]).toMatchObject({
+      hsNr: "1",
+      city: "Aachen",
+      homepage: "https://www.rwth-aachen.de",
+    });
+    expect(parsed.filter((i) => HRK_KINDS.includes(i.kind))).toHaveLength(1);
+  });
+  it("fails loudly when the column layout changes", () => {
+    expect(() => parseHrkList("a\tb\n1\t2")).toThrow(/columns are missing/);
+  });
+  it("maps the sponsor and flags church-run institutions", () => {
+    expect(sectorOfSponsor("\u00f6ffentlich-rechtlich")).toEqual({
+      type: "public",
+      church: false,
+    });
+    expect(sectorOfSponsor("privat, staatlich anerkannt")).toEqual({
+      type: "private",
+      church: false,
+    });
+    expect(sectorOfSponsor("kirchlich, staatlich anerkannt")).toEqual({
+      type: "private",
+      church: true,
+    });
+    expect(sectorOfSponsor("?")).toEqual({ type: null, church: false });
+  });
+  it("only probes websites that are not already https", () => {
+    expect(websiteCandidates("https://x.de")).toEqual({
+      asListed: "https://x.de",
+      needsProbe: false,
+    });
+    expect(websiteCandidates("http://x.de")).toEqual({ asListed: "http://x.de", needsProbe: true });
+    expect(websiteCandidates("www.x.de")).toEqual({ asListed: "www.x.de", needsProbe: true });
+    expect(websiteCandidates(" ")).toEqual({ asListed: null, needsProbe: false });
+  });
+});
+
+describe("duo list", () => {
+  const csv = [
+    "SOORT HO;PROVINCIE;BEVOEGD GEZAG NUMMER;INSTELLINGSCODE;INSTELLINGSNAAM;PLAATSNAAM;INTERNETADRES",
+    "hbo;Friesland;30156;31FR;NHL Stenden Hogeschool;LEEUWARDEN;www.nhl.nl",
+    "wo;Zuid-Holland;1;21PK;Universiteit Leiden;LEIDEN;https://www.universiteitleiden.nl",
+    "mbo;X;2;99XX;Not higher education;PLACE;x.nl",
+  ].join("\r\n");
+  it("reads hbo and wo institutions and normalises the town name", () => {
+    const parsed = parseDuoCsv(csv);
+    expect(parsed.map((i) => i.code)).toEqual(["31FR", "21PK"]);
+    expect(parsed[0]).toMatchObject({ kind: "hbo", city: "Leeuwarden", website: "www.nhl.nl" });
+  });
+  it("title-cases multi-word and hyphenated towns", () => {
+    expect(titleCase("DEN HAAG")).toBe("Den Haag");
+    expect(titleCase("BERGEN-OP-ZOOM")).toBe("Bergen-Op-Zoom");
+  });
+  it("fails loudly when the column layout changes", () => {
+    expect(() => parseDuoCsv("a;b\n1;2")).toThrow(/columns are missing/);
+  });
+});
+
+describe("decodeBytes", () => {
+  it("decodes windows-1252 punctuation and accents", () => {
+    expect(decodeBytes(Uint8Array.from([0x41, 0x96, 0x42, 0xfc, 0x80]), "windows-1252")).toBe(
+      "A\u2013B\u00fc\u20ac",
+    );
+  });
+  it("leaves utf-8 to the platform decoder", () => {
+    expect(decodeBytes(new TextEncoder().encode("caf\u00e9"))).toBe("caf\u00e9");
   });
 });

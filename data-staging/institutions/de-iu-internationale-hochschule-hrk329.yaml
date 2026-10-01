@@ -1,0 +1,24 @@
+slug: de-iu-internationale-hochschule-hrk329
+name: IU Internationale Hochschule
+country: DE
+city:
+  slug: erfurt
+  name: Erfurt
+type: private
+website: https://iu.prf.hn/click/camref:1011lkmfr/creativeref:1011l63929
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-iu-internationale-hochschule-hrk329
+  name: IU Internationale Hochschule
+  institution: ""
+  city: Erfurt
+  field: ""
+  confidence: ""
+  officialUrl: https://iu.prf.hn/click/camref:1011lkmfr/creativeref:1011l63929
+  todo: "HRK: Fachhochschulen / HAW, Thüringen"

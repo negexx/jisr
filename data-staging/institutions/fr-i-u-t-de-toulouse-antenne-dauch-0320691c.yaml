@@ -5,7 +5,7 @@ city:
   slug: auch
   name: Auch
 type: public
-website: https://www.univ-tlse3.fr/
+website: https://iut.univ-tlse3.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Auch
   field: ""
   confidence: ""
-  officialUrl: https://www.univ-tlse3.fr/
-  todo: "website candidate from parent university \"Université de Toulouse\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://iut.univ-tlse3.fr/
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

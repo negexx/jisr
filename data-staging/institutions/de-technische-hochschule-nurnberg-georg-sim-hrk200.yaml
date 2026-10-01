@@ -1,0 +1,24 @@
+slug: de-technische-hochschule-nurnberg-georg-sim-hrk200
+name: Technische Hochschule Nürnberg Georg Simon Ohm
+country: DE
+city:
+  slug: nurnberg
+  name: Nürnberg
+type: public
+website: https://studium.th-nuernberg.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-hochschule-nurnberg-georg-sim-hrk200
+  name: Technische Hochschule Nürnberg Georg Simon Ohm
+  institution: ""
+  city: Nürnberg
+  field: ""
+  confidence: ""
+  officialUrl: https://studium.th-nuernberg.de/
+  todo: "HRK: Fachhochschulen / HAW, Bayern"

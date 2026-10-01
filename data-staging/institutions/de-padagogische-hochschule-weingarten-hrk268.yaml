@@ -1,0 +1,24 @@
+slug: de-padagogische-hochschule-weingarten-hrk268
+name: Pädagogische Hochschule Weingarten
+country: DE
+city:
+  slug: weingarten
+  name: Weingarten
+type: public
+website: https://www.ph-weingarten.de/die-ph-weingarten/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-padagogische-hochschule-weingarten-hrk268
+  name: Pädagogische Hochschule Weingarten
+  institution: ""
+  city: Weingarten
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ph-weingarten.de/die-ph-weingarten/
+  todo: "HRK: Universitäten, Baden-Württemberg"

@@ -1,0 +1,24 @@
+slug: de-apollon-hochschule-der-gesundheitswirtsc-hrk361
+name: APOLLON Hochschule der Gesundheitswirtschaft
+country: DE
+city:
+  slug: bremen
+  name: Bremen
+type: private
+website: https://www.apollon-hochschule.de/redirect.php?id=32
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-apollon-hochschule-der-gesundheitswirtsc-hrk361
+  name: APOLLON Hochschule der Gesundheitswirtschaft
+  institution: ""
+  city: Bremen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.apollon-hochschule.de/redirect.php?id=32
+  todo: 'HRK: Fachhochschulen / HAW, Bremen; listed as "http://www.apollon-hochschule.de/redirect.php?id=32"; the https form answers: confirm it is the official site'

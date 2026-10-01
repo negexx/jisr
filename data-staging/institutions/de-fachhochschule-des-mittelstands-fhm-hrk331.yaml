@@ -1,0 +1,24 @@
+slug: de-fachhochschule-des-mittelstands-fhm-hrk331
+name: Fachhochschule des Mittelstands (FHM)
+country: DE
+city:
+  slug: bielefeld
+  name: Bielefeld
+type: private
+website: https://www.fh-mittelstand.com/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fachhochschule-des-mittelstands-fhm-hrk331
+  name: Fachhochschule des Mittelstands (FHM)
+  institution: ""
+  city: Bielefeld
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fh-mittelstand.com/
+  todo: 'HRK: Fachhochschulen / HAW, Nordrhein-Westfalen; listed as "http://www.fh-mittelstand.de/profil"; the https form answers: confirm it is the official site'

@@ -5,7 +5,7 @@ city:
   slug: angers
   name: Angers
 type: public
-website: https://www.univ-angers.fr/fr/index.html
+website: https://www.univ-angers.fr/fr/acces-directs/facultes-et-instituts/iut.html
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Angers
   field: ""
   confidence: ""
-  officialUrl: https://www.univ-angers.fr/fr/index.html
-  todo: "website candidate from parent university \"Université d'Angers\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://www.univ-angers.fr/fr/acces-directs/facultes-et-instituts/iut.html
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

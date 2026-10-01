@@ -5,7 +5,7 @@ city:
   slug: nevers
   name: Nevers
 type: public
-website: https://www.ube.fr/
+website: https://iutdijon.u-bourgogne.fr/www/iut
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Nevers
   field: ""
   confidence: ""
-  officialUrl: https://www.ube.fr/
-  todo: "website candidate from parent university \"Université Bourgogne Europe\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://iutdijon.u-bourgogne.fr/www/iut
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

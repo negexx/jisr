@@ -1,0 +1,24 @@
+slug: nl-gerrit-rietveld-academie-02by
+name: Gerrit Rietveld Academie
+country: NL
+city:
+  slug: amsterdam
+  name: Amsterdam
+type: null
+website: null
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-gerrit-rietveld-academie-02by
+  name: Gerrit Rietveld Academie
+  institution: ""
+  city: Amsterdam
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "DUO: hbo; public/private is not in the file: check the institution's legal status; listed website \"www.rietveldacademie.nl\" does not answer over https: find the official https site"

@@ -1,0 +1,24 @@
+slug: de-technische-hochschule-ingolstadt-hrk288
+name: Technische Hochschule Ingolstadt
+country: DE
+city:
+  slug: ingolstadt
+  name: Ingolstadt
+type: public
+website: https://www.thi.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-hochschule-ingolstadt-hrk288
+  name: Technische Hochschule Ingolstadt
+  institution: ""
+  city: Ingolstadt
+  field: ""
+  confidence: ""
+  officialUrl: https://www.thi.de
+  todo: "HRK: Fachhochschulen / HAW, Bayern"

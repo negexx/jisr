@@ -1,0 +1,24 @@
+slug: de-hochschule-rhein-waal-university-of-appl-hrk400
+name: Hochschule Rhein-Waal - University of Applied Sciences
+country: DE
+city:
+  slug: kleve
+  name: Kleve
+type: public
+website: https://www.hochschule-rhein-waal.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-rhein-waal-university-of-appl-hrk400
+  name: Hochschule Rhein-Waal - University of Applied Sciences
+  institution: ""
+  city: Kleve
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hochschule-rhein-waal.de/
+  todo: 'HRK: Fachhochschulen / HAW, Nordrhein-Westfalen; listed as "http://www.hochschule-rhein-waal.de/"; the https form answers: confirm it is the official site'

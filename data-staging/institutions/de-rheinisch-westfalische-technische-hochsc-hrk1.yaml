@@ -1,0 +1,24 @@
+slug: de-rheinisch-westfalische-technische-hochsc-hrk1
+name: Rheinisch-Westfälische Technische Hochschule Aachen
+country: DE
+city:
+  slug: aachen
+  name: Aachen
+type: public
+website: https://www.rwth-aachen.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-rheinisch-westfalische-technische-hochsc-hrk1
+  name: Rheinisch-Westfälische Technische Hochschule Aachen
+  institution: ""
+  city: Aachen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.rwth-aachen.de
+  todo: "HRK: Universitäten, Nordrhein-Westfalen"

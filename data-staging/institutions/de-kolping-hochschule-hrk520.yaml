@@ -1,0 +1,24 @@
+slug: de-kolping-hochschule-hrk520
+name: Kolping Hochschule
+country: DE
+city:
+  slug: koln
+  name: Köln
+type: private
+website: https://www.kolping-hochschule.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-kolping-hochschule-hrk520
+  name: Kolping Hochschule
+  institution: ""
+  city: Köln
+  field: ""
+  confidence: ""
+  officialUrl: https://www.kolping-hochschule.de/
+  todo: "HRK: Fachhochschulen / HAW, Nordrhein-Westfalen"

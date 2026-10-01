@@ -1,0 +1,24 @@
+slug: de-fh-munster-university-of-applied-science-hrk192
+name: FH Münster - University of Applied Sciences
+country: DE
+city:
+  slug: munster
+  name: Münster
+type: public
+website: https://www.fh-muenster.de/de/?conv=e99280dd3fc7296f
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fh-munster-university-of-applied-science-hrk192
+  name: FH Münster - University of Applied Sciences
+  institution: ""
+  city: Münster
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fh-muenster.de/de/?conv=e99280dd3fc7296f
+  todo: 'HRK: Fachhochschulen / HAW, Nordrhein-Westfalen; listed as "http://fhms.eu/oqq"; the https form answers: confirm it is the official site'

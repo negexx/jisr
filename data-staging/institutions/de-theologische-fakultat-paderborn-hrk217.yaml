@@ -1,0 +1,24 @@
+slug: de-theologische-fakultat-paderborn-hrk217
+name: Theologische Fakultät Paderborn
+country: DE
+city:
+  slug: paderborn
+  name: Paderborn
+type: private
+website: https://www.thf-paderborn.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-theologische-fakultat-paderborn-hrk217
+  name: Theologische Fakultät Paderborn
+  institution: ""
+  city: Paderborn
+  field: ""
+  confidence: ""
+  officialUrl: https://www.thf-paderborn.de/
+  todo: 'HRK: Universitäten, Nordrhein-Westfalen; church-run (state-recognised): the app only has public/private, check how to classify; listed as "http://www.thf-paderborn.de/"; the https form answers: confirm it is the official site'

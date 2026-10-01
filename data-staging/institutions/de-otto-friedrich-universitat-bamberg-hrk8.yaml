@@ -1,0 +1,24 @@
+slug: de-otto-friedrich-universitat-bamberg-hrk8
+name: Otto-Friedrich-Universität Bamberg
+country: DE
+city:
+  slug: bamberg
+  name: Bamberg
+type: public
+website: https://www.uni-bamberg.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-otto-friedrich-universitat-bamberg-hrk8
+  name: Otto-Friedrich-Universität Bamberg
+  institution: ""
+  city: Bamberg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-bamberg.de/
+  todo: 'HRK: Universitäten, Bayern; listed as "http://www.uni-bamberg.de/"; the https form answers: confirm it is the official site'

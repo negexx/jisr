@@ -1,0 +1,24 @@
+slug: de-technische-hochschule-augsburg-hrk7
+name: Technische Hochschule Augsburg
+country: DE
+city:
+  slug: augsburg
+  name: Augsburg
+type: public
+website: https://www.tha.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-hochschule-augsburg-hrk7
+  name: Technische Hochschule Augsburg
+  institution: ""
+  city: Augsburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.tha.de/
+  todo: "HRK: Fachhochschulen / HAW, Bayern"

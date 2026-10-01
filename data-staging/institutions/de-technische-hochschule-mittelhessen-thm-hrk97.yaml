@@ -1,0 +1,24 @@
+slug: de-technische-hochschule-mittelhessen-thm-hrk97
+name: Technische Hochschule Mittelhessen - THM
+country: DE
+city:
+  slug: gie-en
+  name: Gießen
+type: public
+website: https://www.thm.de/site/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-hochschule-mittelhessen-thm-hrk97
+  name: Technische Hochschule Mittelhessen - THM
+  institution: ""
+  city: Gießen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.thm.de/site/
+  todo: 'HRK: Fachhochschulen / HAW, Hessen; listed as "http://www.thm.de"; the https form answers: confirm it is the official site'

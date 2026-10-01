@@ -1,0 +1,24 @@
+slug: de-srh-fernhochschule-the-mobile-university-hrk313
+name: SRH Fernhochschule - The Mobile University
+country: DE
+city:
+  slug: riedlingen
+  name: Riedlingen
+type: private
+website: https://www.mobile-university.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-srh-fernhochschule-the-mobile-university-hrk313
+  name: SRH Fernhochschule - The Mobile University
+  institution: ""
+  city: Riedlingen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.mobile-university.de
+  todo: "HRK: Fachhochschulen / HAW, Baden-Württemberg"

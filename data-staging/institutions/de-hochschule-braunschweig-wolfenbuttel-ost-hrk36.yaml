@@ -1,0 +1,24 @@
+slug: de-hochschule-braunschweig-wolfenbuttel-ost-hrk36
+name: Hochschule Braunschweig/Wolfenbüttel, Ostfalia Hochschule für angewandte Wissenschaften
+country: DE
+city:
+  slug: wolfenbuttel
+  name: Wolfenbüttel
+type: public
+website: https://www.ostfalia.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-braunschweig-wolfenbuttel-ost-hrk36
+  name: Hochschule Braunschweig/Wolfenbüttel, Ostfalia Hochschule für angewandte Wissenschaften
+  institution: ""
+  city: Wolfenbüttel
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ostfalia.de/
+  todo: "HRK: Fachhochschulen / HAW, Niedersachsen"

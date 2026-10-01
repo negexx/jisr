@@ -1,0 +1,24 @@
+slug: de-hochschule-bremen-hrk40
+name: Hochschule Bremen
+country: DE
+city:
+  slug: bremen
+  name: Bremen
+type: public
+website: https://www.hs-bremen.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-bremen-hrk40
+  name: Hochschule Bremen
+  institution: ""
+  city: Bremen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-bremen.de/
+  todo: 'HRK: Fachhochschulen / HAW, Bremen; listed as "http://www.hs-bremen.de"; the https form answers: confirm it is the official site'

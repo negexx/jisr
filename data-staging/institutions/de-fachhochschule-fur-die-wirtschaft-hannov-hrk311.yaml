@@ -1,0 +1,24 @@
+slug: de-fachhochschule-fur-die-wirtschaft-hannov-hrk311
+name: Fachhochschule für die Wirtschaft Hannover
+country: DE
+city:
+  slug: hannover
+  name: Hannover
+type: private
+website: https://www.fhdw-hannover.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fachhochschule-fur-die-wirtschaft-hannov-hrk311
+  name: Fachhochschule für die Wirtschaft Hannover
+  institution: ""
+  city: Hannover
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fhdw-hannover.de/
+  todo: 'HRK: Fachhochschulen / HAW, Niedersachsen; listed as "http://www.fhdw-hannover.de/"; the https form answers: confirm it is the official site'

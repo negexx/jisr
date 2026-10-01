@@ -12,9 +12,26 @@ export type FetchOptions = {
   accept?: string;
   // Ignore the cache (also set by JISR_IMPORT_REFRESH=1, which `pnpm data:import --refresh` sets).
   refresh?: boolean;
+  // Character encoding of the response body (some official files are cp1252 / latin1).
+  encoding?: string;
   // Throws when the body is unusable; a bad body is never cached.
   validate?: (body: string) => void;
 };
+
+// Bytes 0x80-0x9F in windows-1252 (punctuation such as the en dash at 0x96). Node's built-in
+// "windows-1252" decoder treats them as C1 control codes, which would corrupt names and break YAML.
+const CP1252_HIGH =
+  "\u20ac\u0081\u201a\u0192\u201e\u2026\u2020\u2021\u02c6\u2030\u0160\u2039\u0152\u008d\u017d\u008f\u0090\u2018\u2019\u201c\u201d\u2022\u2013\u2014\u02dc\u2122\u0161\u203a\u0153\u009d\u017e\u0178";
+
+export function decodeBytes(bytes: Uint8Array, encoding = "utf-8"): string {
+  if (encoding.toLowerCase() !== "windows-1252") return new TextDecoder(encoding).decode(bytes);
+  let out = "";
+  for (const byte of bytes) {
+    out +=
+      byte >= 0x80 && byte <= 0x9f ? CP1252_HIGH.charAt(byte - 0x80) : String.fromCharCode(byte);
+  }
+  return out;
+}
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -54,7 +71,7 @@ export async function fetchText(url: string, options: FetchOptions = {}): Promis
         signal: AbortSignal.timeout(TIMEOUT_MS),
       });
       if (response.ok) {
-        const body = await response.text();
+        const body = decodeBytes(new Uint8Array(await response.arrayBuffer()), options.encoding);
         options.validate?.(body);
         await mkdir(CACHE_DIR, { recursive: true });
         const temp = `${file}.${process.pid}.tmp`;
@@ -82,4 +99,50 @@ export async function fetchJson(url: string, options: FetchOptions = {}): Promis
     },
   });
   return JSON.parse(body);
+}
+
+const PROBE_CACHE = path.join(CACHE_DIR, "https-probe.json");
+
+async function readProbeCache(): Promise<Record<string, string | null>> {
+  if (!existsSync(PROBE_CACHE)) return {};
+  try {
+    return JSON.parse(await readFile(PROBE_CACHE, "utf8")) as Record<string, string | null>;
+  } catch {
+    return {};
+  }
+}
+
+// For a website given as "http://host/", "host" or "www.host": returns the final https URL if
+// requesting the https form works (after redirects), else null. It only proves the address is
+// served over https; a human still confirms it is the right site. Results are cached on disk.
+export async function probeHttps(
+  urls: readonly string[],
+  concurrency = 8,
+): Promise<Map<string, string | null>> {
+  const cache = await readProbeCache();
+  const todo = urls.filter((u) => !(u in cache));
+  let next = 0;
+  const worker = async () => {
+    while (next < todo.length) {
+      const url = todo[next++];
+      if (url === undefined) return;
+      const host = url.replace(/^https?:\/\//, "");
+      try {
+        const response = await fetch(`https://${host}`, {
+          method: "GET",
+          redirect: "follow",
+          headers: { "user-agent": USER_AGENT },
+          signal: AbortSignal.timeout(15_000),
+        });
+        await response.body?.cancel();
+        cache[url] = response.ok && response.url.startsWith("https://") ? response.url : null;
+      } catch {
+        cache[url] = null;
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: concurrency }, worker));
+  await mkdir(CACHE_DIR, { recursive: true });
+  await writeFile(PROBE_CACHE, JSON.stringify(cache));
+  return new Map(urls.map((u) => [u, cache[u] ?? null]));
 }

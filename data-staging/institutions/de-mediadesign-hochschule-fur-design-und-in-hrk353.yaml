@@ -1,0 +1,24 @@
+slug: de-mediadesign-hochschule-fur-design-und-in-hrk353
+name: Mediadesign Hochschule für Design und Informatik
+country: DE
+city:
+  slug: berlin
+  name: Berlin
+type: private
+website: https://www.mediadesign.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-mediadesign-hochschule-fur-design-und-in-hrk353
+  name: Mediadesign Hochschule für Design und Informatik
+  institution: ""
+  city: Berlin
+  field: ""
+  confidence: ""
+  officialUrl: https://www.mediadesign.de
+  todo: "HRK: Fachhochschulen / HAW, Berlin"

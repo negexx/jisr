@@ -1,0 +1,24 @@
+slug: de-padagogische-hochschule-schwabisch-gmund-hrk243
+name: Pädagogische Hochschule Schwäbisch Gmünd
+country: DE
+city:
+  slug: schwabisch-gmund
+  name: Schwäbisch Gmünd
+type: public
+website: https://www.ph-gmuend.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-padagogische-hochschule-schwabisch-gmund-hrk243
+  name: Pädagogische Hochschule Schwäbisch Gmünd
+  institution: ""
+  city: Schwäbisch Gmünd
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ph-gmuend.de
+  todo: "HRK: Universitäten, Baden-Württemberg"

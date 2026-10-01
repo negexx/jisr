@@ -1,0 +1,24 @@
+slug: de-theologische-fakultat-fulda-hrk93
+name: Theologische Fakultät Fulda
+country: DE
+city:
+  slug: fulda
+  name: Fulda
+type: private
+website: https://www.thf-fulda.de/de/index.html
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-theologische-fakultat-fulda-hrk93
+  name: Theologische Fakultät Fulda
+  institution: ""
+  city: Fulda
+  field: ""
+  confidence: ""
+  officialUrl: https://www.thf-fulda.de/de/index.html
+  todo: 'HRK: Universitäten, Hessen; church-run (state-recognised): the app only has public/private, check how to classify; listed as "http://www.thf-fulda.de"; the https form answers: confirm it is the official site'

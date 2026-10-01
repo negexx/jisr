@@ -1,0 +1,24 @@
+slug: nl-has-green-academy-21cw
+name: HAS green academy
+country: NL
+city:
+  slug: s-hertogenbosch
+  name: "'s-Hertogenbosch"
+type: null
+website: https://www.has.nl/
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-has-green-academy-21cw
+  name: HAS green academy
+  institution: ""
+  city: "'s-Hertogenbosch"
+  field: ""
+  confidence: ""
+  officialUrl: https://www.has.nl/
+  todo: "DUO: hbo; public/private is not in the file: check the institution's legal status; listed as \"www.has.nl\"; the https form answers: confirm it is the official site"

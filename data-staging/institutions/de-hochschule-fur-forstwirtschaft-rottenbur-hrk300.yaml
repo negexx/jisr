@@ -1,0 +1,24 @@
+slug: de-hochschule-fur-forstwirtschaft-rottenbur-hrk300
+name: Hochschule für Forstwirtschaft Rottenburg
+country: DE
+city:
+  slug: rottenburg
+  name: Rottenburg
+type: public
+website: https://www.hs-rottenburg.net/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-forstwirtschaft-rottenbur-hrk300
+  name: Hochschule für Forstwirtschaft Rottenburg
+  institution: ""
+  city: Rottenburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-rottenburg.net/
+  todo: 'HRK: Fachhochschulen / HAW, Baden-Württemberg; listed as "http://www.hs-rottenburg.net"; the https form answers: confirm it is the official site'

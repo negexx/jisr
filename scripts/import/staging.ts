@@ -59,8 +59,18 @@ export function recordKey(kind: string, slug: string): string {
   return `${kind}/${slug}`;
 }
 
+// C1 control characters (U+0080-U+009F) in imported text mean a source was decoded with the wrong
+// character set; refusing them keeps mojibake out of the data.
+const C1_CONTROL = /[\u0080-\u009f]/;
+
 export function toYaml(data: Record<string, unknown>): string {
-  return stringify(data, { lineWidth: 0, nullStr: "null" });
+  const yaml = stringify(data, { lineWidth: 0, nullStr: "null" });
+  if (C1_CONTROL.test(yaml)) {
+    throw new Error(
+      "imported text contains control characters: a source was decoded with the wrong encoding",
+    );
+  }
+  return yaml;
 }
 
 function csvCell(value: string): string {

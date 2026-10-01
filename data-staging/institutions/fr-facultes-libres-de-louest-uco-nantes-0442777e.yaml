@@ -5,7 +5,7 @@ city:
   slug: reze
   name: Rezé
 type: private
-website: https://www.uco.fr/fr
+website: https://nantes.uco.fr/fr
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Rezé
   field: ""
   confidence: ""
-  officialUrl: https://www.uco.fr/fr
-  todo: "website candidate from parent university \"Facultés libres de l'Ouest\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://nantes.uco.fr/fr
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

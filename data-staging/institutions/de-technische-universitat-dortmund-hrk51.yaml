@@ -1,0 +1,24 @@
+slug: de-technische-universitat-dortmund-hrk51
+name: Technische Universität Dortmund
+country: DE
+city:
+  slug: dortmund
+  name: Dortmund
+type: public
+website: https://www.tu-dortmund.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-universitat-dortmund-hrk51
+  name: Technische Universität Dortmund
+  institution: ""
+  city: Dortmund
+  field: ""
+  confidence: ""
+  officialUrl: https://www.tu-dortmund.de/
+  todo: 'HRK: Universitäten, Nordrhein-Westfalen; listed as "http://www.tu-dortmund.de"; the https form answers: confirm it is the official site'

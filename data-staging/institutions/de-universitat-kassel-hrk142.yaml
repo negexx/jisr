@@ -1,0 +1,24 @@
+slug: de-universitat-kassel-hrk142
+name: Universität Kassel
+country: DE
+city:
+  slug: kassel
+  name: Kassel
+type: public
+website: https://www.uni-kassel.de/uni/index.html
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-universitat-kassel-hrk142
+  name: Universität Kassel
+  institution: ""
+  city: Kassel
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-kassel.de/uni/index.html
+  todo: 'HRK: Universitäten, Hessen; listed as "http://www.uni-kassel.de"; the https form answers: confirm it is the official site'

@@ -1,0 +1,24 @@
+slug: de-technische-hochschule-ostwestfalen-lippe-hrk165
+name: Technische Hochschule Ostwestfalen-Lippe
+country: DE
+city:
+  slug: lemgo
+  name: Lemgo
+type: public
+website: https://www.th-owl.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-hochschule-ostwestfalen-lippe-hrk165
+  name: Technische Hochschule Ostwestfalen-Lippe
+  institution: ""
+  city: Lemgo
+  field: ""
+  confidence: ""
+  officialUrl: https://www.th-owl.de/
+  todo: 'HRK: Fachhochschulen / HAW, Nordrhein-Westfalen; listed as "http://www.th-owl.de"; the https form answers: confirm it is the official site'

@@ -1,0 +1,24 @@
+slug: nl-zuyd-hogeschool-25jx
+name: Zuyd Hogeschool
+country: NL
+city:
+  slug: heerlen
+  name: Heerlen
+type: null
+website: null
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-zuyd-hogeschool-25jx
+  name: Zuyd Hogeschool
+  institution: ""
+  city: Heerlen
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "DUO: hbo; public/private is not in the file: check the institution's legal status; listed website \"www.hszuyd.nl/\" does not answer over https: find the official https site"

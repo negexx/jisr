@@ -1,0 +1,24 @@
+slug: de-technische-universitat-nurnberg-hrk691
+name: Technische Universität Nürnberg
+country: DE
+city:
+  slug: nurnberg
+  name: Nürnberg
+type: public
+website: https://www.utn.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-universitat-nurnberg-hrk691
+  name: Technische Universität Nürnberg
+  institution: ""
+  city: Nürnberg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.utn.de/
+  todo: "HRK: Universitäten, Bayern"

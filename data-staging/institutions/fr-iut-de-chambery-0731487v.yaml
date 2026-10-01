@@ -5,7 +5,7 @@ city:
   slug: le-bourget-du-lac
   name: Le Bourget-du-Lac
 type: public
-website: https://www.univ-smb.fr/
+website: https://www.iut-chy.univ-smb.fr
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Le Bourget-du-Lac
   field: ""
   confidence: ""
-  officialUrl: https://www.univ-smb.fr/
-  todo: "website candidate from parent university \"Université Savoie Mont Blanc\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  officialUrl: https://www.iut-chy.univ-smb.fr
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"

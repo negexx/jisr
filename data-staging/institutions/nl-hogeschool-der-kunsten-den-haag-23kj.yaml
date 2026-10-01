@@ -1,0 +1,24 @@
+slug: nl-hogeschool-der-kunsten-den-haag-23kj
+name: Hogeschool der Kunsten Den Haag
+country: NL
+city:
+  slug: s-gravenhage
+  name: "'s-Gravenhage"
+type: null
+website: https://www.koncon.nl/
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-hogeschool-der-kunsten-den-haag-23kj
+  name: Hogeschool der Kunsten Den Haag
+  institution: ""
+  city: "'s-Gravenhage"
+  field: ""
+  confidence: ""
+  officialUrl: https://www.koncon.nl/
+  todo: "DUO: hbo; public/private is not in the file: check the institution's legal status; listed as \"www.koncon.nl\"; the https form answers: confirm it is the official site"

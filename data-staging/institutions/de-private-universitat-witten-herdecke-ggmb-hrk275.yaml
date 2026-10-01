@@ -1,0 +1,24 @@
+slug: de-private-universitat-witten-herdecke-ggmb-hrk275
+name: Private Universität Witten/Herdecke gGmbH
+country: DE
+city:
+  slug: witten
+  name: Witten
+type: private
+website: https://www.uni-wh.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-private-universitat-witten-herdecke-ggmb-hrk275
+  name: Private Universität Witten/Herdecke gGmbH
+  institution: ""
+  city: Witten
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-wh.de/
+  todo: "HRK: Universitäten, Nordrhein-Westfalen"
