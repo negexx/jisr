@@ -244,7 +244,7 @@ A restrained warm-neutral field with one deep teal-ink voice. OKLCH is the canon
 
 **The Isolated Latin Rule.** Official names, URLs, hostnames, currency codes and amounts sit in `bdi` (amounts and URLs with `dir="ltr"`) so Arabic sentences never reorder them. Digits are always Latin.
 
-**The Arabic Leading Rule.** Under `lang="ar"` the root scales to 106.25% and line heights rise to 1.75 (1.6 and 1.5 for the two largest steps). Tap targets grow with the root and never fall below 48px.
+**The Arabic Leading Rule.** Under `lang="ar"` the root scales to 106.25% and line heights rise to 1.75 (1.6 and 1.5 for the two largest steps). Tap targets grow with the root; the target is 48px on phone (shipped: 44px for `sm`, 32 to 36px on desktop, tracked as a follow-up).
 
 ## 4. Elevation
 
@@ -304,7 +304,7 @@ The one place a match group becomes icon, colour and wording. Bordered, 9.6px ra
 - **Do** show missing, stale or ambiguous information as something to check, with a question-mark or alert icon and a sentence. Honest uncertainty is never rounded up to a yes or a no.
 - **Do** show costs as ranges with the 10-month assumption, and tuition as an official fee or "to be checked".
 - **Do** write for a school-leaver: plain words, short steps, one clear next action, one primary button per screen.
-- **Do** keep controls 12px rounded and at least 48px tall; read Arabic at root 106.25% with 1.75 leading.
+- **Do** keep controls 12px rounded and aim for 48px tall (target on phone; shipped 44px for `sm`, tracked as a follow-up); read Arabic at root 106.25% with 1.75 leading.
 - **Do** use logical utilities only (`ms-`, `pe-`, `text-start`, `border-s`) and `rtl:rotate-180` on directional icons.
 - **Do** keep transitions to 150 ms colour and state changes and let `prefers-reduced-motion` cut them to near zero.
 - **Do** keep pages light: phone and desktop equally first-class, on slow connections.

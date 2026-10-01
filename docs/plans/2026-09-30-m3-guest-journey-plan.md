@@ -139,7 +139,6 @@ M3 shipped on `feat/m3-guest-journey`: Home with the profile CTA, Create Profile
 - `data:check` rule: a scholarship linked from a program must list that program's destination (today it would be missing from the page and the client).
 - ar `CHECK_VERB` needs a `fa-`/`wa-` prefix allowance if a to-check key ever uses "فتحقق".
 - Add `src/instrumentation-client.ts` as a root of the client-import guard when Sentry arrives, and filter `NoFallbackError` log noise; keep `SnapshotError.shard` out of Sentry extras.
-- Add the build-time Zod backstop (`findZodMarkers` through `pnpm perf:js` after a build) to CI; the e2e perf spec already checks the scripts the browser loads.
 - Unverified until deployed: Vercel behaviour of the global 404 and of `dynamicParams = false`; the CI `e2e` job (first run decides the Linux ratchet and RTL thresholds).
 - Product decision: a compact phone `MatchCard` (application method and cost note behind "See details") would roughly halve phone page height but conflicts with the MVP "application method" card fact.
 - `Retry` after a failed chunk download was verified on a Turbopack production build in Chromium (chunk aborted: Retry requests it again and keeps the error; chunk restored: Retry recovers), so no reload workaround was added. Only the program page's lazy matching chunk was exercised in a browser; the profile page's lazy paths share the `import()` pattern and have jsdom tests.

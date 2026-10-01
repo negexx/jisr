@@ -55,6 +55,10 @@ jobs:
       - name: Build
         run: pnpm build
 
+      # Reports first-load JS per prerendered route and fails if a client chunk contains Zod markers.
+      - name: Client JS size and Zod backstop
+        run: pnpm perf:js
+
   # Browser specs against a production build of the synthetic fixture (journey, accessibility,
   # privacy, errors, JavaScript ratchet). `playwright test` builds and starts the app itself
   # (webServer in playwright.config.ts: pnpm build:e2e, then next start on port 3100).
