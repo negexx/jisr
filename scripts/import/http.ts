@@ -12,6 +12,8 @@ export type FetchOptions = {
   accept?: string;
   // Ignore the cache (also set by JISR_IMPORT_REFRESH=1, which `pnpm data:import --refresh` sets).
   refresh?: boolean;
+  // Extra request headers (an API key, for instance).
+  headers?: Record<string, string>;
   // Character encoding of the response body (some official files are cp1252 / latin1).
   encoding?: string;
   // Throws when the body is unusable; a bad body is never cached.
@@ -69,7 +71,7 @@ export async function fetchText(url: string, options: FetchOptions = {}): Promis
     let response: Response | null = null;
     try {
       response = await fetch(url, {
-        headers: { "user-agent": USER_AGENT, accept: options.accept ?? "*/*" },
+        headers: { "user-agent": USER_AGENT, accept: options.accept ?? "*/*", ...options.headers },
         signal: AbortSignal.timeout(TIMEOUT_MS),
       });
       if (response.ok) {

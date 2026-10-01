@@ -1,6 +1,21 @@
+// Letters that Unicode normalisation does not decompose: "Gießen" must become "giessen", not "gie-en".
+const SPECIAL_LETTERS: Record<string, string> = {
+  ß: "ss",
+  æ: "ae",
+  œ: "oe",
+  ø: "o",
+  đ: "d",
+  ł: "l",
+  þ: "th",
+};
+
+function foldSpecialLetters(input: string): string {
+  return input.replace(/[ßæœøđłþ]/giu, (c) => SPECIAL_LETTERS[c.toLowerCase()] ?? c);
+}
+
 // Lower-case kebab slug, accents stripped, capped so slugs stay readable.
 export function slugify(input: string, maxLength = 48): string {
-  const slug = input
+  const slug = foldSpecialLetters(input)
     .normalize("NFKD")
     .replace(/\p{M}/gu, "")
     .toLowerCase()
@@ -21,7 +36,7 @@ export function normalizeCityName(input: string): string {
 
 // Accent- and punctuation-insensitive key for matching institution names across datasets.
 export function nameKey(input: string): string {
-  return input
+  return foldSpecialLetters(input)
     .normalize("NFKD")
     .replace(/\p{M}/gu, "")
     .toLowerCase()

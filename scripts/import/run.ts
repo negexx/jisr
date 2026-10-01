@@ -1,6 +1,7 @@
 import { existsSync } from "node:fs";
 import { mkdir, writeFile } from "node:fs/promises";
 
+import { importGermany } from "./sources/germany";
 import { importInstitutions } from "./sources/institutions";
 import { importFrance } from "./sources/parcoursup";
 import { importNetherlands } from "./sources/rio";
@@ -19,6 +20,7 @@ const SOURCES: Record<string, () => Promise<StagedRecord[]>> = {
   france: importFrance,
   institutions: importInstitutions,
   netherlands: importNetherlands,
+  germany: importGermany,
 };
 
 async function main(argv: readonly string[]): Promise<void> {

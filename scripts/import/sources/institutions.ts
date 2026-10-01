@@ -89,6 +89,10 @@ export function stagedInstitution(input: {
 const CONFIRM =
   "confirm the details on the institution's own site, add that page as the source, then set info_kind: official";
 
+export function hrkSlug(inst: Pick<HrkInstitution, "name" | "hsNr">): string {
+  return `de-${slugify(inst.name, 40)}-hrk${inst.hsNr}`;
+}
+
 export function buildHrkRecord(inst: HrkInstitution, probed: Probed): StagedRecord {
   const { type, church } = sectorOfSponsor(inst.sponsor);
   const site = resolveSite(inst.homepage, probed);
@@ -100,7 +104,7 @@ export function buildHrkRecord(inst: HrkInstitution, probed: Probed): StagedReco
     CONFIRM,
   ];
   return stagedInstitution({
-    slug: `de-${slugify(inst.name, 40)}-hrk${inst.hsNr}`,
+    slug: hrkSlug(inst),
     name: inst.name,
     country: "DE",
     city: inst.city,

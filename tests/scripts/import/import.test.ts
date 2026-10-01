@@ -457,3 +457,11 @@ describe("decodeBytes", () => {
     expect(decodeBytes(new TextEncoder().encode("caf\u00e9"))).toBe("caf\u00e9");
   });
 });
+
+describe("special letters", () => {
+  it("folds sharp s and friends instead of dropping them", () => {
+    expect(slugify("Gießen")).toBe("giessen");
+    expect(slugify("Øresund Œuvre Łódź")).toBe("oresund-oeuvre-lodz");
+    expect(nameKey("Straße")).toBe("strasse");
+  });
+});
