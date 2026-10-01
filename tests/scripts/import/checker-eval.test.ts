@@ -40,3 +40,13 @@ describe("label", () => {
     expect(label("teachingLanguages", fact(["en"]), truth)).toBe("unknown");
   });
 });
+
+describe("groupVariants order", () => {
+  it("treats the same languages in another order as one value", () => {
+    const groups = groupVariants([
+      { teachingLanguages: fact(["en", "de"]) },
+      { teachingLanguages: fact(["de", "en"]) },
+    ]);
+    expect(groups).toHaveLength(1);
+  });
+});

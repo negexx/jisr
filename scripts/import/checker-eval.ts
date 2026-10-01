@@ -25,15 +25,14 @@ export function label(name: FactName, fact: AcceptedFact, truth: Facts): Label {
 // values of one fact and each can be checked as a single set of facts.
 export function groupVariants(sets: readonly Facts[]): Facts[] {
   const groups: Facts[] = [];
-  const seen = new Map<string, number>();
-  const used = new Map<FactName, number>();
+  const values = new Map<FactName, AcceptedFact[]>();
   for (const facts of sets) {
-    for (const [key, fact] of Object.entries(facts) as [FactName, AcceptedFact][]) {
-      const id = `${key}=${JSON.stringify(fact.value)}`;
-      if (seen.has(id)) continue;
-      const slot = used.get(key) ?? 0;
-      used.set(key, slot + 1);
-      seen.set(id, slot);
+    for (const [key, fact] of Object.entries(facts) as [FactName, AcceptedFact[][number]][]) {
+      const known = values.get(key) ?? [];
+      // the same value written in another order (["en","de"] and ["de","en"]) is the same value
+      if (known.some((other) => sameValue(key, other.value, fact.value))) continue;
+      const slot = known.length;
+      values.set(key, [...known, fact]);
       const group = groups[slot] ?? {};
       group[key] = fact;
       groups[slot] = group;

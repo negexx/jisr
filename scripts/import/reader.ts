@@ -4,6 +4,7 @@ import path from "node:path";
 
 import { parse } from "yaml";
 
+import { checkVerified } from "./checker";
 import { CHANNEL_SLUGS, LANGUAGE_CODES, pageText, SUBJECT_SLUGS, TEST_SLUGS } from "./evidence";
 import {
   appendJsonl,
@@ -66,7 +67,7 @@ FACT DETAILS
 - applicationChannel: exactly one of ${CHANNEL_SLUGS.join(", ")}; the quote must name the platform or route. How to choose is explained per country in the TASK at the end.
 
 REQUIREMENTS (rules the matcher can evaluate; each needs evidence)
-- {"kind":"language_proficiency","language":"fr","minCefr":"B2"|null,"certificateRequired":true|false|null,"acceptedTests":[${TEST_SLUGS.map((s) => `"${s}"`).join(",")}],"evidence":[...]} only for a stated condition of admission, never for "recommended". Each stated level and test must appear in a quote.
+- {"kind":"language_proficiency","language":"fr","minCefr":"B2"|null,"certificateRequired":true|false|null,"acceptedTests":[${TEST_SLUGS.map((s) => `"${s}"`).join(",")}],"evidence":[...]} only for a stated condition of admission, never for "recommended". Each stated level and test must appear in a quote. acceptedTests lists the tests the quote names; use [] only if the quote names none, never null.
 - {"kind":"subject_taken","subjects":[one or more of ${SUBJECT_SLUGS.join(", ")}],"mode":"all"|"any","evidence":[...]}
 - {"kind":"prior_study_years_min","years":12,"evidence":[...]}
 - {"kind":"manual_check","note":{"fr":"short instruction for the applicant in French","en":"the same in English"},"evidence":[...]} for everything else: grade thresholds, entrance exams, portfolios, interviews, anything soft or unclear. Grade thresholds are ALWAYS a manual_check.
@@ -145,13 +146,21 @@ export function salvageProposal(raw: unknown): { proposal: Proposal | null; drop
     const rules = (requirements as Record<string, unknown>).rules;
     return Array.isArray(rules) ? rules : null;
   };
-  for (const rule of asRules() ?? []) {
-    if (
-      typeof rule === "object" &&
-      rule !== null &&
-      (rule as Record<string, unknown>).acceptedTests === null
-    )
-      (rule as Record<string, unknown>).acceptedTests = [];
+  // acceptedTests [] means "any certificate passes" in the matcher, so a null (the model did not say
+  // which tests) must not become []: the rule is dropped instead of turning unknown into permissive.
+  const ruleList = asRules();
+  if (ruleList !== null) {
+    for (let index = ruleList.length - 1; index >= 0; index--) {
+      const rule = ruleList[index];
+      if (
+        typeof rule === "object" &&
+        rule !== null &&
+        (rule as Record<string, unknown>).acceptedTests === null
+      ) {
+        ruleList.splice(index, 1);
+        dropped.push(`requirements.rules.${index}`);
+      }
+    }
   }
   const facts = doc.facts;
   const intakes =
@@ -294,13 +303,40 @@ export async function pool<T>(
   work: (item: T) => Promise<void>,
 ): Promise<void> {
   let next = 0;
+  let failure: { error: unknown } | null = null;
+  // After a failure (a budget stop, say) nothing new is started, the calls already in flight are
+  // awaited, and only then is the failure thrown: no work keeps running behind a rejected promise.
   const runner = async () => {
-    while (next < items.length) {
+    while (failure === null && next < items.length) {
       const item = items[next++];
-      if (item !== undefined) await work(item);
+      if (item === undefined) continue;
+      try {
+        await work(item);
+      } catch (error) {
+        failure ??= { error };
+      }
     }
   };
   await Promise.all(Array.from({ length: Math.min(concurrency, items.length) }, runner));
+  if (failure !== null) throw (failure as { error: unknown }).error;
+}
+
+// What the checker kept, written back into the proposal that is saved to disk: a later
+// `data:evidence verify` re-verifies the proposal file, so a fact the checker removed must not be in it.
+export function keepChecked(proposal: Proposal, checked: Verified): Proposal {
+  const withoutEvidence = (rule: object): string => {
+    const { evidence: _evidence, ...rest } = rule as Record<string, unknown>;
+    return JSON.stringify(rest);
+  };
+  const keptRules = new Set((checked.requirements ?? []).map(withoutEvidence));
+  const facts = Object.fromEntries(
+    Object.entries(proposal.facts).filter(([name]) => name in checked.facts),
+  ) as Proposal["facts"];
+  const rules = (proposal.requirements?.rules ?? []).filter((r) =>
+    keptRules.has(withoutEvidence(r)),
+  );
+  const { requirements: _requirements, ...rest } = proposal;
+  return { ...rest, facts, ...(rules.length > 0 ? { requirements: { rules } } : {}) };
 }
 
 type Yaml = Record<string, unknown>;
@@ -350,7 +386,7 @@ export async function loadPages(
 
 // --- CLI -------------------------------------------------------------------------------------------
 // Usage:
-//   data:read --model <id> --pages <pages.json> [--slugs <file>] [--out <dir>] [--max-usd 1]
+//   data:read --model <id> --pages <pages.json> [--slugs <file>] [--out <dir>] [--max-usd 1] [--check <model>]
 //             [--max-tokens 5000000] [--concurrency 8] [--dry-run]
 // pages.json: { "shared": { "FR": [url, ...], "NL": [...] }, "programmes": { "<slug>": [url, ...] } }
 // Writes <out>/<slug>.json (the proposal), <out>/calls.jsonl (one line per call) and prints a short
@@ -372,6 +408,10 @@ async function main(argv: readonly string[]): Promise<void> {
   const model = MODELS[modelId];
   if (model === undefined)
     throw new Error(`unknown model ${modelId}; known: ${Object.keys(MODELS).join(", ")}`);
+  const checkId = flag(argv, "check");
+  const checkModel = checkId === undefined ? undefined : MODELS[checkId];
+  if (checkId !== undefined && checkModel === undefined)
+    throw new Error(`unknown checker ${checkId}`);
   const dryRun = argv.includes("--dry-run");
   const concurrency = Number(flag(argv, "concurrency") ?? 8);
   const budget = new Budget({
@@ -420,15 +460,33 @@ async function main(argv: readonly string[]): Promise<void> {
         getText: pageText,
         budget,
       });
-      const ok = result.verified === null ? [] : Object.keys(result.verified.facts);
-      const bad = result.verified?.rejected ?? [];
+      let { verified, proposal } = result;
+      let check: { costUsd: number | null; error: string | null } | null = null;
+      // The checker can only remove: what it removes is also removed from the saved proposal, so a
+      // later `data:evidence verify` cannot bring it back.
+      if (checkModel !== undefined && verified !== null && proposal !== null) {
+        const checked = await checkVerified({
+          verified,
+          meta: { name: meta.name, institution: meta.institution },
+          model: checkModel,
+          session: `${session}-check`,
+          getText: pageText,
+          budget,
+        });
+        verified = checked.verified;
+        proposal = keepChecked(proposal, checked.verified);
+        check = { costUsd: checked.completion?.costUsd ?? null, error: checked.error };
+      }
+      const ok = verified === null ? [] : Object.keys(verified.facts);
+      const bad = verified?.rejected ?? [];
       accepted += ok.length;
       rejected += bad.length;
-      if (result.error !== null) failed++;
-      if (result.proposal !== null)
+      if (result.error !== null || check?.error != null) failed++;
+      if (proposal !== null)
         await writeFile(
           path.join(out, `${slug}.json`),
-          `${JSON.stringify(result.proposal, null, 2)}\n`,
+          `${JSON.stringify(proposal, null, 2)}
+`,
         );
       await appendJsonl(path.join(out, "calls.jsonl"), {
         at: new Date().toISOString(),
@@ -443,6 +501,8 @@ async function main(argv: readonly string[]): Promise<void> {
         accepted: ok,
         rejected: bad,
         pagesFailed: [...shared.failed, ...own.failed],
+        dropped: result.dropped,
+        checker: check,
       });
     } catch (error) {
       if (!(error instanceof BudgetExceeded)) throw error;

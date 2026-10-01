@@ -106,10 +106,14 @@ export function normalizeUsage(wire: Wire, raw: unknown): Usage {
 // --- budget --------------------------------------------------------------------------------------
 export class BudgetExceeded extends Error {}
 
-// A hard cap per run: the run stops at the cap instead of spending on.
+// A hard cap per run. A call reserves its worst case before it is sent, so calls running in parallel
+// cannot overshoot the cap together; the actual cost is charged afterwards and a result that pushed
+// the run over the cap is kept (the next call is the one refused).
 export class Budget {
   spentUsd = 0;
   spentTokens = 0;
+  private reservedUsd = 0;
+  private reservedTokens = 0;
   constructor(private readonly cap: { maxUsd: number; maxTokens: number }) {}
 
   assertRoom(): void {
@@ -120,31 +124,65 @@ export class Budget {
     }
   }
 
+  // Throws if the worst case of this call, on top of what is spent and in flight, passes the cap.
+  reserve(usd: number, tokens: number): () => void {
+    this.assertRoom();
+    if (
+      this.spentUsd + this.reservedUsd + usd > this.cap.maxUsd ||
+      this.spentTokens + this.reservedTokens + tokens > this.cap.maxTokens
+    ) {
+      throw new BudgetExceeded(
+        `budget would be passed: $${this.spentUsd.toFixed(4)} spent + $${this.reservedUsd.toFixed(4)} in flight of $${this.cap.maxUsd}`,
+      );
+    }
+    this.reservedUsd += usd;
+    this.reservedTokens += tokens;
+    let released = false;
+    return () => {
+      if (released) return;
+      released = true;
+      this.reservedUsd -= usd;
+      this.reservedTokens -= tokens;
+    };
+  }
+
   charge(usd: number, tokens: number): void {
     this.spentUsd += usd;
     this.spentTokens += tokens;
-    this.assertRoom();
   }
 }
 
 // --- server-sent events --------------------------------------------------------------------------
-// Returns a function to feed text chunks to; `onData` gets the payload of every `data:` event.
-export function parseSse(onData: (data: string) => void): (chunk: string) => void {
+// `feed` takes text chunks; `end` flushes a last event the server did not terminate with a blank line
+// (it often carries the usage). `onData` gets the payload of every `data:` event.
+export function parseSse(onData: (data: string) => void): {
+  feed: (chunk: string) => void;
+  end: () => void;
+} {
   let buffer = "";
-  return (chunk) => {
-    buffer += chunk.replace(/\r\n/g, "\n");
-    for (;;) {
-      const end = buffer.indexOf("\n\n");
-      if (end === -1) return;
-      const block = buffer.slice(0, end);
-      buffer = buffer.slice(end + 2);
-      const data = block
-        .split("\n")
-        .filter((line) => line.startsWith("data:"))
-        .map((line) => line.slice(5).trimStart())
-        .join("\n");
-      if (data !== "" && data !== "[DONE]") onData(data);
-    }
+  const emit = (block: string) => {
+    const data = block
+      .split("\n")
+      .filter((line) => line.startsWith("data:"))
+      .map((line) => line.slice(5).trimStart())
+      .join("\n");
+    if (data !== "" && data !== "[DONE]") onData(data);
+  };
+  return {
+    feed: (chunk) => {
+      buffer = (buffer + chunk).replace(/\r\n/g, "\n");
+      for (;;) {
+        const end = buffer.indexOf("\n\n");
+        if (end === -1) return;
+        emit(buffer.slice(0, end));
+        buffer = buffer.slice(end + 2);
+      }
+    },
+    end: () => {
+      const rest = buffer.replace(/\r/g, "");
+      buffer = "";
+      if (rest.trim() !== "") emit(rest);
+    },
   };
 }
 
@@ -158,6 +196,8 @@ export type Completion = {
   // time to the first streamed token of any kind (reasoning included)
   ttftMs: number | null;
   finishReason: string | null;
+  // the provider sent no usage: tokens (and the cost) are an estimate from the text length
+  usageEstimated?: boolean;
 };
 
 export type CompleteInput = {
@@ -167,6 +207,9 @@ export type CompleteInput = {
   session: string;
   maxOutputTokens?: number;
   budget?: Budget;
+  // first backoff in ms (default 2000); tests pass 0
+  retryDelayMs?: number;
+  fetchFn?: typeof fetch;
 };
 
 export class LlmError extends Error {}
@@ -338,11 +381,30 @@ function watchdog(): { signal: AbortSignal; touch: () => void; stop: () => void 
 
 const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
 
+// What the provider might have billed when it sent no usage: about 4 characters per token.
+const estimateTokens = (chars: number): number => Math.ceil(chars / 4);
+
 export async function complete(model: ModelSpec, input: CompleteInput): Promise<Completion> {
   input.budget?.assertRoom();
   const req = request(model, input);
+  const key = apiKey();
+  const redact = (text: string): string =>
+    text
+      .split(key)
+      .join("[redacted]")
+      .replace(/Bearer\s+[^\s"']+/gi, "Bearer [redacted]")
+      .replace(/oc_sk_[\w-]+/g, "[redacted]");
+  const inputTokens = estimateTokens(input.system.length + input.user.length);
+  const maxOutput = input.maxOutputTokens ?? 8000;
+  const worstCase = costUsd(model, { input: inputTokens, cached: 0, output: maxOutput });
+  const baseDelay = input.retryDelayMs ?? 2000;
+  const doFetch = input.fetchFn ?? fetch;
   let lastError = "unknown error";
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    const backoff = async (factor: number) => {
+      if (attempt < MAX_ATTEMPTS) await sleep(baseDelay * factor);
+    };
+    const release = input.budget?.reserve(worstCase, inputTokens + maxOutput);
     const started = Date.now();
     const acc: Accumulator = {
       text: "",
@@ -352,34 +414,46 @@ export async function complete(model: ModelSpec, input: CompleteInput): Promise<
       error: null,
     };
     const dog = watchdog();
+    // An attempt that streamed tokens and then failed was probably billed: count an estimate.
+    const chargeAborted = () => {
+      if (acc.firstTokenAt === null || input.budget === undefined) return;
+      const usage = { input: inputTokens, cached: 0, output: estimateTokens(acc.text.length) };
+      input.budget.charge(costUsd(model, usage), usage.input + usage.output);
+    };
     try {
-      const response = await fetch(req.url, {
+      const response = await doFetch(req.url, {
         method: "POST",
         headers: req.headers,
         body: JSON.stringify(req.body),
         signal: dog.signal,
       });
       if (!response.ok || response.body === null) {
-        const detail = (await response.text()).slice(0, 300);
+        const detail = redact((await response.text()).slice(0, 300));
         lastError = `HTTP ${response.status}: ${detail}`;
         if (response.status === 429 || response.status >= 500) {
-          await sleep(2000 * 2 ** (attempt - 1));
+          await backoff(2 ** (attempt - 1));
           continue;
         }
         throw new LlmError(lastError);
       }
       const decoder = new TextDecoder();
-      const feed = parseSse((data) => absorbEvent(model.wire, data, acc, Date.now()));
+      const sse = parseSse((data) => absorbEvent(model.wire, data, acc, Date.now()));
       for await (const chunk of response.body as unknown as AsyncIterable<Uint8Array>) {
         dog.touch();
-        feed(decoder.decode(chunk, { stream: true }));
+        sse.feed(decoder.decode(chunk, { stream: true }));
       }
+      sse.end();
       if (acc.error !== null && acc.text === "") {
-        lastError = `stream error: ${acc.error}`;
-        await sleep(1000 * attempt);
+        lastError = `stream error: ${redact(acc.error)}`;
+        chargeAborted();
+        await backoff(attempt / 2);
         continue;
       }
-      const usage = normalizeUsage(model.wire, acc.usage);
+      const reported = normalizeUsage(model.wire, acc.usage);
+      const missing = reported.input === 0 && reported.output === 0 && acc.text !== "";
+      const usage = missing
+        ? { input: inputTokens, cached: 0, output: estimateTokens(acc.text.length) }
+        : reported;
       const cost = costUsd(model, usage);
       input.budget?.charge(cost, usage.input + usage.output);
       return {
@@ -390,12 +464,15 @@ export async function complete(model: ModelSpec, input: CompleteInput): Promise<
         latencyMs: Date.now() - started,
         ttftMs: acc.firstTokenAt === null ? null : acc.firstTokenAt - started,
         finishReason: acc.finishReason,
+        ...(missing ? { usageEstimated: true } : {}),
       };
     } catch (error) {
       if (error instanceof BudgetExceeded || error instanceof LlmError) throw error;
-      lastError = error instanceof Error ? error.message : String(error);
-      await sleep(2000 * 2 ** (attempt - 1));
+      lastError = redact(error instanceof Error ? error.message : String(error));
+      chargeAborted();
+      await backoff(2 ** (attempt - 1));
     } finally {
+      release?.();
       dog.stop();
     }
   }

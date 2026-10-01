@@ -1,11 +1,14 @@
 import { describe, expect, it } from "vitest";
 
 import type { Completion } from "../../../scripts/import/llm";
+import type { Proposal, Verified } from "../../../scripts/import/proposals";
 import {
   buildPrompt,
   extractJson,
   INSTRUCTION,
+  keepChecked,
   MAX_PAGE_CHARS,
+  pool,
   readProgramme,
   salvageProposal,
 } from "../../../scripts/import/reader";
@@ -207,7 +210,7 @@ describe("salvageProposal", () => {
     expect(dropped.sort()).toEqual(["facts.intakes", "facts.tuition"]);
   });
 
-  it("reads null acceptedTests as none and wraps a bare rules array", () => {
+  it("wraps a bare rules array the model wrote instead of the requirements object", () => {
     const { proposal, dropped } = salvageProposal({
       slug: "s",
       programmePage: null,
@@ -217,14 +220,36 @@ describe("salvageProposal", () => {
           kind: "language_proficiency",
           language: "fr",
           minCefr: "B2",
-          certificateRequired: null,
-          acceptedTests: null,
+          certificateRequired: true,
+          acceptedTests: ["tcf"],
           evidence,
         },
       ],
     });
     expect(proposal?.requirements?.rules).toHaveLength(1);
     expect(dropped).toEqual([]);
+  });
+
+  it("drops a language rule whose acceptedTests is null, because [] would mean any certificate passes", () => {
+    const { proposal, dropped } = salvageProposal({
+      slug: "s",
+      programmePage: null,
+      facts: {},
+      requirements: {
+        rules: [
+          {
+            kind: "language_proficiency",
+            language: "fr",
+            minCefr: "B2",
+            certificateRequired: true,
+            acceptedTests: null,
+            evidence,
+          },
+        ],
+      },
+    });
+    expect(proposal?.requirements?.rules).toEqual([]);
+    expect(dropped).toEqual(["requirements.rules.0"]);
   });
 
   it("drops a rule that is invalid but keeps the others", () => {
@@ -352,5 +377,75 @@ describe("French programmes", () => {
     });
     expect(out.verified?.facts.applicationChannel).toBeUndefined();
     expect(out.dropped).toContain("facts.applicationChannel");
+  });
+});
+
+describe("pool", () => {
+  it("runs every item with the given concurrency", async () => {
+    const seen: number[] = [];
+    let running = 0;
+    let peak = 0;
+    await pool([1, 2, 3, 4, 5, 6], 3, async (n) => {
+      running++;
+      peak = Math.max(peak, running);
+      await new Promise((r) => setTimeout(r, 5));
+      seen.push(n);
+      running--;
+    });
+    expect(seen.sort()).toEqual([1, 2, 3, 4, 5, 6]);
+    expect(peak).toBeLessThanOrEqual(3);
+  });
+
+  it("after a failure starts nothing new, waits for the calls in flight and then rethrows", async () => {
+    const finished: number[] = [];
+    const started: number[] = [];
+    await expect(
+      pool([1, 2, 3, 4, 5, 6], 2, async (n) => {
+        started.push(n);
+        if (n === 1) throw new Error("budget");
+        await new Promise((r) => setTimeout(r, 30));
+        finished.push(n);
+      }),
+    ).rejects.toThrow("budget");
+    expect(finished).toContain(2);
+    expect(started).toEqual([1, 2]);
+  });
+});
+
+describe("keepChecked", () => {
+  const ev = [{ url: "https://x.example/p", quote: "some quote of some length" }];
+  const proposal: Proposal = {
+    slug: "s",
+    programmePage: null,
+    facts: {
+      durationYears: { value: 3, evidence: ev },
+      teachingLanguages: { value: ["en"], evidence: ev },
+    },
+    requirements: {
+      rules: [
+        { kind: "prior_study_years_min", years: 12, evidence: ev },
+        { kind: "subject_taken", subjects: ["mathematics"], mode: "all", evidence: ev },
+      ],
+    },
+  };
+
+  it("removes from the proposal what the checker removed, so a later verify cannot bring it back", () => {
+    const checked: Verified = {
+      programmePage: null,
+      facts: { durationYears: { value: 3, evidence: ev } },
+      rejected: [],
+      requirements: [
+        { kind: "subject_taken", subjects: ["mathematics"], mode: "all", evidence: ev },
+      ],
+    };
+    const kept = keepChecked(proposal, checked);
+    expect(Object.keys(kept.facts)).toEqual(["durationYears"]);
+    expect(kept.requirements?.rules.map((r) => r.kind)).toEqual(["subject_taken"]);
+  });
+
+  it("drops the whole requirements block when no rule is left", () => {
+    const kept = keepChecked(proposal, { programmePage: null, facts: {}, rejected: [] });
+    expect(kept.facts).toEqual({});
+    expect(kept.requirements).toBeUndefined();
   });
 });
