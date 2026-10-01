@@ -21,5 +21,25 @@
       ]
     }
   },
-  "notes": "Parcoursup fiche shows 178 EUR/year (national rate, not stated for non-EU): omitted. Channel omitted: fiche says non-EU bac-equivalent holders do not use Parcoursup but the DAP procedure. Teaching language not stated."
+  "notes": "Parcoursup fiche shows 178 EUR/year (national rate, not stated for non-EU): omitted. Channel omitted: fiche says non-EU bac-equivalent holders do not use Parcoursup but the DAP procedure. Teaching language not stated. Language rule: Campus France Maroc requires a French certificate (TCF, DELF B2 or DALF) at submission on Etudes en France, except in dispensation cases; it recommends TCF 400 / DELF B2 but states each institution sets its own level, so minCefr is null where the programme page gives none. Lyon 3 page expects specialities mathematics/SES/history-geography (French bac) but says the licence is open to all bacheliers; not encoded. Its page says apply via Parcoursup and has an outdated 2011 DAP line for foreign diplomas; Campus France Maroc says Moroccan bac holders use Etudes en France.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": null,
+        "certificateRequired": true,
+        "acceptedTests": [
+          "tcf",
+          "delf-dalf"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      }
+    ]
+  }
 }
