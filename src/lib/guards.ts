@@ -25,10 +25,6 @@ export function isPlainObject(value: unknown): value is UnknownRecord {
   return isRecord(prototype) && Object.hasOwn(prototype, "isPrototypeOf");
 }
 
-export function isText(value: unknown): value is string {
-  return typeof value === "string";
-}
-
 export function matches(value: unknown, pattern: RegExp): value is string {
   return typeof value === "string" && pattern.test(value);
 }

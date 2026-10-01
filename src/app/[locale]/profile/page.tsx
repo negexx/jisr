@@ -22,7 +22,10 @@ export default async function ProfilePage({ params }: Props) {
   setRequestLocale(locale);
   const messages = await getMessages();
   return (
-    <NextIntlClientProvider messages={pickMessages(messages, ["profile", "domain.textNote"])}>
+    <NextIntlClientProvider
+      locale={locale}
+      messages={pickMessages(messages, ["profile", "domain.textNote"])}
+    >
       <ProfileForm locale={locale} />
     </NextIntlClientProvider>
   );
