@@ -133,6 +133,19 @@ export function extractJson(text: string): unknown {
   }
 }
 
+// "A certificate is required" with no accepted tests would mean "any certificate counts, in any
+// language" in the matcher (an empty list is "no restriction"). The page did not say which tests, so
+// the honest value is "certificate requirement unknown": the level still has to be met, but the rule
+// can no longer be satisfied by an unrelated certificate.
+export function certificateUnknown(rule: Record<string, unknown>): Record<string, unknown> {
+  return rule.kind === "language_proficiency" &&
+    rule.certificateRequired === true &&
+    Array.isArray(rule.acceptedTests) &&
+    rule.acceptedTests.length === 0
+    ? { ...rule, certificateRequired: null }
+    : rule;
+}
+
 // The schema (src/data-schema/localized-text.ts) refuses a short text longer than this: a longer
 // note would only fail later, when the record is promoted.
 const NOTE_MAX_CHARS = 400;
@@ -177,6 +190,8 @@ export function salvageProposal(raw: unknown): { proposal: Proposal | null; drop
       ) {
         ruleList.splice(index, 1);
         dropped.push(`requirements.rules.${index}`);
+      } else if (typeof rule === "object" && rule !== null) {
+        ruleList[index] = certificateUnknown(rule as Record<string, unknown>);
       }
     }
   }

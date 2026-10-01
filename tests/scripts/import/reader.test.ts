@@ -503,3 +503,53 @@ describe("manual_check note length", () => {
     expect(proposal?.requirements?.rules).toHaveLength(1);
   });
 });
+
+describe("a required certificate with no accepted tests", () => {
+  const evidence = [
+    { url: "https://own.example/p", quote: "Please provide an official language certificate." },
+  ];
+  const rule = (extra: Record<string, unknown>) => ({
+    kind: "language_proficiency",
+    language: "en",
+    minCefr: "B2",
+    certificateRequired: true,
+    acceptedTests: [],
+    evidence,
+    ...extra,
+  });
+
+  it("becomes 'certificate requirement unknown' instead of 'any certificate counts'", () => {
+    const { proposal, dropped } = salvageProposal({
+      slug: "s",
+      programmePage: null,
+      facts: {},
+      requirements: { rules: [rule({})] },
+    });
+    const kept = proposal?.requirements?.rules[0];
+    expect(kept?.kind === "language_proficiency" && kept.certificateRequired).toBeNull();
+    expect(kept?.kind === "language_proficiency" && kept.minCefr).toBe("B2");
+    expect(dropped).toEqual([]);
+  });
+
+  it("leaves a rule that names its tests alone", () => {
+    const { proposal } = salvageProposal({
+      slug: "s",
+      programmePage: null,
+      facts: {},
+      requirements: { rules: [rule({ acceptedTests: ["ielts"] })] },
+    });
+    const kept = proposal?.requirements?.rules[0];
+    expect(kept?.kind === "language_proficiency" && kept.certificateRequired).toBe(true);
+  });
+
+  it("leaves a rule that says no certificate is needed alone", () => {
+    const { proposal } = salvageProposal({
+      slug: "s",
+      programmePage: null,
+      facts: {},
+      requirements: { rules: [rule({ certificateRequired: false })] },
+    });
+    const kept = proposal?.requirements?.rules[0];
+    expect(kept?.kind === "language_proficiency" && kept.certificateRequired).toBe(false);
+  });
+});
