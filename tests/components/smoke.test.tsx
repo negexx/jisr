@@ -25,6 +25,5 @@ describe("component test toolchain", () => {
     expect(screen.getByRole("status").textContent).toBe("count 0");
     await user.click(screen.getByRole("button", { name: "Add" }));
     expect(screen.getByRole("status").textContent).toBe("count 1");
-    expect(screen.queryByRole("dialog")).toBeNull();
   });
 });

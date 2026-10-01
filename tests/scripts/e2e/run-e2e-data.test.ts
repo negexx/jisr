@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import {
@@ -7,14 +7,22 @@ import {
   resolveE2eDataDir,
   runE2eData,
 } from "@scripts/e2e/run-e2e-data";
-import { describe, expect, it } from "vitest";
+import { afterAll, describe, expect, it } from "vitest";
 
 const VALID_MINIMAL = "tests/fixtures/data/valid-minimal";
 const NOW = "2026-09-29";
 
+const tempDirs: string[] = [];
+
 function tempDir(label: string): string {
-  return mkdtempSync(path.join(tmpdir(), `jisr-e2e-${label}-`));
+  const dir = mkdtempSync(path.join(tmpdir(), `jisr-e2e-${label}-`));
+  tempDirs.push(dir);
+  return dir;
 }
+
+afterAll(() => {
+  for (const dir of tempDirs) rmSync(dir, { recursive: true, force: true });
+});
 
 describe("resolveE2eDataDir", () => {
   it("defaults to the journey fixture", () => {
