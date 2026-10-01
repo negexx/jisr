@@ -1,0 +1,50 @@
+slug: de-technische-hochschule-augsburg-hrk7-international-informatio-daad7126
+institution: de-technische-hochschule-augsburg-hrk7
+country: DE
+city: augsburg
+field: computer-science
+level: bachelor
+name: International Information Systems BSc
+summary:
+  fr:
+    text: International Information Systems BSc, Technische Hochschule Augsburg (Augsburg). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www.tha.de/en/university/faculties/computer-science/study-program/international-international-information-systems-bsc/
+durationYears:
+  value: 3.5
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.tha.de/en/university/faculties/computer-science/study-program/international-international-information-systems-bsc/
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7126/
+    last_verified_at: 2026-10-01

@@ -1,0 +1,53 @@
+slug: de-hochschule-pforzheim-gestaltung-technik-hrk219-bachelor-of-business-adm-daad9199
+institution: de-hochschule-pforzheim-gestaltung-technik-hrk219
+country: DE
+city: pforzheim
+field: business-economics
+level: bachelor
+name: Bachelor of Business Administration / International Marketing (BSc)
+summary:
+  fr:
+    text: Bachelor of Business Administration / International Marketing (BSc), Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht (Pforzheim). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://businesspf.hs-pforzheim.de/en/studies/bachelors_programs/bba_international_marketing
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://businesspf.hs-pforzheim.de/en/studies/bachelors_programs/bba_international_marketing
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/
+    last_verified_at: 2026-10-01

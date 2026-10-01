@@ -1,0 +1,56 @@
+slug: nl-avans-hogeschool-07gr-bouwkunde-1001o3048
+institution: nl-avans-hogeschool-07gr
+country: NL
+city: tilburg
+field: engineering
+level: bachelor
+name: Bouwkunde
+summary:
+  fr:
+    text: Bouwkunde (Architecture and Construction Engineering), Avans Hogeschool (Tilburg). Programme recensé au registre néerlandais RIO.
+    status: draft
+officialUrl: https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1030800
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.avans.nl/studeren/praktische-zaken/studiekosten
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.avans.nl/studeren/praktische-zaken/aanmelden
+    last_verified_at: 2026-10-01

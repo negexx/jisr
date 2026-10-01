@@ -1,0 +1,16 @@
+slug: fr-parcoursup
+name: Parcoursup
+country: FR
+kind: national_portal
+url: https://www.parcoursup.gouv.fr/
+accountRequired: null
+summary:
+  fr:
+    text: Plateforme nationale de candidature en première année de Licence et de BUT.
+    status: draft
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://dossierappel.parcoursup.fr/
+    last_verified_at: 2026-10-01

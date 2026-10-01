@@ -1,0 +1,14 @@
+slug: fr-i-u-t-angouleme-0161125l
+name: I.U.T. Angoulême
+country: FR
+city:
+  slug: angouleme
+  name: Angoulême
+type: public
+website: https://iut-angouleme.univ-poitiers.fr/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://iut-angouleme.univ-poitiers.fr/
+    last_verified_at: 2026-10-01

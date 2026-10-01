@@ -142,13 +142,14 @@ export function ledgerFile(dir = STAGING_DIR): string {
 
 // level: how the record was verified. "human" = a person read it (their own edits, or an audited
 // sample record); "audited-sample" = prepared by the assistant with code-checked quotes and covered
-// by a passed random-sample audit, but not read one by one.
+// by a passed random-sample audit, but not read one by one; "owner-waived" = the owner passed the
+// batch without reading even the sample (a preview): nobody has read these records.
 export type LedgerRow = {
   collection: string;
   sourceId: string;
   slug: string;
   date: string;
-  level?: "human" | "audited-sample";
+  level?: "human" | "audited-sample" | "owner-waived";
   batch?: string;
 };
 

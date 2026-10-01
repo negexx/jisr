@@ -1,0 +1,47 @@
+slug: de-hochschule-rhein-waal-university-of-appl-hrk400-agribusiness-ba-daad4229
+institution: de-hochschule-rhein-waal-university-of-appl-hrk400
+country: DE
+city: kleve
+field: business-economics
+level: bachelor
+name: Agribusiness BA
+summary:
+  fr:
+    text: Agribusiness BA, Hochschule Rhein-Waal - University of Applied Sciences (Kleve). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/agribusiness-ba
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-uni-assist
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/agribusiness-ba
+    last_verified_at: 2026-10-01

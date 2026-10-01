@@ -1,0 +1,49 @@
+slug: nl-capabel-hogeschool-30hc-rotterdam-ict-1001o8912
+institution: nl-capabel-hogeschool-30hc-rotterdam
+country: NL
+city: rotterdam
+field: computer-science
+level: bachelor
+name: ICT
+summary:
+  fr:
+    text: ICT (Information & Communication Technology), Capabel Hogeschool (Rotterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+officialUrl: https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 681600
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict
+    last_verified_at: 2026-10-01

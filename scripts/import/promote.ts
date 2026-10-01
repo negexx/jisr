@@ -54,6 +54,9 @@ export async function promoteApproved(options: {
       .filter((b) => b.pass)
       .map((b) => b.batch),
   );
+  const waived = new Set(
+    audit.filter((r) => r.inSample && r.outcome === "waived").map((r) => r.batch),
+  );
   const skip = (key: string, reason: string) => result.skipped.push({ key, reason });
 
   for (const key of [...options.approved].sort()) {
@@ -84,7 +87,7 @@ export async function promoteApproved(options: {
     }
     const review = (staged as { _review?: { sourceId?: unknown; preparedBy?: unknown } })._review;
     const sourceId = typeof review?.sourceId === "string" ? review.sourceId : null;
-    let level: "human" | "audited-sample" = "human";
+    let level: "human" | "audited-sample" | "owner-waived" = "human";
     let batch = "";
     if (review?.preparedBy === "assistant") {
       const row = audit.find((r) => r.key === key);
@@ -96,7 +99,8 @@ export async function promoteApproved(options: {
         continue;
       }
       batch = row.batch;
-      level = row.inSample ? "human" : "audited-sample";
+      // a batch whose sample the owner waived is never recorded as read by anyone
+      level = waived.has(row.batch) ? "owner-waived" : row.inSample ? "human" : "audited-sample";
     }
     const record = stampVerified(
       Object.fromEntries(Object.entries(staged).filter(([k]) => k !== "_review")),

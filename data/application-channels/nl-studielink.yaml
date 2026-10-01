@@ -1,0 +1,16 @@
+slug: nl-studielink
+name: Studielink
+country: NL
+kind: national_portal
+url: https://www.studielink.nl/
+accountRequired: null
+summary:
+  fr:
+    text: Plateforme nationale d'inscription dans l'enseignement supérieur néerlandais.
+    status: draft
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://info.studielink.nl/en/about-stichting-studielink
+    last_verified_at: 2026-10-01

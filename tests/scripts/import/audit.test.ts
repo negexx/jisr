@@ -194,6 +194,24 @@ describe("promotion gate for assistant-prepared records", () => {
     expect(ledger.every((r) => r.batch === "b1-ab")).toBe(true);
   });
 
+  it("records every record of a batch whose sample the owner waived as owner-waived, never as read", async () => {
+    await stageChannel("a", true);
+    await stageChannel("sampled", true);
+    const rows = audit(true, false, "application-channels/a").map((r) =>
+      r.inSample ? { ...r, outcome: "waived" } : r,
+    );
+    expect(batchStatuses(rows)[0]).toMatchObject({ waived: 1, confirmed: 0, pass: true });
+    await promoteApproved({
+      approved: new Set(["application-channels/a", "application-channels/sampled"]),
+      date: "2026-10-02",
+      stagingDir,
+      dataDir,
+      audit: rows,
+    });
+    const ledger = parseCsv(readFileSync(ledgerFile(stagingDir), "utf8"));
+    expect(ledger.map((r) => r.level)).toEqual(["owner-waived", "owner-waived"]);
+  });
+
   it("leaves records the assistant did not prepare to the normal approval path", async () => {
     await stageChannel("manual", false);
     const result = await promoteApproved({

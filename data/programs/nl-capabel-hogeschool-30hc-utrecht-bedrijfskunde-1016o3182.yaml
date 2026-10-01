@@ -1,0 +1,49 @@
+slug: nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182
+institution: nl-capabel-hogeschool-30hc-utrecht
+country: NL
+city: utrecht
+field: business-economics
+level: bachelor
+name: Bedrijfskunde
+summary:
+  fr:
+    text: Bedrijfskunde (Business Administration), Capabel Hogeschool (Utrecht). Programme recensé au registre néerlandais RIO.
+    status: draft
+officialUrl: https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 681600
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde
+    last_verified_at: 2026-10-01

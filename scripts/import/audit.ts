@@ -20,7 +20,7 @@ export type AuditRow = {
   batch: string;
   inSample: boolean;
   audited: string; // "y" once a human has read the record against its sources
-  outcome: string; // "ok" or "wrong"
+  outcome: string; // "ok" or "wrong"; "waived" = the owner passed it without reading (a preview)
   notes: string;
 };
 
@@ -64,6 +64,7 @@ export type BatchStatus = {
   size: number;
   sampleSize: number;
   confirmed: number;
+  waived: number; // sampled rows the owner passed without reading them (outcome "waived")
   wrong: number;
   pending: number;
   pass: boolean;
@@ -75,15 +76,17 @@ export function batchStatuses(rows: readonly AuditRow[]): BatchStatus[] {
     const mine = rows.filter((r) => r.batch === batch);
     const sample = mine.filter((r) => r.inSample);
     const confirmed = sample.filter((r) => r.audited === "y" && r.outcome === "ok").length;
+    const waived = sample.filter((r) => r.audited === "y" && r.outcome === "waived").length;
     const wrong = sample.filter((r) => r.outcome === "wrong").length;
     return {
       batch,
       size: mine.length,
       sampleSize: sample.length,
       confirmed,
+      waived,
       wrong,
-      pending: sample.length - confirmed - wrong,
-      pass: sample.length > 0 && confirmed === sample.length && wrong === 0,
+      pending: sample.length - confirmed - waived - wrong,
+      pass: sample.length > 0 && confirmed + waived === sample.length && wrong === 0,
     };
   });
 }
@@ -208,7 +211,7 @@ async function main(argv: readonly string[]): Promise<void> {
   if (command === "status") {
     for (const s of batchStatuses(existing)) {
       console.log(
-        `${s.batch}: ${s.size} records; sample ${s.sampleSize}: ${s.confirmed} confirmed, ${s.wrong} wrong, ${s.pending} to read -> ${s.pass ? "PASS" : "not yet"}`,
+        `${s.batch}: ${s.size} records; sample ${s.sampleSize}: ${s.confirmed} confirmed, ${s.waived} waived unread, ${s.wrong} wrong, ${s.pending} to read -> ${s.pass ? "PASS" : "not yet"}`,
       );
     }
     if (existing.length === 0) console.log("no audit batches yet (data:audit draw)");

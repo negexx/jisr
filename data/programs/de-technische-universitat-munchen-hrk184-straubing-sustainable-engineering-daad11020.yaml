@@ -1,0 +1,53 @@
+slug: de-technische-universitat-munchen-hrk184-straubing-sustainable-engineering-daad11020
+institution: de-technische-universitat-munchen-hrk184-straubing
+country: DE
+city: straubing
+field: engineering
+level: bachelor
+name: Sustainable Engineering for Materials and Processes
+summary:
+  fr:
+    text: Sustainable Engineering for Materials and Processes, Technische Universität München (Straubing). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: https://www.tum.de/en/studies/degree-programs/detail/sustainable-engineering-for-materials-and-processes-bachelor-of-science-bsc
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 200000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.tum.de/en/studies/degree-programs/detail/sustainable-engineering-for-materials-and-processes-bachelor-of-science-bsc
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11020/
+    last_verified_at: 2026-10-01

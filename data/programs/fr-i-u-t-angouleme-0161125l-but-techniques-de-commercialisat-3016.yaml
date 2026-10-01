@@ -1,0 +1,49 @@
+slug: fr-i-u-t-angouleme-0161125l-but-techniques-de-commercialisat-3016
+institution: fr-i-u-t-angouleme-0161125l
+country: FR
+city: angouleme
+field: business-economics
+level: bachelor
+name: BUT - Techniques de commercialisation
+summary:
+  fr:
+    text: BUT - Techniques de commercialisation, I.U.T. Angoulême (Angoulême). Fiche officielle Parcoursup.
+    status: draft
+officialUrl: https://iut-angouleme.univ-poitiers.fr/formations/b-u-t-tc-techniques-de-commercialisation/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: fr-campus-france
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://iut-angouleme.univ-poitiers.fr/formations/b-u-t-tc-techniques-de-commercialisation/
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01

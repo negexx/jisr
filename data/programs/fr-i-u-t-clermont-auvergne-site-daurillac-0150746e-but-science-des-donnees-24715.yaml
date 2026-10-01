@@ -1,0 +1,50 @@
+slug: fr-i-u-t-clermont-auvergne-site-daurillac-0150746e-but-science-des-donnees-24715
+institution: fr-i-u-t-clermont-auvergne-site-daurillac-0150746e
+country: FR
+city: aurillac
+field: computer-science
+level: bachelor
+name: BUT - Science des données
+summary:
+  fr:
+    text: BUT - Science des données, I.U.T Clermont Auvergne - site d'Aurillac (Aurillac). Fiche officielle Parcoursup.
+    status: draft
+officialUrl: https://iut.uca.fr/formations/but-science-des-donnees-aurillac
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - fr
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: fr-campus-france
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://iut.uca.fr/formations/but-science-des-donnees-aurillac
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01

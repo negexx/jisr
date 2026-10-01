@@ -1,0 +1,14 @@
+slug: de-hochschule-rhein-waal-university-of-appl-hrk400
+name: Hochschule Rhein-Waal - University of Applied Sciences
+country: DE
+city:
+  slug: kleve
+  name: Kleve
+type: public
+website: https://www.hochschule-rhein-waal.de/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.hochschule-rhein-waal.de/
+    last_verified_at: 2026-10-01

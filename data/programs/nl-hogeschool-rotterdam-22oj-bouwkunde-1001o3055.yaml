@@ -1,0 +1,50 @@
+slug: nl-hogeschool-rotterdam-22oj-bouwkunde-1001o3055
+institution: nl-hogeschool-rotterdam-22oj
+country: NL
+city: rotterdam
+field: engineering
+level: bachelor
+name: Bouwkunde
+summary:
+  fr:
+    text: Bouwkunde (Architecture and Construction Engineering), Hogeschool Rotterdam (Rotterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+officialUrl: https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bouwkunde/voltijd/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bouwkunde/voltijd/
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bouwkunde/voltijd/aanmeldprocedure/
+    last_verified_at: 2026-10-01
