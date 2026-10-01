@@ -1,0 +1,49 @@
+{
+  "slug": "nl-avans-hogeschool-07gr-breda-accountancy-1001o3528",
+  "programmePage": "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+          "quote": "Duur 4 jaar, voltijd bachelor"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+          "quote": "Taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1030800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+          "quote": "Non-EEA nationality (institutional tuition fee) €10,308,-"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+          "quote": "Meld je aan voor de opleiding via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee is the institutional (non-EEA) rate for bachelor's students, not a programme-specific fee. The exact deadline for non-EEA applicants to apply is stated as May 1 in the tuition fees page, but the quote does not explicitly tie it to the Accountancy programme or say it is the application deadline. The start month is September, but no specific date is given. Requirements are based on general admission profiles for the Accountancy bachelor; subject_taken evidence is incomplete and should be verified."
+}

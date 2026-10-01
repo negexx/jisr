@@ -1,0 +1,115 @@
+{
+  "slug": "nl-de-haagse-hogeschool-27um-delft-ict-1001o2675",
+  "programmePage": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+          "quote": "Type Bachelor Vorm: voltijd deeltijd Duration 4 jaar"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+          "quote": "Locatie Den Haag - hoofdvestiging, Delft en Zoetermeer Taal Nederlands"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2026-05-01"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+          "quote": "Opleidingen aan De Haagse Hogeschool starten één keer per jaar op 1 september. De aanmelddeadline is 1 mei 2026."
+        },
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+          "quote": "Deze opleiding start in september en heeft geen februari-instroom."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+          "quote": "Je aanmelden voor een opleiding doe je via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition is left out: the pages only give institution-wide statutory (EUR 2,601 / 2,694) and institutional (EUR 10,164 / 10,528) fees for all bachelor, Ad and funded master programmes; the quote for that is general and it is not stated what a non-EU student without a Dutch residence permit pays specifically for this programme. The institutional fee of EUR 14,000 / 10,528 concerns English-taught master's programmes, not this Dutch-taught bachelor. Tuition overview page: https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld. The programme is taught in Dutch, so the English language requirement on the Toelatingseisen page (Engelse taaleis, IELTS/TOEFL etc.) does not apply; the Dutch language requirement (NT2 programma II / CNaVT) does. The intake evidence combines the FAQ page (general start/deadline) with the programme page (no February intake); the deadline year is from the FAQ page.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Avec un diplôme étranger ou international, vous pouvez être admis si ce diplôme donne accès au hbo et si vous prouvez une maîtrise suffisante du néerlandais ; le diplôme est évalué par l'institution. Contactez la Centrale Studenten Inschrijving.",
+          "en": "With a foreign or international diploma, you can be admitted if the diploma grants access to hbo and you prove sufficient command of Dutch; the diploma is assessed by the institution. Contact the Centrale Studenten Inschrijving."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+            "quote": "Met een buitenlands of internationaal diploma kun je toegelaten worden, mits dit diploma toelating biedt tot hbo en je een bewijs hebt van voldoende beheersing van de Nederlandse taal."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": null,
+        "certificateRequired": true,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "Je toont aan dat je voldoet aan de taaleis Nederlands via een staatsexamen Nederlands als Tweede Taal, programma II met alle vier de onderdelen lezen, spreken, schrijven en luisteren."
+          },
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "De Haagse Hogeschool accepteert ook CNaVT-certificaten ‘Educatief startbekwaam’ en ‘Educatief professioneel’."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Avec un diplôme étranger, vous devez d'abord introduire une demande d'inscription via Studielink et télécharger vos documents dans Osiris Aanmelding ; la Centrale Studenten Inschrijving évalue votre éligibilité.",
+          "en": "With a foreign diploma, you must first submit an application via Studielink and upload your documents in Osiris Aanmelding; the Centrale Studenten Inschrijving assesses your eligibility."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+            "quote": "Om erachter te komen of je toelaatbaar bent dien je een inschrijfverzoek in via Studielink. Vervolgens ontvang je van ons een e-mail met het verzoek om je documenten te uploaden in Osiris Aanmelding."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le délai de candidature pour les titulaires d'un diplôme étranger est le 15 janvier 2026 uniquement pour les formations à admission en février ; pour l'ICT (début en septembre), la deadline est le 1 mai 2026.",
+          "en": "The application deadline for holders of a foreign diploma is 15 January 2026 only for programmes with a February start; for ICT (September start), the deadline is 1 May 2026."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+            "quote": "Aanmelden voor deze opleidingen is mogelijk t/m 15 januari 2026 (als je een buitenlandse vooropleiding hebt, dan heb je ook t/m 15 januari)."
+          }
+        ]
+      }
+    ]
+  }
+}

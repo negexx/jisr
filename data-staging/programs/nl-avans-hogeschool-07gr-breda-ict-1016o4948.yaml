@@ -15,40 +15,72 @@ summary:
   ar:
     text: ICT (ICT), Avans Hogeschool (Breda). برنامج مدرج في السجل الهولندي RIO.
     status: draft
-officialUrl: null
+officialUrl: https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd
 durationYears:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value: 4
+  source: programme
+  info_kind: official
 teachingLanguages:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value:
+    - nl
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value:
+    amountMinor: 1030800
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
 intakes:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value: nl-studielink
+  source: page-3
+  info_kind: official
 documents:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: rio
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez que votre diplôme (baccalauréat marocain) est accepté ; les pages ne listent que havo, vwo, mbo-niveau 4, hbo-propedeuse et wo-propedeuse. Contactez Student Support pour l'instroomcoördinator.
+          status: draft
+        en:
+          text: Check that your diploma (Moroccan Baccalauréat) is accepted; the pages only list havo, vwo, mbo-niveau 4, hbo-propedeuse and wo-propedeuse. Contact Student Support for the instroomcoördinator.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats non-EEA doivent postuler avant le 1er mai et payer les frais de scolarité avant le 15 juin ; vérifiez ces dates et le paiement.
+          status: draft
+        en:
+          text: Non-EEA applicants must apply by May 1st and pay tuition fees by June 15; check these dates and payment.
+          status: draft
 scholarships: []
 sources:
-  rio:
-    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+  programme:
+    url: https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd
+    last_verified_at: null
+  page-2:
+    url: https://www.avans.nl/en/int/studying/practical-information/tuition-fees
+    last_verified_at: null
+  page-3:
+    url: https://www.avans.nl/studeren/praktische-zaken/studiekosten
     last_verified_at: null
 _review:
   kind: programs
@@ -59,5 +91,30 @@ _review:
   field: computer-science
   confidence: high
   officialUrl: ""
-  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Avans Hogeschool: Breda\"; international name \"ICT\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page)"
+  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Avans Hogeschool: Breda\"; international name \"ICT\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: rio:07GR/07GR00/1016O4948
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd
+      quote: Duur 4 jaar, voltijd bachelor
+    - fact: teachingLanguages
+      url: https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd
+      quote: Taal Nederlands
+    - fact: tuition
+      url: https://www.avans.nl/en/int/studying/practical-information/tuition-fees
+      quote: Non-EEA nationality (institutional tuition fee) €10,308,-
+    - fact: tuition
+      url: https://www.avans.nl/studeren/praktische-zaken/studiekosten
+      quote: Instellingscollegegeld € 10.308 € 10.308 € 10.308
+    - fact: applicationChannel
+      url: https://www.avans.nl/studeren/praktische-zaken/studiekosten
+      quote: Meld je aan voor de opleiding via Studielink.
+    - fact: requirements.req-1
+      url: https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd
+      quote: Neem contact op met Student Support en vraag naar de instroomcoördinator.
+    - fact: requirements.req-2
+      url: https://www.avans.nl/en/int/studying/practical-information/tuition-fees
+      quote: Students with a non-EEA nationality are required to apply by May 1st and to pay their tuition fees in full prior to the start of the academic year.
+  notes: "Teaching language is Dutch only, based on the programme page. Tuition fee €10,308 is a general institution-wide non-EEA institutional fee; the pages do not state a programme-specific fee. No language proficiency requirement was found. Intake: start month September, but no day/month/year date is given, so only startDate null is shown with the 'Startmaand September' quote."

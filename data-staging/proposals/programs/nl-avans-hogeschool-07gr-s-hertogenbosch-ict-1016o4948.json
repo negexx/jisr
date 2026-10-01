@@ -1,0 +1,70 @@
+{
+  "slug": "nl-avans-hogeschool-07gr-s-hertogenbosch-ict-1016o4948",
+  "programmePage": "https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd",
+          "quote": "Duur 4 jaar, voltijd bachelor"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd",
+          "quote": "Taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1030800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+          "quote": "Non-EEA nationality (institutional tuition fee) €10,308,-"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+          "quote": "You must register in Studielink first."
+        },
+        {
+          "url": "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+          "quote": "Meld je aan voor de opleiding via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "The programme page (https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd) does not state a tuition amount. The non-EEA institutional tuition fee of €10,308 is from the institution’s tuition fee page and applies to bachelor’s programmes at Avans; verify it applies to this specific programme. No application deadline date from the programme page or task pages was quoted; the payment deadline (15 June) is given as a manual check. Avans’ general pages also state non-EEA students must apply by 1 May, but this was not quoted because it is not stated on the programme’s own page.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le paiement complet des frais de scolarité doit être effectué via un virement bancaire avant le 15 juin pour une entrée en septembre. Vérifiez les détails et le montant exact sur la page des frais de scolarité.",
+          "en": "Payment of the full tuition fee must be made by bank transfer by 15 June for a September start. Check the details and the exact amount on the tuition fee page."
+        },
+        "evidence": [
+          {
+            "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+            "quote": "To meet the admission requirements for a September start, you must pay the full institutional tuition fee to Avans University of Applied Sciences by 15 June."
+          }
+        ]
+      }
+    ]
+  }
+}

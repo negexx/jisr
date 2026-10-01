@@ -1,0 +1,65 @@
+{
+  "slug": "nl-hanzehogeschool-groningen-25be-bio-informatica-1001o5220",
+  "programmePage": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/bio-informatica",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/bio-informatica",
+          "quote": "Taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/bio-informatica",
+          "quote": "Meld je uiterlijk 1 mei aan via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "De taal van de opleiding is Nederlands (Taal Nederlands); er is geen Engelstalige track vermeld. Er is geen collegegeld voor niet-EU-studenten op de pagina's gevonden: de collegegeldpagina noemt alleen het wettelijk collegegeld voor bachelor voltijd (2694 euro in 2026-2027), wat afhankelijk is van nationaliteit/verblijfsvergunning en dus niet met zekerheid voor een Marokkaanse student met buitenlands diploma geldt. Er is geen instellingscollegegeld-bedrag voor deze opleiding vermeld. De deadline 1 mei (en 15 augustus voor buitenlands diploma) staat in de tekst zonder jaar; daarom zijn geen jaartallen in 'intakes' opgenomen.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que votre diplôme étranger (Baccalauréat marocain) est jugé équivalent à un havo/vwo néerlandais (avec les profils requis) ou à un mbo niveau 4, et que vous vous inscrivez avant le 15 août.",
+          "en": "Check that your foreign diploma (Moroccan Baccalauréat) is assessed as equivalent to a Dutch havo/vwo (with the required profiles) or mbo level 4, and that you apply before 15 August."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/bio-informatica",
+            "quote": "Je kunt worden toegelaten met een buitenlands diploma als je diploma uit het land van herkomst gelijkwaardig is aan een Nederlandse havo of vwo (met de gewenste profielen) of mbo niveau 4."
+          },
+          {
+            "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/bio-informatica",
+            "quote": "Heb je een buitenlands diploma en wil je je aanmelden voor deze opleiding? Zorg er dan voor dat je dit vóór 15 augustus doet via Studielink."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les exigences de matières (profils) et les éventuelles déficiences à lever par une toelatingstoets.",
+          "en": "Check the subject/profile requirements and any deficiencies that must be resolved by an admission test (toelatingstoets)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/bio-informatica",
+            "quote": "Cultuur & Maatschappij: toelaatbaar met wiskunde A of B"
+          },
+          {
+            "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/bio-informatica",
+            "quote": "Je kunt deze deficiëntie opheffen door de toelatingstoets van de hierboven genoemde vakken met goed resultaat af te leggen."
+          }
+        ]
+      }
+    ]
+  }
+}

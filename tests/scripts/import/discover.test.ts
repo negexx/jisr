@@ -370,3 +370,43 @@ describe("discoverBySearch", () => {
     );
   });
 });
+
+describe("discoverBySearch noise", () => {
+  const search: SearchProvider = {
+    name: "fake",
+    search: async (query) =>
+      query.includes("tuition") || query.includes("collegegeld")
+        ? [
+            {
+              url: "https://www.uni.example/sites/default/files/2019-09/collegegeld-regeling.pdf",
+              title: "Collegegeld regeling",
+              snippet: "tuition fees",
+            },
+            {
+              url: "https://punt.uni.example/2018/03/collegegeld-stijgt/",
+              title: "Collegegeld stijgt",
+              snippet: "tuition fees",
+            },
+            {
+              url: "https://www.uni.example/studeren/collegegeld",
+              title: "Collegegeld",
+              snippet: "tuition fees",
+            },
+          ]
+        : [],
+  };
+
+  it("drops PDFs and dated news posts from the fee pages", async () => {
+    const found = await discoverBySearch({
+      name: "Applied Data Science",
+      institution: "Uni Example",
+      country: "NL",
+      website: "https://www.uni.example/",
+      search,
+      fetchHtml: async () => {
+        throw new Error("none");
+      },
+    });
+    expect(found.fees).toEqual(["https://www.uni.example/studeren/collegegeld"]);
+  });
+});

@@ -1,0 +1,44 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064",
+  "programmePage": "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar en Haarlem taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar en Haarlem taal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "The Bouwkunde programme page gives the study language as Dutch (taal Nederlands) and a duration of 4 years (duur 4 jaar). No tuition amount could be quoted for a non-EU student on this programme: the collegegeld page states institution-wide rates (instellingscollegegeld) but does not explicitly say they apply to this programme or to non-EU students, so tuition is left out. No language proficiency requirement for Dutch is stated on the Bouwkunde pages; the Creative Business page mentions B2 Dutch for students with foreign prior education, but that is another programme and is not evidence for this one.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez auprès de l'établissement si vous devez démontrer votre maîtrise du néerlandais et à quel niveau.",
+          "en": "Check with the institution whether you need to demonstrate Dutch proficiency and at what level."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+            "quote": "taal Nederlands"
+          }
+        ]
+      }
+    ]
+  }
+}

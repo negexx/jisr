@@ -1,0 +1,16 @@
+{
+  "slug": "nl-christelijke-hogeschool-windesheim-01vu-almere-bedrijfskunde-1001o2781",
+  "programmePage": null,
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/aanbod/opleidingen-economie-management-en-recht",
+          "quote": "Bedrijfskunde in Almere (voltijd) Voltijd Bachelor 4 jaar September Almere"
+        }
+      ]
+    }
+  },
+  "notes": "Pages supplied: an interest-area overview page, a general tuition-fee page, the Pabo page, the International Business page, and a short course page. No page is this programme's own page, so programmePage is null. Duration (4 years) comes from the overview listing 'Bedrijfskunde in Almere (voltijd) Voltijd Bachelor 4 jaar September Almere'. Tuition: the only amounts on the pages are the statutory collegegeld of EUR 2,694 (2026-2027) and EUR 2,601 (2025-2026), which apply only if the student meets the criteria for wettelijk collegegeld; as a non-EU student with a Moroccan diploma this is not stated for this programme, so no tuition fact is given. The pages mention study costs for laptops, books and materials but no amounts. No language of instruction is stated for Bedrijfskunde itself; the English-language statement is about International Business only. No intake dates can be quoted for Bedrijfskunde in Almere (the overview gives 'September Almere' without a day, month or year). The ApplicationChannel quote is taken from the International Business page, where it refers to applying via Studielink; the overview page does not name Studielink — this should be verified against the Bedrijfskunde programme page."
+}

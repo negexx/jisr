@@ -15,40 +15,62 @@ summary:
   ar:
     text: ICT (Information & Communication Technology), Christelijke Hogeschool Windesheim (Zwolle). برنامج مدرج في السجل الهولندي RIO.
     status: draft
-officialUrl: null
+officialUrl: https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle
 durationYears:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value: 4
+  source: programme
+  info_kind: official
 teachingLanguages:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value: nl-studielink
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: rio
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez que votre diplôme marocain (Baccalauréat) est jugé équivalent à un diplôme néerlandais havo, vwo ou mbo-4 ; la page indique aussi qu'il faut satisfaire aux exigences linguistiques (voir page des taaleisen).
+          status: draft
+        en:
+          text: Check that your Moroccan diploma (Baccalauréat) is considered equivalent to a Dutch havo, vwo or mbo-4 diploma; the page also states you must meet the language requirements (see the taaleisen page).
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Aucune exigence supplémentaire concernant les matières du profil n'est mentionnée pour cette filière : « Er gelden geen extra eisen voor profielvakken. »"
+          status: draft
+        en:
+          text: 'No additional profile-subject requirements are mentioned for this programme: "Er gelden geen extra eisen voor profielvakken."'
+          status: draft
 scholarships: []
 sources:
-  rio:
-    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+  programme:
+    url: https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle
     last_verified_at: null
 _review:
   kind: programs
@@ -59,5 +81,24 @@ _review:
   field: computer-science
   confidence: high
   officialUrl: ""
-  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Christelijke Hogeschool Windesheim: Zwolle\"; international name \"Information & Communication Technology\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page)"
+  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Christelijke Hogeschool Windesheim: Zwolle\"; international name \"Information & Communication Technology\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: rio:01VU/01VU00/1001O2665
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle
+      quote: Studieduur 4 jaar
+    - fact: applicationChannel
+      url: https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle
+      quote: Meld je dan zo snel mogelijk aan via Studielink.
+    - fact: requirements.req-1
+      url: https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle
+      quote: Je bent toelaatbaar met een diploma dat gelijkwaardig is aan een havo-, vwo- of mbo-4 diploma.
+    - fact: requirements.req-1
+      url: https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle
+      quote: Daarnaast moet je voldoen aan de taaleisen.
+    - fact: requirements.req-2
+      url: https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle
+      quote: Er gelden geen extra eisen voor profielvakken.
+  notes: The programme page is in Dutch and does not state a teaching language; no teachingLanguages fact was extracted. Tuition € 2.694,- for 2026-2027 is stated on the programme page itself, but it appears to be the statutory (wettelijk) fee and no institutional/non-EU fee is given for this programme; the studiekosten page confirms the statutory fee figure but adds that students who do not meet the statutory criteria may pay a higher institutional fee. Verify the applicable fee for a non-EU student.

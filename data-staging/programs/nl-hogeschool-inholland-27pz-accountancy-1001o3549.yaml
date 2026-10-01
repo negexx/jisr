@@ -15,40 +15,41 @@ summary:
   ar:
     text: Accountancy (Accountancy), Hogeschool Inholland (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
     status: draft
-officialUrl: null
+officialUrl: https://www.inholland.nl/opleidingen/accountancy-voltijd/
 durationYears:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value: 4
+  source: programme
+  info_kind: official
 teachingLanguages:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value:
+    - nl
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
   rules: []
 scholarships: []
 sources:
-  rio:
-    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+  programme:
+    url: https://www.inholland.nl/opleidingen/accountancy-voltijd/
     last_verified_at: null
 _review:
   kind: programs
@@ -59,5 +60,15 @@ _review:
   field: business-economics
   confidence: high
   officialUrl: ""
-  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Hogeschool Inholland: Rotterdam\"; international name \"Accountancy\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page)"
+  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Hogeschool Inholland: Rotterdam\"; international name \"Accountancy\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: rio:27PZ/27PZ00/1001O3549
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.inholland.nl/opleidingen/accountancy-voltijd/
+      quote: niveau Bachelor duur 4 jaar
+    - fact: teachingLanguages
+      url: https://www.inholland.nl/opleidingen/accountancy-voltijd/
+      quote: taal Nederlands
+  notes: "Tuition: the collegegeld page gives institution-wide statutory/instellingstarief amounts (€10,360 for 2026-2027 full-time) for students who do not qualify for the statutory fee, but this is not stated specifically for Accountancy, so no tuition fact was extracted. The programme page lists Dutch-taught programme (taal Nederlands), and there is no statement about an English-taught track. No intakes were extracted because the pages do not give a day, month and year for the Accountancy intake. Entry requirement pages for Accountancy were not supplied; the rules shown are from other programmes and cannot be applied to Accountancy. Studielink is mentioned on the collegegeld page as the place to arrange tuition payment; the Accountancy page itself does not describe the application platform."

@@ -1,0 +1,27 @@
+{
+  "slug": "nl-fontys-hogeschool-30gb-tilburg-ict-1001o2677",
+  "programmePage": "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+          "quote": "ICT 4 jaar Bachelor Voltijd Start februari en september Nederlands Eindhoven Tilburg"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+          "quote": "ICT 4 jaar Bachelor Voltijd Start februari en september Nederlands Eindhoven Tilburg"
+        }
+      ]
+    }
+  },
+  "notes": "The supplied pages do not state any tuition fee for this programme: the collegegeld page only mentions that non-EEA students may pay instellingscollegegeld and refers to a 'collegegeldmeter', with no amount for ICT. The 'Studiefinanciering' page is about other countries, not this programme. All requirements other than the prior education rule are a manual check, as the pages do not specify additional admission requirements for this programme."
+}

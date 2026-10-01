@@ -15,40 +15,41 @@ summary:
   ar:
     text: Werktuigbouwkunde (Mechanical Engineering), Hogeschool Inholland (Velsen-Noord). برنامج مدرج في السجل الهولندي RIO.
     status: draft
-officialUrl: null
+officialUrl: https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/
 durationYears:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value: 4
+  source: programme
+  info_kind: official
 teachingLanguages:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value:
+    - nl
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
   rules: []
 scholarships: []
 sources:
-  rio:
-    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+  programme:
+    url: https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/
     last_verified_at: null
 _review:
   kind: programs
@@ -59,5 +60,15 @@ _review:
   field: engineering
   confidence: high
   officialUrl: ""
-  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Hogeschool Inholland: Velsen\"; international name \"Mechanical Engineering\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page)"
+  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Hogeschool Inholland: Velsen\"; international name \"Mechanical Engineering\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: rio:27PZ/27PZ18/1001O3209
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/
+      quote: niveau Bachelor duur 4 jaar locatie Alkmaar taal Nederlands
+    - fact: teachingLanguages
+      url: https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/
+      quote: niveau Bachelor duur 4 jaar locatie Alkmaar taal Nederlands
+  notes: "Geen instellingscollegegeld voor Werktuigbouwkunde vermeld: de pagina collegegeld noemt alleen algemene instellingstarieven (voltijd en duaal: € 10.360 voor 2026-2027), niet specifiek voor dit programma en niet expliciet voor niet-EU studenten. Deze zijn daarom niet als tuition opgenomen. De opleidingspagina zegt dat de taal Nederlands is; er zijn geen toelatingseisen voor dit programma op de pagina's te vinden. Studielink wordt genoemd op de collegegeldpagina, niet op de opleidingspagina zelf."

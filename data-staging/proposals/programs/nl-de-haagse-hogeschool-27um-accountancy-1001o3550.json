@@ -1,0 +1,87 @@
+{
+  "slug": "nl-de-haagse-hogeschool-27um-accountancy-1001o3550",
+  "programmePage": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+          "quote": "Variant voltijd Duration 4 jaar Start Start in september Locatie Den Haag - hoofdvestiging Taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+          "quote": "Variant voltijd Duration 4 jaar Start Start in september Locatie Den Haag - hoofdvestiging Taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+          "quote": "Je aanmelden voor een opleiding doe je via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Applicant: Moroccan student with Moroccan Baccalauréat, applying from outside the Netherlands. No tuition fee for this programme is stated in the supplied pages for non-EU applicants (the Collegegeld page only gives general institution-wide 2025-2026/2026-2027 amounts and an exception for English-taught masters; the programme page only refers to collegegeld determined by the ministry and does not state a non-EU amount), so no tuition fact is included. The programme page states this programme's application deadline is 'Start in september' and has no February intake, but no explicit day-month-year deadline for this specific programme could be quoted, so no intakes fact is included; the general deadline on the FAQ page (1 mei 2026) is institution-wide and concerns all programmes except certain listed ones, so it is not attributed here. The programme page is in Dutch (Taal Nederlands) and the admission for holders of a foreign diploma requires proof of sufficient command of the Dutch language (Taaleisen Nederlands); no CEFR level is stated for this programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": null,
+        "certificateRequired": true,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+            "quote": "Met een buitenlands of internationaal diploma kun je toegelaten worden, mits dit diploma toelating biedt tot hbo en je een bewijs hebt van voldoende beheersing van de Nederlandse taal."
+          },
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "Je toont aan dat je voldoet aan de taaleis Nederlands via een staatsexamen Nederlands als Tweede Taal, programma II met alle vier de onderdelen lezen, spreken, schrijven en luisteren."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Avec un diplôme étranger (par ex. le baccalauréat marocain), faites une demande d'inscription via Studielink ; la Centrale Studenten Inschrijving évalue si votre diplôme est au moins équivalent à un diplôme néerlandais donnant accès à l'enseignement supérieur.",
+          "en": "With a foreign diploma (e.g. the Moroccan Baccalauréat), submit an enrolment request via Studielink; the Centrale Studenten Inschrijving assesses whether your diploma is at least equivalent to a Dutch diploma that grants access to higher education."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "De Centrale Studenten Inschrijving bepaalt of jouw buitenlandse diploma ten minste gelijkwaardig is aan dat van een (toelatinggevend) Nederlands diploma. Schrijf je daarvoor in via Studielink."
+          },
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+            "quote": "Om erachter te komen of je toelaatbaar bent dien je een inschrijfverzoek in via Studielink. Vervolgens ontvang je van ons een e-mail met het verzoek om je documenten te uploaden in Osiris Aanmelding. De Centrale Studenten Inschrijving zal je documenten beoordelen en kijken of je met je buitenlandse diploma toelaatbaar bent."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La page indique que les titulaires d'un diplôme étranger doivent également prouver qu'ils maîtrisent suffisamment la langue d'enseignement, mais le niveau CEFR exact n'est pas précisé ; il détermine aussi le type de documents/examens complémentaires.",
+          "en": "The page states that foreign diploma holders must also prove sufficient command of the language of instruction, but the exact CEFR level is not given; it also determines the type of further documents/exams."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "Je moet óók bewijzen dat je de taal van de opleiding voldoende beheerst. Onder Taaleisen Nederlands en Engels vind je meer informatie."
+          }
+        ]
+      }
+    ]
+  }
+}

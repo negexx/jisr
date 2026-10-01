@@ -1,0 +1,70 @@
+{
+  "slug": "nl-de-haagse-hogeschool-27um-applied-data-science-art-1001o8742",
+  "programmePage": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+          "quote": "Type Bachelor Variant voltijd Duration 4 jaar"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+          "quote": "Taal Nederlands"
+        },
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+          "quote": "We spreken bij de opleiding Nederlands en de producten die je oplevert, schrijf je ook in het Nederlands."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+          "quote": "Je aanmelden voor een opleiding doe je via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "The programme page states the language of instruction is Dutch (Taal Nederlands), so the teaching language is Dutch (nl), despite the English name. Tuition fee is not stated specifically for this programme for non-EU students: the general page gives 2025-2026/2026-2027 amounts (wettelijk collegegeld €2,601/€2,694; instellingscollegegeld €10,164/€10,528) and a separate €14,000 for full-time English-taught master's programmes, but no specific fee for this Dutch-taught bachelor; the non-EU fee is therefore left out. ",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que vous avez réussi les mathématiques A ou B avec une note suffisante ; c'est une condition d'admission.",
+          "en": "Check that you have passed Mathematics A or B with a sufficient grade; this is an admission requirement."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+            "quote": "Alle profielen zijn welkom, mits je bent geslaagd met een voldoende voor Wiskunde A of B."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Si vous avez un diplôme étranger, vous devez prouver votre maîtrise du néerlandais ; consultez les Taaleisen Nederlands.",
+          "en": "If you have a foreign diploma, you must prove your proficiency in Dutch; see the Taaleisen Nederlands."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+            "quote": "Met een buitenlands of internationaal diploma kun je toegelaten worden, mits dit diploma toelating biedt tot hbo en je een bewijs hebt van voldoende beheersing van de Nederlandse taal."
+          }
+        ]
+      }
+    ]
+  }
+}

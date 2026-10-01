@@ -15,40 +15,58 @@ summary:
   ar:
     text: Bouwkunde (Architecture and Construction Engineering), Avans Hogeschool ('s-Hertogenbosch). برنامج مدرج في السجل الهولندي RIO.
     status: draft
-officialUrl: null
+officialUrl: https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd
 durationYears:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value: 4
+  source: programme
+  info_kind: official
 teachingLanguages:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value:
+    - nl
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value: nl-studielink
+  source: page-2
+  info_kind: official
 documents:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: rio
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les frais de scolarité institutionnels exacts et les modalités de paiement pour les étudiants non-EEE sur la page des frais de scolarité d'Avans.
+          status: draft
+        en:
+          text: Check the exact institutional tuition fee and payment details for non-EEA students on the Avans tuition fees page.
+          status: draft
 scholarships: []
 sources:
-  rio:
-    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+  programme:
+    url: https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd
+    last_verified_at: null
+  page-2:
+    url: https://www.avans.nl/studeren/praktische-zaken/studiekosten
+    last_verified_at: null
+  page-3:
+    url: https://www.avans.nl/en/int/studying/practical-information/tuition-fees
     last_verified_at: null
 _review:
   kind: programs
@@ -59,5 +77,21 @@ _review:
   field: engineering
   confidence: high
   officialUrl: ""
-  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Avans Hogeschool: Den Bosch\"; international name \"Architecture and Construction Engineering\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page)"
+  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Avans Hogeschool: Den Bosch\"; international name \"Architecture and Construction Engineering\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: rio:07GR/07GR06/1001O3048
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd
+      quote: Duur 4 jaar, voltijd bachelor
+    - fact: teachingLanguages
+      url: https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd
+      quote: Taal Nederlands
+    - fact: applicationChannel
+      url: https://www.avans.nl/studeren/praktische-zaken/studiekosten
+      quote: Meld je aan voor de opleiding via Studielink.
+    - fact: requirements.req-1
+      url: https://www.avans.nl/en/int/studying/practical-information/tuition-fees
+      quote: Non-EEA nationality (institutional tuition fee) €10,308,-
+  notes: "Tuition fact omitted: the pages state a general institution-wide institutional fee (EUR 10,308 for 2026-2027) but do not confirm it applies to this specific programme for a non-EU applicant. The page includes a fee for non-EEA nationality but is not programme-specific, so per rules it is left out. Application deadline: the only stated deadline is for non-EEA nationality and references the current academic year; the year is not stated in the quote, so 2026 is inferred from context but not directly quoted. The deadline date (May 1st) is explicitly stated for non-EEA students."

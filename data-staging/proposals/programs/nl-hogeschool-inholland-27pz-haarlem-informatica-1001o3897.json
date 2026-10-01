@@ -1,0 +1,18 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-haarlem-informatica-1001o3897",
+  "programmePage": "https://www.inholland.nl/opleidingen/informatica-voltijd/",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/informatica-voltijd/",
+          "quote": "taal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "The programme page https://www.inholland.nl/opleidingen/informatica-voltijd/ states duration 4 years and language Dutch (Nederlands), location Haarlem. However, no tuition fee specific to this programme or to non-EU students is stated on any page; the collegegeld page gives only general institution-wide rates (wettelijk/instellingscollegegeld) whose applicability to this Moroccan non-EU applicant is not stated, so tuition is left out. No intakes (start dates, application deadlines) are stated anywhere for this specific programme, so intakes is omitted. No entry requirements (diplomas, language proficiency, subject requirements) are stated for this specific Informatica programme; the entry-requirements pages supplied are for other programmes (Tourism Management and Creative Business) and cannot be applied here."
+}

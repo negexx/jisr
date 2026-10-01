@@ -324,6 +324,12 @@ export async function discoverBySearch(input: SearchDiscoverInput): Promise<Disc
     hits
       .filter((h) => h.url.startsWith("https://"))
       .filter((h) => input.website === null || sameSite(h.url, input.website))
+      // not a page to read: a file, or a dated news post (/2018/03/…) that is out of date by nature
+      .filter(
+        (h) =>
+          !FILE.test(new URL(h.url).pathname) &&
+          !/\/(19|20)\d{2}[-/]/.test(new URL(h.url).pathname),
+      )
       .map((h) => ({ url: h.url, text: `${h.title} ${h.snippet}` }));
 
   let fetched = 0;

@@ -1,0 +1,27 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-delft-luchtvaarttechnologie-1001o3164",
+  "programmePage": "https://www.inholland.nl/opleidingen/luchtvaarttechnologie-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/luchtvaarttechnologie-voltijd/",
+          "quote": "Of switch naar: Engels voltijd niveau Bachelor duur 4 jaar locatie Delft taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/luchtvaarttechnologie-voltijd/",
+          "quote": "Of switch naar: Engels voltijd niveau Bachelor duur 4 jaar locatie Delft taal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "No tuition fee for this programme is stated for non-EU students. The general institution-wide instellingscollegegeld figures (e.g. € 10.360 for 2026-2027 voltijd) are not programme-specific and the pages do not clearly apply them to a Moroccan non-EU applicant for Luchtvaarttechnologie, so they were left out. No intake dates with day, month and year were found for this programme. No admission requirements specific to Luchtvaarttechnologie are stated on its programme page; the language/entry requirements pages found belong to other programmes (Tourism Management, Creative Business) and were therefore not used."
+}

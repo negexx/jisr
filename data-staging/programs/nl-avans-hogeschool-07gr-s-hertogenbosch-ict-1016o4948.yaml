@@ -15,40 +15,58 @@ summary:
   ar:
     text: ICT (ICT), Avans Hogeschool ('s-Hertogenbosch). برنامج مدرج في السجل الهولندي RIO.
     status: draft
-officialUrl: null
+officialUrl: https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd
 durationYears:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value: 4
+  source: programme
+  info_kind: official
 teachingLanguages:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value:
+    - nl
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value:
+    amountMinor: 1030800
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
 intakes:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value: nl-studielink
+  source: page-2
+  info_kind: official
 documents:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: rio
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le paiement complet des frais de scolarité doit être effectué via un virement bancaire avant le 15 juin pour une entrée en septembre. Vérifiez les détails et le montant exact sur la page des frais de scolarité.
+          status: draft
+        en:
+          text: Payment of the full tuition fee must be made by bank transfer by 15 June for a September start. Check the details and the exact amount on the tuition fee page.
+          status: draft
 scholarships: []
 sources:
-  rio:
-    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+  programme:
+    url: https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd
+    last_verified_at: null
+  page-2:
+    url: https://www.avans.nl/en/int/studying/practical-information/tuition-fees
     last_verified_at: null
 _review:
   kind: programs
@@ -59,5 +77,27 @@ _review:
   field: computer-science
   confidence: high
   officialUrl: ""
-  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Avans Hogeschool: Den Bosch\"; international name \"ICT\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page)"
+  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Avans Hogeschool: Den Bosch\"; international name \"ICT\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: rio:07GR/07GR06/1016O4948
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd
+      quote: Duur 4 jaar, voltijd bachelor
+    - fact: teachingLanguages
+      url: https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd
+      quote: Taal Nederlands
+    - fact: tuition
+      url: https://www.avans.nl/en/int/studying/practical-information/tuition-fees
+      quote: Non-EEA nationality (institutional tuition fee) €10,308,-
+    - fact: applicationChannel
+      url: https://www.avans.nl/en/int/studying/practical-information/tuition-fees
+      quote: You must register in Studielink first.
+    - fact: applicationChannel
+      url: https://www.avans.nl/studeren/praktische-zaken/studiekosten
+      quote: Meld je aan voor de opleiding via Studielink.
+    - fact: requirements.req-1
+      url: https://www.avans.nl/en/int/studying/practical-information/tuition-fees
+      quote: To meet the admission requirements for a September start, you must pay the full institutional tuition fee to Avans University of Applied Sciences by 15 June.
+  notes: The programme page (https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd) does not state a tuition amount. The non-EEA institutional tuition fee of €10,308 is from the institution’s tuition fee page and applies to bachelor’s programmes at Avans; verify it applies to this specific programme. No application deadline date from the programme page or task pages was quoted; the payment deadline (15 June) is given as a manual check. Avans’ general pages also state non-EEA students must apply by 1 May, but this was not quoted because it is not stated on the programme’s own page.

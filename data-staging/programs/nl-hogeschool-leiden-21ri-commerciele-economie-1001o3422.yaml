@@ -15,40 +15,68 @@ summary:
   ar:
     text: Commerciële Economie (Marketing Management), Hogeschool Leiden (Leiden). برنامج مدرج في السجل الهولندي RIO.
     status: draft
-officialUrl: null
+officialUrl: https://www.hsleiden.nl/opleiding/commerciele-economie
 durationYears:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 teachingLanguages:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2027-05-01
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value: nl-studielink
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: rio
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme étranger (par ex. un baccalauréat marocain) doit être évalué par Hogeschool Leiden sur la base d'une évaluation de diplôme de Nuffic ; les délais d'inscription pour un diplôme étranger sont différents et sont décrits sur la page 'Studenten uit het buitenland'.
+          status: draft
+        en:
+          text: A foreign diploma (e.g. a Moroccan Baccalauréat) must be assessed by Hogeschool Leiden on the basis of a Nuffic diploma evaluation; the application deadlines for a foreign diploma are different and are described on the 'Studenten uit het buitenland' page.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Pour l'admission sans diplôme havo/vwo/mbo 4 (Toelatingsonderzoek 21+), l'épreuve pour Commerciële Economie a lieu au plus tard le 23 juin 2026 (rapport à fournir) ; les frais en 2025 sont d'environ € 342 et le résultat ne garantit pas l'admission, la commission d'examen décidant.
+          status: draft
+        en:
+          text: For admission without a havo/vwo/mbo 4 diploma (Toelatingsonderzoek 21+), the test for Commerciële Economie is due by 23 June 2026 (report to be submitted); the fee in 2025 is around € 342 and a positive result does not guarantee admission, as the examination committee decides.
+          status: draft
 scholarships: []
 sources:
-  rio:
-    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+  programme:
+    url: https://www.hsleiden.nl/opleiding/commerciele-economie
+    last_verified_at: null
+  page-2:
+    url: https://www.hsleiden.nl/studeren/inschrijven/toelating
     last_verified_at: null
 _review:
   kind: programs
@@ -59,5 +87,21 @@ _review:
   field: business-economics
   confidence: high
   officialUrl: ""
-  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Hogeschool Leiden: Leiden\"; international name \"Marketing Management\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page)"
+  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Hogeschool Leiden: Leiden\"; international name \"Marketing Management\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: rio:21RI/21RI00/1001O3422
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: intakes
+      url: https://www.hsleiden.nl/opleiding/commerciele-economie
+      quote: "Start: sept 2027 Inschrijven: t/m 1 mei"
+    - fact: applicationChannel
+      url: https://www.hsleiden.nl/opleiding/commerciele-economie
+      quote: "En zorg dat je een DigiD hebt: die heb je namelijk nodig om je in te schrijven via Studielink."
+    - fact: requirements.req-1
+      url: https://www.hsleiden.nl/studeren/inschrijven/toelating
+      quote: "Als je een niet-Nederlands diploma hebt, beoordeelt Hogeschool Leiden je diploma op toelaatbaarheid aan de hand van een diplomawaardering van Nuffic. Let op: voor toelating met een buitenlands diploma zijn er andere deadlines voor aanmelden."
+    - fact: requirements.req-2
+      url: https://www.hsleiden.nl/studeren/inschrijven/toelating
+      quote: Commerciële Economie (bachelor) 23 juni 2026
+  notes: "Tuition: instellingscollegegeld voltijd 2027-2028 is € 9.775; the pages present this as a general institution-wide amount for students who do not qualify for wettelijk collegegeld (non-EU nationality), not as a programme-specific fee, so it was not entered as tuition. Teaching language: the pages do not state the language of instruction of the programme, so teachingLanguages is omitted. Duration is 4 years ('Duur: 4 jaar'); the page also mentions 'ongeveer vier dagen per week' and the FAQ says the start is around 1 September, but no exact start date is given."

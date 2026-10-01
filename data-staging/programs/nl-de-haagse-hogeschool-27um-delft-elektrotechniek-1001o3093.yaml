@@ -15,40 +15,63 @@ summary:
   ar:
     text: Elektrotechniek (Electrical and Electronic Engineering), De Haagse Hogeschool (Delft). برنامج مدرج في السجل الهولندي RIO.
     status: draft
-officialUrl: null
+officialUrl: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/elektrotechniek-voltijd
 durationYears:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value: 4
+  source: programme
+  info_kind: official
 teachingLanguages:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value:
+    - nl
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value: nl-studielink
+  source: page-2
+  info_kind: official
 documents:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: rio
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: nl
+      minCefr: null
+      certificateRequired: true
+      acceptedTests: []
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Avec un diplôme étranger ou international : le diplôme doit donner accès à l'enseignement supérieur néerlandais (hbo) et vous devez prouver une maîtrise suffisante du néerlandais ; votre dossier est évalué par la Centrale Studenten Inschrijving. Inscrivez-vous via Studielink et téléchargez vos documents."
+          status: draft
+        en:
+          text: "With a foreign or international diploma: the diploma must give access to Dutch higher education (hbo) and you must prove sufficient command of Dutch; your file is assessed by the Centrale Studenten Inschrijving. Register via Studielink and upload your documents."
+          status: draft
 scholarships: []
 sources:
-  rio:
-    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+  programme:
+    url: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/elektrotechniek-voltijd
+    last_verified_at: null
+  page-2:
+    url: https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs
     last_verified_at: null
 _review:
   kind: programs
@@ -59,5 +82,24 @@ _review:
   field: engineering
   confidence: high
   officialUrl: ""
-  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"De Haagse Hogeschool: Delft\"; international name \"Electrical and Electronic Engineering\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page)"
+  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"De Haagse Hogeschool: Delft\"; international name \"Electrical and Electronic Engineering\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: rio:27UM/27UM05/1001O3093
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/elektrotechniek-voltijd
+      quote: Door de vele praktijkgestuurde projecten sta je na 4 jaar studie al met 1 been in het bedrijfsleven.
+    - fact: teachingLanguages
+      url: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/elektrotechniek-voltijd
+      quote: "Type Bachelor Vorm: voltijd duaal Duration 4 jaar Start Start in september Locatie Delft Taal Nederlands"
+    - fact: applicationChannel
+      url: https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs
+      quote: Meld je aan via Studielink.
+    - fact: requirements.req-1
+      url: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/elektrotechniek-voltijd
+      quote: Een buitenlands of internationaal diploma Met een buitenlands of internationaal diploma kun je toegelaten worden, mits dit diploma toelating biedt tot hbo en je een bewijs hebt van voldoende beheersing van de Nederlandse taal.
+    - fact: requirements.req-2
+      url: https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs
+      quote: Om erachter te komen of je toelaatbaar bent dien je een inschrijfverzoek in via Studielink.
+  notes: "This programme is a Dutch-taught 4-year hbo bachelor (Taal Nederlands) at the Delft location, so the language-of-instruction requirement for the Moroccan applicant is Dutch, verified via the state examination NT2 programme II (all four components passed before 1 September 2025) or CNaVT certificates (not older than 2 years on 01-09-2026). The pages state no tuition fee for this programme specifically: the Collegegeld page gives institution-wide rates only (wettelijk collegegeld EUR 2,601/2,694 and instellingscollegegeld EUR 10,164/10,528 for 2025-26/2026-27), and the EUR 14,000 rate applies only to full-time English-taught master's programmes, so no tuition fact was output. The 3-year English-taught variant mentioned ('Electrical and Electronic Engineering') is a different programme. A general application deadline of 1 May 2026 is stated for 'Opleidingen aan De Haagse Hogeschool' but the quoted sentence also lists exceptions and is not programme-specific enough to record as this programme's intake. For 21+ entrants there is a Toelatingsonderzoek 21+ (EUR 125) with fixed dates; this does not apply to a standard Moroccan Baccalauréat applicant."

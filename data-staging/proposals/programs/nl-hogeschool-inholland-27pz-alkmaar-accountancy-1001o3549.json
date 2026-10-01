@@ -1,0 +1,40 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-alkmaar-accountancy-1001o3549",
+  "programmePage": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar, Amsterdam en Rotterdam taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar, Amsterdam en Rotterdam taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1036000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Voltijd en duaal: € 10.360"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: instellingscollegegeld voltijd € 10.360 (2026-2027) for non-EU students; fee is institution-wide but applies to this full-time programme. No attendance/application dates (intakes) found. No admission requirements for this programme stated on its page; rules such as Dutch B2 language proficiency in the Creative Business entry-requirements page are about that other programme, not this one, so they were not copied."
+}

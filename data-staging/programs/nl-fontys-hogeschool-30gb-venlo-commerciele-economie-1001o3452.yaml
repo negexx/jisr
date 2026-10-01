@@ -15,40 +15,52 @@ summary:
   ar:
     text: Commerciële Economie (Marketing Management), Fontys Hogeschool (Venlo). برنامج مدرج في السجل الهولندي RIO.
     status: draft
-officialUrl: null
+officialUrl: https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm
 durationYears:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value: 4
+  source: programme
+  info_kind: official
 teachingLanguages:
-  value: null
-  source: rio
-  info_kind: TODO_read_source
+  value:
+    - nl
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: rio
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: rio
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Votre diplôme marocain (Baccalauréat) n'étant pas un diplôme néerlandais (havo/vwo/mbo niveau 4), contactez la Fontys pour vérifier votre admissibilité (par exemple 21+ toelatingsonderzoek, certificat d'anglais).
+          status: draft
+        en:
+          text: Your Moroccan diploma (Baccalauréat) is not a Dutch diploma (havo/vwo/mbo niveau 4), so contact Fontys to check your eligibility (e.g. 21+ toelatingsonderzoek, English certificate).
+          status: draft
 scholarships: []
 sources:
-  rio:
-    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+  programme:
+    url: https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm
     last_verified_at: null
 _review:
   kind: programs
@@ -59,5 +71,24 @@ _review:
   field: business-economics
   confidence: high
   officialUrl: ""
-  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Fontys Hogeschool: Venlo\"; international name \"Marketing Management\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page)"
+  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Fontys Hogeschool: Venlo\"; international name \"Marketing Management\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: rio:30GB/30GB03/1001O3452
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm
+      quote: Opleidingsduur 4 jaar
+    - fact: durationYears
+      url: https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm
+      quote: Commerci&euml;le Economie 4 jaar Bachelor Voltijd Start september Nederlands Eindhoven Tilburg Venlo
+    - fact: teachingLanguages
+      url: https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm
+      quote: Taal Nederlands
+    - fact: requirements.req-1
+      url: https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm
+      quote: Met een havo-, vwo-, of mbo-diploma (niveau 4) ben je direct toelaatbaar. Heb je niet de juiste vooropleiding? Geen paniek! In sommige gevallen kun je alsnog worden toegelaten.
+    - fact: requirements.req-1
+      url: https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm
+      quote: Ben jij 21 jaar of ouder? En wil jij starten met een Fontys bacheloropleiding, maar heb je geen havo-, vwo- of mbo niveau 4-diploma? Dan kun je een Fontys 21+ toelatingsonderzoek (colloquium doctum) doen.
+  notes: De pagina van de opleiding (https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm) noemt alleen '1 mei 2027 Meld je uiterlijk 1 mei aan via Studielink' en 'Startdatum September'. Een volledige intakedatum (jaar + dag + maand) voor de start in september wordt niet gegeven, alleen 'Starten in september' als startmoment. Daarom is er geen intake-object met startDate opgenomen. De pagina bevat ook geen collegegeldbedrag voor niet-EER-studenten (instellingscollegegeld) dat specifiek voor deze opleiding geldt; de pagina https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm geeft alleen een algemeen collegegeldkader ('instellingscollegegeld' voor niet-EER, zonder bedrag). Daarom is er geen tuition-fact opgenomen. Ook is er geen expliciete taaleis (Nederlands/Engels) voor deze Nederlandstalige opleiding op de pagina's te vinden. De aanmeldroute is via Studielink, zoals blijkt uit 'Aanmelden voor een Bachelor, Master of Associate Degree doe je via Studielink' op https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm en 'Meld je uiterlijk 1 mei aan via Studielink' op de opleidingspagina.
