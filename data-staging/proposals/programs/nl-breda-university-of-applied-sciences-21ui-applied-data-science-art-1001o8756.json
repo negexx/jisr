@@ -47,5 +47,33 @@
       ]
     }
   },
-  "notes": "Tuition omitted: study-costs page gives EUR 14,650 institutional fee only 'in general' for 2027-2028, and says this programme has the 'Small-Scale and Intensive Education' feature with a HIGHER fee whose amount is not stated on any readable page (tuition fee calculator is interactive). Deadline year 2027 inferred from 'Start 30 August 2027'; the page says 1 May without year."
+  "notes": "Tuition omitted: study-costs page gives EUR 14,650 institutional fee only 'in general' for 2027-2028, and says this programme has the 'Small-Scale and Intensive Education' feature with a HIGHER fee whose amount is not stated on any readable page (tuition fee calculator is interactive). Deadline year 2027 inferred from 'Start 30 August 2027'; the page says 1 May without year. Requirements: the profile wording ('appropriate profile') is not specified for non-Dutch diplomas and the dedicated BUas admission-requirements page is behind a Cloudflare challenge (not fetchable), so no subject rule is encoded. English proficiency is asked in My Online Application but the pages reached state no CEFR level or accepted test, so no language rule is encoded. The programme FAQ mentions a basic mathematics test at HAVO level, not clearly part of the selection for all applicants, so not encoded.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": "Un diplôme équivalent à un havo ou vwo néerlandais avec un profil approprié est exigé : faire vérifier l'équivalence du Bac et du profil auprès de BUas.",
+        "evidence": [
+          {
+            "url": "https://www.buas.nl/en/programmes/applied-data-science-artificial-intelligence",
+            "quote": "To be admitted to this degree programme, you need a higher general secundary education (havo) or pre-university education (vwo) diploma with an appropriate profile, or an equivalent of these Dutch diplomas."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": "Admission sur sélection (125 places maximum) : devoir portfolio en ligne puis entretien en anglais ; fournir diplôme avec relevé de notes, CV et pièce d'identité.",
+        "evidence": [
+          {
+            "url": "https://www.buas.nl/en/programmes/applied-data-science-artificial-intelligence",
+            "quote": "This consists of a portfolio assignment and an interview."
+          },
+          {
+            "url": "https://www.buas.nl/en/programmes/artificial-intelligence-data-management/application-procedure",
+            "quote": "The Applied Data Science & Artificial Intelligence programme admits a maximum of 125 students each year through a selection procedure."
+          }
+        ]
+      }
+    ]
+  }
 }

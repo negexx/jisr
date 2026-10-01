@@ -42,7 +42,33 @@ requirements:
   coverage: partial
   source: programme
   info_kind: official
-  rules: []
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Titre non-UE : faire reconnaître les documents d'accès avant de candidater (via le portail de l'université ou le Studienkolleg Konstanz, 4 à 5 semaines)."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Candidats non-UE : envoyer les documents d'accès à l'enseignement supérieur avant le 31 mai (date limite supplémentaire, avant le 15 juillet)."
+          status: draft
 scholarships: []
 sources:
   programme:

@@ -39,9 +39,36 @@ requirements:
   coverage: partial
   source: programme
   info_kind: official
-  rules: []
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Titre d'accès (Abitur/Fachabitur) ou diplôme reconnu équivalent par les autorités compétentes : vérifier la reconnaissance du Bac marocain auprès d'uni-assist."
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Si le diplôme de fin d'études est reconnu dans le pays d'origine mais pas en Allemagne comme HZB, un Studienkolleg est obligatoire avant le début des études.
+          status: draft
 scholarships: []
 sources:
   programme:
     url: https://www.h-brs.de/en/wiwi/study/bachelor/international-business
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.h-brs.de/en/node/74451
     last_verified_at: 2026-10-01

@@ -38,7 +38,25 @@ requirements:
   coverage: partial
   source: programme
   info_kind: official
-  rules: []
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - tcf
+        - delf-dalf
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Admission sur dossier scolaire examiné par un jury : résultats du lycée (matières liées à la spécialité), appréciations, motivation. À préparer avec vos bulletins."
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -46,4 +64,7 @@ sources:
     last_verified_at: 2026-10-01
   page-2:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
     last_verified_at: 2026-10-01

@@ -39,7 +39,23 @@ requirements:
   coverage: partial
   source: programme
   info_kind: official
-  rules: []
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: nl
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Le diplôme étranger doit être reconnu comme équivalent à un havo, vwo ou mbo niveau 4 néerlandais : s'inscrire via Studielink puis envoyer les documents demandés."
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -47,4 +63,7 @@ sources:
     last_verified_at: 2026-10-01
   page-2:
     url: https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bouwkunde/voltijd/aanmeldprocedure/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.hogeschoolrotterdam.nl/voorlichting/toelatingsvoorwaarden/toelating-met-een-buitenlands-diploma/
     last_verified_at: 2026-10-01

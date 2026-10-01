@@ -42,7 +42,23 @@ requirements:
   coverage: partial
   source: programme
   info_kind: official
-  rules: []
+  rules:
+    - id: req-1
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme havo, vwo ou mbo niveau 4 est exigé (équivalence du Bac à faire vérifier auprès d'Avans) ; certaines filières demandent un profil avec matières complémentaires.
+          status: draft
+    - id: req-2
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Pour les étudiants hors EEE, l'intake (studiekeuzecheck) est obligatoire, et un avis positif à l'intake conditionne la demande de visa.
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -53,4 +69,10 @@ sources:
     last_verified_at: 2026-10-01
   page-3:
     url: https://www.avans.nl/studeren/praktische-zaken/aanmelden
+    last_verified_at: 2026-10-01
+  page-4:
+    url: https://www.avans.nl/studeren/praktische-zaken/aanmelden/toelating
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://www.avans.nl/studeren/praktische-zaken/aanmelden/studiekeuzecheck
     last_verified_at: 2026-10-01

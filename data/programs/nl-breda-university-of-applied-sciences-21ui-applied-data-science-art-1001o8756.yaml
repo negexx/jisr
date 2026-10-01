@@ -39,7 +39,23 @@ requirements:
   coverage: partial
   source: programme
   info_kind: official
-  rules: []
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un diplôme équivalent à un havo ou vwo néerlandais avec un profil approprié est exigé : faire vérifier l'équivalence du Bac et du profil auprès de BUas."
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Admission sur sélection (125 places maximum) : devoir portfolio en ligne puis entretien en anglais ; fournir diplôme avec relevé de notes, CV et pièce d'identité."
+          status: draft
 scholarships: []
 sources:
   programme:

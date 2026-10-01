@@ -29,5 +29,23 @@
       ]
     }
   },
-  "notes": "Private institution: flat lesgeld EUR 6,816 per study year (12 x EUR 568), same figure shown for Voltijd and Deeltijd tabs; page does not distinguish EU/non-EU, so this is the fixed institutional price. Excluded: EUR 90 registration fee and books. Utrecht is among the listed locations. No teaching language stated on page; no application deadline (rolling starts, e.g. 1 December 2026 / 1 April 2027); no Studielink mention (direct enrolment) so applicationChannel omitted."
+  "notes": "Private institution: flat lesgeld EUR 6,816 per study year (12 x EUR 568), same figure shown for Voltijd and Deeltijd tabs; page does not distinguish EU/non-EU, so this is the fixed institutional price. Excluded: EUR 90 registration fee and books. Utrecht is among the listed locations. No teaching language stated on page; no application deadline (rolling starts, e.g. 1 December 2026 / 1 April 2027); no Studielink mention (direct enrolment) so applicationChannel omitted. Requirements: the page does not say how a foreign (Moroccan) diploma is assessed, nor any Dutch/English language requirement or visa matter for non-EU applicants; only the general HAVO/VWO/MBO 4 diploma requirement is encoded.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": "Un diplôme HAVO, VWO ou MBO 4 est exigé (équivalence du Bac non précisée) ; fournir copie du diplôme, relevé de notes et pièce d'identité, la commission d'examen décide.",
+        "evidence": [
+          {
+            "url": "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+            "quote": "Voor het volgen van deze opleiding op HBO niveau is minimaal een HAVO, VWO of MBO 4-diploma vereist."
+          },
+          {
+            "url": "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+            "quote": "De examencommissie beslist over toelating tot de opleiding en de toekenning van vrijstellingen."
+          }
+        ]
+      }
+    ]
+  }
 }

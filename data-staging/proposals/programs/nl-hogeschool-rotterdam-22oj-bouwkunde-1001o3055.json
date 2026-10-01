@@ -47,5 +47,32 @@
       ]
     }
   },
-  "notes": "Tuition omitted: studiekosten page says non-EEA students pay 'instellingscollegegeld' but gives no amount (only the statutory EUR 2,771 for 2027-2028 and a link to rates). The 1 May deadline is the general Studielink deadline on the programme page, not specifically worded for non-EEA applicants; year 2027 inferred from the page's 2027-2028 tuition cycle."
+  "notes": "Tuition omitted: studiekosten page says non-EEA students pay 'instellingscollegegeld' but gives no amount (only the statutory EUR 2,771 for 2027-2028 and a link to rates). The 1 May deadline is the general Studielink deadline on the programme page, not specifically worded for non-EEA applicants; year 2027 inferred from the page's 2027-2028 tuition cycle. Requirements: the Dutch B2 level is proven through Hogeschool Rotterdam's own Onderzoek NT2 or the state exam NT2 programme II (not in the accepted-test list, so acceptedTests is empty). The subject/profile requirements (NT/NG profile table) are shown only for Dutch diplomas and the table content is not readable; Hogeschool Rotterdam only advises (not requires) wiskunde B and natuurkunde, so no subject rule is encoded.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.hogeschoolrotterdam.nl/voorlichting/toelatingsvoorwaarden/toelating-met-een-buitenlands-diploma/",
+            "quote": "Voor een Nederlandstalige hbo-opleiding moet je de Nederlandse taal op niveau B2 van het Europees Referentie Kader beheersen."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": "Le diplôme étranger doit être reconnu comme équivalent à un havo, vwo ou mbo niveau 4 néerlandais : s'inscrire via Studielink puis envoyer les documents demandés.",
+        "evidence": [
+          {
+            "url": "https://www.hogeschoolrotterdam.nl/voorlichting/toelatingsvoorwaarden/toelating-met-een-buitenlands-diploma/",
+            "quote": "Dan moet je aantonen dat dat gelijkwaardig is aan het vereiste Nederlandse havo-, vwo- of mbo-niveau 4-diploma."
+          }
+        ]
+      }
+    ]
+  }
 }
