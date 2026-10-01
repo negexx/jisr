@@ -9,6 +9,12 @@ summary:
   fr:
     text: Technical Engineering (BEng), Ostbayerische Technische Hochschule Amberg-Weiden (OTH) (Amberg). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Technical Engineering (BEng), Ostbayerische Technische Hochschule Amberg-Weiden (OTH) (Amberg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Technical Engineering (BEng), Ostbayerische Technische Hochschule Amberg-Weiden (OTH) (Amberg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

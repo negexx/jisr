@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Business & Entrepreneurship (International Business & Entrepreneurship), EuroCollege Hogeschool (Utrecht). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: International Business & Entrepreneurship (International Business & Entrepreneurship), EuroCollege Hogeschool (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Business & Entrepreneurship (International Business & Entrepreneurship), EuroCollege Hogeschool (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

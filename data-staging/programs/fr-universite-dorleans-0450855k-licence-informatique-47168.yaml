@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Portail Informatique - MI Excellence Minerve - Informatique Mathématiques, Université d'Orléans (Orléans). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Portail Informatique - MI Excellence Minerve - Informatique Mathématiques, Université d'Orléans (Orléans). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail Informatique - MI Excellence Minerve - Informatique Mathématiques, Université d'Orléans (Orléans). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47168&typeBac=0&originePc=0
 durationYears:
   value: null

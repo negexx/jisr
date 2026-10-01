@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Gestion administrative et commerciale des organisations, I.U.T de Brest - Site de Morlaix (Morlaix). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Gestion administrative et commerciale des organisations, I.U.T de Brest - Site de Morlaix (Morlaix). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Gestion administrative et commerciale des organisations, I.U.T de Brest - Site de Morlaix (Morlaix). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3910&typeBac=0&originePc=0
 durationYears:
   value: null

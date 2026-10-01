@@ -69,7 +69,11 @@
     "rules": [
       {
         "kind": "manual_check",
-        "note": "Un diplôme havo, vwo ou mbo niveau 4 est exigé (équivalence du Bac à faire vérifier auprès d'Avans) ; certaines filières demandent un profil avec matières complémentaires.",
+        "note": {
+          "fr": "Un diplôme havo, vwo ou mbo niveau 4 est exigé (équivalence du Bac à faire vérifier auprès d'Avans) ; certaines filières demandent un profil avec matières complémentaires.",
+          "en": "A havo, vwo or mbo level 4 diploma is required (have the equivalence of your Bac checked with Avans); some programmes ask for a profile with additional subjects.",
+          "ar": "يُشترط دبلوم havo أو vwo أو mbo المستوى 4 (يجب التحقق من معادلة الباكالوريا لدى Avans)؛ وبعض التخصصات تطلب توجّهًا يتضمن مواد إضافية."
+        },
         "evidence": [
           {
             "url": "https://www.avans.nl/studeren/praktische-zaken/aanmelden/toelating",
@@ -79,7 +83,11 @@
       },
       {
         "kind": "manual_check",
-        "note": "Pour les étudiants hors EEE, l'intake (studiekeuzecheck) est obligatoire, et un avis positif à l'intake conditionne la demande de visa.",
+        "note": {
+          "fr": "Pour les étudiants hors EEE, l'intake (studiekeuzecheck) est obligatoire, et un avis positif à l'intake conditionne la demande de visa.",
+          "en": "For non-EEA students the intake (studiekeuzecheck) is mandatory, and a positive intake advice is a condition for the visa application.",
+          "ar": "بالنسبة للطلبة من خارج المنطقة الاقتصادية الأوروبية، المقابلة التوجيهية (studiekeuzecheck) إلزامية، ويُشترط رأي إيجابي منها لطلب التأشيرة."
+        },
         "evidence": [
           {
             "url": "https://www.avans.nl/studeren/praktische-zaken/aanmelden/studiekeuzecheck",

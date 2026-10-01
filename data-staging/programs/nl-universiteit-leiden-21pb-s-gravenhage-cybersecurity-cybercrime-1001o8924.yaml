@@ -9,6 +9,12 @@ summary:
   fr:
     text: Cybersecurity & Cybercrime (Cybersecurity & Cybercrime), Universiteit Leiden ('s-Gravenhage). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Cybersecurity & Cybercrime (Cybersecurity & Cybercrime), Universiteit Leiden ('s-Gravenhage). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Cybersecurity & Cybercrime (Cybersecurity & Cybercrime), Universiteit Leiden ('s-Gravenhage). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

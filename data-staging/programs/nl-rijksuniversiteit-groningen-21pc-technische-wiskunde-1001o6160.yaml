@@ -9,6 +9,12 @@ summary:
   fr:
     text: Technische Wiskunde (Applied Mathematics), Rijksuniversiteit Groningen (Groningen). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Technische Wiskunde (Applied Mathematics), Rijksuniversiteit Groningen (Groningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Technische Wiskunde (Applied Mathematics), Rijksuniversiteit Groningen (Groningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

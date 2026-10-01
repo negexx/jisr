@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Sciences pour l'ingénieur - Portail Marie Curie, Aix-Marseille Université - Site d'Aix-en-Provence (Montperrin) (Aix-en-Provence). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Sciences pour l'ingénieur - Portail Marie Curie, Aix-Marseille Université - Site d'Aix-en-Provence (Montperrin) (Aix-en-Provence). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Sciences pour l'ingénieur - Portail Marie Curie, Aix-Marseille Université - Site d'Aix-en-Provence (Montperrin) (Aix-en-Provence). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39234&typeBac=0&originePc=0
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: "Licence - Sciences pour l'ingénieur - Parcours Choix d'1 parcours (en 3e année de Licence) : Ingénierie électrique et énergie / Thermique et énergétique, Université Marie et Louis Pasteur - Université de Franche-Comté (Belfort) (Belfort). Fiche officielle Parcoursup."
     status: draft
+  en:
+    text: "Licence - Sciences pour l'ingénieur - Parcours Choix d'1 parcours (en 3e année de Licence) : Ingénierie électrique et énergie / Thermique et énergétique, Université Marie et Louis Pasteur - Université de Franche-Comté (Belfort) (Belfort). Official Parcoursup listing."
+    status: draft
+  ar:
+    text: "Licence - Sciences pour l'ingénieur - Parcours Choix d'1 parcours (en 3e année de Licence) : Ingénierie électrique et énergie / Thermique et énergétique, Université Marie et Louis Pasteur - Université de Franche-Comté (Belfort) (Belfort). البطاقة الرسمية على منصة Parcoursup."
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10836&typeBac=0&originePc=0
 durationYears:
   value: null

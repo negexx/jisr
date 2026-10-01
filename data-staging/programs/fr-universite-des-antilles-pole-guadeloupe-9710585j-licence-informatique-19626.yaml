@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Portail Informatique - Informatique  / Méthodes Informatiques appliquées à la  gestion des entreprises - Guadeloupe, Université des Antilles - Pôle Guadeloupe (Pointe-à-Pitre). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Portail Informatique - Informatique  / Méthodes Informatiques appliquées à la  gestion des entreprises - Guadeloupe, Université des Antilles - Pôle Guadeloupe (Pointe-à-Pitre). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail Informatique - Informatique  / Méthodes Informatiques appliquées à la  gestion des entreprises - Guadeloupe, Université des Antilles - Pôle Guadeloupe (Pointe-à-Pitre). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19626&typeBac=0&originePc=0
 durationYears:
   value: null

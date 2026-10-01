@@ -9,6 +9,12 @@ summary:
   fr:
     text: Responsible Consumption and Production Bachelor of Engineering, Hochschule Mittweida, University of Applied Sciences (Mittweida). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Responsible Consumption and Production Bachelor of Engineering, Hochschule Mittweida, University of Applied Sciences (Mittweida). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Responsible Consumption and Production Bachelor of Engineering, Hochschule Mittweida, University of Applied Sciences (Mittweida). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

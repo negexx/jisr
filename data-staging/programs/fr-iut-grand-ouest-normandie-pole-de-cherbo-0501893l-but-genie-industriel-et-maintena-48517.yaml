@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Génie industriel et maintenance -  Parcours Marine Nationale / EAMEA - Défense, IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Cherbourg-en-Cotentin (Cherbourg-en-Cotentin). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Génie industriel et maintenance -  Parcours Marine Nationale / EAMEA - Défense, IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Cherbourg-en-Cotentin (Cherbourg-en-Cotentin). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie industriel et maintenance -  Parcours Marine Nationale / EAMEA - Défense, IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Cherbourg-en-Cotentin (Cherbourg-en-Cotentin). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48517&typeBac=0&originePc=0
 durationYears:
   value: null

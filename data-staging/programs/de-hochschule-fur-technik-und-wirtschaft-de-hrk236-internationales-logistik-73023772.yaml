@@ -9,6 +9,12 @@ summary:
   fr:
     text: Internationales Logistik-Management (dt.-frz. Studiengang) Bachelor, Hochschule für Technik und Wirtschaft des Saarlandes (Saarbrücken). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Internationales Logistik-Management (dt.-frz. Studiengang) Bachelor, Hochschule für Technik und Wirtschaft des Saarlandes (Saarbrücken). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Internationales Logistik-Management (dt.-frz. Studiengang) Bachelor, Hochschule für Technik und Wirtschaft des Saarlandes (Saarbrücken). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

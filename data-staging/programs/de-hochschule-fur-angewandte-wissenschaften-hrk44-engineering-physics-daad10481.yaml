@@ -9,6 +9,12 @@ summary:
   fr:
     text: Engineering Physics, Hochschule für angewandte Wissenschaften Coburg (Coburg). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Engineering Physics, Hochschule für angewandte Wissenschaften Coburg (Coburg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Engineering Physics, Hochschule für angewandte Wissenschaften Coburg (Coburg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 4

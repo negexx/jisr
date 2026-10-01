@@ -9,6 +9,12 @@ summary:
   fr:
     text: Information Engineering am Campus Heilbronn Bachelor of Science, Technische Universität München (Heilbronn). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Information Engineering am Campus Heilbronn Bachelor of Science, Technische Universität München (Heilbronn). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Information Engineering am Campus Heilbronn Bachelor of Science, Technische Universität München (Heilbronn). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

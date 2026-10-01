@@ -9,6 +9,12 @@ summary:
   fr:
     text: Engineering Science Bachelor, Universität Bayreuth (Bayreuth). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Engineering Science Bachelor, Universität Bayreuth (Bayreuth). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Engineering Science Bachelor, Universität Bayreuth (Bayreuth). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

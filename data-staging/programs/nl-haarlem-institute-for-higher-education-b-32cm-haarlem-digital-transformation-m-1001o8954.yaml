@@ -9,6 +9,12 @@ summary:
   fr:
     text: Digital Transformation Management (Digital Transformation Management), Haarlem Institute for Higher Education B.V. (Haarlem). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Digital Transformation Management (Digital Transformation Management), Haarlem Institute for Higher Education B.V. (Haarlem). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Digital Transformation Management (Digital Transformation Management), Haarlem Institute for Higher Education B.V. (Haarlem). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

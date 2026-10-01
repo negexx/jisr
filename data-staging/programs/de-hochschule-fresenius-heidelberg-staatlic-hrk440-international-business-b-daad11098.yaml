@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Business (BA) with Specialisation in International Management, Hochschule Fresenius Heidelberg – staatlich anerkannte Hochschule der Hochschule Fresenius für Internationales Management GmbH (Heidelberg). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: International Business (BA) with Specialisation in International Management, Hochschule Fresenius Heidelberg – staatlich anerkannte Hochschule der Hochschule Fresenius für Internationales Management GmbH (Heidelberg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business (BA) with Specialisation in International Management, Hochschule Fresenius Heidelberg – staatlich anerkannte Hochschule der Hochschule Fresenius für Internationales Management GmbH (Heidelberg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Produktmanagement Bachelor, Hochschule für Wirtschaft und Umwelt Nürtingen-Geislingen (Geislingen an der Steige). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Produktmanagement Bachelor, Hochschule für Wirtschaft und Umwelt Nürtingen-Geislingen (Geislingen an der Steige). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Produktmanagement Bachelor, Hochschule für Wirtschaft und Umwelt Nürtingen-Geislingen (Geislingen an der Steige). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

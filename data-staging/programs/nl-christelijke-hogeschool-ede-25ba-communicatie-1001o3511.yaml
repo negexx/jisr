@@ -9,6 +9,12 @@ summary:
   fr:
     text: Communicatie (Communication), Christelijke Hogeschool Ede (Ede). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Communicatie (Communication), Christelijke Hogeschool Ede (Ede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Communicatie (Communication), Christelijke Hogeschool Ede (Ede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Militaire Bedrijfswetenschappen, Faculteit Militaire Wetenschappen van de Nederlandse Defensie Academie (Breda). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Militaire Bedrijfswetenschappen, Faculteit Militaire Wetenschappen van de Nederlandse Defensie Academie (Breda). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Militaire Bedrijfswetenschappen, Faculteit Militaire Wetenschappen van de Nederlandse Defensie Academie (Breda). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

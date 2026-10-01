@@ -9,6 +9,12 @@ summary:
   fr:
     text: Bachelor of Business Administration / International Marketing (BSc), Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht (Pforzheim). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Bachelor of Business Administration / International Marketing (BSc), Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht (Pforzheim). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Bachelor of Business Administration / International Marketing (BSc), Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht (Pforzheim). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: https://businesspf.hs-pforzheim.de/en/studies/bachelors_programs/bba_international_marketing
 durationYears:
   value: 3.5
@@ -61,6 +67,12 @@ requirements:
         fr:
           text: "Titre non-UE : faire reconnaître les documents d'accès avant de candidater (via le portail de l'université ou le Studienkolleg Konstanz, 4 à 5 semaines)."
           status: draft
+        en:
+          text: "Non-EU qualification: have your entrance documents recognised before applying (via the university's portal or Studienkolleg Konstanz, 4–5 weeks)."
+          status: draft
+        ar:
+          text: "شهادة من خارج الاتحاد الأوروبي: يجب الاعتراف بوثائق القبول قبل التقدّم (عبر بوابة الجامعة أو Studienkolleg Konstanz، من 4 إلى 5 أسابيع)."
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -68,6 +80,12 @@ requirements:
       note:
         fr:
           text: "Candidats non-UE : envoyer les documents d'accès à l'enseignement supérieur avant le 31 mai (date limite supplémentaire, avant le 15 juillet)."
+          status: draft
+        en:
+          text: "Non-EU applicants: send your higher-education entrance documents before 31 May (an additional deadline, ahead of 15 July)."
+          status: draft
+        ar:
+          text: "المتقدمون من خارج الاتحاد الأوروبي: أرسلوا وثائق الأهلية للتعليم العالي قبل 31 ماي (موعد إضافي يسبق 15 يوليوز)."
           status: draft
 scholarships: []
 sources:

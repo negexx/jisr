@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Gestion des entreprises et des administrations, I.U.T. de Mantes en Yvelines (Mantes-la-Jolie). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Gestion des entreprises et des administrations, I.U.T. de Mantes en Yvelines (Mantes-la-Jolie). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Gestion des entreprises et des administrations, I.U.T. de Mantes en Yvelines (Mantes-la-Jolie). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10014&typeBac=0&originePc=0
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Nanoscience Bachelor, Universität Konstanz (Konstanz). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Nanoscience Bachelor, Universität Konstanz (Konstanz). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Nanoscience Bachelor, Universität Konstanz (Konstanz). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

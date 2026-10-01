@@ -9,6 +9,12 @@ summary:
   fr:
     text: Bouwkunde (Architecture and Construction Engineering), Hogeschool Rotterdam (Rotterdam). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Bouwkunde (Architecture and Construction Engineering), Hogeschool Rotterdam (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bouwkunde (Architecture and Construction Engineering), Hogeschool Rotterdam (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bouwkunde/voltijd/
 durationYears:
   value: 4
@@ -55,6 +61,12 @@ requirements:
       note:
         fr:
           text: "Le diplôme étranger doit être reconnu comme équivalent à un havo, vwo ou mbo niveau 4 néerlandais : s'inscrire via Studielink puis envoyer les documents demandés."
+          status: draft
+        en:
+          text: "Your foreign diploma must be recognised as equivalent to a Dutch havo, vwo or mbo level 4: register via Studielink, then send the requested documents."
+          status: draft
+        ar:
+          text: "يجب الاعتراف بشهادتكم الأجنبية كمعادلة لـ havo أو vwo أو mbo المستوى 4 الهولندي: سجّلوا عبر Studielink ثم أرسلوا الوثائق المطلوبة."
           status: draft
 scholarships: []
 sources:

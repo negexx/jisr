@@ -9,6 +9,12 @@ summary:
   fr:
     text: Asian Studies and International Management Studienrichtung China / Southeast Asia & India Bachelor, Hochschule Konstanz Technik, Wirtschaft und Gestaltung (Konstanz). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Asian Studies and International Management Studienrichtung China / Southeast Asia & India Bachelor, Hochschule Konstanz Technik, Wirtschaft und Gestaltung (Konstanz). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Asian Studies and International Management Studienrichtung China / Southeast Asia & India Bachelor, Hochschule Konstanz Technik, Wirtschaft und Gestaltung (Konstanz). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

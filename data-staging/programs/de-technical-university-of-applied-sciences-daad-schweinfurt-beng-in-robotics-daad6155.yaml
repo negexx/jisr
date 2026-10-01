@@ -9,6 +9,12 @@ summary:
   fr:
     text: BEng in Robotics, Technical University of Applied Sciences Würzburg-Schweinfurt (THWS) (Schweinfurt). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: BEng in Robotics, Technical University of Applied Sciences Würzburg-Schweinfurt (THWS) (Schweinfurt). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: BEng in Robotics, Technical University of Applied Sciences Würzburg-Schweinfurt (THWS) (Schweinfurt). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

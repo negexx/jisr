@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Gestion administrative et commerciale des organisations, I.U.T de Lorient (Antenne de Pontivy) (Pontivy). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Gestion administrative et commerciale des organisations, I.U.T de Lorient (Antenne de Pontivy) (Pontivy). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Gestion administrative et commerciale des organisations, I.U.T de Lorient (Antenne de Pontivy) (Pontivy). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39345&typeBac=0&originePc=0
 durationYears:
   value: null

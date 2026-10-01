@@ -9,6 +9,12 @@ summary:
   fr:
     text: Cyber Security and Business, HTW Berlin University of Applied Sciences (Berlin). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Cyber Security and Business, HTW Berlin University of Applied Sciences (Berlin). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Cyber Security and Business, HTW Berlin University of Applied Sciences (Berlin). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Data Engineering Bachelor of Engineering, Berliner Hochschule für Technik (Berlin). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Data Engineering Bachelor of Engineering, Berliner Hochschule für Technik (Berlin). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Data Engineering Bachelor of Engineering, Berliner Hochschule für Technik (Berlin). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

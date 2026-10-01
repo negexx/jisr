@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Réseaux et télécommunications, I.U.T. de Béthune (Béthune). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Réseaux et télécommunications, I.U.T. de Béthune (Béthune). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Réseaux et télécommunications, I.U.T. de Béthune (Béthune). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7439&typeBac=0&originePc=0
 durationYears:
   value: null

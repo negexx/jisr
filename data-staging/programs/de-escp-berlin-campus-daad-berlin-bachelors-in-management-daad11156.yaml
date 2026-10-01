@@ -9,6 +9,12 @@ summary:
   fr:
     text: Bachelor's in Management (BSc), ESCP Berlin Campus (Berlin). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Bachelor's in Management (BSc), ESCP Berlin Campus (Berlin). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Bachelor's in Management (BSc), ESCP Berlin Campus (Berlin). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Militaire Systemen & Technologie, Faculteit Militaire Wetenschappen van de Nederlandse Defensie Academie (Den Helder). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Militaire Systemen & Technologie, Faculteit Militaire Wetenschappen van de Nederlandse Defensie Academie (Den Helder). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Militaire Systemen & Technologie, Faculteit Militaire Wetenschappen van de Nederlandse Defensie Academie (Den Helder). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Social Media Marketing & Management, Hochschule der Medien Stuttgart (Stuttgart). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Social Media Marketing & Management, Hochschule der Medien Stuttgart (Stuttgart). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Social Media Marketing & Management, Hochschule der Medien Stuttgart (Stuttgart). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Gestion - Parcours Gestion des organisations, ECM Ecole de commerce et management (Besançon). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Gestion - Parcours Gestion des organisations, ECM Ecole de commerce et management (Besançon). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Gestion - Parcours Gestion des organisations, ECM Ecole de commerce et management (Besançon). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=46032&typeBac=0&originePc=0
 durationYears:
   value: null

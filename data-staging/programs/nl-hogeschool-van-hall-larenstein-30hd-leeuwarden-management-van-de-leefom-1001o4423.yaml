@@ -9,6 +9,12 @@ summary:
   fr:
     text: Management van de Leefomgeving (Management of the Living Environment), Hogeschool Van Hall Larenstein (Leeuwarden). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Management van de Leefomgeving (Management of the Living Environment), Hogeschool Van Hall Larenstein (Leeuwarden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Management van de Leefomgeving (Management of the Living Environment), Hogeschool Van Hall Larenstein (Leeuwarden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

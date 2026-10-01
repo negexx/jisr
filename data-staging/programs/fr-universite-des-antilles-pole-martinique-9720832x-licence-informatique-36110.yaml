@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Informatique, Université des Antilles - Pôle Martinique (Schoelcher). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Informatique, Université des Antilles - Pôle Martinique (Schoelcher). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Informatique, Université des Antilles - Pôle Martinique (Schoelcher). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=36110&typeBac=0&originePc=0
 durationYears:
   value: null

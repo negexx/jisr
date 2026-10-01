@@ -9,6 +9,12 @@ summary:
   fr:
     text: Kunstmatige Intelligentie (Artificial Intelligence), Rijksuniversiteit Groningen (Groningen). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Kunstmatige Intelligentie (Artificial Intelligence), Rijksuniversiteit Groningen (Groningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Kunstmatige Intelligentie (Artificial Intelligence), Rijksuniversiteit Groningen (Groningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

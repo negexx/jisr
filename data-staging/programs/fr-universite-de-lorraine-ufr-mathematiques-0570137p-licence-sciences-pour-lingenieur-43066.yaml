@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Sciences pour l'ingénieur, Université de Lorraine - UFR Mathématiques, Informatique, Mécanique - Site de Metz (57) (Metz). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Sciences pour l'ingénieur, Université de Lorraine - UFR Mathématiques, Informatique, Mécanique - Site de Metz (57) (Metz). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Sciences pour l'ingénieur, Université de Lorraine - UFR Mathématiques, Informatique, Mécanique - Site de Metz (57) (Metz). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43066&typeBac=0&originePc=0
 durationYears:
   value: null

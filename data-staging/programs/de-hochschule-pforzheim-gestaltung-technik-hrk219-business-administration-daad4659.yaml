@@ -9,6 +9,12 @@ summary:
   fr:
     text: Business Administration / Digital Business Management (BSc), Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht (Pforzheim). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Business Administration / Digital Business Management (BSc), Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht (Pforzheim). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Business Administration / Digital Business Management (BSc), Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht (Pforzheim). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

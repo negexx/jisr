@@ -9,6 +9,12 @@ summary:
   fr:
     text: Entrepreneurship and Business Innovation (Entrepreneurship and Business Innovation), Tilburg University (Tilburg). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Entrepreneurship and Business Innovation (Entrepreneurship and Business Innovation), Tilburg University (Tilburg). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Entrepreneurship and Business Innovation (Entrepreneurship and Business Innovation), Tilburg University (Tilburg). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

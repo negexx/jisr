@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Portail Mathématiques et informatique appliquées aux sciences humaines et sociales - Mathématiques Appliquées et Sciences Sociales (Site de Saint Charles), Aix-Marseille Université - Site de Marseille Saint Charles (Marseille). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Portail Mathématiques et informatique appliquées aux sciences humaines et sociales - Mathématiques Appliquées et Sciences Sociales (Site de Saint Charles), Aix-Marseille Université - Site de Marseille Saint Charles (Marseille). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail Mathématiques et informatique appliquées aux sciences humaines et sociales - Mathématiques Appliquées et Sciences Sociales (Site de Saint Charles), Aix-Marseille Université - Site de Marseille Saint Charles (Marseille). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12610&typeBac=0&originePc=0
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Administration économique et sociale - Parcours Préparatoire au Professorat des Ecoles (PPPE), Université Marie et Louis Pasteur - Université de Franche-Comté (Belfort) (Belfort). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Administration économique et sociale - Parcours Préparatoire au Professorat des Ecoles (PPPE), Université Marie et Louis Pasteur - Université de Franche-Comté (Belfort) (Belfort). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Administration économique et sociale - Parcours Préparatoire au Professorat des Ecoles (PPPE), Université Marie et Louis Pasteur - Université de Franche-Comté (Belfort) (Belfort). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=32732&typeBac=0&originePc=0
 durationYears:
   value: null

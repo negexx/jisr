@@ -9,6 +9,12 @@ summary:
   fr:
     text: Werktuigbouwkunde (Mechanical Engineering), Hogeschool van Arnhem en Nijmegen (Arnhem). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Werktuigbouwkunde (Mechanical Engineering), Hogeschool van Arnhem en Nijmegen (Arnhem). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Werktuigbouwkunde (Mechanical Engineering), Hogeschool van Arnhem en Nijmegen (Arnhem). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

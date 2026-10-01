@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Finance and Accounting Bachelor, Hochschule Bremen (Bremen). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: International Finance and Accounting Bachelor, Hochschule Bremen (Bremen). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: International Finance and Accounting Bachelor, Hochschule Bremen (Bremen). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

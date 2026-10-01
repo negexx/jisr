@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Portail Informatique - Programmation informatique pour l'entreprise et l'innovation technologique, Institut national universitaire Champollion (Albi). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Portail Informatique - Programmation informatique pour l'entreprise et l'innovation technologique, Institut national universitaire Champollion (Albi). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail Informatique - Programmation informatique pour l'entreprise et l'innovation technologique, Institut national universitaire Champollion (Albi). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10310&typeBac=0&originePc=0
 durationYears:
   value: null

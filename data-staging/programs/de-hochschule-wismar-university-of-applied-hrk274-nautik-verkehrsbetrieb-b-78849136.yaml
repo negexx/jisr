@@ -9,6 +9,12 @@ summary:
   fr:
     text: "Nautik/ Verkehrsbetrieb Bachelor, Hochschule Wismar - University of Applied Sciences: Technology, Business and Design (Wismar). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi."
     status: draft
+  en:
+    text: "Nautik/ Verkehrsbetrieb Bachelor, Hochschule Wismar - University of Applied Sciences: Technology, Business and Design (Wismar). Programme listed in the Federal Employment Agency's Studiensuche."
+    status: draft
+  ar:
+    text: "Nautik/ Verkehrsbetrieb Bachelor, Hochschule Wismar - University of Applied Sciences: Technology, Business and Design (Wismar). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف."
+    status: draft
 officialUrl: null
 durationYears:
   value: null

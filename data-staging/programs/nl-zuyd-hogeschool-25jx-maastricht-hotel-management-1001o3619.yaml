@@ -9,6 +9,12 @@ summary:
   fr:
     text: Hotel Management (Hospitality Management), Zuyd Hogeschool (Maastricht). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Hotel Management (Hospitality Management), Zuyd Hogeschool (Maastricht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Hotel Management (Hospitality Management), Zuyd Hogeschool (Maastricht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

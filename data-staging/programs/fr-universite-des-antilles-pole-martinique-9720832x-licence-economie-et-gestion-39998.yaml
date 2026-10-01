@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Portail Economie et gestion - Comptabilité, Contrôle, Audit / Management des organisations / Monnaie, banque, finance, assurance / Diagnostic et ingénierie territoriale, Université des Antilles - Pôle Martinique (Schoelcher). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Portail Economie et gestion - Comptabilité, Contrôle, Audit / Management des organisations / Monnaie, banque, finance, assurance / Diagnostic et ingénierie territoriale, Université des Antilles - Pôle Martinique (Schoelcher). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail Economie et gestion - Comptabilité, Contrôle, Audit / Management des organisations / Monnaie, banque, finance, assurance / Diagnostic et ingénierie territoriale, Université des Antilles - Pôle Martinique (Schoelcher). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39998&typeBac=0&originePc=0
 durationYears:
   value: null

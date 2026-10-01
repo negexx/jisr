@@ -9,6 +9,12 @@ summary:
   fr:
     text: Journalistiek (Journalism), Hogeschool Utrecht (Utrecht). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Journalistiek (Journalism), Hogeschool Utrecht (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Journalistiek (Journalism), Hogeschool Utrecht (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Leisure & Events Management (Leisure & Events Management), Hogeschool Inholland (Amsterdam). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Leisure & Events Management (Leisure & Events Management), Hogeschool Inholland (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Leisure & Events Management (Leisure & Events Management), Hogeschool Inholland (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

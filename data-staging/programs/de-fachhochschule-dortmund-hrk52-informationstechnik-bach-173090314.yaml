@@ -9,6 +9,12 @@ summary:
   fr:
     text: Informationstechnik Bachelor, Fachhochschule Dortmund (Dortmund). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Informationstechnik Bachelor, Fachhochschule Dortmund (Dortmund). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Informationstechnik Bachelor, Fachhochschule Dortmund (Dortmund). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

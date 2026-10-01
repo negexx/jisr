@@ -9,6 +9,12 @@ summary:
   fr:
     text: Business Information Technology (Business Information Technology), Universiteit Twente (Enschede). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Business Information Technology (Business Information Technology), Universiteit Twente (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Business Information Technology (Business Information Technology), Universiteit Twente (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

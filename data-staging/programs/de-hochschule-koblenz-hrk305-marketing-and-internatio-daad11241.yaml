@@ -9,6 +9,12 @@ summary:
   fr:
     text: Marketing and International Business, Hochschule Koblenz (Koblenz). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Marketing and International Business, Hochschule Koblenz (Koblenz). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Marketing and International Business, Hochschule Koblenz (Koblenz). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3

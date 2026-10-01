@@ -9,6 +9,12 @@ summary:
   fr:
     text: Nachhaltigkeitsmanagement in der Raumentwicklung Bachelor, Hochschule für Forstwirtschaft Rottenburg (Rottenburg). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Nachhaltigkeitsmanagement in der Raumentwicklung Bachelor, Hochschule für Forstwirtschaft Rottenburg (Rottenburg). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Nachhaltigkeitsmanagement in der Raumentwicklung Bachelor, Hochschule für Forstwirtschaft Rottenburg (Rottenburg). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

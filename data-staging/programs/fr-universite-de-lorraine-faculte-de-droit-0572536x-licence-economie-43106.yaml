@@ -9,6 +9,12 @@ summary:
   fr:
     text: Double licence - Economie / Mathématiques - Mathématiques - Economie, Université de Lorraine - Faculté de Droit, Economie et Administration - Site de Metz (57) (Metz). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Double licence - Economie / Mathématiques - Mathématiques - Economie, Université de Lorraine - Faculté de Droit, Economie et Administration - Site de Metz (57) (Metz). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Double licence - Economie / Mathématiques - Mathématiques - Economie, Université de Lorraine - Faculté de Droit, Economie et Administration - Site de Metz (57) (Metz). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43106&typeBac=0&originePc=0
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Business Studies, Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth (Wilhelmshaven). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: International Business Studies, Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth (Wilhelmshaven). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business Studies, Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth (Wilhelmshaven). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

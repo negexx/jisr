@@ -9,6 +9,12 @@ summary:
   fr:
     text: Energy Systems and Renewable Energies Bachelor, Technische Hochschule Ingolstadt (Ingolstadt). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Energy Systems and Renewable Energies Bachelor, Technische Hochschule Ingolstadt (Ingolstadt). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Energy Systems and Renewable Energies Bachelor, Technische Hochschule Ingolstadt (Ingolstadt). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

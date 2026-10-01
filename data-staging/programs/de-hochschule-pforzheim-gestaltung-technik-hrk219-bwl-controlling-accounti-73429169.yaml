@@ -9,6 +9,12 @@ summary:
   fr:
     text: BWL/Controlling, Accounting- und Finanzmanagement Bachelor, Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht (Pforzheim). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: BWL/Controlling, Accounting- und Finanzmanagement Bachelor, Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht (Pforzheim). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: BWL/Controlling, Accounting- und Finanzmanagement Bachelor, Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht (Pforzheim). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

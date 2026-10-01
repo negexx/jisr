@@ -9,6 +9,12 @@ summary:
   fr:
     text: Mechatronik Bachelor of Science, Gottfried Wilhelm Leibniz Universität Hannover (Hannover). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Mechatronik Bachelor of Science, Gottfried Wilhelm Leibniz Universität Hannover (Hannover). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Mechatronik Bachelor of Science, Gottfried Wilhelm Leibniz Universität Hannover (Hannover). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

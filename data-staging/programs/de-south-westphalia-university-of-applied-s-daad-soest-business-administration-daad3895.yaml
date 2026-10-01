@@ -9,6 +9,12 @@ summary:
   fr:
     text: Business Administration with Informatics, South Westphalia University of Applied Sciences (Soest). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Business Administration with Informatics, South Westphalia University of Applied Sciences (Soest). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Business Administration with Informatics, South Westphalia University of Applied Sciences (Soest). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

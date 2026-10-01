@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Génie chimique génie des procédés, I.U.T de Perpignan (Site de Narbonne) (Narbonne). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Génie chimique génie des procédés, I.U.T de Perpignan (Site de Narbonne) (Narbonne). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie chimique génie des procédés, I.U.T de Perpignan (Site de Narbonne) (Narbonne). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2471&typeBac=0&originePc=0
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: ICT (Information & Communication Technology), Christelijke Hogeschool Windesheim (Zwolle). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: ICT (Information & Communication Technology), Christelijke Hogeschool Windesheim (Zwolle). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: ICT (Information & Communication Technology), Christelijke Hogeschool Windesheim (Zwolle). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

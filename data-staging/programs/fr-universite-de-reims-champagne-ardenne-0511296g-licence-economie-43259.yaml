@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Portail Economie - Economie - Gestion, Université de Reims Champagne-Ardenne (Reims). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Portail Economie - Economie - Gestion, Université de Reims Champagne-Ardenne (Reims). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail Economie - Economie - Gestion, Université de Reims Champagne-Ardenne (Reims). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43259&typeBac=0&originePc=0
 durationYears:
   value: null

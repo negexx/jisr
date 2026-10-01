@@ -65,7 +65,11 @@
       },
       {
         "kind": "manual_check",
-        "note": "Le diplôme étranger doit être reconnu comme équivalent à un havo, vwo ou mbo niveau 4 néerlandais : s'inscrire via Studielink puis envoyer les documents demandés.",
+        "note": {
+          "fr": "Le diplôme étranger doit être reconnu comme équivalent à un havo, vwo ou mbo niveau 4 néerlandais : s'inscrire via Studielink puis envoyer les documents demandés.",
+          "en": "Your foreign diploma must be recognised as equivalent to a Dutch havo, vwo or mbo level 4: register via Studielink, then send the requested documents.",
+          "ar": "يجب الاعتراف بشهادتكم الأجنبية كمعادلة لـ havo أو vwo أو mbo المستوى 4 الهولندي: سجّلوا عبر Studielink ثم أرسلوا الوثائق المطلوبة."
+        },
         "evidence": [
           {
             "url": "https://www.hogeschoolrotterdam.nl/voorlichting/toelatingsvoorwaarden/toelating-met-een-buitenlands-diploma/",

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Portail ISI - Informatique et Sciences pour l'ingénieur en Electronique, Signal, Télécommunications, Réseaux, Génie Mécanique, Image et Son, Université de Brest (Brest). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Portail ISI - Informatique et Sciences pour l'ingénieur en Electronique, Signal, Télécommunications, Réseaux, Génie Mécanique, Image et Son, Université de Brest (Brest). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail ISI - Informatique et Sciences pour l'ingénieur en Electronique, Signal, Télécommunications, Réseaux, Génie Mécanique, Image et Son, Université de Brest (Brest). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35595&typeBac=0&originePc=0
 durationYears:
   value: null

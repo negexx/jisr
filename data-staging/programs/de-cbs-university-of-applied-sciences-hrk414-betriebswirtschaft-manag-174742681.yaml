@@ -9,6 +9,12 @@ summary:
   fr:
     text: Betriebswirtschaft & Management Bachelor, CBS University of Applied Sciences (Köln). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Betriebswirtschaft & Management Bachelor, CBS University of Applied Sciences (Köln). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Betriebswirtschaft & Management Bachelor, CBS University of Applied Sciences (Köln). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

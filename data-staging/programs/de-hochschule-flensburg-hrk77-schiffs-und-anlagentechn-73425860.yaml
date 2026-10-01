@@ -9,6 +9,12 @@ summary:
   fr:
     text: Schiffs- und Anlagentechnik - SBT Bachelor of Engineering, Hochschule Flensburg (Flensburg). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Schiffs- und Anlagentechnik - SBT Bachelor of Engineering, Hochschule Flensburg (Flensburg). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Schiffs- und Anlagentechnik - SBT Bachelor of Engineering, Hochschule Flensburg (Flensburg). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

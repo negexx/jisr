@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Business Studies (BSc), Friedrich-Alexander-Universität Erlangen-Nürnberg (Nürnberg). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: International Business Studies (BSc), Friedrich-Alexander-Universität Erlangen-Nürnberg (Nürnberg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business Studies (BSc), Friedrich-Alexander-Universität Erlangen-Nürnberg (Nürnberg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3

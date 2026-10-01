@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Sciences et technologies - Parcours Licence Sciences et Technologies (Portail Sciences), INSSET de Saint-Quentin (Saint-Quentin). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Sciences et technologies - Parcours Licence Sciences et Technologies (Portail Sciences), INSSET de Saint-Quentin (Saint-Quentin). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Sciences et technologies - Parcours Licence Sciences et Technologies (Portail Sciences), INSSET de Saint-Quentin (Saint-Quentin). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2075&typeBac=0&originePc=0
 durationYears:
   value: null

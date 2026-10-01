@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Informatique, Université de Perpignan Via Domitia (Perpignan). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Informatique, Université de Perpignan Via Domitia (Perpignan). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Informatique, Université de Perpignan Via Domitia (Perpignan). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7883&typeBac=0&originePc=0
 durationYears:
   value: null

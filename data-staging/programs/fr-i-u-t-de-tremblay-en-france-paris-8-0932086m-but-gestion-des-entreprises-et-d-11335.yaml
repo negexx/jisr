@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Gestion des entreprises et des administrations, I.U.T de Tremblay-en-France - Paris 8 (Tremblay-en-France). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Gestion des entreprises et des administrations, I.U.T de Tremblay-en-France - Paris 8 (Tremblay-en-France). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Gestion des entreprises et des administrations, I.U.T de Tremblay-en-France - Paris 8 (Tremblay-en-France). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11335&typeBac=0&originePc=0
 durationYears:
   value: null

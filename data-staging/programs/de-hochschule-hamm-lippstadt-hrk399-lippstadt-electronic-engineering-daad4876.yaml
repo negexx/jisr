@@ -9,6 +9,12 @@ summary:
   fr:
     text: Electronic Engineering, Hochschule Hamm-Lippstadt (Lippstadt). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Electronic Engineering, Hochschule Hamm-Lippstadt (Lippstadt). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Electronic Engineering, Hochschule Hamm-Lippstadt (Lippstadt). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

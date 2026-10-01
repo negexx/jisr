@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Génie électrique et informatique industrielle, I.U.T. Nantes (Carquefou). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Génie électrique et informatique industrielle, I.U.T. Nantes (Carquefou). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie électrique et informatique industrielle, I.U.T. Nantes (Carquefou). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5479&typeBac=0&originePc=0
 durationYears:
   value: null

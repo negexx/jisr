@@ -65,7 +65,11 @@
       },
       {
         "kind": "manual_check",
-        "note": "Titre non-UE : faire reconnaître les documents d'accès avant de candidater (via le portail de l'université ou le Studienkolleg Konstanz, 4 à 5 semaines).",
+        "note": {
+          "fr": "Titre non-UE : faire reconnaître les documents d'accès avant de candidater (via le portail de l'université ou le Studienkolleg Konstanz, 4 à 5 semaines).",
+          "en": "Non-EU qualification: have your entrance documents recognised before applying (via the university's portal or Studienkolleg Konstanz, 4–5 weeks).",
+          "ar": "شهادة من خارج الاتحاد الأوروبي: يجب الاعتراف بوثائق القبول قبل التقدّم (عبر بوابة الجامعة أو Studienkolleg Konstanz، من 4 إلى 5 أسابيع)."
+        },
         "evidence": [
           {
             "url": "https://businesspf.hs-pforzheim.de/en/studies/bachelors_programs/bba_international_marketing",
@@ -75,7 +79,11 @@
       },
       {
         "kind": "manual_check",
-        "note": "Candidats non-UE : envoyer les documents d'accès à l'enseignement supérieur avant le 31 mai (date limite supplémentaire, avant le 15 juillet).",
+        "note": {
+          "fr": "Candidats non-UE : envoyer les documents d'accès à l'enseignement supérieur avant le 31 mai (date limite supplémentaire, avant le 15 juillet).",
+          "en": "Non-EU applicants: send your higher-education entrance documents before 31 May (an additional deadline, ahead of 15 July).",
+          "ar": "المتقدمون من خارج الاتحاد الأوروبي: أرسلوا وثائق الأهلية للتعليم العالي قبل 31 ماي (موعد إضافي يسبق 15 يوليوز)."
+        },
         "evidence": [
           {
             "url": "https://businesspf.hs-pforzheim.de/en/studies/bachelors_programs/bba_international_marketing",

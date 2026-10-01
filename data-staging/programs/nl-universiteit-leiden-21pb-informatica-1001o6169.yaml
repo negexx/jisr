@@ -9,6 +9,12 @@ summary:
   fr:
     text: Informatica (Computer Science), Universiteit Leiden (Leiden). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Informatica (Computer Science), Universiteit Leiden (Leiden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Informatica (Computer Science), Universiteit Leiden (Leiden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

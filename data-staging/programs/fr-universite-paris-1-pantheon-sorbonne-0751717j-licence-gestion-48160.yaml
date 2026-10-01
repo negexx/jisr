@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Double diplôme - Licence Gestion - Collège de Management de la Sorbonne, Université Paris 1 Panthéon Sorbonne (Paris). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Double diplôme - Licence Gestion - Collège de Management de la Sorbonne, Université Paris 1 Panthéon Sorbonne (Paris). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Double diplôme - Licence Gestion - Collège de Management de la Sorbonne, Université Paris 1 Panthéon Sorbonne (Paris). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48160&typeBac=0&originePc=0
 durationYears:
   value: null

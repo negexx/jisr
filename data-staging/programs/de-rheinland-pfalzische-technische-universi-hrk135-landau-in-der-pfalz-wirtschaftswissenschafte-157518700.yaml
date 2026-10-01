@@ -9,6 +9,12 @@ summary:
   fr:
     text: Wirtschaftswissenschaften Bachelor, Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau (Landau in der Pfalz). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Wirtschaftswissenschaften Bachelor, Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau (Landau in der Pfalz). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Wirtschaftswissenschaften Bachelor, Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau (Landau in der Pfalz). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

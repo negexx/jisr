@@ -9,6 +9,12 @@ summary:
   fr:
     text: Information Technology - Network Engineering & Cyber Security (B.Sc.) Bachelor, Mediadesign Hochschule für Design und Informatik (Berlin). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Information Technology - Network Engineering & Cyber Security (B.Sc.) Bachelor, Mediadesign Hochschule für Design und Informatik (Berlin). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Information Technology - Network Engineering & Cyber Security (B.Sc.) Bachelor, Mediadesign Hochschule für Design und Informatik (Berlin). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

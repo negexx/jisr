@@ -9,6 +9,12 @@ summary:
   fr:
     text: Bouwkunde (Architecture and Construction Engineering), De Haagse Hogeschool ('s-Gravenhage). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Bouwkunde (Architecture and Construction Engineering), De Haagse Hogeschool ('s-Gravenhage). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bouwkunde (Architecture and Construction Engineering), De Haagse Hogeschool ('s-Gravenhage). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

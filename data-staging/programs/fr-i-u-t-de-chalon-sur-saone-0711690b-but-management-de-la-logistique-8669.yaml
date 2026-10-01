@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Management de la Logistique et des Transports, I.U.T de Chalon-Sur-Saône (Chalon-sur-Saône). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Management de la Logistique et des Transports, I.U.T de Chalon-Sur-Saône (Chalon-sur-Saône). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Management de la Logistique et des Transports, I.U.T de Chalon-Sur-Saône (Chalon-sur-Saône). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8669&typeBac=0&originePc=0
 durationYears:
   value: null

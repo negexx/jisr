@@ -9,6 +9,12 @@ summary:
   fr:
     text: Comparative and European Law Bachelor of Laws, Carl von Ossietzky Universität Oldenburg (Oldenburg). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Comparative and European Law Bachelor of Laws, Carl von Ossietzky Universität Oldenburg (Oldenburg). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Comparative and European Law Bachelor of Laws, Carl von Ossietzky Universität Oldenburg (Oldenburg). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

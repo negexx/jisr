@@ -9,6 +9,12 @@ summary:
   fr:
     text: Bauen im Bestand Bachelor, FH Münster - University of Applied Sciences (Münster). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Bauen im Bestand Bachelor, FH Münster - University of Applied Sciences (Münster). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Bauen im Bestand Bachelor, FH Münster - University of Applied Sciences (Münster). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Data Science (joint degree) (Data Science (joint degree)), Technische Universiteit Eindhoven (Eindhoven). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Data Science (joint degree) (Data Science (joint degree)), Technische Universiteit Eindhoven (Eindhoven). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Data Science (joint degree) (Data Science (joint degree)), Technische Universiteit Eindhoven (Eindhoven). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Génie chimique génie des procédés, IUT Aix-Marseille - Site de Marseille St Jérôme (Marseille). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Génie chimique génie des procédés, IUT Aix-Marseille - Site de Marseille St Jérôme (Marseille). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie chimique génie des procédés, IUT Aix-Marseille - Site de Marseille St Jérôme (Marseille). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2714&typeBac=0&originePc=0
 durationYears:
   value: null

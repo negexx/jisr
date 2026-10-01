@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Mathématiques et informatique appliquées aux sciences humaines et sociales, Université de La Réunion - Saint Denis (Saint-Denis). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Mathématiques et informatique appliquées aux sciences humaines et sociales, Université de La Réunion - Saint Denis (Saint-Denis). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Mathématiques et informatique appliquées aux sciences humaines et sociales, Université de La Réunion - Saint Denis (Saint-Denis). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=26392&typeBac=0&originePc=0
 durationYears:
   value: null

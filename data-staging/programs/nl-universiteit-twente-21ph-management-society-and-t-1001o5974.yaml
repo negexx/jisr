@@ -9,6 +9,12 @@ summary:
   fr:
     text: Management, Society and Technology (Management, Society and Technology), Universiteit Twente (Enschede). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Management, Society and Technology (Management, Society and Technology), Universiteit Twente (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Management, Society and Technology (Management, Society and Technology), Universiteit Twente (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

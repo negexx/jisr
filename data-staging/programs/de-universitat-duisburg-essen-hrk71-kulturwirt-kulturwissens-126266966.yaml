@@ -9,6 +9,12 @@ summary:
   fr:
     text: "Kulturwirt/Kulturwissenschaft / Cultural Studies and Business Administration (Wirtschaft): Türkisch Bachelor of Arts, Universität Duisburg-Essen (Essen). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi."
     status: draft
+  en:
+    text: "Kulturwirt/Kulturwissenschaft / Cultural Studies and Business Administration (Wirtschaft): Türkisch Bachelor of Arts, Universität Duisburg-Essen (Essen). Programme listed in the Federal Employment Agency's Studiensuche."
+    status: draft
+  ar:
+    text: "Kulturwirt/Kulturwissenschaft / Cultural Studies and Business Administration (Wirtschaft): Türkisch Bachelor of Arts, Universität Duisburg-Essen (Essen). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف."
+    status: draft
 officialUrl: null
 durationYears:
   value: null

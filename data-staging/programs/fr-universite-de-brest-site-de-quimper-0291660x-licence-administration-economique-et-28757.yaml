@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Portail Administration économique et sociale - Administration et gestion des entreprises, Administration et gestion des territoires, Université de Brest - Site de Quimper (Quimper). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Portail Administration économique et sociale - Administration et gestion des entreprises, Administration et gestion des territoires, Université de Brest - Site de Quimper (Quimper). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail Administration économique et sociale - Administration et gestion des entreprises, Administration et gestion des territoires, Université de Brest - Site de Quimper (Quimper). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=28757&typeBac=0&originePc=0
 durationYears:
   value: null

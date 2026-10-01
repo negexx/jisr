@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Degree Programme in Ship Management — Nautical Sciences (ISMN), Hochschule Bremen (Bremen). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: International Degree Programme in Ship Management — Nautical Sciences (ISMN), Hochschule Bremen (Bremen). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Degree Programme in Ship Management — Nautical Sciences (ISMN), Hochschule Bremen (Bremen). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 4

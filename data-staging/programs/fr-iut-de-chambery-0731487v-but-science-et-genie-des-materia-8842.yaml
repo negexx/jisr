@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Science et génie des matériaux - Horaires aménagés musique ou sport, IUT de CHAMBERY (Le Bourget-du-Lac). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Science et génie des matériaux - Horaires aménagés musique ou sport, IUT de CHAMBERY (Le Bourget-du-Lac). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Science et génie des matériaux - Horaires aménagés musique ou sport, IUT de CHAMBERY (Le Bourget-du-Lac). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8842&typeBac=0&originePc=0
 durationYears:
   value: null

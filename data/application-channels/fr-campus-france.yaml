@@ -8,6 +8,12 @@ summary:
   fr:
     text: Procédure Études en France de Campus France Maroc, obligatoire pour candidater en première année de Licence ou de BUT depuis le Maroc avec le baccalauréat marocain.
     status: draft
+  en:
+    text: Campus France Morocco's Études en France procedure, mandatory for applying to a first-year Licence or BUT from Morocco with the Moroccan baccalauréat.
+    status: draft
+  ar:
+    text: مسطرة Études en France لدى كامبوس فرانس المغرب، إلزامية للتقدّم إلى السنة الأولى من الإجازة أو BUT من المغرب بالباكالوريا المغربية.
+    status: draft
 source: page
 info_kind: official
 sources:

@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Science des données, IUT de l'Université de Lille - site de Roubaix (Roubaix). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Science des données, IUT de l'Université de Lille - site de Roubaix (Roubaix). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Science des données, IUT de l'Université de Lille - site de Roubaix (Roubaix). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7128&typeBac=0&originePc=0
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Forensisch Onderzoek (Forensic Science), Saxion Hogeschool (Enschede). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Forensisch Onderzoek (Forensic Science), Saxion Hogeschool (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Forensisch Onderzoek (Forensic Science), Saxion Hogeschool (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

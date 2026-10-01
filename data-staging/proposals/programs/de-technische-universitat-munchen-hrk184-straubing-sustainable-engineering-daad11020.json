@@ -66,7 +66,11 @@
       },
       {
         "kind": "manual_check",
-        "note": "Si le diplôme de fin d'études étranger n'est pas comparable à l'Abitur, l'admission directe n'est possible qu'après le Studienkolleg et l'examen d'évaluation (Feststellungsprüfung).",
+        "note": {
+          "fr": "Si le diplôme de fin d'études étranger n'est pas comparable à l'Abitur, l'admission directe n'est possible qu'après le Studienkolleg et l'examen d'évaluation (Feststellungsprüfung).",
+          "en": "If your foreign school-leaving certificate is not comparable to the Abitur, direct admission is only possible after the Studienkolleg and the assessment exam (Feststellungsprüfung).",
+          "ar": "إذا كانت شهادتكم الأجنبية غير قابلة للمقارنة بالـ Abitur، فلا يمكن القبول المباشر إلا بعد Studienkolleg واجتياز امتحان التقييم (Feststellungsprüfung)."
+        },
         "evidence": [
           {
             "url": "https://www.tum.de/en/studies/application/application-info-portal/higher-education-entrance-qualification/international-higher-education-entrance-qualification",
@@ -76,7 +80,11 @@
       },
       {
         "kind": "manual_check",
-        "note": "Demander avant la candidature l'attestation préliminaire (VPD) à uni-assist, qui vérifie si le diplôme donne accès général ou limité à certaines matières.",
+        "note": {
+          "fr": "Demander avant la candidature l'attestation préliminaire (VPD) à uni-assist, qui vérifie si le diplôme donne accès général ou limité à certaines matières.",
+          "en": "Before applying, request the preliminary review certificate (VPD) from uni-assist, which checks whether your diploma gives general or subject-restricted access.",
+          "ar": "اطلبوا قبل التقدّم شهادة المراجعة الأولية (VPD) من uni-assist، التي تتحقق هل تتيح شهادتكم ولوجًا عامًا أم مقيّدًا ببعض المواد."
+        },
         "evidence": [
           {
             "url": "https://www.tum.de/en/studies/application/application-info-portal/higher-education-entrance-qualification/international-higher-education-entrance-qualification",
@@ -86,7 +94,11 @@
       },
       {
         "kind": "manual_check",
-        "note": "Participation obligatoire au test d'aptitude en ligne (Aptitude Recommendation, environ 20 minutes) ; le résultat n'influence pas l'admission.",
+        "note": {
+          "fr": "Participation obligatoire au test d'aptitude en ligne (Aptitude Recommendation, environ 20 minutes) ; le résultat n'influence pas l'admission.",
+          "en": "Mandatory online aptitude test (Aptitude Recommendation, about 20 minutes); the result does not affect admission.",
+          "ar": "اختبار الكفاءة عبر الإنترنت إلزامي (Aptitude Recommendation، حوالي 20 دقيقة)؛ ولا تؤثر نتيجته على القبول."
+        },
         "evidence": [
           {
             "url": "https://www.tum.de/en/studies/degree-programs/detail/sustainable-engineering-for-materials-and-processes-bachelor-of-science-bsc",

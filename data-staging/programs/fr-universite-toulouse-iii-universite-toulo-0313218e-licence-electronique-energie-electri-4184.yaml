@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Portail Electronique, énergie électrique, automatique, Université Toulouse III - Université Toulouse (Toulouse). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Portail Electronique, énergie électrique, automatique, Université Toulouse III - Université Toulouse (Toulouse). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail Electronique, énergie électrique, automatique, Université Toulouse III - Université Toulouse (Toulouse). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4184&typeBac=0&originePc=0
 durationYears:
   value: null

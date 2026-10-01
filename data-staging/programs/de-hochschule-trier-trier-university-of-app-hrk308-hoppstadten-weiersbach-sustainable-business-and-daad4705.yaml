@@ -9,6 +9,12 @@ summary:
   fr:
     text: Sustainable Business and Technology, Hochschule Trier - Trier University of Applied Sciences (Hoppstädten-Weiersbach). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Sustainable Business and Technology, Hochschule Trier - Trier University of Applied Sciences (Hoppstädten-Weiersbach). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Sustainable Business and Technology, Hochschule Trier - Trier University of Applied Sciences (Hoppstädten-Weiersbach). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3

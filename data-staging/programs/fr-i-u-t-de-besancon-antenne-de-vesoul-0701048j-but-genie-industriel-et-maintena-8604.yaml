@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Génie industriel et maintenance, I.U.T de Besançon - Antenne de Vesoul (Vesoul). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Génie industriel et maintenance, I.U.T de Besançon - Antenne de Vesoul (Vesoul). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie industriel et maintenance, I.U.T de Besançon - Antenne de Vesoul (Vesoul). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8604&typeBac=0&originePc=0
 durationYears:
   value: null

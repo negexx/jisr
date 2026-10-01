@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Génie électrique et informatique industrielle, I.U.T d'Aix-Marseille - Site de Salon-De-Provence (Salon-de-Provence). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Génie électrique et informatique industrielle, I.U.T d'Aix-Marseille - Site de Salon-De-Provence (Salon-de-Provence). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie électrique et informatique industrielle, I.U.T d'Aix-Marseille - Site de Salon-De-Provence (Salon-de-Provence). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2803&typeBac=0&originePc=0
 durationYears:
   value: null

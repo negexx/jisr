@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Gestion, Université Paris 1 Panthéon Sorbonne (Paris). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Gestion, Université Paris 1 Panthéon Sorbonne (Paris). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Gestion, Université Paris 1 Panthéon Sorbonne (Paris). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9214&typeBac=0&originePc=0
 durationYears:
   value: null

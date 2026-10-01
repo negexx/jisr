@@ -9,6 +9,12 @@ summary:
   fr:
     text: Ingenieurinformatik Bachelor, Universität Augsburg (Augsburg). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Ingenieurinformatik Bachelor, Universität Augsburg (Augsburg). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Ingenieurinformatik Bachelor, Universität Augsburg (Augsburg). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Réseaux et télécommunications, I.U.T de Valence (Valence). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Réseaux et télécommunications, I.U.T de Valence (Valence). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Réseaux et télécommunications, I.U.T de Valence (Valence). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3647&typeBac=0&originePc=0
 durationYears:
   value: null

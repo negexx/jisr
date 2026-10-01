@@ -9,6 +9,12 @@ summary:
   fr:
     text: Organisatie- en Managementwetenschappen (Organization and Management Studies), Tilburg University (Tilburg). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Organisatie- en Managementwetenschappen (Organization and Management Studies), Tilburg University (Tilburg). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Organisatie- en Managementwetenschappen (Organization and Management Studies), Tilburg University (Tilburg). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

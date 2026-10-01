@@ -9,6 +9,12 @@ summary:
   fr:
     text: Internationale Betriebswirtschaft und Management Bachelor, Hochschule Osnabrück (Osnabrück). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Internationale Betriebswirtschaft und Management Bachelor, Hochschule Osnabrück (Osnabrück). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Internationale Betriebswirtschaft und Management Bachelor, Hochschule Osnabrück (Osnabrück). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

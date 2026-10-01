@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Sciences pour l'ingénieur - Parcours Matériaux et Mécanique, EiSINe - Charleville-Mézières (Charleville-Mézières). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Sciences pour l'ingénieur - Parcours Matériaux et Mécanique, EiSINe - Charleville-Mézières (Charleville-Mézières). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Sciences pour l'ingénieur - Parcours Matériaux et Mécanique, EiSINe - Charleville-Mézières (Charleville-Mézières). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=44611&typeBac=0&originePc=0
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Civil Engineering (Civil Engineering), Universiteit Twente (Enschede). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Civil Engineering (Civil Engineering), Universiteit Twente (Enschede). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Civil Engineering (Civil Engineering), Universiteit Twente (Enschede). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

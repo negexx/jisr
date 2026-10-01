@@ -9,6 +9,12 @@ summary:
   fr:
     text: Computer Science (Computer Science), Vrije Universiteit Amsterdam (Amsterdam). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Computer Science (Computer Science), Vrije Universiteit Amsterdam (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Computer Science (Computer Science), Vrije Universiteit Amsterdam (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Elektrotechniek (Electrical and Electronic Engineering), De Haagse Hogeschool (Delft). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Elektrotechniek (Electrical and Electronic Engineering), De Haagse Hogeschool (Delft). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Elektrotechniek (Electrical and Electronic Engineering), De Haagse Hogeschool (Delft). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

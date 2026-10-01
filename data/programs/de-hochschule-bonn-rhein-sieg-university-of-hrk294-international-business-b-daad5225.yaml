@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Business (BSc), Hochschule Bonn-Rhein-Sieg, University of Applied Sciences (Sankt Augustin). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: International Business (BSc), Hochschule Bonn-Rhein-Sieg, University of Applied Sciences (Sankt Augustin). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business (BSc), Hochschule Bonn-Rhein-Sieg, University of Applied Sciences (Sankt Augustin). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: https://www.h-brs.de/en/wiwi/study/bachelor/international-business
 durationYears:
   value: 3.5
@@ -56,6 +62,12 @@ requirements:
         fr:
           text: "Titre d'accès (Abitur/Fachabitur) ou diplôme reconnu équivalent par les autorités compétentes : vérifier la reconnaissance du Bac marocain auprès d'uni-assist."
           status: draft
+        en:
+          text: "Entry qualification (Abitur/Fachabitur) or a diploma recognised as equivalent by the competent authorities: check recognition of the Moroccan Bac with uni-assist."
+          status: draft
+        ar:
+          text: "شهادة الأهلية للدراسة (Abitur/Fachabitur) أو شهادة معترف بمعادلتها من الجهات المختصة: تحقّق من الاعتراف بالباكالوريا المغربية لدى uni-assist."
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -63,6 +75,12 @@ requirements:
       note:
         fr:
           text: Si le diplôme de fin d'études est reconnu dans le pays d'origine mais pas en Allemagne comme HZB, un Studienkolleg est obligatoire avant le début des études.
+          status: draft
+        en:
+          text: If your school-leaving diploma is recognised in your home country but not in Germany as a university entrance qualification (HZB), a Studienkolleg is mandatory before studies start.
+          status: draft
+        ar:
+          text: إذا كانت شهادتك معترفًا بها في بلدك لكن غير معترف بها في ألمانيا كشهادة أهلية للدراسة الجامعية (HZB)، فإن الدراسة في Studienkolleg إلزامية قبل بدء الدراسة.
           status: draft
 scholarships: []
 sources:

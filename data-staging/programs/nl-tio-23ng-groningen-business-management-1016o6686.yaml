@@ -9,6 +9,12 @@ summary:
   fr:
     text: Business Management (Business Management), Tio (Groningen). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Business Management (Business Management), Tio (Groningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Business Management (Business Management), Tio (Groningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

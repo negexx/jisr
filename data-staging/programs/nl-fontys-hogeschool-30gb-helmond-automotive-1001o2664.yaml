@@ -9,6 +9,12 @@ summary:
   fr:
     text: Automotive (Automotive), Fontys Hogeschool (Helmond). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Automotive (Automotive), Fontys Hogeschool (Helmond). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Automotive (Automotive), Fontys Hogeschool (Helmond). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

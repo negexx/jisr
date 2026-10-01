@@ -9,6 +9,12 @@ summary:
   fr:
     text: Verwaltungsinformatik Bachelor of Science, Universität der Bundeswehr München (Neubiberg). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Verwaltungsinformatik Bachelor of Science, Universität der Bundeswehr München (Neubiberg). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Verwaltungsinformatik Bachelor of Science, Universität der Bundeswehr München (Neubiberg). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

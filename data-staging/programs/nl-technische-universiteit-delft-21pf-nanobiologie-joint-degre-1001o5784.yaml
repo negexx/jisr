@@ -9,6 +9,12 @@ summary:
   fr:
     text: Nanobiologie (joint degree) (Nanobiology (joint degree)), Technische Universiteit Delft (Delft). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Nanobiologie (joint degree) (Nanobiology (joint degree)), Technische Universiteit Delft (Delft). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Nanobiologie (joint degree) (Nanobiology (joint degree)), Technische Universiteit Delft (Delft). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

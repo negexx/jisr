@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Sciences et technologies - Parcours Préparatoire au Professorat des Ecoles (PPPE), Université Côte d'Azur (Nice). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Sciences et technologies - Parcours Préparatoire au Professorat des Ecoles (PPPE), Université Côte d'Azur (Nice). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Sciences et technologies - Parcours Préparatoire au Professorat des Ecoles (PPPE), Université Côte d'Azur (Nice). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35949&typeBac=0&originePc=0
 durationYears:
   value: null

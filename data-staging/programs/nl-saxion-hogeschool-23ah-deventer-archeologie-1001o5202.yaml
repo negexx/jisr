@@ -9,6 +9,12 @@ summary:
   fr:
     text: Archeologie (Archaeology), Saxion Hogeschool (Deventer). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Archeologie (Archaeology), Saxion Hogeschool (Deventer). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Archeologie (Archaeology), Saxion Hogeschool (Deventer). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

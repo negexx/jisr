@@ -9,6 +9,12 @@ summary:
   fr:
     text: Governance and Public Policy - Staatswissenschaften Bachelor, Universität Passau (Passau). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Governance and Public Policy - Staatswissenschaften Bachelor, Universität Passau (Passau). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Governance and Public Policy - Staatswissenschaften Bachelor, Universität Passau (Passau). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

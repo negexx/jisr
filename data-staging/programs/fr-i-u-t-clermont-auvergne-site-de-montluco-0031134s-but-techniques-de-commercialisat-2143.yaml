@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Techniques de commercialisation, I.U.T Clermont Auvergne - site de Montluçon (Montluçon). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Techniques de commercialisation, I.U.T Clermont Auvergne - site de Montluçon (Montluçon). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Techniques de commercialisation, I.U.T Clermont Auvergne - site de Montluçon (Montluçon). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2143&typeBac=0&originePc=0
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Applied Data Science & Artificial Intelligence (Applied Data Science & Artificial Intelligence), De Haagse Hogeschool (Zoetermeer). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Applied Data Science & Artificial Intelligence (Applied Data Science & Artificial Intelligence), De Haagse Hogeschool (Zoetermeer). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Applied Data Science & Artificial Intelligence (Applied Data Science & Artificial Intelligence), De Haagse Hogeschool (Zoetermeer). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

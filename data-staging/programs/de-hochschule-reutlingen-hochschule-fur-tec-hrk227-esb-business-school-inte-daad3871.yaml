@@ -9,6 +9,12 @@ summary:
   fr:
     text: "ESB Business School: International Business (Bachelor of Science), Hochschule Reutlingen, Hochschule für Technik- Wirtschaft-Informatik-Design (Reutlingen). Programme recensé dans la base de programmes internationaux du DAAD."
     status: draft
+  en:
+    text: "ESB Business School: International Business (Bachelor of Science), Hochschule Reutlingen, Hochschule für Technik- Wirtschaft-Informatik-Design (Reutlingen). Programme listed in the DAAD international programmes database."
+    status: draft
+  ar:
+    text: "ESB Business School: International Business (Bachelor of Science), Hochschule Reutlingen, Hochschule für Technik- Wirtschaft-Informatik-Design (Reutlingen). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD."
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

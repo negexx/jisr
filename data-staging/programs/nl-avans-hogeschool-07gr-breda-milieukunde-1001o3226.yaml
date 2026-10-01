@@ -9,6 +9,12 @@ summary:
   fr:
     text: Milieukunde (Environmental Sciences), Avans Hogeschool (Breda). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Milieukunde (Environmental Sciences), Avans Hogeschool (Breda). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Milieukunde (Environmental Sciences), Avans Hogeschool (Breda). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

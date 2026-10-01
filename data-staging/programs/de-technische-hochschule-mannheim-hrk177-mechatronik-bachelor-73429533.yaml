@@ -9,6 +9,12 @@ summary:
   fr:
     text: Mechatronik Bachelor, Technische Hochschule Mannheim (Mannheim). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Mechatronik Bachelor, Technische Hochschule Mannheim (Mannheim). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Mechatronik Bachelor, Technische Hochschule Mannheim (Mannheim). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

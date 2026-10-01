@@ -1,9 +1,9 @@
 import { z } from "zod";
-
 import { classifyField } from "../fields";
 import { fetchJson } from "../http";
 import type { ReviewRow, StagedRecord } from "../staging";
 import { READ_SOURCE } from "../staging";
+import { CHANNEL_SUMMARIES, programmeSummary } from "../summaries";
 import { collapseSpaces, nameKey, normalizeCityName, slugify } from "../text";
 import type { EsrEstablishment, EsrIndex } from "./esr";
 import { ESR_REGISTER_URL, fetchEsrIndex, findParent } from "./esr";
@@ -251,15 +251,7 @@ export async function importFrance(): Promise<StagedRecord[]> {
         field: match.field,
         level: "bachelor",
         name: row.lib_for_voe_ins,
-        summary: {
-          fr: {
-            text: `${row.lib_for_voe_ins}, ${instName} (${city}). Fiche officielle Parcoursup.`.slice(
-              0,
-              400,
-            ),
-            status: "draft",
-          },
-        },
+        summary: programmeSummary(row.lib_for_voe_ins, instName, city, "parcoursup"),
         officialUrl: page,
         durationYears: unread("fiche"),
         teachingLanguages: unread("fiche"),
@@ -287,12 +279,7 @@ export async function importFrance(): Promise<StagedRecord[]> {
       kind: "national_portal",
       url: "https://www.parcoursup.gouv.fr/",
       accountRequired: null,
-      summary: {
-        fr: {
-          text: "Plateforme nationale de candidature en première année de Licence et de BUT.",
-          status: "draft",
-        },
-      },
+      summary: CHANNEL_SUMMARIES["fr-parcoursup"],
       source: "main",
       info_kind: READ_SOURCE,
       sources: { main: { url: "https://www.parcoursup.gouv.fr/", last_verified_at: null } },
@@ -322,12 +309,7 @@ export async function importFrance(): Promise<StagedRecord[]> {
       kind: "intermediary",
       url: CAMPUS_FRANCE_MA_URL,
       accountRequired: null,
-      summary: {
-        fr: {
-          text: "Procédure Études en France de Campus France Maroc, obligatoire pour candidater en première année de Licence ou de BUT depuis le Maroc avec le baccalauréat marocain.",
-          status: "draft",
-        },
-      },
+      summary: CHANNEL_SUMMARIES["fr-campus-france"],
       source: "main",
       info_kind: READ_SOURCE,
       sources: { main: { url: CAMPUS_FRANCE_MA_URL, last_verified_at: null } },

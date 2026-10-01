@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Administration économique et sociale - Entièrement en distanciel, Université de Rennes 2 (Rennes). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Administration économique et sociale - Entièrement en distanciel, Université de Rennes 2 (Rennes). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Administration économique et sociale - Entièrement en distanciel, Université de Rennes 2 (Rennes). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=26532&typeBac=0&originePc=0
 durationYears:
   value: null

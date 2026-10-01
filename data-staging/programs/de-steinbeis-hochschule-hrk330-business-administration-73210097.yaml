@@ -9,6 +9,12 @@ summary:
   fr:
     text: Business Administration Bachelor of Arts, Steinbeis Hochschule (Magdeburg). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Business Administration Bachelor of Arts, Steinbeis Hochschule (Magdeburg). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Business Administration Bachelor of Arts, Steinbeis Hochschule (Magdeburg). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

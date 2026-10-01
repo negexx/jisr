@@ -9,6 +9,12 @@ summary:
   fr:
     text: Angewandte Künstliche Intelligenz Bachelor, Hochschule Heilbronn, Technik, Wirtschaft, Informatik (Heilbronn). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Angewandte Künstliche Intelligenz Bachelor, Hochschule Heilbronn, Technik, Wirtschaft, Informatik (Heilbronn). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Angewandte Künstliche Intelligenz Bachelor, Hochschule Heilbronn, Technik, Wirtschaft, Informatik (Heilbronn). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

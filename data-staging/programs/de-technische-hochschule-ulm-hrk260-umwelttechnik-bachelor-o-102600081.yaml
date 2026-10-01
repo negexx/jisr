@@ -9,6 +9,12 @@ summary:
   fr:
     text: Umwelttechnik Bachelor of Engineering, Technische Hochschule Ulm (Ulm). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Umwelttechnik Bachelor of Engineering, Technische Hochschule Ulm (Ulm). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Umwelttechnik Bachelor of Engineering, Technische Hochschule Ulm (Ulm). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

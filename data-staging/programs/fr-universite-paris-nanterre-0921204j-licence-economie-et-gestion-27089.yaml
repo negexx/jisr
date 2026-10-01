@@ -9,6 +9,12 @@ summary:
   fr:
     text: "Licence - Economie et gestion - Parcours Cursus master en ingénierie (CMI) : Data science for social Sciences, Université Paris Nanterre (Nanterre). Fiche officielle Parcoursup."
     status: draft
+  en:
+    text: "Licence - Economie et gestion - Parcours Cursus master en ingénierie (CMI) : Data science for social Sciences, Université Paris Nanterre (Nanterre). Official Parcoursup listing."
+    status: draft
+  ar:
+    text: "Licence - Economie et gestion - Parcours Cursus master en ingénierie (CMI) : Data science for social Sciences, Université Paris Nanterre (Nanterre). البطاقة الرسمية على منصة Parcoursup."
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=27089&typeBac=0&originePc=0
 durationYears:
   value: null

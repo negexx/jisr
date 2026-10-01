@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Informatique, Nantes Université (Nantes). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Informatique, Nantes Université (Nantes). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Informatique, Nantes Université (Nantes). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=32042&typeBac=0&originePc=0
 durationYears:
   value: null

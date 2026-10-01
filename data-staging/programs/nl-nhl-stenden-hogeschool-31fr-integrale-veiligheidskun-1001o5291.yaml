@@ -9,6 +9,12 @@ summary:
   fr:
     text: Integrale Veiligheidskunde (Safety and Security Management), NHL Stenden Hogeschool (Leeuwarden). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Integrale Veiligheidskunde (Safety and Security Management), NHL Stenden Hogeschool (Leeuwarden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Integrale Veiligheidskunde (Safety and Security Management), NHL Stenden Hogeschool (Leeuwarden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

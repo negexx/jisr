@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Portail Mécanique - Mécanique / Génie civil, Université de Bretagne Sud - Site de Lorient (Lorient). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Portail Mécanique - Mécanique / Génie civil, Université de Bretagne Sud - Site de Lorient (Lorient). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail Mécanique - Mécanique / Génie civil, Université de Bretagne Sud - Site de Lorient (Lorient). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35539&typeBac=0&originePc=0
 durationYears:
   value: null

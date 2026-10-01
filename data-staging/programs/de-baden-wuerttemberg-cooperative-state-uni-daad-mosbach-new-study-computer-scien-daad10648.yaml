@@ -9,6 +9,12 @@ summary:
   fr:
     text: New Study Computer Science, Baden-Wuerttemberg Cooperative State University (Mosbach). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: New Study Computer Science, Baden-Wuerttemberg Cooperative State University (Mosbach). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: New Study Computer Science, Baden-Wuerttemberg Cooperative State University (Mosbach). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3

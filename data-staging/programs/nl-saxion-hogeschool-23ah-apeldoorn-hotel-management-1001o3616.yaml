@@ -9,6 +9,12 @@ summary:
   fr:
     text: Hotel Management (Hospitality Management), Saxion Hogeschool (Apeldoorn). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Hotel Management (Hospitality Management), Saxion Hogeschool (Apeldoorn). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Hotel Management (Hospitality Management), Saxion Hogeschool (Apeldoorn). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

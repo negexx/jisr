@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Economie, Université de Rouen Normandie - Campus Pasteur Rouen (Rouen). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Economie, Université de Rouen Normandie - Campus Pasteur Rouen (Rouen). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Economie, Université de Rouen Normandie - Campus Pasteur Rouen (Rouen). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39468&typeBac=0&originePc=0
 durationYears:
   value: null

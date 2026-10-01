@@ -9,6 +9,12 @@ summary:
   fr:
     text: Communicatie (Communication), Hogeschool Inholland (Rotterdam). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Communicatie (Communication), Hogeschool Inholland (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Communicatie (Communication), Hogeschool Inholland (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

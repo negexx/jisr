@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Double diplôme - Licence Economie et gestion - Cursus Étoile, Université Panthéon- Assas Paris2 - Antenne Melun (Melun). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Double diplôme - Licence Economie et gestion - Cursus Étoile, Université Panthéon- Assas Paris2 - Antenne Melun (Melun). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Double diplôme - Licence Economie et gestion - Cursus Étoile, Université Panthéon- Assas Paris2 - Antenne Melun (Melun). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47501&typeBac=0&originePc=0
 durationYears:
   value: null

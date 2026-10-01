@@ -9,6 +9,12 @@ summary:
   fr:
     text: Produktentwicklung / Konstruktion Bachelor, Fachhochschule Südwestfalen (Iserlohn). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Produktentwicklung / Konstruktion Bachelor, Fachhochschule Südwestfalen (Iserlohn). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Produktentwicklung / Konstruktion Bachelor, Fachhochschule Südwestfalen (Iserlohn). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

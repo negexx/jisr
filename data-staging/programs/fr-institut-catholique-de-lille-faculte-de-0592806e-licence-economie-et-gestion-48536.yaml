@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Economie et gestion - Parcours Pluridisciplinaire - Parcours Management et Humanités, Institut Catholique de Lille-Faculté de Gestion, Economie et Sciences (Lille). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Economie et gestion - Parcours Pluridisciplinaire - Parcours Management et Humanités, Institut Catholique de Lille-Faculté de Gestion, Economie et Sciences (Lille). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Economie et gestion - Parcours Pluridisciplinaire - Parcours Management et Humanités, Institut Catholique de Lille-Faculté de Gestion, Economie et Sciences (Lille). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48536&typeBac=0&originePc=0
 durationYears:
   value: null

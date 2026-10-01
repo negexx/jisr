@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Administration économique et sociale - Parcours AES, Université Savoie Mont Blanc - Chambéry (Jacob-Bellecombette). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Administration économique et sociale - Parcours AES, Université Savoie Mont Blanc - Chambéry (Jacob-Bellecombette). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Administration économique et sociale - Parcours AES, Université Savoie Mont Blanc - Chambéry (Jacob-Bellecombette). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8810&typeBac=0&originePc=0
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Mechanical Engineering (Mechanical Engineering), Universiteit Twente (Amsterdam). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Mechanical Engineering (Mechanical Engineering), Universiteit Twente (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Mechanical Engineering (Mechanical Engineering), Universiteit Twente (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

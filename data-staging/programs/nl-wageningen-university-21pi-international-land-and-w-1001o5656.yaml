@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Land and Water Management (International Land and Water Management), Wageningen University (Wageningen). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: International Land and Water Management (International Land and Water Management), Wageningen University (Wageningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Land and Water Management (International Land and Water Management), Wageningen University (Wageningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

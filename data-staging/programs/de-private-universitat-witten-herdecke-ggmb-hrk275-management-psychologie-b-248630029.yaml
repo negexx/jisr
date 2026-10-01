@@ -9,6 +9,12 @@ summary:
   fr:
     text: Management & Psychologie Bachelor, Private Universität Witten/Herdecke gGmbH (Witten). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Management & Psychologie Bachelor, Private Universität Witten/Herdecke gGmbH (Witten). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Management & Psychologie Bachelor, Private Universität Witten/Herdecke gGmbH (Witten). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

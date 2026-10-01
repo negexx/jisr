@@ -8,6 +8,12 @@ summary:
   fr:
     text: Plateforme nationale de candidature en première année de Licence et de BUT.
     status: draft
+  en:
+    text: National application platform for first-year Licence and BUT programmes.
+    status: draft
+  ar:
+    text: المنصة الوطنية للتقدّم إلى السنة الأولى من الإجازة والإجازة الجامعية في التكنولوجيا (BUT).
+    status: draft
 source: page
 info_kind: official
 sources:

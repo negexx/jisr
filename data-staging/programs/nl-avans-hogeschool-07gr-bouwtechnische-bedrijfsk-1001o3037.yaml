@@ -9,6 +9,12 @@ summary:
   fr:
     text: Bouwtechnische Bedrijfskunde (Construction Management), Avans Hogeschool (Tilburg). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Bouwtechnische Bedrijfskunde (Construction Management), Avans Hogeschool (Tilburg). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bouwtechnische Bedrijfskunde (Construction Management), Avans Hogeschool (Tilburg). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

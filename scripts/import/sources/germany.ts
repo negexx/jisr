@@ -1,6 +1,7 @@
 import { probeHttps } from "../http";
 import type { ReviewRow, StagedRecord } from "../staging";
 import { READ_SOURCE } from "../staging";
+import { programmeSummary, UNI_ASSIST_SUMMARY } from "../summaries";
 import { canonicalTown, collapseSpaces, sameTown, slugify } from "../text";
 import type { BaProgramme } from "./ba";
 import {
@@ -69,15 +70,7 @@ function programmeRecord(input: {
       field: match.field,
       level: "bachelor",
       name: p.name,
-      summary: {
-        fr: {
-          text: `${p.name}, ${instName} (${city}). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.`.slice(
-            0,
-            400,
-          ),
-          status: "draft",
-        },
-      },
+      summary: programmeSummary(p.name, instName, city, "studiensuche"),
       officialUrl: null,
       durationYears: unread("ba"),
       teachingLanguages: unread("ba"),
@@ -183,12 +176,7 @@ export function buildGermanRecords(input: {
       kind: "intermediary",
       url: "https://www.uni-assist.de/",
       accountRequired: null,
-      summary: {
-        fr: {
-          text: "Service central de candidature pour les étudiants internationaux de nombreuses universités allemandes.",
-          status: "draft",
-        },
-      },
+      summary: UNI_ASSIST_SUMMARY,
       source: "main",
       info_kind: READ_SOURCE,
       sources: { main: { url: "https://www.uni-assist.de/", last_verified_at: null } },

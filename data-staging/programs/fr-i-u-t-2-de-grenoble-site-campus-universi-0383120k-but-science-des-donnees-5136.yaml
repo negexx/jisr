@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Science des données, I.U.T. 2 de Grenoble - site campus universitaire (Saint-Martin-d'Hères). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Science des données, I.U.T. 2 de Grenoble - site campus universitaire (Saint-Martin-d'Hères). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Science des données, I.U.T. 2 de Grenoble - site campus universitaire (Saint-Martin-d'Hères). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5136&typeBac=0&originePc=0
 durationYears:
   value: null

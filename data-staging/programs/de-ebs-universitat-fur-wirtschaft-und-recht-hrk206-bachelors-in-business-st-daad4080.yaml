@@ -9,6 +9,12 @@ summary:
   fr:
     text: Bachelor's in Business Studies (BSc), EBS Universität für Wirtschaft und Recht (Oestrich-Winkel). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Bachelor's in Business Studies (BSc), EBS Universität für Wirtschaft und Recht (Oestrich-Winkel). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Bachelor's in Business Studies (BSc), EBS Universität für Wirtschaft und Recht (Oestrich-Winkel). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3

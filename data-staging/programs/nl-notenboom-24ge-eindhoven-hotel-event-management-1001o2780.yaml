@@ -9,6 +9,12 @@ summary:
   fr:
     text: Hotel & Event Management (Hotel & Event Management), Notenboom (Eindhoven). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Hotel & Event Management (Hotel & Event Management), Notenboom (Eindhoven). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Hotel & Event Management (Hotel & Event Management), Notenboom (Eindhoven). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Commerciële Economie & Ondernemerschap (Commerce Economics & Entrepreneurship), Tio (Rotterdam). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Commerciële Economie & Ondernemerschap (Commerce Economics & Entrepreneurship), Tio (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Commerciële Economie & Ondernemerschap (Commerce Economics & Entrepreneurship), Tio (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

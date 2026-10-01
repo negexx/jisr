@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Event Management, EuroCollege Hogeschool (Rotterdam). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: International Event Management, EuroCollege Hogeschool (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Event Management, EuroCollege Hogeschool (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

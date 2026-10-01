@@ -9,6 +9,12 @@ summary:
   fr:
     text: Bachelor of Science in Biomedical Engineering, Technische Universität Ilmenau (Ilmenau). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Bachelor of Science in Biomedical Engineering, Technische Universität Ilmenau (Ilmenau). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Bachelor of Science in Biomedical Engineering, Technische Universität Ilmenau (Ilmenau). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

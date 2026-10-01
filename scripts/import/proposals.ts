@@ -50,8 +50,16 @@ const RuleProposalSchema = z.discriminatedUnion("kind", [
   }),
   z.object({
     kind: z.literal("manual_check"),
-    // A short French draft of what the applicant must check; the quote is the evidence.
-    note: z.string().min(1),
+    // What the applicant must check, short. French is required; en and ar are drafts. A bare
+    // string is French only. The quote is the evidence.
+    note: z.union([
+      z.string().min(1),
+      z.object({
+        fr: z.string().min(1),
+        en: z.string().min(1).optional(),
+        ar: z.string().min(1).optional(),
+      }),
+    ]),
     evidence: z.array(EvidenceSchema).min(1),
   }),
 ]);
@@ -298,7 +306,11 @@ export function applyVerified(staged: Staged, verified: Verified, today: string)
       return {
         ...base,
         kind: "manual_check",
-        note: { fr: { text: encoded.note, status: "draft" } },
+        note: Object.fromEntries(
+          Object.entries(typeof encoded.note === "string" ? { fr: encoded.note } : encoded.note)
+            .filter(([, text]) => text !== undefined)
+            .map(([locale, text]) => [locale, { text, status: "draft" }]),
+        ),
       };
     }
     return { ...base, ...encoded };

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Medizintechnik - Klinische Technologien Bachelor of Science, Hochschule Furtwangen - Informatik, Technik, Wirtschaft, Medien, Gesundheit (Villingen-Schwenningen). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Medizintechnik - Klinische Technologien Bachelor of Science, Hochschule Furtwangen - Informatik, Technik, Wirtschaft, Medien, Gesundheit (Villingen-Schwenningen). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Medizintechnik - Klinische Technologien Bachelor of Science, Hochschule Furtwangen - Informatik, Technik, Wirtschaft, Medien, Gesundheit (Villingen-Schwenningen). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

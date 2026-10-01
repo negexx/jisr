@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Mathématiques et informatique appliquées aux sciences humaines et sociales, Université de Pau et des pays de l'Adour - Collège STEE (Pau) (Pau). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Mathématiques et informatique appliquées aux sciences humaines et sociales, Université de Pau et des pays de l'Adour - Collège STEE (Pau) (Pau). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Mathématiques et informatique appliquées aux sciences humaines et sociales, Université de Pau et des pays de l'Adour - Collège STEE (Pau) (Pau). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7746&typeBac=0&originePc=0
 durationYears:
   value: null

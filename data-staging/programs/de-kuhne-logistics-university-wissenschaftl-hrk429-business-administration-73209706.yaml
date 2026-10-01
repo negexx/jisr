@@ -9,6 +9,12 @@ summary:
   fr:
     text: Business Administration Bachelor of Science in Business Administration, Kühne Logistics University - Wissenschaftliche Hochschule für Logistik und Unternehmensführung (Hamburg). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Business Administration Bachelor of Science in Business Administration, Kühne Logistics University - Wissenschaftliche Hochschule für Logistik und Unternehmensführung (Hamburg). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Business Administration Bachelor of Science in Business Administration, Kühne Logistics University - Wissenschaftliche Hochschule für Logistik und Unternehmensführung (Hamburg). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

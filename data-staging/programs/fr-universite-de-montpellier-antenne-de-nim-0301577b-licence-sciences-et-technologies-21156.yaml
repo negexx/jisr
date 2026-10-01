@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Sciences et technologies - Parcours Pluridisciplinarité et métiers de l’enseignement, de l’éducation et de la formation, Université de Montpellier, Antenne de Nîmes (Nîmes). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Sciences et technologies - Parcours Pluridisciplinarité et métiers de l’enseignement, de l’éducation et de la formation, Université de Montpellier, Antenne de Nîmes (Nîmes). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Sciences et technologies - Parcours Pluridisciplinarité et métiers de l’enseignement, de l’éducation et de la formation, Université de Montpellier, Antenne de Nîmes (Nîmes). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=21156&typeBac=0&originePc=0
 durationYears:
   value: null

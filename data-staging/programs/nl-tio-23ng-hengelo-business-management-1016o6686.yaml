@@ -9,6 +9,12 @@ summary:
   fr:
     text: Business Management (Business Management), Tio (Hengelo). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Business Management (Business Management), Tio (Hengelo). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Business Management (Business Management), Tio (Hengelo). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

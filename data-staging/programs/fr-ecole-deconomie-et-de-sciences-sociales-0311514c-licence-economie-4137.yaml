@@ -9,6 +9,12 @@ summary:
   fr:
     text: Double licence - Economie / Droit - parcours double diplômant en Economie et en Droit, École d'économie et de sciences sociales quantitatives - Toulouse School of Economics (TSE) (Toulouse). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Double licence - Economie / Droit - parcours double diplômant en Economie et en Droit, École d'économie et de sciences sociales quantitatives - Toulouse School of Economics (TSE) (Toulouse). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Double licence - Economie / Droit - parcours double diplômant en Economie et en Droit, École d'économie et de sciences sociales quantitatives - Toulouse School of Economics (TSE) (Toulouse). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4137&typeBac=0&originePc=0
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Engineering and Management in Electrical Engineering and Information Technology, HTWG Konstanz - University of Applied Sciences (Konstanz). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Engineering and Management in Electrical Engineering and Information Technology, HTWG Konstanz - University of Applied Sciences (Konstanz). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Engineering and Management in Electrical Engineering and Information Technology, HTWG Konstanz - University of Applied Sciences (Konstanz). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

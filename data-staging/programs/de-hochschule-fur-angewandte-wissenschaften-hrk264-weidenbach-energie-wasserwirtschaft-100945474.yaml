@@ -9,6 +9,12 @@ summary:
   fr:
     text: Energie- & Wasserwirtschaft Bachelor of Engineering, Hochschule für angewandte Wissenschaften Weihenstephan-Triesdorf (Weidenbach). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Energie- & Wasserwirtschaft Bachelor of Engineering, Hochschule für angewandte Wissenschaften Weihenstephan-Triesdorf (Weidenbach). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Energie- & Wasserwirtschaft Bachelor of Engineering, Hochschule für angewandte Wissenschaften Weihenstephan-Triesdorf (Weidenbach). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

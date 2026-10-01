@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Double diplôme - Licence Mathématiques, Physique et Sciences pour l'Ingénieur - Mathématiques, Physique et Applications, Université Paris-Saclay - Campus de Versailles (Versailles). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Double diplôme - Licence Mathématiques, Physique et Sciences pour l'Ingénieur - Mathématiques, Physique et Applications, Université Paris-Saclay - Campus de Versailles (Versailles). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Double diplôme - Licence Mathématiques, Physique et Sciences pour l'Ingénieur - Mathématiques, Physique et Applications, Université Paris-Saclay - Campus de Versailles (Versailles). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=41045&typeBac=0&originePc=0
 durationYears:
   value: null

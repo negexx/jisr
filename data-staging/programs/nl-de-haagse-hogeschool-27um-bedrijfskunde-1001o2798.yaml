@@ -9,6 +9,12 @@ summary:
   fr:
     text: Bedrijfskunde (Business Administration), De Haagse Hogeschool ('s-Gravenhage). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Bedrijfskunde (Business Administration), De Haagse Hogeschool ('s-Gravenhage). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bedrijfskunde (Business Administration), De Haagse Hogeschool ('s-Gravenhage). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Data Science for Global Challenges (Data Science for Global Challenges), Wageningen University (Wageningen). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Data Science for Global Challenges (Data Science for Global Challenges), Wageningen University (Wageningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Data Science for Global Challenges (Data Science for Global Challenges), Wageningen University (Wageningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

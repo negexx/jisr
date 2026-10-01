@@ -9,6 +9,12 @@ summary:
   fr:
     text: Artificial Intelligence BSc, Friedrich-Alexander-Universität Erlangen-Nürnberg (Erlangen). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Artificial Intelligence BSc, Friedrich-Alexander-Universität Erlangen-Nürnberg (Erlangen). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Artificial Intelligence BSc, Friedrich-Alexander-Universität Erlangen-Nürnberg (Erlangen). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3

@@ -42,7 +42,11 @@
       },
       {
         "kind": "manual_check",
-        "note": "Admission sur dossier scolaire examiné par un jury : résultats du lycée (matières liées à la spécialité), appréciations, motivation. À préparer avec vos bulletins.",
+        "note": {
+          "fr": "Admission sur dossier scolaire examiné par un jury : résultats du lycée (matières liées à la spécialité), appréciations, motivation. À préparer avec vos bulletins.",
+          "en": "Admission is based on your school record, reviewed by a jury: high-school results (subjects related to the specialty), appraisals, motivation. Prepare your transcripts.",
+          "ar": "القبول على أساس الملف الدراسي الذي تدرسه لجنة: نتائج الثانوي (المواد المرتبطة بالتخصص)، التقييمات، والتحفيز. حضّروا كشوف نقطكم."
+        },
         "evidence": [
           {
             "url": "https://iut-angouleme.univ-poitiers.fr/formations/b-u-t-tc-techniques-de-commercialisation/",

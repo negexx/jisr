@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Food & Agribusiness (International Food & Agribusiness), HAS green academy ('s-Hertogenbosch). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: International Food & Agribusiness (International Food & Agribusiness), HAS green academy ('s-Hertogenbosch). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Food & Agribusiness (International Food & Agribusiness), HAS green academy ('s-Hertogenbosch). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

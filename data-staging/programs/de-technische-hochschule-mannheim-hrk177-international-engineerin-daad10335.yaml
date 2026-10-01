@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Engineering (BSc), Technische Hochschule Mannheim (Mannheim). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: International Engineering (BSc), Technische Hochschule Mannheim (Mannheim). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Engineering (BSc), Technische Hochschule Mannheim (Mannheim). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

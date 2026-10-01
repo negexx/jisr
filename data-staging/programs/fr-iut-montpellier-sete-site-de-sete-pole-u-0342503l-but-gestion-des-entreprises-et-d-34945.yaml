@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Gestion des entreprises et des administrations, IUT Montpellier-Sète - site de Sète - Pôle Universitaire Michèle WEIL (Sète). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Gestion des entreprises et des administrations, IUT Montpellier-Sète - site de Sète - Pôle Universitaire Michèle WEIL (Sète). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Gestion des entreprises et des administrations, IUT Montpellier-Sète - site de Sète - Pôle Universitaire Michèle WEIL (Sète). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=34945&typeBac=0&originePc=0
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Wirtschaftsinformatik Bachelor, Hochschule Bonn-Rhein-Sieg, University of Applied Sciences (Sankt Augustin). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Wirtschaftsinformatik Bachelor, Hochschule Bonn-Rhein-Sieg, University of Applied Sciences (Sankt Augustin). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Wirtschaftsinformatik Bachelor, Hochschule Bonn-Rhein-Sieg, University of Applied Sciences (Sankt Augustin). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

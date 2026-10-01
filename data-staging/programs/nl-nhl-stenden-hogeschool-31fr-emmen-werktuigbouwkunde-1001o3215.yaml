@@ -9,6 +9,12 @@ summary:
   fr:
     text: Werktuigbouwkunde (Mechanical Engineering), NHL Stenden Hogeschool (Emmen). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Werktuigbouwkunde (Mechanical Engineering), NHL Stenden Hogeschool (Emmen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Werktuigbouwkunde (Mechanical Engineering), NHL Stenden Hogeschool (Emmen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

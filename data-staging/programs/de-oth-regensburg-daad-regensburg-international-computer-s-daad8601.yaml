@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Computer Science BSc, OTH Regensburg (Regensburg). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: International Computer Science BSc, OTH Regensburg (Regensburg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Computer Science BSc, OTH Regensburg (Regensburg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

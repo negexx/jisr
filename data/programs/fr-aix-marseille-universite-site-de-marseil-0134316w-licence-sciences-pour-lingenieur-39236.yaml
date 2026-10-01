@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Sciences pour l'ingénieur - Portail Marie Curie, Aix-Marseille Université - Site de Marseille Saint-Jérôme (Marseille). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Sciences pour l'ingénieur - Portail Marie Curie, Aix-Marseille Université - Site de Marseille Saint-Jérôme (Marseille). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Sciences pour l'ingénieur - Portail Marie Curie, Aix-Marseille Université - Site de Marseille Saint-Jérôme (Marseille). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39236&typeBac=0&originePc=0
 durationYears:
   value: 3

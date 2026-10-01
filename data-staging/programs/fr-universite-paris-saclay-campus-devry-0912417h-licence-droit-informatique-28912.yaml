@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Double diplôme - Licence Droit, Informatique - Parcours Licence Double-Diplôme Droit, Informatique, Université Paris-Saclay, Campus d’Evry (Evry-Courcouronnes). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Double diplôme - Licence Droit, Informatique - Parcours Licence Double-Diplôme Droit, Informatique, Université Paris-Saclay, Campus d’Evry (Evry-Courcouronnes). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Double diplôme - Licence Droit, Informatique - Parcours Licence Double-Diplôme Droit, Informatique, Université Paris-Saclay, Campus d’Evry (Evry-Courcouronnes). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=28912&typeBac=0&originePc=0
 durationYears:
   value: null

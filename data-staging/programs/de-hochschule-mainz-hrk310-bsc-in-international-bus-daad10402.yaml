@@ -9,6 +9,12 @@ summary:
   fr:
     text: BSc in International Business, Hochschule Mainz (Mainz). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: BSc in International Business, Hochschule Mainz (Mainz). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: BSc in International Business, Hochschule Mainz (Mainz). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3

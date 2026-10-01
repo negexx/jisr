@@ -9,6 +9,12 @@ summary:
   fr:
     text: Klimafreundliche elektrische Energie und Mobilität Bachelor, Helmut-Schmidt-Universität/Universität der Bundeswehr Hamburg (Hamburg). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Klimafreundliche elektrische Energie und Mobilität Bachelor, Helmut-Schmidt-Universität/Universität der Bundeswehr Hamburg (Hamburg). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Klimafreundliche elektrische Energie und Mobilität Bachelor, Helmut-Schmidt-Universität/Universität der Bundeswehr Hamburg (Hamburg). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

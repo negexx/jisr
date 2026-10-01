@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Gestion - Parcours International Management, Université de Tours (Tours). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Gestion - Parcours International Management, Université de Tours (Tours). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Gestion - Parcours International Management, Université de Tours (Tours). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=23710&typeBac=0&originePc=0
 durationYears:
   value: null

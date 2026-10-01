@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Science des données, I.U.T Clermont Auvergne - site d'Aurillac (Aurillac). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Science des données, I.U.T Clermont Auvergne - site d'Aurillac (Aurillac). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Science des données, I.U.T Clermont Auvergne - site d'Aurillac (Aurillac). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://iut.uca.fr/formations/but-science-des-donnees-aurillac
 durationYears:
   value: 3

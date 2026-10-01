@@ -53,7 +53,11 @@
       },
       {
         "kind": "manual_check",
-        "note": "Titre de fin d'études étranger : traduction certifiée et attestation préliminaire (VPD) délivrée par uni-assist ou l'office bavarois de reconnaissance des certificats.",
+        "note": {
+          "fr": "Titre de fin d'études étranger : traduction certifiée et attestation préliminaire (VPD) délivrée par uni-assist ou l'office bavarois de reconnaissance des certificats.",
+          "en": "Foreign school-leaving certificate: certified translation and a preliminary review certificate (VPD) from uni-assist or the Bavarian certificate recognition office.",
+          "ar": "شهادة نهاية الدراسة الأجنبية: ترجمة معتمدة وشهادة مراجعة أولية (VPD) من uni-assist أو من المكتب البافاري للاعتراف بالشهادات."
+        },
         "evidence": [
           {
             "url": "https://www.tha.de/en/university/faculties/computer-science/study-program/international-international-information-systems-bsc/",
@@ -63,7 +67,11 @@
       },
       {
         "kind": "manual_check",
-        "note": "Procédure d'aptitude (test en ligne, CV en tableau, court essai de motivation) à passer lors de la candidature sur HISinOne.",
+        "note": {
+          "fr": "Procédure d'aptitude (test en ligne, CV en tableau, court essai de motivation) à passer lors de la candidature sur HISinOne.",
+          "en": "Aptitude procedure (online test, tabular CV, short motivation essay) to complete during your application on HISinOne.",
+          "ar": "إجراء تقييم الكفاءة (اختبار عبر الإنترنت، سيرة ذاتية في جدول، مقال تحفيزي قصير) أثناء التقدّم عبر HISinOne."
+        },
         "evidence": [
           {
             "url": "https://www.tha.de/en/university/faculties/computer-science/study-program/international-international-information-systems-bsc/",

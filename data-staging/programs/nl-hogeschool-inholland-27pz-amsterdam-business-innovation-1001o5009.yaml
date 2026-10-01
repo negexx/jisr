@@ -9,6 +9,12 @@ summary:
   fr:
     text: Business Innovation (Business Innovation), Hogeschool Inholland (Amsterdam). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Business Innovation (Business Innovation), Hogeschool Inholland (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Business Innovation (Business Innovation), Hogeschool Inholland (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

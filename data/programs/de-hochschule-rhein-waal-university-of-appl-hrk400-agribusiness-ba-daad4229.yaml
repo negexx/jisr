@@ -9,6 +9,12 @@ summary:
   fr:
     text: Agribusiness BA, Hochschule Rhein-Waal - University of Applied Sciences (Kleve). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Agribusiness BA, Hochschule Rhein-Waal - University of Applied Sciences (Kleve). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Agribusiness BA, Hochschule Rhein-Waal - University of Applied Sciences (Kleve). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/agribusiness-ba
 durationYears:
   value: 3.5
@@ -56,6 +62,12 @@ requirements:
         fr:
           text: "Titre obtenu hors d'Allemagne : candidature via uni-assist, qui vérifie si le diplôme donne accès aux études en Allemagne."
           status: draft
+        en:
+          text: "Qualification obtained outside Germany: apply via uni-assist, which checks whether your diploma gives access to studies in Germany."
+          status: draft
+        ar:
+          text: "شهادة حصلتم عليها خارج ألمانيا: التقدّم عبر uni-assist الذي يتحقق من أن شهادتكم تتيح الدراسة في ألمانيا."
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -63,6 +75,12 @@ requirements:
       note:
         fr:
           text: Les diplômes internationaux doivent d'abord être vérifiés avant l'admission, même si la filière est sans restriction d'accès (pas de numerus clausus).
+          status: draft
+        en:
+          text: International diplomas must be verified before admission, even though the programme has no access restriction (no numerus clausus).
+          status: draft
+        ar:
+          text: يجب التحقق من الشهادات الدولية قبل القبول، حتى لو لم يكن التخصص مقيّد الولوج (بدون numerus clausus).
           status: draft
 scholarships: []
 sources:

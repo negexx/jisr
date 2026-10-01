@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Métiers du multimédia et de l'internet, I.U.T de Dijon (Dijon). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Métiers du multimédia et de l'internet, I.U.T de Dijon (Dijon). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Métiers du multimédia et de l'internet, I.U.T de Dijon (Dijon). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3240&typeBac=0&originePc=0
 durationYears:
   value: null

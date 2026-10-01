@@ -9,6 +9,12 @@ summary:
   fr:
     text: Built Environment (Built Environment), Zuyd Hogeschool (Heerlen). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Built Environment (Built Environment), Zuyd Hogeschool (Heerlen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Built Environment (Built Environment), Zuyd Hogeschool (Heerlen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

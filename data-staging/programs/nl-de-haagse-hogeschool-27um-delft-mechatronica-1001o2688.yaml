@@ -9,6 +9,12 @@ summary:
   fr:
     text: Mechatronica (Mechatronics), De Haagse Hogeschool (Delft). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Mechatronica (Mechatronics), De Haagse Hogeschool (Delft). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Mechatronica (Mechatronics), De Haagse Hogeschool (Delft). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

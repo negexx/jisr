@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Double diplôme - Licence Economie et gestion - Double diplôme Licence Management international - Diplôme universitaire Compétences en management - site de Sénart, Université Paris- Est- Créteil Val de Marne UPEC - Antenne de Sénart (Lieusaint). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Double diplôme - Licence Economie et gestion - Double diplôme Licence Management international - Diplôme universitaire Compétences en management - site de Sénart, Université Paris- Est- Créteil Val de Marne UPEC - Antenne de Sénart (Lieusaint). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Double diplôme - Licence Economie et gestion - Double diplôme Licence Management international - Diplôme universitaire Compétences en management - site de Sénart, Université Paris- Est- Créteil Val de Marne UPEC - Antenne de Sénart (Lieusaint). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=14695&typeBac=0&originePc=0
 durationYears:
   value: null

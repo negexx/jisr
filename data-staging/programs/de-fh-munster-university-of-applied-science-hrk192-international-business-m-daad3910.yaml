@@ -9,6 +9,12 @@ summary:
   fr:
     text: "International Business & Management – Track: European Business Programme (EBP), FH Münster - University of Applied Sciences (Münster). Programme recensé dans la base de programmes internationaux du DAAD."
     status: draft
+  en:
+    text: "International Business & Management – Track: European Business Programme (EBP), FH Münster - University of Applied Sciences (Münster). Programme listed in the DAAD international programmes database."
+    status: draft
+  ar:
+    text: "International Business & Management – Track: European Business Programme (EBP), FH Münster - University of Applied Sciences (Münster). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD."
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

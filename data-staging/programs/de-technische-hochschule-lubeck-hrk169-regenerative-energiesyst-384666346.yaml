@@ -9,6 +9,12 @@ summary:
   fr:
     text: Regenerative Energiesysteme Bachelor, Technische Hochschule Lübeck (Lübeck). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Regenerative Energiesysteme Bachelor, Technische Hochschule Lübeck (Lübeck). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Regenerative Energiesysteme Bachelor, Technische Hochschule Lübeck (Lübeck). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

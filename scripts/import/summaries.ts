@@ -1,0 +1,72 @@
+// Short descriptions are shown in all three locales; the importers know the fixed sentence for
+// each source, so they write en and ar next to fr (all drafts) instead of leaving the page to fall
+// back to French.
+type Locale = "fr" | "en" | "ar";
+export type Localized = Record<Locale, { text: string; status: "draft" }>;
+
+const draft = (fr: string, en: string, ar: string): Localized => ({
+  fr: { text: fr, status: "draft" },
+  en: { text: en, status: "draft" },
+  ar: { text: ar, status: "draft" },
+});
+
+export type SummarySource = "parcoursup" | "rio" | "daad" | "studiensuche";
+
+const SOURCE_LINE: Record<SummarySource, { fr: string; en: string; ar: string }> = {
+  parcoursup: {
+    fr: "Fiche officielle Parcoursup.",
+    en: "Official Parcoursup listing.",
+    ar: "البطاقة الرسمية على منصة Parcoursup.",
+  },
+  rio: {
+    fr: "Programme recensé au registre néerlandais RIO.",
+    en: "Programme listed in the Dutch RIO register.",
+    ar: "برنامج مدرج في السجل الهولندي RIO.",
+  },
+  daad: {
+    fr: "Programme recensé dans la base de programmes internationaux du DAAD.",
+    en: "Programme listed in the DAAD international programmes database.",
+    ar: "برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.",
+  },
+  studiensuche: {
+    fr: "Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.",
+    en: "Programme listed in the Federal Employment Agency's Studiensuche.",
+    ar: "برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.",
+  },
+};
+
+export function programmeSummary(
+  title: string,
+  institution: string,
+  city: string,
+  source: SummarySource,
+): Localized {
+  const line = SOURCE_LINE[source];
+  const make = (locale: Locale) =>
+    `${title}, ${institution} (${city}). ${line[locale]}`.slice(0, 400);
+  return draft(make("fr"), make("en"), make("ar"));
+}
+
+export const CHANNEL_SUMMARIES: Record<string, Localized> = {
+  "fr-parcoursup": draft(
+    "Plateforme nationale de candidature en première année de Licence et de BUT.",
+    "National application platform for first-year Licence and BUT programmes.",
+    "المنصة الوطنية للتقدّم إلى السنة الأولى من الإجازة والإجازة الجامعية في التكنولوجيا (BUT).",
+  ),
+  "fr-campus-france": draft(
+    "Procédure Études en France de Campus France Maroc, obligatoire pour candidater en première année de Licence ou de BUT depuis le Maroc avec le baccalauréat marocain.",
+    "Campus France Morocco's Études en France procedure, mandatory for applying to a first-year Licence or BUT from Morocco with the Moroccan baccalauréat.",
+    "مسطرة Études en France لدى كامبوس فرانس المغرب، إلزامية للتقدّم إلى السنة الأولى من الإجازة أو BUT من المغرب بالباكالوريا المغربية.",
+  ),
+  "nl-studielink": draft(
+    "Plateforme nationale d'inscription dans l'enseignement supérieur néerlandais.",
+    "National enrolment platform for Dutch higher education.",
+    "المنصة الوطنية للتسجيل في التعليم العالي الهولندي.",
+  ),
+};
+
+export const UNI_ASSIST_SUMMARY: Localized = draft(
+  "Service central de candidature pour les étudiants internationaux de nombreuses universités allemandes.",
+  "Central application service for international students of many German universities.",
+  "الخدمة المركزية لطلبات التسجيل للطلبة الدوليين في عدد كبير من الجامعات الألمانية.",
+);

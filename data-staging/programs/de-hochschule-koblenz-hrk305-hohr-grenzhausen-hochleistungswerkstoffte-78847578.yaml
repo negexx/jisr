@@ -9,6 +9,12 @@ summary:
   fr:
     text: "Hochleistungswerkstoffte: Glas und Keramik Bachelor, Hochschule Koblenz (Höhr-Grenzhausen). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi."
     status: draft
+  en:
+    text: "Hochleistungswerkstoffte: Glas und Keramik Bachelor, Hochschule Koblenz (Höhr-Grenzhausen). Programme listed in the Federal Employment Agency's Studiensuche."
+    status: draft
+  ar:
+    text: "Hochleistungswerkstoffte: Glas und Keramik Bachelor, Hochschule Koblenz (Höhr-Grenzhausen). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف."
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Klimaschutz & Klimaanpassung Bachelor of Science, Hochschule für angewandte Wissenschaften Weihenstephan-Triesdorf (Freising). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Klimaschutz & Klimaanpassung Bachelor of Science, Hochschule für angewandte Wissenschaften Weihenstephan-Triesdorf (Freising). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Klimaschutz & Klimaanpassung Bachelor of Science, Hochschule für angewandte Wissenschaften Weihenstephan-Triesdorf (Freising). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

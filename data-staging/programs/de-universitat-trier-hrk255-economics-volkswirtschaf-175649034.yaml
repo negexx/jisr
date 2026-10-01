@@ -9,6 +9,12 @@ summary:
   fr:
     text: Economics / Volkswirtschaftslehre Bachelor (Zwei-Fach / Nebenfach), Universität Trier (Trier). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Economics / Volkswirtschaftslehre Bachelor (Zwei-Fach / Nebenfach), Universität Trier (Trier). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Economics / Volkswirtschaftslehre Bachelor (Zwei-Fach / Nebenfach), Universität Trier (Trier). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

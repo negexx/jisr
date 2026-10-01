@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Sciences pour l'ingénieur - Parcours Génie industriel / Ingénierie des organisations / Génie des procédés pour l'environnement, Université Gustave Eiffel (Champs-sur-Marne). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Sciences pour l'ingénieur - Parcours Génie industriel / Ingénierie des organisations / Génie des procédés pour l'environnement, Université Gustave Eiffel (Champs-sur-Marne). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Sciences pour l'ingénieur - Parcours Génie industriel / Ingénierie des organisations / Génie des procédés pour l'environnement, Université Gustave Eiffel (Champs-sur-Marne). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9923&typeBac=0&originePc=0
 durationYears:
   value: null

@@ -58,7 +58,11 @@
       },
       {
         "kind": "manual_check",
-        "note": "Titre obtenu hors d'Allemagne : candidature via uni-assist, qui vérifie si le diplôme donne accès aux études en Allemagne.",
+        "note": {
+          "fr": "Titre obtenu hors d'Allemagne : candidature via uni-assist, qui vérifie si le diplôme donne accès aux études en Allemagne.",
+          "en": "Qualification obtained outside Germany: apply via uni-assist, which checks whether your diploma gives access to studies in Germany.",
+          "ar": "شهادة حصلتم عليها خارج ألمانيا: التقدّم عبر uni-assist الذي يتحقق من أن شهادتكم تتيح الدراسة في ألمانيا."
+        },
         "evidence": [
           {
             "url": "https://www.hochschule-rhein-waal.de/en/study/before-starting-university/application-process/guide-for-international-applicants",
@@ -68,7 +72,11 @@
       },
       {
         "kind": "manual_check",
-        "note": "Les diplômes internationaux doivent d'abord être vérifiés avant l'admission, même si la filière est sans restriction d'accès (pas de numerus clausus).",
+        "note": {
+          "fr": "Les diplômes internationaux doivent d'abord être vérifiés avant l'admission, même si la filière est sans restriction d'accès (pas de numerus clausus).",
+          "en": "International diplomas must be verified before admission, even though the programme has no access restriction (no numerus clausus).",
+          "ar": "يجب التحقق من الشهادات الدولية قبل القبول، حتى لو لم يكن التخصص مقيّد الولوج (بدون numerus clausus)."
+        },
         "evidence": [
           {
             "url": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/agribusiness-ba",

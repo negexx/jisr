@@ -9,6 +9,12 @@ summary:
   fr:
     text: Infrastruktur und Umwelt Bachelor, Frankfurt University of Applied Sciences (Frankfurt am Main). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Infrastruktur und Umwelt Bachelor, Frankfurt University of Applied Sciences (Frankfurt am Main). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Infrastruktur und Umwelt Bachelor, Frankfurt University of Applied Sciences (Frankfurt am Main). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

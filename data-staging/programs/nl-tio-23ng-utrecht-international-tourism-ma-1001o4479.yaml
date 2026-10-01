@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Tourism Management (International Tourism Management), Tio (Utrecht). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: International Tourism Management (International Tourism Management), Tio (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Tourism Management (International Tourism Management), Tio (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Business Administration (International Business Administration), Tilburg University (Tilburg). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: International Business Administration (International Business Administration), Tilburg University (Tilburg). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Business Administration (International Business Administration), Tilburg University (Tilburg). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Circular Engineering (Circular Engineering), Universiteit Maastricht (Maastricht). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Circular Engineering (Circular Engineering), Universiteit Maastricht (Maastricht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Circular Engineering (Circular Engineering), Universiteit Maastricht (Maastricht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

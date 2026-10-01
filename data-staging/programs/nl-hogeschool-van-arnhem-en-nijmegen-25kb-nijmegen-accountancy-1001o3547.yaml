@@ -9,6 +9,12 @@ summary:
   fr:
     text: Accountancy (Accountancy), Hogeschool van Arnhem en Nijmegen (Nijmegen). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Accountancy (Accountancy), Hogeschool van Arnhem en Nijmegen (Nijmegen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Accountancy (Accountancy), Hogeschool van Arnhem en Nijmegen (Nijmegen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

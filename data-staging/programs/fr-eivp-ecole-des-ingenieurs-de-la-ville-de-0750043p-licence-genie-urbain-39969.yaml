@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Génie urbain, EIVP - Ecole des ingénieurs de la ville de Paris (Paris). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Génie urbain, EIVP - Ecole des ingénieurs de la ville de Paris (Paris). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Génie urbain, EIVP - Ecole des ingénieurs de la ville de Paris (Paris). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39969&typeBac=0&originePc=0
 durationYears:
   value: null

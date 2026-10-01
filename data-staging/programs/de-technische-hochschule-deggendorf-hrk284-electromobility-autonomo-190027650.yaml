@@ -9,6 +9,12 @@ summary:
   fr:
     text: Electromobility, Autonomous Driving and Mobile Robotics - International Bachelor of Engineering, Technische Hochschule Deggendorf (Deggendorf). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Electromobility, Autonomous Driving and Mobile Robotics - International Bachelor of Engineering, Technische Hochschule Deggendorf (Deggendorf). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Electromobility, Autonomous Driving and Mobile Robotics - International Bachelor of Engineering, Technische Hochschule Deggendorf (Deggendorf). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

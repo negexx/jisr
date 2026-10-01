@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Double diplôme - Licence Mathématiques et informatique appliquées aux sciences humaines et sociales - Mathématiques appliquées et Sciences sociales, Institut d'études politiques de Paris - Sciences Po (Paris). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Double diplôme - Licence Mathématiques et informatique appliquées aux sciences humaines et sociales - Mathématiques appliquées et Sciences sociales, Institut d'études politiques de Paris - Sciences Po (Paris). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Double diplôme - Licence Mathématiques et informatique appliquées aux sciences humaines et sociales - Mathématiques appliquées et Sciences sociales, Institut d'études politiques de Paris - Sciences Po (Paris). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=32559&typeBac=0&originePc=0
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Nautik und Seeverkehr Bachelor, Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth (Elsfleth). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Nautik und Seeverkehr Bachelor, Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth (Elsfleth). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Nautik und Seeverkehr Bachelor, Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth (Elsfleth). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

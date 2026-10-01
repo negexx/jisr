@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Génie industriel et maintenance, I.U.T du Limousin - site de Tulle (Tulle). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Génie industriel et maintenance, I.U.T du Limousin - site de Tulle (Tulle). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie industriel et maintenance, I.U.T du Limousin - site de Tulle (Tulle). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3169&typeBac=0&originePc=0
 durationYears:
   value: null

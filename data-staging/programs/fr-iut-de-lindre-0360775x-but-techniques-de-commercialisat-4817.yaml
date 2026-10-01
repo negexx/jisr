@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Techniques de commercialisation, IUT de l'Indre (Issoudun). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Techniques de commercialisation, IUT de l'Indre (Issoudun). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Techniques de commercialisation, IUT de l'Indre (Issoudun). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4817&typeBac=0&originePc=0
 durationYears:
   value: null

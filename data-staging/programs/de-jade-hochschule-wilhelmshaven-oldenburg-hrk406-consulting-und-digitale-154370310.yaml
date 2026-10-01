@@ -9,6 +9,12 @@ summary:
   fr:
     text: Consulting und Digitale Wirtschaft Bachelor, Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth (Wilhelmshaven). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Consulting und Digitale Wirtschaft Bachelor, Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth (Wilhelmshaven). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Consulting und Digitale Wirtschaft Bachelor, Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth (Wilhelmshaven). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

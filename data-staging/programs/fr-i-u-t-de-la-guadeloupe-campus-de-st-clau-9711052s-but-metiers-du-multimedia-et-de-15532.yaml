@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Métiers du multimédia et de l'internet, I.U.T de la Guadeloupe - Campus de St-Claude (Saint-Claude). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Métiers du multimédia et de l'internet, I.U.T de la Guadeloupe - Campus de St-Claude (Saint-Claude). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Métiers du multimédia et de l'internet, I.U.T de la Guadeloupe - Campus de St-Claude (Saint-Claude). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=15532&typeBac=0&originePc=0
 durationYears:
   value: null

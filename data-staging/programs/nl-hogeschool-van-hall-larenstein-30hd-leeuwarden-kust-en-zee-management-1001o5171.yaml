@@ -9,6 +9,12 @@ summary:
   fr:
     text: Kust en Zee Management (Coastal and Marine Management), Hogeschool Van Hall Larenstein (Leeuwarden). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Kust en Zee Management (Coastal and Marine Management), Hogeschool Van Hall Larenstein (Leeuwarden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Kust en Zee Management (Coastal and Marine Management), Hogeschool Van Hall Larenstein (Leeuwarden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

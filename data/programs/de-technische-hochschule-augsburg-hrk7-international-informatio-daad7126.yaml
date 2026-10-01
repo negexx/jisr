@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Information Systems BSc, Technische Hochschule Augsburg (Augsburg). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: International Information Systems BSc, Technische Hochschule Augsburg (Augsburg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Information Systems BSc, Technische Hochschule Augsburg (Augsburg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: https://www.tha.de/en/university/faculties/computer-science/study-program/international-international-information-systems-bsc/
 durationYears:
   value: 3.5
@@ -56,6 +62,12 @@ requirements:
         fr:
           text: "Titre de fin d'études étranger : traduction certifiée et attestation préliminaire (VPD) délivrée par uni-assist ou l'office bavarois de reconnaissance des certificats."
           status: draft
+        en:
+          text: "Foreign school-leaving certificate: certified translation and a preliminary review certificate (VPD) from uni-assist or the Bavarian certificate recognition office."
+          status: draft
+        ar:
+          text: "شهادة نهاية الدراسة الأجنبية: ترجمة معتمدة وشهادة مراجعة أولية (VPD) من uni-assist أو من المكتب البافاري للاعتراف بالشهادات."
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -63,6 +75,12 @@ requirements:
       note:
         fr:
           text: Procédure d'aptitude (test en ligne, CV en tableau, court essai de motivation) à passer lors de la candidature sur HISinOne.
+          status: draft
+        en:
+          text: Aptitude procedure (online test, tabular CV, short motivation essay) to complete during your application on HISinOne.
+          status: draft
+        ar:
+          text: إجراء تقييم الكفاءة (اختبار عبر الإنترنت، سيرة ذاتية في جدول، مقال تحفيزي قصير) أثناء التقدّم عبر HISinOne.
           status: draft
 scholarships: []
 sources:

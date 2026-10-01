@@ -9,6 +9,12 @@ summary:
   fr:
     text: Informatik - Game Engineering Bachelor of Science, Hochschule für angewandte Wissenschaften Kempten (Kempten). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Informatik - Game Engineering Bachelor of Science, Hochschule für angewandte Wissenschaften Kempten (Kempten). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Informatik - Game Engineering Bachelor of Science, Hochschule für angewandte Wissenschaften Kempten (Kempten). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -1,9 +1,9 @@
 import { z } from "zod";
-
 import { classifyDutchProgramme } from "../fields";
 import { fetchJson, fetchText, probeHttps } from "../http";
 import type { ReviewRow, StagedRecord } from "../staging";
 import { parseCsv, READ_SOURCE } from "../staging";
+import { CHANNEL_SUMMARIES, programmeSummary } from "../summaries";
 import { collapseSpaces, slugify } from "../text";
 import { fetchDuoInstitutions, stripProvince, titleCase } from "./duo";
 import { websiteCandidates } from "./hrk";
@@ -173,15 +173,12 @@ export function buildDutchProgramme(input: {
       field: match.field,
       level: "bachelor",
       name,
-      summary: {
-        fr: {
-          text: `${international === "" ? name : `${name} (${international})`}, ${instName} (${city}). Programme recensé au registre néerlandais RIO.`.slice(
-            0,
-            400,
-          ),
-          status: "draft",
-        },
-      },
+      summary: programmeSummary(
+        international === "" ? name : `${name} (${international})`,
+        instName,
+        city,
+        "rio",
+      ),
       // Required by the schema and left empty on purpose: the register has no programme page, so a
       // human must supply the institution's own page before the record can be promoted.
       officialUrl: null,
@@ -271,12 +268,7 @@ export async function importNetherlands(): Promise<StagedRecord[]> {
       kind: "national_portal",
       url: "https://www.studielink.nl/",
       accountRequired: null,
-      summary: {
-        fr: {
-          text: "Plateforme nationale d'inscription dans l'enseignement supérieur néerlandais.",
-          status: "draft",
-        },
-      },
+      summary: CHANNEL_SUMMARIES["nl-studielink"],
       source: "main",
       info_kind: READ_SOURCE,
       sources: { main: { url: "https://www.studielink.nl/", last_verified_at: null } },

@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Génie industriel et maintenance, I.U.T de Toulon (La Garde). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Génie industriel et maintenance, I.U.T de Toulon (La Garde). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie industriel et maintenance, I.U.T de Toulon (La Garde). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10354&typeBac=0&originePc=0
 durationYears:
   value: null

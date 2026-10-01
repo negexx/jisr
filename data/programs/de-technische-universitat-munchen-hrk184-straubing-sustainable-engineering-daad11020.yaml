@@ -9,6 +9,12 @@ summary:
   fr:
     text: Sustainable Engineering for Materials and Processes, Technische Universität München (Straubing). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Sustainable Engineering for Materials and Processes, Technische Universität München (Straubing). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Sustainable Engineering for Materials and Processes, Technische Universität München (Straubing). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: https://www.tum.de/en/studies/degree-programs/detail/sustainable-engineering-for-materials-and-processes-bachelor-of-science-bsc
 durationYears:
   value: 3
@@ -59,6 +65,12 @@ requirements:
         fr:
           text: Si le diplôme de fin d'études étranger n'est pas comparable à l'Abitur, l'admission directe n'est possible qu'après le Studienkolleg et l'examen d'évaluation (Feststellungsprüfung).
           status: draft
+        en:
+          text: If your foreign school-leaving certificate is not comparable to the Abitur, direct admission is only possible after the Studienkolleg and the assessment exam (Feststellungsprüfung).
+          status: draft
+        ar:
+          text: إذا كانت شهادتكم الأجنبية غير قابلة للمقارنة بالـ Abitur، فلا يمكن القبول المباشر إلا بعد Studienkolleg واجتياز امتحان التقييم (Feststellungsprüfung).
+          status: draft
     - id: req-3
       source: page-3
       info_kind: official
@@ -67,6 +79,12 @@ requirements:
         fr:
           text: Demander avant la candidature l'attestation préliminaire (VPD) à uni-assist, qui vérifie si le diplôme donne accès général ou limité à certaines matières.
           status: draft
+        en:
+          text: Before applying, request the preliminary review certificate (VPD) from uni-assist, which checks whether your diploma gives general or subject-restricted access.
+          status: draft
+        ar:
+          text: اطلبوا قبل التقدّم شهادة المراجعة الأولية (VPD) من uni-assist، التي تتحقق هل تتيح شهادتكم ولوجًا عامًا أم مقيّدًا ببعض المواد.
+          status: draft
     - id: req-4
       source: programme
       info_kind: official
@@ -74,6 +92,12 @@ requirements:
       note:
         fr:
           text: Participation obligatoire au test d'aptitude en ligne (Aptitude Recommendation, environ 20 minutes) ; le résultat n'influence pas l'admission.
+          status: draft
+        en:
+          text: Mandatory online aptitude test (Aptitude Recommendation, about 20 minutes); the result does not affect admission.
+          status: draft
+        ar:
+          text: اختبار الكفاءة عبر الإنترنت إلزامي (Aptitude Recommendation، حوالي 20 دقيقة)؛ ولا تؤثر نتيجته على القبول.
           status: draft
 scholarships: []
 sources:

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Betriebswirtschaftslehre Bachelor, Hochschule Fresenius Heidelberg – staatlich anerkannte Hochschule der Hochschule Fresenius für Internationales Management GmbH (Heidelberg). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Betriebswirtschaftslehre Bachelor, Hochschule Fresenius Heidelberg – staatlich anerkannte Hochschule der Hochschule Fresenius für Internationales Management GmbH (Heidelberg). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Betriebswirtschaftslehre Bachelor, Hochschule Fresenius Heidelberg – staatlich anerkannte Hochschule der Hochschule Fresenius für Internationales Management GmbH (Heidelberg). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

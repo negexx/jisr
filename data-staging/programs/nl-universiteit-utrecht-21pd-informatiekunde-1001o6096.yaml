@@ -9,6 +9,12 @@ summary:
   fr:
     text: Informatiekunde (Information Science), Universiteit Utrecht (Utrecht). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Informatiekunde (Information Science), Universiteit Utrecht (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Informatiekunde (Information Science), Universiteit Utrecht (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

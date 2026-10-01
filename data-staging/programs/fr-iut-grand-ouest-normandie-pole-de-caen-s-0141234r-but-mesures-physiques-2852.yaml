@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Mesures physiques, IUT GRAND OUEST NORMANDIE - Pôle de Caen - Site de Caen (Caen). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Mesures physiques, IUT GRAND OUEST NORMANDIE - Pôle de Caen - Site de Caen (Caen). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Mesures physiques, IUT GRAND OUEST NORMANDIE - Pôle de Caen - Site de Caen (Caen). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2852&typeBac=0&originePc=0
 durationYears:
   value: null

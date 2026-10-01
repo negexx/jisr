@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Sciences et technologies, Facultés libres de l'ouest - UCO - Bretagne Nord (Guingamp). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Sciences et technologies, Facultés libres de l'ouest - UCO - Bretagne Nord (Guingamp). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Sciences et technologies, Facultés libres de l'ouest - UCO - Bretagne Nord (Guingamp). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
 durationYears:
   value: null

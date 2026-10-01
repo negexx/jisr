@@ -9,6 +9,12 @@ summary:
   fr:
     text: Aviation Management, Hochschule Worms, University of Applied Sciences (Worms). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Aviation Management, Hochschule Worms, University of Applied Sciences (Worms). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Aviation Management, Hochschule Worms, University of Applied Sciences (Worms). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Double diplôme - Licence Economie et gestion - Licence 1 Economie et gestion + DU Agir pour la transition (en 5 ans), CY Cergy Paris Université (Cergy). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Double diplôme - Licence Economie et gestion - Licence 1 Economie et gestion + DU Agir pour la transition (en 5 ans), CY Cergy Paris Université (Cergy). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Double diplôme - Licence Economie et gestion - Licence 1 Economie et gestion + DU Agir pour la transition (en 5 ans), CY Cergy Paris Université (Cergy). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43311&typeBac=0&originePc=0
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Communicatie, Tio (Rotterdam). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Communicatie, Tio (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Communicatie, Tio (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

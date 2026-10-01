@@ -9,6 +9,12 @@ summary:
   fr:
     text: Menschzentrierte Informatik und Psychologie Bachelor of Science, Universität Duisburg-Essen (Duisburg). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Menschzentrierte Informatik und Psychologie Bachelor of Science, Universität Duisburg-Essen (Duisburg). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Menschzentrierte Informatik und Psychologie Bachelor of Science, Universität Duisburg-Essen (Duisburg). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: BEng Industrial Engineering with Work-Integrated Option, Hochschule Bielefeld - University of Applied Sciences and Arts (HSBI) (Gütersloh). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: BEng Industrial Engineering with Work-Integrated Option, Hochschule Bielefeld - University of Applied Sciences and Arts (HSBI) (Gütersloh). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: BEng Industrial Engineering with Work-Integrated Option, Hochschule Bielefeld - University of Applied Sciences and Arts (HSBI) (Gütersloh). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

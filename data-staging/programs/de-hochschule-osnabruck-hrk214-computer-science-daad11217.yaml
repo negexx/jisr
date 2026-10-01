@@ -9,6 +9,12 @@ summary:
   fr:
     text: Computer Science, Hochschule Osnabrück (Osnabrück). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Computer Science, Hochschule Osnabrück (Osnabrück). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Computer Science, Hochschule Osnabrück (Osnabrück). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 4

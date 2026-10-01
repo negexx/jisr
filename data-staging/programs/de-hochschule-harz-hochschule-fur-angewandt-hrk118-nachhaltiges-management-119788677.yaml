@@ -9,6 +9,12 @@ summary:
   fr:
     text: Nachhaltiges Management Bachelor, Hochschule Harz, Hochschule für angewandte Wissenschaften (FH) (Wernigerode). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Nachhaltiges Management Bachelor, Hochschule Harz, Hochschule für angewandte Wissenschaften (FH) (Wernigerode). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Nachhaltiges Management Bachelor, Hochschule Harz, Hochschule für angewandte Wissenschaften (FH) (Wernigerode). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

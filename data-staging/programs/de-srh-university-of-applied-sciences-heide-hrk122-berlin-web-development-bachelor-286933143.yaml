@@ -9,6 +9,12 @@ summary:
   fr:
     text: Web Development Bachelor of Science (B.Sc.), SRH University of Applied Sciences Heidelberg (Berlin). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Web Development Bachelor of Science (B.Sc.), SRH University of Applied Sciences Heidelberg (Berlin). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Web Development Bachelor of Science (B.Sc.), SRH University of Applied Sciences Heidelberg (Berlin). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

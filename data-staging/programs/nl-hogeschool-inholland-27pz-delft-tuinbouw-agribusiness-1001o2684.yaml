@@ -9,6 +9,12 @@ summary:
   fr:
     text: Tuinbouw & Agribusiness (Horticulture & Agribusiness), Hogeschool Inholland (Delft). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Tuinbouw & Agribusiness (Horticulture & Agribusiness), Hogeschool Inholland (Delft). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Tuinbouw & Agribusiness (Horticulture & Agribusiness), Hogeschool Inholland (Delft). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

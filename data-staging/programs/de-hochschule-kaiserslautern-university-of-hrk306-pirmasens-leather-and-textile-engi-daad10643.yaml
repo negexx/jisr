@@ -9,6 +9,12 @@ summary:
   fr:
     text: Leather and Textile Engineering, Hochschule Kaiserslautern (University of Applied Sciences) (Pirmasens). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Leather and Textile Engineering, Hochschule Kaiserslautern (University of Applied Sciences) (Pirmasens). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Leather and Textile Engineering, Hochschule Kaiserslautern (University of Applied Sciences) (Pirmasens). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3

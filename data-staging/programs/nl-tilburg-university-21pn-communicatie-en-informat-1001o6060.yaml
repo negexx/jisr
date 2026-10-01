@@ -9,6 +9,12 @@ summary:
   fr:
     text: Communicatie- en Informatiewetenschappen (Communication and Information Sciences), Tilburg University (Tilburg). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Communicatie- en Informatiewetenschappen (Communication and Information Sciences), Tilburg University (Tilburg). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Communicatie- en Informatiewetenschappen (Communication and Information Sciences), Tilburg University (Tilburg). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Environmental and Process Engineering, Hochschule Heilbronn, Technik, Wirtschaft, Informatik (Heilbronn). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Environmental and Process Engineering, Hochschule Heilbronn, Technik, Wirtschaft, Informatik (Heilbronn). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Environmental and Process Engineering, Hochschule Heilbronn, Technik, Wirtschaft, Informatik (Heilbronn). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

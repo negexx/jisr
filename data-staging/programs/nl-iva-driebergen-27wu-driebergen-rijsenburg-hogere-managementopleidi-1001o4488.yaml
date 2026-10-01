@@ -9,6 +9,12 @@ summary:
   fr:
     text: Hogere Managementopleiding voor de Mobiliteitsbranche, IVA Driebergen (Driebergen-Rijsenburg). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Hogere Managementopleiding voor de Mobiliteitsbranche, IVA Driebergen (Driebergen-Rijsenburg). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Hogere Managementopleiding voor de Mobiliteitsbranche, IVA Driebergen (Driebergen-Rijsenburg). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

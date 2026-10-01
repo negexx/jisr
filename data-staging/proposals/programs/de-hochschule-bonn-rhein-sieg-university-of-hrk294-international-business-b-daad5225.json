@@ -58,7 +58,11 @@
       },
       {
         "kind": "manual_check",
-        "note": "Titre d'accès (Abitur/Fachabitur) ou diplôme reconnu équivalent par les autorités compétentes : vérifier la reconnaissance du Bac marocain auprès d'uni-assist.",
+        "note": {
+          "fr": "Titre d'accès (Abitur/Fachabitur) ou diplôme reconnu équivalent par les autorités compétentes : vérifier la reconnaissance du Bac marocain auprès d'uni-assist.",
+          "en": "Entry qualification (Abitur/Fachabitur) or a diploma recognised as equivalent by the competent authorities: check recognition of the Moroccan Bac with uni-assist.",
+          "ar": "شهادة الأهلية للدراسة (Abitur/Fachabitur) أو شهادة معترف بمعادلتها من الجهات المختصة: تحقّق من الاعتراف بالباكالوريا المغربية لدى uni-assist."
+        },
         "evidence": [
           {
             "url": "https://www.h-brs.de/en/wiwi/study/bachelor/international-business",
@@ -68,7 +72,11 @@
       },
       {
         "kind": "manual_check",
-        "note": "Si le diplôme de fin d'études est reconnu dans le pays d'origine mais pas en Allemagne comme HZB, un Studienkolleg est obligatoire avant le début des études.",
+        "note": {
+          "fr": "Si le diplôme de fin d'études est reconnu dans le pays d'origine mais pas en Allemagne comme HZB, un Studienkolleg est obligatoire avant le début des études.",
+          "en": "If your school-leaving diploma is recognised in your home country but not in Germany as a university entrance qualification (HZB), a Studienkolleg is mandatory before studies start.",
+          "ar": "إذا كانت شهادتك معترفًا بها في بلدك لكن غير معترف بها في ألمانيا كشهادة أهلية للدراسة الجامعية (HZB)، فإن الدراسة في Studienkolleg إلزامية قبل بدء الدراسة."
+        },
         "evidence": [
           {
             "url": "https://www.h-brs.de/en/node/74451",

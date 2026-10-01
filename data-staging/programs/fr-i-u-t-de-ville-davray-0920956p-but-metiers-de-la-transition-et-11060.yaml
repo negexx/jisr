@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Métiers de la Transition et de l'Efficacité Énergétiques, I.U.T de Ville d'Avray (Ville-d'Avray). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Métiers de la Transition et de l'Efficacité Énergétiques, I.U.T de Ville d'Avray (Ville-d'Avray). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Métiers de la Transition et de l'Efficacité Énergétiques, I.U.T de Ville d'Avray (Ville-d'Avray). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11060&typeBac=0&originePc=0
 durationYears:
   value: null

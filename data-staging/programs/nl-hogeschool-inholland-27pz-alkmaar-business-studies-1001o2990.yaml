@@ -9,6 +9,12 @@ summary:
   fr:
     text: Business Studies (Business Studies), Hogeschool Inholland (Alkmaar). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Business Studies (Business Studies), Hogeschool Inholland (Alkmaar). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Business Studies (Business Studies), Hogeschool Inholland (Alkmaar). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

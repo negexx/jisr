@@ -9,6 +9,12 @@ summary:
   fr:
     text: Medical Engineering (BEng), Ostbayerische Technische Hochschule Amberg-Weiden (OTH) (Weiden in der Oberpfalz). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Medical Engineering (BEng), Ostbayerische Technische Hochschule Amberg-Weiden (OTH) (Weiden in der Oberpfalz). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Medical Engineering (BEng), Ostbayerische Technische Hochschule Amberg-Weiden (OTH) (Weiden in der Oberpfalz). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

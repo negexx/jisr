@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Economie et gestion, Université du littoral - Site de Boulogne-sur-Mer (Boulogne-sur-Mer). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Economie et gestion, Université du littoral - Site de Boulogne-sur-Mer (Boulogne-sur-Mer). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Economie et gestion, Université du littoral - Site de Boulogne-sur-Mer (Boulogne-sur-Mer). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7495&typeBac=0&originePc=0
 durationYears:
   value: null

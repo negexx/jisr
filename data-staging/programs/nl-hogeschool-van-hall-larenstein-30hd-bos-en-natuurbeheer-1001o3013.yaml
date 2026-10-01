@@ -9,6 +9,12 @@ summary:
   fr:
     text: Bos- en Natuurbeheer (Forestry and Nature Management), Hogeschool Van Hall Larenstein (Velp). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Bos- en Natuurbeheer (Forestry and Nature Management), Hogeschool Van Hall Larenstein (Velp). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bos- en Natuurbeheer (Forestry and Nature Management), Hogeschool Van Hall Larenstein (Velp). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

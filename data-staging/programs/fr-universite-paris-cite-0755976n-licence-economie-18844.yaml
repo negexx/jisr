@@ -9,6 +9,12 @@ summary:
   fr:
     text: Double licence - Economie / Géographie et aménagement - Double licence Economie Géographie, Université Paris Cité (Paris). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Double licence - Economie / Géographie et aménagement - Double licence Economie Géographie, Université Paris Cité (Paris). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Double licence - Economie / Géographie et aménagement - Double licence Economie Géographie, Université Paris Cité (Paris). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=18844&typeBac=0&originePc=0
 durationYears:
   value: null

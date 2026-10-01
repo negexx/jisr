@@ -9,6 +9,12 @@ summary:
   fr:
     text: Artificial Intelligence (Artificial Intelligence), Radboud Universiteit Nijmegen (Nijmegen). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Artificial Intelligence (Artificial Intelligence), Radboud Universiteit Nijmegen (Nijmegen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Artificial Intelligence (Artificial Intelligence), Radboud Universiteit Nijmegen (Nijmegen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -8,6 +8,12 @@ summary:
   fr:
     text: Plateforme nationale d'inscription dans l'enseignement supérieur néerlandais.
     status: draft
+  en:
+    text: National enrolment platform for Dutch higher education.
+    status: draft
+  ar:
+    text: المنصة الوطنية للتسجيل في التعليم العالي الهولندي.
+    status: draft
 source: page
 info_kind: official
 sources:

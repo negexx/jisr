@@ -9,6 +9,12 @@ summary:
   fr:
     text: Mechanical Engineering (BEng), Technische Hochschule Nürnberg Georg Simon Ohm (Nürnberg). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Mechanical Engineering (BEng), Technische Hochschule Nürnberg Georg Simon Ohm (Nürnberg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Mechanical Engineering (BEng), Technische Hochschule Nürnberg Georg Simon Ohm (Nürnberg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

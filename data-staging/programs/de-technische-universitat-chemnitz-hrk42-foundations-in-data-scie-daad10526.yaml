@@ -9,6 +9,12 @@ summary:
   fr:
     text: Foundations in Data Science, Technische Universität Chemnitz (Chemnitz). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Foundations in Data Science, Technische Universität Chemnitz (Chemnitz). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Foundations in Data Science, Technische Universität Chemnitz (Chemnitz). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3

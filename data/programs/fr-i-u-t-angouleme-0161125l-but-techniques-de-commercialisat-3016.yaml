@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Techniques de commercialisation, I.U.T. Angoulême (Angoulême). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Techniques de commercialisation, I.U.T. Angoulême (Angoulême). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Techniques de commercialisation, I.U.T. Angoulême (Angoulême). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://iut-angouleme.univ-poitiers.fr/formations/b-u-t-tc-techniques-de-commercialisation/
 durationYears:
   value: 3
@@ -56,6 +62,12 @@ requirements:
       note:
         fr:
           text: "Admission sur dossier scolaire examiné par un jury : résultats du lycée (matières liées à la spécialité), appréciations, motivation. À préparer avec vos bulletins."
+          status: draft
+        en:
+          text: "Admission is based on your school record, reviewed by a jury: high-school results (subjects related to the specialty), appraisals, motivation. Prepare your transcripts."
+          status: draft
+        ar:
+          text: "القبول على أساس الملف الدراسي الذي تدرسه لجنة: نتائج الثانوي (المواد المرتبطة بالتخصص)، التقييمات، والتحفيز. حضّروا كشوف نقطكم."
           status: draft
 scholarships: []
 sources:

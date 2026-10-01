@@ -9,6 +9,12 @@ summary:
   fr:
     text: Logistics Engineering (Logistics Engineering), Fontys Hogeschool (Venlo). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Logistics Engineering (Logistics Engineering), Fontys Hogeschool (Venlo). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Logistics Engineering (Logistics Engineering), Fontys Hogeschool (Venlo). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

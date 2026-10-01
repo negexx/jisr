@@ -9,6 +9,12 @@ summary:
   fr:
     text: Diermanagement (Animal Management), Hogeschool Van Hall Larenstein (Leeuwarden). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Diermanagement (Animal Management), Hogeschool Van Hall Larenstein (Leeuwarden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Diermanagement (Animal Management), Hogeschool Van Hall Larenstein (Leeuwarden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

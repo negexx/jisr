@@ -9,6 +9,12 @@ summary:
   fr:
     text: Bedrijfskunde (Business Administration), Capabel Hogeschool (Utrecht). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Bedrijfskunde (Business Administration), Capabel Hogeschool (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bedrijfskunde (Business Administration), Capabel Hogeschool (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde
 durationYears:
   value: 4
@@ -49,6 +55,12 @@ requirements:
       note:
         fr:
           text: Un diplôme HAVO, VWO ou MBO 4 est exigé (équivalence du Bac non précisée) ; fournir copie du diplôme, relevé de notes et pièce d'identité, la commission d'examen décide.
+          status: draft
+        en:
+          text: A HAVO, VWO or MBO 4 diploma is required (equivalence of the Bac not specified); provide a copy of the diploma, transcript and ID, the examination board decides.
+          status: draft
+        ar:
+          text: يُشترط دبلوم HAVO أو VWO أو MBO 4 (معادلة الباكالوريا غير محددة)؛ قدّموا نسخة من الشهادة وكشف النقط وبطاقة الهوية، ولجنة الامتحانات هي من تقرّر.
           status: draft
 scholarships: []
 sources:

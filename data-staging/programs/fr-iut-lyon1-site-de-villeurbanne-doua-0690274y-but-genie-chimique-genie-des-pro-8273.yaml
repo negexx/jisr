@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Génie chimique génie des procédés, IUT Lyon1 Site de Villeurbanne Doua (Villeurbanne). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Génie chimique génie des procédés, IUT Lyon1 Site de Villeurbanne Doua (Villeurbanne). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie chimique génie des procédés, IUT Lyon1 Site de Villeurbanne Doua (Villeurbanne). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8273&typeBac=0&originePc=0
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Management International (German-French Programme, BA and MA), HWR Berlin (Berlin School of Economics and Law) (Berlin). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Management International (German-French Programme, BA and MA), HWR Berlin (Berlin School of Economics and Law) (Berlin). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Management International (German-French Programme, BA and MA), HWR Berlin (Berlin School of Economics and Law) (Berlin). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

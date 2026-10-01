@@ -9,6 +9,12 @@ summary:
   fr:
     text: Digital Business Bachelor, Hochschule Esslingen (Esslingen). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Digital Business Bachelor, Hochschule Esslingen (Esslingen). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Digital Business Bachelor, Hochschule Esslingen (Esslingen). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

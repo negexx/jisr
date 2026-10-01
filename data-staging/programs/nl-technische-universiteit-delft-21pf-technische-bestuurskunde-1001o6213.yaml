@@ -9,6 +9,12 @@ summary:
   fr:
     text: Technische Bestuurskunde (Systems Engineering, Policy Analysis & Management), Technische Universiteit Delft (Delft). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Technische Bestuurskunde (Systems Engineering, Policy Analysis & Management), Technische Universiteit Delft (Delft). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Technische Bestuurskunde (Systems Engineering, Policy Analysis & Management), Technische Universiteit Delft (Delft). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

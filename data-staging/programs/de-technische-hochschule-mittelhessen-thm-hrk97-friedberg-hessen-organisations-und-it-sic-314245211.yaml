@@ -9,6 +9,12 @@ summary:
   fr:
     text: Organisations- und IT-Sicherheit Bachelor of Science (B.Sc.), Technische Hochschule Mittelhessen - THM (Friedberg (Hessen)). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Organisations- und IT-Sicherheit Bachelor of Science (B.Sc.), Technische Hochschule Mittelhessen - THM (Friedberg (Hessen)). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Organisations- und IT-Sicherheit Bachelor of Science (B.Sc.), Technische Hochschule Mittelhessen - THM (Friedberg (Hessen)). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Bachelor in Internationaler BWL/Management Bachelor of Science, WHU - Otto Beisheim School of Management (Vallendar). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Bachelor in Internationaler BWL/Management Bachelor of Science, WHU - Otto Beisheim School of Management (Vallendar). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Bachelor in Internationaler BWL/Management Bachelor of Science, WHU - Otto Beisheim School of Management (Vallendar). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

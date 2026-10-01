@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Génie électrique et informatique industrielle, I.U.T du Creusot (Le Creusot). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Génie électrique et informatique industrielle, I.U.T du Creusot (Le Creusot). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie électrique et informatique industrielle, I.U.T du Creusot (Le Creusot). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8662&typeBac=0&originePc=0
 durationYears:
   value: null

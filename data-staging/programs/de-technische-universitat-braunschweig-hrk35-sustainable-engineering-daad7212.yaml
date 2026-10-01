@@ -9,6 +9,12 @@ summary:
   fr:
     text: Sustainable Engineering of Products and Processes, Technische Universität Braunschweig (Braunschweig). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Sustainable Engineering of Products and Processes, Technische Universität Braunschweig (Braunschweig). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Sustainable Engineering of Products and Processes, Technische Universität Braunschweig (Braunschweig). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Bachelor of Engineering in Mechanical Engineering, Hochschule Aalen - Technik, Wirtschaft und Gesundheit (Aalen). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Bachelor of Engineering in Mechanical Engineering, Hochschule Aalen - Technik, Wirtschaft und Gesundheit (Aalen). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Bachelor of Engineering in Mechanical Engineering, Hochschule Aalen - Technik, Wirtschaft und Gesundheit (Aalen). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

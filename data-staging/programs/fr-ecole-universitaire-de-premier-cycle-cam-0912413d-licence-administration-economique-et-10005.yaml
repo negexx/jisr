@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Portail Administration économique et sociale, Ecole Universitaire de premier cycle - Campus de Guyancourt, Versailles Saint Quentin en Yvelines, Université Paris-Saclay (Guyancourt). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Portail Administration économique et sociale, Ecole Universitaire de premier cycle - Campus de Guyancourt, Versailles Saint Quentin en Yvelines, Université Paris-Saclay (Guyancourt). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail Administration économique et sociale, Ecole Universitaire de premier cycle - Campus de Guyancourt, Versailles Saint Quentin en Yvelines, Université Paris-Saclay (Guyancourt). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10005&typeBac=0&originePc=0
 durationYears:
   value: null

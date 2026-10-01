@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Double diplôme - Licence Economie et gestion - DPI en partenariat avec l'Université de Tübingen, Aix-Marseille Université - Site d'Aix-en-Provence (La Pauliane) (Aix-en-Provence). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Double diplôme - Licence Economie et gestion - DPI en partenariat avec l'Université de Tübingen, Aix-Marseille Université - Site d'Aix-en-Provence (La Pauliane) (Aix-en-Provence). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Double diplôme - Licence Economie et gestion - DPI en partenariat avec l'Université de Tübingen, Aix-Marseille Université - Site d'Aix-en-Provence (La Pauliane) (Aix-en-Provence). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39264&typeBac=0&originePc=0
 durationYears:
   value: null

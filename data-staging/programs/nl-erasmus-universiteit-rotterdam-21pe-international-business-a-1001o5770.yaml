@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Business Administration, Erasmus Universiteit Rotterdam (Rotterdam). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: International Business Administration, Erasmus Universiteit Rotterdam (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Business Administration, Erasmus Universiteit Rotterdam (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

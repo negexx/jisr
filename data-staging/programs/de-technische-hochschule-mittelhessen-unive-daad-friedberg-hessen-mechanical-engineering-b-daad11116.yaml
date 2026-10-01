@@ -9,6 +9,12 @@ summary:
   fr:
     text: Mechanical Engineering Bilingual Study Programme, Technische Hochschule Mittelhessen University of Applied Sciences (Friedberg (Hessen)). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Mechanical Engineering Bilingual Study Programme, Technische Hochschule Mittelhessen University of Applied Sciences (Friedberg (Hessen)). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Mechanical Engineering Bilingual Study Programme, Technische Hochschule Mittelhessen University of Applied Sciences (Friedberg (Hessen)). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

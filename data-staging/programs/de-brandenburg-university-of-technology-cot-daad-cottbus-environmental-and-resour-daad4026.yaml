@@ -9,6 +9,12 @@ summary:
   fr:
     text: Environmental and Resource Management (BSc), Brandenburg University of Technology Cottbus-Senftenberg (Cottbus). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Environmental and Resource Management (BSc), Brandenburg University of Technology Cottbus-Senftenberg (Cottbus). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Environmental and Resource Management (BSc), Brandenburg University of Technology Cottbus-Senftenberg (Cottbus). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3

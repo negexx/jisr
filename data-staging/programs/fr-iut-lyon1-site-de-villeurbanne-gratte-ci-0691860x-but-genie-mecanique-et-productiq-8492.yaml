@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Génie mécanique et productique, IUT Lyon1 Site de Villeurbanne Gratte-Ciel (Villeurbanne). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Génie mécanique et productique, IUT Lyon1 Site de Villeurbanne Gratte-Ciel (Villeurbanne). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie mécanique et productique, IUT Lyon1 Site de Villeurbanne Gratte-Ciel (Villeurbanne). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8492&typeBac=0&originePc=0
 durationYears:
   value: null

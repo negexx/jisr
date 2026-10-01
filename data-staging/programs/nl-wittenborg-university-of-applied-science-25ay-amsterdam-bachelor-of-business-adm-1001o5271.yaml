@@ -9,6 +9,12 @@ summary:
   fr:
     text: Bachelor of Business Administration (Bachelor of Business Administration), Wittenborg University of Applied Sciences B.V. (Amsterdam). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Bachelor of Business Administration (Bachelor of Business Administration), Wittenborg University of Applied Sciences B.V. (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bachelor of Business Administration (Bachelor of Business Administration), Wittenborg University of Applied Sciences B.V. (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

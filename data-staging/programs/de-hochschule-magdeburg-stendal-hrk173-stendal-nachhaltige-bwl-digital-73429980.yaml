@@ -9,6 +9,12 @@ summary:
   fr:
     text: Nachhaltige BWL - Digital Business/ Personalmanagement/ Wirtschaftspsychologie Bachelor of Arts, Hochschule Magdeburg-Stendal (Stendal). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Nachhaltige BWL - Digital Business/ Personalmanagement/ Wirtschaftspsychologie Bachelor of Arts, Hochschule Magdeburg-Stendal (Stendal). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Nachhaltige BWL - Digital Business/ Personalmanagement/ Wirtschaftspsychologie Bachelor of Arts, Hochschule Magdeburg-Stendal (Stendal). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

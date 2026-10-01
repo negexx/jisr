@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Gestion administrative et commerciale des organisations, IUT de Bordeaux - Antenne de Polynésie Française (Faaa). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Gestion administrative et commerciale des organisations, IUT de Bordeaux - Antenne de Polynésie Française (Faaa). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Gestion administrative et commerciale des organisations, IUT de Bordeaux - Antenne de Polynésie Française (Faaa). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20017&typeBac=0&originePc=0
 durationYears:
   value: null

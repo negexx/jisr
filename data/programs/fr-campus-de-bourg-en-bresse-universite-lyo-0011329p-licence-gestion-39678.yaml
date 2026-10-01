@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Gestion - Parcours Gestion et management, Campus de Bourg-en-Bresse - Université Lyon 3 (Bourg-en-Bresse). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Gestion - Parcours Gestion et management, Campus de Bourg-en-Bresse - Université Lyon 3 (Bourg-en-Bresse). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Gestion - Parcours Gestion et management, Campus de Bourg-en-Bresse - Université Lyon 3 (Bourg-en-Bresse). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://bourgenbresse.univ-lyon3.fr/licence-de-gestion-management-bourg-en-bresse-3
 durationYears:
   value: 3

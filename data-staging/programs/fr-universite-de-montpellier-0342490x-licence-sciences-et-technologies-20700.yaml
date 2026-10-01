@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Sciences et technologies - Parcours Pluridisciplinarité et métiers de l’enseignement, de l’éducation et de la formation, Université de Montpellier (Montpellier). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Sciences et technologies - Parcours Pluridisciplinarité et métiers de l’enseignement, de l’éducation et de la formation, Université de Montpellier (Montpellier). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Sciences et technologies - Parcours Pluridisciplinarité et métiers de l’enseignement, de l’éducation et de la formation, Université de Montpellier (Montpellier). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20700&typeBac=0&originePc=0
 durationYears:
   value: null

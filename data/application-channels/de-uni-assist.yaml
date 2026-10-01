@@ -8,6 +8,12 @@ summary:
   fr:
     text: Service central de candidature pour les étudiants internationaux de nombreuses universités allemandes.
     status: draft
+  en:
+    text: Central application service for international students of many German universities.
+    status: draft
+  ar:
+    text: الخدمة المركزية لطلبات التسجيل للطلبة الدوليين في عدد كبير من الجامعات الألمانية.
+    status: draft
 source: page
 info_kind: official
 sources:

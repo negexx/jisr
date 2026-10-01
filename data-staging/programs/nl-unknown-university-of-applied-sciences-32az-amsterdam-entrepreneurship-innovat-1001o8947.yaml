@@ -9,6 +9,12 @@ summary:
   fr:
     text: Entrepreneurship & Innovation (Entrepreneurship & Innovation), Unknown University of Applied Sciences (Amsterdam). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Entrepreneurship & Innovation (Entrepreneurship & Innovation), Unknown University of Applied Sciences (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Entrepreneurship & Innovation (Entrepreneurship & Innovation), Unknown University of Applied Sciences (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

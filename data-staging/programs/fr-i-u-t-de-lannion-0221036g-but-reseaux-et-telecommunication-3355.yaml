@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Réseaux et télécommunications, I.U.T de Lannion (Lannion). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Réseaux et télécommunications, I.U.T de Lannion (Lannion). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Réseaux et télécommunications, I.U.T de Lannion (Lannion). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3355&typeBac=0&originePc=0
 durationYears:
   value: null

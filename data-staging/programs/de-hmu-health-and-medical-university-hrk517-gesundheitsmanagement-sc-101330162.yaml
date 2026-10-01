@@ -9,6 +9,12 @@ summary:
   fr:
     text: Gesundheitsmanagement Schwerpunkt Medical Controlling Bachelor (FH), HMU Health and Medical University (Erfurt). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Gesundheitsmanagement Schwerpunkt Medical Controlling Bachelor (FH), HMU Health and Medical University (Erfurt). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Gesundheitsmanagement Schwerpunkt Medical Controlling Bachelor (FH), HMU Health and Medical University (Erfurt). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Qualité, logistique industrielle et organisation, I.U.T de Bourges (Bourges). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Qualité, logistique industrielle et organisation, I.U.T de Bourges (Bourges). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Qualité, logistique industrielle et organisation, I.U.T de Bourges (Bourges). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3122&typeBac=0&originePc=0
 durationYears:
   value: null

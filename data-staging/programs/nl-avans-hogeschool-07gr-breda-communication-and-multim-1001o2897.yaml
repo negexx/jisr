@@ -9,6 +9,12 @@ summary:
   fr:
     text: Communication and Multimedia Design (Communication & Multimedia Design), Avans Hogeschool (Breda). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Communication and Multimedia Design (Communication & Multimedia Design), Avans Hogeschool (Breda). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Communication and Multimedia Design (Communication & Multimedia Design), Avans Hogeschool (Breda). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

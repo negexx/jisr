@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Economie et gestion - Parcours Science politique et Relations internationales, Université Savoie Mont Blanc - Annecy-le-Vieux (Annecy). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Economie et gestion - Parcours Science politique et Relations internationales, Université Savoie Mont Blanc - Annecy-le-Vieux (Annecy). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Economie et gestion - Parcours Science politique et Relations internationales, Université Savoie Mont Blanc - Annecy-le-Vieux (Annecy). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=22073&typeBac=0&originePc=0
 durationYears:
   value: null

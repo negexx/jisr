@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Gestion des entreprises et des administrations, I.U.T de l'Indre (Châteauroux). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Gestion des entreprises et des administrations, I.U.T de l'Indre (Châteauroux). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Gestion des entreprises et des administrations, I.U.T de l'Indre (Châteauroux). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4820&typeBac=0&originePc=0
 durationYears:
   value: null

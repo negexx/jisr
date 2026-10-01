@@ -9,6 +9,12 @@ summary:
   fr:
     text: Bachelor in International Business Administration (BSc), WHU - Otto Beisheim School of Management (Vallendar). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Bachelor in International Business Administration (BSc), WHU - Otto Beisheim School of Management (Vallendar). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Bachelor in International Business Administration (BSc), WHU - Otto Beisheim School of Management (Vallendar). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3

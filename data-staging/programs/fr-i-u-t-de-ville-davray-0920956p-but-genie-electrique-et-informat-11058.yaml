@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Génie électrique et informatique industrielle, I.U.T de Ville d'Avray (Ville-d'Avray). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Génie électrique et informatique industrielle, I.U.T de Ville d'Avray (Ville-d'Avray). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie électrique et informatique industrielle, I.U.T de Ville d'Avray (Ville-d'Avray). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11058&typeBac=0&originePc=0
 durationYears:
   value: null

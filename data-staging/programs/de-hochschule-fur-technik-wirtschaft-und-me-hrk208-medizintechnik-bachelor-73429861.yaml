@@ -9,6 +9,12 @@ summary:
   fr:
     text: Medizintechnik Bachelor, Hochschule für Technik, Wirtschaft und Medien Offenburg (Offenburg). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
     status: draft
+  en:
+    text: Medizintechnik Bachelor, Hochschule für Technik, Wirtschaft und Medien Offenburg (Offenburg). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Medizintechnik Bachelor, Hochschule für Technik, Wirtschaft und Medien Offenburg (Offenburg). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

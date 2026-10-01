@@ -9,6 +9,12 @@ summary:
   fr:
     text: Creative Media and Game Technologies (Creative Media and Game Technologies), Hogeschool Rotterdam (Rotterdam). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Creative Media and Game Technologies (Creative Media and Game Technologies), Hogeschool Rotterdam (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Creative Media and Game Technologies (Creative Media and Game Technologies), Hogeschool Rotterdam (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

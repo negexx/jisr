@@ -9,6 +9,12 @@ summary:
   fr:
     text: International Development Management (International Development Management), Hogeschool Van Hall Larenstein (Velp). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: International Development Management (International Development Management), Hogeschool Van Hall Larenstein (Velp). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: International Development Management (International Development Management), Hogeschool Van Hall Larenstein (Velp). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

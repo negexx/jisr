@@ -9,6 +9,12 @@ summary:
   fr:
     text: Chemie (Chemistry), Hanzehogeschool Groningen (Groningen). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Chemie (Chemistry), Hanzehogeschool Groningen (Groningen). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Chemie (Chemistry), Hanzehogeschool Groningen (Groningen). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

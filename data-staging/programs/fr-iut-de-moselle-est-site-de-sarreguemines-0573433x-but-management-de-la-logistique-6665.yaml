@@ -9,6 +9,12 @@ summary:
   fr:
     text: BUT - Management de la Logistique et des Transports, IUT de Moselle Est - Site de Sarreguemines - Université de Lorraine (Sarreguemines). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: BUT - Management de la Logistique et des Transports, IUT de Moselle Est - Site de Sarreguemines - Université de Lorraine (Sarreguemines). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Management de la Logistique et des Transports, IUT de Moselle Est - Site de Sarreguemines - Université de Lorraine (Sarreguemines). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6665&typeBac=0&originePc=0
 durationYears:
   value: null

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Administration économique et sociale, Université de Bourgogne Europe (ex UB) - site Le Creusot (Le Creusot). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Administration économique et sociale, Université de Bourgogne Europe (ex UB) - site Le Creusot (Le Creusot). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Administration économique et sociale, Université de Bourgogne Europe (ex UB) - site Le Creusot (Le Creusot). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8679&typeBac=0&originePc=0
 durationYears:
   value: null

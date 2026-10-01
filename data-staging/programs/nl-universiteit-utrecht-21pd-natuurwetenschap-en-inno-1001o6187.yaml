@@ -9,6 +9,12 @@ summary:
   fr:
     text: Natuurwetenschap en Innovatiemanagement (Science and Innovation Management), Universiteit Utrecht (Utrecht). Programme recensé au registre néerlandais RIO.
     status: draft
+  en:
+    text: Natuurwetenschap en Innovatiemanagement (Science and Innovation Management), Universiteit Utrecht (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Natuurwetenschap en Innovatiemanagement (Science and Innovation Management), Universiteit Utrecht (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
 officialUrl: null
 durationYears:
   value: null

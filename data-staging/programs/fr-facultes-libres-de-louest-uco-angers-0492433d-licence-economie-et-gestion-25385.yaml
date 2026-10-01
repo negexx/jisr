@@ -9,6 +9,12 @@ summary:
   fr:
     text: Licence - Economie et gestion, Facultés libres de l'Ouest - UCO ANGERS (Angers). Fiche officielle Parcoursup.
     status: draft
+  en:
+    text: Licence - Economie et gestion, Facultés libres de l'Ouest - UCO ANGERS (Angers). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Economie et gestion, Facultés libres de l'Ouest - UCO ANGERS (Angers). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
 officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=25385&typeBac=0&originePc=0
 durationYears:
   value: null

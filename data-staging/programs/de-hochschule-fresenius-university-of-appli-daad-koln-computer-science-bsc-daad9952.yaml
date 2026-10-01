@@ -9,6 +9,12 @@ summary:
   fr:
     text: Computer Science (BSc), Hochschule Fresenius - University of Applied Sciences (Köln). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Computer Science (BSc), Hochschule Fresenius - University of Applied Sciences (Köln). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Computer Science (BSc), Hochschule Fresenius - University of Applied Sciences (Köln). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3

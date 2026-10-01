@@ -52,7 +52,11 @@
     "rules": [
       {
         "kind": "manual_check",
-        "note": "Un diplôme équivalent à un havo ou vwo néerlandais avec un profil approprié est exigé : faire vérifier l'équivalence du Bac et du profil auprès de BUas.",
+        "note": {
+          "fr": "Un diplôme équivalent à un havo ou vwo néerlandais avec un profil approprié est exigé : faire vérifier l'équivalence du Bac et du profil auprès de BUas.",
+          "en": "A diploma equivalent to a Dutch havo or vwo with an appropriate profile is required: have the equivalence of your Bac and profile checked with BUas.",
+          "ar": "يُشترط دبلوم معادل لـ havo أو vwo الهولندي مع توجّه مناسب: تحقّقوا من معادلة الباكالوريا والتوجّه لدى BUas."
+        },
         "evidence": [
           {
             "url": "https://www.buas.nl/en/programmes/applied-data-science-artificial-intelligence",
@@ -62,7 +66,11 @@
       },
       {
         "kind": "manual_check",
-        "note": "Admission sur sélection (125 places maximum) : devoir portfolio en ligne puis entretien en anglais ; fournir diplôme avec relevé de notes, CV et pièce d'identité.",
+        "note": {
+          "fr": "Admission sur sélection (125 places maximum) : devoir portfolio en ligne puis entretien en anglais ; fournir diplôme avec relevé de notes, CV et pièce d'identité.",
+          "en": "Selective admission (maximum 125 places): online portfolio assignment then an interview in English; provide diploma with transcript, CV and ID.",
+          "ar": "القبول بالانتقاء (125 مقعدًا كحد أقصى): مهمة ملف أعمال عبر الإنترنت ثم مقابلة بالإنجليزية؛ قدّموا الشهادة مع كشف النقط والسيرة الذاتية وبطاقة الهوية."
+        },
         "evidence": [
           {
             "url": "https://www.buas.nl/en/programmes/applied-data-science-artificial-intelligence",

@@ -9,6 +9,12 @@ summary:
   fr:
     text: Creative Industries Management (BA), SRH University (Berlin). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: Creative Industries Management (BA), SRH University (Berlin). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Creative Industries Management (BA), SRH University (Berlin). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

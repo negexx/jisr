@@ -9,6 +9,12 @@ summary:
   fr:
     text: BSc Mechanical Engineering, Hamburg University of Applied Sciences (Hamburg). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
+  en:
+    text: BSc Mechanical Engineering, Hamburg University of Applied Sciences (Hamburg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: BSc Mechanical Engineering, Hamburg University of Applied Sciences (Hamburg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
 officialUrl: null
 durationYears:
   value: 3.5

@@ -1,8 +1,8 @@
 import { z } from "zod";
-
 import { fetchJson, probeHttps } from "../http";
 import type { ReviewRow, StagedRecord } from "../staging";
 import { READ_SOURCE } from "../staging";
+import { CHANNEL_SUMMARIES, programmeSummary } from "../summaries";
 import { canonicalTown, collapseSpaces, nameKey, sameTown, slugify } from "../text";
 import type { BaProgramme } from "./ba";
 import { classifyGerman, fetchBaProgrammes, matchHrk, tokens } from "./ba";
@@ -428,15 +428,7 @@ export function buildDaadRecords(input: {
         field: match.field,
         level: "bachelor",
         name: c.courseName,
-        summary: {
-          fr: {
-            text: `${c.courseName}, ${instName} (${city}). Programme recensé dans la base de programmes internationaux du DAAD.`.slice(
-              0,
-              400,
-            ),
-            status: "draft",
-          },
-        },
+        summary: programmeSummary(c.courseName, instName, city, "daad"),
         // Left empty on purpose, like the other programme importers: the DAAD page is a listing, not
         // the institution's own programme page, so a human must supply that before promotion.
         officialUrl: null,
