@@ -1,0 +1,56 @@
+slug: de-universitat-stuttgart-hrk248-materialwissenschaft-bac-73026616
+institution: de-universitat-stuttgart-hrk248
+country: DE
+city: stuttgart
+field: engineering
+level: bachelor
+name: Materialwissenschaft Bachelor of Science
+summary:
+  fr:
+    text: Materialwissenschaft Bachelor of Science, Universität Stuttgart (Stuttgart). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-universitat-stuttgart-hrk248-materialwissenschaft-bac-73026616
+  name: Materialwissenschaft Bachelor of Science
+  institution: Universität Stuttgart
+  city: Stuttgart
+  field: engineering
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Universität, Baden-Württemberg, subjects: Materialwissenschaft (grundständig); provider \"Universität Stuttgart\" matched to HRK institution \"Universität Stuttgart\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

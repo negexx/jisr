@@ -1,0 +1,24 @@
+slug: de-fh-munster-university-of-applied-science-hrk192-steinfurt
+name: FH Münster - University of Applied Sciences
+country: DE
+city:
+  slug: steinfurt
+  name: Steinfurt
+type: public
+website: https://www.fh-muenster.de/de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fh-munster-university-of-applied-science-hrk192-steinfurt
+  name: FH Münster - University of Applied Sciences
+  institution: ""
+  city: Steinfurt
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fh-muenster.de/de/
+  todo: "study location in Steinfurt of \"FH Münster - University of Applied Sciences\" (HRK main town Münster); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"

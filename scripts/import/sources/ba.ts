@@ -206,7 +206,7 @@ export function tokens(name: string): Set<string> {
   );
 }
 
-export type HrkLite = { slug: string; name: string; city: string };
+export type HrkLite = { slug: string; name: string; city: string; alias?: string };
 
 // Links a provider to an HRK institution: equal names, or one name's words contained in the
 // other's with the same town. Ambiguity means no match, so a wrong institution is never guessed.
@@ -217,22 +217,26 @@ export function matchHrk(
 ): HrkLite | null {
   const wanted = tokens(provider);
   if (wanted.size === 0) return null;
+  // The official name and the everyday short name ("RWTH Aachen") are both valid ways to be named.
+  const names = (i: HrkLite) => [tokens(i.name), ...(i.alias ? [tokens(i.alias)] : [])];
   // The same town, or the institution's town named in the provider's own name (a campus elsewhere).
   const sameCity = (i: HrkLite) => city !== "" && nameKey(i.city) === nameKey(city);
   const cityInName = (i: HrkLite) => {
     const cityTokens = tokens(i.city);
     return cityTokens.size > 0 && [...cityTokens].every((x) => wanted.has(x));
   };
-  const equal = institutions.filter((i) => {
-    const t = tokens(i.name);
-    return t.size === wanted.size && [...t].every((x) => wanted.has(x));
-  });
+  const equal = institutions.filter((i) =>
+    names(i).some((t) => t.size === wanted.size && [...t].every((x) => wanted.has(x))),
+  );
   if (equal.length === 1) return equal[0] ?? null;
-  const contained = institutions.filter((i) => {
-    const t = tokens(i.name);
-    const [small, big] = t.size <= wanted.size ? [t, wanted] : [wanted, t];
-    return (sameCity(i) || cityInName(i)) && small.size >= 2 && [...small].every((x) => big.has(x));
-  });
+  const contained = institutions.filter(
+    (i) =>
+      (sameCity(i) || cityInName(i)) &&
+      names(i).some((t) => {
+        const [small, big] = t.size <= wanted.size ? [t, wanted] : [wanted, t];
+        return small.size >= 2 && [...small].every((x) => big.has(x));
+      }),
+  );
   return contained.length === 1 ? (contained[0] ?? null) : null;
 }
 

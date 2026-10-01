@@ -1,0 +1,56 @@
+slug: de-hmu-health-and-medical-university-hrk517-gesundheitsmanagement-sc-101330162
+institution: de-hmu-health-and-medical-university-hrk517
+country: DE
+city: erfurt
+field: business-economics
+level: bachelor
+name: Gesundheitsmanagement Schwerpunkt Medical Controlling Bachelor (FH)
+summary:
+  fr:
+    text: Gesundheitsmanagement Schwerpunkt Medical Controlling Bachelor (FH), HMU Health and Medical University (Erfurt). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hmu-health-and-medical-university-hrk517-gesundheitsmanagement-sc-101330162
+  name: Gesundheitsmanagement Schwerpunkt Medical Controlling Bachelor (FH)
+  institution: HMU Health and Medical University
+  city: Erfurt
+  field: business-economics
+  confidence: low
+  officialUrl: ""
+  todo: "BA Studiensuche: Hochschule eigenen Typs, Thüringen, subjects: Betriebswirtschaftslehre, Business Administration (grundständig), Gesundheitsmanagement, -ökonomie (grundständig); provider \"HMU Health and Medical University\" matched to HRK institution \"HMU Health and Medical University\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

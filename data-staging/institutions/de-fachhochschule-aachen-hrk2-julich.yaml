@@ -1,0 +1,24 @@
+slug: de-fachhochschule-aachen-hrk2-julich
+name: Fachhochschule Aachen
+country: DE
+city:
+  slug: julich
+  name: Jülich
+type: public
+website: null
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fachhochschule-aachen-hrk2-julich
+  name: Fachhochschule Aachen
+  institution: ""
+  city: Jülich
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "study location in Jülich of \"Fachhochschule Aachen\" (HRK main town Aachen); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"

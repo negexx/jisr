@@ -5,7 +5,7 @@ city:
   slug: ilmenau
   name: Ilmenau
 type: public
-website: null
+website: https://www.tu-ilmenau.de/
 source: hrk
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Ilmenau
   field: ""
   confidence: ""
-  officialUrl: ""
-  todo: "HRK: Universitäten, Thüringen, sponsor \"öffentlich-rechtlich\"; listed website \"http://www.tu-ilmenau.de\" did not answer over https (probe failed): find the official https site; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  officialUrl: https://www.tu-ilmenau.de/
+  todo: "HRK: Universitäten, Thüringen, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.tu-ilmenau.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

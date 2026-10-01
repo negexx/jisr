@@ -1,0 +1,24 @@
+slug: de-duale-hochschule-baden-wurttemberg-hrk398-villingen-schwenningen
+name: Duale Hochschule Baden-Württemberg
+country: DE
+city:
+  slug: villingen-schwenningen
+  name: Villingen-Schwenningen
+type: public
+website: https://www.dhbw.de/startseite
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-duale-hochschule-baden-wurttemberg-hrk398-villingen-schwenningen
+  name: Duale Hochschule Baden-Württemberg
+  institution: ""
+  city: Villingen-Schwenningen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.dhbw.de/startseite
+  todo: "study location in Villingen-Schwenningen of \"Duale Hochschule Baden-Württemberg\" (HRK main town Stuttgart); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"

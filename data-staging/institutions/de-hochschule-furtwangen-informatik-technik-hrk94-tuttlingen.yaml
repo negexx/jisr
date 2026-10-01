@@ -1,0 +1,24 @@
+slug: de-hochschule-furtwangen-informatik-technik-hrk94-tuttlingen
+name: Hochschule Furtwangen - Informatik, Technik, Wirtschaft, Medien, Gesundheit
+country: DE
+city:
+  slug: tuttlingen
+  name: Tuttlingen
+type: public
+website: https://www.hs-furtwangen.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-furtwangen-informatik-technik-hrk94-tuttlingen
+  name: Hochschule Furtwangen - Informatik, Technik, Wirtschaft, Medien, Gesundheit
+  institution: ""
+  city: Tuttlingen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-furtwangen.de/
+  todo: "study location in Tuttlingen of \"Hochschule Furtwangen - Informatik, Technik, Wirtschaft, Medien, Gesundheit\" (HRK main town Furtwangen); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"

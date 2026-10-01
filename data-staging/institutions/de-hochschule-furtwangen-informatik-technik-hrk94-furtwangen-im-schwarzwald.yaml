@@ -1,0 +1,24 @@
+slug: de-hochschule-furtwangen-informatik-technik-hrk94-furtwangen-im-schwarzwald
+name: Hochschule Furtwangen - Informatik, Technik, Wirtschaft, Medien, Gesundheit
+country: DE
+city:
+  slug: furtwangen-im-schwarzwald
+  name: Furtwangen im Schwarzwald
+type: public
+website: https://www.hs-furtwangen.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-furtwangen-informatik-technik-hrk94-furtwangen-im-schwarzwald
+  name: Hochschule Furtwangen - Informatik, Technik, Wirtschaft, Medien, Gesundheit
+  institution: ""
+  city: Furtwangen im Schwarzwald
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-furtwangen.de/
+  todo: "study location in Furtwangen im Schwarzwald of \"Hochschule Furtwangen - Informatik, Technik, Wirtschaft, Medien, Gesundheit\" (HRK main town Furtwangen); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"

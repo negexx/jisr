@@ -1,0 +1,24 @@
+slug: de-hochschule-braunschweig-wolfenbuttel-ost-hrk36-salzgitter
+name: Hochschule Braunschweig/Wolfenbüttel, Ostfalia Hochschule für angewandte Wissenschaften
+country: DE
+city:
+  slug: salzgitter
+  name: Salzgitter
+type: public
+website: https://www.ostfalia.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-braunschweig-wolfenbuttel-ost-hrk36-salzgitter
+  name: Hochschule Braunschweig/Wolfenbüttel, Ostfalia Hochschule für angewandte Wissenschaften
+  institution: ""
+  city: Salzgitter
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ostfalia.de/
+  todo: "study location in Salzgitter of \"Hochschule Braunschweig/Wolfenbüttel, Ostfalia Hochschule für angewandte Wissenschaften\" (HRK main town Wolfenbüttel); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"

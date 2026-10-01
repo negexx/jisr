@@ -1,0 +1,56 @@
+slug: de-hochschule-fur-wirtschaft-und-gesellscha-hrk307-ludwigshafen-am-rhein-internationale-wirtschaf-132878958
+institution: de-hochschule-fur-wirtschaft-und-gesellscha-hrk307-ludwigshafen-am-rhein
+country: DE
+city: ludwigshafen-am-rhein
+field: computer-science
+level: bachelor
+name: Internationale Wirtschaftsinformatik - International Business Administration and Information Technology (IBAIT) Bachelor of Science (B.Sc.)
+summary:
+  fr:
+    text: Internationale Wirtschaftsinformatik - International Business Administration and Information Technology (IBAIT) Bachelor of Science (B.Sc.), Hochschule für Wirtschaft und Gesellschaft Ludwigshafen (Ludwigshafen am Rhein). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-fur-wirtschaft-und-gesellscha-hrk307-ludwigshafen-am-rhein-internationale-wirtschaf-132878958
+  name: Internationale Wirtschaftsinformatik - International Business Administration and Information Technology (IBAIT) Bachelor of Science (B.Sc.)
+  institution: Hochschule für Wirtschaft und Gesellschaft Ludwigshafen
+  city: Ludwigshafen am Rhein
+  field: computer-science
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Rheinland-Pfalz, subjects: Wirtschaftswissenschaften (grundständig); provider \"Hochschule für Wirtschaft und Gesellschaft Ludwigshafen\" matched to HRK institution \"Hochschule für Wirtschaft und Gesellschaft Ludwigshafen\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

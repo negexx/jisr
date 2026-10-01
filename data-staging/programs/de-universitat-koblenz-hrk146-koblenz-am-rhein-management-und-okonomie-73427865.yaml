@@ -1,0 +1,56 @@
+slug: de-universitat-koblenz-hrk146-koblenz-am-rhein-management-und-okonomie-73427865
+institution: de-universitat-koblenz-hrk146-koblenz-am-rhein
+country: DE
+city: koblenz-am-rhein
+field: business-economics
+level: bachelor
+name: Management und Ökonomie (Zwei-Fach-Bachelor) Bachelor
+summary:
+  fr:
+    text: Management und Ökonomie (Zwei-Fach-Bachelor) Bachelor, Universität Koblenz (Koblenz am Rhein). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-universitat-koblenz-hrk146-koblenz-am-rhein-management-und-okonomie-73427865
+  name: Management und Ökonomie (Zwei-Fach-Bachelor) Bachelor
+  institution: Universität Koblenz
+  city: Koblenz am Rhein
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Universität, Rheinland-Pfalz, subjects: Wirtschaftswissenschaften (grundständig); provider \"Universität Koblenz\" matched to HRK institution \"Universität Koblenz\"; may be a minor or combination subject, not a stand-alone degree; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

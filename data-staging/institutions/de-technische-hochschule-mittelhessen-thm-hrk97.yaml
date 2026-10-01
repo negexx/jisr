@@ -2,10 +2,10 @@ slug: de-technische-hochschule-mittelhessen-thm-hrk97
 name: Technische Hochschule Mittelhessen - THM
 country: DE
 city:
-  slug: gie-en
+  slug: giessen
   name: Gießen
 type: public
-website: null
+website: https://www.thm.de/site/
 source: hrk
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Gießen
   field: ""
   confidence: ""
-  officialUrl: ""
-  todo: "HRK: Fachhochschulen / HAW, Hessen, sponsor \"öffentlich-rechtlich\"; listed website \"http://www.thm.de\" did not answer over https (probe failed): find the official https site; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  officialUrl: https://www.thm.de/site/
+  todo: "HRK: Fachhochschulen / HAW, Hessen, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.thm.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

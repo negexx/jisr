@@ -1,0 +1,24 @@
+slug: de-accadis-hochschule-bad-homburg-hrk354-bad-homburg-vor-der-hohe
+name: accadis Hochschule Bad Homburg
+country: DE
+city:
+  slug: bad-homburg-vor-der-hohe
+  name: Bad Homburg vor der Höhe
+type: private
+website: https://www.accadis.com/contact.aspx
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-accadis-hochschule-bad-homburg-hrk354-bad-homburg-vor-der-hohe
+  name: accadis Hochschule Bad Homburg
+  institution: ""
+  city: Bad Homburg vor der Höhe
+  field: ""
+  confidence: ""
+  officialUrl: https://www.accadis.com/contact.aspx
+  todo: "study location in Bad Homburg vor der Höhe of \"accadis Hochschule Bad Homburg\" (HRK main town Bad Homburg); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"

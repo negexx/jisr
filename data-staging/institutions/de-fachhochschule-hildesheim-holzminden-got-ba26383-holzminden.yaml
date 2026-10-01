@@ -1,0 +1,24 @@
+slug: de-fachhochschule-hildesheim-holzminden-got-ba26383-holzminden
+name: Fachhochschule Hildesheim/ Holzminden/ Göttingen
+country: DE
+city:
+  slug: holzminden
+  name: Holzminden
+type: null
+website: null
+source: ba
+info_kind: TODO_read_source
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fachhochschule-hildesheim-holzminden-got-ba26383-holzminden
+  name: Fachhochschule Hildesheim/ Holzminden/ Göttingen
+  institution: ""
+  city: Holzminden
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "provider from the BA Studiensuche (Fachhochschule/Hochschule für angewandte Wissenschaften, Niedersachsen); not matched to the HRK list: find its official site, check it is a recognised Hochschule, set the type, add its page as the source, then info_kind: official"

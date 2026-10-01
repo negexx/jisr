@@ -1,0 +1,24 @@
+slug: de-technische-hochschule-mittelhessen-thm-hrk97-friedberg-hessen
+name: Technische Hochschule Mittelhessen - THM
+country: DE
+city:
+  slug: friedberg-hessen
+  name: Friedberg (Hessen)
+type: public
+website: https://www.thm.de/site/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-hochschule-mittelhessen-thm-hrk97-friedberg-hessen
+  name: Technische Hochschule Mittelhessen - THM
+  institution: ""
+  city: Friedberg (Hessen)
+  field: ""
+  confidence: ""
+  officialUrl: https://www.thm.de/site/
+  todo: "study location in Friedberg (Hessen) of \"Technische Hochschule Mittelhessen - THM\" (HRK main town Gießen); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"

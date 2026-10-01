@@ -5,7 +5,7 @@ city:
   slug: bremen
   name: Bremen
 type: private
-website: https://www.apollon-hochschule.de/redirect.php
+website: null
 source: hrk
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Bremen
   field: ""
   confidence: ""
-  officialUrl: https://www.apollon-hochschule.de/redirect.php
-  todo: "HRK: Fachhochschulen / HAW, Bremen, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.apollon-hochschule.de/redirect.php?id=32\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  officialUrl: ""
+  todo: "HRK: Fachhochschulen / HAW, Bremen, sponsor \"privat, staatlich anerkannt\"; listed website \"http://www.apollon-hochschule.de/redirect.php?id=32\" did not answer over https (probe failed): find the official https site; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

@@ -23,6 +23,7 @@ const hrk = (over: Partial<Parameters<typeof buildHrkRecord>[0]> = {}) => ({
   state: "Bayern",
   city: "München",
   homepage: "https://www.beispiel.de/",
+  alias: "",
   ...over,
 });
 const duo = (over: Partial<Parameters<typeof buildDuoRecord>[0]> = {}) => ({

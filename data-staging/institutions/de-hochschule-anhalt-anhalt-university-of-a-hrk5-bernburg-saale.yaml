@@ -1,0 +1,24 @@
+slug: de-hochschule-anhalt-anhalt-university-of-a-hrk5-bernburg-saale
+name: Hochschule Anhalt - Anhalt University of Applied Sciences
+country: DE
+city:
+  slug: bernburg-saale
+  name: Bernburg (Saale)
+type: public
+website: https://www.hs-anhalt.de/startseite.html
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-anhalt-anhalt-university-of-a-hrk5-bernburg-saale
+  name: Hochschule Anhalt - Anhalt University of Applied Sciences
+  institution: ""
+  city: Bernburg (Saale)
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-anhalt.de/startseite.html
+  todo: "study location in Bernburg (Saale) of \"Hochschule Anhalt - Anhalt University of Applied Sciences\" (HRK main town Köthen); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"

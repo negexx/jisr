@@ -1,0 +1,56 @@
+slug: de-hsba-hamburg-school-of-business-administ-hrk358-international-management-73423136
+institution: de-hsba-hamburg-school-of-business-administ-hrk358
+country: DE
+city: hamburg
+field: business-economics
+level: bachelor
+name: International Management Bachelor
+summary:
+  fr:
+    text: International Management Bachelor, HSBA Hamburg School of Business Administration (Hamburg). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hsba-hamburg-school-of-business-administ-hrk358-international-management-73423136
+  name: International Management Bachelor
+  institution: HSBA Hamburg School of Business Administration
+  city: Hamburg
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Hamburg, subjects: Betriebswirtschaftslehre, Business Administration (grundständig); provider \"Hamburg School of Business Administration\" matched to HRK institution \"HSBA Hamburg School of Business Administration\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

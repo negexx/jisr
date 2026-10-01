@@ -1,0 +1,26 @@
+slug: de-uni-assist
+name: uni-assist
+country: DE
+kind: intermediary
+url: https://www.uni-assist.de/
+accountRequired: null
+summary:
+  fr:
+    text: Service central de candidature pour les étudiants internationaux de nombreuses universités allemandes.
+    status: draft
+source: main
+info_kind: TODO_read_source
+sources:
+  main:
+    url: https://www.uni-assist.de/
+    last_verified_at: null
+_review:
+  kind: application-channels
+  slug: de-uni-assist
+  name: uni-assist
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-assist.de/
+  todo: "not every university uses uni-assist (some take applications directly): confirm per institution, and whether an account is required"

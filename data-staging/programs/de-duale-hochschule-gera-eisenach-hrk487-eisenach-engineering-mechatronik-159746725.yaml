@@ -1,0 +1,56 @@
+slug: de-duale-hochschule-gera-eisenach-hrk487-eisenach-engineering-mechatronik-159746725
+institution: de-duale-hochschule-gera-eisenach-hrk487-eisenach
+country: DE
+city: eisenach
+field: engineering
+level: bachelor
+name: Engineering - Mechatronik und Automation Bachelor
+summary:
+  fr:
+    text: Engineering - Mechatronik und Automation Bachelor, Duale Hochschule Gera-Eisenach (Eisenach). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-duale-hochschule-gera-eisenach-hrk487-eisenach-engineering-mechatronik-159746725
+  name: Engineering - Mechatronik und Automation Bachelor
+  institution: Duale Hochschule Gera-Eisenach
+  city: Eisenach
+  field: engineering
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Hochschule eigenen Typs, Thüringen, subjects: Maschinenbau (grundständig); provider \"Duale Hochschule Gera Eisenach\" matched to HRK institution \"Duale Hochschule Gera-Eisenach\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

@@ -48,6 +48,7 @@ Official bulk datasets are pulled into `data-staging/`, never straight into `dat
 pnpm data:import france          # Parcoursup open data (Licence + BUT, CS/engineering/business) + institutions
 pnpm data:import institutions    # German (HRK) and Dutch (DUO) institution candidates
 pnpm data:import netherlands     # Dutch programmes (RIO register) and their campus institutions
+pnpm data:import germany         # German programmes (Studiensuche API), linked to the HRK institutions
 pnpm data:import                 # all sources; keeps staged files (--overwrite replaces them and clears their approval; --refresh bypasses the HTTP cache)
 pnpm data:promote --confirm-human-read --verified-on YYYY-MM-DD
 ```
@@ -67,6 +68,7 @@ What each source provides, and what stays for a human:
 | HRK Hochschulkompass list, Germany (`hs_liste.txt`) | 323 universities, Fachhochschulen/HAW and other Hochschulen: official name, city, public/private sponsor (type left null for church-run institutions), website candidate. A website that is not an https front door, or whose https form redirects to another domain, is flagged | everything has to be read on the institution's own site: the register page cited as source does not show an individual institution, so every record keeps the placeholder `info_kind` until you add that page as the source |
 | DUO open data, Netherlands (`Hogescholen en universiteiten`) | 54 hogescholen and universities: official name, city, website candidate (probed for https), denomination as a hint | public/private type, the institution's own page as source, programmes |
 | DUO "Overzicht Erkenningen ho" (RIO register), Netherlands (CC-BY) | 743 current full-time Bachelor programmes (HBO and WO) in the three fields at 175 institution units (one per campus city): official Dutch name, English name in the notes, ECTS (duration prefilled as ECTS / 60, still blocked until you confirm), funding status, accreditation date | the programme page (`officialUrl` is left empty on purpose), teaching language, tuition for non-EU students, intakes, documents, requirements, application channel |
+| Federal Employment Agency "Studiensuche" API, Germany (documented by bund.dev) | 2,861 Bachelor (undergraduate, full-time) programmes in 26 engineering, computer-science and business study fields at universities, Fachhochschulen/HAW and other Hochschulen, linked to the HRK institution (99.5% matched by name or HRK short name; 3 providers left as candidates), campus towns as their own institution units | the programme page (`officialUrl` is left empty), duration, teaching language, tuition, intakes, documents, requirements, application channel (uni-assist or direct): the API has none of these |
 | Wikidata (CC0) | only French UAI → website (a candidate, below ONISEP) | everything else |
 
 Field assignment for French programmes is an exact-label table in `scripts/import/fields.ts`; `confidence: low` rows are judgement calls. The HTTP cache lives in `.cache/import/` (git-ignored).
@@ -80,8 +82,9 @@ Field assignment for French programmes is an exact-label table in `scripts/impor
 | HRK Hochschulkompass list | [downloads page](https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html): "free of charge for personal use only. All other uses, in particular commercial use (including individual parts), require the approval of the Foundation for the Promotion of the HRK" | **permission to be requested before launch** (hochschulkompass@hrk.de). The 323 HRK-derived staging files are committed for review; do not promote them into `data/` or publish them before permission is granted |
 | DUO "Overzicht Erkenningen ho" (RIO) | Creative Commons Attribution (cc-by, from the dataset metadata) | credit "DUO / Ministry of Education, Culture and Science (OCW)" |
 | DUO institution list (`Hogescholen en universiteiten`) | the page states no licence; a research note says CC0 for DUO open data, not verified | **confirm the licence** |
+| Studiensuche API (Federal Employment Agency) | no licence statement found; documented and used by the bund.dev community with a public client id | **confirm the terms of use before launch** |
 | Wikidata | CC0 | free |
 
-Known gaps: no bulk official programme dataset was reachable for Germany (Hochschulkompass forbids crawling its search in robots.txt; the DAAD database is a JavaScript app with no public API) (the Dutch register is imported: it lives on a CKAN portal whose JSON API gives the file link). German programmes, all tuition fees, living costs and scholarships are not imported.
+Known gaps: German programmes come from the Federal Employment Agency's study search, which has no teaching language, tuition or programme page. The DAAD International Programmes database would add language, fees and deadlines for English-taught programmes, but it is a JavaScript app with no documented API and has not been scraped. Tuition fees, living costs, scholarships and Morocco-specific admission routes are not imported.
 
 Deliberately not adopted (see ADR 0003, one developer, Release 1): campus and institutional-history tables, raw source snapshots, ETER (its terms forbid republishing through an online platform), Destatis codebooks and accreditation registers (NVAO). Revisit when accounts or more countries land.

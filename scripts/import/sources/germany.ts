@@ -99,7 +99,7 @@ export function buildGermanRecords(input: {
   probed: Probed;
 }): StagedRecord[] {
   const { programmes, hrk, probed } = input;
-  const lite = hrk.map((i) => ({ slug: hrkSlug(i), name: i.name, city: i.city }));
+  const lite = hrk.map((i) => ({ slug: hrkSlug(i), name: i.name, city: i.city, alias: i.alias }));
   const hrkBySlug = new Map(hrk.map((i) => [hrkSlug(i), i]));
   const extras = new Map<string, StagedRecord>();
   const records: StagedRecord[] = [];

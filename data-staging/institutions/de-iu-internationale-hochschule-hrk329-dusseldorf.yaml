@@ -1,0 +1,24 @@
+slug: de-iu-internationale-hochschule-hrk329-dusseldorf
+name: IU Internationale Hochschule
+country: DE
+city:
+  slug: dusseldorf
+  name: Düsseldorf
+type: private
+website: https://iu.prf.hn/click/camref:1011lkmfr/creativeref:1011l63929
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-iu-internationale-hochschule-hrk329-dusseldorf
+  name: IU Internationale Hochschule
+  institution: ""
+  city: Düsseldorf
+  field: ""
+  confidence: ""
+  officialUrl: https://iu.prf.hn/click/camref:1011lkmfr/creativeref:1011l63929
+  todo: "study location in Düsseldorf of \"IU Internationale Hochschule\" (HRK main town Erfurt); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"

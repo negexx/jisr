@@ -1,0 +1,56 @@
+slug: de-bsp-business-and-law-school-hochschule-f-hrk415-betriebswirtschaftslehre-73024540
+institution: de-bsp-business-and-law-school-hochschule-f-hrk415
+country: DE
+city: berlin
+field: business-economics
+level: bachelor
+name: Betriebswirtschaftslehre Bachelor of Science
+summary:
+  fr:
+    text: Betriebswirtschaftslehre Bachelor of Science, BSP Business and Law School - Hochschule für Management und Recht (Berlin). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-bsp-business-and-law-school-hochschule-f-hrk415-betriebswirtschaftslehre-73024540
+  name: Betriebswirtschaftslehre Bachelor of Science
+  institution: BSP Business and Law School - Hochschule für Management und Recht
+  city: Berlin
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Berlin, subjects: Betriebswirtschaftslehre, Business Administration (grundständig); provider \"BSP Business and Law School\" matched to HRK institution \"BSP Business and Law School - Hochschule für Management und Recht\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

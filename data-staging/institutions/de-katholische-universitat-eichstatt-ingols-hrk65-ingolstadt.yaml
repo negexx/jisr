@@ -1,0 +1,24 @@
+slug: de-katholische-universitat-eichstatt-ingols-hrk65-ingolstadt
+name: Katholische Universität Eichstätt - Ingolstadt
+country: DE
+city:
+  slug: ingolstadt
+  name: Ingolstadt
+type: null
+website: https://www.ku.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-katholische-universitat-eichstatt-ingols-hrk65-ingolstadt
+  name: Katholische Universität Eichstätt - Ingolstadt
+  institution: ""
+  city: Ingolstadt
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ku.de/
+  todo: "study location in Ingolstadt of \"Katholische Universität Eichstätt - Ingolstadt\" (HRK main town Eichstätt); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"

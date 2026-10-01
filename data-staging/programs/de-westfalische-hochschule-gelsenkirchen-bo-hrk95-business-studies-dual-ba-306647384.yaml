@@ -1,0 +1,56 @@
+slug: de-westfalische-hochschule-gelsenkirchen-bo-hrk95-business-studies-dual-ba-306647384
+institution: de-westfalische-hochschule-gelsenkirchen-bo-hrk95
+country: DE
+city: gelsenkirchen
+field: business-economics
+level: bachelor
+name: Business Studies Dual Bachelor
+summary:
+  fr:
+    text: Business Studies Dual Bachelor, Westfälische Hochschule Gelsenkirchen, Bocholt, Recklinghausen (Gelsenkirchen). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-westfalische-hochschule-gelsenkirchen-bo-hrk95-business-studies-dual-ba-306647384
+  name: Business Studies Dual Bachelor
+  institution: Westfälische Hochschule Gelsenkirchen, Bocholt, Recklinghausen
+  city: Gelsenkirchen
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Wirtschaftswissenschaften (grundständig), Betriebswirtschaftslehre, Business Administration (grundständig); provider \"Westfälische Hochschule\" matched to HRK institution \"Westfälische Hochschule Gelsenkirchen, Bocholt, Recklinghausen\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

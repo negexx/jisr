@@ -1,0 +1,56 @@
+slug: de-freie-universitat-berlin-hrk11-volkswirtschaftslehre-ba-73430970
+institution: de-freie-universitat-berlin-hrk11
+country: DE
+city: berlin
+field: business-economics
+level: bachelor
+name: Volkswirtschaftslehre Bachelor
+summary:
+  fr:
+    text: Volkswirtschaftslehre Bachelor, Freie Universität Berlin (Berlin). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-freie-universitat-berlin-hrk11-volkswirtschaftslehre-ba-73430970
+  name: Volkswirtschaftslehre Bachelor
+  institution: Freie Universität Berlin
+  city: Berlin
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Universität, Berlin, subjects: Volkswirtschaftslehre (grundständig); provider \"Freie Universität Berlin\" matched to HRK institution \"Freie Universität Berlin\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

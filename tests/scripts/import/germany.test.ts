@@ -12,6 +12,7 @@ const group = (field: string) => {
 };
 
 const hrkInst = (hsNr: string, name: string, city: string, over: Record<string, string> = {}) => ({
+  alias: "",
   hsNr,
   name,
   kind: "Universitäten",
@@ -91,6 +92,33 @@ describe("matchHrk", () => {
       "de-philipps-universitat-marburg-hrk1",
     );
     expect(matchHrk("Hochschule Aalen", "Aalen", list)?.slug).toBe("de-hochschule-aalen-hrk3");
+  });
+  it("matches an everyday short name through the HRK alias", () => {
+    const withAlias = [
+      ...list,
+      {
+        slug: "de-rwth-hrk1",
+        name: "Rheinisch-Westfälische Technische Hochschule Aachen",
+        city: "Aachen",
+        alias: "RWTH Aachen",
+      },
+      {
+        slug: "de-th-reutlingen-hrk8",
+        name: "Hochschule Reutlingen, Hochschule für Technik",
+        city: "Reutlingen",
+        alias: "Hochschule Reutlingen",
+      },
+      {
+        slug: "de-theol-reutlingen-hrk9",
+        name: "Theologische Hochschule Reutlingen",
+        city: "Reutlingen",
+        alias: "Theologische Hochschule Reutlingen",
+      },
+    ];
+    expect(matchHrk("RWTH Aachen", "Aachen", withAlias)?.slug).toBe("de-rwth-hrk1");
+    expect(matchHrk("Hochschule Reutlingen", "Reutlingen", withAlias)?.slug).toBe(
+      "de-th-reutlingen-hrk8",
+    );
   });
   it("does not confuse a Universität with a Hochschule of the same town", () => {
     expect(matchHrk("Technische Universität München", "München", list)?.slug).toBe(

@@ -1,0 +1,24 @@
+slug: de-technische-hochschule-ostwestfalen-lippe-hrk165-detmold
+name: Technische Hochschule Ostwestfalen-Lippe
+country: DE
+city:
+  slug: detmold
+  name: Detmold
+type: public
+website: https://www.th-owl.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-hochschule-ostwestfalen-lippe-hrk165-detmold
+  name: Technische Hochschule Ostwestfalen-Lippe
+  institution: ""
+  city: Detmold
+  field: ""
+  confidence: ""
+  officialUrl: https://www.th-owl.de/
+  todo: "study location in Detmold of \"Technische Hochschule Ostwestfalen-Lippe\" (HRK main town Lemgo); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"

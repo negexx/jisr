@@ -1,0 +1,56 @@
+slug: de-hochschule-rhein-waal-university-of-appl-hrk400-kamp-lintfort-verwaltungsinformatik-e-73423347
+institution: de-hochschule-rhein-waal-university-of-appl-hrk400-kamp-lintfort
+country: DE
+city: kamp-lintfort
+field: computer-science
+level: bachelor
+name: Verwaltungsinformatik - E-Government Bachelor of Science
+summary:
+  fr:
+    text: Verwaltungsinformatik - E-Government Bachelor of Science, Hochschule Rhein-Waal - University of Applied Sciences (Kamp-Lintfort). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-rhein-waal-university-of-appl-hrk400-kamp-lintfort-verwaltungsinformatik-e-73423347
+  name: Verwaltungsinformatik - E-Government Bachelor of Science
+  institution: Hochschule Rhein-Waal - University of Applied Sciences
+  city: Kamp-Lintfort
+  field: computer-science
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Wirtschaftsinformatik (grundständig), Informatik (grundständig), Staats-, Verwaltungswissenschaft (grundständig); provider \"Hochschule Rhein-Waal\" matched to HRK institution \"Hochschule Rhein-Waal - University of Applied Sciences\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

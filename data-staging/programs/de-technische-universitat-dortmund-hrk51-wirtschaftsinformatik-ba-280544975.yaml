@@ -1,0 +1,56 @@
+slug: de-technische-universitat-dortmund-hrk51-wirtschaftsinformatik-ba-280544975
+institution: de-technische-universitat-dortmund-hrk51
+country: DE
+city: dortmund
+field: computer-science
+level: bachelor
+name: Wirtschaftsinformatik Bachelor of Science
+summary:
+  fr:
+    text: Wirtschaftsinformatik Bachelor of Science, Technische Universität Dortmund (Dortmund). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-technische-universitat-dortmund-hrk51-wirtschaftsinformatik-ba-280544975
+  name: Wirtschaftsinformatik Bachelor of Science
+  institution: Technische Universität Dortmund
+  city: Dortmund
+  field: computer-science
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Universität, Nordrhein-Westfalen, subjects: Wirtschaftsinformatik (grundständig); provider \"TU Dortmund\" matched to HRK institution \"Technische Universität Dortmund\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

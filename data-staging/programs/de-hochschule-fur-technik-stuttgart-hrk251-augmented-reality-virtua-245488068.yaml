@@ -1,0 +1,56 @@
+slug: de-hochschule-fur-technik-stuttgart-hrk251-augmented-reality-virtua-245488068
+institution: de-hochschule-fur-technik-stuttgart-hrk251
+country: DE
+city: stuttgart
+field: computer-science
+level: bachelor
+name: Augmented Reality / Virtual Reality-Engineering Bachelor
+summary:
+  fr:
+    text: Augmented Reality / Virtual Reality-Engineering Bachelor, Hochschule für Technik Stuttgart (Stuttgart). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-fur-technik-stuttgart-hrk251-augmented-reality-virtua-245488068
+  name: Augmented Reality / Virtual Reality-Engineering Bachelor
+  institution: Hochschule für Technik Stuttgart
+  city: Stuttgart
+  field: computer-science
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Baden-Württemberg, subjects: Softwaretechnik (grundständig); provider \"Hochschule für Technik Stuttgart\" matched to HRK institution \"Hochschule für Technik Stuttgart\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

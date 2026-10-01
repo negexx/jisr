@@ -5,7 +5,7 @@ city:
   slug: brandenburg
   name: Brandenburg
 type: public
-website: null
+website: https://www.th-brandenburg.de/startseite/
 source: hrk
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Brandenburg
   field: ""
   confidence: ""
-  officialUrl: ""
-  todo: "HRK: Fachhochschulen / HAW, Brandenburg, sponsor \"öffentlich-rechtlich\"; listed website \"http://www.th-brandenburg.de\" did not answer over https (probe failed): find the official https site; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  officialUrl: https://www.th-brandenburg.de/startseite/
+  todo: "HRK: Fachhochschulen / HAW, Brandenburg, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.th-brandenburg.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

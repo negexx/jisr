@@ -1,0 +1,56 @@
+slug: de-hochschule-21-hrk363-bauingenieurwesen-dual-b-78849399
+institution: de-hochschule-21-hrk363
+country: DE
+city: buxtehude
+field: engineering
+level: bachelor
+name: Bauingenieurwesen DUAL Bachelor of Engineering
+summary:
+  fr:
+    text: Bauingenieurwesen DUAL Bachelor of Engineering, hochschule 21 (Buxtehude). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-21-hrk363-bauingenieurwesen-dual-b-78849399
+  name: Bauingenieurwesen DUAL Bachelor of Engineering
+  institution: hochschule 21
+  city: Buxtehude
+  field: engineering
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Niedersachsen, subjects: Bauingenieurwesen (grundständig); provider \"hochschule 21\" matched to HRK institution \"hochschule 21\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

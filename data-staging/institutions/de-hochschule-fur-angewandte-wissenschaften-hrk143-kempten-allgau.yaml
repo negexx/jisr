@@ -1,0 +1,24 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk143-kempten-allgau
+name: Hochschule für angewandte Wissenschaften Kempten
+country: DE
+city:
+  slug: kempten-allgau
+  name: Kempten (Allgäu)
+type: public
+website: https://www.hs-kempten.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-angewandte-wissenschaften-hrk143-kempten-allgau
+  name: Hochschule für angewandte Wissenschaften Kempten
+  institution: ""
+  city: Kempten (Allgäu)
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-kempten.de/
+  todo: "study location in Kempten (Allgäu) of \"Hochschule für angewandte Wissenschaften Kempten\" (HRK main town Kempten); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"

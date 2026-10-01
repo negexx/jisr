@@ -1,0 +1,56 @@
+slug: de-hochschule-fur-technik-wirtschaft-und-ku-hrk160-telekommunikationsinform-271961148
+institution: de-hochschule-fur-technik-wirtschaft-und-ku-hrk160
+country: DE
+city: leipzig
+field: computer-science
+level: bachelor
+name: Telekommunikationsinformatik Bachelor of Engineering
+summary:
+  fr:
+    text: Telekommunikationsinformatik Bachelor of Engineering, Hochschule für Technik, Wirtschaft und Kultur Leipzig (Leipzig). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-fur-technik-wirtschaft-und-ku-hrk160-telekommunikationsinform-271961148
+  name: Telekommunikationsinformatik Bachelor of Engineering
+  institution: Hochschule für Technik, Wirtschaft und Kultur Leipzig
+  city: Leipzig
+  field: computer-science
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Sachsen, subjects: Informations-, Kommunikationstechnik (grundständig), Informatik (grundständig); provider \"Hochschule für Technik, Wirtschaft und Kultur Leipzig\" matched to HRK institution \"Hochschule für Technik, Wirtschaft und Kultur Leipzig\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

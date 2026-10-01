@@ -1,0 +1,56 @@
+slug: de-hochschule-worms-university-of-applied-s-hrk309-handels-und-vertriebsman-73024994
+institution: de-hochschule-worms-university-of-applied-s-hrk309
+country: DE
+city: worms
+field: business-economics
+level: bachelor
+name: Handels- und Vertriebsmanagement - dual Bachelor of Arts
+summary:
+  fr:
+    text: Handels- und Vertriebsmanagement - dual Bachelor of Arts, Hochschule Worms, University of Applied Sciences (Worms). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-worms-university-of-applied-s-hrk309-handels-und-vertriebsman-73024994
+  name: Handels- und Vertriebsmanagement - dual Bachelor of Arts
+  institution: Hochschule Worms, University of Applied Sciences
+  city: Worms
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Rheinland-Pfalz, subjects: Betriebswirtschaftslehre, Business Administration (grundständig), Handelsbetriebswirtschaft (grundständig); provider \"Hochschule Worms\" matched to HRK institution \"Hochschule Worms, University of Applied Sciences\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

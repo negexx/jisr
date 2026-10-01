@@ -1,0 +1,56 @@
+slug: de-hochschule-fur-wirtschaft-und-umwelt-nur-hrk203-geislingen-an-der-steige-produktmanagement-bachel-356849749
+institution: de-hochschule-fur-wirtschaft-und-umwelt-nur-hrk203-geislingen-an-der-steige
+country: DE
+city: geislingen-an-der-steige
+field: business-economics
+level: bachelor
+name: Produktmanagement Bachelor
+summary:
+  fr:
+    text: Produktmanagement Bachelor, Hochschule für Wirtschaft und Umwelt Nürtingen-Geislingen (Geislingen an der Steige). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-fur-wirtschaft-und-umwelt-nur-hrk203-geislingen-an-der-steige-produktmanagement-bachel-356849749
+  name: Produktmanagement Bachelor
+  institution: Hochschule für Wirtschaft und Umwelt Nürtingen-Geislingen
+  city: Geislingen an der Steige
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Baden-Württemberg, subjects: Betriebswirtschaftslehre, Business Administration (grundständig), Marketing, Vertrieb (grundständig); provider \"Hochschule für Wirtschaft und Umwelt Nürtingen Geislingen\" matched to HRK institution \"Hochschule für Wirtschaft und Umwelt Nürtingen-Geislingen\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

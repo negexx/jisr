@@ -1,0 +1,24 @@
+slug: de-hochschule-magdeburg-stendal-hrk173-stendal
+name: Hochschule Magdeburg-Stendal
+country: DE
+city:
+  slug: stendal
+  name: Stendal
+type: public
+website: https://www.h2.de/home.html
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-magdeburg-stendal-hrk173-stendal
+  name: Hochschule Magdeburg-Stendal
+  institution: ""
+  city: Stendal
+  field: ""
+  confidence: ""
+  officialUrl: https://www.h2.de/home.html
+  todo: "study location in Stendal of \"Hochschule Magdeburg-Stendal\" (HRK main town Magdeburg); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"

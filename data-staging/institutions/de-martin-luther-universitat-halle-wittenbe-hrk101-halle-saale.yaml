@@ -1,0 +1,24 @@
+slug: de-martin-luther-universitat-halle-wittenbe-hrk101-halle-saale
+name: Martin-Luther-Universität Halle-Wittenberg
+country: DE
+city:
+  slug: halle-saale
+  name: Halle (Saale)
+type: public
+website: https://www.uni-halle.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-martin-luther-universitat-halle-wittenbe-hrk101-halle-saale
+  name: Martin-Luther-Universität Halle-Wittenberg
+  institution: ""
+  city: Halle (Saale)
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-halle.de/
+  todo: "study location in Halle (Saale) of \"Martin-Luther-Universität Halle-Wittenberg\" (HRK main town Halle); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"

@@ -1,0 +1,56 @@
+slug: de-universitat-siegen-hrk245-bauingenieurwesen-bachel-73023907
+institution: de-universitat-siegen-hrk245
+country: DE
+city: siegen
+field: engineering
+level: bachelor
+name: Bauingenieurwesen Bachelor of Science
+summary:
+  fr:
+    text: Bauingenieurwesen Bachelor of Science, Universität Siegen (Siegen). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-universitat-siegen-hrk245-bauingenieurwesen-bachel-73023907
+  name: Bauingenieurwesen Bachelor of Science
+  institution: Universität Siegen
+  city: Siegen
+  field: engineering
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Universität, Nordrhein-Westfalen, subjects: Bauingenieurwesen (grundständig); provider \"Universität Siegen\" matched to HRK institution \"Universität Siegen\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"

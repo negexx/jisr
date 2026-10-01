@@ -1,0 +1,24 @@
+slug: de-hochschule-fur-forstwirtschaft-rottenbur-hrk300-rottenburg-am-neckar
+name: Hochschule für Forstwirtschaft Rottenburg
+country: DE
+city:
+  slug: rottenburg-am-neckar
+  name: Rottenburg am Neckar
+type: public
+website: https://www.hs-rottenburg.net/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-forstwirtschaft-rottenbur-hrk300-rottenburg-am-neckar
+  name: Hochschule für Forstwirtschaft Rottenburg
+  institution: ""
+  city: Rottenburg am Neckar
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-rottenburg.net/
+  todo: "study location in Rottenburg am Neckar of \"Hochschule für Forstwirtschaft Rottenburg\" (HRK main town Rottenburg); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"

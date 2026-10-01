@@ -5,7 +5,7 @@ city:
   slug: siegen
   name: Siegen
 type: public
-website: null
+website: https://www.uni-siegen.de/
 source: hrk
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Siegen
   field: ""
   confidence: ""
-  officialUrl: ""
-  todo: "HRK: Universitäten, Nordrhein-Westfalen, sponsor \"öffentlich-rechtlich\"; listed website \"http://www.uni-siegen.de\" did not answer over https (probe failed): find the official https site; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  officialUrl: https://www.uni-siegen.de/
+  todo: "HRK: Universitäten, Nordrhein-Westfalen, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.uni-siegen.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

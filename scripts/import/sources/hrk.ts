@@ -19,6 +19,8 @@ export type HrkInstitution = {
   state: string;
   city: string;
   homepage: string;
+  // "Adressname der Hochschule": the everyday short name ("RWTH Aachen"), used for matching.
+  alias: string;
 };
 
 // Relevant to Bachelor applicants in Release 1; art, music and civil-service colleges are left out.
@@ -48,6 +50,7 @@ export function parseHrkList(text: string): HrkInstitution[] {
     state: (r.Bundesland ?? "").trim(),
     city: collapseSpaces(r["Ort (Hausanschrift)"] ?? ""),
     homepage: (r["Home Page"] ?? "").trim(),
+    alias: collapseSpaces(r["Adressname der Hochschule"] ?? ""),
   }));
 }
 

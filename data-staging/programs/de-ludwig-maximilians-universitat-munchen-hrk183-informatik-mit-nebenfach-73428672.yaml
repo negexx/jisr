@@ -1,0 +1,56 @@
+slug: de-ludwig-maximilians-universitat-munchen-hrk183-informatik-mit-nebenfach-73428672
+institution: de-ludwig-maximilians-universitat-munchen-hrk183
+country: DE
+city: munchen
+field: computer-science
+level: bachelor
+name: Informatik mit Nebenfach 60 ECTS Bachelor of Science
+summary:
+  fr:
+    text: Informatik mit Nebenfach 60 ECTS Bachelor of Science, Ludwig-Maximilians-Universität München (München). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-ludwig-maximilians-universitat-munchen-hrk183-informatik-mit-nebenfach-73428672
+  name: Informatik mit Nebenfach 60 ECTS Bachelor of Science
+  institution: Ludwig-Maximilians-Universität München
+  city: München
+  field: computer-science
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Universität, Bayern, subjects: Informatik (grundständig); provider \"LMU München\" matched to HRK institution \"Ludwig-Maximilians-Universität München\"; may be a minor or combination subject, not a stand-alone degree; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
