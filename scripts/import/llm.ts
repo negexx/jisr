@@ -428,7 +428,8 @@ export async function complete(model: ModelSpec, input: CompleteInput): Promise<
         signal: dog.signal,
       });
       if (!response.ok || response.body === null) {
-        const detail = redact((await response.text()).slice(0, 300));
+        // redact first, then cut: a key that straddles the cut must not leak in part
+        const detail = redact(await response.text()).slice(0, 300);
         lastError = `HTTP ${response.status}: ${detail}`;
         if (response.status === 429 || response.status >= 500) {
           await backoff(2 ** (attempt - 1));
@@ -450,7 +451,8 @@ export async function complete(model: ModelSpec, input: CompleteInput): Promise<
         continue;
       }
       const reported = normalizeUsage(model.wire, acc.usage);
-      const missing = reported.input === 0 && reported.output === 0 && acc.text !== "";
+      // no usage from the provider but tokens did stream (text or only reasoning): charge an estimate
+      const missing = reported.input === 0 && reported.output === 0 && acc.firstTokenAt !== null;
       const usage = missing
         ? { input: inputTokens, cached: 0, output: estimateTokens(acc.text.length) }
         : reported;

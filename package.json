@@ -28,6 +28,7 @@
     "data:shortlist": "tsx scripts/import/shortlist.ts",
     "data:evidence": "tsx scripts/import/evidence-cli.ts",
     "data:read": "tsx scripts/import/reader.ts",
+    "data:pages": "tsx scripts/import/pages.ts",
     "data:bakeoff": "tsx scripts/import/bakeoff.ts",
     "data:checkeval": "tsx scripts/import/checker-eval.ts",
     "data:audit": "tsx scripts/import/audit.ts",

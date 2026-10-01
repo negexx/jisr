@@ -4,7 +4,7 @@ import path from "node:path";
 import { sameValue } from "./bakeoff-score";
 import { checkVerified } from "./checker";
 import { pageText } from "./evidence";
-import { appendJsonl, Budget, MODELS } from "./llm";
+import { appendJsonl, Budget, BudgetExceeded, MODELS } from "./llm";
 import type { AcceptedFact, FactName, Proposal } from "./proposals";
 import { loadMeta, pool } from "./reader";
 import { STAGING_DIR } from "./staging";
@@ -71,48 +71,55 @@ async function main(argv: readonly string[]): Promise<void> {
   let calls = 0;
   let failures = 0;
   const latencies: number[] = [];
-  await pool(slugs, Number(flag("concurrency") ?? 4), async (slug) => {
-    const truth = (
-      JSON.parse(
-        await readFile(path.join(STAGING_DIR, "proposals", "programs", `${slug}.json`), "utf8"),
-      ) as Proposal
-    ).facts;
-    const meta = await loadMeta(slug);
-    if (meta === null) return;
-    const sets = Object.values(results).flatMap((rows) =>
-      rows.filter((r) => r.slug === slug).map((r) => r.verified),
-    );
-    for (const group of groupVariants(sets)) {
-      const out = await checkVerified({
-        verified: { programmePage: null, facts: group, rejected: [] },
-        meta: { name: meta.name, institution: meta.institution },
-        model,
-        session: `jisr-checkeval-${checkerId}`,
-        getText: pageText,
-        budget,
-      });
-      calls++;
-      cost += out.completion?.costUsd ?? 0;
-      if (out.completion !== null) latencies.push(out.completion.latencyMs);
-      if (out.error !== null) failures++;
-      for (const [key, fact] of Object.entries(group) as [FactName, AcceptedFact][]) {
-        const l = label(key, fact, truth);
-        const kept = out.verified.facts[key] !== undefined;
-        tally[l][kept ? "kept" : "removed"]++;
-        const text = `${slug.slice(0, 30)} ${key}=${JSON.stringify(fact.value).slice(0, 60)}`;
-        if (l === "wrong" && kept) wrongKept.push(text);
-        if (l === "correct" && !kept)
-          correctRemoved.push(
-            `${text}: ${out.verified.rejected.find((r) => r.fact === key)?.reason ?? "?"}`,
-          );
+  let stopped: string | null = null;
+  try {
+    await pool(slugs, Number(flag("concurrency") ?? 4), async (slug) => {
+      const truth = (
+        JSON.parse(
+          await readFile(path.join(STAGING_DIR, "proposals", "programs", `${slug}.json`), "utf8"),
+        ) as Proposal
+      ).facts;
+      const meta = await loadMeta(slug);
+      if (meta === null) return;
+      const sets = Object.values(results).flatMap((rows) =>
+        rows.filter((r) => r.slug === slug).map((r) => r.verified),
+      );
+      for (const group of groupVariants(sets)) {
+        const out = await checkVerified({
+          verified: { programmePage: null, facts: group, rejected: [] },
+          meta: { name: meta.name, institution: meta.institution },
+          model,
+          session: `jisr-checkeval-${checkerId}`,
+          getText: pageText,
+          budget,
+        });
+        calls++;
+        cost += out.completion?.costUsd ?? 0;
+        if (out.completion !== null) latencies.push(out.completion.latencyMs);
+        if (out.error !== null) failures++;
+        for (const [key, fact] of Object.entries(group) as [FactName, AcceptedFact][]) {
+          const l = label(key, fact, truth);
+          const kept = out.verified.facts[key] !== undefined;
+          tally[l][kept ? "kept" : "removed"]++;
+          const text = `${slug.slice(0, 30)} ${key}=${JSON.stringify(fact.value).slice(0, 60)}`;
+          if (l === "wrong" && kept) wrongKept.push(text);
+          if (l === "correct" && !kept)
+            correctRemoved.push(
+              `${text}: ${out.verified.rejected.find((r) => r.fact === key)?.reason ?? "?"}`,
+            );
+        }
+        await appendJsonl(path.join(from, `checkeval-${checkerId}.jsonl`), {
+          slug,
+          checks: out.checks,
+          error: out.error,
+        });
       }
-      await appendJsonl(path.join(from, `checkeval-${checkerId}.jsonl`), {
-        slug,
-        checks: out.checks,
-        error: out.error,
-      });
-    }
-  });
+    });
+  } catch (error) {
+    // the tally so far is still worth printing; the run says it was cut short
+    if (!(error instanceof BudgetExceeded)) throw error;
+    stopped = error.message;
+  }
   const med = latencies.sort((a, b) => a - b)[Math.floor(latencies.length / 2)] ?? 0;
   console.log(
     `${checkerId}: ${calls} calls (${failures} unusable), $${cost.toFixed(4)}, median ${(med / 1000).toFixed(1)}s\n` +
@@ -122,6 +129,7 @@ async function main(argv: readonly string[]): Promise<void> {
   );
   for (const t of wrongKept) console.log(`  WRONG KEPT   ${t}`);
   for (const t of correctRemoved) console.log(`  CORRECT LOST ${t}`);
+  if (stopped !== null) console.log(`STOPPED EARLY: ${stopped}`);
 }
 
 if (process.argv[1]?.endsWith("checker-eval.ts") === true) {

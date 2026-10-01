@@ -297,6 +297,34 @@ describe("complete", () => {
     expect(String(error)).not.toContain("oc_sk_test_secret_value");
   });
 
+  it("redacts before cutting the error body, so a key that straddles the cut cannot leak in part", async () => {
+    vi.stubEnv("OPENCODE_API_KEY", "plainsecretkeywithoutprefix1234567890");
+    const body = `${"x".repeat(285)}plainsecretkeywithoutprefix1234567890 tail`;
+    const error = await complete(model, {
+      ...input,
+      fetchFn: async () => new Response(body, { status: 401 }),
+    }).catch((e: unknown) => e);
+    expect(String(error)).not.toContain("plainsecret");
+  });
+
+  it("charges an estimate for a stream that only reasoned (no text, no usage)", async () => {
+    const budget = new Budget({ maxUsd: 10, maxTokens: 1_000_000 });
+    const reasoningOnly = `data: ${JSON.stringify({ choices: [{ delta: { reasoning_content: "thinking..." } }] })}
+
+data: [DONE]
+
+`;
+    const out = await complete(model, {
+      ...input,
+      user: "x".repeat(4000),
+      budget,
+      fetchFn: async () => new Response(reasoningOnly),
+    });
+    expect(out.text).toBe("");
+    expect(out.usageEstimated).toBe(true);
+    expect(budget.spentTokens).toBeGreaterThanOrEqual(1000);
+  });
+
   it("refuses a second concurrent call that would take the run past the cap, before sending it", async () => {
     const budget = new Budget({ maxUsd: 0.0005, maxTokens: 10_000_000 });
     let sent = 0;
