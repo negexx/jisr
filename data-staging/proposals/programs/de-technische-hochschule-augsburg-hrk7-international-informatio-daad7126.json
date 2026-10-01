@@ -1,0 +1,35 @@
+{
+  "slug": "de-technische-hochschule-augsburg-hrk7-international-informatio-daad7126",
+  "programmePage": "https://www.tha.de/en/university/faculties/computer-science/study-program/international-international-information-systems-bsc/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7126/",
+          "quote": "Programme duration 7 semesters"
+        },
+        {
+          "url": "https://www.tha.de/en/university/faculties/computer-science/study-program/international-international-information-systems-bsc/",
+          "quote": "Standard Duration 7 Semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7126/",
+          "quote": "The language of the programme is English."
+        },
+        {
+          "url": "https://www.tha.de/en/university/faculties/computer-science/study-program/international-international-information-systems-bsc/",
+          "quote": "In general, the program is taught in English."
+        }
+      ]
+    }
+  },
+  "notes": "Year of the deadline is not stated on the page (DAAD edition 2026/2027, applicants from all countries); 2027 chosen as the next occurrence after today. THA page lists languages 'German, English' but says the programme is generally taught in English. Tuition 'None' is page-wide, not explicitly 'for non-EU students'. uni-assist is mentioned only for certificate evaluation (VPD), not as the application channel (application via HISinOne), so applicationChannel omitted. OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition). OMITTED: tuition 0 (DAAD says Tuition fees per semester None, but no page quote with explicit wording like no tuition fees was found)."
+}

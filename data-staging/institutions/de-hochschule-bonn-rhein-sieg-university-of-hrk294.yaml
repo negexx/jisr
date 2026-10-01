@@ -5,12 +5,12 @@ city:
   slug: sankt-augustin
   name: Sankt Augustin
 type: public
-website: https://www.h-brs.de/de
-source: hrk
-info_kind: TODO_read_source
+website: https://www.h-brs.de/
+source: page
+info_kind: official
 sources:
-  hrk:
-    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+  page:
+    url: https://www.h-brs.de/
     last_verified_at: null
 _review:
   kind: institutions
@@ -21,5 +21,10 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.h-brs.de/de
-  todo: "HRK: Fachhochschulen / HAW, Nordrhein-Westfalen, sponsor \"öffentlich-rechtlich\"; listed as \"www.h-brs.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  todo: "HRK: Fachhochschulen / HAW, Nordrhein-Westfalen, sponsor \"öffentlich-rechtlich\"; listed as \"www.h-brs.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: hrk:294
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - url: https://www.h-brs.de/en
+      quote: Hochschule Bonn-Rhein-Sieg (H-BRS)

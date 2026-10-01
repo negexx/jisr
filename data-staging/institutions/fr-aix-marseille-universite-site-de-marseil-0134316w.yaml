@@ -6,11 +6,11 @@ city:
   name: Marseille
 type: public
 website: https://sciences.univ-amu.fr/fr/sites-campus/marseille-site-saint-jerome
-source: parcoursup
-info_kind: TODO_read_source
+source: page
+info_kind: official
 sources:
-  parcoursup:
-    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+  page:
+    url: https://sciences.univ-amu.fr/fr/sites-campus/marseille-site-saint-jerome
     last_verified_at: null
 _review:
   kind: institutions
@@ -21,5 +21,12 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://sciences.univ-amu.fr/fr/sites-campus/marseille-site-saint-jerome
-  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: uai:0134316W
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - url: https://sciences.univ-amu.fr/fr/sites-campus/marseille-site-saint-jerome
+      quote: Marseille - Site Saint Jérôme | Faculté des Sciences d'Aix Marseille Université
+    - url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39236&typeBac=0&originePc=0
+      quote: Établissement Établissement public Formation

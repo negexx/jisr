@@ -56,7 +56,13 @@ export type Verified = {
   programmePage: string | null;
   facts: Partial<Record<FactName, AcceptedFact>>;
   rejected: { fact: string; reason: string }[];
+  // The preparer's own caveats (an indirect source, an older tariff): the auditor reads them.
+  notes?: string;
 };
+
+const PREPARED_TEXT =
+  "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw";
+const PREPARED_NOTE = /prepared by the assistant from the quoted pages/;
 
 export type GetText = (url: string) => Promise<string>;
 
@@ -82,7 +88,12 @@ export async function verifyProposal(
   programmeName: string,
   getText: GetText,
 ): Promise<Verified> {
-  const result: Verified = { programmePage: null, facts: {}, rejected: [] };
+  const result: Verified = {
+    programmePage: null,
+    facts: {},
+    rejected: [],
+    ...(proposal.notes === undefined || proposal.notes === "" ? {} : { notes: proposal.notes }),
+  };
   const safeText = async (url: string): Promise<string | null> => {
     try {
       return await getText(url);
@@ -206,10 +217,13 @@ export function applyVerified(staged: Staged, verified: Verified, today: string)
     preparedBy: "assistant",
     preparedAt: today,
     evidence: evidenceLog,
-    todo: `${String(review.todo ?? "")}; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw`.replace(
-      /^; /,
-      "",
-    ),
+    ...(verified.notes === undefined ? {} : { notes: verified.notes }),
+    ...(verified.rejected.length === 0
+      ? {}
+      : { rejected: verified.rejected.map((r) => `${r.fact}: ${r.reason}`) }),
+    todo: PREPARED_NOTE.test(String(review.todo ?? ""))
+      ? String(review.todo)
+      : `${String(review.todo ?? "")}; ${PREPARED_TEXT}`.replace(/^; /, ""),
   };
   return next;
 }
@@ -326,10 +340,9 @@ export function applyRecord(
     preparedBy: "assistant",
     preparedAt: today,
     evidence: verified.evidence,
-    todo: `${String(review.todo ?? "")}; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw`.replace(
-      /^; /,
-      "",
-    ),
+    todo: PREPARED_NOTE.test(String(review.todo ?? ""))
+      ? String(review.todo)
+      : `${String(review.todo ?? "")}; ${PREPARED_TEXT}`.replace(/^; /, ""),
   };
   return next;
 }

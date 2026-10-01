@@ -9,43 +9,46 @@ summary:
   fr:
     text: Bachelor of Business Administration / International Marketing (BSc), Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht (Pforzheim). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
-officialUrl: null
+officialUrl: https://businesspf.hs-pforzheim.de/en/studies/bachelors_programs/bba_international_marketing
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: TODO_read_source
+  source: page-2
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: TODO_read_source
-intakes:
   value:
-    - startDate: null
-      applicationOpens: null
-      applicationDeadline: 2027-07-15
-  source: daad
-  info_kind: TODO_read_source
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: daad
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
   rules: []
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://businesspf.hs-pforzheim.de/en/studies/bachelors_programs/bba_international_marketing
+    last_verified_at: null
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/
     last_verified_at: null
 _review:
@@ -57,5 +60,21 @@ _review:
   field: business-economics
   confidence: high
   officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/
-  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, tuition \"Tuition varies\", deadline \"Register by 15 July 2027\"; institution matched to HRK \"Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht\"; the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; 11 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates)"
+  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, tuition \"Tuition varies\", deadline \"Register by 15 July 2027\"; institution matched to HRK \"Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht\"; the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; 11 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: daad:9199
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://businesspf.hs-pforzheim.de/en/studies/bachelors_programs/bba_international_marketing
+      quote: "Duration: 7 semesters"
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/
+      quote: Programme duration 7 semesters
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/
+      quote: All courses are taught in English.
+    - fact: tuition
+      url: https://businesspf.hs-pforzheim.de/en/studies/bachelors_programs/bba_international_marketing
+      quote: International students with a high-school entrance qualification from non-EU countries have to pay tuition fees of 1,500 EUR per semester
+  notes: "DOUBTFUL DEADLINE: programme page says 'Non-EU applicants need to submit their university entrance qualification documents before 31st May. The interview will be held before the application deadline of 15th July.' and the Business PF FAQ says non-EU applicants with non-EU HZB have a 31st of May deadline for the winter semester. 15 July kept as the stated application deadline; the 31 May document deadline is the practical one for a Moroccan Bac holder. Year not stated; 2027 assumed. The page does not name uni-assist. OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition)."

@@ -1,0 +1,44 @@
+{
+  "slug": "de-hochschule-bonn-rhein-sieg-university-of-hrk294-international-business-b-daad5225",
+  "programmePage": "https://www.h-brs.de/en/wiwi/study/bachelor/international-business",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.h-brs.de/en/wiwi/study/bachelor/international-business",
+          "quote": "Standard period of study 7 semesters"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5225/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.h-brs.de/en/wiwi/study/bachelor/international-business",
+          "quote": "Lecture language English"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5225/",
+          "quote": "Languages English only"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.h-brs.de/en/wiwi/study/bachelor/international-business",
+          "quote": "application is possible exclusively via uni-assist"
+        }
+      ]
+    }
+  },
+  "notes": "Year of the dates not stated; 2027 assumed. uni-assist applies to applicants with international certificates (a Moroccan Bac). Tuition 'None' is page-wide; H-BRS fees page says it is a state university where the semester fee is usually the only fee. OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition). OMITTED: tuition 0 (DAAD says Tuition fees per semester None, but no page quote with explicit wording like no tuition fees was found)."
+}

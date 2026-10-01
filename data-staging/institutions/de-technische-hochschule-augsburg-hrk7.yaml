@@ -6,11 +6,11 @@ city:
   name: Augsburg
 type: public
 website: https://www.tha.de/
-source: hrk
-info_kind: TODO_read_source
+source: page
+info_kind: official
 sources:
-  hrk:
-    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+  page:
+    url: https://www.tha.de/
     last_verified_at: null
 _review:
   kind: institutions
@@ -21,5 +21,10 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.tha.de/
-  todo: "HRK: Fachhochschulen / HAW, Bayern, sponsor \"öffentlich-rechtlich\"; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  todo: "HRK: Fachhochschulen / HAW, Bayern, sponsor \"öffentlich-rechtlich\"; confirm the details on the institution's own site, add that page as the source, then set info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: hrk:7
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - url: https://www.tha.de/
+      quote: Technische Hochschule Augsburg Intranet Moodle Outlook Online Studium

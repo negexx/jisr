@@ -6,11 +6,11 @@ city:
   name: Straubing
 type: public
 website: https://www.tum.de/
-source: hrk
-info_kind: TODO_read_source
+source: page
+info_kind: official
 sources:
-  hrk:
-    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+  page:
+    url: https://www.tum.de/
     last_verified_at: null
 _review:
   kind: institutions
@@ -21,5 +21,10 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.tum.de/
-  todo: "study location in Straubing of \"Technische Universität München\" (HRK main town München); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  todo: "study location in Straubing of \"Technische Universität München\" (HRK main town München); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: hrk:184@straubing
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - url: https://www.tum.de/
+      quote: TUM Technische Universität München Arcisstraße 21 80333 München

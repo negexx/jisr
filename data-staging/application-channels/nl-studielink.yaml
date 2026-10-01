@@ -8,11 +8,11 @@ summary:
   fr:
     text: Plateforme nationale d'inscription dans l'enseignement supérieur néerlandais.
     status: draft
-source: main
-info_kind: TODO_read_source
+source: page
+info_kind: official
 sources:
-  main:
-    url: https://www.studielink.nl/
+  page:
+    url: https://info.studielink.nl/en/about-stichting-studielink
     last_verified_at: null
 _review:
   kind: application-channels
@@ -23,4 +23,9 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.studielink.nl/
-  todo: confirm how applicants from outside the EU apply (institution portal first, then Studielink) and whether an account is required
+  todo: "confirm how applicants from outside the EU apply (institution portal first, then Studielink) and whether an account is required; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - url: https://info.studielink.nl/en/about-stichting-studielink
+      quote: Studielink is the national hub for enrolment in higher education.

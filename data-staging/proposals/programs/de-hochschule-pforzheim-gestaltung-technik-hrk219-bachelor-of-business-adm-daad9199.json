@@ -1,0 +1,44 @@
+{
+  "slug": "de-hochschule-pforzheim-gestaltung-technik-hrk219-bachelor-of-business-adm-daad9199",
+  "programmePage": "https://businesspf.hs-pforzheim.de/en/studies/bachelors_programs/bba_international_marketing",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://businesspf.hs-pforzheim.de/en/studies/bachelors_programs/bba_international_marketing",
+          "quote": "Duration: 7 semesters"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/",
+          "quote": "All courses are taught in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://businesspf.hs-pforzheim.de/en/studies/bachelors_programs/bba_international_marketing",
+          "quote": "International students with a high-school entrance qualification from non-EU countries have to pay tuition fees of 1,500 EUR per semester"
+        }
+      ]
+    }
+  },
+  "notes": "DOUBTFUL DEADLINE: programme page says 'Non-EU applicants need to submit their university entrance qualification documents before 31st May. The interview will be held before the application deadline of 15th July.' and the Business PF FAQ says non-EU applicants with non-EU HZB have a 31st of May deadline for the winter semester. 15 July kept as the stated application deadline; the 31 May document deadline is the practical one for a Moroccan Bac holder. Year not stated; 2027 assumed. The page does not name uni-assist. OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition)."
+}

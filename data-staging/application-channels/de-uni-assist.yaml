@@ -8,11 +8,11 @@ summary:
   fr:
     text: Service central de candidature pour les étudiants internationaux de nombreuses universités allemandes.
     status: draft
-source: main
-info_kind: TODO_read_source
+source: page
+info_kind: official
 sources:
-  main:
-    url: https://www.uni-assist.de/
+  page:
+    url: https://www.uni-assist.de/en/
     last_verified_at: null
 _review:
   kind: application-channels
@@ -23,4 +23,9 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.uni-assist.de/
-  todo: "not every university uses uni-assist (some take applications directly): confirm per institution, and whether an account is required"
+  todo: "not every university uses uni-assist (some take applications directly): confirm per institution, and whether an account is required; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - url: https://www.uni-assist.de/en/
+      quote: uni-assist evaluates applications by international student applicants for 180 German universities.

@@ -195,6 +195,24 @@ describe("applyVerified", () => {
     expect(stillPlaceholder(next).length).toBeGreaterThan(0);
   });
 
+  it("keeps the preparer's caveats and rejections for the auditor, and is idempotent", () => {
+    const verified = {
+      programmePage: PAGE,
+      facts: {},
+      rejected: [{ fact: "intakes", reason: "the quote does not state the year 2027" }],
+      notes: "tuition is last year's tariff",
+    };
+    const once = applyVerified(staged(), verified, "2026-10-02");
+    expect(once._review).toMatchObject({
+      notes: "tuition is last year's tariff",
+      rejected: ["intakes: the quote does not state the year 2027"],
+    });
+    const twice = applyVerified(once, verified, "2026-10-02");
+    expect(
+      String((twice._review as { todo: string }).todo).match(/prepared by the assistant/g),
+    ).toHaveLength(1);
+  });
+
   it("never writes last_verified_at", () => {
     const next = applyVerified(
       staged(),

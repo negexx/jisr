@@ -8,11 +8,11 @@ summary:
   fr:
     text: Plateforme nationale de candidature en première année de Licence et de BUT.
     status: draft
-source: main
-info_kind: TODO_read_source
+source: page
+info_kind: official
 sources:
-  main:
-    url: https://www.parcoursup.gouv.fr/
+  page:
+    url: https://dossierappel.parcoursup.fr/
     last_verified_at: null
 _review:
   kind: application-channels
@@ -23,4 +23,9 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.parcoursup.gouv.fr/
-  todo: confirm how applicants from Morocco apply (Etudes en France / Campus France before Parcoursup) and whether an account is required
+  todo: "confirm how applicants from Morocco apply (Etudes en France / Campus France before Parcoursup) and whether an account is required; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - url: https://dossierappel.parcoursup.fr/
+      quote: Bienvenue sur Parcoursup La plateforme nationale de préinscription en première année de l’enseignement supérieur en France

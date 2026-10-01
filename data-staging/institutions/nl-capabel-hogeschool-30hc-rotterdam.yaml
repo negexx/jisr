@@ -4,13 +4,13 @@ country: NL
 city:
   slug: rotterdam
   name: Rotterdam
-type: null
-website: null
-source: rio
-info_kind: TODO_read_source
+type: private
+website: https://www.capabel.nl/
+source: page
+info_kind: official
 sources:
-  rio:
-    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+  page:
+    url: https://www.capabel.nl/
     last_verified_at: null
 _review:
   kind: institutions
@@ -21,5 +21,12 @@ _review:
   field: ""
   confidence: ""
   officialUrl: ""
-  todo: "campus in Rotterdam of \"Capabel Hogeschool\" (RIO location \"Capabel Hogeschool: Rotterdam\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  todo: "campus in Rotterdam of \"Capabel Hogeschool\" (RIO location \"Capabel Hogeschool: Rotterdam\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: rio-unit:30HC@rotterdam
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - url: https://www.capabel.nl/hogeschool/waarom-bij-capabel-hogeschool/kosten-subsidies-financiering
+      quote: Capabel Onderwijs en Capabel Hogeschool hebben het NRTO-keurmerk.
+    - url: https://www.capabel.nl/hogeschool/waarom-bij-capabel-hogeschool/kosten-subsidies-financiering
+      quote: Als particuliere hogeschool heeft Capabel ten opzichte van vergelijkbare instellingen betaalbare lesgeldtarieven.

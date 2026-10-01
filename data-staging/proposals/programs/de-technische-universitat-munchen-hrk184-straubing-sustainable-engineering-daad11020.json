@@ -1,0 +1,48 @@
+{
+  "slug": "de-technische-universitat-munchen-hrk184-straubing-sustainable-engineering-daad11020",
+  "programmePage": "https://www.tum.de/en/studies/degree-programs/detail/sustainable-engineering-for-materials-and-processes-bachelor-of-science-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11020/",
+          "quote": "Programme duration 6 semesters"
+        },
+        {
+          "url": "https://www.tum.de/en/studies/degree-programs/detail/sustainable-engineering-for-materials-and-processes-bachelor-of-science-bsc",
+          "quote": "Standard Duration of Studies 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.tum.de/en/studies/degree-programs/detail/sustainable-engineering-for-materials-and-processes-bachelor-of-science-bsc",
+          "quote": "The language of instruction in this program is English."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11020/",
+          "quote": "The degree programme is taught in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 200000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.tum.de/en/studies/degree-programs/detail/sustainable-engineering-for-materials-and-processes-bachelor-of-science-bsc",
+          "quote": "The tuition fees for international students from third countries for this degree program are 2,000 euros per semester."
+        }
+      ]
+    }
+  },
+  "notes": "Deadline year not stated on the page; 2027 chosen as the next occurrence. Application is via TUMonline (not uni-assist as far as the pages state), so applicationChannel omitted. OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition)."
+}

@@ -9,40 +9,41 @@ summary:
   fr:
     text: BUT - Science des données, I.U.T Clermont Auvergne - site d'Aurillac (Aurillac). Fiche officielle Parcoursup.
     status: draft
-officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24715&typeBac=0&originePc=0
+officialUrl: https://iut.uca.fr/formations/but-science-des-donnees-aurillac
 durationYears:
-  value: null
-  source: fiche
-  info_kind: TODO_read_source
+  value: 3
+  source: programme
+  info_kind: official
 teachingLanguages:
-  value: null
-  source: fiche
-  info_kind: TODO_read_source
+  value:
+    - fr
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: fiche
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: fiche
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: fiche
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: fiche
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: fiche
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
   rules: []
 scholarships: []
 sources:
-  fiche:
-    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24715&typeBac=0&originePc=0
+  programme:
+    url: https://iut.uca.fr/formations/but-science-des-donnees-aurillac
     last_verified_at: null
 _review:
   kind: programs
@@ -53,5 +54,15 @@ _review:
   field: computer-science
   confidence: high
   officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24715&typeBac=0&originePc=0
-  todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind)"
+  todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: parcoursup:24715
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://iut.uca.fr/formations/but-science-des-donnees-aurillac
+      quote: Les études se déroulent sur 3 ans à temps plein, découpés en 6 semestres
+    - fact: teachingLanguages
+      url: https://iut.uca.fr/formations/but-science-des-donnees-aurillac
+      quote: Langues d'enseignement Français
+  notes: "Tuition: Parcoursup fiche shows 178 EUR per year, which is the national rate and not stated for non-EU students; omitted. No intake dates stated for non-EU applicants. Application channel: official pages say non-EU applicants residing abroad use Campus France (Etudes en France), not Parcoursup; channel omitted."
