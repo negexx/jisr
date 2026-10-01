@@ -456,3 +456,50 @@ describe("duration wording in the instruction", () => {
     expect(INSTRUCTION).toMatch(/210 ECTS = 3\.5/);
   });
 });
+
+describe("manual_check note length", () => {
+  const evidence = [
+    { url: "https://own.example/p", quote: "Les attendus sont des prérequis généraux" },
+  ];
+  const rule = (fr: string, en = "short") => ({
+    kind: "manual_check",
+    note: { fr, en },
+    evidence,
+  });
+
+  it("tells the model how long a note may be", () => {
+    expect(INSTRUCTION).toMatch(/300 characters/);
+  });
+
+  it("drops a note longer than the schema allows instead of failing the record later", () => {
+    const { proposal, dropped } = salvageProposal({
+      slug: "s",
+      programmePage: null,
+      facts: {},
+      requirements: { rules: [rule("x".repeat(401)), rule("court")] },
+    });
+    expect(proposal?.requirements?.rules).toHaveLength(1);
+    expect(dropped).toEqual(["requirements.rules.0"]);
+  });
+
+  it("checks every language of the note", () => {
+    const { proposal, dropped } = salvageProposal({
+      slug: "s",
+      programmePage: null,
+      facts: {},
+      requirements: { rules: [rule("court", "y".repeat(401))] },
+    });
+    expect(proposal?.requirements?.rules).toHaveLength(0);
+    expect(dropped).toEqual(["requirements.rules.0"]);
+  });
+
+  it("keeps a note of exactly the limit", () => {
+    const { proposal } = salvageProposal({
+      slug: "s",
+      programmePage: null,
+      facts: {},
+      requirements: { rules: [rule("x".repeat(400))] },
+    });
+    expect(proposal?.requirements?.rules).toHaveLength(1);
+  });
+});

@@ -72,7 +72,7 @@ REQUIREMENTS (rules the matcher can evaluate; each needs evidence)
 - {"kind":"language_proficiency","language":"fr","minCefr":"B2"|null,"certificateRequired":true|false|null,"acceptedTests":[${TEST_SLUGS.map((s) => `"${s}"`).join(",")}],"evidence":[...]} only for a stated condition of admission, never for "recommended". Each stated level and test must appear in a quote. acceptedTests lists the tests the quote names; use [] only if the quote names none, never null.
 - {"kind":"subject_taken","subjects":[one or more of ${SUBJECT_SLUGS.join(", ")}],"mode":"all"|"any","evidence":[...]}
 - {"kind":"prior_study_years_min","years":12,"evidence":[...]}
-- {"kind":"manual_check","note":{"fr":"short instruction for the applicant in French","en":"the same in English"},"evidence":[...]} for everything else: grade thresholds, entrance exams, portfolios, interviews, anything soft or unclear. Grade thresholds are ALWAYS a manual_check.
+- {"kind":"manual_check","note":{"fr":"short instruction for the applicant in French","en":"the same in English"},"evidence":[...]} for everything else: grade thresholds, entrance exams, portfolios, interviews, anything soft or unclear. Each note is at most 300 characters. Grade thresholds are ALWAYS a manual_check.
 Leave "requirements" out if the pages state none.`;
 
 export type Page = { url: string; text: string };
@@ -133,6 +133,22 @@ export function extractJson(text: string): unknown {
   }
 }
 
+// The schema (src/data-schema/localized-text.ts) refuses a short text longer than this: a longer
+// note would only fail later, when the record is promoted.
+const NOTE_MAX_CHARS = 400;
+
+function noteTooLong(rule: unknown): boolean {
+  const r = rule as { kind?: unknown; note?: unknown };
+  if (r.kind !== "manual_check") return false;
+  const texts =
+    typeof r.note === "string"
+      ? [r.note]
+      : Object.values((r.note ?? {}) as Record<string, unknown>).filter(
+          (v): v is string => typeof v === "string",
+        );
+  return texts.some((t) => t.length > NOTE_MAX_CHARS);
+}
+
 // A model's JSON is often right except for one fact: an empty evidence list, a null where an array
 // belongs. The whole proposal should not be thrown away for that, but nothing unevidenced may stay:
 // the offending fact or rule is dropped (and reported), the rest goes to the verifier unchanged.
@@ -157,7 +173,7 @@ export function salvageProposal(raw: unknown): { proposal: Proposal | null; drop
       if (
         typeof rule === "object" &&
         rule !== null &&
-        (rule as Record<string, unknown>).acceptedTests === null
+        ((rule as Record<string, unknown>).acceptedTests === null || noteTooLong(rule))
       ) {
         ruleList.splice(index, 1);
         dropped.push(`requirements.rules.${index}`);
