@@ -24,6 +24,8 @@ export function LocaleSwitcher({ current, label, names }: Props) {
                 locale={locale}
                 lang={locale}
                 hrefLang={locale}
+                // The current-locale link points at this very page; prefetching it only downloads the page again.
+                prefetch={locale === current ? false : undefined}
                 aria-current={locale === current ? "true" : undefined}
               >
                 {names[locale]}

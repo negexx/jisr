@@ -17,6 +17,9 @@ export type JsBudget = { initial: number; untilIdle: number };
 // profile 183.5, 212.8; matches 188.5, 229.8; program 180.5, 234.8 (same in fr and ar, phone and desktop).
 // Lowered 2026-10-01: matches until idle 229.8 -> 212.9 once MatchCard stopped prefetching the program
 // pages its cards link to (prefetch={false}); the other pages were unchanged by that.
+// 2026-10-01 (T14): prefetch={false} on the locale switcher's current-locale link cut the program page's
+// _rsc prefetch from 26.2/28.0 KB (fr/ar, 9 requests) to 15.7/16.9 KB (7); script bytes did not change (the
+// page chunk is shared), so no ratchet value moves.
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/fr": { initial: 170, untilIdle: 216 },
   "/ar": { initial: 170, untilIdle: 216 },
