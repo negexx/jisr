@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: ""
   todo: "provider from the BA Studiensuche (Fachhochschule/Hochschule für angewandte Wissenschaften, Niedersachsen); not matched to the HRK list: find its official site, check it is a recognised Hochschule, set the type, add its page as the source, then info_kind: official"
+  sourceId: ba-provider:26383@hildesheim

@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: ""
   todo: "campus in Maastricht of \"Zuyd Hogeschool\" (RIO location \"Zuyd Hogeschool: Maastricht\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed website \"www.hszuyd.nl/\" did not answer over https (probe failed): find the official https site; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:25JX@maastricht

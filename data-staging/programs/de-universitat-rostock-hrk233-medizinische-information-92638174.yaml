@@ -2,7 +2,7 @@ slug: de-universitat-rostock-hrk233-medizinische-information-92638174
 institution: de-universitat-rostock-hrk233
 country: DE
 city: rostock
-field: computer-science
+field: engineering
 level: bachelor
 name: Medizinische Informationstechnik Bachelor of Science (B.Sc.)
 summary:
@@ -50,7 +50,8 @@ _review:
   name: Medizinische Informationstechnik Bachelor of Science (B.Sc.)
   institution: Universität Rostock
   city: Rostock
-  field: computer-science
-  confidence: high
+  field: engineering
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Universität, Mecklenburg-Vorpommern, subjects: Medizinische Informatik (grundständig), Medizinische Technik (grundständig); provider \"Universität Rostock\" matched to HRK institution \"Universität Rostock\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Universität, Mecklenburg-Vorpommern, subjects: Medizinische Informatik (grundständig), Medizinische Technik (grundständig); provider \"Universität Rostock\" matched to HRK institution \"Universität Rostock\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:92638174

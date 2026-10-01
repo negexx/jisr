@@ -2,7 +2,7 @@ slug: de-katholische-universitat-eichstatt-ingols-hrk65-ingolstadt-digital-data-
 institution: de-katholische-universitat-eichstatt-ingols-hrk65-ingolstadt
 country: DE
 city: ingolstadt
-field: computer-science
+field: engineering
 level: bachelor
 name: Digital & Data-Driven Business (D3B) Bachelor of Science
 summary:
@@ -50,7 +50,8 @@ _review:
   name: Digital & Data-Driven Business (D3B) Bachelor of Science
   institution: Katholische Universität Eichstätt - Ingolstadt
   city: Ingolstadt
-  field: computer-science
-  confidence: high
+  field: engineering
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Universität, Bayern, subjects: Wirtschaftsinformatik (grundständig), Technologiemanagement (grundständig), Datenwissenschaft, Data Science (grundständig); provider \"Katholische Universität Eichstätt - Ingolstadt\" matched to HRK institution \"Katholische Universität Eichstätt - Ingolstadt\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Universität, Bayern, subjects: Wirtschaftsinformatik (grundständig), Technologiemanagement (grundständig), Datenwissenschaft, Data Science (grundständig); provider \"Katholische Universität Eichstätt - Ingolstadt\" matched to HRK institution \"Katholische Universität Eichstätt - Ingolstadt\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:120011725

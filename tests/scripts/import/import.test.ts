@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { classifyField } from "../../../scripts/import/fields";
 import { decodeBytes } from "../../../scripts/import/http";
 import { stampVerified } from "../../../scripts/import/promote";
-import { parseDuoCsv, titleCase } from "../../../scripts/import/sources/duo";
+import { parseDuoCsv, stripProvince, titleCase } from "../../../scripts/import/sources/duo";
 import type { EsrIndex } from "../../../scripts/import/sources/esr";
 import {
   HRK_KINDS,
@@ -440,7 +440,12 @@ describe("duo list", () => {
     expect(titleCase("BERGEN-OP-ZOOM")).toBe("Bergen-op-Zoom");
     expect(titleCase("BERGEN OP ZOOM")).toBe("Bergen op Zoom");
     expect(titleCase("IJMUIDEN")).toBe("IJmuiden");
-    expect(titleCase("'S-GRAVENHAGE")).toBe("'S-Gravenhage");
+    expect(titleCase("'S-HERTOGENBOSCH")).toBe("'s-Hertogenbosch");
+    expect(titleCase("'S-GRAVENHAGE")).toBe("'s-Gravenhage");
+  });
+  it("drops a province suffix from the town", () => {
+    expect(stripProvince("Velp Gld")).toBe("Velp");
+    expect(stripProvince("Den Haag")).toBe("Den Haag");
   });
   it("fails loudly when the column layout changes", () => {
     expect(() => parseDuoCsv("a;b\n1;2")).toThrow(/columns are missing/);

@@ -184,6 +184,7 @@ export async function importFrance(): Promise<StagedRecord[]> {
       institutions.set(instSlug, {
         collection: "institutions",
         id: instSlug,
+        sourceId: `uai:${row.cod_uai}`,
         data: {
           slug: instSlug,
           name: instName,
@@ -240,6 +241,7 @@ export async function importFrance(): Promise<StagedRecord[]> {
     records.push({
       collection: "programs",
       id: slug,
+      sourceId: `parcoursup:${row.cod_aff_form}`,
       data: {
         slug,
         institution: instSlug,

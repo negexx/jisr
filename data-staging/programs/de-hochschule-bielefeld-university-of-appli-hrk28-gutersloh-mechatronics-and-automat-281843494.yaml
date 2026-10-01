@@ -54,3 +54,4 @@ _review:
   confidence: high
   officialUrl: ""
   todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Mechatronik (grundständig), Automatisierungstechnik (grundständig); provider \"Hochschule Bielefeld\" matched to HRK institution \"Hochschule Bielefeld - University of Applied Sciences and Arts (HSBI)\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:281843494

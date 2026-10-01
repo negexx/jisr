@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.hs-mannheim.de/
   todo: "HRK: Fachhochschulen / HAW, Baden-Württemberg, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.th-mannheim.de\" but https redirects to a different domain (hs-mannheim.de): check it is the same institution; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:177

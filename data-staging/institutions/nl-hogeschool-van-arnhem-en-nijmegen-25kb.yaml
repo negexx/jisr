@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.han.nl/
   todo: "DUO: hbo, denomination \"Algemeen bijzonder\"; public/private is not in the file: check the institution's legal status; listed as \"www.han.nl/\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: duo:25KB

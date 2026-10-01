@@ -2,7 +2,7 @@ slug: de-hochschule-kaiserslautern-university-of-hrk306-digital-engineering-bach
 institution: de-hochschule-kaiserslautern-university-of-hrk306
 country: DE
 city: kaiserslautern
-field: computer-science
+field: engineering
 level: bachelor
 name: Digital Engineering Bachelor of Engineering
 summary:
@@ -50,7 +50,8 @@ _review:
   name: Digital Engineering Bachelor of Engineering
   institution: Hochschule Kaiserslautern (University of Applied Sciences)
   city: Kaiserslautern
-  field: computer-science
-  confidence: high
+  field: engineering
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Rheinland-Pfalz, subjects: Elektrotechnik (grundständig), Ingenieurinformatik, Computational Engineering (grundständig); provider \"Hochschule Kaiserslautern\" matched to HRK institution \"Hochschule Kaiserslautern (University of Applied Sciences)\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Rheinland-Pfalz, subjects: Elektrotechnik (grundständig), Ingenieurinformatik, Computational Engineering (grundständig); provider \"Hochschule Kaiserslautern\" matched to HRK institution \"Hochschule Kaiserslautern (University of Applied Sciences)\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:92680819

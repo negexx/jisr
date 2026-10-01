@@ -27,6 +27,13 @@ const REQUIRED = [
   "DENOMINATIE",
 ];
 
+// DUO appends the province to a few towns ("EDE GLD", "VELP GLD"): that is not part of the name.
+const PROVINCE_SUFFIX = /\s+(Gld|Ut|Ov|Nb|Zh|Nh|Dr|Fr|Gr|Lb|Fl|Ze)$/;
+
+export function stripProvince(town: string): string {
+  return town.replace(PROVINCE_SUFFIX, "");
+}
+
 const LOWER_PARTICLES = new Set(["op", "aan", "de", "den", "der", "van", "ten", "ter", "in", "en"]);
 
 // DUO writes towns in capitals ("LEEUWARDEN", "BERGEN OP ZOOM"); restore Dutch capitalisation:
@@ -38,6 +45,7 @@ export function titleCase(input: string): string {
     first = false;
     if (!lead && LOWER_PARTICLES.has(word)) return word;
     if (word.startsWith("ij")) return `IJ${word.slice(2)}`;
+    if (word === "'s") return "'s";
     if (word.startsWith("'") && word.length > 1)
       return `'${word.charAt(1).toUpperCase()}${word.slice(2)}`;
     return `${word.charAt(0).toUpperCase()}${word.slice(1)}`;
@@ -58,7 +66,7 @@ export function parseDuoCsv(text: string): DuoInstitution[] {
       code: (r.INSTELLINGSCODE ?? "").trim(),
       name: collapseSpaces(r.INSTELLINGSNAAM ?? ""),
       kind,
-      city: titleCase(collapseSpaces(r.PLAATSNAAM ?? "")),
+      city: stripProvince(titleCase(collapseSpaces(r.PLAATSNAAM ?? ""))),
       website: (r.INTERNETADRES ?? "").trim(),
       denomination: (r.DENOMINATIE ?? "").trim(),
     });

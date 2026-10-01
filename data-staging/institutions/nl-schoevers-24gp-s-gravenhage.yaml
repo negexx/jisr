@@ -3,7 +3,7 @@ name: Schoevers
 country: NL
 city:
   slug: s-gravenhage
-  name: "'S-Gravenhage"
+  name: "'s-Gravenhage"
 type: null
 website: null
 source: rio
@@ -17,8 +17,9 @@ _review:
   slug: nl-schoevers-24gp-s-gravenhage
   name: Schoevers
   institution: ""
-  city: "'S-Gravenhage"
+  city: "'s-Gravenhage"
   field: ""
   confidence: ""
   officialUrl: ""
-  todo: "campus in 'S-Gravenhage of \"Schoevers\" (RIO location \"Hogeschool Schoevers: 's-Gravenhage\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  todo: "campus in 's-Gravenhage of \"Schoevers\" (RIO location \"Hogeschool Schoevers: 's-Gravenhage\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:24GP@s-gravenhage

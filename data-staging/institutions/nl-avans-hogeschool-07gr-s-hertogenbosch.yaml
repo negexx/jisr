@@ -3,7 +3,7 @@ name: Avans Hogeschool
 country: NL
 city:
   slug: s-hertogenbosch
-  name: "'S-Hertogenbosch"
+  name: "'s-Hertogenbosch"
 type: null
 website: https://www.avans.nl/
 source: rio
@@ -17,8 +17,9 @@ _review:
   slug: nl-avans-hogeschool-07gr-s-hertogenbosch
   name: Avans Hogeschool
   institution: ""
-  city: "'S-Hertogenbosch"
+  city: "'s-Hertogenbosch"
   field: ""
   confidence: ""
   officialUrl: https://www.avans.nl/
-  todo: "campus in 'S-Hertogenbosch of \"Avans Hogeschool\" (RIO location \"Avans Hogeschool: Den Bosch\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed as \"www.avans.nl\"; the https form answers; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  todo: "campus in 's-Hertogenbosch of \"Avans Hogeschool\" (RIO location \"Avans Hogeschool: Den Bosch\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed as \"www.avans.nl\"; the https form answers; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:07GR@s-hertogenbosch

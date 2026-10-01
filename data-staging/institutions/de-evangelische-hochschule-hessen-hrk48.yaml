@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.eh-hessen.de/
   todo: "HRK: Fachhochschulen / HAW, Hessen, sponsor \"kirchlich, staatlich anerkannt\"; church-run: the app only has public/private, decide how to classify it; listed as \"http://www.eh-darmstadt.de\" but https redirects to a different domain (eh-hessen.de): check it is the same institution; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:48

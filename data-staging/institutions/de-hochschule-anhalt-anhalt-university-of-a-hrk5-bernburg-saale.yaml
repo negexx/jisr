@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.hs-anhalt.de/startseite.html
   todo: "study location in Bernburg (Saale) of \"Hochschule Anhalt - Anhalt University of Applied Sciences\" (HRK main town Köthen); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:5@bernburg-saale

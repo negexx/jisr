@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.hochschule-bochum.de/
   todo: "study location in Heiligenhaus bei Velbert of \"Hochschule Bochum\" (HRK main town Bochum); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:30@heiligenhaus-bei-velbert

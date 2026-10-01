@@ -2,7 +2,7 @@ slug: de-hochschule-braunschweig-wolfenbuttel-ost-hrk36-digital-engineering-masc
 institution: de-hochschule-braunschweig-wolfenbuttel-ost-hrk36
 country: DE
 city: wolfenbuttel
-field: computer-science
+field: engineering
 level: bachelor
 name: Digital Engineering Maschinenbau Bachelor
 summary:
@@ -50,7 +50,8 @@ _review:
   name: Digital Engineering Maschinenbau Bachelor
   institution: Hochschule Braunschweig/Wolfenbüttel, Ostfalia Hochschule für angewandte Wissenschaften
   city: Wolfenbüttel
-  field: computer-science
-  confidence: high
+  field: engineering
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Niedersachsen, subjects: Maschinenbau (grundständig), Konstruktionstechnik (grundständig), Ingenieurinformatik, Computational Engineering (grundständig); provider \"Ostfalia Hochschule\" matched to HRK institution \"Hochschule Braunschweig/Wolfenbüttel, Ostfalia Hochschule für angewandte Wissenschaften\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Niedersachsen, subjects: Maschinenbau (grundständig), Konstruktionstechnik (grundständig), Ingenieurinformatik, Computational Engineering (grundständig); provider \"Ostfalia Hochschule\" matched to HRK institution \"Hochschule Braunschweig/Wolfenbüttel, Ostfalia Hochschule für angewandte Wissenschaften\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:116583049

@@ -51,6 +51,7 @@ _review:
   institution: Technische Hochschule Köln
   city: Köln
   field: engineering
-  confidence: high
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Geowissenschaften (grundständig), Logistik, Supply-Chain-Management (grundständig), Energietechnik (grundständig); provider \"Technische Hochschule Köln\" matched to HRK institution \"Technische Hochschule Köln\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Geowissenschaften (grundständig), Logistik, Supply-Chain-Management (grundständig), Energietechnik (grundständig); provider \"Technische Hochschule Köln\" matched to HRK institution \"Technische Hochschule Köln\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:173090264

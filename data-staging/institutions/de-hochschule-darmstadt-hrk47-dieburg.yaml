@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://h-da.de/
   todo: "study location in Dieburg of \"Hochschule Darmstadt\" (HRK main town Darmstadt); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:47@dieburg

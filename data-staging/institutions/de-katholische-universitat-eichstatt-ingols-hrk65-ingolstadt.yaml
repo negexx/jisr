@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.ku.de/
   todo: "study location in Ingolstadt of \"Katholische Universität Eichstätt - Ingolstadt\" (HRK main town Eichstätt); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:65@ingolstadt

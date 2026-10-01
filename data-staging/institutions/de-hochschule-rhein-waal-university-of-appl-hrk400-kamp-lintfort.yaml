@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.hochschule-rhein-waal.de/
   todo: "study location in Kamp-Lintfort of \"Hochschule Rhein-Waal - University of Applied Sciences\" (HRK main town Kleve); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:400@kamp-lintfort

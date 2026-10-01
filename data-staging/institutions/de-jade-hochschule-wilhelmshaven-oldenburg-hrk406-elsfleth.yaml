@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.jade-hs.de/
   todo: "study location in Elsfleth of \"Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth\" (HRK main town Wilhelmshaven); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:406@elsfleth

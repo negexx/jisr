@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.h-brs.de/de
   todo: "HRK: Fachhochschulen / HAW, Nordrhein-Westfalen, sponsor \"öffentlich-rechtlich\"; listed as \"www.h-brs.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:294

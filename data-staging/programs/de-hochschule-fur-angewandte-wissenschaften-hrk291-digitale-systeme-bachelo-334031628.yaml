@@ -2,7 +2,7 @@ slug: de-hochschule-fur-angewandte-wissenschaften-hrk291-digitale-systeme-bachel
 institution: de-hochschule-fur-angewandte-wissenschaften-hrk291
 country: DE
 city: munchen
-field: computer-science
+field: engineering
 level: bachelor
 name: Digitale Systeme Bachelor
 summary:
@@ -50,7 +50,8 @@ _review:
   name: Digitale Systeme Bachelor
   institution: Hochschule für angewandte Wissenschaften München
   city: München
-  field: computer-science
-  confidence: high
+  field: engineering
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Bayern, subjects: Medieninformatik (grundständig), Digitale Geisteswissenschaften/Computerphilologie (grundständig), Druck-, Medientechnik (grundständig); provider \"Hochschule München\" matched to HRK institution \"Hochschule für angewandte Wissenschaften München\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Bayern, subjects: Medieninformatik (grundständig), Digitale Geisteswissenschaften/Computerphilologie (grundständig), Druck-, Medientechnik (grundständig); provider \"Hochschule München\" matched to HRK institution \"Hochschule für angewandte Wissenschaften München\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:334031628

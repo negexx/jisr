@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.thm.de/site/
   todo: "study location in Friedberg (Hessen) of \"Technische Hochschule Mittelhessen - THM\" (HRK main town Gießen); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:97@friedberg-hessen

@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://whitecliffe.de/en/?utm_source=study-portal&utm_medium=listing&utm_campaign=hochschulkompass
   todo: "HRK: Fachhochschulen / HAW, Berlin, sponsor \"privat, staatlich anerkannt\"; listed URL \"https://whitecliffe.de/en/?utm_source=study-portal&utm_medium=listing&utm_campaign=hochschulkompass\" is a page or carries a query (tracking?): replace it with the institution's homepage; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:462

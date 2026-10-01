@@ -54,3 +54,4 @@ _review:
   confidence: high
   officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48592&typeBac=0&originePc=0
   todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind); distance-learning programme: check it suits a student abroad"
+  sourceId: parcoursup:48592

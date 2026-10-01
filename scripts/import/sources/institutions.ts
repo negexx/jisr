@@ -54,11 +54,13 @@ export function stagedInstitution(input: {
   website: string | null;
   source: string;
   sourceUrl: string;
+  sourceId: string;
   todo: string;
 }): StagedRecord {
   return {
     collection: "institutions",
     id: input.slug,
+    sourceId: input.sourceId,
     data: {
       slug: input.slug,
       name: input.name,
@@ -112,6 +114,7 @@ export function buildHrkRecord(inst: HrkInstitution, probed: Probed): StagedReco
     website: site.url,
     source: "hrk",
     sourceUrl: HRK_DOWNLOADS_PAGE,
+    sourceId: `hrk:${inst.hsNr}`,
     todo: notes.join("; "),
   });
 }
@@ -132,6 +135,7 @@ export function buildDuoRecord(inst: DuoInstitution, probed: Probed): StagedReco
     website: site.url,
     source: "duo",
     sourceUrl: DUO_INSTITUTIONS_PAGE,
+    sourceId: `duo:${inst.code}`,
     todo: notes.join("; "),
   });
 }

@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.hs-furtwangen.de/
   todo: "study location in Villingen-Schwenningen of \"Hochschule Furtwangen - Informatik, Technik, Wirtschaft, Medien, Gesundheit\" (HRK main town Furtwangen); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:94@villingen-schwenningen

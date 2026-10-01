@@ -1,5 +1,5 @@
 import { existsSync } from "node:fs";
-import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import { stringify } from "yaml";
@@ -16,6 +16,9 @@ export type StagedRecord = {
   id: string;
   data: Record<string, unknown>;
   review: ReviewRow;
+  // The record's identity in its source ("ba:73208836", "uai:0597215X"), independent of the slug.
+  // Slugs are built from names and can change between imports; the source id cannot.
+  sourceId?: string;
 };
 
 export type ReviewRow = {
@@ -131,29 +134,137 @@ export function parseCsv(input: string, forcedSeparator?: string): Record<string
     .map((r) => Object.fromEntries(header.map((name, i) => [name.trim(), r[i] ?? ""])));
 }
 
+export const LEDGER_FILE_NAME = "PROMOTED.csv";
+
+export function ledgerFile(dir = STAGING_DIR): string {
+  return path.join(dir, LEDGER_FILE_NAME);
+}
+
+export type LedgerRow = { collection: string; sourceId: string; slug: string; date: string };
+
+// Every promoted record's source id, appended by `data:promote`. A promoted record loses its
+// `_review` block, so without this a re-import that changed its slug would stage a duplicate.
+export async function readLedger(dir = STAGING_DIR): Promise<Map<string, string>> {
+  const file = ledgerFile(dir);
+  if (!existsSync(file)) return new Map();
+  const rows = parseCsv(await readFile(file, "utf8"));
+  return new Map(rows.map((r) => [`${r.collection}|${r.sourceId}`, r.slug ?? ""]));
+}
+
+export async function appendLedger(rows: readonly LedgerRow[], dir = STAGING_DIR): Promise<void> {
+  if (rows.length === 0) return;
+  const file = ledgerFile(dir);
+  const header = "collection,sourceId,slug,date\n";
+  const lines = rows.map((r) => [r.collection, r.sourceId, r.slug, r.date].map(csvCell).join(","));
+  await mkdir(dir, { recursive: true });
+  const existing = existsSync(file) ? await readFile(file, "utf8") : header;
+  await writeFile(file, `${existing}${lines.join("\n")}\n`);
+}
+
+// collection|sourceId -> staged files carrying it (read with a regex: thousands of files).
+async function indexStagedSourceIds(
+  dir: string,
+): Promise<Map<string, { slug: string; file: string }>> {
+  const index = new Map<string, { slug: string; file: string }>();
+  if (!existsSync(dir)) return index;
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    for (const name of await readdir(path.join(dir, entry.name))) {
+      if (!name.endsWith(".yaml")) continue;
+      const file = path.join(dir, entry.name, name);
+      const found = /^ {2}sourceId: (.+)$/m.exec(await readFile(file, "utf8"));
+      const raw = found?.[1]?.trim();
+      if (raw === undefined) continue;
+      const sourceId = raw.replace(/^(['"])(.*)\1$/, "$2");
+      index.set(`${entry.name}|${sourceId}`, { slug: name.slice(0, -".yaml".length), file });
+    }
+  }
+  return index;
+}
+
 export type WriteResult = {
   written: number;
   skipped: number;
   inData: number;
   rewritten: Set<string>;
+  // Unapproved staged files of a record whose slug changed: removed, the new file replaces them.
+  removedStale: string[];
+  // Approved staged files of a record whose slug changed: kept, a human decides.
+  keptApprovedStale: string[];
 };
+
+function reviewBlock(record: StagedRecord): Record<string, unknown> {
+  return record.sourceId === undefined
+    ? { ...record.review }
+    : { ...record.review, sourceId: record.sourceId };
+}
+
+// Two records of one run sharing an id (or a source id) would silently collapse into one file.
+function assertUnique(records: readonly StagedRecord[]): void {
+  const ids = new Set<string>();
+  const sources = new Set<string>();
+  for (const r of records) {
+    const id = `${r.collection}/${r.id}`;
+    if (ids.has(id)) throw new Error(`two imported records share the id ${id}`);
+    ids.add(id);
+    if (r.sourceId === undefined) continue;
+    const source = `${r.collection}|${r.sourceId}`;
+    if (sources.has(source))
+      throw new Error(`two imported records share the source id ${r.sourceId}`);
+    sources.add(source);
+  }
+}
 
 // Writes staged records. Never clobbers a file a reviewer may have edited unless asked, and never
 // re-stages a record that was already promoted into data/. `rewritten` lists the records whose
 // staged file was replaced: any earlier approval of those no longer means anything.
 export async function writeStaged(
   records: readonly StagedRecord[],
-  options: { overwrite: boolean; stagingDir?: string; dataDir?: string },
+  options: {
+    overwrite: boolean;
+    stagingDir?: string;
+    dataDir?: string;
+    approved?: ReadonlySet<string>;
+  },
 ): Promise<WriteResult> {
   const stagingDir = options.stagingDir ?? STAGING_DIR;
   const dataDir = options.dataDir ?? DATA_DIR;
-  const result: WriteResult = { written: 0, skipped: 0, inData: 0, rewritten: new Set() };
+  const result: WriteResult = {
+    written: 0,
+    skipped: 0,
+    inData: 0,
+    rewritten: new Set(),
+    removedStale: [],
+    keptApprovedStale: [],
+  };
+  assertUnique(records);
+  const ledger = await readLedger(stagingDir);
+  const staged = await indexStagedSourceIds(stagingDir);
+  const approved = options.approved ?? new Set<string>();
   // Validate everything first so a bad record never leaves staging half-written.
-  for (const record of records) toYaml({ ...record.data, _review: record.review });
+  for (const record of records) toYaml({ ...record.data, _review: reviewBlock(record) });
   for (const record of records) {
     if (existsSync(path.join(dataDir, record.collection, `${record.id}.yaml`))) {
       result.inData++;
       continue;
+    }
+    const sourceKey =
+      record.sourceId === undefined ? null : `${record.collection}|${record.sourceId}`;
+    if (sourceKey !== null && ledger.has(sourceKey)) {
+      result.inData++;
+      continue;
+    }
+    if (sourceKey !== null) {
+      const stale = staged.get(sourceKey);
+      if (stale !== undefined && stale.slug !== record.id) {
+        const key = recordKey(record.collection, stale.slug);
+        if (approved.has(key)) {
+          result.keptApprovedStale.push(key);
+        } else {
+          await rm(stale.file);
+          result.removedStale.push(key);
+        }
+      }
     }
     const file = stageFile(record.collection, record.id, stagingDir);
     const existed = existsSync(file);
@@ -162,7 +273,7 @@ export async function writeStaged(
       continue;
     }
     await mkdir(path.dirname(file), { recursive: true });
-    await writeFile(file, toYaml({ ...record.data, _review: record.review }));
+    await writeFile(file, toYaml({ ...record.data, _review: reviewBlock(record) }));
     result.written++;
     if (existed) result.rewritten.add(recordKey(record.collection, record.id));
   }

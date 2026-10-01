@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://esmt.berlin/
   todo: "HRK: Universitäten, Berlin, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.esmt.org/en/home\" but https redirects to a different domain (esmt.berlin): check it is the same institution; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:396

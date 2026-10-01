@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.tum.de/
   todo: "study location in Heilbronn of \"Technische Universität München\" (HRK main town München); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:184@heilbronn

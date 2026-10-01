@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.uni-kassel.de/uni/index.html
   todo: "HRK: Universitäten, Hessen, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.uni-kassel.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:142

@@ -2,7 +2,7 @@ slug: de-hochschule-fur-angewandte-wissenschaften-hrk44-applied-digital-transfor
 institution: de-hochschule-fur-angewandte-wissenschaften-hrk44
 country: DE
 city: coburg
-field: computer-science
+field: engineering
 level: bachelor
 name: Applied Digital Transformation Bachelor
 summary:
@@ -50,7 +50,8 @@ _review:
   name: Applied Digital Transformation Bachelor
   institution: Hochschule für angewandte Wissenschaften Coburg
   city: Coburg
-  field: computer-science
-  confidence: high
+  field: engineering
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Bayern, subjects: Technologiemanagement (grundständig), Wirtschaftspsychologie (grundständig), Datenwissenschaft, Data Science (grundständig); provider \"Hochschule Coburg\" matched to HRK institution \"Hochschule für angewandte Wissenschaften Coburg\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Bayern, subjects: Technologiemanagement (grundständig), Wirtschaftspsychologie (grundständig), Datenwissenschaft, Data Science (grundständig); provider \"Hochschule Coburg\" matched to HRK institution \"Hochschule für angewandte Wissenschaften Coburg\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:137739415

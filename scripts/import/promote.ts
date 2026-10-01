@@ -7,7 +7,15 @@ import { parse } from "yaml";
 import { isValidIsoDate } from "@/data-schema/dates";
 import { COLLECTIONS, isCollectionName } from "@/data-schema/records/collections";
 
-import { DATA_DIR, readReviewState, STAGING_DIR, stageFile, toYaml } from "./staging";
+import {
+  appendLedger,
+  DATA_DIR,
+  type LedgerRow,
+  readReviewState,
+  STAGING_DIR,
+  stageFile,
+  toYaml,
+} from "./staging";
 
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -36,6 +44,7 @@ export async function promoteApproved(options: {
   const stagingDir = options.stagingDir ?? STAGING_DIR;
   const dataDir = options.dataDir ?? DATA_DIR;
   const result: PromoteResult = { promoted: [], skipped: [] };
+  const ledger: LedgerRow[] = [];
   const skip = (key: string, reason: string) => result.skipped.push({ key, reason });
 
   for (const key of [...options.approved].sort()) {
@@ -64,6 +73,8 @@ export async function promoteApproved(options: {
       skip(key, "not a record");
       continue;
     }
+    const review = (staged as { _review?: { sourceId?: unknown } })._review;
+    const sourceId = typeof review?.sourceId === "string" ? review.sourceId : null;
     const record = stampVerified(
       Object.fromEntries(Object.entries(staged).filter(([k]) => k !== "_review")),
       options.date,
@@ -84,7 +95,9 @@ export async function promoteApproved(options: {
     }
     await rm(from);
     result.promoted.push(key);
+    if (sourceId !== null) ledger.push({ collection, sourceId, slug: id, date: options.date });
   }
+  await appendLedger(ledger, stagingDir);
   return result;
 }
 

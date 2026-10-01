@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.klu.org/
   todo: "HRK: Universitäten, Hamburg, sponsor \"privat, staatlich anerkannt\"; listed as \"www.klu.org\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:429

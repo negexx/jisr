@@ -54,3 +54,4 @@ _review:
   confidence: high
   officialUrl: ""
   todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Baden-Württemberg, subjects: Werkstoffwissenschaft, -technik (grundständig), Materialwissenschaft (grundständig); provider \"Hochschule Furtwangen\" matched to HRK institution \"Hochschule Furtwangen - Informatik, Technik, Wirtschaft, Medien, Gesundheit\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:311628725

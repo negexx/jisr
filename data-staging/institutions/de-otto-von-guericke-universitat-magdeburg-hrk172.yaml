@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.ovgu.de/
   todo: "HRK: Universitäten, Sachsen-Anhalt, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.ovgu.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:172

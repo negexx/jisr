@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.uphf.fr/iut
   todo: "website candidate from Wikidata (UAI match), not an official register: confirm it on the official page, add that page as the source, then set info_kind: official"
+  sourceId: uai:0593052X

@@ -54,3 +54,4 @@ _review:
   confidence: high
   officialUrl: ""
   todo: "BA Studiensuche: Universität, Bayern, subjects: Wirtschaftsinformatik (grundständig); provider \"Universität der Bundeswehr München\" matched to HRK institution \"Universität der Bundeswehr München\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:73428601

@@ -51,6 +51,7 @@ _review:
   institution: Hochschule Düsseldorf
   city: Düsseldorf
   field: business-economics
-  confidence: high
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Betriebswirtschaftslehre, Business Administration (grundständig); provider \"Hochschule Düsseldorf\" matched to HRK institution \"Hochschule Düsseldorf\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Betriebswirtschaftslehre, Business Administration (grundständig); provider \"Hochschule Düsseldorf\" matched to HRK institution \"Hochschule Düsseldorf\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:78850092

@@ -3,7 +3,7 @@ name: Hotelschool The Hague
 country: NL
 city:
   slug: s-gravenhage
-  name: "'S-Gravenhage"
+  name: "'s-Gravenhage"
 type: null
 website: https://www.hotelschool.nl/
 source: duo
@@ -17,8 +17,9 @@ _review:
   slug: nl-hotelschool-the-hague-02nr
   name: Hotelschool The Hague
   institution: ""
-  city: "'S-Gravenhage"
+  city: "'s-Gravenhage"
   field: ""
   confidence: ""
   officialUrl: https://www.hotelschool.nl/
   todo: "DUO: hbo, denomination \"Algemeen bijzonder\"; public/private is not in the file: check the institution's legal status; listed as \"www.hotelschool.nl\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: duo:02NR

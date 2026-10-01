@@ -54,3 +54,4 @@ _review:
   confidence: high
   officialUrl: ""
   todo: "BA Studiensuche: Universität, Hessen, subjects: Betriebswirtschaftslehre, Business Administration (grundständig); provider \"Universität Frankfurt am Main\" matched to HRK institution \"Johann Wolfgang Goethe-Universität, Frankfurt am Main\"; may be a minor or combination subject, not a stand-alone degree; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:73426150

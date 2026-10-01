@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.hs-rm.de/de/
   todo: "HRK: Fachhochschulen / HAW, Hessen, sponsor \"öffentlich-rechtlich\"; listed URL \"https://www.hs-rm.de/de/\" is a page or carries a query (tracking?): replace it with the institution's homepage; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:270

@@ -8,6 +8,8 @@ import { parse } from "yaml";
 import { promoteApproved } from "../../../scripts/import/promote";
 import type { StagedRecord } from "../../../scripts/import/staging";
 import {
+  appendLedger,
+  ledgerFile,
   parseCsv,
   READ_SOURCE,
   readReviewState,
@@ -182,5 +184,109 @@ describe("review sheet", () => {
     const row = channel("official").review;
     await writeFile(reviewFile(stagingDir), reviewCsv([row], new Set([KEY])));
     expect([...(await readReviewState(stagingDir)).approved]).toEqual([KEY]);
+  });
+});
+
+describe("stable source ids", () => {
+  const withSource = (slug: string, sourceId: string, infoKind = "official") => {
+    const record = channel(infoKind);
+    record.id = slug;
+    record.data.slug = slug;
+    record.review.slug = slug;
+    record.sourceId = sourceId;
+    return record;
+  };
+
+  it("refuses two records of one run that share an id or a source id", async () => {
+    await expect(
+      writeStaged([withSource("a", "s:1"), withSource("a", "s:2")], {
+        overwrite: false,
+        stagingDir,
+        dataDir,
+      }),
+    ).rejects.toThrow(/share the id/);
+    await expect(
+      writeStaged([withSource("a", "s:1"), withSource("b", "s:1")], {
+        overwrite: false,
+        stagingDir,
+        dataDir,
+      }),
+    ).rejects.toThrow(/share the source id/);
+  });
+
+  it("stores the source id in the staged file", async () => {
+    await writeStaged([withSource("xx-test-channel", "ba:73208836")], {
+      overwrite: false,
+      stagingDir,
+      dataDir,
+    });
+    const text = readFileSync(
+      stageFile("application-channels", "xx-test-channel", stagingDir),
+      "utf8",
+    );
+    expect(text).toMatch(/^ {2}sourceId: ba:73208836$/m);
+  });
+
+  it("removes the superseded unapproved file when a record's slug changed", async () => {
+    await writeStaged([withSource("old-slug", "ba:1")], { overwrite: false, stagingDir, dataDir });
+    const result = await writeStaged([withSource("new-slug", "ba:1")], {
+      overwrite: false,
+      stagingDir,
+      dataDir,
+    });
+    expect(result.removedStale).toEqual(["application-channels/old-slug"]);
+    expect(existsSync(stageFile("application-channels", "old-slug", stagingDir))).toBe(false);
+    expect(existsSync(stageFile("application-channels", "new-slug", stagingDir))).toBe(true);
+  });
+
+  it("keeps an approved superseded file and reports it", async () => {
+    await writeStaged([withSource("old-slug", "ba:1")], { overwrite: false, stagingDir, dataDir });
+    const result = await writeStaged([withSource("new-slug", "ba:1")], {
+      overwrite: false,
+      stagingDir,
+      dataDir,
+      approved: new Set(["application-channels/old-slug"]),
+    });
+    expect(result.keptApprovedStale).toEqual(["application-channels/old-slug"]);
+    expect(existsSync(stageFile("application-channels", "old-slug", stagingDir))).toBe(true);
+  });
+
+  it("does not re-stage a promoted record whose slug changed since", async () => {
+    await appendLedger(
+      [
+        {
+          collection: "application-channels",
+          sourceId: "ba:1",
+          slug: "promoted-slug",
+          date: "2026-10-01",
+        },
+      ],
+      stagingDir,
+    );
+    const result = await writeStaged([withSource("renamed-slug", "ba:1")], {
+      overwrite: false,
+      stagingDir,
+      dataDir,
+    });
+    expect(result).toMatchObject({ written: 0, inData: 1 });
+    expect(existsSync(stageFile("application-channels", "renamed-slug", stagingDir))).toBe(false);
+  });
+
+  it("writes a ledger row when a record is promoted", async () => {
+    await writeStaged([withSource("xx-test-channel", "ba:42")], {
+      overwrite: false,
+      stagingDir,
+      dataDir,
+    });
+    await promoteApproved({ approved: new Set([KEY]), date: "2026-10-01", stagingDir, dataDir });
+    const ledger = parseCsv(readFileSync(ledgerFile(stagingDir), "utf8"));
+    expect(ledger).toEqual([
+      {
+        collection: "application-channels",
+        sourceId: "ba:42",
+        slug: "xx-test-channel",
+        date: "2026-10-01",
+      },
+    ]);
   });
 });

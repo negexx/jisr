@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.inholland.nl/
   todo: "campus in Delft of \"Hogeschool Inholland\" (RIO location \"Hogeschool Inholland: Delft\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed as \"www.inholland.nl\"; the https form answers; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:27PZ@delft

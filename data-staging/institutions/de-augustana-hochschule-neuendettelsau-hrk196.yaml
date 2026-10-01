@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: ""
   todo: "HRK: Universitäten, Bayern, sponsor \"kirchlich, staatlich anerkannt\"; church-run: the app only has public/private, decide how to classify it; listed website \"http://www.augustana.de\" did not answer over https (probe failed): find the official https site; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:196

@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.s-hochschule.de/
   todo: "HRK: Fachhochschulen / HAW, Nordrhein-Westfalen, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.s-hochschule.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:352

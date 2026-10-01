@@ -1,13 +1,14 @@
 import { probeHttps } from "../http";
 import type { ReviewRow, StagedRecord } from "../staging";
 import { READ_SOURCE } from "../staging";
-import { collapseSpaces, slugify } from "../text";
+import { collapseSpaces, sameTown, slugify } from "../text";
 import type { BaProgramme } from "./ba";
 import {
   BA_STUDIENSUCHE_PAGE,
   baUnitSlug,
   classifyGerman,
   fetchBaProgrammes,
+  isWorkStudy,
   matchHrk,
 } from "./ba";
 import type { HrkInstitution } from "./hrk";
@@ -40,7 +41,7 @@ function programmeRecord(input: {
     ...(match.confidence === "low"
       ? ["field is a judgement call: check the programme content"]
       : []),
-    ...(/nebenfach|kombination|zwei-?fach|lehramt/i.test(p.name)
+    ...(/nebenfach|kombination|zwei-?fach/i.test(p.name)
       ? ["may be a minor or combination subject, not a stand-alone degree"]
       : []),
     "the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind",
@@ -59,6 +60,7 @@ function programmeRecord(input: {
   return {
     collection: "programs",
     id: slug,
+    sourceId: `ba:${p.id}`,
     data: {
       slug,
       institution: instSlug,
@@ -108,15 +110,17 @@ export function buildGermanRecords(input: {
     const match = classifyGerman(p.group, p.name, p.subjects);
     const matched = matchHrk(p.provider, p.city, lite);
     const hrkInst = matched === null ? undefined : hrkBySlug.get(matched.slug);
-    const city = collapseSpaces(p.city || hrkInst?.city || "");
-    if (match === null || city === "") continue;
+    const listedCity = collapseSpaces(p.city || hrkInst?.city || "");
+    // The register's spelling of the main town wins, so a variant ("Halle (Saale)") is not a campus.
+    const city =
+      hrkInst !== undefined && sameTown(hrkInst.city, listedCity) ? hrkInst.city : listedCity;
+    if (match === null || city === "" || isWorkStudy(p)) continue;
 
     let instSlug: string;
     let instName: string;
     if (hrkInst !== undefined && matched !== null) {
       instName = hrkInst.name;
-      instSlug =
-        slugify(hrkInst.city) === slugify(city) ? matched.slug : `${matched.slug}-${slugify(city)}`;
+      instSlug = city === hrkInst.city ? matched.slug : `${matched.slug}-${slugify(city)}`;
       if (instSlug !== matched.slug && !extras.has(instSlug)) {
         const site = resolveSite(hrkInst.homepage, probed);
         extras.set(
@@ -130,6 +134,7 @@ export function buildGermanRecords(input: {
             website: site.url,
             source: "hrk",
             sourceUrl: HRK_DOWNLOADS_PAGE,
+            sourceId: `hrk:${hrkInst.hsNr}@${slugify(city)}`,
             todo: `study location in ${city} of "${instName}" (HRK main town ${hrkInst.city}); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official`,
           }),
         );
@@ -149,6 +154,7 @@ export function buildGermanRecords(input: {
             website: null,
             source: "ba",
             sourceUrl: BA_STUDIENSUCHE_PAGE,
+            sourceId: `ba-provider:${p.providerId}@${slugify(city)}`,
             todo: `provider from the BA Studiensuche (${p.hochschulart}, ${p.state}); not matched to the HRK list: find its official site, check it is a recognised Hochschule, set the type, add its page as the source, then info_kind: official`,
           }),
         );

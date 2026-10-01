@@ -51,6 +51,7 @@ _review:
   institution: Universität Trier
   city: Trier
   field: business-economics
-  confidence: high
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Universität, Rheinland-Pfalz, subjects: Rechtswissenschaft (grundständig außer Erste juristische Prüfung), Wirtschaftswissenschaften (grundständig); provider \"Universität Trier\" matched to HRK institution \"Universität Trier\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Universität, Rheinland-Pfalz, subjects: Rechtswissenschaft (grundständig außer Erste juristische Prüfung), Wirtschaftswissenschaften (grundständig); provider \"Universität Trier\" matched to HRK institution \"Universität Trier\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:248630004

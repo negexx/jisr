@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.has.nl/
   todo: "campus in Venlo of \"HAS green academy\" (RIO location \"HAS green academy: Venlo\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed as \"www.has.nl\"; the https form answers; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:21CW@venlo

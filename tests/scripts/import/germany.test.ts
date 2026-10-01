@@ -1,9 +1,16 @@
 import { describe, expect, it } from "vitest";
 
 import type { BaProgramme } from "../../../scripts/import/sources/ba";
-import { BA_GROUPS, cityOf, classifyGerman, matchHrk } from "../../../scripts/import/sources/ba";
+import {
+  BA_GROUPS,
+  cityOf,
+  classifyGerman,
+  isWorkStudy,
+  matchHrk,
+} from "../../../scripts/import/sources/ba";
 import { buildGermanRecords } from "../../../scripts/import/sources/germany";
 import { READ_SOURCE } from "../../../scripts/import/staging";
+import { sameTown } from "../../../scripts/import/text";
 
 const group = (field: string) => {
   const g = BA_GROUPS.find((x) => x.field === field);
@@ -32,6 +39,7 @@ const programme = (over: Partial<BaProgramme> = {}): BaProgramme => ({
   state: "Hessen",
   hochschulart: "Universität",
   subjects: ["Informatik (grundständig)"],
+  models: [],
   group: group("computer-science"),
   ...over,
 });
@@ -133,6 +141,27 @@ describe("matchHrk", () => {
       "de-philipps-universitat-marburg-hrk1",
     );
   });
+  it("never links a longer, different institution to a shorter generic HRK name", () => {
+    const generic = [
+      {
+        slug: "de-hochschule-bremen-hrk1",
+        name: "Hochschule Bremen",
+        city: "Bremen",
+        alias: "Hochschule Bremen",
+      },
+      {
+        slug: "de-hochschule-hannover-hrk2",
+        name: "Hochschule Hannover",
+        city: "Hannover",
+        alias: "Hochschule Hannover",
+      },
+    ];
+    expect(matchHrk("Internationale Hochschule Bremen", "Bremen", generic)).toBeNull();
+    expect(matchHrk("Evangelische Hochschule Hannover", "Hannover", generic)).toBeNull();
+    expect(matchHrk("Hochschule Bremen", "Bremen", generic)?.slug).toBe(
+      "de-hochschule-bremen-hrk1",
+    );
+  });
   it("never guesses: another town without the town in the name, or an ambiguous name, gives no match", () => {
     expect(matchHrk("Universität Hessen", "Gießen", list)).toBeNull();
     expect(matchHrk("Hochschule", "Aalen", list)).toBeNull();
@@ -204,6 +233,75 @@ describe("buildGermanRecords", () => {
       ],
       hrk,
       probed,
+    });
+    expect(records.filter((r) => r.collection === "programs")).toHaveLength(0);
+  });
+});
+
+describe("classifyGerman tags and engineering names", () => {
+  it("does not let a secondary subject tag move a programme into computer science at high confidence", () => {
+    const r = classifyGerman(group("engineering"), "Elektrotechnik mit Ausbildungsorientierung", [
+      "Ingenieurinformatik (grundständig)",
+    ]);
+    expect(r).toEqual({ field: "engineering", confidence: "low" });
+  });
+  it("marks an engineering-group programme whose name is not engineering as low", () => {
+    expect(classifyGerman(group("engineering"), "Architektur B.A.", [])?.confidence).toBe("low");
+    expect(classifyGerman(group("engineering"), "Maschinenbau Bachelor", [])?.confidence).toBe(
+      "high",
+    );
+  });
+  it("judges business only by the programme name", () => {
+    expect(
+      classifyGerman(group("business-economics"), "Sustainable Agriculture", [
+        "Betriebswirtschaftslehre",
+      ])?.confidence,
+    ).toBe("low");
+  });
+  it("excludes business and engineering teacher training", () => {
+    expect(classifyGerman(group("business-economics"), "Wirtschaftspädagogik", [])).toBeNull();
+    expect(classifyGerman(group("engineering"), "Ingenieurpädagogik", [])).toBeNull();
+  });
+});
+
+describe("work-study offers and town variants", () => {
+  it("recognises dual and practice-integrated offers by model or wording", () => {
+    expect(
+      isWorkStudy({ name: "Informatik", provider: "Hochschule X", models: ["praxisintegrierend"] }),
+    ).toBe(true);
+    expect(isWorkStudy({ name: "BWL (dual)", provider: "Hochschule X", models: [] })).toBe(true);
+    expect(
+      isWorkStudy({
+        name: "Informatik",
+        provider: "Duale Hochschule Baden-Württemberg",
+        models: [],
+      }),
+    ).toBe(true);
+    expect(isWorkStudy({ name: "Informatik", provider: "Hochschule X", models: [] })).toBe(false);
+  });
+  it("treats a longer official spelling of the same town as the same town", () => {
+    expect(sameTown("Halle (Saale)", "Halle")).toBe(true);
+    expect(sameTown("Mainz am Rhein", "Mainz")).toBe(true);
+    expect(sameTown("Bad Homburg vor der Höhe", "Bad Homburg")).toBe(true);
+    expect(sameTown("Ludwigshafen am Rhein", "Ludwigshafen")).toBe(true);
+    expect(sameTown("Halle (Saale)", "Hallstadt")).toBe(false);
+    expect(sameTown("Frankfurt am Main", "Frankfurt (Oder)")).toBe(true);
+  });
+  it("keeps the HRK spelling for a programme in a variant of the main town (no fake campus)", () => {
+    const hrk = [hrkInst("2", "Hochschule Beispiel", "Halle (Saale)")];
+    const records = buildGermanRecords({
+      programmes: [programme({ provider: "Hochschule Beispiel", city: "Halle" })],
+      hrk,
+      probed: new Map(),
+    });
+    expect(records.filter((r) => r.collection === "institutions")).toHaveLength(0);
+    expect(records.find((r) => r.collection === "programs")?.data.city).toBe("halle-saale");
+  });
+  it("skips work-study programmes", () => {
+    const records = buildGermanRecords({
+      programmes: [programme({ models: ["praxisintegrierend"] })],
+      hrk: [hrkInst("1", "Philipps-Universität Marburg", "Marburg")],
+      probed: new Map(),
     });
     expect(records.filter((r) => r.collection === "programs")).toHaveLength(0);
   });

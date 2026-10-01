@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.univ-brest.fr/fr
   todo: 'website candidate from ESR register, but only through a former UAI code of "Université de Bretagne Occidentale" (merger or rename?): confirm it on the official page, add that page as the source, then set info_kind: official'
+  sourceId: uai:0290346U

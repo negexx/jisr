@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://psychologische-hochschule.de/
   todo: "HRK: Universitäten, Berlin, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.psychologische-hochschule.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:441

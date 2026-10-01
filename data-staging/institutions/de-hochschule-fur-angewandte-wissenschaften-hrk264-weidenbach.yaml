@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.hswt.de/
   todo: "study location in Weidenbach of \"Hochschule für angewandte Wissenschaften Weihenstephan-Triesdorf\" (HRK main town Freising); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:264@weidenbach

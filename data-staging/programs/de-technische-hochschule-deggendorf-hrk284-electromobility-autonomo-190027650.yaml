@@ -2,7 +2,7 @@ slug: de-technische-hochschule-deggendorf-hrk284-electromobility-autonomo-190027
 institution: de-technische-hochschule-deggendorf-hrk284
 country: DE
 city: deggendorf
-field: computer-science
+field: engineering
 level: bachelor
 name: Electromobility, Autonomous Driving and Mobile Robotics - International Bachelor of Engineering
 summary:
@@ -50,7 +50,8 @@ _review:
   name: Electromobility, Autonomous Driving and Mobile Robotics - International Bachelor of Engineering
   institution: Technische Hochschule Deggendorf
   city: Deggendorf
-  field: computer-science
-  confidence: high
+  field: engineering
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Bayern, subjects: Mechatronik (grundständig), Informatik (grundständig); provider \"Technische Hochschule Deggendorf\" matched to HRK institution \"Technische Hochschule Deggendorf\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Bayern, subjects: Mechatronik (grundständig), Informatik (grundständig); provider \"Technische Hochschule Deggendorf\" matched to HRK institution \"Technische Hochschule Deggendorf\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:190027650

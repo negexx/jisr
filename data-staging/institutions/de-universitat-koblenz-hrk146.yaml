@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.uni-koblenz.de/de
   todo: "HRK: Universitäten, Rheinland-Pfalz, sponsor \"öffentlich-rechtlich\"; listed URL \"https://www.uni-koblenz.de/de\" is a page or carries a query (tracking?): replace it with the institution's homepage; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:146

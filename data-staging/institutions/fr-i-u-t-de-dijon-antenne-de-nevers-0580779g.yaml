@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://iutdijon.u-bourgogne.fr/www/iut
   todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"
+  sourceId: uai:0580779G

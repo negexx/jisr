@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://iut-montpellier-sete.edu.umontpellier.fr
   todo: "website candidate from Wikidata (UAI match), not an official register: confirm it on the official page, add that page as the source, then set info_kind: official"
+  sourceId: uai:0340838B

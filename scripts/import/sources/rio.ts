@@ -5,7 +5,7 @@ import { fetchJson, fetchText, probeHttps } from "../http";
 import type { ReviewRow, StagedRecord } from "../staging";
 import { parseCsv, READ_SOURCE } from "../staging";
 import { collapseSpaces, slugify } from "../text";
-import { fetchDuoInstitutions, titleCase } from "./duo";
+import { fetchDuoInstitutions, stripProvince, titleCase } from "./duo";
 import { websiteCandidates } from "./hrk";
 import { buildDuoRecord, resolveSite, stagedInstitution } from "./institutions";
 
@@ -39,6 +39,8 @@ const REQUIRED = [
   "VESTIGINGSCODE",
   "VESTIGINGSNAAM",
   "PLAATSNAAM",
+  "GEMEENTENAAM",
+  "INSTROOM_EINDDATUM",
   "OPLEIDINGSEENHEIDCODE",
   "OPLEIDINGSEENHEID_NAAM",
   "OPLEIDINGSEENHEID_INTERNATIONALE_NAAM",
@@ -63,7 +65,22 @@ export function isCurrentFullTimeBachelor(row: RioRow): boolean {
   );
 }
 
-export function parseRio(text: string): RioRow[] {
+// Programmes whose intake has ended are still "current" in the register while the last cohorts
+// finish, but they take no new students.
+export function acceptsNewStudents(row: RioRow, today: string): boolean {
+  const end = row.INSTROOM_EINDDATUM ?? "";
+  return end === "" || end > today;
+}
+
+// DUO writes "EDE GLD" (province) or "AMSTERDAM ZUIDOOST" (district): the town is the municipality.
+export function townOf(place: string, municipality: string): string {
+  const town = stripProvince(titleCase(collapseSpaces(place)));
+  const muni = titleCase(collapseSpaces(municipality));
+  return muni !== "" && town.toLowerCase().startsWith(`${muni.toLowerCase()} `) ? muni : town;
+}
+
+export function parseRio(input: string): RioRow[] {
+  const text = input.replace(/^\uFEFF/, "");
   const rows = parseCsv(text, ",");
   const head = rows[0];
   if (head === undefined || REQUIRED.some((c) => !(c in head))) {
@@ -77,15 +94,18 @@ export function durationYears(studielast: string): number | null {
   return Number.isFinite(ects) && ects >= 60 && ects % 60 === 0 ? ects / 60 : null;
 }
 
-export async function fetchRioBachelors(): Promise<RioRow[]> {
+export async function fetchRioBachelors(today: string): Promise<RioRow[]> {
   const text = await fetchText(await resolveCsvUrl(), {
     validate: (body) => {
-      if (body.length < 1_000_000 || !body.startsWith('"BEVOEGD_GEZAG_CODE"')) {
+      if (
+        body.length < 1_000_000 ||
+        !body.replace(/^\uFEFF/, "").startsWith('"BEVOEGD_GEZAG_CODE"')
+      ) {
         throw new Error("RIO file looks wrong or truncated");
       }
     },
   });
-  return parseRio(text).filter(isCurrentFullTimeBachelor);
+  return parseRio(text).filter((r) => isCurrentFullTimeBachelor(r) && acceptsNewStudents(r, today));
 }
 
 const unread = (source: string) => ({ value: null, source, info_kind: READ_SOURCE });
@@ -95,8 +115,9 @@ export function buildDutchProgramme(input: {
   instSlug: string;
   instName: string;
   city: string;
+  today: string;
 }): StagedRecord | null {
-  const { row, instSlug, instName, city } = input;
+  const { row, instSlug, instName, city, today } = input;
   const name = collapseSpaces(row.OPLEIDINGSEENHEID_NAAM ?? "");
   const international = collapseSpaces(row.OPLEIDINGSEENHEID_INTERNATIONALE_NAAM ?? "");
   const match = classifyDutchProgramme(row.ONDERDEEL ?? "", name, international);
@@ -107,16 +128,27 @@ export function buildDutchProgramme(input: {
   const level =
     row.NIVEAU === "WO-BA" ? "WO (research university)" : "HBO (university of applied sciences)";
   const funding = row.BEKOSTIGINGSCODE ?? "";
+  const accreditedUntil = row.ACCREDITATIE_VERVALDATUM ?? "";
+  const intakeEnd = row.INSTROOM_EINDDATUM ?? "";
   const todo = [
     `RIO register: ${level}, ${row.STUDIELAST} ECTS, accredited until ${row.ACCREDITATIE_VERVALDATUM || "unknown"}, funding ${funding}, location "${row.VESTIGINGSNAAM}"`,
     ...(international === "" ? [] : [`international name "${international}"`]),
+    ...(accreditedUntil !== "" && accreditedUntil <= today
+      ? [`accreditation expired on ${accreditedUntil}: check it was renewed`]
+      : []),
+    ...(intakeEnd === ""
+      ? []
+      : [`intake ends ${intakeEnd}: check the programme still takes new students`]),
+    ...(funding === "AANGEWEZEN"
+      ? ["designated (aangewezen) institution: check funding and recognition"]
+      : []),
     ...(funding === "NIET_BEKOSTIGD"
       ? ["not publicly funded: a private programme, check tuition and recognition"]
       : []),
     ...(match.confidence === "low"
       ? ["field is a judgement call: check the programme content"]
       : []),
-    "read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (durationYears is the register's ECTS divided by 60: confirm it)",
+    `read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says ${row.STUDIELAST} ECTS, i.e. about ${years ?? "an unclear number of"} years at 60 ECTS per year: read it on the programme page)`,
   ];
   const review: ReviewRow = {
     kind: "programs",
@@ -132,6 +164,7 @@ export function buildDutchProgramme(input: {
   return {
     collection: "programs",
     id: slug,
+    sourceId: `rio:${row.INSTELLINGSCODE}/${row.VESTIGINGSCODE}/${row.OPLEIDINGSEENHEIDCODE}`,
     data: {
       slug,
       institution: instSlug,
@@ -152,7 +185,7 @@ export function buildDutchProgramme(input: {
       // Required by the schema and left empty on purpose: the register has no programme page, so a
       // human must supply the institution's own page before the record can be promoted.
       officialUrl: null,
-      durationYears: { value: years, source: "rio", info_kind: READ_SOURCE },
+      durationYears: unread("rio"),
       teachingLanguages: unread("rio"),
       tuition: unread("rio"),
       intakes: unread("rio"),
@@ -167,7 +200,8 @@ export function buildDutchProgramme(input: {
 }
 
 export async function importNetherlands(): Promise<StagedRecord[]> {
-  const rows = await fetchRioBachelors();
+  const today = new Date().toISOString().slice(0, 10);
+  const rows = await fetchRioBachelors(today);
   const duo = await fetchDuoInstitutions();
   const probed = await probeHttps(
     duo.flatMap((i) => {
@@ -188,7 +222,7 @@ export async function importNetherlands(): Promise<StagedRecord[]> {
     const code = row.INSTELLINGSCODE ?? "";
     const known = duoByCode.get(code);
     const instName = known?.name ?? collapseSpaces(row.INSTELLINGSNAAM ?? "");
-    const city = titleCase(collapseSpaces(row.PLAATSNAAM ?? ""));
+    const city = townOf(row.PLAATSNAAM ?? "", row.GEMEENTENAAM ?? "");
     if (code === "" || city === "") continue;
     const unit = `${code}|${slugify(city)}`;
     let instSlug = mainSlug.get(unit);
@@ -208,6 +242,7 @@ export async function importNetherlands(): Promise<StagedRecord[]> {
             website: site.url,
             source: "rio",
             sourceUrl: RIO_DATASET_PAGE,
+            sourceId: `rio-unit:${code}@${slugify(city)}`,
             todo: [
               `campus in ${city} of "${instName}" (RIO location "${row.VESTIGINGSNAAM}"): public/private is not in the register`,
               known === undefined
@@ -222,7 +257,7 @@ export async function importNetherlands(): Promise<StagedRecord[]> {
         );
       }
     }
-    const programme = buildDutchProgramme({ row, instSlug, instName, city });
+    const programme = buildDutchProgramme({ row, instSlug, instName, city, today });
     if (programme !== null) records.push(programme);
   }
 

@@ -2,7 +2,7 @@ slug: de-hochschule-der-medien-stuttgart-hrk250-mobile-medien-bachelor-73026408
 institution: de-hochschule-der-medien-stuttgart-hrk250
 country: DE
 city: stuttgart
-field: computer-science
+field: engineering
 level: bachelor
 name: Mobile Medien Bachelor
 summary:
@@ -50,7 +50,8 @@ _review:
   name: Mobile Medien Bachelor
   institution: Hochschule der Medien Stuttgart
   city: Stuttgart
-  field: computer-science
-  confidence: high
+  field: engineering
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Baden-Württemberg, subjects: Informations-, Kommunikationstechnik (grundständig), Medieninformatik (grundständig); provider \"Hochschule der Medien Stuttgart\" matched to HRK institution \"Hochschule der Medien Stuttgart\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Baden-Württemberg, subjects: Informations-, Kommunikationstechnik (grundständig), Medieninformatik (grundständig); provider \"Hochschule der Medien Stuttgart\" matched to HRK institution \"Hochschule der Medien Stuttgart\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:73026408

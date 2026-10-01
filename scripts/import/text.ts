@@ -84,3 +84,14 @@ export function stripQueryAndHash(url: string): string {
   parsed.hash = "";
   return parsed.toString();
 }
+
+// "Halle (Saale)" -> "Halle", "Mainz am Rhein" -> "Mainz", "Bad Homburg vor der Höhe" -> "Bad Homburg":
+// registers disagree on how much of a town's official name to write.
+export function townKey(town: string): string {
+  const base = collapseSpaces(town.replace(/\([^)]*\)/g, " "));
+  return nameKey(base.replace(/\s+(am|an der|an|im|bei|vor der|in der|ob der)\s+.+$/i, ""));
+}
+
+export function sameTown(a: string, b: string): boolean {
+  return townKey(a) !== "" && townKey(a) === townKey(b);
+}

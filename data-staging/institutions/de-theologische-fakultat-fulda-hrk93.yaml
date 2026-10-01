@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.thf-fulda.de/de/index.html
   todo: "HRK: Universitäten, Hessen, sponsor \"kirchlich, staatlich anerkannt\"; church-run: the app only has public/private, decide how to classify it; listed as \"http://www.thf-fulda.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:93

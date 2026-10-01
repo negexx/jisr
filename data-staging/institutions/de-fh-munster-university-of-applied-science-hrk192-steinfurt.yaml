@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.fh-muenster.de/de/
   todo: "study location in Steinfurt of \"FH Münster - University of Applied Sciences\" (HRK main town Münster); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:192@steinfurt

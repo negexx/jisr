@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.han.nl/
   todo: "campus in Nijmegen of \"Hogeschool van Arnhem en Nijmegen\" (RIO location \"Hogeschool van Arnhem en Nijmegen: Nijmegen\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed as \"www.han.nl/\"; the https form answers; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:25KB@nijmegen

@@ -5,7 +5,7 @@ city:
   slug: carquefou
   name: Carquefou
 type: public
-website: https://www.univ-nantes.fr/plans-des-campus/iut-de-nantes-campus-la-fleuriaye
+website: https://iutnantes.univ-nantes.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,6 @@ _review:
   city: Carquefou
   field: ""
   confidence: ""
-  officialUrl: https://www.univ-nantes.fr/plans-des-campus/iut-de-nantes-campus-la-fleuriaye
+  officialUrl: https://iutnantes.univ-nantes.fr/
   todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"
+  sourceId: uai:0440139M

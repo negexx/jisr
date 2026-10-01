@@ -3,7 +3,7 @@ name: Hogeschool Inholland
 country: NL
 city:
   slug: s-gravenhage
-  name: "'S-Gravenhage"
+  name: "'s-Gravenhage"
 type: null
 website: https://www.inholland.nl/
 source: rio
@@ -17,8 +17,9 @@ _review:
   slug: nl-hogeschool-inholland-27pz-s-gravenhage
   name: Hogeschool Inholland
   institution: ""
-  city: "'S-Gravenhage"
+  city: "'s-Gravenhage"
   field: ""
   confidence: ""
   officialUrl: https://www.inholland.nl/
-  todo: "campus in 'S-Gravenhage of \"Hogeschool Inholland\" (RIO location \"Hogeschool Inholland: 's-Gravenhage\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed as \"www.inholland.nl\"; the https form answers; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  todo: "campus in 's-Gravenhage of \"Hogeschool Inholland\" (RIO location \"Hogeschool Inholland: 's-Gravenhage\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed as \"www.inholland.nl\"; the https form answers; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:27PZ@s-gravenhage

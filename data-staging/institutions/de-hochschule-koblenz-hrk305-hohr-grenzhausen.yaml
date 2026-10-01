@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.hs-koblenz.de/home
   todo: "study location in Höhr-Grenzhausen of \"Hochschule Koblenz\" (HRK main town Koblenz); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:305@hohr-grenzhausen

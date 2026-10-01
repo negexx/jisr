@@ -1,0 +1,57 @@
+slug: de-hochschule-fur-wirtschaft-und-gesellscha-hrk307-marketing-bachelor-of-ar-132879002
+institution: de-hochschule-fur-wirtschaft-und-gesellscha-hrk307
+country: DE
+city: ludwigshafen
+field: business-economics
+level: bachelor
+name: Marketing Bachelor of Arts (B.A.)
+summary:
+  fr:
+    text: Marketing Bachelor of Arts (B.A.), Hochschule für Wirtschaft und Gesellschaft Ludwigshafen (Ludwigshafen). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-fur-wirtschaft-und-gesellscha-hrk307-marketing-bachelor-of-ar-132879002
+  name: Marketing Bachelor of Arts (B.A.)
+  institution: Hochschule für Wirtschaft und Gesellschaft Ludwigshafen
+  city: Ludwigshafen
+  field: business-economics
+  confidence: low
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Rheinland-Pfalz, subjects: Marketing, Vertrieb (grundständig), Wirtschaftswissenschaften (grundständig); provider \"Hochschule für Wirtschaft und Gesellschaft Ludwigshafen\" matched to HRK institution \"Hochschule für Wirtschaft und Gesellschaft Ludwigshafen\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:132879002

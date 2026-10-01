@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.w-hs.de/
   todo: "study location in Bocholt of \"Westfälische Hochschule Gelsenkirchen, Bocholt, Recklinghausen\" (HRK main town Gelsenkirchen); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:95@bocholt

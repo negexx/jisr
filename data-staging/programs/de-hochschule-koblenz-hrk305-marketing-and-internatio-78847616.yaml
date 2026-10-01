@@ -1,0 +1,57 @@
+slug: de-hochschule-koblenz-hrk305-marketing-and-internatio-78847616
+institution: de-hochschule-koblenz-hrk305
+country: DE
+city: koblenz
+field: business-economics
+level: bachelor
+name: Marketing and International Business Bachelor
+summary:
+  fr:
+    text: Marketing and International Business Bachelor, Hochschule Koblenz (Koblenz). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-koblenz-hrk305-marketing-and-internatio-78847616
+  name: Marketing and International Business Bachelor
+  institution: Hochschule Koblenz
+  city: Koblenz
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Rheinland-Pfalz, subjects: Internationale Wirtschaft (grundständig), Betriebswirtschaftslehre, Business Administration (grundständig); provider \"Hochschule Koblenz\" matched to HRK institution \"Hochschule Koblenz\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:78847616

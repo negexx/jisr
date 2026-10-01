@@ -54,3 +54,4 @@ _review:
   confidence: high
   officialUrl: ""
   todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Materialwissenschaft (grundständig), Chemie (grundständig); provider \"Hochschule Bonn-Rhein-Sieg\" matched to HRK institution \"Hochschule Bonn-Rhein-Sieg, University of Applied Sciences\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:202035794

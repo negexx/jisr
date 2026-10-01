@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: ""
   todo: "campus in Zwolle of \"Capabel Hogeschool\" (RIO location \"Capabel Hogeschool: Zwolle\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:30HC@zwolle

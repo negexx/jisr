@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.artez.nl/
   todo: "campus in Zwolle of \"ArtEZ\" (RIO location \"ArtEZ: Zwolle\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed as \"www.artez.nl\"; the https form answers; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:27NF@zwolle

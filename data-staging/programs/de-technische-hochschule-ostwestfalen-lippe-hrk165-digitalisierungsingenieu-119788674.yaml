@@ -2,7 +2,7 @@ slug: de-technische-hochschule-ostwestfalen-lippe-hrk165-digitalisierungsingenie
 institution: de-technische-hochschule-ostwestfalen-lippe-hrk165
 country: DE
 city: lemgo
-field: computer-science
+field: engineering
 level: bachelor
 name: Digitalisierungsingenieurwesen Bachelor
 summary:
@@ -50,7 +50,8 @@ _review:
   name: Digitalisierungsingenieurwesen Bachelor
   institution: Technische Hochschule Ostwestfalen-Lippe
   city: Lemgo
-  field: computer-science
-  confidence: high
+  field: engineering
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Produktionstechnik (grundständig), Ingenieurinformatik, Computational Engineering (grundständig); provider \"Technische Hochschule Ostwestfalen-Lippe\" matched to HRK institution \"Technische Hochschule Ostwestfalen-Lippe\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Produktionstechnik (grundständig), Ingenieurinformatik, Computational Engineering (grundständig); provider \"Technische Hochschule Ostwestfalen-Lippe\" matched to HRK institution \"Technische Hochschule Ostwestfalen-Lippe\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:119788674

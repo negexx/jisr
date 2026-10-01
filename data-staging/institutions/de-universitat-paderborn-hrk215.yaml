@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://meine.uni-paderborn.de/?utm_source=hochschulkompass&utm_medium=display&utm_campaign=meineupb&utm_content=profil
   todo: "HRK: Universitäten, Nordrhein-Westfalen, sponsor \"öffentlich-rechtlich\"; listed URL \"https://meine.uni-paderborn.de/?utm_source=hochschulkompass&utm_medium=display&utm_campaign=meineupb&utm_content=profil\" is a page or carries a query (tracking?): replace it with the institution's homepage; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:215

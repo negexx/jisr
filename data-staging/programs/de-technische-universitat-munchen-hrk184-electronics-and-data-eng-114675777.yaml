@@ -2,7 +2,7 @@ slug: de-technische-universitat-munchen-hrk184-electronics-and-data-eng-11467577
 institution: de-technische-universitat-munchen-hrk184
 country: DE
 city: munchen
-field: computer-science
+field: engineering
 level: bachelor
 name: Electronics and Data Engineering Bachelor of Engineering
 summary:
@@ -50,7 +50,8 @@ _review:
   name: Electronics and Data Engineering Bachelor of Engineering
   institution: Technische Universität München
   city: München
-  field: computer-science
-  confidence: high
+  field: engineering
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Universität, Bayern, subjects: Datenwissenschaft, Data Science (grundständig), Elektrotechnik (grundständig); provider \"TU München\" matched to HRK institution \"Technische Universität München\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Universität, Bayern, subjects: Datenwissenschaft, Data Science (grundständig), Elektrotechnik (grundständig); provider \"TU München\" matched to HRK institution \"Technische Universität München\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:114675777

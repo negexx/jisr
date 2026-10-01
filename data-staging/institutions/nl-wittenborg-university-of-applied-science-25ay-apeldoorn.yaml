@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: ""
   todo: "campus in Apeldoorn of \"Wittenborg University of Applied Sciences B.V.\" (RIO location \"Wittenborg University of Applied Sciences B.V.: Apeldoorn\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:25AY@apeldoorn

@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.univ-evry.fr/accueil.html
   todo: "website candidate from parent university \"Université Évry Paris-Saclay\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  sourceId: uai:0912128U

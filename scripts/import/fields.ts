@@ -83,7 +83,14 @@ export function classifyDutchProgramme(
   internationalName: string,
 ): FieldMatch | null {
   const text = `${name} ${internationalName}`.toLowerCase();
-  if (NL_CS_HIGH.test(text)) return { field: "computer-science", confidence: "high" };
+  // Teacher training is not a stand-alone Bachelor's in the field (same rule as the German Lehramt).
+  if (sector === "ONDERWIJS" || /leraar|leraren|lerarenopleiding|teacher education/.test(text))
+    return null;
+  // A computer-science name outside the technical sectors (humanities, cross-sector) is a judgement call.
+  if (NL_CS_HIGH.test(text)) {
+    const technical = sector === "TECHNIEK" || sector === "NATUUR" || sector === "ECONOMIE";
+    return { field: "computer-science", confidence: technical ? "high" : "low" };
+  }
   if (sector === "ECONOMIE") {
     return { field: "business-economics", confidence: NL_BUSINESS.test(text) ? "high" : "low" };
   }

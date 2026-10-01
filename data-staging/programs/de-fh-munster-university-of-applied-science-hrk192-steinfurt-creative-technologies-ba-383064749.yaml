@@ -2,7 +2,7 @@ slug: de-fh-munster-university-of-applied-science-hrk192-steinfurt-creative-tech
 institution: de-fh-munster-university-of-applied-science-hrk192-steinfurt
 country: DE
 city: steinfurt
-field: computer-science
+field: engineering
 level: bachelor
 name: Creative Technologies Bachelor
 summary:
@@ -50,7 +50,8 @@ _review:
   name: Creative Technologies Bachelor
   institution: FH Münster - University of Applied Sciences
   city: Steinfurt
-  field: computer-science
-  confidence: high
+  field: engineering
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Design (grundständig), Informatik (grundständig), Elektrotechnik (grundständig); provider \"FH Münster\" matched to HRK institution \"FH Münster - University of Applied Sciences\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Design (grundständig), Informatik (grundständig), Elektrotechnik (grundständig); provider \"FH Münster\" matched to HRK institution \"FH Münster - University of Applied Sciences\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:383064749

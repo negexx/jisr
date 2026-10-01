@@ -40,8 +40,8 @@ async function main(argv: readonly string[]): Promise<void> {
     records.push(...staged);
   }
 
-  const result = await writeStaged(records, { overwrite });
   const state = await readReviewState();
+  const result = await writeStaged(records, { overwrite, approved: state.approved });
   const { rows, approved } = mergeReviewSheet({
     existingRows: state.rows,
     approved: state.approved,
@@ -55,6 +55,14 @@ async function main(argv: readonly string[]): Promise<void> {
   console.log(
     `staged: ${result.written} written, ${result.skipped} kept (already staged; --overwrite replaces them and clears their approval), ${result.inData} already in data/`,
   );
+  if (result.removedStale.length > 0) {
+    console.log(
+      `${result.removedStale.length} superseded staged file(s) removed (their record's slug changed)`,
+    );
+  }
+  for (const key of result.keptApprovedStale) {
+    console.warn(`WARN ${key} is approved but its record now has another slug: check both files`);
+  }
   if (result.rewritten.size > 0) {
     console.log(
       `${result.rewritten.size} staged file(s) were replaced; their approval was cleared`,

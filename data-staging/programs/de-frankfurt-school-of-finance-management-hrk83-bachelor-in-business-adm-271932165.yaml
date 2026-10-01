@@ -51,6 +51,7 @@ _review:
   institution: Frankfurt School of Finance & Management
   city: Frankfurt am Main
   field: business-economics
-  confidence: high
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Universität, Hessen, subjects: Betriebswirtschaftslehre, Business Administration (grundständig); provider \"Frankfurt School of Finance & Management\" matched to HRK institution \"Frankfurt School of Finance & Management\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Universität, Hessen, subjects: Betriebswirtschaftslehre, Business Administration (grundständig); provider \"Frankfurt School of Finance & Management\" matched to HRK institution \"Frankfurt School of Finance & Management\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:271932165

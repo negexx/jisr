@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.hochschule-stralsund.de/
   todo: "HRK: Fachhochschulen / HAW, Mecklenburg-Vorpommern, sponsor \"öffentlich-rechtlich\"; listed as \"www.hochschule-stralsund.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:247

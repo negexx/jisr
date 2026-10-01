@@ -51,6 +51,7 @@ _review:
   institution: Technische Hochschule Lübeck
   city: Lübeck
   field: engineering
-  confidence: high
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Schleswig-Holstein, subjects: Medizinische Technik (grundständig); provider \"Technische Hochschule Lübeck\" matched to HRK institution \"Technische Hochschule Lübeck\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Schleswig-Holstein, subjects: Medizinische Technik (grundständig); provider \"Technische Hochschule Lübeck\" matched to HRK institution \"Technische Hochschule Lübeck\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:78848216

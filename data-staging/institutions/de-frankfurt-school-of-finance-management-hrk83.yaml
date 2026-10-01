@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.frankfurt-school.de/en
   todo: "HRK: Universitäten, Hessen, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.frankfurt-school.de/home\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:83

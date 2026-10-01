@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: ""
   todo: "HRK: Fachhochschulen / HAW, Bremen, sponsor \"privat, staatlich anerkannt\"; listed website \"http://www.apollon-hochschule.de/redirect.php?id=32\" did not answer over https (probe failed): find the official https site; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:361

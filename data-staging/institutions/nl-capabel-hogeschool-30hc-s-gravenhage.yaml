@@ -3,7 +3,7 @@ name: Capabel Hogeschool
 country: NL
 city:
   slug: s-gravenhage
-  name: "'S-Gravenhage"
+  name: "'s-Gravenhage"
 type: null
 website: null
 source: rio
@@ -17,8 +17,9 @@ _review:
   slug: nl-capabel-hogeschool-30hc-s-gravenhage
   name: Capabel Hogeschool
   institution: ""
-  city: "'S-Gravenhage"
+  city: "'s-Gravenhage"
   field: ""
   confidence: ""
   officialUrl: ""
-  todo: "campus in 'S-Gravenhage of \"Capabel Hogeschool\" (RIO location \"Capabel Hogeschool: 's-Gravenhage\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  todo: "campus in 's-Gravenhage of \"Capabel Hogeschool\" (RIO location \"Capabel Hogeschool: 's-Gravenhage\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:30HC@s-gravenhage

@@ -2,7 +2,7 @@ slug: de-hochschule-reutlingen-hochschule-fur-tec-hrk227-biomechatronik-bachelor
 institution: de-hochschule-reutlingen-hochschule-fur-tec-hrk227
 country: DE
 city: reutlingen
-field: computer-science
+field: engineering
 level: bachelor
 name: Biomechatronik Bachelor
 summary:
@@ -50,7 +50,8 @@ _review:
   name: Biomechatronik Bachelor
   institution: Hochschule Reutlingen, Hochschule für Technik- Wirtschaft-Informatik-Design
   city: Reutlingen
-  field: computer-science
-  confidence: high
+  field: engineering
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Baden-Württemberg, subjects: Bioinformatik (grundständig), Mechatronik (grundständig), Biologie (grundständig); provider \"Hochschule Reutlingen\" matched to HRK institution \"Hochschule Reutlingen, Hochschule für Technik- Wirtschaft-Informatik-Design\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Baden-Württemberg, subjects: Bioinformatik (grundständig), Mechatronik (grundständig), Biologie (grundständig); provider \"Hochschule Reutlingen\" matched to HRK institution \"Hochschule Reutlingen, Hochschule für Technik- Wirtschaft-Informatik-Design\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:320502769

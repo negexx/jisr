@@ -5,7 +5,7 @@ city:
   slug: bobigny
   name: Bobigny
 type: public
-website: https://iutb.univ-paris13.fr/formations/metiers-du-multimedia-et-de-linternet/dut-metiers-du-multimedia-et-de-linternet/
+website: https://iutb.univ-paris13.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,6 @@ _review:
   city: Bobigny
   field: ""
   confidence: ""
-  officialUrl: https://iutb.univ-paris13.fr/formations/metiers-du-multimedia-et-de-linternet/dut-metiers-du-multimedia-et-de-linternet/
+  officialUrl: https://iutb.univ-paris13.fr/
   todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"
+  sourceId: uai:0932270M

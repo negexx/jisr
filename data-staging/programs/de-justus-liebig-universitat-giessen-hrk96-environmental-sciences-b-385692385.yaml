@@ -51,6 +51,7 @@ _review:
   institution: Justus-Liebig-Universität Gießen
   city: Gießen
   field: engineering
-  confidence: high
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Universität, Hessen, subjects: Landschaftsökologie, Naturschutz (grundständig), Geoökologie (grundständig), Umweltwissenschaft (grundständig); provider \"Universität Giessen\" matched to HRK institution \"Justus-Liebig-Universität Gießen\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Universität, Hessen, subjects: Landschaftsökologie, Naturschutz (grundständig), Geoökologie (grundständig), Umweltwissenschaft (grundständig); provider \"Universität Giessen\" matched to HRK institution \"Justus-Liebig-Universität Gießen\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:385692385

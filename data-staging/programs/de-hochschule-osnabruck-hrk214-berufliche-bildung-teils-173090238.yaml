@@ -2,7 +2,7 @@ slug: de-hochschule-osnabruck-hrk214-berufliche-bildung-teils-173090238
 institution: de-hochschule-osnabruck-hrk214
 country: DE
 city: osnabruck
-field: computer-science
+field: engineering
 level: bachelor
 name: Berufliche Bildung - Teilstudiengang Informationstechnik Bachelor
 summary:
@@ -50,7 +50,8 @@ _review:
   name: Berufliche Bildung - Teilstudiengang Informationstechnik Bachelor
   institution: Hochschule Osnabrück
   city: Osnabrück
-  field: computer-science
-  confidence: high
+  field: engineering
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Niedersachsen, subjects: Informatik (grundständig), Technische Informatik (grundständig), Informations-, Kommunikationstechnik (grundständig); provider \"Hochschule Osnabrück\" matched to HRK institution \"Hochschule Osnabrück\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Niedersachsen, subjects: Informatik (grundständig), Technische Informatik (grundständig), Informations-, Kommunikationstechnik (grundständig); provider \"Hochschule Osnabrück\" matched to HRK institution \"Hochschule Osnabrück\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:173090238

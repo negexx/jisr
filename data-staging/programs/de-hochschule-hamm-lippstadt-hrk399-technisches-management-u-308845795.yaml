@@ -51,6 +51,7 @@ _review:
   institution: Hochschule Hamm-Lippstadt
   city: Hamm
   field: engineering
-  confidence: high
+  confidence: low
   officialUrl: ""
-  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Marketing, Vertrieb (grundständig), Technologiemanagement (grundständig); provider \"Hochschule Hamm-Lippstadt\" matched to HRK institution \"Hochschule Hamm-Lippstadt\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Marketing, Vertrieb (grundständig), Technologiemanagement (grundständig); provider \"Hochschule Hamm-Lippstadt\" matched to HRK institution \"Hochschule Hamm-Lippstadt\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:308845795

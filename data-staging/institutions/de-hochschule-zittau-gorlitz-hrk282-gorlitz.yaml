@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: https://www.hszg.de/
   todo: "study location in Görlitz of \"Hochschule Zittau/Görlitz\" (HRK main town Zittau); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:282@gorlitz

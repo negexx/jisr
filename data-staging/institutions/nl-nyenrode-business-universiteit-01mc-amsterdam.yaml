@@ -22,3 +22,4 @@ _review:
   confidence: ""
   officialUrl: ""
   todo: "campus in Amsterdam of \"Nyenrode Business Universiteit\" (RIO location \"Nyenrode Business Univ.: Amsterdam\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:01MC@amsterdam
