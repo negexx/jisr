@@ -26,6 +26,8 @@ type PageCase = {
   route: (locale: E2eLocale) => string;
   seeded: boolean;
   ready: (page: Page, locale: E2eLocale) => Promise<void>;
+  // Link targets the page must not prefetch (matched against the pathname of `_rsc` fetches).
+  notPrefetched?: RegExp;
 };
 
 const PAGES: readonly PageCase[] = [
@@ -49,6 +51,7 @@ const PAGES: readonly PageCase[] = [
     name: "matches",
     route: (locale) => `/${locale}/matches`,
     seeded: true,
+    notPrefetched: /\/programs\//,
     ready: async (page) => {
       await expect(card(page, E2E_SLUGS.ok)).toBeVisible();
     },
@@ -86,6 +89,13 @@ async function scriptOf(response: Response): Promise<Script> {
   };
 }
 
+// Next's router fetches route payloads with an `_rsc` query parameter; up to network idle on a page
+// that was just loaded, those are prefetches for the pages its links lead to.
+function isRscFetch(response: Response): boolean {
+  const type = response.request().resourceType();
+  return (type === "fetch" || type === "xhr") && new URL(response.url()).searchParams.has("_rsc");
+}
+
 function kb(bytes: number): number {
   return Math.round((bytes / 1024) * 10) / 10;
 }
@@ -101,8 +111,11 @@ test.describe("JavaScript per page (ratchet, not the ADR target)", () => {
         if (pageCase.seeded) await seedProfile(page, E2E_PROFILE);
 
         const scriptResponses: Response[] = [];
+        const rscResponses: Response[] = [];
         page.on("response", (response) => {
-          if (response.request().resourceType() === "script") scriptResponses.push(response);
+          const request = response.request();
+          if (request.resourceType() === "script") scriptResponses.push(response);
+          else if (isRscFetch(response)) rscResponses.push(response);
         });
 
         const document = await page.goto(route);
@@ -129,6 +142,14 @@ test.describe("JavaScript per page (ratchet, not the ADR target)", () => {
           .filter((script) => referenced.has(script.path))
           .reduce((sum, script) => sum + script.bytes, 0);
         const untilIdle = scripts.reduce((sum, script) => sum + script.bytes, 0);
+        // Not scripts, so not in the ratchet: the RSC payloads Next fetches for the link targets.
+        const rscPrefetch = (
+          await Promise.all(
+            rscResponses.map(
+              async (response) => (await response.request().sizes()).responseBodySize,
+            ),
+          )
+        ).reduce((sum, bytes) => sum + bytes, 0);
         const budget = JS_BUDGET_KB[route];
         if (budget === undefined) throw new Error(`no ratchet budget for ${route}`);
         const fromBuild = measureRoute(".next", route).totalGzipBytes;
@@ -138,6 +159,8 @@ test.describe("JavaScript per page (ratchet, not the ADR target)", () => {
           route,
           initialKb: kb(initial),
           untilIdleKb: kb(untilIdle),
+          rscPrefetchKb: kb(rscPrefetch),
+          rscPrefetchRequests: rscResponses.length,
           buildKb: kb(fromBuild),
           initialGapKb: kb(initial - ADR_TARGET_KB * 1024),
           untilIdleGapKb: kb(untilIdle - ADR_TARGET_KB * 1024),
@@ -160,6 +183,11 @@ test.describe("JavaScript per page (ratchet, not the ADR target)", () => {
           untilIdle / 1024,
           `${route} JS until idle (ratchet ${budget.untilIdle} KB)`,
         ).toBeLessThanOrEqual(budget.untilIdle);
+        const { notPrefetched } = pageCase;
+        if (notPrefetched !== undefined) {
+          const prefetched = rscResponses.map((response) => new URL(response.url()).pathname);
+          expect(prefetched.filter((pathname) => notPrefetched.test(pathname))).toEqual([]);
+        }
       });
     }
   }

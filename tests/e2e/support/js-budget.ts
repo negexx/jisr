@@ -7,19 +7,23 @@
 // initial   = scripts the page's HTML asks for (Next's "First Load JS", what ADR 0004 budgets).
 // untilIdle = every script fetched up to network idle: initial plus the chunks the app prefetches
 //             for the pages its links lead to.
+// The `_rsc` payloads of those prefetches are not scripts: perf.spec.ts reports them as rscPrefetchKb
+// without a ratchet.
 export const ADR_TARGET_KB = 150;
 
 export type JsBudget = { initial: number; untilIdle: number };
 
 // Measured 2026-09-30 on the fixture build (initial KB, until-idle KB): /fr 166.8, 212.8; /ar 166.8, 212.8;
 // profile 183.5, 212.8; matches 188.5, 229.8; program 180.5, 234.8 (same in fr and ar, phone and desktop).
+// Lowered 2026-10-01: matches until idle 229.8 -> 212.9 once MatchCard stopped prefetching the program
+// pages its cards link to (prefetch={false}); the other pages were unchanged by that.
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/fr": { initial: 170, untilIdle: 216 },
   "/ar": { initial: 170, untilIdle: 216 },
   "/fr/profile": { initial: 187, untilIdle: 216 },
   "/ar/profile": { initial: 187, untilIdle: 216 },
-  "/fr/matches": { initial: 192, untilIdle: 233 },
-  "/ar/matches": { initial: 192, untilIdle: 233 },
+  "/fr/matches": { initial: 192, untilIdle: 216 },
+  "/ar/matches": { initial: 192, untilIdle: 216 },
   "/fr/programs/xx-test-prog-ok": { initial: 184, untilIdle: 238 },
   "/ar/programs/xx-test-prog-ok": { initial: 184, untilIdle: 238 },
 };

@@ -65,6 +65,8 @@ export function MatchCard({
   const tCost = useTranslations("domain.cost");
   const tRoute = useTranslations();
   const titleId = `${useId()}-title`;
+  // Its links are not prefetched: a list of cards would fetch every program page's payload and the
+  // program chunks on the student's mobile data, for pages they may never open.
   const href = `/programs/${model.slug}`;
 
   const languages = model.teachingLanguages.value;
@@ -89,7 +91,11 @@ export function MatchCard({
     >
       <header className="flex flex-col gap-1.5">
         <h3 id={titleId} className="text-lg font-semibold">
-          <Link href={href} className="text-primary underline-offset-4 hover:underline">
+          <Link
+            href={href}
+            prefetch={false}
+            className="text-primary underline-offset-4 hover:underline"
+          >
             <bdi>{model.name}</bdi>
           </Link>
         </h3>
@@ -201,7 +207,11 @@ export function MatchCard({
         />
       </div>
 
-      <Link href={href} className={buttonVariants({ variant: "outline", className: "w-fit" })}>
+      <Link
+        href={href}
+        prefetch={false}
+        className={buttonVariants({ variant: "outline", className: "w-fit" })}
+      >
         {t("seeDetails")}
         <span className="sr-only">
           <bdi>{model.name}</bdi>
