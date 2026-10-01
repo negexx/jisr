@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: ""
-  todo: 'HRK: Universitäten, Thüringen; listed website "http://www.tu-ilmenau.de" does not answer over https: find the official https site'
+  todo: "HRK: Universitäten, Thüringen, sponsor \"öffentlich-rechtlich\"; listed website \"http://www.tu-ilmenau.de\" did not answer over https (probe failed): find the official https site; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

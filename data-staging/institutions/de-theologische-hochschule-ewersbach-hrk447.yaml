@@ -4,7 +4,7 @@ country: DE
 city:
   slug: dietzholztal
   name: Dietzhölztal
-type: private
+type: null
 website: https://th-ewersbach.de/
 source: hrk
 info_kind: TODO_read_source
@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://th-ewersbach.de/
-  todo: 'HRK: Fachhochschulen / HAW, Hessen; church-run (state-recognised): the app only has public/private, check how to classify; listed as "http://th-ewersbach.de"; the https form answers: confirm it is the official site'
+  todo: "HRK: Fachhochschulen / HAW, Hessen, sponsor \"kirchlich, staatlich anerkannt\"; church-run: the app only has public/private, decide how to classify it; listed as \"http://th-ewersbach.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

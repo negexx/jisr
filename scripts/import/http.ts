@@ -24,7 +24,9 @@ const CP1252_HIGH =
   "\u20ac\u0081\u201a\u0192\u201e\u2026\u2020\u2021\u02c6\u2030\u0160\u2039\u0152\u008d\u017d\u008f\u0090\u2018\u2019\u201c\u201d\u2022\u2013\u2014\u02dc\u2122\u0161\u203a\u0153\u009d\u017e\u0178";
 
 export function decodeBytes(bytes: Uint8Array, encoding = "utf-8"): string {
-  if (encoding.toLowerCase() !== "windows-1252") return new TextDecoder(encoding).decode(bytes);
+  const decoder = new TextDecoder(encoding);
+  // "latin1" and "iso-8859-1" are labels of windows-1252 in the WHATWG standard, with the same bug.
+  if (decoder.encoding !== "windows-1252") return decoder.decode(bytes);
   let out = "";
   for (const byte of bytes) {
     out +=
@@ -103,23 +105,36 @@ export async function fetchJson(url: string, options: FetchOptions = {}): Promis
 
 const PROBE_CACHE = path.join(CACHE_DIR, "https-probe.json");
 
-async function readProbeCache(): Promise<Record<string, string | null>> {
-  if (!existsSync(PROBE_CACHE)) return {};
+type ProbeFetch = (url: string, init: RequestInit) => Promise<Response>;
+export type ProbeOptions = {
+  concurrency?: number;
+  cacheFile?: string;
+  refresh?: boolean;
+  fetchImpl?: ProbeFetch;
+};
+
+async function readProbeCache(file: string): Promise<Record<string, string>> {
+  if (!existsSync(file)) return {};
   try {
-    return JSON.parse(await readFile(PROBE_CACHE, "utf8")) as Record<string, string | null>;
+    return JSON.parse(await readFile(file, "utf8")) as Record<string, string>;
   } catch {
     return {};
   }
 }
 
-// For a website given as "http://host/", "host" or "www.host": returns the final https URL if
-// requesting the https form works (after redirects), else null. It only proves the address is
-// served over https; a human still confirms it is the right site. Results are cached on disk.
+// For a website given as "http://host/", "host" or "www.host": returns the final https URL (query
+// and fragment removed) if requesting the https form works after redirects, else null. It proves
+// only that the address answers over https: the final host can differ from the listed one, and a
+// human still confirms it is the right site. Only successes are cached; failures are retried on the
+// next run (a timeout or a bot block is not proof that https is unavailable).
 export async function probeHttps(
   urls: readonly string[],
-  concurrency = 8,
+  options: ProbeOptions = {},
 ): Promise<Map<string, string | null>> {
-  const cache = await readProbeCache();
+  const file = options.cacheFile ?? PROBE_CACHE;
+  const refresh = options.refresh === true || process.env.JISR_IMPORT_REFRESH === "1";
+  const request: ProbeFetch = options.fetchImpl ?? ((url, init) => fetch(url, init));
+  const cache = refresh ? {} : await readProbeCache(file);
   const todo = urls.filter((u) => !(u in cache));
   let next = 0;
   const worker = async () => {
@@ -128,21 +143,26 @@ export async function probeHttps(
       if (url === undefined) return;
       const host = url.replace(/^https?:\/\//, "");
       try {
-        const response = await fetch(`https://${host}`, {
+        const response = await request(`https://${host}`, {
           method: "GET",
           redirect: "follow",
           headers: { "user-agent": USER_AGENT },
           signal: AbortSignal.timeout(15_000),
         });
         await response.body?.cancel();
-        cache[url] = response.ok && response.url.startsWith("https://") ? response.url : null;
+        if (response.ok && response.url.startsWith("https://")) {
+          const final = new URL(response.url);
+          final.search = "";
+          final.hash = "";
+          cache[url] = final.toString();
+        }
       } catch {
-        cache[url] = null;
+        // not cached: retried on the next run
       }
     }
   };
-  await Promise.all(Array.from({ length: concurrency }, worker));
-  await mkdir(CACHE_DIR, { recursive: true });
-  await writeFile(PROBE_CACHE, JSON.stringify(cache));
+  await Promise.all(Array.from({ length: options.concurrency ?? 8 }, worker));
+  await mkdir(path.dirname(file), { recursive: true });
+  await writeFile(file, JSON.stringify(cache));
   return new Map(urls.map((u) => [u, cache[u] ?? null]));
 }

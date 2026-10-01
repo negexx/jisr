@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.fhsmp.de/
-  todo: 'HRK: Fachhochschulen / HAW, Brandenburg; listed as "www.fhsmp.de"; the https form answers: confirm it is the official site'
+  todo: "HRK: Fachhochschulen / HAW, Brandenburg, sponsor \"privat, staatlich anerkannt\"; listed as \"www.fhsmp.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

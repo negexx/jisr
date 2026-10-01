@@ -3,7 +3,7 @@ name: De Haagse Hogeschool
 country: NL
 city:
   slug: s-gravenhage
-  name: "'s-Gravenhage"
+  name: "'S-Gravenhage"
 type: null
 website: https://www.dehaagsehogeschool.nl/
 source: duo
@@ -17,8 +17,8 @@ _review:
   slug: nl-de-haagse-hogeschool-27um
   name: De Haagse Hogeschool
   institution: ""
-  city: "'s-Gravenhage"
+  city: "'S-Gravenhage"
   field: ""
   confidence: ""
   officialUrl: https://www.dehaagsehogeschool.nl/
-  todo: "DUO: hbo; public/private is not in the file: check the institution's legal status; listed as \"www.dehaagsehogeschool.nl\"; the https form answers: confirm it is the official site"
+  todo: "DUO: hbo, denomination \"Algemeen bijzonder\"; public/private is not in the file: check the institution's legal status; listed as \"www.dehaagsehogeschool.nl\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

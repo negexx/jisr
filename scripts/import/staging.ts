@@ -61,7 +61,7 @@ export function recordKey(kind: string, slug: string): string {
 
 // C1 control characters (U+0080-U+009F) in imported text mean a source was decoded with the wrong
 // character set; refusing them keeps mojibake out of the data.
-const C1_CONTROL = /[\u0080-\u009f]/;
+const C1_CONTROL = /[\u0080-\u009f\ufffd]/;
 
 export function toYaml(data: Record<string, unknown>): string {
   const yaml = stringify(data, { lineWidth: 0, nullStr: "null" });
@@ -92,10 +92,11 @@ export function reviewCsv(rows: readonly ReviewRow[], approved: ReadonlySet<stri
 
 // Tolerates what spreadsheets do to a CSV: a UTF-8 BOM, `;` as the separator (French locale),
 // CRLF line endings and a missing final newline.
-export function parseCsv(input: string): Record<string, string>[] {
+export function parseCsv(input: string, forcedSeparator?: string): Record<string, string>[] {
   const text = input.replace(/^﻿/, "");
   const firstLine = text.split("\n", 1)[0] ?? "";
-  const separator = !firstLine.includes(",") && firstLine.includes(";") ? ";" : ",";
+  const separator =
+    forcedSeparator ?? (!firstLine.includes(",") && firstLine.includes(";") ? ";" : ",");
   const rows: string[][] = [];
   let row: string[] = [];
   let cell = "";
@@ -108,7 +109,7 @@ export function parseCsv(input: string): Record<string, string>[] {
         i++;
       } else if (ch === '"') quoted = false;
       else cell += ch;
-    } else if (ch === '"') quoted = true;
+    } else if (ch === '"' && cell === "") quoted = true;
     else if (ch === separator) {
       row.push(cell);
       cell = "";
@@ -147,6 +148,8 @@ export async function writeStaged(
   const stagingDir = options.stagingDir ?? STAGING_DIR;
   const dataDir = options.dataDir ?? DATA_DIR;
   const result: WriteResult = { written: 0, skipped: 0, inData: 0, rewritten: new Set() };
+  // Validate everything first so a bad record never leaves staging half-written.
+  for (const record of records) toYaml({ ...record.data, _review: record.review });
   for (const record of records) {
     if (existsSync(path.join(dataDir, record.collection, `${record.id}.yaml`))) {
       result.inData++;

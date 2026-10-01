@@ -7,7 +7,7 @@ city:
 type: public
 website: https://www.ph-weingarten.de/die-ph-weingarten/
 source: hrk
-info_kind: official
+info_kind: TODO_read_source
 sources:
   hrk:
     url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.ph-weingarten.de/die-ph-weingarten/
-  todo: "HRK: Universitäten, Baden-Württemberg"
+  todo: "HRK: Universitäten, Baden-Württemberg, sponsor \"öffentlich-rechtlich\"; listed URL \"https://www.ph-weingarten.de/die-ph-weingarten/\" is a page or carries a query (tracking?): replace it with the institution's homepage; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

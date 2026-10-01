@@ -1,8 +1,12 @@
 import { fetchText } from "../http";
+import { parseCsv } from "../staging";
+import { collapseSpaces } from "../text";
 
 // HRK Hochschulkompass: the German Rectors' Conference's list of all state and state-recognised
-// German higher-education institutions (tab-separated, cp1252). Licence: free for personal use;
-// any other use needs permission from the HRK foundation (to be requested before launch).
+// German higher-education institutions (tab-separated with CSV-style quoting, cp1252).
+// Licence (downloads page): "free of charge for personal use only. All other uses, in particular
+// commercial use (including individual parts), require the approval of the Foundation for the
+// Promotion of the HRK": permission is to be requested before launch.
 export const HRK_LIST_URL = "https://hs-kompass.de/kompass/xml/download/hs_liste.txt";
 export const HRK_DOWNLOADS_PAGE =
   "https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html";
@@ -17,44 +21,34 @@ export type HrkInstitution = {
   homepage: string;
 };
 
-const COLUMNS = {
-  hsNr: "Hs-Nr.",
-  name: "Hochschulname",
-  kind: "Hochschultyp",
-  sponsor: "Trägerschaft",
-  state: "Bundesland",
-  city: "Ort (Hausanschrift)",
-  homepage: "Home Page",
-} as const;
-
 // Relevant to Bachelor applicants in Release 1; art, music and civil-service colleges are left out.
 export const HRK_KINDS = ["Universitäten", "Fachhochschulen / HAW", "Hochschulen eigenen Typs"];
 
+const REQUIRED = [
+  "Hs-Nr.",
+  "Hochschulname",
+  "Hochschultyp",
+  "Trägerschaft",
+  "Bundesland",
+  "Ort (Hausanschrift)",
+  "Home Page",
+];
+
 export function parseHrkList(text: string): HrkInstitution[] {
-  const [headerLine, ...lines] = text.split(/\r?\n/);
-  const header = (headerLine ?? "").split("\t").map((h) => h.trim());
-  const at = Object.fromEntries(
-    Object.entries(COLUMNS).map(([key, name]) => [key, header.indexOf(name)]),
-  );
-  if (Object.values(at).some((i) => i === -1)) {
+  const rows = parseCsv(text, "\t");
+  const first = rows[0];
+  if (first === undefined || REQUIRED.some((c) => !(c in first))) {
     throw new Error("HRK list: expected columns are missing (the file format changed?)");
   }
-  const out: HrkInstitution[] = [];
-  for (const line of lines) {
-    if (line.trim() === "") continue;
-    const cells = line.split("\t").map((c) => c.trim());
-    const get = (key: keyof typeof COLUMNS) => cells[at[key] ?? -1] ?? "";
-    out.push({
-      hsNr: get("hsNr"),
-      name: get("name"),
-      kind: get("kind"),
-      sponsor: get("sponsor"),
-      state: get("state"),
-      city: get("city"),
-      homepage: get("homepage"),
-    });
-  }
-  return out;
+  return rows.map((r) => ({
+    hsNr: (r["Hs-Nr."] ?? "").trim(),
+    name: collapseSpaces(r.Hochschulname ?? ""),
+    kind: (r.Hochschultyp ?? "").trim(),
+    sponsor: (r["Trägerschaft"] ?? "").trim(),
+    state: (r.Bundesland ?? "").trim(),
+    city: collapseSpaces(r["Ort (Hausanschrift)"] ?? ""),
+    homepage: (r["Home Page"] ?? "").trim(),
+  }));
 }
 
 export async function fetchHrkInstitutions(): Promise<HrkInstitution[]> {
@@ -64,23 +58,30 @@ export async function fetchHrkInstitutions(): Promise<HrkInstitution[]> {
       if (parseHrkList(body).length < 100) throw new Error("HRK list looks truncated");
     },
   });
-  return parseHrkList(text).filter((i) => HRK_KINDS.includes(i.kind) && /^\d+$/.test(i.hsNr));
+  const relevant = parseHrkList(text).filter((i) => HRK_KINDS.includes(i.kind));
+  const broken = relevant.filter((i) => !/^\d+$/.test(i.hsNr));
+  if (broken.length > 0) {
+    throw new Error(
+      `HRK list: ${broken.length} row(s) of a relevant kind have no numeric Hs-Nr (parse problem?)`,
+    );
+  }
+  return relevant;
 }
 
-// "öffentlich-rechtlich" -> public; "privat, ..." and "kirchlich, ..." -> private (church-run
-// institutions are flagged separately because the app has no third category).
+// "öffentlich-rechtlich" -> public; "privat, ..." -> private. Church-run institutions are neither
+// clearly public nor private for this app, so their type stays null for a human.
 export function sectorOfSponsor(sponsor: string): {
   type: "public" | "private" | null;
   church: boolean;
 } {
   const key = sponsor.toLowerCase();
   if (key.startsWith("öffentlich")) return { type: "public", church: false };
-  if (key.startsWith("kirchlich")) return { type: "private", church: true };
+  if (key.startsWith("kirchlich")) return { type: null, church: true };
   if (key.startsWith("privat")) return { type: "private", church: false };
   return { type: null, church: false };
 }
 
-// "http://www.x.de", "https://x.de/" or a bare "www.x.de" -> { https: url or null, raw: as listed }
+// "http://www.x.de", "https://x.de/" or a bare "www.x.de".
 export function websiteCandidates(homepage: string): {
   asListed: string | null;
   needsProbe: boolean;

@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.dhbw.de/startseite
-  todo: 'HRK: Hochschulen eigenen Typs, Baden-Württemberg; listed as "http://www.dhbw.de"; the https form answers: confirm it is the official site'
+  todo: "HRK: Hochschulen eigenen Typs, Baden-Württemberg, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.dhbw.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

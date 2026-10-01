@@ -4,7 +4,7 @@ country: DE
 city:
   slug: freiburg
   name: Freiburg
-type: private
+type: null
 website: https://www.eh-freiburg.de
 source: hrk
 info_kind: TODO_read_source
@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.eh-freiburg.de
-  todo: "HRK: Fachhochschulen / HAW, Baden-Württemberg; church-run (state-recognised): the app only has public/private, check how to classify"
+  todo: "HRK: Fachhochschulen / HAW, Baden-Württemberg, sponsor \"kirchlich, staatlich anerkannt\"; church-run: the app only has public/private, decide how to classify it; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

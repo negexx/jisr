@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.uni-speyer.de/
-  todo: 'HRK: Universitäten, Rheinland-Pfalz; listed as "http://www.uni-speyer.de"; the https form answers: confirm it is the official site'
+  todo: "HRK: Universitäten, Rheinland-Pfalz, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.uni-speyer.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.eh-tabor.de/
-  todo: 'HRK: Fachhochschulen / HAW, Hessen; listed as "www.eh-tabor.de"; the https form answers: confirm it is the official site'
+  todo: "HRK: Fachhochschulen / HAW, Hessen, sponsor \"privat, staatlich anerkannt\"; listed as \"www.eh-tabor.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

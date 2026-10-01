@@ -1,5 +1,5 @@
 slug: de-hochschule-reutlingen-hochschule-fur-tec-hrk227
-name: Hochschule Reutlingen, Hochschule für Technik-  Wirtschaft-Informatik-Design
+name: Hochschule Reutlingen, Hochschule für Technik- Wirtschaft-Informatik-Design
 country: DE
 city:
   slug: reutlingen
@@ -15,10 +15,10 @@ sources:
 _review:
   kind: institutions
   slug: de-hochschule-reutlingen-hochschule-fur-tec-hrk227
-  name: Hochschule Reutlingen, Hochschule für Technik-  Wirtschaft-Informatik-Design
+  name: Hochschule Reutlingen, Hochschule für Technik- Wirtschaft-Informatik-Design
   institution: ""
   city: Reutlingen
   field: ""
   confidence: ""
   officialUrl: https://www.reutlingen-university.de/
-  todo: 'HRK: Fachhochschulen / HAW, Baden-Württemberg; listed as "http://www.reutlingen-university.de/"; the https form answers: confirm it is the official site'
+  todo: "HRK: Fachhochschulen / HAW, Baden-Württemberg, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.reutlingen-university.de/\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.uni-hamburg.de/
-  todo: 'HRK: Universitäten, Hamburg; listed as "http://www.uni-hamburg.de"; the https form answers: confirm it is the official site'
+  todo: "HRK: Universitäten, Hamburg, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.uni-hamburg.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

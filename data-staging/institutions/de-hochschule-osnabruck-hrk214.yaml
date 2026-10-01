@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.hs-osnabrueck.de/
-  todo: 'HRK: Fachhochschulen / HAW, Niedersachsen; listed as "http://www.hs-osnabrueck.de"; the https form answers: confirm it is the official site'
+  todo: "HRK: Fachhochschulen / HAW, Niedersachsen, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.hs-osnabrueck.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

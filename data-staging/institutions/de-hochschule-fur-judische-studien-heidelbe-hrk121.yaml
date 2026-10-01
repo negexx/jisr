@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.hfjs.eu/
-  todo: 'HRK: Universitäten, Baden-Württemberg; listed as "http://www.hfjs.eu"; the https form answers: confirm it is the official site'
+  todo: "HRK: Universitäten, Baden-Württemberg, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.hfjs.eu\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

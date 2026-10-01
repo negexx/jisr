@@ -7,7 +7,7 @@ city:
 type: private
 website: https://gesundheit-hochschule.de/
 source: hrk
-info_kind: official
+info_kind: TODO_read_source
 sources:
   hrk:
     url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://gesundheit-hochschule.de/
-  todo: "HRK: Fachhochschulen / HAW, Brandenburg"
+  todo: "HRK: Fachhochschulen / HAW, Brandenburg, sponsor \"privat, staatlich anerkannt\"; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

@@ -407,7 +407,7 @@ describe("hrk list", () => {
       church: false,
     });
     expect(sectorOfSponsor("kirchlich, staatlich anerkannt")).toEqual({
-      type: "private",
+      type: null,
       church: true,
     });
     expect(sectorOfSponsor("?")).toEqual({ type: null, church: false });
@@ -425,10 +425,10 @@ describe("hrk list", () => {
 
 describe("duo list", () => {
   const csv = [
-    "SOORT HO;PROVINCIE;BEVOEGD GEZAG NUMMER;INSTELLINGSCODE;INSTELLINGSNAAM;PLAATSNAAM;INTERNETADRES",
-    "hbo;Friesland;30156;31FR;NHL Stenden Hogeschool;LEEUWARDEN;www.nhl.nl",
-    "wo;Zuid-Holland;1;21PK;Universiteit Leiden;LEIDEN;https://www.universiteitleiden.nl",
-    "mbo;X;2;99XX;Not higher education;PLACE;x.nl",
+    "SOORT HO;PROVINCIE;BEVOEGD GEZAG NUMMER;INSTELLINGSCODE;INSTELLINGSNAAM;PLAATSNAAM;INTERNETADRES;DENOMINATIE",
+    "hbo;Friesland;30156;31FR;NHL Stenden Hogeschool;LEEUWARDEN;www.nhl.nl;Overige",
+    "wo;Zuid-Holland;1;21PK;Universiteit Leiden;LEIDEN;https://www.universiteitleiden.nl;Rijks",
+    "mbo;X;2;99XX;Not higher education;PLACE;x.nl;Rijks",
   ].join("\r\n");
   it("reads hbo and wo institutions and normalises the town name", () => {
     const parsed = parseDuoCsv(csv);
@@ -437,7 +437,10 @@ describe("duo list", () => {
   });
   it("title-cases multi-word and hyphenated towns", () => {
     expect(titleCase("DEN HAAG")).toBe("Den Haag");
-    expect(titleCase("BERGEN-OP-ZOOM")).toBe("Bergen-Op-Zoom");
+    expect(titleCase("BERGEN-OP-ZOOM")).toBe("Bergen-op-Zoom");
+    expect(titleCase("BERGEN OP ZOOM")).toBe("Bergen op Zoom");
+    expect(titleCase("IJMUIDEN")).toBe("IJmuiden");
+    expect(titleCase("'S-GRAVENHAGE")).toBe("'S-Gravenhage");
   });
   it("fails loudly when the column layout changes", () => {
     expect(() => parseDuoCsv("a;b\n1;2")).toThrow(/columns are missing/);

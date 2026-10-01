@@ -1,5 +1,5 @@
 slug: de-allensbach-hochschule-konstanz-staatlich-hrk338
-name: Allensbach Hochschule Konstanz,  staatlich anerkannte Hochschule der European Education Group GmbH
+name: Allensbach Hochschule Konstanz, staatlich anerkannte Hochschule der European Education Group GmbH
 country: DE
 city:
   slug: konstanz
@@ -7,7 +7,7 @@ city:
 type: private
 website: https://www.allensbach-hochschule.de/
 source: hrk
-info_kind: official
+info_kind: TODO_read_source
 sources:
   hrk:
     url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
@@ -15,10 +15,10 @@ sources:
 _review:
   kind: institutions
   slug: de-allensbach-hochschule-konstanz-staatlich-hrk338
-  name: Allensbach Hochschule Konstanz,  staatlich anerkannte Hochschule der European Education Group GmbH
+  name: Allensbach Hochschule Konstanz, staatlich anerkannte Hochschule der European Education Group GmbH
   institution: ""
   city: Konstanz
   field: ""
   confidence: ""
   officialUrl: https://www.allensbach-hochschule.de/
-  todo: "HRK: Fachhochschulen / HAW, Baden-Württemberg"
+  todo: "HRK: Fachhochschulen / HAW, Baden-Württemberg, sponsor \"privat, staatlich anerkannt\"; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

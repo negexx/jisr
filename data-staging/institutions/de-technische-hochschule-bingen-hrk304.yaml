@@ -7,7 +7,7 @@ city:
 type: public
 website: https://www.th-bingen.de/home/
 source: hrk
-info_kind: official
+info_kind: TODO_read_source
 sources:
   hrk:
     url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.th-bingen.de/home/
-  todo: "HRK: Fachhochschulen / HAW, Rheinland-Pfalz"
+  todo: "HRK: Fachhochschulen / HAW, Rheinland-Pfalz, sponsor \"öffentlich-rechtlich\"; listed URL \"https://www.th-bingen.de/home/\" is a page or carries a query (tracking?): replace it with the institution's homepage; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

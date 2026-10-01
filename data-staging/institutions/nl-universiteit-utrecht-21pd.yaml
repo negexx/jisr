@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.uu.nl/
-  todo: "DUO: wo; public/private is not in the file: check the institution's legal status; listed as \"www.uu.nl\"; the https form answers: confirm it is the official site"
+  todo: "DUO: wo, denomination \"Rijks\"; public/private is not in the file: check the institution's legal status; listed as \"www.uu.nl\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

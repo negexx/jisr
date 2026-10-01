@@ -1,4 +1,6 @@
 import { fetchText } from "../http";
+import { parseCsv } from "../staging";
+import { collapseSpaces } from "../text";
 
 // DUO (Dutch education executive agency) open data: "Hogescholen en universiteiten", official
 // institution list with address and website (latin1, semicolon separated).
@@ -13,44 +15,55 @@ export type DuoInstitution = {
   kind: "hbo" | "wo";
   city: string;
   website: string;
+  denomination: string;
 };
 
+const REQUIRED = [
+  "SOORT HO",
+  "INSTELLINGSCODE",
+  "INSTELLINGSNAAM",
+  "PLAATSNAAM",
+  "INTERNETADRES",
+  "DENOMINATIE",
+];
+
+const LOWER_PARTICLES = new Set(["op", "aan", "de", "den", "der", "van", "ten", "ter", "in", "en"]);
+
+// DUO writes towns in capitals ("LEEUWARDEN", "BERGEN OP ZOOM"); restore Dutch capitalisation:
+// particles stay lower-case after the first word and a leading "ij" is the digraph "IJ".
+export function titleCase(input: string): string {
+  let first = true;
+  return input.toLowerCase().replace(/[\p{L}']+/gu, (word) => {
+    const lead = first;
+    first = false;
+    if (!lead && LOWER_PARTICLES.has(word)) return word;
+    if (word.startsWith("ij")) return `IJ${word.slice(2)}`;
+    if (word.startsWith("'") && word.length > 1)
+      return `'${word.charAt(1).toUpperCase()}${word.slice(2)}`;
+    return `${word.charAt(0).toUpperCase()}${word.slice(1)}`;
+  });
+}
+
 export function parseDuoCsv(text: string): DuoInstitution[] {
-  const [headerLine, ...lines] = text.split(/\r?\n/);
-  const header = (headerLine ?? "").split(";").map((h) => h.trim());
-  const col = (name: string) => header.indexOf(name);
-  const idx = {
-    kind: col("SOORT HO"),
-    code: col("INSTELLINGSCODE"),
-    name: col("INSTELLINGSNAAM"),
-    city: col("PLAATSNAAM"),
-    website: col("INTERNETADRES"),
-  };
-  if (Object.values(idx).some((i) => i === -1)) {
+  const rows = parseCsv(text, ";");
+  const head = rows[0];
+  if (head === undefined || REQUIRED.some((c) => !(c in head))) {
     throw new Error("DUO list: expected columns are missing (the file format changed?)");
   }
   const out: DuoInstitution[] = [];
-  for (const line of lines) {
-    if (line.trim() === "") continue;
-    const cells = line.split(";").map((c) => c.trim());
-    const kind = cells[idx.kind]?.toLowerCase();
+  for (const r of rows) {
+    const kind = (r["SOORT HO"] ?? "").trim().toLowerCase();
     if (kind !== "hbo" && kind !== "wo") continue;
     out.push({
-      code: cells[idx.code] ?? "",
-      name: cells[idx.name] ?? "",
+      code: (r.INSTELLINGSCODE ?? "").trim(),
+      name: collapseSpaces(r.INSTELLINGSNAAM ?? ""),
       kind,
-      city: titleCase(cells[idx.city] ?? ""),
-      website: cells[idx.website] ?? "",
+      city: titleCase(collapseSpaces(r.PLAATSNAAM ?? "")),
+      website: (r.INTERNETADRES ?? "").trim(),
+      denomination: (r.DENOMINATIE ?? "").trim(),
     });
   }
   return out.filter((i) => i.code !== "" && i.name !== "");
-}
-
-// DUO writes towns in capitals ("LEEUWARDEN"); keep hyphenated and multi-word names readable.
-export function titleCase(input: string): string {
-  return input
-    .toLowerCase()
-    .replace(/(^|[\s-])(\p{L})/gu, (_m, sep: string, letter: string) => sep + letter.toUpperCase());
 }
 
 export async function fetchDuoInstitutions(): Promise<DuoInstitution[]> {

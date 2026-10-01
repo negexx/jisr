@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.hs-esslingen.de/
-  todo: 'HRK: Fachhochschulen / HAW, Baden-Württemberg; listed as "http://www.hs-esslingen.de"; the https form answers: confirm it is the official site'
+  todo: "HRK: Fachhochschulen / HAW, Baden-Württemberg, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.hs-esslingen.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

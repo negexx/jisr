@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.medicalschool-hamburg.de/
-  todo: 'HRK: Hochschulen eigenen Typs, Hamburg; listed as "http://www.medicalschool-hamburg.de"; the https form answers: confirm it is the official site'
+  todo: "HRK: Hochschulen eigenen Typs, Hamburg, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.medicalschool-hamburg.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

@@ -28,3 +28,44 @@ export function nameKey(input: string): string {
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
 }
+
+const SHORTENER_HOSTS = new Set([
+  "bit.ly",
+  "tinyurl.com",
+  "goo.gl",
+  "t.co",
+  "ow.ly",
+  "is.gd",
+  "cutt.ly",
+  "buff.ly",
+  "rebrand.ly",
+]);
+
+export function hostKey(url: string): string | null {
+  if (!URL.canParse(url)) return null;
+  return new URL(url).hostname.toLowerCase().replace(/^www\./, "");
+}
+
+// A website address that is a site's front door: no path beyond "/", no query, no fragment.
+export function isOriginUrl(url: string): boolean {
+  if (!URL.canParse(url)) return false;
+  const parsed = new URL(url);
+  return (
+    (parsed.pathname === "/" || parsed.pathname === "") &&
+    parsed.search === "" &&
+    parsed.hash === ""
+  );
+}
+
+export function isUrlShortener(url: string): boolean {
+  const host = hostKey(url);
+  return host !== null && SHORTENER_HOSTS.has(host);
+}
+
+export function stripQueryAndHash(url: string): string {
+  if (!URL.canParse(url)) return url;
+  const parsed = new URL(url);
+  parsed.search = "";
+  parsed.hash = "";
+  return parsed.toString();
+}

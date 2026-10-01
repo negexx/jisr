@@ -5,7 +5,7 @@ city:
   slug: potsdam
   name: Potsdam
 type: public
-website: https://www.uni-potsdam.de/de
+website: null
 source: hrk
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Potsdam
   field: ""
   confidence: ""
-  officialUrl: https://www.uni-potsdam.de/de
-  todo: 'HRK: Universitäten, Brandenburg; listed as "http://www.uni-potsdam.de"; the https form answers: confirm it is the official site'
+  officialUrl: ""
+  todo: "HRK: Universitäten, Brandenburg, sponsor \"öffentlich-rechtlich\"; listed website \"http://www.uni-potsdam.de\" did not answer over https (probe failed): find the official https site; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

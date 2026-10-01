@@ -7,7 +7,7 @@ city:
 type: private
 website: https://www.sdi-muenchen.de/hochschule/
 source: hrk
-info_kind: official
+info_kind: TODO_read_source
 sources:
   hrk:
     url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.sdi-muenchen.de/hochschule/
-  todo: "HRK: Fachhochschulen / HAW, Bayern"
+  todo: "HRK: Fachhochschulen / HAW, Bayern, sponsor \"privat, staatlich anerkannt\"; listed URL \"https://www.sdi-muenchen.de/hochschule/\" is a page or carries a query (tracking?): replace it with the institution's homepage; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

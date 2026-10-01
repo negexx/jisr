@@ -4,7 +4,7 @@ country: DE
 city:
   slug: hamburg
   name: Hamburg
-type: private
+type: null
 website: https://ev-hochschule-hh.de/
 source: hrk
 info_kind: TODO_read_source
@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://ev-hochschule-hh.de/
-  todo: 'HRK: Fachhochschulen / HAW, Hamburg; church-run (state-recognised): the app only has public/private, check how to classify; listed as "http://www.ev-hochschule-hh.de"; the https form answers: confirm it is the official site'
+  todo: "HRK: Fachhochschulen / HAW, Hamburg, sponsor \"kirchlich, staatlich anerkannt\"; church-run: the app only has public/private, decide how to classify it; listed as \"http://www.ev-hochschule-hh.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

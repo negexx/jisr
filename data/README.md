@@ -63,8 +63,8 @@ What each source provides, and what stays for a human:
 | ESR register of establishments (same publisher) | institution website for an exact UAI match: promotable as is | other institutions get a website candidate (Wikidata or the parent university, e.g. an IUT campus) flagged for confirmation |
 | ONISEP Idéo, structures d'enseignement supérieur (ODbL) | parent university of each IUT campus or UFR by UAI code, used to find a website candidate; independent public/private cross-check (a mismatch with Parcoursup is flagged in the review sheet) | the unit's own website: the parent's site is only a candidate to confirm |
 | ONISEP Idéo, actions de formation (ODbL) | the website each establishment lists for itself (often the IUT or faculty site): preferred over the parent university's as a website candidate | confirm it is the right site; programme-level matching (duration, cost text) is not imported |
-| HRK Hochschulkompass list, Germany (`hs_liste.txt`) | 322 universities, Fachhochschulen/HAW and other Hochschulen: official name, city, public/private sponsor, website. https websites with a public/private sponsor are promotable as is; http ones are probed once and kept as candidates | church-run institutions (app has only public/private), programmes |
-| DUO open data, Netherlands (`Hogescholen en universiteiten`) | 54 hogescholen and universities: official name, city, website (probed for https) | public/private type, programmes |
+| HRK Hochschulkompass list, Germany (`hs_liste.txt`) | 323 universities, Fachhochschulen/HAW and other Hochschulen: official name, city, public/private sponsor (type left null for church-run institutions), website candidate. A website that is not an https front door, or whose https form redirects to another domain, is flagged | everything has to be read on the institution's own site: the register page cited as source does not show an individual institution, so every record keeps the placeholder `info_kind` until you add that page as the source |
+| DUO open data, Netherlands (`Hogescholen en universiteiten`) | 54 hogescholen and universities: official name, city, website candidate (probed for https), denomination as a hint | public/private type, the institution's own page as source, programmes |
 | Wikidata (CC0) | only French UAI → website (a candidate, below ONISEP) | everything else |
 
 Field assignment for French programmes is an exact-label table in `scripts/import/fields.ts`; `confidence: low` rows are judgement calls. The HTTP cache lives in `.cache/import/` (git-ignored).
@@ -75,7 +75,7 @@ Field assignment for French programmes is an exact-label table in `scripts/impor
 |---|---|---|
 | Parcoursup open data, ESR register | Licence ouverte 2.0 | free reuse with attribution |
 | ONISEP Idéo (structures, actions) | ODbL | attribute ONISEP; share alike if a derived database is published |
-| HRK Hochschulkompass list | free for personal use; any other use needs permission of the HRK foundation (imprint) | **permission to be requested before launch** (hochschulkompass@hrk.de); fine for the internal review queue |
+| HRK Hochschulkompass list | [downloads page](https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html): "free of charge for personal use only. All other uses, in particular commercial use (including individual parts), require the approval of the Foundation for the Promotion of the HRK" | **permission to be requested before launch** (hochschulkompass@hrk.de). The 323 HRK-derived staging files are committed for review; do not promote them into `data/` or publish them before permission is granted |
 | DUO open data | published as open education data; the pages read here state no licence | **confirm the licence** (a research note says CC0, not verified) |
 | Wikidata | CC0 | free |
 

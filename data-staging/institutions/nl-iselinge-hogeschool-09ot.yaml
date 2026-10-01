@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: ""
-  todo: "DUO: hbo; public/private is not in the file: check the institution's legal status; listed website \"www.iselingehogeschool.nl\" does not answer over https: find the official https site"
+  todo: "DUO: hbo, denomination \"Samenwerking Opb., PC, RK, Alg\"; public/private is not in the file: check the institution's legal status; listed website \"www.iselingehogeschool.nl\" did not answer over https (probe failed): find the official https site; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

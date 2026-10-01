@@ -7,7 +7,7 @@ city:
 type: public
 website: https://www.leuphana.de/services/studierendenservice/infoportal-erstauskunft-zum-studium.html
 source: hrk
-info_kind: official
+info_kind: TODO_read_source
 sources:
   hrk:
     url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.leuphana.de/services/studierendenservice/infoportal-erstauskunft-zum-studium.html
-  todo: "HRK: Universitäten, Niedersachsen"
+  todo: "HRK: Universitäten, Niedersachsen, sponsor \"öffentlich-rechtlich\"; listed URL \"https://www.leuphana.de/services/studierendenservice/infoportal-erstauskunft-zum-studium.html\" is a page or carries a query (tracking?): replace it with the institution's homepage; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"

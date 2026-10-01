@@ -3,7 +3,7 @@ name: Hogeschool der Kunsten Den Haag
 country: NL
 city:
   slug: s-gravenhage
-  name: "'s-Gravenhage"
+  name: "'S-Gravenhage"
 type: null
 website: https://www.koncon.nl/
 source: duo
@@ -17,8 +17,8 @@ _review:
   slug: nl-hogeschool-der-kunsten-den-haag-23kj
   name: Hogeschool der Kunsten Den Haag
   institution: ""
-  city: "'s-Gravenhage"
+  city: "'S-Gravenhage"
   field: ""
   confidence: ""
   officialUrl: https://www.koncon.nl/
-  todo: "DUO: hbo; public/private is not in the file: check the institution's legal status; listed as \"www.koncon.nl\"; the https form answers: confirm it is the official site"
+  todo: "DUO: hbo, denomination \"Algemeen bijzonder\"; public/private is not in the file: check the institution's legal status; listed as \"www.koncon.nl\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
