@@ -19,3 +19,10 @@ describe("next.config snapshot cache headers", () => {
     expect(await cacheControlFor("/snapshots/manifest.json")).toBe("no-cache");
   });
 });
+
+describe("next.config not-found page", () => {
+  // Without it every unmatched URL gets Next's bare English 404 with no lang (src/app/global-not-found.tsx).
+  it("turns on the experimental global-not-found page", () => {
+    expect(nextConfig.experimental?.globalNotFound).toBe(true);
+  });
+});

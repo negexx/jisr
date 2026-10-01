@@ -1,5 +1,6 @@
 import type { Page, Request } from "@playwright/test";
 
+import { expectNoSeriousViolations } from "./support/a11y";
 import { E2E_PROFILE, E2E_SLUGS } from "./support/fixture-data";
 import { expect, test } from "./support/fixtures";
 import { E2E_LOCALES } from "./support/locales";
@@ -29,6 +30,39 @@ function isShardRequest(request: Request): boolean {
 async function expectNoRawErrorText(page: Page): Promise<void> {
   const text = (await page.locator("main").textContent()) ?? "";
   expect(text).not.toMatch(RAW_ERROR_TEXT);
+}
+
+// The locale of an unknown path is unknown, so the page (src/app/global-not-found.tsx) says it in all
+// three languages, French first as the default, each block with its own lang and dir. Nothing from
+// the request may appear in it.
+async function expectNotFoundPage(page: Page, unknownPath: string): Promise<void> {
+  const fr = translatorFor("fr");
+  const ar = translatorFor("ar");
+  await expect(page.locator("html")).toHaveAttribute("lang", "fr");
+  await expect(page.locator("html")).toHaveAttribute("dir", "ltr");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(fr("notFound.title"));
+
+  const blocks = page.locator("main section");
+  await expect(blocks).toHaveCount(3);
+  const langDir = await blocks.evaluateAll((sections) =>
+    sections.map((section) => [section.getAttribute("lang"), section.getAttribute("dir")]),
+  );
+  expect(langDir).toEqual([
+    ["fr", "ltr"],
+    ["en", "ltr"],
+    ["ar", "rtl"],
+  ]);
+  await expect(blocks.nth(0)).toContainText(fr("notFound.description"));
+  await expect(blocks.nth(2).getByRole("heading", { level: 2 })).toHaveText(ar("notFound.title"));
+  await expect(blocks.nth(2)).toContainText(ar("notFound.description"));
+  const hrefs = await page
+    .locator("main a")
+    .evaluateAll((links) => links.map((link) => link.getAttribute("href")));
+  expect(hrefs).toEqual(["/fr", "/en", "/ar"]);
+
+  const lastSegment = unknownPath.split("/").at(-1) ?? unknownPath;
+  expect(await page.content()).not.toContain(lastSegment);
 }
 
 for (const { locale } of E2E_LOCALES) {
@@ -177,9 +211,31 @@ for (const { locale } of E2E_LOCALES) {
       await expect(card(page, E2E_SLUGS.ok)).toHaveAttribute("data-group", "ok");
     });
 
-    test("an unknown program is a 404, not a server error", async ({ page }) => {
-      const response = await page.goto(`/${locale}/programs/xx-no-such-program`);
-      expect(response?.status()).toBe(404);
-    });
+    for (const [what, unknownPath] of [
+      ["an unknown program", `/${locale}/programs/xx-no-such-program`],
+      ["an unknown page", `/${locale}/no-such-page`],
+    ] as const) {
+      test(`${what} is a 404 with the trilingual not-found page`, async ({ page }, testInfo) => {
+        const response = await page.goto(unknownPath);
+        expect(response?.status()).toBe(404);
+        await expectNotFoundPage(page, unknownPath);
+        await expectNoSeriousViolations(page, `not found ${unknownPath}`, testInfo);
+      });
+    }
   });
 }
+
+test.describe("unknown paths without a locale", () => {
+  // /no-such-page goes through the proxy (redirected to /fr/no-such-page); a path with a dot skips
+  // the proxy and reaches the [locale] segment with a value that is not a locale.
+  for (const unknownPath of ["/no-such-page", "/no-such-file.txt"]) {
+    test(`${unknownPath} is a 404 with the trilingual not-found page`, async ({
+      page,
+    }, testInfo) => {
+      const response = await page.goto(unknownPath);
+      expect(response?.status()).toBe(404);
+      await expectNotFoundPage(page, unknownPath);
+      await expectNoSeriousViolations(page, `not found ${unknownPath}`, testInfo);
+    });
+  }
+});

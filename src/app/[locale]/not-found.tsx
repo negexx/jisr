@@ -4,8 +4,12 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 
-// Rendered inside the [locale] layout (header, footer, locale set by the layout) for notFound() and for
-// program slugs that were not generated at build time.
+// Rendered inside the [locale] layout only when a page under a valid locale calls notFound() while
+// rendering a request. No current route does: every page is generated at build time, and unknown
+// paths (/fr/no-such-page), unknown program slugs and unknown first segments are unmatched, so Next
+// answers them with src/app/global-not-found.tsx. Next 16.3 does not server-render this boundary
+// (it sends a blank error shell and the browser renders it once the JavaScript has loaded), which is
+// why unknown paths are left unmatched rather than sent here through a [...rest] catch-all.
 export default function NotFound() {
   const t = useTranslations("notFound");
   return (

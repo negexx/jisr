@@ -1,4 +1,3 @@
-import { Geist, Noto_Sans_Arabic } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -10,17 +9,16 @@ import { SiteHeader } from "@/components/site-header";
 import { localeDirection } from "@/i18n/direction";
 import { routing } from "@/i18n/routing";
 
+import { fontVariables } from "../fonts";
+
 import "../globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-// Not preloaded: Latin-only locales should not download Arabic glyphs.
-const notoSansArabic = Noto_Sans_Arabic({
-  variable: "--font-arabic",
-  subsets: ["arabic"],
-  preload: false,
-});
-
 type Props = { children: ReactNode; params: Promise<{ locale: string }> };
+
+// A first segment that is not a locale (only paths the proxy skips, such as /robots.txt) is then
+// unmatched and gets global-not-found, rather than this layout's notFound(), which Next can only
+// answer with a blank error shell rendered in the browser.
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -33,7 +31,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const dir = localeDirection(locale);
   const t = await getTranslations({ locale, namespace: "shell" });
   return (
-    <html lang={locale} dir={dir} className={`${geistSans.variable} ${notoSansArabic.variable}`}>
+    <html lang={locale} dir={dir} className={fontVariables}>
       <body className="flex min-h-dvh flex-col antialiased">
         {/*
           No catalogue at the root: the shell's client leaves get formatted strings as props (about
