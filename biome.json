@@ -8,6 +8,7 @@
       "!.next",
       "!node_modules",
       "!public/snapshots",
+      "!data-staging/proposals",
       "!.claude",
       "!.impeccable",
       "!pnpm-lock.yaml"
