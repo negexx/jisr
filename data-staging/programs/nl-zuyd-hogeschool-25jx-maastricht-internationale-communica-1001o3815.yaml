@@ -1,0 +1,63 @@
+slug: nl-zuyd-hogeschool-25jx-maastricht-internationale-communica-1001o3815
+institution: nl-zuyd-hogeschool-25jx-maastricht
+country: NL
+city: maastricht
+field: business-economics
+level: bachelor
+name: Internationale Communicatie en Talen
+summary:
+  fr:
+    text: Internationale Communicatie en Talen (International Communication and Languages), Zuyd Hogeschool (Maastricht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Internationale Communicatie en Talen (International Communication and Languages), Zuyd Hogeschool (Maastricht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Internationale Communicatie en Talen (International Communication and Languages), Zuyd Hogeschool (Maastricht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: rio
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: nl-zuyd-hogeschool-25jx-maastricht-internationale-communica-1001o3815
+  name: Internationale Communicatie en Talen
+  institution: Zuyd Hogeschool
+  city: Maastricht
+  field: business-economics
+  confidence: low
+  officialUrl: ""
+  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Zuyd Hogeschool: Maastricht\"; international name \"International Communication and Languages\"; field is a judgement call: check the programme content; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page)"
+  sourceId: rio:25JX/25JX13/1001O3815

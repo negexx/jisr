@@ -1,0 +1,25 @@
+slug: de-leibniz-fachhochschule-hrk439
+name: Leibniz-Fachhochschule
+country: DE
+city:
+  slug: hannover
+  name: Hannover
+type: private
+website: https://leibniz-fh.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-leibniz-fachhochschule-hrk439
+  name: Leibniz-Fachhochschule
+  institution: ""
+  city: Hannover
+  field: ""
+  confidence: ""
+  officialUrl: https://leibniz-fh.de/
+  todo: "HRK: Fachhochschulen / HAW, Niedersachsen, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.leibniz-fh.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:439

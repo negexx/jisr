@@ -1,0 +1,54 @@
+slug: de-technische-hochschule-deggendorf-hrk284-electromobility-autonomo-daad9073
+institution: de-technische-hochschule-deggendorf-hrk284
+country: DE
+city: deggendorf
+field: engineering
+level: bachelor
+name: Electromobility, Autonomous Driving and Mobile Robotics – International (BEng)
+summary:
+  fr:
+    text: Electromobility, Autonomous Driving and Mobile Robotics – International (BEng), Technische Hochschule Deggendorf (Deggendorf). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Electromobility, Autonomous Driving and Mobile Robotics – International (BEng), Technische Hochschule Deggendorf (Deggendorf). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Electromobility, Autonomous Driving and Mobile Robotics – International (BEng), Technische Hochschule Deggendorf (Deggendorf). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9073/
+durationYears:
+  value: 4
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9073/
+    last_verified_at: 2026-10-01

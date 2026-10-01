@@ -1,0 +1,101 @@
+slug: de-technische-hochschule-augsburg-hrk7-international-informatio-daad7126
+institution: de-technische-hochschule-augsburg-hrk7
+country: DE
+city: augsburg
+field: computer-science
+level: bachelor
+name: International Information Systems BSc
+summary:
+  fr:
+    text: International Information Systems BSc, Technische Hochschule Augsburg (Augsburg). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Information Systems BSc, Technische Hochschule Augsburg (Augsburg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Information Systems BSc, Technische Hochschule Augsburg (Augsburg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www.tha.de/en/university/faculties/computer-science/study-program/international-international-information-systems-bsc/
+durationYears:
+  value: 3.5
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-uni-assist-vpd
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "L'université attend un bon niveau d'anglais (environ B2 selon le CECRL) ; aucune preuve n'est exigée pour candidater : vérifiez votre niveau."
+          status: draft
+        en:
+          text: "The university expects a good command of English (about B2 on the CEFR); no proof is required to apply: check your level."
+          status: draft
+        ar:
+          text: "تتوقع الجامعة مستوى جيدًا في اللغة الإنجليزية (حوالي B2 حسب الإطار الأوروبي)؛ ولا يُشترط إثبات عند التقدّم: تحقّقوا من مستواكم."
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Titre de fin d'études étranger : traduction certifiée et attestation préliminaire (VPD) délivrée par uni-assist ou l'office bavarois de reconnaissance des certificats."
+          status: draft
+        en:
+          text: "Foreign school-leaving certificate: certified translation and a preliminary review certificate (VPD) from uni-assist or the Bavarian certificate recognition office."
+          status: draft
+        ar:
+          text: "شهادة نهاية الدراسة الأجنبية: ترجمة معتمدة وشهادة مراجعة أولية (VPD) من uni-assist أو من المكتب البافاري للاعتراف بالشهادات."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Procédure d'aptitude (test en ligne, CV en tableau, court essai de motivation) à passer lors de la candidature sur HISinOne.
+          status: draft
+        en:
+          text: Aptitude procedure (online test, tabular CV, short motivation essay) to complete during your application on HISinOne.
+          status: draft
+        ar:
+          text: إجراء تقييم الكفاءة (اختبار عبر الإنترنت، سيرة ذاتية في جدول، مقال تحفيزي قصير) أثناء التقدّم عبر HISinOne.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.tha.de/en/university/faculties/computer-science/study-program/international-international-information-systems-bsc/
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7126/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/18/
+    last_verified_at: 2026-10-01

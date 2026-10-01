@@ -1,0 +1,54 @@
+slug: de-hochschule-fur-technik-und-wirtschaft-dr-hrk54-bachelor-electrical-engi-daad4762
+institution: de-hochschule-fur-technik-und-wirtschaft-dr-hrk54
+country: DE
+city: dresden
+field: engineering
+level: bachelor
+name: Bachelor Electrical Engineering/Elektrotechnik (BEng)
+summary:
+  fr:
+    text: Bachelor Electrical Engineering/Elektrotechnik (BEng), Hochschule für Technik und Wirtschaft Dresden - University of Applied Sciences (Dresden). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Bachelor Electrical Engineering/Elektrotechnik (BEng), Hochschule für Technik und Wirtschaft Dresden - University of Applied Sciences (Dresden). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Bachelor Electrical Engineering/Elektrotechnik (BEng), Hochschule für Technik und Wirtschaft Dresden - University of Applied Sciences (Dresden). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/
+durationYears:
+  value: 4
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/
+    last_verified_at: 2026-10-01

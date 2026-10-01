@@ -1,0 +1,63 @@
+slug: nl-capabel-hogeschool-30hc-apeldoorn-ict-1001o8912
+institution: nl-capabel-hogeschool-30hc-apeldoorn
+country: NL
+city: apeldoorn
+field: computer-science
+level: bachelor
+name: ICT
+summary:
+  fr:
+    text: ICT (Information & Communication Technology), Capabel Hogeschool (Apeldoorn). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: ICT (Information & Communication Technology), Capabel Hogeschool (Apeldoorn). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: ICT (Information & Communication Technology), Capabel Hogeschool (Apeldoorn). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: rio
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: nl-capabel-hogeschool-30hc-apeldoorn-ict-1001o8912
+  name: ICT
+  institution: Capabel Hogeschool
+  city: Apeldoorn
+  field: computer-science
+  confidence: high
+  officialUrl: ""
+  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until 2030-10-01, funding NIET_BEKOSTIGD, location \"Capabel Hogeschool: Apeldoorn\"; international name \"Information & Communication Technology\"; not publicly funded: a private programme, check tuition and recognition; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page)"
+  sourceId: rio:30HC/30HC00/1001O8912

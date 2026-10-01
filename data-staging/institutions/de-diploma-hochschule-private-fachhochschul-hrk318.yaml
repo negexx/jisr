@@ -1,0 +1,25 @@
+slug: de-diploma-hochschule-private-fachhochschul-hrk318
+name: DIPLOMA Hochschule - Private Fachhochschule Nordhessen
+country: DE
+city:
+  slug: bad-sooden-allendorf
+  name: Bad Sooden-Allendorf
+type: private
+website: https://www.diploma.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-diploma-hochschule-private-fachhochschul-hrk318
+  name: DIPLOMA Hochschule - Private Fachhochschule Nordhessen
+  institution: ""
+  city: Bad Sooden-Allendorf
+  field: ""
+  confidence: ""
+  officialUrl: https://www.diploma.de/
+  todo: "HRK: Fachhochschulen / HAW, Hessen, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.diploma.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:318

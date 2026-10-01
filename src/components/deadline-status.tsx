@@ -57,7 +57,10 @@ export function DeadlineStatus({ intake }: { intake: IntakeStatus }) {
           </bdi>
         </p>
       ) : null}
-      {intake.fact === null ? null : <SourceBadge meta={intake.fact} variant="compact" />}
+      {/* nothing is published when the deadline is unknown: no badge claiming it was verified (ADR 0005 item 9) */}
+      {intake.fact === null || intake.kind === "unknown" ? null : (
+        <SourceBadge meta={intake.fact} variant="compact" />
+      )}
     </div>
   );
 }

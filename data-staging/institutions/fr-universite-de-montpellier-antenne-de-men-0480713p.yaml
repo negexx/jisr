@@ -1,0 +1,25 @@
+slug: fr-universite-de-montpellier-antenne-de-men-0480713p
+name: Université de Montpellier, Antenne de Mende
+country: FR
+city:
+  slug: mende
+  name: Mende
+type: public
+website: null
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-universite-de-montpellier-antenne-de-men-0480713p
+  name: Université de Montpellier, Antenne de Mende
+  institution: ""
+  city: Mende
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "website missing: find the official https site, add that page as the source, then set info_kind: official"
+  sourceId: uai:0480713P

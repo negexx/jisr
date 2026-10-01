@@ -1,0 +1,14 @@
+slug: de-universitat-passau-hrk218
+name: Universität Passau
+country: DE
+city:
+  slug: passau
+  name: Passau
+type: public
+website: https://www.uni-passau.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

@@ -1,0 +1,52 @@
+slug: de-universitat-passau-hrk218-bachelor-of-arts-in-inte-daad3643
+institution: de-universitat-passau-hrk218
+country: DE
+city: passau
+field: business-economics
+level: bachelor
+name: Bachelor of Arts in International Cultural and Business Studies
+summary:
+  fr:
+    text: Bachelor of Arts in International Cultural and Business Studies, Universität Passau (Passau). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Bachelor of Arts in International Cultural and Business Studies, Universität Passau (Passau). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Bachelor of Arts in International Cultural and Business Studies, Universität Passau (Passau). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3643/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value: null
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3643/
+    last_verified_at: 2026-10-01

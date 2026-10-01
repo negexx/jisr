@@ -1,0 +1,56 @@
+{
+  "slug": "fr-i-u-t-clermont-auvergne-site-daurillac-0150746e-but-science-des-donnees-24715",
+  "programmePage": "https://iut.uca.fr/formations/but-science-des-donnees-aurillac",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://iut.uca.fr/formations/but-science-des-donnees-aurillac",
+          "quote": "Les études se déroulent sur 3 ans à temps plein, découpés en 6 semestres"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://iut.uca.fr/formations/but-science-des-donnees-aurillac",
+          "quote": "Langues d'enseignement Français"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "fr-campus-france",
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+          "quote": "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: Parcoursup fiche shows 178 EUR per year, which is the national rate and not stated for non-EU students; omitted. No intake dates stated for non-EU applicants. Application channel: official pages say non-EU applicants residing abroad use Campus France (Etudes en France), not Parcoursup; channel omitted. Language rule: Campus France Maroc requires a French certificate (TCF, DELF B2 or DALF) at submission on Etudes en France, except in dispensation cases; it recommends TCF 400 / DELF B2 but states each institution sets its own level, so minCefr is null where the programme page gives none. The IUT page lists bac specialities (mathematics, numerique, SES) for the French bac and accepts 'Diplômes étrangers équivalents au baccalauréat'; not encoded as a subject rule.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": null,
+        "certificateRequired": true,
+        "acceptedTests": [
+          "tcf",
+          "delf-dalf"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      }
+    ]
+  }
+}

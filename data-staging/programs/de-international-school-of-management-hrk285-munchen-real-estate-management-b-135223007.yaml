@@ -1,0 +1,63 @@
+slug: de-international-school-of-management-hrk285-munchen-real-estate-management-b-135223007
+institution: de-international-school-of-management-hrk285-munchen
+country: DE
+city: munchen
+field: business-economics
+level: bachelor
+name: Real Estate Management Bachelor of Science
+summary:
+  fr:
+    text: Real Estate Management Bachelor of Science, International School of Management (München). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Real Estate Management Bachelor of Science, International School of Management (München). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Real Estate Management Bachelor of Science, International School of Management (München). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-international-school-of-management-hrk285-munchen-real-estate-management-b-135223007
+  name: Real Estate Management Bachelor of Science
+  institution: International School of Management
+  city: München
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Bayern, subjects: Betriebswirtschaftslehre, Business Administration (grundständig), Volkswirtschaftslehre (grundständig); provider \"International School of Management\" matched to HRK institution \"International School of Management\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:135223007

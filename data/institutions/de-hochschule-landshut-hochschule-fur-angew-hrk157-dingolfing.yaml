@@ -1,0 +1,14 @@
+slug: de-hochschule-landshut-hochschule-fur-angew-hrk157-dingolfing
+name: Hochschule Landshut - Hochschule für angewandte Wissenschaften
+country: DE
+city:
+  slug: dingolfing
+  name: Dingolfing
+type: public
+website: https://www.haw-landshut.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

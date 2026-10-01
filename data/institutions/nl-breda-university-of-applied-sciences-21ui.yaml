@@ -1,0 +1,14 @@
+slug: nl-breda-university-of-applied-sciences-21ui
+name: Breda University of Applied Sciences
+country: NL
+city:
+  slug: breda
+  name: Breda
+type: public
+website: https://www.buas.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.buas.nl/
+    last_verified_at: 2026-10-01

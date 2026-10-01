@@ -1,0 +1,54 @@
+slug: de-hochschule-osnabruck-hrk214-international-business-a-daad11037
+institution: de-hochschule-osnabruck-hrk214
+country: DE
+city: osnabruck
+field: business-economics
+level: bachelor
+name: International Business and Management / Internationale Betriebswirtschaft und Management (bilingual)
+summary:
+  fr:
+    text: International Business and Management / Internationale Betriebswirtschaft und Management (bilingual), Hochschule Osnabrück (Osnabrück). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Business and Management / Internationale Betriebswirtschaft und Management (bilingual), Hochschule Osnabrück (Osnabrück). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business and Management / Internationale Betriebswirtschaft und Management (bilingual), Hochschule Osnabrück (Osnabrück). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11037/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11037/
+    last_verified_at: 2026-10-01

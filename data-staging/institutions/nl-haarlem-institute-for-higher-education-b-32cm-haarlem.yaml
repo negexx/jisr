@@ -1,0 +1,25 @@
+slug: nl-haarlem-institute-for-higher-education-b-32cm-haarlem
+name: Haarlem Institute for Higher Education B.V.
+country: NL
+city:
+  slug: haarlem
+  name: Haarlem
+type: null
+website: null
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-haarlem-institute-for-higher-education-b-32cm-haarlem
+  name: Haarlem Institute for Higher Education B.V.
+  institution: ""
+  city: Haarlem
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "campus in Haarlem of \"Haarlem Institute for Higher Education B.V.\" (RIO location \"Haarlem Institute for Higher Education B.V.: Haarlem\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:32CM@haarlem

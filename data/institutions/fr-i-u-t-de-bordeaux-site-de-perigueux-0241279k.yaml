@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-bordeaux-site-de-perigueux-0241279k
+name: I.U.T de Bordeaux - Site de Périgueux
+country: FR
+city:
+  slug: perigueux
+  name: Périgueux
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

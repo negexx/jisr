@@ -1,0 +1,54 @@
+slug: de-technische-hochschule-ingolstadt-hrk288-neuburg-an-der-donau-sustainable-civil-engine-daad8580
+institution: de-technische-hochschule-ingolstadt-hrk288-neuburg-an-der-donau
+country: DE
+city: neuburg-an-der-donau
+field: engineering
+level: bachelor
+name: Sustainable Civil Engineering
+summary:
+  fr:
+    text: Sustainable Civil Engineering, Technische Hochschule Ingolstadt (Neuburg an der Donau). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Sustainable Civil Engineering, Technische Hochschule Ingolstadt (Neuburg an der Donau). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Sustainable Civil Engineering, Technische Hochschule Ingolstadt (Neuburg an der Donau). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/
+durationYears:
+  value: 4
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+    - de
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/
+    last_verified_at: 2026-10-01

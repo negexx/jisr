@@ -1,0 +1,25 @@
+slug: de-universitat-osnabruck-hrk211
+name: Universität Osnabrück
+country: DE
+city:
+  slug: osnabruck
+  name: Osnabrück
+type: public
+website: https://www.uni-osnabrueck.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-universitat-osnabruck-hrk211
+  name: Universität Osnabrück
+  institution: ""
+  city: Osnabrück
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-osnabrueck.de/
+  todo: "HRK: Universitäten, Niedersachsen, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.uni-osnabrueck.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:211

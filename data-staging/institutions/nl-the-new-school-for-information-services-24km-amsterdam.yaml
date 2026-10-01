@@ -1,0 +1,25 @@
+slug: nl-the-new-school-for-information-services-24km-amsterdam
+name: The New School for Information Services
+country: NL
+city:
+  slug: amsterdam
+  name: Amsterdam
+type: null
+website: null
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-the-new-school-for-information-services-24km-amsterdam
+  name: The New School for Information Services
+  institution: ""
+  city: Amsterdam
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "campus in Amsterdam of \"The New School for Information Services\" (RIO location \"The New School for Information Services: Amsterdam\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:24KM@amsterdam

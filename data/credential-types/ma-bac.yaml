@@ -1,0 +1,113 @@
+slug: ma-bac
+country: MA
+name: Baccalauréat marocain
+gloss:
+  fr: { text: "Diplôme national de fin d'études secondaires du Maroc, délivré par le ministère de l'Éducation nationale.", status: draft }
+  en: { text: "Morocco's national secondary-school leaving diploma, awarded by the Ministry of National Education.", status: draft }
+  ar: { text: "شهادة البكالوريا المغربية، شهادة نهاية الدراسة الثانوية التي تمنحها وزارة التربية الوطنية.", status: draft }
+gradingScale: ma-bac-scale
+tracks:
+  - slug: sciences-mathematiques-a
+    name: Sciences Mathématiques A
+    gloss:
+      fr: { text: "Sciences Mathématiques A", status: draft }
+      en: { text: "Mathematical sciences A", status: draft }
+      ar: { text: "العلوم الرياضية (أ)", status: draft }
+    subjects: null
+  - slug: sciences-mathematiques-b
+    name: Sciences Mathématiques B
+    gloss:
+      fr: { text: "Sciences Mathématiques B", status: draft }
+      en: { text: "Mathematical sciences B", status: draft }
+      ar: { text: "العلوم الرياضية (ب)", status: draft }
+    subjects: null
+  - slug: sciences-physiques
+    name: Sciences Physiques
+    gloss:
+      fr: { text: "Sciences Physiques", status: draft }
+      en: { text: "Physical sciences", status: draft }
+      ar: { text: "العلوم الفيزيائية", status: draft }
+    subjects: null
+  - slug: svt
+    name: Sciences de la Vie et de la Terre (SVT)
+    gloss:
+      fr: { text: "Sciences de la Vie et de la Terre (SVT)", status: draft }
+      en: { text: "Life and earth sciences", status: draft }
+      ar: { text: "علوم الحياة والأرض", status: draft }
+    subjects: null
+  - slug: sciences-economiques-et-gestion
+    name: Sciences Économiques et Gestion
+    gloss:
+      fr: { text: "Sciences Économiques et Gestion", status: draft }
+      en: { text: "Economic sciences and management", status: draft }
+      ar: { text: "العلوم الاقتصادية والتدبير", status: draft }
+    subjects: null
+  - slug: lettres
+    name: Lettres
+    gloss:
+      fr: { text: "Lettres", status: draft }
+      en: { text: "Literature", status: draft }
+      ar: { text: "الآداب", status: draft }
+    subjects: null
+  - slug: sciences-humaines
+    name: Sciences Humaines
+    gloss:
+      fr: { text: "Sciences Humaines", status: draft }
+      en: { text: "Human sciences", status: draft }
+      ar: { text: "العلوم الإنسانية", status: draft }
+    subjects: null
+  - slug: sciences-et-technologies-mecaniques
+    name: Sciences et Technologies Mécaniques
+    gloss:
+      fr: { text: "Sciences et Technologies Mécaniques", status: draft }
+      en: { text: "Mechanical sciences and technologies", status: draft }
+      ar: { text: "مسلك العلوم والتكنولوجيات الميكانيكية", status: draft }
+    subjects: null
+  - slug: sciences-et-technologies-electriques
+    name: Sciences et Technologies Électriques
+    gloss:
+      fr: { text: "Sciences et Technologies Électriques", status: draft }
+      en: { text: "Electrical sciences and technologies", status: draft }
+      ar: { text: "مسلك العلوم والتكنولوجيات الكهربائية", status: draft }
+    subjects: null
+  - slug: sciences-de-gestion-comptable
+    name: Sciences de Gestion Comptable
+    gloss:
+      fr: { text: "Sciences de Gestion Comptable", status: draft }
+      en: { text: "Accounting and management sciences", status: draft }
+      ar: { text: "مسلك علوم التدبير المحاسباتي", status: draft }
+    subjects: null
+  - slug: arts-appliques
+    name: Arts Appliqués
+    gloss:
+      fr: { text: "Arts Appliqués", status: draft }
+      en: { text: "Applied arts", status: draft }
+      ar: { text: "الفنون التطبيقية", status: draft }
+    subjects: null
+  - slug: sciences-agronomiques
+    name: Sciences Agronomiques
+    gloss:
+      fr: { text: "Sciences Agronomiques", status: draft }
+      en: { text: "Agronomic sciences", status: draft }
+      ar: { text: "العلوم الزراعية", status: draft }
+    subjects: null
+  - slug: sciences-de-la-charia
+    name: Sciences de la Charia
+    gloss:
+      fr: { text: "Sciences de la Charia", status: draft }
+      en: { text: "Sharia sciences", status: draft }
+      ar: { text: "العلوم الشرعية", status: draft }
+    subjects: null
+  - slug: baccalaureat-professionnel
+    name: Baccalauréat professionnel
+    gloss:
+      fr: { text: "Baccalauréat professionnel", status: draft }
+      en: { text: "Vocational baccalaureate", status: draft }
+      ar: { text: "مسالك البكالوريا المهنية", status: draft }
+    subjects: null
+source: main
+info_kind: official
+sources:
+  main:
+    url: https://www.men.gov.ma/sites/default/files/2026-06/%D8%A8%D9%84%D8%A7%D8%BA%20%D8%B5%D8%AD%D9%81%D9%8A_1.pdf
+    last_verified_at: 2026-10-01

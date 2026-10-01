@@ -1,0 +1,64 @@
+slug: de-international-school-of-management-ism-daad-dortmund-bachelors-in-internation-daad5259
+institution: de-international-school-of-management-ism-daad-dortmund
+country: DE
+city: dortmund
+field: business-economics
+level: bachelor
+name: Bachelor's in International Management
+summary:
+  fr:
+    text: Bachelor's in International Management, International School of Management (ISM) (Dortmund). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Bachelor's in International Management, International School of Management (ISM) (Dortmund). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Bachelor's in International Management, International School of Management (ISM) (Dortmund). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: null
+durationYears:
+  value: 3
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5259/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-international-school-of-management-ism-daad-dortmund-bachelors-in-internation-daad5259
+  name: Bachelor's in International Management
+  institution: International School of Management (ISM)
+  city: Dortmund
+  field: business-economics
+  confidence: low
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5259/
+  todo: "DAAD page lists: languages English, duration 6 semesters, starts Winter semester, Summer semester, tuition \"5,970\", deadline \"This programme has no deadline.\"; institution not matched to the HRK list (see its record); the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; field is a judgement call: check the programme content"
+  sourceId: daad:5259

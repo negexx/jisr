@@ -1,0 +1,25 @@
+slug: de-fachhochschule-fur-sport-und-management-hrk443
+name: Fachhochschule für Sport und Management Potsdam
+country: DE
+city:
+  slug: potsdam
+  name: Potsdam
+type: private
+website: https://www.fhsmp.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fachhochschule-fur-sport-und-management-hrk443
+  name: Fachhochschule für Sport und Management Potsdam
+  institution: ""
+  city: Potsdam
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fhsmp.de/
+  todo: "HRK: Fachhochschulen / HAW, Brandenburg, sponsor \"privat, staatlich anerkannt\"; listed as \"www.fhsmp.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:443

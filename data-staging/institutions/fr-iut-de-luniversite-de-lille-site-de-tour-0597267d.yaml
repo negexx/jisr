@@ -1,0 +1,25 @@
+slug: fr-iut-de-luniversite-de-lille-site-de-tour-0597267d
+name: IUT de l'Université de Lille - site de Tourcoing
+country: FR
+city:
+  slug: tourcoing
+  name: Tourcoing
+type: public
+website: https://iut-b.univ-lille.fr/
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-iut-de-luniversite-de-lille-site-de-tour-0597267d
+  name: IUT de l'Université de Lille - site de Tourcoing
+  institution: ""
+  city: Tourcoing
+  field: ""
+  confidence: ""
+  officialUrl: https://iut-b.univ-lille.fr/
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"
+  sourceId: uai:0597267D

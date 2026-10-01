@@ -1,0 +1,54 @@
+slug: de-fh-munster-university-of-applied-science-hrk192-international-business-m-daad3910
+institution: de-fh-munster-university-of-applied-science-hrk192
+country: DE
+city: munster
+field: business-economics
+level: bachelor
+name: "International Business & Management – Track: European Business Programme (EBP)"
+summary:
+  fr:
+    text: "International Business & Management – Track: European Business Programme (EBP), FH Münster - University of Applied Sciences (Münster). Programme recensé dans la base de programmes internationaux du DAAD."
+    status: draft
+  en:
+    text: "International Business & Management – Track: European Business Programme (EBP), FH Münster - University of Applied Sciences (Münster). Programme listed in the DAAD international programmes database."
+    status: draft
+  ar:
+    text: "International Business & Management – Track: European Business Programme (EBP), FH Münster - University of Applied Sciences (Münster). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD."
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3910/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+    - de
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3910/
+    last_verified_at: 2026-10-01

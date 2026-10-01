@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-saint-malo-0352379w
+name: I.U.T de Saint-Malo
+country: FR
+city:
+  slug: saint-malo
+  name: Saint-Malo
+type: public
+website: https://iut-stmalo.univ-rennes.fr/
+source: parcoursup
+info_kind: guidance
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

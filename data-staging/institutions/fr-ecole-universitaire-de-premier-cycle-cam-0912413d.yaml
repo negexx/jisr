@@ -1,0 +1,25 @@
+slug: fr-ecole-universitaire-de-premier-cycle-cam-0912413d
+name: Ecole Universitaire de premier cycle - Campus de Guyancourt, Versailles Saint Quentin en Yvelines, Université Paris-Saclay
+country: FR
+city:
+  slug: guyancourt
+  name: Guyancourt
+type: public
+website: null
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-ecole-universitaire-de-premier-cycle-cam-0912413d
+  name: Ecole Universitaire de premier cycle - Campus de Guyancourt, Versailles Saint Quentin en Yvelines, Université Paris-Saclay
+  institution: ""
+  city: Guyancourt
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "website missing: find the official https site, add that page as the source, then set info_kind: official"
+  sourceId: uai:0912413D

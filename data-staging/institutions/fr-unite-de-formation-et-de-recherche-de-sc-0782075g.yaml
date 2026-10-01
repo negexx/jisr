@@ -1,0 +1,25 @@
+slug: fr-unite-de-formation-et-de-recherche-de-sc-0782075g
+name: Unité de Formation et de Recherche de Sciences de l' Université de Versailles Saint Quentin en Yvelines
+country: FR
+city:
+  slug: versailles
+  name: Versailles
+type: public
+website: https://www.uvsq.fr/
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-unite-de-formation-et-de-recherche-de-sc-0782075g
+  name: Unité de Formation et de Recherche de Sciences de l' Université de Versailles Saint Quentin en Yvelines
+  institution: ""
+  city: Versailles
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uvsq.fr/
+  todo: "website candidate from parent university \"Université de Versailles Saint-Quentin-en-Yvelines\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  sourceId: uai:0782075G

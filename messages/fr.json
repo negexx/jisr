@@ -519,6 +519,7 @@
     }
   },
   "matchCard": {
+    "institutionWebsite": "Site de l'établissement",
     "level": {
       "bachelor": "Licence"
     },
@@ -568,7 +569,8 @@
       "failed": {
         "note": "Les conditions peuvent changer. Vérifiez la page officielle de chaque programme avant de décider.",
         "show": "Afficher les programmes ({count})"
-      }
+      },
+      "more": "Afficher plus de programmes ({count} restants)"
     },
     "summary": {
       "title": "Votre profil",
@@ -658,7 +660,8 @@
       "institution": "Établissement",
       "institutionType": {
         "public": "Établissement public",
-        "private": "Établissement privé"
+        "private": "Établissement privé",
+        "unknown": "Type à vérifier"
       },
       "duration": "Durée",
       "languages": "Langues d'enseignement",
@@ -724,6 +727,7 @@
     "links": {
       "program": "Page de la formation",
       "institution": "Site de l'établissement",
+      "institutionUnknown": "Site de l'établissement : pas encore trouvé, à vérifier",
       "channel": "Site de candidature"
     },
     "verified": {

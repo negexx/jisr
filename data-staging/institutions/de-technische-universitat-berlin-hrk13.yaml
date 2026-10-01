@@ -1,0 +1,25 @@
+slug: de-technische-universitat-berlin-hrk13
+name: Technische Universität Berlin
+country: DE
+city:
+  slug: berlin
+  name: Berlin
+type: public
+website: https://www.tu.berlin/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-universitat-berlin-hrk13
+  name: Technische Universität Berlin
+  institution: ""
+  city: Berlin
+  field: ""
+  confidence: ""
+  officialUrl: https://www.tu.berlin/
+  todo: "HRK: Universitäten, Berlin, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.tu.berlin\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:13

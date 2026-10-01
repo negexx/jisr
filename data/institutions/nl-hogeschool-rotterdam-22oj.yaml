@@ -1,0 +1,14 @@
+slug: nl-hogeschool-rotterdam-22oj
+name: Hogeschool Rotterdam
+country: NL
+city:
+  slug: rotterdam
+  name: Rotterdam
+type: public
+website: https://www.hogeschoolrotterdam.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.hogeschoolrotterdam.nl/
+    last_verified_at: 2026-10-01

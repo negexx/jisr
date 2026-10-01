@@ -1,0 +1,63 @@
+slug: de-hochschule-bremen-hrk40-betriebswirtschaft-inter-73424040
+institution: de-hochschule-bremen-hrk40
+country: DE
+city: bremen
+field: business-economics
+level: bachelor
+name: Betriebswirtschaft/Internationales Management Bachelor
+summary:
+  fr:
+    text: Betriebswirtschaft/Internationales Management Bachelor, Hochschule Bremen (Bremen). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Betriebswirtschaft/Internationales Management Bachelor, Hochschule Bremen (Bremen). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Betriebswirtschaft/Internationales Management Bachelor, Hochschule Bremen (Bremen). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-bremen-hrk40-betriebswirtschaft-inter-73424040
+  name: Betriebswirtschaft/Internationales Management Bachelor
+  institution: Hochschule Bremen
+  city: Bremen
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Bremen, subjects: Betriebswirtschaftslehre, Business Administration (grundständig); provider \"Hochschule Bremen\" matched to HRK institution \"Hochschule Bremen\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:73424040

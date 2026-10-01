@@ -1,0 +1,25 @@
+slug: de-hochschule-fur-philosophie-hrk189
+name: Hochschule für Philosophie
+country: DE
+city:
+  slug: munchen
+  name: München
+type: null
+website: https://hfph.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-philosophie-hrk189
+  name: Hochschule für Philosophie
+  institution: ""
+  city: München
+  field: ""
+  confidence: ""
+  officialUrl: https://hfph.de/
+  todo: "HRK: Universitäten, Bayern, sponsor \"kirchlich, staatlich anerkannt\"; church-run: the app only has public/private, decide how to classify it; listed as \"http://www.hfph.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:189

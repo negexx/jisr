@@ -1,0 +1,63 @@
+slug: nl-universiteit-leiden-21pb-s-gravenhage-cybersecurity-cybercrime-1001o8924
+institution: nl-universiteit-leiden-21pb-s-gravenhage
+country: NL
+city: s-gravenhage
+field: computer-science
+level: bachelor
+name: Cybersecurity & Cybercrime
+summary:
+  fr:
+    text: Cybersecurity & Cybercrime (Cybersecurity & Cybercrime), Universiteit Leiden ('s-Gravenhage). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Cybersecurity & Cybercrime (Cybersecurity & Cybercrime), Universiteit Leiden ('s-Gravenhage). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Cybersecurity & Cybercrime (Cybersecurity & Cybercrime), Universiteit Leiden ('s-Gravenhage). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: rio
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: nl-universiteit-leiden-21pb-s-gravenhage-cybersecurity-cybercrime-1001o8924
+  name: Cybersecurity & Cybercrime
+  institution: Universiteit Leiden
+  city: "'s-Gravenhage"
+  field: computer-science
+  confidence: low
+  officialUrl: ""
+  todo: "RIO register: WO (research university), 180 ECTS, accredited until 2030-04-25, funding BEKOSTIGD, location \"Universiteit Leiden: 's-Gravenhage\"; international name \"Cybersecurity & Cybercrime\"; field is a judgement call: check the programme content; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 180 ECTS, i.e. about 3 years at 60 ECTS per year: read it on the programme page)"
+  sourceId: rio:21PB/21PB12/1001O8924

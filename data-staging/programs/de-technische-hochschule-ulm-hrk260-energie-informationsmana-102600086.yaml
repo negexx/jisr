@@ -1,0 +1,63 @@
+slug: de-technische-hochschule-ulm-hrk260-energie-informationsmana-102600086
+institution: de-technische-hochschule-ulm-hrk260
+country: DE
+city: ulm
+field: engineering
+level: bachelor
+name: Energie-Informationsmanagement Bachelor of Science
+summary:
+  fr:
+    text: Energie-Informationsmanagement Bachelor of Science, Technische Hochschule Ulm (Ulm). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Energie-Informationsmanagement Bachelor of Science, Technische Hochschule Ulm (Ulm). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Energie-Informationsmanagement Bachelor of Science, Technische Hochschule Ulm (Ulm). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-technische-hochschule-ulm-hrk260-energie-informationsmana-102600086
+  name: Energie-Informationsmanagement Bachelor of Science
+  institution: Technische Hochschule Ulm
+  city: Ulm
+  field: engineering
+  confidence: low
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Baden-Württemberg, subjects: Energie-, Ressourcenmanagement (grundständig), Umweltwissenschaft (grundständig), Informatik (grundständig); provider \"Technische Hochschule Ulm\" matched to HRK institution \"Technische Hochschule Ulm\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:102600086

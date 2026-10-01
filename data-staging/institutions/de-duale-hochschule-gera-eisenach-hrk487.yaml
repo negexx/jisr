@@ -1,0 +1,25 @@
+slug: de-duale-hochschule-gera-eisenach-hrk487
+name: Duale Hochschule Gera-Eisenach
+country: DE
+city:
+  slug: gera
+  name: Gera
+type: public
+website: https://www.dhge.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-duale-hochschule-gera-eisenach-hrk487
+  name: Duale Hochschule Gera-Eisenach
+  institution: ""
+  city: Gera
+  field: ""
+  confidence: ""
+  officialUrl: https://www.dhge.de/
+  todo: "HRK: Hochschulen eigenen Typs, Thüringen, sponsor \"öffentlich-rechtlich\"; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:487

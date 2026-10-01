@@ -1,0 +1,22 @@
+slug: de-university-direct
+name: University application portal
+country: DE
+kind: direct
+url: https://www.daad.de/en/study-and-research-in-germany/plan-your-studies/applying/
+accountRequired: null
+summary:
+  fr:
+    text: "Candidature directement auprès de l'université, via son propre portail de candidature : renseignez-vous auprès d'elle sur la reconnaissance de votre diplôme étranger."
+    status: draft
+  en:
+    text: "Apply directly to the university through its own application portal: ask the university how your foreign diploma gets recognised."
+    status: draft
+  ar:
+    text: "التقدّم مباشرة إلى الجامعة عبر بوابة التسجيل الخاصة بها: استفسروا لديها عن كيفية الاعتراف بشهادتكم الأجنبية."
+    status: draft
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.daad.de/en/study-and-research-in-germany/plan-your-studies/applying/
+    last_verified_at: 2026-10-01

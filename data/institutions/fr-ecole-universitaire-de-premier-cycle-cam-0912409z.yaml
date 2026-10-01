@@ -1,0 +1,14 @@
+slug: fr-ecole-universitaire-de-premier-cycle-cam-0912409z
+name: Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay
+country: FR
+city:
+  slug: orsay
+  name: Orsay
+type: public
+website: https://ecole-universitaire-paris-saclay.fr/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://ecole-universitaire-paris-saclay.fr/
+    last_verified_at: 2026-10-01

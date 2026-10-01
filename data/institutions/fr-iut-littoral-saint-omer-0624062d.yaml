@@ -1,0 +1,14 @@
+slug: fr-iut-littoral-saint-omer-0624062d
+name: IUT LITTORAL (SAINT OMER)
+country: FR
+city:
+  slug: longuenesse
+  name: Longuenesse
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

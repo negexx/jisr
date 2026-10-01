@@ -1,0 +1,121 @@
+slug: de-technische-universitat-munchen-hrk184-straubing-sustainable-engineering-daad11020
+institution: de-technische-universitat-munchen-hrk184-straubing
+country: DE
+city: straubing
+field: engineering
+level: bachelor
+name: Sustainable Engineering for Materials and Processes
+summary:
+  fr:
+    text: Sustainable Engineering for Materials and Processes, Technische Universität München (Straubing). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Sustainable Engineering for Materials and Processes, Technische Universität München (Straubing). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Sustainable Engineering for Materials and Processes, Technische Universität München (Straubing). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www.tum.de/en/studies/degree-programs/detail/sustainable-engineering-for-materials-and-processes-bachelor-of-science-bsc
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 200000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-uni-assist-vpd
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un bon niveau d'anglais est attendu (le DAAD indique B2 comme exigé ou recommandé) ; aucune preuve n'est demandée : vérifiez votre niveau."
+          status: draft
+        en:
+          text: "A good command of English is expected (the DAAD lists B2 as required or recommended); no proof is requested: check your level."
+          status: draft
+        ar:
+          text: "يُتوقع مستوى جيد في اللغة الإنجليزية (يذكر DAAD المستوى B2 كشرط أو توصية)؛ ولا يُطلب إثبات: تحقّقوا من مستواكم."
+          status: draft
+    - id: req-2
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Si le diplôme de fin d'études étranger n'est pas comparable à l'Abitur, l'admission directe n'est possible qu'après le Studienkolleg et l'examen d'évaluation (Feststellungsprüfung).
+          status: draft
+        en:
+          text: If your foreign school-leaving certificate is not comparable to the Abitur, direct admission is only possible after the Studienkolleg and the assessment exam (Feststellungsprüfung).
+          status: draft
+        ar:
+          text: إذا كانت شهادتكم الأجنبية غير قابلة للمقارنة بالـ Abitur، فلا يمكن القبول المباشر إلا بعد Studienkolleg واجتياز امتحان التقييم (Feststellungsprüfung).
+          status: draft
+    - id: req-3
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Demander avant la candidature l'attestation préliminaire (VPD) à uni-assist, qui vérifie si le diplôme donne accès général ou limité à certaines matières.
+          status: draft
+        en:
+          text: Before applying, request the preliminary review certificate (VPD) from uni-assist, which checks whether your diploma gives general or subject-restricted access.
+          status: draft
+        ar:
+          text: اطلبوا قبل التقدّم شهادة المراجعة الأولية (VPD) من uni-assist، التي تتحقق هل تتيح شهادتكم ولوجًا عامًا أم مقيّدًا ببعض المواد.
+          status: draft
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Participation obligatoire au test d'aptitude en ligne (Aptitude Recommendation, environ 20 minutes) ; le résultat n'influence pas l'admission.
+          status: draft
+        en:
+          text: Mandatory online aptitude test (Aptitude Recommendation, about 20 minutes); the result does not affect admission.
+          status: draft
+        ar:
+          text: اختبار الكفاءة عبر الإنترنت إلزامي (Aptitude Recommendation، حوالي 20 دقيقة)؛ ولا تؤثر نتيجته على القبول.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.tum.de/en/studies/degree-programs/detail/sustainable-engineering-for-materials-and-processes-bachelor-of-science-bsc
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11020/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/32/
+    last_verified_at: 2026-10-01
+  page-4:
+    url: https://www.tum.de/en/studies/application/application-info-portal/higher-education-entrance-qualification/international-higher-education-entrance-qualification
+    last_verified_at: 2026-10-01

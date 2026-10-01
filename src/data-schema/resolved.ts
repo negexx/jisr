@@ -103,14 +103,14 @@ export type Institution = {
   name: string;
   country: CountryCode;
   city: { slug: Slug; name: string };
-  type: "public" | "private";
-  website: string;
+  type: "public" | "private" | null;
+  website: string | null;
   fact: FactMeta;
 };
 export type Program = {
   slug: Slug;
   institution: Slug;
-  institutionType: "public" | "private"; // denormalised from institution
+  institutionType: "public" | "private" | null; // denormalised from institution
   country: CountryCode;
   city: Slug;
   field: Slug;

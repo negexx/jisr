@@ -1,0 +1,63 @@
+slug: de-fachhochschule-aachen-hrk2-julich-biotechnologie-mit-praxi-73210614
+institution: de-fachhochschule-aachen-hrk2-julich
+country: DE
+city: julich
+field: engineering
+level: bachelor
+name: Biotechnologie mit Praxis- oder Auslandssemester Bachelor
+summary:
+  fr:
+    text: Biotechnologie mit Praxis- oder Auslandssemester Bachelor, Fachhochschule Aachen (Jülich). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Biotechnologie mit Praxis- oder Auslandssemester Bachelor, Fachhochschule Aachen (Jülich). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Biotechnologie mit Praxis- oder Auslandssemester Bachelor, Fachhochschule Aachen (Jülich). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-fachhochschule-aachen-hrk2-julich-biotechnologie-mit-praxi-73210614
+  name: Biotechnologie mit Praxis- oder Auslandssemester Bachelor
+  institution: Fachhochschule Aachen
+  city: Jülich
+  field: engineering
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Biotechnologie (grundständig); provider \"Fachhochschule Aachen\" matched to HRK institution \"Fachhochschule Aachen\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:73210614

@@ -1,0 +1,25 @@
+slug: de-hochschule-der-bayerischen-wirtschaft-fu-hrk467
+name: Hochschule der Bayerischen Wirtschaft für angewandte Wissenschaften - HDBW
+country: DE
+city:
+  slug: munchen
+  name: München
+type: private
+website: https://www.hdbw-hochschule.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-der-bayerischen-wirtschaft-fu-hrk467
+  name: Hochschule der Bayerischen Wirtschaft für angewandte Wissenschaften - HDBW
+  institution: ""
+  city: München
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hdbw-hochschule.de/
+  todo: "HRK: Fachhochschulen / HAW, Bayern, sponsor \"privat, staatlich anerkannt\"; listed as \"www.hdbw-hochschule.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:467

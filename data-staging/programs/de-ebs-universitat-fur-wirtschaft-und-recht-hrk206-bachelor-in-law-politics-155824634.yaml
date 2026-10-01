@@ -1,0 +1,63 @@
+slug: de-ebs-universitat-fur-wirtschaft-und-recht-hrk206-bachelor-in-law-politics-155824634
+institution: de-ebs-universitat-fur-wirtschaft-und-recht-hrk206
+country: DE
+city: oestrich-winkel
+field: business-economics
+level: bachelor
+name: Bachelor in Law, Politics and Economics Bachelor of Arts
+summary:
+  fr:
+    text: Bachelor in Law, Politics and Economics Bachelor of Arts, EBS Universität für Wirtschaft und Recht (Oestrich-Winkel). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Bachelor in Law, Politics and Economics Bachelor of Arts, EBS Universität für Wirtschaft und Recht (Oestrich-Winkel). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Bachelor in Law, Politics and Economics Bachelor of Arts, EBS Universität für Wirtschaft und Recht (Oestrich-Winkel). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-ebs-universitat-fur-wirtschaft-und-recht-hrk206-bachelor-in-law-politics-155824634
+  name: Bachelor in Law, Politics and Economics Bachelor of Arts
+  institution: EBS Universität für Wirtschaft und Recht
+  city: Oestrich-Winkel
+  field: business-economics
+  confidence: low
+  officialUrl: ""
+  todo: "BA Studiensuche: Universität, Hessen, subjects: Politikwissenschaft (grundständig), Rechtswissenschaft (grundständig außer Erste juristische Prüfung), Wirtschaftswissenschaften (grundständig); provider \"EBS Universität\" matched to HRK institution \"EBS Universität für Wirtschaft und Recht\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:155824634

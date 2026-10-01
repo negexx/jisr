@@ -1,0 +1,25 @@
+slug: nl-fontys-hogeschool-30gb-tilburg
+name: Fontys Hogeschool
+country: NL
+city:
+  slug: tilburg
+  name: Tilburg
+type: null
+website: https://www.fontys.nl/
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-fontys-hogeschool-30gb-tilburg
+  name: Fontys Hogeschool
+  institution: ""
+  city: Tilburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fontys.nl/
+  todo: "campus in Tilburg of \"Fontys Hogeschool\" (RIO location \"Fontys Hogeschool: Tilburg\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed as \"www.fontys.nl\"; the https form answers; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:30GB@tilburg

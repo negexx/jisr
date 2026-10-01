@@ -1,0 +1,53 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk291-engineering-physics-and-daad9655
+institution: de-hochschule-fur-angewandte-wissenschaften-hrk291
+country: DE
+city: munchen
+field: computer-science
+level: bachelor
+name: Engineering Physics and Data Science
+summary:
+  fr:
+    text: Engineering Physics and Data Science, Hochschule für angewandte Wissenschaften München (München). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Engineering Physics and Data Science, Hochschule für angewandte Wissenschaften München (München). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Engineering Physics and Data Science, Hochschule für angewandte Wissenschaften München (München). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/
+    last_verified_at: 2026-10-01

@@ -1,0 +1,25 @@
+slug: de-universitat-bremen-hrk38
+name: Universität Bremen
+country: DE
+city:
+  slug: bremen
+  name: Bremen
+type: public
+website: https://www.uni-bremen.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-universitat-bremen-hrk38
+  name: Universität Bremen
+  institution: ""
+  city: Bremen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-bremen.de/
+  todo: "HRK: Universitäten, Bremen, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.uni-bremen.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:38

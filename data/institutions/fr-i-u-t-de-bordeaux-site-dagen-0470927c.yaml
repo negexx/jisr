@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-bordeaux-site-dagen-0470927c
+name: I.U.T. de Bordeaux - Site d'Agen
+country: FR
+city:
+  slug: agen
+  name: Agen
+type: public
+website: https://www.iut.u-bordeaux.fr/sites-formation/agen/
+source: parcoursup
+info_kind: guidance
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

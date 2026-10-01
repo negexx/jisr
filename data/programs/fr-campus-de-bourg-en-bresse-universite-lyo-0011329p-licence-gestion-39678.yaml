@@ -1,0 +1,68 @@
+slug: fr-campus-de-bourg-en-bresse-universite-lyo-0011329p-licence-gestion-39678
+institution: fr-campus-de-bourg-en-bresse-universite-lyo-0011329p
+country: FR
+city: bourg-en-bresse
+field: business-economics
+level: bachelor
+name: Licence - Gestion - Parcours Gestion et management
+summary:
+  fr:
+    text: Licence - Gestion - Parcours Gestion et management, Campus de Bourg-en-Bresse - Université Lyon 3 (Bourg-en-Bresse). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Gestion - Parcours Gestion et management, Campus de Bourg-en-Bresse - Université Lyon 3 (Bourg-en-Bresse). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Gestion - Parcours Gestion et management, Campus de Bourg-en-Bresse - Université Lyon 3 (Bourg-en-Bresse). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://bourgenbresse.univ-lyon3.fr/licence-de-gestion-management-bourg-en-bresse-3
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: fr-campus-france
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - tcf
+        - delf-dalf
+scholarships: []
+sources:
+  programme:
+    url: https://bourgenbresse.univ-lyon3.fr/licence-de-gestion-management-bourg-en-bresse-3
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
+    last_verified_at: 2026-10-01

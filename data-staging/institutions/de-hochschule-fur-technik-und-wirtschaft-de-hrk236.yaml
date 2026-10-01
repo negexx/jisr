@@ -1,0 +1,25 @@
+slug: de-hochschule-fur-technik-und-wirtschaft-de-hrk236
+name: Hochschule für Technik und Wirtschaft des Saarlandes
+country: DE
+city:
+  slug: saarbrucken
+  name: Saarbrücken
+type: public
+website: https://www.htwsaar.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-technik-und-wirtschaft-de-hrk236
+  name: Hochschule für Technik und Wirtschaft des Saarlandes
+  institution: ""
+  city: Saarbrücken
+  field: ""
+  confidence: ""
+  officialUrl: https://www.htwsaar.de/
+  todo: "HRK: Fachhochschulen / HAW, Saarland, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.htwsaar.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:236

@@ -1,0 +1,63 @@
+slug: de-berlin-international-university-of-appli-ba163861-berlin-betriebswirtschaftslehre-73419723
+institution: de-berlin-international-university-of-appli-ba163861-berlin
+country: DE
+city: berlin
+field: business-economics
+level: bachelor
+name: Betriebswirtschaftslehre / International Management & Marketing Bachelor of Arts
+summary:
+  fr:
+    text: Betriebswirtschaftslehre / International Management & Marketing Bachelor of Arts, Berlin International University of Applied Sciences (Berlin). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Betriebswirtschaftslehre / International Management & Marketing Bachelor of Arts, Berlin International University of Applied Sciences (Berlin). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Betriebswirtschaftslehre / International Management & Marketing Bachelor of Arts, Berlin International University of Applied Sciences (Berlin). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-berlin-international-university-of-appli-ba163861-berlin-betriebswirtschaftslehre-73419723
+  name: Betriebswirtschaftslehre / International Management & Marketing Bachelor of Arts
+  institution: Berlin International University of Applied Sciences
+  city: Berlin
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Berlin, subjects: Marketing, Vertrieb (grundständig), Betriebswirtschaftslehre, Business Administration (grundständig); provider \"Berlin International University of Applied Sciences\" is not in the HRK list: check it is a recognised Hochschule; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:73419723

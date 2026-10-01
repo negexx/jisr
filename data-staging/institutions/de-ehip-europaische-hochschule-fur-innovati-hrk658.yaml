@@ -1,0 +1,25 @@
+slug: de-ehip-europaische-hochschule-fur-innovati-hrk658
+name: EHIP - Europäische Hochschule für Innovation und Perspektive
+country: DE
+city:
+  slug: backnang
+  name: Backnang
+type: private
+website: https://www.ehip.eu/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-ehip-europaische-hochschule-fur-innovati-hrk658
+  name: EHIP - Europäische Hochschule für Innovation und Perspektive
+  institution: ""
+  city: Backnang
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ehip.eu/
+  todo: "HRK: Fachhochschulen / HAW, Baden-Württemberg, sponsor \"privat, staatlich anerkannt\"; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:658

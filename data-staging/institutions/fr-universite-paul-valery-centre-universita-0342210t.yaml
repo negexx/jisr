@@ -1,0 +1,25 @@
+slug: fr-universite-paul-valery-centre-universita-0342210t
+name: Université Paul Valery - Centre Universitaire Du Guesclin - Béziers
+country: FR
+city:
+  slug: beziers
+  name: Béziers
+type: public
+website: https://www.univ-montp3.fr/fr
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-universite-paul-valery-centre-universita-0342210t
+  name: Université Paul Valery - Centre Universitaire Du Guesclin - Béziers
+  institution: ""
+  city: Béziers
+  field: ""
+  confidence: ""
+  officialUrl: https://www.univ-montp3.fr/fr
+  todo: "website candidate from parent university \"Université de Montpellier Paul-Valéry\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  sourceId: uai:0342210T

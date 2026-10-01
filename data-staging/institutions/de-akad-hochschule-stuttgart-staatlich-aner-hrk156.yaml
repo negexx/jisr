@@ -1,0 +1,25 @@
+slug: de-akad-hochschule-stuttgart-staatlich-aner-hrk156
+name: AKAD Hochschule Stuttgart - staatlich anerkannt
+country: DE
+city:
+  slug: stuttgart
+  name: Stuttgart
+type: private
+website: https://www.akad.de/?wkz=7007AA
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-akad-hochschule-stuttgart-staatlich-aner-hrk156
+  name: AKAD Hochschule Stuttgart - staatlich anerkannt
+  institution: ""
+  city: Stuttgart
+  field: ""
+  confidence: ""
+  officialUrl: https://www.akad.de/?wkz=7007AA
+  todo: "HRK: Fachhochschulen / HAW, Baden-Württemberg, sponsor \"privat, staatlich anerkannt\"; listed URL \"https://www.akad.de/?wkz=7007AA\" is a page or carries a query (tracking?): replace it with the institution's homepage; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:156

@@ -1,0 +1,25 @@
+slug: de-katholische-hochschule-mainz-catholic-un-hrk175
+name: Katholische Hochschule Mainz Catholic University of Applied Sciences
+country: DE
+city:
+  slug: mainz
+  name: Mainz
+type: null
+website: https://www.kh-mz.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-katholische-hochschule-mainz-catholic-un-hrk175
+  name: Katholische Hochschule Mainz Catholic University of Applied Sciences
+  institution: ""
+  city: Mainz
+  field: ""
+  confidence: ""
+  officialUrl: https://www.kh-mz.de/
+  todo: "HRK: Fachhochschulen / HAW, Rheinland-Pfalz, sponsor \"kirchlich, staatlich anerkannt\"; church-run: the app only has public/private, decide how to classify it; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:175

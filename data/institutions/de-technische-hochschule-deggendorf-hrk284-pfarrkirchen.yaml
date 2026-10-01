@@ -1,0 +1,14 @@
+slug: de-technische-hochschule-deggendorf-hrk284-pfarrkirchen
+name: Technische Hochschule Deggendorf
+country: DE
+city:
+  slug: pfarrkirchen
+  name: Pfarrkirchen
+type: public
+website: https://www.th-deg.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

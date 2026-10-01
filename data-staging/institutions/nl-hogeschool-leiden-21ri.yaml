@@ -1,0 +1,25 @@
+slug: nl-hogeschool-leiden-21ri
+name: Hogeschool Leiden
+country: NL
+city:
+  slug: leiden
+  name: Leiden
+type: null
+website: null
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-hogeschool-leiden-21ri
+  name: Hogeschool Leiden
+  institution: ""
+  city: Leiden
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "DUO: hbo, denomination \"Samenwerking PC, RK\"; public/private is not in the file: check the institution's legal status; listed website \"www.hsleiden.nl/\" did not answer over https (probe failed): find the official https site; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: duo:21RI

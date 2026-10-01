@@ -1,0 +1,63 @@
+slug: de-universitat-regensburg-hrk225-informatik-bachelor-of-s-188261018
+institution: de-universitat-regensburg-hrk225
+country: DE
+city: regensburg
+field: computer-science
+level: bachelor
+name: Informatik Bachelor of Science
+summary:
+  fr:
+    text: Informatik Bachelor of Science, Universität Regensburg (Regensburg). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Informatik Bachelor of Science, Universität Regensburg (Regensburg). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Informatik Bachelor of Science, Universität Regensburg (Regensburg). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-universitat-regensburg-hrk225-informatik-bachelor-of-s-188261018
+  name: Informatik Bachelor of Science
+  institution: Universität Regensburg
+  city: Regensburg
+  field: computer-science
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Universität, Bayern, subjects: Informatik (grundständig); provider \"Universität Regensburg\" matched to HRK institution \"Universität Regensburg\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:188261018

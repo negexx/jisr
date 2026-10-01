@@ -1,0 +1,25 @@
+slug: fr-i-u-t-de-cergy-pontoise-site-dargenteuil-0951946z
+name: I.U.T de Cergy-Pontoise - Site d'Argenteuil
+country: FR
+city:
+  slug: argenteuil
+  name: Argenteuil
+type: public
+website: https://www.cyu.fr/
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-i-u-t-de-cergy-pontoise-site-dargenteuil-0951946z
+  name: I.U.T de Cergy-Pontoise - Site d'Argenteuil
+  institution: ""
+  city: Argenteuil
+  field: ""
+  confidence: ""
+  officialUrl: https://www.cyu.fr/
+  todo: "website candidate from parent university \"CY Cergy Paris Université\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  sourceId: uai:0951946Z

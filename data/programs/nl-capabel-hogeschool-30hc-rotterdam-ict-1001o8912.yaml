@@ -1,0 +1,69 @@
+slug: nl-capabel-hogeschool-30hc-rotterdam-ict-1001o8912
+institution: nl-capabel-hogeschool-30hc-rotterdam
+country: NL
+city: rotterdam
+field: computer-science
+level: bachelor
+name: ICT
+summary:
+  fr:
+    text: ICT (Information & Communication Technology), Capabel Hogeschool (Rotterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: ICT (Information & Communication Technology), Capabel Hogeschool (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: ICT (Information & Communication Technology), Capabel Hogeschool (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 681600
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme HAVO, VWO ou MBO 4 est exigé (équivalence du Bac non précisée) ; fournir copie du diplôme et pièce d'identité, la commission d'examen décide.
+          status: draft
+        en:
+          text: A HAVO, VWO or MBO 4 diploma is required (equivalence of the Bac not specified); provide a copy of the diploma and ID, the examination board decides.
+          status: draft
+        ar:
+          text: يُشترط دبلوم HAVO أو VWO أو MBO 4 (معادلة الباكالوريا غير محددة)؛ قدّموا نسخة من الشهادة وبطاقة الهوية، ولجنة الامتحانات هي من تقرّر.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict
+    last_verified_at: 2026-10-01

@@ -1,0 +1,25 @@
+slug: de-westfalische-hochschule-gelsenkirchen-bo-hrk95-recklinghausen
+name: Westfälische Hochschule Gelsenkirchen, Bocholt, Recklinghausen
+country: DE
+city:
+  slug: recklinghausen
+  name: Recklinghausen
+type: public
+website: https://www.w-hs.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-westfalische-hochschule-gelsenkirchen-bo-hrk95-recklinghausen
+  name: Westfälische Hochschule Gelsenkirchen, Bocholt, Recklinghausen
+  institution: ""
+  city: Recklinghausen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.w-hs.de/
+  todo: "study location in Recklinghausen of \"Westfälische Hochschule Gelsenkirchen, Bocholt, Recklinghausen\" (HRK main town Gelsenkirchen); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:95@recklinghausen

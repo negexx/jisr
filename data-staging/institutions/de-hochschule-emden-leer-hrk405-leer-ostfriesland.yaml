@@ -1,0 +1,25 @@
+slug: de-hochschule-emden-leer-hrk405-leer-ostfriesland
+name: Hochschule Emden/Leer
+country: DE
+city:
+  slug: leer-ostfriesland
+  name: Leer (Ostfriesland)
+type: public
+website: https://www.hs-emden-leer.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-emden-leer-hrk405-leer-ostfriesland
+  name: Hochschule Emden/Leer
+  institution: ""
+  city: Leer (Ostfriesland)
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-emden-leer.de/
+  todo: "study location in Leer (Ostfriesland) of \"Hochschule Emden/Leer\" (HRK main town Emden); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:405@leer-ostfriesland

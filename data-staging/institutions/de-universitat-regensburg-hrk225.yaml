@@ -1,0 +1,25 @@
+slug: de-universitat-regensburg-hrk225
+name: Universität Regensburg
+country: DE
+city:
+  slug: regensburg
+  name: Regensburg
+type: public
+website: https://www.uni-regensburg.de
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-universitat-regensburg-hrk225
+  name: Universität Regensburg
+  institution: ""
+  city: Regensburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-regensburg.de
+  todo: "HRK: Universitäten, Bayern, sponsor \"öffentlich-rechtlich\"; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:225

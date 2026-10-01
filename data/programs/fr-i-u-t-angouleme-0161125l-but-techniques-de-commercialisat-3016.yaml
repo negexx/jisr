@@ -1,0 +1,82 @@
+slug: fr-i-u-t-angouleme-0161125l-but-techniques-de-commercialisat-3016
+institution: fr-i-u-t-angouleme-0161125l
+country: FR
+city: angouleme
+field: business-economics
+level: bachelor
+name: BUT - Techniques de commercialisation
+summary:
+  fr:
+    text: BUT - Techniques de commercialisation, I.U.T. Angoulême (Angoulême). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Techniques de commercialisation, I.U.T. Angoulême (Angoulême). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Techniques de commercialisation, I.U.T. Angoulême (Angoulême). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://iut-angouleme.univ-poitiers.fr/formations/b-u-t-tc-techniques-de-commercialisation/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: fr-campus-france
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - tcf
+        - delf-dalf
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Admission sur dossier scolaire examiné par un jury : résultats du lycée (matières liées à la spécialité), appréciations, motivation. À préparer avec vos bulletins."
+          status: draft
+        en:
+          text: "Admission is based on your school record, reviewed by a jury: high-school results (subjects related to the specialty), appraisals, motivation. Prepare your transcripts."
+          status: draft
+        ar:
+          text: "القبول على أساس الملف الدراسي الذي تدرسه لجنة: نتائج الثانوي (المواد المرتبطة بالتخصص)، التقييمات، والتحفيز. حضّروا كشوف نقطكم."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://iut-angouleme.univ-poitiers.fr/formations/b-u-t-tc-techniques-de-commercialisation/
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
+    last_verified_at: 2026-10-01

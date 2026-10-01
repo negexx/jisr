@@ -1,0 +1,14 @@
+slug: fr-universite-savoie-mont-blanc-annecy-le-v-0741586x
+name: Université Savoie Mont Blanc - Annecy-le-Vieux
+country: FR
+city:
+  slug: annecy
+  name: Annecy
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

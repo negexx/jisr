@@ -1,0 +1,5 @@
+slug: engineering
+name:
+  fr: { text: Ingénierie, status: reviewed }
+  en: { text: Engineering, status: reviewed }
+  ar: { text: الهندسة, status: draft }

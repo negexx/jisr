@@ -1,0 +1,53 @@
+slug: de-hochschule-osnabruck-hrk214-engineering-sciences-daad11216
+institution: de-hochschule-osnabruck-hrk214
+country: DE
+city: osnabruck
+field: engineering
+level: bachelor
+name: Engineering Sciences
+summary:
+  fr:
+    text: Engineering Sciences, Hochschule Osnabrück (Osnabrück). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Engineering Sciences, Hochschule Osnabrück (Osnabrück). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Engineering Sciences, Hochschule Osnabrück (Osnabrück). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11216/
+durationYears:
+  value: 4
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11216/
+    last_verified_at: 2026-10-01

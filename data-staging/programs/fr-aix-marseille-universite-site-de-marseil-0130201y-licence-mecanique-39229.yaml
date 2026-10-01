@@ -1,0 +1,59 @@
+slug: fr-aix-marseille-universite-site-de-marseil-0130201y-licence-mecanique-39229
+institution: fr-aix-marseille-universite-site-de-marseil-0130201y
+country: FR
+city: marseille
+field: engineering
+level: bachelor
+name: Licence - Mécanique - Portail René Descartes
+summary:
+  fr:
+    text: Licence - Mécanique - Portail René Descartes, Aix-Marseille Université - Site de Marseille Luminy (Marseille). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Mécanique - Portail René Descartes, Aix-Marseille Université - Site de Marseille Luminy (Marseille). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Mécanique - Portail René Descartes, Aix-Marseille Université - Site de Marseille Luminy (Marseille). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39229&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39229&typeBac=0&originePc=0
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-aix-marseille-universite-site-de-marseil-0130201y-licence-mecanique-39229
+  name: Licence - Mécanique - Portail René Descartes
+  sourceId: parcoursup:39229
+  confidence: high
+  todo: "demoted 2026-10-01: the official page does not show the programme's name (data:linkcheck); look at the page before listing it again"

@@ -1,0 +1,25 @@
+slug: de-evangelische-hochschule-fur-soziale-arbe-hrk108
+name: Evangelische Hochschule für Soziale Arbeit & Diakonie
+country: DE
+city:
+  slug: hamburg
+  name: Hamburg
+type: null
+website: https://ev-hochschule-hh.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-evangelische-hochschule-fur-soziale-arbe-hrk108
+  name: Evangelische Hochschule für Soziale Arbeit & Diakonie
+  institution: ""
+  city: Hamburg
+  field: ""
+  confidence: ""
+  officialUrl: https://ev-hochschule-hh.de/
+  todo: "HRK: Fachhochschulen / HAW, Hamburg, sponsor \"kirchlich, staatlich anerkannt\"; church-run: the app only has public/private, decide how to classify it; listed as \"http://www.ev-hochschule-hh.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:108

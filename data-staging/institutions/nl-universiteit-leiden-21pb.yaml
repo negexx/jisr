@@ -1,0 +1,25 @@
+slug: nl-universiteit-leiden-21pb
+name: Universiteit Leiden
+country: NL
+city:
+  slug: leiden
+  name: Leiden
+type: null
+website: https://www.universiteitleiden.nl/
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-universiteit-leiden-21pb
+  name: Universiteit Leiden
+  institution: ""
+  city: Leiden
+  field: ""
+  confidence: ""
+  officialUrl: https://www.universiteitleiden.nl/
+  todo: "DUO: wo, denomination \"Rijks\"; public/private is not in the file: check the institution's legal status; listed as \"www.leidenuniv.nl\" but https redirects to a different domain (universiteitleiden.nl): check it is the same institution; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: duo:21PB

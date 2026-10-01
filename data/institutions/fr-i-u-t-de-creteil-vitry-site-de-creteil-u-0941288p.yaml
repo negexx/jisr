@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-creteil-vitry-site-de-creteil-u-0941288p
+name: I.U.T. de Créteil-Vitry - Site de Créteil- UPEC
+country: FR
+city:
+  slug: creteil
+  name: Créteil
+type: public
+website: https://www.u-pec.fr/
+source: parcoursup
+info_kind: guidance
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

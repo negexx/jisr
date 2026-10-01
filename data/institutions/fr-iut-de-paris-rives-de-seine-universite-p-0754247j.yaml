@@ -1,0 +1,14 @@
+slug: fr-iut-de-paris-rives-de-seine-universite-p-0754247j
+name: IUT de Paris - Rives de Seine - Université Paris Cité
+country: FR
+city:
+  slug: paris
+  name: Paris
+type: public
+website: https://iutparis-seine.u-paris.fr/
+source: parcoursup
+info_kind: guidance
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

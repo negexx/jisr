@@ -1,0 +1,267 @@
+import { probeHttps } from "../http";
+import type { ReviewRow, StagedRecord } from "../staging";
+import { READ_SOURCE } from "../staging";
+import {
+  programmeSummary,
+  UNI_ASSIST_SUMMARY,
+  UNI_ASSIST_VPD_SUMMARY,
+  UNIVERSITY_DIRECT_SUMMARY,
+} from "../summaries";
+import { canonicalTown, collapseSpaces, sameTown, slugify } from "../text";
+import type { BaProgramme } from "./ba";
+import {
+  BA_STUDIENSUCHE_PAGE,
+  baUnitSlug,
+  classifyGerman,
+  fetchBaProgrammes,
+  isWorkStudy,
+  matchHrk,
+} from "./ba";
+import type { HrkInstitution } from "./hrk";
+import {
+  fetchHrkInstitutions,
+  HRK_DOWNLOADS_PAGE,
+  sectorOfSponsor,
+  websiteCandidates,
+} from "./hrk";
+import type { Probed } from "./institutions";
+import { hrkSlug, resolveSite, stagedInstitution } from "./institutions";
+
+const unread = (source: string) => ({ value: null, source, info_kind: READ_SOURCE });
+
+function programmeRecord(input: {
+  p: BaProgramme;
+  instSlug: string;
+  instName: string;
+  city: string;
+  match: { field: string; confidence: "high" | "low" };
+  matchedTo: string | null;
+}): StagedRecord {
+  const { p, instSlug, instName, city, match, matchedTo } = input;
+  const slug = `${instSlug}-${slugify(p.name, 24)}-${p.id}`;
+  const todo = [
+    `BA Studiensuche: ${p.hochschulart}, ${p.state}, subjects: ${p.subjects.join(", ") || "none listed"}`,
+    matchedTo === null
+      ? `provider "${p.provider}" is not in the HRK list: check it is a recognised Hochschule`
+      : `provider "${p.provider}" matched to HRK institution "${matchedTo}"`,
+    ...(match.confidence === "low"
+      ? ["field is a judgement call: check the programme content"]
+      : []),
+    ...(/nebenfach|kombination|zwei-?fach/i.test(p.name)
+      ? ["may be a minor or combination subject, not a stand-alone degree"]
+      : []),
+    "the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind",
+  ];
+  const review: ReviewRow = {
+    kind: "programs",
+    slug,
+    name: p.name,
+    institution: instName,
+    city,
+    field: match.field,
+    confidence: match.confidence,
+    officialUrl: "",
+    todo: todo.join("; "),
+  };
+  return {
+    collection: "programs",
+    id: slug,
+    sourceId: `ba:${p.id}`,
+    data: {
+      slug,
+      institution: instSlug,
+      country: "DE",
+      city: slugify(city),
+      field: match.field,
+      level: "bachelor",
+      name: p.name,
+      summary: programmeSummary(p.name, instName, city, "studiensuche"),
+      officialUrl: null,
+      durationYears: unread("ba"),
+      teachingLanguages: unread("ba"),
+      tuition: unread("ba"),
+      intakes: unread("ba"),
+      applicationChannel: unread("ba"),
+      documents: unread("ba"),
+      requirements: { coverage: "partial", source: "ba", info_kind: READ_SOURCE, rules: [] },
+      scholarships: [],
+      sources: { ba: { url: BA_STUDIENSUCHE_PAGE, last_verified_at: null } },
+    },
+    review,
+  };
+}
+
+// A study town of an HRK institution other than its main town gets its own institution unit: the
+// validator requires a programme's city to equal its institution's. Shared with the DAAD importer.
+export function campusUnit(
+  hrkInst: HrkInstitution,
+  city: string,
+  slug: string,
+  probed: Probed,
+): StagedRecord {
+  const site = resolveSite(hrkInst.homepage, probed);
+  return stagedInstitution({
+    slug,
+    name: hrkInst.name,
+    country: "DE",
+    city,
+    type: sectorOfSponsor(hrkInst.sponsor).type,
+    website: site.url,
+    source: "hrk",
+    sourceUrl: HRK_DOWNLOADS_PAGE,
+    sourceId: `hrk:${hrkInst.hsNr}@${slugify(city)}`,
+    todo: `study location in ${city} of "${hrkInst.name}" (HRK main town ${hrkInst.city}); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official`,
+  });
+}
+
+// One institution unit per (institution, study town): the validator requires a programme's city to
+// equal its institution's. The HRK record from `data:import institutions` covers the main town.
+export function buildGermanRecords(input: {
+  programmes: readonly BaProgramme[];
+  hrk: readonly HrkInstitution[];
+  probed: Probed;
+}): StagedRecord[] {
+  const { programmes, hrk, probed } = input;
+  const lite = hrk.map((i) => ({ slug: hrkSlug(i), name: i.name, city: i.city, alias: i.alias }));
+  const hrkBySlug = new Map(hrk.map((i) => [hrkSlug(i), i]));
+  const extras = new Map<string, StagedRecord>();
+  const records: StagedRecord[] = [];
+
+  for (const p of programmes) {
+    const match = classifyGerman(p.group, p.name, p.subjects);
+    const matched = matchHrk(p.provider, p.city, lite);
+    const hrkInst = matched === null ? undefined : hrkBySlug.get(matched.slug);
+    const listedCity = canonicalTown(collapseSpaces(p.city || hrkInst?.city || ""));
+    // The register's spelling of the main town wins, so a variant ("Halle (Saale)") is not a campus.
+    const city =
+      hrkInst !== undefined && sameTown(hrkInst.city, listedCity) ? hrkInst.city : listedCity;
+    if (match === null || city === "" || isWorkStudy(p)) continue;
+
+    let instSlug: string;
+    let instName: string;
+    if (hrkInst !== undefined && matched !== null) {
+      instName = hrkInst.name;
+      instSlug = city === hrkInst.city ? matched.slug : `${matched.slug}-${slugify(city)}`;
+      if (instSlug !== matched.slug && !extras.has(instSlug)) {
+        extras.set(instSlug, campusUnit(hrkInst, city, instSlug, probed));
+      }
+    } else {
+      instName = p.provider;
+      instSlug = baUnitSlug(p);
+      if (!extras.has(instSlug)) {
+        extras.set(
+          instSlug,
+          stagedInstitution({
+            slug: instSlug,
+            name: instName,
+            country: "DE",
+            city,
+            type: null,
+            website: null,
+            source: "ba",
+            sourceUrl: BA_STUDIENSUCHE_PAGE,
+            sourceId: `ba-provider:${p.providerId}@${slugify(city)}`,
+            todo: `provider from the BA Studiensuche (${p.hochschulart}, ${p.state}); not matched to the HRK list: find its official site, check it is a recognised Hochschule, set the type, add its page as the source, then info_kind: official`,
+          }),
+        );
+      }
+    }
+    records.push(
+      programmeRecord({ p, instSlug, instName, city, match, matchedTo: matched?.name ?? null }),
+    );
+  }
+
+  records.push({
+    collection: "application-channels",
+    id: "de-uni-assist",
+    data: {
+      slug: "de-uni-assist",
+      name: "uni-assist",
+      country: "DE",
+      kind: "intermediary",
+      url: "https://www.uni-assist.de/",
+      accountRequired: null,
+      summary: UNI_ASSIST_SUMMARY,
+      source: "main",
+      info_kind: READ_SOURCE,
+      sources: { main: { url: "https://www.uni-assist.de/", last_verified_at: null } },
+    },
+    review: {
+      kind: "application-channels",
+      slug: "de-uni-assist",
+      name: "uni-assist",
+      institution: "",
+      city: "",
+      field: "",
+      confidence: "",
+      officialUrl: "https://www.uni-assist.de/",
+      todo: "not every university uses uni-assist (some take applications directly): confirm per institution, and whether an account is required",
+    },
+  });
+  const channel = (input: {
+    slug: string;
+    name: string;
+    kind: "intermediary" | "direct";
+    url: string;
+    summary: typeof UNI_ASSIST_SUMMARY;
+    todo: string;
+  }): StagedRecord => ({
+    collection: "application-channels",
+    id: input.slug,
+    data: {
+      slug: input.slug,
+      name: input.name,
+      country: "DE",
+      kind: input.kind,
+      url: input.url,
+      accountRequired: null,
+      summary: input.summary,
+      source: "main",
+      info_kind: READ_SOURCE,
+      sources: { main: { url: input.url, last_verified_at: null } },
+    },
+    review: {
+      kind: "application-channels",
+      slug: input.slug,
+      name: input.name,
+      institution: "",
+      city: "",
+      field: "",
+      confidence: "",
+      officialUrl: input.url,
+      todo: input.todo,
+    },
+  });
+  // Which of the three applies to a university comes from `pnpm data:uniassist` (its list) and the
+  // university's own page: the two channels below are only ever set with a quote.
+  records.push(
+    channel({
+      slug: "de-uni-assist-vpd",
+      name: "uni-assist (VPD)",
+      kind: "intermediary",
+      url: "https://www.uni-assist.de/en/tools/uni-assist-universities/",
+      summary: UNI_ASSIST_VPD_SUMMARY,
+      todo: "uni-assist issues the preliminary review document (VPD) and the applicant applies directly to the university: use it only for universities whose uni-assist page says so (data-staging/UNIASSIST.csv, mode vpd_only)",
+    }),
+    channel({
+      slug: "de-university-direct",
+      name: "University application portal",
+      kind: "direct",
+      url: "https://www.daad.de/en/study-and-research-in-germany/plan-your-studies/applying/",
+      summary: UNIVERSITY_DIRECT_SUMMARY,
+      todo: "the university takes applications itself: use it only where the university's own page says so, and set recognition of the foreign diploma separately",
+    }),
+  );
+  return [...extras.values(), ...records];
+}
+
+export async function importGermany(): Promise<StagedRecord[]> {
+  const [programmes, hrk] = [await fetchBaProgrammes(), await fetchHrkInstitutions()];
+  const probed = await probeHttps(
+    hrk.flatMap((i) => {
+      const w = websiteCandidates(i.homepage);
+      return w.needsProbe && w.asListed !== null ? [w.asListed] : [];
+    }),
+  );
+  return buildGermanRecords({ programmes, hrk, probed });
+}

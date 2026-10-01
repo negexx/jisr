@@ -1,0 +1,6 @@
+code: FR
+name:
+  fr: { text: France, status: reviewed }
+  en: { text: France, status: reviewed }
+  ar: { text: فرنسا, status: draft }
+currency: EUR

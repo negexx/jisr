@@ -1,0 +1,63 @@
+slug: de-frankfurt-school-of-finance-management-hrk83-bachelor-in-management-p-383064728
+institution: de-frankfurt-school-of-finance-management-hrk83
+country: DE
+city: frankfurt-am-main
+field: business-economics
+level: bachelor
+name: Bachelor in Management, Philosophy & Economics Bachelor of Science
+summary:
+  fr:
+    text: Bachelor in Management, Philosophy & Economics Bachelor of Science, Frankfurt School of Finance & Management (Frankfurt am Main). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Bachelor in Management, Philosophy & Economics Bachelor of Science, Frankfurt School of Finance & Management (Frankfurt am Main). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Bachelor in Management, Philosophy & Economics Bachelor of Science, Frankfurt School of Finance & Management (Frankfurt am Main). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-frankfurt-school-of-finance-management-hrk83-bachelor-in-management-p-383064728
+  name: Bachelor in Management, Philosophy & Economics Bachelor of Science
+  institution: Frankfurt School of Finance & Management
+  city: Frankfurt am Main
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Universität, Hessen, subjects: Betriebswirtschaftslehre, Business Administration (grundständig), Philosophie, Ethik (grundständig); provider \"Frankfurt School of Finance & Management\" matched to HRK institution \"Frankfurt School of Finance & Management\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:383064728

@@ -1,0 +1,25 @@
+slug: de-katholische-hochschule-nordrhein-westfal-hrk151
+name: Katholische Hochschule Nordrhein-Westfalen - Catholic University of Applied Sciences
+country: DE
+city:
+  slug: koln
+  name: Köln
+type: null
+website: https://katho-nrw.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-katholische-hochschule-nordrhein-westfal-hrk151
+  name: Katholische Hochschule Nordrhein-Westfalen - Catholic University of Applied Sciences
+  institution: ""
+  city: Köln
+  field: ""
+  confidence: ""
+  officialUrl: https://katho-nrw.de/
+  todo: "HRK: Fachhochschulen / HAW, Nordrhein-Westfalen, sponsor \"kirchlich, staatlich anerkannt\"; church-run: the app only has public/private, decide how to classify it; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:151

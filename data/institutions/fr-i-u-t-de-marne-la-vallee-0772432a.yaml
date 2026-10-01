@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-marne-la-vallee-0772432a
+name: I.U.T de Marne la Vallée
+country: FR
+city:
+  slug: champs-sur-marne
+  name: Champs-sur-Marne
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

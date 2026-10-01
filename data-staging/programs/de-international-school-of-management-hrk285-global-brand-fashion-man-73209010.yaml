@@ -1,0 +1,63 @@
+slug: de-international-school-of-management-hrk285-global-brand-fashion-man-73209010
+institution: de-international-school-of-management-hrk285
+country: DE
+city: dortmund
+field: business-economics
+level: bachelor
+name: Global Brand & Fashion Management Bachelor of Arts
+summary:
+  fr:
+    text: Global Brand & Fashion Management Bachelor of Arts, International School of Management (Dortmund). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Global Brand & Fashion Management Bachelor of Arts, International School of Management (Dortmund). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Global Brand & Fashion Management Bachelor of Arts, International School of Management (Dortmund). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-international-school-of-management-hrk285-global-brand-fashion-man-73209010
+  name: Global Brand & Fashion Management Bachelor of Arts
+  institution: International School of Management
+  city: Dortmund
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Marketing, Vertrieb (grundständig); provider \"International School of Management\" matched to HRK institution \"International School of Management\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:73209010

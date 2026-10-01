@@ -471,6 +471,23 @@ describe("MatchCard: density and layout", () => {
     for (const id of ids) expect(twice.container.querySelectorAll(`[id="${id}"]`)).toHaveLength(1);
   });
 
+  it("links to the institution's website under its name, and says nothing when none is known", () => {
+    const base = journey.card("en", E2E_SLUGS.ok);
+    const withSite = renderCard(
+      { ...base, institutionWebsite: "https://www.uni-x.example/" },
+      "en",
+    );
+    const link = [...withSite.container.querySelectorAll("a")].find(
+      (a) => a.getAttribute("href") === "https://www.uni-x.example/",
+    );
+    expect(link?.textContent).toContain("Institution website");
+    expect(link?.getAttribute("rel")).toContain("noopener");
+    expect(withSite.container.textContent).toContain("www.uni-x.example");
+    cleanup();
+    const without = renderCard({ ...base, institutionWebsite: null }, "en");
+    expect(without.container.textContent).not.toContain("Institution website");
+  });
+
   it("wraps the institution and the city in their own bdi", () => {
     const model = journey.card("ar", E2E_SLUGS.ok);
     const { container } = renderCard(model, "ar");

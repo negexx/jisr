@@ -1,0 +1,54 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk44-kronach-digital-business-models-daad10485
+institution: de-hochschule-fur-angewandte-wissenschaften-hrk44-kronach
+country: DE
+city: kronach
+field: business-economics
+level: bachelor
+name: Digital Business – Models and Technologies
+summary:
+  fr:
+    text: Digital Business – Models and Technologies, Hochschule für angewandte Wissenschaften Coburg (Kronach). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Digital Business – Models and Technologies, Hochschule für angewandte Wissenschaften Coburg (Kronach). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Digital Business – Models and Technologies, Hochschule für angewandte Wissenschaften Coburg (Kronach). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10485/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10485/
+    last_verified_at: 2026-10-01

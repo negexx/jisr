@@ -1,0 +1,25 @@
+slug: de-international-school-of-management-hrk285-munchen
+name: International School of Management
+country: DE
+city:
+  slug: munchen
+  name: München
+type: private
+website: https://www.ism.de
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-international-school-of-management-hrk285-munchen
+  name: International School of Management
+  institution: ""
+  city: München
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ism.de
+  todo: "study location in München of \"International School of Management\" (HRK main town Dortmund); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:285@munchen

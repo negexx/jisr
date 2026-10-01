@@ -1,0 +1,25 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk264-weidenbach
+name: Hochschule für angewandte Wissenschaften Weihenstephan-Triesdorf
+country: DE
+city:
+  slug: weidenbach
+  name: Weidenbach
+type: public
+website: https://www.hswt.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-angewandte-wissenschaften-hrk264-weidenbach
+  name: Hochschule für angewandte Wissenschaften Weihenstephan-Triesdorf
+  institution: ""
+  city: Weidenbach
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hswt.de/
+  todo: "study location in Weidenbach of \"Hochschule für angewandte Wissenschaften Weihenstephan-Triesdorf\" (HRK main town Freising); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:264@weidenbach

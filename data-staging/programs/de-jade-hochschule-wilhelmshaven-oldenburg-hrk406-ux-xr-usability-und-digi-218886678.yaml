@@ -1,0 +1,63 @@
+slug: de-jade-hochschule-wilhelmshaven-oldenburg-hrk406-ux-xr-usability-und-digi-218886678
+institution: de-jade-hochschule-wilhelmshaven-oldenburg-hrk406
+country: DE
+city: wilhelmshaven
+field: computer-science
+level: bachelor
+name: UX/XR - Usability und Digitale Welten Bachelor
+summary:
+  fr:
+    text: UX/XR - Usability und Digitale Welten Bachelor, Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth (Wilhelmshaven). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: UX/XR - Usability und Digitale Welten Bachelor, Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth (Wilhelmshaven). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: UX/XR - Usability und Digitale Welten Bachelor, Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth (Wilhelmshaven). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-jade-hochschule-wilhelmshaven-oldenburg-hrk406-ux-xr-usability-und-digi-218886678
+  name: UX/XR - Usability und Digitale Welten Bachelor
+  institution: Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth
+  city: Wilhelmshaven
+  field: computer-science
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Niedersachsen, subjects: Medieninformatik (grundständig), Softwaretechnik (grundständig); provider \"Jade Hochschule\" matched to HRK institution \"Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:218886678

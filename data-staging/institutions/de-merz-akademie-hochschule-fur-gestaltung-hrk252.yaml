@@ -1,0 +1,25 @@
+slug: de-merz-akademie-hochschule-fur-gestaltung-hrk252
+name: Merz Akademie Hochschule für Gestaltung, Kunst und Medien, Stuttgart - Staatlich anerkannt
+country: DE
+city:
+  slug: stuttgart
+  name: Stuttgart
+type: private
+website: https://www.merz-akademie.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-merz-akademie-hochschule-fur-gestaltung-hrk252
+  name: Merz Akademie Hochschule für Gestaltung, Kunst und Medien, Stuttgart - Staatlich anerkannt
+  institution: ""
+  city: Stuttgart
+  field: ""
+  confidence: ""
+  officialUrl: https://www.merz-akademie.de/
+  todo: "HRK: Fachhochschulen / HAW, Baden-Württemberg, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.merz-akademie.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:252

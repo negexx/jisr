@@ -1,0 +1,88 @@
+slug: fr-universite-sorbonne-paris-nord-0931238r-licence-economie-et-gestion-18774
+institution: fr-universite-sorbonne-paris-nord-0931238r
+country: FR
+city: villetaneuse
+field: business-economics
+level: bachelor
+name: Double licence - Economie et gestion / Géographie et aménagement - Double licence Economie-Géographie
+summary:
+  fr:
+    text: Double licence - Economie et gestion / Géographie et aménagement - Double licence Economie-Géographie, Université Sorbonne Paris Nord (Villetaneuse). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Double licence - Economie et gestion / Géographie et aménagement - Double licence Economie-Géographie, Université Sorbonne Paris Nord (Villetaneuse). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Double licence - Economie et gestion / Géographie et aménagement - Double licence Economie-Géographie, Université Sorbonne Paris Nord (Villetaneuse). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=18774&typeBac=0&originePc=0
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 290200
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: fr-campus-france
+  source: page-4
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: C2
+      certificateRequired: true
+      acceptedTests:
+        - tcf
+        - delf-dalf
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site."
+          status: draft
+        en:
+          text: "Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website."
+          status: draft
+        ar:
+          text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=18774&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    last_verified_at: 2026-10-01
+  page-4:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
+    last_verified_at: 2026-10-01

@@ -1,0 +1,53 @@
+slug: de-hochschule-karlsruhe-technik-und-wirtsch-hrk138-bsc-in-mechanical-engine-daad3918
+institution: de-hochschule-karlsruhe-technik-und-wirtsch-hrk138
+country: DE
+city: karlsruhe
+field: engineering
+level: bachelor
+name: BSc in Mechanical Engineering (International)
+summary:
+  fr:
+    text: BSc in Mechanical Engineering (International), Hochschule Karlsruhe - Technik und Wirtschaft (Karlsruhe). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: BSc in Mechanical Engineering (International), Hochschule Karlsruhe - Technik und Wirtschaft (Karlsruhe). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: BSc in Mechanical Engineering (International), Hochschule Karlsruhe - Technik und Wirtschaft (Karlsruhe). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3918/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3918/
+    last_verified_at: 2026-10-01

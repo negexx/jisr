@@ -1,0 +1,63 @@
+slug: de-technische-hochschule-wurzburg-schweinfu-hrk277-betriebswirtschaft-bache-73209216
+institution: de-technische-hochschule-wurzburg-schweinfu-hrk277
+country: DE
+city: wurzburg
+field: business-economics
+level: bachelor
+name: Betriebswirtschaft Bachelor of Arts
+summary:
+  fr:
+    text: Betriebswirtschaft Bachelor of Arts, Technische Hochschule Würzburg-Schweinfurt (Würzburg). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Betriebswirtschaft Bachelor of Arts, Technische Hochschule Würzburg-Schweinfurt (Würzburg). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Betriebswirtschaft Bachelor of Arts, Technische Hochschule Würzburg-Schweinfurt (Würzburg). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-technische-hochschule-wurzburg-schweinfu-hrk277-betriebswirtschaft-bache-73209216
+  name: Betriebswirtschaft Bachelor of Arts
+  institution: Technische Hochschule Würzburg-Schweinfurt
+  city: Würzburg
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Bayern, subjects: Betriebswirtschaftslehre, Business Administration (grundständig); provider \"Technische Hochschule Würzburg-Schweinfurt\" matched to HRK institution \"Technische Hochschule Würzburg-Schweinfurt\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:73209216

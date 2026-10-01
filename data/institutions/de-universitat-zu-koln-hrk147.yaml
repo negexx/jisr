@@ -1,0 +1,14 @@
+slug: de-universitat-zu-koln-hrk147
+name: Universität zu Köln
+country: DE
+city:
+  slug: koln
+  name: Köln
+type: public
+website: https://uni-koeln.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

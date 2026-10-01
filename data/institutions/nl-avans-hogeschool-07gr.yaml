@@ -1,0 +1,14 @@
+slug: nl-avans-hogeschool-07gr
+name: Avans Hogeschool
+country: NL
+city:
+  slug: tilburg
+  name: Tilburg
+type: public
+website: https://www.avans.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.avans.nl/
+    last_verified_at: 2026-10-01

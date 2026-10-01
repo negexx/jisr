@@ -1,0 +1,63 @@
+slug: de-hochschule-fur-wirtschaft-und-gesellscha-hrk307-wirtschaftspsychologie-b-173090166
+institution: de-hochschule-fur-wirtschaft-und-gesellscha-hrk307
+country: DE
+city: ludwigshafen
+field: business-economics
+level: bachelor
+name: Wirtschaftspsychologie Bachelor of Science (B.Sc.)
+summary:
+  fr:
+    text: Wirtschaftspsychologie Bachelor of Science (B.Sc.), Hochschule für Wirtschaft und Gesellschaft Ludwigshafen (Ludwigshafen). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Wirtschaftspsychologie Bachelor of Science (B.Sc.), Hochschule für Wirtschaft und Gesellschaft Ludwigshafen (Ludwigshafen). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Wirtschaftspsychologie Bachelor of Science (B.Sc.), Hochschule für Wirtschaft und Gesellschaft Ludwigshafen (Ludwigshafen). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-fur-wirtschaft-und-gesellscha-hrk307-wirtschaftspsychologie-b-173090166
+  name: Wirtschaftspsychologie Bachelor of Science (B.Sc.)
+  institution: Hochschule für Wirtschaft und Gesellschaft Ludwigshafen
+  city: Ludwigshafen
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Rheinland-Pfalz, subjects: Psychologie (grundständig), Wirtschaftspsychologie (grundständig), Betriebswirtschaftslehre, Business Administration (grundständig); provider \"Hochschule für Wirtschaft und Gesellschaft Ludwigshafen\" matched to HRK institution \"Hochschule für Wirtschaft und Gesellschaft Ludwigshafen\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:173090166

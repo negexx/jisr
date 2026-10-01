@@ -1,0 +1,25 @@
+slug: de-rheinische-friedrich-wilhelms-universita-hrk32
+name: Rheinische Friedrich-Wilhelms-Universität Bonn
+country: DE
+city:
+  slug: bonn
+  name: Bonn
+type: public
+website: https://www.uni-bonn.de/de
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-rheinische-friedrich-wilhelms-universita-hrk32
+  name: Rheinische Friedrich-Wilhelms-Universität Bonn
+  institution: ""
+  city: Bonn
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-bonn.de/de
+  todo: "HRK: Universitäten, Nordrhein-Westfalen, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.uni-bonn.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:32

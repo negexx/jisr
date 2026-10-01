@@ -1,0 +1,25 @@
+slug: fr-universite-paris-saclay-campus-dorsay-0912418j
+name: Université Paris-Saclay, Campus d'Orsay
+country: FR
+city:
+  slug: orsay
+  name: Orsay
+type: public
+website: null
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-universite-paris-saclay-campus-dorsay-0912418j
+  name: Université Paris-Saclay, Campus d'Orsay
+  institution: ""
+  city: Orsay
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "website missing: find the official https site, add that page as the source, then set info_kind: official"
+  sourceId: uai:0912418J

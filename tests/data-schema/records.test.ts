@@ -456,6 +456,16 @@ describe("record schemas", () => {
     expect(matched, JSON.stringify(issues.map((i) => [i.path.join("."), i.code]))).toBe(true);
   });
 
+  it("accepts an institution whose type and website the registers do not state (unknown, not guessed)", () => {
+    const { schema } = COLLECTIONS.institutions;
+    expect(schema.safeParse(institution({ type: null, website: null })).success).toBe(true);
+    expect(schema.safeParse(institution({ type: null })).success).toBe(true);
+    expect(schema.safeParse(institution({ website: "http://insecure.example" })).success).toBe(
+      false,
+    );
+    expect(schema.safeParse(institution({ type: "mixed" })).success).toBe(false);
+  });
+
   it("accepts a route whose conditions have distinct ids", () => {
     const record = admissionRoute({ conditions: [condition("xx-test-a"), condition("xx-test-b")] });
     expect(COLLECTIONS["admission-routes"].schema.safeParse(record).success).toBe(true);

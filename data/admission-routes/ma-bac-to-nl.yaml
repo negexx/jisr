@@ -1,0 +1,41 @@
+slug: ma-bac-to-nl
+origin: MA
+credentialType: ma-bac
+destination: NL
+level: bachelor
+outcome: check
+conditions:
+  - id: hbo-or-wo-level
+    kind: manual_check
+    source: higher
+    info_kind: official
+    note:
+      fr:
+        text: "Les bachelors HBO (hogescholen) demandent au minimum un diplôme HAVO ; les bachelors WO (universités de recherche) demandent un diplôme VWO ou une première année HBO. Votre baccalauréat se situe entre les deux : l'établissement décide."
+        status: draft
+      en:
+        text: "HBO bachelors (universities of applied sciences) ask at least a HAVO diploma; WO bachelors (research universities) ask a VWO diploma or a first HBO year. Your baccalauréat lies between the two: the institution decides."
+        status: draft
+      ar:
+        text: "تشترط برامج الإجازة في معاهد العلوم التطبيقية (HBO) دبلوم HAVO على الأقل، وتشترط برامج الجامعات البحثية (WO) دبلوم VWO أو سنة أولى من HBO. وتقع باكالوريتكم بين المستويين: والقرار للمؤسسة."
+        status: draft
+note:
+  fr:
+    text: "Nuffic compare l'Attestation du Baccalauréat à « au moins un diplôme HAVO », soit un niveau entre HAVO et VWO. C'est une comparaison de diplômes, pas une décision d'admission : chaque établissement décide."
+    status: draft
+  en:
+    text: "Nuffic compares the Attestation du Baccalauréat to \"at least a HAVO diploma\", a level between HAVO and VWO. This is a diploma comparison, not an admission decision: each institution decides."
+    status: draft
+  ar:
+    text: "تقارن Nuffic شهادة الباكالوريا بـ «دبلوم HAVO على الأقل»، أي مستوى بين HAVO وVWO. وهذه مقارنة للشهادات وليست قرار قبول: فكل مؤسسة تقرّر."
+    status: draft
+applicationChannels: [nl-studielink]
+source: main
+info_kind: official
+sources:
+  main:
+    url: https://www.nuffic.nl/en/education-systems/morocco/level-of-diplomas
+    last_verified_at: 2026-10-01
+  higher:
+    url: https://www.nuffic.nl/en/education-systems/the-netherlands/higher-education
+    last_verified_at: 2026-10-01

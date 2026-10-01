@@ -1,0 +1,63 @@
+slug: nl-avans-hogeschool-07gr-breda-communicatie-1001o3494
+institution: nl-avans-hogeschool-07gr-breda
+country: NL
+city: breda
+field: business-economics
+level: bachelor
+name: Communicatie
+summary:
+  fr:
+    text: Communicatie (Communication), Avans Hogeschool (Breda). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Communicatie (Communication), Avans Hogeschool (Breda). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Communicatie (Communication), Avans Hogeschool (Breda). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: rio
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: nl-avans-hogeschool-07gr-breda-communicatie-1001o3494
+  name: Communicatie
+  institution: Avans Hogeschool
+  city: Breda
+  field: business-economics
+  confidence: low
+  officialUrl: ""
+  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Avans Hogeschool: Breda\"; international name \"Communication\"; field is a judgement call: check the programme content; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page)"
+  sourceId: rio:07GR/07GR00/1001O3494

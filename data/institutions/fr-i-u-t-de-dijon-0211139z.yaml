@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-dijon-0211139z
+name: I.U.T de Dijon
+country: FR
+city:
+  slug: dijon
+  name: Dijon
+type: public
+website: https://www.ube.fr/
+source: parcoursup
+info_kind: guidance
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

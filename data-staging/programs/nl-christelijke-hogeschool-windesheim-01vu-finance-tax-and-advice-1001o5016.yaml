@@ -1,0 +1,63 @@
+slug: nl-christelijke-hogeschool-windesheim-01vu-finance-tax-and-advice-1001o5016
+institution: nl-christelijke-hogeschool-windesheim-01vu
+country: NL
+city: zwolle
+field: business-economics
+level: bachelor
+name: Finance, Tax and Advice
+summary:
+  fr:
+    text: Finance, Tax and Advice (Finance, Tax and Advice), Christelijke Hogeschool Windesheim (Zwolle). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Finance, Tax and Advice (Finance, Tax and Advice), Christelijke Hogeschool Windesheim (Zwolle). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Finance, Tax and Advice (Finance, Tax and Advice), Christelijke Hogeschool Windesheim (Zwolle). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: rio
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: nl-christelijke-hogeschool-windesheim-01vu-finance-tax-and-advice-1001o5016
+  name: Finance, Tax and Advice
+  institution: Christelijke Hogeschool Windesheim
+  city: Zwolle
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Christelijke Hogeschool Windesheim: Zwolle\"; international name \"Finance, Tax and Advice\"; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page)"
+  sourceId: rio:01VU/01VU00/1001O5016

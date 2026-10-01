@@ -1,0 +1,14 @@
+slug: fr-iut-de-kourou-campus-de-troubiran-a-caye-9730408f
+name: IUT de Kourou - Campus de TROUBIRAN à Cayenne
+country: FR
+city:
+  slug: cayenne
+  name: Cayenne
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

@@ -1,0 +1,14 @@
+slug: fr-universite-damiens-0801344b
+name: Université d'Amiens
+country: FR
+city:
+  slug: amiens
+  name: Amiens
+type: public
+website: https://www.u-picardie.fr/
+source: esr
+info_kind: official
+sources:
+  esr:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-principaux-etablissements-enseignement-superieur/
+    last_verified_at: 2026-10-01

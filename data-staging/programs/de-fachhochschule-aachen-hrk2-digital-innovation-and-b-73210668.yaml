@@ -1,0 +1,63 @@
+slug: de-fachhochschule-aachen-hrk2-digital-innovation-and-b-73210668
+institution: de-fachhochschule-aachen-hrk2
+country: DE
+city: aachen
+field: engineering
+level: bachelor
+name: Digital Innovation and Business mit Praxis- oder Auslandssemester Bachelor
+summary:
+  fr:
+    text: Digital Innovation and Business mit Praxis- oder Auslandssemester Bachelor, Fachhochschule Aachen (Aachen). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Digital Innovation and Business mit Praxis- oder Auslandssemester Bachelor, Fachhochschule Aachen (Aachen). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Digital Innovation and Business mit Praxis- oder Auslandssemester Bachelor, Fachhochschule Aachen (Aachen). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-fachhochschule-aachen-hrk2-digital-innovation-and-b-73210668
+  name: Digital Innovation and Business mit Praxis- oder Auslandssemester Bachelor
+  institution: Fachhochschule Aachen
+  city: Aachen
+  field: engineering
+  confidence: low
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Nordrhein-Westfalen, subjects: Informations-, Kommunikationstechnik (grundständig), Medienwirtschaft, -management (grundständig); provider \"Fachhochschule Aachen\" matched to HRK institution \"Fachhochschule Aachen\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:73210668

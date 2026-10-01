@@ -1,0 +1,92 @@
+slug: de-hochschule-bonn-rhein-sieg-university-of-hrk294-international-business-b-daad5225
+institution: de-hochschule-bonn-rhein-sieg-university-of-hrk294
+country: DE
+city: sankt-augustin
+field: business-economics
+level: bachelor
+name: International Business (BSc)
+summary:
+  fr:
+    text: International Business (BSc), Hochschule Bonn-Rhein-Sieg, University of Applied Sciences (Sankt Augustin). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Business (BSc), Hochschule Bonn-Rhein-Sieg, University of Applied Sciences (Sankt Augustin). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business (BSc), Hochschule Bonn-Rhein-Sieg, University of Applied Sciences (Sankt Augustin). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www.h-brs.de/en/wiwi/study/bachelor/international-business
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-uni-assist
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Titre d'accès (Abitur/Fachabitur) ou diplôme reconnu équivalent par les autorités compétentes : vérifier la reconnaissance du Bac marocain auprès d'uni-assist."
+          status: draft
+        en:
+          text: "Entry qualification (Abitur/Fachabitur) or a diploma recognised as equivalent by the competent authorities: check recognition of the Moroccan Bac with uni-assist."
+          status: draft
+        ar:
+          text: "شهادة الأهلية للدراسة (Abitur/Fachabitur) أو شهادة معترف بمعادلتها من الجهات المختصة: تحقّق من الاعتراف بالباكالوريا المغربية لدى uni-assist."
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Si le diplôme de fin d'études est reconnu dans le pays d'origine mais pas en Allemagne comme HZB, un Studienkolleg est obligatoire avant le début des études.
+          status: draft
+        en:
+          text: If your school-leaving diploma is recognised in your home country but not in Germany as a university entrance qualification (HZB), a Studienkolleg is mandatory before studies start.
+          status: draft
+        ar:
+          text: إذا كانت شهادتك معترفًا بها في بلدك لكن غير معترف بها في ألمانيا كشهادة أهلية للدراسة الجامعية (HZB)، فإن الدراسة في Studienkolleg إلزامية قبل بدء الدراسة.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.h-brs.de/en/wiwi/study/bachelor/international-business
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.h-brs.de/en/node/74451
+    last_verified_at: 2026-10-01

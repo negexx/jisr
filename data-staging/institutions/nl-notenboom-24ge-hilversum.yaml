@@ -1,0 +1,25 @@
+slug: nl-notenboom-24ge-hilversum
+name: Notenboom
+country: NL
+city:
+  slug: hilversum
+  name: Hilversum
+type: null
+website: null
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-notenboom-24ge-hilversum
+  name: Notenboom
+  institution: ""
+  city: Hilversum
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "campus in Hilversum of \"Notenboom\" (RIO location \"Business School Notenboom: Hilversum\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:24GE@hilversum

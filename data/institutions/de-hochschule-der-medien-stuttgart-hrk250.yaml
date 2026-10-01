@@ -1,0 +1,14 @@
+slug: de-hochschule-der-medien-stuttgart-hrk250
+name: Hochschule der Medien Stuttgart
+country: DE
+city:
+  slug: stuttgart
+  name: Stuttgart
+type: public
+website: https://hdm-stuttgart.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

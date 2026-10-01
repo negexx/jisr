@@ -1,0 +1,25 @@
+slug: de-jade-hochschule-wilhelmshaven-oldenburg-hrk406-oldenburg-oldb
+name: Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth
+country: DE
+city:
+  slug: oldenburg-oldb
+  name: Oldenburg (Oldb)
+type: public
+website: https://www.jade-hs.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-jade-hochschule-wilhelmshaven-oldenburg-hrk406-oldenburg-oldb
+  name: Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth
+  institution: ""
+  city: Oldenburg (Oldb)
+  field: ""
+  confidence: ""
+  officialUrl: https://www.jade-hs.de/
+  todo: "study location in Oldenburg (Oldb) of \"Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth\" (HRK main town Wilhelmshaven); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:406@oldenburg-oldb

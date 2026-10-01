@@ -1,0 +1,12 @@
+slug: ma-bac-scale
+country: MA
+min: 0
+max: 20
+pass: 10
+direction: higher_better
+source: main
+info_kind: guidance
+sources:
+  main:
+    url: https://www.phil.fau.de/files/2016/01/Umrechnung-ausl%C3%A4ndischer-Noten.pdf
+    last_verified_at: 2026-10-01

@@ -1,0 +1,25 @@
+slug: nl-hogeschool-van-hall-larenstein-30hd-leeuwarden
+name: Hogeschool Van Hall Larenstein
+country: NL
+city:
+  slug: leeuwarden
+  name: Leeuwarden
+type: null
+website: null
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-hogeschool-van-hall-larenstein-30hd-leeuwarden
+  name: Hogeschool Van Hall Larenstein
+  institution: ""
+  city: Leeuwarden
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "campus in Leeuwarden of \"Hogeschool Van Hall Larenstein\" (RIO location \"Hogeschool Van Hall Larenstein: Leeuwarden\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed website \"www.vanhall-larenstein.nl\" did not answer over https (probe failed): find the official https site; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:30HD@leeuwarden

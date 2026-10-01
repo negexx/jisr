@@ -1,0 +1,63 @@
+slug: de-universitat-kassel-hrk142-mechatronik-bachelor-73434376
+institution: de-universitat-kassel-hrk142
+country: DE
+city: kassel
+field: engineering
+level: bachelor
+name: Mechatronik Bachelor
+summary:
+  fr:
+    text: Mechatronik Bachelor, Universität Kassel (Kassel). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Mechatronik Bachelor, Universität Kassel (Kassel). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Mechatronik Bachelor, Universität Kassel (Kassel). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-universitat-kassel-hrk142-mechatronik-bachelor-73434376
+  name: Mechatronik Bachelor
+  institution: Universität Kassel
+  city: Kassel
+  field: engineering
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Universität, Hessen, subjects: Mechatronik (grundständig); provider \"Universität Kassel\" matched to HRK institution \"Universität Kassel\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:73434376

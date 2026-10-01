@@ -1,0 +1,25 @@
+slug: nl-hogeschool-van-arnhem-en-nijmegen-25kb-nijmegen
+name: Hogeschool van Arnhem en Nijmegen
+country: NL
+city:
+  slug: nijmegen
+  name: Nijmegen
+type: null
+website: https://www.han.nl/
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-hogeschool-van-arnhem-en-nijmegen-25kb-nijmegen
+  name: Hogeschool van Arnhem en Nijmegen
+  institution: ""
+  city: Nijmegen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.han.nl/
+  todo: "campus in Nijmegen of \"Hogeschool van Arnhem en Nijmegen\" (RIO location \"Hogeschool van Arnhem en Nijmegen: Nijmegen\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed as \"www.han.nl/\"; the https form answers; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:25KB@nijmegen

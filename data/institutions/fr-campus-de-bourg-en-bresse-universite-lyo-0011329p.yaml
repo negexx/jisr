@@ -1,0 +1,14 @@
+slug: fr-campus-de-bourg-en-bresse-universite-lyo-0011329p
+name: Campus de Bourg-en-Bresse - Université Lyon 3
+country: FR
+city:
+  slug: bourg-en-bresse
+  name: Bourg-en-Bresse
+type: public
+website: https://bourgenbresse.univ-lyon3.fr
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://bourgenbresse.univ-lyon3.fr
+    last_verified_at: 2026-10-01

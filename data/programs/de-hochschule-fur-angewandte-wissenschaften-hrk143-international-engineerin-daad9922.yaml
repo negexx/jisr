@@ -1,0 +1,53 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk143-international-engineerin-daad9922
+institution: de-hochschule-fur-angewandte-wissenschaften-hrk143
+country: DE
+city: kempten
+field: engineering
+level: bachelor
+name: International Engineering
+summary:
+  fr:
+    text: International Engineering, Hochschule für angewandte Wissenschaften Kempten (Kempten). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Engineering, Hochschule für angewandte Wissenschaften Kempten (Kempten). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Engineering, Hochschule für angewandte Wissenschaften Kempten (Kempten). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9922/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9922/
+    last_verified_at: 2026-10-01

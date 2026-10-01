@@ -1,0 +1,68 @@
+slug: fr-institut-catholique-de-lille-faculte-de-0592806e-licence-economie-12455
+institution: fr-institut-catholique-de-lille-faculte-de-0592806e
+country: FR
+city: lille
+field: business-economics
+level: bachelor
+name: Licence - Economie - Parcours Economie-Finance
+summary:
+  fr:
+    text: Licence - Economie - Parcours Economie-Finance, Institut Catholique de Lille-Faculté de Gestion, Economie et Sciences (Lille). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Economie - Parcours Economie-Finance, Institut Catholique de Lille-Faculté de Gestion, Economie et Sciences (Lille). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Economie - Parcours Economie-Finance, Institut Catholique de Lille-Faculté de Gestion, Economie et Sciences (Lille). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12455&typeBac=0&originePc=0
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: fr-campus-france
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: C1
+      certificateRequired: true
+      acceptedTests:
+        - tcf
+        - delf-dalf
+scholarships: []
+sources:
+  programme:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12455&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
+    last_verified_at: 2026-10-01

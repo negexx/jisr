@@ -1,0 +1,25 @@
+slug: nl-eurocollege-hogeschool-27wc-rotterdam
+name: EuroCollege Hogeschool
+country: NL
+city:
+  slug: rotterdam
+  name: Rotterdam
+type: null
+website: null
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-eurocollege-hogeschool-27wc-rotterdam
+  name: EuroCollege Hogeschool
+  institution: ""
+  city: Rotterdam
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "campus in Rotterdam of \"EuroCollege Hogeschool\" (RIO location \"EuroCollege Hogeschool: Rotterdam\"): public/private is not in the register; institution not in the DUO list: find its website; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:27WC@rotterdam

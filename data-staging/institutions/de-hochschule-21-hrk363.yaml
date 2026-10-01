@@ -1,0 +1,25 @@
+slug: de-hochschule-21-hrk363
+name: hochschule 21
+country: DE
+city:
+  slug: buxtehude
+  name: Buxtehude
+type: private
+website: https://www.hs21.de
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-21-hrk363
+  name: hochschule 21
+  institution: ""
+  city: Buxtehude
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs21.de
+  todo: "HRK: Fachhochschulen / HAW, Niedersachsen, sponsor \"privat, staatlich anerkannt\"; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:363

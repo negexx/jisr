@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-cergy-pontoise-site-de-sarcelle-0951985s
+name: I.U.T de Cergy-Pontoise - Site de Sarcelles
+country: FR
+city:
+  slug: sarcelles
+  name: Sarcelles
+type: public
+website: https://www.cyu.fr/
+source: parcoursup
+info_kind: guidance
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

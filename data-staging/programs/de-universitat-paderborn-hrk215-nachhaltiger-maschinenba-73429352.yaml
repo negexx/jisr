@@ -1,0 +1,63 @@
+slug: de-universitat-paderborn-hrk215-nachhaltiger-maschinenba-73429352
+institution: de-universitat-paderborn-hrk215
+country: DE
+city: paderborn
+field: engineering
+level: bachelor
+name: Nachhaltiger Maschinenbau Bachelor
+summary:
+  fr:
+    text: Nachhaltiger Maschinenbau Bachelor, Universität Paderborn (Paderborn). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Nachhaltiger Maschinenbau Bachelor, Universität Paderborn (Paderborn). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Nachhaltiger Maschinenbau Bachelor, Universität Paderborn (Paderborn). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-universitat-paderborn-hrk215-nachhaltiger-maschinenba-73429352
+  name: Nachhaltiger Maschinenbau Bachelor
+  institution: Universität Paderborn
+  city: Paderborn
+  field: engineering
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Universität, Nordrhein-Westfalen, subjects: Maschinenbau (grundständig); provider \"Universität Paderborn\" matched to HRK institution \"Universität Paderborn\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:73429352

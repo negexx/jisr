@@ -1,0 +1,25 @@
+slug: de-technische-universitat-bergakademie-frei-hrk85
+name: Technische Universität Bergakademie Freiberg
+country: DE
+city:
+  slug: freiberg
+  name: Freiberg
+type: public
+website: https://tu-freiberg.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-universitat-bergakademie-frei-hrk85
+  name: Technische Universität Bergakademie Freiberg
+  institution: ""
+  city: Freiberg
+  field: ""
+  confidence: ""
+  officialUrl: https://tu-freiberg.de/
+  todo: "HRK: Universitäten, Sachsen, sponsor \"öffentlich-rechtlich\"; listed as \"http://tu-freiberg.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:85

@@ -1,0 +1,54 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk287-computer-science-bsc-daad7216
+institution: de-hochschule-fur-angewandte-wissenschaften-hrk287
+country: DE
+city: hof
+field: computer-science
+level: bachelor
+name: Computer Science (BSc)
+summary:
+  fr:
+    text: Computer Science (BSc), Hochschule für angewandte Wissenschaften Hof (Hof). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Computer Science (BSc), Hochschule für angewandte Wissenschaften Hof (Hof). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Computer Science (BSc), Hochschule für angewandte Wissenschaften Hof (Hof). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7216/
+durationYears:
+  value: 4
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7216/
+    last_verified_at: 2026-10-01

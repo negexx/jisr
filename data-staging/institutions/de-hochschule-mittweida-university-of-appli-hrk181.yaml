@@ -1,0 +1,25 @@
+slug: de-hochschule-mittweida-university-of-appli-hrk181
+name: Hochschule Mittweida, University of Applied Sciences
+country: DE
+city:
+  slug: mittweida
+  name: Mittweida
+type: public
+website: https://www.hs-mittweida.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-mittweida-university-of-appli-hrk181
+  name: Hochschule Mittweida, University of Applied Sciences
+  institution: ""
+  city: Mittweida
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-mittweida.de/
+  todo: "HRK: Fachhochschulen / HAW, Sachsen, sponsor \"öffentlich-rechtlich\"; listed as \"www.hs-mittweida.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:181

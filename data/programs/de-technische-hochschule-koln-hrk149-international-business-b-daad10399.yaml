@@ -1,0 +1,53 @@
+slug: de-technische-hochschule-koln-hrk149-international-business-b-daad10399
+institution: de-technische-hochschule-koln-hrk149
+country: DE
+city: koln
+field: business-economics
+level: bachelor
+name: International Business (Bachelor of Science)
+summary:
+  fr:
+    text: International Business (Bachelor of Science), Technische Hochschule Köln (Köln). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Business (Bachelor of Science), Technische Hochschule Köln (Köln). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business (Bachelor of Science), Technische Hochschule Köln (Köln). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10399/
+durationYears:
+  value: null
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10399/
+    last_verified_at: 2026-10-01

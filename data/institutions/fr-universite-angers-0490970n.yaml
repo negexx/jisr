@@ -1,0 +1,14 @@
+slug: fr-universite-angers-0490970n
+name: Université Angers
+country: FR
+city:
+  slug: angers
+  name: Angers
+type: public
+website: https://www.univ-angers.fr/fr/index.html
+source: esr
+info_kind: official
+sources:
+  esr:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-principaux-etablissements-enseignement-superieur/
+    last_verified_at: 2026-10-01

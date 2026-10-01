@@ -1,0 +1,14 @@
+slug: fr-iut-aix-marseille-site-de-marseille-lumi-0133479l
+name: IUT Aix-Marseille - Site de Marseille Luminy
+country: FR
+city:
+  slug: marseille
+  name: Marseille
+type: public
+website: https://iut.univ-amu.fr/fr/sites-geographiques/marseille-luminy
+source: parcoursup
+info_kind: guidance
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

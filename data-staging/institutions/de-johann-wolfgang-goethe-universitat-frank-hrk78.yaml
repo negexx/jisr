@@ -1,0 +1,25 @@
+slug: de-johann-wolfgang-goethe-universitat-frank-hrk78
+name: Johann Wolfgang Goethe-Universität, Frankfurt am Main
+country: DE
+city:
+  slug: frankfurt-am-main
+  name: Frankfurt am Main
+type: public
+website: https://www.uni-frankfurt.de/en
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-johann-wolfgang-goethe-universitat-frank-hrk78
+  name: Johann Wolfgang Goethe-Universität, Frankfurt am Main
+  institution: ""
+  city: Frankfurt am Main
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-frankfurt.de/en
+  todo: "HRK: Universitäten, Hessen, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.uni-frankfurt.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:78

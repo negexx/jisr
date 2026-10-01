@@ -1,0 +1,25 @@
+slug: de-technische-universitat-munchen-hrk184-freising
+name: Technische Universität München
+country: DE
+city:
+  slug: freising
+  name: Freising
+type: public
+website: https://www.tum.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-universitat-munchen-hrk184-freising
+  name: Technische Universität München
+  institution: ""
+  city: Freising
+  field: ""
+  confidence: ""
+  officialUrl: https://www.tum.de/
+  todo: "study location in Freising of \"Technische Universität München\" (HRK main town München); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:184@freising

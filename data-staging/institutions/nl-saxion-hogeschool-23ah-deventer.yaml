@@ -1,0 +1,25 @@
+slug: nl-saxion-hogeschool-23ah-deventer
+name: Saxion Hogeschool
+country: NL
+city:
+  slug: deventer
+  name: Deventer
+type: null
+website: https://www.saxion.nl/
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-saxion-hogeschool-23ah-deventer
+  name: Saxion Hogeschool
+  institution: ""
+  city: Deventer
+  field: ""
+  confidence: ""
+  officialUrl: https://www.saxion.nl/
+  todo: "campus in Deventer of \"Saxion Hogeschool\" (RIO location \"Saxion Hogeschool: Deventer\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed as \"www.saxion.nl\"; the https form answers; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:23AH@deventer

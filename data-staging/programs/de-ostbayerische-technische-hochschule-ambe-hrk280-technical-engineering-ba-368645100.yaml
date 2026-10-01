@@ -1,0 +1,63 @@
+slug: de-ostbayerische-technische-hochschule-ambe-hrk280-technical-engineering-ba-368645100
+institution: de-ostbayerische-technische-hochschule-ambe-hrk280
+country: DE
+city: amberg
+field: engineering
+level: bachelor
+name: Technical Engineering Bachelor of Engineering
+summary:
+  fr:
+    text: Technical Engineering Bachelor of Engineering, Ostbayerische Technische Hochschule Amberg-Weiden (Amberg). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Technical Engineering Bachelor of Engineering, Ostbayerische Technische Hochschule Amberg-Weiden (Amberg). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Technical Engineering Bachelor of Engineering, Ostbayerische Technische Hochschule Amberg-Weiden (Amberg). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-ostbayerische-technische-hochschule-ambe-hrk280-technical-engineering-ba-368645100
+  name: Technical Engineering Bachelor of Engineering
+  institution: Ostbayerische Technische Hochschule Amberg-Weiden
+  city: Amberg
+  field: engineering
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Bayern, subjects: Maschinenbau (grundständig), Chemieingenieurwesen (grundständig), Elektrotechnik (grundständig); provider \"Ostbayerische Technische Hochschule Amberg-Weiden\" matched to HRK institution \"Ostbayerische Technische Hochschule Amberg-Weiden\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:368645100

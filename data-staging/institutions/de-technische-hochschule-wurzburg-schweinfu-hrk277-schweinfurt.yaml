@@ -1,0 +1,25 @@
+slug: de-technische-hochschule-wurzburg-schweinfu-hrk277-schweinfurt
+name: Technische Hochschule Würzburg-Schweinfurt
+country: DE
+city:
+  slug: schweinfurt
+  name: Schweinfurt
+type: public
+website: https://www.thws.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-hochschule-wurzburg-schweinfu-hrk277-schweinfurt
+  name: Technische Hochschule Würzburg-Schweinfurt
+  institution: ""
+  city: Schweinfurt
+  field: ""
+  confidence: ""
+  officialUrl: https://www.thws.de/
+  todo: "study location in Schweinfurt of \"Technische Hochschule Würzburg-Schweinfurt\" (HRK main town Würzburg); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:277@schweinfurt

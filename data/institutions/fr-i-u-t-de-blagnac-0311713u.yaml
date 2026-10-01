@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-blagnac-0311713u
+name: I.U.T de Blagnac
+country: FR
+city:
+  slug: blagnac
+  name: Blagnac
+type: public
+website: https://www.univ-tlse2.fr/
+source: parcoursup
+info_kind: guidance
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

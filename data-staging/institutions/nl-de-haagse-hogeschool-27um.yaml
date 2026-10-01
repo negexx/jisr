@@ -1,0 +1,25 @@
+slug: nl-de-haagse-hogeschool-27um
+name: De Haagse Hogeschool
+country: NL
+city:
+  slug: s-gravenhage
+  name: "'s-Gravenhage"
+type: null
+website: https://www.dehaagsehogeschool.nl/
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-de-haagse-hogeschool-27um
+  name: De Haagse Hogeschool
+  institution: ""
+  city: "'s-Gravenhage"
+  field: ""
+  confidence: ""
+  officialUrl: https://www.dehaagsehogeschool.nl/
+  todo: "DUO: hbo, denomination \"Algemeen bijzonder\"; public/private is not in the file: check the institution's legal status; listed as \"www.dehaagsehogeschool.nl\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: duo:27UM

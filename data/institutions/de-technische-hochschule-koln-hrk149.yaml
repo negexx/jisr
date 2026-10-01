@@ -1,0 +1,14 @@
+slug: de-technische-hochschule-koln-hrk149
+name: Technische Hochschule Köln
+country: DE
+city:
+  slug: koln
+  name: Köln
+type: public
+website: https://www.th-koeln.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

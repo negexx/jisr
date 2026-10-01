@@ -1,0 +1,14 @@
+slug: fr-ecm-ecole-de-commerce-et-management-0251888s
+name: ECM Ecole de commerce et management
+country: FR
+city:
+  slug: besancon
+  name: Besançon
+type: private
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

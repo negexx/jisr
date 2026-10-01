@@ -1,0 +1,53 @@
+slug: de-hochschule-kaiserslautern-university-of-hrk306-pirmasens-leather-and-textile-engi-daad10643
+institution: de-hochschule-kaiserslautern-university-of-hrk306-pirmasens
+country: DE
+city: pirmasens
+field: engineering
+level: bachelor
+name: Leather and Textile Engineering
+summary:
+  fr:
+    text: Leather and Textile Engineering, Hochschule Kaiserslautern (University of Applied Sciences) (Pirmasens). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Leather and Textile Engineering, Hochschule Kaiserslautern (University of Applied Sciences) (Pirmasens). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Leather and Textile Engineering, Hochschule Kaiserslautern (University of Applied Sciences) (Pirmasens). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10643/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10643/
+    last_verified_at: 2026-10-01

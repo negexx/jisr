@@ -1,0 +1,14 @@
+slug: de-leuphana-universitat-luneburg-hrk171
+name: Leuphana Universität Lüneburg
+country: DE
+city:
+  slug: luneburg
+  name: Lüneburg
+type: public
+website: https://www.leuphana.de/services/studierendenservice/infoportal-erstauskunft-zum-studium.html
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

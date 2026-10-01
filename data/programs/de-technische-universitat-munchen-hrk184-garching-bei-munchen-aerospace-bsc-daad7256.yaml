@@ -1,0 +1,53 @@
+slug: de-technische-universitat-munchen-hrk184-garching-bei-munchen-aerospace-bsc-daad7256
+institution: de-technische-universitat-munchen-hrk184-garching-bei-munchen
+country: DE
+city: garching-bei-munchen
+field: engineering
+level: bachelor
+name: Aerospace (BSc)
+summary:
+  fr:
+    text: Aerospace (BSc), Technische Universität München (Garching bei München). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Aerospace (BSc), Technische Universität München (Garching bei München). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Aerospace (BSc), Technische Universität München (Garching bei München). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/
+    last_verified_at: 2026-10-01

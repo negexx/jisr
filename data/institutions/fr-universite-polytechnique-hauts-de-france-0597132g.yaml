@@ -1,0 +1,14 @@
+slug: fr-universite-polytechnique-hauts-de-france-0597132g
+name: Université Polytechnique Hauts-de-France
+country: FR
+city:
+  slug: valenciennes
+  name: Valenciennes
+type: public
+website: https://www.uphf.fr/
+source: esr
+info_kind: official
+sources:
+  esr:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-principaux-etablissements-enseignement-superieur/
+    last_verified_at: 2026-10-01

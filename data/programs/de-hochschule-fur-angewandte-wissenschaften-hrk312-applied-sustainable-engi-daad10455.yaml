@@ -1,0 +1,54 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk312-applied-sustainable-engi-daad10455
+institution: de-hochschule-fur-angewandte-wissenschaften-hrk312
+country: DE
+city: ansbach
+field: engineering
+level: bachelor
+name: Applied Sustainable Engineering
+summary:
+  fr:
+    text: Applied Sustainable Engineering, Hochschule für angewandte Wissenschaften Ansbach (Ansbach). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Applied Sustainable Engineering, Hochschule für angewandte Wissenschaften Ansbach (Ansbach). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Applied Sustainable Engineering, Hochschule für angewandte Wissenschaften Ansbach (Ansbach). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/
+durationYears:
+  value: 4
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/
+    last_verified_at: 2026-10-01

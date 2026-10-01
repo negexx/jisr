@@ -1,0 +1,14 @@
+slug: fr-aix-marseille-universite-site-de-marseil-0134316w
+name: Aix-Marseille Université - Site de Marseille Saint-Jérôme
+country: FR
+city:
+  slug: marseille
+  name: Marseille
+type: public
+website: https://sciences.univ-amu.fr/fr/sites-campus/marseille-site-saint-jerome
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://sciences.univ-amu.fr/fr/sites-campus/marseille-site-saint-jerome
+    last_verified_at: 2026-10-01

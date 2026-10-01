@@ -1,0 +1,63 @@
+slug: fr-universite-toulouse-capitole-0313124c-licence-administration-economique-et-4135
+institution: fr-universite-toulouse-capitole-0313124c
+country: FR
+city: toulouse
+field: business-economics
+level: bachelor
+name: Licence - Portail Administration économique et sociale - parcours général
+summary:
+  fr:
+    text: Licence - Portail Administration économique et sociale - parcours général, Université Toulouse Capitole (Toulouse). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Portail Administration économique et sociale - parcours général, Université Toulouse Capitole (Toulouse). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail Administration économique et sociale - parcours général, Université Toulouse Capitole (Toulouse). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4135&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4135&typeBac=0&originePc=0
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-universite-toulouse-capitole-0313124c-licence-administration-economique-et-4135
+  name: Licence - Portail Administration économique et sociale - parcours général
+  institution: Université Toulouse Capitole
+  city: Toulouse
+  field: business-economics
+  confidence: low
+  officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4135&typeBac=0&originePc=0
+  todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind); field is a judgement call: check the programme content"
+  sourceId: parcoursup:4135

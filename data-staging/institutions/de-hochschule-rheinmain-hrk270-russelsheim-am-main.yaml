@@ -1,0 +1,25 @@
+slug: de-hochschule-rheinmain-hrk270-russelsheim-am-main
+name: Hochschule RheinMain
+country: DE
+city:
+  slug: russelsheim-am-main
+  name: Rüsselsheim am Main
+type: public
+website: https://www.hs-rm.de/de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-rheinmain-hrk270-russelsheim-am-main
+  name: Hochschule RheinMain
+  institution: ""
+  city: Rüsselsheim am Main
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-rm.de/de/
+  todo: "study location in Rüsselsheim am Main of \"Hochschule RheinMain\" (HRK main town Wiesbaden); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:270@russelsheim-am-main

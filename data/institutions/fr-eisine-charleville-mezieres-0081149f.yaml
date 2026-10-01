@@ -1,0 +1,14 @@
+slug: fr-eisine-charleville-mezieres-0081149f
+name: EiSINe - Charleville-Mézières
+country: FR
+city:
+  slug: charleville-mezieres
+  name: Charleville-Mézières
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

@@ -1,0 +1,96 @@
+slug: nl-avans-hogeschool-07gr-bouwkunde-1001o3048
+institution: nl-avans-hogeschool-07gr
+country: NL
+city: tilburg
+field: engineering
+level: bachelor
+name: Bouwkunde
+summary:
+  fr:
+    text: Bouwkunde (Architecture and Construction Engineering), Avans Hogeschool (Tilburg). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Bouwkunde (Architecture and Construction Engineering), Avans Hogeschool (Tilburg). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bouwkunde (Architecture and Construction Engineering), Avans Hogeschool (Tilburg). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1030800
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme havo, vwo ou mbo niveau 4 est exigé (équivalence du Bac à faire vérifier auprès d'Avans) ; certaines filières demandent un profil avec matières complémentaires.
+          status: draft
+        en:
+          text: A havo, vwo or mbo level 4 diploma is required (have the equivalence of your Bac checked with Avans); some programmes ask for a profile with additional subjects.
+          status: draft
+        ar:
+          text: يُشترط دبلوم havo أو vwo أو mbo المستوى 4 (يجب التحقق من معادلة الباكالوريا لدى Avans)؛ وبعض التخصصات تطلب توجّهًا يتضمن مواد إضافية.
+          status: draft
+    - id: req-2
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Pour les étudiants hors EEE, l'intake (studiekeuzecheck) est obligatoire, et un avis positif à l'intake conditionne la demande de visa.
+          status: draft
+        en:
+          text: For non-EEA students the intake (studiekeuzecheck) is mandatory, and a positive intake advice is a condition for the visa application.
+          status: draft
+        ar:
+          text: بالنسبة للطلبة من خارج المنطقة الاقتصادية الأوروبية، المقابلة التوجيهية (studiekeuzecheck) إلزامية، ويُشترط رأي إيجابي منها لطلب التأشيرة.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.avans.nl/studeren/praktische-zaken/studiekosten
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.avans.nl/studeren/praktische-zaken/aanmelden
+    last_verified_at: 2026-10-01
+  page-4:
+    url: https://www.avans.nl/studeren/praktische-zaken/aanmelden/toelating
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://www.avans.nl/studeren/praktische-zaken/aanmelden/studiekeuzecheck
+    last_verified_at: 2026-10-01

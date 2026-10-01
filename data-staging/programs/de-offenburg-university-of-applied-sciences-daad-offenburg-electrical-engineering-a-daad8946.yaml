@@ -1,0 +1,68 @@
+slug: de-offenburg-university-of-applied-sciences-daad-offenburg-electrical-engineering-a-daad8946
+institution: de-offenburg-university-of-applied-sciences-daad-offenburg
+country: DE
+city: offenburg
+field: engineering
+level: bachelor
+name: Electrical Engineering and Information Technology (trinational)
+summary:
+  fr:
+    text: Electrical Engineering and Information Technology (trinational), Offenburg University of Applied Sciences (Offenburg). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Electrical Engineering and Information Technology (trinational), Offenburg University of Applied Sciences (Offenburg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Electrical Engineering and Information Technology (trinational), Offenburg University of Applied Sciences (Offenburg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: null
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - de
+    - fr
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2027-07-15
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8946/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-offenburg-university-of-applied-sciences-daad-offenburg-electrical-engineering-a-daad8946
+  name: Electrical Engineering and Information Technology (trinational)
+  institution: Offenburg University of Applied Sciences
+  city: Offenburg
+  field: engineering
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8946/
+  todo: "DAAD page lists: languages German, French, duration 7 semesters, starts Winter semester, tuition \"Tuition varies\", deadline \"Register by 15 July 2027\"; institution not matched to the HRK list (see its record); the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; partly or fully taught in German: check the German level required"
+  sourceId: daad:8946

@@ -1,0 +1,14 @@
+slug: nl-capabel-hogeschool-30hc-utrecht
+name: Capabel Hogeschool
+country: NL
+city:
+  slug: utrecht
+  name: Utrecht
+type: private
+website: https://www.capabel.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.capabel.nl/
+    last_verified_at: 2026-10-01

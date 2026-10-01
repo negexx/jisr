@@ -1,0 +1,25 @@
+slug: nl-nhl-stenden-hogeschool-31fr-emmen
+name: NHL Stenden Hogeschool
+country: NL
+city:
+  slug: emmen
+  name: Emmen
+type: null
+website: null
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-nhl-stenden-hogeschool-31fr-emmen
+  name: NHL Stenden Hogeschool
+  institution: ""
+  city: Emmen
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "campus in Emmen of \"NHL Stenden Hogeschool\" (RIO location \"NHL Stenden Hogeschool: Emmen\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed website \"www.nhl.nl\" did not answer over https (probe failed): find the official https site; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:31FR@emmen

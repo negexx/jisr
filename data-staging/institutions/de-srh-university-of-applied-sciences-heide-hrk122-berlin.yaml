@@ -1,0 +1,25 @@
+slug: de-srh-university-of-applied-sciences-heide-hrk122-berlin
+name: SRH University of Applied Sciences Heidelberg
+country: DE
+city:
+  slug: berlin
+  name: Berlin
+type: private
+website: https://www.srh-university.de/de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-srh-university-of-applied-sciences-heide-hrk122-berlin
+  name: SRH University of Applied Sciences Heidelberg
+  institution: ""
+  city: Berlin
+  field: ""
+  confidence: ""
+  officialUrl: https://www.srh-university.de/de/
+  todo: "study location in Berlin of \"SRH University of Applied Sciences Heidelberg\" (HRK main town Heidelberg); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:122@berlin

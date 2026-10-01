@@ -1,0 +1,41 @@
+slug: ma-bac-to-de
+origin: MA
+credentialType: ma-bac
+destination: DE
+level: bachelor
+outcome: foundation
+conditions:
+  - id: prior-university-year
+    kind: manual_check
+    source: daad
+    info_kind: official
+    note:
+      fr:
+        text: "Après au moins une année d'études réussie dans une université marocaine reconnue, une admission directe dans une filière apparentée est possible (rapport DAAD 2021) : renseignez-vous auprès de l'université et d'uni-assist."
+        status: draft
+      en:
+        text: "After at least one successful year at a recognised Moroccan university, direct admission to a related subject is possible (DAAD 2021 report): ask the university and uni-assist."
+        status: draft
+      ar:
+        text: "بعد سنة دراسية واحدة على الأقل ناجحة في جامعة مغربية معترف بها، يمكن القبول المباشر في تخصص مرتبط (تقرير DAAD لسنة 2021): استفسروا لدى الجامعة وuni-assist."
+        status: draft
+note:
+  fr:
+    text: "Le baccalauréat seul ne permet pas d'étudier directement en Allemagne : il donne accès au Studienkolleg (année préparatoire) et à l'examen d'aptitude (Feststellungsprüfung). Une année d'études universitaires réussie au Maroc peut ouvrir l'accès direct à une filière apparentée."
+    status: draft
+  en:
+    text: "A baccalauréat alone does not allow you to study directly in Germany: it gives access to the Studienkolleg (preparatory course) and the qualification exam (Feststellungsprüfung). One successful year of university study in Morocco can open direct access to a related subject."
+    status: draft
+  ar:
+    text: "الباكالوريا وحدها لا تتيح الدراسة مباشرة في ألمانيا: فهي تؤهّل لدخول Studienkolleg (سنة تحضيرية) وامتحان الأهلية (Feststellungsprüfung). وقد تتيح سنة دراسية جامعية ناجحة في المغرب القبول المباشر في تخصص مرتبط."
+    status: draft
+applicationChannels: [de-uni-assist, de-uni-assist-vpd, de-university-direct]
+source: main
+info_kind: official
+sources:
+  main:
+    url: https://www.uni-assist.de/en/tools/info-country-by-country/details-country/country/ma/
+    last_verified_at: 2026-10-01
+  daad:
+    url: https://www.daad.de/app/bsa/pdf/long/152/current/
+    last_verified_at: 2026-10-01

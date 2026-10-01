@@ -1,0 +1,25 @@
+slug: fr-universite-de-bordeaux-antenne-de-perigu-0241131z
+name: Université de Bordeaux - Antenne de Périgueux
+country: FR
+city:
+  slug: perigueux
+  name: Périgueux
+type: public
+website: https://www.ide-perigueux.fr/
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-universite-de-bordeaux-antenne-de-perigu-0241131z
+  name: Université de Bordeaux - Antenne de Périgueux
+  institution: ""
+  city: Périgueux
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ide-perigueux.fr/
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"
+  sourceId: uai:0241131Z

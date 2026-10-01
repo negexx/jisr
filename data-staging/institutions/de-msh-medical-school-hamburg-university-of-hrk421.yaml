@@ -1,0 +1,25 @@
+slug: de-msh-medical-school-hamburg-university-of-hrk421
+name: MSH Medical School Hamburg - University of Applied Sciences and Medical University
+country: DE
+city:
+  slug: hamburg
+  name: Hamburg
+type: private
+website: https://www.medicalschool-hamburg.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-msh-medical-school-hamburg-university-of-hrk421
+  name: MSH Medical School Hamburg - University of Applied Sciences and Medical University
+  institution: ""
+  city: Hamburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.medicalschool-hamburg.de/
+  todo: "HRK: Hochschulen eigenen Typs, Hamburg, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.medicalschool-hamburg.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:421

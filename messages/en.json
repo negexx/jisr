@@ -519,6 +519,7 @@
     }
   },
   "matchCard": {
+    "institutionWebsite": "Institution website",
     "level": {
       "bachelor": "Bachelor's"
     },
@@ -568,7 +569,8 @@
       "failed": {
         "note": "Requirements can change. Check the official page of each program before you decide.",
         "show": "Show the programs ({count})"
-      }
+      },
+      "more": "Show more programs ({count} left)"
     },
     "summary": {
       "title": "Your profile",
@@ -658,7 +660,8 @@
       "institution": "Institution",
       "institutionType": {
         "public": "Public institution",
-        "private": "Private institution"
+        "private": "Private institution",
+        "unknown": "Type to be checked"
       },
       "duration": "Duration",
       "languages": "Teaching languages",
@@ -724,6 +727,7 @@
     "links": {
       "program": "Program page",
       "institution": "Institution website",
+      "institutionUnknown": "Institution website: not found yet, to be checked",
       "channel": "Application website"
     },
     "verified": {

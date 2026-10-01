@@ -1,0 +1,63 @@
+slug: de-hochschule-braunschweig-wolfenbuttel-ost-hrk36-recht-finanzmanagement-u-78849145
+institution: de-hochschule-braunschweig-wolfenbuttel-ost-hrk36
+country: DE
+city: wolfenbuttel
+field: business-economics
+level: bachelor
+name: Recht, Finanzmanagement und Steuern Bachelor
+summary:
+  fr:
+    text: Recht, Finanzmanagement und Steuern Bachelor, Hochschule Braunschweig/Wolfenbüttel, Ostfalia Hochschule für angewandte Wissenschaften (Wolfenbüttel). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Recht, Finanzmanagement und Steuern Bachelor, Hochschule Braunschweig/Wolfenbüttel, Ostfalia Hochschule für angewandte Wissenschaften (Wolfenbüttel). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Recht, Finanzmanagement und Steuern Bachelor, Hochschule Braunschweig/Wolfenbüttel, Ostfalia Hochschule für angewandte Wissenschaften (Wolfenbüttel). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-braunschweig-wolfenbuttel-ost-hrk36-recht-finanzmanagement-u-78849145
+  name: Recht, Finanzmanagement und Steuern Bachelor
+  institution: Hochschule Braunschweig/Wolfenbüttel, Ostfalia Hochschule für angewandte Wissenschaften
+  city: Wolfenbüttel
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Niedersachsen, subjects: Finanz- und Rechnungswesen, Controlling (grundständig); provider \"Ostfalia Hochschule\" matched to HRK institution \"Hochschule Braunschweig/Wolfenbüttel, Ostfalia Hochschule für angewandte Wissenschaften\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:78849145

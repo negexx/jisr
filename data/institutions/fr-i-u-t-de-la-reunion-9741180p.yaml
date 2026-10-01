@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-la-reunion-9741180p
+name: I.U.T de la Réunion
+country: FR
+city:
+  slug: saint-pierre
+  name: Saint-Pierre
+type: public
+website: https://www.univ-reunion.fr/
+source: parcoursup
+info_kind: guidance
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

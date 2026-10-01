@@ -1,0 +1,25 @@
+slug: de-zeppelin-universitat-hochschule-zwischen-hrk351
+name: Zeppelin Universität - Hochschule zwischen Wirtschaft, Kultur und Politik
+country: DE
+city:
+  slug: friedrichshafen
+  name: Friedrichshafen
+type: private
+website: https://www.zu.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-zeppelin-universitat-hochschule-zwischen-hrk351
+  name: Zeppelin Universität - Hochschule zwischen Wirtschaft, Kultur und Politik
+  institution: ""
+  city: Friedrichshafen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.zu.de/
+  todo: "HRK: Universitäten, Baden-Württemberg, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.zu.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:351

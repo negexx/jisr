@@ -1,0 +1,63 @@
+slug: de-internationale-hochschule-sdi-munchen-ho-hrk376-international-communicat-73209886
+institution: de-internationale-hochschule-sdi-munchen-ho-hrk376
+country: DE
+city: munchen
+field: business-economics
+level: bachelor
+name: International Communication and Business Bachelor of Arts (B.A.)
+summary:
+  fr:
+    text: International Communication and Business Bachelor of Arts (B.A.), Internationale Hochschule SDI München - Hochschule für angewandte Wissenschaften (München). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: International Communication and Business Bachelor of Arts (B.A.), Internationale Hochschule SDI München - Hochschule für angewandte Wissenschaften (München). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: International Communication and Business Bachelor of Arts (B.A.), Internationale Hochschule SDI München - Hochschule für angewandte Wissenschaften (München). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-internationale-hochschule-sdi-munchen-ho-hrk376-international-communicat-73209886
+  name: International Communication and Business Bachelor of Arts (B.A.)
+  institution: Internationale Hochschule SDI München - Hochschule für angewandte Wissenschaften
+  city: München
+  field: business-economics
+  confidence: low
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Bayern, subjects: Betriebswirtschaftslehre, Business Administration (grundständig), Internationale Wirtschaft (grundständig); provider \"Internationale Hochschule SDI\" matched to HRK institution \"Internationale Hochschule SDI München - Hochschule für angewandte Wissenschaften\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:73209886

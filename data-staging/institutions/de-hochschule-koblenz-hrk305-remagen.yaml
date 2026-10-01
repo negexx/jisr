@@ -1,0 +1,25 @@
+slug: de-hochschule-koblenz-hrk305-remagen
+name: Hochschule Koblenz
+country: DE
+city:
+  slug: remagen
+  name: Remagen
+type: public
+website: https://www.hs-koblenz.de/home
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-koblenz-hrk305-remagen
+  name: Hochschule Koblenz
+  institution: ""
+  city: Remagen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-koblenz.de/home
+  todo: "study location in Remagen of \"Hochschule Koblenz\" (HRK main town Koblenz); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:305@remagen

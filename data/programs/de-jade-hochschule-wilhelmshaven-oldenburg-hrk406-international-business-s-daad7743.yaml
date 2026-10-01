@@ -1,0 +1,53 @@
+slug: de-jade-hochschule-wilhelmshaven-oldenburg-hrk406-international-business-s-daad7743
+institution: de-jade-hochschule-wilhelmshaven-oldenburg-hrk406
+country: DE
+city: wilhelmshaven
+field: business-economics
+level: bachelor
+name: International Business Studies
+summary:
+  fr:
+    text: International Business Studies, Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth (Wilhelmshaven). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Business Studies, Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth (Wilhelmshaven). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business Studies, Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth (Wilhelmshaven). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7743/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7743/
+    last_verified_at: 2026-10-01

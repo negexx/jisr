@@ -1,0 +1,25 @@
+slug: nl-hogeschool-inholland-27pz-delft
+name: Hogeschool Inholland
+country: NL
+city:
+  slug: delft
+  name: Delft
+type: null
+website: https://www.inholland.nl/
+source: rio
+info_kind: TODO_read_source
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-hogeschool-inholland-27pz-delft
+  name: Hogeschool Inholland
+  institution: ""
+  city: Delft
+  field: ""
+  confidence: ""
+  officialUrl: https://www.inholland.nl/
+  todo: "campus in Delft of \"Hogeschool Inholland\" (RIO location \"Hogeschool Inholland: Delft\"): public/private is not in the register; website is the main institution's: check it, or use the campus page; listed as \"www.inholland.nl\"; the https form answers; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: rio-unit:27PZ@delft

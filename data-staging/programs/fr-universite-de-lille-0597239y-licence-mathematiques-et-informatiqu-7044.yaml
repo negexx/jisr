@@ -1,0 +1,63 @@
+slug: fr-universite-de-lille-0597239y-licence-mathematiques-et-informatiqu-7044
+institution: fr-universite-de-lille-0597239y
+country: FR
+city: lille
+field: computer-science
+level: bachelor
+name: Licence - Portail Mathématiques et informatique appliquées aux sciences humaines et sociales - Mathématiques, économie, finances
+summary:
+  fr:
+    text: Licence - Portail Mathématiques et informatique appliquées aux sciences humaines et sociales - Mathématiques, économie, finances, Université de Lille (Lille). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Portail Mathématiques et informatique appliquées aux sciences humaines et sociales - Mathématiques, économie, finances, Université de Lille (Lille). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail Mathématiques et informatique appliquées aux sciences humaines et sociales - Mathématiques, économie, finances, Université de Lille (Lille). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7044&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7044&typeBac=0&originePc=0
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-universite-de-lille-0597239y-licence-mathematiques-et-informatiqu-7044
+  name: Licence - Portail Mathématiques et informatique appliquées aux sciences humaines et sociales - Mathématiques, économie, finances
+  institution: Université de Lille
+  city: Lille
+  field: computer-science
+  confidence: low
+  officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7044&typeBac=0&originePc=0
+  todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind); field is a judgement call: check the programme content"
+  sourceId: parcoursup:7044

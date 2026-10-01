@@ -1,0 +1,25 @@
+slug: de-ruhr-universitat-bochum-hrk29
+name: Ruhr-Universität Bochum
+country: DE
+city:
+  slug: bochum
+  name: Bochum
+type: public
+website: https://www.ruhr-uni-bochum.de/de
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-ruhr-universitat-bochum-hrk29
+  name: Ruhr-Universität Bochum
+  institution: ""
+  city: Bochum
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ruhr-uni-bochum.de/de
+  todo: "HRK: Universitäten, Nordrhein-Westfalen, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.ruhr-uni-bochum.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:29

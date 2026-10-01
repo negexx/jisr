@@ -1,0 +1,25 @@
+slug: de-hochschule-niederrhein-hrk197-monchengladbach
+name: Hochschule Niederrhein
+country: DE
+city:
+  slug: monchengladbach
+  name: Mönchengladbach
+type: public
+website: https://www.hs-niederrhein.de/startseite/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-niederrhein-hrk197-monchengladbach
+  name: Hochschule Niederrhein
+  institution: ""
+  city: Mönchengladbach
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-niederrhein.de/startseite/
+  todo: "study location in Mönchengladbach of \"Hochschule Niederrhein\" (HRK main town Krefeld); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:197@monchengladbach

@@ -1,0 +1,14 @@
+slug: fr-iut-lyon1-site-de-bourg-en-bresse-0011312w
+name: IUT Lyon1 Site de Bourg-en-Bresse
+country: FR
+city:
+  slug: bourg-en-bresse
+  name: Bourg-en-Bresse
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

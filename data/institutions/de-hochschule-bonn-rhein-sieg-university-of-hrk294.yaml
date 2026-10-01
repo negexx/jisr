@@ -1,0 +1,14 @@
+slug: de-hochschule-bonn-rhein-sieg-university-of-hrk294
+name: Hochschule Bonn-Rhein-Sieg, University of Applied Sciences
+country: DE
+city:
+  slug: sankt-augustin
+  name: Sankt Augustin
+type: public
+website: https://www.h-brs.de/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.h-brs.de/
+    last_verified_at: 2026-10-01

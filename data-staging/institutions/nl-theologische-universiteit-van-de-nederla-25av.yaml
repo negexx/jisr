@@ -1,0 +1,25 @@
+slug: nl-theologische-universiteit-van-de-nederla-25av
+name: Theologische Universiteit van de Nederlandse Gereformeerde Kerken
+country: NL
+city:
+  slug: utrecht
+  name: Utrecht
+type: null
+website: https://tuu.nl/
+source: duo
+info_kind: TODO_read_source
+sources:
+  duo:
+    url: https://duo.nl/open_onderwijsdata/hoger-onderwijs/adressen/hogescholen-en-universiteiten.jsp
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-theologische-universiteit-van-de-nederla-25av
+  name: Theologische Universiteit van de Nederlandse Gereformeerde Kerken
+  institution: ""
+  city: Utrecht
+  field: ""
+  confidence: ""
+  officialUrl: https://tuu.nl/
+  todo: "DUO: wo, denomination \"Algemeen bijzonder\"; public/private is not in the file: check the institution's legal status; listed as \"www.tuu.nl\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: duo:25AV

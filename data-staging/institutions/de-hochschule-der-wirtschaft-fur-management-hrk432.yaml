@@ -1,0 +1,25 @@
+slug: de-hochschule-der-wirtschaft-fur-management-hrk432
+name: Hochschule der Wirtschaft für Management
+country: DE
+city:
+  slug: mannheim
+  name: Mannheim
+type: private
+website: https://www.hdwm.de/en
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-der-wirtschaft-fur-management-hrk432
+  name: Hochschule der Wirtschaft für Management
+  institution: ""
+  city: Mannheim
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hdwm.de/en
+  todo: "HRK: Fachhochschulen / HAW, Baden-Württemberg, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.hdwm.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:432

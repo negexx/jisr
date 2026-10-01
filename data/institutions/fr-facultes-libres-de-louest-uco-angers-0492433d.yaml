@@ -1,0 +1,14 @@
+slug: fr-facultes-libres-de-louest-uco-angers-0492433d
+name: Facultés libres de l'Ouest - UCO ANGERS
+country: FR
+city:
+  slug: angers
+  name: Angers
+type: private
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

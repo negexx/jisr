@@ -1,0 +1,14 @@
+slug: fr-universite-lumiere-lyon-2-0691775e
+name: Université Lumière - Lyon 2
+country: FR
+city:
+  slug: lyon
+  name: Lyon
+type: public
+website: https://www.univ-lyon2.fr/
+source: esr
+info_kind: official
+sources:
+  esr:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-principaux-etablissements-enseignement-superieur/
+    last_verified_at: 2026-10-01

@@ -1,0 +1,53 @@
+slug: de-hochschule-landshut-hochschule-fur-angew-hrk157-dingolfing-sustainable-industrial-o-daad11085
+institution: de-hochschule-landshut-hochschule-fur-angew-hrk157-dingolfing
+country: DE
+city: dingolfing
+field: business-economics
+level: bachelor
+name: Sustainable Industrial Operations & Business (SIOB)
+summary:
+  fr:
+    text: Sustainable Industrial Operations & Business (SIOB), Hochschule Landshut - Hochschule für angewandte Wissenschaften (Dingolfing). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Sustainable Industrial Operations & Business (SIOB), Hochschule Landshut - Hochschule für angewandte Wissenschaften (Dingolfing). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Sustainable Industrial Operations & Business (SIOB), Hochschule Landshut - Hochschule für angewandte Wissenschaften (Dingolfing). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11085/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11085/
+    last_verified_at: 2026-10-01

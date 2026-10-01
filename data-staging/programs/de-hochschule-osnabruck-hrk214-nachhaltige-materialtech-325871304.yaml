@@ -1,0 +1,63 @@
+slug: de-hochschule-osnabruck-hrk214-nachhaltige-materialtech-325871304
+institution: de-hochschule-osnabruck-hrk214
+country: DE
+city: osnabruck
+field: engineering
+level: bachelor
+name: Nachhaltige Materialtechnologie und Produktentwicklung Bachelor
+summary:
+  fr:
+    text: Nachhaltige Materialtechnologie und Produktentwicklung Bachelor, Hochschule Osnabrück (Osnabrück). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Nachhaltige Materialtechnologie und Produktentwicklung Bachelor, Hochschule Osnabrück (Osnabrück). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Nachhaltige Materialtechnologie und Produktentwicklung Bachelor, Hochschule Osnabrück (Osnabrück). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-osnabruck-hrk214-nachhaltige-materialtech-325871304
+  name: Nachhaltige Materialtechnologie und Produktentwicklung Bachelor
+  institution: Hochschule Osnabrück
+  city: Osnabrück
+  field: engineering
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Niedersachsen, subjects: Werkstoffwissenschaft, -technik (grundständig), Maschinenbau (grundständig), Kunststofftechnik (grundständig); provider \"Hochschule Osnabrück\" matched to HRK institution \"Hochschule Osnabrück\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:325871304

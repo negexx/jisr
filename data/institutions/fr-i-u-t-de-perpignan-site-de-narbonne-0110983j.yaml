@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-perpignan-site-de-narbonne-0110983j
+name: I.U.T de Perpignan (Site de Narbonne)
+country: FR
+city:
+  slug: narbonne
+  name: Narbonne
+type: public
+website: https://www.univ-perp.fr/
+source: parcoursup
+info_kind: guidance
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

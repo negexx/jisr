@@ -1,0 +1,54 @@
+slug: de-hochschule-ravensburg-weingarten-hrk224-mechanical-engineering-i-daad7827
+institution: de-hochschule-ravensburg-weingarten-hrk224
+country: DE
+city: weingarten
+field: engineering
+level: bachelor
+name: Mechanical Engineering / International Project Engineering
+summary:
+  fr:
+    text: Mechanical Engineering / International Project Engineering, Hochschule Ravensburg-Weingarten (Weingarten). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Mechanical Engineering / International Project Engineering, Hochschule Ravensburg-Weingarten (Weingarten). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Mechanical Engineering / International Project Engineering, Hochschule Ravensburg-Weingarten (Weingarten). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7827/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7827/
+    last_verified_at: 2026-10-01

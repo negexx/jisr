@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-nice-antenne-de-valbonne-0061817t
+name: I.U.T de Nice - Antenne de Valbonne
+country: FR
+city:
+  slug: valbonne
+  name: Valbonne
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

@@ -1,0 +1,49 @@
+{
+  "slug": "fr-aix-marseille-universite-site-de-marseil-0134316w-licence-sciences-pour-lingenieur-39236",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39236&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39236&typeBac=0&originePc=0",
+          "quote": "La faculté des Sciences propose un parcours de licence en 3 ans"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "fr-campus-france",
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces",
+          "quote": "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France de votre pays de résidence."
+        }
+      ]
+    }
+  },
+  "notes": "No tuition for non-EU, teaching language or intake dates stated. Channel omitted: Parcoursup fiche says non-EU bac-equivalent holders go through the DAP procedure, not Parcoursup. Language rule: Campus France Maroc requires a French certificate (TCF, DELF B2 or DALF) at submission on Etudes en France, except in dispensation cases; it recommends TCF 400 / DELF B2 but states each institution sets its own level, so minCefr is null where the programme page gives none. Parcoursup fiche states B2 French level required to enrol.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "tcf",
+          "delf-dalf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39236&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+slug: de-hochschule-wismar-university-of-applied-hrk274-rostock
+name: "Hochschule Wismar - University of Applied Sciences: Technology, Business and Design"
+country: DE
+city:
+  slug: rostock
+  name: Rostock
+type: public
+website: https://www.hs-wismar.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

@@ -1,0 +1,14 @@
+slug: de-hochschule-bielefeld-university-of-appli-hrk28-gutersloh
+name: Hochschule Bielefeld - University of Applied Sciences and Arts (HSBI)
+country: DE
+city:
+  slug: gutersloh
+  name: Gütersloh
+type: public
+website: https://www.hsbi.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

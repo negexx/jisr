@@ -1,0 +1,25 @@
+slug: de-technische-hochschule-georg-agricola-hrk31
+name: Technische Hochschule Georg Agricola
+country: DE
+city:
+  slug: bochum
+  name: Bochum
+type: private
+website: https://www.thga.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-hochschule-georg-agricola-hrk31
+  name: Technische Hochschule Georg Agricola
+  institution: ""
+  city: Bochum
+  field: ""
+  confidence: ""
+  officialUrl: https://www.thga.de/
+  todo: "HRK: Fachhochschulen / HAW, Nordrhein-Westfalen, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.thga.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:31

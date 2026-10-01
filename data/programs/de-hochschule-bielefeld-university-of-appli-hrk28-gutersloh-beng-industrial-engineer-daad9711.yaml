@@ -1,0 +1,53 @@
+slug: de-hochschule-bielefeld-university-of-appli-hrk28-gutersloh-beng-industrial-engineer-daad9711
+institution: de-hochschule-bielefeld-university-of-appli-hrk28-gutersloh
+country: DE
+city: gutersloh
+field: engineering
+level: bachelor
+name: BEng Industrial Engineering with Work-Integrated Option
+summary:
+  fr:
+    text: BEng Industrial Engineering with Work-Integrated Option, Hochschule Bielefeld - University of Applied Sciences and Arts (HSBI) (Gütersloh). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: BEng Industrial Engineering with Work-Integrated Option, Hochschule Bielefeld - University of Applied Sciences and Arts (HSBI) (Gütersloh). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: BEng Industrial Engineering with Work-Integrated Option, Hochschule Bielefeld - University of Applied Sciences and Arts (HSBI) (Gütersloh). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/
+    last_verified_at: 2026-10-01

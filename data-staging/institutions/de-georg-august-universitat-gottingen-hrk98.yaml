@@ -1,0 +1,25 @@
+slug: de-georg-august-universitat-gottingen-hrk98
+name: Georg-August-Universität Göttingen
+country: DE
+city:
+  slug: gottingen
+  name: Göttingen
+type: public
+website: https://www.uni-goettingen.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-georg-august-universitat-gottingen-hrk98
+  name: Georg-August-Universität Göttingen
+  institution: ""
+  city: Göttingen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-goettingen.de/
+  todo: "HRK: Universitäten, Niedersachsen, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.uni-goettingen.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:98

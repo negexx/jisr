@@ -1,0 +1,25 @@
+slug: fr-universite-de-lorraine-institut-des-scie-0541660l
+name: Université de Lorraine - Institut des sciences du Digital, Management et Cognition - Site de Nancy (54)
+country: FR
+city:
+  slug: nancy
+  name: Nancy
+type: public
+website: https://idmc.univ-lorraine.fr/
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-universite-de-lorraine-institut-des-scie-0541660l
+  name: Université de Lorraine - Institut des sciences du Digital, Management et Cognition - Site de Nancy (54)
+  institution: ""
+  city: Nancy
+  field: ""
+  confidence: ""
+  officialUrl: https://idmc.univ-lorraine.fr/
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"
+  sourceId: uai:0541660L

@@ -1,0 +1,63 @@
+slug: nl-hogeschool-van-hall-larenstein-30hd-management-van-de-leefom-1001o4423
+institution: nl-hogeschool-van-hall-larenstein-30hd
+country: NL
+city: velp
+field: business-economics
+level: bachelor
+name: Management van de Leefomgeving
+summary:
+  fr:
+    text: Management van de Leefomgeving (Management of the Living Environment), Hogeschool Van Hall Larenstein (Velp). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Management van de Leefomgeving (Management of the Living Environment), Hogeschool Van Hall Larenstein (Velp). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Management van de Leefomgeving (Management of the Living Environment), Hogeschool Van Hall Larenstein (Velp). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: rio
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: rio
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  rio:
+    url: https://onderwijsdata.duo.nl/datasets/overzicht-erkenningen-ho
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: nl-hogeschool-van-hall-larenstein-30hd-management-van-de-leefom-1001o4423
+  name: Management van de Leefomgeving
+  institution: Hogeschool Van Hall Larenstein
+  city: Velp
+  field: business-economics
+  confidence: low
+  officialUrl: ""
+  todo: "RIO register: HBO (university of applied sciences), 240 ECTS, accredited until unknown, funding BEKOSTIGD, location \"Hogeschool Van Hall Larenstein: Velp GLD\"; international name \"Management of the Living Environment\"; field is a judgement call: check the programme content; read the programme page on the institution's site: set officialUrl (required) and use that page as the source, then teachingLanguages, tuition for non-EU students, intakes, documents, requirements, the application channel (Studielink and the institution's own portal), and set each info_kind (duration: the register says 240 ECTS, i.e. about 4 years at 60 ECTS per year: read it on the programme page)"
+  sourceId: rio:30HD/30HD00/1001O4423

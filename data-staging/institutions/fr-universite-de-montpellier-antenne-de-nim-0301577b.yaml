@@ -1,0 +1,25 @@
+slug: fr-universite-de-montpellier-antenne-de-nim-0301577b
+name: Université de Montpellier, Antenne de Nîmes
+country: FR
+city:
+  slug: nimes
+  name: Nîmes
+type: public
+website: https://facmedecine.umontpellier.fr/
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-universite-de-montpellier-antenne-de-nim-0301577b
+  name: Université de Montpellier, Antenne de Nîmes
+  institution: ""
+  city: Nîmes
+  field: ""
+  confidence: ""
+  officialUrl: https://facmedecine.umontpellier.fr/
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"
+  sourceId: uai:0301577B

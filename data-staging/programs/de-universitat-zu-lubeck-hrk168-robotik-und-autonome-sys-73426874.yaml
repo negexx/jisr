@@ -1,0 +1,63 @@
+slug: de-universitat-zu-lubeck-hrk168-robotik-und-autonome-sys-73426874
+institution: de-universitat-zu-lubeck-hrk168
+country: DE
+city: lubeck
+field: engineering
+level: bachelor
+name: Robotik und Autonome Systeme Bachelor
+summary:
+  fr:
+    text: Robotik und Autonome Systeme Bachelor, Universität zu Lübeck (Lübeck). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Robotik und Autonome Systeme Bachelor, Universität zu Lübeck (Lübeck). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Robotik und Autonome Systeme Bachelor, Universität zu Lübeck (Lübeck). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-universitat-zu-lubeck-hrk168-robotik-und-autonome-sys-73426874
+  name: Robotik und Autonome Systeme Bachelor
+  institution: Universität zu Lübeck
+  city: Lübeck
+  field: engineering
+  confidence: low
+  officialUrl: ""
+  todo: "BA Studiensuche: Universität, Schleswig-Holstein, subjects: Robotik, Autonome Systeme (grundständig), Informatik (grundständig); provider \"Universität zu Lübeck\" matched to HRK institution \"Universität zu Lübeck\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:73426874

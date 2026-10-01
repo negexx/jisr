@@ -1,0 +1,14 @@
+slug: fr-universite-de-lorraine-iae-nancy-school-0542482e
+name: Université de Lorraine - IAE Nancy School of Management - Site de Nancy (54)
+country: FR
+city:
+  slug: nancy
+  name: Nancy
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

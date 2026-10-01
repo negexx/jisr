@@ -1,0 +1,54 @@
+slug: de-technische-hochschule-nurnberg-georg-sim-hrk200-international-business-a-daad4248
+institution: de-technische-hochschule-nurnberg-georg-sim-hrk200
+country: DE
+city: nurnberg
+field: business-economics
+level: bachelor
+name: International Business and Technology
+summary:
+  fr:
+    text: International Business and Technology, Technische Hochschule Nürnberg Georg Simon Ohm (Nürnberg). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Business and Technology, Technische Hochschule Nürnberg Georg Simon Ohm (Nürnberg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business and Technology, Technische Hochschule Nürnberg Georg Simon Ohm (Nürnberg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4248/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4248/
+    last_verified_at: 2026-10-01

@@ -1,0 +1,25 @@
+slug: de-technische-hochschule-brandenburg-hrk34
+name: Technische Hochschule Brandenburg
+country: DE
+city:
+  slug: brandenburg
+  name: Brandenburg
+type: public
+website: https://www.th-brandenburg.de/startseite/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-hochschule-brandenburg-hrk34
+  name: Technische Hochschule Brandenburg
+  institution: ""
+  city: Brandenburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.th-brandenburg.de/startseite/
+  todo: "HRK: Fachhochschulen / HAW, Brandenburg, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.th-brandenburg.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:34

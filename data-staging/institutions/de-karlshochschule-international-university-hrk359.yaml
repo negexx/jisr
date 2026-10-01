@@ -1,0 +1,25 @@
+slug: de-karlshochschule-international-university-hrk359
+name: Karlshochschule International University - staatlich anerkannte Hochschule der Karlshochschule gemeinnützige GmbH Karlsruhe
+country: DE
+city:
+  slug: karlsruhe
+  name: Karlsruhe
+type: private
+website: https://karlshochschule.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-karlshochschule-international-university-hrk359
+  name: Karlshochschule International University - staatlich anerkannte Hochschule der Karlshochschule gemeinnützige GmbH Karlsruhe
+  institution: ""
+  city: Karlsruhe
+  field: ""
+  confidence: ""
+  officialUrl: https://karlshochschule.de/
+  todo: "HRK: Fachhochschulen / HAW, Baden-Württemberg, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.karlshochschule.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:359

@@ -1,0 +1,14 @@
+slug: de-technische-hochschule-mannheim-hrk177
+name: Technische Hochschule Mannheim
+country: DE
+city:
+  slug: mannheim
+  name: Mannheim
+type: public
+website: null
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

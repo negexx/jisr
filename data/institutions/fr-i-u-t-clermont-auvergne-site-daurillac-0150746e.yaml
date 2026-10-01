@@ -1,0 +1,14 @@
+slug: fr-i-u-t-clermont-auvergne-site-daurillac-0150746e
+name: I.U.T Clermont Auvergne - site d'Aurillac
+country: FR
+city:
+  slug: aurillac
+  name: Aurillac
+type: public
+website: https://iut.uca.fr/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://iut.uca.fr/
+    last_verified_at: 2026-10-01

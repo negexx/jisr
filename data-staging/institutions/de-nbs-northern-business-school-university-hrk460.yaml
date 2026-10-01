@@ -1,0 +1,25 @@
+slug: de-nbs-northern-business-school-university-hrk460
+name: NBS Northern Business School – University of Applied Sciences
+country: DE
+city:
+  slug: hamburg
+  name: Hamburg
+type: private
+website: https://www.nbs.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-nbs-northern-business-school-university-hrk460
+  name: NBS Northern Business School – University of Applied Sciences
+  institution: ""
+  city: Hamburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.nbs.de/
+  todo: "HRK: Fachhochschulen / HAW, Hamburg, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.nbs.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:460

@@ -1,0 +1,25 @@
+slug: de-rheinland-pfalzische-technische-universi-hrk135-landau-in-der-pfalz
+name: Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau
+country: DE
+city:
+  slug: landau-in-der-pfalz
+  name: Landau in der Pfalz
+type: public
+website: https://www.rptu.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-rheinland-pfalzische-technische-universi-hrk135-landau-in-der-pfalz
+  name: Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau
+  institution: ""
+  city: Landau in der Pfalz
+  field: ""
+  confidence: ""
+  officialUrl: https://www.rptu.de/
+  todo: "study location in Landau in der Pfalz of \"Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau\" (HRK main town Kaiserslautern); website is the main institution's: check it; confirm on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:135@landau-in-der-pfalz

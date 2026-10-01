@@ -1,0 +1,24 @@
+slug: ma-bac-to-fr
+origin: MA
+credentialType: ma-bac
+destination: FR
+level: bachelor
+outcome: direct
+conditions: []
+note:
+  fr:
+    text: "Avec le baccalauréat marocain, vous candidatez en première année de Licence ou de BUT sur la plateforme Études en France de Campus France Maroc (et non sur Parcoursup). Chaque formation fixe ses propres conditions."
+    status: draft
+  en:
+    text: "With the Moroccan baccalauréat you apply for a first-year Licence or BUT on Campus France Morocco's Études en France platform (not on Parcoursup). Each programme sets its own conditions."
+    status: draft
+  ar:
+    text: "بالباكالوريا المغربية، تتقدّمون إلى السنة الأولى من الإجازة أو BUT عبر منصة Études en France التابعة لكامبوس فرانس المغرب (وليس عبر Parcoursup). وكل تكوين يحدد شروطه الخاصة."
+    status: draft
+applicationChannels: [fr-campus-france]
+source: main
+info_kind: official
+sources:
+  main:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
+    last_verified_at: 2026-10-01

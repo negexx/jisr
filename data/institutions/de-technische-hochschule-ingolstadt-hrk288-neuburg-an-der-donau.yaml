@@ -1,0 +1,14 @@
+slug: de-technische-hochschule-ingolstadt-hrk288-neuburg-an-der-donau
+name: Technische Hochschule Ingolstadt
+country: DE
+city:
+  slug: neuburg-an-der-donau
+  name: Neuburg an der Donau
+type: public
+website: https://www.thi.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

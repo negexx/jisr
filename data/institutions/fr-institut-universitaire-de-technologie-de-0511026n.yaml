@@ -1,0 +1,14 @@
+slug: fr-institut-universitaire-de-technologie-de-0511026n
+name: Institut Universitaire de Technologie de Reims
+country: FR
+city:
+  slug: reims
+  name: Reims
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

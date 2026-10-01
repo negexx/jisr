@@ -1,0 +1,14 @@
+slug: fr-i-u-t-angers-cholet-site-dangers-0490769v
+name: I.U.T. Angers-Cholet - Site d'Angers
+country: FR
+city:
+  slug: angers
+  name: Angers
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

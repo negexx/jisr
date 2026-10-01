@@ -1,0 +1,25 @@
+slug: de-theologische-hochschule-ewersbach-hrk447
+name: Theologische Hochschule Ewersbach
+country: DE
+city:
+  slug: dietzholztal
+  name: Dietzhölztal
+type: null
+website: https://th-ewersbach.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-theologische-hochschule-ewersbach-hrk447
+  name: Theologische Hochschule Ewersbach
+  institution: ""
+  city: Dietzhölztal
+  field: ""
+  confidence: ""
+  officialUrl: https://th-ewersbach.de/
+  todo: "HRK: Fachhochschulen / HAW, Hessen, sponsor \"kirchlich, staatlich anerkannt\"; church-run: the app only has public/private, decide how to classify it; listed as \"http://th-ewersbach.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:447

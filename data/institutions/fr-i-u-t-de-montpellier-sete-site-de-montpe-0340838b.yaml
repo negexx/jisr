@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-montpellier-sete-site-de-montpe-0340838b
+name: I.U.T de Montpellier-Sète - site de Montpellier - campus Occitanie
+country: FR
+city:
+  slug: montpellier
+  name: Montpellier
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

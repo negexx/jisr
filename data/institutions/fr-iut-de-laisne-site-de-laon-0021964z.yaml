@@ -1,0 +1,14 @@
+slug: fr-iut-de-laisne-site-de-laon-0021964z
+name: IUT de l'Aisne - Site de Laon
+country: FR
+city:
+  slug: laon
+  name: Laon
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

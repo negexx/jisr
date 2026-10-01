@@ -1,0 +1,14 @@
+slug: de-hochschule-koblenz-hrk305
+name: Hochschule Koblenz
+country: DE
+city:
+  slug: koblenz
+  name: Koblenz
+type: public
+website: https://www.hs-koblenz.de/home
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

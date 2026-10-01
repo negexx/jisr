@@ -1,0 +1,14 @@
+slug: de-hochschule-geisenheim-hrk446
+name: Hochschule Geisenheim
+country: DE
+city:
+  slug: geisenheim
+  name: Geisenheim
+type: public
+website: https://www.hs-geisenheim.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

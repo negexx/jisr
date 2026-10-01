@@ -1,0 +1,5 @@
+slug: computer-science
+name:
+  fr: { text: Informatique, status: reviewed }
+  en: { text: Computer Science, status: reviewed }
+  ar: { text: علوم الحاسوب, status: draft }

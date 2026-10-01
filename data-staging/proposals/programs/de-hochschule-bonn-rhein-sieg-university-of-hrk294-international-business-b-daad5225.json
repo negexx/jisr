@@ -1,0 +1,89 @@
+{
+  "slug": "de-hochschule-bonn-rhein-sieg-university-of-hrk294-international-business-b-daad5225",
+  "programmePage": "https://www.h-brs.de/en/wiwi/study/bachelor/international-business",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.h-brs.de/en/wiwi/study/bachelor/international-business",
+          "quote": "Standard period of study 7 semesters"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5225/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.h-brs.de/en/wiwi/study/bachelor/international-business",
+          "quote": "Lecture language English"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5225/",
+          "quote": "Languages English only"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.h-brs.de/en/wiwi/study/bachelor/international-business",
+          "quote": "application is possible exclusively via uni-assist"
+        }
+      ]
+    }
+  },
+  "notes": "Year of the dates not stated; 2027 assumed. uni-assist applies to applicants with international certificates (a Moroccan Bac). Tuition 'None' is page-wide; H-BRS fees page says it is a state university where the semester fee is usually the only fee. OMITTED: intakes (no page states the year of the deadline, only day and month; verifier requires the year; expected next deadline is 15 July 2027 per DAAD 2026/2027 edition). OMITTED: tuition 0 (DAAD says Tuition fees per semester None, but no page quote with explicit wording like no tuition fees was found). H-BRS REQUIREMENTS: official pages used: H-BRS programme page, H-BRS page for non-EU applicants with non-EU HZB (German only, node/74451), DAAD 5225. The pages do not say whether the Moroccan Bac is recognised as an HZB or needs Studienkolleg; check anabin/DAAD admission database. English B2: the programme page accepts proof via the entrance qualification itself, an English-language degree or English certificates, while DAAD says 'please provide an official language certificate', so certificateRequired left null. The programme is admission-restricted with 7% of places for non-EU applicants (selection by grade): not encoded.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.h-brs.de/en/wiwi/study/bachelor/international-business",
+            "quote": "English language skills at level B2 (CEFR) are required."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Titre d'accès (Abitur/Fachabitur) ou diplôme reconnu équivalent par les autorités compétentes : vérifier la reconnaissance du Bac marocain auprès d'uni-assist.",
+          "en": "Entry qualification (Abitur/Fachabitur) or a diploma recognised as equivalent by the competent authorities: check recognition of the Moroccan Bac with uni-assist.",
+          "ar": "شهادة الأهلية للدراسة (Abitur/Fachabitur) أو شهادة معترف بمعادلتها من الجهات المختصة: تحقّق من الاعتراف بالباكالوريا المغربية لدى uni-assist."
+        },
+        "evidence": [
+          {
+            "url": "https://www.h-brs.de/en/wiwi/study/bachelor/international-business",
+            "quote": "General or subject-related higher education entrance qualification (Abitur, Fachabitur) or educational qualifications recognised as equivalent by the relevant authorities."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Si le diplôme de fin d'études est reconnu dans le pays d'origine mais pas en Allemagne comme HZB, un Studienkolleg est obligatoire avant le début des études.",
+          "en": "If your school-leaving diploma is recognised in your home country but not in Germany as a university entrance qualification (HZB), a Studienkolleg is mandatory before studies start.",
+          "ar": "إذا كانت شهادتك معترفًا بها في بلدك لكن غير معترف بها في ألمانيا كشهادة أهلية للدراسة الجامعية (HZB)، فإن الدراسة في Studienkolleg إلزامية قبل بدء الدراسة."
+        },
+        "evidence": [
+          {
+            "url": "https://www.h-brs.de/en/node/74451",
+            "quote": "Falls Sie in Ihrem Heimatland einen Schulabschluss erworben haben, der in Ihrem Heimatland zu einem Studium berechtigt, in Deutschland aber nicht als Hochschulzugangsberechtigung (HZB) anerkannt wird, müssen Sie vor Studienbeginn ein Studienkolleg besuchen."
+          }
+        ]
+      }
+    ]
+  }
+}

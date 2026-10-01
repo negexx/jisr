@@ -1,0 +1,14 @@
+slug: de-technische-hochschule-augsburg-hrk7
+name: Technische Hochschule Augsburg
+country: DE
+city:
+  slug: augsburg
+  name: Augsburg
+type: public
+website: https://www.tha.de/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.tha.de/
+    last_verified_at: 2026-10-01

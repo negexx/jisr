@@ -1,0 +1,25 @@
+slug: de-fliedner-fachhochschule-dusseldorf-hrk433
+name: Fliedner Fachhochschule Düsseldorf
+country: DE
+city:
+  slug: dusseldorf
+  name: Düsseldorf
+type: private
+website: https://www.fliedner-fachhochschule.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fliedner-fachhochschule-dusseldorf-hrk433
+  name: Fliedner Fachhochschule Düsseldorf
+  institution: ""
+  city: Düsseldorf
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fliedner-fachhochschule.de/
+  todo: "HRK: Fachhochschulen / HAW, Nordrhein-Westfalen, sponsor \"privat, staatlich anerkannt\"; listed as \"http://www.fliedner-fachhochschule.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:433

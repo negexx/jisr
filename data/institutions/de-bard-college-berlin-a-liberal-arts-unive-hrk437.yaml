@@ -1,0 +1,14 @@
+slug: de-bard-college-berlin-a-liberal-arts-unive-hrk437
+name: Bard College Berlin, A Liberal Arts University
+country: DE
+city:
+  slug: berlin
+  name: Berlin
+type: private
+website: https://berlin.bard.edu/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

@@ -1,0 +1,6 @@
+code: DE
+name:
+  fr: { text: Allemagne, status: reviewed }
+  en: { text: Germany, status: reviewed }
+  ar: { text: ألمانيا, status: draft }
+currency: EUR

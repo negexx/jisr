@@ -1,0 +1,14 @@
+slug: fr-i-u-t-2-de-grenoble-0381775y
+name: I.U.T. 2 de Grenoble
+country: FR
+city:
+  slug: grenoble
+  name: Grenoble
+type: public
+website: https://iut2.univ-grenoble-alpes.fr
+source: parcoursup
+info_kind: guidance
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

@@ -1,0 +1,59 @@
+slug: fr-ecm-0212270d-licence-gestion-46037
+institution: fr-ecm-0212270d
+country: FR
+city: dijon
+field: business-economics
+level: bachelor
+name: Licence - Gestion - Parcours Gestion des Ressources Humaines
+summary:
+  fr:
+    text: Licence - Gestion - Parcours Gestion des Ressources Humaines, ECM (Dijon). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Gestion - Parcours Gestion des Ressources Humaines, ECM (Dijon). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Gestion - Parcours Gestion des Ressources Humaines, ECM (Dijon). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=46037&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=46037&typeBac=0&originePc=0
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-ecm-0212270d-licence-gestion-46037
+  name: Licence - Gestion - Parcours Gestion des Ressources Humaines
+  sourceId: parcoursup:46037
+  confidence: high
+  todo: "demoted 2026-10-01: the official page does not show the programme's name (data:linkcheck); look at the page before listing it again"

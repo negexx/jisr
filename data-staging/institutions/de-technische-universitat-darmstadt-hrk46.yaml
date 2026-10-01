@@ -1,0 +1,25 @@
+slug: de-technische-universitat-darmstadt-hrk46
+name: Technische Universität Darmstadt
+country: DE
+city:
+  slug: darmstadt
+  name: Darmstadt
+type: public
+website: https://www.tu-darmstadt.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-universitat-darmstadt-hrk46
+  name: Technische Universität Darmstadt
+  institution: ""
+  city: Darmstadt
+  field: ""
+  confidence: ""
+  officialUrl: https://www.tu-darmstadt.de/
+  todo: "HRK: Universitäten, Hessen, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.tu-darmstadt.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:46

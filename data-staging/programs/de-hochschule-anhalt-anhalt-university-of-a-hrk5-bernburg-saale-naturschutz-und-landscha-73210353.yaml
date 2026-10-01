@@ -1,0 +1,63 @@
+slug: de-hochschule-anhalt-anhalt-university-of-a-hrk5-bernburg-saale-naturschutz-und-landscha-73210353
+institution: de-hochschule-anhalt-anhalt-university-of-a-hrk5-bernburg-saale
+country: DE
+city: bernburg-saale
+field: engineering
+level: bachelor
+name: Naturschutz und Landschaftsplanung Bachelor
+summary:
+  fr:
+    text: Naturschutz und Landschaftsplanung Bachelor, Hochschule Anhalt - Anhalt University of Applied Sciences (Bernburg (Saale)). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Naturschutz und Landschaftsplanung Bachelor, Hochschule Anhalt - Anhalt University of Applied Sciences (Bernburg (Saale)). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Naturschutz und Landschaftsplanung Bachelor, Hochschule Anhalt - Anhalt University of Applied Sciences (Bernburg (Saale)). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-anhalt-anhalt-university-of-a-hrk5-bernburg-saale-naturschutz-und-landscha-73210353
+  name: Naturschutz und Landschaftsplanung Bachelor
+  institution: Hochschule Anhalt - Anhalt University of Applied Sciences
+  city: Bernburg (Saale)
+  field: engineering
+  confidence: low
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Sachsen-Anhalt, subjects: Landschaftsarchitektur, Freiraumplanung (grundständig), Landschaftsökologie, Naturschutz (grundständig); provider \"Hochschule Anhalt\" matched to HRK institution \"Hochschule Anhalt - Anhalt University of Applied Sciences\"; field is a judgement call: check the programme content; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:73210353

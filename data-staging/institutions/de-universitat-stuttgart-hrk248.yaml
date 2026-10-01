@@ -1,0 +1,25 @@
+slug: de-universitat-stuttgart-hrk248
+name: Universität Stuttgart
+country: DE
+city:
+  slug: stuttgart
+  name: Stuttgart
+type: public
+website: https://www.uni-stuttgart.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-universitat-stuttgart-hrk248
+  name: Universität Stuttgart
+  institution: ""
+  city: Stuttgart
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-stuttgart.de/
+  todo: "HRK: Universitäten, Baden-Württemberg, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.uni-stuttgart.de\"; the https form answers; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:248

@@ -1,0 +1,25 @@
+slug: de-macromedia-university-of-applied-science-hrk366
+name: Macromedia University of Applied Sciences
+country: DE
+city:
+  slug: potsdam
+  name: Potsdam
+type: private
+website: https://www.macromedia-fachhochschule.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-macromedia-university-of-applied-science-hrk366
+  name: Macromedia University of Applied Sciences
+  institution: ""
+  city: Potsdam
+  field: ""
+  confidence: ""
+  officialUrl: https://www.macromedia-fachhochschule.de/
+  todo: "HRK: Fachhochschulen / HAW, Brandenburg, sponsor \"privat, staatlich anerkannt\"; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:366

@@ -1,0 +1,25 @@
+slug: de-medizinische-hochschule-hannover-mhh-hrk112
+name: Medizinische Hochschule Hannover (MHH)
+country: DE
+city:
+  slug: hannover
+  name: Hannover
+type: public
+website: https://www.mhh.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-medizinische-hochschule-hannover-mhh-hrk112
+  name: Medizinische Hochschule Hannover (MHH)
+  institution: ""
+  city: Hannover
+  field: ""
+  confidence: ""
+  officialUrl: https://www.mhh.de/
+  todo: "HRK: Universitäten, Niedersachsen, sponsor \"öffentlich-rechtlich\"; listed as \"http://www.mh-hannover.de\" but https redirects to a different domain (mhh.de): check it is the same institution; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:112

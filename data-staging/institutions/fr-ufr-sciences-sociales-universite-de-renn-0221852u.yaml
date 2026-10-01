@@ -1,0 +1,25 @@
+slug: fr-ufr-sciences-sociales-universite-de-renn-0221852u
+name: UFR Sciences Sociales - Université de Rennes 2 - Site de Saint-Brieuc
+country: FR
+city:
+  slug: saint-brieuc
+  name: Saint-Brieuc
+type: public
+website: https://www.univ-rennes2.fr/universite/campus-mazier-saint-brieuc
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-ufr-sciences-sociales-universite-de-renn-0221852u
+  name: UFR Sciences Sociales - Université de Rennes 2 - Site de Saint-Brieuc
+  institution: ""
+  city: Saint-Brieuc
+  field: ""
+  confidence: ""
+  officialUrl: https://www.univ-rennes2.fr/universite/campus-mazier-saint-brieuc
+  todo: "website candidate from ONISEP training catalogue (this establishment's own site): confirm it on the official page, add that page as the source, then set info_kind: official"
+  sourceId: uai:0221852U

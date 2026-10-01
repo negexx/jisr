@@ -1,0 +1,25 @@
+slug: de-hawk-hochschule-fur-angewandte-wissensch-hrk128
+name: HAWK Hochschule für angewandte Wissenschaft und Kunst Hildesheim/Holzminden/Göttingen
+country: DE
+city:
+  slug: hildesheim
+  name: Hildesheim
+type: public
+website: https://www.hawk.de/de
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hawk-hochschule-fur-angewandte-wissensch-hrk128
+  name: HAWK Hochschule für angewandte Wissenschaft und Kunst Hildesheim/Holzminden/Göttingen
+  institution: ""
+  city: Hildesheim
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hawk.de/de
+  todo: "HRK: Fachhochschulen / HAW, Niedersachsen, sponsor \"öffentlich-rechtlich\"; listed URL \"https://www.hawk.de/de\" is a page or carries a query (tracking?): replace it with the institution's homepage; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:128

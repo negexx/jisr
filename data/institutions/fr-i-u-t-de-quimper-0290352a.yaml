@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-quimper-0290352a
+name: I.U.T de Quimper
+country: FR
+city:
+  slug: quimper
+  name: Quimper
+type: public
+website: https://www.univ-brest.fr/iut-quimper/fr
+source: parcoursup
+info_kind: guidance
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

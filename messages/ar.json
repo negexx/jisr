@@ -519,6 +519,7 @@
     }
   },
   "matchCard": {
+    "institutionWebsite": "موقع المؤسسة",
     "level": {
       "bachelor": "الإجازة"
     },
@@ -568,7 +569,8 @@
       "failed": {
         "note": "قد تتغير الشروط. تحقق من الصفحة الرسمية لكل برنامج قبل أن تقرر.",
         "show": "عرض البرامج ({count})"
-      }
+      },
+      "more": "عرض المزيد من البرامج (المتبقي {count})"
     },
     "summary": {
       "title": "ملفك",
@@ -658,7 +660,8 @@
       "institution": "المؤسسة",
       "institutionType": {
         "public": "مؤسسة عمومية",
-        "private": "مؤسسة خاصة"
+        "private": "مؤسسة خاصة",
+        "unknown": "النوع غير مؤكد، يجب التحقق منه"
       },
       "duration": "المدة",
       "languages": "لغات التدريس",
@@ -724,6 +727,7 @@
     "links": {
       "program": "صفحة البرنامج",
       "institution": "موقع المؤسسة",
+      "institutionUnknown": "موقع المؤسسة: لم يُعثر عليه بعد، يجب التحقق منه",
       "channel": "موقع التقديم"
     },
     "verified": {

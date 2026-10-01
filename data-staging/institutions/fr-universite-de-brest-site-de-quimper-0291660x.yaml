@@ -1,0 +1,25 @@
+slug: fr-universite-de-brest-site-de-quimper-0291660x
+name: Université de Brest - Site de Quimper
+country: FR
+city:
+  slug: quimper
+  name: Quimper
+type: public
+website: https://www.univ-brest.fr/fr
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-universite-de-brest-site-de-quimper-0291660x
+  name: Université de Brest - Site de Quimper
+  institution: ""
+  city: Quimper
+  field: ""
+  confidence: ""
+  officialUrl: https://www.univ-brest.fr/fr
+  todo: "website candidate from parent university \"Université de Bretagne Occidentale\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"
+  sourceId: uai:0291660X

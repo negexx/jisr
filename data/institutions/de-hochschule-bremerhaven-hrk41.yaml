@@ -1,0 +1,14 @@
+slug: de-hochschule-bremerhaven-hrk41
+name: Hochschule Bremerhaven
+country: DE
+city:
+  slug: bremerhaven
+  name: Bremerhaven
+type: public
+website: https://www.hs-bremerhaven.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

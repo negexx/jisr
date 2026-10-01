@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-villetaneuse-universite-sorbonn-0931235m
+name: I.U.T de Villetaneuse - Université Sorbonne Paris Nord
+country: FR
+city:
+  slug: villetaneuse
+  name: Villetaneuse
+type: public
+website: https://www.univ-spn.fr/
+source: parcoursup
+info_kind: guidance
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

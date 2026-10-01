@@ -1,0 +1,63 @@
+slug: de-universitat-passau-hrk218-artificial-intelligence-309386259
+institution: de-universitat-passau-hrk218
+country: DE
+city: passau
+field: computer-science
+level: bachelor
+name: Artificial Intelligence Bachelor
+summary:
+  fr:
+    text: Artificial Intelligence Bachelor, Universität Passau (Passau). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Artificial Intelligence Bachelor, Universität Passau (Passau). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Artificial Intelligence Bachelor, Universität Passau (Passau). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-universitat-passau-hrk218-artificial-intelligence-309386259
+  name: Artificial Intelligence Bachelor
+  institution: Universität Passau
+  city: Passau
+  field: computer-science
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Universität, Bayern, subjects: Künstliche Intelligenz (grundständig), Informatik (grundständig); provider \"Universität Passau\" matched to HRK institution \"Universität Passau\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:309386259

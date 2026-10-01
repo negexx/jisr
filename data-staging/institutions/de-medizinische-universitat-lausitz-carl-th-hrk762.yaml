@@ -1,0 +1,25 @@
+slug: de-medizinische-universitat-lausitz-carl-th-hrk762
+name: Medizinische Universität Lausitz - Carl Thiem
+country: DE
+city:
+  slug: cottbus
+  name: Cottbus
+type: public
+website: https://mul-ct.de/
+source: hrk
+info_kind: TODO_read_source
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-medizinische-universitat-lausitz-carl-th-hrk762
+  name: Medizinische Universität Lausitz - Carl Thiem
+  institution: ""
+  city: Cottbus
+  field: ""
+  confidence: ""
+  officialUrl: https://mul-ct.de/
+  todo: "HRK: Universitäten, Brandenburg, sponsor \"öffentlich-rechtlich\"; confirm the details on the institution's own site, add that page as the source, then set info_kind: official"
+  sourceId: hrk:762

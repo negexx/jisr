@@ -124,8 +124,18 @@ export function OverviewSection({ data }: { data: ProgramPageData }) {
                 <InstitutionCity data={data} />
               </p>
               <p className="text-sm text-muted-foreground">
-                {t(`overview.institutionType.${institution.type}`)}
+                {t(`overview.institutionType.${institution.type ?? "unknown"}`)}
               </p>
+              {institution.website === null ? null : (
+                <p className="flex flex-wrap items-center gap-x-3 text-sm">
+                  <ExternalLink href={institution.website} className="min-h-8">
+                    {t("links.institution")}
+                  </ExternalLink>
+                  <span className="text-muted-foreground">
+                    <bdi dir="ltr">{sourceHostname(institution.website)}</bdi>
+                  </span>
+                </p>
+              )}
               <SourceBadge meta={institution.fact} />
             </>
           )}
@@ -134,17 +144,21 @@ export function OverviewSection({ data }: { data: ProgramPageData }) {
           {duration === null ? (
             <ToCheck>{t("header.durationUnknown")}</ToCheck>
           ) : (
-            <p className="text-base">{t("header.duration", duration)}</p>
+            <>
+              <p className="text-base">{t("header.duration", duration)}</p>
+              <SourceBadge meta={program.durationYears} />
+            </>
           )}
-          <SourceBadge meta={program.durationYears} />
         </Fact>
         <Fact label={t("overview.languages")}>
           {languages === null ? (
             <ToCheck>{t("header.languagesUnknown")}</ToCheck>
           ) : (
-            <p className="text-base">{languages}</p>
+            <>
+              <p className="text-base">{languages}</p>
+              <SourceBadge meta={program.teachingLanguages} />
+            </>
           )}
-          <SourceBadge meta={program.teachingLanguages} />
         </Fact>
       </dl>
     </Section>
@@ -171,7 +185,9 @@ export function RequirementsSection({ data }: { data: ProgramPageData }) {
           <span>{tDomain(coverage.key)}</span>
         </p>
       ) : null}
-      <SourceBadge meta={requirements.fact} variant="full" />
+      {requirements.rules.length === 0 ? null : (
+        <SourceBadge meta={requirements.fact} variant="full" />
+      )}
       {requirements.rules.length === 0 ? (
         <ToCheck>{t("none")}</ToCheck>
       ) : (
@@ -315,7 +331,7 @@ export function DeadlineSection({ data }: { data: ProgramPageData }) {
           </ul>
         </>
       )}
-      <SourceBadge meta={data.program.intakes} />
+      {intakes.length === 0 ? null : <SourceBadge meta={data.program.intakes} />}
     </Section>
   );
 }
@@ -328,10 +344,7 @@ export function ProcedureSection({ data }: { data: ProgramPageData }) {
   return (
     <Section id="procedure">
       {channel === null ? (
-        <>
-          <ToCheck>{t("missing")}</ToCheck>
-          <SourceBadge meta={data.program.applicationChannel} />
-        </>
+        <ToCheck>{t("missing")}</ToCheck>
       ) : (
         <dl className="flex flex-col gap-4">
           <Fact label={t("where")}>
@@ -397,7 +410,9 @@ export function DocumentsSection({ data }: { data: ProgramPageData }) {
           ))}
         </ul>
       )}
-      <SourceBadge meta={data.program.documents} />
+      {documents === null || documents.length === 0 ? null : (
+        <SourceBadge meta={data.program.documents} />
+      )}
     </Section>
   );
 }
@@ -534,7 +549,11 @@ export function LinksSection({ data }: { data: ProgramPageData }) {
     <Section id="links">
       <ul className="flex flex-col gap-1">
         <LinkItem href={data.program.officialUrl} label={t("program")} />
-        {data.institution === null ? null : (
+        {data.institution === null ? null : data.institution.website === null ? (
+          <li className="min-h-11 text-base text-muted-foreground md:min-h-8">
+            {t("institutionUnknown")}
+          </li>
+        ) : (
           <LinkItem href={data.institution.website} label={t("institution")} />
         )}
         {data.applicationChannel === null ? null : (

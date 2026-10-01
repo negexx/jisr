@@ -1,0 +1,25 @@
+slug: fr-universite-de-montpellier-antenne-de-per-0660922u
+name: Université de Montpellier, Antenne de Perpignan
+country: FR
+city:
+  slug: perpignan
+  name: Perpignan
+type: public
+website: null
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-universite-de-montpellier-antenne-de-per-0660922u
+  name: Université de Montpellier, Antenne de Perpignan
+  institution: ""
+  city: Perpignan
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "website missing: find the official https site, add that page as the source, then set info_kind: official"
+  sourceId: uai:0660922U

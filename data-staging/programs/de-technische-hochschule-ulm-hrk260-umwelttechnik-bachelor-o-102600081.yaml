@@ -1,0 +1,63 @@
+slug: de-technische-hochschule-ulm-hrk260-umwelttechnik-bachelor-o-102600081
+institution: de-technische-hochschule-ulm-hrk260
+country: DE
+city: ulm
+field: engineering
+level: bachelor
+name: Umwelttechnik Bachelor of Engineering
+summary:
+  fr:
+    text: Umwelttechnik Bachelor of Engineering, Technische Hochschule Ulm (Ulm). Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.
+    status: draft
+  en:
+    text: Umwelttechnik Bachelor of Engineering, Technische Hochschule Ulm (Ulm). Programme listed in the Federal Employment Agency's Studiensuche.
+    status: draft
+  ar:
+    text: Umwelttechnik Bachelor of Engineering, Technische Hochschule Ulm (Ulm). برنامج مدرج في Studiensuche التابع للوكالة الفيدرالية للتوظيف.
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: ba
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: ba
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  ba:
+    url: https://web.arbeitsagentur.de/studiensuche/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-technische-hochschule-ulm-hrk260-umwelttechnik-bachelor-o-102600081
+  name: Umwelttechnik Bachelor of Engineering
+  institution: Technische Hochschule Ulm
+  city: Ulm
+  field: engineering
+  confidence: high
+  officialUrl: ""
+  todo: "BA Studiensuche: Fachhochschule/Hochschule für angewandte Wissenschaften, Baden-Württemberg, subjects: Umwelttechnik (grundständig); provider \"Technische Hochschule Ulm\" matched to HRK institution \"Technische Hochschule Ulm\"; the API has no programme page, language or fees: find the programme page on the institution's site and set officialUrl (required) and use it as the source, then durationYears, teachingLanguages (German unless stated), tuition for non-EU students (state rules differ), intakes, documents, requirements and the application channel (uni-assist or direct), and set each info_kind"
+  sourceId: ba:102600081
