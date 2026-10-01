@@ -519,6 +519,7 @@
     }
   },
   "matchCard": {
+    "institutionWebsite": "موقع المؤسسة",
     "level": {
       "bachelor": "الإجازة"
     },

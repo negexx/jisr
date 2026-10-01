@@ -25,6 +25,7 @@ export type MatchCardModel = {
   slug: string;
   name: string; // official, untranslated
   institutionName: string;
+  institutionWebsite: string | null; // null: not found yet, the card says nothing rather than guess
   cityName: string;
   level: Program["level"];
   teachingLanguages: ResolvedFact<string[]>;
@@ -202,6 +203,7 @@ function cardFor(input: CardInput): MatchCardModel {
     slug: program.slug,
     name: program.name,
     institutionName: institution?.name ?? program.institution,
+    institutionWebsite: institution?.website ?? null,
     cityName: institution?.city.name ?? program.city,
     level: program.level,
     teachingLanguages: program.teachingLanguages,

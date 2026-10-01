@@ -11,6 +11,7 @@ import { formatList, languageName } from "@/lib/journey/reasons";
 import { cn } from "@/lib/utils";
 import { CostBreakdown } from "./cost-breakdown";
 import { DeadlineStatus } from "./deadline-status";
+import { ExternalLink, sourceHostname } from "./external-link";
 import { LocalizedDataText } from "./localized-data-text";
 import { MatchStatusBadge } from "./match-status-badge";
 import { ReasonList } from "./reason-list";
@@ -106,6 +107,16 @@ export function MatchCard({
             place: (chunks) => <bdi className="inline-block max-w-full">{chunks}</bdi>,
           })}
         </p>
+        {model.institutionWebsite === null ? null : (
+          <p className="flex flex-wrap items-center gap-x-3 text-sm">
+            <ExternalLink href={model.institutionWebsite} className="min-h-8">
+              {t("institutionWebsite")}
+            </ExternalLink>
+            <span className="text-muted-foreground">
+              <bdi dir="ltr">{sourceHostname(model.institutionWebsite)}</bdi>
+            </span>
+          </p>
+        )}
         <div className="flex flex-col gap-1.5">
           <p className="flex flex-wrap items-baseline gap-x-2 text-base">
             <span className="font-medium">{t(`level.${model.level}`)}</span>

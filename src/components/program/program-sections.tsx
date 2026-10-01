@@ -126,6 +126,16 @@ export function OverviewSection({ data }: { data: ProgramPageData }) {
               <p className="text-sm text-muted-foreground">
                 {t(`overview.institutionType.${institution.type ?? "unknown"}`)}
               </p>
+              {institution.website === null ? null : (
+                <p className="flex flex-wrap items-center gap-x-3 text-sm">
+                  <ExternalLink href={institution.website} className="min-h-8">
+                    {t("links.institution")}
+                  </ExternalLink>
+                  <span className="text-muted-foreground">
+                    <bdi dir="ltr">{sourceHostname(institution.website)}</bdi>
+                  </span>
+                </p>
+              )}
               <SourceBadge meta={institution.fact} />
             </>
           )}

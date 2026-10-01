@@ -519,6 +519,7 @@
     }
   },
   "matchCard": {
+    "institutionWebsite": "Site de l'établissement",
     "level": {
       "bachelor": "Licence"
     },
