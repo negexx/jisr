@@ -20,6 +20,7 @@
     "data:build": "tsx scripts/data/build.ts",
     "data:import": "tsx scripts/import/run.ts",
     "data:promote": "tsx scripts/import/promote.ts",
+    "data:uniassist": "tsx scripts/import/sources/uniassist.ts",
     "data:shortlist": "tsx scripts/import/shortlist.ts",
     "data:evidence": "tsx scripts/import/evidence-cli.ts",
     "data:audit": "tsx scripts/import/audit.ts",

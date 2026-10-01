@@ -49,6 +49,7 @@ pnpm data:import france          # Parcoursup open data (Licence + BUT, CS/engin
 pnpm data:import institutions    # German (HRK) and Dutch (DUO) institution candidates
 pnpm data:import netherlands     # Dutch programmes (RIO register) and their campus institutions
 pnpm data:import germany         # German programmes (Studiensuche API), linked to the HRK institutions
+pnpm data:uniassist             # uni-assist university list -> data-staging/UNIASSIST.csv (which German universities use uni-assist, and how)
 pnpm data:import daad            # English-taught German programmes (DAAD), with language, duration, deadline
 pnpm data:import                 # all sources; keeps staged files (--overwrite replaces them and clears their approval; --refresh bypasses the HTTP cache)
 pnpm data:promote --confirm-human-read --verified-on YYYY-MM-DD
@@ -87,9 +88,29 @@ The HTTP cache lives in `.cache/import/` (git-ignored).
 | DUO "Overzicht Erkenningen ho" (RIO) | Creative Commons Attribution (cc-by, from the dataset metadata; the licence version is not stated) | credit "DUO / Ministry of Education, Culture and Science (OCW)" wherever RIO-derived data is shown: **add a data-credits page before launch** |
 | DUO institution list (`Hogescholen en universiteiten`) | the page states no licence; a research note says CC0 for DUO open data, not verified | **confirm the licence** |
 | Studiensuche API (Federal Employment Agency) | no licence statement found in the public documentation; documented and used by the bund.dev community with a public client id | **terms of use confirmed as acceptable by the project owner** (2026-10-01); keep the confirmation with the project records |
+| uni-assist university list (`uni-assist.de/en/tools/uni-assist-universities/`) | public web pages with no licence statement and no robots.txt rule found for them; fetched politely (4 requests in parallel, cached) for a read-only mapping that is not republished | **confirm acceptable with the project owner**; the sheet only records which universities use uni-assist and cites the page |
 | DAAD International Programmes search | undocumented JSON endpoint of the DAAD website; its host (www2.daad.de) serves no robots.txt (404) and the main site's robots.txt has no rule for these pages (not verifiable from this repository); four paged requests, one at a time, cached; DAAD's legal pages could not be read | **permission obtained from DAAD** (reported by the project owner, 2026-10-01). Keep the written permission with the project records and check that its scope covers publishing the DAAD-derived facts (language, duration, deadlines) and any credit DAAD expects |
 | Wikidata | CC0 | free |
 
 Known gaps: tuition fees, living costs, scholarships and Morocco-specific admission routes are not imported. German-taught programmes from the Federal Employment Agency's study search have no teaching language, tuition or programme page; the English-taught ones from DAAD do have a language and a page. If a request fails behind a proxy, run with `NODE_USE_ENV_PROXY=1` (Node 22+): in the cloud sandbox Node reached DAAD only that way.
 
 Deliberately not adopted (see ADR 0003, one developer, Release 1): campus and institutional-history tables, raw source snapshots, ETER (its terms forbid republishing through an online platform), Destatis codebooks and accreditation registers (NVAO). Revisit when accounts or more countries land.
+
+## uni-assist mapping (`pnpm data:uniassist`)
+
+uni-assist e.V. is the central service many German universities use for applicants with a foreign
+school-leaving certificate. Its official list (197 universities) says, per university, one of:
+
+- **processes**: no note on its page: uni-assist handles the application;
+- **vpd_only**: "We will issue you with a preliminary review documentation (VPD). You are then
+  required to submit your application with the VPD directly to the university.";
+- **special**: a note that only concerns some courses or levels (read it).
+
+`data-staging/UNIASSIST.csv` has one row per university with the mode, the detail page (the source
+to cite) and the note verbatim. Each row is matched to our German institutions by website host,
+then registrable domain (language subdomains such as `en.w-hs.de`), narrowed by town for
+universities with several campus units, then by exact normalised name. A row that matches nothing
+is **never guessed**: `sameTownCandidates` lists our institutions in that town for a person to
+decide. The page itself says that each university decides which courses and applicant groups
+uni-assist handles, so the sheet narrows the question and the university's own page answers it.
+Nothing in `data/` is written from this sheet yet.
