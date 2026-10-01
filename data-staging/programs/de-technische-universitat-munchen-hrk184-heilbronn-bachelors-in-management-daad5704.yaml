@@ -1,0 +1,138 @@
+slug: de-technische-universitat-munchen-hrk184-heilbronn-bachelors-in-management-daad5704
+institution: de-technische-universitat-munchen-hrk184-heilbronn
+country: DE
+city: heilbronn
+field: computer-science
+level: bachelor
+name: Bachelor's in Management & Data Science (BSc)
+summary:
+  fr:
+    text: Bachelor's in Management & Data Science (BSc), Technische Universität München (Heilbronn). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Bachelor's in Management & Data Science (BSc), Technische Universität München (Heilbronn). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Bachelor's in Management & Data Science (BSc), Technische Universität München (Heilbronn). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www.mgt.tum.de/programs/undergraduate-programs/bachelor-management-data-science/
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez si vous avez besoin d'un certificat APS : cela concerne uniquement les diplômes chinois, vietnamiens ou indiens ; un Baccalauréat marocain n'est pas concerné, mais confirmez-le."
+          status: draft
+        en:
+          text: "Check whether you need an APS certificate: it applies only to Chinese, Vietnamese or Indian school or university degrees; a Moroccan Baccalauréat is not covered, but confirm this."
+          status: draft
+    - id: req-2
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un programme d'admission en deux étapes (notes + éventuel entretien) s'applique : les dates d'entretien et les seuils de notes ne sont pas donnés ici, renseignez-vous auprès de l'université."
+          status: draft
+        en:
+          text: "A two-stage aptitude assessment (grades plus possible interview) applies: interview dates and grade thresholds are not given here, check with the university."
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: L'anglais est la langue d'enseignement mais aucun niveau minimum n'est exigé ; une évaluation se fait par test ou entretien.
+          status: draft
+        en:
+          text: English is the language of instruction but no minimum level is required; proficiency is assessed via test or interview.
+          status: draft
+    - id: req-4
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des frais de scolarité sont dus par les étudiants de pays hors EEE (sauf dispenses) ; vérifiez le montant et les possibilités de dispense sur la page des frais de TUM.
+          status: draft
+        en:
+          text: Tuition fees apply to students from non-EEA countries (subject to waivers); check the amount and waiver options on TUM's fee page.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.mgt.tum.de/programs/undergraduate-programs/bachelor-management-data-science/
+    last_verified_at: null
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5704/
+    last_verified_at: null
+  page-3:
+    url: https://www.tum.de/en/studies/application/application-info-portal/aps
+    last_verified_at: null
+  page-4:
+    url: https://www.mgt.tum.de/programs/bachelor-management-data-science/how-to-apply
+    last_verified_at: null
+  page-5:
+    url: https://www.tum.de/en/studies/fees
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-technische-universitat-munchen-hrk184-heilbronn-bachelors-in-management-daad5704
+  name: Bachelor's in Management & Data Science (BSc)
+  sourceId: daad:5704
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5704/
+      quote: Programme duration 6 semesters
+    - fact: teachingLanguages
+      url: https://www.mgt.tum.de/programs/undergraduate-programs/bachelor-management-data-science/
+      quote: "Location: Heilbronn Language: 100% English Full-time study 6 semesters"
+    - fact: requirements.req-1
+      url: https://www.tum.de/en/studies/application/application-info-portal/aps
+      quote: An APS certificate is not required for applications for Studienkolleg / bachelor‘s degree programs if your higher education entrance qualification (school diploma) was acquired outside of China, Vietnam or India.
+    - fact: requirements.req-2
+      url: https://www.mgt.tum.de/programs/bachelor-management-data-science/how-to-apply
+      quote: The result of stage 1 leads to a direct admission, an admission interview (stage 2) or a rejection.
+    - fact: requirements.req-3
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5704/
+      quote: No minimum language level required (proficiency assessment via test or interview)
+    - fact: requirements.req-4
+      url: https://www.tum.de/en/studies/fees
+      quote: International students from third countries, i.e. countries that do not belong to the European Economic Area (EU + Iceland, Liechtenstein and Norway), usually have to pay tuition fees.
+  notes: "Durée de 3 ans déduite de « 6 semesters ». La date limite de candidature 15 July est citée sans année dans les textes, donc laissée à null. Aucun montant de frais de scolarité pour ce programme n'est indiqué : le DAAD écrit « None » / « This degree programme does not charge any tuition fees », mais la page générale de TUM précise que les étudiants hors EEE paient normalement des frais (avec dispenses possibles) ; les deux se contredisent, donc le montant n'est pas retenu. Les frais de semestre (97,00 Euro à Heilbronn) sont des frais administratifs, pas des frais de scolarité, et ne concernent pas spécifiquement les étudiants hors UE. Les règles de notes/entretien sont laissées en manual_check comme demandé. Aucune exigence de matière précise (mathématiques, etc.) n'est citée comme condition d'admission."

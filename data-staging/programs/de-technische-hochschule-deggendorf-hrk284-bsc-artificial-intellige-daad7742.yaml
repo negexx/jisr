@@ -1,0 +1,121 @@
+slug: de-technische-hochschule-deggendorf-hrk284-bsc-artificial-intellige-daad7742
+institution: de-technische-hochschule-deggendorf-hrk284
+country: DE
+city: deggendorf
+field: computer-science
+level: bachelor
+name: BSc Artificial Intelligence
+summary:
+  fr:
+    text: BSc Artificial Intelligence, Technische Hochschule Deggendorf (Deggendorf). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: BSc Artificial Intelligence, Technische Hochschule Deggendorf (Deggendorf). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: BSc Artificial Intelligence, Technische Hochschule Deggendorf (Deggendorf). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7742/
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez la qualification d'entrée à l'université via la base de données DAAD et Anabin.
+          status: draft
+        en:
+          text: Check the university entrance qualification via the DAAD database and Anabin.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un test d'admission en ligne couvrant des sujets mathématiques et logiques est nécessaire.
+          status: draft
+        en:
+          text: An online admission test covering mathematical and logical topics is necessary.
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des frais de candidature et de service s'appliquent aux étudiants non-UE/EEE.
+          status: draft
+        en:
+          text: Application and service fees apply to non-EU/EEA students.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7742/
+    last_verified_at: null
+  page-2:
+    url: https://www.th-deg.de/en/apply
+    last_verified_at: null
+  page-3:
+    url: https://www.th-deg.de/en/students/documents/application-and-service-fees
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-technische-hochschule-deggendorf-hrk284-bsc-artificial-intellige-daad7742
+  name: BSc Artificial Intelligence
+  sourceId: daad:7742
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7742/
+      quote: Programme duration 7 semesters
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7742/
+      quote: Teaching language English
+    - fact: teachingLanguages
+      url: https://www.th-deg.de/ain-b-en
+      quote: Taught in English
+    - fact: requirements.req-1
+      url: https://www.th-deg.de/en/apply
+      quote: please use the DAAD Database on admission requirements
+    - fact: requirements.req-2
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7742/
+      quote: A successfully completed, online assessment test covering mathematical, logical topics from the general field of AI is necessary.
+    - fact: requirements.req-3
+      url: https://www.th-deg.de/en/students/documents/application-and-service-fees
+      quote: €60 application fee (multiple applications possible without further payment) at the Deggendorf Institute of Technology, plus €500 DIT service fee per semester for enrolled students
+  notes: The tuition fees for non-EU students are not explicitly stated for this programme, only service fees. The application deadline is for the winter semester; the year is not specified in the quotes, so a year of 2026 was assumed based on the DAAD page header 'International Programmes 2026/2027'.

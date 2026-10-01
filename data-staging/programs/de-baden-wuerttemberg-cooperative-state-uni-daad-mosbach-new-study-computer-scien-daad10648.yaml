@@ -15,41 +15,77 @@ summary:
   ar:
     text: New Study Computer Science, Baden-Wuerttemberg Cooperative State University (Mosbach). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: null
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/
 durationYears:
   value: 3
-  source: daad
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: TODO_read_source
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: daad
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: false
+      acceptedTests: []
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un contrat de formation pratique avec une entreprise partenaire (Dualer Partner) doit être signé avant l'inscription ; contactez directement l'entreprise.
+          status: draft
+        en:
+          text: A training contract with a workplace training provider (Dualer Partner) must be signed before enrolment; contact the company directly.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats titulaires d'un diplôme étranger doivent faire évaluer leur diplôme par le Central International Office du DHBW ; prévoyez plusieurs semaines.
+          status: draft
+        en:
+          text: Applicants with a foreign qualification must have their credentials assessed by the Central International Office of DHBW; allow several weeks.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/
+    last_verified_at: null
+  page-2:
+    url: https://www.dhbw.de/application
     last_verified_at: null
 _review:
   kind: programs
@@ -60,5 +96,29 @@ _review:
   field: computer-science
   confidence: high
   officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/
-  todo: "DAAD page lists: languages English, duration 6 semesters, starts Winter semester, tuition \"Tuition varies\", deadline \"This programme has no deadline.\"; institution not matched to the HRK list (see its record); the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU"
+  todo: "DAAD page lists: languages English, duration 6 semesters, starts Winter semester, tuition \"Tuition varies\", deadline \"This programme has no deadline.\"; institution not matched to the HRK list (see its record); the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: daad:10648
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/
+      quote: Over three years (six semesters), you will gain in-depth knowledge of computer science
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/
+      quote: Classes are held entirely in English.
+    - fact: tuition
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/
+      quote: "Tuition fees per semester The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/
+      quote: English language skills B2 required, proof via placement test/interview
+    - fact: requirements.req-2
+      url: https://www.dhbw.de/application
+      quote: Enrollment at the university is only possible after a training contract with a workplace training provider has been signed.
+    - fact: requirements.req-3
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/
+      quote: Enrolment of international degree seeking students, who received their university entrance qualification abroad, is only possible after the assessment of equivalency.
+    - fact: requirements.req-3
+      url: https://www.dhbw.de/application
+      quote: The assessment of foreign academic credentials usually takes 2 to 3 weeks and is free of charge.

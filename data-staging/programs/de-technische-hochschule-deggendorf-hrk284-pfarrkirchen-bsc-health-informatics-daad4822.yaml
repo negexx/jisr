@@ -1,0 +1,135 @@
+slug: de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-bsc-health-informatics-daad4822
+institution: de-technische-hochschule-deggendorf-hrk284-pfarrkirchen
+country: DE
+city: pfarrkirchen
+field: computer-science
+level: bachelor
+name: BSc Health Informatics
+summary:
+  fr:
+    text: BSc Health Informatics, Technische Hochschule Deggendorf (Pfarrkirchen). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: BSc Health Informatics, Technische Hochschule Deggendorf (Pfarrkirchen). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: BSc Health Informatics, Technische Hochschule Deggendorf (Pfarrkirchen). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://th-deg.de/hi-b-en
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 50000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-university-direct
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un test d'admission doit être réussi : « A successfully completed admission test ». Vérifiez auprès de l'université les détails et les modalités de ce test."
+          status: draft
+        en:
+          text: 'An admission test must be passed: "A successfully completed admission test". Check with the university for details and how to take this test.'
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez votre éligibilité avec votre Baccalauréat marocain via la base de données DAAD ou Anabin : votre diplôme pourrait nécessiter une année d'études supplémentaires ou un Studienkolleg."
+          status: draft
+        en:
+          text: "Verify your eligibility with your Moroccan Baccalauréat via the DAAD database or Anabin: your diploma may require an additional year of study or a Studienkolleg."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://th-deg.de/hi-b-en
+    last_verified_at: null
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4822/
+    last_verified_at: null
+  page-3:
+    url: https://www.th-deg.de/en/apply
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-bsc-health-informatics-daad4822
+  name: BSc Health Informatics
+  sourceId: daad:4822
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://th-deg.de/hi-b-en
+      quote: Duration 7 Semester
+    - fact: teachingLanguages
+      url: https://th-deg.de/hi-b-en
+      quote: Taught in English
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4822/
+      quote: "Languages Course language: English"
+    - fact: tuition
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4822/
+      quote: non-EU countries Switzerland United Kingdom 500 EUR
+    - fact: tuition
+      url: https://th-deg.de/en/students/documents/application-and-service-fees
+      quote: plus €500 DIT service fee per semester for enrolled students (the academic year consists of two semesters)
+    - fact: applicationChannel
+      url: https://www.th-deg.de/en/apply
+      quote: choose what you aim to study and apply directly to DIT via our own online application portal, Primuss.
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4822/
+      quote: "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 72"
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4822/
+      quote: "IELTS Academic: 5.5"
+    - fact: requirements.req-2
+      url: https://th-deg.de/hi-b-en
+      quote: Admission requirements General German university entrance qualification, or please check your eligibilty at the DAAD if you own an international qualification Language requirements A successfully completed admission test
+    - fact: requirements.req-3
+      url: https://www.th-deg.de/en/apply
+      quote: "If your qualification does not provide you with application eligibility for our university, you have these options: One year of study at an internationally recognized university in your country"
+  notes: Le montant des frais de scolarité pour les étudiants hors UE est de 500 EUR par semestre, tel qu'indiqué sur la page DAAD pour ce programme et confirmé par la page des frais de service du DIT. La langue d'enseignement est l'anglais. Le programme dure 7 semestres (210 ECTS), soit 3,5 ans. Les dates d'ouverture et de clôture des candidatures (15 avril - 15 juillet) sont données sans année ; l'année 2026 est supposée pour le semestre d'hiver 2026/2027 car la page DAAD est intitulée 'International Programmes 2026/2027'. La candidature se fait directement via le portail Primuss du DIT pour les candidats internationaux ; les pages ne mentionnent pas uni-assist pour cette université. Un test d'admission est requis, ainsi qu'un certificat de langue anglaise de niveau B2. Le statut du baccalauréat marocain doit être vérifié via la base de données DAAD ou Anabin.

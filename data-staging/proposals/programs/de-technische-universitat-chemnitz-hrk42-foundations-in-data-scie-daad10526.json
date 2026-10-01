@@ -1,0 +1,122 @@
+{
+  "slug": "de-technische-universitat-chemnitz-hrk42-foundations-in-data-scie-daad10526",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+          "quote": "The curriculum extends over six semesters, during which students must acquire 180 ECTS credits."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+          "quote": "Teaching language English"
+        },
+        {
+          "url": "https://www.mytuc.org/qbnf",
+          "quote": "Languages: English; learning German is a compulsory part of the program"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.mytuc.org/qbnf",
+          "quote": "There are no tuition fees; however, you must pay the semester contribution each semester"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2027-01-15"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+          "quote": "For the summer semester: until 15 January 2027"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.mytuc.org/qbnf",
+          "quote": "If you are applying from abroad, you will generally need to apply via the uni-assist agency."
+        }
+      ]
+    }
+  },
+  "notes": "Les pages ne donnent pas de date de début pour les rentrées ni pour l'ouverture des candidatures. Le semestre d'hiver a une date limite de candidature le 15 juillet mais sans année précisée dans les citations disponibles, donc non incluse. Le DAAD mentionne 'Beginning Winter and summer semester' et 'For the winter semester: until 15 July' mais aucune année n'est fournie, donc pas de date ISO. L'inscription en été est possible mais l'université recommande fortement de commencer en hiver. Le programme exige un diplôme de fin d'études secondaires (Abitur, A-levels).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+            "quote": "English language skills at a B2 level (CEFR)"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+            "quote": "TOEFL iBT (before 2026): 72 Reading: 18 Listening: 17 Speaking: 20 Writing: 17"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+            "quote": "IELTS Academic: 5.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si vous devez passer le test d'entrée spécifique à la matière (subject-specific entrance test) et le soumettre avec votre candidature.",
+          "en": "Check whether you are required to take the subject-specific entrance test and submit it with your application."
+        },
+        "evidence": [
+          {
+            "url": "https://www.mytuc.org/qbnf",
+            "quote": "Complete the subject-specific entrance test in order to check whether your mathematical skills meet the requirements for our program, and hand it in along with you application to uni-assist."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez auprès de l'université si vous devez fournir un justificatif de connaissances en mathématiques du niveau de l'Abitur.",
+          "en": "Check with the university whether you need to provide proof of mathematics knowledge at the Abitur level."
+        },
+        "evidence": [
+          {
+            "url": "https://www.mytuc.org/qbnf",
+            "quote": "Applicants should be familiar with the subject matter covered by the German General University Entrance Qualification (Abitur)."
+          }
+        ]
+      }
+    ]
+  }
+}

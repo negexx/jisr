@@ -1,0 +1,103 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk287-computer-science-bsc-daad7216
+institution: de-hochschule-fur-angewandte-wissenschaften-hrk287
+country: DE
+city: hof
+field: computer-science
+level: bachelor
+name: Computer Science (BSc)
+summary:
+  fr:
+    text: Computer Science (BSc), Hochschule für angewandte Wissenschaften Hof (Hof). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Computer Science (BSc), Hochschule für angewandte Wissenschaften Hof (Hof). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Computer Science (BSc), Hochschule für angewandte Wissenschaften Hof (Hof). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www.hof-university.com/studying-at-hof-university/our-degree-programs/computer-science-international-bsc.html
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: de
+      minCefr: A2
+      certificateRequired: true
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Votre certificat d'accès à l'université obtenu à l'étranger doit d'abord être évalué par uni-assist (VPD) avant l'inscription ; il est conseillé d'envoyer les documents à uni-assist au moins 4 semaines avant la date limite.
+          status: draft
+        en:
+          text: Your university entrance certificate acquired abroad must first be assessed by uni-assist (VPD) before application; you are advised to send documents to uni-assist at least 4 weeks before the deadline.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hof-university.com/studying-at-hof-university/our-degree-programs/computer-science-international-bsc.html
+    last_verified_at: null
+  page-2:
+    url: https://www.hof-university.com/studying-at-hof-university/preparing-your-stay/how-to-finance-your-studies.html
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-fur-angewandte-wissenschaften-hrk287-computer-science-bsc-daad7216
+  name: Computer Science (BSc)
+  sourceId: daad:7216
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.hof-university.com/studying-at-hof-university/our-degree-programs/computer-science-international-bsc.html
+      quote: The standard duration of this Bachelor‘s program is 8 semesters.
+    - fact: tuition
+      url: https://www.hof-university.com/studying-at-hof-university/preparing-your-stay/how-to-finance-your-studies.html
+      quote: At Hof University, no tuition fees are charged for our Bachelor's and Master's programs.
+    - fact: tuition
+      url: https://www.hof-university.com/studying-at-hof-university/our-degree-programs/computer-science-international-bsc.html
+      quote: Tuition fees None
+    - fact: requirements.req-1
+      url: https://www.hof-university.com/studying-at-hof-university/our-degree-programs/computer-science-international-bsc.html
+      quote: "In addition: German language skills, proven by official test score documents - minimum level A2"
+    - fact: requirements.req-2
+      url: https://www.hof-university.com/studying-at-hof-university/our-degree-programs/computer-science-international-bsc.html
+      quote: We advise you to send your documents to uni-assist at least 4 weeks before our application deadline.
+  notes: "Tuition: the programme page says 'Tuition fees None'; the finance page states no tuition fees for Bachelor's and Master's programs at Hof University (only the Graduate School charges fees). Amounts (0 EUR) refer to the stated absence of fees. Intakes: only the non-EU summer-semester application window (5 November - 30 November) is stated with full day/month but no explicit year; the deadline year 2026 is inferred from the page's context (International Programmes 2026/2027 and the scholarship call for 2026/27). No start date is given. ApplicationChannel: for a foreign-diploma applicant the pages state that uni-assist must assess the certificate and issue a VPD before applying in the Primuss portal, hence de-uni-assist-vpd."

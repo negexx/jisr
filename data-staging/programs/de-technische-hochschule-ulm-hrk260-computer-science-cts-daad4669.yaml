@@ -1,0 +1,112 @@
+slug: de-technische-hochschule-ulm-hrk260-computer-science-cts-daad4669
+institution: de-technische-hochschule-ulm-hrk260
+country: DE
+city: ulm
+field: computer-science
+level: bachelor
+name: Computer Science (CTS)
+summary:
+  fr:
+    text: Computer Science (CTS), Technische Hochschule Ulm (Ulm). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Computer Science (CTS), Technische Hochschule Ulm (Ulm). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Computer Science (CTS), Technische Hochschule Ulm (Ulm). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www.thu.de/cts
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: page-3
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez votre qualification d'entrée aux études supérieures (Fachhochschulreife, Abitur ou équivalent) et contactez le Studienkolleg Konstanz pour faire reconnaître votre diplôme étranger.
+          status: draft
+        en:
+          text: Check your higher education entrance qualification (Fachhochschulreife, Abitur or equivalent) and contact Studienkolleg Konstanz to have your foreign school-leaving qualification recognised.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.thu.de/cts
+    last_verified_at: null
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4669/
+    last_verified_at: null
+  page-3:
+    url: https://www.thu.de/en/studies/before-studies/fees-scholarships/contributions-tuition-fees
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-technische-hochschule-ulm-hrk260-computer-science-cts-daad4669
+  name: Computer Science (CTS)
+  sourceId: daad:4669
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.thu.de/cts
+      quote: The Computer Science course lasts eight semesters.
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4669/
+      quote: The study programme can be completed in English.
+    - fact: tuition
+      url: https://www.thu.de/en/studies/before-studies/fees-scholarships/contributions-tuition-fees
+      quote: Tuition fee for international students €1,500.00 per semester
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4669/
+      quote: "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT Home Edition (before 2026): 79 IELTS Academic: 6"
+    - fact: requirements.req-2
+      url: https://www.thu.de/cts
+      quote: The prerequisite for the Computer Science Bachelor's degree is a Fachhochschulreife, a subject-restricted higher education entrance qualification, the Abitur or a comparable higher education entrance qualification.
+    - fact: requirements.req-2
+      url: https://www.thu.de/cts
+      quote: If you have a foreign school-leaving qualification, this must be recognized by the Studienkolleg Konstanz.
+  notes: Another intake with no dates in the text can be given as null but may be dropped. Teaching language English; some German courses are included. Tuition for non-EU students is 1,500 EUR per semester per the central page. Program page states teaching in English and refers to Studienkolleg Konstanz for recognition of foreign certificates; application channel unclear (university's own portal likely, but not stated in provided pages).

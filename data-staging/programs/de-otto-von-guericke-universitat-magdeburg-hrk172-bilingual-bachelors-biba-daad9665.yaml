@@ -1,0 +1,109 @@
+slug: de-otto-von-guericke-universitat-magdeburg-hrk172-bilingual-bachelors-biba-daad9665
+institution: de-otto-von-guericke-universitat-magdeburg-hrk172
+country: DE
+city: magdeburg
+field: computer-science
+level: bachelor
+name: Bilingual Bachelor's (BiBa) in Computer Science
+summary:
+  fr:
+    text: Bilingual Bachelor's (BiBa) in Computer Science, Otto-von-Guericke-Universität Magdeburg (Magdeburg). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Bilingual Bachelor's (BiBa) in Computer Science, Otto-von-Guericke-Universität Magdeburg (Magdeburg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Bilingual Bachelor's (BiBa) in Computer Science, Otto-von-Guericke-Universität Magdeburg (Magdeburg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-uni-assist
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Veuillez vérifier les critères d'admission (HZB, test d'aptitude, etc.).
+          status: draft
+        en:
+          text: Please check the admission criteria (HZB, eligibility test, etc.).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-otto-von-guericke-universitat-magdeburg-hrk172-bilingual-bachelors-biba-daad9665
+  name: Bilingual Bachelor's (BiBa) in Computer Science
+  sourceId: daad:9665
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/
+      quote: Programme duration 6 semesters
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/
+      quote: BiBa is a Bachelor’s degree programme in computer science that is taught bilingually (in German and English).
+    - fact: tuition
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/
+      quote: Tuition fees per semester None
+    - fact: applicationChannel
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/
+      quote: Please apply via uni-assist.
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/
+      quote: "English language skills B2 required, please provide an official language certificate, e.g.:"
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/
+      quote: "IELTS Academic: 6.5"
+    - fact: requirements.req-2
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/
+      quote: "Academic admission requirements In our new programme, students can start if they fulfil the following three prerequisites:"
+  notes: The tuition is stated as 'None' for this programme; the semester fee (311.30 EUR) is not tuition and is not included. Intake application period is 15 April – 15 July, but the year is not clearly stated for the winter semester 2026/2027; the deadline is left null because the quote does not explicitly mention the year.

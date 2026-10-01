@@ -1,0 +1,128 @@
+slug: de-hochschule-heilbronn-technik-wirtschaft-hrk125-intelligent-mechatronic-daad10366
+institution: de-hochschule-heilbronn-technik-wirtschaft-hrk125
+country: DE
+city: heilbronn
+field: engineering
+level: bachelor
+name: Intelligent Mechatronic Systems
+summary:
+  fr:
+    text: Intelligent Mechatronic Systems, Hochschule Heilbronn, Technik, Wirtschaft, Informatik (Heilbronn). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Intelligent Mechatronic Systems, Hochschule Heilbronn, Technik, Wirtschaft, Informatik (Heilbronn). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Intelligent Mechatronic Systems, Hochschule Heilbronn, Technik, Wirtschaft, Informatik (Heilbronn). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www.hs-heilbronn.de/en/intelligent-mechatronic-systems
+durationYears:
+  value: 3.5
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-09-28
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Votre diplôme de fin d'études secondaires doit d'abord être reconnu par le Studienkolleg Konstanz ou par Uni-Assist ; sans cette reconnaissance, votre candidature ne sera pas prise en compte.
+          status: draft
+        en:
+          text: Your school-leaving certificate must first be recognised by Studienkolleg Konstanz or by Uni-Assist; without certificate recognition, your application will not be considered.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats internationaux peuvent être admis via la procédure d'examen d'entrée propre à l'université, avec des tests écrits et oraux (TestAS, ITB, SAT, ACT, IELTS, TOEFL, TestDaF, etc.) ; vérifiez si vous devez suivre cette voie.
+          status: draft
+        en:
+          text: International applicants may be admitted via the university-specific entrance examination, with written and oral tests (TestAS, ITB, SAT, ACT, IELTS, TOEFL, TestDaF, etc.); check whether you must take this route.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hs-heilbronn.de/en/intelligent-mechatronic-systems
+    last_verified_at: null
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10366/
+    last_verified_at: null
+  page-3:
+    url: https://www.hs-heilbronn.de/en/bachelor-application
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-heilbronn-technik-wirtschaft-hrk125-intelligent-mechatronic-daad10366
+  name: Intelligent Mechatronic Systems
+  sourceId: daad:10366
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10366/
+      quote: Programme duration 7 semesters
+    - fact: teachingLanguages
+      url: https://www.hs-heilbronn.de/en/intelligent-mechatronic-systems
+      quote: Study Intelligent Mechatronic Systems in English
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10366/
+      quote: Teaching language English
+    - fact: tuition
+      url: https://www.hs-heilbronn.de/en/intelligent-mechatronic-systems
+      quote: "Tuition fee : Concerns students form non-EU/EEA countries only"
+    - fact: tuition
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10366/
+      quote: non-EU countries 1,500 EUR
+    - fact: intakes
+      url: https://www.hs-heilbronn.de/en/intelligent-mechatronic-systems
+      quote: "enrol until : September 28"
+    - fact: intakes
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10366/
+      quote: "For the winter semester: until 28 September 2026"
+    - fact: requirements.req-1
+      url: https://www.hs-heilbronn.de/en/bachelor-application
+      quote: If you hold a non-German school leaving certificate, you must first have it recognized by Studienkolleg Konstanz or by Uni-Assist.
+    - fact: requirements.req-1
+      url: https://www.hs-heilbronn.de/en/bachelor-application
+      quote: Without certificate recognition, your application will unfortunately not be considered.
+    - fact: requirements.req-2
+      url: https://www.hs-heilbronn.de/en/bachelor-application
+      quote: University-specific entrance exam If you meet the requirements for attending a Studienkolleg (preparatory college) but do not wish to attend one, and instead want to choose this alternative path to HHN, please submit your certificate recognition as well as your test results in our application portal.
+  notes: 'Tuition: EUR 1,500 per semester for non-EU/EEA students; quoted pages state this for international students at HHN. Application channel for a Moroccan applicant with a foreign diploma: the pages state foreign/non-German certificates must first be recognised by Studienkolleg Konstanz or Uni-Assist, so Uni-Assist VPD (de-uni-assist-vpd) applies. Deadline: 28 September applies; the year in the DAAD quote is 2026, while the university page says only "September 28" without a year, so the year is taken from the DAAD page. German language: no minimum level required (DAAD page).'

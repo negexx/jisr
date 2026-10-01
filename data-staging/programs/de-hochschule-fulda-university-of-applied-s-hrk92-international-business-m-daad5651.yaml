@@ -1,0 +1,106 @@
+slug: de-hochschule-fulda-university-of-applied-s-hrk92-international-business-m-daad5651
+institution: de-hochschule-fulda-university-of-applied-s-hrk92
+country: DE
+city: fulda
+field: business-economics
+level: bachelor
+name: International Business & Management
+summary:
+  fr:
+    text: International Business & Management, Hochschule Fulda - University of Applied Sciences (Fulda). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Business & Management, Hochschule Fulda - University of Applied Sciences (Fulda). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business & Management, Hochschule Fulda - University of Applied Sciences (Fulda). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www.hs-fulda.de/ibm
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez que vous disposez d'une qualification d'entrée à l'université (Hochschulzugangsberechtigung, HZB) reconnue pour les universités allemandes; votre Baccalauréat marocain doit être évalué.
+          status: draft
+        en:
+          text: Check that you hold a recognised university entrance qualification (Hochschulzugangsberechtigung, HZB) for German universities; your Moroccan Baccalauréat must be assessed.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hs-fulda.de/ibm
+    last_verified_at: null
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-fulda-university-of-applied-s-hrk92-international-business-m-daad5651
+  name: International Business & Management
+  sourceId: daad:5651
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.hs-fulda.de/ibm
+      quote: Regelstudienzeit 7 Semester
+    - fact: teachingLanguages
+      url: https://www.hs-fulda.de/ibm
+      quote: 100% Englisch als Lehrsprache
+    - fact: tuition
+      url: https://www.hs-fulda.de/ibm
+      quote: studiengebührenfreie Rahmenbedingungen
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/
+      quote: "English language skills B2 required, please provide an official language certificate, e.g.: TOEIC: 785 Reading: 385 Listening: 400 Speaking: 160 Writing: 150 IELTS Academic: 5.5 TOEFL iBT Home Edition (before 2026): 72 Reading: 18 Listening: 17 Speaking: 20 Writing: 17"
+    - fact: requirements.req-2
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/
+      quote: Academic admission requirements University entrance qualification (Hochschulzugangsberechtigung, HZB) for German universities
+  notes: "Tuition: pages state the programme has no study fees (studiengebührenfreie Rahmenbedingungen; 'Die Hochschule Fulda erhebt keine Studiengebühren'), only a semester contribution (~400 EUR), so amountMinor 0. Intakes: the deadlines are for the winter and summer semester but the pages do not give a year; no year has been inferred, so the ISO dates are illustrative and should be verified. Application channel: the pages say to apply via the central application page ('Wie und wann muss ich mich bewerben?' / 'Bewerben mit internationalen Zeugnissen') but do not name uni-assist or a VPD, so applicationChannel is omitted and this must be checked manually."

@@ -1,0 +1,70 @@
+{
+  "slug": "de-fachhochschule-aachen-hrk2-global-business-and-econ-daad4849",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+          "quote": "Students study for six semesters (180 credit points) or seven semesters with one semester abroad or a full-time internship of 23 weeks (210 credit points)."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+          "quote": "The courses are completely taught in English, and the programme is internationally oriented."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+          "quote": "Submit application via Please apply via uni-assist."
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des frais de scolarité (0 EUR) est indiqué comme « Tuition fees per semester None » dans la page DAAD pour ce programme ; un « Semester contribution » d'environ 360 EUR par semestre est également mentionné séparément. Le DAAD liste « Application periods ... until 15 July » sans année explicite, donc aucune date ISO n'a été incluse pour l'intake. Le « Statement of Comparability » n'indique pas explicitement une procédure VPD, donc le canal choisi est de-uni-assist.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que votre diplôme étranger est reconnu comme équivalent à l'Abitur (qualification d'entrée à l'université) et fournissez un « Statement of Comparability » pour votre diplôme.",
+          "en": "Check that your foreign qualification is recognised as equivalent to the German university entrance qualification and provide a \"Statement of Comparability\" for your foreign higher education qualification."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+            "quote": "Academic admission requirements include a German entrance qualification for universities of applied sciences or equivalent."
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+            "quote": "Foreign applicants need a \"Statement of Comparability\" for foreign higher education qualifications."
+          }
+        ]
+      }
+    ]
+  }
+}

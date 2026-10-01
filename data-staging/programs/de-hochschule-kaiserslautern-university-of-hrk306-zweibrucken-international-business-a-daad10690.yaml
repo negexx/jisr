@@ -1,0 +1,109 @@
+slug: de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken-international-business-a-daad10690
+institution: de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken
+country: DE
+city: zweibrucken
+field: business-economics
+level: bachelor
+name: International Business Administration (English)
+summary:
+  fr:
+    text: International Business Administration (English), Hochschule Kaiserslautern (University of Applied Sciences) (Zweibrücken). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Business Administration (English), Hochschule Kaiserslautern (University of Applied Sciences) (Zweibrücken). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business Administration (English), Hochschule Kaiserslautern (University of Applied Sciences) (Zweibrücken). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10690/
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-uni-assist
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme d'études secondaires (high school diploma) ou équivalent est requis ; vérifiez si votre Baccalauréat marocain est accepté.
+          status: draft
+        en:
+          text: A high school diploma or equivalent is required; check whether your Moroccan Baccalauréat is accepted.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10690/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken-international-business-a-daad10690
+  name: International Business Administration (English)
+  sourceId: daad:10690
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10690/
+      quote: Programme duration 7 semesters
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10690/
+      quote: Teaching language English Languages Courses are held in English.
+    - fact: tuition
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10690/
+      quote: Tuition fees per semester None
+    - fact: applicationChannel
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10690/
+      quote: Submit application via • uni-assist
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10690/
+      quote: "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 87"
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10690/
+      quote: "IELTS Academic: 6"
+    - fact: requirements.req-2
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10690/
+      quote: Academic admission requirements High school diploma or equivalent
+  notes: "The DAAD page is a database entry, not the university's own programme page; the programme's own website is https://www.hs-kl.de/iba-en. The application deadline 31 May is valid for applicants from all countries (including non-EU). The application period section on the page also contains a copyright year '©' and the page context 'International Programmes 2026/2027', so 31 May is presumed to be 2027-05-31; the quote itself does not state a year, so the year is inferred. Application channel: the page says to submit via uni-assist and website, but does not mention a VPD (preliminary review), so de-uni-assist is used. Tuition: the quote says 'Tuition fees per semester None', but the programme page does not specify that this applies to non-EU applicants; it is recorded as stated. The page also states a semester contribution of 139 EUR, not a tuition fee."

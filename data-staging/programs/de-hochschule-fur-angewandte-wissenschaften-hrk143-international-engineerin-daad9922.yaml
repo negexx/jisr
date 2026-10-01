@@ -1,0 +1,152 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk143-international-engineerin-daad9922
+institution: de-hochschule-fur-angewandte-wissenschaften-hrk143
+country: DE
+city: kempten
+field: engineering
+level: bachelor
+name: International Engineering
+summary:
+  fr:
+    text: International Engineering, Hochschule für angewandte Wissenschaften Kempten (Kempten). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Engineering, Hochschule für angewandte Wissenschaften Kempten (Kempten). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Engineering, Hochschule für angewandte Wissenschaften Kempten (Kempten). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www.hs-kempten.de/international-engineering
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 50000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-08-31
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2027-07-15
+  source: page-3
+  info_kind: official
+applicationChannel:
+  value: de-uni-assist-vpd
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B1
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: de
+      minCefr: A1
+      certificateRequired: false
+      acceptedTests: []
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Votre diplôme étranger (baccalauréat marocain) doit être vérifié et évalué via uni-assist (Vorprüfungsdokumentation – VPD) ; vérifiez les documents exacts et le délai sur uni-assist.
+          status: draft
+        en:
+          text: Your foreign diploma (Moroccan Baccalauréat) must be verified and assessed through uni-assist (preliminary review documentation – VPD); check the exact documents and deadlines on uni-assist.
+          status: draft
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: L'admission exige une qualification d'entrée à l'université (HZB) ; faites vérifier que votre baccalauréat marocain est reconnu comme HZB.
+          status: draft
+        en:
+          text: Admission requires a university entrance qualification (HZB); have your Moroccan Baccalauréat checked to confirm it is recognised as an HZB.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hs-kempten.de/international-engineering
+    last_verified_at: null
+  page-2:
+    url: https://www.hs-kempten.de/en/my-university/structure-of-studies/dates-and-deadlines/re-enrolment-semester-fee-leave-of-absence-exmatriculation
+    last_verified_at: null
+  page-3:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9922/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-fur-angewandte-wissenschaften-hrk143-international-engineerin-daad9922
+  name: International Engineering
+  sourceId: daad:9922
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: teachingLanguages
+      url: https://www.hs-kempten.de/international-engineering
+      quote: Unterrichtssprache Englisch
+    - fact: tuition
+      url: https://www.hs-kempten.de/en/my-university/structure-of-studies/dates-and-deadlines/re-enrolment-semester-fee-leave-of-absence-exmatriculation
+      quote: Starting from the winter semester 2025/2026, a service fee of an additional €500 will be charged for all new students who are not from the EU and enroll in the programs Corporate Sustainability & Sustainable Finance, Electrical Engineering, Global Business Development, and International Engineering.
+    - fact: intakes
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9922/
+      quote: "For the next winter semester: until 31 August 2026"
+    - fact: intakes
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9922/
+      quote: "For the subsequent winter semester: until 15 July 2027"
+    - fact: applicationChannel
+      url: https://www.hs-kempten.de/international-engineering
+      quote: Du hast deine HZB im Ausland erworben? Prüfung und Anerkennung deines Zeugnisses über uni-assist (Vorprüfungsdokumentation - VPD).
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9922/
+      quote: English language skills B1 required, please provide an official language certificate
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9922/
+      quote: "TOEFL iBT (before 2026): 42 Reading: 4 Listening: 9 Speaking: 16 Writing: 13"
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9922/
+      quote: "IELTS Academic: 4"
+    - fact: requirements.req-2
+      url: https://www.hs-kempten.de/international-engineering
+      quote: "Deutsch: Niveau A1 des GER (am Ende vom 1. Semester nachzuweisen)"
+    - fact: requirements.req-3
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9922/
+      quote: Your certificates must be verified and assessed through the uni-assist preliminary review documentation (“Vorprüfungsdokumentation – VPD”).
+    - fact: requirements.req-4
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9922/
+      quote: Candidates must hold a university entrance qualification (“HZB”).
+  notes: "Tuition: the programme page states a €500 additional service fee for new non-EU students, stated as due as part of the enrolment process in addition to the semester fee; it does not state an amount for the semester fee itself, nor a yearly tuition fee. The DAAD page says 'Tuition fees per semester Varied' with no figure, and 'Semester contribution 102 EUR', which is a contribution, not tuition. No total tuition figure for non-EU students could be quoted, so only the €500 non-EU service fee is given. Application deadlines are quoted from the DAAD programme page; the HS Kempten application pages give general periods (e.g. winter semester approx. mid-April to 31 August; general winter semester 2027/2028 mid-April 2027 to 15 July 2027) and the programme page says application runs online via MeinCampus, while the foreign-diploma route requires the uni-assist VPD first, so applicationChannel is set to de-uni-assist-vpd."

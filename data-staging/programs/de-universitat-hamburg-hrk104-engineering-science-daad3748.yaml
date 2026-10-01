@@ -1,0 +1,132 @@
+slug: de-universitat-hamburg-hrk104-engineering-science-daad3748
+institution: de-universitat-hamburg-hrk104
+country: DE
+city: hamburg
+field: engineering
+level: bachelor
+name: Engineering Science
+summary:
+  fr:
+    text: Engineering Science, Universität Hamburg (Hamburg). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Engineering Science, Universität Hamburg (Hamburg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Engineering Science, Universität Hamburg (Hamburg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www.tuhh.de/tuhh/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/engineering-science.html
+durationYears:
+  value: 3.5
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+    - de
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-university-direct
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: C1
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier si le grade d'Abitur ou un diplôme étranger équivalent (par ex. le Baccalauréat marocain) est accepté comme qualification d'entrée à l'université.
+          status: draft
+        en:
+          text: Check whether the Abitur or an equivalent foreign qualification (e.g. the Moroccan Baccalauréat) is accepted as a university entrance qualification.
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Des documents supplémentaires sont exigés des candidats titulaires d'un diplôme étranger : certificats traduits, relevés de notes, éventuellement certificat APS et preuve de connaissances en allemand ou en anglais."
+          status: draft
+        en:
+          text: "Applicants with a foreign qualification must upload additional documents: translated certificates, transcripts, possibly APS certificate and proof of German or English language skills."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.tuhh.de/tuhh/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/engineering-science.html
+    last_verified_at: null
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3748/
+    last_verified_at: null
+  page-3:
+    url: https://www.tuhh.de/tuhh/en/studying/before-studying/application/bachelor.html
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-universitat-hamburg-hrk104-engineering-science-daad3748
+  name: Engineering Science
+  sourceId: daad:3748
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3748/
+      quote: Programme duration 7 semesters
+    - fact: teachingLanguages
+      url: https://www.tuhh.de/tuhh/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/engineering-science.html
+      quote: "Language: English, German in 3 specializations"
+    - fact: tuition
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3748/
+      quote: Tuition fees per semester None
+    - fact: applicationChannel
+      url: https://www.tuhh.de/tuhh/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/engineering-science.html
+      quote: We conduct an online application procedure.
+    - fact: applicationChannel
+      url: https://www.tuhh.de/tuhh/en/studying/before-studying/application/bachelor.html
+      quote: "Step 3: Online application in the TUNE portal You register on the TUHH's TUNE application portal"
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3748/
+      quote: "English language skills C1 required, please provide an official language certificate, e.g.: IELTS Academic: 6.5"
+    - fact: requirements.req-2
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3748/
+      quote: General university entrance qualification ("Abitur") or equivalent
+    - fact: requirements.req-2
+      url: https://www.tuhh.de/tuhh/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/engineering-science.html
+      quote: "Admission requirements: University entrance qualification"
+    - fact: requirements.req-3
+      url: https://www.tuhh.de/tuhh/en/studying/before-studying/application/bachelor.html
+      quote: "Applicants with an international (non-German) university entrance qualification must upload the following documents:"
+  notes: "Aucune page ne mentionne uni-assist ni une procédure VPD : la candidature passe par le portail TUNE de la TUHH après inscription sur hochschulstart.de. Le montant des frais de scolarité (0 EUR) est indiqué par le DAAD pour ce programme ; la page « Financing Your Studies » de la TUHH donne un chiffre général au niveau de l'établissement, à ne pas utiliser. Les dates d'ouverture et de clôture (2026-06-01 / 2026-07-15) correspondent à la période annoncée pour le semestre d'hiver ; le DAAD mentionne « 1 June - 15 July » sans année. Les conditions d'admission en allemand, l'éventuel examen d'entrée et les modalités précises pour les diplômes étrangers (dont le Bac marocain) ne sont pas détaillées dans les pages fournies et relèvent d'une vérification manuelle."

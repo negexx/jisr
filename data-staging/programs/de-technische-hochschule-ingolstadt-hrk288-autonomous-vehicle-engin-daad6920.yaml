@@ -1,0 +1,124 @@
+slug: de-technische-hochschule-ingolstadt-hrk288-autonomous-vehicle-engin-daad6920
+institution: de-technische-hochschule-ingolstadt-hrk288
+country: DE
+city: ingolstadt
+field: engineering
+level: bachelor
+name: Autonomous Vehicle Engineering
+summary:
+  fr:
+    text: Autonomous Vehicle Engineering, Technische Hochschule Ingolstadt (Ingolstadt). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Autonomous Vehicle Engineering, Technische Hochschule Ingolstadt (Ingolstadt). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Autonomous Vehicle Engineering, Technische Hochschule Ingolstadt (Ingolstadt). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www.thi.de/en/electrical-engineering-and-information-technology/degree-programmes/autonomous-vehicle-engineering-beng/
+durationYears:
+  value: 3.5
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 80000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: 2027-04-01
+      applicationDeadline: 2027-07-15
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si un entretien de sélection en ligne est requis ; les candidats ayant un score total de 70 points ou plus sont invités à un entretien.
+          status: draft
+        en:
+          text: Check whether a short online selection interview is required; applicants who have achieved a total score of 70 points or more will be invited.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.thi.de/en/electrical-engineering-and-information-technology/degree-programmes/autonomous-vehicle-engineering-beng/
+    last_verified_at: null
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6920/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-technische-hochschule-ingolstadt-hrk288-autonomous-vehicle-engin-daad6920
+  name: Autonomous Vehicle Engineering
+  sourceId: daad:6920
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6920/
+      quote: Programme duration 7 semesters
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6920/
+      quote: Teaching language English
+    - fact: teachingLanguages
+      url: https://www.thi.de/en/electrical-engineering-and-information-technology/degree-programmes/autonomous-vehicle-engineering-beng/
+      quote: Main teaching language English
+    - fact: tuition
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6920/
+      quote: "The following tuition fees apply for applicants from: non-EU countries 800 EUR"
+    - fact: intakes
+      url: https://www.thi.de/en/electrical-engineering-and-information-technology/degree-programmes/autonomous-vehicle-engineering-beng/
+      quote: The programme Autonomous Vehicle Engineering starts in the winter semester only.
+    - fact: intakes
+      url: https://www.thi.de/en/electrical-engineering-and-information-technology/degree-programmes/autonomous-vehicle-engineering-beng/
+      quote: "Application period for the winter semester 2027/28: April 1 to July 15, 2027"
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6920/
+      quote: "English language skills B2 required, please provide an official language certificate, e.g.:"
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6920/
+      quote: "IELTS Academic: 5.5"
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6920/
+      quote: "TOEFL iBT (before 2026): 72"
+    - fact: requirements.req-2
+      url: https://www.thi.de/en/electrical-engineering-and-information-technology/degree-programmes/autonomous-vehicle-engineering-beng/
+      quote: Applicants who have achieved a total score of 70 points or more will be invited to a short online selection interview.
+  notes: "Le montant des frais de scolarité est indiqué par semestre (800 EUR) ; la page THI précise que ces frais s'appliquent aux étudiants ressortissants de pays tiers (hors UE/EEE) à partir du semestre d'été 2026. Le DAAD mentionne 800 EUR pour les non-EU countries. La candidature se fait en deux étapes : d'abord une vérification par uni-assist (VPD) pour les diplômes étrangers, puis une candidature sur le portail PRIMUSS de THI. Il n'y a pas de frais de candidature en dehors des frais uni-assist."

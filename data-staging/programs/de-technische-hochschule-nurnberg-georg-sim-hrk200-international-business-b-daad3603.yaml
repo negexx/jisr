@@ -1,0 +1,90 @@
+slug: de-technische-hochschule-nurnberg-georg-sim-hrk200-international-business-b-daad3603
+institution: de-technische-hochschule-nurnberg-georg-sim-hrk200
+country: DE
+city: nurnberg
+field: business-economics
+level: bachelor
+name: International Business (BA)
+summary:
+  fr:
+    text: International Business (BA), Technische Hochschule Nürnberg Georg Simon Ohm (Nürnberg). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Business (BA), Technische Hochschule Nürnberg Georg Simon Ohm (Nürnberg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business (BA), Technische Hochschule Nürnberg Georg Simon Ohm (Nürnberg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3603/
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 100000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: L'admission est basée sur la moyenne finale de votre diplôme d'entrée à l'université (numerus clausus) ; vérifiez les seuils de sélection auprès de l'université.
+          status: draft
+        en:
+          text: Admission is based on the final average grade of your university entrance qualification (numerus clausus); check selection thresholds with the university.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3603/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-technische-hochschule-nurnberg-georg-sim-hrk200-international-business-b-daad3603
+  name: International Business (BA)
+  sourceId: daad:3603
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3603/
+      quote: The International Business programme at TH Nürnberg is a seven-semester course, awarding 210 ECTS credits.
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3603/
+      quote: English is the primary language of instruction for the International Business programme, used exclusively in semesters one to three and predominantly thereafter.
+    - fact: tuition
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3603/
+      quote: "The following tuition fees apply for applicants from: non-EU countries 1,000 EUR"
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3603/
+      quote: Admission is based on the final average grade of your university entrance qualification (e.g. school-leaving certificate or prior studies).
+  notes: "Application channel unclear: the page only says 'Submit application via Please check this website.' and does not name uni-assist, VPD or a university portal, so no applicationChannel fact is given. Tuition fee of 1,000 EUR per semester is explicitly stated for applicants from non-EU countries, but the page also says 'Tuition fee exemptions apply to Students from partner universities'. English test list is partial: the quote names TOEIC, PTE Academic, TOEFL iBT and IELTS Academic (plus Cambridge C1 Advanced); acceptedTests only carries codes available in the schema."

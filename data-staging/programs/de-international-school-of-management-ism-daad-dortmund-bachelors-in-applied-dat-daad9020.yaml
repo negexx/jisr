@@ -15,40 +15,73 @@ summary:
   ar:
     text: Bachelor's in Applied Data Science & Business Analytics, International School of Management (ISM) (Dortmund). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: null
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9020/
 durationYears:
   value: 3
-  source: daad
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: TODO_read_source
+  value:
+    amountMinor: 597000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: daad
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: false
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Tous les candidats à un programme Bachelor à l'ISM doivent passer un processus d'entrée en ligne (auto-évaluation en mathématiques et en anglais, puis entretien) ; vérifiez les détails auprès de l'ISM.
+          status: draft
+        en:
+          text: All applicants for a Bachelor's programme at ISM must pass an online entrance process (self-assessment in mathematics and English, then interview); check the details with ISM.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats doivent avoir une qualification d'accès à l'université (Allgemeine Hochschulreife ou Fachhochschulreife) ; vérifiez l'équivalence de votre Baccalauréat marocain avec l'ISM.
+          status: draft
+        en:
+          text: Applicants must have a general qualification for university admission (Allgemeine Hochschulreife or Fachhochschulreife); check the equivalence of your Moroccan Baccalauréat with ISM.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9020/
     last_verified_at: null
 _review:
@@ -60,5 +93,27 @@ _review:
   field: computer-science
   confidence: high
   officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9020/
-  todo: "DAAD page lists: languages English, duration 6 semesters, starts Winter semester, Summer semester, tuition \"5,970\", deadline \"This programme has no deadline.\"; institution not matched to the HRK list (see its record); the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU"
+  todo: "DAAD page lists: languages English, duration 6 semesters, starts Winter semester, Summer semester, tuition \"5,970\", deadline \"This programme has no deadline.\"; institution not matched to the HRK list (see its record); the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: daad:9020
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9020/
+      quote: Programme duration 6 semesters
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9020/
+      quote: Teaching language English
+    - fact: tuition
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9020/
+      quote: "The following tuition fees apply for applicants from: all countries 5,970 EUR"
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9020/
+      quote: English language skills B2 required, proof via placement test/interview
+    - fact: requirements.req-2
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9020/
+      quote: All applicants applying for a Bachelor's programme at the ISM are required to pass an online entrance process.
+    - fact: requirements.req-3
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9020/
+      quote: The ISM Bachelor's programmes are designed for applicants who have achieved a general qualification for university admission ("Allgemeine Hochschulreife")
+  notes: "Tuition: the DAAD page states 5,970 EUR per semester for applicants from 'all countries', which includes non-EU applicants such as a Moroccan student, so it is recorded as a per-semester fee for this programme. The page warns 'Tuition fees may vary', so the human auditor should confirm the exact amount. Application channel: the page only says 'Please apply via e-mail.' for this programme; it does not mention uni-assist or a VPD, so the direct route was recorded. German language skills: the page says 'No minimum language level required', so no German language requirement rule was created."

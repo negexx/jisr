@@ -1,0 +1,129 @@
+{
+  "slug": "de-technische-universitat-munchen-hrk184-garching-bei-munchen-aerospace-bsc-daad7256",
+  "programmePage": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/",
+          "quote": "Programme duration 6 semesters"
+        },
+        {
+          "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+          "quote": "Regelstudienzeit 6 Semester"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/",
+          "quote": "Teaching language English"
+        },
+        {
+          "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+          "quote": "Das sechssemestrige und komplett englischsprachige Bachelor-Programm ist der ideale Einstieg in das globale Zukunftsthema Luft- und Raumfahrt."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 300000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 3,000 EUR"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+          "quote": "Bei Bewerbungen mit internationaler Hochschulzugangsberechtigung: Vorprüfungsdokumentation (VPD) von uni-assist"
+        },
+        {
+          "url": "https://www.tum.de/studium/bewerbung/bachelor/bewerbung-bachelor/",
+          "quote": "Beantragen Sie Ihre Vorprüfungsdokumentation bis 15.07. für das Wintersemester oder bis 15.01. für das Sommersemester"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the DAAD page gives 'non-EU countries 3,000 EUR' but the unit is stated as 'Tuition fees per semester', so the value is recorded as EUR 3,000 per semester, not per year; TUM's central fees page only says third-country students 'usually have to pay tuition fees' without stating a level, so the programme page's figure is used. Application channel: the programme page states foreign applicants must obtain a Vorprüfungsdokumentation (VPD) from uni-assist, and the TUM bachelor application page gives the VPD request deadlines; the application itself is then submitted via TUMonline (TUM's own portal), so this is a VPD route rather than a full uni-assist application. Intakes: the pages give the winter-semester application period (15 May – 15 July) but no year, so all dates are null. Language: only English is a teaching language; German (A2) is additionally required as a language certificate for the bachelor studies at TUM, not as a teaching language.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/",
+            "quote": "English language skills B2 required, proof via placement test/interview"
+          },
+          {
+            "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+            "quote": "englische (B2) und deutsche (A2) Sprachkenntnisse"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A2",
+        "certificateRequired": true,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/",
+            "quote": "German language skills A2 required, please provide an official language certificate, e.g.: telc Deutsch: telc Deutsch A2"
+          },
+          {
+            "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+            "quote": "Sprachnachweis Deutsch (z.B. Goethe-Zertifikat - Niveau A2, telc - Niveau A2, DSH-Test - DSH-1)*"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission dépend d'une procédure d'aptitude (Eignungsfeststellungsverfahren) en deux étapes : vérifiez les critères et les éventuels entretiens.",
+          "en": "Admission depends on a two-stage aptitude assessment procedure (Eignungsfeststellungsverfahren): check the criteria and any interviews."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+            "quote": "Voraussetzung für eine Zulassung zum Studium ist ein erfolgreiches Durchlaufen des Eignungsfeststellungsverfahrens in englischer Sprache auf Basis einer vollständigen Bewerbung."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un stage préalable d'au moins huit semaines est requis ; il peut être fourni après l'inscription, à la fin de la première année d'études.",
+          "en": "An eight-week pre-study internship is required; it can be submitted after enrolment, by the end of the first year of studies."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/",
+            "quote": "Eight-week pre-study internship"
+          },
+          {
+            "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+            "quote": "Für das Studium wird ein Nachweis über ein mindestens achtwöchiges Vorpraktikum benötigt."
+          }
+        ]
+      }
+    ]
+  }
+}

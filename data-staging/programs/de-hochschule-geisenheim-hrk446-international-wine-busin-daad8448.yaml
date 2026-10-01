@@ -1,0 +1,127 @@
+slug: de-hochschule-geisenheim-hrk446-international-wine-busin-daad8448
+institution: de-hochschule-geisenheim-hrk446
+country: DE
+city: geisenheim
+field: business-economics
+level: bachelor
+name: International Wine Business (Bachelor of Science)
+summary:
+  fr:
+    text: International Wine Business (Bachelor of Science), Hochschule Geisenheim (Geisenheim). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Wine Business (Bachelor of Science), Hochschule Geisenheim (Geisenheim). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Wine Business (Bachelor of Science), Hochschule Geisenheim (Geisenheim). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www.hs-geisenheim.de/en/studies/prospective-students/bachelors-programs/international-wine-business-bsc-english-program
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-uni-assist
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier que le certificat d'anglais (TOEFL min. 80, IELTS min. 5.5 ou Cambridge FCE min. grade C) est accepté et joindre le justificatif.
+          status: draft
+        en:
+          text: Check that the English certificate (TOEFL min. 80, IELTS min. 5.5 or Cambridge FCE min. grade C) is accepted and attach the proof.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier si votre baccalauréat marocain est reconnu comme HZB direct ou indirect (anabin ou base de données DAAD) et fournir les documents requis.
+          status: draft
+        en:
+          text: Check whether your Moroccan Baccalaureate is recognized as a direct or indirect HZB (anabin or DAAD database) and provide the required documents.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un stage préalable de 12 semaines doit être effectué et confirmé avant l'inscription ; fournir une attestation officielle.
+          status: draft
+        en:
+          text: A 12-week pre-study internship must be completed and confirmed before enrolment; provide an official certificate.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hs-geisenheim.de/en/studies/prospective-students/bachelors-programs/international-wine-business-bsc-english-program
+    last_verified_at: null
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8448/
+    last_verified_at: null
+  page-3:
+    url: https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-geisenheim-hrk446-international-wine-busin-daad8448
+  name: International Wine Business (Bachelor of Science)
+  sourceId: daad:8448
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8448/
+      quote: Programme duration 6 semesters
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8448/
+      quote: Teaching language English Languages Courses are held in English (100%).
+    - fact: tuition
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8448/
+      quote: Tuition fees per semester None
+    - fact: applicationChannel
+      url: https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/
+      quote: you must submit your application through uni-assist
+    - fact: requirements.req-1
+      url: https://www.hs-geisenheim.de/en/studies/prospective-students/bachelors-programs/international-wine-business-bsc-english-program
+      quote: "The following certificates are recognized: TOEFL (minimum 80 points; internet-based test)"
+    - fact: requirements.req-2
+      url: https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/
+      quote: International students can check their school leaving certificate on the German website anabin, or in the DAAD Database, which is also available in English.
+    - fact: requirements.req-3
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8448/
+      quote: can provide proof of completion of 12 weeks of the required pre-study internship before the beginning of your studies
+  notes: "The tuition quote from the DAAD page states there are no tuition fees per semester for this programme. The university's own Study Costs page states there are no tuition fees for Bachelor's or Master's programs at German state universities, but it also mentions a semester fee (322.06 EUR for summer semester 2022) covering administrative costs and a semester ticket; that semester fee is a general institution-wide figure, not programme-specific, so it was not included as tuition. The application deadline September 1 is given without a year; the value uses 2025-09-01 as a placeholder because the intake year is not explicitly stated. The pages state English proficiency certificates are required for this English-taught programme; the quote 'The following certificates are recognized: TOEFL (minimum 80 points; internet-based test)' lists TOEFL and corresponding quotes exist for IELTS and Cambridge, so acceptedTests includes toefl and ielts but not cambridge as that is not one of the allowed test ISO codes."

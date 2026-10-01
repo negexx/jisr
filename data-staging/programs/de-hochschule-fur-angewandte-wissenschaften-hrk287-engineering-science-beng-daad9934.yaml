@@ -1,0 +1,138 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk287-engineering-science-beng-daad9934
+institution: de-hochschule-fur-angewandte-wissenschaften-hrk287
+country: DE
+city: hof
+field: engineering
+level: bachelor
+name: Engineering Science (BEng)
+summary:
+  fr:
+    text: Engineering Science (BEng), Hochschule für angewandte Wissenschaften Hof (Hof). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Engineering Science (BEng), Hochschule für angewandte Wissenschaften Hof (Hof). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Engineering Science (BEng), Hochschule für angewandte Wissenschaften Hof (Hof). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9934/
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-uni-assist-vpd
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: de
+      minCefr: A1
+      certificateRequired: true
+      acceptedTests: []
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez la date limite réelle pour les candidats non-UE (elle peut être plus tôt) et l'ensemble des pièces à fournir (CV, lettre de motivation) auprès de l'université.
+          status: draft
+        en:
+          text: Check the actual deadline for non-EU applicants (it may be earlier) and the full document set (CV, motivation letter) with the university.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9934/
+    last_verified_at: null
+  page-2:
+    url: https://www.hof-university.com/studying-at-hof-university/our-degree-programs/engineering-science-international-beng.html
+    last_verified_at: null
+  page-3:
+    url: https://www.hof-university.com/studying-at-hof-university/application-and-admission.html
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-fur-angewandte-wissenschaften-hrk287-engineering-science-beng-daad9934
+  name: Engineering Science (BEng)
+  sourceId: daad:9934
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9934/
+      quote: Programme duration 7 semesters
+    - fact: durationYears
+      url: https://www.hof-university.com/studying-at-hof-university/our-degree-programs/engineering-science-international-beng.html
+      quote: The Bachelor's program spans seven semesters, with a blend of theoretical and practical components.
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9934/
+      quote: Teaching language English Languages The language of instruction is English, ensuring accessibility for international students.
+    - fact: tuition
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9934/
+      quote: Tuition fees per semester None
+    - fact: tuition
+      url: https://www.hof-university.com/studying-at-hof-university/preparing-your-stay/how-to-finance-your-studies.html
+      quote: At Hof University, no tuition fees are charged for our Bachelor's and Master's programs.
+    - fact: applicationChannel
+      url: https://www.hof-university.com/studying-at-hof-university/our-degree-programs/engineering-science-international-beng.html
+      quote: If you acquired your university entrance certificate abroad, uni-assist must assess your certificate before you can send it to Hof University.
+    - fact: applicationChannel
+      url: https://www.hof-university.com/studying-at-hof-university/application-and-admission.html
+      quote: You can apply for a preliminary documentation (VPD) year-round.
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9934/
+      quote: "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6.5 TOEFL iBT (before 2026): 90"
+    - fact: requirements.req-1
+      url: https://www.hof-university.com/studying-at-hof-university/our-degree-programs/engineering-science-international-beng.html
+      quote: "You need to prove your proficiency in English. This can be done with either of the following: TOEFL minimum 90 IELTS 6.5 or above"
+    - fact: requirements.req-2
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9934/
+      quote: "German language skills A1 required, please provide an official language certificate, e.g.: Goethe-Zertifikat: Goethe-Zertifikat A1"
+    - fact: requirements.req-2
+      url: https://www.hof-university.com/studying-at-hof-university/our-degree-programs/engineering-science-international-beng.html
+      quote: "In addition: German language skills, proven by official test score documents - minimum level A1"
+    - fact: requirements.req-3
+      url: https://www.hof-university.com/studying-at-hof-university/application-and-admission.html
+      quote: "Non-EU students: EU students**: Non-EU students: Applied Research in Computer Science (M.Sc.) Textile Design (M.A.)"
+  notes: "Le statut 'tuition fees none' figure sur la page du programme, mais aussi comme regle generale de l'universite (Bachelor et Master); la page finance confirme 0 EUR de frais de scolarite pour les programmes bachelor et master, hors Graduate School. Les dates 15 avril - 15 juillet proviennent du programme (DAAD) et de la page 'All other programs' du portail d'admission, avec un an indique 2026/2027 dans l'en-tete DAAD; l'annee d'admission exacte reste a confirmer aupres de l'universite car le tableau du portail donne des fenetres recurrentes sans annee. La page d'admission liste pour les non-UE une periode plus courte (15 avril - 31 mai) pour certains programmes: verifier que Engineering Science n'est pas concerne. La candidature passe par le portail Primuss, mais la page indique explicitement que si le diplome d'entree a l'universite est obtenu hors d'Allemagne (hors UE/EEE), un VPD uni-assist est exige avant la candidature, d'ou le canal de-uni-assist-vpd."

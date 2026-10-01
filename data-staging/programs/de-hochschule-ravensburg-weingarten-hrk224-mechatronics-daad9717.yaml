@@ -1,0 +1,149 @@
+slug: de-hochschule-ravensburg-weingarten-hrk224-mechatronics-daad9717
+institution: de-hochschule-ravensburg-weingarten-hrk224
+country: DE
+city: weingarten
+field: engineering
+level: bachelor
+name: Mechatronics
+summary:
+  fr:
+    text: Mechatronics, Hochschule Ravensburg-Weingarten (Weingarten). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Mechatronics, Hochschule Ravensburg-Weingarten (Weingarten). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Mechatronics, Hochschule Ravensburg-Weingarten (Weingarten). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www.rwu.de/en/studies/study-programs/mechatronics-en-0
+durationYears:
+  value: 3.5
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-university-direct
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Votre diplôme (baccalauréat marocain) doit être reconnu : vérifiez sa conformité ANABIN ; s'il n'est pas reconnu, un test d'aptitude (TestAS, ITB, SAT ou ACT) et un entretien oral de 30 minutes peuvent être exigés."
+          status: draft
+        en:
+          text: "Your diploma (Moroccan Baccalauréat) must be recognised: check ANABIN compliance; if it is not recognised, an aptitude test (TestAS, ITB, SAT or ACT) and a 30-minute oral test may be required."
+          status: draft
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Les documents doivent être envoyés par courrier postal (ou via le portail) : formulaire signé, copie certifiée du diplôme d'entrée, certificat d'anglais de moins de 2 ans, CV, copie du passeport ; les certificats de langue d'enseignement (Medium of Instruction) ne sont pas acceptés."
+          status: draft
+        en:
+          text: "Documents must be submitted by post (or via the portal): signed form, certified copy of the entrance certificate, English certificate less than 2 years old, CV, passport copy; Medium of Instruction certificates are not accepted."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.rwu.de/en/studies/study-programs/mechatronics-en-0
+    last_verified_at: null
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9717/
+    last_verified_at: null
+  page-3:
+    url: https://www.rwu.de/en/application-and-enrollment
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-ravensburg-weingarten-hrk224-mechatronics-daad9717
+  name: Mechatronics
+  sourceId: daad:9717
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9717/
+      quote: Programme duration 7 semesters
+    - fact: durationYears
+      url: https://www.rwu.de/en/studies/study-programs/mechatronics-en-0
+      quote: Regular period 7, including 1 internship semester
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9717/
+      quote: Teaching language English
+    - fact: teachingLanguages
+      url: https://www.rwu.de/en/studies/study-programs/mechatronics-en-0
+      quote: The language of instruction is English.
+    - fact: tuition
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9717/
+      quote: "Tuition fees per semester The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+    - fact: applicationChannel
+      url: https://www.rwu.de/en/application-and-enrollment
+      quote: The next step is to register in the RWU application portal is required.
+    - fact: applicationChannel
+      url: https://www.rwu.de/en/international/international-degree-seeking-students/study-offer-and-application
+      quote: Depending on the degree program, applicants must first register at hochschulstart.de (German-speaking study programs) or can apply directly through our RWU Portal (English-speaking study programs).
+    - fact: requirements.req-1
+      url: https://www.rwu.de/en/studies/study-programs/mechatronics-en-0
+      quote: Proven English language proficiency, e.g. TOEFL iBT with an overall score of at least 70 or IELTS with an overall score of at least 6.0
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9717/
+      quote: "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (since 2026): 4 Reading: 4 Listening: 4 Speaking: 4 Writing: 4 IELTS Academic: 6"
+    - fact: requirements.req-2
+      url: https://www.rwu.de/en/studies/study-programs/mechatronics-en-0
+      quote: "requires – in addition to your Higher Education Entrance Qualification (12 years of schooling) - the presentation/submission of a certificate of aptitude for studying in Germany (Studieneignungstest) such as:"
+    - fact: requirements.req-3
+      url: https://www.rwu.de/en/studies/study-programs/mechatronics-en-0
+      quote: Your university entrance qualification is compliant to ANABIN, the official information portal for international educational qualifications.
+    - fact: requirements.req-3
+      url: https://www.rwu.de/en/studies/study-programs/mechatronics-en-0
+      quote: If your aptitude test meets the requirements, you may get an invitation for a 30-min online oral test in English focusing on cultural, social and economic topics and conducted by RWU.
+    - fact: requirements.req-4
+      url: https://www.rwu.de/en/studies/study-programs/mechatronics-en-0
+      quote: English language certificate (TOEFL iBT or IELTS) - not older than 2 years! Medium of Instruction Certificates are not accepted!
+  notes: "Durée : 7 semestres = 3,5 ans. Frais de scolarité : 1 500 EUR par semestre pour les non-EU, confirmé comme frais de scolarité (distinct des frais semestriels d'environ 224 EUR). Les frais indiqués par la page DAAD (1 500 EUR/semestre) sont confirmés comme frais pour les non-EU et figurent sur les pages RWU (« All students who do not come from the EU pay tuition fees of 1,500 euros for each semester »), mais je n'ai retenu que la citation DAAD spécifique à ce programme. Les dates 2027 : la page RWU indique « summer 2027 intake » pour la période 1 September - 31 October, sans année de deadline explicite ; la date ISO 2026-10-31 est retenue comme deadline de la période indiquée (31 October), mais l'année exacte de la deadline n'est pas explicitement donnée par la page (elle mentionne summer 2027 intake). Le début de l'intake est début mars (summer semester, beginning of March) sans année précise, donc null. Voie de candidature : le programme est enseigné en anglais et la candidature se fait directement via le portail RWU (« Apply till 10/31 » et « application portal ») ; les pages ne mentionnent PAS uni-assist pour ce programme (seul Studienkolleg Konstanz est mentionné pour l'allemand). Aucun niveau d'anglais exigé pour le DAAD n'est supérieur : B2 requis."

@@ -1,0 +1,90 @@
+{
+  "slug": "de-otto-von-guericke-universitat-magdeburg-hrk172-engineering-science-engs-daad9672",
+  "programmePage": "https://www.ovgu.de/unimagdeburg/en/engineering_science_bachelor.html",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9672/",
+          "quote": "Programme duration 6 semesters"
+        },
+        {
+          "url": "https://www.ovgu.de/unimagdeburg/en/engineering_science_bachelor.html",
+          "quote": "Duration 6 Semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9672/",
+          "quote": "Teaching language English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9672/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.ovgu.de/unimagdeburg/en/International/Incoming+_+Ways+to+the+University/International+Students/Full_Time+Studies/Applying+via+uni_assist+e_V_-p-107054.html",
+          "quote": "all applications for admission from applicants who have obtained their entrance qualification for higher education (for bachelor degree) and/or Master’s degree abroad are pre-checked by uni-assist e.V."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9672/",
+          "quote": "Please apply via uni-assist."
+        }
+      ]
+    }
+  },
+  "notes": "Aucune date d'ouverture des candidatures n'est indiquée dans les pages. Le montant nul des frais de scolarité provient de la mention explicite « Tuition fees per semester None » ; la contribution semestrielle (semester fee) n'est pas des frais de scolarité. Le niveau d'anglais B2 et les certificats IELTS/TOEFL sont exigés pour l'admission ; les connaissances d'allemand (A1) sont seulement recommandées, donc non retenues comme condition.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9672/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6.5 Cambridge English Qualifications: B2 First TOEFL iBT (before 2026): 85 Reading: 18 Listening: 17 Speaking: 20 Writing: 17"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les exemptions aux exigences linguistiques et les conditions d'admission détaillées sur le site du programme.",
+          "en": "Check the language requirement exemptions and detailed admission requirements on the programme website."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9672/",
+            "quote": "Language requirements exemptions Please find details on the course website."
+          }
+        ]
+      }
+    ]
+  }
+}

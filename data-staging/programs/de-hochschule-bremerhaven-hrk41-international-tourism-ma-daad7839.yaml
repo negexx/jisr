@@ -1,0 +1,113 @@
+slug: de-hochschule-bremerhaven-hrk41-international-tourism-ma-daad7839
+institution: de-hochschule-bremerhaven-hrk41
+country: DE
+city: bremerhaven
+field: business-economics
+level: bachelor
+name: International Tourism Management (Cruise Business / Innovation)
+summary:
+  fr:
+    text: International Tourism Management (Cruise Business / Innovation), Hochschule Bremerhaven (Bremerhaven). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Tourism Management (Cruise Business / Innovation), Hochschule Bremerhaven (Bremerhaven). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Tourism Management (Cruise Business / Innovation), Hochschule Bremerhaven (Bremerhaven). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www.hs-bremerhaven.de/en/itm
+durationYears:
+  value: 4
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-uni-assist
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: de
+      minCefr: A1
+      certificateRequired: true
+      acceptedTests: []
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez séparément l'attestation de niveau d'anglais C1 à fournir avant la fin du premier semestre.
+          status: draft
+        en:
+          text: Check separately the C1 English certificate required by the end of the first semester.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hs-bremerhaven.de/en/itm
+    last_verified_at: null
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7839/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-bremerhaven-hrk41-international-tourism-ma-daad7839
+  name: International Tourism Management (Cruise Business / Innovation)
+  sourceId: daad:7839
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7839/
+      quote: The Bachelor's degree programme in International Tourism Management BA is a four-year full-time programme, and 240 credit points are earned with the degree.
+    - fact: teachingLanguages
+      url: https://www.hs-bremerhaven.de/en/itm
+      quote: 100% English As international as tourism itself, this is why the study program is entirely in English
+    - fact: applicationChannel
+      url: https://www.hs-bremerhaven.de/en/itm
+      quote: Prospective students who have obtained their university entrance qualification outside the European Union (EU) should therefore submit their application directly to UNI-ASSIST.
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7839/
+      quote: "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 5.5"
+    - fact: requirements.req-2
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7839/
+      quote: "German language skills A1 required, please provide an official language certificate, e.g.: Goethe-Zertifikat: Goethe-Zertifikat A1"
+    - fact: requirements.req-3
+      url: https://www.hs-bremerhaven.de/en/itm
+      quote: all students must demonstrate English skills at C1 level of the Common European Framework of Reference for Languages by the end of the first semester
+  notes: "Aucun frais de scolarité n'est indiqué pour ce programme: la page DAAD mentionne seulement 'Tuition fees per semester None' (aucun frais de scolarité), sans préciser explicitement qu'il s'agit de l'étudiant hors UE, et la page officielle du programme ne cite qu'une contribution semestrielle (Semester contribution 420 EUR / 438 EUR). Le montant exact des frais de scolarité pour un étudiant hors UE n'est donc pas extrait. Les dates limites de candidature: la page DAAD indique 'until 15 July' pour les candidats non-UE, et la page allemande bachelorbewerbung confirme '15.07. über uni-assist für zulassungsfreie Bachelorstudiengänge sofern die Hochschulzugangsberechtigung nicht in der EU erworben wurde.' (sans année explicite, l'année 2026 est déduite du contexte du Wintersemester 2026/27 mais la citation ne l'indique pas). La voie uni-assist est choisie car les pages ne mentionnent pas de VPD, seulement une candidature via uni-assist."

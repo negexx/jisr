@@ -1,0 +1,57 @@
+{
+  "slug": "de-technische-hochschule-nurnberg-georg-sim-hrk200-international-business-b-daad3603",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3603/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3603/",
+          "quote": "The International Business programme at TH Nürnberg is a seven-semester course, awarding 210 ECTS credits."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3603/",
+          "quote": "English is the primary language of instruction for the International Business programme, used exclusively in semesters one to three and predominantly thereafter."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 100000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3603/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,000 EUR"
+        }
+      ]
+    }
+  },
+  "notes": "Application channel unclear: the page only says 'Submit application via Please check this website.' and does not name uni-assist, VPD or a university portal, so no applicationChannel fact is given. Tuition fee of 1,000 EUR per semester is explicitly stated for applicants from non-EU countries, but the page also says 'Tuition fee exemptions apply to Students from partner universities'. English test list is partial: the quote names TOEIC, PTE Academic, TOEFL iBT and IELTS Academic (plus Cambridge C1 Advanced); acceptedTests only carries codes available in the schema.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est basée sur la moyenne finale de votre diplôme d'entrée à l'université (numerus clausus) ; vérifiez les seuils de sélection auprès de l'université.",
+          "en": "Admission is based on the final average grade of your university entrance qualification (numerus clausus); check selection thresholds with the university."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3603/",
+            "quote": "Admission is based on the final average grade of your university entrance qualification (e.g. school-leaving certificate or prior studies)."
+          }
+        ]
+      }
+    ]
+  }
+}

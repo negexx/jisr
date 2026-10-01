@@ -1,0 +1,90 @@
+slug: de-hochschule-wismar-university-of-applied-hrk274-rostock-marine-engineering-doubl-daad6315
+institution: de-hochschule-wismar-university-of-applied-hrk274-rostock
+country: DE
+city: rostock
+field: engineering
+level: bachelor
+name: Marine Engineering (Double Degree)
+summary:
+  fr:
+    text: "Marine Engineering (Double Degree), Hochschule Wismar - University of Applied Sciences: Technology, Business and Design (Rostock). Programme recensé dans la base de programmes internationaux du DAAD."
+    status: draft
+  en:
+    text: "Marine Engineering (Double Degree), Hochschule Wismar - University of Applied Sciences: Technology, Business and Design (Rostock). Programme listed in the DAAD international programmes database."
+    status: draft
+  ar:
+    text: "Marine Engineering (Double Degree), Hochschule Wismar - University of Applied Sciences: Technology, Business and Design (Rostock). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD."
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6315/
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 100000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez les conditions d'admission : diplôme d'études secondaires reconnu par l'Indonésie et le Mecklembourg-Poméranie occidentale (Allemagne), ou Diplôme-III avec une moyenne de 2,75 ou mieux (sur une échelle de quatre points), ou réussite d'une formation professionnelle et au moins trois ans de pratique professionnelle, ou réussite à un examen d'admission."
+          status: draft
+        en:
+          text: "Check the admission requirements: high school diploma recognized by Indonesia and Mecklenburg-West Pomerania (Germany), or Diploma-III with a GPA of 2.75 or better (on a four-point scale), or successful completion of professional training and at least three years of working practice, or successful admission examination."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6315/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-wismar-university-of-applied-hrk274-rostock-marine-engineering-doubl-daad6315
+  name: Marine Engineering (Double Degree)
+  sourceId: daad:6315
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6315/
+      quote: Programme duration 7 semesters
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6315/
+      quote: Teaching language English
+    - fact: tuition
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6315/
+      quote: "The following tuition fees apply for applicants from: all countries 1,000 EUR"
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6315/
+      quote: A diploma from a senior high school or equivalent as acknowledged by the governments of Indonesia and Mecklenburg-West Pomerania (Germany) or Diploma-III graduate with NAME background and GPA of 2.75 or better (on a four-point scale) or Successful completion of professional training and at least three years of working practice Successful admission examination
+  notes: The programme is taught in Indonesia (ITS Surabaya and Polimarin Semarang), with one compulsory semester in Germany. The DAAD page states that the application is via e-mail, not through uni-assist; however, the application page for the Faculty of Engineering states that for some degree programmes you must apply via uni-assist. It is not program-specific, so the application channel could not be determined.

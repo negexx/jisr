@@ -1,0 +1,138 @@
+slug: de-technische-hochschule-rosenheim-hrk232-applied-artificial-intel-daad7666
+institution: de-technische-hochschule-rosenheim-hrk232
+country: DE
+city: rosenheim
+field: computer-science
+level: bachelor
+name: Applied Artificial Intelligence (AAI)
+summary:
+  fr:
+    text: Applied Artificial Intelligence (AAI), Technische Hochschule Rosenheim (Rosenheim). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Applied Artificial Intelligence (AAI), Technische Hochschule Rosenheim (Rosenheim). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Applied Artificial Intelligence (AAI), Technische Hochschule Rosenheim (Rosenheim). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence
+durationYears:
+  value: 3.5
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 50000
+    currency: EUR
+    period: semester
+  source: page-3
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: 2027-02-15
+      applicationDeadline: 2027-07-15
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-uni-assist
+  source: page-4
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: de
+      minCefr: A2
+      certificateRequired: true
+      acceptedTests:
+        - testdaf
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez que vous remplissez les conditions d'accès : qualification d'entrée à l'université, notes et éventuels entretiens ou examens."
+          status: draft
+        en:
+          text: "Check that you meet the admission requirements: university entrance qualification, grades and any interviews or exams."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence
+    last_verified_at: null
+  page-2:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7666/
+    last_verified_at: null
+  page-3:
+    url: https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/what-are-the-costs-of-studying-at-th-rosenheim-tuition-fees-and-student-union-fees
+    last_verified_at: null
+  page-4:
+    url: https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme/application-for-a-degree-programme-step-by-step-explained
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-technische-hochschule-rosenheim-hrk232-applied-artificial-intel-daad7666
+  name: Applied Artificial Intelligence (AAI)
+  sourceId: daad:7666
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7666/
+      quote: Programme duration 7 semesters
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7666/
+      quote: All courses are held in English, but German A2 is required for admission.
+    - fact: tuition
+      url: https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/what-are-the-costs-of-studying-at-th-rosenheim-tuition-fees-and-student-union-fees
+      quote: For international students from third countries, tuition fees of 500 € per enrolled semester will apply from summer semester 2026.
+    - fact: intakes
+      url: https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence
+      quote: Apply with a German qualification via uni-assist with an international school-leaving or university qualification 15. February 2027 - 15. July 2027
+    - fact: applicationChannel
+      url: https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme/application-for-a-degree-programme-step-by-step-explained
+      quote: If you have not obtained your higher education entrance qualification in Germany, you apply for a degree programme at TH Rosenheim through uni-assist.
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7666/
+      quote: "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 72"
+    - fact: requirements.req-1
+      url: https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence
+      quote: IELTS or IELTS Academic or IELTS ONLINE, each with a band score of 6.0 or higher
+    - fact: requirements.req-2
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7666/
+      quote: "German language skills A2 required, please provide an official language certificate, e.g.: Deutsches Sprachdiplom der Kultusministerkonferenz (DSD): Deutsches Sprachdiplom A2"
+    - fact: requirements.req-2
+      url: https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence
+      quote: Test of German as a Foreign Language TestDaF TDN 3 or higher
+    - fact: requirements.req-3
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7666/
+      quote: A general or subject-specific higher education entrance qualification is sufficient to qualify for the study programme.

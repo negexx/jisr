@@ -1,0 +1,97 @@
+slug: de-universitat-zu-koln-hrk147-management-economics-and-daad7682
+institution: de-universitat-zu-koln-hrk147
+country: DE
+city: koln
+field: business-economics
+level: bachelor
+name: Management, Economics and Social Sciences - Bachelor of Science
+summary:
+  fr:
+    text: Management, Economics and Social Sciences - Bachelor of Science, Universität zu Köln (Köln). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Management, Economics and Social Sciences - Bachelor of Science, Universität zu Köln (Köln). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Management, Economics and Social Sciences - Bachelor of Science, Universität zu Köln (Köln). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les conditions d'admission et les notes requises pour votre diplôme (baccalauréat marocain) auprès de l'Université de Cologne.
+          status: draft
+        en:
+          text: Check the admission requirements and grade thresholds for your diploma (Moroccan Baccalauréat) at the University of Cologne.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-universitat-zu-koln-hrk147-management-economics-and-daad7682
+  name: Management, Economics and Social Sciences - Bachelor of Science
+  sourceId: daad:7682
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/
+      quote: This Bachelor's programme is designed to take six semesters (three years).
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/
+      quote: As global challenges need global solutions, this programme is taught in English.
+    - fact: requirements.req-1
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/
+      quote: "English language skills B2 required, please provide an official language certificate, e.g.: Cambridge English Qualifications: B2 First IELTS Academic: 5.5 TOEFL iBT (since 2026): 4 Reading: 4 Listening: 4 Speaking: 4 Writing: 4"
+    - fact: requirements.req-2
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/
+      quote: Grades from your university entrance qualification Please find detailed information here.
+  notes: "Tuition fees for non-EU students not stated for this programme; page says 'Tuition fees per semester None' but a semester contribution of approx. 320 EUR is mentioned, which is not a tuition fee. Application channel: the programme page and the WiSo application page do not state a specific platform for international applicants; they only direct to a website or a general page, so applicationChannel is omitted and should be verified manually."

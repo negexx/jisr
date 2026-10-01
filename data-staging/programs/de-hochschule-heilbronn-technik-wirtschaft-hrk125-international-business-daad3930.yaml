@@ -1,0 +1,99 @@
+slug: de-hochschule-heilbronn-technik-wirtschaft-hrk125-international-business-daad3930
+institution: de-hochschule-heilbronn-technik-wirtschaft-hrk125
+country: DE
+city: heilbronn
+field: business-economics
+level: bachelor
+name: International Business
+summary:
+  fr:
+    text: International Business, Hochschule Heilbronn, Technik, Wirtschaft, Informatik (Heilbronn). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Business, Hochschule Heilbronn, Technik, Wirtschaft, Informatik (Heilbronn). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business, Hochschule Heilbronn, Technik, Wirtschaft, Informatik (Heilbronn). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www.hs-heilbronn.de/en/international-business?mtm_campaign=daad-international-programmes&mtm_kwd=IB-E
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez la reconnaissance de votre baccalauréat marocain par le Studienkolleg Konstanz ou uni-assist avant de postuler.
+          status: draft
+        en:
+          text: Check recognition of your Moroccan Baccalauréat by Studienkolleg Konstanz or uni-assist before applying.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hs-heilbronn.de/en/international-business?mtm_campaign=daad-international-programmes&mtm_kwd=IB-E
+    last_verified_at: null
+  page-2:
+    url: https://www.hs-heilbronn.de/en/bachelor-application
+    last_verified_at: null
+  page-3:
+    url: https://www.hs-heilbronn.de/en/admission-requirements-b-a-international-business-ib-e-507d1d798b7dde7e
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-heilbronn-technik-wirtschaft-hrk125-international-business-daad3930
+  name: International Business
+  sourceId: daad:3930
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www.hs-heilbronn.de/en/international-business?mtm_campaign=daad-international-programmes&mtm_kwd=IB-E
+      quote: "7 Semester : 210 ECTS"
+    - fact: teachingLanguages
+      url: https://www.hs-heilbronn.de/en/international-business?mtm_campaign=daad-international-programmes&mtm_kwd=IB-E
+      quote: "Language : English Language : The language of instruction is English, and applicants are required to submit proof of English language proficiency with their application."
+    - fact: tuition
+      url: https://www.hs-heilbronn.de/en/bachelor-application
+      quote: International students from non-EU/EEA countries pay a fee of 1,500 euros per semester.
+    - fact: tuition
+      url: https://www.hs-heilbronn.de/en/expenses
+      quote: International students from non-EU/EEA countries have to pay a tuition fee of EUR 1.500 per semester
+    - fact: requirements.req-1
+      url: https://www.hs-heilbronn.de/en/admission-requirements-b-a-international-business-ib-e-507d1d798b7dde7e
+      quote: If issued not in Germany, it first needs to be recognised by the Studienkolleg Konstanz or uni-assist.
+  notes: "The programme's own page lists the deadline as 'July 15' without a year; the DAAD page says 'until 15 July' for all countries. The tuition fee of 1,500 EUR per semester is the general rate for non-EU/EEA international students at Heilbronn University; it is not a programme-specific exception. The programme's direct page also displays 'Tuition fee: 0 €' but this appears generic/contradicts the university-wide rule and was excluded. Admission is restricted and selection criteria apply, which may include grades and experience; this should be manually checked."

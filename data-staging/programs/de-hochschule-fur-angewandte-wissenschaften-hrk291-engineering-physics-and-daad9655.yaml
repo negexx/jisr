@@ -1,0 +1,107 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-hrk291-engineering-physics-and-daad9655
+institution: de-hochschule-fur-angewandte-wissenschaften-hrk291
+country: DE
+city: munchen
+field: computer-science
+level: bachelor
+name: Engineering Physics and Data Science
+summary:
+  fr:
+    text: Engineering Physics and Data Science, Hochschule für angewandte Wissenschaften München (München). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Engineering Physics and Data Science, Hochschule für angewandte Wissenschaften München (München). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Engineering Physics and Data Science, Hochschule für angewandte Wissenschaften München (München). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: de-uni-assist
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le niveau d'allemand A2 doit être prouvé avant la fin du deuxième semestre ; vérifiez les modalités et le certificat accepté.
+          status: draft
+        en:
+          text: A2 level in German must be proven by the end of the second semester at the latest; check the modalities and accepted certificate.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez si le programme est soumis à des frais de scolarité pour les étudiants non-UE : des frais d'environ 500 EUR par semestre sont en discussion pour les étudiants non-UE et pourraient s'appliquer prochainement."
+          status: draft
+        en:
+          text: "Check whether the programme charges tuition fees for non-EU students: fees of approx. 500 EUR per semester for non-EU students are being discussed and might apply soon."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/
+    last_verified_at: null
+  page-2:
+    url: https://sci.hm.edu/studierende/studiengaenge/bachelor/engineering_physics_and_datascience/index.en.html
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-fur-angewandte-wissenschaften-hrk291-engineering-physics-and-daad9655
+  name: Engineering Physics and Data Science
+  sourceId: daad:9655
+  revises: true
+  todo: "revision of a record already in data/: promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-01
+  evidence:
+    - fact: durationYears
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/
+      quote: Programme duration 7 semesters
+    - fact: teachingLanguages
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/
+      quote: Teaching language English
+    - fact: teachingLanguages
+      url: https://sci.hm.edu/studierende/studiengaenge/bachelor/engineering_physics_and_datascience/index.en.html
+      quote: The language of instruction in all modules is English.
+    - fact: applicationChannel
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/
+      quote: Please apply via uni-assist.
+    - fact: requirements.req-1
+      url: https://sci.hm.edu/studierende/studiengaenge/bachelor/engineering_physics_and_datascience/index.en.html
+      quote: The language requirements are B2 in English and A2 in German, the latter must be proven by the end of the second semester at the latest.
+    - fact: requirements.req-2
+      url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/
+      quote: Tuition fees for non-EU students (approx. 500 EUR per semester) are being discussed and might apply soon.
+  notes: "Aucun montant de frais de scolarité pour les étudiants non-UE n'est indiqué comme définitif pour ce programme : la page DAAD indique seulement que des frais d'environ 500 EUR par semestre pour les étudiants non-UE sont en discussion et pourraient s'appliquer prochainement, et la page du programme mentionne uniquement le semester contribution. Aucune date d'ouverture ou de clôture des candidatures n'est indiquée avec jour, mois et année pour ce programme dans les pages fournies (les pages mentionnent « 2 May - 15 July » sans année). Les tests TOEFL Essentials et IELTS Academic sont nommés, mais aucune condition d'admission par matière n'est énoncée. Une préétude (pre-study placement / pré-internship) est mentionnée de façon générale sur la page des candidatures bachelor, sans être attribuée à ce programme."
