@@ -35,12 +35,16 @@ Jisr is a free web app that turns a Moroccan Bac graduate's profile into a reali
 | Data schema | `src/data-schema/` | Zod schemas shared by build script, domain and tests |
 | Data build/check | `scripts/data/` | validate, snapshot, manifest, staleness report, source-change watcher |
 | Domain core | `src/domain/` | eligibility routes, matching, costs, checklist. Pure; no framework/DB/fs/network |
-| Web | `src/app/[locale]/` | pages: Home, Profile, Matches, Program, Scholarships, Compare, Plan |
-| Data access (client/server) | `src/lib/snapshot/` | load manifest + snapshots, cache, version pinning |
+| Web | `src/app/[locale]/` | pages built so far: Home, `/profile`, `/matches`, `/programs/[slug]` (Scholarships, Compare, Plan are M4); `src/app/global-not-found.tsx` is the 404 page |
+| Snapshot access | `src/lib/snapshot/` | `client.ts` (browser: manifest, shards, integrity, version pinning), `use-snapshot.ts` (hook), `plan.ts` (which shards a page needs, as functions of the manifest), `manifest.ts` (hand-written manifest guard), `text.ts` (locale text lookup with fallback notes), `shard-names.ts`, `errors.ts`, `server.ts` (`server-only` build-time reader used by program pages) |
+| Guest profile | `src/lib/profile/` | `storage.ts` + `store.ts` (localStorage `jisr.profile`, `jisr.profile-draft`; `useProfile` in `use-profile.ts`), `validate.ts` / `draft-validate.ts` (hand-written, Zod-free), `reference-checks.ts` / `reference-lookups.ts` (profile against the core shard), `form/` (pure form model: state, options, step validation, `buildProfile`) |
+| Journey view models | `src/lib/journey/` | pure: `matches-view.ts` (`groupOf`, `routeKeyOf`, `topReasons`, `buildMatchesView`), `reasons.ts` / `requirements.ts` (reasons and rules as message keys plus preformatted params), `page-facts.ts`, `freshness.ts` |
+| UI helpers | `src/lib/i18n/`, `src/lib/format.ts`, `src/lib/clock.ts`, `src/lib/constants.ts`, `src/lib/guards.ts` | domain vocabulary + `pickMessages`; `Intl` money/date/grade formatting (`ar` uses Latin digits); `todayIso()` (browser only); Zod-free constants and guards for client code |
 | Auth | `src/lib/auth/`, `src/app/api/auth/` | Better Auth (phase 2) |
 | User DB | `src/db/` | Drizzle schema + migrations, user data only |
 | i18n | `src/i18n/`, `messages/` | next-intl routing, en/fr/ar messages |
-| UI | `src/components/` | shadcn/ui + `SourceBadge`, `MatchCard`, `CostBreakdown` |
+| UI | `src/components/` | `ui/` (shadcn: `button`, `alert-dialog`), shell (header, footer, locale switcher, clear-data), trust primitives (`SourceBadge`, `FreshnessMark`, `MatchStatusBadge`, `DeadlineStatus`, `ExternalLink`, `LocalizedDataText`, `EmptyState`), composites (`MatchCard`, `CostBreakdown`, `ReasonList`), page folders `profile/`, `matches/`, `program/` |
+| Perf / e2e tooling | `scripts/perf/`, `scripts/e2e/`, `tests/e2e/` | `pnpm perf:js` (gzipped first-load JS per prerendered route + Zod marker scan), fixture build for e2e, Playwright specs (journey, errors, privacy, a11y, perf) |
 
 ## Data model essentials
 
@@ -51,10 +55,52 @@ Jisr is a free web app that turns a Moroccan Bac graduate's profile into a reali
 
 ## Data flow
 
-1. Edit YAML → `pnpm data:check` (schema, provenance, staleness) → `pnpm data:build` → snapshots + manifest deployed with the site (content-hashed, immutable).
-2. Client loads the manifest, fetches the shards for the student's chosen field/countries, runs `src/domain` locally.
+1. Edit YAML → `pnpm data:check` (schema, provenance, staleness) → `pnpm data:build` → snapshots + manifest in `public/snapshots`, deployed with the site (content-hashed, immutable).
+2. At `next build`, program pages are generated from those files (`src/lib/snapshot/server.ts`). In the browser, Profile and Matches load the manifest and the shards for the student's credential country, fields and destinations, and run `src/domain` locally.
 3. Guest profile in localStorage; saving to an account (phase 2) writes profile/saved rows via Server Actions, referencing program slug + snapshot version.
 4. Weekly job fetches sources, hashes content, opens a private-repo issue for changed pages.
+
+## Data access boundary (M3)
+
+- **Static at build time:** `/[locale]/programs/[slug]` is generated with `generateStaticParams` (slugs from the snapshot; the `[locale]` layout supplies the locales) and `dynamicParams = false`. The page starts with `import "server-only"` and reads `public/snapshots` through `src/lib/snapshot/server.ts` (length, SHA-256 and shape checked, memoised per process). The HTML holds only what does not depend on the clock or the student: name, institution, languages, tuition value, rules described in general terms, intake dates as published, channel, documents, cost ranges without a budget, scholarships, official links, and each SourceBadge's static part. `dynamicParams = false` is mandatory: on Vercel `public/` is not traced into functions, so a request-time render could not read the snapshot. With an empty `data/` the route has no pages and the real build still passes.
+- **Client leaves on that page:** freshness marks, the aging/stale banner, the next deadline and the personal result (`PersonalMatch`: status, route text, reasons, budget fit, nationality-filtered scholarships) read the browser clock and the profile. Their server output is a neutral placeholder, so an old build never claims to be fresh and nothing about a student is in the HTML. The matching code is a separate chunk (`personal-outcome.ts`, loaded with `import()` once a profile and a bundle exist; if that download fails the box shows a network error with Retry, which imports it again).
+- **Static shell, client island:** `/profile` and `/matches` render a static page and mount one client island that reads the store and loads a snapshot bundle. Home has one small client leaf (the "See my matches" link).
+- **Snapshot client (`client.ts`):** one manifest per browser session (`cache: "no-cache"`), shards fetched by the names it lists and kept in an in-memory cache of verified JSON, plus the HTTP cache (`/snapshots/s/*` is `immutable`, the manifest `no-cache`: `src/lib/snapshot-headers.ts`). The trust boundary is integrity: byte length, SHA-256 via `crypto.subtle` (length only if it is missing), then a structural guard that the shard's kind and names match the manifest entry. A missing shard triggers one manifest refetch; if the version changed, the whole bundle is rebuilt from the new manifest (a plan is a function of the manifest, so added or removed program shards are respected), otherwise the error is `network`; a second change gives `version_changed_twice`. A bundle never mixes versions. Failures are never cached, error messages are fixed strings (never a body or profile value), and `SnapshotError.shard` names a profile-derived shard (for example `routes.XX`), so keep it out of Sentry extras.
+- **Hook contract:** `useSnapshotBundle({ key, plan } | null, locale)`: `key` must change whenever any input the plan closure captures changes (matches: credential country and fields; program: program and credential country).
+- **Privacy note:** request paths name the shards, so the host's access logs show the origin country, the destination countries and the field slugs of each student (never grades or nationality; nothing reaches analytics or a query string). The privacy notice must say so.
+- **Messages in islands:** the `[locale]` layout provides `messages={null}`; the shell's client leaves get their strings as props. A page with a client island adds a nested `NextIntlClientProvider` with an explicit `locale` and `pickMessages(messages, NAMESPACES)`; the namespace lists live next to the island (`components/matches/namespaces.ts`, `components/program/client-namespaces.ts`). Server components keep using `useTranslations` under `messages={null}`.
+
+## No Zod in client bundles
+
+Zod costs about 100 KB gzipped in any client chunk. Client-reachable code (`src/components`, `src/domain`, `src/lib/{profile,snapshot,journey,i18n,design}` and the Zod-free helper files) therefore imports no `zod` and nothing from `@/data-schema` except types and the zod-free `dates` and `staleness` modules. The profile, draft and manifest validators are hand-written and proven equal to the Zod schemas by differential tests with seeded fuzzing (`tests/lib/profile/validate.test.ts`, `draft-validate.test.ts`, `tests/lib/snapshot/manifest-guard.test.ts`). `tests/lib/client-imports.test.ts` walks the runtime import graph from every client root with the TypeScript AST and fails with the import chain. `pnpm perf:js` adds a backstop that scans `.next/static` for `ZodError`/`_zod` after a build (not run in CI yet; the e2e perf spec separately asserts that no script the browser loads contains the markers). When `src/instrumentation-client.ts` arrives with Sentry it must become a root of the guard.
+
+## Client JS size (target 150 KB gzipped initial JS; ADR 0007)
+
+Measured on the fixture build, gzip, noModule polyfill excluded. Build = `pnpm perf:js`; browser = Playwright perf spec ("initial" is what the HTML asks for, "until idle" adds the chunks Next prefetches for linked pages):
+
+| Route | build KB | browser initial KB | until idle KB | gap to 150 (initial) |
+|---|---|---|---|---|
+| `/fr`, `/en`, `/ar` | 166.5 | 166.8 | 211.7 to 212.9 | +16.8 |
+| `/[locale]/profile` | 183.1 | 183.5 | 212.9 | +33.5 |
+| `/[locale]/matches` | 188.2 | 188.5 | 212.9 | +38.5 |
+| `/[locale]/programs/<slug>` | 180.2 | 180.5 | 234.8 | +30.5 |
+
+Every page is over target, home included (the shell is about 166 KB before any page code). The ratchet in `tests/e2e/support/js-budget.ts` is the current value rounded up plus 3 KB, only ever lowered, and the perf spec prints the gap on each run. What was tried, the remaining levers and the open decision are in ADR 0007.
+
+## Match presentation (UI side of ADR 0005)
+
+- `groupOf(match)` in `src/lib/journey/matches-view.ts` is the only place a match meets a page group: `satisfied` is `ok`, a `foundation` route is `foundation` (tested before `check`), `check` is `check`, `not_satisfied` (including a `not_eligible` route) is `failed`. The failed group is shown collapsed with its count. `MatchStatusBadge` is the only place a group maps to icon, colour and text (never colour alone).
+- Within a group, programs sort by next upcoming deadline (closed and unknown after), then slug. Programs hidden by preferences are counted per mismatch kind and can be revealed with their reasons.
+- Route wording always goes through `routeKeyOf(match)`, never `domain.route.${match.route}`: it names `direct` or `not_eligible` only when the route reason is decisive, and says "source not re-verified" or "not an official source" otherwise.
+- `topReasons(match, max)` sorts fail, then to-check, then pass, and always keeps the `foundation` route reason and the coverage reason whatever `max` is. Cards show the top reasons; the program page shows all of them.
+
+## Routing and 404
+
+One trilingual 404 (`src/app/global-not-found.tsx`, experimental Next flag `globalNotFound`) answers every unmatched path; ADR 0006 records the trade-offs and the upgrade checklist. Match cards link to program pages with `prefetch={false}` and the locale switcher does not prefetch the current page (Next's prefetch added tens of KB per page); the primary nav still prefetches.
+
+## Tests
+
+Vitest (`tests/**`, jsdom per file for components) mirrors `src/`. Playwright (`tests/e2e/`, phone and desktop projects, fr and ar) runs against `next start` on a build of the synthetic fixture `tests/fixtures/data/e2e-journey` (`pnpm build:e2e`, which overwrites `public/snapshots`; restore with `pnpm data:build`), with the clock pinned. Specs: journey, empty-and-errors, privacy, a11y (axe), perf.
 
 ## External dependencies
 

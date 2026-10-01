@@ -115,3 +115,32 @@ fr `draft` shows no note (fr is the authoring language; notes only for ar/en dra
 
 ## Out of M3 (M4, one line each)
 Save program (localStorage list of slug + snapshotVersion, "saved" badge); My Application Plan (`generateChecklist` per saved program, using `domain.checklist.*` keys already added); Compare (side by side desktop, stacked phone, 2-4 saved programs); Scholarships finder page (nationality-filtered: who can apply, support, covers, deadline, documents, how to apply); GoatCounter events (`profile-started`, `profile-completed`, `matches-viewed`, `program-saved`, `plan-opened`; only named in M3); Sentry EU with a `beforeSend` test stripping grades and MatchResults; "Report outdated info" (needs a server write → phase 2 with accounts); sitemap and hreflang alternates for program pages.
+
+## Outcome (2026-10-01)
+
+M3 shipped on `feat/m3-guest-journey`: Home with the profile CTA, Create Profile (4 steps + review), My Matches, and statically generated program pages with client personal leaves, all in fr, en and ar, with 152 Playwright tests (phone and desktop) passing, axe at zero violations, and the privacy specs green. The architecture decisions above held; see ADR 0006 (static program pages, 404 routing) and ADR 0007 (client JS budget, proposed). Where the build differs from the plan:
+
+- **T1:** the e2e data step is a script (`scripts/e2e/build.ts`, `pnpm build:e2e` / `pnpm dev:fixture`), not a chain of `data:check`/`data:build` flags; `playwright.config.ts` starts `build:e2e` then `next start -p 3100`.
+- **T5:** `load` accepts a plan as a function of the manifest (`PlanInput`), the hook takes `{ key, plan } | null`, `ProgramPageData` carries `costProfiles` (city and country profiles), and a forward-only session manifest was added.
+- **T6b (new):** zod-free validators for profile, draft and manifest with differential fuzz tests, the client-import guard and `pnpm perf:js`, because client Zod cost about 100 KB gzipped (plan fallback taken).
+- **T8c (experiment, reverted):** build-time compiled `cn` merge tables saved only 2.8 KB and added codegen and a watcher.
+- **T9 and T10 were split** into a/b (shared trust components, then composites; form model, then page) after the sizes of the briefs; T7 and T11/T12 needed several review fix waves.
+- **T13:** specs written as planned; the first Linux CI run decides the ratchet and RTL geometry thresholds.
+- **T15 (new):** one trilingual 404 through the experimental `globalNotFound` flag, `dynamicParams = false` on the `[locale]` layout, and `prefetch={false}` on match cards and the current-locale link.
+- **T14:** besides the docs, `buttonVariants` now merges its classes (outline links had lost their border).
+- **Budget not met:** every page is above the 150 KB initial JS target (Home 166.5, profile 183.1, matches 188.2, program 180.2 KB gzipped). ADR 0007 lists the levers and asks for a product-owner decision.
+
+**M4 list:** unchanged (save program, My Application Plan, Compare, Scholarships finder, GoatCounter events, Sentry EU, "Report outdated info", sitemap and hreflang).
+
+**Follow-ups collected from the M3 reports:**
+- Native Arabic review of all machine-drafted `ar` copy (lists are in the task reports).
+- Privacy notice must state that shard request paths reveal origin country, destination countries and field slugs (not grades or nationality) to the host's access logs.
+- JS budget levers (ADR 0007): merge-free `buttonVariants` for client leaves, dropping next-intl's client `Link`/`usePathname`/provider from the shell, splitting the profile steps into chunks, a dynamic import of the matching code on the matches page; nav-link prefetch is not reduced (about 45 to 54 KB gzipped after load).
+- `data:check` rule: a scholarship linked from a program must list that program's destination (today it would be missing from the page and the client).
+- ar `CHECK_VERB` needs a `fa-`/`wa-` prefix allowance if a to-check key ever uses "فتحقق".
+- Add `src/instrumentation-client.ts` as a root of the client-import guard when Sentry arrives, and filter `NoFallbackError` log noise; keep `SnapshotError.shard` out of Sentry extras.
+- Add the build-time Zod backstop (`findZodMarkers` through `pnpm perf:js` after a build) to CI; the e2e perf spec already checks the scripts the browser loads.
+- Unverified until deployed: Vercel behaviour of the global 404 and of `dynamicParams = false`; the CI `e2e` job (first run decides the Linux ratchet and RTL thresholds).
+- Product decision: a compact phone `MatchCard` (application method and cost note behind "See details") would roughly halve phone page height but conflicts with the MVP "application method" card fact.
+- `Retry` after a failed chunk download was verified on a Turbopack production build in Chromium (chunk aborted: Retry requests it again and keeps the error; chunk restored: Retry recovers), so no reload workaround was added. Only the program page's lazy matching chunk was exercised in a browser; the profile page's lazy paths share the `import()` pattern and have jsdom tests.
+- Small review leftovers, none blocking: bare builtin subpaths (`dns/promises`, `path/posix`) are not banned in `src/domain`; `HttpsUrlSchema` accepts URLs with credentials or trailing spaces (a `data:check` lint idea); `assertUsableDataDir` accepts a directory holding only `.gitkeep`; the manifest is written non-atomically; `reuseExistingServer` may reuse a stale server on :3100 locally; a few thin rows in the domain tests (null `minCefr` and grade threshold rows, interleaved currencies, no month-boundary row).
