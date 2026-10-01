@@ -53,4 +53,4 @@ _review:
   field: engineering
   confidence: low
   officialUrl: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
-  todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind); field is a judgement call: check the programme content"
+  todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind); field is a judgement call: check the programme content; no programme page in the dataset: find the official page and use it as the source"

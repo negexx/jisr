@@ -22,7 +22,13 @@ export type OnisepIndex = Map<string, OnisepStructure>;
 export async function fetchOnisepIndex(): Promise<OnisepIndex> {
   const rows = z.array(RowSchema).parse(await fetchJson(ONISEP_STRUCTURES_URL));
   const index: OnisepIndex = new Map();
-  for (const row of rows) if (row.code_uai !== "") index.set(row.code_uai, row);
+  for (const row of rows) {
+    if (row.code_uai === "") continue;
+    // Some UAIs appear twice; keep the row that names a parent so the result never depends on order.
+    const kept = index.get(row.code_uai);
+    if (kept !== undefined && parentUais(kept).length > 0 && parentUais(row).length === 0) continue;
+    index.set(row.code_uai, row);
+  }
   return index;
 }
 

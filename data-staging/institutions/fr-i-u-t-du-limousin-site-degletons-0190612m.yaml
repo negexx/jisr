@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.unilim.fr/
-  todo: "website candidate from parent university \"Université de Limoges\" (ONISEP link, ESR register), not this unit's own page: confirm it, then set info_kind: official"
+  todo: "website candidate from parent university \"Université de Limoges\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"

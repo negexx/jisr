@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.universite-paris-saclay.fr/
-  todo: "website candidate from parent institution \"Université Paris-Saclay\" in the ESR register, not this site's own page: confirm it, then set info_kind: official"
+  todo: "website candidate from parent institution \"Université Paris-Saclay\" matched by name in the ESR register, not this site's own page: confirm it on the official page, add that page as the source, then set info_kind: official"

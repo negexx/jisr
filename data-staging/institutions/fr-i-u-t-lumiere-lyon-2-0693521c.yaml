@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.univ-lyon2.fr/
-  todo: "website candidate from parent university \"Université Lumière - Lyon 2\" (ONISEP link, ESR register), not this unit's own page: confirm it, then set info_kind: official"
+  todo: "website candidate from parent university \"Université Lumière - Lyon 2\" (ONISEP link, ESR register), not this unit's own page: confirm it on the official page, add that page as the source, then set info_kind: official"

@@ -18,21 +18,26 @@ const RowSchema = z.object({
 export type EsrEstablishment = z.infer<typeof RowSchema>;
 
 export type EsrIndex = {
+  // Current UAI code only: the one match that may count as confirmed.
+  currentUai: Map<string, EsrEstablishment>;
+  // Current and former codes: a hit on a former code is only a candidate (mergers, renames).
   byUai: Map<string, EsrEstablishment>;
   byNameKey: Map<string, EsrEstablishment>;
 };
 
 export async function fetchEsrIndex(): Promise<EsrIndex> {
   const rows = z.array(RowSchema).parse(await fetchJson(URL));
+  const currentUai = new Map<string, EsrEstablishment>();
   const byUai = new Map<string, EsrEstablishment>();
   const byNameKey = new Map<string, EsrEstablishment>();
   for (const row of rows) {
+    if (row.uai !== null && row.uai !== "") currentUai.set(row.uai, row);
     for (const code of [row.uai, ...(row.anciens_codes_uai ?? [])]) {
       if (code !== null && code !== "") byUai.set(code, row);
     }
     byNameKey.set(nameKey(row.uo_lib), row);
   }
-  return { byUai, byNameKey };
+  return { currentUai, byUai, byNameKey };
 }
 
 // Parcoursup labels sub-units "I.U.T de Metz - Université de Lorraine": try each " - " part.

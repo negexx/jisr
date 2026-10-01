@@ -5,7 +5,7 @@ city:
   slug: pointe-a-pitre
   name: Pointe-à-Pitre
 type: public
-website: https://www.univ-guyane.fr/
+website: https://www.univ-antilles.fr/
 source: esr
 info_kind: official
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Pointe-à-Pitre
   field: ""
   confidence: ""
-  officialUrl: https://www.univ-guyane.fr/
-  todo: ""
+  officialUrl: https://www.univ-antilles.fr/
+  todo: the ESR register names this establishment "Université des Antilles"; name, city and type come from Parcoursup

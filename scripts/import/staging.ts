@@ -189,3 +189,40 @@ export async function listStaged(dir = STAGING_DIR): Promise<string[]> {
   }
   return out.sort();
 }
+
+const REVIEW_FIELDS = [
+  "kind",
+  "slug",
+  "name",
+  "institution",
+  "city",
+  "field",
+  "confidence",
+  "officialUrl",
+  "todo",
+] as const;
+
+export function toReviewRow(row: Record<string, string>): ReviewRow {
+  return Object.fromEntries(REVIEW_FIELDS.map((c) => [c, row[c] ?? ""])) as ReviewRow;
+}
+
+// Merges freshly staged records into the review sheet. A rewritten staged file is new, unread
+// content, so its earlier approval is dropped; rows whose staged file no longer exists vanish.
+export function mergeReviewSheet(input: {
+  existingRows: readonly Record<string, string>[];
+  approved: ReadonlySet<string>;
+  records: readonly StagedRecord[];
+  rewritten: ReadonlySet<string>;
+  fileExists: (kind: string, slug: string) => boolean;
+}): { rows: ReviewRow[]; approved: Set<string> } {
+  const approved = new Set(input.approved);
+  for (const key of input.rewritten) approved.delete(key);
+  const known = new Map(
+    input.existingRows.map((r) => [recordKey(r.kind ?? "", r.slug ?? ""), toReviewRow(r)]),
+  );
+  for (const r of input.records) known.set(recordKey(r.review.kind, r.review.slug), r.review);
+  const rows = [...known.values()]
+    .filter((r) => input.fileExists(r.kind, r.slug))
+    .sort((a, b) => recordKey(a.kind, a.slug).localeCompare(recordKey(b.kind, b.slug)));
+  return { rows, approved };
+}

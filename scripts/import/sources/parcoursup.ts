@@ -4,8 +4,8 @@ import { classifyField } from "../fields";
 import { fetchJson } from "../http";
 import type { ReviewRow, StagedRecord } from "../staging";
 import { READ_SOURCE } from "../staging";
-import { collapseSpaces, normalizeCityName, slugify } from "../text";
-import type { EsrEstablishment } from "./esr";
+import { collapseSpaces, nameKey, normalizeCityName, slugify } from "../text";
+import type { EsrEstablishment, EsrIndex } from "./esr";
 import { ESR_REGISTER_URL, fetchEsrIndex, findParent } from "./esr";
 import type { OnisepIndex } from "./onisep";
 import { fetchOnisepIndex, parentUais, sectorOf } from "./onisep";
@@ -53,53 +53,93 @@ const httpsOrNull = (url: string | null | undefined): string | null =>
 // until a human has chosen the value (a real one, or an explicit null for "not published").
 const unread = (source: string) => ({ value: null, source, info_kind: READ_SOURCE });
 
-type Website = { url: string | null; confirmed: boolean; origin: string | null };
+export type Website = {
+  url: string | null;
+  confirmed: boolean;
+  origin: string | null;
+  notes: string[];
+};
 
-// Only an exact UAI match in the ministry's own register counts as confirmed; the other origins
-// are candidates that a human must check (they keep the placeholder info_kind).
-function resolveWebsite(
-  row: Row,
+type Sector = "public" | "private";
+
+// Only a match on the establishment's current UAI in the ministry's own register, with the same
+// public/private sector as Parcoursup, counts as confirmed. Every other origin is a candidate that
+// a human must check (it keeps the placeholder info_kind).
+export function resolveWebsite(
+  row: Pick<Row, "cod_uai">,
   instName: string,
-  esr: Awaited<ReturnType<typeof fetchEsrIndex>>,
+  sector: Sector,
+  esr: EsrIndex,
   wikidata: ReadonlyMap<string, string[]>,
   onisep: OnisepIndex,
 ): Website {
-  const exact = esr.byUai.get(row.cod_uai) ?? null;
-  if (httpsOrNull(exact?.url) !== null) {
+  const candidate = (url: string | null, origin: string, notes: string[] = []): Website => ({
+    url,
+    confirmed: false,
+    origin,
+    notes,
+  });
+
+  const current = esr.currentUai.get(row.cod_uai) ?? null;
+  const currentUrl = httpsOrNull(current?.url);
+  if (current !== null && currentUrl !== null) {
+    const esrSector = sectorOf(current.secteur_d_etablissement ?? "");
+    if (esrSector !== null && esrSector !== sector) {
+      return candidate(currentUrl, "ESR register (exact UAI match)", [
+        `public/private conflict: Parcoursup says ${sector}, the ESR register says ${esrSector}`,
+      ]);
+    }
+    const notes =
+      nameKey(current.uo_lib) === nameKey(instName)
+        ? []
+        : [
+            `the ESR register names this establishment "${current.uo_lib}"; name, city and type come from Parcoursup`,
+          ];
     return {
-      url: httpsOrNull(exact?.url),
+      url: currentUrl,
       confirmed: true,
       origin: "official ESR register (exact UAI match)",
+      notes,
     };
   }
+
+  const former = esr.byUai.get(row.cod_uai) ?? null;
+  if (httpsOrNull(former?.url) !== null) {
+    return candidate(
+      httpsOrNull(former?.url),
+      `ESR register, but only through a former UAI code of "${former?.uo_lib}" (merger or rename?)`,
+    );
+  }
+
   const fromWikidata =
     (wikidata.get(row.cod_uai) ?? []).map(httpsOrNull).find((u) => u !== null) ?? null;
   if (fromWikidata !== null) {
-    return {
-      url: fromWikidata,
-      confirmed: false,
-      origin: "Wikidata (UAI match), not an official register",
-    };
+    return candidate(fromWikidata, "Wikidata (UAI match), not an official register");
   }
-  for (const uai of parentUais(onisep.get(row.cod_uai))) {
-    const parent = esr.byUai.get(uai);
-    if (httpsOrNull(parent?.url) !== null) {
-      return {
-        url: httpsOrNull(parent?.url),
-        confirmed: false,
-        origin: `parent university "${parent?.uo_lib}" (ONISEP link, ESR register), not this unit's own page`,
-      };
-    }
+
+  const parents = parentUais(onisep.get(row.cod_uai)).flatMap((uai) => {
+    const parent = esr.currentUai.get(uai);
+    return parent !== undefined && httpsOrNull(parent.url) !== null ? [parent] : [];
+  });
+  const first = parents[0];
+  if (first !== undefined) {
+    return candidate(
+      httpsOrNull(first.url),
+      `parent university "${first.uo_lib}" (ONISEP link, ESR register), not this unit's own page`,
+      parents.length > 1
+        ? [`several parent universities: ${parents.map((p) => p.uo_lib).join(", ")}`]
+        : [],
+    );
   }
-  const parent: EsrEstablishment | null = findParent(esr, instName);
-  if (httpsOrNull(parent?.url) !== null) {
-    return {
-      url: httpsOrNull(parent?.url),
-      confirmed: false,
-      origin: `parent institution "${parent?.uo_lib}" in the ESR register, not this site's own page`,
-    };
+
+  const byName: EsrEstablishment | null = findParent(esr, instName);
+  if (httpsOrNull(byName?.url) !== null) {
+    return candidate(
+      httpsOrNull(byName?.url),
+      `parent institution "${byName?.uo_lib}" matched by name in the ESR register, not this site's own page`,
+    );
   }
-  return { url: null, confirmed: false, origin: null };
+  return { url: null, confirmed: false, origin: null, notes: [] };
 }
 
 export async function importFrance(): Promise<StagedRecord[]> {
@@ -119,19 +159,20 @@ export async function importFrance(): Promise<StagedRecord[]> {
     const instName = collapseSpaces(row.g_ea_lib_vx);
 
     if (!institutions.has(instSlug)) {
-      const site = resolveWebsite(row, instName, esr, wikidata, onisep);
-      const todo =
-        site.origin === null
-          ? "website missing: find the official https site, then set info_kind: official"
-          : site.confirmed
-            ? ""
-            : `website candidate from ${site.origin}: confirm it, then set info_kind: official`;
-      const mine = row.contrat_etab === "Public" ? "public" : "private";
+      const mine: Sector = row.contrat_etab === "Public" ? "public" : "private";
+      const site = resolveWebsite(row, instName, mine, esr, wikidata, onisep);
       const theirs = sectorOf(onisep.get(row.cod_uai)?.statut ?? "");
       const sectorNote =
         theirs !== null && theirs !== mine
           ? `public/private conflict: Parcoursup says ${mine}, ONISEP says ${theirs}; check before approving`
           : "";
+      const websiteNote =
+        site.origin === null
+          ? "website missing: find the official https site, add that page as the source, then set info_kind: official"
+          : site.confirmed
+            ? ""
+            : `website candidate from ${site.origin}: confirm it on the official page, add that page as the source, then set info_kind: official`;
+      const todo = [websiteNote, ...site.notes, sectorNote].filter((t) => t !== "").join("; ");
       institutions.set(instSlug, {
         collection: "institutions",
         id: instSlug,
@@ -157,7 +198,7 @@ export async function importFrance(): Promise<StagedRecord[]> {
           field: "",
           confidence: "",
           officialUrl: site.url ?? "",
-          todo: [todo, sectorNote].filter((t) => t !== "").join("; "),
+          todo,
         },
       });
     }
@@ -169,6 +210,9 @@ export async function importFrance(): Promise<StagedRecord[]> {
       "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind)",
       ...(match.confidence === "low"
         ? ["field is a judgement call: check the programme content"]
+        : []),
+      ...(httpsOrNull(row.lien_form_psup) === null
+        ? ["no programme page in the dataset: find the official page and use it as the source"]
         : []),
       ...(/distanc/i.test(row.lib_for_voe_ins)
         ? ["distance-learning programme: check it suits a student abroad"]

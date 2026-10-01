@@ -6,11 +6,11 @@ city:
   name: Saint-Etienne
 type: public
 website: https://www.univ-st-etienne.fr/fr/index.html
-source: esr
-info_kind: official
+source: parcoursup
+info_kind: TODO_read_source
 sources:
-  esr:
-    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-principaux-etablissements-enseignement-superieur/
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
     last_verified_at: null
 _review:
   kind: institutions
@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.univ-st-etienne.fr/fr/index.html
-  todo: ""
+  todo: 'website candidate from ESR register, but only through a former UAI code of "Université Jean Monnet - Saint-Etienne" (merger or rename?): confirm it on the official page, add that page as the source, then set info_kind: official'
