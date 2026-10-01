@@ -1,5 +1,6 @@
 import { htmlToText, normalizeForMatch, programmeNameMatches } from "./evidence";
 import { fetchText } from "./http";
+import type { QueryBudget, SearchHit, SearchProvider } from "./search";
 
 // Finds a programme's own page, its fee page and its admission page by crawling from the institution's
 // website: no search API and no model, only links scored against the programme name and a few
@@ -259,4 +260,111 @@ export async function discoverFromRegister(input: RegisterInput): Promise<Discov
     return ranked.map((c) => c.l.url);
   };
   return { programme, fees: await pick("fees"), admission: await pick("admission"), fetched };
+}
+
+// --- discovery by web search -------------------------------------------------------------------
+// For programmes with no register page (the Netherlands, most of France): a search restricted to the
+// institution's own site finds the programme page; the institution's fee and admission pages are
+// found by two institution-level searches, shared by all its programmes through `memo`.
+const WORDS: Record<string, { fees: string; admission: string; language: string }> = {
+  FR: {
+    fees: "droits d'inscription étudiants internationaux tuition fees",
+    admission: "candidature étudiants internationaux conditions d'admission admission requirements",
+    language: "fr",
+  },
+  DE: {
+    fees: "Studiengebühren internationale Studierende tuition fees",
+    admission: "Bewerbung internationale Studierende application requirements admission",
+    language: "de",
+  },
+  NL: {
+    fees: "collegegeld niet-EU studenten tuition fees",
+    admission: "toelating aanmelden internationale studenten admission requirements",
+    language: "nl",
+  },
+};
+
+export type SearchDiscoverInput = {
+  name: string;
+  institution: string;
+  country: string;
+  website: string | null;
+  search: SearchProvider;
+  budget?: QueryBudget;
+  // answers shared between the programmes of one institution
+  memo?: Map<string, SearchHit[]>;
+  fetchHtml?: (url: string) => Promise<string>;
+};
+
+export async function discoverBySearch(input: SearchDiscoverInput): Promise<Discovered> {
+  const fetchHtml =
+    input.fetchHtml ??
+    ((url: string) => fetchText(url, { accept: "text/html,application/xhtml+xml" }));
+  const words = WORDS[input.country] ?? {
+    fees: "tuition fees",
+    admission: "admission",
+    language: "en",
+  };
+  const site = input.website === null ? null : registrable(input.website);
+  const scope = site === null ? input.institution : `site:${site}`;
+  const memo = input.memo ?? new Map<string, SearchHit[]>();
+  const ask = async (query: string): Promise<SearchHit[]> => {
+    const known = memo.get(query);
+    if (known !== undefined) return known;
+    input.budget?.take();
+    const hits = await input.search.search(query, {
+      country: input.country,
+      language: words.language,
+    });
+    memo.set(query, hits);
+    return hits;
+  };
+  // hits on the institution's own site, as links to score
+  const links = (hits: SearchHit[]): Link[] =>
+    hits
+      .filter((h) => h.url.startsWith("https://"))
+      .filter((h) => input.website === null || sameSite(h.url, input.website))
+      .map((h) => ({ url: h.url, text: `${h.title} ${h.snippet}` }));
+
+  let fetched = 0;
+  const programmeQuery =
+    `${scope} "${input.name}" bachelor ${site === null ? "" : input.institution}`.trim();
+  const candidates = links(await ask(programmeQuery))
+    .map((l) => ({ l, score: scoreLink(l, "programme", input.name) }))
+    .filter((c) => c.score >= 0.5)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3);
+  let best: { url: string; ratio: number } | null = null;
+  const tokens = nameTokens(input.name);
+  for (const { l } of candidates) {
+    let html: string;
+    try {
+      html = await fetchHtml(l.url);
+      fetched++;
+    } catch {
+      continue;
+    }
+    const text = htmlToText(html);
+    if (!programmeNameMatches(input.name, text)) continue;
+    const ratio =
+      tokens.length === 0 ? 0 : tokens.filter((t) => fold(text).includes(t)).length / tokens.length;
+    if (best === null || ratio > best.ratio) best = { url: l.url, ratio };
+  }
+
+  const pick = async (kind: "fees" | "admission"): Promise<string[]> => {
+    const hits = links(await ask(`${scope} ${words[kind]}`));
+    return hits
+      .map((l) => ({ l, score: scoreLink(l, kind, input.name) }))
+      .filter((c) => c.score >= 0.4)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 2)
+      .map((c) => c.l.url);
+  };
+  const found = best as { url: string } | null;
+  return {
+    programme: found?.url ?? null,
+    fees: await pick("fees"),
+    admission: await pick("admission"),
+    fetched,
+  };
 }

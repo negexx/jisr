@@ -1,12 +1,18 @@
 import { describe, expect, it } from "vitest";
-
 import {
   discover,
+  discoverBySearch,
   discoverFromRegister,
   extractLinks,
   sameSite,
   scoreLink,
 } from "../../../scripts/import/discover";
+import {
+  QueryBudget,
+  SearchBudgetExceeded,
+  type SearchHit,
+  type SearchProvider,
+} from "../../../scripts/import/search";
 
 describe("extractLinks", () => {
   const html = `
@@ -258,5 +264,109 @@ describe("discoverFromRegister", () => {
       fetchHtml,
     });
     expect(found).toEqual({ programme: null, fees: [], admission: [], fetched: 0 });
+  });
+});
+
+describe("discoverBySearch", () => {
+  const pages: Record<string, string> = {
+    "https://www.uni.example/en/study/bachelor/applied-data-science":
+      "<h1>Applied Data Science</h1> Bachelor of Applied Data Science, 4 years.",
+    "https://www.uni.example/en/study/bachelor/nursing": "<h1>Nursing</h1> Bachelor of Nursing.",
+  };
+  const fetchHtml = async (url: string) => {
+    const page = pages[url];
+    if (page === undefined) throw new Error(`404 ${url}`);
+    return page;
+  };
+  const fakeSearch = (log: string[]): SearchProvider => ({
+    name: "fake",
+    search: async (query) => {
+      log.push(query);
+      if (query.includes("tuition")) {
+        return [
+          {
+            url: "https://www.uni.example/en/tuition-fees",
+            title: "Tuition fees",
+            snippet: "fees for non-EU students",
+          },
+          { url: "https://other.example/fees", title: "Tuition fees elsewhere", snippet: "" },
+        ];
+      }
+      if (query.includes("admission")) {
+        return [
+          {
+            url: "https://www.uni.example/en/apply",
+            title: "How to apply",
+            snippet: "admission requirements",
+          },
+        ];
+      }
+      return [
+        { url: "https://www.uni.example/en/study/bachelor/nursing", title: "Nursing", snippet: "" },
+        {
+          url: "https://www.uni.example/en/study/bachelor/applied-data-science",
+          title: "Applied Data Science",
+          snippet: "Bachelor",
+        },
+        {
+          url: "https://other.example/applied-data-science",
+          title: "Applied Data Science",
+          snippet: "",
+        },
+      ];
+    },
+  });
+  const input = {
+    name: "Applied Data Science",
+    institution: "Uni Example",
+    country: "NL",
+    website: "https://www.uni.example/",
+    fetchHtml,
+  };
+
+  it("finds the programme page among the search hits, on the institution's own site", async () => {
+    const log: string[] = [];
+    const found = await discoverBySearch({ ...input, search: fakeSearch(log) });
+    expect(found.programme).toBe("https://www.uni.example/en/study/bachelor/applied-data-science");
+    expect(log.some((q) => q.includes("site:uni.example"))).toBe(true);
+  });
+
+  it("finds the fee and admission pages and ignores pages of other sites", async () => {
+    const found = await discoverBySearch({ ...input, search: fakeSearch([]) });
+    expect(found.fees).toEqual(["https://www.uni.example/en/tuition-fees"]);
+    expect(found.admission).toEqual(["https://www.uni.example/en/apply"]);
+  });
+
+  it("asks the institution-level questions once for all of that institution's programmes", async () => {
+    const log: string[] = [];
+    const memo = new Map<string, SearchHit[]>();
+    const search = fakeSearch(log);
+    await discoverBySearch({ ...input, search, memo });
+    await discoverBySearch({ ...input, name: "Nursing", search, memo });
+    expect(log.filter((q) => q.includes("tuition"))).toHaveLength(1);
+    expect(log.filter((q) => q.includes("admission"))).toHaveLength(1);
+  });
+
+  it("returns no programme page when no hit's page names the programme", async () => {
+    const found = await discoverBySearch({
+      ...input,
+      name: "Marine Biology",
+      search: fakeSearch([]),
+    });
+    expect(found.programme).toBeNull();
+  });
+
+  it("without a website searches by the institution's name, with no site filter", async () => {
+    const log: string[] = [];
+    await discoverBySearch({ ...input, website: null, search: fakeSearch(log) });
+    expect(log.every((q) => !q.includes("site:"))).toBe(true);
+    expect(log.some((q) => q.includes("Uni Example"))).toBe(true);
+  });
+
+  it("lets a search budget stop propagate", async () => {
+    const budget = new QueryBudget(1);
+    await expect(discoverBySearch({ ...input, search: fakeSearch([]), budget })).rejects.toThrow(
+      SearchBudgetExceeded,
+    );
   });
 });
