@@ -140,7 +140,17 @@ export function ledgerFile(dir = STAGING_DIR): string {
   return path.join(dir, LEDGER_FILE_NAME);
 }
 
-export type LedgerRow = { collection: string; sourceId: string; slug: string; date: string };
+// level: how the record was verified. "human" = a person read it (their own edits, or an audited
+// sample record); "audited-sample" = prepared by the assistant with code-checked quotes and covered
+// by a passed random-sample audit, but not read one by one.
+export type LedgerRow = {
+  collection: string;
+  sourceId: string;
+  slug: string;
+  date: string;
+  level?: "human" | "audited-sample";
+  batch?: string;
+};
 
 // Every promoted record's source id, appended by `data:promote`. A promoted record loses its
 // `_review` block, so without this a re-import that changed its slug would stage a duplicate.
@@ -154,8 +164,12 @@ export async function readLedger(dir = STAGING_DIR): Promise<Map<string, string>
 export async function appendLedger(rows: readonly LedgerRow[], dir = STAGING_DIR): Promise<void> {
   if (rows.length === 0) return;
   const file = ledgerFile(dir);
-  const header = "collection,sourceId,slug,date\n";
-  const lines = rows.map((r) => [r.collection, r.sourceId, r.slug, r.date].map(csvCell).join(","));
+  const header = "collection,sourceId,slug,date,level,batch\n";
+  const lines = rows.map((r) =>
+    [r.collection, r.sourceId, r.slug, r.date, r.level ?? "human", r.batch ?? ""]
+      .map(csvCell)
+      .join(","),
+  );
   await mkdir(dir, { recursive: true });
   const existing = existsSync(file) ? await readFile(file, "utf8") : header;
   await writeFile(file, `${existing}${lines.join("\n")}\n`);

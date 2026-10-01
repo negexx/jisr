@@ -289,6 +289,8 @@ describe("stable source ids", () => {
         sourceId: "ba:42",
         slug: "xx-test-channel",
         date: "2026-10-01",
+        level: "human",
+        batch: "",
       },
     ]);
   });
