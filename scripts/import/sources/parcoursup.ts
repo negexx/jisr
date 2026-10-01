@@ -7,6 +7,8 @@ import { READ_SOURCE } from "../staging";
 import { collapseSpaces, normalizeCityName, slugify } from "../text";
 import type { EsrEstablishment } from "./esr";
 import { ESR_REGISTER_URL, fetchEsrIndex, findParent } from "./esr";
+import type { OnisepIndex } from "./onisep";
+import { fetchOnisepIndex, parentUais, sectorOf } from "./onisep";
 import { fetchWebsitesByUai } from "./wikidata";
 
 // Official open data of the French Ministry of Higher Education (Licence ouverte 2.0).
@@ -60,6 +62,7 @@ function resolveWebsite(
   instName: string,
   esr: Awaited<ReturnType<typeof fetchEsrIndex>>,
   wikidata: ReadonlyMap<string, string[]>,
+  onisep: OnisepIndex,
 ): Website {
   const exact = esr.byUai.get(row.cod_uai) ?? null;
   if (httpsOrNull(exact?.url) !== null) {
@@ -78,6 +81,16 @@ function resolveWebsite(
       origin: "Wikidata (UAI match), not an official register",
     };
   }
+  for (const uai of parentUais(onisep.get(row.cod_uai))) {
+    const parent = esr.byUai.get(uai);
+    if (httpsOrNull(parent?.url) !== null) {
+      return {
+        url: httpsOrNull(parent?.url),
+        confirmed: false,
+        origin: `parent university "${parent?.uo_lib}" (ONISEP link, ESR register), not this unit's own page`,
+      };
+    }
+  }
   const parent: EsrEstablishment | null = findParent(esr, instName);
   if (httpsOrNull(parent?.url) !== null) {
     return {
@@ -93,6 +106,7 @@ export async function importFrance(): Promise<StagedRecord[]> {
   const rows = z.array(RowSchema).parse(await fetchJson(exportUrl()));
   const wikidata = await fetchWebsitesByUai();
   const esr = await fetchEsrIndex();
+  const onisep = await fetchOnisepIndex();
   const records: StagedRecord[] = [];
   const institutions = new Map<string, StagedRecord>();
 
@@ -105,13 +119,19 @@ export async function importFrance(): Promise<StagedRecord[]> {
     const instName = collapseSpaces(row.g_ea_lib_vx);
 
     if (!institutions.has(instSlug)) {
-      const site = resolveWebsite(row, instName, esr, wikidata);
+      const site = resolveWebsite(row, instName, esr, wikidata, onisep);
       const todo =
         site.origin === null
           ? "website missing: find the official https site, then set info_kind: official"
           : site.confirmed
             ? ""
             : `website candidate from ${site.origin}: confirm it, then set info_kind: official`;
+      const mine = row.contrat_etab === "Public" ? "public" : "private";
+      const theirs = sectorOf(onisep.get(row.cod_uai)?.statut ?? "");
+      const sectorNote =
+        theirs !== null && theirs !== mine
+          ? `public/private conflict: Parcoursup says ${mine}, ONISEP says ${theirs}; check before approving`
+          : "";
       institutions.set(instSlug, {
         collection: "institutions",
         id: instSlug,
@@ -120,7 +140,7 @@ export async function importFrance(): Promise<StagedRecord[]> {
           name: instName,
           country: "FR",
           city: { slug: slugify(city), name: city },
-          type: row.contrat_etab === "Public" ? "public" : "private",
+          type: mine,
           website: site.url,
           source: site.confirmed ? "esr" : "parcoursup",
           info_kind: site.confirmed ? "official" : READ_SOURCE,
@@ -137,7 +157,7 @@ export async function importFrance(): Promise<StagedRecord[]> {
           field: "",
           confidence: "",
           officialUrl: site.url ?? "",
-          todo,
+          todo: [todo, sectorNote].filter((t) => t !== "").join("; "),
         },
       });
     }

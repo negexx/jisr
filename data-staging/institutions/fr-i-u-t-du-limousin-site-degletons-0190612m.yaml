@@ -5,7 +5,7 @@ city:
   slug: egletons
   name: Egletons
 type: public
-website: null
+website: https://www.unilim.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Egletons
   field: ""
   confidence: ""
-  officialUrl: ""
-  todo: "website missing: find the official https site, then set info_kind: official"
+  officialUrl: https://www.unilim.fr/
+  todo: "website candidate from parent university \"Université de Limoges\" (ONISEP link, ESR register), not this unit's own page: confirm it, then set info_kind: official"

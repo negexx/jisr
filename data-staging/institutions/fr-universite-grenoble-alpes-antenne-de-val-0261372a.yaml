@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.univ-grenoble-alpes.fr/
-  todo: "website candidate from parent institution \"Université Grenoble Alpes\" in the ESR register, not this site's own page: confirm it, then set info_kind: official"
+  todo: "website candidate from parent university \"Université Grenoble Alpes\" (ONISEP link, ESR register), not this unit's own page: confirm it, then set info_kind: official"

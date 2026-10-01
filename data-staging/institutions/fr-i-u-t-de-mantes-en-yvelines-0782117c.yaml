@@ -5,7 +5,7 @@ city:
   slug: mantes-la-jolie
   name: Mantes-la-Jolie
 type: public
-website: null
+website: https://www.uvsq.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Mantes-la-Jolie
   field: ""
   confidence: ""
-  officialUrl: ""
-  todo: "website missing: find the official https site, then set info_kind: official"
+  officialUrl: https://www.uvsq.fr/
+  todo: "website candidate from parent university \"Université de Versailles Saint-Quentin-en-Yvelines\" (ONISEP link, ESR register), not this unit's own page: confirm it, then set info_kind: official"

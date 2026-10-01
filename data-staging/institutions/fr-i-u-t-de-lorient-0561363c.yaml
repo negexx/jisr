@@ -5,7 +5,7 @@ city:
   slug: lorient
   name: Lorient
 type: public
-website: null
+website: https://www.univ-ubs.fr/fr/index.html
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Lorient
   field: ""
   confidence: ""
-  officialUrl: ""
-  todo: "website missing: find the official https site, then set info_kind: official"
+  officialUrl: https://www.univ-ubs.fr/fr/index.html
+  todo: "website candidate from parent university \"Université Bretagne Sud\" (ONISEP link, ESR register), not this unit's own page: confirm it, then set info_kind: official"

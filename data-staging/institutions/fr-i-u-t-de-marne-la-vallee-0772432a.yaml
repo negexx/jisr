@@ -5,7 +5,7 @@ city:
   slug: champs-sur-marne
   name: Champs-sur-Marne
 type: public
-website: null
+website: https://www.univ-gustave-eiffel.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Champs-sur-Marne
   field: ""
   confidence: ""
-  officialUrl: ""
-  todo: "website missing: find the official https site, then set info_kind: official"
+  officialUrl: https://www.univ-gustave-eiffel.fr/
+  todo: "website candidate from parent university \"Université Gustave Eiffel\" (ONISEP link, ESR register), not this unit's own page: confirm it, then set info_kind: official"

@@ -21,4 +21,4 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.univ-spn.fr/
-  todo: "website candidate from parent institution \"Université Sorbonne Paris Nord\" in the ESR register, not this site's own page: confirm it, then set info_kind: official"
+  todo: "website candidate from parent university \"Université Sorbonne Paris Nord\" (ONISEP link, ESR register), not this unit's own page: confirm it, then set info_kind: official"

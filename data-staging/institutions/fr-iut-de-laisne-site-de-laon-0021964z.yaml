@@ -5,7 +5,7 @@ city:
   slug: laon
   name: Laon
 type: public
-website: null
+website: https://www.u-picardie.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Laon
   field: ""
   confidence: ""
-  officialUrl: ""
-  todo: "website missing: find the official https site, then set info_kind: official"
+  officialUrl: https://www.u-picardie.fr/
+  todo: "website candidate from parent university \"Université de Picardie Jules Verne\" (ONISEP link, ESR register), not this unit's own page: confirm it, then set info_kind: official"

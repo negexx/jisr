@@ -5,7 +5,7 @@ city:
   slug: bourges
   name: Bourges
 type: public
-website: null
+website: https://www.univ-orleans.fr/fr
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Bourges
   field: ""
   confidence: ""
-  officialUrl: ""
-  todo: "website missing: find the official https site, then set info_kind: official"
+  officialUrl: https://www.univ-orleans.fr/fr
+  todo: "website candidate from parent university \"Université d'Orléans\" (ONISEP link, ESR register), not this unit's own page: confirm it, then set info_kind: official"

@@ -5,7 +5,7 @@ city:
   slug: lille
   name: Lille
 type: private
-website: null
+website: https://www.univ-catholille.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Lille
   field: ""
   confidence: ""
-  officialUrl: ""
-  todo: "website missing: find the official https site, then set info_kind: official"
+  officialUrl: https://www.univ-catholille.fr/
+  todo: "website candidate from parent university \"Institut catholique de Lille\" (ONISEP link, ESR register), not this unit's own page: confirm it, then set info_kind: official"

@@ -5,7 +5,7 @@ city:
   slug: elbeuf
   name: Elbeuf
 type: public
-website: null
+website: https://www.univ-rouen.fr/
 source: parcoursup
 info_kind: TODO_read_source
 sources:
@@ -20,5 +20,5 @@ _review:
   city: Elbeuf
   field: ""
   confidence: ""
-  officialUrl: ""
-  todo: "website missing: find the official https site, then set info_kind: official"
+  officialUrl: https://www.univ-rouen.fr/
+  todo: "website candidate from parent university \"Université de Rouen Normandie\" (ONISEP link, ESR register), not this unit's own page: confirm it, then set info_kind: official"

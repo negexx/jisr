@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { classifyField } from "../../../scripts/import/fields";
 import { stampVerified } from "../../../scripts/import/promote";
+import { parentUais, sectorOf } from "../../../scripts/import/sources/onisep";
 import { parseCsv, reviewCsv } from "../../../scripts/import/staging";
 import { collapseSpaces, nameKey, normalizeCityName, slugify } from "../../../scripts/import/text";
 
@@ -88,5 +89,27 @@ describe("review csv", () => {
   });
   it("leaves unapproved rows blank", () => {
     expect(parseCsv(reviewCsv([row], new Set()))[0]?.approved).toBe("");
+  });
+});
+
+describe("onisep helpers", () => {
+  const structure = (link: string) => ({
+    code_uai: "0000000A",
+    nom: "IUT",
+    type_detablissement: "institut universitaire de technologie",
+    statut: "public",
+    universite_de_rattachement_libelle_et_uai: link,
+  });
+  it("reads parent UAI codes from the link text", () => {
+    expect(parentUais(structure("Université de Brest (0292473F)"))).toEqual(["0292473F"]);
+    expect(parentUais(structure("A (0597132G) | B (0623957P)"))).toEqual(["0597132G", "0623957P"]);
+    expect(parentUais(structure(""))).toEqual([]);
+    expect(parentUais(undefined)).toEqual([]);
+  });
+  it("normalises the public/private label", () => {
+    expect(sectorOf("public")).toBe("public");
+    expect(sectorOf("privé")).toBe("private");
+    expect(sectorOf("privé sous contrat")).toBe("private");
+    expect(sectorOf("")).toBeNull();
   });
 });

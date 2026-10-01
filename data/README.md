@@ -61,8 +61,11 @@ What each source provides, and what stays for a human:
 |---|---|---|
 | Parcoursup open data (fr-esr-parcoursup, Licence ouverte 2.0) | programme name, institution, city, public/private, link to the official Parcoursup page (used as the programme's source) | duration, languages, tuition, intakes, documents, requirement rules, the application channel for Moroccan applicants |
 | ESR register of establishments (same publisher) | institution website for an exact UAI match: promotable as is | other institutions get a website candidate (Wikidata or the parent university, e.g. an IUT campus) flagged for confirmation |
+| ONISEP Idéo, structures d'enseignement supérieur (ODbL) | parent university of each IUT campus or UFR by UAI code, used to find a website candidate; independent public/private cross-check (a mismatch with Parcoursup is flagged in the review sheet) | the unit's own website: the parent's site is only a candidate to confirm |
 | Wikidata (CC0), German and Dutch institutions | name in the local language, city, website candidate, ROR id | everything: it is not an official source, so every record needs an official page and `info_kind: official` |
 
 Field assignment for French programmes is an exact-label table in `scripts/import/fields.ts`; `confidence: low` rows are judgement calls. The HTTP cache lives in `.cache/import/` (git-ignored).
+
+ONISEP data is under the Open Database Licence: attribute ONISEP, and share alike if a database derived from it is published.
 
 Known gaps: no bulk official programme dataset was reachable for Germany (Hochschulkompass forbids crawling its search in robots.txt; the DAAD database is a JavaScript app with no public API) or the Netherlands (DUO/Studiekeuze open data was not reachable), so German and Dutch programmes, all tuition fees, living costs and scholarships are not imported.
