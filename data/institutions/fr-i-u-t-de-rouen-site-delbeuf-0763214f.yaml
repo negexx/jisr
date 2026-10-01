@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-rouen-site-delbeuf-0763214f
+name: I.U.T De Rouen - Site d'Elbeuf
+country: FR
+city:
+  slug: elbeuf
+  name: Elbeuf
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

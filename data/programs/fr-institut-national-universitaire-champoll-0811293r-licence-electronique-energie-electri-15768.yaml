@@ -1,0 +1,52 @@
+slug: fr-institut-national-universitaire-champoll-0811293r-licence-electronique-energie-electri-15768
+institution: fr-institut-national-universitaire-champoll-0811293r
+country: FR
+city: albi
+field: engineering
+level: bachelor
+name: Licence - Electronique, énergie électrique, automatique
+summary:
+  fr:
+    text: Licence - Electronique, énergie électrique, automatique, Institut national universitaire Champollion (Albi). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Electronique, énergie électrique, automatique, Institut national universitaire Champollion (Albi). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Electronique, énergie électrique, automatique, Institut national universitaire Champollion (Albi). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=15768&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=15768&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

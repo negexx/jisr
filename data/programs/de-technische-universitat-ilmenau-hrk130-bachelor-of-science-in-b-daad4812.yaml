@@ -1,0 +1,54 @@
+slug: de-technische-universitat-ilmenau-hrk130-bachelor-of-science-in-b-daad4812
+institution: de-technische-universitat-ilmenau-hrk130
+country: DE
+city: ilmenau
+field: engineering
+level: bachelor
+name: Bachelor of Science in Biomedical Engineering
+summary:
+  fr:
+    text: Bachelor of Science in Biomedical Engineering, Technische Universität Ilmenau (Ilmenau). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Bachelor of Science in Biomedical Engineering, Technische Universität Ilmenau (Ilmenau). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Bachelor of Science in Biomedical Engineering, Technische Universität Ilmenau (Ilmenau). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4812/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4812/
+    last_verified_at: 2026-10-01

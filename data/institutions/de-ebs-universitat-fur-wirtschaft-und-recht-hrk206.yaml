@@ -1,0 +1,14 @@
+slug: de-ebs-universitat-fur-wirtschaft-und-recht-hrk206
+name: EBS Universität für Wirtschaft und Recht
+country: DE
+city:
+  slug: oestrich-winkel
+  name: Oestrich-Winkel
+type: private
+website: https://www.ebs.edu
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

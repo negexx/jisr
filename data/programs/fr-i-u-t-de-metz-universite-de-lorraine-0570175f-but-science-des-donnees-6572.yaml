@@ -1,0 +1,52 @@
+slug: fr-i-u-t-de-metz-universite-de-lorraine-0570175f-but-science-des-donnees-6572
+institution: fr-i-u-t-de-metz-universite-de-lorraine-0570175f
+country: FR
+city: metz
+field: computer-science
+level: bachelor
+name: BUT - Science des données
+summary:
+  fr:
+    text: BUT - Science des données, I.U.T de Metz - Université de Lorraine (Metz). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Science des données, I.U.T de Metz - Université de Lorraine (Metz). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Science des données, I.U.T de Metz - Université de Lorraine (Metz). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6572&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6572&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

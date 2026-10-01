@@ -1,0 +1,52 @@
+slug: fr-i-u-t-de-bayonne-0641478j-but-gestion-des-entreprises-et-d-7759
+institution: fr-i-u-t-de-bayonne-0641478j
+country: FR
+city: anglet
+field: business-economics
+level: bachelor
+name: BUT - Gestion des entreprises et des administrations
+summary:
+  fr:
+    text: BUT - Gestion des entreprises et des administrations, I.U.T. de Bayonne (Anglet). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Gestion des entreprises et des administrations, I.U.T. de Bayonne (Anglet). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Gestion des entreprises et des administrations, I.U.T. de Bayonne (Anglet). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7759&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7759&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

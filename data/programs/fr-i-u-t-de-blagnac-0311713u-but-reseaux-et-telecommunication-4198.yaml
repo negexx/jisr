@@ -1,0 +1,52 @@
+slug: fr-i-u-t-de-blagnac-0311713u-but-reseaux-et-telecommunication-4198
+institution: fr-i-u-t-de-blagnac-0311713u
+country: FR
+city: blagnac
+field: computer-science
+level: bachelor
+name: BUT - Réseaux et télécommunications
+summary:
+  fr:
+    text: BUT - Réseaux et télécommunications, I.U.T de Blagnac (Blagnac). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Réseaux et télécommunications, I.U.T de Blagnac (Blagnac). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Réseaux et télécommunications, I.U.T de Blagnac (Blagnac). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4198&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4198&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

@@ -1,0 +1,52 @@
+slug: fr-iut-de-nantes-antenne-de-chateaubriant-0442961e-but-gestion-administrative-et-co-35781
+institution: fr-iut-de-nantes-antenne-de-chateaubriant-0442961e
+country: FR
+city: chateaubriant
+field: business-economics
+level: bachelor
+name: BUT - Gestion administrative et commerciale des organisations
+summary:
+  fr:
+    text: BUT - Gestion administrative et commerciale des organisations, IUT de Nantes - Antenne de Châteaubriant (Châteaubriant). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Gestion administrative et commerciale des organisations, IUT de Nantes - Antenne de Châteaubriant (Châteaubriant). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Gestion administrative et commerciale des organisations, IUT de Nantes - Antenne de Châteaubriant (Châteaubriant). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35781&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35781&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

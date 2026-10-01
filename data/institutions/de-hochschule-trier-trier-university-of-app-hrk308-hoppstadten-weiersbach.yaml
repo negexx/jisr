@@ -1,0 +1,14 @@
+slug: de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach
+name: Hochschule Trier - Trier University of Applied Sciences
+country: DE
+city:
+  slug: hoppstadten-weiersbach
+  name: Hoppstädten-Weiersbach
+type: public
+website: https://www.hochschule-trier.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

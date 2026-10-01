@@ -1,0 +1,52 @@
+slug: fr-i-u-t-de-lens-0623985v-but-informatique-7520
+institution: fr-i-u-t-de-lens-0623985v
+country: FR
+city: lens
+field: computer-science
+level: bachelor
+name: BUT - Informatique
+summary:
+  fr:
+    text: BUT - Informatique, I.U.T. de Lens (Lens). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Informatique, I.U.T. de Lens (Lens). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Informatique, I.U.T. de Lens (Lens). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7520&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7520&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

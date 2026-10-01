@@ -1,0 +1,14 @@
+slug: de-hochschule-reutlingen-hochschule-fur-tec-hrk227
+name: Hochschule Reutlingen, Hochschule für Technik- Wirtschaft-Informatik-Design
+country: DE
+city:
+  slug: reutlingen
+  name: Reutlingen
+type: public
+website: https://www.reutlingen-university.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

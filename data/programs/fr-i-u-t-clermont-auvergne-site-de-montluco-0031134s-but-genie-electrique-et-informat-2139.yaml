@@ -1,0 +1,52 @@
+slug: fr-i-u-t-clermont-auvergne-site-de-montluco-0031134s-but-genie-electrique-et-informat-2139
+institution: fr-i-u-t-clermont-auvergne-site-de-montluco-0031134s
+country: FR
+city: montlucon
+field: engineering
+level: bachelor
+name: BUT - Génie électrique et informatique industrielle
+summary:
+  fr:
+    text: BUT - Génie électrique et informatique industrielle, I.U.T Clermont Auvergne - site de Montluçon (Montluçon). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Génie électrique et informatique industrielle, I.U.T Clermont Auvergne - site de Montluçon (Montluçon). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie électrique et informatique industrielle, I.U.T Clermont Auvergne - site de Montluçon (Montluçon). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2139&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2139&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

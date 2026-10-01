@@ -1,0 +1,52 @@
+slug: fr-i-u-t-de-valence-0260998u-but-reseaux-et-telecommunication-3647
+institution: fr-i-u-t-de-valence-0260998u
+country: FR
+city: valence
+field: computer-science
+level: bachelor
+name: BUT - Réseaux et télécommunications
+summary:
+  fr:
+    text: BUT - Réseaux et télécommunications, I.U.T de Valence (Valence). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Réseaux et télécommunications, I.U.T de Valence (Valence). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Réseaux et télécommunications, I.U.T de Valence (Valence). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3647&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3647&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

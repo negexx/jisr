@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-valenciennes-site-de-maubeuge-0596183a
+name: I.U.T. de Valenciennes - Site de Maubeuge
+country: FR
+city:
+  slug: maubeuge
+  name: Maubeuge
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

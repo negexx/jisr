@@ -1,0 +1,53 @@
+slug: de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad3998
+institution: de-fachhochschule-aachen-hrk2-julich
+country: DE
+city: julich
+field: engineering
+level: bachelor
+name: Bachelor of Engineering in Electrical Engineering – Energy Technology
+summary:
+  fr:
+    text: Bachelor of Engineering in Electrical Engineering – Energy Technology, Fachhochschule Aachen (Jülich). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Bachelor of Engineering in Electrical Engineering – Energy Technology, Fachhochschule Aachen (Jülich). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Bachelor of Engineering in Electrical Engineering – Energy Technology, Fachhochschule Aachen (Jülich). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/
+durationYears:
+  value: null
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/
+    last_verified_at: 2026-10-01

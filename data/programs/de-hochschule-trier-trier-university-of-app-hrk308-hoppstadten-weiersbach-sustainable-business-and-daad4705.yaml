@@ -1,0 +1,53 @@
+slug: de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach-sustainable-business-and-daad4705
+institution: de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach
+country: DE
+city: hoppstadten-weiersbach
+field: business-economics
+level: bachelor
+name: Sustainable Business and Technology
+summary:
+  fr:
+    text: Sustainable Business and Technology, Hochschule Trier - Trier University of Applied Sciences (Hoppstädten-Weiersbach). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Sustainable Business and Technology, Hochschule Trier - Trier University of Applied Sciences (Hoppstädten-Weiersbach). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Sustainable Business and Technology, Hochschule Trier - Trier University of Applied Sciences (Hoppstädten-Weiersbach). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4705/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4705/
+    last_verified_at: 2026-10-01

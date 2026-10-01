@@ -1,0 +1,52 @@
+slug: fr-iut-de-troyes-0100684p-but-genie-electrique-et-informat-2423
+institution: fr-iut-de-troyes-0100684p
+country: FR
+city: troyes
+field: engineering
+level: bachelor
+name: BUT - Génie électrique et informatique industrielle
+summary:
+  fr:
+    text: BUT - Génie électrique et informatique industrielle, Iut De Troyes (Troyes). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Génie électrique et informatique industrielle, Iut De Troyes (Troyes). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie électrique et informatique industrielle, Iut De Troyes (Troyes). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2423&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2423&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

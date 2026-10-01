@@ -1,0 +1,54 @@
+slug: de-technische-hochschule-deggendorf-hrk284-business-administration-daad9840
+institution: de-technische-hochschule-deggendorf-hrk284
+country: DE
+city: deggendorf
+field: business-economics
+level: bachelor
+name: Business Administration and Service Management, BA
+summary:
+  fr:
+    text: Business Administration and Service Management, BA, Technische Hochschule Deggendorf (Deggendorf). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Business Administration and Service Management, BA, Technische Hochschule Deggendorf (Deggendorf). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Business Administration and Service Management, BA, Technische Hochschule Deggendorf (Deggendorf). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9840/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9840/
+    last_verified_at: 2026-10-01

@@ -1,0 +1,14 @@
+slug: de-hochschule-kaiserslautern-university-of-hrk306
+name: Hochschule Kaiserslautern (University of Applied Sciences)
+country: DE
+city:
+  slug: kaiserslautern
+  name: Kaiserslautern
+type: public
+website: https://www.hs-kl.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

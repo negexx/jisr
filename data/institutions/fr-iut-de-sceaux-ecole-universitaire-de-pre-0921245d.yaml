@@ -1,0 +1,14 @@
+slug: fr-iut-de-sceaux-ecole-universitaire-de-pre-0921245d
+name: IUT de Sceaux-Ecole universitaire de premier cycle-Université Paris-Saclay.
+country: FR
+city:
+  slug: sceaux
+  name: Sceaux
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

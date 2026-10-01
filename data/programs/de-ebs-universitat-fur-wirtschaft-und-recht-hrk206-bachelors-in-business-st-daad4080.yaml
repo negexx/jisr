@@ -1,0 +1,53 @@
+slug: de-ebs-universitat-fur-wirtschaft-und-recht-hrk206-bachelors-in-business-st-daad4080
+institution: de-ebs-universitat-fur-wirtschaft-und-recht-hrk206
+country: DE
+city: oestrich-winkel
+field: business-economics
+level: bachelor
+name: Bachelor's in Business Studies (BSc)
+summary:
+  fr:
+    text: Bachelor's in Business Studies (BSc), EBS Universität für Wirtschaft und Recht (Oestrich-Winkel). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Bachelor's in Business Studies (BSc), EBS Universität für Wirtschaft und Recht (Oestrich-Winkel). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Bachelor's in Business Studies (BSc), EBS Universität für Wirtschaft und Recht (Oestrich-Winkel). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/
+    last_verified_at: 2026-10-01

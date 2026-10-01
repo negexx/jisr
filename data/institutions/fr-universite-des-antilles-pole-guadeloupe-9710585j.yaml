@@ -1,0 +1,14 @@
+slug: fr-universite-des-antilles-pole-guadeloupe-9710585j
+name: Université des Antilles - Pôle Guadeloupe
+country: FR
+city:
+  slug: pointe-a-pitre
+  name: Pointe-à-Pitre
+type: public
+website: https://www.univ-antilles.fr/
+source: esr
+info_kind: official
+sources:
+  esr:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-principaux-etablissements-enseignement-superieur/
+    last_verified_at: 2026-10-01

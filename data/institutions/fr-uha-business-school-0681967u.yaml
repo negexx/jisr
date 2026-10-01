@@ -1,0 +1,14 @@
+slug: fr-uha-business-school-0681967u
+name: UHA Business School
+country: FR
+city:
+  slug: colmar
+  name: Colmar
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

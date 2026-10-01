@@ -1,0 +1,14 @@
+slug: fr-institut-universitaire-de-technologie-de-0597215x
+name: Institut universitaire de technologie de Lille - Université de Lille
+country: FR
+city:
+  slug: villeneuve-dascq
+  name: Villeneuve-d'Ascq
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

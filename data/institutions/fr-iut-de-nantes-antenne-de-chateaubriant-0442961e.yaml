@@ -1,0 +1,14 @@
+slug: fr-iut-de-nantes-antenne-de-chateaubriant-0442961e
+name: IUT de Nantes - Antenne de Châteaubriant
+country: FR
+city:
+  slug: chateaubriant
+  name: Châteaubriant
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

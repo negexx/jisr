@@ -1,0 +1,53 @@
+slug: de-hochschule-fresenius-heidelberg-staatlic-hrk440-international-business-b-daad11098
+institution: de-hochschule-fresenius-heidelberg-staatlic-hrk440
+country: DE
+city: heidelberg
+field: business-economics
+level: bachelor
+name: International Business (BA) with Specialisation in International Management
+summary:
+  fr:
+    text: International Business (BA) with Specialisation in International Management, Hochschule Fresenius Heidelberg – staatlich anerkannte Hochschule der Hochschule Fresenius für Internationales Management GmbH (Heidelberg). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Business (BA) with Specialisation in International Management, Hochschule Fresenius Heidelberg – staatlich anerkannte Hochschule der Hochschule Fresenius für Internationales Management GmbH (Heidelberg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business (BA) with Specialisation in International Management, Hochschule Fresenius Heidelberg – staatlich anerkannte Hochschule der Hochschule Fresenius für Internationales Management GmbH (Heidelberg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11098/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11098/
+    last_verified_at: 2026-10-01

@@ -95,6 +95,9 @@ describe("DeadlineStatus", () => {
       locale,
     );
     expect(a.container.textContent).toContain(catalogs[locale].domain.intake.unknown);
+    // an unknown deadline has nothing to verify: no "verified on" badge beside it
+    expect(a.container.querySelector("a")).toBeNull();
+    expect(a.container.textContent).not.toContain("01/");
     cleanup();
     const b = renderWithMessages(
       <DeadlineStatus intake={{ kind: "unknown", fact: null }} />,

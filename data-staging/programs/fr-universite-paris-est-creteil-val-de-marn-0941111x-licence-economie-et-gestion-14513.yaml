@@ -19,31 +19,31 @@ officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficher
 durationYears:
   value: null
   source: fiche
-  info_kind: TODO_read_source
+  info_kind: official
 teachingLanguages:
   value: null
   source: fiche
-  info_kind: TODO_read_source
+  info_kind: official
 tuition:
   value: null
   source: fiche
-  info_kind: TODO_read_source
+  info_kind: official
 intakes:
   value: null
   source: fiche
-  info_kind: TODO_read_source
+  info_kind: official
 applicationChannel:
   value: null
   source: fiche
-  info_kind: TODO_read_source
+  info_kind: official
 documents:
   value: null
   source: fiche
-  info_kind: TODO_read_source
+  info_kind: official
 requirements:
   coverage: partial
   source: fiche
-  info_kind: TODO_read_source
+  info_kind: official
   rules: []
 scholarships: []
 sources:
@@ -54,10 +54,6 @@ _review:
   kind: programs
   slug: fr-universite-paris-est-creteil-val-de-marn-0941111x-licence-economie-et-gestion-14513
   name: Licence - Double diplôme - Licence Economie et gestion - Double diplôme Licence Informatique et management et Diplôme universitaire Innovation et cybersécurité
-  institution: Université Paris- Est-Créteil Val de Marne - UPEC (Paris 12)
-  city: Créteil
-  field: business-economics
-  confidence: high
-  officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=14513&typeBac=0&originePc=0
-  todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind)"
   sourceId: parcoursup:14513
+  confidence: high
+  todo: "demoted 2026-10-01: the official page does not show the programme's name (data:linkcheck); look at the page before listing it again"

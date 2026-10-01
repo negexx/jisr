@@ -1,0 +1,52 @@
+slug: fr-i-u-t-nice-cote-dazur-0060914l-but-gestion-des-entreprises-et-d-2253
+institution: fr-i-u-t-nice-cote-dazur-0060914l
+country: FR
+city: nice
+field: business-economics
+level: bachelor
+name: BUT - Gestion des entreprises et des administrations
+summary:
+  fr:
+    text: BUT - Gestion des entreprises et des administrations, I.U.T Nice-Côte d'Azur (Nice). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Gestion des entreprises et des administrations, I.U.T Nice-Côte d'Azur (Nice). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Gestion des entreprises et des administrations, I.U.T Nice-Côte d'Azur (Nice). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2253&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2253&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

@@ -1,0 +1,14 @@
+slug: de-whu-otto-beisheim-school-of-management-hrk261
+name: WHU - Otto Beisheim School of Management
+country: DE
+city:
+  slug: vallendar
+  name: Vallendar
+type: private
+website: https://www.whu.edu/de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

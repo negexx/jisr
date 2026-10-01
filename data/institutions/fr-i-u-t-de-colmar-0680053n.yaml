@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-colmar-0680053n
+name: I.U.T. de Colmar
+country: FR
+city:
+  slug: colmar
+  name: Colmar
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

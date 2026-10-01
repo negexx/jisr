@@ -1,0 +1,52 @@
+slug: fr-universite-du-littoral-site-de-dunkerque-0595964m-licence-economie-et-gestion-7178
+institution: fr-universite-du-littoral-site-de-dunkerque-0595964m
+country: FR
+city: dunkerque
+field: business-economics
+level: bachelor
+name: Licence - Economie et gestion
+summary:
+  fr:
+    text: Licence - Economie et gestion, Université du littoral - Site de Dunkerque (Dunkerque). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Economie et gestion, Université du littoral - Site de Dunkerque (Dunkerque). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Economie et gestion, Université du littoral - Site de Dunkerque (Dunkerque). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7178&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7178&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

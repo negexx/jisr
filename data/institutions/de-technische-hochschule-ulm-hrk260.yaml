@@ -1,0 +1,14 @@
+slug: de-technische-hochschule-ulm-hrk260
+name: Technische Hochschule Ulm
+country: DE
+city:
+  slug: ulm
+  name: Ulm
+type: public
+website: https://www.thu.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

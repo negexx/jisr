@@ -1,0 +1,14 @@
+slug: fr-institut-national-universitaire-champoll-0811293r
+name: Institut national universitaire Champollion
+country: FR
+city:
+  slug: albi
+  name: Albi
+type: public
+website: https://www.univ-jfc.fr/
+source: esr
+info_kind: official
+sources:
+  esr:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-principaux-etablissements-enseignement-superieur/
+    last_verified_at: 2026-10-01

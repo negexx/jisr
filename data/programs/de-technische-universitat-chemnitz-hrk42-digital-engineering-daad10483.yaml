@@ -1,0 +1,54 @@
+slug: de-technische-universitat-chemnitz-hrk42-digital-engineering-daad10483
+institution: de-technische-universitat-chemnitz-hrk42
+country: DE
+city: chemnitz
+field: engineering
+level: bachelor
+name: Digital Engineering
+summary:
+  fr:
+    text: Digital Engineering, Technische Universität Chemnitz (Chemnitz). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Digital Engineering, Technische Universität Chemnitz (Chemnitz). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Digital Engineering, Technische Universität Chemnitz (Chemnitz). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10483/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10483/
+    last_verified_at: 2026-10-01

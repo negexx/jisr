@@ -1,0 +1,53 @@
+slug: de-hochschule-kaiserslautern-university-of-hrk306-mechanical-engineering-b-daad9743
+institution: de-hochschule-kaiserslautern-university-of-hrk306
+country: DE
+city: kaiserslautern
+field: engineering
+level: bachelor
+name: Mechanical Engineering (BEng)
+summary:
+  fr:
+    text: Mechanical Engineering (BEng), Hochschule Kaiserslautern (University of Applied Sciences) (Kaiserslautern). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Mechanical Engineering (BEng), Hochschule Kaiserslautern (University of Applied Sciences) (Kaiserslautern). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Mechanical Engineering (BEng), Hochschule Kaiserslautern (University of Applied Sciences) (Kaiserslautern). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9743/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9743/
+    last_verified_at: 2026-10-01

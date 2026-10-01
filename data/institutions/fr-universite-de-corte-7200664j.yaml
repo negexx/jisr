@@ -1,0 +1,14 @@
+slug: fr-universite-de-corte-7200664j
+name: Université de Corte
+country: FR
+city:
+  slug: corte
+  name: Corte
+type: public
+website: https://www.universita.corsica/fr/
+source: esr
+info_kind: official
+sources:
+  esr:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-principaux-etablissements-enseignement-superieur/
+    last_verified_at: 2026-10-01

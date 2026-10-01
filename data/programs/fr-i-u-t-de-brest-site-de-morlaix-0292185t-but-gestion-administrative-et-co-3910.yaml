@@ -1,0 +1,52 @@
+slug: fr-i-u-t-de-brest-site-de-morlaix-0292185t-but-gestion-administrative-et-co-3910
+institution: fr-i-u-t-de-brest-site-de-morlaix-0292185t
+country: FR
+city: morlaix
+field: business-economics
+level: bachelor
+name: BUT - Gestion administrative et commerciale des organisations
+summary:
+  fr:
+    text: BUT - Gestion administrative et commerciale des organisations, I.U.T de Brest - Site de Morlaix (Morlaix). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Gestion administrative et commerciale des organisations, I.U.T de Brest - Site de Morlaix (Morlaix). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Gestion administrative et commerciale des organisations, I.U.T de Brest - Site de Morlaix (Morlaix). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3910&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3910&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

@@ -1,0 +1,14 @@
+slug: de-hochschule-hamm-lippstadt-hrk399-lippstadt
+name: Hochschule Hamm-Lippstadt
+country: DE
+city:
+  slug: lippstadt
+  name: Lippstadt
+type: public
+website: https://www.hshl.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

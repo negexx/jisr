@@ -1,0 +1,14 @@
+slug: fr-i-u-t-2-de-grenoble-site-campus-universi-0383120k
+name: I.U.T. 2 de Grenoble - site campus universitaire
+country: FR
+city:
+  slug: saint-martin-dheres
+  name: Saint-Martin-d'Hères
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

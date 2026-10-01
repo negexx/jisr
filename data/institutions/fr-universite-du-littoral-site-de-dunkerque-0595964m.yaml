@@ -1,0 +1,14 @@
+slug: fr-universite-du-littoral-site-de-dunkerque-0595964m
+name: Université du littoral - Site de Dunkerque
+country: FR
+city:
+  slug: dunkerque
+  name: Dunkerque
+type: public
+website: https://www.univ-littoral.fr/
+source: esr
+info_kind: official
+sources:
+  esr:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-principaux-etablissements-enseignement-superieur/
+    last_verified_at: 2026-10-01

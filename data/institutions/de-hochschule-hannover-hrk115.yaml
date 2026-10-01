@@ -1,0 +1,14 @@
+slug: de-hochschule-hannover-hrk115
+name: Hochschule Hannover
+country: DE
+city:
+  slug: hannover
+  name: Hannover
+type: public
+website: https://www.hs-hannover.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

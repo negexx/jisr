@@ -1,0 +1,52 @@
+slug: fr-universite-angers-0490970n-licence-economie-et-gestion-5925
+institution: fr-universite-angers-0490970n
+country: FR
+city: angers
+field: business-economics
+level: bachelor
+name: Licence - Portail Economie et gestion
+summary:
+  fr:
+    text: Licence - Portail Economie et gestion, Université Angers (Angers). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Portail Economie et gestion, Université Angers (Angers). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail Economie et gestion, Université Angers (Angers). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5925&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5925&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

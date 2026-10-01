@@ -1,0 +1,54 @@
+slug: de-hochschule-hannover-hrk115-biotechnology-and-enviro-daad7747
+institution: de-hochschule-hannover-hrk115
+country: DE
+city: hannover
+field: engineering
+level: bachelor
+name: Biotechnology and Environmental Engineering (Bilingual)
+summary:
+  fr:
+    text: Biotechnology and Environmental Engineering (Bilingual), Hochschule Hannover (Hannover). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Biotechnology and Environmental Engineering (Bilingual), Hochschule Hannover (Hannover). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Biotechnology and Environmental Engineering (Bilingual), Hochschule Hannover (Hannover). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7747/
+durationYears:
+  value: null
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7747/
+    last_verified_at: 2026-10-01

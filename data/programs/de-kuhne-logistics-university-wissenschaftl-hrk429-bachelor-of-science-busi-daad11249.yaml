@@ -1,0 +1,53 @@
+slug: de-kuhne-logistics-university-wissenschaftl-hrk429-bachelor-of-science-busi-daad11249
+institution: de-kuhne-logistics-university-wissenschaftl-hrk429
+country: DE
+city: hamburg
+field: business-economics
+level: bachelor
+name: Bachelor of Science Business Administration
+summary:
+  fr:
+    text: Bachelor of Science Business Administration, Kühne Logistics University - Wissenschaftliche Hochschule für Logistik und Unternehmensführung (Hamburg). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Bachelor of Science Business Administration, Kühne Logistics University - Wissenschaftliche Hochschule für Logistik und Unternehmensführung (Hamburg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Bachelor of Science Business Administration, Kühne Logistics University - Wissenschaftliche Hochschule für Logistik und Unternehmensführung (Hamburg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11249/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11249/
+    last_verified_at: 2026-10-01

@@ -1,0 +1,52 @@
+slug: fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l-but-genie-industriel-et-maintena-6040
+institution: fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l
+country: FR
+city: cherbourg-en-cotentin
+field: engineering
+level: bachelor
+name: BUT - Génie industriel et maintenance
+summary:
+  fr:
+    text: BUT - Génie industriel et maintenance, IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Cherbourg-en-Cotentin (Cherbourg-en-Cotentin). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Génie industriel et maintenance, IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Cherbourg-en-Cotentin (Cherbourg-en-Cotentin). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie industriel et maintenance, IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Cherbourg-en-Cotentin (Cherbourg-en-Cotentin). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6040&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6040&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

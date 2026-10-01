@@ -1,0 +1,52 @@
+slug: fr-i-u-t-de-velizy-antenne-de-rambouillet-0782118d-but-techniques-de-commercialisat-10017
+institution: fr-i-u-t-de-velizy-antenne-de-rambouillet-0782118d
+country: FR
+city: rambouillet
+field: business-economics
+level: bachelor
+name: BUT - Techniques de commercialisation
+summary:
+  fr:
+    text: BUT - Techniques de commercialisation, I.U.T de Velizy - Antenne de Rambouillet (Rambouillet). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Techniques de commercialisation, I.U.T de Velizy - Antenne de Rambouillet (Rambouillet). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Techniques de commercialisation, I.U.T de Velizy - Antenne de Rambouillet (Rambouillet). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10017&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10017&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

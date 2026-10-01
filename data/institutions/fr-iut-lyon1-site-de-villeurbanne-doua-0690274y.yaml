@@ -1,0 +1,14 @@
+slug: fr-iut-lyon1-site-de-villeurbanne-doua-0690274y
+name: IUT Lyon1 Site de Villeurbanne Doua
+country: FR
+city:
+  slug: villeurbanne
+  name: Villeurbanne
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

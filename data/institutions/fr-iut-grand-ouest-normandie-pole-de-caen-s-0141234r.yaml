@@ -1,0 +1,14 @@
+slug: fr-iut-grand-ouest-normandie-pole-de-caen-s-0141234r
+name: IUT GRAND OUEST NORMANDIE - Pôle de Caen - Site de Caen
+country: FR
+city:
+  slug: caen
+  name: Caen
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

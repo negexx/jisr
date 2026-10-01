@@ -2,7 +2,7 @@ import { z } from "zod";
 import { fetchJson, probeHttps } from "../http";
 import type { ReviewRow, StagedRecord } from "../staging";
 import { READ_SOURCE } from "../staging";
-import { CHANNEL_SUMMARIES, programmeSummary } from "../summaries";
+import { programmeSummary } from "../summaries";
 import { canonicalTown, collapseSpaces, nameKey, sameTown, slugify } from "../text";
 import type { BaProgramme } from "./ba";
 import { classifyGerman, fetchBaProgrammes, matchHrk, tokens } from "./ba";

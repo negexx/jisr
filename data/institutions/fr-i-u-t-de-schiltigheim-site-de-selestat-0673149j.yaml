@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-schiltigheim-site-de-selestat-0673149j
+name: I.U.T. de Schiltigheim - Site de Sélestat
+country: FR
+city:
+  slug: selestat
+  name: Sélestat
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

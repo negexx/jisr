@@ -1,0 +1,14 @@
+slug: fr-aix-marseille-universite-site-de-marseil-0133661j
+name: Aix-Marseille Université - Site de Marseille Colbert
+country: FR
+city:
+  slug: marseille
+  name: Marseille
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

@@ -1,0 +1,54 @@
+slug: de-technische-hochschule-rosenheim-hrk232-plastics-engineering-daad8373
+institution: de-technische-hochschule-rosenheim-hrk232
+country: DE
+city: rosenheim
+field: engineering
+level: bachelor
+name: Plastics Engineering
+summary:
+  fr:
+    text: Plastics Engineering, Technische Hochschule Rosenheim (Rosenheim). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Plastics Engineering, Technische Hochschule Rosenheim (Rosenheim). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Plastics Engineering, Technische Hochschule Rosenheim (Rosenheim). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8373/
+durationYears:
+  value: 4
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8373/
+    last_verified_at: 2026-10-01

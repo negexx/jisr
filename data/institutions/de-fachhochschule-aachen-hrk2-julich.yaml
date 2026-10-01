@@ -1,0 +1,14 @@
+slug: de-fachhochschule-aachen-hrk2-julich
+name: Fachhochschule Aachen
+country: DE
+city:
+  slug: julich
+  name: Jülich
+type: public
+website: null
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

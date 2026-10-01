@@ -1,0 +1,54 @@
+slug: de-hochschule-fulda-university-of-applied-s-hrk92-international-business-a-daad10425
+institution: de-hochschule-fulda-university-of-applied-s-hrk92
+country: DE
+city: fulda
+field: business-economics
+level: bachelor
+name: International Business Administration
+summary:
+  fr:
+    text: International Business Administration, Hochschule Fulda - University of Applied Sciences (Fulda). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Business Administration, Hochschule Fulda - University of Applied Sciences (Fulda). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business Administration, Hochschule Fulda - University of Applied Sciences (Fulda). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10425/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10425/
+    last_verified_at: 2026-10-01

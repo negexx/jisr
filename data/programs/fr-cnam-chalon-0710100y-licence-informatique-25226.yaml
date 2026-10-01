@@ -1,0 +1,52 @@
+slug: fr-cnam-chalon-0710100y-licence-informatique-25226
+institution: fr-cnam-chalon-0710100y
+country: FR
+city: chalon-sur-saone
+field: computer-science
+level: bachelor
+name: Licence - Informatique - Parcours Informatique générale
+summary:
+  fr:
+    text: Licence - Informatique - Parcours Informatique générale, CNAM Chalon (Chalon-sur-Saône). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Informatique - Parcours Informatique générale, CNAM Chalon (Chalon-sur-Saône). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Informatique - Parcours Informatique générale, CNAM Chalon (Chalon-sur-Saône). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=25226&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=25226&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

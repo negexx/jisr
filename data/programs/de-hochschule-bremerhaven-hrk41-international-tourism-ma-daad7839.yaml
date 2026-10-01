@@ -1,0 +1,53 @@
+slug: de-hochschule-bremerhaven-hrk41-international-tourism-ma-daad7839
+institution: de-hochschule-bremerhaven-hrk41
+country: DE
+city: bremerhaven
+field: business-economics
+level: bachelor
+name: International Tourism Management (Cruise Business / Innovation)
+summary:
+  fr:
+    text: International Tourism Management (Cruise Business / Innovation), Hochschule Bremerhaven (Bremerhaven). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Tourism Management (Cruise Business / Innovation), Hochschule Bremerhaven (Bremerhaven). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Tourism Management (Cruise Business / Innovation), Hochschule Bremerhaven (Bremerhaven). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7839/
+durationYears:
+  value: 4
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7839/
+    last_verified_at: 2026-10-01

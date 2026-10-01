@@ -1,0 +1,53 @@
+slug: de-technische-hochschule-deggendorf-hrk284-bsc-artificial-intellige-daad7742
+institution: de-technische-hochschule-deggendorf-hrk284
+country: DE
+city: deggendorf
+field: computer-science
+level: bachelor
+name: BSc Artificial Intelligence
+summary:
+  fr:
+    text: BSc Artificial Intelligence, Technische Hochschule Deggendorf (Deggendorf). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: BSc Artificial Intelligence, Technische Hochschule Deggendorf (Deggendorf). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: BSc Artificial Intelligence, Technische Hochschule Deggendorf (Deggendorf). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7742/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7742/
+    last_verified_at: 2026-10-01

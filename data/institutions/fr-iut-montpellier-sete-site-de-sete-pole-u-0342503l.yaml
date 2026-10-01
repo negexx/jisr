@@ -1,0 +1,14 @@
+slug: fr-iut-montpellier-sete-site-de-sete-pole-u-0342503l
+name: IUT Montpellier-Sète - site de Sète - Pôle Universitaire Michèle WEIL
+country: FR
+city:
+  slug: sete
+  name: Sète
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

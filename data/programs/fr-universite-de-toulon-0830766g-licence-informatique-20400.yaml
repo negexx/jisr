@@ -1,0 +1,52 @@
+slug: fr-universite-de-toulon-0830766g-licence-informatique-20400
+institution: fr-universite-de-toulon-0830766g
+country: FR
+city: la-garde
+field: computer-science
+level: bachelor
+name: Licence - Informatique - Parcours Licence Informatique
+summary:
+  fr:
+    text: Licence - Informatique - Parcours Licence Informatique, Université de Toulon (La Garde). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Informatique - Parcours Licence Informatique, Université de Toulon (La Garde). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Informatique - Parcours Licence Informatique, Université de Toulon (La Garde). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20400&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20400&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

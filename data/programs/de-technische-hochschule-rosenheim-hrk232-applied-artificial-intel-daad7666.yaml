@@ -1,0 +1,53 @@
+slug: de-technische-hochschule-rosenheim-hrk232-applied-artificial-intel-daad7666
+institution: de-technische-hochschule-rosenheim-hrk232
+country: DE
+city: rosenheim
+field: computer-science
+level: bachelor
+name: Applied Artificial Intelligence (AAI)
+summary:
+  fr:
+    text: Applied Artificial Intelligence (AAI), Technische Hochschule Rosenheim (Rosenheim). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Applied Artificial Intelligence (AAI), Technische Hochschule Rosenheim (Rosenheim). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Applied Artificial Intelligence (AAI), Technische Hochschule Rosenheim (Rosenheim). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7666/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7666/
+    last_verified_at: 2026-10-01

@@ -1,0 +1,14 @@
+slug: fr-universite-de-pau-et-des-pays-de-ladour-0642128r
+name: Université de Pau et des pays de l'Adour - Collège STEE (Pau)
+country: FR
+city:
+  slug: pau
+  name: Pau
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

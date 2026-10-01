@@ -1,0 +1,53 @@
+slug: de-friedrich-alexander-universitat-erlangen-hrk70-artificial-intelligence-daad9594
+institution: de-friedrich-alexander-universitat-erlangen-hrk70
+country: DE
+city: erlangen
+field: computer-science
+level: bachelor
+name: Artificial Intelligence BSc
+summary:
+  fr:
+    text: Artificial Intelligence BSc, Friedrich-Alexander-Universität Erlangen-Nürnberg (Erlangen). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Artificial Intelligence BSc, Friedrich-Alexander-Universität Erlangen-Nürnberg (Erlangen). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Artificial Intelligence BSc, Friedrich-Alexander-Universität Erlangen-Nürnberg (Erlangen). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/
+    last_verified_at: 2026-10-01

@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-rodez-0120870f
+name: I.U.T de Rodez
+country: FR
+city:
+  slug: rodez
+  name: Rodez
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

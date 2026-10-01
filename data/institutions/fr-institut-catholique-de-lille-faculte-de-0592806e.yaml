@@ -1,0 +1,14 @@
+slug: fr-institut-catholique-de-lille-faculte-de-0592806e
+name: Institut Catholique de Lille-Faculté de Gestion, Economie et Sciences
+country: FR
+city:
+  slug: lille
+  name: Lille
+type: private
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

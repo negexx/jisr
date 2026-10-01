@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-lorient-0561363c
+name: I.U.T de Lorient
+country: FR
+city:
+  slug: lorient
+  name: Lorient
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

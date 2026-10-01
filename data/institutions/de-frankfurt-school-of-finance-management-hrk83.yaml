@@ -1,0 +1,14 @@
+slug: de-frankfurt-school-of-finance-management-hrk83
+name: Frankfurt School of Finance & Management
+country: DE
+city:
+  slug: frankfurt-am-main
+  name: Frankfurt am Main
+type: private
+website: https://www.frankfurt-school.de/en
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

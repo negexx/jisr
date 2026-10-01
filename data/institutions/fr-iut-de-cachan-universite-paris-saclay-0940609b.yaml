@@ -1,0 +1,14 @@
+slug: fr-iut-de-cachan-universite-paris-saclay-0940609b
+name: IUT de Cachan Université Paris-Saclay
+country: FR
+city:
+  slug: cachan
+  name: Cachan
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

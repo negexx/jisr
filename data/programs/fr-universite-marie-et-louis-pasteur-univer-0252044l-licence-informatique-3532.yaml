@@ -1,0 +1,52 @@
+slug: fr-universite-marie-et-louis-pasteur-univer-0252044l-licence-informatique-3532
+institution: fr-universite-marie-et-louis-pasteur-univer-0252044l
+country: FR
+city: besancon
+field: computer-science
+level: bachelor
+name: Licence - Informatique
+summary:
+  fr:
+    text: Licence - Informatique, Université Marie et Louis Pasteur - Université de Franche-Comté (Besançon). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Informatique, Université Marie et Louis Pasteur - Université de Franche-Comté (Besançon). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Informatique, Université Marie et Louis Pasteur - Université de Franche-Comté (Besançon). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3532&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3532&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

@@ -1,0 +1,14 @@
+slug: fr-i-u-t-daix-marseille-site-darles-0133686l
+name: I.U.T d'Aix-Marseille - Site d'Arles
+country: FR
+city:
+  slug: arles
+  name: Arles
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

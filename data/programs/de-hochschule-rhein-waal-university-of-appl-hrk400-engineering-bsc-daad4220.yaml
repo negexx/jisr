@@ -1,0 +1,53 @@
+slug: de-hochschule-rhein-waal-university-of-appl-hrk400-engineering-bsc-daad4220
+institution: de-hochschule-rhein-waal-university-of-appl-hrk400
+country: DE
+city: kleve
+field: engineering
+level: bachelor
+name: Engineering, BSc
+summary:
+  fr:
+    text: Engineering, BSc, Hochschule Rhein-Waal - University of Applied Sciences (Kleve). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Engineering, BSc, Hochschule Rhein-Waal - University of Applied Sciences (Kleve). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Engineering, BSc, Hochschule Rhein-Waal - University of Applied Sciences (Kleve). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4220/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4220/
+    last_verified_at: 2026-10-01

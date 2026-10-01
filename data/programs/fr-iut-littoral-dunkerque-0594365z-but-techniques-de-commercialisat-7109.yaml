@@ -1,0 +1,52 @@
+slug: fr-iut-littoral-dunkerque-0594365z-but-techniques-de-commercialisat-7109
+institution: fr-iut-littoral-dunkerque-0594365z
+country: FR
+city: dunkerque
+field: business-economics
+level: bachelor
+name: BUT - Techniques de commercialisation
+summary:
+  fr:
+    text: BUT - Techniques de commercialisation, IUT LITTORAL (DUNKERQUE) (Dunkerque). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Techniques de commercialisation, IUT LITTORAL (DUNKERQUE) (Dunkerque). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Techniques de commercialisation, IUT LITTORAL (DUNKERQUE) (Dunkerque). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7109&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7109&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

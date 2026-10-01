@@ -1,0 +1,54 @@
+slug: de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken-international-business-a-daad9036
+institution: de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken
+country: DE
+city: zweibrucken
+field: business-economics
+level: bachelor
+name: International Business Administration
+summary:
+  fr:
+    text: International Business Administration, Hochschule Kaiserslautern (University of Applied Sciences) (Zweibrücken). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Business Administration, Hochschule Kaiserslautern (University of Applied Sciences) (Zweibrücken). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business Administration, Hochschule Kaiserslautern (University of Applied Sciences) (Zweibrücken). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9036/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9036/
+    last_verified_at: 2026-10-01

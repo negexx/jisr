@@ -1,0 +1,52 @@
+slug: fr-i-u-t-davignon-0840957j-but-science-des-donnees-10468
+institution: fr-i-u-t-davignon-0840957j
+country: FR
+city: avignon
+field: computer-science
+level: bachelor
+name: BUT - Science des données
+summary:
+  fr:
+    text: BUT - Science des données, I.U.T. d'Avignon (Avignon). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Science des données, I.U.T. d'Avignon (Avignon). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Science des données, I.U.T. d'Avignon (Avignon). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10468&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10468&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

@@ -1,0 +1,52 @@
+slug: fr-iut-de-laisne-site-de-laon-0021964z-but-techniques-de-commercialisat-2099
+institution: fr-iut-de-laisne-site-de-laon-0021964z
+country: FR
+city: laon
+field: business-economics
+level: bachelor
+name: BUT - Techniques de commercialisation
+summary:
+  fr:
+    text: BUT - Techniques de commercialisation, IUT de l'Aisne - Site de Laon (Laon). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Techniques de commercialisation, IUT de l'Aisne - Site de Laon (Laon). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Techniques de commercialisation, IUT de l'Aisne - Site de Laon (Laon). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2099&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2099&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

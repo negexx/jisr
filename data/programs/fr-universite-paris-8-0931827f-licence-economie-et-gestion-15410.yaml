@@ -1,0 +1,52 @@
+slug: fr-universite-paris-8-0931827f-licence-economie-et-gestion-15410
+institution: fr-universite-paris-8-0931827f
+country: FR
+city: saint-denis
+field: business-economics
+level: bachelor
+name: Licence - Portail Economie et gestion
+summary:
+  fr:
+    text: Licence - Portail Economie et gestion, Université Paris 8 (Saint-Denis). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Portail Economie et gestion, Université Paris 8 (Saint-Denis). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail Economie et gestion, Université Paris 8 (Saint-Denis). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=15410&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=15410&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

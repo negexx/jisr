@@ -1,0 +1,52 @@
+slug: fr-aix-marseille-universite-site-de-marseil-0134015u-licence-mecanique-39228
+institution: fr-aix-marseille-universite-site-de-marseil-0134015u
+country: FR
+city: marseille
+field: engineering
+level: bachelor
+name: Licence - Mécanique - Portail René Descartes
+summary:
+  fr:
+    text: Licence - Mécanique - Portail René Descartes, Aix-Marseille Université - Site de Marseille Saint Charles (Marseille). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Mécanique - Portail René Descartes, Aix-Marseille Université - Site de Marseille Saint Charles (Marseille). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Mécanique - Portail René Descartes, Aix-Marseille Université - Site de Marseille Saint Charles (Marseille). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39228&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39228&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

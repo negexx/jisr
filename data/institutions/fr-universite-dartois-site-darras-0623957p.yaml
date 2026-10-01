@@ -1,0 +1,14 @@
+slug: fr-universite-dartois-site-darras-0623957p
+name: Université d'Artois - Site d'Arras
+country: FR
+city:
+  slug: arras
+  name: Arras
+type: public
+website: https://www.univ-artois.fr/
+source: esr
+info_kind: official
+sources:
+  esr:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-principaux-etablissements-enseignement-superieur/
+    last_verified_at: 2026-10-01

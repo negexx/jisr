@@ -1,0 +1,14 @@
+slug: de-hochschule-aalen-technik-wirtschaft-und-hrk3
+name: Hochschule Aalen - Technik, Wirtschaft und Gesundheit
+country: DE
+city:
+  slug: aalen
+  name: Aalen
+type: public
+website: https://www.hs-aalen.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

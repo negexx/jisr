@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-haguenau-0672834s
+name: I.U.T. de Haguenau
+country: FR
+city:
+  slug: haguenau
+  name: Haguenau
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

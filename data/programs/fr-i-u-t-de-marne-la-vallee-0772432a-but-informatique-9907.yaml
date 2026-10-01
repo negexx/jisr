@@ -1,0 +1,52 @@
+slug: fr-i-u-t-de-marne-la-vallee-0772432a-but-informatique-9907
+institution: fr-i-u-t-de-marne-la-vallee-0772432a
+country: FR
+city: champs-sur-marne
+field: computer-science
+level: bachelor
+name: BUT - Informatique
+summary:
+  fr:
+    text: BUT - Informatique, I.U.T de Marne la Vallée (Champs-sur-Marne). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Informatique, I.U.T de Marne la Vallée (Champs-sur-Marne). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Informatique, I.U.T de Marne la Vallée (Champs-sur-Marne). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9907&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9907&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

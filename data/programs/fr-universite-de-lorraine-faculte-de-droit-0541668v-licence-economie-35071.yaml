@@ -1,0 +1,52 @@
+slug: fr-universite-de-lorraine-faculte-de-droit-0541668v-licence-economie-35071
+institution: fr-universite-de-lorraine-faculte-de-droit-0541668v
+country: FR
+city: nancy
+field: business-economics
+level: bachelor
+name: Licence - Economie
+summary:
+  fr:
+    text: Licence - Economie, Université de Lorraine - Faculté de Droit, Sciences Economiques et Gestion - Site de Nancy (54) (Nancy). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Economie, Université de Lorraine - Faculté de Droit, Sciences Economiques et Gestion - Site de Nancy (54) (Nancy). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Economie, Université de Lorraine - Faculté de Droit, Sciences Economiques et Gestion - Site de Nancy (54) (Nancy). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35071&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35071&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

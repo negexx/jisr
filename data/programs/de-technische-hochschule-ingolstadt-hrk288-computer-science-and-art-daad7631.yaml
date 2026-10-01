@@ -1,0 +1,53 @@
+slug: de-technische-hochschule-ingolstadt-hrk288-computer-science-and-art-daad7631
+institution: de-technische-hochschule-ingolstadt-hrk288
+country: DE
+city: ingolstadt
+field: computer-science
+level: bachelor
+name: Computer Science and Artificial Intelligence
+summary:
+  fr:
+    text: Computer Science and Artificial Intelligence, Technische Hochschule Ingolstadt (Ingolstadt). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Computer Science and Artificial Intelligence, Technische Hochschule Ingolstadt (Ingolstadt). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Computer Science and Artificial Intelligence, Technische Hochschule Ingolstadt (Ingolstadt). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/
+    last_verified_at: 2026-10-01

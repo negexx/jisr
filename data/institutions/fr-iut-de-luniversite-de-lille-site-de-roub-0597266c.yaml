@@ -1,0 +1,14 @@
+slug: fr-iut-de-luniversite-de-lille-site-de-roub-0597266c
+name: IUT de l'Université de Lille - site de Roubaix
+country: FR
+city:
+  slug: roubaix
+  name: Roubaix
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

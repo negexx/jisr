@@ -1,0 +1,53 @@
+slug: de-friedrich-alexander-universitat-erlangen-hrk70-nurnberg-international-business-s-daad6913
+institution: de-friedrich-alexander-universitat-erlangen-hrk70-nurnberg
+country: DE
+city: nurnberg
+field: business-economics
+level: bachelor
+name: International Business Studies (BSc)
+summary:
+  fr:
+    text: International Business Studies (BSc), Friedrich-Alexander-Universität Erlangen-Nürnberg (Nürnberg). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Business Studies (BSc), Friedrich-Alexander-Universität Erlangen-Nürnberg (Nürnberg). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business Studies (BSc), Friedrich-Alexander-Universität Erlangen-Nürnberg (Nürnberg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6913/
+durationYears:
+  value: 3
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6913/
+    last_verified_at: 2026-10-01

@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-schiltigheim-0672462m
+name: I.U.T. de Schiltigheim
+country: FR
+city:
+  slug: schiltigheim
+  name: Schiltigheim
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

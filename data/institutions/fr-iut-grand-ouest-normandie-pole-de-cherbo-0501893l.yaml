@@ -1,0 +1,14 @@
+slug: fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l
+name: IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Cherbourg-en-Cotentin
+country: FR
+city:
+  slug: cherbourg-en-cotentin
+  name: Cherbourg-en-Cotentin
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

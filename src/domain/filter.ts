@@ -21,7 +21,12 @@ export function preferenceMismatches(
     mismatches.push("destination");
   }
   if (!profile.fields.includes(program.field)) mismatches.push("field");
-  if (profile.institutionType !== "any" && program.institutionType !== profile.institutionType) {
+  // an unknown type never counts against the preference: it is shown as "to be checked" instead
+  if (
+    profile.institutionType !== "any" &&
+    program.institutionType !== null &&
+    program.institutionType !== profile.institutionType
+  ) {
     mismatches.push("institution_type");
   }
   const taught = program.teachingLanguages.value;

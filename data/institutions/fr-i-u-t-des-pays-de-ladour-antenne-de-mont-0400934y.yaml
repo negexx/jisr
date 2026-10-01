@@ -1,0 +1,14 @@
+slug: fr-i-u-t-des-pays-de-ladour-antenne-de-mont-0400934y
+name: I.U.T des Pays de l'Adour - Antenne de Mont De Marsan
+country: FR
+city:
+  slug: mont-de-marsan
+  name: Mont-de-Marsan
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

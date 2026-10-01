@@ -1,0 +1,52 @@
+slug: fr-iut-lyon1-site-de-villeurbanne-gratte-ci-0691860x-but-genie-mecanique-et-productiq-8492
+institution: fr-iut-lyon1-site-de-villeurbanne-gratte-ci-0691860x
+country: FR
+city: villeurbanne
+field: engineering
+level: bachelor
+name: BUT - Génie mécanique et productique
+summary:
+  fr:
+    text: BUT - Génie mécanique et productique, IUT Lyon1 Site de Villeurbanne Gratte-Ciel (Villeurbanne). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Génie mécanique et productique, IUT Lyon1 Site de Villeurbanne Gratte-Ciel (Villeurbanne). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie mécanique et productique, IUT Lyon1 Site de Villeurbanne Gratte-Ciel (Villeurbanne). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8492&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8492&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

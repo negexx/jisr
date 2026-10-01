@@ -1,0 +1,52 @@
+slug: fr-nantes-universite-0442953w-licence-sciences-pour-lingenieur-32051
+institution: fr-nantes-universite-0442953w
+country: FR
+city: nantes
+field: engineering
+level: bachelor
+name: Licence - Sciences pour l'ingénieur
+summary:
+  fr:
+    text: Licence - Sciences pour l'ingénieur, Nantes Université (Nantes). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Sciences pour l'ingénieur, Nantes Université (Nantes). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Sciences pour l'ingénieur, Nantes Université (Nantes). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=32051&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=32051&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

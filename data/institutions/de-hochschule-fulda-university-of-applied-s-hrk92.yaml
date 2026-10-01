@@ -1,0 +1,14 @@
+slug: de-hochschule-fulda-university-of-applied-s-hrk92
+name: Hochschule Fulda - University of Applied Sciences
+country: DE
+city:
+  slug: fulda
+  name: Fulda
+type: public
+website: https://www.hs-fulda.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

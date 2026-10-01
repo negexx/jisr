@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-perpignan-0660586d
+name: I.U.T de Perpignan
+country: FR
+city:
+  slug: perpignan
+  name: Perpignan
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

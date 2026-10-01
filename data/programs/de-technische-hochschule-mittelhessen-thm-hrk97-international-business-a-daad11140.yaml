@@ -1,0 +1,53 @@
+slug: de-technische-hochschule-mittelhessen-thm-hrk97-international-business-a-daad11140
+institution: de-technische-hochschule-mittelhessen-thm-hrk97
+country: DE
+city: giessen
+field: business-economics
+level: bachelor
+name: International Business and Leadership
+summary:
+  fr:
+    text: International Business and Leadership, Technische Hochschule Mittelhessen - THM (Gießen). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: International Business and Leadership, Technische Hochschule Mittelhessen - THM (Gießen). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: International Business and Leadership, Technische Hochschule Mittelhessen - THM (Gießen). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11140/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11140/
+    last_verified_at: 2026-10-01

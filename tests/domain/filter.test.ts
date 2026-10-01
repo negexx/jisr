@@ -23,6 +23,12 @@ describe("preferenceMismatches", () => {
     ["institution any", { institutionType: "any" }, { institutionType: "private" }, []],
     ["institution public wanted, public", { institutionType: "public" }, {}, []],
     [
+      "institution type unknown never counts against the preference",
+      { institutionType: "private" },
+      { institutionType: null },
+      [],
+    ],
+    [
       "institution private wanted, public",
       { institutionType: "private" },
       {},

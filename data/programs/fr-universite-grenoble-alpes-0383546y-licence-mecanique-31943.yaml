@@ -1,0 +1,52 @@
+slug: fr-universite-grenoble-alpes-0383546y-licence-mecanique-31943
+institution: fr-universite-grenoble-alpes-0383546y
+country: FR
+city: saint-martin-dheres
+field: engineering
+level: bachelor
+name: Licence - Portail Sciences pour l'ingénieur
+summary:
+  fr:
+    text: Licence - Portail Sciences pour l'ingénieur, Université Grenoble Alpes (Saint-Martin-d'Hères). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Portail Sciences pour l'ingénieur, Université Grenoble Alpes (Saint-Martin-d'Hères). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Portail Sciences pour l'ingénieur, Université Grenoble Alpes (Saint-Martin-d'Hères). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=31943&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=31943&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

@@ -1,0 +1,14 @@
+slug: de-hochschule-fur-technik-und-wirtschaft-dr-hrk54
+name: Hochschule für Technik und Wirtschaft Dresden - University of Applied Sciences
+country: DE
+city:
+  slug: dresden
+  name: Dresden
+type: public
+website: https://www.htw-dresden.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

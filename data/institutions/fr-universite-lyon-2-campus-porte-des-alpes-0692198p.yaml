@@ -1,0 +1,14 @@
+slug: fr-universite-lyon-2-campus-porte-des-alpes-0692198p
+name: Université Lyon 2 - Campus Porte des Alpes
+country: FR
+city:
+  slug: bron
+  name: Bron
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

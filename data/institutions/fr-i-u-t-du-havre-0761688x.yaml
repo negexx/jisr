@@ -1,0 +1,14 @@
+slug: fr-i-u-t-du-havre-0761688x
+name: I.U.T du Havre
+country: FR
+city:
+  slug: le-havre
+  name: Le Havre
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

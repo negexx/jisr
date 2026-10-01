@@ -1,0 +1,52 @@
+slug: fr-universite-de-lorraine-institut-superieu-0572874p-licence-sciences-pour-lingenieur-43200
+institution: fr-universite-de-lorraine-institut-superieu-0572874p
+country: FR
+city: metz
+field: engineering
+level: bachelor
+name: Licence - Sciences pour l'ingénieur - Parcours franco-allemand - Génie civil et management en Europe (ISFATES)
+summary:
+  fr:
+    text: Licence - Sciences pour l'ingénieur - Parcours franco-allemand - Génie civil et management en Europe (ISFATES), Université de Lorraine - Institut Supérieur Franco-Allemand de Techniques, d'Economie et de Sciences - Site de Metz (57) (Metz). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Sciences pour l'ingénieur - Parcours franco-allemand - Génie civil et management en Europe (ISFATES), Université de Lorraine - Institut Supérieur Franco-Allemand de Techniques, d'Economie et de Sciences - Site de Metz (57) (Metz). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Sciences pour l'ingénieur - Parcours franco-allemand - Génie civil et management en Europe (ISFATES), Université de Lorraine - Institut Supérieur Franco-Allemand de Techniques, d'Economie et de Sciences - Site de Metz (57) (Metz). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43200&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43200&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

@@ -1,0 +1,53 @@
+slug: de-frankfurt-school-of-finance-management-hrk83-bachelors-in-business-ad-daad9678
+institution: de-frankfurt-school-of-finance-management-hrk83
+country: DE
+city: frankfurt-am-main
+field: business-economics
+level: bachelor
+name: Bachelor's in Business Administration (BSc)
+summary:
+  fr:
+    text: Bachelor's in Business Administration (BSc), Frankfurt School of Finance & Management (Frankfurt am Main). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Bachelor's in Business Administration (BSc), Frankfurt School of Finance & Management (Frankfurt am Main). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Bachelor's in Business Administration (BSc), Frankfurt School of Finance & Management (Frankfurt am Main). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9678/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9678/
+    last_verified_at: 2026-10-01

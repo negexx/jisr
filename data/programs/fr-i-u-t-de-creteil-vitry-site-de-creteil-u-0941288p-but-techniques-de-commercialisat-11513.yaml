@@ -1,0 +1,52 @@
+slug: fr-i-u-t-de-creteil-vitry-site-de-creteil-u-0941288p-but-techniques-de-commercialisat-11513
+institution: fr-i-u-t-de-creteil-vitry-site-de-creteil-u-0941288p
+country: FR
+city: creteil
+field: business-economics
+level: bachelor
+name: BUT - Techniques de commercialisation
+summary:
+  fr:
+    text: BUT - Techniques de commercialisation, I.U.T. de Créteil-Vitry - Site de Créteil- UPEC (Créteil). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Techniques de commercialisation, I.U.T. de Créteil-Vitry - Site de Créteil- UPEC (Créteil). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Techniques de commercialisation, I.U.T. de Créteil-Vitry - Site de Créteil- UPEC (Créteil). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11513&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11513&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

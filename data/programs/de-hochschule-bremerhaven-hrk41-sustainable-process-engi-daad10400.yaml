@@ -1,0 +1,54 @@
+slug: de-hochschule-bremerhaven-hrk41-sustainable-process-engi-daad10400
+institution: de-hochschule-bremerhaven-hrk41
+country: DE
+city: bremerhaven
+field: engineering
+level: bachelor
+name: Sustainable Process Engineering
+summary:
+  fr:
+    text: Sustainable Process Engineering, Hochschule Bremerhaven (Bremerhaven). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: Sustainable Process Engineering, Hochschule Bremerhaven (Bremerhaven). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: Sustainable Process Engineering, Hochschule Bremerhaven (Bremerhaven). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10400/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - de
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10400/
+    last_verified_at: 2026-10-01

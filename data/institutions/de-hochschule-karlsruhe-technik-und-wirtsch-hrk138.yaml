@@ -1,0 +1,14 @@
+slug: de-hochschule-karlsruhe-technik-und-wirtsch-hrk138
+name: Hochschule Karlsruhe - Technik und Wirtschaft
+country: DE
+city:
+  slug: karlsruhe
+  name: Karlsruhe
+type: public
+website: https://www.h-ka.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

@@ -1,0 +1,53 @@
+slug: de-technische-hochschule-wildau-hrk272-european-business-manage-daad7665
+institution: de-technische-hochschule-wildau-hrk272
+country: DE
+city: wildau
+field: business-economics
+level: bachelor
+name: European Business Management
+summary:
+  fr:
+    text: European Business Management, Technische Hochschule Wildau (Wildau). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+  en:
+    text: European Business Management, Technische Hochschule Wildau (Wildau). Programme listed in the DAAD international programmes database.
+    status: draft
+  ar:
+    text: European Business Management, Technische Hochschule Wildau (Wildau). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
+    status: draft
+officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7665/
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: guidance
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: guidance
+tuition:
+  value: null
+  source: daad
+  info_kind: guidance
+intakes:
+  value: null
+  source: daad
+  info_kind: guidance
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: guidance
+documents:
+  value: null
+  source: daad
+  info_kind: guidance
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: guidance
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7665/
+    last_verified_at: 2026-10-01

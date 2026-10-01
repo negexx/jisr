@@ -1,0 +1,14 @@
+slug: de-hochschule-fresenius-heidelberg-staatlic-hrk440
+name: Hochschule Fresenius Heidelberg – staatlich anerkannte Hochschule der Hochschule Fresenius für Internationales Management GmbH
+country: DE
+city:
+  slug: heidelberg
+  name: Heidelberg
+type: private
+website: https://www.hs-fresenius.de/standort/heidelberg/?crmid=aBbWvOcDeBjAaAaA
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

@@ -1,0 +1,14 @@
+slug: fr-i-u-t-devry-val-dessonne-site-bretigny-s-0912128u
+name: I.U.T. d'Evry Val d'Essonne - Site Brétigny S/Orge
+country: FR
+city:
+  slug: bretigny-sur-orge
+  name: Brétigny-sur-Orge
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

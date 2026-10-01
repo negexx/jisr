@@ -1,0 +1,14 @@
+slug: fr-i-u-t-nice-cote-dazur-0060914l
+name: I.U.T Nice-Côte d'Azur
+country: FR
+city:
+  slug: nice
+  name: Nice
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

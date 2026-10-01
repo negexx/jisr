@@ -1,0 +1,14 @@
+slug: de-technische-universitat-braunschweig-hrk35
+name: Technische Universität Braunschweig
+country: DE
+city:
+  slug: braunschweig
+  name: Braunschweig
+type: public
+website: https://www.tu-braunschweig.de
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

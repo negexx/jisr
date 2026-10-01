@@ -1,0 +1,14 @@
+slug: fr-i-u-t-de-chalon-sur-saone-0711690b
+name: I.U.T de Chalon-Sur-Saône
+country: FR
+city:
+  slug: chalon-sur-saone
+  name: Chalon-sur-Saône
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

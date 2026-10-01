@@ -1,0 +1,52 @@
+slug: fr-i-u-t-de-rennes-0350697t-but-genie-electrique-et-informat-4662
+institution: fr-i-u-t-de-rennes-0350697t
+country: FR
+city: rennes
+field: engineering
+level: bachelor
+name: BUT - Génie électrique et informatique industrielle
+summary:
+  fr:
+    text: BUT - Génie électrique et informatique industrielle, I.U.T de Rennes (Rennes). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Génie électrique et informatique industrielle, I.U.T de Rennes (Rennes). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie électrique et informatique industrielle, I.U.T de Rennes (Rennes). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4662&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4662&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

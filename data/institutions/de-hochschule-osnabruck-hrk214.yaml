@@ -1,0 +1,14 @@
+slug: de-hochschule-osnabruck-hrk214
+name: Hochschule Osnabrück
+country: DE
+city:
+  slug: osnabruck
+  name: Osnabrück
+type: public
+website: https://www.hs-osnabrueck.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

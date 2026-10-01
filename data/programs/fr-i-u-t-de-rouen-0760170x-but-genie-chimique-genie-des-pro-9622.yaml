@@ -1,0 +1,52 @@
+slug: fr-i-u-t-de-rouen-0760170x-but-genie-chimique-genie-des-pro-9622
+institution: fr-i-u-t-de-rouen-0760170x
+country: FR
+city: mont-saint-aignan
+field: engineering
+level: bachelor
+name: BUT - Génie chimique génie des procédés
+summary:
+  fr:
+    text: BUT - Génie chimique génie des procédés, I.U.T de Rouen (Mont-Saint-Aignan). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: BUT - Génie chimique génie des procédés, I.U.T de Rouen (Mont-Saint-Aignan). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: BUT - Génie chimique génie des procédés, I.U.T de Rouen (Mont-Saint-Aignan). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9622&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9622&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

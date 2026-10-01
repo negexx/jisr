@@ -8,6 +8,7 @@ import type { MatchCardModel, MatchGroup } from "@/lib/journey/matches-view";
 import { cn } from "@/lib/utils";
 
 import { displayNumber } from "./display-number";
+import { PagedList } from "./paged-list";
 
 const HEADING_CLASS = "text-xl font-semibold text-balance";
 
@@ -23,8 +24,9 @@ function Cards({
   routeExplained: boolean;
 }) {
   return (
-    <ul className="flex flex-col gap-4">
-      {cards.map((card) => (
+    <PagedList
+      locale={locale}
+      items={cards.map((card) => (
         <li key={card.slug}>
           <MatchCard
             model={card}
@@ -34,7 +36,7 @@ function Cards({
           />
         </li>
       ))}
-    </ul>
+    />
   );
 }
 

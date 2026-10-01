@@ -1,0 +1,52 @@
+slug: fr-universite-de-montpellier-0342490x-licence-informatique-31257
+institution: fr-universite-de-montpellier-0342490x
+country: FR
+city: montpellier
+field: computer-science
+level: bachelor
+name: Licence - Informatique - Parcours Licence - Portail Informatique
+summary:
+  fr:
+    text: Licence - Informatique - Parcours Licence - Portail Informatique, Université de Montpellier (Montpellier). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Informatique - Parcours Licence - Portail Informatique, Université de Montpellier (Montpellier). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Informatique - Parcours Licence - Portail Informatique, Université de Montpellier (Montpellier). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=31257&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=31257&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

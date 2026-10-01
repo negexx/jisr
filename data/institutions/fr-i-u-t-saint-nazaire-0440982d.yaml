@@ -1,0 +1,14 @@
+slug: fr-i-u-t-saint-nazaire-0440982d
+name: I.U.T. Saint-Nazaire
+country: FR
+city:
+  slug: saint-nazaire
+  name: Saint-Nazaire
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

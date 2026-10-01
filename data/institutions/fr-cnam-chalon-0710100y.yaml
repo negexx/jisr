@@ -1,0 +1,14 @@
+slug: fr-cnam-chalon-0710100y
+name: CNAM Chalon
+country: FR
+city:
+  slug: chalon-sur-saone
+  name: Chalon-sur-Saône
+type: public
+website: null
+source: parcoursup
+info_kind: official
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: 2026-10-01

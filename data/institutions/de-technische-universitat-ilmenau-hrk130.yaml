@@ -1,0 +1,14 @@
+slug: de-technische-universitat-ilmenau-hrk130
+name: Technische Universität Ilmenau
+country: DE
+city:
+  slug: ilmenau
+  name: Ilmenau
+type: public
+website: https://www.tu-ilmenau.de/
+source: hrk
+info_kind: official
+sources:
+  hrk:
+    url: https://www.hochschulkompass.de/en/higher-education-institutions/downloads.html
+    last_verified_at: 2026-10-01

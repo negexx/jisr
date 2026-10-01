@@ -1,0 +1,52 @@
+slug: fr-institut-dadministration-des-entreprises-0763069y-licence-gestion-30966
+institution: fr-institut-dadministration-des-entreprises-0763069y
+country: FR
+city: rouen
+field: business-economics
+level: bachelor
+name: Licence - Gestion
+summary:
+  fr:
+    text: Licence - Gestion, Institut d'Administration des Entreprises (IAE) de l'Université de Rouen (Rouen). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Gestion, Institut d'Administration des Entreprises (IAE) de l'Université de Rouen (Rouen). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Gestion, Institut d'Administration des Entreprises (IAE) de l'Université de Rouen (Rouen). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30966&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30966&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

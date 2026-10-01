@@ -1,0 +1,52 @@
+slug: fr-aix-marseille-universite-site-de-marseil-0130201y-licence-informatique-39215
+institution: fr-aix-marseille-universite-site-de-marseil-0130201y
+country: FR
+city: marseille
+field: computer-science
+level: bachelor
+name: Licence - Informatique - Portail René Descartes
+summary:
+  fr:
+    text: Licence - Informatique - Portail René Descartes, Aix-Marseille Université - Site de Marseille Luminy (Marseille). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Informatique - Portail René Descartes, Aix-Marseille Université - Site de Marseille Luminy (Marseille). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Informatique - Portail René Descartes, Aix-Marseille Université - Site de Marseille Luminy (Marseille). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39215&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39215&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

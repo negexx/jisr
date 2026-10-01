@@ -1,0 +1,52 @@
+slug: fr-ecole-universitaire-de-premier-cycle-cam-0912409z-licence-economie-et-gestion-16675
+institution: fr-ecole-universitaire-de-premier-cycle-cam-0912409z
+country: FR
+city: orsay
+field: business-economics
+level: bachelor
+name: Licence - Double diplôme - Licence Economie et gestion - Parcours Langues et Civilisations - option Anglais et Allemand
+summary:
+  fr:
+    text: Licence - Double diplôme - Licence Economie et gestion - Parcours Langues et Civilisations - option Anglais et Allemand, Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay (Orsay). Fiche officielle Parcoursup.
+    status: draft
+  en:
+    text: Licence - Double diplôme - Licence Economie et gestion - Parcours Langues et Civilisations - option Anglais et Allemand, Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay (Orsay). Official Parcoursup listing.
+    status: draft
+  ar:
+    text: Licence - Double diplôme - Licence Economie et gestion - Parcours Langues et Civilisations - option Anglais et Allemand, Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay (Orsay). البطاقة الرسمية على منصة Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=16675&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: official
+tuition:
+  value: null
+  source: fiche
+  info_kind: official
+intakes:
+  value: null
+  source: fiche
+  info_kind: official
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: official
+documents:
+  value: null
+  source: fiche
+  info_kind: official
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=16675&typeBac=0&originePc=0
+    last_verified_at: 2026-10-01

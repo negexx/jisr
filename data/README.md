@@ -114,3 +114,39 @@ is **never guessed**: `sameTownCandidates` lists our institutions in that town f
 decide. The page itself says that each university decides which courses and applicant groups
 uni-assist handles, so the sheet narrows the question and the university's own page answers it.
 Nothing in `data/` is written from this sheet yet.
+
+## Trust tiers: how this scales past what a person can read
+
+No team can read thousands of programmes, so the data does not pretend that someone did. Every record
+carries a **tier** in the ledger (`data-staging/PROMOTED.csv`, column `level`), and the site only
+claims "Official, verified" for a fact that has a source quote, never for an unknown.
+
+| Tier (`level`) | What it means | Who or what checked it | Where it applies |
+|---|---|---|---|
+| `human` | a person read the sources | a person | records edited or sampled by the owner |
+| `audited-sample` | prepared by the assistant with a verbatim quote per fact, in a batch whose random sample was read and passed | code (quotes re-fetched) + a sample read by a person | the pilot flow (`data:evidence`, `data:audit`) |
+| `owner-waived` | same preparation, but the owner passed the sample **unread** (a preview) | code only | the 15-programme pilot, today |
+| `register-listing` | only what an official register states: name, institution, town, field, level and a link to the official page; **every other fact is "to be checked"** | the schema, `data:check` and the link check below | France (Parcoursup) and Germany (DAAD) listings, `pnpm data:listing` |
+| `demoted` | a listed record whose official page no longer shows its name went back to staging | `pnpm data:linkcheck --demote` | any listed record |
+
+Principles:
+
+1. **Never show a "verified" label next to an unknown.** A value nobody has read shows "to be checked" and
+   no badge (ADR 0005 item 9). An institution whose type or website the register does not state keeps
+   `type: null` / `website: null` instead of a guess.
+2. **Verify the process, sample the output, test everything cheaply.** Register-derived records come from
+   a deterministic importer, so the error rate is a property of the importer, not of each record.
+   `pnpm data:linkcheck` fetches every listed programme's official page and requires it to mention the
+   programme's name (all 915 listings: 891 pass, 24 were demoted; run it again to catch pages that move).
+3. **Depth comes in small batches.** Quote-verified facts (`data:evidence`) are added per batch, starting
+   with the shortlist (`data:shortlist`), and each batch has its own audit sample.
+4. **Keep checking.** `data:evidence verify --dry-run` re-fetches every quote of the promoted records and
+   reports the ones that no longer match; `data:uniassist` and `data:linkcheck` can be re-run the same way.
+5. **Records the importer cannot support stay in staging** (low-confidence field classification,
+   institutions not in an official register, programmes without an official page link).
+
+Listing tier details: the DAAD duration and teaching language are taken as `guidance` (DAAD is a listing
+service, not the institution); its deadline is never used (it can be the one for EU applicants). A French
+institution's website is listed only when the ministry's register confirmed it; a German one only when the
+HRK homepage does not redirect to another domain. The date in `last_verified_at` is the day the register
+was read by code, not a day a person read the record.
