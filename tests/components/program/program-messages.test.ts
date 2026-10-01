@@ -138,13 +138,13 @@ describe("program messages: language rules", () => {
 
   it("states a scholarship's nationality rule without implying anyone can get it", () => {
     const expected = {
-      en: "Open to all nationalities",
-      fr: "Ouverte à toutes les nationalités",
-      ar: "مفتوحة لجميع الجنسيات",
+      en: "No nationality restriction in the published rules: check the scholarship page",
+      fr: "Aucune restriction de nationalité dans les règles publiées : vérifiez la page de la bourse",
+      ar: "لا توجد قيود على الجنسية في الشروط المنشورة، تحقق من صفحة المنحة",
     } as const;
     for (const locale of LOCALES) {
       expect(
-        namespaceMessages(locale, ["program"]).get("program.scholarships.openToEveryone"),
+        namespaceMessages(locale, ["program"]).get("program.scholarships.noNationalityRestriction"),
       ).toBe(expected[locale]);
     }
   });

@@ -287,6 +287,16 @@ describe.each(LOCALES)("program page server render (%s)", (locale) => {
     }
   });
 
+  it("sends the deadline leaf only the slug and the intakes, not the whole program", async () => {
+    clientProps.sent = [];
+    await renderPage(E2E_SLUGS.ok, locale);
+    const sent = clientProps.sent.find((entry) => entry.leaf === "ProgramDeadline");
+    const data = await dataOf(E2E_SLUGS.ok, locale);
+    expect(sent?.props).toEqual({
+      program: { slug: data.program.slug, intakes: data.program.intakes },
+    });
+  });
+
   it("shows one badge under How to apply when the link and the channel share a source", async () => {
     const { document } = await renderPage(E2E_SLUGS.ok, locale);
     expect(document.querySelectorAll('#procedure [data-slot="source-badge"]')).toHaveLength(1);
@@ -334,7 +344,7 @@ describe.each(LOCALES)("program page server render (%s)", (locale) => {
         document.querySelector(`#scholarship-${slug} [data-testid="scholarship-eligibility"]`),
       );
     expect(eligibility(E2E_SCHOLARSHIP_SLUGS.open)).toBe(
-      message(locale, "program.scholarships.openToEveryone"),
+      message(locale, "program.scholarships.noNationalityRestriction"),
     );
     const data = await dataOf(E2E_SLUGS.ok, locale);
     const countryName = (code: string) => {
@@ -409,6 +419,22 @@ describe.each(LOCALES)("program page server render (%s)", (locale) => {
       expect(document.querySelector('[data-slot="program-deadline"]')?.textContent).toBe("");
       expect(document.querySelector('[data-slot="personal-skeleton"]')).not.toBeNull();
     }
+  });
+
+  it("explains how each estimate was made, inside its source badge, without calling it official", async () => {
+    const { document } = await renderPage(E2E_SLUGS.ok, locale);
+    const data = await dataOf(E2E_SLUGS.ok, locale);
+    const housing = document.querySelector('#costs [data-category="housing"]');
+    const expected = data.text("cost-profiles/xx-test-costs-xb#lines.housing.basis")?.text;
+    expect(expected).toBeTruthy();
+    const disclosure = housing?.querySelector('[data-slot="source-badge"] details');
+    expect(textOf(disclosure?.querySelector("summary") ?? null)).toBe(
+      message(locale, "sourceBadge.howWeEstimated"),
+    );
+    expect(textOf(disclosure?.querySelector("p") ?? null)).toBe(expected);
+    expect(textOf(disclosure ?? null)).not.toMatch(OFFICIAL_WORD[locale]);
+    const official = document.querySelector('#costs [data-category="transport"]');
+    expect(official?.querySelector("details")).toBeNull();
   });
 
   it("never words an estimate or guidance part as official", async () => {

@@ -228,9 +228,7 @@
       "fresh": "Verified recently",
       "aging": "Verified a while ago",
       "stale": "May be outdated, check the official page",
-      "verifiedOn": "Verified on {date}",
-      "bannerAging": "Some information on this page was verified a while ago. Check the official pages before you decide.",
-      "bannerStale": "Some information on this page may be outdated. Check the official pages before you rely on it."
+      "verifiedOn": "Verified on {date}"
     },
     "coverage": {
       "partial": "We have not published all the requirements for this program. Check the official page before you rely on this.",
@@ -701,7 +699,7 @@
       "intro": "Scholarships linked to this program or offered in its country. Each one has its own conditions: check them on its page.",
       "none": "No scholarship is published for this program yet.",
       "provider": "Provider: {provider}",
-      "openToEveryone": "Open to all nationalities",
+      "noNationalityRestriction": "No nationality restriction in the published rules: check the scholarship page",
       "nationals": "For nationals of: {countries}",
       "support": {
         "month": "Support: <money>{amount}</money> per month",
@@ -754,7 +752,7 @@
       "missingProgram": "This program is no longer in the published data.",
       "computeError": {
         "title": "We could not work out your result",
-        "description": "The published data for this program could not be compared with your profile. The facts on this page still apply."
+        "description": "The published data for this program could not be compared with your profile. The facts on this page are shown as published, with their sources."
       },
       "updated": {
         "notice": "The data was updated since this page was built. Reload to see the latest.",

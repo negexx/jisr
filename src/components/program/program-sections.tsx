@@ -236,7 +236,7 @@ export function TuitionSection({ data }: { data: ProgramPageData }) {
   );
 }
 
-export function CostsSection({ cost }: { cost: CostEstimate }) {
+export function CostsSection({ cost, data }: { cost: CostEstimate; data: ProgramPageData }) {
   const locale = useLocale();
   const t = useTranslations("program.costs");
   return (
@@ -247,6 +247,7 @@ export function CostsSection({ cost }: { cost: CostEstimate }) {
         monthsLabel={
           formatNumber(cost.academicYearMonths, locale) ?? String(cost.academicYearMonths)
         }
+        textOf={data.text}
         caption={t("caption")}
       />
     </Section>
@@ -451,7 +452,7 @@ function ScholarshipItem({
         {t("provider", { provider: scholarship.provider })}
       </p>
       <p data-testid="scholarship-eligibility" className="text-base font-medium">
-        {countries === null ? t("openToEveryone") : t("nationals", { countries })}
+        {countries === null ? t("noNationalityRestriction") : t("nationals", { countries })}
       </p>
       {data.text(scholarship.summary) === undefined ? null : (
         <p className="max-w-prose text-base">

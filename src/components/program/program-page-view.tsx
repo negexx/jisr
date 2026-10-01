@@ -241,7 +241,7 @@ export function ProgramPageView({
                   <h3 id="aside-deadline-heading" className="text-base font-semibold">
                     {t("aside.deadline")}
                   </h3>
-                  <ProgramDeadline program={program} />
+                  <ProgramDeadline program={{ slug: program.slug, intakes: program.intakes }} />
                 </section>
                 <CostSummary cost={cost} text={costText} locale={locale} />
               </PersonalMatch>
@@ -252,7 +252,7 @@ export function ProgramPageView({
           <OverviewSection data={data} />
           <RequirementsSection data={data} />
           <TuitionSection data={data} />
-          <CostsSection cost={cost} />
+          <CostsSection cost={cost} data={data} />
           <DeadlineSection data={data} />
           <ProcedureSection data={data} />
           <DocumentsSection data={data} />

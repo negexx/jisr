@@ -228,9 +228,7 @@
       "fresh": "Vérifié récemment",
       "aging": "Vérifié il y a quelque temps",
       "stale": "Peut être dépassé, vérifiez la page officielle",
-      "verifiedOn": "Vérifié le {date}",
-      "bannerAging": "Certaines informations de cette page ont été vérifiées il y a quelque temps. Consultez les pages officielles avant de décider.",
-      "bannerStale": "Certaines informations de cette page peuvent être dépassées. Consultez les pages officielles avant de vous y fier."
+      "verifiedOn": "Vérifié le {date}"
     },
     "coverage": {
       "partial": "Nous n'avons pas publié toutes les conditions de ce programme. Vérifiez la page officielle avant de vous y fier.",
@@ -701,7 +699,7 @@
       "intro": "Bourses liées à cette formation ou proposées dans son pays. Chacune a ses propres conditions : vérifiez-les sur sa page.",
       "none": "Aucune bourse n'est encore publiée pour cette formation.",
       "provider": "Organisme : {provider}",
-      "openToEveryone": "Ouverte à toutes les nationalités",
+      "noNationalityRestriction": "Aucune restriction de nationalité dans les règles publiées : vérifiez la page de la bourse",
       "nationals": "Pour les ressortissants de : {countries}",
       "support": {
         "month": "Montant : <money>{amount}</money> par mois",
@@ -754,7 +752,7 @@
       "missingProgram": "Cette formation ne figure plus dans les données publiées.",
       "computeError": {
         "title": "Nous n'avons pas pu calculer votre résultat",
-        "description": "Les données publiées pour cette formation n'ont pas pu être comparées à votre profil. Les informations de cette page restent valables."
+        "description": "Les données publiées pour cette formation n'ont pas pu être comparées à votre profil. Les informations de cette page sont affichées telles que publiées, avec leurs sources."
       },
       "updated": {
         "notice": "Les données ont été mises à jour depuis la création de cette page. Rechargez-la pour voir la dernière version.",

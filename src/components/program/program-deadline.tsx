@@ -9,7 +9,7 @@ import type { Program } from "@/data-schema/resolved";
 import { nextIntake } from "@/domain/intakes";
 import { todayIso } from "@/lib/clock";
 
-export function ProgramDeadline({ program }: { program: Program }) {
+export function ProgramDeadline({ program }: { program: Pick<Program, "slug" | "intakes"> }) {
   const [today, setToday] = useState<IsoDate | null>(null);
   useEffect(() => {
     setToday(todayIso());

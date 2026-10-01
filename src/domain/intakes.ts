@@ -5,7 +5,7 @@ import type { Program } from "@/data-schema/resolved";
 import { toFactRef } from "./facts";
 import type { IntakeStatus } from "./types";
 
-export function nextIntake(program: Program, now: IsoDate): IntakeStatus {
+export function nextIntake(program: Pick<Program, "slug" | "intakes">, now: IsoDate): IntakeStatus {
   const fact = toFactRef(`programs/${program.slug}`, "intakes", program.intakes, now);
   const intakes = program.intakes.value;
   if (intakes === null || intakes.every((i) => i.applicationDeadline === null)) {

@@ -479,10 +479,9 @@ describe("trust wording", () => {
   });
 
   it("does not use 'a moment ago' wording for aging facts in French", () => {
-    for (const key of ["domain.freshness.aging", "domain.freshness.bannerAging"]) {
-      expect(domain.fr.get(key), key).toContain("il y a quelque temps");
-      expect(domain.fr.get(key), key).not.toContain("un moment");
-    }
+    const key = "domain.freshness.aging";
+    expect(domain.fr.get(key), key).toContain("il y a quelque temps");
+    expect(domain.fr.get(key), key).not.toContain("un moment");
   });
 
   it.each(LOCALES)("%s points to the official page for every route except direct", (locale) => {
@@ -506,8 +505,6 @@ describe("trust wording", () => {
       "domain.status.hint.not_satisfied",
       "domain.status.hint.check",
       "domain.freshness.stale",
-      "domain.freshness.bannerStale",
-      "domain.freshness.bannerAging",
       "domain.coverage.partial",
       "domain.reason.code.below_threshold",
     ]) {

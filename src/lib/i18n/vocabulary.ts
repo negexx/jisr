@@ -230,7 +230,7 @@ export type MessageGroup = {
  *   domain.budgetFit.<BudgetFit>             about the estimate, never the program
  *   domain.intake.<IntakeKind>               upcoming: {date}
  *   domain.infoKind.<InfoKind>.{label,meaning}
- *   domain.freshness.<Freshness>             plus verifiedOn {date}, bannerAging, bannerStale
+ *   domain.freshness.<Freshness>             plus verifiedOn {date}
  *   domain.coverage.<Coverage>
  *   domain.textNote.<TextNote>
  *
@@ -273,7 +273,7 @@ export const MESSAGE_GROUPS: readonly MessageGroup[] = [
   { path: "domain.infoKind", values: INFO_KINDS, leaves: ["label", "meaning"] },
   {
     path: "domain.freshness",
-    values: [...FRESHNESSES, "verifiedOn", "bannerAging", "bannerStale"],
+    values: [...FRESHNESSES, "verifiedOn"],
   },
   { path: "domain.coverage", values: COVERAGES },
   { path: "domain.textNote", values: TEXT_NOTES },
