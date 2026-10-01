@@ -1,0 +1,22 @@
+slug: de-hochschule-fur-medien-kommunikation-und-q1622198
+name: Hochschule für Medien, Kommunikation und Wirtschaft
+country: DE
+city: null
+type: null
+website: https://www.hmkw.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1622198
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-medien-kommunikation-und-q1622198
+  name: Hochschule für Medien, Kommunikation und Wirtschaft
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hmkw.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

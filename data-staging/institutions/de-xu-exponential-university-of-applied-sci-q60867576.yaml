@@ -1,0 +1,24 @@
+slug: de-xu-exponential-university-of-applied-sci-q60867576
+name: XU Exponential University of Applied Sciences
+country: DE
+city:
+  slug: potsdam
+  name: Potsdam
+type: null
+website: https://xu-university.com
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q60867576
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-xu-exponential-university-of-applied-sci-q60867576
+  name: XU Exponential University of Applied Sciences
+  institution: ""
+  city: Potsdam
+  field: ""
+  confidence: ""
+  officialUrl: https://xu-university.com
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

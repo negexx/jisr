@@ -1,0 +1,24 @@
+slug: nl-universiteit-maastricht-q1137652
+name: Universiteit Maastricht
+country: NL
+city:
+  slug: maastricht
+  name: Maastricht
+type: null
+website: https://www.maastrichtuniversity.nl/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1137652
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-universiteit-maastricht-q1137652
+  name: Universiteit Maastricht
+  institution: ""
+  city: Maastricht
+  field: ""
+  confidence: ""
+  officialUrl: https://www.maastrichtuniversity.nl/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

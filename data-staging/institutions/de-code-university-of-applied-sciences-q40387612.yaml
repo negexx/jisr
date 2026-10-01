@@ -1,0 +1,24 @@
+slug: de-code-university-of-applied-sciences-q40387612
+name: CODE University of Applied Sciences
+country: DE
+city:
+  slug: berlin
+  name: Berlin
+type: null
+website: https://code.berlin
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q40387612
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-code-university-of-applied-sciences-q40387612
+  name: CODE University of Applied Sciences
+  institution: ""
+  city: Berlin
+  field: ""
+  confidence: ""
+  officialUrl: https://code.berlin
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

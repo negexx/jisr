@@ -1,0 +1,24 @@
+slug: fr-iut-de-paris-rives-de-seine-universite-p-0754247j
+name: IUT de Paris - Rives de Seine - Université Paris Cité
+country: FR
+city:
+  slug: paris
+  name: Paris
+type: public
+website: https://u-pariscite.fr/
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-iut-de-paris-rives-de-seine-universite-p-0754247j
+  name: IUT de Paris - Rives de Seine - Université Paris Cité
+  institution: ""
+  city: Paris
+  field: ""
+  confidence: ""
+  officialUrl: https://u-pariscite.fr/
+  todo: "website candidate from parent institution \"Université Paris Cité\" in the ESR register, not this site's own page: confirm it, then set info_kind: official"

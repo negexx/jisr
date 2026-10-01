@@ -1,0 +1,24 @@
+slug: de-hochschule-fur-technik-wirtschaft-und-ku-q1622216
+name: Hochschule für Technik, Wirtschaft und Kultur Leipzig
+country: DE
+city:
+  slug: leipzig
+  name: Leipzig
+type: null
+website: https://www.htwk-leipzig.de/en/htwk-leipzig/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1622216
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-technik-wirtschaft-und-ku-q1622216
+  name: Hochschule für Technik, Wirtschaft und Kultur Leipzig
+  institution: ""
+  city: Leipzig
+  field: ""
+  confidence: ""
+  officialUrl: https://www.htwk-leipzig.de/en/htwk-leipzig/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

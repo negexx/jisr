@@ -1,0 +1,24 @@
+slug: fr-institution-des-chartreux-0690564n
+name: Institution des Chartreux
+country: FR
+city:
+  slug: lyon
+  name: Lyon
+type: private
+website: https://www.leschartreux.com/
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-institution-des-chartreux-0690564n
+  name: Institution des Chartreux
+  institution: ""
+  city: Lyon
+  field: ""
+  confidence: ""
+  officialUrl: https://www.leschartreux.com/
+  todo: "website candidate from Wikidata (UAI match), not an official register: confirm it, then set info_kind: official"

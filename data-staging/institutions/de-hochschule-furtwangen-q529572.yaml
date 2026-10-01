@@ -1,0 +1,24 @@
+slug: de-hochschule-furtwangen-q529572
+name: Hochschule Furtwangen
+country: DE
+city:
+  slug: furtwangen-im-schwarzwald
+  name: Furtwangen im Schwarzwald
+type: null
+website: https://www.hs-furtwangen.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q529572
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-furtwangen-q529572
+  name: Hochschule Furtwangen
+  institution: ""
+  city: Furtwangen im Schwarzwald
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-furtwangen.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

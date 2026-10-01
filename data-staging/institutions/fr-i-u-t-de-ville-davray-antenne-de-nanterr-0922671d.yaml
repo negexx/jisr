@@ -1,0 +1,24 @@
+slug: fr-i-u-t-de-ville-davray-antenne-de-nanterr-0922671d
+name: I.U.T de Ville d'Avray - Antenne de Nanterre
+country: FR
+city:
+  slug: nanterre
+  name: Nanterre
+type: public
+website: null
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-i-u-t-de-ville-davray-antenne-de-nanterr-0922671d
+  name: I.U.T de Ville d'Avray - Antenne de Nanterre
+  institution: ""
+  city: Nanterre
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "website missing: find the official https site, then set info_kind: official"

@@ -1,0 +1,24 @@
+slug: fr-i-u-t-de-tremblay-en-france-paris-8-0932086m
+name: I.U.T de Tremblay-en-France - Paris 8
+country: FR
+city:
+  slug: tremblay-en-france
+  name: Tremblay-en-France
+type: public
+website: null
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-i-u-t-de-tremblay-en-france-paris-8-0932086m
+  name: I.U.T de Tremblay-en-France - Paris 8
+  institution: ""
+  city: Tremblay-en-France
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "website missing: find the official https site, then set info_kind: official"

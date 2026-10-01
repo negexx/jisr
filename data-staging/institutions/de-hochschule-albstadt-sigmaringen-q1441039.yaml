@@ -1,0 +1,22 @@
+slug: de-hochschule-albstadt-sigmaringen-q1441039
+name: Hochschule Albstadt-Sigmaringen
+country: DE
+city: null
+type: null
+website: https://www.hs-albsig.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1441039
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-albstadt-sigmaringen-q1441039
+  name: Hochschule Albstadt-Sigmaringen
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-albsig.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

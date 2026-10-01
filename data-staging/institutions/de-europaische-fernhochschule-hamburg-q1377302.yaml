@@ -1,0 +1,22 @@
+slug: de-europaische-fernhochschule-hamburg-q1377302
+name: Europäische Fernhochschule Hamburg
+country: DE
+city: null
+type: null
+website: https://www.euro-fh.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1377302
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-europaische-fernhochschule-hamburg-q1377302
+  name: Europäische Fernhochschule Hamburg
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.euro-fh.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

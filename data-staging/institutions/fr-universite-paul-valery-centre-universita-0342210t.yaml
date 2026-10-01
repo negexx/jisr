@@ -1,0 +1,24 @@
+slug: fr-universite-paul-valery-centre-universita-0342210t
+name: Université Paul Valery - Centre Universitaire Du Guesclin - Béziers
+country: FR
+city:
+  slug: beziers
+  name: Béziers
+type: public
+website: null
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-universite-paul-valery-centre-universita-0342210t
+  name: Université Paul Valery - Centre Universitaire Du Guesclin - Béziers
+  institution: ""
+  city: Béziers
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "website missing: find the official https site, then set info_kind: official"

@@ -1,0 +1,24 @@
+slug: de-martin-luther-universitat-halle-wittenbe-q32120
+name: Martin-Luther-Universität Halle-Wittenberg
+country: DE
+city:
+  slug: halle-saale
+  name: Halle (Saale)
+type: null
+website: https://www.uni-halle.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q32120
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-martin-luther-universitat-halle-wittenbe-q32120
+  name: Martin-Luther-Universität Halle-Wittenberg
+  institution: ""
+  city: Halle (Saale)
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-halle.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

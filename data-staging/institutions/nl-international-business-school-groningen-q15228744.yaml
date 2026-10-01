@@ -1,0 +1,22 @@
+slug: nl-international-business-school-groningen-q15228744
+name: International Business School Groningen
+country: NL
+city: null
+type: null
+website: null
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q15228744
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-international-business-school-groningen-q15228744
+  name: International Business School Groningen
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing; Wikidata website is not https: http://www.hanze.nl/home/International/Schools/International+Business+School/"

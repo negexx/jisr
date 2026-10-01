@@ -1,0 +1,6 @@
+code: MA
+name:
+  fr: { text: Maroc, status: reviewed }
+  en: { text: Morocco, status: reviewed }
+  ar: { text: المغرب, status: draft }
+currency: MAD

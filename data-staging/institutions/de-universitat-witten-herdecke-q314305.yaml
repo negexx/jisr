@@ -1,0 +1,24 @@
+slug: de-universitat-witten-herdecke-q314305
+name: Universität Witten/Herdecke
+country: DE
+city:
+  slug: witten
+  name: Witten
+type: null
+website: https://www.uni-wh.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q314305
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-universitat-witten-herdecke-q314305
+  name: Universität Witten/Herdecke
+  institution: ""
+  city: Witten
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-wh.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

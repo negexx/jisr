@@ -1,0 +1,56 @@
+slug: fr-universite-jean-moulin-lyon-3-0692437z-licence-gestion-43399
+institution: fr-universite-jean-moulin-lyon-3-0692437z
+country: FR
+city: lyon
+field: business-economics
+level: bachelor
+name: Licence - Gestion - Parcours Business Management (dispensée partiellement en anglais)
+summary:
+  fr:
+    text: Licence - Gestion - Parcours Business Management (dispensée partiellement en anglais), Université Jean Moulin Lyon 3 (Lyon). Fiche officielle Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43399&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43399&typeBac=0&originePc=0
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-universite-jean-moulin-lyon-3-0692437z-licence-gestion-43399
+  name: Licence - Gestion - Parcours Business Management (dispensée partiellement en anglais)
+  institution: Université Jean Moulin Lyon 3
+  city: Lyon
+  field: business-economics
+  confidence: high
+  officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43399&typeBac=0&originePc=0
+  todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind)"

@@ -1,0 +1,22 @@
+slug: de-evangelische-hochschule-fur-kirchenmusik-q1380222
+name: Evangelische Hochschule für Kirchenmusik Halle
+country: DE
+city: null
+type: null
+website: https://www.ehk-halle.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1380222
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-evangelische-hochschule-fur-kirchenmusik-q1380222
+  name: Evangelische Hochschule für Kirchenmusik Halle
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ehk-halle.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

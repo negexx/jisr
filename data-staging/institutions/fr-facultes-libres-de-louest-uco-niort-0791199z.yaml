@@ -1,0 +1,24 @@
+slug: fr-facultes-libres-de-louest-uco-niort-0791199z
+name: Facultés libres de l'ouest UCO - Niort
+country: FR
+city:
+  slug: niort
+  name: Niort
+type: private
+website: null
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-facultes-libres-de-louest-uco-niort-0791199z
+  name: Facultés libres de l'ouest UCO - Niort
+  institution: ""
+  city: Niort
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "website missing: find the official https site, then set info_kind: official"

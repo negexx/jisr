@@ -1,0 +1,24 @@
+slug: fr-aix-marseille-universite-site-de-marseil-0134316w
+name: Aix-Marseille Université - Site de Marseille Saint-Jérôme
+country: FR
+city:
+  slug: marseille
+  name: Marseille
+type: public
+website: https://www.univ-amu.fr/
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-aix-marseille-universite-site-de-marseil-0134316w
+  name: Aix-Marseille Université - Site de Marseille Saint-Jérôme
+  institution: ""
+  city: Marseille
+  field: ""
+  confidence: ""
+  officialUrl: https://www.univ-amu.fr/
+  todo: "website candidate from parent institution \"Aix-Marseille Université\" in the ESR register, not this site's own page: confirm it, then set info_kind: official"

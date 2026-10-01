@@ -1,0 +1,24 @@
+slug: fr-universite-bourgogne-europe-ex-universit-0212296g
+name: Université Bourgogne Europe (ex université de Bourgogne)
+country: FR
+city:
+  slug: dijon
+  name: Dijon
+type: public
+website: https://www.ube.fr/
+source: esr
+info_kind: official
+sources:
+  esr:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-principaux-etablissements-enseignement-superieur/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-universite-bourgogne-europe-ex-universit-0212296g
+  name: Université Bourgogne Europe (ex université de Bourgogne)
+  institution: ""
+  city: Dijon
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ube.fr/
+  todo: ""

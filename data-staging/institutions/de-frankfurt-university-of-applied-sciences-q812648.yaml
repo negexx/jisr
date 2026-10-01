@@ -1,0 +1,24 @@
+slug: de-frankfurt-university-of-applied-sciences-q812648
+name: Frankfurt University of Applied Sciences
+country: DE
+city:
+  slug: frankfurt-am-main
+  name: Frankfurt am Main
+type: null
+website: https://www.frankfurt-university.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q812648
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-frankfurt-university-of-applied-sciences-q812648
+  name: Frankfurt University of Applied Sciences
+  institution: ""
+  city: Frankfurt am Main
+  field: ""
+  confidence: ""
+  officialUrl: https://www.frankfurt-university.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

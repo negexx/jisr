@@ -39,3 +39,30 @@ pnpm data:build              # publish immutable JSON snapshots (runs after data
 ```
 
 `data:check` fails on invalid or provenance-less records, dangling references, unknown keys, future dates, a non-null program `tuition` that is not `official`, and `complete` coverage with no rules. Aging and stale facts are reported, and only fail the run under `--strict`. It also warns (without failing) about unused sources, `complete` coverage with a `manual_check` rule, a `complete` program that has teaching languages but no `language_proficiency` rule, a `language_proficiency` rule that requires a certificate but lists no `acceptedTests`, and a cost profile whose `city` matches no institution city.
+
+## Importing candidates (`data-staging/`)
+
+Official bulk datasets are pulled into `data-staging/`, never straight into `data/`. A staged record has the exact shape of a `data/` record, plus a `_review` block, and every `last_verified_at` is `null`. Any fact the importer could not read (and any value it only guessed, such as a website from Wikidata) carries `info_kind: TODO_read_source`, which is deliberately not valid: `data:promote` refuses the record until a human has read the source and chosen a value, or an explicit `null` for "not published". `data-staging/` is committed as the review queue; it is not read by `data:check` or the build.
+
+```
+pnpm data:import france          # Parcoursup open data (Licence + BUT, CS/engineering/business) + institutions
+pnpm data:import institutions    # German and Dutch institution candidates from Wikidata
+pnpm data:import                 # all sources; keeps staged files (--overwrite replaces them and clears their approval; --refresh bypasses the HTTP cache)
+pnpm data:promote --confirm-human-read --verified-on YYYY-MM-DD
+```
+
+1. Open `data-staging/REVIEW.csv` (one row per record: name, institution, city, field, confidence, official link, what is still to check). Read the source, fix the staged YAML (replace each `TODO_read_source`, fill the website/type), then write `y` in the `approved` column. Re-importing never keeps an approval for a file it rewrote.
+2. `data:promote` takes every approved row, stamps the date you pass as `last_verified_at` on every source, validates the record against its schema, and moves it into `data/`. A record that is still invalid is skipped and stays staged; an existing `data/` record is never overwritten. Pass the flags only after you have read the sources.
+3. `pnpm data:check` then reports dangling references (promote a programme's institution too).
+
+What each source provides, and what stays for a human:
+
+| Source | Provides | Left for a human (read the programme page) |
+|---|---|---|
+| Parcoursup open data (fr-esr-parcoursup, Licence ouverte 2.0) | programme name, institution, city, public/private, link to the official Parcoursup page (used as the programme's source) | duration, languages, tuition, intakes, documents, requirement rules, the application channel for Moroccan applicants |
+| ESR register of establishments (same publisher) | institution website for an exact UAI match: promotable as is | other institutions get a website candidate (Wikidata or the parent university, e.g. an IUT campus) flagged for confirmation |
+| Wikidata (CC0), German and Dutch institutions | name in the local language, city, website candidate, ROR id | everything: it is not an official source, so every record needs an official page and `info_kind: official` |
+
+Field assignment for French programmes is an exact-label table in `scripts/import/fields.ts`; `confidence: low` rows are judgement calls. The HTTP cache lives in `.cache/import/` (git-ignored).
+
+Known gaps: no bulk official programme dataset was reachable for Germany (Hochschulkompass forbids crawling its search in robots.txt; the DAAD database is a JavaScript app with no public API) or the Netherlands (DUO/Studiekeuze open data was not reachable), so German and Dutch programmes, all tuition fees, living costs and scholarships are not imported.

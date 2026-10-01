@@ -1,0 +1,24 @@
+slug: fr-i-u-t-de-montreuil-0932214b
+name: I.U.T. de Montreuil
+country: FR
+city:
+  slug: montreuil
+  name: Montreuil
+type: public
+website: null
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-i-u-t-de-montreuil-0932214b
+  name: I.U.T. de Montreuil
+  institution: ""
+  city: Montreuil
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "website missing: find the official https site, then set info_kind: official"

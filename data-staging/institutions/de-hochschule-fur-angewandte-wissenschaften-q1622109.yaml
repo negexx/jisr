@@ -1,0 +1,22 @@
+slug: de-hochschule-fur-angewandte-wissenschaften-q1622109
+name: Hochschule für Angewandte Wissenschaften Hof
+country: DE
+city: null
+type: null
+website: https://www.hof-university.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1622109
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-angewandte-wissenschaften-q1622109
+  name: Hochschule für Angewandte Wissenschaften Hof
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hof-university.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

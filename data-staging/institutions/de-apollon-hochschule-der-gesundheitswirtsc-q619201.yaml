@@ -1,0 +1,22 @@
+slug: de-apollon-hochschule-der-gesundheitswirtsc-q619201
+name: Apollon Hochschule der Gesundheitswirtschaft
+country: DE
+city: null
+type: null
+website: https://www.apollon-hochschule.de/die-hochschule/die-hochschule/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q619201
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-apollon-hochschule-der-gesundheitswirtsc-q619201
+  name: Apollon Hochschule der Gesundheitswirtschaft
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.apollon-hochschule.de/die-hochschule/die-hochschule/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

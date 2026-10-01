@@ -1,0 +1,22 @@
+slug: de-staatliche-hochschule-fur-gestaltung-kar-q896116
+name: Staatliche Hochschule für Gestaltung Karlsruhe
+country: DE
+city: null
+type: null
+website: https://hfg-karlsruhe.de/en/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q896116
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-staatliche-hochschule-fur-gestaltung-kar-q896116
+  name: Staatliche Hochschule für Gestaltung Karlsruhe
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://hfg-karlsruhe.de/en/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

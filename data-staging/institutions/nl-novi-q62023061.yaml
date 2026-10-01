@@ -1,0 +1,22 @@
+slug: nl-novi-q62023061
+name: NOVI
+country: NL
+city: null
+type: null
+website: https://www.novi.nl
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q62023061
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-novi-q62023061
+  name: NOVI
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.novi.nl
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

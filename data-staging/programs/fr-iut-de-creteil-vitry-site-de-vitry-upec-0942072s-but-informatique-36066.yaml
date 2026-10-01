@@ -1,0 +1,56 @@
+slug: fr-iut-de-creteil-vitry-site-de-vitry-upec-0942072s-but-informatique-36066
+institution: fr-iut-de-creteil-vitry-site-de-vitry-upec-0942072s
+country: FR
+city: vitry-sur-seine
+field: computer-science
+level: bachelor
+name: BUT - Informatique
+summary:
+  fr:
+    text: BUT - Informatique, IUT de Créteil Vitry (Site de Vitry) - UPEC (Vitry-sur-Seine). Fiche officielle Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=36066&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=36066&typeBac=0&originePc=0
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-iut-de-creteil-vitry-site-de-vitry-upec-0942072s-but-informatique-36066
+  name: BUT - Informatique
+  institution: IUT de Créteil Vitry (Site de Vitry) - UPEC
+  city: Vitry-sur-Seine
+  field: computer-science
+  confidence: high
+  officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=36066&typeBac=0&originePc=0
+  todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind)"

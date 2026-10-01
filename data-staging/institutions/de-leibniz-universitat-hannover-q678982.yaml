@@ -1,0 +1,24 @@
+slug: de-leibniz-universitat-hannover-q678982
+name: Leibniz Universität Hannover
+country: DE
+city:
+  slug: hannover
+  name: Hannover
+type: null
+website: https://www.uni-hannover.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q678982
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-leibniz-universitat-hannover-q678982
+  name: Leibniz Universität Hannover
+  institution: ""
+  city: Hannover
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-hannover.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

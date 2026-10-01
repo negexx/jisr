@@ -1,0 +1,24 @@
+slug: fr-i-u-t-de-mulhouse-0680169p
+name: I.U.T. de Mulhouse
+country: FR
+city:
+  slug: mulhouse
+  name: Mulhouse
+type: public
+website: null
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-i-u-t-de-mulhouse-0680169p
+  name: I.U.T. de Mulhouse
+  institution: ""
+  city: Mulhouse
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "website missing: find the official https site, then set info_kind: official"

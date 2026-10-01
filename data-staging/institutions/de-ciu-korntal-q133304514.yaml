@@ -1,0 +1,24 @@
+slug: de-ciu-korntal-q133304514
+name: CIU Korntal
+country: DE
+city:
+  slug: korntal-munchingen
+  name: Korntal-Münchingen
+type: null
+website: https://www.ciu.edu/ciu-korntal
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q133304514
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-ciu-korntal-q133304514
+  name: CIU Korntal
+  institution: ""
+  city: Korntal-Münchingen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ciu.edu/ciu-korntal
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

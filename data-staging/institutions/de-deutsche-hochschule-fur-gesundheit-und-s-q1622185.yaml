@@ -1,0 +1,24 @@
+slug: de-deutsche-hochschule-fur-gesundheit-und-s-q1622185
+name: Deutsche Hochschule für Gesundheit und Sport
+country: DE
+city:
+  slug: berlin
+  name: Berlin
+type: null
+website: https://www.dhgs-hochschule.de
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1622185
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-deutsche-hochschule-fur-gesundheit-und-s-q1622185
+  name: Deutsche Hochschule für Gesundheit und Sport
+  institution: ""
+  city: Berlin
+  field: ""
+  confidence: ""
+  officialUrl: https://www.dhgs-hochschule.de
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

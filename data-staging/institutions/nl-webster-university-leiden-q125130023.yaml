@@ -1,0 +1,22 @@
+slug: nl-webster-university-leiden-q125130023
+name: Webster University Leiden
+country: NL
+city: null
+type: null
+website: https://www.webster.nl/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q125130023
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-webster-university-leiden-q125130023
+  name: Webster University Leiden
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.webster.nl/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

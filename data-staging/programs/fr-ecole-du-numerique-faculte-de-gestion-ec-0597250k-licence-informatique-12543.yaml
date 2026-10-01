@@ -1,0 +1,56 @@
+slug: fr-ecole-du-numerique-faculte-de-gestion-ec-0597250k-licence-informatique-12543
+institution: fr-ecole-du-numerique-faculte-de-gestion-ec-0597250k
+country: FR
+city: lille
+field: computer-science
+level: bachelor
+name: Licence - Informatique - Parcours Sciences du numérique
+summary:
+  fr:
+    text: Licence - Informatique - Parcours Sciences du numérique, Ecole Du Numérique - Faculté de Gestion, Economie - Sciences de l'Institut Catholique de LILLE (Lille). Fiche officielle Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12543&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12543&typeBac=0&originePc=0
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-ecole-du-numerique-faculte-de-gestion-ec-0597250k-licence-informatique-12543
+  name: Licence - Informatique - Parcours Sciences du numérique
+  institution: Ecole Du Numérique - Faculté de Gestion, Economie - Sciences de l'Institut Catholique de LILLE
+  city: Lille
+  field: computer-science
+  confidence: high
+  officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12543&typeBac=0&originePc=0
+  todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind)"

@@ -1,0 +1,24 @@
+slug: de-staatliche-akademie-der-bildenden-kunste-q2324294
+name: Staatliche Akademie der Bildenden Künste Stuttgart
+country: DE
+city:
+  slug: stuttgart
+  name: Stuttgart
+type: null
+website: https://www.abk-stuttgart.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q2324294
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-staatliche-akademie-der-bildenden-kunste-q2324294
+  name: Staatliche Akademie der Bildenden Künste Stuttgart
+  institution: ""
+  city: Stuttgart
+  field: ""
+  confidence: ""
+  officialUrl: https://www.abk-stuttgart.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

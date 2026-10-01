@@ -1,0 +1,24 @@
+slug: fr-i-u-t-angouleme-0161125l
+name: I.U.T. Angoulême
+country: FR
+city:
+  slug: angouleme
+  name: Angoulême
+type: public
+website: null
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-i-u-t-angouleme-0161125l
+  name: I.U.T. Angoulême
+  institution: ""
+  city: Angoulême
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "website missing: find the official https site, then set info_kind: official"

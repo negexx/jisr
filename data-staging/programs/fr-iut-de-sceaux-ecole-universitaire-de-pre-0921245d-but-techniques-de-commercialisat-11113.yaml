@@ -1,0 +1,56 @@
+slug: fr-iut-de-sceaux-ecole-universitaire-de-pre-0921245d-but-techniques-de-commercialisat-11113
+institution: fr-iut-de-sceaux-ecole-universitaire-de-pre-0921245d
+country: FR
+city: sceaux
+field: business-economics
+level: bachelor
+name: BUT - Techniques de commercialisation
+summary:
+  fr:
+    text: BUT - Techniques de commercialisation, IUT de Sceaux-Ecole universitaire de premier cycle-Université Paris-Saclay. (Sceaux). Fiche officielle Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11113&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11113&typeBac=0&originePc=0
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-iut-de-sceaux-ecole-universitaire-de-pre-0921245d-but-techniques-de-commercialisat-11113
+  name: BUT - Techniques de commercialisation
+  institution: IUT de Sceaux-Ecole universitaire de premier cycle-Université Paris-Saclay.
+  city: Sceaux
+  field: business-economics
+  confidence: high
+  officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11113&typeBac=0&originePc=0
+  todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind)"

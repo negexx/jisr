@@ -1,0 +1,22 @@
+slug: de-deutsche-internationale-universitat-berl-q122865100
+name: Deutsche Internationale Universität Berlin
+country: DE
+city: null
+type: null
+website: https://giu-berlin.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q122865100
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-deutsche-internationale-universitat-berl-q122865100
+  name: Deutsche Internationale Universität Berlin
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://giu-berlin.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

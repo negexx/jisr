@@ -1,0 +1,24 @@
+slug: de-technische-hochschule-mannheim-q321369
+name: Technische Hochschule Mannheim
+country: DE
+city:
+  slug: mannheim
+  name: Mannheim
+type: null
+website: https://www.hs-mannheim.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q321369
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-hochschule-mannheim-q321369
+  name: Technische Hochschule Mannheim
+  institution: ""
+  city: Mannheim
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-mannheim.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

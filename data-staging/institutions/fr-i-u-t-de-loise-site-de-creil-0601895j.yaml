@@ -1,0 +1,24 @@
+slug: fr-i-u-t-de-loise-site-de-creil-0601895j
+name: I.U.T de l'Oise - Site de Creil
+country: FR
+city:
+  slug: creil
+  name: Creil
+type: public
+website: null
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-i-u-t-de-loise-site-de-creil-0601895j
+  name: I.U.T de l'Oise - Site de Creil
+  institution: ""
+  city: Creil
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "website missing: find the official https site, then set info_kind: official"

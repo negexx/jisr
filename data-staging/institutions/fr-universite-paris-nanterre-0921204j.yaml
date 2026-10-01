@@ -1,0 +1,24 @@
+slug: fr-universite-paris-nanterre-0921204j
+name: Université Paris Nanterre
+country: FR
+city:
+  slug: nanterre
+  name: Nanterre
+type: public
+website: https://www.parisnanterre.fr/
+source: esr
+info_kind: official
+sources:
+  esr:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-principaux-etablissements-enseignement-superieur/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-universite-paris-nanterre-0921204j
+  name: Université Paris Nanterre
+  institution: ""
+  city: Nanterre
+  field: ""
+  confidence: ""
+  officialUrl: https://www.parisnanterre.fr/
+  todo: ""

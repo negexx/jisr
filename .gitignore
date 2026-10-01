@@ -45,3 +45,6 @@ yarn-error.log*
 # Impeccable engine binary (downloaded by the launcher, do not commit)
 .claude/skills/impeccable/scripts/bin/
 /blob-report/
+
+# Importer HTTP cache (pnpm data:import)
+/.cache/

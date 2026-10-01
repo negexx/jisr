@@ -1,0 +1,56 @@
+slug: fr-i-u-t-poitiers-site-chatellerault-0861283c-but-reseaux-et-telecommunication-10655
+institution: fr-i-u-t-poitiers-site-chatellerault-0861283c
+country: FR
+city: chatellerault
+field: computer-science
+level: bachelor
+name: BUT - Réseaux et télécommunications
+summary:
+  fr:
+    text: BUT - Réseaux et télécommunications, I.U.T. Poitiers (site Chatellerault) (Châtellerault). Fiche officielle Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10655&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10655&typeBac=0&originePc=0
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-i-u-t-poitiers-site-chatellerault-0861283c-but-reseaux-et-telecommunication-10655
+  name: BUT - Réseaux et télécommunications
+  institution: I.U.T. Poitiers (site Chatellerault)
+  city: Châtellerault
+  field: computer-science
+  confidence: high
+  officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10655&typeBac=0&originePc=0
+  todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind)"

@@ -1,0 +1,56 @@
+slug: fr-i-u-t-de-besancon-antenne-de-vesoul-0701048j-but-genie-industriel-et-maintena-8604
+institution: fr-i-u-t-de-besancon-antenne-de-vesoul-0701048j
+country: FR
+city: vesoul
+field: engineering
+level: bachelor
+name: BUT - Génie industriel et maintenance
+summary:
+  fr:
+    text: BUT - Génie industriel et maintenance, I.U.T de Besançon - Antenne de Vesoul (Vesoul). Fiche officielle Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8604&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8604&typeBac=0&originePc=0
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-i-u-t-de-besancon-antenne-de-vesoul-0701048j-but-genie-industriel-et-maintena-8604
+  name: BUT - Génie industriel et maintenance
+  institution: I.U.T de Besançon - Antenne de Vesoul
+  city: Vesoul
+  field: engineering
+  confidence: high
+  officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8604&typeBac=0&originePc=0
+  todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind)"

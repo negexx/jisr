@@ -1,0 +1,24 @@
+slug: de-technische-universitat-ilmenau-q129195
+name: Technische Universität Ilmenau
+country: DE
+city:
+  slug: ilmenau
+  name: Ilmenau
+type: null
+website: https://www.tu-ilmenau.de
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q129195
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-universitat-ilmenau-q129195
+  name: Technische Universität Ilmenau
+  institution: ""
+  city: Ilmenau
+  field: ""
+  confidence: ""
+  officialUrl: https://www.tu-ilmenau.de
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

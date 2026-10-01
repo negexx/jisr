@@ -1,0 +1,22 @@
+slug: de-technische-universitat-darmstadt-q310695
+name: Technische Universität Darmstadt
+country: DE
+city: null
+type: null
+website: https://www.tu-darmstadt.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q310695
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-technische-universitat-darmstadt-q310695
+  name: Technische Universität Darmstadt
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.tu-darmstadt.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

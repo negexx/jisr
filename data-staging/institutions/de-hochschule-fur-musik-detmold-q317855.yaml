@@ -1,0 +1,24 @@
+slug: de-hochschule-fur-musik-detmold-q317855
+name: Hochschule für Musik Detmold
+country: DE
+city:
+  slug: detmold
+  name: Detmold
+type: null
+website: https://www.hfm-detmold.de
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q317855
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-musik-detmold-q317855
+  name: Hochschule für Musik Detmold
+  institution: ""
+  city: Detmold
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hfm-detmold.de
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

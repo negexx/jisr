@@ -1,0 +1,22 @@
+slug: de-allensbach-hochschule-q2586224
+name: Allensbach Hochschule
+country: DE
+city: null
+type: null
+website: null
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q2586224
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-allensbach-hochschule-q2586224
+  name: Allensbach Hochschule
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing; Wikidata website is not https: http://www.allensbach-hochschule.de"

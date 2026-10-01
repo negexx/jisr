@@ -1,0 +1,56 @@
+slug: fr-facultes-libres-de-louest-uco-bretagne-n-0221844k-licence-sciences-et-technologies-36524
+institution: fr-facultes-libres-de-louest-uco-bretagne-n-0221844k
+country: FR
+city: guingamp
+field: engineering
+level: bachelor
+name: Licence - Sciences et technologies
+summary:
+  fr:
+    text: Licence - Sciences et technologies, Facultés libres de l'ouest - UCO - Bretagne Nord (Guingamp). Fiche officielle Parcoursup.
+    status: draft
+officialUrl: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+durationYears:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-facultes-libres-de-louest-uco-bretagne-n-0221844k-licence-sciences-et-technologies-36524
+  name: Licence - Sciences et technologies
+  institution: Facultés libres de l'ouest - UCO - Bretagne Nord
+  city: Guingamp
+  field: engineering
+  confidence: low
+  officialUrl: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+  todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind); field is a judgement call: check the programme content"

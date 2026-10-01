@@ -1,0 +1,22 @@
+slug: de-katholische-hochschule-fur-sozialwesen-b-q1736348
+name: Katholische Hochschule für Sozialwesen Berlin
+country: DE
+city: null
+type: null
+website: https://www.khsb-berlin.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1736348
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-katholische-hochschule-fur-sozialwesen-b-q1736348
+  name: Katholische Hochschule für Sozialwesen Berlin
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.khsb-berlin.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

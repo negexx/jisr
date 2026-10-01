@@ -1,0 +1,24 @@
+slug: de-ostfalia-hochschule-fur-angewandte-wisse-q2035460
+name: Ostfalia Hochschule für angewandte Wissenschaften
+country: DE
+city:
+  slug: wolfenbuttel
+  name: Wolfenbüttel
+type: null
+website: null
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q2035460
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-ostfalia-hochschule-fur-angewandte-wisse-q2035460
+  name: Ostfalia Hochschule für angewandte Wissenschaften
+  institution: ""
+  city: Wolfenbüttel
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; Wikidata website is not https: http://www.ostfalia.de"

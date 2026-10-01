@@ -1,0 +1,22 @@
+slug: nl-prins-claus-conservatorium-q2110477
+name: Prins Claus Conservatorium
+country: NL
+city: null
+type: null
+website: https://www.hanze.nl/eng/education/art/prince-claus-conservatoire
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q2110477
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-prins-claus-conservatorium-q2110477
+  name: Prins Claus Conservatorium
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hanze.nl/eng/education/art/prince-claus-conservatoire
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

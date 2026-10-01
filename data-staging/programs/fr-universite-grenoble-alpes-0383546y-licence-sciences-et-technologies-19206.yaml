@@ -1,0 +1,56 @@
+slug: fr-universite-grenoble-alpes-0383546y-licence-sciences-et-technologies-19206
+institution: fr-universite-grenoble-alpes-0383546y
+country: FR
+city: saint-martin-dheres
+field: engineering
+level: bachelor
+name: Double licence - Sciences et technologies / Musicologie - Physique et musicologie
+summary:
+  fr:
+    text: Double licence - Sciences et technologies / Musicologie - Physique et musicologie, Université Grenoble Alpes (Saint-Martin-d'Hères). Fiche officielle Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19206&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19206&typeBac=0&originePc=0
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-universite-grenoble-alpes-0383546y-licence-sciences-et-technologies-19206
+  name: Double licence - Sciences et technologies / Musicologie - Physique et musicologie
+  institution: Université Grenoble Alpes
+  city: Saint-Martin-d'Hères
+  field: engineering
+  confidence: low
+  officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19206&typeBac=0&originePc=0
+  todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind); field is a judgement call: check the programme content"

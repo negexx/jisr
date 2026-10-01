@@ -1,0 +1,24 @@
+slug: de-hochschule-dusseldorf-q322886
+name: Hochschule Düsseldorf
+country: DE
+city:
+  slug: dusseldorf
+  name: Düsseldorf
+type: null
+website: https://www.hs-duesseldorf.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q322886
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-dusseldorf-q322886
+  name: Hochschule Düsseldorf
+  institution: ""
+  city: Düsseldorf
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-duesseldorf.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

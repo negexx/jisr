@@ -1,0 +1,22 @@
+slug: nl-hanzehogeschool-groningen-q649163
+name: Hanzehogeschool Groningen
+country: NL
+city: null
+type: null
+website: https://www.hanze.nl/eng
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q649163
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-hanzehogeschool-groningen-q649163
+  name: Hanzehogeschool Groningen
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hanze.nl/eng
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

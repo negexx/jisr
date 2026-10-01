@@ -1,0 +1,24 @@
+slug: de-hochschule-fur-kommunikation-und-gestalt-q21040608
+name: Hochschule für Kommunikation und Gestaltung
+country: DE
+city:
+  slug: stuttgart
+  name: Stuttgart
+type: null
+website: null
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q21040608
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-kommunikation-und-gestalt-q21040608
+  name: Hochschule für Kommunikation und Gestaltung
+  institution: ""
+  city: Stuttgart
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; Wikidata website is not https: http://www.hfk-bw.de/"

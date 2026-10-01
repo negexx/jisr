@@ -1,0 +1,24 @@
+slug: de-universitat-konstanz-q835440
+name: Universität Konstanz
+country: DE
+city:
+  slug: konstanz
+  name: Konstanz
+type: null
+website: https://www.uni-konstanz.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q835440
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-universitat-konstanz-q835440
+  name: Universität Konstanz
+  institution: ""
+  city: Konstanz
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-konstanz.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

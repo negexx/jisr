@@ -1,0 +1,24 @@
+slug: de-universitat-bielefeld-q24382
+name: Universität Bielefeld
+country: DE
+city:
+  slug: bielefeld
+  name: Bielefeld
+type: null
+website: https://www.uni-bielefeld.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q24382
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-universitat-bielefeld-q24382
+  name: Universität Bielefeld
+  institution: ""
+  city: Bielefeld
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-bielefeld.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

@@ -1,0 +1,24 @@
+slug: fr-campus-de-bourg-en-bresse-universite-lyo-0011329p
+name: Campus de Bourg-en-Bresse - Université Lyon 3
+country: FR
+city:
+  slug: bourg-en-bresse
+  name: Bourg-en-Bresse
+type: public
+website: null
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-campus-de-bourg-en-bresse-universite-lyo-0011329p
+  name: Campus de Bourg-en-Bresse - Université Lyon 3
+  institution: ""
+  city: Bourg-en-Bresse
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "website missing: find the official https site, then set info_kind: official"

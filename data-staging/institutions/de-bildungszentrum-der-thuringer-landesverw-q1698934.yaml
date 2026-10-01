@@ -1,0 +1,22 @@
+slug: de-bildungszentrum-der-thuringer-landesverw-q1698934
+name: Bildungszentrum der Thüringer Landesverwaltung Gotha
+country: DE
+city: null
+type: null
+website: https://bildungszentrum.thueringen.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1698934
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-bildungszentrum-der-thuringer-landesverw-q1698934
+  name: Bildungszentrum der Thüringer Landesverwaltung Gotha
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://bildungszentrum.thueringen.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

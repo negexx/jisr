@@ -1,0 +1,24 @@
+slug: fr-i-u-t-de-nice-antenne-de-cannes-0061841u
+name: I.U.T de Nice - Antenne de Cannes
+country: FR
+city:
+  slug: cannes
+  name: Cannes
+type: public
+website: null
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-i-u-t-de-nice-antenne-de-cannes-0061841u
+  name: I.U.T de Nice - Antenne de Cannes
+  institution: ""
+  city: Cannes
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "website missing: find the official https site, then set info_kind: official"

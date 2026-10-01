@@ -1,0 +1,24 @@
+slug: de-institut-fur-kunstlerische-forschung-und-q122762888
+name: Institut für künstlerische Forschung und Bildung München
+country: DE
+city:
+  slug: bayern
+  name: Bayern
+type: null
+website: https://mima-university.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q122762888
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-institut-fur-kunstlerische-forschung-und-q122762888
+  name: Institut für künstlerische Forschung und Bildung München
+  institution: ""
+  city: Bayern
+  field: ""
+  confidence: ""
+  officialUrl: https://mima-university.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

@@ -1,0 +1,24 @@
+slug: de-hochschule-der-bayerischen-wirtschaft-q21036325
+name: Hochschule der Bayerischen Wirtschaft
+country: DE
+city:
+  slug: bayern
+  name: Bayern
+type: null
+website: null
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q21036325
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-der-bayerischen-wirtschaft-q21036325
+  name: Hochschule der Bayerischen Wirtschaft
+  institution: ""
+  city: Bayern
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; Wikidata website is not https: http://hdbw-hochschule.de"

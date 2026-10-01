@@ -1,0 +1,22 @@
+slug: de-hochschule-fur-angewandte-wissenschaft-t-q896546
+name: Hochschule für Angewandte Wissenschaft/Trier University of Applied Science
+country: DE
+city: null
+type: null
+website: https://www.hochschule-trier.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q896546
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-angewandte-wissenschaft-t-q896546
+  name: Hochschule für Angewandte Wissenschaft/Trier University of Applied Science
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hochschule-trier.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

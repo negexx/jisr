@@ -1,0 +1,24 @@
+slug: de-universitat-hohenheim-q690912
+name: Universität Hohenheim
+country: DE
+city:
+  slug: stuttgart
+  name: Stuttgart
+type: null
+website: https://www.uni-hohenheim.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q690912
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-universitat-hohenheim-q690912
+  name: Universität Hohenheim
+  institution: ""
+  city: Stuttgart
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-hohenheim.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

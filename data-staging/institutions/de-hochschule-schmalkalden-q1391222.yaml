@@ -1,0 +1,24 @@
+slug: de-hochschule-schmalkalden-q1391222
+name: Hochschule Schmalkalden
+country: DE
+city:
+  slug: schmalkalden
+  name: Schmalkalden
+type: null
+website: https://www.hs-schmalkalden.de/en.html
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1391222
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-schmalkalden-q1391222
+  name: Hochschule Schmalkalden
+  institution: ""
+  city: Schmalkalden
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hs-schmalkalden.de/en.html
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

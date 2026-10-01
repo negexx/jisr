@@ -1,0 +1,24 @@
+slug: fr-universite-toulouse-capitole-0313124c
+name: Université Toulouse Capitole
+country: FR
+city:
+  slug: toulouse
+  name: Toulouse
+type: public
+website: https://www.ut-capitole.fr/
+source: esr
+info_kind: official
+sources:
+  esr:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-principaux-etablissements-enseignement-superieur/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-universite-toulouse-capitole-0313124c
+  name: Université Toulouse Capitole
+  institution: ""
+  city: Toulouse
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ut-capitole.fr/
+  todo: ""

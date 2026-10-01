@@ -1,0 +1,22 @@
+slug: de-staatliche-studienakademie-riesa-q96623670
+name: Staatliche Studienakademie Riesa
+country: DE
+city: null
+type: null
+website: https://www.ba-riesa.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q96623670
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-staatliche-studienakademie-riesa-q96623670
+  name: Staatliche Studienakademie Riesa
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ba-riesa.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

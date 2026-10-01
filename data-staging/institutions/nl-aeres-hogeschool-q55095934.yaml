@@ -1,0 +1,22 @@
+slug: nl-aeres-hogeschool-q55095934
+name: Aeres Hogeschool
+country: NL
+city: null
+type: null
+website: https://www.aereshogeschool.nl
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q55095934
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-aeres-hogeschool-q55095934
+  name: Aeres Hogeschool
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.aereshogeschool.nl
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

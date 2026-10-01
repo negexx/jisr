@@ -1,0 +1,22 @@
+slug: de-evangelische-hochschule-ludwigsburg-q1338536
+name: Evangelische Hochschule Ludwigsburg
+country: DE
+city: null
+type: null
+website: https://www.eh-ludwigsburg.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1338536
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-evangelische-hochschule-ludwigsburg-q1338536
+  name: Evangelische Hochschule Ludwigsburg
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.eh-ludwigsburg.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

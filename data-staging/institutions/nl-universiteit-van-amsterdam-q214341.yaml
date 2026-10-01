@@ -1,0 +1,24 @@
+slug: nl-universiteit-van-amsterdam-q214341
+name: Universiteit van Amsterdam
+country: NL
+city:
+  slug: amsterdam
+  name: Amsterdam
+type: null
+website: https://www.uva.nl/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q214341
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-universiteit-van-amsterdam-q214341
+  name: Universiteit van Amsterdam
+  institution: ""
+  city: Amsterdam
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uva.nl/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

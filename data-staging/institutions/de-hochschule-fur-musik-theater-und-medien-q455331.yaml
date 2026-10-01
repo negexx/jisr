@@ -1,0 +1,22 @@
+slug: de-hochschule-fur-musik-theater-und-medien-q455331
+name: Hochschule für Musik, Theater und Medien Hannover
+country: DE
+city: null
+type: null
+website: https://www.hmtm-hannover.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q455331
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-musik-theater-und-medien-q455331
+  name: Hochschule für Musik, Theater und Medien Hannover
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hmtm-hannover.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

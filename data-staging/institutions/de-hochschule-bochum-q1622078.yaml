@@ -1,0 +1,22 @@
+slug: de-hochschule-bochum-q1622078
+name: Hochschule Bochum
+country: DE
+city: null
+type: null
+website: https://www.hochschule-bochum.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1622078
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-bochum-q1622078
+  name: Hochschule Bochum
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hochschule-bochum.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

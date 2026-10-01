@@ -1,0 +1,24 @@
+slug: de-universitat-rostock-q159895
+name: Universität Rostock
+country: DE
+city:
+  slug: hauptgebaude-der-universitat-rostock
+  name: Hauptgebäude der Universität Rostock
+type: null
+website: https://www.uni-rostock.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q159895
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-universitat-rostock-q159895
+  name: Universität Rostock
+  institution: ""
+  city: Hauptgebäude der Universität Rostock
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-rostock.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

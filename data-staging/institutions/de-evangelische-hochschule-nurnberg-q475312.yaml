@@ -1,0 +1,24 @@
+slug: de-evangelische-hochschule-nurnberg-q475312
+name: Evangelische Hochschule Nürnberg
+country: DE
+city:
+  slug: nurnberg
+  name: Nürnberg
+type: null
+website: https://www.evhn.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q475312
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-evangelische-hochschule-nurnberg-q475312
+  name: Evangelische Hochschule Nürnberg
+  institution: ""
+  city: Nürnberg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.evhn.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

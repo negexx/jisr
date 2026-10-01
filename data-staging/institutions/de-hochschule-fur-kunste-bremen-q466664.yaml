@@ -1,0 +1,22 @@
+slug: de-hochschule-fur-kunste-bremen-q466664
+name: Hochschule für Künste Bremen
+country: DE
+city: null
+type: null
+website: https://www.hfk-bremen.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q466664
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-kunste-bremen-q466664
+  name: Hochschule für Künste Bremen
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hfk-bremen.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

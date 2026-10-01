@@ -1,0 +1,24 @@
+slug: fr-i-u-t-de-saint-die-universite-de-lorrain-0881679x
+name: I.U.T de Saint Dié - Université de Lorraine
+country: FR
+city:
+  slug: saint-die-des-vosges
+  name: Saint-Dié-des-Vosges
+type: public
+website: https://www.univ-lorraine.fr/
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-i-u-t-de-saint-die-universite-de-lorrain-0881679x
+  name: I.U.T de Saint Dié - Université de Lorraine
+  institution: ""
+  city: Saint-Dié-des-Vosges
+  field: ""
+  confidence: ""
+  officialUrl: https://www.univ-lorraine.fr/
+  todo: "website candidate from parent institution \"Université de Lorraine\" in the ESR register, not this site's own page: confirm it, then set info_kind: official"

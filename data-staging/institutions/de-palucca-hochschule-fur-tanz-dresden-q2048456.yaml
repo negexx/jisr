@@ -1,0 +1,22 @@
+slug: de-palucca-hochschule-fur-tanz-dresden-q2048456
+name: Palucca Hochschule für Tanz Dresden
+country: DE
+city: null
+type: null
+website: https://palucca.eu/en/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q2048456
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-palucca-hochschule-fur-tanz-dresden-q2048456
+  name: Palucca Hochschule für Tanz Dresden
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://palucca.eu/en/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

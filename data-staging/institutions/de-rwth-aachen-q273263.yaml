@@ -1,0 +1,24 @@
+slug: de-rwth-aachen-q273263
+name: RWTH Aachen
+country: DE
+city:
+  slug: aachen
+  name: Aachen
+type: null
+website: https://www.rwth-aachen.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q273263
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-rwth-aachen-q273263
+  name: RWTH Aachen
+  institution: ""
+  city: Aachen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.rwth-aachen.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

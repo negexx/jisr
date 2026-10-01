@@ -1,0 +1,24 @@
+slug: de-goethe-universitat-frankfurt-am-main-q50662
+name: Goethe-Universität Frankfurt am Main
+country: DE
+city:
+  slug: jugelhaus
+  name: Jügelhaus
+type: null
+website: https://www.goethe-university-frankfurt.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q50662
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-goethe-universitat-frankfurt-am-main-q50662
+  name: Goethe-Universität Frankfurt am Main
+  institution: ""
+  city: Jügelhaus
+  field: ""
+  confidence: ""
+  officialUrl: https://www.goethe-university-frankfurt.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

@@ -1,0 +1,24 @@
+slug: de-philipps-universitat-marburg-q155354
+name: Philipps-Universität Marburg
+country: DE
+city:
+  slug: marburg
+  name: Marburg
+type: null
+website: https://www.uni-marburg.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q155354
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-philipps-universitat-marburg-q155354
+  name: Philipps-Universität Marburg
+  institution: ""
+  city: Marburg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-marburg.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

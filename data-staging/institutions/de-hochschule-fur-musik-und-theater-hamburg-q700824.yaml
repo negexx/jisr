@@ -1,0 +1,22 @@
+slug: de-hochschule-fur-musik-und-theater-hamburg-q700824
+name: Hochschule für Musik und Theater Hamburg
+country: DE
+city: null
+type: null
+website: https://www.hfmt-hamburg.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q700824
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-musik-und-theater-hamburg-q700824
+  name: Hochschule für Musik und Theater Hamburg
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hfmt-hamburg.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

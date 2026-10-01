@@ -1,0 +1,24 @@
+slug: de-fachhochschule-der-wirtschaft-q1391254
+name: Fachhochschule der Wirtschaft
+country: DE
+city:
+  slug: paderborn
+  name: Paderborn
+type: null
+website: https://www.fhdw.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1391254
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fachhochschule-der-wirtschaft-q1391254
+  name: Fachhochschule der Wirtschaft
+  institution: ""
+  city: Paderborn
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fhdw.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

@@ -1,0 +1,24 @@
+slug: de-hochschule-fur-musik-und-theater-munchen-q657167
+name: Hochschule für Musik und Theater München
+country: DE
+city:
+  slug: fuhrerbau
+  name: Führerbau
+type: null
+website: https://hmtm.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q657167
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-musik-und-theater-munchen-q657167
+  name: Hochschule für Musik und Theater München
+  institution: ""
+  city: Führerbau
+  field: ""
+  confidence: ""
+  officialUrl: https://hmtm.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

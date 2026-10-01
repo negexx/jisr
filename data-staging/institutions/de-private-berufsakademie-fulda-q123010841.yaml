@@ -1,0 +1,24 @@
+slug: de-private-berufsakademie-fulda-q123010841
+name: Private Berufsakademie Fulda
+country: DE
+city:
+  slug: fulda
+  name: Fulda
+type: null
+website: https://www.ba-fulda.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q123010841
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-private-berufsakademie-fulda-q123010841
+  name: Private Berufsakademie Fulda
+  institution: ""
+  city: Fulda
+  field: ""
+  confidence: ""
+  officialUrl: https://www.ba-fulda.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

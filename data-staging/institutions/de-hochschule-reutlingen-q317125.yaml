@@ -1,0 +1,24 @@
+slug: de-hochschule-reutlingen-q317125
+name: Hochschule Reutlingen
+country: DE
+city:
+  slug: reutlingen
+  name: Reutlingen
+type: null
+website: https://www.reutlingen-university.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q317125
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-reutlingen-q317125
+  name: Hochschule Reutlingen
+  institution: ""
+  city: Reutlingen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.reutlingen-university.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

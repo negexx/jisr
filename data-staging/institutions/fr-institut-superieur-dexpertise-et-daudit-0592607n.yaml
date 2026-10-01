@@ -1,0 +1,24 @@
+slug: fr-institut-superieur-dexpertise-et-daudit-0592607n
+name: Institut Supérieur d'Expertise et d'Audit - Institut Catholique de Lille
+country: FR
+city:
+  slug: lille
+  name: Lille
+type: private
+website: https://www.univ-catholille.fr/
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-institut-superieur-dexpertise-et-daudit-0592607n
+  name: Institut Supérieur d'Expertise et d'Audit - Institut Catholique de Lille
+  institution: ""
+  city: Lille
+  field: ""
+  confidence: ""
+  officialUrl: https://www.univ-catholille.fr/
+  todo: "website candidate from parent institution \"Institut catholique de Lille\" in the ESR register, not this site's own page: confirm it, then set info_kind: official"

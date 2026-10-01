@@ -1,0 +1,24 @@
+slug: fr-universite-de-lille-0597239y
+name: Université de Lille
+country: FR
+city:
+  slug: lille
+  name: Lille
+type: public
+website: https://www.univ-lille.fr/
+source: esr
+info_kind: official
+sources:
+  esr:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-principaux-etablissements-enseignement-superieur/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-universite-de-lille-0597239y
+  name: Université de Lille
+  institution: ""
+  city: Lille
+  field: ""
+  confidence: ""
+  officialUrl: https://www.univ-lille.fr/
+  todo: ""

@@ -1,0 +1,22 @@
+slug: de-burg-giebichenstein-kunsthochschule-hall-q1011953
+name: Burg Giebichenstein Kunsthochschule Halle
+country: DE
+city: null
+type: null
+website: https://www.burg-halle.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1011953
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-burg-giebichenstein-kunsthochschule-hall-q1011953
+  name: Burg Giebichenstein Kunsthochschule Halle
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.burg-halle.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

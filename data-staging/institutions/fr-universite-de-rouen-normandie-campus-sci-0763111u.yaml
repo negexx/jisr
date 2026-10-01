@@ -1,0 +1,24 @@
+slug: fr-universite-de-rouen-normandie-campus-sci-0763111u
+name: Université de Rouen Normandie - Campus Sciences et Ingénierie
+country: FR
+city:
+  slug: saint-etienne-du-rouvray
+  name: Saint-Etienne-du-Rouvray
+type: public
+website: https://www.univ-rouen.fr/
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-universite-de-rouen-normandie-campus-sci-0763111u
+  name: Université de Rouen Normandie - Campus Sciences et Ingénierie
+  institution: ""
+  city: Saint-Etienne-du-Rouvray
+  field: ""
+  confidence: ""
+  officialUrl: https://www.univ-rouen.fr/
+  todo: "website candidate from parent institution \"Université de Rouen Normandie\" in the ESR register, not this site's own page: confirm it, then set info_kind: official"

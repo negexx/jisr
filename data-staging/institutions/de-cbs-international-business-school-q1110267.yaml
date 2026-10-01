@@ -1,0 +1,24 @@
+slug: de-cbs-international-business-school-q1110267
+name: CBS International Business School
+country: DE
+city:
+  slug: koln
+  name: Köln
+type: null
+website: null
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1110267
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-cbs-international-business-school-q1110267
+  name: CBS International Business School
+  institution: ""
+  city: Köln
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; Wikidata website is not https: http://www.cbs-edu.de/"

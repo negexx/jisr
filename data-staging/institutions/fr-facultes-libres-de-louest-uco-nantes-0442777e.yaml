@@ -1,0 +1,24 @@
+slug: fr-facultes-libres-de-louest-uco-nantes-0442777e
+name: Facultés libres de l'ouest - UCO - Nantes
+country: FR
+city:
+  slug: reze
+  name: Rezé
+type: private
+website: https://www.uco.fr/fr
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-facultes-libres-de-louest-uco-nantes-0442777e
+  name: Facultés libres de l'ouest - UCO - Nantes
+  institution: ""
+  city: Rezé
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uco.fr/fr
+  todo: "website candidate from parent institution \"Facultés libres de l'Ouest\" in the ESR register, not this site's own page: confirm it, then set info_kind: official"

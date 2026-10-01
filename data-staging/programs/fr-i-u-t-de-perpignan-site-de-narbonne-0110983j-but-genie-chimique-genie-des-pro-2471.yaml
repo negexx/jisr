@@ -1,0 +1,56 @@
+slug: fr-i-u-t-de-perpignan-site-de-narbonne-0110983j-but-genie-chimique-genie-des-pro-2471
+institution: fr-i-u-t-de-perpignan-site-de-narbonne-0110983j
+country: FR
+city: narbonne
+field: engineering
+level: bachelor
+name: BUT - Génie chimique génie des procédés
+summary:
+  fr:
+    text: BUT - Génie chimique génie des procédés, I.U.T de Perpignan (Site de Narbonne) (Narbonne). Fiche officielle Parcoursup.
+    status: draft
+officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2471&typeBac=0&originePc=0
+durationYears:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+teachingLanguages:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: fiche
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: fiche
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  fiche:
+    url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2471&typeBac=0&originePc=0
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: fr-i-u-t-de-perpignan-site-de-narbonne-0110983j-but-genie-chimique-genie-des-pro-2471
+  name: BUT - Génie chimique génie des procédés
+  institution: I.U.T de Perpignan (Site de Narbonne)
+  city: Narbonne
+  field: engineering
+  confidence: high
+  officialUrl: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2471&typeBac=0&originePc=0
+  todo: "read the programme page: durationYears, teachingLanguages, tuition, intakes, documents, requirements and the application channel for applicants from Morocco (set each info_kind)"

@@ -1,0 +1,22 @@
+slug: de-hochschule-fur-musik-und-theater-felix-m-q312578
+name: Hochschule für Musik und Theater „Felix Mendelssohn Bartholdy“ Leipzig
+country: DE
+city: null
+type: null
+website: https://www.hmt-leipzig.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q312578
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-musik-und-theater-felix-m-q312578
+  name: Hochschule für Musik und Theater „Felix Mendelssohn Bartholdy“ Leipzig
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.hmt-leipzig.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

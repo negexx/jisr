@@ -1,0 +1,22 @@
+slug: de-hochschule-fur-gestaltung-ulm-q591905
+name: Hochschule für Gestaltung Ulm
+country: DE
+city: null
+type: null
+website: https://hfg-archiv.museumulm.de/en/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q591905
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hochschule-fur-gestaltung-ulm-q591905
+  name: Hochschule für Gestaltung Ulm
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://hfg-archiv.museumulm.de/en/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

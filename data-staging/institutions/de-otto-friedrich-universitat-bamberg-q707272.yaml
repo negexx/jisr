@@ -1,0 +1,24 @@
+slug: de-otto-friedrich-universitat-bamberg-q707272
+name: Otto-Friedrich-Universität Bamberg
+country: DE
+city:
+  slug: bamberg
+  name: Bamberg
+type: null
+website: https://www.uni-bamberg.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q707272
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-otto-friedrich-universitat-bamberg-q707272
+  name: Otto-Friedrich-Universität Bamberg
+  institution: ""
+  city: Bamberg
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-bamberg.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

@@ -1,0 +1,24 @@
+slug: de-fom-hochschule-fur-oekonomie-management-q55156
+name: FOM Hochschule für Oekonomie & Management
+country: DE
+city:
+  slug: essen
+  name: Essen
+type: null
+website: https://www.fom-international.com/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q55156
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fom-hochschule-fur-oekonomie-management-q55156
+  name: FOM Hochschule für Oekonomie & Management
+  institution: ""
+  city: Essen
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fom-international.com/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

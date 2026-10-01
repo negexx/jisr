@@ -1,0 +1,24 @@
+slug: de-hesse-state-university-of-applied-scienc-q1481465
+name: Hesse State University of Applied Sciences for Police and Public Administration Management
+country: DE
+city:
+  slug: dotzheim
+  name: Dotzheim
+type: null
+website: https://hoems.hessen.de
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1481465
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-hesse-state-university-of-applied-scienc-q1481465
+  name: Hesse State University of Applied Sciences for Police and Public Administration Management
+  institution: ""
+  city: Dotzheim
+  field: ""
+  confidence: ""
+  officialUrl: https://hoems.hessen.de
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

@@ -1,0 +1,22 @@
+slug: de-fachhochschule-fur-sport-und-management-q17123097
+name: Fachhochschule für Sport und Management Potsdam
+country: DE
+city: null
+type: null
+website: https://www.fhsmp.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q17123097
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fachhochschule-fur-sport-und-management-q17123097
+  name: Fachhochschule für Sport und Management Potsdam
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fhsmp.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

@@ -1,0 +1,24 @@
+slug: fr-i-u-t-de-marne-la-vallee-antenne-de-meau-0772348j
+name: I.U.T de Marne la Vallée - Antenne de Meaux
+country: FR
+city:
+  slug: meaux
+  name: Meaux
+type: public
+website: null
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-i-u-t-de-marne-la-vallee-antenne-de-meau-0772348j
+  name: I.U.T de Marne la Vallée - Antenne de Meaux
+  institution: ""
+  city: Meaux
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "website missing: find the official https site, then set info_kind: official"

@@ -1,0 +1,22 @@
+slug: nl-avans-hogeschool-q2643409
+name: Avans Hogeschool
+country: NL
+city: null
+type: null
+website: https://www.avans.nl/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q2643409
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-avans-hogeschool-q2643409
+  name: Avans Hogeschool
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.avans.nl/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

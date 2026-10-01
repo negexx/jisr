@@ -1,0 +1,6 @@
+code: NL
+name:
+  fr: { text: Pays-Bas, status: reviewed }
+  en: { text: Netherlands, status: reviewed }
+  ar: { text: هولندا, status: draft }
+currency: EUR

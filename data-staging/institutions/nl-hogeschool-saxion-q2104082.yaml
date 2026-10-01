@@ -1,0 +1,24 @@
+slug: nl-hogeschool-saxion-q2104082
+name: Hogeschool Saxion
+country: NL
+city:
+  slug: enschede
+  name: Enschede
+type: null
+website: https://www.saxion.nl/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q2104082
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-hogeschool-saxion-q2104082
+  name: Hogeschool Saxion
+  institution: ""
+  city: Enschede
+  field: ""
+  confidence: ""
+  officialUrl: https://www.saxion.nl/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

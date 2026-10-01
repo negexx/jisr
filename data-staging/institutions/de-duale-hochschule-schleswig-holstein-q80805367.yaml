@@ -1,0 +1,22 @@
+slug: de-duale-hochschule-schleswig-holstein-q80805367
+name: Duale Hochschule Schleswig-Holstein
+country: DE
+city: null
+type: null
+website: https://www.dhsh.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q80805367
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-duale-hochschule-schleswig-holstein-q80805367
+  name: Duale Hochschule Schleswig-Holstein
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.dhsh.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

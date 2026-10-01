@@ -1,0 +1,24 @@
+slug: nl-universiteit-leiden-q156598
+name: Universiteit Leiden
+country: NL
+city:
+  slug: leiden
+  name: Leiden
+type: null
+website: https://www.universiteitleiden.nl/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q156598
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: nl-universiteit-leiden-q156598
+  name: Universiteit Leiden
+  institution: ""
+  city: Leiden
+  field: ""
+  confidence: ""
+  officialUrl: https://www.universiteitleiden.nl/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

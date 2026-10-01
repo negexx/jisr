@@ -1,0 +1,22 @@
+slug: de-evangelische-hochschule-berlin-q1380205
+name: Evangelische Hochschule Berlin
+country: DE
+city: null
+type: null
+website: https://www.eh-berlin.de
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1380205
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-evangelische-hochschule-berlin-q1380205
+  name: Evangelische Hochschule Berlin
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.eh-berlin.de
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"

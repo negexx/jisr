@@ -1,0 +1,24 @@
+slug: fr-universite-de-lorraine-faculte-de-droit-0572536x
+name: Université de Lorraine - Faculté de Droit, Economie et Administration - Site de Metz (57)
+country: FR
+city:
+  slug: metz
+  name: Metz
+type: public
+website: https://www.univ-lorraine.fr/
+source: parcoursup
+info_kind: TODO_read_source
+sources:
+  parcoursup:
+    url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: fr-universite-de-lorraine-faculte-de-droit-0572536x
+  name: Université de Lorraine - Faculté de Droit, Economie et Administration - Site de Metz (57)
+  institution: ""
+  city: Metz
+  field: ""
+  confidence: ""
+  officialUrl: https://www.univ-lorraine.fr/
+  todo: "website candidate from parent institution \"Université de Lorraine\" in the ESR register, not this site's own page: confirm it, then set info_kind: official"

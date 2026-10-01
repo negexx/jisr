@@ -1,0 +1,24 @@
+slug: de-universitat-mannheim-q317070
+name: Universität Mannheim
+country: DE
+city:
+  slug: mannheim
+  name: Mannheim
+type: null
+website: https://www.uni-mannheim.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q317070
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-universitat-mannheim-q317070
+  name: Universität Mannheim
+  institution: ""
+  city: Mannheim
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uni-mannheim.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official"

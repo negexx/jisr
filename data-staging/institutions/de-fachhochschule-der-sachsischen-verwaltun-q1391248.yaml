@@ -1,0 +1,22 @@
+slug: de-fachhochschule-der-sachsischen-verwaltun-q1391248
+name: Fachhochschule der Sächsischen Verwaltung Meißen
+country: DE
+city: null
+type: null
+website: https://www.fhsv.sachsen.de/
+source: wikidata
+info_kind: TODO_read_source
+sources:
+  wikidata:
+    url: https://www.wikidata.org/wiki/Q1391248
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: de-fachhochschule-der-sachsischen-verwaltun-q1391248
+  name: Fachhochschule der Sächsischen Verwaltung Meißen
+  institution: ""
+  city: ""
+  field: ""
+  confidence: ""
+  officialUrl: https://www.fhsv.sachsen.de/
+  todo: "confirm name, city, type (public/private) and website on an official page, replace the Wikidata source with it, set info_kind: official; city missing"
