@@ -5,9 +5,9 @@ city:
   slug: tremblay-en-france
   name: Tremblay-en-France
 type: public
-website: null
+website: https://www.iutt.univ-paris8.fr/
 source: parcoursup
-info_kind: official
+info_kind: guidance
 sources:
   parcoursup:
     url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/

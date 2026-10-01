@@ -5,9 +5,9 @@ city:
   slug: beziers
   name: Béziers
 type: public
-website: null
+website: https://www.iutbeziers.fr/
 source: parcoursup
-info_kind: official
+info_kind: guidance
 sources:
   parcoursup:
     url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/

@@ -5,9 +5,9 @@ city:
   slug: vitry-sur-seine
   name: Vitry-sur-Seine
 type: public
-website: null
+website: https://www.u-pec.fr/
 source: parcoursup
-info_kind: official
+info_kind: guidance
 sources:
   parcoursup:
     url: https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/

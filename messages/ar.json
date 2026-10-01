@@ -726,6 +726,7 @@
     "links": {
       "program": "صفحة البرنامج",
       "institution": "موقع المؤسسة",
+      "institutionUnknown": "موقع المؤسسة: لم يُعثر عليه بعد، يجب التحقق منه",
       "channel": "موقع التقديم"
     },
     "verified": {

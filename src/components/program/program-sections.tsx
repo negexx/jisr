@@ -539,7 +539,11 @@ export function LinksSection({ data }: { data: ProgramPageData }) {
     <Section id="links">
       <ul className="flex flex-col gap-1">
         <LinkItem href={data.program.officialUrl} label={t("program")} />
-        {data.institution?.website == null ? null : (
+        {data.institution === null ? null : data.institution.website === null ? (
+          <li className="min-h-11 text-base text-muted-foreground md:min-h-8">
+            {t("institutionUnknown")}
+          </li>
+        ) : (
           <LinkItem href={data.institution.website} label={t("institution")} />
         )}
         {data.applicationChannel === null ? null : (
