@@ -10,6 +10,15 @@
           "quote": "La faculté des Sciences propose un parcours de licence en 3 ans"
         }
       ]
+    },
+    "applicationChannel": {
+      "value": "fr-campus-france",
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces",
+          "quote": "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France de votre pays de résidence."
+        }
+      ]
     }
   },
   "notes": "No tuition for non-EU, teaching language or intake dates stated. Channel omitted: Parcoursup fiche says non-EU bac-equivalent holders go through the DAP procedure, not Parcoursup."

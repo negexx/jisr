@@ -10,6 +10,15 @@
           "quote": "1800 heures d'enseignements réparties sur 6 semestres"
         }
       ]
+    },
+    "applicationChannel": {
+      "value": "fr-campus-france",
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+          "quote": "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France."
+        }
+      ]
     }
   },
   "notes": "No tuition for non-EU, teaching language or intake dates stated. Channel omitted: non-EU applicants abroad use Campus France per the Parcoursup fiche."

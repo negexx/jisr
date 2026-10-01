@@ -10,6 +10,15 @@
           "quote": "Les trois années (six semestres) de ce parcours sont intégralement proposées sur le Campus de Bourg-en-Bresse."
         }
       ]
+    },
+    "applicationChannel": {
+      "value": "fr-campus-france",
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces",
+          "quote": "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France de votre pays de résidence."
+        }
+      ]
     }
   },
   "notes": "Parcoursup fiche shows 178 EUR/year (national rate, not stated for non-EU): omitted. Channel omitted: fiche says non-EU bac-equivalent holders do not use Parcoursup but the DAP procedure. Teaching language not stated."

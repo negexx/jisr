@@ -10,6 +10,15 @@
           "quote": "La formation s'étend sur 3 années (L1, L2, L3)"
         }
       ]
+    },
+    "applicationChannel": {
+      "value": "fr-campus-france",
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces",
+          "quote": "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France de votre pays de résidence."
+        }
+      ]
     }
   },
   "notes": "No tuition for non-EU, language of teaching, or intake dates stated. Channel: Parcoursup fiche says non-EU applicants not holding a French/European bac and residing in a Campus France country must not use Parcoursup; channel omitted."

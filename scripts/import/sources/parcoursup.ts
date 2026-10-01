@@ -16,6 +16,7 @@ import { fetchWebsitesByUai } from "./wikidata";
 export const PARCOURSUP_DATASET_URL =
   "https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup/";
 const SESSION = "2025";
+const CAMPUS_FRANCE_MA_URL = "https://www.maroc.campusfrance.org/";
 
 const RowSchema = z.object({
   contrat_etab: z.string(),
@@ -306,6 +307,41 @@ export async function importFrance(): Promise<StagedRecord[]> {
       confidence: "",
       officialUrl: "https://www.parcoursup.gouv.fr/",
       todo: "confirm how applicants from Morocco apply (Etudes en France / Campus France before Parcoursup) and whether an account is required",
+    },
+  });
+
+  // For Moroccan Bac holders, first-year Licence and BUT applications go through Campus France's
+  // Etudes en France platform; Parcoursup tells them not to register (its own fiches say so).
+  records.push({
+    collection: "application-channels",
+    id: "fr-campus-france",
+    data: {
+      slug: "fr-campus-france",
+      name: "Campus France",
+      country: "FR",
+      kind: "intermediary",
+      url: CAMPUS_FRANCE_MA_URL,
+      accountRequired: null,
+      summary: {
+        fr: {
+          text: "Procédure Études en France de Campus France Maroc, obligatoire pour candidater en première année de Licence ou de BUT depuis le Maroc avec le baccalauréat marocain.",
+          status: "draft",
+        },
+      },
+      source: "main",
+      info_kind: READ_SOURCE,
+      sources: { main: { url: CAMPUS_FRANCE_MA_URL, last_verified_at: null } },
+    },
+    review: {
+      kind: "application-channels",
+      slug: "fr-campus-france",
+      name: "Campus France",
+      institution: "",
+      city: "",
+      field: "",
+      confidence: "",
+      officialUrl: CAMPUS_FRANCE_MA_URL,
+      todo: "confirm the procedure for applicants resident in Morocco with the Moroccan Bac (Etudes en France) and whether an account is required; list this channel on the Morocco/Bac to France admission route",
     },
   });
 

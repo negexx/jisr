@@ -28,8 +28,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: fr-campus-france
+  source: page-2
   info_kind: official
 documents:
   value: null
@@ -44,6 +44,9 @@ scholarships: []
 sources:
   programme:
     url: https://iut.uca.fr/formations/but-science-des-donnees-aurillac
+    last_verified_at: null
+  page-2:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
     last_verified_at: null
 _review:
   kind: programs
@@ -65,4 +68,7 @@ _review:
     - fact: teachingLanguages
       url: https://iut.uca.fr/formations/but-science-des-donnees-aurillac
       quote: Langues d'enseignement Français
+    - fact: applicationChannel
+      url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+      quote: Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France.
   notes: "Tuition: Parcoursup fiche shows 178 EUR per year, which is the national rate and not stated for non-EU students; omitted. No intake dates stated for non-EU applicants. Application channel: official pages say non-EU applicants residing abroad use Campus France (Etudes en France), not Parcoursup; channel omitted."

@@ -227,6 +227,7 @@ export function checkDeadline(isoDate: string, quote: string): FactCheck {
 
 const CHANNEL_WORDS: Record<string, RegExp> = {
   "fr-parcoursup": /parcoursup/i,
+  "fr-campus-france": /campus\s*france|[eé]tudes en france/i,
   "nl-studielink": /studielink/i,
   "de-uni-assist": /uni-assist|uniassist/i,
 };

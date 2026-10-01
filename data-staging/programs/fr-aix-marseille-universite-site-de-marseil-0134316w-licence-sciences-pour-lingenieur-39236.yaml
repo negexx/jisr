@@ -27,8 +27,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: fr-campus-france
+  source: page-2
   info_kind: official
 documents:
   value: null
@@ -43,6 +43,9 @@ scholarships: []
 sources:
   programme:
     url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39236&typeBac=0&originePc=0
+    last_verified_at: null
+  page-2:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
     last_verified_at: null
 _review:
   kind: programs
@@ -61,4 +64,7 @@ _review:
     - fact: durationYears
       url: https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39236&typeBac=0&originePc=0
       quote: La faculté des Sciences propose un parcours de licence en 3 ans
+    - fact: applicationChannel
+      url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
+      quote: "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France de votre pays de résidence."
   notes: "No tuition for non-EU, teaching language or intake dates stated. Channel omitted: Parcoursup fiche says non-EU bac-equivalent holders go through the DAP procedure, not Parcoursup."

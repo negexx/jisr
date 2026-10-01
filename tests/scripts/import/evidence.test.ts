@@ -122,6 +122,7 @@ describe("checkChannel", () => {
       true,
     );
     expect(checkChannel("nl-studielink", "Register via Studielink").ok).toBe(true);
+    expect(checkChannel("fr-campus-france", "passent obligatoirement par Campus France").ok).toBe(true);
     expect(checkChannel("nl-studielink", "Register via the portal").ok).toBe(false);
     expect(checkChannel("unknown-channel", "anything at all here").ok).toBe(false);
   });
