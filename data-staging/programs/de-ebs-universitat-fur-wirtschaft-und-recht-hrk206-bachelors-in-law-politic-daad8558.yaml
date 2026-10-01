@@ -9,7 +9,7 @@ summary:
   fr:
     text: Bachelor's in Law, Politics and Economics (BA), EBS Universität für Wirtschaft und Recht (Oestrich-Winkel). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8558/
+officialUrl: null
 durationYears:
   value: 3
   source: daad
@@ -54,5 +54,5 @@ _review:
   field: business-economics
   confidence: high
   officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8558/
-  todo: "DAAD page lists: languages English, duration 6 semesters, starts Winter semester, tuition \"9,080\", deadline \"There are no application deadlines at EBS. However, to ensure a smooth start to your studies, we recommend that you submit your application before 30 June (for a start in the winter semester) and before 30 November (for a start in the summer semester). For international applicants who require a visa...\"; institution matched to HRK \"EBS Universität für Wirtschaft und Recht\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; 2 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates)"
+  todo: "DAAD page lists: languages English, duration 6 semesters, starts Winter semester, tuition \"9,080\", deadline \"There are no application deadlines at EBS. However, to ensure a smooth start to your studies, we recommend that you submit your application before 30 June (for a start in the winter semester) and before 30 November (for a start in the summer semester). For international applicants who require a visa...\"; institution matched to HRK \"EBS Universität für Wirtschaft und Recht\"; the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; 2 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates)"
   sourceId: daad:8558

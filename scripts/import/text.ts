@@ -85,10 +85,17 @@ export function stripQueryAndHash(url: string): string {
   return parsed.toString();
 }
 
+// Registers write a town differently: "Garching b. München" / "Garching bei München",
+// "Merseburg / Saale" / "Merseburg". The canonical display form drops a "/ ..." addition and spells
+// "b." as "bei", so the same campus gets one name (and one slug) whichever source names it.
+export function canonicalTown(town: string): string {
+  return collapseSpaces(town.replace(/\s*\/\s*.+$/, "").replace(/\bb\.\s*/i, "bei "));
+}
+
 // "Halle (Saale)" -> "Halle", "Mainz am Rhein" -> "Mainz", "Bad Homburg vor der Höhe" -> "Bad Homburg":
 // registers disagree on how much of a town's official name to write.
 export function townKey(town: string): string {
-  const base = collapseSpaces(town.replace(/\([^)]*\)/g, " "));
+  const base = collapseSpaces(canonicalTown(town).replace(/\([^)]*\)/g, " "));
   return nameKey(base.replace(/\s+(am|an der|an|im|bei|vor der|in der|ob der)\s+.+$/i, ""));
 }
 

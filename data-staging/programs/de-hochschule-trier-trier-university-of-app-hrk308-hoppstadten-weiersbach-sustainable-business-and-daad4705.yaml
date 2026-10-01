@@ -2,14 +2,14 @@ slug: de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach-
 institution: de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach
 country: DE
 city: hoppstadten-weiersbach
-field: engineering
+field: business-economics
 level: bachelor
 name: Sustainable Business and Technology
 summary:
   fr:
     text: Sustainable Business and Technology, Hochschule Trier - Trier University of Applied Sciences (Hoppstädten-Weiersbach). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4705/
+officialUrl: null
 durationYears:
   value: 3
   source: daad
@@ -51,8 +51,8 @@ _review:
   name: Sustainable Business and Technology
   institution: Hochschule Trier - Trier University of Applied Sciences
   city: Hoppstädten-Weiersbach
-  field: engineering
-  confidence: low
+  field: business-economics
+  confidence: high
   officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4705/
-  todo: "DAAD page lists: languages English, duration 6 semesters, starts Winter semester, tuition \"No tuition fees\", deadline \"Register by 31 August 2027 + 1 more\"; institution matched to HRK \"Hochschule Trier - Trier University of Applied Sciences\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; field is a judgement call: check the programme content"
+  todo: "DAAD page lists: languages English, duration 6 semesters, starts Winter semester, tuition \"No tuition fees\", deadline \"Register by 31 August 2027 + 1 more\"; institution matched to HRK \"Hochschule Trier - Trier University of Applied Sciences\"; the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; 8 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates)"
   sourceId: daad:4705

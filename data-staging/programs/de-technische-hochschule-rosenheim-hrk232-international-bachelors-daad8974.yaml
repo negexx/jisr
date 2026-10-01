@@ -9,7 +9,7 @@ summary:
   fr:
     text: International Bachelor's of Wood Technology, Technische Hochschule Rosenheim (Rosenheim). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8974/
+officialUrl: null
 durationYears:
   value: 4
   source: daad
@@ -53,7 +53,7 @@ _review:
   institution: Technische Hochschule Rosenheim
   city: Rosenheim
   field: engineering
-  confidence: high
+  confidence: low
   officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8974/
-  todo: "DAAD page lists: languages German, English, duration 8 semesters, starts Summer semester, tuition \"Tuition varies\", deadline \"With a university entrance qualification from abroad via uni-assist : 1 September - 15 January for a study start in March (summer semester) With a German university entrance qualification via TH Rosenheim application portal : 1 November - 15 January for a study start in March (summer semester) Pleas...\"; institution matched to HRK \"Technische Hochschule Rosenheim\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; 18 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates); partly or fully taught in German: check the German level required"
+  todo: "DAAD page lists: languages German, English, duration 8 semesters, starts Summer semester, tuition \"Tuition varies\", deadline \"With a university entrance qualification from abroad via uni-assist : 1 September - 15 January for a study start in March (summer semester) With a German university entrance qualification via TH Rosenheim application portal : 1 November - 15 January for a study start in March (summer semester) Pleas...\"; institution matched to HRK \"Technische Hochschule Rosenheim\"; the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; field is a judgement call: check the programme content; 18 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates); partly or fully taught in German: check the German level required"
   sourceId: daad:8974

@@ -1,10 +1,13 @@
 import { describe, expect, it } from "vitest";
-
+import { BA_GROUPS } from "../../../scripts/import/sources/ba";
 import {
   buildDaadRecords,
   classifyDaad,
   cleanDeadline,
+  countBaProgrammes,
   type DaadCourse,
+  fetchDaadBachelors,
+  germanTown,
   isTaughtAbroad,
   languageCodes,
   matchHrkEnglish,
@@ -12,6 +15,7 @@ import {
   yearsFromSemesters,
 } from "../../../scripts/import/sources/daad";
 import { READ_SOURCE } from "../../../scripts/import/staging";
+import { canonicalTown, sameTown } from "../../../scripts/import/text";
 
 const inst = (slug: string, name: string, city: string, alias = "") => ({
   slug,
@@ -74,7 +78,11 @@ describe("matchHrkEnglish", () => {
     );
   });
   it("returns nothing when several institutions fit or none does", () => {
-    expect(matchHrkEnglish("University of Applied Sciences", "Münster", list)).toBeNull();
+    const twins = [
+      inst("a", "Hochschule Beispielstadt", "Beispielstadt", "Hochschule Beispielstadt"),
+      inst("b", "Fachhochschule Beispielstadt", "Beispielstadt", "Fachhochschule Beispielstadt"),
+    ];
+    expect(matchHrkEnglish("University of Applied Sciences", "Beispielstadt", twins)).toBeNull();
     expect(matchHrkEnglish("Nonexistent University", "Hamburg", list)).toBeNull();
   });
 });
@@ -86,6 +94,9 @@ describe("programmes taught abroad", () => {
     expect(isTaughtAbroad("Kempten (Allgäu)")).toBe(false);
     expect(isTaughtAbroad("Berlin")).toBe(false);
     expect(isTaughtAbroad("Berlin, Germany")).toBe(false);
+    expect(isTaughtAbroad("Berlin, Deutschland")).toBe(false);
+    expect(isTaughtAbroad("Dubai")).toBe(true);
+    expect(isTaughtAbroad("Ho Chi Minh City")).toBe(true);
     expect(isTaughtAbroad(null)).toBe(false);
   });
 });
@@ -131,6 +142,10 @@ describe("classifyDaad", () => {
     );
     expect(classifyDaad("Advertising & Brand Design (BA)", "Graphic Design")).toBeNull();
     expect(classifyDaad("Engineering and Management", null)?.confidence).toBe("low");
+    expect(classifyDaad("Mobility and Logistics", "Traffic Engineering")).toEqual({
+      field: "business-economics",
+      confidence: "low",
+    });
     expect(classifyDaad("Intercultural Studies", "Intercultural Studies")).toBeNull();
   });
 });
@@ -164,14 +179,15 @@ describe("buildDaadRecords", () => {
     },
   ];
 
-  it("prefills language, duration and a clean deadline under the placeholder, with the DAAD page as source", () => {
+  it("prefills language, duration and a clean deadline under the placeholder, citing the DAAD page as the source", () => {
     const records = buildDaadRecords({ courses: [course()], hrk, probed: new Map() });
     const prog = records.find((r) => r.collection === "programs");
     const data = prog?.data as Record<
       string,
       { value: unknown; info_kind: string; source?: string }
     >;
-    expect(prog?.data.officialUrl).toBe(
+    expect(prog?.data.officialUrl).toBeNull();
+    expect((prog?.data.sources as Record<string, { url: string }>).daad?.url).toBe(
       "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6217/",
     );
     expect(data.teachingLanguages).toMatchObject({ value: ["en"], info_kind: READ_SOURCE });
@@ -235,5 +251,237 @@ describe("buildDaadRecords", () => {
     const todo = records.find((r) => r.collection === "programs")?.review.todo ?? "";
     expect(todo).toMatch(/3 programme\(s\) in this field/);
     expect(todo).toMatch(/taught in German/);
+  });
+});
+
+describe("classifyDaad: wrong-field cases found in review", () => {
+  it("keeps Electrical Engineering and Information Technology in engineering", () => {
+    expect(
+      classifyDaad("Electrical Engineering and Information Technology", "Electrical Engineering"),
+    ).toEqual({
+      field: "engineering",
+      confidence: "high",
+    });
+    expect(classifyDaad("Electronics Engineering for Artificial Intelligence", null)?.field).toBe(
+      "engineering",
+    );
+  });
+  it("does not read a subject tag, and skips linguistics and health programmes", () => {
+    expect(classifyDaad("Computational Linguistics", "Computer Science")).toBeNull();
+    expect(classifyDaad("Nursing (BSc)", "Health Management")).toBeNull();
+    expect(classifyDaad("BSc in Applied Mathematics", "Engineering and Management")).toBeNull();
+    expect(classifyDaad("Life Science and International Health", "Engineering")).toBeNull();
+  });
+  it("makes a vague 'management' name a judgement call and a plain IT name computer science", () => {
+    expect(classifyDaad("International Forest Ecosystem Management", "Forestry")).toEqual({
+      field: "business-economics",
+      confidence: "low",
+    });
+    expect(classifyDaad("IT Security", null)).toEqual({
+      field: "computer-science",
+      confidence: "high",
+    });
+    expect(classifyDaad("Business Informatics", null)?.field).toBe("computer-science");
+  });
+});
+
+describe("matchHrkEnglish: false matches found in review", () => {
+  const list = [
+    { slug: "uni-bremen", name: "Universität Bremen", city: "Bremen", alias: "Universität Bremen" },
+    {
+      slug: "escp",
+      name: "ESCP Europe Wirtschaftshochschule Berlin",
+      city: "Berlin",
+      alias: "ESCP Europe Wirtschaftshochschule Berlin",
+    },
+  ];
+  it("does not turn an art school into the university of the same town", () => {
+    expect(matchHrkEnglish("University of the Arts Bremen", "Bremen", list)).toBeNull();
+  });
+  it("needs more than one shared word", () => {
+    expect(matchHrkEnglish("University of Applied Sciences Europe", "Berlin", list)).toBeNull();
+  });
+  it("still matches the university itself", () => {
+    expect(matchHrkEnglish("University of Bremen", "Bremen", list)?.slug).toBe("uni-bremen");
+  });
+});
+
+describe("town spellings", () => {
+  it("folds '/ Saale' and 'b.' variants into one canonical town", () => {
+    expect(canonicalTown("Merseburg / Saale")).toBe("Merseburg");
+    expect(canonicalTown("Garching b. München")).toBe("Garching bei München");
+    expect(sameTown("Merseburg", "Merseburg / Saale")).toBe(true);
+    expect(sameTown("Garching b. München", "Garching bei München")).toBe(true);
+    expect(sameTown("Bernburg / Saale", "Bernburg")).toBe(true);
+  });
+  it("writes translated place names with a capital letter", () => {
+    expect(germanTown("Munich")).toBe("München");
+    expect(germanTown("Cologne")).toBe("Köln");
+    expect(germanTown("Kempten (Allgäu)")).toBe("Kempten (Allgäu)");
+  });
+});
+
+describe("DAAD records: review fixes", () => {
+  const course = (over: Partial<DaadCourse> = {}): DaadCourse => ({
+    id: 1,
+    courseName: "Computer Science",
+    academy: "Technical University of Munich",
+    city: "Garching b. München",
+    languages: ["English"],
+    beginning: null,
+    programmeDuration: "6 semesters",
+    tuitionFees: null,
+    costString: null,
+    applicationDeadline: "Register by 15 July 2027",
+    subject: null,
+    link: "/deutschland/studienangebote/international-programmes/en/detail/1/",
+    ...over,
+  });
+  const hrk = [
+    {
+      hsNr: "184",
+      name: "Technische Universität München",
+      kind: "Universitäten",
+      sponsor: "öffentlich-rechtlich",
+      state: "Bayern",
+      city: "München",
+      homepage: "https://www.tum.de/",
+      alias: "TU München",
+    },
+  ];
+
+  it("leaves officialUrl empty so a human supplies the institution's page, and keeps the DAAD link for review", () => {
+    const prog = buildDaadRecords({ courses: [course()], hrk, probed: new Map() }).find(
+      (r) => r.collection === "programs",
+    );
+    expect(prog?.data.officialUrl).toBeNull();
+    expect(prog?.review.officialUrl).toBe(
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/1/",
+    );
+    expect(prog?.review.todo).toMatch(/officialUrl is left empty/);
+    expect(prog?.review.todo).toMatch(/EU\/German applicants/);
+    expect((prog?.data.sources as Record<string, { url: string }>).daad?.url).toMatch(/daad\.de/);
+  });
+  it("gives both spellings of a campus town the same unit", () => {
+    const a = buildDaadRecords({
+      courses: [course({ city: "Garching b. München" })],
+      hrk,
+      probed: new Map(),
+    });
+    const b = buildDaadRecords({
+      courses: [course({ city: "Garching bei München" })],
+      hrk,
+      probed: new Map(),
+    });
+    expect(a.find((r) => r.collection === "institutions")?.id).toBe(
+      b.find((r) => r.collection === "institutions")?.id,
+    );
+  });
+  it("counts duplicate hints against the main HRK institution, also for a campus unit", () => {
+    const records = buildDaadRecords({
+      courses: [course()],
+      hrk,
+      probed: new Map(),
+      baCounts: new Map([["de-technische-universitat-munchen-hrk184|computer-science", 2]]),
+    });
+    expect(records.find((r) => r.collection === "programs")?.review.todo).toMatch(
+      /2 programme\(s\) in this field/,
+    );
+  });
+});
+
+describe("countBaProgrammes", () => {
+  it("counts classified Studiensuche programmes per matched HRK institution and field", () => {
+    const group = BA_GROUPS.find((g) => g.field === "computer-science");
+    if (group === undefined) throw new Error("no group");
+    const programme = (id: string, name: string) => ({
+      id,
+      name,
+      providerId: 1,
+      provider: "Technische Universität München",
+      city: "München",
+      state: "Bayern",
+      hochschulart: "Universität",
+      subjects: [],
+      models: [],
+      group,
+    });
+    const counts = countBaProgrammes(
+      [programme("1", "Informatik"), programme("2", "Informatik Bachelor")],
+      hrk(),
+    );
+    expect(counts.get("de-technische-universitat-munchen-hrk184|computer-science")).toBe(2);
+    function hrk() {
+      return [
+        {
+          hsNr: "184",
+          name: "Technische Universität München",
+          kind: "Universitäten",
+          sponsor: "öffentlich-rechtlich",
+          state: "Bayern",
+          city: "München",
+          homepage: "",
+          alias: "TU München",
+        },
+      ];
+    }
+  });
+});
+
+describe("fetchDaadBachelors completeness checks", () => {
+  const c = (id: number): DaadCourse => ({
+    id,
+    courseName: "x",
+    academy: "y",
+    city: "z",
+    languages: [],
+    beginning: null,
+    programmeDuration: null,
+    tuitionFees: null,
+    costString: null,
+    applicationDeadline: null,
+    subject: null,
+    link: "/a",
+  });
+  const many = (n: number, from = 0) => Array.from({ length: n }, (_, i) => c(from + i));
+  // Serves the given pages in order and repeats the last one.
+  const serve = (pages: { courses: DaadCourse[]; numResults: number }[]) => {
+    let call = 0;
+    return async () => {
+      const page = pages[Math.min(call++, pages.length - 1)];
+      if (page === undefined) throw new Error("no page");
+      return page;
+    };
+  };
+
+  it("rejects an empty or implausibly small response", async () => {
+    await expect(
+      fetchDaadBachelors(async () => ({ courses: [], numResults: 0 }), 0),
+    ).rejects.toThrow(/incomplete/);
+  });
+  it("rejects pages that overlap", async () => {
+    const pages = [
+      { courses: many(100), numResults: 300 },
+      { courses: many(100, 50), numResults: 300 },
+      { courses: many(100, 150), numResults: 300 },
+    ];
+    await expect(fetchDaadBachelors(serve(pages), 0)).rejects.toThrow(/overlap/);
+  });
+  it("rejects a response that delivers fewer programmes than announced", async () => {
+    const pages = [
+      { courses: many(100), numResults: 300 },
+      { courses: many(100, 100), numResults: 300 },
+      { courses: many(50, 200), numResults: 300 },
+    ];
+    await expect(fetchDaadBachelors(serve(pages), 0)).rejects.toThrow(/collected 250 of 300/);
+  });
+  it("accepts a complete, non-overlapping crawl", async () => {
+    const pages = [
+      { courses: many(100), numResults: 250 },
+      { courses: many(100, 100), numResults: 250 },
+      { courses: many(50, 200), numResults: 250 },
+    ];
+    const all = await fetchDaadBachelors(serve(pages), 0);
+    expect(all).toHaveLength(250);
   });
 });

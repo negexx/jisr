@@ -1,0 +1,58 @@
+slug: de-hochschule-koblenz-hrk305-marketing-and-internatio-daad11241
+institution: de-hochschule-koblenz-hrk305
+country: DE
+city: koblenz
+field: business-economics
+level: bachelor
+name: Marketing and International Business
+summary:
+  fr:
+    text: Marketing and International Business, Hochschule Koblenz (Koblenz). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: null
+durationYears:
+  value: 3
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11241/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-hochschule-koblenz-hrk305-marketing-and-internatio-daad11241
+  name: Marketing and International Business
+  institution: Hochschule Koblenz
+  city: Koblenz
+  field: business-economics
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11241/
+  todo: "DAAD page lists: languages English, duration 6 semesters, starts Winter semester, Summer semester, tuition \"No tuition fees\", deadline \"Register by 15 June 2027 + 1 more\"; institution matched to HRK \"Hochschule Koblenz\"; the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; 9 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates)"
+  sourceId: daad:11241

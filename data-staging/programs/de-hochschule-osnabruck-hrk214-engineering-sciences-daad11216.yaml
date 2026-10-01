@@ -9,7 +9,7 @@ summary:
   fr:
     text: Engineering Sciences, Hochschule Osnabrück (Osnabrück). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11216/
+officialUrl: null
 durationYears:
   value: 4
   source: daad
@@ -54,5 +54,5 @@ _review:
   field: engineering
   confidence: high
   officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11216/
-  todo: "DAAD page lists: languages German, duration 8 semesters, starts Winter semester, tuition \"No tuition fees\", deadline \"Applicants with German educational qualifications: 15 July Applicants with international educational qualifications: 15 June\"; institution matched to HRK \"Hochschule Osnabrück\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; 18 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates); partly or fully taught in German: check the German level required"
+  todo: "DAAD page lists: languages German, duration 8 semesters, starts Winter semester, tuition \"No tuition fees\", deadline \"Applicants with German educational qualifications: 15 July Applicants with international educational qualifications: 15 June\"; institution matched to HRK \"Hochschule Osnabrück\"; the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; 18 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates); partly or fully taught in German: check the German level required"
   sourceId: daad:11216

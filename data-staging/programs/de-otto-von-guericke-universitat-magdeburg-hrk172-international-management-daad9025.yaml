@@ -9,7 +9,7 @@ summary:
   fr:
     text: International Management (IM), Otto-von-Guericke-Universität Magdeburg (Magdeburg). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9025/
+officialUrl: null
 durationYears:
   value: 3
   source: daad
@@ -56,7 +56,7 @@ _review:
   institution: Otto-von-Guericke-Universität Magdeburg
   city: Magdeburg
   field: business-economics
-  confidence: high
+  confidence: low
   officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9025/
-  todo: "DAAD page lists: languages English, German, duration 6 semesters, starts Winter semester, tuition \"No tuition fees\", deadline \"Register by 15 July 2027\"; institution matched to HRK \"Otto-von-Guericke-Universität Magdeburg\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; partly or fully taught in German: check the German level required"
+  todo: "DAAD page lists: languages English, German, duration 6 semesters, starts Winter semester, tuition \"No tuition fees\", deadline \"Register by 15 July 2027\"; institution matched to HRK \"Otto-von-Guericke-Universität Magdeburg\"; the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; field is a judgement call: check the programme content; partly or fully taught in German: check the German level required"
   sourceId: daad:9025

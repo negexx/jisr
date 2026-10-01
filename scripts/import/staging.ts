@@ -355,7 +355,9 @@ export type PruneResult = { removed: string[]; keptApproved: string[] };
 
 // Removes staged records that a source used to produce but no longer does (a programme dropped by
 // a new rule, taught abroad, or gone from the register). Only records the caller says it owns, and
-// only unapproved ones: an approved record is kept and reported.
+// only unapproved ones: an approved record is kept and reported. A prune that would delete more
+// than a quarter of the source's staged records (and more than 25) is refused: an empty or
+// truncated response must not wipe the review queue.
 export async function pruneStaged(input: {
   owns: (sourceId: string) => boolean;
   produced: ReadonlySet<string>; // "collection|sourceId"
@@ -364,17 +366,77 @@ export async function pruneStaged(input: {
 }): Promise<PruneResult> {
   const result: PruneResult = { removed: [], keptApproved: [] };
   const index = await indexStagedSourceIds(input.stagingDir ?? STAGING_DIR);
+  const doomed: { key: string; file: string }[] = [];
+  let owned = 0;
   for (const [key, { slug, file }] of index) {
     const [collection, ...rest] = key.split("|");
     const sourceId = rest.join("|");
-    if (collection === undefined || !input.owns(sourceId) || input.produced.has(key)) continue;
-    const recordKeyValue = recordKey(collection, slug);
-    if (input.approved.has(recordKeyValue)) {
-      result.keptApproved.push(recordKeyValue);
-      continue;
-    }
+    if (collection === undefined || !input.owns(sourceId)) continue;
+    owned++;
+    if (input.produced.has(key)) continue;
+    const id = recordKey(collection, slug);
+    if (input.approved.has(id)) result.keptApproved.push(id);
+    else doomed.push({ key: id, file });
+  }
+  if (doomed.length > 25 && doomed.length > owned * 0.25) {
+    throw new Error(
+      `refusing to prune ${doomed.length} of ${owned} staged records: the source looks incomplete (nothing was removed)`,
+    );
+  }
+  for (const { key, file } of doomed) {
     await rm(file);
-    result.removed.push(recordKeyValue);
+    result.removed.push(key);
   }
   return result;
+}
+
+// A campus or provider unit (source id with "@town" or a provider/academy prefix) that no staged
+// programme points to any more is clutter in the review queue. Unapproved ones are removed.
+export async function pruneOrphanUnits(input: {
+  approved: ReadonlySet<string>;
+  stagingDir?: string;
+}): Promise<string[]> {
+  const dir = input.stagingDir ?? STAGING_DIR;
+  const programmesDir = path.join(dir, "programs");
+  const used = new Set<string>();
+  if (existsSync(programmesDir)) {
+    for (const name of await readdir(programmesDir)) {
+      const found = /^institution: (.+)$/m.exec(
+        await readFile(path.join(programmesDir, name), "utf8"),
+      );
+      if (found?.[1] !== undefined) used.add(found[1].trim());
+    }
+  }
+  const index = await indexStagedSourceIds(dir);
+  const removed: string[] = [];
+  for (const [key, { slug, file }] of index) {
+    const [collection, ...rest] = key.split("|");
+    const sourceId = rest.join("|");
+    const isUnit = /@|^(ba-provider|daad-academy|rio-unit):/.test(sourceId);
+    if (collection !== "institutions" || !isUnit || used.has(slug)) continue;
+    if (input.approved.has(recordKey(collection, slug))) continue;
+    await rm(file);
+    removed.push(recordKey(collection, slug));
+  }
+  return removed;
+}
+
+// Two sources can produce the same record (a campus unit): keep the first only when both carry the
+// same source id; anything else is a collision that must not silently drop a record.
+export function dedupeRecords(records: readonly StagedRecord[]): StagedRecord[] {
+  const seen = new Map<string, StagedRecord>();
+  const unique: StagedRecord[] = [];
+  for (const r of records) {
+    const key = `${r.collection}/${r.id}`;
+    const first = seen.get(key);
+    if (first === undefined) {
+      seen.set(key, r);
+      unique.push(r);
+    } else if (first.sourceId !== r.sourceId) {
+      throw new Error(
+        `two sources produce ${key} with different source ids (${first.sourceId ?? "none"} / ${r.sourceId ?? "none"})`,
+      );
+    }
+  }
+  return unique;
 }

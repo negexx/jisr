@@ -9,7 +9,7 @@ summary:
   fr:
     text: BEng Mechatronics and Automation with Work-Integrated Option, Hochschule Bielefeld - University of Applied Sciences and Arts (HSBI) (Gütersloh). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10585/
+officialUrl: null
 durationYears:
   value: 3.5
   source: daad
@@ -57,5 +57,5 @@ _review:
   field: engineering
   confidence: high
   officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10585/
-  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, tuition \"No tuition fees\", deadline \"Register by 15 July 2027\"; institution matched to HRK \"Hochschule Bielefeld - University of Applied Sciences and Arts (HSBI)\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled"
+  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, tuition \"No tuition fees\", deadline \"Register by 15 July 2027\"; institution matched to HRK \"Hochschule Bielefeld - University of Applied Sciences and Arts (HSBI)\"; the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; 20 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates)"
   sourceId: daad:10585

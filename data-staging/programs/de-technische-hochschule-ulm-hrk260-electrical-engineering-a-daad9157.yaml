@@ -2,14 +2,14 @@ slug: de-technische-hochschule-ulm-hrk260-electrical-engineering-a-daad9157
 institution: de-technische-hochschule-ulm-hrk260
 country: DE
 city: ulm
-field: computer-science
+field: engineering
 level: bachelor
 name: Electrical Engineering and Information Technology
 summary:
   fr:
     text: Electrical Engineering and Information Technology, Technische Hochschule Ulm (Ulm). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9157/
+officialUrl: null
 durationYears:
   value: 3.5
   source: daad
@@ -51,8 +51,8 @@ _review:
   name: Electrical Engineering and Information Technology
   institution: Technische Hochschule Ulm
   city: Ulm
-  field: computer-science
+  field: engineering
   confidence: high
   officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9157/
-  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, tuition \"Tuition varies\", deadline \"This programme has no deadline.\"; institution matched to HRK \"Technische Hochschule Ulm\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; 8 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates)"
+  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, tuition \"Tuition varies\", deadline \"This programme has no deadline.\"; institution matched to HRK \"Technische Hochschule Ulm\"; the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; 19 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates)"
   sourceId: daad:9157

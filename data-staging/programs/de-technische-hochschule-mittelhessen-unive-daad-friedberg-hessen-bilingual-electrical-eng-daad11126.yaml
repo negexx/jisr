@@ -9,7 +9,7 @@ summary:
   fr:
     text: Bilingual Electrical Engineering Programme, Technische Hochschule Mittelhessen University of Applied Sciences (Friedberg (Hessen)). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11126/
+officialUrl: null
 durationYears:
   value: null
   source: daad
@@ -55,5 +55,5 @@ _review:
   field: engineering
   confidence: high
   officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11126/
-  todo: "DAAD page lists: languages German, English, duration 9 semesters or more, starts Summer semester, tuition \"No tuition fees\", deadline \"Start of the programme: 1 April Application period: 1 October - 15 January Registration exclusively via uni-assist , click the link if you need help with registration Offered annually - start possible only in the summer semester\"; institution not matched to the HRK list (see its record); the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; partly or fully taught in German: check the German level required"
+  todo: "DAAD page lists: languages German, English, duration 9 semesters or more, starts Summer semester, tuition \"No tuition fees\", deadline \"Start of the programme: 1 April Application period: 1 October - 15 January Registration exclusively via uni-assist , click the link if you need help with registration Offered annually - start possible only in the summer semester\"; institution not matched to the HRK list (see its record); the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; partly or fully taught in German: check the German level required"
   sourceId: daad:11126

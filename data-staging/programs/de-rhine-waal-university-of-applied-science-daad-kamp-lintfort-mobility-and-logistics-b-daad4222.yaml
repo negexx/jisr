@@ -9,7 +9,7 @@ summary:
   fr:
     text: Mobility and Logistics, BSc, Rhine-Waal University of Applied Sciences (Kamp-Lintfort). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4222/
+officialUrl: null
 durationYears:
   value: 3.5
   source: daad
@@ -55,7 +55,7 @@ _review:
   institution: Rhine-Waal University of Applied Sciences
   city: Kamp-Lintfort
   field: business-economics
-  confidence: high
+  confidence: low
   officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4222/
-  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, tuition \"No tuition fees\", deadline \"Register by 15 July 2027\"; institution not matched to the HRK list (see its record); the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled"
+  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, tuition \"No tuition fees\", deadline \"Register by 15 July 2027\"; institution not matched to the HRK list (see its record); the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; field is a judgement call: check the programme content"
   sourceId: daad:4222

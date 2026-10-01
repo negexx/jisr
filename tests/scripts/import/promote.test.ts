@@ -9,8 +9,10 @@ import { promoteApproved } from "../../../scripts/import/promote";
 import type { StagedRecord } from "../../../scripts/import/staging";
 import {
   appendLedger,
+  dedupeRecords,
   ledgerFile,
   parseCsv,
+  pruneOrphanUnits,
   pruneStaged,
   READ_SOURCE,
   readReviewState,
@@ -328,5 +330,66 @@ describe("pruneStaged", () => {
       exists("other-source"),
       exists("approved-gone"),
     ]).toEqual([false, true, true, true]);
+  });
+});
+
+describe("safeguards of pruning and dedupe", () => {
+  const rec = (
+    collection: string,
+    slug: string,
+    sourceId: string,
+    extra: Record<string, unknown> = {},
+  ) => {
+    const r = channel("official");
+    r.collection = collection;
+    r.id = slug;
+    r.data = { ...r.data, slug, ...extra };
+    r.review = { ...r.review, kind: collection, slug };
+    r.sourceId = sourceId;
+    return r;
+  };
+
+  it("refuses to prune an implausibly large share, so an empty response cannot wipe the queue", async () => {
+    const many = Array.from({ length: 60 }, (_, i) =>
+      rec("application-channels", `c-${i}`, `daad:${i}`),
+    );
+    await writeStaged(many, { overwrite: false, stagingDir, dataDir });
+    await expect(
+      pruneStaged({
+        owns: (id) => id.startsWith("daad:"),
+        produced: new Set(),
+        approved: new Set(),
+        stagingDir,
+      }),
+    ).rejects.toThrow(/refusing to prune 60 of 60/);
+    expect(existsSync(stageFile("application-channels", "c-0", stagingDir))).toBe(true);
+  });
+
+  it("removes only unreferenced, unapproved campus units", async () => {
+    await writeStaged(
+      [
+        rec("institutions", "unit-used", "hrk:1@town"),
+        rec("institutions", "unit-orphan", "hrk:2@town"),
+        rec("institutions", "unit-approved", "hrk:3@town"),
+        rec("institutions", "main-inst", "hrk:4"),
+        { ...rec("programs", "prog-1", "daad:1", { institution: "unit-used" }) },
+      ],
+      { overwrite: false, stagingDir, dataDir },
+    );
+    const removed = await pruneOrphanUnits({
+      approved: new Set(["institutions/unit-approved"]),
+      stagingDir,
+    });
+    expect(removed).toEqual(["institutions/unit-orphan"]);
+    expect(existsSync(stageFile("institutions", "main-inst", stagingDir))).toBe(true);
+  });
+
+  it("keeps the first of two records with the same id and source id, and rejects a collision", () => {
+    const a = rec("institutions", "same", "hrk:1@town");
+    const b = rec("institutions", "same", "hrk:1@town");
+    expect(dedupeRecords([a, b])).toHaveLength(1);
+    expect(() => dedupeRecords([a, rec("institutions", "same", "daad-academy:x")])).toThrow(
+      /different source ids/,
+    );
   });
 });

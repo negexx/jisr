@@ -9,7 +9,7 @@ summary:
   fr:
     text: Digital Technology and Management (BSc), Ostbayerische Technische Hochschule Amberg-Weiden (OTH) (Weiden in der Oberpfalz). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7702/
+officialUrl: null
 durationYears:
   value: 3.5
   source: daad
@@ -54,5 +54,5 @@ _review:
   field: engineering
   confidence: low
   officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7702/
-  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, Summer semester, tuition \"Tuition varies\", deadline \"Winter semester application period: 15 April- 15 September Summer semester application period: 1 November to 1 March Please check our application portal for all our current application deadlines. Please note that there is a non-refundable 50 EUR application fee for each study programme application.\"; institution not matched to the HRK list (see its record); the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; field is a judgement call: check the programme content"
+  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, Summer semester, tuition \"Tuition varies\", deadline \"Winter semester application period: 15 April- 15 September Summer semester application period: 1 November to 1 March Please check our application portal for all our current application deadlines. Please note that there is a non-refundable 50 EUR application fee for each study programme application.\"; institution not matched to the HRK list (see its record); the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; field is a judgement call: check the programme content"
   sourceId: daad:7702

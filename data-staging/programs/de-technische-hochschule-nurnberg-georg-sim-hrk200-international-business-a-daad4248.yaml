@@ -2,14 +2,14 @@ slug: de-technische-hochschule-nurnberg-georg-sim-hrk200-international-business-
 institution: de-technische-hochschule-nurnberg-georg-sim-hrk200
 country: DE
 city: nurnberg
-field: engineering
+field: business-economics
 level: bachelor
 name: International Business and Technology
 summary:
   fr:
     text: International Business and Technology, Technische Hochschule Nürnberg Georg Simon Ohm (Nürnberg). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4248/
+officialUrl: null
 durationYears:
   value: 3.5
   source: daad
@@ -55,8 +55,8 @@ _review:
   name: International Business and Technology
   institution: Technische Hochschule Nürnberg Georg Simon Ohm
   city: Nürnberg
-  field: engineering
-  confidence: low
+  field: business-economics
+  confidence: high
   officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4248/
-  todo: "DAAD page lists: languages German, English, duration 7 semesters, starts Winter semester, tuition \"Tuition varies\", deadline \"Register by 15 July 2027\"; institution matched to HRK \"Technische Hochschule Nürnberg Georg Simon Ohm\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; field is a judgement call: check the programme content; 13 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates); partly or fully taught in German: check the German level required"
+  todo: "DAAD page lists: languages German, English, duration 7 semesters, starts Winter semester, tuition \"Tuition varies\", deadline \"Register by 15 July 2027\"; institution matched to HRK \"Technische Hochschule Nürnberg Georg Simon Ohm\"; the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; 5 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates); partly or fully taught in German: check the German level required"
   sourceId: daad:4248

@@ -1,0 +1,58 @@
+slug: de-offenburg-university-of-applied-sciences-daad-offenburg-mechanical-systems-engin-daad11141
+institution: de-offenburg-university-of-applied-sciences-daad-offenburg
+country: DE
+city: offenburg
+field: engineering
+level: bachelor
+name: Mechanical Systems Engineering
+summary:
+  fr:
+    text: Mechanical Systems Engineering, Offenburg University of Applied Sciences (Offenburg). Programme recensé dans la base de programmes internationaux du DAAD.
+    status: draft
+officialUrl: null
+durationYears:
+  value: 3.5
+  source: daad
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: daad
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: daad
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: daad
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  daad:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11141/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: de-offenburg-university-of-applied-sciences-daad-offenburg-mechanical-systems-engin-daad11141
+  name: Mechanical Systems Engineering
+  institution: Offenburg University of Applied Sciences
+  city: Offenburg
+  field: engineering
+  confidence: high
+  officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11141/
+  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, tuition \"Tuition varies\", deadline \"for the following winter semester: 31 March (non-EU residents) 15 July (EU residents)\"; institution not matched to the HRK list (see its record); the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU"
+  sourceId: daad:11141

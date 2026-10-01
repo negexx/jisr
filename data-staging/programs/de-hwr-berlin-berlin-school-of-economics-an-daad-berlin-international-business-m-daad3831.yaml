@@ -9,7 +9,7 @@ summary:
   fr:
     text: International Business Management, HWR Berlin (Berlin School of Economics and Law) (Berlin). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3831/
+officialUrl: null
 durationYears:
   value: 4
   source: daad
@@ -54,5 +54,5 @@ _review:
   field: business-economics
   confidence: high
   officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3831/
-  todo: "DAAD page lists: languages English, duration 8 semesters, starts Winter semester, Summer semester, tuition \"No tuition fees\", deadline \"Register by 15 January 2027 + 1 more\"; institution not matched to the HRK list (see its record); the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled"
+  todo: "DAAD page lists: languages English, duration 8 semesters, starts Winter semester, Summer semester, tuition \"No tuition fees\", deadline \"Register by 15 January 2027 + 1 more\"; institution not matched to the HRK list (see its record); the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU"
   sourceId: daad:3831

@@ -10,7 +10,7 @@ source: daad
 info_kind: TODO_read_source
 sources:
   daad:
-    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11017/
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8601/
     last_verified_at: null
 _review:
   kind: institutions

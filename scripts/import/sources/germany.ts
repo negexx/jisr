@@ -1,7 +1,7 @@
 import { probeHttps } from "../http";
 import type { ReviewRow, StagedRecord } from "../staging";
 import { READ_SOURCE } from "../staging";
-import { collapseSpaces, sameTown, slugify } from "../text";
+import { canonicalTown, collapseSpaces, sameTown, slugify } from "../text";
 import type { BaProgramme } from "./ba";
 import {
   BA_STUDIENSUCHE_PAGE,
@@ -133,7 +133,7 @@ export function buildGermanRecords(input: {
     const match = classifyGerman(p.group, p.name, p.subjects);
     const matched = matchHrk(p.provider, p.city, lite);
     const hrkInst = matched === null ? undefined : hrkBySlug.get(matched.slug);
-    const listedCity = collapseSpaces(p.city || hrkInst?.city || "");
+    const listedCity = canonicalTown(collapseSpaces(p.city || hrkInst?.city || ""));
     // The register's spelling of the main town wins, so a variant ("Halle (Saale)") is not a campus.
     const city =
       hrkInst !== undefined && sameTown(hrkInst.city, listedCity) ? hrkInst.city : listedCity;

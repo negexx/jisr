@@ -6,6 +6,9 @@ import path from "node:path";
 const CACHE_DIR = ".cache/import";
 const USER_AGENT = "jisr-data-importer/0.1 (+https://github.com/negexx/jisr; non-commercial, EU)";
 const MAX_ATTEMPTS = 4;
+
+// A response that arrived but is unusable (wrong shape, truncated): fail at once, do not retry.
+class ValidationError extends Error {}
 const TIMEOUT_MS = 90_000;
 
 export type FetchOptions = {
@@ -80,7 +83,14 @@ export async function fetchText(url: string, options: FetchOptions = {}): Promis
       });
       if (response.ok) {
         const body = decodeBytes(new Uint8Array(await response.arrayBuffer()), options.encoding);
-        options.validate?.(body);
+        try {
+          options.validate?.(body);
+        } catch (error) {
+          // The server answered with something unusable: retrying will not change that.
+          throw new ValidationError(
+            `GET ${url}: ${error instanceof Error ? error.message : error}`,
+          );
+        }
         await mkdir(CACHE_DIR, { recursive: true });
         const temp = `${file}.${process.pid}.tmp`;
         await writeFile(temp, body);
@@ -90,6 +100,7 @@ export async function fetchText(url: string, options: FetchOptions = {}): Promis
       lastError = `HTTP ${response.status}`;
       if (response.status !== 429 && response.status < 500) break;
     } catch (error) {
+      if (error instanceof ValidationError) throw error;
       lastError = error instanceof Error ? error.message : String(error);
     }
     if (attempt < maxAttempts) {

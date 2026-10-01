@@ -3,7 +3,7 @@ import { z } from "zod";
 import { fetchJson, probeHttps } from "../http";
 import type { ReviewRow, StagedRecord } from "../staging";
 import { READ_SOURCE } from "../staging";
-import { collapseSpaces, nameKey, sameTown, slugify } from "../text";
+import { canonicalTown, collapseSpaces, nameKey, sameTown, slugify } from "../text";
 import type { BaProgramme } from "./ba";
 import { classifyGerman, fetchBaProgrammes, matchHrk, tokens } from "./ba";
 import { campusUnit } from "./germany";
@@ -55,12 +55,23 @@ async function fetchPage(offset: number) {
   return ResultSchema.parse(json);
 }
 
-export async function fetchDaadBachelors(): Promise<DaadCourse[]> {
-  const first = await fetchPage(0);
+export async function fetchDaadBachelors(
+  page: (offset: number) => Promise<{ courses: DaadCourse[]; numResults: number }> = fetchPage,
+  pauseMs = 1000,
+): Promise<DaadCourse[]> {
+  const first = await page(0);
   const courses = [...first.courses];
   for (let offset = PAGE; offset < first.numResults; offset += PAGE) {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    courses.push(...(await fetchPage(offset)).courses);
+    await new Promise((resolve) => setTimeout(resolve, pauseMs));
+    courses.push(...(await page(offset)).courses);
+  }
+  if (first.numResults < 200) {
+    throw new Error(
+      `DAAD: only ${first.numResults} Bachelor programmes announced (expected 300+): the response looks incomplete`,
+    );
+  }
+  if (new Set(courses.map((c) => c.id)).size !== courses.length) {
+    throw new Error("DAAD: pages overlap (duplicate programme ids): run again");
   }
   if (courses.length !== first.numResults) {
     throw new Error(
@@ -74,33 +85,52 @@ export async function fetchDaadBachelors(): Promise<DaadCourse[]> {
 // The database also lists programmes an institution teaches abroad ("Singapore", "Ho Chi Minh,
 // Vietnam"). Those are not options in Germany.
 const ABROAD =
-  /^(singapore|cairo|hanoi|muscat|almaty|astana|ulaanbaatar|bangkok|istanbul|tbilisi|amman|kuala lumpur|shanghai|beijing)\b/i;
+  /^(singapore|cairo|hanoi|ho chi minh|muscat|almaty|astana|ulaanbaatar|bangkok|istanbul|tbilisi|amman|kuala lumpur|shanghai|beijing|dubai|seoul|tokyo|doha|riyadh|nairobi|accra)\b/i;
 
 export function isTaughtAbroad(city: string | null): boolean {
   const c = (city ?? "").trim();
-  return ABROAD.test(c) || /,\s*(?!Germany\b)[A-Z][a-z]+(\s[A-Z][a-z]+)?$/.test(c);
+  return ABROAD.test(c) || /,\s*(?!Germany\b|Deutschland\b)[A-Z][a-z]+(\s[A-Z][a-z]+)?$/.test(c);
 }
 
 // --- field -------------------------------------------------------------------------------------
-const CS =
-  /computer|informatics|data science|artificial intelligence|software|cyber|information technology|\bit\b|machine learning/i;
-const ENG =
-  /engineering|mechatronic|automation|electronic|electrical|mechanical|civil|energy|materials|technology|manufacturing|industrial|aerospace|automotive|robotic|process/i;
-const BUS =
-  /business|management|economics|finance|accounting|marketing|commerce|entrepreneur|administration|logistics/i;
+// Decided by the programme's name only: the subject tag is a secondary label and put nursing,
+// forestry and applied mathematics into the three fields. A clear field word is `high`; a vague
+// one ("management" alone, "technology") is a judgement call (`low`).
+const CS_STRONG =
+  /computer science|computer engineering|computing|informatik|informatics|data science|artificial intelligence|machine learning|\bsoftware|cyber|information systems/i;
+const IT_WORD = /\bIT\b|information technology/;
+const ENG_STRONG =
+  /engineering|ingenieur|mechatronic|automation|electronic|electrical|mechanical|civil|aerospace|automotive|robotic|construction/i;
+const ENG_WEAK = /technology|technik|energy|materials|manufacturing|industrial|process|production/i;
+const BUS_STRONG =
+  /business|economics|finance|accounting|marketing|commerce|entrepreneur|betriebswirtschaft|wirtschaft/i;
+const BUS_WEAK = /management|administration|logistics/i;
+const NOT_CS = /linguistic/i;
 
 export function classifyDaad(
   name: string,
-  subject: string | null,
+  _subject: string | null,
 ): { field: string; confidence: "high" | "low" } | null {
-  const both = `${name} ${subject ?? ""}`;
-  if (CS.test(name)) return { field: "computer-science", confidence: "high" };
-  if (BUS.test(name) && !ENG.test(name)) return { field: "business-economics", confidence: "high" };
-  if (ENG.test(name))
-    return { field: "engineering", confidence: /business|management/i.test(name) ? "low" : "high" };
-  if (CS.test(subject ?? "")) return { field: "computer-science", confidence: "low" };
-  if (BUS.test(both)) return { field: "business-economics", confidence: "low" };
-  if (ENG.test(both)) return { field: "engineering", confidence: "low" };
+  const csStrong = CS_STRONG.test(name) && !NOT_CS.test(name);
+  const engStrong = ENG_STRONG.test(name);
+  // "Electrical Engineering and Information Technology" and "Electronics Engineering for Artificial
+  // Intelligence" are engineering; "Applied Computer Science" and "Software Engineering" are not.
+  const engineeringWins =
+    /electrical|electronic|mechanical|civil|mechatronic|aerospace|automotive/i.test(name);
+  const csCore = /computer science|informatik|informatics|software|data science/i.test(name);
+  if (csStrong && !(engineeringWins && !csCore)) {
+    return { field: "computer-science", confidence: "high" };
+  }
+  if (engStrong) {
+    return {
+      field: "engineering",
+      confidence: BUS_STRONG.test(name) || BUS_WEAK.test(name) ? "low" : "high",
+    };
+  }
+  if (BUS_STRONG.test(name)) return { field: "business-economics", confidence: "high" };
+  if (IT_WORD.test(name)) return { field: "computer-science", confidence: "high" };
+  if (ENG_WEAK.test(name)) return { field: "engineering", confidence: "low" };
+  if (BUS_WEAK.test(name)) return { field: "business-economics", confidence: "low" };
   return null;
 }
 
@@ -204,16 +234,18 @@ const GENERIC = new Set([
   "state",
   "international",
   "fh",
-  "arts",
-  "management",
 ]);
 
-function germanize(text: string): string {
-  return text.replace(/[A-Za-zÀ-ÿ]+/g, (w) => EXONYMS[w.toLowerCase()] ?? w);
+function germanize(text: string, display = false): string {
+  return text.replace(/[A-Za-zÀ-ÿ]+/g, (w) => {
+    const german = EXONYMS[w.toLowerCase()];
+    if (german === undefined) return w;
+    return display ? `${german.charAt(0).toUpperCase()}${german.slice(1)}` : german;
+  });
 }
 
 export function germanTown(town: string | null): string {
-  return collapseSpaces(germanize(town ?? ""));
+  return canonicalTown(germanize(collapseSpaces(town ?? ""), true));
 }
 
 type HrkLite = { slug: string; name: string; city: string; alias?: string };
@@ -229,7 +261,8 @@ export function matchHrkEnglish(
   institutions: readonly HrkLite[],
 ): HrkLite | null {
   const town = germanTown(city);
-  const name = germanize(academy);
+  // "... University of Applied Sciences and Arts" is a common suffix, not the word "arts".
+  const name = germanize(academy).replace(/applied sciences and arts/i, "applied sciences");
   const nameWords = tokens(name);
   const lower = name.toLowerCase();
   const applied = /applied sciences|fachhochschule|hochschule/.test(lower);
@@ -248,7 +281,24 @@ export function matchHrkEnglish(
     const cityTokens = tokens(i.city);
     return cityTokens.size > 0 && [...cityTokens].every((t) => nameWords.has(t));
   };
-  const pool = institutions.filter((i) => inTown(i) && brand.every((b) => wordsOf(i).has(b)));
+  // The institution's own distinctive words (from its short name when it has one) must all appear
+  // in the DAAD name too: one shared word ("Europe") is not enough to be the same institution.
+  const coveredBy = (base: Set<string>, cityWords: Set<string>) =>
+    [...base].every((t) => GENERIC.has(t) || cityWords.has(t) || nameWords.has(t));
+  const covered = (i: HrkLite) => {
+    const cityWords = tokens(i.city);
+    // Either the short name ("Hochschule Heilbronn") or the full official name is enough: an
+    // acronym alias ("TU München") need not appear in the English name.
+    return (
+      (i.alias !== undefined &&
+        tokens(i.alias).size > 0 &&
+        coveredBy(tokens(i.alias), cityWords)) ||
+      coveredBy(tokens(i.name), cityWords)
+    );
+  };
+  const pool = institutions.filter(
+    (i) => inTown(i) && brand.every((b) => wordsOf(i).has(b)) && covered(i),
+  );
   if (pool.length === 1 && brand.length > 0) return pool[0] ?? null;
 
   // The HRK short name ("FH Münster", "Hochschule Hannover") written out in the DAAD name.
@@ -297,7 +347,7 @@ export function buildDaadRecords(input: {
 
   for (const c of courses) {
     const match = classifyDaad(c.courseName, c.subject);
-    const listedCity = collapseSpaces(germanTown(c.city));
+    const listedCity = germanTown(c.city);
     if (match === null || listedCity === "" || isTaughtAbroad(c.city)) continue;
     const matched = matchHrkEnglish(c.academy, c.city, lite);
     const inst = matched === null ? undefined : bySlug.get(matched.slug);
@@ -336,13 +386,13 @@ export function buildDaadRecords(input: {
     const years = yearsFromSemesters(c.programmeDuration);
     const codes = languageCodes(c.languages);
     const deadline = cleanDeadline(c.applicationDeadline);
-    const dupCount = input.baCounts?.get(`${instSlug}|${match.field}`) ?? 0;
+    const dupCount = input.baCounts?.get(`${matched?.slug ?? instSlug}|${match.field}`) ?? 0;
     const todo = [
       `DAAD page lists: languages ${c.languages.join(", ") || "none"}, duration ${c.programmeDuration ?? "n/a"}, starts ${c.beginning ?? "n/a"}, tuition "${c.tuitionFees ?? "n/a"}"${c.costString ? ` / "${plainText(c.costString, 160)}"` : ""}, deadline "${plainText(c.applicationDeadline, 300) || "n/a"}"`,
       matched === null
         ? "institution not matched to the HRK list (see its record)"
         : `institution matched to HRK "${instName}"`,
-      "the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled",
+      "the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU",
       ...(match.confidence === "low"
         ? ["field is a judgement call: check the programme content"]
         : []),
@@ -387,7 +437,9 @@ export function buildDaadRecords(input: {
             status: "draft",
           },
         },
-        officialUrl: daadPage(c),
+        // Left empty on purpose, like the other programme importers: the DAAD page is a listing, not
+        // the institution's own programme page, so a human must supply that before promotion.
+        officialUrl: null,
         durationYears: { value: years, source: "daad", info_kind: READ_SOURCE },
         teachingLanguages: { value: codes, source: "daad", info_kind: READ_SOURCE },
         tuition: { value: null, source: "daad", info_kind: READ_SOURCE },

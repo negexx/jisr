@@ -1,6 +1,7 @@
 import { existsSync } from "node:fs";
 import { mkdir, writeFile } from "node:fs/promises";
 
+import { OWNS } from "./owners";
 import { importDaad } from "./sources/daad";
 import { importGermany } from "./sources/germany";
 import { importInstitutions } from "./sources/institutions";
@@ -8,7 +9,9 @@ import { importFrance } from "./sources/parcoursup";
 import { importNetherlands } from "./sources/rio";
 import type { StagedRecord } from "./staging";
 import {
+  dedupeRecords,
   mergeReviewSheet,
+  pruneOrphanUnits,
   pruneStaged,
   readReviewState,
   reviewCsv,
@@ -17,16 +20,6 @@ import {
   stageFile,
   writeStaged,
 } from "./staging";
-
-// Which source ids each source is responsible for, so a record it stopped producing can be pruned.
-const OWNS: Record<string, (sourceId: string) => boolean> = {
-  france: (id) => /^(uai|parcoursup):/.test(id),
-  institutions: (id) => /^(hrk:\d+|duo:\w+)$/.test(id),
-  netherlands: (id) => /^rio(-unit)?:/.test(id),
-  // campus units (hrk:<nr>@<town>) are shared with the DAAD importer and not pruned by either
-  germany: (id) => /^(ba|ba-provider):/.test(id),
-  daad: (id) => /^daad(-academy)?:/.test(id),
-};
 
 const SOURCES: Record<string, () => Promise<StagedRecord[]>> = {
   france: importFrance,
@@ -61,14 +54,7 @@ async function main(argv: readonly string[]): Promise<void> {
   }
 
   const state = await readReviewState();
-  // Two sources can produce the same record (a campus unit): keep the first.
-  const seen = new Set<string>();
-  const unique = records.filter((r) => {
-    const key = `${r.collection}/${r.id}`;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
+  const unique = dedupeRecords(records);
   const result = await writeStaged(unique, { overwrite, approved: state.approved });
   const pruned = { removed: [] as string[], keptApproved: [] as string[] };
   for (const name of selected) {
@@ -90,6 +76,9 @@ async function main(argv: readonly string[]): Promise<void> {
   for (const key of pruned.keptApproved) {
     console.warn(`WARN ${key} is approved but its source no longer produces it: check it`);
   }
+  const orphans = await pruneOrphanUnits({ approved: state.approved });
+  if (orphans.length > 0)
+    console.log(`${orphans.length} institution unit(s) without programmes were removed`);
   const { rows, approved } = mergeReviewSheet({
     existingRows: state.rows,
     approved: state.approved,

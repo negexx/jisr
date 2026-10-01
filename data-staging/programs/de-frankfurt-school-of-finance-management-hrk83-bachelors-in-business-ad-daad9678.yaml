@@ -9,7 +9,7 @@ summary:
   fr:
     text: Bachelor's in Business Administration (BSc), Frankfurt School of Finance & Management (Frankfurt am Main). Programme recensé dans la base de programmes internationaux du DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9678/
+officialUrl: null
 durationYears:
   value: 3.5
   source: daad
@@ -54,5 +54,5 @@ _review:
   field: business-economics
   confidence: high
   officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9678/
-  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, tuition \"8,200\", deadline \"At Frankfurt School, programmes start in the winter semester each year. Our application platform opens in September, and the application deadline is at the end of June. We have rolling admissions, which allow applicants to receive a decision before the deadline.\"; institution matched to HRK \"Frankfurt School of Finance & Management\"; the values below are prefilled from the DAAD page, which is the source: confirm them there (or on the programme's own site), then set info_kind; tuition for non-EU students is not prefilled; 4 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates)"
+  todo: "DAAD page lists: languages English, duration 7 semesters, starts Winter semester, tuition \"8,200\", deadline \"At Frankfurt School, programmes start in the winter semester each year. Our application platform opens in September, and the application deadline is at the end of June. We have rolling admissions, which allow applicants to receive a decision before the deadline.\"; institution matched to HRK \"Frankfurt School of Finance & Management\"; the DAAD page (see the link) is the source of the prefilled values: confirm them there or on the programme's own site, then set info_kind. officialUrl is left empty: set it to the programme's own page on the institution's site (the DAAD page links to it). Tuition for non-EU students is not prefilled. A plain deadline may be the one for EU/German applicants: check it applies to applicants from outside the EU; 4 programme(s) in this field at this institution also come from the Studiensuche: this may be the same degree listed twice (keep the DAAD record, it has language and dates)"
   sourceId: daad:9678
