@@ -212,6 +212,46 @@ describe("promotion gate for assistant-prepared records", () => {
     expect(ledger.map((r) => r.level)).toEqual(["owner-waived", "owner-waived"]);
   });
 
+  it("replaces a promoted record only with a staged revision, the flag and a passed audit", async () => {
+    await stageChannel("a", true);
+    const staged = stageFile("application-channels", "a", stagingDir);
+    const text = readFileSync(staged, "utf8").replace("sourceId:", "revises: true\n  sourceId:");
+    await writeFile(staged, text);
+    await mkdir(path.join(dataDir, "application-channels"), { recursive: true });
+    const target = path.join(dataDir, "application-channels", "a.yaml");
+    await writeFile(target, "old: record\n");
+    const base = {
+      approved: new Set(["application-channels/a"]),
+      date: "2026-10-02",
+      stagingDir,
+      dataDir,
+      audit: audit(true, true, "application-channels/a"),
+    };
+    const refused = await promoteApproved(base);
+    expect(refused.skipped[0]?.reason).toMatch(/never overwritten/);
+    expect(readFileSync(target, "utf8")).toBe("old: record\n");
+    const done = await promoteApproved({ ...base, replaceRevisions: true });
+    expect(done.promoted).toEqual(["application-channels/a"]);
+    expect(readFileSync(target, "utf8")).toContain("Test channel");
+  });
+
+  it("never replaces a record with a staged file that is not a revision", async () => {
+    await stageChannel("a", true);
+    await mkdir(path.join(dataDir, "application-channels"), { recursive: true });
+    const target = path.join(dataDir, "application-channels", "a.yaml");
+    await writeFile(target, "old: record\n");
+    const result = await promoteApproved({
+      approved: new Set(["application-channels/a"]),
+      date: "2026-10-02",
+      stagingDir,
+      dataDir,
+      audit: audit(true, true, "application-channels/a"),
+      replaceRevisions: true,
+    });
+    expect(result.promoted).toEqual([]);
+    expect(readFileSync(target, "utf8")).toBe("old: record\n");
+  });
+
   it("leaves records the assistant did not prepare to the normal approval path", async () => {
     await stageChannel("manual", false);
     const result = await promoteApproved({

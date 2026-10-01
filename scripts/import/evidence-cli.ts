@@ -3,7 +3,7 @@ import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import { parse } from "yaml";
-
+import { auditCsv, readAudit } from "./audit";
 import { pageText, quoteInText } from "./evidence";
 import {
   applyRecord,
@@ -16,7 +16,7 @@ import {
   verifyInstitution,
   verifyProposal,
 } from "./proposals";
-import { STAGING_DIR, stageFile, toYaml } from "./staging";
+import { DATA_DIR, readLedgerRows, STAGING_DIR, stageFile, toYaml } from "./staging";
 
 const PROPOSALS_DIR = path.join(STAGING_DIR, "proposals");
 
@@ -24,6 +24,8 @@ const PROPOSALS_DIR = path.join(STAGING_DIR, "proposals");
 //   data:evidence text <url>                 print the visible text of a page (cached)
 //   data:evidence check <url> "<quote>"      is the quote on the page, verbatim?
 //   data:evidence verify [--dry-run]         verify every data-staging/proposals/*.json and apply it
+//   data:evidence restage                    bring promoted records that have a proposal back into staging
+//                                            as revisions (promote them again with --replace-revisions)
 async function main(argv: readonly string[]): Promise<void> {
   const [command, ...rest] = argv;
   if (command === "text") {
@@ -45,10 +47,70 @@ async function main(argv: readonly string[]): Promise<void> {
     await verifyAll(rest.includes("--dry-run"));
     return;
   }
-  throw new Error("commands: text | check | verify");
+  if (command === "restage") {
+    await restage();
+    return;
+  }
+  throw new Error("commands: text | check | verify | restage");
 }
 
 type Staged = Record<string, unknown>;
+
+// The inverse of stampVerified: a revision goes through the audit again, so its dates are cleared.
+function clearVerified(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(clearVerified);
+  if (typeof value !== "object" || value === null) return value;
+  return Object.fromEntries(
+    Object.entries(value).map(([k, v]) => [k, k === "last_verified_at" ? null : clearVerified(v)]),
+  );
+}
+
+// Brings records that were already promoted and now have a proposal back into staging as
+// revisions (same slug and source id, dates cleared). Their audit rows are dropped, so the next
+// `data:audit draw` puts them in a new batch: a promotion approval never covers changed content.
+export async function restage(): Promise<void> {
+  const ledger = await readLedgerRows();
+  const restaged: string[] = [];
+  // Only programmes: their proposals are the ones that gain facts after promotion.
+  for (const kind of ["programs"]) {
+    const dir = path.join(PROPOSALS_DIR, kind);
+    if (!existsSync(dir)) continue;
+    for (const name of (await readdir(dir)).sort()) {
+      if (!name.endsWith(".json")) continue;
+      const slug = name.slice(0, -".json".length);
+      const promoted = path.join(DATA_DIR, kind, `${slug}.yaml`);
+      if (!existsSync(promoted) || existsSync(stageFile(kind, slug))) continue;
+      const record = clearVerified(parse(await readFile(promoted, "utf8"))) as Staged;
+      const row = ledger.find((r) => r.collection === kind && r.slug === slug);
+      await mkdir(path.dirname(stageFile(kind, slug)), { recursive: true });
+      await writeFile(
+        stageFile(kind, slug),
+        toYaml({
+          ...record,
+          _review: {
+            kind,
+            slug,
+            name: String(record.name ?? slug),
+            ...(row === undefined ? {} : { sourceId: row.sourceId }),
+            revises: true,
+            todo: "revision of a record already in data/: promote with --replace-revisions after the audit",
+          },
+        }),
+      );
+      restaged.push(`${kind}/${slug}`);
+    }
+  }
+  const audit = await readAudit();
+  const drop = new Set(restaged);
+  if (restaged.length > 0) {
+    await writeFile(
+      path.join(STAGING_DIR, "AUDIT.csv"),
+      auditCsv(audit.filter((r) => !drop.has(r.key))),
+    );
+  }
+  console.log(`restaged ${restaged.length} record(s); their audit rows were dropped`);
+}
+
 const today = () => new Date().toISOString().slice(0, 10);
 
 async function loadStaged(collection: string, slug: string): Promise<Staged | null> {

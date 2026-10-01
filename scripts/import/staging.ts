@@ -162,6 +162,11 @@ export async function readLedger(dir = STAGING_DIR): Promise<Map<string, string>
   return new Map(rows.map((r) => [`${r.collection}|${r.sourceId}`, r.slug ?? ""]));
 }
 
+export async function readLedgerRows(dir = STAGING_DIR): Promise<Record<string, string>[]> {
+  const file = ledgerFile(dir);
+  return existsSync(file) ? parseCsv(await readFile(file, "utf8")) : [];
+}
+
 export async function appendLedger(rows: readonly LedgerRow[], dir = STAGING_DIR): Promise<void> {
   if (rows.length === 0) return;
   const file = ledgerFile(dir);

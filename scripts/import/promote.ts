@@ -1,5 +1,5 @@
 import { existsSync } from "node:fs";
-import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import { parse } from "yaml";
@@ -43,6 +43,8 @@ export async function promoteApproved(options: {
   dataDir?: string;
   // Audit rows: records prepared by the assistant are promoted only when their batch has passed.
   audit?: readonly AuditRow[];
+  // Overwrite a record already in the data dir, but only a staged revision of it (`_review.revises`).
+  replaceRevisions?: boolean;
 }): Promise<PromoteResult> {
   const stagingDir = options.stagingDir ?? STAGING_DIR;
   const dataDir = options.dataDir ?? DATA_DIR;
@@ -76,16 +78,19 @@ export async function promoteApproved(options: {
       skip(key, "no staged file");
       continue;
     }
-    if (existsSync(to)) {
-      skip(key, `already in ${dataDir}/ (never overwritten)`);
-      continue;
-    }
     const staged: unknown = parse(await readFile(from, "utf8"));
     if (typeof staged !== "object" || staged === null || Array.isArray(staged)) {
       skip(key, "not a record");
       continue;
     }
-    const review = (staged as { _review?: { sourceId?: unknown; preparedBy?: unknown } })._review;
+    const review = (
+      staged as { _review?: { sourceId?: unknown; preparedBy?: unknown; revises?: unknown } }
+    )._review;
+    const replacing = existsSync(to);
+    if (replacing && !(options.replaceRevisions === true && review?.revises === true)) {
+      skip(key, `already in ${dataDir}/ (never overwritten)`);
+      continue;
+    }
     const sourceId = typeof review?.sourceId === "string" ? review.sourceId : null;
     let level: "human" | "audited-sample" | "owner-waived" = "human";
     let batch = "";
@@ -114,8 +119,15 @@ export async function promoteApproved(options: {
     }
     await mkdir(path.dirname(to), { recursive: true });
     try {
-      // "wx": fail instead of overwriting, even if another process created the file meanwhile.
-      await writeFile(to, toYaml(record as Record<string, unknown>), { flag: "wx" });
+      if (replacing) {
+        // a reviewed revision replaces the old file in one rename, never a half-written one
+        const temp = `${to}.${process.pid}.tmp`;
+        await writeFile(temp, toYaml(record as Record<string, unknown>), { flag: "wx" });
+        await rename(temp, to);
+      } else {
+        // "wx": fail instead of overwriting, even if another process created the file meanwhile.
+        await writeFile(to, toYaml(record as Record<string, unknown>), { flag: "wx" });
+      }
     } catch {
       skip(key, `could not create ${to}`);
       continue;
@@ -131,7 +143,7 @@ export async function promoteApproved(options: {
 
 function usage(message: string): never {
   console.error(
-    `${message}\nusage: pnpm data:promote --confirm-human-read --verified-on YYYY-MM-DD [--audited-batch] [--data-dir data]\n` +
+    `${message}\nusage: pnpm data:promote --confirm-human-read --verified-on YYYY-MM-DD [--audited-batch] [--replace-revisions] [--data-dir data]\n` +
       "Promotes rows marked approved=y in data-staging/REVIEW.csv into data/. Pass these flags only " +
       "after you have read each approved record's sources: the date you give becomes last_verified_at.",
   );
@@ -162,7 +174,13 @@ async function main(argv: readonly string[]): Promise<void> {
   if (warning !== null) console.warn(`WARN ${warning}`);
   if (approved.size === 0) console.warn("WARN no row is approved (write y in the approved column)");
 
-  const result = await promoteApproved({ approved, date, dataDir, audit });
+  const result = await promoteApproved({
+    approved,
+    date,
+    dataDir,
+    audit,
+    replaceRevisions: argv.includes("--replace-revisions"),
+  });
   for (const { key, reason } of result.skipped) console.warn(`skip ${key}: ${reason}`);
   console.log(
     `promoted ${result.promoted.length} record(s), skipped ${result.skipped.length}. ` +
