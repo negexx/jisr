@@ -194,6 +194,42 @@ describe("requirements", () => {
     expect(v.rejected).toEqual([]);
   });
 
+  it("rejects a language rule whose only support is a recommendation", async () => {
+    const soft = "https://uni.example/soft";
+    const v = await verifyProposal(
+      ProposalSchema.parse({
+        slug: "p",
+        programmePage: PAGE,
+        facts: {},
+        requirements: {
+          rules: [
+            {
+              kind: "language_proficiency",
+              language: "en",
+              minCefr: "B2",
+              certificateRequired: false,
+              acceptedTests: [],
+              evidence: [
+                {
+                  url: soft,
+                  quote:
+                    "A good command of English (at least level B2, as recommended by the CEFR)",
+                },
+              ],
+            },
+          ],
+        },
+      }),
+      "Applied Computer Science",
+      async (url) =>
+        url === soft
+          ? "A good command of English (at least level B2, as recommended by the CEFR) is expected."
+          : (pages[url] ?? ""),
+    );
+    expect(v.requirements).toBeUndefined();
+    expect(v.rejected[0]?.reason).toMatch(/soft wording/);
+  });
+
   it("rejects a level, a test or a subject the quote does not state", async () => {
     const v = await verifyProposal(
       ProposalSchema.parse({

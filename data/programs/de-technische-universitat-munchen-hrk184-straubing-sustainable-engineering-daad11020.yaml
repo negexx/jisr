@@ -52,11 +52,17 @@ requirements:
     - id: req-1
       source: programme
       info_kind: official
-      kind: language_proficiency
-      language: en
-      minCefr: B2
-      certificateRequired: false
-      acceptedTests: []
+      kind: manual_check
+      note:
+        fr:
+          text: "Un bon niveau d'anglais est attendu (le DAAD indique B2 comme exigé ou recommandé) ; aucune preuve n'est demandée : vérifiez votre niveau."
+          status: draft
+        en:
+          text: "A good command of English is expected (the DAAD lists B2 as required or recommended); no proof is requested: check your level."
+          status: draft
+        ar:
+          text: "يُتوقع مستوى جيد في اللغة الإنجليزية (يذكر DAAD المستوى B2 كشرط أو توصية)؛ ولا يُطلب إثبات: تحقّقوا من مستواكم."
+          status: draft
     - id: req-2
       source: page-3
       info_kind: official

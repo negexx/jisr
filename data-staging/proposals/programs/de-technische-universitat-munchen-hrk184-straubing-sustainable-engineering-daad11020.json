@@ -48,11 +48,12 @@
   "requirements": {
     "rules": [
       {
-        "kind": "language_proficiency",
-        "language": "en",
-        "minCefr": "B2",
-        "certificateRequired": false,
-        "acceptedTests": [],
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un bon niveau d'anglais est attendu (le DAAD indique B2 comme exigé ou recommandé) ; aucune preuve n'est demandée : vérifiez votre niveau.",
+          "en": "A good command of English is expected (the DAAD lists B2 as required or recommended); no proof is requested: check your level.",
+          "ar": "يُتوقع مستوى جيد في اللغة الإنجليزية (يذكر DAAD المستوى B2 كشرط أو توصية)؛ ولا يُطلب إثبات: تحقّقوا من مستواكم."
+        },
         "evidence": [
           {
             "url": "https://www.tum.de/en/studies/degree-programs/detail/sustainable-engineering-for-materials-and-processes-bachelor-of-science-bsc",

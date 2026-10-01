@@ -35,11 +35,12 @@
   "requirements": {
     "rules": [
       {
-        "kind": "language_proficiency",
-        "language": "en",
-        "minCefr": "B2",
-        "certificateRequired": false,
-        "acceptedTests": [],
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'université attend un bon niveau d'anglais (environ B2 selon le CECRL) ; aucune preuve n'est exigée pour candidater : vérifiez votre niveau.",
+          "en": "The university expects a good command of English (about B2 on the CEFR); no proof is required to apply: check your level.",
+          "ar": "تتوقع الجامعة مستوى جيدًا في اللغة الإنجليزية (حوالي B2 حسب الإطار الأوروبي)؛ ولا يُشترط إثبات عند التقدّم: تحقّقوا من مستواكم."
+        },
         "evidence": [
           {
             "url": "https://www.tha.de/en/university/faculties/computer-science/study-program/international-international-information-systems-bsc/",

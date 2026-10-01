@@ -107,6 +107,10 @@ export type Verified = {
   notes?: string;
 };
 
+const SOFT_WORDING =
+  /recommend|\bshould\b|advis|suggest|empfohlen|empfehl|\bsollte|recommand|conseill|devrait|aanbevol|bij voorkeur|\bzou\b/i;
+const fail = (reason: string): FactCheck => ({ ok: false, reason });
+
 const PREPARED_TEXT =
   "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw";
 const PREPARED_NOTE = /prepared by the assistant from the quoted pages/;
@@ -221,6 +225,10 @@ export async function verifyProposal(
     if (rule.kind === "language_proficiency") {
       const minCefr = rule.minCefr;
       check = agrees((q) => {
+        // "recommended" or "should" is advice, not a condition of admission: a failing rule would
+        // wrongly turn a student away, so the preparer must write it as a manual_check.
+        if (SOFT_WORDING.test(q))
+          return fail("soft wording (recommended/should): write a manual_check");
         const lang = checkLanguages([rule.language], q);
         if (!lang.ok) return lang;
         if (minCefr !== null) {
