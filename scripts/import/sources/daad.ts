@@ -15,7 +15,7 @@ import { hrkSlug, stagedInstitution } from "./institutions";
 // DAAD "International Programmes" database: programmes taught in English or another language
 // that international students can apply to. The data comes from the JSON search the DAAD site
 // itself uses (not a documented API): four paged requests for all Bachelor's programmes, one at a
-// time, cached on disk. Terms of use: not found online; the project owner authorised using it.
+// time, cached on disk. DAAD's terms could not be read online; permission was obtained by the project owner (2026-10-01), see data/README.md.
 const BASE = "https://www2.daad.de";
 const SEARCH = `${BASE}/deutschland/studienangebote/international-programmes/api/solr/en/search.json`;
 const BACHELOR = "1";
