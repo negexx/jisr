@@ -24,8 +24,26 @@ const PRIVATE_VALUES = [
 
 const SNAPSHOT_PATH = /^\/snapshots\/(manifest\.json|s\/[A-Za-z0-9.-]+\.[0-9a-f]{12}\.json)$/;
 
+// Whole tokens only: "1375" or "xz" inside a chunk or shard hash, or in a Next router value, is not
+// the student's grade or nationality. A value counts when no letter or digit touches it.
 function leaks(text: string): string[] {
-  return PRIVATE_VALUES.filter((value) => text.toLowerCase().includes(value.toLowerCase()));
+  return PRIVATE_VALUES.filter((value) =>
+    new RegExp(`(?<![A-Za-z0-9])${escapeRegExp(value)}(?![A-Za-z0-9])`, "i").test(text),
+  );
+}
+
+function decoded(text: string): string {
+  try {
+    return decodeURIComponent(text);
+  } catch {
+    return text;
+  }
+}
+
+// Build output under /_next/static/ is the same for every visitor and not request data.
+function urlLeaks(url: URL): string[] {
+  if (url.pathname.startsWith("/_next/static/")) return [];
+  return leaks(decoded(`${url.pathname}${url.search}${url.hash}`));
 }
 
 for (const { locale } of E2E_LOCALES) {
@@ -80,7 +98,7 @@ for (const { locale } of E2E_LOCALES) {
         expect(url.origin, `origin of ${url.pathname}`).toBe(BASE_ORIGIN);
         expect(request.method, `method of ${url.pathname}`).toBe("GET");
         expect(request.postData, `body of ${url.pathname}`).toBeNull();
-        expect(leaks(decodeURIComponent(`${url.pathname}${url.search}${url.hash}`))).toEqual([]);
+        expect(urlLeaks(url), `values in ${url.pathname}`).toEqual([]);
         if (url.pathname.startsWith("/snapshots/")) {
           expect(url.pathname).toMatch(SNAPSHOT_PATH);
           expect(url.search).toBe("");
@@ -92,6 +110,14 @@ for (const { locale } of E2E_LOCALES) {
       expect([...new Set(requests.map((request) => new URL(request.url).host))]).toEqual([
         new URL(BASE_ORIGIN).host,
       ]);
+
+      // Referer, router state and every other request header, not only the URL.
+      for (const { url, headers } of await traffic.requestHeaders()) {
+        expect(Object.keys(headers).map((name) => name.toLowerCase())).not.toContain("cookie");
+        for (const [name, value] of Object.entries(headers)) {
+          expect(leaks(decoded(value)), `${name} header of ${url}`).toEqual([]);
+        }
+      }
 
       for (const response of await traffic.responses()) {
         const names = response.headers.map((header) => header.name.toLowerCase());

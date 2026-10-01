@@ -10,6 +10,8 @@ export default defineConfig({
   forbidOnly: Boolean(process.env.CI),
   // A retry on CI only: a spec that needs one locally is a flaky spec to fix, not to hide.
   retries: process.env.CI ? 1 : 0,
+  // ... but a test that only passed on its retry still fails the run, so a retry cannot hide a flake.
+  failOnFlakyTests: Boolean(process.env.CI),
   reporter: process.env.CI ? [["list"], ["html", { open: "never" }]] : "list",
   use: {
     baseURL: `http://localhost:${PORT}`,

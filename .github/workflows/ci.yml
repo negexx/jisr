@@ -95,11 +95,13 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
-      - name: Upload traces
-        if: failure()
+      # Traces on failure, and on green runs the perf table and the accessibility findings
+      # (test-results/perf.jsonl, test-results/a11y-findings.jsonl).
+      - name: Upload test results
+        if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v7
         with:
-          name: playwright-traces
+          name: playwright-test-results
           path: test-results/
           retention-days: 7
           if-no-files-found: ignore

@@ -7,7 +7,13 @@ import { card, expectMatchesLoaded, openMatches } from "./support/matches";
 import { translatorFor } from "./support/messages";
 import { JOURNEY_FORM, ProfileFormDriver } from "./support/profile-form";
 import { blockLocalStorage, seedProfile } from "./support/seed";
-import { MANIFEST_URL, readManifest, shardPath, withoutProgramShards } from "./support/snapshot";
+import {
+  MANIFEST_URL,
+  readManifest,
+  shardPath,
+  withCorruptedStringValue,
+  withoutProgramShards,
+} from "./support/snapshot";
 
 // The program shard every E2E_PROFILE match needs (destination XB, computer science).
 const PROGRAM_SHARD = "programs.XB.xx-test-field-cs";
@@ -88,16 +94,26 @@ for (const { locale } of E2E_LOCALES) {
         const missing = shardRequests.filter((request) => request.path.endsWith(missingFile));
         expect(missing).toEqual([{ path: `/snapshots/${missingFile}`, afterManifestRead: 1 }]);
 
-        // One snapshot version: every shard read after the second manifest is a file of that manifest.
+        // One snapshot version. The HTTP cache is off while a route is active, so a shard read
+        // again after the second manifest was fetched again for that manifest, not reused: every
+        // shard the first attempt read (except the missing one) is read again, and every shard
+        // read after the second manifest is a file that manifest lists.
         const realFiles = new Set(
           Object.values(real.shards).map((shard) => `/snapshots/${shard.file}`),
         );
-        const rebuilt = shardRequests.filter((request) => request.afterManifestRead === 2);
-        expect(rebuilt.length).toBeGreaterThan(0);
-        for (const request of rebuilt) expect(realFiles.has(request.path)).toBe(true);
-        expect(rebuilt.some((request) => request.path === shardPath(real, PROGRAM_SHARD))).toBe(
-          true,
-        );
+        const pathsAt = (read: number) =>
+          new Set(
+            shardRequests
+              .filter((request) => request.afterManifestRead === read)
+              .map((r) => r.path),
+          );
+        const first = [...pathsAt(1)].filter((file) => !file.endsWith(missingFile));
+        const rebuilt = pathsAt(2);
+        expect(first.length).toBeGreaterThan(0);
+        for (const path of first) expect(rebuilt.has(path), `${path} read again`).toBe(true);
+        for (const path of rebuilt)
+          expect(realFiles.has(path), `${path} is in the manifest`).toBe(true);
+        expect(rebuilt.has(shardPath(real, PROGRAM_SHARD))).toBe(true);
       });
 
       test("a corrupted shard shows an error with Retry, which recovers once the data is right", async ({
@@ -107,11 +123,7 @@ for (const { locale } of E2E_LOCALES) {
         const url = `**${shardPath(real, PROGRAM_SHARD)}`;
         await page.route(url, async (route) => {
           const response = await route.fetch();
-          const body = await response.body();
-          const bytes = Buffer.from(body);
-          // Same length, one letter changed: only the hash can tell.
-          const at = bytes.findIndex((byte) => byte >= 0x61 && byte <= 0x7a);
-          bytes[at] = bytes[at] === 0x61 ? 0x62 : 0x61;
+          const bytes = withCorruptedStringValue(await response.body());
           await route.fulfill({ response, body: bytes });
         });
 

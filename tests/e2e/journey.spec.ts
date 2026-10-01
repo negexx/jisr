@@ -21,6 +21,7 @@ import {
   openMatches,
 } from "./support/matches";
 import { escapeRegExp, startsWith, translatorFor } from "./support/messages";
+import { rangeSeparator } from "./support/money";
 import { JOURNEY_FORM, ProfileFormDriver } from "./support/profile-form";
 import { seedProfile } from "./support/seed";
 
@@ -202,8 +203,11 @@ for (const { locale, dir } of E2E_LOCALES) {
         const ok = card(page, E2E_SLUGS.ok);
         const total = ok.getByTestId("cost-total");
         await expect(total).toHaveCount(1);
-        const numbers = ((await total.textContent()) ?? "").match(/\d[\d\s.,  ]*\d|\d/g);
-        expect(numbers?.length ?? 0).toBeGreaterThanOrEqual(2);
+        // A range: two amounts joined by the separator the app's own formatter uses.
+        const separator = rangeSeparator(locale, "XTS");
+        const ends = ((await total.textContent()) ?? "").split(separator);
+        expect(ends).toHaveLength(2);
+        for (const end of ends) expect(end).toMatch(/\d/);
         await expect(ok).toContainText(t("domain.cost.tenMonthNote", { months: "10" }));
         await expect(ok.getByTestId("cost-partial")).toHaveCount(0);
 
