@@ -60,7 +60,7 @@ OUTPUT (JSON, no markdown)
 Every key under "facts" is optional: include only the facts you can quote.
 
 FACT DETAILS
-- durationYears: number of years of the programme (a semester count or an ECTS count in the quote is fine: 6 semesters = 3, 180 ECTS = 3, 240 ECTS = 4).
+- durationYears: number of years of the programme. A semester count or an ECTS count in the quote is fine: semesters / 2 (6 semesters = 3, 7 semesters = 3.5, 8 semesters = 4) and ECTS / 60 (180 ECTS = 3, 210 ECTS = 3.5, 240 ECTS = 4). The value can be a half year: never round it to a whole number.
 - teachingLanguages: ISO codes from ${LANGUAGE_CODES.join(", ")}: the language(s) the programme is TAUGHT in. An elective, an optional module or a higher-semester option in another language does not add a language; list a language only if the programme (or a whole track of it) is taught in it.
 - tuition: the tuition fee a student from OUTSIDE the EU/EEA pays, in minor units (EUR 14,650 = 1465000), period "year" or "semester". If the quote says there are no tuition fees for this student, amountMinor is 0 and the quote must say so; never write 0 just because you found no fee. A fee that is only for EU students, or only a general institution-wide figure that may not apply, is not stated for this programme: leave it out and say why in notes.
 - intakes: dates as ISO YYYY-MM-DD. Write a date only if the quote states day, month and YEAR; otherwise leave it out (do not infer a year). null for a date the pages do not give. Never output an intake whose three dates are all null: leave the fact out.
@@ -482,12 +482,17 @@ async function main(argv: readonly string[]): Promise<void> {
       accepted += ok.length;
       rejected += bad.length;
       if (result.error !== null || check?.error != null) failed++;
-      if (proposal !== null)
+      // raw/ keeps what the model proposed (rejected quotes included) so a rejection can be inspected;
+      // <slug>.json is what the code verified and the checker kept
+      if (result.proposal !== null) {
+        await mkdir(path.join(out, "raw"), { recursive: true });
         await writeFile(
-          path.join(out, `${slug}.json`),
-          `${JSON.stringify(proposal, null, 2)}
-`,
+          path.join(out, "raw", `${slug}.json`),
+          `${JSON.stringify(result.proposal, null, 2)}\n`,
         );
+      }
+      if (proposal !== null)
+        await writeFile(path.join(out, `${slug}.json`), `${JSON.stringify(proposal, null, 2)}\n`);
       await appendJsonl(path.join(out, "calls.jsonl"), {
         at: new Date().toISOString(),
         slug,

@@ -449,3 +449,10 @@ describe("keepChecked", () => {
     expect(kept.requirements).toBeUndefined();
   });
 });
+
+describe("duration wording in the instruction", () => {
+  it("shows half years, so 7 semesters is not rounded to 3 or 4 years", () => {
+    expect(INSTRUCTION).toMatch(/7 semesters = 3\.5/);
+    expect(INSTRUCTION).toMatch(/210 ECTS = 3\.5/);
+  });
+});

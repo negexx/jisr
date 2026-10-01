@@ -193,7 +193,7 @@ function amountPattern(amount: number): RegExp {
 }
 
 const NO_FEE =
-  /no tuition|tuition[- ]free|free of charge|no fees|gratuit|keine studiengeb|studiengebührenfrei|geen collegegeld|zonder collegegeld/i;
+  /no tuition|tuition[- ]free|free of charge|no fees|gratuit|keine studiengeb|studiengebührenfrei|geen collegegeld|zonder collegegeld|tuition fees?(?: per (?:semester|year|term))?[: ]+none\b(?!\s+for\b)/i;
 
 export function checkTuition(amountMinor: number, quote: string): FactCheck {
   if (amountMinor === 0)
