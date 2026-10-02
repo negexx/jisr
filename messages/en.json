@@ -912,9 +912,7 @@
     },
     "cells": {
       "programLabel": "Program",
-      "viewProgram": "View the program page",
-      "languageUnknown": "Teaching language not published: check the official page",
-      "costDetails": "Cost details"
+      "languageUnknown": "Teaching language not published: check the official page"
     },
     "scholarships": {
       "none": "None open to your nationality on the published rules",

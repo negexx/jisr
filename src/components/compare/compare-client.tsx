@@ -185,7 +185,7 @@ export function CompareClient({ locale, client }: { locale: AppLocale; client?: 
         node: (
           <>
             <NotEnoughState />
-            <ComparePicker items={rows} selected={selected} onToggle={toggle} forceOpen />
+            <ComparePicker items={rows} selected={selected} onToggle={toggle} idle />
           </>
         ),
       };

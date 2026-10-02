@@ -214,6 +214,34 @@ describe("buildCompareView", () => {
     expect(result.differs.application).toBe(true);
   });
 
+  it("marks the cost row as different when two programs have different totals", () => {
+    const result = view([E2E_SLUGS.ok, E2E_SLUGS.foundation]);
+    const [a, b] = result.programs.map((p) => JSON.stringify(p.cost.totals));
+    expect(a).not.toBeUndefined();
+    expect(a).not.toBe("[]");
+    expect(a).not.toBe(b);
+    expect(result.differs.cost).toBe(true);
+  });
+
+  it("marks the cost row as the same when two programs have identical totals", () => {
+    const result = view([E2E_SLUGS.fail, E2E_SLUGS.check]);
+    const [a, b] = result.programs.map((p) => p.cost);
+    if (a === undefined || b === undefined) throw new Error("need both programs");
+    expect(a.totals.length).toBeGreaterThan(0);
+    expect(a.totals).toEqual(b.totals);
+    expect(a.complete).toBe(b.complete);
+    expect(result.differs.cost).toBe(false);
+  });
+
+  it("marks the language row as different when the teaching languages differ, and the same when equal", () => {
+    const different = view([E2E_SLUGS.fail, E2E_SLUGS.check]);
+    expect(different.programs.map((p) => p.teachingLanguages.value)).toEqual([["fr"], ["en"]]);
+    expect(different.differs.language).toBe(true);
+    const same = view([E2E_SLUGS.ok, E2E_SLUGS.fail]);
+    expect(same.programs.map((p) => p.teachingLanguages.value)).toEqual([["fr"], ["fr"]]);
+    expect(same.differs.language).toBe(false);
+  });
+
   it("treats an empty scholarship list as a value, so two empty lists are the same", () => {
     let none = withoutScholarship(sameTuitionBundle, E2E_SCHOLARSHIP_SLUGS.open);
     none = withoutScholarship(none, E2E_SCHOLARSHIP_SLUGS.xaOnly);

@@ -23,14 +23,15 @@ export function ComparePicker({
   items,
   selected,
   onToggle,
-  forceOpen = false,
+  idle = false,
 }: {
   items: readonly PickerItem[];
   // Slugs being compared, in saved order.
   selected: readonly string[];
   onToggle: (slug: string) => void;
-  // The list is the only thing worth showing (nothing can be compared yet): open it on a phone too.
-  forceOpen?: boolean;
+  // Nothing can be compared yet (fewer than two saved programs are in the data): the list is the
+  // only thing worth showing, so it opens on a phone too, claims no selection and offers no choice.
+  idle?: boolean;
 }) {
   const t = useTranslations("compare.picker");
   const locale = useLocale();
@@ -39,24 +40,25 @@ export function ComparePicker({
 
   useLayoutEffect(() => {
     if (typeof window.matchMedia !== "function") {
-      if (forceOpen && detailsRef.current !== null) detailsRef.current.open = true;
+      if (idle && detailsRef.current !== null) detailsRef.current.open = true;
       return;
     }
     const query = window.matchMedia(OPEN_QUERY);
     const sync = () => {
-      if (detailsRef.current !== null) detailsRef.current.open = forceOpen || query.matches;
+      if (detailsRef.current !== null) detailsRef.current.open = idle || query.matches;
     };
     sync();
     query.addEventListener("change", sync);
     return () => query.removeEventListener("change", sync);
-  }, [forceOpen]);
+  }, [idle]);
 
   const total = displayNumber(items.length, locale);
   const chosen = displayNumber(selected.length, locale);
   // Why a box is disabled: at the maximum the unticked ones wait for a free place, at the minimum the
   // ticked ones stay.
-  const blockText =
-    selected.length >= MAX_COMPARE
+  const blockText = idle
+    ? null
+    : selected.length >= MAX_COMPARE
       ? t("limit", { max: displayNumber(MAX_COMPARE, locale) })
       : selected.length <= MIN_COMPARE
         ? t("minimum", { min: displayNumber(MIN_COMPARE, locale) })
@@ -70,12 +72,20 @@ export function ComparePicker({
           "min-h-12 w-full gap-1.5 rounded-xl border border-border bg-card px-4 py-2",
         )}
       >
-        <span className="me-1.5 min-w-0 flex-1 text-base font-semibold text-foreground">
-          {t("summary", { selected: chosen, total })}
-        </span>
-        <span className="shrink-0 text-sm font-medium underline underline-offset-4">
-          {t("change")}
-        </span>
+        {idle ? (
+          <span className="me-1.5 min-w-0 flex-1 text-base font-semibold text-foreground">
+            {t("change")}
+          </span>
+        ) : (
+          <>
+            <span className="me-1.5 min-w-0 flex-1 text-base font-semibold text-foreground">
+              {t("summary", { selected: chosen, total })}
+            </span>
+            <span className="shrink-0 text-sm font-medium underline underline-offset-4">
+              {t("change")}
+            </span>
+          </>
+        )}
         <DisclosureChevron />
       </summary>
       <div className="mt-3 flex flex-col gap-3">
@@ -93,8 +103,8 @@ export function ComparePicker({
         <ul className="flex flex-col gap-2">
           {items.map((item) => {
             const missing = item.kind === "missing";
-            const blocked = !missing && selectionBlock(selected, item.slug) !== null;
-            const checked = selected.includes(item.slug);
+            const blocked = !missing && !idle && selectionBlock(selected, item.slug) !== null;
+            const checked = !idle && selected.includes(item.slug);
             return (
               <li key={item.slug} data-slug={item.slug}>
                 <label
@@ -111,7 +121,7 @@ export function ComparePicker({
                   <input
                     type="checkbox"
                     checked={checked}
-                    disabled={missing || blocked}
+                    disabled={missing || blocked || idle}
                     aria-describedby={blocked && blockText !== null ? statusId : undefined}
                     onChange={() => onToggle(item.slug)}
                     className="mt-0.5 size-6 shrink-0 accent-primary disabled:cursor-not-allowed"

@@ -37,7 +37,7 @@ function renderPicker(
   locale: AppLocale,
   selected: string[],
   onToggle: (slug: string) => void = () => {},
-  extra: { forceOpen?: boolean } = {},
+  extra: { idle?: boolean } = {},
 ) {
   return render(
     <CompareProviders locale={locale}>
@@ -76,9 +76,23 @@ describe.each(LOCALES)("ComparePicker (%s)", (locale) => {
     expect(container.querySelector("details")?.open).toBe(true);
   });
 
-  it("forces the list open when asked, even on a phone", () => {
-    const { container } = renderPicker(locale, ["p-a"], () => {}, { forceOpen: true });
+  it("when idle: open on a phone, no selection claimed, no minimum line, nothing to choose", () => {
+    const { container } = renderPicker(locale, ["p-a"], () => {}, { idle: true });
     expect(container.querySelector("details")?.open).toBe(true);
+    const summary = container.querySelector("summary")?.textContent ?? "";
+    expect(summary).toContain(t(locale, "change"));
+    expect(summary).not.toContain(t(locale, "summary", { selected: "1", total: "6" }));
+    expect(screen.queryByText(t(locale, "minimum", { min: "2" }))).toBeNull();
+    expect(screen.queryByText(t(locale, "limit", { max: "4" }))).toBeNull();
+    expect(screen.getByText(t(locale, "hint", { min: "2", max: "4" }))).toBeTruthy();
+    for (const box of screen.getAllByRole<HTMLInputElement>("checkbox")) {
+      expect(box.checked).toBe(false);
+      expect(box.disabled).toBe(true);
+      expect(box.hasAttribute("aria-describedby")).toBe(false);
+    }
+    expect(container.querySelector('[data-slug="p-gone"]')?.textContent).toContain(
+      t(locale, "missing"),
+    );
   });
 
   it("lists every saved program as a native checkbox named by the program", () => {

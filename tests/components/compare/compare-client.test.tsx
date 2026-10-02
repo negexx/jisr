@@ -206,6 +206,12 @@ describe.each(LOCALES)("Compare: states (%s)", (locale) => {
     expect(box.disabled).toBe(true);
     expect(box.checked).toBe(false);
     expect(container.querySelector("details")?.open).toBe(true);
+    // Nothing is being compared: no "Comparing 1 of 2" and no "keep at least 2" line.
+    const picker = container.querySelector("details")?.textContent ?? "";
+    expect(picker).not.toContain(
+      tr(locale, "compare.picker", "summary", { selected: "1", total: "2" }),
+    );
+    expect(picker).not.toContain(tr(locale, "compare.picker", "minimum", { min: "2" }));
   });
 });
 
