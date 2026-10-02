@@ -10,6 +10,7 @@
       "!public/snapshots",
       "!data-staging/proposals",
       "!data-staging/proposals-read",
+      "!data-staging/proposals-enrich",
       "!data-staging/bakeoff",
       "!.claude",
       "!.impeccable",
