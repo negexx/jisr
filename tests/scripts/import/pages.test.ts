@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { daadRegisterUrl, mergePages } from "../../../scripts/import/pages";
+import { daadRegisterUrl, dryRunSummary, mergePages } from "../../../scripts/import/pages";
 
 describe("daadRegisterUrl", () => {
   it("builds the DAAD programme page from the id at the end of the slug", () => {
@@ -38,5 +38,27 @@ describe("mergePages", () => {
 
   it("leaves out what was not found", () => {
     expect(mergePages({ register: null, programme: null, fees: [], admission: [] })).toEqual([]);
+  });
+});
+
+describe("dryRunSummary", () => {
+  const base = { searched: 10, institutions: 3, topicInstitutions: 3, cap: "300" };
+
+  it("keeps the wording of a --search dry run when --topics is absent", () => {
+    expect(dryRunSummary({ ...base, useSearch: true, useTopics: false })).toBe(
+      "dry run: 10 programmes need a search; at most 16 queries (cap 300); no query sent, nothing written",
+    );
+  });
+
+  it("adds the topic queries (four per institution) to a --search dry run", () => {
+    expect(dryRunSummary({ ...base, useSearch: true, useTopics: true })).toBe(
+      "dry run: 10 programmes need a search; at most 16 queries (cap 300); plus at most 12 topic queries; no query sent, nothing written",
+    );
+  });
+
+  it("reports only the topic queries for a --topics dry run", () => {
+    expect(dryRunSummary({ ...base, useSearch: false, useTopics: true })).toBe(
+      "dry run: at most 12 topic queries (cap 300); no query sent, nothing written",
+    );
   });
 });
