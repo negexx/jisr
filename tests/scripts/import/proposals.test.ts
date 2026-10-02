@@ -733,9 +733,81 @@ describe("documents fact", () => {
   });
 
   it("requires quotedAs", () => {
-    expect(() =>
-      documentsProposal([{ slug: "cv", name: { fr: "CV" }, translationRequired: null }]),
-    ).toThrow();
+    const withoutQuotedAs = { slug: "cv", name: { fr: "CV" }, translationRequired: null };
+    expect(() => documentsProposal([withoutQuotedAs])).toThrow(/quotedAs/);
+    expect(() => documentsProposal([{ ...withoutQuotedAs, quotedAs: "CV" }])).not.toThrow();
+  });
+
+  it("matches quotedAs as a whole word, never inside a longer word", async () => {
+    const onPage = (quote: string) => async () => quote;
+    const idQuote = "a copy of a valid passport";
+    const id = await verifyProposal(
+      documentsProposal([doc("id", null, "ID")], idQuote),
+      "Prog",
+      onPage(idQuote),
+    );
+    expect(id.facts.documents).toBeUndefined();
+    const cvQuote = "proof of recovery is also needed";
+    const cv = await verifyProposal(
+      documentsProposal([doc("cv", null, "CV")], cvQuote),
+      "Prog",
+      onPage(cvQuote),
+    );
+    expect(cv.facts.documents).toBeUndefined();
+    const idCard = "a copy of your ID card is needed";
+    const named = await verifyProposal(
+      documentsProposal([doc("id", null, "ID")], idCard),
+      "Prog",
+      onPage(idCard),
+    );
+    expect(named.facts.documents?.value).toHaveLength(1);
+  });
+
+  it("takes regex characters in quotedAs literally", async () => {
+    const page2 = async () =>
+      "Please send your B.Sc. certificate and a passport (copy) with the application.";
+    const literal = ProposalSchema.parse({
+      slug: "xx-prog",
+      programmePage: null,
+      facts: {
+        documents: {
+          value: [doc("bsc", null, "B.Sc. certificate"), doc("passport", null, "passport (copy)")],
+          evidence: [
+            { url: page, quote: "send your B.Sc. certificate and a passport (copy) with" },
+          ],
+        },
+      },
+    });
+    const verified = await verifyProposal(literal, "Prog", page2);
+    expect(verified.facts.documents?.value).toHaveLength(2);
+    const wildcard = ProposalSchema.parse({
+      slug: "xx-prog",
+      programmePage: null,
+      facts: {
+        documents: {
+          value: [doc("bsc", null, "B.Sc. certificate")],
+          evidence: [{ url: page, quote: "send your BxSc certificate and a passport" }],
+        },
+      },
+    });
+    const none = await verifyProposal(
+      wildcard,
+      "Prog",
+      async () => "send your BxSc certificate and a passport",
+    );
+    expect(none.facts.documents).toBeUndefined();
+  });
+
+  it("still matches an exact inflected word", async () => {
+    const verified = await verifyProposal(
+      documentsProposal(
+        [doc("zeugnis", null, "Zeugnisses")],
+        "eine beglaubigte Kopie des Zeugnisses ein",
+      ),
+      "Prog",
+      documentsText,
+    );
+    expect(verified.facts.documents?.value).toHaveLength(1);
   });
 
   it("recordValue gives the record shape (no quotedAs) with draft localized names and leaves other fields alone", () => {

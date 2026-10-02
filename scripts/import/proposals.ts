@@ -16,6 +16,7 @@ import {
   programmeNameMatches,
   quoteInText,
   quoteNames,
+  wholeWord,
 } from "./evidence";
 import { READ_SOURCE } from "./staging";
 
@@ -27,6 +28,8 @@ const EvidenceSchema = z.object({ url: Https, quote: z.string().min(1) });
 const Iso = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
 const fact = <T extends z.ZodType>(value: T) =>
   z.object({ value, evidence: z.array(EvidenceSchema).min(1) });
+
+const escapeRegex = (text: string): string => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 const DocumentSlug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 export const DocumentProposalSchema = z.object({
@@ -252,16 +255,21 @@ export async function verifyProposal(
     }
     let value: unknown = entry.value;
     if (key === "documents") {
-      const quotes = accepted.map((e) => normalizeForMatch(e.quote));
+      const quotes = accepted.map((e) => ({
+        normalized: normalizeForMatch(e.quote),
+        translation: mentionsTranslation(e.quote),
+      }));
+      // a whole word, so "ID" is not found inside "valid"
+      const nameRegex = (d: DocumentProposal) =>
+        wholeWord(escapeRegex(normalizeForMatch(d.quotedAs)));
       const named = (entry.value as DocumentProposal[]).filter((d) =>
-        quotes.some((q) => q.includes(normalizeForMatch(d.quotedAs))),
+        quotes.some((q) => nameRegex(d).test(q.normalized)),
       );
-      // a translation claim needs a quote that names THIS document and mentions translation
+      // A translation claim needs a quote that names THIS document and mentions translation. One
+      // quote naming several documents and mentioning translation counts for all of them; the
+      // checker model then judges whether it really applies to each.
       value = named.map((d) => {
-        const own = normalizeForMatch(d.quotedAs);
-        const supported = accepted.some(
-          (e) => normalizeForMatch(e.quote).includes(own) && mentionsTranslation(e.quote),
-        );
+        const supported = quotes.some((q) => q.translation && nameRegex(d).test(q.normalized));
         return d.translationRequired === true && !supported
           ? { ...d, translationRequired: null }
           : d;
