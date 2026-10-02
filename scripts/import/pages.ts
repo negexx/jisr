@@ -1,5 +1,5 @@
 import { existsSync } from "node:fs";
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import { parse } from "yaml";
@@ -80,6 +80,20 @@ export async function addTopicPagesFor(
     log(`topic search failed for ${slug}: ${error instanceof Error ? error.message : error}`);
     return "failed";
   }
+}
+
+// The slugs skipped for lack of an institution website go next to the pages file. A listing left by
+// an earlier run is removed when nothing is skipped now, so it never reports stale slugs.
+export async function syncSkippedListing(
+  listing: string,
+  slugs: readonly string[],
+): Promise<string | null> {
+  if (slugs.length === 0) {
+    await rm(listing, { force: true });
+    return null;
+  }
+  await writeFile(listing, `${slugs.join("\n")}\n`);
+  return listing;
 }
 
 type Yaml = Record<string, unknown>;
@@ -250,11 +264,8 @@ async function main(argv: readonly string[]): Promise<void> {
   if (useTopics) {
     console.log(`topic searches failed: ${topicFailures} programmes kept their existing pages`);
     console.log(`no institution website: ${noWebsite.length} programmes skipped`);
-    if (noWebsite.length > 0) {
-      const listing = `${out}.skipped.txt`;
-      await writeFile(listing, `${noWebsite.join("\n")}\n`);
-      console.log(`   slugs -> ${listing}`);
-    }
+    const listed = await syncSkippedListing(`${out}.skipped.txt`, noWebsite);
+    if (listed !== null) console.log(`   slugs -> ${listed}`);
   }
   if (stopped !== null) console.log(`STOPPED: ${stopped} (partial pages file written)`);
   console.log(`-> ${out}`);

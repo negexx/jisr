@@ -266,6 +266,8 @@ export function salvageProposal(raw: unknown): { proposal: Proposal | null; drop
 
 export type ReadOutcome = {
   proposal: Proposal | null;
+  // the model's proposal as it came back (schema-salvaged, nothing filtered), for diagnosis
+  rawProposal: Proposal | null;
   verified: Verified | null;
   completion: Completion | null;
   // what the model wrote that was unusable (no evidence, wrong shape) and was left out
@@ -373,6 +375,7 @@ export async function readProgramme(input: ReadInput): Promise<ReadOutcome> {
     if (error instanceof BudgetExceeded) throw error;
     return {
       proposal: null,
+      rawProposal: null,
       verified: null,
       completion: null,
       dropped: [],
@@ -385,6 +388,7 @@ export async function readProgramme(input: ReadInput): Promise<ReadOutcome> {
   } catch (error) {
     return {
       proposal: null,
+      rawProposal: null,
       verified: null,
       completion,
       dropped: [],
@@ -399,11 +403,13 @@ export async function readProgramme(input: ReadInput): Promise<ReadOutcome> {
   if (salvaged.proposal === null)
     return {
       proposal: null,
+      rawProposal: null,
       verified: null,
       completion,
       dropped: [],
       error: "schema mismatch: not a proposal object",
     };
+  const rawProposal = structuredClone(salvaged.proposal);
   // The route a Moroccan applicant takes into France is set from the route data, not read from a page
   // (a page that says "Parcoursup" describes French Bac holders).
   if (input.country === "FR" && salvaged.proposal.facts.applicationChannel !== undefined) {
@@ -418,6 +424,7 @@ export async function readProgramme(input: ReadInput): Promise<ReadOutcome> {
   const verified = await verifyProposal(proposal, input.name, input.getText);
   return {
     proposal,
+    rawProposal,
     verified,
     completion,
     dropped: salvaged.dropped,
@@ -660,13 +667,13 @@ async function main(argv: readonly string[]): Promise<void> {
       accepted += ok.length;
       rejected += bad.length;
       if (result.error !== null || check?.error != null || baseMissing) failed++;
-      // raw/ keeps what the model proposed (rejected quotes included) so a rejection can be inspected;
-      // <slug>.json is what the code verified and the checker kept
-      if (result.proposal !== null) {
+      // raw/ keeps what the model proposed (rejected quotes and unsupplied pages included) so a
+      // rejection can be inspected; <slug>.json is what the code verified and the checker kept
+      if (result.rawProposal !== null) {
         await mkdir(path.join(out, "raw"), { recursive: true });
         await writeFile(
           path.join(out, "raw", `${slug}.json`),
-          `${JSON.stringify(result.proposal, null, 2)}\n`,
+          `${JSON.stringify(result.rawProposal, null, 2)}\n`,
         );
       }
       if (proposal !== null)

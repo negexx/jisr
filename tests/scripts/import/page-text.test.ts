@@ -60,6 +60,17 @@ describe("pageText", () => {
     ).rejects.toThrow(/not a text page/);
   });
 
+  it("recognises a PDF body that starts with a BOM or whitespace", async () => {
+    const cacheDir = await mkdtemp(path.join(tmpdir(), "page-text-"));
+    const fetchFn = (async () =>
+      new Response(makePdf("Fees are due in March 2026"))) as typeof fetch;
+    const text = await pageText("https://uni.example/download?id=9", {
+      fetchHtml: fakeFetchHtml(`\uFEFF \n${decode(makePdf("x"))}`),
+      pdfDeps: { fetchFn, cacheDir },
+    });
+    expect(text).toContain("Fees are due in March 2026");
+  });
+
   it("tolerates a stray replacement character in a long page", async () => {
     const body = `<p>${"Informatik studieren ".repeat(100)}�</p>`;
     expect(await pageText("https://uni.example/a", { fetchHtml: fakeFetchHtml(body) })).toContain(

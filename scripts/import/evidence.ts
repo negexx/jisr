@@ -75,7 +75,7 @@ export async function pageText(url: string, deps: PageTextDeps = {}): Promise<st
     const body = await (deps.fetchHtml ?? fetchText)(url, {
       accept: "text/html,application/xhtml+xml,application/pdf;q=0.8",
       validate: (text) => {
-        if (text.startsWith("%PDF-")) {
+        if (/^\uFEFF?\s*%PDF-/.test(text)) {
           bodyIsPdf = true;
           throw new Error("body is a PDF");
         }

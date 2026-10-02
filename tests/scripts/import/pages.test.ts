@@ -1,3 +1,7 @@
+import { existsSync } from "node:fs";
+import { mkdtemp, readFile, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 import {
@@ -5,6 +9,7 @@ import {
   daadRegisterUrl,
   dryRunSummary,
   mergePages,
+  syncSkippedListing,
 } from "../../../scripts/import/pages";
 import { SearchBudgetExceeded } from "../../../scripts/import/search";
 import type { Topic } from "../../../scripts/import/topics";
@@ -123,5 +128,25 @@ describe("addTopicPagesFor", () => {
       ),
     ).rejects.toThrow(SearchBudgetExceeded);
     expect(programmes.a).toEqual(["https://u.example/p"]);
+  });
+});
+
+describe("syncSkippedListing", () => {
+  it("lists the skipped slugs, one per line", async () => {
+    const file = path.join(await mkdtemp(path.join(tmpdir(), "pages-")), "p.json.skipped.txt");
+    expect(await syncSkippedListing(file, ["a", "b"])).toBe(file);
+    expect(await readFile(file, "utf8")).toBe("a\nb\n");
+  });
+
+  it("removes a stale listing from an earlier run when nothing is skipped now", async () => {
+    const file = path.join(await mkdtemp(path.join(tmpdir(), "pages-")), "p.json.skipped.txt");
+    await writeFile(file, "old-slug\n");
+    expect(await syncSkippedListing(file, [])).toBeNull();
+    expect(existsSync(file)).toBe(false);
+  });
+
+  it("is fine with no listing to remove", async () => {
+    const file = path.join(await mkdtemp(path.join(tmpdir(), "pages-")), "none.skipped.txt");
+    expect(await syncSkippedListing(file, [])).toBeNull();
   });
 });

@@ -58,7 +58,10 @@ async function main(argv: readonly string[]): Promise<void> {
     return;
   }
   if (command === "restage") {
-    await restage(await readSlugFilter(rest), { enrichDir: flagOf(rest, "enrich") });
+    const only = await readSlugFilter(rest);
+    const enrichDir = flagOf(rest, "enrich");
+    requireSlugsForEnrichRestage(enrichDir, only);
+    await restage(only, { enrichDir });
     return;
   }
   throw new Error("commands: text | check | verify | restage");
@@ -79,6 +82,16 @@ function flagOf(argv: readonly string[], name: string): string | null {
 // read as "everything".
 export function inSelection(slug: string, only: ReadonlySet<string> | null): boolean {
   return only === null || only.has(slug);
+}
+
+// restage reopens records for audit and drops their audit rows: with --enrich it must never default
+// to every record that has a proposal.
+export function requireSlugsForEnrichRestage(
+  enrichDir: string | null,
+  only: ReadonlySet<string> | null,
+): void {
+  if (enrichDir !== null && only === null)
+    throw new Error("restage --enrich needs --slugs <file>: it will not restage every proposal");
 }
 
 export async function readSlugFilter(argv: readonly string[]): Promise<Set<string> | null> {

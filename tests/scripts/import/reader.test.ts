@@ -455,6 +455,23 @@ describe("readProgramme and the pages the model was given", () => {
     );
   });
 
+  it("keeps what the model proposed, before the filter, for diagnosis", async () => {
+    const out = await read({
+      slug: meta.slug,
+      programmePage: supplied,
+      facts: {
+        tuition: {
+          value: { amountMinor: 150000, currency: "EUR", period: "semester" },
+          evidence: [quote(aggregator, "Tuition: EUR 1,500 per semester")],
+        },
+      },
+    });
+    expect(out.proposal?.facts.tuition).toBeUndefined();
+    expect(out.rawProposal?.facts.tuition?.evidence).toEqual([
+      quote(aggregator, "Tuition: EUR 1,500 per semester"),
+    ]);
+  });
+
   it("leaves a proposal that only cites supplied pages untouched", async () => {
     const out = await read({
       slug: meta.slug,

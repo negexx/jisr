@@ -7,9 +7,25 @@ import { parse, stringify } from "yaml";
 import {
   inSelection,
   readSlugFilter,
+  requireSlugsForEnrichRestage,
   restage,
   verifyAll,
 } from "../../../scripts/import/evidence-cli";
+
+describe("requireSlugsForEnrichRestage", () => {
+  it("refuses an enrichment restage with no slug selection", () => {
+    expect(() => requireSlugsForEnrichRestage("data-staging/proposals-enrich", null)).toThrow(
+      /--slugs/,
+    );
+  });
+
+  it("allows it with a selection, and a plain restage without one", () => {
+    expect(() =>
+      requireSlugsForEnrichRestage("data-staging/proposals-enrich", new Set(["a"])),
+    ).not.toThrow();
+    expect(() => requireSlugsForEnrichRestage(null, null)).not.toThrow();
+  });
+});
 
 describe("inSelection", () => {
   it("selects everything when there is no filter", () => {
