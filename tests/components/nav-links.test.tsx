@@ -89,25 +89,26 @@ describe("NavLinks", () => {
     expect(plan.querySelector('[aria-hidden="true"]')?.textContent).toBe("2");
     expect(plan.textContent).not.toMatch(/[٠-٩۰-۹]/u);
   });
-  it.each(["fr", "en", "ar"] as const)(
-    "never wraps a label and keeps phone padding compact in %s, with the badge shown",
-    (locale) => {
-      seedSaved(2);
-      renderIntl(<NavLinks {...shellProps(locale).nav} />, locale);
-      const links = screen.getAllByRole("link");
-      expect(links).toHaveLength(3);
-      for (const link of links) {
-        expect(link.className).toContain("whitespace-nowrap");
-        expect(link.className).toContain("min-h-12");
-        // 8px on phone (the three French labels plus the badge must fit in 343px), 12px from md.
-        expect(link.className).toContain("px-2");
-        expect(link.className).toContain("md:px-3");
-      }
-      // The list is pulled back by the phone padding so the first label lines up with the wordmark.
-      expect(links[0]?.closest("ul")?.className).toContain("-ms-2");
-      const badge = links[2]?.querySelector('[aria-hidden="true"]');
-      expect(badge?.className).toContain("ms-1.5");
-      expect(badge?.className).toContain("px-1.5");
-    },
-  );
+  it.each([
+    "fr",
+    "en",
+    "ar",
+  ] as const)("never wraps a label and keeps phone padding compact in %s, with the badge shown", (locale) => {
+    seedSaved(2);
+    renderIntl(<NavLinks {...shellProps(locale).nav} />, locale);
+    const links = screen.getAllByRole("link");
+    expect(links).toHaveLength(3);
+    for (const link of links) {
+      expect(link.className).toContain("whitespace-nowrap");
+      expect(link.className).toContain("min-h-12");
+      // 8px on phone (the three French labels plus the badge must fit in 343px), 12px from md.
+      expect(link.className).toContain("px-2");
+      expect(link.className).toContain("md:px-3");
+    }
+    // The list is pulled back by the phone padding so the first label lines up with the wordmark.
+    expect(links[0]?.closest("ul")?.className).toContain("-ms-2");
+    const badge = links[2]?.querySelector('[aria-hidden="true"]');
+    expect(badge?.className).toContain("ms-1.5");
+    expect(badge?.className).toContain("px-1.5");
+  });
 });

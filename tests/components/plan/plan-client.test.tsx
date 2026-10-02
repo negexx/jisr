@@ -318,7 +318,9 @@ describe.each(LOCALES)("My plan: focus after Remove (%s)", (locale) => {
 
     await user.click(screen.getByRole("button", { name: t.program.remove }));
 
-    await waitFor(() => expect(storedSlugs()).toEqual([first.slug, requireProgram(programs, 2).slug]));
+    await waitFor(() =>
+      expect(storedSlugs()).toEqual([first.slug, requireProgram(programs, 2).slug]),
+    );
     const heading = await programHeading(first.name);
     await waitFor(() => expect(document.activeElement).toBe(heading));
   });

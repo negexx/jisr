@@ -123,8 +123,8 @@ describe("shardsForPlan", () => {
       "XA",
       manifest,
     );
-    expect(plan.structural).toEqual(
-      expect.arrayContaining([
+    expect(sorted(plan.structural)).toEqual(
+      sorted([
         "core",
         "routes.XA",
         "programs.XB.xx-test-field-cs",

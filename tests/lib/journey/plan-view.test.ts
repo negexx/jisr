@@ -11,16 +11,36 @@ import {
   E2E_SLUGS,
 } from "../../fixtures/e2e/profiles";
 import { forbidConsole } from "../profile/no-console";
-import { buildSnapshot, E2E_DATA_DIR, removeTempDirs } from "../snapshot/fixture";
+import { buildSnapshot, buildVariant, E2E_DATA_DIR, removeTempDirs } from "../snapshot/fixture";
 import { loadMatchesBundle } from "./bundle";
 
 forbidConsole();
 
 let bundle: SnapshotBundle;
+// The same data with the stale program's language rule re-verified at the fixture date.
+let freshLanguageBundle: SnapshotBundle;
+
+// The student holds an English certificate at B2, which meets the stale program's English rule (B1,
+// any certificate): only the age of the rule decides whether the plan may skip the language exam.
+const ENGLISH_CERTIFICATE_PROFILE: Profile = {
+  ...E2E_PROFILE,
+  languages: [
+    { language: "fr", level: "B2", certificate: "xx-test-cert-fr" },
+    { language: "en", level: "B2", certificate: "xx-test-cert-en" },
+  ],
+};
 
 beforeAll(async () => {
   const dir = buildSnapshot(E2E_DATA_DIR);
   bundle = await loadMatchesBundle(dir, E2E_PROFILE, "fr");
+  const freshDir = buildVariant([
+    {
+      file: "programs/xx-test-prog-stale.yaml",
+      from: "last_verified_at: 2025-02-07",
+      to: `last_verified_at: ${E2E_NOW}`,
+    },
+  ]);
+  freshLanguageBundle = await loadMatchesBundle(freshDir, ENGLISH_CERTIFICATE_PROFILE, "fr");
 }, 180_000);
 
 afterAll(removeTempDirs);
@@ -151,9 +171,15 @@ describe("buildPlanView", () => {
     expect(scholarships.scholarships).toEqual([]);
   });
 
-  it("never yields a skipped step from stale data: the stale program has no skipped language_exam or application_account", () => {
-    const stale = programEntry(E2E_SLUGS.stale);
+  it("never yields a skipped step from stale data: the stale program keeps language_exam and application_account as todo", () => {
+    // Control: with the English rule re-verified, this same student does get 'certificate_held'.
+    const fresh = programEntry(E2E_SLUGS.stale, ENGLISH_CERTIFICATE_PROFILE, freshLanguageBundle);
+    expect(step(fresh, "language_exam").status).toBe("skipped");
+    expect(step(fresh, "language_exam").reason).toBe("certificate_held");
+
+    const stale = programEntry(E2E_SLUGS.stale, ENGLISH_CERTIFICATE_PROFILE);
     expect(stale.group).toBe("check");
+    expect(step(stale, "language_exam").status).toBe("todo");
     for (const id of ["language_exam", "application_account"] as const) {
       expect(step(stale, id).status).toBe("todo");
     }

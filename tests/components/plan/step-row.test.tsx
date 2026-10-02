@@ -250,7 +250,9 @@ describe.each(LOCALES)("SkippedSteps (%s)", (locale) => {
     );
     const rows = container.querySelectorAll<HTMLElement>("li[data-step]");
     const bare = container.querySelector<HTMLElement>('li[data-step="scholarships"]');
-    expect(bare?.textContent).toContain(catalogs[locale].domain.checklist.reason.no_scholarships_listed);
+    expect(bare?.textContent).toContain(
+      catalogs[locale].domain.checklist.reason.no_scholarships_listed,
+    );
     expect(within(bare as HTMLElement).queryByText(t.steps.guidance)).toBeNull();
     expect(bare?.querySelector('[data-slot="guidance-tag"]')).toBeNull();
     expect(bare?.querySelector('[data-slot="source-badge"]')).toBeNull();

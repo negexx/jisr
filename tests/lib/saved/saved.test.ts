@@ -68,9 +68,16 @@ describe("parseSaved on hostile input", () => {
     }
   });
 
-  it("ignores an own __proto__ key inside an item", () => {
-    const parsed = parseSaved(JSON.parse('{"schemaVersion":1,"items":[{"__proto__":1}]}'));
-    expect(parsed?.items).toHaveLength(0);
+  it("rejects an otherwise valid item that carries an own __proto__ key, without polluting Object.prototype", () => {
+    const valid = item("xx-proto");
+    const raw = JSON.parse(
+      `{"schemaVersion":1,"items":[${JSON.stringify(valid).slice(0, -1)},"__proto__":{"polluted":true}},${JSON.stringify(item("xx-ok"))}]}`,
+    );
+    // JSON.parse makes __proto__ an own property here, which the extra-key rule must reject.
+    expect(Object.hasOwn(raw.items[0], "__proto__")).toBe(true);
+    expect(parseSaved(raw)).toEqual({ schemaVersion: 1, items: [item("xx-ok")] });
+    expect(Object.hasOwn(Object.prototype, "polluted")).toBe(false);
+    expect(({} as Record<string, unknown>).polluted).toBeUndefined();
   });
 });
 

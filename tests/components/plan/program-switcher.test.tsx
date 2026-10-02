@@ -1,8 +1,8 @@
 // @vitest-environment jsdom
 import { cleanup, render, screen, within } from "@testing-library/react";
-import { useLayoutEffect } from "react";
 import userEvent from "@testing-library/user-event";
 import { createTranslator } from "next-intl";
+import { useLayoutEffect } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { ProgramSwitcher, type SwitcherItem } from "@/components/plan/program-switcher";
