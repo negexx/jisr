@@ -436,7 +436,7 @@ const WORDS: Record<string, Record<Topic, string>> = {
 const LANGUAGE: Record<string, string> = { DE: "de", NL: "nl" };
 
 const PATTERN: Record<Topic, RegExp> = {
-  fees: /tuition|\bfees?\b|\bcosts?\b|gebuhr|studienbeitr|semesterbeitr|collegegeld|kosten/,
+  fees: /tuition|\bfees?\b|\bcosts?\b|gebu(?:e)?hr|studienbeitr|semesterbeitr|collegegeld|kosten/,
   language: /language of instruction|teaching language|instruction|unterrichtssprache|studiensprache|\bsprache|voertaal|\btaal\b|language/,
   deadline: /deadline|frist|termine?\b|aanmeld|application period|dates/,
   documents: /documents?|unterlagen|nachweis|documenten|required|checklist|erforderlich|benodigde/,
