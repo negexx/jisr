@@ -20,8 +20,9 @@ function listOf(store: LocalJsonStore<SavedList>): SavedList {
 // `onRemoved` lets the caller forget what depended on the saved program (the ticked steps); it
 // runs only when the removal was applied, so ticks are forgotten only if the program is gone.
 // A reference the parser rejects (bad slug or snapshotVersion) returns
-// `{ ok: true, saved: false, persisted: ... }` without saving anything: callers must not show
-// "removed" copy for a save that did not happen.
+// `{ ok: true, saved: false, persisted: ... }` without saving anything: a caller that saw the
+// program as not saved before the call and gets `saved: false` back must not show "removed" copy
+// (the save button shows its failure alert instead).
 export function toggleSaved(
   store: LocalJsonStore<SavedList>,
   ref: SavedRef,

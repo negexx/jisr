@@ -62,13 +62,21 @@ export function SaveProgramButton({
     if (busy.current) return;
     busy.current = true;
     try {
+      const wasSaved = saved;
       const result = await toggle(program, snapshotVersion);
-      setFailures(0);
       if (!result.ok) {
+        setFailures(0);
         setRefusals((count) => count + 1);
         setMessage(null);
         return;
       }
+      if (!wasSaved && !result.saved) {
+        // A save that did not happen (the reference was rejected): not a removal, so say it failed.
+        setFailures((count) => count + 1);
+        setMessage(null);
+        return;
+      }
+      setFailures(0);
       setRefusals(0);
       setMessage(result.saved ? copy.announceSaved : copy.announceRemoved);
     } catch {

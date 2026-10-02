@@ -192,6 +192,17 @@ describe.each(LOCALES)("SaveProgramButton (%s)", (locale) => {
     expect(screen.queryByRole("alert")).toBeNull();
   });
 
+  it("does not announce a removal for a reference the parser rejects, and says it failed", async () => {
+    const user = userEvent.setup();
+    const bad = { slug: "Not A Slug", country: "FR", field: "computer-science" };
+    renderIntl(button(locale, bad), locale);
+    await user.click(screen.getByRole("button", { name: `${copy.save} ${NAME}` }));
+    expect((await screen.findByRole("alert")).textContent).toBe(copy.failed);
+    expect(screen.getByRole("status").textContent).toBe("");
+    expect(screen.getByRole("button", { name: `${copy.save} ${NAME}` })).toBeTruthy();
+    expect(storedItems()).toEqual([]);
+  });
+
   it("keeps two buttons for the same program in sync", async () => {
     const user = userEvent.setup();
     renderIntl(
