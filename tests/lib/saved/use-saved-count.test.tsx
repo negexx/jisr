@@ -44,12 +44,12 @@ describe("useSavedCount", () => {
     const { useSavedCount, useSaved } = await load();
     const count = renderHook(() => useSavedCount());
     const saved = renderHook(() => useSaved());
-    act(() => {
-      saved.result.current.toggle(ref, "0123456789ab");
+    await act(async () => {
+      await saved.result.current.toggle(ref, "0123456789ab");
     });
     expect(count.result.current).toBe(1);
-    act(() => {
-      saved.result.current.toggle(ref, "0123456789ab");
+    await act(async () => {
+      await saved.result.current.toggle(ref, "0123456789ab");
     });
     expect(count.result.current).toBe(0);
   });

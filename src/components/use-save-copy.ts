@@ -13,6 +13,7 @@ export function useSaveCopy(): SaveCopy {
     saved: t("saved"),
     announceSaved: t("announceSaved"),
     announceRemoved: t("announceRemoved"),
+    failed: t("failed"),
     full: t("full", { max: displayNumber(MAX_SAVED_PROGRAMS, locale) }),
   };
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { Bookmark } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { MAX_SAVED_PROGRAMS } from "@/lib/constants";
@@ -15,6 +15,8 @@ export type SaveCopy = {
   announceSaved: string;
   announceRemoved: string;
   full: string;
+  // Shown when the change could not be made (the toggle code did not load); nothing was changed.
+  failed: string;
 };
 
 // The static HTML knows nothing about what the student saved, so the server output is an inert
@@ -36,6 +38,9 @@ export function SaveProgramButton({
   // How many times a save was refused because the list is full (0: none since the last success).
   // The count keys the alert, so each refusal inserts a fresh one and is announced again.
   const [refusals, setRefusals] = useState(0);
+  // Same idea for a change that could not be made; one click at a time while it is in flight.
+  const [failures, setFailures] = useState(0);
+  const busy = useRef(false);
 
   if (!hydrated) {
     return (
@@ -53,21 +58,32 @@ export function SaveProgramButton({
   }
   const showFull = refusals > 0 && stillFull;
 
-  function onClick() {
-    const result = toggle(program, snapshotVersion);
-    if (!result.ok) {
-      setRefusals((count) => count + 1);
+  async function onClick() {
+    if (busy.current) return;
+    busy.current = true;
+    try {
+      const result = await toggle(program, snapshotVersion);
+      setFailures(0);
+      if (!result.ok) {
+        setRefusals((count) => count + 1);
+        setMessage(null);
+        return;
+      }
+      setRefusals(0);
+      setMessage(result.saved ? copy.announceSaved : copy.announceRemoved);
+    } catch {
+      // Nothing was changed, and the student is told.
+      setFailures((count) => count + 1);
       setMessage(null);
-      return;
+    } finally {
+      busy.current = false;
     }
-    setRefusals(0);
-    setMessage(result.saved ? copy.announceSaved : copy.announceRemoved);
   }
 
   return (
     <div className="flex flex-col gap-2">
       {/* The visible label itself changes between save and saved, so there is no aria-pressed. */}
-      <Button type="button" variant="outline" className="min-w-32" onClick={onClick}>
+      <Button type="button" variant="outline" className="min-w-32" onClick={() => void onClick()}>
         <Bookmark aria-hidden="true" className={saved ? "fill-current" : undefined} />
         {/* The space after the label keeps the accessible name readable: the name follows, unseen. */}
         {saved ? copy.saved : copy.save}{" "}
@@ -77,6 +93,11 @@ export function SaveProgramButton({
       </Button>
       {/* One polite region for the life of the button: only its text changes, so it is announced. */}
       <output className="sr-only">{message}</output>
+      {failures > 0 ? (
+        <p key={failures} role="alert" className="max-w-prose text-sm text-muted-foreground">
+          {copy.failed}
+        </p>
+      ) : null}
       {showFull ? (
         <p key={refusals} role="alert" className="max-w-prose text-sm text-muted-foreground">
           {copy.full}

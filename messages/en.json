@@ -784,7 +784,8 @@
     "saved": "Saved",
     "announceSaved": "Added to My plan.",
     "announceRemoved": "Removed from My plan.",
-    "full": "You can save up to {max} programs. Remove one in My plan first."
+    "full": "You can save up to {max} programs. Remove one in My plan first.",
+    "failed": "Your saved list could not be updated just now. Try again."
   },
   "plan": {
     "meta": {

@@ -784,7 +784,8 @@
     "saved": "Enregistré",
     "announceSaved": "Ajouté à Mon plan.",
     "announceRemoved": "Retiré de Mon plan.",
-    "full": "Vous pouvez enregistrer jusqu'à {max} programmes. Retirez-en un dans Mon plan d'abord."
+    "full": "Vous pouvez enregistrer jusqu'à {max} programmes. Retirez-en un dans Mon plan d'abord.",
+    "failed": "Impossible de mettre à jour votre liste pour le moment. Réessayez."
   },
   "plan": {
     "meta": {

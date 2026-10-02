@@ -4,7 +4,7 @@ import { useMemo, useSyncExternalStore } from "react";
 
 import { todayIso } from "@/lib/clock";
 
-import { removeFromPlan, type SavedRef, type ToggleResult, toggleSavedProgram } from "./actions";
+import type { SavedRef, ToggleResult } from "./actions";
 import type { SavedProgram } from "./saved";
 import { savedStore } from "./store";
 
@@ -14,8 +14,8 @@ export type UseSaved = {
   // False only when this device cannot reliably keep the list; true while unhydrated.
   storageAvailable: boolean;
   isSaved: (slug: string) => boolean;
-  toggle: (ref: SavedRef, snapshotVersion: string) => ToggleResult;
-  remove: (slug: string) => void;
+  // Rejects if the toggle code cannot be loaded; nothing was changed then.
+  toggle: (ref: SavedRef, snapshotVersion: string) => Promise<ToggleResult>;
 };
 
 const NONE: readonly SavedProgram[] = [];
@@ -33,8 +33,10 @@ export function useSaved(): UseSaved {
       items,
       storageAvailable: state.status !== "ready" || state.storageAvailable,
       isSaved: (slug) => items.some((item) => item.slug === slug),
-      toggle: (ref, snapshotVersion) => toggleSavedProgram(ref, snapshotVersion, todayIso()),
-      remove: removeFromPlan,
+      // The toggle code (and, behind it, the tick store an unsave must clear) is loaded on the
+      // first click: pages that only show a Save button do not carry it until it is used.
+      toggle: async (ref, snapshotVersion) =>
+        (await import("./actions")).toggleSavedProgram(ref, snapshotVersion, todayIso()),
     };
   }, [state]);
 }

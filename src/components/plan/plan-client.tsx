@@ -9,6 +9,7 @@ import { todayIso } from "@/lib/clock";
 import type { PlanView } from "@/lib/journey/plan-view";
 import { usePlanProgress } from "@/lib/plan/use-plan-progress";
 import { useProfile } from "@/lib/profile/use-profile";
+import { removeFromPlan } from "@/lib/saved/actions";
 import { useSaved } from "@/lib/saved/use-saved";
 import type { SnapshotClient } from "@/lib/snapshot/client";
 import { shardsForPlan } from "@/lib/snapshot/plan";
@@ -114,7 +115,7 @@ export function PlanClient({ locale, client }: { locale: AppLocale; client?: Sna
 
   function remove(slug: string) {
     focusAfterRemoval.current = true;
-    saved.remove(slug);
+    removeFromPlan(slug);
   }
 
   function retryAll() {

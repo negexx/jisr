@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { act, cleanup, screen, within } from "@testing-library/react";
+import { act, cleanup, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { renderToString } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
@@ -37,6 +37,7 @@ function copyOf(locale: AppLocale) {
     announceSaved: savedProgram.announceSaved,
     announceRemoved: savedProgram.announceRemoved,
     full: savedProgram.full.replace("{max}", String(MAX_SAVED_PROGRAMS)),
+    failed: savedProgram.failed,
   };
 }
 
@@ -108,7 +109,7 @@ describe.each(LOCALES)("SaveProgramButton (%s)", (locale) => {
     expect(status.textContent).toBe("");
 
     await user.click(screen.getByRole("button", { name: `${copy.save} ${NAME}` }));
-    const savedControl = screen.getByRole("button", { name: `${copy.saved} ${NAME}` });
+    const savedControl = await screen.findByRole("button", { name: `${copy.saved} ${NAME}` });
     expect(savedControl.getAttribute("aria-pressed")).toBeNull();
     expect(storedItems()).toEqual([
       expect.objectContaining({ ...PROGRAM, snapshotVersion: VERSION }),
@@ -117,7 +118,7 @@ describe.each(LOCALES)("SaveProgramButton (%s)", (locale) => {
     expect(status.textContent).toBe(copy.announceSaved);
 
     await user.click(savedControl);
-    expect(screen.getByRole("button", { name: `${copy.save} ${NAME}` })).toBeTruthy();
+    expect(await screen.findByRole("button", { name: `${copy.save} ${NAME}` })).toBeTruthy();
     expect(storedItems()).toEqual([]);
     expect(status.textContent).toBe(copy.announceRemoved);
   });
@@ -127,7 +128,7 @@ describe.each(LOCALES)("SaveProgramButton (%s)", (locale) => {
     seedOthers(MAX_SAVED_PROGRAMS);
     renderIntl(button(locale), locale);
     await user.click(screen.getByRole("button", { name: `${copy.save} ${NAME}` }));
-    expect(screen.getByRole("alert").textContent).toBe(copy.full);
+    expect((await screen.findByRole("alert")).textContent).toBe(copy.full);
     expect(screen.getByRole("button", { name: `${copy.save} ${NAME}` })).toBeTruthy();
     expect(storedItems().some((item) => item.slug === PROGRAM.slug)).toBe(false);
     expect(storedItems()).toHaveLength(MAX_SAVED_PROGRAMS);
@@ -140,9 +141,10 @@ describe.each(LOCALES)("SaveProgramButton (%s)", (locale) => {
     renderIntl(button(locale), locale);
     const control = () => screen.getByRole("button", { name: `${copy.save} ${NAME}` });
     await user.click(control());
-    const first = screen.getByRole("alert");
+    const first = await screen.findByRole("alert");
     await user.click(control());
-    const second = screen.getByRole("alert");
+    await waitFor(() => expect(first.isConnected).toBe(false));
+    const second = await screen.findByRole("alert");
     // Same text in the same node is not announced twice: each click must insert a new alert.
     expect(second).not.toBe(first);
     expect(first.isConnected).toBe(false);
@@ -155,7 +157,7 @@ describe.each(LOCALES)("SaveProgramButton (%s)", (locale) => {
     seedOthers(MAX_SAVED_PROGRAMS);
     renderIntl(button(locale), locale);
     await user.click(screen.getByRole("button", { name: `${copy.save} ${NAME}` }));
-    expect(screen.getByRole("alert")).toBeTruthy();
+    expect(await screen.findByRole("alert")).toBeTruthy();
     act(() => removeFromPlan("xx-other-0"));
     expect(screen.queryByRole("alert")).toBeNull();
     // Full again: the old complaint must not come back by itself.
@@ -183,11 +185,11 @@ describe.each(LOCALES)("SaveProgramButton (%s)", (locale) => {
     seedOthers(MAX_SAVED_PROGRAMS);
     renderIntl(button(locale), locale);
     await user.click(screen.getByRole("button", { name: `${copy.save} ${NAME}` }));
-    expect(screen.getByRole("alert")).toBeTruthy();
+    expect(await screen.findByRole("alert")).toBeTruthy();
     act(() => removeFromPlan("xx-other-0"));
     await user.click(screen.getByRole("button", { name: `${copy.save} ${NAME}` }));
+    await waitFor(() => expect(screen.getByRole("status").textContent).toBe(copy.announceSaved));
     expect(screen.queryByRole("alert")).toBeNull();
-    expect(screen.getByRole("status").textContent).toBe(copy.announceSaved);
   });
 
   it("keeps two buttons for the same program in sync", async () => {
@@ -200,9 +202,16 @@ describe.each(LOCALES)("SaveProgramButton (%s)", (locale) => {
       locale,
     );
     await user.click(within(screen.getByTestId("a")).getByRole("button"));
-    expect(within(screen.getByTestId("a")).getByRole("button").textContent).toContain(copy.saved);
+    await waitFor(() =>
+      expect(within(screen.getByTestId("a")).getByRole("button").textContent).toContain(copy.saved),
+    );
     expect(within(screen.getByTestId("b")).getByRole("button").textContent).toContain(copy.saved);
     await user.click(within(screen.getByTestId("b")).getByRole("button"));
+    await waitFor(() =>
+      expect(within(screen.getByTestId("a")).getByRole("button").textContent).not.toContain(
+        copy.saved,
+      ),
+    );
     expect(within(screen.getByTestId("a")).getByRole("button").textContent).toContain(copy.save);
     expect(within(screen.getByTestId("a")).getByRole("button").textContent).not.toContain(
       copy.saved,
@@ -217,6 +226,6 @@ describe("SaveProgramButton: Arabic", () => {
     renderIntl(button("ar"), "ar");
     expect(screen.getByTestId("dir-root").getAttribute("dir")).toBe("rtl");
     await user.click(screen.getByRole("button"));
-    expect(screen.getByRole("alert").textContent).not.toMatch(ARABIC_INDIC_DIGIT);
+    expect((await screen.findByRole("alert")).textContent).not.toMatch(ARABIC_INDIC_DIGIT);
   });
 });
