@@ -381,6 +381,91 @@ describe("French programmes", () => {
   });
 });
 
+describe("readProgramme and the pages the model was given", () => {
+  const supplied = "https://own.example/p";
+  const aggregator = "https://aggregator.example/uni";
+  const page = "Applied Data Science is a 4 years programme. Tuition: EUR 1,500 per semester.";
+  const model = { id: "fake", wire: "chat" as const, price: { input: 0, output: 0, cached: 0 } };
+  const quote = (url: string, text: string) => ({ url, quote: text });
+  const read = (proposal: unknown) =>
+    readProgramme({
+      ...meta,
+      model,
+      shared: [],
+      own: [{ url: supplied, text: page }],
+      session: "s",
+      getText: async () => page,
+      completeFn: async () => completion(JSON.stringify(proposal)),
+    });
+
+  it("drops evidence from a page the model was not given, and the fact if nothing remains", async () => {
+    const out = await read({
+      slug: meta.slug,
+      programmePage: supplied,
+      facts: {
+        durationYears: {
+          value: 4,
+          evidence: [
+            quote(aggregator, "is a 4 years programme"),
+            quote(supplied, "is a 4 years programme"),
+          ],
+        },
+        tuition: {
+          value: { amountMinor: 150000, currency: "EUR", period: "semester" },
+          evidence: [quote(aggregator, "Tuition: EUR 1,500 per semester")],
+        },
+      },
+    });
+    expect(out.proposal?.facts.durationYears?.evidence).toEqual([
+      quote(supplied, "is a 4 years programme"),
+    ]);
+    expect(out.proposal?.facts.tuition).toBeUndefined();
+    expect(Object.keys(out.verified?.facts ?? {})).toEqual(["durationYears"]);
+    expect(out.dropped).toEqual([
+      `facts.durationYears.evidence:${aggregator}`,
+      `facts.tuition.evidence:${aggregator}`,
+      "facts.tuition",
+    ]);
+  });
+
+  it("drops the same from a requirement rule and an unsupplied programme page", async () => {
+    const out = await read({
+      slug: meta.slug,
+      programmePage: aggregator,
+      facts: {},
+      requirements: {
+        rules: [
+          { kind: "prior_study_years_min", years: 12, evidence: [quote(aggregator, "12 years")] },
+          {
+            kind: "manual_check",
+            note: "Check the page",
+            evidence: [quote(supplied, "is a 4 years programme")],
+          },
+        ],
+      },
+    });
+    expect(out.proposal?.programmePage).toBeNull();
+    expect(out.proposal?.requirements?.rules.map((r) => r.kind)).toEqual(["manual_check"]);
+    expect([...out.dropped].sort()).toEqual(
+      [
+        "programmePage",
+        `requirements.rules.0.evidence:${aggregator}`,
+        "requirements.rules.0",
+      ].sort(),
+    );
+  });
+
+  it("leaves a proposal that only cites supplied pages untouched", async () => {
+    const out = await read({
+      slug: meta.slug,
+      programmePage: supplied,
+      facts: { durationYears: { value: 4, evidence: [quote(supplied, "is a 4 years programme")] } },
+    });
+    expect(out.dropped).toEqual([]);
+    expect(out.proposal?.programmePage).toBe(supplied);
+  });
+});
+
 describe("pool", () => {
   it("runs every item with the given concurrency", async () => {
     const seen: number[] = [];

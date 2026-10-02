@@ -24,6 +24,7 @@ import {
   type GetText,
   type Proposal,
   ProposalSchema,
+  type RuleProposal,
   type Verified,
   verifyProposal,
 } from "./proposals";
@@ -276,6 +277,49 @@ export type ReadInput = ProgrammeMeta & {
   completeFn?: (model: ModelSpec, input: CompleteInput) => Promise<Completion>;
 };
 
+// The model could only have read the pages it was given. Evidence from any other url (a page it
+// remembers, an aggregator) is dropped before the code verifies anything, and a fact or rule left
+// with no evidence goes with it. Every drop is reported.
+export function restrictToSuppliedPages(
+  proposal: Proposal,
+  suppliedUrls: ReadonlySet<string>,
+  dropped: string[],
+): Proposal {
+  const keep = (
+    label: string,
+    evidence: readonly { url: string; quote: string }[],
+  ): { url: string; quote: string }[] => {
+    const kept: { url: string; quote: string }[] = [];
+    for (const item of evidence) {
+      if (suppliedUrls.has(item.url)) kept.push(item);
+      else dropped.push(`${label}.evidence:${item.url}`);
+    }
+    return kept;
+  };
+  const facts: Record<string, unknown> = {};
+  for (const [name, fact] of Object.entries(proposal.facts)) {
+    const evidence = keep(`facts.${name}`, fact.evidence);
+    if (evidence.length === 0) dropped.push(`facts.${name}`);
+    else facts[name] = { ...fact, evidence };
+  }
+  const rules: RuleProposal[] = [];
+  for (const [index, rule] of (proposal.requirements?.rules ?? []).entries()) {
+    const evidence = keep(`requirements.rules.${index}`, rule.evidence);
+    if (evidence.length === 0) dropped.push(`requirements.rules.${index}`);
+    else rules.push({ ...rule, evidence });
+  }
+  const programmePageSupplied =
+    proposal.programmePage === null || suppliedUrls.has(proposal.programmePage);
+  if (!programmePageSupplied) dropped.push("programmePage");
+  const { requirements: _requirements, ...rest } = proposal;
+  return {
+    ...rest,
+    programmePage: programmePageSupplied ? proposal.programmePage : null,
+    facts: facts as Proposal["facts"],
+    ...(rules.length > 0 ? { requirements: { rules } } : {}),
+  };
+}
+
 export async function readProgramme(input: ReadInput): Promise<ReadOutcome> {
   const { system, user } = buildPrompt(input);
   let completion: Completion;
@@ -328,9 +372,14 @@ export async function readProgramme(input: ReadInput): Promise<ReadOutcome> {
     delete salvaged.proposal.facts.applicationChannel;
     salvaged.dropped.push("facts.applicationChannel");
   }
-  const verified = await verifyProposal(salvaged.proposal, input.name, input.getText);
+  const proposal = restrictToSuppliedPages(
+    salvaged.proposal,
+    new Set([...input.shared, ...input.own].map((page) => page.url)),
+    salvaged.dropped,
+  );
+  const verified = await verifyProposal(proposal, input.name, input.getText);
   return {
-    proposal: salvaged.proposal,
+    proposal,
     verified,
     completion,
     dropped: salvaged.dropped,
