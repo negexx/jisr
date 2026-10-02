@@ -154,6 +154,24 @@ describe("restage", () => {
     await expect(readFile(w.staged, "utf8")).rejects.toThrow();
   });
 
+  it("says which selected records it skipped because a staged file already exists", async () => {
+    const w = await workspace(tuitionProposal(null), false);
+    await mkdir(path.dirname(w.staged), { recursive: true });
+    await writeFile(w.staged, stringify({ ...promotedRecord(), _review: { revises: true } }));
+    const before = await readFile(w.staged, "utf8");
+    const lines: string[] = [];
+    const log = vi.spyOn(console, "log").mockImplementation((line: unknown) => {
+      lines.push(String(line));
+    });
+    try {
+      expect(await restageForEnrichment(w)).toEqual([]);
+    } finally {
+      log.mockRestore();
+    }
+    expect(lines).toContain("already staged, skipped: de-xx");
+    expect(await readFile(w.staged, "utf8")).toBe(before);
+  });
+
   it("without enrichDir reads the staging proposals and clears the dates", async () => {
     const w = await workspace(tuitionProposal(PROGRAMME_URL), true);
     const restaged = await restage(null, { stagingDir: w.stagingDir, dataDir: w.dataDir });

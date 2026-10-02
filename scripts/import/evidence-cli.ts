@@ -147,7 +147,11 @@ export async function restage(
       const slug = name.slice(0, -".json".length);
       if (!inSelection(slug, only)) continue;
       const promoted = path.join(dataDir, kind, `${slug}.yaml`);
-      if (!existsSync(promoted) || existsSync(stageFile(kind, slug, stagingDir))) continue;
+      if (!existsSync(promoted)) continue;
+      if (existsSync(stageFile(kind, slug, stagingDir))) {
+        console.log(`already staged, skipped: ${slug}`);
+        continue;
+      }
       if (enrichDir !== null) {
         const proposal: unknown = JSON.parse(await readFile(path.join(dir, name), "utf8"));
         if (!hasFacts(proposal)) continue;
