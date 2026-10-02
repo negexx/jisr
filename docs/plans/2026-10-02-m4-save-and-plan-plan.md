@@ -177,14 +177,14 @@ describe("createLocalJsonStore", () => {
 
   it("refuses an update the parser rejects and leaves storage alone", () => {
     const storage = createFakeStorage();
-    const store = createLocalJsonStore(() => storage, options);
-    expect(store.update(() => ({ n: Number.NaN }))).toEqual({ ok: true, persisted: true });
-    // NaN serialises to null, so the parser must have rejected it before the write:
     const strict = createLocalJsonStore(() => storage, {
       ...options,
-      parse: (raw: unknown) => (isRecord(raw) && typeof raw.n === "number" && raw.n >= 0 ? { n: raw.n } : null),
+      parse: (raw: unknown) =>
+        isRecord(raw) && typeof raw.n === "number" && raw.n >= 0 ? { n: raw.n } : null,
     });
     expect(strict.update(() => ({ n: -1 }))).toEqual({ ok: false });
+    expect(storage.raw("jisr.test")).toBeNull();
+    expect(strict.getSnapshot()).toMatchObject({ value: EMPTY });
   });
 
   it("keeps the value in memory when the write fails", () => {
@@ -235,8 +235,6 @@ describe("createLocalJsonStore", () => {
   });
 });
 ```
-
-(The "refuses an update" test's first assertion documents that `update` runs `parse` on the new value; keep both halves.)
 
 - [ ] **Step 3: Run it to verify it fails.** Run: `pnpm vitest run tests/lib/local-store.test.ts` — Expected: FAIL, `Cannot find module '@/lib/local-store'`.
 
