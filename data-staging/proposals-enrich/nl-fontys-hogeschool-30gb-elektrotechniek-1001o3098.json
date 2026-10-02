@@ -1,0 +1,53 @@
+{
+  "slug": "nl-fontys-hogeschool-30gb-elektrotechniek-1001o3098",
+  "programmePage": "https://www.fontys.nl/Opleidingen/Elektrotechniek-bachelor-voltijd.htm",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Elektrotechniek-bachelor-voltijd.htm",
+          "quote": "Opleidingsduur 4 jaar"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Elektrotechniek-bachelor-voltijd.htm",
+          "quote": "Opleidingsduur 4 jaar Taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Elektrotechniek-bachelor-voltijd.htm",
+          "quote": "Meld je uiterlijk 1 mei aan via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee for non-EU/EEA students is not stated per amount on the supplied pages; the Collegegeld page only points to the collegegeldmeter and says instellingscollegegeld applies to students from outside the EER, so no tuition fact is given. The programme itself is Dutch-taught (Taal Nederlands); the page mentions an English-taught variant Electrical and Electronic Engineering as a separate programme. Deadlines for international students are on the Aanmeld-deadlines page under 'Deadlines for international students', but the list itself is not present in the text. Only one intake (September, deadline 1 mei 2027) is quoted; the page also mentions a February start with deadline 1 februari, but without a year it is not output. The oer.fontys.nl page contains no usable text.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme néerlandais (havo, vwo ou mbo niveau 4) exigé; certaines matières/profils donnent des exigences supplémentaires. Vérifiez la page complète des toelatingseisen pour les diplômes étrangers (Bac marocain).",
+          "en": "Dutch diploma (havo, vwo or mbo level 4) required; certain subjects/profiles add additional admission requirements. Check the full toelatingseisen page for foreign diplomas (Moroccan Baccalaureat)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Opleidingen/Elektrotechniek-bachelor-voltijd.htm",
+            "quote": "Met een havo-, vwo-, of mbo-diploma (niveau 4) word je toegelaten."
+          }
+        ]
+      }
+    ]
+  }
+}

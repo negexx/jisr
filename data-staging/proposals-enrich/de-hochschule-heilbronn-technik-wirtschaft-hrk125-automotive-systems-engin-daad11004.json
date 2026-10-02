@@ -1,0 +1,68 @@
+{
+  "slug": "de-hochschule-heilbronn-technik-wirtschaft-hrk125-automotive-systems-engin-daad11004",
+  "programmePage": "https://www.hs-heilbronn.de/en/automotive-systems-engineering",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/automotive-systems-engineering",
+          "quote": "7 Semester : 3.5 years standard period of study"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11004/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Certificat de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "school leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+          "quote": "If you hold a non-German school leaving certificate, you must first have it recognized by Studienkolleg Konstanz or by Uni-Assist."
+        }
+      ]
+    }
+  },
+  "notes": "The DAAD page states tuition fees for non-EU countries are 1,500 EUR per semester, which matches the university's tuition-fee page but that page's general statement is about tuition for international students. The programme page does not state a tuition fee. The duration of 3.5 years is from 7 semesters / 210 ECTS on the programme page. Teaching languages: the DAAD page says the first and second semesters are taught in English and the third through seventh semesters are taught in German; the programme page also says the language of instruction is German, with some classes held in English.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11004/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 79 Reading: 18 Listening: 17 Speaking: 20 Writing: 17 IELTS Academic: 6"
+          }
+        ]
+      }
+    ]
+  }
+}

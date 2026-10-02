@@ -1,0 +1,72 @@
+{
+  "slug": "nl-de-haagse-hogeschool-27um-accountancy-1001o3550",
+  "programmePage": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+          "quote": "Duration 4 jaar"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+          "quote": "Taal Nederlands"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2026-05-01"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+          "quote": "Deze opleiding start in september en heeft geen februari-instroom."
+        },
+        {
+          "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+          "quote": "De aanmelddeadline is 1 mei 2026."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+          "quote": "Je aanmelden voor een opleiding doe je via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fees for non-EU/EEA students are not stated for this programme: the general institution-wide instellingscollegegeld (€ 10,164 / € 10,528) is for all bachelor, Ad and funded master programmes, and the € 14,000 fee applies only to full-time English-taught master's programmes, so no programme-specific non-EU tuition could be extracted. Document list for international applicants is not stated for this programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme étranger peut donner accès si il est équivalent à un diplôme néerlandais d'accès et si vous prouvez une maîtrise suffisante du néerlandais.",
+          "en": "A foreign diploma may grant access if it is equivalent to a Dutch qualifying diploma and if you prove sufficient command of Dutch."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+            "quote": "Met een buitenlands of internationaal diploma kun je toegelaten worden, mits dit diploma toelating biedt tot hbo en je een bewijs hebt van voldoende beheersing van de Nederlandse taal."
+          }
+        ]
+      }
+    ]
+  }
+}

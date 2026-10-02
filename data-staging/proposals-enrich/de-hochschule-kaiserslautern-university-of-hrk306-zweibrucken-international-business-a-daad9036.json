@@ -1,0 +1,111 @@
+{
+  "slug": "de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken-international-business-a-daad9036",
+  "programmePage": "https://hs-kl.de/betriebswirtschaft/studiengaenge/bachelor/international-business-administration",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://hs-kl.de/betriebswirtschaft/studiengaenge/bachelor/international-business-administration",
+          "quote": "Regelstudienzeit 7 Semester"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9036/",
+          "quote": "The course of study comprises 210 ECTS in total."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://hs-kl.de/betriebswirtschaft/studiengaenge/bachelor/international-business-administration",
+          "quote": "Lehrsprache deutsch mit englisch"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9036/",
+          "quote": "Courses are held in German and English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-kl.de/en/international/from-abroad/costs",
+          "quote": "You do not have to pay any tuition fees in Rheinland-Pfalz."
+        },
+        {
+          "url": "https://hs-kl.de/international/aus-dem-ausland/kosten",
+          "quote": "Sie zahlen im Bundesland Rheinland-Pfalz keine Studiengebühren."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.hs-kl.de/en/studying/application/apply-from-abroad",
+          "quote": "Applications with foreign academic qualifications must be submitted via the uni-assist platform."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Certificat de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "School and, where applicable, university certificates",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-kl.de/en/studying/application/apply-from-abroad",
+          "quote": "School and, where applicable, university certificates"
+        }
+      ]
+    }
+  },
+  "notes": "The programme is listed on the DAAD page as taught in German and English; the hs-kl.de page describes the IBA (deutschsprachig) track ('Lehrsprache deutsch mit englisch'). The hs-kl.de programme page states the application deadline as 'Ende August' (end of August) for winter and 'Ende Februar' (end of February) for summer without a year, and the general deadlines page gives 31 August / 28 February also without a year; no day+month+year could be quoted, so all intake dates were left null. The university-wide pages state that no tuition fees are charged; the DAAD page for this programme says 'Tuition fees per semester None', but the 0 amount relies on the university-wide/international-costs statement. The B2 German certificate requirement is stated for applicants whose native language is not German and who do not hold a German university entrance qualification; the list of certificates includes DSH-1, Goethe-Zertifikat B2, DSD II and TestDaF TDN 3. English: the DAAD page says no minimum level required. A predoctoral internship ('Vorpraktikum') is listed without detail. The hs-kl.de programme page states the IBA is taught in German with English and that international applicants apply via the university's applicant portal, while the general 'Apply from Abroad' page states foreign academic qualifications go through uni-assist; the latter was chosen for the application channel.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre baccalauréat marocain vous donne accès à l'université en Allemagne ; sinon, le Studienkolleg et la Feststellungsprüfung peuvent être nécessaires.",
+          "en": "Check whether your Moroccan Baccalauréat entitles you to study in Germany; otherwise the Studienkolleg and the Feststellungsprüfung may be required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-kl.de/en/studying/application/apply-from-abroad",
+            "quote": "Your school-leaving qualification does not entitle you to study in Germany. In this case, you will need to prepare for university through the pre-sessional programmes at Internationales Studienkolleg and pass the Assessment Test."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non membres de l'UE doivent fournir une preuve de financement (compte bloqué) garantissant au moins un an de subsistance.",
+          "en": "Non-EU applicants must present proof of financing (blocked account) covering at least one year of living costs."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-kl.de/en/international/from-abroad/costs",
+            "quote": "If you are not a citizen of an EU country you must present a so-called proof of financing. This proves that you have secured your livelihood for at least one year."
+          }
+        ]
+      }
+    ]
+  }
+}

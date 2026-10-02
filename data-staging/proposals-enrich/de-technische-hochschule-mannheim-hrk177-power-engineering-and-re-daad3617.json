@@ -1,0 +1,186 @@
+{
+  "slug": "de-technische-hochschule-mannheim-hrk177-power-engineering-and-re-daad3617",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3617/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3617/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3617/",
+          "quote": "The language of instruction is English for the first year. Classes take place in German from the third semester onwards."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3617/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3617/",
+          "quote": "Go to https://campus.th-mannheim.de."
+        },
+        {
+          "url": "https://www.ete.hs-mannheim.de/bachelor/apply.html",
+          "quote": "Apply online via our application portal: https://campus.th-mannheim.de"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "CV",
+          "translationRequired": null
+        },
+        {
+          "slug": "proof-of-english-language-skills",
+          "name": {
+            "fr": "Preuve de compétences en anglais",
+            "en": "Proof of English language skills"
+          },
+          "quotedAs": "proof of sufficient English language skills",
+          "translationRequired": null
+        },
+        {
+          "slug": "authenticated-copies-of-school-university-certificates",
+          "name": {
+            "fr": "Copies authentifiées des certificats universitaires / scolaires",
+            "en": "Authenticated copies of school / university certificates"
+          },
+          "quotedAs": "authenticated copies of school / university certificates",
+          "translationRequired": null
+        },
+        {
+          "slug": "transcripts",
+          "name": {
+            "fr": "Relevés de notes",
+            "en": "Transcripts"
+          },
+          "quotedAs": "transcripts",
+          "translationRequired": null
+        },
+        {
+          "slug": "reference-letter",
+          "name": {
+            "fr": "Lettre de recommandation",
+            "en": "Reference letter"
+          },
+          "quotedAs": "at least one reference letter from school/university",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivational-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivational letter"
+          },
+          "quotedAs": "motivational letter (maximum one A4 page)",
+          "translationRequired": null
+        },
+        {
+          "slug": "english-language-proof",
+          "name": {
+            "fr": "Preuve de compétence linguistique en anglais",
+            "en": "English language proof"
+          },
+          "quotedAs": "English language proof (IELTS, TOEFL, OTE)",
+          "translationRequired": null
+        },
+        {
+          "slug": "letter-of-reference",
+          "name": {
+            "fr": "Lettre de recommandation",
+            "en": "Letter of reference"
+          },
+          "quotedAs": "Letter of reference (written in English) from one of your teachers or professors, preferably in Maths or Physics",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3617/",
+          "quote": "Required application documents: CV proof of sufficient English language skills (for details, see below) authenticated copies of school / university certificates / transcripts / \"Studienkolleg\" type T if available at least one reference letter from school/university motivational letter (maximum one A4 page):"
+        },
+        {
+          "url": "https://www.ete.hs-mannheim.de/bachelor/apply.html",
+          "quote": "Required application documents School leaving certificates with grades and university transcripts of your current course of studies (if you are studying already) -- Upload one combined pdf scan max. size 5 MB. English language proof (IELTS, TOEFL, OTE) CV (written in English and up-to-date) Letter of reference (written in English) from one of your teachers or professors, preferably in Maths or Physics Motivational letter (written in English, maximum one A4 page)"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition fee of 1,500 EUR per semester applies to non-EU applicants; the quote from the DAAD page states it for non-EU countries. Application channel: no mention of uni-assist on the pages; the DAAD and department pages direct applicants to the university's own portal campus.th-mannheim.de, so de-university-direct is used.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3617/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6.5 TOEFL iBT (before 2026): 88"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier si votre diplôme permet un accès direct ou si un Studienkolleg est nécessaire.",
+          "en": "Check if your qualification allows direct access or if a Studienkolleg is required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ete.hs-mannheim.de/bachelor/apply.html",
+            "quote": "Check whether your school qualifications can lead to direct access to our international BSc programme or whether you would need additional academic experience or additional tests to be eligible to apply with us."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats de certains pays doivent suivre un Studienkolleg ou des semestres supplémentaires.",
+          "en": "Applicants from some countries need to attend a Studienkolleg or additional semesters."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ete.hs-mannheim.de/bachelor/apply.html",
+            "quote": "Applicants from some countries require additional academic experience on top of their higher education entrance qualification."
+          }
+        ]
+      }
+    ]
+  }
+}

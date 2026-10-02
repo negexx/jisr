@@ -1,0 +1,62 @@
+{
+  "slug": "de-technische-hochschule-rosenheim-hrk232-international-bachelor-o-daad7892",
+  "programmePage": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/international-bachelor-of-engineering",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/international-bachelor-of-engineering",
+          "quote": "ECTS 240"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7892/",
+          "quote": "Programme duration 8 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/international-bachelor-of-engineering",
+          "quote": "basic studies (taught in English) lasting three semesters with a common first semester, and main studies (taught in German) from the fourth semester onwards."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7892/",
+          "quote": "Teaching language German English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 50000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/what-are-the-costs-of-studying-at-th-rosenheim-tuition-fees-and-student-union-fees",
+          "quote": "For international students from third countries, tuition fees of 500 € per enrolled semester will apply from summer semester 2026."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme",
+          "quote": "International Bachelor of Engineering at Campus Rosenheim • application period: 1 May - 30 November 2026 via uni-assist with a university entrance qualification from abroad"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7892/",
+          "quote": "Please apply via uni-assist."
+        }
+      ]
+    }
+  },
+  "notes": "Le programme a un enseignement partiellement en allemand : les trois premiers semestres sont en anglais, puis les cours passent en allemand. Les frais de scolarité indiqués concernent les étudiants internationaux non-UE et s'appliquent par semestre. La date de début des cours pour le semestre d'été 2027 est estimée au 1er mars 2027 à partir des pages Web ; les pages indiquent le début en mars mais pas le jour exact. Aucune règle d'admission spécifique basée sur les notes du baccalauréat marocain n'a été trouvée ; un contrôle manuel serait nécessaire."
+}

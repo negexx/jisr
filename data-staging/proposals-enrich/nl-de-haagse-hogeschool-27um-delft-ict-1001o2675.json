@@ -1,0 +1,79 @@
+{
+  "slug": "nl-de-haagse-hogeschool-27um-delft-ict-1001o2675",
+  "programmePage": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+          "quote": "Type Bachelor Vorm: voltijd deeltijd Duration 4 jaar Start Start in september"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+          "quote": "Locatie Den Haag - hoofdvestiging, Delft en Zoetermeer Taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+          "quote": "Je aanmelden voor een opleiding doe je via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition not stated for this programme: the only fee figures found (page Collegegeld) are institution-wide and concern English-taught master's programmes (€14,000 / €10,528) or the statutory fee (€2,601/€2,694 for 2025-2026/2026-2027, for EU/EEA/Swiss etc. students); no non-EU bachelor ICT fee is quoted. No start date or application deadline with day and year is quoted for this programme: the ICT page says only 'Start in september' and the general deadlines (e.g. 1 mei) are given without a year. The programme is taught in Dutch ('Taal Nederlands'). Evidence for language requirement comes from the general admission page (Taaleisen Nederlands). One page supplied (research report about Ukrainian teenagers) is irrelevant to this programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Avec un diplôme étranger ou international, vous pouvez être admis si le diplôme donne accès à l'enseignement supérieur néerlandais et si vous maîtrisez suffisamment le néerlandais.",
+          "en": "With a foreign or international diploma, you can be admitted if the diploma gives access to Dutch higher education and you have proof of sufficient command of Dutch."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+            "quote": "Met een buitenlands of internationaal diploma kun je toegelaten worden, mits dit diploma toelating biedt tot hbo en je een bewijs hebt van voldoende beheersing van de Nederlandse taal."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "Je toont aan dat je voldoet aan de taaleis Nederlands via een staatsexamen Nederlands als Tweede Taal, programma II met alle vier de onderdelen lezen, spreken, schrijven en luisteren."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La Centrale Studenten Inschrijving détermine si votre diplôme étranger est au moins équivalent à un diplôme néerlandais donnant accès à l'enseignement supérieur ; inscrivez-vous via Studielink.",
+          "en": "The Central Student Administration determines whether your foreign diploma is at least equivalent to a Dutch diploma giving access to higher education; register via Studielink."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "De Centrale Studenten Inschrijving bepaalt of jouw buitenlandse diploma ten minste gelijkwaardig is aan dat van een (toelatinggevend) Nederlands diploma."
+          }
+        ]
+      }
+    ]
+  }
+}

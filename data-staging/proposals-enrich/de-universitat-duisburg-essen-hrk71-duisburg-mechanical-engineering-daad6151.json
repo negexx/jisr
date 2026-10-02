@@ -1,0 +1,123 @@
+{
+  "slug": "de-universitat-duisburg-essen-hrk71-duisburg-mechanical-engineering-daad6151",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6151/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.uni-due.de/iw/en/study/b-me.php",
+          "quote": "Study period 6 semesters (3 years)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6151/",
+          "quote": "The language of instruction is half German and half English."
+        },
+        {
+          "url": "https://www.uni-due.de/iw/en/study/b-me.php",
+          "quote": "Language 50% German & 50% English"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6151/",
+          "quote": "Submit application via Please apply via uni-assist."
+        },
+        {
+          "url": "https://www.uni-due.de/iw/en/study/b-me.php",
+          "quote": "Prospective students from non-EU countries submit their application to uni-assist (see application deadline)."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "university-entrance-certificate",
+          "name": {
+            "fr": "Certificat d'accès à l'université",
+            "en": "University entrance certificate"
+          },
+          "quotedAs": "University entrance certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uni-due.de/international/international-admissions-en.php",
+          "quote": "University entrance certificate"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the DAAD page states \"Tuition fees per semester None\" for the programme; the university-wide page confirms no tuition fees, but all students pay a semester contribution (about 350 EUR per semester on the DAAD page, about 320 EUR on the UDE programme page). Intakes: the application period 1 May - 15 June on the DAAD page is for the winter semester; no year is stated, so the year is left out. The 'documents' fact is included based on the general enrolment page (NON-EU applicants), which names 'University entrance certificate'; the programme page does not list required documents. Language rules are drawn from the DAAD page for this programme; the UDE programme pages state B1 for both languages at enrollment with B2 as a graduation requirement, so cross-check the exact level.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "mathematics"
+        ],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://www.uni-due.de/iw/en/study/b-me.php",
+            "quote": "the applicant has taken mathematics in the last 3 years of the previous education, entitling him/her to direct university admission and has achieved a grade of 2.5 or better."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que vous avez étudié les mathématiques au cours des 3 dernières années et obtenu une note de 2,5 ou mieux (système allemand) : seuil de note à vérifier manuellement.",
+          "en": "Check that you studied mathematics in the last 3 years and achieved a grade of 2.5 or better (German system): grade threshold to verify manually."
+        },
+        "evidence": [
+          {
+            "url": "https://www.uni-due.de/iw/en/study/b-me.php",
+            "quote": "the applicant has taken mathematics in the last 3 years of the previous education, entitling him/her to direct university admission and has achieved a grade of 2.5 or better."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6151/",
+            "quote": "German language skills B1 required, please provide an official language certificate"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6151/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 5.5 TOEFL iBT (since 2026): 4 Reading: 4 Listening: 4 Speaking: 4 Writing: 4"
+          }
+        ]
+      }
+    ]
+  }
+}

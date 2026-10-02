@@ -1,0 +1,150 @@
+{
+  "slug": "de-technische-universitat-munchen-hrk184-garching-bei-munchen-aerospace-bsc-daad7256",
+  "programmePage": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/",
+          "quote": "Programme duration 6 semesters"
+        },
+        {
+          "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+          "quote": "Regelstudienzeit 6 Semester"
+        },
+        {
+          "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+          "quote": "Credits 180 ECTS"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/",
+          "quote": "Teaching language English"
+        },
+        {
+          "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+          "quote": "Das sechssemestrige und komplett englischsprachige Bachelor-Programm ist der ideale Einstieg in das globale Zukunftsthema Luft- und Raumfahrt."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 300000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/",
+          "quote": "Tuition fees per semester The following tuition fees apply for applicants from: non-EU countries 3,000 EUR"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+          "quote": "Bei Bewerbungen mit internationaler Hochschulzugangsberechtigung: Vorprüfungsdokumentation (VPD) von uni-assist"
+        },
+        {
+          "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+          "quote": "Vorprüfungsdokumentation (VPD) von uni-assist bei Bewerbungen mit internationaler Hochschulzugangsberechtigung"
+        }
+      ]
+    }
+  },
+  "notes": "The programme page (https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/) lists required documents for the online application, including the VPD from uni-assist for applicants with an international higher education entrance qualification. The DAAD page states tuition fees of 3,000 EUR per semester for non-EU countries; the TUM central page confirms that non-EU students usually pay 2,000 or 3,000 EUR per semester for bachelor's programmes, so this is programme-specific. The intake dates are given only as 15 May – 15 July without a year, so the deadline is left null; the applicant should confirm the year. Application deadline for VPD is stated on the bachelor application page as 15.07 for winter semester, but no year is given. The semester contribution (Semesterbeitrag) of 97 EUR is charged in addition to tuition fees.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/",
+            "quote": "German language skills A2 required, please provide an official language certificate, e.g.: telc Deutsch: telc Deutsch A2"
+          },
+          {
+            "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+            "quote": "Die formalen Voraussetzungen für eine Zulassung zu diesem Bachelorstudiengang sind eine Hochschulzugangsberechtigung englische (B2) und deutsche (A2) Sprachkenntnisse"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/",
+            "quote": "English language skills B2 required, proof via placement test/interview"
+          },
+          {
+            "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+            "quote": "Die formalen Voraussetzungen für eine Zulassung zu diesem Bachelorstudiengang sind eine Hochschulzugangsberechtigung englische (B2) und deutsche (A2) Sprachkenntnisse"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier le seuil de la note de l'examen d'entrée : un score de 80 points ou plus donne une admission directe, 70 points ou moins un rejet.",
+          "en": "Check Eignungsfeststellungsverfahren grade thresholds: a score of 80 points or more leads to direct admission, 70 points or less to direct rejection."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+            "quote": "Wer in Stufe 1 einen Punktwert von 80 oder mehr erreicht wird direkt zugelassen"
+          },
+          {
+            "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+            "quote": "Bei 70 oder weniger Punkten erfolgt eine direkte Ablehnung."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un stage pré-études de huit semaines est requis ; son attestation peut être fournie jusqu'à la fin de la première année d'études.",
+          "en": "An eight-week pre-study internship is required; proof can be submitted by the end of the first year of study."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+            "quote": "Für das Studium wird ein Nachweis über ein mindestens achtwöchiges Vorpraktikum benötigt."
+          },
+          {
+            "url": "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+            "quote": "müssen diesen aber spätestens zum Ende des ersten Studienjahres erbringen"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier le lieu et la procédure exacte de candidature via TUMonline et le portail de candidature de la TUM.",
+          "en": "Check the exact application procedure and location via TUMonline and TUM's application portal."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/",
+            "quote": "Submit application via Please check this website."
+          }
+        ]
+      }
+    ]
+  }
+}

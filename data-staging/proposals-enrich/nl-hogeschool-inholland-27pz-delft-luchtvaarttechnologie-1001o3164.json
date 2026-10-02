@@ -1,0 +1,44 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-delft-luchtvaarttechnologie-1001o3164",
+  "programmePage": "https://www.inholland.nl/opleidingen/luchtvaarttechnologie-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/luchtvaarttechnologie-voltijd/",
+          "quote": "Engels voltijd niveau Bachelor duur 4 jaar locatie Delft taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/luchtvaarttechnologie-voltijd/",
+          "quote": "Engels voltijd niveau Bachelor duur 4 jaar locatie Delft taal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "The programme page states the language of this track is Dutch ('taal Nederlands'); it lists an English variant, but that is a separate track not applied here. No page states a tuition fee specific to non-EU students for this programme: the collegegeld pages give only the general 'instellingscollegegeld' of a whole institution, so it is left out. No programme-specific application deadline or document list is stated for this programme; only the general non-EU recommended deadline of 1 May appears (in 'we recommend' wording), which is why it is not listed as a fact.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme étranger doit être validé par Inholland : envoyez votre diplôme, votre relevé de notes et, si nécessaire, une traduction assermentée avant le 1 mai.",
+          "en": "A foreign diploma must be validated by Inholland: upload your diploma, transcript and, if needed, a sworn translation before 1 May."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+            "quote": "Heb je een diploma buiten Nederland behaald dan moet onder meer worden beoordeeld of dit gelijkwaardig is aan een Nederlands havo-, vwo- of mbo-diploma niveau 4."
+          }
+        ]
+      }
+    ]
+  }
+}

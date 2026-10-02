@@ -1,0 +1,117 @@
+{
+  "slug": "de-hochschule-bremerhaven-hrk41-international-tourism-ma-daad7839",
+  "programmePage": "https://www.hs-bremerhaven.de/en/itm",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.hs-bremerhaven.de/en/itm",
+          "quote": "The Bachelor's degree program International Tourism Management B.A. is a 4-year full-time program."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-bremerhaven.de/en/itm",
+          "quote": "Internationality: English as teaching language, 1-year stay abroad"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7839/",
+          "quote": "Non-European applicants need to apply via uni-assist."
+        },
+        {
+          "url": "https://www.hs-bremerhaven.de/en/itm",
+          "quote": "Prospective students who have obtained their university entrance qualification outside the European Union (EU) should therefore submit their application directly to UNI-ASSIST."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "higher-education-entrance-qualification",
+          "name": {
+            "fr": "Diplôme d'accès à l'enseignement supérieur (baccalauréat)",
+            "en": "Higher education entrance qualification"
+          },
+          "quotedAs": "higher education entrance qualification",
+          "translationRequired": null
+        },
+        {
+          "slug": "english-language-certificate",
+          "name": {
+            "fr": "Certificat de compétence en anglais",
+            "en": "English language certificate"
+          },
+          "quotedAs": "English certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7839/",
+          "quote": "The essential requirement for admission into the ITM programme is the successful acquirement of a higher education entrance qualification (Fachhochschulreife, high school diploma, A-Levels, Baccalaureat, Gao Kao, etc.)."
+        },
+        {
+          "url": "https://www.hs-bremerhaven.de/en/itm",
+          "quote": "Before study commences English certificate, possibly maths preparation course, the study mentor is happy to help with information about studying and with questions about life in Bremerhaven, such as finding accommodation or leisure activities."
+        }
+      ]
+    }
+  },
+  "notes": "Pages give two different minimum English levels for this programme: the DAAD page states B2 (IELTS Academic 5.5) while the programme's own page states C1 to be demonstrated by the end of the first semester. No tuition fee for non-EU students is stated for this programme; the DAAD page says \"Tuition fees per semester None\" but that appears to be an institution-wide statement for German public universities, so no tuition fact is included. The univ's Bachelor-application page (in German, not programme-specific) lists further documents required at enrolment (CV, birth certificate/passport copy, health insurance proof), but these are given for all Bachelor programmes, not specifically for this programme for a non-EU applicant, so they are not listed under documents. Application channel chosen is de-uni-assist: the pages say non-EU applicants apply via uni-assist but do not mention a VPD/preliminary review (Vorpruefungsdokumentation); the university page also says the completed application is forwarded to the university after uni-assist's examination, so this is not a VPD route.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7839/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 5.5"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7839/",
+            "quote": "German language skills A1 required, please provide an official language certificate, e.g.: Goethe-Zertifikat: Goethe-Zertifikat A1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier l'exigence d'un niveau d'anglais C1 à démontrer avant la fin du premier semestre.",
+          "en": "Check the requirement to demonstrate English skills at C1 level by the end of the first semester."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-bremerhaven.de/en/itm",
+            "quote": "all students must demonstrate English skills at C1 level of the Common European Framework of Reference for Languages by the end of the first semester"
+          }
+        ]
+      }
+    ]
+  }
+}

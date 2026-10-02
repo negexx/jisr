@@ -1,0 +1,128 @@
+{
+  "slug": "nl-capabel-hogeschool-30hc-rotterdam-ict-1001o8912",
+  "programmePage": "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict",
+          "quote": "De opleiding duurt vier jaar en vereist minimaal een HAVO-, VWO-, of MBO 4-diploma."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": "2027-02-01",
+          "applicationOpens": null,
+          "applicationDeadline": null
+        },
+        {
+          "startDate": "2027-08-31",
+          "applicationOpens": null,
+          "applicationDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict",
+          "quote": "Amsterdam 01 februari 2027 Dinsdag 10.00 - 16.00"
+        },
+        {
+          "url": "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict",
+          "quote": "31 augustus 2027 Dinsdag 10:00-16:00"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "diploma-copy",
+          "name": {
+            "fr": "Copie du diplôme pertinent",
+            "en": "Copy of relevant diploma"
+          },
+          "quotedAs": "Kopie relevant diploma",
+          "translationRequired": null
+        },
+        {
+          "slug": "id-copy",
+          "name": {
+            "fr": "Copie de la pièce d'identité",
+            "en": "Copy of ID"
+          },
+          "quotedAs": "Kopie ID",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict",
+          "quote": "Voor toelating tot de opleiding zijn de volgende documenten nodig: Kopie relevant diploma Kopie ID"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des frais de scolarité (€ 6.816 par an) provient de la page du programme ICT, section 'Prijzen'; il s'agit du tarif 'bij betaling in één keer' qui semble être le tarif annuel affiché pour ce programme (les autres mentions concernent des paiements échelonnés). Aucune information spécifique sur les frais pour les étudiants non-UE n'est donnée. Le programme ICT ne mentionne pas lui-même de conditions linguistiques ; les exigences linguistiques (néerlandais B2) proviennent de la page 'HBO Bachelor Verpleegkundige' où il est dit que tous les programmes sont en néerlandais, ce qui peut s'appliquer à l'ICT. La plateforme Studielink n'est pas mentionnée sur les pages, donc aucune applicationChannel n'est fournie. Les dates de début listées proviennent des tableaux 'Locaties & Startdata' avec des dates précises (jour, mois, année).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.capabel.nl/opleidingen/zorg-welzijn/hbo-bachelor-verpleegkundige",
+            "quote": "Please note that all our programmes are completely in Dutch."
+          },
+          {
+            "url": "https://www.capabel.nl/opleidingen/zorg-welzijn/hbo-bachelor-verpleegkundige",
+            "quote": "at least a B2 level in Dutch proficiency"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme HAVO, VWO ou MBO 4 est requis ; les candidats de 21 ans ou plus peuvent passer un test d'admission 21+.",
+          "en": "A HAVO, VWO or MBO 4 diploma is required; applicants aged 21 or older may take a 21+ admission test."
+        },
+        "evidence": [
+          {
+            "url": "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict",
+            "quote": "Voor het volgen van deze opleiding is minimaal een HAVO, VWO of MBO 4-diploma vereist."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une évaluation du diplôme obtenu dans le pays d'origine est exigée.",
+          "en": "An evaluation of the diploma obtained in the country of origin is required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.capabel.nl/opleidingen/zorg-welzijn/hbo-bachelor-verpleegkundige",
+            "quote": "we require an eveluation of your diploma obtained your in country of origin"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'établissement ne s'occupe pas des demandes de visa ; l'étudiant doit vérifier les conditions de visa et faire les demandes lui-même.",
+          "en": "The institution does not handle visa applications; students must check visa conditions and apply themselves."
+        },
+        "evidence": [
+          {
+            "url": "https://www.capabel.nl/opleidingen/zorg-welzijn/hbo-bachelor-verpleegkundige",
+            "quote": "Wij begeleiden of verzorgen geen visumaanvragen."
+          }
+        ]
+      }
+    ]
+  }
+}

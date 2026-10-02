@@ -1,0 +1,104 @@
+{
+  "slug": "de-hochschule-furtwangen-informatik-technik-hrk94-villingen-schwenningen-international-engineerin-daad4203",
+  "programmePage": "https://www.hs-furtwangen.de/en/programmes/international-engineering-bachelor/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.hs-furtwangen.de/en/programmes/international-engineering-bachelor/",
+          "quote": "ECTS: 210 ECTS Programme duration: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-furtwangen.de/en/programmes/international-engineering-bachelor/",
+          "quote": "Teaching language: English"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4203/",
+          "quote": "Courses will be held in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-furtwangen.de/en/programmes/international-engineering-bachelor/",
+          "quote": "The Baden-Württemberg state government introduced tuition fees of €1500 / semester for non-EU students in Winter Semester 2017/18."
+        }
+      ]
+    }
+  },
+  "notes": "The programme page (https://www.hs-furtwangen.de/en/programmes/international-engineering-bachelor/) states Application deadline: 31 August, but does not give a year; we have interpreted this as 31 August 2026 based on the context of the 2026/27 academic year. The DAAD page states 15 July. Tuition is stated per semester; the amount 1500 EUR is for non-EU students. Application channel: the Smart Admission page indicates direct application via email contact, not uni-assist; we quote the direct contact phrase. Some requirements (e.g., German language skills, subject-specific requirements) are not included because they are not stated as mandatory for this programme or are for German-taught tracks.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4203/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 72"
+          },
+          {
+            "url": "https://www.hs-furtwangen.de/en/programmes/international-engineering-bachelor/",
+            "quote": "International applicants: TOEFL internet-based iBT (total score 72 or higher) IELTS (overall band score 6,0 or higher)"
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.hs-furtwangen.de/studium/bewerbung",
+            "quote": "sowie der Abschluss von mindestens 12 Schuljahren"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme marocain donne un accès direct à l'université allemande via la base de données DAAD ; sinon, une année d'études ou un Studienkolleg peut être nécessaire.",
+          "en": "Check if your Moroccan diploma allows direct access to German university via DAAD database; otherwise, one year of studies or a Studienkolleg may be required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-furtwangen.de/en/programmes/international-engineering-bachelor/",
+            "quote": "If the database indicates that you are required to take the “Feststellungsprüfung”, direct equivalency is not granted. In that case, you would typically need to complete either one year of university studies in your home country or a one-year preparatory course in Germany (Studienkolleg) to qualify for admission to a bachelor’s programme in Germany."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les frais de dossier peuvent inclure un semestre d'essai ; vérifiez les critères de sélection (notes, expérience) sur le site.",
+          "en": "Application may include a trial semester; check selection criteria (grades, experience) on the website."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-furtwangen.de/en/study/application",
+            "quote": "The selection criteria are: 1. Academic performance (German, mathematics and the best graded, advanced (modern) foreign language)."
+          }
+        ]
+      }
+    ]
+  }
+}

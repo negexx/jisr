@@ -1,0 +1,109 @@
+{
+  "slug": "nl-de-haagse-hogeschool-27um-bouwkunde-1001o3065",
+  "programmePage": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/bouwkunde",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/bouwkunde",
+          "quote": "Duration 4 jaar"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/bouwkunde",
+          "quote": "Taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+          "quote": "Meld je aan via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition for non-EU/EEA students is not stated for this programme: the collegegeld page gives institution-wide tariffs (wettelijk €2.694 / instellingscollegegeld €10.528 for 2026-2027, and €14.000 only for full-time English-taught master programmes), none of which is stated as applying to this Dutch-taught bachelor, so tuition is left out. Intake: the FAQ page states a general 1 May 2026 application deadline for most programmes, but this is not stated for Bouwkunde specifically, so intakes is left out. Documents are mentioned (application documents via Osiris Aanmelding, gewaarmerkte diploma's/certificaten/cijferlijsten, originals by post) but no concrete named document list for an international applicant is given, so documents is left out. The Dutch language requirement is stated as a condition of admission ('mits ... bewijs van voldoende beheersing van de Nederlandse taal'); the specific test named is the staatsexamen NT2 programma II.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/bouwkunde",
+            "quote": "Met een buitenlands of internationaal diploma kun je toegelaten worden, mits dit diploma toelating biedt tot hbo en je een bewijs hebt van voldoende beheersing van de Nederlandse taal."
+          },
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "Je toont aan dat je voldoet aan de taaleis Nederlands via een staatsexamen Nederlands als Tweede Taal, programma II met alle vier de onderdelen lezen, spreken, schrijven en luisteren."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que votre diplôme étranger est reconnu équivalent à un diplôme néerlandais donnant accès au hbo ; l'évaluation est faite par la Centrale Studenten Inschrijving.",
+          "en": "Check that your foreign diploma is recognised as equivalent to a Dutch diploma granting access to hbo; the assessment is made by the Centrale Studenten Inschrijving."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "De Centrale Studenten Inschrijving bepaalt of jouw buitenlandse diploma ten minste gelijkwaardig is aan dat van een (toelatinggevend) Nederlands diploma."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vous êtes peut-être admissible via le Toelatingsonderzoek 21+ si vous n'avez pas le diplôme requis et avez 21 ans ou plus.",
+          "en": "You may be admissible via the Toelatingsonderzoek 21+ if you do not have the required diploma and are 21 or older."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/bouwkunde",
+            "quote": "Heb je geen diploma die toelating biedt en ben je met ingang van het nieuwe schooljaar 21 jaar of ouder, dan kun je alsnog worden toegelaten als je slaagt voor het Toelatingsonderzoek 21+."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les non-ressortissants UE/EEE ont probablement besoin d'un permis de séjour et/ou d'un visa d'entrée pour étudier aux Pays-Bas.",
+          "en": "Non-EU/EEA nationals likely need a residence permit and/or entry visa to study in the Netherlands."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "Als je niet de nationaliteit hebt van een EU/EER-land of Zwitserland, dan heb je waarschijnlijk een verblijfsvergunning en/of inreisvisum nodig om in Nederland te mogen verblijven."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme étranger nécessite de télécharger des documents de candidature sur Osiris Aanmelding ; des documents originaux peuvent aussi être demandés par courrier.",
+          "en": "A foreign diploma requires uploading application documents in Osiris Aanmelding; original documents may also be requested by post."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+            "quote": "Om erachter te komen of je toelaatbaar bent dien je een inschrijfverzoek in via Studielink. Vervolgens ontvang je van ons een e-mail met het verzoek om je documenten te uploaden in Osiris Aanmelding."
+          }
+        ]
+      }
+    ]
+  }
+}

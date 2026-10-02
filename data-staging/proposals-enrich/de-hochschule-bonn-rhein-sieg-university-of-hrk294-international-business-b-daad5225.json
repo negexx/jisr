@@ -1,0 +1,53 @@
+{
+  "slug": "de-hochschule-bonn-rhein-sieg-university-of-hrk294-international-business-b-daad5225",
+  "programmePage": "https://www.h-brs.de/en/wiwi/study/bachelor/international-business",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.h-brs.de/en/wiwi/study/bachelor/international-business",
+          "quote": "Standard period of study 7 semesters including a mobility window for individual use for an internship semester or study semester abroad"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.h-brs.de/en/wiwi/study/bachelor/international-business",
+          "quote": "Lecture language English"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.h-brs.de/en/wiwi/study/bachelor/international-business",
+          "quote": "For applicants with international certificates or with assessment tests (\"Feststellungsprüfung\") from preparatory courses (\"Studienkolleg\") application is possible exclusively via uni-assist."
+        }
+      ]
+    }
+  },
+  "notes": "Aucun frais de scolarité n'est mentionné pour ce programme. La page DAAD indique 'Tuition fees per semester None', mais il s'agit d'une mention de colonne non spécifique à ce programme ; la page H-BRS indique que seuls les frais de semestre (367 EUR pour l'hiver 2026/27) sont payables. L'université n'est pas une université payante pour le Bachelor International Business (aucun frais de scolarité pour les étrangers n'est cité).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le programme est à accès restreint : les candidats non-UE sont acceptés sans être Allemands sans réserve de places limitées (7 % des places). Il faut vérifier l'admission sur la page de candidature d'Apollo ou d'uni-assist.",
+          "en": "The programme is admission-restricted: seven percent of places are reserved for non-EU applicants. Check admission on the Apollo or uni-assist application page."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5225/",
+            "quote": "In restricted Bachelor's study programmes, seven percent of places are reserved for non-EU applicants."
+          }
+        ]
+      }
+    ]
+  }
+}

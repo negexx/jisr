@@ -1,0 +1,107 @@
+{
+  "slug": "de-fachhochschule-aachen-hrk2-global-business-and-econ-daad4849",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+          "quote": "Students study for six semesters (180 credit points) or seven semesters with one semester abroad or a full-time internship of 23 weeks (210 credit points)."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+          "quote": "Courses are held 100% in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+          "quote": "Applicants with a foreign university entrance qualification other than the \"Deutsche Hochschulzugangsberechtigung\" apply via www.uni-assist.de."
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des frais de scolarité pour ce programme est indiqué comme « None » (aucun frais de scolarité) ; les frais de contribution sociale et d'activité étudiante d'environ 360 EUR par semestre sont obligatoires mais ne sont pas des frais de scolarité. La date limite de candidature est indiquée comme « 15 July » sans année ; nous avons supposé 2026 (année académique 2026/2027) mais l'année n'est pas explicitée dans le texte source. Le nombre de semestres est de 6 (180 ECTS) ou 7 (210 ECTS) avec semestre à l'étranger ; nous avons retenu 3 ans pour la version standard (6 semestres).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.:"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+            "quote": "TOEFL iBT (before 2026): 72"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+            "quote": "IELTS Academic: 5.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une qualification d'entrée allemande pour les universités de sciences appliquées ou équivalent est requise. Les candidats étrangers doivent fournir un « Statement of Comparability » (anabin) ; voir http://anabin.kmk.org/anabin.html.",
+          "en": "A German entrance qualification for universities of applied sciences or equivalent is required. Foreign applicants need a \"Statement of Comparability\" (anabin); see http://anabin.kmk.org/anabin.html."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+            "quote": "Academic admission requirements include a German entrance qualification for universities of applied sciences or equivalent."
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+            "quote": "Foreign applicants need a \"Statement of Comparability\" for foreign higher education qualifications."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez la date limite (15 juillet) et le mode de candidature (uni-assist) sur la page officielle du programme, car les dates peuvent varier selon l'année.",
+          "en": "Check the deadline (15 July) and the application procedure (uni-assist) on the programme's official page, as dates may vary by year."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+            "quote": "Application periods The following is valid for applicants from: all countries until 15 July"
+          }
+        ]
+      }
+    ]
+  }
+}

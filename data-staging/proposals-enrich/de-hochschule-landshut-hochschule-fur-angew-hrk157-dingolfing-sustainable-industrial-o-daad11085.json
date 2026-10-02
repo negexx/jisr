@@ -1,0 +1,72 @@
+{
+  "slug": "de-hochschule-landshut-hochschule-fur-angew-hrk157-dingolfing-sustainable-industrial-o-daad11085",
+  "programmePage": "https://www.haw-landshut.de/en/faculties/electrical-industrial-engineering/study/bachelor-degree-programmes/sustainable-industrial-operations-and-business",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.haw-landshut.de/en/faculties/electrical-industrial-engineering/study/bachelor-degree-programmes/sustainable-industrial-operations-and-business",
+          "quote": "Normal duration 7 Semester"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.haw-landshut.de/en/faculties/electrical-industrial-engineering/study/bachelor-degree-programmes/sustainable-industrial-operations-and-business",
+          "quote": "Language English"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "Lebenslauf",
+          "translationRequired": null
+        },
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "(Fach-)Abiturzeugnis",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.haw-landshut.de/internationales/incoming/international-program-students",
+          "quote": "Lebenslauf (Fach-)Abiturzeugnis bzw. Hochschulabschlusszeugnis (Bachelor bzw. Master)"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: 'Study cost None (only semester fee)' states no tuition for the programme; the student union fee is quoted as 125.62 EUR on the DAAD page and 82,-€ on the German Studiengebühren page (inconsistent, not resolved). Intakes: only the winter semester application period (15 April - 15 July) is quoted in English with a year-less range; year 2026 taken from the page's 2026/2027 cycle. Documents are from a general international-applicants page listing required uploads for degree seekers. APS assessment applies only to applicants from China, Vietnam and India, not Morocco.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats titulaires d'un diplôme étranger doivent faire évaluer leurs certificats par Uni-Assist (frais de traitement de 75,00 €) et envoyer la VDP à l'université.",
+          "en": "Applicants with a foreign school-leaving certificate must have their certificates preliminarily assessed by Uni-Assist (processing fee € 75.00) and send the VDP to the university."
+        },
+        "evidence": [
+          {
+            "url": "https://www.haw-landshut.de/en/application/bachelor-application/international-applicants",
+            "quote": "Processing fee: € 75,00"
+          }
+        ]
+      }
+    ]
+  }
+}

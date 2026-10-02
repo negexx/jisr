@@ -1,0 +1,42 @@
+{
+  "slug": "nl-fontys-hogeschool-30gb-tilburg-commerciele-economie-1001o3452",
+  "programmePage": "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+          "quote": "Opleidingsduur 4 jaar"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+          "quote": "Meld je uiterlijk 1 mei aan via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee for non-EU/EEA students is not stated on the programme page; the general page only says that non-EER students pay instellingscollegegeld ('als je uit een land komt dat geen onderdeel is van de Europese Economische Ruimte (EER)') and refers to the collegegeldmeter, without giving an amount for this programme, so tuition is omitted. No document list, language proficiency requirement or specific subject/level requirement for this programme is stated on the supplied pages. No intake start date with day, month and year is quoted; the intake is recorded with the 1 May application deadline only (the year 2027 appears in the page's text attached to that deadline).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission avec un diplôme étranger (baccalauréat marocain) sur la page 'Toelating' de Fontys.",
+          "en": "Check the admission requirements for a foreign diploma (Moroccan Baccalaureate) on Fontys' 'Toelating' page."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+            "quote": "Heb je je vooropleiding buiten Nederland gehaald? Ga naar aanmelden internationaal."
+          }
+        ]
+      }
+    ]
+  }
+}

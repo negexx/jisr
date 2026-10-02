@@ -1,0 +1,77 @@
+{
+  "slug": "de-technische-hochschule-ulm-hrk260-computer-science-cts-daad4669",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4669/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4669/",
+          "quote": "In line with international practice for Bachelor's degree programmes, the programme can be completed in eight semesters."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4669/",
+          "quote": "Teaching language English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.thu.de/en/studies/before-studies/fees-scholarships/contributions-tuition-fees",
+          "quote": "Tuition fees for international students at universities in Baden-Württemberg are 1,500.00 EUR per semester."
+        },
+        {
+          "url": "https://www.thu.de/en/studies/before-studies/fees-scholarships/contributions-tuition-fees",
+          "quote": "International students are students who are not citizens of a member state of the European Union or another signatory state to the Agreement on the European Economic Area."
+        }
+      ]
+    }
+  },
+  "notes": "Programme-specific deadlines: THU's Computer Science (CTS) page states an application period of 28 April - 15 July, but no year is given, so no intake date was output. The DAAD page states \"This programme has no deadline listed.\" Tuition: the fee is a state-wide Baden-Württemberg figure of 1,500.00 EUR per semester for international students; no programme-specific fee was found, and exemptions may apply. Application channel: no evidence found for uni-assist or uni-assist VPD for this programme; the pages only state \"Submit application via Please check this website.\" and direct applicants to the THU application portal, so applicationChannel was omitted.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4669/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT Home Edition (before 2026): 79 IELTS Academic: 6"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Votre diplôme étranger doit être reconnu par le Studienkolleg Konstanz ; contactez-le pour la procédure.",
+          "en": "Your foreign school-leaving qualification must be recognised by the Studienkolleg Konstanz; contact them for the procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://www.thu.de/cts",
+            "quote": "If you have a foreign school-leaving qualification, this must be recognized by the Studienkolleg Konstanz."
+          }
+        ]
+      }
+    ]
+  }
+}

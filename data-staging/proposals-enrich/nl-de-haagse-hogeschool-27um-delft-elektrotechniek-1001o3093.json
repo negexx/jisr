@@ -1,0 +1,101 @@
+{
+  "slug": "nl-de-haagse-hogeschool-27um-delft-elektrotechniek-1001o3093",
+  "programmePage": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/elektrotechniek-voltijd",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/elektrotechniek-voltijd",
+          "quote": "Duration 4 jaar"
+        },
+        {
+          "url": "https://www.dehaagsehogeschool.nl/media/oer-elektrotechniek",
+          "quote": "De studielast voor deze opleiding bedraagt 240 studiepunten"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/elektrotechniek-voltijd",
+          "quote": "Taal Nederlands"
+        },
+        {
+          "url": "https://www.dehaagsehogeschool.nl/media/oer-elektrotechniek",
+          "quote": "De voertaal van de opleiding is Nederlands."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2025-10-01",
+          "applicationDeadline": "2026-05-01"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+          "quote": "Opleidingen aan De Haagse Hogeschool starten één keer per jaar op 1 september."
+        },
+        {
+          "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+          "quote": "Vanaf 1 oktober 2025 kun je je in Studielink aanmelden voor het studiejaar 2026-2027."
+        },
+        {
+          "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+          "quote": "De aanmelddeadline is 1 mei 2026."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+          "quote": "Meld je aan via Studielink."
+        },
+        {
+          "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+          "quote": "Schrijf je daarvoor in via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Le montant du collegegeld pour un étudiant non-UE n'est pas indiqué pour ce programme ; la page Collegegeld fixe l'instellingscollegegeld (10.528 €) pour toutes les formations, sans confirmer qu'il s'applique à ce bachelor néerlandophone. Aucun frais de scolarité spécifique à ce programme ne peut donc être extrait.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les diplômes étrangers sont évalués par la Centrale Studenten Inschrijving ; aucune équivalence automatique avec le baccalauréat marocain n'est indiquée sur ces pages.",
+          "en": "Foreign diplomas are assessed by the Centrale Studenten Inschrijving; no automatic equivalence for a Moroccan Baccalauréat is stated on these pages."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+            "quote": "De Centrale Studenten Inschrijving zal je documenten beoordelen en kijken of je met je buitenlandse diploma toelaatbaar bent."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La maîtrise du néerlandais est exigée pour cette formation néerlandophone ; les certificats acceptés sont le Staatsexamen NT2 programme II et le CNaVT.",
+          "en": "Dutch language proficiency is required for this Dutch-taught programme; accepted certificates are the Staatsexamen NT2 programme II and CNaVT."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "Je toont aan dat je voldoet aan de taaleis Nederlands via een staatsexamen Nederlands als Tweede Taal, programma II met alle vier de onderdelen lezen, spreken, schrijven en luisteren."
+          }
+        ]
+      }
+    ]
+  }
+}

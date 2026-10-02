@@ -1,0 +1,140 @@
+{
+  "slug": "de-whu-otto-beisheim-school-of-management-hrk261-bachelor-in-internationa-daad4099",
+  "programmePage": "https://www.whu.edu/en/programs/bachelor-program/bachelor-in-international-business-administration/?utm_source=daad&utm_medium=portal&utm_campaign=daad_biba",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.whu.edu/en/programs/bachelor-program/bachelor-in-international-business-administration/?utm_source=daad&utm_medium=portal&utm_campaign=daad_biba",
+          "quote": "Duration 6 semesters | 3 years"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.whu.edu/en/programs/bachelor-program/bachelor-in-international-business-administration/?utm_source=daad&utm_medium=portal&utm_campaign=daad_biba",
+          "quote": "Language English or German/English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 930000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.whu.edu/en/programs/bachelor-program/fees-financing/",
+          "quote": "Our tuition fees are €9,300 per semester."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2026-10-15",
+          "applicationDeadline": "2027-05-15"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.whu.edu/en/programs/bachelor-program/bachelor-in-international-business-administration/application-admissions/",
+          "quote": "We accept applications from October 15, 2026 until May 15, 2027."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.whu.edu/en/programs/bachelor-program/bachelor-in-international-business-administration/application-admissions/",
+          "quote": "Create an account in our application portal"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "CV",
+          "translationRequired": null
+        },
+        {
+          "slug": "letter-of-motivation",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Letter of motivation"
+          },
+          "quotedAs": "letter of motivation",
+          "translationRequired": null
+        },
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary school diploma"
+          },
+          "quotedAs": "secondary school diploma",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.whu.edu/en/programs/bachelor-program/bachelor-in-international-business-administration/application-admissions/",
+          "quote": "Prepare a CV (see required application documents and CV example)"
+        },
+        {
+          "url": "https://www.whu.edu/en/programs/bachelor-program/bachelor-in-international-business-administration/application-admissions/",
+          "quote": "Prepare a letter of motivation (see required application documents)"
+        },
+        {
+          "url": "https://www.whu.edu/en/programs/bachelor-program/bachelor-in-international-business-administration/application-admissions/",
+          "quote": "We require a secondary school diploma or equivalent higher education entrance qualification (e.g., IB, Abitur, A-Levels)."
+        }
+      ]
+    }
+  },
+  "notes": "applicationChannel: The pages do not mention uni-assist or a VPD for this programme. They describe applying directly via the university's own application portal (\"our application portal\"), so de-university-direct is used. Tuition: the €9,300 per semester fee is stated on the WHU Bachelor fees page without excluding non-EU applicants; the DAAD page gives a different figure (9,100 EUR per semester) for \"all countries\". The €9,300 per semester figure is included here. Documents: The English application page names the required application documents as a CV, a letter of motivation and a secondary school diploma, but the detailed list is in a linked PDF (\"Application documents (pdf)\") that is not part of the supplied text. The French page names \"Lebenslauf\", \"Motivationsschreiben\" and \"Hochschulzugangsberechtigung\" but no translation requirement.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un stage ou apprentissage de six semaines en gestion/économie, ou une expérience pratique équivalente, est exigé. Une confirmation doit être fournie avant le 15 mai.",
+          "en": "A six-week internship or apprenticeship in business administration/management, or equivalent practical experience, is required. Confirmation must be submitted by May 15."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4099/",
+            "quote": "Internship of six weeks, or equivalent practical experience prior to the beginning of the programme"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Après avoir postulé en ligne, vous devez passer un test analytique, une évaluation en ligne et un entretien individuel.",
+          "en": "After applying online, you must complete an analytical test, an online assessment and a one-on-one interview."
+        },
+        "evidence": [
+          {
+            "url": "https://www.whu.edu/en/programs/bachelor-program/bachelor-in-international-business-administration/application-admissions/",
+            "quote": "An analytical test (sample questions, pdf)."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "slug": "nl-hogeschool-rotterdam-22oj-accountancy-1001o3536",
+  "programmePage": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/accountancy/voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/accountancy/voltijd/",
+          "quote": "Duur en startmoment 4 jaar, september"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/accountancy/voltijd/",
+          "quote": "Opleidingstype Voltijd Bachelor Taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/accountancy/voltijd/",
+          "quote": "Geef jezelf de beste start – meld je uiterlijk op 1 mei aan via Studielink!"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition amount is the institution-wide instellingscollegegeld for bachelor programmes excluding specific listed exceptions; the page does not state a separate 'non-EU' fee for Accountancy itself. The programme is taught in Dutch, so an applicant with a Moroccan Baccalauréat would need to demonstrate Dutch proficiency, but no CEFR level is stated in the supplied pages. No document list specific to this programme was found in the pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme marocain (Baccalauréat) est reconnu comme équivalent au diplôme néerlandais requis et si vous devez prouver votre maîtrise du néerlandais, car l'enseignement est dispensé en néerlandais.",
+          "en": "Check whether your Moroccan diploma (Baccalauréat) is recognised as equivalent to the required Dutch diploma and whether you must prove Dutch language proficiency, as the programme is taught in Dutch."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/",
+            "quote": "Als je een buitenlands diploma hebt, dan moet deze vergelijkbaar zijn met het vereiste Nederlandse diploma én je moet de Nederlandse taal voldoende beheersen."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non-UE doivent s'inscrire avant le 1er octobre (ou le 1er avril pour la rentrée de septembre) selon les délais du bureau des admissions.",
+          "en": "Non-EU applicants must apply before 1 October (or 1 April for the September intake) according to the admissions office deadlines."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/studievisum/",
+            "quote": "Non-EU Aanmelders: 1 oktober"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "slug": "nl-hogeschool-leiden-21ri-commerciele-economie-1001o3422",
+  "programmePage": "https://www.hsleiden.nl/opleiding/commerciele-economie",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.hsleiden.nl/opleiding/commerciele-economie",
+          "quote": "Start: sept 2027 Inschrijven: t/m 1 mei Duur: 4 jaar"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2027-05-01"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hsleiden.nl/opleiding/commerciele-economie",
+          "quote": "Start: sept 2027 Inschrijven: t/m 1 mei"
+        },
+        {
+          "url": "https://www.hsleiden.nl/opleiding/commerciele-economie",
+          "quote": "De inschrijfdeadline voor deze studie is 1 mei."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.hsleiden.nl/opleiding/commerciele-economie",
+          "quote": "die heb je namelijk nodig om je in te schrijven via Studielink"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "diploma-and-grade-list",
+          "name": {
+            "fr": "Copie certifiée conforme du diplôme et du relevé de notes",
+            "en": "Certified copy of diploma and grade list"
+          },
+          "quotedAs": "Een gewaarmerkte kopie van je diploma en cijferlijst",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland",
+          "quote": "Een gewaarmerkte kopie van je diploma en cijferlijst"
+        },
+        {
+          "url": "https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland",
+          "quote": "Een erkende vertaling van bovengenoemd diploma en cijferlijst in het Nederlands, Duits, Frans of Engels;"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Contactez l'établissement pour vérifier si votre baccalauréat marocain est considéré comme équivalent à un diplôme néerlandais de havo, vwo ou mbo-4.",
+          "en": "Contact the institution to check whether your Moroccan Baccalaureate is considered equivalent to a Dutch havo, vwo or mbo-4 diploma."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland",
+            "quote": "Voor de meeste opleidingen geldt dat jouw diploma vergelijkbaar moet zijn met een Nederlands havo, vwo of mbo-4 diploma."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Fournissez une preuve de maîtrise du néerlandais (par exemple Staatsexamen Nt2 programme II ou CNaVT STRT B2) car la plupart des formations sont en néerlandais.",
+          "en": "Provide proof of Dutch proficiency (e.g., Staatsexamen Nt2 programme II or CNaVT STRT B2) as most programmes are taught in Dutch."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland",
+            "quote": "Bewijs dat je de Nederlandse taal voldoende beheerst."
+          },
+          {
+            "url": "https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland",
+            "quote": "De meeste opleidingen van Hogeschool Leiden zijn Nederlandstalig."
+          }
+        ]
+      }
+    ]
+  }
+}

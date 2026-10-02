@@ -1,0 +1,111 @@
+{
+  "slug": "de-hochschule-pforzheim-gestaltung-technik-hrk219-business-administration-daad4659",
+  "programmePage": "https://www.hs-pforzheim.de/bdbm",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4659/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4659/",
+          "quote": "The programme is designed for international and German applicants alike and is taught entirely in English, with selected courses available in German as an option."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-pforzheim.de/bdbm",
+          "quote": "Non-EU/EEA Citizens EUR 1,500 EUR 211 EUR 1,711 Tuition fee based on passport nationality"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.hs-pforzheim.de/en/international/studying_in_pforzheim/regular_degree_students/application_procedure",
+          "quote": "Foreign and stateless prospective students with a higher education entrance qualification obtained abroad (except EU citizens) can apply directly to the desired degree program via the applicant portal."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "school leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-pforzheim.de/bdbm",
+          "quote": "You must first submit your school leaving certificate for recognition (via International Programs Office or Studienkolleg Konstanz)."
+        }
+      ]
+    }
+  },
+  "notes": "Duplicated tuition evidence on the hs-pforzheim.de/bdbm page says non-EU/EEA citizens pay EUR 1,500 tuition per semester plus EUR 211 administrative fee (total EUR 1,711 per semester). The DAAD page states \"Tuition fees per semester ... non-EU countries 1,500 EUR\". The programme duration quote says 7 semesters, which equals 3.5 years. The application deadline is for the winter semester (starting end of September or early October); the year is inferred from the target winter semester 2026/27, giving 31 May 2027 — the quote itself does not state the year. For applicationChannel, the university's international admission page says foreign applicants apply directly via the applicant portal; documents may also be sent to the Center for International Students in Konstanz for recognition, but this is not uni-assist, so de-university-direct is used. The documents fact is limited to the one document (school-leaving certificate) explicitly named for non-EU applicants in the quoted sentence; the pages do not state a translation requirement for this programme, so translationRequired is null.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Votre diplôme de fin d'études secondaires doit d'abord être soumis pour reconnaissance (via International Programs Office ou Studienkolleg Konstanz).",
+          "en": "Your school-leaving certificate must first be submitted for recognition (via the International Programs Office or Studienkolleg Konstanz)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-pforzheim.de/bdbm",
+            "quote": "You must first submit your school leaving certificate for recognition (via International Programs Office or Studienkolleg Konstanz)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Après validation des documents, vous serez invité à un entretien d'admission obligatoire (en ligne ou en personne).",
+          "en": "After document validation, you will be invited to a mandatory admission interview (online or in person)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-pforzheim.de/bdbm",
+            "quote": "After document validation, you will be invited to a mandatory admission interview (online or in person)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est basée sur la note d'entrée à l'université (50%), la note de mathématiques (30%) et la note d'anglais (20%).",
+          "en": "Admission is based on your university entrance qualification scores: general university entrance grade 50%, mathematics grade 30%, English grade 20%."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-pforzheim.de/bdbm",
+            "quote": "General university entrance grade 50% Mathematics grade 30% English grade 20%"
+          }
+        ]
+      }
+    ]
+  }
+}

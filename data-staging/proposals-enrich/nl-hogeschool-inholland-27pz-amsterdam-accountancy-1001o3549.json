@@ -1,0 +1,78 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-amsterdam-accountancy-1001o3549",
+  "programmePage": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+          "quote": "taal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition for non-EU students is not stated for this specific programme; the institution-wide instellingscollegegeld (EUR 10,360 for 2026-2027) is left out because the pages do not say it applies to this programme's non-EU applicants. The B2 Dutch language requirement quote comes from the Creative Business page but is the general rule stated on those pages for students with a foreign diploma; verify per programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+            "quote": "Students who have completed their prior education abroad must therefore demonstrate Dutch language proficiency at B2 level (Common European Framework of Reference for Languages)."
+          },
+          {
+            "url": "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+            "quote": "This can be done by obtaining an NT2 (Dutch as a Second Language) Programme II certificate (reading, writing, speaking and listening components)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Votre diplôme étranger doit être validé par Inholland ; envoyez votre diplôme, votre relevé de notes et, si nécessaire, une traduction assermentée via Selfservice.",
+          "en": "Your foreign diploma must be validated by Inholland; send your diploma, transcript and, if necessary, a sworn translation via Selfservice."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+            "quote": "De CSA beoordeelt alleen diploma’s nadat je een aanmelding via Studielink hebt gedaan en je diploma, cijferlijst, en, indien nodig, een vertaling van een beëdigd vertaler, hebt geüpload in Selfservice."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats internationaux doivent de préférence s'inscrire avant le 1 mai ; la procédure d'inscription peut prendre plus de trois mois.",
+          "en": "International applicants should preferably enrol before 1 May; the enrolment procedure can take well over three months."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+            "quote": "We recommend the following enrolment deadline dates: Dutch students by 1 August EU students by 1 August Non-EU students by 1 May"
+          },
+          {
+            "url": "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+            "quote": "Please note that the enrolment procedure for international applicants can take well over three months, so please apply as early as possible."
+          }
+        ]
+      }
+    ]
+  }
+}

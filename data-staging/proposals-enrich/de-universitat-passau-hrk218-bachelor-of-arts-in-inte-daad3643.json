@@ -1,0 +1,70 @@
+{
+  "slug": "de-universitat-passau-hrk218-bachelor-of-arts-in-inte-daad3643",
+  "programmePage": "https://www.uni-passau.de/en/ba-icbs/?mtm_campaign=DAADIPG",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.uni-passau.de/en/ba-icbs/?mtm_campaign=DAADIPG",
+          "quote": "Duration and credits 6 semesters; 180 ECTS credits"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uni-passau.de/en/ba-icbs/?mtm_campaign=DAADIPG",
+          "quote": "Language of instruction German; includes individual modules taught in two foreign languages"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.uni-passau.de/kosten-finanzierung",
+          "quote": "An der Universität Passau zahlen Sie keine Studiengebühren."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.uni-passau.de/einschreibung",
+          "quote": "Bewerbungszeiträume für Bewerbungen über uni-assist"
+        },
+        {
+          "url": "https://www.uni-passau.de/einschreibung",
+          "quote": "Kulturwirtschaft/International Cultural and Business Studies 1. April bis 15. Juli"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the DAAD page says tuition fees per semester are None ('Tuition fees per semester None'), but the university-wide page also says no tuition fees are charged. The semester contribution of around 130 EUR is not tuition. Documents: the list comes from the general enrolment page for the University of Passau, not from the programme page itself; the programme page does not list application documents. The uni-assist deadline (1 April - 15 July) is taken from the German admissions table; the DAAD page states the same window for applicants from all countries.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3643/",
+            "quote": "German language skills C1 required, please provide an official language certificate"
+          }
+        ]
+      }
+    ]
+  }
+}

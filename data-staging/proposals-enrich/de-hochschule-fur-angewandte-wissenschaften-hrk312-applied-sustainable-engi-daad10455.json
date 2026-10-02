@@ -1,0 +1,202 @@
+{
+  "slug": "de-hochschule-fur-angewandte-wissenschaften-hrk312-applied-sustainable-engi-daad10455",
+  "programmePage": "https://www.hs-ansbach.de/en/bachelor/applied-sustainable-engineering",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/",
+          "quote": "Programme duration 8 semesters"
+        },
+        {
+          "url": "https://www.hs-ansbach.de/en/bachelor/applied-sustainable-engineering",
+          "quote": "We offer you the opportunity to become a sustainability engineer in one of two fields of study in 8 semesters."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/",
+          "quote": "In the first three semesters, the basic modules will be taught in English."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/",
+          "quote": "From the fourth semester onwards, the courses will be offered in German."
+        },
+        {
+          "url": "https://www.hs-ansbach.de/en/bachelor/applied-sustainable-engineering",
+          "quote": "Language of instruction 1.-3. semester English, afterwards German"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 100000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,000 EUR"
+        },
+        {
+          "url": "https://www.hs-ansbach.de/en/bachelor/applied-sustainable-engineering",
+          "quote": "Tuition Fee for non-EU nationals: 1000 € per term"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2026-11-01",
+          "applicationDeadline": "2026-11-30"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/",
+          "quote": "For the summer semester: 1 November 2026 - 30 November 2026"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hs-ansbach.de/en/bachelor/applied-sustainable-engineering",
+          "quote": "We use the Uni-Assist program (https://www.uni-assist.de/en/) to determine whether you qualify for admission."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/",
+          "quote": "We rely on uni-assist (https://www.uni-assist.de/en/) to determine whether you qualify for admission."
+        },
+        {
+          "url": "https://www.hs-ansbach.de/en/info/for-prospective-students/applying-for-our-bachelors-and-masters-degree-programmes",
+          "quote": "The assessment - Vorprüfungsdokumentation (VPD) - is carried out for us by uni-assist e.V."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "university-entrance-qualification",
+          "name": {
+            "fr": "Diplôme d'accès à l'université",
+            "en": "University entrance qualification"
+          },
+          "quotedAs": "University entrance qualification",
+          "translationRequired": null
+        },
+        {
+          "slug": "identity-card",
+          "name": {
+            "fr": "Carte d'identité",
+            "en": "Identity card"
+          },
+          "quotedAs": "Identity card",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "CV",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "Curriculum vitae",
+          "translationRequired": null
+        },
+        {
+          "slug": "vpd",
+          "name": {
+            "fr": "VPD (pré-évaluation des documents)",
+            "en": "VPD (preliminary review documentation)"
+          },
+          "quotedAs": "VPD and, if applicable, language certificates",
+          "translationRequired": null
+        },
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "school leaving certificate",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-ansbach.de/en/info/for-prospective-students/applying-for-our-bachelors-and-masters-degree-programmes",
+          "quote": "For all applications, please submit University entrance qualification (e.g. Abitur certificate) Identity card Curriculum vitae VPD and, if applicable, language certificates (only for foreign applications)"
+        },
+        {
+          "url": "https://www.hs-ansbach.de/en/info/for-prospective-students/applying-for-our-bachelors-and-masters-degree-programmes",
+          "quote": "Please submit your foreign school leaving certificate or educational qualification digitally to uni-assist e.V. for evaluation (original certificate and an officially certified German or English translation)."
+        }
+      ]
+    }
+  },
+  "notes": "The DAAD page and the programme page both state the same tuition fee for non-EU applicants: 1,000 EUR per semester, so the value is 100000 minor units with period \"semester\". The sum of 8 semesters = 4 years. Intake dates are given only for the summer semester 2026/2027; no other intakes are quoted. Documents: the programme page does not list documents, but the general application page lists university entrance qualification (e.g. Abitur certificate), identity card, curriculum vitae, VPD and, if applicable, language certificates, and says that foreign school leaving certificates must be submitted to uni-assist with an officially certified German or English translation. The German-language version of that page also names the same list in German. The APS certificate applies only to applicants from China, Vietnam and India, not Morocco. For non-EU applicants from non-EU member states, German health insurance is required for enrolment, stated in both language versions. Language of instruction: English for the first three semesters, German from the fourth semester onward.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (since 2026): 4 TOEFL iBT (before 2026): 84 IELTS Academic: 6"
+          },
+          {
+            "url": "https://www.hs-ansbach.de/en/bachelor/applied-sustainable-engineering",
+            "quote": "As measured by the Common European Framework of Reference for Languages, you need level B2, as proven by – an IELTS (International English Language Testing System) score of 6.0 or better or – a TOEFL (Test of English as a Foreign Language) score of 84 points or better"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Admission requires an academic entrance exam; the university decides whether your certificate qualifies you or whether you must take an assessment test.",
+          "en": "Admission requires an academic entrance exam; the university decides whether your certificate qualifies you or whether you must take an assessment test."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/",
+            "quote": "Equivalent of a German university entrance certificate, successful completion of an academic entrance exam"
+          },
+          {
+            "url": "https://www.hs-ansbach.de/en/info/for-prospective-students/applying-for-our-bachelors-and-masters-degree-programmes",
+            "quote": "The university decides whether your certificate of education entitles you to study the desired degree programme or whether you have to take an assessment test."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une expérience de l'allemand est utile mais non requise pour l'admission ; des cours d'allemand sont intégrés.",
+          "en": "Some experience with German is helpful but not a requirement for admission; integrated German courses are provided."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-ansbach.de/en/bachelor/applied-sustainable-engineering",
+            "quote": "Some experience with the German language is helpful, but is not a requirement for admission."
+          }
+        ]
+      }
+    ]
+  }
+}

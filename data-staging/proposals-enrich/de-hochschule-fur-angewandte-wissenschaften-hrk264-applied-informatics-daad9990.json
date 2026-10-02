@@ -1,0 +1,27 @@
+{
+  "slug": "de-hochschule-fur-angewandte-wissenschaften-hrk264-applied-informatics-daad9990",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9990/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9990/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9990/",
+          "quote": "All courses are taught in English."
+        }
+      ]
+    }
+  },
+  "notes": "Aucune date limite précise (jour/mois/année) ni plateforme de candidature n'est indiquée sur cette page DAAD : 'Submit application via Please check this website.' La scolarité est indiquée comme gratuite ('Tuition fees per semester None') mais aussi 'free of tuition, but all students are required to pay moderate semester fees' (97 EUR/semestre) ; il s'agit de frais administratifs, pas de frais de scolarité pour non-UE, donc la valeur de tuition n'est pas reportée. Le seuil de 12 années de scolarité n'est pas explicitement chiffré ; la règle prior_study_years_min est déduite de 'General admission requirements to a German university of applied sciences' et devra être vérifiée."
+}

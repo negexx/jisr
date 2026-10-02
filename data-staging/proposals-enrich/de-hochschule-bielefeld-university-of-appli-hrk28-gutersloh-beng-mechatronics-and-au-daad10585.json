@@ -1,0 +1,101 @@
+{
+  "slug": "de-hochschule-bielefeld-university-of-appli-hrk28-gutersloh-beng-mechatronics-and-au-daad10585",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10585/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10585/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10585/",
+          "quote": "All courses are taught in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10585/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hsbi.de/en/international-office/international-applicants/applying-for-work-integrated-programmes",
+          "quote": "Applicants with certificates issued abroad must apply for a VPD certificate from uni-assist via the HSBI application portal before applying."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "school-leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10585/",
+          "quote": "The Abitur, Fachhochschulreife, an equivalent school-leaving certificate or an educational background that qualifies you for higher education is required."
+        }
+      ]
+    }
+  },
+  "notes": "The tuition 'None' figure comes from the DAAD page's 'Tuition fees per semester' field for this programme; the programme is described as addressing students of all nationalities. The DAAD page gives the application deadline as 'until 15 July' without a year; the year 2027 is taken from the page header 'International Programmes 2026/2027'. The documents fact lists only the school-leaving certificate named on the DAAD page; additional documents (VPD certificate, recognised language certificate, cooperation agreement with a company, APS certificate for Chinese/Vietnamese/Indian certificates) are named only for work-integrated programmes generally on the HSBI page and are not listed here. Application to HSBI itself goes through HSBI's application portal, but foreign-certificate applicants must first obtain the uni-assist VPD, hence de-uni-assist-vpd. The language rule combines the DAAD requirement (English B2 with official certificate) and quotes IELTS/TOEFL as examples.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10585/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 5.5 TOEFL iBT (before 2026): 72 Reading: 18 Listening: 17 Speaking: 20 Writing: 17"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez votre admissibilité avec votre diplôme marocain dans la base de données anabin et via la VPD d'uni-assist.",
+          "en": "Check your eligibility with your Moroccan diploma in the anabin database and via the uni-assist VPD."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hsbi.de/en/international-office/international-applicants/applying-for-work-integrated-programmes",
+            "quote": "Additionally, the anabin online database also provides you with more details on the evaluation of foreign degrees."
+          }
+        ]
+      }
+    ]
+  }
+}

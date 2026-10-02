@@ -1,0 +1,89 @@
+{
+  "slug": "de-hochschule-fur-angewandte-wissenschaften-hrk44-international-bachelors-daad10398",
+  "programmePage": "https://www.hs-coburg.de/en/electrical-engineering-for-sustainable-and-renewable-energy/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/electrical-engineering-for-sustainable-and-renewable-energy/",
+          "quote": "Standard period of study 8 semesters (incl. Industrial Internship and Bachelor Thesis), 240 ECTS"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/electrical-engineering-for-sustainable-and-renewable-energy/",
+          "quote": "Language of instruction English and German"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10398/",
+          "quote": "Courses are held in English (approx. 60%) and German (approx. 40%)."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/electrical-engineering-for-sustainable-and-renewable-energy/",
+          "quote": "The fees for international students from non-EU countries amount to €1,500 per semester."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10398/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum vitae",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "Curriculum vitae",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10398/",
+          "quote": "Curriculum vitae German language skills No minimum language level required"
+        },
+        {
+          "url": "https://www.hs-coburg.de/en/electrical-engineering-for-sustainable-and-renewable-energy/",
+          "quote": "Curriculum vitae Official proof of English language proficiency at level B2"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the programme pages state that non-EU/third-country students owe 1,500 EUR per semester (from summer semester 2025); the DAAD page states the same per semester. The application deadline for the winter semester is given as 30 September 2026 on both pages, but as the only date this is the deadline for the 2026 winter intake; no separate intake year was inferred beyond what the pages state, so no intake object was output. Documents: the pages name \"Curriculum vitae\" but the full document list for international applicants is linked elsewhere and not quoted here, so only that document is listed. The BA DAAD page also lists additional documents such as the school-leaving certificate/HZB, APS/VPD and language certificates; these were not added as separate documents because no quote on these pages names them as a submitted document list for this programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme d'accès à l'université (HZB) ou diplôme étranger équivalent requis. Les candidats internationaux doivent faire évaluer leur certificat (APS, VPD d'uni-assist ou ZAB) : vérifiez les modalités sur le site.",
+          "en": "University entrance qualification (HZB) or equivalent foreign certificate required. International applicants must have their certificate assessed (APS, VPD from uni-assist or ZAB): check the details on the website."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-coburg.de/en/electrical-engineering-for-sustainable-and-renewable-energy/",
+            "quote": "International applicants require a certificate assessment (APS certificate, VPD from uniassist or evaluation of the ZAB)."
+          }
+        ]
+      }
+    ]
+  }
+}

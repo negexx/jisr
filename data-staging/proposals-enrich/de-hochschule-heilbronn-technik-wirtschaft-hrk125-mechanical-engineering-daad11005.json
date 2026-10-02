@@ -1,0 +1,115 @@
+{
+  "slug": "de-hochschule-heilbronn-technik-wirtschaft-hrk125-mechanical-engineering-daad11005",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11005/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/mechanical-engineering",
+          "quote": "7 Semester : 210 ECTS 7 Semester : 3.5 years standard period of study"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11005/",
+          "quote": "The basic studies (first and second semesters) are taught in English."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11005/",
+          "quote": "The main studies (the third semester to the seventh semester) are taught in German."
+        },
+        {
+          "url": "https://www.hs-heilbronn.de/en/mechanical-engineering",
+          "quote": "Language : The language of instruction is German, with some classes held in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11005/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        },
+        {
+          "url": "https://www.hs-heilbronn.de/en/mechanical-engineering",
+          "quote": "Tuition fee : 1500 € Tuition fee : Concerns students form non-EU/EEA countries only"
+        },
+        {
+          "url": "https://www.hs-heilbronn.de/en/tuition-fees",
+          "quote": "Newly enrolled international students not from EU/EEA countries have to pay tuition fees of 1,500 € per semester."
+        }
+      ]
+    }
+  },
+  "notes": "The tuition evidence quotes a per-semester figure (1,500 EUR per semester); the DAAD page gives it as 'non-EU countries 1,500 EUR' without specifying the period. Documents are not listed per-programme: the DAAD page links to a general checklist but does not name individual documents for this programme, so no documents fact was included. Most documents are stated at institution level, not programme level. Requirement rule 3 references documents process only in the manual_check note. The German A2 mention on the DAAD page is 'required/recommended, no proof required', so treated as manual_check rather than a hard requirement; the B2 German check is also a manual_check because the exact formal admission condition for foreign applicants is not fully stated.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11005/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 79"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11005/",
+            "quote": "IELTS Academic: 6"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le programme exige la réussite du cours d'allemand (le niveau B2 en allemand est nécessaire) ; vérifiez les conditions exactes de langue allemande et le niveau A2 recommandé.",
+          "en": "The programme requires successful completion of the German language course (B2 German is required); check the exact German language conditions and the recommended A2 level."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11005/",
+            "quote": "Thus, a successful completion of the German language course is required."
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11005/",
+            "quote": "German language skills A2 required/recommended, no proof required"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre bac marocain donne un accès direct ou nécessite une reconnaissance par Studienkolleg/uni-assist ou une voie alternative (examen d'entrée universitaire).",
+          "en": "Check whether your Moroccan Baccalauréat gives direct admission or requires recognition through Studienkolleg/uni-assist or an alternative pathway (university-specific entrance exam)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11005/",
+            "quote": "The general requirement is that applicants hold an academic qualification that would enable them to study the chosen subject in their home country."
+          },
+          {
+            "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+            "quote": "If you obtain a non-German school leaving certificate, you must first have it recognized by Studienkolleg Konstanz or by Uni-Assist."
+          }
+        ]
+      }
+    ]
+  }
+}

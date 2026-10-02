@@ -1,0 +1,73 @@
+{
+  "slug": "de-universitat-zu-koln-hrk147-management-economics-and-daad7682",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/",
+          "quote": "This Bachelor's programme is designed to take six semesters (three years)."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/",
+          "quote": "As global challenges need global solutions, this programme is taught in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    }
+  },
+  "notes": "The programme's own page (DAAD) says tuition fees per semester are none, which for a non-EU applicant means no tuition fee is charged. A semester contribution of approx. 320 EUR per semester is mentioned but is a social contribution fee, not tuition. The application deadline (15 April - 15 July) is given without a year, so no date is written. The programme page states English as the teaching language and B2 English, but also asks for German C1 for admission. No application channel (uni-assist/VPD) is stated for this Bachelor programme on the supplied pages; the uni-assist VPD information appears only on the Master's application page.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/",
+            "quote": "German language skills C1 required, please provide an official language certificate"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: Cambridge English Qualifications: B2 First IELTS Academic: 5.5 TOEFL iBT (since 2026): 4 Reading: 4 Listening: 4 Speaking: 4 Writing: 4"
+          }
+        ]
+      }
+    ]
+  }
+}

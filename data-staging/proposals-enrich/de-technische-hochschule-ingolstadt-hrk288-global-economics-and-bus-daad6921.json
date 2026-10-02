@@ -1,0 +1,115 @@
+{
+  "slug": "de-technische-hochschule-ingolstadt-hrk288-global-economics-and-bus-daad6921",
+  "programmePage": "https://www.thi.de/en/thi-business-school/degree-programmes/global-economics-and-business-management-ba/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.thi.de/en/thi-business-school/degree-programmes/global-economics-and-business-management-ba/",
+          "quote": "Duration 7 semester"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6921/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6921/",
+          "quote": "Teaching language German English Languages Courses are held in English and German."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6921/",
+          "quote": "Around half of the courses are taught in English."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2027-07-15"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.thi.de/en/thi-business-school/degree-programmes/global-economics-and-business-management-ba/",
+          "quote": "Application period for the winter semester 2027/28: 2 May to 15 July 2027"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the 800 EUR/semester fee for third-country students is a THI-wide figure confirmed for Bachelor programmes; no page states it specifically for Global Economics and Business Management. A Moroccan applicant with a Moroccan Baccalauréat does not appear in the documented exemption list (German/EU/EEA, German qualification holders, etc.), so the fee is retained. Documents: the DAAD page and the application page do not explicitly list documents for this programme; ui-assist is stated only for the preliminary review of foreign certificates. Intakes: only the winter semester 2027/28 deadline is stated; no start date or opening date is given, and the DAAD page's 2 May–15 July window lacks a year, so it was not used. Language: the DAAD page calls the programme German-language and requires German B2; the eighth-semester language (French/Spanish/Chinese) is an additional language and is not counted as a teaching language. Writing the Bachelor's thesis in English is a component, not the programme language. English B2: the DAAD page says 'no proof required' while calling it required/recommended; left as a manual check.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6921/",
+            "quote": "German language skills B2 required, please provide an official language certificate, e.g.: Deutsches Sprachdiplom der Kultusministerkonferenz (DSD): DSD II Reading: B2 Listening: B2 Speaking: B2 Writing: B2 Deutsche Sprachprüfung für den Hochschulzugang (DSH): DSH-1 Goethe-Zertifikat: Goethe-Zertifikat B2 telc Deutsch: telc Deutsch B2 TestDaF: TDN 3 Reading: TDN 3 Listening: TDN 3 Speaking: TDN 3 Writing: TDN 3 ÖSD Zertifikat: C2"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6921/",
+            "quote": "applicants from non-German-speaking countries applying for a German-language degree programme like this must provide proof of sufficient knowledge of the German language with level B2."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez la page de candidature pour connaître la liste complète des documents et les modalités de soumission (le DAAD ne liste pas les pièces).",
+          "en": "Check the application page for the full document list and submission rules (the DAAD page does not list the documents)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6921/",
+            "quote": "Applicants who did not acquire the higher secondary school-leaving certificate in Germany or at a school with the German \"Abitur\" examination rules will have to send their documents to uni-assist for preliminary inspection prior to their application at THI."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le DAAD indique que l'anglais B2 est requis ou recommandé sans preuve, mais aucune autre page du dossier n'énonce de condition d'anglais pour ce programme — vérifiez auprès de l'université.",
+          "en": "The DAAD page says English B2 is required/recommended with no proof, but no other page in the dossier states an English condition for this programme — verify with the university."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6921/",
+            "quote": "English language skills B2 required/recommended, no proof required"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La durée de 7 semestres (3,5 ans) figure sur la page DAAD et sur la page de l'université, mais la seconde donne 210 ECTS ; le statut des 30 ECTS manquants (semestre de stage à l'étranger) n'est pas précisé.",
+          "en": "The 7-semester (3.5-year) duration appears on both the DAAD and university pages, but the latter gives 210 ECTS; the status of the missing 30 ECTS (internship semester abroad) is not specified."
+        },
+        "evidence": [
+          {
+            "url": "https://www.thi.de/en/thi-business-school/degree-programmes/global-economics-and-business-management-ba/",
+            "quote": "ECTS 210"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6921/",
+            "quote": "Programme duration 7 semesters"
+          }
+        ]
+      }
+    ]
+  }
+}

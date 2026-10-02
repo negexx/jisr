@@ -1,0 +1,44 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064",
+  "programmePage": "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar en Haarlem taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar en Haarlem taal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "The programme page says the language of instruction is Dutch; foreign-diploma applicants must demonstrate Dutch language proficiency (NT2 B2), but the quoted sentence appears on a page about other programmes and is not specific to Bouwkunde. The visa/immigration page only applies to Surinamese students. Tuition: the institution-wide instellingscollegegeld for full-time 2026-2027 is €10,360, but the pages do not state this as the fee for this specific programme, so it is not included.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Votre diplôme étranger doit être validé par Inholland (CSA) comme équivalent à un diplôme néerlandais de havo, vwo ou mbo-4. Envoyez votre diplôme et votre relevé de notes (et une traduction si nécessaire) via Studielink et Selfservice avant le 1er mai.",
+          "en": "Your foreign diploma must be validated by Inholland (CSA) as equivalent to a Dutch havo, vwo or mbo-4 diploma. Send your diploma and transcript (and a translation if needed) via Studielink and Selfservice before 1 May."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+            "quote": "Heb je een diploma buiten Nederland behaald dan moet onder meer worden beoordeeld of dit gelijkwaardig is aan een Nederlands havo-, vwo- of mbo-diploma niveau 4."
+          }
+        ]
+      }
+    ]
+  }
+}

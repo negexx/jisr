@@ -1,0 +1,143 @@
+{
+  "slug": "de-hochschule-karlsruhe-technik-und-wirtsch-hrk138-electrical-engineering-a-daad7695",
+  "programmePage": "https://www.h-ka.de/en/eeib/profile",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.h-ka.de/en/eeib/profile",
+          "quote": "Standard Period Of Study 7 semesters"
+        },
+        {
+          "url": "https://www.h-ka.de/en/eeib/profile",
+          "quote": "ECTS Credits 210 in total"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7695/",
+          "quote": "Teaching language English"
+        },
+        {
+          "url": "https://www.h-ka.de/en/eeib/profile",
+          "quote": "The study program is taught 100% in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.h-ka.de/en/eeib/profile",
+          "quote": "EU citizens pay no tuition fees, for non-EU citizens the tuition fee is 1500 EUR per semester."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2026-09-15"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7695/",
+          "quote": "For the winter semester: 4 May - 15 September"
+        },
+        {
+          "url": "https://www.h-ka.de/eeib",
+          "quote": "Bewerbungsschluss: 15. September 2026"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the 1,500 EUR/semester figure is stated as a non-EU tuition fee by the programme's own page and applies to a Moroccan applicant (non-EU, foreign diploma, first enrollment). The general financing page gives the same figure for non-EU students in Baden-Württemberg. The DAAD page says 'Tuition fees per semester Varied' and gives only the ~215 EUR semester contribution, which conflicts with the 188 EUR figure on the programme page and the 109.50+80+16 EUR composition on the German financing page; these are administrative/semester fees, not tuition. The Deutsche Sprachkurs is part of the curriculum, but the programme itself is taught in English (100% English), so teachingLanguages is ['en'] only. Application route: the pages say to apply online via the HKA applicant portal for this non-selective Bachelor programme (no uni-assist, no Hochschulstart); for a non-EU school-leaving certificate the ASK certificate (Studienkolleg Konstanz) must be obtained first and is then uploaded in the HKA portal. The portal opening date is inconsistent across pages: 'The portal is expected to open at the beginning of May' (programme page) and 'Das Onlineportal ist voraussichtlich ab Anfang Mai bis 15. September geöffnet'; the general Bachelor application page gives summer-semester dates, so only the deadline was recorded. ECTS: 210 total / 60 = 3.5 years, which matches 7 semesters. The DAAD page states B2 English and A1 German as requirements; both are admission conditions for this programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.h-ka.de/en/eeib/profile",
+            "quote": "An English language certificate is required for all international applicants (TOEFL certificate with at least ibt 83, or an equivalent English test)."
+          },
+          {
+            "url": "https://www.h-ka.de/apply",
+            "quote": "Bachelor Electrical Engineering & Information Technology: English B2 / IELTS / TOEFL"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.h-ka.de/en/eeib/profile",
+            "quote": "To apply, you will need an A1 German certificate, which must be submitted no later than 6 weeks after the start of lectures."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non-UE doivent faire évaluer leurs documents par le Studienkolleg de Constance (ASK) et obtenir un certificat ASK. Contactez-les tôt : leurs délais sont différents.",
+          "en": "Non-EU applicants must have their documents assessed by the Studienkolleg Konstanz (ASK) and obtain an ASK certificate. Contact them early: their deadlines differ."
+        },
+        "evidence": [
+          {
+            "url": "https://www.h-ka.de/en/eeib/profile",
+            "quote": "Non-EU applicants only: ASK certificate."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le certificat d'anglais (TOEFL ibt 83 ou test équivalent) doit être disponible au plus tard au moment de l'inscription ; le certificat d'allemand A1 peut être fourni jusqu'à 6 semaines après le début des cours.",
+          "en": "The English certificate (TOEFL ibt 83 or equivalent test) must be available by enrollment at the latest; the German A1 certificate can be submitted up to 6 weeks after the start of lectures."
+        },
+        "evidence": [
+          {
+            "url": "https://www.h-ka.de/en/eeib/profile",
+            "quote": "The certificate must be available by the time of enrollment at the latest."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Prévoyez les frais annexes pour tous les étudiants : environ 188,00 EUR de cotisation semestrielle en plus des frais de scolarité.",
+          "en": "Budget the additional costs for all students: about 188.00 EUR semester contribution on top of the tuition fee."
+        },
+        "evidence": [
+          {
+            "url": "https://www.h-ka.de/en/eeib/profile",
+            "quote": "In addition, there's a fee of 188,00 Euro/Semester for all students."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182",
+  "programmePage": "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+          "quote": "Studieduur en collegetijden De studieduur is vier jaar."
+        }
+      ]
+    }
+  },
+  "notes": "Aucun taux de frais de scolarité spécifique aux étudiants hors UE/EEE n'est indiqué pour ce programme; les montants de lesgeld affichés (€ 6.816, € 6.134 ou 12 x € 568) ne sont pas confirmés comme s'appliquant à ce profil et ont donc été omis. Aucune date d'admission ni plateforme de candidature (Studielink) n'est mentionnée dans la page fournie; les dates de 'Startdatum' (par ex. 01 december 2026, 01 april 2027) semblent être des débuts de cours et non des dates limites de candidature, et ont été omises. Aucune exigence de langue ni document traduit n'est mentionné pour ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme HAVO, VWO ou MBO 4 est exigé pour l'admission. Vérifiez la recevabilité de votre baccalauréat marocain auprès de l'école.",
+          "en": "A HAVO, VWO or MBO 4 diploma is required for admission. Check whether your Moroccan Baccalaureate is accepted with the school."
+        },
+        "evidence": [
+          {
+            "url": "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+            "quote": "Voor het volgen van deze opleiding op HBO niveau is minimaal een HAVO, VWO of MBO 4-diploma vereist."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Documents d'admission requis : copie d'un diplôme pertinent avec relevé de notes, et copie d'une pièce d'identité (ID).",
+          "en": "Admission documents required: a copy of a relevant diploma with the corresponding grade list, and a copy of an ID document."
+        },
+        "evidence": [
+          {
+            "url": "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+            "quote": "Voor toelating zijn de volgende documenten nodig: Kopie relevant diploma én de bijbehorende cijferlijst Kopie ID"
+          }
+        ]
+      }
+    ]
+  }
+}

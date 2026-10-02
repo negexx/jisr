@@ -1,0 +1,117 @@
+{
+  "slug": "de-universitat-duisburg-essen-hrk71-duisburg-electrical-electronic-an-daad6150",
+  "programmePage": "https://www.uni-due.de/iw/en/study/b-eee.php",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.uni-due.de/iw/en/study/b-eee.php",
+          "quote": "Study period 6 semesters (3 years)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6150/",
+          "quote": "The language of instruction is half German and half English."
+        },
+        {
+          "url": "https://www.uni-due.de/iw/en/study/b-eee.php",
+          "quote": "Language 50% German & 50% English"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.uni-due.de/iw/en/study/b-eee.php",
+          "quote": "Prospective students from non-EU countries submit their application to uni-assist (see application deadline)."
+        },
+        {
+          "url": "https://www.uni-due.de/ise/admission.php",
+          "quote": "Applicants who would like to apply for a Bachelor course as a part of the study program International Studies in Engineering (ISE) must first use the application portal of uni-assist."
+        }
+      ]
+    }
+  },
+  "notes": "Teaching language: the programme is taught half in German and half in English; the DAAD page says the first year's basic subjects are taught in English, while the remaining four semesters are taught in German and English. Tuition: the UDE page states that the university does not charge tuition fees, but all students must pay a semester fee (Semesterbeitrag, ~320-350 EUR per semester), which is not tuition. Intakes: the pages state winter-semester application windows only ('For the winter semester: 1 May - 15 June' / 'International: 01.05. - 15.06.'); no year is given, so the sample JSON uses 2026 as a placeholder year based on the DAAD database edition '2026/2027' — the human auditor should confirm the actual year. Application channel: the pages state that non-EU applicants apply via uni-assist (not the UDE portal, and no separate VPD/preliminary review step is mentioned). Documents: the UDE page's enrolment attachment list is institution-wide for non-EU applicants; programme-level document requirements are not stated separately, so no translation requirement can be confirmed. The DAAD page names Goethe-Zertifikat B1 as an example of a German certificate; it is not an accepted test in the allowed list, so acceptedTests is left empty for German.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "mathematics"
+        ],
+        "mode": "any",
+        "evidence": [
+          {
+            "url": "https://www.uni-due.de/ise/admission.php",
+            "quote": "Applicants must prove that they have studied mathematics in the last 3 years of the previous education entitling them to direct university access and have graduated with a grade of 2.5 (German grading system) or better."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6150/",
+            "quote": "German language skills B1 required, please provide an official language certificate, e.g.: Goethe-Zertifikat: Goethe-Zertifikat B1"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6150/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT Home Edition (since 2026): 4 Reading: 4 Listening: 4 Speaking: 4 Writing: 4 Cambridge English Qualifications: B2 First IELTS Academic: 5.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'admission (Feststellungsprüfung) peut être exigé si aucun diplôme d'accès à l'université ne peut être prouvé.",
+          "en": "An entrance examination may be required if no university entrance qualification can be proven."
+        },
+        "evidence": [
+          {
+            "url": "https://www.uni-due.de/iw/en/study/b-eee.php",
+            "quote": "if no university entrance qualification can be proven, proof of the ability to study by means of a special examination after successful attendance of an educational institution abroad with a degree that entitles the holder to study there: passed entrance examination of the University of Duisburg-Essen"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une note de 2,5 ou mieux en mathématiques (système allemand) est exigée ; les conversions de notes sont prises en compte.",
+          "en": "A grade of 2.5 or better in mathematics (German grading system) is required; grade conversions are taken into account."
+        },
+        "evidence": [
+          {
+            "url": "https://www.uni-due.de/iw/en/study/b-eee.php",
+            "quote": "if the applicant has taken mathematics in the last 3 years of the previous education, entitling him/her to direct university admission and has achieved a grade of 2.5 or better."
+          }
+        ]
+      }
+    ]
+  }
+}

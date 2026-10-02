@@ -1,0 +1,200 @@
+{
+  "slug": "de-hochschule-geisenheim-hrk446-international-wine-busin-daad8448",
+  "programmePage": "https://www.hs-geisenheim.de/en/studies/prospective-students/bachelors-programs/international-wine-business-bsc-english-program",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.hs-geisenheim.de/en/studies/prospective-students/bachelors-programs/international-wine-business-bsc-english-program",
+          "quote": "Standard Study Period 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8448/",
+          "quote": "Courses are held in English (100%)."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8448/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/",
+          "quote": "If you obtained your university entrance qualification outside Germany and would like to apply for a bachelor’s degree program at Hochschule Geisenheim University, you must submit your application through uni-assist."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "School leaving certificate with an overview of grades",
+          "translationRequired": true
+        },
+        {
+          "slug": "transcript-of-records",
+          "name": {
+            "fr": "Relevé de notes et de matières",
+            "en": "Proof of study achievements"
+          },
+          "quotedAs": "Proof of study achievements with overview of subjects and grades",
+          "translationRequired": true
+        },
+        {
+          "slug": "university-entrance-examination",
+          "name": {
+            "fr": "Preuve de l'examen d'entrée à l'université",
+            "en": "Proof of university entrance examination"
+          },
+          "quotedAs": "Proof of university entrance examination in your home country",
+          "translationRequired": true
+        },
+        {
+          "slug": "pre-study-internship-certificate",
+          "name": {
+            "fr": "Attestation de stage préalable aux études",
+            "en": "Pre-study internship certificate"
+          },
+          "quotedAs": "Certified copy* of the certificate proving your pre-study internship",
+          "translationRequired": true
+        },
+        {
+          "slug": "english-language-certificate",
+          "name": {
+            "fr": "Certificat de compétence en anglais",
+            "en": "English language certificate"
+          },
+          "quotedAs": "For the International Wine Business – English Program (B.Sc.) degree program: English language certificates",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-copy",
+          "name": {
+            "fr": "Copie du passeport",
+            "en": "Copy of your passport"
+          },
+          "quotedAs": "Copy of your passport",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum vitae",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "Curriculum vitae",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/",
+          "quote": "School leaving certificate with an overview of grades"
+        },
+        {
+          "url": "https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/",
+          "quote": "Proof of study achievements with overview of subjects and grades (if available)"
+        },
+        {
+          "url": "https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/",
+          "quote": "Proof of university entrance examination in your home country (if available)"
+        },
+        {
+          "url": "https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/",
+          "quote": "Certificates must always be issued in the original language of the country of origin and must be attached with an English or German translation."
+        },
+        {
+          "url": "https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/",
+          "quote": "For the German-language degree programs: German language certificates"
+        },
+        {
+          "url": "https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/",
+          "quote": "Copy of your passport"
+        },
+        {
+          "url": "https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/",
+          "quote": "Curriculum vitae"
+        }
+      ]
+    }
+  },
+  "notes": "Le programme est gratuit en frais de scolarité (DAAD : « Tuition fees per semester None »), mais 350 EUR par semestre de « Semester contribution » sont indiqués par le DAAD pour ce programme ; la page officielle indique 443,60 € pour le semestre d'hiver 2026/27, il s'agit d'une contribution semestrielle (semester ticket etc.) et non de frais de scolarité. Le DAAD indique également « Beginning Winter semester » ; la date de candidature a été fixée au 1er septembre 2027 car la page indique « September 1 (via uni-assist) » et les actualités de la page programme vont jusqu'en 2026, donc la prochaine échéance est en 2027. Le niveau d'anglais B2 est exigé ; la connaissance de l'allemand n'est pas requise mais « strongly recommended » (pas une condition). Le stage préalable de 12 semaines est une condition d'admission (« we require »), donc il est listé comme manual_check car il s'agit d'un stage et non d'un diplôme/langue. Les documents « if available » (relevé de notes, examen d'entrée) sont listés mais leur caractère obligatoire est incertain.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.hs-geisenheim.de/en/studies/prospective-students/bachelors-programs/international-wine-business-bsc-english-program",
+            "quote": "English competence at minimum B2 level (CEFR) must be submitted with the application through uni-assist."
+          },
+          {
+            "url": "https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/",
+            "quote": "TOEFL (min. 80 points, internet test)"
+          },
+          {
+            "url": "https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/",
+            "quote": "IELTS (min. 5.5)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un stage préalable de 12 semaines dans l'industrie du vin est requis avant le début des études; il doit être justifié par une attestation écrite en anglais sur papier à en-tête de l'entreprise.",
+          "en": "A 12-week pre-study internship in the wine industry is required before the start of studies; it must be evidenced by an informal confirmation written in English on company-headed stationery."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-geisenheim.de/en/studies/prospective-students/bachelors-programs/international-wine-business-bsc-english-program",
+            "quote": "Therefore we require a 12-week practical training or work experience in the wine industry prior to studies."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Votre certificat de fin d'études secondaires doit être reconnu comme équivalent à l'Abitur allemand; uni-assist évalue l'équivalence et peut exiger une année de Studienkolleg ou des années d'études dans votre pays.",
+          "en": "Your school-leaving certificate must be recognised as equivalent to the German Abitur; uni-assist evaluates equivalence and may require a Studienkolleg year or prior study years in your home country."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/",
+            "quote": "The university application tool uni-assist evaluates your certificates and determines their equivalence to German standards."
+          }
+        ]
+      }
+    ]
+  }
+}

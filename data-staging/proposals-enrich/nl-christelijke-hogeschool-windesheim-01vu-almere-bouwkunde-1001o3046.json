@@ -1,0 +1,55 @@
+{
+  "slug": "nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046",
+  "programmePage": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Studieduur 4 jaar"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Aanmelden het liefst vóór 1 mei (uiterlijk 31 augustus) via Studielink"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee not included: the only figure found (€ 2.694,- in 2026-2027) is the statutory fee for EU/EEA students and no non-EU fee is stated for this programme. Teaching language inferred from the Dutch-language page; not explicitly stated as the language of instruction.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un Baccalauréat marocain n'est pas automatiquement un diplôme néerlandais. Faites évaluer votre diplôme pour vérifier s'il est équivalent à un havo, vwo ou mbo-4.",
+          "en": "A Moroccan Baccalauréat is not automatically a Dutch diploma. Have your diploma evaluated to check equivalence to havo, vwo or mbo-4."
+        },
+        "evidence": [
+          {
+            "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+            "quote": "Je bent toelaatbaar met een diploma dat gelijkwaardig is aan een havo-, vwo- of mbo-4 diploma."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les exigences linguistiques pour les diplômes étrangers sur la page des taaleisen de Windesheim.",
+          "en": "Check the language requirements for foreign diplomas on Windesheim's taaleisen page."
+        },
+        "evidence": [
+          {
+            "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+            "quote": "Daarnaast moet je voldoen aan de taaleisen."
+          }
+        ]
+      }
+    ]
+  }
+}

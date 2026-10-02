@@ -1,0 +1,185 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-s-gravenhage-business-studies-1001o2990",
+  "programmePage": "https://www.inholland.nl/opleidingen/business-studies-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/business-studies-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/business-studies-voltijd/",
+          "quote": "locatie Alkmaar, Amsterdam, Den Haag, Haarlem en Rotterdam taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1036000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Instellingscollegegeld Voltijd en duaal: € 10.360"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": "2026-09-01",
+          "applicationOpens": "2025-10-01",
+          "applicationDeadline": "2026-08-01"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/inschrijven/inschrijven/",
+          "quote": "Vanaf 1 oktober 2025 kun je je inschrijven voor opleidingen die starten in september 2026."
+        },
+        {
+          "url": "https://www.inholland.nl/inschrijven/inschrijven/",
+          "quote": "Je kunt je tot uiterlijk 1 augustus 2026 aanmelden voor de septemberinstroom."
+        },
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Studiejaar 2026-2027 Start 1 september 2026"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/inschrijven/inschrijven/",
+          "quote": "Meld je dan via Studielink aan met je DigiD."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "identity-document",
+          "name": {
+            "fr": "Copie de la pièce d'identité",
+            "en": "Copy of identity document"
+          },
+          "quotedAs": "een kopie van je identiteitsbewijs",
+          "translationRequired": null
+        },
+        {
+          "slug": "diploma",
+          "name": {
+            "fr": "Diplôme",
+            "en": "Diploma"
+          },
+          "quotedAs": "diploma",
+          "translationRequired": null
+        },
+        {
+          "slug": "transcript-of-records",
+          "name": {
+            "fr": "Relevé de notes",
+            "en": "Transcript of records"
+          },
+          "quotedAs": "cijferlijst",
+          "translationRequired": null
+        },
+        {
+          "slug": "certified-translation",
+          "name": {
+            "fr": "Traduction certifiée",
+            "en": "Certified translation"
+          },
+          "quotedAs": "een vertaling van een beëdigd vertaler",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+          "quote": "Als je persoonsgegevens nog niet zijn geverifieerd in Studielink dan moet je een kopie van je identiteitsbewijs uploaden via Selfservice."
+        },
+        {
+          "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+          "quote": "De CSA beoordeelt alleen diploma’s nadat je een aanmelding via Studielink hebt gedaan en je diploma, cijferlijst, en, indien nodig, een vertaling van een beëdigd vertaler, hebt geüpload in Selfservice."
+        },
+        {
+          "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+          "quote": "De CSA beoordeelt alleen diploma’s nadat je een aanmelding via Studielink hebt gedaan en je diploma, cijferlijst, en, indien nodig, een vertaling van een beëdigd vertaler, hebt geüpload in Selfservice."
+        },
+        {
+          "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+          "quote": "De CSA beoordeelt alleen diploma’s nadat je een aanmelding via Studielink hebt gedaan en je diploma, cijferlijst, en, indien nodig, een vertaling van een beëdigd vertaler, hebt geüpload in Selfservice."
+        }
+      ]
+    }
+  },
+  "notes": "The programme's own page says the language is Dutch, so Dutch language proficiency (B2) applies to foreign-diploma applicants per the general Inholland entry-requirements pages. The Business Studies page itself does not mention a language test, but the institution's rules for buitenlands diploma require it. The instellingscollegegeld (€ 10,360 for 2026-2027) is the institution-wide rate for students who do not qualify for the statutory fee; a non-EU student pays this rate. The documents listed come from the general In- en uitschrijfregels and may not be the complete visa/MVV list (see the Suriname visa page for that country-specific list).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+            "quote": "Students who have completed their prior education abroad must therefore demonstrate Dutch language proficiency at B2 level (Common European Framework of Reference for Languages)."
+          },
+          {
+            "url": "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+            "quote": "This can be done by obtaining an NT2 (Dutch as a Second Language) Programme II certificate (reading, writing, speaking and listening components)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les diplômes internationaux sont évalués individuellement par le service des admissions; envoyez votre diplôme et votre relevé de notes avant le 1 mai.",
+          "en": "International diplomas are assessed individually by the admissions department; send your diploma and transcript before 1 May."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+            "quote": "All internationally obtained diplomas need to be evaluated by our Admissions department."
+          },
+          {
+            "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+            "quote": "Doe dit voor 1 mei 2025 zodat je, wanneer je niet aan de vereisten voldoet, kan deelnemen aan de toelatingstoets als dat nog mogelijk is."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats de 21 ans ou plus sans diplôme requis peuvent être admis via un examen d'entrée (21+ test).",
+          "en": "Applicants aged 21 or older without the required diploma can be admitted via an entrance exam (21+ test)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+            "quote": "If you do not have the required diplomas, you are 21 or older, you can take the 21+ test."
+          },
+          {
+            "url": "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+            "quote": "If you are 21 years of age or older and do not meet the minimum entrance requirements, you can still be admitted by passing the entrance exam."
+          }
+        ]
+      }
+    ]
+  }
+}

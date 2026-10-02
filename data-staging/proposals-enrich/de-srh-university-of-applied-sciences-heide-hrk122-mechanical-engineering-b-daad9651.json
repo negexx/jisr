@@ -1,0 +1,57 @@
+{
+  "slug": "de-srh-university-of-applied-sciences-heide-hrk122-mechanical-engineering-b-daad9651",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9651/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9651/",
+          "quote": "The duration of the Bachelor’s degree programme is 42 months with a total of 210 ECTS that must be earned."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9651/",
+          "quote": "Courses are held in English (100%)."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 510000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9651/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 5,100 EUR"
+        }
+      ]
+    }
+  },
+  "notes": "The pages do not state any application channel for international applicants (e.g., uni-assist or direct online portal), so applicationChannel is omitted. The teaching language is English; German language skills are not required. The tuition fee is 5,100 EUR per semester for non-EU applicants. No application deadline is listed; intakes cannot be determined.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Aucune date limite de candidature n'est indiquée. Consultez le site web du programme pour les périodes de candidature exactes.",
+          "en": "No application deadline is listed. Check the programme website for exact application periods."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9651/",
+            "quote": "This programme has no deadline listed."
+          }
+        ]
+      }
+    ]
+  }
+}

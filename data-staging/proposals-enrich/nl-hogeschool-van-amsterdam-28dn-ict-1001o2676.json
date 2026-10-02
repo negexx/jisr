@@ -1,0 +1,54 @@
+{
+  "slug": "nl-hogeschool-van-amsterdam-28dn-ict-1001o2676",
+  "programmePage": "https://www.hva.nl/opleidingen/ict",
+  "facts": {
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/stappenplan-inschrijven",
+          "quote": "Schrijf je in via Studielink (opent in een nieuw venster)"
+        },
+        {
+          "url": "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/stappenplan-inschrijven",
+          "quote": "Woon je niet in Nederland? Vraag dan via Studielink (opent in nieuw venster) een gebruikersnaam en wachtwoord aan."
+        }
+      ]
+    }
+  },
+  "notes": "HvA algemene instellingscollegegeld (€ 10.648 voor 2026-2027) geldt voor studenten die niet voor wettelijk collegegeld in aanmerking komen; dit is een instellingsbreed tarief, niet specifiek voor ICT, dus niet als tuition opgenomen. De opleidingspagina geeft geen deadline; de genoemde 1 mei 2027 is de algemene HvA-bachelordeadline voor niet-geselecteerde opleidingen. De documentenlijst komt van de HvA-pagina over waardering van een buitenlands diploma (vooropleiding nog niet afgerond) en is niet ICT-specifiek; de 'verklaring van je onderwijsinstelling' is hier als bewijs van het school-leaving-certificate opgevoerd. De Intakes-quote noemt geen jaar voor '31 januari' bij de februaristart, dus die is weggelaten.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Si vous n'avez pas de diplôme néerlandais valide (havo, vwo ou mbo 4), votre diplôme étranger doit être évalué selon les normes néerlandaises; l'admission se fait au cas par cas.",
+          "en": "If you do not hold a valid Dutch diploma (havo, vwo or mbo 4), your foreign diploma must be assessed against Dutch standards; admission is decided case by case."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/toelatingseisen",
+            "quote": "Wanneer je uit het buitenland komt en geen geldig Nederlands diploma hebt, moet je een buitenlands diploma op minimaal mbo-4 of havo-niveau kunnen overleggen."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vous devez pouvoir démontrer votre niveau d'anglais ou de néerlandais selon la langue d'enseignement de la filière; les justificatifs exacts doivent être vérifiés.",
+          "en": "You must demonstrate your English or Dutch language level depending on the programme's language of instruction; the exact required proof must be checked with the university."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/toelatingseisen",
+            "quote": "Kom je uit het buitenland en wil je een Engelstalige opleiding volgen? Dan moet je aan meer voorwaarden voldoen, zoals bijvoorbeeld aantoonbare beheersing van de Engelse taal."
+          },
+          {
+            "url": "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/diplomawaardering/documentatie-vooropleiding-niet-afgerond",
+            "quote": "documenten waarmee je je Engelse of Nederlandse taalniveau aantoont afhankelijk van de voertaal van de gekozen bacheloropleiding"
+          }
+        ]
+      }
+    ]
+  }
+}

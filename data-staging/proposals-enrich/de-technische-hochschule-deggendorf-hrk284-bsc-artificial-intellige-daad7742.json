@@ -1,0 +1,91 @@
+{
+  "slug": "de-technische-hochschule-deggendorf-hrk284-bsc-artificial-intellige-daad7742",
+  "programmePage": "https://www.th-deg.de/ain-b-en",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7742/",
+          "quote": "Programme duration 7 semesters"
+        },
+        {
+          "url": "https://www.th-deg.de/ain-b-en",
+          "quote": "Duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7742/",
+          "quote": "Teaching language English Languages Course language: English"
+        },
+        {
+          "url": "https://www.th-deg.de/ain-b-en",
+          "quote": "Taught in English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 50000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7742/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries Switzerland United Kingdom 500 EUR"
+        },
+        {
+          "url": "https://www.th-deg.de/bewerbungs-servicegebuehren-drittstaaten",
+          "quote": "Servicegebühren in Höhe von 500 Euro pro Semester für Bewerbungen und Studierende aus Drittstaaten"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/en/apply",
+          "quote": "choose what you aim to study and apply directly to DIT via our own online application portal, Primuss"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition facts: The DAAD page states 500 EUR/semester tuition for non-EU applicants, but the DIT pages (th-deg.de) state \"No tuition fees, only student union fee\" and instead charge a 500 EUR/semester service fee for non-EU/EEA students. This is presented as a service fee, not tuition. The applicant should verify with the university whether these are the same or separate charges. No application deadlines could be reliably extracted: the programme page (th-deg.de/ain-b-en) states \"Application period April 15 – June 15\" but does not specify the year; the DAAD page states the same period without a year. No documents list was found on the pages that specifically applies to this programme for international applicants; the th-deg.de/en/apply page provides a general list that matches the format requested. No prior study years requirement was stated on the pages. No subject requirements were stated for this programme specifically.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Test d'admission en ligne obligatoire (mathématiques, logique, informatique) + essai de 200 à 300 mots ; prévu en mai/juin. Vérifier les modalités auprès de l'université.",
+          "en": "Compulsory online admission test (mathematics, logic, computer science) + essay of 200 to 300 words; expected in May/June. Check details with the university."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-deg.de/ain-b-en",
+            "quote": "Admission is based on a combination of the required university entrance qualification (document verification via anabin) and an admission test."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Aucune condition d'admission générale de fin d'études secondaires n'est précisée pour cette formation ; vérifier si un diplôme du secondaire suffit ou si le programme exige des mathématiques ou des matières spécifiques.",
+          "en": "No general admission requirement for secondary school leaving certificate is stated for this programme; check whether a secondary school diploma is sufficient or if the programme requires specific subjects like mathematics."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-deg.de/ain-b-en",
+            "quote": "University entrance qualification from Germany, or for international degrees please consult the DAAD website."
+          }
+        ]
+      }
+    ]
+  }
+}

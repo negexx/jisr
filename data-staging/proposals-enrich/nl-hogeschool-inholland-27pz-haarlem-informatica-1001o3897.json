@@ -1,0 +1,79 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-haarlem-informatica-1001o3897",
+  "programmePage": "https://www.inholland.nl/opleidingen/informatica-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/informatica-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Haarlem taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/informatica-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Haarlem taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/inschrijven/inschrijven/",
+          "quote": "Meld je dan via Studielink aan met je DigiD."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the collegegeld pages give an instellingscollegegeld (institutional fee) for voltijd of EUR 10,360 (2026-2027) / EUR 5,833 (Feb 2026) / EUR 9,999 (2025-2026), but this is a general institution-wide figure not stated for this programme and the pages do not state which rate a non-EU student pays for Informatica; left out. Intakes: pages give September 2026 (apply by 1 August 2026, or 1 May 2026 for toelatingsrecht) and February 2027 (apply by 15 January 2027) for Inholland generally, not necessarily for this programme, and no full day-month-year start date is quoted for this programme; left out. Documents: no document list is stated for this programme on the supplied pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+            "quote": "Students who have completed their prior education abroad must therefore demonstrate Dutch language proficiency at B2 level (Common European Framework of Reference for Languages)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Faites évaluer votre diplôme marocain par la CSA ; envoyez diplôme, relevé de notes et, si besoin, une traduction certifiée via Selfservice.",
+          "en": "Have your Moroccan diploma evaluated by the CSA; upload your diploma, transcript and, if needed, a sworn translation via Selfservice."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+            "quote": "De CSA beoordeelt alleen diploma’s nadat je een aanmelding via Studielink hebt gedaan en je diploma, cijferlijst, en, indien nodig, een vertaling van een beëdigd vertaler, hebt geüpload in Selfservice."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Date limite de candidature pour les étudiants non-UE : 1 mai.",
+          "en": "Application deadline for non-EU students: 1 May."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+            "quote": "Non-EU students by 1 May"
+          }
+        ]
+      }
+    ]
+  }
+}
