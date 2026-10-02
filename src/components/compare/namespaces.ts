@@ -2,12 +2,12 @@
 // the page passes exactly these to its nested provider, and the tests do the same.
 export const COMPARE_MESSAGE_NAMESPACES = [
   "compare",
-  "deadline",
-  "sourceBadge",
-  "externalLink",
-  "matchStatusBadge",
-  "reasonList",
+  "matchCard",
   "costBreakdown",
-  "matchCard.channel",
+  "reasonList",
+  "sourceBadge",
+  "deadline",
+  "matchStatusBadge",
+  "externalLink",
   "domain",
 ] as const;

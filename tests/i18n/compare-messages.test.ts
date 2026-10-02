@@ -58,7 +58,7 @@ describe.each(LOCALES)("compare messages (%s)", (locale) => {
       locale: WORST_ARABIC_LOCALE,
       messages: CATALOGS[locale],
       namespace: "compare",
-    }) as unknown as { (key: string, params: Record<string, unknown>): string };
+    }) as unknown as (key: string, params: Record<string, unknown>) => string;
     for (const [key, value] of messages) {
       const params = Object.fromEntries(placeholderNames(value).map((name) => [name, "12"]));
       expect(t(key.replace(/^compare\./, ""), params), key).not.toMatch(ARABIC_INDIC_DIGIT);
