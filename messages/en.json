@@ -43,13 +43,14 @@
     "savedCount": "{count} saved"
   },
   "footer": {
-    "privacy": "Your profile stays on this device. Jisr uses no cookies.",
+    "privacy": "Your profile, saved programs and plan progress stay on this device. Jisr uses no cookies.",
+    "privacyLogs": "As on any website, our host sees the pages you open. To show your results your browser also downloads data files named after your diploma's country, the destination countries and your chosen fields. Your grades, your nationality and your list of saved programs are never sent.",
     "sources": "Data and sources are checked by hand; every fact shows its source."
   },
   "clearData": {
     "trigger": "Clear my data",
     "title": "Clear my data?",
-    "description": "This removes your profile and any unfinished answers from this device only.",
+    "description": "This removes your profile, your saved programs, your plan progress and any unfinished answers from this device only.",
     "cancel": "Cancel",
     "confirm": "Clear my data"
   },
