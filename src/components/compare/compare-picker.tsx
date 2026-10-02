@@ -77,14 +77,16 @@ export function ComparePicker({
             {t("change")}
           </span>
         ) : (
-          <>
-            <span className="me-1.5 min-w-0 flex-1 text-base font-semibold text-foreground">
+          // The text asks for about 12rem and the label never shrinks: on a narrow screen the label
+          // wraps beneath the text instead of squeezing it into a few words per line.
+          <span className="me-1.5 flex min-w-0 flex-1 flex-wrap items-center gap-x-3 gap-y-1">
+            <span className="min-w-0 flex-1 basis-48 text-base font-semibold text-foreground">
               {t("summary", { selected: chosen, total })}
             </span>
             <span className="shrink-0 text-sm font-medium underline underline-offset-4">
               {t("change")}
             </span>
-          </>
+          </span>
         )}
         <DisclosureChevron />
       </summary>

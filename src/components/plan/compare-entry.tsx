@@ -18,7 +18,7 @@ export function CompareEntry({ count }: { count: number }) {
       prefetch={false}
       className={cn(
         buttonVariants({ variant: "outline" }),
-        "h-auto min-h-12 whitespace-normal py-2 text-center sm:w-auto sm:self-start",
+        "h-auto min-h-12 whitespace-normal py-2 text-center sm:self-start",
       )}
     >
       {t("action")}

@@ -5,7 +5,7 @@ import type { ProgramsShard } from "@/data-schema/snapshot";
 
 import { E2E_SLUGS } from "./fixture-data";
 import type { E2eLocale } from "./locales";
-import { escapeRegExp, type Translate } from "./messages";
+import type { Translate } from "./messages";
 import { PROGRAM_NAMES, savedItem } from "./plan";
 import { MANIFEST_URL, readManifest, shardPath } from "./snapshot";
 
@@ -112,10 +112,6 @@ export function differencesSwitch(page: Page, t: Translate): Locator {
 // The polite status the island keeps for the whole life of the page.
 export function announcement(page: Page, text: string): Locator {
   return page.getByRole("status").filter({ hasText: text });
-}
-
-export function nameRegExp(slug: keyof typeof COMPARE_NAMES): RegExp {
-  return new RegExp(`^${escapeRegExp(COMPARE_NAMES[slug])}$`);
 }
 
 // Serves a copy of the OK program under another slug and name from the program shard it lives in,

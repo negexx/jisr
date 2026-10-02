@@ -69,7 +69,7 @@ for (const { locale } of E2E_LOCALES) {
         await page.getByRole("link", { name: t("plan.compare.action"), exact: true }).click();
         await expect(page).toHaveURL(new RegExp(`/${locale}/compare$`));
         await expectCompareLoaded(page, t);
-        expect(await comparedNames(page, t)).toEqual(names(OK, CHECK));
+        await expect.poll(() => comparedNames(page, t)).toEqual(names(OK, CHECK));
       });
 
       test("the plan page with one saved program says what unlocks Compare and offers no link", async ({
@@ -87,10 +87,12 @@ for (const { locale } of E2E_LOCALES) {
         await seedSaved(page, FIVE_SAVED);
         await openCompare(page, locale, t);
 
-        expect(await comparedNames(page, t)).toEqual(names(OK, CHECK, FOUNDATION, STALE));
+        await expect
+          .poll(() => comparedNames(page, t))
+          .toEqual(names(OK, CHECK, FOUNDATION, STALE));
         await expect(pickerSummary(page)).toContainText(summaryText(t, 4, 5));
 
-        expect(await visibleRows(page)).toEqual([...ROW_IDS]);
+        await expect.poll(() => visibleRows(page)).toEqual([...ROW_IDS]);
         for (const row of ROW_IDS) {
           await expect(
             rowSection(page, row).getByRole("heading", {
@@ -143,7 +145,7 @@ for (const { locale } of E2E_LOCALES) {
         await pickerBox(page, STALE).uncheck();
         await expect(pickerSummary(page)).toContainText(summaryText(t, 3, 5));
         await expect(announcement(page, t("compare.picker.announce", { n: "3" }))).toBeAttached();
-        expect(await comparedNames(page, t)).toEqual(names(OK, CHECK, FOUNDATION));
+        await expect.poll(() => comparedNames(page, t)).toEqual(names(OK, CHECK, FOUNDATION));
         await expect(page.locator(PICKER).getByText(limit)).toHaveCount(0);
         await expect(pickerBox(page, FAIL)).toBeEnabled();
 
@@ -151,7 +153,7 @@ for (const { locale } of E2E_LOCALES) {
         await pickerBox(page, FAIL).check();
         await expect(pickerSummary(page)).toContainText(summaryText(t, 4, 5));
         await expect(announcement(page, t("compare.picker.announce", { n: "4" }))).toBeAttached();
-        expect(await comparedNames(page, t)).toEqual(names(OK, CHECK, FOUNDATION, FAIL));
+        await expect.poll(() => comparedNames(page, t)).toEqual(names(OK, CHECK, FOUNDATION, FAIL));
         await expect(rowSection(page, "result").locator("li[data-slug]")).toHaveCount(4);
         await expect(pickerBox(page, STALE)).toBeDisabled();
 
@@ -159,7 +161,7 @@ for (const { locale } of E2E_LOCALES) {
         await pickerBox(page, CHECK).uncheck();
         await pickerBox(page, FOUNDATION).uncheck();
         await expect(pickerSummary(page)).toContainText(summaryText(t, 2, 5));
-        expect(await comparedNames(page, t)).toEqual(names(OK, FAIL));
+        await expect.poll(() => comparedNames(page, t)).toEqual(names(OK, FAIL));
         const minimum = t("compare.picker.minimum", { min: "2" });
         await expect(page.locator(PICKER).getByText(minimum)).toBeVisible();
         await expect(pickerBox(page, OK)).toBeDisabled();
@@ -174,14 +176,14 @@ for (const { locale } of E2E_LOCALES) {
       }) => {
         await seedSaved(page, [savedItem(OK), savedItem(FR_ONLY)]);
         await openCompare(page, locale, t);
-        expect(await comparedNames(page, t)).toEqual(names(OK, FR_ONLY));
+        await expect.poll(() => comparedNames(page, t)).toEqual(names(OK, FR_ONLY));
 
         // Both appear met, teach in French and are open to the same scholarships: the same. Every
         // other topic differs or is unknown on one side, and an unknown value never counts as the same.
         const same = ["result", "language", "scholarships"];
         const differing = ROW_IDS.filter((row) => !same.includes(row));
-        expect(await visibleRows(page)).toEqual([...ROW_IDS]);
-        expect(await markedRows(page)).toEqual(differing);
+        await expect.poll(() => visibleRows(page)).toEqual([...ROW_IDS]);
+        await expect.poll(() => markedRows(page)).toEqual(differing);
         const scholarships = await rowSection(page, "scholarships")
           .locator("li[data-slug]")
           .evaluateAll((cells) =>
@@ -191,13 +193,13 @@ for (const { locale } of E2E_LOCALES) {
         expect(scholarships[0]).toEqual(scholarships[1]);
 
         await differencesSwitch(page, t).check();
-        expect(await visibleRows(page)).toEqual(differing);
+        await expect.poll(() => visibleRows(page)).toEqual(differing);
         await expect(rowSection(page, "tuition")).toBeVisible();
         await expect(rowSection(page, "tuition")).toContainText(t("domain.cost.missingLine"));
         await expect(page.getByText(t("compare.differences.allSame"))).toHaveCount(0);
 
         await differencesSwitch(page, t).uncheck();
-        expect(await visibleRows(page)).toEqual([...ROW_IDS]);
+        await expect.poll(() => visibleRows(page)).toEqual([...ROW_IDS]);
       });
 
       test("when nothing differs the switch says so instead of showing an empty page", async ({
@@ -206,20 +208,20 @@ for (const { locale } of E2E_LOCALES) {
         await serveTwinOfOk(page);
         await seedSaved(page, [savedItem(OK), savedItem(TWIN_SLUG)]);
         await openCompare(page, locale, t);
-        expect(await comparedNames(page, t)).toEqual([COMPARE_NAMES[OK], TWIN_NAME]);
+        await expect.poll(() => comparedNames(page, t)).toEqual([COMPARE_NAMES[OK], TWIN_NAME]);
 
-        expect(await visibleRows(page)).toEqual([...ROW_IDS]);
-        expect(await markedRows(page)).toEqual([]);
+        await expect.poll(() => visibleRows(page)).toEqual([...ROW_IDS]);
+        await expect.poll(() => markedRows(page)).toEqual([]);
 
         await differencesSwitch(page, t).check();
         await expect(page.getByText(t("compare.differences.allSame"))).toBeVisible();
-        expect(await visibleRows(page)).toEqual([]);
+        await expect.poll(() => visibleRows(page)).toEqual([]);
         // The heads stay, so the student still sees what was compared.
-        expect(await comparedNames(page, t)).toEqual([COMPARE_NAMES[OK], TWIN_NAME]);
+        await expect.poll(() => comparedNames(page, t)).toEqual([COMPARE_NAMES[OK], TWIN_NAME]);
 
         await differencesSwitch(page, t).uncheck();
         await expect(page.getByText(t("compare.differences.allSame"))).toHaveCount(0);
-        expect(await visibleRows(page)).toEqual([...ROW_IDS]);
+        await expect.poll(() => visibleRows(page)).toEqual([...ROW_IDS]);
       });
 
       test("fewer than two saved programs: an empty state that leads to My matches", async ({
@@ -258,7 +260,7 @@ for (const { locale } of E2E_LOCALES) {
           savedItem(GONE_SLUG, { country: "XB", field: "xx-test-field-cs" }),
         ]);
         await openCompare(page, locale, t);
-        expect(await comparedNames(page, t)).toEqual(names(OK, CHECK));
+        await expect.poll(() => comparedNames(page, t)).toEqual(names(OK, CHECK));
         await expect(pickerSummary(page)).toContainText(summaryText(t, 2, 3));
 
         await openPicker(page);
@@ -317,14 +319,17 @@ for (const { locale } of E2E_LOCALES) {
         await link.click();
         await expect(page).toHaveURL(new RegExp(`/${locale}/compare$`));
         await expectCompareLoaded(page, t);
-        expect(await comparedNames(page, t)).toEqual(names(OK, CHECK));
+        await expect.poll(() => comparedNames(page, t)).toEqual(names(OK, CHECK));
       });
 
       test("My matches shows no compare link with one saved program", async ({ page }) => {
         await seedSaved(page, [savedItem(OK)]);
         await openMatches(page, locale, t);
         await expectNavBadge(page, t, 1);
-        await expect(page.locator('a[href$="/compare"]')).toHaveCount(0);
+        // A link that wrongly showed would say "(1)": it is the name the check looks for.
+        await expect(
+          page.getByRole("link", { name: t("matches.compare.link", { count: "1" }) }),
+        ).toHaveCount(0);
       });
 
       test("a reload keeps the saved list and resets the selection to the default", async ({
@@ -335,11 +340,13 @@ for (const { locale } of E2E_LOCALES) {
         await openPicker(page);
         await pickerBox(page, STALE).uncheck();
         await pickerBox(page, FAIL).check();
-        expect(await comparedNames(page, t)).toEqual(names(OK, CHECK, FOUNDATION, FAIL));
+        await expect.poll(() => comparedNames(page, t)).toEqual(names(OK, CHECK, FOUNDATION, FAIL));
 
         await page.reload();
         await expectCompareLoaded(page, t);
-        expect(await comparedNames(page, t)).toEqual(names(OK, CHECK, FOUNDATION, STALE));
+        await expect
+          .poll(() => comparedNames(page, t))
+          .toEqual(names(OK, CHECK, FOUNDATION, STALE));
         await expect(pickerSummary(page)).toContainText(summaryText(t, 4, 5));
         expect(await savedSlugs(page)).toEqual(FIVE_SAVED.map((item) => item.slug));
         expect(await storedKeys(page)).toContain(SAVED_KEY);

@@ -28,7 +28,7 @@ export type JsBudget = { initial: number; untilIdle: number };
 // is saved, so the other pages do not pay for it. The toggle code and the tick store load on the first click, so the program page ends at 183.4 initial and 237.4 until idle, inside its old row (238).
 // 2026-10-02 (M4b): Compare. The page is new: 186.9 initial, 249.9 until idle with two saved programs
 // (its view model is a lazy chunk, like the plan's); its ratchet is that rounded up plus 3 KB. The
-// other pages did not move except My matches and the plan page (+0.2 KB, the Compare entry points).
+// other pages grew by at most 0.3 KB until idle (My matches and the plan page carry the Compare entry points).
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/fr": { initial: 170, untilIdle: 216 },
   "/ar": { initial: 170, untilIdle: 216 },
