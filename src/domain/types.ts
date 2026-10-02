@@ -1,7 +1,7 @@
 import type { IsoDate } from "@/data-schema/dates";
 import type { Currency, InfoKind, Slug } from "@/data-schema/primitives";
 import type { GradeValue } from "@/data-schema/profile";
-import type { Intake } from "@/data-schema/records/program";
+import type { Intake, MonthDay } from "@/data-schema/records/program";
 import type { ResolvedRule, RouteOutcome, TextKey } from "@/data-schema/resolved";
 import type { Freshness, StalenessClass } from "@/data-schema/staleness";
 
@@ -116,5 +116,6 @@ export type Checklist = {
 
 export type IntakeStatus =
   | { kind: "upcoming"; intake: Intake; fact: FactRef }
+  | { kind: "recurring"; deadline: MonthDay; fact: FactRef } // UI: "Usually by 15/07 each year: check the date for your intake"
   | { kind: "closed"; fact: FactRef } // UI: "Closed — next dates not yet published"
   | { kind: "unknown"; fact: FactRef | null };

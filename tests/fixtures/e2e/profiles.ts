@@ -60,7 +60,7 @@ export const E2E_PROFILE_WITH_BUDGET: Profile = baseProfile({
 export const E2E_PROFILE_XB_ONLY: Profile = baseProfile({ destinations: ["XB"] });
 
 export type E2eGroup = "ok" | "check" | "foundation" | "failed";
-export type E2eIntakeKind = "upcoming" | "closed" | "none";
+export type E2eIntakeKind = "upcoming" | "recurring" | "closed" | "none";
 export type E2eExpectedProgram = {
   status: MatchStatus;
   route: RouteOutcome;

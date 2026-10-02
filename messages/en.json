@@ -210,6 +210,7 @@
     },
     "intake": {
       "upcoming": "Next deadline: {date}",
+      "recurring": "Usually by {date} each year: check the date for your intake",
       "closed": "Closed, next dates not yet published",
       "unknown": "Deadline not published, to be checked"
     },

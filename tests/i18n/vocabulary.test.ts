@@ -284,7 +284,7 @@ describe("vocabulary arrays: runtime shape", () => {
     ["RULE_OUTCOMES", RULE_OUTCOMES, ["pass", "fail", "unknown"]],
     ["COST_PERS", COST_PERS, ["month", "year", "semester", "once"]],
     ["COST_SCOPES", COST_SCOPES, ["program", "city", "country"]],
-    ["INTAKE_KINDS", INTAKE_KINDS, ["upcoming", "closed", "unknown"]],
+    ["INTAKE_KINDS", INTAKE_KINDS, ["upcoming", "recurring", "closed", "unknown"]],
     ["INFO_KINDS", INFO_KINDS, ["official", "estimate", "guidance"]],
     ["FRESHNESSES", FRESHNESSES, ["fresh", "aging", "stale"]],
     ["COVERAGES", COVERAGES, ["complete", "partial"]],

@@ -210,6 +210,7 @@
     },
     "intake": {
       "upcoming": "Prochaine date limite : {date}",
+      "recurring": "En général avant le {date} chaque année : vérifiez la date de votre rentrée",
       "closed": "Clos, prochaines dates pas encore publiées",
       "unknown": "Date limite non publiée, à vérifier"
     },
