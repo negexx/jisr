@@ -15,6 +15,7 @@ import type { SnapshotClient } from "@/lib/snapshot/client";
 import { shardsForPlan } from "@/lib/snapshot/plan";
 import { type SnapshotRequest, useSnapshotBundle } from "@/lib/snapshot/use-snapshot";
 
+import { CompareEntry } from "./compare-entry";
 import { MissingProgram } from "./missing-program";
 import {
   ErrorState,
@@ -170,6 +171,7 @@ export function PlanClient({ locale, client }: { locale: AppLocale; client?: Sna
       node: (
         <>
           <p className="max-w-prose text-base text-muted-foreground">{t("lead")}</p>
+          <CompareEntry count={items.length} />
           <PlanLayout
             aside={
               several ? (

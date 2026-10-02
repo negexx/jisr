@@ -556,6 +556,9 @@
     "title": "Vos résultats",
     "lead": "D'après les conditions que nous avons publiées pour chaque programme. Confirmez-les sur la page officielle avant de candidater.",
     "loading": "Chargement de vos résultats",
+    "compare": {
+      "link": "Comparer vos programmes enregistrés ({count})"
+    },
     "counts": {
       "ok": "{n, plural, one {{count} semble possible} other {{count} semblent possibles}}",
       "check": "{count} à vérifier",
@@ -795,6 +798,10 @@
     "title": "Mon plan de candidature",
     "lead": "Cochez chaque étape une fois terminée. Votre progression reste sur cet appareil.",
     "loading": "Chargement de votre plan",
+    "compare": {
+      "action": "Comparer les programmes enregistrés",
+      "hint": "Enregistrez au moins 2 programmes pour les comparer."
+    },
     "storage": {
       "notice": "Cet appareil ne peut pas conserver vos programmes enregistrés ni vos étapes cochées : ils seront perdus à la fermeture de cette page."
     },
