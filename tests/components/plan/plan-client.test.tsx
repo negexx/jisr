@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { cleanup, screen, waitFor, within } from "@testing-library/react";
+import { act, cleanup, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createTranslator } from "next-intl";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
@@ -351,6 +351,10 @@ describe.each(LOCALES)("My plan: focus after Remove (%s)", (locale) => {
     const outside = document.createElement("button");
     document.body.append(outside);
     outside.focus();
+    // A re-render with nothing removed (the profile is written again): focus must stay where the
+    // user put it.
+    act(() => seedProfile());
+    expect(document.activeElement).toBe(outside);
     await user.click(screen.getByRole("button", { name: t.program.remove }));
     await screen.findByRole("heading", { level: 2, name: t.empty.title });
     outside.remove();
