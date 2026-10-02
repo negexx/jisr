@@ -19,8 +19,8 @@ export function NavLinks({ label, items }: { label: string; items: readonly NavI
   const count = hydrated ? saved.length : 0;
   return (
     <nav aria-label={label}>
-      {/* The links carry 12px of inline padding; pull the list back so their text lines up with the wordmark. */}
-      <ul className="-ms-3 flex gap-2 md:ms-0">
+      {/* The links carry 8px of inline padding on phone (12px from md, to fit the French labels plus the badge in 343px); pull the list back so their text lines up with the wordmark. */}
+      <ul className="-ms-2 flex gap-2 md:ms-0">
         {items.map(({ href, label: itemLabel, savedCount }) => {
           const current = isCurrent(pathname, href);
           return (
@@ -29,7 +29,7 @@ export function NavLinks({ label, items }: { label: string; items: readonly NavI
                 href={href}
                 aria-current={current ? "page" : undefined}
                 className={cn(
-                  "inline-flex min-h-12 items-center border-b-2 px-3 text-base font-medium transition-colors",
+                  "inline-flex min-h-12 items-center whitespace-nowrap border-b-2 px-2 text-base font-medium transition-colors md:px-3",
                   current
                     ? "border-primary text-primary"
                     : "border-transparent text-muted-foreground hover:text-foreground",
@@ -41,7 +41,7 @@ export function NavLinks({ label, items }: { label: string; items: readonly NavI
                     {" "}
                     <span
                       aria-hidden="true"
-                      className="ms-2 rounded-full bg-muted px-2 text-sm tabular-nums"
+                      className="ms-1.5 rounded-full bg-muted px-1.5 text-sm tabular-nums"
                     >
                       {count}
                     </span>
