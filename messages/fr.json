@@ -38,7 +38,9 @@
   "nav": {
     "label": "Navigation principale",
     "profile": "Mon profil",
-    "matches": "Mes résultats"
+    "matches": "Mes résultats",
+    "plan": "Mon plan",
+    "savedCount": "{count} enregistré(s)"
   },
   "footer": {
     "privacy": "Votre profil reste sur cet appareil. Jisr n'utilise aucun cookie.",
@@ -776,5 +778,12 @@
     "description": "Cette page n'existe pas ou n'est plus publiée. La formation a peut-être été retirée de nos données.",
     "home": "Aller à l'accueil",
     "profile": "Créer ou modifier mon profil"
+  },
+  "savedProgram": {
+    "save": "Enregistrer",
+    "saved": "Enregistré",
+    "announceSaved": "Ajouté à Mon plan.",
+    "announceRemoved": "Retiré de Mon plan.",
+    "full": "Vous pouvez enregistrer jusqu'à {max} programmes. Retirez-en un dans Mon plan d'abord."
   }
 }

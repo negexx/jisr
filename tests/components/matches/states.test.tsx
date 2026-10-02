@@ -126,8 +126,9 @@ describe("My Matches: hydration with a saved profile", () => {
     const status = container.querySelector("output");
     expect(status?.textContent).toBe(texts("en").loading);
     await waitFor(() => expect(screen.getAllByRole("article").length).toBeGreaterThan(0));
-    expect(container.querySelectorAll("output.sr-only")).toHaveLength(1);
-    expect(container.querySelector("output")).toBe(status);
+    // Each card carries its own save button, with its own announcement region: only the page-level one counts here.
+    expect(container.querySelectorAll("output.sr-only:not(article output)")).toHaveLength(1);
+    expect(container.querySelector("output:not(article output)")).toBe(status);
     expect(status?.textContent).toBe("");
   });
 });

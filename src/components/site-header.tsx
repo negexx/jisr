@@ -9,6 +9,8 @@ export async function SiteHeader({ locale }: { locale: AppLocale }) {
   const t = await getTranslations({ locale, namespace: "shell" });
   const tSwitcher = await getTranslations({ locale, namespace: "localeSwitcher" });
   const tNav = await getTranslations({ locale, namespace: "nav" });
+  // Read raw: the `{count}` placeholder is filled in the browser, once the saved list is known.
+  const savedCountTemplate: unknown = tNav.raw("savedCount");
   return (
     <header className="border-b border-border">
       <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-x-4 px-4 md:flex-nowrap md:px-6">
@@ -25,6 +27,13 @@ export async function SiteHeader({ locale }: { locale: AppLocale }) {
             items={[
               { href: "/profile", label: tNav("profile") },
               { href: "/matches", label: tNav("matches") },
+              {
+                href: "/plan",
+                label: tNav("plan"),
+                ...(typeof savedCountTemplate === "string"
+                  ? { savedCount: { template: savedCountTemplate } }
+                  : {}),
+              },
             ]}
           />
         </div>

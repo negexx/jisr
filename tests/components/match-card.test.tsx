@@ -94,6 +94,24 @@ describe("MatchCard: header and status", () => {
     expect(links[0]?.textContent).toContain(model.name);
   });
 
+  it.each(
+    LOCALES,
+  )("puts the save button next to See details in the footer row (%s)", async (locale) => {
+    const model = journey.card(locale, E2E_SLUGS.ok);
+    renderCard(model, locale);
+    const article = screen.getByRole("article", { name: model.name });
+    const details = within(article).getByRole("link", {
+      name: new RegExp(catalogs[locale].matchCard.seeDetails),
+    });
+    const save = within(article).getByRole("button", {
+      name: new RegExp(catalogs[locale].savedProgram.save),
+    });
+    expect(save.querySelector("span.sr-only bdi")?.textContent).toBe(model.name);
+    const row = details.parentElement;
+    expect(row?.contains(save)).toBe(true);
+    expect(row?.className).toContain("flex-wrap");
+  });
+
   it.each(LOCALES)("shows institution, city, level and teaching languages (%s)", (locale) => {
     const model = journey.card(locale, E2E_SLUGS.ok);
     const { container } = renderCard(model, locale);

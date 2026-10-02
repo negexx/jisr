@@ -3,8 +3,9 @@ import "server-only";
 // The program page as built: static facts plus three client leaves (freshness banner, personal result, next deadline) that render nothing clock- or student-dependent on the server.
 import { CircleAlert, CircleHelp } from "lucide-react";
 import { NextIntlClientProvider, useLocale, useTranslations } from "next-intl";
-
 import { DISCLOSURE_SUMMARY_CLASS, DisclosureChevron } from "@/components/disclosure-chevron";
+import { SaveProgramButton } from "@/components/save-program-button";
+import { useSaveCopy } from "@/components/use-save-copy";
 import type { IsoDate } from "@/data-schema/dates";
 import type { FactMeta } from "@/data-schema/resolved";
 import { estimateCost } from "@/domain/costs";
@@ -63,6 +64,7 @@ function ProgramHeader({ data }: { data: ProgramPageData }) {
   const t = useTranslations("program.header");
   const languages = languagesOf(data, locale);
   const duration = durationParams(data, locale);
+  const saveCopy = useSaveCopy();
 
   return (
     <header className="flex flex-col gap-2">
@@ -77,6 +79,18 @@ function ProgramHeader({ data }: { data: ProgramPageData }) {
         <li>{duration === null ? t("durationUnknown") : t("duration", duration)}</li>
         <li>{languages === null ? t("languagesUnknown") : t("taughtIn", { languages })}</li>
       </ul>
+      <div className="pt-2">
+        <SaveProgramButton
+          program={{
+            slug: data.program.slug,
+            country: data.program.country,
+            field: data.program.field,
+          }}
+          snapshotVersion={data.snapshotVersion}
+          programName={data.program.name}
+          copy={saveCopy}
+        />
+      </div>
     </header>
   );
 }

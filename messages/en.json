@@ -38,7 +38,9 @@
   "nav": {
     "label": "Main navigation",
     "profile": "My profile",
-    "matches": "My matches"
+    "matches": "My matches",
+    "plan": "My plan",
+    "savedCount": "{count} saved"
   },
   "footer": {
     "privacy": "Your profile stays on this device. Jisr uses no cookies.",
@@ -776,5 +778,12 @@
     "description": "This page does not exist or is no longer published. The program may have been removed from our data.",
     "home": "Go to the home page",
     "profile": "Create or edit my profile"
+  },
+  "savedProgram": {
+    "save": "Save",
+    "saved": "Saved",
+    "announceSaved": "Added to My plan.",
+    "announceRemoved": "Removed from My plan.",
+    "full": "You can save up to {max} programs. Remove one in My plan first."
   }
 }

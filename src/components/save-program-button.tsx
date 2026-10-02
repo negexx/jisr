@@ -1,0 +1,76 @@
+"use client";
+
+import { Bookmark } from "lucide-react";
+import { useState } from "react";
+
+import { Button } from "@/components/ui/button";
+import { useSaved } from "@/lib/saved/use-saved";
+
+// Every string is a prop: the button sits on the program page header (a server component under a
+// provider with no messages) and in the match cards (a provider with a short namespace list).
+export type SaveCopy = {
+  save: string;
+  saved: string;
+  announceSaved: string;
+  announceRemoved: string;
+  full: string;
+};
+
+// The static HTML knows nothing about what the student saved, so the server output is an inert
+// placeholder with the button's footprint; the real button replaces it after hydration.
+export function SaveProgramButton({
+  program,
+  snapshotVersion,
+  programName,
+  copy,
+}: {
+  program: { slug: string; country: string; field: string };
+  snapshotVersion: string;
+  // The official name, read by screen readers after the visible label (the bookmark carries no text).
+  programName: string;
+  copy: SaveCopy;
+}) {
+  const { hydrated, isSaved, toggle } = useSaved();
+  const [message, setMessage] = useState<string | null>(null);
+  const [full, setFull] = useState(false);
+
+  if (!hydrated) {
+    return (
+      <span data-slot="save-placeholder" aria-hidden="true" className="inline-block h-12 w-32" />
+    );
+  }
+
+  const saved = isSaved(program.slug);
+
+  function onClick() {
+    const result = toggle(program, snapshotVersion);
+    if (!result.ok) {
+      setFull(true);
+      setMessage(null);
+      return;
+    }
+    setFull(false);
+    setMessage(result.saved ? copy.announceSaved : copy.announceRemoved);
+  }
+
+  return (
+    <div className="flex flex-col gap-2">
+      {/* The visible label itself changes between save and saved, so there is no aria-pressed. */}
+      <Button type="button" variant="outline" className="min-w-32" onClick={onClick}>
+        <Bookmark aria-hidden="true" className={saved ? "fill-current" : undefined} />
+        {/* The space after the label keeps the accessible name readable: the name follows, unseen. */}
+        {saved ? copy.saved : copy.save}{" "}
+        <span className="sr-only">
+          <bdi>{programName}</bdi>
+        </span>
+      </Button>
+      {/* One polite region for the life of the button: only its text changes, so it is announced. */}
+      <output className="sr-only">{message}</output>
+      {full ? (
+        <p role="alert" className="max-w-prose text-sm text-muted-foreground">
+          {copy.full}
+        </p>
+      ) : null}
+    </div>
+  );
+}
