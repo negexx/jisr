@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { applyEnrichment, type Verified } from "../../../scripts/import/proposals";
+import { applyEnrichment, enrichRecord, type Verified } from "../../../scripts/import/proposals";
 
 type Rec = Record<string, unknown>;
 
@@ -61,15 +61,15 @@ describe("applyEnrichment", () => {
     expect(at(at(next, "sources"), "daad").last_verified_at).toBe("2026-10-01");
   });
 
-  it("replaces a guidance value and leaves facts the reader did not establish alone", () => {
+  const languagesFact = {
+    value: ["en", "de"],
+    evidence: [{ url: "https://hs.example/lang", quote: "Taught in English and German" }],
+  };
+
+  it("replaces a guidance value when the programme page was verified, and leaves facts the reader did not establish alone", () => {
     const next = applyEnrichment(
       registerRecord(),
-      verified({
-        teachingLanguages: {
-          value: ["en", "de"],
-          evidence: [{ url: "https://hs.example/lang", quote: "Taught in English and German" }],
-        },
-      }),
+      verified({ teachingLanguages: languagesFact }, { programmePage: "https://hs.example/cs" }),
       TODAY,
     );
     expect(next.teachingLanguages).toEqual({
@@ -78,6 +78,43 @@ describe("applyEnrichment", () => {
       info_kind: "official",
     });
     expect(next.durationYears).toEqual({ value: 3, source: "daad", info_kind: "guidance" });
+  });
+
+  it("without a verified programme page keeps a non-null guidance value and says what the reader found", () => {
+    const before = registerRecord();
+    const { record, conflicts } = enrichRecord(
+      before,
+      verified({ teachingLanguages: languagesFact }),
+      TODAY,
+    );
+    expect(record.teachingLanguages).toEqual(before.teachingLanguages);
+    const note = `teachingLanguages: kept the register value; the reader found ${JSON.stringify(languagesFact.value)} at https://hs.example/lang but no programme page was verified`;
+    expect(conflicts).toEqual([note]);
+    expect(String(at(record, "_review").notes)).toContain(note);
+    expect(record.sources).toEqual(before.sources);
+  });
+
+  it("without a verified programme page still fills a missing fact next to a kept guidance value", () => {
+    const { record, conflicts } = enrichRecord(
+      registerRecord(),
+      verified({ teachingLanguages: languagesFact, tuition: tuitionFact }),
+      TODAY,
+    );
+    expect(at(record, "tuition")).toMatchObject({
+      value: tuitionFact.value,
+      info_kind: "official",
+    });
+    expect(at(record, "teachingLanguages").value).toEqual(["en"]);
+    expect(conflicts).toHaveLength(1);
+  });
+
+  it("without a verified programme page says nothing when the guidance value already agrees", () => {
+    const before = registerRecord();
+    const same = { ...languagesFact, value: ["en"] };
+    expect(enrichRecord(before, verified({ teachingLanguages: same }), TODAY)).toEqual({
+      record: before,
+      conflicts: [],
+    });
   });
 
   it("never overwrites an existing official value, and says so", () => {

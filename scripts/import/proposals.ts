@@ -445,8 +445,9 @@ const PAGE_NOT_VERIFIED_NOTE =
   "programme page not verified: facts come from pages not tied to this programme by name";
 
 // Applies what the reader proved to a record that is already in data/. Unlike applyVerified it never
-// resets a fact the reader did not establish, never replaces an existing official value, and never
-// touches requirements, the official URL, the summary or the scholarships. Returns `staged` itself
+// resets a fact the reader did not establish, never replaces an existing official value (nor, while
+// the programme page is unverified, any existing value), and never touches requirements, the
+// official URL, the summary or the scholarships. Returns `staged` itself
 // when nothing changed.
 export function applyEnrichment(staged: Staged, verified: Verified, today: string): Staged {
   return enrichRecord(staged, verified, today).record;
@@ -486,14 +487,21 @@ export function enrichRecord(
     if (accepted === undefined || first === undefined) continue;
     const existing = asRecord(staged[field]);
     const value = recordValue(field, accepted.value);
-    if (
-      existing.value !== null &&
-      existing.value !== undefined &&
-      existing.info_kind === "official"
-    ) {
-      if (JSON.stringify(existing.value) !== JSON.stringify(value))
+    const hasValue = existing.value !== null && existing.value !== undefined;
+    const differs = JSON.stringify(existing.value) !== JSON.stringify(value);
+    if (hasValue && existing.info_kind === "official") {
+      if (differs)
         conflicts.push(
           `${field}: kept the existing official value; the reader found ${JSON.stringify(value)} at ${first.url}`,
+        );
+      continue;
+    }
+    // Without a verified programme page nothing ties these pages to this programme: they may fill a
+    // gap but never replace a value the register already holds.
+    if (hasValue && verified.programmePage === null) {
+      if (differs)
+        conflicts.push(
+          `${field}: kept the register value; the reader found ${JSON.stringify(value)} at ${first.url} but no programme page was verified`,
         );
       continue;
     }

@@ -342,3 +342,52 @@ describe("sampleSheet documents", () => {
     expect(sheet).toContain('"a CV and a passport" — https://u.example/p');
   });
 });
+
+describe("sampleSheet of an enriched record", () => {
+  const row = {
+    key: "programs/p",
+    batch: "b1",
+    inSample: true,
+    audited: "",
+    outcome: "",
+    notes: "",
+  };
+  const enriched = {
+    name: "Applied CS",
+    durationYears: { value: 3, source: "programme", info_kind: "official" },
+    tuition: { value: { amountMinor: 150000 }, source: "page-1", info_kind: "estimate" },
+    _review: {
+      revises: true,
+      enrich: true,
+      evidence: [
+        { fact: "tuition", url: "https://u.example/fees", quote: "EUR 1,500 per semester" },
+      ],
+    },
+  };
+
+  it("shows each fact's kind and source and marks the ones the sheet does not back", () => {
+    const sheet = sampleSheet([{ key: "programs/p", row, record: enriched }]);
+    const lines = sheet.split("\n");
+    const tuition = lines.findIndex((l) => l.startsWith("- **tuition**"));
+    expect(lines[tuition]).toContain("estimate");
+    expect(lines[tuition]).toContain("page-1");
+    expect(lines[tuition]).not.toContain("unchanged");
+    expect(lines[tuition + 1]).toContain('"EUR 1,500 per semester" — https://u.example/fees');
+    const duration = lines.find((l) => l.startsWith("- **durationYears**")) ?? "";
+    expect(duration).toContain("official");
+    expect(duration).toContain("programme");
+    expect(duration).toContain("(unchanged: already in data/)");
+  });
+
+  it("does not call a fact of a new record unchanged", () => {
+    const sheet = sampleSheet([
+      {
+        key: "programs/p",
+        row,
+        record: { ...enriched, _review: { evidence: [] } },
+      },
+    ]);
+    expect(sheet).not.toContain("already in data/");
+    expect(sheet).toContain("(no evidence recorded)");
+  });
+});
