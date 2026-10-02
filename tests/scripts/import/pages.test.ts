@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
 
-import { daadRegisterUrl, dryRunSummary, mergePages } from "../../../scripts/import/pages";
+import {
+  addTopicPagesFor,
+  daadRegisterUrl,
+  dryRunSummary,
+  mergePages,
+} from "../../../scripts/import/pages";
+import { SearchBudgetExceeded } from "../../../scripts/import/search";
+import type { Topic } from "../../../scripts/import/topics";
 
 describe("daadRegisterUrl", () => {
   it("builds the DAAD programme page from the id at the end of the slug", () => {
@@ -60,5 +67,61 @@ describe("dryRunSummary", () => {
     expect(dryRunSummary({ ...base, useSearch: false, useTopics: true })).toBe(
       "dry run: at most 12 topic queries (cap 300); no query sent, nothing written",
     );
+  });
+});
+
+describe("addTopicPagesFor", () => {
+  const found: Record<Topic, string[]> = {
+    fees: ["https://u.example/fees"],
+    language: [],
+    deadline: ["https://u.example/deadline"],
+    documents: [],
+  };
+
+  it("adds the topic pages to the programme's existing pages", async () => {
+    const programmes: Record<string, string[]> = { a: ["https://u.example/p"] };
+    const outcome = await addTopicPagesFor(
+      programmes,
+      "a",
+      async () => found,
+      () => {},
+    );
+    expect(outcome).toBe("added");
+    expect(programmes.a).toEqual([
+      "https://u.example/p",
+      "https://u.example/fees",
+      "https://u.example/deadline",
+    ]);
+  });
+
+  it("keeps the existing pages and logs the slug and message when the search fails", async () => {
+    const programmes: Record<string, string[]> = { a: ["https://u.example/p"], b: ["x"] };
+    const logged: string[] = [];
+    const outcome = await addTopicPagesFor(
+      programmes,
+      "a",
+      async () => {
+        throw new Error("search failed: HTTP 500");
+      },
+      (line) => logged.push(line),
+    );
+    expect(outcome).toBe("failed");
+    expect(programmes).toEqual({ a: ["https://u.example/p"], b: ["x"] });
+    expect(logged).toEqual(["topic search failed for a: search failed: HTTP 500"]);
+  });
+
+  it("lets the budget error through so the run stops with the partial file", async () => {
+    const programmes: Record<string, string[]> = { a: ["https://u.example/p"] };
+    await expect(
+      addTopicPagesFor(
+        programmes,
+        "a",
+        async () => {
+          throw new SearchBudgetExceeded("search budget reached: 5 of 5 queries");
+        },
+        () => {},
+      ),
+    ).rejects.toThrow(SearchBudgetExceeded);
+    expect(programmes.a).toEqual(["https://u.example/p"]);
   });
 });

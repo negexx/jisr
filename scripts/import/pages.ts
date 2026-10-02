@@ -15,7 +15,7 @@ import {
   withCache,
 } from "./search";
 import { DATA_DIR, STAGING_DIR, stageFile } from "./staging";
-import { discoverTopicPages, mergeTopicPages, TOPICS } from "./topics";
+import { discoverTopicPages, mergeTopicPages, TOPICS, type Topic } from "./topics";
 
 // Builds the pages file that data:read takes: for each programme, which pages to read.
 //   Germany: the DAAD register page, the programme's own page it links and the fee/application pages.
@@ -62,6 +62,24 @@ export function mergePages(found: {
       ),
     ),
   ];
+}
+
+// One programme's topic pages. A search that fails (a provider hiccup) costs that programme its
+// topic pages, not the whole run: its existing pages stay. Only the budget error stops the run.
+export async function addTopicPagesFor(
+  programmes: Record<string, string[]>,
+  slug: string,
+  find: () => Promise<Record<Topic, readonly string[]>>,
+  log: (line: string) => void,
+): Promise<"added" | "failed"> {
+  try {
+    programmes[slug] = mergeTopicPages(programmes[slug] ?? [], await find());
+    return "added";
+  } catch (error) {
+    if (error instanceof SearchBudgetExceeded) throw error;
+    log(`topic search failed for ${slug}: ${error instanceof Error ? error.message : error}`);
+    return "failed";
+  }
 }
 
 type Yaml = Record<string, unknown>;
@@ -113,6 +131,8 @@ async function main(argv: readonly string[]): Promise<void> {
   let searched = 0;
   const institutions = new Set<string>();
   const topicSites = new Set<string>();
+  const noWebsite: string[] = [];
+  let topicFailures = 0;
   const programmes: Record<string, string[]> = {};
   const stats: Record<string, { n: number; programme: number; fees: number; admission: number }> =
     {};
@@ -183,17 +203,19 @@ async function main(argv: readonly string[]): Promise<void> {
         const record = await recordOf(slug);
         if (meta === null || record === null) return;
         const website = await websiteOf(String(record.institution ?? ""));
-        if (website === null) return;
+        if (website === null) {
+          noWebsite.push(slug);
+          return;
+        }
         topicSites.add(registrable(website));
         if (dryRun || search === null) return;
-        const topics = await discoverTopicPages({
-          country: meta.country,
-          website,
-          search,
-          budget,
-          memo,
-        });
-        programmes[slug] = mergeTopicPages(programmes[slug] ?? [], topics);
+        const outcome = await addTopicPagesFor(
+          programmes,
+          slug,
+          () => discoverTopicPages({ country: meta.country, website, search, budget, memo }),
+          console.error,
+        );
+        if (outcome === "failed") topicFailures++;
       });
     }
   } catch (error) {
@@ -225,6 +247,15 @@ async function main(argv: readonly string[]): Promise<void> {
     );
   if (useSearch || useTopics)
     console.log(`search queries used: ${budget.used} (${base?.name ?? "none"})`);
+  if (useTopics) {
+    console.log(`topic searches failed: ${topicFailures} programmes kept their existing pages`);
+    console.log(`no institution website: ${noWebsite.length} programmes skipped`);
+    if (noWebsite.length > 0) {
+      const listing = `${out}.skipped.txt`;
+      await writeFile(listing, `${noWebsite.join("\n")}\n`);
+      console.log(`   slugs -> ${listing}`);
+    }
+  }
   if (stopped !== null) console.log(`STOPPED: ${stopped} (partial pages file written)`);
   console.log(`-> ${out}`);
 }
