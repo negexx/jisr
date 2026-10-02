@@ -1,8 +1,20 @@
-import { BASE_ORIGIN, E2E_SLUGS, PROFILE_KEY } from "./support/fixture-data";
+import { CHECKLIST_STEP_IDS } from "@/domain/types";
+
+import { BASE_ORIGIN, E2E_SLUGS, PLAN_KEY, PROFILE_KEY, SAVED_KEY } from "./support/fixture-data";
 import { expect, test } from "./support/fixtures";
 import { E2E_LOCALES } from "./support/locales";
 import { card, expectMatchesLoaded } from "./support/matches";
 import { escapeRegExp, startsWith, translatorFor } from "./support/messages";
+import {
+  expectPlanLoaded,
+  navLink,
+  PROGRAM_NAMES,
+  savedButton,
+  saveFromCard,
+  selectProgram,
+  stepCheckbox,
+  todoStepIds,
+} from "./support/plan";
 import { JOURNEY_FORM, ProfileFormDriver, type ProfileFormValues } from "./support/profile-form";
 import { recordTraffic } from "./support/traffic";
 
@@ -28,6 +40,16 @@ const SNAPSHOT_PATH = /^\/snapshots\/(manifest\.json|s\/[A-Za-z0-9.-]+\.[0-9a-f]
 // the student's grade or nationality. A value counts when no letter or digit touches it.
 function leaks(text: string): string[] {
   return PRIVATE_VALUES.filter((value) =>
+    new RegExp(`(?<![A-Za-z0-9])${escapeRegExp(value)}(?![A-Za-z0-9])`, "i").test(text),
+  );
+}
+
+// What a request must not carry once the student has saved programs and ticked steps: a program
+// slug or a checklist step id. Same whole-token rule as `leaks`.
+const SAVED_VALUES: readonly string[] = [...Object.values(E2E_SLUGS), ...CHECKLIST_STEP_IDS];
+
+function savedLeaks(text: string): string[] {
+  return SAVED_VALUES.filter((value) =>
     new RegExp(`(?<![A-Za-z0-9])${escapeRegExp(value)}(?![A-Za-z0-9])`, "i").test(text),
   );
 }
@@ -126,6 +148,131 @@ for (const { locale } of E2E_LOCALES) {
 
       for (const message of traffic.consoleMessages) {
         expect(leaks(message.text), `console ${message.type}`).toEqual([]);
+      }
+    });
+
+    test("saving programs and ticking steps adds no request, cookie or browser storage beyond the snapshot shards", async ({
+      page,
+      context,
+    }) => {
+      const traffic = recordTraffic(page);
+      const form = new ProfileFormDriver(page, locale);
+      const OK = E2E_SLUGS.ok;
+      const CHECK = E2E_SLUGS.check;
+
+      await page.goto(`/${locale}`);
+      await page.getByRole("link", { name: startsWith(t("home.cta")) }).click();
+      await expect(form.nationality()).toBeVisible();
+      await form.fillToReview(PRIVATE_FORM);
+      await form.submit();
+      await expectMatchesLoaded(page, t);
+      await saveFromCard(page, t, OK);
+      await saveFromCard(page, t, CHECK);
+
+      // A full load of the plan page: its island fetches the shards of the saved programs.
+      const beforePlan = traffic.requests.length;
+      await page.goto(`/${locale}/plan`);
+      await expectPlanLoaded(page, t);
+      const [first] = await todoStepIds(page);
+      if (first === undefined) throw new Error("the plan has no steps");
+      await stepCheckbox(page, t, first).check();
+      await selectProgram(page, t, PROGRAM_NAMES[CHECK]);
+      await selectProgram(page, t, PROGRAM_NAMES[OK]);
+      await expect(stepCheckbox(page, t, first)).toBeChecked();
+
+      // Storage: exactly the three keys of this app, nothing in the other browser stores.
+      const storage = await page.evaluate(async () => ({
+        localKeys: Object.keys(window.localStorage).sort(),
+        sessionKeys: Object.keys(window.sessionStorage),
+        cookie: document.cookie,
+        databases: (await indexedDB.databases()).map((database) => database.name),
+        caches: await caches.keys(),
+      }));
+      expect(storage.localKeys).toEqual([PLAN_KEY, PROFILE_KEY, SAVED_KEY].sort());
+      expect(storage.sessionKeys).toEqual([]);
+      expect(storage.databases).toEqual([]);
+      expect(storage.caches).toEqual([]);
+      expect(storage.cookie).toBe("");
+      expect(await context.cookies()).toEqual([]);
+      expect(context.serviceWorkers()).toEqual([]);
+
+      // Phase 1: everything since the plan page was loaded.
+      const planRequests = traffic.requests.slice(beforePlan);
+      expect(planRequests.length).toBeGreaterThan(0);
+      const shardFiles: string[] = [];
+      for (const request of planRequests) {
+        const url = new URL(request.url);
+        expect(url.origin, `origin of ${url.pathname}`).toBe(BASE_ORIGIN);
+        expect(request.method, `method of ${url.pathname}`).toBe("GET");
+        expect(request.postData, `body of ${url.pathname}`).toBeNull();
+        const text = decoded(`${url.pathname}${url.search}${url.hash}`);
+        if (url.pathname.startsWith("/snapshots/")) {
+          // Shard names are reference data ("scholarships.XB" is also a step id), so a shard path
+          // must match the published pattern exactly and hold no program slug.
+          expect(url.pathname).toMatch(SNAPSHOT_PATH);
+          expect(url.search).toBe("");
+          expect(
+            savedLeaks(text).filter((value) => !CHECKLIST_STEP_IDS.some((id) => id === value)),
+            `program slug in ${url.pathname}`,
+          ).toEqual([]);
+          expect(leaks(text), `values in ${url.pathname}`).toEqual([]);
+          shardFiles.push(url.pathname);
+        } else if (url.pathname.startsWith("/_next/static/")) {
+          // Build output, the same for every visitor.
+        } else {
+          // The plan page itself and the header's links (Next prefetches them): same-locale routes
+          // of the app, never an API or a third party.
+          const routes = ["", "/profile", "/matches", "/plan"].map((route) => `/${locale}${route}`);
+          expect(routes, `unexpected request ${url.pathname}`).toContain(url.pathname);
+          expect(savedLeaks(text), `saved values in ${url.pathname}`).toEqual([]);
+          expect(leaks(text), `values in ${url.pathname}`).toEqual([]);
+        }
+      }
+      // The shard names reveal the country and field of each saved program (the privacy note in
+      // architecture.md), and nothing finer.
+      for (const shard of ["programs.XB.xx-test-field-cs", "programs.XB.xx-test-field-eng"]) {
+        expect(
+          shardFiles.some((file) => file.startsWith(`/snapshots/s/${shard}.`)),
+          `shard ${shard} requested`,
+        ).toBe(true);
+      }
+      const planHeaders = (await traffic.requestHeaders()).slice(beforePlan);
+      for (const { url, headers } of planHeaders) {
+        expect(Object.keys(headers).map((name) => name.toLowerCase())).not.toContain("cookie");
+        for (const [name, value] of Object.entries(headers)) {
+          const text = decoded(value);
+          expect(savedLeaks(text), `${name} header of ${url}`).toEqual([]);
+          expect(leaks(text), `${name} header of ${url}`).toEqual([]);
+        }
+      }
+
+      // Phase 2: the program page. Its own path is the one place a slug may appear.
+      const beforeProgram = traffic.requests.length;
+      await page.getByRole("link", { name: startsWith(t("plan.program.viewProgram")) }).click();
+      await expect(page).toHaveURL(new RegExp(`/${locale}/programs/${OK}$`));
+      await expect(savedButton(page, t)).toBeVisible();
+      await navLink(page, t, "plan").click();
+      await expectPlanLoaded(page, t);
+      for (const request of traffic.requests.slice(beforeProgram)) {
+        const url = new URL(request.url);
+        expect(url.origin).toBe(BASE_ORIGIN);
+        expect(request.method).toBe("GET");
+        expect(request.postData).toBeNull();
+        if (url.pathname.startsWith("/_next/static/")) continue;
+        const text = decoded(`${url.pathname}${url.search}${url.hash}`);
+        if (url.pathname !== `/${locale}/programs/${OK}`) {
+          expect(savedLeaks(text), `saved values in ${url.pathname}`).toEqual([]);
+        }
+        expect(leaks(text), `values in ${url.pathname}`).toEqual([]);
+      }
+
+      for (const response of await traffic.responses()) {
+        const names = response.headers.map((header) => header.name.toLowerCase());
+        expect(names, `headers of ${response.url}`).not.toContain("set-cookie");
+      }
+      for (const message of traffic.consoleMessages) {
+        expect(leaks(message.text), `console ${message.type}`).toEqual([]);
+        expect(savedLeaks(message.text), `console ${message.type}`).toEqual([]);
       }
     });
 

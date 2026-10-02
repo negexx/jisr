@@ -6,6 +6,17 @@ import { expect, test } from "./support/fixtures";
 import { E2E_LOCALES } from "./support/locales";
 import { card, openMatches } from "./support/matches";
 import { translatorFor } from "./support/messages";
+import {
+  openPlan,
+  openSwitcher,
+  PROGRAM_NAMES,
+  saveButton,
+  savedButton,
+  savedItem,
+  seedSaved,
+  selectMissingProgram,
+  selectProgram,
+} from "./support/plan";
 import { JOURNEY_FORM, ProfileFormDriver } from "./support/profile-form";
 import { seedProfile } from "./support/seed";
 import { MANIFEST_URL, readManifest, withoutProgramShards } from "./support/snapshot";
@@ -118,6 +129,90 @@ for (const { locale, dir } of E2E_LOCALES) {
         );
         await expectNoSeriousViolations(page, `program stale ${locale}`, testInfo);
       });
+
+      test("matches and a program page with a Saved button", async ({ page }, testInfo) => {
+        await seedSaved(page, [savedItem(E2E_SLUGS.ok)]);
+        await openMatches(page, locale, t);
+        await expect(savedButton(card(page, E2E_SLUGS.ok), t)).toBeVisible();
+        await expect(saveButton(card(page, E2E_SLUGS.check), t)).toBeVisible();
+        await expectNoSeriousViolations(page, `matches with a saved program ${locale}`, testInfo);
+
+        await page.goto(`/${locale}/programs/${E2E_SLUGS.ok}`);
+        await expect(savedButton(page, t)).toBeVisible();
+        await expectNoSeriousViolations(page, `program with Saved button ${locale}`, testInfo);
+
+        await savedButton(page, t).click();
+        await expect(saveButton(page, t)).toBeVisible();
+        await expectNoSeriousViolations(page, `program with Save button ${locale}`, testInfo);
+      });
+
+      test("plan: nothing saved", async ({ page }, testInfo) => {
+        await page.goto(`/${locale}/plan`);
+        await expect(
+          page.getByRole("heading", { level: 2, name: t("plan.empty.title") }),
+        ).toBeVisible();
+        await expectNoSeriousViolations(page, `plan empty ${locale}`, testInfo);
+      });
+
+      test("plan: programs, a ticked step, the skipped group and the switcher open", async ({
+        page,
+      }, testInfo) => {
+        await seedSaved(page, [
+          savedItem(E2E_SLUGS.ok),
+          savedItem(E2E_SLUGS.check),
+          savedItem(E2E_SLUGS.foundation),
+        ]);
+        await openPlan(page, locale, t);
+        await expectNoSeriousViolations(page, `plan with programs ${locale}`, testInfo);
+
+        await page.getByRole("checkbox").first().check();
+        await expectNoSeriousViolations(page, `plan with a ticked step ${locale}`, testInfo);
+
+        const skipped = page.locator('[data-slot="skipped-steps"] > summary');
+        await skipped.click();
+        await expect(page.locator('[data-slot="skipped-steps"]')).toHaveAttribute("open", "");
+        await expectNoSeriousViolations(
+          page,
+          `plan with the skipped group open ${locale}`,
+          testInfo,
+        );
+
+        // Another program: its skipped steps carry source badges or no tag at all.
+        await selectProgram(page, t, PROGRAM_NAMES[E2E_SLUGS.check]);
+        await page.locator('[data-slot="skipped-steps"] > summary').click();
+        await expectNoSeriousViolations(
+          page,
+          `plan, second program, skipped open ${locale}`,
+          testInfo,
+        );
+
+        await openSwitcher(page, t);
+        await expectNoSeriousViolations(page, `plan with the switcher open ${locale}`, testInfo);
+      });
+
+      test("plan: a saved program missing from the data", async ({ page }, testInfo) => {
+        const gone = "xx-test-prog-gone";
+        await seedSaved(page, [
+          savedItem(E2E_SLUGS.ok),
+          savedItem(gone, { country: "XB", field: "xx-test-field-cs" }),
+        ]);
+        await openPlan(page, locale, t);
+        await selectMissingProgram(page, t, gone);
+        await expect(
+          page.getByRole("heading", { level: 2, name: t("plan.missing.title") }),
+        ).toBeVisible();
+        await expectNoSeriousViolations(page, `plan missing program ${locale}`, testInfo);
+      });
+
+      test("plan: error state", async ({ page }, testInfo) => {
+        await seedSaved(page, [savedItem(E2E_SLUGS.ok)]);
+        await page.route(MANIFEST_URL, (route) => route.fulfill({ status: 500, body: "" }));
+        await page.goto(`/${locale}/plan`);
+        await expect(
+          page.getByRole("heading", { level: 2, name: t("plan.error.title") }),
+        ).toBeVisible();
+        await expectNoSeriousViolations(page, `plan error ${locale}`, testInfo);
+      });
     });
 
     test("matches: no profile", async ({ page }, testInfo) => {
@@ -126,6 +221,15 @@ for (const { locale, dir } of E2E_LOCALES) {
         page.getByRole("heading", { level: 2, name: t("matches.states.none.title") }),
       ).toBeVisible();
       await expectNoSeriousViolations(page, `matches no profile ${locale}`, testInfo);
+    });
+
+    test("plan: no profile", async ({ page }, testInfo) => {
+      await seedSaved(page, [savedItem(E2E_SLUGS.ok)]);
+      await page.goto(`/${locale}/plan`);
+      await expect(
+        page.getByRole("heading", { level: 2, name: t("plan.noProfile.title") }),
+      ).toBeVisible();
+      await expectNoSeriousViolations(page, `plan no profile ${locale}`, testInfo);
     });
   });
 
