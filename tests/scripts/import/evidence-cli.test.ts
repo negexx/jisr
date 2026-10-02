@@ -326,19 +326,51 @@ describe("verifyAll in enrich mode", () => {
     expect(line).toContain("kept existing official value");
   });
 
-  it("writes a conflicts-only note and tells the runbook to discard the revision", async () => {
+  it("prints each conflict of this run and keeps the revision that records it", async () => {
     const w = await workspace(
       { ...tuitionProposal(null), facts: { teachingLanguages: germanFact } },
       false,
     );
     await restageForEnrichment(w);
     const lines = await enrichRun(w);
-    expect(lines).toContain("no new facts: discard the staged revision for de-xx");
+    expect(lines).not.toContain("no new facts: discard the staged revision for de-xx");
+    expect(lines).toContain(
+      "conflicts recorded: keep the staged revision until they are reported (de-xx)",
+    );
+    expect(lines).toContain(
+      `  conflict: teachingLanguages: kept the existing official value; the reader found ["de"] at ${LANG_URL}`,
+    );
+    const summary = lines.find((l) => l.startsWith("programs/de-xx:")) ?? "";
+    expect(summary).toContain("kept existing official value");
+    expect(summary).not.toContain("register");
     const after = await w.readStaged();
     expect(String(at(after, "_review").notes)).toContain(
       "teachingLanguages: kept the existing official value",
     );
     expect(at(after, "teachingLanguages").value).toEqual(["en"]);
+  });
+
+  it("says register value, not official, when a guidance value was kept for want of a verified page", async () => {
+    const w = await workspace(
+      { ...tuitionProposal(null), facts: { teachingLanguages: germanFact } },
+      false,
+    );
+    await writeFile(
+      path.join(w.dataDir, "programs", "de-xx.yaml"),
+      stringify({
+        ...promotedRecord(),
+        teachingLanguages: { value: ["en"], source: "programme", info_kind: "guidance" },
+      }),
+    );
+    await restageForEnrichment(w);
+    const lines = await enrichRun(w);
+    const summary = lines.find((l) => l.startsWith("programs/de-xx:")) ?? "";
+    expect(summary).toContain("kept the register value");
+    expect(summary).not.toContain("kept existing official value");
+    expect(
+      lines.some((l) => l.startsWith("  conflict: teachingLanguages: kept the register value")),
+    ).toBe(true);
+    expect(lines.some((l) => l.startsWith("no new facts: discard"))).toBe(false);
   });
 
   it("tells the runbook to discard a revision when nothing was proved", async () => {

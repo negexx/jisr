@@ -250,6 +250,7 @@ export async function verifyAll(
       const label = String(staged.name ?? slug);
       let next: Staged = staged;
       let summary: string;
+      let conflicts: string[] = [];
       if (kind === "programs") {
         const proposal = ProposalSchema.parse(raw);
         const verified = await verifyProposal(proposal, label, getText);
@@ -265,7 +266,17 @@ export async function verifyAll(
           const enriched = enrichRecord(staged, verified, today());
           next = enriched.record;
           const filled = enrichedFields(staged, next);
-          const kept = enriched.conflicts.length > 0 ? "; kept existing official value" : "";
+          conflicts = enriched.conflicts;
+          const kept = [
+            ...(conflicts.some((c) => c.includes("kept the existing official value"))
+              ? ["kept existing official value"]
+              : []),
+            ...(conflicts.some((c) => c.includes("kept the register value"))
+              ? ["kept the register value"]
+              : []),
+          ]
+            .map((text) => `; ${text}`)
+            .join("");
           const ignored =
             (verified.requirements?.length ?? 0) > 0 ? "; requirements ignored in enrich mode" : "";
           summary = `${filled.length === 0 ? "no new facts" : `enriched ${filled.join(", ")}`}; page ${
@@ -290,13 +301,17 @@ export async function verifyAll(
       console.log(
         `${kind}/${slug}: ${summary}${left.length > 0 ? `; still to read: ${left.join(", ")}` : ""}`,
       );
+      for (const note of conflicts) console.log(`  conflict: ${note}`);
       if (enrichDir !== null && noNewFacts.includes(slug)) {
-        // a staged copy that carries earlier enrichment holds verified facts: never advise discarding it
-        console.log(
-          carriesEnrichment(staged)
-            ? `no further facts for ${slug} (earlier enrichment kept)`
-            : `no new facts: discard the staged revision for ${slug}`,
-        );
+        // a staged copy that carries earlier enrichment holds verified facts, and one that holds a
+        // conflict note is the only record of the disagreement: never advise discarding either
+        if (carriesEnrichment(staged))
+          console.log(`no further facts for ${slug} (earlier enrichment kept)`);
+        else if (conflicts.length > 0)
+          console.log(
+            `conflicts recorded: keep the staged revision until they are reported (${slug})`,
+          );
+        else console.log(`no new facts: discard the staged revision for ${slug}`);
       }
       if (!dryRun && next !== staged) {
         await mkdir(path.dirname(stageFile(kind, slug, stagingDir)), { recursive: true });
