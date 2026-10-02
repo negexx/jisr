@@ -18,29 +18,41 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4610/
 durationYears:
   value: 3
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
     - en
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
   value: null
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
+  value: de-uni-assist
   source: daad
-  info_kind: guidance
+  info_kind: official
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: university-entrance-qualification
+      name:
+        fr:
+          text: Hochschulzugangsberechtigung (diplôme d'accès à l'université)
+          status: draft
+        en:
+          text: University entrance qualification
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -51,3 +63,9 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4610/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.leuphana.de/en/college/bachelor/bsc-international-business-administration-entrepreneurship.html
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.leuphana.de/en/college/application.html
+    last_verified_at: 2026-10-02

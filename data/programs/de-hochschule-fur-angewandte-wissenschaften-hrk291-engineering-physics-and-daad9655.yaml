@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 50000
+    currency: EUR
+    period: semester
+  source: page-1
   info_kind: official
 intakes:
   value: null
@@ -76,3 +79,6 @@ sources:
   page-2:
     url: https://sci.hm.edu/studierende/studiengaenge/bachelor/engineering_physics_and_datascience/index.en.html
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://hm.edu/studium_1/bewerbung/faq_gebuehren_non_eu_auslaender.de.html
+    last_verified_at: 2026-10-02

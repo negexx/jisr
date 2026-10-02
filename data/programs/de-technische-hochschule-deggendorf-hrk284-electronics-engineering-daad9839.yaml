@@ -18,26 +18,29 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9839/
 durationYears:
   value: 4
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
-    - de
     - en
-  source: daad
-  info_kind: guidance
+    - de
+  source: page-1
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-1
+  info_kind: official
 intakes:
   value: null
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-university-direct
+  source: page-2
+  info_kind: official
 documents:
   value: null
   source: daad
@@ -52,3 +55,9 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9839/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.th-deg.de/eai-b-en
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.th-deg.de/en/apply
+    last_verified_at: 2026-10-02

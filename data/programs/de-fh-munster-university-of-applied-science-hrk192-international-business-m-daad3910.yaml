@@ -42,7 +42,16 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
+  value:
+    - slug: official-language-certificate
+      name:
+        fr:
+          text: certificat de langue officiel
+          status: draft
+        en:
+          text: official language certificate
+          status: draft
+      translationRequired: null
   source: programme
   info_kind: official
 requirements:

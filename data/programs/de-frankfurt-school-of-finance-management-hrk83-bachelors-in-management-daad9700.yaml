@@ -19,12 +19,12 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 3.5
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - en
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
   value: null
   source: daad
@@ -34,13 +34,49 @@ intakes:
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-university-direct
+  source: page-1
+  info_kind: official
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: secondary-school-diploma
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary school diploma
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum Vitae (CV)
+          status: draft
+        en:
+          text: Curriculum Vitae (CV)
+          status: draft
+      translationRequired: null
+    - slug: passport-id
+      name:
+        fr:
+          text: Copie du passeport ou de la carte d'identité
+          status: draft
+        en:
+          text: Copy of passport or ID card
+          status: draft
+      translationRequired: null
+    - slug: letter-of-motivation
+      name:
+        fr:
+          text: Lettre de motivation (optionnelle)
+          status: draft
+        en:
+          text: Letter of motivation (optional)
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -51,3 +87,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9700/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics
+    last_verified_at: 2026-10-02

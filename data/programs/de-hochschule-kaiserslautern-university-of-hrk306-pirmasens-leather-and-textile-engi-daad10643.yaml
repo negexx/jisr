@@ -19,28 +19,88 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 3
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-08-31
+  source: page-1
+  info_kind: official
 applicationChannel:
-  value: null
+  value: de-uni-assist
   source: daad
-  info_kind: guidance
+  info_kind: official
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificats scolaires et, le cas échéant, universitaires
+          status: draft
+        en:
+          text: School and, where applicable, university certificates
+          status: draft
+      translationRequired: true
+    - slug: certified-translations
+      name:
+        fr:
+          text: Traductions certifiées de vos certificats
+          status: draft
+        en:
+          text: Certified translations of your certificates
+          status: draft
+      translationRequired: true
+    - slug: proof-of-language-proficiency
+      name:
+        fr:
+          text: Preuve de compétence linguistique
+          status: draft
+        en:
+          text: Proof of your language proficiency
+          status: draft
+      translationRequired: null
+    - slug: passport-copy
+      name:
+        fr:
+          text: Copie de votre passeport
+          status: draft
+        en:
+          text: A copy of your passport
+          status: draft
+      translationRequired: null
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: statement-of-purpose
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Statement of purpose
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -51,3 +111,9 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10643/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://hs-kl.de/en/angewandte-logistik-und-polymerwissenschaften/studiengaenge/leather-and-textile-engineering
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://hs-kl.de/en/studying/application/apply-from-abroad
+    last_verified_at: 2026-10-02

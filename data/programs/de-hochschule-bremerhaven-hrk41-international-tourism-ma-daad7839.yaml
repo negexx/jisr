@@ -38,8 +38,26 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: higher-education-entrance-qualification
+      name:
+        fr:
+          text: Diplôme d'accès à l'enseignement supérieur (baccalauréat)
+          status: draft
+        en:
+          text: Higher education entrance qualification
+          status: draft
+      translationRequired: null
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Certificat de compétence en anglais
+          status: draft
+        en:
+          text: English language certificate
+          status: draft
+      translationRequired: null
+  source: page-2
   info_kind: official
 requirements:
   coverage: partial

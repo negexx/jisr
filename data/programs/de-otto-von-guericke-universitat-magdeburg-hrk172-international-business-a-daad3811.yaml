@@ -26,7 +26,10 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: semester
   source: programme
   info_kind: official
 intakes:
@@ -38,8 +41,35 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: university-entrance-qualification
+      name:
+        fr:
+          text: Qualification d'entrée à l'université
+          status: draft
+        en:
+          text: University Entrance Qualification
+          status: draft
+      translationRequired: true
+    - slug: grade-transcript
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Grade Transcript
+          status: draft
+      translationRequired: true
+    - slug: cv
+      name:
+        fr:
+          text: CV sous forme tabulaire
+          status: draft
+        en:
+          text: CV in tabular form
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -72,3 +102,6 @@ sources:
   programme:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3811/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.isp.ovgu.de/IBEApplication.html
+    last_verified_at: 2026-10-02

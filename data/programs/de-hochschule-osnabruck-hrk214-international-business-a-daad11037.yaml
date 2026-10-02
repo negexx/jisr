@@ -18,18 +18,21 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11037/
 durationYears:
   value: 3
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
     - de
     - en
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
   value: null
   source: daad
@@ -52,3 +55,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11037/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hs-osnabrueck.de/studium/studienangebot/bachelor/internationale-betriebswirtschaft-und-management-ba/
+    last_verified_at: 2026-10-02

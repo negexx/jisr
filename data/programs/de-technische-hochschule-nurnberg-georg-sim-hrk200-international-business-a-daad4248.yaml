@@ -18,18 +18,21 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4248/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
-    - de
     - en
+    - de
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 100000
+    currency: EUR
+    period: semester
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
   value: null
   source: daad
@@ -39,9 +42,36 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
+  value:
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: german-language-certificate
+      name:
+        fr:
+          text: Certificat de langue allemande
+          status: draft
+        en:
+          text: German language certificate
+          status: draft
+      translationRequired: null
+    - slug: secondary-school-certificate
+      name:
+        fr:
+          text: Certificat d'études secondaires
+          status: draft
+        en:
+          text: Secondary school certificate
+          status: draft
+      translationRequired: null
   source: daad
-  info_kind: guidance
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -52,3 +82,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4248/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.th-nuernberg.de/en/faculties/bw/study/international-business-bachelors-and-masters-degree-programs/international-business-and-technology-beng/
+    last_verified_at: 2026-10-02

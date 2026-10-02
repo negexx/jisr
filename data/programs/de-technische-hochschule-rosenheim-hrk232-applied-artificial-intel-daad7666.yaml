@@ -44,7 +44,25 @@ applicationChannel:
   source: page-4
   info_kind: official
 documents:
-  value: null
+  value:
+    - slug: university-entrance-qualification
+      name:
+        fr:
+          text: Certificat de qualification d'entrée à l'université
+          status: draft
+        en:
+          text: University entrance qualification
+          status: draft
+      translationRequired: null
+    - slug: certificate-university-entrance-qualification
+      name:
+        fr:
+          text: Certificat de qualification d'entrée à l'université
+          status: draft
+        en:
+          text: Certificate for a university entrance qualification
+          status: draft
+      translationRequired: null
   source: programme
   info_kind: official
 requirements:

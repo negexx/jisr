@@ -18,8 +18,8 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/
 durationYears:
   value: 4
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
     - en
@@ -27,17 +27,20 @@ teachingLanguages:
   source: daad
   info_kind: guidance
 tuition:
-  value: null
+  value:
+    amountMinor: 80000
+    currency: EUR
+    period: semester
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
   value: null
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
+  value: de-uni-assist-vpd
   source: daad
-  info_kind: guidance
+  info_kind: official
 documents:
   value: null
   source: daad
@@ -52,3 +55,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.thi.de/en/faculties/sustainable-infrastructure/degree-programmes/sustainable-civil-engineering-beng/
+    last_verified_at: 2026-10-02

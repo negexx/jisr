@@ -18,13 +18,13 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4705/
 durationYears:
   value: 3
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 tuition:
   value: null
   source: daad
@@ -51,3 +51,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4705/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-technology-beng
+    last_verified_at: 2026-10-02

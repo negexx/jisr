@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-1
   info_kind: official
 intakes:
   value: null
@@ -90,3 +93,6 @@ sources:
   page-2:
     url: https://www.hochschule-rhein-waal.de/en/study/before-starting-university/application-process/guide-for-international-applicants
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hochschule-rhein-waal.de/en/studieren/all-about-university-life/costs-and-funding/living-costs-in-germany
+    last_verified_at: 2026-10-02

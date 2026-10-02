@@ -19,14 +19,14 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 3.5
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - en
     - fr
     - es
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
   value: null
   source: daad
@@ -36,13 +36,22 @@ intakes:
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
+  value: de-university-direct
   source: daad
-  info_kind: guidance
+  info_kind: official
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: university-entrance-qualification
+      name:
+        fr:
+          text: Justificatif de la qualification d'accès à l'enseignement supérieur
+          status: draft
+        en:
+          text: Proof of university entrance qualification
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -53,3 +62,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9800/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://businesspf.hs-pforzheim.de/en/studies/application
+    last_verified_at: 2026-10-02

@@ -21,8 +21,10 @@ durationYears:
   source: programme
   info_kind: official
 teachingLanguages:
-  value: null
-  source: programme
+  value:
+    - en
+    - de
+  source: page-1
   info_kind: official
 tuition:
   value:
@@ -40,8 +42,35 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+    - slug: id-passport
+      name:
+        fr:
+          text: Copie de la pièce d'identité ou du passeport
+          status: draft
+        en:
+          text: Copy of ID or passport
+          status: draft
+      translationRequired: null
+    - slug: vpd
+      name:
+        fr:
+          text: Document de pré-évaluation (VPD) d'uni-assist
+          status: draft
+        en:
+          text: Preliminary review document (VPD) from uni-assist
+          status: draft
+      translationRequired: null
+  source: page-3
   info_kind: official
 requirements:
   coverage: partial
@@ -75,3 +104,9 @@ sources:
   page-2:
     url: https://www.hof-university.com/studying-at-hof-university/preparing-your-stay/how-to-finance-your-studies.html
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7216/
+    last_verified_at: 2026-10-02
+  page-3:
+    url: https://www.hof-university.com/studying-at-hof-university/application-and-admission.html
+    last_verified_at: 2026-10-02

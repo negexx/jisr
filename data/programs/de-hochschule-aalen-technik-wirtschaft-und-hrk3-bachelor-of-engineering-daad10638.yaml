@@ -44,8 +44,53 @@ applicationChannel:
   source: page-3
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+    - slug: language-certificate
+      name:
+        fr:
+          text: Certificat de langue
+          status: draft
+        en:
+          text: Language certificate
+          status: draft
+      translationRequired: null
+    - slug: vpd-certificate
+      name:
+        fr:
+          text: Certificat VPD de uni-assist
+          status: draft
+        en:
+          text: VPD certificate from uni-assist
+          status: draft
+      translationRequired: null
+    - slug: passport-photo
+      name:
+        fr:
+          text: Photo d'identité
+          status: draft
+        en:
+          text: Passport picture
+          status: draft
+      translationRequired: null
+    - slug: passport-copy
+      name:
+        fr:
+          text: Copie du passeport
+          status: draft
+        en:
+          text: Passport copy
+          status: draft
+      translationRequired: null
+  source: page-3
   info_kind: official
 requirements:
   coverage: partial

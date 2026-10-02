@@ -19,29 +19,104 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 3.5
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - en
     - de
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
   value: null
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
+  value: de-university-direct
   source: daad
-  info_kind: guidance
+  info_kind: official
 documents:
-  value: null
+  value:
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: proof-of-english-language-skills
+      name:
+        fr:
+          text: Preuve de compétences en anglais
+          status: draft
+        en:
+          text: Proof of English language skills
+          status: draft
+      translationRequired: null
+    - slug: authenticated-copies-of-school-university-certificates
+      name:
+        fr:
+          text: Copies authentifiées des certificats universitaires / scolaires
+          status: draft
+        en:
+          text: Authenticated copies of school / university certificates
+          status: draft
+      translationRequired: null
+    - slug: transcripts
+      name:
+        fr:
+          text: Relevés de notes
+          status: draft
+        en:
+          text: Transcripts
+          status: draft
+      translationRequired: null
+    - slug: reference-letter
+      name:
+        fr:
+          text: Lettre de recommandation
+          status: draft
+        en:
+          text: Reference letter
+          status: draft
+      translationRequired: null
+    - slug: motivational-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivational letter
+          status: draft
+      translationRequired: null
+    - slug: english-language-proof
+      name:
+        fr:
+          text: Preuve de compétence linguistique en anglais
+          status: draft
+        en:
+          text: English language proof
+          status: draft
+      translationRequired: null
+    - slug: letter-of-reference
+      name:
+        fr:
+          text: Lettre de recommandation
+          status: draft
+        en:
+          text: Letter of reference
+          status: draft
+      translationRequired: null
   source: daad
-  info_kind: guidance
+  info_kind: official
 requirements:
   coverage: partial
   source: daad

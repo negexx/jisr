@@ -18,30 +18,42 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9036/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
     - de
     - en
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
 intakes:
   value: null
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-3
+  info_kind: official
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -52,3 +64,12 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9036/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://hs-kl.de/betriebswirtschaft/studiengaenge/bachelor/international-business-administration
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.hs-kl.de/en/international/from-abroad/costs
+    last_verified_at: 2026-10-02
+  page-3:
+    url: https://www.hs-kl.de/en/studying/application/apply-from-abroad
+    last_verified_at: 2026-10-02

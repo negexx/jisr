@@ -18,29 +18,77 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9904/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
   value: null
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist-vpd
+  source: page-2
+  info_kind: official
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires (certificat de fin d'études)
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Certificat de compétence en anglais
+          status: draft
+        en:
+          text: English language certificate
+          status: draft
+      translationRequired: null
+    - slug: vpd-certificate
+      name:
+        fr:
+          text: Attestation d'évaluation préliminaire (VPD) de uni-assist
+          status: draft
+        en:
+          text: VPD certificate from uni-assist
+          status: draft
+      translationRequired: null
+    - slug: passport-photo
+      name:
+        fr:
+          text: Photo d'identité
+          status: draft
+        en:
+          text: Passport picture
+          status: draft
+      translationRequired: null
+    - slug: passport-copy
+      name:
+        fr:
+          text: Copie du passeport
+          status: draft
+        en:
+          text: Passport copy
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -51,3 +99,9 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9904/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hs-aalen.de/en/courses/141
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/
+    last_verified_at: 2026-10-02

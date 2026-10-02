@@ -41,8 +41,44 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: proof-of-language-proficiency
+      name:
+        fr:
+          text: Preuve de compétence linguistique
+          status: draft
+        en:
+          text: Proof of language proficiency
+          status: draft
+      translationRequired: null
+    - slug: passport-copy
+      name:
+        fr:
+          text: Copie du passeport
+          status: draft
+        en:
+          text: Copy of passport
+          status: draft
+      translationRequired: null
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: statement-of-purpose
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Statement of purpose
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -75,3 +111,6 @@ sources:
   programme:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10690/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hs-kl.de/en/studying/application/apply-from-abroad
+    last_verified_at: 2026-10-02

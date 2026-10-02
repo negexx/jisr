@@ -41,8 +41,17 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: university entrance qualification
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -95,3 +104,6 @@ sources:
   page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://businesspf.hs-pforzheim.de/en/studies/application
+    last_verified_at: 2026-10-02

@@ -19,13 +19,13 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 3
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - en
     - de
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 tuition:
   value: null
   source: daad
@@ -35,9 +35,9 @@ intakes:
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-2
+  info_kind: official
 documents:
   value: null
   source: daad
@@ -52,3 +52,9 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10402/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://hs-mz.de/ib
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.hs-mainz.de/studium/studiengaenge/wirtschaft/international-business-bsc/bewerben/
+    last_verified_at: 2026-10-02

@@ -17,7 +17,7 @@ summary:
     status: draft
 officialUrl: https://www.hsleiden.nl/opleiding/commerciele-economie
 durationYears:
-  value: null
+  value: 4
   source: programme
   info_kind: official
 teachingLanguages:
@@ -40,8 +40,17 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: diploma-and-grade-list
+      name:
+        fr:
+          text: Copie certifiée conforme du diplôme et du relevé de notes
+          status: draft
+        en:
+          text: Certified copy of diploma and grade list
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -78,3 +87,6 @@ sources:
   page-2:
     url: https://www.hsleiden.nl/studeren/inschrijven/toelating
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland
+    last_verified_at: 2026-10-02

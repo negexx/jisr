@@ -34,8 +34,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: de-uni-assist-vpd
+  source: page-4
   info_kind: official
 documents:
   value: null

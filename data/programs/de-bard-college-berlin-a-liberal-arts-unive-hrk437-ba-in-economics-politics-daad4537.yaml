@@ -19,12 +19,12 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 4
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - en
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
   value: null
   source: daad
@@ -38,9 +38,54 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
+  value:
+    - slug: online-application-form
+      name:
+        fr:
+          text: Formulaire de candidature en ligne
+          status: draft
+        en:
+          text: Online application form
+          status: draft
+      translationRequired: null
+    - slug: motivation-statement
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation statement
+          status: draft
+      translationRequired: null
+    - slug: letters-of-recommendation
+      name:
+        fr:
+          text: Lettres de recommandation
+          status: draft
+        en:
+          text: Letters of recommendation
+          status: draft
+      translationRequired: null
+    - slug: official-transcripts
+      name:
+        fr:
+          text: Relevés de notes officiels
+          status: draft
+        en:
+          text: Official transcripts
+          status: draft
+      translationRequired: null
+    - slug: proof-of-english-proficiency
+      name:
+        fr:
+          text: Preuve de maîtrise de l'anglais
+          status: draft
+        en:
+          text: Proof of English proficiency
+          status: draft
+      translationRequired: null
   source: daad
-  info_kind: guidance
+  info_kind: official
 requirements:
   coverage: partial
   source: daad

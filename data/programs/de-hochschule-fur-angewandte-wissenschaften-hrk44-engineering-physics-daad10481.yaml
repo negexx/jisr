@@ -44,7 +44,43 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
+  value:
+    - slug: university-entrance-qualification
+      name:
+        fr:
+          text: Diplôme d'accès à l'enseignement supérieur
+          status: draft
+        en:
+          text: University entrance qualification
+          status: draft
+      translationRequired: null
+    - slug: certificate-assessment
+      name:
+        fr:
+          text: Évaluation du certificat (APS, VPD ou ZAB)
+          status: draft
+        en:
+          text: Certificate assessment (APS, VPD or ZAB)
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae
+          status: draft
+        en:
+          text: Curriculum vitae
+          status: draft
+      translationRequired: null
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Certificat officiel de compétence en anglais au niveau B2
+          status: draft
+        en:
+          text: Official proof of English language proficiency at level B2
+          status: draft
+      translationRequired: null
   source: programme
   info_kind: official
 requirements:

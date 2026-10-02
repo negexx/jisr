@@ -17,19 +17,22 @@ summary:
     status: draft
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7747/
 durationYears:
-  value: null
+  value: 4.5
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - de
     - en
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: semester
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
   value: null
   source: daad
@@ -39,9 +42,27 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: letter-of-motivation
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Letter of motivation
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -52,3 +73,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7747/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://f2.hs-hannover.de/internationales/information-for-incomings-wege-an-die-fakultaet-ii/intotechnology/
+    last_verified_at: 2026-10-02

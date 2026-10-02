@@ -19,7 +19,7 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 3.5
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - de
@@ -27,9 +27,12 @@ teachingLanguages:
   source: daad
   info_kind: guidance
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: page-1
+  info_kind: official
 intakes:
   value: null
   source: daad
@@ -52,3 +55,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6320/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hs-heilbronn.de/en/ese
+    last_verified_at: 2026-10-02

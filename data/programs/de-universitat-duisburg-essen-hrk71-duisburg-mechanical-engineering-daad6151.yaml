@@ -18,14 +18,14 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6151/
 durationYears:
   value: 3
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
     - de
     - en
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
   value: null
   source: daad
@@ -35,13 +35,22 @@ intakes:
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
+  value: de-uni-assist
   source: daad
-  info_kind: guidance
+  info_kind: official
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: university-entrance-certificate
+      name:
+        fr:
+          text: Certificat d'accès à l'université
+          status: draft
+        en:
+          text: University entrance certificate
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -52,3 +61,9 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6151/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.uni-due.de/iw/en/study/b-me.php
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.uni-due.de/international/international-admissions-en.php
+    last_verified_at: 2026-10-02
