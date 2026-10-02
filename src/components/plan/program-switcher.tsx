@@ -2,7 +2,7 @@
 
 import { Check } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 import { DISCLOSURE_SUMMARY_CLASS, DisclosureChevron } from "@/components/disclosure-chevron";
 import { displayNumber } from "@/components/matches/display-number";
@@ -25,7 +25,9 @@ const RAIL_QUERY = "(min-width: 64rem)";
 
 // The same list serves both layouts: below `lg` it sits in a native disclosure, from `lg` the
 // disclosure is held open and its summary hidden. The open state is set from the media query rather
-// than CSS alone, because styling a closed <details> open is not supported everywhere.
+// than CSS alone, because styling a closed <details> open is not supported everywhere. It is set in
+// a layout effect so the desktop rail is never painted closed for a frame (the component renders on
+// the client only, after the plan is computed, so there is no server markup to mismatch).
 export function ProgramSwitcher({
   items,
   activeSlug,
@@ -41,7 +43,7 @@ export function ProgramSwitcher({
   const summaryRef = useRef<HTMLElement>(null);
   const railRef = useRef(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (typeof window.matchMedia !== "function") return;
     const query = window.matchMedia(RAIL_QUERY);
     const sync = () => {
@@ -83,7 +85,9 @@ export function ProgramSwitcher({
           <span className="me-1.5 flex min-w-0 flex-1 flex-col text-foreground">
             <span className="text-sm text-muted-foreground">{t("showing")}</span>
             <span className="text-base font-semibold">
-              <bdi>{active?.kind === "program" ? active.name : (active?.slug ?? "")}</bdi>
+              <bdi dir={active?.kind === "program" ? undefined : "ltr"}>
+                {active?.kind === "program" ? active.name : (active?.slug ?? "")}
+              </bdi>
             </span>
             {active?.kind === "program" ? (
               <span className="text-sm text-muted-foreground">{progress(active)}</span>

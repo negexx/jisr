@@ -1,6 +1,8 @@
 // @vitest-environment jsdom
 import { cleanup, render, screen, within } from "@testing-library/react";
+import { useLayoutEffect } from "react";
 import userEvent from "@testing-library/user-event";
+import { createTranslator } from "next-intl";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { ProgramSwitcher, type SwitcherItem } from "@/components/plan/program-switcher";
@@ -8,7 +10,10 @@ import type { AppLocale } from "@/i18n/routing";
 import { expectNoPhysicalDirection, LOCALES } from "../trust-helpers";
 import { catalogs, PlanProviders } from "./helpers";
 
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+  vi.unstubAllGlobals();
+});
 
 const ITEMS: SwitcherItem[] = [
   {
@@ -54,7 +59,12 @@ describe.each(LOCALES)("ProgramSwitcher (%s)", (locale) => {
     expect(summary?.textContent).toContain(t.showing);
     expect(summary?.textContent).toContain("Licence Informatique");
     expect(summary?.textContent).toContain(t.change);
-    expect(summary?.textContent).toMatch(/2.*8/);
+    expect(summary?.textContent).toContain(
+      createTranslator({ locale, messages: catalogs[locale], namespace: "plan.switcher" })(
+        "progress",
+        { done: "2", total: "8" },
+      ),
+    );
     expect(summary?.querySelector("bdi")?.textContent).toBe("Licence Informatique");
     expectNoPhysicalDirection(container);
   });
@@ -84,5 +94,37 @@ describe.each(LOCALES)("ProgramSwitcher (%s)", (locale) => {
     await user.click(within(details).getByRole("button", { name: /Bachelor Engineering/ }));
     expect(onSelect).toHaveBeenCalledWith("xx-b");
     expect(details.open).toBe(false);
+  });
+
+  it("opens the disclosure from lg up in the layout phase, so the rail is never painted empty", () => {
+    vi.stubGlobal("matchMedia", (query: string) => ({
+      matches: true,
+      media: query,
+      addEventListener: () => undefined,
+      removeEventListener: () => undefined,
+    }));
+    // A sibling rendered after the switcher runs its layout effect after the switcher's own: it
+    // sees the state the browser would paint. A passive effect would not have run yet.
+    let openAtLayout: boolean | null = null;
+    function Probe() {
+      useLayoutEffect(() => {
+        openAtLayout = document.querySelector("details")?.open ?? null;
+      }, []);
+      return null;
+    }
+    render(
+      <PlanProviders locale={locale}>
+        <ProgramSwitcher items={ITEMS} activeSlug="xx-a" onSelect={vi.fn()} />
+        <Probe />
+      </PlanProviders>,
+    );
+    expect(openAtLayout).toBe(true);
+  });
+
+  it("marks a missing slug in the summary as left-to-right", () => {
+    const { container } = renderSwitcher(locale, "xx-gone");
+    const summaryBdi = container.querySelector("summary bdi");
+    expect(summaryBdi?.textContent).toBe("xx-gone");
+    expect(summaryBdi?.getAttribute("dir")).toBe("ltr");
   });
 });
