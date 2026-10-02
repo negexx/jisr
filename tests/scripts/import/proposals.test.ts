@@ -497,6 +497,20 @@ describe("institutions and channels", () => {
     );
     expect(other).toMatchObject({ ok: false });
   });
+
+  it("refuses a quote that is on the page but names nothing distinctive about the institution", async () => {
+    const vague = await verifyInstitution(
+      {
+        slug: "i",
+        website: site,
+        evidence: [{ url: site, quote: "is a public university in Lille" }],
+      },
+      "University Example",
+      get,
+    );
+    expect(vague).toMatchObject({ ok: false });
+    expect(vague.ok === false && vague.reason).toMatch(/distinctive/);
+  });
   it("applies a verified institution: official, cited to its own site, type only when evidenced", () => {
     const staged = {
       slug: "i",

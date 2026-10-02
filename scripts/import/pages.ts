@@ -6,7 +6,7 @@ import { parse } from "yaml";
 
 import { discover, discoverBySearch, discoverFromRegister } from "./discover";
 import { PAGES } from "./enrich-fr";
-import { loadMeta, pool } from "./reader";
+import { flagValue, loadMeta, pool } from "./reader";
 import {
   makeProvider,
   QueryBudget,
@@ -71,10 +71,7 @@ async function websiteOf(institution: string): Promise<string | null> {
 }
 
 async function main(argv: readonly string[]): Promise<void> {
-  const flag = (name: string) => {
-    const at = argv.indexOf(`--${name}`);
-    return at === -1 ? undefined : argv[at + 1];
-  };
+  const flag = (name: string) => flagValue(argv, name);
   const slugsFile = flag("slugs");
   if (slugsFile === undefined) throw new Error("usage: data:pages --slugs <file> [--out <file>]");
   const slugs = (await readFile(slugsFile, "utf8"))

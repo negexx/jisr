@@ -4,7 +4,7 @@ import path from "node:path";
 
 import { parse } from "yaml";
 
-import { certificateUnknown } from "./proposals";
+import { certificateUnknown, emptyTestsUnknown } from "./proposals";
 import { DATA_DIR, STAGING_DIR, toYaml } from "./staging";
 
 // A language rule that says a certificate is required but names no accepted tests means "any
@@ -14,7 +14,10 @@ import { DATA_DIR, STAGING_DIR, toYaml } from "./staging";
 // Usage: data:fix-certificates [--dry-run]
 type Json = Record<string, unknown>;
 
-export function fixRules(record: Json): { record: Json; changed: number } {
+export function fixRules(
+  record: Json,
+  fixer: (rule: Json) => Json = certificateUnknown,
+): { record: Json; changed: number } {
   const requirements = record.requirements;
   if (typeof requirements !== "object" || requirements === null) return { record, changed: 0 };
   const rules = (requirements as Json).rules;
@@ -22,7 +25,7 @@ export function fixRules(record: Json): { record: Json; changed: number } {
   let changed = 0;
   const next = rules.map((rule) => {
     if (typeof rule !== "object" || rule === null) return rule;
-    const fixed = certificateUnknown(rule as Json);
+    const fixed = fixer(rule as Json);
     if (fixed !== rule) changed++;
     return fixed;
   });
@@ -41,7 +44,9 @@ async function main(argv: readonly string[]): Promise<void> {
     if (!name.endsWith(".yaml")) continue;
     const file = path.join(dataDir, name);
     const record = parse(await readFile(file, "utf8")) as Json;
-    const { record: fixed, changed } = fixRules(record);
+    // data/ may hold a curated, owner-audited "no certificate needed": only the permissive empty-tests
+    // rule is rewritten there; a model's unverifiable `false` is handled in staging and proposals
+    const { record: fixed, changed } = fixRules(record, emptyTestsUnknown);
     if (changed === 0) continue;
     files++;
     rules += changed;

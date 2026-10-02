@@ -13,6 +13,7 @@ import {
   type FactCheck,
   programmeNameMatches,
   quoteInText,
+  quoteNames,
 } from "./evidence";
 import { READ_SOURCE } from "./staging";
 
@@ -431,6 +432,13 @@ export async function verifyInstitution(
   const evidence = await acceptedQuotes(proposal.evidence, getText);
   if (evidence.length === 0)
     return { ok: false, reason: "no quote was found verbatim on the cited page(s)" };
+  // a verbatim quote that says nothing about THIS institution ("is a public university") proves
+  // nothing: at least one must contain a distinctive word of its name
+  if (!evidence.some((e) => quoteNames(institutionName, e.quote)))
+    return {
+      ok: false,
+      reason: "no quote contains a distinctive word of the institution's name",
+    };
   const typeEvidence =
     proposal.type === undefined ? [] : await acceptedQuotes(proposal.type.evidence, getText);
   return {

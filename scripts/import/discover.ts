@@ -328,6 +328,8 @@ export async function discoverBySearch(input: SearchDiscoverInput): Promise<Disc
       language: words.language,
     });
     memo.set(query, pending);
+    // a failed search is forgotten, so the institution's next programme can ask again
+    pending.catch(() => memo.delete(query));
     return pending;
   };
   // hits on the institution's own site, as links to score

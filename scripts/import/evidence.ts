@@ -302,3 +302,34 @@ export const CHANNEL_SLUGS = Object.keys(CHANNEL_WORDS);
 export const SUBJECT_SLUGS = Object.keys(SUBJECT_WORDS);
 export const TEST_SLUGS = Object.keys(TEST_WORDS);
 export const LANGUAGE_CODES = Object.keys(LANGUAGE_WORDS);
+
+// --- does a quote name the institution? ---------------------------------------------------------
+// Words that name a kind of institution, not a particular one.
+const GENERIC = new Set(
+  "hogeschool university universiteit universitat universität universite université hochschule fachhochschule applied sciences science school college ecole école institut institute of the and for van de der die das het en la le les du des christelijke state management technik technische wirtschaft technology business studies international freie national nationale".split(
+    " ",
+  ),
+);
+
+// The words of an institution's name that tell it apart from others, in name order: the brand
+// ("Fontys") comes before the town ("Tilburg").
+export function distinctiveTokens(name: string): string[] {
+  return [
+    ...new Set(
+      name
+        .toLowerCase()
+        .split(/[^\p{L}\p{N}]+/u)
+        .filter((t) => t.length >= 3 && !GENERIC.has(t)),
+    ),
+  ];
+}
+
+export const wholeWord = (token: string, flags = "u"): RegExp =>
+  new RegExp(`(?<![\\p{L}\\p{N}])${token}(?![\\p{L}\\p{N}])`, flags);
+
+// Does the quote contain a distinctive word of the name as a whole word? (Not just a generic word,
+// and not a word inside a longer one.)
+export function quoteNames(name: string, quote: string): boolean {
+  const lower = quote.toLowerCase();
+  return distinctiveTokens(name).some((token) => wholeWord(token).test(lower));
+}

@@ -5,7 +5,10 @@ import path from "node:path";
 import { parse } from "yaml";
 
 import { registrable, sameSite } from "./discover";
-import { pageText } from "./evidence";
+import { distinctiveTokens, pageText, quoteNames, wholeWord } from "./evidence";
+
+export { quoteNames };
+
 import { DATA_DIR, STAGING_DIR, stageFile } from "./staging";
 
 // Institution proposals for institutions that have programmes but no verified website yet (a
@@ -44,39 +47,9 @@ export function websiteFrom(urls: readonly string[]): string | null {
   return best === undefined ? null : `${new URL(best.first).origin}/`;
 }
 
-// Words that name a kind of institution, not a particular one.
-const GENERIC = new Set(
-  "hogeschool university universiteit universitat universität universite université hochschule fachhochschule applied sciences science school college ecole école institut institute of the and for van de der die das het en la le les du des christelijke state management technik technische wirtschaft technology business studies international freie national nationale".split(
-    " ",
-  ),
-);
-
 const TYPE_WORD = /hogeschool|universit|hochschule|college|school|institut|ecole|école/i;
 const NEWSY =
   /trauert|\bnews\b|nieuws|aktuell|\bpress\b|persbericht|\bevents?\b|agenda|sponsor|wint |award|prijs|actualit/i;
-
-// The words of an institution's name that tell it apart from others, in name order: the brand
-// ("Fontys") comes before the town ("Tilburg").
-export function distinctiveTokens(name: string): string[] {
-  return [
-    ...new Set(
-      name
-        .toLowerCase()
-        .split(/[^\p{L}\p{N}]+/u)
-        .filter((t) => t.length >= 3 && !GENERIC.has(t)),
-    ),
-  ];
-}
-
-const wholeWord = (token: string, flags = "u"): RegExp =>
-  new RegExp(`(?<![\\p{L}\\p{N}])${token}(?![\\p{L}\\p{N}])`, flags);
-
-// Does the quote contain a distinctive word of the name as a whole word? (Not just a generic word,
-// and not a word inside a longer one.)
-export function quoteNames(name: string, quote: string): boolean {
-  const lower = quote.toLowerCase();
-  return distinctiveTokens(name).some((token) => wholeWord(token).test(lower));
-}
 
 // The best quote on one page and how good it looks (0-3), or null when the page does not name it.
 function scoredQuote(name: string, text: string): { quote: string; score: number } | null {

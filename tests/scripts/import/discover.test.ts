@@ -505,3 +505,28 @@ describe("sameSite and government hosts", () => {
     ).toBe(true);
   });
 });
+
+describe("a failed search is not remembered", () => {
+  it("lets the next programme of the institution ask again", async () => {
+    let calls = 0;
+    const search: SearchProvider = {
+      name: "fake",
+      search: async () => {
+        calls++;
+        if (calls === 1) throw new Error("search failed");
+        return [];
+      },
+    };
+    const memo = new Map<string, Promise<SearchHit[]>>();
+    const input = {
+      name: "Applied Data Science",
+      institution: "Uni Example",
+      country: "NL",
+      website: "https://www.uni.example/",
+      search,
+      memo,
+    };
+    await expect(discoverBySearch(input)).rejects.toThrow("search failed");
+    await expect(discoverBySearch(input)).resolves.toBeDefined();
+  });
+});

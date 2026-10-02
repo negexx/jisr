@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { fixRules } from "../../../scripts/import/fix-certificates";
+import { emptyTestsUnknown } from "../../../scripts/import/proposals";
 
 const rule = (extra: Record<string, unknown>) => ({
   id: "req-1",
@@ -50,5 +51,17 @@ describe("fixRules", () => {
     });
     expect(record.name).toBe("N");
     expect((record.requirements as { rules: unknown[] }).rules[1]).toEqual(manual);
+  });
+});
+
+describe("fixRules with only the empty-tests rule (for data/)", () => {
+  it("leaves a 'no certificate needed' alone, since a curated record may have earned it", () => {
+    const input = { slug: "s", requirements: { rules: [rule({ certificateRequired: false })] } };
+    expect(fixRules(input, emptyTestsUnknown).changed).toBe(0);
+  });
+
+  it("still fixes 'required, no tests named'", () => {
+    const input = { slug: "s", requirements: { rules: [rule({})] } };
+    expect(fixRules(input, emptyTestsUnknown).changed).toBe(1);
   });
 });
