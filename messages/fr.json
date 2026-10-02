@@ -785,5 +785,71 @@
     "announceSaved": "Ajouté à Mon plan.",
     "announceRemoved": "Retiré de Mon plan.",
     "full": "Vous pouvez enregistrer jusqu'à {max} programmes. Retirez-en un dans Mon plan d'abord."
+  },
+  "plan": {
+    "meta": {
+      "title": "Mon plan de candidature",
+      "description": "Votre liste d'étapes pour chaque programme enregistré : documents, échéances et prochaines étapes."
+    },
+    "title": "Mon plan de candidature",
+    "lead": "Cochez chaque étape une fois terminée. Votre progression reste sur cet appareil.",
+    "loading": "Chargement de votre plan",
+    "storage": {
+      "notice": "Cet appareil ne peut pas conserver vos programmes enregistrés ni vos étapes cochées : ils seront perdus à la fermeture de cette page."
+    },
+    "empty": {
+      "title": "Vous n'avez encore enregistré aucun programme",
+      "description": "Enregistrez des programmes depuis Mes résultats ou depuis une page de programme pour obtenir une liste d'étapes pour chacun.",
+      "action": "Voir mes résultats"
+    },
+    "noProfile": {
+      "title": "Créez votre profil pour obtenir votre plan",
+      "description": "Vos programmes enregistrés restent sur cet appareil. Nous avons besoin de votre profil pour savoir quelles étapes vous concernent.",
+      "action": "Créer mon profil"
+    },
+    "error": {
+      "title": "Impossible de charger votre plan",
+      "description": "Vérifiez votre connexion et réessayez.",
+      "retry": "Réessayer"
+    },
+    "switcher": {
+      "label": "Vos programmes enregistrés",
+      "showing": "Affiché",
+      "change": "Changer de programme",
+      "progress": "{done} sur {total} faites",
+      "missing": "N'est plus dans nos données"
+    },
+    "program": {
+      "nextStep": "Prochaine étape",
+      "allDone": "Toutes les étapes sont cochées.",
+      "deadline": "Date limite de candidature",
+      "remove": "Retirer de mon plan",
+      "viewProgram": "Voir la page du programme"
+    },
+    "steps": {
+      "heading": "Étapes",
+      "guidance": "Conseil général, pas propre à ce programme",
+      "skippedHeading": "Probablement inutiles ({count})",
+      "skippedLead": "Les données publiées laissent penser que ces étapes ne vous concernent pas. Vérifiez chacune sur la page officielle.",
+      "documents": "Documents demandés par le programme",
+      "translation": {
+        "yes": "Traduction requise",
+        "no": "Traduction non requise",
+        "unknown": "Traduction non précisée : vérifiez la page officielle"
+      },
+      "applyOn": "Candidater sur {name}",
+      "accountRequired": "Un compte est nécessaire",
+      "accountNotRequired": "Aucun compte n'est nécessaire",
+      "accountUnknown": "Compte : non précisé",
+      "scholarships": "Bourses à examiner"
+    },
+    "missing": {
+      "title": "Ce programme n'est plus dans nos données",
+      "description": "Vous l'aviez enregistré, mais les données actuelles ne le listent plus. Vous pouvez le retirer de votre plan."
+    },
+    "reset": {
+      "notice": "Le profil enregistré sur cet appareil n'a pas pu être lu, nous l'avons donc supprimé. Vous pouvez le créer à nouveau.",
+      "dismiss": "Fermer ce message"
+    }
   }
 }

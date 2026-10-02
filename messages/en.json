@@ -785,5 +785,71 @@
     "announceSaved": "Added to My plan.",
     "announceRemoved": "Removed from My plan.",
     "full": "You can save up to {max} programs. Remove one in My plan first."
+  },
+  "plan": {
+    "meta": {
+      "title": "My application plan",
+      "description": "Your checklist for each saved program: documents, deadlines and next steps."
+    },
+    "title": "My application plan",
+    "lead": "Tick off each step as you complete it. Your progress stays on this device.",
+    "loading": "Loading your plan",
+    "storage": {
+      "notice": "This device cannot keep your saved programs and ticked steps: they will be lost when you close this page."
+    },
+    "empty": {
+      "title": "You have not saved any program yet",
+      "description": "Save programs from My matches or from a program page to get a checklist for each.",
+      "action": "See my matches"
+    },
+    "noProfile": {
+      "title": "Create your profile to get your plan",
+      "description": "Your saved programs are kept on this device. We need your profile to work out which steps apply to you.",
+      "action": "Create my profile"
+    },
+    "error": {
+      "title": "We could not load your plan",
+      "description": "Check your connection and try again.",
+      "retry": "Try again"
+    },
+    "switcher": {
+      "label": "Your saved programs",
+      "showing": "Showing",
+      "change": "Change program",
+      "progress": "{done} of {total} done",
+      "missing": "No longer in our data"
+    },
+    "program": {
+      "nextStep": "Next step",
+      "allDone": "Every step is ticked off.",
+      "deadline": "Application deadline",
+      "remove": "Remove from my plan",
+      "viewProgram": "View the program page"
+    },
+    "steps": {
+      "heading": "Steps",
+      "guidance": "General guidance, not specific to this program",
+      "skippedHeading": "Probably not needed ({count})",
+      "skippedLead": "The published data suggests these steps may not apply to you. Confirm each one on the official page.",
+      "documents": "Documents the program asks for",
+      "translation": {
+        "yes": "Translation required",
+        "no": "No translation required",
+        "unknown": "Translation not stated: check the official page"
+      },
+      "applyOn": "Apply on {name}",
+      "accountRequired": "An account is required",
+      "accountNotRequired": "No account is required",
+      "accountUnknown": "Account requirement not stated",
+      "scholarships": "Scholarships to check"
+    },
+    "missing": {
+      "title": "This program is no longer in our data",
+      "description": "You saved it earlier, but the current data does not list it. You can remove it from your plan."
+    },
+    "reset": {
+      "notice": "The profile saved on this device could not be read, so we removed it. You can create it again.",
+      "dismiss": "Dismiss this message"
+    }
   }
 }
