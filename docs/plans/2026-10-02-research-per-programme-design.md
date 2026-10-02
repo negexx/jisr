@@ -69,3 +69,13 @@ Unit tests in `tests/scripts/import/` for: the new topic queries and keyword lis
 - German and Dutch date and number words may defeat the date reader (`MONTHS` / `NUMBER_WORDS`); extend them with tests.
 - Fees differ for EU and non-EU students; the reader must take the non-EU figure for a Moroccan applicant or leave the fact unknown.
 - Search results can point to outdated pages; the existing filter on dated news paths stays and every page is dated by the verification day.
+
+## Changes after reading the code (2026-10-02, same day)
+
+Reading `scripts/import/*` and the earlier read batches (`data-staging/proposals-read/{de,nl}-*`) corrected three points above. They narrow the scope; nothing is loosened.
+
+1. **The Dutch programmes and about 56 German ones were already read** (batches `de-b1`, `de-b2-*`, `nl-b1`, `nl-b2`), and 88 German programmes are register listings that were never read. The first sentence of the Problem section ("the pipeline never looked for them") is true for those 88 and for France, not for the read ones: for them the weak parts were page discovery and what verification accepted. In the earlier batches, 27 intake dates were rejected as "not supported by the quotes" (cause not yet diagnosed: the year may be missing from the quote, or the date format may not match) and 9 tuition values of 0 were rejected for lacking a "no fees" sentence. Plan task 6 starts by diagnosing the intake rejections on real pages before any rule is changed.
+2. **Scholarships become their own plan (Plan B).** A scholarship is a new record type (`data/scholarships/*.yaml`: support, deadline, requirements, documents, how to apply), and most programmes would only link to an institution or national scheme. Building that pipeline together with the national schemes (DAAD, Eiffel, Orange Tulip) is cleaner than a per-programme version. This plan covers tuition, teaching language, intakes, application channel, duration and documents; scholarships follow.
+3. **Admission requirement rules are not rewritten in this batch.** Rewriting them changes who gets a green match, so a new batch of rules needs its own review. Existing rules stay untouched; the enrichment only fills fact fields.
+
+Design addition: an **enrichment mode** applies reader output to records that are already in `data/` without resetting anything. A fact the reader proves (quote verified, checker kept) replaces a missing value or a register-listing (`guidance`) value; an existing `official` value is never overwritten (a disagreement is written to the record's review notes); everything the reader did not establish stays exactly as it is, with its source. Old sources keep their verification dates; only new sources are dated at promotion.
