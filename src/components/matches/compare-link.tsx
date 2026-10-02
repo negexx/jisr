@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
+import { MIN_COMPARE } from "@/lib/constants";
 import { useSaved } from "@/lib/saved/use-saved";
 
 import { displayNumber } from "./display-number";
@@ -14,7 +15,7 @@ import { displayNumber } from "./display-number";
 export function CompareLink({ locale }: { locale: AppLocale }) {
   const t = useTranslations("matches.compare");
   const { hydrated, items } = useSaved();
-  if (!hydrated || items.length < 2) return null;
+  if (!hydrated || items.length < MIN_COMPARE) return null;
   return (
     <Link
       href="/compare"

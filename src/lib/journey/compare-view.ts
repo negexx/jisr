@@ -68,7 +68,8 @@ export type CompareInput = {
 type Signature = (program: CompareProgram) => string | null;
 
 const SIGNATURES: Record<CompareRowId, Signature> = {
-  result: (p) => p.group,
+  // "check" means missing, ambiguous or stale data: two of them are not known to be the same.
+  result: (p) => (p.group === "check" ? null : p.group),
   tuition: (p) => {
     const { value } = p.tuition;
     return value === null ? null : `${value.amountMinor}|${value.currency}|${value.period}`;

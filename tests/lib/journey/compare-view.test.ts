@@ -279,6 +279,12 @@ describe("buildCompareView", () => {
     expect(result.differs.application).toBe(true);
   });
 
+  it("never counts two programs to check as the same result", () => {
+    const result = view([E2E_SLUGS.check, E2E_SLUGS.stale]);
+    expect(result.programs.map((p) => p.group)).toEqual(["check", "check"]);
+    expect(result.differs.result).toBe(true);
+  });
+
   it("never counts an unknown deadline as the same as a closed one", () => {
     const result = view([E2E_SLUGS.frOnly, E2E_SLUGS.check]);
     expect(result.programs.map((p) => p.intake.kind)).toEqual(["unknown", "closed"]);
