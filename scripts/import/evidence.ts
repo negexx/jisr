@@ -107,6 +107,14 @@ export const MIN_QUOTE_LENGTH = 15;
 const TRANSLATION_WORDS = /translat|übersetz|uebersetz|vertaling|vertaald|traduction|traduit/i;
 export const mentionsTranslation = (quote: string): boolean => TRANSLATION_WORDS.test(quote);
 
+// A deadline is for a Moroccan (non-EU) applicant only if a quote says who it is for: the general
+// deadline of a university page may be the EU or home-student one. Words in English, German, Dutch
+// and French; over-matching ("International Office") is caught by the checker model and the audit.
+const INTERNATIONAL_WORDS =
+  /\bnon[- ]?(?:eu|eea)\b|outside (?:of )?(?:the )?(?:eu|eea|european)|international|foreign|abroad|ausl[aä]nd|drittstaat|nicht[- ]?(?:eu|eea)|niet[- ]?(?:eu|eer)|buitenland|[ée]tranger|hors (?:ue|union)/i;
+export const mentionsInternationalApplicants = (quote: string): boolean =>
+  INTERNATIONAL_WORDS.test(quote);
+
 // A quote counts only if it is long enough to mean something and appears verbatim (up to
 // whitespace, case and typographic quotes) in the page text.
 export function quoteInText(quote: string, text: string): boolean {

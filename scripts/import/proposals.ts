@@ -11,6 +11,7 @@ import {
   checkTuition,
   checkYears,
   type FactCheck,
+  mentionsInternationalApplicants,
   mentionsTranslation,
   normalizeForMatch,
   programmeNameMatches,
@@ -241,14 +242,19 @@ export async function verifyProposal(
         applicationOpens: string | null;
         applicationDeadline: string | null;
       }[];
-      for (const item of items) {
-        for (const date of [item.startDate, item.applicationOpens, item.applicationDeadline]) {
-          if (date === null) continue;
-          if (!accepted.some((e) => checkDeadline(date, e.quote).ok)) {
-            reason = `the date ${date} is not supported by the quotes`;
+      const hasDeadline = items.some((item) => item.applicationDeadline !== null);
+      if (hasDeadline && !accepted.some((e) => mentionsInternationalApplicants(e.quote)))
+        reason =
+          "no accepted quote says the deadline applies to international or non-EU applicants";
+      else
+        for (const item of items) {
+          for (const date of [item.startDate, item.applicationOpens, item.applicationDeadline]) {
+            if (date === null) continue;
+            if (!accepted.some((e) => checkDeadline(date, e.quote).ok)) {
+              reason = `the date ${date} is not supported by the quotes`;
+            }
           }
         }
-      }
     } else if (!accepted.some((e) => checkValue(key, entry.value, e.quote).ok)) {
       const first = checkValue(key, entry.value, accepted[0]?.quote ?? "");
       reason = first.ok ? "value does not agree with the quote" : first.reason;

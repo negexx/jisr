@@ -18,7 +18,7 @@ const PAGE = "https://uni.example/cs";
 const FEES = "https://uni.example/fees";
 const pages: Record<string, string> = {
   [PAGE]:
-    "Applied Computer Science, B.Sc. The programme lasts six semesters and is taught entirely in English. Apply by 15 July 2027.",
+    "Applied Computer Science, B.Sc. The programme lasts six semesters and is taught entirely in English. Non-EU applicants: apply by 15 July 2027.",
   [FEES]: "Tuition fees for non-EU students: €1,500 per semester.",
 };
 const getText = async (url: string) => {
@@ -48,7 +48,7 @@ describe("verifyProposal", () => {
         },
         intakes: {
           value: [{ startDate: null, applicationOpens: null, applicationDeadline: "2027-07-15" }],
-          evidence: [{ url: PAGE, quote: "Apply by 15 July 2027" }],
+          evidence: [{ url: PAGE, quote: "Non-EU applicants: apply by 15 July 2027" }],
         },
       }),
       "Applied Computer Science (B.Sc.)",
@@ -99,7 +99,7 @@ describe("verifyProposal", () => {
       proposal({
         intakes: {
           value: [{ startDate: null, applicationOpens: null, applicationDeadline: "2027-08-31" }],
-          evidence: [{ url: PAGE, quote: "Apply by 15 July 2027" }],
+          evidence: [{ url: PAGE, quote: "Non-EU applicants: apply by 15 July 2027" }],
         },
       }),
       "Applied Computer Science",
@@ -827,5 +827,86 @@ describe("documents fact", () => {
   it("recordValue output is accepted by the record schema", () => {
     const value = recordValue("documents", [doc("cv", true), doc("passport", null, "passport")]);
     expect(DocumentListSchema.safeParse(value).success).toBe(true);
+  });
+});
+
+describe("intakes: the deadline must be stated for international applicants", () => {
+  const page = "https://uni.example/apply";
+  const make = (quote: string, text: string) => ({
+    verify: () =>
+      verifyProposal(
+        ProposalSchema.parse({
+          slug: "xx-prog",
+          programmePage: null,
+          facts: {
+            intakes: {
+              value: [
+                { startDate: null, applicationOpens: null, applicationDeadline: "2027-05-01" },
+              ],
+              evidence: [{ url: page, quote }],
+            },
+          },
+        }),
+        "Prog",
+        async () => text,
+      ),
+  });
+
+  it("accepts a dated deadline whose quote says it is for non-EU applicants", async () => {
+    const q = "Non-EU applicants must apply by 1 May 2027";
+    const verified = await make(q, q).verify();
+    expect(verified.facts.intakes).toBeDefined();
+  });
+
+  it("rejects a dated deadline whose quotes never mention international applicants", async () => {
+    const q = "The application deadline is 1 May 2027";
+    const verified = await make(q, q).verify();
+    expect(verified.facts.intakes).toBeUndefined();
+    expect(verified.rejected).toContainEqual({
+      fact: "intakes",
+      reason: "no accepted quote says the deadline applies to international or non-EU applicants",
+    });
+  });
+
+  it("accepts when a second accepted quote carries the international wording", async () => {
+    const text =
+      "The application deadline is 1 May 2027. Applicants from outside the EU use the same portal.";
+    const verified = await verifyProposal(
+      ProposalSchema.parse({
+        slug: "xx-prog",
+        programmePage: null,
+        facts: {
+          intakes: {
+            value: [{ startDate: null, applicationOpens: null, applicationDeadline: "2027-05-01" }],
+            evidence: [
+              { url: page, quote: "The application deadline is 1 May 2027." },
+              { url: page, quote: "Applicants from outside the EU use the same portal." },
+            ],
+          },
+        },
+      }),
+      "Prog",
+      async () => text,
+    );
+    expect(verified.facts.intakes).toBeDefined();
+  });
+
+  it("does not apply the rule to an item with only a start date", async () => {
+    const q = "Studies start on 1 September 2027";
+    const verified = await verifyProposal(
+      ProposalSchema.parse({
+        slug: "xx-prog",
+        programmePage: null,
+        facts: {
+          intakes: {
+            value: [{ startDate: "2027-09-01", applicationOpens: null, applicationDeadline: null }],
+            evidence: [{ url: page, quote: q }],
+          },
+        },
+      }),
+      "Prog",
+      async () => q,
+    );
+    expect(verified.facts.intakes).toBeDefined();
   });
 });

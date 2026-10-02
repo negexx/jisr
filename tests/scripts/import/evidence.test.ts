@@ -7,6 +7,7 @@ import {
   checkLanguages,
   checkTuition,
   htmlToText,
+  mentionsInternationalApplicants,
   normalizeForMatch,
   programmeNameMatches,
   quoteInText,
@@ -150,5 +151,32 @@ describe("checkChannel", () => {
       ).ok,
     ).toBe(true);
     expect(checkChannel("unknown-channel", "anything at all here").ok).toBe(false);
+  });
+});
+
+describe("mentionsInternationalApplicants", () => {
+  it.each([
+    "15 May for non-EU and non-EEA applicants",
+    "Deadline for international applicants: 15 July",
+    "With a qualification from abroad 01 May - 30 Nov",
+    "Bewerbungsfrist für Bewerber mit ausländischer Hochschulzugangsberechtigung",
+    "Frist für Drittstaatsangehörige: 15. Juli",
+    "Für Nicht-EU-Bürger gilt der 1. Juni",
+    "Studenten van buiten de EU: niet-EER studenten melden zich aan vóór 1 april",
+    "Aanmelden voor internationale studenten uiterlijk 1 april",
+    "candidats étrangers : date limite le 15 janvier",
+    "Applicants from outside the EU must apply by 1 March",
+  ])("is true for: %s", (quote) => {
+    expect(mentionsInternationalApplicants(quote)).toBe(true);
+  });
+
+  it.each([
+    "Application deadline 30 June 2027",
+    "Bewerbungsfrist: 15. Juli",
+    "Meld je uiterlijk 1 mei aan via Studielink",
+    "Applications for the winter semester: 2 May to 15 July 2027",
+    "",
+  ])("is false for: %s", (quote) => {
+    expect(mentionsInternationalApplicants(quote)).toBe(false);
   });
 });
