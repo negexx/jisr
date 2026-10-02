@@ -63,6 +63,19 @@ export function claimText(name: FactName, value: unknown): string {
     }
     case "applicationChannel":
       return CHANNEL_TEXT[String(value)] ?? `Application channel: ${String(value)}.`;
+    case "documents": {
+      const docs = value as {
+        name: { fr: string; en?: string };
+        translationRequired: boolean | null;
+      }[];
+      const names = docs.map((d) => d.name.en ?? d.name.fr).join("; ");
+      const translated = docs
+        .filter((d) => d.translationRequired === true)
+        .map((d) => d.name.en ?? d.name.fr);
+      return `An international applicant must submit these documents: ${names}.${
+        translated.length === 0 ? "" : ` A translation is required for: ${translated.join("; ")}.`
+      }`;
+    }
   }
 }
 

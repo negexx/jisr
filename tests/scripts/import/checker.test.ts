@@ -289,3 +289,15 @@ describe("checker failure modes", () => {
     expect(user).not.toContain("[2] Claim: lies");
   });
 });
+
+describe("claimText for documents", () => {
+  it("names the documents and the ones that need a translation", () => {
+    const docs = [
+      { slug: "cv", name: { fr: "CV", en: "CV" }, translationRequired: null },
+      { slug: "diploma", name: { fr: "Diplôme", en: "Diploma" }, translationRequired: true },
+    ];
+    const text = claimText("documents", docs);
+    expect(text).toContain("CV");
+    expect(text).toMatch(/translation is required for: Diploma/);
+  });
+});

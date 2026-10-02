@@ -569,3 +569,38 @@ describe("flagValue", () => {
     expect(() => flagValue(["--base", "--dry-run"], "base")).toThrow(/needs a value/);
   });
 });
+
+describe("documents fact in the reader", () => {
+  const withDocuments = (value: unknown) => ({
+    slug: "s",
+    programmePage: null,
+    facts: {
+      documents: {
+        value,
+        evidence: [{ url: "https://uni.example/apply", quote: "a CV and a passport copy" }],
+      },
+    },
+  });
+  const item = (slug: string, translationRequired: boolean | null) => ({
+    slug,
+    name: { fr: "CV" },
+    translationRequired,
+  });
+
+  it("describes the fact in the instruction", () => {
+    expect(INSTRUCTION).toMatch(/documents:/);
+  });
+
+  it("turns an unverifiable translationRequired false into null", () => {
+    const { proposal } = salvageProposal(withDocuments([item("cv", false)]));
+    expect(proposal?.facts.documents?.value[0]?.translationRequired).toBeNull();
+  });
+
+  it("drops the documents fact when two items share a slug", () => {
+    const { proposal, dropped } = salvageProposal(
+      withDocuments([item("cv", null), item("cv", null)]),
+    );
+    expect(proposal?.facts.documents).toBeUndefined();
+    expect(dropped).toContain("facts.documents");
+  });
+});

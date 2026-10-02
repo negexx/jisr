@@ -11,6 +11,7 @@ import {
   checkTuition,
   checkYears,
   type FactCheck,
+  mentionsTranslation,
   programmeNameMatches,
   quoteInText,
   quoteNames,
@@ -25,6 +26,17 @@ const EvidenceSchema = z.object({ url: Https, quote: z.string().min(1) });
 const Iso = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
 const fact = <T extends z.ZodType>(value: T) =>
   z.object({ value, evidence: z.array(EvidenceSchema).min(1) });
+
+const DocumentSlug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+export const DocumentProposalSchema = z.object({
+  slug: DocumentSlug,
+  name: z.object({
+    fr: z.string().min(1).max(200),
+    en: z.string().min(1).max(200).optional(),
+  }),
+  translationRequired: z.boolean().nullable(),
+});
+export type DocumentProposal = z.infer<typeof DocumentProposalSchema>;
 
 // Admission requirements are encoded only as rules the matcher can evaluate or as a manual check.
 // Grade thresholds are deliberately not offered: they depend on a destination grading scale that
@@ -91,6 +103,14 @@ export const ProposalSchema = z.object({
       ),
     ).optional(),
     applicationChannel: fact(z.string()).optional(),
+    documents: fact(
+      z
+        .array(DocumentProposalSchema)
+        .min(1)
+        .refine((docs) => new Set(docs.map((d) => d.slug)).size === docs.length, {
+          message: "document slugs must be unique",
+        }),
+    ).optional(),
   }),
   requirements: z.object({ rules: z.array(RuleProposalSchema) }).optional(),
   notes: z.string().optional(),
@@ -156,6 +176,9 @@ function checkValue(name: FactName, value: unknown, quote: string): FactCheck {
       // every stated date must be supported by one of the quotes
       return { ok: true };
     }
+    case "documents":
+      // the verbatim quote is already required; the checker model judges the list
+      return ok;
   }
 }
 
@@ -223,8 +246,18 @@ export async function verifyProposal(
       const first = checkValue(key, entry.value, accepted[0]?.quote ?? "");
       reason = first.ok ? "value does not agree with the quote" : first.reason;
     }
+    let value: unknown = entry.value;
+    if (key === "documents") {
+      // a translation claim no accepted quote supports is unknown, not asserted
+      const supportsTranslation = accepted.some((e) => mentionsTranslation(e.quote));
+      value = (entry.value as DocumentProposal[]).map((d) =>
+        d.translationRequired === true && !supportsTranslation
+          ? { ...d, translationRequired: null }
+          : d,
+      );
+    }
     if (reason !== null) result.rejected.push({ fact: key, reason });
-    else result.facts[key] = { value: entry.value, evidence: accepted };
+    else result.facts[key] = { value, evidence: accepted };
   }
 
   const accepted: AcceptedRule[] = [];
@@ -288,6 +321,19 @@ const FACT_FIELDS = [
   "documents",
 ] as const;
 
+// The reader's shape for a fact value becomes the record's shape (documents carry localized names).
+export function recordValue(field: string, value: unknown): unknown {
+  if (field !== "documents") return value;
+  return (value as DocumentProposal[]).map((d) => ({
+    slug: d.slug,
+    name: {
+      fr: { text: d.name.fr, status: "draft" },
+      ...(d.name.en === undefined ? {} : { en: { text: d.name.en, status: "draft" } }),
+    },
+    translationRequired: d.translationRequired,
+  }));
+}
+
 function asRecord(value: unknown): Staged {
   return typeof value === "object" && value !== null ? (value as Staged) : {};
 }
@@ -318,7 +364,11 @@ export function applyVerified(staged: Staged, verified: Verified, today: string)
     if (accepted !== undefined) {
       const first = accepted.evidence[0];
       if (first === undefined) continue;
-      next[field] = { value: accepted.value, source: keyFor(first.url), info_kind: "official" };
+      next[field] = {
+        value: recordValue(field, accepted.value),
+        source: keyFor(first.url),
+        info_kind: "official",
+      };
       for (const e of accepted.evidence)
         evidenceLog.push({ fact: field, url: e.url, quote: e.quote });
     } else {
