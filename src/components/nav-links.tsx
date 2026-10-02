@@ -1,7 +1,7 @@
 "use client";
 
 import { Link, usePathname } from "@/i18n/navigation";
-import { useSaved } from "@/lib/saved/use-saved";
+import { useSavedCount } from "@/lib/saved/use-saved-count";
 import { cn } from "@/lib/utils";
 
 // `savedCount.template` is the item's message with a `{count}` placeholder, filled in here with
@@ -15,8 +15,7 @@ function isCurrent(pathname: string, href: string): boolean {
 // Labels arrive as props from the server header, so the client bundle carries no message catalogue.
 export function NavLinks({ label, items }: { label: string; items: readonly NavItem[] }) {
   const pathname = usePathname();
-  const { hydrated, items: saved } = useSaved();
-  const count = hydrated ? saved.length : 0;
+  const count = useSavedCount();
   return (
     <nav aria-label={label}>
       {/* The links carry 8px of inline padding on phone (12px from md, to fit the French labels plus the badge in 343px); pull the list back so their text lines up with the wordmark. */}
@@ -27,6 +26,9 @@ export function NavLinks({ label, items }: { label: string; items: readonly NavI
             <li key={href}>
               <Link
                 href={href}
+                // The plan only has something to show once a program is saved, so until then its
+                // page code (the biggest of the three) is not prefetched on every other page.
+                prefetch={savedCount !== undefined && count === 0 ? false : undefined}
                 aria-current={current ? "page" : undefined}
                 className={cn(
                   "inline-flex min-h-12 items-center whitespace-nowrap border-b-2 px-2 text-base font-medium transition-colors md:px-3",
