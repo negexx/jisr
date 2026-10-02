@@ -239,6 +239,10 @@ export async function verifyAll(
         console.log(`skipped (not restaged for enrichment): ${slug}`);
         continue;
       }
+      if (enrichDir === null && Reflect.get(stagedReview(staged), "enrich") === true) {
+        console.log(`skipped (restaged for enrichment: use --enrich): ${slug}`);
+        continue;
+      }
       const label = String(staged.name ?? slug);
       let next: Staged = staged;
       let summary: string;

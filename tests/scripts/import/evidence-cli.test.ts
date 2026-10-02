@@ -217,6 +217,43 @@ describe("verifyAll", () => {
   });
 });
 
+describe("verifyAll in plain mode", () => {
+  async function plainRun(w: Workspace): Promise<string[]> {
+    const lines: string[] = [];
+    const log = vi.spyOn(console, "log").mockImplementation((line: unknown) => {
+      lines.push(String(line));
+    });
+    try {
+      await verifyAll(false, null, { stagingDir: w.stagingDir, getText });
+    } finally {
+      log.mockRestore();
+    }
+    return lines;
+  }
+
+  it("leaves a record that was restaged for enrichment alone, and says so", async () => {
+    const w = await workspace(tuitionProposal(PROGRAMME_URL), true);
+    await mkdir(path.dirname(w.staged), { recursive: true });
+    await writeFile(
+      w.staged,
+      stringify({ ...promotedRecord(), _review: { revises: true, enrich: true } }),
+    );
+    const before = await readFile(w.staged, "utf8");
+    const lines = await plainRun(w);
+    expect(await readFile(w.staged, "utf8")).toBe(before);
+    expect(lines).toContain("skipped (restaged for enrichment: use --enrich): de-xx");
+  });
+
+  it("still verifies a record that is not marked for enrichment", async () => {
+    const w = await workspace(tuitionProposal(PROGRAMME_URL), true);
+    await restage(null, { stagingDir: w.stagingDir, dataDir: w.dataDir });
+    const before = await readFile(w.staged, "utf8");
+    const lines = await plainRun(w);
+    expect(await readFile(w.staged, "utf8")).not.toBe(before);
+    expect(lines.some((l) => l.startsWith("skipped (restaged for enrichment"))).toBe(false);
+  });
+});
+
 describe("restage --enrich bookkeeping", () => {
   it("marks the record, carries the ledger source id and drops only its audit rows", async () => {
     const w = await workspace(tuitionProposal(null), false);
