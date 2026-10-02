@@ -6,7 +6,7 @@ import type { CostEstimate, FactRef, IntakeStatus } from "@/domain/types";
 import type { AppLocale } from "@/i18n/routing";
 import type { SnapshotBundle } from "@/lib/snapshot/client";
 import type { DataText } from "@/lib/snapshot/text";
-
+import { COMPARE_ROWS, type CompareRowId } from "./compare-rows";
 import {
   cardFor,
   type MatchCardModel,
@@ -16,16 +16,9 @@ import {
 } from "./matches-view";
 import { describeReason, type ReasonView } from "./reasons";
 
-export const COMPARE_ROWS = [
-  "result",
-  "tuition",
-  "cost",
-  "language",
-  "deadline",
-  "scholarships",
-  "application",
-] as const;
-export type CompareRowId = (typeof COMPARE_ROWS)[number];
+// Re-exported so this module's public interface is unchanged; components import the rows from
+// ./compare-rows to keep this module out of their initial chunk.
+export { COMPARE_ROWS, type CompareRowId };
 
 export type CompareChannel = {
   slug: string;

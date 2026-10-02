@@ -14,7 +14,8 @@ import { ReasonList } from "@/components/reason-list";
 import { SourceBadge } from "@/components/source-badge";
 import { Link } from "@/i18n/navigation";
 import { formatMoney } from "@/lib/format";
-import type { CompareProgram, CompareRowId } from "@/lib/journey/compare-view";
+import type { CompareRowId } from "@/lib/journey/compare-rows";
+import type { CompareProgram } from "@/lib/journey/compare-view";
 import { formatList, languageName } from "@/lib/journey/reasons";
 
 export type CellProps = { program: CompareProgram; budgetProvided: boolean };

@@ -4,7 +4,8 @@ import { useTranslations } from "next-intl";
 import { useId } from "react";
 
 import { Link } from "@/i18n/navigation";
-import { COMPARE_ROWS, type CompareProgram, type CompareView } from "@/lib/journey/compare-view";
+import { COMPARE_ROWS, type CompareRowId } from "@/lib/journey/compare-rows";
+import type { CompareProgram, CompareView } from "@/lib/journey/compare-view";
 import { cn } from "@/lib/utils";
 
 import { CELLS } from "./compare-cells";
@@ -94,7 +95,7 @@ function CompareRow({
   columns,
   budgetProvided,
 }: {
-  id: (typeof COMPARE_ROWS)[number];
+  id: CompareRowId;
   differs: boolean;
   programs: readonly CompareProgram[];
   columns: string;
