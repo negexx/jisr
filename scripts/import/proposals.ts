@@ -440,6 +440,10 @@ export function applyVerified(staged: Staged, verified: Verified, today: string)
   return next;
 }
 
+type EvidenceEntry = { fact: string; url: string; quote: string };
+const PAGE_NOT_VERIFIED_NOTE =
+  "programme page not verified: facts come from pages not tied to this programme by name";
+
 // Applies what the reader proved to a record that is already in data/. Unlike applyVerified it never
 // resets a fact the reader did not establish, never replaces an existing official value, and never
 // touches requirements, the official URL, the summary or the scholarships. Returns `staged` itself
@@ -463,7 +467,7 @@ export function applyEnrichment(staged: Staged, verified: Verified, today: strin
   };
 
   const next: Staged = { ...staged };
-  const evidenceLog: { fact: string; url: string; quote: string }[] = [];
+  const evidenceLog: EvidenceEntry[] = [];
   const conflicts: string[] = [];
   let changed = false;
   for (const field of FACT_FIELDS) {
@@ -478,7 +482,9 @@ export function applyEnrichment(staged: Staged, verified: Verified, today: strin
       existing.info_kind === "official"
     ) {
       if (JSON.stringify(existing.value) !== JSON.stringify(value))
-        conflicts.push(`${field}: kept the existing official value`);
+        conflicts.push(
+          `${field}: kept the existing official value; the reader found ${JSON.stringify(value)} at ${first.url}`,
+        );
       continue;
     }
     next[field] = { value, source: keyFor(first.url), info_kind: "official" };
@@ -487,25 +493,52 @@ export function applyEnrichment(staged: Staged, verified: Verified, today: strin
     changed = true;
   }
   if (!changed && conflicts.length === 0) return staged;
+
+  const review = asRecord(staged._review);
+  const earlierNotes = typeof review.notes === "string" && review.notes !== "" ? review.notes : "";
+  // a re-run must not repeat a note an earlier run already wrote
+  const newNotes = [
+    ...conflicts,
+    ...(verified.programmePage === null ? [PAGE_NOT_VERIFIED_NOTE] : []),
+    ...(verified.notes === undefined ? [] : [verified.notes]),
+  ].filter((note) => !earlierNotes.includes(note));
+  const notes = [...(earlierNotes === "" ? [] : [earlierNotes]), ...newNotes].join("; ");
+  const rejected =
+    verified.rejected.length === 0
+      ? {}
+      : { rejected: verified.rejected.map((r) => `${r.fact}: ${r.reason}`) };
   if (!changed) {
     // only disagreements: record them for the auditor, change nothing else
-    next._review = { ...asRecord(staged._review), notes: conflicts.join("; ") };
+    next._review = { ...review, ...(notes === "" ? {} : { notes }), ...rejected };
     return next;
   }
   next.sources = sources;
-  const review = asRecord(staged._review);
-  const notes = [...conflicts, ...(verified.notes === undefined ? [] : [verified.notes])];
+  const earlierEvidence = (
+    Array.isArray(review.evidence) ? review.evidence : []
+  ) as EvidenceEntry[];
+  const evidence = [...earlierEvidence];
+  for (const entry of evidenceLog)
+    if (
+      !evidence.some((e) => e.fact === entry.fact && e.url === entry.url && e.quote === entry.quote)
+    )
+      evidence.push(entry);
   next._review = {
     ...review,
     preparedBy: "assistant",
     preparedAt: today,
-    evidence: evidenceLog,
-    ...(notes.length === 0 ? {} : { notes: notes.join("; ") }),
+    evidence,
+    ...(notes === "" ? {} : { notes }),
+    ...rejected,
     todo: PREPARED_NOTE.test(String(review.todo ?? ""))
       ? String(review.todo)
       : `${String(review.todo ?? "")}; ${PREPARED_TEXT}`.replace(/^; /, ""),
   };
   return next;
+}
+
+// The facts applyEnrichment actually filled: the ones whose object it replaced.
+export function enrichedFields(before: Staged, after: Staged): string[] {
+  return FACT_FIELDS.filter((field) => before[field] !== after[field]);
 }
 
 export function stillPlaceholder(record: Staged): string[] {

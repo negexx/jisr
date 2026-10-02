@@ -10,6 +10,7 @@ import {
   applyRecord,
   applyVerified,
   ChannelProposalSchema,
+  enrichedFields,
   type GetText,
   InstitutionProposalSchema,
   ProposalSchema,
@@ -102,6 +103,11 @@ function clearVerified(value: unknown): unknown {
   );
 }
 
+function stagedReview(record: Staged): object {
+  const review = record._review;
+  return typeof review === "object" && review !== null ? review : {};
+}
+
 // An enrichment proposal that proves nothing has nothing to add to a record already in data/.
 function hasFacts(proposal: unknown): boolean {
   const facts =
@@ -151,6 +157,8 @@ export async function restage(
             name: String(record.name ?? slug),
             ...(row === undefined ? {} : { sourceId: row.sourceId }),
             revises: true,
+            // verify --enrich only touches records restaged for it
+            ...(enrichDir === null ? {} : { enrich: true }),
             todo:
               enrichDir === null
                 ? "revision of a record already in data/: promote with --replace-revisions after the audit"
@@ -202,6 +210,7 @@ export async function verifyAll(
   }
   let applied = 0;
   let blocked = 0;
+  const discard: string[] = [];
   const kinds =
     enrichDir === null ? ["programs", "institutions", "application-channels"] : ["programs"];
   for (const kind of kinds) {
@@ -215,6 +224,10 @@ export async function verifyAll(
       const staged = await loadStaged(kind, slug, stagingDir);
       if (staged === null) {
         console.log(`${kind}/${slug}: no staged record`);
+        continue;
+      }
+      if (enrichDir !== null && Reflect.get(stagedReview(staged), "enrich") !== true) {
+        console.log(`skipped (not restaged for enrichment): ${slug}`);
         continue;
       }
       const label = String(staged.name ?? slug);
@@ -233,16 +246,18 @@ export async function verifyAll(
           if (verified.programmePage === null) blocked++;
         } else {
           next = applyEnrichment(staged, verified, today());
-          const review = next._review;
-          const notes =
-            typeof review === "object" && review !== null ? Reflect.get(review, "notes") : null;
+          const filled = enrichedFields(staged, next);
+          const notes = Reflect.get(stagedReview(next), "notes");
           const kept =
             typeof notes === "string" && notes.includes("kept the existing official value")
               ? "; kept existing official value"
               : "";
-          summary = `${
-            next === staged ? "no new facts" : `enriched ${Object.keys(verified.facts).join(", ")}`
-          }${kept}${rejected}`;
+          const ignored =
+            (verified.requirements?.length ?? 0) > 0 ? "; requirements ignored in enrich mode" : "";
+          summary = `${filled.length === 0 ? "no new facts" : `enriched ${filled.join(", ")}`}; page ${
+            verified.programmePage === null ? "NOT verified" : "ok"
+          }${kept}${ignored}${rejected}`;
+          if (filled.length === 0) discard.push(slug);
         }
       } else if (kind === "institutions") {
         const proposal = InstitutionProposalSchema.parse(raw);
@@ -261,6 +276,8 @@ export async function verifyAll(
       console.log(
         `${kind}/${slug}: ${summary}${left.length > 0 ? `; still to read: ${left.join(", ")}` : ""}`,
       );
+      if (enrichDir !== null && discard.includes(slug))
+        console.log(`no new facts: discard the staged revision for ${slug}`);
       if (!dryRun && next !== staged) {
         await mkdir(path.dirname(stageFile(kind, slug, stagingDir)), { recursive: true });
         await writeFile(stageFile(kind, slug, stagingDir), toYaml(next));

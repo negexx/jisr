@@ -94,8 +94,10 @@ async function workspace(proposal: unknown, proposalsInStaging: boolean) {
   return { stagingDir, dataDir, enrichDir, staged, readStaged };
 }
 
+const LANG_URL = "https://hs.example/lang";
 const pages: Record<string, string> = {
   [FEES_URL]: `${TUITION_QUOTE}.`,
+  [LANG_URL]: "The programme is taught in German.",
   [PROGRAMME_URL]: "Computer Science at Example University",
 };
 const getText = async (url: string): Promise<string> => {
@@ -103,6 +105,29 @@ const getText = async (url: string): Promise<string> => {
   if (text === undefined) throw new Error("not found");
   return text;
 };
+
+const germanFact = {
+  value: ["de"],
+  evidence: [{ url: LANG_URL, quote: "The programme is taught in German" }],
+};
+
+type Workspace = Awaited<ReturnType<typeof workspace>>;
+
+async function enrichRun(w: Workspace): Promise<string[]> {
+  const lines: string[] = [];
+  const log = vi.spyOn(console, "log").mockImplementation((line: unknown) => {
+    lines.push(String(line));
+  });
+  try {
+    await verifyAll(false, null, { enrichDir: w.enrichDir, stagingDir: w.stagingDir, getText });
+  } finally {
+    log.mockRestore();
+  }
+  return lines;
+}
+
+const restageForEnrichment = (w: Workspace) =>
+  restage(null, { enrichDir: w.enrichDir, stagingDir: w.stagingDir, dataDir: w.dataDir });
 
 describe("restage", () => {
   it("with enrichDir brings back a record that has a proposal with facts, keeping its dates", async () => {
@@ -189,5 +214,115 @@ describe("verifyAll", () => {
       log.mockRestore();
     }
     expect(await readFile(w.staged, "utf8")).toBe(before);
+  });
+});
+
+describe("restage --enrich bookkeeping", () => {
+  it("marks the record, carries the ledger source id and drops only its audit rows", async () => {
+    const w = await workspace(tuitionProposal(null), false);
+    await mkdir(w.stagingDir, { recursive: true });
+    await writeFile(
+      path.join(w.stagingDir, "PROMOTED.csv"),
+      "collection,sourceId,slug,date,level,batch\nprograms,src-1,de-xx,2026-09-01,human,b1\n",
+    );
+    await writeFile(
+      path.join(w.stagingDir, "AUDIT.csv"),
+      "key,batch,inSample,audited,outcome,notes\nprograms/de-xx,b1,y,y,ok,\nprograms/other,b1,,,,\n",
+    );
+    const log = vi.spyOn(console, "log").mockImplementation(() => undefined);
+    try {
+      await restageForEnrichment(w);
+    } finally {
+      log.mockRestore();
+    }
+    const review = at(await w.readStaged(), "_review");
+    expect(review.enrich).toBe(true);
+    expect(review.sourceId).toBe("src-1");
+    const audit = await readFile(path.join(w.stagingDir, "AUDIT.csv"), "utf8");
+    expect(audit).toContain("programs/other");
+    expect(audit).not.toContain("programs/de-xx");
+  });
+});
+
+describe("verifyAll in enrich mode", () => {
+  it("leaves a staged record that restage --enrich did not mark, and says so", async () => {
+    const w = await workspace(tuitionProposal(null), false);
+    await mkdir(path.dirname(w.staged), { recursive: true });
+    await writeFile(w.staged, stringify({ ...promotedRecord(), _review: { revises: true } }));
+    const before = await readFile(w.staged, "utf8");
+    const lines = await enrichRun(w);
+    expect(await readFile(w.staged, "utf8")).toBe(before);
+    expect(lines).toContain("skipped (not restaged for enrichment): de-xx");
+  });
+
+  it("lists only the fields that changed and flags an unverified programme page", async () => {
+    const w = await workspace(
+      {
+        ...tuitionProposal(null),
+        facts: { ...tuitionProposal(null).facts, teachingLanguages: germanFact },
+      },
+      false,
+    );
+    await restageForEnrichment(w);
+    const line = (await enrichRun(w)).find((l) => l.startsWith("programs/de-xx:")) ?? "";
+    expect(line).toMatch(/enriched tuition(;|$)/);
+    expect(line).not.toMatch(/enriched[^;]*teachingLanguages/);
+    expect(line).toContain("page NOT verified");
+    expect(line).toContain("kept existing official value");
+  });
+
+  it("writes a conflicts-only note and tells the runbook to discard the revision", async () => {
+    const w = await workspace(
+      { ...tuitionProposal(null), facts: { teachingLanguages: germanFact } },
+      false,
+    );
+    await restageForEnrichment(w);
+    const lines = await enrichRun(w);
+    expect(lines).toContain("no new facts: discard the staged revision for de-xx");
+    const after = await w.readStaged();
+    expect(String(at(after, "_review").notes)).toContain(
+      "teachingLanguages: kept the existing official value",
+    );
+    expect(at(after, "teachingLanguages").value).toEqual(["en"]);
+  });
+
+  it("tells the runbook to discard a revision when nothing was proved", async () => {
+    const w = await workspace(
+      {
+        ...tuitionProposal(null),
+        facts: {
+          tuition: {
+            value: { amountMinor: 150000, currency: "EUR", period: "semester" },
+            evidence: [{ url: "https://hs.example/missing", quote: "not on any page" }],
+          },
+        },
+      },
+      false,
+    );
+    await restageForEnrichment(w);
+    const lines = await enrichRun(w);
+    expect(lines).toContain("no new facts: discard the staged revision for de-xx");
+  });
+
+  it("reports that requirements are ignored", async () => {
+    const w = await workspace(
+      {
+        ...tuitionProposal(null),
+        requirements: {
+          rules: [
+            {
+              kind: "manual_check",
+              note: "check the fees page",
+              evidence: [{ url: FEES_URL, quote: TUITION_QUOTE }],
+            },
+          ],
+        },
+      },
+      false,
+    );
+    await restageForEnrichment(w);
+    const lines = await enrichRun(w);
+    expect(lines.some((l) => l.includes("requirements ignored in enrich mode"))).toBe(true);
+    expect(at(await w.readStaged(), "requirements").rules).toEqual([]);
   });
 });

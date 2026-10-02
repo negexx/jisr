@@ -182,4 +182,78 @@ describe("applyEnrichment", () => {
     expect(String(review.todo)).toMatch(/prepared by the assistant from the quoted pages/);
     expect(review.revises).toBe(true);
   });
+
+  it("carries what the reader rejected into the audit notes", () => {
+    const next = applyEnrichment(
+      registerRecord(),
+      verified(
+        { tuition: tuitionFact },
+        { rejected: [{ fact: "durationYears", reason: "no quote was found" }] },
+      ),
+      TODAY,
+    );
+    expect(at(next, "_review").rejected).toEqual(["durationYears: no quote was found"]);
+  });
+
+  it("says when the programme page was not verified, and not when it was", () => {
+    const note =
+      "programme page not verified: facts come from pages not tied to this programme by name";
+    const without = applyEnrichment(registerRecord(), verified({ tuition: tuitionFact }), TODAY);
+    expect(String(at(without, "_review").notes)).toContain(note);
+    const withPage = applyEnrichment(
+      registerRecord(),
+      verified({ tuition: tuitionFact }, { programmePage: "https://hs.example/cs" }),
+      TODAY,
+    );
+    expect(String(at(withPage, "_review").notes ?? "")).not.toContain(note);
+  });
+
+  it("shows the competing value and its url in a conflict note", () => {
+    const valueA = { amountMinor: 100000, currency: "EUR", period: "year" };
+    const record: Rec = {
+      ...registerRecord(),
+      tuition: { value: valueA, source: "programme", info_kind: "official" },
+    };
+    const next = applyEnrichment(record, verified({ tuition: tuitionFact }), TODAY);
+    expect(String(at(next, "_review").notes)).toContain(
+      `tuition: kept the existing official value; the reader found ${JSON.stringify(tuitionFact.value)} at https://hs.example/fees`,
+    );
+  });
+
+  it("appends conflict notes to the existing notes and keeps the reader notes", () => {
+    const valueA = { amountMinor: 100000, currency: "EUR", period: "year" };
+    const record: Rec = {
+      ...registerRecord(),
+      tuition: { value: valueA, source: "programme", info_kind: "official" },
+      _review: { revises: true, notes: "earlier note" },
+    };
+    const next = applyEnrichment(
+      record,
+      verified({ tuition: tuitionFact }, { notes: "older tariff" }),
+      TODAY,
+    );
+    const notes = String(at(next, "_review").notes);
+    expect(notes.startsWith("earlier note; tuition: kept the existing official value")).toBe(true);
+    expect(notes).toContain("older tariff");
+  });
+
+  it("merges the evidence of earlier runs without duplicates", () => {
+    const earlier = { fact: "tuition", url: "https://hs.example/fees", quote: "same quote" };
+    const other = { fact: "durationYears", url: "https://hs.example/d", quote: "d" };
+    const record: Rec = {
+      ...registerRecord(),
+      _review: { revises: true, evidence: [other, earlier] },
+    };
+    const next = applyEnrichment(
+      record,
+      verified({
+        tuition: {
+          value: tuitionFact.value,
+          evidence: [{ url: earlier.url, quote: earlier.quote }],
+        },
+      }),
+      TODAY,
+    );
+    expect(at(next, "_review").evidence).toEqual([other, earlier]);
+  });
 });
