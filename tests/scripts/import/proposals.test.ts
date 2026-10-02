@@ -909,4 +909,52 @@ describe("intakes: the deadline must be stated for international applicants", ()
     );
     expect(verified.facts.intakes).toBeDefined();
   });
+
+  it("does not apply the rule to an item with only an opening date", async () => {
+    const q = "Applications open on 1 February 2027";
+    const verified = await verifyProposal(
+      ProposalSchema.parse({
+        slug: "xx-prog",
+        programmePage: null,
+        facts: {
+          intakes: {
+            value: [{ startDate: null, applicationOpens: "2027-02-01", applicationDeadline: null }],
+            evidence: [{ url: page, quote: q }],
+          },
+        },
+      }),
+      "Prog",
+      async () => q,
+    );
+    expect(verified.facts.intakes).toBeDefined();
+  });
+
+  it("rejects the whole fact when one item has a deadline without international wording", async () => {
+    const text = "Studies start on 1 September 2027. The application deadline is 1 May 2027.";
+    const verified = await verifyProposal(
+      ProposalSchema.parse({
+        slug: "xx-prog",
+        programmePage: null,
+        facts: {
+          intakes: {
+            value: [
+              { startDate: "2027-09-01", applicationOpens: null, applicationDeadline: null },
+              { startDate: null, applicationOpens: null, applicationDeadline: "2027-05-01" },
+            ],
+            evidence: [
+              { url: page, quote: "Studies start on 1 September 2027." },
+              { url: page, quote: "The application deadline is 1 May 2027." },
+            ],
+          },
+        },
+      }),
+      "Prog",
+      async () => text,
+    );
+    expect(verified.facts.intakes).toBeUndefined();
+    expect(verified.rejected).toContainEqual({
+      fact: "intakes",
+      reason: "no accepted quote says the deadline applies to international or non-EU applicants",
+    });
+  });
 });

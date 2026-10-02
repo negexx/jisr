@@ -35,6 +35,21 @@ describe("claimText", () => {
     expect(text).toContain("2027-05-01");
     expect(text).toContain("deadline");
   });
+
+  it("says the deadline is the one for an international applicant, not the start or opening dates", () => {
+    const text = claimText("intakes", [
+      {
+        startDate: "2027-09-01",
+        applicationOpens: "2027-02-01",
+        applicationDeadline: "2027-05-01",
+      },
+    ]);
+    expect(text).toContain(
+      "Application deadline for an international / non-EU applicant: 2027-05-01",
+    );
+    expect(text).toContain("start 2027-09-01");
+    expect(text).toContain("applications open 2027-02-01");
+  });
 });
 
 describe("contextAround", () => {

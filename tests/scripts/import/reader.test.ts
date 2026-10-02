@@ -784,7 +784,7 @@ describe("documents fact in the reader", () => {
 
 describe("deadline instruction", () => {
   it("tells the reader that a deadline needs a quote for international applicants", () => {
-    expect(INSTRUCTION).toMatch(/international|non-EU/);
+    expect(INSTRUCTION).toMatch(/applicationDeadline is the deadline of the NON-EU/);
     expect(INSTRUCTION).toMatch(/general deadline/i);
   });
 });

@@ -57,7 +57,9 @@ export function claimText(name: FactName, value: unknown): string {
         ...(i.applicationOpens === null ? [] : [`applications open ${i.applicationOpens}`]),
         ...(i.applicationDeadline === null
           ? []
-          : [`application deadline ${i.applicationDeadline}`]),
+          : [
+              `Application deadline for an international / non-EU applicant: ${i.applicationDeadline}`,
+            ]),
       ]);
       return `Dates for the next intake: ${parts.join("; ")}.`;
     }

@@ -166,6 +166,23 @@ describe("mentionsInternationalApplicants", () => {
     "Aanmelden voor internationale studenten uiterlijk 1 april",
     "candidats étrangers : date limite le 15 janvier",
     "Applicants from outside the EU must apply by 1 March",
+    "étudiants internationaux : date limite le 15 janvier",
+    "candidats étrangères : date limite le 15 janvier",
+    "hors de l'Union européenne : date limite le 15 janvier",
+    "étudiants extra-européens : date limite le 15 janvier",
+    "Bewerbung außerhalb der EU bis 15. Juli",
+    "Bewerbung ausserhalb der EU bis 15. Juli",
+    "Bewerbung für Nicht-EWR Staatsangehörige bis 15. Juli",
+    "Aanmelden buiten de EU/EER vóór 1 april",
+    "diploma behaald buiten Nederland: aanmelden vóór 1 april",
+    "Deadline for non-EER applicants: 1 April",
+    "Deadline for third-country nationals: 1 April",
+    "Deadline for non-European applicants: 1 April",
+    "Applicants who studied abroad must apply by 1 March",
+    "Bewerber aus dem Ausland: 15. Juli",
+    "Applicants with a degree from abroad: 1 March",
+    "Deadline for international students: 1 March",
+    "Foreign applicants: 1 March",
   ])("is true for: %s", (quote) => {
     expect(mentionsInternationalApplicants(quote)).toBe(true);
   });
@@ -175,6 +192,13 @@ describe("mentionsInternationalApplicants", () => {
     "Bewerbungsfrist: 15. Juli",
     "Meld je uiterlijk 1 mei aan via Studielink",
     "Applications for the winter semester: 2 May to 15 July 2027",
+    "International Economics and Sustainability (B.A.) no no September 15, 2026 Osnabrück",
+    "International Business: apply by 1 May 2027",
+    "Contact the International Office",
+    "Bachelor International Management",
+    "Foreign languages are taught",
+    "Teaching abroad semester",
+    "Auslandssemester im 5. Semester",
     "",
   ])("is false for: %s", (quote) => {
     expect(mentionsInternationalApplicants(quote)).toBe(false);

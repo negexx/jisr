@@ -109,11 +109,27 @@ export const mentionsTranslation = (quote: string): boolean => TRANSLATION_WORDS
 
 // A deadline is for a Moroccan (non-EU) applicant only if a quote says who it is for: the general
 // deadline of a university page may be the EU or home-student one. Words in English, German, Dutch
-// and French; over-matching ("International Office") is caught by the checker model and the audit.
-const INTERNATIONAL_WORDS =
-  /\bnon[- ]?(?:eu|eea)\b|outside (?:of )?(?:the )?(?:eu|eea|european)|international|foreign|abroad|ausl[aä]nd|drittstaat|nicht[- ]?(?:eu|eea)|niet[- ]?(?:eu|eer)|buitenland|[ée]tranger|hors (?:ue|union)/i;
+// and French. Programme and office names ("International Business", "International Office") and
+// "foreign languages" are excluded; anything that still slips through is read by the checker, which
+// is told the claim is for an international applicant, and by the audit sample.
+const INTERNATIONAL_WORDS: readonly RegExp[] = [
+  /\bnon[- ]?(?:eu\b|eea\b|eer\b|europ)/i,
+  /\bnicht[- ]?(?:eu|eea|ewr)/i,
+  /\bniet[- ]?(?:eu|eer)/i,
+  /\bextra[- ]?europ/i,
+  /outside (?:of )?(?:the )?(?:eu|eea|european)/i,
+  /au(?:ss|ß)erhalb (?:der )?(?:eu|europ)/i,
+  /buiten (?:de )?(?:eu|eer|europ|nederland)|buitenland/i,
+  /hors[- ](?:de l['’]|d['’]|de la |de |l['’])?(?:ue|union|europe)/i,
+  /third[- ]countr|drittstaat/i,
+  /internationa(?:l|ux)(?!\s+(?:business|management|economics|engineering|relations|studies|office|programmes?|programs?|classroom|school|student office)\b)/i,
+  /foreign(?!\s+languages?)/i,
+  /(?:from|obtained|studied|completed)\s+abroad/i,
+  /(?:aus dem|im) ausland\b|ausl[aä]nd(?:isch|er)/i,
+  /[ée]trang[eè]r/i,
+];
 export const mentionsInternationalApplicants = (quote: string): boolean =>
-  INTERNATIONAL_WORDS.test(quote);
+  INTERNATIONAL_WORDS.some((pattern) => pattern.test(quote));
 
 // A quote counts only if it is long enough to mean something and appears verbatim (up to
 // whitespace, case and typographic quotes) in the page text.
