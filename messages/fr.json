@@ -43,13 +43,14 @@
     "savedCount": "{count} enregistré(s)"
   },
   "footer": {
-    "privacy": "Votre profil reste sur cet appareil. Jisr n'utilise aucun cookie.",
+    "privacy": "Votre profil, vos programmes enregistrés et votre progression dans le plan restent sur cet appareil. Jisr n'utilise aucun cookie.",
+    "privacyLogs": "Comme sur tout site, notre hébergeur voit les pages que vous ouvrez. Pour afficher vos résultats et votre plan, votre navigateur télécharge aussi des fichiers de données dont le nom indique le pays de votre diplôme, des pays de destination et des domaines : ceux que vous avez choisis et ceux des programmes que vous ouvrez ou enregistrez. Vos notes, votre nationalité et les programmes de votre liste enregistrée ne sont jamais envoyés.",
     "sources": "Les données et les sources sont vérifiées à la main ; chaque fait indique sa source."
   },
   "clearData": {
     "trigger": "Effacer mes données",
     "title": "Effacer mes données ?",
-    "description": "Cela supprime votre profil et vos réponses non terminées de cet appareil uniquement.",
+    "description": "Cela supprime votre profil, vos programmes enregistrés, votre progression dans le plan et vos réponses non terminées de cet appareil uniquement.",
     "cancel": "Annuler",
     "confirm": "Effacer mes données"
   },

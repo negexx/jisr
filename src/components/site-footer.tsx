@@ -13,6 +13,7 @@ export async function SiteFooter({ locale }: { locale: AppLocale }) {
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 py-8 md:flex-row md:items-start md:justify-between md:gap-12 md:px-6">
         <div className="flex max-w-prose flex-col gap-2">
           <p className="text-base">{t("privacy")}</p>
+          <p className="text-sm text-muted-foreground">{t("privacyLogs")}</p>
           <p className="text-sm text-muted-foreground">{t("sources")}</p>
         </div>
         <div className="shrink-0">

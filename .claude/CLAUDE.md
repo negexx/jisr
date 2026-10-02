@@ -74,7 +74,7 @@ Data flow: YAML → `data:check` → `data:build` → snapshots on the CDN → t
 
 Resolved in ADR 0004: analytics, error reporting, staleness thresholds, translation storage, privacy/CNDP plan, Vercel limits. What remains is the ADR's "Before launch" checklist (verify Vercel/Sentry limits, CNDP declaration before accounts, privacy notice).
 
-Deeper notes: `.claude/docs/architecture.md` (data access boundary, no-Zod rule, JS size). Decisions: `.claude/docs/decisions/` (0002 stack, 0003 scalable solo architecture, 0004 operations/privacy/freshness, 0005 domain semantics and data rules, 0006 static program pages and 404 routing, 0007 client JS budget, proposed: needs an owner decision).
+Deeper notes: `.claude/docs/architecture.md` (data access boundary, no-Zod rule, JS size). Decisions: `.claude/docs/decisions/` (0002 stack, 0003 scalable solo architecture, 0004 operations/privacy/freshness, 0005 domain semantics and data rules, 0006 static program pages and 404 routing, 0007 client JS budget, superseded by 0008: exceeding 150 KB is accepted, the ratchet in `tests/e2e/support/js-budget.ts` is the regression guard).
 
 ## Conventions
 
