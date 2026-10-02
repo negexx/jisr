@@ -26,6 +26,9 @@ export type JsBudget = { initial: number; untilIdle: number };
 // The plan page is new: 185.4 initial, 240.6 until idle with one saved program (its view model is a
 // lazy chunk); its ratchet is that rounded up plus 3 KB. The nav prefetches /plan only when something
 // is saved, so the other pages do not pay for it. The toggle code and the tick store load on the first click, so the program page ends at 183.4 initial and 237.4 until idle, inside its old row (238).
+// 2026-10-02 (M4b): Compare. The page is new: 186.9 initial, 249.9 until idle with two saved programs
+// (its view model is a lazy chunk, like the plan's); its ratchet is that rounded up plus 3 KB. The
+// other pages grew by at most 0.3 KB until idle (My matches and the plan page carry the Compare entry points).
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/fr": { initial: 170, untilIdle: 216 },
   "/ar": { initial: 170, untilIdle: 216 },
@@ -35,6 +38,8 @@ export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/ar/matches": { initial: 192, untilIdle: 216 },
   "/fr/plan": { initial: 189, untilIdle: 244 },
   "/ar/plan": { initial: 189, untilIdle: 244 },
+  "/fr/compare": { initial: 190, untilIdle: 253 },
+  "/ar/compare": { initial: 190, untilIdle: 253 },
   "/fr/programs/xx-test-prog-ok": { initial: 184, untilIdle: 238 },
   "/ar/programs/xx-test-prog-ok": { initial: 184, untilIdle: 238 },
 };

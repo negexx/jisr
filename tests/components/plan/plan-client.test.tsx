@@ -2,8 +2,10 @@
 import { act, cleanup, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createTranslator } from "next-intl";
+import { renderToString } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
+import { PlanClient } from "@/components/plan/plan-client";
 import type { AppLocale } from "@/i18n/routing";
 import { PLAN_KEY } from "@/lib/plan/progress";
 import { profileStore } from "@/lib/profile/store";
@@ -16,6 +18,7 @@ import { forbidConsole } from "../../lib/profile/no-console";
 import { expectNoPhysicalDirection, LOCALES } from "../trust-helpers";
 import {
   catalogs,
+  PlanProviders,
   PROGRAMS,
   planEntries,
   renderPlan,
@@ -358,5 +361,67 @@ describe.each(LOCALES)("My plan: focus after Remove (%s)", (locale) => {
     await user.click(screen.getByRole("button", { name: t.program.remove }));
     await screen.findByRole("heading", { level: 2, name: t.empty.title });
     outside.remove();
+  });
+});
+
+describe.each(LOCALES)("My plan: compare entry point (%s)", (locale) => {
+  const t = catalogs[locale].plan;
+
+  it("links to the compare page when two or more programs are saved", async () => {
+    seedProfile();
+    seedSaved(PROGRAMS.ok, PROGRAMS.stale);
+    renderPlan(locale, fixture.client());
+    const link = await screen.findByRole("link", { name: t.compare.action });
+    expect(link.getAttribute("href")).toBe(`/${locale}/compare`);
+    expect(screen.queryByText(t.compare.hint)).toBeNull();
+  });
+
+  it("counts every saved item, a missing one included", async () => {
+    seedProfile();
+    seedSaved(PROGRAMS.ok, PROGRAMS.gone);
+    renderPlan(locale, fixture.client());
+    const link = await screen.findByRole("link", { name: t.compare.action });
+    expect(link.getAttribute("href")).toBe(`/${locale}/compare`);
+  });
+
+  it("shows a muted hint, not a link, with exactly one saved program", async () => {
+    seedProfile();
+    seedSaved(PROGRAMS.ok);
+    renderPlan(locale, fixture.client());
+    expect(await screen.findByText(t.compare.hint)).toBeTruthy();
+    expect(screen.queryByRole("link", { name: t.compare.action })).toBeNull();
+  });
+
+  it("shows neither with nothing saved: the empty state stands alone", async () => {
+    seedProfile();
+    renderPlan(locale, fixture.client());
+    await screen.findByRole("heading", { level: 2, name: t.empty.title });
+    expect(screen.queryByRole("link", { name: t.compare.action })).toBeNull();
+    expect(screen.queryByText(t.compare.hint)).toBeNull();
+  });
+
+  it("shows neither while the page is not hydrated yet", () => {
+    seedProfile();
+    seedSaved(PROGRAMS.ok, PROGRAMS.stale);
+    const html = renderToString(
+      <PlanProviders locale={locale}>
+        <PlanClient locale={locale} client={fixture.client()} />
+      </PlanProviders>,
+    );
+    expect(html).not.toContain(t.compare.action);
+    expect(html).not.toContain(t.compare.hint);
+  });
+
+  it("puts the entry above the switcher and below the lead, with a phone-sized tap target", async () => {
+    seedProfile();
+    seedSaved(PROGRAMS.ok, PROGRAMS.stale);
+    renderPlan(locale, fixture.client());
+    const link = await screen.findByRole("link", { name: t.compare.action });
+    const lead = screen.getByText(t.lead);
+    const switcher = screen.getByRole("navigation");
+    expect(lead.compareDocumentPosition(link) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(link.compareDocumentPosition(switcher) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(link.className).toMatch(/\bmin-h-1[12]\b/);
+    expectNoPhysicalDirection(link);
   });
 });

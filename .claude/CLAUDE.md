@@ -57,13 +57,13 @@ src/data-schema/         Zod schemas shared by scripts, domain, tests
 scripts/data/            check, build snapshots + manifest, source-change watcher
 src/domain/              PURE TS: eligibility routes, matching (✅ ⚠️ ❌), costs, checklist — no React/Next/DB/fs/network
 src/lib/snapshot/        browser client (manifest, shards, integrity, version pinning), hook, plans (incl. `shardsForPlan`), `server.ts` (server-only build-time reader)
-src/lib/{profile,saved,plan,journey,i18n}/  guest profile store + form model; saved list (`jisr.saved`) and ticked steps (`jisr.plan`) on `local-store.ts`; view models (matches, plan, reasons, page facts); domain vocabulary + `pickMessages`
+src/lib/{profile,saved,plan,journey,i18n}/  guest profile store + form model; saved list (`jisr.saved`) and ticked steps (`jisr.plan`) on `local-store.ts`; view models (matches, plan, compare + selection rules, reasons, page facts); domain vocabulary + `pickMessages`
 src/lib/format.ts clock.ts constants.ts guards.ts  Intl formatting, browser date, zod-free constants/guards
-src/app/[locale]/        pages: profile/ matches/ programs/[slug]/ plan/ (built, with Save on cards and program pages); scholarships/ compare/ (M4)
+src/app/[locale]/        pages: profile/ matches/ programs/[slug]/ plan/ compare/ (built, with Save on cards and program pages); scholarships/ (M4)
 src/app/global-not-found.tsx  the one trilingual 404 (ADR 0006)
 src/app/api/auth/[...all]/  Better Auth handler (phase 2)
 src/proxy.ts             next-intl locale routing
-src/components/          ui/ (shadcn), shell, trust primitives (SourceBadge, MatchStatusBadge…), MatchCard/CostBreakdown/ReasonList, SaveProgramButton, profile/ matches/ program/ plan/
+src/components/          ui/ (shadcn), shell, trust primitives (SourceBadge, MatchStatusBadge…), MatchCard/CostBreakdown/ReasonList, SaveProgramButton, profile/ matches/ program/ plan/ compare/
 src/lib/auth/  src/db/   Better Auth instances; Drizzle schema for user data only
 src/i18n/  messages/     next-intl config; en/fr/ar messages
 tests/                   Vitest specs mirror src/; tests/e2e/ Playwright; tests/fixtures/ synthetic data (xx-test-*)

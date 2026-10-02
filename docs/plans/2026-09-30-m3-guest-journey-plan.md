@@ -118,6 +118,8 @@ Save program (localStorage list of slug + snapshotVersion, "saved" badge); My Ap
 
 **Done in M4a (branch `feat/m4-save-and-plan`):** Save program and My Application Plan (the first two items above); the rest remain.
 
+**Done in M4b (branch `feat/m4b-compare`):** Compare (2 to 4 saved programs side by side, with the differences switch); the rest remain.
+
 ## Outcome (2026-10-01)
 
 M3 shipped on `feat/m3-guest-journey`: Home with the profile CTA, Create Profile (4 steps + review), My Matches, and statically generated program pages with client personal leaves, all in fr, en and ar, with 152 Playwright tests (phone and desktop) passing, axe at zero violations, and the privacy specs green. The architecture decisions above held; see ADR 0006 (static program pages, 404 routing) and ADR 0007 (client JS budget, proposed). Where the build differs from the plan:

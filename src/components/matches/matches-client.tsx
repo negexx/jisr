@@ -14,6 +14,7 @@ import type { SnapshotBundle, SnapshotClient } from "@/lib/snapshot/client";
 import { shardsForMatches } from "@/lib/snapshot/plan";
 import { type SnapshotRequest, useSnapshotBundle } from "@/lib/snapshot/use-snapshot";
 
+import { CompareLink } from "./compare-link";
 import { displayNumber } from "./display-number";
 import { GroupSection, groupHeadingId } from "./group-section";
 import { HiddenPrograms } from "./hidden-programs";
@@ -97,6 +98,7 @@ function Results({ view, profile, locale }: { view: OkView; profile: Profile; lo
       ) : (
         <>
           <p className="max-w-prose text-sm text-muted-foreground">{tPage("lead")}</p>
+          <CompareLink locale={locale} />
           <CountsNav view={view} locale={locale} />
         </>
       )}
