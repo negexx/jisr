@@ -25,7 +25,7 @@ export type JsBudget = { initial: number; untilIdle: number };
 // button carry it too (matches 191.9, program 184.0 initial; the old values are in the rows above).
 // The plan page is new: 185.2 initial, 240.7 until idle with one saved program (its view model is a
 // lazy chunk); its ratchet is that rounded up plus 3 KB. The nav prefetches /plan only when something
-// is saved, so the other pages do not pay for it. Program until idle (238.3) is 0.3 KB over its old row.
+// is saved, so the other pages do not pay for it. The toggle code and the tick store load on the first click, so the program page ends at 183.4 initial and 237.4 until idle, inside its old row (238).
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/fr": { initial: 170, untilIdle: 216 },
   "/ar": { initial: 170, untilIdle: 216 },
