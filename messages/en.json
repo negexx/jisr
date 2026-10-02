@@ -686,6 +686,7 @@
       "startUnknown": "Studies start: not published",
       "opensUnknown": "Applications open: not published",
       "deadlineUnknown": "Application deadline: not published, to be checked",
+      "recurring": "Application deadline: usually {date} each year (year not published, to be checked)",
       "none": "No dates are published yet, to be checked on the program page."
     },
     "procedure": {

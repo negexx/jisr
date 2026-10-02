@@ -20,15 +20,30 @@ import {
 import { E2E_SCHOLARSHIP_SLUGS, E2E_SLUGS } from "../fixtures/e2e/profiles";
 
 // The page reads public/snapshots; here it reads the fixture snapshot built into a temp dir.
-const snapshot = vi.hoisted(() => ({ dir: "", locale: "fr" }));
+const snapshot = vi.hoisted(() => ({ dir: "", locale: "fr", recurring: false }));
 
 vi.mock("@/lib/snapshot/server", async (importOriginal) => {
   const actual = await importOriginal<typeof import("@/lib/snapshot/server")>();
   return {
     ...actual,
     programStaticParams: () => actual.programStaticParams(snapshot.dir),
-    loadProgramPageData: (slug: string, locale: AppLocale) =>
-      actual.loadProgramPageData(slug, locale, snapshot.dir),
+    loadProgramPageData: async (slug: string, locale: AppLocale) => {
+      const data = await actual.loadProgramPageData(slug, locale, snapshot.dir);
+      if (data === null || !snapshot.recurring) return data;
+      // Stands in for a program whose source states its deadline without a year.
+      const intakes = {
+        ...data.program.intakes,
+        value: [
+          {
+            startDate: null,
+            applicationOpens: null,
+            applicationDeadline: null,
+            recurringDeadline: { month: 7, day: 15 },
+          },
+        ],
+      };
+      return { ...data, program: { ...data.program, intakes } };
+    },
   };
 });
 
@@ -378,6 +393,22 @@ describe.each(LOCALES)("program page server render (%s)", (locale) => {
     );
   });
 
+  it("states a recurring deadline as date-independent text, with no deadline status", async () => {
+    snapshot.recurring = true;
+    try {
+      const { document } = await renderPage(E2E_SLUGS.ok, locale);
+      const deadline = textOf(document.getElementById("deadline"));
+      expect(deadline).toContain(
+        message(locale, "program.deadline.recurring").replace("{date}", "15/07"),
+      );
+      expect(deadline).not.toContain(message(locale, "program.deadline.deadlineUnknown"));
+      expect(document.querySelector("[data-intake]")).toBeNull();
+      expect(textOf(document.body)).not.toContain(stem(locale, "domain.intake.recurring"));
+    } finally {
+      snapshot.recurring = false;
+    }
+  });
+
   it("links only to https pages or anchors on the page", async () => {
     for (const slug of SLUGS) {
       const { document } = await renderPage(slug, locale);
@@ -407,6 +438,7 @@ describe.each(LOCALES)("program page server render (%s)", (locale) => {
   it("makes no clock, freshness, deadline-status or personal claim on the server", async () => {
     const forbidden = [
       stem(locale, "domain.intake.upcoming"),
+      stem(locale, "domain.intake.recurring"),
       message(locale, "domain.intake.closed"),
       message(locale, "domain.intake.unknown"),
       message(locale, "domain.freshness.aging"),

@@ -127,6 +127,7 @@ describe("program messages: language rules", () => {
     const keys = [
       "program.header.durationUnknown",
       "program.deadline.deadlineUnknown",
+      "program.deadline.recurring",
       "program.documents.translation.unknown",
     ];
     const term = { en: "to be checked", fr: "à vérifier", ar: "يجب التحقق" } as const;

@@ -13,7 +13,7 @@ import type { IsoDate } from "@/data-schema/dates";
 import type { FactMeta, Scholarship } from "@/data-schema/resolved";
 import type { CostEstimate } from "@/domain/types";
 import type { AppLocale } from "@/i18n/routing";
-import { formatDate, formatMoney, formatMoneyRange } from "@/lib/format";
+import { formatDate, formatMoney, formatMoneyRange, formatMonthDay } from "@/lib/format";
 import { formatList, formatNumber, languageName, type Params } from "@/lib/journey/reasons";
 import { describeCoverage, describeRule } from "@/lib/journey/requirements";
 import type { ProgramPageData } from "@/lib/snapshot/server";
@@ -307,15 +307,26 @@ export function DeadlineSection({ data }: { data: ProgramPageData }) {
           <ul className="divide-y divide-border border-y border-border">
             {intakes.map((intake) => (
               <li
-                key={`${intake.startDate}|${intake.applicationOpens}|${intake.applicationDeadline}`}
+                key={`${intake.startDate}|${intake.applicationOpens}|${intake.applicationDeadline}|${
+                  intake.recurringDeadline === undefined
+                    ? null
+                    : formatMonthDay(intake.recurringDeadline)
+                }`}
                 data-testid="intake"
                 className="flex flex-col gap-1 py-3"
               >
-                <PublishedDate
-                  date={intake.applicationDeadline}
-                  known={(date) => t("deadline", { date })}
-                  unknown={t("deadlineUnknown")}
-                />
+                {intake.recurringDeadline === undefined ? (
+                  <PublishedDate
+                    date={intake.applicationDeadline}
+                    known={(date) => t("deadline", { date })}
+                    unknown={t("deadlineUnknown")}
+                  />
+                ) : (
+                  // no year is published: usual guidance, never a <time> or an upcoming date
+                  <p className="text-base">
+                    <bdi>{t("recurring", { date: formatMonthDay(intake.recurringDeadline) })}</bdi>
+                  </p>
+                )}
                 <PublishedDate
                   date={intake.applicationOpens}
                   known={(date) => t("opens", { date })}

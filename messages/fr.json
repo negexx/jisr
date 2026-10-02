@@ -686,6 +686,7 @@
       "startUnknown": "Début des études : non publié",
       "opensUnknown": "Ouverture des candidatures : non publiée",
       "deadlineUnknown": "Date limite de candidature : non publiée, à vérifier",
+      "recurring": "Date limite de candidature : en général le {date} chaque année (année non publiée, à vérifier)",
       "none": "Aucune date n'est encore publiée, à vérifier sur la page de la formation."
     },
     "procedure": {
