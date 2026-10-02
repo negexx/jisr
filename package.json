@@ -29,6 +29,7 @@
     "data:evidence": "tsx scripts/import/evidence-cli.ts",
     "data:read": "tsx scripts/import/reader.ts",
     "data:pages": "tsx scripts/import/pages.ts",
+    "data:coverage": "tsx scripts/data/coverage.ts",
     "data:inst-proposals": "tsx scripts/import/inst-proposals.ts",
     "data:fix-certificates": "tsx scripts/import/fix-certificates.ts",
     "data:bakeoff": "tsx scripts/import/bakeoff.ts",
