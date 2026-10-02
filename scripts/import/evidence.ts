@@ -73,8 +73,7 @@ export function normalizeForMatch(text: string): string {
 
 export const MIN_QUOTE_LENGTH = 15;
 
-const TRANSLATION_WORDS =
-  /translat|übersetz|uebersetz|vertaling|vertaald|traduction|traduit|beglaubigt|certified cop/i;
+const TRANSLATION_WORDS = /translat|übersetz|uebersetz|vertaling|vertaald|traduction|traduit/i;
 export const mentionsTranslation = (quote: string): boolean => TRANSLATION_WORDS.test(quote);
 
 // A quote counts only if it is long enough to mean something and appears verbatim (up to

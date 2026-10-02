@@ -309,3 +309,36 @@ describe("sampleSheet", () => {
     expect(sheet).not.toContain("**tuition**");
   });
 });
+
+describe("sampleSheet documents", () => {
+  it("shows the documents with their quotes", () => {
+    const sheet = sampleSheet([
+      {
+        key: "programs/p",
+        row: {
+          key: "programs/p",
+          batch: "b1",
+          inSample: true,
+          audited: "",
+          outcome: "",
+          notes: "",
+        },
+        record: {
+          name: "Applied CS",
+          documents: {
+            value: [{ slug: "cv", name: { fr: { text: "CV", status: "draft" } } }],
+            source: "programme",
+            info_kind: "official",
+          },
+          _review: {
+            evidence: [
+              { fact: "documents", url: "https://u.example/p", quote: "a CV and a passport" },
+            ],
+          },
+        },
+      },
+    ]);
+    expect(sheet).toContain("**documents**");
+    expect(sheet).toContain('"a CV and a passport" — https://u.example/p');
+  });
+});

@@ -12,6 +12,7 @@ import {
   checkYears,
   type FactCheck,
   mentionsTranslation,
+  normalizeForMatch,
   programmeNameMatches,
   quoteInText,
   quoteNames,
@@ -31,9 +32,12 @@ const DocumentSlug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 export const DocumentProposalSchema = z.object({
   slug: DocumentSlug,
   name: z.object({
-    fr: z.string().min(1).max(200),
-    en: z.string().min(1).max(200).optional(),
+    fr: z.string().trim().min(1).max(200),
+    en: z.string().trim().min(1).max(200).optional(),
   }),
+  // The document's name exactly as the quote writes it, in the page's own language: it ties the
+  // item to the quotes, so a document the pages never name cannot be kept.
+  quotedAs: z.string().trim().min(2).max(120),
   translationRequired: z.boolean().nullable(),
 });
 export type DocumentProposal = z.infer<typeof DocumentProposalSchema>;
@@ -248,13 +252,21 @@ export async function verifyProposal(
     }
     let value: unknown = entry.value;
     if (key === "documents") {
-      // a translation claim no accepted quote supports is unknown, not asserted
-      const supportsTranslation = accepted.some((e) => mentionsTranslation(e.quote));
-      value = (entry.value as DocumentProposal[]).map((d) =>
-        d.translationRequired === true && !supportsTranslation
-          ? { ...d, translationRequired: null }
-          : d,
+      const quotes = accepted.map((e) => normalizeForMatch(e.quote));
+      const named = (entry.value as DocumentProposal[]).filter((d) =>
+        quotes.some((q) => q.includes(normalizeForMatch(d.quotedAs))),
       );
+      // a translation claim needs a quote that names THIS document and mentions translation
+      value = named.map((d) => {
+        const own = normalizeForMatch(d.quotedAs);
+        const supported = accepted.some(
+          (e) => normalizeForMatch(e.quote).includes(own) && mentionsTranslation(e.quote),
+        );
+        return d.translationRequired === true && !supported
+          ? { ...d, translationRequired: null }
+          : d;
+      });
+      if (named.length === 0) reason = "no document is named in an accepted quote";
     }
     if (reason !== null) result.rejected.push({ fact: key, reason });
     else result.facts[key] = { value, evidence: accepted };

@@ -162,6 +162,7 @@ export function sampleSheet(
       "tuition",
       "intakes",
       "applicationChannel",
+      "documents",
       "type",
       "website",
     ]) {

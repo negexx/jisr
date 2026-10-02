@@ -293,8 +293,13 @@ describe("checker failure modes", () => {
 describe("claimText for documents", () => {
   it("names the documents and the ones that need a translation", () => {
     const docs = [
-      { slug: "cv", name: { fr: "CV", en: "CV" }, translationRequired: null },
-      { slug: "diploma", name: { fr: "Diplôme", en: "Diploma" }, translationRequired: true },
+      { slug: "cv", name: { fr: "CV", en: "CV" }, quotedAs: "CV", translationRequired: null },
+      {
+        slug: "diploma",
+        name: { fr: "Diplôme", en: "Diploma" },
+        quotedAs: "Diploma",
+        translationRequired: true,
+      },
     ];
     const text = claimText("documents", docs);
     expect(text).toContain("CV");

@@ -584,6 +584,7 @@ describe("documents fact in the reader", () => {
   const item = (slug: string, translationRequired: boolean | null) => ({
     slug,
     name: { fr: "CV" },
+    quotedAs: "CV",
     translationRequired,
   });
 
@@ -594,6 +595,18 @@ describe("documents fact in the reader", () => {
   it("turns an unverifiable translationRequired false into null", () => {
     const { proposal } = salvageProposal(withDocuments([item("cv", false)]));
     expect(proposal?.facts.documents?.value[0]?.translationRequired).toBeNull();
+  });
+
+  it("requires quotedAs in the instruction", () => {
+    expect(INSTRUCTION).toMatch(/quotedAs/);
+  });
+
+  it("turns a missing translationRequired into null instead of dropping the fact", () => {
+    const { proposal, dropped } = salvageProposal(
+      withDocuments([{ slug: "cv", name: { fr: "CV" }, quotedAs: "CV" }]),
+    );
+    expect(proposal?.facts.documents?.value[0]?.translationRequired).toBeNull();
+    expect(dropped).toEqual([]);
   });
 
   it("drops the documents fact when two items share a slug", () => {

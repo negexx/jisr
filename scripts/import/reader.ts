@@ -56,7 +56,7 @@ OUTPUT (JSON, no markdown)
     "tuition": { "value": {"amountMinor": 1465000, "currency": "EUR", "period": "year"}, "evidence": [...] },
     "intakes": { "value": [{"startDate": null, "applicationOpens": null, "applicationDeadline": "2027-05-01"}], "evidence": [...] },
     "applicationChannel": { "value": "nl-studielink", "evidence": [...] },
-    "documents": { "value": [{"slug":"school-leaving-certificate","name":{"fr":"Diplôme de fin d'études secondaires","en":"School-leaving certificate"},"translationRequired":true}], "evidence": [...] }
+    "documents": { "value": [{"slug":"school-leaving-certificate","name":{"fr":"Diplôme de fin d'études secondaires","en":"School-leaving certificate"},"quotedAs":"school-leaving certificate","translationRequired":true}], "evidence": [...] }
   },
   "requirements": { "rules": [ ... ] },
   "notes": "caveats for the human auditor, or omit"
@@ -69,7 +69,7 @@ FACT DETAILS
 - tuition: the tuition fee a student from OUTSIDE the EU/EEA pays, in minor units (EUR 14,650 = 1465000), period "year" or "semester". If the quote says there are no tuition fees for this student, amountMinor is 0 and the quote must say so; never write 0 just because you found no fee. A fee that is only for EU students, or only a general institution-wide figure that may not apply, is not stated for this programme: leave it out and say why in notes.
 - intakes: dates as ISO YYYY-MM-DD. Write a date only if the quote states day, month and YEAR; otherwise leave it out (do not infer a year). null for a date the pages do not give. Never output an intake whose three dates are all null: leave the fact out.
 - applicationChannel: exactly one of ${CHANNEL_SLUGS.join(", ")}; the quote must name the platform or route. How to choose is explained per country in the TASK at the end.
-- documents: the documents an international applicant must submit, one list item per document that the quotes name (never a document the pages do not name). slug: lowercase English kebab-case ("school-leaving-certificate"). name.fr (required) and name.en: the document's name. translationRequired: true only if a quote says that document must be translated or officially translated; otherwise null (never false). Leave the fact out if the pages give no document list.
+- documents: the documents an international applicant must submit, one list item per document that the quotes name (never a document the pages do not name). slug: lowercase English kebab-case ("school-leaving-certificate"). name.fr (required) and name.en: the document's name. quotedAs (required): the document's name EXACTLY as written in the quote, in the page's own language ("Lebenslauf", "Reisepass", "school-leaving certificate"); a document whose quotedAs is not in a quote is discarded. translationRequired: true only if a quote says that document must be translated or officially translated; otherwise null (never false). Leave the fact out if the pages give no document list.
 
 REQUIREMENTS (rules the matcher can evaluate; each needs evidence)
 - {"kind":"language_proficiency","language":"fr","minCefr":"B2"|null,"certificateRequired":true|false|null,"acceptedTests":[${TEST_SLUGS.map((s) => `"${s}"`).join(",")}],"evidence":[...]} only for a stated condition of admission, never for "recommended". Each stated level and test must appear in a quote. acceptedTests lists the tests the quote names; use [] only if the quote names none, never null.
@@ -215,11 +215,13 @@ export function salvageProposal(raw: unknown): { proposal: Proposal | null; drop
       ? (documents as Record<string, unknown>).value
       : undefined;
   if (Array.isArray(documentList)) {
-    // a negative ("no translation needed") cannot be verified from a quote: unknown instead
+    // a negative ("no translation needed") cannot be verified from a quote, and a missing answer is
+    // no answer: unknown instead
     for (const item of documentList) {
       if (typeof item === "object" && item !== null) {
         const d = item as Record<string, unknown>;
-        if (d.translationRequired === false) d.translationRequired = null;
+        if (d.translationRequired === false || d.translationRequired === undefined)
+          d.translationRequired = null;
       }
     }
   }

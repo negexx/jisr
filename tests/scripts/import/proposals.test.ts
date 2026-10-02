@@ -12,6 +12,7 @@ import {
   verifyProposal,
 } from "../../../scripts/import/proposals";
 import { READ_SOURCE } from "../../../scripts/import/staging";
+import { DocumentListSchema } from "../../../src/data-schema/records/program";
 
 const PAGE = "https://uni.example/cs";
 const FEES = "https://uni.example/fees";
@@ -613,29 +614,25 @@ describe("verifyProposal and a required certificate with no accepted tests", () 
 describe("documents fact", () => {
   const page = "https://uni.example/apply";
   const text =
-    "International applicants must submit: a certified copy of the school-leaving certificate (translation into German or English required), a CV and a passport copy.";
+    "International applicants must submit: a certified copy of the school-leaving certificate (translation into German or English required), a CV and a passport copy. Bewerber reichen eine beglaubigte Kopie des Zeugnisses ein.";
   const documentsText = async () => text;
-  const doc = (slug: string, translationRequired: boolean | null) => ({
+  const QUOTE =
+    "a certified copy of the school-leaving certificate (translation into German or English required)";
+  const doc = (
+    slug: string,
+    translationRequired: boolean | null,
+    quotedAs = "school-leaving certificate",
+  ) => ({
     slug,
     name: { fr: "Diplôme", en: "School-leaving certificate" },
+    quotedAs,
     translationRequired,
   });
-  const documentsProposal = (documents: unknown) =>
+  const documentsProposal = (documents: unknown, quote = QUOTE) =>
     ProposalSchema.parse({
       slug: "xx-prog",
       programmePage: null,
-      facts: {
-        documents: {
-          value: documents,
-          evidence: [
-            {
-              url: page,
-              quote:
-                "a certified copy of the school-leaving certificate (translation into German or English required)",
-            },
-          ],
-        },
-      },
+      facts: { documents: { value: documents, evidence: [{ url: page, quote }] } },
     });
 
   it("accepts a document list whose quote is on the page and keeps a translation claim the quote supports", async () => {
@@ -648,42 +645,100 @@ describe("documents fact", () => {
   });
 
   it("turns translationRequired true into null when no accepted quote mentions translation", async () => {
-    const noTranslation = ProposalSchema.parse({
-      slug: "xx-prog",
-      programmePage: null,
-      facts: {
-        documents: {
-          value: [doc("cv", true)],
-          evidence: [{ url: page, quote: "a CV and a passport copy" }],
-        },
-      },
-    });
-    const verified = await verifyProposal(noTranslation, "Prog", documentsText);
-    expect(verified.facts.documents?.value).toEqual([doc("cv", null)]);
+    const verified = await verifyProposal(
+      documentsProposal([doc("cv", true, "CV")], "a CV and a passport copy"),
+      "Prog",
+      documentsText,
+    );
+    expect(verified.facts.documents?.value).toEqual([doc("cv", null, "CV")]);
+  });
+
+  it("does not read a certified copy as a translation requirement", async () => {
+    const english = await verifyProposal(
+      documentsProposal(
+        [doc("school-leaving-certificate", true)],
+        "a certified copy of the school-leaving certificate",
+      ),
+      "Prog",
+      documentsText,
+    );
+    expect(english.facts.documents?.value).toEqual([doc("school-leaving-certificate", null)]);
+    const german = await verifyProposal(
+      documentsProposal(
+        [doc("zeugnis", true, "Zeugnisses")],
+        "eine beglaubigte Kopie des Zeugnisses ein",
+      ),
+      "Prog",
+      documentsText,
+    );
+    expect(german.facts.documents?.value).toEqual([doc("zeugnis", null, "Zeugnisses")]);
   });
 
   it("rejects a document list whose quote is not on the page", async () => {
-    const wrong = ProposalSchema.parse({
-      slug: "xx-prog",
-      programmePage: null,
-      facts: {
-        documents: {
-          value: [doc("cv", null)],
-          evidence: [{ url: page, quote: "a sentence that is not on the page at all" }],
-        },
-      },
-    });
-    const verified = await verifyProposal(wrong, "Prog", documentsText);
+    const verified = await verifyProposal(
+      documentsProposal([doc("cv", null, "CV")], "a sentence that is not on the page at all"),
+      "Prog",
+      documentsText,
+    );
     expect(verified.facts.documents).toBeUndefined();
     expect(verified.rejected.map((r) => r.fact)).toContain("documents");
   });
 
-  it("refuses an empty list and duplicate slugs at the schema", () => {
-    expect(() => documentsProposal([])).toThrow();
-    expect(() => documentsProposal([doc("cv", null), doc("cv", null)])).toThrow();
+  it("drops a document no accepted quote names, and the whole fact when none is named", async () => {
+    const mixed = await verifyProposal(
+      documentsProposal([
+        doc("school-leaving-certificate", null),
+        doc("birth-certificate", null, "birth certificate"),
+      ]),
+      "Prog",
+      documentsText,
+    );
+    expect(mixed.facts.documents?.value).toEqual([doc("school-leaving-certificate", null)]);
+    const none = await verifyProposal(
+      documentsProposal([doc("birth-certificate", null, "birth certificate")]),
+      "Prog",
+      documentsText,
+    );
+    expect(none.facts.documents).toBeUndefined();
+    expect(none.rejected).toContainEqual({
+      fact: "documents",
+      reason: "no document is named in an accepted quote",
+    });
   });
 
-  it("recordValue gives the record shape with draft localized names and leaves other fields alone", () => {
+  it("judges the translation claim per document", async () => {
+    const twoQuotes = ProposalSchema.parse({
+      slug: "xx-prog",
+      programmePage: null,
+      facts: {
+        documents: {
+          value: [doc("school-leaving-certificate", true), doc("cv", true, "CV")],
+          evidence: [
+            { url: page, quote: QUOTE },
+            { url: page, quote: "a CV and a passport copy" },
+          ],
+        },
+      },
+    });
+    const verified = await verifyProposal(twoQuotes, "Prog", documentsText);
+    expect(verified.facts.documents?.value).toEqual([
+      doc("school-leaving-certificate", true),
+      doc("cv", null, "CV"),
+    ]);
+  });
+
+  it("refuses an empty list and duplicate slugs at the schema", () => {
+    expect(() => documentsProposal([])).toThrow();
+    expect(() => documentsProposal([doc("cv", null, "CV"), doc("cv", null, "CV")])).toThrow();
+  });
+
+  it("requires quotedAs", () => {
+    expect(() =>
+      documentsProposal([{ slug: "cv", name: { fr: "CV" }, translationRequired: null }]),
+    ).toThrow();
+  });
+
+  it("recordValue gives the record shape (no quotedAs) with draft localized names and leaves other fields alone", () => {
     expect(recordValue("documents", [doc("cv", null)])).toEqual([
       {
         slug: "cv",
@@ -695,5 +750,10 @@ describe("documents fact", () => {
       },
     ]);
     expect(recordValue("tuition", { amountMinor: 0 })).toEqual({ amountMinor: 0 });
+  });
+
+  it("recordValue output is accepted by the record schema", () => {
+    const value = recordValue("documents", [doc("cv", true), doc("passport", null, "passport")]);
+    expect(DocumentListSchema.safeParse(value).success).toBe(true);
   });
 });
