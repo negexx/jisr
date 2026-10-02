@@ -8,3 +8,6 @@ export const INFO_KINDS = ["official", "estimate", "guidance"] as const;
 export const PROFILE_SCHEMA_VERSION = 1;
 export const DRAFT_SCHEMA_VERSION = 1;
 export const SNAPSHOT_FORMAT_VERSION = 1;
+export const SAVED_SCHEMA_VERSION = 1;
+export const PLAN_SCHEMA_VERSION = 1;
+export const MAX_SAVED_PROGRAMS = 12;
