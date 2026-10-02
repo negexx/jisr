@@ -6,7 +6,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { ClearDataButton } from "@/components/clear-data-button";
 import type { AppLocale } from "@/i18n/routing";
 import { PLAN_KEY } from "@/lib/plan/progress";
-import { setStepDone } from "@/lib/plan/store";
+import { planStore, setStepDone } from "@/lib/plan/store";
 import { DRAFT_KEY, PROFILE_KEY } from "@/lib/profile/storage";
 import { profileStore } from "@/lib/profile/store";
 import { toggleSavedProgram } from "@/lib/saved/actions";
@@ -117,6 +117,8 @@ describe("ClearDataButton with the real store", () => {
     expect(window.localStorage.getItem(DRAFT_KEY)).toBeNull();
     expect(window.localStorage.getItem(SAVED_KEY)).toBeNull();
     expect(window.localStorage.getItem(PLAN_KEY)).toBeNull();
+    const progress = planStore.getSnapshot();
+    expect(progress.status === "ready" && progress.value.done).toEqual({});
     const saved = savedStore.getSnapshot();
     expect(saved.status === "ready" && saved.value.items).toEqual([]);
     expect(window.localStorage.getItem("unrelated.key")).toBe("keep me");

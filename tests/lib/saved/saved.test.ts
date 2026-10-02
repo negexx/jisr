@@ -61,6 +61,19 @@ describe("parseSaved", () => {
   });
 });
 
+describe("parseSaved on hostile input", () => {
+  it("never throws, whatever the shape", () => {
+    for (const bad of [undefined, 1, true, {}, { schemaVersion: 1, items: [null, [], 3] }]) {
+      expect(() => parseSaved(bad)).not.toThrow();
+    }
+  });
+
+  it("ignores an own __proto__ key inside an item", () => {
+    const parsed = parseSaved(JSON.parse('{"schemaVersion":1,"items":[{"__proto__":1}]}'));
+    expect(parsed?.items).toHaveLength(0);
+  });
+});
+
 describe("pure operations", () => {
   it("adds, ignores a duplicate, refuses when full and removes", () => {
     const one = addSaved(EMPTY_SAVED, item("xx-a"));

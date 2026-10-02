@@ -17,7 +17,11 @@ function listOf(store: LocalJsonStore<SavedList>): SavedList {
 }
 
 // The single action point for saving: the analytics task hooks `program-saved` here.
-// `onRemoved` lets the caller forget what depended on the saved program (the ticked steps).
+// `onRemoved` lets the caller forget what depended on the saved program (the ticked steps); it
+// runs only when the removal was applied, so ticks are forgotten only if the program is gone.
+// A reference the parser rejects (bad slug or snapshotVersion) returns
+// `{ ok: true, saved: false, persisted: ... }` without saving anything: callers must not show
+// "removed" copy for a save that did not happen.
 export function toggleSaved(
   store: LocalJsonStore<SavedList>,
   ref: SavedRef,
@@ -28,7 +32,7 @@ export function toggleSaved(
   const list = listOf(store);
   if (isSavedSlug(list, ref.slug)) {
     const result = store.update((current) => removeSaved(current, ref.slug));
-    onRemoved(ref.slug);
+    if (result.ok) onRemoved(ref.slug);
     return { ok: true, saved: false, persisted: result.ok && result.persisted };
   }
   if (list.items.length >= MAX_SAVED_PROGRAMS) return { ok: false, reason: "full" };

@@ -2,6 +2,10 @@
 import { act, cleanup, renderHook } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
+import { PROFILE_KEY, writeProfile } from "@/lib/profile/storage";
+
+import { profile } from "../fixtures/domain/builders";
+
 beforeEach(() => window.localStorage.clear());
 afterEach(() => {
   cleanup();
@@ -11,6 +15,8 @@ afterEach(() => {
 describe("clearAllLocalData", () => {
   it("empties the profile, the saved list and the plan progress, and the hooks notice at once", async () => {
     vi.resetModules();
+    expect(writeProfile(window.localStorage, profile())).toEqual({ ok: true });
+    expect(window.localStorage.getItem(PROFILE_KEY)).not.toBeNull();
     const [{ useSaved }, { usePlanProgress }, { clearAllLocalData }] = await Promise.all([
       import("@/lib/saved/use-saved"),
       import("@/lib/plan/use-plan-progress"),
@@ -27,6 +33,7 @@ describe("clearAllLocalData", () => {
     });
     window.localStorage.setItem("unrelated", "keep");
     act(() => clearAllLocalData());
+    expect(window.localStorage.getItem(PROFILE_KEY)).toBeNull();
     expect(saved.result.current.items).toEqual([]);
     expect(progress.result.current.doneSteps("xx-a")).toEqual([]);
     expect(window.localStorage.getItem("unrelated")).toBe("keep");
