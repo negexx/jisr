@@ -15,6 +15,14 @@ import {
 } from "../../../scripts/import/search";
 
 describe("extractLinks", () => {
+  it("decodes HTML entities in an href", () => {
+    const links = extractLinks(
+      '<a href="/prog?id=3&amp;lang=en&#38;x=1">Programme</a>',
+      "https://www.uni.example/",
+    );
+    expect(links.map((l) => l.url)).toEqual(["https://www.uni.example/prog?id=3&lang=en&x=1"]);
+  });
+
   const html = `
     <a href="/en/programmes/data-science">Data Science</a>
     <a href="https://www.uni.example/en/fees#top">Tuition fees</a>

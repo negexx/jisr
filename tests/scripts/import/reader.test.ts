@@ -466,6 +466,68 @@ describe("readProgramme and the pages the model was given", () => {
   });
 });
 
+describe("readProgramme matches cited urls to the supplied ones by canonical form", () => {
+  const model = { id: "fake", wire: "chat" as const, price: { input: 0, output: 0, cached: 0 } };
+  const page = "Applied Data Science is a 4 years programme taught in English.";
+  const quoteText = "is a 4 years programme";
+  const readWith = (suppliedUrl: string, cited: string) =>
+    readProgramme({
+      ...meta,
+      model,
+      shared: [],
+      own: [{ url: suppliedUrl, text: page }],
+      session: "s",
+      getText: async (url) => {
+        if (url !== suppliedUrl) throw new Error(`verifier fetched ${url}`);
+        return page;
+      },
+      completeFn: async () =>
+        completion(
+          JSON.stringify({
+            slug: meta.slug,
+            programmePage: cited,
+            facts: { durationYears: { value: 4, evidence: [{ url: cited, quote: quoteText }] } },
+          }),
+        ),
+    });
+
+  it.each([
+    [
+      "an &amp; in the supplied url cited with &",
+      "https://u.example/p?a=1&amp;b=2",
+      "https://u.example/p?a=1&b=2",
+    ],
+    [
+      "tracking parameters in the supplied url",
+      "https://u.example/p?id=3&utm_source=x&mtm_campaign=y",
+      "https://u.example/p?id=3",
+    ],
+    ["a trailing slash", "https://u.example/p/", "https://u.example/p"],
+    ["a bare question mark and a fragment", "https://u.example/p?#top", "https://u.example/p"],
+    ["the host case", "https://U.Example/p", "https://u.example/p"],
+  ])("keeps evidence when the difference is only %s, and rewrites it to the supplied string", async (_label, suppliedUrl, cited) => {
+    const out = await readWith(suppliedUrl, cited);
+    expect(out.dropped).toEqual([]);
+    expect(out.proposal?.programmePage).toBe(suppliedUrl);
+    expect(out.proposal?.facts.durationYears?.evidence).toEqual([
+      { url: suppliedUrl, quote: quoteText },
+    ]);
+    expect(Object.keys(out.verified?.facts ?? {})).toEqual(["durationYears"]);
+  });
+
+  it.each([
+    ["another path", "https://u.example/p", "https://u.example/q"],
+    ["another host", "https://u.example/p", "https://other.example/p"],
+    ["another query parameter", "https://u.example/p?id=3", "https://u.example/p?id=4"],
+    ["another path case", "https://u.example/Programme", "https://u.example/programme"],
+  ])("still drops evidence for %s", async (_label, suppliedUrl, cited) => {
+    const out = await readWith(suppliedUrl, cited);
+    expect(out.dropped).toContain(`facts.durationYears.evidence:${cited}`);
+    expect(out.dropped).toContain("programmePage");
+    expect(out.proposal?.facts.durationYears).toBeUndefined();
+  });
+});
+
 describe("pool", () => {
   it("runs every item with the given concurrency", async () => {
     const seen: number[] = [];

@@ -6,7 +6,14 @@ import { parse } from "yaml";
 
 import { checkVerified } from "./checker";
 import { enrichProposal, type National, readNational } from "./enrich-fr";
-import { CHANNEL_SLUGS, LANGUAGE_CODES, pageText, SUBJECT_SLUGS, TEST_SLUGS } from "./evidence";
+import {
+  CHANNEL_SLUGS,
+  decodeEntities,
+  LANGUAGE_CODES,
+  pageText,
+  SUBJECT_SLUGS,
+  TEST_SLUGS,
+} from "./evidence";
 import {
   appendJsonl,
   Budget,
@@ -277,22 +284,51 @@ export type ReadInput = ProgrammeMeta & {
   completeFn?: (model: ModelSpec, input: CompleteInput) => Promise<Completion>;
 };
 
+const TRACKING_PARAM = /^(?:utm_|mtm_)|^(?:fbclid|gclid)(?:=|$)/i;
+
+// A url as the pages file and the model may each have written it: entities decoded, fragment, tracking
+// parameters, a bare "?" and a trailing "/" dropped, host lower-cased. Path case and every other
+// query parameter are kept: those can name a different page.
+export function canonicalPageKey(url: string): string {
+  let parsed: URL;
+  try {
+    parsed = new URL(decodeEntities(url));
+  } catch {
+    return url;
+  }
+  const query = parsed.search
+    .replace(/^\?/, "")
+    .split("&")
+    .filter((part) => part !== "" && !TRACKING_PARAM.test(part))
+    .join("&");
+  const pathname = parsed.pathname.replace(/\/+$/, "");
+  return `${parsed.protocol}//${parsed.host}${pathname}${query === "" ? "" : `?${query}`}`;
+}
+
 // The model could only have read the pages it was given. Evidence from any other url (a page it
 // remembers, an aggregator) is dropped before the code verifies anything, and a fact or rule left
-// with no evidence goes with it. Every drop is reported.
+// with no evidence goes with it. A url that differs from a supplied one only cosmetically (see
+// canonicalPageKey) is kept and rewritten to the supplied string, so the verifier fetches the same
+// cached text the reader saw. Every drop is reported.
 export function restrictToSuppliedPages(
   proposal: Proposal,
-  suppliedUrls: ReadonlySet<string>,
+  suppliedUrls: Iterable<string>,
   dropped: string[],
 ): Proposal {
+  const supplied = new Map<string, string>();
+  for (const url of suppliedUrls) {
+    const key = canonicalPageKey(url);
+    if (!supplied.has(key)) supplied.set(key, url);
+  }
   const keep = (
     label: string,
     evidence: readonly { url: string; quote: string }[],
   ): { url: string; quote: string }[] => {
     const kept: { url: string; quote: string }[] = [];
     for (const item of evidence) {
-      if (suppliedUrls.has(item.url)) kept.push(item);
-      else dropped.push(`${label}.evidence:${item.url}`);
+      const exact = supplied.get(canonicalPageKey(item.url));
+      if (exact === undefined) dropped.push(`${label}.evidence:${item.url}`);
+      else kept.push({ ...item, url: exact });
     }
     return kept;
   };
@@ -308,13 +344,15 @@ export function restrictToSuppliedPages(
     if (evidence.length === 0) dropped.push(`requirements.rules.${index}`);
     else rules.push({ ...rule, evidence });
   }
-  const programmePageSupplied =
-    proposal.programmePage === null || suppliedUrls.has(proposal.programmePage);
-  if (!programmePageSupplied) dropped.push("programmePage");
+  const programmePage =
+    proposal.programmePage === null
+      ? null
+      : (supplied.get(canonicalPageKey(proposal.programmePage)) ?? null);
+  if (proposal.programmePage !== null && programmePage === null) dropped.push("programmePage");
   const { requirements: _requirements, ...rest } = proposal;
   return {
     ...rest,
-    programmePage: programmePageSupplied ? proposal.programmePage : null,
+    programmePage,
     facts: facts as Proposal["facts"],
     ...(rules.length > 0 ? { requirements: { rules } } : {}),
   };
@@ -374,7 +412,7 @@ export async function readProgramme(input: ReadInput): Promise<ReadOutcome> {
   }
   const proposal = restrictToSuppliedPages(
     salvaged.proposal,
-    new Set([...input.shared, ...input.own].map((page) => page.url)),
+    [...input.shared, ...input.own].map((page) => page.url),
     salvaged.dropped,
   );
   const verified = await verifyProposal(proposal, input.name, input.getText);

@@ -1,4 +1,4 @@
-import { htmlToText, normalizeForMatch, programmeNameMatches } from "./evidence";
+import { decodeEntities, htmlToText, normalizeForMatch, programmeNameMatches } from "./evidence";
 import { fetchText } from "./http";
 import type { QueryBudget, SearchHit, SearchProvider } from "./search";
 
@@ -16,7 +16,7 @@ export function extractLinks(html: string, base: string): Link[] {
   for (const match of html.matchAll(
     /<a\b[^>]*?href\s*=\s*(?:"([^"]*)"|'([^']*)')[^>]*>([\s\S]*?)<\/a>/gi,
   )) {
-    const href = (match[1] ?? match[2] ?? "").trim();
+    const href = decodeEntities(match[1] ?? match[2] ?? "").trim();
     if (href === "" || /^(mailto|tel|javascript|data):/i.test(href)) continue;
     let url: URL;
     try {
