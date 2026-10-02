@@ -91,3 +91,11 @@ export async function planEntries(
 export function stepTitle(locale: AppLocale, id: PlanProgram["steps"][number]["id"]): string {
   return catalogs[locale].domain.checklist.step[id].title;
 }
+
+// A missing fixture program must fail the test loudly, never turn into an empty name that matches
+// nothing (or everything).
+export function requireProgram(programs: readonly PlanProgram[], index = 0): PlanProgram {
+  const program = programs[index];
+  if (program === undefined) throw new Error(`the fixture has no plan program at index ${index}`);
+  return program;
+}

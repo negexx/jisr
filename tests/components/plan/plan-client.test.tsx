@@ -19,6 +19,7 @@ import {
   PROGRAMS,
   planEntries,
   renderPlan,
+  requireProgram,
   seedProfile,
   seedSaved,
   stepTitle,
@@ -122,7 +123,7 @@ describe.each(LOCALES)("My plan: states (%s)", (locale) => {
     expect(alert.textContent).not.toMatch(/SnapshotError|network|stack/i);
     await user.click(screen.getByRole("button", { name: t.error.retry }));
     const { programs } = await planEntries(real, locale, [PROGRAMS.ok]);
-    expect(await programHeading(programs[0]?.name ?? "")).toBeTruthy();
+    expect(await programHeading(requireProgram(programs).name)).toBeTruthy();
     expect(load).toHaveBeenCalledTimes(2);
     expect(screen.queryByRole("alert")).toBeNull();
   });
@@ -140,7 +141,7 @@ describe.each(LOCALES)("My plan: states (%s)", (locale) => {
     renderPlan(locale, fixture.client());
     expect(await screen.findByText(t.storage.notice, { normalizer: (text) => text })).toBeTruthy();
     const { programs } = await planEntries(fixture.client(), locale, [PROGRAMS.ok]);
-    expect(await programHeading(programs[0]?.name ?? "")).toBeTruthy();
+    expect(await programHeading(requireProgram(programs).name)).toBeTruthy();
   });
 
   it("shows no storage notice when the device keeps the list", async () => {
@@ -148,7 +149,7 @@ describe.each(LOCALES)("My plan: states (%s)", (locale) => {
     seedSaved(PROGRAMS.ok);
     renderPlan(locale, fixture.client());
     const { programs } = await planEntries(fixture.client(), locale, [PROGRAMS.ok]);
-    await programHeading(programs[0]?.name ?? "");
+    await programHeading(requireProgram(programs).name);
     expect(screen.queryByText(t.storage.notice, { normalizer: (text) => text })).toBeNull();
   });
 });
@@ -199,7 +200,7 @@ describe.each(LOCALES)("My plan: a saved program (%s)", (locale) => {
     ]);
     const foundation = programs.find((p) => p.slug === PROGRAMS.foundation.slug);
     if (foundation === undefined) throw new Error("the destination XC program must be in the data");
-    await programHeading(programs[0]?.name ?? "");
+    await programHeading(requireProgram(programs).name);
 
     const nav = screen.getByRole("navigation", { name: t.switcher.label });
     // Exactly one saved slug is absent from the loaded shards: the one that is not in the data.
@@ -232,7 +233,7 @@ describe.each(LOCALES)("My plan: a saved program (%s)", (locale) => {
     await waitFor(() => expect(storedSlugs()).toEqual([PROGRAMS.ok.slug]));
     expect(storedDone()).toEqual({ [PROGRAMS.ok.slug]: ["documents"] });
     const { programs } = await planEntries(fixture.client(), locale, [PROGRAMS.ok]);
-    expect(await programHeading(programs[0]?.name ?? "")).toBeTruthy();
+    expect(await programHeading(requireProgram(programs).name)).toBeTruthy();
   });
 });
 

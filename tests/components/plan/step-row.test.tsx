@@ -8,7 +8,7 @@ import { SkippedSteps } from "@/components/plan/skipped-steps";
 import { StepRow } from "@/components/plan/step-row";
 import type { AppLocale } from "@/i18n/routing";
 import type { PlanProgram, PlanStep } from "@/lib/journey/plan-view";
-import { E2E_NOW, E2E_SCHOLARSHIP_SLUGS } from "../../fixtures/e2e/profiles";
+import { E2E_SCHOLARSHIP_SLUGS } from "../../fixtures/e2e/profiles";
 import { forbidConsole } from "../../lib/profile/no-console";
 import { expectNoPhysicalDirection, LOCALES } from "../trust-helpers";
 import {
@@ -46,9 +46,9 @@ function step(program: PlanProgram, id: PlanStep["id"]): PlanStep {
 function renderRow(
   locale: AppLocale,
   id: PlanStep["id"],
-  options: { done?: boolean; onToggle?: (done: boolean) => void } = {},
+  options: { done?: boolean; onToggle?: (done: boolean) => void; program?: PlanProgram } = {},
 ) {
-  const program = entries[locale];
+  const program = options.program ?? entries[locale];
   const view = render(
     <PlanProviders locale={locale}>
       <ol>
@@ -138,6 +138,28 @@ describe.each(LOCALES)("StepRow (%s)", (locale) => {
     expect(row.textContent).not.toMatch(/[٠-٩۰-۹]/u);
   });
 
+  it("says the intake is closed on the submit step, with no deadline shown", () => {
+    const base = entries[locale];
+    if (base.intake.fact === null) throw new Error("the ok program has an intake fact");
+    const program: PlanProgram = { ...base, intake: { kind: "closed", fact: base.intake.fact } };
+    const { row } = renderRow(locale, "submit", { program });
+    const status = row.querySelector('[data-intake="closed"]');
+    expect(status?.textContent).toContain(t.domain.intake.closed);
+    expect(status?.querySelector("p time")).toBeNull();
+    expect(row.textContent).not.toContain("15/01/2027");
+    expect(row.querySelector('[data-intake="upcoming"]')).toBeNull();
+  });
+
+  it("says the deadline is unknown on the submit step, with no date or verified badge for it", () => {
+    const program: PlanProgram = { ...entries[locale], intake: { kind: "unknown", fact: null } };
+    const { row } = renderRow(locale, "submit", { program });
+    const status = row.querySelector('[data-intake="unknown"]');
+    expect(status?.textContent).toContain(t.domain.intake.unknown);
+    expect(status?.querySelector("time")).toBeNull();
+    expect(status?.querySelector('[data-slot="source-badge"]')).toBeNull();
+    expect(row.textContent).not.toContain("15/01/2027");
+  });
+
   it("links the application channel on the submit and account steps, with the account line", () => {
     for (const id of ["submit", "application_account"] as const) {
       const { row, unmount } = renderRow(locale, id);
@@ -207,6 +229,31 @@ describe.each(LOCALES)("SkippedSteps (%s)", (locale) => {
     }
     expectNoPhysicalDirection(container);
   });
-});
 
-void E2E_NOW;
+  it("shows no guidance tag on a skipped row without facts, whose reason is about this program", () => {
+    const noFacts: PlanStep = {
+      id: "scholarships",
+      status: "skipped",
+      reason: "no_scholarships_listed",
+      facts: [],
+      deadline: null,
+      channel: null,
+      scholarships: [],
+    };
+    const withFacts = entries[locale].steps.find(
+      (s) => s.status === "skipped" && s.facts.length > 0,
+    );
+    const { container } = render(
+      <PlanProviders locale={locale}>
+        <SkippedSteps steps={withFacts === undefined ? [noFacts] : [noFacts, withFacts]} />
+      </PlanProviders>,
+    );
+    const rows = container.querySelectorAll<HTMLElement>("li[data-step]");
+    const bare = container.querySelector<HTMLElement>('li[data-step="scholarships"]');
+    expect(bare?.textContent).toContain(catalogs[locale].domain.checklist.reason.no_scholarships_listed);
+    expect(within(bare as HTMLElement).queryByText(t.steps.guidance)).toBeNull();
+    expect(bare?.querySelector('[data-slot="guidance-tag"]')).toBeNull();
+    expect(bare?.querySelector('[data-slot="source-badge"]')).toBeNull();
+    for (const row of rows) expect(row.querySelector('[data-slot="guidance-tag"]')).toBeNull();
+  });
+});

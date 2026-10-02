@@ -34,7 +34,9 @@ export function SkippedSteps({ steps }: { steps: readonly PlanStep[] }) {
             >
               <p className="text-base font-medium">{tDomain(`step.${step.id}.title`)}</p>
               <p className="text-sm text-muted-foreground">{tDomain(`reason.${step.reason}`)}</p>
-              <StepSources facts={step.facts} />
+              {/* No facts: the reason above is itself a statement about this program's data, so the
+                  "general guidance" tag would contradict it. */}
+              <StepSources facts={step.facts} covered />
             </li>
           ))}
         </ul>
