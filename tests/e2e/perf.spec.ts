@@ -9,6 +9,7 @@ import { expect, test } from "./support/fixtures";
 import { ADR_TARGET_KB, JS_BUDGET_KB } from "./support/js-budget";
 import { E2E_LOCALES, type E2eLocale } from "./support/locales";
 import { card } from "./support/matches";
+import { planHeading, savedItem, seedSaved } from "./support/plan";
 import { ProfileFormDriver } from "./support/profile-form";
 import { seedProfile } from "./support/seed";
 
@@ -25,6 +26,8 @@ type PageCase = {
   name: string;
   route: (locale: E2eLocale) => string;
   seeded: boolean;
+  // A saved program is in storage too (the plan page has nothing to show without one).
+  saved?: boolean;
   ready: (page: Page, locale: E2eLocale) => Promise<void>;
   // Link targets the page must not prefetch (matched against the pathname of `_rsc` fetches).
   notPrefetched?: RegExp;
@@ -65,6 +68,15 @@ const PAGES: readonly PageCase[] = [
         "data-group",
         "ok",
       );
+    },
+  },
+  {
+    name: "plan",
+    route: (locale) => `/${locale}/plan`,
+    seeded: true,
+    saved: true,
+    ready: async (page) => {
+      await expect(planHeading(page)).toBeVisible();
     },
   },
 ];
@@ -109,6 +121,7 @@ test.describe("JavaScript per page (ratchet, not the ADR target)", () => {
 
       test(`${route}`, async ({ page }, testInfo) => {
         if (pageCase.seeded) await seedProfile(page, E2E_PROFILE);
+        if (pageCase.saved) await seedSaved(page, [savedItem(E2E_SLUGS.ok)]);
 
         const scriptResponses: Response[] = [];
         const rscResponses: Response[] = [];

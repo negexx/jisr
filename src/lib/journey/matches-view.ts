@@ -23,6 +23,9 @@ export type MatchGroup = (typeof MATCH_GROUPS)[number];
 
 export type MatchCardModel = {
   slug: string;
+  country: string;
+  field: string;
+  snapshotVersion: string;
   name: string; // official, untranslated
   institutionName: string;
   institutionWebsite: string | null; // null: not found yet, the card says nothing rather than guess
@@ -158,7 +161,7 @@ function factId(fact: FactRef): string {
   return `${fact.record}#${fact.path}`;
 }
 
-function uniqueFacts(facts: ReadonlyArray<FactRef | null>): FactRef[] {
+export function uniqueFacts(facts: ReadonlyArray<FactRef | null>): FactRef[] {
   const seen = new Set<string>();
   const unique: FactRef[] = [];
   for (const fact of facts) {
@@ -201,6 +204,9 @@ function cardFor(input: CardInput): MatchCardModel {
 
   return {
     slug: program.slug,
+    country: program.country,
+    field: program.field,
+    snapshotVersion: bundle.snapshotVersion,
     name: program.name,
     institutionName: institution?.name ?? program.institution,
     institutionWebsite: institution?.website ?? null,

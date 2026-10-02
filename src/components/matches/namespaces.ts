@@ -10,4 +10,5 @@ export const MATCHES_MESSAGE_NAMESPACES = [
   "matchStatusBadge",
   "externalLink",
   "domain",
+  "savedProgram",
 ] as const;

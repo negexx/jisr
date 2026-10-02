@@ -56,21 +56,21 @@ content/<locale>/        long-form guides (MDX) with the same provenance frontma
 src/data-schema/         Zod schemas shared by scripts, domain, tests
 scripts/data/            check, build snapshots + manifest, source-change watcher
 src/domain/              PURE TS: eligibility routes, matching (✅ ⚠️ ❌), costs, checklist — no React/Next/DB/fs/network
-src/lib/snapshot/        browser client (manifest, shards, integrity, version pinning), hook, plans, `server.ts` (server-only build-time reader)
-src/lib/{profile,journey,i18n}/  guest profile store + form model; view models (matches, reasons, page facts); domain vocabulary + `pickMessages`
+src/lib/snapshot/        browser client (manifest, shards, integrity, version pinning), hook, plans (incl. `shardsForPlan`), `server.ts` (server-only build-time reader)
+src/lib/{profile,saved,plan,journey,i18n}/  guest profile store + form model; saved list (`jisr.saved`) and ticked steps (`jisr.plan`) on `local-store.ts`; view models (matches, plan, reasons, page facts); domain vocabulary + `pickMessages`
 src/lib/format.ts clock.ts constants.ts guards.ts  Intl formatting, browser date, zod-free constants/guards
-src/app/[locale]/        pages: profile/ matches/ programs/[slug]/ (built); scholarships/ compare/ plan/ (M4)
+src/app/[locale]/        pages: profile/ matches/ programs/[slug]/ plan/ (built, with Save on cards and program pages); scholarships/ compare/ (M4)
 src/app/global-not-found.tsx  the one trilingual 404 (ADR 0006)
 src/app/api/auth/[...all]/  Better Auth handler (phase 2)
 src/proxy.ts             next-intl locale routing
-src/components/          ui/ (shadcn), shell, trust primitives (SourceBadge, MatchStatusBadge…), MatchCard/CostBreakdown/ReasonList, profile/ matches/ program/
+src/components/          ui/ (shadcn), shell, trust primitives (SourceBadge, MatchStatusBadge…), MatchCard/CostBreakdown/ReasonList, SaveProgramButton, profile/ matches/ program/ plan/
 src/lib/auth/  src/db/   Better Auth instances; Drizzle schema for user data only
 src/i18n/  messages/     next-intl config; en/fr/ar messages
 tests/                   Vitest specs mirror src/; tests/e2e/ Playwright; tests/fixtures/ synthetic data (xx-test-*)
 scripts/                 data/, e2e/ (fixture build), perf/ (first-load JS)
 ```
 
-Data flow: YAML → `data:check` → `data:build` → snapshots on the CDN → the browser runs `src/domain` on the snapshot → results. Guest profile lives in localStorage; accounts (phase 2) persist profile, saved programs, checklist progress and feedback in Postgres, referencing program slug + snapshot version. Eligibility is origin-agnostic: `(origin credential country, type) → (destination, level)` routes first, program rules second; Morocco/Bac is only the first origin.
+Data flow: YAML → `data:check` → `data:build` → snapshots on the CDN → the browser runs `src/domain` on the snapshot → results. Guest profile, saved list and ticked steps live in localStorage (`jisr.profile`, `jisr.saved`, `jisr.plan`; Clear my data empties them all); accounts (phase 2) persist profile, saved programs, checklist progress and feedback in Postgres, referencing program slug + snapshot version. Eligibility is origin-agnostic: `(origin credential country, type) → (destination, level)` routes first, program rules second; Morocco/Bac is only the first origin.
 
 Resolved in ADR 0004: analytics, error reporting, staleness thresholds, translation storage, privacy/CNDP plan, Vercel limits. What remains is the ADR's "Before launch" checklist (verify Vercel/Sentry limits, CNDP declaration before accounts, privacy notice).
 

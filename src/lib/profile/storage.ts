@@ -1,13 +1,13 @@
 import type { Profile } from "@/data-schema/profile";
 import { PROFILE_SCHEMA_VERSION } from "@/lib/constants";
+import { getLocalStorage, KEY_PREFIX, removeQuietly, type StorageLike } from "@/lib/local-storage";
 
 import { parseProfile } from "./validate";
 
-export const KEY_PREFIX = "jisr.";
+export { getLocalStorage, KEY_PREFIX, removeQuietly, type StorageLike };
+
 export const PROFILE_KEY = "jisr.profile";
 export const DRAFT_KEY = "jisr.profile-draft";
-
-export type StorageLike = Pick<Storage, "getItem" | "setItem" | "removeItem" | "key" | "length">;
 
 export type ResetReason = "invalid" | "unsupported_version";
 export type StoredProfile =
@@ -67,14 +67,6 @@ export function decodeProfile(raw: string | null): StoredProfile {
     : { status: "reset", reason: migrated.reason };
 }
 
-export function removeQuietly(storage: StorageLike, key: string): void {
-  try {
-    storage.removeItem(key);
-  } catch {
-    // Blocked storage: nothing was stored that we could remove.
-  }
-}
-
 // App code must go through the store (save/clear), not call this directly: a same-tab write fires
 // no `storage` event, so a direct write would leave the store's cached snapshot stale.
 export function readProfile(storage: StorageLike): StoredProfile {
@@ -115,12 +107,4 @@ export function clearLocalData(storage: StorageLike): void {
     return;
   }
   for (const key of keys) removeQuietly(storage, key);
-}
-
-export function getLocalStorage(): StorageLike | null {
-  try {
-    return typeof window === "undefined" ? null : window.localStorage;
-  } catch {
-    return null;
-  }
 }

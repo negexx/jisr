@@ -49,6 +49,7 @@ export function shellProps(locale: AppLocale) {
       items: [
         { href: "/profile", label: nav.profile },
         { href: "/matches", label: nav.matches },
+        { href: "/plan", label: nav.plan, savedCount: { template: nav.savedCount } },
       ],
     },
     clearData: { ...clearData },

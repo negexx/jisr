@@ -234,6 +234,25 @@ describe.each(LOCALES)("program page server render (%s)", (locale) => {
     });
   });
 
+  it("puts only an inert save placeholder in the header, nothing about saved state", async () => {
+    for (const slug of SLUGS) {
+      const { document } = await renderPage(slug, locale);
+      const placeholders = document.querySelectorAll('header [data-slot="save-placeholder"]');
+      expect(placeholders, slug).toHaveLength(1);
+      expect(placeholders[0]?.getAttribute("aria-hidden")).toBe("true");
+      expect(document.querySelector("header button")).toBeNull();
+      // Scoped to the header: the same words may legitimately appear elsewhere on the page.
+      const header = document.querySelector("header");
+      if (header === null) throw new Error(`no header for ${slug}`);
+      expect(header.innerHTML).not.toContain("aria-pressed");
+      for (const key of ["save", "saved", "announceSaved", "announceRemoved", "full", "failed"]) {
+        const literal = message(locale, `savedProgram.${key}`).split("{")[0] ?? "";
+        expect(literal.length, key).toBeGreaterThan(0);
+        expect(header.textContent, key).not.toContain(literal);
+      }
+    }
+  });
+
   it("shows the coverage notice only for partial programs", async () => {
     for (const slug of [E2E_SLUGS.check, E2E_SLUGS.foundation]) {
       const { document } = await renderPage(slug, locale);

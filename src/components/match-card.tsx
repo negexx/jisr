@@ -15,8 +15,10 @@ import { ExternalLink, sourceHostname } from "./external-link";
 import { LocalizedDataText } from "./localized-data-text";
 import { MatchStatusBadge } from "./match-status-badge";
 import { ReasonList } from "./reason-list";
+import { SaveProgramButton } from "./save-program-button";
 import { SourceBadge } from "./source-badge";
 import { buttonVariants } from "./ui/button";
+import { useSaveCopy } from "./use-save-copy";
 
 function Fact({
   label,
@@ -65,6 +67,7 @@ export function MatchCard({
   const t = useTranslations("matchCard");
   const tCost = useTranslations("domain.cost");
   const tRoute = useTranslations();
+  const saveCopy = useSaveCopy();
   const titleId = `${useId()}-title`;
   // Its links are not prefetched: a list of cards would fetch every program page's payload and the
   // program chunks on the student's mobile data, for pages they may never open.
@@ -218,17 +221,25 @@ export function MatchCard({
         />
       </div>
 
-      <Link
-        href={href}
-        prefetch={false}
-        className={buttonVariants({ variant: "outline", className: "w-fit" })}
-      >
-        {t("seeDetails")}
-        <span className="sr-only">
-          <bdi>{model.name}</bdi>
-        </span>
-        <ChevronRight aria-hidden="true" className="rtl:rotate-180" />
-      </Link>
+      <div className="flex flex-wrap items-start gap-3">
+        <Link
+          href={href}
+          prefetch={false}
+          className={buttonVariants({ variant: "outline", className: "w-fit" })}
+        >
+          {t("seeDetails")}
+          <span className="sr-only">
+            <bdi>{model.name}</bdi>
+          </span>
+          <ChevronRight aria-hidden="true" className="rtl:rotate-180" />
+        </Link>
+        <SaveProgramButton
+          program={{ slug: model.slug, country: model.country, field: model.field }}
+          snapshotVersion={model.snapshotVersion}
+          programName={model.name}
+          copy={saveCopy}
+        />
+      </div>
     </article>
   );
 }

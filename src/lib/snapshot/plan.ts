@@ -52,3 +52,21 @@ export function shardsForProgram(
     ...destinationShards(program.country),
   ]);
 }
+
+// The shards the plan page needs for the saved programs: the same set `shardsForProgram` builds
+// for one program, unioned. A program shard the manifest no longer lists is simply absent, and
+// the page then shows that saved program as "no longer in our data".
+export function shardsForPlan(
+  items: ReadonlyArray<{ country: CountryCode; field: Slug }>,
+  credentialCountry: CountryCode,
+  manifest: Manifest,
+): ShardPlan {
+  return present(manifest, [
+    shardNames.core(),
+    shardNames.routes(credentialCountry),
+    ...items.flatMap((item) => [
+      shardNames.programs(item.country, item.field),
+      ...destinationShards(item.country),
+    ]),
+  ]);
+}

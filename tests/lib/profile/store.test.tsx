@@ -557,7 +557,7 @@ describe("useProfile", () => {
   });
 
   it("updates subscribers on save and on clear", async () => {
-    const { useProfile } = await loadHookModules();
+    const { useProfile, profileStore } = await loadHookModules();
     const { result } = renderHook(() => useProfile());
     expect(result.current.state.status).toBe("none");
     act(() => {
@@ -565,7 +565,7 @@ describe("useProfile", () => {
     });
     expect(result.current.state.status).toBe("ok");
     expect(window.localStorage.getItem(PROFILE_KEY)).not.toBeNull();
-    act(() => result.current.clear());
+    act(() => profileStore.clear());
     expect(result.current.state.status).toBe("none");
     expect(window.localStorage.getItem(PROFILE_KEY)).toBeNull();
   });

@@ -243,6 +243,15 @@ describe("buildMatchesView on the e2e fixture", () => {
     expect(card(budget, E2E_SLUGS.foundation).cost.budgetFit).toBe("unknown");
   });
 
+  it("each card carries its country, field and the bundle's snapshot version (the save button needs them)", () => {
+    const view = viewFor(E2E_PROFILE);
+    const c = card(view, E2E_SLUGS.ok);
+    const program = programOf(frBundle, E2E_SLUGS.ok);
+    expect(c.country).toBe(program.country);
+    expect(c.field).toBe(program.field);
+    expect(c.snapshotVersion).toBe(frBundle.snapshotVersion);
+  });
+
   it("builds the ok program card from the program, institution, channel and text", () => {
     const view = viewFor(E2E_PROFILE);
     const ok = card(view, E2E_SLUGS.ok);
