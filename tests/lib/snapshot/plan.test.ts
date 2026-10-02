@@ -1,6 +1,11 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import type { Manifest } from "@/data-schema/snapshot";
-import { shardsForMatches, shardsForProfileForm, shardsForProgram } from "@/lib/snapshot/plan";
+import {
+  shardsForMatches,
+  shardsForPlan,
+  shardsForProfileForm,
+  shardsForProgram,
+} from "@/lib/snapshot/plan";
 
 import { E2E_PROFILE, E2E_PROFILE_XB_ONLY } from "../../fixtures/e2e/profiles";
 import { buildSnapshot, E2E_DATA_DIR, readManifest, removeTempDirs } from "./fixture";
@@ -104,5 +109,31 @@ describe("shardsForProgram", () => {
         "scholarships.XB",
       ]),
     );
+  });
+});
+
+describe("shardsForPlan", () => {
+  it("unions core, routes and each saved program's shard and destination shards, skipping what the manifest lacks", () => {
+    const plan = shardsForPlan(
+      [
+        { country: "XB", field: "xx-test-field-cs" },
+        { country: "XB", field: "xx-test-field-cs" },
+        { country: "XB", field: "xx-gone" },
+      ],
+      "XA",
+      manifest,
+    );
+    expect(plan.structural).toEqual(
+      expect.arrayContaining([
+        "core",
+        "routes.XA",
+        "programs.XB.xx-test-field-cs",
+        "institutions.XB",
+        "costs.XB",
+        "scholarships.XB",
+      ]),
+    );
+    expect(plan.structural).not.toContain("programs.XB.xx-gone");
+    expect(new Set(plan.structural).size).toBe(plan.structural.length);
   });
 });
