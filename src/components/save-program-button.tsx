@@ -4,6 +4,7 @@ import { Bookmark } from "lucide-react";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { MAX_SAVED_PROGRAMS } from "@/lib/constants";
 import { useSaved } from "@/lib/saved/use-saved";
 
 // Every string is a prop: the button sits on the program page header (a server component under a
@@ -30,9 +31,11 @@ export function SaveProgramButton({
   programName: string;
   copy: SaveCopy;
 }) {
-  const { hydrated, isSaved, toggle } = useSaved();
+  const { hydrated, items, isSaved, toggle } = useSaved();
   const [message, setMessage] = useState<string | null>(null);
-  const [full, setFull] = useState(false);
+  // How many times a save was refused because the list is full (0: none since the last success).
+  // The count keys the alert, so each refusal inserts a fresh one and is announced again.
+  const [refusals, setRefusals] = useState(0);
 
   if (!hydrated) {
     return (
@@ -41,15 +44,23 @@ export function SaveProgramButton({
   }
 
   const saved = isSaved(program.slug);
+  // The complaint is only true while the list is still full and this program is not on it.
+  const stillFull = !saved && items.length >= MAX_SAVED_PROGRAMS;
+  if (refusals > 0 && !stillFull) {
+    // Adjusting state during render: forget the refusal as soon as it stops being true, so it does
+    // not come back if the list fills up again later.
+    setRefusals(0);
+  }
+  const showFull = refusals > 0 && stillFull;
 
   function onClick() {
     const result = toggle(program, snapshotVersion);
     if (!result.ok) {
-      setFull(true);
+      setRefusals((count) => count + 1);
       setMessage(null);
       return;
     }
-    setFull(false);
+    setRefusals(0);
     setMessage(result.saved ? copy.announceSaved : copy.announceRemoved);
   }
 
@@ -66,8 +77,8 @@ export function SaveProgramButton({
       </Button>
       {/* One polite region for the life of the button: only its text changes, so it is announced. */}
       <output className="sr-only">{message}</output>
-      {full ? (
-        <p role="alert" className="max-w-prose text-sm text-muted-foreground">
+      {showFull ? (
+        <p key={refusals} role="alert" className="max-w-prose text-sm text-muted-foreground">
           {copy.full}
         </p>
       ) : null}

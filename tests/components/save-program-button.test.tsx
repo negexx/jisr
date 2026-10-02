@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { cleanup, screen, within } from "@testing-library/react";
+import { act, cleanup, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { renderToString } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
@@ -7,7 +7,9 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { SaveProgramButton } from "@/components/save-program-button";
 import type { AppLocale } from "@/i18n/routing";
 import { MAX_SAVED_PROGRAMS } from "@/lib/constants";
+import { removeFromPlan } from "@/lib/saved/actions";
 import { SAVED_KEY } from "@/lib/saved/saved";
+import { savedStore } from "@/lib/saved/store";
 
 import { renderIntl } from "./intl";
 import { catalogs, LOCALES } from "./trust-helpers";
@@ -17,10 +19,14 @@ const PROGRAM = { slug: "xx-test-cs", country: "FR", field: "computer-science" }
 const NAME = "Licence Informatique";
 const ARABIC_INDIC_DIGIT = /[٠-٩۰-۹]/u;
 
-beforeEach(() => window.localStorage.clear());
+beforeEach(() => {
+  window.localStorage.clear();
+  savedStore.reload();
+});
 afterEach(() => {
   cleanup();
   window.localStorage.clear();
+  savedStore.reload();
 });
 
 function copyOf(locale: AppLocale) {
@@ -126,6 +132,62 @@ describe.each(LOCALES)("SaveProgramButton (%s)", (locale) => {
     expect(storedItems().some((item) => item.slug === PROGRAM.slug)).toBe(false);
     expect(storedItems()).toHaveLength(MAX_SAVED_PROGRAMS);
     expect(screen.getByRole("status").textContent).toBe("");
+  });
+
+  it("announces the full list again on every click, as a fresh alert", async () => {
+    const user = userEvent.setup();
+    seedOthers(MAX_SAVED_PROGRAMS);
+    renderIntl(button(locale), locale);
+    const control = () => screen.getByRole("button", { name: `${copy.save} ${NAME}` });
+    await user.click(control());
+    const first = screen.getByRole("alert");
+    await user.click(control());
+    const second = screen.getByRole("alert");
+    // Same text in the same node is not announced twice: each click must insert a new alert.
+    expect(second).not.toBe(first);
+    expect(first.isConnected).toBe(false);
+    expect(second.textContent).toBe(copy.full);
+    expect(screen.getAllByRole("alert")).toHaveLength(1);
+  });
+
+  it("drops the full alert once the list has room again", async () => {
+    const user = userEvent.setup();
+    seedOthers(MAX_SAVED_PROGRAMS);
+    renderIntl(button(locale), locale);
+    await user.click(screen.getByRole("button", { name: `${copy.save} ${NAME}` }));
+    expect(screen.getByRole("alert")).toBeTruthy();
+    act(() => removeFromPlan("xx-other-0"));
+    expect(screen.queryByRole("alert")).toBeNull();
+    // Full again: the old complaint must not come back by itself.
+    act(() => {
+      window.localStorage.setItem(
+        SAVED_KEY,
+        JSON.stringify({
+          schemaVersion: 1,
+          items: Array.from({ length: MAX_SAVED_PROGRAMS }, (_, index) => ({
+            slug: `xx-other-${index}`,
+            country: "DE",
+            field: "engineering",
+            snapshotVersion: VERSION,
+            savedAt: "2026-01-01",
+          })),
+        }),
+      );
+      savedStore.reload();
+    });
+    expect(screen.queryByRole("alert")).toBeNull();
+  });
+
+  it("clears the alert when a toggle succeeds", async () => {
+    const user = userEvent.setup();
+    seedOthers(MAX_SAVED_PROGRAMS);
+    renderIntl(button(locale), locale);
+    await user.click(screen.getByRole("button", { name: `${copy.save} ${NAME}` }));
+    expect(screen.getByRole("alert")).toBeTruthy();
+    act(() => removeFromPlan("xx-other-0"));
+    await user.click(screen.getByRole("button", { name: `${copy.save} ${NAME}` }));
+    expect(screen.queryByRole("alert")).toBeNull();
+    expect(screen.getByRole("status").textContent).toBe(copy.announceSaved);
   });
 
   it("keeps two buttons for the same program in sync", async () => {
