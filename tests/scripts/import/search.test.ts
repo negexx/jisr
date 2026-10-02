@@ -123,3 +123,16 @@ describe("withCache", () => {
     expect(calls()).toBe(2);
   });
 });
+
+describe("QueryBudget rejects a cap that would silently disable it", () => {
+  it("refuses NaN, negative and fractional caps", () => {
+    expect(() => new QueryBudget(Number.NaN)).toThrow(/cap/i);
+    expect(() => new QueryBudget(-1)).toThrow(/cap/i);
+    expect(() => new QueryBudget(2.5)).toThrow(/cap/i);
+  });
+
+  it("accepts zero (nothing may be asked) and a normal cap", () => {
+    expect(() => new QueryBudget(0)).not.toThrow();
+    expect(() => new QueryBudget(300)).not.toThrow();
+  });
+});

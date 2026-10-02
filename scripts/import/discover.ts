@@ -33,7 +33,7 @@ export function extractLinks(html: string, base: string): Link[] {
   return [...links.values()];
 }
 
-const TWO_LABEL_SLD = new Set(["co", "ac", "com", "org", "gov", "edu", "net"]);
+const TWO_LABEL_SLD = new Set(["co", "ac", "com", "org", "gov", "gouv", "edu", "net"]);
 
 export function registrable(url: string): string {
   const labels = new URL(url).hostname.split(".");
@@ -46,7 +46,14 @@ export function registrable(url: string): string {
   return labels.slice(-take).join(".");
 }
 
-export const sameSite = (a: string, b: string): boolean => registrable(a) === registrable(b);
+// False for a url that cannot be parsed: a malformed link in a result is not on anyone's site.
+export const sameSite = (a: string, b: string): boolean => {
+  try {
+    return registrable(a) === registrable(b);
+  } catch {
+    return false;
+  }
+};
 
 const fold = (text: string): string => normalizeForMatch(text).normalize("NFD").replace(/[̀-ͯ]/g, "");
 
@@ -291,12 +298,16 @@ export type SearchDiscoverInput = {
   website: string | null;
   search: SearchProvider;
   budget?: QueryBudget;
-  // answers shared between the programmes of one institution
-  memo?: Map<string, SearchHit[]>;
+  // answers shared between the programmes of one institution (promises, so two programmes asking at
+  // the same moment share one query)
+  memo?: Map<string, Promise<SearchHit[]>>;
   fetchHtml?: (url: string) => Promise<string>;
 };
 
 export async function discoverBySearch(input: SearchDiscoverInput): Promise<Discovered> {
+  // Without the institution's own site there is no way to tell its pages from an aggregator's, and
+  // a fact read from an aggregator would be labelled official: ask nothing, find nothing.
+  if (input.website === null) return { programme: null, fees: [], admission: [], fetched: 0 };
   const fetchHtml =
     input.fetchHtml ??
     ((url: string) => fetchText(url, { accept: "text/html,application/xhtml+xml" }));
@@ -307,17 +318,17 @@ export async function discoverBySearch(input: SearchDiscoverInput): Promise<Disc
   };
   const site = input.website === null ? null : registrable(input.website);
   const scope = site === null ? input.institution : `site:${site}`;
-  const memo = input.memo ?? new Map<string, SearchHit[]>();
-  const ask = async (query: string): Promise<SearchHit[]> => {
+  const memo = input.memo ?? new Map<string, Promise<SearchHit[]>>();
+  const ask = (query: string): Promise<SearchHit[]> => {
     const known = memo.get(query);
     if (known !== undefined) return known;
     input.budget?.take();
-    const hits = await input.search.search(query, {
+    const pending = input.search.search(query, {
       country: input.country,
       language: words.language,
     });
-    memo.set(query, hits);
-    return hits;
+    memo.set(query, pending);
+    return pending;
   };
   // hits on the institution's own site, as links to score
   const links = (hits: SearchHit[]): Link[] =>
@@ -325,11 +336,15 @@ export async function discoverBySearch(input: SearchDiscoverInput): Promise<Disc
       .filter((h) => h.url.startsWith("https://"))
       .filter((h) => input.website === null || sameSite(h.url, input.website))
       // not a page to read: a file, or a dated news post (/2018/03/…) that is out of date by nature
-      .filter(
-        (h) =>
-          !FILE.test(new URL(h.url).pathname) &&
-          !/\/(19|20)\d{2}[-/]/.test(new URL(h.url).pathname),
-      )
+      .filter((h) => {
+        let pathname: string;
+        try {
+          pathname = new URL(h.url).pathname;
+        } catch {
+          return false;
+        }
+        return !FILE.test(pathname) && !/\/(19|20)\d{2}\/(0[1-9]|1[0-2])(\/|$)/.test(pathname);
+      })
       .map((h) => ({ url: h.url, text: `${h.title} ${h.snippet}` }));
 
   let fetched = 0;

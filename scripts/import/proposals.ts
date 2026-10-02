@@ -116,6 +116,29 @@ const PREPARED_TEXT =
   "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw";
 const PREPARED_NOTE = /prepared by the assistant from the quoted pages/;
 
+// In the matcher an empty acceptedTests list means "no restriction": a rule that says a certificate
+// is required but names no test would be satisfied by any certificate, in any language. The page did
+// not say which tests, so the honest value is "certificate requirement unknown" (null): the level
+// still has to be met, but an unrelated certificate no longer satisfies the rule.
+export function emptyTestsUnknown<T extends object>(rule: T): T {
+  const r = rule as Record<string, unknown>;
+  return r.kind === "language_proficiency" &&
+    r.certificateRequired === true &&
+    Array.isArray(r.acceptedTests) &&
+    r.acceptedTests.length === 0
+    ? ({ ...r, certificateRequired: null } as T)
+    : rule;
+}
+
+// For what a model wrote: also a "no certificate needed" (false), which nothing can verify (the
+// verifier checks the language, the level and the tests, never a negative), becomes unknown.
+export function certificateUnknown<T extends object>(rule: T): T {
+  const r = emptyTestsUnknown(rule) as Record<string, unknown>;
+  return r.kind === "language_proficiency" && r.certificateRequired === false
+    ? ({ ...r, certificateRequired: null } as T)
+    : (r as T);
+}
+
 export type GetText = (url: string) => Promise<string>;
 
 function checkValue(name: FactName, value: unknown, quote: string): FactCheck {
@@ -245,7 +268,7 @@ export async function verifyProposal(
     } else if (rule.kind === "prior_study_years_min") {
       check = agrees((q) => checkYears(rule.years, q));
     }
-    if (check.ok) accepted.push({ ...rule, evidence: quotes });
+    if (check.ok) accepted.push(emptyTestsUnknown({ ...rule, evidence: quotes }));
     else result.rejected.push({ fact: label, reason: check.reason });
   }
   if (accepted.length > 0) result.requirements = accepted;

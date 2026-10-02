@@ -354,3 +354,16 @@ data: [DONE]
     expect(() => budget.assertRoom()).toThrow(BudgetExceeded);
   });
 });
+
+describe("Budget rejects a cap that would silently disable it", () => {
+  it("refuses NaN, negative and infinite caps (a mistyped --max-usd must not mean unlimited)", () => {
+    expect(() => new Budget({ maxUsd: Number.NaN, maxTokens: 100 })).toThrow(/cap/i);
+    expect(() => new Budget({ maxUsd: 1, maxTokens: Number.NaN })).toThrow(/cap/i);
+    expect(() => new Budget({ maxUsd: -1, maxTokens: 100 })).toThrow(/cap/i);
+    expect(() => new Budget({ maxUsd: Number.POSITIVE_INFINITY, maxTokens: 100 })).toThrow(/cap/i);
+  });
+
+  it("accepts a normal cap", () => {
+    expect(() => new Budget({ maxUsd: 0.5, maxTokens: 1000 })).not.toThrow();
+  });
+});

@@ -114,7 +114,14 @@ export class Budget {
   spentTokens = 0;
   private reservedUsd = 0;
   private reservedTokens = 0;
-  constructor(private readonly cap: { maxUsd: number; maxTokens: number }) {}
+  constructor(private readonly cap: { maxUsd: number; maxTokens: number }) {
+    // NaN, a negative or an infinite cap would make every comparison false: the budget would silently
+    // never stop the run (a mistyped --max-usd, for instance)
+    for (const [name, value] of Object.entries(cap)) {
+      if (!Number.isFinite(value) || value < 0)
+        throw new Error(`invalid budget cap ${name}=${value}: must be a finite number >= 0`);
+    }
+  }
 
   assertRoom(): void {
     if (this.spentUsd >= this.cap.maxUsd || this.spentTokens >= this.cap.maxTokens) {

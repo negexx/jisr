@@ -90,7 +90,7 @@ async function main(argv: readonly string[]): Promise<void> {
   const search =
     base === null ? null : withCache(base, base.cacheable === true ? ".cache/search" : null);
   const budget = new QueryBudget(Number(flag("max-queries") ?? 300));
-  const memo = new Map<string, SearchHit[]>();
+  const memo = new Map<string, Promise<SearchHit[]>>();
   let searched = 0;
   const institutions = new Set<string>();
   const programmes: Record<string, string[]> = {};
@@ -166,6 +166,10 @@ async function main(argv: readonly string[]): Promise<void> {
     console.log(
       `dry run: ${searched} programmes need a search; at most ${searched + 2 * institutions.size} queries (cap ${flag("max-queries") ?? 300}); no query sent, nothing written`,
     );
+    return;
+  }
+  if (dryRun) {
+    console.log("dry run: nothing written");
     return;
   }
 

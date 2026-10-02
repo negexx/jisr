@@ -339,7 +339,7 @@ describe("discoverBySearch", () => {
 
   it("asks the institution-level questions once for all of that institution's programmes", async () => {
     const log: string[] = [];
-    const memo = new Map<string, SearchHit[]>();
+    const memo = new Map<string, Promise<SearchHit[]>>();
     const search = fakeSearch(log);
     await discoverBySearch({ ...input, search, memo });
     await discoverBySearch({ ...input, name: "Nursing", search, memo });
@@ -355,14 +355,6 @@ describe("discoverBySearch", () => {
     });
     expect(found.programme).toBeNull();
   });
-
-  it("without a website searches by the institution's name, with no site filter", async () => {
-    const log: string[] = [];
-    await discoverBySearch({ ...input, website: null, search: fakeSearch(log) });
-    expect(log.every((q) => !q.includes("site:"))).toBe(true);
-    expect(log.some((q) => q.includes("Uni Example"))).toBe(true);
-  });
-
   it("lets a search budget stop propagate", async () => {
     const budget = new QueryBudget(1);
     await expect(discoverBySearch({ ...input, search: fakeSearch([]), budget })).rejects.toThrow(
@@ -408,5 +400,108 @@ describe("discoverBySearch noise", () => {
       },
     });
     expect(found.fees).toEqual(["https://www.uni.example/studeren/collegegeld"]);
+  });
+});
+
+describe("discoverBySearch hardening", () => {
+  const hitsFor = (hits: SearchHit[]): SearchProvider => ({
+    name: "fake",
+    search: async () => hits,
+  });
+  const base = { name: "Applied Data Science", institution: "Uni Example", country: "NL" };
+
+  it("without a known website it asks nothing and finds nothing (an aggregator's page would be labelled official)", async () => {
+    const log: string[] = [];
+    const search: SearchProvider = {
+      name: "fake",
+      search: async (q) => {
+        log.push(q);
+        return [
+          {
+            url: "https://bachelorsportal.example/applied-data-science",
+            title: "Applied Data Science",
+            snippet: "",
+          },
+        ];
+      },
+    };
+    const found = await discoverBySearch({ ...base, website: null, search });
+    expect(found).toEqual({ programme: null, fees: [], admission: [], fetched: 0 });
+    expect(log).toEqual([]);
+  });
+
+  it("survives a malformed url in the results", async () => {
+    const search = hitsFor([
+      { url: "https://", title: "broken", snippet: "" },
+      { url: "https://www.uni.example/en/tuition-fees", title: "Tuition fees", snippet: "fees" },
+    ]);
+    const found = await discoverBySearch({
+      ...base,
+      website: "https://www.uni.example/",
+      search,
+      fetchHtml: async () => "",
+    });
+    expect(found.fees).toEqual(["https://www.uni.example/en/tuition-fees"]);
+  });
+
+  it("keeps a fee page whose path has a school year, and drops a dated news post", async () => {
+    const search = hitsFor([
+      {
+        url: "https://www.uni.example/studeren/collegegeld-2025-2026",
+        title: "Collegegeld",
+        snippet: "tuition fees",
+      },
+      {
+        url: "https://www.uni.example/nieuws/2018/03/collegegeld-stijgt",
+        title: "Collegegeld stijgt",
+        snippet: "tuition fees",
+      },
+    ]);
+    const found = await discoverBySearch({
+      ...base,
+      website: "https://www.uni.example/",
+      search,
+      fetchHtml: async () => "",
+    });
+    expect(found.fees).toEqual(["https://www.uni.example/studeren/collegegeld-2025-2026"]);
+  });
+
+  it("asks a shared question once even when two programmes ask it at the same moment", async () => {
+    let calls = 0;
+    const search: SearchProvider = {
+      name: "fake",
+      search: async () => {
+        calls++;
+        await new Promise((r) => setTimeout(r, 10));
+        return [];
+      },
+    };
+    const memo = new Map<string, Promise<SearchHit[]>>();
+    await Promise.all([
+      discoverBySearch({ ...base, website: "https://www.uni.example/", search, memo }),
+      discoverBySearch({
+        ...base,
+        name: "Nursing",
+        website: "https://www.uni.example/",
+        search,
+        memo,
+      }),
+    ]);
+    // 2 programme questions + 1 fee question + 1 admission question
+    expect(calls).toBe(4);
+  });
+});
+
+describe("sameSite and government hosts", () => {
+  it("does not treat every *.gouv.fr host as one site", () => {
+    expect(
+      sameSite(
+        "https://www.enseignementsup-recherche.gouv.fr/a",
+        "https://www.interieur.gouv.fr/b",
+      ),
+    ).toBe(false);
+    expect(
+      sameSite("https://www.interieur.gouv.fr/a", "https://immigration.interieur.gouv.fr/b"),
+    ).toBe(true);
   });
 });

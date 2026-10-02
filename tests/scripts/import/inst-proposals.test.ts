@@ -1,6 +1,11 @@
 import { describe, expect, it } from "vitest";
 
-import { pickQuote, quoteFor, websiteFrom } from "../../../scripts/import/inst-proposals";
+import {
+  pickQuote,
+  quoteFor,
+  quoteNames,
+  websiteFrom,
+} from "../../../scripts/import/inst-proposals";
 
 describe("websiteFrom", () => {
   it("takes the home page of the domain most of the institution's own pages are on", () => {
@@ -111,5 +116,38 @@ describe("pickQuote", () => {
         { url: "https://x.example/", text: "Nothing relevant here at all." },
       ]),
     ).toBeNull();
+  });
+});
+
+describe("quoteFor matches whole words only", () => {
+  it("does not match the brand word inside a longer word", () => {
+    expect(
+      quoteFor("Hogeschool Delft", "Studeren aan de TUDelft en in Delfts blauw is leuk, zegt men."),
+    ).toBeNull();
+    expect(
+      quoteFor(
+        "Hochschule Rhein-Waal",
+        "Willkommen im Rheinland: Studieren am Niederrhein mit Aussicht.",
+      ),
+    ).toBeNull();
+  });
+
+  it("matches the word next to punctuation and accents", () => {
+    const quote = quoteFor(
+      "Université Lille",
+      "Bienvenue à l'Université de Lille, université publique du Nord.",
+    );
+    expect(quote).toMatch(/Lille/);
+  });
+});
+
+describe("quoteNames", () => {
+  it("is true when the quote contains a distinctive word of the name as a whole word", () => {
+    expect(quoteNames("Fontys Hogeschool Tilburg", "Welkom bij Fontys Hogeschool ICT")).toBe(true);
+  });
+
+  it("is false when the word only appears inside a longer one, or only generic words match", () => {
+    expect(quoteNames("Hochschule Rhein-Waal", "Willkommen im Rheinland")).toBe(false);
+    expect(quoteNames("Hogeschool Utrecht", "Een hogeschool is een school")).toBe(false);
   });
 });

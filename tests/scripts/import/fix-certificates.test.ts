@@ -23,14 +23,14 @@ describe("fixRules", () => {
     expect(rules[0]?.certificateRequired).toBeNull();
   });
 
-  it("changes nothing when the tests are named or no certificate is needed", () => {
-    const input = {
-      slug: "s",
-      requirements: {
-        rules: [rule({ acceptedTests: ["ielts"] }), rule({ certificateRequired: false })],
-      },
-    };
+  it("changes nothing when the tests are named", () => {
+    const input = { slug: "s", requirements: { rules: [rule({ acceptedTests: ["ielts"] })] } };
     expect(fixRules(input).changed).toBe(0);
+  });
+
+  it("turns an unverifiable 'no certificate needed' into unknown as well", () => {
+    const input = { slug: "s", requirements: { rules: [rule({ certificateRequired: false })] } };
+    expect(fixRules(input).changed).toBe(1);
   });
 
   it("is a no-op for a record without requirements", () => {

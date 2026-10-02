@@ -18,8 +18,9 @@ import {
   MODELS,
   type ModelSpec,
 } from "./llm";
-import { mergeProposals } from "./merge";
+import { applyBase, ruleKey } from "./merge";
 import {
+  certificateUnknown,
   type GetText,
   type Proposal,
   ProposalSchema,
@@ -131,19 +132,6 @@ export function extractJson(text: string): unknown {
     if (start === -1 || end <= start) throw new Error("no JSON object in the model output");
     return JSON.parse(stripped.slice(start, end + 1));
   }
-}
-
-// "A certificate is required" with no accepted tests would mean "any certificate counts, in any
-// language" in the matcher (an empty list is "no restriction"). The page did not say which tests, so
-// the honest value is "certificate requirement unknown": the level still has to be met, but the rule
-// can no longer be satisfied by an unrelated certificate.
-export function certificateUnknown(rule: Record<string, unknown>): Record<string, unknown> {
-  return rule.kind === "language_proficiency" &&
-    rule.certificateRequired === true &&
-    Array.isArray(rule.acceptedTests) &&
-    rule.acceptedTests.length === 0
-    ? { ...rule, certificateRequired: null }
-    : rule;
 }
 
 // The schema (src/data-schema/localized-text.ts) refuses a short text longer than this: a longer
@@ -357,17 +345,11 @@ export async function pool<T>(
 // What the checker kept, written back into the proposal that is saved to disk: a later
 // `data:evidence verify` re-verifies the proposal file, so a fact the checker removed must not be in it.
 export function keepChecked(proposal: Proposal, checked: Verified): Proposal {
-  const withoutEvidence = (rule: object): string => {
-    const { evidence: _evidence, ...rest } = rule as Record<string, unknown>;
-    return JSON.stringify(rest);
-  };
-  const keptRules = new Set((checked.requirements ?? []).map(withoutEvidence));
+  const keptRules = new Set((checked.requirements ?? []).map(ruleKey));
   const facts = Object.fromEntries(
     Object.entries(proposal.facts).filter(([name]) => name in checked.facts),
   ) as Proposal["facts"];
-  const rules = (proposal.requirements?.rules ?? []).filter((r) =>
-    keptRules.has(withoutEvidence(r)),
-  );
+  const rules = (proposal.requirements?.rules ?? []).filter((r) => keptRules.has(ruleKey(r)));
   const { requirements: _requirements, ...rest } = proposal;
   return { ...rest, facts, ...(rules.length > 0 ? { requirements: { rules } } : {}) };
 }
@@ -452,10 +434,17 @@ export async function loadPages(
 // summary. Proposals land in --out, not in data-staging/proposals: nothing is applied by this command.
 type PagesFile = { shared: Record<string, string[]>; programmes: Record<string, string[]> };
 
-function flag(argv: readonly string[], name: string): string | undefined {
+// The value of --name, undefined when the flag is absent. A flag with no value (or whose "value" is
+// the next flag) is an error: `--base` at the end must not silently mean "no base".
+export function flagValue(argv: readonly string[], name: string): string | undefined {
   const at = argv.indexOf(`--${name}`);
-  return at === -1 ? undefined : argv[at + 1];
+  if (at === -1) return undefined;
+  const value = argv[at + 1];
+  if (value === undefined || value.startsWith("--")) throw new Error(`--${name} needs a value`);
+  return value;
 }
+
+const flag = flagValue;
 
 async function main(argv: readonly string[]): Promise<void> {
   const modelId = flag(argv, "model");
@@ -476,6 +465,9 @@ async function main(argv: readonly string[]): Promise<void> {
     throw new Error(`unknown checker ${checkId}`);
   const dryRun = argv.includes("--dry-run");
   const concurrency = Number(flag(argv, "concurrency") ?? 8);
+  // NaN or 0 workers would run nothing and still report success
+  if (!Number.isInteger(concurrency) || concurrency < 1)
+    throw new Error("--concurrency must be a whole number >= 1");
   const budget = new Budget({
     maxUsd: Number(flag(argv, "max-usd") ?? 1),
     maxTokens: Number(flag(argv, "max-tokens") ?? 5_000_000),
@@ -540,10 +532,18 @@ async function main(argv: readonly string[]): Promise<void> {
         check = { costUsd: checked.completion?.costUsd ?? null, error: checked.error };
       }
       // French programmes: the existing national facts come first, the checked reader facts only add
+      let baseMissing = false;
       if (national !== null && meta.country === "FR" && proposal !== null) {
-        const base = await loadBaseProposal(slug, national);
-        if (base !== null) {
-          proposal = mergeProposals(base, proposal);
+        // with no base there is no proposal: saving the reader's alone would make a later verify reset
+        // the facts the record already has
+        const merged = applyBase(await loadBaseProposal(slug, national), proposal);
+        if (merged === null) {
+          baseMissing = true;
+          console.log(`${slug}: the French base could not be built; no proposal saved`);
+          proposal = null;
+          verified = null;
+        } else {
+          proposal = merged;
           verified = await verifyProposal(proposal, meta.name, pageText);
         }
       }
@@ -551,7 +551,7 @@ async function main(argv: readonly string[]): Promise<void> {
       const bad = verified?.rejected ?? [];
       accepted += ok.length;
       rejected += bad.length;
-      if (result.error !== null || check?.error != null) failed++;
+      if (result.error !== null || check?.error != null || baseMissing) failed++;
       // raw/ keeps what the model proposed (rejected quotes included) so a rejection can be inspected;
       // <slug>.json is what the code verified and the checker kept
       if (result.proposal !== null) {
@@ -578,6 +578,7 @@ async function main(argv: readonly string[]): Promise<void> {
         pagesFailed: [...shared.failed, ...own.failed],
         dropped: result.dropped,
         checker: check,
+        baseMissing,
       });
     } catch (error) {
       if (!(error instanceof BudgetExceeded)) throw error;

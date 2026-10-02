@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { mergeProposals } from "../../../scripts/import/merge";
+import { applyBase, mergeProposals } from "../../../scripts/import/merge";
 import type { Proposal } from "../../../scripts/import/proposals";
 
 const ev = (quote: string, url = "https://x.example/p") => [{ url, quote }];
@@ -87,5 +87,46 @@ describe("mergeProposals", () => {
 
   it("returns the base unchanged when there is nothing to add", () => {
     expect(mergeProposals(base, { slug: "s", programmePage: null, facts: {} })).toEqual(base);
+  });
+});
+
+describe("applyBase", () => {
+  const proposal: Proposal = {
+    slug: "s",
+    programmePage: null,
+    facts: { durationYears: { value: 3, evidence: ev("La licence dure trois ans.") } },
+  };
+
+  it("is null when the base could not be built, so a proposal is never saved without the facts the record already has", () => {
+    expect(applyBase(null, proposal)).toBeNull();
+  });
+
+  it("merges when there is a base", () => {
+    const merged = applyBase(base, proposal);
+    expect(merged?.programmePage).toBe("https://fiche.example/1");
+  });
+});
+
+describe("rule dedupe", () => {
+  it("treats the same rule written with its keys in another order as one rule", () => {
+    const a: Proposal = {
+      slug: "s",
+      programmePage: null,
+      facts: {},
+      requirements: {
+        rules: [{ kind: "prior_study_years_min", years: 12, evidence: ev("12 années") }],
+      },
+    };
+    const b: Proposal = {
+      slug: "s",
+      programmePage: null,
+      facts: {},
+      requirements: {
+        rules: [
+          { years: 12, kind: "prior_study_years_min", evidence: ev("douze ans de scolarité") },
+        ],
+      },
+    };
+    expect(mergeProposals(a, b).requirements?.rules).toHaveLength(1);
   });
 });

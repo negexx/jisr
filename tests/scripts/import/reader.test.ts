@@ -5,6 +5,7 @@ import type { Proposal, Verified } from "../../../scripts/import/proposals";
 import {
   buildPrompt,
   extractJson,
+  flagValue,
   INSTRUCTION,
   keepChecked,
   MAX_PAGE_CHARS,
@@ -542,7 +543,7 @@ describe("a required certificate with no accepted tests", () => {
     expect(kept?.kind === "language_proficiency" && kept.certificateRequired).toBe(true);
   });
 
-  it("leaves a rule that says no certificate is needed alone", () => {
+  it("also treats a model's 'no certificate needed' as unknown, because nothing can verify a negative", () => {
     const { proposal } = salvageProposal({
       slug: "s",
       programmePage: null,
@@ -550,6 +551,21 @@ describe("a required certificate with no accepted tests", () => {
       requirements: { rules: [rule({ certificateRequired: false })] },
     });
     const kept = proposal?.requirements?.rules[0];
-    expect(kept?.kind === "language_proficiency" && kept.certificateRequired).toBe(false);
+    expect(kept?.kind === "language_proficiency" && kept.certificateRequired).toBeNull();
+  });
+});
+
+describe("flagValue", () => {
+  it("is undefined when the flag is absent", () => {
+    expect(flagValue(["--model", "x"], "check")).toBeUndefined();
+  });
+
+  it("returns the value after the flag", () => {
+    expect(flagValue(["--check", "qwen3.7-plus"], "check")).toBe("qwen3.7-plus");
+  });
+
+  it("refuses a flag with no value or whose value is another flag (a trailing --base must not mean 'none')", () => {
+    expect(() => flagValue(["--base"], "base")).toThrow(/needs a value/);
+    expect(() => flagValue(["--base", "--dry-run"], "base")).toThrow(/needs a value/);
   });
 });

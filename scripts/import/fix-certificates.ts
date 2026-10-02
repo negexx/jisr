@@ -4,7 +4,7 @@ import path from "node:path";
 
 import { parse } from "yaml";
 
-import { certificateUnknown } from "./reader";
+import { certificateUnknown } from "./proposals";
 import { DATA_DIR, STAGING_DIR, toYaml } from "./staging";
 
 // A language rule that says a certificate is required but names no accepted tests means "any
@@ -47,17 +47,46 @@ async function main(argv: readonly string[]): Promise<void> {
     rules += changed;
     if (!dryRun) await writeFile(file, toYaml(fixed));
   }
-  const proposalsDir = path.join(STAGING_DIR, "proposals", "programs");
-  for (const name of existsSync(proposalsDir) ? await readdir(proposalsDir) : []) {
-    if (!name.endsWith(".json")) continue;
-    const file = path.join(proposalsDir, name);
-    const proposal = JSON.parse(await readFile(file, "utf8")) as Json;
-    // a proposal keeps its rules under requirements.rules too
-    const { record: fixed, changed } = fixRules(proposal);
+  // staged records already applied from an older proposal, so they cannot be promoted as they are
+  const stagedDir = path.join(STAGING_DIR, "programs");
+  for (const name of existsSync(stagedDir) ? await readdir(stagedDir) : []) {
+    if (!name.endsWith(".yaml")) continue;
+    const file = path.join(stagedDir, name);
+    const record = parse(await readFile(file, "utf8")) as Json;
+    const { record: fixed, changed } = fixRules(record);
     if (changed === 0) continue;
     files++;
     rules += changed;
-    if (!dryRun) await writeFile(file, `${JSON.stringify(fixed, null, 2)}\n`);
+    if (!dryRun) await writeFile(file, toYaml(fixed));
+  }
+  // saved proposals (the ones verify reads) and the reader's output folders (one level down; raw/
+  // keeps what the model wrote and is left as it is)
+  const jsonDirs = [path.join(STAGING_DIR, "proposals", "programs")];
+  const readDir = path.join(STAGING_DIR, "proposals-read");
+  if (existsSync(readDir)) {
+    for (const run of await readdir(readDir)) jsonDirs.push(path.join(readDir, run));
+  }
+  for (const dir of jsonDirs) {
+    for (const name of existsSync(dir) ? await readdir(dir) : []) {
+      if (!name.endsWith(".json")) continue;
+      const file = path.join(dir, name);
+      let proposal: Json;
+      try {
+        proposal = JSON.parse(await readFile(file, "utf8")) as Json;
+      } catch {
+        continue;
+      }
+      const { record: fixed, changed } = fixRules(proposal);
+      if (changed === 0) continue;
+      files++;
+      rules += changed;
+      if (!dryRun)
+        await writeFile(
+          file,
+          `${JSON.stringify(fixed, null, 2)}
+`,
+        );
+    }
   }
   console.log(`${dryRun ? "would fix" : "fixed"} ${rules} rule(s) in ${files} file(s)`);
 }

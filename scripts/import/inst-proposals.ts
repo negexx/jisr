@@ -46,18 +46,19 @@ export function websiteFrom(urls: readonly string[]): string | null {
 
 // Words that name a kind of institution, not a particular one.
 const GENERIC = new Set(
-  "hogeschool university universiteit universitat universität hochschule applied sciences science school college of the and for van de der die het en christelijke state management technik wirtschaft technology business studies international".split(
+  "hogeschool university universiteit universitat universität universite université hochschule fachhochschule applied sciences science school college ecole école institut institute of the and for van de der die das het en la le les du des christelijke state management technik technische wirtschaft technology business studies international freie national nationale".split(
     " ",
   ),
 );
 
-const TYPE_WORD = /hogeschool|universit|hochschule|college|school|institut/i;
+const TYPE_WORD = /hogeschool|universit|hochschule|college|school|institut|ecole|école/i;
 const NEWSY =
-  /trauert|news|nieuws|aktuell|press|persbericht|event|agenda|sponsor|wint |award|prijs|actualit/i;
+  /trauert|\bnews\b|nieuws|aktuell|\bpress\b|persbericht|\bevents?\b|agenda|sponsor|wint |award|prijs|actualit/i;
 
-// The best quote on one page and how good it looks (0-3), or null when the page does not name it.
-function scoredQuote(name: string, text: string): { quote: string; score: number } | null {
-  const tokens = [
+// The words of an institution's name that tell it apart from others, in name order: the brand
+// ("Fontys") comes before the town ("Tilburg").
+export function distinctiveTokens(name: string): string[] {
+  return [
     ...new Set(
       name
         .toLowerCase()
@@ -65,11 +66,25 @@ function scoredQuote(name: string, text: string): { quote: string; score: number
         .filter((t) => t.length >= 3 && !GENERIC.has(t)),
     ),
   ];
-  // in the order of the name: the brand ("Fontys") comes before the town ("Tilburg")
+}
+
+const wholeWord = (token: string, flags = "u"): RegExp =>
+  new RegExp(`(?<![\\p{L}\\p{N}])${token}(?![\\p{L}\\p{N}])`, flags);
+
+// Does the quote contain a distinctive word of the name as a whole word? (Not just a generic word,
+// and not a word inside a longer one.)
+export function quoteNames(name: string, quote: string): boolean {
+  const lower = quote.toLowerCase();
+  return distinctiveTokens(name).some((token) => wholeWord(token).test(lower));
+}
+
+// The best quote on one page and how good it looks (0-3), or null when the page does not name it.
+function scoredQuote(name: string, text: string): { quote: string; score: number } | null {
+  const tokens = distinctiveTokens(name);
   const lower = text.toLowerCase();
   for (const token of tokens) {
     // every mention of the brand word; the best-looking one becomes the quote
-    const pattern = new RegExp(`(?<![p{L}p{N}])${token}(?![p{L}p{N}])`, "gu");
+    const pattern = wholeWord(token, "gu");
     let best: { quote: string; score: number } | null = null;
     for (const match of lower.matchAll(pattern)) {
       const at = match.index ?? 0;

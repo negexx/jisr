@@ -46,7 +46,10 @@ export class SearchBudgetExceeded extends Error {}
 
 export class QueryBudget {
   used = 0;
-  constructor(private readonly max: number) {}
+  constructor(private readonly max: number) {
+    if (!Number.isInteger(max) || max < 0)
+      throw new Error(`invalid query cap ${max}: must be a whole number >= 0`);
+  }
 
   take(): void {
     if (this.used >= this.max) {
