@@ -1,0 +1,121 @@
+{
+  "slug": "fr-cnam-chalon-0710100y-licence-informatique-25226",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=25226&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/la-licence-le-diplome-national-de-master-et-le-mastere-specialise",
+          "quote": "La licence est un diplôme national de l’enseignement supérieur qui se prépare en six semestres au sein de l’Université."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=25226&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+          "quote": "2 902 euros pour une année en cycle de Licence"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "fr-campus-france",
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces",
+          "quote": "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "tcf",
+          "delf-dalf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=25226&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.",
+          "en": "Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.",
+          "ar": "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+            "quote": "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=25226&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les conditions d'accès en L1 (baccalauréat général ou technologique, DAEU ou diplôme étranger admis en dispense) et le fait que la 2e et la 3e année se font en alternance avec validation de la L1, dossier validé par la commission pédagogique et signature d'un contrat d'alternance.",
+          "en": "Check the L1 entry conditions (general or technological baccalauréat, DAEU or foreign diploma admitted with exemption) and the fact that years 2 and 3 are in alternance, with validation of L1, approval of the file by the teaching commission and signature of an alternance contract."
+        },
+        "evidence": [
+          {
+            "url": "https://www.cnam.fr/formation/electronique-informatique-telecommunication/licence-informatique-parcours-informatique-generale-en-alternance-a-chalon-sur-saone-1",
+            "quote": "Conditions d'accès en L1 : - être titulaire d'un baccalauréat général ou technologique (STI2D), DAEU ou d'un diplôme étranger ou français admis en dispense d'acquis d'études ou de l'expérience."
+          },
+          {
+            "url": "https://www.cnam.fr/formation/electronique-informatique-telecommunication/licence-informatique-parcours-informatique-generale-en-alternance-a-chalon-sur-saone-1",
+            "quote": "L1 en formation initiale L2 et L3 en alternance (apprentissage ou contrat de professionnalisation)"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=25226&typeBac=0&originePc=0",
+            "quote": "Accès à la deuxième année en alternance soumis à : Validation de la L1 Validation du dossier par la commission pédagogique Signature d'un contrat d'alternance"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Le montant de 500 € en L1 figure sur la fiche Parcoursup de cette même licence (CNAM Chalon) et il est présenté comme des frais d'inscription, sans distinction entre étudiants de l'UE et hors UE. La fiche Parcoursup indique par ailleurs « Par année 178 euros. » : ne pas retenir ce chiffre, donné comme le tarif national, l'établissement annonçant 500 € pour tous, boursiers compris. Les pièces PDF (notes sur l'inscription des auditeurs étrangers) n'ont pas pu être lues, donc aucun droit différencié spécifique ne peut être cité pour ce programme. Le programme est annoncé en présentiel à Chalon-sur-Saône, en français ; la certification de français B2 est indiquée comme « Niveau de français requis pour s'inscrire à la formation : B2 », sur la fiche Parcoursup, c'est-à-dire en contexte d'inscription en L1 via Parcoursup. La voie d'accès à ce programme montre deux canaux selon le diplôme : candidature via Parcoursup pour les candidats titulaires du bac français ou européen, dossier et entretien pour les entrées en L2/L3, et les pages Campus France Maroc rappellent que pour un bac marocain la candidature passe par Études en France. À rappeler à l'auditeur : si l'établissement n'admet pas de diplôme étranger dans cette licence, vérifier les dispenses d'inscription. Le calendrier de candidature n'est pas cité dans les pages fournies pour cette formation."
+}

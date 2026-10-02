@@ -21,15 +21,16 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
-  source: programme
+  value:
+    - fr
+  source: page-3
   info_kind: official
 tuition:
   value:
     amountMinor: 290200
     currency: EUR
     period: year
-  source: page-3
+  source: page-4
   info_kind: official
 intakes:
   value: null
@@ -37,7 +38,7 @@ intakes:
   info_kind: official
 applicationChannel:
   value: fr-campus-france
-  source: page-4
+  source: page-5
   info_kind: official
 documents:
   value: null
@@ -59,7 +60,7 @@ requirements:
         - tcf
         - delf-dalf
     - id: req-2
-      source: page-3
+      source: page-4
       info_kind: official
       kind: manual_check
       note:
@@ -81,8 +82,11 @@ sources:
     url: https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
     last_verified_at: 2026-10-01
   page-3:
-    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    url: https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/but-bachelor-universitaire-de-technologie-BUT/but-gestion-des-entreprises-et-des-administrations-gea-grenoble-KI4NLQWW.html
     last_verified_at: 2026-10-01
   page-4:
+    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    last_verified_at: 2026-10-01
+  page-5:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
     last_verified_at: 2026-10-01

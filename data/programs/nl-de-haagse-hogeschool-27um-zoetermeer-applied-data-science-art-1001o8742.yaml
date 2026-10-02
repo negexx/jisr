@@ -1,0 +1,81 @@
+slug: nl-de-haagse-hogeschool-27um-zoetermeer-applied-data-science-art-1001o8742
+institution: nl-de-haagse-hogeschool-27um-zoetermeer
+country: NL
+city: zoetermeer
+field: computer-science
+level: bachelor
+name: Applied Data Science & Artificial Intelligence
+summary:
+  fr:
+    text: Applied Data Science & Artificial Intelligence (Applied Data Science & Artificial Intelligence), De Haagse Hogeschool (Zoetermeer). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Applied Data Science & Artificial Intelligence (Applied Data Science & Artificial Intelligence), De Haagse Hogeschool (Zoetermeer). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Applied Data Science & Artificial Intelligence (Applied Data Science & Artificial Intelligence), De Haagse Hogeschool (Zoetermeer). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-05-01
+  source: page-2
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: nl
+      minCefr: null
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si votre diplôme marocain de Baccalauréat est jugé équivalent à un diplôme néerlandais donnant accès à l'enseignement supérieur professionnel, et vérifiez les modalités du 21+ Toelatingsonderzoek si votre diplôme n'est pas accepté.
+          status: draft
+        en:
+          text: Check whether your Moroccan Baccalauréat is deemed equivalent to a Dutch diploma granting access to higher professional education, and check the 21+ Toelatingsonderzoek arrangements if your diploma is not accepted.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen
+    last_verified_at: 2026-10-01

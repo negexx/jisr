@@ -1,0 +1,80 @@
+{
+  "slug": "de-leuphana-universitat-luneburg-hrk171-economics-bsc-daad9671",
+  "programmePage": "https://www.leuphana.de/en/college/bachelor/economics-major.html?utm_source=DAAD&utm_medium=referral&utm_campaign=international-marketing",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.leuphana.de/en/college/bachelor/economics-major.html?utm_source=DAAD&utm_medium=referral&utm_campaign=international-marketing",
+          "quote": "Duration: 3 years (6 semesters)"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9671/",
+          "quote": "Programme duration 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.leuphana.de/en/college/bachelor/economics-major.html?utm_source=DAAD&utm_medium=referral&utm_campaign=international-marketing",
+          "quote": "Language: English (no German required)"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9671/",
+          "quote": "All of the courses in the Economics major programme are held in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.leuphana.de/en/college/bachelor/economics-major.html?utm_source=DAAD&utm_medium=referral&utm_campaign=international-marketing",
+          "quote": "Fees: no tuition fees"
+        }
+      ]
+    }
+  },
+  "notes": "La page de ce programme indique « Fees: no tuition fees » : le montant 0 correspond à l'absence de frais de scolarité, la contribution semestrielle (~452,92 EUR) n'est pas une tuition. Les frais généraux de l'université (500 EUR/semestre pour étudiants en dépassement de durée) sont institutionnels et non propres au programme. Le semestre d'hiver commence « Beginning of October » mais la page ne donne ni jour ni année exploitables : startDate null. Les pages ne donnent pas de date d'ouverture de candidature. Le canal de candidature n'est pas explicite pour l'Economics BSc : la page renvoie au schéma de la page « international applicants » (non fournie), donc le choix 'de-university-direct' s'appuie sur le portail myCampus et reste à confirmer par l'auditeur (possibilité de VPD Uni-Assist).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9671/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez sur la page des candidats internationaux si vous devez d'abord faire évaluer votre diplôme (procédure Uni-Assist, VPD) avant de déposer votre candidature via myCampus.",
+          "en": "Check the international applicants page whether you must first have your certificate reviewed (Uni-Assist procedure, VPD) before applying via myCampus."
+        },
+        "evidence": [
+          {
+            "url": "https://www.leuphana.de/en/college/application.html",
+            "quote": "Applicants with a foreign university entrance qualification can obtain information on the pages for international students."
+          }
+        ]
+      }
+    ]
+  }
+}

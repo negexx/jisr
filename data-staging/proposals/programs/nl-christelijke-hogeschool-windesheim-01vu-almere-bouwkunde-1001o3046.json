@@ -1,0 +1,46 @@
+{
+  "slug": "nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046",
+  "programmePage": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Studieduur 4 jaar"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Aanmelden via Studielink"
+        },
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Meld je dan zo snel mogelijk aan via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Le tarif indiqué sur la page du programme (€ 2.694,-) correspond au collegegeld 2026-2027 pour les étudiants qui remplissent les critères du collegegeld légal ; le montant pour un étudiant non-UE n'est pas précisé sur cette page. La page indique que l'enseignement est en néerlandais (aucune mention d'un programme en anglais).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier l'équivalence du diplôme marocain (baccalauréat) avec un diplôme néerlandais de havo, vwo ou mbo-4, et vérifier les exigences linguistiques (le niveau n'est pas précisé sur cette page).",
+          "en": "Check equivalence of the Moroccan Baccalaureate with a Dutch havo, vwo or mbo-4 diploma, and check language requirements (level not specified on this page)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+            "quote": "Je bent toelaatbaar met een diploma dat gelijkwaardig is aan een havo-, vwo- of mbo-4 diploma. Daarnaast moet je voldoen aan de taaleisen."
+          }
+        ]
+      }
+    ]
+  }
+}

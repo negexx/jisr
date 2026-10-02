@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -86,6 +87,27 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-4
+      source: page-5
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - delf-dalf
+        - tcf
+    - id: req-5
+      source: page-6
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: L'admission en L1 Informatique à distance passe par la procédure DAP / Études en France (Campus France Maroc) ; le dossier doit être déposé selon le calendrier indiqué et il est conseillé de fournir une lettre de motivation claire, ciblée et personnalisée.
+          status: draft
+        en:
+          text: Admission to the distance L1 Informatique goes through the DAP / Études en France procedure (Campus France Morocco); the application must be submitted according to the stated calendar and a clear, targeted, personalised cover letter is advised.
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -99,4 +121,10 @@ sources:
     last_verified_at: 2026-10-01
   page-4:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
+    last_verified_at: 2026-10-01
+  page-6:
+    url: https://feg.univ-amu.fr/fr/candidature-inscription/candidature/demande-admission-prealable-dap
     last_verified_at: 2026-10-01

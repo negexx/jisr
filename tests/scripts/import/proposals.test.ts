@@ -497,6 +497,20 @@ describe("institutions and channels", () => {
     );
     expect(other).toMatchObject({ ok: false });
   });
+
+  it("refuses a quote that is on the page but names nothing distinctive about the institution", async () => {
+    const vague = await verifyInstitution(
+      {
+        slug: "i",
+        website: site,
+        evidence: [{ url: site, quote: "is a public university in Lille" }],
+      },
+      "University Example",
+      get,
+    );
+    expect(vague).toMatchObject({ ok: false });
+    expect(vague.ok === false && vague.reason).toMatch(/distinctive/);
+  });
   it("applies a verified institution: official, cited to its own site, type only when evidenced", () => {
     const staged = {
       slug: "i",
@@ -559,5 +573,38 @@ describe("institutions and channels", () => {
       g,
     );
     expect(no.ok).toBe(false);
+  });
+});
+
+describe("verifyProposal and a required certificate with no accepted tests", () => {
+  const withRule = (certificateRequired: boolean | null, acceptedTests: string[]): Proposal =>
+    ProposalSchema.parse({
+      slug: "p",
+      programmePage: PAGE,
+      facts: {},
+      requirements: {
+        rules: [
+          {
+            kind: "language_proficiency",
+            language: "en",
+            minCefr: null,
+            certificateRequired,
+            acceptedTests,
+            evidence: [{ url: PAGE, quote: "taught entirely in English" }],
+          },
+        ],
+      },
+    });
+
+  it("accepts the rule but as 'certificate requirement unknown' (an empty list would let any certificate pass)", async () => {
+    const v = await verifyProposal(withRule(true, []), "Applied Computer Science", getText);
+    const rule = v.requirements?.[0];
+    expect(rule?.kind === "language_proficiency" && rule.certificateRequired).toBeNull();
+  });
+
+  it("keeps 'required' when the accepted tests are named", async () => {
+    const v = await verifyProposal(withRule(true, ["ielts"]), "Applied Computer Science", getText);
+    // the quote does not name IELTS, so the rule is refused, never silently accepted
+    expect(v.requirements).toBeUndefined();
   });
 });

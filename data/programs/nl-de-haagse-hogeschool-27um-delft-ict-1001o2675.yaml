@@ -1,0 +1,103 @@
+slug: nl-de-haagse-hogeschool-27um-delft-ict-1001o2675
+institution: nl-de-haagse-hogeschool-27um-delft
+country: NL
+city: delft
+field: computer-science
+level: bachelor
+name: ICT
+summary:
+  fr:
+    text: ICT (Information & Communication Technology), De Haagse Hogeschool (Delft). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: ICT (Information & Communication Technology), De Haagse Hogeschool (Delft). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: ICT (Information & Communication Technology), De Haagse Hogeschool (Delft). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-05-01
+  source: page-2
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Avec un diplôme étranger ou international, vous pouvez être admis si ce diplôme donne accès au hbo et si vous prouvez une maîtrise suffisante du néerlandais ; le diplôme est évalué par l'institution. Contactez la Centrale Studenten Inschrijving.
+          status: draft
+        en:
+          text: With a foreign or international diploma, you can be admitted if the diploma grants access to hbo and you prove sufficient command of Dutch; the diploma is assessed by the institution. Contact the Centrale Studenten Inschrijving.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: nl
+      minCefr: null
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Avec un diplôme étranger, vous devez d'abord introduire une demande d'inscription via Studielink et télécharger vos documents dans Osiris Aanmelding ; la Centrale Studenten Inschrijving évalue votre éligibilité.
+          status: draft
+        en:
+          text: With a foreign diploma, you must first submit an application via Studielink and upload your documents in Osiris Aanmelding; the Centrale Studenten Inschrijving assesses your eligibility.
+          status: draft
+    - id: req-4
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le délai de candidature pour les titulaires d'un diplôme étranger est le 15 janvier 2026 uniquement pour les formations à admission en février ; pour l'ICT (début en septembre), la deadline est le 1 mai 2026.
+          status: draft
+        en:
+          text: The application deadline for holders of a foreign diploma is 15 January 2026 only for programmes with a February start; for ICT (September start), the deadline is 1 May 2026.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen
+    last_verified_at: 2026-10-01

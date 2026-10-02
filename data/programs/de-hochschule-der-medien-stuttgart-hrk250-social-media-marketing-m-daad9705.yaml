@@ -15,39 +15,98 @@ summary:
   ar:
     text: Social Media Marketing & Management, Hochschule der Medien Stuttgart (Stuttgart). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9705/
+officialUrl: https://sm-bachelor.hdm-stuttgart.de/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: page-3
+  info_kind: official
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-05-20
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-06-30
+  source: page-3
+  info_kind: official
 applicationChannel:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée obligatoire (formulaire de candidature, test d'anglais et entretien en ligne) doit être réussi avant de pouvoir déposer une candidature ; il compte pour 70 % du classement, le diplôme de fin d'études secondaires pour 30 %.
+          status: draft
+        en:
+          text: A mandatory entrance exam (application form, English proficiency test and online interview) must be passed before you may apply; it accounts for 70% of the ranking and the school leaving certificate for 30%.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats internationaux sans diplôme allemand d'accès à l'enseignement supérieur doivent faire reconnaître leur certificat par le Studienkolleg Konstanz (certificat de reconnaissance à soumettre avant le 15 juillet).
+          status: draft
+        en:
+          text: International applicants without a German higher education entrance qualification must have their certificate recognised by the Studienkolleg Konstanz (certificate of recognition to be submitted by 15 July).
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats internationaux sans diplôme allemand doivent passer l'examen d'entrée du tour 1 (Round 1).
+          status: draft
+        en:
+          text: International applicants without a German higher education entrance qualification must apply for entrance exam (Round 1).
+          status: draft
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Prévoir un visa et une preuve de fonds (compte bloqué) pour étudier en Allemagne.
+          status: draft
+        en:
+          text: You will need a visa and proof of sufficient funds (blocked account) to study in Germany.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://sm-bachelor.hdm-stuttgart.de/
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9705/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://sm-bachelor.hdm-stuttgart.de/admission
     last_verified_at: 2026-10-01

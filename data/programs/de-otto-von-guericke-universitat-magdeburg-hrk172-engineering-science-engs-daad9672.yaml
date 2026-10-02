@@ -15,39 +15,69 @@ summary:
   ar:
     text: Engineering Science (EngSci), Otto-von-Guericke-Universität Magdeburg (Magdeburg). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9672/
+officialUrl: https://www.ovgu.de/unimagdeburg/en/engineering_science_bachelor.html
 durationYears:
   value: 3
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-3
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les exemptions aux exigences linguistiques et les conditions d'admission détaillées sur le site du programme.
+          status: draft
+        en:
+          text: Check the language requirement exemptions and detailed admission requirements on the programme website.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://www.ovgu.de/unimagdeburg/en/engineering_science_bachelor.html
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9672/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.ovgu.de/unimagdeburg/en/International/Incoming+_+Ways+to+the+University/International+Students/Full_Time+Studies/Applying+via+uni_assist+e_V_-p-107054.html
     last_verified_at: 2026-10-01

@@ -1,0 +1,64 @@
+slug: nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064
+institution: nl-hogeschool-inholland-27pz-haarlem
+country: NL
+city: haarlem
+field: engineering
+level: bachelor
+name: Bouwkunde
+summary:
+  fr:
+    text: Bouwkunde (Architecture and Construction Engineering), Hogeschool Inholland (Haarlem). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Bouwkunde (Architecture and Construction Engineering), Hogeschool Inholland (Haarlem). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Bouwkunde (Architecture and Construction Engineering), Hogeschool Inholland (Haarlem). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.inholland.nl/opleidingen/bouwkunde-voltijd/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez auprès de l'établissement si vous devez démontrer votre maîtrise du néerlandais et à quel niveau.
+          status: draft
+        en:
+          text: Check with the institution whether you need to demonstrate Dutch proficiency and at what level.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.inholland.nl/opleidingen/bouwkunde-voltijd/
+    last_verified_at: 2026-10-01

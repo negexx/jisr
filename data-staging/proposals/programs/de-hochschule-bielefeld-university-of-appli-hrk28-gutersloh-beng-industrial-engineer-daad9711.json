@@ -1,0 +1,86 @@
+{
+  "slug": "de-hochschule-bielefeld-university-of-appli-hrk28-gutersloh-beng-industrial-engineer-daad9711",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/",
+          "quote": "All courses are taught in English."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hsbi.de/en/international-office/international-applicants/applying-for-work-integrated-programmes",
+          "quote": "Applicants with certificates issued abroad must apply for a VPD certificate from uni-assist via the HSBI application portal before applying."
+        }
+      ]
+    }
+  },
+  "notes": "Le DAAD précise que les frais de scolarité par semestre sont « None » et que la contribution semestrielle est d'environ 230 EUR, mais cette information semble s'appliquer à tous les étudiants et non spécifiquement aux étudiants hors UE/EEE ; elle n'est donc pas reprise comme frais de scolarité. La date limite du 15 juillet est indiquée sans année ; l'année 2026 est supposée à partir du contexte « International Programmes 2026/2027 » et doit être vérifiée. Les dates d'ouverture des candidatures pour les programmes intégrés en entreprise (1er décembre – 15 juillet) ne sont pas reprises car elles concernent spécifiquement les programmes work-integrated.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: Cambridge English Qualifications: B2 First UNIcert® English: UNIcert® II telc English: telc English B2 TOEFL iBT (since 2026): 4 Reading: 4 Listening: 4 Speaking: 4 Writing: 4 TOEFL iBT (before 2026): 72 Reading: 18 Listening: 17 Speaking: 20 Writing: 17 IELTS Academic: 5.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme étranger (Baccalauréat marocain) est reconnu comme qualification d'entrée à l'université en Allemagne et si une VPD d'uni-assist est nécessaire.",
+          "en": "Check whether your foreign certificate (Moroccan Baccalauréat) is recognised as a university entrance qualification in Germany and whether a uni-assist VPD is required."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/",
+            "quote": "The Abitur, Fachhochschulreife, an equivalent school-leaving certificate or an educational background that qualifies you for higher education is required."
+          },
+          {
+            "url": "https://www.hsbi.de/en/international-office/international-applicants/applying-for-work-integrated-programmes",
+            "quote": "Please check DAAD’s admissions database to see whether your foreign certificates entitle you to study your desired subject at a German university."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission spécifiques et, le cas échéant, l'exigence d'une convention de coopération avec une entreprise pour la variante intégrée en entreprise.",
+          "en": "Check the specific admission requirements and, if applicable, the requirement of a cooperation agreement with a company for the work-integrated variant."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/",
+            "quote": "Please find further information on the BEng Industrial Engineering (work-integrated) and the admission requirements on our website."
+          }
+        ]
+      }
+    ]
+  }
+}

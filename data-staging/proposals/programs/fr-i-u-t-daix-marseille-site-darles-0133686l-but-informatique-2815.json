@@ -1,0 +1,113 @@
+{
+  "slug": "fr-i-u-t-daix-marseille-site-darles-0133686l-but-informatique-2815",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2815&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie",
+          "quote": "Le BUT est un diplôme préparé en 3 ans en IUT"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2815&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+          "quote": "2 902 euros pour une année en cycle de Licence"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "fr-campus-france",
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+          "quote": "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "tcf",
+          "delf-dalf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2815&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.",
+          "en": "Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.",
+          "ar": "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+            "quote": "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2815&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission en 1re année est sélective : les candidatures sont examinées par une commission d'examen des vœux selon la grille publiée (résultats scolaires 25 %, méthodes de travail 25 %, savoir-être 25 %, motivation 20 %, engagement 5 %). Consultez la fiche Parcoursup pour vérifier les modalités applicables aux candidats titulaires d'un bac marocain.",
+          "en": "Admission to year 1 is selective: applications are reviewed by a commission using the published grid (academic results 25%, working methods 25%, behaviour 25%, motivation 20%, engagement 5%). Check the Parcoursup page for the arrangements applicable to holders of a Moroccan Baccalaureat."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2815&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 25 % Méthodes de travail 25 % Savoir-être 25 % Motivation 20 % Engagement et activités 5 %"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Pages are about the BUT Informatique at IUT d'Aix-Marseille, site d'Arles. durationYears is confirmed by '3 ans – 180 ECTS' on the programme page (also 'former des informaticiens généralistes en 3 ans'). Teaching language: the programme is taught in French; the only explicit language requirements on the pages are a B2 level of French for entry and, on the programme page, English language as LV1 plus TOEIC certification offered ('Certifications proposées : TOEIC, PIX, Voltaire'), so 'en' is not listed as a teaching language. Tuition: no fee for the applicant's profile could be quoted for this programme. The only figures stated are the national registration fee of EUR 178/year ('Droits d'inscription nationaux : 178 €*'), which is the fee for French/EU students and is not stated for non-EU students in the programme pages; the Campus France Maroc page gives EUR 2 902 for a Licence year for extra-community students but that is a general institution-independent statement about public higher-education institutions in France, not this programme, so it was left out. Notably, a LinkedIn post from Aix-Marseille Universite (2019) states non-EU students are exempt from differentiated fees at AMU, but it concerns academic year 2019/2020 and is on a third-party social network, so it was not used as a fact. Intakes: the pages give no application deadline or intake date for this programme for a foreign-diploma applicant (the Parcoursup page mentions only '56 places en 2026' and the ADIUT Maroc calendar 2026 is a PDF that is not reproduced here); no intake fact was produced. Application channel is deliberately omitted per the task."
+}

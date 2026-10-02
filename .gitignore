@@ -48,3 +48,6 @@ yarn-error.log*
 
 # Importer HTTP cache (pnpm data:import)
 /.cache/
+# Output of data:read and data:bakeoff runs (calls.jsonl, proposals): re-creatable, not data
+/data-staging/bakeoff/
+/data-staging/proposals-read/

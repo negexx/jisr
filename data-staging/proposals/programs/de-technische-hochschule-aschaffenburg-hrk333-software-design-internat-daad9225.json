@@ -1,0 +1,89 @@
+{
+  "slug": "de-technische-hochschule-aschaffenburg-hrk333-software-design-internat-daad9225",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/",
+          "quote": "Teaching language English Languages Courses are held in English, but each semester includes the German language study course."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: The DAAD page says 'Tuition fees per semester None' but also states a semester contribution. This is a general statement for the university and it is unclear whether it applies to non-EU students; no non-EU tuition fee is stated for this programme, so no tuition fact is included. Intakes: The DAAD page names 'Beginning Winter semester' but no dates, so only the startDate is null and no year can be inferred. ApplicationChannel: The university page requires a VPD from uni-assist for foreign educational certificates; this is a de-uni-assist-vpd route.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/",
+            "quote": "English language skills B2 required, please provide an official language certificate"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/",
+            "quote": "TOEFL iBT (before 2026): 72"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/",
+            "quote": "IELTS Academic: 5.5"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/",
+            "quote": "German language skills A1 required, please provide an official language certificate"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les dates limites de candidature auprès de l'université : la page DAAD indique seulement « Winter semester » et renvoie au site web de l'université. Une pré-vérification des documents (VPD) par uni-assist et des frais de candidature de 80 EUR pour les non-EU sont exigés.",
+          "en": "Check the application deadlines with the university: the DAAD page only says 'Winter semester' and links to the university website. A preliminary review of documents (VPD) by uni-assist and an application fee of 80 EUR for non-EU applicants are required."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/",
+            "quote": "Beginning Winter semester"
+          },
+          {
+            "url": "https://www.th-ab.de/studium/bewerben/",
+            "quote": "bei ausländischen Bildungsnachweisen die Vorprüfungsdokumentation (VPD) von uni-assist"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/",
+            "quote": "Applicants from non-EU countries must pay a fee of 80 EUR for each application"
+          }
+        ]
+      }
+    ]
+  }
+}

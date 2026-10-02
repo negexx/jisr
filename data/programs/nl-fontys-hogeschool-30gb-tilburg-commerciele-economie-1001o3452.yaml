@@ -1,0 +1,81 @@
+slug: nl-fontys-hogeschool-30gb-tilburg-commerciele-economie-1001o3452
+institution: nl-fontys-hogeschool-30gb-tilburg
+country: NL
+city: tilburg
+field: business-economics
+level: bachelor
+name: Commerciële Economie
+summary:
+  fr:
+    text: Commerciële Economie (Marketing Management), Fontys Hogeschool (Tilburg). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Commerciële Economie (Marketing Management), Fontys Hogeschool (Tilburg). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Commerciële Economie (Marketing Management), Fontys Hogeschool (Tilburg). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2027-05-01
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si votre diplôme marocain (Baccalauréat) est accepté comme diplôme d'accès équivalent au havo, vwo ou mbo niveau 4; le site mentionne que des cas particuliers peuvent être admis.
+          status: draft
+        en:
+          text: Check whether your Moroccan Baccalauréat is accepted as an equivalent entry diploma to havo, vwo or mbo level 4; the site mentions that in some cases admission is still possible.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Si vous avez 21 ans ou plus et pas de diplôme havo/vwo/mbo niveau 4 reconnu, contactez l'école au sujet du test d'admission 21+ (coût 150 € pour les Pays-Bas) et, pour un programme en anglais, des tests d'anglais IELTS/TOEFL/Cambridge; pour le programme néerlandais, un test de néerlandais fait partie de ce test.
+          status: draft
+        en:
+          text: If you are 21 or older and lack a recognised havo/vwo/mbo level 4 diploma, contact the school about the 21+ admission test (cost 150 € for the Netherlands) and, for an English-taught programme, English tests IELTS/TOEFL/Cambridge; for the Dutch-taught programme a Dutch language test is part of this test.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm
+    last_verified_at: 2026-10-01

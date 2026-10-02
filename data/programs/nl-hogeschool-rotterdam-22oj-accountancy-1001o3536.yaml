@@ -1,0 +1,53 @@
+slug: nl-hogeschool-rotterdam-22oj-accountancy-1001o3536
+institution: nl-hogeschool-rotterdam-22oj
+country: NL
+city: rotterdam
+field: business-economics
+level: bachelor
+name: Accountancy
+summary:
+  fr:
+    text: Accountancy (Accountancy), Hogeschool Rotterdam (Rotterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Accountancy (Accountancy), Hogeschool Rotterdam (Rotterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Accountancy (Accountancy), Hogeschool Rotterdam (Rotterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/accountancy/voltijd/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/accountancy/voltijd/
+    last_verified_at: 2026-10-01

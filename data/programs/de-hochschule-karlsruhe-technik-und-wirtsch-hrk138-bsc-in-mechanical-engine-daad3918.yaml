@@ -18,36 +18,93 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3918/
 durationYears:
   value: 3
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-university-direct
+  source: page-2
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si votre diplôme de fin d'études secondaires (baccalauréat marocain) est reconnu pour des études en Allemagne via la base de données DAAD sur les conditions d'admission ; une préparation (Pre-Semester) ou un examen d'éligibilité peut être exigé.
+          status: draft
+        en:
+          text: Check whether your secondary school certificate (Moroccan Baccalauréat) is recognised for studies in Germany via the DAAD database on admission requirements; a Pre-Semester or eligibility examination may be required.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un des tests standardisés suivants est exigé : SAT (au moins 1200 points), ACT (au moins 24 points) ou TestAS (rang centile de 75). Vérifiez les scores requis et les codes d'établissement."
+          status: draft
+        en:
+          text: "One of the following standardised tests is required: SAT (at least 1200 points), ACT (at least 24 points) or TestAS (percentile rank of 75). Check the required scores and school codes."
+          status: draft
+    - id: req-4
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Une lettre de motivation est obligatoire ; elle doit être rédigée en anglais sur le formulaire officiel et répondre à plusieurs questions.
+          status: draft
+        en:
+          text: A motivation letter is required; it must be written in English using the official form and answer several questions.
+          status: draft
+    - id: req-5
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les dossiers doivent être soumis avant la date limite du 30 avril ; les décisions d'admission sont notifiées 2 à 3 semaines après cette date.
+          status: draft
+        en:
+          text: Applications must be submitted before the 30 April deadline; admission decisions are notified 2 to 3 weeks after that date.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3918/
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.carlbenzschool.kit.edu/admission-requirements.php
     last_verified_at: 2026-10-01

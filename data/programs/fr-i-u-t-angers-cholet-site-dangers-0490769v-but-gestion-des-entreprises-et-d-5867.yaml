@@ -21,15 +21,16 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
-  source: programme
+  value:
+    - fr
+  source: page-3
   info_kind: official
 tuition:
   value:
     amountMinor: 290200
     currency: EUR
     period: year
-  source: page-3
+  source: page-4
   info_kind: official
 intakes:
   value: null
@@ -37,7 +38,7 @@ intakes:
   info_kind: official
 applicationChannel:
   value: fr-campus-france
-  source: page-4
+  source: page-5
   info_kind: official
 documents:
   value: null
@@ -59,7 +60,7 @@ requirements:
         - tcf
         - delf-dalf
     - id: req-2
-      source: page-3
+      source: page-4
       info_kind: official
       kind: manual_check
       note:
@@ -72,6 +73,47 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Candidature via la plateforme Études en France de Campus France (dossier : bac marocain, procédure Études en France) ; vérifiez les dates et modalités auprès de votre espace Campus France."
+          status: draft
+        en:
+          text: Application via the Campus France Études en France platform (Moroccan Bac, Études en France procedure); check dates and conditions with your Campus France office.
+          status: draft
+    - id: req-5
+      source: page-6
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La certification de français (TCF, DELF B2 ou DALF) est exigée à la soumission du dossier de candidature Campus France, sauf cas de dispense.
+          status: draft
+        en:
+          text: A French certificate (TCF, DELF B2 or DALF) is required when submitting the Campus France application, unless exempted.
+          status: draft
+    - id: req-6
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Admission sélective : l'examen des candidatures porte notamment sur les résultats scolaires (40 %), les méthodes de travail (5 %), le savoir-être (30 %), la motivation (20 %) et l'engagement (5 %). Un travail soutenu dans les matières clef est nécessaire."
+          status: draft
+        en:
+          text: "Selective admission: applications are assessed on academic results (40%), work methods (5%), soft skills (30%), motivation (20%) and engagement (5%). Strong work in key subjects is required."
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -81,8 +123,14 @@ sources:
     url: https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie
     last_verified_at: 2026-10-01
   page-3:
-    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    url: https://formations.univ-angers.fr/fr/offre-de-formation/bachelor-universitaire-de-technologie-BUT/droit-economie-gestion-DEG/but-gestion-des-entreprises-et-administrations-KQAM8ICT.html
     last_verified_at: 2026-10-01
   page-4:
+    url: https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses
+    last_verified_at: 2026-10-01
+  page-5:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01
+  page-6:
+    url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
     last_verified_at: 2026-10-01

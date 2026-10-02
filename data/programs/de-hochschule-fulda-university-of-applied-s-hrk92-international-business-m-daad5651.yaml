@@ -15,39 +15,66 @@ summary:
   ar:
     text: International Business & Management, Hochschule Fulda - University of Applied Sciences (Fulda). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/
+officialUrl: https://www.hs-fulda.de/ibm
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez que vous disposez d'une qualification d'entrée à l'université (Hochschulzugangsberechtigung, HZB) reconnue pour les universités allemandes; votre Baccalauréat marocain doit être évalué.
+          status: draft
+        en:
+          text: Check that you hold a recognised university entrance qualification (Hochschulzugangsberechtigung, HZB) for German universities; your Moroccan Baccalauréat must be assessed.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://www.hs-fulda.de/ibm
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/
     last_verified_at: 2026-10-01

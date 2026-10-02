@@ -1,0 +1,53 @@
+slug: nl-hogeschool-inholland-27pz-delft-luchtvaarttechnologie-1001o3164
+institution: nl-hogeschool-inholland-27pz-delft
+country: NL
+city: delft
+field: engineering
+level: bachelor
+name: Luchtvaarttechnologie
+summary:
+  fr:
+    text: Luchtvaarttechnologie (Aeronautical Engineering), Hogeschool Inholland (Delft). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Luchtvaarttechnologie (Aeronautical Engineering), Hogeschool Inholland (Delft). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Luchtvaarttechnologie (Aeronautical Engineering), Hogeschool Inholland (Delft). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.inholland.nl/opleidingen/luchtvaarttechnologie-voltijd/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.inholland.nl/opleidingen/luchtvaarttechnologie-voltijd/
+    last_verified_at: 2026-10-01

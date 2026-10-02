@@ -1,0 +1,60 @@
+{
+  "slug": "de-universitat-zu-koln-hrk147-management-economics-and-daad7682",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/",
+          "quote": "This Bachelor's programme is designed to take six semesters (three years)."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/",
+          "quote": "As global challenges need global solutions, this programme is taught in English."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fees for non-EU students not stated for this programme; page says 'Tuition fees per semester None' but a semester contribution of approx. 320 EUR is mentioned, which is not a tuition fee. Application channel: the programme page and the WiSo application page do not state a specific platform for international applicants; they only direct to a website or a general page, so applicationChannel is omitted and should be verified manually.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: Cambridge English Qualifications: B2 First IELTS Academic: 5.5 TOEFL iBT (since 2026): 4 Reading: 4 Listening: 4 Speaking: 4 Writing: 4"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission et les notes requises pour votre diplôme (baccalauréat marocain) auprès de l'Université de Cologne.",
+          "en": "Check the admission requirements and grade thresholds for your diploma (Moroccan Baccalauréat) at the University of Cologne."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/",
+            "quote": "Grades from your university entrance qualification Please find detailed information here."
+          }
+        ]
+      }
+    ]
+  }
+}

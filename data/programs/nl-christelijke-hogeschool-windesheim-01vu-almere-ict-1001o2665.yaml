@@ -1,0 +1,69 @@
+slug: nl-christelijke-hogeschool-windesheim-01vu-almere-ict-1001o2665
+institution: nl-christelijke-hogeschool-windesheim-01vu-almere
+country: NL
+city: almere
+field: computer-science
+level: bachelor
+name: ICT
+summary:
+  fr:
+    text: ICT (Information & Communication Technology), Christelijke Hogeschool Windesheim (Almere). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: ICT (Information & Communication Technology), Christelijke Hogeschool Windesheim (Almere). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: ICT (Information & Communication Technology), Christelijke Hogeschool Windesheim (Almere). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-09-06
+      applicationOpens: null
+      applicationDeadline: 2027-05-01
+    - startDate: 2027-02-01
+      applicationOpens: null
+      applicationDeadline: 2027-01-31
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez que le baccalauréat marocain est reconnu comme équivalent à un diplôme havo/vwo/mbo-4 et consultez les exigences linguistiques sur la page des taaleisen.
+          status: draft
+        en:
+          text: Check that the Moroccan Baccalauréat is recognised as equivalent to a havo/vwo/mbo-4 diploma and consult the language requirements on the taaleisen page.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle
+    last_verified_at: 2026-10-01

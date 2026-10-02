@@ -15,39 +15,69 @@ summary:
   ar:
     text: Computer Science (CTS), Technische Hochschule Ulm (Ulm). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4669/
+officialUrl: https://www.thu.de/cts
 durationYears:
   value: 4
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: page-3
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez votre qualification d'entrée aux études supérieures (Fachhochschulreife, Abitur ou équivalent) et contactez le Studienkolleg Konstanz pour faire reconnaître votre diplôme étranger.
+          status: draft
+        en:
+          text: Check your higher education entrance qualification (Fachhochschulreife, Abitur or equivalent) and contact Studienkolleg Konstanz to have your foreign school-leaving qualification recognised.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://www.thu.de/cts
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4669/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.thu.de/en/studies/before-studies/fees-scholarships/contributions-tuition-fees
     last_verified_at: 2026-10-01

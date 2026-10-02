@@ -1,0 +1,134 @@
+{
+  "slug": "fr-i-u-t-daix-marseille-site-de-gap-0050604e-but-gestion-des-entreprises-et-d-2177",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2177&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.bielorussie.campusfrance.org/fr/le-but-bachelor-universitaire-de-technologie",
+          "quote": "Le BUT est un diplôme préparé en 3 ans en IUT"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2177&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2177&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : Anglais"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+          "quote": "2 902 euros pour une année en cycle de Licence"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "fr-campus-france",
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+          "quote": "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "tcf",
+          "delf-dalf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2177&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.",
+          "en": "Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.",
+          "ar": "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+            "quote": "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2177&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La sélection se fait sur dossier scolaire (notes et appréciations de première et de terminale) ; consultez la grille d'analyse des candidatures de la formation.",
+          "en": "Selection is based on the academic record (grades and teacher assessments from the last two years of high school); see the programme's application assessment grid."
+        },
+        "evidence": [
+          {
+            "url": "https://iut.univ-amu.fr/fr/formations/bachelor-universitaire-de-technologie/but-gestion-entreprises-administrations/but-gea-gap",
+            "quote": "La sélection est faite à partir du dossier scolaire de première et de terminale (notes et appréciations des enseignants)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des exemptions ou exonérations partielles des droits différenciés existent ; vérifiez votre situation auprès de l'université.",
+          "en": "Exemptions or partial waivers of the differentiated tuition fees exist; check your situation with the university."
+        },
+        "evidence": [
+          {
+            "url": "https://www.univ-amu.fr/fr/etudiants-internationaux/etudiants-internationaux-formation-diplomante/droits-dinscription-differencies-etudiants-union-europeenne",
+            "quote": "➝ Certains étudiants ayant acquitté la totalité des droits d’inscription différenciés pourront bénéficier d’une exonération partielle à 75% du montant de ces droits dans la limite du contingent règlementaire applicable."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Read by code from the Parcoursup fiche (French level, distance learning) and from Campus France national pages (duration, fees for a non-EU student at a public institution, certificate, platform). The national facts are not this programme's own page. | Tuition: I used the current (2026-27) non-EU differentiated Licence fee of EUR 2,902/year stated by Aix-Marseille University, which states first-time non-EU ('primo-arrivants') students pay the full differentiated fee. The programme page (iut.univ-amu.fr) only lists '178€' national fees and a 2019 LinkedIn post claimed AMU exempted non-EU students, but the university's own updated page states the exemption rules changed (décret 2026-385) and primo-arrivants pay in full. This should be verified by the auditor. teachingLanguages: the only explicitly stated language of instruction/requirement is French (B2); English is listed as LV1, not as a teaching language. intakes: no page states a day/ month/year application deadline for this programme for a non-EU applicant; the only dated element is a September 2027 start for the intensive GEA track, so all three date fields are null and the fact is effectively uninformative — consider dropping it. The application channel is Études en France (set separately), not Parcoursup, as instructed."
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "de-friedrich-alexander-universitat-erlangen-hrk70-artificial-intelligence-daad9594",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/",
+          "quote": "Programme duration 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/",
+          "quote": "Teaching language English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 100000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.fau.eu/studying/international-students/application-and-enrollment-for-international-applicants/tuition-fees-for-students-from-non-eu-states/",
+          "quote": "Artificial Intelligence* Bachelor of Science Yes 1,000 euros"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the DAAD page only says 'FAU does charge tuition fees for students from non-EU states' without an amount; the amount used (1,000 EUR per semester) comes from the FAU tuition-fees page row 'Artificial Intelligence* Bachelor of Science Yes 1,000 euros'. That page states fees start from summer semester 2027 for newly enrolled students, and that the fee is per semester, so the annual figure would be 2,000 EUR. Intake dates: the pages give application deadline '31 May for international applicants' and opening '15 April' but no year for the upcoming intake, so all intake date fields are left null. Admission also requires passing a qualification assessment process (online test); no numerus clausus. Applicants apply through the university's own Campo portal, not uni-assist.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B1",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/",
+            "quote": "English language skills B1 required, please provide an official language certificate, e.g.: IELTS Academic: 5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'aptitude en ligne (mathématiques et résolution de problèmes, en anglais) fait partie de la procédure de sélection ; au moins 140 points sont requis.",
+          "en": "An online aptitude test (mathematics and problem solving, in English) is part of the selection procedure; at least 140 points are required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ai.study.fau.eu/prospective-students/bachelor-ai/admission-test/",
+            "quote": "Applicants who achieve less than 140 points are unfortunately not suitable for the degree program."
+          }
+        ]
+      }
+    ]
+  }
+}

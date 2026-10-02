@@ -1,0 +1,80 @@
+slug: nl-hogeschool-leiden-21ri-commerciele-economie-1001o3422
+institution: nl-hogeschool-leiden-21ri
+country: NL
+city: leiden
+field: business-economics
+level: bachelor
+name: Commerciële Economie
+summary:
+  fr:
+    text: Commerciële Economie (Marketing Management), Hogeschool Leiden (Leiden). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Commerciële Economie (Marketing Management), Hogeschool Leiden (Leiden). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Commerciële Economie (Marketing Management), Hogeschool Leiden (Leiden). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hsleiden.nl/opleiding/commerciele-economie
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2027-05-01
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme étranger (par ex. un baccalauréat marocain) doit être évalué par Hogeschool Leiden sur la base d'une évaluation de diplôme de Nuffic ; les délais d'inscription pour un diplôme étranger sont différents et sont décrits sur la page 'Studenten uit het buitenland'.
+          status: draft
+        en:
+          text: A foreign diploma (e.g. a Moroccan Baccalauréat) must be assessed by Hogeschool Leiden on the basis of a Nuffic diploma evaluation; the application deadlines for a foreign diploma are different and are described on the 'Studenten uit het buitenland' page.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Pour l'admission sans diplôme havo/vwo/mbo 4 (Toelatingsonderzoek 21+), l'épreuve pour Commerciële Economie a lieu au plus tard le 23 juin 2026 (rapport à fournir) ; les frais en 2025 sont d'environ € 342 et le résultat ne garantit pas l'admission, la commission d'examen décidant.
+          status: draft
+        en:
+          text: For admission without a havo/vwo/mbo 4 diploma (Toelatingsonderzoek 21+), the test for Commerciële Economie is due by 23 June 2026 (report to be submitted); the fee in 2025 is around € 342 and a positive result does not guarantee admission, as the examination committee decides.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hsleiden.nl/opleiding/commerciele-economie
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.hsleiden.nl/studeren/inschrijven/toelating
+    last_verified_at: 2026-10-01

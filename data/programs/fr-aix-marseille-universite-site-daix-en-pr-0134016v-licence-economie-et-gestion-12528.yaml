@@ -72,6 +72,25 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez le calendrier de candidature (dates limites pour la DAP : dépôt avant le 15 décembre précédant l'année universitaire, décision des établissements le 30 avril, réponse de l'étudiant avant le 31 mai) ainsi que le TCF auprès du CIEP."
+          status: draft
+        en:
+          text: "Check the application calendar (DAP deadlines: submit before 15 December of the year before the academic year, institution decision on 30 April, student reply by 31 May) and the TCF with CIEP."
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -85,4 +104,7 @@ sources:
     last_verified_at: 2026-10-01
   page-4:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://feg.univ-amu.fr/fr/candidature-inscription/candidature/demande-admission-prealable-dap
     last_verified_at: 2026-10-01

@@ -23,8 +23,9 @@ const PROPOSALS_DIR = path.join(STAGING_DIR, "proposals");
 // Usage:
 //   data:evidence text <url>                 print the visible text of a page (cached)
 //   data:evidence check <url> "<quote>"      is the quote on the page, verbatim?
-//   data:evidence verify [--dry-run]         verify every data-staging/proposals/*.json and apply it
-//   data:evidence restage                    bring promoted records that have a proposal back into staging
+//   data:evidence verify [--dry-run] [--slugs <file>]  verify every data-staging/proposals/*.json and apply it
+//                                            (only the slugs in <file>, one per line, when given)
+//   data:evidence restage [--slugs <file>]   bring promoted records that have a proposal back into staging
 //                                            as revisions (promote them again with --replace-revisions)
 async function main(argv: readonly string[]): Promise<void> {
   const [command, ...rest] = argv;
@@ -44,17 +45,37 @@ async function main(argv: readonly string[]): Promise<void> {
     return;
   }
   if (command === "verify") {
-    await verifyAll(rest.includes("--dry-run"));
+    await verifyAll(rest.includes("--dry-run"), await readSlugFilter(rest));
     return;
   }
   if (command === "restage") {
-    await restage();
+    await restage(await readSlugFilter(rest));
     return;
   }
   throw new Error("commands: text | check | verify | restage");
 }
 
 type Staged = Record<string, unknown>;
+
+// An explicit list of slugs to act on: restage reopens records for audit (and drops their audit
+// rows), so it must be possible to name exactly which ones. An empty file is refused rather than
+// read as "everything".
+export function inSelection(slug: string, only: ReadonlySet<string> | null): boolean {
+  return only === null || only.has(slug);
+}
+
+export async function readSlugFilter(argv: readonly string[]): Promise<Set<string> | null> {
+  const at = argv.indexOf("--slugs");
+  if (at === -1) return null;
+  const file = argv[at + 1];
+  if (file === undefined) throw new Error("--slugs needs a file");
+  const slugs = (await readFile(file, "utf8"))
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+  if (slugs.length === 0) throw new Error(`${file} is empty: refusing to treat it as "everything"`);
+  return new Set(slugs);
+}
 
 // The inverse of stampVerified: a revision goes through the audit again, so its dates are cleared.
 function clearVerified(value: unknown): unknown {
@@ -68,7 +89,7 @@ function clearVerified(value: unknown): unknown {
 // Brings records that were already promoted and now have a proposal back into staging as
 // revisions (same slug and source id, dates cleared). Their audit rows are dropped, so the next
 // `data:audit draw` puts them in a new batch: a promotion approval never covers changed content.
-export async function restage(): Promise<void> {
+export async function restage(only: ReadonlySet<string> | null = null): Promise<void> {
   const ledger = await readLedgerRows();
   const restaged: string[] = [];
   // Only programmes: their proposals are the ones that gain facts after promotion.
@@ -78,6 +99,7 @@ export async function restage(): Promise<void> {
     for (const name of (await readdir(dir)).sort()) {
       if (!name.endsWith(".json")) continue;
       const slug = name.slice(0, -".json".length);
+      if (!inSelection(slug, only)) continue;
       const promoted = path.join(DATA_DIR, kind, `${slug}.yaml`);
       if (!existsSync(promoted) || existsSync(stageFile(kind, slug))) continue;
       const record = clearVerified(parse(await readFile(promoted, "utf8"))) as Staged;
@@ -120,7 +142,7 @@ async function loadStaged(collection: string, slug: string): Promise<Staged | nu
   return typeof parsed === "object" && parsed !== null ? (parsed as Staged) : null;
 }
 
-async function verifyAll(dryRun: boolean): Promise<void> {
+async function verifyAll(dryRun: boolean, only: ReadonlySet<string> | null = null): Promise<void> {
   if (!existsSync(PROPOSALS_DIR)) {
     console.log("no proposals directory");
     return;
@@ -134,6 +156,7 @@ async function verifyAll(dryRun: boolean): Promise<void> {
       if (!name.endsWith(".json")) continue;
       const raw: unknown = JSON.parse(await readFile(path.join(dir, name), "utf8"));
       const slug = name.slice(0, -".json".length);
+      if (!inSelection(slug, only)) continue;
       const staged = await loadStaged(kind, slug);
       if (staged === null) {
         console.log(`${kind}/${slug}: no staged record`);

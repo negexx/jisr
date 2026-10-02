@@ -1,0 +1,53 @@
+slug: nl-hogeschool-inholland-27pz-amsterdam-accountancy-1001o3549
+institution: nl-hogeschool-inholland-27pz-amsterdam
+country: NL
+city: amsterdam
+field: business-economics
+level: bachelor
+name: Accountancy
+summary:
+  fr:
+    text: Accountancy (Accountancy), Hogeschool Inholland (Amsterdam). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Accountancy (Accountancy), Hogeschool Inholland (Amsterdam). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Accountancy (Accountancy), Hogeschool Inholland (Amsterdam). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.inholland.nl/opleidingen/accountancy-voltijd/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.inholland.nl/opleidingen/accountancy-voltijd/
+    last_verified_at: 2026-10-01

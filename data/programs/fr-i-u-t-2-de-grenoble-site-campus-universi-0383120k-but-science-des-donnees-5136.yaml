@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -71,6 +72,32 @@ requirements:
           status: draft
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: C1
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: subject_taken
+      subjects:
+        - mathematics
+      mode: all
+    - id: req-5
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "L'admission se fait sur dossier : résultats scolaires (50 %), méthodes de travail (10 %), savoir-être (10 %) et motivation (30 %), avec un niveau en mathématiques jugé essentiel. Vérifiez le niveau en mathématiques et les notes des enseignements de spécialité."
+          status: draft
+        en:
+          text: "Admission is based on a file review: academic results (50%), working methods (10%), behaviour (10%) and motivation (30%), with the level in mathematics considered essential. Check the mathematics level and the subject-specialism grades."
           status: draft
 scholarships: []
 sources:

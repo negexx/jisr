@@ -1,0 +1,14 @@
+slug: nl-hogeschool-van-amsterdam-28dn
+name: Hogeschool van Amsterdam
+country: NL
+city:
+  slug: amsterdam
+  name: Amsterdam
+type: null
+website: https://www.hva.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.hva.nl/
+    last_verified_at: 2026-10-01

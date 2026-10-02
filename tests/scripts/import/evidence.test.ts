@@ -96,6 +96,16 @@ describe("checkTuition", () => {
     expect(checkTuition(0, "There are no tuition fees for this programme").ok).toBe(true);
     expect(checkTuition(0, "Semester contribution 150 euros").ok).toBe(false);
   });
+  it("accepts the register wording 'Tuition fees per semester None' as a zero fee", () => {
+    expect(checkTuition(0, "Tuition fees per semester None").ok).toBe(true);
+    expect(checkTuition(0, "Tuition fees: none").ok).toBe(true);
+  });
+  it("does not read 'none' elsewhere as a zero fee", () => {
+    expect(checkTuition(0, "Semester contribution 150 euros. Scholarships: none").ok).toBe(false);
+    expect(
+      checkTuition(0, "Tuition fees per semester None for EU students, 1,500 EUR for non-EU").ok,
+    ).toBe(false);
+  });
 });
 
 describe("checkDeadline", () => {

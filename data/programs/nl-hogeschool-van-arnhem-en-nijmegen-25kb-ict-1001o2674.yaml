@@ -1,0 +1,69 @@
+slug: nl-hogeschool-van-arnhem-en-nijmegen-25kb-ict-1001o2674
+institution: nl-hogeschool-van-arnhem-en-nijmegen-25kb
+country: NL
+city: arnhem
+field: computer-science
+level: bachelor
+name: ICT
+summary:
+  fr:
+    text: ICT (Information & Communication Technology), Hogeschool van Arnhem en Nijmegen (Arnhem). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: ICT (Information & Communication Technology), Hogeschool van Arnhem en Nijmegen (Arnhem). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: ICT (Information & Communication Technology), Hogeschool van Arnhem en Nijmegen (Arnhem). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.han.nl/opleidingen/hbo/ict/voltijd/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-02-01
+      applicationOpens: null
+      applicationDeadline: null
+    - startDate: 2027-09-01
+      applicationOpens: null
+      applicationDeadline: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifier les conditions d'admission : un diplôme mbo, havo ou vwo est requis."
+          status: draft
+        en:
+          text: "Check admission requirements: an mbo, havo or vwo diploma is required."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.han.nl/opleidingen/hbo/ict/voltijd/
+    last_verified_at: 2026-10-01

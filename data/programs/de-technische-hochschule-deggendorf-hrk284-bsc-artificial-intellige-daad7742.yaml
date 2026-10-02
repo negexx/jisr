@@ -18,36 +18,75 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7742/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez la qualification d'entrée à l'université via la base de données DAAD et Anabin.
+          status: draft
+        en:
+          text: Check the university entrance qualification via the DAAD database and Anabin.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un test d'admission en ligne couvrant des sujets mathématiques et logiques est nécessaire.
+          status: draft
+        en:
+          text: An online admission test covering mathematical and logical topics is necessary.
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des frais de candidature et de service s'appliquent aux étudiants non-UE/EEE.
+          status: draft
+        en:
+          text: Application and service fees apply to non-EU/EEA students.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7742/
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.th-deg.de/en/apply
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.th-deg.de/en/students/documents/application-and-service-fees
     last_verified_at: 2026-10-01

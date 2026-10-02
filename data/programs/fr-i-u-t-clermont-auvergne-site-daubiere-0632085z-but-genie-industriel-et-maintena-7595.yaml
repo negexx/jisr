@@ -72,6 +72,36 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Concours d'entrée : test d'admission (écrit) portant sur la motivation et la connaissance de la formation ; prise de rendez-vous obligatoire sur Parcoursup."
+          status: draft
+        en:
+          text: "Entrance exam: admission test (written) on motivation and knowledge of the programme; an appointment must be booked on Parcoursup."
+          status: draft
+    - id: req-5
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Le dossier est examiné sur la base des bulletins de première et terminale (mathématiques, physique-chimie, sciences de l'ingénieur ou enseignement technologique, niveau en anglais, résultats des épreuves de français) : fournir les relevés et les résultats du baccalauréat."
+          status: draft
+        en:
+          text: "The application is assessed on the basis of the 1ère and Terminale reports (mathematics, physics-chemistry, engineering or technology, English level, French exam results): provide transcripts and Baccalauréat results."
+          status: draft
 scholarships: []
 sources:
   programme:

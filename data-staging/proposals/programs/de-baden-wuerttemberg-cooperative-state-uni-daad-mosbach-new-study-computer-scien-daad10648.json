@@ -1,0 +1,86 @@
+{
+  "slug": "de-baden-wuerttemberg-cooperative-state-uni-daad-mosbach-new-study-computer-scien-daad10648",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/",
+          "quote": "Over three years (six semesters), you will gain in-depth knowledge of computer science"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/",
+          "quote": "Classes are held entirely in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/",
+          "quote": "Tuition fees per semester The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/",
+            "quote": "English language skills B2 required, proof via placement test/interview"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un contrat de formation pratique avec une entreprise partenaire (Dualer Partner) doit être signé avant l'inscription ; contactez directement l'entreprise.",
+          "en": "A training contract with a workplace training provider (Dualer Partner) must be signed before enrolment; contact the company directly."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dhbw.de/application",
+            "quote": "Enrollment at the university is only possible after a training contract with a workplace training provider has been signed."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats titulaires d'un diplôme étranger doivent faire évaluer leur diplôme par le Central International Office du DHBW ; prévoyez plusieurs semaines.",
+          "en": "Applicants with a foreign qualification must have their credentials assessed by the Central International Office of DHBW; allow several weeks."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/",
+            "quote": "Enrolment of international degree seeking students, who received their university entrance qualification abroad, is only possible after the assessment of equivalency."
+          },
+          {
+            "url": "https://www.dhbw.de/application",
+            "quote": "The assessment of foreign academic credentials usually takes 2 to 3 weeks and is free of charge."
+          }
+        ]
+      }
+    ]
+  }
+}

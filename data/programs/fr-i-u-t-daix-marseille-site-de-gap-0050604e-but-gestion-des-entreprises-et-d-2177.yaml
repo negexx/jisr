@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -72,6 +73,36 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La sélection se fait sur dossier scolaire (notes et appréciations de première et de terminale) ; consultez la grille d'analyse des candidatures de la formation.
+          status: draft
+        en:
+          text: Selection is based on the academic record (grades and teacher assessments from the last two years of high school); see the programme's application assessment grid.
+          status: draft
+    - id: req-5
+      source: page-6
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des exemptions ou exonérations partielles des droits différenciés existent ; vérifiez votre situation auprès de l'université.
+          status: draft
+        en:
+          text: Exemptions or partial waivers of the differentiated tuition fees exist; check your situation with the university.
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -85,4 +116,10 @@ sources:
     last_verified_at: 2026-10-01
   page-4:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://iut.univ-amu.fr/fr/formations/bachelor-universitaire-de-technologie/but-gestion-entreprises-administrations/but-gea-gap
+    last_verified_at: 2026-10-01
+  page-6:
+    url: https://www.univ-amu.fr/fr/etudiants-internationaux/etudiants-internationaux-formation-diplomante/droits-dinscription-differencies-etudiants-union-europeenne
     last_verified_at: 2026-10-01

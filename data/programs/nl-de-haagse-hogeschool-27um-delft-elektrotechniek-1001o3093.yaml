@@ -1,0 +1,75 @@
+slug: nl-de-haagse-hogeschool-27um-delft-elektrotechniek-1001o3093
+institution: nl-de-haagse-hogeschool-27um-delft
+country: NL
+city: delft
+field: engineering
+level: bachelor
+name: Elektrotechniek
+summary:
+  fr:
+    text: Elektrotechniek (Electrical and Electronic Engineering), De Haagse Hogeschool (Delft). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Elektrotechniek (Electrical and Electronic Engineering), De Haagse Hogeschool (Delft). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Elektrotechniek (Electrical and Electronic Engineering), De Haagse Hogeschool (Delft). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/elektrotechniek-voltijd
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: nl
+      minCefr: null
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Avec un diplôme étranger ou international : le diplôme doit donner accès à l'enseignement supérieur néerlandais (hbo) et vous devez prouver une maîtrise suffisante du néerlandais ; votre dossier est évalué par la Centrale Studenten Inschrijving. Inscrivez-vous via Studielink et téléchargez vos documents."
+          status: draft
+        en:
+          text: "With a foreign or international diploma: the diploma must give access to Dutch higher education (hbo) and you must prove sufficient command of Dutch; your file is assessed by the Centrale Studenten Inschrijving. Register via Studielink and upload your documents."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/elektrotechniek-voltijd
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs
+    last_verified_at: 2026-10-01

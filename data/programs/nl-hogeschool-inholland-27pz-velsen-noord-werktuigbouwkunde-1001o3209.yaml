@@ -1,0 +1,53 @@
+slug: nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209
+institution: nl-hogeschool-inholland-27pz-velsen-noord
+country: NL
+city: velsen-noord
+field: engineering
+level: bachelor
+name: Werktuigbouwkunde
+summary:
+  fr:
+    text: Werktuigbouwkunde (Mechanical Engineering), Hogeschool Inholland (Velsen-Noord). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Werktuigbouwkunde (Mechanical Engineering), Hogeschool Inholland (Velsen-Noord). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Werktuigbouwkunde (Mechanical Engineering), Hogeschool Inholland (Velsen-Noord). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/
+    last_verified_at: 2026-10-01

@@ -1,0 +1,77 @@
+slug: nl-hogeschool-utrecht-25dw-ict-1001o2672
+institution: nl-hogeschool-utrecht-25dw
+country: NL
+city: utrecht
+field: computer-science
+level: bachelor
+name: ICT
+summary:
+  fr:
+    text: ICT (Information & Communication Technology), Hogeschool Utrecht (Utrecht). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: ICT (Information & Communication Technology), Hogeschool Utrecht (Utrecht). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: ICT (Information & Communication Technology), Hogeschool Utrecht (Utrecht). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.hu.nl/voltijd-opleidingen/hbo-ict
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifie les conditions d'admission : un diplôme néerlandais havo, vwo ou mbo-4 est exigé, ou un examen d'admission si tu as 21 ans ou plus et que tu n'as pas ce diplôme."
+          status: draft
+        en:
+          text: "Check the admission requirements: a Dutch havo, vwo or mbo-4 diploma is required, or an admission assessment if you are 21 or older without such a diploma."
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifie auprès de l'établissement quel tarif de frais de scolarité (instellingscollegegeld) s'applique à toi en tant qu'étudiant non-EEE avec un diplôme étranger, car les frais publiés varient selon le statut.
+          status: draft
+        en:
+          text: Check with the institution which tuition fee (instellingscollegegeld) applies to you as a non-EEA student with a foreign diploma, as the published fees vary by status.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.hu.nl/voltijd-opleidingen/hbo-ict
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.hu.nl/collegegeld-en-betalen
+    last_verified_at: 2026-10-01

@@ -15,39 +15,81 @@ summary:
   ar:
     text: International Wine Business (Bachelor of Science), Hochschule Geisenheim (Geisenheim). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8448/
+officialUrl: https://www.hs-geisenheim.de/en/studies/prospective-students/bachelors-programs/international-wine-business-bsc-english-program
 durationYears:
   value: 3
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-3
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier que le certificat d'anglais (TOEFL min. 80, IELTS min. 5.5 ou Cambridge FCE min. grade C) est accepté et joindre le justificatif.
+          status: draft
+        en:
+          text: Check that the English certificate (TOEFL min. 80, IELTS min. 5.5 or Cambridge FCE min. grade C) is accepted and attach the proof.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier si votre baccalauréat marocain est reconnu comme HZB direct ou indirect (anabin ou base de données DAAD) et fournir les documents requis.
+          status: draft
+        en:
+          text: Check whether your Moroccan Baccalaureate is recognized as a direct or indirect HZB (anabin or DAAD database) and provide the required documents.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un stage préalable de 12 semaines doit être effectué et confirmé avant l'inscription ; fournir une attestation officielle.
+          status: draft
+        en:
+          text: A 12-week pre-study internship must be completed and confirmed before enrolment; provide an official certificate.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://www.hs-geisenheim.de/en/studies/prospective-students/bachelors-programs/international-wine-business-bsc-english-program
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8448/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/
     last_verified_at: 2026-10-01

@@ -1,0 +1,74 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-haarlem-business-studies-1001o2990",
+  "programmePage": "https://www.inholland.nl/opleidingen/business-studies-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/business-studies-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar, Amsterdam, Den Haag, Haarlem en Rotterdam taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/business-studies-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar, Amsterdam, Den Haag, Haarlem en Rotterdam taal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "Le programme Business Studies (voltijd) est enseigné en néerlandais et dure 4 ans. Les pages fournies pour ce programme ne mentionnent pas de date limite de candidature, de date d'ouverture ou de rentrée. Le canal de candidature via Studielink n'est pas explicitement mentionné sur la page du programme, mais une page générale Inholland mentionne que l'inscription se fait via Studielink : « De betaling van collegegeld regel je in Studielink. » ; aussi dans les conditions d'admission : « Always do an Intake after you have registered with Studielink. »",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si le diplôme marocain (Baccalauréat) est considéré comme équivalent à un diplôme néerlandais HAVO, VWO ou MBO-4 ; envoyez les copies du diplôme et du relevé de notes à l'administration des étudiants pour évaluation.",
+          "en": "Check whether the Moroccan diploma (Baccalauréat) is considered equivalent to a Dutch HAVO, VWO or MBO-4 diploma; send copies of your diploma and final transcript to the Student Administration for evaluation."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+            "quote": "All internationally obtained diplomas need to be evaluated by our Admissions department."
+          },
+          {
+            "url": "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+            "quote": "International diplomas are assessed individually."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les exigences linguistiques en néerlandais pour cette formation (la page ne précise pas de niveau).",
+          "en": "Check the Dutch language requirements for this programme (the pages do not specify a level)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+            "quote": "Language requirements"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Si vous avez 21 ans ou plus et que vous ne remplissez pas les conditions d'admission, vous pouvez demander à passer un examen d'entrée.",
+          "en": "If you are 21 or older and do not meet the entry requirements, you can request an entrance exam."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+            "quote": "If you are 21 years of age or older and do not meet the minimum entrance requirements, you can still be admitted by passing the entrance exam."
+          }
+        ]
+      }
+    ]
+  }
+}

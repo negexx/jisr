@@ -1,0 +1,14 @@
+slug: nl-erasmus-universiteit-rotterdam-21pe
+name: Erasmus Universiteit Rotterdam
+country: NL
+city:
+  slug: rotterdam
+  name: Rotterdam
+type: null
+website: https://www.eur.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.eur.nl/
+    last_verified_at: 2026-10-01

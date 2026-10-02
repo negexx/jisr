@@ -1,0 +1,70 @@
+slug: nl-avans-hogeschool-07gr-s-hertogenbosch-ict-1016o4948
+institution: nl-avans-hogeschool-07gr-s-hertogenbosch
+country: NL
+city: s-hertogenbosch
+field: computer-science
+level: bachelor
+name: ICT
+summary:
+  fr:
+    text: ICT (ICT), Avans Hogeschool ('s-Hertogenbosch). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: ICT (ICT), Avans Hogeschool ('s-Hertogenbosch). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: ICT (ICT), Avans Hogeschool ('s-Hertogenbosch). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1030800
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le paiement complet des frais de scolarité doit être effectué via un virement bancaire avant le 15 juin pour une entrée en septembre. Vérifiez les détails et le montant exact sur la page des frais de scolarité.
+          status: draft
+        en:
+          text: Payment of the full tuition fee must be made by bank transfer by 15 June for a September start. Check the details and the exact amount on the tuition fee page.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.avans.nl/en/int/studying/practical-information/tuition-fees
+    last_verified_at: 2026-10-01

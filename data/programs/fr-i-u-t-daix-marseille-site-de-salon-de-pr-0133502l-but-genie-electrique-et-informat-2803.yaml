@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -71,6 +72,17 @@ requirements:
           status: draft
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un entretien individuel de motivation est organisé pour les épreuves de sélection : intérêt pour la formation, l'établissement, les technologies du futur, projet d'études supérieures et projet professionnel."
+          status: draft
+        en:
+          text: "An individual motivation interview is part of the selection process: interest in the programme, the institution, future technologies, study plans and career plans."
           status: draft
 scholarships: []
 sources:

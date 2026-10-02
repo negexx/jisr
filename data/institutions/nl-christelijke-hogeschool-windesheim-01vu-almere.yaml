@@ -1,0 +1,14 @@
+slug: nl-christelijke-hogeschool-windesheim-01vu-almere
+name: Christelijke Hogeschool Windesheim
+country: NL
+city:
+  slug: almere
+  name: Almere
+type: null
+website: https://www.windesheim.nl/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.windesheim.nl/
+    last_verified_at: 2026-10-01

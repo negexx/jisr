@@ -72,6 +72,27 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests:
+        - delf-dalf
+        - tcf
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La spécialité mathématiques est fortement recommandée au moins en classe de première ; si elle n'a pas été suivie en terminale, il est recommandé d'avoir suivi l'option mathématiques complémentaires.
+          status: draft
+        en:
+          text: Mathematics speciality is strongly recommended at least in première; if not taken in terminale, the complementary mathematics option is recommended.
+          status: draft
 scholarships: []
 sources:
   programme:

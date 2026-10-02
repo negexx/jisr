@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -32,8 +33,11 @@ tuition:
   source: page-3
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: 2026-10-01
+      applicationDeadline: 2026-11-15
+  source: page-4
   info_kind: official
 applicationChannel:
   value: fr-campus-france
@@ -71,6 +75,17 @@ requirements:
           status: draft
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien oral de sélection peut être organisé entre le 4 et le 7 mai 2026 ; consultez la convocation qui vous sera envoyée.
+          status: draft
+        en:
+          text: A selection interview may be held between 4 and 7 May 2026; check the invitation that will be sent to you.
           status: draft
 scholarships: []
 sources:

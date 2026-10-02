@@ -1,0 +1,147 @@
+{
+  "slug": "de-technische-hochschule-ingolstadt-hrk288-computer-science-and-art-daad7631",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+          "quote": "Programme duration 7 semesters"
+        },
+        {
+          "url": "https://www.thi.de/studium/studienangebote/details/computer-science-and-artificial-intelligence-bsc/",
+          "quote": "Regelstudienzeit 7 Semester"
+        },
+        {
+          "url": "https://www.thi.de/studium/studienangebote/details/computer-science-and-artificial-intelligence-bsc/",
+          "quote": "ECTS 210"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+          "quote": "Teaching language English"
+        },
+        {
+          "url": "https://www.thi.de/studium/studienangebote/details/computer-science-and-artificial-intelligence-bsc/",
+          "quote": "Hauptunterrichtssprache: Englisch"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 80000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 800 EUR"
+        },
+        {
+          "url": "https://www.thi.de/studium/studienfinanzierung/",
+          "quote": "Studiengebühren in Höhe von 800 Euro (Bachelor) bzw. 1.200 Euro (Master) pro Semester für Studierende aus Drittstaaten"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2027-04-01",
+          "applicationDeadline": "2027-07-15"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+          "quote": "For the winter semester: 1 April 2027 - 15 July 2027"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+          "quote": "Submit application via • uni-assist • Website"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the DAAD page states 800 EUR per semester for applicants from non-EU countries; the THI Studienfinanzierung page states 800 EUR per semester for Bachelor students from Drittstaaten. Intakes: the DAAD page gives 1 April 2027 - 15 July 2027 for the winter semester for applicants from all countries; other THI pages give generic, repeated application windows without a specific year, so they were not used. Application channel: the DAAD page says to submit the application via uni-assist; separate THI pages mention a PRIMUSS applicant portal but do not state it for applicants with a foreign diploma in this international selection procedure. The German-language requirement is only a manual check: German is not required as a minimum level, but a German language certificate A2/B2 may be needed later for internships or work.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+            "quote": "English language skills B2 required, please provide an official language certificate"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+            "quote": "IELTS Academic: 5.5"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+            "quote": "TOEFL iBT (before 2026): 72"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez sur le site du programme si un test d'anglais B2 supplémentaire (par ex. Cambridge, PTE, UNIcert) est accepté et si vous êtes exempté.",
+          "en": "Check the programme website whether additional B2 English tests (e.g. Cambridge, PTE, UNIcert) are accepted and whether you are exempt."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+            "quote": "Language requirements exemptions"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'éligibilité à l'admission (Hochschulzugangsberechtigung) est décidée après examen de votre dossier ; vous pouvez vérifier vos qualifications sur uni-assist avant de postuler.",
+          "en": "Admission eligibility (Hochschulzugangsberechtigung) is decided after reviewing your documents; you can check your qualifications on uni-assist before applying."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+            "quote": "The Technische Hochschule Ingolstadt can only make a legally binding decision about your eligibility for your desired study programme after reviewing the documents you submit with your application."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Consultez la page « informations pour les candidats de pays tiers » du programme : un formulaire d'épreuve d'aptitude peut être demandé.",
+          "en": "See the programme's information page for applicants from third countries: an aptitude test form may be required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.thi.de/studium/studienbewerbung/bachelorbewerbung/",
+            "quote": "Computer Science and Artificial Intelligence (siehe Informationen für Bewerbende aus Drittstaaten)"
+          }
+        ]
+      }
+    ]
+  }
+}

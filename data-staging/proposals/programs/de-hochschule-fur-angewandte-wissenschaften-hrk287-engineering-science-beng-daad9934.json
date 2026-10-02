@@ -1,0 +1,115 @@
+{
+  "slug": "de-hochschule-fur-angewandte-wissenschaften-hrk287-engineering-science-beng-daad9934",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9934/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9934/",
+          "quote": "Programme duration 7 semesters"
+        },
+        {
+          "url": "https://www.hof-university.com/studying-at-hof-university/our-degree-programs/engineering-science-international-beng.html",
+          "quote": "The Bachelor's program spans seven semesters, with a blend of theoretical and practical components."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9934/",
+          "quote": "Teaching language English Languages The language of instruction is English, ensuring accessibility for international students."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9934/",
+          "quote": "Tuition fees per semester None"
+        },
+        {
+          "url": "https://www.hof-university.com/studying-at-hof-university/preparing-your-stay/how-to-finance-your-studies.html",
+          "quote": "At Hof University, no tuition fees are charged for our Bachelor's and Master's programs."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hof-university.com/studying-at-hof-university/our-degree-programs/engineering-science-international-beng.html",
+          "quote": "If you acquired your university entrance certificate abroad, uni-assist must assess your certificate before you can send it to Hof University."
+        },
+        {
+          "url": "https://www.hof-university.com/studying-at-hof-university/application-and-admission.html",
+          "quote": "You can apply for a preliminary documentation (VPD) year-round."
+        }
+      ]
+    }
+  },
+  "notes": "Le statut 'tuition fees none' figure sur la page du programme, mais aussi comme regle generale de l'universite (Bachelor et Master); la page finance confirme 0 EUR de frais de scolarite pour les programmes bachelor et master, hors Graduate School. Les dates 15 avril - 15 juillet proviennent du programme (DAAD) et de la page 'All other programs' du portail d'admission, avec un an indique 2026/2027 dans l'en-tete DAAD; l'annee d'admission exacte reste a confirmer aupres de l'universite car le tableau du portail donne des fenetres recurrentes sans annee. La page d'admission liste pour les non-UE une periode plus courte (15 avril - 31 mai) pour certains programmes: verifier que Engineering Science n'est pas concerne. La candidature passe par le portail Primuss, mais la page indique explicitement que si le diplome d'entree a l'universite est obtenu hors d'Allemagne (hors UE/EEE), un VPD uni-assist est exige avant la candidature, d'ou le canal de-uni-assist-vpd.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9934/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6.5 TOEFL iBT (before 2026): 90"
+          },
+          {
+            "url": "https://www.hof-university.com/studying-at-hof-university/our-degree-programs/engineering-science-international-beng.html",
+            "quote": "You need to prove your proficiency in English. This can be done with either of the following: TOEFL minimum 90 IELTS 6.5 or above"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9934/",
+            "quote": "German language skills A1 required, please provide an official language certificate, e.g.: Goethe-Zertifikat: Goethe-Zertifikat A1"
+          },
+          {
+            "url": "https://www.hof-university.com/studying-at-hof-university/our-degree-programs/engineering-science-international-beng.html",
+            "quote": "In addition: German language skills, proven by official test score documents - minimum level A1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez la date limite réelle pour les candidats non-UE (elle peut être plus tôt) et l'ensemble des pièces à fournir (CV, lettre de motivation) auprès de l'université.",
+          "en": "Check the actual deadline for non-EU applicants (it may be earlier) and the full document set (CV, motivation letter) with the university."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hof-university.com/studying-at-hof-university/application-and-admission.html",
+            "quote": "Non-EU students: EU students**: Non-EU students: Applied Research in Computer Science (M.Sc.) Textile Design (M.A.)"
+          }
+        ]
+      }
+    ]
+  }
+}

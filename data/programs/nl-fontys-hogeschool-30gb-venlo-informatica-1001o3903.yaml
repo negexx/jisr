@@ -1,0 +1,69 @@
+slug: nl-fontys-hogeschool-30gb-venlo-informatica-1001o3903
+institution: nl-fontys-hogeschool-30gb-venlo
+country: NL
+city: venlo
+field: computer-science
+level: bachelor
+name: Informatica
+summary:
+  fr:
+    text: Informatica (Information Technology), Fontys Hogeschool (Venlo). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Informatica (Information Technology), Fontys Hogeschool (Venlo). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Informatica (Information Technology), Fontys Hogeschool (Venlo). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.fontys.nl/Opleidingen/Informatica-bachelor-voltijd.htm
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2027-05-01
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les conditions d'admission pour les diplômes étrangers (page 'aanmelden internationaal').
+          status: draft
+        en:
+          text: Check admission requirements for foreign diplomas (page 'aanmelden internationaal').
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.fontys.nl/Opleidingen/Informatica-bachelor-voltijd.htm
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm
+    last_verified_at: 2026-10-01

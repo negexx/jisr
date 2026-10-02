@@ -18,36 +18,50 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6315/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 100000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez les conditions d'admission : diplôme d'études secondaires reconnu par l'Indonésie et le Mecklembourg-Poméranie occidentale (Allemagne), ou Diplôme-III avec une moyenne de 2,75 ou mieux (sur une échelle de quatre points), ou réussite d'une formation professionnelle et au moins trois ans de pratique professionnelle, ou réussite à un examen d'admission."
+          status: draft
+        en:
+          text: "Check the admission requirements: high school diploma recognized by Indonesia and Mecklenburg-West Pomerania (Germany), or Diploma-III with a GPA of 2.75 or better (on a four-point scale), or successful completion of professional training and at least three years of working practice, or successful admission examination."
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6315/
     last_verified_at: 2026-10-01

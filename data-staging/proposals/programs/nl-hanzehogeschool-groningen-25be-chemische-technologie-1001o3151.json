@@ -1,0 +1,74 @@
+{
+  "slug": "nl-hanzehogeschool-groningen-25be-chemische-technologie-1001o3151",
+  "programmePage": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/chemische-technologie",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/chemische-technologie",
+          "quote": "Duur 4 jaar"
+        },
+        {
+          "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/chemische-technologie",
+          "quote": "Credits 240 ECTS"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/chemische-technologie",
+          "quote": "Taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/chemische-technologie",
+          "quote": "Meld je aan via Studielink"
+        }
+      ]
+    }
+  },
+  "notes": "Geen collegegeld voor niet-EU-studenten voor deze specifieke opleiding gevonden op de pagina's. De pagina over collegegeld noemt alleen het wettelijk collegegeld (2694 euro voor 2026-2027) en instellingscollegegeld, maar zonder specifiek bedrag voor niet-EU-studenten bij deze opleiding, dus niet als feit opgenomen. De programmapagina zegt alleen dat je je uiterlijk 1 mei aanmeldt via Studielink; voor buitenlandse diploma's geldt een aparte aanmelddeadline van 15 augustus (manual_check). De startmaand is september, maar er wordt geen concreet startjaar met dag en maand genoemd, dus startDate is null gelaten. Voor de toelatingseisen van Nederlandse profielen (havo/vwo) is niet duidelijk of die één-op-één gelden voor een Marokkaanse baccalaureaat; daarom als manual_check opgenomen.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifie si ton diplôme marocain (Baccalauréat) est jugé équivalent à un havo ou vwo néerlandais (avec les profils requis) ou à un mbo niveau 4, et si tu dois fournir des documents supplémentaires.",
+          "en": "Check whether your Moroccan diploma (Baccalauréat) is considered equivalent to a Dutch havo or vwo (with the required subject clusters) or mbo level 4, and whether you must submit additional documents."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/chemische-technologie",
+            "quote": "Je kunt worden toegelaten met een buitenlands diploma als je diploma uit het land van herkomst gelijkwaardig is aan een Nederlandse havo of vwo (met de gewenste profielen) of mbo niveau 4."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifie que tu respectes bien la date limite d'1 mai (ou d'août pour les diplômes étrangers) et que tu t'inscris via Studielink avant la date indiquée pour les diplômes étrangers.",
+          "en": "Check that you meet the 1 May deadline (or the August one for foreign diplomas) and that you register via Studielink by the stated date for foreign diplomas."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/chemische-technologie",
+            "quote": "Heb je een buitenlands diploma en wil je je aanmelden voor deze opleiding? Zorg er dan voor dat je dit vóór 15 augustus doet via Studielink."
+          },
+          {
+            "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/chemische-technologie",
+            "quote": "Meld je uiterlijk 1 mei aan via Studielink."
+          }
+        ]
+      }
+    ]
+  }
+}

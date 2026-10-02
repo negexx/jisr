@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -32,8 +33,11 @@ tuition:
   source: page-3
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: 2026-10-01
+      applicationDeadline: 2026-11-15
+  source: page-4
   info_kind: official
 applicationChannel:
   value: fr-campus-france
@@ -72,6 +76,38 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - delf-dalf
+        - tcf
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La candidature est examinée selon une grille (résultats scolaires 50 %, méthodes de travail 25 %, savoir-être 12 %, motivation 13 %) et une épreuve orale (entretien) peut être organisée ; vérifiez les critères et les dates sur la fiche Parcoursup.
+          status: draft
+        en:
+          text: The application is assessed using a grid (academic results 50%, work methods 25%, soft skills 12%, motivation 13%) and an oral interview may be organised; check the criteria and dates on the Parcoursup page.
+          status: draft
+    - id: req-5
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Une exonération partielle des droits différenciés peut être demandée (limitée à 30 % des étudiants extracommunautaires inscrits) ; la décision relève de la présidence de l'université. Renseignez-vous sur la procédure d'exonération.
+          status: draft
+        en:
+          text: A partial exemption from the differentiated fees may be requested (capped at 30% of enrolled non-EU students); the decision lies with the university's presidency. Look into the exemption procedure.
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -85,4 +121,7 @@ sources:
     last_verified_at: 2026-10-01
   page-4:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://www.univ-tours.fr/international/etudes-stages-a-tours/droits-dinscription-differencies-pour-les-etudiants-extra-communautaires-2026-2027
     last_verified_at: 2026-10-01

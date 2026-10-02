@@ -1,0 +1,86 @@
+{
+  "slug": "de-otto-von-guericke-universitat-magdeburg-hrk172-bilingual-bachelors-biba-daad9665",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+          "quote": "Programme duration 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+          "quote": "BiBa is a Bachelor’s degree programme in computer science that is taught bilingually (in German and English)."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+          "quote": "Please apply via uni-assist."
+        }
+      ]
+    }
+  },
+  "notes": "The tuition is stated as 'None' for this programme; the semester fee (311.30 EUR) is not tuition and is not included. Intake application period is 15 April – 15 July, but the year is not clearly stated for the winter semester 2026/2027; the deadline is left null because the quote does not explicitly mention the year.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.:"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+            "quote": "IELTS Academic: 6.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Veuillez vérifier les critères d'admission (HZB, test d'aptitude, etc.).",
+          "en": "Please check the admission criteria (HZB, eligibility test, etc.)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+            "quote": "Academic admission requirements In our new programme, students can start if they fulfil the following three prerequisites:"
+          }
+        ]
+      }
+    ]
+  }
+}

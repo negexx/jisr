@@ -1,0 +1,27 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-accountancy-1001o3549",
+  "programmePage": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+          "quote": "taal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the collegegeld page gives institution-wide statutory/instellingstarief amounts (€10,360 for 2026-2027 full-time) for students who do not qualify for the statutory fee, but this is not stated specifically for Accountancy, so no tuition fact was extracted. The programme page lists Dutch-taught programme (taal Nederlands), and there is no statement about an English-taught track. No intakes were extracted because the pages do not give a day, month and year for the Accountancy intake. Entry requirement pages for Accountancy were not supplied; the rules shown are from other programmes and cannot be applied to Accountancy. Studielink is mentioned on the collegegeld page as the place to arrange tuition payment; the Accountancy page itself does not describe the application platform."
+}

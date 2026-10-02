@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -32,8 +33,11 @@ tuition:
   source: page-3
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-11-15
+  source: page-4
   info_kind: official
 applicationChannel:
   value: fr-campus-france
@@ -72,6 +76,49 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - delf-dalf
+        - tcf
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez l'obligation de passer une épreuve écrite (visite des locaux et questionnaire de motivation) : les candidats sont convoqués uniquement par mail le 20 avril 2026, les épreuves ont lieu le 29 avril 2026."
+          status: draft
+        en:
+          text: "Check the compulsory written test (visit of the premises and motivation questionnaire): candidates are summoned only by email on 20 April 2026, the tests take place on 29 April 2026."
+          status: draft
+    - id: req-5
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les titulaires d'un bac général et STI2D sont les mieux adaptés ; des bases scientifiques en physique et mathématiques et des bases en informatique sont attendues.
+          status: draft
+        en:
+          text: Holders of a general or STI2D baccalaureate are best suited; scientific foundations in physics and mathematics and basics in computer science are expected.
+          status: draft
+    - id: req-6
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez le montant exact des droits d'inscription différenciés et les possibilités d'exonération partielle auprès de l'université (30% des étudiants extracommunautaires inscrits peuvent en bénéficier).
+          status: draft
+        en:
+          text: Check the exact amount of the differentiated tuition fees and the possibility of a partial exemption with the university (30% of enrolled non-EU students may benefit).
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -85,4 +132,7 @@ sources:
     last_verified_at: 2026-10-01
   page-4:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://www.univ-tours.fr/international/etudes-stages-a-tours/droits-dinscription-differencies-pour-les-etudiants-extra-communautaires-2026-2027
     last_verified_at: 2026-10-01

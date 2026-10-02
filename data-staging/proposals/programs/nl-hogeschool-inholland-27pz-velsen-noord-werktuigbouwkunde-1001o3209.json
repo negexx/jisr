@@ -1,0 +1,27 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209",
+  "programmePage": "https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar taal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "Geen instellingscollegegeld voor Werktuigbouwkunde vermeld: de pagina collegegeld noemt alleen algemene instellingstarieven (voltijd en duaal: € 10.360 voor 2026-2027), niet specifiek voor dit programma en niet expliciet voor niet-EU studenten. Deze zijn daarom niet als tuition opgenomen. De opleidingspagina zegt dat de taal Nederlands is; er zijn geen toelatingseisen voor dit programma op de pagina's te vinden. Studielink wordt genoemd op de collegegeldpagina, niet op de opleidingspagina zelf."
+}

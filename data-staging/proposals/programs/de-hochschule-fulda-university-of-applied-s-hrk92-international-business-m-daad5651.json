@@ -1,0 +1,73 @@
+{
+  "slug": "de-hochschule-fulda-university-of-applied-s-hrk92-international-business-m-daad5651",
+  "programmePage": "https://www.hs-fulda.de/ibm",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.hs-fulda.de/ibm",
+          "quote": "Regelstudienzeit 7 Semester"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-fulda.de/ibm",
+          "quote": "100% Englisch als Lehrsprache"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-fulda.de/ibm",
+          "quote": "studiengebührenfreie Rahmenbedingungen"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: pages state the programme has no study fees (studiengebührenfreie Rahmenbedingungen; 'Die Hochschule Fulda erhebt keine Studiengebühren'), only a semester contribution (~400 EUR), so amountMinor 0. Intakes: the deadlines are for the winter and summer semester but the pages do not give a year; no year has been inferred, so the ISO dates are illustrative and should be verified. Application channel: the pages say to apply via the central application page ('Wie und wann muss ich mich bewerben?' / 'Bewerben mit internationalen Zeugnissen') but do not name uni-assist or a VPD, so applicationChannel is omitted and this must be checked manually.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEIC: 785 Reading: 385 Listening: 400 Speaking: 160 Writing: 150 IELTS Academic: 5.5 TOEFL iBT Home Edition (before 2026): 72 Reading: 18 Listening: 17 Speaking: 20 Writing: 17"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que vous disposez d'une qualification d'entrée à l'université (Hochschulzugangsberechtigung, HZB) reconnue pour les universités allemandes; votre Baccalauréat marocain doit être évalué.",
+          "en": "Check that you hold a recognised university entrance qualification (Hochschulzugangsberechtigung, HZB) for German universities; your Moroccan Baccalauréat must be assessed."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/",
+            "quote": "Academic admission requirements University entrance qualification (Hochschulzugangsberechtigung, HZB) for German universities"
+          }
+        ]
+      }
+    ]
+  }
+}

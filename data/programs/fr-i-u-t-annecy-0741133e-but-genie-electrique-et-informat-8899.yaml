@@ -32,8 +32,11 @@ tuition:
   source: page-3
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: 2026-10-01
+      applicationDeadline: 2026-11-15
+  source: page-4
   info_kind: official
 applicationChannel:
   value: fr-campus-france
@@ -72,6 +75,47 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le TCF, le DELF B2 ou le DALF est obligatoire dans le cadre de la procédure Études en France, sauf cas de dispense ; les candidats en 1re année de licence (L1) à l'université n'en sont pas dispensés.
+          status: draft
+        en:
+          text: TCF, DELF B2 or DALF is mandatory within the Études en France procedure, unless exempted; applicants to the first year of a bachelor's degree (L1) at university are not exempt.
+          status: draft
+    - id: req-5
+      source: page-6
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un niveau correct en mathématiques/physique est demandé ; un parcours antérieur en lien avec la spécialité sera apprécié. Les critères d'analyse des candidatures sont détaillés dans la grille Parcoursup.
+          status: draft
+        en:
+          text: A decent level in mathematics/physics is required; a previous background related to the speciality will be appreciated. The application review criteria are detailed in the Parcoursup grid.
+          status: draft
+    - id: req-6
+      source: page-6
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Recrutement accessible pour 50 % aux candidats titulaires d'un bac général et pour 50 % aux titulaires d'un bac technologique.
+          status: draft
+        en:
+          text: Recruitment is open for 50% to holders of a general baccalaureate and for 50% to holders of a technological baccalaureate.
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -85,4 +129,10 @@ sources:
     last_verified_at: 2026-10-01
   page-4:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france
+    last_verified_at: 2026-10-01
+  page-6:
+    url: https://www.univ-smb.fr/iut-annecy/formation/genie-electrique/
     last_verified_at: 2026-10-01

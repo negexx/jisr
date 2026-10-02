@@ -17,37 +17,51 @@ summary:
     status: draft
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/
 durationYears:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: 3
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez que votre diplôme étranger est reconnu comme équivalent à l'Abitur (qualification d'entrée à l'université) et fournissez un « Statement of Comparability » pour votre diplôme.
+          status: draft
+        en:
+          text: Check that your foreign qualification is recognised as equivalent to the German university entrance qualification and provide a "Statement of Comparability" for your foreign higher education qualification.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/
     last_verified_at: 2026-10-01

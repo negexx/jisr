@@ -15,39 +15,62 @@ summary:
   ar:
     text: Bachelor of Engineering in Sales Engineering, Hochschule Aalen - Technik, Wirtschaft und Gesundheit (Aalen). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10638/
+officialUrl: https://www.hs-aalen.de/en/courses/152
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-2
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-12-03
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist-vpd
+  source: page-3
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un test d'aptitude (TestAS ou SAT/ACT) est normalement requis pour les programmes de Bachelor. Vérifiez les exigences exactes pour les candidats internationaux.
+          status: draft
+        en:
+          text: An aptitude test (TestAS or SAT/ACT) is normally required for Bachelor's programmes. Please check the exact requirements for international applicants.
+          status: draft
 scholarships: []
 sources:
-  daad:
+  programme:
+    url: https://www.hs-aalen.de/en/courses/152
+    last_verified_at: 2026-10-01
+  page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10638/
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/
     last_verified_at: 2026-10-01

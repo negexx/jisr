@@ -1,0 +1,73 @@
+slug: nl-avans-hogeschool-07gr-breda-chemische-technologie-1001o3144
+institution: nl-avans-hogeschool-07gr-breda
+country: NL
+city: breda
+field: engineering
+level: bachelor
+name: Chemische Technologie
+summary:
+  fr:
+    text: Chemische Technologie (Chemical Engineering), Avans Hogeschool (Breda). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Chemische Technologie (Chemical Engineering), Avans Hogeschool (Breda). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Chemische Technologie (Chemical Engineering), Avans Hogeschool (Breda). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.avans.nl/studeren/opleidingen/bachelor/chemische-technologie-voltijd
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1030800
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les exigences d'admission spécifiques pour les diplômes non néerlandais (par exemple, baccalauréat marocain) auprès de l'établissement.
+          status: draft
+        en:
+          text: Check specific admission requirements for non-Dutch diplomas (e.g., Moroccan Baccalaureate) with the institution.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.avans.nl/studeren/opleidingen/bachelor/chemische-technologie-voltijd
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.avans.nl/en/int/studying/practical-information/tuition-fees
+    last_verified_at: 2026-10-01
+  page-3:
+    url: https://www.avans.nl/studeren/praktische-zaken/studiekosten
+    last_verified_at: 2026-10-01

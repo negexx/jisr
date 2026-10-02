@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -32,8 +33,11 @@ tuition:
   source: page-3
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-11-15
+  source: page-4
   info_kind: official
 applicationChannel:
   value: fr-campus-france
@@ -72,6 +76,60 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - delf-dalf
+        - tcf
+    - id: req-4
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Aucun diplôme précis (par ex. le Bac marocain) n'est nommé dans les pages : vérifiez que votre diplôme de fin d'études secondaires permet la candidature en BUT via la procédure Études en France (plateforme Campus France Maroc)."
+          status: draft
+        en:
+          text: "No specific diploma (e.g. the Moroccan Baccalauréat) is named on the pages: check that your secondary-school leaving certificate allows applying for the BUT via the Études en France procedure (Campus France Morocco platform)."
+          status: draft
+    - id: req-5
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "La sélection se fait sur dossier : résultats scolaires, méthodes de travail, savoir-être, motivation et projet de formation sont évalués (grille de 30 %, 30 %, 25 %, 12 %, 3 %). Aucun seuil de notes n'est publié : vérifiez les critères sur la fiche Parcoursup et préparez un projet de formation argumenté."
+          status: draft
+        en:
+          text: "Selection is based on the application file: academic results, working methods, behaviour, motivation and the training project are assessed (grid of 30%, 30%, 25%, 12%, 3%). No grade threshold is published: check the criteria on the Parcoursup sheet and prepare a well-argued training project."
+          status: draft
+    - id: req-6
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidatures via Études en France sont évaluées par le programme ADIUT Maroc, avec un calendrier 2026-2027 à consulter ultérieurement.
+          status: draft
+        en:
+          text: Applications via Études en France are assessed by the ADIUT Maroc programme, with a 2026-2027 calendar to be published later.
+          status: draft
+    - id: req-7
+      source: page-6
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien Campus France peut être prévu dans le cadre de la procédure Études en France.
+          status: draft
+        en:
+          text: A Campus France interview may be part of the Études en France procedure.
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -85,4 +143,10 @@ sources:
     last_verified_at: 2026-10-01
   page-4:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://iut.univ-avignon.fr/formations/bachelor-universitaire-de-technologie-statistique-et-informatique-decisionnelle-stid/
+    last_verified_at: 2026-10-01
+  page-6:
+    url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
     last_verified_at: 2026-10-01

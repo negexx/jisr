@@ -1,0 +1,53 @@
+{
+  "slug": "nl-avans-hogeschool-07gr-s-hertogenbosch-bouwkunde-1001o3048",
+  "programmePage": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+          "quote": "Duur 4 jaar, voltijd bachelor"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+          "quote": "Taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+          "quote": "Meld je aan voor de opleiding via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fact omitted: the pages state a general institution-wide institutional fee (EUR 10,308 for 2026-2027) but do not confirm it applies to this specific programme for a non-EU applicant. The page includes a fee for non-EEA nationality but is not programme-specific, so per rules it is left out. Application deadline: the only stated deadline is for non-EEA nationality and references the current academic year; the year is not stated in the quote, so 2026 is inferred from context but not directly quoted. The deadline date (May 1st) is explicitly stated for non-EEA students.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les frais de scolarité institutionnels exacts et les modalités de paiement pour les étudiants non-EEE sur la page des frais de scolarité d'Avans.",
+          "en": "Check the exact institutional tuition fee and payment details for non-EEA students on the Avans tuition fees page."
+        },
+        "evidence": [
+          {
+            "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+            "quote": "Non-EEA nationality (institutional tuition fee) €10,308,-"
+          }
+        ]
+      }
+    ]
+  }
+}

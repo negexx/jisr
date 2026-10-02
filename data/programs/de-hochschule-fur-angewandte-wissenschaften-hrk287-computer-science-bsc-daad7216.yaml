@@ -15,40 +15,63 @@ summary:
   ar:
     text: Computer Science (BSc), Hochschule für angewandte Wissenschaften Hof (Hof). برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.
     status: draft
-officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7216/
+officialUrl: https://www.hof-university.com/studying-at-hof-university/our-degree-programs/computer-science-international-bsc.html
 durationYears:
   value: 4
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 teachingLanguages:
-  value:
-    - de
-    - en
-  source: daad
-  info_kind: guidance
-tuition:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
 intakes:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: daad
-  info_kind: guidance
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: daad
-  info_kind: guidance
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: de
+      minCefr: A2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Votre certificat d'accès à l'université obtenu à l'étranger doit d'abord être évalué par uni-assist (VPD) avant l'inscription ; il est conseillé d'envoyer les documents à uni-assist au moins 4 semaines avant la date limite.
+          status: draft
+        en:
+          text: Your university entrance certificate acquired abroad must first be assessed by uni-assist (VPD) before application; you are advised to send documents to uni-assist at least 4 weeks before the deadline.
+          status: draft
 scholarships: []
 sources:
-  daad:
-    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7216/
+  programme:
+    url: https://www.hof-university.com/studying-at-hof-university/our-degree-programs/computer-science-international-bsc.html
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.hof-university.com/studying-at-hof-university/preparing-your-stay/how-to-finance-your-studies.html
     last_verified_at: 2026-10-01

@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -72,6 +73,36 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "La sélection se fait sur dossier et est très sélective pour les bacs généraux : résultats scolaires (40 %), méthodes de travail, savoir-être, motivation et engagement. Bac général ou bac technologique STI2D requis (les bacs professionnels ne sont pas recrutés)."
+          status: draft
+        en:
+          text: "Selection is based on application files and is highly selective for general baccalaureate holders: academic results (40%), working methods, soft skills, motivation and engagement. A general baccalaureate or STI2D technological baccalaureate is required (vocational baccalaureates are not recruited)."
+          status: draft
+    - id: req-5
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifier les conditions d'inscription administrative et les frais auprès de l'université de Bordeaux : un tarif spécifique s'applique à certains étudiants extra-communautaires et des exonérations sont possibles selon l'établissement."
+          status: draft
+        en:
+          text: "Check registration conditions and fees with the University of Bordeaux: a specific fee applies to some non-EU students and exemptions may be possible depending on the institution."
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -85,4 +116,7 @@ sources:
     last_verified_at: 2026-10-01
   page-4:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://www.iut.u-bordeaux.fr/formations/info/
     last_verified_at: 2026-10-01

@@ -1,0 +1,57 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-s-gravenhage-business-studies-1001o2990",
+  "programmePage": "https://www.inholland.nl/opleidingen/business-studies-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/business-studies-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar, Amsterdam, Den Haag, Haarlem en Rotterdam taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/business-studies-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar, Amsterdam, Den Haag, Haarlem en Rotterdam taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1036000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Instellingscollegegeld Voltijd en duaal: € 10.360"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune page relative aux conditions d'admission spécifiques à Business Studies (voltijd) n'est fournie. La page du programme indique uniquement que la langue d'enseignement est le néerlandais. Les frais de scolarité indiqués (instellingscollegegeld) proviennent de la page générale des frais de scolarité d'Inholland et concernent les étudiants ne remplissant pas les conditions du tarif légal (hors UE/EEE) ; ils ne sont pas spécifiques à ce programme. Le tarif indiqué correspond à l'année académique 2026-2027 (début 1 septembre 2026). Aucune date limite de candidature n'est fournie. L'exigence de maîtrise du néerlandais B2 figure sur la page d'admission d'un autre programme (Creative Business EN) et s'applique aux étudiants ayant effectué leur scolarité à l'étranger ; elle est incluse par prudence mais devrait être vérifiée pour Business Studies.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme marocain (Baccalauréat) est reconnu comme équivalent à un diplôme néerlandais HAVO, VWO ou MBO-4 ; l'admission des diplômes internationaux est évaluée individuellement.",
+          "en": "Check whether your Moroccan Baccalauréat is recognised as equivalent to a Dutch HAVO, VWO or MBO-4 diploma; international diplomas are assessed individually."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+            "quote": "In order to attend classes, you must also have sufficient listening, speaking and writing skills in Dutch."
+          }
+        ]
+      }
+    ]
+  }
+}

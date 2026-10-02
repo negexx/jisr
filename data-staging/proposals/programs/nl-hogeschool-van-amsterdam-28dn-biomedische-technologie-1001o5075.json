@@ -1,0 +1,33 @@
+{
+  "slug": "nl-hogeschool-van-amsterdam-28dn-biomedische-technologie-1001o5075",
+  "programmePage": "https://www.hva.nl/opleidingen/biomedische-technologie",
+  "facts": {
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/21-toelatingsonderzoek",
+          "quote": "Je schrijft je apart in voor je opleiding in Studielink (opent in nieuw venster)en voor het 21+-toelatingsonderzoek."
+        }
+      ]
+    }
+  },
+  "notes": "De pagina van de opleiding noemt geen collegegeld voor niet-EU-studenten; de collegegeldpagina toont alleen instellingscollegegeld 2026-2027: € 10.648 zonder te specificeren dat dit voor deze opleiding geldt. Daarom is er geen tuition-fact opgenomen. Er is ook geen intakedatum gevonden voor deze opleiding.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez sur la page de l'opleiding si une admission supplémentaire ou un profil spécifique est requis pour votre diplôme de baccalauréat marocain.",
+          "en": "Check the programme page whether additional admission requirements or a specific profile apply to your Moroccan Baccalaureate diploma."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hva.nl/opleidingen/biomedische-technologie",
+            "quote": "Je wordt tot Biomedische Technologie toegelaten met een havo- of vwo-diploma met een profiel N&T of N&G."
+          }
+        ]
+      }
+    ]
+  }
+}

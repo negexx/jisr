@@ -1,0 +1,67 @@
+slug: nl-fontys-hogeschool-30gb-elektrotechniek-1001o3098
+institution: nl-fontys-hogeschool-30gb
+country: NL
+city: eindhoven
+field: engineering
+level: bachelor
+name: Elektrotechniek
+summary:
+  fr:
+    text: Elektrotechniek (Electrical and Electronic Engineering), Fontys Hogeschool (Eindhoven). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Elektrotechniek (Electrical and Electronic Engineering), Fontys Hogeschool (Eindhoven). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Elektrotechniek (Electrical and Electronic Engineering), Fontys Hogeschool (Eindhoven). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.fontys.nl/Opleidingen/Elektrotechniek-bachelor-voltijd.htm
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2027-05-01
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les exigences d'admission supplémentaires pour certains profils havo/vwo et les cas d'admission alternative (diplôme étranger).
+          status: draft
+        en:
+          text: Check additional admission requirements for certain havo/vwo profiles and alternative admission cases (foreign diploma).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.fontys.nl/Opleidingen/Elektrotechniek-bachelor-voltijd.htm
+    last_verified_at: 2026-10-01

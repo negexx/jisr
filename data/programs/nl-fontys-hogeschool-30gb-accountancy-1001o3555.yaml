@@ -1,0 +1,81 @@
+slug: nl-fontys-hogeschool-30gb-accountancy-1001o3555
+institution: nl-fontys-hogeschool-30gb
+country: NL
+city: eindhoven
+field: business-economics
+level: bachelor
+name: Accountancy
+summary:
+  fr:
+    text: Accountancy (Accountancy), Fontys Hogeschool (Eindhoven). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Accountancy (Accountancy), Fontys Hogeschool (Eindhoven). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Accountancy (Accountancy), Fontys Hogeschool (Eindhoven). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.fontys.nl/Opleidingen/Accountancy-bachelor-voltijd.htm
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2027-05-01
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifiez les conditions d'admission : un diplôme havo, vwo ou mbo niveau 4 est requis, et des exigences supplémentaires s'appliquent pour certains profils havo/vwo."
+          status: draft
+        en:
+          text: "Check the admission requirements: a havo, vwo or mbo level 4 diploma is required, and additional requirements apply for certain havo/vwo profiles."
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si votre diplôme étranger est reconnu et quelles pièces complémentaires sont exigées ; consultez la procédure d'admission internationale.
+          status: draft
+        en:
+          text: Check whether your foreign diploma is recognised and which additional documents are required; consult the international admission procedure.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.fontys.nl/Opleidingen/Accountancy-bachelor-voltijd.htm
+    last_verified_at: 2026-10-01
+  page-2:
+    url: https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm
+    last_verified_at: 2026-10-01

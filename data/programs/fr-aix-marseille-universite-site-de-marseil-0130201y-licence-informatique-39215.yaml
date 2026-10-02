@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -72,6 +73,25 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: En tant qu'étudiant marocain titulaire d'un Bac marocain, vous devez candidater via la procédure Études en France / DAP (dossier blanc) et non sur Parcoursup ; vérifiez les modalités et les éventuelles exonérations des droits différenciés auprès de Campus France Maroc et d'Aix-Marseille Université.
+          status: draft
+        en:
+          text: As a Moroccan student with a Moroccan Baccalauréat, you must apply via the Études en France / DAP procedure (dossier blanc) and not Parcoursup; check the arrangements and any exemption from the differentiated fees with Campus France Maroc and Aix-Marseille Université.
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -85,4 +105,7 @@ sources:
     last_verified_at: 2026-10-01
   page-4:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://feg.univ-amu.fr/fr/candidature-inscription/candidature/demande-admission-prealable-dap
     last_verified_at: 2026-10-01

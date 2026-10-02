@@ -72,6 +72,27 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - delf-dalf
+        - tcf
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez auprès de l'IUT d'Annecy les attendus et les épreuves de sélection (entretiens possibles du 11 au 18 mai 2026), ainsi que les enseignements de spécialité conseillés (Mathématiques et NSI pour les bacheliers généraux, SIN pour les bacheliers STI2D).
+          status: draft
+        en:
+          text: Check with IUT Annecy the expected prior subjects and the selection process (possible interviews from 11 to 18 May 2026), as well as the recommended speciality subjects (Mathematics and NSI for general baccalaureate holders, SIN for STI2D holders).
+          status: draft
 scholarships: []
 sources:
   programme:

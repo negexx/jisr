@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   buildProposal,
+  enrichProposal,
   enrichRecord,
   type National,
   PAGES,
@@ -177,5 +178,21 @@ describe("enrichRecord", () => {
       date: "2026-10-02",
     });
     expect(out).toBeNull();
+  });
+});
+
+describe("enrichProposal", () => {
+  it("builds the same proposal enrichRecord applies, for a record's own fiche and the national pages", async () => {
+    const proposal = await enrichProposal({
+      record: { slug: "fr-test-licence-1", name: "Licence Informatique", officialUrl: FICHE_URL },
+      institutionType: "public",
+      fiche: FICHE_URL,
+      national: await readNational(getText),
+      getText,
+    });
+    expect(proposal.programmePage).toBe(FICHE_URL);
+    expect(proposal.facts.durationYears?.value).toBe(3);
+    expect(proposal.facts.applicationChannel?.value).toBe("fr-campus-france");
+    expect(proposal.requirements?.rules.some((r) => r.kind === "language_proficiency")).toBe(true);
   });
 });

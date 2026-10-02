@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -72,6 +73,25 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: page-5
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "La mention du lycée d'origine : le dossier scolaire est examiné par un jury (notes de première et de terminale, appréciations, absentéisme, comportement, motivation) ; les candidats internationaux non titulaires d'un bac français ou européen et résidant dans un pays relevant de la procédure Études en France doivent candidater via Campus France, et non sur Parcoursup."
+          status: draft
+        en:
+          text: "For a non-EU applicant with a foreign diploma: admission is decided by a jury after review of the school record; applicants who hold no French or European baccalauréat and reside in a country covered by the Études en France procedure must apply via Campus France, not Parcoursup."
+          status: draft
 scholarships: []
 sources:
   programme:
@@ -85,4 +105,7 @@ sources:
     last_verified_at: 2026-10-01
   page-4:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
+    last_verified_at: 2026-10-01
+  page-5:
+    url: https://iut-angouleme.univ-poitiers.fr/formations/b-u-t-geii-genie-electrique-et-informatique-industrielle/
     last_verified_at: 2026-10-01

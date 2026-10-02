@@ -1,0 +1,44 @@
+{
+  "slug": "nl-hogeschool-van-arnhem-en-nijmegen-25kb-ict-1001o2674",
+  "programmePage": "https://www.han.nl/opleidingen/hbo/ict/voltijd/",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": "2027-02-01",
+          "applicationOpens": null,
+          "applicationDeadline": null
+        },
+        {
+          "startDate": "2027-09-01",
+          "applicationOpens": null,
+          "applicationDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.han.nl/opleidingen/hbo/ict/voltijd/",
+          "quote": "De opleiding start 1 februari 2027 en 1 september 2027"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition page gives fees only as institution-wide tables (wettelijk/instellingscollegegeld) and does not clearly state a rate for a non-EU student in this programme, so no tuition fact is included. The application deadline is not stated for 2027 (page mentions 1 mei 2025, an already-past date not applying to this intake). No language requirement and no duration are stated on the supplied pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les conditions d'admission : un diplôme mbo, havo ou vwo est requis.",
+          "en": "Check admission requirements: an mbo, havo or vwo diploma is required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.han.nl/opleidingen/hbo/ict/voltijd/",
+            "quote": "Je kunt je aanmelden voor de ICT als je een mbo-, havo- of vwo-diploma hebt."
+          }
+        ]
+      }
+    ]
+  }
+}

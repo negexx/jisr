@@ -174,6 +174,28 @@ export function buildProposal(input: {
   });
 }
 
+// The proposal enrich-fr makes for one listed record: its fiche and the national sentences.
+export async function enrichProposal(input: {
+  record: Rec;
+  institutionType: unknown;
+  fiche: string;
+  national: National;
+  getText: GetText;
+}) {
+  const isBut =
+    /^BUT\b/i.test(String(input.record.name)) || /-but-/.test(String(input.record.slug));
+  return buildProposal({
+    slug: String(input.record.slug),
+    fiche: input.fiche,
+    isBut,
+    publicInstitution: input.institutionType === "public",
+    facts: readFiche(
+      input.fiche === "" ? "" : await input.getText(String(input.record.officialUrl)),
+    ),
+    national: input.national,
+  });
+}
+
 // Applies a verified proposal to a listed record. A fact that failed verification stays "to be
 // checked", exactly as it was.
 export async function enrichRecord(input: {
@@ -184,18 +206,7 @@ export async function enrichRecord(input: {
   getText: GetText;
   date: string;
 }): Promise<{ record: Rec; facts: string[]; rules: number } | null> {
-  const isBut =
-    /^BUT\b/i.test(String(input.record.name)) || /-but-/.test(String(input.record.slug));
-  const proposal = buildProposal({
-    slug: String(input.record.slug),
-    fiche: input.fiche,
-    isBut,
-    publicInstitution: input.institutionType === "public",
-    facts: readFiche(
-      input.fiche === "" ? "" : await input.getText(String(input.record.officialUrl)),
-    ),
-    national: input.national,
-  });
+  const proposal = await enrichProposal(input);
   const verified = await verifyProposal(proposal, String(input.record.name), input.getText);
   if (verified.programmePage === null) return null;
   const applied = applyVerified(input.record, verified, input.date);

@@ -1,0 +1,75 @@
+slug: nl-de-haagse-hogeschool-27um-applied-data-science-art-1001o8742
+institution: nl-de-haagse-hogeschool-27um
+country: NL
+city: s-gravenhage
+field: computer-science
+level: bachelor
+name: Applied Data Science & Artificial Intelligence
+summary:
+  fr:
+    text: Applied Data Science & Artificial Intelligence (Applied Data Science & Artificial Intelligence), De Haagse Hogeschool ('s-Gravenhage). Programme recensé au registre néerlandais RIO.
+    status: draft
+  en:
+    text: Applied Data Science & Artificial Intelligence (Applied Data Science & Artificial Intelligence), De Haagse Hogeschool ('s-Gravenhage). Programme listed in the Dutch RIO register.
+    status: draft
+  ar:
+    text: Applied Data Science & Artificial Intelligence (Applied Data Science & Artificial Intelligence), De Haagse Hogeschool ('s-Gravenhage). برنامج مدرج في السجل الهولندي RIO.
+    status: draft
+officialUrl: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - nl
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: nl-studielink
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez que vous avez réussi les mathématiques A ou B avec une note suffisante ; c'est une condition d'admission.
+          status: draft
+        en:
+          text: Check that you have passed Mathematics A or B with a sufficient grade; this is an admission requirement.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Si vous avez un diplôme étranger, vous devez prouver votre maîtrise du néerlandais ; consultez les Taaleisen Nederlands.
+          status: draft
+        en:
+          text: If you have a foreign diploma, you must prove your proficiency in Dutch; see the Taaleisen Nederlands.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence
+    last_verified_at: 2026-10-01

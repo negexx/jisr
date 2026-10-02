@@ -1,0 +1,85 @@
+{
+  "slug": "de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad10638",
+  "programmePage": "https://www.hs-aalen.de/en/courses/152",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10638/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-aalen.de/en/courses/152",
+          "quote": "Language English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10638/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        },
+        {
+          "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+          "quote": "For enrollment, the following fees apply: €1,500 international tuition fee and €180 semester fee (for the Winter Semester 2026/27)."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2026-12-03"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-aalen.de/en/courses/152",
+          "quote": "Application deadline 03.12.2026"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+          "quote": "The document recognizing your academic qualifications is a mandatory part of your application. To do so, you must apply to Uni Assist for a preliminary review documentation (Vorprüfungsdokumentation - VPD which assesses your eligibility for university admission in Germany)."
+        }
+      ]
+    }
+  },
+  "notes": "The DAAD page states the application period as 15 June - 30 November, which corresponds to the application deadline of 30 November, not 3 December as stated on the programme page; however, the 3 December deadline is on the programme's own page and is for the summer term 2027. Tuition is quoted per semester (€1,500 per semester = €3,000 per year) for non-EU applicants; a semester contribution of €170–€180 also applies. The teaching language is English; German language modules are included but not a requirement for admission (no minimum level required). The application channel for foreign-diploma applicants is uni-assist VPD, as required for recognition of academic qualifications.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'aptitude (TestAS ou SAT/ACT) est normalement requis pour les programmes de Bachelor. Vérifiez les exigences exactes pour les candidats internationaux.",
+          "en": "An aptitude test (TestAS or SAT/ACT) is normally required for Bachelor's programmes. Please check the exact requirements for international applicants."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+            "quote": "TestAS (paper-based or digital) core test and subject-specific engineering module with a score of at least 100"
+          }
+        ]
+      }
+    ]
+  }
+}

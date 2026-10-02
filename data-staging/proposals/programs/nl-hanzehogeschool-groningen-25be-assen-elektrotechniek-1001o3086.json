@@ -1,0 +1,54 @@
+{
+  "slug": "nl-hanzehogeschool-groningen-25be-assen-elektrotechniek-1001o3086",
+  "programmePage": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/elektrotechniek",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/elektrotechniek",
+          "quote": "Bachelor Voltijd 4 jaar Elektrotechniek"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/elektrotechniek",
+          "quote": "Taal Nederlands, Engels"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/elektrotechniek",
+          "quote": "Meld je aan via Studielink"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant du collegegeld n'est pas indiqué pour ce programme : la page du programme ne mentionne aucun frais pour les étudiants hors UE/EEE, et la page générale sur le collegegeld ne donne que le tarif légal néerlandais (2694 EUR pour 2026-2027, vraisemblablement pour les étudiants éligibles au tarif légal). La date limite d'inscription du 1er mai est qualifiée de conseil (« nous vous conseillons de vous inscrire au plus tard le 1er mai »), donc aucune échéance n'a été retenue dans les faits. Les langues d'enseignement correspondent à ce que dit la page : « Deze opleiding is zowel in het Nederlands als in het Engels te volgen. »",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que votre diplôme marocain (Baccalauréat) est reconnu comme équivalent à un HAVO ou VWO néerlandais ; les candidatures avec diplôme étranger doivent être soumises via Studielink avant le 15 août.",
+          "en": "Check that your Moroccan Baccalauréat is recognised as equivalent to a Dutch HAVO or VWO; applications with a foreign diploma must be submitted via Studielink before 15 August."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/elektrotechniek",
+            "quote": "Heb je een buitenlands diploma en wil je je aanmelden voor deze opleiding? Zorg er dan voor dat je dit vóór 15 augustus doet via Studielink."
+          }
+        ]
+      }
+    ]
+  }
+}

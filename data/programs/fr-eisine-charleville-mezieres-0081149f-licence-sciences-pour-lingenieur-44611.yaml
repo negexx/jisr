@@ -72,6 +72,25 @@ requirements:
         ar:
           text: "تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة."
           status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: fr
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez sur le site de l'établissement le montant exact des droits d'inscription applicables aux étudiants extracommunautaires ainsi que les exonérations éventuelles.
+          status: draft
+        en:
+          text: Check the institution's website for the exact tuition fees applicable to non-EU students and any possible exemptions.
+          status: draft
 scholarships: []
 sources:
   programme:
