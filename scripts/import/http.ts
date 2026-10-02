@@ -4,7 +4,8 @@ import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const CACHE_DIR = ".cache/import";
-const USER_AGENT = "jisr-data-importer/0.1 (+https://github.com/negexx/jisr; non-commercial, EU)";
+export const USER_AGENT =
+  "jisr-data-importer/0.1 (+https://github.com/negexx/jisr; non-commercial, EU)";
 const MAX_ATTEMPTS = 4;
 
 // A response that arrived but is unusable (wrong shape, truncated): fail at once, do not retry.

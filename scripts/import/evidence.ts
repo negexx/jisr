@@ -1,4 +1,5 @@
 import { fetchText } from "./http";
+import { isPdfUrl, pdfText } from "./pdf";
 
 // --- page text ---------------------------------------------------------------------------------
 const ENTITIES: Record<string, string> = {
@@ -52,6 +53,7 @@ export function htmlToText(html: string): string {
 
 export async function pageText(url: string): Promise<string> {
   if (!url.startsWith("https://")) throw new Error("evidence pages must be https");
+  if (isPdfUrl(url)) return pdfText(url);
   const body = await fetchText(url, { accept: "text/html,application/xhtml+xml" });
   return htmlToText(body);
 }
