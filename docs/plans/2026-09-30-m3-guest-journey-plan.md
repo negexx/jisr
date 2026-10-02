@@ -116,6 +116,8 @@ fr `draft` shows no note (fr is the authoring language; notes only for ar/en dra
 ## Out of M3 (M4, one line each)
 Save program (localStorage list of slug + snapshotVersion, "saved" badge); My Application Plan (`generateChecklist` per saved program, using `domain.checklist.*` keys already added); Compare (side by side desktop, stacked phone, 2-4 saved programs); Scholarships finder page (nationality-filtered: who can apply, support, covers, deadline, documents, how to apply); GoatCounter events (`profile-started`, `profile-completed`, `matches-viewed`, `program-saved`, `plan-opened`; only named in M3); Sentry EU with a `beforeSend` test stripping grades and MatchResults; "Report outdated info" (needs a server write → phase 2 with accounts); sitemap and hreflang alternates for program pages.
 
+**Done in M4a (branch `feat/m4-save-and-plan`):** Save program and My Application Plan (the first two items above); the rest remain.
+
 ## Outcome (2026-10-01)
 
 M3 shipped on `feat/m3-guest-journey`: Home with the profile CTA, Create Profile (4 steps + review), My Matches, and statically generated program pages with client personal leaves, all in fr, en and ar, with 152 Playwright tests (phone and desktop) passing, axe at zero violations, and the privacy specs green. The architecture decisions above held; see ADR 0006 (static program pages, 404 routing) and ADR 0007 (client JS budget, proposed). Where the build differs from the plan:
