@@ -440,6 +440,74 @@ export function applyVerified(staged: Staged, verified: Verified, today: string)
   return next;
 }
 
+// Applies what the reader proved to a record that is already in data/. Unlike applyVerified it never
+// resets a fact the reader did not establish, never replaces an existing official value, and never
+// touches requirements, the official URL, the summary or the scholarships. Returns `staged` itself
+// when nothing changed.
+export function applyEnrichment(staged: Staged, verified: Verified, today: string): Staged {
+  const sources: Record<string, unknown> = { ...asRecord(staged.sources) };
+  const keyOfUrl = new Map<string, string>();
+  for (const [key, value] of Object.entries(sources)) {
+    const url = asRecord(value).url;
+    if (typeof url === "string") keyOfUrl.set(url, key);
+  }
+  const keyFor = (url: string): string => {
+    const known = keyOfUrl.get(url);
+    if (known !== undefined) return known;
+    let n = 1;
+    while (`page-${n}` in sources) n++;
+    const key = `page-${n}`;
+    sources[key] = { url, last_verified_at: null };
+    keyOfUrl.set(url, key);
+    return key;
+  };
+
+  const next: Staged = { ...staged };
+  const evidenceLog: { fact: string; url: string; quote: string }[] = [];
+  const conflicts: string[] = [];
+  let changed = false;
+  for (const field of FACT_FIELDS) {
+    const accepted = verified.facts[field];
+    const first = accepted?.evidence[0];
+    if (accepted === undefined || first === undefined) continue;
+    const existing = asRecord(staged[field]);
+    const value = recordValue(field, accepted.value);
+    if (
+      existing.value !== null &&
+      existing.value !== undefined &&
+      existing.info_kind === "official"
+    ) {
+      if (JSON.stringify(existing.value) !== JSON.stringify(value))
+        conflicts.push(`${field}: kept the existing official value`);
+      continue;
+    }
+    next[field] = { value, source: keyFor(first.url), info_kind: "official" };
+    for (const e of accepted.evidence)
+      evidenceLog.push({ fact: field, url: e.url, quote: e.quote });
+    changed = true;
+  }
+  if (!changed && conflicts.length === 0) return staged;
+  if (!changed) {
+    // only disagreements: record them for the auditor, change nothing else
+    next._review = { ...asRecord(staged._review), notes: conflicts.join("; ") };
+    return next;
+  }
+  next.sources = sources;
+  const review = asRecord(staged._review);
+  const notes = [...conflicts, ...(verified.notes === undefined ? [] : [verified.notes])];
+  next._review = {
+    ...review,
+    preparedBy: "assistant",
+    preparedAt: today,
+    evidence: evidenceLog,
+    ...(notes.length === 0 ? {} : { notes: notes.join("; ") }),
+    todo: PREPARED_NOTE.test(String(review.todo ?? ""))
+      ? String(review.todo)
+      : `${String(review.todo ?? "")}; ${PREPARED_TEXT}`.replace(/^; /, ""),
+  };
+  return next;
+}
+
 export function stillPlaceholder(record: Staged): string[] {
   const left: string[] = [];
   for (const field of FACT_FIELDS) {

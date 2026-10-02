@@ -1,0 +1,185 @@
+import { describe, expect, it } from "vitest";
+
+import { applyEnrichment, type Verified } from "../../../scripts/import/proposals";
+
+type Rec = Record<string, unknown>;
+
+const registerRecord = (): Rec => ({
+  slug: "de-xx",
+  officialUrl: "https://www2.daad.de/x/10648/",
+  summary: { fr: { text: "s", status: "draft" } },
+  durationYears: { value: 3, source: "daad", info_kind: "guidance" },
+  teachingLanguages: { value: ["en"], source: "daad", info_kind: "guidance" },
+  tuition: { value: null, source: "daad", info_kind: "guidance" },
+  intakes: { value: null, source: "daad", info_kind: "guidance" },
+  applicationChannel: { value: null, source: "daad", info_kind: "guidance" },
+  documents: { value: null, source: "daad", info_kind: "guidance" },
+  requirements: { coverage: "partial", source: "daad", info_kind: "guidance", rules: [] },
+  scholarships: [],
+  sources: { daad: { url: "https://www2.daad.de/x/10648/", last_verified_at: "2026-10-01" } },
+  _review: { revises: true },
+});
+
+const verified = (facts: Verified["facts"], extra: Partial<Verified> = {}): Verified => ({
+  programmePage: null,
+  facts,
+  rejected: [],
+  ...extra,
+});
+
+const tuitionFact = {
+  value: { amountMinor: 150000, currency: "EUR", period: "semester" },
+  evidence: [
+    {
+      url: "https://hs.example/fees",
+      quote: "Tuition for non-EU students: EUR 1,500 per semester",
+    },
+  ],
+};
+
+// read a nested record without casts in every test
+const at = (record: Rec, key: string): Rec => record[key] as Rec;
+
+const TODAY = "2026-10-02";
+
+describe("applyEnrichment", () => {
+  it("fills a missing fact and adds its source with no date", () => {
+    const next = applyEnrichment(registerRecord(), verified({ tuition: tuitionFact }), TODAY);
+    expect(next.tuition).toEqual({
+      value: tuitionFact.value,
+      source: "page-1",
+      info_kind: "official",
+    });
+    expect(at(next, "sources")["page-1"]).toEqual({
+      url: "https://hs.example/fees",
+      last_verified_at: null,
+    });
+  });
+
+  it("keeps old sources and their dates", () => {
+    const next = applyEnrichment(registerRecord(), verified({ tuition: tuitionFact }), TODAY);
+    expect(at(at(next, "sources"), "daad").last_verified_at).toBe("2026-10-01");
+  });
+
+  it("replaces a guidance value and leaves facts the reader did not establish alone", () => {
+    const next = applyEnrichment(
+      registerRecord(),
+      verified({
+        teachingLanguages: {
+          value: ["en", "de"],
+          evidence: [{ url: "https://hs.example/lang", quote: "Taught in English and German" }],
+        },
+      }),
+      TODAY,
+    );
+    expect(next.teachingLanguages).toEqual({
+      value: ["en", "de"],
+      source: "page-1",
+      info_kind: "official",
+    });
+    expect(next.durationYears).toEqual({ value: 3, source: "daad", info_kind: "guidance" });
+  });
+
+  it("never overwrites an existing official value, and says so", () => {
+    const valueA = { amountMinor: 100000, currency: "EUR", period: "year" };
+    const record: Rec = {
+      ...registerRecord(),
+      tuition: { value: valueA, source: "programme", info_kind: "official" },
+    };
+    const next = applyEnrichment(record, verified({ tuition: tuitionFact }), TODAY);
+    expect(at(next, "tuition").value).toEqual(valueA);
+    expect(at(next, "_review").notes).toContain("tuition: kept the existing official value");
+
+    const same = applyEnrichment(
+      record,
+      verified({ tuition: { ...tuitionFact, value: valueA } }),
+      TODAY,
+    );
+    expect(same).toBe(record);
+  });
+
+  it("reuses the key of a source with the same url", () => {
+    const next = applyEnrichment(
+      registerRecord(),
+      verified({
+        tuition: {
+          ...tuitionFact,
+          evidence: [{ url: "https://www2.daad.de/x/10648/", quote: "q" }],
+        },
+      }),
+      TODAY,
+    );
+    expect(at(next, "tuition").source).toBe("daad");
+    expect(Object.keys(at(next, "sources"))).toEqual(["daad"]);
+  });
+
+  it("uses the smallest free page-N key", () => {
+    const record: Rec = {
+      ...registerRecord(),
+      sources: {
+        ...at(registerRecord(), "sources"),
+        "page-1": { url: "https://hs.example/other", last_verified_at: null },
+      },
+    };
+    const next = applyEnrichment(record, verified({ tuition: tuitionFact }), TODAY);
+    expect(at(next, "tuition").source).toBe("page-2");
+    expect(at(at(next, "sources"), "page-2").url).toBe("https://hs.example/fees");
+  });
+
+  it("converts documents to the record shape", () => {
+    const next = applyEnrichment(
+      registerRecord(),
+      verified({
+        documents: {
+          value: [{ slug: "cv", name: { fr: "CV", en: "CV" }, translationRequired: null }],
+          evidence: [{ url: "https://hs.example/docs", quote: "Please submit your CV" }],
+        },
+      }),
+      TODAY,
+    );
+    expect(at(next, "documents").value).toEqual([
+      {
+        slug: "cv",
+        name: { fr: { text: "CV", status: "draft" }, en: { text: "CV", status: "draft" } },
+        translationRequired: null,
+      },
+    ]);
+  });
+
+  it("leaves requirements, officialUrl, summary and scholarships untouched", () => {
+    const before = registerRecord();
+    const next = applyEnrichment(before, verified({ tuition: tuitionFact }), TODAY);
+    expect(next.requirements).toEqual(registerRecord().requirements);
+    expect(next.officialUrl).toBe("https://www2.daad.de/x/10648/");
+    expect(next.summary).toEqual(registerRecord().summary);
+    expect(next.scholarships).toEqual([]);
+  });
+
+  it("returns the same object when nothing was accepted", () => {
+    const record = registerRecord();
+    expect(applyEnrichment(record, verified({}), TODAY)).toBe(record);
+    expect(
+      applyEnrichment(
+        record,
+        verified({ tuition: { value: tuitionFact.value, evidence: [] } }),
+        TODAY,
+      ),
+    ).toBe(record);
+  });
+
+  it("marks a changed record for the audit sample", () => {
+    const next = applyEnrichment(registerRecord(), verified({ tuition: tuitionFact }), TODAY);
+    const review = at(next, "_review");
+    expect(review.preparedBy).toBe("assistant");
+    expect(review.preparedAt).toBe(TODAY);
+    expect(review.evidence).toEqual([
+      {
+        fact: "tuition",
+        url: "https://hs.example/fees",
+        quote: "Tuition for non-EU students: EUR 1,500 per semester",
+      },
+    ]);
+    expect(String(review.todo)).toMatch(/prepared by the assistant from the quoted pages/);
+    expect(review.revises).toBe(true);
+  });
+});
