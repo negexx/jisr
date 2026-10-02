@@ -55,7 +55,7 @@ requirements:
       kind: language_proficiency
       language: en
       minCefr: B2
-      certificateRequired: false
+      certificateRequired: null
       acceptedTests: []
     - id: req-2
       source: page-2

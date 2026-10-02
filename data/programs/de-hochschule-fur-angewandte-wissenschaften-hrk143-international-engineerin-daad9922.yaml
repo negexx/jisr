@@ -71,7 +71,7 @@ requirements:
       kind: language_proficiency
       language: de
       minCefr: A1
-      certificateRequired: false
+      certificateRequired: null
       acceptedTests: []
     - id: req-3
       source: page-3
