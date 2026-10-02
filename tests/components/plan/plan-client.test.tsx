@@ -294,3 +294,63 @@ describe.each(LOCALES)("My plan: match status (%s)", (locale) => {
     expect(stale.group).not.toBe("ok");
   });
 });
+
+describe.each(LOCALES)("My plan: focus after Remove (%s)", (locale) => {
+  const t = catalogs[locale].plan;
+
+  async function openPlan(...refs: Parameters<typeof seedSaved>) {
+    seedProfile();
+    seedSaved(...refs);
+    renderPlan(locale, fixture.client());
+    const { programs } = await planEntries(fixture.client(), locale, refs);
+    return programs;
+  }
+
+  it("moves focus to the heading of the program that takes the removed one's place (middle program)", async () => {
+    const user = userEvent.setup();
+    const programs = await openPlan(PROGRAMS.ok, PROGRAMS.stale, PROGRAMS.foundation);
+    const middle = requireProgram(programs, 1);
+    const first = requireProgram(programs, 0);
+    await programHeading(first.name);
+    const nav = screen.getByRole("navigation", { name: t.switcher.label });
+    await user.click(within(nav).getByRole("button", { name: new RegExp(middle.name) }));
+    await programHeading(middle.name);
+
+    await user.click(screen.getByRole("button", { name: t.program.remove }));
+
+    await waitFor(() => expect(storedSlugs()).toEqual([first.slug, requireProgram(programs, 2).slug]));
+    const heading = await programHeading(first.name);
+    await waitFor(() => expect(document.activeElement).toBe(heading));
+  });
+
+  it("moves focus to the empty state's title when the last saved program is removed", async () => {
+    const user = userEvent.setup();
+    const programs = await openPlan(PROGRAMS.ok);
+    await programHeading(requireProgram(programs).name);
+
+    await user.click(screen.getByRole("button", { name: t.program.remove }));
+
+    const title = await screen.findByRole("heading", { level: 2, name: t.empty.title });
+    await waitFor(() => expect(document.activeElement).toBe(title));
+    expect(storedSlugs()).toEqual([]);
+  });
+
+  it("focuses the missing-program heading when it becomes the active entry, and drops the request", async () => {
+    const user = userEvent.setup();
+    const programs = await openPlan(PROGRAMS.ok, PROGRAMS.gone);
+    await programHeading(requireProgram(programs).name);
+
+    await user.click(screen.getByRole("button", { name: t.program.remove }));
+
+    const title = await screen.findByRole("heading", { level: 2, name: t.missing.title });
+    await waitFor(() => expect(document.activeElement).toBe(title));
+
+    // The request was consumed: a later render must not pull focus back from where the user went.
+    const outside = document.createElement("button");
+    document.body.append(outside);
+    outside.focus();
+    await user.click(screen.getByRole("button", { name: t.program.remove }));
+    await screen.findByRole("heading", { level: 2, name: t.empty.title });
+    outside.remove();
+  });
+});

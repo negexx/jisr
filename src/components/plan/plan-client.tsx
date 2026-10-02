@@ -111,13 +111,6 @@ export function PlanClient({ locale, client }: { locale: AppLocale; client?: Sna
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
   const root = useRef<HTMLDivElement>(null);
   const focusAfterRemoval = useRef(false);
-  useEffect(() => {
-    if (!focusAfterRemoval.current) return;
-    const heading = root.current?.querySelector<HTMLElement>('[data-slot="plan-heading"]');
-    if (heading === null || heading === undefined) return;
-    focusAfterRemoval.current = false;
-    heading.focus();
-  });
 
   function remove(slug: string) {
     focusAfterRemoval.current = true;
@@ -206,6 +199,23 @@ export function PlanClient({ locale, client }: { locale: AppLocale; client?: Sna
   }
 
   const { loading, node } = body();
+
+  // After Remove the focused button disappears. Once the view settles, focus the heading that takes
+  // its place: the next program's, the missing-program card's, or the empty state's title. While
+  // the plan is still loading the request waits; if it settles on a view with no such heading
+  // (an error, say) the request is dropped so it cannot pull focus away later.
+  useEffect(() => {
+    if (!focusAfterRemoval.current) return;
+    const target = root.current?.querySelector<HTMLElement>(
+      '[data-slot="plan-heading"], [data-slot="focus-target"]',
+    );
+    if (target !== null && target !== undefined) {
+      focusAfterRemoval.current = false;
+      target.focus();
+    } else if (!loading) {
+      focusAfterRemoval.current = false;
+    }
+  });
   const storageNotice = saved.hydrated && !saved.storageAvailable;
   // One polite status region for the whole life of the island: a region inserted together with its
   // text is skipped by some screen readers, so only its text changes.

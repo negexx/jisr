@@ -9,6 +9,7 @@ export function MissingProgram({ slug, onRemove }: { slug: string; onRemove: () 
   const t = useTranslations("plan");
   return (
     <EmptyState
+      focusTarget
       title={t("missing.title")}
       description={
         <>

@@ -34,6 +34,17 @@ describe("EmptyState", () => {
     expect(error.container.querySelector('[role="status"]')).toBeNull();
   });
 
+  it("makes the heading a programmatic focus target only when asked", () => {
+    renderIntl(<EmptyState title="Plain" />);
+    expect(screen.getByRole("heading", { name: "Plain" }).hasAttribute("tabindex")).toBe(false);
+    cleanup();
+    renderIntl(<EmptyState title="Focusable" focusTarget />);
+    const heading = screen.getByRole("heading", { name: "Focusable" });
+    expect(heading.getAttribute("tabindex")).toBe("-1");
+    heading.focus();
+    expect(document.activeElement).toBe(heading);
+  });
+
   it("uses the requested heading level", () => {
     renderIntl(<EmptyState title="Nothing here" headingLevel={3} />);
     expect(screen.getByRole("heading", { level: 3, name: "Nothing here" })).toBeTruthy();

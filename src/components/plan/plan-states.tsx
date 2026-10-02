@@ -42,6 +42,7 @@ export function NoSavedState() {
   const t = useTranslations("plan.empty");
   return (
     <EmptyState
+      focusTarget
       title={t("title")}
       description={t("description")}
       action={
