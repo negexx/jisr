@@ -26,8 +26,9 @@ type PageCase = {
   name: string;
   route: (locale: E2eLocale) => string;
   seeded: boolean;
-  // A saved program is in storage too (the plan page has nothing to show without one).
-  saved?: boolean;
+  // These saved programs are in storage too (the plan page has nothing to show without one, the
+  // compare page without two).
+  saved?: readonly string[];
   ready: (page: Page, locale: E2eLocale) => Promise<void>;
   // Link targets the page must not prefetch (matched against the pathname of `_rsc` fetches).
   notPrefetched?: RegExp;
@@ -74,9 +75,18 @@ const PAGES: readonly PageCase[] = [
     name: "plan",
     route: (locale) => `/${locale}/plan`,
     seeded: true,
-    saved: true,
+    saved: [E2E_SLUGS.ok],
     ready: async (page) => {
       await expect(planHeading(page)).toBeVisible();
+    },
+  },
+  {
+    name: "compare",
+    route: (locale) => `/${locale}/compare`,
+    seeded: true,
+    saved: [E2E_SLUGS.ok, E2E_SLUGS.check],
+    ready: async (page) => {
+      await expect(page.locator('[data-slot="compare-heads"]')).toBeVisible();
     },
   },
 ];
@@ -121,7 +131,11 @@ test.describe("JavaScript per page (ratchet, not the ADR target)", () => {
 
       test(`${route}`, async ({ page }, testInfo) => {
         if (pageCase.seeded) await seedProfile(page, E2E_PROFILE);
-        if (pageCase.saved) await seedSaved(page, [savedItem(E2E_SLUGS.ok)]);
+        if (pageCase.saved)
+          await seedSaved(
+            page,
+            pageCase.saved.map((slug) => savedItem(slug)),
+          );
 
         const scriptResponses: Response[] = [];
         const rscResponses: Response[] = [];

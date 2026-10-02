@@ -1,6 +1,14 @@
 import type { Page } from "@playwright/test";
 
 import { expectNoSeriousViolations } from "./support/a11y";
+import {
+  differencesSwitch,
+  FIVE_SAVED,
+  openCompare,
+  openPicker,
+  serveTwinOfOk,
+  TWIN_SLUG,
+} from "./support/compare";
 import { E2E_PROFILE, E2E_SLUGS } from "./support/fixture-data";
 import { expect, test } from "./support/fixtures";
 import { E2E_LOCALES } from "./support/locales";
@@ -213,6 +221,49 @@ for (const { locale, dir } of E2E_LOCALES) {
         ).toBeVisible();
         await expectNoSeriousViolations(page, `plan error ${locale}`, testInfo);
       });
+
+      test("compare: nothing saved", async ({ page }, testInfo) => {
+        await page.goto(`/${locale}/compare`);
+        await expect(
+          page.getByRole("heading", { level: 2, name: t("compare.empty.title") }),
+        ).toBeVisible();
+        await expectNoSeriousViolations(page, `compare empty ${locale}`, testInfo);
+      });
+
+      test("compare: a comparison, the picker open, the differences switch on and off", async ({
+        page,
+      }, testInfo) => {
+        await seedSaved(page, FIVE_SAVED);
+        await openCompare(page, locale, t);
+        await expectNoSeriousViolations(page, `compare ${locale}`, testInfo);
+
+        await openPicker(page);
+        await expectNoSeriousViolations(page, `compare with the picker open ${locale}`, testInfo);
+
+        await differencesSwitch(page, t).check();
+        await expectNoSeriousViolations(page, `compare, differences only ${locale}`, testInfo);
+        await differencesSwitch(page, t).uncheck();
+        await expectNoSeriousViolations(page, `compare, differences off ${locale}`, testInfo);
+      });
+
+      test("compare: nothing differs", async ({ page }, testInfo) => {
+        await serveTwinOfOk(page);
+        await seedSaved(page, [savedItem(E2E_SLUGS.ok), savedItem(TWIN_SLUG)]);
+        await openCompare(page, locale, t);
+        await differencesSwitch(page, t).check();
+        await expect(page.getByText(t("compare.differences.allSame"))).toBeVisible();
+        await expectNoSeriousViolations(page, `compare all the same ${locale}`, testInfo);
+      });
+
+      test("compare: error state", async ({ page }, testInfo) => {
+        await seedSaved(page, [savedItem(E2E_SLUGS.ok), savedItem(E2E_SLUGS.check)]);
+        await page.route(MANIFEST_URL, (route) => route.fulfill({ status: 500, body: "" }));
+        await page.goto(`/${locale}/compare`);
+        await expect(
+          page.getByRole("heading", { level: 2, name: t("compare.error.title") }),
+        ).toBeVisible();
+        await expectNoSeriousViolations(page, `compare error ${locale}`, testInfo);
+      });
     });
 
     test("matches: no profile", async ({ page }, testInfo) => {
@@ -221,6 +272,15 @@ for (const { locale, dir } of E2E_LOCALES) {
         page.getByRole("heading", { level: 2, name: t("matches.states.none.title") }),
       ).toBeVisible();
       await expectNoSeriousViolations(page, `matches no profile ${locale}`, testInfo);
+    });
+
+    test("compare: no profile", async ({ page }, testInfo) => {
+      await seedSaved(page, [savedItem(E2E_SLUGS.ok), savedItem(E2E_SLUGS.check)]);
+      await page.goto(`/${locale}/compare`);
+      await expect(
+        page.getByRole("heading", { level: 2, name: t("compare.noProfile.title") }),
+      ).toBeVisible();
+      await expectNoSeriousViolations(page, `compare no profile ${locale}`, testInfo);
     });
 
     test("plan: no profile", async ({ page }, testInfo) => {
