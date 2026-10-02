@@ -9,7 +9,7 @@ const I = (applicationDeadline: string | null, startDate = "2027-09-01"): Intake
   applicationDeadline,
 });
 const R = (month: number, day: number): Intake => ({
-  startDate: null,
+  startDate: "2027-09-01",
   applicationOpens: null,
   applicationDeadline: null,
   recurringDeadline: { month, day },
@@ -97,5 +97,21 @@ describe("nextIntake with a recurring deadline", () => {
   it("keeps the FactRef so staleness stays visible", () => {
     const r = at([R(7, 15)]);
     expect(r.fact).toMatchObject({ path: "intakes", class: "volatile", freshness: "fresh" });
+  });
+  it("a stale intakes fact still returns recurring, with the staleness visible", () => {
+    const r = nextIntake(
+      program({ intakes: fact([R(7, 15)], { class: "volatile", last_verified_at: STALE }) }),
+      NOW,
+    );
+    expect(r.kind).toBe("recurring");
+    expect(r.fact).toMatchObject({ path: "intakes", freshness: "stale" });
+  });
+  it("crosses the year boundary from 30 December", () => {
+    const from = (intakes: Intake[]) =>
+      nextIntake(program({ intakes: fact(intakes, { class: "volatile" }) }), "2026-12-30");
+    const both = from([R(1, 5), R(12, 31)]);
+    expect(both.kind === "recurring" ? both.deadline : null).toEqual({ month: 12, day: 31 });
+    const only = from([R(1, 5)]);
+    expect(only.kind === "recurring" ? only.deadline : null).toEqual({ month: 1, day: 5 });
   });
 });

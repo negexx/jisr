@@ -142,7 +142,7 @@ function upcomingDeadline(intake: IntakeStatus): IsoDate | null {
   return intake.kind === "upcoming" ? intake.intake.applicationDeadline : null;
 }
 
-// Next upcoming deadline first; unknown and closed (no upcoming date) after; ties by slug.
+// Next upcoming deadline first; recurring, unknown and closed (no upcoming date) after, by slug.
 function compareCards(a: MatchCardModel, b: MatchCardModel): number {
   const da = upcomingDeadline(a.intake);
   const db = upcomingDeadline(b.intake);

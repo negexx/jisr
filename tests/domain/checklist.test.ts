@@ -226,6 +226,27 @@ describe("generateChecklist", () => {
   ] as const)("%s", (_n, o, id, status, reason) =>
     expect(step({ ...o } as Partial<ChecklistInput>, id)).toMatchObject({ status, reason }));
 
+  it("submit with only a recurring deadline applies and carries no date", () => {
+    const recurring = program({
+      intakes: fact(
+        [
+          {
+            startDate: null,
+            applicationOpens: null,
+            applicationDeadline: null,
+            recurringDeadline: { month: 7, day: 15 },
+          },
+        ],
+        { class: "volatile" },
+      ),
+    });
+    expect(step({ program: recurring }, "submit")).toMatchObject({
+      status: "todo",
+      reason: "applies",
+      deadline: null,
+    });
+  });
+
   it("submit carries deadline and channel", () => {
     expect(step({}, "submit")).toMatchObject({
       deadline: "2027-01-15",
