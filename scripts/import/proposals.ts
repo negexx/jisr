@@ -449,6 +449,15 @@ const PAGE_NOT_VERIFIED_NOTE =
 // touches requirements, the official URL, the summary or the scholarships. Returns `staged` itself
 // when nothing changed.
 export function applyEnrichment(staged: Staged, verified: Verified, today: string): Staged {
+  return enrichRecord(staged, verified, today).record;
+}
+
+// The same, plus the disagreements found in THIS run (an earlier run's notes are not conflicts now).
+export function enrichRecord(
+  staged: Staged,
+  verified: Verified,
+  today: string,
+): { record: Staged; conflicts: string[] } {
   const sources: Record<string, unknown> = { ...asRecord(staged.sources) };
   const keyOfUrl = new Map<string, string>();
   for (const [key, value] of Object.entries(sources)) {
@@ -456,6 +465,7 @@ export function applyEnrichment(staged: Staged, verified: Verified, today: strin
     if (typeof url === "string") keyOfUrl.set(url, key);
   }
   const keyFor = (url: string): string => {
+    // an existing source keeps its older last_verified_at on purpose: the cautious direction
     const known = keyOfUrl.get(url);
     if (known !== undefined) return known;
     let n = 1;
@@ -492,7 +502,7 @@ export function applyEnrichment(staged: Staged, verified: Verified, today: strin
       evidenceLog.push({ fact: field, url: e.url, quote: e.quote });
     changed = true;
   }
-  if (!changed && conflicts.length === 0) return staged;
+  if (!changed && conflicts.length === 0) return { record: staged, conflicts };
 
   const review = asRecord(staged._review);
   const earlierNotes = typeof review.notes === "string" && review.notes !== "" ? review.notes : "";
@@ -510,7 +520,7 @@ export function applyEnrichment(staged: Staged, verified: Verified, today: strin
   if (!changed) {
     // only disagreements: record them for the auditor, change nothing else
     next._review = { ...review, ...(notes === "" ? {} : { notes }), ...rejected };
-    return next;
+    return { record: next, conflicts };
   }
   next.sources = sources;
   const earlierEvidence = (
@@ -533,7 +543,7 @@ export function applyEnrichment(staged: Staged, verified: Verified, today: strin
       ? String(review.todo)
       : `${String(review.todo ?? "")}; ${PREPARED_TEXT}`.replace(/^; /, ""),
   };
-  return next;
+  return { record: next, conflicts };
 }
 
 // The facts applyEnrichment actually filled: the ones whose object it replaced.

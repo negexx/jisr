@@ -304,6 +304,31 @@ describe("verifyAll in enrich mode", () => {
     expect(lines).toContain("no new facts: discard the staged revision for de-xx");
   });
 
+  it("on a second run does not tell the runbook to discard what the first run filled", async () => {
+    const w = await workspace(tuitionProposal(null), false);
+    await restageForEnrichment(w);
+    await enrichRun(w);
+    const lines = await enrichRun(w);
+    expect(lines).toContain("no further facts for de-xx (earlier enrichment kept)");
+    expect(lines.some((l) => l.startsWith("no new facts: discard"))).toBe(false);
+    expect(at(await w.readStaged(), "tuition")).toMatchObject({ source: "page-1" });
+  });
+
+  it("flags a kept official value only for a conflict found in this run", async () => {
+    const w = await workspace(
+      {
+        ...tuitionProposal(null),
+        facts: { ...tuitionProposal(null).facts, teachingLanguages: germanFact },
+      },
+      false,
+    );
+    await restageForEnrichment(w);
+    await enrichRun(w);
+    await writeFile(path.join(w.enrichDir, "de-xx.json"), JSON.stringify(tuitionProposal(null)));
+    const line = (await enrichRun(w)).find((l) => l.startsWith("programs/de-xx:")) ?? "";
+    expect(line).not.toContain("kept existing official value");
+  });
+
   it("reports that requirements are ignored", async () => {
     const w = await workspace(
       {

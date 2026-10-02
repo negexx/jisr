@@ -6,11 +6,11 @@ import { parse } from "yaml";
 import { auditCsv, readAudit } from "./audit";
 import { pageText, quoteInText } from "./evidence";
 import {
-  applyEnrichment,
   applyRecord,
   applyVerified,
   ChannelProposalSchema,
   enrichedFields,
+  enrichRecord,
   type GetText,
   InstitutionProposalSchema,
   ProposalSchema,
@@ -106,6 +106,15 @@ function clearVerified(value: unknown): unknown {
 function stagedReview(record: Staged): object {
   const review = record._review;
   return typeof review === "object" && review !== null ? review : {};
+}
+
+function carriesEnrichment(record: Staged): boolean {
+  const review = stagedReview(record);
+  const evidence = Reflect.get(review, "evidence");
+  return (
+    Reflect.get(review, "preparedBy") !== undefined ||
+    (Array.isArray(evidence) && evidence.length > 0)
+  );
 }
 
 // An enrichment proposal that proves nothing has nothing to add to a record already in data/.
@@ -210,7 +219,7 @@ export async function verifyAll(
   }
   let applied = 0;
   let blocked = 0;
-  const discard: string[] = [];
+  const noNewFacts: string[] = [];
   const kinds =
     enrichDir === null ? ["programs", "institutions", "application-channels"] : ["programs"];
   for (const kind of kinds) {
@@ -245,19 +254,16 @@ export async function verifyAll(
           summary = `accepted ${Object.keys(verified.facts).join(", ") || "no facts"}; page ${verified.programmePage === null ? "NOT verified" : "ok"}${rejected}`;
           if (verified.programmePage === null) blocked++;
         } else {
-          next = applyEnrichment(staged, verified, today());
+          const enriched = enrichRecord(staged, verified, today());
+          next = enriched.record;
           const filled = enrichedFields(staged, next);
-          const notes = Reflect.get(stagedReview(next), "notes");
-          const kept =
-            typeof notes === "string" && notes.includes("kept the existing official value")
-              ? "; kept existing official value"
-              : "";
+          const kept = enriched.conflicts.length > 0 ? "; kept existing official value" : "";
           const ignored =
             (verified.requirements?.length ?? 0) > 0 ? "; requirements ignored in enrich mode" : "";
           summary = `${filled.length === 0 ? "no new facts" : `enriched ${filled.join(", ")}`}; page ${
             verified.programmePage === null ? "NOT verified" : "ok"
           }${kept}${ignored}${rejected}`;
-          if (filled.length === 0) discard.push(slug);
+          if (filled.length === 0) noNewFacts.push(slug);
         }
       } else if (kind === "institutions") {
         const proposal = InstitutionProposalSchema.parse(raw);
@@ -276,8 +282,14 @@ export async function verifyAll(
       console.log(
         `${kind}/${slug}: ${summary}${left.length > 0 ? `; still to read: ${left.join(", ")}` : ""}`,
       );
-      if (enrichDir !== null && discard.includes(slug))
-        console.log(`no new facts: discard the staged revision for ${slug}`);
+      if (enrichDir !== null && noNewFacts.includes(slug)) {
+        // a staged copy that carries earlier enrichment holds verified facts: never advise discarding it
+        console.log(
+          carriesEnrichment(staged)
+            ? `no further facts for ${slug} (earlier enrichment kept)`
+            : `no new facts: discard the staged revision for ${slug}`,
+        );
+      }
       if (!dryRun && next !== staged) {
         await mkdir(path.dirname(stageFile(kind, slug, stagingDir)), { recursive: true });
         await writeFile(stageFile(kind, slug, stagingDir), toYaml(next));
