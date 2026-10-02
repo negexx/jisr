@@ -22,8 +22,13 @@ const CLIENT_DIRECTORIES = [
   path.join("lib", "journey"),
   path.join("lib", "i18n"),
   path.join("lib", "design"),
+  path.join("lib", "saved"),
+  path.join("lib", "plan"),
 ];
 const CLIENT_FILES = [
+  path.join("lib", "local-storage.ts"),
+  path.join("lib", "local-store.ts"),
+  path.join("lib", "local-data.ts"),
   path.join("lib", "format.ts"),
   path.join("lib", "clock.ts"),
   path.join("lib", "constants.ts"),
