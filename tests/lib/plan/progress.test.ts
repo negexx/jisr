@@ -45,20 +45,29 @@ describe("parsePlanProgress", () => {
   });
 
   it("never throws on arbitrary input", () => {
-    const samples: unknown[] = [
-      undefined,
-      1,
-      true,
-      {},
-      { schemaVersion: 1, done: { __proto__: ["visa"] } },
-    ];
+    const samples: unknown[] = [undefined, 1, true, {}];
     for (const sample of samples) expect(() => parsePlanProgress(sample)).not.toThrow();
+  });
+
+  it("drops a __proto__ key and keeps a constructor key without touching the prototype", () => {
+    const raw: unknown = JSON.parse(
+      '{"schemaVersion":1,"done":{"__proto__":["visa"],"constructor":["visa"]}}',
+    );
+    const result = parsePlanProgress(raw);
+    expect(result).toEqual({ schemaVersion: 1, done: { constructor: ["visa"] } });
+    expect(Object.getPrototypeOf(result?.done)).toBe(Object.prototype);
   });
 });
 
 describe("pure operations", () => {
   it("reads a slug named like an Object property without inheriting", () => {
     expect(doneSteps(EMPTY_PROGRESS, "constructor")).toEqual([]);
+  });
+
+  it("round-trips a step for a slug named like an Object property", () => {
+    const progress = withStepDone(EMPTY_PROGRESS, "constructor", "visa", true);
+    expect(doneSteps(progress, "constructor")).toEqual(["visa"]);
+    expect(withStepDone(progress, "constructor", "visa", false)).toEqual(EMPTY_PROGRESS);
   });
 
   it("ticks and unticks a step, keeping steps in checklist order", () => {

@@ -12,7 +12,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { profileStore } from "@/lib/profile/store";
+import { clearAllLocalData } from "@/lib/local-data";
 
 type Props = {
   copy: ClearDataCopy;
@@ -42,7 +42,7 @@ export function ClearDataDialog({ copy, open, onOpenChange, returnFocusTo }: Pro
             onClick={(event) => {
               // Stay open until the data is gone, then close.
               event.preventDefault();
-              profileStore.clear();
+              clearAllLocalData();
               onOpenChange(false);
             }}
           >

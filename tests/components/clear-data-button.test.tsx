@@ -5,8 +5,13 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { ClearDataButton } from "@/components/clear-data-button";
 import type { AppLocale } from "@/i18n/routing";
+import { PLAN_KEY } from "@/lib/plan/progress";
+import { setStepDone } from "@/lib/plan/store";
 import { DRAFT_KEY, PROFILE_KEY } from "@/lib/profile/storage";
 import { profileStore } from "@/lib/profile/store";
+import { toggleSavedProgram } from "@/lib/saved/actions";
+import { SAVED_KEY } from "@/lib/saved/saved";
+import { savedStore } from "@/lib/saved/store";
 
 import { profile } from "../fixtures/domain/builders";
 import { renderIntl, shellProps } from "./intl";
@@ -87,8 +92,16 @@ describe.each(["fr", "ar", "en"] as const)("ClearDataButton (%s)", (locale) => {
 });
 
 describe("ClearDataButton with the real store", () => {
-  it("removes the saved profile and the unfinished draft, and nothing else, before it closes", async () => {
+  it("removes the profile, draft, saved list and plan progress, and nothing else, before it closes", async () => {
     profileStore.save(profile());
+    toggleSavedProgram(
+      { slug: "xx-a", country: "FR", field: "computer-science" },
+      "0123456789ab",
+      "2026-10-02",
+    );
+    setStepDone("xx-a", "visa", true);
+    expect(window.localStorage.getItem(SAVED_KEY)).not.toBeNull();
+    expect(window.localStorage.getItem(PLAN_KEY)).not.toBeNull();
     window.localStorage.setItem(DRAFT_KEY, JSON.stringify({ schemaVersion: 1, step: 1 }));
     window.localStorage.setItem("unrelated.key", "keep me");
     expect(window.localStorage.getItem(PROFILE_KEY)).not.toBeNull();
@@ -102,6 +115,10 @@ describe("ClearDataButton with the real store", () => {
 
     expect(window.localStorage.getItem(PROFILE_KEY)).toBeNull();
     expect(window.localStorage.getItem(DRAFT_KEY)).toBeNull();
+    expect(window.localStorage.getItem(SAVED_KEY)).toBeNull();
+    expect(window.localStorage.getItem(PLAN_KEY)).toBeNull();
+    const saved = savedStore.getSnapshot();
+    expect(saved.status === "ready" && saved.value.items).toEqual([]);
     expect(window.localStorage.getItem("unrelated.key")).toBe("keep me");
     expect(profileStore.getSnapshot().status).toBe("none");
     await waitFor(() => expect(screen.queryByRole("alertdialog")).toBeNull());
