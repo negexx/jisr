@@ -78,7 +78,7 @@ Jisr is a free web app that turns a Moroccan Bac graduate's profile into a reali
 
 Zod costs about 100 KB gzipped in any client chunk. Client-reachable code (`src/components`, `src/domain`, `src/lib/{profile,snapshot,journey,i18n,design}` and the Zod-free helper files) therefore imports no `zod` and nothing from `@/data-schema` except types and the zod-free `dates` and `staleness` modules. The profile, draft and manifest validators are hand-written and proven equal to the Zod schemas by differential tests with seeded fuzzing (`tests/lib/profile/validate.test.ts`, `draft-validate.test.ts`, `tests/lib/snapshot/manifest-guard.test.ts`). `tests/lib/client-imports.test.ts` walks the runtime import graph from every client root with the TypeScript AST and fails with the import chain. `pnpm perf:js` adds a backstop that scans `.next/static` for `ZodError`/`_zod` after a build (the CI `verify` job runs it after `pnpm build`; the e2e perf spec separately asserts that no script the browser loads contains the markers). When `src/instrumentation-client.ts` arrives with Sentry it must become a root of the guard.
 
-## Client JS size (target 150 KB gzipped initial JS; ADR 0007)
+## Client JS size (150 KB gzipped initial JS is an aspiration, not a gate; ADR 0007, ADR 0008)
 
 Measured on the fixture build, gzip, noModule polyfill excluded. Build = `pnpm perf:js`; browser = Playwright perf spec ("initial" is what the HTML asks for, "until idle" adds the chunks Next prefetches for linked pages):
 

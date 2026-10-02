@@ -1,6 +1,6 @@
 # ADR 0008: Exceeding the 150 KB client JS target is accepted
 
-**Status:** Accepted (supersedes ADR 0007)
+**Status:** Accepted (supersedes ADR 0007 and relaxes the 150 KB line of ADR 0004)
 **Date:** 2026-10-02
 
 ## Context
@@ -19,3 +19,12 @@ The product owner (2026-10-02, in chat) accepts that pages exceed 150 KB. In ADR
 
 - A student on slow mobile data pays 15 to 40 KB more per page than the original target; keep new client code small and prefer dynamic imports (the save toggle already loads on first click).
 - Revisit if testing with real students (MVP phase 4) shows people abandoning on slow connections.
+
+## Alternatives considered
+
+- **B. Fund the shell refactor first** (ADR 0007 levers 1 to 5): not chosen now; the estimates only just reach 150 KB for Home and island pages need more, so it stays an opportunistic backlog.
+- **C. Both:** not chosen; only the budget half (A) was decided.
+
+## How to revisit
+
+ADRs are immutable once committed: a later decision (for example a funded refactor after student testing) is a new ADR that supersedes this one.
