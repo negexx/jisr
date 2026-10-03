@@ -31,10 +31,7 @@ tuition:
   source: daad
   info_kind: guidance
 intakes:
-  value:
-    - startDate: null
-      applicationOpens: null
-      applicationDeadline: 2026-09-15
+  value: null
   source: page-2
   info_kind: official
 applicationChannel:
