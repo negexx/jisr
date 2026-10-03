@@ -34,9 +34,15 @@ tuition:
   source: daad
   info_kind: official
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 10
+        day: 31
+  source: page-1
+  info_kind: official
 applicationChannel:
   value: null
   source: daad

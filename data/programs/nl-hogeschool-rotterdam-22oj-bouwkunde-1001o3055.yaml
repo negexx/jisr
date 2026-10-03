@@ -30,8 +30,14 @@ tuition:
   source: programme
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 4
+        day: 1
+  source: page-1
   info_kind: official
 applicationChannel:
   value: nl-studielink
@@ -79,3 +85,6 @@ sources:
   page-3:
     url: https://www.hogeschoolrotterdam.nl/voorlichting/toelatingsvoorwaarden/toelating-met-een-buitenlands-diploma/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/studievisum/
+    last_verified_at: 2026-10-03

@@ -31,9 +31,15 @@ tuition:
   source: daad
   info_kind: guidance
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 9
+        day: 30
+  source: page-1
+  info_kind: official
 applicationChannel:
   value: de-uni-assist
   source: daad
@@ -52,3 +58,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10425/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hs-fulda.de/en/studyprogramme/international-business-administration-bsc
+    last_verified_at: 2026-10-03

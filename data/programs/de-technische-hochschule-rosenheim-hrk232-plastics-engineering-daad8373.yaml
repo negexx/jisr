@@ -34,9 +34,12 @@ tuition:
   source: page-1
   info_kind: official
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: null
+      applicationOpens: 2026-05-01
+      applicationDeadline: 2026-11-30
+  source: page-3
+  info_kind: official
 applicationChannel:
   value: de-uni-assist
   source: daad
@@ -70,3 +73,6 @@ sources:
   page-2:
     url: https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/plastics-engineering
     last_verified_at: 2026-10-02
+  page-3:
+    url: https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme
+    last_verified_at: 2026-10-03

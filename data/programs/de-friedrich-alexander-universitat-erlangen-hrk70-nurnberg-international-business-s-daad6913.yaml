@@ -33,8 +33,14 @@ tuition:
   source: page-2
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 7
+        day: 15
+  source: page-1
   info_kind: official
 applicationChannel:
   value: de-university-direct
@@ -68,3 +74,6 @@ sources:
   page-2:
     url: https://www.international-business-economics.wiso.rw.fau.eu/application/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://fau.de/studiengang/international-business-studies-b-sc
+    last_verified_at: 2026-10-03

@@ -34,7 +34,13 @@ tuition:
   source: page-2
   info_kind: official
 intakes:
-  value: null
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 11
+        day: 30
   source: programme
   info_kind: official
 applicationChannel:

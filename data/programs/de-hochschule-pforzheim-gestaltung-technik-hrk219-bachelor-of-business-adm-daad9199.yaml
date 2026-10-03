@@ -33,8 +33,14 @@ tuition:
   source: programme
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 5
+        day: 31
+  source: page-1
   info_kind: official
 applicationChannel:
   value: de-university-direct

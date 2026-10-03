@@ -30,9 +30,12 @@ tuition:
   source: daad
   info_kind: guidance
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-05-15
+  source: page-1
+  info_kind: official
 applicationChannel:
   value: null
   source: daad
@@ -51,3 +54,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9857/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-law-ba/apply-now
+    last_verified_at: 2026-10-03
