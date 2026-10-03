@@ -127,6 +127,8 @@ const INTERNATIONAL_WORDS: readonly RegExp[] = [
   /(?:from|obtained|studied|completed)\s+abroad/i,
   /(?:aus dem|im) ausland\b|ausl[aä]nd(?:isch|er)/i,
   /[ée]trang[eè]r/i,
+  // a deadline for Moroccan applicants only (Campus France: "heure marocaine")
+  /marocain(?:e|s|es)?\b|moroccan|marokkaan|marokkanisch|aus marokko|uit marokko|\bmaroc\b/i,
 ];
 export const mentionsInternationalApplicants = (quote: string): boolean =>
   INTERNATIONAL_WORDS.some((pattern) => pattern.test(quote));

@@ -234,6 +234,14 @@ describe("mentionsInternationalApplicants", () => {
     "Applicants with a degree from abroad: 1 March",
     "Deadline for international students: 1 March",
     "Foreign applicants: 1 March",
+    "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)",
+    "Candidats marocains : date limite le 15 novembre",
+    "Moroccan applicants must apply by 1 March",
+    "Bewerbung für marokkanische Staatsangehörige bis 15. Juli",
+    "Marokkaanse studenten melden zich aan vóór 1 april",
+    "Bewerbung aus Marokko bis 15. Juli",
+    "Studenten uit Marokko melden zich aan vóór 1 april",
+    "Diplôme du Maroc : date limite le 15 novembre",
   ])("is true for: %s", (quote) => {
     expect(mentionsInternationalApplicants(quote)).toBe(true);
   });
