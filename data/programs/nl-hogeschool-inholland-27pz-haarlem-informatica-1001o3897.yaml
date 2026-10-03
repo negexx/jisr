@@ -17,7 +17,7 @@ summary:
     status: draft
 officialUrl: https://www.inholland.nl/opleidingen/informatica-voltijd/
 durationYears:
-  value: null
+  value: 4
   source: programme
   info_kind: official
 teachingLanguages:
@@ -34,8 +34,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: nl-studielink
+  source: page-1
   info_kind: official
 documents:
   value: null
@@ -51,3 +51,6 @@ sources:
   programme:
     url: https://www.inholland.nl/opleidingen/informatica-voltijd/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.inholland.nl/inschrijven/inschrijven/
+    last_verified_at: 2026-10-02

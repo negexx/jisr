@@ -19,16 +19,19 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 3
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - en
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 612000
+    currency: EUR
+    period: semester
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
   value: null
   source: daad
@@ -38,9 +41,27 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: secondary school leaving certificate
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -51,3 +72,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11098/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hs-fresenius.com/application-process/?crmid=aBbTjOcDaAaAaAaA
+    last_verified_at: 2026-10-02

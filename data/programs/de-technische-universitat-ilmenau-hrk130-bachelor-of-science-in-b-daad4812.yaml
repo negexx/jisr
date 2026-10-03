@@ -35,9 +35,9 @@ intakes:
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-1
+  info_kind: official
 documents:
   value: null
   source: daad
@@ -52,3 +52,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4812/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.tu-ilmenau.de/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/biomedizinische-technik-b-sc
+    last_verified_at: 2026-10-02

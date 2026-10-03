@@ -37,12 +37,48 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: nl-studielink
+  source: page-1
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: identity-document
+      name:
+        fr:
+          text: Copie de la pièce d'identité
+          status: draft
+        en:
+          text: Copy of identity document
+          status: draft
+      translationRequired: null
+    - slug: diploma
+      name:
+        fr:
+          text: Diplôme
+          status: draft
+        en:
+          text: Diploma
+          status: draft
+      translationRequired: null
+    - slug: transcript-of-records
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Transcript of records
+          status: draft
+      translationRequired: null
+    - slug: certified-translation
+      name:
+        fr:
+          text: Traduction certifiée
+          status: draft
+        en:
+          text: Certified translation
+          status: draft
+      translationRequired: true
+  source: page-4
   info_kind: official
 requirements:
   coverage: partial
@@ -71,3 +107,9 @@ sources:
   page-3:
     url: https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.inholland.nl/inschrijven/inschrijven/
+    last_verified_at: 2026-10-02
+  page-4:
+    url: https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf
+    last_verified_at: 2026-10-02

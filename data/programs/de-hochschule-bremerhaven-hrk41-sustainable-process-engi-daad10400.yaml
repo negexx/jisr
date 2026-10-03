@@ -19,29 +19,59 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 3.5
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - de
     - en
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: semester
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
   value: null
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-1
+  info_kind: official
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: School leaving certificate
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae signé personnellement
+          status: draft
+        en:
+          text: Personally signed curriculum vitae
+          status: draft
+      translationRequired: null
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -52,3 +82,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10400/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hs-bremerhaven.de/en/study/application-for-bachelor-courses
+    last_verified_at: 2026-10-02

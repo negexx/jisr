@@ -1,0 +1,266 @@
+programs/de-baden-wuerttemberg-cooperative-state-uni-daad-mosbach-new-study-computer-scien-daad10648: enriched documents; page ok; requirements ignored in enrich mode
+programs/de-bard-college-berlin-a-liberal-arts-unive-hrk437-ba-in-economics-politics-daad4537: enriched durationYears, teachingLanguages, documents; page ok; requirements ignored in enrich mode
+programs/de-carl-von-ossietzky-universitat-oldenburg-hrk209-bachelor-of-engineering-daad3772: no new facts; page ok; kept existing official value; requirements ignored in enrich mode
+  conflict: tuition: kept the existing official value; the reader found {"amountMinor":0,"currency":"EUR","period":"year"} at https://uol.de/en/physics/studies/courseofstudies/ep
+conflicts recorded: keep the staged revision until they are reported (de-carl-von-ossietzky-universitat-oldenburg-hrk209-bachelor-of-engineering-daad3772)
+programs/de-ebs-universitat-fur-wirtschaft-und-recht-hrk206-bachelors-in-business-st-daad4080: enriched durationYears, teachingLanguages, tuition, documents; page ok; requirements ignored in enrich mode
+programs/de-ebs-universitat-fur-wirtschaft-und-recht-hrk206-bachelors-in-law-politic-daad8558: enriched durationYears, teachingLanguages; page ok; requirements ignored in enrich mode
+programs/de-fachhochschule-aachen-hrk2-global-business-and-econ-daad4849: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-fachhochschule-aachen-hrk2-global-business-and-econ-daad4849
+programs/de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad3998: enriched teachingLanguages, tuition, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad4009: enriched teachingLanguages, tuition, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad4011: enriched durationYears, teachingLanguages, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-fachhochschule-aachen-hrk2-julich-bachelor-of-science-in-i-daad11243: enriched teachingLanguages, tuition, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-fh-munster-university-of-applied-science-hrk192-international-business-m-daad3910: enriched documents; page ok; requirements ignored in enrich mode
+programs/de-fh-munster-university-of-applied-science-hrk192-international-business-m-daad3911: enriched durationYears, teachingLanguages, tuition; page ok; requirements ignored in enrich mode
+programs/de-frankfurt-school-of-finance-management-hrk83-bachelors-in-business-ad-daad9678: enriched durationYears, teachingLanguages, tuition, documents; page ok; requirements ignored in enrich mode
+programs/de-frankfurt-school-of-finance-management-hrk83-bachelors-in-computation-daad9740: enriched durationYears, teachingLanguages, tuition; page ok; requirements ignored in enrich mode
+programs/de-frankfurt-school-of-finance-management-hrk83-bachelors-in-management-daad9700: enriched durationYears, teachingLanguages, intakes, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-friedrich-alexander-universitat-erlangen-hrk70-artificial-intelligence-daad9594: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-friedrich-alexander-universitat-erlangen-hrk70-artificial-intelligence-daad9594
+programs/de-friedrich-alexander-universitat-erlangen-hrk70-nurnberg-international-business-s-daad6913: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-friedrich-alexander-universitat-erlangen-hrk70-nurnberg-international-business-s-daad6913
+programs/de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad10638: enriched documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad9904: enriched durationYears, teachingLanguages, tuition, intakes, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad9905: enriched durationYears, teachingLanguages, tuition, intakes, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-albstadt-sigmaringen-hrk4-albstadt-industrial-engineering-daad9996: enriched durationYears, teachingLanguages, tuition; page ok; requirements ignored in enrich mode
+programs/de-hochschule-albstadt-sigmaringen-hrk4-albstadt-mechanical-engineering-daad9993: enriched durationYears, teachingLanguages, tuition, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-bielefeld-university-of-appli-hrk28-gutersloh-beng-industrial-engineer-daad9711: enriched tuition, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-bielefeld-university-of-appli-hrk28-gutersloh-beng-mechatronics-and-au-daad10585: enriched durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-bonn-rhein-sieg-university-of-hrk294-international-business-b-daad5225: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-hochschule-bonn-rhein-sieg-university-of-hrk294-international-business-b-daad5225
+programs/de-hochschule-bremerhaven-hrk41-international-tourism-ma-daad7839: enriched documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-bremerhaven-hrk41-sustainable-process-engi-daad10400: enriched durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-der-medien-stuttgart-hrk250-social-media-marketing-m-daad9705: enriched applicationChannel; page ok; kept existing official value; requirements ignored in enrich mode
+  conflict: intakes: kept the existing official value; the reader found [{"startDate":null,"applicationOpens":"2026-03-01","applicationDeadline":"2026-05-20"},{"startDate":null,"applicationOpens":null,"applicationDeadline":"2026-06-30"}] at https://hdm-stuttgart.de/dc/smm/admission/application_step_by_step
+programs/de-hochschule-fresenius-heidelberg-staatlic-hrk440-international-business-b-daad11098: enriched durationYears, teachingLanguages, tuition, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-fresenius-university-of-appli-daad-koln-computer-science-bsc-daad9952: enriched tuition; page ok; requirements ignored in enrich mode
+programs/de-hochschule-fulda-university-of-applied-s-hrk92-industrial-engineering-l-daad9640: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-hochschule-fulda-university-of-applied-s-hrk92-industrial-engineering-l-daad9640
+programs/de-hochschule-fulda-university-of-applied-s-hrk92-international-business-a-daad10425: enriched durationYears, teachingLanguages, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-hochschule-fulda-university-of-applied-s-hrk92-international-business-m-daad5651: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-hochschule-fulda-university-of-applied-s-hrk92-international-business-m-daad5651
+programs/de-hochschule-fur-angewandte-wissenschaften-hrk143-international-engineerin-daad9922: enriched durationYears, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-fur-angewandte-wissenschaften-hrk264-applied-informatics-daad9990: no new facts; page ok
+no new facts: discard the staged revision for de-hochschule-fur-angewandte-wissenschaften-hrk264-applied-informatics-daad9990
+programs/de-hochschule-fur-angewandte-wissenschaften-hrk287-computer-science-bsc-daad7216: enriched teachingLanguages, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-fur-angewandte-wissenschaften-hrk287-engineering-science-beng-daad9934: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-hochschule-fur-angewandte-wissenschaften-hrk287-engineering-science-beng-daad9934
+programs/de-hochschule-fur-angewandte-wissenschaften-hrk287-environmental-engineerin-daad9933: enriched teachingLanguages, tuition; page ok; requirements ignored in enrich mode
+programs/de-hochschule-fur-angewandte-wissenschaften-hrk291-engineering-physics-and-daad9655: enriched tuition; page ok; requirements ignored in enrich mode
+programs/de-hochschule-fur-angewandte-wissenschaften-hrk312-applied-sustainable-engi-daad10455: enriched intakes, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-fur-angewandte-wissenschaften-hrk44-engineering-physics-daad10481: enriched documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-fur-angewandte-wissenschaften-hrk44-international-bachelors-daad10381: enriched durationYears, teachingLanguages, tuition, intakes; page ok; requirements ignored in enrich mode
+programs/de-hochschule-fur-angewandte-wissenschaften-hrk44-international-bachelors-daad10398: enriched durationYears, teachingLanguages, tuition, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-fur-angewandte-wissenschaften-hrk44-kronach-digital-business-models-daad10485: enriched durationYears, teachingLanguages, tuition; page ok; requirements ignored in enrich mode
+programs/de-hochschule-fur-angewandte-wissenschaften-hrk44-mechanical-engineering-daad10350: enriched durationYears, teachingLanguages, tuition, intakes, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-fur-technik-und-wirtschaft-dr-hrk54-bachelor-electrical-engi-daad4762: enriched durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-furtwangen-informatik-technik-hrk94-villingen-schwenningen-international-engineerin-daad4203: enriched durationYears, teachingLanguages, tuition; page ok; requirements ignored in enrich mode
+programs/de-hochschule-geisenheim-hrk446-international-wine-busin-daad8448: enriched documents; page ok; kept existing official value; requirements ignored in enrich mode
+  conflict: tuition: kept the existing official value; the reader found {"amountMinor":0,"currency":"EUR","period":"semester"} at https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8448/
+programs/de-hochschule-hamm-lippstadt-hrk399-lippstadt-electronic-engineering-daad4876: enriched durationYears, teachingLanguages, tuition, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-hannover-hrk115-biotechnology-and-enviro-daad7747: enriched durationYears, teachingLanguages, tuition, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-artificial-intelligence-daad10364: enriched teachingLanguages; page NOT verified; requirements ignored in enrich mode; rejected: programmePage (the page does not mention the programme name)
+programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-automotive-systems-engin-daad11004: enriched durationYears, tuition, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-electrical-systems-engin-daad6320: enriched durationYears, tuition; page ok; requirements ignored in enrich mode
+programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-environmental-and-proces-daad10371: enriched durationYears, teachingLanguages, intakes, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-intelligent-mechatronic-daad10366: no new facts; page ok
+no new facts: discard the staged revision for de-hochschule-heilbronn-technik-wirtschaft-hrk125-intelligent-mechatronic-daad10366
+programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-international-business-daad3930: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-hochschule-heilbronn-technik-wirtschaft-hrk125-international-business-daad3930
+programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-international-business-i-daad9674: enriched durationYears, teachingLanguages, tuition; page ok; requirements ignored in enrich mode
+programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-mechanical-engineering-daad11005: enriched durationYears, teachingLanguages, tuition; page ok; requirements ignored in enrich mode
+programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-mechatronics-and-robotic-daad6265: enriched durationYears, teachingLanguages, tuition; page ok
+programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-schwabisch-hall-global-digital-marketing-daad9677: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-hochschule-heilbronn-technik-wirtschaft-hrk125-schwabisch-hall-global-digital-marketing-daad9677
+programs/de-hochschule-kaiserslautern-university-of-hrk306-mechanical-engineering-b-daad9743: enriched durationYears, teachingLanguages, tuition, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-hochschule-kaiserslautern-university-of-hrk306-pirmasens-leather-and-textile-engi-daad10643: enriched durationYears, teachingLanguages, tuition, intakes, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken-international-business-a-daad10690: enriched documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken-international-business-a-daad9036: enriched durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-karlsruhe-technik-und-wirtsch-hrk138-bsc-in-mechanical-engine-daad3918: enriched tuition, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-karlsruhe-technik-und-wirtsch-hrk138-electrical-engineering-a-daad7695: enriched durationYears, teachingLanguages, tuition, intakes; page ok; requirements ignored in enrich mode
+programs/de-hochschule-koblenz-hrk305-marketing-and-internatio-daad11241: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-hochschule-koblenz-hrk305-marketing-and-internatio-daad11241
+programs/de-hochschule-landshut-hochschule-fur-angew-hrk157-dingolfing-sustainable-industrial-o-daad11085: enriched durationYears, teachingLanguages, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-mainz-hrk310-bsc-in-international-bus-daad10402: enriched durationYears, teachingLanguages, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-hochschule-mainz-hrk310-international-civil-engi-daad7151: enriched durationYears, tuition; page ok; requirements ignored in enrich mode
+programs/de-hochschule-osnabruck-hrk214-computer-science-daad11217: enriched durationYears, teachingLanguages, tuition, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-hochschule-osnabruck-hrk214-engineering-sciences-daad11216: enriched teachingLanguages, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-osnabruck-hrk214-international-business-a-daad11037: enriched durationYears, teachingLanguages, tuition; page ok; requirements ignored in enrich mode
+programs/de-hochschule-osnabruck-hrk214-international-economics-daad9923: enriched durationYears, teachingLanguages, intakes, applicationChannel; page ok
+programs/de-hochschule-pforzheim-gestaltung-technik-hrk219-bachelor-of-business-adm-daad9199: enriched documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-pforzheim-gestaltung-technik-hrk219-bachelors-in-business-ad-daad9800: enriched durationYears, teachingLanguages, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-pforzheim-gestaltung-technik-hrk219-business-administration-daad4659: enriched durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-ravensburg-weingarten-hrk224-electrical-engineering-a-daad3993: enriched durationYears, teachingLanguages, tuition, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-ravensburg-weingarten-hrk224-mechanical-engineering-i-daad7827: enriched durationYears, teachingLanguages, tuition, intakes; page ok
+programs/de-hochschule-ravensburg-weingarten-hrk224-mechatronics-daad9717: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-hochschule-ravensburg-weingarten-hrk224-mechatronics-daad9717
+programs/de-hochschule-reutlingen-hochschule-fur-tec-hrk227-esb-business-school-inte-daad3871: enriched durationYears, teachingLanguages; page ok; requirements ignored in enrich mode
+programs/de-hochschule-rhein-waal-university-of-appl-hrk400-agribusiness-ba-daad4229: enriched tuition; page ok; requirements ignored in enrich mode
+programs/de-hochschule-rhein-waal-university-of-appl-hrk400-bioengineering-bsc-daad4320: enriched documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-rhein-waal-university-of-appl-hrk400-engineering-bsc-daad4220: enriched durationYears, teachingLanguages, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-rhein-waal-university-of-appl-hrk400-engineering-for-sustaina-daad4219: enriched durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-hochschule-rhein-waal-university-of-appl-hrk400-international-business-a-daad4210: enriched durationYears, teachingLanguages, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach-sustainable-business-and-daad4705: enriched durationYears, teachingLanguages; page ok; requirements ignored in enrich mode
+programs/de-hochschule-wismar-university-of-applied-hrk274-rostock-marine-engineering-doubl-daad6315: no new facts; page ok
+no new facts: discard the staged revision for de-hochschule-wismar-university-of-applied-hrk274-rostock-marine-engineering-doubl-daad6315
+programs/de-htw-berlin-university-of-applied-science-daad-berlin-cyber-security-and-busin-daad10356: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-htw-berlin-university-of-applied-science-daad-berlin-cyber-security-and-busin-daad10356
+programs/de-jade-hochschule-wilhelmshaven-oldenburg-hrk406-international-business-s-daad7743: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-jade-hochschule-wilhelmshaven-oldenburg-hrk406-international-business-s-daad7743
+programs/de-kuhne-logistics-university-wissenschaftl-hrk429-bachelor-of-science-busi-daad11249: enriched durationYears, teachingLanguages, documents; page ok; requirements ignored in enrich mode
+programs/de-leuphana-universitat-luneburg-hrk171-economics-bsc-daad9671: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-leuphana-universitat-luneburg-hrk171-economics-bsc-daad9671
+programs/de-leuphana-universitat-luneburg-hrk171-international-business-a-daad4610: enriched durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-otto-von-guericke-universitat-magdeburg-hrk172-bilingual-bachelors-biba-daad9665: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-otto-von-guericke-universitat-magdeburg-hrk172-bilingual-bachelors-biba-daad9665
+programs/de-otto-von-guericke-universitat-magdeburg-hrk172-engineering-science-engs-daad9672: enriched documents; page ok; requirements ignored in enrich mode
+programs/de-otto-von-guericke-universitat-magdeburg-hrk172-international-business-a-daad3811: enriched tuition, documents; page ok; requirements ignored in enrich mode
+programs/de-srh-university-of-applied-sciences-heide-hrk122-electrical-engineering-b-daad9707: enriched durationYears, teachingLanguages, tuition; page ok; requirements ignored in enrich mode
+programs/de-srh-university-of-applied-sciences-heide-hrk122-mechanical-engineering-b-daad9651: enriched durationYears, teachingLanguages, tuition; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-aschaffenburg-hrk333-software-design-internat-daad9225: enriched tuition, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-augsburg-hrk7-international-informatio-daad7126: enriched tuition, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-deggendorf-hrk284-bsc-artificial-intellige-daad7742: enriched tuition, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-deggendorf-hrk284-business-administration-daad9840: enriched durationYears, teachingLanguages, tuition, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-deggendorf-hrk284-electrical-engineering-a-daad9837: enriched durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-deggendorf-hrk284-electromobility-autonomo-daad9073: enriched durationYears, teachingLanguages, tuition, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-deggendorf-hrk284-electronics-engineering-daad9839: enriched durationYears, teachingLanguages, tuition, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-beng-energy-systems-engi-daad7019: enriched documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-beng-industrial-engineer-daad4668: enriched durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-bsc-health-informatics-daad4822: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-bsc-health-informatics-daad4822
+programs/de-technische-hochschule-ingolstadt-hrk288-autonomous-vehicle-engin-daad6920: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-technische-hochschule-ingolstadt-hrk288-autonomous-vehicle-engin-daad6920
+programs/de-technische-hochschule-ingolstadt-hrk288-computer-science-and-art-daad7631: enriched documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-ingolstadt-hrk288-global-economics-and-bus-daad6921: enriched durationYears, teachingLanguages, intakes; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-ingolstadt-hrk288-neuburg-an-der-donau-sustainable-civil-engine-daad8580: enriched durationYears, tuition, intakes, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-koln-hrk149-international-business-b-daad10399: enriched durationYears, teachingLanguages, tuition, intakes, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-mannheim-hrk177-automation-technology-an-daad3618: enriched durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-mannheim-hrk177-e-mobility-and-autonomou-daad7693: enriched durationYears, teachingLanguages, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-mannheim-hrk177-international-engineerin-daad10335: enriched documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-mannheim-hrk177-power-engineering-and-re-daad3617: enriched durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-mittelhessen-thm-hrk97-international-business-a-daad11140: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-technische-hochschule-mittelhessen-thm-hrk97-international-business-a-daad11140
+programs/de-technische-hochschule-nurnberg-georg-sim-hrk200-international-business-a-daad4248: enriched durationYears, teachingLanguages, tuition, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-nurnberg-georg-sim-hrk200-international-business-b-daad3603: enriched intakes; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-nurnberg-georg-sim-hrk200-mechanical-engineering-b-daad9268: enriched teachingLanguages, tuition; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-rosenheim-hrk232-applied-artificial-intel-daad7666: enriched documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-rosenheim-hrk232-international-bachelor-o-daad7892: enriched durationYears, teachingLanguages, tuition, applicationChannel; page ok
+programs/de-technische-hochschule-rosenheim-hrk232-materials-engineering-daad10338: enriched durationYears, teachingLanguages, tuition, intakes, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-rosenheim-hrk232-plastics-engineering-daad8373: enriched durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-rosenheim-hrk232-robotics-and-machine-int-daad11251: enriched durationYears, teachingLanguages, intakes, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-rosenheim-hrk232-traunstein-e-commerce-daad7974: enriched teachingLanguages, intakes, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-ulm-hrk260-computer-science-cts-daad4669: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-technische-hochschule-ulm-hrk260-computer-science-cts-daad4669
+programs/de-technische-hochschule-ulm-hrk260-electrical-engineering-a-daad9157: enriched durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-hochschule-wildau-hrk272-european-business-manage-daad7665: enriched teachingLanguages, tuition, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-universitat-chemnitz-hrk42-digital-engineering-daad10483: enriched durationYears, tuition, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-universitat-chemnitz-hrk42-foundations-in-data-scie-daad10526: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-technische-universitat-chemnitz-hrk42-foundations-in-data-scie-daad10526
+programs/de-technische-universitat-ilmenau-hrk130-bachelor-of-science-in-b-daad4812: enriched applicationChannel; page NOT verified; kept the register value; requirements ignored in enrich mode; rejected: programmePage (the page does not mention the programme name)
+  conflict: teachingLanguages: kept the register value; the reader found ["de"] at https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4812/ but no programme page was verified
+programs/de-technische-universitat-munchen-hrk184-garching-bei-munchen-aerospace-bsc-daad7256: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-technische-universitat-munchen-hrk184-garching-bei-munchen-aerospace-bsc-daad7256
+programs/de-technische-universitat-munchen-hrk184-heilbronn-bachelors-in-management-daad5704: enriched applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-technische-universitat-munchen-hrk184-heilbronn-information-engineering-daad7698: enriched durationYears, teachingLanguages, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-technische-universitat-munchen-hrk184-straubing-sustainable-engineering-daad11020: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for de-technische-universitat-munchen-hrk184-straubing-sustainable-engineering-daad11020
+programs/de-universitat-duisburg-essen-hrk71-duisburg-electrical-electronic-an-daad6150: enriched durationYears, teachingLanguages, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-universitat-duisburg-essen-hrk71-duisburg-mechanical-engineering-daad6151: enriched durationYears, teachingLanguages, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/de-universitat-duisburg-essen-hrk71-duisburg-structural-engineering-daad6153: enriched durationYears, teachingLanguages, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-universitat-hamburg-hrk104-engineering-science-daad3748: no new facts; page ok; kept existing official value; requirements ignored in enrich mode
+  conflict: teachingLanguages: kept the existing official value; the reader found ["en"] at https://www.tuhh.de/tuhh/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/engineering-science.html
+conflicts recorded: keep the staged revision until they are reported (de-universitat-hamburg-hrk104-engineering-science-daad3748)
+programs/de-universitat-passau-hrk218-bachelor-of-arts-in-inte-daad3643: enriched durationYears, teachingLanguages, tuition, applicationChannel; page ok; requirements ignored in enrich mode
+programs/de-universitat-passau-hrk218-bachelor-of-science-in-a-daad9973: enriched documents; page ok; requirements ignored in enrich mode
+programs/de-universitat-zu-koln-hrk147-management-economics-and-daad7682: enriched tuition; page ok; requirements ignored in enrich mode
+programs/de-whu-otto-beisheim-school-of-management-hrk261-bachelor-in-internationa-daad4099: enriched durationYears, teachingLanguages, tuition, intakes, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/nl-avans-hogeschool-07gr-bouwkunde-1001o3048: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-avans-hogeschool-07gr-bouwkunde-1001o3048
+programs/nl-avans-hogeschool-07gr-breda-accountancy-1001o3528: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-avans-hogeschool-07gr-breda-accountancy-1001o3528
+programs/nl-avans-hogeschool-07gr-breda-chemische-technologie-1001o3144: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-avans-hogeschool-07gr-breda-chemische-technologie-1001o3144
+programs/nl-avans-hogeschool-07gr-breda-ict-1016o4948: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-avans-hogeschool-07gr-breda-ict-1016o4948
+programs/nl-avans-hogeschool-07gr-s-hertogenbosch-accountancy-1001o3528: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-avans-hogeschool-07gr-s-hertogenbosch-accountancy-1001o3528
+programs/nl-avans-hogeschool-07gr-s-hertogenbosch-bouwkunde-1001o3048: enriched tuition; page ok; requirements ignored in enrich mode
+programs/nl-avans-hogeschool-07gr-s-hertogenbosch-ict-1016o4948: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-avans-hogeschool-07gr-s-hertogenbosch-ict-1016o4948
+programs/nl-breda-university-of-applied-sciences-21ui-applied-data-science-art-1001o8756: no staged record
+programs/nl-capabel-hogeschool-30hc-rotterdam-ict-1001o8912: enriched intakes, documents; page ok; requirements ignored in enrich mode
+programs/nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182
+programs/nl-christelijke-hogeschool-ede-25ba-bedrijfskunde-1001o2793: enriched documents; page ok; requirements ignored in enrich mode
+programs/nl-christelijke-hogeschool-ede-25ba-ict-1001o2670: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-christelijke-hogeschool-ede-25ba-ict-1001o2670
+programs/nl-christelijke-hogeschool-windesheim-01vu-accountancy-1001o3525: enriched intakes; page ok; requirements ignored in enrich mode
+programs/nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046
+programs/nl-christelijke-hogeschool-windesheim-01vu-almere-ict-1001o2665: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-christelijke-hogeschool-windesheim-01vu-almere-ict-1001o2665
+programs/nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046: no new facts; page ok; kept existing official value; requirements ignored in enrich mode
+  conflict: intakes: kept the existing official value; the reader found [{"startDate":"2027-09-06","applicationOpens":null,"applicationDeadline":null}] at https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle
+conflicts recorded: keep the staged revision until they are reported (nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046)
+programs/nl-christelijke-hogeschool-windesheim-01vu-ict-1001o2665: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-christelijke-hogeschool-windesheim-01vu-ict-1001o2665
+programs/nl-de-haagse-hogeschool-27um-accountancy-1001o3550: enriched intakes; page ok; requirements ignored in enrich mode
+programs/nl-de-haagse-hogeschool-27um-applied-data-science-art-1001o8742: enriched intakes; page ok; requirements ignored in enrich mode
+programs/nl-de-haagse-hogeschool-27um-bouwkunde-1001o3065: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-de-haagse-hogeschool-27um-bouwkunde-1001o3065
+programs/nl-de-haagse-hogeschool-27um-delft-elektrotechniek-1001o3093: enriched intakes; page ok; requirements ignored in enrich mode
+programs/nl-de-haagse-hogeschool-27um-delft-ict-1001o2675: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-de-haagse-hogeschool-27um-delft-ict-1001o2675
+programs/nl-de-haagse-hogeschool-27um-zoetermeer-applied-data-science-art-1001o8742: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-de-haagse-hogeschool-27um-zoetermeer-applied-data-science-art-1001o8742
+programs/nl-erasmus-universiteit-rotterdam-21pe-bedrijfskunde-1001o5712: no new facts; page ok
+no new facts: discard the staged revision for nl-erasmus-universiteit-rotterdam-21pe-bedrijfskunde-1001o5712
+programs/nl-fontys-hogeschool-30gb-accountancy-1001o3555: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-fontys-hogeschool-30gb-accountancy-1001o3555
+programs/nl-fontys-hogeschool-30gb-elektrotechniek-1001o3098: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-fontys-hogeschool-30gb-elektrotechniek-1001o3098
+programs/nl-fontys-hogeschool-30gb-ict-1001o2677: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-fontys-hogeschool-30gb-ict-1001o2677
+programs/nl-fontys-hogeschool-30gb-tilburg-commerciele-economie-1001o3452: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-fontys-hogeschool-30gb-tilburg-commerciele-economie-1001o3452
+programs/nl-fontys-hogeschool-30gb-tilburg-ict-1001o2677: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-fontys-hogeschool-30gb-tilburg-ict-1001o2677
+programs/nl-fontys-hogeschool-30gb-tilburg-technische-bedrijfskunde-1001o3682: enriched intakes; page ok
+programs/nl-fontys-hogeschool-30gb-venlo-commerciele-economie-1001o3452: enriched intakes, applicationChannel; page ok
+programs/nl-fontys-hogeschool-30gb-venlo-industrieel-product-ontw-1001o3309: enriched intakes; page ok; requirements ignored in enrich mode
+programs/nl-fontys-hogeschool-30gb-venlo-informatica-1001o3903: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-fontys-hogeschool-30gb-venlo-informatica-1001o3903
+programs/nl-hogeschool-inholland-27pz-accountancy-1001o3549: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-inholland-27pz-accountancy-1001o3549
+programs/nl-hogeschool-inholland-27pz-alkmaar-accountancy-1001o3549: enriched applicationChannel; page ok; requirements ignored in enrich mode
+programs/nl-hogeschool-inholland-27pz-alkmaar-bouwkunde-1001o3064: enriched durationYears; page ok
+programs/nl-hogeschool-inholland-27pz-alkmaar-technische-informatica-1001o3859: no staged record
+programs/nl-hogeschool-inholland-27pz-amsterdam-accountancy-1001o3549: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-inholland-27pz-amsterdam-accountancy-1001o3549
+programs/nl-hogeschool-inholland-27pz-delft-luchtvaarttechnologie-1001o3164: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-inholland-27pz-delft-luchtvaarttechnologie-1001o3164
+programs/nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064
+programs/nl-hogeschool-inholland-27pz-haarlem-business-studies-1001o2990: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-inholland-27pz-haarlem-business-studies-1001o2990
+programs/nl-hogeschool-inholland-27pz-haarlem-informatica-1001o3897: enriched durationYears, applicationChannel; page ok; requirements ignored in enrich mode
+programs/nl-hogeschool-inholland-27pz-s-gravenhage-business-studies-1001o2990: enriched intakes, applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209
+programs/nl-hogeschool-leiden-21ri-bio-informatica-1001o5219: enriched documents; page ok
+programs/nl-hogeschool-leiden-21ri-commerciele-economie-1001o3422: enriched durationYears, documents; page ok; requirements ignored in enrich mode
+programs/nl-hogeschool-rotterdam-22oj-accountancy-1001o3536: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-rotterdam-22oj-accountancy-1001o3536
+programs/nl-hogeschool-rotterdam-22oj-applied-data-science-art-1001o8776: no staged record
+programs/nl-hogeschool-rotterdam-22oj-bouwkunde-1001o3055: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-rotterdam-22oj-bouwkunde-1001o3055
+programs/nl-hogeschool-utrecht-25dw-accountancy-1001o3544: enriched applicationChannel; page ok; requirements ignored in enrich mode
+programs/nl-hogeschool-utrecht-25dw-chemische-technologie-1001o3152: no new facts; page ok
+no new facts: discard the staged revision for nl-hogeschool-utrecht-25dw-chemische-technologie-1001o3152
+programs/nl-hogeschool-utrecht-25dw-ict-1001o2672: enriched applicationChannel, documents; page ok; requirements ignored in enrich mode
+programs/nl-hogeschool-van-amsterdam-28dn-biomedische-technologie-1001o5075: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-van-amsterdam-28dn-biomedische-technologie-1001o5075
+programs/nl-hogeschool-van-amsterdam-28dn-ict-1001o2676: enriched applicationChannel; page ok; requirements ignored in enrich mode
+programs/nl-hogeschool-van-arnhem-en-nijmegen-25kb-ict-1001o2674: no staged record
+applied 140 proposal(s); 0 stay blocked

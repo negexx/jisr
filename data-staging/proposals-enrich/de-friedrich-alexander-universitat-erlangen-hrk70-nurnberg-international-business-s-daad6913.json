@@ -1,0 +1,85 @@
+{
+  "slug": "de-friedrich-alexander-universitat-erlangen-hrk70-nurnberg-international-business-s-daad6913",
+  "programmePage": "https://fau.de/studiengang/international-business-studies-b-sc",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6913/",
+          "quote": "Programme duration 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://fau.de/studiengang/international-business-studies-b-sc",
+          "quote": "Unterrichtssprache vollständig auf Englisch"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 100000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.international-business-economics.wiso.rw.fau.eu/application/",
+          "quote": "Tuition fee of 1000€ per semester for non-EU students"
+        },
+        {
+          "url": "https://www.fau.eu/studying/international-students/application-and-enrollment-for-international-applicants/tuition-fees-for-students-from-non-eu-states/",
+          "quote": "International Business Studies Bachelor of Science Yes 1,000 euros"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.international-business-economics.wiso.rw.fau.eu/application/",
+          "quote": "Please use the DoSV for registration and the Online Application Portal CAMPO to submit your application."
+        }
+      ]
+    }
+  },
+  "notes": "The documents fact only lists 'Lebenslauf (einfache Kopie)' (CV) from the master's application page, as it is the only clear document named for international applicants in the provided pages; this may not be exhaustive for the Bachelor programme. The tuition fee of 1000 EUR per semester is for non-EU students, as stated on the programme's application page. The application deadline is taken from the DAAD page (15 July) for the winter semester; the year 2026 is inferred from the task context of 2026/2027, but the quote does not state the year. The application channel is 'de-university-direct' because the application page states to use the university's own portal CAMPO, not uni-assist.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6913/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission se fait sur numerus clausus (NC). Les candidats internationaux doivent vérifier les exigences et délais spécifiques.",
+          "en": "Admission is via numerus clausus (NC). International applicants must check specific requirements and deadlines."
+        },
+        "evidence": [
+          {
+            "url": "https://www.international-business-economics.wiso.rw.fau.eu/application/",
+            "quote": "Different regulations and deadlines may apply for international prospective students."
+          }
+        ]
+      }
+    ]
+  }
+}

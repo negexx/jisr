@@ -1,0 +1,87 @@
+{
+  "slug": "de-hochschule-kaiserslautern-university-of-hrk306-mechanical-engineering-b-daad9743",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9743/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9743/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9743/",
+          "quote": "All modules are taught in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9743/",
+          "quote": "Tuition fees per semester None"
+        },
+        {
+          "url": "https://www.hs-kl.de/en/international/from-abroad/costs",
+          "quote": "You do not have to pay any tuition fees in Rheinland-Pfalz."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9743/",
+          "quote": "Please apply via uni-assist."
+        },
+        {
+          "url": "https://www.hs-kl.de/en/studying/application/apply-from-abroad",
+          "quote": "Applications with foreign academic qualifications must be submitted via the uni-assist platform."
+        }
+      ]
+    }
+  },
+  "notes": "The DAAD page gives application periods for all countries (summer: 1 October - 28 February; winter: 15 April - 31 August), but without a year, so no intake dates were output; the deadlines page states only day and month for open-entry Bachelor courses (August 31st for the winter semester, February 28th for the summer semester). The 'CV' quote is a bare 2-character label copied from the checklist. 'Certified translations of your certificates' implies translation but does not itself state a translation requirement, so translationRequired is null there; the school-leaving-certificate row is quoted from the same checklist sentence, so no separate translation quote exists.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre Baccalauréat marocain est reconnu pour étudier en Allemagne; sinon, un Studienkolleg et un test d'évaluation peuvent être requis.",
+          "en": "Check whether your Moroccan Baccalaureate is recognised for study in Germany; if not, a Studienkolleg and an assessment test may be required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-kl.de/en/studying/application/entry-requirements",
+            "quote": "It is essential that you check whether you meet the entry requirements for your desired course of study."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Demandez une vérification préliminaire (VPD) de vos diplômes par uni-assist: des frais de 75 euros s'appliquent (30 euros pour chaque candidature suivante).",
+          "en": "Request a preliminary review (VPD) of your certificates via uni-assist: a fee of 75 euros applies (30 euros for each subsequent application)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-kl.de/en/studying/application/apply-from-abroad",
+            "quote": "The fee for the first application via uni-assist is 75 Euros. Each subsequent application costs 30 Euros."
+          }
+        ]
+      }
+    ]
+  }
+}

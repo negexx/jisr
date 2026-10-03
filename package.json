@@ -29,6 +29,7 @@
     "data:evidence": "tsx scripts/import/evidence-cli.ts",
     "data:read": "tsx scripts/import/reader.ts",
     "data:pages": "tsx scripts/import/pages.ts",
+    "data:coverage": "tsx scripts/data/coverage.ts",
     "data:inst-proposals": "tsx scripts/import/inst-proposals.ts",
     "data:fix-certificates": "tsx scripts/import/fix-certificates.ts",
     "data:bakeoff": "tsx scripts/import/bakeoff.ts",
@@ -68,6 +69,7 @@
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^5",
+    "unpdf": "^1.8.1",
     "vitest": "^5.0.2",
     "yaml": "^2.9.1"
   },

@@ -1,0 +1,155 @@
+{
+  "slug": "de-bard-college-berlin-a-liberal-arts-unive-hrk437-ba-in-economics-politics-daad4537",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4537/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4537/",
+          "quote": "Programme duration 8 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4537/",
+          "quote": "All courses are taught in English."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "online-application-form",
+          "name": {
+            "fr": "Formulaire de candidature en ligne",
+            "en": "Online application form"
+          },
+          "quotedAs": "online application form",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivation-statement",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivation statement"
+          },
+          "quotedAs": "motivation statement",
+          "translationRequired": null
+        },
+        {
+          "slug": "graded-writing-sample",
+          "name": {
+            "fr": "Échantillon d'écriture noté",
+            "en": "Graded writing sample"
+          },
+          "quotedAs": "graded writing sample",
+          "translationRequired": null
+        },
+        {
+          "slug": "letters-of-recommendation",
+          "name": {
+            "fr": "Lettres de recommandation",
+            "en": "Letters of recommendation"
+          },
+          "quotedAs": "two academic letters of recommendation",
+          "translationRequired": null
+        },
+        {
+          "slug": "official-transcripts",
+          "name": {
+            "fr": "Relevés de notes officiels",
+            "en": "Official transcripts"
+          },
+          "quotedAs": "official transcripts",
+          "translationRequired": true
+        },
+        {
+          "slug": "proof-of-english-proficiency",
+          "name": {
+            "fr": "Preuve de maîtrise de l'anglais",
+            "en": "Proof of English proficiency"
+          },
+          "quotedAs": "proof of advanced English proficiency",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4537/",
+          "quote": "Required application materials include: a completed online application form, a motivation statement, a writing sample, two academic letters of recommendation from teachers, official transcripts, and proof of advanced English proficiency for non-native English speakers."
+        },
+        {
+          "url": "https://berlin.bard.edu/admissions/how-to-apply/application-requirements/",
+          "quote": "The Admissions Committee will accept transcripts in English or German."
+        },
+        {
+          "url": "https://berlin.bard.edu/admissions/how-to-apply/application-requirements/",
+          "quote": "If you do not have transcripts in either of these languages, you must submit an official translation along with the original transcript."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the DAAD page states a fee for all countries of 19,125 EUR per semester; the Bard College Berlin page states annual comprehensive fees (38,250 EUR on-campus / 27,500 EUR off-campus) for all students in 2026-27; the annual on-campus figure is used. Application channel: the pages only describe applying via the Common Application or the Bard College Berlin application portal (there is no mention of uni-assist), so de-university-direct is used; no application fee is charged. Intakes: the only stated deadlines are for the 'Final Application Deadline' which applies to citizens and residents of a list of countries (Morocco is not named) and the EU/EEA deadline (1 September - 1 May); no deadline is clearly stated for a Moroccan applicant, so no intake is given. German B1 is required by the end of the second year; English C1 is required at admission, with IELTS 7.0 or TOEFL iBT 95 named.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme marocain (Baccalauréat) est reconnu équivalent à l'Abitur allemand sur Anabin; l'admission au diplôme américain est possible sans équivalence.",
+          "en": "Check whether your Moroccan Baccalauréat is recognised as equivalent to the German Abitur on Anabin; admission to the American degree is possible without equivalence."
+        },
+        "evidence": [
+          {
+            "url": "https://berlin.bard.edu/admissions/how-to-apply/application-requirements/",
+            "quote": "To be eligible for the German BA degree, students must have a secondary school qualification that is considered equivalent to the German Abitur."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le dossier peut inclure un entretien: après un premier examen, certains candidats sont invités à un entretien en ligne d'environ 30 minutes.",
+          "en": "The application process may include an interview: after an initial review, selected applicants are invited to a 30-minute online interview."
+        },
+        "evidence": [
+          {
+            "url": "https://berlin.bard.edu/admissions/how-to-apply/application-requirements/",
+            "quote": "After an initial review of your application, selected applicants will receive an invitation to schedule an interview."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Fournissez votre relevé de notes officiel via votre établissement (pas vous-même); une traduction officielle est requise si le document n'est pas en anglais ou en allemand.",
+          "en": "Have your official transcript sent by your school (not yourself); an official translation is required if the document is not in English or German."
+        },
+        "evidence": [
+          {
+            "url": "https://berlin.bard.edu/admissions/how-to-apply/application-requirements/",
+            "quote": "Please have your high school transcript submitted by your high school counselor, teacher, or principal."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La demande d'aide financière (formulaire et justificatifs) doit être soumise dans la semaine suivant la candidature, et au plus tard à la date limite.",
+          "en": "The financial aid application (form and supporting documents) must be submitted within one week of applying, and no later than the application deadline."
+        },
+        "evidence": [
+          {
+            "url": "https://berlin.bard.edu/admissions/how-to-apply/application-requirements/",
+            "quote": "It is important that you complete this form and provide supporting documentation within one week of submitting your application for admission, and no later than the application deadline."
+          }
+        ]
+      }
+    ]
+  }
+}

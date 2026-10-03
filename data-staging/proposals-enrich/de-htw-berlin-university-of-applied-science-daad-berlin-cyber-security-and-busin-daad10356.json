@@ -1,0 +1,90 @@
+{
+  "slug": "de-htw-berlin-university-of-applied-science-daad-berlin-cyber-security-and-busin-daad10356",
+  "programmePage": "https://cyber-security-business.htw-berlin.de/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10356/",
+          "quote": "Programme duration 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10356/",
+          "quote": "Teaching language English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://cyber-security-business.htw-berlin.de/",
+          "quote": "No tuition fees: as a state university, HTW Berlin does not charge tuition fees."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://cyber-security-business.htw-berlin.de/application",
+          "quote": "You should apply via uni-assist if you have a foreign higher education entrance qualification and are not a national of an EU or EEA country."
+        }
+      ]
+    }
+  },
+  "notes": "Le programme est enseigné entièrement en anglais (pas de frais de scolarité, mais un semester fee de 375,30 €). Les dates de candidature pour les candidats internationaux (1er mai - 30 juin) sont indiquées sans année : la deadline exacte (jour et mois) n'est pas donnée avec l'année, donc elle est laissée nulle. La voie de candidature pour un titulaire de diplôme étranger est uni-assist (pas de VPD mentionné). Un certificat de langue officiel est exigé (C1), avec TOEFL/IELTS/PTE ou test comparable ; aucune mention de tests en français.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "C1",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://cyber-security-business.htw-berlin.de/application",
+            "quote": "To apply, you need English language skills at level C1 of the Common European Framework of Reference for Languages (CEFR)."
+          },
+          {
+            "url": "https://cyber-security-business.htw-berlin.de/application",
+            "quote": "TOEFL test with at least 95 points for the internet-based test"
+          },
+          {
+            "url": "https://cyber-security-business.htw-berlin.de/application",
+            "quote": "IELTS test (academic) with a level of at least 7.0"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission exactes et les documents requis (par ex. la qualification d'entrée à l'université) sur le site du programme avant de postuler.",
+          "en": "Check the exact admission requirements and required documents (e.g. university entrance qualification) on the programme's website before applying."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10356/",
+            "quote": "Academic admission requirements Higher education entrance qualification"
+          }
+        ]
+      }
+    ]
+  }
+}

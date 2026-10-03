@@ -26,7 +26,10 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: semester
   source: programme
   info_kind: official
 intakes:
@@ -38,8 +41,44 @@ applicationChannel:
   source: page-2
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: true
+    - slug: vpd-certificate
+      name:
+        fr:
+          text: Attestation de vérification préalable (VPD) d'uni-assist
+          status: draft
+        en:
+          text: VPD certificate from uni-assist
+          status: draft
+      translationRequired: null
+    - slug: language-certificate
+      name:
+        fr:
+          text: Certificat de langue reconnu
+          status: draft
+        en:
+          text: Recognised language certificate
+          status: draft
+      translationRequired: null
+    - slug: cooperation-agreement
+      name:
+        fr:
+          text: Convention de coopération (copie)
+          status: draft
+        en:
+          text: Copy of the cooperation agreement
+          status: draft
+      translationRequired: null
+  source: page-2
   info_kind: official
 requirements:
   coverage: partial

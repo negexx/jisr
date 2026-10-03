@@ -38,12 +38,57 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
+  value: de-uni-assist-vpd
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: university-entrance-qualification
+      name:
+        fr:
+          text: Diplôme d'accès à l'université
+          status: draft
+        en:
+          text: University entrance qualification
+          status: draft
+      translationRequired: null
+    - slug: identity-card
+      name:
+        fr:
+          text: Carte d'identité
+          status: draft
+        en:
+          text: Identity card
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: Curriculum vitae
+          status: draft
+      translationRequired: null
+    - slug: vpd
+      name:
+        fr:
+          text: VPD (pré-évaluation des documents)
+          status: draft
+        en:
+          text: VPD (preliminary review documentation)
+          status: draft
+      translationRequired: null
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: true
+  source: page-3
   info_kind: official
 requirements:
   coverage: partial

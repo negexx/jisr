@@ -1,0 +1,108 @@
+{
+  "slug": "de-technische-hochschule-ingolstadt-hrk288-computer-science-and-art-daad7631",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+          "quote": "Programme duration 7 semesters"
+        },
+        {
+          "url": "https://www.thi.de/studium/studienangebote/details/computer-science-and-artificial-intelligence-bsc/",
+          "quote": "Regelstudienzeit 7 Semester"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+          "quote": "Teaching language English"
+        },
+        {
+          "url": "https://www.thi.de/studium/studienangebote/details/computer-science-and-artificial-intelligence-bsc/",
+          "quote": "Hauptunterrichtssprache: Englisch"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 80000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 800 EUR"
+        },
+        {
+          "url": "https://www.thi.de/studium/internationale-vollstudierende/studiengebuehren/",
+          "quote": "Studiengebühren in Höhe von 800 € pro Semester für Bachelor-Studierende bzw. 1.200 € für Master-Studierende aus Drittstaaten*"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "school-leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+          "quote": "you need: a school-leaving certificate (also known as \"university entrance qualification\", e.g. High School Diploma, Matura, A-Levels, Bachillerato, Atestat, baccalauréat)"
+        }
+      ]
+    }
+  },
+  "notes": "Le portail d'application n'est pas clair: la page DAAD mentionne 'Submit application via • uni-assist • Website' pour tous les candidats, mais la page THI 'Studienbewerbung' précise que les candidats venant de l'étranger (diplôme étranger) passent par le processus 'Bachelorbewerbung aus dem Ausland' et le portail PRIMUSS de l'université; la mention uni-assist ne concerne pas spécifiquement ce programme. Vérification humaine recommandée sur le canal exact (VPD uni-assist vs PRIMUSS). Le montant des frais de scolarité (800 EUR) est un montant par semestre, pas par an. Les frais de 800 EUR s'appliquent aux étudiants ressortissants de pays hors UE/EEE à partir du semestre d'été 2026.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: Cambridge English Qualifications: B2 First IELTS Academic: 5.5 PTE Academic: 59 TOEFL iBT (before 2026): 72"
+          },
+          {
+            "url": "https://www.thi.de/studium/studienbewerbung/bachelorbewerbung/",
+            "quote": "Soweit keine deutschsprachige Hochschulzugangsberechtigung vorliegt ist für alle englischsprachigen Bachelorstudiengänge ein Englischnachweis Level B2 erforderlich."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Pour ce bachelor, un processus international de sélection et d'orientation s'applique aux candidats de pays tiers: vérifiez les documents exigés et les critères sur le site de la THI.",
+          "en": "For this bachelor, an international selection and orientation procedure applies to applicants from third countries: check the required documents and criteria on the THI website."
+        },
+        "evidence": [
+          {
+            "url": "https://www.thi.de/studium/studienbewerbung/bachelorbewerbung/",
+            "quote": "Computer Science and Artificial Intelligence (siehe Informationen für Bewerbende aus Drittstaaten)"
+          }
+        ]
+      }
+    ]
+  }
+}

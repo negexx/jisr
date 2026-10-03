@@ -43,8 +43,8 @@ intakes:
   source: page-3
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: de-university-direct
+  source: page-1
   info_kind: official
 documents:
   value: null
@@ -110,3 +110,6 @@ sources:
   page-3:
     url: https://sm-bachelor.hdm-stuttgart.de/admission
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://hdm-stuttgart.de/dc/smm/admission/application_step_by_step
+    last_verified_at: 2026-10-02

@@ -19,15 +19,21 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 3.5
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - en
+    - de
+    - es
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: semester
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
   value: null
   source: daad

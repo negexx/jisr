@@ -18,26 +18,29 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9923/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
     - de
     - en
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 tuition:
   value: null
   source: daad
   info_kind: guidance
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-09-15
+  source: page-2
+  info_kind: official
 applicationChannel:
-  value: null
+  value: de-uni-assist
   source: daad
-  info_kind: guidance
+  info_kind: official
 documents:
   value: null
   source: daad
@@ -52,3 +55,9 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9923/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hs-osnabrueck.de/en/study/study-offerings/bachelor/international-economics-and-sustainability-ba/
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.hs-osnabrueck.de/en/study/all-about-studying/application/
+    last_verified_at: 2026-10-02

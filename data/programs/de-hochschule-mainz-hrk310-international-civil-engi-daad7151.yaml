@@ -18,8 +18,8 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7151/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
     - de
@@ -27,9 +27,12 @@ teachingLanguages:
   source: daad
   info_kind: guidance
 tuition:
-  value: null
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: semester
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
   value: null
   source: daad
@@ -52,3 +55,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7151/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hs-mainz.de/en/academics/degree-programs/engineering/international-civil-engineering-beng/overview/
+    last_verified_at: 2026-10-02

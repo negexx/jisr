@@ -1,0 +1,122 @@
+{
+  "slug": "de-technische-universitat-chemnitz-hrk42-foundations-in-data-scie-daad10526",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+          "quote": "The curriculum extends over six semesters, during which students must acquire 180 ECTS credits."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+          "quote": "Teaching language English"
+        },
+        {
+          "url": "https://www.mytuc.org/qbnf",
+          "quote": "Languages: English; learning German is a compulsory part of the program"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.mytuc.org/qbnf",
+          "quote": "Are there any tuition fees? There are no tuition fees; however, you must pay the semester contribution each semester"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2027-01-15"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+          "quote": "For the summer semester: until 15 January 2027"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.mytuc.org/qbnf",
+          "quote": "If you are applying from abroad, you will generally need to apply via the uni-assist agency."
+        }
+      ]
+    }
+  },
+  "notes": "La page de l'université donne des dates de candidature précises pour le semestre d'été 2027 (15 janvier) et le semestre d'hiver (15 juillet), mais sans année pour le semestre d'hiver, donc l'intake correspondant a été omis. Aucune liste de documents spécifique au programme n'est fournie ; le document d'information sur le permis de séjour mentionne des documents pour le visa, pas pour la candidature. Le test d'entrée spécifique à la matière est fortement recommandé pour le programme, mais les pages ne le listent pas comme un document obligatoire.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.:"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+            "quote": "IELTS Academic: 5.5"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+            "quote": "TOEFL iBT (before 2026): 72"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats doivent passer le test d'admission spécifique à la matière et le joindre à leur dossier uni-assist.",
+          "en": "Applicants should complete the subject-specific entrance test and submit it with their application to uni-assist."
+        },
+        "evidence": [
+          {
+            "url": "https://www.mytuc.org/qbnf",
+            "quote": "As part of the application, you are strongly encouraged to complete our subject-specific entrance test."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La connaissance de l'allemand n'est pas exigée à l'admission, mais les cours d'allemand font partie intégrante du programme.",
+          "en": "Prior knowledge of German is not required for admission, but German courses are compulsory in the programme."
+        },
+        "evidence": [
+          {
+            "url": "https://www.mytuc.org/qbnf",
+            "quote": "No prior knowledge of German is required for admission, but learning German is a compulsory part of our program."
+          }
+        ]
+      }
+    ]
+  }
+}

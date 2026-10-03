@@ -1,0 +1,57 @@
+{
+  "slug": "nl-avans-hogeschool-07gr-s-hertogenbosch-accountancy-1001o3528",
+  "programmePage": "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+          "quote": "Duur 4 jaar, voltijd bachelor"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+          "quote": "Taal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des frais de scolarité pour les étudiants non-EEE (10 308 €) est un tarif institutionnel général qui n'est pas spécifiquement énoncé pour cette formation: il n'a donc pas été retenu comme fait de frais de scolarité. Les dates exactes d'ouverture des candidatures ne sont pas précisées; la deadline du 1er mai s'applique aux candidats de nationalité non-EEE.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les prérequis d'admission: havo/vwo avec Economie & Maatschappij, Cultuur & Maatschappij, Natuur & Techniek ou Natuur & Gezondheid, ou mbo-niveau 4.",
+          "en": "Check admission prerequisites: havo/vwo with Economie & Maatschappij, Cultuur & Maatschappij, Natuur & Techniek or Natuur & Gezondheid, or mbo-niveau 4."
+        },
+        "evidence": [
+          {
+            "url": "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+            "quote": "Toelatingseisen Accountancy bachelor Havo Economie & Maatschappij Cultuur & Maatschappij Natuur & Techniek Natuur & Gezondheid Vwo Economie & Maatschappij Cultuur & Maatschappij Natuur & Techniek Natuur & Gezondheid Mbo en overige Mbo-niveau 4"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les étudiants non-EEE doivent passer un studiekeuzecheck (contrôle de choix d'études) obligatoire avant l'inscription.",
+          "en": "Non-EEA students must complete a compulsory studiekeuzecheck (study choice check) before enrolment."
+        },
+        "evidence": [
+          {
+            "url": "https://www.avans.nl/studeren/praktische-zaken/aanmelden",
+            "quote": "Voor NON-EER studenten is de studiekeuzecheck verplicht."
+          }
+        ]
+      }
+    ]
+  }
+}

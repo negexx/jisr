@@ -18,17 +18,20 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7695/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
     - en
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: page-1
+  info_kind: official
 intakes:
   value: null
   source: daad
@@ -51,3 +54,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7695/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.h-ka.de/en/eeib/profile
+    last_verified_at: 2026-10-02

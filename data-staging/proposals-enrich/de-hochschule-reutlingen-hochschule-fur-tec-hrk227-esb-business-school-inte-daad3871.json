@@ -1,0 +1,44 @@
+{
+  "slug": "de-hochschule-reutlingen-hochschule-fur-tec-hrk227-esb-business-school-inte-daad3871",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3871/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3871/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3871/",
+          "quote": "Teaching language English"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the quoted 1,500 € per semester fee is from the university's general financing page and applies to international students from non-EU/EEA countries, but it is not stated on the programme page for this specific programme, so it may not apply. Application channel: the pages do not mention uni-assist or a VPD for this programme; the university's application page says applications are made via its online application portal, so this is inferred as university-direct.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier que le diplôme étranger est équivalent au diplôme allemand d'accès à l'université et fournir un certificat d'anglais B2.",
+          "en": "Check that your foreign qualification is equivalent to the German university entrance qualification and provide an English B2 certificate."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3871/",
+            "quote": "Academic admission requirements include a German university entrance qualification or a foreign university entrance qualification equivalent to the German university entrance qualification."
+          }
+        ]
+      }
+    ]
+  }
+}

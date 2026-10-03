@@ -18,30 +18,51 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11251/
 durationYears:
   value: 4
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
-    - de
     - en
+    - de
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
   value: null
   source: daad
   info_kind: guidance
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: null
+      applicationOpens: 2026-05-01
+      applicationDeadline: 2026-11-30
+  source: page-1
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-2
+  info_kind: official
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: school-leaving certificate
+          status: draft
+      translationRequired: null
+    - slug: university-entrance-qualification-certificate
+      name:
+        fr:
+          text: Certificat de qualification d'entrée à l'université
+          status: draft
+        en:
+          text: Certificate for a university entrance qualification
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -52,3 +73,9 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11251/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/robotics-and-machine-intelligence
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme/application-for-a-degree-programme-step-by-step-explained
+    last_verified_at: 2026-10-02

@@ -1,0 +1,86 @@
+{
+  "slug": "de-hochschule-hannover-hrk115-biotechnology-and-enviro-daad7747",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7747/",
+  "facts": {
+    "durationYears": {
+      "value": 4.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7747/",
+          "quote": "Programme duration 9 semesters or more"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7747/",
+          "quote": "Teaching language German English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7747/",
+          "quote": "No fees during the introductory phase (except for language classes beyond B1)"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "CV",
+          "translationRequired": null
+        },
+        {
+          "slug": "letter-of-motivation",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Letter of motivation"
+          },
+          "quotedAs": "letter of motivation",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://f2.hs-hannover.de/internationales/information-for-incomings-wege-an-die-fakultaet-ii/intotechnology/",
+          "quote": "Please send a letter of motivation and your CV (each max. two pages) to intotechnology@hs-hannover.de."
+        }
+      ]
+    }
+  },
+  "notes": "Le 'semester contribution' (environ 400 EUR/semestre, payé une fois étudiant à temps plein) n'est pas des frais de scolarité et il existe des périodes d'application différentes pour les candidats internationaux; les frais d'études sont nuls pendant la phase d'introduction. Les dates limites d'application: 'This programme has no deadline listed.' Therefore no intakes fact is stated. Evidence for tuition: 'No fees during the introductory phase (except for language classes beyond B1)'.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Fournissez les résultats du 'fast check' de votre qualification d'accès aux études supérieures via l'outil uni-assist.",
+          "en": "Provide the results of the fast check of your university entrance qualification for Germany via the uni-assist tool."
+        },
+        "evidence": [
+          {
+            "url": "https://f2.hs-hannover.de/internationales/information-for-incomings-wege-an-die-fakultaet-ii/intotechnology/",
+            "quote": "Please also provide the results of the fast check of your university entrance qualification for Germany (use the uni-assist tool https://www.uni-assist.de/en/tools/check-university-admission) and details about your German-language knowledge (e.g., German-language certificates)."
+          }
+        ]
+      }
+    ]
+  }
+}

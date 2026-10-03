@@ -1,0 +1,79 @@
+{
+  "slug": "nl-avans-hogeschool-07gr-s-hertogenbosch-bouwkunde-1001o3048",
+  "programmePage": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+          "quote": "Duur 4 jaar, voltijd bachelor"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+          "quote": "Taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1030800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+          "quote": "Non-EEA nationality (institutional tuition fee) €10,308,-"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/praktische-zaken/aanmelden/deadlines",
+          "quote": "meld je dan bij voorkeur aan vóór 1 mei en uiterlijk 31 augustus via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Les frais indiqués (10 308 €) proviennent de la page générale des frais de scolarité d'Avans et correspondent aux frais institutionnels pour nationalité non-EEE, tarif 2026-2027, niveau bachelor ; ils ne sont pas propres à cette formation. La deadline du 1er mai s'applique aux candidats non-EEE/non-suisses pour une rentrée en septembre ; l'année n'est pas précisée dans la citation.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les titulaires d'un diplôme étranger doivent vérifier les conditions d'admission (diplôme équivalent au havo/vwo ou mbo-niveau 4) auprès d'Avans.",
+          "en": "Holders of a foreign diploma must check admission requirements (diploma equivalent to havo/vwo or mbo level 4) with Avans."
+        },
+        "evidence": [
+          {
+            "url": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+            "quote": "Toelatingseisen Bouwkunde bachelor"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Pour les étudiants non-EEE, la studiekeuzecheck (contrôle du choix d'études) est obligatoire.",
+          "en": "For non-EEA students the study choice check (studiekeuzecheck) is compulsory."
+        },
+        "evidence": [
+          {
+            "url": "https://www.avans.nl/studeren/praktische-zaken/aanmelden",
+            "quote": "Voor NON-EER studenten is de studiekeuzecheck verplicht."
+          }
+        ]
+      }
+    ]
+  }
+}

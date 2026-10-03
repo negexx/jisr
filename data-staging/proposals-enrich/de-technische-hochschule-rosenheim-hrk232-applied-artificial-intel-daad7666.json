@@ -1,0 +1,187 @@
+{
+  "slug": "de-technische-hochschule-rosenheim-hrk232-applied-artificial-intel-daad7666",
+  "programmePage": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence",
+          "quote": "Duration 7 Semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7666/",
+          "quote": "Teaching language English"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7666/",
+          "quote": "All courses are held in English, but German A2 is required for admission."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 50000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/what-are-the-costs-of-studying-at-th-rosenheim-tuition-fees-and-student-union-fees",
+          "quote": "For international students from third countries, tuition fees of 500 € per enrolled semester will apply from summer semester 2026."
+        },
+        {
+          "url": "https://www.th-rosenheim.de/studium-und-weiterbildung/vor-dem-studium/was-kostet-das-studium-studierendenwerksbeitrag-und-studiengebuehren",
+          "quote": "Für internationale Studierende aus Drittstaaten fallen seit dem Sommersemester 2026 Studiengebühren in Höhe von 500 € pro immatrikuliertes Semester an."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2027-02-15",
+          "applicationDeadline": "2027-07-15"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme",
+          "quote": "Applied Artificial Intelligence at Campus Rosenheim • application period: 15 February - 15 July 2027 via uni-assist with a university entrance qualification from abroad"
+        },
+        {
+          "url": "https://www.th-rosenheim.de/studium-und-weiterbildung/vor-dem-studium/bewerbung-und-zulassung-fuer-das-studium",
+          "quote": "Applied Artificial Intelligence • Bewerbungszeitraum: 15. April - 15. Juli 2027 mit einem deutschem Abschluss, 15. Februar - 15. Juli 2027 mit einem Abschluss aus dem Ausland"
+        },
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence",
+          "quote": "Apply with a qualification from abroad 15 Feb - 15 Jul"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme/application-for-a-degree-programme-step-by-step-explained",
+          "quote": "Did you not obtain a German university entrance qualification? If so, please apply only through uni-assist"
+        },
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence",
+          "quote": "Apply via uni-assist"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "university-entrance-qualification",
+          "name": {
+            "fr": "Certificat de qualification d'entrée à l'université",
+            "en": "University entrance qualification"
+          },
+          "quotedAs": "University entrance qualification",
+          "translationRequired": null
+        },
+        {
+          "slug": "certificate-university-entrance-qualification",
+          "name": {
+            "fr": "Certificat de qualification d'entrée à l'université",
+            "en": "Certificate for a university entrance qualification"
+          },
+          "quotedAs": "Certificate for a university entrance qualification",
+          "translationRequired": null
+        },
+        {
+          "slug": "english-language-certificate",
+          "name": {
+            "fr": "Certificat de compétence en langue anglaise",
+            "en": "English language certificate"
+          },
+          "quotedAs": "English language certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence",
+          "quote": "University entrance qualification"
+        },
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence",
+          "quote": "Certificate for a university entrance qualification"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7666/",
+          "quote": "English language skills B2 required, please provide an official language certificate"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee: the DAAD page says 'Tuition fees per semester Varied' and links to the TH Rosenheim fees page. The TH Rosenheim pages state a fee of 500 € per semester for international students from third countries (non-EU), applicable from summer semester 2026. The DAAD page also states 'Semester contribution 97 EUR student union contribution per semester' (a student union fee, not tuition).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7666/",
+            "quote": "German language skills A2 required, please provide an official language certificate"
+          },
+          {
+            "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence",
+            "quote": "German language skills at level A2"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence",
+            "quote": "English language skills at level B2"
+          },
+          {
+            "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence",
+            "quote": "Internet-based TOEFL or TOEFL iBT Home Edition, each with 72 points or more"
+          },
+          {
+            "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence",
+            "quote": "IELTS or IELTS Academic or IELTS ONLINE, each with a band score of 6.0 or higher"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si vous êtes éligible à postuler dans la base de données DAAD sur les conditions d'admission. Plus d'informations sur les conditions d'admission sont disponibles sur le site web du cours.",
+          "en": "Check whether you are eligible to apply at the DAAD database on admission requirements. More detailed information on the admission requirements is available at the course website."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7666/",
+            "quote": "Check whether you are eligible to apply at the DAAD database on admission requirements."
+          }
+        ]
+      }
+    ]
+  }
+}

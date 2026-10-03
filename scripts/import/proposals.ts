@@ -11,9 +11,12 @@ import {
   checkTuition,
   checkYears,
   type FactCheck,
+  mentionsTranslation,
+  normalizeForMatch,
   programmeNameMatches,
   quoteInText,
   quoteNames,
+  wholeWord,
 } from "./evidence";
 import { READ_SOURCE } from "./staging";
 
@@ -25,6 +28,22 @@ const EvidenceSchema = z.object({ url: Https, quote: z.string().min(1) });
 const Iso = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
 const fact = <T extends z.ZodType>(value: T) =>
   z.object({ value, evidence: z.array(EvidenceSchema).min(1) });
+
+const escapeRegex = (text: string): string => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+const DocumentSlug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+export const DocumentProposalSchema = z.object({
+  slug: DocumentSlug,
+  name: z.object({
+    fr: z.string().trim().min(1).max(200),
+    en: z.string().trim().min(1).max(200).optional(),
+  }),
+  // The document's name exactly as the quote writes it, in the page's own language: it ties the
+  // item to the quotes, so a document the pages never name cannot be kept.
+  quotedAs: z.string().trim().min(2).max(120),
+  translationRequired: z.boolean().nullable(),
+});
+export type DocumentProposal = z.infer<typeof DocumentProposalSchema>;
 
 // Admission requirements are encoded only as rules the matcher can evaluate or as a manual check.
 // Grade thresholds are deliberately not offered: they depend on a destination grading scale that
@@ -91,6 +110,14 @@ export const ProposalSchema = z.object({
       ),
     ).optional(),
     applicationChannel: fact(z.string()).optional(),
+    documents: fact(
+      z
+        .array(DocumentProposalSchema)
+        .min(1)
+        .refine((docs) => new Set(docs.map((d) => d.slug)).size === docs.length, {
+          message: "document slugs must be unique",
+        }),
+    ).optional(),
   }),
   requirements: z.object({ rules: z.array(RuleProposalSchema) }).optional(),
   notes: z.string().optional(),
@@ -156,6 +183,9 @@ function checkValue(name: FactName, value: unknown, quote: string): FactCheck {
       // every stated date must be supported by one of the quotes
       return { ok: true };
     }
+    case "documents":
+      // the verbatim quote is already required; the checker model judges the list
+      return ok;
   }
 }
 
@@ -223,8 +253,31 @@ export async function verifyProposal(
       const first = checkValue(key, entry.value, accepted[0]?.quote ?? "");
       reason = first.ok ? "value does not agree with the quote" : first.reason;
     }
+    let value: unknown = entry.value;
+    if (key === "documents") {
+      const quotes = accepted.map((e) => ({
+        normalized: normalizeForMatch(e.quote),
+        translation: mentionsTranslation(e.quote),
+      }));
+      // a whole word, so "ID" is not found inside "valid"
+      const nameRegex = (d: DocumentProposal) =>
+        wholeWord(escapeRegex(normalizeForMatch(d.quotedAs)));
+      const named = (entry.value as DocumentProposal[]).filter((d) =>
+        quotes.some((q) => nameRegex(d).test(q.normalized)),
+      );
+      // A translation claim needs a quote that names THIS document and mentions translation. One
+      // quote naming several documents and mentioning translation counts for all of them; the
+      // checker model then judges whether it really applies to each.
+      value = named.map((d) => {
+        const supported = quotes.some((q) => q.translation && nameRegex(d).test(q.normalized));
+        return d.translationRequired === true && !supported
+          ? { ...d, translationRequired: null }
+          : d;
+      });
+      if (named.length === 0) reason = "no document is named in an accepted quote";
+    }
     if (reason !== null) result.rejected.push({ fact: key, reason });
-    else result.facts[key] = { value: entry.value, evidence: accepted };
+    else result.facts[key] = { value, evidence: accepted };
   }
 
   const accepted: AcceptedRule[] = [];
@@ -288,6 +341,19 @@ const FACT_FIELDS = [
   "documents",
 ] as const;
 
+// The reader's shape for a fact value becomes the record's shape (documents carry localized names).
+export function recordValue(field: string, value: unknown): unknown {
+  if (field !== "documents") return value;
+  return (value as DocumentProposal[]).map((d) => ({
+    slug: d.slug,
+    name: {
+      fr: { text: d.name.fr, status: "draft" },
+      ...(d.name.en === undefined ? {} : { en: { text: d.name.en, status: "draft" } }),
+    },
+    translationRequired: d.translationRequired,
+  }));
+}
+
 function asRecord(value: unknown): Staged {
   return typeof value === "object" && value !== null ? (value as Staged) : {};
 }
@@ -318,7 +384,11 @@ export function applyVerified(staged: Staged, verified: Verified, today: string)
     if (accepted !== undefined) {
       const first = accepted.evidence[0];
       if (first === undefined) continue;
-      next[field] = { value: accepted.value, source: keyFor(first.url), info_kind: "official" };
+      next[field] = {
+        value: recordValue(field, accepted.value),
+        source: keyFor(first.url),
+        info_kind: "official",
+      };
       for (const e of accepted.evidence)
         evidenceLog.push({ fact: field, url: e.url, quote: e.quote });
     } else {
@@ -368,6 +438,125 @@ export function applyVerified(staged: Staged, verified: Verified, today: string)
       : `${String(review.todo ?? "")}; ${PREPARED_TEXT}`.replace(/^; /, ""),
   };
   return next;
+}
+
+type EvidenceEntry = { fact: string; url: string; quote: string };
+const PAGE_NOT_VERIFIED_NOTE =
+  "programme page not verified: facts come from pages not tied to this programme by name";
+
+// Applies what the reader proved to a record that is already in data/. Unlike applyVerified it never
+// resets a fact the reader did not establish, never replaces an existing official value (nor, while
+// the programme page is unverified, any existing value), and never touches requirements, the
+// official URL, the summary or the scholarships. Returns `staged` itself
+// when nothing changed.
+export function applyEnrichment(staged: Staged, verified: Verified, today: string): Staged {
+  return enrichRecord(staged, verified, today).record;
+}
+
+// The same, plus the disagreements found in THIS run (an earlier run's notes are not conflicts now).
+export function enrichRecord(
+  staged: Staged,
+  verified: Verified,
+  today: string,
+): { record: Staged; conflicts: string[] } {
+  const sources: Record<string, unknown> = { ...asRecord(staged.sources) };
+  const keyOfUrl = new Map<string, string>();
+  for (const [key, value] of Object.entries(sources)) {
+    const url = asRecord(value).url;
+    if (typeof url === "string") keyOfUrl.set(url, key);
+  }
+  const keyFor = (url: string): string => {
+    // an existing source keeps its older last_verified_at on purpose: the cautious direction
+    const known = keyOfUrl.get(url);
+    if (known !== undefined) return known;
+    let n = 1;
+    while (`page-${n}` in sources) n++;
+    const key = `page-${n}`;
+    sources[key] = { url, last_verified_at: null };
+    keyOfUrl.set(url, key);
+    return key;
+  };
+
+  const next: Staged = { ...staged };
+  const evidenceLog: EvidenceEntry[] = [];
+  const conflicts: string[] = [];
+  let changed = false;
+  for (const field of FACT_FIELDS) {
+    const accepted = verified.facts[field];
+    const first = accepted?.evidence[0];
+    if (accepted === undefined || first === undefined) continue;
+    const existing = asRecord(staged[field]);
+    const value = recordValue(field, accepted.value);
+    const hasValue = existing.value !== null && existing.value !== undefined;
+    const differs = JSON.stringify(existing.value) !== JSON.stringify(value);
+    if (hasValue && existing.info_kind === "official") {
+      if (differs)
+        conflicts.push(
+          `${field}: kept the existing official value; the reader found ${JSON.stringify(value)} at ${first.url}`,
+        );
+      continue;
+    }
+    // Without a verified programme page nothing ties these pages to this programme: they may fill a
+    // gap but never replace a value the register already holds.
+    if (hasValue && verified.programmePage === null) {
+      if (differs)
+        conflicts.push(
+          `${field}: kept the register value; the reader found ${JSON.stringify(value)} at ${first.url} but no programme page was verified`,
+        );
+      continue;
+    }
+    next[field] = { value, source: keyFor(first.url), info_kind: "official" };
+    for (const e of accepted.evidence)
+      evidenceLog.push({ fact: field, url: e.url, quote: e.quote });
+    changed = true;
+  }
+  if (!changed && conflicts.length === 0) return { record: staged, conflicts };
+
+  const review = asRecord(staged._review);
+  const earlierNotes = typeof review.notes === "string" && review.notes !== "" ? review.notes : "";
+  // a re-run must not repeat a note an earlier run already wrote
+  const newNotes = [
+    ...conflicts,
+    ...(verified.programmePage === null ? [PAGE_NOT_VERIFIED_NOTE] : []),
+    ...(verified.notes === undefined ? [] : [verified.notes]),
+  ].filter((note) => !earlierNotes.includes(note));
+  const notes = [...(earlierNotes === "" ? [] : [earlierNotes]), ...newNotes].join("; ");
+  const rejected =
+    verified.rejected.length === 0
+      ? {}
+      : { rejected: verified.rejected.map((r) => `${r.fact}: ${r.reason}`) };
+  if (!changed) {
+    // only disagreements: record them for the auditor, change nothing else
+    next._review = { ...review, ...(notes === "" ? {} : { notes }), ...rejected };
+    return { record: next, conflicts };
+  }
+  next.sources = sources;
+  const earlierEvidence = (
+    Array.isArray(review.evidence) ? review.evidence : []
+  ) as EvidenceEntry[];
+  const evidence = [...earlierEvidence];
+  for (const entry of evidenceLog)
+    if (
+      !evidence.some((e) => e.fact === entry.fact && e.url === entry.url && e.quote === entry.quote)
+    )
+      evidence.push(entry);
+  next._review = {
+    ...review,
+    preparedBy: "assistant",
+    preparedAt: today,
+    evidence,
+    ...(notes === "" ? {} : { notes }),
+    ...rejected,
+    todo: PREPARED_NOTE.test(String(review.todo ?? ""))
+      ? String(review.todo)
+      : `${String(review.todo ?? "")}; ${PREPARED_TEXT}`.replace(/^; /, ""),
+  };
+  return { record: next, conflicts };
+}
+
+// The facts applyEnrichment actually filled: the ones whose object it replaced.
+export function enrichedFields(before: Staged, after: Staged): string[] {
+  return FACT_FIELDS.filter((field) => before[field] !== after[field]);
 }
 
 export function stillPlaceholder(record: Staged): string[] {

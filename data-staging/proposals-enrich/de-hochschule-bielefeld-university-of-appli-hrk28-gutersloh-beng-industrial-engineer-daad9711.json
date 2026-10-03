@@ -1,0 +1,145 @@
+{
+  "slug": "de-hochschule-bielefeld-university-of-appli-hrk28-gutersloh-beng-industrial-engineer-daad9711",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/",
+          "quote": "Teaching language English"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/",
+          "quote": "All courses are taught in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hsbi.de/en/international-office/international-applicants/applying-for-work-integrated-programmes",
+          "quote": "Applicants with certificates issued abroad must apply for a VPD certificate from uni-assist via the HSBI application portal before applying."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "Proof of university entrance qualification",
+          "translationRequired": true
+        },
+        {
+          "slug": "vpd-certificate",
+          "name": {
+            "fr": "Attestation de vérification préalable (VPD) d'uni-assist",
+            "en": "VPD certificate from uni-assist"
+          },
+          "quotedAs": "The VPD certificate from uni-assist",
+          "translationRequired": null
+        },
+        {
+          "slug": "language-certificate",
+          "name": {
+            "fr": "Certificat de langue reconnu",
+            "en": "Recognised language certificate"
+          },
+          "quotedAs": "Recognised language certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "cooperation-agreement",
+          "name": {
+            "fr": "Convention de coopération (copie)",
+            "en": "Copy of the cooperation agreement"
+          },
+          "quotedAs": "Copy of the cooperation agreement",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hsbi.de/en/international-office/international-applicants/applying-for-work-integrated-programmes",
+          "quote": "Proof of university entrance qualification (originals and certified translations into German or English produced by sworn translators),"
+        },
+        {
+          "url": "https://www.hsbi.de/en/international-office/international-applicants/applying-for-work-integrated-programmes",
+          "quote": "The VPD certificate from uni-assist (see step 4),"
+        },
+        {
+          "url": "https://www.hsbi.de/en/international-office/international-applicants/applying-for-work-integrated-programmes",
+          "quote": "Recognised language certificate,"
+        },
+        {
+          "url": "https://www.hsbi.de/en/international-office/international-applicants/applying-for-work-integrated-programmes",
+          "quote": "Copy of the cooperation agreement*"
+        },
+        {
+          "url": "https://www.hsbi.de/en/international-office/international-applicants/applying-for-work-integrated-programmes",
+          "quote": "Upload your certificates and certified translations of your documents."
+        }
+      ]
+    }
+  },
+  "notes": "Le DAAD indique 7 semestres pour ce programme (3,5 ans). La date limite du 15 juillet et l'ouverture au 1er décembre proviennent de la page 'Applying with Certificates Issued Abroad – Work-Integrated Study Programmes' de la HSBI, qui couvre les programmes en alternance (work-integrated) et non l'Industrial Engineering classique (non work-integrated). Aucune année n'est précisée dans ces pages, donc l'intake est indiqué sans année. Les seuils de notes exacts et les exemptions linguistiques sont à vérifier manuellement.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les équivalences exactes des tests (TOEFL iBT, Cambridge B2 First, telc, UNIcert II) et les exemptions sur le site du programme.",
+          "en": "Check exact test equivalences (TOEFL iBT, Cambridge B2 First, telc, UNIcert II) and exemptions on the programme website."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/",
+            "quote": "Language requirements exemptions"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une convention de coopération signée avec une entreprise formatrice est requise avant l'inscription.",
+          "en": "A signed cooperation agreement with a training company is required before registration."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hsbi.de/en/international-office/international-applicants/applying-for-work-integrated-programmes",
+            "quote": "At the time you apply, you must have your university entrance certificate, the VPD certificate from uni-assist and a valid cooperation agreement with the company providing training."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -162,14 +162,27 @@ export function sampleSheet(
       "tuition",
       "intakes",
       "applicationChannel",
+      "documents",
       "type",
       "website",
     ]) {
       const field = r[fact];
-      const value = "value" in asObject(field) ? asObject(field).value : field;
+      const wrapped = "value" in asObject(field);
+      const value = wrapped ? asObject(field).value : field;
       if (value === undefined || value === null) continue;
-      out.push(`- **${fact}**: \`${show(value)}\``);
-      for (const e of evidence.filter((x) => x.fact === fact)) {
+      const backing = evidence.filter((x) => x.fact === fact);
+      // A fact with no quote is not backed by this sheet: in a revision it is what data/ already had.
+      const label = !wrapped
+        ? ""
+        : ` (${show(asObject(field).info_kind)}; source ${show(asObject(field).source)})${
+            backing.length > 0
+              ? ""
+              : review.revises === true
+                ? " (unchanged: already in data/)"
+                : " (no evidence recorded)"
+          }`;
+      out.push(`- **${fact}**: \`${show(value)}\`${label}`);
+      for (const e of backing) {
         out.push(`  - "${show(e.quote)}" — ${show(e.url)}`);
       }
     }

@@ -1,0 +1,143 @@
+{
+  "slug": "de-hochschule-rhein-waal-university-of-appl-hrk400-bioengineering-bsc-daad4320",
+  "programmePage": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc",
+          "quote": "Standard study duration 7 semesters"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+          "quote": "Teaching language English"
+        },
+        {
+          "url": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc",
+          "quote": "Language of instruction English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc",
+          "quote": "You can then use these details to apply via uni-assist."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "english-language-certificate",
+          "name": {
+            "fr": "Certificat de compétence en anglais",
+            "en": "Proof of English language proficiency"
+          },
+          "quotedAs": "Proof of sufficient English language proficiency",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hochschule-rhein-waal.de/en/academics/prospective-students/current-application-period/bachelors-programmes",
+          "quote": "Proof of sufficient English language proficiency for English-taught degree programmes"
+        }
+      ]
+    }
+  },
+  "notes": "Facts concern the Bioengineering BSc programme. durationYears: 7 semesters = 3.5 years. teachingLanguages: English only. tuition: DAAD page states 'Tuition fees per semester None' for the programme (state university in NRW); the university's 'Living costs in Germany' page also says no tuition fees are charged, but that is an institution-wide statement. No intake dates with day/month/year are stated for this programme; only the winter semester and 15 July deadline (deadline quoted on the DAAD page without a year, therefore left null). applicationChannel: the programme page states foreign-qualification applicants should register on hochschulstart.de and then apply via uni-assist; the DAAD page says 'Please apply via uni-assist'. No explicit VPD (Vorprüfungsdokumentation) is mentioned, so de-uni-assist chosen. documents: only the enrolment document list quoted from the Bachelor's degrees page; no translation requirement is stated for the named document. English proficiency is quoted as an admission requirement (B2 + official certificate); the DAAD page lists accepted tests (IELTS Academic 5.5, TOEFL iBT). German is not required.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+            "quote": "TOEFL iBT (since 2026): 4 Reading: 4 Listening: 4 Speaking: 4 Writing: 4"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+            "quote": "IELTS Academic: 5.5"
+          },
+          {
+            "url": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc",
+            "quote": "English language proficiency (Certificate of Level B2 according to the Common European Framework (CEF)), as the programme is taught entirely in English."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le programme est à accès restreint (NC) : le nombre de places est limité et le grade final sert à la sélection. Vérifiez le NC actuel sur le site du programme et de hochschulstart.",
+          "en": "The programme has restricted admission (NC): places are limited and the final grade is used in the selection process. Check the current NC on the programme and hochschulstart website."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc",
+            "quote": "Please note that this degree programme is subject to admission restrictions (NC)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'inscription se fait via le portail de candidature après réception de l'offre d'admission ; une brochure liste tous les documents nécessaires. Vérifiez la page « Bewerben für Internationals ».",
+          "en": "Enrolment is done via the application portal after you receive your offer of admission; a leaflet lists all required documents. Check the 'Guide for international applicants' page."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hochschule-rhein-waal.de/en/academics/prospective-students/current-application-period/bachelors-programmes",
+            "quote": "Once you have received your offer of admission, you must apply for enrolment via the university’s application portal and upload the following documents, amongst others:"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission se fait via la procédure DoSV de hochschulstart.de (BID/BAN), puis via uni-assist. Vérifiez les étapes exactes pour les diplômes étrangers.",
+          "en": "Admission runs via the DoSV procedure of hochschulstart.de (BID/BAN), then via uni-assist. Check the exact steps for foreign qualifications."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hochschule-rhein-waal.de/en/academics/prospective-students/current-application-period/bachelors-programmes",
+            "quote": "If you wish to apply for one of these degree programmes, you must first register at hochschulstart.de."
+          }
+        ]
+      }
+    ]
+  }
+}

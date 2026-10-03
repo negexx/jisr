@@ -381,6 +381,170 @@ describe("French programmes", () => {
   });
 });
 
+describe("readProgramme and the pages the model was given", () => {
+  const supplied = "https://own.example/p";
+  const aggregator = "https://aggregator.example/uni";
+  const page = "Applied Data Science is a 4 years programme. Tuition: EUR 1,500 per semester.";
+  const model = { id: "fake", wire: "chat" as const, price: { input: 0, output: 0, cached: 0 } };
+  const quote = (url: string, text: string) => ({ url, quote: text });
+  const read = (proposal: unknown) =>
+    readProgramme({
+      ...meta,
+      model,
+      shared: [],
+      own: [{ url: supplied, text: page }],
+      session: "s",
+      getText: async () => page,
+      completeFn: async () => completion(JSON.stringify(proposal)),
+    });
+
+  it("drops evidence from a page the model was not given, and the fact if nothing remains", async () => {
+    const out = await read({
+      slug: meta.slug,
+      programmePage: supplied,
+      facts: {
+        durationYears: {
+          value: 4,
+          evidence: [
+            quote(aggregator, "is a 4 years programme"),
+            quote(supplied, "is a 4 years programme"),
+          ],
+        },
+        tuition: {
+          value: { amountMinor: 150000, currency: "EUR", period: "semester" },
+          evidence: [quote(aggregator, "Tuition: EUR 1,500 per semester")],
+        },
+      },
+    });
+    expect(out.proposal?.facts.durationYears?.evidence).toEqual([
+      quote(supplied, "is a 4 years programme"),
+    ]);
+    expect(out.proposal?.facts.tuition).toBeUndefined();
+    expect(Object.keys(out.verified?.facts ?? {})).toEqual(["durationYears"]);
+    expect(out.dropped).toEqual([
+      `facts.durationYears.evidence:${aggregator}`,
+      `facts.tuition.evidence:${aggregator}`,
+      "facts.tuition",
+    ]);
+  });
+
+  it("drops the same from a requirement rule and an unsupplied programme page", async () => {
+    const out = await read({
+      slug: meta.slug,
+      programmePage: aggregator,
+      facts: {},
+      requirements: {
+        rules: [
+          { kind: "prior_study_years_min", years: 12, evidence: [quote(aggregator, "12 years")] },
+          {
+            kind: "manual_check",
+            note: "Check the page",
+            evidence: [quote(supplied, "is a 4 years programme")],
+          },
+        ],
+      },
+    });
+    expect(out.proposal?.programmePage).toBeNull();
+    expect(out.proposal?.requirements?.rules.map((r) => r.kind)).toEqual(["manual_check"]);
+    expect([...out.dropped].sort()).toEqual(
+      [
+        "programmePage",
+        `requirements.rules.0.evidence:${aggregator}`,
+        "requirements.rules.0",
+      ].sort(),
+    );
+  });
+
+  it("keeps what the model proposed, before the filter, for diagnosis", async () => {
+    const out = await read({
+      slug: meta.slug,
+      programmePage: supplied,
+      facts: {
+        tuition: {
+          value: { amountMinor: 150000, currency: "EUR", period: "semester" },
+          evidence: [quote(aggregator, "Tuition: EUR 1,500 per semester")],
+        },
+      },
+    });
+    expect(out.proposal?.facts.tuition).toBeUndefined();
+    expect(out.rawProposal?.facts.tuition?.evidence).toEqual([
+      quote(aggregator, "Tuition: EUR 1,500 per semester"),
+    ]);
+  });
+
+  it("leaves a proposal that only cites supplied pages untouched", async () => {
+    const out = await read({
+      slug: meta.slug,
+      programmePage: supplied,
+      facts: { durationYears: { value: 4, evidence: [quote(supplied, "is a 4 years programme")] } },
+    });
+    expect(out.dropped).toEqual([]);
+    expect(out.proposal?.programmePage).toBe(supplied);
+  });
+});
+
+describe("readProgramme matches cited urls to the supplied ones by canonical form", () => {
+  const model = { id: "fake", wire: "chat" as const, price: { input: 0, output: 0, cached: 0 } };
+  const page = "Applied Data Science is a 4 years programme taught in English.";
+  const quoteText = "is a 4 years programme";
+  const readWith = (suppliedUrl: string, cited: string) =>
+    readProgramme({
+      ...meta,
+      model,
+      shared: [],
+      own: [{ url: suppliedUrl, text: page }],
+      session: "s",
+      getText: async (url) => {
+        if (url !== suppliedUrl) throw new Error(`verifier fetched ${url}`);
+        return page;
+      },
+      completeFn: async () =>
+        completion(
+          JSON.stringify({
+            slug: meta.slug,
+            programmePage: cited,
+            facts: { durationYears: { value: 4, evidence: [{ url: cited, quote: quoteText }] } },
+          }),
+        ),
+    });
+
+  it.each([
+    [
+      "an &amp; in the supplied url cited with &",
+      "https://u.example/p?a=1&amp;b=2",
+      "https://u.example/p?a=1&b=2",
+    ],
+    [
+      "tracking parameters in the supplied url",
+      "https://u.example/p?id=3&utm_source=x&mtm_campaign=y",
+      "https://u.example/p?id=3",
+    ],
+    ["a trailing slash", "https://u.example/p/", "https://u.example/p"],
+    ["a bare question mark and a fragment", "https://u.example/p?#top", "https://u.example/p"],
+    ["the host case", "https://U.Example/p", "https://u.example/p"],
+  ])("keeps evidence when the difference is only %s, and rewrites it to the supplied string", async (_label, suppliedUrl, cited) => {
+    const out = await readWith(suppliedUrl, cited);
+    expect(out.dropped).toEqual([]);
+    expect(out.proposal?.programmePage).toBe(suppliedUrl);
+    expect(out.proposal?.facts.durationYears?.evidence).toEqual([
+      { url: suppliedUrl, quote: quoteText },
+    ]);
+    expect(Object.keys(out.verified?.facts ?? {})).toEqual(["durationYears"]);
+  });
+
+  it.each([
+    ["another path", "https://u.example/p", "https://u.example/q"],
+    ["another host", "https://u.example/p", "https://other.example/p"],
+    ["another query parameter", "https://u.example/p?id=3", "https://u.example/p?id=4"],
+    ["another path case", "https://u.example/Programme", "https://u.example/programme"],
+  ])("still drops evidence for %s", async (_label, suppliedUrl, cited) => {
+    const out = await readWith(suppliedUrl, cited);
+    expect(out.dropped).toContain(`facts.durationYears.evidence:${cited}`);
+    expect(out.dropped).toContain("programmePage");
+    expect(out.proposal?.facts.durationYears).toBeUndefined();
+  });
+});
+
 describe("pool", () => {
   it("runs every item with the given concurrency", async () => {
     const seen: number[] = [];
@@ -567,5 +731,53 @@ describe("flagValue", () => {
   it("refuses a flag with no value or whose value is another flag (a trailing --base must not mean 'none')", () => {
     expect(() => flagValue(["--base"], "base")).toThrow(/needs a value/);
     expect(() => flagValue(["--base", "--dry-run"], "base")).toThrow(/needs a value/);
+  });
+});
+
+describe("documents fact in the reader", () => {
+  const withDocuments = (value: unknown) => ({
+    slug: "s",
+    programmePage: null,
+    facts: {
+      documents: {
+        value,
+        evidence: [{ url: "https://uni.example/apply", quote: "a CV and a passport copy" }],
+      },
+    },
+  });
+  const item = (slug: string, translationRequired: boolean | null) => ({
+    slug,
+    name: { fr: "CV" },
+    quotedAs: "CV",
+    translationRequired,
+  });
+
+  it("describes the fact in the instruction", () => {
+    expect(INSTRUCTION).toMatch(/documents:/);
+  });
+
+  it("turns an unverifiable translationRequired false into null", () => {
+    const { proposal } = salvageProposal(withDocuments([item("cv", false)]));
+    expect(proposal?.facts.documents?.value[0]?.translationRequired).toBeNull();
+  });
+
+  it("requires quotedAs in the instruction", () => {
+    expect(INSTRUCTION).toMatch(/quotedAs/);
+  });
+
+  it("turns a missing translationRequired into null instead of dropping the fact", () => {
+    const { proposal, dropped } = salvageProposal(
+      withDocuments([{ slug: "cv", name: { fr: "CV" }, quotedAs: "CV" }]),
+    );
+    expect(proposal?.facts.documents?.value[0]?.translationRequired).toBeNull();
+    expect(dropped).toEqual([]);
+  });
+
+  it("drops the documents fact when two items share a slug", () => {
+    const { proposal, dropped } = salvageProposal(
+      withDocuments([item("cv", null), item("cv", null)]),
+    );
+    expect(proposal?.facts.documents).toBeUndefined();
+    expect(dropped).toContain("facts.documents");
   });
 });

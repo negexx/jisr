@@ -1,0 +1,91 @@
+{
+  "slug": "de-technische-hochschule-rosenheim-hrk232-traunstein-e-commerce-daad7974",
+  "programmePage": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/e-commerce",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7974/",
+          "quote": "The language of instruction is English."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2027-02-15",
+          "applicationDeadline": "2027-07-15"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/e-commerce",
+          "quote": "15. February 2027 - 15. July 2027"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/e-commerce",
+          "quote": "Apply only via uni-assist if you have obtained your higher education entrance qualification outside Germany"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Certificat de fin d'études secondaires",
+            "en": "Certificate for a university entrance qualification"
+          },
+          "quotedAs": "Certificate for a university entrance qualification",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/e-commerce",
+          "quote": "University entrance qualification Certificate for a university entrance qualification"
+        }
+      ]
+    }
+  },
+  "notes": "Les frais de scolarité de 500 € par semestre pour les étudiants internationaux de pays tiers (voir les pages sur les frais et le règlement) ne sont pas inclus dans le champ \"tuition\" car les pages du programme mentionnent seulement que des frais s'appliquent pour les étudiants non-UE sans préciser le montant; ils figurent sur une page générale de l'université. La durée du programme n'est pas incluse car la page DAAD indique \"7 semesters\" mais la page propre du programme indique \"Duration 7 Semesters\" et \"ECTS 210\", sans que ces informations figurent dans une citation directe du programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une qualification d'entrée à l'université (générale ou spécifique) est suffisante. Vérifiez votre éligibilité auprès de uni-assist.",
+          "en": "A general or subject-specific higher education entrance qualification is sufficient. Check your eligibility with uni-assist."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7974/",
+            "quote": "A general or subject-specific higher education entrance qualification is sufficient to qualify for the study programme."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des frais de traitement s'appliquent pour la vérification de votre candidature via uni-assist et doivent être payés directement à uni-assist.",
+          "en": "Processing fees apply for the verification of your application via uni-assist and must be paid directly to uni-assist."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme/application-for-a-degree-programme-step-by-step-explained",
+            "quote": "Please be aware that processing fees apply for the processing and verification of your application via uni-assist."
+          }
+        ]
+      }
+    ]
+  }
+}

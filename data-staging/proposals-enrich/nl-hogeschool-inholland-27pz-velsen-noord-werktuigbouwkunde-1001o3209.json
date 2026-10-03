@@ -1,0 +1,74 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209",
+  "programmePage": "https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar taal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "The programme page states the teaching language as Dutch (taal Nederlands), so no language requirement rule is extracted. The collegegeld page distinguishes wettelijk collegegeld for EU/EEA/Swiss/Surinamese students from instellingscollegegeld for others, but no fee is stated specifically for non-EU students of this programme; tuition is therefore omitted. Intake dates are omitted because no day+month+year date is stated for this programme. Documents are omitted because no programme document list is given.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Non-EU : date limite de candidature recommandée le 1 mai ; la procédure peut prendre plus de trois mois, candidatez tôt.",
+          "en": "Non-EU: recommended application deadline 1 May; the procedure can take over three months, apply early."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+            "quote": "Non-EU students by 1 May"
+          },
+          {
+            "url": "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+            "quote": "the enrolment procedure for international applicants can take well over three months, so please apply as early as possible."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme étranger : évaluation individuelle par Inholland ; envoyez le diplôme, le relevé de notes et, si nécessaire, une traduction assermentée via Selfservice.",
+          "en": "Foreign diploma: assessed individually by Inholland; upload your diploma, transcript and, if needed, a sworn translation via Selfservice."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+            "quote": "De CSA beoordeelt alleen diploma’s nadat je een aanmelding via Studielink hebt gedaan en je diploma, cijferlijst, en, indien nodig, een vertaling van een beëdigd vertaler, hebt geüpload in Selfservice."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Non-EU : un permis de séjour (MVV) est nécessaire ; des documents et frais s'appliquent (voir les pages visa).",
+          "en": "Non-EU: a residence permit (MVV) is required; documents and fees apply (see visa pages)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+            "quote": "Voor toelating tot Nederland heb je een visum nodig, ook wel een Machtiging tot Voorlopig Verblijf genoemd (MVV)."
+          }
+        ]
+      }
+    ]
+  }
+}

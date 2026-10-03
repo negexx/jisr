@@ -1,0 +1,67 @@
+{
+  "slug": "de-universitat-passau-hrk218-bachelor-of-science-in-a-daad9973",
+  "programmePage": "https://www.uni-passau.de/en/bsc-artificial-intelligence/?mtm_campaign=DAADIPG",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.uni-passau.de/en/bsc-artificial-intelligence/?mtm_campaign=DAADIPG",
+          "quote": "Duration and credits 6 semesters; 180 ECTS credits"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uni-passau.de/en/bsc-artificial-intelligence/?mtm_campaign=DAADIPG",
+          "quote": "Language of instruction English"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "university-entrance-qualification",
+          "name": {
+            "fr": "Diplôme d'accès à l'enseignement supérieur",
+            "en": "Higher education entrance qualification"
+          },
+          "quotedAs": "Hochschulzugangsberechtigung",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uni-passau.de/einschreibung",
+          "quote": "Hochschulzugangsberechtigung (z. B. Abiturzeugnis)"
+        },
+        {
+          "url": "https://www.uni-passau.de/deutschlandstipendium/fuer-bewerberinnen-und-bewerber/bewerbung",
+          "quote": "Alle Dokumente müssen ins Deutsche oder Englische übersetzt werden."
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des frais de scolarité est indiqué comme nul (0 EUR) pour ce programme, d'après la page DAAD. Les dates d'admission ne sont pas fournies avec l'année complète, donc laissées nulles. Le canal de candidature n'est pas explicitement mentionné pour les candidats internationaux dans les pages fournies; la page d'inscription mentionne des 'Bewerbungszeiträume für Bewerbungen über uni-assist' pour Artificial Intelligence, mais la phrase exacte n'est pas citée ici. Veuillez vérifier manuellement si une candidature via uni-assist est requise.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non-EEE doivent réussir l'un des tests d'aptitude (SAT, TestAS, ACT, JEE, CSAT) avec les scores indiqués.",
+          "en": "Non-EEA applicants must achieve the specified results in one of the aptitude tests (SAT, TestAS, ACT, JEE, CSAT)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9973/",
+            "quote": "applicants whose qualification was attained outside the school systems of European Economic Area (EEA) member countries are required to achieve the specified results in one of the following aptitude tests"
+          }
+        ]
+      }
+    ]
+  }
+}

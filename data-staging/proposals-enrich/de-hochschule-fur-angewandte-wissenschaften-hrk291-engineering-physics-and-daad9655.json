@@ -1,0 +1,86 @@
+{
+  "slug": "de-hochschule-fur-angewandte-wissenschaften-hrk291-engineering-physics-and-daad9655",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://sci.hm.edu/studierende/studiengaenge/bachelor/engineering_physics_and_datascience/index.en.html",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 50000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://hm.edu/studium_1/bewerbung/faq_gebuehren_non_eu_auslaender.de.html",
+          "quote": "Die Höhe der Studiengebühren beläuft sich auf 500,00 Euro pro Semester für einen Bachelorstudiengang und 700,00 Euro pro Semester für einen Masterstudiengang."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/",
+          "quote": "Submit application via Please apply via uni-assist."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the programme page (DAAD) lists 'Tuition fees per semester None' and mentions non-EU fees of approx. 500 EUR per semester 'being discussed and might apply soon', while the HM fees FAQ and the fee statute set 500 EUR per semester for Bachelor's programmes for international students newly enrolled from winter semester 2026/2027. The 500 EUR/semester figure is a university-wide international-student fee, not specific to this programme. Application channel: the DAAD programme page says to apply via uni-assist; no page states a VPD (Vorprüfungsdokumentation) requirement, and the HM application pages describe only the university's own portal. Documents: no page lists documents required of international applicants for this programme, so the documents fact is omitted.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL Essentials: 6 Reading: 6 Listening: 6 Speaking: 6 Writing: 6 IELTS Academic: 6"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que votre diplôme (Baccalauréat marocain) est reconnu comme qualification d'entrée à l'université en Bavière. Voir www.hm.edu/bewerberinfo.",
+          "en": "Check that your diploma (Moroccan Baccalauréat) is recognised as a university entrance qualification in Bavaria. See www.hm.edu/bewerberinfo."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/",
+            "quote": "The prerequisite is a university entrance qualification recognised in Bavaria."
+          },
+          {
+            "url": "https://sci.hm.edu/studierende/studiengaenge/bachelor/engineering_physics_and_datascience/index.en.html",
+            "quote": "The prerequisite is a university entrance qualification recognized in Bavaria."
+          }
+        ]
+      }
+    ]
+  }
+}

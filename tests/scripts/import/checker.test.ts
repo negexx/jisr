@@ -289,3 +289,73 @@ describe("checker failure modes", () => {
     expect(user).not.toContain("[2] Claim: lies");
   });
 });
+
+describe("claimText for documents", () => {
+  it("names the documents and the ones that need a translation", () => {
+    const docs = [
+      { slug: "cv", name: { fr: "CV", en: "CV" }, quotedAs: "CV", translationRequired: null },
+      {
+        slug: "diploma",
+        name: { fr: "Diplôme", en: "Diploma" },
+        quotedAs: "Diploma",
+        translationRequired: true,
+      },
+    ];
+    const text = claimText("documents", docs);
+    expect(text).toContain("CV");
+    expect(text).toMatch(/translation is required for: Diploma/);
+  });
+});
+
+describe("how many excerpts the checker sees per fact", () => {
+  const filler = (n: number) =>
+    `${`Unrelated sentence number ${n} about campus life. `.repeat(40)}`;
+  const quotes = [
+    "alpha transcript is required for admission",
+    "bravo passport copy is required for admission",
+    "charlie language certificate is required here",
+    "delta motivation letter is required to apply",
+  ];
+  const longPage = quotes.map((q, i) => `${filler(i)}${q}. `).join("");
+
+  async function promptFor(facts: Verified["facts"]): Promise<string> {
+    let user = "";
+    await checkVerified({
+      verified: { programmePage: null, facts, rejected: [] },
+      meta,
+      model,
+      session: "s",
+      getText: async () => longPage,
+      completeFn: async (_m, input) => {
+        user = input.user;
+        return completion('[{"id":1,"verdict":"supports","reason":"ok"}]');
+      },
+    });
+    return user;
+  }
+  const manyQuotes = quotes.map((quote) => ({ url: "https://x.example/p", quote }));
+  const present = (user: string) =>
+    ["alpha", "bravo", "charlie", "delta"].filter((w) => user.includes(`${w} `));
+
+  it("shows a documents claim up to six excerpts", async () => {
+    const user = await promptFor({
+      documents: {
+        value: [
+          { slug: "a", name: { fr: "A", en: "A" }, quotedAs: "a", translationRequired: null },
+        ],
+        evidence: manyQuotes,
+      },
+    });
+    expect(present(user)).toEqual(["alpha", "bravo", "charlie", "delta"]);
+  });
+
+  it("still shows a tuition claim only two excerpts", async () => {
+    const user = await promptFor({
+      tuition: {
+        value: { amountMinor: 150000, currency: "EUR", period: "semester" },
+        evidence: manyQuotes,
+      },
+    });
+    expect(present(user)).toEqual(["alpha", "bravo"]);
+  });
+});

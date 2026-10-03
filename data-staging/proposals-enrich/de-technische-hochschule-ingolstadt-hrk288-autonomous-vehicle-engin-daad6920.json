@@ -1,0 +1,88 @@
+{
+  "slug": "de-technische-hochschule-ingolstadt-hrk288-autonomous-vehicle-engin-daad6920",
+  "programmePage": "https://www.thi.de/en/electrical-engineering-and-information-technology/degree-programmes/autonomous-vehicle-engineering-beng/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.thi.de/en/electrical-engineering-and-information-technology/degree-programmes/autonomous-vehicle-engineering-beng/",
+          "quote": "Duration 7 Semester"
+        },
+        {
+          "url": "https://www.thi.de/en/electrical-engineering-and-information-technology/degree-programmes/autonomous-vehicle-engineering-beng/",
+          "quote": "ECTS 210"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6920/",
+          "quote": "Teaching language English"
+        },
+        {
+          "url": "https://www.thi.de/en/electrical-engineering-and-information-technology/degree-programmes/autonomous-vehicle-engineering-beng/",
+          "quote": "Main teaching language English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 80000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6920/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 800 EUR"
+        },
+        {
+          "url": "https://www.thi.de/en/electrical-engineering-and-information-technology/degree-programmes/autonomous-vehicle-engineering-beng/",
+          "quote": "THI charges tuition fees of 800 euros per semester (for Bachelor’s programmes)."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2027-04-01",
+          "applicationDeadline": "2027-07-15"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.thi.de/en/electrical-engineering-and-information-technology/degree-programmes/autonomous-vehicle-engineering-beng/",
+          "quote": "Application period for the winter semester 2027/28: April 1 to July 15, 2027"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the DAAD page states 800 EUR per semester for non-EU applicants, matching the THI-wide figure for third-country Bachelor students; no separate programme-specific fee is given. Intakes: only the winter semester 2027/28 application period (April 1 to July 15, 2027) is stated in full; the DAAD page gives a generic 1 April - 15 July window without a year, and the programme starts in the winter semester only. Application channel: the VPD from uni-assist is mandatory for foreign higher-secondary certificates, and the PRIMUSS portal is used afterwards; the university states international applicants should apply directly via the uni-assist application portal. Documents: the pages do not name a document list for this programme (only that VPD requires certified documents and language certificates need not go to uni-assist), so no documents fact is given.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Admission requires a recognised university entrance qualification (secondary school certificate). Selection also includes a curriculum analysis and a selection interview; a SAT score of at least 1000 may earn bonus points.",
+          "en": "Admission requires a recognised university entrance qualification (secondary school certificate). Selection also includes a curriculum analysis and a selection interview; a SAT score of at least 1000 may earn bonus points."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6920/",
+            "quote": "Admission requires a recognised university entrance qualification (secondary school certificate) and sufficient proficiency in English."
+          },
+          {
+            "url": "https://www.thi.de/en/electrical-engineering-and-information-technology/degree-programmes/autonomous-vehicle-engineering-beng/",
+            "quote": "Applicants who have achieved a total score of 70 points or more will be invited to a short online selection interview."
+          }
+        ]
+      }
+    ]
+  }
+}

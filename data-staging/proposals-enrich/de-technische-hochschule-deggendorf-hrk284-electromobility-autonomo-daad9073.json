@@ -1,0 +1,109 @@
+{
+  "slug": "de-technische-hochschule-deggendorf-hrk284-electromobility-autonomo-daad9073",
+  "programmePage": "https://www.th-deg.de/emi-b-en",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/emi-b-en",
+          "quote": "Duration 8 semesters (4 years)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/emi-b-en",
+          "quote": "Taught in 1st - 3rd semester: English, German language courses for A2 through B2 part of curriculum From the 4th semester: German"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 50000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9073/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries Switzerland United Kingdom 500 EUR"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/en/apply",
+          "quote": "choose what you aim to study and apply directly to DIT via our own online application portal, Primuss"
+        }
+      ]
+    }
+  },
+  "notes": "Le programme a une période d'application du 15 octobre au 1er décembre. Pour un demandeur marocain (non-UE), les frais de service de 500 EUR par semestre s'appliquent, mais le paiement se fait après l'admission. La page mentionne également des 'service fees' de 60 EUR pour la candidature, non inclus dans les frais de scolarité. Les langues d'enseignement : les 3 premiers semestres en anglais avec cours d'allemand, puis à partir du 4e semestre en allemand. Une preuve de langue allemande A1 doit être soumise avant le 14 mars, mais la date exacte de l'année n'est pas précisée (probablement l'année d'admission). Un test d'admission en mathématiques est requis. Les documents listés sont ceux généraux pour les candidats internationaux, mais la liste complète peut varier selon le portail Primuss.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9073/",
+            "quote": "German language skills A1 required, please provide an official language certificate"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9073/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 72 TOEIC Reading: 385 Listening: 400 IELTS Academic: 5.5 telc English: telc English B2 PTE Academic: 59"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre Baccalauréat marocain est reconnu comme qualification d'entrée à l'université allemande via la base de données DAAD ou Anabin.",
+          "en": "Check if your Moroccan Baccalauréat is recognised as a German university entrance qualification via the DAAD database or Anabin."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-deg.de/en/apply",
+            "quote": "To find out whether your school-leaving certificate meets the requirements for the degree programs at our university, please use the DAAD Database on admission requirements."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'admission écrit (mathématiques/physique) doit être réussi. Il peut se faire en ligne.",
+          "en": "A written admission test (mathematics/physics) must be passed. It can be taken online."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9073/",
+            "quote": "Applicants must successfully complete a written assessment test (online option available). The test consists of tasks in mathematics and physics."
+          }
+        ]
+      }
+    ]
+  }
+}

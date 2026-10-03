@@ -33,12 +33,21 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: nl-studielink
+  source: page-1
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+  source: page-3
   info_kind: official
 requirements:
   coverage: partial
@@ -75,3 +84,9 @@ sources:
   page-2:
     url: https://www.hu.nl/collegegeld-en-betalen
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hu.nl/aanmelden
+    last_verified_at: 2026-10-02
+  page-3:
+    url: https://www.minor.hu.nl/
+    last_verified_at: 2026-10-02

@@ -1,0 +1,112 @@
+{
+  "slug": "nl-hogeschool-utrecht-25dw-ict-1001o2672",
+  "programmePage": "https://www.hu.nl/voltijd-opleidingen/hbo-ict",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.hu.nl/voltijd-opleidingen/hbo-ict",
+          "quote": "Bachelor 4 jaar Heidelberglaan 15 Utrecht"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.hu.nl/aanmelden",
+          "quote": "Met je DigiD bij de hand log je in bij Studielink."
+        },
+        {
+          "url": "https://www.minor.hu.nl/",
+          "quote": "In Studielink you will be asked to select an academic year and a start date."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "Your (senior) secondary school diploma and grades list",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.minor.hu.nl/",
+          "quote": "PDF 3. Your (senior) secondary school diploma and grades list."
+        },
+        {
+          "url": "https://www.minor.hu.nl/",
+          "quote": "PDF 4. If applicable: Translations of both your diploma and grades list(s) into Dutch or English."
+        }
+      ]
+    }
+  },
+  "notes": "Teaching language for this programme could not be confirmed from the provided pages. The programme page at https://www.hu.nl/voltijd-opleidingen/hbo-ict is Dutch-taught in overall navigation, but there is no explicit statement confirming the language of instruction for this specific programme. Similarly, the exact tuition fee for non-EU students is unclear; the institution page https://www.hu.nl/collegegeld-en-betalen states 'instellingscollegegeld' for students without a residence permit, but does not specify the amount for this specific programme, and the institution-wide figure (€10,747) may not apply. Therefore, tuition is omitted. Application deadlines for non-EU students are given on https://www.minor.hu.nl/ (31 May for non-EU students living outside the Netherlands), but since the programme is listed in Dutch as 'hbo ICT' and the programme page does not specify a deadline, we did not include a formal intake fact. The deadline 31 May is for non-EU students with immigration/visa services, which likely applies to a Moroccan applicant, but we omitted it because the programme page does not mention it explicitly. Document requirements are taken from https://www.minor.hu.nl/ because they are described for 'foreign diploma' applicants generally, which applies to a Moroccan student. However, since the programme page is in Dutch and the document list is from a general bachelor admissions page, this may be a caveat. The language requirement is not stated on the provided pages for this specific programme. The requirement 'secondary school diploma at sufficient level' is stated on https://www.minor.hu.nl/ but since it is a general requirement for English-taught bachelor programmes, and this programme may be Dutch-taught, we did not include it as a formal requirement. Note: The programme page indicates 'Aanmelddeadline t/m 1 mei en 31 januari' which are for Dutch/EU students and for February start, respectively, but for non-EU students the deadlines on https://www.minor.hu.nl/ apply (31 May for September start). The programme page does not explicitly state these international deadlines.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vous aurez probablement besoin d'un diplôme secondaire comparable au mbo-4 ou havo; contactez l'admission avec un diplôme marocain.",
+          "en": "You will likely need a secondary school diploma comparable to Dutch Mbo-4 or Havo; contact admissions if you have a Moroccan diploma."
+        },
+        "evidence": [
+          {
+            "url": "https://www.minor.hu.nl/",
+            "quote": "You need a diploma comparable to the Dutch Mbo-4 or Havo diplomas."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Suivez une procédure d'admission internationale séparée: votre dossier est évalué par Bureau des relations internationales avec des copies de diplôme et de relevé de notes.",
+          "en": "Follow a separate international admissions procedure: your file is evaluated by the International Office with copies of diploma and grades list."
+        },
+        "evidence": [
+          {
+            "url": "https://www.minor.hu.nl/",
+            "quote": "Your application will be processed by HU's International Office."
+          },
+          {
+            "url": "https://www.minor.hu.nl/",
+            "quote": "Please upload copies of the following in separate, clearly labelled, PDF files:"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des délais précis s'appliquent aux étudiants non-UE: vérifiez votre date limite à partir de la page d'admission internationale.",
+          "en": "Specific deadlines apply to non-EU students: check your deadline from the international admissions page."
+        },
+        "evidence": [
+          {
+            "url": "https://www.minor.hu.nl/",
+            "quote": "31 May Non-EU students living outside the Netherlands who require immigration and/or visa services from HU."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez la procédure d'immigration (visa/résidence) pour les étudiants non-UE.",
+          "en": "Check the immigration process (visa/residence permit) for non-EU students."
+        },
+        "evidence": [
+          {
+            "url": "https://www.minor.hu.nl/",
+            "quote": "15 June Non-EU students who require immigration services from HU and a MVV and residence permit to study in the Netherlands."
+          }
+        ]
+      }
+    ]
+  }
+}

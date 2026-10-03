@@ -1,0 +1,160 @@
+{
+  "slug": "de-hochschule-hamm-lippstadt-hrk399-lippstadt-electronic-engineering-daad4876",
+  "programmePage": "https://www.hshl.de/en/studying/en-study-programs/en-bachelors-programs/en-electronic-engineering/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4876/",
+          "quote": "Programme duration 7 semesters"
+        },
+        {
+          "url": "https://www.hshl.de/en/studying/en-study-programs/en-bachelors-programs/en-electronic-engineering/",
+          "quote": "Standard study period 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4876/",
+          "quote": "Teaching language English Languages Courses are held in English only."
+        },
+        {
+          "url": "https://www.hshl.de/en/studying/en-study-programs/en-bachelors-programs/en-electronic-engineering/",
+          "quote": "Language of instruction English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hshl.de/en/studying/information-about-your-studies/",
+          "quote": "There are no additional tuition fees (as of March 2022)."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4876/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "university-entrance-qualification",
+          "name": {
+            "fr": "Hochschulzugangsberechtigung (HZB)",
+            "en": "University entrance qualification"
+          },
+          "quotedAs": "Hochschulzugangsberechtigung / HZB",
+          "translationRequired": null
+        },
+        {
+          "slug": "uni-assist-evaluation-result",
+          "name": {
+            "fr": "Résultat de l'évaluation uni-assist",
+            "en": "uni-assist evaluation result"
+          },
+          "quotedAs": "evaluation result",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-photo",
+          "name": {
+            "fr": "Photo d'identité",
+            "en": "Passport photo"
+          },
+          "quotedAs": "Passport Photo",
+          "translationRequired": null
+        },
+        {
+          "slug": "language-certificate",
+          "name": {
+            "fr": "Certificat de langue",
+            "en": "Language certificate"
+          },
+          "quotedAs": "Language Certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hshl.de/en/studying/online-registration/",
+          "quote": "Application Documents University Entrance Qualification / HZB In order to study in Germany, a so-called \"Hochschulzugangsberechtigung\" (HZB) is required."
+        },
+        {
+          "url": "https://www.hshl.de/en/studying/online-registration/",
+          "quote": "You will receive the evaluation result from uni assist and need to upload it during your application in the online portal."
+        },
+        {
+          "url": "https://www.hshl.de/en/studying/online-registration/",
+          "quote": "Passport Photo You will need to submit a passport photo."
+        },
+        {
+          "url": "https://www.hshl.de/en/studying/online-registration/",
+          "quote": "Language Certificate Depending on the course of studies you need to show appropriate German or English language skills."
+        }
+      ]
+    }
+  },
+  "notes": "Aucune date de candidature complète (jour, mois, année) n'est donnée pour une période future : la période pour le semestre d'hiver 2026/27 est déjà terminée (9 septembre 2026) et la nouvelle période n'est pas encore annoncée, donc aucune intake n'est indiquée. Les frais de scolarité indiqués (0 EUR) proviennent de la page DAAD du programme (« Tuition fees per semester None ») et de la page générale HSHL (« There are no additional tuition fees »); le semester fee (362,80 EUR pour le semestre d'hiver 2026/27) n'est pas des frais de scolarité mais une contribution semestrielle obligatoire. La voie de candidature retenue est de-uni-assist-vpd : les pages exigent une vérification préalable des documents par uni-assist (« checked by uni-assist »), mais l'inscription se fait ensuite dans le portail propre de l'HSHL. Le seuil B2 et les tests IELTS/TOEFL sont bien des conditions d'admission explicites ('condition for acceptance'); une dispense est possible si le certificat d'études mentionne le niveau d'anglais.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.hshl.de/en/studying/en-study-programs/en-bachelors-programs/en-electronic-engineering/",
+            "quote": "Evidence of adequate knowledge of the English language at the level B2 of the Common European Framework of Reference by means of a certificate accordingly is a condition for acceptance."
+          },
+          {
+            "url": "https://www.hshl.de/en/studying/en-study-programs/en-bachelors-programs/en-electronic-engineering/",
+            "quote": "IELTS: minimum 6.0 TOEFL (internet based test): minimum 80 TOEFL (paper based test): minimum 550 TOEFL (computer based test) minimum 213"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats titulaires d'un diplôme étranger doivent faire vérifier leurs documents par uni-assist pendant la période de candidature officielle.",
+          "en": "Applicants with foreign certificates must have their documents checked by uni-assist during the official application period."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hshl.de/en/studying/online-registration/",
+            "quote": "Applicants with international educational certificates (e.g. Matura, O-and A-(S-)level, Baccalaureate) must also get their documents checked by uni-assist."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier si un certificat APS est exigé: il est obligatoire pour les candidats venant d'Inde, de Chine ou du Vietnam.",
+          "en": "Check whether an APS certificate is required: it is mandatory for applicants from India, China or Vietnam."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hshl.de/en/studying/online-registration/",
+            "quote": "If you apply from India, China or Vietnam the APS certificate is required."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "de-hochschule-bremerhaven-hrk41-sustainable-process-engi-daad10400",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10400/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10400/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10400/",
+          "quote": "Teaching language German English Languages First to third semester: German Fourth to sixth semester: English Seventh semester: English or German (industrial internship and final thesis project)"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10400/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.hs-bremerhaven.de/en/study/application-for-bachelor-courses",
+          "quote": "International applicants who have obtained their higher education entrance qualification outside the EU must apply on the uni-assist application portal."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Certificat de fin d'études secondaires",
+            "en": "School leaving certificate"
+          },
+          "quotedAs": "school leaving certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum vitae signé personnellement",
+            "en": "Personally signed curriculum vitae"
+          },
+          "quotedAs": "Personally signed curriculum vitae",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Passeport",
+            "en": "Passport"
+          },
+          "quotedAs": "identity card/passport",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-bremerhaven.de/en/study/application-for-bachelor-courses",
+          "quote": "University entrance qualification or school leaving certificate (regular copy is sufficient)"
+        },
+        {
+          "url": "https://www.hs-bremerhaven.de/en/study/application-for-bachelor-courses",
+          "quote": "Personally signed curriculum vitae, photograph"
+        },
+        {
+          "url": "https://www.hs-bremerhaven.de/en/study/application-for-bachelor-courses",
+          "quote": "Copy of birth certificate or identity card/passport"
+        }
+      ]
+    }
+  },
+  "notes": "Application deadline dates are for the 2026/27 winter semester (15 July 2026 for non-EU applicants) and summer semester 2026 (15 January 2026 for non-EU applicants). The tuition fact states no tuition fees per semester (0 EUR); the programme page says 'Tuition fees per semester None'. Semester contribution 420 EUR is separate. Language requirements: German C1 is stated by DAAD; English B1 is stated by DAAD. The university page states that applicants who did not acquire their university entrance qualification at a German-speaking institution need proof of German language skills at level C1 of the CEFR, except for International Tourism Management (ITM). Documents listed are from the university application page for bachelor courses and apply to all bachelor applicants; they may not be exhaustive for this specific programme. The documents 'copy of birth certificate' and 'proof of health insurance' are not included because they are not clearly required for this programme or are part of enrolment, not application.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission détaillées et les documents requis sur le site de l'université.",
+          "en": "Check the detailed admission requirements and required documents on the university website."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10400/",
+            "quote": "Academic admission requirements https://www.hs-bremerhaven.de/en/study/study-programmes/spe"
+          }
+        ]
+      }
+    ]
+  }
+}

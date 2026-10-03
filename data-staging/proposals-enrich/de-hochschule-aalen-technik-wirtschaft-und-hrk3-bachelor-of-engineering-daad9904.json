@@ -1,0 +1,164 @@
+{
+  "slug": "de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad9904",
+  "programmePage": "https://www.hs-aalen.de/en/courses/141",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.hs-aalen.de/en/courses/141",
+          "quote": "Duration of Study 7 semester (Full time)"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9904/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-aalen.de/en/courses/141",
+          "quote": "Language English"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9904/",
+          "quote": "Teaching language English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9904/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        },
+        {
+          "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+          "quote": "€1,500 international tuition fee and €180 semester fee (for the Winter Semester 2026/27)"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2026-12-03"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-aalen.de/en/courses/141",
+          "quote": "Next start Summer term 27 Application deadline 03.12.2026"
+        },
+        {
+          "url": "https://www.hs-aalen.de/",
+          "quote": "Mechatronics & Robotics Engineering (B. Eng.) Bachelor Englisch 7 Semester (Vollzeit) Sommersemester 27 Bewerbungsfrist: 3. Dezember 2026"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+          "quote": "To do so, you must apply to Uni Assist for a preliminary review documentation (Vorprüfungsdokumentation - VPD which assesses your eligibility for university admission in Germany)."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires (certificat de fin d'études)",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "school-leaving certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "english-language-certificate",
+          "name": {
+            "fr": "Certificat de compétence en anglais",
+            "en": "English language certificate"
+          },
+          "quotedAs": "language certificate(s)",
+          "translationRequired": null
+        },
+        {
+          "slug": "vpd-certificate",
+          "name": {
+            "fr": "Attestation d'évaluation préliminaire (VPD) de uni-assist",
+            "en": "VPD certificate from uni-assist"
+          },
+          "quotedAs": "VPD-Certificate from uni-assist",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-photo",
+          "name": {
+            "fr": "Photo d'identité",
+            "en": "Passport picture"
+          },
+          "quotedAs": "passport picture",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-copy",
+          "name": {
+            "fr": "Copie du passeport",
+            "en": "Passport copy"
+          },
+          "quotedAs": "passport copy",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+          "quote": "These include your entrance qualification, language certificate(s), the VPD-Certificate from uni-assist, passport picture and a passport copy."
+        },
+        {
+          "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+          "quote": "Send us the officially certified documents of your school-leaving certificate or your Bachelor's Degree certificate respectively via postal mail to the address mentioned in the portal."
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des frais de scolarité est indiqué par semestre (1 500 EUR); sur l'année, cela représente 3 000 EUR. La DAAD précise que les frais « may vary » et renvoie au site du programme. La date limite du 03.12.2026 (site du programme, en anglais) et le 3 décembre 2026 (page d'accueil, en allemand) désignent la même échéance pour le semestre d'été 2027. Un certificat de langue anglaise B2 est exigé; les documents cités (certificat de fin d'études, certificat de langue, VPD, photo et copie du passeport) proviennent de la page anglaise des candidatures. La traduction n'est mentionnée pour aucun document, donc translationRequired reste null.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme d'accès à l'université est exigé. Vérifiez sa comparabilité (DAAD/anabin) et l'aptitude à étudier en Allemagne: TestAS ≥100, SAT ≥1050 ou ACT ≥20 (suspendu pour le semestre d'été 2027).",
+          "en": "A university entrance qualification is required. Check its comparability (DAAD/anabin) and proof of eligibility to study in Germany: TestAS ≥100, SAT ≥1050 or ACT ≥20 (suspended for summer semester 2027)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+            "quote": "If you want to apply for one of our Bachelor's Degree Programs you must provide proof of a university entrance qualification."
+          },
+          {
+            "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+            "quote": "TestAS (paper-based or digital) core test and subject-specific engineering module with a score of at least 100"
+          },
+          {
+            "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+            "quote": "The aptitude test requirement is being suspended for the application period for summer semester 2027."
+          }
+        ]
+      }
+    ]
+  }
+}

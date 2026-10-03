@@ -17,7 +17,7 @@ summary:
     status: draft
 officialUrl: https://www.hs-kempten.de/international-engineering
 durationYears:
-  value: null
+  value: 3.5
   source: programme
   info_kind: official
 teachingLanguages:
@@ -47,8 +47,17 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: University entrance qualification
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -106,3 +115,6 @@ sources:
   page-3:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9922/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hs-kempten.de/studium/bewerbung/bachelor
+    last_verified_at: 2026-10-02

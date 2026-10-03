@@ -41,8 +41,44 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Preuve de compétences suffisantes en anglais
+          status: draft
+        en:
+          text: Proof of sufficient English language skills
+          status: draft
+      translationRequired: null
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificats / relevés de notes scolaires ou universitaires
+          status: draft
+        en:
+          text: School/university certificates / transcripts
+          status: draft
+      translationRequired: null
+    - slug: motivational-letter
+      name:
+        fr:
+          text: Lettre de motivation (une page A4 maximum)
+          status: draft
+        en:
+          text: Motivational letter (maximum one A4 page)
+          status: draft
+      translationRequired: null
+  source: page-2
   info_kind: official
 requirements:
   coverage: partial

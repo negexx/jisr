@@ -1,0 +1,44 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-accountancy-1001o3549",
+  "programmePage": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar, Amsterdam en Rotterdam taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar, Amsterdam en Rotterdam taal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "La page du programme indique une durée de 4 ans et le néerlandais comme langue d'enseignement. Les frais de scolarité ne sont pas mentionnés spécifiquement pour ce programme pour les étudiants non-UE ; le montant du 'instellingscollegegeld' (10 360 € pour 2026-2027) est un tarif institutionnel général qui peut ne pas s'appliquer à ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si vous devez fournir une preuve de maîtrise du néerlandais (la langue d'enseignement de cette formation) et à quel niveau.",
+          "en": "Check whether you must provide proof of Dutch proficiency (the language of instruction of this programme) and at what level."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+            "quote": "Als je jouw diploma van je vooropleiding in het buitenland behaald hebt, dien je aan te tonen dat je de taal waarin de opleiding gegeven wordt, voldoende beheerst."
+          }
+        ]
+      }
+    ]
+  }
+}

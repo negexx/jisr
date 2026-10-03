@@ -1,0 +1,134 @@
+{
+  "slug": "de-otto-von-guericke-universitat-magdeburg-hrk172-bilingual-bachelors-biba-daad9665",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+          "quote": "Programme duration 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+          "quote": "Teaching language German English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+          "quote": "Please apply via uni-assist."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the DAAD page states \"Tuition fees per semester None\"; a general OVGU page about European Studies also says \"You do not have to pay tuition fees\", and a Finance page says \"There are no tuition fees\". A semester contribution of €329.30 is charged separately, not tuition. Intakes: no application deadline with day, month and year is quoted for this programme; a \"15 April - 15 July\" period is given but without a year, so its dates are left null.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: PTE Academic: 70 UNIcert® English: UNIcert® II telc English: telc English B2 IELTS Academic: 6.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est possible si vous êtes compétent en allemand ou en anglais au niveau B2 (cadre européen).",
+          "en": "Admission is possible if you are proficient in either German or English at level B2 (European Reference Framework)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+            "quote": "You are proficient in either German or English (this is the new and special aspect of our programme). \"Proficient\" means you must have attained at least the level of B2 in the European Reference Framework for languages in your stronger language."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vous devez avoir une admission générale aux études universitaires allemandes (Abitur allemand ou autre qualification, éventuellement avec un Studienkolleg).",
+          "en": "You must have general admission for German university study programmes (German Abitur or another qualification, possibly with a Studienkolleg)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+            "quote": "You have general admission for German university study programmes, such as the German Abitur or another qualification, sometimes involving a year of university study in your home country or a preparatory year in a Studienkolleg."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'aptitude (Eignungsfeststellung) est requis : 8 points obtenus par des preuves d'intérêt spécifique, par ex. TestAS, stages, certificats, concours.",
+          "en": "An eligibility test (Eignungsfeststellung) is required: 8 points earned through proof of special interest, e.g. TestAS, internships, certificates, competitions."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+            "quote": "we have included an eligibility test, which you will have to pass in order to be admitted. In the eligibility process, you have to earn eight points by submitting proof of your special interest in the programme."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Pour le semestre d'hiver 2026, il est vivement recommandé aux candidats titulaires d'un diplôme étranger de joindre le TestAS à leur candidature.",
+          "en": "For winter semester 2026, applicants with a foreign qualification are strongly advised to include TestAS in their application."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inf.ovgu.de/biba",
+            "quote": "Bewerbern für das Wintersemester 2026 mit einer im Ausland erworbenen Hochschulzugangsberechtigung wird dringend geraten, den TestAS als Teil der Bewerbung mit einzureichen, um die Chancen einer Zulassung zu erhöhen."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le niveau A1 en allemand est requis/recommandé mais aucune preuve n'est exigée ; veuillez consulter le site du cours.",
+          "en": "German language skills A1 are required/recommended, no proof required; please see the course website."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+            "quote": "German language skills A1 required/recommended, no proof required"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -23,24 +23,63 @@ durationYears:
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: semester
+  source: page-1
+  info_kind: official
 intakes:
   value: null
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-1
+  info_kind: official
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: officially-translated-certificates
+      name:
+        fr:
+          text: Certificats officiellement traduits
+          status: draft
+        en:
+          text: Officially translated certificates
+          status: draft
+      translationRequired: true
+    - slug: passport-id-card-copy
+      name:
+        fr:
+          text: Copie du passeport / de la carte d'identité
+          status: draft
+        en:
+          text: Copy of passport/ID card
+          status: draft
+      translationRequired: null
+    - slug: cv
+      name:
+        fr:
+          text: CV actuel
+          status: draft
+        en:
+          text: Current CV
+          status: draft
+      translationRequired: null
+    - slug: english-language-skills-proof
+      name:
+        fr:
+          text: Preuve de compétences en anglais
+          status: draft
+        en:
+          text: Proof of English language skills
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -51,3 +90,9 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7665/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://en.th-wildau.de/index.php?id=30638
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://en.th-wildau.de/study/application/degree-programmes/online-application
+    last_verified_at: 2026-10-02

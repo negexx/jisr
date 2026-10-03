@@ -1,10 +1,10 @@
 import { existsSync } from "node:fs";
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import { parse } from "yaml";
 
-import { discover, discoverBySearch, discoverFromRegister } from "./discover";
+import { discover, discoverBySearch, discoverFromRegister, registrable } from "./discover";
 import { PAGES } from "./enrich-fr";
 import { flagValue, loadMeta, pool } from "./reader";
 import {
@@ -15,19 +15,38 @@ import {
   withCache,
 } from "./search";
 import { DATA_DIR, STAGING_DIR, stageFile } from "./staging";
+import { discoverTopicPages, mergeTopicPages, TOPICS, type Topic } from "./topics";
 
 // Builds the pages file that data:read takes: for each programme, which pages to read.
 //   Germany: the DAAD register page, the programme's own page it links and the fee/application pages.
 //   France:  the Parcoursup fiche of the record, plus the shared Campus France pages.
 //   Netherlands: no register page per programme: with --search a web search restricted to the
 //                institution's site (a key in SERPER_API_KEY or BRAVE_API_KEY), else a weak homepage crawl.
-// Usage: data:pages --slugs <file> [--out <file>] [--concurrency 4] [--search] [--max-queries 300] [--dry-run]
+//   --topics adds, per institution, the pages found by four topic searches (fees, language, deadline,
+//   documents; PDFs allowed) to every programme's pages; it needs the same key as --search.
+// Usage: data:pages --slugs <file> [--out <file>] [--concurrency 4] [--search] [--topics] [--max-queries 300] [--dry-run]
 const DAAD_DETAIL =
   "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail";
 
 export function daadRegisterUrl(slug: string): string | null {
   const id = /daad([0-9]+)$/.exec(slug)?.[1];
   return id === undefined ? null : `${DAAD_DETAIL}/${id}/`;
+}
+
+export function dryRunSummary(input: {
+  useSearch: boolean;
+  useTopics: boolean;
+  searched: number;
+  institutions: number;
+  topicInstitutions: number;
+  cap: string;
+}): string {
+  const topicQueries = `at most ${input.topicInstitutions * TOPICS.length} topic queries`;
+  // upper bound: one programme query each, two institution-level queries per institution
+  const body = input.useSearch
+    ? `${input.searched} programmes need a search; at most ${input.searched + 2 * input.institutions} queries (cap ${input.cap})${input.useTopics ? `; plus ${topicQueries}` : ""}`
+    : `${topicQueries} (cap ${input.cap})`;
+  return `dry run: ${body}; no query sent, nothing written`;
 }
 
 export function mergePages(found: {
@@ -43,6 +62,38 @@ export function mergePages(found: {
       ),
     ),
   ];
+}
+
+// One programme's topic pages. A search that fails (a provider hiccup) costs that programme its
+// topic pages, not the whole run: its existing pages stay. Only the budget error stops the run.
+export async function addTopicPagesFor(
+  programmes: Record<string, string[]>,
+  slug: string,
+  find: () => Promise<Record<Topic, readonly string[]>>,
+  log: (line: string) => void,
+): Promise<"added" | "failed"> {
+  try {
+    programmes[slug] = mergeTopicPages(programmes[slug] ?? [], await find());
+    return "added";
+  } catch (error) {
+    if (error instanceof SearchBudgetExceeded) throw error;
+    log(`topic search failed for ${slug}: ${error instanceof Error ? error.message : error}`);
+    return "failed";
+  }
+}
+
+// The slugs skipped for lack of an institution website go next to the pages file. A listing left by
+// an earlier run is removed when nothing is skipped now, so it never reports stale slugs.
+export async function syncSkippedListing(
+  listing: string,
+  slugs: readonly string[],
+): Promise<string | null> {
+  if (slugs.length === 0) {
+    await rm(listing, { force: true });
+    return null;
+  }
+  await writeFile(listing, `${slugs.join("\n")}\n`);
+  return listing;
 }
 
 type Yaml = Record<string, unknown>;
@@ -80,16 +131,22 @@ async function main(argv: readonly string[]): Promise<void> {
     .filter(Boolean);
   const out = flag("out") ?? path.join(STAGING_DIR, "pages.json");
   const useSearch = argv.includes("--search");
+  const useTopics = argv.includes("--topics");
   const dryRun = argv.includes("--dry-run");
   const base = makeProvider();
-  if (useSearch && !dryRun && base === null)
-    throw new Error("--search needs a key: set SERPER_API_KEY or BRAVE_API_KEY in .env.local");
+  if ((useSearch || useTopics) && !dryRun && base === null)
+    throw new Error(
+      "--search and --topics need a key: set SERPER_API_KEY or BRAVE_API_KEY in .env.local",
+    );
   const search =
     base === null ? null : withCache(base, base.cacheable === true ? ".cache/search" : null);
   const budget = new QueryBudget(Number(flag("max-queries") ?? 300));
   const memo = new Map<string, Promise<SearchHit[]>>();
   let searched = 0;
   const institutions = new Set<string>();
+  const topicSites = new Set<string>();
+  const noWebsite: string[] = [];
+  let topicFailures = 0;
   const programmes: Record<string, string[]> = {};
   const stats: Record<string, { n: number; programme: number; fees: number; admission: number }> =
     {};
@@ -154,14 +211,41 @@ async function main(argv: readonly string[]): Promise<void> {
       if (found.admission.length > 0) stat.admission++;
       programmes[slug] = mergePages({ register: null, ...found });
     });
+    if (useTopics) {
+      await pool(slugs, Number(flag("concurrency") ?? 4), async (slug) => {
+        const meta = await loadMeta(slug);
+        const record = await recordOf(slug);
+        if (meta === null || record === null) return;
+        const website = await websiteOf(String(record.institution ?? ""));
+        if (website === null) {
+          noWebsite.push(slug);
+          return;
+        }
+        topicSites.add(registrable(website));
+        if (dryRun || search === null) return;
+        const outcome = await addTopicPagesFor(
+          programmes,
+          slug,
+          () => discoverTopicPages({ country: meta.country, website, search, budget, memo }),
+          console.error,
+        );
+        if (outcome === "failed") topicFailures++;
+      });
+    }
   } catch (error) {
     if (!(error instanceof SearchBudgetExceeded)) throw error;
     stopped = error.message;
   }
-  if (dryRun && useSearch) {
-    // upper bound: one programme query each, two institution-level queries per institution
+  if (dryRun && (useSearch || useTopics)) {
     console.log(
-      `dry run: ${searched} programmes need a search; at most ${searched + 2 * institutions.size} queries (cap ${flag("max-queries") ?? 300}); no query sent, nothing written`,
+      dryRunSummary({
+        useSearch,
+        useTopics,
+        searched,
+        institutions: institutions.size,
+        topicInstitutions: topicSites.size,
+        cap: flag("max-queries") ?? "300",
+      }),
     );
     return;
   }
@@ -175,7 +259,14 @@ async function main(argv: readonly string[]): Promise<void> {
     console.log(
       `${country}: ${s.n} programmes; programme page ${s.programme}, fee page ${s.fees}, admission page ${s.admission}`,
     );
-  if (useSearch) console.log(`search queries used: ${budget.used} (${base?.name ?? "none"})`);
+  if (useSearch || useTopics)
+    console.log(`search queries used: ${budget.used} (${base?.name ?? "none"})`);
+  if (useTopics) {
+    console.log(`topic searches failed: ${topicFailures} programmes kept their existing pages`);
+    console.log(`no institution website: ${noWebsite.length} programmes skipped`);
+    const listed = await syncSkippedListing(`${out}.skipped.txt`, noWebsite);
+    if (listed !== null) console.log(`   slugs -> ${listed}`);
+  }
   if (stopped !== null) console.log(`STOPPED: ${stopped} (partial pages file written)`);
   console.log(`-> ${out}`);
 }

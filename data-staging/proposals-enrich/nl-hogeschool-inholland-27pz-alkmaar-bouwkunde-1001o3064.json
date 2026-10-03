@@ -1,0 +1,27 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-alkmaar-bouwkunde-1001o3064",
+  "programmePage": "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar en Haarlem taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar en Haarlem taal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition for this programme could not be stated: the fee pages give institution-wide tariff tables (instellingscollegegeld voltijd €10.360 for 2026-2027) without naming this programme, and the one document that pairs a collegegeld amount with an international non-EU applicant (€ 2.695) is a Suriname visa page tied to a specific nationality, so no programme-specific non-EU tuition fact is included. No intakes, language-proficiency, subject or prior-study requirement specific to Bouwkunde is quoted in the supplied pages; the general In- and uitschrijfregels does not name this programme. Dutch-language programme: the pages' Dutch language requirement applies generally, but no quote names Bouwkunde, so no rule was added."
+}

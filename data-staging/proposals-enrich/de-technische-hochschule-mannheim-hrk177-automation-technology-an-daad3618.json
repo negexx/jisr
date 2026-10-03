@@ -1,0 +1,181 @@
+{
+  "slug": "de-technische-hochschule-mannheim-hrk177-automation-technology-an-daad3618",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3618/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3618/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3618/",
+          "quote": "The language of instruction is English for the first two semesters. Classes are conducted in German from the third semester onward."
+        },
+        {
+          "url": "https://www.ete.hs-mannheim.de/bachelor/apply.html",
+          "quote": "Language of instruction: Foundation studies in English, Advanced studies in German"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3618/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,500 EUR Tuition fees may vary"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.ete.hs-mannheim.de/bachelor/apply.html",
+          "quote": "Apply online via our application portal: https://campus.th-mannheim.de"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "CV",
+          "translationRequired": null
+        },
+        {
+          "slug": "english-language-proof",
+          "name": {
+            "fr": "Preuve de compétence en anglais",
+            "en": "English language proof"
+          },
+          "quotedAs": "English language proof",
+          "translationRequired": null
+        },
+        {
+          "slug": "school-leaving-certificates",
+          "name": {
+            "fr": "Certificats de fin d'études secondaires",
+            "en": "School leaving certificates"
+          },
+          "quotedAs": "School leaving certificates",
+          "translationRequired": null
+        },
+        {
+          "slug": "letter-of-reference",
+          "name": {
+            "fr": "Lettre de recommandation",
+            "en": "Letter of reference"
+          },
+          "quotedAs": "Letter of reference",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivational-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivational letter"
+          },
+          "quotedAs": "Motivational letter",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.ete.hs-mannheim.de/bachelor/apply.html",
+          "quote": "Required application documents School leaving certificates with grades and university transcripts of your current course of studies (if you are studying already) -- Upload one combined pdf scan max. size 5 MB. English language proof (IELTS, TOEFL, OTE) CV (written in English and up-to-date) Letter of reference (written in English) from one of your teachers or professors, preferably in Maths or Physics Motivational letter (written in English, maximum one A4 page)"
+        }
+      ]
+    }
+  },
+  "notes": "L'anglais B2 est requis avec certificat officiel (IELTS Academic 6.5, TOEFL iBT 88, OTE 130). Les dates limites de candidature sont le 15 mai pour les non-UE et le 31 juillet pour les UE. Les frais de scolarité de 1 500 EUR par semestre s'appliquent aux étudiants non-UE. Le programme dure 7 semestres (3,5 ans).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3618/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6.5 TOEFL iBT (before 2026): 88"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que vos qualifications scolaires permettent un accès direct au programme. Certains pays exigent des semestres supplémentaires ou un Studienkolleg. Voir la page 'Check here'.",
+          "en": "Check whether your school qualifications allow direct access to the programme. Some countries require additional semesters or a Studienkolleg. See the 'Check here' page."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ete.hs-mannheim.de/bachelor/apply.html",
+            "quote": "Check whether your school qualifications can lead to direct access to our international BSc programme or whether you would need additional academic experience or additional tests to be eligible to apply with us."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats de certains pays peuvent avoir besoin de semestres supplémentaires ou d'un Studienkolleg. Vérifiez les conditions pour votre pays.",
+          "en": "Applicants from some countries may need additional semesters or a Studienkolleg. Check the requirements for your country."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ete.hs-mannheim.de/bachelor/apply.html",
+            "quote": "Applicants from some countries require additional academic experience on top of their higher education entrance qualification. They need to attend a certain number of semesters in a Bachelor course in engineering in their home country or alternatively they can complete a Studienkolleg in Germany prior to their application to Technische Hochschule Mannheim."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats doivent avoir un très bon certificat de fin d'études. Le comité d'admission se concentre sur les notes en mathématiques et en physique.",
+          "en": "Applicants should have a very good school-leaving certificate. The admissions committee focuses on your grades in Maths and Physics."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ete.hs-mannheim.de/bachelor/apply.html",
+            "quote": "applicants should have a very good school-leaving certificate or university transcript. Our admissions committee focuses on your grades in Maths and Physics."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Nous recommandons aux candidats d'avoir au moins 18 ans au début des études.",
+          "en": "We highly recommend that applicants are at least 18 years old when they start their studies."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ete.hs-mannheim.de/bachelor/apply.html",
+            "quote": "We highly recommend that applicants are at least 18 years old when they start their studies."
+          }
+        ]
+      }
+    ]
+  }
+}

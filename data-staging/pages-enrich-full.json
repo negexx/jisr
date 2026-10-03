@@ -1,0 +1,2067 @@
+{
+  "shared": {
+    "FR": [
+      "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+      "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+      "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces",
+      "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut"
+    ]
+  },
+  "programmes": {
+    "de-bard-college-berlin-a-liberal-arts-unive-hrk437-ba-in-economics-politics-daad4537": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4537/",
+      "https://berlin.bard.edu/admissions/finances/",
+      "https://berlin.bard.edu/admissions/finances/tuition-and-fees/",
+      "https://berlin.bard.edu/admissions/how-to-apply/application-requirements/"
+    ],
+    "de-ebs-universitat-fur-wirtschaft-und-recht-hrk206-bachelors-in-business-st-daad4080": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/",
+      "https://www.ebs.edu/en/ebs-business-school/study-programmes/bachelor-in-business-studies/finance-and-fintech-specialisation?utm_source=wkz-EB31210AB",
+      "https://www.ebs.edu/en/student-financing?utm_source=wkz-EB31210AB",
+      "https://www.ebs.edu/fileadmin/EBS/Vertragsunterlagen/Gebuehrenordnung_Bachelor_in_LPE_ab_FT_23.pdf",
+      "https://www.ebs.edu/bewerben",
+      "https://www.ebs.edu/ebs-business-school/master-in-management"
+    ],
+    "de-baden-wuerttemberg-cooperative-state-uni-daad-mosbach-new-study-computer-scien-daad10648": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10648/",
+      "https://www.mosbach.dhbw.de/newstudy/",
+      "https://www.mosbach.dhbw.de/international/de/foerderung-finanzierung/",
+      "https://www.dhbw.de/informationen/studieninteressierte",
+      "https://www.dhbw.de/application",
+      "https://www.mosbach.dhbw.de/studium/bewerberboerse/",
+      "https://www.mannheim.dhbw.de/en/dual-study/admission-application/admission-fees",
+      "https://www.cas.dhbw.de/studiengebuehren/",
+      "https://www.cas.dhbw.de/bewerbung/",
+      "https://www.mosbach.dhbw.de/studium/studienangebot-bachelor/bwl-international-business/double-degree-program/"
+    ],
+    "de-carl-von-ossietzky-universitat-oldenburg-hrk209-bachelor-of-engineering-daad3772": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3772/",
+      "https://uol.de/en/physics/studies/courseofstudies/ep",
+      "https://uol.de/en/students/fees/financing-your-studies",
+      "https://uol.de/en/students/fees",
+      "https://uol.de/en/students/application",
+      "https://uol.de/en/students/study-entry",
+      "https://uol.de/studium/gebuehren",
+      "https://uol.de/studium/gebuehren/gebuehrenpflichtige-studiengaenge",
+      "https://uol.de/studium/bewerben/internationale-studierende/master",
+      "https://uol.de/bewerben/internationale-studierende/humanmedizin"
+    ],
+    "de-ebs-universitat-fur-wirtschaft-und-recht-hrk206-bachelors-in-law-politic-daad8558": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8558/",
+      "https://www.ebs.edu/en/student-financing?utm_source=wkz-EB31253AB",
+      "https://www.ebs.edu/fileadmin/EBS/Vertragsunterlagen/Gebuehrenordnung_Bachelor_in_LPE_ab_FT_23.pdf",
+      "https://www.ebs.edu/bewerben",
+      "https://www.ebs.edu/ebs-business-school/master-in-management"
+    ],
+    "de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad4009": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4009/",
+      "https://www.fh-aachen.de/studium/studiengaenge/maschinenbau-beng-juelich"
+    ],
+    "de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad3998": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/",
+      "https://www.fh-aachen.de/studium/studiengaenge/elektrotechnik-energietechnik-beng"
+    ],
+    "de-fachhochschule-aachen-hrk2-global-business-and-econ-daad4849": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+      "https://www.fh-aachen.de/studium/studiengaenge/global-business-and-economics-bsc/studieninhalte"
+    ],
+    "de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad4011": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4011/",
+      "https://www.fh-aachen.de/studium/studiengaenge/angewandte-physik-beng"
+    ],
+    "de-fh-munster-university-of-applied-science-hrk192-international-business-m-daad3910": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3910/",
+      "https://www.fh-muenster.de/de/msb/ofis/out-ebp"
+    ],
+    "de-fh-munster-university-of-applied-science-hrk192-international-business-m-daad3911": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3911/",
+      "https://www.fh-muenster.de/de/msb/ofis/out-cala"
+    ],
+    "de-frankfurt-school-of-finance-management-hrk83-bachelors-in-computation-daad9740": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9740/",
+      "https://www.frankfurt-school.de/en/study/bachelor/bachelor-science/bachelor-computational-business-analytics",
+      "https://www.frankfurt-school.de/de",
+      "https://www.frankfurt-school.de/students-alumni/financing",
+      "https://applybachelors.frankfurt-school.de/aide",
+      "https://www.frankfurt-school.de/en/study/master/master-of-finance",
+      "https://www.frankfurt-school.de/study/master/master-in-corporate-performance-and-restructuring",
+      "https://www.frankfurt-school.de/de/students-alumni/financing",
+      "https://www.frankfurt-school.de/de/study/bachelor/bachelor-in-business-administration",
+      "https://www.frankfurt-school.de/de/study/mba-emba/mba-executives-kinshasa"
+    ],
+    "de-frankfurt-school-of-finance-management-hrk83-bachelors-in-management-daad9700": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9700/",
+      "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+      "https://www.frankfurt-school.de/de",
+      "https://www.frankfurt-school.de/students-alumni/financing",
+      "https://applybachelors.frankfurt-school.de/mpe",
+      "https://www.frankfurt-school.de/en/study/master/master-of-finance",
+      "https://www.frankfurt-school.de/study/master/master-in-corporate-performance-and-restructuring",
+      "https://www.frankfurt-school.de/de/students-alumni/financing",
+      "https://www.frankfurt-school.de/de/study/bachelor/bachelor-in-business-administration",
+      "https://www.frankfurt-school.de/de/study/mba-emba/mba-executives-kinshasa"
+    ],
+    "de-friedrich-alexander-universitat-erlangen-hrk70-artificial-intelligence-daad9594": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/",
+      "https://www.ai.study.fau.eu/",
+      "https://www.fau.eu/studying/international-students/application-and-enrollment-for-international-applicants/tuition-fees-for-students-from-non-eu-states/",
+      "https://www.ai.study.fau.eu/prospective-students/bachelor-ai/application/",
+      "https://www.ai.study.fau.eu/prospective-students/bachelor-ai/admission-test/",
+      "https://www.fau.de/studium/international-studierende/bewerbung-und-einschreibung-fuer-internationale/studiengebuehren-fuer-studierende-aus-nicht-eu-staaten/",
+      "https://www.fau.de/studium/studienorganisation/studienfinanzierung/studienkosten/",
+      "https://fau.de/studiengang/international-business-studies-b-sc",
+      "https://www.fau.de/studium/international-studierende/bewerbung-und-einschreibung-fuer-internationale/bewerbung-fuer-internationale-fuer-ein-masterstudium/",
+      "https://www.fau.de/studium/bewerbung-und-zulassung/bewerbung-masterstudium/"
+    ],
+    "de-friedrich-alexander-universitat-erlangen-hrk70-nurnberg-international-business-s-daad6913": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6913/",
+      "https://www.international-business-economics.wiso.rw.fau.eu/",
+      "https://www.fau.eu/studying/international-students/application-and-enrollment-for-international-applicants/tuition-fees-for-students-from-non-eu-states/",
+      "https://www.international-business-economics.wiso.rw.fau.eu/application/",
+      "https://www.fau.de/studium/international-studierende/bewerbung-und-einschreibung-fuer-internationale/studiengebuehren-fuer-studierende-aus-nicht-eu-staaten/",
+      "https://www.fau.de/studium/studienorganisation/studienfinanzierung/studienkosten/",
+      "https://fau.de/studiengang/international-business-studies-b-sc",
+      "https://www.fau.de/studium/international-studierende/bewerbung-und-einschreibung-fuer-internationale/bewerbung-fuer-internationale-fuer-ein-masterstudium/",
+      "https://www.fau.de/studium/bewerbung-und-zulassung/bewerbung-masterstudium/"
+    ],
+    "de-fachhochschule-aachen-hrk2-julich-bachelor-of-science-in-i-daad11243": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11243/",
+      "https://www.fh-aachen.de/studium/studiengaenge/wirtschaftsingenieurwesen-nachhaltige-energiesysteme-bsc"
+    ],
+    "de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad10638": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10638/",
+      "https://www.hs-aalen.de/en/courses/152",
+      "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+      "https://www.hs-aalen.de/en/application-studying/application-process/",
+      "https://www.hs-aalen.de/fileadmin/content/redakteure/einrichtungen/Studentische_Abteilung/Studierenden_Service_Center/Gesamt%C3%BCberblick_Geb%C3%BChren_EN.pdf",
+      "https://www.hs-aalen.de/abteilungen-einrichtungen/studentische-abteilung/satzungen/gebuehrensatzungen-sonstige-satzungen/",
+      "https://www.hs-aalen.de/bewerbung-studium/bewerbungsprozess/",
+      "https://www.hs-aalen.de/"
+    ],
+    "de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad9904": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9904/",
+      "https://www.hs-aalen.de/en/courses/141",
+      "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+      "https://www.hs-aalen.de/en/application-studying/application-process/",
+      "https://www.hs-aalen.de/fileadmin/content/redakteure/einrichtungen/Studentische_Abteilung/Studierenden_Service_Center/Gesamt%C3%BCberblick_Geb%C3%BChren_EN.pdf",
+      "https://www.hs-aalen.de/abteilungen-einrichtungen/studentische-abteilung/satzungen/gebuehrensatzungen-sonstige-satzungen/",
+      "https://www.hs-aalen.de/bewerbung-studium/bewerbungsprozess/",
+      "https://www.hs-aalen.de/"
+    ],
+    "de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad9905": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9905/",
+      "https://www.hs-aalen.de/en/courses/142",
+      "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+      "https://www.hs-aalen.de/en/application-studying/application-process/",
+      "https://www.hs-aalen.de/fileadmin/content/redakteure/einrichtungen/Studentische_Abteilung/Studierenden_Service_Center/Gesamt%C3%BCberblick_Geb%C3%BChren_EN.pdf",
+      "https://www.hs-aalen.de/abteilungen-einrichtungen/studentische-abteilung/satzungen/gebuehrensatzungen-sonstige-satzungen/",
+      "https://www.hs-aalen.de/bewerbung-studium/bewerbungsprozess/",
+      "https://www.hs-aalen.de/"
+    ],
+    "de-hochschule-albstadt-sigmaringen-hrk4-albstadt-industrial-engineering-daad9996": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9996/",
+      "https://www.hs-albsig-international.de//field-of-studies/industrial-engineering",
+      "https://www.hs-albsig-international.de//application",
+      "https://www.hs-albsig-international.de/application",
+      "https://www.hs-albsig.de/studieninfos/im-studium/studentische-abteilung/semesterbeitrag-und-studiengebuehren/",
+      "https://www.hs-albsig.de/fileadmin/user_upload/hsas/02_organisationseinheiten/studentische_abteilung/downloads/formulare/S_10_Erstattungsantrag_Studiengebuehren_20260127-english_Formular.pdf",
+      "https://www.hs-albsig.de/studieninfos/bewerbung/faq-bewerbung/"
+    ],
+    "de-hochschule-albstadt-sigmaringen-hrk4-albstadt-mechanical-engineering-daad9993": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9993/",
+      "https://www.hs-albsig.de/studienangebot/bachelorstudiengaenge/maschinenbau/",
+      "https://www.hs-albsig.de/studieninfos/im-studium/studentische-abteilung/semesterbeitrag-und-studiengebuehren/",
+      "https://www.hs-albsig.de/hochschule/verwaltung/finanzen-und-beschaffung/",
+      "https://www.hs-albsig.de/studienangebot/bachelorstudiengaenge/it-security-studium/faq-bewerbung/",
+      "https://www.hs-albsig.de/studienangebot/bachelorstudiengaenge/textil-und-bekleidungstechnologie/faq-bewerbung/",
+      "https://www.hs-albsig.de/fileadmin/user_upload/hsas/02_organisationseinheiten/studentische_abteilung/downloads/formulare/S_10_Erstattungsantrag_Studiengebuehren_20260127-english_Formular.pdf",
+      "https://www.hs-albsig.de/studieninfos/bewerbung/faq-bewerbung/"
+    ],
+    "de-hochschule-bielefeld-university-of-appli-hrk28-gutersloh-beng-industrial-engineer-daad9711": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/",
+      "https://www.hsbi.de/en/academics/academic-programs/study-programmes-english-taught",
+      "https://www.hsbi.de/en/international-office/ways-abroad/financing",
+      "https://www.hsbi.de/en/research/financing-your-doctorate",
+      "https://www.hsbi.de/en/careers/advice-on-your-application",
+      "https://www.hsbi.de/en/international-office/international-applicants/applying-for-work-integrated-programmes",
+      "https://www.hsbi.de/rueckmeldung",
+      "https://www.hsbi.de/media/hochschulverwaltung/dezernat-vi/archiv/internationale-studierende/hsbi_guide-for-international-students.pdf",
+      "https://www.hsbi.de/studium/bewerbung/schritt-fuer-schritt-von-der-bewerbung-bis-zur-einschreibung",
+      "https://www.hsbi.de/studium/bewerbung/hoeheres-fachsemester"
+    ],
+    "de-hochschule-bonn-rhein-sieg-university-of-hrk294-international-business-b-daad5225": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5225/",
+      "https://www.h-brs.de/en/wiwi/study/bachelor/international-business",
+      "https://www.h-brs.de/en/d5/fees",
+      "https://www.h-brs.de/en/d3",
+      "https://www.h-brs.de/en/d5/admission-requirements",
+      "https://www.h-brs.de/en/node/103665",
+      "https://www.h-brs.de/de/d5/gebuehren",
+      "https://www.h-brs.de/en/financing",
+      "https://www.h-brs.de/de/d5/bewerbung-zulassung-einschreibung",
+      "https://www.h-brs.de/de/inf/zugang-bewerbung-master-autonomous-systems"
+    ],
+    "de-hochschule-bielefeld-university-of-appli-hrk28-gutersloh-beng-mechatronics-and-au-daad10585": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10585/",
+      "https://www.hsbi.de/en/academics/academic-programs/study-programmes-english-taught",
+      "https://www.hsbi.de/en/international-office/ways-abroad/financing",
+      "https://www.hsbi.de/en/research/financing-your-doctorate",
+      "https://www.hsbi.de/en/careers/advice-on-your-application",
+      "https://www.hsbi.de/en/international-office/international-applicants/applying-for-work-integrated-programmes",
+      "https://www.hsbi.de/rueckmeldung",
+      "https://www.hsbi.de/media/hochschulverwaltung/dezernat-vi/archiv/internationale-studierende/hsbi_guide-for-international-students.pdf",
+      "https://www.hsbi.de/studium/bewerbung/schritt-fuer-schritt-von-der-bewerbung-bis-zur-einschreibung",
+      "https://www.hsbi.de/studium/bewerbung/hoeheres-fachsemester"
+    ],
+    "de-hochschule-bremerhaven-hrk41-international-tourism-ma-daad7839": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7839/",
+      "https://www.hs-bremerhaven.de/en/itm",
+      "https://www.hs-bremerhaven.de/bachelorbewerbung",
+      "https://ecampus.hs-bremerhaven.de/"
+    ],
+    "de-hochschule-bremerhaven-hrk41-sustainable-process-engi-daad10400": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10400/",
+      "https://www.hs-bremerhaven.de/en/study/application-for-bachelor-courses",
+      "https://ecampus.hs-bremerhaven.de/"
+    ],
+    "de-hochschule-der-medien-stuttgart-hrk250-social-media-marketing-m-daad9705": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9705/",
+      "https://sm-bachelor.hdm-stuttgart.de/",
+      "https://hdm-stuttgart.de/en/before-your-studies/requirements/costs/",
+      "https://sm-bachelor.hdm-stuttgart.de/admission",
+      "https://hdm-stuttgart.de/vor-dem-studium/voraussetzungen/kosten/",
+      "https://hdm-stuttgart.de/en/before-the-study/application/information-on-enrolment/",
+      "https://hdm-stuttgart.de/vmlab/studieninteressierte/bewerber/bewerbung_master",
+      "https://hdm-stuttgart.de/vor-dem-studium/bewerbung/bewerbung-master/",
+      "https://hdm-stuttgart.de/dc/smm/admission/application_step_by_step",
+      "https://hdm-stuttgart.de/vor-dem-studium/bewerbung/bachelor/"
+    ],
+    "de-hochschule-fresenius-heidelberg-staatlic-hrk440-international-business-b-daad11098": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11098/",
+      "https://www.hs-fresenius.com/application-process/?crmid=aBbTjOcDaAaAaAaA",
+      "https://www.hs-fresenius.com/application/?crmid=aBcTjOcDaAjAsqAaA",
+      "https://www.hs-fresenius.de/kosten/",
+      "https://www.hs-fresenius.de/fernstudium/bewerbungsprozess",
+      "https://www.hs-fresenius.de/bewerbungsprozess/"
+    ],
+    "de-hochschule-fresenius-university-of-appli-daad-koln-computer-science-bsc-daad9952": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9952/",
+      "https://www.hs-fresenius.com/application-process/?crmid=aBbTjOcDaAaAaAaA",
+      "https://www.hs-fresenius.com/application/?crmid=aBbTjOcDaAaAaAaA"
+    ],
+    "de-hochschule-fulda-university-of-applied-s-hrk92-industrial-engineering-l-daad9640": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9640/",
+      "https://www.hs-fulda.de/en/international/costs-and-funding",
+      "https://www.hs-fulda.de/en/studieren/my-studies/finance-studies/scholarships/deutschlandstipendium",
+      "https://www.hs-fulda.de/en/study/how-do-i-apply/application-with-international-transcripts-of-records",
+      "https://www.hs-fulda.de/internationales/international-office/wege-nach-fulda/kosten-und-finanzierung",
+      "https://www.hs-fulda.de/studium/studienorganisation/rueckmeldung/semesterbeitrag",
+      "https://www.hs-fulda.de/gesundheitswissenschaften/studium/internationales/bewerbungen-und-deadlines",
+      "https://www.hs-fulda.de/studium/wie-bewerbe-ich-mich",
+      "https://www.hs-fulda.de/hochschule/hochschule-als-arbeitgeberin/einstellung-internationaler-wissenschaftlerinnen"
+    ],
+    "de-hochschule-fulda-university-of-applied-s-hrk92-international-business-a-daad10425": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10425/",
+      "https://www.hs-fulda.de/en/studyprogramme/international-business-administration-bsc",
+      "https://www.hs-fulda.de/en/international/costs-and-funding",
+      "https://www.hs-fulda.de/en/studium/costs-funding-and-scholarships",
+      "https://www.hs-fulda.de/en/study/information-for-your-application",
+      "https://www.hs-fulda.de/en/study/how-do-i-apply",
+      "https://www.hs-fulda.de/internationales/international-office/wege-nach-fulda/kosten-und-finanzierung",
+      "https://www.hs-fulda.de/studium/studienorganisation/rueckmeldung/semesterbeitrag",
+      "https://www.hs-fulda.de/gesundheitswissenschaften/studium/internationales/bewerbungen-und-deadlines",
+      "https://www.hs-fulda.de/studium/wie-bewerbe-ich-mich"
+    ],
+    "de-hochschule-fulda-university-of-applied-s-hrk92-international-business-m-daad5651": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/",
+      "https://www.hs-fulda.de/ibm",
+      "https://www.hs-fulda.de/studium/kosten-finanzierung-stipendien",
+      "https://www.hs-fulda.de/internationales/international-office/wege-nach-fulda/kosten-und-finanzierung",
+      "https://www.hs-fulda.de/en/study/how-do-i-apply/application-with-international-transcripts-of-records/bachelor/english-language-requirements",
+      "https://www.hs-fulda.de/studium/ihre-bewerbung",
+      "https://www.hs-fulda.de/studium/studienorganisation/rueckmeldung/semesterbeitrag",
+      "https://www.hs-fulda.de/gesundheitswissenschaften/studium/internationales/bewerbungen-und-deadlines",
+      "https://www.hs-fulda.de/studium/wie-bewerbe-ich-mich",
+      "https://www.hs-fulda.de/hochschule/hochschule-als-arbeitgeberin/einstellung-internationaler-wissenschaftlerinnen"
+    ],
+    "de-hochschule-fur-angewandte-wissenschaften-hrk143-international-engineerin-daad9922": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9922/",
+      "https://www.hs-kempten.de/international-engineering",
+      "https://www.hs-kempten.de/studium/finanzierung",
+      "https://www.hs-kempten.de/en/my-university/structure-of-studies/dates-and-deadlines/re-enrolment-semester-fee-leave-of-absence-exmatriculation",
+      "https://www.hs-kempten.de/studium/bewerbung/bachelor",
+      "https://www.hs-kempten.de/studium/bewerbung",
+      "https://www.hs-kempten.de/international/incoming/vollstudierende/finanzierung-und-kosten",
+      "https://www.hs-kempten.de/international/incoming/servicegebuehren-fuer-studierende-aus-nicht-eu-laendern",
+      "https://www.hs-kempten.de/international/incoming/vollstudierende/wie-bewerbe-ich-mich",
+      "https://www.hs-kempten.de/studium/bewerbung/master/unterlagen"
+    ],
+    "de-hochschule-fur-angewandte-wissenschaften-hrk264-applied-informatics-daad9990": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9990/",
+      "https://www.hswt.de/en/study/before-the-study/application",
+      "https://www.hswt.de/studium/im-studium/finanzielles/semesterbeitraege",
+      "https://www.hswt.de/studium/im-studium/finanzielles",
+      "https://www.hswt.de/studium/vor-dem-studium/bewerbung",
+      "https://www.hswt.de/studium/studienangebot/master/farm-management"
+    ],
+    "de-hochschule-fur-angewandte-wissenschaften-hrk287-computer-science-bsc-daad7216": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7216/",
+      "https://www.hof-university.com/studying-at-hof-university/our-degree-programs/computer-science-international-bsc.html",
+      "https://www.hof-university.com/studying-at-hof-university/preparing-your-stay/how-to-finance-your-studies.html",
+      "https://www.hof-university.com/studying-at-hof-university/application-and-admission.html",
+      "https://www.hof-university.com/international/studying-in-hof-as-an-exchange-student/application-process-for-exchange-students.html",
+      "https://www.hof-university.de/international/wege-nach-hof/finanzierung-und-arbeiten-in-deutschland.html",
+      "https://www.hof-university.de/studium/studiengaenge-und-weiterbildungs-programme/studiengaenge/berufspaedagogik-im-gesundheitswesen-ba.html",
+      "https://www.hof-university.de/studium/informationen/bewerbung-und-zulassung/internationale-bewerber.html",
+      "https://www.hof-university.de/studium/studiengaenge-und-weiterbildungs-programme/studiengaenge/global-management-ma.html",
+      "https://www.hof-university.de/fileadmin/user_upload/ask/Broschuere_Wege_ins_Ausland_07-2025.pdf"
+    ],
+    "de-hochschule-fur-angewandte-wissenschaften-hrk287-engineering-science-beng-daad9934": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9934/",
+      "https://www.hof-university.com/studying-at-hof-university/our-degree-programs/engineering-science-international-beng.html",
+      "https://www.hof-university.com/studying-at-hof-university/preparing-your-stay/how-to-finance-your-studies.html",
+      "https://www.hof-university.com/studying-at-hof-university/application-and-admission.html",
+      "https://www.hof-university.com/international/studying-in-hof-as-an-exchange-student/application-process-for-exchange-students.html",
+      "https://www.hof-university.de/international/wege-nach-hof/finanzierung-und-arbeiten-in-deutschland.html",
+      "https://www.hof-university.de/studium/studiengaenge-und-weiterbildungs-programme/studiengaenge/berufspaedagogik-im-gesundheitswesen-ba.html",
+      "https://www.hof-university.de/studium/informationen/bewerbung-und-zulassung/internationale-bewerber.html",
+      "https://www.hof-university.de/studium/studiengaenge-und-weiterbildungs-programme/studiengaenge/global-management-ma.html",
+      "https://www.hof-university.de/fileadmin/user_upload/ask/Broschuere_Wege_ins_Ausland_07-2025.pdf"
+    ],
+    "de-hochschule-fur-angewandte-wissenschaften-hrk287-environmental-engineerin-daad9933": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9933/",
+      "https://www.hof-university.com/studying-at-hof-university/our-degree-programs/environmental-engineering-beng.html",
+      "https://www.hof-university.com/studying-at-hof-university/preparing-your-stay/how-to-finance-your-studies.html",
+      "https://www.hof-university.com/studying-at-hof-university/application-and-admission.html",
+      "https://www.hof-university.com/international/studying-in-hof-as-an-exchange-student/application-process-for-exchange-students.html",
+      "https://www.hof-university.de/international/wege-nach-hof/finanzierung-und-arbeiten-in-deutschland.html",
+      "https://www.hof-university.de/studium/studiengaenge-und-weiterbildungs-programme/studiengaenge/berufspaedagogik-im-gesundheitswesen-ba.html",
+      "https://www.hof-university.de/studium/informationen/bewerbung-und-zulassung/internationale-bewerber.html",
+      "https://www.hof-university.de/studium/studiengaenge-und-weiterbildungs-programme/studiengaenge/global-management-ma.html",
+      "https://www.hof-university.de/fileadmin/user_upload/ask/Broschuere_Wege_ins_Ausland_07-2025.pdf"
+    ],
+    "de-hochschule-fur-angewandte-wissenschaften-hrk291-engineering-physics-and-daad9655": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/",
+      "https://sci.hm.edu/studierende/studiengaenge/bachelor/engineering_physics_and_datascience/index.en.html",
+      "https://hm.edu/studium_1/bewerbung/bachelor_bewerbung/index.en.html",
+      "https://sci.hm.edu/studierende/termine_fristen/index.en.html",
+      "https://hm.edu/studium_1/bewerbung/faq_gebuehren_non_eu_auslaender.de.html",
+      "https://mediapool.hm.edu/media/dachmarke/dm_lokal/hauptabteilung2/bereichimma_1/pdfsinfoszurbewerbung/01_Hochschulgebuehrensatzung.pdf",
+      "https://hm.edu/studium_1/bewerbung/termine_1/index.de.html",
+      "https://hm.edu/studium_1/bewerbung/master_bewerbung/index.de.html",
+      "https://mediapool.hm.edu/media/dachmarke/dm_lokal/hm_international/wegeindiewelt/studium_1/erfahrungsberichtenoneu/ss_24/SoS19_Erfahrung_Taylors_FK14_AT.pdf",
+      "https://hm.edu/internationales/wege_an_die_hm/exchange/index.de.html"
+    ],
+    "de-hochschule-fur-angewandte-wissenschaften-hrk312-applied-sustainable-engi-daad10455": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/",
+      "https://www.hs-ansbach.de/en/bachelor/applied-sustainable-engineering",
+      "https://www.hs-ansbach.de/en/bachelor/business-administration/banking-finance-and-investment",
+      "https://www.hs-ansbach.de/en/bachelor/business-informatics/artificial-intelligence-and-analytics-for-business-applications",
+      "https://www.hs-ansbach.de/en/info/for-prospective-students/applying-for-our-bachelors-and-masters-degree-programmes",
+      "https://www.hs-ansbach.de/en/info/for-prospective-students/general-information",
+      "https://www.hs-ansbach.de/infos/fuer-studieninteressierte/allgemeine-informationen",
+      "https://www.hs-ansbach.de/infos/fuer-studieninteressierte/bewerbung-bachelor-und-masterstudiengaenge",
+      "https://www.hs-ansbach.de/infos/fuer-studieninteressierte/bewerbung-bachelor-und-masterstudiengaenge/bewerbungsverfahren-fuer-zulassungsfreie-studiengaenge",
+      "https://www.hs-ansbach.de/master/internationales-produkt-und-servicemanagement"
+    ],
+    "de-hochschule-fur-angewandte-wissenschaften-hrk44-engineering-physics-daad10481": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10481/",
+      "https://www.hs-coburg.de/en/study/bachelor-degree-programs/bachelors-degree-programs-in-engineering-and-computer-science/engineering-physics/",
+      "https://www.hs-coburg.de/en/study/registration-and-enrollment/international-applicants/tuition-fees-for-students-from-non-eu-countries/",
+      "https://www.hs-coburg.de/en/study/registration-and-enrollment/entry-into-the-higher-semester/",
+      "https://www.hs-coburg.de/studieren/anmelden-und-einschreiben/internationale-bewerberinnen/tuition-fees-for-students-from-non-eu-countries/",
+      "https://www.hs-coburg.de/en/coburg-university-2/organization/service-centers/department-of-student-affairs/semester-fee/",
+      "https://www.hs-coburg.de/studieren/anmelden-und-einschreiben/internationale-bewerberinnen/"
+    ],
+    "de-hochschule-fur-angewandte-wissenschaften-hrk44-international-bachelors-daad10381": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10381/",
+      "https://www.hs-coburg.de/en/automation-and-robotics/",
+      "https://www.hs-coburg.de/en/study/registration-and-enrollment/international-applicants/tuition-fees-for-students-from-non-eu-countries/",
+      "https://www.hs-coburg.de/en/study/registration-and-enrollment/entry-into-the-higher-semester/",
+      "https://www.hs-coburg.de/studieren/anmelden-und-einschreiben/internationale-bewerberinnen/tuition-fees-for-students-from-non-eu-countries/",
+      "https://www.hs-coburg.de/en/coburg-university-2/organization/service-centers/department-of-student-affairs/semester-fee/",
+      "https://www.hs-coburg.de/studieren/anmelden-und-einschreiben/internationale-bewerberinnen/"
+    ],
+    "de-hochschule-fur-angewandte-wissenschaften-hrk44-international-bachelors-daad10398": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10398/",
+      "https://www.hs-coburg.de/en/electrical-engineering-for-sustainable-and-renewable-energy/",
+      "https://www.hs-coburg.de/en/study/registration-and-enrollment/international-applicants/tuition-fees-for-students-from-non-eu-countries/",
+      "https://www.hs-coburg.de/en/coburg-university-2/organization/service-centers/department-of-student-affairs/semester-fee/",
+      "https://www.hs-coburg.de/en/study/registration-and-enrollment/entry-into-the-higher-semester/",
+      "https://www.hs-coburg.de/studieren/anmelden-und-einschreiben/internationale-bewerberinnen/tuition-fees-for-students-from-non-eu-countries/",
+      "https://www.hs-coburg.de/studieren/anmelden-und-einschreiben/internationale-bewerberinnen/"
+    ],
+    "de-hochschule-fur-angewandte-wissenschaften-hrk44-kronach-digital-business-models-daad10485": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10485/",
+      "https://www.hs-coburg.de/en/digital-business/",
+      "https://www.hs-coburg.de/en/study/registration-and-enrollment/international-applicants/tuition-fees-for-students-from-non-eu-countries/?customize_changeset_uuid=80551e2b-db75-4314-856a-62f753dd5b0c&customize_autosaved=on&customize_messenger_channel=preview-0",
+      "https://www.hs-coburg.de/en/coburg-university-2/organization/service-centers/department-of-student-affairs/semester-fee/",
+      "https://www.hs-coburg.de/en/study/registration-and-enrollment/entry-into-the-higher-semester/",
+      "https://www.hs-coburg.de/studieren/anmelden-und-einschreiben/internationale-bewerberinnen/tuition-fees-for-students-from-non-eu-countries/",
+      "https://www.hs-coburg.de/studieren/anmelden-und-einschreiben/internationale-bewerberinnen/"
+    ],
+    "de-hochschule-fur-angewandte-wissenschaften-hrk44-mechanical-engineering-daad10350": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10350/",
+      "https://www.hs-coburg.de/en/mechanical-engineering/",
+      "https://www.hs-coburg.de/en/study/registration-and-enrollment/international-applicants/tuition-fees-for-students-from-non-eu-countries/",
+      "https://www.hs-coburg.de/en/study/registration-and-enrollment/entry-into-the-higher-semester/",
+      "https://www.hs-coburg.de/studieren/anmelden-und-einschreiben/internationale-bewerberinnen/tuition-fees-for-students-from-non-eu-countries/",
+      "https://www.hs-coburg.de/en/coburg-university-2/organization/service-centers/department-of-student-affairs/semester-fee/",
+      "https://www.hs-coburg.de/studieren/anmelden-und-einschreiben/internationale-bewerberinnen/"
+    ],
+    "de-hochschule-fur-technik-und-wirtschaft-dr-hrk54-bachelor-electrical-engi-daad4762": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+      "https://www.htw-dresden.de/en/university/faculties/electrical-engineering/studies/bachelor-electrical-engineering",
+      "https://www.htw-dresden.de/en/studies/counselling-services/financing-and-housing",
+      "https://www.htw-dresden.de/en/studies/while-studying/student-service/re-registration",
+      "https://www.htw-dresden.de/en/studies/before-the-study/application-and-admission",
+      "https://www.htw-dresden.de/studium/im-studium/studierendenservice/rueckmeldung",
+      "https://www.htw-dresden.de/studium/beratung/finanzierung-und-wohnen",
+      "https://www.htw-dresden.de/studium/vor-dem-studium/bewerbung-und-zulassung/master",
+      "https://www.htw-dresden.de/studium/vor-dem-studium/bewerbung-und-zulassung/bewerbung-bachelor-und-diplom"
+    ],
+    "de-hochschule-furtwangen-informatik-technik-hrk94-villingen-schwenningen-international-engineerin-daad4203": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4203/",
+      "https://www.hs-furtwangen.de/en/programmes/international-engineering-bachelor/",
+      "https://www.hs-furtwangen.de/en/information-directory/financing",
+      "https://www.hs-furtwangen.de/en/studium/studiengaenge/international-business-management-bachelor/hfu-smart-admission",
+      "https://www.hs-furtwangen.de/en/study/application",
+      "https://www.hs-furtwangen.de/fileadmin/user_upload/ze_sa/Gebuehren/2_Semesterbeitrag_176_Bachelor_und_Master_Zahlungsinformation.pdf",
+      "https://www.hs-furtwangen.de/studium/bewerbung/immatrikulation",
+      "https://www.hs-furtwangen.de/studium/international/internationale-studierende-mit-abschlussziel",
+      "https://www.hs-furtwangen.de/studium/bewerbung",
+      "https://www.hs-furtwangen.de/fileadmin/Redaktion/Share/SPOs__Satzungen_und_Modulkataloge/Master/fak_4/MBA_Zulassungssatzung.pdf"
+    ],
+    "de-hochschule-geisenheim-hrk446-international-wine-busin-daad8448": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8448/",
+      "https://www.hs-geisenheim.de/en/studies/prospective-students/bachelors-programs/international-wine-business-bsc-english-program",
+      "https://www.hs-geisenheim.de/en/studies/prospective-students/study-costs-and-financing",
+      "https://www.hs-geisenheim.de/en/university/organization/administrative-units/finance-controlling",
+      "https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/",
+      "https://www.hs-geisenheim.de/en/studies/prospective-students/application",
+      "https://www.hs-geisenheim.de/studium/studieninteressierte/kosten-und-finanzierung-eines-studiums",
+      "https://www.hs-geisenheim.de/studium/studierende/studierendenbuero",
+      "https://www.hs-geisenheim.de/hochschule/mitteilungen-veranstaltungen-termine/nachrichten/archiv/detailansicht/wurmkompost-verfuegbar",
+      "https://www.hs-geisenheim.de/studium/studieninteressierte/bewerbung/informationen-fuer-internationale-bewerberinnen"
+    ],
+    "de-hochschule-hamm-lippstadt-hrk399-lippstadt-electronic-engineering-daad4876": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4876/",
+      "https://www.hshl.de/en/studying/en-study-programs/en-bachelors-programs/en-electronic-engineering/",
+      "https://www.hshl.de/en/studying/online-registration/",
+      "https://www.hshl.de/studieren/erstsemester/bafoeg-semesterbeitrag-ticket/",
+      "https://www.hshl.de/en/studying/information-about-your-studies/",
+      "https://www.hshl.de/assets/01-Studieren/International-Office/Internationale-Studierende/3.2-Jobsuche-in-Deutschland.pdf",
+      "https://www.hshl.de/assets/01-Studieren/International-Office/Internationale-Studierende/240116_Checkliste-fuer-neue-int.-Studierende-SoSe-2024-+-ELE-WiSe-2024.pdf",
+      "https://www.hshl.de/studieren/studieninteressierte/bewerbung-einschreibung/"
+    ],
+    "de-hochschule-hannover-hrk115-biotechnology-and-enviro-daad7747": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7747/",
+      "https://f2.hs-hannover.de/internationales/information-for-incomings-wege-an-die-fakultaet-ii/intotechnology/",
+      "https://www.hs-hannover.de/ueber-uns/organisation/akademische-angelegenheiten/studierende/semesterbeitrag-und-rueckmeldung",
+      "https://f2.hs-hannover.de/internationales/wege-ins-ausland-outgoings/finanzielle-foerderung",
+      "https://www.hs-hannover.de/ueber-uns/organisation/akademische-angelegenheiten/studieninteressierte/bewerbung",
+      "https://www.hs-hannover.de/ueber-uns/organisation/akademische-angelegenheiten/studieninteressierte/bewerbung/notwendige-bewerbungsunterlagen",
+      "https://www.hs-hannover.de/ueber-uns/organisation/servicezentrum-beratung/studienberatung/kosten-des-studiums",
+      "https://www.hs-hannover.de/ueber-uns/organisation/akademische-angelegenheiten/studieninteressierte/bewerbung/bewerbung-mit-auslaendischen-bildungsnachweisen",
+      "https://f4.hs-hannover.de/studium/bachelor-studiengaenge/international-business-studies-ibs",
+      "https://serwiss.bib.hs-hannover.de/files/1172/spectrum_2000-2.pdf"
+    ],
+    "de-frankfurt-school-of-finance-management-hrk83-bachelors-in-business-ad-daad9678": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9678/",
+      "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-businessadministration",
+      "https://www.frankfurt-school.de/de",
+      "https://www.frankfurt-school.de/en/study/master/master-of-finance",
+      "https://www.frankfurt-school.de/study/master/master-in-corporate-performance-and-restructuring",
+      "https://www.frankfurt-school.de/de/students-alumni/financing",
+      "https://www.frankfurt-school.de/de/study/bachelor/bachelor-in-business-administration",
+      "https://www.frankfurt-school.de/de/study/mba-emba/mba-executives-kinshasa",
+      "https://www.frankfurt-school.de/de/home/study/professional-development/bankfachwirt"
+    ],
+    "de-hochschule-heilbronn-technik-wirtschaft-hrk125-artificial-intelligence-daad10364": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10364/",
+      "https://www.hs-heilbronn.de/de/kuenstliche-intelligenz-und-industrielle-digitalisierung",
+      "https://www.hs-heilbronn.de/de/finanzierung",
+      "https://www.hs-heilbronn.de/en/tuition-fees",
+      "https://www.hs-heilbronn.de/de/bewerbung-bachelor",
+      "https://www.hs-heilbronn.de/en/bachelor-application",
+      "https://www.hs-heilbronn.de/de/studiengebuehren",
+      "https://www.hs-heilbronn.de/de/services-fuer-internationale-studierende",
+      "https://cdn.hs-heilbronn.de/9185b0144d1ae84f/dcff2ab273a8/IBIS-Modulhandbuch_BA5_Eng_09.12.2021.pdf"
+    ],
+    "de-hochschule-heilbronn-technik-wirtschaft-hrk125-automotive-systems-engin-daad11004": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11004/",
+      "https://www.hs-heilbronn.de/en/automotive-systems-engineering",
+      "https://www.hs-heilbronn.de/en/tuition-fees",
+      "https://www.hs-heilbronn.de/en/bachelor-application",
+      "https://www.hs-heilbronn.de/en/master-application",
+      "https://www.hs-heilbronn.de/de/studiengebuehren",
+      "https://www.hs-heilbronn.de/de/services-fuer-internationale-studierende",
+      "https://cdn.hs-heilbronn.de/9185b0144d1ae84f/dcff2ab273a8/IBIS-Modulhandbuch_BA5_Eng_09.12.2021.pdf"
+    ],
+    "de-hochschule-heilbronn-technik-wirtschaft-hrk125-electrical-systems-engin-daad6320": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6320/",
+      "https://www.hs-heilbronn.de/en/ese",
+      "https://www.hs-heilbronn.de/en/tuition-fees",
+      "https://www.hs-heilbronn.de/en/expenses",
+      "https://www.hs-heilbronn.de/en/bachelor-application",
+      "https://www.hs-heilbronn.de/en/master-application",
+      "https://www.hs-heilbronn.de/de/studiengebuehren",
+      "https://www.hs-heilbronn.de/de/services-fuer-internationale-studierende",
+      "https://cdn.hs-heilbronn.de/9185b0144d1ae84f/dcff2ab273a8/IBIS-Modulhandbuch_BA5_Eng_09.12.2021.pdf"
+    ],
+    "de-hochschule-heilbronn-technik-wirtschaft-hrk125-environmental-and-proces-daad10371": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10371/",
+      "https://www.hs-heilbronn.de/en/environmental-and-process-engineering?mtm_campaign=daad-international-programmes&mtm_kwd=UP",
+      "https://www.hs-heilbronn.de/en/tuition-fees",
+      "https://www.hs-heilbronn.de/en/master-application",
+      "https://www.hs-heilbronn.de/en/checklist-for-bachelor-applicants-2f2f62a1ac1a86e6",
+      "https://www.hs-heilbronn.de/de/studiengebuehren",
+      "https://www.hs-heilbronn.de/de/services-fuer-internationale-studierende",
+      "https://cdn.hs-heilbronn.de/9185b0144d1ae84f/dcff2ab273a8/IBIS-Modulhandbuch_BA5_Eng_09.12.2021.pdf"
+    ],
+    "de-hochschule-heilbronn-technik-wirtschaft-hrk125-international-business-daad3930": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3930/",
+      "https://www.hs-heilbronn.de/en/international-business?mtm_campaign=daad-international-programmes&mtm_kwd=IB-E",
+      "https://www.hs-heilbronn.de/en/tuition-fees",
+      "https://www.hs-heilbronn.de/en/expenses",
+      "https://www.hs-heilbronn.de/en/bachelor-application",
+      "https://www.hs-heilbronn.de/en/admission-requirements-b-a-international-business-ib-e-507d1d798b7dde7e",
+      "https://www.hs-heilbronn.de/de/studiengebuehren",
+      "https://www.hs-heilbronn.de/de/services-fuer-internationale-studierende",
+      "https://cdn.hs-heilbronn.de/9185b0144d1ae84f/dcff2ab273a8/IBIS-Modulhandbuch_BA5_Eng_09.12.2021.pdf"
+    ],
+    "de-hochschule-heilbronn-technik-wirtschaft-hrk125-intelligent-mechatronic-daad10366": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10366/",
+      "https://www.hs-heilbronn.de/en/intelligent-mechatronic-systems",
+      "https://www.hs-heilbronn.de/en/tuition-fees",
+      "https://www.hs-heilbronn.de/en/expenses",
+      "https://www.hs-heilbronn.de/en/bachelor-application",
+      "https://www.hs-heilbronn.de/en/master-application",
+      "https://www.hs-heilbronn.de/de/studiengebuehren",
+      "https://www.hs-heilbronn.de/de/services-fuer-internationale-studierende",
+      "https://cdn.hs-heilbronn.de/9185b0144d1ae84f/dcff2ab273a8/IBIS-Modulhandbuch_BA5_Eng_09.12.2021.pdf"
+    ],
+    "de-hochschule-heilbronn-technik-wirtschaft-hrk125-international-business-i-daad9674": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9674/",
+      "https://www.hs-heilbronn.de/en/international-business-intercultural-studies?mtm_campaign=daad-international-programmes&mtm_kwd=IBIS",
+      "https://www.hs-heilbronn.de/en/tuition-fees",
+      "https://www.hs-heilbronn.de/en/expenses",
+      "https://www.hs-heilbronn.de/en/application-documents-for-international-applicants-7146fc1973180a74",
+      "https://www.hs-heilbronn.de/en/master-application",
+      "https://www.hs-heilbronn.de/de/studiengebuehren",
+      "https://www.hs-heilbronn.de/de/services-fuer-internationale-studierende",
+      "https://cdn.hs-heilbronn.de/9185b0144d1ae84f/dcff2ab273a8/IBIS-Modulhandbuch_BA5_Eng_09.12.2021.pdf"
+    ],
+    "de-hochschule-heilbronn-technik-wirtschaft-hrk125-mechanical-engineering-daad11005": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11005/",
+      "https://www.hs-heilbronn.de/en/mechanical-engineering",
+      "https://www.hs-heilbronn.de/en/tuition-fees",
+      "https://www.hs-heilbronn.de/en/bachelor-application",
+      "https://www.hs-heilbronn.de/en/master-application",
+      "https://www.hs-heilbronn.de/de/studiengebuehren",
+      "https://www.hs-heilbronn.de/de/services-fuer-internationale-studierende",
+      "https://cdn.hs-heilbronn.de/9185b0144d1ae84f/dcff2ab273a8/IBIS-Modulhandbuch_BA5_Eng_09.12.2021.pdf"
+    ],
+    "de-hochschule-heilbronn-technik-wirtschaft-hrk125-mechatronics-and-robotic-daad6265": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6265/",
+      "https://www.hs-heilbronn.de/en/mechatronics-and-robotics",
+      "https://www.hs-heilbronn.de/en/tuition-fees",
+      "https://www.hs-heilbronn.de/en/expenses",
+      "https://www.hs-heilbronn.de/en/master-application",
+      "https://www.hs-heilbronn.de/en/checklist-for-bachelor-applicants-2f2f62a1ac1a86e6",
+      "https://www.hs-heilbronn.de/de/studiengebuehren",
+      "https://www.hs-heilbronn.de/de/services-fuer-internationale-studierende",
+      "https://cdn.hs-heilbronn.de/9185b0144d1ae84f/dcff2ab273a8/IBIS-Modulhandbuch_BA5_Eng_09.12.2021.pdf"
+    ],
+    "de-hochschule-heilbronn-technik-wirtschaft-hrk125-schwabisch-hall-global-digital-marketing-daad9677": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9677/",
+      "https://www.hs-heilbronn.de/en/global-digital-marketing-and-sales?mtm_campaign=daad-international-programmes&mtm_kwd=GDMS",
+      "https://www.hs-heilbronn.de/en/tuition-fees",
+      "https://www.hs-heilbronn.de/de/finanzierung",
+      "https://www.hs-heilbronn.de/en/bachelor-application",
+      "https://www.hs-heilbronn.de/en/master-application",
+      "https://www.hs-heilbronn.de/de/studiengebuehren",
+      "https://www.hs-heilbronn.de/de/services-fuer-internationale-studierende",
+      "https://cdn.hs-heilbronn.de/9185b0144d1ae84f/dcff2ab273a8/IBIS-Modulhandbuch_BA5_Eng_09.12.2021.pdf"
+    ],
+    "de-hochschule-kaiserslautern-university-of-hrk306-mechanical-engineering-b-daad9743": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9743/",
+      "https://www.hs-kl.de/en/angewandte-ingenieurwissenschaften/international/me-bachelor-international",
+      "https://www.hs-kl.de/en/hochschule/referate-stabsstellen/allgemeine-studienberatung/finanzielles",
+      "https://www.hs-kl.de/en/international/from-abroad/costs",
+      "https://www.hs-kl.de/en/studying/application/entry-requirements",
+      "https://www.hs-kl.de/en/studying/application",
+      "https://www.hs-kl.de/international/aus-dem-ausland/kosten",
+      "https://www.hs-kl.de/en/studying/application/enrollment-from-germany/deadlines",
+      "https://www.hs-kl.de/en/studying/application/apply-from-abroad"
+    ],
+    "de-hochschule-kaiserslautern-university-of-hrk306-pirmasens-leather-and-textile-engi-daad10643": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10643/",
+      "https://hs-kl.de/en/angewandte-logistik-und-polymerwissenschaften/studiengaenge/leather-and-textile-engineering",
+      "https://hs-kl.de/en/hochschule/referate-stabsstellen/allgemeine-studienberatung/finanzielles",
+      "https://hs-kl.de/en/international/from-abroad/costs",
+      "https://hs-kl.de/en/studying/application",
+      "https://hs-kl.de/en/studying/application/apply-from-abroad",
+      "https://www.hs-kl.de/en/international/from-abroad/costs",
+      "https://www.hs-kl.de/international/aus-dem-ausland/kosten",
+      "https://www.hs-kl.de/en/studying/application/enrollment-from-germany/deadlines",
+      "https://www.hs-kl.de/en/studying/application/apply-from-abroad"
+    ],
+    "de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken-international-business-a-daad10690": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10690/",
+      "https://www.hs-kl.de/en/international/from-abroad/costs",
+      "https://www.hs-kl.de/international/aus-dem-ausland/kosten",
+      "https://www.hs-kl.de/en/studying/application/enrollment-from-germany/deadlines",
+      "https://www.hs-kl.de/en/studying/application/apply-from-abroad"
+    ],
+    "de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken-international-business-a-daad9036": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9036/",
+      "https://hs-kl.de/betriebswirtschaft/studiengaenge/bachelor/international-business-administration",
+      "https://hs-kl.de/hochschule/referate-stabsstellen/allgemeine-studienberatung/finanzielles",
+      "https://hs-kl.de/international/aus-dem-ausland/kosten",
+      "https://hs-kl.de/studium/bewerbung-einschreibung",
+      "https://hs-kl.de/studium/bewerbung-einschreibung/bewerbung-aus-deutschland",
+      "https://www.hs-kl.de/en/international/from-abroad/costs",
+      "https://www.hs-kl.de/international/aus-dem-ausland/kosten",
+      "https://www.hs-kl.de/en/studying/application/enrollment-from-germany/deadlines",
+      "https://www.hs-kl.de/en/studying/application/apply-from-abroad"
+    ],
+    "de-hochschule-karlsruhe-technik-und-wirtsch-hrk138-bsc-in-mechanical-engine-daad3918": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3918/",
+      "https://www.carlbenzschool.kit.edu/",
+      "https://www.carlbenzschool.kit.edu/costs-fees.php",
+      "https://www.carlbenzschool.kit.edu/begin-your-application-journey.php",
+      "https://www.carlbenzschool.kit.edu/admission-requirements.php",
+      "https://www.h-ka.de/studieren/studienberatung/studienfinanzierung",
+      "https://www.h-ka.de/eeib",
+      "https://www.h-ka.de/oskar/bewerbung",
+      "https://www.h-ka.de/apply",
+      "https://www.h-ka.de/praktikum-beim-cern"
+    ],
+    "de-hochschule-koblenz-hrk305-marketing-and-internatio-daad11241": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11241/",
+      "https://www.hs-koblenz.de/wiso/mba-fernstudienprogramm/fuer-studieninteressierte/kosten",
+      "https://www.hs-koblenz.de/studieninteressierte/master-human-resource-management-berufsbegleitend/kosten-und-leistungen",
+      "https://www.hs-koblenz.de/studieninteressierte/bewerbung-einschreibung/bewerbungsfristen",
+      "https://www.hs-koblenz.de/studieninteressierte/master-business-management-teilzeit/bewerbung-und-zulassung",
+      "https://www.hs-koblenz.de/international/international-office/studieren-in-koblenz/austauschstudium/wichtiges-zum-aufenthalt",
+      "https://www.hs-koblenz.de/fileadmin/media/fb_wirtschaftswissenschaften/Formulare-Dokumente/Modulhandbuch/modulhandbuch_master/Modulhandbuch_Master_PO26__Stand_16.09.26.pdf"
+    ],
+    "de-hochschule-karlsruhe-technik-und-wirtsch-hrk138-electrical-engineering-a-daad7695": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7695/",
+      "https://www.h-ka.de/en/eeib/profile",
+      "https://www.h-ka.de/en/study/guidance-counseling/financing",
+      "https://www.h-ka.de/en/discover/application/applying-for-bachelor/application",
+      "https://www.h-ka.de/en/discover/application/applying-for-master/application",
+      "https://www.h-ka.de/studieren/studienberatung/studienfinanzierung",
+      "https://www.h-ka.de/eeib",
+      "https://www.h-ka.de/oskar/bewerbung",
+      "https://www.h-ka.de/apply",
+      "https://www.h-ka.de/praktikum-beim-cern"
+    ],
+    "de-hochschule-landshut-hochschule-fur-angew-hrk157-dingolfing-sustainable-industrial-o-daad11085": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11085/",
+      "https://www.haw-landshut.de/en/faculties/electrical-industrial-engineering/study/bachelor-degree-programmes/sustainable-industrial-operations-and-business",
+      "https://www.haw-landshut.de/en/international/outgoing/studium-im-ausland/financing",
+      "https://www.haw-landshut.de/en/financing-your-studies",
+      "https://www.haw-landshut.de/en/fakultaeten/elektrotechnik-wirtschaftsingenieurwesen/studium/bachelor-studiengaenge/sustainable-industrial-operations-and-business/application-and-admission",
+      "https://www.haw-landshut.de/en/application/bachelor-application/international-applicants",
+      "https://www.haw-landshut.de/internationales/incoming/studiengebuehren",
+      "https://www.haw-landshut.de/angebote/master-studiengaenge/prozessmanagement-und-ressourceneffizienz/gebuehren",
+      "https://www.haw-landshut.de/bewerbung/bachelor-bewerbung/internationale-bewerbungen",
+      "https://www.haw-landshut.de/internationales/incoming/international-program-students"
+    ],
+    "de-hochschule-mainz-hrk310-bsc-in-international-bus-daad10402": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10402/",
+      "https://hs-mz.de/ib",
+      "https://hs-mz.de/studium/im-studium/finanzierung-und-stipendien/",
+      "https://hs-mz.de/studium/vor-dem-studium/bewerbung/uebersicht/",
+      "https://hs-mz.de/studium/studiengaenge/wirtschaft/international-business-bsc/bewerben/",
+      "https://www.hs-mainz.de/studium/studiengaenge/wirtschaft/business-law-berufsbegleitend-llm/uebersicht/",
+      "https://www.hs-mainz.de/studium/studiengaenge/wirtschaft/taxation-llm/uebersicht/",
+      "https://www.hs-mainz.de/studium/studiengaenge/wirtschaft/cyber-security-management-bsc/bewerben-vollzeit/",
+      "https://www.hs-mainz.de/studium/studiengaenge/wirtschaft/international-business-bsc/bewerben/",
+      "https://www.hs-mainz.de/studium/studiengaenge/wirtschaft/international-business-ma/bewerben/bewerbung-mit-europaeischem-bachelorabschluss/"
+    ],
+    "de-hochschule-mainz-hrk310-international-civil-engi-daad7151": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7151/",
+      "https://www.hs-mainz.de/en/academics/degree-programs/engineering/international-civil-engineering-beng/overview/",
+      "https://www.hs-mainz.de/en/academics/during-your-studies/financing-your-studies-and-scholarships/",
+      "https://www.hs-mainz.de/en/academics/before-your-studies/applying/overview/",
+      "https://www.hs-mainz.de/en/academics/degree-programs/engineering/international-civil-engineering-beng/how-to-apply/",
+      "https://www.hs-mainz.de/studium/studiengaenge/wirtschaft/business-law-berufsbegleitend-llm/uebersicht/",
+      "https://www.hs-mainz.de/studium/studiengaenge/wirtschaft/taxation-llm/uebersicht/",
+      "https://www.hs-mainz.de/studium/studiengaenge/wirtschaft/cyber-security-management-bsc/bewerben-vollzeit/",
+      "https://www.hs-mainz.de/studium/studiengaenge/wirtschaft/international-business-bsc/bewerben/",
+      "https://www.hs-mainz.de/studium/studiengaenge/wirtschaft/international-business-ma/bewerben/bewerbung-mit-europaeischem-bachelorabschluss/"
+    ],
+    "de-hochschule-osnabruck-hrk214-computer-science-daad11217": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11217/",
+      "https://www.hs-osnabrueck.de/studium/rund-ums-studium/finanzierung/",
+      "https://www.hs-osnabrueck.de/studium/rund-ums-studium/studienorganisation/",
+      "https://www.hs-osnabrueck.de/studium/rund-ums-studium/bewerbung/",
+      "https://www.hs-osnabrueck.de/studium/studienangebot/bachelor/internationale-betriebswirtschaft-und-management-ba/bewerbung/",
+      "https://www.hs-osnabrueck.de/studium/rund-ums-studium/bewerbung/bewerbung-mit-internationalen-zeugnissen/",
+      "https://www.hs-osnabrueck.de/studienangebot/master/management-in-nonprofit-organisations-ma/bewerbung/"
+    ],
+    "de-hochschule-osnabruck-hrk214-engineering-sciences-daad11216": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11216/",
+      "https://www.hs-osnabrueck.de/studium/studienangebot/bachelor/ingenieurwissenschaften-bsc/",
+      "https://www.hs-osnabrueck.de/studium/rund-ums-studium/finanzierung/",
+      "https://www.hs-osnabrueck.de/studium/internationales/fuer-internationale-studieninteressierte/finanzieren-und-wohnen/",
+      "https://www.hs-osnabrueck.de/studium/rund-ums-studium/bewerbung/",
+      "https://www.hs-osnabrueck.de/studium/studienangebot/bachelor/ingenieurwissenschaften-bsc/bewerbung/",
+      "https://www.hs-osnabrueck.de/studium/rund-ums-studium/studienorganisation/",
+      "https://www.hs-osnabrueck.de/studium/studienangebot/bachelor/internationale-betriebswirtschaft-und-management-ba/bewerbung/",
+      "https://www.hs-osnabrueck.de/studium/rund-ums-studium/bewerbung/bewerbung-mit-internationalen-zeugnissen/",
+      "https://www.hs-osnabrueck.de/studienangebot/master/management-in-nonprofit-organisations-ma/bewerbung/"
+    ],
+    "de-hochschule-osnabruck-hrk214-international-business-a-daad11037": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11037/",
+      "https://www.hs-osnabrueck.de/studium/studienangebot/bachelor/internationale-betriebswirtschaft-und-management-ba/",
+      "https://www.hs-osnabrueck.de/studium/rund-ums-studium/finanzierung/",
+      "https://www.hs-osnabrueck.de/studium/internationales/fuer-internationale-studieninteressierte/finanzieren-und-wohnen/",
+      "https://www.hs-osnabrueck.de/studium/studienangebot/bachelor/internationale-betriebswirtschaft-und-management-ba/bewerbung/",
+      "https://www.hs-osnabrueck.de/studium/rund-ums-studium/bewerbung/",
+      "https://www.hs-osnabrueck.de/studium/rund-ums-studium/studienorganisation/",
+      "https://www.hs-osnabrueck.de/studium/rund-ums-studium/bewerbung/bewerbung-mit-internationalen-zeugnissen/",
+      "https://www.hs-osnabrueck.de/studienangebot/master/management-in-nonprofit-organisations-ma/bewerbung/"
+    ],
+    "de-hochschule-osnabruck-hrk214-international-economics-daad9923": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9923/",
+      "https://www.hs-osnabrueck.de/en/study/study-offerings/bachelor/international-economics-and-sustainability-ba/",
+      "https://www.hs-osnabrueck.de/en/study/all-about-studying/financing-studies/",
+      "https://www.hs-osnabrueck.de/en/study/international/for-international-prospective-students/financing-and-housing/",
+      "https://www.hs-osnabrueck.de/en/study/study-offerings/bachelor/international-economics-and-sustainability-ba/how-to-apply/",
+      "https://www.hs-osnabrueck.de/en/study/all-about-studying/application/",
+      "https://www.hs-osnabrueck.de/studium/rund-ums-studium/finanzierung/",
+      "https://www.hs-osnabrueck.de/studium/rund-ums-studium/studienorganisation/",
+      "https://www.hs-osnabrueck.de/studium/rund-ums-studium/bewerbung/",
+      "https://www.hs-osnabrueck.de/studium/studienangebot/bachelor/internationale-betriebswirtschaft-und-management-ba/bewerbung/"
+    ],
+    "de-hochschule-pforzheim-gestaltung-technik-hrk219-business-administration-daad4659": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4659/",
+      "https://www.hs-pforzheim.de/bdbm",
+      "https://www.hs-pforzheim.de/en/international/studying_in_pforzheim/regular_degree_students/application_procedure",
+      "https://campus.hs-pforzheim.de/qisserver/pages/cs/sys/portal/hisinoneStartPage.faces",
+      "https://www.hs-pforzheim.de/fileadmin/user_upload/uploads_redakteur/Studentische_Abteilung/Dokumente/Gebuehren/Studiengebuehren_Auskunftsformular_PF.pdf",
+      "https://designpf.hs-pforzheim.de/faqs/kosten",
+      "https://designpf.hs-pforzheim.de/faqs/bewerbungsfristen",
+      "https://designpf.hs-pforzheim.de/bewerben_ma",
+      "https://www.hs-pforzheim.de/international/studieren_im_ausland/studieren_an_einer_partnerhochschule/bewerbung",
+      "https://businesspf.hs-pforzheim.de/studium/bewerbungsverfahren"
+    ],
+    "de-hochschule-ravensburg-weingarten-hrk224-electrical-engineering-a-daad3993": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3993/",
+      "https://www.rwu.de/en/study/courses/electrical-engineering-and-information-technology-en",
+      "https://www.rwu.de/en/studies/study-organization/financing-and-security",
+      "https://www.rwu.de/en/international/international-degree-seeking-students/financing",
+      "https://www.rwu.de/en/application-and-enrollment",
+      "https://www.rwu.de/en/international/international-degree-seeking-students/study-offer-and-application",
+      "https://www.rwu.de/international/internationale-vollzeitstudierende/finanzierung",
+      "https://www.rwu.de/studium/service-fuer-studierende/studierenden-service",
+      "https://www.rwu.de/bewerbung-und-immatrikulation",
+      "https://www.rwu.de/en/international/abroad/possibilities-students"
+    ],
+    "de-hochschule-ravensburg-weingarten-hrk224-mechanical-engineering-i-daad7827": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7827/",
+      "https://www.rwu.de/en/study/courses/mechanical-engineering-international-project-engineering-international-variant",
+      "https://www.rwu.de/en/studies/study-organization/financing-and-security",
+      "https://www.rwu.de/en/international/international-degree-seeking-students/financing",
+      "https://www.rwu.de/en/international/international-degree-seeking-students/study-offer-and-application",
+      "https://www.rwu.de/en/application-and-enrollment",
+      "https://www.rwu.de/international/internationale-vollzeitstudierende/finanzierung",
+      "https://www.rwu.de/studium/service-fuer-studierende/studierenden-service",
+      "https://www.rwu.de/bewerbung-und-immatrikulation",
+      "https://www.rwu.de/en/international/abroad/possibilities-students"
+    ],
+    "de-hochschule-ravensburg-weingarten-hrk224-mechatronics-daad9717": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9717/",
+      "https://www.rwu.de/en/studies/study-programs/mechatronics-en-0",
+      "https://www.rwu.de/en/studies/study-organization/financing-and-security",
+      "https://www.rwu.de/en/international/international-degree-seeking-students/financing",
+      "https://www.rwu.de/en/application-and-enrollment",
+      "https://www.rwu.de/en/international/international-degree-seeking-students/study-offer-and-application",
+      "https://www.rwu.de/international/internationale-vollzeitstudierende/finanzierung",
+      "https://www.rwu.de/studium/service-fuer-studierende/studierenden-service",
+      "https://www.rwu.de/bewerbung-und-immatrikulation",
+      "https://www.rwu.de/en/international/abroad/possibilities-students"
+    ],
+    "de-hochschule-reutlingen-hochschule-fur-tec-hrk227-esb-business-school-inte-daad3871": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3871/",
+      "https://www.reutlingen-university.de/studium/finanzierung",
+      "https://www.reutlingen-university.de/studium/bewerbung",
+      "https://www.reutlingen-university.de/studium/studienangebot",
+      "https://www.tec.reutlingen-university.de/studium/internationales/outgoings-austauschsemester-fuer-reutlinger-tec-studierende",
+      "https://www.reutlingen-university.de/fileadmin/University/Hochschule/Downloads/Amtsblatt_-_OEffentliche_Bekanntmachungen/2025/Q2/20250214_Draft_IMX_Auswahlsatzung_AY_2526_SBu_KA.pdf"
+    ],
+    "de-hochschule-rhein-waal-university-of-appl-hrk400-agribusiness-ba-daad4229": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4229/",
+      "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/agribusiness-ba",
+      "https://www.hochschule-rhein-waal.de/en/studieren/all-about-university-life/costs-and-funding",
+      "https://www.hochschule-rhein-waal.de/en/studieren/all-about-university-life/costs-and-funding/living-costs-in-germany",
+      "https://www.hochschule-rhein-waal.de/en/academics/prospective-students/current-application-period/bachelors-programmes",
+      "https://www.hochschule-rhein-waal.de/en/study/before-starting-university/application-process",
+      "https://www.hochschule-rhein-waal.de/studieren/rund-ums-studium/kosten-und-finanzierung",
+      "https://www.hochschule-rhein-waal.de/de?id=79&L=1&tx_ttnews%255Btt_news%255D=904&cHash=679b0206d9&page=1%2C%2C%2C%2C%2C%2C%2C%2C%2C%2C42",
+      "https://www.hochschule-rhein-waal.de/de/news/bewerbungsfrist-bis-15-september-verlaengert",
+      "https://www.hochschule-rhein-waal.de/studieren/vor-dem-studium/studierende-aus-dem-ausland-1"
+    ],
+    "de-hochschule-rhein-waal-university-of-appl-hrk400-bioengineering-bsc-daad4320": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+      "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc",
+      "https://www.hochschule-rhein-waal.de/en/studieren/all-about-university-life/costs-and-funding",
+      "https://www.hochschule-rhein-waal.de/en/studieren/all-about-university-life/costs-and-funding/living-costs-in-germany",
+      "https://www.hochschule-rhein-waal.de/en/academics/prospective-students/current-application-period/bachelors-programmes",
+      "https://www.hochschule-rhein-waal.de/en/study/before-starting-university/application-process",
+      "https://www.hochschule-rhein-waal.de/studieren/rund-ums-studium/kosten-und-finanzierung",
+      "https://www.hochschule-rhein-waal.de/de?id=79&L=1&tx_ttnews%255Btt_news%255D=904&cHash=679b0206d9&page=1%2C%2C%2C%2C%2C%2C%2C%2C%2C%2C42",
+      "https://www.hochschule-rhein-waal.de/de/news/bewerbungsfrist-bis-15-september-verlaengert",
+      "https://www.hochschule-rhein-waal.de/studieren/vor-dem-studium/studierende-aus-dem-ausland-1"
+    ],
+    "de-hochschule-rhein-waal-university-of-appl-hrk400-engineering-bsc-daad4220": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4220/",
+      "https://www.hochschule-rhein-waal.de/en/faculties/technology-and-bionics/degree-programmes/bachelor-study-programmes/engineering-bsc",
+      "https://www.hochschule-rhein-waal.de/en/studieren/all-about-university-life/costs-and-funding",
+      "https://www.hochschule-rhein-waal.de/en/studieren/all-about-university-life/costs-and-funding/living-costs-in-germany",
+      "https://www.hochschule-rhein-waal.de/en/academics/prospective-students/current-application-period/bachelors-programmes",
+      "https://www.hochschule-rhein-waal.de/en/study/before-starting-university/application-process",
+      "https://www.hochschule-rhein-waal.de/studieren/rund-ums-studium/kosten-und-finanzierung",
+      "https://www.hochschule-rhein-waal.de/de?id=79&L=1&tx_ttnews%255Btt_news%255D=904&cHash=679b0206d9&page=1%2C%2C%2C%2C%2C%2C%2C%2C%2C%2C42",
+      "https://www.hochschule-rhein-waal.de/de/news/bewerbungsfrist-bis-15-september-verlaengert",
+      "https://www.hochschule-rhein-waal.de/studieren/vor-dem-studium/studierende-aus-dem-ausland-1"
+    ],
+    "de-hochschule-rhein-waal-university-of-appl-hrk400-engineering-for-sustaina-daad4219": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4219/",
+      "https://www.hochschule-rhein-waal.de/en/faculties/technology-and-bionics/degree-programmes/bachelor-study-programmes/engineering",
+      "https://www.hochschule-rhein-waal.de/en/studieren/all-about-university-life/costs-and-funding",
+      "https://www.hochschule-rhein-waal.de/en/studieren/all-about-university-life/costs-and-funding/living-costs-in-germany",
+      "https://www.hochschule-rhein-waal.de/en/academics/prospective-students/current-application-period/bachelors-programmes",
+      "https://www.hochschule-rhein-waal.de/en/study/before-starting-university/application-process",
+      "https://www.hochschule-rhein-waal.de/studieren/rund-ums-studium/kosten-und-finanzierung",
+      "https://www.hochschule-rhein-waal.de/de?id=79&L=1&tx_ttnews%255Btt_news%255D=904&cHash=679b0206d9&page=1%2C%2C%2C%2C%2C%2C%2C%2C%2C%2C42",
+      "https://www.hochschule-rhein-waal.de/de/news/bewerbungsfrist-bis-15-september-verlaengert",
+      "https://www.hochschule-rhein-waal.de/studieren/vor-dem-studium/studierende-aus-dem-ausland-1"
+    ],
+    "de-hochschule-rhein-waal-university-of-appl-hrk400-international-business-a-daad4210": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4210/",
+      "https://www.hochschule-rhein-waal.de/en/faculties/society-and-economics/degree-programmes/international-business-and-management-ba",
+      "https://www.hochschule-rhein-waal.de/en/studieren/all-about-university-life/costs-and-funding",
+      "https://www.hochschule-rhein-waal.de/en/studieren/all-about-university-life/costs-and-funding/living-costs-in-germany",
+      "https://www.hochschule-rhein-waal.de/en/study/before-starting-university/application-process",
+      "https://www.hochschule-rhein-waal.de/en/study/during-your-studies/semester-dates-and-deadlines",
+      "https://www.hochschule-rhein-waal.de/studieren/rund-ums-studium/kosten-und-finanzierung",
+      "https://www.hochschule-rhein-waal.de/de?id=79&L=1&tx_ttnews%255Btt_news%255D=904&cHash=679b0206d9&page=1%2C%2C%2C%2C%2C%2C%2C%2C%2C%2C42",
+      "https://www.hochschule-rhein-waal.de/de/news/bewerbungsfrist-bis-15-september-verlaengert",
+      "https://www.hochschule-rhein-waal.de/studieren/vor-dem-studium/studierende-aus-dem-ausland-1"
+    ],
+    "de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach-sustainable-business-and-daad4705": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4705/",
+      "https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-technology-beng",
+      "https://www.umwelt-campus.de/en/study/application-admission/semester-fee",
+      "https://www.umwelt-campus.de/en/international/incomings/financing",
+      "https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-technology-beng/translate-to-englisch-test-seite-apply-now",
+      "https://www.umwelt-campus.de/en/study/application-admission/application-portal",
+      "https://www.hochschule-trier.de/hauptcampus/studium/bewerbung-zulassung/semesterbeitrag",
+      "https://www.hochschule-trier.de/en/main-campus/study/application-admission/semesterbeitrag",
+      "https://www.hochschule-trier.de/hauptcampus/wirtschaft/studium/studienangebotwir/international-business",
+      "https://www.hochschule-trier.de/fileadmin/Hochschule/Einrichtungen/Studienservice/Checklisten/Checkliste_Master_TR.pdf"
+    ],
+    "de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach-sustainable-business-and-daad9857": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9857/",
+      "https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-law-ba",
+      "https://www.umwelt-campus.de/en/study/application-admission/semester-fee",
+      "https://www.umwelt-campus.de/en/international/incomings/financing",
+      "https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-law-ba/apply-now",
+      "https://www.umwelt-campus.de/en/study/application-admission/application-portal",
+      "https://www.hochschule-trier.de/hauptcampus/studium/bewerbung-zulassung/semesterbeitrag",
+      "https://www.hochschule-trier.de/en/main-campus/study/application-admission/semesterbeitrag",
+      "https://www.hochschule-trier.de/hauptcampus/wirtschaft/studium/studienangebotwir/international-business",
+      "https://www.hochschule-trier.de/fileadmin/Hochschule/Einrichtungen/Studienservice/Checklisten/Checkliste_Master_TR.pdf"
+    ],
+    "de-hochschule-wismar-university-of-applied-hrk274-rostock-marine-engineering-doubl-daad6315": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6315/",
+      "https://fiw.hs-wismar.de/en/bereiche/sal/degree-courses/marine-engineering-bachelor-binational-beng-double-degree/",
+      "https://fiw.hs-wismar.de/en/application/",
+      "https://www.wings.hs-wismar.de/de/fernstudium_master/sales_management/kosten",
+      "https://www.wings.hs-wismar.de/de/fernstudium_bachelor/management-digitalisierung-nachhaltigkeit/kosten",
+      "https://www.hs-wismar.de/international/aktuelles/termine-fristen/",
+      "https://www.hs-wismar.de/storages/hs-wismar/HSW_zentral/Organisation/Satzungen___Ordnungen/Pruefungs_und_Studienordnungen/fruehere_Fassungen/FIW/BIW/PdB_MA_PO_10.10.2003.pdf"
+    ],
+    "de-htw-berlin-university-of-applied-science-daad-berlin-cyber-security-and-busin-daad10356": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10356/",
+      "https://cyber-security-business.htw-berlin.de/",
+      "https://www.htw-berlin.de/en/studies/study-organisation/semester-fee/",
+      "https://cyber-security-business.htw-berlin.de/application",
+      "https://www.htw-berlin.de/studium/bewerbung",
+      "https://www.htw-berlin.de/studium/studienorganisation/semesterbeitraege",
+      "https://www.htw-berlin.de/en/studies/study-organisation/semester-fee",
+      "https://www.htw-berlin.de/international/wege-ins-ausland/studium-im-ausland/bewerbung",
+      "https://newsletter.htw-berlin.de/checkpoint/8-2019.html",
+      "https://www.htw-berlin.de/fileadmin/HTW/Zentral/ZHV_IIIA_-_Studienberatung/Studieninfos/International_Business_MA_.pdf"
+    ],
+    "de-jade-hochschule-wilhelmshaven-oldenburg-hrk406-international-business-s-daad7743": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7743/",
+      "https://www.jade-hs.de/studiengang/international-business-studies-bachelor/",
+      "https://www.jade-hs.de/studieren-weiterbilden/studieren/unterstuetzung-finanzierung/",
+      "https://www.jade-hs.de/studieren-weiterbilden/studieren/bewerbung-studienstart/",
+      "https://ecampus.jade-hs.de/qisserver/pages/psv/selbstregistrierung/pub/selbstregistrierung.xhtml?_flowId=selfRegistrationRegister-flow&navigationPosition=hisinoneapp_studi_no_login%2CselfRegistration",
+      "https://www.jade-hs.de/international/incoming/vollzeitstudium/"
+    ],
+    "de-kuhne-logistics-university-wissenschaftl-hrk429-bachelor-of-science-busi-daad11249": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11249/",
+      "https://www.klu.org/de/programme/master/international-management-studieren",
+      "https://www.klu.org/de/programme/master/business-analytics-data-science-studieren"
+    ],
+    "de-leuphana-universitat-luneburg-hrk171-economics-bsc-daad9671": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9671/",
+      "https://www.leuphana.de/en/college/bachelor/economics-major.html?utm_source=DAAD&utm_medium=referral&utm_campaign=international-marketing",
+      "https://www.leuphana.de/en/college/first-semester/before-the-start-of-the-term/the-semester-fee-finances-and-accommodation.html",
+      "https://www.leuphana.de/en/college/studies/fees.html",
+      "https://www.leuphana.de/en/college/application.html",
+      "https://www.leuphana.de/en/college/application/entry-requirements.html",
+      "https://www.leuphana.de/studium/international/studium-an-der-leuphana-fuer-internationale-studieninteressierte/studiengebuehr.html",
+      "https://www.leuphana.de/college/studium/kosten.html",
+      "https://www.leuphana.de/graduate-school/masterstudiengaenge/international-law-and-sustainability/bewerbung-und-voraussetzungen.html",
+      "https://www.leuphana.de/college/bewerbung.html"
+    ],
+    "de-leuphana-universitat-luneburg-hrk171-international-business-a-daad4610": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4610/",
+      "https://www.leuphana.de/en/college/bachelor/bsc-international-business-administration-entrepreneurship.html",
+      "https://www.leuphana.de/en/college/first-semester/before-the-start-of-the-term/the-semester-fee-finances-and-accommodation.html",
+      "https://www.leuphana.de/en/college/studies/fees.html",
+      "https://www.leuphana.de/en/college/application.html",
+      "https://www.leuphana.de/en/college/application/entry-requirements.html",
+      "https://www.leuphana.de/studium/international/studium-an-der-leuphana-fuer-internationale-studieninteressierte/studiengebuehr.html",
+      "https://www.leuphana.de/college/studium/kosten.html",
+      "https://www.leuphana.de/graduate-school/masterstudiengaenge/international-law-and-sustainability/bewerbung-und-voraussetzungen.html",
+      "https://www.leuphana.de/college/bewerbung.html"
+    ],
+    "de-otto-von-guericke-universitat-magdeburg-hrk172-bilingual-bachelors-biba-daad9665": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9665/",
+      "https://www.inf.ovgu.de/biba",
+      "https://www.ovgu.de/unimagdeburg/en/Study/Organization+of+the+Stay/Finance-p-48630.html",
+      "https://www.ovgu.de/gebuehren.html",
+      "https://www.ovgu.de/en/fees.html",
+      "https://www.ovgu.de/International/Outgoing+_+Wege+in+die+Welt/Studierende+der+OVGU/WELTWEIT+Studium/WELTWEIT_Bewerbungsablauf-p-107570.html",
+      "https://www.ovgu.de/bewerbung.html",
+      "https://www.eurostud.ovgu.de/eurostud/en/Master/Application+Process/Frequently+Asked+Questions.html",
+      "https://www.ovgu.de/International/Incoming+_+Wege+an+die+Universit%C3%A4t/Internationale+Studieninteressierte/Studium+mit+Abschluss/Bewerbung+%C3%BCber+den+uni_assist+e_V_-p-107054.html"
+    ],
+    "de-otto-von-guericke-universitat-magdeburg-hrk172-engineering-science-engs-daad9672": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9672/",
+      "https://www.ovgu.de/unimagdeburg/en/engineering_science_bachelor.html",
+      "https://www.ovgu.de/unimagdeburg/en/Study/Organization+of+the+Stay/Finance-p-48630.html",
+      "https://www.ovgu.de/unimagdeburg/en/International/Incoming+_+Ways+to+the+University/International+Students/Full_Time+Studies/Applying+via+uni_assist+e_V_-p-107054.html",
+      "https://www.ovgu.de/gebuehren.html",
+      "https://www.ovgu.de/en/fees.html",
+      "https://www.ovgu.de/International/Outgoing+_+Wege+in+die+Welt/Studierende+der+OVGU/WELTWEIT+Studium/WELTWEIT_Bewerbungsablauf-p-107570.html",
+      "https://www.ovgu.de/bewerbung.html",
+      "https://www.eurostud.ovgu.de/eurostud/en/Master/Application+Process/Frequently+Asked+Questions.html",
+      "https://www.ovgu.de/International/Incoming+_+Wege+an+die+Universit%C3%A4t/Internationale+Studieninteressierte/Studium+mit+Abschluss/Bewerbung+%C3%BCber+den+uni_assist+e_V_-p-107054.html"
+    ],
+    "de-srh-university-of-applied-sciences-heide-hrk122-electrical-engineering-b-daad9707": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9707/",
+      "https://www.srh-university.de/en/you-want-to-study/financing/?utm_source=wkz-HSptlDIP&mtm_placement=wkz-HSptlDIP&mtm_source=ptl&mtm_medium=DIP",
+      "https://www.srh-university.de/de/bachelor/betriebswirtschaftslehre/b/",
+      "https://www.srh-university.de/de/master/classical-music/m/classical-music-zugangsvoraussetzungen-im-detail/",
+      "https://www.srh-university.de/fileadmin/Hochschule_Berlin/International_Office/Erasmus_/Downloads_Erasmus_Studium/04_2021_Ablaufplan_Erasmus__Auslandsstudium.pdf",
+      "https://www.srh-university.de/fileadmin/Hochschule_NRW/Rahmenstudien-_und_Pruefungsordnung.pdf"
+    ],
+    "de-otto-von-guericke-universitat-magdeburg-hrk172-international-business-a-daad3811": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3811/",
+      "https://www.isp.ovgu.de/",
+      "https://www.ovgu.de/unimagdeburg/en/Study/Organization+of+the+Stay/Finance-p-48630.html",
+      "https://www.isp.ovgu.de/IBEApplication.html",
+      "https://www.ovgu.de/gebuehren.html",
+      "https://www.ovgu.de/en/fees.html",
+      "https://www.ovgu.de/International/Outgoing+_+Wege+in+die+Welt/Studierende+der+OVGU/WELTWEIT+Studium/WELTWEIT_Bewerbungsablauf-p-107570.html",
+      "https://www.ovgu.de/bewerbung.html",
+      "https://www.eurostud.ovgu.de/eurostud/en/Master/Application+Process/Frequently+Asked+Questions.html",
+      "https://www.ovgu.de/International/Incoming+_+Wege+an+die+Universit%C3%A4t/Internationale+Studieninteressierte/Studium+mit+Abschluss/Bewerbung+%C3%BCber+den+uni_assist+e_V_-p-107054.html"
+    ],
+    "de-technische-hochschule-aschaffenburg-hrk333-software-design-internat-daad9225": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/",
+      "https://www.th-ab.de/studium/bewerben/",
+      "https://www.th-ab.de/exchange-students/fees-and-scholarships/",
+      "https://www.th-ab.de/hochschule/organisation/organisationseinheiten/bibliothek/kosten/",
+      "https://www.th-ab.de/fulbright",
+      "https://www.th-ab.de/studium/bewerben/bewerben-mit-auslaendischem-bildungsnachweis/",
+      "https://www.th-ab.de/fileadmin/th-ab-redaktion/dokumente/Dekanat-WR/Modulhandbuch/modulhandbuch-studiengang-plv.pdf"
+    ],
+    "de-srh-university-of-applied-sciences-heide-hrk122-mechanical-engineering-b-daad9651": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9651/",
+      "https://www.srh-university.de/en/you-want-to-study/financing/?utm_source=wkz-HSptlDIP&mtm_placement=wkz-HSptlDIP&mtm_source=ptl&mtm_medium=DIP",
+      "https://www.srh-university.de/de/bachelor/betriebswirtschaftslehre/b/",
+      "https://www.srh-university.de/de/master/classical-music/m/classical-music-zugangsvoraussetzungen-im-detail/",
+      "https://www.srh-university.de/fileadmin/Hochschule_Berlin/International_Office/Erasmus_/Downloads_Erasmus_Studium/04_2021_Ablaufplan_Erasmus__Auslandsstudium.pdf",
+      "https://www.srh-university.de/fileadmin/Hochschule_NRW/Rahmenstudien-_und_Pruefungsordnung.pdf"
+    ],
+    "de-technische-hochschule-deggendorf-hrk284-bsc-artificial-intellige-daad7742": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7742/",
+      "https://www.th-deg.de/ain-b-en",
+      "https://www.th-deg.de/en/students/documents/application-and-service-fees",
+      "https://th-deg.de/en/students/documents",
+      "https://www.th-deg.de/en/apply",
+      "https://www.th-deg.de/application-process",
+      "https://www.th-deg.de/bewerbungs-servicegebuehren-drittstaaten",
+      "https://www.th-deg.de/auslandsaufenthalte",
+      "https://www.th-deg.de/de/studieninteressierte/beratung-und-unterstuetzung/faqs-studieninteressierte",
+      "https://www.th-deg.de/Dino/Deliverables/Handbuch%C3%96kosystem.pdf"
+    ],
+    "de-technische-hochschule-deggendorf-hrk284-business-administration-daad9840": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9840/",
+      "https://www.th-deg.de/en/apply",
+      "https://www.th-deg.de/bewerbungs-servicegebuehren-drittstaaten",
+      "https://www.th-deg.de/en/students/documents/application-and-service-fees",
+      "https://www.th-deg.de/auslandsaufenthalte",
+      "https://www.th-deg.de/de/studieninteressierte/beratung-und-unterstuetzung/faqs-studieninteressierte",
+      "https://www.th-deg.de/Dino/Deliverables/Handbuch%C3%96kosystem.pdf",
+      "https://www.th-deg.de/de/studieninteressierte/infos-fuer-internationale-austauschstudierende"
+    ],
+    "de-technische-hochschule-deggendorf-hrk284-electrical-engineering-a-daad9837": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9837/",
+      "https://www.th-deg.de/eti-b-en",
+      "https://www.th-deg.de/en/students/documents/application-and-service-fees",
+      "https://th-deg.de/en/students/documents",
+      "https://www.th-deg.de/en/apply",
+      "https://www.th-deg.de/application-process",
+      "https://www.th-deg.de/bewerbungs-servicegebuehren-drittstaaten",
+      "https://www.th-deg.de/auslandsaufenthalte",
+      "https://www.th-deg.de/de/studieninteressierte/beratung-und-unterstuetzung/faqs-studieninteressierte",
+      "https://www.th-deg.de/Dino/Deliverables/Handbuch%C3%96kosystem.pdf"
+    ],
+    "de-technische-hochschule-deggendorf-hrk284-electromobility-autonomo-daad9073": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9073/",
+      "https://www.th-deg.de/emi-b-en",
+      "https://www.th-deg.de/en/students/documents/application-and-service-fees",
+      "https://th-deg.de/en/students/documents",
+      "https://www.th-deg.de/en/apply",
+      "https://www.th-deg.de/application-process",
+      "https://www.th-deg.de/bewerbungs-servicegebuehren-drittstaaten",
+      "https://www.th-deg.de/auslandsaufenthalte",
+      "https://www.th-deg.de/de/studieninteressierte/beratung-und-unterstuetzung/faqs-studieninteressierte",
+      "https://www.th-deg.de/Dino/Deliverables/Handbuch%C3%96kosystem.pdf"
+    ],
+    "de-technische-hochschule-deggendorf-hrk284-electronics-engineering-daad9839": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9839/",
+      "https://www.th-deg.de/eai-b-en",
+      "https://www.th-deg.de/en/students/documents/application-and-service-fees",
+      "https://th-deg.de/en/students/documents",
+      "https://www.th-deg.de/en/apply",
+      "https://www.th-deg.de/application-process",
+      "https://www.th-deg.de/bewerbungs-servicegebuehren-drittstaaten",
+      "https://www.th-deg.de/auslandsaufenthalte",
+      "https://www.th-deg.de/de/studieninteressierte/beratung-und-unterstuetzung/faqs-studieninteressierte",
+      "https://www.th-deg.de/Dino/Deliverables/Handbuch%C3%96kosystem.pdf"
+    ],
+    "de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-beng-energy-systems-engi-daad7019": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7019/",
+      "https://th-deg.de/ese-b-en",
+      "https://th-deg.de/en/students/documents/application-and-service-fees",
+      "https://www.th-deg.de/en/apply",
+      "https://th-deg.de/application-process",
+      "https://www.th-deg.de/bewerbungs-servicegebuehren-drittstaaten",
+      "https://www.th-deg.de/en/students/documents/application-and-service-fees",
+      "https://www.th-deg.de/auslandsaufenthalte",
+      "https://www.th-deg.de/de/studieninteressierte/beratung-und-unterstuetzung/faqs-studieninteressierte",
+      "https://www.th-deg.de/Dino/Deliverables/Handbuch%C3%96kosystem.pdf"
+    ],
+    "de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-beng-industrial-engineer-daad4668": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4668/",
+      "https://www.th-deg.de/ie-b-en",
+      "https://www.th-deg.de/en/students/documents/application-and-service-fees",
+      "https://th-deg.de/en/students/documents",
+      "https://www.th-deg.de/en/apply",
+      "https://www.th-deg.de/application-process",
+      "https://www.th-deg.de/bewerbungs-servicegebuehren-drittstaaten",
+      "https://www.th-deg.de/auslandsaufenthalte",
+      "https://www.th-deg.de/de/studieninteressierte/beratung-und-unterstuetzung/faqs-studieninteressierte",
+      "https://www.th-deg.de/Dino/Deliverables/Handbuch%C3%96kosystem.pdf"
+    ],
+    "de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-bsc-health-informatics-daad4822": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4822/",
+      "https://th-deg.de/hi-b-en",
+      "https://th-deg.de/en/students/documents/application-and-service-fees",
+      "https://www.th-deg.de/en/apply",
+      "https://th-deg.de/application-process",
+      "https://www.th-deg.de/bewerbungs-servicegebuehren-drittstaaten",
+      "https://www.th-deg.de/en/students/documents/application-and-service-fees",
+      "https://www.th-deg.de/auslandsaufenthalte",
+      "https://www.th-deg.de/de/studieninteressierte/beratung-und-unterstuetzung/faqs-studieninteressierte",
+      "https://www.th-deg.de/Dino/Deliverables/Handbuch%C3%96kosystem.pdf"
+    ],
+    "de-technische-hochschule-ingolstadt-hrk288-autonomous-vehicle-engin-daad6920": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6920/",
+      "https://www.thi.de/en/electrical-engineering-and-information-technology/degree-programmes/autonomous-vehicle-engineering-beng/",
+      "https://www.thi.de/en/studies/financial-assistance/",
+      "https://www.thi.de/en/studies/international-degree-students/tuition-fees/",
+      "https://www.thi.de/en/studies/application/",
+      "https://www.thi.de/en/studies/application/applications-for-bachelors-degree-programmes-from-abroad/",
+      "https://www.thi.de/studium/internationale-vollstudierende/studiengebuehren/",
+      "https://www.thi.de/studium/studienfinanzierung/",
+      "https://www.thi.de/thi-business-school/studiengaenge/marketingvertriebmedien-ma/",
+      "https://www.thi.de/elektro-und-informationstechnik/studiengaenge/intelligent-aerial-systems-meng/"
+    ],
+    "de-technische-hochschule-ingolstadt-hrk288-computer-science-and-art-daad7631": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+      "https://www.thi.de/studium/studienangebote/details/computer-science-and-artificial-intelligence-bsc/",
+      "https://www.thi.de/studium/studienfinanzierung/",
+      "https://www.thi.de/hochschule/kontakt-und-anfahrt/kontaktformulare/kontakt-kosten-des-studiums-und-finanzierung/",
+      "https://www.thi.de/studium/studienbewerbung/",
+      "https://www.thi.de/studium/studienbewerbung/bachelorbewerbung/",
+      "https://www.thi.de/studium/internationale-vollstudierende/studiengebuehren/",
+      "https://www.thi.de/thi-business-school/studiengaenge/marketingvertriebmedien-ma/",
+      "https://www.thi.de/elektro-und-informationstechnik/studiengaenge/intelligent-aerial-systems-meng/"
+    ],
+    "de-technische-hochschule-ingolstadt-hrk288-global-economics-and-bus-daad6921": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6921/",
+      "https://www.thi.de/en/thi-business-school/degree-programmes/global-economics-and-business-management-ba/",
+      "https://www.thi.de/en/studies/financial-assistance/",
+      "https://www.thi.de/en/studies/international-degree-students/tuition-fees/",
+      "https://www.thi.de/en/hochschule/kontakt-und-anfahrt/kontaktformulare/contact-for-application-related-inquiries/",
+      "https://www.thi.de/en/studies/application/",
+      "https://www.thi.de/studium/internationale-vollstudierende/studiengebuehren/",
+      "https://www.thi.de/studium/studienfinanzierung/",
+      "https://www.thi.de/thi-business-school/studiengaenge/marketingvertriebmedien-ma/",
+      "https://www.thi.de/elektro-und-informationstechnik/studiengaenge/intelligent-aerial-systems-meng/"
+    ],
+    "de-technische-hochschule-ingolstadt-hrk288-neuburg-an-der-donau-sustainable-civil-engine-daad8580": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/",
+      "https://www.thi.de/en/faculties/sustainable-infrastructure/degree-programmes/sustainable-civil-engineering-beng/",
+      "https://www.thi.de/en/studies/financial-assistance/",
+      "https://www.thi.de/en/studies/international-degree-students/tuition-fees/",
+      "https://www.thi.de/en/studies/application/bachelor-application/",
+      "https://www.thi.de/en/studies/application/",
+      "https://www.thi.de/studium/internationale-vollstudierende/studiengebuehren/",
+      "https://www.thi.de/studium/studienfinanzierung/",
+      "https://www.thi.de/thi-business-school/studiengaenge/marketingvertriebmedien-ma/",
+      "https://www.thi.de/elektro-und-informationstechnik/studiengaenge/intelligent-aerial-systems-meng/"
+    ],
+    "de-technische-hochschule-koln-hrk149-international-business-b-daad10399": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10399/",
+      "https://www.th-koeln.de/en/academics/international-business-bachelor_5826.php",
+      "https://www.th-koeln.de/en/academics/international-business-bachelor--how-to-apply_5823.php",
+      "https://www.th-koeln.de/en/academics/admission_5861.php",
+      "https://www.th-koeln.de/studium/beitraege-und-gebuehren_5343.php",
+      "https://www.th-koeln.de/en/academics/fees_5908.php",
+      "https://www.th-koeln.de/hochschule/jetzt-online-bewerben-fuer-einen-studienplatz_131086.php",
+      "https://www.th-koeln.de/mam/downloads/englisch/f10-ma-ait-merkblatt-hfs_en.pdf",
+      "https://www.th-koeln.de/internationales/erasmus-international-credit-mobility-ka-107_71519.php"
+    ],
+    "de-technische-hochschule-mannheim-hrk177-automation-technology-an-daad3618": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3618/",
+      "https://www.english.hs-mannheim.de/studying-with-us/helping-you/living-and-studying-in-mannheim/how-much-does-it-cost-to-study-in-mannheim.html",
+      "https://www.ete.hs-mannheim.de/bachelor/apply.html"
+    ],
+    "de-technische-hochschule-mannheim-hrk177-e-mobility-and-autonomou-daad7693": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7693/",
+      "https://www.english.hs-mannheim.de/studying-with-us/helping-you/living-and-studying-in-mannheim/how-much-does-it-cost-to-study-in-mannheim.html",
+      "https://www.ete.hs-mannheim.de/bachelor/apply.html"
+    ],
+    "de-technische-hochschule-mannheim-hrk177-international-engineerin-daad10335": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10335/",
+      "https://www.english.hs-mannheim.de/studying-with-us/helping-you/living-and-studying-in-mannheim/how-much-does-it-cost-to-study-in-mannheim.html",
+      "https://www.inb.hs-mannheim.de/international-engineering-bachelor-inb/apply.html"
+    ],
+    "de-technische-hochschule-mannheim-hrk177-power-engineering-and-re-daad3617": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3617/",
+      "https://www.english.hs-mannheim.de/studying-with-us/helping-you/living-and-studying-in-mannheim/how-much-does-it-cost-to-study-in-mannheim.html",
+      "https://www.ete.hs-mannheim.de/bachelor/apply.html"
+    ],
+    "de-technische-hochschule-mittelhessen-thm-hrk97-international-business-a-daad11140": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11140/",
+      "https://ibl.w.thm.de/?utm_source=ip.daad.de&utm_medium=ip&utm_campaign=ip2026-2027&campaign=DAAD",
+      "https://www.thm.de/site/international/incoming-wege-an-die-thm/bachelor-bewerbung.html",
+      "https://ibl.w.thm.de/admission-and-application/",
+      "https://www.thm.de/site/hochschule/zentrale-bereiche/studiensekretariat/rueckmeldung/uebersicht-semesterbeitrag.html",
+      "https://www.thm.de/site/en/studies/during-your-studies/return-message/overview-semester-fees.html",
+      "https://www.thm.de/bau/fachbereich/ueber-den-fachbereich/termine/bewerbungsfrist-bauingenieurwesen-master-zulassungsbeschraenkt-2",
+      "https://www.thm.de/site/international/incoming-wege-an-die-thm/master-bewerbung/uni-assist-bewerbungsverfahren-master.html",
+      "https://www.thm.de/muk/images/EMT/AMB_82-2022_21102022_PO_Eventmanagement_und_-technik_V1_BA_MuK.pdf",
+      "https://www.thm.de/ges/images/Downloads/Dokumente/PO_MAMedizinische_Informatik2015_Version_1.pdf"
+    ],
+    "de-technische-hochschule-nurnberg-georg-sim-hrk200-international-business-a-daad4248": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4248/",
+      "https://www.th-nuernberg.de/en/faculties/bw/study/international-business-bachelors-and-masters-degree-programs/international-business-and-technology-beng/",
+      "https://www.th-nuernberg.de/en/facilities/competence-centers/corporate-development-management-accounting-financial-control/",
+      "https://www.th-nuernberg.de/en/facilities/competence-centers/finance/",
+      "https://www.th-nuernberg.de/en/facilities/institutes/polymer-optical-fiber-application-center/",
+      "https://www.th-nuernberg.de/en/faculties/bw/study/international-business-bachelors-and-masters-degree-programs/international-business-and-technology-beng/admission-process/",
+      "https://www.th-nuernberg.de/internationales/ohm-international-school/internationale-semesterbeitraege/",
+      "https://www.th-nuernberg.de/einrichtungen-gesamt/in-institute/language-center/language-center/gebuhrenordnungpreise/",
+      "https://www.th-nuernberg.de/studiengang/international-marketing-ma/",
+      "https://www.th-nuernberg.de/fakultaeten/bw/studium/internationale-bachelor-und-masterstudiengaenge/master-international-marketing-ma/bewerbungsablauf/"
+    ],
+    "de-technische-hochschule-nurnberg-georg-sim-hrk200-international-business-b-daad3603": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3603/",
+      "https://www.th-nuernberg.de/en/faculties/bw/study/international-business-bachelors-and-masters-degree-programs/international-business-ba/?mtm_campaign=daad&mtm_kwd=en-ib",
+      "https://www.th-nuernberg.de/en/facilities/competence-centers/corporate-development-management-accounting-financial-control/",
+      "https://www.th-nuernberg.de/en/facilities/competence-centers/finance/",
+      "https://www.th-nuernberg.de/en/facilities/institutes/polymer-optical-fiber-application-center/",
+      "https://www.th-nuernberg.de/en/faculties/bw/study/international-business-bachelors-and-masters-degree-programs/international-business-ba/admission-process/",
+      "https://www.th-nuernberg.de/internationales/ohm-international-school/internationale-semesterbeitraege/",
+      "https://www.th-nuernberg.de/einrichtungen-gesamt/in-institute/language-center/language-center/gebuhrenordnungpreise/",
+      "https://www.th-nuernberg.de/studiengang/international-marketing-ma/",
+      "https://www.th-nuernberg.de/fakultaeten/bw/studium/internationale-bachelor-und-masterstudiengaenge/master-international-marketing-ma/bewerbungsablauf/"
+    ],
+    "de-technische-hochschule-nurnberg-georg-sim-hrk200-mechanical-engineering-b-daad9268": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9268/",
+      "https://www.th-nuernberg.de/en/international/ohm-international-school/international-student-tuition/?mtm_campaign=daad&mtm_kwd=en-student-tuition",
+      "https://www.th-nuernberg.de/en/study-career/admission-and-application/application-process/?mtm_campaign=daad&mtm_kwd=en-application-process",
+      "https://www.th-nuernberg.de/internationales/ohm-international-school/internationale-semesterbeitraege/",
+      "https://www.th-nuernberg.de/einrichtungen-gesamt/in-institute/language-center/language-center/gebuhrenordnungpreise/",
+      "https://www.th-nuernberg.de/studiengang/international-marketing-ma/",
+      "https://www.th-nuernberg.de/fakultaeten/bw/studium/internationale-bachelor-und-masterstudiengaenge/master-international-marketing-ma/bewerbungsablauf/",
+      "https://www.th-nuernberg.de/fakultaeten/bw/studium/internationale-bachelor-und-masterstudiengaenge/bachelor-international-business-and-technology-beng/bewerbungsablauf/bewerben-mit-abitur-co/",
+      "https://www.th-nuernberg.de/fakultaeten/bw/studium/internationale-bachelor-und-masterstudiengaenge/master-international-finance-and-economics-msc/zulassung/"
+    ],
+    "de-technische-hochschule-rosenheim-hrk232-applied-artificial-intel-daad7666": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7666/",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/applied-artificial-intelligence",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/what-are-the-costs-of-studying-at-th-rosenheim-tuition-fees-and-student-union-fees",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme/application-for-a-degree-programme-step-by-step-explained",
+      "https://cm.th-rosenheim.de/qisserver/pages/cs/sys/portal/hisinoneStartPage.faces?page=Bewerber/-innen&noDBAction=y&init=y",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/vor-dem-studium/was-kostet-das-studium-studierendenwerksbeitrag-und-studiengebuehren",
+      "https://www.th-rosenheim.de/fileadmin/formalia/Amtsblatt/Satzung_zur_Erhebung_von_Gebuehren_fuer_das_Studium_auslaendischer_Studierender__Original_13.02.2025_.pdf",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/vor-dem-studium/bewerbung-und-zulassung-fuer-das-studium",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/studienangebot-der-th-rosenheim/bachelorstudiengaenge/international-bachelor-of-wood-technology"
+    ],
+    "de-technische-hochschule-rosenheim-hrk232-international-bachelor-o-daad7892": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7892/",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/international-bachelor-of-engineering",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/what-are-the-costs-of-studying-at-th-rosenheim-tuition-fees-and-student-union-fees",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme/application-for-a-degree-programme-step-by-step-explained",
+      "https://cm.th-rosenheim.de/qisserver/pages/cs/sys/portal/hisinoneStartPage.faces?page=Bewerber/-innen&noDBAction=y&init=y",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/vor-dem-studium/was-kostet-das-studium-studierendenwerksbeitrag-und-studiengebuehren",
+      "https://www.th-rosenheim.de/fileadmin/formalia/Amtsblatt/Satzung_zur_Erhebung_von_Gebuehren_fuer_das_Studium_auslaendischer_Studierender__Original_13.02.2025_.pdf",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/vor-dem-studium/bewerbung-und-zulassung-fuer-das-studium",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/studienangebot-der-th-rosenheim/bachelorstudiengaenge/international-bachelor-of-wood-technology"
+    ],
+    "de-technische-hochschule-rosenheim-hrk232-materials-engineering-daad10338": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10338/",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/materials-engineering",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/what-are-the-costs-of-studying-at-th-rosenheim-tuition-fees-and-student-union-fees",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme/application-for-a-degree-programme-step-by-step-explained",
+      "https://cm.th-rosenheim.de/qisserver/pages/cs/sys/portal/hisinoneStartPage.faces?page=Bewerber/-innen&noDBAction=y&init=y",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/vor-dem-studium/was-kostet-das-studium-studierendenwerksbeitrag-und-studiengebuehren",
+      "https://www.th-rosenheim.de/fileadmin/formalia/Amtsblatt/Satzung_zur_Erhebung_von_Gebuehren_fuer_das_Studium_auslaendischer_Studierender__Original_13.02.2025_.pdf",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/vor-dem-studium/bewerbung-und-zulassung-fuer-das-studium",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/studienangebot-der-th-rosenheim/bachelorstudiengaenge/international-bachelor-of-wood-technology"
+    ],
+    "de-technische-hochschule-rosenheim-hrk232-plastics-engineering-daad8373": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8373/",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/plastics-engineering",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/what-are-the-costs-of-studying-at-th-rosenheim-tuition-fees-and-student-union-fees",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme/application-for-a-degree-programme-step-by-step-explained",
+      "https://cm.th-rosenheim.de/qisserver/pages/cs/sys/portal/hisinoneStartPage.faces?page=Bewerber/-innen&noDBAction=y&init=y",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/vor-dem-studium/was-kostet-das-studium-studierendenwerksbeitrag-und-studiengebuehren",
+      "https://www.th-rosenheim.de/fileadmin/formalia/Amtsblatt/Satzung_zur_Erhebung_von_Gebuehren_fuer_das_Studium_auslaendischer_Studierender__Original_13.02.2025_.pdf",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/vor-dem-studium/bewerbung-und-zulassung-fuer-das-studium",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/studienangebot-der-th-rosenheim/bachelorstudiengaenge/international-bachelor-of-wood-technology"
+    ],
+    "de-technische-hochschule-rosenheim-hrk232-robotics-and-machine-int-daad11251": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11251/",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/robotics-and-machine-intelligence",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/what-are-the-costs-of-studying-at-th-rosenheim-tuition-fees-and-student-union-fees",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme/application-for-a-degree-programme-step-by-step-explained",
+      "https://cm.th-rosenheim.de/qisserver/pages/cs/sys/portal/hisinoneStartPage.faces?page=Bewerber/-innen&noDBAction=y&init=y",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/vor-dem-studium/was-kostet-das-studium-studierendenwerksbeitrag-und-studiengebuehren",
+      "https://www.th-rosenheim.de/fileadmin/formalia/Amtsblatt/Satzung_zur_Erhebung_von_Gebuehren_fuer_das_Studium_auslaendischer_Studierender__Original_13.02.2025_.pdf",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/vor-dem-studium/bewerbung-und-zulassung-fuer-das-studium",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/studienangebot-der-th-rosenheim/bachelorstudiengaenge/international-bachelor-of-wood-technology"
+    ],
+    "de-technische-hochschule-rosenheim-hrk232-traunstein-e-commerce-daad7974": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7974/",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/e-commerce",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/what-are-the-costs-of-studying-at-th-rosenheim-tuition-fees-and-student-union-fees",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme/application-for-a-degree-programme-step-by-step-explained",
+      "https://cm.th-rosenheim.de/qisserver/pages/cs/sys/portal/hisinoneStartPage.faces?page=Bewerber/-innen&noDBAction=y&init=y",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/vor-dem-studium/was-kostet-das-studium-studierendenwerksbeitrag-und-studiengebuehren",
+      "https://www.th-rosenheim.de/fileadmin/formalia/Amtsblatt/Satzung_zur_Erhebung_von_Gebuehren_fuer_das_Studium_auslaendischer_Studierender__Original_13.02.2025_.pdf",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/vor-dem-studium/bewerbung-und-zulassung-fuer-das-studium",
+      "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme",
+      "https://www.th-rosenheim.de/studium-und-weiterbildung/studienangebot-der-th-rosenheim/bachelorstudiengaenge/international-bachelor-of-wood-technology"
+    ],
+    "de-technische-hochschule-ulm-hrk260-computer-science-cts-daad4669": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4669/",
+      "https://www.thu.de/cts",
+      "https://www.thu.de/en/studies/before-studies/fees-scholarships",
+      "https://www.thu.de/en/studies/before-studies/fees-scholarships/contributions-tuition-fees",
+      "https://www.thu.de/en/org/ssc/Pages/Hilfe_Bewerbung.aspx",
+      "https://www.thu.de/en/studies/application-admission",
+      "https://www.thu.de/studium/vor-dem-studium/gebuehren-finanzierung/beitraege-studiengebuehren",
+      "https://www.thu.de/studium/bewerbung-zulassung",
+      "https://www.thu.de/studium/bewerbung-zulassung/bewerbung-bachelor"
+    ],
+    "de-technische-hochschule-ulm-hrk260-electrical-engineering-a-daad9157": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9157/",
+      "https://www.thu.de/en/Pages/Studiengang_EET.aspx",
+      "https://www.thu.de/en/studies/before-studies/fees-scholarships",
+      "https://www.thu.de/en/studies/before-studies/fees-scholarships/contributions-tuition-fees",
+      "https://www.thu.de/en/studies/application-admission",
+      "https://www.thu.de/en/studies/application-admission/bachelors-programme-application",
+      "https://www.thu.de/studium/vor-dem-studium/gebuehren-finanzierung/beitraege-studiengebuehren",
+      "https://www.thu.de/studium/bewerbung-zulassung",
+      "https://www.thu.de/studium/bewerbung-zulassung/bewerbung-bachelor"
+    ],
+    "de-technische-hochschule-wildau-hrk272-european-business-manage-daad7665": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7665/",
+      "https://en.th-wildau.de/index.php?id=30638",
+      "https://en.th-wildau.de/index.php?id=27385",
+      "https://en.th-wildau.de/study/application/degree-programmes/online-application",
+      "https://en.th-wildau.de/study/application",
+      "https://www.th-wildau.de/im-studium/studienorganisation-a-z/rueckmeldung",
+      "https://www.th-wildau.de/beschaeftigte/arbeitsorganisation-a-z/uebersetzungsdatenbank",
+      "https://www.th-wildau.de/studieren-und-weiterbilden/bewerbung/bewerbungsfristen-verfahren",
+      "https://www.th-wildau.de/hochschule/zentrale-einrichtungen/zentrum-fuer-internationale-angelegenheiten/international-office/incoming/internationale-vollzeitstudierende",
+      "https://www.th-wildau.de/thinsights/gemeinsam-den-arbeitsalltag-gestalten-erste-einblicke-in-die-befragung-zur-arbeitszufriedenheit-2026-an-der-th-wildau"
+    ],
+    "de-technische-universitat-braunschweig-hrk35-sustainable-engineering-daad7212": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7212/",
+      "https://www.tu-braunschweig.de/en/fmb/students/bachelors-degree-programmes/sustainable-engineering-of-products-and-processes",
+      "https://www.tu-braunschweig.de/en/international-students-financing",
+      "https://www.tu-braunschweig.de/en/study-teaching/during-your-studies/financing-and-costs",
+      "https://www.tu-braunschweig.de/en/application",
+      "https://www.tu-braunschweig.de/en/fmb/students/bachelors-degree-programmes/sustainable-engineering-of-products-and-processes/application",
+      "https://www.tu-braunschweig.de/studium-lehre/im-studium/finanzierung",
+      "https://www.tu-braunschweig.de/wspp/finanzierung-der-ausbildung",
+      "https://www.tu-braunschweig.de/international-students/application-newsletter",
+      "https://www.tu-braunschweig.de/fileadmin/Redaktionsgruppen/Einrichtungen/International/2_Studium_und_Praktikum_im_Ausland/PDFs/230904_checkliste_uebersee.pdf"
+    ],
+    "de-technische-universitat-chemnitz-hrk42-digital-engineering-daad10483": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10483/",
+      "https://www.tu-chemnitz.de/etit/studium/studiengaenge/bDE",
+      "https://www.tu-chemnitz.de/studierendenservice/studserv/bewerbung/bew_bamala.php.en",
+      "https://www.tu-chemnitz.de/studierendenservice/studserv/gebuehr.php.en",
+      "https://www.tu-chemnitz.de/studierendenservice/studserv/gebuehr.php",
+      "https://www.tu-chemnitz.de/international/incoming/documents/Aufenthaltserlaubnis%20Studenten.pdf",
+      "https://www.tu-chemnitz.de/international/kooperationen/ausland/mit_koop.php"
+    ],
+    "de-technische-universitat-chemnitz-hrk42-foundations-in-data-scie-daad10526": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+      "https://www.mytuc.org/qbnf",
+      "https://www.mytuc.org/studierendenservice/zsb/schuelerbewerber.php.en",
+      "https://www.mytuc.org/studierendenservice/studserv/bewerbung/bew_bamala.php.en",
+      "https://www.tu-chemnitz.de/studierendenservice/studserv/gebuehr.php.en",
+      "https://www.tu-chemnitz.de/studierendenservice/studserv/gebuehr.php",
+      "https://www.tu-chemnitz.de/international/incoming/documents/Aufenthaltserlaubnis%20Studenten.pdf",
+      "https://www.tu-chemnitz.de/international/kooperationen/ausland/mit_koop.php"
+    ],
+    "de-technische-universitat-ilmenau-hrk130-bachelor-of-science-in-b-daad4812": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4812/",
+      "https://www.tu-ilmenau.de/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/biomedizinische-technik-b-sc",
+      "https://www.tu-ilmenau.de/studium/vor-dem-studium/studienstart/wohnen-und-studienfinanzierung",
+      "https://www.tu-ilmenau.de/studium/im-studium/studienverlauf/administrative-guide/beitraege-und-gebuehren",
+      "https://campus.tu-ilmenau.de/apply",
+      "https://www.tu-ilmenau.de/studium/vor-dem-studium/studienangebot/bewerbung",
+      "https://www.tu-ilmenau.de/en/international/come-in/exchange-students/free-mover",
+      "https://www.tu-ilmenau.de/studium/im-studium/studienverlauf/administrative-guide/fristen-und-termine/bewerbungszeitraeume",
+      "https://www.tu-ilmenau.de/international/come-in/austauschstudium/free-mover"
+    ],
+    "de-technische-universitat-munchen-hrk184-garching-bei-munchen-aerospace-bsc-daad7256": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7256/",
+      "https://www.ed.tum.de/ed/studium/studienangebot/aerospace-b-sc/",
+      "https://www.tum.de/en/studies/fees",
+      "https://www.tum.de/studium/studienfinanzierung",
+      "https://www.tum.de/studium/bewerbung/onlinebewerbung/",
+      "https://www.tum.de/studium/bewerbung/bachelor/bewerbung-bachelor/",
+      "https://www.tum.de/studium/studienfinanzierung/studiengebuehren-fuer-studierende-aus-nicht-eu-laendern",
+      "https://www.tum.de/en/studies/fees/tuition",
+      "https://www.tum.de/studium/studienangebot/detail/elektrotechnik-und-informationstechnik-master-of-science-msc",
+      "https://www.ls.tum.de/ls/studium/bewerbung/"
+    ],
+    "de-technische-universitat-munchen-hrk184-heilbronn-bachelors-in-management-daad5704": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5704/",
+      "https://www.mgt.tum.de/programs/undergraduate-programs/bachelor-management-data-science/?utm_source=profile&utm_medium=paid&utm_campaign=campaign_hn_000218_DAAD_in_bmds_&utm_content=banner_with_cta&utm_term=video",
+      "https://www.tum.de/en/studies/fees",
+      "https://www.tum.de/en/studies/fees-and-financial-aid/scholarships/",
+      "https://www.mgt.tum.de/programs/bachelor-management-data-science/how-to-apply",
+      "https://www.tum.de/en/studies/application/application-info-portal/aps",
+      "https://www.tum.de/studium/studienfinanzierung/studiengebuehren-fuer-studierende-aus-nicht-eu-laendern",
+      "https://www.tum.de/en/studies/fees/tuition",
+      "https://www.tum.de/studium/studienangebot/detail/elektrotechnik-und-informationstechnik-master-of-science-msc",
+      "https://www.ls.tum.de/ls/studium/bewerbung/"
+    ],
+    "de-technische-universitat-munchen-hrk184-heilbronn-information-engineering-daad7698": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7698/",
+      "https://www.tum.de/en/studies/fees-and-financial-aid/campus-heilbronn",
+      "https://chn.tum.de/campus/student-services/financing-your-studies",
+      "https://www.tum.de/en/studies/application/application-info-portal/uni-assist",
+      "https://www.tum.de/en/studies/application/application-info-portal/glossary-of-documents",
+      "https://www.tum.de/studium/studienfinanzierung/studiengebuehren-fuer-studierende-aus-nicht-eu-laendern",
+      "https://www.tum.de/en/studies/fees/tuition",
+      "https://www.tum.de/studium/studienangebot/detail/elektrotechnik-und-informationstechnik-master-of-science-msc",
+      "https://www.ls.tum.de/ls/studium/bewerbung/",
+      "https://www.mgt.tum.de/de/programs/graduate-programs/master-in-consumer-science/how-to-apply"
+    ],
+    "de-technische-universitat-munchen-hrk184-straubing-sustainable-engineering-daad11020": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11020/",
+      "https://www.cs.tum.de/en/study/bachelor/sustainable-engineering-for-materials-and-processes",
+      "https://www.tum.de/en/studies/fees",
+      "https://www.tum.de/en/studies/fees/tuition",
+      "https://www.tum.de/en/studies/application/application-info-portal/online-application",
+      "https://www.tum.de/en/studies/application/application-info-portal/admission-requirements/language-certificates",
+      "https://www.tum.de/studium/studienfinanzierung/studiengebuehren-fuer-studierende-aus-nicht-eu-laendern",
+      "https://www.tum.de/studium/studienangebot/detail/elektrotechnik-und-informationstechnik-master-of-science-msc",
+      "https://www.ls.tum.de/ls/studium/bewerbung/",
+      "https://www.mgt.tum.de/de/programs/graduate-programs/master-in-consumer-science/how-to-apply"
+    ],
+    "de-technische-hochschule-augsburg-hrk7-international-informatio-daad7126": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7126/",
+      "https://www.tha.de/en/Computer-Science/International-Information-Systems-BSc.html",
+      "https://www.tha.de/Bewerbung.html",
+      "https://www.tha.de/en/Application.html",
+      "https://www.tha.de/hochschule/organisation/einrichtungen/abteilung-studierendenangelegenheiten/referat-3-3/studierendensekretariat/semesterbeitrag/",
+      "https://www.tha.de/Gestaltung/Interaktive-Medien/International-2/Page21303.html",
+      "https://www.tha.de/studium/start-ins-studium/bewerbung/",
+      "https://www.tha.de/en/studies/start-of-studies/application/faq-about-applying-to-tha/",
+      "https://www.tha.de/Architektur-und-Bauwesen/Grundlegende-Informationen.html",
+      "https://www.tha.de/hochschule/fakultaet/school-of-business/studienangebot/international-master-of-research-and-innovation/"
+    ],
+    "de-universitat-duisburg-essen-hrk71-duisburg-electrical-electronic-an-daad6150": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6150/",
+      "https://www.uni-due.de/iw/en/study/b-eee.php",
+      "https://www.uni-due.de/international/international-admissions-en.php",
+      "https://www.uni-due.de/ise/admission.php",
+      "https://www.uni-due.de/faq-studium/semesterbeitrag_antworten.php",
+      "https://www.uni-due.de/de/studium/kosten.php",
+      "https://duepublico2.uni-due.de/servlets/MCRFileNodeServlet/duepublico_derivate_00084893/Diss_Vidovic.pdf",
+      "https://www.uni-due.de/studierendensekretariat/bewerbungsfristen.php",
+      "https://www.uni-due.de/de/studium/bewerbung.php",
+      "https://www.uni-due.de/international/programmstudierende.php"
+    ],
+    "de-universitat-duisburg-essen-hrk71-duisburg-mechanical-engineering-daad6151": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6151/",
+      "https://www.uni-due.de/iw/en/study/b-me.php",
+      "https://www.uni-due.de/international/international-admissions-en.php",
+      "https://www.uni-due.de/ise/admission.php",
+      "https://www.uni-due.de/faq-studium/semesterbeitrag_antworten.php",
+      "https://www.uni-due.de/de/studium/kosten.php",
+      "https://duepublico2.uni-due.de/servlets/MCRFileNodeServlet/duepublico_derivate_00084893/Diss_Vidovic.pdf",
+      "https://www.uni-due.de/studierendensekretariat/bewerbungsfristen.php",
+      "https://www.uni-due.de/de/studium/bewerbung.php",
+      "https://www.uni-due.de/international/programmstudierende.php"
+    ],
+    "de-universitat-duisburg-essen-hrk71-duisburg-structural-engineering-daad6153": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6153/",
+      "https://www.uni-due.de/iw/en/study/b-se.php",
+      "https://www.uni-due.de/international/international-admissions-en.php",
+      "https://www.uni-due.de/ise/admission.php",
+      "https://www.uni-due.de/faq-studium/semesterbeitrag_antworten.php",
+      "https://www.uni-due.de/de/studium/kosten.php",
+      "https://duepublico2.uni-due.de/servlets/MCRFileNodeServlet/duepublico_derivate_00084893/Diss_Vidovic.pdf",
+      "https://www.uni-due.de/studierendensekretariat/bewerbungsfristen.php",
+      "https://www.uni-due.de/de/studium/bewerbung.php",
+      "https://www.uni-due.de/international/programmstudierende.php"
+    ],
+    "de-universitat-hamburg-hrk104-engineering-science-daad3748": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3748/",
+      "https://www.tuhh.de/tuhh/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/engineering-science.html",
+      "https://www.tuhh.de/tuhh/en/education/students/organisational-details-about-your-studies/financing-your-studies",
+      "https://www.tuhh.de/tuhh/en/studying/before-studying/application",
+      "https://www.tuhh.de/tuhh/en/studying/before-studying/application/bachelor.html",
+      "https://www.uni-hamburg.de/campuscenter/studienorganisation/studienverlauf/beitraege-gebuehren/semesterbeitrag.html",
+      "https://www.uni-hamburg.de/campuscenter/studienorganisation/studienverlauf/beitraege-gebuehren.html",
+      "https://www.uni-hamburg.de/campuscenter/studienangebot/studiengang.html?1305558624",
+      "https://ediss.sub.uni-hamburg.de/bitstream/ediss/2034/1/dissertation_soltau.pdf",
+      "https://www.uni-hamburg.de/campuscenter/bewerbung/fristen-termine.html"
+    ],
+    "de-universitat-passau-hrk218-bachelor-of-arts-in-inte-daad3643": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3643/",
+      "https://www.uni-passau.de/en/ba-icbs/?mtm_campaign=DAADIPG",
+      "https://www.uni-passau.de/en/apply",
+      "https://www.uni-passau.de/en/apply?mtm_campaign=DAADIPG",
+      "https://www.uni-passau.de/kosten-finanzierung/semesterbeitrag",
+      "https://www.uni-passau.de/kosten-finanzierung",
+      "https://www.uni-passau.de/bewerbung-einschreibung",
+      "https://www.uni-passau.de/deutschlandstipendium/fuer-bewerberinnen-und-bewerber/bewerbung",
+      "https://www.uni-passau.de/einschreibung",
+      "https://www.uni-passau.de/fileadmin/dokumente/fakultaeten/wiwi/lehrstuehle/kraemer/Erfahrungsberichte_Doppelmaster_Turku.pdf"
+    ],
+    "de-universitat-zu-koln-hrk147-management-economics-and-daad7682": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/",
+      "https://studieninteressierte.uni-koeln.de/finanzierung_wohnen/finanzierung/index_eng.html",
+      "https://wiso.uni-koeln.de/en/studies/application/bachelor?mtm_campaign=PortalDAAD-mess-requirements",
+      "https://uni-koeln.de/en/studying-teaching/international/study-in-cologne/costs-financing",
+      "https://uni-koeln.de/studium-lehre/international/studium-in-koeln/kosten-finanzierung",
+      "https://geologie.uni-koeln.de/studium/msc-geowissenschaften/bewerbung-fristen",
+      "https://www.hf.uni-koeln.de/39188",
+      "https://uni-koeln.de/studium-lehre/international/auslandsaufenthalte/studium-im-ausland/bewerbung-fakultaetsuebergreifende-partnerschaften"
+    ],
+    "de-universitat-passau-hrk218-bachelor-of-science-in-a-daad9973": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9973/",
+      "https://www.uni-passau.de/en/bsc-artificial-intelligence/?mtm_campaign=DAADIPG",
+      "https://www.sprachenzentrum.uni-passau.de/en/foreign-language-tuition/language-requirements",
+      "https://www.uni-passau.de/en/apply",
+      "https://www.uni-passau.de/en/apply?mtm_campaign=DAADIPG",
+      "https://www.uni-passau.de/kosten-finanzierung/semesterbeitrag",
+      "https://www.uni-passau.de/kosten-finanzierung",
+      "https://www.uni-passau.de/bewerbung-einschreibung",
+      "https://www.uni-passau.de/deutschlandstipendium/fuer-bewerberinnen-und-bewerber/bewerbung",
+      "https://www.uni-passau.de/einschreibung"
+    ],
+    "de-whu-otto-beisheim-school-of-management-hrk261-bachelor-in-internationa-daad4099": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4099/",
+      "https://www.whu.edu/en/programs/bachelor-program/bachelor-in-international-business-administration/?utm_source=daad&utm_medium=portal&utm_campaign=daad_biba",
+      "https://www.whu.edu/en/programs/bachelor-program/fees-financing/",
+      "https://www.whu.edu/en/programs/master-of-science-programs/master-in-finance/",
+      "https://www.whu.edu/en/programs/bachelor-program/bachelor-in-international-business-administration/application-admissions/",
+      "https://www.whu.edu/en/programs/bachelor-program/bachelor-in-international-business-administration/application-admissions/?utm_source=daad&utm_medium=portal&utm_campaign=daad_biba",
+      "https://www.whu.edu/de/programme/bachelor-programm/gebuehren-finanzierung/",
+      "https://www.whu.edu/de/programme/master-of-science-programme/master-in-international-business/bewerbung-zulassung/",
+      "https://www.whu.edu/de/programme/bachelor-programm/bachelor-in-internationaler-betriebswirtschaft/bewerbung-zulassung/"
+    ],
+    "de-hochschule-pforzheim-gestaltung-technik-hrk219-bachelors-in-business-ad-daad9800": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9800/",
+      "https://businesspf.hs-pforzheim.de/en/studies/bachelor/bba_international_business",
+      "https://businesspf.hs-pforzheim.de/en/studies/application",
+      "https://www.hs-pforzheim.de/fileadmin/user_upload/uploads_redakteur/Studentische_Abteilung/Dokumente/Gebuehren/Studiengebuehren_Auskunftsformular_PF.pdf",
+      "https://designpf.hs-pforzheim.de/faqs/kosten",
+      "https://designpf.hs-pforzheim.de/faqs/bewerbungsfristen",
+      "https://designpf.hs-pforzheim.de/bewerben_ma",
+      "https://www.hs-pforzheim.de/international/studieren_im_ausland/studieren_an_einer_partnerhochschule/bewerbung",
+      "https://businesspf.hs-pforzheim.de/studium/bewerbungsverfahren"
+    ],
+    "nl-avans-hogeschool-07gr-bouwkunde-1001o3048": [
+      "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+      "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+      "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+      "https://www.avans.nl/studeren/opleidingen/bachelor/international-business-voltijd",
+      "https://www.avans.nl/studeren/opleidingen/master/materials-en-energy-transition-voltijd",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden/deadlines",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden"
+    ],
+    "nl-avans-hogeschool-07gr-breda-accountancy-1001o3528": [
+      "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+      "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+      "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+      "https://www.avans.nl/studeren/opleidingen/bachelor/international-business-voltijd",
+      "https://www.avans.nl/studeren/opleidingen/master/materials-en-energy-transition-voltijd",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden/deadlines",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden"
+    ],
+    "nl-avans-hogeschool-07gr-breda-chemische-technologie-1001o3144": [
+      "https://www.avans.nl/studeren/opleidingen/bachelor/chemische-technologie-voltijd",
+      "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+      "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+      "https://www.avans.nl/studeren/opleidingen/bachelor/international-business-voltijd",
+      "https://www.avans.nl/studeren/opleidingen/master/materials-en-energy-transition-voltijd",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden/deadlines",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden"
+    ],
+    "nl-avans-hogeschool-07gr-breda-ict-1016o4948": [
+      "https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd",
+      "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+      "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+      "https://www.avans.nl/studeren/opleidingen/bachelor/international-business-voltijd",
+      "https://www.avans.nl/studeren/opleidingen/master/materials-en-energy-transition-voltijd",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden/deadlines",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden"
+    ],
+    "nl-avans-hogeschool-07gr-s-hertogenbosch-accountancy-1001o3528": [
+      "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+      "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+      "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+      "https://www.avans.nl/studeren/opleidingen/bachelor/international-business-voltijd",
+      "https://www.avans.nl/studeren/opleidingen/master/materials-en-energy-transition-voltijd",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden/deadlines",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden"
+    ],
+    "nl-avans-hogeschool-07gr-s-hertogenbosch-bouwkunde-1001o3048": [
+      "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+      "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+      "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+      "https://www.avans.nl/studeren/opleidingen/bachelor/international-business-voltijd",
+      "https://www.avans.nl/studeren/opleidingen/master/materials-en-energy-transition-voltijd",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden/deadlines",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden"
+    ],
+    "de-hochschule-pforzheim-gestaltung-technik-hrk219-bachelor-of-business-adm-daad9199": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/",
+      "https://businesspf.hs-pforzheim.de/en/studies/bachelors/bba_international_marketing",
+      "https://businesspf.hs-pforzheim.de/en/studies/application",
+      "https://www.hs-pforzheim.de/fileadmin/user_upload/uploads_redakteur/Studentische_Abteilung/Dokumente/Gebuehren/Studiengebuehren_Auskunftsformular_PF.pdf",
+      "https://designpf.hs-pforzheim.de/faqs/kosten",
+      "https://designpf.hs-pforzheim.de/faqs/bewerbungsfristen",
+      "https://designpf.hs-pforzheim.de/bewerben_ma",
+      "https://www.hs-pforzheim.de/international/studieren_im_ausland/studieren_an_einer_partnerhochschule/bewerbung",
+      "https://businesspf.hs-pforzheim.de/studium/bewerbungsverfahren"
+    ],
+    "nl-avans-hogeschool-07gr-s-hertogenbosch-ict-1016o4948": [
+      "https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd",
+      "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+      "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+      "https://www.avans.nl/studeren/opleidingen/bachelor/international-business-voltijd",
+      "https://www.avans.nl/studeren/opleidingen/master/materials-en-energy-transition-voltijd",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden/deadlines",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden"
+    ],
+    "nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182": [
+      "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+      "https://www.capabel.nl/opleidingen/zorg-welzijn/hbo-bachelor-verpleegkundige",
+      "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict"
+    ],
+    "nl-christelijke-hogeschool-ede-25ba-bedrijfskunde-1001o2793": [
+      "https://che.nl/opleidingen/bedrijfskunde-ondernemen-hrm/bachelor/bedrijfskunde",
+      "https://che.nl/info-opleidingen/aanmelden-opleiding",
+      "https://che.nl/opleidingen/bedrijfskunde-ondernemen-hrm/bachelor/human-resource-management"
+    ],
+    "nl-christelijke-hogeschool-ede-25ba-ict-1001o2670": [
+      "https://che.nl/opleidingen/ict/bachelor/ict",
+      "https://che.nl/info-opleidingen/aanmelden-opleiding",
+      "https://che.nl/opleidingen/bedrijfskunde-ondernemen-hrm/bachelor/human-resource-management"
+    ],
+    "nl-christelijke-hogeschool-windesheim-01vu-accountancy-1001o3525": [
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/accountancy",
+      "https://www.windesheim.nl/opleidingen/studiekosten",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/lerarenopleiding-basisonderwijs-pabo-zwolle",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/international-business",
+      "https://www.windesheim.nl/opleidingen/deeltijd/cursus/motiverend-coachen",
+      "https://www.windesheim.nl/opleidingen/aanmelden",
+      "https://www.windesheim.nl/over-windesheim/veelgestelde-vragen",
+      "https://www.windesheim.nl/getmedia/eec791c7-b1fa-46ce-be54-109f7ba721aa/Besluit-2025-043-Instellingsdeel-OER-Ad-en-Bachelor-Eigen-Leerroute-2026-2027.pdf"
+    ],
+    "nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046": [
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+      "https://www.windesheim.nl/opleidingen/studiekosten",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/lerarenopleiding-basisonderwijs-pabo-zwolle",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/international-business",
+      "https://www.windesheim.nl/opleidingen/deeltijd/cursus/motiverend-coachen",
+      "https://www.windesheim.nl/opleidingen/aanmelden",
+      "https://www.windesheim.nl/over-windesheim/veelgestelde-vragen",
+      "https://www.windesheim.nl/getmedia/eec791c7-b1fa-46ce-be54-109f7ba721aa/Besluit-2025-043-Instellingsdeel-OER-Ad-en-Bachelor-Eigen-Leerroute-2026-2027.pdf"
+    ],
+    "nl-christelijke-hogeschool-windesheim-01vu-almere-ict-1001o2665": [
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle",
+      "https://www.windesheim.nl/opleidingen/studiekosten",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/lerarenopleiding-basisonderwijs-pabo-zwolle",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/international-business",
+      "https://www.windesheim.nl/opleidingen/deeltijd/cursus/motiverend-coachen",
+      "https://www.windesheim.nl/opleidingen/aanmelden",
+      "https://www.windesheim.nl/over-windesheim/veelgestelde-vragen",
+      "https://www.windesheim.nl/getmedia/eec791c7-b1fa-46ce-be54-109f7ba721aa/Besluit-2025-043-Instellingsdeel-OER-Ad-en-Bachelor-Eigen-Leerroute-2026-2027.pdf"
+    ],
+    "nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046": [
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+      "https://www.windesheim.nl/opleidingen/studiekosten",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/lerarenopleiding-basisonderwijs-pabo-zwolle",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/international-business",
+      "https://www.windesheim.nl/opleidingen/deeltijd/cursus/motiverend-coachen",
+      "https://www.windesheim.nl/opleidingen/aanmelden",
+      "https://www.windesheim.nl/over-windesheim/veelgestelde-vragen",
+      "https://www.windesheim.nl/getmedia/eec791c7-b1fa-46ce-be54-109f7ba721aa/Besluit-2025-043-Instellingsdeel-OER-Ad-en-Bachelor-Eigen-Leerroute-2026-2027.pdf"
+    ],
+    "nl-christelijke-hogeschool-windesheim-01vu-ict-1001o2665": [
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle",
+      "https://www.windesheim.nl/opleidingen/studiekosten",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/lerarenopleiding-basisonderwijs-pabo-zwolle",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/international-business",
+      "https://www.windesheim.nl/opleidingen/deeltijd/cursus/motiverend-coachen",
+      "https://www.windesheim.nl/opleidingen/aanmelden",
+      "https://www.windesheim.nl/over-windesheim/veelgestelde-vragen",
+      "https://www.windesheim.nl/getmedia/eec791c7-b1fa-46ce-be54-109f7ba721aa/Besluit-2025-043-Instellingsdeel-OER-Ad-en-Bachelor-Eigen-Leerroute-2026-2027.pdf"
+    ],
+    "nl-de-haagse-hogeschool-27um-accountancy-1001o3550": [
+      "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld",
+      "https://www.dehaagsehogeschool.nl/media/inzicht-het-welzijn-en-de-uitdagingen-van-oekraiense-jongeren-den-haag-lees-hier-het-onderzoeksrapport-van-juni-2026",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+      "https://www.dehaagsehogeschool.nl/media/oer-elektrotechniek",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat"
+    ],
+    "nl-de-haagse-hogeschool-27um-applied-data-science-art-1001o8742": [
+      "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld",
+      "https://www.dehaagsehogeschool.nl/media/inzicht-het-welzijn-en-de-uitdagingen-van-oekraiense-jongeren-den-haag-lees-hier-het-onderzoeksrapport-van-juni-2026",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+      "https://www.dehaagsehogeschool.nl/media/oer-elektrotechniek",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat"
+    ],
+    "nl-de-haagse-hogeschool-27um-delft-elektrotechniek-1001o3093": [
+      "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/elektrotechniek-voltijd",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld",
+      "https://www.dehaagsehogeschool.nl/media/inzicht-het-welzijn-en-de-uitdagingen-van-oekraiense-jongeren-den-haag-lees-hier-het-onderzoeksrapport-van-juni-2026",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+      "https://www.dehaagsehogeschool.nl/media/oer-elektrotechniek",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat"
+    ],
+    "nl-de-haagse-hogeschool-27um-bouwkunde-1001o3065": [
+      "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/bouwkunde",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld",
+      "https://www.dehaagsehogeschool.nl/media/inzicht-het-welzijn-en-de-uitdagingen-van-oekraiense-jongeren-den-haag-lees-hier-het-onderzoeksrapport-van-juni-2026",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+      "https://www.dehaagsehogeschool.nl/media/oer-elektrotechniek",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat"
+    ],
+    "nl-de-haagse-hogeschool-27um-zoetermeer-applied-data-science-art-1001o8742": [
+      "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld",
+      "https://www.dehaagsehogeschool.nl/media/inzicht-het-welzijn-en-de-uitdagingen-van-oekraiense-jongeren-den-haag-lees-hier-het-onderzoeksrapport-van-juni-2026",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+      "https://www.dehaagsehogeschool.nl/media/oer-elektrotechniek",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat"
+    ],
+    "nl-de-haagse-hogeschool-27um-delft-ict-1001o2675": [
+      "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld",
+      "https://www.dehaagsehogeschool.nl/media/inzicht-het-welzijn-en-de-uitdagingen-van-oekraiense-jongeren-den-haag-lees-hier-het-onderzoeksrapport-van-juni-2026",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+      "https://www.dehaagsehogeschool.nl/media/oer-elektrotechniek",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat"
+    ],
+    "nl-erasmus-universiteit-rotterdam-21pe-bedrijfskunde-1001o5712": [
+      "https://www.eur.nl/bachelor/bedrijfskunde",
+      "https://www.eur.nl/onderwijs/praktische-zaken/inschrijving/collegegeld/collegegeldtarieven-2026-2027",
+      "https://www.eur.nl/onderwijs/praktische-zaken/inschrijving/collegegeld/collegegeldtarieven-2025-2026",
+      "https://www.eur.nl/en/euc/application-admissions/admission-requirements",
+      "https://www.eur.nl/en/node/24226/toelating",
+      "https://repub.eur.nl/pub/39943/Metis_188504.pdf",
+      "https://repub.eur.nl/pub/123845/1686-2600-1-SM.pdf",
+      "https://www.eur.nl/en/euc/application-admissions/deadlines",
+      "https://www.eur.nl/en/euc/application-admissions/application-procedure",
+      "https://www.eur.nl/en/node/24264/toelating"
+    ],
+    "nl-fontys-hogeschool-30gb-accountancy-1001o3555": [
+      "https://www.fontys.nl/Opleidingen/Accountancy-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmeld-deadlines.htm",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83"
+    ],
+    "nl-breda-university-of-applied-sciences-21ui-applied-data-science-art-1001o8756": [
+      "https://www.buas.nl/opleidingen/bachelor-logistics-engineering/toelatingsvoorwaarden",
+      "https://www.buas.nl/opleidingen/master-urban-tourism-and-mobility/aanmeldprocedure",
+      "https://www.buas.nl/sites/default/files/2021-07/Jaarverslag%202020.pdf",
+      "https://www.buas.nl/opleidingen/master-imagineering/aanmeldprocedure"
+    ],
+    "nl-fontys-hogeschool-30gb-elektrotechniek-1001o3098": [
+      "https://www.fontys.nl/Opleidingen/Elektrotechniek-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmeld-deadlines.htm",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83"
+    ],
+    "nl-fontys-hogeschool-30gb-ict-1001o2677": [
+      "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmeld-deadlines.htm",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83"
+    ],
+    "nl-fontys-hogeschool-30gb-tilburg-commerciele-economie-1001o3452": [
+      "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmeld-deadlines.htm",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83"
+    ],
+    "nl-fontys-hogeschool-30gb-tilburg-ict-1001o2677": [
+      "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmeld-deadlines.htm",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83"
+    ],
+    "nl-fontys-hogeschool-30gb-tilburg-technische-bedrijfskunde-1001o3682": [
+      "https://www.fontys.nl/Opleidingen/Technische-Bedrijfskunde-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmeld-deadlines.htm",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83"
+    ],
+    "nl-fontys-hogeschool-30gb-venlo-commerciele-economie-1001o3452": [
+      "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmeld-deadlines.htm",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83"
+    ],
+    "nl-fontys-hogeschool-30gb-venlo-industrieel-product-ontw-1001o3309": [
+      "https://www.fontys.nl/Opleidingen/Industrieel-Product-Ontwerpen-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmeld-deadlines.htm",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83"
+    ],
+    "nl-fontys-hogeschool-30gb-venlo-informatica-1001o3903": [
+      "https://www.fontys.nl/Opleidingen/Informatica-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmeld-deadlines.htm",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83"
+    ],
+    "nl-hogeschool-inholland-27pz-accountancy-1001o3549": [
+      "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+      "https://www.inholland.nl/inschrijven/inschrijven/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-inholland-27pz-alkmaar-accountancy-1001o3549": [
+      "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+      "https://www.inholland.nl/inschrijven/inschrijven/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-inholland-27pz-alkmaar-bouwkunde-1001o3064": [
+      "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+      "https://www.inholland.nl/inschrijven/inschrijven/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-inholland-27pz-amsterdam-accountancy-1001o3549": [
+      "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+      "https://www.inholland.nl/inschrijven/inschrijven/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-inholland-27pz-alkmaar-technische-informatica-1001o3859": [
+      "https://www.inholland.nl/opleidingen/technische-informatica-voltijd/de-opleiding/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+      "https://www.inholland.nl/inschrijven/inschrijven/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-inholland-27pz-delft-luchtvaarttechnologie-1001o3164": [
+      "https://www.inholland.nl/opleidingen/luchtvaarttechnologie-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+      "https://www.inholland.nl/inschrijven/inschrijven/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064": [
+      "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+      "https://www.inholland.nl/inschrijven/inschrijven/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-inholland-27pz-haarlem-business-studies-1001o2990": [
+      "https://www.inholland.nl/opleidingen/business-studies-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+      "https://www.inholland.nl/inschrijven/inschrijven/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-inholland-27pz-s-gravenhage-business-studies-1001o2990": [
+      "https://www.inholland.nl/opleidingen/business-studies-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+      "https://www.inholland.nl/inschrijven/inschrijven/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-inholland-27pz-haarlem-informatica-1001o3897": [
+      "https://www.inholland.nl/opleidingen/informatica-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+      "https://www.inholland.nl/inschrijven/inschrijven/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209": [
+      "https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+      "https://www.inholland.nl/inschrijven/inschrijven/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-rotterdam-22oj-accountancy-1001o3536": [
+      "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/accountancy/voltijd/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/collegegeld-en-betalen/",
+      "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bedrijfskunde/deeltijd/studiekosten/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/studievisum/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/deadlines-en-aanmeldprocedures/",
+      "https://www.hogeschoolrotterdam.nl/globalassets/documenten/hogeschool/publicaties/hogeschoolgidsen/hogeschoolgids-bacheloropleidingen-ivg-2020-2021.pdf"
+    ],
+    "nl-hogeschool-rotterdam-22oj-applied-data-science-art-1001o8776": [
+      "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/applied-data-science--artificial-intelligence/voltijd/open-dag-ba-data-science-vt/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/collegegeld-en-betalen/",
+      "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bedrijfskunde/deeltijd/studiekosten/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/studievisum/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/deadlines-en-aanmeldprocedures/",
+      "https://www.hogeschoolrotterdam.nl/globalassets/documenten/hogeschool/publicaties/hogeschoolgidsen/hogeschoolgids-bacheloropleidingen-ivg-2020-2021.pdf"
+    ],
+    "nl-hogeschool-rotterdam-22oj-bouwkunde-1001o3055": [
+      "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bouwkunde/voltijd/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/collegegeld-en-betalen/",
+      "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bedrijfskunde/deeltijd/studiekosten/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/studievisum/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/deadlines-en-aanmeldprocedures/",
+      "https://www.hogeschoolrotterdam.nl/globalassets/documenten/hogeschool/publicaties/hogeschoolgidsen/hogeschoolgids-bacheloropleidingen-ivg-2020-2021.pdf"
+    ],
+    "nl-hogeschool-utrecht-25dw-accountancy-1001o3544": [
+      "https://www.hu.nl/voltijd-opleidingen/accountancy",
+      "https://www.hu.nl/collegegeld-en-betalen",
+      "https://www.hu.nl/collegegeldmeter",
+      "https://www.hu.nl/-/media/hu/documenten/onderzoek/onderzoekers/webversie-openbare-les-jantien-smit.pdf",
+      "https://www.hu.nl/-/media/hu/documenten/onderzoek/projecten/2024_folder_meertaligeklassenassistenten.pdf",
+      "https://www.hu.nl/aanmelden",
+      "https://www.minor.hu.nl/",
+      "https://studiegids.hu.nl/d3ae4975-c72e-4270-9af1-bdb446092f47",
+      "https://studiegids.hu.nl/9a9aa948-792f-4fd6-8340-31ce6d7673b9"
+    ],
+    "nl-hogeschool-utrecht-25dw-chemische-technologie-1001o3152": [
+      "https://www.hu.nl/voltijd-opleidingen/chemische-technologie",
+      "https://www.hu.nl/collegegeld-en-betalen",
+      "https://www.hu.nl/collegegeldmeter",
+      "https://www.hu.nl/-/media/hu/documenten/onderzoek/onderzoekers/webversie-openbare-les-jantien-smit.pdf",
+      "https://www.hu.nl/-/media/hu/documenten/onderzoek/projecten/2024_folder_meertaligeklassenassistenten.pdf",
+      "https://www.hu.nl/aanmelden",
+      "https://www.minor.hu.nl/",
+      "https://studiegids.hu.nl/d3ae4975-c72e-4270-9af1-bdb446092f47",
+      "https://studiegids.hu.nl/9a9aa948-792f-4fd6-8340-31ce6d7673b9"
+    ],
+    "nl-hogeschool-utrecht-25dw-ict-1001o2672": [
+      "https://www.hu.nl/voltijd-opleidingen/hbo-ict",
+      "https://www.hu.nl/collegegeld-en-betalen",
+      "https://www.hu.nl/collegegeldmeter",
+      "https://www.hu.nl/-/media/hu/documenten/onderzoek/onderzoekers/webversie-openbare-les-jantien-smit.pdf",
+      "https://www.hu.nl/-/media/hu/documenten/onderzoek/projecten/2024_folder_meertaligeklassenassistenten.pdf",
+      "https://www.hu.nl/aanmelden",
+      "https://www.minor.hu.nl/",
+      "https://studiegids.hu.nl/d3ae4975-c72e-4270-9af1-bdb446092f47",
+      "https://studiegids.hu.nl/9a9aa948-792f-4fd6-8340-31ce6d7673b9"
+    ],
+    "nl-hogeschool-van-amsterdam-28dn-biomedische-technologie-1001o5075": [
+      "https://www.hva.nl/opleidingen/biomedische-technologie",
+      "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/collegegeld/collegegeldtarieven",
+      "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/21-toelatingsonderzoek",
+      "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/toelatingseisen",
+      "https://research.hva.nl/files/17281039/Peter_Huub_Ron_NL_Spiegel.pdf",
+      "https://research.hva.nl/en/publications/samenhang-in-vreemdetalencurricula-een-verkenning-van-onderwijs-e/",
+      "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/stappenplan-inschrijven",
+      "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/diplomawaardering/documentatie-vooropleiding-niet-afgerond"
+    ],
+    "nl-hogeschool-van-amsterdam-28dn-ict-1001o2676": [
+      "https://www.hva.nl/opleidingen/ict",
+      "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/collegegeld/collegegeldtarieven",
+      "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/21-toelatingsonderzoek",
+      "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/toelatingseisen",
+      "https://research.hva.nl/files/17281039/Peter_Huub_Ron_NL_Spiegel.pdf",
+      "https://research.hva.nl/en/publications/samenhang-in-vreemdetalencurricula-een-verkenning-van-onderwijs-e/",
+      "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/stappenplan-inschrijven",
+      "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/diplomawaardering/documentatie-vooropleiding-niet-afgerond"
+    ],
+    "nl-hogeschool-van-arnhem-en-nijmegen-25kb-ict-1001o2674": [
+      "https://www.han.nl/opleidingen/hbo/ict/voltijd/",
+      "https://www.han.nl/studeren/onderwijs/collegegeld/",
+      "https://www.han.nl/opleidingen/associate-degree/elektrotechniek/deeltijd/praktische-info/Inschrijvingsreglement-2025-2026-AEA-DEFINITIEF-VERSIE2.pdf",
+      "https://libguides.bibliotheek.han.nl/az/databases",
+      "https://www.han.nl/opleidingen/hbo/chemie/voltijd/praktische-info/OER-H9-OWEs-Chemie-2021-2022.pdf",
+      "https://www.han.nl/opleidingen/hbo/vaktherapie-dramatherapie/voltijd/praktische-info/Inschrijfreglement-2023-2024-Vaktherapie-BA.pdf",
+      "https://www.han.nl/opleidingen/hbo/ergotherapie/voltijd/praktische-info/Inschrijvingsreglement-Ergotherapie-2023-2024.pdf",
+      "https://www.han.nl/opleidingen/master/circular-economy/voltijd/praktische-info/",
+      "https://www.han.nl/opleidingen/associate-degree/bedrijfskunde-sustainable-international-business/voltijd/praktische-info/Voltijd-Ad-Bedrijfskunde-Inschrijvingsreglement-2024-2025.pdf"
+    ],
+    "nl-capabel-hogeschool-30hc-rotterdam-ict-1001o8912": [
+      "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict",
+      "https://www.capabel.nl/opleidingen/zorg-welzijn/hbo-bachelor-verpleegkundige"
+    ],
+    "nl-hogeschool-leiden-21ri-commerciele-economie-1001o3422": [
+      "https://www.hsleiden.nl/opleiding/commerciele-economie",
+      "https://www.hsleiden.nl/studeren/inschrijven/kosten",
+      "https://www.hsleiden.nl/master/digital-forensics-parttime/requirements-and-enrollment",
+      "https://www.hsleiden.nl/studeren/inschrijven/toelating",
+      "https://www.hsleiden.nl/opleiding/fysiotherapie/toelating-en-inschrijving",
+      "https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland",
+      "https://www.hsleiden.nl/opleiding/management-in-de-zorg-associate-degree/toelating-en-inschrijving"
+    ],
+    "nl-hogeschool-leiden-21ri-bio-informatica-1001o5219": [
+      "https://www.hsleiden.nl/opleiding/bio-informatica",
+      "https://www.hsleiden.nl/studeren/inschrijven/kosten",
+      "https://www.hsleiden.nl/master/digital-forensics-parttime/requirements-and-enrollment",
+      "https://www.hsleiden.nl/studeren/inschrijven/toelating",
+      "https://www.hsleiden.nl/opleiding/fysiotherapie/toelating-en-inschrijving",
+      "https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland",
+      "https://www.hsleiden.nl/opleiding/management-in-de-zorg-associate-degree/toelating-en-inschrijving"
+    ]
+  }
+}

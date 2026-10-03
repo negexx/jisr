@@ -18,14 +18,14 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6153/
 durationYears:
   value: 3
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
     - de
     - en
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 tuition:
   value: null
   source: daad
@@ -35,9 +35,9 @@ intakes:
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-1
+  info_kind: official
 documents:
   value: null
   source: daad
@@ -52,3 +52,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6153/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.uni-due.de/iw/en/study/b-se.php
+    last_verified_at: 2026-10-02

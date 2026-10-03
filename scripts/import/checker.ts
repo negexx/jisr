@@ -63,6 +63,19 @@ export function claimText(name: FactName, value: unknown): string {
     }
     case "applicationChannel":
       return CHANNEL_TEXT[String(value)] ?? `Application channel: ${String(value)}.`;
+    case "documents": {
+      const docs = value as {
+        name: { fr: string; en?: string };
+        translationRequired: boolean | null;
+      }[];
+      const names = docs.map((d) => d.name.en ?? d.name.fr).join("; ");
+      const translated = docs
+        .filter((d) => d.translationRequired === true)
+        .map((d) => d.name.en ?? d.name.fr);
+      return `An international applicant must submit these documents: ${names}.${
+        translated.length === 0 ? "" : ` A translation is required for: ${translated.join("; ")}.`
+      }`;
+    }
   }
 }
 
@@ -157,12 +170,18 @@ export type CheckInput = {
   completeFn?: (model: ModelSpec, input: CompleteInput) => Promise<Completion>;
 };
 
+// A documents or intakes fact has about one quote per document or date, so the checker needs to see
+// them all; every other fact is settled by a quote or two.
+const EXCERPT_LIMIT: Partial<Record<FactName, number>> = { documents: 6, intakes: 6 };
+const DEFAULT_EXCERPT_LIMIT = 2;
+
 async function excerptOf(
   evidence: readonly { url: string; quote: string }[],
   getText: GetText,
+  limit: number,
 ): Promise<string> {
   const parts: string[] = [];
-  for (const e of evidence.slice(0, 2)) {
+  for (const e of evidence.slice(0, limit)) {
     try {
       const context = contextAround(e.quote, await getText(e.url));
       if (context !== null) parts.push(context);
@@ -228,7 +247,11 @@ export async function checkVerified(input: CheckInput): Promise<CheckOutcome> {
       id,
       fact: name,
       statement: claimText(name, fact.value),
-      excerpt: await excerptOf(fact.evidence, input.getText),
+      excerpt: await excerptOf(
+        fact.evidence,
+        input.getText,
+        EXCERPT_LIMIT[name] ?? DEFAULT_EXCERPT_LIMIT,
+      ),
     });
   }
   for (const [index, rule] of rules.entries()) {
@@ -240,7 +263,7 @@ export async function checkVerified(input: CheckInput): Promise<CheckOutcome> {
       id,
       fact: `requirement ${rule.kind}`,
       statement,
-      excerpt: await excerptOf(rule.evidence, input.getText),
+      excerpt: await excerptOf(rule.evidence, input.getText, DEFAULT_EXCERPT_LIMIT),
     });
   }
   if (claims.length === 0) {

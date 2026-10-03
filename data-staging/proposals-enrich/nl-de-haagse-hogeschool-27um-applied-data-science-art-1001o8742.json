@@ -1,0 +1,106 @@
+{
+  "slug": "nl-de-haagse-hogeschool-27um-applied-data-science-art-1001o8742",
+  "programmePage": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+          "quote": "Duration 4 jaar"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+          "quote": "Taal Nederlands"
+        },
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+          "quote": "Dus dat klopt voor het grootste deel. We spreken bij de opleiding Nederlands en de producten die je oplevert, schrijf je ook in het Nederlands."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2026-05-01"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+          "quote": "De aanmelddeadline is 1 mei 2026."
+        },
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+          "quote": "Deze opleiding start in september en heeft geen februari-instroom."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+          "quote": "Je aanmelden voor een opleiding doe je via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee left out: the collegegeld page gives amounts only for students entitled to the statutory fee (EU/EEA etc.) or master students; for this non-EU applicant to a bachelor programme it only states that those who do not meet the conditions pay the institutional fee (instellingscollegegeld), with a rate quoted (EUR 10,528 for 2026-2027) that is a general institution-wide figure for all bachelor/Ad/master programmes, not stated for this programme. No document list (e.g. school-leaving certificate, translation) is named for this programme on the supplied pages. The teaching language is Dutch; the pages state that for a foreign/international diploma proof of sufficient command of Dutch is required. The start date (1 September) is not given with a specific day/month/year for this programme, so intake startDate is null.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+            "quote": "Met een buitenlands of internationaal diploma kun je toegelaten worden, mits dit diploma toelating biedt tot hbo en je een bewijs hebt van voldoende beheersing van de Nederlandse taal."
+          },
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "Je toont aan dat je voldoet aan de taaleis Nederlands via een staatsexamen Nederlands als Tweede Taal, programma II met alle vier de onderdelen lezen, spreken, schrijven en luisteren."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme étranger : la Centrale Studenten Inschrijving évalue si votre diplôme est au moins équivalent au diplôme néerlandais requis ; introduisez votre demande via Studielink.",
+          "en": "Foreign diploma: the Centrale Studenten Inschrijving assesses whether your diploma is at least equivalent to the required Dutch diploma; submit your application via Studielink."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "De Centrale Studenten Inschrijving bepaalt of jouw buitenlandse diploma ten minste gelijkwaardig is aan dat van een (toelatinggevend) Nederlands diploma."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Aucune exception n'est possible aux conditions d'admission officielles : seul le CSI peut se prononcer sur votre admissibilité.",
+          "en": "No exceptions can be made to the official admission requirements: only the CSI can decide on your admissibility."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+            "quote": "Op de officiële toelatingseisen kunnen geen uitzonderingen worden gemaakt. Alleen de afdeling CSI kan uitspraken doen over je toelaatbaarheid op basis van de officiële regels."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -19,25 +19,28 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 4
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
-    - de
     - en
-  source: daad
-  info_kind: guidance
+    - de
+  source: page-1
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 50000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
 intakes:
   value: null
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-3
+  info_kind: official
 documents:
   value: null
   source: daad
@@ -52,3 +55,12 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7892/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/international-bachelor-of-engineering
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/what-are-the-costs-of-studying-at-th-rosenheim-tuition-fees-and-student-union-fees
+    last_verified_at: 2026-10-02
+  page-3:
+    url: https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme
+    last_verified_at: 2026-10-02

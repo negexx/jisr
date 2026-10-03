@@ -18,14 +18,14 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10371/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
-    - de
     - en
-  source: daad
-  info_kind: guidance
+    - de
+  source: page-1
+  info_kind: official
 tuition:
   value: null
   source: daad
@@ -39,9 +39,54 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: university-entrance-qualification
+      name:
+        fr:
+          text: Diplôme d'accès à l'université
+          status: draft
+        en:
+          text: University entrance qualification
+          status: draft
+      translationRequired: null
+    - slug: recognition-of-certificates
+      name:
+        fr:
+          text: Reconnaissance des certificats
+          status: draft
+        en:
+          text: Recognition of certificates
+          status: draft
+      translationRequired: null
+    - slug: language-skills-proof
+      name:
+        fr:
+          text: Preuve de compétences linguistiques
+          status: draft
+        en:
+          text: Proof of language skills
+          status: draft
+      translationRequired: null
+    - slug: cv
+      name:
+        fr:
+          text: CV complet chronologique
+          status: draft
+        en:
+          text: Complete CV, chronological
+          status: draft
+      translationRequired: null
+    - slug: study-orientation-test
+      name:
+        fr:
+          text: Preuve de test d'orientation aux études
+          status: draft
+        en:
+          text: Proof of study orientation test
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -52,3 +97,9 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10371/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hs-heilbronn.de/en/environmental-and-process-engineering?mtm_campaign=daad-international-programmes&mtm_kwd=UP
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.hs-heilbronn.de/en/checklist-for-bachelor-applicants-2f2f62a1ac1a86e6
+    last_verified_at: 2026-10-02

@@ -1,0 +1,178 @@
+{
+  "slug": "de-frankfurt-school-of-finance-management-hrk83-bachelors-in-management-daad9700",
+  "programmePage": "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9700/",
+          "quote": "Full-time / part-time full-time Programme duration 7 semesters"
+        },
+        {
+          "url": "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+          "quote": "Duration Full-time | 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9700/",
+          "quote": "The degree programme is taught entirely in English."
+        },
+        {
+          "url": "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+          "quote": "The programme is taught in English on a full-time basis."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": "2027-09-01",
+          "applicationOpens": null,
+          "applicationDeadline": "2027-06-30"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+          "quote": "Tuition Fee € 8,600/semester + €100 application fee, €600 enrolment fee Application Deadline 30 June 2027 Start Date 1 September 2027"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+          "quote": "Step 01 Online Application Submit your application and all required documents via our online application portal."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "secondary-school-diploma",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary school diploma"
+          },
+          "quotedAs": "recognised secondary school diploma",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum Vitae (CV)",
+            "en": "Curriculum Vitae (CV)"
+          },
+          "quotedAs": "Curriculum Vitae (CV, résumé)",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-id",
+          "name": {
+            "fr": "Copie du passeport ou de la carte d'identité",
+            "en": "Copy of passport or ID card"
+          },
+          "quotedAs": "A copy of your passport or ID card",
+          "translationRequired": null
+        },
+        {
+          "slug": "letter-of-motivation",
+          "name": {
+            "fr": "Lettre de motivation (optionnelle)",
+            "en": "Letter of motivation (optional)"
+          },
+          "quotedAs": "An optional letter of motivation",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+          "quote": "You will need to upload the following supporting documents: A recognised secondary school diploma* (Abitur, IB Diploma, US High School Diploma, A-Levels, European Baccalaureate, etc.) An optional letter of motivation (500 words max.) A Curriculum Vitae (CV, résumé) A copy of your passport or ID card"
+        }
+      ]
+    }
+  },
+  "notes": "Fees conflict: the programme's own page states €8,600/semester (the value used), while the DAAD page states 8,200 EUR per semester for applicants from all countries and adds 'Tuition fees may vary'. Both quotes are given as evidence. Tuition is stated per semester, not per year. Two application deadlines appear: the own page gives 'Application Deadline 30 June 2027', the FAQ gives 'The application portal is open from 1 September 2025 to 30 June 2026'; the 2027 cycle was used. Application channel: neither page mentions uni-assist or a VPD, so 'de-university-direct' is used on the strength of the programme's own online application portal; a Moroccan applicant with a foreign diploma is not told to change channel. No document-translation requirement was found on any page, so translationRequired is null everywhere. The scholarship page (bachelor) was not used for tuition because it is a reduction programme, not a fee.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9700/",
+            "quote": "B2 required, proof via placement test/interview Application periods"
+          },
+          {
+            "url": "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+            "quote": "As we have incorporated an English language test into our Assessment Centre, you are not required to submit an English certificate with your application."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Admission sur dossier + Assessment Centre en ligne obligatoire : test de mathématiques, test cognitif, test d'anglais et entretien.",
+          "en": "Admission by application review plus a compulsory online Assessment Centre: mathematics test, cognitive test, English test and interview."
+        },
+        "evidence": [
+          {
+            "url": "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+            "quote": "The Assessment Centre, which includes a mathematics test, a cognitive test, an English test and an interview."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Frais de candidature de 100 € à payer avant le traitement du dossier (aucun numerus clausus).",
+          "en": "A EUR 100 application fee must be paid before the application is processed (no numerus clausus)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+            "quote": "Please note that payment of the EUR 100 application fee is required before your application can be processed."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Si tu as un diplôme secondaire autre que ceux listés (Abitur, IB, etc.), consulte le site du DAAD pour les conditions ; elles peuvent changer.",
+          "en": "If your secondary qualification is not one of those listed (Abitur, IB, etc.), consult the DAAD website for the requirements; they may change."
+        },
+        "evidence": [
+          {
+            "url": "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+            "quote": "If you are completing a secondary qualification not listed above, please consult the DAAD website for the relevant requirements."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Candidature possible une seule fois par année académique (septembre à août).",
+          "en": "You may apply only once per academic year (September to August)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+            "quote": "You can apply only once per academic year (September to August)."
+          }
+        ]
+      }
+    ]
+  }
+}

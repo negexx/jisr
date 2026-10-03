@@ -1,0 +1,66 @@
+{
+  "slug": "nl-avans-hogeschool-07gr-breda-accountancy-1001o3528",
+  "programmePage": "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+          "quote": "Duur 4 jaar, voltijd bachelor"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+          "quote": "Duur 4 jaar, voltijd bachelor Taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/praktische-zaken/aanmelden/deadlines",
+          "quote": "meld je dan bij voorkeur aan vóór 1 mei en uiterlijk 31 augustus via Studielink"
+        }
+      ]
+    }
+  },
+  "notes": "La preuve du droit de scolarité pour les étudiants non-EEE (10 308 €) provient d'une page institutionnelle générale et n'est pas spécifique à ce programme ; elle n'est donc pas incluse comme fait 'tuition'. Aucune liste de documents n'est fournie pour ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme requis : havo ou vwo, ou mbo-niveau 4. Vérifiez si votre Baccalauréat marocain est accepté.",
+          "en": "Required diploma: havo or vwo, or mbo-niveau 4. Check whether your Moroccan Baccalaureate is accepted."
+        },
+        "evidence": [
+          {
+            "url": "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+            "quote": "Toelatingseisen Accountancy bachelor Havo Economie & Maatschappij Cultuur & Maatschappij Natuur & Techniek Natuur & Gezondheid Vwo Economie & Maatschappij Cultuur & Maatschappij Natuur & Techniek Natuur & Gezondheid Mbo en overige Mbo-niveau 4"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non-EEE doivent s'inscrire avant le 1er mai et ont une studiekeuzecheck obligatoire.",
+          "en": "Non-EEA applicants must apply by 1 May and have a compulsory studiekeuzecheck."
+        },
+        "evidence": [
+          {
+            "url": "https://www.avans.nl/studeren/praktische-zaken/aanmelden/deadlines",
+            "quote": "Niet-EER nationaliteit Start je in september met een opleiding en is jouw nationaliteit anders dan een van de EER-landen of Zwitserland? Meld je dan t/m 1 mei aan."
+          }
+        ]
+      }
+    ]
+  }
+}

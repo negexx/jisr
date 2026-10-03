@@ -6,7 +6,14 @@ import { parse } from "yaml";
 
 import { checkVerified } from "./checker";
 import { enrichProposal, type National, readNational } from "./enrich-fr";
-import { CHANNEL_SLUGS, LANGUAGE_CODES, pageText, SUBJECT_SLUGS, TEST_SLUGS } from "./evidence";
+import {
+  CHANNEL_SLUGS,
+  decodeEntities,
+  LANGUAGE_CODES,
+  pageText,
+  SUBJECT_SLUGS,
+  TEST_SLUGS,
+} from "./evidence";
 import {
   appendJsonl,
   Budget,
@@ -24,6 +31,7 @@ import {
   type GetText,
   type Proposal,
   ProposalSchema,
+  type RuleProposal,
   type Verified,
   verifyProposal,
 } from "./proposals";
@@ -55,7 +63,8 @@ OUTPUT (JSON, no markdown)
     "teachingLanguages": { "value": ["en"], "evidence": [...] },
     "tuition": { "value": {"amountMinor": 1465000, "currency": "EUR", "period": "year"}, "evidence": [...] },
     "intakes": { "value": [{"startDate": null, "applicationOpens": null, "applicationDeadline": "2027-05-01"}], "evidence": [...] },
-    "applicationChannel": { "value": "nl-studielink", "evidence": [...] }
+    "applicationChannel": { "value": "nl-studielink", "evidence": [...] },
+    "documents": { "value": [{"slug":"school-leaving-certificate","name":{"fr":"Diplôme de fin d'études secondaires","en":"School-leaving certificate"},"quotedAs":"school-leaving certificate","translationRequired":true}], "evidence": [...] }
   },
   "requirements": { "rules": [ ... ] },
   "notes": "caveats for the human auditor, or omit"
@@ -68,6 +77,7 @@ FACT DETAILS
 - tuition: the tuition fee a student from OUTSIDE the EU/EEA pays, in minor units (EUR 14,650 = 1465000), period "year" or "semester". If the quote says there are no tuition fees for this student, amountMinor is 0 and the quote must say so; never write 0 just because you found no fee. A fee that is only for EU students, or only a general institution-wide figure that may not apply, is not stated for this programme: leave it out and say why in notes.
 - intakes: dates as ISO YYYY-MM-DD. Write a date only if the quote states day, month and YEAR; otherwise leave it out (do not infer a year). null for a date the pages do not give. Never output an intake whose three dates are all null: leave the fact out.
 - applicationChannel: exactly one of ${CHANNEL_SLUGS.join(", ")}; the quote must name the platform or route. How to choose is explained per country in the TASK at the end.
+- documents: the documents an international applicant must submit, one list item per document that the quotes name (never a document the pages do not name). slug: lowercase English kebab-case ("school-leaving-certificate"). name.fr (required) and name.en: the document's name. quotedAs (required): the document's name EXACTLY as written in the quote, in the page's own language ("Lebenslauf", "Reisepass", "school-leaving certificate"); a document whose quotedAs is not in a quote is discarded. translationRequired: true only if a quote says that document must be translated or officially translated; otherwise null (never false). Leave the fact out if the pages give no document list.
 
 REQUIREMENTS (rules the matcher can evaluate; each needs evidence)
 - {"kind":"language_proficiency","language":"fr","minCefr":"B2"|null,"certificateRequired":true|false|null,"acceptedTests":[${TEST_SLUGS.map((s) => `"${s}"`).join(",")}],"evidence":[...]} only for a stated condition of admission, never for "recommended". Each stated level and test must appear in a quote. acceptedTests lists the tests the quote names; use [] only if the quote names none, never null.
@@ -204,6 +214,25 @@ export function salvageProposal(raw: unknown): { proposal: Proposal | null; drop
       dropped.push("facts.intakes");
     } else (intakes as Record<string, unknown>).value = dated;
   }
+  const documents =
+    typeof facts === "object" && facts !== null
+      ? (facts as Record<string, unknown>).documents
+      : undefined;
+  const documentList =
+    typeof documents === "object" && documents !== null
+      ? (documents as Record<string, unknown>).value
+      : undefined;
+  if (Array.isArray(documentList)) {
+    // a negative ("no translation needed") cannot be verified from a quote, and a missing answer is
+    // no answer: unknown instead
+    for (const item of documentList) {
+      if (typeof item === "object" && item !== null) {
+        const d = item as Record<string, unknown>;
+        if (d.translationRequired === false || d.translationRequired === undefined)
+          d.translationRequired = null;
+      }
+    }
+  }
   for (let round = 0; round < 40; round++) {
     const parsed = ProposalSchema.safeParse(doc);
     if (parsed.success) return { proposal: parsed.data, dropped };
@@ -237,6 +266,8 @@ export function salvageProposal(raw: unknown): { proposal: Proposal | null; drop
 
 export type ReadOutcome = {
   proposal: Proposal | null;
+  // the model's proposal as it came back (schema-salvaged, nothing filtered), for diagnosis
+  rawProposal: Proposal | null;
   verified: Verified | null;
   completion: Completion | null;
   // what the model wrote that was unusable (no evidence, wrong shape) and was left out
@@ -255,6 +286,80 @@ export type ReadInput = ProgrammeMeta & {
   completeFn?: (model: ModelSpec, input: CompleteInput) => Promise<Completion>;
 };
 
+const TRACKING_PARAM = /^(?:utm_|mtm_)|^(?:fbclid|gclid)(?:=|$)/i;
+
+// A url as the pages file and the model may each have written it: entities decoded, fragment, tracking
+// parameters, a bare "?" and a trailing "/" dropped, host lower-cased. Path case and every other
+// query parameter are kept: those can name a different page.
+export function canonicalPageKey(url: string): string {
+  let parsed: URL;
+  try {
+    parsed = new URL(decodeEntities(url));
+  } catch {
+    return url;
+  }
+  const query = parsed.search
+    .replace(/^\?/, "")
+    .split("&")
+    .filter((part) => part !== "" && !TRACKING_PARAM.test(part))
+    .join("&");
+  const pathname = parsed.pathname.replace(/\/+$/, "");
+  return `${parsed.protocol}//${parsed.host}${pathname}${query === "" ? "" : `?${query}`}`;
+}
+
+// The model could only have read the pages it was given. Evidence from any other url (a page it
+// remembers, an aggregator) is dropped before the code verifies anything, and a fact or rule left
+// with no evidence goes with it. A url that differs from a supplied one only cosmetically (see
+// canonicalPageKey) is kept and rewritten to the supplied string, so the verifier fetches the same
+// cached text the reader saw. Every drop is reported.
+export function restrictToSuppliedPages(
+  proposal: Proposal,
+  suppliedUrls: Iterable<string>,
+  dropped: string[],
+): Proposal {
+  const supplied = new Map<string, string>();
+  for (const url of suppliedUrls) {
+    const key = canonicalPageKey(url);
+    if (!supplied.has(key)) supplied.set(key, url);
+  }
+  const keep = (
+    label: string,
+    evidence: readonly { url: string; quote: string }[],
+  ): { url: string; quote: string }[] => {
+    const kept: { url: string; quote: string }[] = [];
+    for (const item of evidence) {
+      const exact = supplied.get(canonicalPageKey(item.url));
+      if (exact === undefined) dropped.push(`${label}.evidence:${item.url}`);
+      else kept.push({ ...item, url: exact });
+    }
+    return kept;
+  };
+  const facts: Record<string, unknown> = {};
+  for (const [name, fact] of Object.entries(proposal.facts)) {
+    const evidence = keep(`facts.${name}`, fact.evidence);
+    if (evidence.length === 0) dropped.push(`facts.${name}`);
+    else facts[name] = { ...fact, evidence };
+  }
+  const rules: RuleProposal[] = [];
+  for (const [index, rule] of (proposal.requirements?.rules ?? []).entries()) {
+    const evidence = keep(`requirements.rules.${index}`, rule.evidence);
+    if (evidence.length === 0) dropped.push(`requirements.rules.${index}`);
+    else rules.push({ ...rule, evidence });
+  }
+  const programmePage =
+    proposal.programmePage === null
+      ? null
+      : (supplied.get(canonicalPageKey(proposal.programmePage)) ?? null);
+  if (proposal.programmePage !== null && programmePage === null) dropped.push("programmePage");
+  const { requirements: _requirements, ...rest } = proposal;
+  return {
+    ...rest,
+    programmePage,
+    facts: facts as Proposal["facts"],
+    ...(rules.length > 0 ? { requirements: { rules } } : {}),
+  };
+}
+
 export async function readProgramme(input: ReadInput): Promise<ReadOutcome> {
   const { system, user } = buildPrompt(input);
   let completion: Completion;
@@ -270,6 +375,7 @@ export async function readProgramme(input: ReadInput): Promise<ReadOutcome> {
     if (error instanceof BudgetExceeded) throw error;
     return {
       proposal: null,
+      rawProposal: null,
       verified: null,
       completion: null,
       dropped: [],
@@ -282,6 +388,7 @@ export async function readProgramme(input: ReadInput): Promise<ReadOutcome> {
   } catch (error) {
     return {
       proposal: null,
+      rawProposal: null,
       verified: null,
       completion,
       dropped: [],
@@ -296,20 +403,28 @@ export async function readProgramme(input: ReadInput): Promise<ReadOutcome> {
   if (salvaged.proposal === null)
     return {
       proposal: null,
+      rawProposal: null,
       verified: null,
       completion,
       dropped: [],
       error: "schema mismatch: not a proposal object",
     };
+  const rawProposal = structuredClone(salvaged.proposal);
   // The route a Moroccan applicant takes into France is set from the route data, not read from a page
   // (a page that says "Parcoursup" describes French Bac holders).
   if (input.country === "FR" && salvaged.proposal.facts.applicationChannel !== undefined) {
     delete salvaged.proposal.facts.applicationChannel;
     salvaged.dropped.push("facts.applicationChannel");
   }
-  const verified = await verifyProposal(salvaged.proposal, input.name, input.getText);
+  const proposal = restrictToSuppliedPages(
+    salvaged.proposal,
+    [...input.shared, ...input.own].map((page) => page.url),
+    salvaged.dropped,
+  );
+  const verified = await verifyProposal(proposal, input.name, input.getText);
   return {
-    proposal: salvaged.proposal,
+    proposal,
+    rawProposal,
     verified,
     completion,
     dropped: salvaged.dropped,
@@ -552,13 +667,13 @@ async function main(argv: readonly string[]): Promise<void> {
       accepted += ok.length;
       rejected += bad.length;
       if (result.error !== null || check?.error != null || baseMissing) failed++;
-      // raw/ keeps what the model proposed (rejected quotes included) so a rejection can be inspected;
-      // <slug>.json is what the code verified and the checker kept
-      if (result.proposal !== null) {
+      // raw/ keeps what the model proposed (rejected quotes and unsupplied pages included) so a
+      // rejection can be inspected; <slug>.json is what the code verified and the checker kept
+      if (result.rawProposal !== null) {
         await mkdir(path.join(out, "raw"), { recursive: true });
         await writeFile(
           path.join(out, "raw", `${slug}.json`),
-          `${JSON.stringify(result.proposal, null, 2)}\n`,
+          `${JSON.stringify(result.rawProposal, null, 2)}\n`,
         );
       }
       if (proposal !== null)

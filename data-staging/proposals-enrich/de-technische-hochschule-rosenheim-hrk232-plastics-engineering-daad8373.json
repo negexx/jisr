@@ -1,0 +1,141 @@
+{
+  "slug": "de-technische-hochschule-rosenheim-hrk232-plastics-engineering-daad8373",
+  "programmePage": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/plastics-engineering",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8373/",
+          "quote": "Programme duration 8 semesters"
+        },
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/plastics-engineering",
+          "quote": "ECTS 210"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8373/",
+          "quote": "Teaching language German English"
+        },
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/plastics-engineering",
+          "quote": "Language German & English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 50000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/what-are-the-costs-of-studying-at-th-rosenheim-tuition-fees-and-student-union-fees",
+          "quote": "For international students from third countries, tuition fees of 500 € per enrolled semester will apply from summer semester 2026."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8373/",
+          "quote": "Submit application via Please apply via uni-assist."
+        },
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/plastics-engineering",
+          "quote": "Apply only via uni-assist if you have obtained your higher education entrance qualification outside Germany"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "university-entrance-qualification",
+          "name": {
+            "fr": "Certificat de qualification d'entrée à l'université",
+            "en": "University entrance qualification"
+          },
+          "quotedAs": "University entrance qualification",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/plastics-engineering",
+          "quote": "University entrance qualification"
+        },
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/plastics-engineering",
+          "quote": "Certificate for a university entrance qualification (please find more information at uni-assist)"
+        }
+      ]
+    }
+  },
+  "notes": "The DAAD page and TH Rosenheim page give application periods: for a study start in March via uni-assist 1 May - 30 November, and for a study start in October via uni-assist 15 February - 15 September. The specific year is not given for all variants; one German-language page states 'Mit einem Schulabschluss aus dem Ausland: 1. Mai - 30. November 2026 über uni-assist' for the summer semester 2027 intake, but that page is about Plastics Engineering (Kunststofftechnik) and confirms the dates. The requirements rules include a language_proficiency for French with no quote, which is empty and should be removed. The tuition fee is 500 EUR per semester for non-EU international students from summer semester 2026.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "testdaf"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8373/",
+            "quote": "German language skills A2 required, please provide an official language certificate, e.g.: Deutsches Sprachdiplom der Kultusministerkonferenz (DSD): Deutsches Sprachdiplom A2"
+          },
+          {
+            "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/plastics-engineering",
+            "quote": "Test of German as a Foreign Language TestDaF TDN 3 or higher"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8373/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6"
+          },
+          {
+            "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/plastics-engineering",
+            "quote": "Internet-based TOEFL or TOEFL iBT Home Edition, each with 72 points or more"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un stage préliminaire (« Vorpraxis ») d'au moins 8 semaines est requis ; il doit être effectué avant le début du programme ou au plus tard au début du 4e semestre.",
+          "en": "A preliminary internship (\"Vorpraxis\") of at least 8 weeks is required; it must be completed before the start of the programme or at the latest by the beginning of the 4th semester."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8373/",
+            "quote": "The degree programme includes a mandatory preliminary internship (“Vorpraxis”) of at least eight weeks, which should be completed before the start of the programme or no later than the beginning of the fourth semester."
+          }
+        ]
+      }
+    ]
+  }
+}

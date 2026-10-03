@@ -1,0 +1,94 @@
+{
+  "slug": "de-technische-hochschule-aschaffenburg-hrk333-software-design-internat-daad9225",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/",
+          "quote": "Teaching language English Languages Courses are held in English, but each semester includes the German language study course."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.th-ab.de/studium/bewerben/bewerben-mit-auslaendischem-bildungsnachweis/",
+          "quote": "Wenn Sie Ihren Schul- oder Hochschulabschluss im Ausland erworben haben, benötigen Sie für Ihre Bewerbung eine Vorprüfungsdokumentation (VPD)."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "Hochschulzugangsberechtigung",
+          "translationRequired": null
+        },
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV tabulaire",
+            "en": "Tabular CV"
+          },
+          "quotedAs": "tabellarischer, chronologisch lückenloser Lebenslauf",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-ab.de/studium/bewerben/",
+          "quote": "Für eine Bachelorbewerbung halten Sie folgende Unterlagen zum Upload im PDF-Format bereit: tabellarischer, chronologisch lückenloser Lebenslauf (Vordruck oder selbst erstelltes Dokument) Hochschulzugangsberechtigung"
+        }
+      ]
+    }
+  },
+  "notes": "The exact application deadline for the winter semester 2026 is stated only as '2. Mai bis 30. Juni' without a year, so the intake dates are left null. The tuition is stated as none per semester; the semester contribution of 70 EUR and the 80 EUR application fee for non-EU applicants are not tuition fees. Language proficiency in English B2 and German A1 is required for admission; these are admission requirements, not recommended. Prior study of 12 years is inferred from the requirement of a general university entrance qualification and the possibility of attending a Studienkolleg if the school-leaving certificate does not grant direct access. For the documents, the page lists the required documents for a bachelor application and names the tabular CV and the university entrance qualification; the VPD (Vorprüfungsdokumentation) from uni-assist is also required for foreign educational certificates. The programme page https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/ is the DAAD database entry for Software Design International; the university's own programme page https://www.th-ab.de/studium/vor-dem-studium/studiengaenge-von-a-z/software-design-international/ was not among the supplied pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9225/",
+            "quote": "German language skills A1 required, please provide an official language certificate, e.g.: telc Deutsch: telc Deutsch A1 ÖSD Zertifikat: A1 Goethe-Zertifikat: Goethe-Zertifikat A1"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,4 +1,5 @@
 import { fetchText } from "./http";
+import { cachedPdfText, isPdfUrl, type PdfDeps, pdfText } from "./pdf";
 
 // --- page text ---------------------------------------------------------------------------------
 const ENTITIES: Record<string, string> = {
@@ -50,10 +51,42 @@ export function htmlToText(html: string): string {
   return decodeEntities(stripped).replace(/\s+/g, " ").trim();
 }
 
-export async function pageText(url: string): Promise<string> {
+export type PageTextDeps = { fetchHtml?: typeof fetchText; pdfDeps?: PdfDeps };
+
+const MAX_REPLACEMENT_SHARE = 0.01;
+
+// U+FFFD in more than 1% of a body means it was not text (an archive, an image, a font) decoded as
+// UTF-8; the reader must never be paid to read that.
+function assertTextBody(body: string): void {
+  let replaced = 0;
+  for (const char of body) if (char === "�") replaced++;
+  if (replaced > body.length * MAX_REPLACEMENT_SHARE) throw new Error("not a text page");
+}
+
+// The visible text of a page. A PDF is recognised by its url or, for a url like /download?id=3, by
+// its body; anything else that is not text is refused rather than cached as mojibake.
+export async function pageText(url: string, deps: PageTextDeps = {}): Promise<string> {
   if (!url.startsWith("https://")) throw new Error("evidence pages must be https");
-  const body = await fetchText(url, { accept: "text/html,application/xhtml+xml" });
-  return htmlToText(body);
+  if (isPdfUrl(url)) return pdfText(url, deps.pdfDeps);
+  const cachedPdf = await cachedPdfText(url, deps.pdfDeps);
+  if (cachedPdf !== null) return cachedPdf;
+  let bodyIsPdf = false;
+  try {
+    const body = await (deps.fetchHtml ?? fetchText)(url, {
+      accept: "text/html,application/xhtml+xml,application/pdf;q=0.8",
+      validate: (text) => {
+        if (/^\uFEFF?\s*%PDF-/.test(text)) {
+          bodyIsPdf = true;
+          throw new Error("body is a PDF");
+        }
+        assertTextBody(text);
+      },
+    });
+    return htmlToText(body);
+  } catch (error) {
+    if (!bodyIsPdf) throw error;
+    return pdfText(url, deps.pdfDeps);
+  }
 }
 
 // --- quotes ------------------------------------------------------------------------------------
@@ -70,6 +103,9 @@ export function normalizeForMatch(text: string): string {
 }
 
 export const MIN_QUOTE_LENGTH = 15;
+
+const TRANSLATION_WORDS = /translat|übersetz|uebersetz|vertaling|vertaald|traduction|traduit/i;
+export const mentionsTranslation = (quote: string): boolean => TRANSLATION_WORDS.test(quote);
 
 // A quote counts only if it is long enough to mean something and appears verbatim (up to
 // whitespace, case and typographic quotes) in the page text.

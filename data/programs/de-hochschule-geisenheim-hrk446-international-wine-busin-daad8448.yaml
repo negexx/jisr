@@ -41,8 +41,53 @@ applicationChannel:
   source: page-3
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+    - slug: transcript-of-records
+      name:
+        fr:
+          text: Relevé de notes et de matières
+          status: draft
+        en:
+          text: Proof of study achievements
+          status: draft
+      translationRequired: null
+    - slug: university-entrance-examination
+      name:
+        fr:
+          text: Preuve de l'examen d'entrée à l'université
+          status: draft
+        en:
+          text: Proof of university entrance examination
+          status: draft
+      translationRequired: null
+    - slug: passport-copy
+      name:
+        fr:
+          text: Copie du passeport
+          status: draft
+        en:
+          text: Copy of your passport
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae
+          status: draft
+        en:
+          text: Curriculum vitae
+          status: draft
+      translationRequired: null
+  source: page-3
   info_kind: official
 requirements:
   coverage: partial

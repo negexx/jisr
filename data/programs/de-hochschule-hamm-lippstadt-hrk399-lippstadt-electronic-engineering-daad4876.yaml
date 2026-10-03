@@ -19,16 +19,19 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 3.5
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - en
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-1
+  info_kind: official
 intakes:
   value: null
   source: daad
@@ -38,9 +41,36 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: uni-assist-evaluation-result
+      name:
+        fr:
+          text: Résultat de l'évaluation uni-assist
+          status: draft
+        en:
+          text: uni-assist evaluation result
+          status: draft
+      translationRequired: null
+    - slug: passport-photo
+      name:
+        fr:
+          text: Photo d'identité
+          status: draft
+        en:
+          text: Passport photo
+          status: draft
+      translationRequired: null
+    - slug: language-certificate
+      name:
+        fr:
+          text: Certificat de langue
+          status: draft
+        en:
+          text: Language certificate
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -51,3 +81,9 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4876/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hshl.de/en/studying/information-about-your-studies/
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.hshl.de/en/studying/online-registration/
+    last_verified_at: 2026-10-02

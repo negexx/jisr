@@ -18,14 +18,14 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6921/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
     - de
     - en
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
   value: null
   source: daad
@@ -52,3 +52,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6921/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.thi.de/en/thi-business-school/degree-programmes/global-economics-and-business-management-ba/
+    last_verified_at: 2026-10-02

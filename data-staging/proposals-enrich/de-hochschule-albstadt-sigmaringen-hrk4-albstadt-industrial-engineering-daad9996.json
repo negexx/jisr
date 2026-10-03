@@ -1,0 +1,75 @@
+{
+  "slug": "de-hochschule-albstadt-sigmaringen-hrk4-albstadt-industrial-engineering-daad9996",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9996/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9996/",
+          "quote": "Programme duration 7 semesters"
+        },
+        {
+          "url": "https://www.hs-albsig-international.de//field-of-studies/industrial-engineering",
+          "quote": "This degree programme will teach you the basic skills that will enable you to do this in seven semesters."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9996/",
+          "quote": "Teaching language: First until fourth semester: German Fifth until seventh semester: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9996/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        }
+      ]
+    }
+  },
+  "notes": "The documents for international applicants are listed on the application page, but the quotes do not name individual documents in a way that meets the evidence requirement (e.g., 'certificate from Institute for International Students' is not a standard document name), so the documents fact is omitted. The application channel is listed as university-direct on the university's international application page; the DAAD page's link (https://www.hs-albsig-international.de//application) confirms this. The deadline of 15 July is for the winter semester; the quote from the application page ('from 1st of May until 15 July for the winter term') lacks a year, so the intake is left out as per the rules.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9996/",
+            "quote": "German language skills B2 required, please provide an official language certificate, e.g.: Goethe-Zertifikat: Goethe-Zertifikat B2"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9996/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: Cambridge English Qualifications: B2 First"
+          }
+        ]
+      }
+    ]
+  }
+}

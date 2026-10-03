@@ -19,28 +19,40 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 3.5
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - en
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-1
+  info_kind: official
 intakes:
   value: null
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-2
+  info_kind: official
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: proof-of-english-language-proficiency
+      name:
+        fr:
+          text: Preuve de compétence en anglais
+          status: draft
+        en:
+          text: Proof of English language proficiency
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -51,3 +63,12 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4219/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hochschule-rhein-waal.de/en/studieren/all-about-university-life/costs-and-funding/living-costs-in-germany
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.hochschule-rhein-waal.de/en/faculties/technology-and-bionics/degree-programmes/bachelor-study-programmes/engineering
+    last_verified_at: 2026-10-02
+  page-3:
+    url: https://www.hochschule-rhein-waal.de/en/academics/prospective-students/current-application-period/bachelors-programmes
+    last_verified_at: 2026-10-02

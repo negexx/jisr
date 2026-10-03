@@ -19,29 +19,50 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 4
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
-    - de
     - en
-  source: daad
-  info_kind: guidance
+    - de
+  source: page-1
+  info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
   value: null
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-1
+  info_kind: official
 documents:
-  value: null
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary school leaving certificate
+          status: draft
+      translationRequired: true
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Certificat de compétence en anglais
+          status: draft
+        en:
+          text: English language certificate
+          status: draft
+      translationRequired: null
   source: daad
-  info_kind: guidance
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -52,3 +73,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.htw-dresden.de/en/university/faculties/electrical-engineering/studies/bachelor-electrical-engineering
+    last_verified_at: 2026-10-02

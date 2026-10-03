@@ -19,28 +19,58 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 3.5
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
 intakes:
   value: null
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-university-direct
+  source: page-3
+  info_kind: official
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: statement-of-purpose
+      name:
+        fr:
+          text: lettre de motivation
+          status: draft
+        en:
+          text: Statement of purpose
+          status: draft
+      translationRequired: null
+    - slug: resume
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: Resume
+          status: draft
+      translationRequired: null
+    - slug: passport-copy
+      name:
+        fr:
+          text: copie du passeport
+          status: draft
+        en:
+          text: Copy of passport
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -51,3 +81,12 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9157/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.thu.de/en/Pages/Studiengang_EET.aspx
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.thu.de/en/studies/before-studies/fees-scholarships/contributions-tuition-fees
+    last_verified_at: 2026-10-02
+  page-3:
+    url: https://www.thu.de/en/studies/application-admission/bachelors-programme-application
+    last_verified_at: 2026-10-02

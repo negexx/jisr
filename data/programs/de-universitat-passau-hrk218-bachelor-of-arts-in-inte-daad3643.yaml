@@ -18,24 +18,28 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3643/
 durationYears:
   value: 3
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - de
+  source: page-1
+  info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
 intakes:
   value: null
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-3
+  info_kind: official
 documents:
   value: null
   source: daad
@@ -50,3 +54,12 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3643/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.uni-passau.de/en/ba-icbs/?mtm_campaign=DAADIPG
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.uni-passau.de/kosten-finanzierung
+    last_verified_at: 2026-10-02
+  page-3:
+    url: https://www.uni-passau.de/einschreibung
+    last_verified_at: 2026-10-02

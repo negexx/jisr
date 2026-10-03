@@ -1,0 +1,97 @@
+{
+  "slug": "de-leuphana-universitat-luneburg-hrk171-economics-bsc-daad9671",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9671/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.leuphana.de/en/college/bachelor/economics-major.html?utm_source=DAAD&utm_medium=referral&utm_campaign=international-marketing",
+          "quote": "Duration: 3 years (6 semesters)"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9671/",
+          "quote": "Programme duration 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9671/",
+          "quote": "All of the courses in the Economics major programme are held in English."
+        },
+        {
+          "url": "https://www.leuphana.de/en/college/bachelor/economics-major.html?utm_source=DAAD&utm_medium=referral&utm_campaign=international-marketing",
+          "quote": "Language: English (no German required)"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.leuphana.de/studium/international/studium-an-der-leuphana-fuer-internationale-studieninteressierte/studiengebuehr.html",
+          "quote": "Für internationale Studierende fallen an der Leuphana Universität keine Studiengebühren an."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9671/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    }
+  },
+  "notes": "German 'Bildungsinländer' with a foreign school-leaving certificate who took their Abitur in Germany use Uni-Assist; for applicants who acquired their Hochschulzugangsberechtigung abroad, the dates given are for international applicants, but whether they apply to Leuphana directly or via Uni-Assist must be verified on the winter semester documentation page (Leuphana states 5% of places are reserved for non-EU applicants; 'uni-assist' is only listed as an application portal on the DAAD page without explicit international-applicant guidance, so the exact application channel/route is not independently established by the supplied pages). The €484.24 semester contribution is an enrolment fee, not tuition; the amount shown on the German Leuphana fees page is 484,24 € while the current formula page shows 484,244 €. Admission also involves possibly a study aptitude test/selection interview; applicants from outside the EU/EEA also apply within the deadlines shown, but no separate international deadline is given beyond the 15 July date. The German application regulation states that applicants with a foreign university entrance qualification should visit the international applicants pages, but the German page does not itself give direct dating. 'Wintersemester' is being mapped to the 15 July application deadline quoted; no application-opening date is given. Duration / tuition: both pages state 6 semesters = 3 years, no tuition fee for internationals. German language skills are stated as not required.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9671/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez la validité de votre diplôme étranger de fin d'études secondaires (HZB) et la procédure applicable sur les pages pour candidats internationaux.",
+          "en": "Check whether your foreign school-leaving qualification (university entrance qualification) is recognised and which procedure applies on the pages for international applicants."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9671/",
+            "quote": "Admission requirements include the following: university entrance qualification"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Aucune candidature directe n'est possible pour ce programme via Uni-Assist ; consultez la page des candidats internationaux pour connaître la procédure exacte.",
+          "en": "No direct application route to this Bachelor's programme via Uni-Assist is stated; check the international applicants pages for how to apply."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9671/",
+            "quote": "Submit application via • uni-assist • Website"
+          }
+        ]
+      }
+    ]
+  }
+}

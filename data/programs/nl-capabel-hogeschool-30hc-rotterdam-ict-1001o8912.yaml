@@ -40,7 +40,25 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
+  value:
+    - slug: diploma-copy
+      name:
+        fr:
+          text: Copie du diplôme pertinent
+          status: draft
+        en:
+          text: Copy of relevant diploma
+          status: draft
+      translationRequired: null
+    - slug: id-copy
+      name:
+        fr:
+          text: Copie de la pièce d'identité
+          status: draft
+        en:
+          text: Copy of ID
+          status: draft
+      translationRequired: null
   source: programme
   info_kind: official
 requirements:

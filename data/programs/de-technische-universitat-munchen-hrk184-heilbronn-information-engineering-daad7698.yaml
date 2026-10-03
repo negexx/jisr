@@ -19,12 +19,12 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 3
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - en
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
   value: null
   source: daad
@@ -34,13 +34,58 @@ intakes:
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
+  value: de-uni-assist-vpd
   source: daad
-  info_kind: guidance
+  info_kind: official
 documents:
-  value: null
+  value:
+    - slug: higher-education-entrance-qualification
+      name:
+        fr:
+          text: Diplôme d'accès à l'enseignement supérieur
+          status: draft
+        en:
+          text: Higher education entrance qualification
+          status: draft
+      translationRequired: null
+    - slug: german-language-certificate
+      name:
+        fr:
+          text: Certificat de langue allemande
+          status: draft
+        en:
+          text: German language certificate
+          status: draft
+      translationRequired: null
+    - slug: letter-of-motivation
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Letter of motivation
+          status: draft
+      translationRequired: null
+    - slug: resume
+      name:
+        fr:
+          text: CV à jour
+          status: draft
+        en:
+          text: Complete up-to-date resume
+          status: draft
+      translationRequired: null
+    - slug: vpd-certificate
+      name:
+        fr:
+          text: Attestation VPD de uni-assist
+          status: draft
+        en:
+          text: VPD certificate from uni-assist
+          status: draft
+      translationRequired: null
   source: daad
-  info_kind: guidance
+  info_kind: official
 requirements:
   coverage: partial
   source: daad

@@ -1,0 +1,134 @@
+{
+  "slug": "de-hochschule-pforzheim-gestaltung-technik-hrk219-bachelor-of-business-adm-daad9199",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/",
+          "quote": "Teaching language English Languages All courses are taught in English."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/",
+          "quote": "Courses are held in English only."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        },
+        {
+          "url": "https://businesspf.hs-pforzheim.de/en/studies/application",
+          "quote": "Tuition fees for international students outside EU: 1.500 € per semester"
+        },
+        {
+          "url": "https://businesspf.hs-pforzheim.de/en/studies/application",
+          "quote": "Non-EU applicants have a tuition fee of €1,500 per semester."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "university entrance qualification"
+          },
+          "quotedAs": "university entrance qualification",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://businesspf.hs-pforzheim.de/en/studies/application",
+          "quote": "You need a university entrance qualification to apply, your transcript need to be recognised."
+        }
+      ]
+    }
+  },
+  "notes": "The programme page is on DAAD, so the deadline is not stated with a specific year on the programme page. The application portal handles document recognition directly or via Studienkolleg Konstanz; no uni-assist is mentioned. The interview is required for non-EU applicants. The tuition fee is per semester for non-EU students.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 5.5"
+          },
+          {
+            "url": "https://businesspf.hs-pforzheim.de/en/studies/application",
+            "quote": "minimum B2 level according to the Common European Framework of Reference for Languages (CEFR). TOEFL scores: minimum 72 (IBT), 188 (PBT), or 543 (ITP). IELTS score: minimum 5.5."
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "mathematics",
+          "english"
+        ],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/",
+            "quote": "Individual grades of the university entrance qualification in mathematics = 30% Individual grades of the university entrance qualification in English = 20%"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien est obligatoire pour les candidats non-UE. Il doit avoir lieu avant le 15 juillet et sera évalué selon des critères définis.",
+          "en": "An interview is required for non-EU applicants. It must take place before 15 July and is assessed on defined criteria."
+        },
+        "evidence": [
+          {
+            "url": "https://businesspf.hs-pforzheim.de/en/studies/application",
+            "quote": "Yes, an interview is a requirement for non - EU students."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une note pondérée est calculée: 50% moyenne générale, 30% note de mathématiques, 20% note d'anglais. Un test d'aptitude facultatif peut améliorer le résultat.",
+          "en": "A weighted grade is calculated: 50% overall average, 30% mathematics grade, 20% English grade. An optional aptitude test can improve the result."
+        },
+        "evidence": [
+          {
+            "url": "https://businesspf.hs-pforzheim.de/en/studies/application",
+            "quote": "The weighted overall university entrance qualification grade is calculated as follows: Average grade of the higher education entrance qualification = 50% Individual grades of the university entrance qualification in mathematics [1] = 30% Individual grades of the university entrance qualification in English [2] = 20%"
+          }
+        ]
+      }
+    ]
+  }
+}

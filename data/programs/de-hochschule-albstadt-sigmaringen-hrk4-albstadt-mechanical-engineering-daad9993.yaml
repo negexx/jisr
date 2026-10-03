@@ -19,17 +19,20 @@ officialUrl: https://www2.daad.de/deutschland/studienangebote/international-prog
 durationYears:
   value: 3.5
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - de
     - en
   source: daad
-  info_kind: guidance
+  info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
   value: null
   source: daad
@@ -39,9 +42,18 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
+  value:
+    - slug: language-certificate-german
+      name:
+        fr:
+          text: Certificat de langue allemande officiel
+          status: draft
+        en:
+          text: Official German language certificate
+          status: draft
+      translationRequired: null
   source: daad
-  info_kind: guidance
+  info_kind: official
 requirements:
   coverage: partial
   source: daad

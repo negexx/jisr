@@ -18,13 +18,13 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11085/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 tuition:
   value: null
   source: daad
@@ -38,9 +38,27 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -51,3 +69,9 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11085/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.haw-landshut.de/en/faculties/electrical-industrial-engineering/study/bachelor-degree-programmes/sustainable-industrial-operations-and-business
+    last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.haw-landshut.de/internationales/incoming/international-program-students
+    last_verified_at: 2026-10-02

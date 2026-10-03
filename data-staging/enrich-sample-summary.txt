@@ -1,0 +1,133 @@
+
+## de-frankfurt-school-of-finance-management-hrk83-bachelors-in-management-  [pages failed: 0]
+  tuition: {"amountMinor":860000,"currency":"EUR","period":"semester"}  NEW
+     “Tuition Fee € 8,600/semester + €100 application fee, €600 enrolment fee”
+     <https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphil>
+  intakes: [{"startDate":"2027-09-01","applicationOpens":null,"applicationDeadline":"2027-06-30"}]  NEW
+     “Application Deadline 30 June 2027”
+     <https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphil>
+  applicationChannel: "de-university-direct"  NEW
+     “Submit your application and all required documents via our online application portal.”
+     <https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphil>
+  documents: [{"slug":"school-leaving-certificate","name":{"fr":"Diplôme de fin d'études secondaires","en":"School-leaving certificate"},"quotedAs":"A re  NEW
+     “A recognised secondary school diploma* (Abitur, IB Diploma, US High School Diploma, A-Levels, European Baccalaureate, etc.)”
+     <https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphil>
+
+## de-technische-hochschule-mannheim-hrk177-international-engineerin-daad10  [pages failed: 0]
+  documents: [{"slug":"cv","name":{"fr":"CV","en":"CV"},"quotedAs":"CV","translationRequired":null},{"slug":"english-language-certificate","name":{"fr":"  NEW
+     “Required application documents: CV”
+     <https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10335/>
+  ✗ intakes: the date 2026-11-15 is not supported by the quotes
+  ✗ applicationChannel: the quote does not name the channel de-university-direct
+
+## de-technische-universitat-chemnitz-hrk42-digital-engineering-daad10483  [pages failed: 0]
+  teachingLanguages: ["en","de"]  DIFFERS from data(guidance): ["de","en"]
+     “Teaching language German English”
+     <https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10483/>
+  applicationChannel: "de-uni-assist"  NEW
+     “Submit application via Please apply via uni-assist.”
+     <https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10483/>
+  ✗ documents: checker: unclear (Excerpt says entrance exam proof is not required for all countries.)
+
+## de-hochschule-fresenius-university-of-appli-daad-koln-computer-science-b  [pages failed: 0]
+  tuition: {"amountMinor":612000,"currency":"EUR","period":"semester"}  NEW
+     “The following tuition fees apply for applicants from: non-EU countries 6,120 EUR”
+     <https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9952/>
+  documents: [{"slug":"cv","name":{"fr":"CV","en":"CV"},"quotedAs":"CV","translationRequired":null},{"slug":"secondary-school-leaving-certificate","name"  NEW
+     “please upload at least your CV and your secondary school leaving certificate (application for bachelor studies) or your bachelor transcript of records (application for ma”
+     <https://www.hs-fresenius.com/application-process/?crmid=aBbTjOcDaAaAaAaA>
+
+## de-technische-hochschule-deggendorf-hrk284-electromobility-autonomo-daad  [pages failed: 0]
+  tuition: {"amountMinor":50000,"currency":"EUR","period":"semester"}  NEW
+     “The following tuition fees apply for applicants from: non-EU countries Switzerland United Kingdom 500 EUR”
+     <https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9073/>
+  teachingLanguages: ["en","de"]  DIFFERS from data(guidance): ["de","en"]
+     “Taught in 1st - 3rd semester: English, German language courses for A2 through B2 part of curriculum From the 4th semester: German”
+     <https://www.th-deg.de/emi-b-en>
+  applicationChannel: "de-university-direct"  NEW
+     “If you are interested in applying to our university, choose what you aim to study and apply directly to DIT via our own online application portal, Primuss.”
+     <https://www.th-deg.de/en/apply>
+  documents: [{"slug":"university-entrance-qualification","name":{"fr":"Qualification d'entrée à l'université","en":"University entrance qualification"},  NEW
+     “University entrance qualification Copy of your identity card Curriculum vitae Proof of language proficiency, if applicable”
+     <https://www.th-deg.de/en/apply>
+
+## de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-  [pages failed: 0]
+  tuition: {"amountMinor":150000,"currency":"EUR","period":"semester"}  NEW
+     “Tuition fee for international students from outside the EU/EEA 1,500.00 eur”
+     <https://www.hs-aalen.de/fileadmin/content/redakteure/einrichtungen/Studentische_Abteilung/Studi>
+  intakes: [{"startDate":null,"applicationOpens":null,"applicationDeadline":"2026-12-03"}]  NEW
+     “Next start Summer term 27 Application deadline 03.12.2026”
+     <https://www.hs-aalen.de/en/courses/141>
+  applicationChannel: "de-uni-assist-vpd"  NEW
+     “To do so, you must apply to Uni Assist for a preliminary review documentation (Vorprüfungsdokumentation - VPD which assesses your eligibility for university admission in ”
+     <https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/>
+  documents: [{"slug":"school-leaving-certificate","name":{"fr":"Diplôme de fin d'études secondaires","en":"school-leaving certificate"},"quotedAs":"scho  NEW
+     “These include your entrance qualification, language certificate(s), the VPD-Certificate from uni-assist, passport picture and a passport copy.”
+     <https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/>
+
+## de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbac  [pages failed: 0]
+  documents: [{"slug":"higher-education-entrance-qualification","name":{"fr":"Qualification d'entrée dans l'enseignement supérieur","en":"Higher educatio  NEW
+     “Higher Education Entrance Qualification for Germany or equivalent”
+     <https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4705/>
+  ✗ intakes: the date 2027-05-15 is not supported by the quotes
+
+## de-hochschule-fur-angewandte-wissenschaften-hrk287-environmental-enginee  [pages failed: 0]
+  tuition: {"amountMinor":0,"currency":"EUR","period":"year"}  NEW
+     “Tuition fees none”
+     <https://www.hof-university.com/studying-at-hof-university/our-degree-programs/environmental-eng>
+  ✗ durationYears: the quote does not state 3.5 years, 7 semesters or 210 ECTS
+  ✗ intakes: the date 2025-07-15 is not supported by the quotes
+  ✗ applicationChannel: the quote does not name the channel de-uni-assist-vpd
+
+## de-carl-von-ossietzky-universitat-oldenburg-hrk209-bachelor-of-engineeri  [pages failed: 0]
+  tuition: {"amountMinor":0,"currency":"EUR","period":"year"}  DIFFERS from data(official): {"amountMinor":0,"currency":"EUR","period":"semester"}
+     “Semester contribution approx. 400,00 € (no tuition fees. The study courses are subsidized by the German government)”
+     <https://uol.de/en/physics/studies/courseofstudies/ep>
+  documents: [{"slug":"english-language-certificate","name":{"fr":"Certificat de compétence en anglais","en":"English language certificate"},"quotedAs":"  NEW
+     “Admission requirements English language certificate Level B2 English language certificate Level B2 Language certificate German Level A2 A1 for application”
+     <https://uol.de/en/physics/studies/courseofstudies/ep>
+
+## de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbac  [pages failed: 0]
+  tuition: {"amountMinor":0,"currency":"EUR","period":"year"}  NEW
+     “Tuition fees per semester None”
+     <https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9857/>
+  intakes: [{"startDate":null,"applicationOpens":null,"applicationDeadline":"2026-05-15"}]  NEW
+     “15 May 2026 for non-EU and non-EEA applicants”
+     <https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainabl>
+  ✗ applicationChannel: the quote does not name the channel de-university-direct
+
+## nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182  [pages failed: 0]
+  ✗ tuition: checker: unclear (Excerpt states the fee but does not specify non-EU/EEA students.)
+  ✗ documents: checker: unclear (Excerpt lists documents for all applicants, not specifically international applicants.)
+
+## nl-christelijke-hogeschool-windesheim-01vu-almere-ict-1001o2665  [pages failed: 0]
+  ✗ tuition: checker: unclear (Excerpt states the fee but does not specify non-EU students.)
+  ✗ intakes: checker: contradicts (Excerpt states the absolute deadline is August 31, not May 1.)
+
+## nl-hogeschool-inholland-27pz-delft-luchtvaarttechnologie-1001o3164  [pages failed: 0]
+  applicationChannel: "nl-studielink"  NEW
+     “Meld je dan via Studielink aan met je DigiD.”
+     <https://www.inholland.nl/inschrijven/inschrijven/>
+
+## nl-avans-hogeschool-07gr-s-hertogenbosch-accountancy-1001o3528  [pages failed: 0]
+  ✗ intakes: the date 2027-05-01 is not supported by the quotes
+  ✗ applicationChannel: checker: unclear (Excerpt mentions Studielink for full-time programmes in general, not specifically for Accountancy.)
+
+## nl-de-haagse-hogeschool-27um-applied-data-science-art-1001o8742  [pages failed: 0]
+  ✗ intakes: checker: contradicts (Excerpt states the deadline is 15 January for foreign diplomas.)
+
+## nl-de-haagse-hogeschool-27um-zoetermeer-applied-data-science-art-1001o87  [pages failed: 0]
+  ✗ documents: no document is named in an accepted quote
+
+## nl-fontys-hogeschool-30gb-tilburg-technische-bedrijfskunde-1001o3682  [pages failed: 0]
+  intakes: [{"startDate":null,"applicationOpens":null,"applicationDeadline":"2027-05-01"}]  NEW
+     “1 mei 2027 Meld je uiterlijk 1 mei aan via Studielink.”
+     <https://www.fontys.nl/Opleidingen/Technische-Bedrijfskunde-bachelor-voltijd.htm>
+
+## nl-hogeschool-inholland-27pz-amsterdam-accountancy-1001o3549  [pages failed: 0]
+  ✗ applicationChannel: checker: unclear (Excerpt mentions Studielink with DigiD, but omits international applicants.)
+
+## nl-avans-hogeschool-07gr-breda-chemische-technologie-1001o3144  [pages failed: 0]
+
+## nl-fontys-hogeschool-30gb-tilburg-ict-1001o2677  [pages failed: 0]
+  ✗ applicationChannel: checker: contradicts (Excerpt directs foreign diploma holders to international application, not Studielink.)

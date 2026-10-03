@@ -1,0 +1,206 @@
+{
+  "shared": {
+    "FR": [
+      "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+      "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+      "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces",
+      "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut"
+    ]
+  },
+  "programmes": {
+    "de-technische-hochschule-mannheim-hrk177-international-engineerin-daad10335": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10335/",
+      "https://www.english.hs-mannheim.de/studying-with-us/helping-you/living-and-studying-in-mannheim/how-much-does-it-cost-to-study-in-mannheim.html",
+      "https://www.inb.hs-mannheim.de/international-engineering-bachelor-inb/apply.html"
+    ],
+    "de-hochschule-fresenius-university-of-appli-daad-koln-computer-science-bsc-daad9952": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9952/",
+      "https://www.hs-fresenius.com/application-process/?crmid=aBbTjOcDaAaAaAaA",
+      "https://www.hs-fresenius.com/application/?crmid=aBbTjOcDaAaAaAaA"
+    ],
+    "de-technische-universitat-chemnitz-hrk42-digital-engineering-daad10483": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10483/",
+      "https://www.tu-chemnitz.de/etit/studium/studiengaenge/bDE",
+      "https://www.tu-chemnitz.de/studierendenservice/studserv/bewerbung/bew_bamala.php.en",
+      "https://www.tu-chemnitz.de/studierendenservice/studserv/gebuehr.php.en",
+      "https://www.tu-chemnitz.de/studierendenservice/studserv/gebuehr.php",
+      "https://www.tu-chemnitz.de/international/incoming/documents/Aufenthaltserlaubnis%20Studenten.pdf",
+      "https://www.tu-chemnitz.de/international/kooperationen/ausland/mit_koop.php"
+    ],
+    "de-technische-hochschule-deggendorf-hrk284-electromobility-autonomo-daad9073": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9073/",
+      "https://www.th-deg.de/emi-b-en",
+      "https://www.th-deg.de/en/students/documents/application-and-service-fees",
+      "https://th-deg.de/en/students/documents",
+      "https://www.th-deg.de/en/apply",
+      "https://www.th-deg.de/application-process",
+      "https://www.th-deg.de/bewerbungs-servicegebuehren-drittstaaten",
+      "https://www.th-deg.de/auslandsaufenthalte",
+      "https://www.th-deg.de/de/studieninteressierte/beratung-und-unterstuetzung/faqs-studieninteressierte",
+      "https://www.th-deg.de/Dino/Deliverables/Handbuch%C3%96kosystem.pdf"
+    ],
+    "de-frankfurt-school-of-finance-management-hrk83-bachelors-in-management-daad9700": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9700/",
+      "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+      "https://www.frankfurt-school.de/de",
+      "https://www.frankfurt-school.de/students-alumni/financing",
+      "https://applybachelors.frankfurt-school.de/mpe",
+      "https://www.frankfurt-school.de/en/study/master/master-of-finance",
+      "https://www.frankfurt-school.de/study/master/master-in-corporate-performance-and-restructuring",
+      "https://www.frankfurt-school.de/de/students-alumni/financing",
+      "https://www.frankfurt-school.de/de/study/bachelor/bachelor-in-business-administration",
+      "https://www.frankfurt-school.de/de/study/mba-emba/mba-executives-kinshasa"
+    ],
+    "de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach-sustainable-business-and-daad4705": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4705/",
+      "https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-technology-beng",
+      "https://www.umwelt-campus.de/en/study/application-admission/semester-fee",
+      "https://www.umwelt-campus.de/en/international/incomings/financing",
+      "https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-technology-beng/translate-to-englisch-test-seite-apply-now",
+      "https://www.umwelt-campus.de/en/study/application-admission/application-portal",
+      "https://www.hochschule-trier.de/hauptcampus/studium/bewerbung-zulassung/semesterbeitrag",
+      "https://www.hochschule-trier.de/en/main-campus/study/application-admission/semesterbeitrag",
+      "https://www.hochschule-trier.de/hauptcampus/wirtschaft/studium/studienangebotwir/international-business",
+      "https://www.hochschule-trier.de/fileadmin/Hochschule/Einrichtungen/Studienservice/Checklisten/Checkliste_Master_TR.pdf"
+    ],
+    "de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad9904": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9904/",
+      "https://www.hs-aalen.de/en/courses/141",
+      "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+      "https://www.hs-aalen.de/en/application-studying/application-process/",
+      "https://www.hs-aalen.de/fileadmin/content/redakteure/einrichtungen/Studentische_Abteilung/Studierenden_Service_Center/Gesamt%C3%BCberblick_Geb%C3%BChren_EN.pdf",
+      "https://www.hs-aalen.de/abteilungen-einrichtungen/studentische-abteilung/satzungen/gebuehrensatzungen-sonstige-satzungen/",
+      "https://www.hs-aalen.de/bewerbung-studium/bewerbungsprozess/",
+      "https://www.hs-aalen.de/"
+    ],
+    "de-hochschule-fur-angewandte-wissenschaften-hrk287-environmental-engineerin-daad9933": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9933/",
+      "https://www.hof-university.com/studying-at-hof-university/our-degree-programs/environmental-engineering-beng.html",
+      "https://www.hof-university.com/studying-at-hof-university/preparing-your-stay/how-to-finance-your-studies.html",
+      "https://www.hof-university.com/studying-at-hof-university/application-and-admission.html",
+      "https://www.hof-university.com/international/studying-in-hof-as-an-exchange-student/application-process-for-exchange-students.html",
+      "https://www.hof-university.de/international/wege-nach-hof/finanzierung-und-arbeiten-in-deutschland.html",
+      "https://www.hof-university.de/studium/studiengaenge-und-weiterbildungs-programme/studiengaenge/berufspaedagogik-im-gesundheitswesen-ba.html",
+      "https://www.hof-university.de/studium/informationen/bewerbung-und-zulassung/internationale-bewerber.html",
+      "https://www.hof-university.de/studium/studiengaenge-und-weiterbildungs-programme/studiengaenge/global-management-ma.html",
+      "https://www.hof-university.de/fileadmin/user_upload/ask/Broschuere_Wege_ins_Ausland_07-2025.pdf"
+    ],
+    "de-carl-von-ossietzky-universitat-oldenburg-hrk209-bachelor-of-engineering-daad3772": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3772/",
+      "https://uol.de/en/physics/studies/courseofstudies/ep",
+      "https://uol.de/en/students/fees/financing-your-studies",
+      "https://uol.de/en/students/fees",
+      "https://uol.de/en/students/application",
+      "https://uol.de/en/students/study-entry",
+      "https://uol.de/studium/gebuehren",
+      "https://uol.de/studium/gebuehren/gebuehrenpflichtige-studiengaenge",
+      "https://uol.de/studium/bewerben/internationale-studierende/master",
+      "https://uol.de/bewerben/internationale-studierende/humanmedizin"
+    ],
+    "de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach-sustainable-business-and-daad9857": [
+      "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9857/",
+      "https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-law-ba",
+      "https://www.umwelt-campus.de/en/study/application-admission/semester-fee",
+      "https://www.umwelt-campus.de/en/international/incomings/financing",
+      "https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-law-ba/apply-now",
+      "https://www.umwelt-campus.de/en/study/application-admission/application-portal",
+      "https://www.hochschule-trier.de/hauptcampus/studium/bewerbung-zulassung/semesterbeitrag",
+      "https://www.hochschule-trier.de/en/main-campus/study/application-admission/semesterbeitrag",
+      "https://www.hochschule-trier.de/hauptcampus/wirtschaft/studium/studienangebotwir/international-business",
+      "https://www.hochschule-trier.de/fileadmin/Hochschule/Einrichtungen/Studienservice/Checklisten/Checkliste_Master_TR.pdf"
+    ],
+    "nl-hogeschool-inholland-27pz-delft-luchtvaarttechnologie-1001o3164": [
+      "https://www.inholland.nl/opleidingen/luchtvaarttechnologie-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+      "https://www.inholland.nl/inschrijven/inschrijven/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-christelijke-hogeschool-windesheim-01vu-almere-ict-1001o2665": [
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle",
+      "https://www.windesheim.nl/opleidingen/studiekosten",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/lerarenopleiding-basisonderwijs-pabo-zwolle",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/international-business",
+      "https://www.windesheim.nl/opleidingen/deeltijd/cursus/motiverend-coachen",
+      "https://www.windesheim.nl/opleidingen/aanmelden",
+      "https://www.windesheim.nl/over-windesheim/veelgestelde-vragen",
+      "https://www.windesheim.nl/getmedia/eec791c7-b1fa-46ce-be54-109f7ba721aa/Besluit-2025-043-Instellingsdeel-OER-Ad-en-Bachelor-Eigen-Leerroute-2026-2027.pdf"
+    ],
+    "nl-avans-hogeschool-07gr-s-hertogenbosch-accountancy-1001o3528": [
+      "https://www.avans.nl/studeren/opleidingen/bachelor/accountancy-voltijd",
+      "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+      "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+      "https://www.avans.nl/studeren/opleidingen/bachelor/international-business-voltijd",
+      "https://www.avans.nl/studeren/opleidingen/master/materials-en-energy-transition-voltijd",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden/deadlines",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden"
+    ],
+    "nl-de-haagse-hogeschool-27um-applied-data-science-art-1001o8742": [
+      "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld",
+      "https://www.dehaagsehogeschool.nl/media/inzicht-het-welzijn-en-de-uitdagingen-van-oekraiense-jongeren-den-haag-lees-hier-het-onderzoeksrapport-van-juni-2026",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+      "https://www.dehaagsehogeschool.nl/media/oer-elektrotechniek",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat"
+    ],
+    "nl-de-haagse-hogeschool-27um-zoetermeer-applied-data-science-art-1001o8742": [
+      "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld",
+      "https://www.dehaagsehogeschool.nl/media/inzicht-het-welzijn-en-de-uitdagingen-van-oekraiense-jongeren-den-haag-lees-hier-het-onderzoeksrapport-van-juni-2026",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+      "https://www.dehaagsehogeschool.nl/media/oer-elektrotechniek",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat"
+    ],
+    "nl-fontys-hogeschool-30gb-tilburg-technische-bedrijfskunde-1001o3682": [
+      "https://www.fontys.nl/Opleidingen/Technische-Bedrijfskunde-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmeld-deadlines.htm",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83"
+    ],
+    "nl-hogeschool-inholland-27pz-amsterdam-accountancy-1001o3549": [
+      "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+      "https://www.inholland.nl/inschrijven/inschrijven/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-avans-hogeschool-07gr-breda-chemische-technologie-1001o3144": [
+      "https://www.avans.nl/studeren/opleidingen/bachelor/chemische-technologie-voltijd",
+      "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+      "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+      "https://www.avans.nl/studeren/opleidingen/bachelor/international-business-voltijd",
+      "https://www.avans.nl/studeren/opleidingen/master/materials-en-energy-transition-voltijd",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden/deadlines",
+      "https://www.avans.nl/studeren/praktische-zaken/aanmelden"
+    ],
+    "nl-fontys-hogeschool-30gb-tilburg-ict-1001o2677": [
+      "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmeld-deadlines.htm",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83"
+    ],
+    "nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182": [
+      "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+      "https://www.capabel.nl/opleidingen/zorg-welzijn/hbo-bachelor-verpleegkundige",
+      "https://www.capabel.nl/opleidingen/ict-web/bachelor-hbo-ict"
+    ]
+  }
+}

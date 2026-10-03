@@ -1,0 +1,27 @@
+{
+  "slug": "nl-erasmus-universiteit-rotterdam-21pe-bedrijfskunde-1001o5712",
+  "programmePage": "https://www.eur.nl/bachelor/bedrijfskunde",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.eur.nl/bachelor/bedrijfskunde",
+          "quote": "Tijdsduur 3 jaren"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.eur.nl/bachelor/bedrijfskunde",
+          "quote": "Voertaal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "Geen tuition-fact opgenomen: de tarievenpagina noemt alleen de wettelijke/instellingstarieven per cluster (RSM voor niet-EER), maar de pagina van deze opleiding zelf noemt geen collegegeld voor niet-EER studenten, en het tarief is een algemene instellingsbrede tabel die niet met zekerheid op dit programma (en collegejaar) van toepassing is. Geen intakes opgenomen: de opleidingspagina noemt alleen 'Startdatum September' en 'Aanmelddeadline (EEA) 1 mei' zonder jaar; dat is niet de aanmelddeadline voor een niet-EER student. Geen applicationChannel opgenomen: de opleidingspagina van Bedrijfskunde noemt Studielink niet; de pagina's die Studielink noemen (EUC, Criminologie, Rechtsgeleerdheid) gaan over andere opleidingen. Geen documents-fact en geen requirements: de opleidingspagina bevat geen documentenlijst of toelatingseisen voor niet-EER aanvragers."
+}

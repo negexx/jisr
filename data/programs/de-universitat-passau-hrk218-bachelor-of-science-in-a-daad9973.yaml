@@ -38,8 +38,17 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: university-entrance-qualification
+      name:
+        fr:
+          text: Diplôme d'accès à l'enseignement supérieur
+          status: draft
+        en:
+          text: Higher education entrance qualification
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -65,3 +74,6 @@ sources:
   page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9973/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.uni-passau.de/einschreibung
+    last_verified_at: 2026-10-02
