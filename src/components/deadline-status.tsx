@@ -1,5 +1,5 @@
 // Shared, no "use client": needs the namespaces deadline and domain.intake plus SourceBadge's. Presentational only: upcoming, recurring, closed and unknown are decided by the domain, never here.
-import { CalendarClock, CalendarDays, CalendarX2, CircleHelp } from "lucide-react";
+import { CalendarDays, CalendarX2, CircleHelp } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
 import type { IntakeStatus } from "@/domain/types";
@@ -19,34 +19,13 @@ export function DeadlineStatus({ intake }: { intake: IntakeStatus }) {
   // An upcoming status always has a deadline; if the data ever disagrees, saying it is unknown is the honest fallback.
   const shown = intake.kind === "upcoming" && deadline === null ? "unknown" : intake.kind;
 
+  // A recurring date is guidance to check, not a status: it shares the question-mark glyph with unknown; the text carries the difference.
+  const Icon = shown === "upcoming" ? CalendarDays : shown === "closed" ? CalendarX2 : CircleHelp;
+
   return (
     <div data-intake={shown} className="flex flex-col gap-1.5">
       <p className="flex items-start gap-2 text-base font-medium">
-        {shown === "upcoming" ? (
-          <CalendarDays
-            aria-hidden="true"
-            data-testid="deadline-icon-upcoming"
-            className={ICON_CLASS}
-          />
-        ) : shown === "recurring" ? (
-          <CalendarClock
-            aria-hidden="true"
-            data-testid="deadline-icon-recurring"
-            className={ICON_CLASS}
-          />
-        ) : shown === "closed" ? (
-          <CalendarX2
-            aria-hidden="true"
-            data-testid="deadline-icon-closed"
-            className={ICON_CLASS}
-          />
-        ) : (
-          <CircleHelp
-            aria-hidden="true"
-            data-testid="deadline-icon-unknown"
-            className={ICON_CLASS}
-          />
-        )}
+        <Icon aria-hidden="true" data-testid={`deadline-icon-${shown}`} className={ICON_CLASS} />
         {shown === "upcoming" && deadline !== null ? (
           <bdi>
             <time dateTime={deadline}>{t("upcoming", { date: formatDate(deadline, locale) })}</time>

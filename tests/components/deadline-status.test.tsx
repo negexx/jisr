@@ -205,6 +205,18 @@ describe("DeadlineStatus", () => {
       expect(container.querySelector('[data-intake="recurring"]')).not.toBeNull();
     });
 
+    it("marks the date as something to check, with the same question-mark glyph as unknown", () => {
+      const a = renderWithMessages(<DeadlineStatus intake={recurring} />, "en");
+      const recurringIcon = a.container.querySelector('[data-testid="deadline-icon-recurring"]');
+      a.unmount();
+      const b = renderWithMessages(
+        <DeadlineStatus intake={{ kind: "unknown", fact: null }} />,
+        "en",
+      );
+      const unknownIcon = b.container.querySelector('[data-testid="deadline-icon-unknown"]');
+      expect(recurringIcon?.getAttribute("class")).toBe(unknownIcon?.getAttribute("class"));
+    });
+
     it("pads a single-digit day and month", () => {
       const early: IntakeStatus = { ...recurring, deadline: { month: 3, day: 1 } };
       const { container } = renderWithMessages(<DeadlineStatus intake={early} />, "en");
