@@ -88,9 +88,11 @@ Measured on the fixture build, gzip, noModule polyfill excluded. Build = `pnpm p
 | `/[locale]/profile` | 184.9 | 185.3 | 214.8 | +35.3 |
 | `/[locale]/matches` | 191.3 | 191.6 | 214.8 | +41.6 |
 | `/[locale]/plan` (one saved program) | 185.1 | 185.4 | 240.6 | +35.4 |
-| `/[locale]/programs/<slug>` | 183.2 | 183.4 | 237.4 | +33.4 |
+| `/[locale]/programs/<slug>` | 183.2 (2026-10-02) | 183.6 | 237.8 | +33.6 |
 
 Last measured 2026-10-02, after Save and the plan page (M4a). Against the previous table (build, initial): home +2.1 KB, profile +1.8, matches +3.1, program +3.0. The nav's saved-count badge costs about 2 KB on every page (`useSavedCount`, kept apart from `useSaved`); matches and program add the Save button and the hook. The toggle code and the plan's tick store behind it (`actions.ts`, `plan/store.ts`) are loaded on the first click (`useSaved.toggle` does `import("./actions")`; if that fails nothing changes and the button shows an alert), so they are in no initial chunk. The plan page's matching and checklist code (`plan-view.ts`) is a lazy chunk, loaded only when a program is saved and a profile exists, and the nav prefetches `/plan` only once something is saved (without that gate every page paid about 20 KB until idle for the plan's code). The program page's until-idle total has 0.6 KB of room under its ratchet row (238).
+
+Program row re-measured 2026-10-03 (browser columns only, fixture build, e2e perf spec) after recurring deadlines: 183.6 KB initial and 237.8 KB until idle against the ratchet rows 184 and 238, so 0.2 KB of headroom is left. The new UI cost about 0.1 KB gzip once it reused the question-mark icon the unknown state already ships; no ratchet row was raised. The build column of that row was not re-measured.
 
 Every page is over target, home included (the shell is about 168 KB before any page code). The ratchet in `tests/e2e/support/js-budget.ts` is the current value rounded up plus 3 KB, only ever lowered, and the perf spec prints the gap on each run. What was tried and the remaining levers are in ADR 0007; ADR 0008 records the owner's decision that exceeding 150 KB is accepted (the ratchet is the regression guard and may be raised with a written reason).
 
@@ -100,6 +102,15 @@ Every page is over target, home included (the shell is about 168 KB before any p
 - Within a group, programs sort by next upcoming deadline (closed and unknown after), then slug. Programs hidden by preferences are counted per mismatch kind and can be revealed with their reasons.
 - Route wording always goes through `routeKeyOf(match)`, never `domain.route.${match.route}`: it names `direct` or `not_eligible` only when the route reason is decisive, and says "source not re-verified" or "not an official source" otherwise.
 - `topReasons(match, max)` sorts fail, then to-check, then pass, and always keeps the `foundation` route reason and the coverage reason whatever `max` is. Cards show the top reasons; the program page shows all of them.
+
+## Recurring deadlines (ADR 0009)
+
+- **Model:** an intake may carry an optional `recurringDeadline: { month, day }` for a deadline the source states without a year ("15 July"). It never sits next to a dated `applicationDeadline` on the same intake (the schema refuses both), and no year is ever inferred.
+- **`nextIntake` order** (`src/domain/intakes.ts`): a dated deadline that is today or later wins and gives `upcoming`; otherwise, if any intake has a recurring deadline, the status is `recurring` (carrying the month and day of the one whose next occurrence is soonest, comparing month and day only); otherwise `closed`, or `unknown` when nothing is published. `recurring` never carries a date and is never `upcoming`.
+- **UI:** `DeadlineStatus` shows one icon, the question-mark glyph it shares with `unknown`, and the text "Usually by DD/MM each year: check the date for your intake" (`domain.intake.recurring`), with the compact `SourceBadge` kept. It is never green and has no `<time>` element. The program page's intake list (`DeadlineSection`, server-rendered) writes it as "usually ... each year (year not published, to be checked)" (`program.deadline.recurring`).
+- **Pipeline:** the reader proposes `recurringDeadline` only for a quote without a year; `checkRecurringDeadline` requires the day beside the month in an accepted quote and rejects a quote that states a year. Any application deadline, dated or recurring, also needs an accepted quote that names international or non-EU applicants (`mentionsInternationalApplicants`, details in `data/README.md`).
+- **Not retroactive:** deadlines already in `data/` are kept. Re-running `verify` on an old proposal may now reject a deadline that is already promoted; such cases are for an owner decision, not an automatic removal.
+- **Compare:** the Compare page is not on this branch (PR #8, `feat/m4b-compare`). Its deadline signature needs a `recurring` case when the branches meet, as does any other exhaustive switch over `IntakeStatus["kind"]`.
 
 ## Routing and 404
 

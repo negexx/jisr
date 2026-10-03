@@ -74,7 +74,7 @@ Data flow: YAML → `data:check` → `data:build` → snapshots on the CDN → t
 
 Resolved in ADR 0004: analytics, error reporting, staleness thresholds, translation storage, privacy/CNDP plan, Vercel limits. What remains is the ADR's "Before launch" checklist (verify Vercel/Sentry limits, CNDP declaration before accounts, privacy notice).
 
-Deeper notes: `.claude/docs/architecture.md` (data access boundary, no-Zod rule, JS size). Decisions: `.claude/docs/decisions/` (0002 stack, 0003 scalable solo architecture, 0004 operations/privacy/freshness, 0005 domain semantics and data rules, 0006 static program pages and 404 routing, 0007 client JS budget, superseded by 0008: exceeding 150 KB is accepted, the ratchet in `tests/e2e/support/js-budget.ts` is the regression guard).
+Deeper notes: `.claude/docs/architecture.md` (data access boundary, no-Zod rule, JS size). Decisions: `.claude/docs/decisions/` (0002 stack, 0003 scalable solo architecture, 0004 operations/privacy/freshness, 0005 domain semantics and data rules, 0006 static program pages and 404 routing, 0007 client JS budget, superseded by 0008: exceeding 150 KB is accepted, the ratchet in `tests/e2e/support/js-budget.ts` is the regression guard; 0009 recurring deadlines).
 
 ## Conventions
 
@@ -97,6 +97,7 @@ Deeper notes: `.claude/docs/architecture.md` (data access boundary, no-Zod rule,
 - Client-reachable code imports no Zod and nothing from `@/data-schema` except types and `dates`/`staleness`; use the hand-written validators (differential tests) in `src/lib`. `tests/lib/client-imports.test.ts` enforces it; details in architecture.md.
 - Route wording comes from `routeKeyOf`; `MatchStatusBadge` is the only place a match group maps to icon, colour and text. Stale estimate/guidance wording never says "official".
 - Program pages import `server-only` and keep `dynamicParams = false` (inherited from the `[locale]` layout). Anything that depends on the clock or the profile is a client leaf with a neutral server placeholder.
+- A deadline a source states without a year is stored as `recurringDeadline` (month, day) and shown as "usually" guidance, never as an upcoming date or a guessed year; any new deadline needs an accepted quote that says it applies to international applicants (ADR 0009).
 - Arabic: الإجازة for the Bachelor's degree, العلامة for a grade. All `ar` copy is a machine draft until the native review.
 - Agents never amend another agent's commit (check `git log -1` before `--amend`); stage by explicit path.
 - Conventional commits: `feat: fix: chore: refactor: docs: test:`.
