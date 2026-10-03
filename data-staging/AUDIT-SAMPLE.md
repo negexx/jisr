@@ -2,127 +2,130 @@
 
 For each record: open the link, confirm the quote is there and that it supports the value (right programme, right applicant group, right year). Then set `audited = y` and `outcome = ok` (or `wrong` + a note) in `AUDIT.csv`.
 
-## programs/de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad3998  _(batch b9-6ba627)_
+## programs/de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad10638  _(batch b10-968f8e)_
 
-**Bachelor of Engineering in Electrical Engineering – Energy Technology**
-
-- **teachingLanguages**: `["de"]` (official; source daad) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":0,"currency":"EUR","period":"semester"}` (official; source daad) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":7,"day":15}}]` (official; source daad)
-  - "Deadlines: 15 July for international applicants (only through uni-assist)" — https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/
-- **applicationChannel**: `de-uni-assist` (official; source daad) (unchanged: already in data/)
-
-## programs/de-hochschule-bremerhaven-hrk41-international-tourism-ma-daad7839  _(batch b9-6ba627)_
-
-**International Tourism Management (Cruise Business / Innovation)**
-
-- **durationYears**: `4` (official; source page-2) (unchanged: already in data/)
-- **teachingLanguages**: `["en"]` (official; source programme) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":7,"day":15}}]` (official; source page-2)
-  - "The following is valid for applicants from: non-EU countries For the winter semester: until 15 July" — https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7839/
-- **applicationChannel**: `de-uni-assist` (official; source programme) (unchanged: already in data/)
-- **documents**: `[{"slug":"higher-education-entrance-qualification","name":{"fr":{"text":"Diplôme d'accès à l'enseignement supérieur (baccalauréat)","status":"draft"},"en":{"text":"Higher education entrance qualification","status":"draft"}},"translationRequired":null},{"slug":"english-language-certificate","name":{"fr":{"text":"Certificat de compétence en anglais","status":"draft"},"en":{"text":"English language certificate","status":"draft"}},"translationRequired":null}]` (official; source page-2) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B2","certificateRequired":true,"acceptedTests":["ielts"]}`
-- **requirement req-2**: `{"kind":"language_proficiency","language":"de","minCefr":"A1","certificateRequired":null,"acceptedTests":[]}`
-- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez séparément l'attestation de niveau d'anglais C1 à fournir avant la fin du premier semestre.","status":"draft"},"en":{"text":"Check separately the C1 English certificate required by the end of the first semester.","status":"draft"}}}`
-
-## programs/de-hochschule-bremerhaven-hrk41-sustainable-process-engi-daad10400  _(batch b9-6ba627)_
-
-**Sustainable Process Engineering**
-
-- **durationYears**: `3.5` (official; source daad) (unchanged: already in data/)
-- **teachingLanguages**: `["de","en"]` (official; source daad) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":0,"currency":"EUR","period":"semester"}` (official; source daad) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":7,"day":15}},{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":1,"day":15}}]` (official; source daad)
-  - "valid for applicants from: non-EU countries For the winter semester: until 15 July" — https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10400/
-  - "valid for applicants from: non-EU countries For the summer semester: until 15 January" — https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10400/
-  - "July 15th for applicants with a higher education entrance qualification that was not obtained in the EU via uni-assist.de" — https://www.hs-bremerhaven.de/en/study/application-for-bachelor-courses
-- **applicationChannel**: `de-uni-assist` (official; source page-1) (unchanged: already in data/)
-- **documents**: `[{"slug":"school-leaving-certificate","name":{"fr":{"text":"Certificat de fin d'études secondaires","status":"draft"},"en":{"text":"School leaving certificate","status":"draft"}},"translationRequired":null},{"slug":"curriculum-vitae","name":{"fr":{"text":"Curriculum vitae signé personnellement","status":"draft"},"en":{"text":"Personally signed curriculum vitae","status":"draft"}},"translationRequired":null},{"slug":"passport","name":{"fr":{"text":"Passeport","status":"draft"},"en":{"text":"Passport","status":"draft"}},"translationRequired":null}]` (official; source page-1) (unchanged: already in data/)
-
-## programs/de-hochschule-osnabruck-hrk214-engineering-sciences-daad11216  _(batch b9-6ba627)_
-
-**Engineering Sciences**
-
-- **durationYears**: `4` (guidance; source daad) (unchanged: already in data/)
-- **teachingLanguages**: `["de"]` (official; source daad) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":6,"day":15}}]` (official; source daad)
-  - "Applicants with international educational qualifications: 15 June" — https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11216/
-  - "bei zulassungsbeschränkten Studiengängen vom 01. März bis 15. Juni (Eingang der Bewerbungsunterlagen bei uni-assist)" — https://www.hs-osnabrueck.de/studium/rund-ums-studium/bewerbung/bewerbung-mit-internationalen-zeugnissen/
-- **applicationChannel**: `de-uni-assist` (official; source page-1) (unchanged: already in data/)
-- **documents**: `[{"slug":"school-leaving-certificate","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"School-leaving certificate","status":"draft"}},"translationRequired":true}]` (official; source page-2) (unchanged: already in data/)
-
-## programs/de-hochschule-ravensburg-weingarten-hrk224-mechatronics-daad9717  _(batch b9-6ba627)_
-
-**Mechatronics**
+**Bachelor of Engineering in Sales Engineering**
 
 - **durationYears**: `3.5` (official; source page-2) (unchanged: already in data/)
-- **teachingLanguages**: `["en"]` (official; source page-2) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":150000,"currency":"EUR","period":"semester"}` (official; source page-2) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":10,"day":31}}]` (official; source page-1)
-  - "International degree programs: Summer term (application period 1 September -31 October): B.Eng. Mechatronics summer 2027 intake, taught in English" — https://www.rwu.de/en/international/international-degree-seeking-students/study-offer-and-application
-  - "APPLICATION PERIOD FOR THE SUMMER INTAKE: 01. September - 31. October" — https://www.rwu.de/en/studies/study-programs/mechatronics-en-0
-- **applicationChannel**: `de-university-direct` (official; source page-3) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B2","certificateRequired":true,"acceptedTests":["toefl","ielts"]}`
-- **requirement req-2**: `{"kind":"prior_study_years_min","years":12}`
-- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Votre diplôme (baccalauréat marocain) doit être reconnu : vérifiez sa conformité ANABIN ; s'il n'est pas reconnu, un test d'aptitude (TestAS, ITB, SAT ou ACT) et un entretien oral de 30 minutes peuvent être exigés.","status":"draft"},"en":{"text":"Your diploma (Moroccan Baccalauréat) must be recognised: check ANABIN compliance; if it is not recognised, an aptitude test (TestAS, ITB, SAT or ACT) and a 30-minute oral test may be required.","status":"draft"}}}`
-- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"Les documents doivent être envoyés par courrier postal (ou via le portail) : formulaire signé, copie certifiée du diplôme d'entrée, certificat d'anglais de moins de 2 ans, CV, copie du passeport ; les certificats de langue d'enseignement (Medium of Instruction) ne sont pas acceptés.","status":"draft"},"en":{"text":"Documents must be submitted by post (or via the portal): signed form, certified copy of the entrance certificate, English certificate less than 2 years old, CV, passport copy; Medium of Instruction certificates are not accepted.","status":"draft"}}}`
-
-## programs/de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach-sustainable-business-and-daad4705  _(batch b9-6ba627)_
-
-**Sustainable Business and Technology**
-
-- **durationYears**: `3` (official; source page-1) (unchanged: already in data/)
-- **teachingLanguages**: `["en"]` (official; source page-1) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":15}}]` (official; source page-1)
-  - "Application deadline: 15 May (non EU and non EEA applicants), 31 August (EU and EEA applicants)" — https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-technology-beng
-  - "15 May for non-EU and non-EEA applicants" — https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-technology-beng/translate-to-englisch-test-seite-apply-now
-
-## programs/de-otto-von-guericke-universitat-magdeburg-hrk172-international-business-a-daad3811  _(batch b9-6ba627)_
-
-**International Business and Economics (IBE)**
-
-- **durationYears**: `3` (official; source programme) (unchanged: already in data/)
 - **teachingLanguages**: `["en"]` (official; source programme) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":0,"currency":"EUR","period":"semester"}` (official; source programme) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":7,"day":15}}]` (official; source page-1)
-  - "International Degree Holder: Online application & download including IB diploma & A-level degree holders Documents must be provided in the requested form upon enrollment, arrival. 15/04 - 15/07 uni-assist" — https://www.isp.ovgu.de/IBEApplication.html
-  - "The following is valid for applicants from: all countries For the winter semester: 15 April - 15 July" — https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3811/
-- **applicationChannel**: `de-uni-assist` (official; source programme) (unchanged: already in data/)
-- **documents**: `[{"slug":"university-entrance-qualification","name":{"fr":{"text":"Qualification d'entrée à l'université","status":"draft"},"en":{"text":"University Entrance Qualification","status":"draft"}},"translationRequired":true},{"slug":"grade-transcript","name":{"fr":{"text":"Relevé de notes","status":"draft"},"en":{"text":"Grade Transcript","status":"draft"}},"translationRequired":true},{"slug":"cv","name":{"fr":{"text":"CV sous forme tabulaire","status":"draft"},"en":{"text":"CV in tabular form","status":"draft"}},"translationRequired":null}]` (official; source page-1) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B2","certificateRequired":true,"acceptedTests":["ielts","toefl"]}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Veuillez vérifier si votre diplôme marocain (Baccalauréat) est reconnu comme qualification d'entrée à l'université en Allemagne, et si une année d'études supérieures est requise. Contactez uni-assist pour l'évaluation.","status":"draft"},"en":{"text":"Please check whether your Moroccan Baccalauréat is recognised as a university entrance qualification in Germany, and whether one year of prior university study is required. Contact uni-assist for the assessment.","status":"draft"}}}`
+- **tuition**: `{"amountMinor":150000,"currency":"EUR","period":"semester"}` (official; source page-2) (unchanged: already in data/)
+- **applicationChannel**: `de-uni-assist-vpd` (official; source page-3) (unchanged: already in data/)
+- **documents**: `[{"slug":"school-leaving-certificate","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"School-leaving certificate","status":"draft"}},"translationRequired":null},{"slug":"language-certificate","name":{"fr":{"text":"Certificat de langue","status":"draft"},"en":{"text":"Language certificate","status":"draft"}},"translationRequired":null},{"slug":"vpd-certificate","name":{"fr":{"text":"Certificat VPD de uni-assist","status":"draft"},"en":{"text":"VPD certificate from uni-assist","status":"draft"}},"translationRequired":null},{"slug":"passport-photo","name":{"fr":{"text":"Photo d'identité","status":"draft"},"en":{"text":"Passport picture","status":"draft"}},"translationRequired":null},{"slug":"passport-copy","name":{"fr":{"text":"Copie du passeport","status":"draft"},"en":{"text":"Passport copy","status":"draft"}},"translationRequired":null}]` (official; source page-3) (unchanged: already in data/)
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Un test d'aptitude (TestAS ou SAT/ACT) est normalement requis pour les programmes de Bachelor. Vérifiez les exigences exactes pour les candidats internationaux.","status":"draft"},"en":{"text":"An aptitude test (TestAS or SAT/ACT) is normally required for Bachelor's programmes. Please check the exact requirements for international applicants.","status":"draft"}}}`
 
-## programs/de-technische-hochschule-aschaffenburg-hrk333-software-design-internat-daad9225  _(batch b9-6ba627)_
+> Preparer's caveats: application deadline reset to 'to check': its quotes did not say the date applies to international or non-EU applicants (rule of 2026-10-03); previous value [{"startDate":null,"applicationOpens":null,"applicationDeadline":"2026-12-03"}]
 
-**Software Design International**
+## programs/de-hochschule-fur-angewandte-wissenschaften-hrk143-international-engineerin-daad9922  _(batch b10-968f8e)_
+
+**International Engineering**
 
 - **durationYears**: `3.5` (official; source programme) (unchanged: already in data/)
 - **teachingLanguages**: `["en"]` (official; source programme) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":0,"currency":"EUR","period":"year"}` (official; source programme) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":6,"day":30}}]` (official; source page-2)
-  - "Software Design International 2. Mai bis 30. Juni" — https://www.th-ab.de/studium/bewerben/
-- **applicationChannel**: `de-uni-assist-vpd` (official; source page-1) (unchanged: already in data/)
-- **documents**: `[{"slug":"school-leaving-certificate","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"School-leaving certificate","status":"draft"}},"translationRequired":null},{"slug":"cv","name":{"fr":{"text":"CV tabulaire","status":"draft"},"en":{"text":"Tabular CV","status":"draft"}},"translationRequired":null}]` (official; source page-2) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B2","certificateRequired":true,"acceptedTests":["toefl","ielts"]}`
+- **tuition**: `{"amountMinor":50000,"currency":"EUR","period":"semester"}` (official; source page-2) (unchanged: already in data/)
+- **applicationChannel**: `de-uni-assist-vpd` (official; source programme) (unchanged: already in data/)
+- **documents**: `[{"slug":"school-leaving-certificate","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"University entrance qualification","status":"draft"}},"translationRequired":null}]` (official; source page-1) (unchanged: already in data/)
+- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B1","certificateRequired":true,"acceptedTests":["toefl","ielts"]}`
 - **requirement req-2**: `{"kind":"language_proficiency","language":"de","minCefr":"A1","certificateRequired":null,"acceptedTests":[]}`
-- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez les dates limites de candidature auprès de l'université : la page DAAD indique seulement « Winter semester » et renvoie au site web de l'université. Une pré-vérification des documents (VPD) par uni-assist et des frais de candidature de 80 EUR pour les non-EU sont exigés.","status":"draft"},"en":{"text":"Check the application deadlines with the university: the DAAD page only says 'Winter semester' and links to the university website. A preliminary review of documents (VPD) by uni-assist and an application fee of 80 EUR for non-EU applicants are required.","status":"draft"}}}`
+- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Votre diplôme étranger (baccalauréat marocain) doit être vérifié et évalué via uni-assist (Vorprüfungsdokumentation – VPD) ; vérifiez les documents exacts et le délai sur uni-assist.","status":"draft"},"en":{"text":"Your foreign diploma (Moroccan Baccalauréat) must be verified and assessed through uni-assist (preliminary review documentation – VPD); check the exact documents and deadlines on uni-assist.","status":"draft"}}}`
+- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"L'admission exige une qualification d'entrée à l'université (HZB) ; faites vérifier que votre baccalauréat marocain est reconnu comme HZB.","status":"draft"},"en":{"text":"Admission requires a university entrance qualification (HZB); have your Moroccan Baccalauréat checked to confirm it is recognised as an HZB.","status":"draft"}}}`
 
-## programs/nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209  _(batch b9-6ba627)_
+> Preparer's caveats: application deadline reset to 'to check': its quotes did not say the date applies to international or non-EU applicants (rule of 2026-10-03); previous value [{"startDate":null,"applicationOpens":null,"applicationDeadline":"2026-08-31"},{"startDate":null,"applicationOpens":null,"applicationDeadline":"2027-07-15"}]
 
-**Werktuigbouwkunde**
+## programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-intelligent-mechatronic-daad10366  _(batch b10-968f8e)_
+
+**Intelligent Mechatronic Systems**
+
+- **durationYears**: `3.5` (official; source page-2) (unchanged: already in data/)
+- **teachingLanguages**: `["en"]` (official; source programme) (unchanged: already in data/)
+- **tuition**: `{"amountMinor":150000,"currency":"EUR","period":"semester"}` (official; source programme) (unchanged: already in data/)
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Votre diplôme de fin d'études secondaires doit d'abord être reconnu par le Studienkolleg Konstanz ou par Uni-Assist ; sans cette reconnaissance, votre candidature ne sera pas prise en compte.","status":"draft"},"en":{"text":"Your school-leaving certificate must first be recognised by Studienkolleg Konstanz or by Uni-Assist; without certificate recognition, your application will not be considered.","status":"draft"}}}`
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Les candidats internationaux peuvent être admis via la procédure d'examen d'entrée propre à l'université, avec des tests écrits et oraux (TestAS, ITB, SAT, ACT, IELTS, TOEFL, TestDaF, etc.) ; vérifiez si vous devez suivre cette voie.","status":"draft"},"en":{"text":"International applicants may be admitted via the university-specific entrance examination, with written and oral tests (TestAS, ITB, SAT, ACT, IELTS, TOEFL, TestDaF, etc.); check whether you must take this route.","status":"draft"}}}`
+
+> Preparer's caveats: application deadline reset to 'to check': its quotes did not say the date applies to international or non-EU applicants (rule of 2026-10-03); previous value [{"startDate":null,"applicationOpens":null,"applicationDeadline":"2026-09-28"}]
+
+## programs/de-technische-hochschule-ingolstadt-hrk288-computer-science-and-art-daad7631  _(batch b10-968f8e)_
+
+**Computer Science and Artificial Intelligence**
+
+- **durationYears**: `3.5` (official; source programme) (unchanged: already in data/)
+- **teachingLanguages**: `["en"]` (official; source programme) (unchanged: already in data/)
+- **tuition**: `{"amountMinor":80000,"currency":"EUR","period":"semester"}` (official; source programme) (unchanged: already in data/)
+- **applicationChannel**: `de-uni-assist` (official; source programme) (unchanged: already in data/)
+- **documents**: `[{"slug":"school-leaving-certificate","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"School-leaving certificate","status":"draft"}},"translationRequired":null}]` (official; source programme) (unchanged: already in data/)
+- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B2","certificateRequired":true,"acceptedTests":["ielts","toefl"]}`
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez sur le site du programme si un test d'anglais B2 supplémentaire (par ex. Cambridge, PTE, UNIcert) est accepté et si vous êtes exempté.","status":"draft"},"en":{"text":"Check the programme website whether additional B2 English tests (e.g. Cambridge, PTE, UNIcert) are accepted and whether you are exempt.","status":"draft"}}}`
+- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"L'éligibilité à l'admission (Hochschulzugangsberechtigung) est décidée après examen de votre dossier ; vous pouvez vérifier vos qualifications sur uni-assist avant de postuler.","status":"draft"},"en":{"text":"Admission eligibility (Hochschulzugangsberechtigung) is decided after reviewing your documents; you can check your qualifications on uni-assist before applying.","status":"draft"}}}`
+- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"Consultez la page « informations pour les candidats de pays tiers » du programme : un formulaire d'épreuve d'aptitude peut être demandé.","status":"draft"},"en":{"text":"See the programme's information page for applicants from third countries: an aptitude test form may be required.","status":"draft"}}}`
+
+> Preparer's caveats: application deadline reset to 'to check': its quotes did not say the date applies to international or non-EU applicants (rule of 2026-10-03); previous value [{"startDate":null,"applicationOpens":"2027-04-01","applicationDeadline":"2027-07-15"}]
+
+## programs/de-technische-hochschule-mittelhessen-thm-hrk97-international-business-a-daad11140  _(batch b10-968f8e)_
+
+**International Business and Leadership**
+
+- **durationYears**: `3.5` (official; source page-2) (unchanged: already in data/)
+- **teachingLanguages**: `["en"]` (official; source page-3) (unchanged: already in data/)
+- **applicationChannel**: `de-uni-assist` (official; source programme) (unchanged: already in data/)
+- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"C1","certificateRequired":null,"acceptedTests":[]}`
+- **requirement req-2**: `{"kind":"language_proficiency","language":"de","minCefr":"A1","certificateRequired":null,"acceptedTests":[]}`
+
+> Preparer's caveats: application deadline reset to 'to check': its quotes did not say the date applies to international or non-EU applicants (rule of 2026-10-03); previous value [{"startDate":"2027-04-01","applicationOpens":"2026-10-01","applicationDeadline":"2026-12-15"}]
+
+## programs/nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046  _(batch b10-968f8e)_
+
+**Bouwkunde**
+
+- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
+- **applicationChannel**: `nl-studielink` (official; source programme) (unchanged: already in data/)
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Un diplôme étranger équivalent à un diplôme néerlandais havo, vwo ou mbo-4 est requis, ainsi que la satisfaction aux exigences linguistiques (voir la page Taaleisen).","status":"draft"},"en":{"text":"A foreign diploma equivalent to a Dutch havo, vwo or mbo-4 diploma is required, plus you must meet the language requirements (see the Taaleisen page).","status":"draft"}}}`
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Un diplôme néerlandais havo, vwo ou mbo-niveau 4 donne un accès direct; vérifiez votre situation avec le Windesheim Informatiecentrum.","status":"draft"},"en":{"text":"A Dutch havo, vwo or mbo-level 4 diploma gives direct admission; check your situation with the Windesheim Informatiecentrum.","status":"draft"}}}`
+
+> Preparer's caveats: application deadline reset to 'to check': its quotes did not say the date applies to international or non-EU applicants (rule of 2026-10-03); previous value [{"startDate":"2027-09-06","applicationOpens":null,"applicationDeadline":"2027-08-31"}]
+
+## programs/nl-de-haagse-hogeschool-27um-delft-ict-1001o2675  _(batch b10-968f8e)_
+
+**ICT**
 
 - **durationYears**: `4` (official; source programme) (unchanged: already in data/)
 - **teachingLanguages**: `["nl"]` (official; source programme) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":1}}]` (official; source page-1)
-  - "We recommend the following enrolment deadline dates: Dutch students by 1 August EU students by 1 August Non-EU students by 1 May" — https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/
+- **applicationChannel**: `nl-studielink` (official; source programme) (unchanged: already in data/)
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Avec un diplôme étranger ou international, vous pouvez être admis si ce diplôme donne accès au hbo et si vous prouvez une maîtrise suffisante du néerlandais ; le diplôme est évalué par l'institution. Contactez la Centrale Studenten Inschrijving.","status":"draft"},"en":{"text":"With a foreign or international diploma, you can be admitted if the diploma grants access to hbo and you prove sufficient command of Dutch; the diploma is assessed by the institution. Contact the Centrale Studenten Inschrijving.","status":"draft"}}}`
+- **requirement req-2**: `{"kind":"language_proficiency","language":"nl","minCefr":null,"certificateRequired":null,"acceptedTests":[]}`
+- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Avec un diplôme étranger, vous devez d'abord introduire une demande d'inscription via Studielink et télécharger vos documents dans Osiris Aanmelding ; la Centrale Studenten Inschrijving évalue votre éligibilité.","status":"draft"},"en":{"text":"With a foreign diploma, you must first submit an application via Studielink and upload your documents in Osiris Aanmelding; the Centrale Studenten Inschrijving assesses your eligibility.","status":"draft"}}}`
+- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"Le délai de candidature pour les titulaires d'un diplôme étranger est le 15 janvier 2026 uniquement pour les formations à admission en février ; pour l'ICT (début en septembre), la deadline est le 1 mai 2026.","status":"draft"},"en":{"text":"The application deadline for holders of a foreign diploma is 15 January 2026 only for programmes with a February start; for ICT (September start), the deadline is 1 May 2026.","status":"draft"}}}`
 
-## programs/nl-hogeschool-rotterdam-22oj-applied-data-science-art-1001o8776  _(batch b9-6ba627)_
+> Preparer's caveats: application deadline reset to 'to check': its quotes did not say the date applies to international or non-EU applicants (rule of 2026-10-03); previous value [{"startDate":null,"applicationOpens":null,"applicationDeadline":"2026-05-01"}]
 
-**Applied Data Science & Artificial Intelligence**
+## programs/nl-fontys-hogeschool-30gb-elektrotechniek-1001o3098  _(batch b10-968f8e)_
 
-- **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":4,"day":1}}]` (official; source page-1)
-  - "Non-EU Aanmelders: 1 april" — https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/studievisum/
-  - "Onze Associate degrees en overige bachelors starten niet in februari." — https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/deadlines-en-aanmeldprocedures/
-- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez que votre diplôme étranger (Baccalauréat marocain) est comparable au diplôme néerlandais requis et que vous maîtrisez suffisamment le néerlandais ; contactez Team Admissions pour faire évaluer votre admissibilité.","status":"draft"},"en":{"text":"Check whether your foreign diploma (Moroccan Baccalauréat) is comparable to the required Dutch diploma and whether you have sufficient command of Dutch; contact Team Admissions to have your eligibility assessed.","status":"draft"}}}`
+**Elektrotechniek**
+
+- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
+- **teachingLanguages**: `["nl"]` (official; source programme) (unchanged: already in data/)
+- **applicationChannel**: `nl-studielink` (official; source programme) (unchanged: already in data/)
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez les exigences d'admission supplémentaires pour certains profils havo/vwo et les cas d'admission alternative (diplôme étranger).","status":"draft"},"en":{"text":"Check additional admission requirements for certain havo/vwo profiles and alternative admission cases (foreign diploma).","status":"draft"}}}`
+
+> Preparer's caveats: application deadline reset to 'to check': its quotes did not say the date applies to international or non-EU applicants (rule of 2026-10-03); previous value [{"startDate":null,"applicationOpens":null,"applicationDeadline":"2027-05-01"}]
+
+## programs/nl-fontys-hogeschool-30gb-venlo-informatica-1001o3903  _(batch b10-968f8e)_
+
+**Informatica**
+
+- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
+- **applicationChannel**: `nl-studielink` (official; source programme) (unchanged: already in data/)
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez les conditions d'admission pour les diplômes étrangers (page 'aanmelden internationaal').","status":"draft"},"en":{"text":"Check admission requirements for foreign diplomas (page 'aanmelden internationaal').","status":"draft"}}}`
+
+> Preparer's caveats: application deadline reset to 'to check': its quotes did not say the date applies to international or non-EU applicants (rule of 2026-10-03); previous value [{"startDate":null,"applicationOpens":null,"applicationDeadline":"2027-05-01"}]
+
+## programs/nl-hogeschool-leiden-21ri-commerciele-economie-1001o3422  _(batch b10-968f8e)_
+
+**Commerciële Economie**
+
+- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
+- **applicationChannel**: `nl-studielink` (official; source programme) (unchanged: already in data/)
+- **documents**: `[{"slug":"diploma-and-grade-list","name":{"fr":{"text":"Copie certifiée conforme du diplôme et du relevé de notes","status":"draft"},"en":{"text":"Certified copy of diploma and grade list","status":"draft"}},"translationRequired":null}]` (official; source page-1) (unchanged: already in data/)
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Un diplôme étranger (par ex. un baccalauréat marocain) doit être évalué par Hogeschool Leiden sur la base d'une évaluation de diplôme de Nuffic ; les délais d'inscription pour un diplôme étranger sont différents et sont décrits sur la page 'Studenten uit het buitenland'.","status":"draft"},"en":{"text":"A foreign diploma (e.g. a Moroccan Baccalauréat) must be assessed by Hogeschool Leiden on the basis of a Nuffic diploma evaluation; the application deadlines for a foreign diploma are different and are described on the 'Studenten uit het buitenland' page.","status":"draft"}}}`
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Pour l'admission sans diplôme havo/vwo/mbo 4 (Toelatingsonderzoek 21+), l'épreuve pour Commerciële Economie a lieu au plus tard le 23 juin 2026 (rapport à fournir) ; les frais en 2025 sont d'environ € 342 et le résultat ne garantit pas l'admission, la commission d'examen décidant.","status":"draft"},"en":{"text":"For admission without a havo/vwo/mbo 4 diploma (Toelatingsonderzoek 21+), the test for Commerciële Economie is due by 23 June 2026 (report to be submitted); the fee in 2025 is around € 342 and a positive result does not guarantee admission, as the examination committee decides.","status":"draft"}}}`
+
+> Preparer's caveats: application deadline reset to 'to check': its quotes did not say the date applies to international or non-EU applicants (rule of 2026-10-03); previous value [{"startDate":null,"applicationOpens":null,"applicationDeadline":"2027-05-01"}]
 
