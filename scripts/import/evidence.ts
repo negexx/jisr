@@ -265,34 +265,8 @@ export function checkTuition(amountMinor: number, quote: string): FactCheck {
     : fail(`the amount ${amountMinor / 100} does not appear in the quote`);
 }
 
-// The day and the month, in the forms a page writes them. `isoYear` also accepts the ISO form of a
-// dated deadline; a recurring deadline has no year, so it passes none.
-function dayAndMonthOk(month: number, day: number, q: string, isoYear?: string): boolean {
-  const dayOk = new RegExp(`(?<!\\d)0?${day}(?:st|nd|rd|th|er|\\.)?(?!\\d)`).test(q);
-  const names = MONTHS[month - 1] ?? [];
-  const monthOk =
-    names.some((n) => new RegExp(`\\b${n}\\b`, "i").test(q)) ||
-    new RegExp(`(?<!\\d)0?${day}\\s*[./-]\\s*0?${month}(?!\\d)`).test(q) ||
-    (isoYear !== undefined && new RegExp(`${isoYear}-0?${month}-0?${day}`).test(q));
-  return dayOk && monthOk;
-}
-
-export function checkDeadline(isoDate: string, quote: string): FactCheck {
-  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoDate);
-  if (match === null) return fail("deadline is not an ISO date");
-  const [, year, month, day] = match;
-  const q = normalizeForMatch(quote);
-  if (!dayAndMonthOk(Number(month), Number(day), q, year))
-    return fail(`the date ${isoDate} does not appear in the quote`);
-  // A year the page does not state is an inference, not a fact: leave it for a human.
-  return new RegExp(`(?<!\\d)${year}(?!\\d)`).test(q)
-    ? ok
-    : fail(`the quote does not state the year ${year}`);
-}
-
-// The day written right next to the month: "15 July", "15. Juli", "July 15", "15.07.", "15/07".
-// Stricter than dayAndMonthOk on purpose: with no year to anchor it, a day and a month that merely
-// both occur in the quote ("1 July; 15 places") are not a date.
+// The day written right next to the month: "15 July", "15. Juli", "July 15", "15.07.", "15/07". A
+// day and a month that merely both occur in the quote ("1 July; 15 places") are not a date.
 function dayBesideMonth(month: number, day: number, q: string): boolean {
   const names = (MONTHS[month - 1] ?? []).join("|");
   return (
@@ -300,6 +274,21 @@ function dayBesideMonth(month: number, day: number, q: string): boolean {
     new RegExp(`\\b(?:${names})\\.?\\s*0?${day}(?:st|nd|rd|th)?(?!\\d)`).test(q) ||
     new RegExp(`(?<!\\d)0?${day}\\s*[./-]\\s*0?${month}(?!\\d)`).test(q)
   );
+}
+
+export function checkDeadline(isoDate: string, quote: string): FactCheck {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoDate);
+  if (match === null) return fail("deadline is not an ISO date");
+  const [, year, month, day] = match;
+  const q = normalizeForMatch(quote);
+  const stated =
+    dayBesideMonth(Number(month), Number(day), q) ||
+    new RegExp(`${year}-0?${Number(month)}-0?${Number(day)}`).test(q);
+  if (!stated) return fail(`the date ${isoDate} does not appear in the quote`);
+  // A year the page does not state is an inference, not a fact: leave it for a human.
+  return new RegExp(`(?<!\\d)${year}(?!\\d)`).test(q)
+    ? ok
+    : fail(`the quote does not state the year ${year}`);
 }
 
 // A year in the quote makes it a dated deadline: it must not be reused as "every year" (ADR 0009).

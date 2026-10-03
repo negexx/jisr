@@ -156,6 +156,18 @@ describe("checkDeadline", () => {
     expect(checkDeadline("2027-05-01", "uiterlijk 1 mei 2027").ok).toBe(true);
     expect(checkDeadline("2027-07-15", "deadline 15/07/2027").ok).toBe(true);
   });
+  it("rejects a date whose day is not beside its month", () => {
+    expect(checkDeadline("2027-06-15", "Non-EU: 1 June to 15 July 2027").ok).toBe(false);
+    expect(
+      checkDeadline("2027-07-01", "Non-EU: classes start 1 September; apply until 20 July 2027").ok,
+    ).toBe(false);
+  });
+  it("accepts the day beside the month in each written form", () => {
+    expect(checkDeadline("2027-07-15", "Non-EU: apply by 15th of July 2027").ok).toBe(true);
+    expect(checkDeadline("2027-07-15", "Non-EU deadline: July 15, 2027").ok).toBe(true);
+    expect(checkDeadline("2027-07-15", "Non-EU deadline: 2027-07-15").ok).toBe(true);
+    expect(checkDeadline("2027-01-01", "Non-EU: 1er janvier 2027").ok).toBe(true);
+  });
   it("rejects a date the quote does not contain", () => {
     expect(checkDeadline("2027-07-15", "Apply by 1 June 2027").ok).toBe(false);
     expect(checkDeadline("2027-07-15", "Apply by 15 August").ok).toBe(false);
