@@ -32,7 +32,7 @@ A program has a single `tuition` figure, by convention the fee that applies to t
 
 ## Intakes and deadlines
 
-An intake has `startDate`, `applicationOpens` and `applicationDeadline`, each a full ISO date or `null`. When the official page gives the deadline as a day and a month with no year ("15 July"), do not guess a year: write it as `recurringDeadline: { month: 7, day: 15 }` and leave `applicationDeadline` as `null`. An intake never has both (`data:check` errors); the field is optional, so existing records stay valid. The app shows a recurring deadline as "usually by DD/MM each year, check the date for your intake", never as an upcoming date and never as a verified one (ADR 0009). It is a volatile fact like any deadline (aging 120 days, stale 270). Only a deadline that applies to international or non-EU applicants belongs here; a general or EU deadline is left out.
+An intake has `startDate`, `applicationOpens` and `applicationDeadline`, each a full ISO date or `null`. When the official page gives the deadline as a day and a month with no year ("15 July"), do not guess a year: write it as `recurringDeadline: { month: 7, day: 15 }` and leave `applicationDeadline` as `null`. An intake never has both (`data:check` errors); the field is optional, so existing records stay valid. The app shows a recurring deadline as "usually by DD/MM each year, check the date for your intake", never as an upcoming date and never with a guessed year (ADR 0009). It is a volatile fact like any deadline (aging 120 days, stale 270). Only a deadline that applies to international or non-EU applicants belongs here; a general or EU deadline is left out.
 
 ## Checking
 
