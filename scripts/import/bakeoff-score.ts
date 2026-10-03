@@ -26,15 +26,19 @@ type Intake = {
   startDate: string | null;
   applicationOpens: string | null;
   applicationDeadline: string | null;
+  recurringDeadline?: { month: number; day: number } | null;
 };
 
 const intakeKeys = (value: unknown): string[] =>
   (value as Intake[])
-    .flatMap((i) =>
-      (["startDate", "applicationOpens", "applicationDeadline"] as const).flatMap((k) =>
+    .flatMap((i) => [
+      ...(["startDate", "applicationOpens", "applicationDeadline"] as const).flatMap((k) =>
         i[k] === null ? [] : [`${k}:${i[k]}`],
       ),
-    )
+      ...(i.recurringDeadline == null
+        ? []
+        : [`recurringDeadline:${i.recurringDeadline.month}/${i.recurringDeadline.day}`]),
+    ])
     .sort();
 
 export function sameValue(name: FactName, a: unknown, b: unknown): boolean {

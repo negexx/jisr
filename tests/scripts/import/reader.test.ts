@@ -800,6 +800,10 @@ describe("recurring deadline", () => {
 
   it("tells the reader to write a deadline without a year as recurringDeadline", () => {
     expect(INSTRUCTION).toContain("recurringDeadline");
+    expect(INSTRUCTION).toContain(
+      "Write a start or opening date, or a dated deadline, only if the quote states day, month and YEAR",
+    );
+    expect(INSTRUCTION).toContain("If the quote states a year, never use recurringDeadline.");
   });
 
   it("keeps an item that has only a recurring deadline", () => {

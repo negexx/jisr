@@ -65,6 +65,7 @@ describe("claimText recurring deadline", () => {
     expect(text).toContain("15");
     expect(text).toMatch(/July|07/);
     expect(text).toMatch(/every year|each year/);
+    expect(text).toContain("every year by 15 July (the year is not stated)");
     expect(text).not.toMatch(/\d{4}/);
   });
 });

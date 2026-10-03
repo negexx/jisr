@@ -117,6 +117,11 @@ describe("checkRecurringDeadline", () => {
     [5, 1, "Meld je uiterlijk 1 mei aan"],
     [11, 30, "applications until 30.11."],
     [1, 15, "Frist 15/01"],
+    [5, 1, "1 May - 30 Nov"],
+    [11, 30, "1 May - 30 Nov"],
+    [7, 15, "by the 15th of July"],
+    [7, 15, "Deadline: July 15"],
+    [7, 1, "1er juillet"],
   ])("accepts %i/%i in: %s", (month, day, quote) => {
     expect(checkRecurringDeadline(month, day, quote).ok).toBe(true);
   });
@@ -124,8 +129,22 @@ describe("checkRecurringDeadline", () => {
     [7, 16, "Application deadline: 15 July"],
     [8, 15, "Application deadline: 15 July"],
     [7, 15, "Applications open all year"],
+    [7, 15, "Non-EU applicants: apply by 15 July 2025"],
+    [7, 15, "Deadline for non-EU applicants: 15.07.2024"],
+    [7, 15, "winter semester 2027/28: 15 July"],
+    [7, 15, "applications open 1 July; 15 places available"],
+    [7, 15, "15 ECTS, start in July"],
   ])("rejects %i/%i in: %s", (month, day, quote) => {
     expect(checkRecurringDeadline(month, day, quote).ok).toBe(false);
+  });
+});
+
+describe("checkRecurringDeadline reasons", () => {
+  it("says a quote with a year is a dated deadline", () => {
+    expect(checkRecurringDeadline(7, 15, "apply by 15 July 2025")).toEqual({
+      ok: false,
+      reason: "the quote states a year: a dated deadline, not a recurring one",
+    });
   });
 });
 

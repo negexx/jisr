@@ -79,7 +79,7 @@ export function claimText(name: FactName, value: unknown): string {
         ...(i.recurringDeadline == null
           ? []
           : [
-              `Application deadline for an international / non-EU applicant, every year around ${i.recurringDeadline.day} ${MONTH_NAMES[i.recurringDeadline.month - 1] ?? i.recurringDeadline.month} (the year is not stated)`,
+              `Application deadline for an international / non-EU applicant, every year by ${i.recurringDeadline.day} ${MONTH_NAMES[i.recurringDeadline.month - 1] ?? i.recurringDeadline.month} (the year is not stated)`,
             ]),
       ]);
       return `Dates for the next intake: ${parts.join("; ")}.`;

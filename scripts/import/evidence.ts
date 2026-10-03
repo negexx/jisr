@@ -290,8 +290,24 @@ export function checkDeadline(isoDate: string, quote: string): FactCheck {
     : fail(`the quote does not state the year ${year}`);
 }
 
+// The day written right next to the month: "15 July", "15. Juli", "July 15", "15.07.", "15/07".
+// Stricter than dayAndMonthOk on purpose: with no year to anchor it, a day and a month that merely
+// both occur in the quote ("1 July; 15 places") are not a date.
+function dayBesideMonth(month: number, day: number, q: string): boolean {
+  const names = (MONTHS[month - 1] ?? []).join("|");
+  return (
+    new RegExp(`(?<!\\d)0?${day}(?:st|nd|rd|th|er|\\.)?\\s*(?:of\\s+)?(?:${names})\\b`).test(q) ||
+    new RegExp(`\\b(?:${names})\\.?\\s*0?${day}(?:st|nd|rd|th)?(?!\\d)`).test(q) ||
+    new RegExp(`(?<!\\d)0?${day}\\s*[./-]\\s*0?${month}(?!\\d)`).test(q)
+  );
+}
+
+// A year in the quote makes it a dated deadline: it must not be reused as "every year" (ADR 0009).
 export function checkRecurringDeadline(month: number, day: number, quote: string): FactCheck {
-  return dayAndMonthOk(month, day, normalizeForMatch(quote))
+  const q = normalizeForMatch(quote);
+  if (/(?<!\d)(?:19|20)\d{2}(?!\d)/.test(q))
+    return fail("the quote states a year: a dated deadline, not a recurring one");
+  return dayBesideMonth(month, day, q)
     ? ok
     : fail(`the quote does not state the day ${day} and the month ${month}`);
 }
