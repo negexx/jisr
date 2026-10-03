@@ -294,3 +294,49 @@ describe("applyEnrichment", () => {
     expect(at(next, "_review").evidence).toEqual([other, earlier]);
   });
 });
+
+describe("applyEnrichment: a recurring deadline", () => {
+  const recurringIntakes = {
+    value: [
+      {
+        startDate: null,
+        applicationOpens: null,
+        applicationDeadline: null,
+        recurringDeadline: { month: 7, day: 15 },
+      },
+    ],
+    evidence: [
+      {
+        url: "https://hs.example/apply",
+        quote: "Applicants from outside the EU: application deadline 15 July",
+      },
+    ],
+  };
+
+  it("stores the recurring item as official with the new source", () => {
+    const next = applyEnrichment(registerRecord(), verified({ intakes: recurringIntakes }), TODAY);
+    expect(next.intakes).toEqual({
+      value: recurringIntakes.value,
+      source: "page-1",
+      info_kind: "official",
+    });
+    expect(at(next, "sources")["page-1"]).toEqual({
+      url: "https://hs.example/apply",
+      last_verified_at: null,
+    });
+  });
+
+  it("keeps an existing official dated intake", () => {
+    const dated = {
+      value: [{ startDate: null, applicationOpens: null, applicationDeadline: "2027-05-01" }],
+      source: "daad",
+      info_kind: "official",
+    };
+    const next = applyEnrichment(
+      { ...registerRecord(), intakes: dated },
+      verified({ intakes: recurringIntakes }),
+      TODAY,
+    );
+    expect(next.intakes).toEqual(dated);
+  });
+});

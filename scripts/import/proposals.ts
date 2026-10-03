@@ -6,6 +6,7 @@ import {
   checkDeadline,
   checkDuration,
   checkLanguages,
+  checkRecurringDeadline,
   checkSubjects,
   checkTests,
   checkTuition,
@@ -29,6 +30,13 @@ const EvidenceSchema = z.object({ url: Https, quote: z.string().min(1) });
 const Iso = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
 const fact = <T extends z.ZodType>(value: T) =>
   z.object({ value, evidence: z.array(EvidenceSchema).min(1) });
+
+const DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const MonthDayProposalSchema = z
+  .object({ month: z.number().int().min(1).max(12), day: z.number().int().min(1).max(31) })
+  .refine(({ month, day }) => day <= (DAYS_IN_MONTH[month - 1] ?? 0), {
+    message: "that day does not exist in that month",
+  });
 
 const escapeRegex = (text: string): string => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
@@ -103,11 +111,19 @@ export const ProposalSchema = z.object({
     ).optional(),
     intakes: fact(
       z.array(
-        z.object({
-          startDate: Iso.nullable(),
-          applicationOpens: Iso.nullable(),
-          applicationDeadline: Iso.nullable(),
-        }),
+        z
+          .object({
+            startDate: Iso.nullable(),
+            applicationOpens: Iso.nullable(),
+            applicationDeadline: Iso.nullable(),
+            recurringDeadline: MonthDayProposalSchema.nullable().optional(),
+          })
+          .refine(
+            (i) => !(i.applicationDeadline !== null && (i.recurringDeadline ?? null) !== null),
+            {
+              message: "an intake has a dated deadline or a recurring one, not both",
+            },
+          ),
       ),
     ).optional(),
     applicationChannel: fact(z.string()).optional(),
@@ -241,8 +257,11 @@ export async function verifyProposal(
         startDate: string | null;
         applicationOpens: string | null;
         applicationDeadline: string | null;
+        recurringDeadline?: { month: number; day: number } | null;
       }[];
-      const hasDeadline = items.some((item) => item.applicationDeadline !== null);
+      const hasDeadline = items.some(
+        (item) => item.applicationDeadline !== null || (item.recurringDeadline ?? null) !== null,
+      );
       if (hasDeadline && !accepted.some((e) => mentionsInternationalApplicants(e.quote)))
         reason =
           "no accepted quote says the deadline applies to international or non-EU applicants";
@@ -254,6 +273,14 @@ export async function verifyProposal(
               reason = `the date ${date} is not supported by the quotes`;
             }
           }
+          const recurring = item.recurringDeadline ?? null;
+          if (
+            recurring !== null &&
+            !accepted.some(
+              (e) => checkRecurringDeadline(recurring.month, recurring.day, e.quote).ok,
+            )
+          )
+            reason = `the deadline ${recurring.day}/${recurring.month} is not supported by the quotes`;
         }
     } else if (!accepted.some((e) => checkValue(key, entry.value, e.quote).ok)) {
       const first = checkValue(key, entry.value, accepted[0]?.quote ?? "");
@@ -347,8 +374,15 @@ const FACT_FIELDS = [
   "documents",
 ] as const;
 
-// The reader's shape for a fact value becomes the record's shape (documents carry localized names).
+// The reader's shape for a fact value becomes the record's shape (documents carry localized names;
+// an intake's recurringDeadline is absent in a record, never null).
 export function recordValue(field: string, value: unknown): unknown {
+  if (field === "intakes")
+    return (value as { recurringDeadline?: unknown }[]).map(({ recurringDeadline, ...intake }) =>
+      recurringDeadline === null || recurringDeadline === undefined
+        ? intake
+        : { ...intake, recurringDeadline },
+    );
   if (field !== "documents") return value;
   return (value as DocumentProposal[]).map((d) => ({
     slug: d.slug,

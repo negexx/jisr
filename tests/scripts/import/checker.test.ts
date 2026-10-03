@@ -52,6 +52,23 @@ describe("claimText", () => {
   });
 });
 
+describe("claimText recurring deadline", () => {
+  it("says the deadline repeats every year and states no year", () => {
+    const text = claimText("intakes", [
+      {
+        startDate: null,
+        applicationOpens: null,
+        applicationDeadline: null,
+        recurringDeadline: { month: 7, day: 15 },
+      },
+    ]);
+    expect(text).toContain("15");
+    expect(text).toMatch(/July|07/);
+    expect(text).toMatch(/every year|each year/);
+    expect(text).not.toMatch(/\d{4}/);
+  });
+});
+
 describe("contextAround", () => {
   const page = `${"before ".repeat(100)}The programme is taught in English. ${"after ".repeat(100)}`;
 

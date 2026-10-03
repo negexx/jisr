@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { z } from "zod";
 
 import {
   applyRecord,
@@ -12,7 +13,7 @@ import {
   verifyProposal,
 } from "../../../scripts/import/proposals";
 import { READ_SOURCE } from "../../../scripts/import/staging";
-import { DocumentListSchema } from "../../../src/data-schema/records/program";
+import { DocumentListSchema, IntakeSchema } from "../../../src/data-schema/records/program";
 
 const PAGE = "https://uni.example/cs";
 const FEES = "https://uni.example/fees";
@@ -956,5 +957,107 @@ describe("intakes: the deadline must be stated for international applicants", ()
       fact: "intakes",
       reason: "no accepted quote says the deadline applies to international or non-EU applicants",
     });
+  });
+});
+
+describe("intakes: a recurring deadline", () => {
+  const page = "https://uni.example/apply";
+  const recurring = { month: 7, day: 15 };
+  const item = (extra: Record<string, unknown>) => ({
+    startDate: null,
+    applicationOpens: null,
+    applicationDeadline: null,
+    ...extra,
+  });
+  const verify = (items: unknown[], quotes: string[], text: string) =>
+    verifyProposal(
+      ProposalSchema.parse({
+        slug: "xx-prog",
+        programmePage: null,
+        facts: {
+          intakes: { value: items, evidence: quotes.map((quote) => ({ url: page, quote })) },
+        },
+      }),
+      "Prog",
+      async () => text,
+    );
+  const parseItem = (value: unknown) =>
+    ProposalSchema.safeParse({
+      slug: "xx-prog",
+      programmePage: null,
+      facts: { intakes: { value: [value], evidence: [{ url: page, quote: "q" }] } },
+    });
+
+  it("the schema accepts a recurring deadline with no dated one", () => {
+    expect(parseItem(item({ recurringDeadline: recurring })).success).toBe(true);
+  });
+
+  it("the schema rejects a day that does not exist in the month", () => {
+    expect(parseItem(item({ recurringDeadline: { month: 2, day: 30 } })).success).toBe(false);
+  });
+
+  it("the schema rejects an item with both a dated and a recurring deadline", () => {
+    expect(
+      parseItem(item({ applicationDeadline: "2027-07-15", recurringDeadline: recurring })).success,
+    ).toBe(false);
+  });
+
+  it("accepts a recurring deadline whose quote states day and month for non-EU applicants", async () => {
+    const q = "Applicants from outside the EU: application deadline 15 July";
+    const verified = await verify([item({ recurringDeadline: recurring })], [q], q);
+    expect(verified.facts.intakes).toBeDefined();
+  });
+
+  it("rejects a recurring deadline when the quote lacks the day and month", async () => {
+    const q = "Applications open all year, for international applicants";
+    const verified = await verify([item({ recurringDeadline: recurring })], [q], q);
+    expect(verified.facts.intakes).toBeUndefined();
+    expect(verified.rejected).toContainEqual({
+      fact: "intakes",
+      reason: "the deadline 15/7 is not supported by the quotes",
+    });
+  });
+
+  it("rejects a recurring deadline when no quote names international or non-EU applicants", async () => {
+    const q = "The application deadline is 15 July";
+    const verified = await verify([item({ recurringDeadline: recurring })], [q], q);
+    expect(verified.facts.intakes).toBeUndefined();
+    expect(verified.rejected).toContainEqual({
+      fact: "intakes",
+      reason: "no accepted quote says the deadline applies to international or non-EU applicants",
+    });
+  });
+
+  it("accepts a list with one dated item and one recurring item when the rule is satisfied", async () => {
+    const dated = "Non-EU applicants must apply by 1 May 2027.";
+    const open = "Applicants from outside the EU: application deadline 15 July";
+    const verified = await verify(
+      [item({ applicationDeadline: "2027-05-01" }), item({ recurringDeadline: recurring })],
+      [dated, open],
+      `${dated} ${open}`,
+    );
+    expect(verified.facts.intakes).toBeDefined();
+  });
+
+  it("recordValue keeps a recurring item, drops a null recurringDeadline, and fits the record schema", () => {
+    const value = recordValue("intakes", [
+      { ...item({}), recurringDeadline: recurring },
+      {
+        startDate: "2027-09-01",
+        applicationOpens: null,
+        applicationDeadline: "2027-05-01",
+        recurringDeadline: null,
+      },
+    ]);
+    expect(z.array(IntakeSchema).safeParse(value).success).toBe(true);
+    expect(value).toEqual([
+      {
+        startDate: null,
+        applicationOpens: null,
+        applicationDeadline: null,
+        recurringDeadline: recurring,
+      },
+      { startDate: "2027-09-01", applicationOpens: null, applicationDeadline: "2027-05-01" },
+    ]);
   });
 });

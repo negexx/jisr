@@ -5,6 +5,7 @@ import {
   checkDeadline,
   checkDuration,
   checkLanguages,
+  checkRecurringDeadline,
   checkTuition,
   htmlToText,
   mentionsInternationalApplicants,
@@ -106,6 +107,25 @@ describe("checkTuition", () => {
     expect(
       checkTuition(0, "Tuition fees per semester None for EU students, 1,500 EUR for non-EU").ok,
     ).toBe(false);
+  });
+});
+
+describe("checkRecurringDeadline", () => {
+  it.each([
+    [7, 15, "Application deadline: 15 July"],
+    [7, 15, "Bewerbungsfrist: 15. Juli"],
+    [5, 1, "Meld je uiterlijk 1 mei aan"],
+    [11, 30, "applications until 30.11."],
+    [1, 15, "Frist 15/01"],
+  ])("accepts %i/%i in: %s", (month, day, quote) => {
+    expect(checkRecurringDeadline(month, day, quote).ok).toBe(true);
+  });
+  it.each([
+    [7, 16, "Application deadline: 15 July"],
+    [8, 15, "Application deadline: 15 July"],
+    [7, 15, "Applications open all year"],
+  ])("rejects %i/%i in: %s", (month, day, quote) => {
+    expect(checkRecurringDeadline(month, day, quote).ok).toBe(false);
   });
 });
 
