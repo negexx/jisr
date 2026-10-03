@@ -1,0 +1,29 @@
+{
+  "slug": "de-carl-von-ossietzky-universitat-oldenburg-hrk209-bachelor-of-engineering-daad3772",
+  "programmePage": "https://uol.de/en/physics/studies/courseofstudies/ep",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 10,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://uol.de/en/physics/studies/courseofstudies/ep",
+          "quote": "International (Uni-Assist) 15.01.-15.10."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3772/",
+          "quote": "For the winter semester: 15 January - 15 October"
+        }
+      ]
+    }
+  }
+}

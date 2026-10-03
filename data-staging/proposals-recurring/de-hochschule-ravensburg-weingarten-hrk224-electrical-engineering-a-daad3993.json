@@ -1,0 +1,29 @@
+{
+  "slug": "de-hochschule-ravensburg-weingarten-hrk224-electrical-engineering-a-daad3993",
+  "programmePage": "https://www.rwu.de/en/study/courses/electrical-engineering-and-information-technology-en",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 10,
+            "day": 31
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.rwu.de/en/study/courses/electrical-engineering-and-information-technology-en",
+          "quote": "APPLICATION PERIOD FOR THE SUMMER INTAKE: 01. September - 31. October"
+        },
+        {
+          "url": "https://www.rwu.de/en/international/international-degree-seeking-students/study-offer-and-application",
+          "quote": "International degree programs: Summer term (application period 1 September -31 October)"
+        }
+      ]
+    }
+  }
+}

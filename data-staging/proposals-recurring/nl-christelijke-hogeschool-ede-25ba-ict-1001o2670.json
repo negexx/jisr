@@ -1,0 +1,25 @@
+{
+  "slug": "nl-christelijke-hogeschool-ede-25ba-ict-1001o2670",
+  "programmePage": "https://che.nl/opleidingen/ict/bachelor/ict",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 1
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://che.nl/info-opleidingen/aanmelden-opleiding",
+          "quote": "Als je een nationaliteit hebt van een land buiten de EU en je je wilt aanmelden voor een opleiding aan de CHE, is het de bedoeling dat je je uiterlijk 1 mei aanmeldt!"
+        }
+      ]
+    }
+  }
+}

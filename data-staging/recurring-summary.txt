@@ -1,0 +1,169 @@
+
+## de-carl-von-ossietzky-universitat-oldenburg-hrk209-bachelor-of-engineering-daad3
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":10,"day":15}}
+     “International (Uni-Assist) 15.01.-15.10.”
+     “For the winter semester: 15 January - 15 October”
+
+## de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad3998
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":7,"day":15}}
+     “Deadlines: 15 July for international applicants (only through uni-assist)”
+
+## de-fachhochschule-aachen-hrk2-julich-bachelor-of-science-in-i-daad11243
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":7,"day":15}}
+     “Deadlines: 15 July for international applicants (only through uni-assist)”
+
+## de-frankfurt-school-of-finance-management-hrk83-bachelors-in-management-daad9700
+  {"startDate":"2027-09-01","applicationOpens":null,"applicationDeadline":null,"recurringDeadline":null}
+     “Start Date 1 September 2027”
+
+## de-friedrich-alexander-universitat-erlangen-hrk70-nurnberg-international-busines
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":7,"day":15}}
+     “Die Bewerbungsfrist für das Wintersemester für internationale Bewerberinnen und Bewerber ist der 15. Juli.”
+
+## de-hochschule-bremerhaven-hrk41-sustainable-process-engi-daad10400
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":7,"day":15}}
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":1,"day":15}}
+     “valid for applicants from: non-EU countries For the winter semester: until 15 July”
+     “valid for applicants from: non-EU countries For the summer semester: until 15 January”
+     “July 15th for applicants with a higher education entrance qualification that was not obtained in the EU via uni-assist.de”
+
+## de-hochschule-fur-angewandte-wissenschaften-hrk287-computer-science-bsc-daad7216
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":11,"day":30}}
+     “The application period for summer intake is between November 05 and November 30 for Non-EU citizens and between November 05 and January 15 for EU citizens.”
+
+## de-hochschule-fur-technik-und-wirtschaft-dr-hrk54-bachelor-electrical-engi-daad4
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":6,"day":15}}
+     “Application periods International applicants: 15 June German applicants: 15 July”
+
+## de-hochschule-geisenheim-hrk446-international-wine-busin-daad8448
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":9,"day":1}}
+     “Application Deadline for Applicants with a foreign secondary school-leaving certificate September 1 (via uni-assist)”
+     “The application deadline for bachelor's degree programs via uni-assist is always September 1.”
+
+## de-hochschule-heilbronn-technik-wirtschaft-hrk125-schwabisch-hall-global-digital
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":7,"day":15}}
+     “The application period usually starts in mid-May and ends on July 15th. However, we always recommend our international applicants to start and complete their application process as”
+
+## de-hochschule-osnabruck-hrk214-engineering-sciences-daad11216
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":6,"day":15}}
+     “Applicants with international educational qualifications: 15 June”
+     “bei zulassungsbeschränkten Studiengängen vom 01. März bis 15. Juni (Eingang der Bewerbungsunterlagen bei uni-assist)”
+
+## de-hochschule-osnabruck-hrk214-international-business-a-daad11037
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":6,"day":15}}
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":12,"day":15}}
+     “The following is valid for applicants from: EU countries non-EU countries For the winter semester: 1 March - 15 June”
+     “bei zulassungsbeschränkten Studiengängen vom 01. März bis 15. Juni (Eingang der Bewerbungsunterlagen bei uni-assist)”
+     “bei zulassungsbeschränkten Studiengängen vom 01. September bis 15. Dezember (Eingang der Bewerbungsunterlagen bei uni-assist)”
+
+## de-hochschule-pforzheim-gestaltung-technik-hrk219-bachelor-of-business-adm-daad9
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":31}}
+     “For non-EU applicants with non-EU university entrance qualification (high school degree) the deadlines are: 31st of May for the Winter Semester (Starting beginning of October)”
+
+## de-hochschule-ravensburg-weingarten-hrk224-electrical-engineering-a-daad3993
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":10,"day":31}}
+     “APPLICATION PERIOD FOR THE SUMMER INTAKE: 01. September - 31. October”
+     “International degree programs: Summer term (application period 1 September -31 October)”
+
+## de-hochschule-ravensburg-weingarten-hrk224-mechatronics-daad9717
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":10,"day":31}}
+     “International degree programs: Summer term (application period 1 September -31 October): B.Eng. Mechatronics summer 2027 intake, taught in English”
+     “APPLICATION PERIOD FOR THE SUMMER INTAKE: 01. September - 31. October”
+
+## de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach-sustai
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":15}}
+     “Application deadline: 15 May (non EU and non EEA applicants), 31 August (EU and EEA applicants)”
+     “15 May for non-EU and non-EEA applicants”
+
+## de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach-sustai
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":"2026-05-15","recurringDeadline":null}
+     “15 May 2026 for non-EU and non-EEA applicants”
+     “The following is valid for applicants from: non-EU countries For the winter semester: 1 September - 15 May”
+
+## de-otto-von-guericke-universitat-magdeburg-hrk172-international-business-a-daad3
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":7,"day":15}}
+     “International Degree Holder: Online application & download including IB diploma & A-level degree holders Documents must be provided in the requested form upon enrollment, arrival. ”
+     “The following is valid for applicants from: all countries For the winter semester: 15 April - 15 July”
+
+## de-technische-hochschule-aschaffenburg-hrk333-software-design-internat-daad9225
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":6,"day":30}}
+     “Software Design International 2. Mai bis 30. Juni”
+
+## de-technische-hochschule-mannheim-hrk177-e-mobility-and-autonomou-daad7693
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":15}}
+     “The following is valid for applicants from: non-EU countries For the winter semester: 15 April - 15 May”
+     “Recommended application timeline 15 May latest for international applicants (for visa reasons)”
+
+## de-technische-hochschule-rosenheim-hrk232-international-bachelor-o-daad7892
+  {"startDate":null,"applicationOpens":"2026-05-01","applicationDeadline":"2026-11-30","recurringDeadline":null}
+     “International Bachelor of Engineering at Campus Rosenheim • application period: 1 May - 30 November 2026 via uni-assist with a university entrance qualification from abroad”
+
+## de-technische-hochschule-rosenheim-hrk232-plastics-engineering-daad8373
+  {"startDate":null,"applicationOpens":"2026-05-01","applicationDeadline":"2026-11-30","recurringDeadline":null}
+     “Apply as uni-assist with an international school-leaving or university qualification 01. May 2026 - 30. November 2026”
+     “Plastics Engineering at Campus Rosenheim • application period: 1 May - 30 November 2026 via uni-assist with a university entrance qualification from abroad”
+
+## de-technische-universitat-braunschweig-hrk35-sustainable-engineering-daad7212
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":7,"day":15}}
+     “The following is valid for applicants from: non-EU countries For the winter semester: 1 June - 15 July”
+     “Application period 1 June - 15 July (non-EU), 1 June - 15 Oct (Germany/EU) of the year in which the programme begins”
+
+## nl-avans-hogeschool-07gr-breda-accountancy-1001o3528
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":1}}
+     “Start je in september met een opleiding en is jouw nationaliteit anders dan een van de EER-landen of Zwitserland? Meld je dan t/m 1 mei aan.”
+     “Students with a non-EEA nationality are required to apply by May 1st and to pay their tuition fees in full prior to the start of the academic year.”
+
+## nl-avans-hogeschool-07gr-s-hertogenbosch-bouwkunde-1001o3048
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":1}}
+     “Niet-EER nationaliteit Start je in september met een opleiding en is jouw nationaliteit anders dan een van de EER-landen of Zwitserland? Meld je dan t/m 1 mei aan.”
+
+## nl-capabel-hogeschool-30hc-rotterdam-ict-1001o8912
+  {"startDate":"2027-02-01","applicationOpens":null,"applicationDeadline":null,"recurringDeadline":null}
+  {"startDate":"2027-08-31","applicationOpens":null,"applicationDeadline":null,"recurringDeadline":null}
+     “Amsterdam 01 februari 2027 di & do 10.00 - 16:00”
+     “31 augustus 2027 Dinsdag 10:00-16:00”
+
+## nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182
+  {"startDate":"2026-12-01","applicationOpens":null,"applicationDeadline":null,"recurringDeadline":null}
+  {"startDate":"2027-04-01","applicationOpens":null,"applicationDeadline":null,"recurringDeadline":null}
+     “Amsterdam 01 december 2026 wo & do 10.00 - 16.00”
+     “01 april 2027 wo & do 10:00-16:00”
+
+## nl-christelijke-hogeschool-ede-25ba-ict-1001o2670
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":1}}
+     “Als je een nationaliteit hebt van een land buiten de EU en je je wilt aanmelden voor een opleiding aan de CHE, is het de bedoeling dat je je uiterlijk 1 mei aanmeldt!”
+
+## nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046
+  {"startDate":"2027-09-06","applicationOpens":null,"applicationDeadline":null,"recurringDeadline":null}
+     “Startmoment 6 september 2027. Introductiedagen zijn in de week van 30 augustus”
+
+## nl-hogeschool-inholland-27pz-alkmaar-technische-informatica-1001o3859
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":1}}
+     “Non-EU students by 1 May”
+
+## nl-hogeschool-inholland-27pz-haarlem-business-studies-1001o2990
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":1}}
+     “Non-EU students by 1 May”
+
+## nl-hogeschool-inholland-27pz-s-gravenhage-business-studies-1001o2990
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":1}}
+     “Dutch students by 1 August EU students by 1 August Non-EU students by 1 May”
+
+## nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":1}}
+     “We recommend the following enrolment deadline dates: Dutch students by 1 August EU students by 1 August Non-EU students by 1 May”
+
+## nl-hogeschool-rotterdam-22oj-bouwkunde-1001o3055
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":4,"day":1}}
+     “De aanmeldingsdeadlines van Teams Admissions zijn als volgt: Non-EU Aanmelders: 1 april”
+
+## nl-hogeschool-utrecht-25dw-accountancy-1001o3544
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":31}}
+  {"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":10,"day":31}}
+     “31 May Non-EU students living outside the Netherlands who require immigration and/or visa services from HU.”
+     “31 October Non-EU students living outside the Netherlands who require immigration and/or visa services from HU, Students with a residence permit for study purposes who currently st”
+
+## nl-hogeschool-van-arnhem-en-nijmegen-25kb-ict-1001o2674
+  {"startDate":"2027-02-01","applicationOpens":null,"applicationDeadline":null,"recurringDeadline":null}
+  {"startDate":"2027-09-01","applicationOpens":null,"applicationDeadline":null,"recurringDeadline":null}
+     “De opleiding start 1 februari 2027 en 1 september 2027”

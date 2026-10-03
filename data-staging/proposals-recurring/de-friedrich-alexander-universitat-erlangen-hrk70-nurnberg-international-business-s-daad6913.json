@@ -1,0 +1,25 @@
+{
+  "slug": "de-friedrich-alexander-universitat-erlangen-hrk70-nurnberg-international-business-s-daad6913",
+  "programmePage": "https://fau.de/studiengang/international-business-studies-b-sc",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://fau.de/studiengang/international-business-studies-b-sc",
+          "quote": "Die Bewerbungsfrist für das Wintersemester für internationale Bewerberinnen und Bewerber ist der 15. Juli."
+        }
+      ]
+    }
+  }
+}

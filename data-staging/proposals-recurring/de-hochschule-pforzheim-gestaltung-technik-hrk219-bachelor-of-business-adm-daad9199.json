@@ -1,0 +1,25 @@
+{
+  "slug": "de-hochschule-pforzheim-gestaltung-technik-hrk219-bachelor-of-business-adm-daad9199",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9199/",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 31
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://businesspf.hs-pforzheim.de/en/studies/application",
+          "quote": "For non-EU applicants with non-EU university entrance qualification (high school degree) the deadlines are: 31st of May for the Winter Semester (Starting beginning of October)"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "de-hochschule-geisenheim-hrk446-international-wine-busin-daad8448",
+  "programmePage": "https://www.hs-geisenheim.de/en/studies/prospective-students/bachelors-programs/international-wine-business-bsc-english-program",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 9,
+            "day": 1
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-geisenheim.de/en/studies/prospective-students/bachelors-programs/international-wine-business-bsc-english-program",
+          "quote": "Application Deadline for Applicants with a foreign secondary school-leaving certificate September 1 (via uni-assist)"
+        },
+        {
+          "url": "https://www.hs-geisenheim.de/en/studies/prospective-students/application/information-for-international-applicants/",
+          "quote": "The application deadline for bachelor's degree programs via uni-assist is always September 1."
+        }
+      ]
+    }
+  }
+}
