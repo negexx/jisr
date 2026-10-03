@@ -15,7 +15,7 @@ import type { ROUTE_KEYS, ROUTE_SOURCE_KEYS } from "@/lib/i18n/vocabulary";
 import type { SnapshotBundle } from "@/lib/snapshot/client";
 import type { DataText } from "@/lib/snapshot/text";
 
-import { describeReason, type ReasonView, ruleIndex } from "./reasons";
+import { describeReason, type ReasonContext, type ReasonView, ruleIndex } from "./reasons";
 
 // The only place a match status meets a page group. Status to icon and colour is MatchStatusBadge's.
 export const MATCH_GROUPS = ["ok", "check", "foundation", "failed"] as const;
@@ -172,10 +172,23 @@ export function uniqueFacts(facts: ReadonlyArray<FactRef | null>): FactRef[] {
   return unique;
 }
 
-type CardInput = MatchesViewInput & { core: CoreShard; program: Program };
+export type CardInput = MatchesViewInput & { core: CoreShard; program: Program };
 
-function cardFor(input: CardInput): MatchCardModel {
-  const { profile, bundle, now, locale, core, program } = input;
+export function reasonContext(
+  input: Pick<CardInput, "profile" | "bundle" | "locale" | "core" | "program">,
+): ReasonContext {
+  const { profile, bundle, locale, core, program } = input;
+  const routes = bundle.routes?.routes ?? [];
+  return {
+    locale,
+    core,
+    text: bundle.text,
+    rules: ruleIndex(program, resolveRoute(profile, program.country, routes)),
+  };
+}
+
+export function cardFor(input: CardInput): MatchCardModel {
+  const { profile, bundle, now, core, program } = input;
   const routes = bundle.routes?.routes ?? [];
   const match = matchProgram({ profile, program, routes, reference: core, now });
   const cost = estimateCost({
@@ -185,13 +198,8 @@ function cardFor(input: CardInput): MatchCardModel {
     now,
   });
   const intake = nextIntake(program, now);
-  const reasonContext = {
-    locale,
-    core,
-    text: bundle.text,
-    rules: ruleIndex(program, resolveRoute(profile, program.country, routes)),
-  };
-  const reasons = topReasons(match).map((reason) => describeReason(reason, reasonContext));
+  const context = reasonContext(input);
+  const reasons = topReasons(match).map((reason) => describeReason(reason, context));
 
   // A missing institution is a data-quality gap, not an error: the card shows the slugs.
   const institution =

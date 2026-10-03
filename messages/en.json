@@ -558,6 +558,9 @@
     "title": "Your matches",
     "lead": "Based on the requirements we published for each program. Confirm them on the official page before you apply.",
     "loading": "Loading your matches",
+    "compare": {
+      "link": "Compare your saved programs ({count})"
+    },
     "counts": {
       "ok": "{n, plural, one {{count} looks possible} other {{count} look possible}}",
       "check": "{count} to check",
@@ -798,6 +801,10 @@
     "title": "My application plan",
     "lead": "Tick off each step as you complete it. Your progress stays on this device.",
     "loading": "Loading your plan",
+    "compare": {
+      "action": "Compare saved programs",
+      "hint": "Save at least 2 programs to compare them."
+    },
     "storage": {
       "notice": "This device cannot keep your saved programs and ticked steps: they will be lost when you close this page."
     },
@@ -854,6 +861,89 @@
     "reset": {
       "notice": "The profile saved on this device could not be read, so we removed it. You can create it again.",
       "dismiss": "Dismiss this message"
+    }
+  },
+  "compare": {
+    "meta": {
+      "title": "Compare programs",
+      "description": "Compare 2 to 4 of your saved programs side by side: costs, deadlines, requirements and how to apply."
+    },
+    "title": "Compare programs",
+    "lead": "Compare 2 to 4 of your saved programs side by side. Every value shows its source; costs are estimates, not promises.",
+    "loading": "Loading the comparison",
+    "empty": {
+      "title": "Save at least 2 programs to compare them",
+      "description": "Compare works on the programs you have saved. Save programs from My matches or from a program page.",
+      "action": "See my matches"
+    },
+    "notEnough": {
+      "title": "Fewer than 2 of your saved programs are in our current data",
+      "description": "Save more programs, or remove the ones that are no longer listed, to compare."
+    },
+    "noProfile": {
+      "title": "Create your profile to compare",
+      "description": "Your saved programs are kept on this device. We need your profile to show how each program fits you.",
+      "action": "Create my profile"
+    },
+    "error": {
+      "title": "We could not load the comparison",
+      "description": "Check your connection and try again.",
+      "retry": "Try again"
+    },
+    "storage": {
+      "notice": "This device cannot keep your saved programs reliably, so they may be lost when you close this page."
+    },
+    "reset": {
+      "notice": "Your saved profile could not be read, so it was cleared.",
+      "dismiss": "Dismiss"
+    },
+    "picker": {
+      "summary": "Comparing {selected} of {total} saved programs",
+      "change": "Change programs",
+      "hint": "Choose between {min} and {max} programs.",
+      "limit": "You can compare up to {max} programs. Untick one to choose another.",
+      "minimum": "Keep at least {min} programs selected.",
+      "missing": "No longer in our data",
+      "announce": "Comparing {n} programs"
+    },
+    "differences": {
+      "label": "Show only what differs",
+      "marker": "Differs",
+      "allSame": "These programs have the same values for every topic."
+    },
+    "rows": {
+      "result": "Your result",
+      "tuition": "Tuition",
+      "cost": "Estimated first-year cost",
+      "language": "Teaching language",
+      "deadline": "Application deadline",
+      "scholarships": "Scholarships open to you",
+      "application": "How to apply"
+    },
+    "cells": {
+      "programLabel": "Program",
+      "languageUnknown": "Teaching language not published: check the official page"
+    },
+    "scholarships": {
+      "none": "None open to your nationality on the published rules",
+      "caveat": "Based on the published nationality rules only. Check the other conditions on each scholarship page."
+    },
+    "application": {
+      "applyOn": "Apply on {name}",
+      "account": {
+        "required": "An account is required",
+        "notRequired": "No account is required",
+        "unknown": "Account requirement not stated"
+      },
+      "channelUnknown": "Application channel not published: check the official page",
+      "documents": "Documents",
+      "documentsUnknown": "Documents not published: check the official page",
+      "documentsNone": "No documents are listed in the source we reviewed: check the official page",
+      "translation": {
+        "yes": "Translation required",
+        "no": "No translation required",
+        "unknown": "Translation not stated: check the official page"
+      }
     }
   }
 }

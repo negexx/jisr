@@ -2,13 +2,16 @@
 import { cleanup, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createTranslator } from "next-intl";
+import { renderToString } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
+import { MatchesClient } from "@/components/matches/matches-client";
 import type { Profile } from "@/data-schema/profile";
 import type { AppLocale } from "@/i18n/routing";
 import { formatMoney } from "@/lib/format";
 import { buildMatchesView, MATCH_GROUPS, type MatchGroup } from "@/lib/journey/matches-view";
 import { profileStore } from "@/lib/profile/store";
+import { savedStore } from "@/lib/saved/store";
 import type { SnapshotBundle } from "@/lib/snapshot/client";
 import { shardsForMatches } from "@/lib/snapshot/plan";
 import {
@@ -21,8 +24,9 @@ import {
 } from "../../fixtures/e2e/profiles";
 import { FORBIDDEN } from "../../i18n/forbidden-wording";
 import { forbidConsole } from "../../lib/profile/no-console";
+import { seedSaved } from "../plan/helpers";
 import { expectNoPhysicalDirection, LOCALES, reachableText } from "../trust-helpers";
-import { catalogs, renderMatches, withFixtureClient } from "./helpers";
+import { catalogs, Providers, renderMatches, withFixtureClient } from "./helpers";
 
 forbidConsole();
 
@@ -37,6 +41,7 @@ afterEach(() => {
   cleanup();
   profileStore.clear();
   window.localStorage.clear();
+  savedStore.reload();
   vi.useRealTimers();
   vi.restoreAllMocks();
 });
@@ -417,5 +422,58 @@ describe.each(LOCALES)("My Matches: trust, direction and privacy (%s)", (locale)
     expect(fixture.requests.length).toBeGreaterThan(0);
     for (const url of fixture.requests)
       expect(url).toMatch(/^\/snap\/(manifest\.json|s\/[\w.-]+\.json)$/);
+  });
+});
+
+describe.each(LOCALES)("My Matches: compare link (%s)", (locale) => {
+  const t = catalogs[locale].matches;
+  const label = (count: number) =>
+    createTranslator({ locale, messages: catalogs[locale], namespace: "matches.compare" })("link", {
+      count: String(count),
+    });
+  const PROGRAMS = {
+    a: { slug: E2E_SLUGS.ok, country: "XB", field: "xx-test-field-cs" },
+    b: { slug: E2E_SLUGS.stale, country: "XB", field: "xx-test-field-eng" },
+    c: { slug: E2E_SLUGS.foundation, country: "XC", field: "xx-test-field-cs" },
+  };
+
+  it("links to the compare page after the lead when two or more programs are saved", async () => {
+    seedSaved(PROGRAMS.a, PROGRAMS.b, PROGRAMS.c);
+    const { container } = await renderFor(locale, E2E_PROFILE);
+    const link = screen.getByRole("link", { name: label(3) });
+    expect(link.getAttribute("href")).toBe(`/${locale}/compare`);
+    const lead = screen.getByText(t.lead);
+    expect(lead.compareDocumentPosition(link) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(link.className).toContain("min-h-11");
+    expect(container.textContent).not.toMatch(/[٠-٩۰-۹]/u);
+    expectNoPhysicalDirection(container);
+  });
+
+  it("counts the saved programs in Latin digits whatever the locale", async () => {
+    seedSaved(PROGRAMS.a, PROGRAMS.b);
+    await renderFor(locale, E2E_PROFILE);
+    expect(screen.getByRole("link", { name: label(2) }).textContent).toContain("2");
+  });
+
+  it("shows no link with one saved program or none", async () => {
+    seedSaved(PROGRAMS.a);
+    const first = await renderFor(locale, E2E_PROFILE);
+    expect(first.container.querySelector('a[href$="/compare"]')).toBeNull();
+    cleanup();
+    window.localStorage.clear();
+    savedStore.reload();
+    const second = await renderFor(locale, E2E_PROFILE);
+    expect(second.container.querySelector('a[href$="/compare"]')).toBeNull();
+  });
+
+  it("renders nothing while the saved list is not hydrated", () => {
+    seedSaved(PROGRAMS.a, PROGRAMS.b);
+    const html = renderToString(
+      <Providers locale={locale}>
+        <MatchesClient locale={locale} client={fixture.client()} />
+      </Providers>,
+    );
+    expect(html).not.toContain("/compare");
+    expect(html).not.toContain(label(2));
   });
 });

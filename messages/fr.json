@@ -558,6 +558,9 @@
     "title": "Vos résultats",
     "lead": "D'après les conditions que nous avons publiées pour chaque programme. Confirmez-les sur la page officielle avant de candidater.",
     "loading": "Chargement de vos résultats",
+    "compare": {
+      "link": "Comparer vos programmes enregistrés ({count})"
+    },
     "counts": {
       "ok": "{n, plural, one {{count} semble possible} other {{count} semblent possibles}}",
       "check": "{count} à vérifier",
@@ -798,6 +801,10 @@
     "title": "Mon plan de candidature",
     "lead": "Cochez chaque étape une fois terminée. Votre progression reste sur cet appareil.",
     "loading": "Chargement de votre plan",
+    "compare": {
+      "action": "Comparer les programmes enregistrés",
+      "hint": "Enregistrez au moins 2 programmes pour les comparer."
+    },
     "storage": {
       "notice": "Cet appareil ne peut pas conserver vos programmes enregistrés ni vos étapes cochées : ils seront perdus à la fermeture de cette page."
     },
@@ -854,6 +861,89 @@
     "reset": {
       "notice": "Le profil enregistré sur cet appareil n'a pas pu être lu, nous l'avons donc supprimé. Vous pouvez le créer à nouveau.",
       "dismiss": "Fermer ce message"
+    }
+  },
+  "compare": {
+    "meta": {
+      "title": "Comparer des programmes",
+      "description": "Comparez 2 à 4 de vos programmes enregistrés côte à côte : coûts, échéances, conditions et démarches."
+    },
+    "title": "Comparer des programmes",
+    "lead": "Comparez 2 à 4 de vos programmes enregistrés côte à côte. Chaque valeur indique sa source ; les coûts sont des estimations, pas des promesses.",
+    "loading": "Chargement de la comparaison",
+    "empty": {
+      "title": "Enregistrez au moins 2 programmes pour les comparer",
+      "description": "La comparaison porte sur les programmes que vous avez enregistrés. Enregistrez des programmes depuis Mes résultats ou depuis une page de programme.",
+      "action": "Voir mes résultats"
+    },
+    "notEnough": {
+      "title": "Moins de 2 de vos programmes enregistrés figurent dans nos données actuelles",
+      "description": "Enregistrez d'autres programmes, ou retirez ceux qui ne sont plus listés, pour comparer."
+    },
+    "noProfile": {
+      "title": "Créez votre profil pour comparer",
+      "description": "Vos programmes enregistrés restent sur cet appareil. Nous avons besoin de votre profil pour montrer comment chaque programme vous convient.",
+      "action": "Créer mon profil"
+    },
+    "error": {
+      "title": "Impossible de charger la comparaison",
+      "description": "Vérifiez votre connexion et réessayez.",
+      "retry": "Réessayer"
+    },
+    "storage": {
+      "notice": "Cet appareil ne peut pas conserver vos programmes enregistrés de façon fiable ; ils peuvent être perdus à la fermeture de cette page."
+    },
+    "reset": {
+      "notice": "Votre profil enregistré n'a pas pu être lu ; il a été effacé.",
+      "dismiss": "Fermer"
+    },
+    "picker": {
+      "summary": "Comparaison de {selected} programmes sur {total} enregistrés",
+      "change": "Changer de programmes",
+      "hint": "Choisissez entre {min} et {max} programmes.",
+      "limit": "Vous pouvez comparer jusqu'à {max} programmes. Décochez-en un pour en choisir un autre.",
+      "minimum": "Gardez au moins {min} programmes sélectionnés.",
+      "missing": "N'est plus dans nos données",
+      "announce": "Comparaison de {n} programmes"
+    },
+    "differences": {
+      "label": "Afficher uniquement les différences",
+      "marker": "Diffère",
+      "allSame": "Ces programmes ont les mêmes valeurs pour tous les sujets."
+    },
+    "rows": {
+      "result": "Votre résultat",
+      "tuition": "Frais de scolarité",
+      "cost": "Coût estimé de la première année",
+      "language": "Langue d'enseignement",
+      "deadline": "Date limite de candidature",
+      "scholarships": "Bourses ouvertes à vous",
+      "application": "Comment candidater"
+    },
+    "cells": {
+      "programLabel": "Programme",
+      "languageUnknown": "Langue d'enseignement non publiée : vérifiez la page officielle"
+    },
+    "scholarships": {
+      "none": "Aucune ouverte à votre nationalité d'après les règles publiées",
+      "caveat": "D'après les règles de nationalité publiées uniquement. Vérifiez les autres conditions sur la page de chaque bourse."
+    },
+    "application": {
+      "applyOn": "Candidater sur {name}",
+      "account": {
+        "required": "Un compte est nécessaire",
+        "notRequired": "Aucun compte n'est nécessaire",
+        "unknown": "Compte : non précisé"
+      },
+      "channelUnknown": "Démarche de candidature non publiée : vérifiez la page officielle",
+      "documents": "Documents",
+      "documentsUnknown": "Documents non publiés : vérifiez la page officielle",
+      "documentsNone": "Aucun document n'est listé dans la source consultée : vérifiez la page officielle",
+      "translation": {
+        "yes": "Traduction requise",
+        "no": "Traduction non requise",
+        "unknown": "Traduction non précisée : vérifiez la page officielle"
+      }
     }
   }
 }

@@ -11,3 +11,5 @@ export const SNAPSHOT_FORMAT_VERSION = 1;
 export const SAVED_SCHEMA_VERSION = 1;
 export const PLAN_SCHEMA_VERSION = 1;
 export const MAX_SAVED_PROGRAMS = 12;
+export const MIN_COMPARE = 2;
+export const MAX_COMPARE = 4;
