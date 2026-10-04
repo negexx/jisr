@@ -28,6 +28,8 @@ export const PAGES = {
   certification: `${CF}/les-certifications-en-francais-obligatoires-pour-campus-france`,
   applyLicence: `${CF}/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces`,
   applyBut: `${CF}/candidature-en-1ere-annee-but-a-l-universite-iut`,
+  // The 2026/27 application window, which also covers first-year Licence (DAP blanche).
+  calendarLicence: `${CF}/calendrier-de-la-procedure-de-candidature-20262027`,
 } as const;
 
 export type Evidence = { url: string; quote: string };
@@ -64,9 +66,11 @@ export type National = {
   applyLicence: Evidence | null;
   applyBut: Evidence | null;
   // The Campus France Maroc application calendar ("Du 1er octobre 2026 au 15 novembre 2026 ...").
-  // licenceCalendar stays null until an official page for it is found and added to PAGES.
+  // The Licence one is read from the 2026/27 calendar page, with a second quote from that same page
+  // that says who the window is for (the first-year Licence line, "DAP blanche").
   butCalendar: Evidence | null;
   licenceCalendar: Evidence | null;
+  licenceCalendarAudience: Evidence | null;
   // What the reading left out and why ("several calendar sentences found: not proposing"), for the CLI.
   notes?: string[];
 };
@@ -88,9 +92,10 @@ export async function readNational(getText: GetText): Promise<National> {
   const pickCalendar = async (kind: string, url: string): Promise<Evidence | null> => {
     try {
       const text = await getText(url);
+      // The same sentence with and without its final full stop is one calendar.
       const all = new Set(
         [...text.matchAll(new RegExp(CALENDAR_SENTENCE.source, "gu"))].map((m) =>
-          m[0].replace(/\s+/g, " ").trim(),
+          m[0].replace(/\s+/g, " ").trim().replace(/\.$/, ""),
         ),
       );
       if (all.size > 1) {
@@ -127,16 +132,28 @@ export async function readNational(getText: GetText): Promise<National> {
       /Bac marocain ou Bac international marocain[^.]*vous devrez formuler vos vœux sur la plateforme Études en France\./,
     ),
     butCalendar: await pickCalendar("BUT", PAGES.applyBut),
-    licenceCalendar: null,
+    licenceCalendar: await pickCalendar("Licence", PAGES.calendarLicence),
+    // Only worth reading when there is a calendar; it is read from the same page.
+    licenceCalendarAudience: null,
   };
+  if (national.licenceCalendar !== null) {
+    national.licenceCalendarAudience = await pick(PAGES.calendarLicence, LICENCE_AUDIENCE);
+    if (national.licenceCalendarAudience === null)
+      notes.push(
+        `Licence: the calendar page does not say who it is for (first-year Licence line): not proposing (${PAGES.calendarLicence})`,
+      );
+  }
   if (notes.length > 0) national.notes = notes;
   return national;
 }
 
-// "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)." The page's own wording, with
-// the dates in words: the numbers below are read from it by code, never typed.
+// "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)" with or without a final full
+// stop (the 2026/27 calendar page continues after the parenthesis). The page's own wording, with the
+// dates in words: the numbers below are read from it by code, never typed.
 const CALENDAR_SENTENCE =
-  /Du\s+\d{1,2}(?:er)?\s+\p{L}+\s+\d{4}\s+au\s+\d{1,2}(?:er)?\s+\p{L}+\s+\d{4}[^.]*?\(heure marocaine\)\./u;
+  /Du\s+\d{1,2}(?:er)?\s+\p{L}+\s+\d{4}\s+au\s+\d{1,2}(?:er)?\s+\p{L}+\s+\d{4}[^.]*?\(heure marocaine\)\.?/u;
+// The line of the calendar page that names first-year Licence applicants.
+const LICENCE_AUDIENCE = /DAP blanche\s*:\s*1ère année de Licence à l['’]Université \(L1\)/;
 const CALENDAR_DATES =
   /^Du\s+(\d{1,2})(?:er)?\s+(\p{L}+)\s+(\d{4})\s+au\s+(\d{1,2})(?:er)?\s+(\p{L}+)\s+(\d{4})\b/u;
 const FRENCH_MONTHS = [

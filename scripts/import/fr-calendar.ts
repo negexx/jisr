@@ -32,7 +32,9 @@ export function programmeKind(record: { slug?: unknown; name?: unknown }): Progr
 // verifier, the checker and the promotion decide what reaches data/. No model is called.
 //
 // The page that says whom the application is for (Bac marocain...) is a second quote when it was
-// read: the audit trail then shows who the deadline applies to, not only the time-zone word.
+// read: the audit trail then shows who the deadline applies to, not only the time-zone word. For a
+// Licence the calendar page is the only source: the date sentence plus its first-year Licence line
+// (both from that page), and without that line there is no proposal.
 export function buildCalendarProposals(input: {
   slugs: readonly { slug: string; kind: ProgrammeKind }[];
   national: National;
@@ -44,10 +46,10 @@ export function buildCalendarProposals(input: {
       kind === "but"
         ? [national.butCalendar, national.applyBut]
         : kind === "licence"
-          ? [national.licenceCalendar, national.applyLicence]
+          ? [national.licenceCalendar, national.licenceCalendarAudience]
           : [null, null];
     const [evidence, audience] = calendar;
-    if (evidence === null) continue;
+    if (evidence === null || (kind === "licence" && audience === null)) continue;
     const intake = calendarIntakes(evidence);
     if (intake === null) continue;
     proposals.push(
@@ -96,9 +98,9 @@ export async function staleProposalFiles(
   return names.filter((name) => name.endsWith(".json") && !produced.has(name)).sort();
 }
 
-// Only the pages the calendar needs: the application pages, which carry the calendar sentence and
-// the audience. The other national pages are not fetched.
-const NEEDED_PAGES: ReadonlySet<string> = new Set([PAGES.applyBut, PAGES.applyLicence]);
+// Only the pages the calendar needs: the BUT application page and the Licence calendar page, which
+// carry the calendar sentence and the audience. The other national pages are not fetched.
+const NEEDED_PAGES: ReadonlySet<string> = new Set([PAGES.applyBut, PAGES.calendarLicence]);
 const neededPageText = async (url: string): Promise<string> => {
   if (!NEEDED_PAGES.has(url)) throw new Error("not needed by the calendar");
   return pageText(url);

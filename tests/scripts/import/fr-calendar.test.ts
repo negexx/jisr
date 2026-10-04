@@ -15,8 +15,10 @@ import {
 import { ProposalSchema, verifyProposal } from "../../../scripts/import/proposals";
 
 const SENTENCE = "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine).";
-const LICENCE_SENTENCE = "Du 20 janvier 2027 au 2 mars 2027 à 23h59 (heure marocaine).";
-const LICENCE_URL = "https://www.maroc.campusfrance.org/calendrier-licence";
+const LICENCE_SENTENCE = "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)";
+const LICENCE_AUDIENCE = "DAP blanche : 1ère année de Licence à l'Université (L1)";
+const LICENCE_PAGE = `Le calendrier de la procédure de candidature ${LICENCE_SENTENCE} pour toutes les formations connectées : ${LICENCE_AUDIENCE} ou 1ère année PASS/L.AS ; DAP jaune : ENSA.`;
+const LICENCE_URL = PAGES.calendarLicence;
 const APPLY_BUT_QUOTE =
   "Bac marocain ou Bac international marocain ou diplôme européen, quelque soit votre lieu de résidence, vous devrez formuler vos vœux sur la plateforme Études en France.";
 const APPLY_LICENCE_QUOTE =
@@ -32,12 +34,18 @@ const nothing: National = {
   applyBut: null,
   butCalendar: null,
   licenceCalendar: null,
+  licenceCalendarAudience: null,
 };
 const butOnly: National = { ...nothing, butCalendar: { url: PAGES.applyBut, quote: SENTENCE } };
 const withApply: National = {
   ...butOnly,
   applyBut: { url: PAGES.applyBut, quote: APPLY_BUT_QUOTE },
   applyLicence: { url: PAGES.applyLicence, quote: APPLY_LICENCE_QUOTE },
+};
+const licenceNational: National = {
+  ...withApply,
+  licenceCalendar: { url: LICENCE_URL, quote: LICENCE_SENTENCE },
+  licenceCalendarAudience: { url: LICENCE_URL, quote: LICENCE_AUDIENCE },
 };
 const slugs = [
   { slug: "fr-iut-a-but-informatique", kind: "but" },
@@ -73,11 +81,7 @@ describe("buildCalendarProposals", () => {
   });
 
   it("gives the Licence programmes their own calendar when there is one, and never a non-Licence record", () => {
-    const national: National = {
-      ...withApply,
-      licenceCalendar: { url: LICENCE_URL, quote: LICENCE_SENTENCE },
-    };
-    const proposals = buildCalendarProposals({ slugs, national });
+    const proposals = buildCalendarProposals({ slugs, national: licenceNational });
     expect(proposals.map((p) => p.slug)).toEqual([
       "fr-iut-a-but-informatique",
       "fr-iut-b-but-gea",
@@ -85,13 +89,21 @@ describe("buildCalendarProposals", () => {
     ]);
     expect(proposals[2]?.facts.intakes).toEqual({
       value: [
-        { startDate: null, applicationOpens: "2027-01-20", applicationDeadline: "2027-03-02" },
+        { startDate: null, applicationOpens: "2026-10-01", applicationDeadline: "2026-11-15" },
       ],
       evidence: [
         { url: LICENCE_URL, quote: LICENCE_SENTENCE },
-        { url: PAGES.applyLicence, quote: APPLY_LICENCE_QUOTE },
+        { url: LICENCE_URL, quote: LICENCE_AUDIENCE },
       ],
     });
+  });
+
+  it("gives no Licence proposal when the page does not say who the calendar is for", () => {
+    const national: National = { ...licenceNational, licenceCalendarAudience: null };
+    expect(buildCalendarProposals({ slugs, national }).map((p) => p.slug)).toEqual([
+      "fr-iut-a-but-informatique",
+      "fr-iut-b-but-gea",
+    ]);
   });
 
   it("produces nothing when no calendar was read", () => {
@@ -99,7 +111,12 @@ describe("buildCalendarProposals", () => {
     expect(
       buildCalendarProposals({
         slugs,
-        national: { ...withApply, butCalendar: null, licenceCalendar: null },
+        national: {
+          ...withApply,
+          butCalendar: null,
+          licenceCalendar: null,
+          licenceCalendarAudience: null,
+        },
       }),
     ).toEqual([]);
   });
@@ -184,6 +201,33 @@ describe("verifyProposal on a calendar proposal", () => {
     expect(verified.facts.intakes?.evidence).toHaveLength(2);
     const alone = await verifyProposal(first({ ...noZone, applyBut: null }), name, page);
     expect(alone.facts.intakes).toBeUndefined();
+  });
+
+  it("accepts a Licence proposal against the calendar page, rejects it on another page, and drops the L1 quote when it is missing", async () => {
+    const proposal = buildCalendarProposals({ slugs, national: licenceNational }).find(
+      (p) => p.slug === "fr-univ-a-licence-informatique",
+    );
+    if (proposal === undefined) throw new Error("no proposal");
+    const ok = await verifyProposal(proposal, "Licence - Informatique", async () => LICENCE_PAGE);
+    expect(ok.rejected).toEqual([]);
+    expect(ok.facts.intakes?.value).toEqual([
+      { startDate: null, applicationOpens: "2026-10-01", applicationDeadline: "2026-11-15" },
+    ]);
+    expect(ok.facts.intakes?.evidence).toHaveLength(2);
+    const without = await verifyProposal(
+      proposal,
+      "Licence - Informatique",
+      async () => `Le calendrier ${LICENCE_SENTENCE} pour toutes les formations connectées.`,
+    );
+    // verifyProposal keeps the quotes it finds: the audit trail then lacks who the window is for
+    expect(without.facts.intakes?.evidence).toEqual([
+      { url: LICENCE_URL, quote: LICENCE_SENTENCE },
+    ]);
+    const neither = await verifyProposal(proposal, "Licence - Informatique", async () => "Autre.");
+    expect(neither.facts.intakes).toBeUndefined();
+    expect(neither.rejected).toEqual([
+      { fact: "intakes", reason: "no quote was found verbatim on the cited page(s)" },
+    ]);
   });
 
   it("rejects it when the page lacks the sentence", async () => {

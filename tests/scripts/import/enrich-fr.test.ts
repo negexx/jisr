@@ -29,7 +29,11 @@ const PAGE_TEXT: Record<string, string> = {
     "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain : vous devrez formuler vos vœux sur la plateforme Études en France de votre pays de résidence.",
   [PAGES.applyBut]:
     "Bac marocain ou Bac international marocain ou diplôme européen, quelque soit votre lieu de résidence, vous devrez formuler vos vœux sur la plateforme Études en France. Calendrier de candidature. Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine). Ensuite, patientez.",
+  [PAGES.calendarLicence]:
+    "Le calendrier de la procédure de candidature Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine) pour toutes les formations connectées à la plateforme Études en France : DAP blanche : 1ère année de Licence à l'Université (L1) ou 1ère année PASS/L.AS ; DAP jaune : École Nationale d’Architecture ENSA ; Universités connectées : 2ème année de Licence (L2), ...",
 };
+const LICENCE_CALENDAR_HTML =
+  "<html><body><h1>Le calendrier de la procédure de candidature</h1><p>Du 1er&nbsp;octobre 2026&nbsp;au 15&nbsp;novembre 2026 à&nbsp;23h59 (heure&nbsp;marocaine) pour toutes les formations connectées à la plateforme Études&nbsp;en France&nbsp;: DAP&nbsp;blanche&nbsp;: 1ère année de Licence à l&#39;Université&nbsp;(L1) ou 1ère année PASS/L.AS&nbsp;; DAP jaune&nbsp;: École Nationale d’Architecture ENSA&nbsp;; Universités connectées&nbsp;: 2ème année de Licence (L2), ...</p></body></html>";
 const getText = async (url: string) => {
   const text = PAGE_TEXT[url];
   if (text === undefined) throw new Error("404");
@@ -57,9 +61,8 @@ describe("readFiche", () => {
 describe("readNational", () => {
   it("reads every national sentence from the live pages, and drops one whose page changed", async () => {
     const all = await readNational(getText);
-    // the licence calendar has no official page yet: it is always null
-    const { licenceCalendar, ...rest } = all;
-    expect(licenceCalendar).toBeNull();
+    const { notes, ...rest } = all;
+    expect(notes).toBeUndefined();
     expect(Object.values(rest).every((v) => v !== null)).toBe(true);
     const changed = await readNational(async (url) =>
       url === PAGES.fees ? "the page was rewritten" : getText(url),
@@ -81,7 +84,66 @@ describe("readNational", () => {
       quote: "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine).",
     });
     expect(quoteInText(n.butCalendar?.quote ?? "", text)).toBe(true);
+  });
+
+  it("reads the Licence calendar, without a full stop, from the Campus France calendar page", async () => {
+    const text = htmlToText(LICENCE_CALENDAR_HTML);
+    const n = await readNational(async (url) =>
+      url === PAGES.calendarLicence ? text : getText(url),
+    );
+    expect(n.licenceCalendar).toEqual({
+      url: PAGES.calendarLicence,
+      quote: "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)",
+    });
+    expect(n.licenceCalendarAudience).toEqual({
+      url: PAGES.calendarLicence,
+      quote: "DAP blanche : 1ère année de Licence à l'Université (L1)",
+    });
+    expect(quoteInText(n.licenceCalendar?.quote ?? "", text)).toBe(true);
+    expect(quoteInText(n.licenceCalendarAudience?.quote ?? "", text)).toBe(true);
+    expect(n.notes).toBeUndefined();
+  });
+
+  it("still takes a calendar sentence that ends with a full stop, and does not count the stop as a difference", async () => {
+    const withStop = "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine).";
+    const audience = "DAP blanche : 1ère année de Licence à l'Université (L1)";
+    const n = await readNational(async (url) =>
+      url === PAGES.calendarLicence
+        ? `${withStop} ${audience}. Rappel : Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine) pour tous.`
+        : getText(url),
+    );
+    expect(n.licenceCalendar?.quote).toBe(withStop);
+    expect(n.notes).toBeUndefined();
+  });
+
+  it("proposes no Licence calendar when the page carries two distinct date sentences, and says so", async () => {
+    const text =
+      "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine) pour les L1 ; Du 2 décembre 2026 au 20 janvier 2027 à 23h59 (heure marocaine) pour les autres. DAP blanche : 1ère année de Licence à l'Université (L1)";
+    const n = await readNational(async (url) =>
+      url === PAGES.calendarLicence ? text : getText(url),
+    );
     expect(n.licenceCalendar).toBeNull();
+    expect(n.notes?.join(" ")).toMatch(/Licence: several calendar sentences found: not proposing/);
+  });
+
+  it("keeps the Licence calendar but no audience, and notes it, when the L1 line is missing", async () => {
+    const n = await readNational(async (url) =>
+      url === PAGES.calendarLicence
+        ? "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine) pour les formations connectées."
+        : getText(url),
+    );
+    expect(n.licenceCalendar).not.toBeNull();
+    expect(n.licenceCalendarAudience).toBeNull();
+    expect(n.notes?.join(" ")).toMatch(/Licence: .*who it is for.*not proposing/);
+  });
+
+  it("has no Licence calendar when the page is unreachable", async () => {
+    const n = await readNational(async (url) => {
+      if (url === PAGES.calendarLicence) throw new Error("404");
+      return getText(url);
+    });
+    expect(n.licenceCalendar).toBeNull();
+    expect(n.licenceCalendarAudience).toBeNull();
   });
 
   it("proposes no BUT calendar when the page carries several calendar sentences, and says so", async () => {
@@ -110,6 +172,18 @@ describe("readNational", () => {
 });
 
 describe("calendarIntakes", () => {
+  it("turns the Licence quote, which has no full stop, into ISO dates", () => {
+    expect(
+      calendarIntakes({
+        url: PAGES.calendarLicence,
+        quote: "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)",
+      }),
+    ).toEqual({
+      startDate: null,
+      applicationOpens: "2026-10-01",
+      applicationDeadline: "2026-11-15",
+    });
+  });
   it("turns the BUT sentence into ISO dates", () => {
     expect(
       calendarIntakes({
