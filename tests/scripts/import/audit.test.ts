@@ -391,3 +391,44 @@ describe("sampleSheet of an enriched record", () => {
     expect(sheet).toContain("(no evidence recorded)");
   });
 });
+
+describe("sampleSheet of a scholarship", () => {
+  it("shows the support, the deadline and the quotes behind eligibility, level and how to apply", () => {
+    const sheet = sampleSheet([
+      {
+        key: "scholarships/aurora",
+        row: {
+          key: "scholarships/aurora",
+          batch: "b1",
+          inSample: true,
+          audited: "",
+          outcome: "",
+          notes: "",
+        },
+        record: {
+          name: "Aurora",
+          support: {
+            value: { amount: { min: 1, max: 2 } },
+            source: "page-1",
+            info_kind: "official",
+          },
+          deadline: { value: "2027-03-15", source: "page-1", info_kind: "official" },
+          _review: {
+            evidence: [
+              { fact: "eligibility", url: "https://g.example/r", quote: "open to non-EU students" },
+              { fact: "level", url: "https://g.example/r", quote: "first-year undergraduate" },
+              { fact: "howToApply", url: "https://g.example/a", quote: "apply online" },
+              { fact: "deadline", url: "https://g.example/r", quote: "close on 15 March 2027" },
+            ],
+          },
+        },
+      },
+    ]);
+    expect(sheet).toContain("**support**");
+    expect(sheet).toContain("**deadline**: `2027-03-15`");
+    expect(sheet).toContain('"close on 15 March 2027" — https://g.example/r');
+    expect(sheet).toContain('**eligibility**: "open to non-EU students" — https://g.example/r');
+    expect(sheet).toContain('**level**: "first-year undergraduate" — https://g.example/r');
+    expect(sheet).toContain('**howToApply**: "apply online" — https://g.example/a');
+  });
+});

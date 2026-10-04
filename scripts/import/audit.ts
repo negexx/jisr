@@ -137,6 +137,8 @@ const asObject = (v: unknown): Loose =>
   typeof v === "object" && v !== null && !Array.isArray(v) ? (v as Loose) : {};
 const show = (v: unknown): string => (typeof v === "string" ? v : JSON.stringify(v));
 
+const PROSE_CLAIMS: readonly string[] = ["eligibility", "level", "howToApply"];
+
 // One readable page per sampled record: what is claimed, the exact quote and page behind it, and
 // the preparer's own caveats, so the reader checks the quotes instead of reading raw YAML.
 export function sampleSheet(
@@ -165,6 +167,8 @@ export function sampleSheet(
       "documents",
       "type",
       "website",
+      "support",
+      "deadline",
     ]) {
       const field = r[fact];
       const wrapped = "value" in asObject(field);
@@ -195,6 +199,10 @@ export function sampleSheet(
       for (const e of evidence.filter((x) => x.fact === `requirements.${show(id)}`)) {
         out.push(`  - "${show(e.quote)}" — ${show(e.url)}`);
       }
+    }
+    // a scholarship's claims that are not a fact block: who it is for, the level, how to apply
+    for (const e of evidence.filter((x) => PROSE_CLAIMS.includes(show(x.fact)))) {
+      out.push(`- **${show(e.fact)}**: "${show(e.quote)}" — ${show(e.url)}`);
     }
     for (const e of evidence.filter((x) => x.fact === undefined)) {
       out.push(`- evidence: "${show(e.quote)}" — ${show(e.url)}`);

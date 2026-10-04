@@ -36,6 +36,7 @@
     "data:bakeoff": "tsx scripts/import/bakeoff.ts",
     "data:checkeval": "tsx scripts/import/checker-eval.ts",
     "data:audit": "tsx scripts/import/audit.ts",
+    "data:scholarship": "tsx scripts/import/scholarships.ts",
     "format": "biome format --write .",
     "perf:js": "tsx scripts/perf/first-load-js.ts",
     "db:generate": "node scripts/not-configured.mjs db:generate",

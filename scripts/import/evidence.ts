@@ -254,6 +254,10 @@ function amountPattern(amount: number): RegExp {
   return new RegExp(`(?<![\\d.,])${grouped}(?:[.,]00)?(?![\\d])`);
 }
 
+// Does the quote state this amount (in major units) as a whole number, not as part of a larger one?
+export const amountInQuote = (amountMajor: number, quote: string): boolean =>
+  amountPattern(amountMajor).test(quote);
+
 const NO_FEE =
   /no tuition|tuition[- ]free|free of charge|no fees|gratuit|keine studiengeb|studiengebührenfrei|geen collegegeld|zonder collegegeld|tuition fees?(?: per (?:semester|year|term))?[: ]+none\b(?!\s+for\b)/i;
 
@@ -262,7 +266,7 @@ export function checkTuition(amountMinor: number, quote: string): FactCheck {
     return NO_FEE.test(quote)
       ? ok
       : fail("a zero fee needs a quote saying there are no tuition fees");
-  return amountPattern(amountMinor / 100).test(quote)
+  return amountInQuote(amountMinor / 100, quote)
     ? ok
     : fail(`the amount ${amountMinor / 100} does not appear in the quote`);
 }
