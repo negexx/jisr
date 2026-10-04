@@ -30,6 +30,30 @@ function shardNamed(shards: ReturnType<typeof shardsOf>, name: string) {
   return found.shard;
 }
 
+describe("buildShards with a scholarship restricted to institutions", () => {
+  const loaded = loadData(`${FIXTURES}/valid-minimal`);
+  const files = loaded.files.map((f) =>
+    f.file === "scholarships/xx-test-schol.yaml"
+      ? { ...f, raw: { ...(f.raw as Record<string, unknown>), institutions: ["xx-test-inst"] } }
+      : f,
+  );
+  const { catalog, errors } = validateData({ ...loaded, files }, { now: "2026-09-29" });
+  const shards = buildShards(resolveCatalog(catalog));
+
+  it("validates, then carries the institutions list into each scholarships shard", () => {
+    expect(errors).toEqual([]);
+    for (const destination of ["XB", "XC"]) {
+      const shard = shardNamed(shards, `scholarships.${destination}`) as ScholarshipsShard;
+      expect(shard.scholarships.map((s) => s.institutions)).toEqual([["xx-test-inst"]]);
+    }
+  });
+
+  it("leaves the key out of a scholarship that has no institutions list", () => {
+    const plain = shardNamed(shardsOf("valid-minimal"), "scholarships.XB") as ScholarshipsShard;
+    expect(plain.scholarships.every((s) => !("institutions" in s))).toBe(true);
+  });
+});
+
 describe("buildShards on valid-minimal", () => {
   const shards = shardsOf("valid-minimal");
   const withText = [

@@ -140,6 +140,7 @@ export type Scholarship = {
   destinations: CountryCode[];
   eligibleNationalities: CountryCode[];
   fields: Slug[];
+  institutions?: Slug[];
   level: "bachelor";
   summary: TextKey;
   support: ResolvedFact<ScholarshipSupport>;

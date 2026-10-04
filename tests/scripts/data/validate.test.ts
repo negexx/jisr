@@ -385,6 +385,17 @@ describe("validateData mutations of valid-minimal", () => {
       message: 'unknown countries "XZ"',
     },
     {
+      name: "unknown institution on a scholarship",
+      build: () =>
+        mutateFile(base, SCHOL, (raw) => {
+          raw.institutions = ["xx-test-nope"];
+        }),
+      kind: "errors",
+      file: SCHOL,
+      path: "institutions.0",
+      message: 'unknown institutions "xx-test-nope"',
+    },
+    {
       name: "unknown field on a scholarship",
       build: () =>
         mutateFile(base, SCHOL, (raw) => {

@@ -198,8 +198,8 @@ export async function loadProgramPageData(
       .filter(
         (s) =>
           program.scholarships.includes(s.slug) ||
-          s.fields.length === 0 ||
-          s.fields.includes(program.field),
+          ((s.fields.length === 0 || s.fields.includes(program.field)) &&
+            (!s.institutions?.length || s.institutions.includes(program.institution))),
       )
       .sort((a, b) => (a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0)),
     core,

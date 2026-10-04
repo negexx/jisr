@@ -8,6 +8,7 @@ import { loadProgramPageData, programStaticParams, readBuildSnapshot } from "@/l
 import { E2E_SCHOLARSHIP_SLUGS, E2E_SLUGS } from "../../fixtures/e2e/profiles";
 import {
   buildSnapshot,
+  buildVariant,
   copySnapshot,
   E2E_DATA_DIR,
   EMPTY_DATA_DIR,
@@ -84,6 +85,24 @@ describe("loadProgramPageData", () => {
       note: "none",
     });
   });
+
+  it("honours a scholarship's institutions list, as domain scholarshipsForProgram does", async () => {
+    const restrict = (institution: string) =>
+      buildVariant([
+        {
+          file: "scholarships/xx-test-schol-open.yaml",
+          from: "eligibleNationalities: []",
+          to: `eligibleNationalities: []\ninstitutions: [${institution}]`,
+        },
+      ]);
+    const slugsFor = async (dir: string) =>
+      (await loadProgramPageData(E2E_SLUGS.ok, "en", dir))?.scholarships.map((s) => s.slug);
+
+    expect(await slugsFor(restrict("xx-test-inst-pub-c"))).not.toContain(
+      E2E_SCHOLARSHIP_SLUGS.open,
+    );
+    expect(await slugsFor(restrict("xx-test-inst-pub-b"))).toContain(E2E_SCHOLARSHIP_SLUGS.open);
+  }, 180_000);
 
   it("looks up text in the requested locale", async () => {
     const data = await loadProgramPageData(E2E_SLUGS.frOnly, "ar", base);

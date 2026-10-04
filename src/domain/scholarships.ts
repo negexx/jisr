@@ -13,7 +13,8 @@ export function scholarshipsForProgram(
     if (program.scholarships.includes(s.slug)) return true;
     return (
       s.destinations.includes(program.country) &&
-      (s.fields.length === 0 || s.fields.includes(program.field))
+      (s.fields.length === 0 || s.fields.includes(program.field)) &&
+      (!s.institutions?.length || s.institutions.includes(program.institution))
     );
   });
 

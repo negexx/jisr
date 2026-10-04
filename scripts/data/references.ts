@@ -146,6 +146,7 @@ export function checkReferences(catalog: Catalog): Issue[] {
     needAll(file, "destinations", "countries", record.destinations);
     needAll(file, "eligibleNationalities", "countries", record.eligibleNationalities);
     needAll(file, "fields", "fields", record.fields);
+    needAll(file, "institutions", "institutions", record.institutions ?? []);
     checkRules(file, "requirements.rules", record.requirements.rules);
   }
 
