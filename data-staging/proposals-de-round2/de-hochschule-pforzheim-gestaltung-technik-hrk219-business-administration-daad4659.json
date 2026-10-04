@@ -1,0 +1,52 @@
+{
+  "slug": "de-hochschule-pforzheim-gestaltung-technik-hrk219-business-administration-daad4659",
+  "programmePage": "https://www.hs-pforzheim.de/bdbm",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-pforzheim.de/bdbm",
+          "quote": "Non-EU/EEA Citizens EUR 1,500 EUR 211 EUR 1,711 Tuition fee based on passport nationality"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 31
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-pforzheim.de/bdbm",
+          "quote": "For international non-EU applicants this deadline is 31 May."
+        },
+        {
+          "url": "https://www.hs-pforzheim.de/en/international/studying_in_pforzheim/regular_degree_students/application_procedure",
+          "quote": "Deadlines for Non-EU applicants: Winter semester: May 31st"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.hs-pforzheim.de/en/international/studying_in_pforzheim/regular_degree_students/application_procedure",
+          "quote": "Foreign and stateless prospective students with a higher education entrance qualification obtained abroad (except EU citizens) can apply directly to the desired degree program via the applicant portal."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee of EUR 1,500 per semester applies to non-EU/EEA citizens based on passport nationality; exempted for those with German higher education entrance qualification, recognised refugees, or Erasmus+ students. Documents are not listed on the programme page."
+}

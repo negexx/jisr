@@ -1,0 +1,41 @@
+{
+  "slug": "de-technische-universitat-ilmenau-hrk130-bachelor-of-science-in-b-daad4812",
+  "programmePage": "https://www.tu-ilmenau.de/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/biomedizinische-technik-b-sc",
+  "facts": {
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.tu-ilmenau.de/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/biomedizinische-technik-b-sc",
+          "quote": "Bewerbung mit Zeugnissen von Bildungseinrichtungen außerhalb der EU / EWR"
+        },
+        {
+          "url": "https://www.tu-ilmenau.de/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/biomedizinische-technik-b-sc",
+          "quote": "Bewerbung über uniassist"
+        },
+        {
+          "url": "https://www.tu-ilmenau.de/studium/vor-dem-studium/studienangebot/bewerbung",
+          "quote": "Gültig für alle Nicht-EU/Nicht-EWR Länder Bewerbung mit Zeugnissen aus Ländern außerhalb der EU und dem Europäischen Wirtschaftsraum (EWR)"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: both pages state no tuition fees for this programme (DAAD: \"Tuition fees per semester None\"; university: \"Das Studium an der TU Ilmenau ist grundsätzlich gebührenfrei.\") - these are tuition statements, so amountMinor 0, with only the mandatory Semesterbeitrag (approx. 300 EUR/semester) as a contribution, not tuition. Deadlines: no page states a dated application deadline specifically for non-EU / foreign-diploma applicants for this Bachelor programme; the Bewerbungszeiträume page gives only a summer-semester 2027 table in which Bachelor Studiengänge for non-EU are \"kein Angebot\", and the main Bewerbung page lists \"Bachelorstudium Wintersemester: 16.1. bis 30.09.\" for non-EU without a year, so no intake is included. The VPD/preliminary review by uni-assist is not mentioned on any supplied page; the programme page links foreign applicants to uni-assist (\"Bewerbung über uniassist\"), so de-uni-assist was chosen. Teaching language value [\"de\"]: the DAAD page also mentions English courses in China for the double-degree track, but the programme at TU Ilmenau is taught in German (\"Lehrsprache Deutsch\").",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4812/",
+            "quote": "German language skills C1 required, please provide an official language certificate"
+          }
+        ]
+      }
+    ]
+  }
+}

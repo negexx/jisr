@@ -1,0 +1,95 @@
+{
+  "slug": "de-hochschule-furtwangen-informatik-technik-hrk94-villingen-schwenningen-international-engineerin-daad4203",
+  "programmePage": "https://www.hs-furtwangen.de/en/programmes/international-engineering-bachelor/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-furtwangen.de/en/programmes/international-engineering-bachelor/",
+          "quote": "The Baden-Württemberg state government introduced tuition fees of €1500 / semester for non-EU students in Winter Semester 2017/18."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "school-leaving certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "CV tabulaire",
+            "en": "Curriculum vitae in tabular form"
+          },
+          "quotedAs": "curriculum vitae in tabular form",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-furtwangen.de/en/study/application",
+          "quote": "certificate of the higher education entrance qualification on which the application for admission is based curriculum vitae in tabular form"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the DAAD page also states 'non-EU countries 1,500 EUR' (per semester) and the HFU financing page states 'Non-EU citizens taking a full degree in Baden-Württemberg are required to pay tuition fees.' The semester contribution of €176 applies to all students. Application deadline: the programme page gives '31 August' without a year, and the general application page states 'Application deadline for all bachelor's degree programmes is: Winter Semester: 15 July' (also without a year), so only a recurring deadline (31 August) is recorded. Application channel: no evidence found that uni-assist is required; the Smart Admission page suggests direct email contact with the HFU Business School.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["toefl", "ielts"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4203/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 72 Reading: 18 Listening: 17 Speaking: 20 Writing: 17"
+          },
+          {
+            "url": "https://www.hs-furtwangen.de/en/programmes/international-engineering-bachelor/",
+            "quote": "English language proficiency: International applicants: TOEFL internet-based iBT (total score 72 or higher) IELTS (overall band score 6,0 or higher)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non-UE doivent fournir tous les documents requis dans le portail d'application en ligne MIO – My University Portal – Furtwangen University.",
+          "en": "Applicants must submit all required information stated within the online application process MIO – My University Portal – Furtwangen University."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4203/",
+            "quote": "Applicants must submit all the required information stated within the online application process MIO – My University Portal – Furtwangen University."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Pour la filière médicale, l'allemand niveau B2 est recommandé ; vérifiez les exigences sur la page du programme.",
+          "en": "German at level B2 is recommended for the medical engineering specialisation; check the programme page for details."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4203/",
+            "quote": "If you choose medical engineering in the main study programme, you need German language skills at level B2."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "fr-i-u-t-de-nimes-0300930y-but-genie-mecanique-et-productiq-3986",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3986&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3986&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 euros par an est présenté sur la fiche Parcoursup, généralement pour les étudiants non extracommunautaires ; les étudiants extracommunautaires peuvent être soumis aux droits différenciés (2 902 euros pour une année en cycle de Licence selon la page Campus France). La fiche indique aussi que les étudiants boursiers ne paient pas de frais. Le programme n'indique pas explicitement la langue d'enseignement : la seule langue explicitement mentionnée est le français (niveau B2 requis pour s'inscrire), l'anglais étant une langue vivante obligatoire. Aucune date limite de candidature ni liste de documents n'est fournie dans les pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3986&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidatures sont examinées selon la grille : résultats scolaires 50 %, méthodes de travail 15 %, savoir-être 5 %, motivation 25 %, engagement 5 %.",
+          "en": "Applications are examined according to the grid: academic results 50%, work methods 15%, soft skills 5%, motivation 25%, engagement 5%."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3986&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 50 % Méthodes de travail 15 % Savoir-être 5 % Motivation 25 % Engagement et activités 5 %"
+          }
+        ]
+      }
+    ]
+  }
+}

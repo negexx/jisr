@@ -1,0 +1,73 @@
+{
+  "slug": "de-friedrich-alexander-universitat-erlangen-hrk70-artificial-intelligence-daad9594",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 100000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.fau.eu/studying/international-students/application-and-enrollment-for-international-applicants/tuition-fees-for-students-from-non-eu-states/",
+          "quote": "Artificial Intelligence* Bachelor of Science Yes 1,000 euros"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 31
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/",
+          "quote": "31 May for international applicants"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des frais de scolarité pour les étudiants non-UE est indiqué par semestre (1 000 EUR/semestre) ; le DAAD ne donne qu'un montant variable et ne permet pas de citer un chiffre précis. La date limite du 31 mai est donnée pour les candidats internationaux, mais sans année : elle est donc traitée comme récurrente. La plateforme d'application indiquée est Campo (portail propre de l'université) ; les pages ne mentionnent pas uni-assist pour ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B1",
+        "certificateRequired": true,
+        "acceptedTests": ["ielts"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9594/",
+            "quote": "B1 required, please provide an official language certificate, e.g.: IELTS Academic: 5"
+          },
+          {
+            "url": "https://www.ai.study.fau.eu/prospective-students/bachelor-ai/application/",
+            "quote": "Language proficiency: English B1+ level (CEFR) or higher"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un processus d'évaluation de l'aptitude (Eignungsfeststellungsverfahren) est obligatoire, avec un test en ligne de mathématiques et de résolution de problèmes. Vérifiez les dates et les conditions sur le site du programme.",
+          "en": "A qualification assessment process (Eignungsfeststellungsverfahren) is mandatory, including an online test on mathematics and problem solving. Check dates and conditions on the programme website."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ai.study.fau.eu/prospective-students/bachelor-ai/admission-test/",
+            "quote": "There is no numerus clausus (NC), but there is a qualification assessment process: overall grade of the university entrance qualification (e.g. Abitur) grade of online test"
+          }
+        ]
+      }
+    ]
+  }
+}

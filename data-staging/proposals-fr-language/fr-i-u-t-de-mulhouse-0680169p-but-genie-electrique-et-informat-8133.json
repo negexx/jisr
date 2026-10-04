@@ -1,0 +1,16 @@
+{
+  "slug": "fr-i-u-t-de-mulhouse-0680169p-but-genie-electrique-et-informat-8133",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8133&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8133&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : Anglais Langue vivante 2 : Allemand (optionnel) Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "tuition: the page gives 178 EUR/year (the rate for French/EU students and for students exempt from differentiated fees); it does not state the fee for a Moroccan non-EU applicant. The Campus France Maroc page gives 2 902 EUR/year for a Licence year, but that page is not this programme's own page and the programme page does not confirm it. intakes: dates are given for Parcoursup, not for Etudes en France: 'Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)' concerns ADIUT Maroc BUT applications via Etudes en France (page candidature-en-1ere-annee-but-a-l-universite-iut), while this programme page's oral exams run 'Du lundi 04 mai 2026 au vendredi 15 mai 2026'; neither is clearly the deadline for a non-EU applicant to this specific programme. applicationChannel: not extracted, per instructions."
+}

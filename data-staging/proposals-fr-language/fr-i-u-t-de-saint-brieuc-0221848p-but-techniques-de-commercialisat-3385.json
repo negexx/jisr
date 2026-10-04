@@ -1,0 +1,37 @@
+{
+  "slug": "fr-i-u-t-de-saint-brieuc-0221848p-but-techniques-de-commercialisat-3385",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3385&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3385&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3385&typeBac=0&originePc=0",
+          "quote": "Avoir une maitrise du français permettant de communiquer de façon adaptée à l’écrit et à l’oral, notamment en public, de comprendre un énoncé, de l’analyser et de rédiger une solution"
+        }
+      ]
+    }
+  },
+  "notes": "Cette fiche Parcoursup décrit la formation et ses attendus pour les candidats qui relèvent de Parcoursup ; un candidat marocain titulaire du Bac marocain doit candidater via Études en France / Campus France (les pages maroc.campusfrance.org le confirment). Aucun frais de scolarité pour étudiants non-UE n'est indiqué sur cette page (seuls 178 euros par année et « Pas de frais pour les boursiers » apparaissent, sans mention de tarif différencié non-UE) : la tuition n'est donc pas retenue. Les langues vivantes (Anglais LV1 ; Espagnol ou Allemand LV2) sont des matières d'enseignement, pas la langue d'enseignement du programme ; le français est la langue du programme. Aucun document à fournir, aucune date limite de candidature et aucun intitulé de diplôme requis ne sont précisés pour les candidats internationaux sur ces pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3385&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "fr-i-u-t-la-roche-sur-yon-0851457x-but-gestion-des-entreprises-et-d-10560",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10560&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10560&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : Anglais Langue vivante 2 : Pas de LV2 Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "PAGE programme: la fiche Parcoursup décrit des conditions pour les candidats français (Bac français/technologique); le candidat marocain hors UE passe par Études en France/Campus France et ne s'inscrit pas sur Parcoursup (voir page Campus France). teachingLanguages: la page indique LV1 anglais mais aucune langue d'enseignement explicite; j'ai retenu fr comme langue d'enseignement probable (page en français, niveau B2 requis), à vérifier. tuition: la page Parcoursup indique 178 €/an (droits d'inscription nationaux, probablement EU) et pas de frais pour boursiers; pas de montant pour étudiant extra-communautaire → non retenu. Duration: 6 semestres = 3 ans. Documents: CV et lettre de motivation mentionnés dans un contexte d'accompagnement à l'apprentissage, pas comme pièces de candidature; à auditer.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10560&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      }
+    ]
+  }
+}

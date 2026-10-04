@@ -1,0 +1,104 @@
+{
+  "slug": "de-hochschule-heilbronn-technik-wirtschaft-hrk125-international-business-i-daad9674",
+  "programmePage": "https://www.hs-heilbronn.de/en/international-business-intercultural-studies?mtm_campaign=daad-international-programmes&mtm_kwd=IBIS",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/tuition-fees",
+          "quote": "Newly enrolled international students not from EU/EEA countries have to pay tuition fees of 1,500 € per semester."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "university-entrance-qualification",
+          "name": {
+            "fr": "Diplôme d'accès à l'université (copie)",
+            "en": "University entrance qualification (copy)"
+          },
+          "quotedAs": "University entrance qualification (copy)",
+          "translationRequired": null
+        },
+        {
+          "slug": "recognition-of-certificates",
+          "name": {
+            "fr": "Reconnaissance des certificats (Center for International Students Konstanz ou VPD par uni-assist)",
+            "en": "Recognition of certificates from the Center for International Students, Konstanz or VPD by uni-assist"
+          },
+          "quotedAs": "Recognition of certificates from the Center for International Students, Konstanz or VPD by uni-assist",
+          "translationRequired": null
+        },
+        {
+          "slug": "german-language-certificate",
+          "name": {
+            "fr": "Preuve de compétences en allemand (DSH-1)",
+            "en": "Proof of German language skills (DSH-1)"
+          },
+          "quotedAs": "Proof of German language skills (DSH-1)",
+          "translationRequired": null
+        },
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV complet, chronologique",
+            "en": "Complete CV, chronological"
+          },
+          "quotedAs": "Complete CV, chronological",
+          "translationRequired": null
+        },
+        {
+          "slug": "study-orientation-test",
+          "name": {
+            "fr": "Preuve de test d'orientation aux études en ligne",
+            "en": "Proof of study orientation test online"
+          },
+          "quotedAs": "Proof of study orientation test online",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/application-documents-for-international-applicants-7146fc1973180a74",
+          "quote": "Application documents for IBIS University entrance qualification (copy) Recognition of certificates from the Center for International Students, Konstanz or VPD by uni-assist Proof of German language skills (DSH-1) Complete CV, chronological Proof of study orientation test online, takes about 10 minutes"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["testdaf"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9674/",
+            "quote": "German language skills B2 required, please provide an official language certificate, e.g.: telc Deutsch: telc Deutsch B2 TestDaF: TDN 3 Reading: TDN 3 Listening: TDN 3 Speaking: TDN 3 Writing: TDN 3"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Admission sur dossier : l'admission à ce programme est restreinte (numerus clausus) ; les candidats sont classés selon des critères de sélection.",
+          "en": "Restricted admission: this programme has restricted admission; applicants are ranked on the basis of selection criteria."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-heilbronn.de/en/international-business-intercultural-studies?mtm_campaign=daad-international-programmes&mtm_kwd=IBIS",
+            "quote": "The IBIS programme has restricted admission, which means you must apply for a place."
+          }
+        ]
+      }
+    ]
+  }
+}

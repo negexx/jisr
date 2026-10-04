@@ -1,0 +1,54 @@
+{
+  "slug": "fr-iut-de-sceaux-ecole-universitaire-de-pre-0921245d-but-techniques-de-commercialisat-11113",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11113&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11113&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Les pages maroc.campusfrance.org sont des pages générales sur les études en France, pas des pages propres à ce BUT : les 2 902 € (droits différenciés pour un étudiant extra-communautaire en Licence, y compris un Bac marocain) et la certification de français obligatoire (TCF/DELF B2/DALF) sont retenus ici, car la formation est bien une licence dispensée dans un IUT public. La fiche Parcoursup (programmePage) ne mentionne que 178 euros, tarif des étudiants français/UE : non retenu. « Niveau de français requis pour s'inscrire à la formation : B2 » apparaît sur la fiche Parcoursup ; le DELF B2 est la certification correspondante. Cas de dispense : un candidat à une formation 100% en anglais autre que la L1 est dispensé de la certification de français, sauf exigence de l'établissement ; mais les candidats en L1 à l'université ne sont pas dispensés (la 1ère année de BUT n'est pas visée explicitement).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["tcf", "delf-dalf"],
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Vous pouvez passer un TCF TP (tout public), un DELF B2 ou un DALF C1/C2 pour toutes les candidatures."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Formation sélective : l'admission dépend de l'examen du dossier (résultats scolaires 45 %, méthodes de travail 35 %, savoir-être 10 %, motivation 8 %, engagement 2 %). Aucun seuil de notes n'est publié : dossier à évaluer au cas par cas.",
+          "en": "Selective programme: admission depends on a review of the application (academic results 45%, working methods 35%, soft skills 10%, motivation 8%, engagement 2%). No grade threshold is published: case-by-case assessment."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11113&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11113&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 45 %"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "fr-i-u-t-de-tarbes-0650583f-but-genie-civil-construction-dur-16046",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=16046&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=16046&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune page ne donne le montant des droits différenciés propres à ce BUT : le montant indiqué (2 902 €/an) est le tarif Licence pour un étudiant extracommunautaire en établissement public ; la fiche Parcoursup affiche 178 €/an, tarif des étudiants français/UE. Les certifications de français (TCF/DELF B2) ne sont obligatoires que dans la procédure Études en France ; ici aucun document n'est listé dans les pages fournies. Le B2 de français est indiqué comme « niveau requis pour s'inscrire » (exigence), la certification correspondante n'est pas exigée par la fiche.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=16046&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est sélective, sur dossier : résultats scolaires, méthodes de travail, savoir-être, motivation et engagements sont évalués.",
+          "en": "Admission is selective, based on an application review: academic results, work methods, soft skills, motivation and commitment are assessed."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=16046&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=16046&typeBac=0&originePc=0",
+            "quote": "La cohérence du cursus antérieur et les résultats scolaires obtenus en classes de Première et de Terminale sont déterminants pour l'admission des candidats"
+          }
+        ]
+      }
+    ]
+  }
+}

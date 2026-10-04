@@ -1,0 +1,46 @@
+{
+  "slug": "fr-universite-de-perpignan-via-domitia-0660437s-licence-informatique-7883",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7883&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7883&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Parcoursup page: the 178 €/year fee and the mention of boursiers are the local/EU-standard tariff; the differentiated fee of 2 902 €/year for extra-communautaires (Licence) appears only on the general Campus France Maroc 'coût des études' page, not on this programme's page, so the number was not attached to this programme. No documented list of required documents; the Parcoursup 'conditions pour candidater' list is not a document list. Application channel intentionally omitted (Études en France / Campus France for Moroccan Bac holders).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7883&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La commission examine surtout les résultats scolaires (94 %), dont les notes de spécialité Mathématiques ; la motivation et le savoir-être comptent aussi. Vérifier les critères précis et la lettre de motivation demandée.",
+          "en": "The commission mainly examines academic results (94%), including Mathematics speciality grades; motivation and soft skills also count. Check the precise criteria and the requested cover letter."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7883&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 94 % Savoir-être 3 % Motivation 3 %"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "fr-i-u-t-de-toulon-0830165d-but-gestion-des-entreprises-et-d-10359",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10359&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10359&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition fee of 178 EUR/year shown is the general public rate on the Parcoursup page; a separate Campus France Maroc page states non-EU (extra-communautaire) students in Licence pay differentiated fees of 2902 EUR/year, but that page is not this programme's own page. The intake deadline given is a recurring deadline without year (13 May). Applying through Études en France for a Moroccan Bac holder is a manual check note.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10359&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Avec un Bac marocain, vous devez candidater via la plateforme Études en France de Campus France Maroc, et non sur Parcoursup.",
+          "en": "With a Moroccan Bac, you must apply through the Campus France Morocco Études en France platform, not Parcoursup."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+            "quote": "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien individuel peut être demandé pour certains dossiers.",
+          "en": "An individual interview may be requested for some applications."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10359&typeBac=0&originePc=0",
+            "quote": "Il est possible, pour certains dossiers, qu'un entretien individuel ou une réunion collective d'information soit programmé(e) pour mieux appréhender la motivation du ou des candidat(s)."
+          }
+        ]
+      }
+    ]
+  }
+}

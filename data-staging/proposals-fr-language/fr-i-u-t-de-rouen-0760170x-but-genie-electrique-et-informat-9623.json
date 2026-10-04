@@ -1,0 +1,59 @@
+{
+  "slug": "fr-i-u-t-de-rouen-0760170x-but-genie-electrique-et-informat-9623",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9623&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9623&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La page du programme (Parcoursup) indique 178 euros par an, mais il s'agit des droits d'inscription des étudiants français/UE (\"Par année 178 euros\"). Pour un étudiant marocain non-UE, la page Campus France Maroc indique des droits différenciés de 2 902 euros par an en cycle de Licence, retenus ici. Aucune date d'ouverture ou d'échéance de candidature propre aux candidats internationaux n'est donnée pour ce BUT dans les pages fournies ; une date de candidature ADIUT Maroc (1er octobre 2026 au 15 novembre 2026) existe mais concerne la 1ère année BUT ADIUT Maroc, sans lien explicite avec ce programme précis de l'IUT de Rouen. La langue d'enseignement n'est pas explicitement déclarée : le français est retenu comme langue d'enseignement principale sur la base du niveau de français B2 requis et de la LV1 anglais (\"Langue vivante 1 : anglais\"), l'anglais n'étant qu'une matière, pas la langue d'enseignement.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9623&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sauf cas de dispense, une certification de français (TCF, DELF B2, DALF) est obligatoire pour la candidature via la plateforme Études en France : sans elle, le dossier n'est pas recevable.",
+          "en": "Unless exempt, a French certificate (TCF, DELF B2, DALF) is mandatory for the Études en France application: without it, the file is not admissible."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sélection sur dossier analysé par une commission : résultats scolaires 80 %, méthodes de travail 10 %, savoir-être 5 %, motivation 5 % ; lettre de motivation et appréciations des enseignants comptent.",
+          "en": "Selection on file reviewed by a commission: academic results 80%, work methods 10%, soft skills 5%, motivation 5%; motivation letter and teacher assessments count."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9623&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 80 % Méthodes de travail 10 % Savoir-être 5 % Motivation 5 %"
+          }
+        ]
+      }
+    ]
+  }
+}

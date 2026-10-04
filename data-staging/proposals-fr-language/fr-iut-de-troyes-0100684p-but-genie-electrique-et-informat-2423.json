@@ -1,0 +1,50 @@
+{
+  "slug": "fr-iut-de-troyes-0100684p-but-genie-electrique-et-informat-2423",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2423&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2423&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La tuition indiquée (178 euros par an) est celle de la fiche Parcoursup, qui vaut pour les étudiants français et communautaires ; le montant des droits différenciés pour un étudiant marocain (2 902 € par an en Licence) figure sur une page générale de Campus France Maroc, pas sur la page de ce BUT. Durée de 3 ans déduite de « 6 semestres » (6/2). Langue d'enseignement : aucun document ne dit explicitement que le BUT est enseigné en français ; le seul élément disponible est le niveau de français requis B2 (Langue vivante 1 : Anglais). Pour un candidat marocain titulaire du Bac marocain, la candidature passe par Études en France / Campus France (adiut-maroc@iut.fr), pas par Parcoursup. Aucun « intakes » n'a été extrait : le seul calendrier daté (1er octobre 2026 au 15 novembre 2026 à 23h59) concerne le programme ADIUT Maroc pour la 1ère année de BUT, et la page ne précise pas qu'il s'agit d'un délai pour candidats non-UE, donc ces dates ne sont pas reprises ici. Aucun document n'est listé par les pages pour ce programme (les pièces du dossier Études en France ne sont pas détaillées).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2423&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le dossier est évalué sur les résultats scolaires, les méthodes de travail, le savoir-être et la motivation : résultats en mathématiques, physique-chimie et sciences de l'ingénieur, appréciations des enseignants, projet motivé.",
+          "en": "The application is assessed on academic results, work methods, behaviour and motivation: results in mathematics, physics-chemistry and engineering sciences, teacher comments, motivated project."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2423&typeBac=0&originePc=0",
+            "quote": "Résultats Les résultats scolaires dans les matières scientifiques et/ou techniques sont analysés."
+          }
+        ]
+      }
+    ]
+  }
+}

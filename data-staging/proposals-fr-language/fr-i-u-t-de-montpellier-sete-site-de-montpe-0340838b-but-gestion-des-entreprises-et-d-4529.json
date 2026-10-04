@@ -1,0 +1,33 @@
+{
+  "slug": "fr-i-u-t-de-montpellier-sete-site-de-montpe-0340838b-but-gestion-des-entreprises-et-d-4529",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4529&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4529&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Page propre au programme : fiche Parcoursup de l'IUT de Montpellier-Sète. Vérifier le montant réel des droits d'inscription applicables à un candidat marocain non-UE : la fiche programme de Parcoursup (non connectée) affiche « 178 euros par année » (tarif UE/national), tandis que la page Campus France Maroc indique que les étudiants extra-communautaires doivent s'acquitter de droits différenciés (2 902 euros pour une année de licence) sauf exonération. Les dates d'ouverture et de clôture des candidatures sur Études en France ne sont pas fournies pour ce programme ; seule une période de disponibilité d'un ambassadeur étudiant (01 au 18/03/2026) est mentionnée. Aucun document d'inscription n'est listé. Le B2 de français requis sur la fiche est indiqué comme « niveau requis pour s'inscrire » ; les dispenses de certification de français pour formations 100% en anglais ne sont pas précisées pour cette formation. Concernant les mentions « apprentissage possible au-delà de la première année », l'alternance ne peut concerner un candidat étranger non titulaire d'un titre de séjour l'autorisant à travailler.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4529&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      }
+    ]
+  }
+}

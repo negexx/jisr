@@ -1,0 +1,46 @@
+{
+  "slug": "fr-iut-1-grenoble-0381516s-but-genie-civil-construction-dur-4965",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4965&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4965&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La fiche Parcoursup affiche « Frais de scolarité Par année 178 euros », mais ce tarif est celui des droits d'inscription nationaux applicables aux étudiants français/UE. La page Campus France Maroc indique que les étudiants extracommunautaires (Maroc) doivent acquitter des droits différenciés de 2 902 € pour une année de Licence, tout en précisant que certains établissements en exonèrent : à vérifier auprès de l'IUT 1 Grenoble. La fiche Parcoursup précise que les candidats étrangers non titulaires d'un bac français/européen et non ressortissants UE doivent candidater via Campus France et non via Parcoursup. Aucun document obligatoire listé sur la fiche.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4965&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sélection sur dossier : résultats scolaires 88 %, savoir-être 4 %, motivation 8 %. Fournir bulletins, relevés de notes du bac et lettre de motivation.",
+          "en": "Selection on file: academic results 88%, soft skills 4%, motivation 8%. Provide transcripts, Bac exam marks and a motivation letter."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4965&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 88%"
+          }
+        ]
+      }
+    ]
+  }
+}

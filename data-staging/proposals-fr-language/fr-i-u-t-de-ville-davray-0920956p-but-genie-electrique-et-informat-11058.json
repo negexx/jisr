@@ -1,0 +1,63 @@
+{
+  "slug": "fr-i-u-t-de-ville-davray-0920956p-but-genie-electrique-et-informat-11058",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11058&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11058&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+        }
+      ]
+    }
+  },
+  "notes": "Frais de scolarité : le montant de 178 € par an figure sur la fiche Parcoursup pour cette formation, mais il s'agit probablement du tarif national (étudiants français/UE). En tant qu'étudiant extra-communautaire (Bac marocain), vous pourriez être soumis à des droits différenciés (2 902 € en Licence selon la page Campus France Maroc) ou à une exonération ; à vérifier auprès de l'établissement. Le niveau C1 de français est indiqué comme requis sur la fiche. L'entretien n'a lieu que dans certains cas (réorientation), pas systématiquement.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11058&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La sélection est une analyse individuelle du dossier : résultats scolaires (45 %), méthodes de travail (20 %), savoir-être (25 %), motivation (5 %), engagement (5 %). Des notes scientifiques et technologiques solides sont essentielles.",
+          "en": "Selection is an individual review of the file: academic results (45%), work methods (20%), behaviour (25%), motivation (5%), engagement (5%). Strong scientific and technological grades are essential."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11058&typeBac=0&originePc=0",
+            "quote": "Nous traitons les candidatures par une analyse individuelle de chaque dossier : les appréciations des professeurs de 1ère et terminale sont examinées par des enseignants de l'IUT : les problèmes de comportement et d'absentéisme sont fortement pénalisés à l'inverse des lycéens ayant des appréciations positives."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "En raison de votre profil (Bac marocain, non européen), vous ne devez pas candidater via Parcoursup. Faites votre demande via la procédure Études en France de Campus France Maroc.",
+          "en": "Given your profile (Moroccan Bac, non-EU), you must not apply via Parcoursup. Apply through the Études en France procedure of Campus France Morocco."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11058&typeBac=0&originePc=0",
+            "quote": "Si vous êtes candidat de nationalité étrangère, et à la fois : - non titulaire ou ne préparant pas un baccalauréat français ou un baccalauréat européen ; - non ressortissant de l’Union européenne (U.E.), de l'Espace économique européen (E.E.E.), de la Confédération Suisse, de Monaco ou d'Andorre ; - et que vous résidez dans un des pays disposant d'un espace Campus France à procédure Etudes en France : vous ne devez pas vous inscrire sur Parcoursup."
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+            "quote": "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France."
+          }
+        ]
+      }
+    ]
+  }
+}

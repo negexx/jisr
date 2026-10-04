@@ -1,0 +1,46 @@
+{
+  "slug": "fr-iut-1-grenoble-eneps-0381516t-but-genie-civil-construction-dur-4972",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4972&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4972&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Les frais indiqués (178 euros) sont ceux figurant sur la fiche Parcoursup pour cette formation ; il s'agit d'un tarif affiché côté Parcoursup et non d'un tarif spécifique pour étudiants extracommunautaires. Le seul diplôme mentionné est le baccalauréat. Le texte indique que la formation est en principe réservée aux bacheliers professionnels français, mais le candidat marocain doit vérifier son éligibilité via la procédure Études en France. La tuition affichée peut ne pas s'appliquer aux étudiants internationaux (différenciés) ; à vérifier.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4972&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier que votre bac marocain (ou diplôme étranger) permet une candidature ; cette formation est en principe réservée aux bacheliers professionnels français.",
+          "en": "Check that your Moroccan Bac (or foreign diploma) allows application; this programme is normally reserved for French vocational Bac holders."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4972&typeBac=0&originePc=0",
+            "quote": "Seuls les candidats scolarisés dans les séries de terminales ci-dessous, ou titulaires d'un baccalauréat de ces séries, sont autorisés à s'inscrire :"
+          }
+        ]
+      }
+    ]
+  }
+}

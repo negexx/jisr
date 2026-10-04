@@ -1,0 +1,50 @@
+{
+  "slug": "fr-i-u-t-de-metz-universite-de-lorraine-0570175f-but-informatique-6569",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6569&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6569&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6569&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : Anglais"
+        }
+      ]
+    }
+  },
+  "notes": "Aucun frais de scolarité spécifique pour les étudiants extracommunautaires n'est mentionné pour ce programme ; la fiche indique seulement 'Par année 178 euros', un tarif qui semble ne pas s'appliquer aux étudiants extracommunautaires. Les dates de candidature ne sont pas fournies pour les candidats internationaux dans les pages fournies.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6569&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les critères d'admission : résultats scolaires (70%), méthodes de travail (10%), savoir-être (10%), motivation (10%).",
+          "en": "Check admission criteria: academic results (70%), work methods (10%), behaviour (10%), motivation (10%)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6569&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 70 %"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "nl-de-haagse-hogeschool-27um-zoetermeer-applied-data-science-art-1001o8742",
+  "programmePage": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["nl"],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+          "quote": "Locatie Zoetermeer en Den Haag - hoofdvestiging Taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+          "quote": "Je aanmelden voor een opleiding doe je via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee: the Collegegeld page gives institution-wide institutional tuition (instellingscollegegeld) of € 10,528 for 2026-2027, but also states exceptions (joint degrees, full-time English-taught master programmes, part-time English-taught master programmes); the page does not state a fee specifically for this Dutch-taught bachelor for a non-EU student, so no tuition fact is included. Deadlines: the Aanmelden page states 'Voor de meeste voltijd studies sluit de reguliere aanmelding op deze datum' (1 mei) and a 31 juli possibility, but does not attach these dates to non-EU or foreign-qualification applicants, so no intake fact is included.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+            "quote": "Met een buitenlands of internationaal diploma kun je toegelaten worden, mits dit diploma toelating biedt tot hbo en je een bewijs hebt van voldoende beheersing van de Nederlandse taal."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme étranger est jugé admissible par la Centrale Studenten Inschrijving et si votre baccalauréat est reconnu comme donnant accès à l'enseignement supérieur néerlandais.",
+          "en": "Check whether your foreign diploma is deemed admissible by the Centrale Studenten Inschrijving and whether your Baccalauréat is recognised as giving access to Dutch higher education."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "De Centrale Studenten Inschrijving bepaalt of jouw buitenlandse diploma ten minste gelijkwaardig is aan dat van een (toelatinggevend) Nederlands diploma."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si vous devez obtenir un visa d'entrée et/ou un permis de séjour, car vous n'avez pas la nationalité d'un pays de l'UE/EEE ou de Suisse.",
+          "en": "Check whether you need an entry visa and/or residence permit, as you do not have the nationality of an EU/EEA country or Switzerland."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "Als je niet de nationaliteit hebt van een EU/EER-land of Zwitserland, dan heb je waarschijnlijk een verblijfsvergunning en/of inreisvisum nodig om in Nederland te mogen verblijven."
+          }
+        ]
+      }
+    ]
+  }
+}

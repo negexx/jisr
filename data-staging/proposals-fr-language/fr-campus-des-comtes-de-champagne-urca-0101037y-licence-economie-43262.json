@@ -1,0 +1,72 @@
+{
+  "slug": "fr-campus-des-comtes-de-champagne-urca-0101037y-licence-economie-43262",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43262&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43262&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le tarif de 178 €/an affiché sur Parcoursup est présenté, dans la page Campus France Maroc, comme réservé aux étudiants français/UE/EEE ; les étudiants extracommunautaires (Maroc) y sont soumis aux droits différenciés (2 902 €/an en Licence), sous réserve d'exonération par l'établissement (à vérifier auprès de l'URCA). Le document « school-leaving-certificate » n'a pas été retenu : la page ne liste pas de pièces justificatives pour ce programme. applicationChannel non renseigné comme demandé.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43262&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez votre niveau d'anglais : la formation exige des compétences en langue anglaise (l'anglais est la LV1).",
+          "en": "Check your English level: the programme requires English language skills (English is the first foreign language)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43262&typeBac=0&originePc=0",
+            "quote": "Langue vivante 1 : Anglais"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les résultats scolaires comptent pour 80 % dans l'analyse des candidatures, les méthodes de travail et le savoir-être pour 10 % chacun.",
+          "en": "School results account for 80% of the application review; work methods and behaviour for 10% each."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43262&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 80 % Méthodes de travail 10 % Savoir-être 10 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non ressortissants de l'UE titulaires d'un diplôme équivalent au bac passent par la procédure DAP.",
+          "en": "Applicants who are not EU nationals and hold a qualification equivalent to the French baccalaureate apply through the DAP procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43262&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      }
+    ]
+  }
+}

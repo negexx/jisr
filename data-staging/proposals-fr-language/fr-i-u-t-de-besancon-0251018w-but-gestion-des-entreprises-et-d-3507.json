@@ -1,0 +1,63 @@
+{
+  "slug": "fr-i-u-t-de-besancon-0251018w-but-gestion-des-entreprises-et-d-3507",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3507&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3507&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "tuition: The 178 €/year is the Parcoursup figure for this BUT; extra-communautaire students are liable for differentiated fees of 2 902 €/year in Licence (Campus France Maroc page), and some institutions exonerate them — verify with the IUT. intakes: no dated deadline for international applicants appears on the supplied pages; the generic ADIUT Maroc calendar page (15 November) concerns 1ère année BUT in general, not specifically this programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["tcf", "delf-dalf"],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3507&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les études en gestion supposent des connaissances minimales en mathématiques ; l'absence de cette matière en Première et Terminale peut être préjudiciable. Vérifiez votre dossier.",
+          "en": "Studies in management require minimal knowledge of mathematics; the absence of this subject in the last two years of high school may be detrimental. Check your background."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3507&typeBac=0&originePc=0",
+            "quote": "Les études en gestion supposent des connaissances minimales en mathématiques et l’absence de cette matière sur les deux années de Première et Terminale peut être préjudiciable pour la réussite en B.U.T. GEA."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'épreuve de sélection consiste en un entretien collectif (3 à 5 candidats) de 20 à 30 minutes. Préparez votre projet professionnel.",
+          "en": "The selection test consists of a group interview (3 to 5 candidates) lasting 20 to 30 minutes. Prepare your professional project."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3507&typeBac=0&originePc=0",
+            "quote": "L'épreuve de sélection consistera en un entretien collectif (3 à 5 candidats) de 20 à 30 minutes."
+          }
+        ]
+      }
+    ]
+  }
+}

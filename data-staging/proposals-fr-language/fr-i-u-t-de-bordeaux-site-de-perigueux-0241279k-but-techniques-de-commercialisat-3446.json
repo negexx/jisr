@@ -1,0 +1,46 @@
+{
+  "slug": "fr-i-u-t-de-bordeaux-site-de-perigueux-0241279k-but-techniques-de-commercialisat-3446",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3446&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3446&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La page présente le tarif de 178 euros par année (tarif national des établissements publics) mais la page Campus France Maroc indique que les étudiants extra-communautaires titulaires d'un Bac marocain paient des droits différenciés de 2 902 euros par année de Licence ; sauf exonération par l'établissement. Le canal de candidature n'est pas inclus (Etudes en France / Campus France pour ce profil). Les dates de candidature ADIUT Maroc 2026 (1er octobre 2026 au 15 novembre 2026) concernent la 1ère année de BUT via le programme ADIUT Maroc, mais la page ne précise pas qu'elles s'appliquent à ce programme précis ; à vérifier. Les pages ne donnent pas de liste de documents exigés pour ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3446&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien oral de sélection est prévu : il vise à évaluer votre motivation et votre connaissance de la formation. Renseignez-vous sur l'IUT pour les modalités pour les candidats internationaux.",
+          "en": "An oral selection interview is planned: it assesses your motivation and knowledge of the programme. Check with the IUT for the arrangements for international applicants."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3446&typeBac=0&originePc=0",
+            "quote": "L'oral a pour objectif de déterminer la motivation du candidat."
+          }
+        ]
+      }
+    ]
+  }
+}

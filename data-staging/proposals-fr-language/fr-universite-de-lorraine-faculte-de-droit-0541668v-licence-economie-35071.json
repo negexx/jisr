@@ -1,0 +1,46 @@
+{
+  "slug": "fr-universite-de-lorraine-faculte-de-droit-0541668v-licence-economie-35071",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35071&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35071&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Parcoursup page: tuition shown (178 euros/year, no fees for boursiers) and the 2026 key dates (candidature 1 October 2026 - 15 November 2026, analysis April-May 2026, answers from 2 June 2026) concern French/European Bac holders on Parcoursup; for a Moroccan Bac holder the tuition differentiel (2902 EUR/year en Licence) and the Etudes en France calendar apply (see pages maroc.campusfrance.org), so these facts are left out. No duration is stated on the page (only the mention of licence in 3 or 4 ans in statistics). No documents beyond bulletins are listed.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35071&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Candidats non ressortissants de l'UE titulaires d'un diplôme équivalent au bac : la candidature passe par la procédure DAP et non par Parcoursup.",
+          "en": "Non-EU candidates with a diploma equivalent to the French bac do not apply through Parcoursup but through the DAP procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35071&typeBac=0&originePc=0",
+            "quote": "ne passent pas par la plateforme Parcoursup, mais par la procédure DAP"
+          }
+        ]
+      }
+    ]
+  }
+}

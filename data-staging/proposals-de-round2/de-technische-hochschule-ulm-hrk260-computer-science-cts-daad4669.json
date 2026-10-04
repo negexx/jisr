@@ -1,0 +1,71 @@
+{
+  "slug": "de-technische-hochschule-ulm-hrk260-computer-science-cts-daad4669",
+  "programmePage": "https://www.thu.de/cts",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.thu.de/en/studies/before-studies/fees-scholarships/contributions-tuition-fees",
+          "quote": "International students are students who are not citizens of a member state of the European Union or another signatory state to the Agreement on the European Economic Area."
+        },
+        {
+          "url": "https://www.thu.de/en/studies/before-studies/fees-scholarships/contributions-tuition-fees",
+          "quote": "Tuition fees for international students at universities in Baden-Württemberg are 1,500.00 EUR per semester."
+        }
+      ]
+    }
+  },
+  "notes": "The application deadline is given as \"28. April - 15. Juli\" on the programme page but the year is not stated for a non-EU applicant, and the DAAD page says \"This programme has no deadline listed\", so no intake could be recorded. The tuition fee is a state-wide figure for international students at Baden-Württemberg universities, stated on the university's central fees page but not on the programme's own page; possible exemptions exist (Landeshochschulgebührengesetz). No document list for international applicants was found on the supplied pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["toefl", "ielts"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4669/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT Home Edition (before 2026): 79 IELTS Academic: 6 Cambridge English Qualifications: B2 First"
+          },
+          {
+            "url": "https://www.thu.de/cts",
+            "quote": "As courses and examinations in this degree program are held in English, you must have a good command of English at B2 level."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le diplôme étranger doit être reconnu par le Studienkolleg Konstanz ; vérifiez la procédure de reconnaissance.",
+          "en": "Foreign school-leaving qualification must be recognized by the Studienkolleg Konstanz; check the recognition procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://www.thu.de/cts",
+            "quote": "If you have a foreign school-leaving qualification, this must be recognized by the Studienkolleg Konstanz."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Si vous êtes déjà étudiant(e), la reconnaissance des acquis peut donner accès à un semestre supérieur ; sinon, postulez au 1er semestre.",
+          "en": "If you have prior studies, credit recognition may allow entry to a higher semester; otherwise, apply for the first semester."
+        },
+        "evidence": [
+          {
+            "url": "https://www.thu.de/studium/bewerbung-zulassung/bewerbung-bachelor",
+            "quote": "Wenn Du keine oder nur wenig Studien- und Prüfungsleistungen abgelegt hast, bewerbe Dich bitte für das erste Semester."
+          }
+        ]
+      }
+    ]
+  }
+}

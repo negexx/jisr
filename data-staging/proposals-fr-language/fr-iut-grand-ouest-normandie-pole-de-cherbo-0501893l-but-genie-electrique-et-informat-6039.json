@@ -1,0 +1,50 @@
+{
+  "slug": "fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l-but-genie-electrique-et-informat-6039",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6039&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6039&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 €/an est un tarif national d'inscription cité par la fiche Parcoursup de cette formation ; il ne mentionne pas les droits différenciés pour les étudiants extra-communautaires. Aucun document à fournir n'est mentionné pour cette formation. Aucune date de candidature pour cette formation n'est donnée. La voie de candidature (Études en France / Campus France) est traitée séparément et n'est pas incluse ici.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6039&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Cette formation est un BUT contrôlé par l'État ; c'est une formation sélective : le dossier est examiné par une commission qui évalue les résultats scolaires (50 %), la motivation (20 %), les méthodes de travail et le savoir-être.",
+          "en": "This is a selective state-controlled BUT programme: an admissions commission assesses academic results (50%), motivation (20%), working methods and soft skills. Selection is competitive — prepare your application carefully."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6039&typeBac=0&originePc=0",
+            "quote": "BUT contrôlé par l'Etat"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6039&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          }
+        ]
+      }
+    ]
+  }
+}

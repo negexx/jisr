@@ -1,0 +1,50 @@
+{
+  "slug": "fr-iut-nord-franche-comte-site-de-montbelia-0251763f-but-reseaux-et-telecommunication-3585",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3585&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3585&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Documents not listed beyond the secondary diploma quote. Tuition fee not extracted: page states \"178 euros par année\" as the fee, which is for EU/EEA students; for non-EU students there is a differentiated fee (2 902 euros) but that is a general figure, not specific to this programme. Language proficiency extracted as French despite the page also listing \"Langue vivante 1 : Anglais\"; the French requirement is explicit. Application channel not extracted per task instruction.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3585&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les critères d'analyse des candidatures : résultats scolaires (25%), méthodes de travail (25%), savoir-être (25%), motivation (15%), engagement (10%).",
+          "en": "Check the application review criteria: academic results (25%), working methods (25%), behaviour (25%), motivation (15%), engagement (10%)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3585&typeBac=0&originePc=0",
+            "quote": "Cette grille permet d'indiquer le niveau d'importance accordé par la formation à chaque critère d'analyse."
+          }
+        ]
+      }
+    ]
+  }
+}

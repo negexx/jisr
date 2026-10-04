@@ -1,0 +1,59 @@
+{
+  "slug": "fr-i-u-t-h-poincare-de-longwy-universite-de-0542288u-but-genie-electrique-et-informat-6374",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6374&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6374&typeBac=0&originePc=0",
+          "quote": "Avoir une maîtrise du français permettant d’acquérir de nouvelles compétences"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des droits d'inscription différenciés pour un étudiant extra-communautaire en Licence est de 2 902 euros par an. Les frais de dossier Campus France doivent être vérifiés sur la page dédiée. La certification de français est obligatoire sauf dispense. Les critères d'analyse des candidatures (notes, matières, motivation, etc.) sont détaillés dans la grille d'analyse de Parcoursup mais ne constituent pas des conditions d'admission explicites; ils sont à vérifier manuellement.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6374&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La certification de français (TCF, DELF B2, DALF) est obligatoire pour la procédure Études en France, sauf cas de dispense. Vérifiez les dispenses et le calendrier des certifications.",
+          "en": "A French certification (TCF, DELF B2, DALF) is mandatory for the Études en France procedure, except for exemptions. Check the exemptions and the certification calendar."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des frais de dossier Campus France sont à prévoir. Consultez la page dédiée pour les montants et les modalités.",
+          "en": "Campus France application fees apply. See the dedicated page for amounts and procedures."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+            "quote": "Les frais de dossier Campus France"
+          }
+        ]
+      }
+    ]
+  }
+}

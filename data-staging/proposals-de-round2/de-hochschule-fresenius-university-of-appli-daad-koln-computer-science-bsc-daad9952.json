@@ -1,0 +1,91 @@
+{
+  "slug": "de-hochschule-fresenius-university-of-appli-daad-koln-computer-science-bsc-daad9952",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9952/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 612000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9952/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 6,120 EUR"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.hs-fresenius.com/application-process/?crmid=aBbTjOcDaAaAaAaA",
+          "quote": "please upload at least your CV and your secondary school leaving certificate (application for bachelor studies) or your bachelor transcript of records (application for master studies) to the application portal"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "CV",
+          "translationRequired": null
+        },
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "school-leaving certificate"
+          },
+          "quotedAs": "secondary school leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-fresenius.com/application-process/?crmid=aBbTjOcDaAaAaAaA",
+          "quote": "please upload at least your CV and your secondary school leaving certificate (application for bachelor studies) or your bachelor transcript of records (application for master studies)"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the DAAD page gives 6,120 EUR per semester for non-EU applicants (period read as semester since the heading says 'Tuition fees per semester'), while EU applicants pay 5,700 EUR; the page also warns 'Tuition fees may vary'. Intakes: the DAAD page states 'This programme has no deadline listed'; no dated deadline for international applicants is given, so intake dates are omitted. Application channel: no page mentions uni-assist or a VPD, and no page states that a foreign-diploma applicant must apply via uni-assist; the Fresenius application-process page refers to uploads 'to the application portal', so de-university-direct is used, but the DAAD page says only 'Submit application via Please check this website.'. B2 language requirement: quotes come from the DAAD programme page (the only page with stated admission conditions); acceptedTests lists only TOEFL and IELTS, which are the tests named.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["toefl", "ielts"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9952/",
+            "quote": "your English language skills must be equivalent to Level B2 of the Common European Framework of Reference for Languages (CEFR)"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9952/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 70 Reading: 18 Listening: 17 Speaking: 20 Writing: 17 IELTS Academic: 6"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien d'admission de 15 minutes est prévu après vérification de votre dossier ; il n'est pas un test de connaissances.",
+          "en": "A 15-minute admission interview is scheduled after your documents are checked; it is not a knowledge test."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-fresenius.com/application-process/?crmid=aBbTjOcDaAaAaAaA",
+            "quote": "If you fulfil the admission requirements, your personal study advisor will invite you to an admission interview."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "fr-universite-du-littoral-site-de-calais-0620215x-licence-informatique-7399",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7399&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7399&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La page Parcoursup indique « Par année 178 euros » et « Par année pour les étudiants boursiers Pas de frais pour les boursiers », ainsi que « Contribution Vie Etudiante et de Campus (CVEC) Une Contribution Vie Etudiante et de Campus est à régler, avant l’inscription administrative, par chaque étudiant dans la plupart des formations présentes sur Parcoursup ». Cette page concerne les candidats passant par Parcoursup (bac français/européen) ; le montant 178 € est celui des droits d'inscription Licence (étudiants français/UE). Les pages Campus France Maroc indiquent des droits différenciés pour les étudiants extra-communautaires : « 2 902 euros pour une année en cycle de Licence », mais cette page est une page institutionnelle générale (Campus France Maroc), pas la page du programme, et elle ajoute « Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés. Il faut vous renseigner sur le site de l'établissement pour plus d'informations. » : le montant applicable à cet étudiant non-UE n'est donc pas certain pour ce programme. Aucune date de candidature (ouverture/clôture) pour ce programme n'est indiquée sur les pages fournies ; les échéances « 2026 » citées sur la page (2 juin 2026, JPO du 7 février 2026, etc.) concernent la procédure Parcoursup, non la procédure Études en France. Le document « school-leaving certificate » n'est pas nommé dans les quotes de cette page de programme (seule la mention « baccalauréat français » apparaît pour les conditions d'inscription Parcoursup).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7399&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": ["mathematics"],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7399&typeBac=0&originePc=0",
+            "quote": "L'enseignement de spécialité Mathématiques en première est nécessaire et recommandée en terminale."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sélection sur dossier : résultats scolaires (60 %), motivation (30 %), engagement et activités (10 %) ; notes de mathématiques, physique-chimie et informatique jugées essentielles.",
+          "en": "Selection based on application: academic results (60%), motivation (30%), engagement and activities (10%); grades in mathematics, physics-chemistry and computer science rated essential."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7399&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 60 % Motivation 30 % Engagement et activités 10 %"
+          }
+        ]
+      }
+    ]
+  }
+}

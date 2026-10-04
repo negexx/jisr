@@ -1,0 +1,44 @@
+{
+  "slug": "fr-universite-paris-nanterre-0921204j-licence-economie-et-gestion-27233",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=27233&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=27233&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the page shows 178 EUR/year, but for non-EU applicants with a foreign diploma (Moroccan Bac), differentiated tuition fees of 2,902 EUR/year for Licence apply (see the Campus France Maroc page). Teaching language is inferred from the B2 French level required; the double licence is likely taught in French with some English. Documents: the requirement for a CV and cover letter appears in the page text context but the exact quoted sentence 'CV et lettre de motivation' is not present verbatim in the provided page text; this should be verified. Application channel: for foreign-diploma applicants, apply via Etudes en France / Campus France, not Parcoursup.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=27233&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": ["mathematics"],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=27233&typeBac=0&originePc=0",
+            "quote": "Il est donc essentiel que le candidat ait suivi un enseignement de mathématiques en première et en terminale dans le cadre du nouveau Baccalauréat."
+          }
+        ]
+      }
+    ]
+  }
+}

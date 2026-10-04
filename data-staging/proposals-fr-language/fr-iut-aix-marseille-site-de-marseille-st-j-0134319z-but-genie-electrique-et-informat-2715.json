@@ -1,0 +1,46 @@
+{
+  "slug": "fr-iut-aix-marseille-site-de-marseille-st-j-0134319z-but-genie-electrique-et-informat-2715",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2715&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2715&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B1"
+        }
+      ]
+    }
+  },
+  "notes": "Aucun frais de scolarité pour les étudiants extra-communautaires n'est indiqué pour ce BUT : la fiche Parcoursup ne mentionne que 178 euros pour tous (étudiants boursiers exonérés), sans préciser le cas des étudiants non-UE. Les droits d'inscription différenciés (2 902 euros) figurent sur une page générale Campus France, non spécifique à ce programme : à vérifier. Le canal de candidature pour un titulaire du Bac marocain (Études en France / Campus France) est traité séparément.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2715&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les résultats scolaires (bulletins, notes des épreuves) comptent pour 35 % ; la lettre de motivation doit être personnalisée et montrer votre intérêt pour le BUT GEII.",
+          "en": "School results (reports, exam marks) count for 35%; the motivation letter must be personalised and show your interest in the BUT GEII."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2715&typeBac=0&originePc=0",
+            "quote": "La lettre de motivation doit être personnalisée et montrer l'intérêt du candidat pour le BUT GEII et pour les matières qui y sont enseignées."
+          }
+        ]
+      }
+    ]
+  }
+}

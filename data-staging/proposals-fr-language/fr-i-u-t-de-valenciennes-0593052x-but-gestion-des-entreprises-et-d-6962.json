@@ -1,0 +1,97 @@
+{
+  "slug": "fr-i-u-t-de-valenciennes-0593052x-but-gestion-des-entreprises-et-d-6962",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6962&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6962&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Applicant from Morocco with a Moroccan Baccalauréat: this is a BUT (Bachelor Universitaire de Technologie) at I.U.T. de Valenciennes, and the programme page is an official Parcoursup form. The Campus France Morocco page « Candidature en 1ère année BUT à l'université (IUT) » gives a deadline of 1 October 2026 to 15 November 2026 for the Études en France/ADIUT Maroc procedure, but the fact schema only provides intakes and applicationChannel; applicationChannel is deliberately omitted per the task, and the deadline is left in this note rather than encoded, because it is the Campus France/ADIUT Maroc national procedure for first-year BUT, not the programme's own Parcoursup page dates. The fee of EUR 2 902 per year comes from the national Campus France Morocco page and applie to extra-communautaire (Moroccan) students in their first Licence year, unless the establishment exempts them; the page does not confirm whether this exemption applies to this programme, so the amount should be verified with the establishment. The page does not state an application opening date, a programme duration in ECTS or semesters, or a document list for this programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6962&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6962&typeBac=0&originePc=0",
+            "quote": "Avoir une connaissance suffisante dans deux langues vivantes dont l’anglais permettant de progresser pendant la formation"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Français : le niveau B2 est requis pour s'inscrire à la formation et la certification de français (TCF, DELF B2, DALF) est obligatoire, sauf dispense, dans la procédure Études en France.",
+          "en": "French: level B2 is required to enrol in the programme and the French certification (TCF, DELF B2, DALF) is compulsory, unless exempted, in the Études en France procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6962&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des épreuves orales ou un entretien de sélection ont lieu du lundi 27 avril 2026 au jeudi 07 mai 2026 ; si vous êtes sélectionné, connectez-vous sur Parcoursup entre le vendredi 10 avril 2026 et le lundi 04 mai 2026 pour prendre rendez-vous.",
+          "en": "Oral examinations or an interview take place from Monday 27 April 2026 to Thursday 07 May 2026; if selected, log in to Parcoursup between Friday 10 April 2026 and Monday 04 May 2026 to book a slot."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6962&typeBac=0&originePc=0",
+            "quote": "Les épreuves orales ou l'entretien auront lieu : Du lundi 27 avril 2026 au jeudi 07 mai 2026"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6962&typeBac=0&originePc=0",
+            "quote": "vous devrez vous reconnecter sur Parcoursup entre le vendredi 10 avril 2026 et le lundi 04 mai 2026 afin de prendre rendez-vous"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidatures sont analysées selon une grille : résultats scolaires 30 %, méthodes de travail 25 %, savoir-être 20 %, motivation 15 %, engagement et activités 10 %. La lettre de motivation est examinée.",
+          "en": "Applications are assessed against a grid: academic results 30%, working methods 25%, soft skills 20%, motivation 15%, engagement and activities 10%. The cover letter is examined."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6962&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 30%"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6962&typeBac=0&originePc=0",
+            "quote": "Il faut toutefois améliorer la lettre de motivation qui manque souvent de personnalisation et qui reste trop générale"
+          }
+        ]
+      }
+    ]
+  }
+}

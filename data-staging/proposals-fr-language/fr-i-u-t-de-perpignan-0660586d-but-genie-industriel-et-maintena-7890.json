@@ -1,0 +1,33 @@
+{
+  "slug": "fr-i-u-t-de-perpignan-0660586d-but-genie-industriel-et-maintena-7890",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7890&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7890&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Fiche Parcoursup : le tarif « 178 euros par an » est le tarif affiché sur la fiche, sans mention de tarif différencié pour les étudiants extracommunautaires ; à vérifier. L'IUT étant un établissement public, un étudiant marocain relève en principe des droits différenciés (voir la page Campus France Maroc sur le coût des études). La candidature d'un titulaire du Bac marocain passe par Études en France / Campus France, pas par Parcoursup.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7890&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      }
+    ]
+  }
+}

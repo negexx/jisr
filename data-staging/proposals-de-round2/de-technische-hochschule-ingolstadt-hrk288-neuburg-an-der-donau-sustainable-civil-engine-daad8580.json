@@ -1,0 +1,71 @@
+{
+  "slug": "de-technische-hochschule-ingolstadt-hrk288-neuburg-an-der-donau-sustainable-civil-engine-daad8580",
+  "programmePage": "https://www.thi.de/en/faculties/sustainable-infrastructure/degree-programmes/sustainable-civil-engineering-beng/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 80000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 800 EUR"
+        },
+        {
+          "url": "https://www.thi.de/en/faculties/sustainable-infrastructure/degree-programmes/sustainable-civil-engineering-beng/",
+          "quote": "THI charges tuition fees of 800 euros per semester (for Bachelor’s programmes)."
+        }
+      ]
+    }
+  },
+  "notes": "Les dates de candidature du DAAD (2 mai–31 août 2026 ; 1er avril–15 juillet 2027) ne précisent pas qu'elles concernent les candidats internationaux/non-UE ; elles sont donc indicatives. La page allemande indique pour l'été 2027 : « Application period for the 2027 summer term: 15 October 2026 to 15 January 2027 » (délai sans mention non-UE). Les documents exigés ne sont pas listés nommément par les pages : aucune liste de documents n'est donc fournie. Les frais de dossier : « Apart from the uni-assist fee, no additional application fees are charged. »",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["ielts", "toefl"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: Cambridge English Qualifications: B2 First IELTS Academic: 5.5 PTE Academic: 59 TOEFL iBT (before 2026): 72"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission se fait sur dossier et selon une procédure de sélection après examen de toutes les pièces ; vérifiez les critères exacts auprès de l'université.",
+          "en": "Admission is based on the documents and a selection procedure after review of all application documents; check the exact criteria with the university."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/",
+            "quote": "Admission is based on academic qualifications and a subsequent selection procedure."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le niveau d'allemand A1 est attendu au début des études, puis A2 au 2e semestre et B2 au 5e semestre ; aucun justificatif n'est exigé à l'entrée.",
+          "en": "German level A1 is expected at the start of studies, then A2 by the second semester and B2 by the fifth semester; no proof is required at entry."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/",
+            "quote": "German language skills A1 required/recommended, no proof required"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8580/",
+            "quote": "However, it is expected that you have already achieved German language proficiency at level A1 by the start of studies and have reached level A2 by the second semester and B2 by the fifth semester."
+          }
+        ]
+      }
+    ]
+  }
+}

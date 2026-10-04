@@ -1,0 +1,67 @@
+{
+  "slug": "fr-universite-de-lorraine-institut-superieu-0572874p-licence-informatique-43202",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43202&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr", "de"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43202&typeBac=0&originePc=0",
+          "quote": "Les enseignements sont dispensés dans les deux langues, français et allemand, quelquefois également en anglais."
+        }
+      ]
+    }
+  },
+  "notes": "The tuition quote (178 euros par année) is the general rate shown on the programme page and is not stated specifically for non-EU students. Campus France Maroc pages state differentiated tuition fees for non-EU students at public institutions (for a Licence year, 2 902 euros), which may be reduced or waived by the institution. The 178 EUR figure should be audited against the institution's current fee policy for a Moroccan applicant. The page states French level B2 is required to enrol (\"Niveau de français requis pour s'inscrire à la formation : B2\"), but the French certification requirement is also covered by the Campus France Morocco page stating the TCF/DELF B2/DALF certification is mandatory for the Études en France application procedure. No intakes, no document list and no application channel are stated for this programme for a foreign-diploma applicant.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43202&typeBac=0&originePc=0",
+            "quote": "Niveau minimum demandé en allemand : B1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test de langue allemande est organisé en avril/mai : test écrit de niveau B1/B2 (compréhension auditive, écrite et expression écrite), un oral peut remplacer l'écrit pour les candidats venant d'un lycée à plus de 350 km. Vérifier les dispenses (Abibac, lycée franco-allemand, OIB allemand, certification Goethe B2 ou supérieure).",
+          "en": "A German language test is organised in April/May: a written test at B1/B2 level (listening, reading and writing), an oral may replace the written test for candidates from a lycée more than 350 km away. Check exemptions (Abibac, Franco-German lycée, German OIB, Goethe certificate B2 or higher)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43202&typeBac=0&originePc=0",
+            "quote": "Un test d'évaluation des connaissances en allemand est organisé en présentiel."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43202&typeBac=0&originePc=0",
+            "quote": "Pour les candidats venant d'un lycée trop éloigné (distance > 350 km), un oral est proposé à la place de l'écrit."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43202&typeBac=0&originePc=0",
+            "quote": "Seuls les candidats en abibac, ou issus d'un lycée franco-allemand, ou issus d'un lycée international allemand, ou ayant choisi Option Internationale du Bac en allemand (OIB allemand), ainsi que les candidats pouvant justifier d'un niveau certifié B2 ou supérieur en allemand (certifications du type Goethe-institut ou équivalent), sont dispensés de ce test."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les résultats scolaires, les méthodes de travail, le savoir-être, la motivation et les engagements comptent dans l'examen des candidatures (grille d'analyse).",
+          "en": "Academic results, working methods, behaviour, motivation and engagement are weighed in the application review (analysis grid)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43202&typeBac=0&originePc=0",
+            "quote": "Cette grille permet d'indiquer le niveau d'importance accordé par la formation à chaque critère d'analyse. Plus le pourcentage est élevé plus le critère compte dans l'examen des candidatures. Résultats scolaires 35 % Méthodes de travail 35 % Savoir-être 10 % Motivation 15 % Engagement et activités 5 %"
+          }
+        ]
+      }
+    ]
+  }
+}

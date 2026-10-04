@@ -1,0 +1,46 @@
+{
+  "slug": "fr-iut-de-bordeaux-antenne-de-polynesie-fra-9840471p-but-techniques-de-commercialisat-20022",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20022&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20022&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Programme is located in Tahiti, French Polynesia. Tuition: the page gives the fee for all students (136 EUR/year) and states that bursary holders pay no fees; it does not distinguish EU/non-EU. Language proficiency: B2 French is stated as the required level to enrol, but the page does not name a certificate (certificateRequired null). Application channel not extracted (per task, foreign-diploma applicants use Etudes en France/Campus France).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20022&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La sélection comprend un examen du dossier et des épreuves orales (entretiens collectifs de motivation) ; les critères et leur importance sont détaillés dans la grille d'analyse.",
+          "en": "Selection includes a file review and oral tests (group motivation interviews); criteria and their weight are detailed in the analysis grid."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=20022&typeBac=0&originePc=0",
+            "quote": "Les candidats dont les dossiers auront été pré-sélectionnés seront convoqués à une réunion d'information suivie d'entretiens collectifs de motivation"
+          }
+        ]
+      }
+    ]
+  }
+}

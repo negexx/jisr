@@ -1,0 +1,70 @@
+{
+  "slug": "de-technische-universitat-chemnitz-hrk42-foundations-in-data-scie-daad10526",
+  "programmePage": "https://www.mytuc.org/qbnf",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.mytuc.org/qbnf",
+          "quote": "There are no tuition fees; however, you must pay the semester contribution each semester"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+          "quote": "Please apply via uni-assist."
+        },
+        {
+          "url": "https://www.mytuc.org/qbnf",
+          "quote": "If you are applying from abroad, you will generally need to apply via the uni-assist agency."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["toefl", "ielts"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+            "quote": "English language skills at a B2 level (CEFR)."
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+            "quote": "B2 required, please provide an official language certificate, e.g.: UNIcert® English: UNIcert® II TOEIC: 785 Reading: 385 Listening: 400 Speaking: 160 Writing: 150 TOEFL iBT (since 2026): 4 Reading: 4 Listening: 4 Speaking: 4 Writing: 4 TOEFL iBT (before 2026): 72 Reading: 18 Listening: 17 Speaking: 20 Writing: 17 telc English: telc English B2 PTE Academic: 59 IELTS Academic: 5.5 Cambridge English Qualifications Business (BEC) : B2 Business Vantage Cambridge English Qualifications: B2 First"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez l'éligibilité via uni-assist. Le programme est très axé sur les mathématiques: un test d'entrée spécifique est fortement recommandé et doit être joint à la candidature.",
+          "en": "Check eligibility via uni-assist. The programme is highly mathematics-focused: a subject-specific entrance test is strongly recommended and should be included with your application."
+        },
+        "evidence": [
+          {
+            "url": "https://www.mytuc.org/qbnf",
+            "quote": "You may check whether you are eligible to apply to our program via the uni-assist webpage."
+          },
+          {
+            "url": "https://www.mytuc.org/qbnf",
+            "quote": "we kindly ask you to complete the subject-specific entrance test and include the result with your application to uni-assist."
+          }
+        ]
+      }
+    ]
+  }
+}

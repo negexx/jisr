@@ -1,0 +1,59 @@
+{
+  "slug": "fr-i-u-t-poitiers-site-chatellerault-0861283c-but-reseaux-et-telecommunication-10655",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10655&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10655&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le programme est un BUT, diplôme professionnel de niveau bac+3, mentionné comme « confère un niveau bac+3 » dans la page Campus France. Les frais de scolarité de 178 euros par année sont indiqués sur la fiche Parcoursup pour les étudiants non boursiers. Les étudiants boursiers ne paient pas de frais. La CVEC est un supplément. Le niveau de français B2 est un prérequis pour s'inscrire à la formation. Le programme est enseigné en français, avec l'anglais comme langue vivante obligatoire. La page Parcoursup indique que les candidats étrangers non titulaires d'un bac français ou européen, non ressortissants de l'UE/EEE/Suisse/Monaco/Andorre et résidant dans un pays avec une procédure Etudes en France ne doivent pas s'inscrire sur Parcoursup, mais sur le site Campus France de leur pays. Le canal de candidature n'est pas inclus conformément à la tâche. La note sur les épreuves orales mentionne une date précise (4 mai 2026) mais elle est spécifique à la session 2026 et concerne les candidats sélectionnés. La grille d'analyse des candidatures est fournie à titre indicatif pour comprendre les critères d'évaluation.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10655&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidatures sont analysées selon la grille d'analyse : résultats scolaires 35%, méthodes de travail 25%, savoir-être 25%, motivation 10%, engagement 5%.",
+          "en": "Applications are reviewed using the analysis grid: academic results 35%, work methods 25%, soft skills 25%, motivation 10%, engagement 5%."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10655&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 35 % Méthodes de travail 25 % Savoir-être 25 % Motivation 10 % Engagement et activités 5 % Au total 100 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des épreuves orales d'admission sont organisées : entretien de 5 minutes pour présenter motivations et parcours. Une convocation est envoyée si vous êtes sélectionné.",
+          "en": "Oral admission tests are held: a 5-minute interview to present motivations and background. A summons is sent if you are selected."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10655&typeBac=0&originePc=0",
+            "quote": "Les épreuves orales ou l'entretien auront lieu : Du lundi 04 mai 2026 au lundi 04 mai 2026"
+          }
+        ]
+      }
+    ]
+  }
+}

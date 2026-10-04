@@ -1,0 +1,46 @@
+{
+  "slug": "fr-universite-bourgogne-europe-ex-universit-0212296g-licence-gestion-15088",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=15088&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=15088&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+        }
+      ]
+    }
+  },
+  "notes": "The only supplied page for this programme is a Parcoursup fiche. The tuition of 178 EUR/year is the French/EU rate shown there; the differentiated rate for extra-communautaire students (2,902 EUR/year for Licence) appears on the Campus France page and is not specific to this programme, so it is not stated as a fact. No intake deadline was found: the Parcoursup fiche does not state a day/month/year deadline for international applicants, and the Études en France page names no date.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=15088&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les modalités de candidature pour les titulaires d'un Bac marocain (procédure Études en France) et les prérequis de la formation.",
+          "en": "Check application procedures for Moroccan Bac holders (Études en France procedure) and programme prerequisites."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces",
+            "quote": "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France de votre pays de résidence."
+          }
+        ]
+      }
+    ]
+  }
+}

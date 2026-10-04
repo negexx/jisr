@@ -1,0 +1,16 @@
+{
+  "slug": "fr-iut-lyon1-site-de-villeurbanne-gratte-ci-0691860x-but-genie-industriel-et-maintena-8491",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8491&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8491&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des droits d'inscription différenciés de 2 902 € (cycle Licence) provient d'une page générale de Campus France Maroc et non de la fiche du programme ; la fiche programme indique 178 € par année, un tarif qui ne concerne pas les étudiants extra-communautaires. Campus France précise que certains établissements exonèrent les étudiants étrangers de ces droits différenciés : à vérifier auprès de l'IUT. Aucune date de candidature propre à ce programme pour un candidat non-EU n'est fournie. La condition de niveau B2 en français figure sur la fiche Parcoursup du programme et non sur une page Campus France ; elle est donc extraite de ce programme."
+}

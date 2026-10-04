@@ -1,0 +1,59 @@
+{
+  "slug": "fr-universite-de-lorraine-faculte-des-scien-0542485h-licence-informatique-42969",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=42969&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=42969&typeBac=0&originePc=0",
+          "quote": "Langue vivante 2 : Pas de LV2 Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition fees shown on the Parcoursup page (178 euros per year, no fees for scholarship holders) apply to the standard Parcoursup admission route; the page does not state a tuition fee for non-EU foreign-diploma applicants, so no tuition fact is provided. Teaching language: the programme is taught in French (a French licence, with English as a language course and a B2 French level required); no English-taught track is mentioned. Duration: the page mentions L2, L3 and 'Taux de réussite en 3 ou 4 ans', the standard licence duration being 3 years. A foreign-diploma applicant applies through Etudes en France / Campus France, so no applicationChannel is output here per the task instructions.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=42969&typeBac=0&originePc=0",
+            "quote": "Langue vivante 2 : Pas de LV2 Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les critères d'analyse des candidatures (résultats scolaires 75 %, méthodes de travail 15 %, savoir-être 5 %, engagement 5 %).",
+          "en": "Check the application assessment criteria (academic results 75%, working methods 15%, soft skills 5%, engagement 5%)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=42969&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 75 % Méthodes de travail 15 % Savoir-être 5 % Engagement et activités 5 % Au total 100 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Disposer de compétences en communication écrite et orale en français et dans au moins une langue étrangère (niveau B).",
+          "en": "Have written and oral communication skills in French and in at least one foreign language (level B)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=42969&typeBac=0&originePc=0",
+            "quote": "Cette mention nécessite en effet une capacité à communiquer à l’écrit et à l’oral de manière rigoureuse et adaptée, une aptitude à se documenter dans au moins une langue étrangère, prioritairement anglaise et une capacité à l’écrire et à la parler à un niveau B."
+          }
+        ]
+      }
+    ]
+  }
+}

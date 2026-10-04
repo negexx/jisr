@@ -1,0 +1,46 @@
+{
+  "slug": "fr-universite-dorleans-0450855k-licence-informatique-47168",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47168&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47168&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La fiche Parcoursup présente les frais de scolarité (178 euros par année) et la CVEC, mais ces montants concernent les étudiants français/UE et ne sont pas présentés comme s'appliquant aux candidats extra-communautaires titulaires d'un diplôme étranger : frais de scolarité laissés de côté. Aucun document requis n'est nommé pour ce programme. Les pages Campus France Maroc fournies concernent la procédure générale (Études en France), pas ce programme précis ; la mention « vous devrez formuler vos vœux sur la plateforme Études en France » pour les titulaires d'un Bac marocain ne suffit donc pas comme canal de candidature pour ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47168&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Moyenne générale de 14/20 ou plus exigée pour le parcours d'Excellence MINERVE, avec de très bons résultats dans les spécialités scientifiques ; examen du dossier par la commission (résultats scolaires 75 %).",
+          "en": "Overall average of 14/20 or above required for the Excellence MINERVE track, with very good results in scientific specialities; application assessed by the commission (academic results 75%)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47168&typeBac=0&originePc=0",
+            "quote": "Moyenne générale : supérieure ou égale à 14/20, en cohérence avec les exigences de la formation d'Excellence MINERVE."
+          }
+        ]
+      }
+    ]
+  }
+}

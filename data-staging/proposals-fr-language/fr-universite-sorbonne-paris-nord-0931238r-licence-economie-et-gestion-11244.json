@@ -1,0 +1,46 @@
+{
+  "slug": "fr-universite-sorbonne-paris-nord-0931238r-licence-economie-et-gestion-11244",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11244&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11244&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+        }
+      ]
+    }
+  },
+  "notes": "Le coût de la formation (frais de scolarité) n'est pas indiqué pour les étudiants extra-communautaires : la fiche Parcoursup n'affiche que « Par année 178 euros », qui est le tarif des étudiants français ou ressortissants de l'UE/EEE/Suisse, et « Pas de frais pour les boursiers ». Aucun montant hors-UE n'est donné pour ce programme, donc la tuition n'est pas extraite. Aucune date limite de candidature 2026-2027 avec année et destinataire international n'est fournie : le calendrier n'est donné qu'en mois (avril-mai 2026, réponses à partir du 2 juin 2026) sans date de dépôt de dossier. La page Campus France Maroc confirme que les titulaires du Bac marocain passent par la plateforme Études en France (procédure DAP), pas par Parcoursup.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11244&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier le niveau de français C1 et les compétences en mathématiques, statistiques et expression écrite : le dossier (notes, appréciations, motivation, spécialités) est analysé par la commission. Vérifier aussi que les bacheliers marocains candidatent via Études en France (procédure DAP) et non sur Parcoursup.",
+          "en": "Check the C1 French level and the mathematics, statistics and written-expression skills: the file (marks, appraisals, motivation, specialisations) is reviewed by the commission. Also check that Moroccan Bac holders apply through Études en France (DAP procedure), not Parcoursup."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11244&typeBac=0&originePc=0",
+            "quote": "Les formations analysent les candidatures en avril-mai 2026 à partir des critères qu’elles ont définis et de leur niveau d’importance."
+          }
+        ]
+      }
+    ]
+  }
+}

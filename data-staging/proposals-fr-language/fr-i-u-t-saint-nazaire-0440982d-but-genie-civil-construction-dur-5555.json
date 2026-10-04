@@ -1,0 +1,62 @@
+{
+  "slug": "fr-i-u-t-saint-nazaire-0440982d-but-genie-civil-construction-dur-5555",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5555&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5555&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 euros par année est présenté sur la fiche Parcoursup sans mention de nationalité ; les droits différenciés pour les étudiants extracommunautaires (2 902 euros pour une année en cycle de Licence) figurent sur une page générale Campus France Maroc qui n'est pas la page de ce programme, donc ils ne sont pas retenus ici. Le quota et le nombre de places (100 places en 2026) concernent la session 2026 sur Parcoursup. Aucune date limite de candidature pour ce programme n'est indiquée. Les documents listés ne sont pas présentés comme une liste de pièces à fournir, mais la lettre de motivation est explicitement attendue des candidats. La page ne précise pas si la formation est 100 % en français ; la seule indication de langue est le niveau de français B2 requis.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5555&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le classement des candidatures dépend des résultats scolaires (75 %), méthodes de travail (8 %), savoir-être (4 %), motivation (11 %) et engagements (2 %) : ces critères sont évalués par la commission.",
+          "en": "Admission ranking depends on academic results (75%), working methods (8%), soft skills (4%), motivation (11%) and commitment (2%): these criteria are assessed by the commission."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5555&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 75%"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5555&typeBac=0&originePc=0",
+            "quote": "Vos compétences, méthodes de travail et savoir-faire comptent pour 8%"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5555&typeBac=0&originePc=0",
+            "quote": "Votre savoir-être compte pour 4%"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5555&typeBac=0&originePc=0",
+            "quote": "Votre motivation et la cohérence de votre projet comptent pour 11%"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5555&typeBac=0&originePc=0",
+            "quote": "Vos engagements, vos activités et centres d’intérêt comptent pour 2%"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "fr-iut-nord-franche-comte-site-de-montbelia-0251763f-but-gestion-administrative-et-co-3588",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3588&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3588&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La page Parcoursup indique que les candidats étrangers non ressortissants de l'UE et résidant dans un pays à procédure Études en France ne doivent pas s'inscrire sur Parcoursup mais sur le site Campus France de leur pays. Les frais de 178 euros par année sont ceux indiqués sur Parcoursup ; ils ne sont pas explicitement présentés comme le tarif des étudiants extra-communautaires et ne correspondent pas aux droits différenciés de 2 902 euros mentionnés par la page Campus France Maroc pour une année de Licence, qui ne concerne pas spécifiquement ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3588&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des résultats satisfaisants en anglais et dans une seconde langue vivante (espagnol, allemand) sont nécessaires.",
+          "en": "Satisfactory results in English and a second modern language (Spanish, German) are necessary."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3588&typeBac=0&originePc=0",
+            "quote": "Compte tenu de notre ouverture à l’international, des résultats satisfaisants en anglais et dans une seconde langue vivante (espagnol, allemand) sont nécessaires."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Lettre de motivation personnalisée, argumentée, montrant que le candidat s'est informé sur la formation et les métiers préparés.",
+          "en": "Personalised, well-argued motivation letter showing the candidate has researched the programme and the careers it prepares for."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3588&typeBac=0&originePc=0",
+            "quote": "La lettre de motivation doit être personnalisée, bien argumentée et montrer que le candidat s’est informé sur notre formation et les métiers préparés."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les résultats scolaires comptent pour 55 % dans l'examen des candidatures.",
+          "en": "Academic results account for 55% of the application review."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3588&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 55%"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "fr-i-u-t-dorleans-0450092f-but-metiers-de-la-transition-et-5673",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5673&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5673&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le tarif de 178 euros par année figure sur la fiche Parcoursup sans mentionner les étudiants internationaux ; les droits différenciés pour les étudiants extra-communautaires (2 902 euros pour une année en cycle de Licence) sont mentionnés sur une page générale du Campus France Maroc. Le programme est suivi d'un BUT; la page générale du Campus France Maroc mentionne que les certifications de français (TCF, DELF B2, DALF) sont exigées pour la procédure Études en France. Le programme est indiqué comme étant contrôlé par l'État et conduisant au niveau bac+3.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5673&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La sélection se fait sur dossier : résultats académiques (50 %), méthodes de travail (20 %), savoir-être (15 %), motivation (8 %), engagements (7 %).",
+          "en": "Selection is based on the application file: academic results (50%), work methods (20%), soft skills (15%), motivation (8%), engagement (7%)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5673&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 50 % Méthodes de travail 20 % Savoir-être 15 % Motivation 8 % Engagement et activités 7 %"
+          }
+        ]
+      }
+    ]
+  }
+}

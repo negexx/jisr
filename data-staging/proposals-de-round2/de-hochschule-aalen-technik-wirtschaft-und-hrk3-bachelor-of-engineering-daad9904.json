@@ -1,0 +1,63 @@
+{
+  "slug": "de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad9904",
+  "programmePage": "https://www.hs-aalen.de/en/courses/141",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9904/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+          "quote": "To do so, you must apply to Uni Assist for a preliminary review documentation (Vorprüfungsdokumentation - VPD which assesses your eligibility for university admission in Germany)."
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des frais de scolarité diffère entre les pages : le DAAD et la page des frais indiquent 1 500 EUR par semestre, tandis qu'une autre page indique 1 500 EUR pour les frais de scolarité internationaux et 180 EUR de frais de semestre pour l'inscription. Les frais de scolarité sont indiqués pour les étudiants non-UE/EEE (hors UE/EEE). Le délai de candidature (03.12.2026) provient de la page du programme; aucune mention explicite de l'ouverture des candidatures. L'admission avec un diplôme étranger nécessite une VPD de uni-assist; les candidats postulent ensuite via le portail en ligne de l'université.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["toefl"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9904/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 72"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Fournir un TestAS (core test + module ingénierie, score ≥ 100) OU un SAT (≥ 1050) OU un ACT (≥ 20).",
+          "en": "Provide TestAS (core test + subject-specific engineering module, score at least 100) OR SAT (minimum 1050 points) OR ACT (score at least 20)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+            "quote": "TestAS (paper-based or digital) core test and subject-specific engineering module with a score of at least 100"
+          },
+          {
+            "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+            "quote": "SAT with a minimum of 1050 points or ACT with a score of at least 20."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "fr-universite-marie-et-louis-pasteur-univer-0252044l-licence-economie-et-gestion-3540",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3540&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3540&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the only fee figure on the programme's page is \"Par année 178 euros\" (Parcoursup standard rate). No fee for extra-communautaires is given for this specific programme, so tuition is left out (the general \"droits d'inscription différenciés\" page is a general Campus France institution-wide policy, not this programme's stated fee). Duration: no semester or ECTS count is stated on the supplied pages, so durationYears is left out. Intakes/deadlines: none stated for this programme's applicants; dates on the ADIUT page concern 1ère année BUT, not this Licence. applicationChannel: omitted per task instruction (Etudes en France / Campus France for foreign-diploma applicants). NB the page states that non-EU candidates with a French-equivalent bac do not go through Parcoursup but through the DAP procedure; this is a general admission condition and not a stated requirement of this programme's file, so it was not encoded.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3540&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Dossier examiné par une commission : résultats scolaires (50 %), méthodes de travail (30 %), savoir-être (10 %), motivation (10 %). Capacités en mathématiques et en sciences économiques jugées essentielles.",
+          "en": "Application reviewed by a commission: academic results (50%), work methods (30%), soft skills (10%), motivation (10%). Mathematics and economics skills rated essential."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3540&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 50 % Méthodes de travail 30 % Savoir-être 10 % Motivation 10 %"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3540&typeBac=0&originePc=0",
+            "quote": "Capacités en mathématiques notes de première et terminale Essentiel 4 sur 4"
+          }
+        ]
+      }
+    ]
+  }
+}

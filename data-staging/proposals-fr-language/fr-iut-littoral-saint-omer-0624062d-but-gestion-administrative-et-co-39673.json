@@ -1,0 +1,46 @@
+{
+  "slug": "fr-iut-littoral-saint-omer-0624062d-but-gestion-administrative-et-co-39673",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39673&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39673&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 euros par année figurant sur la fiche Parcoursup correspond aux droits d'inscription des étudiants français et communautaires ; les étudiants extra-communautaires (dont les Marocains) sont soumis aux droits d'inscription différenciés (2 902 euros par année en Licence selon la page Campus France Maroc). Aucune date de candidature n'est donnée pour ce programme : les candidats internationaux passent par la procédure Études en France / Campus France, gérée séparément.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39673&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La sélection comprend un entretien oral ; les candidats dont le dossier est retenu sont convoqués entre le 27 et le 30 avril 2026.",
+          "en": "Selection includes an oral interview; shortlisted applicants are invited between 27 and 30 April 2026."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39673&typeBac=0&originePc=0",
+            "quote": "Les épreuves orales ou l'entretien auront lieu : Du lundi 27 avril 2026 au jeudi 30 avril 2026"
+          }
+        ]
+      }
+    ]
+  }
+}

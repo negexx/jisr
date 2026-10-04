@@ -1,0 +1,68 @@
+{
+  "slug": "nl-hogeschool-rotterdam-22oj-accountancy-1001o3536",
+  "programmePage": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/accountancy/voltijd/",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["nl"],
+      "evidence": [
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/accountancy/voltijd/",
+          "quote": "Opleidingstype Voltijd Bachelor Taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/",
+          "quote": "Meld je aan via Studielink Doe 't direct"
+        }
+      ]
+    }
+  },
+  "notes": "Les frais de scolarité ne sont pas indiqués pour cette formation spécifique : la page officielle de l'Accountancy ne mentionne pas de montant et la page des tarifs généraux ne précise pas le tarif d'instellingscollegegeld qui s'applique à cette formation pour les étudiants hors EEE. La langue d'enseignement est le néerlandais. Les délais d'inscription pour cette formation ne sont pas indiqués sur la page officielle avec une année précise.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez sur la page 'Toelatingsvoorwaarden' de diplômes admis et les éventuelles conditions supplémentaires pour un Baccalauréat marocain.",
+          "en": "Check the 'Toelatingsvoorwaarden' page for accepted diplomas and any additional conditions for a Moroccan Baccalaureate."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/",
+            "quote": "Check je aanmelddeadline Tot wanneer kun je je aanmelden? De uiterste aanmelddatum verschilt per opleiding."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme étranger : il doit être comparable au diplôme néerlandais requis et vous devez maîtriser suffisamment le néerlandais.",
+          "en": "Foreign diploma: it must be comparable to the required Dutch diploma and your Dutch must be sufficient."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/",
+            "quote": "Als je een buitenlands diploma hebt, dan moet deze vergelijkbaar zijn met het vereiste Nederlandse diploma én je moet de Nederlandse taal voldoende beheersen."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les frais de scolarité (instellingscollegegeld) pour les étudiants hors EEE sont à vérifier via le Collegegeldwijzer.",
+          "en": "Tuition fees (instellingscollegegeld) for non-EEA students must be checked via the Collegegeldwijzer."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bedrijfskunde/deeltijd/studiekosten/",
+            "quote": "Studenten uit niet-EER landen betalen instellingscollegegeld."
+          }
+        ]
+      }
+    ]
+  }
+}

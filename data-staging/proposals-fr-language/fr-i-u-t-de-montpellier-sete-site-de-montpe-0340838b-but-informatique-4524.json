@@ -1,0 +1,23 @@
+{
+  "slug": "fr-i-u-t-de-montpellier-sete-site-de-montpe-0340838b-but-informatique-4524",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4524&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4524&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4524&typeBac=0&originePc=0",
+          "quote": "Les attendus nationaux COMPÉTENCES GENERALES - Avoir une maitrise du français permettant de s’exprimer, d’acquérir de nouvelles compétences, de structurer un raisonnement, un écrit, - Avoir une connaissance suffisante de l’anglais permettant de progresser pendant la formation,"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4524&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : Anglais Langue vivante 2 : Pas de LV2"
+        }
+      ]
+    }
+  }
+}

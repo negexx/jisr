@@ -1,0 +1,61 @@
+{
+  "slug": "de-technische-hochschule-rosenheim-hrk232-traunstein-e-commerce-daad7974",
+  "programmePage": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/e-commerce",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2027-07-15",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme",
+          "quote": "E-Commerce at Campus Chiemgau in Traunstein • application period: 15 February - 15 July 2027 via uni-assist with a university entrance qualification from abroad"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7974/",
+          "quote": "With a university entrance qualification from abroad via uni-assist: 15 February – 15 September for a study start in October (winter semester)"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7974/",
+            "quote": "German language skills A2 required, please provide an official language certificate, e.g.: Deutsches Sprachdiplom der Kultusministerkonferenz (DSD): DSD I"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier l'éligibilité de votre baccalauréat marocain comme qualification d'entrée à l'université via la base de données DAAD et uni-assist.",
+          "en": "Check whether your Moroccan Baccalauréat counts as a higher education entrance qualification via the DAAD database and uni-assist."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7974/",
+            "quote": "A general or subject-specific higher education entrance qualification is sufficient to qualify for the study programme."
+          }
+        ]
+      }
+    ]
+  }
+}

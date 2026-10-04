@@ -1,0 +1,59 @@
+{
+  "slug": "de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-beng-industrial-engineer-daad4668",
+  "programmePage": "https://www.th-deg.de/ie-b-en",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 50000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4668/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries Switzerland United Kingdom 500 EUR"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/en/apply",
+          "quote": "choose what you aim to study and apply directly to DIT via our own online application portal, Primuss."
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 500 EUR correspond aux frais de scolarité par semestre indiqués par la DAAD pour les candidats non-UE ; la page du programme (th-deg.de/ie-b-en) indique « No tuition fees, only student union fee » pour les étudiants en général, donc le montant exact à payer par un étudiant marocain doit être vérifié. Les frais de service (500 EUR par semestre) et les frais de dossier (60 EUR) pour les étudiants non-UE/EEA sont mentionnés sur la page des frais mais ne sont pas des frais de scolarité au sens strict. Le programme indique 210 ECTS/7 semestres = 3,5 ans. Aucune liste de documents propre à ce programme n'est fournie par les pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Test d'aptitude (Academic Readiness Assessment / ARLA) : résultat à fournir avec les autres documents de candidature.",
+          "en": "Academic Readiness Assessment / ARLA test: result must be provided with the other application documents."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-deg.de/ie-b-en",
+            "quote": "Applicants have to take an Academic Readiness Assessment test and provide the result certificate in supplement to the other documents required for application"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier votre admissibilité avec la base de données DAAD ou Anabin (qualification d'entrée à l'université).",
+          "en": "Check your eligibility using the DAAD database or Anabin (university entrance qualification)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-deg.de/en/apply",
+            "quote": "To find out whether your school-leaving certificate meets the requirements for the degree programs at our university, please use the DAAD Database on admission requirements."
+          }
+        ]
+      }
+    ]
+  }
+}

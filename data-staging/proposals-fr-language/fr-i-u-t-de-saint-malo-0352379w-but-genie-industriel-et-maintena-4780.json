@@ -1,0 +1,33 @@
+{
+  "slug": "fr-i-u-t-de-saint-malo-0352379w-but-genie-industriel-et-maintena-4780",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4780&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4780&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune page fournie ne concerne la plateforme Études en France pour cette formation précise : applicationChannel n'est donc pas extrait (le candidat marocain titulaire du Bac marocain doit passer par Études en France / Campus France, cf. page Parcoursup qui précise que les candidats étrangers non titulaires d'un bac français ne doivent pas s'inscrire sur Parcoursup). tuition : la seule somme indiquée (178 euros par an) figure sous \"Frais de scolarité\" sur la fiche Parcoursup, sans mention de nationalité ; elle correspond aux droits des étudiants français/UE et non aux droits différenciés (2 902 euros/an pour une 1re inscription en Licence) mentionnés par Campus France, à vérifier auprès de l'établissement. Le niveau B2 est le \"Niveau de français requis pour s'inscrire à la formation\" indiqué sur la fiche Parcoursup.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des épreuves orales (entretien devant jury) font partie de la sélection pour cette formation. Vérifiez les dates et modalités sur la fiche Parcoursup et auprès de l'IUT.",
+          "en": "Oral examinations (interview before a jury) are part of the selection for this programme. Check the dates and procedures on the Parcoursup page and with the IUT."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4780&typeBac=0&originePc=0",
+            "quote": "Pendant les épreuves orales, les candidats convoqués seront amenés par groupe de 10 maximum à expliquer au jury leur parcours et leur motivation à intégrer la formation."
+          }
+        ]
+      }
+    ]
+  }
+}

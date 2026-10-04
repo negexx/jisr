@@ -1,0 +1,55 @@
+{
+  "slug": "nl-fontys-hogeschool-30gb-venlo-commerciele-economie-1001o3452",
+  "programmePage": "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["nl"],
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+          "quote": "Taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+          "quote": "Meld je uiterlijk 1 mei aan via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "No tuition figure could be quoted for this programme: the only fee information is institution-wide (collegegeld page) and the programme page refers to the collegegeldmeter without an amount, so tuition is left out. No intake dates/start dates are given for the programme itself beyond 'Startdatum September', so the intake entry has all-null dates and is not usable as a dated intake. The 1 May 2027 deadline is quoted but is not stated as being for non-EU/foreign-diploma applicants, so it is provided only as a manual check, not as a fact. Teaching language is Dutch only (the programme is not taught in English); this means a Moroccan applicant will likely also need to meet Dutch language requirements, but the pages do not state such a requirement for this programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme requis : havo, vwo ou mbo niveau 4. Sans ce diplôme, l'admission reste possible dans certains cas ; vérifiez les conditions complètes.",
+          "en": "Required diploma: havo, vwo or mbo level 4. Without it, admission may still be possible in some cases; check the full conditions."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+            "quote": "Met een havo-, vwo-, of mbo-diploma (niveau 4) ben je direct toelaatbaar."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La date limite d'inscription du 1 mai 2027 n'est pas indiquée comme s'appliquant aux candidats internationaux (diplôme étranger) : vérifiez votre propre date limite auprès de Fontys.",
+          "en": "The 1 May 2027 application deadline is not stated as applying to international applicants with a foreign diploma: verify your own deadline with Fontys."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+            "quote": "Meld je uiterlijk 1 mei aan via Studielink."
+          }
+        ]
+      }
+    ]
+  }
+}

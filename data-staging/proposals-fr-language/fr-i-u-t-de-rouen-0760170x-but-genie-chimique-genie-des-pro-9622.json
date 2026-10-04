@@ -1,0 +1,37 @@
+{
+  "slug": "fr-i-u-t-de-rouen-0760170x-but-genie-chimique-genie-des-pro-9622",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9622&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9622&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune page fournie n'est la page propre du programme (celle de l'UFR/département) : la fiche Parcoursup sert de programmePage. Aucun frais de scolarité n'est indiqué pour un étudiant hors UE dans cette formation : la fiche Parcoursup ne mentionne que « Par année 178 euros », tarif des étudiants non extracommunautaires (les droits différenciés de 2 902 €/an pour la Licence cités par Campus France Maroc sont une règle générale, non propre à ce BUT), donc tuition laissée de côté. Le délai de candidature « 15 février » provient d'une page Campus France Maroc (procédure Études en France) et non de la fiche du programme ; il est traité comme récurrent car aucun millésime n'est lisible dans le texte fourni. Le diplôme d'accès (bac marocain) est attesté par la page Campus France ; aucun document supplémentaire (relevés, passeport) n'est listé dans les pages fournies. Distinction BUT : les bacheliers français/européens passent par Parcoursup, les titulaires d'un bac marocain ou d'un diplôme étranger hors UE par Études en France.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9622&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "fr-universite-de-rennes-epe-0353074b-licence-informatique-39288",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39288&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39288&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+        }
+      ]
+    }
+  },
+  "notes": "Le coût de la vie étudiante (CVEC) n'est pas inclus dans la tuition. La page Parcoursup est la fiche officielle de la formation, mais elle s'adresse en priorité aux candidats français et européens ; les candidats marocains passent par Études en France. Le montant de la tuition pour les étudiants non-boursiers n'est pas indiqué pour cette formation.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39288&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les critères d'admission dans la langue d'enseignement, notamment le niveau de français requis (C1) et les exigences linguistiques.",
+          "en": "Check admission criteria for the teaching language, especially the required French level (C1) and language requirements."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39288&typeBac=0&originePc=0",
+            "quote": "Langue vivante 1 : Anglais"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non ressortissants de l'UE titulaires d'un diplôme étranger doivent vérifier s'ils passent par la procédure DAP ou une autre procédure spécifique.",
+          "en": "Non-EU applicants with a foreign diploma must check whether they go through the DAP procedure or another specific procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39288&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      }
+    ]
+  }
+}

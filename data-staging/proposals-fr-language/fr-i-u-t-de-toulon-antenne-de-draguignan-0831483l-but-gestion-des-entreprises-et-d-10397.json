@@ -1,0 +1,59 @@
+{
+  "slug": "fr-i-u-t-de-toulon-antenne-de-draguignan-0831483l-but-gestion-des-entreprises-et-d-10397",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10397&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10397&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La fiche Parcoursup concerne un dossier français : le tarif de 178 euros/an est celui des droits d'inscription affichés sur la fiche ; les étudiants extracommunautaires peuvent devoir acquitter les droits différenciés (2 902 euros/an en Licence selon la page Campus France Maroc sur le coût des études). Vérifier le montant exact auprès de l'IUT de Toulon. Aucune date limite de candidature 2026-2027 n'est indiquée pour ce BUT sur cette page ; le calendrier ADIUT Maroc 2026-2027 n'est pas encore disponible. Les dates de candidature pour les titulaires d'un Bac marocain sont sur la plateforme Études en France, non extraites ici.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10397&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10397&typeBac=0&originePc=0",
+            "quote": "Langue vivante 1 : Anglais"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien de motivation pourra être organisé : les épreuves orales ou l'entretien ont lieu entre avril et mai.",
+          "en": "A motivation interview may be organised: the oral exams or interview take place between April and May."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10397&typeBac=0&originePc=0",
+            "quote": "Les épreuves orales ou l'entretien auront lieu : Du lundi 13 avril 2026 au jeudi 14 mai 2026"
+          }
+        ]
+      }
+    ]
+  }
+}

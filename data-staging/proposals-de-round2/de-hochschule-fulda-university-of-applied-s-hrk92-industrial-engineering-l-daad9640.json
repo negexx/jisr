@@ -1,0 +1,71 @@
+{
+  "slug": "de-hochschule-fulda-university-of-applied-s-hrk92-industrial-engineering-l-daad9640",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9640/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9640/",
+          "quote": "Tuition fees per semester None"
+        },
+        {
+          "url": "https://www.hs-fulda.de/en/international/costs-and-funding",
+          "quote": "As a state university in Germany´s federal state of Hesse, Fulda University of Applied Sciences does not charge any tuition fees."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9640/",
+          "quote": "Submit application via Please apply via uni-assist."
+        },
+        {
+          "url": "https://www.hs-fulda.de/en/study/how-do-i-apply/application-with-international-transcripts-of-records",
+          "quote": "Applicants who have a foreign university entrance qualification (Attestat, Baccalauréat, Lise Diplomasi, International Baccalaureate, Swiadectwo ukonczenia etc.) and/or a foreign first degree apply via uni-assist - regardless of nationality and place of residence"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: The fee is stated as 'None' on the DAAD programme page for this specific programme (Tuition fees per semester None), and the university's general costs page confirms no tuition fees for this state university, so the value 0 EUR per semester is used. The programme page says 'A university entrance qualification (\"Hochschulzugangsberechtigung\", \"HZB\") for German universities' is required; since the applicant has a Moroccan Baccalauréat, this is not automatically a German HZB, so it is treated as a manual check with prior_study_years_min 12. Application channel: The DAAD page says 'Please apply via uni-assist.' and the university's international transcripts page confirms foreign-qualification applicants apply via uni-assist; no VPD (preliminary review) is mentioned. Intakes: The DAAD page states 'The following is valid for applicants from: all countries For the winter semester: until 15 July' — this is for applicants from all countries, so it applies to non-EU applicants; no year is given, so recurringDeadline 15 July is used.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["ielts", "toefl"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9640/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 5.5"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9640/",
+            "quote": "TOEFL iBT (before 2026): 72"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme marocain est reconnu comme HZB (qualification d'accès aux études supérieures) en Allemagne ; consultez la base de données DAAD.",
+          "en": "Check whether your Moroccan Baccalauréat is recognised as a HZB (university entrance qualification) in Germany; consult the DAAD admissions database."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-fulda.de/en/study/how-do-i-apply/application-with-international-transcripts-of-records",
+            "quote": "If you are not sure whether your school-leaving qualification is recognised in Germany or whether you have a direct or indirect university entrance qualification, please take a look at the admissions database of the DAAD."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "fr-i-u-t-reims-chalons-charleville-site-de-0512004b-but-genie-industriel-et-maintena-6164",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6164&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6164&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "The only supplied page for this exact programme is its Parcoursup page, which describes French and European Bac holders; the task says such applicants apply on Parcoursup, while the foreign-diploma applicant applies through Etudes en France / Campus France (no applicationChannel output). The Parcoursup page quotes tuition of 178 euros per year, but that figure is not established as applying to a non-EU applicant with a foreign diploma, so no tuition fact is given.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6164&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien de motivation est organisé ; le candidat y présente son CV et ses résultats scolaires.",
+          "en": "A motivation interview is organised; the candidate presents their CV and academic results."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6164&typeBac=0&originePc=0",
+            "quote": "Un entretien de motivation est organisé afin d’évaluer le candidat sur sa connaissance des disciplines et du programme de la spécialité, ainsi que sur sa motivation à intégrer la formation."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La sélection s'appuie sur une grille : savoir-être et motivation (29 % chacun), résultats scolaires (20 %), méthodes de travail (17 %), engagement (5 %).",
+          "en": "Selection uses a grid: soft skills and motivation (29% each), academic results (20%), work methods (17%), engagement (5%)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6164&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 20 % Méthodes de travail 17 % Savoir-être 29 % Motivation 29 % Engagement et activités 5 %"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "fr-i-u-t-nice-cote-dazur-0060914l-but-informatique-2250",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2250&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2250&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : Anglais Langue vivante 2 : Pas de LV2 Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Fee of 178 EUR/year is the Parcoursup-listed public-university rate; the Campus France Maroc page 'Le coût des études, les bourses' states that non-EU students are liable to differentiated tuition fees (2,902 EUR/year for Licence) unless exempted, so the actual rate for this student needs to be checked with the institution.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2250&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      }
+    ]
+  }
+}

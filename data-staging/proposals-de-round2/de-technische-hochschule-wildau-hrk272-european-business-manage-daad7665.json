@@ -1,0 +1,126 @@
+{
+  "slug": "de-technische-hochschule-wildau-hrk272-european-business-manage-daad7665",
+  "programmePage": "https://en.th-wildau.de/index.php?id=30638",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://en.th-wildau.de/index.php?id=30638",
+          "quote": "Fees No tuition fees (the university only charges semester fees each semester)"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://en.th-wildau.de/index.php?id=30638",
+          "quote": "Applicants with foreign education certificates must apply via uni-assist e.V."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "officially-translated-certificates",
+          "name": {
+            "fr": "Certificats officiellement traduits",
+            "en": "Officially translated certificates"
+          },
+          "quotedAs": "officially translated certificates",
+          "translationRequired": true
+        },
+        {
+          "slug": "passport-id-card",
+          "name": {
+            "fr": "Copie du passeport/carte d'identité avec photo reconnaissable",
+            "en": "Copy of passport/ID card with recognisable photo"
+          },
+          "quotedAs": "copy of passport/ID card with recognisable photo",
+          "translationRequired": null
+        },
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV actuel (avec détails complets jusqu'à la date de candidature)",
+            "en": "Current CV (with complete details up to the date of application)"
+          },
+          "quotedAs": "current CV (with complete details up to the date of application)",
+          "translationRequired": null
+        },
+        {
+          "slug": "english-language-skills-proof",
+          "name": {
+            "fr": "Preuve de compétences en anglais au niveau requis",
+            "en": "Proof of English language skills at the required level"
+          },
+          "quotedAs": "proof of your English language skills at the required level",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://en.th-wildau.de/study/application/degree-programmes/online-application",
+          "quote": "Required application documents: officially translated certificates copy of passport/ID card with recognisable photo current CV (with complete details up to the date of application) proof of your German language skills at the required level proof of your English language skills at the required level"
+        }
+      ]
+    }
+  },
+  "notes": "Application deadlines for this programme are not stated for international applicants with a foreign diploma; the programme page does not give a dated deadline. The DAAD page gives a semester contribution of approx. 350 EUR, but that is a semester contribution, not tuition; no tuition is charged for the programme (as quoted).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7665/",
+            "quote": "English language skills B2 required, please provide an official language certificate"
+          },
+          {
+            "url": "https://en.th-wildau.de/index.php?id=30638",
+            "quote": "who present appropriate recognized proof of language proficiency which corresponds to at least B2.2 of the Common European Framework of Reference for Languages (CEFR)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats titulaires de certificats d'études étrangers doivent postuler via uni-assist e.V. ; l'université ne traite pas directement ces candidatures.",
+          "en": "Applicants with foreign education certificates must apply via uni-assist e.V.; the university does not process these applications directly."
+        },
+        "evidence": [
+          {
+            "url": "https://en.th-wildau.de/index.php?id=30638",
+            "quote": "Applicants with foreign education certificates must apply via uni-assist e.V."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des connaissances avancées en allemand sont requises pour les programmes enseignés en allemand ; pour ce programme enseigné en anglais, aucun niveau d'allemand n'est exigé.",
+          "en": "Advanced German is required for German-taught programmes; for this English-taught programme, no German level is required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-wildau.de/hochschule/zentrale-einrichtungen/zentrum-fuer-internationale-angelegenheiten/international-office/incoming/internationale-vollzeitstudierende",
+            "quote": "Viele unserer Studiengänge werden auf Deutsch angeboten, weshalb fortgeschrittene Deutschkenntnisse für die Bewerbung erforderlich sind."
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7665/",
+            "quote": "German language skills No minimum language level required"
+          }
+        ]
+      }
+    ]
+  }
+}

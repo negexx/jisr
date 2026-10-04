@@ -1,0 +1,109 @@
+{
+  "slug": "de-technische-hochschule-ingolstadt-hrk288-computer-science-and-art-daad7631",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 80000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 800 EUR"
+        },
+        {
+          "url": "https://www.thi.de/studium/internationale-vollstudierende/studiengebuehren/",
+          "quote": "Studiengebühren in Höhe von 800 € pro Semester für Bachelor-Studierende bzw. 1.200 € für Master-Studierende aus Drittstaaten*."
+        }
+      ]
+    }
+  },
+  "notes": "Programme page: the DAAD record (English) and the THI programme page (German) both describe this Bachelor. Duration 7 semesters = 3.5 years; ECTS 210 confirms this. Teaching language English; elective subjects can be chosen in German and the Bachelor's thesis can be written in German, but the programme is taught in English. Tuition: the DAAD page says non-EU applicants pay 800 EUR per semester; the THI Studiengebuehren page states 800 EUR per semester for Bachelor students from third countries (from summer semester 2026) - stored as a semester period amount. The THI fee page lists exemptions (e.g. German-equivalent, EU/EEA), but these do not apply to a Moroccan applicant. Application channel: no page states uni-assist or a VPD for a foreign-diploma applicant to this programme; the DAAD page only mentions a possible uni-assist fee ('Apart from the uni-assist fee, there is no application fee.') and says applicants apply on their own, and the THI page says the application runs online in the THI portal, so de-university-direct was chosen with that quote - the auditor should verify against the 'Bachelorbewerbung aus dem Ausland' page (not supplied). Deadline 15 July 2027 is for the winter semester and is valid for applicants from all countries. English B2 certificate is required with an official language certificate; accepted tests quoted are IELTS Academic 5.5 and TOEFL iBT (before 2026) 72. No document translation was stated, so translationRequired is null. Documents list only those named in the quotes: school-leaving certificate and Hochschulzugangsberechtigung (HZB); further documents (CV, ID, language proof) are said to be required at enrolment but are not quoted for this applicant.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["ielts", "toefl"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+            "quote": "English language skills B2 required, please provide an official language certificate"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+            "quote": "IELTS Academic: 5.5"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7631/",
+            "quote": "TOEFL iBT (before 2026): 72"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats internationaux passent par le « satzung für internationale Auswahl- und Orientierungsverfahren » : formulaire d'Eignungsprüfung et informations pour candidats de pays tiers. Vérifier la procédure.",
+          "en": "International applicants go through the \"Satzung für internationale Auswahl- und Orientierungsverfahren\": Eignungsprüfung form and information for third-country applicants. Check the procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://www.thi.de/studium/studienbewerbung/bachelorbewerbung/",
+            "quote": "Computer Science and Artificial Intelligence (siehe Informationen für Bewerbende aus Drittstaaten)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un certificat de langue anglaise officiel de niveau B2 est exigé. Liste des tests reconnus : « Anerkannte Englischtests B2 » sur le site de la THI.",
+          "en": "An official B2 English language certificate is required. List of recognised tests: \"Anerkannte Englischtests B2\" on the THI website."
+        },
+        "evidence": [
+          {
+            "url": "https://www.thi.de/studium/studienbewerbung/bachelorbewerbung/",
+            "quote": "ist für alle englischsprachigen Bachelorstudiengänge ein Englischnachweis Level B2 erforderlich"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Aucun NC pour ce programme : pas de Zulassungsbeschränkung. La HZB doit montrer l'aptitude à étudier en Bavière ; vérifier l'infoblatt correspondant.",
+          "en": "No NC for this programme: no Zulassungsbeschränkung. The HZB must show eligibility to study in Bavaria; check the relevant infoblatt."
+        },
+        "evidence": [
+          {
+            "url": "https://www.thi.de/studium/studienangebote/details/computer-science-and-artificial-intelligence-bsc/",
+            "quote": "Zulassungsbeschränkt Nein"
+          },
+          {
+            "url": "https://www.thi.de/studium/studienbewerbung/bachelorbewerbung/",
+            "quote": "Aus Ihrer Hochschulzugangsberechtigung (Zeugnis) muss grundsätzlich unmittelbar hervorgehen, dass Sie zu einem Studium in Bayern berechtigt sind."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Frais : 800 € par semestre pour les ressortissants hors UE/EEA (bachelor), plus 82 € de Studierendenwerkbeitrag par semestre. Bourse de dispense possible, décidée à l'admission.",
+          "en": "Fees: EUR 800 per semester for non-EU/EEA nationals (bachelor), plus EUR 82 student union fee per semester. Fee-waiver scholarship possible, decided at admission."
+        },
+        "evidence": [
+          {
+            "url": "https://www.thi.de/studium/internationale-vollstudierende/studiengebuehren/",
+            "quote": "Bachelor: 800 € Master: 1.200 € Weitere Kosten pro Monat: Lebenshaltungskosten: ca. 900 €"
+          },
+          {
+            "url": "https://www.thi.de/studium/studienfinanzierung/",
+            "quote": "Der Studierendenwerkbeitrag beträgt ab dem Wintersemester 2026/27 82 € pro Semester."
+          }
+        ]
+      }
+    ]
+  }
+}

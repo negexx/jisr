@@ -1,0 +1,59 @@
+{
+  "slug": "fr-universite-de-mulhouse-0681166y-licence-gestion-8147",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8147&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8147&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+        }
+      ]
+    }
+  },
+  "notes": "Les frais de scolarité de 178 €/an concernent les étudiants non boursiers ; les étudiants boursiers sont exonérés (page Parcoursup). Cette page décrit la procédure Parcoursup pour les titulaires du bac français/européen ; les candidats titulaires d'un bac marocain ou d'un diplôme étranger hors UE candidatent via Études en France / Campus France (canal non inclus ici, conformément à la consigne). Le niveau C1 de français est indiqué sur la fiche Parcoursup.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8147&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La lettre de motivation est très importante (critère noté « Très important »). Les résultats scolaires comptent pour 60 % de la grille.",
+          "en": "The cover letter is very important (rated 'Très important'). Academic results count for 60% of the assessment grid."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8147&typeBac=0&originePc=0",
+            "quote": "La lettre de motivation doit être particulièrement soignée, car elle est trop souvent stéréotypée et contient peu d’éléments intéressants"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les attendus nationaux et les critères d'admission (notes en mathématiques, français, langues, spécialités, philosophie) sur la fiche détaillée.",
+          "en": "Check the national entry requirements and admission criteria (grades in mathematics, French, languages, specialisation subjects, philosophy) on the detailed page."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8147&typeBac=0&originePc=0",
+            "quote": "Il est attendu des candidats en licence Mention GESTION de:"
+          }
+        ]
+      }
+    ]
+  }
+}

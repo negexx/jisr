@@ -1,0 +1,63 @@
+{
+  "slug": "de-fh-munster-university-of-applied-science-hrk192-international-business-m-daad3911",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3911/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3911/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    }
+  },
+  "notes": "No application channel quote found for international applicants; the pages only say 'Submit application via Please check this website.' The recurring deadline (31 May) is a general deadline for applicants from all countries, not specifically labelled for non-EU/international applicants. Requirements quotes about the entrance exam and partner-university semesters concern students starting in Münster or at a partner university; treat with care for a Moroccan applicant from abroad. No document list is given on the pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["toefl"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3911/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (since 2026): 4 Reading: 4 Listening: 4 Speaking: 4 Writing: 4"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée doit être réussi (évaluation du parcours éducatif particulier).",
+          "en": "A course entrance exam must be passed (assessment of particular educational background)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3911/",
+            "quote": "For CALA students starting in Münster: A course entrance exam must be passed (assessment of particular educational background)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats doivent avoir terminé avec succès les semestres convenus à l'université d'origine.",
+          "en": "Applicants must have successfully completed the semesters at the home university as agreed."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3911/",
+            "quote": "For students starting at a partner university: Applicants must have successfully completed the semesters at the home university as agreed."
+          }
+        ]
+      }
+    ]
+  }
+}

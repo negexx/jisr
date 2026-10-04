@@ -1,0 +1,59 @@
+{
+  "slug": "de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-bsc-health-informatics-daad4822",
+  "programmePage": "https://th-deg.de/hi-b-en",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 50000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4822/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries Switzerland United Kingdom 500 EUR"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/en/apply",
+          "quote": "If you are interested in applying to our university, choose what you aim to study and apply directly to DIT via our own online application portal, Primuss."
+        }
+      ]
+    }
+  },
+  "notes": "Frais de dossier : 60 EUR de frais de candidature et 500 EUR de frais de service par semestre pour les candidats/étudiants hors UE/EEE. La page du programme indique des frais de scolarité de 500 EUR par semestre pour les candidats non-UE ; la page des frais indique qu'il n'y a pas de frais de scolarité pour les étudiants de l'UE/EEE, mais que les étudiants non-UE/EEE paient des frais de service de 500 EUR par semestre. Les délais d'inscription ('15 April - 15 July') n'ont pas de date limite explicite pour les candidats internationaux/non-UE, donc la date limite n'est pas incluse. Le programme a un test d'admission ; la page du programme déclare 'General German university entrance qualification, or please check your eligibilty at the DAAD if you own an international qualification'. La page du programme mentionne 'AWP (Foreign Language I)', etc., ce qui indique que certains modules peuvent être enseignés en langue étrangère, mais le programme principal est enseigné en anglais. La DAAD indique que le programme est 'BSc Health Informatics' et la page DIT indique 'Informatics in the Healthcare Industry'. Les deux se réfèrent au même programme. La page DAAD indique 'Teaching language English'. La page DIT indique 'Taught in English'.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'admission doit être réussi ; voir les informations sur le test d'admission.",
+          "en": "An admission test must be passed; see the admission test information."
+        },
+        "evidence": [
+          {
+            "url": "https://th-deg.de/hi-b-en",
+            "quote": "Language requirements A successfully completed admission test"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des connaissances de base en programmation sont utiles (non obligatoires).",
+          "en": "Basic programming skills are beneficial (not mandatory)."
+        },
+        "evidence": [
+          {
+            "url": "https://th-deg.de/hi-b-en",
+            "quote": "Basic programming skills"
+          }
+        ]
+      }
+    ]
+  }
+}

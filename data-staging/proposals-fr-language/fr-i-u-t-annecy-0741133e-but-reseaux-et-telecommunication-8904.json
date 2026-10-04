@@ -1,0 +1,67 @@
+{
+  "slug": "fr-i-u-t-annecy-0741133e-but-reseaux-et-telecommunication-8904",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8904&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8904&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Frais de scolarité : la fiche Parcoursup indique 178 euros par an, tarif applicable aux étudiants français et de l'UE/EEE ; pour un étudiant marocain (extra-communautaire), la page Campus France Maroc indique des droits d'inscription différenciés de 2 902 euros pour une année en cycle de Licence. La page Campus France Maroc ne concerne pas spécifiquement ce programme et précise que certains établissements peuvent exonérer les étudiants étrangers ; à vérifier auprès de l'établissement. Les deux montants (178 euros et 2 902 euros) sont indiqués comme preuves pour le champ tuition, faute de pouvoir déterminer lequel s'applique à ce programme précis. Les langues d'enseignement : la fiche Parcoursup ne précise pas explicitement la langue d'enseignement ; le « Niveau de français requis pour s'inscrire à la formation : B2 » suggère un enseignement en français. Les dates d'ouverture et de clôture des candidatures ne sont pas données pour les candidats internationaux ; la plateforme Études en France / Campus France est la voie pour les titulaires d'un diplôme étranger.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8904&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidatures sont examinées à partir des critères définis par la commission d'examen des voeux (résultats scolaires 85 %, méthodes de travail 5 %, savoir-être 5 %, motivation 3 %, engagement 2 %).",
+          "en": "Applications are reviewed based on criteria set by the admissions commission (academic results 85%, work methods 5%, soft skills 5%, motivation 3%, engagement 2%)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8904&typeBac=0&originePc=0",
+            "quote": "Les formations analysent les candidatures en avril-mai 2026 à partir des critères qu’elles ont définis et de leur niveau d’importance."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8904&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 85 % Méthodes de travail 5 % Savoir-être 5 % Motivation 3 % Engagement et activités 2 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une épreuve orale (visioconférence et entretien sur les motivations et la connaissance de la formation) est prévue ; une convocation est envoyée par courrier et/ou mail.",
+          "en": "An oral examination (video conference and interview about motivation and knowledge of the programme) is planned; a convocation is sent by post and/or email."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8904&typeBac=0&originePc=0",
+            "quote": "Deux visioconférences présentant la formation seront proposées, suivi d'un entretien sous forme de discussion afin d’échanger sur les motivations du candidat et sa connaissance de la formation et ses débouchés."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8904&typeBac=0&originePc=0",
+            "quote": "Si vous êtes sélectionné pour ces épreuves, une convocation vous sera envoyée par courrier postal et/ou par mail entre le vendredi 01 mai 2026 et le jeudi 07 mai 2026."
+          }
+        ]
+      }
+    ]
+  }
+}

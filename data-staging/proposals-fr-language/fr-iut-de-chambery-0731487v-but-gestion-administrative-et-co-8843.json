@@ -1,0 +1,84 @@
+{
+  "slug": "fr-iut-de-chambery-0731487v-but-gestion-administrative-et-co-8843",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8843&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8843&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+        }
+      ]
+    }
+  },
+  "notes": "Aucun frais de scolarité n'est indiqué pour ce programme pour un étudiant non-UE. La fiche Parcoursup mentionne « 178 euros par année », mais il s'agit du tarif général des établissements publics français (étudiants français/UE) et la page Campus France indique des droits différenciés pour les étudiants extra-communautaires (2 902 € pour une année en cycle de Licence), sans lien explicite avec ce BUT. Aucune date limite de candidature spécifique à ce programme n'est donnée pour les candidats internationaux ; la procédure Études en France / Campus France s'applique. La page ADIUT Maroc donne « Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine) » mais elle concerne le programme ADIUT Maroc (BUT en général) et non précisément ce BUT avec horaires aménagés.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8843&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sélection sur dossier, épreuves écrites et entretien. Grille : résultats scolaires 30 %, méthodes de travail 20 %, savoir-être 15 %, motivation 5 %, engagement et activités 30 %. Épreuves du 29 avril au 11 mai 2026.",
+          "en": "Selection based on application, written tests and interview. Grid: academic results 30%, working methods 20%, soft skills 15%, motivation 5%, commitment and activities 30%. Tests from 29 April to 11 May 2026."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8843&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 30 % Méthodes de travail 20 % Savoir-être 15 % Motivation 5 % Engagement et activités 30 %"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8843&typeBac=0&originePc=0",
+            "quote": "Du mercredi 29 avril 2026 au lundi 11 mai 2026"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Formation réservée aux candidats justifiant d'une pratique artistique ou sportive intensive (5/7 ans de pratique artistique ou niveau 3e cycle de conservatoire ; pratique sportive évaluée avec les fédérations/clubs).",
+          "en": "Programme reserved for applicants with intensive artistic or sports practice (5/7 years of artistic practice or conservatory 3rd cycle level; sports practice assessed with federations/clubs)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8843&typeBac=0&originePc=0",
+            "quote": "CETTE FORMATION EST RÉSERVÉE AUX CANDIDATS JUSTIFIANT D'UNE PRATIQUE ARTISTIQUE OU SPORTIVE INTENSIVE."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8843&typeBac=0&originePc=0",
+            "quote": "Pratique artistique = suite à 5/7 ans de pratique artistique ou équivalente à un niveau d'entrée en 3ème cycle de conservatoire."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "En BUT3, tous les parcours sont uniquement accessibles en alternance. Le choix de parcours en fin de BUT1 est conditionné à la capacité d'accueil.",
+          "en": "In BUT3, all tracks are only available as work-study (alternance). The choice of track at the end of BUT1 depends on capacity."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8843&typeBac=0&originePc=0",
+            "quote": "En BUT3, tous les parcours sont uniquement accessibles en alternance."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8843&typeBac=0&originePc=0",
+            "quote": "le choix de parcours en fin de BUT 1 est conditionné à la capacité d'accueil"
+          }
+        ]
+      }
+    ]
+  }
+}

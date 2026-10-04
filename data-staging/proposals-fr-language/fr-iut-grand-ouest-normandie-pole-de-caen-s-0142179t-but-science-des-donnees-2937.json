@@ -1,0 +1,54 @@
+{
+  "slug": "fr-iut-grand-ouest-normandie-pole-de-caen-s-0142179t-but-science-des-donnees-2937",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2937&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2937&typeBac=0&originePc=0",
+          "quote": "La formation s’articule autour d'enseignements pratiques en mathématiques, informatique, communication, économie ou anglais, auxquels s’ajoutent des projets utilisant des données réelles, 600h de \"Situation d’Apprentissage et d’Évaluation\"."
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2937&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune date de candidature spécifique pour les candidats internationaux n'a été trouvée sur les pages fournies. Les frais de scolarité indiqués (178 €) sont ceux affichés sur Parcoursup, mais ils ne concernent peut-être pas les étudiants extra-communautaires, qui peuvent être soumis à des droits différenciés (par exemple 2 902 €). Aucune information sur les dates d'ouverture ou de clôture des candidatures pour ce programme n'a été trouvée.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2937&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Cette formation analyse les candidatures sur la base des résultats scolaires, des méthodes de travail, du savoir-être et de la motivation. Consultez la grille d'analyse et les attendus pour plus de détails.",
+          "en": "This programme assesses applications on the basis of academic results, working methods, behavioural skills and motivation. Check the assessment grid and expected prerequisites for details."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2937&typeBac=0&originePc=0",
+            "quote": "Les formations analysent les candidatures en avril-mai 2026 à partir des critères qu’elles ont définis et de leur niveau d’importance."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2937&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 55 % Méthodes de travail 10 % Savoir-être 20 % Motivation 15 %"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "de-hochschule-fur-angewandte-wissenschaften-hrk143-international-engineerin-daad9922",
+  "programmePage": "https://www.hs-kempten.de/international-engineering",
+  "facts": {
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hs-kempten.de/international-engineering",
+          "quote": "Du hast deine HZB im Ausland erworben? Prüfung und Anerkennung deines Zeugnisses über uni-assist (Vorprüfungsdokumentation - VPD)."
+        }
+      ]
+    }
+  },
+  "notes": "The DAAD page states 'Tuition fees per semester Varied' and links to the university website. The university website states there are no general tuition fees, but a service fee of 500 EUR per semester applies to non-EU students in English-language programmes. This fee is included here. The semester contribution of 115 EUR is a general fee, not tuition, and is not included.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9922/",
+            "quote": "English language skills B1 required, please provide an official language certificate, e.g.:"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme marocain donne accès à l'université en Allemagne (HZB) et si vous devez passer par la procédure uni-assist VPD.",
+          "en": "Check whether your Moroccan diploma qualifies you for university admission in Germany (HZB) and whether you must use the uni-assist VPD procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-kempten.de/international-engineering",
+            "quote": "Um für das Studium zugelassen zu werden, benötigst du eine Hochschulzugangsberechtigung (HZB) und Sprachkenntnisse in Deutsch und Englisch."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "fr-i-u-t-de-brest-site-de-morlaix-0292185t-but-gestion-administrative-et-co-14016",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=14016&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=14016&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 euros par an figure sur la fiche Parcoursup sans mention 'hors UE' ; il s'agit des droits d'inscription en licence applicables aux étudiants non extracommunautaires. Le Campus France Maroc indique des droits différenciés de 2 902 euros par an pour les étudiants extracommunautaires en licence, avec exonérations possibles.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=14016&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien téléphonique (épreuves orales) est prévu pour préciser le projet, en lien avec les domaines artistiques et culturels en gestion.",
+          "en": "A telephone interview (oral examinations) is required to clarify the project, related to artistic and cultural fields in management."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=14016&typeBac=0&originePc=0",
+            "quote": "Entretien téléphonique pour préciser le projet qui sera forcément en lien avec les domaines artistiques et culturelles en gestion"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La commission examine les résultats scolaires, les méthodes de travail, le savoir-être, la motivation et l'engagement ; consultez la grille d'analyse détaillée.",
+          "en": "The commission examines academic results, work methods, soft skills, motivation and commitment; see the detailed assessment grid."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=14016&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 20 % Méthodes de travail 15 % Savoir-être 25 % Motivation 15 % Engagement et activités 25 %"
+          }
+        ]
+      }
+    ]
+  }
+}

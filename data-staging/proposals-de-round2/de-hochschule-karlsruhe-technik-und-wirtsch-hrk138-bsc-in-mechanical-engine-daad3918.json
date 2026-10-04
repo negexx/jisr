@@ -1,0 +1,74 @@
+{
+  "slug": "de-hochschule-karlsruhe-technik-und-wirtsch-hrk138-bsc-in-mechanical-engine-daad3918",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3918/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.carlbenzschool.kit.edu/costs-fees.php",
+          "quote": "Fee EU students Non-EU students Per semester €184 €1,500"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2026-04-30",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3918/",
+          "quote": "Application periods The following is valid for applicants from: all countries until 30 April"
+        },
+        {
+          "url": "https://www.carlbenzschool.kit.edu/",
+          "quote": "The KIT Online Application Portal for the B.Sc. program in Mechanical Engineering (International) at the Carl Benz School of Engineering closed on April 30th, 2026."
+        }
+      ]
+    }
+  },
+  "notes": "The tuition fee of €1,500 per semester for non-EU students is taken from the Carl Benz School page, which states it applies to non-EU students. The DAAD page lists a higher fee of €9,201 per semester for non-EU applicants, but this appears to be for the College Programme and may not be the standard tuition; the university page's fee is used. The application deadline is April 30, 2026, as stated on the pages. The applicant is from Morocco, so non-EU rules apply. No translation requirement for documents is stated.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["ielts", "toefl"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3918/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: UNIcert® English: UNIcert® II IELTS Academic: 6.5 TOEFL iBT (before 2026): 90"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les critères d'admission : notes en maths/physique, tests standardisés (SAT 1200, ACT 24, TestAS 75), un an de physique au lycée et lettre de motivation. Seuils de notes à vérifier manuellement.",
+          "en": "Check admission criteria: grades in maths/physics, standardised tests (SAT 1200, ACT 24, TestAS 75), one year of high school physics, and motivation letter. Grade thresholds require manual check."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3918/",
+            "quote": "The fundamental criteria for admission are excellent grades in mathematics and/or physics (top 80% of class)."
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3918/",
+            "quote": "One of the following standardised tests: SAT (1,200 points) ACT (24 points) TestAS (percentile rank of 75) One year of high school physics English language proficiency (details below) Motivation letter"
+          }
+        ]
+      }
+    ]
+  }
+}

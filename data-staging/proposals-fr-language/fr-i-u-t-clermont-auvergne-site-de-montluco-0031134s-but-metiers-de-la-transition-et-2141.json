@@ -1,0 +1,46 @@
+{
+  "slug": "fr-i-u-t-clermont-auvergne-site-de-montluco-0031134s-but-metiers-de-la-transition-et-2141",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2141&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2141&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des frais de scolarité (178 euros par année) est indiqué sur la fiche Parcoursup et s'applique aux étudiants non boursiers ; il n'est pas précisé s'il s'applique aux étudiants extra-communautaires. Les modalités de candidature (Campus France / Études en France pour les candidats non-européens titulaires d'un bac marocain) sont à vérifier sur le site de Campus France Maroc ; l'applicationChannel n'est pas extrait pour ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2141&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien oral de 20 minutes avec 2 enseignants de la formation est prévu dans le cadre des épreuves de sélection.",
+          "en": "A 20-minute oral interview with 2 teachers of the programme is part of the selection process."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2141&typeBac=0&originePc=0",
+            "quote": "Entretien de 20 minutes avec 2 enseignants de la formation au cours duquel il est demandé au candidat d'expliquer son parcours académique et ses motivations pour le BUT MT2E."
+          }
+        ]
+      }
+    ]
+  }
+}

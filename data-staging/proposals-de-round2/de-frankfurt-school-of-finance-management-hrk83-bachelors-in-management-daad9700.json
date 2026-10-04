@@ -1,0 +1,63 @@
+{
+  "slug": "de-frankfurt-school-of-finance-management-hrk83-bachelors-in-management-daad9700",
+  "programmePage": "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+  "facts": {
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+          "quote": "Submit your application and all required documents via our online application portal."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the DAAD page states 8,200 EUR per semester for applicants from all countries (i.e. including Morocco); the programme's own page currently states 8,600 EUR/semester. The value given (1,640,000 minor units = 8,200 EUR) follows the DAAD page; the university page figure is quoted as well. Application channel: the programme page says the application goes through the university's own online application portal (\"via our online application portal\"), and no page mentions uni-assist or a VPD for this programme, so de-university-direct was chosen. Deadlines: the programme's own page gives 30 June 2027 as application deadline and 1 September 2027 as start date for the 2027 intake; a separate FAQ sentence mentions \"The application portal is open from 1 September 2025 to 30 June 2026\" (an earlier cycle). English B2: the DAAD page states \"B2 required, proof via placement test/interview\", i.e. proven through the Assessment Centre rather than a certificate. Documents: the pages name the documents for the application; translation requirements are not mentioned on these pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9700/",
+            "quote": "B2 required, proof via placement test/interview"
+          },
+          {
+            "url": "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+            "quote": "you are not required to submit an English certificate with your application"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le diplôme d'études secondaires reconnu est exigé ; vérifier l'équivalence de ton Baccalauréat marocain (DAAD/Anabin).",
+          "en": "A recognised school-leaving certificate is required; check the equivalence of your Moroccan Baccalauréat (DAAD/Anabin)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+            "quote": "Recognised school-leaving certificate (e.g. German Abitur, Fachabitur, IB Diploma, US High School Diploma, A-Levels, European Baccalaureate or equivalent)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Réussir l'Online Assessment Centre : test de mathématiques, test cognitif, test d'anglais et entretien.",
+          "en": "Successful completion of the Online Assessment Centre: mathematics test, cognitive test, English test and interview."
+        },
+        "evidence": [
+          {
+            "url": "https://www.frankfurt-school.de/en/home/programmes/bachelor/bachelor-science/bsc-managementphilosophyeconomics",
+            "quote": "The Assessment Centre, which includes a mathematics test, a cognitive test, an English test and an interview."
+          }
+        ]
+      }
+    ]
+  }
+}

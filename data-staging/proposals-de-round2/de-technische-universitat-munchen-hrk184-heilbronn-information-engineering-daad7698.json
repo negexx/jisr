@@ -1,0 +1,41 @@
+{
+  "slug": "de-technische-universitat-munchen-hrk184-heilbronn-information-engineering-daad7698",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7698/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7698/",
+          "quote": "Tuition fees per semester None"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7698/",
+          "quote": "This degree programme only charges the basic student union fee. It does not charge any tuition fees: https://www.tum.de/en/studies/fees-and-financial-aid/campus-heilbronn."
+        }
+      ]
+    }
+  },
+  "notes": "Conflicting information about tuition for non-EU students. The DAAD programme page (the programme's own page) states 'Tuition fees per semester None' and that the programme 'does not charge any tuition fees'. However, TUM's central pages say tuition fees are charged to international students from non-EU countries newly enrolling in bachelor's programmes (usually 2,000 or 3,000 EUR per semester) and that the exact amounts are on the individual programme page. The DAAD page's statement is specific to this programme, so tuition is recorded as 0 with the DAAD quote; the auditor should verify whether the TUM central non-EU fee actually applies to this bachelor's programme. The recurring application deadline (15 July) is quoted from the DAAD page as 'Application deadline for the winter semester: 15 May to 15 July'; the page does not say this deadline is specifically for non-EU or foreign-qualification applicants, but it is the only winter-semester deadline given for this programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7698/",
+            "quote": "German language skills A2 required, please provide an official language certificate, e.g.: Deutsches Sprachdiplom der Kultusministerkonferenz (DSD): DSD I telc Deutsch: telc Deutsch A2 ÖSD Zertifikat: A2 Goethe-Zertifikat: Goethe-Zertifikat A2"
+          }
+        ]
+      }
+    ]
+  }
+}

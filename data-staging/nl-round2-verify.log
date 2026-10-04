@@ -1,0 +1,80 @@
+programs/nl-avans-hogeschool-07gr-bouwkunde-1001o3048: no new facts; page ok
+no new facts: discard the staged revision for nl-avans-hogeschool-07gr-bouwkunde-1001o3048
+programs/nl-avans-hogeschool-07gr-breda-chemische-technologie-1001o3144: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-avans-hogeschool-07gr-breda-chemische-technologie-1001o3144
+programs/nl-avans-hogeschool-07gr-breda-ict-1016o4948: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-avans-hogeschool-07gr-breda-ict-1016o4948
+programs/nl-avans-hogeschool-07gr-s-hertogenbosch-accountancy-1001o3528: no new facts; page ok
+no new facts: discard the staged revision for nl-avans-hogeschool-07gr-s-hertogenbosch-accountancy-1001o3528
+programs/nl-avans-hogeschool-07gr-s-hertogenbosch-ict-1016o4948: enriched intakes; page ok; requirements ignored in enrich mode
+programs/nl-capabel-hogeschool-30hc-rotterdam-ict-1001o8912: enriched intakes; page ok; requirements ignored in enrich mode
+programs/nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182: enriched teachingLanguages, documents; page ok; requirements ignored in enrich mode
+programs/nl-christelijke-hogeschool-ede-25ba-bedrijfskunde-1001o2793: enriched intakes; page ok; kept existing official value; requirements ignored in enrich mode
+  conflict: documents: kept the existing official value; the reader found [{"slug":"diploma","name":{"fr":{"text":"Diplôme","status":"draft"},"en":{"text":"Diploma","status":"draft"}},"translationRequired":null},{"slug":"grade-list","name":{"fr":{"text":"Relevé de notes","status":"draft"},"en":{"text":"Grade list","status":"draft"}},"translationRequired":null},{"slug":"passport","name":{"fr":{"text":"Passeport","status":"draft"},"en":{"text":"Passport","status":"draft"}},"translationRequired":null}] at https://che.nl/info-opleidingen/aanmelden-opleiding
+programs/nl-christelijke-hogeschool-ede-25ba-ict-1001o2670: enriched applicationChannel; page ok; requirements ignored in enrich mode
+programs/nl-christelijke-hogeschool-windesheim-01vu-accountancy-1001o3525: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-christelijke-hogeschool-windesheim-01vu-accountancy-1001o3525
+programs/nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046
+programs/nl-christelijke-hogeschool-windesheim-01vu-almere-ict-1001o2665: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-christelijke-hogeschool-windesheim-01vu-almere-ict-1001o2665
+programs/nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046
+programs/nl-christelijke-hogeschool-windesheim-01vu-ict-1001o2665: enriched intakes; page ok; requirements ignored in enrich mode
+programs/nl-de-haagse-hogeschool-27um-accountancy-1001o3550: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-de-haagse-hogeschool-27um-accountancy-1001o3550
+programs/nl-de-haagse-hogeschool-27um-applied-data-science-art-1001o8742: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-de-haagse-hogeschool-27um-applied-data-science-art-1001o8742
+programs/nl-de-haagse-hogeschool-27um-bouwkunde-1001o3065: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-de-haagse-hogeschool-27um-bouwkunde-1001o3065
+programs/nl-de-haagse-hogeschool-27um-delft-elektrotechniek-1001o3093: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-de-haagse-hogeschool-27um-delft-elektrotechniek-1001o3093
+programs/nl-de-haagse-hogeschool-27um-delft-ict-1001o2675: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-de-haagse-hogeschool-27um-delft-ict-1001o2675
+programs/nl-de-haagse-hogeschool-27um-zoetermeer-applied-data-science-art-1001o8742: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-de-haagse-hogeschool-27um-zoetermeer-applied-data-science-art-1001o8742
+programs/nl-erasmus-universiteit-rotterdam-21pe-bedrijfskunde-1001o5712: no new facts; page ok
+no new facts: discard the staged revision for nl-erasmus-universiteit-rotterdam-21pe-bedrijfskunde-1001o5712
+programs/nl-fontys-hogeschool-30gb-accountancy-1001o3555: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-fontys-hogeschool-30gb-accountancy-1001o3555
+programs/nl-fontys-hogeschool-30gb-elektrotechniek-1001o3098: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-fontys-hogeschool-30gb-elektrotechniek-1001o3098
+programs/nl-fontys-hogeschool-30gb-ict-1001o2677: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-fontys-hogeschool-30gb-ict-1001o2677
+programs/nl-fontys-hogeschool-30gb-tilburg-commerciele-economie-1001o3452: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-fontys-hogeschool-30gb-tilburg-commerciele-economie-1001o3452
+programs/nl-fontys-hogeschool-30gb-tilburg-ict-1001o2677: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-fontys-hogeschool-30gb-tilburg-ict-1001o2677
+programs/nl-fontys-hogeschool-30gb-tilburg-technische-bedrijfskunde-1001o3682: no new facts; page ok
+no new facts: discard the staged revision for nl-fontys-hogeschool-30gb-tilburg-technische-bedrijfskunde-1001o3682
+programs/nl-fontys-hogeschool-30gb-venlo-commerciele-economie-1001o3452: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-fontys-hogeschool-30gb-venlo-commerciele-economie-1001o3452
+programs/nl-fontys-hogeschool-30gb-venlo-industrieel-product-ontw-1001o3309: no new facts; page ok
+no new facts: discard the staged revision for nl-fontys-hogeschool-30gb-venlo-industrieel-product-ontw-1001o3309
+programs/nl-fontys-hogeschool-30gb-venlo-informatica-1001o3903: enriched teachingLanguages; page ok
+programs/nl-hogeschool-inholland-27pz-accountancy-1001o3549: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-inholland-27pz-accountancy-1001o3549
+programs/nl-hogeschool-inholland-27pz-alkmaar-accountancy-1001o3549: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-inholland-27pz-alkmaar-accountancy-1001o3549
+programs/nl-hogeschool-inholland-27pz-alkmaar-bouwkunde-1001o3064: enriched tuition, applicationChannel; page ok; requirements ignored in enrich mode
+programs/nl-hogeschool-inholland-27pz-amsterdam-accountancy-1001o3549: enriched tuition, applicationChannel; page ok; requirements ignored in enrich mode
+programs/nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064
+programs/nl-hogeschool-inholland-27pz-haarlem-business-studies-1001o2990: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-inholland-27pz-haarlem-business-studies-1001o2990
+programs/nl-hogeschool-inholland-27pz-haarlem-informatica-1001o3897: enriched tuition; page ok
+programs/nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209: no new facts; page ok
+no new facts: discard the staged revision for nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209
+programs/nl-hogeschool-leiden-21ri-bio-informatica-1001o5219: no new facts; page ok; kept existing official value; requirements ignored in enrich mode
+  conflict: documents: kept the existing official value; the reader found [{"slug":"school-leaving-certificate","name":{"fr":{"text":"Copie certifiée conforme du diplôme","status":"draft"},"en":{"text":"Certified copy of your diploma","status":"draft"}},"translationRequired":null},{"slug":"transcript-of-records","name":{"fr":{"text":"Copie certifiée conforme du relevé de notes","status":"draft"},"en":{"text":"Certified copy of your transcript of records","status":"draft"}},"translationRequired":null}] at https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland
+conflicts recorded: keep the staged revision until they are reported (nl-hogeschool-leiden-21ri-bio-informatica-1001o5219)
+programs/nl-hogeschool-leiden-21ri-commerciele-economie-1001o3422: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-leiden-21ri-commerciele-economie-1001o3422
+programs/nl-hogeschool-rotterdam-22oj-accountancy-1001o3536: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-rotterdam-22oj-accountancy-1001o3536
+programs/nl-hogeschool-rotterdam-22oj-bouwkunde-1001o3055: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-rotterdam-22oj-bouwkunde-1001o3055
+programs/nl-hogeschool-utrecht-25dw-ict-1001o2672: no new facts; page ok; requirements ignored in enrich mode
+no new facts: discard the staged revision for nl-hogeschool-utrecht-25dw-ict-1001o2672
+programs/nl-hogeschool-van-amsterdam-28dn-ict-1001o2676: enriched tuition; page ok; requirements ignored in enrich mode
+applied 12 proposal(s); 0 stay blocked

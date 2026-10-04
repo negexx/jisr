@@ -1,0 +1,46 @@
+{
+  "slug": "fr-universite-dartois-site-de-lens-0623911p-licence-informatique-7485",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7485&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7485&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 euros/an (mentionné sur la fiche Parcoursup) est un tarif général affiché pour cette licence ; pour un étudiant marocain non-UE il peut s'agir de droits différenciés (2 902 €/an en licence) et non de ce montant. À vérifier auprès de l'établissement. Le programme ADIUT Maroc mentionne une candidature du 1er octobre au 15 novembre 2026 via Études en France, mais cette page décrit les candidatures en 1ère année de BUT (IUT) et non la Licence Informatique de l'Université d'Artois : à ne pas confondre. Aucun document à fournir n'est listé pour ce programme dans les pages fournies.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7485&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Candidats non ressortissants de l'UE/EEE/Suisse/Monaco/Andorre avec un diplôme équivalent au bac : candidature via la procédure DAP, pas Parcoursup.",
+          "en": "Non-EU/EEA/Swiss/Monaco/Andorra applicants with a qualification equivalent to the French baccalauréat: apply via the DAP procedure, not Parcoursup."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7485&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      }
+    ]
+  }
+}

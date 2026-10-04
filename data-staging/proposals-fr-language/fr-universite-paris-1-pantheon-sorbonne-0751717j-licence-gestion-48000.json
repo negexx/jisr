@@ -1,0 +1,59 @@
+{
+  "slug": "fr-universite-paris-1-pantheon-sorbonne-0751717j-licence-gestion-48000",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48000&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr", "en"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48000&typeBac=0&originePc=0",
+          "quote": "Le parcours International Track de la Licence de Gestion de l’Université Paris 1 Panthéon-Sorbonne est un programme innovant avec les enseignements de la Licence de Gestion CM (en français) et TD (en anglais) ainsi que ceux complémentaires du parcours International Track (en anglais), sans droit d'inscription supplémentaire."
+        }
+      ]
+    }
+  },
+  "notes": "Le titre de la page programme est « Licence - Gestion - Parcours International Track » (Parcoursup, code 48000). Frais de scolarité : la page indique « Par année 178 euros. » et « Par année pour les étudiants boursiers Pas de frais pour les boursiers. » — il s'agit des droits d'inscription au tarif national et non d'un tarif spécifique aux étudiants extra-communautaires ; conformément aux règles, aucun frais de scolarité n'est retenu pour un candidat marocain (les droits différenciés éventuels ne sont pas indiqués sur cette fiche). La page liste comme conditions d'inscription les titulaires d'un bac français, d'un DAEU, d'un diplôme français de niveau IV ou les ressortissants UE/EEE/Suisse/Monaco/Andorre ; les candidats non ressortissants de l'UE titulaires d'un diplôme équivalent au bac passent par la procédure DAP et non par Parcoursup : le canal de candidature n'est donc pas renseigné (Etudes en France / Campus France est traité séparément). Des documents à fournir ne sont pas énumérés sur la fiche. La date limite de candidature (2 juin 2026) concerne les réponses des formations et non une échéance de dépôt pour les candidats internationaux : elle n'est pas retenue. La page formations.pantheonsorbonne.fr concerne la Licence Economie (un autre programme) : elle n'a pas été utilisée comme preuve.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48000&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission se fait sur dossier : résultats scolaires (70 %), motivation (10 %), méthodes de travail (10 %), savoir-être (5 %), engagement (5 %). Aucun seuil chiffré n'est publié.",
+          "en": "Admission is selective based on the application file: academic results (70%), motivation (10%), working methods (10%), behaviour (5%), engagement (5%). No numeric threshold is published."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48000&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 70 % Méthodes de travail 10 % Savoir-être 5 % Motivation 10 % Engagement et activités 5 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Spécialité Mathématiques de Terminale fortement conseillée (prérequis) ; l'anglais est indispensable.",
+          "en": "Mathematics specialisation in the final year is strongly advised (prerequisite); English proficiency is essential."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48000&typeBac=0&originePc=0",
+            "quote": "Les prérequis sont ceux de la spécialité de Mathématiques de Terminale."
+          }
+        ]
+      }
+    ]
+  }
+}

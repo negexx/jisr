@@ -1,0 +1,42 @@
+{
+  "slug": "nl-de-haagse-hogeschool-27um-delft-ict-1001o2675",
+  "programmePage": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["nl"],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+          "quote": "Locatie Den Haag - hoofdvestiging, Delft en Zoetermeer Taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+          "quote": "Je aanmelden voor een opleiding doe je via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Duration: the OER quote gives 240 ECTS (4 years); the programme page states '4 jaar'. Teaching language: the ICT page says 'Taal Nederlands'; the OER (Elektrotechniek) also states 'De voertaal van de opleiding is Nederlands.' Tuition: no amount for non-EU students is stated for this programme; the collegegeld page only gives general institution-wide rates and a two-year table without naming this programme, so tuition is left out. Deadlines: the 1 May 2026 deadline is general (no international/non-EU specification), so it is not stated as a fact. The OER supplied is for Elektrotechniek, not ICT, so it was used only where its statements apply to the institution generally. No language-proficiency rule (Dutch NT2/CNaVT) was added because this programme page does not name one.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme étranger ou international donne accès si ce diplôme donne accès à l'enseignement supérieur (hbo) et si vous prouvez une maîtrise suffisante du néerlandais. Faites vérifier votre diplôme par la Centrale Studenten Inschrijving via Studielink.",
+          "en": "A foreign or international diploma gives access if it grants admission to hbo and you have proof of sufficient command of Dutch. Have your diploma assessed by the Centrale Studenten Inschrijving via Studielink."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+            "quote": "Met een buitenlands of internationaal diploma kun je toegelaten worden, mits dit diploma toelating biedt tot hbo en je een bewijs hebt van voldoende beheersing van de Nederlandse taal."
+          }
+        ]
+      }
+    ]
+  }
+}

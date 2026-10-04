@@ -1,0 +1,54 @@
+{
+  "slug": "fr-universite-paris-cite-0755976n-licence-informatique-47244",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47244&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47244&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucun frais de scolarité pour ce programme n'est indiqué pour un étudiant non-UE : la fiche ne mentionne que \"178 euros + 118 euros\" par année, sans préciser le public concerné, donc la tuition est laissée de côté. Aucune durée du programme, aucun calendrier de candidature ni liste de documents ne sont donnés sur ces pages pour ce programme. La page d'inscription décrit la procédure pour les titulaires d'un bac français ou européen (Parcoursup) ; un candidat marocain avec un bac marocain doit passer par Études en France / Campus France.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47244&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Formation sélective : le dossier est évalué sur les résultats scolaires (70 %), les méthodes de travail (10 %), le savoir-être (5 %) et la motivation (15 %), dont une lettre de motivation.",
+          "en": "Selective programme: applications are assessed on academic results (70%), working methods (10%), soft skills (5%) and motivation (15%), including a motivation letter."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47244&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47244&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 70%"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47244&typeBac=0&originePc=0",
+            "quote": "Votre motivation et la cohérence de votre projet comptent pour 15%"
+          }
+        ]
+      }
+    ]
+  }
+}

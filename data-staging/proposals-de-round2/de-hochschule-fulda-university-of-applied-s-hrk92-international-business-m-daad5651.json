@@ -1,0 +1,66 @@
+{
+  "slug": "de-hochschule-fulda-university-of-applied-s-hrk92-international-business-m-daad5651",
+  "programmePage": "https://www.hs-fulda.de/ibm",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-fulda.de/internationales/international-office/wege-nach-fulda/kosten-und-finanzierung",
+          "quote": "Als staatliche Hochschule im Bundesland Hessen müssen Studierende an der Hochschule Fulda keine Studiengebühren bezahlen."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition quote is general for Hochschule Fulda, but the DAAD page for this programme states 'Tuition fees per semester None', so no tuition is charged for this programme. The application channel is stated as 'Submit application via Please check this website', which does not name uni-assist; therefore direct application is indicated. No document list was found on the pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["ielts", "toefl"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/",
+            "quote": "English language proficiency at a B2 level (except for applicants with English as their mother tongue)"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g."
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/",
+            "quote": "IELTS Academic: 5.5"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/",
+            "quote": "TOEFL iBT Home Edition (before 2026): 72"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez sur le site de l'université comment les candidats avec diplômes internationaux doivent postuler et quels documents soumettre.",
+          "en": "Check the university website for how applicants with international qualifications should apply and which documents to submit."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/",
+            "quote": "Submit application via Please check this website."
+          }
+        ]
+      }
+    ]
+  }
+}

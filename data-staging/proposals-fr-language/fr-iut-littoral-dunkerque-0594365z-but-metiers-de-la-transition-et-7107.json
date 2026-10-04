@@ -1,0 +1,72 @@
+{
+  "slug": "fr-iut-littoral-dunkerque-0594365z-but-metiers-de-la-transition-et-7107",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7107&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7107&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune page ne donne de frais de scolarité pour un étudiant extra-communautaire dans ce programme : la fiche Parcoursup indique 178 euros par année, montant qui concerne les étudiants français ou de l'UE/EEE/Suisse (les étudiants extra-communautaires paient des droits différenciés en Licence de 2 902 euros selon la page Campus France Maroc). Le dossier doit passer par Études en France / Campus France pour un titulaire de Bac marocain résidant au Maroc, et la date du 15 novembre 2026 provient de la page « Candidature en 1ère année BUT à l'université (IUT) » (programme ADIUT Maroc) ; le pitch d'offre sur 42 places, taux de passage (66,1 %) et taux de réussite (50,7 %) figure sur la fiche Parcoursup. Aucune quote de la fiche Parcoursup ne nomme de date limite applicable à ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7107&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des certifications de français (TCF, DELF B2, DALF) sont exigées à la soumission du dossier de candidature Campus France, sauf cas de dispense.",
+          "en": "French certifications (TCF, DELF B2, DALF) are required when submitting the Campus France application file, unless exempted."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est sélective : résultats scolaires (50 %), savoir-être (30 %) et motivation (20 %) sont évalués par un jury.",
+          "en": "Admission is selective: academic results (50%), soft skills (30%) and motivation (20%) are assessed by a jury."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7107&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La lettre de motivation est importante et peut faire la différence lors du recrutement ; ajoutez-y votre participation aux journées portes ouvertes ou d'immersion.",
+          "en": "The motivation letter matters and can make the difference in recruitment; mention your participation in open days or immersion days."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7107&typeBac=0&originePc=0",
+            "quote": "La lettre peut vraiment faire la différence lors du jury de recrutement."
+          }
+        ]
+      }
+    ]
+  }
+}

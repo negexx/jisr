@@ -1,0 +1,54 @@
+{
+  "slug": "fr-i-u-t-de-lorient-0561363c-but-genie-industriel-et-maintena-6471",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6471&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6471&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Les frais indiqués (178 euros par an) apparaissent sur la fiche Parcoursup sans mention 'extra-communautaire' ; d'après la page Campus France Maroc 'Le coût des études', les étudiants extra-communautaires peuvent être soumis à des droits différenciés (2 902 euros en Licence), avec exonérations possibles. Aucune date limite de candidature propre aux candidats internationaux n'est fournie par les pages. Les dates d'épreuves orales (du lundi 04 mai 2026 au jeudi 07 mai 2026) ne sont donc pas reprises.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6471&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les résultats scolaires (70 %) et l'anglais comptent dans l'analyse du dossier ; un entretien peut être demandé. Vérifiez les modalités Etudes en France.",
+          "en": "School results (70%) and English count in the application review; an interview may be requested. Check the Etudes en France procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6471&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 70 %"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6471&typeBac=0&originePc=0",
+            "quote": "Le jury d'admission de la formation GIM accepte directement un très grand nombre de dossiers mais se réserve le droit d'effectuer un entretien afin de juger de l'adéquation du dossier avec la formation choisie."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6471&typeBac=0&originePc=0",
+            "quote": "Résultats en Anglais Notes de Première, Terminale et éventuellement post bac Important 2 sur 4"
+          }
+        ]
+      }
+    ]
+  }
+}

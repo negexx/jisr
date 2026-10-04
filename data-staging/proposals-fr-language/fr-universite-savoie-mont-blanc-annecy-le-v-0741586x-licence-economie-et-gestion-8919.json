@@ -1,0 +1,46 @@
+{
+  "slug": "fr-universite-savoie-mont-blanc-annecy-le-v-0741586x-licence-economie-et-gestion-8919",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8919&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8919&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le tarif affiché (178 euros) correspond aux droits d'inscription dans un établissement public pour un étudiant français/communautaire ; le montant applicable à un candidat marocain (droits différenciés ou exonération) n'est pas indiqué sur la fiche du programme (voir la page Campus France Maroc sur les droits différenciés). La plateforme de candidature n'est pas indiquée dans ce JSON : pour un titulaire du Bac marocain, la candidature passe par Études en France / Campus France. La page Parcoursup indique que les candidats non ressortissants de l'UE titulaires d'un diplôme équivalent au bac passent par la procédure DAP, mais cette mention ne concerne pas spécifiquement ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8919&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission en licence Economie et gestion est soumise à l'examen du dossier : résultats scolaires du baccalauréat, méthodes de travail, motivation et projet. Vérifiez les attendus et les critères d'analyse des candidatures.",
+          "en": "Admission to the Economics and Management bachelor's is based on a file review: high-school results, working methods, motivation and study plan. Check the expected prerequisites and the application assessment criteria."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8919&typeBac=0&originePc=0",
+            "quote": "La licence peut accueillir des profils assez divers, sous réserve d'un bon niveau scolaire, d'une grosse capacité de travail et d'une grande curiosité intellectuelle."
+          }
+        ]
+      }
+    ]
+  }
+}

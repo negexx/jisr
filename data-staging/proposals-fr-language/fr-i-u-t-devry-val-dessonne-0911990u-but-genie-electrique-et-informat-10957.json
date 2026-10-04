@@ -1,0 +1,76 @@
+{
+  "slug": "fr-i-u-t-devry-val-dessonne-0911990u-but-genie-electrique-et-informat-10957",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10957&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10957&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee: the Parcoursup page shows 178 euros per year, which is the rate for French/EU students; for a Moroccan (non-EU) student the Campus France Maroc page states differentiated fees of 2 902 euros per year for Licence, quoted here. The programme's own page states French level B2 required to enrol; the Campus France page states the French certification is mandatory unless exempted (candidates to programmes taught 100% in English other than L1 may be exempted, but this programme is taught in French). No intake dates were extracted: the ADIUT Maroc application window (1 October 2026 to 15 November 2026) concerns BUT applications in general, not specifically this programme, and no year-specific deadline for this programme is quoted. Application channel not given as requested: non-French-Bac applicants apply via Études en France / Campus France.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10957&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les prérequis en anglais : un test d'anglais (TOEIC, TOEFL, IELTS) peut être demandé selon la formation.",
+          "en": "Check English prerequisites: an English test (TOEIC, TOEFL, IELTS) may be required depending on the programme."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Attention : vérifiez les prérequis, il peut être demandé un test en anglais TOIEC, TOEFL, IELTS."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Cette formation sélective comprend des épreuves orales : un entretien avec l'équipe pédagogique sur la motivation et les compétences scientifiques.",
+          "en": "This selective programme includes oral assessments: an interview with the teaching team on motivation and scientific skills."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10957&typeBac=0&originePc=0",
+            "quote": "Entretien avec l'équipe pédagogique sur la motivation de l'étudiant et ses compétences dans les domaines scientifiques"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le dossier doit inclure un CV et une lettre de motivation ; éléments évalués par la commission d'examen des vœux.",
+          "en": "The application should include a CV and a cover letter; elements assessed by the admissions committee."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10957&typeBac=0&originePc=0",
+            "quote": "CV et lettre de motivation"
+          }
+        ]
+      }
+    ]
+  }
+}

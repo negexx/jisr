@@ -1,0 +1,63 @@
+{
+  "slug": "fr-iut-aix-marseille-site-de-marseille-st-j-0134319z-but-gestion-des-entreprises-et-d-2720",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2720&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2720&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : anglais"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2720&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Cette fiche décrit une formation française qui figure sur Parcoursup ; les dates de candidature et les seuils de sélection n'y sont pas donnés sous une forme datée pour un candidat non-EU / diplôme étranger, et aucun tarif pour ce profil n'est publié. Le montant indiqué de 178 euros par année correspond aux étudiants français, communautaires ou assimilés, pas aux étudiants extra-communautaires. Les informations sur les frais de scolarité de la fiche Parcoursup (178 euros) ne sont donc pas applicables à un étudiant marocain. Pour un candidat marocain titulaire d'un bac marocain, la candidature passe par la plateforme Études en France (Campus France) et non par Parcoursup, conformément aux informations de Campus France Maroc. Aucune date de candidature spécifique aux non-EU n'est mentionnée sur ces pages pour ce BUT. Les attendus et critères d'analyse sont des indications générales, non des conditions strictes pour les candidats internationaux.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2720&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un bon niveau est attendu en Mathématiques, Français, Anglais et Gestion. Vérifiez comment ces attentes s'appliquent à votre dossier de candidat international.",
+          "en": "A good level is expected in Mathematics, French, English and Management. Check how these expectations apply to your international applicant file."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2720&typeBac=0&originePc=0",
+            "quote": "Un bon niveau est attendu en Mathématiques, Français, Anglais et Gestion."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La lettre de motivation doit être ciblée, professionnelle et montrer une vraie connaissance de la formation.",
+          "en": "The cover letter must be targeted, professional and show a real knowledge of the programme."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2720&typeBac=0&originePc=0",
+            "quote": "La lettre de motivation doit être ciblée, professionnelle et montrer une vraie connaissance de la formation."
+          }
+        ]
+      }
+    ]
+  }
+}

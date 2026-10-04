@@ -1,0 +1,96 @@
+{
+  "slug": "de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad9905",
+  "programmePage": "https://www.hs-aalen.de/en/courses/142",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9905/",
+          "quote": "Tuition fees per semester The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        },
+        {
+          "url": "https://www.hs-aalen.de/fileadmin/content/redakteure/einrichtungen/Studentische_Abteilung/Studierenden_Service_Center/Gesamt%C3%BCberblick_Geb%C3%BChren_EN.pdf",
+          "quote": "Tuition fee for international students from outside the EU/EEA 1,500.00 eur"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+          "quote": "The document recognizing your academic qualifications is a mandatory part of your application. To do so, you must apply to Uni Assist for a preliminary review documentation (Vorprüfungsdokumentation - VPD which assesses your eligibility for university admission in Germany)."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "school-leaving certificate"
+          },
+          "quotedAs": "school-leaving certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "language-certificate",
+          "name": {
+            "fr": "Certificat de langue",
+            "en": "language certificate"
+          },
+          "quotedAs": "language certificate(s)",
+          "translationRequired": null
+        },
+        {
+          "slug": "vpd-certificate",
+          "name": {
+            "fr": "Attestation d'évaluation préliminaire (VPD) de uni-assist",
+            "en": "VPD-Certificate from uni-assist"
+          },
+          "quotedAs": "VPD-Certificate from uni-assist",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-copy",
+          "name": {
+            "fr": "Copie du passeport",
+            "en": "passport copy"
+          },
+          "quotedAs": "passport copy",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-aalen.de/en/application-studying/application-process/english-taught-programs/",
+          "quote": "These include your entrance qualification, language certificate(s), the VPD-Certificate from uni-assist, passport picture and a passport copy."
+        }
+      ]
+    }
+  },
+  "notes": "The deadline 03.12.2026 is on the programme page and is the application deadline for the summer term 2027; it is not explicitly labelled as only for international applicants but the programme page is for the English-taught programme and the application process for English-taught programmes is for international applicants. The application channel is de-uni-assist-vpd because the page states foreign applicants must obtain a VPD from uni-assist, then apply in the university's own portal. Tuition is per semester; the DAAD page says 1,500 EUR per semester for non-EU applicants. The documents list comes from the 1st step of the application tutorial for English-taught programmes; it says 'passport picture and a passport copy' but only the passport copy is listed as a document because the passport picture is not a standard document category. The transcript of records is not listed for this Bachelor's programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les conditions d'admission sur la page du programme : test d'aptitude TestAS ou SAT/ACT, exigences de langue, documents via uni-assist (VPD).",
+          "en": "Check admission requirements on the programme page: aptitude test TestAS or SAT/ACT, language requirements, documents via uni-assist (VPD)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9905/",
+            "quote": "University entrance qualification For further requirements and details (TestAS, SAT, language requirements), please check our homepage: https://www.hs-aalen.de/application."
+          }
+        ]
+      }
+    ]
+  }
+}

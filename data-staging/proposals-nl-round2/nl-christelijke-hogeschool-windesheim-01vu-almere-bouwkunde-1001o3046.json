@@ -1,0 +1,33 @@
+{
+  "slug": "nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046",
+  "programmePage": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+  "facts": {
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Meld je dan zo snel mogelijk aan via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "No tuition fee is stated for this programme for a non-EU applicant with a foreign diploma: the only quoted amounts (€ 2.694,- in 2026 - 2027) are on the programme page and on the Studiekosten page, where they concern the statutory fee (wettelijk collegegeld), for which the criteria depend on nationality, and are therefore not stated for this applicant. The intakes: the page gives only a general application deadline (1 May, no year) without saying it is for non-EU or foreign-qualification applicants; it is therefore recorded as a recurring deadline. No language of instruction is stated for this programme (the page refers to a qualification from abroad without naming a language level).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que votre diplôme étranger est jugé équivalent à un diplôme néerlandais de havo, vwo ou mbo-4, et consultez les exigences linguistiques sur la page des taaleisen.",
+          "en": "Check that your foreign diploma is considered equivalent to a Dutch havo, vwo or mbo-4 diploma, and consult the language requirements on the taaleisen page."
+        },
+        "evidence": [
+          {
+            "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+            "quote": "Je bent toelaatbaar met een diploma dat gelijkwaardig is aan een havo-, vwo- of mbo-4 diploma."
+          }
+        ]
+      }
+    ]
+  }
+}

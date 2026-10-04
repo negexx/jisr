@@ -1,0 +1,67 @@
+{
+  "slug": "fr-la-rochelle-universite-0171463y-licence-genie-civil-3080",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3080&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3080&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : obligatoire : anglais"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3080&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune date d'ouverture ou de clôture des candidatures (intakes) n'est indiquée pour cette formation dans les pages fournies : la fiche Parcoursup ne donne que des dates de session générale (avril-mai 2026, réponses à partir du 2 juin 2026), sans préciser qu'elles concernent les candidats internationaux ou non-UE, donc aucune intake n'est retenue. La langue d'enseignement n'est pas explicitement déclarée : la mention « Langue vivante 1 : obligatoire : anglais » et le niveau de français B2 requis indiquent un enseignement en français, d'où teachingLanguages = [fr]. La dispense de certification de français pour les formations 100% en anglais ne s'applique pas ici (formation non concernée). Le tarif indiqué (2 902 €/an) est le droit d'inscription différencié pour étudiant extra-communautaire (Maroc) en cycle Licence, cité sur la page Campus France Maroc ; il ne s'agit pas d'un montant propre à cette licence. Les frais de CVEC ne sont pas indiqués. Les dates et le mode de candidature (Etudes en France / Campus France) sont gérés séparément et ne figurent pas ici. Aucune liste de pièces à fournir n'est donnée par les pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3080&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez sur le site de La Rochelle Université si votre diplôme marocain est accepté et si des frais de scolarité spécifiques s'appliquent : les établissements peuvent exonérer les étudiants étrangers des droits différenciés.",
+          "en": "Check on the La Rochelle Université website whether your Moroccan diploma is accepted and whether specific tuition fees apply: institutions may exempt foreign students from differentiated fees."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+            "quote": "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés. Il faut vous renseigner sur le site de l'établissement pour plus d'informations."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidatures sont examinées par une commission (résultats scolaires 45 %, méthodes de travail 40 %, savoir-être 10 %, motivation 5 %) : vérifiez les critères et les attentes sur la fiche Parcoursup.",
+          "en": "Applications are reviewed by a commission (academic results 45%, work methods 40%, behaviour 10%, motivation 5%): check the criteria and expectations on the Parcoursup page."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3080&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 45 % Méthodes de travail 40 % Savoir-être 10 % Motivation 5 %"
+          }
+        ]
+      }
+    ]
+  }
+}

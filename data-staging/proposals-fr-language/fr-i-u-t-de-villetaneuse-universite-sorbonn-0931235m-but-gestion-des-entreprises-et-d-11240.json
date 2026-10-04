@@ -1,0 +1,76 @@
+{
+  "slug": "fr-i-u-t-de-villetaneuse-universite-sorbonn-0931235m-but-gestion-des-entreprises-et-d-11240",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11240&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11240&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the page fr-i-u-t-de-villetaneuse shows only a general institution-wide figure for Parcoursup candidates (178 euros par annee, i.e. the EU/EEA/first-time-licence fee); the Campus France Maroc page (le cout des etudes, les bourses) states the differentiated rate for Moroccan/extra-community students in a Licence cycle, which is what the 'differenced rights' fact records (2902 EUR). No programme-specific amount is stated. Duration: the Parcoursup page states 6 semesters; the BUT is normally a 3-year (bac+3) diplome, but only the semester count was quoted. Intake: no dated non-EU application deadline is stated; the only dated window quoted (ADIUT Maroc, 1er octobre au 15 novembre 2026) belongs to the BUT 1re annee ADIUT Maroc procedure, not to this Paris-Nord IUT programme, so no intake is included. applicationChannel omitted as instructed (foreign-diploma applicants go through Etudes en France / Campus France). Documents: no document list is stated on these pages, so no documents are included.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11240&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une note de français, histoire-géographie, économie de 1re et terminale est requise (degré d'importance «Très important»). Aucun seuil chiffré n'est publié.",
+          "en": "French, history-geography and economics marks from the penultimate and final secondary years are assessed (importance rating « Très important »). No numeric threshold is published."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11240&typeBac=0&originePc=0",
+            "quote": "Notes de français, histoire-géographie, économie de 1ère et terminale et qualité de rédaction du projet de formation"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une note de mathématiques de 1re, terminale et du bac est requise (degré d'importance «Essentiel»). Aucun seuil chiffré n'est publié.",
+          "en": "A mathematics mark from the penultimate and final secondary years and the bac is required (importance rating « Essentiel »). No numeric threshold is published."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11240&typeBac=0&originePc=0",
+            "quote": "Notes de mathématiques de 1ère, terminale et du bac pour les bacheliers"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une note d'anglais de 1re, terminale et du bac est requise (degré d'importance «Important»). Aucun seuil chiffré n'est publié.",
+          "en": "An English mark from the penultimate and final secondary years and the bac is required (importance rating « Important »). No numeric threshold is published."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11240&typeBac=0&originePc=0",
+            "quote": "Savoir-être 20 %"
+          }
+        ]
+      }
+    ]
+  }
+}

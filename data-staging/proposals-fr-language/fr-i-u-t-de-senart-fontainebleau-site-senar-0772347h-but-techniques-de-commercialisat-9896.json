@@ -1,0 +1,33 @@
+{
+  "slug": "fr-i-u-t-de-senart-fontainebleau-site-senar-0772347h-but-techniques-de-commercialisat-9896",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9896&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9896&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Non-EU tuition: the Campus France Maroc page states differentiated tuition of 2 902 EUR/year for Licence for extra-communautaire students; the Parcoursup fiche's 178 EUR/year is for EU students. French certification is required for Moroccan Bac holders except in specific dispense cases (notably in general, candidates to programmes taught 100% in English other than L1 are exempt unless the institution requires it; this programme is taught in French). Dates (11–15 May 2026 written tests, 2 June 2026 admission responses) are given for the general Parcoursup procedure in 2026 and are therefore recorded as a manual check, not as the programme's own deadline.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un QCM de culture générale en ligne fait partie des épreuves de sélection (prévues du 11 au 15 mai 2026) ; vérifiez la convocation auprès de la formation.",
+          "en": "An online general-culture MCQ is part of the selection tests (scheduled 11–15 May 2026); check the invitation with the programme."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9896&typeBac=0&originePc=0",
+            "quote": "Les candidats retenus seront convoqués à un amphi de recrutement où un QCM de Culture Générale sera à passer en ligne."
+          }
+        ]
+      }
+    ]
+  }
+}

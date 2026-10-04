@@ -1,0 +1,67 @@
+{
+  "slug": "fr-i-u-t-de-la-martinique-9720843j-but-informatique-35520",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35520&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35520&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "The programme's own page (Parcoursup) gives a tuition fee of 178 euros per year, but that is the rate for French/EU students (and states a fee only for boursiers otherwise); no differentiated non-EU fee is quoted for this programme, so tuition is left out. No document list is given on the pages. No dated intake for international applicants with a foreign diploma is stated: the ADIUT Maroc dates on the Campus France pages are marked 2026 but are described for a different year/programme page and are not attached to this Martinique IUT page, so no intake is output. Application channel is left out per the task: a Moroccan Bac holder must use Etudes en France / Campus France; the 'Parcoursup' route applies to French and European Bac holders.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35520&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La sélection se fait sur dossier (résultats scolaires, méthodes de travail, savoir-être, motivation). Consultez les attendus et critères d'analyse : les candidats internationaux doivent aussi passer par Etudes en France / Campus France.",
+          "en": "Selection is based on a competitive file review (academic results, work methods, soft skills, motivation). See the published criteria; international applicants must also apply through Etudes en France / Campus France."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35520&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 40 % Méthodes de travail 20 % Savoir-être 10 % Motivation 20 % Engagement et activités 10 %"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35520&typeBac=0&originePc=0",
+            "quote": "Les futurs candidats au BUT Informatique doivent apporter un soin particulier aux éléments rédactionnels de leur dossier de candidature – projet de formation, activités et centres d’intérêts."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un dossier de candidature doit être présenté via la procédure Etudes en France. Consultez les attendus et les critères d'analyse des candidatures publiés par la formation. Le niveau de français B2 est requis.",
+          "en": "Application must be made through the Etudes en France / Campus France procedure. See the published selection criteria. French level B2 is required."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35520&typeBac=0&originePc=0",
+            "quote": "Sinon, vous devez faire vos démarches sur le site de Campus France de votre pays de résidence"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35520&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "fr-iut-nord-franche-comte-site-de-belfort-0900231m-but-genie-civil-construction-dur-10821",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10821&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10821&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 €/an est le tarif affiché sur la fiche Parcoursup, qui vaut pour les étudiants non-extracommunautaires (étudiants français/UE) ; les étudiants extracommunautaires non exonérés paient en général des droits différenciés, mais les pages ne l'affirment pas pour ce BUT. La fiche Parcoursup décrit la procédure Parcoursup, qui ne concerne pas le candidat marocain titulaire d'un Bac marocain (procédure Études en France / Campus France) ; la page marocaine indique aussi que le programme ADIUT Maroc encadre les candidatures en BUT. La preuve de la durée (bac+3) provient d'une page générale sur le BUT, pas de la fiche du programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10821&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      }
+    ]
+  }
+}

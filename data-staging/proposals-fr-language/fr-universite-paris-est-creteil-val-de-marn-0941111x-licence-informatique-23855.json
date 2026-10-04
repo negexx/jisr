@@ -1,0 +1,59 @@
+{
+  "slug": "fr-universite-paris-est-creteil-val-de-marn-0941111x-licence-informatique-23855",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=23855&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=23855&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B1"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the page only shows the general Parcoursup figure 'Par année 178 euros.' as the standard annual fee; the differentiated non-EU fee (Campus France page states 2 902 euros/year for Licence, with possible exemptions) may apply to this applicant — it is the institution-wide Campus France figure, not stated for this programme, so it is not recorded here. Teaching language: the page does not state the language of instruction; French is recorded because the page states a required French level (B1), and no other language is stated. Duration: no explicit duration is stated; the 3-year value is inferred from '3 ou 4 ans' for this licence. Intakes: no dated start or application deadline is stated for this programme. Documents: no document list is given on the supplied pages. Application channel: deliberately omitted per task instructions — as a Moroccan Bac holder the applicant applies via Études en France / Campus France; the Parcoursup page also states non-EU applicants with an equivalent diploma go through DAP.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=23855&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Candidats non ressortissants de l'UE titulaires d'un diplôme équivalent au bac français : candidature via la procédure DAP, non Parcoursup. Vérifier les modalités.",
+          "en": "Non-EU candidates with a qualification equivalent to the French baccalaureate: apply through the DAP procedure, not Parcoursup. Check the terms."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=23855&typeBac=0&originePc=0",
+            "quote": "N.B : Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sélection très forte : 100 % de la grille d'analyse repose sur les résultats scolaires (informatique et mathématiques notamment). Vérifier les critères.",
+          "en": "Highly selective: 100% of the assessment grid is based on school results (computer science and mathematics in particular). Check the criteria."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=23855&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 100%"
+          }
+        ]
+      }
+    ]
+  }
+}

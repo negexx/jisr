@@ -1,0 +1,50 @@
+{
+  "slug": "fr-universite-toulouse-iii-universite-toulo-0313218e-licence-genie-civil-17960",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17960&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17960&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La fiche Parcoursup (page du programme) indique 178 euros par an comme frais de scolarité, mais ce tarif concerne les étudiants français/UE ; pour un étudiant marocain non-UE, les droits différenciés de 2 902 €/an s'appliquent (source Campus France Maroc). Le délai de candidature (du 1er octobre 2026 au 15 novembre 2026) figurant sur la page BUT/ADIUT ne concerne pas cette licence : ne pas l'utiliser. Aucun document ni intake daté spécifique à cette licence n'est mentionné dans les pages fournies.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17960&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les résultats scolaires comptent pour 45 % de la grille d'analyse, les notes de première et terminale en mathématiques et physique/chimie étant jugées essentielles. La motivation et la cohérence du projet comptent aussi pour 45 %.",
+          "en": "School results count for 45% of the assessment grid, with first- and final-year grades in mathematics and physics/chemistry rated essential. Motivation and the coherence of the project also count for 45%."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17960&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 45%"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17960&typeBac=0&originePc=0",
+            "quote": "les notes de première et de terminale dans les disciplines scientifiques. notes de première et terminale en Mathématiques, Physique/Chimie"
+          }
+        ]
+      }
+    ]
+  }
+}

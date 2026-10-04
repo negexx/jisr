@@ -1,0 +1,63 @@
+{
+  "slug": "fr-universite-paris-1-pantheon-sorbonne-0751717j-licence-economie-9216",
+  "programmePage": "https://formations.pantheonsorbonne.fr/fr/catalogue-des-formations/licence-L/licence-economie-KBTDQ2ZO.html",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr", "en"],
+      "evidence": [
+        {
+          "url": "https://formations.pantheonsorbonne.fr/fr/catalogue-des-formations/licence-L/licence-economie-KBTDQ2ZO.html",
+          "quote": "La licence d'économie peut &ecirc;tre suivie en français ou en anglais (parcours International Track)."
+        },
+        {
+          "url": "https://formations.pantheonsorbonne.fr/fr/catalogue-des-formations/licence-L/licence-economie-KBTDQ2ZO.html",
+          "quote": "La langue d'enseignement est principalement le français."
+        }
+      ]
+    }
+  },
+  "notes": "Auditor caveats: (1) The programme has two main tracks: the general Licence Economie taught mainly in French (with some English from L2) and the Licence Economie - International Track taught entirely in English; teachingLanguages lists both fr and en. (2) Tuition for non-EU students is not stated for this programme: the campusfrance page gives general differentiated registration fees for Licence of 2 902 euros/year, but that figure is not specific to this licence, so it was left out; the parcoursup/formations pages only give the national fee (178 euros/year) and state that the International Track is at national tuition fees but otherwise does not state the non-EU fee. (3) No application deadline or intake is stated for this programme for non-EU applicants. (4) The B2 French requirement comes from the Parcoursup page, which describes entry conditions for French Bac holders; the general Campus France Morocco page states that French certification is required for the Etudes en France procedure except for exemptions, but it does not specify a level for this programme. (5) The recommendation about Mathematics was quoted from the Parcoursup page; the formations catalogue page contains a similar sentence ('Il est déconseillé de candidater dans cette formation sans un solide bagage en mathématiques') but this was not used as evidence. (6) The Parcoursup page states 'Les candidats non ressortissants de l'U.E... ne passent pas par la plateforme Parcoursup, mais par la procédure DAP' — this applies to applicants with a French-equivalent baccalauréat; for holders of a Moroccan Bac, application goes through Etudes en France as specified in the task.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9216&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Il est recommandé d'avoir suivi en terminale la spécialité Mathématiques ou l'option Mathématiques complémentaires; la formation est exigeante en mathématiques et statistiques.",
+          "en": "It is recommended to have followed the Mathematics speciality or the additional Mathematics option in the final year; the programme is demanding in mathematics and statistics."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9216&typeBac=0&originePc=0",
+            "quote": "il est recommandé d'avoir suivi en terminale la spécialité Mathématiques ou l'option Mathématiques complémentaires."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'International Track (enseigné intégralement en anglais) exige un niveau minimum d'anglais B2.",
+          "en": "The International Track (taught entirely in English) requires a minimum English level of B2."
+        },
+        "evidence": [
+          {
+            "url": "https://formations.pantheonsorbonne.fr/fr/catalogue-des-formations/licence-L/licence-economie-KBTDQ2ZO.html",
+            "quote": "Le programme s'adresse aux étudiants ayant un niveau B2 en Anglais (niveau attendu au bac pour les lycéens ayant choisi l'Anglais en LV1)."
+          }
+        ]
+      }
+    ]
+  }
+}

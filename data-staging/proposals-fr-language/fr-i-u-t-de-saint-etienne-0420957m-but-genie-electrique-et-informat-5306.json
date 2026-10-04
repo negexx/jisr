@@ -1,0 +1,16 @@
+{
+  "slug": "fr-i-u-t-de-saint-etienne-0420957m-but-genie-electrique-et-informat-5306",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5306&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5306&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "The programme page is a Parcoursup fiche for French/EU Bac holders: the only tuition figure given (\"Par année 178 euros\") is the EU/EEA rate and no non-EU differentiated fee is stated for this programme, so tuition is left out. The 1 October–15 November 2026 application window on the Campus France Maroc page describes ADIUT Maroc candidature for Moroccan Bac holders via Études en France, not this Saint-Etienne IUT programme, and the Parcoursup page confirms non-EU foreign-diploma applicants must not use Parcoursup, so intake dates are left out. No document list is given."
+}

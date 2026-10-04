@@ -1,0 +1,82 @@
+{
+  "slug": "nl-hogeschool-leiden-21ri-bio-informatica-1001o5219",
+  "programmePage": "https://www.hsleiden.nl/opleiding/bio-informatica",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 977500,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hsleiden.nl/studeren/inschrijven/kosten",
+          "quote": "Instellingscollegegeld voltijd: € 9.775,-"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland",
+          "quote": "Je schrijft je altijd in via Studielink."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Copie certifiée conforme du diplôme",
+            "en": "Certified copy of your diploma"
+          },
+          "quotedAs": "Een gewaarmerkte kopie van je diploma en cijferlijst",
+          "translationRequired": true
+        },
+        {
+          "slug": "transcript-of-records",
+          "name": {
+            "fr": "Copie certifiée conforme du relevé de notes",
+            "en": "Certified copy of your transcript of records"
+          },
+          "quotedAs": "Een gewaarmerkte kopie van je diploma en cijferlijst",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland",
+          "quote": "Een gewaarmerkte kopie van je diploma en cijferlijst"
+        },
+        {
+          "url": "https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland",
+          "quote": "Een erkende vertaling van bovengenoemd diploma en cijferlijst in het Nederlands, Duits, Frans of Engels;"
+        },
+        {
+          "url": "https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland",
+          "quote": "Bewijs dat je de Nederlandse taal voldoende beheerst."
+        }
+      ]
+    }
+  },
+  "notes": "Le montant du tuition (instellingscollegegeld voltijd: € 9.775,-) est une page institution generale, non specifique a ce programme ; seul le wettelijk collegegeld (€ 2.771,-) figure sur la page du programme, mais il ne s'applique pas aux etudiants hors UE. Le deadline du 1 mai vient de la page \"Studenten uit het buitenland\" (etudiants avec diplome international / residant a l'etranger) ; l'annee n'est pas precisee. Les documents listes proviennent de la page generale pour etudiants internationaux.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission sur la page de la formation : un diplôme équivalent au havo, vwo ou mbo-4 néerlandais est généralement exigé.",
+          "en": "Check the admission requirements on the programme page: a diploma comparable to Dutch havo, vwo or mbo-4 is generally required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hsleiden.nl/opleiding/bio-informatica",
+            "quote": "Wat zijn de toelatingseisen? Bekijk de toelatingseisen voor de opleiding."
+          }
+        ]
+      }
+    ]
+  }
+}

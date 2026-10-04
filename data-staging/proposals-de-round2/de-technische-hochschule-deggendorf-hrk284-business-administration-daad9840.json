@@ -1,0 +1,109 @@
+{
+  "slug": "de-technische-hochschule-deggendorf-hrk284-business-administration-daad9840",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9840/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 50000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9840/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries Switzerland United Kingdom 500 EUR"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/en/apply",
+          "quote": "choose what you aim to study and apply directly to DIT via our own online application portal, Primuss"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "university-entrance-qualification",
+          "name": {
+            "fr": "Qualification d'entrée à l'université",
+            "en": "University entrance qualification"
+          },
+          "quotedAs": "University entrance qualification",
+          "translationRequired": null
+        },
+        {
+          "slug": "identity-card-copy",
+          "name": {
+            "fr": "Copie de la carte d'identité",
+            "en": "Copy of identity card"
+          },
+          "quotedAs": "Copy of your identity card",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum vitae",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "Curriculum vitae",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/en/apply",
+          "quote": "University entrance qualification Copy of your identity card Curriculum vitae"
+        }
+      ]
+    }
+  },
+  "notes": "Teaching languages: the programme starts in English and later semesters are partly in German; German A2 is required by the third semester. Tuition: the DAAD page states 500 EUR per semester for non-EU applicants and 0 EUR for EU applicants; the 500 EUR corresponds to the DIT service fee for third-country applicants. The application channel is the university's own Primuss portal (de-university-direct); the pages do not mention uni-assist for this programme. Intakes: the only dates found for this programme are 15 Oct - 15 Dec; the pages do not show the year (likely recurring each year for the summer semester). No explicit non-EU-only application deadline is given.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme marocain est reconnu comme qualification d'entrée à l'université via DAAD/Anabin.",
+          "en": "Check whether your Moroccan Baccalauréat is recognised as a university entrance qualification via DAAD/Anabin."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-deg.de/en/apply",
+            "quote": "To find out whether your school-leaving certificate meets the requirements for the degree programs at our university, please use the DAAD Database on admission requirements."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'admission en ligne (Admission Test) peut être exigé; vérifiez auprès de l'université.",
+          "en": "An online admission test may be required; check with the university."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-deg.de/en/apply",
+            "quote": "Business Administration and Service Management SS 15 Oct - 15 Dec University Entrance Qualification Language Requirements Admission Test Deggendorf / Pfarrkirchen EN+DE"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Après le 2e semestre, des connaissances d'allemand niveau A2 sont exigées: certificat à fournir.",
+          "en": "After the 2nd semester, German skills at level A2 are required: certificate to be provided."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9840/",
+            "quote": "By the start of the third semester, German language skills at level A2 of the Common European Framework of Reference for Languages must be proven."
+          }
+        ]
+      }
+    ]
+  }
+}

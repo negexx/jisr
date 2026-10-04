@@ -1,0 +1,33 @@
+{
+  "slug": "fr-i-u-t-devry-val-dessonne-site-bretigny-s-0912128u-but-gestion-des-entreprises-et-d-10968",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10968&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10968&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "tuition: the 178 EUR/year figure was found on a Parcoursup page aimed at general French candidates; for an extra-EU student subject to differentiated fees, the Campus France Morocco page states 2,902 EUR/year for Licence level (but this is not specific to this programme). The programme is taught in French; the B2 French level is stated as required for this specific programme on the Parcoursup page. No explicit document list for international applicants was found on the supplied pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10968&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      }
+    ]
+  }
+}

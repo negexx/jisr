@@ -1,0 +1,25 @@
+{
+  "slug": "fr-i-u-t-2-de-grenoble-0381775y-but-informatique-4996",
+  "programmePage": null,
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2026-10-01",
+          "applicationDeadline": "2026-11-15"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+          "quote": "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)."
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+          "quote": "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France."
+        }
+      ]
+    }
+  }
+}

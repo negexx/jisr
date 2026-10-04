@@ -1,0 +1,46 @@
+{
+  "slug": "fr-i-u-t-le-mans-0720083z-but-gestion-des-entreprises-et-d-8711",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8711&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8711&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Page Parcoursup : le montant « 178 euros par année » est un tarif national affiché pour les étudiants en général ; il ne comporte aucune mention d'un tarif pour les étudiants non-UE, donc la tuition n'est pas extraite. L'inscription sur Parcoursup décrite sur la fiche ne concerne pas un candidat marocain (bac marocain), qui doit passer par Études en France à partir du 1er octobre 2026 ; applicationChannel est omis conformément à la tâche. La page Campus France sur les certifications indique que la certification de français est obligatoire pour la procédure Études en France, mais elle ne fait pas partie des pages propres à ce programme : le niveau B2 retenu provient de la fiche du programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8711&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les notes en Français, techniques quantitatives (maths, comptabilité), langues (anglais, espagnol, allemand), histoire-géographie et économie sont évaluées par la commission, qui attribue 60 % à vos résultats scolaires.",
+          "en": "Your grades in French, quantitative techniques (maths, accounting), languages (English, Spanish, German), history-geography and economics are assessed by the commission, which weighs your academic results at 60%."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8711&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 60%"
+          }
+        ]
+      }
+    ]
+  }
+}

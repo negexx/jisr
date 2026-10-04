@@ -1,0 +1,72 @@
+{
+  "slug": "fr-iut-de-cachan-universite-paris-saclay-0940609b-but-genie-electrique-et-informat-11440",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11440&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11440&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Frais de scolarité : la fiche Parcoursup indique « Par année 178 euros », tarif national pour les étudiants français et de l'UE ; aucun montant spécifique aux étudiants non-UE (droits différenciés) n'est donné pour ce BUT, donc aucune tuition n'est extraite. Intakes : aucune date d'ouverture ou d'échéance datée n'est fournie pour ce programme (le calendrier ADIUT Maroc concerne la candidature via Études en France ; le calendrier Parcoursup indique seulement une analyse des candidatures en avril-mai 2026). Comme demandé, applicationChannel n'est pas indiqué : un candidat titulaire du Bac marocain passe par Études en France / Campus France et non par Parcoursup.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11440&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le B.U.T. est une formation sélective : les résultats scolaires comptent pour 50 % et la motivation pour 25 %. Vérifiez les attendus et les critères sur la fiche de la formation.",
+          "en": "The B.U.T. is a selective programme: school results count for 50% and motivation for 25%. Check the expectations and criteria on the programme page."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11440&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 50 % Méthodes de travail 10 % Savoir-être 10 % Motivation 25 % Engagement et activités 5 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des épreuves orales ou un entretien collectif d'environ 45 minutes peuvent être demandés selon votre profil (filières technologiques et réorientation) : vérifiez les modalités de candidature.",
+          "en": "Oral tests or a group interview of about 45 minutes may be required depending on your profile (technological or reorientation pathways): check the application procedures."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11440&typeBac=0&originePc=0",
+            "quote": "L'épreuve consiste en un entretien collectif d'une durée de 45 minutes environ."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez le niveau exigé et les prérequis auprès de l'établissement : chaque établissement fixe ses propres critères d'admission.",
+          "en": "Check the required level and prerequisites with the institution: each institution sets its own admission criteria."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Chaque établissement fixe ses propres critères d'admission, il faut toujours vérifier le niveau exigé par les établissements en allant sur leur site web."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l-but-gestion-des-entreprises-et-d-6041",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6041&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6041&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B1"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee is not stated for this programme for non-EU students. The page mentions 'Par année 178 euros' but this is likely for EU students or a general fee; the Campus France page states differentiated fees for non-EU students (2 902 euros for Licence) but this is not specific to this programme. Duration: 180 ECTS over 3 years (Bac+3, 6 semestres). Teaching language: French (B1 required). Application channel: Études en France / Campus France for Moroccan Bac holders, not Parcoursup. The programme page is the Parcoursup fiche, but the application is via Campus France for this profile.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Niveau de français B1 requis pour l'inscription. La certification de français (TCF, DELF B2, DALF) est généralement obligatoire pour la procédure Campus France.",
+          "en": "French level B1 required for enrollment. French certification (TCF, DELF B2, DALF) is generally mandatory for the Campus France procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6041&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les résultats scolaires (notes de première et terminale) comptent pour 75% dans l'analyse des candidatures. L'option mathématiques complémentaires est conseillée.",
+          "en": "Academic results (first and final year grades) account for 75% of the application review. The additional mathematics option is recommended."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6041&typeBac=0&originePc=0",
+            "quote": "Résultats de première et terminale Essentiel 4 sur 4"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats doivent suivre la procédure Études en France (Campus France) et non Parcoursup. Vérifiez les modalités exactes sur le site de Campus France Maroc.",
+          "en": "Applicants must follow the Études en France (Campus France) procedure, not Parcoursup. Check the exact procedures on the Campus France Morocco website."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces",
+            "quote": "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France de votre pays de résidence."
+          }
+        ]
+      }
+    ]
+  }
+}

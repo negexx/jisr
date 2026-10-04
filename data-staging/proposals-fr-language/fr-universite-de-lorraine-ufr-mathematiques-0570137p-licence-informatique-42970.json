@@ -1,0 +1,46 @@
+{
+  "slug": "fr-universite-de-lorraine-ufr-mathematiques-0570137p-licence-informatique-42970",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=42970&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=42970&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucun document n'est nommé pour ce programme. Les langues d'enseignement ne sont pas explicitement indiquées : le niveau de français B2 exigé suggère que la formation est enseignée en français. Les frais de 178 euros sont présentés sur la fiche Parcoursup sans mention du statut de l'étudiant ; ils ne correspondent pas aux droits différenciés de 2 902 euros pour une année de Licence cités par Campus France Maroc pour les étudiants extra-communautaires. La date limite de candidature ADIUT Maroc (du 1er octobre 2026 au 15 novembre 2026) concerne le BUT, pas cette licence. L'anglais est une langue vivante obligatoire (niveau B1 conseillé), pas une langue d'enseignement.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=42970&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non ressortissants de l'U.E. titulaires d'un diplôme équivalent au baccalauréat français ne passent pas par Parcoursup mais par la procédure DAP : vérifiez la procédure applicable.",
+          "en": "Applicants who are not nationals of the EU and hold a diploma equivalent to the French baccalauréat do not use Parcoursup but the DAP procedure: check which procedure applies."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=42970&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      }
+    ]
+  }
+}

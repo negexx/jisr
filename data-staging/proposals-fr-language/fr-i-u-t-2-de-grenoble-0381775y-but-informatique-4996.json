@@ -1,0 +1,80 @@
+{
+  "slug": "fr-i-u-t-2-de-grenoble-0381775y-but-informatique-4996",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4996&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4996&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Frais de scolarité : la fiche Parcoursup indique 178 euros par année, montant applicable aux étudiants ne payant pas les droits différenciés. Aucune page consultée ne donne le montant des droits différenciés pour ce BUT pour un étudiant marocain non-EU. Aucune langue d'enseignement n'est explicitement indiquée ; « Langue vivante 1 : anglais » désigne une matière, pas la langue d'enseignement. Aucun document à fournir n'est nommé. Aucune date de candidature ne concerne les candidats non-EU (le calendrier Parcoursup 2026 s'adresse aux bacheliers français/européens) ; applicationChannel est volontairement omis (Études en France / Campus France).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4996&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Étude du dossier : résultats scolaires (80 %), savoir-être (10 %), motivation (10 %). La spécialité Mathématiques ou l'option Mathématiques complémentaires est fortement attendue.",
+          "en": "File review: academic results (80%), behaviour (10%), motivation (10%). Mathematics specialisation or the Mathematics complement option is strongly expected."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4996&typeBac=0&originePc=0",
+            "quote": "Nous ne classerons que très peu de candidates ou candidats en Bac général qui n'ont pas suivi la spécialité Mathématiques ou à défaut l'option Mathématiques complémentaires de terminale."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4996&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 80 % Savoir-être 10 % Motivation 10 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une lettre de motivation est demandée : répondez aux quatre questions indiquées par la formation (intérêts, choix du BUT, moyens de réussite, atouts).",
+          "en": "A cover letter is requested: answer the four questions listed by the programme (interests, choice of BUT, means of success, strengths)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4996&typeBac=0&originePc=0",
+            "quote": "Dans votre lettre de motivation vous répondrez aux questions suivantes : Quels aspects de l'informatique vous intéressent et pourquoi ?"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La formation est sélective ; le calendrier indiqué (analyse en avril-mai 2026, réponses à partir du 2 juin 2026) concerne la procédure française.",
+          "en": "The programme is selective; the stated calendar (review in April-May 2026, answers from 2 June 2026) concerns the French procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4996&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4996&typeBac=0&originePc=0",
+            "quote": "Les formations analysent les candidatures en avril-mai 2026 à partir des critères qu'elles ont définis et de leur niveau d'importance."
+          }
+        ]
+      }
+    ]
+  }
+}

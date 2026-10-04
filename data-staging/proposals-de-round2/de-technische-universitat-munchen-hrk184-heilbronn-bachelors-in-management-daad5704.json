@@ -1,0 +1,113 @@
+{
+  "slug": "de-technische-universitat-munchen-hrk184-heilbronn-bachelors-in-management-daad5704",
+  "programmePage": "https://www.mgt.tum.de/programs/undergraduate-programs/bachelor-management-data-science/?utm_source=profile&utm_medium=paid&utm_campaign=campaign_hn_000218_DAAD_in_bmds_&utm_content=banner_with_cta&utm_term=video",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.mgt.tum.de/programs/undergraduate-programs/bachelor-management-data-science/?utm_source=profile&utm_medium=paid&utm_campaign=campaign_hn_000218_DAAD_in_bmds_&utm_content=banner_with_cta&utm_term=video",
+          "quote": "6 semesters No tuition fees"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5704/",
+          "quote": "This degree programme does not charge any tuition fees."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.mgt.tum.de/programs/bachelor-management-data-science/how-to-apply",
+          "quote": "All international applicants with international university entrance qualifications (e.g. secondary level education qualifications) must also apply via uni-assist (you can have your documents reviewed by uni-assist at any time throughout the year)."
+        },
+        {
+          "url": "https://www.mgt.tum.de/programs/bachelor-management-data-science/how-to-apply",
+          "quote": "The application period runs from May 15th until July 15th every year."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "university entrance qualification",
+          "translationRequired": true
+        },
+        {
+          "slug": "letter-of-motivation",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Letter of motivation"
+          },
+          "quotedAs": "Letter of motivation",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5704/",
+          "quote": "\"Abitur\" (university entrance qualification) or equivalent"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5704/",
+          "quote": "Letter of motivation – maximum two A4 pages"
+        },
+        {
+          "url": "https://www.mgt.tum.de/programs/bachelor-management-data-science/how-to-apply",
+          "quote": "Documents not issued in German or English must be translated by a certified translator into either German or English."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: The programme page states 'No tuition fees' and the DAAD page states 'This degree programme does not charge any tuition fees.' The general TUM page says international non-EU students usually pay 2,000 or 3,000 EUR per semester for bachelor's programmes, but this programme-specific statement takes precedence. Semester contribution of 97.00 EUR applies (Heilbronn campus). APS certificate is not required for Moroccan applicants (only China, Vietnam, India).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5704/",
+            "quote": "English language skills No minimum language level required (proficiency assessment via test or interview)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien d'admission peut être requis dans le cadre de la procédure d'aptitude. Dates possibles : 22.07.2026, 29.07.2026, 05.08.2026, 12.08.2026, 26.08.2026, 02.09.2026, 09.09.2026, 16.09.2026.",
+          "en": "An admission interview may be required as part of the aptitude assessment. Possible dates: 22.07.2026, 29.07.2026, 05.08.2026, 12.08.2026, 26.08.2026, 02.09.2026, 09.09.2026, 16.09.2026."
+        },
+        "evidence": [
+          {
+            "url": "https://www.mgt.tum.de/programs/bachelor-management-data-science/how-to-apply",
+            "quote": "The interviews will be conducted online on July 22, 2026, July 29, 2026, August 05, 2026, August 12, 2026, August 26, 2026, September 02, 2026, September 09, 2026 and September 16, 2026."
+          }
+        ]
+      }
+    ]
+  }
+}

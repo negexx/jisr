@@ -1,0 +1,25 @@
+{
+  "slug": "fr-ecole-universitaire-de-premier-cycle-cam-0912409z-licence-economie-et-gestion-12935",
+  "programmePage": null,
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2026-10-01",
+          "applicationDeadline": "2026-11-15"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/calendrier-de-la-procedure-de-candidature-20262027",
+          "quote": "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)"
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/calendrier-de-la-procedure-de-candidature-20262027",
+          "quote": "DAP blanche : 1ère année de Licence à l'Université (L1)"
+        }
+      ]
+    }
+  }
+}

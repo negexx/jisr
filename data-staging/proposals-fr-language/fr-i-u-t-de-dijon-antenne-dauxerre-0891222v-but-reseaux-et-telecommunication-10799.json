@@ -1,0 +1,45 @@
+{
+  "slug": "fr-i-u-t-de-dijon-antenne-dauxerre-0891222v-but-reseaux-et-telecommunication-10799",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10799&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10799&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10799&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez votre éligibilité: si vous êtes non titulaire d'un bac français/européen, non ressortissant UE/EEE/Suisse/Monaco/Andorre et résidez dans un pays Campus France, vous devez postuler via Études en France, pas Parcoursup.",
+          "en": "Check your eligibility: if you don't hold a French/European bac, are not an EU/EEA/Switzerland/Monaco/Andorra national and live in a Campus France country, you must apply via Études en France, not Parcoursup."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10799&typeBac=0&originePc=0",
+            "quote": "Si vous êtes candidat de nationalité étrangère, et à la fois : - non titulaire ou ne préparant pas un baccalauréat français ou un baccalauréat européen ;"
+          }
+        ]
+      }
+    ]
+  }
+}

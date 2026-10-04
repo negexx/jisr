@@ -1,0 +1,168 @@
+{
+  "slug": "de-technische-hochschule-deggendorf-hrk284-bsc-artificial-intellige-daad7742",
+  "programmePage": "https://www.th-deg.de/ain-b-en",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 50000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7742/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries Switzerland United Kingdom 500 EUR"
+        },
+        {
+          "url": "https://www.th-deg.de/en/students/documents/application-and-service-fees",
+          "quote": "€500 DIT service fee per semester for enrolled students"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/en/apply",
+          "quote": "You are considered to be an international applicant if You are not a German citizen or a citizen of a member state of the European Union (EU) or the European Economic Area (EEA)."
+        },
+        {
+          "url": "https://www.th-deg.de/en/apply",
+          "quote": "apply directly to DIT via our own online application portal, Primuss"
+        },
+        {
+          "url": "https://www.th-deg.de/en/apply",
+          "quote": "To apply, follow the steps below: 1. Register on the Primuss portal"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "university-entrance-qualification",
+          "name": {
+            "fr": "Diplôme d'accès à l'université (certificat de fin d'études secondaires)",
+            "en": "University entrance qualification"
+          },
+          "quotedAs": "University entrance qualification",
+          "translationRequired": null
+        },
+        {
+          "slug": "identity-card",
+          "name": {
+            "fr": "Copie de la carte d'identité",
+            "en": "Copy of identity card"
+          },
+          "quotedAs": "Copy of your identity card",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum vitae",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "Curriculum vitae",
+          "translationRequired": null
+        },
+        {
+          "slug": "proof-of-language-proficiency",
+          "name": {
+            "fr": "Preuve de compétence linguistique",
+            "en": "Proof of language proficiency"
+          },
+          "quotedAs": "Proof of language proficiency",
+          "translationRequired": null
+        },
+        {
+          "slug": "proof-of-application-fee-payment",
+          "name": {
+            "fr": "Preuve de paiement des frais de candidature",
+            "en": "Proof of payment of the application fee"
+          },
+          "quotedAs": "Proof of payment of the application fee",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/en/apply",
+          "quote": "If you are applying for a bachelor's programme 4. Upload the following documents University entrance qualification Copy of your identity card Curriculum vitae Proof of language proficiency, if applicable Certificate of exmatriculation, if you have already studied Only for applicants to a joint degree programme or a degree programme with in-depth practical experience: contract with a company For Master's degree applicants only: bachelor's degree certificate and grade sheet Proof of payment of the application fee, if applicable"
+        },
+        {
+          "url": "https://www.th-deg.de/de/studieninteressierte/beratung-und-unterstuetzung/faqs-studieninteressierte",
+          "quote": "Hochschulzugangsberechtigung (Upload) Ausweis Lebenslauf bei vorhandenem Vorstudium Exmatrikulationsbescheinigung ggf. Sprachnachweis evtl. Vertrag (für ein Verbundstudium oder Studium mit vertiefter Praxis) mit Unternehmen (Upload)"
+        }
+      ]
+    }
+  },
+  "notes": "L'anglais A2 n'est exigé qu'en fin d'études (th-deg.de/ain-b-en : 'You must also demonstrate German proficiency at the A2 level by the end of your studies.'), il n'est donc pas une condition d'admission et n'a pas été inclus dans les règles. Les frais de 500 EUR par semestre pour les non-UE/EEE sont des 'service fees' (voir aussi th-deg.de/bewerbungs-servicegebuehren-drittstaaten); le DAAD les présente comme 'Tuition fees per semester'. La date limite 15 juin n'est pas assortie d'une année : elle est donc donnée en recurringDeadline. La candidature se fait directement via le portail Primuss ; les pages ne mentionnent pas uni-assist pour ce programme. Les documents listés sont ceux pour une candidature internationale en bachelor ; le contrat d'entreprise et le certificat de radiation ne concernent pas tous les candidats et n'ont pas été inclus.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["toefl", "ielts"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7742/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 72 TOEIC Reading: 385 Listening: 400 IELTS Academic: 5.5 telc English: telc English B2 PTE Academic: 59"
+          },
+          {
+            "url": "https://www.th-deg.de/ain-b-en",
+            "quote": "For admission, you need English proficiency at the B2 level."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'admission en ligne (90 min) doit être réussi : mathématiques, logique et informatique, avec un essai de 200 à 300 mots.",
+          "en": "An online admission test (90 min) must be passed: mathematics, logic and computer science, with a 200-300 word essay."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7742/",
+            "quote": "A successfully completed, online assessment test covering mathematical, logical topics from the general field of AI is necessary. The test duration is 90 minutes."
+          },
+          {
+            "url": "https://www.th-deg.de/ain-b-en",
+            "quote": "Admission is based on a combination of the required university entrance qualification (document verification via anabin) and an admission test."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier que votre diplôme marocain (Baccalauréat) est reconnu : utiliser la base de données DAAD et anabin.",
+          "en": "Check that your Moroccan diploma (Baccalauréat) is recognised: use the DAAD database and anabin."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-deg.de/ain-b-en",
+            "quote": "Admission is based on a combination of the required university entrance qualification (document verification via anabin) and an admission test."
+          },
+          {
+            "url": "https://www.th-deg.de/en/apply",
+            "quote": "To find out whether your school-leaving certificate meets the requirements for the degree programs at our university, please use the DAAD Database on admission requirements."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des frais de candidature de 60 EUR sont exigés avant l'examen des documents.",
+          "en": "An application fee of EUR 60 is charged before documents are checked."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-deg.de/en/students/documents/application-and-service-fees",
+            "quote": "➞ Application fee EUR 60 as a lump sum (multiple applications possible in one application phase) ➞ To be paid before documents are checked"
+          }
+        ]
+      }
+    ]
+  }
+}

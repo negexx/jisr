@@ -1,0 +1,107 @@
+{
+  "slug": "de-hochschule-rhein-waal-university-of-appl-hrk400-bioengineering-bsc-daad4320",
+  "programmePage": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+          "quote": "Tuition fees per semester None"
+        },
+        {
+          "url": "https://www.hochschule-rhein-waal.de/en/studieren/all-about-university-life/costs-and-funding/living-costs-in-germany",
+          "quote": "At Rhein-Waal University of Applied Sciences, you do not pay tuition fees, as it is a state university in North Rhine-Westphalia."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc",
+          "quote": "First, register on hochschulstart.de. There, you will be given an applicant ID (BID) and an applicant authentication number (BAN). You can then use these details to apply via uni-assist."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+          "quote": "Submit application via Please apply via uni-assist."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "proof-of-english-language-proficiency",
+          "name": {
+            "fr": "Preuve de compétence en anglais",
+            "en": "Proof of English language proficiency"
+          },
+          "quotedAs": "Proof of sufficient English language proficiency",
+          "translationRequired": null
+        },
+        {
+          "slug": "university-entrance-qualification",
+          "name": {
+            "fr": "Diplôme d'accès à l'université",
+            "en": "University entrance qualification"
+          },
+          "quotedAs": "University entrance qualification obtained outside Germany",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hochschule-rhein-waal.de/en/academics/prospective-students/current-application-period/bachelors-programmes",
+          "quote": "Proof of sufficient English language proficiency for English-taught degree programmes"
+        },
+        {
+          "url": "https://www.hochschule-rhein-waal.de/en/academics/prospective-students/current-application-period/bachelors-programmes",
+          "quote": "University entrance qualification obtained outside Germany: Further information can be found on the following page."
+        }
+      ]
+    }
+  },
+  "notes": "The application deadline could not be included as a dated intake: the pages state only \"For the winter semester: until 15 July\" (no application year), and the deadline sentence does not explicitly say it applies to non-EU or international applicants. The programme's own page appears to reflect the 2026/27 cycle (class schedule dated 17/09/2026). Tuition is EUR 0 per semester (no tuition fees); a semester contribution of approximately EUR 300 is also mentioned but is not a tuition fee. The NC is always a manual_check.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["ielts", "toefl"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.:"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+            "quote": "TOEFL iBT (since 2026): 4 Reading: 4 Listening: 4 Speaking: 4 Writing: 4"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+            "quote": "IELTS Academic: 5.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Capacité d'accueil limitée (NC) : la sélection se fait selon le numerus clausus et les règlements de Rhénanie-du-Nord-Westphalie.",
+          "en": "Admission is restricted (NC): selection is based on the numerus clausus and North Rhine-Westphalia regulations."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc",
+            "quote": "English language proficiency (Certificate of Level B2 according to the Common European Framework (CEF)), as the programme is taught entirely in English."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "fr-i-u-t-de-rouen-site-delbeuf-0763214f-but-reseaux-et-telecommunication-9626",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9626&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9626&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 euros par an est présenté comme le tarif général de cette formation ; la page du programme ne précise pas le tarif différencié (2 902 à 3 950 euros) pour un étudiant extra-communautaire, qui est décrit sur la page générale Campus France. Aucune date de candidature pour les candidats internationaux n'est donnée: la page Campus France 'Candidature en 1ère année BUT' donne 'Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)' mais pour le programme ADIUT Maroc, pas spécifiquement pour ce BUT. La page Parcoursup indique que les candidats étrangers non titulaires d'un bac français ou européen et résidant dans un pays à espace Campus France ne s'inscrivent pas sur Parcoursup mais via Campus France, donc applicationChannel est laissé de côté comme demandé.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9626&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est sélective : le dossier est analysé selon une grille (résultats scolaires 40%, méthodes de travail 20%, savoir-être 30%, motivation 10%) avec des spécialités scientifiques ou STI2D souvent attendues.",
+          "en": "Admission is selective: the application is assessed against a grid (academic results 40%, work methods 20%, soft skills 30%, motivation 10%), with scientific or STI2D specialisms usually expected."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9626&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          }
+        ]
+      }
+    ]
+  }
+}

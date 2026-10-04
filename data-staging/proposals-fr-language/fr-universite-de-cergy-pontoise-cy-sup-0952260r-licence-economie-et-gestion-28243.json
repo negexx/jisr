@@ -1,0 +1,72 @@
+{
+  "slug": "fr-universite-de-cergy-pontoise-cy-sup-0952260r-licence-economie-et-gestion-28243",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=28243&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=28243&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+        }
+      ]
+    }
+  },
+  "notes": "La page est une fiche Parcoursup destinée aux titulaires du bac français ou européen : le montant de 178 euros par an est un droit d'inscription national qui ne concerne pas un étudiant marocain titulaire du bac marocain (droits différenciés, voir la page Campus France). Aucune date de candidature ni liste de documents propre à cette licence n'est donnée.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=28243&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les résultats scolaires comptent pour 90 % de l'analyse des candidatures ; les résultats en mathématiques et dans les spécialités SES, Droit et Économie, Gestion et Finance sont jugés essentiels.",
+          "en": "School results count for 90 % of the application review; results in mathematics and in SES, Law and Economics, Management and Finance specialities are rated essential."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=28243&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 90%"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Maîtriser l'anglais est attendu : des compétences en langue anglaise sont essentielles pour cette licence.",
+          "en": "Good command of English is expected: skills in the English language are essential for this bachelor's programme."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=28243&typeBac=0&originePc=0",
+            "quote": "Des compétences dans cette langue sont donc essentielles."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats titulaires d'un diplôme étranger équivalent au bac ne passent pas par Parcoursup ; la procédure est indiquée sur la fiche (DAP).",
+          "en": "Applicants holding a foreign diploma equivalent to the French bac do not go through Parcoursup; the procedure is stated on the page (DAP)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=28243&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "fr-iut-lyon1-site-de-villeurbanne-doua-0690274y-but-genie-civil-construction-dur-8274",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8274&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8274&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Les conditions de candidature de la fiche Parcoursup (inscription sur Parcoursup) concernent les titulaires d'un bac français ou européen ; un candidat marocain avec un Bac marocain doit candidater via Études en France / Campus France (voir pages Campus France Maroc). Les frais de scolarité (178 euros par année) sont indiqués sur la fiche Parcoursup ; un étudiant extra-communautaire peut être soumis à des droits différenciés (les pages Campus France donnent 2 902 euros pour une année en Licence) — à vérifier auprès de l'établissement.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8274&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission se fait sur dossier : résultats scolaires en mathématiques, physique et enseignement technologique (75 %), méthodes de travail, savoir-être, motivation et engagement. Préparez une lettre de motivation personnalisée.",
+          "en": "Admission is selective based on file: academic results in mathematics, physics and technology (75%), working methods, behaviour, motivation and engagement. Prepare a personalised motivation letter."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8274&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 75 %"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8274&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La formation exige un niveau de français B2 ; vérifiez si vous êtes dispensé de la certification de français (TCF/DELF/DALF) et si l'établissement demande un test en anglais (TOEIC, TOEFL, IELTS).",
+          "en": "The programme requires French level B2; check whether you are exempt from the French certificate (TCF/DELF/DALF) and whether the institution requires an English test (TOEIC, TOEFL, IELTS)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Attention : vérifiez les prérequis, il peut être demandé un test en anglais TOIEC, TOEFL, IELTS."
+          }
+        ]
+      }
+    ]
+  }
+}

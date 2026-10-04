@@ -1,0 +1,46 @@
+{
+  "slug": "fr-i-u-t-de-loise-site-de-beauvais-0601983e-but-gestion-des-entreprises-et-d-7284",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7284&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7284&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le programme est un BUT: la durée de 3 ans est confirmée par la fiche Parcoursup. La langue d'enseignement est le français. Le montant de 2 902 EUR/an est le droit d'inscription différencié pour un étudiant extracommunautaire en cycle de Licence (page Campus France Maroc, générale aux établissements publics); des exonérations peuvent s'appliquer (voir notes de la page). Le concours et le calendrier ADIUT Maroc sont à vérifier. Aucun document précis n'est exigé ailleurs; seules les certifications de français (TCF, DELF B2, DALF) sont obligatoires, mais le niveau indiqué n'est que recommandé; le niveau B2 est sur la fiche Parcoursup.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7284&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier le lieu de résidence et le bac : les non-Européens non titulaires d'un bac français ou européen doivent faire la démarche sur Études en France. Vérifier aussi le programme ADIUT Maroc et le calendrier.",
+          "en": "Check residence and diploma: non-EU applicants without a French or European Bac must apply via Études en France. Also check the ADIUT Maroc programme and the calendar."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7284&typeBac=0&originePc=0",
+            "quote": "vous ne devez pas vous inscrire sur Parcoursup"
+          }
+        ]
+      }
+    ]
+  }
+}

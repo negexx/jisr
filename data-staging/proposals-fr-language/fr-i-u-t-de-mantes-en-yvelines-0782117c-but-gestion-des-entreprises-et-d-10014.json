@@ -1,0 +1,46 @@
+{
+  "slug": "fr-i-u-t-de-mantes-en-yvelines-0782117c-but-gestion-des-entreprises-et-d-10014",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10014&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10014&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des frais de scolarité de 178 euros par année est indiqué sur la page Parcoursup sans préciser s'il s'applique aux candidats de nationalité étrangère non ressortissants de l'UE : il n'est donc pas retenu comme tuition pour ce profil. La page Campus France Maroc sur le coût des études indique des droits d'inscription différenciés de 2 902 euros par an en Licence, mais elle porte sur les études en France en général, pas sur ce BUT précis. Aucun document obligatoire n'est listé par les pages : seul le CV est mentionné. Des entretiens collectifs et un questionnaire de motivation sont prévus ; leur date exacte (13 mai 2026) concerne la procédure de sélection et doit être vérifiée. La grille d'analyse attribue 25 % aux résultats scolaires, méthodes de travail, savoir-être et motivation ; 40 places sont offertes en 2026.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10014&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des épreuves de sélection sont organisées : épreuves écrites et entretiens collectifs. Vérifiez les modalités auprès de Campus France Maroc et de l'IUT.",
+          "en": "Selection tests are organised: written tests and group interviews. Check the arrangements with Campus France Maroc and the IUT."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10014&typeBac=0&originePc=0",
+            "quote": "Les épreuves écrites auront lieu : Du mercredi 13 mai 2026 au mercredi 13 mai 2026"
+          }
+        ]
+      }
+    ]
+  }
+}

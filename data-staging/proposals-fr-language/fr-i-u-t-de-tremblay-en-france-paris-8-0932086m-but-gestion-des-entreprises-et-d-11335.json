@@ -1,0 +1,37 @@
+{
+  "slug": "fr-i-u-t-de-tremblay-en-france-paris-8-0932086m-but-gestion-des-entreprises-et-d-11335",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11335&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11335&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11335&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : Anglais"
+        }
+      ]
+    }
+  },
+  "notes": "La page Programme indique 178 euros par an, mais il s'agit d'un tarif général pour les étudiants non extra-communautaires, pas d'un tarif non-EU explicite; le montant des droits différenciés pour les étudiants extra-communautaires figure sur la page Campus France (2 902 euros pour une année en cycle de Licence), mais cette page ne concerne pas spécifiquement ce programme. La certification de français est obligatoire via Études en France / Campus France.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11335&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      }
+    ]
+  }
+}

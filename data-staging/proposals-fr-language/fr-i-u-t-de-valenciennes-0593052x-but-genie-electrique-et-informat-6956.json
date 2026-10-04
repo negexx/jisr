@@ -1,0 +1,59 @@
+{
+  "slug": "fr-i-u-t-de-valenciennes-0593052x-but-genie-electrique-et-informat-6956",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6956&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6956&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the only fees on the pages are the general Parcoursup ones (178 EUR/year, \"Par année 178 euros.\"), which are for the standard national rate and not tied to non-EU/foreign-diploma applicants; the Morocco Campus France page gives differentiating fees (2 902 EUR for Licence) but as an institution-wide figure, not this programme's, so tuition is left out. Intakes: no dated application deadline for international applicants appears on the supplied pages; the ADIUT Maroc dates on the Maroc Campus France page concern BUT applications in general via Études en France, not this specific IUT programme, so no intake is given. Application channel: omitted per task instruction (foreign-diploma applicants go through Études en France / Campus France; the Parcoursup pages address French and European Bac holders). Documents: none of the supplied pages lists required documents for this programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6956&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les épreuves de sélection : entretien oral possible du 15 avril au 15 mai 2026, et prise de rendez-vous entre le 8 avril et le 1er mai 2026.",
+          "en": "Check the selection procedures: a possible oral interview from 15 April to 15 May 2026, and appointment booking between 8 April and 1 May 2026."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6956&typeBac=0&originePc=0",
+            "quote": "Les épreuves orales ou l'entretien auront lieu : Du mercredi 15 avril 2026 au vendredi 15 mai 2026"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des connaissances de base en bureautique et la capacité d'évoluer dans un environnement numérique sont attendues.",
+          "en": "Basic office-software skills and the ability to work in a digital environment are expected."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6956&typeBac=0&originePc=0",
+            "quote": "Détenir des connaissances de base en bureautique et être capable d'évoluer dans un environnement numérique."
+          }
+        ]
+      }
+    ]
+  }
+}

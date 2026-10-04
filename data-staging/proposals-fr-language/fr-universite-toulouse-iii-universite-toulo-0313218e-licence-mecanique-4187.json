@@ -1,0 +1,59 @@
+{
+  "slug": "fr-universite-toulouse-iii-universite-toulo-0313218e-licence-mecanique-4187",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4187&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4187&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune information sur la durée (3 ans) ou le calendrier n'est donnée sur la page. Les frais de scolarité de 178 EUR/an sont annoncés pour cette page, mais la page Campus France indique des droits différenciés (2 902 EUR/an en Licence) pour les étudiants extra-communautaires, avec exonérations possibles selon l'établissement : à vérifier auprès de l'Université Toulouse III. Parcoursup : les candidats avec un Bac marocain ne passent pas par cette plateforme ; ils doivent utiliser la procédure DAP / Études en France.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4187&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission en Licence Portail Mécanique est sélective : la commission prend en compte les notes en mathématiques et physique-chimie, les appréciations des professeurs, le projet de formation motivé et le sérieux du dossier. Le taux d'accès est faible.",
+          "en": "Admission to Licence Portail Mécanique is selective: the commission considers marks in mathematics and physics-chemistry, teachers' assessments, the motivated study plan and the seriousness of the application. The admission rate is low."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4187&typeBac=0&originePc=0",
+            "quote": "Les membres de la commission tiennent compte des éléments quantifiables telles que les notes dans les matières scientifiques et tout particulièrement Mathématiques et Physique-Chimie, et également des avis des professeurs et du conseil de classe mentionnés sur les bulletins scolaires."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats titulaires d'un diplôme étranger (Bac marocain) ne passent pas par Parcoursup mais par la procédure DAP / Études en France. Vérifiez la procédure auprès de Campus France Maroc.",
+          "en": "Applicants with a foreign diploma (Moroccan Bac) do not go through Parcoursup but through the DAP / Études en France procedure. Check the procedure with Campus France Maroc."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4187&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      }
+    ]
+  }
+}

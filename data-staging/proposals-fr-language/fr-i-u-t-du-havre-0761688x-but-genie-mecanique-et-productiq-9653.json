@@ -1,0 +1,16 @@
+{
+  "slug": "fr-i-u-t-du-havre-0761688x-but-genie-mecanique-et-productiq-9653",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9653&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9653&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La page du programme est une fiche Parcoursup : elle décrit la procédure pour les titulaires du bac français ou européen. Pour un candidat marocain (bac marocain), la candidature passe par Études en France, conformément à la page \"Candidature en 1ère année BUT à l'université (IUT)\" (canal non inclus dans facts). Le montant de 178 €/an est le tarif affiché sur la fiche Parcoursup ; il correspond aux droits d'inscription des étudiants non extracommunautaires et ne mentionne pas le tarif spécifique aux étudiants extracommunautaires. Aucune date limite de candidature avec année n'est donnée pour les candidats internationaux : les délais ADIUT Maroc (1er octobre 2026 au 15 novembre 2026) concernent la campagne 2026-2027 et sont antérieurs à l'année de candidature décrite ; ils n'ont pas été repris."
+}

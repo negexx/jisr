@@ -1,0 +1,76 @@
+{
+  "slug": "fr-i-u-t-de-montreuil-0932214b-but-gestion-administrative-et-co-11351",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11351&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11351&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Les pages fournies ne donnent aucune information sur les frais de scolarité pour les étudiants non-UE / extra-communautaires : la fiche Parcoursup indique seulement 178 euros par année (tarif national) et la gratuité pour les boursiers, montants qui ne concernent pas ce profil. Aucune date de candidature ni liste de documents propre à ce BUT n'est fournie (la procédure Études en France / Campus France est traitée séparément). La fiche Parcoursup elle-même précise que les candidats étrangers non-UE résidant dans un pays avec espace Campus France ne doivent pas s'inscrire sur Parcoursup, mais sur le site Campus France de leur pays.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11351&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est sélective : seuls 73 candidats sur 4972 ont intégré la formation en 2025. Vérifiez les attendus et la grille d'analyse (résultats scolaires 50 %, méthodes de travail 15 %, savoir-être 15 %, motivation 15 %, engagement 5 %).",
+          "en": "Admission is selective: only 73 of 4972 candidates joined the programme in 2025. Check the published expectations and assessment grid (academic results 50%, work methods 15%, soft skills 15%, motivation 15%, engagement 5%)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11351&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11351&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 50 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Langue vivante 2 imposée : espagnol à l'IUT de Montreuil, pas de cours pour débutants. Le candidat doit s'engager à suivre le cours d'espagnol niveau BAC +1.",
+          "en": "A second foreign language is imposed: Spanish at IUT de Montreuil, no beginner course. The candidate must commit to the Spanish course at BAC +1 level."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11351&typeBac=0&originePc=0",
+            "quote": "À savoir : LV2 Espagnol (pas de débutant)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une lettre de motivation / projet de formation motivé est demandé et doit être adapté à la formation ; un entretien et un CV sont aussi évalués par la commission.",
+          "en": "A motivation letter / motivated study plan is required and must be tailored to the programme; an interview and a CV are also assessed by the commission."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11351&typeBac=0&originePc=0",
+            "quote": "Les candidats doivent &ecirc;tre attentifs à la rédaction de la lettre de motivation et l'adapter en fonction de la formation qu'ils choisissent."
+          }
+        ]
+      }
+    ]
+  }
+}

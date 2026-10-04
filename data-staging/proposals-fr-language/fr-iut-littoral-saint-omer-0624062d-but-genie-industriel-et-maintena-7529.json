@@ -1,0 +1,59 @@
+{
+  "slug": "fr-iut-littoral-saint-omer-0624062d-but-genie-industriel-et-maintena-7529",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7529&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7529&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "The page gives only a general institution-wide tuition fee of 178 euros per year for public establishments, not specific to non-EU students; the differentiated tuition fee for extra-community students (2 902 euros for Licence) mentioned on the Campus France Morocco fee page is a general figure for public higher education and not specific to this programme, so it was not used. The application deadline and opening dates for non-EU applicants are not stated on the programme page; the generic Campus France page for BUT indicates an application period via Etudes en France (1 October 2026 to 15 November 2026 for ADIUT Maroc) but that is for a different programme (ADIUT Maroc) and not this specific BUT at IUT Littoral.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La lettre de motivation doit préciser votre projet personnel et professionnel, ainsi que les démarches effectuées (portes ouvertes, journées d'immersion, forums).",
+          "en": "The letter of motivation must outline your personal and professional project, as well as the steps taken (open days, immersion days, forums)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7529&typeBac=0&originePc=0",
+            "quote": "la lettre de motivation précisant les contours de votre projet personnel et professionnel est pris en compte"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les résultats scolaires comptent pour 60 % dans l'analyse des candidatures. Les matières scientifiques sont prépondérantes.",
+          "en": "Academic results count for 60% in the application review. Scientific subjects are predominant."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7529&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 60 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien oral de sélection a lieu du 28 avril 2026 au 13 mai 2026. Une convocation est envoyée entre le 7 et le 10 avril 2026.",
+          "en": "An oral selection interview takes place from 28 April 2026 to 13 May 2026. A convocation is sent between 7 and 10 April 2026."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7529&typeBac=0&originePc=0",
+            "quote": "Les épreuves orales ou l'entretien auront lieu : Du mardi 28 avril 2026 au mercredi 13 mai 2026"
+          }
+        ]
+      }
+    ]
+  }
+}
