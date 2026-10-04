@@ -1,0 +1,25 @@
+{
+  "slug": "de-technische-hochschule-nurnberg-georg-sim-hrk200-international-business-b-daad3603",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3603/",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3603/",
+          "quote": "The following is valid for applicants from: all countries For the winter semester: 2 May - 15 July"
+        }
+      ]
+    }
+  }
+}

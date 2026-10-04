@@ -1,0 +1,25 @@
+{
+  "slug": "de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-beng-industrial-engineer-daad4668",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4668/",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4668/",
+          "quote": "The following is valid for applicants from: all countries 15 April - 15 July"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "de-hochschule-rhein-waal-university-of-appl-hrk400-international-business-a-daad4210",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4210/",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4210/",
+          "quote": "The following is valid for applicants from: all countries For the winter semester: until 15 July"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "de-hochschule-osnabruck-hrk214-computer-science-daad11217",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11217/",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 6,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11217/",
+          "quote": "The following is valid for applicants from: all countries For the winter semester: 1 March - 15 June"
+        }
+      ]
+    }
+  }
+}
