@@ -199,7 +199,12 @@ function checkValue(
     case "teachingLanguages":
       return checkLanguages(value as string[], quote);
     case "tuition":
-      return checkTuition((value as { amountMinor: number }).amountMinor, quote, minStudyYear);
+      return checkTuition(
+        (value as { amountMinor: number }).amountMinor,
+        quote,
+        minStudyYear,
+        (value as { currency?: string }).currency,
+      );
     case "applicationChannel":
       return checkChannel(value as string, quote);
     case "intakes": {

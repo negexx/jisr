@@ -178,6 +178,22 @@ describe("checkTuition", () => {
     expect(checkTuition(1016400, split, 2026).ok).toBe(false);
   });
 
+  it("needs the quote to state the currency of the proposed amount", () => {
+    expect(checkTuition(320000, "BSc Engineering Management 3200 2250", 2026, "EUR").ok).toBe(
+      false,
+    );
+    expect(checkTuition(400000, "Bachelor degree programmes 4,000 6", 2026, "EUR").ok).toBe(false);
+    expect(checkTuition(320000, "Tuition fee/semester 3,200 EUR", 2026, "EUR").ok).toBe(true);
+    expect(checkTuition(300000, "Tuition: 3 000 € per semester", 2026, "EUR").ok).toBe(true);
+    expect(checkTuition(300000, "Fee: 3000 Euro", 2026, "EUR").ok).toBe(true);
+    expect(checkTuition(750000, "7,500 USD/year", 2026, "USD").ok).toBe(true);
+    expect(checkTuition(750000, "Fee: US$7,500 per year", 2026, "USD").ok).toBe(true);
+    expect(checkTuition(69000000, "690,000 Ft", 2026, "HUF").ok).toBe(true);
+    expect(checkTuition(750000, "7,500 EUR/year", 2026, "USD").ok).toBe(false);
+    expect(checkTuition(100000, "Fee 1000 per year", 2026, "CHF").ok).toBe(true);
+    expect(checkTuition(100000, "Fee 1000 per year", 2026).ok).toBe(true);
+  });
+
   it("knows which study year is the current one", () => {
     expect(currentStudyYear(new Date("2026-10-04"))).toBe(2026);
     expect(currentStudyYear(new Date("2026-08-01"))).toBe(2026);

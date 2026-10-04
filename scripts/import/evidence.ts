@@ -343,13 +343,29 @@ function staleStudyYear(amountMajor: number, quote: string, minStudyYear: number
 
 // `minStudyYear` is the year the study year the amount must be for starts in (currentStudyYear());
 // it is an argument so a verification is reproducible.
-export function checkTuition(amountMinor: number, quote: string, minStudyYear: number): FactCheck {
+// How a quote writes the currencies the fee pages use. A currency not listed here is not checked.
+const CURRENCY_MARKS: Record<string, RegExp> = {
+  EUR: /EUR|euro|€/i,
+  USD: /USD|US\$|\$|dollar/i,
+  HUF: /HUF|\bFt\b|forint/i,
+  GBP: /GBP|£|pound/i,
+};
+
+export function checkTuition(
+  amountMinor: number,
+  quote: string,
+  minStudyYear: number,
+  currency?: string,
+): FactCheck {
   if (amountMinor === 0)
     return NO_FEE.test(quote)
       ? ok
       : fail("a zero fee needs a quote saying there are no tuition fees");
   if (!amountInQuote(amountMinor / 100, quote))
     return fail(`the amount ${amountMinor / 100} does not appear in the quote`);
+  const mark = currency === undefined ? undefined : CURRENCY_MARKS[currency];
+  if (mark !== undefined && !mark.test(quote))
+    return fail(`the quote does not state the currency ${currency}`);
   const stale = staleStudyYear(amountMinor / 100, quote, minStudyYear);
   return stale === null ? ok : fail(stale);
 }
