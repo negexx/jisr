@@ -275,14 +275,46 @@ export const amountMatches = (
 const NO_FEE =
   /no tuition|tuition[- ]free|free of charge|no fees|gratuit|keine studiengeb|studiengebührenfrei|geen collegegeld|zonder collegegeld|tuition fees?(?: per (?:semester|year|term))?[: ]+none\b(?!\s+for\b)/i;
 
-export function checkTuition(amountMinor: number, quote: string): FactCheck {
+// The year the current study year started: from August on it is this calendar year, before that last
+// year (a Dutch or German study year begins in September or October).
+export function currentStudyYear(now: Date = new Date()): number {
+  return now.getUTCMonth() >= 7 ? now.getUTCFullYear() : now.getUTCFullYear() - 1;
+}
+
+// "2026-2027", "2026/27", "2026-27": a study year written in a fee quote.
+const STUDY_YEAR = /(?<!\d)(20\d\d)\s*[-/–]\s*(?:20)?\d\d(?!\d)/g;
+
+// The study year written closest to the amount, when the quote labels amounts with study years. A
+// quote with no study year says nothing about it (a programme page: left to the checker).
+function studyYearNearAmount(amountMajor: number, quote: string): number | null {
+  const q = normalizeForMatch(quote);
+  const labels = [...q.matchAll(STUDY_YEAR)].map((m) => ({
+    start: Number(m[1]),
+    at: m.index ?? 0,
+  }));
+  const amount = amountPattern(amountMajor).exec(q);
+  if (labels.length === 0 || amount === null) return null;
+  const nearest = labels.reduce((best, label) =>
+    Math.abs(label.at - amount.index) < Math.abs(best.at - amount.index) ? label : best,
+  );
+  return nearest.start;
+}
+
+export function checkTuition(
+  amountMinor: number,
+  quote: string,
+  minStudyYear: number = currentStudyYear(),
+): FactCheck {
   if (amountMinor === 0)
     return NO_FEE.test(quote)
       ? ok
       : fail("a zero fee needs a quote saying there are no tuition fees");
-  return amountInQuote(amountMinor / 100, quote)
-    ? ok
-    : fail(`the amount ${amountMinor / 100} does not appear in the quote`);
+  if (!amountInQuote(amountMinor / 100, quote))
+    return fail(`the amount ${amountMinor / 100} does not appear in the quote`);
+  const year = studyYearNearAmount(amountMinor / 100, quote);
+  return year !== null && year < minStudyYear
+    ? fail(`the amount sits next to the study year ${year}, before ${minStudyYear}`)
+    : ok;
 }
 
 // The day written right next to the month: "15 July", "15. Juli", "July 15", "15.07.", "15/07". A

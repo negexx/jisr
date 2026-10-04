@@ -8,6 +8,7 @@ import {
   checkRecurringDeadline,
   checkTuition,
   countDates,
+  currentStudyYear,
   htmlToText,
   mentionsInternationalApplicants,
   normalizeForMatch,
@@ -94,6 +95,30 @@ describe("checkTuition", () => {
   it("does not match a longer number that merely contains the digits", () => {
     expect(checkTuition(150000, "Fee: 21,500 EUR").ok).toBe(false);
     expect(checkTuition(150000, "No fee stated").ok).toBe(false);
+  });
+  it("takes the study year written next to the amount, and refuses a past one", () => {
+    const current = "Studiejaar 2026-2027 Instellingscollegegeld Voltijd: € 10.360";
+    expect(checkTuition(1036000, current, 2026).ok).toBe(true);
+    expect(
+      checkTuition(1016400, "Studiejaar 2025-2026 Instellingscollegegeld Voltijd: € 10.164", 2026)
+        .ok,
+    ).toBe(false);
+    const both =
+      "Instellingscollegegeld 2026-2027: € 10.360 Instellingscollegegeld 2025-2026: € 10.164";
+    expect(checkTuition(1036000, both, 2026).ok).toBe(true);
+    expect(checkTuition(1016400, both, 2026).ok).toBe(false);
+    expect(checkTuition(1036000, "collegegeld 2026/27 is € 10.360", 2026).ok).toBe(true);
+    expect(checkTuition(1036000, "collegegeld 2026-27 is € 10.360", 2026).ok).toBe(true);
+    expect(checkTuition(1016400, "collegegeld 2025/26 is € 10.164", 2026).ok).toBe(false);
+  });
+  it("accepts a quote with no study year (a programme page) and keeps the zero rule", () => {
+    expect(checkTuition(1036000, "Instellingscollegegeld € 10.360", 2026).ok).toBe(true);
+    expect(checkTuition(0, "There are no tuition fees 2025-2026", 2026).ok).toBe(true);
+  });
+  it("knows which study year is the current one", () => {
+    expect(currentStudyYear(new Date("2026-10-04"))).toBe(2026);
+    expect(currentStudyYear(new Date("2026-08-01"))).toBe(2026);
+    expect(currentStudyYear(new Date("2026-03-01"))).toBe(2025);
   });
   it("accepts a zero fee only with a statement that there are none", () => {
     expect(checkTuition(0, "There are no tuition fees for this programme").ok).toBe(true);
