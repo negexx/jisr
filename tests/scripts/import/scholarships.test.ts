@@ -10,6 +10,7 @@ import { findPrepared } from "../../../scripts/import/audit";
 import { amountInQuote } from "../../../scripts/import/evidence";
 import { stampVerified } from "../../../scripts/import/promote";
 import {
+  isOfficialSource,
   runVerify,
   type ScholarshipProposal,
   ScholarshipProposalSchema,
@@ -25,9 +26,20 @@ const pages: Record<string, string> = {
   [HOME]:
     "The Aurora Scholarship supports talented students from outside the EU who start a bachelor degree in Germany.",
   [RULES]:
-    "Applicants from non-EU countries holding a school-leaving certificate may apply. The scholarship is open to first-year undergraduate students. It pays EUR 5,000 one-time towards tuition and living costs. Applications close on 15 March 2027.",
+    "Applicants from non-EU countries, including Morocco, holding a school-leaving certificate may apply. The scholarship is open to first-year undergraduate students. It pays EUR 5,000 one-time towards tuition and living costs. Applications from non-EU students close on 15 March 2027.",
   [APPLY]:
     "Apply online through the Aurora portal and upload a CV and a motivation letter. Certified translations are required for a motivation letter.",
+  [`${HOME}/master`]:
+    "This scholarship is open to non-EU students. Applicants must hold a Bachelor's degree to apply for this Master scholarship. Les titulaires d'une licence peuvent candidater pour un master. Bachelor's degree holders from abroad may apply. Postgraduate students and doctoral candidates are welcome. The scholarship is for Bachelor students from abroad. Das Stipendium ist für ein Erststudium im Ausland gedacht. Le programme est ouvert pour la licence aux étudiants étrangers.",
+  [`${HOME}/who`]:
+    "Applicants from non-EU countries are not eligible for this grant. Non-EU applicants cannot apply to this grant. International applicants: only open to EU citizens living in Germany. International applicants: only for German nationals studying abroad. Applicants from non-EU countries may apply. Applicants from North Africa and the Middle East may apply. Staff of the Foreign Office may apply for this scholarship.",
+  [`${HOME}/pay`]:
+    "Non-European students receive 5,000 per year. EUR 934 per month for up to 3 years. Once admitted, students receive EUR 934 per month. A total of EUR 8,000 is paid to each non-EU student. Students from abroad receive 1.200 euros per year, paid in two instalments. Paid in 2027: EUR 5,000.50 in total.",
+  [`${HOME}/dates`]: "Applications close on 15 March 2027.",
+  "https://blog.aggregator.example/aurora-guide":
+    "Applicants from non-EU countries, including Morocco, holding a school-leaving certificate may apply.",
+  "https://www.daad.de/en/aurora":
+    "Applicants from non-EU countries, including Morocco, holding a school-leaving certificate may apply.",
 };
 const getText = async (url: string) => {
   const text = pages[url];
@@ -54,7 +66,8 @@ const validAfterReview = (record: unknown): boolean =>
 
 const ELIGIBILITY = {
   url: RULES,
-  quote: "Applicants from non-EU countries holding a school-leaving certificate may apply",
+  quote:
+    "Applicants from non-EU countries, including Morocco, holding a school-leaving certificate may apply",
 };
 const LEVEL = {
   url: RULES,
@@ -64,7 +77,7 @@ const SUPPORT = {
   url: RULES,
   quote: "It pays EUR 5,000 one-time towards tuition and living costs",
 };
-const DEADLINE = { url: RULES, quote: "Applications close on 15 March 2027" };
+const DEADLINE = { url: RULES, quote: "Applications from non-EU students close on 15 March 2027" };
 const HOW = {
   url: APPLY,
   quote: "Apply online through the Aurora portal and upload a CV and a motivation letter",
@@ -292,7 +305,9 @@ describe("verifyScholarship", () => {
   it("sets the deadline to null when the quote states no year", async () => {
     const result = await verifyScholarship(
       proposal({
-        evidence: evidence({ deadline: [{ url: RULES, quote: "Applications close on 15 March" }] }),
+        evidence: evidence({
+          deadline: [{ url: RULES, quote: "Applications from non-EU students close on 15 March" }],
+        }),
       }),
       getText,
     );
@@ -341,7 +356,9 @@ describe("verifyScholarship", () => {
     const result = await verifyScholarship(
       proposal({
         evidence: evidence({
-          level: [{ url: RULES, quote: "Applications close on 15 March 2027" }],
+          level: [
+            { url: RULES, quote: "Applications from non-EU students close on 15 March 2027" },
+          ],
         }),
       }),
       getText,
@@ -492,5 +509,304 @@ describe("runVerify", () => {
     await writeFile(file, "{ not json");
     const out = await runVerify({ file, dryRun: true }, deps());
     expect(out.ok).toBe(false);
+  });
+});
+
+const QUOTES = (url: string, ...quotes: string[]) => quotes.map((quote) => ({ url, quote }));
+const MASTER = `${HOME}/master`;
+const WHO = `${HOME}/who`;
+const PAY = `${HOME}/pay`;
+
+async function okOrReasons(over: Record<string, unknown>) {
+  return verifyScholarship(proposal(over), getText);
+}
+const reasonsOf = (r: Awaited<ReturnType<typeof okOrReasons>>): string =>
+  r.ok ? "" : r.reasons.join(" | ");
+
+describe("amountInQuote decimals", () => {
+  it("rejects a decimal tail but accepts .00", () => {
+    expect(amountInQuote(5000, "EUR 5,000.50 in total")).toBe(false);
+    expect(amountInQuote(5000, "EUR 5,000.00 in total")).toBe(true);
+    expect(amountInQuote(5000, "EUR 5.000,50")).toBe(false);
+    expect(amountInQuote(5000, "EUR 5,000, paid once")).toBe(true);
+  });
+});
+
+describe("level: the scholarship itself must be for bachelor students", () => {
+  const levelOnly = (...quotes: string[]) =>
+    okOrReasons({ evidence: evidence({ level: QUOTES(MASTER, ...quotes) }) });
+
+  it.each([
+    "Applicants must hold a Bachelor's degree to apply for this Master scholarship",
+    "Les titulaires d'une licence peuvent candidater pour un master",
+    "Bachelor's degree holders from abroad may apply",
+    "Postgraduate students and doctoral candidates are welcome",
+  ])("rejects a graduate-level scholarship (%s)", async (quote) => {
+    const result = await levelOnly(quote);
+    expect(result.ok).toBe(false);
+    expect(reasonsOf(result)).toMatch(/level/i);
+  });
+
+  it("rejects when a good level quote is accompanied by a graduate one", async () => {
+    const result = await levelOnly(
+      "The scholarship is for Bachelor students from abroad",
+      "Applicants must hold a Bachelor's degree to apply for this Master scholarship",
+    );
+    expect(result.ok).toBe(false);
+  });
+
+  it("rejects an eligibility quote that makes it a master scholarship", async () => {
+    const result = await okOrReasons({
+      evidence: evidence({
+        eligibility: QUOTES(
+          MASTER,
+          "Applicants must hold a Bachelor's degree to apply for this Master scholarship",
+          "This scholarship is open to non-EU students",
+        ),
+      }),
+    });
+    expect(result.ok).toBe(false);
+  });
+
+  it.each([
+    "The scholarship is for Bachelor students from abroad",
+    "Das Stipendium ist für ein Erststudium im Ausland gedacht",
+    "Le programme est ouvert pour la licence aux étudiants étrangers",
+  ])("accepts a quote that says the scholarship is for undergraduates (%s)", async (quote) => {
+    const result = await levelOnly(quote);
+    expect(result.ok).toBe(true);
+  });
+
+  it("does not take a bare mention of a bachelor degree as the level", async () => {
+    const result = await levelOnly("Applicants must hold a Bachelor's degree");
+    expect(result.ok).toBe(false);
+  });
+});
+
+describe("eligibility: exclusions and nationalities", () => {
+  const elig = (...quotes: string[]) =>
+    okOrReasons({ evidence: evidence({ eligibility: QUOTES(WHO, ...quotes) }) });
+
+  it.each([
+    "Applicants from non-EU countries are not eligible for this grant",
+    "Non-EU applicants cannot apply to this grant",
+    "International applicants: only open to EU citizens living in Germany",
+    "International applicants: only for German nationals studying abroad",
+  ])("rejects an exclusion quote (%s)", async (quote) => {
+    const result = await okOrReasons({
+      eligibleNationalities: [],
+      evidence: evidence({ eligibility: QUOTES(WHO, quote) }),
+    });
+    expect(result.ok).toBe(false);
+    expect(reasonsOf(result)).toMatch(/exclusion/);
+  });
+
+  it("drops the exclusion quote but keeps a good one", async () => {
+    const result = await okOrReasons({
+      eligibleNationalities: [],
+      evidence: evidence({
+        eligibility: QUOTES(
+          WHO,
+          "Applicants from non-EU countries are not eligible for this grant",
+          "Applicants from non-EU countries may apply",
+        ),
+      }),
+    });
+    expect(result.ok).toBe(true);
+    if (result.ok) expect(result.notes.join(" ")).toMatch(/eligibility/);
+  });
+
+  it("requires a quote naming the country or its region when nationalities are listed", async () => {
+    const result = await elig("Applicants from non-EU countries may apply");
+    expect(result.ok).toBe(false);
+    expect(reasonsOf(result)).toMatch(/MA|Morocc/);
+  });
+
+  it("accepts the region instead of the country", async () => {
+    const result = await elig(
+      "Applicants from non-EU countries may apply",
+      "Applicants from North Africa and the Middle East may apply",
+    );
+    expect(result.ok).toBe(true);
+  });
+
+  it("accepts any international applicant when no nationality is listed", async () => {
+    const result = await okOrReasons({
+      eligibleNationalities: [],
+      evidence: evidence({
+        eligibility: QUOTES(WHO, "Applicants from non-EU countries may apply"),
+      }),
+    });
+    expect(result.ok).toBe(true);
+  });
+
+  it("cannot check a nationality it has no names for", async () => {
+    const result = await okOrReasons({
+      eligibleNationalities: ["ZZ"],
+      evidence: evidence({
+        eligibility: QUOTES(WHO, "Applicants from non-EU countries may apply"),
+      }),
+    });
+    expect(result.ok).toBe(false);
+  });
+
+  it("does not take the Foreign Office for international applicants", async () => {
+    const result = await okOrReasons({
+      eligibleNationalities: [],
+      evidence: evidence({
+        eligibility: QUOTES(WHO, "Staff of the Foreign Office may apply for this scholarship"),
+      }),
+    });
+    expect(result.ok).toBe(false);
+    expect(reasonsOf(result)).toMatch(/international/i);
+  });
+});
+
+describe("support: currency, period and amount must be stated together", () => {
+  const support = (quote: string, amount: Record<string, unknown>) =>
+    okOrReasons({
+      support: { amount, covers: [] },
+      evidence: evidence({ support: QUOTES(PAY, quote) }),
+    });
+  const supportValue = (r: Awaited<ReturnType<typeof okOrReasons>>) =>
+    r.ok ? at(r.record, "support.value") : "rejected";
+  const A = (min: number, per: string, currency = "EUR", max = min) => ({
+    min,
+    max,
+    currency,
+    per,
+  });
+
+  it("does not take 'non-European' for the euro", async () => {
+    const r = await support("Non-European students receive 5,000 per year", A(5000, "year"));
+    expect(supportValue(r)).toBeNull();
+  });
+
+  it("does not take 'for up to 3 years' for per year", async () => {
+    const r = await support("EUR 934 per month for up to 3 years", A(934, "year"));
+    expect(supportValue(r)).toBeNull();
+    const month = await support("EUR 934 per month for up to 3 years", A(934, "month"));
+    expect(supportValue(month)).not.toBeNull();
+  });
+
+  it("does not take 'once admitted' for a one-time payment", async () => {
+    const r = await support("Once admitted, students receive EUR 934 per month", A(934, "once"));
+    expect(supportValue(r)).toBeNull();
+  });
+
+  it("accepts a total and a yearly amount in euros", async () => {
+    expect(
+      supportValue(
+        await support("A total of EUR 8,000 is paid to each non-EU student", A(8000, "total")),
+      ),
+    ).not.toBeNull();
+    expect(
+      supportValue(
+        await support(
+          "Students from abroad receive 1.200 euros per year, paid in two instalments",
+          A(1200, "year"),
+        ),
+      ),
+    ).not.toBeNull();
+  });
+
+  it("rejects an amount with a decimal tail", async () => {
+    const r = await support("Paid in 2027: EUR 5,000.50 in total", A(5000, "total"));
+    expect(supportValue(r)).toBeNull();
+  });
+});
+
+describe("deadline: it must name international applicants", () => {
+  it("sets the deadline to null when the quote does not say who it is for", async () => {
+    const result = await okOrReasons({
+      evidence: evidence({
+        deadline: QUOTES(`${HOME}/dates`, "Applications close on 15 March 2027"),
+      }),
+    });
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    expect(at(result.record, "deadline.value")).toBeNull();
+    expect(result.notes.join(" ")).toMatch(/deadline.*international/i);
+  });
+});
+
+describe("official sources", () => {
+  it.each([
+    ["https://grants.example/other", true],
+    ["https://www.grants.example/other", true],
+    ["https://www.daad.de/en/x", true],
+    ["https://www.studyinholland.nl/x", true],
+    ["https://www.campusfrance.org/fr/x", true],
+    ["https://www.education.gov.uk/x", true],
+    ["https://www.service-public.gouv.fr/x", true],
+    ["https://www.bmbf.bund.de/x", true],
+    ["https://www.overheid.nl/x", true],
+    ["https://www.government.nl/x", true],
+    ["https://blog.aggregator.example/x", false],
+    ["https://notgov.example/x", false],
+    ["https://evil-daad.de.example/x", false],
+  ])("%s -> %s", (url, expected) => {
+    expect(isOfficialSource(url, HOME)).toBe(expected);
+  });
+
+  it("rejects a quote that is verbatim on an aggregator page", async () => {
+    const result = await okOrReasons({
+      evidence: evidence({
+        eligibility: QUOTES(
+          "https://blog.aggregator.example/aurora-guide",
+          "Applicants from non-EU countries, including Morocco, holding a school-leaving certificate may apply",
+        ),
+      }),
+    });
+    expect(result.ok).toBe(false);
+    expect(reasonsOf(result)).toMatch(/official/i);
+  });
+
+  it("accepts the same quote on an allow-listed page", async () => {
+    const result = await okOrReasons({
+      evidence: evidence({
+        eligibility: QUOTES(
+          "https://www.daad.de/en/aurora",
+          "Applicants from non-EU countries, including Morocco, holding a school-leaving certificate may apply",
+        ),
+      }),
+    });
+    expect(result.ok).toBe(true);
+  });
+});
+
+describe("sources", () => {
+  it("registers no page for the documents fact when there are no documents", async () => {
+    const result = await verifyScholarship(proposal({ documents: null }), getText);
+    if (!result.ok) throw new Error("expected ok");
+    const urls = Object.values(at(result.record, "sources") as Record<string, { url: string }>).map(
+      (s) => s.url,
+    );
+    expect(urls).not.toContain(APPLY);
+  });
+});
+
+describe("runVerify without data/institutions", () => {
+  it("says the folder is missing instead of calling the slug unknown", async () => {
+    const dir = await mkdtemp(path.join(tmpdir(), "jisr-scholarship-"));
+    try {
+      const file = path.join(dir, "p.json");
+      await writeFile(file, JSON.stringify(raw({ institutions: ["tu-berlin"] })));
+      const out = await runVerify(
+        { file, dryRun: true },
+        {
+          getText,
+          stagingDir: path.join(dir, "s"),
+          dataDir: path.join(dir, "d"),
+          today: "2026-10-04",
+        },
+      );
+      expect(out.ok).toBe(false);
+      const text = out.lines.join("\n");
+      expect(text).toMatch(/institutions.*not found/);
+      expect(text).not.toMatch(/unknown institution/);
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
   });
 });

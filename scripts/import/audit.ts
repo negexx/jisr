@@ -24,6 +24,10 @@ export type AuditRow = {
   notes: string;
 };
 
+// Scholarships are shown to students as facts about money and eligibility, and there are few of
+// them: every one is read by a human, whatever the size of its batch.
+const ALWAYS_SAMPLED = /^scholarships\//;
+
 export function sampleSize(batchSize: number): number {
   return Math.min(batchSize, Math.max(SAMPLE_MINIMUM, Math.ceil(batchSize * SAMPLE_FRACTION)));
 }
@@ -52,7 +56,7 @@ export function drawBatch(input: {
   return fresh.map((key) => ({
     key,
     batch,
-    inSample: sample.has(key),
+    inSample: sample.has(key) || ALWAYS_SAMPLED.test(key),
     audited: "",
     outcome: "",
     notes: "",
@@ -158,6 +162,24 @@ export function sampleSheet(
     const name = show(r.name ?? review.name ?? "");
     if (name !== "")
       out.push(`**${name}**${review.institution ? `, ${show(review.institution)}` : ""}`, "");
+    if (key.startsWith("scholarships/")) {
+      const list = (v: unknown, whenEmpty: string): string =>
+        Array.isArray(v) && v.length > 0 ? `\`${v.map(show).join(", ")}\`` : whenEmpty;
+      out.push(
+        `- **destinations**: ${list(r.destinations, "(none)")}`,
+        `- **eligibleNationalities**: ${list(r.eligibleNationalities, "(any international applicant)")}`,
+        `- **fields**: ${list(r.fields, "ALL FIELDS")}`,
+        `- **institutions**: ${list(r.institutions, "ALL INSTITUTIONS of the destination")}`,
+      );
+      for (const prose of ["summary", "howToApply"]) {
+        const text = asObject(r[prose]);
+        for (const locale of ["fr", "en", "ar"]) {
+          const entry = asObject(text[locale]);
+          if (typeof entry.text === "string")
+            out.push(`- **${prose}** (${locale}, ${show(entry.status)}): ${entry.text}`);
+        }
+      }
+    }
     for (const fact of [
       "durationYears",
       "teachingLanguages",

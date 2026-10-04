@@ -432,3 +432,77 @@ describe("sampleSheet of a scholarship", () => {
     expect(sheet).toContain('**howToApply**: "apply online" — https://g.example/a');
   });
 });
+
+describe("scholarships are always sampled", () => {
+  it("puts every scholarship in the sample whatever the batch size", () => {
+    const keys = [
+      ...Array.from({ length: 200 }, (_, i) => `programs/p${i}`),
+      "scholarships/aurora",
+      "scholarships/boreal",
+      "scholarships/cirrus",
+    ];
+    const rows = drawBatch({ preparedKeys: keys, existing: [], seed: "s9", batchIndex: 1 });
+    const sampled = new Set(rows.filter((r) => r.inSample).map((r) => r.key));
+    for (const key of keys.filter((k) => k.startsWith("scholarships/")))
+      expect(sampled.has(key)).toBe(true);
+    // programmes still follow the normal draw, which may use a place a scholarship took
+    const programmes = rows.filter((r) => r.inSample && r.key.startsWith("programs/")).length;
+    expect(programmes).toBeGreaterThan(0);
+    expect(programmes).toBeLessThanOrEqual(sampleSize(keys.length));
+  });
+});
+
+describe("sampleSheet of a scholarship record", () => {
+  const row = {
+    key: "scholarships/aurora",
+    batch: "b1",
+    inSample: true,
+    audited: "",
+    outcome: "",
+    notes: "",
+  };
+  const lt = (fr: string, en?: string) => ({
+    fr: { text: fr, status: "draft" },
+    ...(en === undefined ? {} : { en: { text: en, status: "draft" } }),
+  });
+  const record = {
+    name: "Aurora",
+    destinations: ["DE", "NL"],
+    eligibleNationalities: ["MA"],
+    fields: [],
+    summary: lt("Une bourse.", "A grant."),
+    howToApply: lt("Candidature en ligne.", "Apply online."),
+    _review: { evidence: [] },
+  };
+
+  it("shows who it is for, where, which fields and institutions, and the prose", () => {
+    const sheet = sampleSheet([{ key: row.key, row, record }]);
+    expect(sheet).toContain("**destinations**: `DE, NL`");
+    expect(sheet).toContain("**eligibleNationalities**: `MA`");
+    expect(sheet).toContain("**fields**: ALL FIELDS");
+    expect(sheet).toContain("**institutions**: ALL INSTITUTIONS of the destination");
+    expect(sheet).toContain("Une bourse.");
+    expect(sheet).toContain("A grant.");
+    expect(sheet).toContain("Candidature en ligne.");
+    expect(sheet).toContain("Apply online.");
+  });
+
+  it("lists the fields and institutions when they are restricted", () => {
+    const sheet = sampleSheet([
+      {
+        key: row.key,
+        row,
+        record: { ...record, fields: ["computer-science"], institutions: ["tu-berlin"] },
+      },
+    ]);
+    expect(sheet).toContain("**fields**: `computer-science`");
+    expect(sheet).toContain("**institutions**: `tu-berlin`");
+  });
+
+  it("does not add the scholarship lines to a programme", () => {
+    const sheet = sampleSheet([
+      { key: "programs/p", row: { ...row, key: "programs/p" }, record: { name: "P" } },
+    ]);
+    expect(sheet).not.toContain("ALL FIELDS");
+  });
+});

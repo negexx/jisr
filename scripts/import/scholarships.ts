@@ -7,8 +7,9 @@ import { z } from "zod";
 import { isValidIsoDate } from "@/data-schema/dates";
 import { SUPPORT_COVERS } from "@/data-schema/records/scholarship";
 
+import { sameSite } from "./discover";
 import {
-  amountInQuote,
+  amountMatches,
   checkDeadline,
   mentionsInternationalApplicants,
   mentionsTranslation,
@@ -87,27 +88,141 @@ export type ScholarshipVerified =
     }
   | { ok: false; reasons: string[] };
 
-const LEVEL_WORDS = /bachelor|undergraduate|licence|first[- ]degree|erststudium/i;
+// --- level ----------------------------------------------------------------------------------------
+// The scholarship itself must be for bachelor (first-degree) students. A quote that makes it a
+// master/doctoral scholarship, or that requires a bachelor's degree to apply, proves the opposite.
+const GRADUATE_LEVEL =
+  /\bmaster|postgraduate|(?<!under)\bgraduate (?:students|studies|programmes?|programs?)|\bph\.?d\b|doctora|\bpromotion\b/i;
+const BACHELOR_PREREQUISITE: readonly RegExp[] = [
+  /\b(?:hold|holds|holding|holders?|completed|graduates?)\s+(?:of\s+)?(?:an?\s+|the\s+|their\s+)?(?:bachelor|licence|undergraduate degree)/i,
+  /\bbachelor['’]?s?(?: degree)?\s+(?:holders?|required|is required)/i,
+  /\b(?:with|having|have|has)\s+(?:an?\s+|completed\s+(?:an?\s+)?)?bachelor/i,
+  /titulaires?\s+d['’]une\s+licence/i,
+  /\bbachelor-?abschluss|abgeschlossen\w*\s+bachelor/i,
+];
+const isGraduateLevel = (quote: string): boolean =>
+  GRADUATE_LEVEL.test(quote) || BACHELOR_PREREQUISITE.some((pattern) => pattern.test(quote));
 
-// The currency, as the page writes it: a symbol, the code or the word.
+const UNDERGRADUATE: readonly RegExp[] = [
+  /\bundergraduate/i,
+  /first[- ]degree|\berst(?:es)?\s*studium|\berststudium/i,
+  /\bbachelor['’]?s?\s+(?:students?|programmes?|programs?|studies|level|courses?)\b/i,
+  /\b(?:for|towards?|pursuing|enrolled in|start(?:ing)?|begin(?:ning)?|entering)\s+(?:an?\s+|the\s+|their\s+)?(?:first[- ]year\s+)?bachelor/i,
+  /pour la licence|[ée]tudiants? en licence|premier cycle|cursus de licence/i,
+  /\bbachelor-?studi(?:um|engang|e)\b|\bbachelorstudent/i,
+];
+const isUndergraduate = (quote: string): boolean =>
+  UNDERGRADUATE.some((pattern) => pattern.test(quote));
+
+// --- eligibility ----------------------------------------------------------------------------------
+const EXCLUSION =
+  /not eligible|cannot apply|can ?not apply|are excluded|only (?:for|open to)\s+(?:german|eu\b|eea|dutch|french|national)|nicht\s+(?:berechtigt|bewerben)|k[öo]nnen sich nicht bewerben|ne sont pas|ne peuvent pas|uitgesloten|niet in aanmerking/i;
+
+// "Foreign Office / Affairs" is a ministry, not a foreign applicant. Local to this verifier: the
+// shared rule stays as it is.
+const FOREIGN_MINISTRY = /foreign\s+(?:office|affairs|ministry|minister|policy|service)/gi;
+const namesInternational = (quote: string): boolean =>
+  mentionsInternationalApplicants(quote.replace(FOREIGN_MINISTRY, " "));
+
+// How a page names a nationality: the country or its region. Small and general; extend per code.
+const AFRICA = String.raw`\bafrica|\bafrique|\bafrika|\bmena\b`;
+const NORTH_AFRICA = "north africa|afrique du nord|nordafrika";
+const NATIONALITY_NAMES: Record<string, RegExp> = {
+  MA: new RegExp(`morocc|maroc|marokk|${NORTH_AFRICA}|${AFRICA}`, "i"),
+  DZ: new RegExp(`alg[eé]ri|${NORTH_AFRICA}|${AFRICA}`, "i"),
+  TN: new RegExp(`tunisi|tunesi|${NORTH_AFRICA}|${AFRICA}`, "i"),
+};
+
+// --- official sources -----------------------------------------------------------------------------
+const ALLOWED_DOMAINS = new Set(["daad.de", "nuffic.nl", "studyinholland.nl", "campusfrance.org"]);
+const GOVERNMENT_SUFFIXES = ["gouv.fr", "bund.de", "overheid.nl", "government.nl"];
+
+// A quote counts only when it is on the provider's own site, a national study-abroad portal or a
+// government site; a blog or an aggregator holding the same sentence is not an official source.
+export function isOfficialSource(url: string, officialUrl: string): boolean {
+  if (sameSite(url, officialUrl)) return true;
+  let labels: string[];
+  try {
+    labels = new URL(url).hostname.toLowerCase().split(".");
+  } catch {
+    return false;
+  }
+  if (ALLOWED_DOMAINS.has(labels.slice(-2).join("."))) return true;
+  if (labels.at(-1) === "gov" || labels.slice(0, -1).includes("gov")) return true;
+  return labels.length > 2 && GOVERNMENT_SUFFIXES.includes(labels.slice(-2).join("."));
+}
+
+// --- support --------------------------------------------------------------------------------------
+// The currency, as the page writes it: a symbol, the code or the word (whole words only, so
+// "European" is not the euro).
 const CURRENCY_WORDS: Record<string, RegExp> = {
-  EUR: /€|\beur\b|euros?/i,
-  USD: /\$|\busd\b|dollars?/i,
-  GBP: /£|\bgbp\b|pounds?/i,
-  CHF: /\bchf\b|swiss francs?|francs? suisses?/i,
-  MAD: /\bmad\b|\bdh\b|dirhams?/i,
+  EUR: /€|\beur\b|\beuros?\b/i,
+  USD: /\$|\busd\b|\bdollars?\b/i,
+  GBP: /£|\bgbp\b|\bpounds?\b/i,
+  CHF: /\bchf\b|\bswiss francs?\b|\bfrancs? suisses?\b/i,
+  MAD: /\bmad\b|\bdh\b|\bdirhams?\b/i,
 };
-const currencyInQuote = (currency: string, quote: string): boolean =>
-  (CURRENCY_WORDS[currency] ?? new RegExp(`\\b${currency}\\b`, "i")).test(quote);
+function currencyNextTo(currency: string, quote: string, start: number, end: number): boolean {
+  const source = (CURRENCY_WORDS[currency] ?? new RegExp(`\\b${currency}\\b`, "i")).source;
+  const before = quote.slice(Math.max(0, start - 12), start);
+  const after = quote.slice(end, end + 12);
+  return (
+    new RegExp(`(?:${source})[\\s\\u00a0]{0,2}$`, "i").test(before) ||
+    new RegExp(`^[\\s\\u00a0]{0,2}(?:${source})`, "i").test(after)
+  );
+}
 
-// What the amount is paid per. An amount whose period the quote does not state is not kept: "5,000"
-// once and "5,000" a month are different scholarships.
+// What the amount is paid per. An amount whose period the quote does not state next to it is not
+// kept: "5,000" once and "5,000" a month are different scholarships. "years" and "first-year" are
+// not "per year"; a bare "once" ("once admitted") is not a one-time payment.
 const PER_WORDS: Record<"month" | "year" | "once" | "total", RegExp> = {
-  month: /month|monthly|monat|mensuel|\bmois\b|maand|\/\s*mo\b/i,
-  year: /year|yearly|annual|per annum|jahr|jährlich|annuel|par an\b|par année|jaar/i,
-  once: /one[- ]?(?:time|off)|once|lump[- ]sum|single payment|einmalig|eenmalig|forfait/i,
-  total: /total|in all|overall|insgesamt|gesamt|whole|entire|au total|duration/i,
+  month:
+    /\b(?:per|each|every)\s+month\b|(?<!\bfor\s)\ba\s+month\b|\bmonthly\b|\/\s*month\b|\bpro monat\b|\bmonatlich\b|\bpar mois\b|\bper maand\b|\bmaandelijks\b|\bmensuel/i,
+  year: /\b(?:per|each|every)\s+(?:academic\s+)?year\b|(?<!\bfor\s)\ba\s+year\b|\bannually\b|\byearly\b|\bannual\b|\/\s*year\b|\bpar an\b|\bpro jahr\b|\bj[äa]hrlich\b|\bper jaar\b|\bjaarlijks\b|\bannuel/i,
+  once: /\bone[- ]?time\b|\bone[- ]off\b|\blump[- ]sum\b|\beinmalig\b|\bune (?:seule )?fois\b|\beenmalig\b/i,
+  total: /\bin total\b|\bau total\b|\binsgesamt\b|\btotal of\b|\bgesamtbetrag\b/i,
 };
+
+const WINDOW = 25;
+// The same clause: up to 25 characters, stopping at another number or the end of the sentence.
+const clauseAfter = (quote: string, from: number): string =>
+  quote.slice(from, from + WINDOW).split(/\d|[.;!?](?:\s|$)/)[0] ?? "";
+const clauseBefore = (quote: string, to: number): string =>
+  quote
+    .slice(Math.max(0, to - WINDOW), to)
+    .split(/\d|[.;!?]\s/)
+    .at(-1) ?? "";
+
+type SupportAmount = {
+  min: number;
+  max: number;
+  currency: string;
+  per: "month" | "year" | "once" | "total";
+};
+
+// Does the quote state this amount range, in this currency, per this period, in one place?
+function supportStated(amount: SupportAmount, quote: string): boolean {
+  for (const hi of amountMatches(amount.max, quote)) {
+    for (const lo of amountMatches(amount.min, quote)) {
+      if (lo.start > hi.start) continue;
+      // a range ("800 to 1,000"), not two unrelated numbers
+      if (lo.start !== hi.start && hi.start - lo.end > 20) continue;
+      if (
+        !currencyNextTo(amount.currency, quote, lo.start, lo.end) &&
+        !currencyNextTo(amount.currency, quote, hi.start, hi.end)
+      )
+        continue;
+      const after = clauseAfter(quote, hi.end);
+      // "a one-time grant of EUR 5,000" and "a total of EUR 8,000" put the word before the amount
+      const around =
+        amount.per === "once" || amount.per === "total"
+          ? `${clauseBefore(quote, lo.start)} ${after}`
+          : after;
+      if (PER_WORDS[amount.per].test(around)) return true;
+    }
+  }
+  return false;
+}
 
 // What the support covers, as the page writes it. "other" cannot be recognised, so it is never kept.
 const COVER_WORDS: Record<(typeof SUPPORT_COVERS)[number], RegExp | null> = {
@@ -143,11 +258,18 @@ export async function verifyScholarship(
     return pages.get(url) ?? null;
   };
   // Quotes found verbatim on their pages; an unreachable page or an invented quote supports nothing.
-  const accept = async (quotes: readonly Quote[] | undefined): Promise<Quote[]> => {
+  // A quote also has to be on an official site (the provider's own, a national portal, a government).
+  const dropped: string[] = [];
+  const accept = async (label: string, quotes: readonly Quote[] | undefined): Promise<Quote[]> => {
     const kept: Quote[] = [];
     for (const q of quotes ?? []) {
       const text = await textOf(q.url);
-      if (text !== null && quoteInText(q.quote, text)) kept.push(q);
+      if (text === null || !quoteInText(q.quote, text)) continue;
+      if (!isOfficialSource(q.url, proposal.officialUrl)) {
+        dropped.push(`${label}: a quote on ${q.url} is not from an official site: dropped`);
+        continue;
+      }
+      kept.push(q);
     }
     return kept;
   };
@@ -165,30 +287,58 @@ export async function verifyScholarship(
         if (!options.institutions.has(slug)) reasons.push(`unknown institution slug ${slug}`);
   }
 
-  const eligibility = await accept(proposal.evidence.eligibility);
-  const international = eligibility.filter((q) => mentionsInternationalApplicants(q.quote));
-  if (eligibility.length === 0)
+  const eligibilityAll = await accept("eligibility", proposal.evidence.eligibility);
+  const eligibility = eligibilityAll.filter((q) => !EXCLUSION.test(q.quote));
+  for (const q of eligibilityAll)
+    if (EXCLUSION.test(q.quote))
+      dropped.push(`eligibility: the quote "${q.quote}" states an exclusion: dropped`);
+  const international = eligibility.filter((q) => namesInternational(q.quote));
+  if (eligibilityAll.length === 0)
     reasons.push("eligibility: no quote was found verbatim on the cited page(s)");
+  else if (eligibility.length === 0)
+    reasons.push("eligibility: every accepted quote states an exclusion");
   else if (international.length === 0)
     reasons.push(
       "eligibility: no accepted quote says the scholarship is open to international (non-EU) applicants",
     );
+  // a listed nationality needs a quote naming the country or its region; none listed means any
+  // international applicant, which is what the international quote supports
+  for (const code of proposal.eligibleNationalities) {
+    const names = NATIONALITY_NAMES[code];
+    if (names === undefined)
+      reasons.push(
+        `eligibleNationalities: ${code} cannot be checked against a quote yet (add its names to NATIONALITY_NAMES)`,
+      );
+    else if (eligibility.length > 0 && !eligibility.some((q) => names.test(q.quote)))
+      reasons.push(
+        `eligibleNationalities: no accepted eligibility quote names ${code} (the country or its region)`,
+      );
+  }
 
-  const levelAll = await accept(proposal.evidence.level);
-  const level = levelAll.filter((q) => LEVEL_WORDS.test(q.quote));
-  if (levelAll.length === 0)
+  const levelAll = await accept("level", proposal.evidence.level);
+  const level = levelAll.filter((q) => isUndergraduate(q.quote) && !isGraduateLevel(q.quote));
+  if (
+    levelAll.some((q) => isGraduateLevel(q.quote)) ||
+    eligibility.some((q) => isGraduateLevel(q.quote))
+  )
+    reasons.push(
+      "level: a quote makes this a graduate (master, doctoral) scholarship or requires a bachelor's degree to apply",
+    );
+  else if (levelAll.length === 0)
     reasons.push("level: no quote was found verbatim on the cited page(s)");
   else if (level.length === 0)
-    reasons.push("level: no accepted quote states a bachelor (undergraduate) level");
+    reasons.push(
+      "level: no accepted quote says the scholarship itself is for bachelor (undergraduate) students",
+    );
 
-  const howToApply = await accept(proposal.evidence.howToApply);
+  const howToApply = await accept("howToApply", proposal.evidence.howToApply);
   if (howToApply.length === 0)
     reasons.push("howToApply: no quote was found verbatim on the cited page(s)");
 
   const firstInternational = international[0];
   const firstHow = howToApply[0];
   if (reasons.length > 0 || firstInternational === undefined || firstHow === undefined)
-    return { ok: false, reasons };
+    return { ok: false, reasons: [...reasons, ...dropped] };
 
   // sources: the official page is page-1, then each other page in order of first use
   const sources: Record<string, { url: string; last_verified_at: null }> = {};
@@ -218,7 +368,7 @@ export async function verifyScholarship(
   let supportSource = officialKey;
   if (proposal.support !== null) {
     const claim = proposal.support;
-    const quotes = await accept(proposal.evidence.support);
+    const quotes = await accept("support", proposal.evidence.support);
     const amount = claim.amount;
     const coversIn = (list: readonly Quote[]) =>
       claim.covers.filter((cover) => {
@@ -228,16 +378,10 @@ export async function verifyScholarship(
     if (quotes.length === 0) {
       notes.push("support: no quote was found verbatim on the cited page(s)");
     } else if (amount !== null) {
-      const stating = quotes.find(
-        (q) =>
-          amountInQuote(amount.min, q.quote) &&
-          amountInQuote(amount.max, q.quote) &&
-          currencyInQuote(amount.currency, q.quote) &&
-          PER_WORDS[amount.per].test(q.quote),
-      );
+      const stating = quotes.find((q) => supportStated(amount, q.quote));
       if (stating === undefined) {
         notes.push(
-          `support: no accepted quote states ${amount.min}-${amount.max} ${amount.currency} per ${amount.per} (amounts, currency and period)`,
+          `support: no accepted quote states ${amount.min}-${amount.max} ${amount.currency} per ${amount.per} (amounts, currency next to the amount, and the period)`,
         );
       } else {
         support = {
@@ -269,7 +413,7 @@ export async function verifyScholarship(
   let deadline: string | null = null;
   let deadlineSource = officialKey;
   if (proposal.deadline !== null) {
-    const quotes = await accept(proposal.evidence.deadline);
+    const quotes = await accept("deadline", proposal.evidence.deadline);
     if (quotes.length === 0) {
       notes.push("deadline: no quote was found verbatim on the cited page(s)");
     } else {
@@ -277,11 +421,14 @@ export async function verifyScholarship(
         q,
         check: checkDeadline(proposal.deadline ?? "", q.quote),
       }));
-      const passed = checks.find((c) => c.check.ok);
+      const stated = checks.filter((c) => c.check.ok);
+      const passed = stated.find((c) => namesInternational(c.q.quote));
       if (passed === undefined) {
         const first = checks[0]?.check;
         notes.push(
-          `deadline: ${first !== undefined && !first.ok ? first.reason : "not supported"}`,
+          stated.length > 0
+            ? "deadline: no accepted quote says the deadline is for international (non-EU) applicants"
+            : `deadline: ${first !== undefined && !first.ok ? first.reason : "not supported"}`,
         );
       } else {
         deadline = proposal.deadline;
@@ -295,7 +442,7 @@ export async function verifyScholarship(
   // A document is kept only when an accepted quote names it as the page writes it; a translation
   // claim needs a quote that names the document and mentions translation, otherwise it is unknown.
   let documents: unknown = null;
-  let documentsSource = keyFor(firstHow.url);
+  let documentsSource = officialKey;
   if (proposal.documents !== null) {
     const all = [...eligibility, ...level, ...howToApply];
     const normalized = all.map((q) => ({
@@ -359,7 +506,7 @@ export async function verifyScholarship(
     officialUrl: proposal.officialUrl,
     sources,
   };
-  return { ok: true, record, evidence, notes };
+  return { ok: true, record, evidence, notes: [...dropped, ...notes] };
 }
 
 // --- command line --------------------------------------------------------------------------------
@@ -374,9 +521,10 @@ export type VerifyOutcome = { ok: boolean; lines: string[] };
 const PREPARED_TODO =
   "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw";
 
-async function institutionSlugs(dataDir: string): Promise<Set<string>> {
+// null when the folder does not exist: nothing can then be checked.
+async function institutionSlugs(dataDir: string): Promise<Set<string> | null> {
   const dir = path.join(dataDir, "institutions");
-  if (!existsSync(dir)) return new Set();
+  if (!existsSync(dir)) return null;
   return new Set(
     (await readdir(dir)).filter((n) => n.endsWith(".yaml")).map((n) => n.slice(0, -".yaml".length)),
   );
@@ -413,8 +561,16 @@ export async function runVerify(
         lines: [`scholarships/${proposal.slug} is already in ${dataDir}/: never overwritten`],
       };
   }
+  const known = await institutionSlugs(dataDir);
+  if (known === null && (proposal.institutions ?? []).length > 0)
+    return {
+      ok: false,
+      lines: [
+        `${path.join(dataDir, "institutions")} not found: cannot check the institution slugs`,
+      ],
+    };
   const verified = await verifyScholarship(proposal, deps.getText ?? pageText, {
-    institutions: await institutionSlugs(dataDir),
+    ...(known === null ? {} : { institutions: known }),
   });
   if (!verified.ok)
     return { ok: false, lines: verified.reasons.map((reason) => `REJECTED ${reason}`) };

@@ -251,12 +251,23 @@ function amountPattern(amount: number): RegExp {
   const digits = String(Math.round(amount));
   const grouped =
     digits.length > 3 ? `${digits.slice(0, -3)}[.,\\s\\u00a0\\u202f']?${digits.slice(-3)}` : digits;
-  return new RegExp(`(?<![\\d.,])${grouped}(?:[.,]00)?(?![\\d])`);
+  // not followed by a decimal tail: 5,000.50 is not 5,000
+  return new RegExp(`(?<![\\d.,])${grouped}(?:[.,]00)?(?![\\d])(?![.,]\\d)`, "g");
 }
 
 // Does the quote state this amount (in major units) as a whole number, not as part of a larger one?
 export const amountInQuote = (amountMajor: number, quote: string): boolean =>
-  amountPattern(amountMajor).test(quote);
+  amountMatches(amountMajor, quote).length > 0;
+
+// Where the quote states the amount: [start, end) of each occurrence.
+export const amountMatches = (
+  amountMajor: number,
+  quote: string,
+): { start: number; end: number }[] =>
+  [...quote.matchAll(amountPattern(amountMajor))].map((m) => ({
+    start: m.index ?? 0,
+    end: (m.index ?? 0) + m[0].length,
+  }));
 
 const NO_FEE =
   /no tuition|tuition[- ]free|free of charge|no fees|gratuit|keine studiengeb|studiengebührenfrei|geen collegegeld|zonder collegegeld|tuition fees?(?: per (?:semester|year|term))?[: ]+none\b(?!\s+for\b)/i;
