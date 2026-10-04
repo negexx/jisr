@@ -9,7 +9,7 @@ import type { QueryBudget, SearchHit, SearchProvider } from "./search";
 export type Link = { url: string; text: string };
 export type PageKind = "programme" | "fees" | "admission";
 
-const OTHER_FILE = /\.(jpe?g|png|gif|svg|webp|zip|docx?|xlsx?|pptx?|mp[34]|ics)(\?|$)/i;
+export const OTHER_FILE = /\.(jpe?g|png|gif|svg|webp|zip|docx?|xlsx?|pptx?|mp[34]|ics)(\?|$)/i;
 const FILE = /\.(pdf|jpe?g|png|gif|svg|webp|zip|docx?|xlsx?|pptx?|mp[34]|ics)(\?|$)/i;
 
 // `pdf: true` keeps links to PDFs (fee schedules); every other file type stays out.

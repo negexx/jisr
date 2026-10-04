@@ -256,8 +256,11 @@ describe("discoverTopicPages", () => {
       },
     });
     expect(fetched).toEqual(["https://www.hr.example.nl/collegegeld"]);
-    expect(out.fees).toHaveLength(3);
-    expect(out.fees[0]).toBe("https://www.hr.example.nl/collegegeld");
+    // only the newest study year of the page is followed
+    expect(out.fees).toEqual([
+      "https://www.hr.example.nl/collegegeld",
+      "https://www.hr.example.nl/collegegeld/collegegeld-studiejaar-2026-2027",
+    ]);
     expect(search.queries).toHaveLength(TOPICS.length);
     expect(out.language).toEqual([]);
   });
@@ -388,6 +391,68 @@ describe("followFeeLinks", () => {
       },
     );
     expect(out).toHaveLength(2);
+  });
+
+  const yearLinks = `
+    <a href="/collegegeld-2024-2025">Collegegeld 2024-2025</a>
+    <a href="/collegegeld-2025-2026">Collegegeld 2025-2026</a>
+    <a href="/collegegeld-2026-2027">Collegegeld 2026-2027</a>`;
+
+  it("returns the newest study year first and drops the older years of the page", async () => {
+    const out = await followFeeLinks([feePage], {
+      website: site,
+      fetchHtml: async () => yearLinks,
+      limit: 3,
+    });
+    expect(out).toEqual(["https://www.hr.example.nl/collegegeld-2026-2027"]);
+  });
+
+  it("keeps an undated calculator link after the newest dated link", async () => {
+    const out = await followFeeLinks([feePage], {
+      website: site,
+      fetchHtml: async () => `${yearLinks}<a href="/collegegeldmeter">Collegegeldmeter</a>`,
+      limit: 3,
+    });
+    expect(out).toEqual([
+      "https://www.hr.example.nl/collegegeld-2026-2027",
+      "https://www.hr.example.nl/collegegeldmeter",
+    ]);
+  });
+
+  it("still returns older years when they are all that exist, newest first", async () => {
+    const out = await followFeeLinks([feePage], {
+      website: site,
+      fetchHtml: async () =>
+        `<a href="/collegegeld-2023-2024">Collegegeld 2023-2024</a>
+         <a href="/collegegeld-2024-2025">Collegegeld 2024-2025</a>`,
+      limit: 3,
+    });
+    expect(out).toEqual(["https://www.hr.example.nl/collegegeld-2024-2025"]);
+  });
+
+  it("keeps the score order between links of the same year", async () => {
+    const out = await followFeeLinks([feePage], {
+      website: site,
+      fetchHtml: async () =>
+        `<a href="/studeren/x-2026-2027">Overzicht collegegeld 2026-2027</a>
+         <a href="/collegegeld-2026-2027">Collegegeld 2026-2027</a>`,
+      limit: 3,
+    });
+    expect(out).toEqual([
+      "https://www.hr.example.nl/collegegeld-2026-2027",
+      "https://www.hr.example.nl/studeren/x-2026-2027",
+    ]);
+  });
+
+  it("drops undated news paths outright", async () => {
+    const out = await followFeeLinks([feePage], {
+      website: site,
+      fetchHtml: async () =>
+        `<a href="/nieuws/collegegeld-2026-2027">Collegegeld 2026-2027</a>
+         <a href="/news/tarieven">Collegegeld tarieven</a>
+         <a href="/blog/collegegeldmeter">Collegegeldmeter</a>`,
+    });
+    expect(out).toEqual([]);
   });
 
   it("ranks a study-year fee link above a bare calculator link", async () => {

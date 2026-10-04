@@ -9,6 +9,7 @@ import {
   checkTopicFlags,
   daadRegisterUrl,
   dryRunSummary,
+  memoizeFetch,
   mergePages,
   syncSkippedListing,
 } from "../../../scripts/import/pages";
@@ -178,5 +179,31 @@ describe("syncSkippedListing", () => {
   it("is fine with no listing to remove", async () => {
     const file = path.join(await mkdtemp(path.join(tmpdir(), "pages-")), "none.skipped.txt");
     expect(await syncSkippedListing(file, [])).toBeNull();
+  });
+});
+
+describe("memoizeFetch", () => {
+  it("fetches a url once for concurrent and later callers", async () => {
+    const calls: string[] = [];
+    const fetch = memoizeFetch(async (url) => {
+      calls.push(url);
+      return `<html>${url}</html>`;
+    });
+    const [a, b] = await Promise.all([fetch("https://a.example/x"), fetch("https://a.example/x")]);
+    expect(a).toBe(b);
+    await fetch("https://a.example/x");
+    await fetch("https://a.example/y");
+    expect(calls).toEqual(["https://a.example/x", "https://a.example/y"]);
+  });
+
+  it("forgets a failed fetch so the next caller can retry", async () => {
+    let attempts = 0;
+    const fetch = memoizeFetch(async () => {
+      attempts++;
+      if (attempts === 1) throw new Error("down");
+      return "ok";
+    });
+    await expect(fetch("https://a.example/x")).rejects.toThrow("down");
+    await expect(fetch("https://a.example/x")).resolves.toBe("ok");
   });
 });

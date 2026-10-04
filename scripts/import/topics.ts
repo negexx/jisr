@@ -1,4 +1,4 @@
-import { extractLinks, registrable, sameSite } from "./discover";
+import { extractLinks, OTHER_FILE, registrable, sameSite } from "./discover";
 import { normalizeForMatch } from "./evidence";
 import type { QueryBudget, SearchHit, SearchProvider } from "./search";
 
@@ -45,8 +45,6 @@ const PATTERN: Record<Topic, RegExp> = {
 };
 
 const NEWSISH = /\/(news|blog|events?|actualit|presse|press|agenda|nieuws|aktuell|veranstaltung)/;
-// PDFs are wanted here (fee schedules); every other file type is not a page to read
-const OTHER_FILE = /\.(jpe?g|png|gif|svg|webp|zip|docx?|xlsx?|pptx?|mp[34]|ics)(\?|$)/i;
 const DATED_POST = /\/(19|20)\d{2}\/(0[1-9]|1[0-2])(\/|$)/;
 
 // Every topic, or the comma-separated subset of a `--topic-list` flag.
@@ -88,9 +86,21 @@ const STUDY_YEAR = /20\d\d[-/ ]20\d\d|20\d\d\/\d\d|studiejaar|academic year/;
 const FEE_TOOL = /collegegeldmeter|tarieven|tariff|fee calculator/;
 const MAX_FEE_PAGES_FETCHED = 3;
 
+// The study year a link names, as its highest start year: 2026-2027 and 2026/27 are 2026.
+function startYear(text: string): number | null {
+  const years = text
+    .replace(/(20\d\d)[-/ ]20\d\d/g, "$1")
+    .replace(/(20\d\d)\/\d\d/g, "$1")
+    .match(/20\d\d/g);
+  return years === null ? null : Math.max(...years.map(Number));
+}
+
+type FeeCandidate = { url: string; score: number; year: number | null };
+
 // A fee page often links the rate sheet of the current study year, a fee calculator or a PDF
 // schedule that no search answers. HTML only, same site, https, one level deep; a page that cannot be
-// fetched is skipped and nothing here throws.
+// fetched is skipped and nothing here throws. Per page only the newest study year survives, and the
+// newest year sorts first, so a past year's sheet never outranks the current one.
 export async function followFeeLinks(
   feePages: readonly string[],
   input: {
@@ -100,7 +110,7 @@ export async function followFeeLinks(
   },
 ): Promise<string[]> {
   const known = new Set(feePages);
-  const found = new Map<string, number>();
+  const found = new Map<string, FeeCandidate>();
   const pages = feePages
     .filter((url) => !/\.pdf(\?|#|$)/i.test(url))
     .slice(0, MAX_FEE_PAGES_FETCHED);
@@ -111,33 +121,40 @@ export async function followFeeLinks(
     } catch {
       continue;
     }
+    const onPage: FeeCandidate[] = [];
     for (const link of links) {
       try {
         if (known.has(link.url) || found.has(link.url)) continue;
         if (!link.url.startsWith("https://") || !sameSite(link.url, input.website)) continue;
         const pathname = new URL(link.url).pathname;
-        if (OTHER_FILE.test(pathname) || DATED_POST.test(pathname)) continue;
-        const score = scoreTopicLink(link, "fees");
-        if (score < 0.4) continue;
         let path = pathname;
         try {
           path = decodeURIComponent(pathname);
         } catch {
           // keep the raw path
         }
+        if (DATED_POST.test(pathname) || NEWSISH.test(fold(path))) continue;
+        const score = scoreTopicLink(link, "fees");
+        if (score < 0.4) continue;
         const haystack = fold(`${link.text} ${path}`);
         const studyYear = STUDY_YEAR.test(haystack);
         if (!studyYear && !FEE_TOOL.test(haystack)) continue;
-        found.set(link.url, score + (studyYear ? 0.2 : 0));
+        onPage.push({
+          url: link.url,
+          score: score + (studyYear ? 0.2 : 0),
+          year: startYear(haystack),
+        });
       } catch {
         // an unparseable link is not a candidate
       }
     }
+    const newest = Math.max(-Infinity, ...onPage.map((c) => c.year ?? -Infinity));
+    for (const c of onPage) if (c.year === null || c.year >= newest) found.set(c.url, c);
   }
-  return [...found]
-    .sort((a, b) => b[1] - a[1])
+  return [...found.values()]
+    .sort((a, b) => (b.year ?? -Infinity) - (a.year ?? -Infinity) || b.score - a.score)
     .slice(0, input.limit ?? 2)
-    .map(([url]) => url);
+    .map((c) => c.url);
 }
 
 export type TopicInput = {

@@ -74,6 +74,22 @@ export function mergePages(found: {
   ];
 }
 
+// One fetch per url for the whole run: the programmes of one institution share its fee pages. A
+// failed fetch is forgotten, so a later programme can try again.
+export function memoizeFetch(
+  fetch: (url: string) => Promise<string>,
+): (url: string) => Promise<string> {
+  const known = new Map<string, Promise<string>>();
+  return (url) => {
+    const cached = known.get(url);
+    if (cached !== undefined) return cached;
+    const pending = fetch(url);
+    known.set(url, pending);
+    pending.catch(() => known.delete(url));
+    return pending;
+  };
+}
+
 // One programme's topic pages. A search that fails (a provider hiccup) costs that programme its
 // topic pages, not the whole run: its existing pages stay. Only the budget error stops the run.
 export async function addTopicPagesFor(
@@ -154,6 +170,9 @@ async function main(argv: readonly string[]): Promise<void> {
     base === null ? null : withCache(base, base.cacheable === true ? ".cache/search" : null);
   const budget = new QueryBudget(Number(flag("max-queries") ?? 300));
   const memo = new Map<string, Promise<SearchHit[]>>();
+  const fetchHtml = memoizeFetch((u) =>
+    fetchText(u, { accept: "text/html,application/xhtml+xml" }),
+  );
   let searched = 0;
   const institutions = new Set<string>();
   const topicSites = new Set<string>();
@@ -246,7 +265,7 @@ async function main(argv: readonly string[]): Promise<void> {
               budget,
               memo,
               topics,
-              fetchHtml: (u) => fetchText(u, { accept: "text/html,application/xhtml+xml" }),
+              fetchHtml,
             }),
           console.error,
         );
