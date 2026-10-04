@@ -198,7 +198,7 @@ export function sampleSheet(
         "- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.",
         "- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.",
         "- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.",
-        "- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students.",
+        "- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.",
       );
       for (const e of evidence.filter((x) => show(x.fact).startsWith("nationality:"))) {
         out.push(

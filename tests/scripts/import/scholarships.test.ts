@@ -1196,3 +1196,123 @@ describe("support: an amount for a scheme that covers both levels", () => {
     ).toBe(70000);
   });
 });
+
+// Round 2 review: both levels plus finished-degree words, and a period the next sentence must not override.
+const FINISHED = [
+  "Bachelor or Master graduates may apply",
+  "Bachelor’s and Master’s graduates may apply",
+  "The scholarship is for bachelor’s or master’s graduates",
+  "Bachelor and Master alumni may apply",
+  "Bachelor- und Masterabsolventen können sich bewerben",
+  "Ouvert aux diplômés de licence ou master",
+  "Licence ou master obtenu avant la candidature",
+  "Bachelor and Master students, as well as postdocs, may apply",
+  "Bachelor- oder Masterabschluss erforderlich",
+];
+const COVER_OK = [
+  "Pour les étudiants en licence ou en master",
+  "Offen für Bachelor- oder Masterstudierende",
+];
+const PERIOD_TRAPS = [
+  "EUR 934 per month. You will receive this in the first year.",
+  "You receive EUR 934 monthly. You will receive this in the first year.",
+  "You receive EUR 934 a month. You will receive this in the first year.",
+  "You receive EUR 934, monthly. You will receive this in the first year.",
+  "You receive EUR 934 per mo. You will receive this in the first year.",
+  "You receive EUR 934 p.m. You will receive this in the first year.",
+  "You receive EUR 934 annually. You will receive this in the first year.",
+  "You receive EUR 934 every month. You will receive this in the first year.",
+  "Grant of € 5,000 per year. You will receive this in the first year.",
+  "Grant of EUR 934. You will receive this monthly in the first year.",
+  "Grant of EUR 934. You will receive this in monthly instalments in the first year.",
+  "Grant of EUR 934. You will receive this every year, starting in the first year.",
+  "Grant of EUR 934. You will receive this in the first year and again in the second year.",
+  "Grant of EUR 934. You will receive this in the first year, then EUR 2,000 each year.",
+  "Grant of EUR 934. You will receive this in two instalments in the first year.",
+  "Tuition is EUR 934. It is paid in the first year.",
+  "Fee of EUR 934. This is paid in the first year.",
+  "Award of EUR 934. Paid out in the first year.",
+];
+const SUPPORT_C1 = [
+  { quote: "Bachelor or Master graduates receive EUR 400 per month", amount: 400 },
+  { quote: "Bachelor and Master alumni receive EUR 400 per month", amount: 400 },
+  { quote: "EUR 900 per month for bachelor’s or master’s graduates", amount: 900 },
+  { quote: "Licence ou master obtenu : EUR 400 par mois", amount: 400 },
+];
+pages[`${HOME}/review`] = [
+  ...FINISHED,
+  ...COVER_OK,
+  ...PERIOD_TRAPS,
+  ...SUPPORT_C1.map((c) => c.quote),
+  "The scholarship amounts to € 5,000. You will receive this in the first year of your studies.",
+].join(" // ");
+
+describe("review: both levels do not make graduates or finished degrees bachelor students", () => {
+  const REVIEW = `${HOME}/review`;
+  const GOOD_ELIGIBILITY =
+    "The NL Scholarship (formerly known as Holland Scholarship) is meant for international students from outside the European Economic Area (EEA) who want to do their bachelor’s or master’s in the Netherlands";
+  const BOTH_QUOTE = "who want to do their bachelor’s or master’s in the Netherlands";
+  pages[`${HOME}/review`] +=
+    ` // ${GOOD_ELIGIBILITY}. Applicants from non-EU countries, including Morocco, may apply.`;
+
+  it.each(FINISHED)("rejects as a level quote (%s)", async (quote) => {
+    const result = await okOrReasons({
+      evidence: evidence({ level: QUOTES(REVIEW, BOTH_QUOTE, quote) }),
+    });
+    expect(result.ok).toBe(false);
+    expect(reasonsOf(result)).toMatch(/level/i);
+  });
+
+  it.each(FINISHED)("rejects as an eligibility quote (%s)", async (quote) => {
+    const result = await okOrReasons({
+      eligibleNationalities: [],
+      evidence: evidence({
+        eligibility: QUOTES(REVIEW, GOOD_ELIGIBILITY, quote),
+        level: QUOTES(REVIEW, BOTH_QUOTE),
+      }),
+    });
+    expect(result.ok).toBe(false);
+  });
+
+  it.each(COVER_OK)("accepts a study-level suffix after master (%s)", async (quote) => {
+    const result = await okOrReasons({
+      evidence: evidence({ level: QUOTES(REVIEW, quote) }),
+    });
+    expect(reasonsOf(result)).toBe("");
+  });
+
+  it.each(SUPPORT_C1)("drops an amount for graduates ($quote)", async ({ quote, amount }) => {
+    const result = await okOrReasons({
+      support: { amount: { min: amount, max: amount, currency: "EUR", per: "month" }, covers: [] },
+      evidence: evidence({ support: QUOTES(REVIEW, quote) }),
+    });
+    if (!result.ok) throw new Error(result.reasons.join(" | "));
+    expect(at(result.record, "support.value")).toBeNull();
+  });
+});
+
+describe("review: the next sentence cannot override or repeat a period", () => {
+  const REVIEW = `${HOME}/review`;
+  const once = async (quote: string, amount: number) => {
+    const result = await okOrReasons({
+      support: { amount: { min: amount, max: amount, currency: "EUR", per: "once" }, covers: [] },
+      evidence: evidence({ support: QUOTES(REVIEW, quote) }),
+    });
+    if (!result.ok) throw new Error(result.reasons.join(" | "));
+    return at(result.record, "support.value");
+  };
+
+  it.each(PERIOD_TRAPS)("does not read a one-time amount from (%s)", async (quote) => {
+    const amount = quote.includes("5,000") ? 5000 : 934;
+    expect(await once(quote, amount)).toBeNull();
+  });
+
+  it("still reads the NL amount as a one-time payment", async () => {
+    expect(
+      await once(
+        "The scholarship amounts to € 5,000. You will receive this in the first year of your studies.",
+        5000,
+      ),
+    ).not.toBeNull();
+  });
+});
