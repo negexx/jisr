@@ -13,8 +13,8 @@ import {
 import { mentionsInternationalApplicants } from "../../../scripts/import/evidence";
 import { ProposalSchema, verifyProposal } from "../../../scripts/import/proposals";
 
-const page = (block: string) =>
-  `Some programme (Bachelor of Science) Mode of study full-time Application periods ${block} More information on application periods Please find more details on this website. Joint degree / double degree programme No`;
+const page = (block: string, beginning = "Winter semester") =>
+  `Some programme (Bachelor of Science) Mode of study full-time Beginning ${beginning} Application periods ${block} More information on application periods Please find more details on this website. Joint degree / double degree programme No`;
 const ALL = "The following is valid for applicants from: all countries";
 const TODAY = "2026-10-04";
 
@@ -44,9 +44,29 @@ describe("daadDeadline", () => {
     expect(outcome.intake.applicationOpens).toBeNull();
   });
 
-  it("accepts an unlabelled period", () => {
+  it("accepts an unlabelled period only when the programme begins in the winter semester only", () => {
     const outcome = okIntake(daadDeadline(page(`${ALL} 1 November - 31 March`), TODAY));
     expect(outcome.intake.recurringDeadline).toEqual({ month: 3, day: 31 });
+    const block = `${ALL} 15 October - 1 December`;
+    expect(daadDeadline(page(block, "Summer semester"), TODAY)).toEqual({
+      ok: false,
+      reason: "summer-only",
+    });
+    expect(daadDeadline(page(block, "Winter and summer semester"), TODAY)).toEqual({
+      ok: false,
+      reason: "semester-unclear",
+    });
+    expect(
+      daadDeadline(
+        `Some programme Application periods ${block} More information on application periods`,
+        TODAY,
+      ),
+    ).toEqual({ ok: false, reason: "semester-unclear" });
+  });
+
+  it("trusts a winter label whatever the programme's beginning field says", () => {
+    const block = `${ALL} For the winter semester: until 15 July`;
+    expect(daadDeadline(page(block, "Winter and summer semester"), TODAY).ok).toBe(true);
   });
 
   it("writes a dated deadline when the quote states the year, and drops a past one", () => {

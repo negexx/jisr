@@ -27,6 +27,7 @@ export type DaadSkipReason =
   | "no-qualifying-audience"
   | "unparsed"
   | "summer-only"
+  | "semester-unclear"
   | "past"
   | "ambiguous";
 
@@ -112,7 +113,18 @@ function periodBlock(text: string): string | null {
   return (end < 0 ? rest.slice(0, 600) : rest.slice(0, end)).trim();
 }
 
-type Candidate = { intake: DaadIntake; quote: string; past: boolean };
+// `labelled`: the piece says "For the winter semester"; an unlabelled period belongs to whichever
+// semester the programme begins in, which only the page's "Beginning" field can tell.
+type Candidate = { intake: DaadIntake; quote: string; past: boolean; labelled: boolean };
+
+type Beginning = "winter" | "summer" | "both" | "unknown";
+
+function beginningOf(text: string): Beginning {
+  const field = /Beginning (.{0,60}?) Application periods/.exec(text)?.[1]?.toLowerCase() ?? "";
+  const winter = field.includes("winter");
+  const summer = field.includes("summer");
+  return winter && summer ? "both" : winter ? "winter" : summer ? "summer" : "unknown";
+}
 
 function candidateOf(piece: string, today: string): Candidate | "summer" | null {
   const match = PIECE.exec(piece);
@@ -134,11 +146,12 @@ function candidateOf(piece: string, today: string): Candidate | "summer" | null 
     recurringDeadline: dated ? null : { month: deadline.month, day: deadline.day },
   };
   const past = intake.applicationDeadline !== null && intake.applicationDeadline < today;
-  return { intake, quote: piece, past };
+  return { intake, quote: piece, past, labelled: semester === "winter" };
 }
 
-// `today` is an ISO date. Winter-semester (or unlabelled) periods whose audience is "all countries"
-// or "non-EU countries" count; with several of them the deadlines must agree.
+// `today` is an ISO date. Winter-semester periods whose audience is "all countries" or "non-EU
+// countries" count, and so do unlabelled ones when the programme begins in the winter semester only;
+// with several of them the deadlines must agree.
 export function daadDeadline(text: string, today: string): DaadOutcome {
   const block = periodBlock(text);
   if (block === null) return { ok: false, reason: "no-block" };
@@ -164,9 +177,13 @@ export function daadDeadline(text: string, today: string): DaadOutcome {
     };
   }
   if (usable.length === 0) return { ok: false, reason: summer ? "summer-only" : "unparsed" };
-  const distinct = new Set(usable.map((c) => JSON.stringify(c.intake)));
+  const beginning = beginningOf(text);
+  const eligible = usable.filter((c) => c.labelled || beginning === "winter");
+  if (eligible.length === 0)
+    return { ok: false, reason: beginning === "summer" ? "summer-only" : "semester-unclear" };
+  const distinct = new Set(eligible.map((c) => JSON.stringify(c.intake)));
   if (distinct.size > 1) return { ok: false, reason: "ambiguous" };
-  const [first] = usable;
+  const [first] = eligible;
   if (first === undefined) return { ok: false, reason: "unparsed" };
   if (first.past) return { ok: false, reason: "past" };
   if (!mentionsInternationalApplicants(first.quote))
