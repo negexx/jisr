@@ -179,7 +179,7 @@ const CLAUSE_BREAK = /;|[()]|[.!?](?:\s|$)|,\s*(?=for\b|und f[üu]r\b|pour les\b
 // deadline word is enough; "by / until / before / close(s)" must sit right before the date and the
 // clause must be about applying (not "interviews take place until ...").
 const NOT_A_DEADLINE =
-  /results?\b|interview|announce|notif|inform|\bopens\b|\bopening\b|start|begin|ergebnis|bekanntgabe|r[ée]sultats?|annonc|ouverture|uitslag|\bopent\b/i;
+  /\bresults?\b|interview|\bannounce[sd]?\b|\bannouncements?\b|\bnotif(?:y|ied|ies|ications?)\b|\binform(?:ed|s)?\b|\bopens\b|\bopening\b|\bstarts?\b|\bbegins?\b|ergebnis|bekanntgabe|\br[ée]sultats?\b|\bannonc|\bouverture\b|\buitslag|\bopent\b/i;
 const DEADLINE_WORD =
   /deadline|apply by|submitted by|received by|no later than|bis zum|date limite|uiterlijk|einsendeschluss|bewerbungsschluss|frist/i;
 const BEFORE_DATE_WORD = /\b(?:by|until|before|close[sd]?|closing|bis|avant|sluit\w*)\b|\bjusqu/i;

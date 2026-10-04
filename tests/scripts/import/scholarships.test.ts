@@ -37,7 +37,7 @@ const pages: Record<string, string> = {
     "EUR 300 per month for Bachelor students and EUR 900 per month for Master students. Students receive no more than EUR 934 per month. Non-European students receive up to 934 euros a month. Grants range from 500 up to 934 euros a month. Non-European students receive 5,000 per year. EUR 934 per month for up to 3 years. Once admitted, students receive EUR 934 per month. A total of EUR 8,000 is paid to each non-EU student. Students from abroad receive 1.200 euros per year, paid in two instalments. Paid in 2027: EUR 5,000.50 in total. Bachelor students: EUR 300 per month; Master students: EUR 900 per month. Master students receive EUR 900 per month.",
   [`${HOME}/dates`]: "Applications close on 15 March 2027.",
   [`${HOME}/dates2`]:
-    "EU applicants: 15 March 2027; non-EU applicants: 15 January 2027. Deadline for German applicants is 15 March 2027, for foreign applicants 1 February 2027. International applicants must apply by 15 March 2027. The deadline is 15 March 2027 for EU applicants and 15 January 2027 for non-EU applicants. Deadline: 15 March 2027 (international applicants: 15 January 2027). International applicants apply between 15 March 2027 and 15 May 2027. Results for international applicants are announced on 15 March 2027. International applicants will be informed of the results by 15 March 2027. Interviews with international applicants take place until 15 March 2027. Interviews for international applicants take place before 15 March 2027. The portal opens for international applicants on 15 March 2027 and closes later. The application deadline for international students is 15 March 2027. Non-EU applicants can apply until 15 March 2027. Date limite de candidature pour les étudiants internationaux : 15 mars 2027. Bewerbungsfrist für internationale Bewerber: 15. März 2027. Bewerbungsschluss für internationale Bewerber ist der 15. März 2027.",
+    "EU applicants: 15 March 2027; non-EU applicants: 15 January 2027. Deadline for German applicants is 15 March 2027, for foreign applicants 1 February 2027. International applicants must apply by 15 March 2027. The deadline is 15 March 2027 for EU applicants and 15 January 2027 for non-EU applicants. Deadline: 15 March 2027 (international applicants: 15 January 2027). International applicants apply between 15 March 2027 and 15 May 2027. Results for international applicants are announced on 15 March 2027. International applicants will be informed of the results by 15 March 2027. Interviews with international applicants take place until 15 March 2027. Interviews for international applicants take place before 15 March 2027. The portal opens for international applicants on 15 March 2027 and closes later. The application deadline for international students is 15 March 2027. Non-EU applicants can apply until 15 March 2027. Date limite de candidature pour les étudiants internationaux : 15 mars 2027. Bewerbungsfrist für internationale Bewerber: 15. März 2027. Bewerbungsschluss für internationale Bewerber ist der 15. März 2027. International applicants will be notified by 15 March 2027. The programme starts on 15 March 2027 for international applicants. For more information: international applicants must apply by 15 January 2027. Bewerbungsfrist für internationale Bewerber im Bachelor Informatik: 15. Juli 2027. International students starting in September must apply by 15 January 2027.",
   "https://blog.aggregator.example/aurora-guide":
     "Applicants from non-EU countries, including Morocco, holding a school-leaving certificate may apply.",
   "https://www.daad.de/en/aurora":
@@ -932,6 +932,8 @@ describe("deadline: two applicant groups", () => {
     "Interviews with international applicants take place until 15 March 2027",
     "Interviews for international applicants take place before 15 March 2027",
     "The portal opens for international applicants on 15 March 2027 and closes later",
+    "International applicants will be notified by 15 March 2027",
+    "The programme starts on 15 March 2027 for international applicants",
   ])("is null for a results, interview or opening date: %s", async (quote) => {
     const result = await dl("2027-03-15", quote);
     expect(at(result.record, "deadline.value")).toBeNull();
@@ -947,6 +949,18 @@ describe("deadline: two applicant groups", () => {
   ])("keeps %s", async (quote) => {
     const result = await dl("2027-03-15", quote);
     expect(at(result.record, "deadline.value")).toBe("2027-03-15");
+  });
+
+  it.each([
+    ["For more information: international applicants must apply by 15 January 2027", "2027-01-15"],
+    [
+      "Bewerbungsfrist für internationale Bewerber im Bachelor Informatik: 15. Juli 2027",
+      "2027-07-15",
+    ],
+    ["International students starting in September must apply by 15 January 2027", "2027-01-15"],
+  ])("keeps %s (inform/start inside another word or form)", async (quote, date) => {
+    const result = await dl(date, quote);
+    expect(at(result.record, "deadline.value")).toBe(date);
   });
 
   it("keeps a single date for international applicants", async () => {
