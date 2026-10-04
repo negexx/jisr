@@ -67,6 +67,18 @@ describe("buildPrompt", () => {
     expect(b.startsWith(prefix)).toBe(true);
   });
 
+  it("lets the reader use an institution-wide fee page for a Dutch programme, under strict conditions, after the pages", () => {
+    const { user, system } = buildPrompt({ ...meta, shared, own });
+    expect(user).toContain("instellingscollegegeld");
+    expect(user).toContain("wettelijk collegegeld");
+    expect(user.indexOf("instellingscollegegeld")).toBeGreaterThan(user.indexOf("FEES TEXT"));
+    expect(system).toBe(INSTRUCTION);
+    for (const country of ["FR", "DE"])
+      expect(buildPrompt({ ...meta, country, shared, own }).user).not.toContain(
+        "instellingscollegegeld",
+      );
+  });
+
   it("lists a page once when it is both shared and the programme's own", () => {
     const { user } = buildPrompt({ ...meta, shared, own: [...own, ...shared] });
     expect(user.split("https://shared.example/studielink").length - 1).toBe(1);
