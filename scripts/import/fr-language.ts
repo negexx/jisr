@@ -21,18 +21,31 @@ export type FrenchLanguageOutcome =
   | { ok: false; reason: "no-level-line" | "other-language" };
 
 const LANGUAGES =
-  "anglais|anglaise|english|allemand\\w*|espagnol\\w*|italien\\w*|chinois\\w*|arabe|portugais\\w*|japonais\\w*|russe";
+  "anglais\\w*|english|allemand\\w*|espagnol\\w*|italien\\w*|chinois\\w*|arabe|portugais\\w*|japonais\\w*|russe";
 const OTHER_LANGUAGE_SIGNALS: readonly RegExp[] = [
   // an instruction word shortly before "en anglais" / "en langue anglaise" (a skill such as
-  // "compétences en langue anglaise" is not instruction)
+  // "compétences en langue anglaise" is not instruction). `cours` has no leading \b on purpose: it
+  // also matches "parcours" and "concours", which only adds refusals.
   new RegExp(
-    `(?:dispens\\w*|enseign\\w*|cours|dirig\\w*|d[ée]livr\\w*|assur\\w*|taught)\\b[^.;:]{0,60}?\\ben\\s+(?:langue\\s+)?(?:${LANGUAGES})\\b`,
+    `(?:dispens\\w*|enseign\\w*|interven\\w*|cours|dirig\\w*|d[ée]livr\\w*|assur\\w*|taught)\\b[^.;:]{0,60}?\\ben\\s+(?:langues?\\s+)?(?:${LANGUAGES})\\b`,
     "i",
   ),
+  // "entièrement en anglais", "50% en langue anglaise"
+  new RegExp(
+    `(?:enti[èe]rement|int[ée]gralement|partiellement|exclusivement|\\d+\\s*%[^.;:]{0,30})\\s+en\\s+(?:langues?\\s+)?(?:${LANGUAGES})\\b`,
+    "i",
+  ),
+  /\ben\s+langues?\s+[ée]trang[èe]res?\b/i,
   /\bin english\b/i,
   /\btaught in\b/i,
   /anglophone|bilingue|bilingual/i,
   /(?:parcours|option|cursus|fili[eè]re)\s+(?:«\s*)?internationa(?:l|le)\b/i,
+  // the fiche names the language of work or of instruction, or asks for another language's level
+  /langues?\s+(?:de travail|d['’]enseignement|de la formation)/i,
+  /\blanguages?\s*:/i,
+  /Niveau d['’](?:anglais|allemand|espagnol|italien|chinois|arabe|portugais|japonais|russe)\w*\s+requis/i,
+  // part of the degree is taught with a foreign partner or in a foreign programme
+  /double dipl[oô]m|triple dipl[oô]m|partenariat international|franco-(?:allemand|suisse|britannique|espagnol|italien)\w*|bachelor of|licence internationale/i,
 ];
 
 export function frenchLanguage(text: string): FrenchLanguageOutcome {

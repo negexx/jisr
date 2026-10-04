@@ -40,6 +40,19 @@ describe("frenchLanguage", () => {
     "Cours en anglais au semestre 5.",
     "Une filière anglophone.",
     "Les enseignements sont dispensés en espagnol.",
+    "Cette licence propose 50% des cours dispensés en langues étrangères.",
+    "Les étudiants peuvent réaliser leur troisième année soit en français, soit entièrement en anglais.",
+    "Parcours Franco-Suisse-Allemand (Triple Diplôme)",
+    "Licence - Double diplôme Diplôme en Partenariat International",
+    "Language : English and French",
+    "Les langues de travail sont l'allemand, le français et l'anglais.",
+    "Niveau d'allemand requis pour s'inscrire à la formation : B2",
+    "Licence franco-allemande en économie.",
+    "Bachelor of Science in International Economics",
+    "Une licence internationale d'économie et gestion.",
+    "La langue d'enseignement est le français et l'anglais.",
+    "Des enseignements entièrement en langues anglaises.",
+    "Des interventions en anglais par des professionnels.",
   ])("refuses a fiche that shows instruction in another language: %s", (extra) => {
     expect(frenchLanguage(fiche(extra))).toEqual({ ok: false, reason: "other-language" });
   });

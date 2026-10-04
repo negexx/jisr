@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans. Steps use checkbox (`- [ ]`) syntax.
 
-**Goal:** Give the French programmes that still have no teaching language (89 whose institution has no website; 284 in all) a verified `teachingLanguages: ["fr"]` fact from the one line every Parcoursup fiche prints, "Niveau de français requis pour s'inscrire à la formation : B2", without a model and without search credits.
+**Goal:** Give the French programmes that still have no teaching language (89 whose institution has no website; 282 in all) a verified `teachingLanguages: ["fr"]` fact from the one line every Parcoursup fiche prints, "Niveau de français requis pour s'inscrire à la formation : B2", without a model and without search credits.
 
 **Architecture:** `scripts/import/fr-language.ts` (modelled on `daad-deadlines.ts` / `fr-calendar.ts`): a pure `frenchLanguage(text)` reads the level line and refuses the fiche when its text shows instruction in another language; `buildFrenchLanguageProposals` fetches each programme's fiche (`officialUrl`) and writes `data-staging/proposals-fr-language-fiche/<slug>.json`. The proposals go through `restage --enrich`, `verify --enrich`, `data:audit` and `data:promote --replace-revisions`.
 
