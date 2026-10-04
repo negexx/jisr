@@ -39,7 +39,7 @@ const OTHER_LANGUAGE_SIGNALS: readonly RegExp[] = [
   /\bin english\b/i,
   /\btaught in\b/i,
   /anglophone|bilingue|bilingual/i,
-  /(?:parcours|option|cursus|fili[eè]re)\s+(?:«\s*)?internationa(?:l|le)\b/i,
+  /(?:parcours|programme|option|cursus|fili[eè]re)\s+(?:«\s*)?internationa(?:l|le)\b/i,
   // the fiche names the language of work or of instruction, or asks for another language's level
   /langues?\s+(?:de travail|d['’]enseignement|de la formation)/i,
   /\blanguages?\s*:/i,
