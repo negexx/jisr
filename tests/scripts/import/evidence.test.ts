@@ -243,6 +243,7 @@ describe("mentionsInternationalApplicants", () => {
     "Bewerbung aus Marokko bis 15. Juli",
     "Studenten uit Marokko melden zich aan vóór 1 april",
     "Diplôme du Maroc : date limite le 15 novembre",
+    "The following is valid for applicants from: all countries For the winter semester: until 15 July",
   ])("is true for: %s", (quote) => {
     expect(mentionsInternationalApplicants(quote)).toBe(true);
   });
@@ -255,6 +256,8 @@ describe("mentionsInternationalApplicants", () => {
     "International Economics and Sustainability (B.A.) no no September 15, 2026 Osnabrück",
     "International Business: apply by 1 May 2027",
     "Contact the International Office",
+    "The following is valid for applicants from: EU countries For the winter semester: until 15 July",
+    "All countries have a deadline: 15 July",
     "Bachelor International Management",
     "Foreign languages are taught",
     "Teaching abroad semester",
