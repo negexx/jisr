@@ -66,6 +66,7 @@ describe("frenchLanguage", () => {
     "Des interventions en anglais par des professionnels.",
     "En licence 3, en mobilité internationale au premier semestre.",
     "Une mobilité obligatoire sur un semestre en troisième année.",
+    "Le parcours BIAV conduit à une mobilité dans une université étrangère au semestre 5.",
     "Possibilité d'intégrer le Programme International MINERVE.",
   ])("refuses a fiche that shows instruction in another language: %s", (extra) => {
     expect(frenchLanguage(fiche(extra))).toEqual({ ok: false, reason: "other-language" });
