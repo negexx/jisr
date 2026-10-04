@@ -26,9 +26,12 @@ teachingLanguages:
   source: page-1
   info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: semester
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
   value: null
   source: daad

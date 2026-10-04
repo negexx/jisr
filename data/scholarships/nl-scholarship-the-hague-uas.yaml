@@ -1,0 +1,57 @@
+slug: nl-scholarship-the-hague-uas
+name: NL Scholarship at The Hague University of Applied Sciences
+provider: The Hague University of Applied Sciences (THUAS), financed by the Dutch Ministry of Education, Culture and Science
+destinations:
+  - NL
+eligibleNationalities: []
+fields: []
+institutions:
+  - nl-de-haagse-hogeschool-27um
+  - nl-de-haagse-hogeschool-27um-delft
+  - nl-de-haagse-hogeschool-27um-zoetermeer
+level: bachelor
+summary:
+  fr:
+    text: Bourse de 5 000 EUR (NL Scholarship) pour les étudiants hors Espace économique européen et hors Suisse qui entrent en licence à La Haye ; il faut une candidature acceptée sous condition et un essai ; les dates changent chaque année.
+    status: draft
+  en:
+    text: EUR 5,000 NL Scholarship for students from outside the EEA and Switzerland starting a bachelor’s at The Hague University of Applied Sciences; you need a conditional acceptance and an essay; dates change every year.
+    status: draft
+support:
+  value:
+    amount:
+      min: 500000
+      max: 500000
+      currency: EUR
+      per: once
+    covers: []
+  source: page-2
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-1
+  info_kind: official
+  rules: []
+documents:
+  value: null
+  source: page-1
+  info_kind: official
+howToApply:
+  fr:
+    text: Postulez à votre programme à THUAS, puis soumettez l'essai demandé avant la date limite de la session en cours (voir la page de la bourse).
+    status: draft
+  en:
+    text: Apply to your programme at THUAS, then submit the required essay before the deadline of the current round (see the scholarship page).
+    status: draft
+officialUrl: https://www.thuas.com/study-choice/applications-finances-and-moving-here/study-finance-scholarships
+sources:
+  page-1:
+    url: https://www.thuas.com/study-choice/applications-finances-and-moving-here/study-finance-scholarships
+    last_verified_at: 2026-10-04
+  page-2:
+    url: https://www.studyinholland.nl/finances/nl-scholarship
+    last_verified_at: 2026-10-04

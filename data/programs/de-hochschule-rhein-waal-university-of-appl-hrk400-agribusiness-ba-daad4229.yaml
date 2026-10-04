@@ -41,8 +41,26 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Certificat de compétence en anglais
+          status: draft
+        en:
+          text: Proof of English language proficiency
+          status: draft
+      translationRequired: null
+  source: page-3
   info_kind: official
 requirements:
   coverage: partial
@@ -96,3 +114,6 @@ sources:
   page-1:
     url: https://www.hochschule-rhein-waal.de/en/studieren/all-about-university-life/costs-and-funding/living-costs-in-germany
     last_verified_at: 2026-10-02
+  page-3:
+    url: https://www.hochschule-rhein-waal.de/en/academics/prospective-students/current-application-period/bachelors-programmes
+    last_verified_at: 2026-10-04

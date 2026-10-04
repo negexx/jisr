@@ -41,9 +41,18 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: cv
+      name:
+        fr:
+          text: Curriculum vitae
+          status: draft
+        en:
+          text: Curriculum vitae
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
 requirements:
   coverage: partial
   source: daad

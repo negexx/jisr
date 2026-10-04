@@ -26,9 +26,12 @@ teachingLanguages:
   source: daad
   info_kind: guidance
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
 intakes:
   value:
     - startDate: null
@@ -57,3 +60,6 @@ sources:
   page-1:
     url: https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-law-ba/apply-now
     last_verified_at: 2026-10-03
+  page-2:
+    url: https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-law-ba
+    last_verified_at: 2026-10-04

@@ -39,8 +39,8 @@ intakes:
   source: page-2
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: nl-studielink
+  source: page-2
   info_kind: official
 documents:
   value: null

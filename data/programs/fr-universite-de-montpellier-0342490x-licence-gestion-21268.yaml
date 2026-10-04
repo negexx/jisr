@@ -32,8 +32,11 @@ tuition:
   source: page-3
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: 2026-10-01
+      applicationDeadline: 2026-11-15
+  source: page-1
   info_kind: official
 applicationChannel:
   value: fr-campus-france
@@ -100,3 +103,6 @@ sources:
   page-4:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.maroc.campusfrance.org/calendrier-de-la-procedure-de-candidature-20262027
+    last_verified_at: 2026-10-04

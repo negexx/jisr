@@ -33,8 +33,11 @@ tuition:
   source: page-4
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: 2026-10-01
+      applicationDeadline: 2026-11-15
+  source: page-5
   info_kind: official
 applicationChannel:
   value: fr-campus-france

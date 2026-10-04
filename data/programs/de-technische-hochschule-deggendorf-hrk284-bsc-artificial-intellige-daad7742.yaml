@@ -41,8 +41,53 @@ applicationChannel:
   source: page-2
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: university-entrance-qualification
+      name:
+        fr:
+          text: Diplôme d'accès à l'université (certificat de fin d'études secondaires)
+          status: draft
+        en:
+          text: University entrance qualification
+          status: draft
+      translationRequired: null
+    - slug: identity-card
+      name:
+        fr:
+          text: Copie de la carte d'identité
+          status: draft
+        en:
+          text: Copy of identity card
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae
+          status: draft
+        en:
+          text: Curriculum vitae
+          status: draft
+      translationRequired: null
+    - slug: proof-of-language-proficiency
+      name:
+        fr:
+          text: Preuve de compétence linguistique
+          status: draft
+        en:
+          text: Proof of language proficiency
+          status: draft
+      translationRequired: null
+    - slug: proof-of-application-fee-payment
+      name:
+        fr:
+          text: Preuve de paiement des frais de candidature
+          status: draft
+        en:
+          text: Proof of payment of the application fee
+          status: draft
+      translationRequired: null
+  source: page-2
   info_kind: official
 requirements:
   coverage: partial

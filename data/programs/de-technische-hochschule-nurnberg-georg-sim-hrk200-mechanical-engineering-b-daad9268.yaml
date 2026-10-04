@@ -41,9 +41,36 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
+  value:
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation letter
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae
+          status: draft
+        en:
+          text: Curriculum vitae
+          status: draft
+      translationRequired: null
+    - slug: scholastic-aptitude-test
+      name:
+        fr:
+          text: Test d'aptitude scolaire
+          status: draft
+        en:
+          text: Scholastic aptitude test
+          status: draft
+      translationRequired: null
   source: daad
-  info_kind: guidance
+  info_kind: official
 requirements:
   coverage: partial
   source: daad

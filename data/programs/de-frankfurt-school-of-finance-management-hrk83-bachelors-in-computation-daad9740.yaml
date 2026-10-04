@@ -41,9 +41,18 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary School Diploma
+          status: draft
+      translationRequired: null
   source: daad
-  info_kind: guidance
+  info_kind: official
 requirements:
   coverage: partial
   source: daad

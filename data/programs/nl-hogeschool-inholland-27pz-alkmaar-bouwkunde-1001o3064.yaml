@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 1036000
+    currency: EUR
+    period: year
+  source: page-3
   info_kind: official
 intakes:
   value:
@@ -40,8 +43,8 @@ intakes:
   source: page-1
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: nl-studielink
+  source: page-4
   info_kind: official
 documents:
   value: null
@@ -74,3 +77,9 @@ sources:
   page-1:
     url: https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/
     last_verified_at: 2026-10-03
+  page-3:
+    url: https://www.inholland.nl/inschrijven/collegegeld/
+    last_verified_at: 2026-10-04
+  page-4:
+    url: https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf
+    last_verified_at: 2026-10-04
