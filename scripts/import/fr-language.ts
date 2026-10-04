@@ -44,6 +44,8 @@ const OTHER_LANGUAGE_SIGNALS: readonly RegExp[] = [
   /langues?\s+(?:de travail|d['’]enseignement|de la formation)/i,
   /\blanguages?\s*:/i,
   /Niveau d['’](?:anglais|allemand|espagnol|italien|chinois|arabe|portugais|japonais|russe)\w*\s+requis/i,
+  // a compulsory stay abroad: the language taught there is not on the fiche
+  /mobilit[ée]\s+(?:internationale\s+au\s+(?:premier|second|\d)|obligatoire|dipl[oô]mante)/i,
   // part of the degree is taught with a foreign partner or in a foreign programme
   /double dipl[oô]m|triple dipl[oô]m|partenariat international|franco-(?:allemand|suisse|britannique|espagnol|italien)\w*|bachelor of|licence internationale/i,
 ];

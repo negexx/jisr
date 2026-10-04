@@ -64,6 +64,8 @@ describe("frenchLanguage", () => {
     "La langue d'enseignement est le français et l'anglais.",
     "Des enseignements entièrement en langues anglaises.",
     "Des interventions en anglais par des professionnels.",
+    "En licence 3, en mobilité internationale au premier semestre.",
+    "Une mobilité obligatoire sur un semestre en troisième année.",
     "Possibilité d'intégrer le Programme International MINERVE.",
   ])("refuses a fiche that shows instruction in another language: %s", (extra) => {
     expect(frenchLanguage(fiche(extra))).toEqual({ ok: false, reason: "other-language" });
