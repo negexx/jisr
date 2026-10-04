@@ -35,13 +35,24 @@ export function programmeKind(record: { slug?: unknown; name?: unknown }): Progr
 // read: the audit trail then shows who the deadline applies to, not only the time-zone word. For a
 // Licence the calendar page is the only source: the date sentence plus its first-year Licence line
 // (both from that page), and without that line there is no proposal.
+//
+// Only programmes of a public institution get a proposal: the window is for the formations connected
+// to Études en France (the DAP blanche rule is for public universities), so a private institution
+// (Institut Catholique, UCO, ...) is skipped, and so is an institution whose record is missing.
+export type CalendarProgramme = {
+  slug: string;
+  kind: ProgrammeKind;
+  publicInstitution: boolean;
+};
+
 export function buildCalendarProposals(input: {
-  slugs: readonly { slug: string; kind: ProgrammeKind }[];
+  slugs: readonly CalendarProgramme[];
   national: National;
 }): Proposal[] {
   const { national } = input;
   const proposals: Proposal[] = [];
-  for (const { slug, kind } of input.slugs) {
+  for (const { slug, kind, publicInstitution } of input.slugs) {
+    if (!publicInstitution) continue;
     const calendar: [Evidence | null, Evidence | null] =
       kind === "but"
         ? [national.butCalendar, national.applyBut]
@@ -66,6 +77,41 @@ export function buildCalendarProposals(input: {
     );
   }
   return proposals;
+}
+
+export type CalendarProgrammeInfo = CalendarProgramme & { institutionName: string | null };
+
+// The French programmes of a data directory with their kind and whether their institution record
+// (institutions/<slug>.yaml) says `type: public`. A missing record or any other type is not public.
+export async function readCalendarProgrammes(dataDir: string): Promise<CalendarProgrammeInfo[]> {
+  const read = async (file: string) =>
+    parse(await readFile(file, "utf8")) as Record<string, unknown> | null;
+  const institutionsDir = path.join(dataDir, "institutions");
+  const institutions = new Map<string, { type: unknown; name: string | null }>();
+  for (const file of await readdir(institutionsDir)) {
+    if (!file.endsWith(".yaml")) continue;
+    const record = await read(path.join(institutionsDir, file));
+    if (record === null || typeof record.slug !== "string") continue;
+    institutions.set(record.slug, {
+      type: record.type,
+      name: typeof record.name === "string" ? record.name : null,
+    });
+  }
+  const programsDir = path.join(dataDir, "programs");
+  const found: CalendarProgrammeInfo[] = [];
+  for (const file of (await readdir(programsDir)).sort()) {
+    if (!file.startsWith("fr-") || !file.endsWith(".yaml")) continue;
+    const record = await read(path.join(programsDir, file));
+    if (record === null) continue;
+    const institution = institutions.get(String(record.institution));
+    found.push({
+      slug: String(record.slug),
+      kind: programmeKind(record),
+      publicInstitution: institution?.type === "public",
+      institutionName: institution?.name ?? null,
+    });
+  }
+  return found;
 }
 
 export async function writeCalendarProposals(
@@ -108,16 +154,7 @@ const neededPageText = async (url: string): Promise<string> => {
 
 async function main(argv: readonly string[]): Promise<void> {
   const dry = argv.includes("--dry-run");
-  const programsDir = path.join(DATA_DIR, "programs");
-  const slugs: { slug: string; kind: ProgrammeKind }[] = [];
-  for (const file of (await readdir(programsDir)).sort()) {
-    if (!file.startsWith("fr-") || !file.endsWith(".yaml")) continue;
-    const record = parse(await readFile(path.join(programsDir, file), "utf8")) as Record<
-      string,
-      unknown
-    >;
-    slugs.push({ slug: String(record.slug), kind: programmeKind(record) });
-  }
+  const slugs = await readCalendarProgrammes(DATA_DIR);
 
   const national = await readNational(neededPageText);
   const proposals = buildCalendarProposals({ slugs, national });
@@ -127,9 +164,13 @@ async function main(argv: readonly string[]): Promise<void> {
   const kindOf = new Map(slugs.map((s) => [s.slug, s.kind]));
   const count = (kind: ProgrammeKind, list: readonly { slug: string }[]) =>
     list.filter((s) => kindOf.get(s.slug) === kind).length;
+  const nonPublic = slugs.filter((s) => s.kind !== "other" && !s.publicInstitution);
   console.log(
-    `${dry ? "would write" : "wrote"} ${proposals.length} intake proposals to ${out} (BUT ${count("but", proposals)} of ${count("but", slugs)}, Licence ${count("licence", proposals)} of ${count("licence", slugs)}, other ${count("other", slugs)} skipped)`,
+    `${dry ? "would write" : "wrote"} ${proposals.length} intake proposals to ${out} (BUT ${count("but", proposals)} of ${count("but", slugs)}, Licence ${count("licence", proposals)} of ${count("licence", slugs)}, other ${count("other", slugs)} skipped, ${nonPublic.length} BUT/Licence skipped as non-public institution)`,
   );
+  const names = [...new Set(nonPublic.map((s) => s.institutionName ?? "(no institution record)"))];
+  if (names.length > 0)
+    console.log(`  non-public institutions skipped: ${names.sort().join("; ")}`);
   for (const [kind, evidence] of [
     ["BUT", national.butCalendar],
     ["Licence", national.licenceCalendar],

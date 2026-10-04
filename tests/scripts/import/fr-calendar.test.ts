@@ -1,4 +1,4 @@
-import { mkdtemp, readdir, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 
@@ -9,6 +9,7 @@ import { mentionsInternationalApplicants } from "../../../scripts/import/evidenc
 import {
   buildCalendarProposals,
   programmeKind,
+  readCalendarProgrammes,
   staleProposalFiles,
   writeCalendarProposals,
 } from "../../../scripts/import/fr-calendar";
@@ -48,10 +49,10 @@ const licenceNational: National = {
   licenceCalendarAudience: { url: LICENCE_URL, quote: LICENCE_AUDIENCE },
 };
 const slugs = [
-  { slug: "fr-iut-a-but-informatique", kind: "but" },
-  { slug: "fr-iut-b-but-gea", kind: "but" },
-  { slug: "fr-univ-a-licence-informatique", kind: "licence" },
-  { slug: "fr-ecole-diplome-maison", kind: "other" },
+  { slug: "fr-iut-a-but-informatique", kind: "but", publicInstitution: true },
+  { slug: "fr-iut-b-but-gea", kind: "but", publicInstitution: true },
+  { slug: "fr-univ-a-licence-informatique", kind: "licence", publicInstitution: true },
+  { slug: "fr-ecole-diplome-maison", kind: "other", publicInstitution: true },
 ] as const;
 
 describe("buildCalendarProposals", () => {
@@ -96,6 +97,18 @@ describe("buildCalendarProposals", () => {
         { url: LICENCE_URL, quote: LICENCE_AUDIENCE },
       ],
     });
+  });
+
+  it("gives no proposal, of either kind, to a programme of a non-public institution", () => {
+    const mixed = [
+      { slug: "fr-iut-a-but-informatique", kind: "but", publicInstitution: true },
+      { slug: "fr-prive-but-gea", kind: "but", publicInstitution: false },
+      { slug: "fr-univ-a-licence-informatique", kind: "licence", publicInstitution: true },
+      { slug: "fr-catho-licence-droit", kind: "licence", publicInstitution: false },
+    ] as const;
+    expect(
+      buildCalendarProposals({ slugs: mixed, national: licenceNational }).map((p) => p.slug),
+    ).toEqual(["fr-iut-a-but-informatique", "fr-univ-a-licence-informatique"]);
   });
 
   it("gives no Licence proposal when the page does not say who the calendar is for", () => {
@@ -272,6 +285,65 @@ describe("writeCalendarProposals", () => {
       ]);
       const back = JSON.parse(await readFile(path.join(out, "fr-iut-b-but-gea.json"), "utf8"));
       expect(ProposalSchema.parse(back).slug).toBe("fr-iut-b-but-gea");
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
+  });
+});
+
+describe("readCalendarProgrammes", () => {
+  it("marks a programme public only when its institution record says type public", async () => {
+    const dir = await mkdtemp(path.join(tmpdir(), "fr-calendar-data-"));
+    try {
+      await mkdir(path.join(dir, "programs"));
+      await mkdir(path.join(dir, "institutions"));
+      const program = (slug: string, name: string, institution: string) =>
+        writeFile(
+          path.join(dir, "programs", `${slug}.yaml`),
+          `slug: ${slug}
+name: ${name}
+institution: ${institution}
+`,
+        );
+      const institution = (slug: string, name: string, type: string) =>
+        writeFile(
+          path.join(dir, "institutions", `${slug}.yaml`),
+          `slug: ${slug}
+name: ${name}
+type: ${type}
+`,
+        );
+      await program("fr-pub-licence-info", "Licence - Informatique", "fr-pub");
+      await program("fr-priv-licence-droit", "Licence - Droit", "fr-priv");
+      await program("fr-ghost-but-gea", "BUT - GEA", "fr-ghost");
+      await program("de-x-licence", "Licence - X", "fr-pub");
+      await institution("fr-pub", "Université Publique", "public");
+      await institution("fr-priv", "Institut Catholique", "private");
+      const found = await readCalendarProgrammes(dir);
+      expect(found).toEqual([
+        { slug: "fr-ghost-but-gea", kind: "but", publicInstitution: false, institutionName: null },
+        {
+          slug: "fr-priv-licence-droit",
+          kind: "licence",
+          publicInstitution: false,
+          institutionName: "Institut Catholique",
+        },
+        {
+          slug: "fr-pub-licence-info",
+          kind: "licence",
+          publicInstitution: true,
+          institutionName: "Université Publique",
+        },
+      ]);
+      const national: National = {
+        ...nothing,
+        butCalendar: { url: PAGES.applyBut, quote: SENTENCE },
+        licenceCalendar: { url: LICENCE_URL, quote: LICENCE_SENTENCE },
+        licenceCalendarAudience: { url: LICENCE_URL, quote: LICENCE_AUDIENCE },
+      };
+      expect(buildCalendarProposals({ slugs: found, national }).map((p) => p.slug)).toEqual([
+        "fr-pub-licence-info",
+      ]);
     } finally {
       await rm(dir, { recursive: true, force: true });
     }
