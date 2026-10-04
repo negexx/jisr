@@ -8,6 +8,7 @@ import {
 } from "../../../scripts/import/search";
 import {
   discoverTopicPages,
+  followFeeLinks,
   mergeTopicPages,
   parseTopicList,
   scoreTopicLink,
@@ -214,6 +215,189 @@ describe("discoverTopicPages", () => {
     const out = await discoverTopicPages({ country: "XX", website, search });
     expect(search.queries).toEqual([]);
     expect(out).toEqual({ fees: [], language: [], deadline: [], documents: [] });
+  });
+
+  it("asks the dutch queries with the non-EEA fee, the 1 april deadline and the voertaal wording", async () => {
+    const search = provider(() => []);
+    await discoverTopicPages({ country: "NL", website: "https://www.hr.example.nl/", search });
+    const ask = (word: string) => search.queries.find((q) => q.includes(word));
+    expect(ask("instellingscollegegeld")).toContain("niet-EER");
+    expect(ask("aanmelddeadline")).toContain("niet-EER");
+    expect(ask("aanmelddeadline")).toContain("1 april");
+    expect(ask("voertaal")).toBeDefined();
+  });
+
+  it("scores the dutch fee wording without letting a separator swallow a letter", () => {
+    const score = (path: string, text: string) =>
+      scoreTopicLink({ url: `https://www.hr.example.nl${path}`, text }, "fees");
+    expect(score("/studeren", "Instellingscollegegeld niet-EER")).toBeGreaterThanOrEqual(0.4);
+    expect(score("/tarieven-2026", "Overzicht")).toBeGreaterThanOrEqual(0.4);
+    expect(score("/wettelijk-collegegeld", "Overzicht")).toBeGreaterThanOrEqual(0.4);
+    expect(score("/studeren", "Salarief stand")).toBeLessThan(0.4);
+    expect(score("/studeren", "Studentenleven")).toBeLessThan(0.4);
+  });
+
+  it("follows fee links one level deeper and adds them to the fee pages", async () => {
+    const search = provider((query) =>
+      query.includes("collegegeld")
+        ? [hit("https://www.hr.example.nl/collegegeld", "Collegegeld niet-EER")]
+        : [],
+    );
+    const fetched: string[] = [];
+    const out = await discoverTopicPages({
+      country: "NL",
+      website: "https://www.hr.example.nl/",
+      search,
+      fetchHtml: async (url) => {
+        fetched.push(url);
+        return `<a href="/collegegeld/collegegeld-studiejaar-2026-2027">Collegegeld studiejaar 2026-2027</a>
+          <a href="/collegegeld/collegegeld-studiejaar-2025-2026">Collegegeld studiejaar 2025-2026</a>
+          <a href="/collegegeld/collegegeld-studiejaar-2024-2025">Collegegeld studiejaar 2024-2025</a>`;
+      },
+    });
+    expect(fetched).toEqual(["https://www.hr.example.nl/collegegeld"]);
+    expect(out.fees).toHaveLength(3);
+    expect(out.fees[0]).toBe("https://www.hr.example.nl/collegegeld");
+    expect(search.queries).toHaveLength(TOPICS.length);
+    expect(out.language).toEqual([]);
+  });
+
+  it("does not fetch anything without a fee page, and still ignores an unknown country", async () => {
+    const fetched: string[] = [];
+    const fetchHtml = async (url: string) => {
+      fetched.push(url);
+      return "";
+    };
+    const out = await discoverTopicPages({
+      country: "XX",
+      website,
+      search: provider(() => []),
+      fetchHtml,
+    });
+    expect(out).toEqual({ fees: [], language: [], deadline: [], documents: [] });
+    await discoverTopicPages({
+      country: "NL",
+      website: "https://www.hr.example.nl/",
+      search: provider(() => []),
+      fetchHtml,
+    });
+    expect(fetched).toEqual([]);
+  });
+
+  it("survives a fee page that cannot be fetched", async () => {
+    const out = await discoverTopicPages({
+      country: "NL",
+      website: "https://www.hr.example.nl/",
+      search: provider(() => [hit("https://www.hr.example.nl/collegegeld", "Collegegeld")]),
+      fetchHtml: async () => {
+        throw new Error("boom");
+      },
+    });
+    expect(out.fees).toEqual(["https://www.hr.example.nl/collegegeld"]);
+  });
+});
+
+describe("followFeeLinks", () => {
+  const site = "https://www.hr.example.nl/";
+  const feePage = "https://www.hr.example.nl/collegegeld";
+  const html = `
+    <a href="/collegegeld/collegegeld-studiejaar-2026-2027">Collegegeld studiejaar 2026-2027</a>
+    <a href="/over-ons">Over ons</a>
+    <a href="https://other.example/collegegeld-2026-2027">Collegegeld 2026-2027</a>
+    <a href="/nieuws/2019/05/collegegeld">Collegegeld 2019-2020</a>
+    <a href="/documenten/tarieven-2026.pdf">Collegegeld tarieven 2026</a>`;
+
+  it("keeps the own-site, non-news links about fees for a study year, a PDF included", async () => {
+    const out = await followFeeLinks([feePage], { website: site, fetchHtml: async () => html });
+    expect(out).toEqual([
+      "https://www.hr.example.nl/collegegeld/collegegeld-studiejaar-2026-2027",
+      "https://www.hr.example.nl/documenten/tarieven-2026.pdf",
+    ]);
+  });
+
+  it("keeps a fee calculator link that names no year", async () => {
+    const out = await followFeeLinks([feePage], {
+      website: site,
+      fetchHtml: async () => '<a href="/collegegeldmeter">Collegegeldmeter</a>',
+    });
+    expect(out).toEqual(["https://www.hr.example.nl/collegegeldmeter"]);
+  });
+
+  it("returns at most the limit", async () => {
+    const out = await followFeeLinks([feePage], {
+      website: site,
+      fetchHtml: async () => html,
+      limit: 1,
+    });
+    expect(out).toHaveLength(1);
+  });
+
+  it("returns an empty list when the fetch throws", async () => {
+    const out = await followFeeLinks([feePage], {
+      website: site,
+      fetchHtml: async () => {
+        throw new Error("network");
+      },
+    });
+    expect(out).toEqual([]);
+  });
+
+  it("does not return a link that is already a fee page", async () => {
+    const known = "https://www.hr.example.nl/collegegeld/collegegeld-studiejaar-2026-2027";
+    const out = await followFeeLinks([feePage, known], {
+      website: site,
+      fetchHtml: async () => html,
+    });
+    expect(out).toEqual(["https://www.hr.example.nl/documenten/tarieven-2026.pdf"]);
+  });
+
+  it("fetches at most three fee pages and never a PDF", async () => {
+    const fetched: string[] = [];
+    await followFeeLinks(
+      [
+        "https://www.hr.example.nl/a.pdf",
+        "https://www.hr.example.nl/a",
+        "https://www.hr.example.nl/b",
+        "https://www.hr.example.nl/c",
+        "https://www.hr.example.nl/d",
+      ],
+      {
+        website: site,
+        fetchHtml: async (url) => {
+          fetched.push(url);
+          return "";
+        },
+      },
+    );
+    expect(fetched).toEqual([
+      "https://www.hr.example.nl/a",
+      "https://www.hr.example.nl/b",
+      "https://www.hr.example.nl/c",
+    ]);
+  });
+
+  it("skips a failed page and still reads the next", async () => {
+    const out = await followFeeLinks(
+      ["https://www.hr.example.nl/a", "https://www.hr.example.nl/b"],
+      {
+        website: site,
+        fetchHtml: async (url) => {
+          if (url.endsWith("/a")) throw new Error("down");
+          return html;
+        },
+      },
+    );
+    expect(out).toHaveLength(2);
+  });
+
+  it("ranks a study-year fee link above a bare calculator link", async () => {
+    const out = await followFeeLinks([feePage], {
+      website: site,
+      fetchHtml: async () =>
+        `<a href="/tarieven">Tarieven collegegeld</a>
+         <a href="/collegegeld-2026-2027">Collegegeld 2026-2027</a>`,
+    });
+    expect(out[0]).toBe("https://www.hr.example.nl/collegegeld-2026-2027");
   });
 });
 

@@ -9,9 +9,11 @@ import type { QueryBudget, SearchHit, SearchProvider } from "./search";
 export type Link = { url: string; text: string };
 export type PageKind = "programme" | "fees" | "admission";
 
+const OTHER_FILE = /\.(jpe?g|png|gif|svg|webp|zip|docx?|xlsx?|pptx?|mp[34]|ics)(\?|$)/i;
 const FILE = /\.(pdf|jpe?g|png|gif|svg|webp|zip|docx?|xlsx?|pptx?|mp[34]|ics)(\?|$)/i;
 
-export function extractLinks(html: string, base: string): Link[] {
+// `pdf: true` keeps links to PDFs (fee schedules); every other file type stays out.
+export function extractLinks(html: string, base: string, options: { pdf?: boolean } = {}): Link[] {
   const links = new Map<string, Link>();
   for (const match of html.matchAll(
     /<a\b[^>]*?href\s*=\s*(?:"([^"]*)"|'([^']*)')[^>]*>([\s\S]*?)<\/a>/gi,
@@ -27,7 +29,8 @@ export function extractLinks(html: string, base: string): Link[] {
     if (url.protocol !== "https:") continue;
     url.hash = "";
     const clean = url.toString();
-    if (FILE.test(url.pathname) || links.has(clean)) continue;
+    const file = options.pdf === true ? OTHER_FILE : FILE;
+    if (file.test(url.pathname) || links.has(clean)) continue;
     links.set(clean, { url: clean, text: htmlToText(match[3] ?? "") });
   }
   return [...links.values()];

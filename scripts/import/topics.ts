@@ -1,4 +1,4 @@
-import { registrable, sameSite } from "./discover";
+import { extractLinks, registrable, sameSite } from "./discover";
 import { normalizeForMatch } from "./evidence";
 import type { QueryBudget, SearchHit, SearchProvider } from "./search";
 
@@ -25,9 +25,9 @@ const WORDS: Record<string, Record<Topic, string>> = {
     documents: "pièces justificatives dossier de candidature étudiants internationaux",
   },
   NL: {
-    fees: "collegegeld niet-EER studenten tuition fees non-EEA",
+    fees: "instellingscollegegeld collegegeld niet-EER studenten tuition fees non-EEA",
     language: "voertaal taal van het onderwijs language of instruction",
-    deadline: "aanmelddeadline aanmelden deadline application",
+    deadline: "aanmelddeadline niet-EER 1 april aanmelden deadline application",
     documents: "benodigde documenten toelating international students required documents",
   },
 };
@@ -35,7 +35,7 @@ const WORDS: Record<string, Record<Topic, string>> = {
 const LANGUAGE: Record<string, string> = { DE: "de", FR: "fr", NL: "nl" };
 
 const PATTERN: Record<Topic, RegExp> = {
-  fees: /tuition|\bfees?\b|\bcosts?\b|gebu(?:e)?hr|studienbeitr|semesterbeitr|collegegeld|kosten|droits?[ _-]d[ '_-]?inscription|frais[ _-]de[ _-]scolarit|droits[ _-]de[ _-]scolarit/,
+  fees: /tuition|\bfees?\b|\bcosts?\b|gebu(?:e)?hr|studienbeitr|semesterbeitr|collegegeld|\btarie(?:f|ven)\b|kosten|droits?[ _-]d[ '_-]?inscription|frais[ _-]de[ _-]scolarit|droits[ _-]de[ _-]scolarit/,
   language:
     /language of instruction|teaching language|instruction|unterrichtssprache|studiensprache|\bsprache|voertaal|\btaal\b|language|langue[ _-]d[ '_-]?enseignement|enseigne[ _-]en\b|langue[ _-]de[ _-]la[ _-]formation/,
   deadline:
@@ -84,6 +84,62 @@ export function scoreTopicLink(link: { url: string; text: string }, topic: Topic
   );
 }
 
+const STUDY_YEAR = /20\d\d[-/ ]20\d\d|20\d\d\/\d\d|studiejaar|academic year/;
+const FEE_TOOL = /collegegeldmeter|tarieven|tariff|fee calculator/;
+const MAX_FEE_PAGES_FETCHED = 3;
+
+// A fee page often links the rate sheet of the current study year, a fee calculator or a PDF
+// schedule that no search answers. HTML only, same site, https, one level deep; a page that cannot be
+// fetched is skipped and nothing here throws.
+export async function followFeeLinks(
+  feePages: readonly string[],
+  input: {
+    website: string;
+    fetchHtml: (url: string) => Promise<string>;
+    limit?: number;
+  },
+): Promise<string[]> {
+  const known = new Set(feePages);
+  const found = new Map<string, number>();
+  const pages = feePages
+    .filter((url) => !/\.pdf(\?|#|$)/i.test(url))
+    .slice(0, MAX_FEE_PAGES_FETCHED);
+  for (const page of pages) {
+    let links: { url: string; text: string }[];
+    try {
+      links = extractLinks(await input.fetchHtml(page), page, { pdf: true });
+    } catch {
+      continue;
+    }
+    for (const link of links) {
+      try {
+        if (known.has(link.url) || found.has(link.url)) continue;
+        if (!link.url.startsWith("https://") || !sameSite(link.url, input.website)) continue;
+        const pathname = new URL(link.url).pathname;
+        if (OTHER_FILE.test(pathname) || DATED_POST.test(pathname)) continue;
+        const score = scoreTopicLink(link, "fees");
+        if (score < 0.4) continue;
+        let path = pathname;
+        try {
+          path = decodeURIComponent(pathname);
+        } catch {
+          // keep the raw path
+        }
+        const haystack = fold(`${link.text} ${path}`);
+        const studyYear = STUDY_YEAR.test(haystack);
+        if (!studyYear && !FEE_TOOL.test(haystack)) continue;
+        found.set(link.url, score + (studyYear ? 0.2 : 0));
+      } catch {
+        // an unparseable link is not a candidate
+      }
+    }
+  }
+  return [...found]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, input.limit ?? 2)
+    .map(([url]) => url);
+}
+
 export type TopicInput = {
   country: string;
   website: string;
@@ -94,6 +150,8 @@ export type TopicInput = {
   perTopic?: number;
   // the topics to search, default all four
   topics?: readonly Topic[];
+  // fetches an HTML page; when given, the fee pages found are followed one level deeper
+  fetchHtml?: (url: string) => Promise<string>;
 };
 
 export async function discoverTopicPages(input: TopicInput): Promise<Record<Topic, string[]>> {
@@ -136,6 +194,14 @@ export async function discoverTopicPages(input: TopicInput): Promise<Record<Topi
       .sort((a, b) => b.score - a.score)
       .slice(0, input.perTopic ?? 2)
       .map((c) => c.url);
+    if (topic === "fees" && input.fetchHtml !== undefined && out.fees.length > 0)
+      out.fees = [
+        ...out.fees,
+        ...(await followFeeLinks(out.fees, {
+          website: input.website,
+          fetchHtml: input.fetchHtml,
+        })),
+      ];
   }
   return out;
 }

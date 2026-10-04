@@ -6,6 +6,7 @@ import { parse } from "yaml";
 
 import { discover, discoverBySearch, discoverFromRegister, registrable } from "./discover";
 import { PAGES } from "./enrich-fr";
+import { fetchText } from "./http";
 import { flagValue, loadMeta, pool } from "./reader";
 import {
   makeProvider,
@@ -238,7 +239,15 @@ async function main(argv: readonly string[]): Promise<void> {
           programmes,
           slug,
           () =>
-            discoverTopicPages({ country: meta.country, website, search, budget, memo, topics }),
+            discoverTopicPages({
+              country: meta.country,
+              website,
+              search,
+              budget,
+              memo,
+              topics,
+              fetchHtml: (u) => fetchText(u, { accept: "text/html,application/xhtml+xml" }),
+            }),
           console.error,
         );
         if (outcome === "failed") topicFailures++;
