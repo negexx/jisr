@@ -33,8 +33,14 @@ tuition:
   source: page-2
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 5
+        day: 1
+  source: page-1
   info_kind: official
 applicationChannel:
   value: nl-studielink
@@ -60,3 +66,6 @@ sources:
   page-3:
     url: https://www.avans.nl/studeren/praktische-zaken/studiekosten
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.avans.nl/studeren/praktische-zaken/aanmelden/deadlines
+    last_verified_at: 2026-10-03

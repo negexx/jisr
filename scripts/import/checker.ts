@@ -37,7 +37,23 @@ type Intake = {
   startDate: string | null;
   applicationOpens: string | null;
   applicationDeadline: string | null;
+  recurringDeadline?: { month: number; day: number } | null;
 };
+
+const MONTH_NAMES = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 
 export function claimText(name: FactName, value: unknown): string {
   switch (name) {
@@ -57,7 +73,14 @@ export function claimText(name: FactName, value: unknown): string {
         ...(i.applicationOpens === null ? [] : [`applications open ${i.applicationOpens}`]),
         ...(i.applicationDeadline === null
           ? []
-          : [`application deadline ${i.applicationDeadline}`]),
+          : [
+              `Application deadline for an international / non-EU applicant: ${i.applicationDeadline}`,
+            ]),
+        ...(i.recurringDeadline == null
+          ? []
+          : [
+              `Application deadline for an international / non-EU applicant, every year by ${i.recurringDeadline.day} ${MONTH_NAMES[i.recurringDeadline.month - 1] ?? i.recurringDeadline.month} (the year is not stated)`,
+            ]),
       ]);
       return `Dates for the next intake: ${parts.join("; ")}.`;
     }

@@ -92,6 +92,9 @@ const SIGNATURES: Record<CompareRowId, Signature> = {
         return `upcoming:${p.intake.intake.applicationDeadline}`;
       case "closed":
         return "closed";
+      // A usual deadline without a year is a published value: two equal ones read as the same.
+      case "recurring":
+        return `recurring:${p.intake.deadline.month}-${p.intake.deadline.day}`;
       case "unknown":
         return null;
       default: {

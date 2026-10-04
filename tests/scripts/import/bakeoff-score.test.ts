@@ -38,6 +38,24 @@ describe("sameValue", () => {
   });
 });
 
+describe("sameValue: recurring deadlines", () => {
+  const item = (recurringDeadline: { month: number; day: number } | null) => ({
+    startDate: null,
+    applicationOpens: null,
+    applicationDeadline: null,
+    recurringDeadline,
+  });
+  it("tells apart intakes that differ only in the recurring deadline", () => {
+    expect(sameValue("intakes", [item({ month: 7, day: 15 })], [item({ month: 7, day: 15 })])).toBe(
+      true,
+    );
+    expect(sameValue("intakes", [item({ month: 7, day: 15 })], [item({ month: 5, day: 1 })])).toBe(
+      false,
+    );
+    expect(sameValue("intakes", [item({ month: 7, day: 15 })], [item(null)])).toBe(false);
+  });
+});
+
 describe("scoreFacts", () => {
   const truth = {
     durationYears: fact(3),

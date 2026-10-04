@@ -781,3 +781,54 @@ describe("documents fact in the reader", () => {
     expect(dropped).toContain("facts.documents");
   });
 });
+
+describe("deadline instruction", () => {
+  it("tells the reader that a deadline needs a quote for international applicants", () => {
+    expect(INSTRUCTION).toMatch(/applicationDeadline is the deadline of the NON-EU/);
+    expect(INSTRUCTION).toMatch(/general deadline/i);
+  });
+});
+
+describe("recurring deadline", () => {
+  const evidence = [{ url: "https://own.example/p", quote: "Non-EU applicants: apply by 15 July" }];
+  const salvageIntakes = (items: unknown[]) =>
+    salvageProposal({
+      slug: "s",
+      programmePage: null,
+      facts: { intakes: { value: items, evidence } },
+    });
+
+  it("tells the reader to write a deadline without a year as recurringDeadline", () => {
+    expect(INSTRUCTION).toContain("recurringDeadline");
+    expect(INSTRUCTION).toContain(
+      "Write a start or opening date, or a dated deadline, only if the quote states day, month and YEAR",
+    );
+    expect(INSTRUCTION).toContain("If the quote states a year, never use recurringDeadline.");
+  });
+
+  it("keeps an item that has only a recurring deadline", () => {
+    const { proposal, dropped } = salvageIntakes([
+      {
+        startDate: null,
+        applicationOpens: null,
+        applicationDeadline: null,
+        recurringDeadline: { month: 7, day: 15 },
+      },
+    ]);
+    expect(proposal?.facts.intakes?.value).toHaveLength(1);
+    expect(dropped).toEqual([]);
+  });
+
+  it("still drops an item whose dates and recurring deadline are all null", () => {
+    const { proposal, dropped } = salvageIntakes([
+      {
+        startDate: null,
+        applicationOpens: null,
+        applicationDeadline: null,
+        recurringDeadline: null,
+      },
+    ]);
+    expect(proposal?.facts.intakes).toBeUndefined();
+    expect(dropped).toEqual(["facts.intakes"]);
+  });
+});

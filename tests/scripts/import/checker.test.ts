@@ -35,6 +35,39 @@ describe("claimText", () => {
     expect(text).toContain("2027-05-01");
     expect(text).toContain("deadline");
   });
+
+  it("says the deadline is the one for an international applicant, not the start or opening dates", () => {
+    const text = claimText("intakes", [
+      {
+        startDate: "2027-09-01",
+        applicationOpens: "2027-02-01",
+        applicationDeadline: "2027-05-01",
+      },
+    ]);
+    expect(text).toContain(
+      "Application deadline for an international / non-EU applicant: 2027-05-01",
+    );
+    expect(text).toContain("start 2027-09-01");
+    expect(text).toContain("applications open 2027-02-01");
+  });
+});
+
+describe("claimText recurring deadline", () => {
+  it("says the deadline repeats every year and states no year", () => {
+    const text = claimText("intakes", [
+      {
+        startDate: null,
+        applicationOpens: null,
+        applicationDeadline: null,
+        recurringDeadline: { month: 7, day: 15 },
+      },
+    ]);
+    expect(text).toContain("15");
+    expect(text).toMatch(/July|07/);
+    expect(text).toMatch(/every year|each year/);
+    expect(text).toContain("every year by 15 July (the year is not stated)");
+    expect(text).not.toMatch(/\d{4}/);
+  });
 });
 
 describe("contextAround", () => {

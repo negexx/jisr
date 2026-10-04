@@ -1,0 +1,29 @@
+{
+  "slug": "de-technische-hochschule-mannheim-hrk177-e-mobility-and-autonomou-daad7693",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7693/",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7693/",
+          "quote": "The following is valid for applicants from: non-EU countries For the winter semester: 15 April - 15 May"
+        },
+        {
+          "url": "https://www.ete.hs-mannheim.de/bachelor/apply.html",
+          "quote": "Recommended application timeline 15 May latest for international applicants (for visa reasons)"
+        }
+      ]
+    }
+  }
+}

@@ -107,6 +107,32 @@ export const MIN_QUOTE_LENGTH = 15;
 const TRANSLATION_WORDS = /translat|übersetz|uebersetz|vertaling|vertaald|traduction|traduit/i;
 export const mentionsTranslation = (quote: string): boolean => TRANSLATION_WORDS.test(quote);
 
+// A deadline is for a Moroccan (non-EU) applicant only if a quote says who it is for: the general
+// deadline of a university page may be the EU or home-student one. Words in English, German, Dutch
+// and French. Programme and office names ("International Business", "International Office") and
+// "foreign languages" are excluded; anything that still slips through is read by the checker, which
+// is told the claim is for an international applicant, and by the audit sample.
+const INTERNATIONAL_WORDS: readonly RegExp[] = [
+  /\bnon[- ]?(?:eu\b|eea\b|eer\b|europ)/i,
+  /\bnicht[- ]?(?:eu|eea|ewr)/i,
+  /\bniet[- ]?(?:eu|eer)/i,
+  /\bextra[- ]?europ/i,
+  /outside (?:of )?(?:the )?(?:eu|eea|european)/i,
+  /au(?:ss|ß)erhalb (?:der )?(?:eu|europ)/i,
+  /buiten (?:de )?(?:eu|eer|europ|nederland)|buitenland/i,
+  /hors[- ](?:de l['’]|d['’]|de la |de |l['’])?(?:ue|union|europe)/i,
+  /third[- ]countr|drittstaat/i,
+  /internationa(?:l|ux)(?!\s+(?:business|management|economics|engineering|relations|studies|office|programmes?|programs?|classroom|school|student office)\b)/i,
+  /foreign(?!\s+languages?)/i,
+  /(?:from|obtained|studied|completed)\s+abroad/i,
+  /(?:aus dem|im) ausland\b|ausl[aä]nd(?:isch|er)/i,
+  /[ée]trang[eè]r/i,
+  // a deadline for Moroccan applicants only (Campus France: "heure marocaine")
+  /marocain(?:e|s|es)?\b|moroccan|marokkaan|marokkanisch|aus marokko|uit marokko|\bmaroc\b/i,
+];
+export const mentionsInternationalApplicants = (quote: string): boolean =>
+  INTERNATIONAL_WORDS.some((pattern) => pattern.test(quote));
+
 // A quote counts only if it is long enough to mean something and appears verbatim (up to
 // whitespace, case and typographic quotes) in the page text.
 export function quoteInText(quote: string, text: string): boolean {
@@ -241,24 +267,40 @@ export function checkTuition(amountMinor: number, quote: string): FactCheck {
     : fail(`the amount ${amountMinor / 100} does not appear in the quote`);
 }
 
+// The day written right next to the month: "15 July", "15. Juli", "July 15", "15.07.", "15/07". A
+// day and a month that merely both occur in the quote ("1 July; 15 places") are not a date.
+function dayBesideMonth(month: number, day: number, q: string): boolean {
+  const names = (MONTHS[month - 1] ?? []).join("|");
+  return (
+    new RegExp(`(?<!\\d)0?${day}(?:st|nd|rd|th|er|\\.)?\\s*(?:of\\s+)?(?:${names})\\b`).test(q) ||
+    new RegExp(`\\b(?:${names})\\.?\\s*0?${day}(?:st|nd|rd|th)?(?!\\d)`).test(q) ||
+    new RegExp(`(?<!\\d)0?${day}\\s*[./-]\\s*0?${month}(?!\\d)`).test(q)
+  );
+}
+
 export function checkDeadline(isoDate: string, quote: string): FactCheck {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoDate);
   if (match === null) return fail("deadline is not an ISO date");
   const [, year, month, day] = match;
-  const d = Number(day);
-  const m = Number(month);
   const q = normalizeForMatch(quote);
-  const dayOk = new RegExp(`(?<!\\d)0?${d}(?:st|nd|rd|th|er|\\.)?(?!\\d)`).test(q);
-  const names = MONTHS[m - 1] ?? [];
-  const monthOk =
-    names.some((n) => new RegExp(`\\b${n}\\b`, "i").test(q)) ||
-    new RegExp(`(?<!\\d)0?${d}\\s*[./-]\\s*0?${m}(?!\\d)`).test(q) ||
-    new RegExp(`${year}-0?${m}-0?${d}`).test(q);
-  if (!(dayOk && monthOk)) return fail(`the date ${isoDate} does not appear in the quote`);
+  const stated =
+    dayBesideMonth(Number(month), Number(day), q) ||
+    new RegExp(`${year}-0?${Number(month)}-0?${Number(day)}`).test(q);
+  if (!stated) return fail(`the date ${isoDate} does not appear in the quote`);
   // A year the page does not state is an inference, not a fact: leave it for a human.
   return new RegExp(`(?<!\\d)${year}(?!\\d)`).test(q)
     ? ok
     : fail(`the quote does not state the year ${year}`);
+}
+
+// A year in the quote makes it a dated deadline: it must not be reused as "every year" (ADR 0009).
+export function checkRecurringDeadline(month: number, day: number, quote: string): FactCheck {
+  const q = normalizeForMatch(quote);
+  if (/(?<!\d)(?:19|20)\d{2}(?!\d)/.test(q))
+    return fail("the quote states a year: a dated deadline, not a recurring one");
+  return dayBesideMonth(month, day, q)
+    ? ok
+    : fail(`the quote does not state the day ${day} and the month ${month}`);
 }
 
 const CHANNEL_WORDS: Record<string, RegExp> = {

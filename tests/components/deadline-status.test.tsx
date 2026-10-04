@@ -33,6 +33,12 @@ const upcoming: IntakeStatus = {
   fact: ref(),
 };
 
+const recurring: IntakeStatus = {
+  kind: "recurring",
+  deadline: { month: 7, day: 15 },
+  fact: ref(),
+};
+
 let consoleWatch: ReturnType<typeof watchConsole>;
 beforeEach(() => {
   consoleWatch = watchConsole();
@@ -148,6 +154,7 @@ describe("DeadlineStatus", () => {
       upcoming,
       { kind: "closed", fact: ref() },
       { kind: "unknown", fact: null },
+      recurring,
     ];
     const ids = new Set<string>();
     for (const status of states) {
@@ -157,6 +164,70 @@ describe("DeadlineStatus", () => {
       ids.add(icon?.getAttribute("data-testid") ?? "");
       unmount();
     }
-    expect(ids.size).toBe(3);
+    expect(ids.size).toBe(4);
+  });
+
+  describe("recurring", () => {
+    it.each(LOCALES)("shows the usual date as DD/MM, without a year, in %s", (locale) => {
+      const { container } = renderWithMessages(<DeadlineStatus intake={recurring} />, locale);
+      expect(container.querySelector('[data-intake="recurring"]')).not.toBeNull();
+      expect(container.querySelector('[data-intake="upcoming"]')).toBeNull();
+      expect(container.textContent).toContain(
+        catalogs[locale].domain.intake.recurring.replace("{date}", "15/07"),
+      );
+      // there is no ISO date to put in a <time>: the year is not published
+      // (the source badge's own "verified on" date is a <time>, outside the status line)
+      const line = container.querySelector('[data-intake="recurring"] > p');
+      expect(line?.querySelector("time")).toBeNull();
+      expect(line?.querySelector("bdi")?.textContent).toContain("15/07");
+      const icon = container.querySelector('[data-testid="deadline-icon-recurring"]');
+      expect(icon?.getAttribute("aria-hidden")).toBe("true");
+      expect(container.querySelector('[data-testid="deadline-icon-upcoming"]')).toBeNull();
+      expectNoPhysicalDirection(container);
+    });
+
+    it.each(LOCALES)("keeps the compact source badge for a fresh fact in %s", (locale) => {
+      const { container } = renderWithMessages(<DeadlineStatus intake={recurring} />, locale);
+      expect(container.querySelector("[data-slot='source-badge']")).not.toBeNull();
+      expect(
+        container.querySelector('a[href="https://example.org/xx-test-source"]'),
+      ).not.toBeNull();
+      expect(container.querySelector("[data-freshness]")).toBeNull();
+    });
+
+    it.each(LOCALES)("keeps the stale marker for a stale fact in %s", (locale) => {
+      const stale: IntakeStatus = {
+        ...recurring,
+        fact: ref({ last_verified_at: STALE, freshness: "stale" }),
+      };
+      const { container } = renderWithMessages(<DeadlineStatus intake={stale} />, locale);
+      expect(container.querySelector('[data-freshness="stale"]')).not.toBeNull();
+      expect(container.querySelector('[data-intake="recurring"]')).not.toBeNull();
+    });
+
+    it("marks the date as something to check, with the same question-mark glyph as unknown", () => {
+      const a = renderWithMessages(<DeadlineStatus intake={recurring} />, "en");
+      const recurringIcon = a.container.querySelector('[data-testid="deadline-icon-recurring"]');
+      a.unmount();
+      const b = renderWithMessages(
+        <DeadlineStatus intake={{ kind: "unknown", fact: null }} />,
+        "en",
+      );
+      const unknownIcon = b.container.querySelector('[data-testid="deadline-icon-unknown"]');
+      expect(recurringIcon?.getAttribute("class")).toBe(unknownIcon?.getAttribute("class"));
+    });
+
+    it("pads a single-digit day and month", () => {
+      const early: IntakeStatus = { ...recurring, deadline: { month: 3, day: 1 } };
+      const { container } = renderWithMessages(<DeadlineStatus intake={early} />, "en");
+      expect(container.textContent).toContain("01/03");
+    });
+
+    it("never shows the opening line", () => {
+      const { container } = renderWithMessages(<DeadlineStatus intake={recurring} />, "en");
+      expect(container.textContent).not.toContain(
+        catalogs.en.deadline.opensFrom.replace("{date}", ""),
+      );
+    });
   });
 });

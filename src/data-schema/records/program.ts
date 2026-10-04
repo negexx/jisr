@@ -18,11 +18,29 @@ export const TuitionSchema = z.strictObject({
   currency: CurrencySchema,
   period: z.enum(["year", "semester"]),
 });
-export const IntakeSchema = z.strictObject({
-  startDate: IsoDateSchema.nullable(),
-  applicationOpens: IsoDateSchema.nullable(),
-  applicationDeadline: IsoDateSchema.nullable(),
-});
+const DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] as const;
+export const MonthDaySchema = z
+  .strictObject({
+    month: z.number().int().min(1).max(12),
+    day: z.number().int().min(1).max(31),
+  })
+  .refine(({ month, day }) => day <= (DAYS_IN_MONTH[month - 1] ?? 0), {
+    message: "that day does not exist in that month",
+  });
+export type MonthDay = z.infer<typeof MonthDaySchema>;
+
+export const IntakeSchema = z
+  .strictObject({
+    startDate: IsoDateSchema.nullable(),
+    applicationOpens: IsoDateSchema.nullable(),
+    applicationDeadline: IsoDateSchema.nullable(),
+    // A deadline the source states without a year ("15 July"): it repeats every year. It is never
+    // turned into a dated deadline and never shown as upcoming (ADR 0009).
+    recurringDeadline: MonthDaySchema.optional(),
+  })
+  .refine((i) => !(i.applicationDeadline !== null && i.recurringDeadline !== undefined), {
+    message: "an intake has a dated deadline or a recurring one, not both",
+  });
 export const DocumentSchema = z.strictObject({
   slug: SlugSchema,
   name: LocalizedTextSchema,

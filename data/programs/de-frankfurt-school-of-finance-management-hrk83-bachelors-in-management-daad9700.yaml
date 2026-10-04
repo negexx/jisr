@@ -30,9 +30,12 @@ tuition:
   source: daad
   info_kind: guidance
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: 2027-09-01
+      applicationOpens: null
+      applicationDeadline: null
+  source: page-1
+  info_kind: official
 applicationChannel:
   value: de-university-direct
   source: page-1

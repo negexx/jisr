@@ -78,6 +78,38 @@ function withoutScholarship(from: SnapshotBundle, slug: string): SnapshotBundle 
   };
 }
 
+// Gives programmes a recurring application deadline (no year) in place of their intakes.
+function withRecurring(
+  from: SnapshotBundle,
+  deadlines: Record<string, { month: number; day: number }>,
+): SnapshotBundle {
+  return {
+    ...from,
+    programs: from.programs.map((shard) => ({
+      ...shard,
+      programs: shard.programs.map((program) => {
+        const deadline = deadlines[program.slug];
+        return deadline === undefined
+          ? program
+          : {
+              ...program,
+              intakes: {
+                ...program.intakes,
+                value: [
+                  {
+                    startDate: null,
+                    applicationOpens: null,
+                    applicationDeadline: null,
+                    recurringDeadline: deadline,
+                  },
+                ],
+              },
+            };
+      }),
+    })),
+  };
+}
+
 describe("buildCompareView", () => {
   it("returns the found programs in the order of the slugs and lists the missing ones", () => {
     const result = view([E2E_SLUGS.ok, "xx-gone", E2E_SLUGS.check]);
@@ -283,6 +315,36 @@ describe("buildCompareView", () => {
     const result = view([E2E_SLUGS.check, E2E_SLUGS.stale]);
     expect(result.programs.map((p) => p.group)).toEqual(["check", "check"]);
     expect(result.differs.result).toBe(true);
+  });
+
+  describe("a recurring deadline", () => {
+    const usually = (month: number, day: number) => ({ month, day });
+
+    it("is a known value: the same usual date reads as the same, another one differs", () => {
+      const same = withRecurring(bundle, {
+        [E2E_SLUGS.ok]: usually(7, 15),
+        [E2E_SLUGS.check]: usually(7, 15),
+      });
+      const equal = view([E2E_SLUGS.ok, E2E_SLUGS.check], same);
+      expect(equal.programs.map((p) => p.intake.kind)).toEqual(["recurring", "recurring"]);
+      expect(equal.differs.deadline).toBe(false);
+
+      const other = withRecurring(bundle, {
+        [E2E_SLUGS.ok]: usually(7, 15),
+        [E2E_SLUGS.check]: usually(5, 1),
+      });
+      expect(view([E2E_SLUGS.ok, E2E_SLUGS.check], other).differs.deadline).toBe(true);
+    });
+
+    it("never counts a recurring deadline as the same as an unknown or a closed one", () => {
+      const recurring = withRecurring(bundle, { [E2E_SLUGS.ok]: usually(7, 15) });
+      const withUnknown = view([E2E_SLUGS.ok, E2E_SLUGS.frOnly], recurring);
+      expect(withUnknown.programs.map((p) => p.intake.kind)).toEqual(["recurring", "unknown"]);
+      expect(withUnknown.differs.deadline).toBe(true);
+      const withClosed = view([E2E_SLUGS.ok, E2E_SLUGS.check], recurring);
+      expect(withClosed.programs.map((p) => p.intake.kind)).toEqual(["recurring", "closed"]);
+      expect(withClosed.differs.deadline).toBe(true);
+    });
   });
 
   it("never counts an unknown deadline as the same as a closed one", () => {

@@ -1,0 +1,42 @@
+{
+  "slug": "de-hochschule-bremerhaven-hrk41-sustainable-process-engi-daad10400",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10400/",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        },
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 1,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10400/",
+          "quote": "valid for applicants from: non-EU countries For the winter semester: until 15 July"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10400/",
+          "quote": "valid for applicants from: non-EU countries For the summer semester: until 15 January"
+        },
+        {
+          "url": "https://www.hs-bremerhaven.de/en/study/application-for-bachelor-courses",
+          "quote": "July 15th for applicants with a higher education entrance qualification that was not obtained in the EU via uni-assist.de"
+        }
+      ]
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { type IsoDate, isValidIsoDate } from "@/data-schema/dates";
+import type { MonthDay } from "@/data-schema/records/program";
 import type { AppLocale } from "@/i18n/routing";
 
 // ar-MA with Latin digits: Modern Standard Arabic UI, Moroccan usage, product owner's choice of digits.
@@ -10,6 +11,11 @@ const INTL_LOCALES: Record<AppLocale, string> = {
 
 export function intlLocale(locale: AppLocale): string {
   return INTL_LOCALES[locale];
+}
+
+// DD/MM, like the DD/MM/YYYY rule for full dates; Latin digits in every locale.
+export function formatMonthDay({ month, day }: MonthDay): string {
+  return `${String(day).padStart(2, "0")}/${String(month).padStart(2, "0")}`;
 }
 
 export function formatDate(iso: IsoDate, _locale: AppLocale): string {

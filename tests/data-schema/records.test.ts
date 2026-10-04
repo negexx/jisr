@@ -6,6 +6,7 @@ import {
   CostProfileRecordSchema,
   LIVING_COST_CATEGORIES,
 } from "@/data-schema/records/cost-profile";
+import { IntakeSchema } from "@/data-schema/records/program";
 
 type Obj = Record<string, unknown>;
 
@@ -529,5 +530,38 @@ describe("record outputs", () => {
     expect(parsed.deadline.class).toBe("volatile");
     expect(parsed.support.class).toBe("volatile");
     expect(parsed.documents.class).toBe("stable");
+  });
+});
+
+describe("intake recurringDeadline", () => {
+  const base = { startDate: null, applicationOpens: null, applicationDeadline: null };
+  it("accepts a month and day, and still accepts the three-date form without it", () => {
+    expect(
+      IntakeSchema.safeParse({ ...base, recurringDeadline: { month: 7, day: 15 } }).success,
+    ).toBe(true);
+    expect(IntakeSchema.safeParse(base).success).toBe(true);
+  });
+  it.each([
+    [{ month: 2, day: 30 }],
+    [{ month: 13, day: 1 }],
+    [{ month: 4, day: 31 }],
+    [{ month: 0, day: 5 }],
+    [{ month: 7, day: 15, year: 2026 }],
+  ])("rejects %j", (recurringDeadline) => {
+    expect(IntakeSchema.safeParse({ ...base, recurringDeadline }).success).toBe(false);
+  });
+  it("accepts 29 February (it exists in some years)", () => {
+    expect(
+      IntakeSchema.safeParse({ ...base, recurringDeadline: { month: 2, day: 29 } }).success,
+    ).toBe(true);
+  });
+  it("rejects an intake that has both a dated and a recurring deadline", () => {
+    expect(
+      IntakeSchema.safeParse({
+        ...base,
+        applicationDeadline: "2027-07-15",
+        recurringDeadline: { month: 7, day: 15 },
+      }).success,
+    ).toBe(false);
   });
 });

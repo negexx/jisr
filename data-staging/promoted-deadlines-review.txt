@@ -1,0 +1,26 @@
+FAILS     de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineerin  2026-12-03   “Application deadline 03.12.2026”
+FAILS     de-hochschule-fur-angewandte-wissenschaften-hrk143-international-engin  2026-08-31,2027-07-15   “For the next winter semester: until 31 August 2026”
+FAILS     de-hochschule-fur-angewandte-wissenschaften-hrk44-engineering-physics-  2026-09-30   “Registration deadline for the winter term: 30 September 2026”
+FAILS     de-hochschule-heilbronn-technik-wirtschaft-hrk125-artificial-intellige  2026-09-28   “For the winter semester: until 28 September 2026”
+FAILS     de-hochschule-heilbronn-technik-wirtschaft-hrk125-intelligent-mechatro  2026-09-28   “enrol until : September 28”
+FAILS     de-hochschule-osnabruck-hrk214-international-economics-daad9923  2026-09-15   “International Economics and Sustainability (B.A.) no no September 15, 2026 Osnabrück”
+FAILS     de-technische-hochschule-ingolstadt-hrk288-autonomous-vehicle-engin-da  2027-07-15   “The programme Autonomous Vehicle Engineering starts in the winter semester only.”
+FAILS     de-technische-hochschule-ingolstadt-hrk288-computer-science-and-art-da  2027-07-15   “For the winter semester: 1 April 2027 - 15 July 2027”
+FAILS     de-technische-hochschule-mittelhessen-thm-hrk97-international-business  2026-12-15   “Application submitted on Uni-Assist portal (deadline: October 1st till December 15th, 2026”
+FAILS     de-technische-universitat-chemnitz-hrk42-foundations-in-data-scie-daad  2027-01-15   “For the summer semester: until 15 January 2027”
+FAILS     fr-i-u-t-annecy-0741133e-but-genie-electrique-et-informat-8899  2026-11-15   “Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine).”
+FAILS     fr-i-u-t-davignon-0840957j-but-science-des-donnees-10468  2026-11-15   “Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine).”
+FAILS     fr-i-u-t-de-bayonne-0641478j-but-genie-industriel-et-maintena-7757  2026-11-15   “Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine).”
+FAILS     fr-i-u-t-de-besancon-0251018w-but-genie-mecanique-et-productiq-3506  2026-11-15   “Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine).”
+FAILS     fr-i-u-t-de-blois-0410978r-but-reseaux-et-telecommunication-5265  2026-11-15   “Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine).”
+FAILS     fr-i-u-t-de-blois-0410978r-but-science-et-genie-des-materia-5264  2026-11-15   “Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine).”
+FAILS     nl-christelijke-hogeschool-windesheim-01vu-almere-ict-1001o2665  2027-05-01,2027-01-31   “Startmoment 6 september 2027: aanmelden het liefst vóór 1 mei (uiterlijk 31 augustus) via ”
+FAILS     nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046  2027-08-31   “Aanmelden het liefst vóór 1 mei (uiterlijk 31 augustus) via Studielink Startmoment 6 septe”
+FAILS     nl-de-haagse-hogeschool-27um-delft-ict-1001o2675  2026-05-01   “Opleidingen aan De Haagse Hogeschool starten één keer per jaar op 1 september. De aanmeldd”
+FAILS     nl-de-haagse-hogeschool-27um-zoetermeer-applied-data-science-art-1001o  2026-05-01   “Opleidingen aan De Haagse Hogeschool starten één keer per jaar op 1 september. De aanmeldd”
+FAILS     nl-fontys-hogeschool-30gb-accountancy-1001o3555  2027-05-01   “1 mei 2027 Meld je uiterlijk 1 mei aan via Studielink.”
+FAILS     nl-fontys-hogeschool-30gb-elektrotechniek-1001o3098  2027-05-01   “1 mei 2027 Meld je uiterlijk 1 mei aan via Studielink.”
+FAILS     nl-fontys-hogeschool-30gb-tilburg-commerciele-economie-1001o3452  2027-05-01   “1 mei 2027 Meld je uiterlijk 1 mei aan via Studielink.”
+FAILS     nl-fontys-hogeschool-30gb-venlo-informatica-1001o3903  2027-05-01   “1 mei 2027 Meld je uiterlijk 1 mei aan via Studielink.”
+FAILS     nl-hogeschool-leiden-21ri-bio-informatica-1001o5219  2027-05-01   “Start: sept 2027 Inschrijven: t/m 1 mei”
+FAILS     nl-hogeschool-leiden-21ri-commerciele-economie-1001o3422  2027-05-01   “Start: sept 2027 Inschrijven: t/m 1 mei”

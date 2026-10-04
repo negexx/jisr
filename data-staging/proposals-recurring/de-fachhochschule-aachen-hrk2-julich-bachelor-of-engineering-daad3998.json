@@ -1,0 +1,25 @@
+{
+  "slug": "de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad3998",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/",
+          "quote": "Deadlines: 15 July for international applicants (only through uni-assist)"
+        }
+      ]
+    }
+  }
+}

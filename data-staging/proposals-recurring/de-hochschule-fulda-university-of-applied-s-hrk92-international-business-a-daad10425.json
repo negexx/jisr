@@ -1,0 +1,25 @@
+{
+  "slug": "de-hochschule-fulda-university-of-applied-s-hrk92-international-business-a-daad10425",
+  "programmePage": "https://www.hs-fulda.de/en/studyprogramme/international-business-administration-bsc",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 9,
+            "day": 30
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-fulda.de/en/studyprogramme/international-business-administration-bsc",
+          "quote": "With foreign educational qualifications: 1 May to 30 September"
+        }
+      ]
+    }
+  }
+}

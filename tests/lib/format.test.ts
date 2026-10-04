@@ -7,6 +7,7 @@ import {
   formatGrade,
   formatMoney,
   formatMoneyRange,
+  formatMonthDay,
   intlLocale,
   minorUnitDigits,
   parseLocaleDecimal,
@@ -69,6 +70,13 @@ describe("formatDate", () => {
     "not a date",
   ])("throws on invalid input %j", (value) => {
     expect(() => formatDate(value as IsoDate, "fr")).toThrow(RangeError);
+  });
+});
+
+describe("formatMonthDay", () => {
+  it("pads to DD/MM", () => {
+    expect(formatMonthDay({ month: 7, day: 5 })).toBe("05/07");
+    expect(formatMonthDay({ month: 12, day: 31 })).toBe("31/12");
   });
 });
 

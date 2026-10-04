@@ -1,0 +1,38 @@
+{
+  "slug": "nl-hogeschool-utrecht-25dw-accountancy-1001o3544",
+  "programmePage": "https://www.hu.nl/voltijd-opleidingen/accountancy",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 31
+          }
+        },
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 10,
+            "day": 31
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.minor.hu.nl/",
+          "quote": "31 May Non-EU students living outside the Netherlands who require immigration and/or visa services from HU."
+        },
+        {
+          "url": "https://www.minor.hu.nl/",
+          "quote": "31 October Non-EU students living outside the Netherlands who require immigration and/or visa services from HU, Students with a residence permit for study purposes who currently study at another educational institution in the Netherlands and who wish to transfer to HU."
+        }
+      ]
+    }
+  }
+}

@@ -85,14 +85,16 @@ Measured on the fixture build, gzip, noModule polyfill excluded. Build = `pnpm p
 
 | Route | build KB | browser initial KB | until idle KB | gap to 150 (initial) |
 |---|---|---|---|---|
-| `/fr`, `/en`, `/ar` | 168.6 | 168.8 | 213.9 | +18.8 |
-| `/[locale]/profile` | 184.9 | 185.3 | 215.1 | +35.3 |
-| `/[locale]/matches` | 191.5 | 191.8 | 215.1 | +41.8 |
-| `/[locale]/plan` (one saved program) | 185.3 | 185.5 | 241.0 | +35.5 |
-| `/[locale]/compare` (two saved programs) | 186.6 | 186.9 | 249.9 | +36.9 |
-| `/[locale]/programs/<slug>` | 183.2 | 183.5 | 237.7 | +33.5 |
+| `/fr`, `/en`, `/ar` | 168.6 | 168.8 | 214.2 | +18.8 |
+| `/[locale]/profile` | 184.9 | 185.3 | 215.4 | +35.3 |
+| `/[locale]/matches` | 191.5 | 192.1 | 215.4 | +42.1 |
+| `/[locale]/plan` (one saved program) | 185.3 | 185.6 | 241.4 | +35.6 |
+| `/[locale]/compare` (two saved programs) | 186.6 | 187.0 | 250.4 | +37.0 |
+| `/[locale]/programs/<slug>` | 183.2 (2026-10-02) | 183.7 | 238.1 | +33.7 |
 
 Last measured 2026-10-02, after Compare (M4b). Compare is a new route and no existing route grew by more than 0.3 KB (matches and plan carry the small Compare entry points; the others grew by at most 0.3 KB until idle). `/compare` has the same shape as `/plan`: the page shell and island are initial JS, the view model (`compare-view.ts`, with the matching, cost and reason code it pulls in) is a lazy chunk loaded once two saved programs and a profile exist, which is why it ends 8.9 KB above the plan page until idle. The entry links use `prefetch={false}`, so no page pays for the compare code unless the student goes there.
+
+Browser columns re-measured 2026-10-04 (fixture build, e2e perf spec) after recurring deadlines merged with Compare: matches 192.1 KB initial and the program page 238.1 KB until idle were 0.1 KB over their rows (192 and 238), the same on Linux CI and locally. Each change fit alone; the recurring-deadline line cost about 0.1 KB gzip after it reused the question-mark icon the unknown state already ships. The owner raised the two rows by 1 KB with the reason written in `tests/e2e/support/js-budget.ts`: matches initial 193, program until idle 239. The build column was not re-measured.
 
 The step before, Save and the plan page (M4a), against the table before it (build, initial): home +2.1 KB, profile +1.8, matches +3.1, program +3.0. The nav's saved-count badge costs about 2 KB on every page (`useSavedCount`, kept apart from `useSaved`); matches and program add the Save button and the hook. The toggle code and the plan's tick store behind it (`actions.ts`, `plan/store.ts`) are loaded on the first click (`useSaved.toggle` does `import("./actions")`; if that fails nothing changes and the button shows an alert), so they are in no initial chunk. The plan page's matching and checklist code (`plan-view.ts`) is a lazy chunk, loaded only when a program is saved and a profile exists, and the nav prefetches `/plan` only once something is saved (without that gate every page paid about 20 KB until idle for the plan's code). The program page's until-idle total (237.7) has 0.3 KB of room under its ratchet row (238).
 
@@ -104,6 +106,15 @@ Every page is over target, home included (the shell is about 168 KB before any p
 - Within a group, programs sort by next upcoming deadline (closed and unknown after), then slug. Programs hidden by preferences are counted per mismatch kind and can be revealed with their reasons.
 - Route wording always goes through `routeKeyOf(match)`, never `domain.route.${match.route}`: it names `direct` or `not_eligible` only when the route reason is decisive, and says "source not re-verified" or "not an official source" otherwise.
 - `topReasons(match, max)` sorts fail, then to-check, then pass, and always keeps the `foundation` route reason and the coverage reason whatever `max` is. Cards show the top reasons; the program page shows all of them.
+
+## Recurring deadlines (ADR 0009)
+
+- **Model:** an intake may carry an optional `recurringDeadline: { month, day }` for a deadline the source states without a year ("15 July"). It never sits next to a dated `applicationDeadline` on the same intake (the schema refuses both), and no year is ever inferred.
+- **`nextIntake` order** (`src/domain/intakes.ts`): a dated deadline that is today or later wins and gives `upcoming`; otherwise, if any intake has a recurring deadline, the status is `recurring` (carrying the month and day of the one whose next occurrence is soonest, comparing month and day only); otherwise `closed`, or `unknown` when nothing is published. `recurring` never carries a date and is never `upcoming`.
+- **UI:** `DeadlineStatus` shows one icon, the question-mark glyph it shares with `unknown`, and the text "Usually by DD/MM each year: check the date for your intake" (`domain.intake.recurring`), with the compact `SourceBadge` kept. It is never green and has no `<time>` element. The program page's intake list (`DeadlineSection`, server-rendered) writes it as "usually ... each year (year not published, to be checked)" (`program.deadline.recurring`).
+- **Pipeline:** the reader proposes `recurringDeadline` only for a quote without a year; `checkRecurringDeadline` requires the day beside the month in an accepted quote and rejects a quote that states a year. Any application deadline, dated or recurring, also needs an accepted quote that names international or non-EU applicants (`mentionsInternationalApplicants`, details in `data/README.md`).
+- **Not retroactive:** deadlines already in `data/` are kept. Re-running `verify` on an old proposal may now reject a deadline that is already promoted; such cases are for an owner decision, not an automatic removal.
+- **Compare:** the Compare page is not on this branch (PR #8, `feat/m4b-compare`). Its deadline signature needs a `recurring` case when the branches meet, as does any other exhaustive switch over `IntakeStatus["kind"]`.
 
 ## Routing and 404
 

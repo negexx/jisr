@@ -30,8 +30,14 @@ tuition:
   source: programme
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 5
+        day: 1
+  source: page-1
   info_kind: official
 applicationChannel:
   value: null
@@ -87,3 +93,6 @@ sources:
   page-2:
     url: https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/
+    last_verified_at: 2026-10-03

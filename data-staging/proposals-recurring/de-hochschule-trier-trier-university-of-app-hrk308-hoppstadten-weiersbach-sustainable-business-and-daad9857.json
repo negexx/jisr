@@ -1,0 +1,26 @@
+{
+  "slug": "de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach-sustainable-business-and-daad9857",
+  "programmePage": "https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-law-ba",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2026-05-15",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-law-ba/apply-now",
+          "quote": "15 May 2026 for non-EU and non-EEA applicants"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9857/",
+          "quote": "The following is valid for applicants from: non-EU countries For the winter semester: 1 September - 15 May"
+        }
+      ]
+    }
+  }
+}

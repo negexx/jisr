@@ -133,6 +133,7 @@ export const BUDGET_FITS = [
 
 export const INTAKE_KINDS = [
   "upcoming",
+  "recurring",
   "closed",
   "unknown",
 ] as const satisfies readonly IntakeKind[];
@@ -228,7 +229,7 @@ export type MessageGroup = {
  *   domain.cost.tenMonthNote                 {months}
  *   domain.cost.missingLine | partialTotal | estimateTag
  *   domain.budgetFit.<BudgetFit>             about the estimate, never the program
- *   domain.intake.<IntakeKind>               upcoming: {date}
+ *   domain.intake.<IntakeKind>               upcoming: {date}; recurring: {date} as DD/MM
  *   domain.infoKind.<InfoKind>.{label,meaning}
  *   domain.freshness.<Freshness>             plus verifiedOn {date}
  *   domain.coverage.<Coverage>
@@ -301,5 +302,6 @@ export const MESSAGE_ARGS: Readonly<Record<string, readonly string[]>> = {
   "domain.rule.prior_study_years_min": ["count", "years"],
   "domain.cost.tenMonthNote": ["months"],
   "domain.intake.upcoming": ["date"],
+  "domain.intake.recurring": ["date"],
   "domain.freshness.verifiedOn": ["date"],
 };
