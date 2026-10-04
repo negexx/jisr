@@ -95,6 +95,24 @@ describe("verifyProposal", () => {
     expect(v.rejected[0]?.reason).toMatch(/does not appear/);
   });
 
+  it("rejects a tuition amount that its quote ties to a past study year, for the study year given", async () => {
+    const OLD = "https://uni.example/old-fees";
+    pages[OLD] = "Studiejaar 2025-2026 Instellingscollegegeld Voltijd: € 10.164 per jaar";
+    const facts: Proposal["facts"] = {
+      tuition: {
+        value: { amountMinor: 1016400, currency: "EUR", period: "year" },
+        evidence: [
+          { url: OLD, quote: "Studiejaar 2025-2026 Instellingscollegegeld Voltijd: € 10.164" },
+        ],
+      },
+    };
+    const stale = await verifyProposal(proposal(facts), "Applied Computer Science", getText, 2026);
+    expect(stale.facts.tuition).toBeUndefined();
+    expect(stale.rejected[0]?.reason).toMatch(/study year 2025/);
+    const fine = await verifyProposal(proposal(facts), "Applied Computer Science", getText, 2025);
+    expect(fine.facts.tuition).toBeDefined();
+  });
+
   it("rejects an invented date even when the quote is real", async () => {
     const v = await verifyProposal(
       proposal({

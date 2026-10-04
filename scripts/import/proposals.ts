@@ -11,6 +11,7 @@ import {
   checkTests,
   checkTuition,
   checkYears,
+  currentStudyYear,
   type FactCheck,
   mentionsInternationalApplicants,
   mentionsTranslation,
@@ -186,14 +187,19 @@ export function certificateUnknown<T extends object>(rule: T): T {
 
 export type GetText = (url: string) => Promise<string>;
 
-function checkValue(name: FactName, value: unknown, quote: string): FactCheck {
+function checkValue(
+  name: FactName,
+  value: unknown,
+  quote: string,
+  minStudyYear: number,
+): FactCheck {
   switch (name) {
     case "durationYears":
       return checkDuration(value as number, quote);
     case "teachingLanguages":
       return checkLanguages(value as string[], quote);
     case "tuition":
-      return checkTuition((value as { amountMinor: number }).amountMinor, quote);
+      return checkTuition((value as { amountMinor: number }).amountMinor, quote, minStudyYear);
     case "applicationChannel":
       return checkChannel(value as string, quote);
     case "intakes": {
@@ -206,10 +212,13 @@ function checkValue(name: FactName, value: unknown, quote: string): FactCheck {
   }
 }
 
+// `minStudyYear`: a tuition quote that ties its amount to an earlier study year is refused. The
+// default is the study year running when the verification runs; pass it to reproduce a run.
 export async function verifyProposal(
   proposal: Proposal,
   programmeName: string,
   getText: GetText,
+  minStudyYear: number = currentStudyYear(),
 ): Promise<Verified> {
   const result: Verified = {
     programmePage: null,
@@ -282,8 +291,8 @@ export async function verifyProposal(
           )
             reason = `the deadline ${recurring.day}/${recurring.month} is not supported by the quotes`;
         }
-    } else if (!accepted.some((e) => checkValue(key, entry.value, e.quote).ok)) {
-      const first = checkValue(key, entry.value, accepted[0]?.quote ?? "");
+    } else if (!accepted.some((e) => checkValue(key, entry.value, e.quote, minStudyYear).ok)) {
+      const first = checkValue(key, entry.value, accepted[0]?.quote ?? "", minStudyYear);
       reason = first.ok ? "value does not agree with the quote" : first.reason;
     }
     let value: unknown = entry.value;

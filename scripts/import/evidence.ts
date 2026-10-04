@@ -281,40 +281,76 @@ export function currentStudyYear(now: Date = new Date()): number {
   return now.getUTCMonth() >= 7 ? now.getUTCFullYear() : now.getUTCFullYear() - 1;
 }
 
-// "2026-2027", "2026/27", "2026-27": a study year written in a fee quote.
-const STUDY_YEAR = /(?<!\d)(20\d\d)\s*[-/–]\s*(?:20)?\d\d(?!\d)/g;
+// "2026-2027", "2026/27", "2026-27": a study year written in a fee quote. The second part must be
+// the next year, so a date ("2025-11-03") and a span ("2024-2027") are not study years.
+const STUDY_YEAR = /(?<!\d)(20\d\d)\s*[-/–]\s*((?:20)?\d\d)(?![\d]|\s*[-/–]\s*\d)/g;
+// "since the winter semester 2017/18": a start of something, not the year the amount is for
+const SINCE_LABEL = /(?:seit|since|vanaf|from|ab|sinds)\s+(?:dem\s+|het\s+)?(?:\w+\s+)?$/i;
+// something that reads as an amount of money: a euro sign or a number with a thousands group
+const AMOUNT_LIKE = /€|\beur\b|\d{1,3}[.,]\d{3}/i;
 
-// The study year written closest to the amount, when the quote labels amounts with study years. A
-// quote with no study year says nothing about it (a programme page: left to the checker).
-function studyYearNearAmount(amountMajor: number, quote: string): number | null {
-  const q = normalizeForMatch(quote);
-  const labels = [...q.matchAll(STUDY_YEAR)].map((m) => ({
-    start: Number(m[1]),
-    at: m.index ?? 0,
-  }));
-  const amount = amountPattern(amountMajor).exec(q);
-  if (labels.length === 0 || amount === null) return null;
-  const nearest = labels.reduce((best, label) =>
-    Math.abs(label.at - amount.index) < Math.abs(best.at - amount.index) ? label : best,
-  );
-  return nearest.start;
+type StudyYearLabel = { start: number; at: number; end: number };
+
+function studyYearLabels(q: string): StudyYearLabel[] {
+  const labels: StudyYearLabel[] = [];
+  for (const m of q.matchAll(STUDY_YEAR)) {
+    const start = Number(m[1]);
+    const second = Number(m[2]);
+    const next = start + 1;
+    if (second !== next && second !== next % 100) continue;
+    const at = m.index ?? 0;
+    if (SINCE_LABEL.test(q.slice(Math.max(0, at - 30), at))) continue;
+    labels.push({ start, at, end: at + m[0].length });
+  }
+  return labels;
 }
 
-export function checkTuition(
-  amountMinor: number,
-  quote: string,
-  minStudyYear: number = currentStudyYear(),
-): FactCheck {
+// Why the amount cannot be tied to a study year of `minStudyYear` or later, or null when it can (or
+// when the quote names no study year at all: a programme page, left to the checker). Each occurrence
+// of the amount takes the closest study year written BEFORE it, else the first one after it. Years
+// that stand side by side as column headers ("2025-2026 2026-2027 ... € 10.164 € 10.528") say
+// nothing about which column an amount is in: that is ambiguous unless every one of them is current.
+function staleStudyYear(amountMajor: number, quote: string, minStudyYear: number): string | null {
+  const q = normalizeForMatch(quote);
+  const labels = studyYearLabels(q);
+  if (labels.length === 0) return null;
+  for (const amount of q.matchAll(amountPattern(amountMajor))) {
+    const from = amount.index ?? 0;
+    const before = labels.filter((label) => label.end <= from);
+    let run: StudyYearLabel[];
+    if (before.length > 0) {
+      run = [];
+      for (let i = before.length - 1; i >= 0; i--) {
+        const label = before[i];
+        if (label === undefined) break;
+        const following = run[0];
+        if (following !== undefined && AMOUNT_LIKE.test(q.slice(label.end, following.at))) break;
+        run.unshift(label);
+      }
+    } else {
+      const after = labels.find((label) => label.at >= from + amount[0].length);
+      run = after === undefined ? [] : [after];
+    }
+    const oldest = Math.min(...run.map((label) => label.start));
+    if (run.length > 0 && oldest < minStudyYear)
+      return run.length > 1
+        ? `the amount cannot be tied to one of the study years ${run.map((l) => l.start).join(", ")}`
+        : `the amount sits next to the study year ${oldest}, before ${minStudyYear}`;
+  }
+  return null;
+}
+
+// `minStudyYear` is the year the study year the amount must be for starts in (currentStudyYear());
+// it is an argument so a verification is reproducible.
+export function checkTuition(amountMinor: number, quote: string, minStudyYear: number): FactCheck {
   if (amountMinor === 0)
     return NO_FEE.test(quote)
       ? ok
       : fail("a zero fee needs a quote saying there are no tuition fees");
   if (!amountInQuote(amountMinor / 100, quote))
     return fail(`the amount ${amountMinor / 100} does not appear in the quote`);
-  const year = studyYearNearAmount(amountMinor / 100, quote);
-  return year !== null && year < minStudyYear
-    ? fail(`the amount sits next to the study year ${year}, before ${minStudyYear}`)
-    : ok;
+  const stale = staleStudyYear(amountMinor / 100, quote, minStudyYear);
+  return stale === null ? ok : fail(stale);
 }
 
 // The day written right next to the month: "15 July", "15. Juli", "July 15", "15.07.", "15/07". A

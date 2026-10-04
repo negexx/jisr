@@ -8,6 +8,7 @@ import { checkVerified } from "./checker";
 import { enrichProposal, type National, readNational } from "./enrich-fr";
 import {
   CHANNEL_SLUGS,
+  currentStudyYear,
   decodeEntities,
   LANGUAGE_CODES,
   pageText,
@@ -93,8 +94,13 @@ export type Page = { url: string; text: string };
 const COUNTRY_NOTES: Record<string, string> = {
   FR: 'Do not output applicationChannel for this programme: a foreign-diploma applicant applies through Etudes en France / Campus France, which is set separately. Pages that say "apply on Parcoursup" describe French and European Bac holders.',
   DE: "applicationChannel for a foreign-diploma applicant: de-uni-assist-vpd if the pages say foreign applicants must first have their documents reviewed by uni-assist (the VPD, Vorpruefungsdokumentation, preliminary review); de-uni-assist if they apply through uni-assist; de-university-direct if they apply directly in the university's own application portal. Choose the one the pages state for international applicants, and quote that sentence.",
-  NL: 'applicationChannel is nl-studielink if the pages say to apply through Studielink. Tuition: an institution-wide fee page of the institution MAY be used for this bachelor programme when its quote states ONE non-EU amount (instellingscollegegeld / institutional fee, never the wettelijk collegegeld, which is the EU/EEA rate) for bachelor programmes or for all programmes, in the same sentence or table row as a study year of the current or the next study year (2026-2027 or later) and as voltijd/full-time or all modes: then it applies to this programme, so propose it with that quote (amount for the year, period "year"). If the page gives several amounts by programme group, faculty, mode or year and the quote does not tie one of them to a bachelor full-time programme, or gives only a range ("varies per programme", "from ... to ..."), leave tuition out and say why in notes.',
+  NL: 'applicationChannel is nl-studielink if the pages say to apply through Studielink. Tuition: a fee stated on this programme\'s own page always wins over an institution-wide figure. An institution-wide fee page of the institution MAY otherwise be used for this bachelor programme when its quote states ONE non-EU amount (instellingscollegegeld / institutional fee; never the wettelijk collegegeld, which is the EU/EEA rate, and never an instellingscollegegeld the page says is for EEA students, for example for a second degree) for bachelor programmes or for all programmes, in the same sentence or table row as the study year {STUDY_YEAR} or a later one and as voltijd/full-time or all modes: then it applies to this programme, so propose it with that quote (amount for the year, period "year"). If the page lists exceptions ("m.u.v.", "behalve", "except", a separate line for particular programmes), use the general amount only if this programme is not among them. If the page gives several amounts by programme group, faculty, mode or year and the quote does not tie one of them to a bachelor full-time programme, or gives only a range ("varies per programme", "from ... to ..."), leave tuition out and say why in notes.',
 };
+
+// The note for a country; {STUDY_YEAR} becomes the study year running now ("2026-2027").
+function noteFor(country: string, studyYear: number): string {
+  return (COUNTRY_NOTES[country] ?? "").replace("{STUDY_YEAR}", `${studyYear}-${studyYear + 1}`);
+}
 
 export type ProgrammeMeta = {
   slug: string;
@@ -113,7 +119,12 @@ function block(page: Page): string {
 }
 
 export function buildPrompt(
-  input: ProgrammeMeta & { shared: readonly Page[]; own: readonly Page[] },
+  input: ProgrammeMeta & {
+    shared: readonly Page[];
+    own: readonly Page[];
+    // the study year the prompt names (default: the current one); a test or a rerun can fix it
+    studyYear?: number;
+  },
 ): { system: string; user: string } {
   const sharedUrls = new Set(input.shared.map((p) => p.url));
   const own = input.own.filter((p) => !sharedUrls.has(p.url));
@@ -121,7 +132,7 @@ export function buildPrompt(
     COUNTRY_NOTES[input.country] === undefined
       ? ""
       : `
-${COUNTRY_NOTES[input.country]}`
+${noteFor(input.country, input.studyYear ?? currentStudyYear())}`
   }`;
   return {
     system: INSTRUCTION,

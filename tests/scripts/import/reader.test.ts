@@ -72,6 +72,12 @@ describe("buildPrompt", () => {
     expect(user).toContain("instellingscollegegeld");
     expect(user).toContain("wettelijk collegegeld");
     expect(user.indexOf("instellingscollegegeld")).toBeGreaterThan(user.indexOf("FEES TEXT"));
+    expect(buildPrompt({ ...meta, shared, own, studyYear: 2027 }).user).toContain("2027-2028");
+    expect(buildPrompt({ ...meta, shared, own, studyYear: 2027 }).user).not.toContain(
+      "{STUDY_YEAR}",
+    );
+    expect(user).toContain("own page always wins");
+    expect(user).toContain("m.u.v.");
     expect(system).toBe(INSTRUCTION);
     for (const country of ["FR", "DE"])
       expect(buildPrompt({ ...meta, country, shared, own }).user).not.toContain(

@@ -86,15 +86,15 @@ describe("checkLanguages", () => {
 
 describe("checkTuition", () => {
   it("finds the amount in several number formats", () => {
-    expect(checkTuition(150000, "Tuition: €1,500 per semester").ok).toBe(true);
-    expect(checkTuition(150000, "Studiengebühr 1.500 Euro").ok).toBe(true);
-    expect(checkTuition(150000, "Frais : 1 500 euros").ok).toBe(true);
-    expect(checkTuition(289500, "2 895 € pour une licence").ok).toBe(true);
-    expect(checkTuition(260100, "collegegeld € 2.601").ok).toBe(true);
+    expect(checkTuition(150000, "Tuition: €1,500 per semester", 2026).ok).toBe(true);
+    expect(checkTuition(150000, "Studiengebühr 1.500 Euro", 2026).ok).toBe(true);
+    expect(checkTuition(150000, "Frais : 1 500 euros", 2026).ok).toBe(true);
+    expect(checkTuition(289500, "2 895 € pour une licence", 2026).ok).toBe(true);
+    expect(checkTuition(260100, "collegegeld € 2.601", 2026).ok).toBe(true);
   });
   it("does not match a longer number that merely contains the digits", () => {
-    expect(checkTuition(150000, "Fee: 21,500 EUR").ok).toBe(false);
-    expect(checkTuition(150000, "No fee stated").ok).toBe(false);
+    expect(checkTuition(150000, "Fee: 21,500 EUR", 2026).ok).toBe(false);
+    expect(checkTuition(150000, "No fee stated", 2026).ok).toBe(false);
   });
   it("takes the study year written next to the amount, and refuses a past one", () => {
     const current = "Studiejaar 2026-2027 Instellingscollegegeld Voltijd: € 10.360";
@@ -115,23 +115,75 @@ describe("checkTuition", () => {
     expect(checkTuition(1036000, "Instellingscollegegeld € 10.360", 2026).ok).toBe(true);
     expect(checkTuition(0, "There are no tuition fees 2025-2026", 2026).ok).toBe(true);
   });
+  it("refuses an old-year amount when the years are column headers, and accepts the real current one next to its own label", () => {
+    const table =
+      "er zijn 2 mogelijkheden: 2025-2026 2026-2027 wettelijk collegegeld € 2.601,- € 2.694,- instellingscollegegeld € 10.164,- € 10.528,-";
+    expect(checkTuition(1016400, table, 2026).ok).toBe(false);
+    expect(checkTuition(1052800, table, 2026).ok).toBe(false);
+    expect(
+      checkTuition(1052800, "Het reguliere instellingscollegegeld van € 10.528", 2026).ok,
+    ).toBe(true);
+    expect(
+      checkTuition(
+        1052800,
+        "2026-2027 2027-2028 instellingscollegegeld € 10.528,- € 10.800,-",
+        2026,
+      ).ok,
+    ).toBe(true);
+  });
+
+  it("looks at the label before the amount first, and checks every occurrence of the amount", () => {
+    const inholland =
+      "studiejaar 2026-2027 Instellingscollegegeld Voltijd en duaal: € 10.360 Deeltijd: € 9.976 Oekraïne vanaf het studiejaar 2024-2025";
+    expect(checkTuition(1036000, inholland, 2026).ok).toBe(true);
+    const paren = "Tuition 2026-2027: € 10.360 (2025-2026: € 10.164)";
+    expect(checkTuition(1036000, paren, 2026).ok).toBe(true);
+    expect(checkTuition(1016400, paren, 2026).ok).toBe(false);
+    const twice = "2025-2026: € 10.164 en daarna 2026-2027: € 10.164";
+    expect(checkTuition(1016400, twice, 2026).ok).toBe(false);
+    expect(checkTuition(1016400, "Voor € 10.164 geldt 2026-2027", 2026).ok).toBe(true);
+    expect(checkTuition(1016400, "Voor € 10.164 geldt 2025-2026", 2026).ok).toBe(false);
+    expect(
+      checkTuition(1036000, "2027-2028 collegegeld € 10.360 en 2026-2027 collegegeld € 9.775", 2027)
+        .ok,
+    ).toBe(true);
+  });
+
+  it("does not take dates, spans of years or a 'since' label for a study year", () => {
+    expect(
+      checkTuition(1036000, "Updated 2025-11-03: instellingscollegegeld € 10.360", 2026).ok,
+    ).toBe(true);
+    expect(checkTuition(1036000, "Tarief 2024-2027: € 10.360", 2026).ok).toBe(true);
+    expect(
+      checkTuition(
+        150000,
+        "Seit dem Wintersemester 2017/18 beträgt der Beitrag 1.500 Euro pro Semester",
+        2026,
+      ).ok,
+    ).toBe(true);
+    expect(checkTuition(1036000, "Fee since 2019-2020: € 10.360", 2026).ok).toBe(true);
+  });
+
   it("knows which study year is the current one", () => {
     expect(currentStudyYear(new Date("2026-10-04"))).toBe(2026);
     expect(currentStudyYear(new Date("2026-08-01"))).toBe(2026);
     expect(currentStudyYear(new Date("2026-03-01"))).toBe(2025);
   });
   it("accepts a zero fee only with a statement that there are none", () => {
-    expect(checkTuition(0, "There are no tuition fees for this programme").ok).toBe(true);
-    expect(checkTuition(0, "Semester contribution 150 euros").ok).toBe(false);
+    expect(checkTuition(0, "There are no tuition fees for this programme", 2026).ok).toBe(true);
+    expect(checkTuition(0, "Semester contribution 150 euros", 2026).ok).toBe(false);
   });
   it("accepts the register wording 'Tuition fees per semester None' as a zero fee", () => {
-    expect(checkTuition(0, "Tuition fees per semester None").ok).toBe(true);
-    expect(checkTuition(0, "Tuition fees: none").ok).toBe(true);
+    expect(checkTuition(0, "Tuition fees per semester None", 2026).ok).toBe(true);
+    expect(checkTuition(0, "Tuition fees: none", 2026).ok).toBe(true);
   });
   it("does not read 'none' elsewhere as a zero fee", () => {
-    expect(checkTuition(0, "Semester contribution 150 euros. Scholarships: none").ok).toBe(false);
+    expect(checkTuition(0, "Semester contribution 150 euros. Scholarships: none", 2026).ok).toBe(
+      false,
+    );
     expect(
-      checkTuition(0, "Tuition fees per semester None for EU students, 1,500 EUR for non-EU").ok,
+      checkTuition(0, "Tuition fees per semester None for EU students, 1,500 EUR for non-EU", 2026)
+        .ok,
     ).toBe(false);
   });
 });
