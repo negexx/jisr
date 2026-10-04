@@ -285,9 +285,9 @@ export function currentStudyYear(now: Date = new Date()): number {
 // the next year, so a date ("2025-11-03") and a span ("2024-2027") are not study years.
 const STUDY_YEAR = /(?<!\d)(20\d\d)\s*[-/–]\s*((?:20)?\d\d)(?![\d]|\s*[-/–]\s*\d)/g;
 // "since the winter semester 2017/18": a start of something, not the year the amount is for
-const SINCE_LABEL = /(?:seit|since|vanaf|from|ab|sinds)\s+(?:dem\s+|het\s+)?(?:\w+\s+)?$/i;
+const SINCE_LABEL = /\b(?:seit|since|sinds)\s+(?:dem\s+|het\s+)?(?:\w+\s+)?$/i;
 // something that reads as an amount of money: a euro sign or a number with a thousands group
-const AMOUNT_LIKE = /€|\beur\b|\d{1,3}[.,]\d{3}/i;
+const AMOUNT_LIKE = /€\s*\d|\d{1,3}[.,]\d{3}/;
 
 type StudyYearLabel = { start: number; at: number; end: number };
 

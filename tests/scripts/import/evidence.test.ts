@@ -164,6 +164,18 @@ describe("checkTuition", () => {
     expect(checkTuition(1036000, "Fee since 2019-2020: € 10.360", 2026).ok).toBe(true);
   });
 
+  it("still refuses an old study year written after vanaf, from, ab or inside another word, and a header run split by the word eur", () => {
+    for (const quote of [
+      "Vanaf studiejaar 2025-2026 bedraagt het instellingscollegegeld € 10.164",
+      "Tuition fee from 2025/26: € 10,164 per year",
+      "Ab dem Wintersemester 2025/26 betragen die Studiengebühren 10.164 Euro",
+      "zie tab 2025-2026 instellingscollegegeld € 10.164",
+    ])
+      expect(checkTuition(1016400, quote, 2026).ok).toBe(false);
+    const split = "2025-2026 (in eur) 2026-2027 (in eur) instellingscollegegeld 10.164 10.528";
+    expect(checkTuition(1016400, split, 2026).ok).toBe(false);
+  });
+
   it("knows which study year is the current one", () => {
     expect(currentStudyYear(new Date("2026-10-04"))).toBe(2026);
     expect(currentStudyYear(new Date("2026-08-01"))).toBe(2026);
