@@ -569,7 +569,7 @@ describe("sampleSheet of a scholarship: what the reader must confirm", () => {
       "Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.",
     );
     expect(sheet).toContain(
-      "Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master.",
+      "Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students.",
     );
     expect(sheet).toContain("grants.example");
     expect(sheet).toContain("Confirm: this is the provider's own site.");

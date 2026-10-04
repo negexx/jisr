@@ -92,8 +92,10 @@ export type ScholarshipVerified =
   | { ok: false; reasons: string[] };
 
 // --- level ----------------------------------------------------------------------------------------
-// The scholarship itself must be for bachelor (first-degree) students. A quote that makes it a
+// The scholarship itself must be open to bachelor (first-degree) students. A quote that makes it a
 // master/doctoral scholarship, or that requires a bachelor's degree to apply, proves the opposite.
+// A scheme that lists bachelor AND master as the levels it covers ("bachelor's or master's") is open
+// to bachelor students too: Jisr only shows it on bachelor programmes (a both-levels quote).
 const GRADUATE_LEVEL =
   /\bmaster|postgraduate|(?<!under)\bgraduate (?:students|studies|programmes?|programs?)|\bph\.?d\b|doctora|\bpromotion\b/i;
 const BACHELOR_PREREQUISITE: readonly RegExp[] = [
@@ -101,13 +103,32 @@ const BACHELOR_PREREQUISITE: readonly RegExp[] = [
   /\bbachelor['’]?s?(?: degree)?\s+(?:holders?|required|is required)/i,
   /\b(?:with|having|have|has)\s+(?:an?\s+|completed\s+(?:an?\s+)?)?bachelor/i,
   /titulaires?\s+d['’]une\s+licence/i,
-  /\bbachelor-?abschluss|abgeschlossen\w*\s+bachelor/i,
+  /\bbachelor-?abschluss|abgeschlossen\w*\s+bachelor|\bbachelor-?absolvent/i,
   // graduates of a bachelor have finished it: the scholarship is for what comes after
   /\bbachelor['’]?s?(?:\s+degree)?\s+(?:graduates?|holders?|alumni|diploma)\b/i,
   /\b(?:after|finished|obtained|earned|completed)\s+(?:their\s+|a\s+|an\s+)?bachelor/i,
+  // "a bachelor's or master's degree is required": a prerequisite even when both are named
+  /\bmaster['’]?s?(?:\s+degree)?\s+(?:holders?|required|is required|is needed|needed)\b/i,
 ];
-const isGraduateLevel = (quote: string): boolean =>
+// "bachelor's or master's", "bachelor and master programmes", "Bachelor- und Masterstudiengänge",
+// "bachelor- of masteropleiding", "licence ou master", "bachelor/master"; the master word is taken too.
+const BOTH_LEVELS =
+  /\b(?:bachelor|licence)['’]?s?-?(?:\s+(?:degrees?|students?|programmes?|programs?|courses?|studies))?\s*(?:\/|,|\b(?:or|and|und|of|ou|et|en)\b)\s*master[^\s.,;:!?)]*/gi;
+
+// Any graduate wording at all, a both-levels phrase included.
+const mentionsGraduate = (quote: string): boolean =>
   GRADUATE_LEVEL.test(quote) || BACHELOR_PREREQUISITE.some((pattern) => pattern.test(quote));
+const namesBothLevels = (quote: string): boolean => new RegExp(BOTH_LEVELS.source, "i").test(quote);
+
+// A graduate level or a prerequisite that the quote does not explain away as "bachelor's or
+// master's": no prerequisite wording anywhere, and nothing left that is master or doctoral once the
+// both-levels phrase is taken out. Master only, or doctoral, is graduate.
+function isGraduateLevel(quote: string): boolean {
+  if (BACHELOR_PREREQUISITE.some((pattern) => pattern.test(quote))) return true;
+  if (!GRADUATE_LEVEL.test(quote)) return false;
+  if (!namesBothLevels(quote)) return true;
+  return GRADUATE_LEVEL.test(quote.replace(BOTH_LEVELS, " "));
+}
 
 const UNDERGRADUATE: readonly RegExp[] = [
   /\bundergraduate/i,
@@ -118,7 +139,7 @@ const UNDERGRADUATE: readonly RegExp[] = [
   /\bbachelor-?studi(?:um|engang|e)\b|\bbachelorstudent/i,
 ];
 const isUndergraduate = (quote: string): boolean =>
-  UNDERGRADUATE.some((pattern) => pattern.test(quote));
+  UNDERGRADUATE.some((pattern) => pattern.test(quote)) || namesBothLevels(quote);
 
 // --- eligibility ----------------------------------------------------------------------------------
 const EXCLUSION =
@@ -272,6 +293,38 @@ const clauseBefore = (quote: string, to: number, size = WINDOW): string =>
     .split(/\d|[.;!?]\s/)
     .at(-1) ?? "";
 
+// The sentence that holds a position: from the previous sentence break to the next one.
+function sentenceAround(quote: string, position: number): string {
+  const breaks = [...quote.slice(0, position).matchAll(/[.;!?]\s/g)];
+  const last = breaks.at(-1);
+  const next = quote.slice(position).search(/[.;!?](?:\s|$)/);
+  return quote.slice(
+    last === undefined ? 0 : last.index + 1,
+    next < 0 ? quote.length : position + next,
+  );
+}
+const numbersIn = (text: string): number =>
+  (text.match(/\d+(?:[.,\s ]\d{3})*(?:[.,]\d+)?/g) ?? []).length;
+
+// "The scholarship amounts to EUR 5,000. You will receive this in the first year of your studies.":
+// the period of a one-time amount may sit in the next sentence, when the amount ends its own sentence
+// and that sentence is about the payment ("You will receive this", "It is paid", "paid out").
+const PAID_SENTENCE = /^(?:you will receive (?:this|it)|it is paid|this is paid|paid out)\b/i;
+const ONCE_PHRASE = /\bin (?:the|your|their) first year\b|\bfor one year only\b|\bone[- ]?time\b/i;
+function paidOnceNextSentence(quote: string, from: number): boolean {
+  const rest = quote.slice(from);
+  const end = rest.search(/[.!?](?:\s|$)/);
+  if (end < 0) return false;
+  const ownTail = rest.slice(0, end);
+  if (/\d/.test(ownTail) || ownTail.length > 25) return false;
+  const sentence =
+    rest
+      .slice(end + 1)
+      .trimStart()
+      .split(/[.!?](?:\s|$)/)[0] ?? "";
+  return PAID_SENTENCE.test(sentence) && ONCE_PHRASE.test(sentence);
+}
+
 type SupportAmount = {
   min: number;
   max: number;
@@ -286,11 +339,14 @@ function supportStated(amount: SupportAmount, quote: string): boolean {
       if (lo.start > hi.start) continue;
       // "EUR 900 per month for Master students" is not the amount of a Bachelor scholarship
       // nor is "Master students: EUR 900 per month" (the level named before the amount)
-      if (
-        isGraduateLevel(clauseAfter(quote, hi.end, 60)) ||
-        isGraduateLevel(clauseBefore(quote, hi.start, 40))
-      )
-        continue;
+      const near = [clauseAfter(quote, hi.end, 60), clauseBefore(quote, hi.start, 40)];
+      if (near.some(mentionsGraduate)) {
+        // "EUR 400 per month for Bachelor and Master students": the only amount of a clause that names
+        // both levels applies to both and is kept; with two amounts in that clause none can be told
+        // apart. A clause that is master only (or doctoral) is not a bachelor amount either way.
+        const clause = sentenceAround(quote, hi.start);
+        if (numbersIn(clause) !== 1 || isGraduateLevel(clause)) continue;
+      }
       // "up to 934 euros a month" is a ceiling, not the amount everybody gets
       if (amount.min === amount.max && CAP.test(quote.slice(Math.max(0, hi.start - 20), hi.start)))
         continue;
@@ -308,6 +364,7 @@ function supportStated(amount: SupportAmount, quote: string): boolean {
           ? `${clauseBefore(quote, lo.start)} ${after}`
           : after;
       if (PER_WORDS[amount.per].test(around)) return true;
+      if (amount.per === "once" && paidOnceNextSentence(quote, hi.end)) return true;
     }
   }
   return false;

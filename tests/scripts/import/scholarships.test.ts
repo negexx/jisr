@@ -35,6 +35,8 @@ const pages: Record<string, string> = {
     "Applicants from non-EU countries are not eligible for this grant. Non-EU applicants cannot apply to this grant. International applicants: only open to EU citizens living in Germany. International applicants: only for German nationals studying abroad. Applicants from non-EU countries may apply. Applicants from North Africa and the Middle East may apply. Staff of the Foreign Office may apply for this scholarship. Non-EU students are ineligible for this grant. This grant is reserved for German citizens; non-EU applicants should see the DAAD database. Applicants must not be from non-EU countries. Students from South Africa may apply as international applicants. Students from all countries except Morocco may apply as international students. EU and non-EU students are eligible. Students from Morocco may apply as international applicants. Applicants must not have lived in Germany for more than 15 months; international students from all countries may apply. International applicants are not entitled to this grant. International applicants should apply to the DAAD instead. International applicants: only EU citizens are funded.",
   [`${HOME}/pay`]:
     "EUR 300 per month for Bachelor students and EUR 900 per month for Master students. Students receive no more than EUR 934 per month. Non-European students receive up to 934 euros a month. Grants range from 500 up to 934 euros a month. Non-European students receive 5,000 per year. EUR 934 per month for up to 3 years. Once admitted, students receive EUR 934 per month. A total of EUR 8,000 is paid to each non-EU student. Students from abroad receive 1.200 euros per year, paid in two instalments. Paid in 2027: EUR 5,000.50 in total. Bachelor students: EUR 300 per month; Master students: EUR 900 per month. Master students receive EUR 900 per month.",
+  [`${HOME}/both`]:
+    "The NL Scholarship (formerly known as Holland Scholarship) is meant for international students from outside the European Economic Area (EEA) who want to do their bachelor’s or master’s in the Netherlands. You are applying for a full-time bachelor’s or master’s programme at one of the participating Dutch higher education institutions. Your nationality is non-EEA. The scholarship amounts to € 5,000. You will receive this in the first year of your studies. Please note that this is not a full-tuition scholarship. Das Stipendium gilt für Bachelor- und Masterstudiengänge. Bachelor- of masteropleiding. Pour une licence ou master. Open to bachelor/master students. Open to Bachelor graduates who want to start a Master. Open to master’s or doctoral candidates. This is for Master students. Applicants must hold a Bachelor's degree to apply for this Master scholarship. A bachelor’s or master’s degree is required. Scholarship of EUR 300 or EUR 900 per month for Bachelor and Master students. Bachelor and Master students receive EUR 400 per month. Bachelor and Master students receive EUR 400 in the first year. It is paid out in one go as a one-time grant of EUR 700 to bachelor’s and master’s students. Bachelor and Master students receive EUR 400 per month and master students EUR 900 per month.",
   [`${HOME}/dates`]: "Applications close on 15 March 2027.",
   [`${HOME}/dates2`]:
     "EU applicants: 15 March 2027; non-EU applicants: 15 January 2027. Deadline for German applicants is 15 March 2027, for foreign applicants 1 February 2027. International applicants must apply by 15 March 2027. The deadline is 15 March 2027 for EU applicants and 15 January 2027 for non-EU applicants. Deadline: 15 March 2027 (international applicants: 15 January 2027). International applicants apply between 15 March 2027 and 15 May 2027. Results for international applicants are announced on 15 March 2027. International applicants will be informed of the results by 15 March 2027. Interviews with international applicants take place until 15 March 2027. Interviews for international applicants take place before 15 March 2027. The portal opens for international applicants on 15 March 2027 and closes later. The application deadline for international students is 15 March 2027. Non-EU applicants can apply until 15 March 2027. Date limite de candidature pour les étudiants internationaux : 15 mars 2027. Bewerbungsfrist für internationale Bewerber: 15. März 2027. Bewerbungsschluss für internationale Bewerber ist der 15. März 2027. International applicants will be notified by 15 March 2027. The programme starts on 15 March 2027 for international applicants. For more information: international applicants must apply by 15 January 2027. Bewerbungsfrist für internationale Bewerber im Bachelor Informatik: 15. Juli 2027. International students starting in September must apply by 15 January 2027.",
@@ -1068,5 +1070,129 @@ describe("evidence for nationalities", () => {
     const result = await verifyScholarship(proposal(), getText);
     if (!result.ok) throw new Error("expected ok");
     expect(result.evidence).toContainEqual({ fact: "nationality:MA", ...ELIGIBILITY });
+  });
+});
+
+describe("level: schemes that cover both Bachelor and Master", () => {
+  const BOTH = `${HOME}/both`;
+  const levelOnly = (...quotes: string[]) =>
+    okOrReasons({ evidence: evidence({ level: QUOTES(BOTH, ...quotes) }) });
+
+  it.each([
+    "who want to do their bachelor’s or master’s in the Netherlands",
+    "You are applying for a full-time bachelor’s or master’s programme at one of the participating Dutch higher education institutions",
+    "Das Stipendium gilt für Bachelor- und Masterstudiengänge",
+    "Bachelor- of masteropleiding",
+    "Pour une licence ou master",
+    "Open to bachelor/master students",
+  ])("accepts a quote that lists bachelor next to master (%s)", async (quote) => {
+    const result = await levelOnly(quote);
+    expect(reasonsOf(result)).toBe("");
+    expect(result.ok).toBe(true);
+    if (result.ok) expect(at(result.record, "level")).toBe("bachelor");
+  });
+
+  it.each([
+    "This is for Master students",
+    "Applicants must hold a Bachelor's degree to apply for this Master scholarship",
+    "Open to Bachelor graduates who want to start a Master",
+    "Open to master’s or doctoral candidates",
+    "A bachelor’s or master’s degree is required",
+  ])("still rejects master-only, doctoral and prerequisite wording (%s)", async (quote) => {
+    const result = await levelOnly(quote);
+    expect(result.ok).toBe(false);
+    expect(reasonsOf(result)).toMatch(/level/i);
+  });
+
+  it("rejects when a both-levels quote sits next to a master-only one", async () => {
+    const result = await levelOnly(
+      "who want to do their bachelor’s or master’s in the Netherlands",
+      "This is for Master students",
+    );
+    expect(result.ok).toBe(false);
+  });
+
+  it("tolerates both-levels wording in an eligibility quote, not master-only", async () => {
+    const ok = await okOrReasons({
+      eligibleNationalities: [],
+      evidence: evidence({
+        eligibility: QUOTES(
+          BOTH,
+          "You are applying for a full-time bachelor’s or master’s programme at one of the participating Dutch higher education institutions",
+          "Your nationality is non-EEA",
+          "The NL Scholarship (formerly known as Holland Scholarship) is meant for international students from outside the European Economic Area (EEA) who want to do their bachelor’s or master’s in the Netherlands",
+        ),
+        level: QUOTES(BOTH, "who want to do their bachelor’s or master’s in the Netherlands"),
+      }),
+    });
+    expect(reasonsOf(ok)).toBe("");
+    const bad = await okOrReasons({
+      eligibleNationalities: [],
+      evidence: evidence({
+        eligibility: QUOTES(
+          BOTH,
+          "Open to master’s or doctoral candidates",
+          "The NL Scholarship (formerly known as Holland Scholarship) is meant for international students from outside the European Economic Area (EEA) who want to do their bachelor’s or master’s in the Netherlands",
+        ),
+        level: QUOTES(BOTH, "who want to do their bachelor’s or master’s in the Netherlands"),
+      }),
+    });
+    expect(bad.ok).toBe(false);
+  });
+});
+
+describe("support: an amount for a scheme that covers both levels", () => {
+  const BOTH = `${HOME}/both`;
+  const run = async (quote: string, per: string, amount: number) => {
+    const result = await okOrReasons({
+      support: { amount: { min: amount, max: amount, currency: "EUR", per }, covers: [] },
+      evidence: evidence({ support: QUOTES(BOTH, quote) }),
+    });
+    if (!result.ok) throw new Error(result.reasons.join(" | "));
+    return at(result.record, "support.value.amount.min") ?? null;
+  };
+
+  it("keeps the only amount of a clause that names bachelor and master", async () => {
+    expect(await run("Bachelor and Master students receive EUR 400 per month", "month", 400)).toBe(
+      40000,
+    );
+  });
+
+  it("drops an amount when the both-levels clause has two amounts", async () => {
+    expect(
+      await run(
+        "Scholarship of EUR 300 or EUR 900 per month for Bachelor and Master students",
+        "month",
+        300,
+      ),
+    ).toBeNull();
+    expect(
+      await run(
+        "Bachelor and Master students receive EUR 400 per month and master students EUR 900 per month",
+        "month",
+        900,
+      ),
+    ).toBeNull();
+  });
+
+  it("keeps the NL amount: 'in the first year' in the next sentence is a one-time period", async () => {
+    const quote =
+      "The scholarship amounts to € 5,000. You will receive this in the first year of your studies.";
+    expect(await run(quote, "once", 5000)).toBe(500000);
+    expect(await run(quote, "month", 5000)).toBeNull();
+    expect(await run(quote, "year", 5000)).toBeNull();
+  });
+
+  it("takes 'one-time' or 'in the first year' only from a sentence about the payment", async () => {
+    expect(
+      await run("Bachelor and Master students receive EUR 400 in the first year", "once", 400),
+    ).toBeNull();
+    expect(
+      await run(
+        "It is paid out in one go as a one-time grant of EUR 700 to bachelor’s and master’s students",
+        "once",
+        700,
+      ),
+    ).toBe(70000);
   });
 });
