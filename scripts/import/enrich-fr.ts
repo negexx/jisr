@@ -130,7 +130,10 @@ const FRENCH_MONTHS = [
 ];
 
 function isoFromFrench(day: string, month: string, year: string): string | null {
-  const bare = month.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  const bare = month
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
   const index = FRENCH_MONTHS.indexOf(bare);
   if (index === -1) return null;
   const iso = `${year}-${String(index + 1).padStart(2, "0")}-${day.padStart(2, "0")}`;
@@ -156,7 +159,10 @@ export function calendarIntakes(
     return null;
   const applicationOpens = isoFromFrench(d1, m1, y1);
   const applicationDeadline = isoFromFrench(d2, m2, y2);
-  return applicationOpens === null || applicationDeadline === null
+  // ISO dates compare as text: a range that ends before it starts was misread
+  return applicationOpens === null ||
+    applicationDeadline === null ||
+    applicationOpens > applicationDeadline
     ? null
     : { startDate: null, applicationOpens, applicationDeadline };
 }

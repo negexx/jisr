@@ -163,6 +163,22 @@ describe("calendarIntakes", () => {
       }),
     ).toBeNull();
   });
+  it("is null when the range is reversed", () => {
+    expect(
+      calendarIntakes({
+        url: PAGES.applyBut,
+        quote: "Du 15 novembre 2026 au 1er octobre 2026 à 23h59 (heure marocaine).",
+      }),
+    ).toBeNull();
+  });
+  it("is null for the shared-month form, which names the month once", () => {
+    expect(
+      calendarIntakes({
+        url: PAGES.applyBut,
+        quote: "Du 1er au 15 octobre 2026 à 23h59 (heure marocaine).",
+      }),
+    ).toBeNull();
+  });
 });
 
 describe("buildProposal", () => {
