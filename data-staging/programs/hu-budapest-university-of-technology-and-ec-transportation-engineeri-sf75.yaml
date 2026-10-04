@@ -1,0 +1,91 @@
+slug: hu-budapest-university-of-technology-and-ec-transportation-engineeri-sf75
+institution: hu-budapest-university-of-technology-and-ec
+country: HU
+city: budapest
+field: engineering
+level: bachelor
+name: Transportation Engineering
+summary:
+  fr:
+    text: Transportation Engineering, Budapest University of Technology and Economics (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Transportation Engineering, Budapest University of Technology and Economics (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Transportation Engineering, Budapest University of Technology and Economics (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/75
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Diplôme d'études secondaires (high school degree) exigé; test d'admission et entretien oral requis. Vérifiez les détails sur la page e-admission du BME.
+          status: draft
+        en:
+          text: Eligible high school degree required; admission tests and an oral entrance examination are required. Check details on the BME e-admission page.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/75
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-budapest-university-of-technology-and-ec-transportation-engineeri-sf75
+  name: Transportation Engineering
+  institution: Budapest University of Technology and Economics
+  city: Budapest
+  field: engineering
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/75
+  todo: "Study Finder lists: branch Engineering Science, language English, duration 7 semesters, location Budapest, scholarship programmes: none listed; no contact website listed: find the programme's own page on the institution's site; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:75
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/75
+      quote: "Duration of the course / programme: 7 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/75
+      quote: "Language of instruction: English"
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/75
+      quote: general minimum requirements are an eligible high school degree
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/75
+      quote: "Entrance examination: Yes"
+  notes: 'No tuition figure for self-financed non-EU/EEA students appears on the supplied page: the page only states "State Scholarships Not available" for this programme and gives no fee. So no tuition fact is included and the fee must be checked with the university. No application deadline, application channel/platform, or document list is stated on the page. The page is the Studyfinder entry for the programme.'

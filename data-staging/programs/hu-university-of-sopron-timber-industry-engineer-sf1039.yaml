@@ -1,0 +1,172 @@
+slug: hu-university-of-sopron-timber-industry-engineer-sf1039
+institution: hu-university-of-sopron
+country: HU
+city: sopron
+field: engineering
+level: bachelor
+name: Timber Industry Engineering
+summary:
+  fr:
+    text: Timber Industry Engineering, University of Sopron (Sopron). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Timber Industry Engineering, University of Sopron (Sopron). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Timber Industry Engineering, University of Sopron (Sopron). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://fmk.uni-sopron.hu/en_GB/timber-industry-engineering-bsc
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 300000
+    currency: USD
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'admission oral en ligne (Skype) fait partie de la sélection ; les documents manquants sont signalés et doivent être envoyés.
+          status: draft
+        en:
+          text: An oral online (Skype) admission interview is part of selection; missing documents are flagged and must be sent.
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les documents doivent être en anglais ou en allemand ; sinon une traduction certifiée doit être jointe.
+          status: draft
+        en:
+          text: Documents must be in English or German; otherwise a certified translation must be attached.
+          status: draft
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les frais de dossier de 150 USD (non remboursables) doivent être payés avant de commencer le formulaire de candidature.
+          status: draft
+        en:
+          text: The 150 USD non-refundable application fee must be paid before starting the online application form.
+          status: draft
+    - id: req-5
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les programmes BSc ne sont pas disponibles pour l'admission de février 2027 ; la date de début indiquée est septembre (pas d'année précisée).
+          status: draft
+        en:
+          text: BSc programmes are not available for the February 2027 intake; the stated starting date is September (no year given).
+          status: draft
+    - id: req-6
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Aucune date limite de candidature datée pour ce programme n'est donnée ; vérifiez le calendrier d'admission sur le site de l'université.
+          status: draft
+        en:
+          text: No dated application deadline for this programme is given; check the admission calendar on the university website.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://fmk.uni-sopron.hu/en_GB/timber-industry-engineering-bsc
+    last_verified_at: null
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/1039
+    last_verified_at: null
+  page-3:
+    url: https://international.uni-sopron.hu/application-page
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-sopron-timber-industry-engineer-sf1039
+  name: Timber Industry Engineering
+  institution: University of Sopron
+  city: Sopron
+  field: engineering
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/1039
+  todo: "Study Finder lists: branch Engineering Science, language English, duration 7 semesters, location Sopron, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://fmk.uni-sopron.hu/en_GB/timber-industry-engineering-bsc; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:1039
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://fmk.uni-sopron.hu/en_GB/timber-industry-engineering-bsc
+      quote: "Duration of the programme: 7 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/1039
+      quote: "Language of instruction: English"
+    - fact: tuition
+      url: https://fmk.uni-sopron.hu/en_GB/timber-industry-engineering-bsc
+      quote: "Tuition fee: 3 000 USD / semester"
+    - fact: applicationChannel
+      url: https://international.uni-sopron.hu/application-page
+      quote: Select your level of study below to access the Online Application Form.
+    - fact: requirements.req-1
+      url: https://fmk.uni-sopron.hu/en_GB/timber-industry-engineering-bsc
+      quote: "Language requirements: at least CEFR B2 level (or equivalent TOEFL or IELTS Academic) proficiency in English."
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/1039
+      quote: The entrance exam happens in the frame of a Skype-interview with the participation of the AC.
+    - fact: requirements.req-3
+      url: https://international.uni-sopron.hu/application-page
+      quote: Please ensure all documents are in English or German. If they are in another language, a certified translation must be attached.
+    - fact: requirements.req-4
+      url: https://international.uni-sopron.hu/application-page
+      quote: Before starting your online form, you must pay the 150 USD non-refundable application fee.
+    - fact: requirements.req-5
+      url: https://international.uni-sopron.hu/application-page
+      quote: BACHELOR'S (BSC) PROGRAMMES - Not available for the 2027 February intake.
+    - fact: requirements.req-6
+      url: https://international.uni-sopron.hu/application-page
+      quote: The payment link is only active during the general application period.
+  notes: "Tuition: the programme page states 3 000 USD / semester; no EUR/HUF figure is given for this programme, so the stated USD amount is used as-is (minor units 300000). Placement: the two Sopron pages do not say who applies via 'hu-university-direct' for this self-financed programme beyond directing applicants to the university's own Online Application Form, so that quote is used for the channel. The Stipendium Hungaricum availability mentioned by the Studyfinder page is a scholarship covering fees and is not treated as a tuition of 0. Intakes: the only dated intake (February 2027) explicitly excludes Bachelor's programmes, so it is not listed as this programme's intake. Documents: the list is that of the university's English-taught BA/BSc programmes; three items are marked 'Optional' on the page. Requirements: this programme's page does not state a subject list or a prior-study-years minimum; the entrance exam (Skype interview) is covered by a manual_check."

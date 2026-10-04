@@ -1,0 +1,117 @@
+slug: hu-international-business-school-bachelor-of-science-in-b-sf361
+institution: hu-international-business-school
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Bachelor of Science in Business Management (with Tourism)
+summary:
+  fr:
+    text: Bachelor of Science in Business Management (with Tourism), International Business School (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Bachelor of Science in Business Management (with Tourism), International Business School (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Bachelor of Science in Business Management (with Tourism), International Business School (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/361
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary school leaving certificate
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le niveau minimum de compétence linguistique (oral et écrit) est B2. Vérifiez les certificats acceptés et les équivalences.
+          status: draft
+        en:
+          text: Minimum level of language proficiency (oral and written) is B2. Check accepted certificates and equivalences.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: L'admission se fait sur dossier (secondary school leaving certificate) ; aucun examen d'entrée n'est requis.
+          status: draft
+        en:
+          text: Admission is based on documents (secondary school leaving certificate); no entrance examination is required.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/361
+    last_verified_at: null
+  page-2:
+    url: https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-tourism/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-international-business-school-bachelor-of-science-in-b-sf361
+  name: Bachelor of Science in Business Management (with Tourism)
+  institution: International Business School
+  city: Budapest
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/361
+  todo: "Study Finder lists: branch Economic Science, language English, duration 6 semesters, location Budapest, scholarship programmes: none listed; the programme's own page (Study Finder contact website): https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-tourism/; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:361
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/361
+      quote: "Duration of the course / programme: 6 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/361
+      quote: "Language of instruction: English"
+    - fact: documents
+      url: https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-tourism/
+      quote: Secondary school leaving certificate AND
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/361
+      quote: "Minimum level of language proficiency (oral): B2 Minimum level of language proficiency (written): B2"
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/361
+      quote: "Entrance examination: No"
+  notes: Les frais de scolarité de 4 000 EUR par semestre sont tirés de la page des frais de l'établissement pour les programmes de licence ; le libellé « Bachelor's degree programmes - The University of Buckingham » peut ne pas s'appliquer exclusivement à ce programme. La date limite de candidature n'est pas fournie pour les candidats internationaux ; la page des frais indique une date limite générale (30 septembre 2026) pour les programmes de licence, sans préciser qu'elle concerne les candidats non-UE. La date de début « September 2026 » indique une année mais pas un jour précis ; le jour a été fixé au 1er septembre par convention.

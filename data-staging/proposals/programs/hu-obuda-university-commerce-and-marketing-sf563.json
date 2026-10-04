@@ -1,0 +1,138 @@
+{
+  "slug": "hu-obuda-university-commerce-and-marketing-sf563",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/563",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/563",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/563",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 290000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://uni-obuda.hu/tuition-fees/",
+          "quote": "Commerce and Marketing Digital Manager 2,000 EUR 2,900 EUR Projectmanagement – B2B marketing"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://uni-obuda.hu/application-deadlines/",
+          "quote": "uploaded into the University’s online application system by the 1st of August the year of application"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "Matriculation / School Leaving Certificate",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://uni-obuda.hu/application-deadlines/",
+          "quote": "the Matriculation / School Leaving Certificate has to be uploaded into the University’s online application system"
+        },
+        {
+          "url": "https://uni-obuda.hu/application-deadlines/",
+          "quote": "only original or certified documents (original, or as certified copies, in English or in the original language with a certified English translation)"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition fee quote is from the institution-wide fee table on https://uni-obuda.hu/tuition-fees/, where the Commerce and Marketing row lists 2,900 EUR per semester under the Non-EEA column; the programme page (tempus.tpf.hu) states no fee. The application channel is stated on https://uni-obuda.hu/application-deadlines/ as the University's online application system. The programme page's Stipendium Hungaricum offer is a scholarship, not a self-financed route.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": null,
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/563",
+            "quote": "and English language certificate of level IELTS 5.0 at least"
+          },
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/563",
+            "quote": "Minimum level of language proficiency (written): IELTS 5.0"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des documents de fin d'études secondaires vérifiés (originaux ou copies certifiées, en anglais ou avec traduction anglaise certifiée) doivent être téléversés.",
+          "en": "Verified high school documents (originals or certified copies, in English or with a certified English translation) must be uploaded."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/563",
+            "quote": "All required high school documents uploaded (with verified English translations)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée est requis : épreuve écrite de mathématiques et entretien oral en anglais en ligne.",
+          "en": "An entrance examination is required: a written mathematics exam and an online oral English interview."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/563",
+            "quote": "Entrance examination: Yes"
+          },
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/563",
+            "quote": "Written: Mathematics examination Oral: Online English interview focusing on the applicant’s motivations"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le candidat doit avoir au moins 18 ans au début de la période d'études du semestre d'automne de la 1re année.",
+          "en": "The applicant must be at least 18 years old by the start of the study period in the Fall semester of Year 1."
+        },
+        "evidence": [
+          {
+            "url": "https://uni-obuda.hu/application-deadlines/",
+            "quote": "Applicants must be at least 18 years old by the start of the study period in the Fall semester of Year 1"
+          }
+        ]
+      }
+    ]
+  }
+}

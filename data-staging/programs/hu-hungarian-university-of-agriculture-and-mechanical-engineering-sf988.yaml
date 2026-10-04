@@ -1,0 +1,140 @@
+slug: hu-hungarian-university-of-agriculture-and-mechanical-engineering-sf988
+institution: hu-hungarian-university-of-agriculture-and
+country: HU
+city: godollo
+field: engineering
+level: bachelor
+name: Mechanical Engineering
+summary:
+  fr:
+    text: Mechanical Engineering, Hungarian University of Agriculture and Life Sciences (Gödöllő). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Mechanical Engineering, Hungarian University of Agriculture and Life Sciences (Gödöllő). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Mechanical Engineering, Hungarian University of Agriculture and Life Sciences (Gödöllő). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://ed.uni-mate.hu/en/bsc-in-mechanical-engineering
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 250000
+    currency: EUR
+    period: semester
+  source: page-3
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary school leaving certificate
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un entretien oral en ligne (MS Teams) fait partie de la sélection : préparez votre motivation, votre parcours et votre niveau d'anglais. Consultez aussi la liste des examens d'anglais B2 acceptés automatiquement."
+          status: draft
+        en:
+          text: "An online oral interview (MS Teams) is part of the selection: prepare your motivation, professional background and English skills. Also check the list of automatically accepted B2 English language exams."
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Après l'évaluation du diplôme et du certificat de langue, les candidats retenus passent un entretien MS Teams portant sur la motivation, les connaissances professionnelles et les compétences linguistiques.
+          status: draft
+        en:
+          text: After the assessment of the secondary school leaving certificate and language certificate, selected candidates have an MS Teams interview on motivation, professional background and language skills.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://ed.uni-mate.hu/en/bsc-in-mechanical-engineering
+    last_verified_at: null
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/988
+    last_verified_at: null
+  page-3:
+    url: https://ed.uni-mate.hu/en/tuition-fee
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-hungarian-university-of-agriculture-and-mechanical-engineering-sf988
+  name: Mechanical Engineering
+  institution: Hungarian University of Agriculture and Life Sciences
+  city: Gödöllő
+  field: engineering
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/988
+  todo: "Study Finder lists: branch Engineering Science, language English, duration 7 semesters, location Gödöllő, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://ed.uni-mate.hu/en/bsc-in-mechanical-engineering; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:988
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/988
+      quote: "Language of instruction: English"
+    - fact: teachingLanguages
+      url: https://ed.uni-mate.hu/en/bsc-in-mechanical-engineering
+      quote: "Language of conduction: Gödöllő (Institute of Technology): Hungarian, English; Kaposvár: Hungarian."
+    - fact: tuition
+      url: https://ed.uni-mate.hu/en/tuition-fee
+      quote: BSc in Mechanical Engineering Gödöllő full-time training BA/BSc English 2500 Euro 2500 Euro 2500 Euro 2500 Euro 2500 Euro 2500 Euro 2500 Euro
+    - fact: documents
+      url: https://tempus.tpf.hu/studyfinder/index/show/988
+      quote: Requirements Secondary school leaving certificate, min. B2 level of English
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/988
+      quote: Requirements Secondary school leaving certificate, min. B2 level of English
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/988
+      quote: "Minimum level of language proficiency (oral): B2"
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/988
+      quote: "Entrance examination: Yes Entrance type: Oral Minimum level of language proficiency (oral): B2"
+    - fact: requirements.req-3
+      url: https://tempus.tpf.hu/studyfinder/index/show/988
+      quote: After the assessment of secondary school leaving certificate and language certificate, there will be a MS Teams interview with the selected ones
+  notes: "Tuition: the fee page shows 2500 Euro for BSc in Mechanical Engineering at Gödöllő, full-time, English (the table is a general MATE table but names this programme; no non-EU-specific fee is given), and the fee is shown per semester column. applicationChannel: no page in the supplied texts describes the self-financed foreign applicant application route or names a platform; no quote could be found, so the deduced value is left without usable evidence (the only quoted sentence above does not name a platform) and should be verified by a human. No application deadline with a year for international/non-EU applicants was given on the pages, so no intakes fact is included. The 1 December deadline commonly used by MATE is not in these pages."

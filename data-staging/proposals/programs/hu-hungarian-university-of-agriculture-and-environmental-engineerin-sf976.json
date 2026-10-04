@@ -1,0 +1,101 @@
+{
+  "slug": "hu-hungarian-university-of-agriculture-and-environmental-engineerin-sf976",
+  "programmePage": "https://ed.uni-mate.hu/en/bsc-in-environmental-engineering",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://ed.uni-mate.hu/en/bsc-in-environmental-engineering",
+          "quote": "Length of program: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "hu"
+      ],
+      "evidence": [
+        {
+          "url": "https://ed.uni-mate.hu/en/bsc-in-environmental-engineering",
+          "quote": "Language of conduction: Hungarian or English"
+        },
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/976",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 220000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://ed.uni-mate.hu/en/tuition-fee",
+          "quote": "BSc in Environmental Engineering Gödöllő full-time training BA/BSc English 2200 Euro 2200 Euro 2200 Euro 2200 Euro 2200 Euro 2200 Euro 2200 Euro"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "high-school-diploma",
+          "name": {
+            "fr": "Diplôme d'études secondaires",
+            "en": "High School Diploma"
+          },
+          "quotedAs": "High School Diploma",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/976",
+          "quote": "High School Diploma, min. B2 level of English"
+        }
+      ]
+    }
+  },
+  "notes": "Score tables on the tuition-fee page show the BSc in Environmental Engineering fee as 2200 Euro per semester, reaching 2500 Euro in later semesters; the latest listed figure (2200 Euro) was used. Application channel could not be stated: no supplied page names a platform or route (e.g. online application on the university website or the Stipendium Hungaricum scholarship call) for a self-financed foreign applicant to this programme. No application deadline for non-EU/international applicants is stated on the supplied pages. The Stipendium Hungaricum scholarship is mentioned as available but no scholarship-application channel sentence is provided.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/976",
+            "quote": "High School Diploma, min. B2 level of English"
+          },
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/976",
+            "quote": "Assessment of the uploaded documents, language skills (language certificate is necessary: TOEFL, IELTS etc.), professional competence and motivation by programme leaders."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien oral (en ligne, MS Teams) peut être exigé ; l'admission dépend de l'évaluation du dossier, des compétences professionnelles et de la motivation.",
+          "en": "An oral entrance examination (online, MS Teams) may be required; admission depends on assessment of documents, professional competence and motivation."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/976",
+            "quote": "Entrance examination: Yes Entrance type: Oral"
+          }
+        ]
+      }
+    ]
+  }
+}

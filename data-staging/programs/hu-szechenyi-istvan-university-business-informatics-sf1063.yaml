@@ -1,0 +1,127 @@
+slug: hu-szechenyi-istvan-university-business-informatics-sf1063
+institution: hu-szechenyi-istvan-university
+country: HU
+city: gyor
+field: computer-science
+level: bachelor
+name: Business Informatics
+summary:
+  fr:
+    text: Business Informatics, Széchenyi István University (Győr). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Informatics, Széchenyi István University (Győr). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Informatics, Széchenyi István University (Győr). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/1063
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: secondary-school-graduation-results
+      name:
+        fr:
+          text: Relevé de notes de fin d'études secondaires
+          status: draft
+        en:
+          text: Copy of secondary/high school graduation results
+          status: draft
+      translationRequired: null
+    - slug: record-of-courses-studied
+      name:
+        fr:
+          text: Relevé des cours suivis
+          status: draft
+        en:
+          text: Record of courses studied
+          status: draft
+      translationRequired: null
+    - slug: english-cv
+      name:
+        fr:
+          text: CV en anglais
+          status: draft
+        en:
+          text: English CV
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation letter
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée écrit (test de langue et test professionnel) est requis ; seuls les candidats limites sont convoqués à un entretien.
+          status: draft
+        en:
+          text: A written entrance examination (language test and professional admission test) is required; only borderline applicants are invited to an interview.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/1063
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-szechenyi-istvan-university-business-informatics-sf1063
+  name: Business Informatics
+  institution: Széchenyi István University
+  city: Győr
+  field: computer-science
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/1063
+  todo: "Study Finder lists: branch Computer Science and Information Technology, language English, duration 7 semesters, location Győr, scholarship programmes: Stipendium Hungaricum, state scholarship; the programme's own page (Study Finder contact website): https://admissions.sze.hu/-study; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:1063
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/1063
+      quote: "Duration of the course / programme: 7 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/1063
+      quote: "Language of instruction: English"
+    - fact: documents
+      url: https://tempus.tpf.hu/studyfinder/index/show/1063
+      quote: Copy of secondary/high school graduation results, record of courses studied, English CV, motivation letter
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/1063
+      quote: Admission process includes two processes:- language tests (written)- professional admission test (written)
+  notes: "No tuition fee is stated for this programme on the supplied pages, so the tuition fact is omitted. The programme's own page does not state an application deadline for non-EU/international applicants, and the Study Finder page refers applicants to the annual admission process without giving a dated deadline. The application channel is therefore left out: the pages do not specify whether a self-financed foreign applicant applies via the university's own online system or via the Stipendium Hungaricum scholarship."

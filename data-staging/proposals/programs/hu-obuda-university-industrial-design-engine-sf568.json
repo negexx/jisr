@@ -1,0 +1,72 @@
+{
+  "slug": "hu-obuda-university-industrial-design-engine-sf568",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/568",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/568",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/568",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the only fee found for this BSc is 2,900 EUR per semester for non-EEA students (university-wide fee table); EU/EEA fee is 2,000 EUR. Intakes left out: the pages give a deadline of '31th May, 2026' on the university how-to-apply page but no quote assigns it to non-EU/foreign-qualification applicants; the 1st August matriculation certificate upload is not a programme application deadline for this applicant. The application channel (university's own online application system) is indicated by 'uploaded into the University’s online application system' and 'online application system of Obuda University', but no single sentence names the route clearly for a self-financed applicant, so applicationChannel was omitted.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": null,
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/568",
+            "quote": "diploma and English language certificate of level IELTS 5.0 at least"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée est requis : épreuve écrite de mathématiques et une matière au choix (biologie, chimie ou informatique), ainsi qu'un entretien oral en anglais.",
+          "en": "An entrance examination is required: a written mathematics exam and one chosen subject (biology, chemistry or informatics), plus an online oral English interview."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/568",
+            "quote": "Entrance examination: Yes"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un portfolio de travaux (dessins, peintures) doit être téléversé en un seul fichier (.zip, .pdf, .jpg) ; les envois séparés ne sont pas acceptés.",
+          "en": "A portfolio of works (drawings, paintings) must be uploaded as a single file (.zip, .pdf, .jpg); single file uploads are not accepted."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/568",
+            "quote": "The portfolio of works needs to be uploaded in one file (.zip, .pdf, .jpg)"
+          }
+        ]
+      }
+    ]
+  }
+}

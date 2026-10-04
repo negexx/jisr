@@ -1,0 +1,85 @@
+{
+  "slug": "hu-international-business-school-bachelor-of-arts-in-mark-sf369",
+  "programmePage": null,
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/369",
+          "quote": "Duration of the course / programme: 7 semesters"
+        },
+        {
+          "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-commerce-and-marketing/",
+          "quote": "The 7-semester programme consists of 4 semesters at International Business School in Budapest"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/369",
+          "quote": "Language of instruction: English"
+        },
+        {
+          "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-commerce-and-marketing/",
+          "quote": "Language of tuition English"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-commerce-and-marketing/",
+          "quote": "International applicants must apply on the website of IBS."
+        },
+        {
+          "url": "https://www.ibs-b.hu/en/how-to-apply/",
+          "quote": "You can apply only online by completing our online application form and uploading your documents."
+        }
+      ]
+    }
+  },
+  "notes": "The programme's own page could not be identified from the supplied pages: the Tempus Studyfinder page describes the BA in Marketing - Digital Media but the IBS page of the same title was not supplied, only the related BSc in Commerce and Marketing page (the double-degree partner programme awarding the BA in Marketing - Digital Media), so programmePage is null. Tuition: the Fees page states bachelor's tuition per semester (4,000 for Dublin Business School-linked bachelor's programmes) but does not say it is a non-EU/EEA rate nor explicitly tie it to this programme; left out. Duration 7 semesters (3.5 years). Intake September 2026; the Fees page deadline of 30 September 2026* is general (the asterisk note concerns Hungarian citizens applying via FELVI.HU), not confirmed as a non-EU deadline.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-commerce-and-marketing/",
+            "quote": "For international applicants:• Secondary school leaving certificateAND• IELTS 6.0 or equivalent***"
+          },
+          {
+            "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-commerce-and-marketing/",
+            "quote": "*** i.e.: TOEFL 72, GCSE English, Duolingo 105 etc."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Aucun examen d'entrée n'est exigé ; la sélection se fait sur le diplôme de fin d'études secondaires.",
+          "en": "No entrance examination is required; selection is based on the secondary school leaving certificate."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/369",
+            "quote": "Entrance examination: No"
+          }
+        ]
+      }
+    ]
+  }
+}

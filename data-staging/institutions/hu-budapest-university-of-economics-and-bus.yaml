@@ -1,0 +1,30 @@
+slug: hu-budapest-university-of-economics-and-bus
+name: Budapest University of Economics and Business
+country: HU
+city:
+  slug: budapest
+  name: Budapest
+type: null
+website: https://uni-bge.hu/en/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://uni-bge.hu/en/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: hu-budapest-university-of-economics-and-bus
+  name: Budapest University of Economics and Business
+  institution: ""
+  city: Budapest
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: 'institution named "Budapest University of Economics and Business" in the Study Finder: the register does not say whether it is public or private nor its website. Find its official site (Study in Hungary profile: studyinhungary.hu/institution/budapest-business-school-56.html), check it is a recognised Hungarian higher education institution, set the type, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw'
+  sourceId: studyfinder-institution:budapest-university-of-economics-and-business@budapest
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - url: https://uni-bge.hu/en/
+      quote: Budapest University of Economics and Business Skip to Content

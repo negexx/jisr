@@ -1,0 +1,129 @@
+{
+  "slug": "hu-university-of-debrecen-business-informatics-sf116",
+  "programmePage": "https://www.edu.unideb.hu/p/business-informatics-bsc",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/business-informatics-bsc",
+          "quote": "All courses are taught in English; therefore, a B2 level English proficiency is required."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 700000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/business-informatics-bsc",
+          "quote": "The tuition fee is 7,000 USD / year for this program."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "The following documents need to be submitted during the application procedure by all applicants through our online application platform - that you can reach here:"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "application-form",
+          "name": {
+            "fr": "Formulaire de candidature rempli",
+            "en": "Valid, filled-in application form"
+          },
+          "quotedAs": "Valid, filled-in application form",
+          "translationRequired": null
+        },
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Certificat d'études (diplôme de fin d'études secondaires)",
+            "en": "Certificate of education (school leaving qualification)"
+          },
+          "quotedAs": "certificate of education",
+          "translationRequired": true
+        },
+        {
+          "slug": "transcripts",
+          "name": {
+            "fr": "Relevés de notes des 2-3 dernières années académiques",
+            "en": "Transcripts of the last 2-3 academic years"
+          },
+          "quotedAs": "transcripts (end of year reports) of the last 2-3 academic years",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Preuve de citoyenneté et/ou de résidence permanente (passeport)",
+            "en": "Certificate or proof of citizenship and/or permanent residence (passport)"
+          },
+          "quotedAs": "Certificate or proof of citizenship and/or permanent residence",
+          "translationRequired": null
+        },
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV court",
+            "en": "Short Resume/CV"
+          },
+          "quotedAs": "Short Resume/CV",
+          "translationRequired": null
+        },
+        {
+          "slug": "medical-certificate",
+          "name": {
+            "fr": "Certificat médical",
+            "en": "Medical Certificate"
+          },
+          "quotedAs": "Medical Certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "certificate of education (school leaving qualification such as high school diploma, document of graduation or any equivalent; university degree certificate or any equivalent; all in English / translated)"
+        },
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "Short Resume/CV (personal details, educational background, work experience, language skills, additional skills)"
+        },
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "Medical Certificate - please see a template here"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition is stated as 7,000 USD/year on the programme page, but the facts format expects minor units of a two-decimal currency (amountMinor=700000 for 7,000.00 USD). The university-wide fee table lists 'Business Informatics *' as 7,000 USD/year with the asterisk meaning September-only start. Application deadline 15th June is stated as the self-financed procedure deadline and no year is given, so it is a recurring deadline.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un certificat d'études secondaires et un examen d'entrée écrit et oral en mathématiques sont requis. Vérifiez les conditions exactes de l'examen d'entrée.",
+          "en": "A high school certificate and a written and oral entrance exam in Mathematics are required. Check the exact entrance exam conditions."
+        },
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/business-informatics-bsc",
+            "quote": "Admission requires a high school certificate and passing a written and oral entrance exam in Mathematics."
+          }
+        ]
+      }
+    ]
+  }
+}

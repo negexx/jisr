@@ -1,0 +1,53 @@
+{
+  "slug": "hu-university-of-debrecen-environmental-engineerin-sf200",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/200",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/200",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/200",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "The following documents need to be submitted during the application procedure by all applicants through our online application platform"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition-fee page is an institution-wide table, not the programme's own page; the row for Environmental Engineering* appears in the Bachelor programs table with fee 6,500 USD/year, but the extracted quote is ambiguous about whether that fee belongs to Environmental Engineering or Biology. The programme page itself (Studyfinder) states no tuition. Intake deadline: the programme page states a general application deadline of 15 June without a year, quoted from the University of Debrecen admission page; the year 2026 comes from a sentence about the September 2026/2027 intake, but the programme itself may only be applied for September, so the deadline is recurring. Tuition currency is USD as stated on the pages, not converted.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats doivent réussir des examens d'entrée écrits et oraux en mathématiques et en physique ou chimie. Résultats : 75 % et plus = admission ; 60-75 % = programme préparatoire.",
+          "en": "Applicants must pass written and oral entrance exams in mathematics and physics or chemistry. Results: 75%+ admission; 60-75% preparatory programme."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/200",
+            "quote": "Results about 75% and over mean admission to the selected programme, results between 60%-75% -admission to a preparatory (foundation year) programme."
+          }
+        ]
+      }
+    ]
+  }
+}

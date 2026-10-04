@@ -1,0 +1,176 @@
+slug: hu-university-of-nyiregyhaza-computer-science-enginee-sf538
+institution: hu-university-of-nyiregyhaza
+country: HU
+city: nyiregyhaza
+field: computer-science
+level: bachelor
+name: Computer Science Engineering
+summary:
+  fr:
+    text: Computer Science Engineering, University of Nyíregyháza (Nyíregyháza). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Computer Science Engineering, University of Nyíregyháza (Nyíregyháza). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Computer Science Engineering, University of Nyíregyháza (Nyíregyháza). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/538
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 245000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests:
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: subject_taken
+      subjects:
+        - mathematics
+      mode: all
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des bons résultats en mathématiques sont attendus ; le niveau sera évalué lors de l'entretien en ligne.
+          status: draft
+        en:
+          text: Good results in Mathematics are expected; the level will be assessed during the online interview.
+          status: draft
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Examen d'entrée : entretien oral en ligne. Réussite si au moins 60 points sur 100."
+          status: draft
+        en:
+          text: "Entrance examination: online oral interview. Successful if the applicant gets at least 60 out of 100 points."
+          status: draft
+    - id: req-5
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Frais de candidature de 100 EUR non remboursables, à payer avant l'entretien.
+          status: draft
+        en:
+          text: Non-refundable application fee of 100 EUR, payable before the interview.
+          status: draft
+    - id: req-6
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats de certains pays ne peuvent plus postuler (liste mise à jour).
+          status: draft
+        en:
+          text: Applicants from certain countries can no longer apply (list updated).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/538
+    last_verified_at: null
+  page-2:
+    url: https://english.nye.hu/en/node/319
+    last_verified_at: null
+  page-3:
+    url: https://applicationform.nye.hu/
+    last_verified_at: null
+  page-4:
+    url: https://english.nye.hu/en/node/30
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-nyiregyhaza-computer-science-enginee-sf538
+  name: Computer Science Engineering
+  institution: University of Nyíregyháza
+  city: Nyíregyháza
+  field: computer-science
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/538
+  todo: "Study Finder lists: branch Computer Science and Information Technology, language English, duration 7 semesters, location Nyíregyháza, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://english.nye.hu/; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:538
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/538
+      quote: "Language of instruction: English Duration of the course / programme: 7 semesters semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/538
+      quote: "Language of instruction: English Duration of the course / programme: 7 semesters semesters"
+    - fact: tuition
+      url: https://english.nye.hu/en/node/319
+      quote: Computer Science Engineering BSc 7 2450 EUR *** 1800 EUR ***
+    - fact: tuition
+      url: https://english.nye.hu/en/node/319
+      quote: Tuition fee / semester * for non-EU applicants **
+    - fact: applicationChannel
+      url: https://applicationform.nye.hu/
+      quote: Welcome to the online application portal of the University of Nyíregyháza.
+    - fact: applicationChannel
+      url: https://english.nye.hu/en/node/30
+      quote: "1. The application form you can find here: https://applicationform.nye.hu/"
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/538
+      quote: English language skills at upper intermediate level or higher (at level CEFR B2 or IELTS 5.5) – Having a language certificate is not a compulsory requirement.
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/538
+      quote: High school / secondary education (or higher). Good results in Mathematics.
+    - fact: requirements.req-3
+      url: https://tempus.tpf.hu/studyfinder/index/show/538
+      quote: High school / secondary education (or higher). Good results in Mathematics.
+    - fact: requirements.req-4
+      url: https://tempus.tpf.hu/studyfinder/index/show/538
+      quote: The entrance exam is successful, if the applicant have at least 60 points.
+    - fact: requirements.req-5
+      url: https://english.nye.hu/en/node/30
+      quote: Proof of application fee payment slip (100 EUR, non-refundable)
+    - fact: requirements.req-6
+      url: https://applicationform.nye.hu/
+      quote: "the University of Nyíregyháza will no longer accept applications from the following countries as of today (April 28, 2026): Afghanistan, Algeria, Bangladesh, Nepal, Saudi Arabia, Syria and Yemen."
+  notes: "Aucune date limite de candidature datée n'est fournie pour les non-UE : l'ouverture est en décembre 2026 (intake septembre 2027). La page d'inscription mentionne une date limite au 30 juin 2026 mais pour l'intake 2026 et sans préciser qu'elle vise les non-UE. Les frais de scolarité sont indiqués par semestre pour les candidats hors UE ; le montant total de deux semestres est exigé à l'avance."

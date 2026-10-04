@@ -1,0 +1,63 @@
+{
+  "slug": "hu-university-of-dunaujvaros-mechanical-engineering-sf212",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/212",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/212",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/212",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "High School Leaving Certificate"
+          },
+          "quotedAs": "High School Leaving Certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/212",
+          "quote": "High School Leaving Certificate or other certificate about the succesfull finish of secondary education"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee for self-financed non-EU/EEA students: the supplied page does not state any tuition amount, currency or period for this programme, so no tuition fact is given (do not record 0). Application channel: the page names a Stipendium Hungaricum contact and says the programme is available in the Stipendium Hungaricum Scholarship Programme, but it does not say the self-financed foreign applicant applies through the scholarship call, nor does it state an online university application route; applicationChannel is therefore left out. No application deadline, opening date or start date appears on the page, so no intakes fact is given. The page gives no translation requirement for the certificate, so translationRequired is null.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien oral en ligne (Skype) fait partie de la procédure d'admission : préparez une motivation claire et vérifiez votre niveau d'anglais.",
+          "en": "An online (Skype) oral interview is part of the admission process: prepare your motivation and check your English level."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/212",
+            "quote": "The second step is a Skype interview, that gives a chance for the Admission Committee to check the aims and motivation for choosing this field of study."
+          }
+        ]
+      }
+    ]
+  }
+}

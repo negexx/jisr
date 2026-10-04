@@ -1,0 +1,112 @@
+slug: hu-gal-ferenc-university-business-administration-sf352
+institution: hu-gal-ferenc-university
+country: HU
+city: bekescsaba
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, Gál Ferenc University (Békéscsaba). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Management, Gál Ferenc University (Békéscsaba). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Management, Gál Ferenc University (Békéscsaba). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/352
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifier manuellement : certificat de fin d'études secondaires (matriculation) requis, avec examen de niveau avancé dans une matière ou certificat/diplôme d'études supérieures, ou examen d'entrée professionnel."
+          status: draft
+        en:
+          text: "Manual check: secondary school matriculation certificate required, with an advanced level exam in a subject or a vocational/higher education certificate, or a professional entrance exam."
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée est requis (en ligne); vérifier les modalités et les matières de sélection.
+          status: draft
+        en:
+          text: An entrance examination is required (online); check the details and selection subjects.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/352
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-gal-ferenc-university-business-administration-sf352
+  name: Business Administration and Management
+  institution: Gál Ferenc University
+  city: Békéscsaba
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/352
+  todo: "Study Finder lists: branch Economic Science, language English, duration 7 semesters, location Békéscsaba, scholarship programmes: none listed; no contact website listed: find the programme's own page on the institution's site; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:352
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/352
+      quote: "Duration of the course / programme: 7 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/352
+      quote: "Language of instruction: English"
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/352
+      quote: "Entry requirements: - secondary school matriculation certificate"
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/352
+      quote: must have at least a secondary complex (B2) state-recognized language exam in English
+    - fact: requirements.req-3
+      url: https://tempus.tpf.hu/studyfinder/index/show/352
+      quote: "Entrance examination: Yes"

@@ -1,0 +1,100 @@
+{
+  "slug": "hu-university-of-debrecen-computer-science-enginee-sf128",
+  "programmePage": "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+          "quote": "All courses are taught in English; therefore, a B2 level English proficiency is required."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 700000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+          "quote": "The tuition fee for this program is 7,000 USD/Year"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "The following documents need to be submitted during the application procedure by all applicants through our online application platform"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "application-form",
+          "name": {
+            "fr": "Formulaire de candidature",
+            "en": "Application form"
+          },
+          "quotedAs": "application form",
+          "translationRequired": null
+        },
+        {
+          "slug": "high-school-certificate",
+          "name": {
+            "fr": "Certificat de fin d'études secondaires",
+            "en": "High school certificate"
+          },
+          "quotedAs": "high school certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "Valid, filled-in application form (to be filled online here);"
+        },
+        {
+          "url": "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+          "quote": "Admission requires a high school certificate;"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition is stated in USD on the programme page; no EUR or HUF amount for this programme appears. The B2 English requirement: the programme page says 'Please note, that you are not strictly required to have a language exam certificate', but a separate application page requires 'a standardized, at least upper-intermediate (B2) level language certificate, obtained at a proctored exam', so certificateRequired is left null. The 15th June deadline is a general self-financed deadline without a year and is not explicitly labelled for non-EU/international applicants on that page.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+            "quote": "Applicants must have an English proficiency of at least B2 level as the program is fully taught in English."
+          },
+          {
+            "url": "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+            "quote": "a TOEFL test with a minimum score of 513 (Paper-Based)."
+          },
+          {
+            "url": "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+            "quote": "an IELTS test with a minimum score of 5.5."
+          }
+        ]
+      }
+    ]
+  }
+}

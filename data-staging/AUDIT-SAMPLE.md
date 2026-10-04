@@ -2,396 +2,240 @@
 
 For each record: open the link, confirm the quote is there and that it supports the value (right programme, right applicant group, right year). Then set `audited = y` and `outcome = ok` (or `wrong` + a note) in `AUDIT.csv`.
 
-## programs/fr-i-u-t-de-senart-fontainebleau-site-senar-0772347h-but-gestion-des-entreprises-et-d-9895  _(batch b19-ad412e)_
-
-**BUT - Gestion des entreprises et des administrations**
-
-- **durationYears**: `3` (official; source page-2) (unchanged: already in data/)
-- **teachingLanguages**: `["fr"]` (official; source programme)
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9895&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}` (official; source page-3) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":"2026-10-01","applicationDeadline":"2026-11-15"}]` (official; source page-4) (unchanged: already in data/)
-- **applicationChannel**: `fr-campus-france` (official; source page-4) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-
-## programs/fr-i-u-t-de-tours-0370770l-but-genie-electrique-et-informat-4865  _(batch b19-ad412e)_
-
-**BUT - Génie électrique et informatique industrielle**
-
-- **durationYears**: `3` (official; source page-2) (unchanged: already in data/)
-- **teachingLanguages**: `["fr"]` (official; source programme)
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4865&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}` (official; source page-3) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":"2026-10-01","applicationDeadline":"2026-11-15"}]` (official; source page-4) (unchanged: already in data/)
-- **applicationChannel**: `fr-campus-france` (official; source page-4) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-
-## programs/fr-i-u-t-de-tremblay-en-france-paris-8-0932086m-but-genie-industriel-et-maintena-11334  _(batch b19-ad412e)_
-
-**BUT - Génie industriel et maintenance**
-
-- **durationYears**: `3` (official; source page-2) (unchanged: already in data/)
-- **teachingLanguages**: `["fr"]` (official; source programme)
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11334&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}` (official; source page-3) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":"2026-10-01","applicationDeadline":"2026-11-15"}]` (official; source page-4) (unchanged: already in data/)
-- **applicationChannel**: `fr-campus-france` (official; source page-4) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-
-## programs/fr-i-u-t-du-limousin-site-de-limoges-0870125n-but-techniques-de-commercialisat-10691  _(batch b19-ad412e)_
-
-**BUT - Techniques de commercialisation**
-
-- **durationYears**: `3` (official; source page-2) (unchanged: already in data/)
-- **teachingLanguages**: `["fr"]` (official; source programme)
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10691&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}` (official; source page-3) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":"2026-10-01","applicationDeadline":"2026-11-15"}]` (official; source page-4) (unchanged: already in data/)
-- **applicationChannel**: `fr-campus-france` (official; source page-4) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-
-## programs/fr-iut-aix-marseille-site-de-marseille-st-j-0134319z-but-metiers-de-la-transition-et-2716  _(batch b19-ad412e)_
-
-**BUT - Métiers de la Transition et de l'Efficacité Énergétiques**
-
-- **durationYears**: `3` (official; source page-2) (unchanged: already in data/)
-- **teachingLanguages**: `["fr"]` (official; source programme)
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2716&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}` (official; source page-3) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":"2026-10-01","applicationDeadline":"2026-11-15"}]` (official; source page-4) (unchanged: already in data/)
-- **applicationChannel**: `fr-campus-france` (official; source page-4) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-
-## programs/fr-iut-grand-ouest-normandie-pole-dalencon-0611149t-but-genie-mecanique-et-productiq-7317  _(batch b19-ad412e)_
-
-**BUT - Génie mécanique et productique**
-
-- **durationYears**: `3` (official; source page-2) (unchanged: already in data/)
-- **teachingLanguages**: `["fr"]` (official; source programme)
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7317&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}` (official; source page-3) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":"2026-10-01","applicationDeadline":"2026-11-15"}]` (official; source page-4) (unchanged: already in data/)
-- **applicationChannel**: `fr-campus-france` (official; source page-4) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-
-## programs/fr-iut-grand-ouest-normandie-pole-de-caen-s-0141234r-but-techniques-de-commercialisat-2857  _(batch b19-ad412e)_
-
-**BUT - Techniques de commercialisation**
-
-- **durationYears**: `3` (official; source page-2) (unchanged: already in data/)
-- **teachingLanguages**: `["fr"]` (official; source programme)
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2857&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}` (official; source page-3) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":"2026-10-01","applicationDeadline":"2026-11-15"}]` (official; source page-4) (unchanged: already in data/)
-- **applicationChannel**: `fr-campus-france` (official; source page-4) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-
-## programs/fr-universite-de-bordeaux-bordeaux-metropol-0333298f-licence-economie-et-gestion-4462  _(batch b19-ad412e)_
-
-**Licence - Portail Economie et gestion - Economie gestion**
-
-- **durationYears**: `3` (official; source page-2) (unchanged: already in data/)
-- **teachingLanguages**: `["fr"]` (official; source programme)
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4462&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}` (official; source page-3) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":"2026-10-01","applicationDeadline":"2026-11-15"}]` (official; source page-1) (unchanged: already in data/)
-- **applicationChannel**: `fr-campus-france` (official; source page-4) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
+## institutions/hu-budapest-university-of-technology-and-ec  _(batch b22-3d788c)_
+
+**Budapest University of Technology and Economics**
+
+- **website**: `https://www.bme.hu/en`
+- evidence: "available at the Budapest University of Technology and Economics, in partnership with" — https://www.bme.hu/en
 
-## programs/fr-universite-de-la-reunion-le-tampon-9741204r-licence-genie-civil-32072  _(batch b19-ad412e)_
+## institutions/hu-szechenyi-istvan-university  _(batch b22-3d788c)_
 
-**Licence - Génie civil - Parcours Énergie et environnement**
+**Széchenyi István University**
 
-- **durationYears**: `3` (official; source page-2) (unchanged: already in data/)
-- **teachingLanguages**: `["fr"]` (official; source programme)
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=32072&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}` (official; source page-3) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":"2026-10-01","applicationDeadline":"2026-11-15"}]` (official; source page-1) (unchanged: already in data/)
-- **applicationChannel**: `fr-campus-france` (official; source page-4) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
+- **website**: `https://admissions.sze.hu/`
+- evidence: "Institute at Széchenyi István University. A recent Mid-Autumn Festival celebration" — https://admissions.sze.hu/
 
-## programs/fr-universite-gustave-eiffel-0772894c-licence-sciences-pour-lingenieur-9923  _(batch b19-ad412e)_
+## institutions/hu-university-of-nyiregyhaza  _(batch b22-3d788c)_
 
-**Licence - Sciences pour l'ingénieur - Parcours Génie industriel / Ingénierie des organisations / Génie des procédés pour l'environnement**
+**University of Nyíregyháza**
+
+- **website**: `https://english.nye.hu/`
+- evidence: "| University of Nyíregyháza Skip to main content Accessible theme User account menu" — https://english.nye.hu/
+
+## institutions/hu-university-of-public-service  _(batch b22-3d788c)_
+
+**University of Public Service**
+
+- **website**: `https://en.uni-nke.hu/`
+- evidence: "UNIVERSITY OF PUBLIC SERVICE webmail neptun Digitális oktatás Intranet HUN" — https://en.uni-nke.hu/
+
+## programs/hu-budapest-metropolitan-university-business-administration-sf472  _(batch b22-3d788c)_
+
+**Business Administration and Managemenet**, Budapest Metropolitan University
 
-- **durationYears**: `3` (official; source page-2) (unchanged: already in data/)
-- **teachingLanguages**: `["fr"]` (official; source programme)
-  - "Niveau de français requis pour s'inscrire à la formation : C1" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9923&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}` (official; source page-3) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":"2026-10-01","applicationDeadline":"2026-11-15"}]` (official; source page-1) (unchanged: already in data/)
-- **applicationChannel**: `fr-campus-france` (official; source page-4) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"C1","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "Course language English" — https://www.metubudapest.hu/programs/business-administration-and-management-bsc
+- **tuition**: `{"amountMinor":350000,"currency":"EUR","period":"semester"}` (official; source programme)
+  - "3500 EUR/semester for non-EU students" — https://www.metubudapest.hu/programs/business-administration-and-management-bsc
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Un entretien d'admission en ligne et un test de mathématiques en ligne font partie de la procédure de sélection.","status":"draft"},"en":{"text":"An online admission interview and an online mathematics test are part of the selection process.","status":"draft"}}}`
+  - "Entrance examination: All applicants have to participate in an online admission interview." — https://tempus.tpf.hu/studyfinder/index/show/472
+  - "Applicants are required to write an online mathematics test as part of the online admission interview." — https://tempus.tpf.hu/studyfinder/index/show/472
+- **page**: https://tempus.tpf.hu/studyfinder/index/show/472
+
+## programs/hu-budapest-university-of-economics-and-bus-tourism-and-catering-sf17  _(batch b22-3d788c)_
+
+**Tourism and Catering**, Budapest University of Economics and Business
 
-## programs/fr-universite-paris-8-0931827f-licence-informatique-15418  _(batch b19-ad412e)_
+- **durationYears**: `4` (official; source page-2)
+  - "Language of instruction: English Duration of the course / programme: 8 semesters" — https://tempus.tpf.hu/studyfinder/index/show/17
+- **teachingLanguages**: `["en"]` (official; source page-2)
+  - "Language of instruction: English Duration of the course / programme: 8 semesters" — https://tempus.tpf.hu/studyfinder/index/show/17
+  - "The programme is taught at our city centre campus and is also offered full-time in English." — https://uni-bge.hu/en/tourism-and-catering-bsc
+- **tuition**: `{"amountMinor":300000,"currency":"EUR","period":"semester"}` (official; source page-3)
+  - "Tourism and Catering 8 semesters 690,000 HUF 3,000 EUR" — https://uni-bge.hu/en/tuition-fee
+- **documents**: `[{"slug":"school-leaving-certificate","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"Secondary school leaving certificate","status":"draft"}},"translationRequired":null},{"slug":"transcript-of-secondary-school-studies","name":{"fr":{"text":"Relevé de notes des études secondaires","status":"draft"},"en":{"text":"Transcript of secondary school studies","status":"draft"}},"translationRequired":null},{"slug":"motivation-letter","name":{"fr":{"text":"Lettre de motivation","status":"draft"},"en":{"text":"Motivation letter","status":"draft"}},"translationRequired":null}]` (official; source page-2)
+  - "Entry requirements: 1. Secondary school leaving certificate 2. B2 English language knowledge, proved by internationally accepted language examination system (e.g.: IELTS, TOEFL, WAEC, etc.) 3. Transcript of secondary school studies" — https://tempus.tpf.hu/studyfinder/index/show/17
+  - "The entry qualification documents are accepted in English. A motivation letter must be added to your application." — https://tempus.tpf.hu/studyfinder/index/show/17
+  - "If this is not the case, you will need official translations along with verified copies of the original." — https://tempus.tpf.hu/studyfinder/index/show/17
+- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B2","certificateRequired":true,"acceptedTests":["ielts","toefl"]}`
+  - "B2 English language knowledge, proved by internationally accepted language examination system (e.g.: IELTS, TOEFL, WAEC, etc.)" — https://tempus.tpf.hu/studyfinder/index/show/17
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Un entretien oral en ligne fait partie de la sélection : préparez-le avec votre lettre de motivation et vos résultats scolaires.","status":"draft"},"en":{"text":"An online oral interview is part of the selection: prepare for it with your motivation letter and academic results.","status":"draft"}}}`
+  - "The entrance examination consists of two components: an assessment of previous academic achievements, language proficiency, and motivation letter, followed by an online interview evaluating professional knowledge, language skills, and intercultural competence." — https://tempus.tpf.hu/studyfinder/index/show/17
+- **page**: https://tempus.tpf.hu/studyfinder/index/show/17
+
+> Preparer's caveats: Tuition: the Studyfinder page and the programme page state the semester fee only as '3000 EUR' for non-EU students per semester (no explicit year for that line on the programme page); the '690,000 HUF' figure is the EU-student fee per semester and was therefore not used. Application channel: no supplied page states the application platform or an application form; 'How to apply?' page contains only a heading, so the channel field is a best guess (hu-university-direct) and must be verified by a human. No application deadlines, opening dates or intake months are stated on any supplied page for international applicants. The Studyfinder page lists Morocco among accepted territories, but that is a list of citizenships, not evidence for a document requirement. Entrance examination is Oral and takes place Online.
 
-**Licence - Informatique**
-
-- **durationYears**: `3` (official; source page-2) (unchanged: already in data/)
-- **teachingLanguages**: `["fr"]` (official; source programme)
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=15418&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}` (official; source page-3) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":"2026-10-01","applicationDeadline":"2026-11-15"}]` (official; source page-1) (unchanged: already in data/)
-- **applicationChannel**: `fr-campus-france` (official; source page-4) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-
-## programs/fr-universite-paris-cite-0755976n-licence-economie-9352  _(batch b19-ad412e)_
-
-**Licence - Portail Economie - Sciences Economiques et Sociales**
-
-- **durationYears**: `3` (official; source page-2) (unchanged: already in data/)
-- **teachingLanguages**: `["fr"]` (official; source programme)
-  - "Niveau de français requis pour s'inscrire à la formation : C1" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9352&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}` (official; source page-3) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":"2026-10-01","applicationDeadline":"2026-11-15"}]` (official; source page-1) (unchanged: already in data/)
-- **applicationChannel**: `fr-campus-france` (official; source page-4) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"C1","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-
-## programs/fr-universite-polytechnique-hauts-de-france-0597132g-licence-genie-civil-7012  _(batch b19-ad412e)_
-
-**Licence - Génie civil - Parcours Génie Civil, Architectural et Urbain**
-
-- **durationYears**: `3` (official; source page-2) (unchanged: already in data/)
-- **teachingLanguages**: `["fr"]` (official; source programme)
-  - "Niveau de français requis pour s'inscrire à la formation : B2" — https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7012&typeBac=0&originePc=0
-- **tuition**: `{"amountMinor":290200,"currency":"EUR","period":"year"}` (official; source page-3) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":"2026-10-01","applicationDeadline":"2026-11-15"}]` (official; source page-1) (unchanged: already in data/)
-- **applicationChannel**: `fr-campus-france` (official; source page-4) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"fr","minCefr":"B2","certificateRequired":true,"acceptedTests":["tcf","delf-dalf"]}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Droits d'inscription différenciés pour les étudiants hors Union européenne : certains établissements exonèrent, renseignez-vous sur leur site.","status":"draft"},"en":{"text":"Differentiated tuition fees apply to students from outside the EU: some institutions exempt them, check the institution's website.","status":"draft"},"ar":{"text":"تُطبَّق رسوم تسجيل مختلفة على الطلبة من خارج الاتحاد الأوروبي: بعض المؤسسات تعفيهم منها، استفسروا في موقع المؤسسة.","status":"draft"}}}`
-
-## programs/de-ebs-universitat-fur-wirtschaft-und-recht-hrk206-bachelors-in-law-politic-daad8558  _(batch b20-85b121)_
-
-**Bachelor's in Law, Politics and Economics (BA)**
-
-- **durationYears**: `3` (official; source daad) (unchanged: already in data/)
-- **teachingLanguages**: `["en"]` (official; source daad) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":908000,"currency":"EUR","period":"semester"}` (official; source daad)
-  - "The following tuition fees apply for applicants from: all countries 9,080 EUR" — https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8558/
-- **documents**: `[{"slug":"curriculum-vitae","name":{"fr":{"text":"Curriculum vitae sous forme tabulaire","status":"draft"},"en":{"text":"Curriculum vitae in tabular form","status":"draft"}},"translationRequired":null},{"slug":"school-leaving-certificate","name":{"fr":{"text":"Certificat de fin d'études secondaires","status":"draft"},"en":{"text":"School-leaving certificate","status":"draft"}},"translationRequired":null}]` (official; source daad) (unchanged: already in data/)
-
-> Preparer's caveats: documents: kept the existing official value; the reader found [{"slug":"curriculum-vitae","name":{"fr":{"text":"Curriculum vitae sous forme tabulaire","status":"draft"},"en":{"text":"Curriculum vitae in tabular form","status":"draft"}},"translationRequired":null},{"slug":"school-leaving-certificate","name":{"fr":{"text":"Diplôme de fin d'études secondaires ou certificat étranger reconnu équivalent","status":"draft"},"en":{"text":"Proof of general higher education entrance qualification or a foreign school-leaving certificate recognised as equivalent","status":"draft"}},"translationRequired":null}] at https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/8558/; The DAAD page lists the tuition fee "for applicants from: all countries" at 9,080 EUR per semester (not per year). The application deadline for international applicants requiring a visa is stated only as a recommendation (30 May / 15 October) with no year, hence recorded as recurringDeadline. The pages do not name the application platform (the DAAD page says "Submit application via Please check this website."), so no applicationChannel fact could be quoted. The English-language certificate level B2 and the IELTS / TOEFL tests are stated as admission conditions.
-
-## programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-electrical-systems-engin-daad6320  _(batch b20-85b121)_
-
-**Electrical Systems Engineering**
-
-- **durationYears**: `3.5` (official; source daad) (unchanged: already in data/)
-- **teachingLanguages**: `["en","de"]` (official; source page-1)
-  - "Language : Basic Study (in English) and Main Study (in German)" — https://www.hs-heilbronn.de/en/ese
-- **tuition**: `{"amountMinor":150000,"currency":"EUR","period":"semester"}` (official; source page-1) (unchanged: already in data/)
-- **documents**: `[{"slug":"school-leaving-certificate","name":{"fr":{"text":"Certificat de fin d'études secondaires","status":"draft"},"en":{"text":"School-leaving certificate","status":"draft"}},"translationRequired":null}]` (official; source page-2)
-  - "If you hold a non-German school leaving certificate, you must first have it recognized by Studienkolleg Konstanz or by Uni-Assist." — https://www.hs-heilbronn.de/en/bachelor-application
-  - "For admission via the university-specific entrance examination, please upload the following documents in the applicant portal: The recognition of your school-leaving certificate" — https://www.hs-heilbronn.de/en/bachelor-application
-
-> Preparer's caveats: The programme page (https://www.hs-heilbronn.de/en/ese) states open admission with enrolment until September 28; no dated application deadline for international applicants is given on the supplied pages. The application channel for a foreign diploma is de-uni-assist-vpd because international applicants must first have their school-leaving certificate recognised by Studienkolleg Konstanz or Uni-Assist; after recognition they apply via the university's portal eCampus.
-
-## programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-mechatronics-and-robotic-daad6265  _(batch b20-85b121)_
-
-**Mechatronics and Robotics**
-
-- **durationYears**: `3.5` (official; source page-1) (unchanged: already in data/)
-- **teachingLanguages**: `["en","de"]` (official; source page-1) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":150000,"currency":"EUR","period":"semester"}` (official; source page-1) (unchanged: already in data/)
-- **documents**: `[{"slug":"university-entrance-qualification","name":{"fr":{"text":"Diplôme d'accès à l'université (copie)","status":"draft"},"en":{"text":"University entrance qualification (copy)","status":"draft"}},"translationRequired":null},{"slug":"recognition-of-certificates","name":{"fr":{"text":"Reconnaissance des certificats du Centre pour étudiants internationaux de Constance ou VPD d'uni-assist","status":"draft"},"en":{"text":"Recognition of certificates from the Center for International Students, Konstanz or VPD by uni-assist","status":"draft"}},"translationRequired":null},{"slug":"proof-of-language-skills","name":{"fr":{"text":"Preuve de compétences linguistiques","status":"draft"},"en":{"text":"Proof of language skills","status":"draft"}},"translationRequired":null},{"slug":"complete-cv","name":{"fr":{"text":"CV complet, chronologique","status":"draft"},"en":{"text":"Complete CV, chronological","status":"draft"}},"translationRequired":null},{"slug":"proof-of-study-orientation-test","name":{"fr":{"text":"Preuve du test d'orientation aux études","status":"draft"},"en":{"text":"Proof of study orientation test","status":"draft"}},"translationRequired":null}]` (official; source page-2)
-  - "General documents University entrance qualification (copy) International applicants: Recognition of certificates from the Center for International Students, Konstanz or VPD by uni-assist Proof of language skills (except native speakers) Complete CV, chronological Proof of study orientation test online, takes about 10 minutes" — https://www.hs-heilbronn.de/en/checklist-for-bachelor-applicants-2f2f62a1ac1a86e6
-
-> Preparer's caveats: La page DAAD dit 7 semesters et la page du programme dit 210 ECTS / 3,5 ans. Les frais de scolarité indiqués ici (1500 EUR par semestre) concernent explicitement les étudiants internationaux hors UE/EEE sans diplôme d'accès allemand; une page générale confirme 1500 EUR par semestre pour ces étudiants. Le programme a une admission ouverte; voir la page 'Application Bachelor' pour la procédure d'inscription (les pages ne donnent pas de plateforme d'inscription pour le bachelor).
-
-## programs/de-technische-hochschule-ingolstadt-hrk288-neuburg-an-der-donau-sustainable-civil-engine-daad8580  _(batch b20-85b121)_
-
-**Sustainable Civil Engineering**
-
-- **durationYears**: `4` (official; source page-1) (unchanged: already in data/)
-- **teachingLanguages**: `["en"]` (official; source page-1)
-  - "Main teaching language English" — https://www.thi.de/en/faculties/sustainable-infrastructure/degree-programmes/sustainable-civil-engineering-beng/
-- **tuition**: `{"amountMinor":80000,"currency":"EUR","period":"semester"}` (official; source daad) (unchanged: already in data/)
-- **applicationChannel**: `de-uni-assist-vpd` (official; source daad) (unchanged: already in data/)
-
-> Preparer's caveats: The DAAD page states the standard duration as 8 semesters (value 4 years). Intake dates are quoted from the programme page's own "Application period for the 2027 summer term: 15 October 2026 to 15 January 2027"; the DAAD page gives additional periods (2 May–31 August 2026; 1 April–15 July 2027) but only the summer 2027 window is tied to a year. Tuition is an institution-wide fee for students from third countries (non-EU/non-EEA) and is quoted from the programme's own page; no programme-specific non-EU fee was found elsewhere. No document list is stated on the supplied pages.
-
-## programs/de-technische-hochschule-nurnberg-georg-sim-hrk200-mechanical-engineering-b-daad9268  _(batch b20-85b121)_
-
-**Mechanical Engineering (BEng)**
-
-- **durationYears**: `3.5` (official; source daad)
-  - "Programme duration 7 semesters" — https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9268/
-- **teachingLanguages**: `["en"]` (official; source daad) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":100000,"currency":"EUR","period":"semester"}` (official; source daad) (unchanged: already in data/)
-- **documents**: `[{"slug":"motivation-letter","name":{"fr":{"text":"Lettre de motivation","status":"draft"},"en":{"text":"Motivation letter","status":"draft"}},"translationRequired":null},{"slug":"curriculum-vitae","name":{"fr":{"text":"Curriculum vitae","status":"draft"},"en":{"text":"Curriculum vitae","status":"draft"}},"translationRequired":null},{"slug":"scholastic-aptitude-test","name":{"fr":{"text":"Test d'aptitude scolaire","status":"draft"},"en":{"text":"Scholastic aptitude test","status":"draft"}},"translationRequired":null}]` (official; source daad) (unchanged: already in data/)
-
-> Preparer's caveats: The deadline quote does not specify applicants from outside the EU/EEA; therefore the deadline is not asserted as an international deadline. The application channel is university-direct as the programme page states 'Submit application via Please check this website.' and no uni-assist name is mentioned. The tuition fee is per semester and must be paid by non-EU/EEA students.
-
-## programs/de-technische-hochschule-wildau-hrk272-european-business-manage-daad7665  _(batch b20-85b121)_
-
-**European Business Management**
-
-- **durationYears**: `3.5` (official; source page-1)
-  - "The bachelor’s programme European Business Management is a modern seven semester, internationally-oriented and competence-based business degree programme with a focus on Europe that is taught completely in English." — https://en.th-wildau.de/index.php?id=30638
-  - "Programme duration 7 semesters" — https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7665/
-- **teachingLanguages**: `["en"]` (official; source page-1) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":0,"currency":"EUR","period":"semester"}` (official; source page-1) (unchanged: already in data/)
-- **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":6,"day":15}}]` (official; source page-2)
-  - "Applicants with foreign education certificates must apply via uni-assist e.V.: uni-assist.de" — https://en.th-wildau.de/study/application/degree-programmes/online-application
-  - "Please complete the online application for the winter semester until 15 June or for the summer semester until 15 January (or earlier) at the uni-assist e.V. online application portal." — https://en.th-wildau.de/study/application/degree-programmes/online-application
-  - "Applicants with foreign education certificates must apply via uni-assist e.V. Application period via uni-assists e.V.: 1 May - 15 June" — https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7665/
-- **applicationChannel**: `de-uni-assist` (official; source page-1) (unchanged: already in data/)
-- **documents**: `[{"slug":"officially-translated-certificates","name":{"fr":{"text":"Certificats officiellement traduits","status":"draft"},"en":{"text":"Officially translated certificates","status":"draft"}},"translationRequired":true},{"slug":"passport-id-card-copy","name":{"fr":{"text":"Copie du passeport / de la carte d'identité","status":"draft"},"en":{"text":"Copy of passport/ID card","status":"draft"}},"translationRequired":null},{"slug":"cv","name":{"fr":{"text":"CV actuel","status":"draft"},"en":{"text":"Current CV","status":"draft"}},"translationRequired":null},{"slug":"english-language-skills-proof","name":{"fr":{"text":"Preuve de compétences en anglais","status":"draft"},"en":{"text":"Proof of English language skills","status":"draft"}},"translationRequired":null}]` (official; source page-2) (unchanged: already in data/)
-
-> Preparer's caveats: tuition: kept the existing official value; the reader found {"amountMinor":0,"currency":"EUR","period":"year"} at https://en.th-wildau.de/index.php?id=30638; documents: kept the existing official value; the reader found [{"slug":"officially-translated-certificates","name":{"fr":{"text":"Certificats officiellement traduits","status":"draft"},"en":{"text":"Officially translated certificates","status":"draft"}},"translationRequired":true},{"slug":"passport-id-card","name":{"fr":{"text":"Copie du passeport / carte d'identité","status":"draft"},"en":{"text":"Copy of passport/ID card","status":"draft"}},"translationRequired":null},{"slug":"cv","name":{"fr":{"text":"CV actuel","status":"draft"},"en":{"text":"Current CV","status":"draft"}},"translationRequired":null},{"slug":"english-language-certificate","name":{"fr":{"text":"Preuve de compétences en anglais","status":"draft"},"en":{"text":"Proof of English language skills","status":"draft"}},"translationRequired":null}] at https://en.th-wildau.de/study/application/degree-programmes/online-application; The tuition fee of 0 EUR is based on the statement 'No tuition fees (the university only charges semester fees each semester)' from the programme page. The semester contribution of approx. 350 EUR per semester (DAAD page) or 376.80 EUR per semester (reregistration page) is not tuition and is not included as a tuition fact. The application deadline for applicants with foreign education certificates is given as 15 June (winter semester) without a year, so it is recorded as a recurring deadline. The start date 22 September 2025 and the online phase until 30 October/3 November 2025 are specific to the 2025 winter semester and not recorded as an intake. Chinese, Indian and Vietnamese applicants may have additional APS requirements not covered here.
-
-## programs/de-technische-universitat-ilmenau-hrk130-bachelor-of-science-in-b-daad4812  _(batch b20-85b121)_
-
-**Bachelor of Science in Biomedical Engineering**
-
-- **durationYears**: `3.5` (guidance; source daad) (unchanged: already in data/)
-- **teachingLanguages**: `["de","en"]` (guidance; source daad) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":0,"currency":"EUR","period":"year"}` (official; source page-2)
-  - "Das Studium an der TU Ilmenau ist grundsätzlich gebührenfrei." — https://www.tu-ilmenau.de/studium/vor-dem-studium/studienangebot/bewerbung
-  - "Tuition fees per semester None" — https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4812/
-- **applicationChannel**: `de-uni-assist` (official; source page-1) (unchanged: already in data/)
-
-> Preparer's caveats: teachingLanguages: kept the register value; the reader found ["de"] at https://www.tu-ilmenau.de/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/biomedizinische-technik-b-sc but no programme page was verified; programme page not verified: facts come from pages not tied to this programme by name; Requirement und Fristen sind aus den Seiten für Nicht-EU-Bewerbende abgeleitet. Der Fachbereich nennt für Nicht-EU-Abschlüsse Uni-Assist. Die genauen Bewerbungsfristen ohne Jahr sind nicht als intake übernommen.
-> Not accepted by the verifier: programmePage: the page does not mention the programme name
-
-## programs/nl-christelijke-hogeschool-windesheim-01vu-accountancy-1001o3525  _(batch b21-9ec3b2)_
-
-**Accountancy**
-
-- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
-- **applicationChannel**: `nl-studielink` (official; source programme) (unchanged: already in data/)
-- **documents**: `[{"slug":"school-leaving-certificate","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"School-leaving certificate","status":"draft"}},"translationRequired":null},{"slug":"grade-transcript","name":{"fr":{"text":"Relevé de notes","status":"draft"},"en":{"text":"Grade transcript","status":"draft"}},"translationRequired":null}]` (official; source page-1)
-  - "Stuur daarom tegelijk met je aanmelding een kopie van je diploma en cijferlijst op naar de Studentenadministratie." — https://www.windesheim.nl/opleidingen/toelating
-- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Pour les candidats avec un diplôme étranger : votre diplôme doit être équivalent à un diplôme havo, vwo ou mbo-4. Consultez les exigences linguistiques sur le site web.","status":"draft"},"en":{"text":"For applicants with a foreign diploma: your diploma must be equivalent to a havo, vwo or mbo-4 diploma. Check the language requirements on the website.","status":"draft"}}}`
-
-> Preparer's caveats: Tuition fee for non-EU students is not stated on the programme page or the institution-wide fee page.
-
-## programs/nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046  _(batch b21-9ec3b2)_
-
-**Bouwkunde**
-
-- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
-- **applicationChannel**: `nl-studielink` (official; source programme) (unchanged: already in data/)
-- **documents**: `[{"slug":"diploma","name":{"fr":{"text":"Diplôme","status":"draft"},"en":{"text":"Diploma","status":"draft"}},"translationRequired":null},{"slug":"grade-list","name":{"fr":{"text":"Relevé de notes","status":"draft"},"en":{"text":"Grade list","status":"draft"}},"translationRequired":null}]` (official; source page-1)
-  - "Stuur daarom tegelijk met je aanmelding een kopie van je diploma en cijferlijst op naar de Studentenadministratie." — https://www.windesheim.nl/opleidingen/toelating
-- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Un diplôme étranger équivalent à un diplôme néerlandais havo, vwo ou mbo-4 est requis, ainsi que la satisfaction aux exigences linguistiques (voir la page Taaleisen).","status":"draft"},"en":{"text":"A foreign diploma equivalent to a Dutch havo, vwo or mbo-4 diploma is required, plus you must meet the language requirements (see the Taaleisen page).","status":"draft"}}}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Un diplôme néerlandais havo, vwo ou mbo-niveau 4 donne un accès direct; vérifiez votre situation avec le Windesheim Informatiecentrum.","status":"draft"},"en":{"text":"A Dutch havo, vwo or mbo-level 4 diploma gives direct admission; check your situation with the Windesheim Informatiecentrum.","status":"draft"}}}`
-
-> Preparer's caveats: Tuition left out: the programme's own page only states the statutory fee ('Het collegegeld is € 2.694,- in 2026 - 2027'), which is the EU/EEA rate. The institution-wide studiekosten page does not state a single non-EU instellingscollegegeld amount for bachelor 2026-2027: it only says non-qualifying students may pay a higher (institutional) fee whose exact amounts are in the Besluit Collegegelden, so no quotable non-EU amount exists. Intake deadline quote is a general Studielink deadline, not explicitly for non-EU/foreign-qualification applicants; recorded as recurring deadline (day/month, no year).
-
-## programs/nl-christelijke-hogeschool-windesheim-01vu-ict-1001o2665  _(batch b21-9ec3b2)_
-
-**ICT**
-
-- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
-- **intakes**: `[{"startDate":"2027-09-06","applicationOpens":null,"applicationDeadline":null}]` (official; source programme) (unchanged: already in data/)
-- **applicationChannel**: `nl-studielink` (official; source programme) (unchanged: already in data/)
-- **documents**: `[{"slug":"school-leaving-certificate","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"School-leaving certificate","status":"draft"}},"translationRequired":null},{"slug":"grade-list","name":{"fr":{"text":"Relevé de notes","status":"draft"},"en":{"text":"Grade list","status":"draft"}},"translationRequired":null}]` (official; source page-1)
-  - "Stuur daarom tegelijk met je aanmelding een kopie van je diploma en cijferlijst op naar de Studentenadministratie." — https://www.windesheim.nl/opleidingen/toelating
-- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez que votre diplôme marocain (Baccalauréat) est jugé équivalent à un diplôme néerlandais havo, vwo ou mbo-4 ; la page indique aussi qu'il faut satisfaire aux exigences linguistiques (voir page des taaleisen).","status":"draft"},"en":{"text":"Check that your Moroccan diploma (Baccalauréat) is considered equivalent to a Dutch havo, vwo or mbo-4 diploma; the page also states you must meet the language requirements (see the taaleisen page).","status":"draft"}}}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Aucune exigence supplémentaire concernant les matières du profil n'est mentionnée pour cette filière : « Er gelden geen extra eisen voor profielvakken. »","status":"draft"},"en":{"text":"No additional profile-subject requirements are mentioned for this programme: \"Er gelden geen extra eisen voor profielvakken.\"","status":"draft"}}}`
-
-> Preparer's caveats: Tuition: the programme page states only the statutory fee ('Het collegegeld is € 2.694,- in 2026 - 2027.'), which is the EU/EEA rate; the institution-wide studiekosten page gives only wettelijk collegegeld amounts and no institutional (instellingscollegegeld) amount for non-EU students, so no tuition fact is stated for this non-EU applicant.
-
-## programs/nl-hogeschool-inholland-27pz-alkmaar-technische-informatica-1001o3859  _(batch b21-9ec3b2)_
-
-**Technische Informatica**
-
-- **tuition**: `{"amountMinor":1036000,"currency":"EUR","period":"year"}` (official; source page-2)
-  - "Voldoe je niet aan de voorwaarden voor het wettelijk collegegeld dan betaal je het instellingscollegegeld." — https://www.inholland.nl/inschrijven/collegegeld/
-  - "Studiejaar 2026-2027 Start 1 september 2026 Wettelijk collegegeld Voltijd, duaal of master: € 2.694 Deeltijd: € 2.253 Instellingscollegegeld Voltijd en duaal: € 10.360 Deeltijd: € 9.976" — https://www.inholland.nl/inschrijven/collegegeld/
-- **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":1}}]` (official; source page-1) (unchanged: already in data/)
-
-> Preparer's caveats: Tuition: the institution-wide page (https://www.inholland.nl/inschrijven/collegegeld/) states the institutional fee for full-time bachelor programmes for 2026-2027 as €10,360 per year for students who do not meet the conditions for the statutory fee (students from outside the EU/EEA). The programme's own page does not state any tuition fee. Documents: the quoted list is from the institution's general enrolment regulations, not from the programme's own page; the quote names 'diploma' and a certified translation, but does not name the specific diploma. The programme page's own text is in Dutch and describes a Dutch-taught programme (Technische Informatica voltijd); no English-taught variant is mentioned for this programme.
-
-## programs/nl-hogeschool-inholland-27pz-delft-luchtvaarttechnologie-1001o3164  _(batch b21-9ec3b2)_
-
-**Luchtvaarttechnologie**
-
-- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
-- **teachingLanguages**: `["nl"]` (official; source programme) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":1036000,"currency":"EUR","period":"year"}` (official; source page-1)
-  - "Voldoe je niet aan de voorwaarden voor het wettelijk collegegeld dan betaal je het instellingscollegegeld." — https://www.inholland.nl/inschrijven/collegegeld/
-  - "Instellingscollegegeld Voltijd en duaal: € 10.360" — https://www.inholland.nl/inschrijven/collegegeld/
-  - "Studiejaar 2026-2027 Start 1 september 2026" — https://www.inholland.nl/inschrijven/collegegeld/
-
-> Preparer's caveats: Tuition: the institution-wide instellingscollegegeld of €10,360 is proposed because it matches a full-time bachelor/voltijd programme in study year 2026-2027 and is for students who do not meet the statutory-fee conditions. Caveat: the page does not explicitly state that it is for non-EU/EEA students (it says only those who do not meet the statutory-fee conditions pay it), so an auditor should confirm it applies to this Moroccan applicant; no exceptions for this programme are listed. The requirement rule uses a general institutional rule on proof of language proficiency in the language of instruction for foreign diplomas, but the programme is taught in Dutch (taught language is not English); it is included because it applies to this programme as a foreign-diploma applicant, and it should be checked in the CSA/opleiding information. No programme-specific entry requirement page was supplied for Luchtvaarttechnologie (the supplied International Creative Business entry-requirements page is for a different programme and its Dutch B2/NT2 requirement applies to programmes taught in Dutch, which is the case for this programme).
-
-## programs/nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064  _(batch b21-9ec3b2)_
-
-**Bouwkunde**
-
-- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
-- **teachingLanguages**: `["nl"]` (official; source programme) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":1036000,"currency":"EUR","period":"year"}` (official; source page-1)
-  - "Voldoe je niet aan de voorwaarden voor het wettelijk collegegeld dan betaal je het instellingscollegegeld." — https://www.inholland.nl/inschrijven/collegegeld/
-  - "Studiejaar 2026-2027 Start 1 september 2026 Wettelijk collegegeld Voltijd, duaal of master: € 2.694 Deeltijd: € 2.253 Instellingscollegegeld Voltijd en duaal: € 10.360 Deeltijd: € 9.976" — https://www.inholland.nl/inschrijven/collegegeld/
-- **applicationChannel**: `nl-studielink` (official; source page-2)
-  - "Via Studielink kun je je aanmelden voor een opleiding bij Hogeschool Inholland." — https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf
-- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez auprès de l'établissement si vous devez démontrer votre maîtrise du néerlandais et à quel niveau.","status":"draft"},"en":{"text":"Check with the institution whether you need to demonstrate Dutch proficiency and at what level.","status":"draft"}}}`
-
-> Preparer's caveats: The programme's own page says 'duur 4 jaar'—keep that despite any ECTS conversion. Tuition: the programme page has no fee; the institution-wide collegegeld page gives a single non-EU instellingscollegegeld for 2026-2027 of €10,360 for voltijd, used here. The Suriname visa page mentions 'collegegeld ter waarde van € 2.695' for visa students, but that is a different route and the collegegeld page's 2026-2027 instellingscollegegeld governs. The application deadline for non-EU applicants (e.g. 1 May) is mentioned for Suriname and SKC, but no quote ties an exact dated deadline to non-EU applicants for this programme, so intakes are omitted. The Inholland entry-requirements pages for Tourism Management and Creative Business were not used, as they are different programmes.
-
-## programs/nl-hogeschool-utrecht-25dw-accountancy-1001o3544  _(batch b21-9ec3b2)_
-
-**Accountancy**
-
-- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":1074700,"currency":"EUR","period":"year"}` (official; source page-3)
-  - "Het instellingscollegegeldtarief geldt alleen voor studenten die niet voldoen aan de voorwaarden voor het wettelijk collegegeld." — https://www.hu.nl/collegegeld-en-betalen
-  - "De tarieven voor instellingscollegegeld in 2026-2027 Bachelor, Associate degree & bekostigde master (voltijd, deeltijd & duaal) € 10.747" — https://www.hu.nl/collegegeld-en-betalen
-- **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":31}},{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":10,"day":31}}]` (official; source page-2) (unchanged: already in data/)
-- **applicationChannel**: `nl-studielink` (official; source page-1) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez les conditions d'admission : un diplôme havo, vwo ou mbo-4 est requis ; sans ce diplôme et si vous avez 21 ans ou plus, un toelatingsonderzoek (examen d'admission) est nécessaire. Consultez la page complète des conditions d'admission.","status":"draft"},"en":{"text":"Check the admission requirements: a havo, vwo or mbo-4 diploma is required; without it, if you are 21 or older, a toelatingsonderzoek (admission examination) is required. See the full admission requirements page.","status":"draft"}}}`
-
-> Preparer's caveats: Duration of 4 years and the deadline of 1 mei come from the Dutch-language page; the international Admissions page was not supplied, so no international-specific deadline or document list could be quoted. Tuition: the programme's own page states no fee; the institution-wide page Collegegeld en betalen ('https://www.hu.nl/collegegeld-en-betalen') gives institutional fee (instellingscollegegeld) 2026-2027 for Bachelor full-time, which applies to applicants who do not meet the conditions for the statutory fee (non-EU/EEA); this is used above per the task instruction. Allowed per TASK. The '1 mei' deadline is stated without a year (recurring).
-
-## programs/nl-hogeschool-utrecht-25dw-chemische-technologie-1001o3152  _(batch b21-9ec3b2)_
-
-**Chemische Technologie**
-
-- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":1074700,"currency":"EUR","period":"year"}` (official; source page-1)
-  - "Het instellingscollegegeldtarief geldt alleen voor studenten die niet voldoen aan de voorwaarden voor het wettelijk collegegeld." — https://www.hu.nl/collegegeld-en-betalen
-  - "De tarieven voor instellingscollegegeld in 2026-2027 Bachelor, Associate degree & bekostigde master (voltijd, deeltijd & duaal) € 10.747" — https://www.hu.nl/collegegeld-en-betalen
-- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez les exigences de diplôme d'entrée (havo, vwo, mlo ou mbo Procestechniek niveau 4) et la possibilité d'un toelatingsonderzoek pour les candidats de 21 ans et plus, car votre Baccalauréat marocain peut nécessiter une évaluation.","status":"draft"},"en":{"text":"Check the entry diploma requirements (havo, vwo, mlo or mbo Procestechniek level 4) and the possibility of a toelatingsonderzoek for applicants aged 21+, as your Moroccan Baccalauréat may need evaluation.","status":"draft"}}}`
-
-> Preparer's caveats: Programme page says the study language is not stated; teachingLanguages omitted. Documents: only the prior-education diploma is named; no separate document list for international applicants appears on the pages. Tuition: the amount comes from the institution-wide page, which quotes one non-EU instellingscollegegeld amount (EUR 10,747) for 2026-2027 for bachelor/Ad/master (voltijd, deeltijd & duaal); the programme's own page states no tuition fee.
-
-## programs/nl-hogeschool-utrecht-25dw-ict-1001o2672  _(batch b21-9ec3b2)_
-
-**ICT**
-
-- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":1074700,"currency":"EUR","period":"year"}` (official; source page-2)
-  - "Het instellingscollegegeldtarief geldt alleen voor studenten die niet voldoen aan de voorwaarden voor het wettelijk collegegeld." — https://www.hu.nl/collegegeld-en-betalen
-  - "De tarieven voor instellingscollegegeld in 2026-2027 Bachelor, Associate degree & bekostigde master (voltijd, deeltijd & duaal) € 10.747" — https://www.hu.nl/collegegeld-en-betalen
-- **applicationChannel**: `nl-studielink` (official; source page-1) (unchanged: already in data/)
-- **documents**: `[{"slug":"school-leaving-certificate","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"School-leaving certificate","status":"draft"}},"translationRequired":null}]` (official; source page-3) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifie les conditions d'admission : un diplôme néerlandais havo, vwo ou mbo-4 est exigé, ou un examen d'admission si tu as 21 ans ou plus et que tu n'as pas ce diplôme.","status":"draft"},"en":{"text":"Check the admission requirements: a Dutch havo, vwo or mbo-4 diploma is required, or an admission assessment if you are 21 or older without such a diploma.","status":"draft"}}}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifie auprès de l'établissement quel tarif de frais de scolarité (instellingscollegegeld) s'applique à toi en tant qu'étudiant non-EEE avec un diplôme étranger, car les frais publiés varient selon le statut.","status":"draft"},"en":{"text":"Check with the institution which tuition fee (instellingscollegegeld) applies to you as a non-EEA student with a foreign diploma, as the published fees vary by status.","status":"draft"}}}`
-
-> Preparer's caveats: The tuition amount € 10,747 is the institution-wide institutional fee (instellingscollegegeld) for 2026-2027 for Bachelor/Ad/bekostigde master full-time, part-time and dual programmes, as listed on the institution-wide collegegeld page. The programme page does not state its own non-EU tuition fee. Teaching language is not stated on the programme page. The application deadline 'Aanmelddeadline t/m 1 mei en 31 januari' is a general HU deadline without year and not explicitly tied to non-EU applicants; there is also a general 1 mei deadline on the aanmelden page, and for non-EU/foreign-diploma applicants the page refers to the English Admissions page where a different deadline may apply. The 'Aanmelddeadline t/m 1 mei en 31 januari' quote gives 1 May for September intake; the 31 January may refer to the February intake, so a single recurringDeadline of 1 May was kept.
-
-## programs/nl-hogeschool-van-amsterdam-28dn-biomedische-technologie-1001o5075  _(batch b21-9ec3b2)_
-
-**Biomedische Technologie**
-
-- **tuition**: `{"amountMinor":1064800,"currency":"EUR","period":"year"}` (official; source page-1)
-  - "Instellingscollegegeld 2026-2027: € 10.648 Dit betaal je als je niet in aanmerking komt voor wettelijk collegegeld." — https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/collegegeld/collegegeldtarieven
-- **applicationChannel**: `nl-studielink` (official; source page-2) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez sur la page de l'opleiding si une admission supplémentaire ou un profil spécifique est requis pour votre diplôme de baccalauréat marocain.","status":"draft"},"en":{"text":"Check the programme page whether additional admission requirements or a specific profile apply to your Moroccan Baccalaureate diploma.","status":"draft"}}}`
-
-> Preparer's caveats: Le diplôme néerlandais havo/vwo avec profil N&T ou N&G n'est pas mentionné pour les étudiants internationaux ; une évaluation manuelle est nécessaire. Le frais de scolarité est le tarif institutionnel (instellingscollegegeld) pour les étudiants qui ne remplissent pas les conditions du tarif légal ; la page ne précise pas explicitement les étudiants hors UE/EEE dans la même phrase, mais ce tarif s'applique généralement à eux. La page de la formation ne mentionne pas de frais de scolarité spécifiques ; le tarif institutionnel 2026-2027 de 10 648 € par an est utilisé comme référence pour les étudiants non-UE/EEE.
+## programs/hu-budapest-university-of-technology-and-ec-electrical-engineering-sf45  _(batch b22-3d788c)_
+
+**Electrical Engineering**, Budapest University of Technology and Economics
+
+- **durationYears**: `3.5` (official; source programme)
+  - "Duration of the course / programme: 7 semesters" — https://tempus.tpf.hu/studyfinder/index/show/45
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "Language of instruction: English" — https://tempus.tpf.hu/studyfinder/index/show/45
+- **documents**: `[{"slug":"application-form","name":{"fr":{"text":"Formulaire de candidature","status":"draft"},"en":{"text":"Application form","status":"draft"}},"translationRequired":null},{"slug":"school-reports","name":{"fr":{"text":"Bulletins scolaires du secondaire","status":"draft"},"en":{"text":"Secondary high school reports","status":"draft"}},"translationRequired":null},{"slug":"school-leaving-certificate","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"Secondary high school diploma","status":"draft"}},"translationRequired":null},{"slug":"transcripts-diplomas","name":{"fr":{"text":"Relevés de notes et diplômes","status":"draft"},"en":{"text":"Transcripts and degrees/diplomas","status":"draft"}},"translationRequired":null},{"slug":"english-language-certificate","name":{"fr":{"text":"Attestation de compétence en anglais","status":"draft"},"en":{"text":"Proof of English language proficiency","status":"draft"}},"translationRequired":null},{"slug":"curriculum-vitae","name":{"fr":{"text":"Curriculum vitae","status":"draft"},"en":{"text":"Curriculum vitae","status":"draft"}},"translationRequired":null}]` (official; source page-2)
+  - "application form" — https://www.vik.bme.hu/en/education/admission/
+  - "secondary high school reports relevant to your application, with special reference to mathematics, physics and English language" — https://www.vik.bme.hu/en/education/admission/
+  - "general certificate of education - G.C.E. or any equivalent secondary high school diploma" — https://www.vik.bme.hu/en/education/admission/
+  - "official transcripts, degrees/diplomas of any higher education already completed" — https://www.vik.bme.hu/en/education/admission/
+  - "Proof of English language proficiency: TOEFL iBT score of 4.0" — https://www.vik.bme.hu/en/education/admission/
+  - "curriculum vitae (autobiography/résumé)" — https://www.vik.bme.hu/en/education/admission/
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Le test de positionnement en mathématiques, physique et anglais est obligatoire pour entrer en licence (BSc) à BME VIK.","status":"draft"},"en":{"text":"The placement test in mathematics, physics and English is mandatory to enter a BSc degree program at BME VIK.","status":"draft"}}}`
+  - "The placement test is mandatory for all applicants who wish to enter into a BSc degree program at BME VIK." — https://www.vik.bme.hu/en/education/admission/
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Le diplôme d'études secondaires doit être obtenu avec un résultat global d'au moins 70 %.","status":"draft"},"en":{"text":"The secondary school diploma must be completed with an overall result of at least 70%.","status":"draft"}}}`
+  - "Completed SECONDARY-school studies with an overall result of min. 70%." — https://tempus.tpf.hu/studyfinder/index/show/45
+- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Dates limites de candidature : semestre d'automne du 1er avril au 15 mai ; semestre de printemps du 15 octobre au 15 novembre (année non précisée).","status":"draft"},"en":{"text":"Application deadlines: fall semester 1 April – 15 May; spring semester 15 October – 15 November (year not stated).","status":"draft"}}}`
+  - "Application period in the fall semester: 1st April – 15th May" — https://www.vik.bme.hu/en/education/admission/
+- **page**: https://tempus.tpf.hu/studyfinder/index/show/45
+
+> Preparer's caveats: Page texts give no tuition fee for this programme, so no tuition fact is included. The applicationChannel quote from the VIK admission page is general ("All applications must be submitted on-line") and does not name a platform; treated as direct university application (hu-university-direct), but the Stipendium Hungaricum route is also mentioned for scholarship applicants ("For Stipendium Hungaricum Applicants"). Language proficiency appears as B2/IELTS 5.0/TOEFL iBT 72 on the Studyfinder page; the VIK page adds older TOEFL thresholds (iBT 4.0, PBT 550) and states IELTS 5.0 is recommended for BSc but required for MSc/PhD, so certificate requirements should be verified manually. Duration: 7 semesters (210 credits) = 3.5 years.
+
+## programs/hu-budapest-university-of-technology-and-ec-professional-pilot-sf77  _(batch b22-3d788c)_
+
+**Professional Pilot**, Budapest University of Technology and Economics
+
+- **durationYears**: `3.5` (official; source programme)
+  - "Duration of the course / programme: 7 semesters" — https://tempus.tpf.hu/studyfinder/index/show/77
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "Language of instruction: English" — https://tempus.tpf.hu/studyfinder/index/show/77
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Un diplôme d'études secondaires (baccalauréat) valide est exigé pour le BSc.","status":"draft"},"en":{"text":"An eligible high school degree is required for the BSc.","status":"draft"}}}`
+  - "general minimum requirements are an eligible high school degree" — https://tempus.tpf.hu/studyfinder/index/show/77
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"L'admission comprend un examen d'entrée: oui, type oral, en ligne.","status":"draft"},"en":{"text":"Admission includes an entrance examination: yes, oral type, online.","status":"draft"}}}`
+  - "Entrance examination: Yes Entrance type: Oral" — https://tempus.tpf.hu/studyfinder/index/show/77
+  - "Place of examination: Online" — https://tempus.tpf.hu/studyfinder/index/show/77
+- **page**: https://tempus.tpf.hu/studyfinder/index/show/77
+
+> Preparer's caveats: La page ne donne pas de date limite de candidature précise pour les candidats non-UE. Elle renvoie à la page E-admission pour les délais et exigences. Aucun frais de scolarité pour les étudiants auto-financés non-UE n'est indiqué sur la page; les frais peuvent dépendre de l'université ou de la bourse. Le canal de candidature est basé sur la mention de la page E-admission de l'université; il n'y a pas de mention explicite d'une plateforme externe comme Uni-assist.
+
+## programs/hu-corvinus-university-of-budapest-applied-economics-sf83  _(batch b22-3d788c)_
+
+**Applied Economics**, Corvinus University of Budapest
+
+- **durationYears**: `3` (official; source programme)
+  - "Duration of the course / programme: 6 semesters" — https://tempus.tpf.hu/studyfinder/index/show/83
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "Language of instruction: English" — https://tempus.tpf.hu/studyfinder/index/show/83
+- **tuition**: `{"amountMinor":700000,"currency":"EUR","period":"year"}` (official; source page-2)
+  - "Applied Economics 1 980 000 Ft 7 000 €" — https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en
+  - "Corvinus offers affordable tuition fees for self-funded degree seeking international students" — https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en
+- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B2","certificateRequired":null,"acceptedTests":["ielts","toefl"]}`
+  - "Corvinus accepts the following proof of English language proficiency (minimum equivalent B2 level)" — https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+  - "IELTS language certificate, minimum score: 6.0" — https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+  - "TOEFL language certificate, minimum score: 65" — https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Un examen d'entrée écrit de mathématiques en ligne est obligatoire ; vous pouvez aussi présenter une qualification acceptée (AP, SAT, ACT, IB, A-level, etc.).","status":"draft"},"en":{"text":"An online written mathematics entrance exam is required; you can also present an accepted qualification (AP, SAT, ACT, IB, A-level, etc.).","status":"draft"}}}`
+  - "If you do not or will not have any of these qualifications by the time of enrolment, you can take the Corvinus mathematics entrance exam instead." — https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+- **page**: https://tempus.tpf.hu/studyfinder/index/show/83
+
+> Preparer's caveats: The tuition figure (EUR 7,000/year) is quoted from the Corvinus Fees and Costs page, which lists 'non-EEA applicants (EUR/year)'; the Studyfinder page does not state a fee. No application deadline for non-EU applicants is given with a day, month and year on the supplied pages, so the 'intakes' fact is omitted; the application-information page gives general 2027/28 opening (October 2026) and a 1 August document submission date, but these are not stated as the non-EU application deadline. The mathematics requirement is a manual check because the pages give many accepted qualifications and a points threshold set by the Dean.
+
+## programs/hu-eszterhazy-karoly-catholic-university-business-informatics-sf229  _(batch b22-3d788c)_
+
+**Business Informatics**, Eszterházy Károly Catholic University
+
+- **durationYears**: `3.5` (official; source programme)
+  - "Duration of the course / programme: 7 semesters" — https://tempus.tpf.hu/studyfinder/index/show/229
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "Language of instruction: English" — https://tempus.tpf.hu/studyfinder/index/show/229
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Un entretien en ligne de 20 à 30 minutes et l'évaluation des documents de candidature font partie de la procédure d'admission.","status":"draft"},"en":{"text":"A 20-30 minute online interview and evaluation of the application documents are part of the admission procedure.","status":"draft"}}}`
+  - "The admission procedure consists of the following parts: 20-30 minutes long online interview, evaluation of application documents" — https://tempus.tpf.hu/studyfinder/index/show/229
+- **page**: https://tempus.tpf.hu/studyfinder/index/show/229
+
+> Preparer's caveats: The page lists an entrance examination but does not give the date, place or documents for an international applicant; no tuition fee for a self-financed non-EU student is stated on the page. The page mentions the Stipendium Hungaricum Scholarship Programme but does not say the self-financed applicant applies through it, so no hu-stipendium-hungaricum channel is given.
+
+## programs/hu-international-business-school-bachelor-of-science-in-c-sf365  _(batch b22-3d788c)_
+
+**Bachelor of Science in Corporate Finance**, International Business School
+
+- **durationYears**: `3` (official; source programme)
+  - "Duration of programme 6 semesters 6 semesters" — https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-corporate-finance/
+  - "Duration of the course / programme: 6 semesters" — https://tempus.tpf.hu/studyfinder/index/show/365
+- **teachingLanguages**: `["en"]` (official; source page-2)
+  - "Language of instruction: English" — https://tempus.tpf.hu/studyfinder/index/show/365
+- **documents**: `[{"slug":"school-leaving-certificate","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"Secondary school leaving certificate","status":"draft"}},"translationRequired":null}]` (official; source programme)
+  - "Secondary school leaving certificate AND" — https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-corporate-finance/
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Justificatif de niveau d'anglais exigé : IELTS 6.0 ou équivalent (par ex. TOEFL 72, GCSE English, Duolingo 105). Vérifiez les documents acceptés.","status":"draft"},"en":{"text":"English proof required: IELTS 6.0 or equivalent (e.g. TOEFL 72, GCSE English, Duolingo 105). Check which documents are accepted.","status":"draft"}}}`
+  - "IELTS 6.0 or equivalent*" — https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-corporate-finance/
+- **page**: https://tempus.tpf.hu/studyfinder/index/show/365
+
+> Preparer's caveats: La page des frais donne 4 000 par semestre pour « Bachelor's degree programmes - The University of Buckingham », la structure à laquelle appartient ce BSc. Le lien « Fees and Deadlines » de la page du programme renvoie à une page de frais qui distingue les frais par semestre pour l'Université de Buckingham et mentionne des frais supplémentaires (frais d'inscription uniques pour les non-UE, frais de candidature, etc.). Les dates de début ne sont données que comme « February and September » sans jour ni année dans l'URL du programme ; les deadlines de candidature sur la page des frais concernent des programmes ou des citoyens hongrois et ne précisent pas qu'elles s'appliquent aux candidats non-UE, donc elles ne sont pas incluses. L'inscription se fait via le formulaire en ligne d'IBS / DreamApply (canal « hu-university-direct »).
+
+## programs/hu-obuda-university-industrial-design-engine-sf568  _(batch b22-3d788c)_
+
+**Industrial Design Engineering**, Obuda University
+
+- **durationYears**: `3.5` (official; source programme)
+  - "Duration of the course / programme: 7 semesters" — https://tempus.tpf.hu/studyfinder/index/show/568
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "Language of instruction: English" — https://tempus.tpf.hu/studyfinder/index/show/568
+- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":null,"certificateRequired":true,"acceptedTests":["ielts"]}`
+  - "diploma and English language certificate of level IELTS 5.0 at least" — https://tempus.tpf.hu/studyfinder/index/show/568
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Un examen d'entrée est requis : épreuve écrite de mathématiques et une matière au choix (biologie, chimie ou informatique), ainsi qu'un entretien oral en anglais.","status":"draft"},"en":{"text":"An entrance examination is required: a written mathematics exam and one chosen subject (biology, chemistry or informatics), plus an online oral English interview.","status":"draft"}}}`
+  - "Entrance examination: Yes" — https://tempus.tpf.hu/studyfinder/index/show/568
+- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Un portfolio de travaux (dessins, peintures) doit être téléversé en un seul fichier (.zip, .pdf, .jpg) ; les envois séparés ne sont pas acceptés.","status":"draft"},"en":{"text":"A portfolio of works (drawings, paintings) must be uploaded as a single file (.zip, .pdf, .jpg); single file uploads are not accepted.","status":"draft"}}}`
+  - "The portfolio of works needs to be uploaded in one file (.zip, .pdf, .jpg)" — https://tempus.tpf.hu/studyfinder/index/show/568
+- **page**: https://tempus.tpf.hu/studyfinder/index/show/568
+
+> Preparer's caveats: Tuition: the only fee found for this BSc is 2,900 EUR per semester for non-EEA students (university-wide fee table); EU/EEA fee is 2,000 EUR. Intakes left out: the pages give a deadline of '31th May, 2026' on the university how-to-apply page but no quote assigns it to non-EU/foreign-qualification applicants; the 1st August matriculation certificate upload is not a programme application deadline for this applicant. The application channel (university's own online application system) is indicated by 'uploaded into the University’s online application system' and 'online application system of Obuda University', but no single sentence names the route clearly for a self-financed applicant, so applicationChannel was omitted.
+
+## programs/hu-university-of-debrecen-computer-science-enginee-sf128  _(batch b22-3d788c)_
+
+**Computer Science Engineering**, University of Debrecen
+
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "All courses are taught in English; therefore, a B2 level English proficiency is required." — https://www.edu.unideb.hu/p/computer-science-engineering-bsc
+- **tuition**: `{"amountMinor":700000,"currency":"USD","period":"year"}` (official; source programme)
+  - "The tuition fee for this program is 7,000 USD/Year" — https://www.edu.unideb.hu/p/computer-science-engineering-bsc
+- **applicationChannel**: `hu-university-direct` (official; source page-2)
+  - "The following documents need to be submitted during the application procedure by all applicants through our online application platform" — https://www.edu.unideb.hu/p/application-and-admission
+- **documents**: `[{"slug":"application-form","name":{"fr":{"text":"Formulaire de candidature","status":"draft"},"en":{"text":"Application form","status":"draft"}},"translationRequired":null},{"slug":"high-school-certificate","name":{"fr":{"text":"Certificat de fin d'études secondaires","status":"draft"},"en":{"text":"High school certificate","status":"draft"}},"translationRequired":null}]` (official; source page-2)
+  - "Valid, filled-in application form (to be filled online here);" — https://www.edu.unideb.hu/p/application-and-admission
+  - "Admission requires a high school certificate;" — https://www.edu.unideb.hu/p/computer-science-engineering-bsc
+- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B2","certificateRequired":null,"acceptedTests":["toefl","ielts"]}`
+  - "Applicants must have an English proficiency of at least B2 level as the program is fully taught in English." — https://www.edu.unideb.hu/p/computer-science-engineering-bsc
+  - "a TOEFL test with a minimum score of 513 (Paper-Based)." — https://www.edu.unideb.hu/p/computer-science-engineering-bsc
+  - "an IELTS test with a minimum score of 5.5." — https://www.edu.unideb.hu/p/computer-science-engineering-bsc
+- **page**: https://tempus.tpf.hu/studyfinder/index/show/128
+
+> Preparer's caveats: Tuition is stated in USD on the programme page; no EUR or HUF amount for this programme appears. The B2 English requirement: the programme page says 'Please note, that you are not strictly required to have a language exam certificate', but a separate application page requires 'a standardized, at least upper-intermediate (B2) level language certificate, obtained at a proctored exam', so certificateRequired is left null. The 15th June deadline is a general self-financed deadline without a year and is not explicitly labelled for non-EU/international applicants on that page.
+
+## programs/hu-university-of-miskolc-mechanical-engineering-sf462  _(batch b22-3d788c)_
+
+**Mechanical Engineering**, University of Miskolc
+
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "Language of instruction: English" — https://tempus.tpf.hu/studyfinder/index/show/462
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Diplôme d'études secondaires exigé, avec connaissances au niveau secondaire en mathématiques et en physique. Vérifier ces prérequis dans votre dossier.","status":"draft"},"en":{"text":"Secondary school leaving certificate required, with secondary school level knowledge of mathematics and physics. Check these prerequisites in your dossier.","status":"draft"}}}`
+  - "Secondary school leaving certificate, secondary school level knowledge of mathematics and physics" — https://tempus.tpf.hu/studyfinder/index/show/462
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Un examen d'entrée est requis : lettre de motivation et entretien Skype de 15 minutes. Préparez ces éléments.","status":"draft"},"en":{"text":"An entrance examination is required: motivation letter and a 15-minute Skype interview. Prepare these elements.","status":"draft"}}}`
+  - "Entrance examination: Yes" — https://tempus.tpf.hu/studyfinder/index/show/462
+  - "After checking out the documentation handed in, we are asking for complementary information about the professional and motivational background in letter. In the second part of the entrance examination a 15-minute-long skype-interview takes place with two opponens who decide together on the final score and the admission of the applicants." — https://tempus.tpf.hu/studyfinder/index/show/462
+- **page**: https://tempus.tpf.hu/studyfinder/index/show/462
+
+> Preparer's caveats: Les pages ne donnent ni frais de scolarité pour un étudiant auto-financé hors UE/EEE, ni dates de candidature, ni liste de documents, ni plateforme de candidature. Le programme est disponible dans le cadre de la bourse Stipendium Hungaricum, mais cela ne constitue pas un canal de candidature auto-financée et ne signifie pas des frais de 0 pour le programme. Durée : le programme indique 7 semestres = 3.5 ans, mais aucune formulation ne l'exprime directement en années ; la durée n'a donc pas été extraite.
+
+## programs/hu-university-of-nyiregyhaza-mechanical-engineering-sf529  _(batch b22-3d788c)_
+
+**Mechanical Engineering**, University of Nyíregyháza
+
+- **durationYears**: `3.5` (official; source programme)
+  - "Duration of the course / programme: 7 semesters" — https://tempus.tpf.hu/studyfinder/index/show/529
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "Language of instruction: English" — https://tempus.tpf.hu/studyfinder/index/show/529
+- **tuition**: `{"amountMinor":245000,"currency":"EUR","period":"semester"}` (official; source page-2)
+  - "Mechanical Engineering BSc 7 2450 EUR *** 1800 EUR ***" — https://english.nye.hu/en/node/319
+  - "Tuition fee / semester * for non-EU applicants **" — https://english.nye.hu/en/node/319
+- **applicationChannel**: `hu-university-direct` (official; source page-3)
+  - "Welcome to the online application portal of the University of Nyíregyháza." — https://applicationform.nye.hu/
+  - "We will accept the application only if the received amount is 100 EUR." — https://english.nye.hu/en/node/30
+- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B2","certificateRequired":null,"acceptedTests":["ielts"]}`
+  - "English language skills at upper intermediate level or higher (at level CEFR B2 or IELTS 5.5) – Having a language certificate is not a compulsory requirement." — https://tempus.tpf.hu/studyfinder/index/show/529
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"L'admission se fait sur entretien oral en ligne (Microsoft Teams) avec évaluation sur 100 points ; il faut au moins 60 points pour réussir l'examen d'entrée.","status":"draft"},"en":{"text":"Admission is based on an online oral interview (Microsoft Teams) evaluated out of 100 points; at least 60 points are required to pass the entrance exam.","status":"draft"}}}`
+  - "The application procedure is based on an evaluation system of 100 points: 50 points are given for motivation, professional knowledge and educational background, and the other 50 points for language proficiency according to the online interview." — https://tempus.tpf.hu/studyfinder/index/show/529
+  - "The entrance exam is successful, if the applicant have at least 60 points." — https://tempus.tpf.hu/studyfinder/index/show/529
+- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Des frais de candidature de 100 EUR non remboursables doivent être payés et reçus pour que l'examen d'entrée soit possible.","status":"draft"},"en":{"text":"A non-refundable application fee of 100 EUR must be paid and received for the entrance exam to be possible.","status":"draft"}}}`
+  - "Without the arrival of the 100 EUR application fee no entrance exam is possible." — https://english.nye.hu/en/node/30
+- **page**: https://tempus.tpf.hu/studyfinder/index/show/529
+
+> Preparer's caveats: Tuition extraite de la page des frais de scolarité 2027/2028 de l'université (EUR 2450 par semestre pour les candidats non-UE), qui liste explicitement « Mechanical Engineering BSc 7 ». Aucun document d'identité ou de diplôme spécifique au programme au-delà de la liste générale des candidats auto-financés. La date limite d'admission 2027 (30 juin 2026 / décembre 2026) n'a pas été retenue car elle concerne la session 2026/2027 et non une date 2027 explicite pour le programme.
 

@@ -1,0 +1,126 @@
+slug: hu-university-of-debrecen-computer-science-enginee-sf128
+institution: hu-university-of-debrecen
+country: HU
+city: debrecen
+field: computer-science
+level: bachelor
+name: Computer Science Engineering
+summary:
+  fr:
+    text: Computer Science Engineering, University of Debrecen (Debrecen). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Computer Science Engineering, University of Debrecen (Debrecen). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Computer Science Engineering, University of Debrecen (Debrecen). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.edu.unideb.hu/p/computer-science-engineering-bsc
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 700000
+    currency: USD
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-2
+  info_kind: official
+documents:
+  value:
+    - slug: application-form
+      name:
+        fr:
+          text: Formulaire de candidature
+          status: draft
+        en:
+          text: Application form
+          status: draft
+      translationRequired: null
+    - slug: high-school-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: High school certificate
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests:
+        - toefl
+        - ielts
+scholarships: []
+sources:
+  programme:
+    url: https://www.edu.unideb.hu/p/computer-science-engineering-bsc
+    last_verified_at: null
+  page-2:
+    url: https://www.edu.unideb.hu/p/application-and-admission
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-debrecen-computer-science-enginee-sf128
+  name: Computer Science Engineering
+  institution: University of Debrecen
+  city: Debrecen
+  field: computer-science
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/128
+  todo: "Study Finder lists: branch Computer Science and Information Technology, language English, duration 7 semesters, location Debrecen, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://www.edu.unideb.hu/p/computer-science-engineering-bsc; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:128
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: teachingLanguages
+      url: https://www.edu.unideb.hu/p/computer-science-engineering-bsc
+      quote: All courses are taught in English; therefore, a B2 level English proficiency is required.
+    - fact: tuition
+      url: https://www.edu.unideb.hu/p/computer-science-engineering-bsc
+      quote: The tuition fee for this program is 7,000 USD/Year
+    - fact: applicationChannel
+      url: https://www.edu.unideb.hu/p/application-and-admission
+      quote: The following documents need to be submitted during the application procedure by all applicants through our online application platform
+    - fact: documents
+      url: https://www.edu.unideb.hu/p/application-and-admission
+      quote: Valid, filled-in application form (to be filled online here);
+    - fact: documents
+      url: https://www.edu.unideb.hu/p/computer-science-engineering-bsc
+      quote: Admission requires a high school certificate;
+    - fact: requirements.req-1
+      url: https://www.edu.unideb.hu/p/computer-science-engineering-bsc
+      quote: Applicants must have an English proficiency of at least B2 level as the program is fully taught in English.
+    - fact: requirements.req-1
+      url: https://www.edu.unideb.hu/p/computer-science-engineering-bsc
+      quote: a TOEFL test with a minimum score of 513 (Paper-Based).
+    - fact: requirements.req-1
+      url: https://www.edu.unideb.hu/p/computer-science-engineering-bsc
+      quote: an IELTS test with a minimum score of 5.5.
+  notes: "Tuition is stated in USD on the programme page; no EUR or HUF amount for this programme appears. The B2 English requirement: the programme page says 'Please note, that you are not strictly required to have a language exam certificate', but a separate application page requires 'a standardized, at least upper-intermediate (B2) level language certificate, obtained at a proctored exam', so certificateRequired is left null. The 15th June deadline is a general self-financed deadline without a year and is not explicitly labelled for non-EU/international applicants on that page."

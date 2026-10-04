@@ -1,0 +1,30 @@
+slug: hu-university-of-szeged
+name: University of Szeged
+country: HU
+city:
+  slug: szeged
+  name: Szeged
+type: null
+website: https://www.u-szeged.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.u-szeged.hu/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: hu-university-of-szeged
+  name: University of Szeged
+  institution: ""
+  city: Szeged
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: 'institution named "University of Szeged" in the Study Finder: the register does not say whether it is public or private nor its website. Find its official site (Study in Hungary profile: http://studyinhungary.hu/institution/university-of-szeged-37.html), check it is a recognised Hungarian higher education institution, set the type, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw'
+  sourceId: studyfinder-institution:university-of-szeged@szeged
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - url: https://sci.u-szeged.hu/english/undergraduate-programs/computer-science-bsc
+      quote: szín University of Szeged Faculty of Science and Informatics Main page About us Brief

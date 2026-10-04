@@ -1,0 +1,72 @@
+{
+  "slug": "hu-university-of-pannonia-veszprem-international-business-e-sf584",
+  "programmePage": "https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/584",
+          "quote": "Language of instruction: English"
+        },
+        {
+          "url": "https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/",
+          "quote": "Language and form of training English Full time"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 400000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/",
+          "quote": "The tuition fee for NON EU Students is 4000 EUR/Academic year (2 semesters)"
+        }
+      ]
+    }
+  },
+  "notes": "Page gtk admission is about Spring 2027 Master's programmes, not this Bachelor; entry requirements (finished secondary school, B2 English certificate, entrance interview) are general to this programme. Application channel: Stipendium Hungaricum is available but for a self-financed foreign applicant the pages provide only contact/website details, not a named self-service application platform, so applicationChannel is omitted.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/584",
+            "quote": "B2 level English language certificate (TOEFL/IELTS/ESOL/BEC/ECL/PTE/FCE/CAE/TELC/TOEIC/Euroexam)"
+          },
+          {
+            "url": "https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/",
+            "quote": "B2 level English language certificate (TOEFL/IELTS/ESOL/BEC/ECL/PTE/FCE/CAE/TELC/TOEIC/Euroexam)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Entretien d'admission professionnel (oral, en ligne) organisé par le comité d'admission, avec un score minimum de 56 points sur 100.",
+          "en": "Professional admission interview (oral, online) organised by the Admission Committee, with a minimum score of 56 points out of 100."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/584",
+            "quote": "the applicant takes a professional entrance examination (interview) via Skype organised by the Admission Committee of the Faculty of Business and Economics"
+          }
+        ]
+      }
+    ]
+  }
+}

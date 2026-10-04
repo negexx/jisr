@@ -1,0 +1,113 @@
+slug: hu-university-of-pannonia-veszprem-international-business-e-sf584
+institution: hu-university-of-pannonia-veszprem
+country: HU
+city: veszprem
+field: business-economics
+level: bachelor
+name: International Business Economics
+summary:
+  fr:
+    text: International Business Economics, University of Pannonia (Veszprém). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: International Business Economics, University of Pannonia (Veszprém). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: International Business Economics, University of Pannonia (Veszprém). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 400000
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Entretien d'admission professionnel (oral, en ligne) organisé par le comité d'admission, avec un score minimum de 56 points sur 100.
+          status: draft
+        en:
+          text: Professional admission interview (oral, online) organised by the Admission Committee, with a minimum score of 56 points out of 100.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/
+    last_verified_at: null
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/584
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-pannonia-veszprem-international-business-e-sf584
+  name: International Business Economics
+  institution: University of Pannonia
+  city: Veszprém
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/584
+  todo: "Study Finder lists: branch Economic Science, language English, duration 8 semesters, location Veszprém, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:584
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/584
+      quote: "Language of instruction: English"
+    - fact: teachingLanguages
+      url: https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/
+      quote: Language and form of training English Full time
+    - fact: tuition
+      url: https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/
+      quote: The tuition fee for NON EU Students is 4000 EUR/Academic year (2 semesters)
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/584
+      quote: B2 level English language certificate (TOEFL/IELTS/ESOL/BEC/ECL/PTE/FCE/CAE/TELC/TOEIC/Euroexam)
+    - fact: requirements.req-1
+      url: https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/
+      quote: B2 level English language certificate (TOEFL/IELTS/ESOL/BEC/ECL/PTE/FCE/CAE/TELC/TOEIC/Euroexam)
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/584
+      quote: the applicant takes a professional entrance examination (interview) via Skype organised by the Admission Committee of the Faculty of Business and Economics
+  notes: "Page gtk admission is about Spring 2027 Master's programmes, not this Bachelor; entry requirements (finished secondary school, B2 English certificate, entrance interview) are general to this programme. Application channel: Stipendium Hungaricum is available but for a self-financed foreign applicant the pages provide only contact/website details, not a named self-service application platform, so applicationChannel is omitted."

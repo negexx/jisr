@@ -1,0 +1,129 @@
+slug: hu-university-of-pecs-computer-science-enginee-sf634
+institution: hu-university-of-pecs
+country: HU
+city: pecs
+field: computer-science
+level: bachelor
+name: Computer Science Engineering
+summary:
+  fr:
+    text: Computer Science Engineering, University of Pécs (Pécs). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Computer Science Engineering, University of Pécs (Pécs). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Computer Science Engineering, University of Pécs (Pécs). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://english.mik.pte.hu/computer-science-engineering-bsc
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 340000
+    currency: USD
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un entretien en ligne est requis : l'oral et l'écrit au niveau B2 minimum. Consultez https://english.mik.pte.hu/selection-process"
+          status: draft
+        en:
+          text: "An online interview is required: minimum B2 level in oral and written. See https://english.mik.pte.hu/selection-process"
+          status: draft
+    - id: req-2
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Une lettre de motivation doit être ajoutée à votre candidature.
+          status: draft
+        en:
+          text: A motivation letter must be added to your application.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://english.mik.pte.hu/computer-science-engineering-bsc
+    last_verified_at: null
+  page-2:
+    url: https://english.mik.pte.hu/application-step-by-step-1
+    last_verified_at: null
+  page-3:
+    url: https://tempus.tpf.hu/studyfinder/index/show/634
+    last_verified_at: null
+  page-4:
+    url: https://apply.pte.hu/en_GB/courses/course/321-computer-science-engineering-bsc?search=85884
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-pecs-computer-science-enginee-sf634
+  name: Computer Science Engineering
+  institution: University of Pécs
+  city: Pécs
+  field: computer-science
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/634
+  todo: "Study Finder lists: branch Computer Science and Information Technology, language English, duration 7 semesters, location Pécs, scholarship programmes: Stipendium Hungaricum, state scholarship; the programme's own page (Study Finder contact website): https://english.mik.pte.hu/computer-science-engineering-bsc; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:634
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://english.mik.pte.hu/computer-science-engineering-bsc
+      quote: The Bachelor of Computer Science Engineering focuses on design and technology within a 7-semester undergraduate training.
+    - fact: durationYears
+      url: https://apply.pte.hu/en_GB/courses/course/321-computer-science-engineering-bsc?search=85884
+      quote: Nominal duration 7 semesters (3.5 years)
+    - fact: teachingLanguages
+      url: https://english.mik.pte.hu/computer-science-engineering-bsc
+      quote: "Language of instruction: English"
+    - fact: tuition
+      url: https://english.mik.pte.hu/computer-science-engineering-bsc
+      quote: "Tuition Fee for the program: 3.400 USD/semester"
+    - fact: tuition
+      url: https://apply.pte.hu/en_GB/courses/course/321-computer-science-engineering-bsc?search=85884
+      quote: Tuition fee US$3,400 per semester
+    - fact: applicationChannel
+      url: https://english.mik.pte.hu/application-step-by-step-1
+      quote: Register on the online application site of the University of Pécs
+    - fact: applicationChannel
+      url: https://english.mik.pte.hu/computer-science-engineering-bsc
+      quote: APPLY NOW Application step-by-step
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/634
+      quote: "Entrance examination: Yes Entrance type: Oral"
+    - fact: requirements.req-2
+      url: https://apply.pte.hu/en_GB/courses/course/321-computer-science-engineering-bsc?search=85884
+      quote: A motivation letter must be added to your application.
+  notes: "Tuition: the pages give only USD figures (US$3,400 per semester on the programme page and on the PTE apply page); no EUR or HUF self-financed fee for a non-EU/EEA student is stated. Application fee of US$150 is also stated but is not a tuition fee. The apply.pte.hu page shows an application deadline of 15 Jun 2027 for the 2027/28 intake, while the English programme page mentions 30 May 2027 for Computer Science Engineering BSc; the apply.pte.hu dates are used in 'intakes'."

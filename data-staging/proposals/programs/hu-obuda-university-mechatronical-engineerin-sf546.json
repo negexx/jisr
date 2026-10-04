@@ -1,0 +1,91 @@
+{
+  "slug": "hu-obuda-university-mechatronical-engineerin-sf546",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/546",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/546",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/546",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "high-school-documents",
+          "name": {
+            "fr": "Documents du secondaire",
+            "en": "High school documents"
+          },
+          "quotedAs": "high school documents",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/546",
+          "quote": "All required high school documents uploaded (with verified English translations)"
+        }
+      ]
+    }
+  },
+  "notes": "Application fee: 150 EUR (non-refundable), mentioned on the tuition fees page. Application deadlines: The university pages state only 'Fall Semester Application deadline: 31th May, 2026' without saying it is for non-EU applicants, so no intake dates were extracted; internal deadline for the Matriculation/School Leaving Certificate is 1 August the year of application. Application channel not extracted: the pages do not name an online application system for this programme; 'How TO APPLY' and 'APPLY NOW' buttons are present but the text does not describe the platform.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": null,
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/546",
+            "quote": "diploma and English language certificate of level IELTS 5.0 at least."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée est requis : épreuve écrite de mathématiques et de physique et entretien oral en anglais.",
+          "en": "An entrance examination is required: written Mathematics and Physics examination and an online English oral interview."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/546",
+            "quote": "Written: Mathematics and Physics examination Oral: Online English interview focusing on the applicant’s motivations"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les résultats scolaires sont évalués ; vérifiez les critères d'admission supplémentaires sur le site de l'université.",
+          "en": "Academic results are evaluated; check additional admission criteria on the university website."
+        },
+        "evidence": [
+          {
+            "url": "https://uni-obuda.hu/application-deadlines/",
+            "quote": "Obuda University seeks students who possess a strong background and interest in STEM fields"
+          }
+        ]
+      }
+    ]
+  }
+}

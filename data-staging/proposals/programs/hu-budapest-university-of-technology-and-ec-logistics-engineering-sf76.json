@@ -1,0 +1,61 @@
+{
+  "slug": "hu-budapest-university-of-technology-and-ec-logistics-engineering-sf76",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/76",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/76",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/76",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    }
+  },
+  "notes": "The only supplied page is the studyfinder listing. It states no tuition fee (self-financed, non-EU/EEA) and no application platform for this programme; therefore tuition and applicationChannel are left out. The page says 'State Scholarships Not available' for this programme; it does not say the applicant applies via Stipendium Hungaricum, so hu-stipendium-hungaricum is not used and no hu-university-direct statement is quoted. The entrance-examination block describes a BSc-level oral entrance examination in English and is treated as a manual check, not a hard machine rule.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme d'études secondaires valide est exigé ; vérifiez les détails de la procédure d'admission (dates limites et conditions) sur la page E-admission.",
+          "en": "An eligible high school degree is required; check the detailed admission procedure (deadlines and requirements) on the E-admission page."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/76",
+            "quote": "For our BSc programs general minimum requirements are an eligible high school degree; document of English language proficiency* and successful admission tests"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée (oral, en ligne) et des tests d'admission réussis sont requis ; les détails sont dans les règlements d'admission sur www.bme.hu.",
+          "en": "An entrance examination (oral, online) and successful admission tests are required; details are in the admission regulations at www.bme.hu."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/76",
+            "quote": "Entrance examination: Yes Entrance type: Oral"
+          },
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/76",
+            "quote": "Place of examination: Online"
+          }
+        ]
+      }
+    ]
+  }
+}

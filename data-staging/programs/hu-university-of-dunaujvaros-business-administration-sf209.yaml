@@ -1,0 +1,100 @@
+slug: hu-university-of-dunaujvaros-business-administration-sf209
+institution: hu-university-of-dunaujvaros
+country: HU
+city: dunaujvaros
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, University of Dunaújváros (Dunaújváros). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Management, University of Dunaújváros (Dunaújváros). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Management, University of Dunaújváros (Dunaújváros). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/209
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien Skype avec le comité d'admission est requis pour évaluer vos motivations et votre niveau d'anglais.
+          status: draft
+        en:
+          text: A Skype interview with the Admission Committee is required to assess your motivation and English skills.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/209
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-dunaujvaros-business-administration-sf209
+  name: Business Administration and Management
+  institution: University of Dunaújváros
+  city: Dunaújváros
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/209
+  todo: "Study Finder lists: branch Economic Science, language English, duration 7 semesters, location Dunaújváros, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship; no contact website listed: find the programme's own page on the institution's site; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:209
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/209
+      quote: "Duration of the course / programme: 7 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/209
+      quote: "Language of instruction: English"
+    - fact: documents
+      url: https://tempus.tpf.hu/studyfinder/index/show/209
+      quote: High School Leaving Certificate or other certificate about the succesfull finish of secondary education
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/209
+      quote: The second step is a Skype interview, that gives a chance for the Admission Committee to check the aims and motivation for choosing this field of study.
+  notes: The page does not state a tuition fee for self-financed non-EU/EEA students; it only describes the Stipendium Hungaricum scholarship, which is not a tuition of 0. The application channel for a self-financed foreign applicant is not stated on the page (no online application form or platform named) and there is no deadline/intake data. The document list is limited to the high school leaving certificate; translation requirement is not stated.

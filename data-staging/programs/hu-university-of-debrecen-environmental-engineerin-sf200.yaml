@@ -1,0 +1,94 @@
+slug: hu-university-of-debrecen-environmental-engineerin-sf200
+institution: hu-university-of-debrecen
+country: HU
+city: debrecen
+field: engineering
+level: bachelor
+name: Environmental Engineering
+summary:
+  fr:
+    text: Environmental Engineering, University of Debrecen (Debrecen). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Environmental Engineering, University of Debrecen (Debrecen). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Environmental Engineering, University of Debrecen (Debrecen). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/200
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Les candidats doivent réussir des examens d'entrée écrits et oraux en mathématiques et en physique ou chimie. Résultats : 75 % et plus = admission ; 60-75 % = programme préparatoire."
+          status: draft
+        en:
+          text: "Applicants must pass written and oral entrance exams in mathematics and physics or chemistry. Results: 75%+ admission; 60-75% preparatory programme."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/200
+    last_verified_at: null
+  page-2:
+    url: https://www.edu.unideb.hu/p/application-and-admission
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-debrecen-environmental-engineerin-sf200
+  name: Environmental Engineering
+  institution: University of Debrecen
+  city: Debrecen
+  field: engineering
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/200
+  todo: "Study Finder lists: branch Engineering Science, language English, duration 7 semesters, location Debrecen, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://www.edu.unideb.hu/p/mechatronics-engineering-bsc; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:200
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/200
+      quote: "Duration of the course / programme: 7 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/200
+      quote: "Language of instruction: English"
+    - fact: applicationChannel
+      url: https://www.edu.unideb.hu/p/application-and-admission
+      quote: The following documents need to be submitted during the application procedure by all applicants through our online application platform
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/200
+      quote: Results about 75% and over mean admission to the selected programme, results between 60%-75% -admission to a preparatory (foundation year) programme.
+  notes: "The tuition-fee page is an institution-wide table, not the programme's own page; the row for Environmental Engineering* appears in the Bachelor programs table with fee 6,500 USD/year, but the extracted quote is ambiguous about whether that fee belongs to Environmental Engineering or Biology. The programme page itself (Studyfinder) states no tuition. Intake deadline: the programme page states a general application deadline of 15 June without a year, quoted from the University of Debrecen admission page; the year 2026 comes from a sentence about the September 2026/2027 intake, but the programme itself may only be applied for September, so the deadline is recurring. Tuition currency is USD as stated on the pages, not converted."

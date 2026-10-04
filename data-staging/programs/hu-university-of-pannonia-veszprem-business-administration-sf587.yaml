@@ -1,0 +1,110 @@
+slug: hu-university-of-pannonia-veszprem-business-administration-sf587
+institution: hu-university-of-pannonia-veszprem
+country: HU
+city: veszprem
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, University of Pannonia (Veszprém). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Management, University of Pannonia (Veszprém). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Management, University of Pannonia (Veszprém). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.gtk.uni-pannon.hu/ba-in-business-administration-and-management/
+durationYears:
+  value: 3.5
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 400000
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'admission (examen d'entrée oral) en ligne via MS Teams est requis; il évalue les connaissances, les compétences linguistiques et la motivation. Score minimum de 56 points sur 100.
+          status: draft
+        en:
+          text: An online entrance examination (oral interview) via MS Teams is required; it assesses background knowledge, language skills and motivation. Minimum score of 56 points out of 100.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.gtk.uni-pannon.hu/ba-in-business-administration-and-management/
+    last_verified_at: null
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/587
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-pannonia-veszprem-business-administration-sf587
+  name: Business Administration and Management
+  institution: University of Pannonia
+  city: Veszprém
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/587
+  todo: "Study Finder lists: branch Economic Science, language English, duration 7 semesters, location Veszprém, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://www.gtk.uni-pannon.hu/ba-in-business-administration-and-management/; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:587
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/587
+      quote: "Duration of the course / programme: 7 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/587
+      quote: "Language of instruction: English"
+    - fact: tuition
+      url: https://www.gtk.uni-pannon.hu/ba-in-business-administration-and-management/
+      quote: The tuition fee for NON EU Students is 4000 EUR/Academic year
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/587
+      quote: B2 level English language certificate (TOEFL/IELTS/ESOL/BEC/ECL/PTE/FCE/CAE/TELC/TOEIC/Euroexam)
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/587
+      quote: the applicant takes a professional entrance examination (interview) via MS Teams organised by the Admission Committee
+  notes: The admission page https://www.gtk.uni-pannon.hu/en/admission/ describes only Spring 2027 admission for Master's programmes, so no intake dates for the Bachelor programme were extracted. Documents required of international applicants are not named in the supplied pages (the programme page only links to an external application information page), so no documents fact is given.

@@ -1,0 +1,64 @@
+slug: hu-budapest-university-of-economics-and-bus-commerce-and-marketing-sf24
+institution: hu-budapest-university-of-economics-and-bus
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Commerce and Marketing
+summary:
+  fr:
+    text: Commerce and Marketing, Budapest University of Economics and Business (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Commerce and Marketing, Budapest University of Economics and Business (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Commerce and Marketing, Budapest University of Economics and Business (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/24
+durationYears:
+  value: 3.5
+  source: studyfinder
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: studyfinder
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: studyfinder
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: studyfinder
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: studyfinder
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: studyfinder
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: studyfinder
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  studyfinder:
+    url: https://tempus.tpf.hu/studyfinder/index/show/24
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-budapest-university-of-economics-and-bus-commerce-and-marketing-sf24
+  name: Commerce and Marketing
+  institution: Budapest University of Economics and Business
+  city: Budapest
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/24
+  todo: "Study Finder lists: branch Economic Science, language English, duration 7 semesters, location Budapest, scholarship programmes: Stipendium Hungaricum, state scholarship; the programme's own page (Study Finder contact website): https://uni-bge.hu/en/commerce-and-marketing-bsc; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder"
+  sourceId: studyfinder:24

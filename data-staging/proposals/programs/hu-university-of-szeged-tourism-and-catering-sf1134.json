@@ -1,0 +1,48 @@
+{
+  "slug": "hu-university-of-szeged-tourism-and-catering-sf1134",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/1134",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/1134",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    }
+  },
+  "notes": "Le portail tempus.tpf.hu/studyfinder décrit le programme Tourism and Catering (8 semesters). La page u-szeged.hu/english/study-programmes/performance-ba concerne le programme Performance (BA), pas Tourism and Catering : aucune donnée n'en a été reprise. La page apply.u-szeged.hu ne donne pas de frais de scolarité ni de documents spécifiques à ce programme ; les frais indiqués sur la page Performance (2500 EUR/semestre) ne s'appliquent pas ici. Aucune information sur les frais, les dates limites de candidature ou les documents propres à Tourism and Catering n'apparaît dans les pages fournies.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme d'études secondaires (high school diploma) exigé ; vérifier le niveau d'anglais B2 (intermédiaire) et l'examen d'entrée écrit et oral en ligne.",
+          "en": "High school diploma required; check English proficiency at B2 (intermediate) and the online written and oral entrance examination."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/1134",
+            "quote": "Certificate of completion of secondary education, Application requirements: High school diploma, a demonstrated proficiency in English (Intermediate, B2, or equivalent) and an online written and oral entrance examination test."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un score SAT valide en mathématiques au-dessus d'un certain niveau permet d'être admis sans passer l'examen d'entrée.",
+          "en": "A valid SAT score in Mathematics above a certain level allows admission without taking the entrance exam."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/1134",
+            "quote": "Candidates with a valid SAT-score in Mathematics above a certain level are admitted without taking the entrance exam."
+          }
+        ]
+      }
+    ]
+  }
+}

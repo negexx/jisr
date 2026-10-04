@@ -1,0 +1,85 @@
+{
+  "slug": "hu-obuda-university-computer-science-enginee-sf554",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/554",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/554",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/554",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 320000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://uni-obuda.hu/tuition-fees/",
+          "quote": "Computer Science Engineering Cloud Service Technologies 2,000 EUR 3,200 EUR IT Security"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the programme's own page (studyfinder) gives no fee; the university tuition page lists Computer Science Engineering BSc at 3,200 EUR per semester for Non-EEA students under the specialisation 'Cloud Service Technologies / IT Security', used as the institution-wide fee page. The 150 EUR application fee is separate from tuition. The studyfinder page states the programme is available in the Stipendium Hungaricum Scholarship Programme, but that is a scholarship, not the self-financed route. No documents list specific to this programme was found in the supplied pages; the deadlines page mentions a School Leaving Certificate upload deadline of 1 August but without stating the eligibility scope for non-EU applicants.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": null,
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/554",
+            "quote": "G.C.E. or any equivalent high school / secondary education (or higher) diploma and English language certificate of level IELTS 5.0 at least."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des frais de dossier de 150 EUR sont exigés pour chaque candidature et ne sont pas remboursables.",
+          "en": "An application fee of 150 EUR is required for every application and is non-refundable."
+        },
+        "evidence": [
+          {
+            "url": "https://uni-obuda.hu/tuition-fees/",
+            "quote": "1. Application fee: 150 EUR This fee is required for every application, is paid during the application process, and is non-refundable."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée est requis : épreuves écrites de mathématiques et de physique/informatique, ainsi qu'un entretien oral en anglais en ligne.",
+          "en": "An entrance examination is required: written mathematics and physics/informatics exams, plus an online English oral interview."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/554",
+            "quote": "Entrance examination: Yes"
+          }
+        ]
+      }
+    ]
+  }
+}

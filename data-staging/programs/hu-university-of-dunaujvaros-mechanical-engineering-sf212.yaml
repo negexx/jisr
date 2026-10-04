@@ -1,0 +1,100 @@
+slug: hu-university-of-dunaujvaros-mechanical-engineering-sf212
+institution: hu-university-of-dunaujvaros
+country: HU
+city: dunaujvaros
+field: engineering
+level: bachelor
+name: Mechanical Engineering
+summary:
+  fr:
+    text: Mechanical Engineering, University of Dunaújváros (Dunaújváros). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Mechanical Engineering, University of Dunaújváros (Dunaújváros). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Mechanical Engineering, University of Dunaújváros (Dunaújváros). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/212
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: High School Leaving Certificate
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un entretien oral en ligne (Skype) fait partie de la procédure d'admission : préparez une motivation claire et vérifiez votre niveau d'anglais."
+          status: draft
+        en:
+          text: "An online (Skype) oral interview is part of the admission process: prepare your motivation and check your English level."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/212
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-dunaujvaros-mechanical-engineering-sf212
+  name: Mechanical Engineering
+  institution: University of Dunaújváros
+  city: Dunaújváros
+  field: engineering
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/212
+  todo: "Study Finder lists: branch Engineering Science, language English, duration 7 semesters, location Dunaújváros, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship; no contact website listed: find the programme's own page on the institution's site; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:212
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/212
+      quote: "Duration of the course / programme: 7 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/212
+      quote: "Language of instruction: English"
+    - fact: documents
+      url: https://tempus.tpf.hu/studyfinder/index/show/212
+      quote: High School Leaving Certificate or other certificate about the succesfull finish of secondary education
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/212
+      quote: The second step is a Skype interview, that gives a chance for the Admission Committee to check the aims and motivation for choosing this field of study.
+  notes: "Tuition fee for self-financed non-EU/EEA students: the supplied page does not state any tuition amount, currency or period for this programme, so no tuition fact is given (do not record 0). Application channel: the page names a Stipendium Hungaricum contact and says the programme is available in the Stipendium Hungaricum Scholarship Programme, but it does not say the self-financed foreign applicant applies through the scholarship call, nor does it state an online university application route; applicationChannel is therefore left out. No application deadline, opening date or start date appears on the page, so no intakes fact is given. The page gives no translation requirement for the certificate, so translationRequired is null."

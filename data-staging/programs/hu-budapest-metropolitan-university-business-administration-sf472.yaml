@@ -1,0 +1,96 @@
+slug: hu-budapest-metropolitan-university-business-administration-sf472
+institution: hu-budapest-metropolitan-university
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Business Administration and Managemenet
+summary:
+  fr:
+    text: Business Administration and Managemenet, Budapest Metropolitan University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Managemenet, Budapest Metropolitan University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Managemenet, Budapest Metropolitan University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.metubudapest.hu/programs/business-administration-and-management-bsc
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 350000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'admission en ligne et un test de mathématiques en ligne font partie de la procédure de sélection.
+          status: draft
+        en:
+          text: An online admission interview and an online mathematics test are part of the selection process.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.metubudapest.hu/programs/business-administration-and-management-bsc
+    last_verified_at: null
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/472
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-budapest-metropolitan-university-business-administration-sf472
+  name: Business Administration and Managemenet
+  institution: Budapest Metropolitan University
+  city: Budapest
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/472
+  todo: "Study Finder lists: branch Economic Science, language English, duration 7 semesters, location Budapest, scholarship programmes: none listed; the programme's own page (Study Finder contact website): https://www.metubudapest.hu/programs/business-administration-and-management-bsc; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:472
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: teachingLanguages
+      url: https://www.metubudapest.hu/programs/business-administration-and-management-bsc
+      quote: Course language English
+    - fact: tuition
+      url: https://www.metubudapest.hu/programs/business-administration-and-management-bsc
+      quote: 3500 EUR/semester for non-EU students
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/472
+      quote: "Entrance examination: All applicants have to participate in an online admission interview."
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/472
+      quote: Applicants are required to write an online mathematics test as part of the online admission interview.

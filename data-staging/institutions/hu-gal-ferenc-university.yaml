@@ -1,0 +1,30 @@
+slug: hu-gal-ferenc-university
+name: Gál Ferenc University
+country: HU
+city:
+  slug: bekescsaba
+  name: Békéscsaba
+type: null
+website: https://gfe.hu/en/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://gfe.hu/en/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: hu-gal-ferenc-university
+  name: Gál Ferenc University
+  institution: ""
+  city: Békéscsaba
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: 'institution named "Gál Ferenc University" in the Study Finder: the register does not say whether it is public or private nor its website. Find its official site, check it is a recognised Hungarian higher education institution, set the type, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw'
+  sourceId: studyfinder-institution:gal-ferenc-university@bekescsaba
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - url: https://gfe.hu/en/
+      quote: GFC webmail Moodle Gál Ferenc University Our courses Dr. habil. István Thékes,

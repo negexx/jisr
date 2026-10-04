@@ -1,0 +1,122 @@
+slug: hu-corvinus-university-of-budapest-applied-economics-sf83
+institution: hu-corvinus-university-of-budapest
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Applied Economics
+summary:
+  fr:
+    text: Applied Economics, Corvinus University of Budapest (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Applied Economics, Corvinus University of Budapest (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Applied Economics, Corvinus University of Budapest (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/83
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 700000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée écrit de mathématiques en ligne est obligatoire ; vous pouvez aussi présenter une qualification acceptée (AP, SAT, ACT, IB, A-level, etc.).
+          status: draft
+        en:
+          text: An online written mathematics entrance exam is required; you can also present an accepted qualification (AP, SAT, ACT, IB, A-level, etc.).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/83
+    last_verified_at: null
+  page-2:
+    url: https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en
+    last_verified_at: null
+  page-3:
+    url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-corvinus-university-of-budapest-applied-economics-sf83
+  name: Applied Economics
+  institution: Corvinus University of Budapest
+  city: Budapest
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/83
+  todo: "Study Finder lists: branch Economic Science, language English, duration 6 semesters, location Budapest, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://www.uni-corvinus.hu/main-page/hello-corvinus/how-to-apply/?lang=en; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:83
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/83
+      quote: "Duration of the course / programme: 6 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/83
+      quote: "Language of instruction: English"
+    - fact: tuition
+      url: https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en
+      quote: Applied Economics 1 980 000 Ft 7 000 €
+    - fact: tuition
+      url: https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en
+      quote: Corvinus offers affordable tuition fees for self-funded degree seeking international students
+    - fact: requirements.req-1
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: Corvinus accepts the following proof of English language proficiency (minimum equivalent B2 level)
+    - fact: requirements.req-1
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: "IELTS language certificate, minimum score: 6.0"
+    - fact: requirements.req-1
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: "TOEFL language certificate, minimum score: 65"
+    - fact: requirements.req-2
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: If you do not or will not have any of these qualifications by the time of enrolment, you can take the Corvinus mathematics entrance exam instead.
+  notes: The tuition figure (EUR 7,000/year) is quoted from the Corvinus Fees and Costs page, which lists 'non-EEA applicants (EUR/year)'; the Studyfinder page does not state a fee. No application deadline for non-EU applicants is given with a day, month and year on the supplied pages, so the 'intakes' fact is omitted; the application-information page gives general 2027/28 opening (October 2026) and a 1 August document submission date, but these are not stated as the non-EU application deadline. The mathematics requirement is a manual check because the pages give many accepted qualifications and a points threshold set by the Dean.

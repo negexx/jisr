@@ -1,0 +1,114 @@
+slug: hu-obuda-university-industrial-design-engine-sf568
+institution: hu-obuda-university
+country: HU
+city: budapest
+field: engineering
+level: bachelor
+name: Industrial Design Engineering
+summary:
+  fr:
+    text: Industrial Design Engineering, Obuda University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Industrial Design Engineering, Obuda University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Industrial Design Engineering, Obuda University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/568
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un examen d'entrée est requis : épreuve écrite de mathématiques et une matière au choix (biologie, chimie ou informatique), ainsi qu'un entretien oral en anglais."
+          status: draft
+        en:
+          text: "An entrance examination is required: a written mathematics exam and one chosen subject (biology, chemistry or informatics), plus an online oral English interview."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un portfolio de travaux (dessins, peintures) doit être téléversé en un seul fichier (.zip, .pdf, .jpg) ; les envois séparés ne sont pas acceptés.
+          status: draft
+        en:
+          text: A portfolio of works (drawings, paintings) must be uploaded as a single file (.zip, .pdf, .jpg); single file uploads are not accepted.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/568
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-obuda-university-industrial-design-engine-sf568
+  name: Industrial Design Engineering
+  institution: Obuda University
+  city: Budapest
+  field: engineering
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/568
+  todo: "Study Finder lists: branch Engineering Science, language English, duration 7 semesters, location Budapest, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://uni-obuda.hu/admission/; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:568
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/568
+      quote: "Duration of the course / programme: 7 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/568
+      quote: "Language of instruction: English"
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/568
+      quote: diploma and English language certificate of level IELTS 5.0 at least
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/568
+      quote: "Entrance examination: Yes"
+    - fact: requirements.req-3
+      url: https://tempus.tpf.hu/studyfinder/index/show/568
+      quote: The portfolio of works needs to be uploaded in one file (.zip, .pdf, .jpg)
+  notes: "Tuition: the only fee found for this BSc is 2,900 EUR per semester for non-EEA students (university-wide fee table); EU/EEA fee is 2,000 EUR. Intakes left out: the pages give a deadline of '31th May, 2026' on the university how-to-apply page but no quote assigns it to non-EU/foreign-qualification applicants; the 1st August matriculation certificate upload is not a programme application deadline for this applicant. The application channel (university's own online application system) is indicated by 'uploaded into the University’s online application system' and 'online application system of Obuda University', but no single sentence names the route clearly for a self-financed applicant, so applicationChannel was omitted."

@@ -1,0 +1,106 @@
+{
+  "slug": "hu-eotvos-lorand-university-international-business-e-sf301",
+  "programmePage": "https://www.elte.hu/en/international-business-economics",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/international-business-economics",
+          "quote": "Duration 8 semesters (4 years)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/international-business-economics",
+          "quote": "Language of instruction English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 360000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/international-business-economics",
+          "quote": "Non-EU/EEA students Tuition fee/semester 2700 EUR 3600 EUR"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "secondary-school-diploma",
+          "name": {
+            "fr": "Diplôme d'études secondaires",
+            "en": "secondary or high school diploma"
+          },
+          "quotedAs": "secondary or high school diploma",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/international-business-economics",
+          "quote": "completed their secondary school studies and can provide proof of this by presenting a secondary or high school diploma (or equivalent)"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 3600 EUR par semestre est le tarif pour les étudiants non-UE/EEE (self-funded) indiqué sur la page du programme. La date limite du 3 mai 2026 et la rentrée du 1 septembre 2026 sont indiquées sur la page du programme pour l'année académique à venir. Les conditions d'admission détaillées (diplôme, examens d'entrée) sont sur la page du programme ; la page \"how-to-apply\" précise la procédure générale. Aucune page ne contient de liste de documents spécifique à ce programme au-delà du diplôme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Admission possible avec un diplôme d'études secondaires donnant accès à l'université ; les examens O-level, GCSE, IGCSE, GCE AS ou BTEC seuls ne suffisent pas.",
+          "en": "Admission possible with a secondary/high school diploma allowing direct access to higher education; O-level, GCSE, IGCSE, GCE AS or BTEC exams alone do not qualify."
+        },
+        "evidence": [
+          {
+            "url": "https://www.elte.hu/en/international-business-economics",
+            "quote": "with this document the applicant should be eligible to study at university level"
+          },
+          {
+            "url": "https://www.elte.hu/en/international-business-economics",
+            "quote": "Please note that O-level, GCSE, IGCSE, GCE AS, or BTEC exams alone do not qualify prospective students"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée est obligatoire : entretien Skype et questionnaire.",
+          "en": "An entrance examination is required: Skype interview and questionnaire."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/301",
+            "quote": "Entrance examination: Yes"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un niveau B2 (oral et écrit) en anglais est exigé ; l'admission est décidée par le comité d'admission.",
+          "en": "Language proficiency B2 (oral and written) in English is required; admission is decided by the Admission Board."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/301",
+            "quote": "Minimum level of language proficiency (oral): B2"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+slug: hu-dennis-gabor-university-business-informatics-sf347
+institution: hu-dennis-gabor-university
+country: HU
+city: budapest
+field: computer-science
+level: bachelor
+name: Business Informatics
+summary:
+  fr:
+    text: Business Informatics, Dennis Gabor University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Informatics, Dennis Gabor University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Informatics, Dennis Gabor University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/347
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Il faut contacter l'université pour connaître les modalités de candidature et d'inscription en tant qu'étudiant étranger (auto-financé).
+          status: draft
+        en:
+          text: You need to contact the university to find out the application and enrolment procedure as a self-financed international student.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/347
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-dennis-gabor-university-business-informatics-sf347
+  name: Business Informatics
+  institution: Dennis Gabor University
+  city: Budapest
+  field: computer-science
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/347
+  todo: "Study Finder lists: branch Computer Science and Information Technology, language English, duration 7 semesters, location Budapest, scholarship programmes: none listed; the programme's own page (Study Finder contact website): https://gde.hu/; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:347
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/347
+      quote: "Duration of the course / programme: 7 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/347
+      quote: "Language of instruction: English"
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/347
+      quote: "Contact person name: Mr. Dániel Árpád Kiss"
+  notes: The pages do not state the application channel, tuition fee, application deadlines, document list, nor any language proficiency requirement for this programme. The Studyfinder page shows 'State Scholarships Not available' for Business Informatics, meaning no Stipendium Hungaricum for this programme, but this does not by itself establish how a self-financed applicant applies.

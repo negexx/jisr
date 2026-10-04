@@ -1,0 +1,106 @@
+{
+  "slug": "hu-university-of-nyiregyhaza-mechanical-engineering-sf529",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/529",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/529",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/529",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 245000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://english.nye.hu/en/node/319",
+          "quote": "Mechanical Engineering BSc 7 2450 EUR *** 1800 EUR ***"
+        },
+        {
+          "url": "https://english.nye.hu/en/node/319",
+          "quote": "Tuition fee / semester * for non-EU applicants **"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://applicationform.nye.hu/",
+          "quote": "Welcome to the online application portal of the University of Nyíregyháza."
+        },
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "We will accept the application only if the received amount is 100 EUR."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition extraite de la page des frais de scolarité 2027/2028 de l'université (EUR 2450 par semestre pour les candidats non-UE), qui liste explicitement « Mechanical Engineering BSc 7 ». Aucun document d'identité ou de diplôme spécifique au programme au-delà de la liste générale des candidats auto-financés. La date limite d'admission 2027 (30 juin 2026 / décembre 2026) n'a pas été retenue car elle concerne la session 2026/2027 et non une date 2027 explicite pour le programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/529",
+            "quote": "English language skills at upper intermediate level or higher (at level CEFR B2 or IELTS 5.5) – Having a language certificate is not a compulsory requirement."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission se fait sur entretien oral en ligne (Microsoft Teams) avec évaluation sur 100 points ; il faut au moins 60 points pour réussir l'examen d'entrée.",
+          "en": "Admission is based on an online oral interview (Microsoft Teams) evaluated out of 100 points; at least 60 points are required to pass the entrance exam."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/529",
+            "quote": "The application procedure is based on an evaluation system of 100 points: 50 points are given for motivation, professional knowledge and educational background, and the other 50 points for language proficiency according to the online interview."
+          },
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/529",
+            "quote": "The entrance exam is successful, if the applicant have at least 60 points."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des frais de candidature de 100 EUR non remboursables doivent être payés et reçus pour que l'examen d'entrée soit possible.",
+          "en": "A non-refundable application fee of 100 EUR must be paid and received for the entrance exam to be possible."
+        },
+        "evidence": [
+          {
+            "url": "https://english.nye.hu/en/node/30",
+            "quote": "Without the arrival of the 100 EUR application fee no entrance exam is possible."
+          }
+        ]
+      }
+    ]
+  }
+}

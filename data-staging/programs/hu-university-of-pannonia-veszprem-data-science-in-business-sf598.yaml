@@ -1,0 +1,100 @@
+slug: hu-university-of-pannonia-veszprem-data-science-in-business-sf598
+institution: hu-university-of-pannonia-veszprem
+country: HU
+city: veszprem
+field: business-economics
+level: bachelor
+name: Data Science in Business
+summary:
+  fr:
+    text: Data Science in Business, University of Pannonia (Veszprém). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Data Science in Business, University of Pannonia (Veszprém). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Data Science in Business, University of Pannonia (Veszprém). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.gtk.uni-pannon.hu/en/bsc-in-data-science-in-business/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 400000
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'admission en ligne (MS Teams) est requis ; il faut obtenir au moins 56 points sur 100.
+          status: draft
+        en:
+          text: An online admission interview (MS Teams) is required; you must score at least 56 points out of 100.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.gtk.uni-pannon.hu/en/bsc-in-data-science-in-business/
+    last_verified_at: null
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/598
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-pannonia-veszprem-data-science-in-business-sf598
+  name: Data Science in Business
+  institution: University of Pannonia
+  city: Veszprém
+  field: business-economics
+  confidence: low
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/598
+  todo: "Study Finder lists: branch Economic Science, language English, duration 8 semesters, location Veszprém, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://www.gtk.uni-pannon.hu/en/bsc-in-data-science-in-business/; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; the name points to another field than the Study Finder branch: check the programme content; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:598
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://www.gtk.uni-pannon.hu/en/bsc-in-data-science-in-business/
+      quote: Study duration 8 semesters
+    - fact: teachingLanguages
+      url: https://www.gtk.uni-pannon.hu/en/bsc-in-data-science-in-business/
+      quote: Language and form of training English Full time
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/598
+      quote: "Language of instruction: English"
+    - fact: tuition
+      url: https://www.gtk.uni-pannon.hu/en/bsc-in-data-science-in-business/
+      quote: The tuition fee for NON EU Students is 4000 EUR/Academic year (2 semesters)
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/598
+      quote: The results are measured on a scale of 1-100 and the applicant have to score at least 56 points to get admitted.
+  notes: "The application channel could not be extracted: no quote names an application platform or route for a self-financed international applicant. The pages only link to an 'Application information for international applicants' page and an 'admission site' without naming the route. The admission period quote 'Admission period is between 15th of August and 15th of October.' gives no year and no international-specific wording, so no intake was extracted."

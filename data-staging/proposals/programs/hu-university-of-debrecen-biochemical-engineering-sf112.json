@@ -1,0 +1,123 @@
+{
+  "slug": "hu-university-of-debrecen-biochemical-engineering-sf112",
+  "programmePage": "https://www.edu.unideb.hu/p/biochemical-engineering-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/biochemical-engineering-bsc",
+          "quote": "Duration of the program: This is a 3.5-year program consisting of 7 academic semesters"
+        },
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/112",
+          "quote": "Duration of the course / programme: 7 semesters semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/112",
+          "quote": "Language of instruction: English"
+        },
+        {
+          "url": "https://www.edu.unideb.hu/p/biochemical-engineering-bsc",
+          "quote": "All courses are taught in English; therefore, a B2 level English proficiency is required."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 700000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/biochemical-engineering-bsc",
+          "quote": "The tuition fee for this program is 7,000 USD/Year"
+        },
+        {
+          "url": "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+          "quote": "Biochemical Engineering *"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/biochemical-engineering-bsc",
+          "quote": "Ensure your documents are submitted through the Official Online Platform before the deadline."
+        },
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "The following documents need to be submitted during the application procedure by all applicants through our online application platform"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition fee for the Biochemical Engineering BSc is 7,000 USD/year. The tuition fee page lists the programme but does not state a separate amount. The application deadline is recurring (15 June) without a year. The programme starts in September each year; no exact date is given. The application channel is direct application through the university's online platform. The English proficiency requirement is B2, but a certificate is not strictly required as skills are assessed during the interview. The programme page states entrance exams in Mathematics and either Chemistry or Biology; the requirements rule uses subjects mathematics, physics-chemistry, and life-earth-sciences as a proxy, but the exact subjects are Mathematics and Chemistry or Biology.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/biochemical-engineering-bsc",
+            "quote": "Applicants must have an English proficiency of at least B2 level as the program is fully taught in English."
+          },
+          {
+            "url": "https://www.edu.unideb.hu/p/biochemical-engineering-bsc",
+            "quote": "a TOEFL test with a minimum score of 513 (Paper-Based). an IELTS test with a minimum score of 5.5."
+          },
+          {
+            "url": "https://www.edu.unideb.hu/p/biochemical-engineering-bsc",
+            "quote": "Please note, that you are not strictly required to have a language exam certificate, your language skills will be assessed during the entrance interview."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un certificat d'études secondaires (diplôme) est requis. Vérifiez les conditions exactes.",
+          "en": "A high school certificate (diploma) is required. Check the exact conditions."
+        },
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/biochemical-engineering-bsc",
+            "quote": "Admission requires a high school certificate and passing entrance exams in Mathematics and either Chemistry or Biology."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée en mathématiques et en chimie ou biologie est requis. Vérifiez les modalités.",
+          "en": "An entrance exam in Mathematics and either Chemistry or Biology is required. Check the details."
+        },
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/biochemical-engineering-bsc",
+            "quote": "Yes, admission is based on a high school certificate and online entrance exams in mathematics and Chemistry or Biology."
+          },
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/112",
+            "quote": "Entrance examination: Yes"
+          }
+        ]
+      }
+    ]
+  }
+}

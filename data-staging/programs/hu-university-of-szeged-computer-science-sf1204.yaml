@@ -1,0 +1,130 @@
+slug: hu-university-of-szeged-computer-science-sf1204
+institution: hu-university-of-szeged
+country: HU
+city: szeged
+field: computer-science
+level: bachelor
+name: Computer Science
+summary:
+  fr:
+    text: Computer Science, University of Szeged (Szeged). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Computer Science, University of Szeged (Szeged). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Computer Science, University of Szeged (Szeged). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://sci.u-szeged.hu/english/undergraduate-programs/computer-science-bsc
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 320000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: High school diploma
+          status: draft
+      translationRequired: null
+    - slug: passport-copy
+      name:
+        fr:
+          text: Copie du passeport
+          status: draft
+        en:
+          text: Copy of passport
+          status: draft
+      translationRequired: null
+    - slug: medical-certificate
+      name:
+        fr:
+          text: Certificat médical général
+          status: draft
+        en:
+          text: General Medical Certificate
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien oral (examen d'entrée) est requis. Préparez la communication en anglais, les mathématiques, l'informatique, vos projets et votre motivation. L'examen d'entrée coûte 100 EUR (non remboursable) et des frais de candidature de 79 EUR s'appliquent.
+          status: draft
+        en:
+          text: An oral entrance examination is required. Prepare English communication, mathematics, computer science, your projects and motivation. The entrance exam fee is 100 EUR (non-refundable) and an application fee of 79 EUR applies.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://sci.u-szeged.hu/english/undergraduate-programs/computer-science-bsc
+    last_verified_at: null
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/1204
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-szeged-computer-science-sf1204
+  name: Computer Science
+  institution: University of Szeged
+  city: Szeged
+  field: computer-science
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/1204
+  todo: "Study Finder lists: branch Computer Science and Information Technology, language English, duration 6 semsters semesters, location Szeged, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://sci.u-szeged.hu/english/undergraduate-programs/computer-science-bsc; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:1204
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://sci.u-szeged.hu/english/undergraduate-programs/computer-science-bsc
+      quote: "Duration of the program: 6 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/1204
+      quote: "Language of instruction: English"
+    - fact: tuition
+      url: https://sci.u-szeged.hu/english/undergraduate-programs/computer-science-bsc
+      quote: "Tuition fee: 3200 Euro/semester"
+    - fact: documents
+      url: https://sci.u-szeged.hu/english/undergraduate-programs/computer-science-bsc
+      quote: "Application requirements: copy of passport recent medical certificate of satisfactory general health status (General Medical Certificate) high school diploma minimum of B2-intermediate level knowledge in English language"
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/1204
+      quote: and an oral entrance examination.
+    - fact: requirements.req-1
+      url: https://sci.u-szeged.hu/english/undergraduate-programs/computer-science-bsc
+      quote: "Application fee: 79 Euro (non-refundable) Entrance Exam fee: 100 Euro (non-refundable)"
+  notes: The application deadline 15 May 2026 is for the fall semester of the academic year 2026-2027; it applies to international applicants (the programme is taught in English and applications are via DreamApply). The tuition fee of 3200 EUR/semester is the fee for self-financed students outside the EU/EEA. The Stipendium Hungaricum scholarship is available but is not a tuition of 0.

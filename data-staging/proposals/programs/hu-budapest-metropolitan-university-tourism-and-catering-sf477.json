@@ -1,0 +1,119 @@
+{
+  "slug": "hu-budapest-metropolitan-university-tourism-and-catering-sf477",
+  "programmePage": "https://www.metubudapest.hu/programs/tourism-and-catering-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.metubudapest.hu/programs/tourism-and-catering-bsc",
+          "quote": "Course duration 8 semester"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.metubudapest.hu/programs/tourism-and-catering-bsc",
+          "quote": "Course language English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 350000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.metubudapest.hu/programs/tourism-and-catering-bsc",
+          "quote": "3500 EUR/semester for non-EU students"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "High school / secondary education certificate"
+          },
+          "quotedAs": "High school / secondary education",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/477",
+          "quote": "High school / secondary education (or higher)"
+        },
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/477",
+          "quote": "If the transcript received from your school is not in English/Hungarian, you must have it translated into English"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the page states 3500 EUR/semester for non-EU students but does not say whether this applies to the whole programme; the quoted fee is per semester, so a full year is 7000 EUR. The Studyfinder page lists the duration as 8 semesters, so durationYears = 4. Documents: the pages name 'High school / secondary education (or higher)' and a transcript that must be translated if not in English/Hungarian; the document list is limited to what is quoted. No dated application deadline or application channel platform (Studyfinder/Dream Apply) is stated on the supplied pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien d'admission en ligne est obligatoire pour tous les candidats.",
+          "en": "All applicants have to participate in an online admission interview."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/477",
+            "quote": "Entrance examination: All applicants have to participate in an online admission interview."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test de mathématiques en ligne fait partie de l'entretien d'admission (30 minutes, 10 questions à choix multiples).",
+          "en": "Applicants are required to write an online mathematics test as part of the online admission interview."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/477",
+            "quote": "Applicants are required to write an online mathematics test as part of the online admission interview."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Moyenne générale du secondaire supérieure à 50 % chaque année et à l'examen final.",
+          "en": "Completed secondary school studies GPA: above 50% - annually and in the final exam."
+        },
+        "evidence": [
+          {
+            "url": "https://www.metubudapest.hu/programs/tourism-and-catering-bsc",
+            "quote": "Completed secondary school studies GPA: above 50% - annually and in the final exam"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Pour les programmes BSc : note de mathématiques du secondaire supérieure à 60 %.",
+          "en": "For BSc programs: high school math grade above 60%."
+        },
+        "evidence": [
+          {
+            "url": "https://www.metubudapest.hu/programs/tourism-and-catering-bsc",
+            "quote": "For BSc programs: high school math grade above 60%"
+          }
+        ]
+      }
+    ]
+  }
+}

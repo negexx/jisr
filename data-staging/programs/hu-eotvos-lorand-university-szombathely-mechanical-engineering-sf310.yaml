@@ -1,0 +1,241 @@
+slug: hu-eotvos-lorand-university-szombathely-mechanical-engineering-sf310
+institution: hu-eotvos-lorand-university-szombathely
+country: HU
+city: szombathely
+field: engineering
+level: bachelor
+name: Mechanical Engineering
+summary:
+  fr:
+    text: Mechanical Engineering, Eötvös Loránd University (Szombathely). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Mechanical Engineering, Eötvös Loránd University (Szombathely). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Mechanical Engineering, Eötvös Loránd University (Szombathely). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.elte.hu/en/mechanical-engineering-bsc
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 320000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: online-application-form
+      name:
+        fr:
+          text: Formulaire de candidature en ligne
+          status: draft
+        en:
+          text: Online application form
+          status: draft
+      translationRequired: null
+    - slug: secondary-school-record
+      name:
+        fr:
+          text: Relevé des deux dernières années du secondaire
+          status: draft
+        en:
+          text: Record of the final two years in secondary school
+          status: draft
+      translationRequired: null
+    - slug: secondary-school-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary school certificate
+          status: draft
+      translationRequired: null
+    - slug: transcript-of-records
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Transcript of records
+          status: draft
+      translationRequired: null
+    - slug: proof-of-application-fee-transfer
+      name:
+        fr:
+          text: Preuve de virement des frais de candidature
+          status: draft
+        en:
+          text: Proof of application fee transfer
+          status: draft
+      translationRequired: null
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation letter
+          status: draft
+      translationRequired: null
+    - slug: passport-copy
+      name:
+        fr:
+          text: Copie des pages principales du passeport
+          status: draft
+        en:
+          text: Copy of the main pages of the passport
+          status: draft
+      translationRequired: null
+    - slug: passport-photo
+      name:
+        fr:
+          text: Photo d'identité
+          status: draft
+        en:
+          text: Passport photo
+          status: draft
+      translationRequired: null
+    - slug: medical-certificate
+      name:
+        fr:
+          text: Certificat médical
+          status: draft
+        en:
+          text: Medical certificate
+          status: draft
+      translationRequired: null
+    - slug: language-certificate
+      name:
+        fr:
+          text: Certificat de langue
+          status: draft
+        en:
+          text: Language certificate
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien oral en ligne est obligatoire pour tous les candidats.
+          status: draft
+        en:
+          text: An online oral interview is required for all applicants.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Bonnes notes requises dans les examens de fin d'études secondaires, surtout en mathématiques.
+          status: draft
+        en:
+          text: Good grades in secondary school finishing exams are required, especially from Mathematics.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le candidat doit avoir 18 ans au 31 août.
+          status: draft
+        en:
+          text: The applicant must be 18 years old by August 31.
+          status: draft
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le certificat médical doit être signé par un médecin et attester l'absence de certaines maladies.
+          status: draft
+        en:
+          text: The medical certificate must be issued and signed by a physician to prove the applicant does not have certain illnesses.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.elte.hu/en/mechanical-engineering-bsc
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-eotvos-lorand-university-szombathely-mechanical-engineering-sf310
+  name: Mechanical Engineering
+  institution: Eötvös Loránd University
+  city: Szombathely
+  field: engineering
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/310
+  todo: "Study Finder lists: branch Engineering Science, language English, duration 7 semesters, location Szombathely, scholarship programmes: Stipendium Hungaricum, state scholarship; the programme's own page (Study Finder contact website): https://www.elte.hu/en/mechanical-engineering-bsc; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:310
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://www.elte.hu/en/mechanical-engineering-bsc
+      quote: Duration 7 semesters (3.5 years)
+    - fact: teachingLanguages
+      url: https://www.elte.hu/en/mechanical-engineering-bsc
+      quote: Language of instruction English
+    - fact: tuition
+      url: https://www.elte.hu/en/mechanical-engineering-bsc
+      quote: Tuition fee/semester 3,200 EUR 3,200 EUR
+    - fact: applicationChannel
+      url: https://www.elte.hu/en/mechanical-engineering-bsc
+      quote: The application starts in the online application system (apply.elte.hu).
+    - fact: documents
+      url: https://www.elte.hu/en/mechanical-engineering-bsc
+      quote: "Documents to submit with application Online application form Record of the final two years in secondary school Secondary school certificate Transcript of records Proof of application fee transfer CV Motivation letter Copy of the main pages of the passport (needs to be valid) Passport photo Medical certificate certificates have to be issued and signed by a physician to prove that the applicant does not have the following illnesses: AIDS, Hepatitis A, B, C, or any other epidemic conditions Language certificate"
+    - fact: requirements.req-1
+      url: https://www.elte.hu/en/mechanical-engineering-bsc
+      quote: There will be an oral interview with all the applicants
+    - fact: requirements.req-2
+      url: https://www.elte.hu/en/mechanical-engineering-bsc
+      quote: Applicants are required to have sufficiently good grades in their secondary school finishing exams, especially from Mathematics.
+    - fact: requirements.req-3
+      url: https://www.elte.hu/en/mechanical-engineering-bsc
+      quote: The applicant must be 18 years old by August 31.
+    - fact: requirements.req-4
+      url: https://www.elte.hu/en/mechanical-engineering-bsc
+      quote: "certificates have to be issued and signed by a physician to prove that the applicant does not have the following illnesses: AIDS, Hepatitis A, B, C, or any other epidemic conditions"
+  notes: applicationDeadline 2027-04-30 comes from the programme page and is listed under 'Non-EU/EEA students'. Tuition 3,200 EUR/semester is stated for both EU/EEA and non-EU/EEA students on the programme page. The quote 'The application starts in the online application system (apply.elte.hu).' names the university's own portal (hu-university-direct); no Stipendium Hungaricum application route is stated for this programme's admission. Some other pages supplied (Student Finance, calls for applications, additional financial support) do not add facts for this programme.

@@ -1,0 +1,95 @@
+slug: hu-international-business-school-bachelor-of-science-in-b-sf368
+institution: hu-international-business-school
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Bachelor of Science in Business Management (with AI and Data Analytics)
+summary:
+  fr:
+    text: Bachelor of Science in Business Management (with AI and Data Analytics), International Business School (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Bachelor of Science in Business Management (with AI and Data Analytics), International Business School (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Bachelor of Science in Business Management (with AI and Data Analytics), International Business School (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-ai-and-data-analytics/
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary school leaving certificate
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-ai-and-data-analytics/
+    last_verified_at: null
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/368
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-international-business-school-bachelor-of-science-in-b-sf368
+  name: Bachelor of Science in Business Management (with AI and Data Analytics)
+  institution: International Business School
+  city: Budapest
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/368
+  todo: "Study Finder lists: branch Economic Science, language English, duration 6 semesters, location Budapest, scholarship programmes: none listed; the programme's own page (Study Finder contact website): https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-ai-and-data-analytics/; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:368
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/368
+      quote: "Duration of the course / programme: 6 semesters"
+    - fact: durationYears
+      url: https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-ai-and-data-analytics/
+      quote: Duration of programme 6 semesters
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/368
+      quote: "Language of instruction: English"
+    - fact: teachingLanguages
+      url: https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-ai-and-data-analytics/
+      quote: Language of tuition English
+    - fact: documents
+      url: https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-ai-and-data-analytics/
+      quote: • Secondary school leaving certificate AND
+  notes: "Tuition: the fees page lists a per-semester fee of EUR 4,000 under 'Bachelor's degree programmes - The University of Buckingham', which applies to this double-degree programme; the programme page itself only links to the fees page. Intakes: 'February and September' intake starts are stated, but no dated application deadline for international applicants is given (the fees page deadline table gives 30 September 2026 for Bachelor's programmes without saying it applies to international applicants), so no dated deadline is included. Application channel: the pages say to apply online via the IBS application form/DreamApply, i.e. directly to the university, not through Stipendium Hungaricum (the Studyfinder page shows 'State Scholarships: Not available')."

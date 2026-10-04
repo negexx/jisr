@@ -1,0 +1,88 @@
+slug: hu-university-of-nyiregyhaza-vehicle-engineering-sf545
+institution: hu-university-of-nyiregyhaza
+country: HU
+city: nyiregyhaza
+field: engineering
+level: bachelor
+name: Vehicle Engineering
+summary:
+  fr:
+    text: Vehicle Engineering, University of Nyíregyháza (Nyíregyháza). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Vehicle Engineering, University of Nyíregyháza (Nyíregyháza). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Vehicle Engineering, University of Nyíregyháza (Nyíregyháza). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/545
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée oral en ligne est obligatoire. L'admission est basée sur une évaluation sur 100 points (50 pour la motivation, les connaissances professionnelles et le parcours éducatif, 50 pour la maîtrise de l'anglais). L'examen est réussi avec au moins 60 points.
+          status: draft
+        en:
+          text: An online oral entrance examination is required. Admission is based on a 100-point evaluation (50 for motivation, professional knowledge and educational background, 50 for language proficiency). The entrance exam is successful with at least 60 points.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/545
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-nyiregyhaza-vehicle-engineering-sf545
+  name: Vehicle Engineering
+  institution: University of Nyíregyháza
+  city: Nyíregyháza
+  field: engineering
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/545
+  todo: "Study Finder lists: branch Engineering Science, language English, duration 7 semesters, location Nyíregyháza, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://english.nye.hu/; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:545
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/545
+      quote: "Duration of the course / programme: 7 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/545
+      quote: "Language of instruction: English"
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/545
+      quote: The entrance exam is successful, if the applicant have at least 60 points.
+  notes: "Tuition: the page lists a semester fee of 2450 EUR for non-EU applicants, with the note that during the admission procedure applicants must pay the tuition fees for the first two semesters in advance. The 1800 EUR figure applies to EU/EEA and other visa-free applicants and is therefore not used. Intake: the 30 June 2026 deadline on the application form is for the September 2026 intake (already past) and is not stated for the named programme; the September 2027 intake application period opens in December 2026 per the university homepage. Application channel: self-financed applicants use the university's own online application form; the Stipendium Hungaricum scholarship is a separate route."

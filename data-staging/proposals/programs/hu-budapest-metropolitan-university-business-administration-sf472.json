@@ -1,0 +1,51 @@
+{
+  "slug": "hu-budapest-metropolitan-university-business-administration-sf472",
+  "programmePage": "https://www.metubudapest.hu/programs/business-administration-and-management-bsc",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.metubudapest.hu/programs/business-administration-and-management-bsc",
+          "quote": "Course language English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 350000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.metubudapest.hu/programs/business-administration-and-management-bsc",
+          "quote": "3500 EUR/semester for non-EU students"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien d'admission en ligne et un test de mathématiques en ligne font partie de la procédure de sélection.",
+          "en": "An online admission interview and an online mathematics test are part of the selection process."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/472",
+            "quote": "Entrance examination: All applicants have to participate in an online admission interview."
+          },
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/472",
+            "quote": "Applicants are required to write an online mathematics test as part of the online admission interview."
+          }
+        ]
+      }
+    ]
+  }
+}

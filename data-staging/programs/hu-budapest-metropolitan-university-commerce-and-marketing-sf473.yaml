@@ -1,0 +1,145 @@
+slug: hu-budapest-metropolitan-university-commerce-and-marketing-sf473
+institution: hu-budapest-metropolitan-university
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Commerce and Marketing
+summary:
+  fr:
+    text: Commerce and Marketing, Budapest Metropolitan University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Commerce and Marketing, Budapest Metropolitan University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Commerce and Marketing, Budapest Metropolitan University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.metubudapest.hu/programs/commerce-and-marketing-bsc
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 350000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'admission en ligne et un test de mathématiques en ligne (30 minutes, 10 QCM) font partie de la procédure de sélection.
+          status: draft
+        en:
+          text: An online admission interview and an online mathematics test (30 minutes, 10 multiple-choice questions) are part of the selection process.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La moyenne générale annuelle et celle de l'examen final doivent être supérieures à 50 %, et la note de mathématiques du lycée supérieure à 60 %.
+          status: draft
+        en:
+          text: The GPA must be above 50% annually and in the final exam, and the high school math grade above 60%.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les documents de candidature doivent être en anglais ou en hongrois ; sinon, joindre une traduction anglaise avec des copies vérifiées de l'original.
+          status: draft
+        en:
+          text: Application documents are accepted in English/Hungarian; if not, attach an English translation together with verified copies of the original.
+          status: draft
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La formation se déroule en présentiel à Budapest (Full-time) ; vérifier les modalités exactes de candidature sur le site de l'université.
+          status: draft
+        en:
+          text: The programme is Full-time, in Budapest; check the exact application steps on the university website.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.metubudapest.hu/programs/commerce-and-marketing-bsc
+    last_verified_at: null
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/473
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-budapest-metropolitan-university-commerce-and-marketing-sf473
+  name: Commerce and Marketing
+  institution: Budapest Metropolitan University
+  city: Budapest
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/473
+  todo: "Study Finder lists: branch Economic Science, language English, duration 7 semesters, location Budapest, scholarship programmes: none listed; the programme's own page (Study Finder contact website): https://www.metubudapest.hu/programs/commerce-and-marketing-bsc; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:473
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://www.metubudapest.hu/programs/commerce-and-marketing-bsc
+      quote: Course duration 6+1 semesters
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/473
+      quote: "Duration of the course / programme: 7 semesters semesters"
+    - fact: teachingLanguages
+      url: https://www.metubudapest.hu/programs/commerce-and-marketing-bsc
+      quote: Course language English
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/473
+      quote: "Language of instruction: English"
+    - fact: tuition
+      url: https://www.metubudapest.hu/programs/commerce-and-marketing-bsc
+      quote: 3500 EUR/semester for non-EU students
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/473
+      quote: All applicants have to participate in an online admission interview.
+    - fact: requirements.req-2
+      url: https://www.metubudapest.hu/programs/commerce-and-marketing-bsc
+      quote: "GPA: above 50% - annually and in the final exam"
+    - fact: requirements.req-3
+      url: https://tempus.tpf.hu/studyfinder/index/show/473
+      quote: "The entry qualification documents are accepted in the following languages: English / Hungarian."
+    - fact: requirements.req-4
+      url: https://www.metubudapest.hu/programs/commerce-and-marketing-bsc
+      quote: Course form Full-time
+  notes: "Tuition: 3500 EUR/semester is the non-EU fee stated on the programme page; the same page also states 2800 EUR/semester for EU-students. The page says two semesters' tuition fee payment is required. No dated application deadline is stated on the supplied pages (the FAQ and contact pages give no dates, and the programme page lists 'Application for admission' without a deadline), so no intakes fact is included. The pages do not name a formal document list; the language test scores are quoted as equivalent level with 'no certificate required', so certificateRequired is false, not a document requirement. Admitted applicants who do not meet the minimum language requirements may be offered the English Language Preparatory Program (one or two semesters) — this is a possibility, not a requirement."

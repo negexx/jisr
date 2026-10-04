@@ -1,0 +1,89 @@
+{
+  "slug": "hu-obuda-university-electrical-engineering-sf560",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/560",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/560",
+          "quote": "Duration of the course / programme: 7 semesters semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/560",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 300000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://uni-obuda.hu/tuition-fees/",
+          "quote": "Electrical Engineering Communication engineering 2,000 EUR 3,000 EUR"
+        }
+      ]
+    }
+  },
+  "notes": "Le tarif de 3 000 EUR/semestre est la colonne \"Non-EEA\" du tableau des frais de scolarité (Electrical Engineering), donc le tarif pour un étudiant hors UE/EEE. Aucune date de candidature 2027 pour ce programme n'a été trouvée : la page \"HOW TO APPLY\" indique \"Fall Semester Application deadline: 31th May, 2026\" mais ne précise pas qu'il s'agit de candidats non-UE/étrangers, la date a donc été omise. La page d'admission générale mentionne une candidature en ligne sans nommer de plateforme, applicationChannel a donc été omis. La page Studyfinder ne liste pas les documents à fournir (pas de fait documents).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": null,
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/560",
+            "quote": "and English language certificate of level IELTS 5.0 at least"
+          },
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/560",
+            "quote": "Minimum level of language proficiency (oral): IELTS 5.0"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien oral en anglais sur vos motivations fait partie de l'examen d'entrée (admission avec examen d'entrée).",
+          "en": "An oral online English interview focusing on your motivations is part of the entrance examination (admission with entrance exam)."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/560",
+            "quote": "Oral: Online English interview focusing on the applicant’s motivations"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vous devez avoir au moins 18 ans au début des études (fin septembre 2026).",
+          "en": "You must be at least 18 years old by the start of the study period (end of September 2026)."
+        },
+        "evidence": [
+          {
+            "url": "https://uni-obuda.hu/application-deadlines/",
+            "quote": "Applicants must be at least 18 years old by the start of the study period in the Fall semester of Year 1 at the University, i.e., by the end of September 2026."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,190 @@
+slug: hu-corvinus-university-of-budapest-data-science-in-business-sf85
+institution: hu-corvinus-university-of-budapest
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Data Science in Business
+summary:
+  fr:
+    text: Data Science in Business, Corvinus University of Budapest (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Data Science in Business, Corvinus University of Budapest (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Data Science in Business, Corvinus University of Budapest (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/85
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 700000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: passport-or-national-id
+      name:
+        fr:
+          text: Passeport valide ou carte d'identité nationale (pour les candidats de l'UE)
+          status: draft
+        en:
+          text: Valid passport or national ID (EU applicants)
+          status: draft
+      translationRequired: null
+    - slug: proof-of-secondary-education
+      name:
+        fr:
+          text: "Preuve d'études secondaires : relevés de notes et certificat final originaux et traduits"
+          status: draft
+        en:
+          text: "Proof of secondary education: original and translated transcripts and final certificate"
+          status: draft
+      translationRequired: true
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: subject_taken
+      subjects:
+        - mathematics
+      mode: any
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Diplôme d'études secondaires requis ; curriculum national, IB, Cambridge A-Levels, GED acceptés. Pas de moyenne minimale générale. Contactez l'université pour vérifier l'équivalence de votre Bac marocain.
+          status: draft
+        en:
+          text: High school diploma required; national curriculum, IB, Cambridge A-Levels, GED accepted. No overall GPA requirement. Contact the university to verify your Moroccan Bac equivalence.
+          status: draft
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Examen d'entrée écrit en mathématiques : obligatoire pour Data Science in Business si vous n'avez pas l'une des qualifications listées (AP, SAT, A-level, Abitur, Bac français...). Test en ligne de 26 questions, 60 minutes."
+          status: draft
+        en:
+          text: "Written mathematics entrance exam: required for Data Science in Business if you do not hold one of the listed qualifications (AP, SAT, A-level, Abitur, French Bac...). Online test, 26 questions, 60 minutes."
+          status: draft
+    - id: req-5
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Examen d'entrée payant : 100 EUR de frais de candidature, non remboursables, requis pour les candidats auto-financés. Paiement au moment de la candidature."
+          status: draft
+        en:
+          text: "Paid application: 100 EUR application fee, non-refundable, required for self-funded applicants. Payable at the point of application."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/85
+    last_verified_at: null
+  page-2:
+    url: https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en
+    last_verified_at: null
+  page-3:
+    url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-corvinus-university-of-budapest-data-science-in-business-sf85
+  name: Data Science in Business
+  institution: Corvinus University of Budapest
+  city: Budapest
+  field: business-economics
+  confidence: low
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/85
+  todo: "Study Finder lists: branch Economic Science, language English, duration 6 semesters, location Budapest, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://www.uni-corvinus.hu/main-page/hello-corvinus/how-to-apply/?lang=en; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; the name points to another field than the Study Finder branch: check the programme content; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:85
+  preparedBy: assistant
+  preparedAt: 2026-10-04
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/85
+      quote: "Duration of the course / programme: 6 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/85
+      quote: "Language of instruction: English"
+    - fact: tuition
+      url: https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en
+      quote: Data Science in Business 1 980 000 Ft 7 000 €
+    - fact: documents
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: "Proof of secondary education: original and translated transcripts and final certificate."
+    - fact: documents
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: Valid passport or national ID (EU applicants)
+    - fact: requirements.req-1
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: "Corvinus accepts the following proof of English language proficiency (minimum equivalent B2 level) submitted no later than 1 August:"
+    - fact: requirements.req-1
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: "IELTS language certificate, minimum score: 6.0"
+    - fact: requirements.req-1
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: "TOEFL language certificate, minimum score: 65"
+    - fact: requirements.req-2
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: "If you are an applicant for one of the following, you will be required to meet the Mathematics requirements:"
+    - fact: requirements.req-2
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: BSc Data Science in Business
+    - fact: requirements.req-3
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: For general admission, there are no overall GPA requirements at Corvinus, you simply need to have completed your secondary education in your country of residence and received your final certificate by the time of enrolment.
+    - fact: requirements.req-3
+      url: https://tempus.tpf.hu/studyfinder/index/show/85
+      quote: Requirements High school diploma + English language requirements
+    - fact: requirements.req-4
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: If you do not or will not have any of these qualifications by the time of enrolment, you can take the Corvinus mathematics entrance exam instead.
+    - fact: requirements.req-4
+      url: https://tempus.tpf.hu/studyfinder/index/show/85
+      quote: "Entrance examination: Yes Entrance type: written"
+    - fact: requirements.req-5
+      url: https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en
+      quote: Application fees apply to self-funded international students and are non-refundable.
+  notes: Le montant des frais de scolarité pour les candidats hors EEE est indiqué en euros (7 000 €/an) sur la page des frais et coûts, mais cette page est une page institutionnelle générale qui liste les frais par programme ; elle mentionne explicitement « Data Science in Business 1 980 000 Ft 7 000 € » dans le tableau des frais de licence, donc la citation est valable pour ce programme précis. Le channel d'application est hu-university-direct car il est indiqué d'appliquer en ligne sur la plateforme dédiée (DreamApply) pour les candidats auto-financés. Les dates limites de candidature ne sont pas fournies avec l'année pour les candidats internationaux dans les pages fournies.

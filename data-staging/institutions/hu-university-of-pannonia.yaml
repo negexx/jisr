@@ -1,0 +1,25 @@
+slug: hu-university-of-pannonia
+name: University of Pannonia
+country: HU
+city:
+  slug: nagykanizsa
+  name: Nagykanizsa
+type: null
+website: null
+source: studyfinder
+info_kind: TODO_read_source
+sources:
+  studyfinder:
+    url: https://tempus.tpf.hu/studyfinder/index/show/582
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: hu-university-of-pannonia
+  name: University of Pannonia
+  institution: ""
+  city: Nagykanizsa
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: 'institution named "University of Pannonia" in the Study Finder: the register does not say whether it is public or private nor its website. Find its official site (Study in Hungary profile: http://studyinhungary.hu/institution/university-of-pannonia-88.html), check it is a recognised Hungarian higher education institution, set the type, add its page as the source, then info_kind: official'
+  sourceId: studyfinder-institution:university-of-pannonia@nagykanizsa
