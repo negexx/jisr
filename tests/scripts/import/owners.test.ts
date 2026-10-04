@@ -14,6 +14,8 @@ describe("source ownership", () => {
     ["ba-provider:26324@marburg", "germany"],
     ["daad:6217", "daad"],
     ["daad-academy:srh-university@berlin", "daad"],
+    ["studyfinder:116", "hungary"],
+    ["studyfinder-institution:university-of-debrecen@debrecen", "hungary"],
   ];
 
   it("gives every source id to exactly one source", () => {

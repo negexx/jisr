@@ -7,4 +7,5 @@ export const OWNS: Record<string, (sourceId: string) => boolean> = {
   // campus units (hrk:<nr>@<town>) are shared with the DAAD importer: only the orphan sweep removes them
   germany: (id) => /^(ba|ba-provider):/.test(id),
   daad: (id) => /^daad(-academy)?:/.test(id),
+  hungary: (id) => /^studyfinder(-institution)?:/.test(id),
 };
