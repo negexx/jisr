@@ -7,6 +7,7 @@ import {
   checkLanguages,
   checkRecurringDeadline,
   checkTuition,
+  countDates,
   htmlToText,
   mentionsInternationalApplicants,
   normalizeForMatch,
@@ -261,5 +262,14 @@ describe("mentionsInternationalApplicants", () => {
     "",
   ])("is false for: %s", (quote) => {
     expect(mentionsInternationalApplicants(quote)).toBe(false);
+  });
+});
+
+describe("countDates", () => {
+  it("counts each date a quote states", () => {
+    expect(countDates("Apply by 15 March 2027")).toBe(1);
+    expect(countDates("EU applicants: 15 March 2027; non-EU applicants: 15 January 2027")).toBe(2);
+    expect(countDates("closes March 15 and 01.02.2027 and 2027-04-01")).toBe(3);
+    expect(countDates("no date here")).toBe(0);
   });
 });

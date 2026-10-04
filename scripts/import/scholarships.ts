@@ -11,6 +11,8 @@ import { sameSite } from "./discover";
 import {
   amountMatches,
   checkDeadline,
+  countDates,
+  type FactCheck,
   mentionsInternationalApplicants,
   mentionsTranslation,
   normalizeForMatch,
@@ -99,6 +101,9 @@ const BACHELOR_PREREQUISITE: readonly RegExp[] = [
   /\b(?:with|having|have|has)\s+(?:an?\s+|completed\s+(?:an?\s+)?)?bachelor/i,
   /titulaires?\s+d['’]une\s+licence/i,
   /\bbachelor-?abschluss|abgeschlossen\w*\s+bachelor/i,
+  // graduates of a bachelor have finished it: the scholarship is for what comes after
+  /\bbachelor['’]?s?(?:\s+degree)?\s+(?:graduates?|holders?|alumni|diploma)\b/i,
+  /\b(?:after|finished|obtained|earned|completed)\s+(?:their\s+|a\s+|an\s+)?bachelor/i,
 ];
 const isGraduateLevel = (quote: string): boolean =>
   GRADUATE_LEVEL.test(quote) || BACHELOR_PREREQUISITE.some((pattern) => pattern.test(quote));
@@ -116,7 +121,7 @@ const isUndergraduate = (quote: string): boolean =>
 
 // --- eligibility ----------------------------------------------------------------------------------
 const EXCLUSION =
-  /not eligible|cannot apply|can ?not apply|are excluded|only (?:for|open to)\s+(?:german|eu\b|eea|dutch|french|national)|nicht\s+(?:berechtigt|bewerben)|k[öo]nnen sich nicht bewerben|ne sont pas|ne peuvent pas|uitgesloten|niet in aanmerking/i;
+  /not eligible|ineligible|cannot apply|can ?not apply|are excluded|reserved for|must not|should (?:see|refer|consult)|exclusively for (?:german|eu\b|eea|dutch|french|national|citizens)|nur f[üu]r (?:deutsche|eu\b)|r[ée]serv[ée]e?s? aux|only (?:for|open to)\s+(?:german|eu\b|eea|dutch|french|national)|nicht\s+(?:berechtigt|bewerben)|k[öo]nnen sich nicht bewerben|ne sont pas|ne peuvent pas|uitgesloten|niet in aanmerking/i;
 
 // "Foreign Office / Affairs" is a ministry, not a foreign applicant. Local to this verifier: the
 // shared rule stays as it is.
@@ -125,13 +130,20 @@ const namesInternational = (quote: string): boolean =>
   mentionsInternationalApplicants(quote.replace(FOREIGN_MINISTRY, " "));
 
 // How a page names a nationality: the country or its region. Small and general; extend per code.
-const AFRICA = String.raw`\bafrica|\bafrique|\bafrika|\bmena\b`;
+// A bare continent ("Africa" is in "South Africa") or "MENA" is not enough.
 const NORTH_AFRICA = "north africa|afrique du nord|nordafrika";
 const NATIONALITY_NAMES: Record<string, RegExp> = {
-  MA: new RegExp(`morocc|maroc|marokk|${NORTH_AFRICA}|${AFRICA}`, "i"),
-  DZ: new RegExp(`alg[eé]ri|${NORTH_AFRICA}|${AFRICA}`, "i"),
-  TN: new RegExp(`tunisi|tunesi|${NORTH_AFRICA}|${AFRICA}`, "i"),
+  MA: new RegExp(`morocc|maroc|marokk|${NORTH_AFRICA}`, "i"),
+  DZ: new RegExp(`alg[eé]ri|${NORTH_AFRICA}`, "i"),
+  TN: new RegExp(`tunisi|tunesi|${NORTH_AFRICA}`, "i"),
 };
+// "all countries except Morocco": the name is there, but as an exclusion.
+const EXCEPT_WORDS = "except|excluding|other than|sauf|außer|ausser|behalve";
+function namesNationality(code: string, quote: string): boolean {
+  const names = NATIONALITY_NAMES[code];
+  if (names === undefined || !names.test(quote)) return false;
+  return !new RegExp(`(?:${EXCEPT_WORDS})[^.;]{0,60}?(?:${names.source})`, "i").test(quote);
+}
 
 // --- official sources -----------------------------------------------------------------------------
 const ALLOWED_DOMAINS = new Set(["daad.de", "nuffic.nl", "studyinholland.nl", "campusfrance.org"]);
@@ -148,8 +160,39 @@ export function isOfficialSource(url: string, officialUrl: string): boolean {
     return false;
   }
   if (ALLOWED_DOMAINS.has(labels.slice(-2).join("."))) return true;
-  if (labels.at(-1) === "gov" || labels.slice(0, -1).includes("gov")) return true;
+  // "gov" as the top-level label, or right before a country code (gov.uk, study.gov.ma); not
+  // evil.gov.com or gov.evil.com
+  const last = labels.at(-1) ?? "";
+  if (last === "gov" || (labels.at(-2) === "gov" && last.length === 2)) return true;
   return labels.length > 2 && GOVERNMENT_SUFFIXES.includes(labels.slice(-2).join("."));
+}
+
+// --- deadline -------------------------------------------------------------------------------------
+// A page often gives one date per applicant group ("EU applicants: 15 March; non-EU applicants:
+// 15 January"). The date is the international applicants' only if one clause both states it and
+// names them; a quote that also names a domestic group and has several dates is never trusted whole.
+const DOMESTIC_GROUP =
+  /(?<!non[- ]?)\bEU(?:\/EEA)?\s+(?:applicants|students|citizens|nationals|residents)|(?<!non[- ]?)\bEU\/EEA|german|dutch|french|domestic|home students?|deutsche|niederl[äa]ndische|franz[öo]sische/i;
+const CLAUSE_BREAK = /;|[.!?](?:\s|$)|,\s*(?=for\b|und f[üu]r\b|pour les\b)/i;
+
+function deadlineFor(isoDate: string, quote: string): FactCheck {
+  const clauses = quote.split(CLAUSE_BREAK).map((c) => c.trim());
+  if (clauses.some((c) => c !== "" && checkDeadline(isoDate, c).ok && namesInternational(c)))
+    return { ok: true };
+  const whole = checkDeadline(isoDate, quote);
+  if (!whole.ok) return whole;
+  if (!namesInternational(quote))
+    return {
+      ok: false,
+      reason: "no accepted quote says the deadline is for international (non-EU) applicants",
+    };
+  if (DOMESTIC_GROUP.test(quote) && countDates(quote) > 1)
+    return {
+      ok: false,
+      reason:
+        "the quote gives several dates for different applicant groups and no clause ties this date to international applicants",
+    };
+  return { ok: true };
 }
 
 // --- support --------------------------------------------------------------------------------------
@@ -183,6 +226,9 @@ const PER_WORDS: Record<"month" | "year" | "once" | "total", RegExp> = {
   total: /\bin total\b|\bau total\b|\binsgesamt\b|\btotal of\b|\bgesamtbetrag\b/i,
 };
 
+const CAP =
+  /(?:up to|bis zu|jusqu['’][àa]|maximum|max\.?|at most|h[öo]chstens|maximal)\s*(?:of\s+)?(?:€|£|\$|[a-z]{3}\s?)?\s*$/i;
+
 const WINDOW = 25;
 // The same clause: up to 25 characters, stopping at another number or the end of the sentence.
 const clauseAfter = (quote: string, from: number): string =>
@@ -205,6 +251,9 @@ function supportStated(amount: SupportAmount, quote: string): boolean {
   for (const hi of amountMatches(amount.max, quote)) {
     for (const lo of amountMatches(amount.min, quote)) {
       if (lo.start > hi.start) continue;
+      // "up to 934 euros a month" is a ceiling, not the amount everybody gets
+      if (amount.min === amount.max && CAP.test(quote.slice(Math.max(0, hi.start - 20), hi.start)))
+        continue;
       // a range ("800 to 1,000"), not two unrelated numbers
       if (lo.start !== hi.start && hi.start - lo.end > 20) continue;
       if (
@@ -304,12 +353,11 @@ export async function verifyScholarship(
   // a listed nationality needs a quote naming the country or its region; none listed means any
   // international applicant, which is what the international quote supports
   for (const code of proposal.eligibleNationalities) {
-    const names = NATIONALITY_NAMES[code];
-    if (names === undefined)
+    if (NATIONALITY_NAMES[code] === undefined)
       reasons.push(
         `eligibleNationalities: ${code} cannot be checked against a quote yet (add its names to NATIONALITY_NAMES)`,
       );
-    else if (eligibility.length > 0 && !eligibility.some((q) => names.test(q.quote)))
+    else if (eligibility.length > 0 && !eligibility.some((q) => namesNationality(code, q.quote)))
       reasons.push(
         `eligibleNationalities: no accepted eligibility quote names ${code} (the country or its region)`,
       );
@@ -419,16 +467,13 @@ export async function verifyScholarship(
     } else {
       const checks = quotes.map((q) => ({
         q,
-        check: checkDeadline(proposal.deadline ?? "", q.quote),
+        check: deadlineFor(proposal.deadline ?? "", q.quote),
       }));
-      const stated = checks.filter((c) => c.check.ok);
-      const passed = stated.find((c) => namesInternational(c.q.quote));
+      const passed = checks.find((c) => c.check.ok);
       if (passed === undefined) {
         const first = checks[0]?.check;
         notes.push(
-          stated.length > 0
-            ? "deadline: no accepted quote says the deadline is for international (non-EU) applicants"
-            : `deadline: ${first !== undefined && !first.ok ? first.reason : "not supported"}`,
+          `deadline: ${first !== undefined && !first.ok ? first.reason : "not supported"}`,
         );
       } else {
         deadline = proposal.deadline;
