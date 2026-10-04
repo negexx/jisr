@@ -121,7 +121,7 @@ const isUndergraduate = (quote: string): boolean =>
 
 // --- eligibility ----------------------------------------------------------------------------------
 const EXCLUSION =
-  /not eligible|ineligible|cannot apply|can ?not apply|are excluded|reserved for|must not|should (?:see|refer|consult)|exclusively for (?:german|eu\b|eea|dutch|french|national|citizens)|nur f[üu]r (?:deutsche|eu\b)|r[ée]serv[ée]e?s? aux|only (?:for|open to)\s+(?:german|eu\b|eea|dutch|french|national)|nicht\s+(?:berechtigt|bewerben)|k[öo]nnen sich nicht bewerben|ne sont pas|ne peuvent pas|uitgesloten|niet in aanmerking/i;
+  /not eligible|ineligible|cannot apply|can ?not apply|are excluded|not entitled|\binstead\b|reserved for|must not be (?:from|a national|nationals|citizens?)|should (?:see|refer|consult)|only (?:eu|eea|german|dutch|french) (?:citizens|nationals|students)|exclusively for (?:german|eu\b|eea|dutch|french|national|citizens)|nur f[üu]r (?:deutsche|eu\b)|r[ée]serv[ée]e?s? aux|only (?:for|open to)\s+(?:german|eu\b|eea|dutch|french|national)|nicht\s+(?:berechtigt|bewerben)|k[öo]nnen sich nicht bewerben|ne sont pas|ne peuvent pas|uitgesloten|niet in aanmerking/i;
 
 // "Foreign Office / Affairs" is a ministry, not a foreign applicant. Local to this verifier: the
 // shared rule stays as it is.
@@ -169,30 +169,43 @@ export function isOfficialSource(url: string, officialUrl: string): boolean {
 
 // --- deadline -------------------------------------------------------------------------------------
 // A page often gives one date per applicant group ("EU applicants: 15 March; non-EU applicants:
-// 15 January"). The date is the international applicants' only if one clause both states it and
-// names them; a quote that also names a domestic group and has several dates is never trusted whole.
-const DOMESTIC_GROUP =
-  /(?<!non[- ]?)\bEU(?:\/EEA)?\s+(?:applicants|students|citizens|nationals|residents)|(?<!non[- ]?)\bEU\/EEA|german|dutch|french|domestic|home students?|deutsche|niederl[äa]ndische|franz[öo]sische/i;
-const CLAUSE_BREAK = /;|[.!?](?:\s|$)|,\s*(?=for\b|und f[üu]r\b|pour les\b)/i;
+// 15 January"). A date is the international applicants' application deadline only if ONE clause
+// states it, names them, contains no other date and says what the date is (a deadline word, not an
+// opening or a results date). A quote that is not clean like that is left for a human: null.
+const CLAUSE_BREAK = /;|[()]|[.!?](?:\s|$)|,\s*(?=for\b|und f[üu]r\b|pour les\b)/i;
+const DEADLINE_WORD =
+  /\b(?:deadline|close[sd]?|closing|apply by|until|by|before|no later than|bis zum|bis|frist|einsendeschluss|avant|date limite|uiterlijk|sluit\w*)\b|\bjusqu/i;
 
-function deadlineFor(isoDate: string, quote: string): FactCheck {
-  const clauses = quote.split(CLAUSE_BREAK).map((c) => c.trim());
-  if (clauses.some((c) => c !== "" && checkDeadline(isoDate, c).ok && namesInternational(c)))
-    return { ok: true };
-  const whole = checkDeadline(isoDate, quote);
-  if (!whole.ok) return whole;
-  if (!namesInternational(quote))
+function cleanDeadline(isoDate: string, text: string): FactCheck {
+  const stated = checkDeadline(isoDate, text);
+  if (!stated.ok) return stated;
+  if (!namesInternational(text))
     return {
       ok: false,
       reason: "no accepted quote says the deadline is for international (non-EU) applicants",
     };
-  if (DOMESTIC_GROUP.test(quote) && countDates(quote) > 1)
+  if (countDates(text) !== 1)
     return {
       ok: false,
       reason:
-        "the quote gives several dates for different applicant groups and no clause ties this date to international applicants",
+        "the quote gives several dates (several applicant groups or steps) and no clause ties this date alone to international applicants",
+    };
+  if (!DEADLINE_WORD.test(text))
+    return {
+      ok: false,
+      reason:
+        "the clause with this date has no deadline word (deadline, close, apply by, until ...)",
     };
   return { ok: true };
+}
+
+function deadlineFor(isoDate: string, quote: string): FactCheck {
+  const clauses = quote
+    .split(CLAUSE_BREAK)
+    .map((c) => c.trim())
+    .filter((c) => c !== "");
+  if (clauses.some((c) => cleanDeadline(isoDate, c).ok)) return { ok: true };
+  return cleanDeadline(isoDate, quote);
 }
 
 // --- support --------------------------------------------------------------------------------------
@@ -227,12 +240,12 @@ const PER_WORDS: Record<"month" | "year" | "once" | "total", RegExp> = {
 };
 
 const CAP =
-  /(?:up to|bis zu|jusqu['’][àa]|maximum|max\.?|at most|h[öo]chstens|maximal)\s*(?:of\s+)?(?:€|£|\$|[a-z]{3}\s?)?\s*$/i;
+  /(?:up to|bis zu|jusqu['’][àa]|maximum|max\.?|at most|no more than|not exceeding|h[öo]chstens|maximal)\s*(?:of\s+)?(?:€|£|\$|[a-z]{3}\s?)?\s*$/i;
 
 const WINDOW = 25;
 // The same clause: up to 25 characters, stopping at another number or the end of the sentence.
-const clauseAfter = (quote: string, from: number): string =>
-  quote.slice(from, from + WINDOW).split(/\d|[.;!?](?:\s|$)/)[0] ?? "";
+const clauseAfter = (quote: string, from: number, size = WINDOW): string =>
+  quote.slice(from, from + size).split(/\d|[.;!?](?:\s|$)/)[0] ?? "";
 const clauseBefore = (quote: string, to: number): string =>
   quote
     .slice(Math.max(0, to - WINDOW), to)
@@ -251,6 +264,8 @@ function supportStated(amount: SupportAmount, quote: string): boolean {
   for (const hi of amountMatches(amount.max, quote)) {
     for (const lo of amountMatches(amount.min, quote)) {
       if (lo.start > hi.start) continue;
+      // "EUR 900 per month for Master students" is not the amount of a Bachelor scholarship
+      if (isGraduateLevel(clauseAfter(quote, hi.end, 60))) continue;
       // "up to 934 euros a month" is a ceiling, not the amount everybody gets
       if (amount.min === amount.max && CAP.test(quote.slice(Math.max(0, hi.start - 20), hi.start)))
         continue;
@@ -408,6 +423,11 @@ export async function verifyScholarship(
         evidence.push({ fact, url: q.url, quote: q.quote });
   };
   cite("eligibility", eligibility);
+  // which quote named each listed country: the auditor checks it
+  for (const code of proposal.eligibleNationalities) {
+    const naming = eligibility.find((q) => namesNationality(code, q.quote));
+    if (naming !== undefined) cite(`nationality:${code}`, [naming]);
+  }
   cite("level", level);
   cite("howToApply", howToApply);
 

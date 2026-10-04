@@ -32,12 +32,12 @@ const pages: Record<string, string> = {
   [`${HOME}/master`]:
     "This scholarship is open to non-EU students. Applicants must hold a Bachelor's degree to apply for this Master scholarship. Les titulaires d'une licence peuvent candidater pour un master. Bachelor's degree holders from abroad may apply. Postgraduate students and doctoral candidates are welcome. The scholarship is for Bachelor students from abroad. Das Stipendium ist für ein Erststudium im Ausland gedacht. Le programme est ouvert pour la licence aux étudiants étrangers. The scholarship is for Bachelor graduates. Applicants must have finished a Bachelor in any subject. Bachelor degree alumni may apply. Students enrolled in a Bachelor programme may apply. The scholarship is for Bachelor students enrolled in a Bachelor programme.",
   [`${HOME}/who`]:
-    "Applicants from non-EU countries are not eligible for this grant. Non-EU applicants cannot apply to this grant. International applicants: only open to EU citizens living in Germany. International applicants: only for German nationals studying abroad. Applicants from non-EU countries may apply. Applicants from North Africa and the Middle East may apply. Staff of the Foreign Office may apply for this scholarship. Non-EU students are ineligible for this grant. This grant is reserved for German citizens; non-EU applicants should see the DAAD database. Applicants must not be from non-EU countries. Students from South Africa may apply as international applicants. Students from all countries except Morocco may apply as international students. EU and non-EU students are eligible. Students from Morocco may apply as international applicants.",
+    "Applicants from non-EU countries are not eligible for this grant. Non-EU applicants cannot apply to this grant. International applicants: only open to EU citizens living in Germany. International applicants: only for German nationals studying abroad. Applicants from non-EU countries may apply. Applicants from North Africa and the Middle East may apply. Staff of the Foreign Office may apply for this scholarship. Non-EU students are ineligible for this grant. This grant is reserved for German citizens; non-EU applicants should see the DAAD database. Applicants must not be from non-EU countries. Students from South Africa may apply as international applicants. Students from all countries except Morocco may apply as international students. EU and non-EU students are eligible. Students from Morocco may apply as international applicants. Applicants must not have lived in Germany for more than 15 months; international students from all countries may apply. International applicants are not entitled to this grant. International applicants should apply to the DAAD instead. International applicants: only EU citizens are funded.",
   [`${HOME}/pay`]:
-    "Non-European students receive up to 934 euros a month. Grants range from 500 up to 934 euros a month. Non-European students receive 5,000 per year. EUR 934 per month for up to 3 years. Once admitted, students receive EUR 934 per month. A total of EUR 8,000 is paid to each non-EU student. Students from abroad receive 1.200 euros per year, paid in two instalments. Paid in 2027: EUR 5,000.50 in total.",
+    "EUR 300 per month for Bachelor students and EUR 900 per month for Master students. Students receive no more than EUR 934 per month. Non-European students receive up to 934 euros a month. Grants range from 500 up to 934 euros a month. Non-European students receive 5,000 per year. EUR 934 per month for up to 3 years. Once admitted, students receive EUR 934 per month. A total of EUR 8,000 is paid to each non-EU student. Students from abroad receive 1.200 euros per year, paid in two instalments. Paid in 2027: EUR 5,000.50 in total.",
   [`${HOME}/dates`]: "Applications close on 15 March 2027.",
   [`${HOME}/dates2`]:
-    "EU applicants: 15 March 2027; non-EU applicants: 15 January 2027. Deadline for German applicants is 15 March 2027, for foreign applicants 1 February 2027. International applicants must apply by 15 March 2027.",
+    "EU applicants: 15 March 2027; non-EU applicants: 15 January 2027. Deadline for German applicants is 15 March 2027, for foreign applicants 1 February 2027. International applicants must apply by 15 March 2027. The deadline is 15 March 2027 for EU applicants and 15 January 2027 for non-EU applicants. Deadline: 15 March 2027 (international applicants: 15 January 2027). International applicants apply between 15 March 2027 and 15 May 2027. Results for international applicants are announced on 15 March 2027.",
   "https://blog.aggregator.example/aurora-guide":
     "Applicants from non-EU countries, including Morocco, holding a school-leaving certificate may apply.",
   "https://www.daad.de/en/aurora":
@@ -906,14 +906,25 @@ describe("deadline: two applicant groups", () => {
     expect(result.notes.join(" ")).toMatch(/deadline/);
   });
 
-  it("keeps the international applicants' date", async () => {
+  it("does not keep a date whose clause has no deadline word", async () => {
     const result = await dl("2027-01-15", EU_VS_NON);
-    expect(at(result.record, "deadline.value")).toBe("2027-01-15");
+    expect(at(result.record, "deadline.value")).toBeNull();
   });
 
   it("does not take the German applicants' date for the foreign one", async () => {
     expect(at((await dl("2027-03-15", DE_VS_FOREIGN)).record, "deadline.value")).toBeNull();
-    expect(at((await dl("2027-02-01", DE_VS_FOREIGN)).record, "deadline.value")).toBe("2027-02-01");
+    expect(at((await dl("2027-02-01", DE_VS_FOREIGN)).record, "deadline.value")).toBeNull();
+  });
+
+  it.each([
+    "The deadline is 15 March 2027 for EU applicants and 15 January 2027 for non-EU applicants",
+    "Deadline: 15 March 2027 (international applicants: 15 January 2027)",
+    "International applicants apply between 15 March 2027 and 15 May 2027",
+    "Results for international applicants are announced on 15 March 2027",
+  ])("is null for %s", async (quote) => {
+    const result = await dl("2027-03-15", quote);
+    expect(at(result.record, "deadline.value")).toBeNull();
+    expect(result.notes.join(" ")).toMatch(/deadline/);
   });
 
   it("keeps a single date for international applicants", async () => {
@@ -941,5 +952,72 @@ describe("support: a cap is not a fixed amount", () => {
   it("keeps a range whose upper bound is a cap", async () => {
     const result = await cap(500, 934, "Grants range from 500 up to 934 euros a month");
     expect(at(result.record, "support.value.amount.max")).toBe(93400);
+  });
+});
+
+describe("eligibility: narrower 'must not', more exclusions", () => {
+  const alone = (quote: string) =>
+    okOrReasons({
+      eligibleNationalities: [],
+      evidence: evidence({ eligibility: QUOTES(WHO, quote) }),
+    });
+
+  it.each([
+    "International applicants are not entitled to this grant",
+    "International applicants should apply to the DAAD instead",
+    "International applicants: only EU citizens are funded",
+  ])("rejects (%s)", async (quote) => {
+    const result = await alone(quote);
+    expect(result.ok).toBe(false);
+    expect(reasonsOf(result)).toMatch(/exclusion/);
+  });
+
+  it("accepts a residence condition that is not an exclusion of foreigners", async () => {
+    const result = await alone(
+      "Applicants must not have lived in Germany for more than 15 months; international students from all countries may apply",
+    );
+    expect(result.ok).toBe(true);
+  });
+});
+
+describe("support: the amount of another level of study", () => {
+  const MIXED = "EUR 300 per month for Bachelor students and EUR 900 per month for Master students";
+  const mixed = async (amount: number) => {
+    const result = await okOrReasons({
+      support: { amount: { min: amount, max: amount, currency: "EUR", per: "month" }, covers: [] },
+      evidence: evidence({ support: QUOTES(PAY, MIXED) }),
+    });
+    if (!result.ok) throw new Error(result.reasons.join(" | "));
+    return result;
+  };
+
+  it("drops the master amount", async () => {
+    expect(at((await mixed(900)).record, "support.value")).toBeNull();
+  });
+
+  it("keeps the bachelor amount", async () => {
+    expect(at((await mixed(300)).record, "support.value.amount.min")).toBe(30000);
+  });
+
+  it("reads 'no more than' as a ceiling", async () => {
+    const result = await okOrReasons({
+      support: {
+        amount: { min: 934, max: 934, currency: "EUR", per: "month" },
+        covers: [],
+      },
+      evidence: evidence({
+        support: QUOTES(PAY, "Students receive no more than EUR 934 per month"),
+      }),
+    });
+    if (!result.ok) throw new Error("expected ok");
+    expect(at(result.record, "support.value")).toBeNull();
+  });
+});
+
+describe("evidence for nationalities", () => {
+  it("records which quote named each listed country", async () => {
+    const result = await verifyScholarship(proposal(), getText);
+    if (!result.ok) throw new Error("expected ok");
+    expect(result.evidence).toContainEqual({ fact: "nationality:MA", ...ELIGIBILITY });
   });
 });

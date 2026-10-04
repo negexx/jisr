@@ -506,3 +506,68 @@ describe("sampleSheet of a scholarship record", () => {
     expect(sheet).not.toContain("ALL FIELDS");
   });
 });
+
+describe("sampleSheet of a scholarship: what the reader must confirm", () => {
+  const row = {
+    key: "scholarships/aurora",
+    batch: "b1",
+    inSample: true,
+    audited: "",
+    outcome: "",
+    notes: "",
+  };
+  const record = {
+    name: "Aurora",
+    officialUrl: "https://grants.example/aurora",
+    destinations: ["DE"],
+    eligibleNationalities: ["MA"],
+    fields: [],
+    _review: {
+      evidence: [
+        {
+          fact: "nationality:MA",
+          url: "https://grants.example/r",
+          quote: "including Morocco, may apply",
+        },
+      ],
+      rejected: [
+        "eligibility: a quote on https://blog.example/x is not from an official site: dropped",
+        'eligibility: the quote "not entitled to this grant" states an exclusion: dropped',
+      ],
+    },
+  };
+
+  it("prints a confirmation line for each claim and the provider's host", () => {
+    const sheet = sampleSheet([{ key: row.key, row, record }]);
+    expect(sheet).toContain(
+      "Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.",
+    );
+    expect(sheet).toContain(
+      "Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.",
+    );
+    expect(sheet).toContain(
+      "Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.",
+    );
+    expect(sheet).toContain(
+      "Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master.",
+    );
+    expect(sheet).toContain("grants.example");
+    expect(sheet).toContain("Confirm: this is the provider's own site.");
+  });
+
+  it("shows the quote that named each country and every dropped item", () => {
+    const sheet = sampleSheet([{ key: row.key, row, record }]);
+    expect(sheet).toContain(
+      '**eligibleNationalities MA** named by: "including Morocco, may apply"',
+    );
+    expect(sheet).toContain("a quote on https://blog.example/x is not from an official site");
+    expect(sheet).toContain("not entitled to this grant");
+  });
+
+  it("does not add the prompts to a programme", () => {
+    const sheet = sampleSheet([
+      { key: "programs/p", row: { ...row, key: "programs/p" }, record: { name: "P" } },
+    ]);
+    expect(sheet).not.toContain("Confirm:");
+  });
+});

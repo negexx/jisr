@@ -180,6 +180,26 @@ export function sampleSheet(
         }
       }
     }
+    if (key.startsWith("scholarships/")) {
+      let host = "(no official URL)";
+      try {
+        host = new URL(show(r.officialUrl)).host;
+      } catch {
+        // an unreadable URL is shown as missing
+      }
+      out.push(
+        `- **provider site**: ${host}. Confirm: this is the provider's own site.`,
+        "- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.",
+        "- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.",
+        "- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.",
+        "- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master.",
+      );
+      for (const e of evidence.filter((x) => show(x.fact).startsWith("nationality:"))) {
+        out.push(
+          `- **eligibleNationalities ${show(e.fact).slice("nationality:".length)}** named by: "${show(e.quote)}" — ${show(e.url)}`,
+        );
+      }
+    }
     for (const fact of [
       "durationYears",
       "teachingLanguages",
