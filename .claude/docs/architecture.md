@@ -85,16 +85,16 @@ Measured on the fixture build, gzip, noModule polyfill excluded. Build = `pnpm p
 
 | Route | build KB | browser initial KB | until idle KB | gap to 150 (initial) |
 |---|---|---|---|---|
-| `/fr`, `/en`, `/ar` | 168.6 | 168.8 | 213.9 | +18.8 |
-| `/[locale]/profile` | 184.9 | 185.3 | 215.1 | +35.3 |
-| `/[locale]/matches` | 191.5 | 191.8 | 215.1 | +41.8 |
-| `/[locale]/plan` (one saved program) | 185.3 | 185.5 | 241.0 | +35.5 |
-| `/[locale]/compare` (two saved programs) | 186.6 | 186.9 | 249.9 | +36.9 |
-| `/[locale]/programs/<slug>` | 183.2 (2026-10-02) | 183.6 | 237.8 | +33.6 |
+| `/fr`, `/en`, `/ar` | 168.6 | 168.8 | 214.2 | +18.8 |
+| `/[locale]/profile` | 184.9 | 185.3 | 215.4 | +35.3 |
+| `/[locale]/matches` | 191.5 | 192.1 | 215.4 | +42.1 |
+| `/[locale]/plan` (one saved program) | 185.3 | 185.6 | 241.4 | +35.6 |
+| `/[locale]/compare` (two saved programs) | 186.6 | 187.0 | 250.4 | +37.0 |
+| `/[locale]/programs/<slug>` | 183.2 (2026-10-02) | 183.7 | 238.1 | +33.7 |
 
 Last measured 2026-10-02, after Compare (M4b). Compare is a new route and no existing route grew by more than 0.3 KB (matches and plan carry the small Compare entry points; the others grew by at most 0.3 KB until idle). `/compare` has the same shape as `/plan`: the page shell and island are initial JS, the view model (`compare-view.ts`, with the matching, cost and reason code it pulls in) is a lazy chunk loaded once two saved programs and a profile exist, which is why it ends 8.9 KB above the plan page until idle. The entry links use `prefetch={false}`, so no page pays for the compare code unless the student goes there.
 
-Program row re-measured 2026-10-03 (browser columns only, fixture build, e2e perf spec) after recurring deadlines: 183.6 KB initial and 237.8 KB until idle against the ratchet rows 184 and 238, so 0.2 KB of headroom is left. The new UI cost about 0.1 KB gzip once it reused the question-mark icon the unknown state already ships; no ratchet row was raised. The build column of that row was not re-measured.
+Browser columns re-measured 2026-10-04 (fixture build, e2e perf spec) after recurring deadlines merged with Compare: matches 192.1 KB initial and the program page 238.1 KB until idle were 0.1 KB over their rows (192 and 238), the same on Linux CI and locally. Each change fit alone; the recurring-deadline line cost about 0.1 KB gzip after it reused the question-mark icon the unknown state already ships. The owner raised the two rows by 1 KB with the reason written in `tests/e2e/support/js-budget.ts`: matches initial 193, program until idle 239. The build column was not re-measured.
 
 The step before, Save and the plan page (M4a), against the table before it (build, initial): home +2.1 KB, profile +1.8, matches +3.1, program +3.0. The nav's saved-count badge costs about 2 KB on every page (`useSavedCount`, kept apart from `useSaved`); matches and program add the Save button and the hook. The toggle code and the plan's tick store behind it (`actions.ts`, `plan/store.ts`) are loaded on the first click (`useSaved.toggle` does `import("./actions")`; if that fails nothing changes and the button shows an alert), so they are in no initial chunk. The plan page's matching and checklist code (`plan-view.ts`) is a lazy chunk, loaded only when a program is saved and a profile exists, and the nav prefetches `/plan` only once something is saved (without that gate every page paid about 20 KB until idle for the plan's code). The program page's until-idle total (237.7) has 0.3 KB of room under its ratchet row (238).
 

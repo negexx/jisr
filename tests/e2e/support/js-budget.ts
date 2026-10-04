@@ -29,17 +29,22 @@ export type JsBudget = { initial: number; untilIdle: number };
 // 2026-10-02 (M4b): Compare. The page is new: 186.9 initial, 249.9 until idle with two saved programs
 // (its view model is a lazy chunk, like the plan's); its ratchet is that rounded up plus 3 KB. The
 // other pages grew by at most 0.3 KB until idle (My matches and the plan page carry the Compare entry points).
+// 2026-10-04 (recurring deadlines + Compare together): the owner raised two rows by 1 KB with this reason.
+// Each change fit its row alone (Compare: matches 191.8 initial, program 237.7 until idle; recurring
+// deadlines added about 0.1 KB after reusing an icon and collapsing the icon elements), but merged they
+// measure matches 192.1 initial and program 238.1 until idle on Linux CI and locally. New rows:
+// matches initial 193 (was 192), program until idle 239 (was 238). Nothing else moved.
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/fr": { initial: 170, untilIdle: 216 },
   "/ar": { initial: 170, untilIdle: 216 },
   "/fr/profile": { initial: 187, untilIdle: 216 },
   "/ar/profile": { initial: 187, untilIdle: 216 },
-  "/fr/matches": { initial: 192, untilIdle: 216 },
-  "/ar/matches": { initial: 192, untilIdle: 216 },
+  "/fr/matches": { initial: 193, untilIdle: 216 },
+  "/ar/matches": { initial: 193, untilIdle: 216 },
   "/fr/plan": { initial: 189, untilIdle: 244 },
   "/ar/plan": { initial: 189, untilIdle: 244 },
   "/fr/compare": { initial: 190, untilIdle: 253 },
   "/ar/compare": { initial: 190, untilIdle: 253 },
-  "/fr/programs/xx-test-prog-ok": { initial: 184, untilIdle: 238 },
-  "/ar/programs/xx-test-prog-ok": { initial: 184, untilIdle: 238 },
+  "/fr/programs/xx-test-prog-ok": { initial: 184, untilIdle: 239 },
+  "/ar/programs/xx-test-prog-ok": { initial: 184, untilIdle: 239 },
 };
