@@ -1316,3 +1316,136 @@ describe("review: the next sentence cannot override or repeat a period", () => {
     ).not.toBeNull();
   });
 });
+
+// Round 2 re-review: any degree-possession wording beside the levels, and the whole amount sentence.
+const POSSESSION = [
+  "Bachelor and Master students who have completed a first degree",
+  "The scholarship is for bachelor’s or master’s degree-holders",
+  "Bachelor and Master students who already hold a degree",
+  "Bachelor or Master students who have finished their first degree",
+  "Bachelor or Master students who hold a first degree",
+  "Bachelor or Master students in possession of a Bachelor’s degree",
+  "Bachelor or master students with a previous degree",
+  "Bachelor or Master degree recipients",
+  "Bachelor and Master students who have earned their first degree",
+  "Bachelor and Master students with a completed first degree",
+  "Bachelor or master students who already graduated",
+  "Bachelor or master students who have graduated",
+  "International bachelor or master students who have graduated",
+];
+const POSSESSION_NO_SENTENCE_BREAK = "Bachelor or Master students; a prior degree is required";
+const NL_FULL_TIME =
+  "You are applying for a full-time bachelor’s or master’s programme at one of the participating Dutch higher education institutions";
+const NEXT = "You will receive this in the first year of your studies.";
+const OWN_PERIOD = [
+  "Monthly grant: EUR 934.",
+  "Each month you get EUR 934.",
+  "The monthly stipend is EUR 934.",
+  "Per month, students get EUR 934.",
+  "The annual scholarship is EUR 5,000.",
+  "Every year you get EUR 5,000.",
+].map((sentence) => `${sentence} ${NEXT}`);
+const NEXT_TRAPS = [
+  "in ten parts in the first year",
+  "in ten payments in the first year",
+  "per trimester in the first year",
+  "in the first year and throughout your studies",
+  "in the first year, and it is renewable",
+  "in the first year, if renewed also later",
+].map((tail) => `Grant of EUR 934. You will receive this ${tail}.`);
+pages[`${HOME}/review2`] = [
+  ...POSSESSION,
+  POSSESSION_NO_SENTENCE_BREAK,
+  NL_FULL_TIME,
+  ...OWN_PERIOD,
+  ...NEXT_TRAPS,
+  "The scholarship amounts to 5,000 SEK. You will receive this in the first year of your studies.",
+  "The scholarship amounts to € 5,000. You will receive this in the first year of your studies.",
+  "The NL Scholarship is meant for international students from outside the European Economic Area (EEA) who want to do their bachelor’s or master’s in the Netherlands.",
+  "Applicants from non-EU countries, including Morocco, may apply.",
+].join(" // ");
+
+describe("re-review: degree-possession wording beside both levels", () => {
+  const REVIEW2 = `${HOME}/review2`;
+  const BOTH_QUOTE = "who want to do their bachelor’s or master’s in the Netherlands";
+  const GOOD_ELIGIBILITY =
+    "The NL Scholarship is meant for international students from outside the European Economic Area (EEA) who want to do their bachelor’s or master’s in the Netherlands";
+  const bad = [...POSSESSION, POSSESSION_NO_SENTENCE_BREAK];
+
+  it.each(bad)("rejects as a level quote (%s)", async (quote) => {
+    const result = await okOrReasons({
+      evidence: evidence({ level: QUOTES(REVIEW2, BOTH_QUOTE, quote) }),
+    });
+    expect(result.ok).toBe(false);
+    expect(reasonsOf(result)).toMatch(/level/i);
+  });
+
+  it.each(bad)("rejects as an eligibility quote (%s)", async (quote) => {
+    const result = await okOrReasons({
+      eligibleNationalities: [],
+      evidence: evidence({
+        eligibility: QUOTES(REVIEW2, GOOD_ELIGIBILITY, quote),
+        level: QUOTES(REVIEW2, BOTH_QUOTE),
+      }),
+    });
+    expect(result.ok).toBe(false);
+  });
+
+  it.each(POSSESSION)("drops an amount in a clause with (%s)", async (quote) => {
+    const text = `EUR 400 per month for ${quote}`;
+    pages[`${HOME}/review3`] = `${pages[`${HOME}/review3`] ?? ""} // ${text}`;
+    const result = await okOrReasons({
+      support: { amount: { min: 400, max: 400, currency: "EUR", per: "month" }, covers: [] },
+      evidence: evidence({ support: QUOTES(`${HOME}/review3`, text) }),
+    });
+    if (!result.ok) throw new Error(result.reasons.join(" | "));
+    expect(at(result.record, "support.value")).toBeNull();
+  });
+
+  it("does not trip on 'participating' or 'education' in the NL wording", async () => {
+    const result = await okOrReasons({
+      eligibleNationalities: [],
+      evidence: evidence({
+        eligibility: QUOTES(REVIEW2, GOOD_ELIGIBILITY, NL_FULL_TIME),
+        level: QUOTES(REVIEW2, BOTH_QUOTE, NL_FULL_TIME),
+      }),
+    });
+    expect(reasonsOf(result)).toBe("");
+  });
+});
+
+describe("re-review: the whole amount sentence and an allow-list for the next one", () => {
+  const REVIEW2 = `${HOME}/review2`;
+  const once = async (quote: string, amount: number, currency = "EUR") => {
+    const result = await okOrReasons({
+      support: { amount: { min: amount, max: amount, currency, per: "once" }, covers: [] },
+      evidence: evidence({ support: QUOTES(REVIEW2, quote) }),
+    });
+    if (!result.ok) throw new Error(result.reasons.join(" | "));
+    return at(result.record, "support.value");
+  };
+
+  it.each(OWN_PERIOD)("a period in the amount's own sentence wins (%s)", async (quote) => {
+    expect(await once(quote, quote.includes("5,000") ? 5000 : 934)).toBeNull();
+  });
+
+  it.each(NEXT_TRAPS)("the next sentence may say nothing else (%s)", async (quote) => {
+    expect(await once(quote, 934)).toBeNull();
+  });
+
+  it("still reads the NL amount, in euros or in a currency written after the amount", async () => {
+    expect(
+      await once(
+        "The scholarship amounts to € 5,000. You will receive this in the first year of your studies.",
+        5000,
+      ),
+    ).not.toBeNull();
+    expect(
+      await once(
+        "The scholarship amounts to 5,000 SEK. You will receive this in the first year of your studies.",
+        5000,
+        "SEK",
+      ),
+    ).not.toBeNull();
+  });
+});

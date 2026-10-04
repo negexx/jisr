@@ -120,9 +120,11 @@ const BOTH_LEVELS = new RegExp(
   String.raw`\b(?:bachelor|licence)['’]?s?-?(?:\s+(?:degrees?|students?|programmes?|programs?|courses?|studies))?\s*(?:\/|,|\b(?:or|and|und|oder|of|ou|et|en)\b)\s*(?:en\s+)?master(?:['’]s)?(?:-?${STUDY_SUFFIX}\b|\s+${STUDY_SUFFIX}\b)?`,
   "gi",
 );
-// Words of a finished degree: a scheme for these people is for what comes after the bachelor.
+// Degree-possession wording: a scheme for people who hold, finished or are about to use a degree is
+// for what comes after the bachelor, whatever levels it names. Word-boundary stems on purpose
+// ("participating", "education", "undergraduate" must not trip).
 const FINISHED_DEGREE =
-  /\bgraduates?\b|\balumn[ia]\b|absolvent|abschluss|dipl[ôo]m|\bobtenu|\bobtained\b|postdoc|abgeschlossen|afgestudeerd/i;
+  /\bdegrees?\b|\bgraduat|\balumn[ia]\b|\bdipl[ôo]m|\bhold(?:s|ers?|ing)?\b|\bcomplet|\bfinish|\bearn|\bobtain|\bpossess|\bprior\b|\bprevious|\balready\b|\brequir|\brecipient|\btitulaire|\bobtenu|\bpostdoc|absolvent|abschluss|abgeschlossen|afgestudeerd/i;
 
 // Any graduate wording at all, a both-levels phrase included.
 const mentionsGraduate = (quote: string): boolean =>
@@ -318,28 +320,37 @@ const numbersIn = (text: string): number =>
 
 // "The scholarship amounts to EUR 5,000. You will receive this in the first year of your studies.":
 // the period of a one-time amount may sit in the next sentence, but only when the amount's own
-// sentence gives no period at all (just the amount and its currency) and the next sentence starts
-// with "You will receive this/it", says "in the first year" (or "for one year only", "one-time")
-// and nothing that repeats the payment (month, year again, each, every, instalments, another amount).
-const PAID_SENTENCE = /^you will receive (?:this|it)\b/i;
+// sentence (all of it) gives no period, and the next sentence is nothing but "You will receive
+// this/it", the once phrase and at most "of your studies": an allow-list, so no recurrence, renewal
+// or instalment wording can slip in.
+const PAID_OPENER = /^you will receive (?:this|it)\b/i;
 const ONCE_PHRASE = /\bin (?:the|your|their) first year\b|\bfor one year only\b|\bone[- ]?time\b/gi;
-const RECURRENCE =
-  /\b(?:months?|years?|monthly|yearly|annual\w*|each|every|again|instal+ments?|second|third|fourth|then|weekly|quarterly|semester)\b|\d/i;
-function paidOnceNextSentence(quote: string, from: number, currency: string): boolean {
+const OWN_PERIOD =
+  /\b(?:monthly|yearly|annual\w*|weekly|quarterly|each|every|per)\b|\bmonths?\b|\byears?\b|\bp\.?\s?m\b|\bp\.?\s?a\b/i;
+const ONCE_REMAINDER = /^of (?:your|the|their) (?:studies|programme|study)$/i;
+function paidOnceNextSentence(
+  quote: string,
+  from: number,
+  currency: string,
+  ownSentence: string,
+): boolean {
+  if (OWN_PERIOD.test(ownSentence) || PER_WORDS.month.test(ownSentence)) return false;
+  if (PER_WORDS.year.test(ownSentence)) return false;
   const rest = quote.slice(from);
   const end = rest.search(/[.!?](?:\s|$)/);
   if (end < 0) return false;
-  const money = (CURRENCY_WORDS[currency] ?? new RegExp(`\b${currency}\b`, "i")).source;
-  const ownTail = new RegExp(String.raw`^[\s\u00a0,]*(?:${money})?[\s\u00a0,]*$`, "i");
+  const money = (CURRENCY_WORDS[currency] ?? new RegExp(`\\b${currency}\\b`, "i")).source;
+  const ownTail = new RegExp(String.raw`^[\s ,]*(?:${money})?[\s ,]*$`, "i");
   if (!ownTail.test(rest.slice(0, end))) return false;
   const sentence =
     rest
       .slice(end + 1)
       .trimStart()
       .split(/[.!?](?:\s|$)/)[0] ?? "";
-  if (!PAID_SENTENCE.test(sentence) || !new RegExp(ONCE_PHRASE.source, "i").test(sentence))
+  if (!PAID_OPENER.test(sentence) || !new RegExp(ONCE_PHRASE.source, "i").test(sentence))
     return false;
-  return !RECURRENCE.test(sentence.replace(ONCE_PHRASE, " "));
+  const remainder = sentence.replace(PAID_OPENER, " ").replace(ONCE_PHRASE, " ").trim();
+  return remainder === "" || ONCE_REMAINDER.test(remainder);
 }
 
 type SupportAmount = {
@@ -381,7 +392,7 @@ function supportStated(amount: SupportAmount, quote: string): boolean {
           ? `${clauseBefore(quote, lo.start)} ${after}`
           : after;
       if (PER_WORDS[amount.per].test(around)) return true;
-      if (amount.per === "once" && paidOnceNextSentence(quote, hi.end, amount.currency))
+      if (amount.per === "once" && paidOnceNextSentence(quote, hi.end, amount.currency, clause))
         return true;
     }
   }
