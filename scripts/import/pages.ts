@@ -15,7 +15,7 @@ import {
   withCache,
 } from "./search";
 import { DATA_DIR, STAGING_DIR, stageFile } from "./staging";
-import { discoverTopicPages, mergeTopicPages, TOPICS, type Topic } from "./topics";
+import { discoverTopicPages, mergeTopicPages, parseTopicList, TOPICS, type Topic } from "./topics";
 
 // Builds the pages file that data:read takes: for each programme, which pages to read.
 //   Germany: the DAAD register page, the programme's own page it links and the fee/application pages.
@@ -24,7 +24,8 @@ import { discoverTopicPages, mergeTopicPages, TOPICS, type Topic } from "./topic
 //                institution's site (a key in SERPER_API_KEY or BRAVE_API_KEY), else a weak homepage crawl.
 //   --topics adds, per institution, the pages found by four topic searches (fees, language, deadline,
 //   documents; PDFs allowed) to every programme's pages; it needs the same key as --search.
-// Usage: data:pages --slugs <file> [--out <file>] [--concurrency 4] [--search] [--topics] [--max-queries 300] [--dry-run]
+//   --topic-list <a,b> limits --topics to a subset of fees,language,deadline,documents (default all).
+// Usage: data:pages --slugs <file> [--out <file>] [--concurrency 4] [--search] [--topics] [--topic-list <a,b>] [--max-queries 300] [--dry-run]
 const DAAD_DETAIL =
   "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail";
 
@@ -39,9 +40,11 @@ export function dryRunSummary(input: {
   searched: number;
   institutions: number;
   topicInstitutions: number;
+  // topics searched per institution, default all four
+  topicCount?: number;
   cap: string;
 }): string {
-  const topicQueries = `at most ${input.topicInstitutions * TOPICS.length} topic queries`;
+  const topicQueries = `at most ${input.topicInstitutions * (input.topicCount ?? TOPICS.length)} topic queries`;
   // upper bound: one programme query each, two institution-level queries per institution
   const body = input.useSearch
     ? `${input.searched} programmes need a search; at most ${input.searched + 2 * input.institutions} queries (cap ${input.cap})${input.useTopics ? `; plus ${topicQueries}` : ""}`
@@ -132,6 +135,7 @@ async function main(argv: readonly string[]): Promise<void> {
   const out = flag("out") ?? path.join(STAGING_DIR, "pages.json");
   const useSearch = argv.includes("--search");
   const useTopics = argv.includes("--topics");
+  const topics = parseTopicList(flag("topic-list"));
   const dryRun = argv.includes("--dry-run");
   const base = makeProvider();
   if ((useSearch || useTopics) && !dryRun && base === null)
@@ -226,7 +230,8 @@ async function main(argv: readonly string[]): Promise<void> {
         const outcome = await addTopicPagesFor(
           programmes,
           slug,
-          () => discoverTopicPages({ country: meta.country, website, search, budget, memo }),
+          () =>
+            discoverTopicPages({ country: meta.country, website, search, budget, memo, topics }),
           console.error,
         );
         if (outcome === "failed") topicFailures++;
@@ -244,6 +249,7 @@ async function main(argv: readonly string[]): Promise<void> {
         searched,
         institutions: institutions.size,
         topicInstitutions: topicSites.size,
+        topicCount: topics.length,
         cap: flag("max-queries") ?? "300",
       }),
     );

@@ -75,6 +75,22 @@ describe("dryRunSummary", () => {
   });
 });
 
+describe("dryRunSummary with a topic subset", () => {
+  it("counts institutions times the chosen topics", () => {
+    expect(
+      dryRunSummary({
+        useSearch: false,
+        useTopics: true,
+        searched: 0,
+        institutions: 0,
+        topicInstitutions: 5,
+        topicCount: 1,
+        cap: "300",
+      }),
+    ).toBe("dry run: at most 5 topic queries (cap 300); no query sent, nothing written");
+  });
+});
+
 describe("addTopicPagesFor", () => {
   const found: Record<Topic, string[]> = {
     fees: ["https://u.example/fees"],

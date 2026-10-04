@@ -9,19 +9,26 @@ import {
 import {
   discoverTopicPages,
   mergeTopicPages,
+  parseTopicList,
   scoreTopicLink,
   TOPICS,
+  type Topic,
 } from "../../../scripts/import/topics";
 
 const hit = (url: string, title = "", snippet = ""): SearchHit => ({ url, title, snippet });
 
-function provider(answers: (query: string) => SearchHit[]): SearchProvider & { queries: string[] } {
+function provider(
+  answers: (query: string) => SearchHit[],
+): SearchProvider & { queries: string[]; languages: (string | undefined)[] } {
   const queries: string[] = [];
+  const languages: (string | undefined)[] = [];
   return {
     name: "fake",
     queries,
-    search: async (query) => {
+    languages,
+    search: async (query, options) => {
       queries.push(query);
+      languages.push(options?.language);
       return answers(query);
     },
   };
@@ -65,6 +72,25 @@ describe("scoreTopicLink", () => {
     expect(
       scoreTopicLink({ url: "https://uni.example/campus-life", text: "Campus life" }, "fees"),
     ).toBeLessThan(0.4);
+  });
+
+  it("scores french fees, deadline, language and documents pages and rejects an unrelated one", () => {
+    const score = (path: string, text: string, topic: Topic) =>
+      scoreTopicLink({ url: `https://univ.example.fr${path}`, text }, topic);
+    expect(score("/droits-de-scolarite", "Droits d'inscription", "fees")).toBeGreaterThanOrEqual(
+      0.4,
+    );
+    expect(score("/candidature", "Date limite de candidature", "deadline")).toBeGreaterThanOrEqual(
+      0.4,
+    );
+    expect(
+      score("/langue-d-enseignement", "Langue d'enseignement", "language"),
+    ).toBeGreaterThanOrEqual(0.4);
+    expect(score("/pieces-a-fournir", "Pièces à fournir", "documents")).toBeGreaterThanOrEqual(0.4);
+    expect(score("/vie-etudiante", "Vie étudiante", "fees")).toBeLessThan(0.4);
+    expect(score("/vie-etudiante", "Vie étudiante", "deadline")).toBeLessThan(0.4);
+    expect(score("/vie-etudiante", "Vie étudiante", "language")).toBeLessThan(0.4);
+    expect(score("/vie-etudiante", "Vie étudiante", "documents")).toBeLessThan(0.4);
   });
 
   it("halves the score of a news path", () => {
@@ -134,11 +160,59 @@ describe("discoverTopicPages", () => {
     ).rejects.toBeInstanceOf(SearchBudgetExceeded);
   });
 
+  it("asks four french queries for France, in French, with the search language fr", async () => {
+    const search = provider(() => []);
+    await discoverTopicPages({ country: "FR", website: "https://www.univ-example.fr/", search });
+    expect(search.queries).toHaveLength(4);
+    expect(search.queries.every((q) => q.startsWith("site:univ-example.fr "))).toBe(true);
+    expect(
+      search.queries.some((q) => q.includes("droits d'inscription étudiants internationaux")),
+    ).toBe(true);
+    expect(search.queries.some((q) => q.includes("langue d'enseignement enseigné en"))).toBe(true);
+    expect(
+      search.queries.some((q) => q.includes("date limite de candidature étudiants internationaux")),
+    ).toBe(true);
+    expect(
+      search.queries.some((q) =>
+        q.includes("pièces justificatives dossier de candidature étudiants internationaux"),
+      ),
+    ).toBe(true);
+    expect(search.languages).toEqual(["fr", "fr", "fr", "fr"]);
+  });
+
+  it("asks only the requested topics", async () => {
+    const search = provider(() => []);
+    await discoverTopicPages({
+      country: "FR",
+      website: "https://www.univ-example.fr/",
+      search,
+      topics: ["language"],
+    });
+    expect(search.queries).toHaveLength(1);
+    expect(search.queries[0]?.startsWith("site:univ-example.fr ")).toBe(true);
+    expect(search.queries[0]).toContain("langue d'enseignement");
+  });
+
   it("asks nothing for a country without keywords", async () => {
     const search = provider(() => []);
-    const out = await discoverTopicPages({ country: "FR", website, search });
+    const out = await discoverTopicPages({ country: "XX", website, search });
     expect(search.queries).toEqual([]);
     expect(out).toEqual({ fees: [], language: [], deadline: [], documents: [] });
+  });
+});
+
+describe("parseTopicList", () => {
+  it("is every topic when the flag is absent", () => {
+    expect(parseTopicList(undefined)).toEqual([...TOPICS]);
+  });
+
+  it("parses a comma-separated subset", () => {
+    expect(parseTopicList("language")).toEqual(["language"]);
+    expect(parseTopicList("fees, deadline")).toEqual(["fees", "deadline"]);
+  });
+
+  it("throws on an unknown topic", () => {
+    expect(() => parseTopicList("language,foo")).toThrow("unknown topic foo");
   });
 });
 

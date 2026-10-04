@@ -18,6 +18,12 @@ const WORDS: Record<string, Record<Topic, string>> = {
     documents:
       "Bewerbungsunterlagen erforderliche Unterlagen international applicants required documents",
   },
+  FR: {
+    fees: "droits d'inscription étudiants internationaux",
+    language: "langue d'enseignement enseigné en",
+    deadline: "date limite de candidature étudiants internationaux",
+    documents: "pièces justificatives dossier de candidature étudiants internationaux",
+  },
   NL: {
     fees: "collegegeld niet-EER studenten tuition fees non-EEA",
     language: "voertaal taal van het onderwijs language of instruction",
@@ -26,20 +32,36 @@ const WORDS: Record<string, Record<Topic, string>> = {
   },
 };
 
-const LANGUAGE: Record<string, string> = { DE: "de", NL: "nl" };
+const LANGUAGE: Record<string, string> = { DE: "de", FR: "fr", NL: "nl" };
 
 const PATTERN: Record<Topic, RegExp> = {
-  fees: /tuition|\bfees?\b|\bcosts?\b|gebu(?:e)?hr|studienbeitr|semesterbeitr|collegegeld|kosten/,
+  fees: /tuition|\bfees?\b|\bcosts?\b|gebu(?:e)?hr|studienbeitr|semesterbeitr|collegegeld|kosten|droits?.d.inscription|frais.de.scolarit|droits.de.scolarit/,
   language:
-    /language of instruction|teaching language|instruction|unterrichtssprache|studiensprache|\bsprache|voertaal|\btaal\b|language/,
-  deadline: /deadline|frist|termine?\b|aanmeld|application period|dates/,
-  documents: /documents?|unterlagen|nachweis|documenten|required|checklist|erforderlich|benodigde/,
+    /language of instruction|teaching language|instruction|unterrichtssprache|studiensprache|\bsprache|voertaal|\btaal\b|language|langue.d.enseignement|enseigne.en|langue.de.la.formation/,
+  deadline:
+    /deadline|frist|termine?\b|aanmeld|application period|dates|date.limite|calendrier|candidature/,
+  documents:
+    /documents?|unterlagen|nachweis|documenten|required|checklist|erforderlich|benodigde|pieces|justificatifs|dossier.de.candidature/,
 };
 
 const NEWSISH = /\/(news|blog|events?|actualit|presse|press|agenda|nieuws|aktuell|veranstaltung)/;
 // PDFs are wanted here (fee schedules); every other file type is not a page to read
 const OTHER_FILE = /\.(jpe?g|png|gif|svg|webp|zip|docx?|xlsx?|pptx?|mp[34]|ics)(\?|$)/i;
 const DATED_POST = /\/(19|20)\d{2}\/(0[1-9]|1[0-2])(\/|$)/;
+
+// Every topic, or the comma-separated subset of a `--topic-list` flag.
+export function parseTopicList(value: string | undefined): Topic[] {
+  if (value === undefined) return [...TOPICS];
+  return value
+    .split(",")
+    .map((name) => name.trim())
+    .filter((name) => name !== "")
+    .map((name) => {
+      const topic = TOPICS.find((t) => t === name);
+      if (topic === undefined) throw new Error(`unknown topic ${name}`);
+      return topic;
+    });
+}
 
 const fold = (text: string): string =>
   normalizeForMatch(text)
@@ -68,6 +90,8 @@ export type TopicInput = {
   memo?: Map<string, Promise<SearchHit[]>>;
   // hits kept per topic
   perTopic?: number;
+  // the topics to search, default all four
+  topics?: readonly Topic[];
 };
 
 export async function discoverTopicPages(input: TopicInput): Promise<Record<Topic, string[]>> {
@@ -90,7 +114,7 @@ export async function discoverTopicPages(input: TopicInput): Promise<Record<Topi
     pending.catch(() => memo.delete(query));
     return pending;
   };
-  for (const topic of TOPICS) {
+  for (const topic of input.topics ?? TOPICS) {
     const hits = await ask(`${scope} ${words[topic]}`);
     out[topic] = hits
       .filter((h) => h.url.startsWith("https://") && sameSite(h.url, input.website))
