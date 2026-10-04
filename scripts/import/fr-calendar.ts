@@ -21,7 +21,9 @@ export type ProgrammeKind = "but" | "licence" | "other";
 // engineering diploma) has no national calendar here and gets no proposal.
 export function programmeKind(record: { slug?: unknown; name?: unknown }): ProgrammeKind {
   if (isButProgramme(record)) return "but";
-  return /^(Double )?licence\b/i.test(String(record.name)) ? "licence" : "other";
+  return /^(Double )?licence\b(?!\s+professionnelle)/i.test(String(record.name))
+    ? "licence"
+    : "other";
 }
 
 // The Campus France Maroc application calendar is national: one sentence per kind of programme
@@ -135,6 +137,7 @@ async function main(argv: readonly string[]): Promise<void> {
         ? `  ${kind}: no calendar sentence found (no proposal)`
         : `  ${kind}: ${evidence.quote} (${evidence.url})`,
     );
+  for (const note of national.notes ?? []) console.log(`  ${note}`);
   const stale = await staleProposalFiles(out, proposals);
   if (stale.length > 0)
     console.warn(

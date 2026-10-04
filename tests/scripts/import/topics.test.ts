@@ -466,6 +466,44 @@ describe("followFeeLinks", () => {
     expect(out).toEqual(["https://www.hr.example.nl/collegegeld-2026-2027"]);
   });
 
+  it("does not pair the years of two path segments", async () => {
+    const out = await followFeeLinks([feePage], {
+      website: site,
+      fetchHtml: async () =>
+        `<a href="/media/2045/2024-2025.pdf">Collegegeld tarieven</a>
+         <a href="/collegegeld-2026-2027">Collegegeld 2026-2027</a>`,
+      limit: 3,
+    });
+    // 2045/2024 is not a study year; 2024-2025 is, and it is older than 2026
+    expect(out).toEqual(["https://www.hr.example.nl/collegegeld-2026-2027"]);
+  });
+
+  it("does not take 2045/12 for a study year", async () => {
+    const out = await followFeeLinks([feePage], {
+      website: site,
+      fetchHtml: async () =>
+        `<a href="/media/2045/12-tarieven.pdf">Tarieven</a>
+         <a href="/collegegeld-2026-2027">Collegegeld 2026-2027</a>`,
+      limit: 3,
+    });
+    expect(out).toEqual([
+      "https://www.hr.example.nl/collegegeld-2026-2027",
+      "https://www.hr.example.nl/media/2045/12-tarieven.pdf",
+    ]);
+  });
+
+  it("reads 2026-27 as the study year 2026 and passes the study-year gate", async () => {
+    const out = await followFeeLinks([feePage], {
+      website: site,
+      fetchHtml: async () =>
+        `<a href="/a">Collegegeld 2026-27</a>
+         <a href="/c">Collegegeld 2025-26</a>
+         <a href="/d">Collegegeld 2026-31</a>`,
+      limit: 5,
+    });
+    expect(out).toEqual(["https://www.hr.example.nl/a"]);
+  });
+
   it("takes no year from a longer digit run", async () => {
     const out = await followFeeLinks([feePage], {
       website: site,

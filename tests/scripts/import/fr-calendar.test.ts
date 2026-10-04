@@ -133,6 +133,12 @@ describe("programmeKind", () => {
     expect(programmeKind({ slug: "fr-x", name: "Double licence - Droit et Gestion" })).toBe(
       "licence",
     );
+    expect(programmeKind({ slug: "fr-x", name: "Licence professionnelle - Informatique" })).toBe(
+      "other",
+    );
+    expect(programmeKind({ slug: "fr-x", name: "Licence Professionnelle - Réseaux" })).toBe(
+      "other",
+    );
     expect(programmeKind({ slug: "fr-x", name: "Master - Informatique" })).toBe("other");
     expect(programmeKind({ slug: "fr-x", name: "Diplôme d'ingénieur" })).toBe("other");
   });

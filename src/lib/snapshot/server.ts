@@ -22,6 +22,7 @@ import {
   shardNames,
   type TextShard,
 } from "@/data-schema/snapshot";
+import { appliesToProgram } from "@/domain/scholarships";
 import type { AppLocale } from "@/i18n/routing";
 
 import { SnapshotError } from "./errors";
@@ -189,18 +190,13 @@ export async function loadProgramPageData(
     program,
     institution: institutions?.institutions.find((i) => i.slug === program.institution) ?? null,
     costProfiles: (costs?.profiles ?? []).filter((p) => p.city === null || p.city === program.city),
-    // Same selection and slug order as domain scholarshipsForProgram, minus its nationality
-    // filter, so the static page and the client's personal box list scholarships alike. Only the
-    // destination's shard is read (as the client's shardsForProgram): a linked scholarship whose
-    // `destinations` omit the program's country is not found here nor on the client; data:check
-    // does not reject that yet (follow-up).
+    // The domain's appliesToProgram (shared with scholarshipsForProgram) and its slug order, minus
+    // the nationality filter, so the static page and the client's personal box list scholarships
+    // alike. Only the destination's shard is read (as the client's shardsForProgram): a linked
+    // scholarship whose `destinations` omit the program's country is not found here nor on the
+    // client; data:check does not reject that yet (follow-up).
     scholarships: (scholarships?.scholarships ?? [])
-      .filter(
-        (s) =>
-          program.scholarships.includes(s.slug) ||
-          ((s.fields.length === 0 || s.fields.includes(program.field)) &&
-            (!s.institutions?.length || s.institutions.includes(program.institution))),
-      )
+      .filter((s) => appliesToProgram(s, program))
       .sort((a, b) => (a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0)),
     core,
     applicationChannel: core.applicationChannels.find((c) => c.slug === channelSlug) ?? null,

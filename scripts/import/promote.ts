@@ -7,7 +7,7 @@ import { parse } from "yaml";
 import { isValidIsoDate } from "@/data-schema/dates";
 import { COLLECTIONS, isCollectionName } from "@/data-schema/records/collections";
 
-import { type AuditRow, batchStatuses, readAudit } from "./audit";
+import { type AuditRow, batchStatuses, isAlwaysSampled, readAudit } from "./audit";
 import {
   appendLedger,
   DATA_DIR,
@@ -57,7 +57,9 @@ export async function promoteApproved(options: {
       .map((b) => b.batch),
   );
   const waived = new Set(
-    audit.filter((r) => r.inSample && r.outcome === "waived").map((r) => r.batch),
+    audit
+      .filter((r) => r.inSample && r.outcome === "waived" && !isAlwaysSampled(r.key))
+      .map((r) => r.batch),
   );
   const skip = (key: string, reason: string) => result.skipped.push({ key, reason });
 
@@ -105,7 +107,12 @@ export async function promoteApproved(options: {
       }
       batch = row.batch;
       // a batch whose sample the owner waived is never recorded as read by anyone
-      level = waived.has(row.batch) ? "owner-waived" : row.inSample ? "human" : "audited-sample";
+      level =
+        waived.has(row.batch) && !isAlwaysSampled(key)
+          ? "owner-waived"
+          : row.inSample
+            ? "human"
+            : "audited-sample";
     }
     const record = stampVerified(
       Object.fromEntries(Object.entries(staged).filter(([k]) => k !== "_review")),

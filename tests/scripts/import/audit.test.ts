@@ -450,6 +450,26 @@ describe("scholarships are always sampled", () => {
     expect(programmes).toBeGreaterThan(0);
     expect(programmes).toBeLessThanOrEqual(sampleSize(keys.length));
   });
+
+  it("never lets a scholarship be waived: a waived scholarship stays to read", () => {
+    const row = (key: string, outcome: string): AuditRow => ({
+      key,
+      batch: "b1-ab",
+      inSample: true,
+      audited: "y",
+      outcome,
+      notes: "",
+    });
+    const only = batchStatuses([row("scholarships/aurora", "waived")])[0];
+    expect(only).toMatchObject({ waived: 0, confirmed: 0, pending: 1, pass: false });
+    const mixed = batchStatuses([
+      row("scholarships/aurora", "waived"),
+      row("programs/p0", "waived"),
+    ])[0];
+    expect(mixed).toMatchObject({ waived: 1, pending: 1, pass: false });
+    const read = batchStatuses([row("scholarships/aurora", "ok"), row("programs/p0", "waived")])[0];
+    expect(read).toMatchObject({ confirmed: 1, waived: 1, pending: 0, pass: true });
+  });
 });
 
 describe("sampleSheet of a scholarship record", () => {

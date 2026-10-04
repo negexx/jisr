@@ -82,12 +82,29 @@ export function scoreTopicLink(link: { url: string; text: string }, topic: Topic
   );
 }
 
-const YEAR_PAIR = /(?<!\d)(20\d\d)(?:\s*[-/]\s*|\s+)20\d\d(?!\d)/g;
-const YEAR_SHORT = /(?<!\d)(20\d\d)\/\d\d(?!\d)/g;
+// A study year is two consecutive years: 2026-2027, 2026 - 2027, 2026/2027 or 2026/27 and 2026-27.
+// Candidates overlap (the lookahead), so the "2045/2024" of "/media/2045/2024-2025.pdf" is tried and
+// refused without hiding the real pair after it.
+const YEAR_PAIR = /(?<!\d)(?=(20\d\d)(?:\s*[-/]\s*|\s+)(20\d\d)(?!\d))/g;
+const YEAR_SHORT = /(?<!\d)(20\d\d)[-/](\d\d)(?!\d)/g;
 const YEAR_LABELLED = /(?:studiejaar|academic year)[\s_-]*(20\d\d)(?!\d)/g;
 const YEAR_BARE = /(?<!\d)(20\d\d)(?!\d)/g;
-const STUDY_YEAR =
-  /(?<!\d)20\d\d(?:\s*[-/]\s*|\s+)20\d\d(?!\d)|(?<!\d)20\d\d\/\d\d(?!\d)|studiejaar|academic year/;
+const STUDY_WORDS = /studiejaar|academic year/;
+
+// The start years of every study-year form in the text. The link filter and the year ranking both
+// read this, so they cannot drift apart.
+function studyYears(text: string): number[] {
+  const pairs = [...text.matchAll(YEAR_PAIR)]
+    .filter((m) => Number(m[2]) === Number(m[1]) + 1)
+    .map((m) => Number(m[1]));
+  const shorts = [...text.matchAll(YEAR_SHORT)]
+    .filter((m) => Number(m[2]) === (Number(m[1]) + 1) % 100)
+    .map((m) => Number(m[1]));
+  const labelled = [...text.matchAll(YEAR_LABELLED)].map((m) => Number(m[1]));
+  return [...pairs, ...shorts, ...labelled];
+}
+const hasStudyYear = (text: string): boolean =>
+  STUDY_WORDS.test(text) || studyYears(text).length > 0;
 const FEE_TOOL = /collegegeldmeter|tarieven|tariff|fee calculator/;
 const MAX_FEE_PAGES_FETCHED = 3;
 
@@ -96,9 +113,7 @@ const MAX_FEE_PAGES_FETCHED = 3;
 // path is full of ids and media folders (/media/2045/, /page/120251) that are not years.
 function startYear(text: string, path: string): number | null {
   const both = `${text} ${path}`;
-  const study = [YEAR_PAIR, YEAR_SHORT, YEAR_LABELLED].flatMap((pattern) =>
-    [...both.matchAll(pattern)].map((m) => Number(m[1])),
-  );
+  const study = studyYears(both);
   const years = study.length > 0 ? study : [...text.matchAll(YEAR_BARE)].map((m) => Number(m[1]));
   return years.length === 0 ? null : Math.max(...years);
 }
@@ -144,7 +159,7 @@ export async function followFeeLinks(
         const score = scoreTopicLink(link, "fees");
         if (score < 0.4) continue;
         const haystack = fold(`${link.text} ${path}`);
-        const studyYear = STUDY_YEAR.test(haystack);
+        const studyYear = hasStudyYear(haystack);
         if (!studyYear && !FEE_TOOL.test(haystack)) continue;
         found.set(link.url, {
           url: link.url,

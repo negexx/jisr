@@ -12,6 +12,7 @@ import {
   amountMatches,
   checkDeadline,
   countDates,
+  dateSpans,
   type FactCheck,
   mentionsInternationalApplicants,
   mentionsTranslation,
@@ -173,8 +174,27 @@ export function isOfficialSource(url: string, officialUrl: string): boolean {
 // states it, names them, contains no other date and says what the date is (a deadline word, not an
 // opening or a results date). A quote that is not clean like that is left for a human: null.
 const CLAUSE_BREAK = /;|[()]|[.!?](?:\s|$)|,\s*(?=for\b|und f[üu]r\b|pour les\b)/i;
+// What the date is. A results, interview or opening date is not the application deadline, so a
+// clause that talks about one is left for a human whatever else it says. Otherwise an unambiguous
+// deadline word is enough; "by / until / before / close(s)" must sit right before the date and the
+// clause must be about applying (not "interviews take place until ...").
+const NOT_A_DEADLINE =
+  /results?\b|interview|announce|notif|inform|\bopens\b|\bopening\b|start|begin|ergebnis|bekanntgabe|r[ée]sultats?|annonc|ouverture|uitslag|\bopent\b/i;
 const DEADLINE_WORD =
-  /\b(?:deadline|close[sd]?|closing|apply by|until|by|before|no later than|bis zum|bis|frist|einsendeschluss|avant|date limite|uiterlijk|sluit\w*)\b|\bjusqu/i;
+  /deadline|apply by|submitted by|received by|no later than|bis zum|date limite|uiterlijk|einsendeschluss|bewerbungsschluss|frist/i;
+const BEFORE_DATE_WORD = /\b(?:by|until|before|close[sd]?|closing|bis|avant|sluit\w*)\b|\bjusqu/i;
+const APPLICATION_WORD =
+  /\bapply\b|application|submit|submission|bewerbung|bewerben|candidature|aanmeld|einreich/i;
+const BEFORE_DATE_WINDOW = 20;
+
+function statesDeadline(text: string): boolean {
+  const q = normalizeForMatch(text);
+  if (NOT_A_DEADLINE.test(q)) return false;
+  if (DEADLINE_WORD.test(q)) return true;
+  const date = dateSpans(q)[0];
+  if (date === undefined || !APPLICATION_WORD.test(q)) return false;
+  return BEFORE_DATE_WORD.test(q.slice(Math.max(0, date.start - BEFORE_DATE_WINDOW), date.start));
+}
 
 function cleanDeadline(isoDate: string, text: string): FactCheck {
   const stated = checkDeadline(isoDate, text);
@@ -190,11 +210,11 @@ function cleanDeadline(isoDate: string, text: string): FactCheck {
       reason:
         "the quote gives several dates (several applicant groups or steps) and no clause ties this date alone to international applicants",
     };
-  if (!DEADLINE_WORD.test(text))
+  if (!statesDeadline(text))
     return {
       ok: false,
       reason:
-        "the clause with this date has no deadline word (deadline, close, apply by, until ...)",
+        "the clause with this date does not say it is the application deadline (deadline, apply by, until, close ...), or it is a results, interview or opening date",
     };
   return { ok: true };
 }
@@ -246,9 +266,9 @@ const WINDOW = 25;
 // The same clause: up to 25 characters, stopping at another number or the end of the sentence.
 const clauseAfter = (quote: string, from: number, size = WINDOW): string =>
   quote.slice(from, from + size).split(/\d|[.;!?](?:\s|$)/)[0] ?? "";
-const clauseBefore = (quote: string, to: number): string =>
+const clauseBefore = (quote: string, to: number, size = WINDOW): string =>
   quote
-    .slice(Math.max(0, to - WINDOW), to)
+    .slice(Math.max(0, to - size), to)
     .split(/\d|[.;!?]\s/)
     .at(-1) ?? "";
 
@@ -265,7 +285,12 @@ function supportStated(amount: SupportAmount, quote: string): boolean {
     for (const lo of amountMatches(amount.min, quote)) {
       if (lo.start > hi.start) continue;
       // "EUR 900 per month for Master students" is not the amount of a Bachelor scholarship
-      if (isGraduateLevel(clauseAfter(quote, hi.end, 60))) continue;
+      // nor is "Master students: EUR 900 per month" (the level named before the amount)
+      if (
+        isGraduateLevel(clauseAfter(quote, hi.end, 60)) ||
+        isGraduateLevel(clauseBefore(quote, hi.start, 40))
+      )
+        continue;
       // "up to 934 euros a month" is a ceiling, not the amount everybody gets
       if (amount.min === amount.max && CAP.test(quote.slice(Math.max(0, hi.start - 20), hi.start)))
         continue;

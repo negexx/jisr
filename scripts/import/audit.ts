@@ -27,6 +27,9 @@ export type AuditRow = {
 // Scholarships are shown to students as facts about money and eligibility, and there are few of
 // them: every one is read by a human, whatever the size of its batch.
 const ALWAYS_SAMPLED = /^scholarships\//;
+// ... and none of them can be waived: the owner can pass a programme preview unread, never money
+// and eligibility facts.
+export const isAlwaysSampled = (key: string): boolean => ALWAYS_SAMPLED.test(key);
 
 export function sampleSize(batchSize: number): number {
   return Math.min(batchSize, Math.max(SAMPLE_MINIMUM, Math.ceil(batchSize * SAMPLE_FRACTION)));
@@ -80,7 +83,10 @@ export function batchStatuses(rows: readonly AuditRow[]): BatchStatus[] {
     const mine = rows.filter((r) => r.batch === batch);
     const sample = mine.filter((r) => r.inSample);
     const confirmed = sample.filter((r) => r.audited === "y" && r.outcome === "ok").length;
-    const waived = sample.filter((r) => r.audited === "y" && r.outcome === "waived").length;
+    // a waived scholarship counts as still to read
+    const waived = sample.filter(
+      (r) => r.audited === "y" && r.outcome === "waived" && !ALWAYS_SAMPLED.test(r.key),
+    ).length;
     const wrong = sample.filter((r) => r.outcome === "wrong").length;
     return {
       batch,

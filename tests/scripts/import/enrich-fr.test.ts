@@ -84,6 +84,23 @@ describe("readNational", () => {
     expect(n.licenceCalendar).toBeNull();
   });
 
+  it("proposes no BUT calendar when the page carries several calendar sentences, and says so", async () => {
+    const text =
+      "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine). Pour les étudiants déjà en France : Du 2 décembre 2026 au 20 janvier 2027 à 23h59 (heure marocaine).";
+    const n = await readNational(async (url) => (url === PAGES.applyBut ? text : getText(url)));
+    expect(n.butCalendar).toBeNull();
+    expect(n.notes?.join(" ")).toMatch(/several calendar sentences found: not proposing/);
+  });
+
+  it("keeps the calendar when the same sentence is repeated", async () => {
+    const one = "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine).";
+    const n = await readNational(async (url) =>
+      url === PAGES.applyBut ? `${one} Autre texte. ${one}` : getText(url),
+    );
+    expect(n.butCalendar?.quote).toBe(one);
+    expect(n.notes ?? []).toEqual([]);
+  });
+
   it("has no BUT calendar when the page does not carry the sentence", async () => {
     const n = await readNational(async (url) =>
       url === PAGES.applyBut ? "Rien de tel ici." : getText(url),

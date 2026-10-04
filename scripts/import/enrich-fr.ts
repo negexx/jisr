@@ -67,6 +67,8 @@ export type National = {
   // licenceCalendar stays null until an official page for it is found and added to PAGES.
   butCalendar: Evidence | null;
   licenceCalendar: Evidence | null;
+  // What the reading left out and why ("several calendar sentences found: not proposing"), for the CLI.
+  notes?: string[];
 };
 
 // The national sentences, read from the live pages (never typed): if a page changes, the quote is
@@ -80,7 +82,28 @@ export async function readNational(getText: GetText): Promise<National> {
       return null;
     }
   };
-  return {
+  // A calendar that appears twice with different dates (one per applicant group) is ambiguous: fail
+  // closed, with a note. The same sentence repeated is still one calendar.
+  const notes: string[] = [];
+  const pickCalendar = async (kind: string, url: string): Promise<Evidence | null> => {
+    try {
+      const text = await getText(url);
+      const all = new Set(
+        [...text.matchAll(new RegExp(CALENDAR_SENTENCE.source, "gu"))].map((m) =>
+          m[0].replace(/\s+/g, " ").trim(),
+        ),
+      );
+      if (all.size > 1) {
+        notes.push(`${kind}: several calendar sentences found: not proposing (${url})`);
+        return null;
+      }
+      const quote = sentence(text, CALENDAR_SENTENCE);
+      return quote === null ? null : { url, quote };
+    } catch {
+      return null;
+    }
+  };
+  const national: National = {
     licenceDuration: await pick(
       PAGES.licence,
       /La licence est un diplôme national[^.]*se prépare en six semestres[^.]*\./,
@@ -103,9 +126,11 @@ export async function readNational(getText: GetText): Promise<National> {
       PAGES.applyBut,
       /Bac marocain ou Bac international marocain[^.]*vous devrez formuler vos vœux sur la plateforme Études en France\./,
     ),
-    butCalendar: await pick(PAGES.applyBut, CALENDAR_SENTENCE),
+    butCalendar: await pickCalendar("BUT", PAGES.applyBut),
     licenceCalendar: null,
   };
+  if (notes.length > 0) national.notes = notes;
+  return national;
 }
 
 // "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)." The page's own wording, with

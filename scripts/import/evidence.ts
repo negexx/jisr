@@ -293,9 +293,9 @@ function dayBesideMonth(month: number, day: number, q: string): boolean {
   );
 }
 
-// How many dates a quote states ("15 March", "March 15", "15.03.", "2027-03-15"): more than one means
-// the quote is about several groups or steps, and one of its dates must not be taken for another's.
-export function countDates(quote: string): number {
+// Where a quote states a date ("15 March", "March 15", "15.03.", "2027-03-15"): [start, end) in the
+// quote as normalizeForMatch writes it, in order.
+export function dateSpans(quote: string): { start: number; end: number }[] {
   const q = normalizeForMatch(quote);
   const names = MONTHS.flat().join("|");
   const patterns = [
@@ -304,8 +304,19 @@ export function countDates(quote: string): number {
     /(?<!\d)\d{1,2}\s*[./-]\s*\d{1,2}\s*[./-]\s*\d{2,4}(?!\d)/g,
     /(?<!\d)\d{4}-\d{2}-\d{2}(?!\d)/g,
   ];
-  return patterns.reduce((total, pattern) => total + (q.match(pattern)?.length ?? 0), 0);
+  return patterns
+    .flatMap((pattern) =>
+      [...q.matchAll(pattern)].map((m) => ({
+        start: m.index ?? 0,
+        end: (m.index ?? 0) + m[0].length,
+      })),
+    )
+    .sort((a, b) => a.start - b.start);
 }
+
+// How many dates a quote states: more than one means the quote is about several groups or steps,
+// and one of its dates must not be taken for another's.
+export const countDates = (quote: string): number => dateSpans(quote).length;
 
 export function checkDeadline(isoDate: string, quote: string): FactCheck {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoDate);
