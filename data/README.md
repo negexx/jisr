@@ -82,6 +82,8 @@ Field assignment for French programmes is an exact-label table in `scripts/impor
 
 The HTTP cache lives in `.cache/import/` (git-ignored).
 
+Programmes removed on purpose (owner decision, 2026-10-04): a Parcoursup formation whose fiche says "La nationalité française est obligatoire pour s'inscrire dans cette formation" (military-career BUT tracks) cannot be applied to by a Moroccan student and is not listed. Removed: `fr-i-u-t-de-brest-0290334f-but-genie-electrique-et-informat-48966` (Parcours Marine Nationale). The importer has no exclusion list yet: a new `data:import france` run may stage it again, so reject it at the audit sample.
+
 ### Source licences
 
 | Source | Terms | Status |
