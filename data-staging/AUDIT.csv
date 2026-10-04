@@ -924,7 +924,7 @@ programs/fr-i-u-t-de-marne-la-vallee-0772432a-but-genie-civil-construction-dur-9
 programs/fr-i-u-t-de-marne-la-vallee-antenne-de-meau-0772348j-but-gestion-des-entreprises-et-d-9901,b18-143d88,,,,
 programs/fr-i-u-t-de-marne-la-vallee-antenne-de-meau-0772348j-but-techniques-de-commercialisat-9903,b18-143d88,,,,
 programs/fr-i-u-t-de-metz-universite-de-lorraine-0570175f-but-gestion-des-entreprises-et-d-6573,b18-143d88,,,,
-programs/fr-i-u-t-de-metz-universite-de-lorraine-0570175f-but-techniques-de-commercialisat-6574,b18-143d88,y,,,
+programs/fr-i-u-t-de-metz-universite-de-lorraine-0570175f-but-techniques-de-commercialisat-6574,b18-143d88,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-i-u-t-de-montreuil-0932214b-but-gestion-administrative-et-co-35790,b18-143d88,,,,
 programs/fr-i-u-t-de-montreuil-0932214b-but-informatique-11349,b18-143d88,,,,
 programs/fr-i-u-t-de-mulhouse-0680169p-but-genie-mecanique-et-productiq-8134,b18-143d88,,,,
@@ -943,36 +943,36 @@ programs/fr-i-u-t-h-poincare-de-longwy-universite-de-0542288u-but-metiers-de-la-
 programs/fr-i-u-t-lumiere-lyon-2-0693521c-but-gestion-des-entreprises-et-d-8577,b18-143d88,,,,
 programs/fr-i-u-t-nice-cote-dazur-0060914l-but-genie-electrique-et-informat-2249,b18-143d88,,,,
 programs/fr-i-u-t-nice-cote-dazur-0060914l-but-gestion-des-entreprises-et-d-2253,b18-143d88,,,,
-programs/fr-i-u-t-nice-cote-dazur-0060914l-but-techniques-de-commercialisat-2254,b18-143d88,y,,,
+programs/fr-i-u-t-nice-cote-dazur-0060914l-but-techniques-de-commercialisat-2254,b18-143d88,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-i-u-t-poitiers-site-niort-0791090f-but-science-des-donnees-10137,b18-143d88,,,,
 programs/fr-i-u-t-reims-chalons-charleville-site-de-0512004b-but-reseaux-et-telecommunication-6165,b18-143d88,,,,
 programs/fr-i-u-t-thionville-yutz-universite-de-lorr-0573435z-but-techniques-de-commercialisat-6671,b18-143d88,,,,
 programs/fr-icl-istc-0596011n-licence-economie-et-gestion-24399,b18-143d88,,,,
-programs/fr-institut-catholique-de-lille-espas-0595996x-licence-economie-et-gestion-12503,b18-143d88,y,,,
+programs/fr-institut-catholique-de-lille-espas-0595996x-licence-economie-et-gestion-12503,b18-143d88,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-institut-catholique-de-lille-faculte-de-0592806e-licence-economie-12455,b18-143d88,,,,
-programs/fr-institut-catholique-de-lille-faculte-de-0592806e-licence-gestion-12457,b18-143d88,y,,,
+programs/fr-institut-catholique-de-lille-faculte-de-0592806e-licence-gestion-12457,b18-143d88,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-institut-catholique-europeen-des-ameriqu-9720920t-licence-informatique-35928,b18-143d88,,,,
-programs/fr-institut-superieur-dexpertise-et-daudit-0592607n-licence-economie-et-gestion-12785,b18-143d88,y,,,
+programs/fr-institut-superieur-dexpertise-et-daudit-0592607n-licence-economie-et-gestion-12785,b18-143d88,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-institut-universitaire-de-technologie-de-0511026n-but-genie-civil-construction-dur-6089,b18-143d88,,,,
 programs/fr-institut-universitaire-de-technologie-de-0511026n-but-informatique-6091,b18-143d88,,,,
 programs/fr-iut-1-grenoble-eneps-0381516t-but-genie-mecanique-et-productiq-14474,b18-143d88,,,,
-programs/fr-iut-1-grenoble-eneps-0381516t-but-reseaux-et-telecommunication-4974,b18-143d88,y,,,
+programs/fr-iut-1-grenoble-eneps-0381516t-but-reseaux-et-telecommunication-4974,b18-143d88,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-iut-aix-marseille-site-daix-en-provence-0134061u-but-gestion-des-entreprises-et-d-2704,b18-143d88,,,,
-programs/fr-iut-aix-marseille-site-daix-en-provence-0134061u-but-informatique-2701,b18-143d88,y,,,
+programs/fr-iut-aix-marseille-site-daix-en-provence-0134061u-but-informatique-2701,b18-143d88,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-iut-aix-marseille-site-daix-en-provence-0134061u-but-techniques-de-commercialisat-2706,b18-143d88,,,,
 programs/fr-iut-damiens-0801265r-but-genie-mecanique-et-productiq-10174,b18-143d88,,,,
 programs/fr-iut-damiens-0801265r-but-informatique-10175,b18-143d88,,,,
 programs/fr-iut-damiens-0801265r-but-techniques-de-commercialisat-10179,b18-143d88,,,,
 programs/fr-iut-de-laisne-site-de-saint-quentin-0021998l-but-genie-mecanique-et-productiq-2102,b18-143d88,,,,
-programs/fr-iut-de-moselle-est-site-de-forbach-unive-0573627h-but-science-et-genie-des-materia-22594,b18-143d88,y,,,
+programs/fr-iut-de-moselle-est-site-de-forbach-unive-0573627h-but-science-et-genie-des-materia-22594,b18-143d88,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-iut-de-troyes-0100684p-but-genie-mecanique-et-productiq-2424,b18-143d88,,,,
 programs/fr-iut-lyon1-site-de-bourg-en-bresse-0011312w-but-informatique-2032,b18-143d88,,,,
 programs/fr-iut-lyon1-site-de-bourg-en-bresse-0011312w-but-metiers-de-la-transition-et-2031,b18-143d88,,,,
 programs/fr-iut-lyon1-site-de-villeurbanne-gratte-ci-0691860x-but-techniques-de-commercialisat-8493,b18-143d88,,,,
 programs/fr-iut-montpellier-sete-site-de-sete-pole-u-0342503l-but-gestion-des-entreprises-et-d-34945,b18-143d88,,,,
 programs/fr-iut-montpellier-sete-site-de-sete-pole-u-0342503l-but-informatique-34946,b18-143d88,,,,
-programs/fr-iut-nord-franche-comte-site-de-belfort-0900231m-but-genie-electrique-et-informat-10822,b18-143d88,y,,,
-programs/fr-universite-de-brest-0290346u-licence-informatique-35595,b18-143d88,y,,,
+programs/fr-iut-nord-franche-comte-site-de-belfort-0900231m-but-genie-electrique-et-informat-10822,b18-143d88,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/fr-universite-de-brest-0290346u-licence-informatique-35595,b18-143d88,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-universite-de-lorraine-faculte-de-droit-0541668v-licence-economie-30131,b18-143d88,,,,
 programs/fr-universite-de-lorraine-faculte-des-scien-0542485h-licence-sciences-pour-lingenieur-43065,b18-143d88,,,,
 programs/fr-universite-jean-monnet-campus-de-roanne-0422152l-licence-sciences-pour-lingenieur-5379,b18-143d88,,,,
