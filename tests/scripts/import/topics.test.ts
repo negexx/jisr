@@ -93,6 +93,22 @@ describe("scoreTopicLink", () => {
     expect(score("/vie-etudiante", "Vie étudiante", "documents")).toBeLessThan(0.4);
   });
 
+  it("does not take enseignement or renseignements for the language of instruction", () => {
+    const score = (path: string, text: string) =>
+      scoreTopicLink({ url: `https://univ.example.fr${path}`, text }, "language");
+    expect(score("/formation", "Établissement d'enseignement supérieur")).toBeLessThan(0.4);
+    expect(score("/contact", "Renseignements pratiques")).toBeLessThan(0.4);
+    expect(score("/renseignements-pratiques", "Contact")).toBeLessThan(0.4);
+    expect(score("/formation", "Enseigné en anglais")).toBeGreaterThanOrEqual(0.4);
+    expect(score("/enseigne-en-anglais", "Programme")).toBeGreaterThanOrEqual(0.4);
+  });
+
+  it("scores a french deadline page named after candidater", () => {
+    expect(
+      scoreTopicLink({ url: "https://univ.example.fr/candidater", text: "Candidater" }, "deadline"),
+    ).toBeGreaterThanOrEqual(0.4);
+  });
+
   it("halves the score of a news path", () => {
     const plain = scoreTopicLink({ url: "https://uni.example/fees", text: "Tuition fees" }, "fees");
     const news = scoreTopicLink(
@@ -209,6 +225,11 @@ describe("parseTopicList", () => {
   it("parses a comma-separated subset", () => {
     expect(parseTopicList("language")).toEqual(["language"]);
     expect(parseTopicList("fees, deadline")).toEqual(["fees", "deadline"]);
+  });
+
+  it("throws when the list names no topic", () => {
+    expect(() => parseTopicList("")).toThrow("names no topic");
+    expect(() => parseTopicList(",")).toThrow("names no topic");
   });
 
   it("throws on an unknown topic", () => {

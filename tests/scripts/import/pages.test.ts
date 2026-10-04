@@ -6,6 +6,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   addTopicPagesFor,
+  checkTopicFlags,
   daadRegisterUrl,
   dryRunSummary,
   mergePages,
@@ -88,6 +89,19 @@ describe("dryRunSummary with a topic subset", () => {
         cap: "300",
       }),
     ).toBe("dry run: at most 5 topic queries (cap 300); no query sent, nothing written");
+  });
+});
+
+describe("checkTopicFlags", () => {
+  it("rejects --topic-list without --topics", () => {
+    expect(() => checkTopicFlags(["--slugs", "x", "--topic-list", "fees"])).toThrow(
+      "--topic-list needs --topics",
+    );
+  });
+
+  it("accepts --topic-list with --topics, and neither flag", () => {
+    expect(() => checkTopicFlags(["--topics", "--topic-list", "fees"])).not.toThrow();
+    expect(() => checkTopicFlags(["--slugs", "x"])).not.toThrow();
   });
 });
 

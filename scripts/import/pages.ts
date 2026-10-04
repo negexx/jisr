@@ -34,6 +34,12 @@ export function daadRegisterUrl(slug: string): string | null {
   return id === undefined ? null : `${DAAD_DETAIL}/${id}/`;
 }
 
+// --topic-list only narrows the --topics pass; given alone it would silently do nothing.
+export function checkTopicFlags(argv: readonly string[]): void {
+  if (argv.includes("--topic-list") && !argv.includes("--topics"))
+    throw new Error("--topic-list needs --topics: it only narrows the topic search");
+}
+
 export function dryRunSummary(input: {
   useSearch: boolean;
   useTopics: boolean;
@@ -135,6 +141,7 @@ async function main(argv: readonly string[]): Promise<void> {
   const out = flag("out") ?? path.join(STAGING_DIR, "pages.json");
   const useSearch = argv.includes("--search");
   const useTopics = argv.includes("--topics");
+  checkTopicFlags(argv);
   const topics = parseTopicList(flag("topic-list"));
   const dryRun = argv.includes("--dry-run");
   const base = makeProvider();

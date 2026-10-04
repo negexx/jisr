@@ -35,13 +35,13 @@ const WORDS: Record<string, Record<Topic, string>> = {
 const LANGUAGE: Record<string, string> = { DE: "de", FR: "fr", NL: "nl" };
 
 const PATTERN: Record<Topic, RegExp> = {
-  fees: /tuition|\bfees?\b|\bcosts?\b|gebu(?:e)?hr|studienbeitr|semesterbeitr|collegegeld|kosten|droits?.d.inscription|frais.de.scolarit|droits.de.scolarit/,
+  fees: /tuition|\bfees?\b|\bcosts?\b|gebu(?:e)?hr|studienbeitr|semesterbeitr|collegegeld|kosten|droits?[ _-]d[ '_-]?inscription|frais[ _-]de[ _-]scolarit|droits[ _-]de[ _-]scolarit/,
   language:
-    /language of instruction|teaching language|instruction|unterrichtssprache|studiensprache|\bsprache|voertaal|\btaal\b|language|langue.d.enseignement|enseigne.en|langue.de.la.formation/,
+    /language of instruction|teaching language|instruction|unterrichtssprache|studiensprache|\bsprache|voertaal|\btaal\b|language|langue[ _-]d[ '_-]?enseignement|enseigne[ _-]en\b|langue[ _-]de[ _-]la[ _-]formation/,
   deadline:
-    /deadline|frist|termine?\b|aanmeld|application period|dates|date.limite|calendrier|candidature/,
+    /deadline|frist|termine?\b|aanmeld|application period|dates|date[ _-]limite|calendrier|candidat(?:ure|er)/,
   documents:
-    /documents?|unterlagen|nachweis|documenten|required|checklist|erforderlich|benodigde|pieces|justificatifs|dossier.de.candidature/,
+    /documents?|unterlagen|nachweis|documenten|required|checklist|erforderlich|benodigde|pieces|justificatifs|dossier[ _-]de[ _-]candidature/,
 };
 
 const NEWSISH = /\/(news|blog|events?|actualit|presse|press|agenda|nieuws|aktuell|veranstaltung)/;
@@ -52,7 +52,7 @@ const DATED_POST = /\/(19|20)\d{2}\/(0[1-9]|1[0-2])(\/|$)/;
 // Every topic, or the comma-separated subset of a `--topic-list` flag.
 export function parseTopicList(value: string | undefined): Topic[] {
   if (value === undefined) return [...TOPICS];
-  return value
+  const topics = value
     .split(",")
     .map((name) => name.trim())
     .filter((name) => name !== "")
@@ -61,6 +61,8 @@ export function parseTopicList(value: string | undefined): Topic[] {
       if (topic === undefined) throw new Error(`unknown topic ${name}`);
       return topic;
     });
+  if (topics.length === 0) throw new Error("--topic-list names no topic");
+  return topics;
 }
 
 const fold = (text: string): string =>
