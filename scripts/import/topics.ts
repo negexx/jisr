@@ -82,24 +82,32 @@ export function scoreTopicLink(link: { url: string; text: string }, topic: Topic
   );
 }
 
-const STUDY_YEAR = /20\d\d[-/ ]20\d\d|20\d\d\/\d\d|studiejaar|academic year/;
+const YEAR_PAIR = /(?<!\d)(20\d\d)(?:\s*[-/]\s*|\s+)20\d\d(?!\d)/g;
+const YEAR_SHORT = /(?<!\d)(20\d\d)\/\d\d(?!\d)/g;
+const YEAR_LABELLED = /(?:studiejaar|academic year)[\s_-]*(20\d\d)(?!\d)/g;
+const YEAR_BARE = /(?<!\d)(20\d\d)(?!\d)/g;
+const STUDY_YEAR =
+  /(?<!\d)20\d\d(?:\s*[-/]\s*|\s+)20\d\d(?!\d)|(?<!\d)20\d\d\/\d\d(?!\d)|studiejaar|academic year/;
 const FEE_TOOL = /collegegeldmeter|tarieven|tariff|fee calculator/;
 const MAX_FEE_PAGES_FETCHED = 3;
 
-// The study year a link names, as its highest start year: 2026-2027 and 2026/27 are 2026.
-function startYear(text: string): number | null {
-  const years = text
-    .replace(/(20\d\d)[-/ ]20\d\d/g, "$1")
-    .replace(/(20\d\d)\/\d\d/g, "$1")
-    .match(/20\d\d/g);
-  return years === null ? null : Math.max(...years.map(Number));
+// The study year a link names, as its highest start year: 2026-2027, 2026 - 2027 and 2026/27 are
+// 2026. A study-year form counts in the text or the path; a bare year only in the link text, since a
+// path is full of ids and media folders (/media/2045/, /page/120251) that are not years.
+function startYear(text: string, path: string): number | null {
+  const both = `${text} ${path}`;
+  const study = [YEAR_PAIR, YEAR_SHORT, YEAR_LABELLED].flatMap((pattern) =>
+    [...both.matchAll(pattern)].map((m) => Number(m[1])),
+  );
+  const years = study.length > 0 ? study : [...text.matchAll(YEAR_BARE)].map((m) => Number(m[1]));
+  return years.length === 0 ? null : Math.max(...years);
 }
 
 type FeeCandidate = { url: string; score: number; year: number | null };
 
 // A fee page often links the rate sheet of the current study year, a fee calculator or a PDF
 // schedule that no search answers. HTML only, same site, https, one level deep; a page that cannot be
-// fetched is skipped and nothing here throws. Per page only the newest study year survives, and the
+// fetched is skipped and nothing here throws. Only the newest study year found survives, and the
 // newest year sorts first, so a past year's sheet never outranks the current one.
 export async function followFeeLinks(
   feePages: readonly string[],
@@ -121,7 +129,6 @@ export async function followFeeLinks(
     } catch {
       continue;
     }
-    const onPage: FeeCandidate[] = [];
     for (const link of links) {
       try {
         if (known.has(link.url) || found.has(link.url)) continue;
@@ -139,19 +146,20 @@ export async function followFeeLinks(
         const haystack = fold(`${link.text} ${path}`);
         const studyYear = STUDY_YEAR.test(haystack);
         if (!studyYear && !FEE_TOOL.test(haystack)) continue;
-        onPage.push({
+        found.set(link.url, {
           url: link.url,
           score: score + (studyYear ? 0.2 : 0),
-          year: startYear(haystack),
+          year: startYear(fold(link.text), fold(path)),
         });
       } catch {
         // an unparseable link is not a candidate
       }
     }
-    const newest = Math.max(-Infinity, ...onPage.map((c) => c.year ?? -Infinity));
-    for (const c of onPage) if (c.year === null || c.year >= newest) found.set(c.url, c);
   }
+  // only the newest study year found on any of the pages survives; undated links stay
+  const newest = Math.max(-Infinity, ...[...found.values()].map((c) => c.year ?? -Infinity));
   return [...found.values()]
+    .filter((c) => c.year === null || c.year >= newest)
     .sort((a, b) => (b.year ?? -Infinity) - (a.year ?? -Infinity) || b.score - a.score)
     .slice(0, input.limit ?? 2)
     .map((c) => c.url);
