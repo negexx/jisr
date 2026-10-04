@@ -23,6 +23,17 @@ describe("frenchLanguage", () => {
     expect(frenchLanguage(fiche("", LINE.replace("B2", "C1")))).toMatchObject({ level: "C1" });
   });
 
+  it.each([
+    "A1",
+    "A2",
+    "B1",
+  ])("gives nothing when the French level required is only %s", (level) => {
+    expect(frenchLanguage(fiche("", LINE.replace("B2", level)))).toEqual({
+      ok: false,
+      reason: "low-level",
+    });
+  });
+
   it("gives nothing without the level line", () => {
     expect(frenchLanguage("Licence Gestion Présentation de la formation")).toEqual({
       ok: false,

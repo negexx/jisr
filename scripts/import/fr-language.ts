@@ -18,7 +18,7 @@ import { DATA_DIR, STAGING_DIR } from "./staging";
 // deliberately over-cautious (a fiche that says the students "need English skills" is skipped too).
 export type FrenchLanguageOutcome =
   | { ok: true; quote: string; level: string }
-  | { ok: false; reason: "no-level-line" | "other-language" };
+  | { ok: false; reason: "no-level-line" | "low-level" | "other-language" };
 
 const LANGUAGES =
   "anglais\\w*|english|allemand\\w*|espagnol\\w*|italien\\w*|chinois\\w*|arabe|portugais\\w*|japonais\\w*|russe";
@@ -51,6 +51,8 @@ const OTHER_LANGUAGE_SIGNALS: readonly RegExp[] = [
 export function frenchLanguage(text: string): FrenchLanguageOutcome {
   const level = readFiche(text).frenchLevel;
   if (level === null) return { ok: false, reason: "no-level-line" };
+  // a programme that asks only for A1-B1 French does not show that it is taught in French
+  if (["A1", "A2", "B1"].includes(level.level)) return { ok: false, reason: "low-level" };
   if (OTHER_LANGUAGE_SIGNALS.some((pattern) => pattern.test(text)))
     return { ok: false, reason: "other-language" };
   return { ok: true, quote: level.quote, level: level.level };
