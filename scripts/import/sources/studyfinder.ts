@@ -266,23 +266,40 @@ export function buildHungaryRecords(details: readonly SfDetail[]): StagedRecord[
 // --- fetching ----------------------------------------------------------------------------------
 const pause = (): Promise<void> => new Promise((resolve) => setTimeout(resolve, PAUSE_MS));
 
+// "52 results:" -> 52, "No results..." -> 0, anything else null
+export function parseSfTotal(html: string): number | null {
+  const m = /<b>\s*(\d+)\s+results?:/i.exec(html);
+  if (m?.[1] !== undefined) return Number(m[1]);
+  return /No results/i.test(html) ? 0 : null;
+}
+
+const PAGE_SIZE = 10;
+
 export async function fetchStudyFinderIds(): Promise<number[]> {
   const ids = new Set<number>();
   for (const branch of BRANCHES) {
     for (const language of LANGUAGES) {
-      const params = new URLSearchParams({
-        level: "Bachelor",
-        language,
-        branch_of_science: branch,
-      });
-      const html = await fetchText(`${SEARCH}?${params}`, {
-        accept: "text/html",
-        validate: (body) => {
-          if (!/\d+ results?:|0 results/i.test(body) && !body.includes("list_element"))
-            throw new Error("Study Finder: the result list looks incomplete");
-        },
-      });
-      for (const listing of parseSfList(html)) ids.add(listing.id);
+      let total = Number.POSITIVE_INFINITY;
+      for (let page = 1; (page - 1) * PAGE_SIZE < total; page++) {
+        const params = new URLSearchParams({
+          level: "Bachelor",
+          language,
+          branch_of_science: branch,
+          page: String(page),
+        });
+        const html = await fetchText(`${SEARCH}?${params}`, {
+          accept: "text/html",
+          validate: (body) => {
+            if (parseSfTotal(body) === null)
+              throw new Error("Study Finder: the result list looks incomplete");
+          },
+        });
+        total = parseSfTotal(html) ?? 0;
+        const listings = parseSfList(html);
+        for (const listing of listings) ids.add(listing.id);
+        if (listings.length === 0) break;
+        await pause();
+      }
       await pause();
     }
   }

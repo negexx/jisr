@@ -424,7 +424,7 @@ const CHANNEL_WORDS: Record<string, RegExp> = {
     /application portal|apply directly|directly (to|at) the (higher education institution|university)|application via the university/i,
   "de-uni-assist": /uni-assist|uniassist/i,
   "hu-university-direct":
-    /online application form|application form[^.]{0,60}(?:university|institution)|apply (?:directly )?(?:online )?(?:on|at|to|through) the (?:website of the |own )?(?:chosen |selected )?(?:university|institution)|university'?s? (?:own )?(?:application|admission)/i,
+    /online application (?:form|system|portal|platform|site)|application (?:portal|platform|system)|apply online|register (?:and complete the |on the )online application|application form[^.]{0,60}(?:university|institution)|apply (?:directly )?(?:online )?(?:on|at|to|through) the (?:website of the |own )?(?:chosen |selected )?(?:university|institution)|university'?s? (?:own )?(?:application|admission)/i,
   "hu-stipendium-hungaricum": /stipendium hungaricum/i,
 };
 

@@ -300,6 +300,19 @@ describe("checkChannel", () => {
       ).ok,
     ).toBe(true);
     expect(checkChannel("hu-university-direct", "Apply on the Study Finder").ok).toBe(false);
+    for (const quote of [
+      "You can apply only online by completing our online application form and uploading your documents.",
+      "Register on the online application site of the University of Pécs",
+      "submitted during the application procedure by all applicants through our online application platform",
+      "John von Neumann University - Apply Online.",
+    ])
+      expect(checkChannel("hu-university-direct", quote).ok).toBe(true);
+    for (const quote of [
+      "The electronic question can be submitted to the following e-mail address: admission@metropolitan.hu",
+      "Admission procedure in general and general requirements: refer to admission regulations at www.bme.hu.",
+      "Study in Hungary link: https://en.uni-miskolc.hu/mechanical-engineering",
+    ])
+      expect(checkChannel("hu-university-direct", quote).ok).toBe(false);
     expect(
       checkChannel("hu-stipendium-hungaricum", "Apply for the Stipendium Hungaricum scholarship")
         .ok,

@@ -6,6 +6,7 @@ import {
   languageCodesOf,
   parseSfDetail,
   parseSfList,
+  parseSfTotal,
   type SfDetail,
   semestersToYears,
 } from "../../../scripts/import/sources/studyfinder";
@@ -220,5 +221,20 @@ describe("buildHungaryRecords", () => {
     expect(programmes[0]?.review.todo).toContain(
       "https://www.edu.unideb.hu/p/business-informatics-bsc",
     );
+  });
+});
+
+describe("parseSfList on an empty result", () => {
+  it("returns nothing for the 'No results' page", () => {
+    expect(parseSfList("<b>No results...</b>")).toEqual([]);
+  });
+});
+
+describe("parseSfTotal", () => {
+  it("reads the announced number of results, 0 for none, null when absent", () => {
+    expect(parseSfTotal("<b>52 results:</b><div")).toBe(52);
+    expect(parseSfTotal("<b>1 result:</b>")).toBe(1);
+    expect(parseSfTotal("<b>No results...</b>")).toBe(0);
+    expect(parseSfTotal("<html></html>")).toBeNull();
   });
 });
