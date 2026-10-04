@@ -24,6 +24,7 @@
     "data:linkcheck": "tsx scripts/import/linkcheck.ts",
     "data:websites": "tsx scripts/import/websites.ts",
     "data:enrich-fr": "tsx scripts/import/enrich-fr.ts",
+    "data:fr-calendar": "tsx scripts/import/fr-calendar.ts",
     "data:uniassist": "tsx scripts/import/sources/uniassist.ts",
     "data:shortlist": "tsx scripts/import/shortlist.ts",
     "data:evidence": "tsx scripts/import/evidence-cli.ts",

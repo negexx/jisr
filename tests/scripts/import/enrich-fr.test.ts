@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-
 import {
   buildProposal,
+  calendarIntakes,
   enrichProposal,
   enrichRecord,
   type National,
@@ -10,6 +10,7 @@ import {
   readNational,
   sentence,
 } from "../../../scripts/import/enrich-fr";
+import { htmlToText, quoteInText } from "../../../scripts/import/evidence";
 
 const FICHE_URL = "https://fiche.example/1";
 const FICHE =
@@ -27,7 +28,7 @@ const PAGE_TEXT: Record<string, string> = {
   [PAGES.applyLicence]:
     "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain : vous devrez formuler vos vœux sur la plateforme Études en France de votre pays de résidence.",
   [PAGES.applyBut]:
-    "Bac marocain ou Bac international marocain ou diplôme européen, quelque soit votre lieu de résidence, vous devrez formuler vos vœux sur la plateforme Études en France.",
+    "Bac marocain ou Bac international marocain ou diplôme européen, quelque soit votre lieu de résidence, vous devrez formuler vos vœux sur la plateforme Études en France. Calendrier de candidature. Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine). Ensuite, patientez.",
 };
 const getText = async (url: string) => {
   const text = PAGE_TEXT[url];
@@ -56,7 +57,10 @@ describe("readFiche", () => {
 describe("readNational", () => {
   it("reads every national sentence from the live pages, and drops one whose page changed", async () => {
     const all = await readNational(getText);
-    expect(Object.values(all).every((v) => v !== null)).toBe(true);
+    // the licence calendar has no official page yet: it is always null
+    const { licenceCalendar, ...rest } = all;
+    expect(licenceCalendar).toBeNull();
+    expect(Object.values(rest).every((v) => v !== null)).toBe(true);
     const changed = await readNational(async (url) =>
       url === PAGES.fees ? "the page was rewritten" : getText(url),
     );
@@ -65,6 +69,99 @@ describe("readNational", () => {
   });
   it("sentence() returns null when there is no match", () => {
     expect(sentence("abc", /xyz/)).toBeNull();
+  });
+
+  it("reads the BUT calendar sentence exactly as the page text has it, with no-break spaces", async () => {
+    const html =
+      "<html><body><p>Calendrier</p><p>Du 1er&nbsp;octobre 2026&nbsp;au 15&nbsp;novembre 2026 à&nbsp;23h59 (heure&nbsp;marocaine).</p><p>Autre</p></body></html>";
+    const text = htmlToText(html);
+    const n = await readNational(async (url) => (url === PAGES.applyBut ? text : getText(url)));
+    expect(n.butCalendar).toEqual({
+      url: PAGES.applyBut,
+      quote: "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine).",
+    });
+    expect(quoteInText(n.butCalendar?.quote ?? "", text)).toBe(true);
+    expect(n.licenceCalendar).toBeNull();
+  });
+
+  it("has no BUT calendar when the page does not carry the sentence", async () => {
+    const n = await readNational(async (url) =>
+      url === PAGES.applyBut ? "Rien de tel ici." : getText(url),
+    );
+    expect(n.butCalendar).toBeNull();
+  });
+});
+
+describe("calendarIntakes", () => {
+  it("turns the BUT sentence into ISO dates", () => {
+    expect(
+      calendarIntakes({
+        url: PAGES.applyBut,
+        quote: "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine).",
+      }),
+    ).toEqual({
+      startDate: null,
+      applicationOpens: "2026-10-01",
+      applicationDeadline: "2026-11-15",
+    });
+  });
+  it("accepts a plain day number and the other months", () => {
+    expect(
+      calendarIntakes({
+        url: PAGES.applyBut,
+        quote: "Du 15 janvier 2027 au 1er mars 2027 à 23h59 (heure marocaine).",
+      }),
+    ).toEqual({
+      startDate: null,
+      applicationOpens: "2027-01-15",
+      applicationDeadline: "2027-03-01",
+    });
+    expect(
+      calendarIntakes({
+        url: PAGES.applyBut,
+        quote: "Du 2 octobre 2026 au 3 novembre 2026 à 12h00 (heure marocaine).",
+      }),
+    ).toMatchObject({ applicationOpens: "2026-10-02", applicationDeadline: "2026-11-03" });
+  });
+  it("parses month names written without accents", () => {
+    expect(
+      calendarIntakes({
+        url: PAGES.applyBut,
+        quote: "Du 1er decembre 2026 au 28 fevrier 2027 à 23h59 (heure marocaine).",
+      }),
+    ).toMatchObject({ applicationOpens: "2026-12-01", applicationDeadline: "2027-02-28" });
+    expect(
+      calendarIntakes({
+        url: PAGES.applyBut,
+        quote: "Du 1er décembre 2026 au 28 février 2027 à 23h59 (heure marocaine).",
+      }),
+    ).toMatchObject({ applicationOpens: "2026-12-01", applicationDeadline: "2027-02-28" });
+    expect(
+      calendarIntakes({
+        url: PAGES.applyBut,
+        quote: "Du 1er août 2026 au 2 août 2026 (heure marocaine).",
+      }),
+    ).toMatchObject({ applicationOpens: "2026-08-01", applicationDeadline: "2026-08-02" });
+  });
+  it("is null for an impossible date", () => {
+    expect(
+      calendarIntakes({
+        url: PAGES.applyBut,
+        quote: "Du 31 février 2026 au 1er mars 2026 à 23h59 (heure marocaine).",
+      }),
+    ).toBeNull();
+  });
+  it("is null when there are not two dates, or a month is unknown", () => {
+    expect(
+      calendarIntakes({ url: PAGES.applyBut, quote: "Candidature avant le 15 novembre 2026." }),
+    ).toBeNull();
+    expect(calendarIntakes({ url: PAGES.applyBut, quote: "Du 1er octobre 2026." })).toBeNull();
+    expect(
+      calendarIntakes({
+        url: PAGES.applyBut,
+        quote: "Du 1er octobrr 2026 au 15 novembre 2026 (heure marocaine).",
+      }),
+    ).toBeNull();
   });
 });
 
