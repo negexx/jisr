@@ -25,8 +25,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 1074700
+    currency: EUR
+    period: year
+  source: page-2
   info_kind: official
 intakes:
   value: null

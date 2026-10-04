@@ -18,8 +18,8 @@ summary:
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7665/
 durationYears:
   value: 3.5
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 teachingLanguages:
   value:
     - en
@@ -33,9 +33,15 @@ tuition:
   source: page-1
   info_kind: official
 intakes:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 6
+        day: 15
+  source: page-2
+  info_kind: official
 applicationChannel:
   value: de-uni-assist
   source: page-1

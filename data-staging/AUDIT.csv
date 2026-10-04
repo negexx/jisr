@@ -850,7 +850,7 @@ programs/fr-i-u-t-de-rennes-0350697t-but-genie-electrique-et-informat-4662,b19-a
 programs/fr-i-u-t-de-roanne-0422048y-but-techniques-de-commercialisat-5376,b19-ad412e,,,,
 programs/fr-i-u-t-de-saint-malo-0352379w-but-reseaux-et-telecommunication-4781,b19-ad412e,,,,
 programs/fr-i-u-t-de-schiltigheim-0672462m-but-gestion-des-entreprises-et-d-8005,b19-ad412e,,,,
-programs/fr-i-u-t-de-senart-fontainebleau-site-senar-0772347h-but-gestion-des-entreprises-et-d-9895,b19-ad412e,y,,,
+programs/fr-i-u-t-de-senart-fontainebleau-site-senar-0772347h-but-gestion-des-entreprises-et-d-9895,b19-ad412e,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-i-u-t-de-tarbes-0650583f-but-genie-electrique-et-informat-7832,b19-ad412e,,,,
 programs/fr-i-u-t-de-tarbes-0650583f-but-genie-mecanique-et-productiq-7833,b19-ad412e,,,,
 programs/fr-i-u-t-de-tarbes-0650583f-but-gestion-des-entreprises-et-d-7834,b19-ad412e,,,,
@@ -858,8 +858,8 @@ programs/fr-i-u-t-de-tarbes-0650583f-but-techniques-de-commercialisat-7836,b19-a
 programs/fr-i-u-t-de-toulon-0830165d-but-genie-industriel-et-maintena-10354,b19-ad412e,,,,
 programs/fr-i-u-t-de-toulouse-0311086m-but-genie-chimique-genie-des-pro-4094,b19-ad412e,,,,
 programs/fr-i-u-t-de-toulouse-0311086m-but-gestion-des-entreprises-et-d-4100,b19-ad412e,,,,
-programs/fr-i-u-t-de-tours-0370770l-but-genie-electrique-et-informat-4865,b19-ad412e,y,,,
-programs/fr-i-u-t-de-tremblay-en-france-paris-8-0932086m-but-genie-industriel-et-maintena-11334,b19-ad412e,y,,,
+programs/fr-i-u-t-de-tours-0370770l-but-genie-electrique-et-informat-4865,b19-ad412e,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/fr-i-u-t-de-tremblay-en-france-paris-8-0932086m-but-genie-industriel-et-maintena-11334,b19-ad412e,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-i-u-t-de-valenciennes-site-de-cambrai-0596244s-but-techniques-de-commercialisat-7199,b19-ad412e,,,,
 programs/fr-i-u-t-de-vannes-0560861g-but-gestion-des-entreprises-et-d-6469,b19-ad412e,,,,
 programs/fr-i-u-t-de-vannes-0560861g-but-informatique-6467,b19-ad412e,,,,
@@ -867,7 +867,7 @@ programs/fr-i-u-t-des-pays-de-ladour-0641842e-but-science-des-donnees-7792,b19-a
 programs/fr-i-u-t-devreux-0271666p-but-techniques-de-commercialisat-3721,b19-ad412e,,,,
 programs/fr-i-u-t-dorleans-0450092f-but-gestion-des-entreprises-et-d-5676,b19-ad412e,,,,
 programs/fr-i-u-t-du-havre-0761688x-but-genie-civil-construction-dur-9651,b19-ad412e,,,,
-programs/fr-i-u-t-du-limousin-site-de-limoges-0870125n-but-techniques-de-commercialisat-10691,b19-ad412e,y,,,
+programs/fr-i-u-t-du-limousin-site-de-limoges-0870125n-but-techniques-de-commercialisat-10691,b19-ad412e,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-i-u-t-laval-0530951w-but-informatique-6231,b19-ad412e,,,,
 programs/fr-i-u-t-le-mans-0720083z-but-genie-mecanique-et-productiq-8709,b19-ad412e,,,,
 programs/fr-i-u-t-nancy-charlemagne-universite-de-lo-0541324w-but-gestion-des-entreprises-et-d-6315,b19-ad412e,,,,
@@ -880,15 +880,15 @@ programs/fr-institut-universitaire-de-technologie-de-0597215x-but-genie-electriq
 programs/fr-institut-universitaire-de-technologie-de-0597215x-but-informatique-6888,b19-ad412e,,,,
 programs/fr-iut-1-grenoble-0381516s-but-genie-electrique-et-informat-4966,b19-ad412e,,,,
 programs/fr-iut-1-grenoble-0381516s-but-reseaux-et-telecommunication-4970,b19-ad412e,,,,
-programs/fr-iut-aix-marseille-site-de-marseille-st-j-0134319z-but-metiers-de-la-transition-et-2716,b19-ad412e,y,,,
+programs/fr-iut-aix-marseille-site-de-marseille-st-j-0134319z-but-metiers-de-la-transition-et-2716,b19-ad412e,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-iut-aix-marseille-site-de-marseille-st-j-0134319z-but-techniques-de-commercialisat-2721,b19-ad412e,,,,
 programs/fr-iut-de-cachan-universite-paris-saclay-0940609b-but-genie-mecanique-et-productiq-11441,b19-ad412e,,,,
 programs/fr-iut-de-kourou-9730186p-but-genie-electrique-et-informat-11857,b19-ad412e,,,,
 programs/fr-iut-de-laisne-site-de-soissons-cuffies-0021958t-but-genie-electrique-et-informat-2096,b19-ad412e,,,,
 programs/fr-iut-de-paris-rives-de-seine-universite-p-0754247j-but-gestion-des-entreprises-et-d-9517,b19-ad412e,,,,
 programs/fr-iut-de-paris-rives-de-seine-universite-p-0754247j-but-techniques-de-commercialisat-9518,b19-ad412e,,,,
-programs/fr-iut-grand-ouest-normandie-pole-dalencon-0611149t-but-genie-mecanique-et-productiq-7317,b19-ad412e,y,,,
-programs/fr-iut-grand-ouest-normandie-pole-de-caen-s-0141234r-but-techniques-de-commercialisat-2857,b19-ad412e,y,,,
+programs/fr-iut-grand-ouest-normandie-pole-dalencon-0611149t-but-genie-mecanique-et-productiq-7317,b19-ad412e,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/fr-iut-grand-ouest-normandie-pole-de-caen-s-0141234r-but-techniques-de-commercialisat-2857,b19-ad412e,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-iut-grand-ouest-normandie-pole-de-caen-s-0142179t-but-techniques-de-commercialisat-2938,b19-ad412e,,,,
 programs/fr-iut-grand-ouest-normandie-pole-de-caen-s-0142218k-but-reseaux-et-telecommunication-2942,b19-ad412e,,,,
 programs/fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l-but-genie-industriel-et-maintena-6040,b19-ad412e,,,,
@@ -901,11 +901,11 @@ programs/fr-universite-bourgogne-europe-ex-universit-0212296g-licence-economie-3
 programs/fr-universite-cote-dazur-0062205p-licence-informatique-18405,b19-ad412e,,,,
 programs/fr-universite-damiens-0801344b-licence-informatique-10203,b19-ad412e,,,,
 programs/fr-universite-dartois-site-darras-0623957p-licence-economie-et-gestion-7504,b19-ad412e,,,,
-programs/fr-universite-de-bordeaux-bordeaux-metropol-0333298f-licence-economie-et-gestion-4462,b19-ad412e,y,,,
+programs/fr-universite-de-bordeaux-bordeaux-metropol-0333298f-licence-economie-et-gestion-4462,b19-ad412e,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-universite-de-bretagne-sud-site-de-lorie-0561718n-licence-mecanique-35539,b19-ad412e,,,,
 programs/fr-universite-de-caen-normandie-0141408e-licence-informatique-2872,b19-ad412e,,,,
 programs/fr-universite-de-la-polynesie-francaise-9840349g-licence-informatique-12013,b19-ad412e,,,,
-programs/fr-universite-de-la-reunion-le-tampon-9741204r-licence-genie-civil-32072,b19-ad412e,y,,,
+programs/fr-universite-de-la-reunion-le-tampon-9741204r-licence-genie-civil-32072,b19-ad412e,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-universite-de-la-reunion-saint-denis-9740478b-licence-informatique-26386,b19-ad412e,,,,
 programs/fr-universite-de-lille-0597239y-licence-economie-et-gestion-7043,b19-ad412e,,,,
 programs/fr-universite-de-lille-0597239y-licence-gestion-20957,b19-ad412e,,,,
@@ -925,16 +925,16 @@ programs/fr-universite-dorleans-0450855k-licence-economie-47172,b19-ad412e,,,,
 programs/fr-universite-grenoble-alpes-0383546y-licence-informatique-31939,b19-ad412e,,,,
 programs/fr-universite-grenoble-alpes-antenne-de-val-0261372a-licence-economie-et-gestion-31049,b19-ad412e,,,,
 programs/fr-universite-grenoble-alpes-antenne-de-val-0261372a-licence-informatique-35777,b19-ad412e,,,,
-programs/fr-universite-gustave-eiffel-0772894c-licence-sciences-pour-lingenieur-9923,b19-ad412e,y,,,
+programs/fr-universite-gustave-eiffel-0772894c-licence-sciences-pour-lingenieur-9923,b19-ad412e,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-universite-jean-moulin-lyon-3-0692437z-licence-gestion-39677,b19-ad412e,,,,
 programs/fr-universite-paris-1-pantheon-sorbonne-0751717j-licence-economie-17156,b19-ad412e,,,,
 programs/fr-universite-paris-1-pantheon-sorbonne-0751717j-licence-gestion-9214,b19-ad412e,,,,
-programs/fr-universite-paris-8-0931827f-licence-informatique-15418,b19-ad412e,y,,,
-programs/fr-universite-paris-cite-0755976n-licence-economie-9352,b19-ad412e,y,,,
+programs/fr-universite-paris-8-0931827f-licence-informatique-15418,b19-ad412e,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/fr-universite-paris-cite-0755976n-licence-economie-9352,b19-ad412e,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-universite-paris-cite-0755976n-licence-informatique-47242,b19-ad412e,,,,
 programs/fr-universite-paris-est-creteil-val-de-marn-0941111x-licence-economie-et-gestion-11482,b19-ad412e,,,,
 programs/fr-universite-paris-nanterre-ville-davray-0922472m-licence-sciences-pour-lingenieur-11152,b19-ad412e,,,,
-programs/fr-universite-polytechnique-hauts-de-france-0597132g-licence-genie-civil-7012,b19-ad412e,y,,,
+programs/fr-universite-polytechnique-hauts-de-france-0597132g-licence-genie-civil-7012,b19-ad412e,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/fr-universite-polytechnique-hauts-de-france-0597132g-licence-gestion-7024,b19-ad412e,,,,
 programs/fr-universite-polytechnique-hauts-de-france-0597132g-licence-sciences-pour-lingenieur-7013,b19-ad412e,,,,
 programs/fr-universite-toulouse-iii-universite-toulo-0313218e-licence-informatique-4188,b19-ad412e,,,,
@@ -949,13 +949,13 @@ programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-mechanical-engineerin
 programs/de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken-international-business-a-daad9036,b8-3574bc,,,,
 programs/de-technische-hochschule-koln-hrk149-international-business-b-daad10399,b8-3574bc,,,,
 programs/de-technische-universitat-munchen-hrk184-heilbronn-information-engineering-daad7698,b13-d8e392,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/de-ebs-universitat-fur-wirtschaft-und-recht-hrk206-bachelors-in-law-politic-daad8558,b20-85b121,y,,,
-programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-electrical-systems-engin-daad6320,b20-85b121,y,,,
-programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-mechatronics-and-robotic-daad6265,b20-85b121,y,,,
-programs/de-technische-hochschule-ingolstadt-hrk288-neuburg-an-der-donau-sustainable-civil-engine-daad8580,b20-85b121,y,,,
-programs/de-technische-hochschule-nurnberg-georg-sim-hrk200-mechanical-engineering-b-daad9268,b20-85b121,y,,,
-programs/de-technische-hochschule-wildau-hrk272-european-business-manage-daad7665,b20-85b121,y,,,
-programs/de-technische-universitat-ilmenau-hrk130-bachelor-of-science-in-b-daad4812,b20-85b121,y,,,
+programs/de-ebs-universitat-fur-wirtschaft-und-recht-hrk206-bachelors-in-law-politic-daad8558,b20-85b121,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-electrical-systems-engin-daad6320,b20-85b121,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/de-hochschule-heilbronn-technik-wirtschaft-hrk125-mechatronics-and-robotic-daad6265,b20-85b121,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/de-technische-hochschule-ingolstadt-hrk288-neuburg-an-der-donau-sustainable-civil-engine-daad8580,b20-85b121,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/de-technische-hochschule-nurnberg-georg-sim-hrk200-mechanical-engineering-b-daad9268,b20-85b121,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/de-technische-hochschule-wildau-hrk272-european-business-manage-daad7665,b20-85b121,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/de-technische-universitat-ilmenau-hrk130-bachelor-of-science-in-b-daad4812,b20-85b121,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/nl-christelijke-hogeschool-ede-25ba-bedrijfskunde-1001o2793,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046,b9-6ba627,,,,
 programs/nl-de-haagse-hogeschool-27um-delft-ict-1001o2675,b10-968f8e,y,y,ok,
@@ -970,15 +970,15 @@ programs/nl-hogeschool-leiden-21ri-commerciele-economie-1001o3422,b10-968f8e,y,y
 programs/nl-hogeschool-rotterdam-22oj-applied-data-science-art-1001o8776,b9-6ba627,y,y,ok,
 programs/nl-hogeschool-rotterdam-22oj-bouwkunde-1001o3055,b9-6ba627,,,,
 programs/nl-christelijke-hogeschool-ede-25ba-ict-1001o2670,b21-9ec3b2,,,,
-programs/nl-christelijke-hogeschool-windesheim-01vu-accountancy-1001o3525,b21-9ec3b2,y,,,
+programs/nl-christelijke-hogeschool-windesheim-01vu-accountancy-1001o3525,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/nl-christelijke-hogeschool-windesheim-01vu-almere-ict-1001o2665,b21-9ec3b2,,,,
-programs/nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046,b21-9ec3b2,y,,,
-programs/nl-christelijke-hogeschool-windesheim-01vu-ict-1001o2665,b21-9ec3b2,y,,,
-programs/nl-hogeschool-inholland-27pz-alkmaar-technische-informatica-1001o3859,b21-9ec3b2,y,,,
-programs/nl-hogeschool-inholland-27pz-delft-luchtvaarttechnologie-1001o3164,b21-9ec3b2,y,,,
-programs/nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064,b21-9ec3b2,y,,,
+programs/nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/nl-christelijke-hogeschool-windesheim-01vu-ict-1001o2665,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/nl-hogeschool-inholland-27pz-alkmaar-technische-informatica-1001o3859,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/nl-hogeschool-inholland-27pz-delft-luchtvaarttechnologie-1001o3164,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209,b21-9ec3b2,,,,
-programs/nl-hogeschool-utrecht-25dw-accountancy-1001o3544,b21-9ec3b2,y,,,
-programs/nl-hogeschool-utrecht-25dw-chemische-technologie-1001o3152,b21-9ec3b2,y,,,
-programs/nl-hogeschool-utrecht-25dw-ict-1001o2672,b21-9ec3b2,y,,,
-programs/nl-hogeschool-van-amsterdam-28dn-biomedische-technologie-1001o5075,b21-9ec3b2,y,,,
+programs/nl-hogeschool-utrecht-25dw-accountancy-1001o3544,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/nl-hogeschool-utrecht-25dw-chemische-technologie-1001o3152,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/nl-hogeschool-utrecht-25dw-ict-1001o2672,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/nl-hogeschool-van-amsterdam-28dn-biomedische-technologie-1001o5075,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct

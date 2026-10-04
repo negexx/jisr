@@ -23,9 +23,8 @@ durationYears:
 teachingLanguages:
   value:
     - en
-    - de
-  source: daad
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 tuition:
   value:
     amountMinor: 80000
