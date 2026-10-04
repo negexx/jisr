@@ -88,11 +88,20 @@ function parseTail(tail: string): Period | null {
   if (range === null) return null;
   const opens = toDay(range[1], range[2], range[3]);
   const deadline = toDay(range[4], range[5], range[6]);
-  return opens === null || deadline === null ? null : { opens, deadline };
+  if (opens === null || deadline === null) return null;
+  // a dated range must not end before it starts
+  if (opens.year !== null && deadline.year !== null) {
+    if (iso({ ...opens, year: opens.year }) > iso({ ...deadline, year: deadline.year }))
+      return null;
+  }
+  return { opens, deadline };
 }
 
+// Only the audience shapes the register prints: "all countries", "non-EU countries" or "EU countries
+// non-EU countries", optionally followed by country names ("... Iceland Norway"). Anything else (a
+// semester label that did not parse, a qualifier) is an audience we do not understand.
 const qualifies = (audience: string): boolean =>
-  /^all countries$/i.test(audience) || /\bnon-EU countries\b/i.test(audience);
+  /^(?:all countries|(?:EU countries )?non-EU countries(?: [A-Z][A-Za-z]+)*)$/.test(audience);
 
 function periodBlock(text: string): string | null {
   const marker = "Application periods";
@@ -202,20 +211,17 @@ export async function buildDaadProposals(input: {
 
 const DAAD_PAGE = /^https:\/\/www2\.daad\.de\/.*\/international-programmes\/en\/detail\/\d+\/?$/;
 
-const holdsDeadline = (record: Record<string, unknown>): boolean => {
+// Enrichment never replaces an official value, so a record that already holds intakes (even without a
+// deadline) cannot take this proposal.
+const holdsIntakes = (record: Record<string, unknown>): boolean => {
   const intakes = record.intakes;
   const value =
     typeof intakes === "object" && intakes !== null && "value" in intakes ? intakes.value : null;
-  if (!Array.isArray(value)) return false;
-  return value.some((item: unknown) => {
-    if (typeof item !== "object" || item === null) return false;
-    const { applicationDeadline, recurringDeadline } = item as Record<string, unknown>;
-    return (applicationDeadline ?? null) !== null || (recurringDeadline ?? null) !== null;
-  });
+  return Array.isArray(value) && value.length > 0;
 };
 
 // The German programmes of a data directory whose programme page is a DAAD register page and that
-// hold no intake with a deadline (dated or recurring).
+// hold no intakes yet.
 export async function readDaadProgrammes(dataDir: string): Promise<DaadProgramme[]> {
   const programsDir = path.join(dataDir, "programs");
   const found: DaadProgramme[] = [];
@@ -229,7 +235,7 @@ export async function readDaadProgrammes(dataDir: string): Promise<DaadProgramme
     const sources = record.sources as { programme?: { url?: unknown } } | undefined;
     const candidates = [record.officialUrl, sources?.programme?.url];
     const url = candidates.find((u): u is string => typeof u === "string" && DAAD_PAGE.test(u));
-    if (url === undefined || holdsDeadline(record)) continue;
+    if (url === undefined || holdsIntakes(record)) continue;
     found.push({ slug: record.slug, url });
   }
   return found;

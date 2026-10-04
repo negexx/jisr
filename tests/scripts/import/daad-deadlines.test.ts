@@ -126,6 +126,40 @@ describe("daadDeadline", () => {
       expect(daadDeadline(page(block), TODAY)).toEqual({ ok: false, reason: "unparsed" });
   });
 
+  it("refuses an audience that is not one of the shapes DAAD prints", () => {
+    for (const block of [
+      "The following is valid for applicants from: non-EU countries For the summer semester (first-year students): until 15 January",
+      "The following is valid for applicants from: non-EU countries For the Summer semester: until 15 January",
+      "The following is valid for applicants from: non-EU countries For the next winter semester: until 31 August",
+      "The following is valid for applicants from: EU countries, non-EU countries excluded until 15 July",
+    ])
+      expect(daadDeadline(page(block), TODAY).ok).toBe(false);
+  });
+
+  it("refuses a dated range that ends before it starts", () => {
+    expect(
+      daadDeadline(page(`${ALL} For the winter semester: 1 November 2027 - 31 March 2027`), TODAY),
+    ).toEqual({ ok: false, reason: "unparsed" });
+  });
+
+  it("handles a deadline year without an opening year, and a leap day", () => {
+    const mixed = okIntake(
+      daadDeadline(page(`${ALL} For the winter semester: 1 November - 31 March 2027`), TODAY),
+    );
+    expect(mixed.intake.applicationOpens).toBeNull();
+    expect(mixed.intake.applicationDeadline).toBe("2027-03-31");
+    const leap = okIntake(
+      daadDeadline(page(`${ALL} For the winter semester: until 29 February`), TODAY),
+    );
+    expect(leap.intake.recurringDeadline).toEqual({ month: 2, day: 29 });
+    expect(
+      daadDeadline(page(`${ALL} For the winter semester: until 29 February 2027`), TODAY),
+    ).toEqual({
+      ok: false,
+      reason: "unparsed",
+    });
+  });
+
   it("only yields quotes that name international applicants", () => {
     for (const block of [
       `${ALL} For the winter semester: until 15 July`,
@@ -185,7 +219,7 @@ describe("buildDaadProposals", () => {
 });
 
 describe("readDaadProgrammes", () => {
-  it("returns the German DAAD programmes that hold no deadline yet", async () => {
+  it("returns the German DAAD programmes that hold no intake at all (an official intake is never overwritten)", async () => {
     const root = await mkdtemp(path.join(tmpdir(), "daad-deadlines-"));
     try {
       const dir = path.join(root, "programs");
@@ -212,10 +246,7 @@ describe("readDaadProgrammes", () => {
         record("de-d-studiensuche", "https://www.hs-example.de/studium/", ""),
       );
       await writeFile(path.join(dir, "fr-e-daad5.yaml"), record("fr-e-daad5", daadUrl(5), ""));
-      expect(await readDaadProgrammes(root)).toEqual([
-        { slug: "de-a-daad1", url: daadUrl(1) },
-        { slug: "de-c-daad3", url: daadUrl(3) },
-      ]);
+      expect(await readDaadProgrammes(root)).toEqual([{ slug: "de-a-daad1", url: daadUrl(1) }]);
     } finally {
       await rm(root, { recursive: true, force: true });
     }
