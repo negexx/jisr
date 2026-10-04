@@ -1,0 +1,22 @@
+slug: hu-stipendium-hungaricum
+name: Stipendium Hungaricum application
+country: HU
+kind: national_portal
+url: https://stipendiumhungaricum.hu/apply/
+accountRequired: null
+summary:
+  fr:
+    text: "Candidature à la bourse Stipendium Hungaricum (gouvernement hongrois) sur la plateforme en ligne du programme, selon l'appel de l'année."
+    status: draft
+  en:
+    text: "Apply for the Stipendium Hungaricum scholarship (Hungarian government) on the programme's online platform, following the call of the year."
+    status: draft
+  ar:
+    text: "التقدّم لمنحة Stipendium Hungaricum (الحكومة المجرية) عبر المنصة الإلكترونية للبرنامج وفق نداء السنة."
+    status: draft
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://stipendiumhungaricum.hu/apply/
+    last_verified_at: 2026-10-04

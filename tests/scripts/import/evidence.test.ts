@@ -77,6 +77,8 @@ describe("checkDuration", () => {
 describe("checkLanguages", () => {
   it("requires each language to be named in the quote", () => {
     expect(checkLanguages(["en"], "Language of instruction: English").ok).toBe(true);
+    expect(checkLanguages(["hu"], "Language of instruction: Hungarian").ok).toBe(true);
+    expect(checkLanguages(["hu"], "Language of instruction: English").ok).toBe(false);
     expect(checkLanguages(["nl"], "Taal Nederlands").ok).toBe(true);
     expect(checkLanguages(["en", "de"], "Taught in English and German").ok).toBe(true);
     expect(checkLanguages(["en", "de"], "Taught in English").ok).toBe(false);
@@ -291,6 +293,18 @@ describe("checkChannel", () => {
         "upload the recognition results to the Pforzheim University application portal",
       ).ok,
     ).toBe(true);
+    expect(
+      checkChannel(
+        "hu-university-direct",
+        "Fill in the online application form of the programme on the website of the chosen university",
+      ).ok,
+    ).toBe(true);
+    expect(checkChannel("hu-university-direct", "Apply on the Study Finder").ok).toBe(false);
+    expect(
+      checkChannel("hu-stipendium-hungaricum", "Apply for the Stipendium Hungaricum scholarship")
+        .ok,
+    ).toBe(true);
+    expect(checkChannel("hu-stipendium-hungaricum", "Apply through the university").ok).toBe(false);
     expect(checkChannel("unknown-channel", "anything at all here").ok).toBe(false);
   });
 });

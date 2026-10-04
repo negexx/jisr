@@ -1,0 +1,55 @@
+slug: ma-bac-to-hu
+origin: MA
+credentialType: ma-bac
+destination: HU
+level: bachelor
+outcome: check
+conditions:
+  - id: diploma-translation-and-entrance-exam
+    kind: manual_check
+    source: entry
+    info_kind: official
+    note:
+      fr:
+        text: "Pour une licence (3 ans), Study in Hungary demande un diplôme de fin d'études secondaires traduit en hongrois ou en anglais, avec le relevé de cours et de notes ; certaines formations exigent aussi un examen d'entrée. Rien n'indique comment un baccalauréat marocain est évalué : demandez-le à l'université."
+        status: draft
+      en:
+        text: "For a Bachelor's degree (3 years) Study in Hungary asks for a high school diploma translated into Hungarian or English with the transcript of courses and grades; some courses also require an entrance exam. Nothing says how a Moroccan baccalauréat is assessed: ask the university."
+        status: draft
+      ar:
+        text: "لشهادة الإجازة (3 سنوات) تشترط Study in Hungary دبلوم الثانوية مترجمًا إلى المجرية أو الإنجليزية مع كشف المواد والنقط؛ وتشترط بعض التكوينات امتحان ولوج. ولا يوضح المصدر كيف تُقيَّم الباكالوريا المغربية: اسألوا الجامعة."
+        status: draft
+  - id: dates-vary-by-institution
+    kind: manual_check
+    source: timeline
+    info_kind: official
+    note:
+      fr:
+        text: "Les dates de candidature des étudiants qui financent eux-mêmes leurs études varient d'une université à l'autre : contactez d'abord l'université choisie avant de décider."
+        status: draft
+      en:
+        text: "Application periods and exact dates for self-financed foreign students usually vary from one institution to another: first contact the university you choose."
+        status: draft
+      ar:
+        text: "تختلف فترات التسجيل ومواعيده بالنسبة للطلبة الأجانب الذين يموّلون دراستهم بأنفسهم من مؤسسة إلى أخرى: اتصلوا أولًا بالجامعة المختارة."
+        status: draft
+note:
+  fr:
+    text: "Study in Hungary décrit des exigences générales et non une décision par pays : chaque établissement hongrois évalue lui-même le diplôme et fixe ses dates de candidature. Ce n'est pas une décision d'admission."
+    status: draft
+  en:
+    text: "Study in Hungary describes general requirements, not a decision per country: each Hungarian institution assesses the diploma itself and sets its own application dates. This is not an admission decision."
+    status: draft
+  ar:
+    text: "تصف Study in Hungary شروطًا عامة لا قرارًا خاصًا بكل بلد: تقيّم كل مؤسسة مجرية الشهادة بنفسها وتحدد مواعيد التسجيل. وهذا ليس قرار قبول."
+    status: draft
+applicationChannels: [hu-university-direct, hu-stipendium-hungaricum]
+source: entry
+info_kind: official
+sources:
+  entry:
+    url: https://studyinhungary.hu/study-in-hungary/menu/studying-in-hungary/entry-and-admission-requirements.html
+    last_verified_at: 2026-10-04
+  timeline:
+    url: https://studyinhungary.hu/study-in-hungary/menu/studying-in-hungary/application-timeline.html
+    last_verified_at: 2026-10-04

@@ -316,6 +316,13 @@ describe("applicant context", () => {
     expect(user).toMatch(/de-university-direct/);
   });
 
+  it("explains the Hungarian channels and the fee currency in the task, after the pages", () => {
+    const { user } = buildPrompt({ ...meta, country: "HU", shared: [], own: [] });
+    expect(user).toMatch(/hu-university-direct/);
+    expect(user).toMatch(/hu-stipendium-hungaricum/);
+    expect(user).toMatch(/HUF/);
+  });
+
   it("leaves the French application channel to code", () => {
     const { user } = buildPrompt({ ...meta, country: "FR", shared: [], own: [] });
     expect(user).toMatch(/Do not output applicationChannel/);

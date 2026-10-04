@@ -215,6 +215,7 @@ const LANGUAGE_WORDS: Record<string, RegExp> = {
   ar: /arabic|arabe|arabisch/i,
   es: /spanish|espagnol|spanisch|spaans/i,
   nl: /dutch|n[eé]erlandais|nederlands|niederl[aä]ndisch/i,
+  hu: /hungarian|hongrois|ungarisch|hongaars|magyar/i,
 };
 
 function numberRegex(n: number): string {
@@ -422,6 +423,9 @@ const CHANNEL_WORDS: Record<string, RegExp> = {
   "de-university-direct":
     /application portal|apply directly|directly (to|at) the (higher education institution|university)|application via the university/i,
   "de-uni-assist": /uni-assist|uniassist/i,
+  "hu-university-direct":
+    /online application form|application form[^.]{0,60}(?:university|institution)|apply (?:directly )?(?:online )?(?:on|at|to|through) the (?:website of the |own )?(?:chosen |selected )?(?:university|institution)|university'?s? (?:own )?(?:application|admission)/i,
+  "hu-stipendium-hungaricum": /stipendium hungaricum/i,
 };
 
 export function checkChannel(slug: string, quote: string): FactCheck {
