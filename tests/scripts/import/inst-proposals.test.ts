@@ -25,6 +25,9 @@ describe("websiteFrom", () => {
         "https://www2.daad.de/a",
         "https://dossierappel.parcoursup.fr/b",
         "https://www.maroc.campusfrance.org/c",
+        "https://tempus.tpf.hu/studyfinder/index/show/116",
+        "https://studyinhungary.hu/institution/university-of-debrecen-60.html",
+        "https://stipendiumhungaricum.hu/apply/",
       ]),
     ).toBeNull();
   });
