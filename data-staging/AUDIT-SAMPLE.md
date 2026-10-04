@@ -265,3 +265,133 @@ For each record: open the link, confirm the quote is there and that it supports 
 > Preparer's caveats: teachingLanguages: kept the register value; the reader found ["de"] at https://www.tu-ilmenau.de/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/biomedizinische-technik-b-sc but no programme page was verified; programme page not verified: facts come from pages not tied to this programme by name; Requirement und Fristen sind aus den Seiten für Nicht-EU-Bewerbende abgeleitet. Der Fachbereich nennt für Nicht-EU-Abschlüsse Uni-Assist. Die genauen Bewerbungsfristen ohne Jahr sind nicht als intake übernommen.
 > Not accepted by the verifier: programmePage: the page does not mention the programme name
 
+## programs/nl-christelijke-hogeschool-windesheim-01vu-accountancy-1001o3525  _(batch b21-9ec3b2)_
+
+**Accountancy**
+
+- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
+- **applicationChannel**: `nl-studielink` (official; source programme) (unchanged: already in data/)
+- **documents**: `[{"slug":"school-leaving-certificate","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"School-leaving certificate","status":"draft"}},"translationRequired":null},{"slug":"grade-transcript","name":{"fr":{"text":"Relevé de notes","status":"draft"},"en":{"text":"Grade transcript","status":"draft"}},"translationRequired":null}]` (official; source page-1)
+  - "Stuur daarom tegelijk met je aanmelding een kopie van je diploma en cijferlijst op naar de Studentenadministratie." — https://www.windesheim.nl/opleidingen/toelating
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Pour les candidats avec un diplôme étranger : votre diplôme doit être équivalent à un diplôme havo, vwo ou mbo-4. Consultez les exigences linguistiques sur le site web.","status":"draft"},"en":{"text":"For applicants with a foreign diploma: your diploma must be equivalent to a havo, vwo or mbo-4 diploma. Check the language requirements on the website.","status":"draft"}}}`
+
+> Preparer's caveats: Tuition fee for non-EU students is not stated on the programme page or the institution-wide fee page.
+
+## programs/nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046  _(batch b21-9ec3b2)_
+
+**Bouwkunde**
+
+- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
+- **applicationChannel**: `nl-studielink` (official; source programme) (unchanged: already in data/)
+- **documents**: `[{"slug":"diploma","name":{"fr":{"text":"Diplôme","status":"draft"},"en":{"text":"Diploma","status":"draft"}},"translationRequired":null},{"slug":"grade-list","name":{"fr":{"text":"Relevé de notes","status":"draft"},"en":{"text":"Grade list","status":"draft"}},"translationRequired":null}]` (official; source page-1)
+  - "Stuur daarom tegelijk met je aanmelding een kopie van je diploma en cijferlijst op naar de Studentenadministratie." — https://www.windesheim.nl/opleidingen/toelating
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Un diplôme étranger équivalent à un diplôme néerlandais havo, vwo ou mbo-4 est requis, ainsi que la satisfaction aux exigences linguistiques (voir la page Taaleisen).","status":"draft"},"en":{"text":"A foreign diploma equivalent to a Dutch havo, vwo or mbo-4 diploma is required, plus you must meet the language requirements (see the Taaleisen page).","status":"draft"}}}`
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Un diplôme néerlandais havo, vwo ou mbo-niveau 4 donne un accès direct; vérifiez votre situation avec le Windesheim Informatiecentrum.","status":"draft"},"en":{"text":"A Dutch havo, vwo or mbo-level 4 diploma gives direct admission; check your situation with the Windesheim Informatiecentrum.","status":"draft"}}}`
+
+> Preparer's caveats: Tuition left out: the programme's own page only states the statutory fee ('Het collegegeld is € 2.694,- in 2026 - 2027'), which is the EU/EEA rate. The institution-wide studiekosten page does not state a single non-EU instellingscollegegeld amount for bachelor 2026-2027: it only says non-qualifying students may pay a higher (institutional) fee whose exact amounts are in the Besluit Collegegelden, so no quotable non-EU amount exists. Intake deadline quote is a general Studielink deadline, not explicitly for non-EU/foreign-qualification applicants; recorded as recurring deadline (day/month, no year).
+
+## programs/nl-christelijke-hogeschool-windesheim-01vu-ict-1001o2665  _(batch b21-9ec3b2)_
+
+**ICT**
+
+- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
+- **intakes**: `[{"startDate":"2027-09-06","applicationOpens":null,"applicationDeadline":null}]` (official; source programme) (unchanged: already in data/)
+- **applicationChannel**: `nl-studielink` (official; source programme) (unchanged: already in data/)
+- **documents**: `[{"slug":"school-leaving-certificate","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"School-leaving certificate","status":"draft"}},"translationRequired":null},{"slug":"grade-list","name":{"fr":{"text":"Relevé de notes","status":"draft"},"en":{"text":"Grade list","status":"draft"}},"translationRequired":null}]` (official; source page-1)
+  - "Stuur daarom tegelijk met je aanmelding een kopie van je diploma en cijferlijst op naar de Studentenadministratie." — https://www.windesheim.nl/opleidingen/toelating
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez que votre diplôme marocain (Baccalauréat) est jugé équivalent à un diplôme néerlandais havo, vwo ou mbo-4 ; la page indique aussi qu'il faut satisfaire aux exigences linguistiques (voir page des taaleisen).","status":"draft"},"en":{"text":"Check that your Moroccan diploma (Baccalauréat) is considered equivalent to a Dutch havo, vwo or mbo-4 diploma; the page also states you must meet the language requirements (see the taaleisen page).","status":"draft"}}}`
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Aucune exigence supplémentaire concernant les matières du profil n'est mentionnée pour cette filière : « Er gelden geen extra eisen voor profielvakken. »","status":"draft"},"en":{"text":"No additional profile-subject requirements are mentioned for this programme: \"Er gelden geen extra eisen voor profielvakken.\"","status":"draft"}}}`
+
+> Preparer's caveats: Tuition: the programme page states only the statutory fee ('Het collegegeld is € 2.694,- in 2026 - 2027.'), which is the EU/EEA rate; the institution-wide studiekosten page gives only wettelijk collegegeld amounts and no institutional (instellingscollegegeld) amount for non-EU students, so no tuition fact is stated for this non-EU applicant.
+
+## programs/nl-hogeschool-inholland-27pz-alkmaar-technische-informatica-1001o3859  _(batch b21-9ec3b2)_
+
+**Technische Informatica**
+
+- **tuition**: `{"amountMinor":1036000,"currency":"EUR","period":"year"}` (official; source page-2)
+  - "Voldoe je niet aan de voorwaarden voor het wettelijk collegegeld dan betaal je het instellingscollegegeld." — https://www.inholland.nl/inschrijven/collegegeld/
+  - "Studiejaar 2026-2027 Start 1 september 2026 Wettelijk collegegeld Voltijd, duaal of master: € 2.694 Deeltijd: € 2.253 Instellingscollegegeld Voltijd en duaal: € 10.360 Deeltijd: € 9.976" — https://www.inholland.nl/inschrijven/collegegeld/
+- **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":1}}]` (official; source page-1) (unchanged: already in data/)
+
+> Preparer's caveats: Tuition: the institution-wide page (https://www.inholland.nl/inschrijven/collegegeld/) states the institutional fee for full-time bachelor programmes for 2026-2027 as €10,360 per year for students who do not meet the conditions for the statutory fee (students from outside the EU/EEA). The programme's own page does not state any tuition fee. Documents: the quoted list is from the institution's general enrolment regulations, not from the programme's own page; the quote names 'diploma' and a certified translation, but does not name the specific diploma. The programme page's own text is in Dutch and describes a Dutch-taught programme (Technische Informatica voltijd); no English-taught variant is mentioned for this programme.
+
+## programs/nl-hogeschool-inholland-27pz-delft-luchtvaarttechnologie-1001o3164  _(batch b21-9ec3b2)_
+
+**Luchtvaarttechnologie**
+
+- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
+- **teachingLanguages**: `["nl"]` (official; source programme) (unchanged: already in data/)
+- **tuition**: `{"amountMinor":1036000,"currency":"EUR","period":"year"}` (official; source page-1)
+  - "Voldoe je niet aan de voorwaarden voor het wettelijk collegegeld dan betaal je het instellingscollegegeld." — https://www.inholland.nl/inschrijven/collegegeld/
+  - "Instellingscollegegeld Voltijd en duaal: € 10.360" — https://www.inholland.nl/inschrijven/collegegeld/
+  - "Studiejaar 2026-2027 Start 1 september 2026" — https://www.inholland.nl/inschrijven/collegegeld/
+
+> Preparer's caveats: Tuition: the institution-wide instellingscollegegeld of €10,360 is proposed because it matches a full-time bachelor/voltijd programme in study year 2026-2027 and is for students who do not meet the statutory-fee conditions. Caveat: the page does not explicitly state that it is for non-EU/EEA students (it says only those who do not meet the statutory-fee conditions pay it), so an auditor should confirm it applies to this Moroccan applicant; no exceptions for this programme are listed. The requirement rule uses a general institutional rule on proof of language proficiency in the language of instruction for foreign diplomas, but the programme is taught in Dutch (taught language is not English); it is included because it applies to this programme as a foreign-diploma applicant, and it should be checked in the CSA/opleiding information. No programme-specific entry requirement page was supplied for Luchtvaarttechnologie (the supplied International Creative Business entry-requirements page is for a different programme and its Dutch B2/NT2 requirement applies to programmes taught in Dutch, which is the case for this programme).
+
+## programs/nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064  _(batch b21-9ec3b2)_
+
+**Bouwkunde**
+
+- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
+- **teachingLanguages**: `["nl"]` (official; source programme) (unchanged: already in data/)
+- **tuition**: `{"amountMinor":1036000,"currency":"EUR","period":"year"}` (official; source page-1)
+  - "Voldoe je niet aan de voorwaarden voor het wettelijk collegegeld dan betaal je het instellingscollegegeld." — https://www.inholland.nl/inschrijven/collegegeld/
+  - "Studiejaar 2026-2027 Start 1 september 2026 Wettelijk collegegeld Voltijd, duaal of master: € 2.694 Deeltijd: € 2.253 Instellingscollegegeld Voltijd en duaal: € 10.360 Deeltijd: € 9.976" — https://www.inholland.nl/inschrijven/collegegeld/
+- **applicationChannel**: `nl-studielink` (official; source page-2)
+  - "Via Studielink kun je je aanmelden voor een opleiding bij Hogeschool Inholland." — https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez auprès de l'établissement si vous devez démontrer votre maîtrise du néerlandais et à quel niveau.","status":"draft"},"en":{"text":"Check with the institution whether you need to demonstrate Dutch proficiency and at what level.","status":"draft"}}}`
+
+> Preparer's caveats: The programme's own page says 'duur 4 jaar'—keep that despite any ECTS conversion. Tuition: the programme page has no fee; the institution-wide collegegeld page gives a single non-EU instellingscollegegeld for 2026-2027 of €10,360 for voltijd, used here. The Suriname visa page mentions 'collegegeld ter waarde van € 2.695' for visa students, but that is a different route and the collegegeld page's 2026-2027 instellingscollegegeld governs. The application deadline for non-EU applicants (e.g. 1 May) is mentioned for Suriname and SKC, but no quote ties an exact dated deadline to non-EU applicants for this programme, so intakes are omitted. The Inholland entry-requirements pages for Tourism Management and Creative Business were not used, as they are different programmes.
+
+## programs/nl-hogeschool-utrecht-25dw-accountancy-1001o3544  _(batch b21-9ec3b2)_
+
+**Accountancy**
+
+- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
+- **tuition**: `{"amountMinor":1074700,"currency":"EUR","period":"year"}` (official; source page-3)
+  - "Het instellingscollegegeldtarief geldt alleen voor studenten die niet voldoen aan de voorwaarden voor het wettelijk collegegeld." — https://www.hu.nl/collegegeld-en-betalen
+  - "De tarieven voor instellingscollegegeld in 2026-2027 Bachelor, Associate degree & bekostigde master (voltijd, deeltijd & duaal) € 10.747" — https://www.hu.nl/collegegeld-en-betalen
+- **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":5,"day":31}},{"startDate":null,"applicationOpens":null,"applicationDeadline":null,"recurringDeadline":{"month":10,"day":31}}]` (official; source page-2) (unchanged: already in data/)
+- **applicationChannel**: `nl-studielink` (official; source page-1) (unchanged: already in data/)
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez les conditions d'admission : un diplôme havo, vwo ou mbo-4 est requis ; sans ce diplôme et si vous avez 21 ans ou plus, un toelatingsonderzoek (examen d'admission) est nécessaire. Consultez la page complète des conditions d'admission.","status":"draft"},"en":{"text":"Check the admission requirements: a havo, vwo or mbo-4 diploma is required; without it, if you are 21 or older, a toelatingsonderzoek (admission examination) is required. See the full admission requirements page.","status":"draft"}}}`
+
+> Preparer's caveats: Duration of 4 years and the deadline of 1 mei come from the Dutch-language page; the international Admissions page was not supplied, so no international-specific deadline or document list could be quoted. Tuition: the programme's own page states no fee; the institution-wide page Collegegeld en betalen ('https://www.hu.nl/collegegeld-en-betalen') gives institutional fee (instellingscollegegeld) 2026-2027 for Bachelor full-time, which applies to applicants who do not meet the conditions for the statutory fee (non-EU/EEA); this is used above per the task instruction. Allowed per TASK. The '1 mei' deadline is stated without a year (recurring).
+
+## programs/nl-hogeschool-utrecht-25dw-chemische-technologie-1001o3152  _(batch b21-9ec3b2)_
+
+**Chemische Technologie**
+
+- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
+- **tuition**: `{"amountMinor":1074700,"currency":"EUR","period":"year"}` (official; source page-1)
+  - "Het instellingscollegegeldtarief geldt alleen voor studenten die niet voldoen aan de voorwaarden voor het wettelijk collegegeld." — https://www.hu.nl/collegegeld-en-betalen
+  - "De tarieven voor instellingscollegegeld in 2026-2027 Bachelor, Associate degree & bekostigde master (voltijd, deeltijd & duaal) € 10.747" — https://www.hu.nl/collegegeld-en-betalen
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez les exigences de diplôme d'entrée (havo, vwo, mlo ou mbo Procestechniek niveau 4) et la possibilité d'un toelatingsonderzoek pour les candidats de 21 ans et plus, car votre Baccalauréat marocain peut nécessiter une évaluation.","status":"draft"},"en":{"text":"Check the entry diploma requirements (havo, vwo, mlo or mbo Procestechniek level 4) and the possibility of a toelatingsonderzoek for applicants aged 21+, as your Moroccan Baccalauréat may need evaluation.","status":"draft"}}}`
+
+> Preparer's caveats: Programme page says the study language is not stated; teachingLanguages omitted. Documents: only the prior-education diploma is named; no separate document list for international applicants appears on the pages. Tuition: the amount comes from the institution-wide page, which quotes one non-EU instellingscollegegeld amount (EUR 10,747) for 2026-2027 for bachelor/Ad/master (voltijd, deeltijd & duaal); the programme's own page states no tuition fee.
+
+## programs/nl-hogeschool-utrecht-25dw-ict-1001o2672  _(batch b21-9ec3b2)_
+
+**ICT**
+
+- **durationYears**: `4` (official; source programme) (unchanged: already in data/)
+- **tuition**: `{"amountMinor":1074700,"currency":"EUR","period":"year"}` (official; source page-2)
+  - "Het instellingscollegegeldtarief geldt alleen voor studenten die niet voldoen aan de voorwaarden voor het wettelijk collegegeld." — https://www.hu.nl/collegegeld-en-betalen
+  - "De tarieven voor instellingscollegegeld in 2026-2027 Bachelor, Associate degree & bekostigde master (voltijd, deeltijd & duaal) € 10.747" — https://www.hu.nl/collegegeld-en-betalen
+- **applicationChannel**: `nl-studielink` (official; source page-1) (unchanged: already in data/)
+- **documents**: `[{"slug":"school-leaving-certificate","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"School-leaving certificate","status":"draft"}},"translationRequired":null}]` (official; source page-3) (unchanged: already in data/)
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifie les conditions d'admission : un diplôme néerlandais havo, vwo ou mbo-4 est exigé, ou un examen d'admission si tu as 21 ans ou plus et que tu n'as pas ce diplôme.","status":"draft"},"en":{"text":"Check the admission requirements: a Dutch havo, vwo or mbo-4 diploma is required, or an admission assessment if you are 21 or older without such a diploma.","status":"draft"}}}`
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifie auprès de l'établissement quel tarif de frais de scolarité (instellingscollegegeld) s'applique à toi en tant qu'étudiant non-EEE avec un diplôme étranger, car les frais publiés varient selon le statut.","status":"draft"},"en":{"text":"Check with the institution which tuition fee (instellingscollegegeld) applies to you as a non-EEA student with a foreign diploma, as the published fees vary by status.","status":"draft"}}}`
+
+> Preparer's caveats: The tuition amount € 10,747 is the institution-wide institutional fee (instellingscollegegeld) for 2026-2027 for Bachelor/Ad/bekostigde master full-time, part-time and dual programmes, as listed on the institution-wide collegegeld page. The programme page does not state its own non-EU tuition fee. Teaching language is not stated on the programme page. The application deadline 'Aanmelddeadline t/m 1 mei en 31 januari' is a general HU deadline without year and not explicitly tied to non-EU applicants; there is also a general 1 mei deadline on the aanmelden page, and for non-EU/foreign-diploma applicants the page refers to the English Admissions page where a different deadline may apply. The 'Aanmelddeadline t/m 1 mei en 31 januari' quote gives 1 May for September intake; the 31 January may refer to the February intake, so a single recurringDeadline of 1 May was kept.
+
+## programs/nl-hogeschool-van-amsterdam-28dn-biomedische-technologie-1001o5075  _(batch b21-9ec3b2)_
+
+**Biomedische Technologie**
+
+- **tuition**: `{"amountMinor":1064800,"currency":"EUR","period":"year"}` (official; source page-1)
+  - "Instellingscollegegeld 2026-2027: € 10.648 Dit betaal je als je niet in aanmerking komt voor wettelijk collegegeld." — https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/collegegeld/collegegeldtarieven
+- **applicationChannel**: `nl-studielink` (official; source page-2) (unchanged: already in data/)
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez sur la page de l'opleiding si une admission supplémentaire ou un profil spécifique est requis pour votre diplôme de baccalauréat marocain.","status":"draft"},"en":{"text":"Check the programme page whether additional admission requirements or a specific profile apply to your Moroccan Baccalaureate diploma.","status":"draft"}}}`
+
+> Preparer's caveats: Le diplôme néerlandais havo/vwo avec profil N&T ou N&G n'est pas mentionné pour les étudiants internationaux ; une évaluation manuelle est nécessaire. Le frais de scolarité est le tarif institutionnel (instellingscollegegeld) pour les étudiants qui ne remplissent pas les conditions du tarif légal ; la page ne précise pas explicitement les étudiants hors UE/EEE dans la même phrase, mais ce tarif s'applique généralement à eux. La page de la formation ne mentionne pas de frais de scolarité spécifiques ; le tarif institutionnel 2026-2027 de 10 648 € par an est utilisé comme référence pour les étudiants non-UE/EEE.
+

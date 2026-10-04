@@ -1,0 +1,13 @@
+nl-breda-university-of-applied-sciences-21ui-applied-data-science-art-1001o8756
+nl-christelijke-hogeschool-windesheim-01vu-accountancy-1001o3525
+nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046
+nl-de-haagse-hogeschool-27um-applied-data-science-art-1001o8742
+nl-de-haagse-hogeschool-27um-delft-ict-1001o2675
+nl-fontys-hogeschool-30gb-accountancy-1001o3555
+nl-fontys-hogeschool-30gb-tilburg-commerciele-economie-1001o3452
+nl-fontys-hogeschool-30gb-venlo-commerciele-economie-1001o3452
+nl-hogeschool-inholland-27pz-accountancy-1001o3549
+nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064
+nl-hogeschool-leiden-21ri-commerciele-economie-1001o3422
+nl-hogeschool-rotterdam-22oj-bouwkunde-1001o3055
+nl-hogeschool-utrecht-25dw-ict-1001o2672

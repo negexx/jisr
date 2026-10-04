@@ -82,10 +82,7 @@ programs/de-technische-hochschule-rosenheim-hrk232-international-bachelor-o-daad
 programs/de-technische-hochschule-rosenheim-hrk232-plastics-engineering-daad8373,b9-6ba627,,,,
 programs/nl-avans-hogeschool-07gr-breda-accountancy-1001o3528,b9-6ba627,,,,
 programs/nl-avans-hogeschool-07gr-s-hertogenbosch-bouwkunde-1001o3048,b9-6ba627,,,,
-programs/nl-hogeschool-inholland-27pz-alkmaar-technische-informatica-1001o3859,b9-6ba627,,,,
 programs/nl-hogeschool-inholland-27pz-s-gravenhage-business-studies-1001o2990,b9-6ba627,,,,
-programs/nl-hogeschool-rotterdam-22oj-applied-data-science-art-1001o8776,b9-6ba627,y,y,ok,
-programs/nl-hogeschool-utrecht-25dw-accountancy-1001o3544,b9-6ba627,,,,
 programs/fr-i-u-t-davignon-0840957j-but-science-des-donnees-10468,b8-8f614c,,,,
 programs/fr-i-u-t-de-bayonne-0641478j-but-genie-industriel-et-maintena-7757,b8-8f614c,y,y,ok,
 programs/fr-i-u-t-de-besancon-0251018w-but-genie-mecanique-et-productiq-3506,b8-8f614c,y,y,ok,
@@ -638,29 +635,11 @@ programs/fr-universite-toulouse-capitole-0313124c-licence-gestion-4140,b11-08e9d
 programs/fr-universite-toulouse-iii-universite-toulo-0313218e-licence-electronique-energie-electri-4184,b11-08e9d6,,,,
 programs/fr-universite-toulouse-iii-universite-toulo-0313218e-licence-genie-civil-17960,b11-08e9d6,,,,
 programs/fr-universite-toulouse-iii-universite-toulo-0313218e-licence-mecanique-4187,b11-08e9d6,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046,b9-6ba627,,,,
-programs/nl-christelijke-hogeschool-windesheim-01vu-almere-ict-1001o2665,b10-968f8e,,,,
-programs/nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046,b10-968f8e,y,y,ok,
-programs/nl-de-haagse-hogeschool-27um-delft-ict-1001o2675,b10-968f8e,y,y,ok,
-programs/nl-de-haagse-hogeschool-27um-zoetermeer-applied-data-science-art-1001o8742,b10-968f8e,,,,
-programs/nl-fontys-hogeschool-30gb-accountancy-1001o3555,b10-968f8e,,,,
-programs/nl-fontys-hogeschool-30gb-elektrotechniek-1001o3098,b10-968f8e,y,y,ok,
-programs/nl-fontys-hogeschool-30gb-tilburg-commerciele-economie-1001o3452,b10-968f8e,,,,
-programs/nl-fontys-hogeschool-30gb-venlo-commerciele-economie-1001o3452,b8-3574bc,,,,
 programs/nl-hogeschool-inholland-27pz-alkmaar-accountancy-1001o3549,b8-3574bc,,,,
-programs/nl-hogeschool-inholland-27pz-haarlem-business-studies-1001o2990,b9-6ba627,,,,
-programs/nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209,b9-6ba627,y,y,ok,
 programs/nl-hogeschool-leiden-21ri-bio-informatica-1001o5219,b10-968f8e,,,,
-programs/nl-hogeschool-leiden-21ri-commerciele-economie-1001o3422,b10-968f8e,y,y,ok,
-programs/nl-hogeschool-rotterdam-22oj-bouwkunde-1001o3055,b9-6ba627,,,,
-programs/nl-hogeschool-utrecht-25dw-ict-1001o2672,b8-3574bc,,,,
 programs/nl-avans-hogeschool-07gr-s-hertogenbosch-ict-1016o4948,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/nl-capabel-hogeschool-30hc-rotterdam-ict-1001o8912,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-christelijke-hogeschool-ede-25ba-bedrijfskunde-1001o2793,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-christelijke-hogeschool-ede-25ba-ict-1001o2670,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-christelijke-hogeschool-windesheim-01vu-ict-1001o2665,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-fontys-hogeschool-30gb-venlo-informatica-1001o3903,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/nl-hogeschool-inholland-27pz-alkmaar-bouwkunde-1001o3064,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/nl-hogeschool-inholland-27pz-amsterdam-accountancy-1001o3549,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/nl-hogeschool-inholland-27pz-haarlem-informatica-1001o3897,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
@@ -977,3 +956,29 @@ programs/de-technische-hochschule-ingolstadt-hrk288-neuburg-an-der-donau-sustain
 programs/de-technische-hochschule-nurnberg-georg-sim-hrk200-mechanical-engineering-b-daad9268,b20-85b121,y,,,
 programs/de-technische-hochschule-wildau-hrk272-european-business-manage-daad7665,b20-85b121,y,,,
 programs/de-technische-universitat-ilmenau-hrk130-bachelor-of-science-in-b-daad4812,b20-85b121,y,,,
+programs/nl-christelijke-hogeschool-ede-25ba-bedrijfskunde-1001o2793,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046,b9-6ba627,,,,
+programs/nl-de-haagse-hogeschool-27um-delft-ict-1001o2675,b10-968f8e,y,y,ok,
+programs/nl-de-haagse-hogeschool-27um-zoetermeer-applied-data-science-art-1001o8742,b10-968f8e,,,,
+programs/nl-fontys-hogeschool-30gb-accountancy-1001o3555,b10-968f8e,,,,
+programs/nl-fontys-hogeschool-30gb-elektrotechniek-1001o3098,b10-968f8e,y,y,ok,
+programs/nl-fontys-hogeschool-30gb-tilburg-commerciele-economie-1001o3452,b10-968f8e,,,,
+programs/nl-fontys-hogeschool-30gb-venlo-commerciele-economie-1001o3452,b8-3574bc,,,,
+programs/nl-fontys-hogeschool-30gb-venlo-informatica-1001o3903,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
+programs/nl-hogeschool-inholland-27pz-haarlem-business-studies-1001o2990,b9-6ba627,,,,
+programs/nl-hogeschool-leiden-21ri-commerciele-economie-1001o3422,b10-968f8e,y,y,ok,
+programs/nl-hogeschool-rotterdam-22oj-applied-data-science-art-1001o8776,b9-6ba627,y,y,ok,
+programs/nl-hogeschool-rotterdam-22oj-bouwkunde-1001o3055,b9-6ba627,,,,
+programs/nl-christelijke-hogeschool-ede-25ba-ict-1001o2670,b21-9ec3b2,,,,
+programs/nl-christelijke-hogeschool-windesheim-01vu-accountancy-1001o3525,b21-9ec3b2,y,,,
+programs/nl-christelijke-hogeschool-windesheim-01vu-almere-ict-1001o2665,b21-9ec3b2,,,,
+programs/nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046,b21-9ec3b2,y,,,
+programs/nl-christelijke-hogeschool-windesheim-01vu-ict-1001o2665,b21-9ec3b2,y,,,
+programs/nl-hogeschool-inholland-27pz-alkmaar-technische-informatica-1001o3859,b21-9ec3b2,y,,,
+programs/nl-hogeschool-inholland-27pz-delft-luchtvaarttechnologie-1001o3164,b21-9ec3b2,y,,,
+programs/nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064,b21-9ec3b2,y,,,
+programs/nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209,b21-9ec3b2,,,,
+programs/nl-hogeschool-utrecht-25dw-accountancy-1001o3544,b21-9ec3b2,y,,,
+programs/nl-hogeschool-utrecht-25dw-chemische-technologie-1001o3152,b21-9ec3b2,y,,,
+programs/nl-hogeschool-utrecht-25dw-ict-1001o2672,b21-9ec3b2,y,,,
+programs/nl-hogeschool-van-amsterdam-28dn-biomedische-technologie-1001o5075,b21-9ec3b2,y,,,
