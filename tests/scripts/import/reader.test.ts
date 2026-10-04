@@ -78,6 +78,7 @@ describe("buildPrompt", () => {
     );
     expect(user).toContain("own page always wins");
     expect(user).toContain("m.u.v.");
+    expect(user).toContain("Give two quotes");
     expect(system).toBe(INSTRUCTION);
     for (const country of ["FR", "DE"])
       expect(buildPrompt({ ...meta, country, shared, own }).user).not.toContain(
