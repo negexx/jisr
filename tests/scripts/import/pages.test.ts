@@ -11,10 +11,24 @@ import {
   dryRunSummary,
   memoizeFetch,
   mergePages,
+  studyFinderRegisterUrl,
   syncSkippedListing,
 } from "../../../scripts/import/pages";
 import { SearchBudgetExceeded } from "../../../scripts/import/search";
 import type { Topic } from "../../../scripts/import/topics";
+
+describe("studyFinderRegisterUrl", () => {
+  it("builds the Study Finder programme page from the id at the end of a Hungarian slug", () => {
+    expect(studyFinderRegisterUrl("hu-university-of-debrecen-business-informatics-sf116")).toBe(
+      "https://tempus.tpf.hu/studyfinder/index/show/116",
+    );
+  });
+
+  it("gives null for a slug that does not end in sf and an id", () => {
+    expect(studyFinderRegisterUrl("de-x-daad5225")).toBeNull();
+    expect(studyFinderRegisterUrl("hu-x-sf")).toBeNull();
+  });
+});
 
 describe("daadRegisterUrl", () => {
   it("builds the DAAD programme page from the id at the end of the slug", () => {

@@ -250,6 +250,26 @@ describe("discoverFromRegister", () => {
     return page;
   };
 
+  it("takes the programme page from a custom link reader when the register gives one (Study Finder contact website)", async () => {
+    const register = "https://tempus.tpf.hu/studyfinder/index/show/116";
+    const pages: Record<string, string> = {
+      [register]:
+        '<a href="https://www.facebook.com/x">https://www.facebook.com/x</a><a href="https://www.uni.example/p/bsc">https://www.uni.example/p/bsc</a>',
+      "https://www.uni.example/p/bsc": '<a href="/tuition-fees">Tuition fees</a>',
+    };
+    const found = await discoverFromRegister({
+      registerUrl: register,
+      name: "Business Informatics",
+      fetchHtml: async (url) => {
+        const page = pages[url];
+        if (page === undefined) throw new Error("404");
+        return page;
+      },
+      programmeLink: () => "https://www.uni.example/p/bsc",
+    });
+    expect(found.programme).toBe("https://www.uni.example/p/bsc");
+  });
+
   it("takes the programme page from the register's course-website link", async () => {
     const found = await discoverFromRegister({
       registerUrl: "https://www2.daad.de/en/detail/5225/",
