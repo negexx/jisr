@@ -10,7 +10,7 @@ const draft = (fr: string, en: string, ar: string): Localized => ({
   ar: { text: ar, status: "draft" },
 });
 
-export type SummarySource = "parcoursup" | "rio" | "daad" | "studiensuche";
+export type SummarySource = "parcoursup" | "rio" | "daad" | "studiensuche" | "studyfinder";
 
 const SOURCE_LINE: Record<SummarySource, { fr: string; en: string; ar: string }> = {
   parcoursup: {
@@ -27,6 +27,11 @@ const SOURCE_LINE: Record<SummarySource, { fr: string; en: string; ar: string }>
     fr: "Programme recensé dans la base de programmes internationaux du DAAD.",
     en: "Programme listed in the DAAD international programmes database.",
     ar: "برنامج مدرج في قاعدة بيانات البرامج الدولية التابعة لـ DAAD.",
+  },
+  studyfinder: {
+    fr: "Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).",
+    en: "Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).",
+    ar: "برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).",
   },
   studiensuche: {
     fr: "Programme référencé dans la Studiensuche de l'Agence fédérale pour l'emploi.",
