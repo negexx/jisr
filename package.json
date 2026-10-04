@@ -25,6 +25,7 @@
     "data:websites": "tsx scripts/import/websites.ts",
     "data:enrich-fr": "tsx scripts/import/enrich-fr.ts",
     "data:fr-calendar": "tsx scripts/import/fr-calendar.ts",
+    "data:fr-language": "tsx scripts/import/fr-language.ts",
     "data:daad-deadlines": "tsx scripts/import/daad-deadlines.ts",
     "data:uniassist": "tsx scripts/import/sources/uniassist.ts",
     "data:shortlist": "tsx scripts/import/shortlist.ts",
