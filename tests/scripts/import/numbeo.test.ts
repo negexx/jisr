@@ -154,7 +154,7 @@ describe("parseNumbeoPage", () => {
     expect(parseNumbeoPage(page([], "Last update: 3 Octember 2026")).lastUpdate).toBeNull();
   });
 
-  it("takes the first row when a name repeats", () => {
+  it("keeps every row when a name repeats (the mapping decides what to do)", () => {
     const parsed = parseNumbeoPage(
       page([
         row("Bottled Water", "1.00", "1.00", "1.00"),
@@ -192,6 +192,70 @@ describe("costLinesFrom", () => {
       pageOf([numbeoRow(NUMBEO_ROWS.housing, 900, 0.1 + 0.2 + 799.7, 0.1 + 0.2 + 1299.7)]),
     );
     expect(result.lines.housing).toEqual({ min: 800, max: 1300 });
+  });
+
+  it("fails closed when a needed row appears twice: no line, listed as a duplicate", () => {
+    const result = costLinesFrom(
+      pageOf([
+        numbeoRow(NUMBEO_ROWS.housing, 900, 800, 1300),
+        numbeoRow(NUMBEO_ROWS.housing, 950, 850, 1350),
+        numbeoRow(NUMBEO_ROWS.transport, 50, 40, 60),
+        numbeoRow(NUMBEO_ROWS.transport, 55, 45, 65),
+      ]),
+    );
+    expect(result.lines.housing).toBeUndefined();
+    expect(result.lines.transport).toBeUndefined();
+    expect(result.used.housing).toBeUndefined();
+    expect(result.missing).toContain(`${NUMBEO_ROWS.housing} (duplicate)`);
+    expect(result.missing).toContain(`${NUMBEO_ROWS.transport} (duplicate)`);
+  });
+
+  it("fails closed when a basket row appears twice, leaving the other lines", () => {
+    const rows = [
+      ...FOOD_BASKET.map((item) => numbeoRow(item.name, 1.5, 1, 2)),
+      numbeoRow("Onions (1 kg)", 3, 2, 4),
+      numbeoRow(NUMBEO_ROWS.transport, 50, 40, 60),
+    ];
+    const result = costLinesFrom(pageOf(rows));
+    expect(result.lines.food).toBeUndefined();
+    expect(result.lines.transport).toEqual({ min: 40, max: 60 });
+    expect(result.missing).toContain("Onions (1 kg) (duplicate)");
+  });
+
+  it("ignores duplicates of rows it does not use", () => {
+    const result = costLinesFrom(
+      pageOf([
+        numbeoRow("Bottled Water", 1, 1, 1),
+        numbeoRow("Bottled Water", 9, 9, 9),
+        numbeoRow(NUMBEO_ROWS.housing, 900, 800, 1300),
+      ]),
+    );
+    expect(result.lines.housing).toEqual({ min: 800, max: 1300 });
+  });
+
+  it("treats a range with low above high as no range", () => {
+    const result = costLinesFrom(
+      pageOf([
+        numbeoRow(NUMBEO_ROWS.housing, 900, 1300, 800),
+        numbeoRow(NUMBEO_ROWS.transport, 50, 60, 40),
+        ...FOOD_BASKET.map((item) =>
+          item.name === "Milk (Regular, 1 Liter)"
+            ? numbeoRow(item.name, 1.5, 2, 1)
+            : numbeoRow(item.name, 1.5, 1, 2),
+        ),
+      ]),
+    );
+    expect(result.lines).toEqual({});
+    expect(result.missing).toEqual([
+      NUMBEO_ROWS.housing,
+      "Milk (Regular, 1 Liter)",
+      NUMBEO_ROWS.transport,
+    ]);
+  });
+
+  it("accepts a range whose low equals its high", () => {
+    const result = costLinesFrom(pageOf([numbeoRow(NUMBEO_ROWS.housing, 900, 900, 900)]));
+    expect(result.lines.housing).toEqual({ min: 900, max: 900 });
   });
 
   it("gives no housing line for a row without a range, and lists it as missing", () => {

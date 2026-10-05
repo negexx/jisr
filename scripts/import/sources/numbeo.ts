@@ -121,7 +121,7 @@ export type MajorRange = { min: number; max: number };
 type PricedRow = NumbeoRow & { low: number; high: number };
 
 const hasRange = (row: NumbeoRow | undefined): row is PricedRow =>
-  row !== undefined && row.low !== null && row.high !== null;
+  row !== undefined && row.low !== null && row.high !== null && row.low <= row.high;
 
 // Sums are taken in hundredths so that floating-point noise (0.1 + 0.2) cannot push a whole-unit
 // total across a unit boundary.
@@ -132,6 +132,10 @@ function wholeUnits(minHundredths: number, maxHundredths: number): MajorRange {
   return { min: Math.floor(minHundredths / 100), max: Math.ceil(maxHundredths / 100) };
 }
 
+// Housing, food and transport lines in major units (the caller converts to minor units), rounded
+// outwards to whole units: min floored, max ceiled, so the range never shrinks. Fails closed: a
+// needed row that is absent, appears more than once, or has no usable range (a missing end, or low
+// above high) gives no line and is listed in `missing` ("<name> (duplicate)" for a repeated row).
 export function costLinesFrom(page: NumbeoPage): {
   lines: Partial<Record<CostLineKey, MajorRange>>;
   used: Record<string, NumbeoRow[]>;
@@ -140,15 +144,24 @@ export function costLinesFrom(page: NumbeoPage): {
   const lines: Partial<Record<CostLineKey, MajorRange>> = {};
   const used: Record<string, NumbeoRow[]> = {};
   const missing: string[] = [];
-  const find = (name: string): NumbeoRow | undefined => page.rows.find((r) => r.name === name);
 
-  const single = (key: "housing" | "transport"): void => {
-    const name = NUMBEO_ROWS[key];
-    const row = find(name);
+  const priced = (name: string): PricedRow | null => {
+    const matches = page.rows.filter((r) => r.name === name);
+    if (matches.length > 1) {
+      missing.push(`${name} (duplicate)`);
+      return null;
+    }
+    const row = matches[0];
     if (!hasRange(row)) {
       missing.push(name);
-      return;
+      return null;
     }
+    return row;
+  };
+
+  const single = (key: "housing" | "transport"): void => {
+    const row = priced(NUMBEO_ROWS[key]);
+    if (row === null) return;
     lines[key] = wholeUnits(hundredths(row.low), hundredths(row.high));
     used[key] = [row];
   };
@@ -159,11 +172,8 @@ export function costLinesFrom(page: NumbeoPage): {
   let lowTotal = 0;
   let highTotal = 0;
   for (const item of FOOD_BASKET) {
-    const row = find(item.name);
-    if (!hasRange(row)) {
-      missing.push(item.name);
-      continue;
-    }
+    const row = priced(item.name);
+    if (row === null) continue;
     basketRows.push(row);
     lowTotal += hundredths(row.low) * item.quantity;
     highTotal += hundredths(row.high) * item.quantity;
