@@ -55,6 +55,40 @@ export function isAllowedByRobots(url: string): boolean {
   return !ROBOTS_DISALLOWED.some((prefix) => pathname.startsWith(prefix));
 }
 
+// What the first average cell shows for the currency we ask for. HUF is unverified (the 10-city
+// sample run confirms what Numbeo prints): this is the one place to edit.
+export const ACCEPTED_CURRENCY_SYMBOLS: Record<string, readonly string[]> = {
+  EUR: ["€"],
+  HUF: ["Ft", "HUF"],
+};
+
+const normalisedName = (text: string): string =>
+  text
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[\s\-‐-―'‘’`]+/g, " ")
+    .trim();
+
+// Numbeo redirects or falls back for names it does not know, and ignores a currency it does not
+// support: the page must say it is the place and the currency we asked for, or nothing is staged.
+export function pageRefusal(
+  page: NumbeoPage,
+  expected: { label: string; names: readonly string[]; currency: string },
+): string | null {
+  if (page.place === null) return `page names no place, expected ${expected.label}`;
+  const place = normalisedName(page.place);
+  if (!expected.names.some((name) => normalisedName(name) === place))
+    return `page is for ${page.place}, expected ${expected.label}`;
+  const symbols = ACCEPTED_CURRENCY_SYMBOLS[expected.currency] ?? [];
+  const accepted = symbols.join(" or ");
+  if (page.currencySymbol === null) return `currency symbol not found, expected ${accepted}`;
+  const shown = page.currencySymbol.toLowerCase();
+  if (!symbols.some((symbol) => symbol.toLowerCase() === shown))
+    return `currency symbol ${page.currencySymbol}, expected ${accepted}`;
+  return null;
+}
+
 type Locale = "fr" | "en" | "ar";
 export type StagedBasis = Record<Locale, { text: string; status: "draft" }>;
 
@@ -85,9 +119,9 @@ export type StagedCostProfile = {
 
 // Basis texts (machine drafts: fr, en and ar are all unreviewed). The basket is listed in full.
 const BASKET = {
-  fr: "lait 8 L, pain 8 x 500 g, riz 2 kg, œufs 24, poulet 3 kg, pommes, bananes, tomates 3 kg chacun, pommes de terre 4 kg, oignons 2 kg, salades 4, 8 repas bon marché au resto",
+  fr: FOOD_BASKET.map((item) => item.labelFr).join(", "),
   en: FOOD_BASKET.map((item) => item.label).join(", "),
-  ar: "حليب 8 لتر، خبز 8 أرغفة (500 غ)، أرز 2 كغ، بيض 24، دجاج 3 كغ، تفاح 3 كغ، موز 3 كغ، طماطم 3 كغ، بطاطس 4 كغ، بصل 2 كغ، خس 4، 8 وجبات في مطعم رخيص",
+  ar: FOOD_BASKET.map((item) => item.labelAr).join("، "),
 } satisfies Record<Locale, string>;
 
 type BasisContext = {
@@ -110,7 +144,7 @@ const BASIS_PARTS: Record<
     head: (c) =>
       c.date === null
         ? `Numbeo read on ${c.readOn} (crowdsourced, not official)`
-        : `Numbeo ${c.date} (crowdsourced, unofficial${c.contributors === null ? "" : `, ${c.contributors} contributors`})`,
+        : `Numbeo, page updated ${c.date} (crowdsourced, unofficial${c.contributors === null ? "" : `, ${c.contributors} contributors`})`,
     line: {
       housing:
         "Monthly rent of a 1-bedroom apartment outside the city centre: Numbeo's low to high range.",
@@ -119,14 +153,13 @@ const BASIS_PARTS: Record<
         "Monthly public transport pass, regular price: Numbeo's range; a student pass may cost less.",
     },
     rounding: "Rounded outwards.",
-    country:
-      "country-level figure, a wide range across Numbeo's cities; used where the city has no Numbeo page",
+    country: "country-level figure with a wide range; used where the city has no Numbeo page",
   },
   fr: {
     head: (c) =>
       c.date === null
         ? `Numbeo lu le ${c.readOn} (collaboratif, non officiel)`
-        : `Numbeo ${c.date} (collaboratif, non officiel${c.contributors === null ? "" : `, ${c.contributors} contributeurs`})`,
+        : `Numbeo mis à jour le ${c.date} (collaboratif, non officiel${c.contributors === null ? "" : `, ${c.contributors} contributeurs`})`,
     line: {
       housing:
         "Loyer mensuel d'un appartement 1 chambre hors centre-ville : fourchette basse-haute de Numbeo.",
@@ -135,14 +168,13 @@ const BASIS_PARTS: Record<
         "Abonnement mensuel de transport public, tarif normal : fourchette de Numbeo ; un abonnement étudiant peut coûter moins.",
     },
     rounding: "Arrondi vers l'extérieur.",
-    country:
-      "chiffre national, large fourchette selon les villes ; repli si la ville n'a pas de page Numbeo",
+    country: "chiffre national à large fourchette ; repli si la ville n'a pas de page",
   },
   ar: {
     head: (c) =>
       c.date === null
         ? `Numbeo قُرئ في ${c.readOn} (جماعي وغير رسمي)`
-        : `Numbeo ${c.date} (جماعي وغير رسمي${c.contributors === null ? "" : `، ${c.contributors} مساهما`})`,
+        : `Numbeo، تحديث الصفحة في ${c.date} (جماعي وغير رسمي${c.contributors === null ? "" : `، ${c.contributors} مساهما`})`,
     line: {
       housing: "إيجار شهري لشقة بغرفة نوم خارج وسط المدينة: النطاق الأدنى والأعلى في Numbeo.",
       food: `سلة: ${BASKET.ar}. الأدنى من الأسعار المنخفضة والأقصى من المرتفعة.`,
@@ -302,16 +334,30 @@ export type RunOptions = {
 
 export type RunOutcome = { ok: boolean; lines: string[]; requests: number; staged: string[] };
 
-type Target = { slug: string; country: string; city: string | null; url: string; currency: string };
+type Target = {
+  slug: string;
+  country: string;
+  city: string | null;
+  url: string;
+  currency: string;
+  // The place the page must be about: shown in the refusal, and the names that match it.
+  label: string;
+  names: string[];
+};
 
 function targetsFor(countries: readonly string[], cities: readonly CityRow[]): Target[] {
-  const countryTargets = countries.map((country) => ({
-    slug: `${country.toLowerCase()}-numbeo`,
-    country,
-    city: null,
-    url: numbeoCountryUrl(COUNTRY_NAMES[country] ?? country, currencyOf(country)),
-    currency: currencyOf(country),
-  }));
+  const countryTargets = countries.map((country) => {
+    const name = COUNTRY_NAMES[country] ?? country;
+    return {
+      slug: `${country.toLowerCase()}-numbeo`,
+      country,
+      city: null,
+      url: numbeoCountryUrl(name, currencyOf(country)),
+      currency: currencyOf(country),
+      label: name,
+      names: [name],
+    };
+  });
   const cityTargets = cities
     .filter((row) => countries.includes(row.country))
     .map((row) => ({
@@ -320,9 +366,14 @@ function targetsFor(countries: readonly string[], cities: readonly CityRow[]): T
       city: row.citySlug,
       url: numbeoCityUrl(row.name, currencyOf(row.country)),
       currency: currencyOf(row.country),
+      label: row.name,
+      names: [row.name, `${row.name}, ${COUNTRY_NAMES[row.country] ?? row.country}`],
     }));
   return [...countryTargets, ...cityTargets];
 }
+
+const isNotListed = (error: unknown): boolean =>
+  error instanceof Error && /HTTP 404\b/.test(error.message);
 
 // Fetches sequentially (one request at a time, `delayMs` apart), stages what parses, never
 // overwrites a staged file or a slug already in data/.
@@ -354,7 +405,7 @@ export async function runCosts(options: RunOptions): Promise<RunOutcome> {
     const planned = Math.min(uncached, options.maxRequests);
     const minutes = Math.ceil((planned * options.delayMs) / 60000);
     lines.push(
-      `${planned} requests planned (${cached} already cached), about ${minutes} minutes at the ${options.delayMs} ms delay`,
+      `${planned} requests planned (${cached} already cached), about ${minutes} minutes at the ${options.delayMs} ms delay, one attempt each, no retries`,
     );
     if (uncached > planned)
       lines.push(
@@ -365,6 +416,7 @@ export async function runCosts(options: RunOptions): Promise<RunOutcome> {
   }
 
   let requests = 0;
+  let failed = 0;
   for (const target of pending) {
     const fallback =
       target.city === null ? "" : `; falls back to ${target.country.toLowerCase()}-numbeo`;
@@ -380,9 +432,19 @@ export async function runCosts(options: RunOptions): Promise<RunOutcome> {
     try {
       body = await options.fetch(target.url);
     } catch (error) {
-      lines.push(
-        `no profile ${target.slug}: ${error instanceof Error ? error.message : String(error)}${fallback}`,
-      );
+      const message = error instanceof Error ? error.message : String(error);
+      if (isNotListed(error)) {
+        lines.push(`no profile ${target.slug}: not listed on Numbeo (${message})${fallback}`);
+      } else {
+        failed++;
+        lines.push(`failed ${target.slug}: ${message} (re-run to retry)${fallback}`);
+      }
+      continue;
+    }
+    const page = parseNumbeoPage(body);
+    const refusal = pageRefusal(page, target);
+    if (refusal !== null) {
+      lines.push(`no profile ${target.slug}: ${refusal}${fallback}`);
       continue;
     }
     const profile = buildProfile({
@@ -390,7 +452,7 @@ export async function runCosts(options: RunOptions): Promise<RunOutcome> {
       country: target.country,
       city: target.city,
       url: target.url,
-      page: parseNumbeoPage(body),
+      page,
       currency: target.currency,
       preparedAt: options.now(),
     });
@@ -421,8 +483,20 @@ export async function runCosts(options: RunOptions): Promise<RunOutcome> {
     if (profile._review.notes.includes("Not built"))
       lines.push(`partial ${target.slug}: ${profile._review.notes}`);
   }
-  lines.push(`staged ${staged.length} profile(s) with ${requests} request(s)`);
+  lines.push(
+    `staged ${staged.length} profile(s) with ${requests} request(s)${failed === 0 ? "" : `, ${failed} failed (re-run to retry)`}`,
+  );
   return { ok: true, lines, requests, staged };
+}
+
+// One attempt: fetchText retries 429, 5xx and network errors, so any retry would be a request the
+// --max-requests cap and the delay do not count. A failed URL is not cached, so a re-run retries it.
+export function numbeoFetch(url: string): Promise<string> {
+  return fetchText(url, {
+    headers: { "user-agent": NUMBEO_USER_AGENT },
+    accept: "text/html",
+    attempts: 1,
+  });
 }
 
 function numberFlag(argv: readonly string[], name: string, fallback: number): number {
@@ -447,12 +521,7 @@ async function main(argv: readonly string[]): Promise<void> {
     dataDir: DATA_DIR,
     stagingDir: STAGING_DIR,
     now: () => new Date().toISOString().slice(0, 10),
-    fetch: (url) =>
-      fetchText(url, {
-        headers: { "user-agent": NUMBEO_USER_AGENT },
-        accept: "text/html",
-        attempts: 2,
-      }),
+    fetch: numbeoFetch,
     isCached: (url) => isCached(url),
     sleep: (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
   });

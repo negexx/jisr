@@ -10,26 +10,100 @@ export const NUMBEO_ROWS = {
   transport: "Monthly Public Transport Pass (Regular Price)",
 } as const;
 
-export type FoodBasketItem = { name: string; quantity: number; label: string };
+export type FoodBasketItem = {
+  name: string;
+  quantity: number;
+  label: string;
+  labelFr: string;
+  labelAr: string;
+};
 
 // One month of food for one student: the basket is our modelling choice and is disclosed in the
-// line's basis. "eggs 24" is two 12-packs, hence quantity 2.
+// line's basis in every locale. "eggs 24" is two 12-packs, hence quantity 2.
 export const FOOD_BASKET: readonly FoodBasketItem[] = [
-  { name: "Milk (Regular, 1 Liter)", quantity: 8, label: "milk 8 L" },
-  { name: "Fresh White Bread (500 g Loaf)", quantity: 8, label: "bread 8 loaves (500 g)" },
-  { name: "White Rice (1 kg)", quantity: 2, label: "rice 2 kg" },
-  { name: "Eggs (12, Large Size)", quantity: 2, label: "eggs 24" },
-  { name: "Chicken Fillets (1 kg)", quantity: 3, label: "chicken 3 kg" },
-  { name: "Apples (1 kg)", quantity: 3, label: "apples 3 kg" },
-  { name: "Bananas (1 kg)", quantity: 3, label: "bananas 3 kg" },
-  { name: "Tomatoes (1 kg)", quantity: 3, label: "tomatoes 3 kg" },
-  { name: "Potatoes (1 kg)", quantity: 4, label: "potatoes 4 kg" },
-  { name: "Onions (1 kg)", quantity: 2, label: "onions 2 kg" },
-  { name: "Lettuce (1 Head)", quantity: 4, label: "lettuce 4" },
+  {
+    name: "Milk (Regular, 1 Liter)",
+    quantity: 8,
+    label: "milk 8 L",
+    labelFr: "lait 8 L",
+    labelAr: "حليب 8 لتر",
+  },
+  {
+    name: "Fresh White Bread (500 g Loaf)",
+    quantity: 8,
+    label: "bread 8 loaves (500 g)",
+    labelFr: "pain 8 x 500 g",
+    labelAr: "خبز 8 أرغفة (500 غ)",
+  },
+  {
+    name: "White Rice (1 kg)",
+    quantity: 2,
+    label: "rice 2 kg",
+    labelFr: "riz 2 kg",
+    labelAr: "أرز 2 كغ",
+  },
+  {
+    name: "Eggs (12, Large Size)",
+    quantity: 2,
+    label: "eggs 24",
+    labelFr: "œufs 24",
+    labelAr: "بيض 24",
+  },
+  {
+    name: "Chicken Fillets (1 kg)",
+    quantity: 3,
+    label: "chicken 3 kg",
+    labelFr: "poulet 3 kg",
+    labelAr: "دجاج 3 كغ",
+  },
+  {
+    name: "Apples (1 kg)",
+    quantity: 3,
+    label: "apples 3 kg",
+    labelFr: "pommes 3 kg",
+    labelAr: "تفاح 3 كغ",
+  },
+  {
+    name: "Bananas (1 kg)",
+    quantity: 3,
+    label: "bananas 3 kg",
+    labelFr: "bananes 3 kg",
+    labelAr: "موز 3 كغ",
+  },
+  {
+    name: "Tomatoes (1 kg)",
+    quantity: 3,
+    label: "tomatoes 3 kg",
+    labelFr: "tomates 3 kg",
+    labelAr: "طماطم 3 كغ",
+  },
+  {
+    name: "Potatoes (1 kg)",
+    quantity: 4,
+    label: "potatoes 4 kg",
+    labelFr: "pommes de terre 4 kg",
+    labelAr: "بطاطس 4 كغ",
+  },
+  {
+    name: "Onions (1 kg)",
+    quantity: 2,
+    label: "onions 2 kg",
+    labelFr: "oignons 2 kg",
+    labelAr: "بصل 2 كغ",
+  },
+  {
+    name: "Lettuce (1 Head)",
+    quantity: 4,
+    label: "lettuce 4",
+    labelFr: "salades 4",
+    labelAr: "خس 4",
+  },
   {
     name: "Meal at an Inexpensive Restaurant",
     quantity: 8,
     label: "8 inexpensive-restaurant meals",
+    labelFr: "8 repas bon marché au restaurant",
+    labelAr: "8 وجبات في مطعم رخيص",
   },
 ];
 
@@ -43,6 +117,10 @@ export type NumbeoRow = {
 export type NumbeoPage = {
   lastUpdate: string | null;
   contributors: number | null;
+  // The h1 text after "Cost of Living in " ("Paris", "France", "Lyon, France"), as the page states it.
+  place: string | null;
+  // The text around the number in the first average cell ("€", "Ft"): the currency Numbeo showed.
+  currencySymbol: string | null;
   rows: NumbeoRow[];
 };
 
@@ -107,12 +185,35 @@ function contributorsOf(html: string): number | null {
   return match === null ? null : numberIn(match[1] ?? "");
 }
 
+function placeOf(html: string): string | null {
+  for (const heading of html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)) {
+    const match = cellText(heading[1] ?? "").match(/^Cost of Living in\s+(.+)$/i);
+    if (match !== null) return match[1] ?? null;
+  }
+  return null;
+}
+
+function currencySymbolOf(tableHtml: string): string | null {
+  const cell = tableHtml.match(/class="first_currency"[^>]*>([\s\S]*?)<\/span>/i);
+  if (cell === null) return null;
+  const symbol = cellText(cell[1] ?? "")
+    .replace(/\d[\d,]*(?:\.\d+)?/, "")
+    .trim();
+  return symbol === "" ? null : symbol;
+}
+
 export function parseNumbeoPage(html: string): NumbeoPage {
   const table = html.match(/<table\b[^>]*data_wide_table[^>]*>([\s\S]*?)<\/table>/i);
   const rows = [...(table?.[1] ?? "").matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)]
     .map((m) => parseRow(m[1] ?? ""))
     .filter((r): r is NumbeoRow => r !== null);
-  return { lastUpdate: lastUpdateOf(html), contributors: contributorsOf(html), rows };
+  return {
+    lastUpdate: lastUpdateOf(html),
+    contributors: contributorsOf(html),
+    place: placeOf(html),
+    currencySymbol: currencySymbolOf(table?.[1] ?? ""),
+    rows,
+  };
 }
 
 export type CostLineKey = "housing" | "food" | "transport";

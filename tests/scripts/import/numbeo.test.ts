@@ -38,7 +38,13 @@ const numbeoRow = (name: string, avg: number | null, low: number | null, high: n
   high,
 });
 
-const pageOf = (rows: NumbeoRow[]): NumbeoPage => ({ lastUpdate: null, contributors: null, rows });
+const pageOf = (rows: NumbeoRow[]): NumbeoPage => ({
+  lastUpdate: null,
+  contributors: null,
+  place: null,
+  currencySymbol: null,
+  rows,
+});
 
 describe("constants", () => {
   it("names the project and a contact in the user agent", () => {
@@ -48,7 +54,7 @@ describe("constants", () => {
   });
 
   it("lists the monthly food basket", () => {
-    expect(FOOD_BASKET).toEqual([
+    expect(FOOD_BASKET.map(({ name, quantity, label }) => ({ name, quantity, label }))).toEqual([
       { name: "Milk (Regular, 1 Liter)", quantity: 8, label: "milk 8 L" },
       { name: "Fresh White Bread (500 g Loaf)", quantity: 8, label: "bread 8 loaves (500 g)" },
       { name: "White Rice (1 kg)", quantity: 2, label: "rice 2 kg" },
@@ -66,6 +72,15 @@ describe("constants", () => {
         label: "8 inexpensive-restaurant meals",
       },
     ]);
+  });
+
+  it("gives every basket item a French and an Arabic label that state its amount", () => {
+    for (const item of FOOD_BASKET) {
+      expect(item.labelFr).toMatch(/\d/);
+      expect(item.labelAr).toMatch(/\d/);
+    }
+    expect(FOOD_BASKET.map((item) => item.labelFr).join(" ")).not.toMatch(/\bresto\b/);
+    expect(FOOD_BASKET.at(-1)?.labelFr).toBe("8 repas bon marché au restaurant");
   });
 
   it("names the housing and transport rows", () => {
@@ -160,6 +175,43 @@ describe("parseNumbeoPage", () => {
     expect(parseNumbeoPage(page([])).lastUpdate).toBeNull();
     expect(parseNumbeoPage(page([])).contributors).toBeNull();
     expect(parseNumbeoPage(page([], "Last update: 3 Octember 2026")).lastUpdate).toBeNull();
+  });
+
+  it("reads the place from the h1 of a city page and of a country page", () => {
+    const city = `<html><head><title>Cost of Living in Paris. Oct 2026. Prices in Paris</title></head><body><h1> Cost of Living in Paris</h1></body></html>`;
+    const country = `<html><body><h1> Cost of Living in France </h1></body></html>`;
+    expect(parseNumbeoPage(city).place).toBe("Paris");
+    expect(parseNumbeoPage(country).place).toBe("France");
+  });
+
+  it("decodes entities in the place and keeps a ', Country' suffix", () => {
+    const html = `<h1>Cost of Living in Saint-Martin-d&#39;H&egrave;res, France</h1>`;
+    expect(parseNumbeoPage(html).place).toBe("Saint-Martin-d'Hères, France");
+  });
+
+  it("has no place when there is no h1 of that wording", () => {
+    expect(parseNumbeoPage("<html><body><p>Not found</p></body></html>").place).toBeNull();
+    expect(parseNumbeoPage("<h1>Something else</h1>").place).toBeNull();
+  });
+
+  it("reads the currency symbol of the first average cell, prefix or suffix", () => {
+    expect(parseNumbeoPage(page([row("Milk", "1.37", "1.00", "1.90")])).currencySymbol).toBe("€");
+    const suffix = page([
+      `<tr><td>Milk </td> <td class="priceValue "> <span class="first_currency">1,350.00&nbsp;Ft</span></td></tr>`,
+    ]);
+    expect(parseNumbeoPage(suffix).currencySymbol).toBe("Ft");
+    const code = page([
+      `<tr><td>Milk </td> <td class="priceValue "> <span class="first_currency">HUF 1,350.00</span></td></tr>`,
+    ]);
+    expect(parseNumbeoPage(code).currencySymbol).toBe("HUF");
+  });
+
+  it("has no currency symbol when no average cell or no symbol is there", () => {
+    expect(parseNumbeoPage(page([])).currencySymbol).toBeNull();
+    const bare = page([
+      `<tr><td>Milk </td> <td class="priceValue "> <span class="first_currency">1.37</span></td></tr>`,
+    ]);
+    expect(parseNumbeoPage(bare).currencySymbol).toBeNull();
   });
 
   it("keeps every row when a name repeats (the mapping decides what to do)", () => {

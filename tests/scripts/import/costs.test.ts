@@ -2,7 +2,7 @@ import { existsSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { mkdir, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { parse } from "yaml";
 
 import { CostProfileRecordSchema } from "@/data-schema/records/cost-profile";
@@ -20,6 +20,7 @@ import {
   loadCities,
   numbeoCityUrl,
   numbeoCountryUrl,
+  numbeoFetch,
   runCosts,
 } from "../../../scripts/import/costs";
 import { cachePath, isCached } from "../../../scripts/import/http";
@@ -31,8 +32,8 @@ import {
 } from "../../../scripts/import/sources/numbeo";
 import { listStaged, stageFile } from "../../../scripts/import/staging";
 
-const row = (name: string, avg: string, low?: string, high?: string): string =>
-  `<tr><td>${name} </td> <td style="text-align: right" class="priceValue "> <span class="first_currency">&#8364;${avg}</span></td>` +
+const row = (name: string, avg: string, low?: string, high?: string, symbol = "&#8364;"): string =>
+  `<tr><td>${name} </td> <td style="text-align: right" class="priceValue "> <span class="first_currency">${symbol}${avg}</span></td>` +
   (low === undefined
     ? " </tr>"
     : ` <td class="priceBarTd "> <span class="barTextLeft"> ${low}</span><div class="barViewTd"></div><span class="barTextRight">${high}</span></td> </tr>`);
@@ -46,15 +47,31 @@ const countryFooter =
   "<div>This country had 9220 entries in the past 12 months by 981 different contributors. <br/>Last update: 5 October 2026</div>";
 
 // Basket rows at low 1.00 / high 2.00: the food line is 36 to 72 (quantities add up to 36 units).
-function numbeoHtml(options: { footer?: string; skip?: string[] } = {}): string {
+// `place` is the name in the h1 (a city page by default Paris); `symbol` the currency shown in the
+// average cells. Pass `place: null` for a page without the heading.
+function numbeoHtml(
+  options: { footer?: string; skip?: string[]; place?: string | null; symbol?: string } = {},
+): string {
   const skip = options.skip ?? [];
+  const symbol = options.symbol ?? "&#8364;";
+  const place = options.place === undefined ? "Paris" : options.place;
   const rows = [
-    row(HOUSING, "640.50", "450.00", "1,065.00"),
-    row(TRANSPORT, "50.00", "30.00", "86.40"),
-    ...FOOD_BASKET.map((item) => row(item.name, "1.50", "1.00", "2.00")),
+    row(HOUSING, "640.50", "450.00", "1,065.00", symbol),
+    row(TRANSPORT, "50.00", "30.00", "86.40", symbol),
+    ...FOOD_BASKET.map((item) => row(item.name, "1.50", "1.00", "2.00", symbol)),
   ].filter((html) => !skip.some((name) => html.includes(`<td>${name} </td>`)));
-  return `<html><body><table class="data_wide_table new_data_table">${rows.join("\n")}</table>${options.footer ?? cityFooter}</body></html>`;
+  const heading =
+    place === null
+      ? ""
+      : `<title>Cost of Living in ${place}. Oct 2026. Prices in ${place}</title><h1> Cost of Living in ${place}</h1>`;
+  return `<html><head>${heading}</head><body><table class="data_wide_table new_data_table">${rows.join("\n")}</table>${options.footer ?? cityFooter}</body></html>`;
 }
+
+const franceHtml = () => numbeoHtml({ footer: countryFooter, place: "France" });
+const hungaryHtml = () => numbeoHtml({ footer: countryFooter, place: "Hungary", symbol: "Ft" });
+const budapestHtml = () => numbeoHtml({ place: "Budapest", symbol: "Ft" });
+const gre = "Saint-Martin-d'Hères";
+const greHtml = () => numbeoHtml({ place: gre });
 
 const FOOD_UNITS = FOOD_BASKET.reduce((sum, item) => sum + item.quantity, 0);
 
@@ -239,9 +256,12 @@ describe("buildProfile", () => {
     expect(housing?.en.text).toContain("1-bedroom apartment outside the city centre");
     expect(housing?.en.text.toLowerCase()).toContain("rounded outwards");
     expect(housing?.fr.text).toContain("Numbeo");
+    expect(housing?.en.text).toContain("page updated 2026-10-03");
     expect(housing?.fr.text).toContain("2026-10-03");
+    expect(housing?.fr.text).toContain("mis à jour le 2026-10-03");
     expect(housing?.ar.text).toContain("Numbeo");
     expect(housing?.ar.text).toContain("2026-10-03");
+    expect(housing?.ar.text).toContain("تحديث الصفحة في 2026-10-03");
     expect(housing?.fr.status).toBe("draft");
     expect(housing?.en.status).toBe("draft");
     expect(housing?.ar.status).toBe("draft");
@@ -253,6 +273,17 @@ describe("buildProfile", () => {
     expect(food?.en.text).toContain("Min/max: low/high prices");
     expect(food?.fr.text).toContain("8 L");
     expect(food?.ar.text).toContain("8");
+  });
+
+  it("lists every basket item, with its amount, in each locale", () => {
+    const food = build()?.lines.food?.basis;
+    for (const item of FOOD_BASKET) {
+      expect(food?.en.text).toContain(item.label);
+      expect(food?.fr.text).toContain(item.labelFr);
+      expect(food?.ar.text).toContain(item.labelAr);
+    }
+    expect(food?.fr.text).toContain("repas bon marché au restaurant");
+    expect(food?.fr.text).not.toMatch(/\bresto\b/);
   });
 
   it("says a country profile is a wide national figure used where a city has no page", () => {
@@ -269,7 +300,7 @@ describe("buildProfile", () => {
     expect(profile?.lines.housing?.basis?.en.text).toContain("2026-10-05");
     expect(profile?.lines.housing?.basis?.en.text).toContain("981");
     expect(profile?.lines.housing?.basis?.en.text).toContain(
-      "country-level figure, a wide range across Numbeo's cities; used where the city has no Numbeo page",
+      "country-level figure with a wide range; used where the city has no Numbeo page",
     );
     expect(profile?.lines.food?.basis?.fr.text).toContain("chiffre national");
   });
@@ -351,10 +382,10 @@ const budapestUrl = numbeoCityUrl("Budapest", "HUF");
 describe("runCosts", () => {
   it("stages one profile per city and one per country", async () => {
     const f = fixture();
-    f.pages.set(franceUrl, numbeoHtml({ footer: countryFooter }));
+    f.pages.set(franceUrl, franceHtml());
     f.pages.set(parisUrl, numbeoHtml());
-    f.pages.set(hungaryUrl, numbeoHtml({ footer: countryFooter }));
-    f.pages.set(budapestUrl, numbeoHtml());
+    f.pages.set(hungaryUrl, hungaryHtml());
+    f.pages.set(budapestUrl, budapestHtml());
     const outcome = await runCosts(options(f, { countries: ["FR", "HU"] }));
     expect(outcome.ok).toBe(true);
     expect(await listStaged(stagingDir)).toEqual([
@@ -380,24 +411,59 @@ describe("runCosts", () => {
     }
   });
 
-  it("reports a 404 or a page without the rent table and falls back to the country profile", async () => {
+  it("reports a 404 as not listed and a page without the rent table, and falls back to the country profile", async () => {
     const f = fixture();
-    f.pages.set(franceUrl, numbeoHtml({ footer: countryFooter }));
-    f.pages.set(parisUrl, "<html><body>no table here</body></html>");
+    f.pages.set(franceUrl, franceHtml());
+    f.pages.set(
+      parisUrl,
+      "<html><head><h1> Cost of Living in Paris</h1></head><body>no table here</body></html>",
+    );
     // Saint-Martin-d'Hères has no page at all: the fetch fails with a 404.
     const outcome = await runCosts(options(f, { countries: ["FR"] }));
     expect(await listStaged(stagingDir)).toEqual(["cost-profiles/fr-numbeo"]);
     const text = outcome.lines.join("\n");
     expect(text).toContain("no profile fr-paris-numbeo");
-    expect(text).toContain("no profile fr-saint-martin-d-heres-numbeo");
+    expect(text).toContain("no profile fr-saint-martin-d-heres-numbeo: not listed on Numbeo");
     expect(text).toContain("HTTP 404");
     expect(text).toContain("falls back to fr-numbeo");
+    expect(text).not.toContain("re-run to retry");
+  });
+
+  it("reports any other fetch failure as failed, counts it once and does not call it unlisted", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, franceHtml());
+    f.pages.set(parisUrl, numbeoHtml());
+    const failing = numbeoCityUrl(gre, "EUR");
+    const outcome = await runCosts(
+      options(f, {
+        countries: ["FR"],
+        fetch: async (url: string) => {
+          f.requested.push(url);
+          if (url === failing) throw new Error(`GET ${url} failed: HTTP 503`);
+          const body = f.pages.get(url);
+          if (body === undefined) throw new Error(`GET ${url} failed: HTTP 404`);
+          return body;
+        },
+      }),
+    );
+    const text = outcome.lines.join("\n");
+    expect(text).toContain("failed fr-saint-martin-d-heres-numbeo");
+    expect(text).toContain("HTTP 503");
+    expect(text).toContain("HTTP 503 (re-run to retry)");
+    expect(text).not.toContain("not listed");
+    expect(text).toContain("1 failed (re-run to retry)");
+    expect(f.requested.filter((url) => url === failing)).toHaveLength(1);
+    expect(outcome.requests).toBe(3);
+    expect(await listStaged(stagingDir)).toEqual([
+      "cost-profiles/fr-numbeo",
+      "cost-profiles/fr-paris-numbeo",
+    ]);
   });
 
   it("stages nothing for a page whose record would not validate", async () => {
     const f = fixture();
     const absurd = `<div>by ${"9".repeat(15)} different contributors. Last update: 3 October 2026</div>`;
-    f.pages.set(franceUrl, numbeoHtml({ footer: absurd }));
+    f.pages.set(franceUrl, numbeoHtml({ footer: absurd, place: "France" }));
     const outcome = await runCosts(options(f, { countries: ["FR"], maxRequests: 1 }));
     expect(await listStaged(stagingDir)).toEqual([]);
     expect(outcome.lines.join("\n")).toContain("no profile fr-numbeo: invalid at lines.");
@@ -405,14 +471,81 @@ describe("runCosts", () => {
 
   it("waits the delay between requests but not before the first or for cached pages", async () => {
     const f = fixture();
-    f.pages.set(franceUrl, numbeoHtml({ footer: countryFooter }));
+    f.pages.set(franceUrl, franceHtml());
     f.pages.set(parisUrl, numbeoHtml());
-    f.pages.set(numbeoCityUrl("Saint-Martin-d'Hères", "EUR"), numbeoHtml());
+    f.pages.set(numbeoCityUrl(gre, "EUR"), greHtml());
     f.cached.add(parisUrl);
     await runCosts(options(f, { countries: ["FR"], delayMs: 2500 }));
     expect(f.requested).toHaveLength(3);
     // two uncached requests: one wait between them; the cached Paris page costs no wait
     expect(f.sleeps).toEqual([2500]);
+  });
+
+  it("accepts the real wording: city name alone or with its country, accents and punctuation aside", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, franceHtml());
+    f.pages.set(parisUrl, numbeoHtml({ place: "Paris, France" }));
+    f.pages.set(numbeoCityUrl(gre, "EUR"), numbeoHtml({ place: "Saint Martin d’Heres" }));
+    const outcome = await runCosts(options(f, { countries: ["FR"] }));
+    expect(await listStaged(stagingDir)).toEqual([
+      "cost-profiles/fr-numbeo",
+      "cost-profiles/fr-paris-numbeo",
+      "cost-profiles/fr-saint-martin-d-heres-numbeo",
+    ]);
+    expect(outcome.lines.join("\n")).not.toContain("page is for");
+  });
+
+  it("refuses a page for a different city and falls back to the country profile", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, franceHtml());
+    f.pages.set(parisUrl, numbeoHtml({ place: "Lyon" }));
+    f.pages.set(numbeoCityUrl(gre, "EUR"), greHtml());
+    const outcome = await runCosts(options(f, { countries: ["FR"] }));
+    expect(await listStaged(stagingDir)).not.toContain("cost-profiles/fr-paris-numbeo");
+    const text = outcome.lines.join("\n");
+    expect(text).toContain("no profile fr-paris-numbeo: page is for Lyon, expected Paris");
+    expect(text).toContain("falls back to fr-numbeo");
+  });
+
+  it("refuses a country page for another country", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, numbeoHtml({ footer: countryFooter, place: "Germany" }));
+    const outcome = await runCosts(options(f, { countries: ["FR"], maxRequests: 1 }));
+    expect(await listStaged(stagingDir)).toEqual([]);
+    expect(outcome.lines.join("\n")).toContain(
+      "no profile fr-numbeo: page is for Germany, expected France",
+    );
+  });
+
+  it("refuses a page with no 'Cost of Living in' heading", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, numbeoHtml({ footer: countryFooter, place: null }));
+    const outcome = await runCosts(options(f, { countries: ["FR"], maxRequests: 1 }));
+    expect(await listStaged(stagingDir)).toEqual([]);
+    expect(outcome.lines.join("\n")).toContain(
+      "no profile fr-numbeo: page names no place, expected France",
+    );
+  });
+
+  it("refuses a Hungarian page that shows euros, and accepts the one that shows forints", async () => {
+    const f = fixture();
+    f.pages.set(hungaryUrl, hungaryHtml());
+    f.pages.set(budapestUrl, numbeoHtml({ place: "Budapest" }));
+    const outcome = await runCosts(options(f, { countries: ["HU"] }));
+    expect(await listStaged(stagingDir)).toEqual(["cost-profiles/hu-numbeo"]);
+    expect(outcome.lines.join("\n")).toContain(
+      "no profile hu-budapest-numbeo: currency symbol €, expected Ft or HUF; falls back to hu-numbeo",
+    );
+  });
+
+  it("refuses a euro page whose symbol is not the euro sign", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, numbeoHtml({ footer: countryFooter, place: "France", symbol: "$" }));
+    const outcome = await runCosts(options(f, { countries: ["FR"], maxRequests: 1 }));
+    expect(await listStaged(stagingDir)).toEqual([]);
+    expect(outcome.lines.join("\n")).toContain(
+      "no profile fr-numbeo: currency symbol $, expected €",
+    );
   });
 
   it("refuses a delay under two seconds", async () => {
@@ -423,7 +556,7 @@ describe("runCosts", () => {
 
   it("stops at --max-requests and reports what was not fetched", async () => {
     const f = fixture();
-    f.pages.set(franceUrl, numbeoHtml({ footer: countryFooter }));
+    f.pages.set(franceUrl, franceHtml());
     f.pages.set(parisUrl, numbeoHtml());
     const outcome = await runCosts(options(f, { countries: ["FR"], maxRequests: 2 }));
     expect(f.requested).toHaveLength(2);
@@ -434,9 +567,9 @@ describe("runCosts", () => {
 
   it("does not count cached pages against the cap", async () => {
     const f = fixture();
-    f.pages.set(franceUrl, numbeoHtml({ footer: countryFooter }));
+    f.pages.set(franceUrl, franceHtml());
     f.pages.set(parisUrl, numbeoHtml());
-    f.pages.set(numbeoCityUrl("Saint-Martin-d'Hères", "EUR"), numbeoHtml());
+    f.pages.set(numbeoCityUrl(gre, "EUR"), greHtml());
     f.cached.add(franceUrl);
     f.cached.add(parisUrl);
     const outcome = await runCosts(options(f, { countries: ["FR"], maxRequests: 1 }));
@@ -454,13 +587,14 @@ describe("runCosts", () => {
     expect(outcome.lines.join("\n")).toContain(
       "2 requests planned (1 already cached), about 1 minutes at the 2000 ms delay",
     );
+    expect(outcome.lines.join("\n")).toContain("one attempt each, no retries");
   });
 
   it("never overwrites a staged file or a slug already in data, and does not request them", async () => {
     const f = fixture();
-    f.pages.set(franceUrl, numbeoHtml({ footer: countryFooter }));
+    f.pages.set(franceUrl, franceHtml());
     f.pages.set(parisUrl, numbeoHtml());
-    f.pages.set(numbeoCityUrl("Saint-Martin-d'Hères", "EUR"), numbeoHtml());
+    f.pages.set(numbeoCityUrl(gre, "EUR"), greHtml());
     const stagedFile = stageFile("cost-profiles", "fr-paris-numbeo", stagingDir);
     await writeYaml(stagedFile, "edited by a reviewer\n");
     await writeYaml(path.join(dataDir, "cost-profiles", "fr-numbeo.yaml"), "already promoted\n");
@@ -483,10 +617,35 @@ describe("runCosts", () => {
   });
 });
 
+describe("numbeoFetch", () => {
+  afterEach(() => vi.unstubAllGlobals());
+
+  it("makes exactly one HTTP request for a server error: a counted request is a real request", async () => {
+    const stub = vi.fn(async () => new Response("busy", { status: 503 }));
+    vi.stubGlobal("fetch", stub);
+    await expect(
+      numbeoFetch("https://www.numbeo.com/cost-of-living/in/Zzz-one-attempt-test"),
+    ).rejects.toThrow(/HTTP 503/);
+    expect(stub).toHaveBeenCalledTimes(1);
+  });
+
+  it("sends the Numbeo user agent", async () => {
+    const stub = vi.fn(
+      async (_url: string, _init: RequestInit) => new Response("x", { status: 404 }),
+    );
+    vi.stubGlobal("fetch", stub);
+    await expect(
+      numbeoFetch("https://www.numbeo.com/cost-of-living/in/Zzz-agent-test"),
+    ).rejects.toThrow(/HTTP 404/);
+    const headers = new Headers(stub.mock.calls[0]?.[1]?.headers);
+    expect(headers.get("user-agent")).toBe(NUMBEO_USER_AGENT);
+  });
+});
+
 describe("staged cost profiles through audit and promote", () => {
   it("are listed, drawn, rendered, promoted and stamped", async () => {
     const f = fixture();
-    f.pages.set(franceUrl, numbeoHtml({ footer: countryFooter }));
+    f.pages.set(franceUrl, franceHtml());
     f.pages.set(parisUrl, numbeoHtml());
     await runCosts(options(f, { countries: ["FR"], maxRequests: 2 }));
     const key = "cost-profiles/fr-paris-numbeo";
