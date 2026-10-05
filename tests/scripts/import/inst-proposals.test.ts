@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  alternateHomes,
   pickQuote,
   quoteFor,
   quoteNames,
@@ -52,6 +53,20 @@ describe("websiteFrom", () => {
 
   it("is null without any page", () => {
     expect(websiteFrom([])).toBeNull();
+  });
+});
+
+describe("alternateHomes", () => {
+  it("offers the main www home page when the website is a sub-site", () => {
+    expect(alternateHomes("https://en.unito.it/")).toEqual(["https://www.unito.it/"]);
+    expect(alternateHomes("https://apply.unipv.eu/")).toEqual(["https://www.unipv.eu/"]);
+  });
+
+  it("offers nothing for a www or bare-domain home page, or for a two-part registrable domain", () => {
+    expect(alternateHomes("https://www.unibo.it/")).toEqual([]);
+    expect(alternateHomes("https://unibo.it/")).toEqual([]);
+    expect(alternateHomes("https://www.example.ac.uk/")).toEqual([]);
+    expect(alternateHomes("https://study.example.ac.uk/")).toEqual(["https://www.example.ac.uk/"]);
   });
 });
 
