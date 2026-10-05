@@ -1,0 +1,47 @@
+{
+  "slug": "it-ca-foscari-venezia-roncade-digital-management-l18",
+  "programmePage": null,
+  "facts": {
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.unive.it/pag/40975/",
+          "quote": "con questa lettera, iniziare la cosiddetta procedura di preiscrizione e richiesta di visto, attraverso il portale Universitaly del Ministero Italiano dell'Università e della Ricerca (MUR)"
+        }
+      ]
+    }
+  },
+  "notes": "Aucun frais de scolarité spécifique pour les étudiants non-UE n'a été trouvé dans les pages fournies. La page mentionne une exonération pour certains étudiants internationaux, mais pas de montant unique pour tous. Les documents listés sont pour les étudiants non-européens demandant un visa.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.unive.it/pag/41325/",
+            "quote": "Coloro che presentano domanda per corsi di laurea devono aver ottenuto un diploma di scuola secondaria dopo aver completato almeno 12 anni di scolarità."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Documents requis pour l'admission : diplôme, relevé de notes et certificats de langue. Vérifiez les détails sur le portail apply.unive.it.",
+          "en": "Required documents for admission: diploma, transcript, and language certificates. Check details on the apply.unive.it portal."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unive.it/pag/40975/",
+            "quote": "Diploma finale di scuola secondaria superiore e certificato attestante gli esami superati (sia in lingua originale che tradotti ufficialmente in italiano o in inglese se necessario)"
+          },
+          {
+            "url": "https://www.unive.it/pag/40975/",
+            "quote": "Certificato di lingua inglese E/O certificato di lingua italiana: il livello e i requisiti sono specificati nella pagina web del corso specifico su unive.it"
+          }
+        ]
+      }
+    ]
+  }
+}

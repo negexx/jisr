@@ -1,6 +1,35 @@
 {
   "slug": "it-milano-bocconi-milano-business-world-bachelor-in-business-l18",
-  "programmePage": null,
-  "facts": {},
-  "notes": "Nessuna delle pagine fornite è la pagina del programma World Bachelor in Business (WBB) né una pagina di ammissione per candidati non-EU con diploma straniero. Le uniche menzioni del WBB sono: (a) il contributo annuale di € 25.000 per il WBB nella pagina delle tasse per studenti iscritti ('mentre per il World Bachelor in Business (WBB) è previsto un contributo annuale di € 25.000') e nel regolamento dei Master of Science Programs ('World Bachelor in Business'); (b) l'eccezione di scadenza per la prima rata degli immatricolati WBB. Il contributo di 25.000 euro è indicato nella pagina 'Tasse e contributi universitari' sotto la sezione 'Corsi di laurea triennale e corso di laurea magistrale in giurisprudenza' e non è qualificato come importo per studenti non-EU: non è quindi stato inserito come tuition per questo programma. Le pagine non danno durata, lingua di insegnamento, intakes, canale di candidatura (nessuna menzione di Universitaly né di portale di ateneo per questo programma) né lista di documenti."
+  "programmePage": "https://www.unibocconi.it/en/programs/bachelor-science/world-bachelor-business",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.unibocconi.it/en/programs/bachelor-science/world-bachelor-business",
+          "quote": "It is a unique 4-year program, developed with two prestigious partner universities"
+        },
+        {
+          "url": "https://www.unibocconi.it/en/programs/bachelor-science/world-bachelor-business/educational-objectives",
+          "quote": "The program covers four years of study: the Italian degree is three years long, while the foreign degrees last four years."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unibocconi.it/en/programs/bachelor-science/world-bachelor-business",
+          "quote": "English is the common language of the WBB, and students become versed in the language of business in Asia, Europe and North America during extracurricular activities and internships arranged in each country."
+        },
+        {
+          "url": "https://www.unibocconi.it/en/programs/bachelor-science/world-bachelor-business/educational-objectives",
+          "quote": "The World Bachelor in Business (WBB) is entirely taught in English and jointly designed by Bocconi University"
+        }
+      ]
+    }
+  },
+  "notes": "Teaching languages: pages mention Chinese, Italian and a \"Second Foreign Language\" as subjects/classes within the curriculum; these are course subjects, not programme teaching languages, so only English is listed. Intakes: no dated deadline or start date with day/month/year is given for this programme. ApplicationChannel: no page names Universitaly or a university application portal/form for this programme; the programme page only says \"This program has specific application and admissions procedures, as well as dedicated fees, scholarships and accommodation.\" Tuition: the € 25.000 annual contribution for WBB is from a general fees page (a.a. 2026-27) and is not tied to non-EU/foreign-qualification status; it is also tied to enrollment at Bocconi only, while the programme spans three universities. Included with caution; auditor should verify the amount applying to the Moroccan applicant for the current year. The two 100% Full tuition waivers pages concern Italian-resident students and therefore do not state a fee for this applicant."
 }

@@ -15,41 +15,40 @@ summary:
   ar:
     text: International Economics and Finance, Università commerciale Luigi Bocconi di Milano (Milano). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
     status: draft
-officialUrl: null
+officialUrl: https://www.unibocconi.it/en/programs/bachelor-science/international-economics-and-finance
 durationYears:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 teachingLanguages:
-  value:
-    - en
-  source: mur
-  info_kind: TODO_read_source
+  value: null
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
   rules: []
 scholarships: []
 sources:
-  mur:
-    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+  programme:
+    url: https://www.unibocconi.it/en/programs/bachelor-science/international-economics-and-finance
     last_verified_at: null
 _review:
   kind: programs
@@ -60,5 +59,9 @@ _review:
   field: business-economics
   confidence: high
   officialUrl: ""
-  todo: "MUR lists: degree class L-33 Scienze economiche, language Inglese, mode Convenzionale, access locale, town Milano; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants"
+  todo: "MUR lists: degree class L-33 Scienze economiche, language Inglese, mode Convenzionale, access locale, town Milano; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: mur:01503:l33:international-economics-and-finance@milano
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence: []
+  notes: "Tuition: no programme page states a tuition fee for non-EU, non-Italian-resident Bachelor students. The only fee page for Bachelor programs gives the amount for Italian-first-year students ('Per gli studenti di 1° anno di corso iscritti ad un corso di laurea triennale ... è previsto un investimento economico pari a 17.000 euro all’anno'), a table modulated by ISEE band ('Agevolazione Totale 20% Partial tuition waiver € 13.600 ...'), and other pages are about Master of Science programs or payment deadlines; no institution-wide international-student fee page was supplied, so tuition is left out. Intakes: the pages give payment deadlines (e.g. 'Il conguaglio di prima rata previsto per gli studenti immatricolati di 1° anno a.a. 2027/2028 deve essere pagato entro il 15 ottobre 2027') but no application deadline for international applicants, so intakes are left out. Application channel and documents: no page names Universitaly, the university's own application portal, or a document list for applicants, so those facts are omitted."

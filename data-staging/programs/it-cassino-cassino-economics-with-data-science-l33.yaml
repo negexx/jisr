@@ -15,41 +15,113 @@ summary:
   ar:
     text: Economics with data science, Università degli Studi di Cassino e del Lazio Meridionale (Cassino). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
     status: draft
-officialUrl: null
+officialUrl: https://www.eds.unicas.it/
 durationYears:
-  value: null
-  source: mur
-  info_kind: TODO_read_source
+  value: 3
+  source: programme
+  info_kind: official
 teachingLanguages:
-  value:
-    - en
-  source: mur
-  info_kind: TODO_read_source
+  value: null
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: mur
-  info_kind: TODO_read_source
+  value: it-universitaly
+  source: page-2
+  info_kind: official
 documents:
-  value: null
-  source: mur
-  info_kind: TODO_read_source
+  value:
+    - slug: high-school-transcript
+      name:
+        fr:
+          text: Relevé de notes du lycée
+          status: draft
+        en:
+          text: High school transcript
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae
+          status: draft
+        en:
+          text: Curriculum vitae
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation letter
+          status: draft
+      translationRequired: null
+    - slug: certificate-of-proficiency-in-english
+      name:
+        fr:
+          text: Certificat de compétence en anglais
+          status: draft
+        en:
+          text: Certificate of proficiency in English
+          status: draft
+      translationRequired: null
+    - slug: passport-or-identity-card
+      name:
+        fr:
+          text: Passeport ou carte d'identité en cours de validité
+          status: draft
+        en:
+          text: Current (valid) passport or identity card
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
-  source: mur
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Note minimale de 70% au lycée, avec une note de mathématiques d'au moins 70%. Un diplôme de fin d'études secondaires obtenu depuis plus de 5 ans n'est pas accepté.
+          status: draft
+        en:
+          text: Overall high school grade point average minimum 70%, with a math grade of at least 70%. A high school diploma older than 5 years is not accepted.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: L'inscription à l'année universitaire 2026/2027 est limitée aux étudiants nés entre 2001 et 2008; il faut avoir 18 ans au plus tard le 31 août 2026.
+          status: draft
+        en:
+          text: Enrollment in the 2026/2027 academic program is limited to students born between 2001 and 2008; applicants must be at least 18 years old by August 31st, 2026.
+          status: draft
 scholarships: []
 sources:
-  mur:
-    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+  programme:
+    url: https://www.eds.unicas.it/
+    last_verified_at: null
+  page-2:
+    url: https://eds.unicas.it/admission/enrollment
+    last_verified_at: null
+  page-3:
+    url: https://www.eds.unicas.it/admission/admission-criteria
     last_verified_at: null
 _review:
   kind: programs
@@ -60,5 +132,27 @@ _review:
   field: business-economics
   confidence: low
   officialUrl: ""
-  todo: "MUR lists: degree class L-33 Scienze economiche, language Inglese, mode Convenzionale, access accesso libero, town Cassino; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); the degree class(es) and the course name point to different fields or to a field outside the three: check the content"
+  todo: "MUR lists: degree class L-33 Scienze economiche, language Inglese, mode Convenzionale, access accesso libero, town Cassino; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); the degree class(es) and the course name point to different fields or to a field outside the three: check the content; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: mur:06001:l33:economics-with-data-science@cassino
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://www.eds.unicas.it/
+      quote: "Duration: 3 years Level: Bachelor"
+    - fact: applicationChannel
+      url: https://eds.unicas.it/admission/enrollment
+      quote: fill in the "pre-enrolment application" at UniversItaly (the official web portal of the Italian Ministry of University and Research for international students)
+    - fact: documents
+      url: https://eds.unicas.it/admission/enrollment
+      quote: "The following documents must be provided: high school transcript; curriculum vitae; motivation letter; certificate of proficiency in English; current (valid) passport or identity card."
+    - fact: requirements.req-1
+      url: https://www.eds.unicas.it/admission/admission-criteria
+      quote: "overall high school grade point average (minimum requirement: 70%) with an emphasis on math, the grade of which must not be less than 70%. A high school diploma or a bachelor older than 5 years will not be considered"
+    - fact: requirements.req-2
+      url: https://www.eds.unicas.it/admission/admission-criteria
+      quote: enrollment in the 2026/2027 academic program is limited to students born between 2001 and 2008
+    - fact: requirements.req-2
+      url: https://www.eds.unicas.it/admission/admission-criteria
+      quote: students should be at least that age when joining our program (by August 31st, 2026)
+  notes: Aucun frais de scolarité n'est indiqué pour ce programme (les pages ne donnent qu'une taxe administrative de 15 € pour la pré-admission). Les pages ne précisent pas si le programme est enseigné en anglais ni la date limite de candidature.

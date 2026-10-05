@@ -1,13 +1,13 @@
 {
   "slug": "it-roma-luiss-roma-management-and-artificial-intelligence-l18",
-  "programmePage": null,
+  "programmePage": "https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/management-and-artificial-intelligence",
   "facts": {
     "durationYears": {
       "value": 3,
       "evidence": [
         {
-          "url": "https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration",
-          "quote": "Credits 180 ECTS Duration 3 Years Language English"
+          "url": "https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/management-and-artificial-intelligence",
+          "quote": "Credits 180 ECTS Duration 3 Years Language English Year 2027/2028"
         }
       ]
     },
@@ -17,38 +17,25 @@
       ],
       "evidence": [
         {
-          "url": "https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration",
-          "quote": "Credits 180 ECTS Duration 3 Years Language English"
+          "url": "https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/management-and-artificial-intelligence",
+          "quote": "belonging to the L-18 degree class and taught entirely in English"
         }
       ]
     }
   },
-  "notes": "The supplied Luiss page for Business Administration is the closest page for this Bachelor-level programme; no page is specifically dedicated to Management and Artificial Intelligence. Duration (3 years, 180 ECTS, English) and the programme's bilingual name in the admission lists are the only facts evidenced for this Bachelor. The Italian-language admission pages for non-EU students (Ammissione con certificazioni, Extra-UE) mention Business Administration only as one of several degree courses and cover admissions generally: no deadline for a specific programme, no document list for this programme. No tuition for non-EU/international Bachelor students living abroad is stated for this programme; the € 15.000 'contributo unico' quotes appear in EU/Schengen admission pages and in the extra-UE page's FAQ, and the extra-UE page requires a Bando for the procedure, so tuition is left out. No application channel (Universitaly or a Luiss portal) for this programme is named in the pages supplied.",
+  "notes": "La page officielle du programme indique une date de publication des annonces d'admission en octobre 2026 et aucun délai daté pour les candidats non-UE. La page apply.luiss.it mentionne €14,000 par an, mais les modalités de candidature pour les étudiants extra-UE ne sont pas disponibles pour le moment (\"Not available for applying at the moment\"), donc ce montant n'est pas confirmé pour cette catégorie. Aucun canal de candidature (Universitaly ou portail propre de l'université) n'est mentionné pour les étudiants non-UE. Les frais de scolarité ne sont pas inclus en raison de l'absence de confirmation pour les étudiants non-UE.",
   "requirements": {
     "rules": [
       {
         "kind": "manual_check",
         "note": {
-          "fr": "Les pages ne donnent pas de critères d'admission détaillés (notes minimales, test, documents) : le Bando sera publié en octobre 2026. Vérifiez la procédure correspondant à votre profil (diplôme marocain, hors UE).",
-          "en": "The pages give no detailed admission criteria (grade thresholds, test, documents): the Bando will be published in October 2026. Check the procedure matching your profile (Moroccan diploma, non-EU)."
+          "fr": "Les admissions exigent certains scores SAT/ACT/IB ou un Test d'admission Luiss. Vérifiez les scores minimaux et les modalités.",
+          "en": "Admissions require certain scores of SAT/ACT/IB or to take a Luiss Admission Test. Check minimum scores and procedures."
         },
         "evidence": [
           {
-            "url": "https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration",
-            "quote": "The admission announcements, which include eligibility requirements, selection procedures, required documents, and application deadlines, will be published in October 2026."
-          }
-        ]
-      },
-      {
-        "kind": "manual_check",
-        "note": {
-          "fr": "Aucune date limite de candidature pour 2027/2028 n'est donnée pour ce programme : les échéances seront publiées dans le Bando d'admission.",
-          "en": "No application deadline for 2027/2028 is given for this programme: the deadlines will be published in the admission announcement (Bando)."
-        },
-        "evidence": [
-          {
-            "url": "https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration",
-            "quote": "Visit the section dedicated to admissions to Luiss Bachelor’s Degree Programmes to check for updates and find the procedure that matches your profile."
+            "url": "https://apply.luiss.it/en_GB/courses/course/16-bachelors-management-and-artificial-intelligence---english",
+            "quote": "Admissions require certain scores of SAT/ACT/IB or to take a Luiss Admission Test"
           }
         ]
       }

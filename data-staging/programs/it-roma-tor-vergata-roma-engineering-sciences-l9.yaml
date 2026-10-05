@@ -15,9 +15,9 @@ summary:
   ar:
     text: Engineering Sciences, Università degli studi di Roma Tor Vergata (Roma). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
     status: draft
-officialUrl: https://web.uniroma2.it/en/percorso/academics/sezione/bachelor_degree
+officialUrl: https://web.uniroma2.it/contenuto/engineering-sciences-aa-2026-2027
 durationYears:
-  value: null
+  value: 3
   source: programme
   info_kind: official
 teachingLanguages:
@@ -46,20 +46,20 @@ requirements:
   info_kind: official
   rules:
     - id: req-1
-      source: page-2
+      source: page-3
       info_kind: official
       kind: prior_study_years_min
       years: 12
     - id: req-2
-      source: page-3
+      source: programme
       info_kind: official
       kind: manual_check
       note:
         fr:
-          text: Vérifiez si votre diplôme de fin d'études secondaires est reconnu admissible selon la loi italienne et obtenu après au moins 12 ans de scolarité.
+          text: Une preuve de connaissances obligatoire est prévue pour l'admission ; elle ne bloque pas l'inscription.
           status: draft
         en:
-          text: Check whether your secondary school diploma is recognised as eligible under Italian law and obtained after at least 12 years of schooling.
+          text: A compulsory knowledge assessment test is required for admission; it does not prevent enrollment.
           status: draft
     - id: req-3
       source: page-3
@@ -67,21 +67,21 @@ requirements:
       kind: manual_check
       note:
         fr:
-          text: Préparez pour l'immatriculation le diplôme original et les bulletins scolaires du secondaire; pour les pays signataires de la Convention de Lisbonne, fournissez l'Attestato ARDI ou la Dichiarazione di Valore.
+          text: Préinscription obligatoire sur Universitaly avant le 31 juillet pour les candidats non-UE résidant à l'étranger.
           status: draft
         en:
-          text: Prepare for enrolment the original secondary school diploma and school report cards; for Lisbon Convention signatory countries, provide the ARDI Statement of Correspondence or the Declaration of Value.
+          text: Mandatory pre-enrollment on Universitaly by July 31 for non-EU applicants living abroad.
           status: draft
 scholarships: []
 sources:
   programme:
-    url: https://web.uniroma2.it/en/percorso/academics/sezione/bachelor_degree
+    url: https://web.uniroma2.it/contenuto/engineering-sciences-aa-2026-2027
     last_verified_at: null
   page-2:
-    url: https://web.uniroma2.it/en/percorso/admissions
+    url: https://www-2023.studenti.uniroma2.it/en/preiscrizione-e-visto-dingresso/
     last_verified_at: null
   page-3:
-    url: https://www-2023.studenti.uniroma2.it/it_it/documenti-richiesti-per-liscrizione-con-titolo-estero/
+    url: https://web.uniroma2.it/en/percorso/admissions
     last_verified_at: null
 _review:
   kind: programs
@@ -97,16 +97,25 @@ _review:
   preparedBy: assistant
   preparedAt: 2026-10-05
   evidence:
+    - fact: durationYears
+      url: https://web.uniroma2.it/contenuto/engineering-sciences-aa-2026-2027
+      quote: "Durata: 3 anni Tipo di accesso: procedure differenziate di ammissione"
+    - fact: durationYears
+      url: https://engineering-sciences.uniroma2.it/about-us/study-engineering-in-italy/
+      quote: Bachelor’s Degree in Engineering Sciences Class L-9 – Industrial Engineering | 3 Years | 180 ECTS
+    - fact: applicationChannel
+      url: https://www-2023.studenti.uniroma2.it/en/preiscrizione-e-visto-dingresso/
+      quote: If you are a non-EU citizen residing abroad, you must submit a pre-enrolment application to request an entry visa for study purposes in order to enter Italy. You must submit the pre-enrolment application on the Universitaly platform (www.universitaly.it)
     - fact: applicationChannel
       url: https://web.uniroma2.it/en/percorso/admissions
-      quote: The pre-enrollment application on Universitaly is mandatory for all non-EU applicants not residing in Italy (including those holding a residence permit for other EU countries).
+      quote: The pre-enrollment application on Universitaly is mandatory for all non-EU applicants not residing in Italy
     - fact: requirements.req-1
       url: https://web.uniroma2.it/en/percorso/admissions
-      quote: The qualification must be obtained at the end of a school period equal to at least 12 years of schooling and allow access at the universities of the country where the qualification was obtained (or of the country of reference of the educational system) to a course similar to the one in which the student wants to enroll in Italy.
+      quote: The qualification must be obtained at the end of a school period equal to at least 12 years of schooling and allow access at the universities of the country where the qualification was obtained
     - fact: requirements.req-2
-      url: https://www-2023.studenti.uniroma2.it/it_it/documenti-richiesti-per-liscrizione-con-titolo-estero/
-      quote: Requisito minimo per l’accesso ai corsi triennali o ai corsi a ciclo unico è il possesso di un diploma finale di scuola secondaria riconosciuto idoneo secondo la legge italiana e le norme stabilite dal Ministero italiano dell’Università e della Ricerca.
+      url: https://web.uniroma2.it/contenuto/engineering-sciences-aa-2026-2027
+      quote: Accesso libero con prova di verifica obbligatoria delle conoscenze richieste per l'ammissione al corso. L'esito della prova non preclude la possibilità di immatricolarsi
     - fact: requirements.req-3
-      url: https://www-2023.studenti.uniroma2.it/it_it/documenti-richiesti-per-liscrizione-con-titolo-estero/
-      quote: Titolo scolastico finale in originale Pagelle scolastiche relative alla scuola secondaria di secondo grado Per la verifica dell’idoneità del titolo, gli studenti in possesso di titoli emessi da paesi firmatari della Convenzione di Lisbona possono presentare l’Attestato di Corrispondenza ARDI scaricabile gratuitamente dalla banca dati ARDI (verificare l’elenco dei Paesi e dei titoli direttamente nella banca dati ARDI) o la Dichiarazione di Valore rilasciata dall’Ambasciata Italiana presente sul territorio del paese a cui fa riferimento l’ordinamento della qualifica.
-  notes: The pages do not state a duration, teaching language, tuition, or intake deadlines for the Engineering Sciences bachelor's degree. Tuition was omitted because the pages give no single EUR amount for a full-time Bachelor student from outside the EU living abroad; the only fees mentioned are the regional tax and stamp duty (first instalment of EUR 156.00) and ISEE-based bands, and the international-student tuition page is only linked. The document list is taken from the university-wide admissions page for non-EU applicants requiring a pre-enrolment on Universitaly; it does not mention translation requirements for those documents. No language proficiency requirement is stated for this programme.
+      url: https://web.uniroma2.it/en/percorso/admissions
+      quote: The deadline to submit UniversItaly pre-enrollment is July 31 except for programs that require entrance exam, in that case the pre-enrollment must be submitted before the test.
+  notes: "Tuition left out: no page states one EUR amount for a full-time Bachelor student from outside the EU living abroad for this programme; the pages only refer to fee calculation by ISEE/income band and point to external tuition pages not supplied. ApplicationChannel it-universitaly chosen because non-EU applicants living abroad must pre-enrol on Universitaly; the programme's own application-assessment route via Delphi is described only as a general university procedure, and the programme itself is described as \"procedure differenziate di ammissione\"."

@@ -15,41 +15,41 @@ summary:
   ar:
     text: Economics and Business, Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma (Roma). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
     status: draft
-officialUrl: null
+officialUrl: https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/economics-and-business
 durationYears:
-  value: null
-  source: mur
-  info_kind: TODO_read_source
+  value: 3
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
   rules: []
 scholarships: []
 sources:
-  mur:
-    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+  programme:
+    url: https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/economics-and-business
     last_verified_at: null
 _review:
   kind: programs
@@ -60,5 +60,15 @@ _review:
   field: business-economics
   confidence: high
   officialUrl: ""
-  todo: "MUR lists: degree class L-33 Scienze economiche, language Inglese, mode Convenzionale, access accesso libero, town Roma; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so)"
+  todo: "MUR lists: degree class L-33 Scienze economiche, language Inglese, mode Convenzionale, access accesso libero, town Roma; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: mur:05805:l33:economics-and-business@roma
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/economics-and-business
+      quote: Credits 180 ECTS Duration 3 Years Language English
+    - fact: teachingLanguages
+      url: https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/economics-and-business
+      quote: Credits 180 ECTS Duration 3 Years Language English
+  notes: The programme page states the annual tuition fee of €15,000 for the Bachelor's Degree in Economics and Business for 2027/2028 without restricting it to EU students; recorded as tuition for a non-EU applicant. Admission procedures, required documents and application deadlines for 2027/2028 will be published in October 2026, so no intake dates could be quoted. No document list, language requirement or other admission requirement for this programme was stated in the supplied pages (the transfer/ammissione pages concern other procedures or other applicant categories).

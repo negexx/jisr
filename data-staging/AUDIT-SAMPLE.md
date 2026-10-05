@@ -2,296 +2,159 @@
 
 For each record: open the link, confirm the quote is there and that it supports the value (right programme, right applicant group, right year). Then set `audited = y` and `outcome = ok` (or `wrong` + a note) in `AUDIT.csv`.
 
-## scholarships/deutschlandstipendium  _(batch b26-a3c973)_
+## institutions/it-ca-foscari-venezia-roncade  _(batch b27-2752af)_
 
-**Deutschlandstipendium**
+**Università Ca' Foscari Venezia**
 
-- **destinations**: `DE`
-- **eligibleNationalities**: (any international applicant)
-- **fields**: ALL FIELDS
-- **institutions**: ALL INSTITUTIONS of the destination
-- **summary** (fr, draft): Bourse au mérite de 300 € par mois (150 € de l'État fédéral, 150 € de parrains privés), attribuée par les universités qui participent au programme. Les étudiants de toutes nationalités peuvent candidater ; vérifiez que votre université y participe.
-- **summary** (en, draft): Merit scholarship of EUR 300 a month (EUR 150 from the federal government, EUR 150 from private sponsors), awarded by the universities that take part. Students of all nationalities can apply; check that your university takes part.
-- **howToApply** (fr, draft): Candidatez directement auprès de votre université, selon ses critères, ses pièces et ses dates : chaque université attribue le Deutschlandstipendium.
-- **howToApply** (en, draft): Apply directly to your university, following its criteria, documents and dates: each university awards the Deutschlandstipendium.
-- **provider site**: www.deutschlandstipendium.de. Confirm: this is the provider's own site.
-- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
-- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
-- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.
-- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.
-- **support**: `{"amount":{"min":30000,"max":30000,"currency":"EUR","per":"month"},"covers":[]}` (official; source page-1)
-  - "300 euros per month for international top-class talent" — https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html
-  - "sponsor young talent with a pledge of 150 euros per month" — https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html
-  - "The Federal Government matches this amount with another 150 euros" — https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html
-- **eligibility**: "First- and higher-semester students of all nationalities can apply directly to their university." — https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html
-- **eligibility**: "supports talented and high-achieving students at public and state-recognised universities in Germany" — https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html
-- **level**: "Grundsätzlich ist jedes Studium an einer staatlichen oder staatlich anerkannten Hochschule förderungsfähig." — https://www.deutschlandstipendium.de/deutschlandstipendium/de/studierende/haeufig-gestellte-fragen/haeufig-gestellte-fragen.html
-- **howToApply**: "The Deutschlandstipendium is awarded by the universities." — https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html
-- **howToApply**: "Reichen Sie Ihre Bewerbung mit den geforderten Nachweisen an Ihrer Hochschule ein." — https://www.deutschlandstipendium.de/deutschlandstipendium/de/studierende/stipendiatin-oder-stipendiat-werden/stipendiatin-oder-stipendiat-werden.html
-- **page**: https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html
+- **type**: `public`
+- **website**: `https://www.unive.it/`
+- evidence: "Home: Università Ca' Foscari Venezia Università Ca' Foscari Venezia Webmail" — https://www.unive.it/
 
-## scholarships/it-dsu-adisu-puglia  _(batch b26-a3c973)_
+## programs/it-ca-foscari-venezia-venezia-business-administration-and-management-l18  _(batch b27-2752af)_
 
-**Borsa di studio ADISU Puglia**
+**Business Administration and Management**, Università Ca' Foscari Venezia
 
-- **destinations**: `IT`
-- **eligibleNationalities**: (any international applicant)
-- **fields**: ALL FIELDS
-- **institutions**: `it-bari-politecnico-bari`
-- **summary** (fr, draft): Bourse régionale gérée par ADISU Puglia pour les étudiants des universités des Pouilles. L'appel est ouvert aux étudiants italiens et étrangers ; ceux dont la famille a des revenus à l'étranger fournissent des documents de leur pays.
-- **summary** (en, draft): Regional scholarship managed by ADISU Puglia for students at universities in Puglia. The call is open to Italian and foreign students; those whose families have income abroad submit documents from their home country.
-- **howToApply** (fr, draft): Demande uniquement en ligne via le Portail Étudiants d'ADISU Puglia. Les documents sur les revenus à l'étranger, traduits en italien et légalisés ou apostillés, sont téléversés dans la section dédiée du portail.
-- **howToApply** (en, draft): Apply online only through the ADISU Puglia Student Portal. Documents on income abroad, translated into Italian and legalised or apostilled, are uploaded in the dedicated section of the portal.
-- **provider site**: www.adisupuglia.it. Confirm: this is the provider's own site.
-- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
-- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
-- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.
-- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.
-- **support**: `{"amount":null,"covers":["tuition"]}` (official; source page-2)
-  - "Eligible students who are not awarded a scholarship and scholarship holders are entitled to exemption from or reimbursement of university fees for the current academic year" — https://adisupuglia.it/output_allegato.php?id=1444596
-- **eligibility**: "Italian and foreign students who meet the economic and merit requirements" — https://adisupuglia.it/output_allegato.php?id=1444596
-- **level**: "studenti iscritti ai corsi di laurea" — https://adisupuglia.it/output_allegato.php?id=1444063
-- **howToApply**: "Le domande di partecipazione dovranno essere presentate esclusivamente online attraverso il Portale Studenti ADISU Puglia" — https://www.adisupuglia.it/pagina106703_borse-di-studio.html
-- **howToApply**: "Students are required to upload the documentation as indicated above through the student portal, in the appropriate section on foreign incomes" — https://adisupuglia.it/output_allegato.php?id=1444596
-- **howToApply**: "The documentation must be translated into Italian, legalized, or apostilled, in accordance with current regulations" — https://adisupuglia.it/output_allegato.php?id=1444596
-- **page**: https://www.adisupuglia.it/pagina106703_borse-di-studio.html
+- **durationYears**: `3` (official; source programme)
+  - "Duration: 3 years ECTS/CFU: 180 credits" — https://www.unive.it/web/en/12483/home
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "Venue: Venice Language: English" — https://www.unive.it/web/en/12483/home
+- **applicationChannel**: `it-universitaly` (official; source page-2)
+  - "iniziare la cosiddetta procedura di preiscrizione e richiesta di visto, attraverso il portale Universitaly del Ministero Italiano dell'Università e della Ricerca (MUR)" — https://www.unive.it/pag/40975/
+- **requirement req-1**: `{"kind":"prior_study_years_min","years":12}`
+  - "Coloro che presentano domanda per corsi di laurea devono aver ottenuto un diploma di scuola secondaria dopo aver completato almeno 12 anni di scolarità." — https://www.unive.it/pag/41325/
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Le niveau et les exigences du certificat de langue anglaise et/ou italienne sont précisés sur la page web du cours spécifique ; vérifiez-les.","status":"draft"},"en":{"text":"The level and requirements of the English and/or Italian language certificate are specified on the specific course web page; verify them.","status":"draft"}}}`
+  - "Certificato di lingua inglese E/O certificato di lingua italiana: il livello e i requisiti sono specificati nella pagina web del corso specifico su unive.it" — https://www.unive.it/pag/40975/
+- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Les diplômes et certificats d'examens doivent être accompagnés d'une traduction professionnelle en italien ou en anglais si nécessaire.","status":"draft"},"en":{"text":"Diplomas and exam certificates must be accompanied by a professional translation into Italian or English if necessary.","status":"draft"}}}`
+  - "(sia in lingua originale che tradotti ufficialmente in italiano o in inglese se necessario)" — https://www.unive.it/pag/40975/
 
-## scholarships/it-dsu-adisu-umbria  _(batch b26-a3c973)_
+> Preparer's caveats: Le montant des frais de scolarité pour les étudiants internationaux n'est pas indiqué pour ce programme : la page ne donne qu'une exonération (tuition fee waiver) et une taxe régionale de 189 €, et non un montant unique de frais de scolarité pour un étudiant hors UE. Aucune échéance d'admission datée et propre aux candidats non-UE n'est fournie pour ce programme ; les périodes d'admission 2026/2027 sont renvoyées au portail apply.unive.it sans date précise.
 
-**Borsa di studio ADiSU (Umbria)**
+## programs/it-cassino-cassino-economics-with-data-science-l33  _(batch b27-2752af)_
 
-- **destinations**: `IT`
-- **eligibleNationalities**: (any international applicant)
-- **fields**: ALL FIELDS
-- **institutions**: `it-perugia-perugia`
-- **summary** (fr, draft): Bourse régionale d'aide aux études gérée par l'ADiSU pour les étudiants inscrits dans les universités de l'Ombrie. Les étudiants étrangers complètent la demande avec les documents sur les revenus et les biens à l'étranger.
-- **summary** (en, draft): Regional right-to-study grant managed by ADiSU for students enrolled at universities in Umbria. Foreign students complete the application with documents on income and assets held abroad.
-- **howToApply** (fr, draft): Déposer la demande en ligne sur le portail de l'ADiSU (Area studenti). Les étudiants étrangers joignent aussi les documents sur les revenus et les biens à l'étranger.
-- **howToApply** (en, draft): Apply online through the ADiSU student portal (Area studenti). Foreign students also upload the documents on income and assets held abroad.
-- **provider site**: www.adisu.umbria.it. Confirm: this is the provider's own site.
-- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
-- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
-- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.
-- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.
-- **documents**: `[{"slug":"foreign-income-and-assets-documents","name":{"fr":{"text":"Documents sur les revenus et les biens à l'étranger","status":"draft"},"en":{"text":"Documents on income and assets held abroad","status":"draft"}},"translationRequired":null}]` (official; source page-2)
-  - "Gli studenti stranieri devono integrare l’istanza di borsa di studio presentando la documentazione attestante i redditi e i patrimoni prodotti e posseduti all’estero" — https://www.adisu.umbria.it/sites/default/files/2026-07/Bando_borse_di_studio_Adisu_2026_2027_1.pdf
-- **eligibility**: "Gli studenti stranieri devono integrare l’istanza di borsa di studio presentando la documentazione attestante i redditi e i patrimoni prodotti e posseduti all’estero" — https://www.adisu.umbria.it/sites/default/files/2026-07/Bando_borse_di_studio_Adisu_2026_2027_1.pdf
-- **level**: "CORSI DI STUDIO: 1) corsi di laurea;" — https://www.adisu.umbria.it/sites/default/files/2026-07/Bando_borse_di_studio_Adisu_2026_2027_1.pdf
-- **howToApply**: "È possibile presentare domanda per i benefici a concorso e per i servizi a pagamento esclusivamente tramite le apposite istanze digitali disponibili sul portale dell’Agenzia all’indirizzo www.adisu.umbria.it nella sezione Area studenti" — https://www.adisu.umbria.it/concorso-borsa-di-studio/bando/2026-2027/bando-di-concorso-lassegnazione-di-borse-di-studio-e-altri
-- **page**: https://www.adisu.umbria.it/concorso-borsa-di-studio/bando/2026-2027/bando-di-concorso-lassegnazione-di-borse-di-studio-e-altri
+**Economics with data science**, Università degli Studi di Cassino e del Lazio Meridionale
 
-## scholarships/it-dsu-adisurc-campania  _(batch b26-a3c973)_
+- **durationYears**: `3` (official; source programme)
+  - "Duration: 3 years Level: Bachelor" — https://www.eds.unicas.it/
+- **applicationChannel**: `it-universitaly` (official; source page-2)
+  - "fill in the "pre-enrolment application" at UniversItaly (the official web portal of the Italian Ministry of University and Research for international students)" — https://eds.unicas.it/admission/enrollment
+- **documents**: `[{"slug":"high-school-transcript","name":{"fr":{"text":"Relevé de notes du lycée","status":"draft"},"en":{"text":"High school transcript","status":"draft"}},"translationRequired":null},{"slug":"curriculum-vitae","name":{"fr":{"text":"Curriculum vitae","status":"draft"},"en":{"text":"Curriculum vitae","status":"draft"}},"translationRequired":null},{"slug":"motivation-letter","name":{"fr":{"text":"Lettre de motivation","status":"draft"},"en":{"text":"Motivation letter","status":"draft"}},"translationRequired":null},{"slug":"certificate-of-proficiency-in-english","name":{"fr":{"text":"Certificat de compétence en anglais","status":"draft"},"en":{"text":"Certificate of proficiency in English","status":"draft"}},"translationRequired":null},{"slug":"passport-or-identity-card","name":{"fr":{"text":"Passeport ou carte d'identité en cours de validité","status":"draft"},"en":{"text":"Current (valid) passport or identity card","status":"draft"}},"translationRequired":null}]` (official; source page-2)
+  - "The following documents must be provided: high school transcript; curriculum vitae; motivation letter; certificate of proficiency in English; current (valid) passport or identity card." — https://eds.unicas.it/admission/enrollment
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Note minimale de 70% au lycée, avec une note de mathématiques d'au moins 70%. Un diplôme de fin d'études secondaires obtenu depuis plus de 5 ans n'est pas accepté.","status":"draft"},"en":{"text":"Overall high school grade point average minimum 70%, with a math grade of at least 70%. A high school diploma older than 5 years is not accepted.","status":"draft"}}}`
+  - "overall high school grade point average (minimum requirement: 70%) with an emphasis on math, the grade of which must not be less than 70%. A high school diploma or a bachelor older than 5 years will not be considered" — https://www.eds.unicas.it/admission/admission-criteria
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"L'inscription à l'année universitaire 2026/2027 est limitée aux étudiants nés entre 2001 et 2008; il faut avoir 18 ans au plus tard le 31 août 2026.","status":"draft"},"en":{"text":"Enrollment in the 2026/2027 academic program is limited to students born between 2001 and 2008; applicants must be at least 18 years old by August 31st, 2026.","status":"draft"}}}`
+  - "enrollment in the 2026/2027 academic program is limited to students born between 2001 and 2008" — https://www.eds.unicas.it/admission/admission-criteria
+  - "students should be at least that age when joining our program (by August 31st, 2026)" — https://www.eds.unicas.it/admission/admission-criteria
 
-**Borsa di studio ADiSURC Campania**
+> Preparer's caveats: Aucun frais de scolarité n'est indiqué pour ce programme (les pages ne donnent qu'une taxe administrative de 15 € pour la pré-admission). Les pages ne précisent pas si le programme est enseigné en anglais ni la date limite de candidature.
 
-- **destinations**: `IT`
-- **eligibleNationalities**: (any international applicant)
-- **fields**: ALL FIELDS
-- **institutions**: `it-napoli-federico-ii-napoli, it-napoli-vanvitelli-caserta`
-- **summary** (fr, draft): Bourse régionale gérée par ADiSURC pour les étudiants des universités de Campanie. Les étudiants étrangers dont la famille réside à l'étranger sont évalués par un ISEE parificato (ISEEUP) établi auprès d'un CAF.
-- **summary** (en, draft): Regional scholarship managed by ADiSURC for students at universities in Campania. Foreign students whose households live abroad are assessed through an equivalent ISEE (ISEEUP, ISEE parificato) prepared at a CAF.
-- **howToApply** (fr, draft): Demande uniquement en ligne sur le site d'ADiSURC, zone réservée aux étudiants ; les étudiants de nationalité étrangère y accèdent avec les identifiants obtenus lors de l'accréditation. Fournir l'ISEEUP, puis, sur demande, les documents traduits.
-- **howToApply** (en, draft): Apply online only on the ADiSURC website, in the students' reserved area; students of foreign nationality log in with credentials obtained at accreditation. Send the ISEEUP and, if requested, translated documents.
-- **provider site**: www.adisurcampania.it. Confirm: this is the provider's own site.
-- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
-- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
-- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.
-- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.
-- **documents**: `[{"slug":"foreign-income-assets-documents","name":{"fr":{"text":"Documents des autorités du pays d'origine sur les revenus et le patrimoine (traduits par les autorités diplomatiques italiennes)","status":"draft"},"en":{"text":"Documents from the home-country authorities on income and assets (translated by the Italian diplomatic authorities)","status":"draft"}},"translationRequired":null}]` (official; source page-3)
-  - "i documenti rilasciati dalle competenti autorità del Paese ove sono prodotti i redditi ed è posseduto il patrimonio, tradotti in lingua italiana dalle autorità diplomatiche italiane" — https://www.adisurcampania.it/sites/default/files/2026-07/Bando%20di%20Concorso%20a.a.%202026.27.pdf
-- **support**: `{"amount":null,"covers":["housing"]}` (official; source page-2)
-  - "for "non-resident" applicants, a monetary bursary, a catering service bursary and an accommodation service bursary" — https://www.adisurcampania.it/sites/default/files/2026-07/Bando%20di%20Concorso%20a.a.%202026.27_ENG.pdf
-- **eligibility**: "the economic condition of a foreign applicant with household resident abroad or of an Italian applicant residing abroad is defined through the Indicator of the equivalent economic situation abroad" — https://www.adisurcampania.it/sites/default/files/2026-07/Bando%20di%20Concorso%20a.a.%202026.27_ENG.pdf
-- **eligibility**: "Con le credenziali ottenute in fase di accreditamento per studenti minorenni e/o di nazionalità straniera" — https://www.adisurcampania.it/notizie/approvazione-bando-di-concorso-20262027
-- **level**: "se iscritti a corsi di laurea triennale" — https://www.adisurcampania.it/sites/default/files/2026-07/Bando%20di%20Concorso%20a.a.%202026.27.pdf
-- **howToApply**: "La domanda va compilata esclusivamente online attraverso questo sito web" — https://www.adisurcampania.it/notizie/approvazione-bando-di-concorso-20262027
-- **howToApply**: "Gli studenti stranieri possono consultare l’elenco della documentazione necessaria per richiedere l’ISEE parificato" — https://www.adisurcampania.it/notizie/approvazione-bando-di-concorso-20262027
-- **howToApply**: "i documenti rilasciati dalle competenti autorità del Paese ove sono prodotti i redditi ed è posseduto il patrimonio, tradotti in lingua italiana dalle autorità diplomatiche italiane" — https://www.adisurcampania.it/sites/default/files/2026-07/Bando%20di%20Concorso%20a.a.%202026.27.pdf
-- **page**: https://www.adisurcampania.it/notizie/approvazione-bando-di-concorso-20262027
+## programs/it-milano-bocconi-milano-business-world-bachelor-in-business-l18  _(batch b27-2752af)_
 
-## scholarships/it-dsu-ardis-fvg  _(batch b26-a3c973)_
+**Business (World Bachelor in Business)**, Università commerciale Luigi Bocconi di Milano
 
-**Borsa di studio ARDIS (Friuli Venezia Giulia)**
+- **durationYears**: `4` (official; source programme)
+  - "It is a unique 4-year program, developed with two prestigious partner universities" — https://www.unibocconi.it/en/programs/bachelor-science/world-bachelor-business
+  - "The program covers four years of study: the Italian degree is three years long, while the foreign degrees last four years." — https://www.unibocconi.it/en/programs/bachelor-science/world-bachelor-business/educational-objectives
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "English is the common language of the WBB, and students become versed in the language of business in Asia, Europe and North America during extracurricular activities and internships arranged in each country." — https://www.unibocconi.it/en/programs/bachelor-science/world-bachelor-business
+  - "The World Bachelor in Business (WBB) is entirely taught in English and jointly designed by Bocconi University" — https://www.unibocconi.it/en/programs/bachelor-science/world-bachelor-business/educational-objectives
 
-- **destinations**: `IT`
-- **eligibleNationalities**: (any international applicant)
-- **fields**: ALL FIELDS
-- **institutions**: `it-udine-udine`
-- **summary** (fr, draft): Bourse régionale gérée par ARDIS pour les étudiants des universités du Frioul-Vénétie julienne. Les étudiants non européens dont la famille vit à l'étranger obtiennent un ISEE universitaire équivalent (ISEE parificato) auprès d'un CAF conventionné.
-- **summary** (en, draft): Regional scholarship managed by ARDIS for students at universities in Friuli Venezia Giulia. Non-EU students whose families live abroad obtain an equivalent university ISEE (ISEE parificato) from a CAF under agreement (CAF convenzionato).
-- **howToApply** (fr, draft): Demande en ligne sur le site d'ARDIS, chaque année. Les étudiants non européens ne résidant pas en Italie avec seulement un document d'identité étranger s'identifient selon une procédure distincte prévue par l'appel.
-- **howToApply** (en, draft): Apply online through the ARDIS website every academic year. Non-EU students not resident in Italy who hold only a foreign identity document identify themselves through a separate procedure set out in the call.
-- **provider site**: www.ardis.fvg.it. Confirm: this is the provider's own site.
-- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
-- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
-- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.
-- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.
-- **eligibility**: "6% delle borse di studio disponibili agli studenti non comunitari" — https://www.ardis.fvg.it/upload/schede/1784105330.pdf
-- **eligibility**: "Gli studenti non comunitari possono essere considerati fuori sede indipendentemente dalla sede della loro residenza in Italia" — https://www.ardis.fvg.it/upload/schede/1784105330.pdf
-- **level**: "Laurea triennale Triennio superiore di I livello del Conservatorio/Accademia I benefici vengono attribuiti per sette semestri" — https://www.ardis.fvg.it/upload/schede/1784105330.pdf
-- **howToApply**: "Gli studenti che intendono chiedere i benefici devono compilare la domanda online, che sarà resa disponibile sul sito www.ardis.fvg.it" — https://www.ardis.fvg.it/upload/schede/1784105330.pdf
-- **howToApply**: "comunitari e non comunitari, non residenti in Italia, il cui nucleo familiare risiede all’estero devono rivolgersi esclusivamente ai CAF convenzionati per il rilascio dell’ISEE universitario parificato" — https://www.ardis.fvg.it/upload/schede/1784105330.pdf
-- **howToApply**: "Gli studenti non comunitari, in possesso esclusivamente di un documento di identità rilasciato dalle autorità del proprio Paese, e non residenti in Italia" — https://www.ardis.fvg.it/upload/schede/1784105330.pdf
-- **page**: https://www.ardis.fvg.it/upload/schede/1784105330.pdf
+> Preparer's caveats: Teaching languages: pages mention Chinese, Italian and a "Second Foreign Language" as subjects/classes within the curriculum; these are course subjects, not programme teaching languages, so only English is listed. Intakes: no dated deadline or start date with day/month/year is given for this programme. ApplicationChannel: no page names Universitaly or a university application portal/form for this programme; the programme page only says "This program has specific application and admissions procedures, as well as dedicated fees, scholarships and accommodation." Tuition: the € 25.000 annual contribution for WBB is from a general fees page (a.a. 2026-27) and is not tied to non-EU/foreign-qualification status; it is also tied to enrollment at Bocconi only, while the programme spans three universities. Included with caution; auditor should verify the amount applying to the Moroccan applicant for the current year. The two 100% Full tuition waivers pages concern Italian-resident students and therefore do not state a fee for this applicant.
 
-## scholarships/it-dsu-disco-lazio  _(batch b26-a3c973)_
+## programs/it-milano-bocconi-milano-economics-management-and-computer-scienc-l33  _(batch b27-2752af)_
 
-**Borsa di studio DiSCo Lazio**
+**Economics, Management and Computer Science**, Università commerciale Luigi Bocconi di Milano
 
-- **destinations**: `IT`
-- **eligibleNationalities**: (any international applicant)
-- **fields**: ALL FIELDS
-- **institutions**: `it-cassino-cassino, it-roma-biomedico-roma, it-roma-la-sapienza-rieti, it-roma-la-sapienza-roma, it-roma-luiss-roma, it-roma-tor-vergata-roma`
-- **summary** (fr, draft): Bourse régionale gérée par Lazio DiSCo pour les étudiants des universités du Latium, y compris les étudiants internationaux dont la famille vit à l'étranger, évalués par un ISEEUP (ISEE parificato).
-- **summary** (en, draft): Regional scholarship managed by Lazio DiSCo for students at universities in Lazio, including international students whose families live abroad, assessed through an ISEEUP (ISEE parificato).
-- **howToApply** (fr, draft): Demande uniquement en ligne depuis l'espace personnel sur laziodisco.it ; les étudiants dont la famille est à l'étranger fournissent des documents consulaires traduits en italien et légalisés.
-- **howToApply** (en, draft): Apply only through the online form in your personal account at laziodisco.it; students whose families are abroad provide consular documents translated into Italian and legalised.
-- **provider site**: laziodisco.it. Confirm: this is the provider's own site.
-- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
-- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
-- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.
-- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.
-- **documents**: `[{"slug":"consular-income-documents","name":{"fr":{"text":"Documents des autorités diplomatiques ou consulaires italiennes (famille, revenus, patrimoine)","status":"draft"},"en":{"text":"Documents issued by Italian diplomatic or consular authorities (household, income, assets)","status":"draft"}},"translationRequired":null}]` (official; source page-1)
-  - "Devi presentare la documentazione rilasciata dalle autorità diplomatiche o consolari italiane nel tuo Paese d’origine, che deve essere obbligatoriamente tradotta in italiano e legalizzata/apostillata." — https://laziodisco.it/bando-diritto-allo-studio-2026-2027/faq-studenti-internazionali/
-- **eligibility**: "The economic situation of international students (with families not residing in Italy), and of Italian students residing abroad is defined through the Equalized Indicator of the Equivalent Economic Situation abroad" — https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-ENG-26-27.pdf
-- **eligibility**: "to ensure balanced access to the scholarship by both EU and non-EU students" — https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-ENG-26-27.pdf
-- **level**: "matricole dei corsi di laurea di primo livello" — https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-26-27-con-EC.pdf
-- **howToApply**: "applications must be filed exclusively through the online form accessible from the student’s personal account at www.laziodisco.it" — https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-ENG-26-27.pdf
-- **howToApply**: "International students with exclusively an identity document issued by foreign authorities (Passport)" — https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-ENG-26-27.pdf
-- **howToApply**: "Devi presentare la documentazione rilasciata dalle autorità diplomatiche o consolari italiane nel tuo Paese d’origine, che deve essere obbligatoriamente tradotta in italiano e legalizzata/apostillata." — https://laziodisco.it/bando-diritto-allo-studio-2026-2027/faq-studenti-internazionali/
-- **howToApply**: "L’ISEEUP è l’Indicatore della Situazione Economica Equivalente Parificato. Sostituisce l’ISEE per il diritto allo studio se il tuo nucelo familiare risiede o ha redditi in un paese diverso dall’Italia." — https://laziodisco.it/bando-diritto-allo-studio-2026-2027/faq-studenti-internazionali/
-- **page**: https://laziodisco.it/bando-diritto-allo-studio-2026-2027/faq-studenti-internazionali/
+- **durationYears**: `3` (official; source page-2)
+  - "Nominal duration 3 years (180 ECTS)" — https://apply.unibocconi.it/en_US/courses/course/18-bemacs-bsc-economics-management-and-computer-science
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "The program is offered entirely in English." — https://www.unibocconi.it/en/programs/bachelor-science/economics-management-and-computer-science
 
-## scholarships/it-dsu-edisu-piemonte  _(batch b26-a3c973)_
+> Preparer's caveats: Tuition left out: the only figures found are the institution-wide annual amount for first-year Bachelor of Science students (17,000 EUR/year on https://www.unibocconi.it/it/studenti-iscritti/tasse-e-contributi-universitari) and Master of Science amounts; no quote states one tuition amount specifically for a non-EU applicant with a foreign diploma living abroad for this programme. Application channel left out: no supplied page names Universitaly or the university's own application portal for this programme; the apply.unibocconi.it page names the DreamApply platform but gives no deadlines for the International category and does not state the route in the terms required.
 
-**Borsa di studio EDISU Piemonte**
+## programs/it-milano-bocconi-milano-international-economics-and-finance-l33  _(batch b27-2752af)_
 
-- **destinations**: `IT`
-- **eligibleNationalities**: (any international applicant)
-- **fields**: ALL FIELDS
-- **institutions**: `it-torino-torino, it-torino-politecnico-torino`
-- **summary** (fr, draft): Bourse régionale gérée par EDISU Piemonte pour les étudiants inscrits dans les universités du Piémont, y compris les étudiants internationaux non-UE, qui joignent une documentation consulaire traduite en italien.
-- **summary** (en, draft): Regional scholarship managed by EDISU Piemonte for students enrolled at Piedmont universities, including international non-EU students, who attach consular documentation translated into Italian.
-- **howToApply** (fr, draft): Demande en ligne sur le portail EDISU Piemonte; les étudiants non-UE sans résidence en Italie demandent d'abord un code d'accès temporaire et envoient leurs documents consulaires, traduits en italien.
-- **howToApply** (en, draft): Apply online on the EDISU Piemonte portal; non-EU students without residence in Italy first request a Temporary Access Code and send their consular documents, translated into Italian.
-- **provider site**: www.edisu.piemonte.it. Confirm: this is the provider's own site.
-- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
-- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
-- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.
-- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.
-- **documents**: `[{"slug":"consular-documentation","name":{"fr":{"text":"Documents consulaires (composition du foyer, revenus et patrimoine à l'étranger)","status":"draft"},"en":{"text":"Consular documentation (household composition, income and assets abroad)","status":"draft"}},"translationRequired":true}]` (official; source page-2)
-  - "Students must therefore attach consular documentation (both the original language version and the version translated into Italian)" — https://www.edisu.piemonte.it/sites/default/files/documentazione/bandi-di-concorso/Notice_of_competition_scholarship_accomodation_degree_award_and_contribution_for_students_with_a_disability_of_46_p._or_more_registered_for_targeted_employment_a.y_2026_27_1.pdf
-- **support**: `{"amount":null,"covers":["tuition","housing"]}` (official; source page-2)
-  - "exemption from paying tuition fees in accordance with their University's Fee Regulations" — https://www.edisu.piemonte.it/sites/default/files/documentazione/bandi-di-concorso/Notice_of_competition_scholarship_accomodation_degree_award_and_contribution_for_students_with_a_disability_of_46_p._or_more_registered_for_targeted_employment_a.y_2026_27_1.pdf
-  - "may apply for the scholarship and, if non-resident, the accommodation service in the following types of courses" — https://www.edisu.piemonte.it/sites/default/files/documentazione/bandi-di-concorso/Notice_of_competition_scholarship_accomodation_degree_award_and_contribution_for_students_with_a_disability_of_46_p._or_more_registered_for_targeted_employment_a.y_2026_27_1.pdf
-- **eligibility**: "Italian and international students who meet the financial and merit requirements" — https://www.edisu.piemonte.it/sites/default/files/documentazione/bandi-di-concorso/Notice_of_competition_scholarship_accomodation_degree_award_and_contribution_for_students_with_a_disability_of_46_p._or_more_registered_for_targeted_employment_a.y_2026_27_1.pdf
-- **eligibility**: "Non-EU international students must submit benefits applications using the methods described in the following paragraphs" — https://www.edisu.piemonte.it/sites/default/files/documentazione/bandi-di-concorso/Notice_of_competition_scholarship_accomodation_degree_award_and_contribution_for_students_with_a_disability_of_46_p._or_more_registered_for_targeted_employment_a.y_2026_27_1.pdf
-- **level**: "Students enrolled in bachelor's degree courses" — https://www.edisu.piemonte.it/en/scholarships-and-grants/financial-benefits/scholarship-and-grants
-- **howToApply**: "Applications must be submitted online via the EDISU Piemonte portal using one of the following systems" — https://www.edisu.piemonte.it/en/scholarships-and-grants/financial-benefits/scholarship-and-grants
-- **howToApply**: "International students without residence in Italy, and not in possession of the SPID/CIE, must apply through the appropriate registration procedure for the Temporary Access Code" — https://www.edisu.piemonte.it/en/scholarships-and-grants/financial-benefits/scholarship-and-grants
-- **howToApply**: "Students must therefore attach consular documentation (both the original language version and the version translated into Italian)" — https://www.edisu.piemonte.it/sites/default/files/documentazione/bandi-di-concorso/Notice_of_competition_scholarship_accomodation_degree_award_and_contribution_for_students_with_a_disability_of_46_p._or_more_registered_for_targeted_employment_a.y_2026_27_1.pdf
-- **page**: https://www.edisu.piemonte.it/en/scholarships-and-grants/financial-benefits/scholarship-and-grants
+**International Economics and Finance**, Università commerciale Luigi Bocconi di Milano
 
-## scholarships/it-dsu-er-go  _(batch b26-a3c973)_
 
-**Borsa di studio ER.GO (Emilia-Romagna)**
+> Preparer's caveats: Tuition: no programme page states a tuition fee for non-EU, non-Italian-resident Bachelor students. The only fee page for Bachelor programs gives the amount for Italian-first-year students ('Per gli studenti di 1° anno di corso iscritti ad un corso di laurea triennale ... è previsto un investimento economico pari a 17.000 euro all’anno'), a table modulated by ISEE band ('Agevolazione Totale 20% Partial tuition waiver € 13.600 ...'), and other pages are about Master of Science programs or payment deadlines; no institution-wide international-student fee page was supplied, so tuition is left out. Intakes: the pages give payment deadlines (e.g. 'Il conguaglio di prima rata previsto per gli studenti immatricolati di 1° anno a.a. 2027/2028 deve essere pagato entro il 15 ottobre 2027') but no application deadline for international applicants, so intakes are left out. Application channel and documents: no page names Universitaly, the university's own application portal, or a document list for applicants, so those facts are omitted.
 
-- **destinations**: `IT`
-- **eligibleNationalities**: (any international applicant)
-- **fields**: ALL FIELDS
-- **institutions**: `it-bologna-bologna, it-bologna-forli, it-bologna-ravenna, it-bologna-rimini`
-- **summary** (fr, draft): Bourse régionale gérée par ER.GO pour les étudiants des universités d'Émilie-Romagne. Les étudiants internationaux de pays hors UE ayant des revenus à l'étranger fournissent des documents de leur pays pour calculer un équivalent de l'ISEE.
-- **summary** (en, draft): Regional scholarship managed by ER.GO for students at universities in Emilia-Romagna. International students from non-EU countries with income abroad submit home-country documents, used to calculate an equivalent of the ISEE.
-- **howToApply** (fr, draft): Candidature en ligne sur le site d'ER.GO, chaque année. Les documents de revenus étrangers, traduits et légalisés, sont à téléverser dans le Dossier Utente avant les dates limites de l'appel.
-- **howToApply** (en, draft): Apply online through the ER.GO website every academic year. Foreign income documents, translated and legalised, are uploaded in the Dossier Utente by the deadlines set in the call.
-- **provider site**: www.er-go.it. Confirm: this is the provider's own site.
-- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
-- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
-- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.
-- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.
-- **documents**: `[{"slug":"foreign-income-documents","name":{"fr":{"text":"Documentation sur les revenus à l'étranger","status":"draft"},"en":{"text":"Foreign income documentation","status":"draft"}},"translationRequired":true}]` (official; source page-2)
-  - "Remember to upload the original documents, with the translation and legalization, in your Dossier Utente, in the section Corrispondenza e Protocollo > Invia Documentazione > Documentazione redditi esteri" — https://www.er-go.it/international-students/application/how-to-apply
-- **support**: `{"amount":null,"covers":["tuition"]}` (official; source page-1)
-  - "If you are eligible for the scholarship, you are entitled to the total tuition fee exemption" — https://www.er-go.it/international-students/benefits/focus-on-scholarship
-- **eligibility**: "Per gli studenti internazionali matricole provenienti da Paesi non appartenenti all’Unione Europea e con nucleo familiare non residente in Italia sono formulate apposite graduatorie" — https://www.er-go.it/cosa-fare-per/bandi-di-concorso/leggi-il-bando/sezione-i-norme-generali/@@display-file/file/sezione-i-norme-generali.pdf
-- **level**: "matricole extraue dei corsi di laurea, di laurea magistrale a ciclo unico" — https://www.er-go.it/cosa-fare-per/bandi-di-concorso/leggi-il-bando/sezione-ii-borse-di-studio/@@display-file/file/sezione-ii-borse-di-studio.pdf
-- **howToApply**: "la domanda di benefici deve essere presentata esclusivamente tramite INTERNET, collegandosi al sito www.er-go.it" — https://www.er-go.it/cosa-fare-per/bandi-di-concorso/leggi-il-bando/sezione-i-norme-generali/@@display-file/file/sezione-i-norme-generali.pdf
-- **howToApply**: "Remember to upload the original documents, with the translation and legalization, in your Dossier Utente, in the section Corrispondenza e Protocollo > Invia Documentazione > Documentazione redditi esteri" — https://www.er-go.it/international-students/application/how-to-apply
-- **howToApply**: "which will be used to calculate your equivalent for the ISEE" — https://www.er-go.it/international-students/benefits/focus-on-scholarship
-- **howToApply**: "Every academic year you must submit the application" — https://www.er-go.it/international-students/benefits/focus-on-scholarship
-- **page**: https://www.er-go.it/international-students/benefits/focus-on-scholarship
+## programs/it-milano-bocconi-milano-international-economics-and-management-l18  _(batch b27-2752af)_
 
-## scholarships/it-dsu-erdis-marche  _(batch b26-a3c973)_
+**International Economics and Management**, Università commerciale Luigi Bocconi di Milano
 
-**Borsa di studio ERDIS Marche**
+- **durationYears**: `3` (official; source page-2)
+  - "Nominal duration 3 years (180 ECTS)" — https://apply.unibocconi.it/en_US/courses/course/44-biem-bsc-international-economics-and-management
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifier sur la page d'admission du programme les conditions exactes pour les candidats internationaux (diplôme étranger, sélection, tests).","status":"draft"},"en":{"text":"Check the programme's admission page for the exact conditions for international applicants (foreign diploma, selection, tests).","status":"draft"}}}`
+  - "you are considered an International applicant if you are attending/have attended: - a secondary school outside Italy" — https://apply.unibocconi.it/en_US/courses/course/44-biem-bsc-international-economics-and-management
 
-- **destinations**: `IT`
-- **eligibleNationalities**: (any international applicant)
-- **fields**: ALL FIELDS
-- **institutions**: `it-marche-ancona`
-- **summary** (fr, draft): Bourse régionale gérée par ERDIS Marche pour les étudiants des universités des Marches. L'appel est ouvert aux étudiants italiens et étrangers qui remplissent les conditions de mérite et de ressources prévues.
-- **summary** (en, draft): Regional scholarship managed by ERDIS Marche for students at universities in the Marche region. The call is open to Italian and foreign students who meet the merit and economic requirements it sets.
-- **howToApply** (fr, draft): La demande se fait uniquement en ligne ; l'accès à la demande est indiqué sur le portail d'ERDIS.
-- **howToApply** (en, draft): Apply online only; access to the application is indicated on the ERDIS portal.
-- **provider site**: erdis.it. Confirm: this is the provider's own site.
-- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
-- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
-- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.
-- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.
-- **eligibility**: "gli studenti italiani e stranieri in possesso dei requisiti di merito ed economici" — https://erdis.it/servizi/servizio-dettaglio/3161252
-- **level**: "ai corsi di laurea di primo" — https://erdis.it/servizi/servizio-dettaglio/3161252
-- **howToApply**: "Le domande di partecipazione al concorso dovranno essere compilate unicamente on line" — https://erdis.it/servizi/servizio-dettaglio/3161252
-- **howToApply**: "la procedura di accesso alla domanda medesima sarà indicata sul portale di ERDIS" — https://erdis.it/servizi/servizio-dettaglio/3161252
-- **page**: https://erdis.it/servizi/servizio-dettaglio/3161252
+> Preparer's caveats: Aucune loi d'admission détaillée pour le BIEM n'est donnée dans les pages fournies ; la page apply.unibocconi.it ne contient aucun délai daté. Le montant de 17 000 EUR/an est présenté comme un montant unique pour les étudiants de 1re année d'un bachelor, sans distinction UE/non-UE ; il est donc repris comme frais de scolarité, mais il convient de vérifier auprès de l'université s'il s'applique aux étudiants non-UE résidant à l'étranger. Aucune date de début de semestre, d'ouverture ou de clôture des candidatures (avec année) n'apparaît dans les pages. Aucun document à fournir n'est nommé. Aucun niveau de langue ni voie de candidature n'est mentionné.
 
-## scholarships/it-dsu-toscana  _(batch b26-a3c973)_
+## programs/it-napoli-federico-ii-napoli-civil-and-environmental-engineering-l7  _(batch b27-2752af)_
 
-**Borsa di studio DSU Toscana**
+**Civil and environmental engineering**, Università degli studi di Napoli Federico II
 
-- **destinations**: `IT`
-- **eligibleNationalities**: (any international applicant)
-- **fields**: ALL FIELDS
-- **institutions**: `it-firenze-firenze, it-pisa-pisa, it-siena-siena`
-- **summary** (fr, draft): Bourse régionale gérée par DSU Toscana pour les étudiants des universités de Florence, Pise et Sienne. Les étudiants hors UE dont la famille vit ou a des revenus à l'étranger fournissent des documents traduits en italien et légalisés.
-- **summary** (en, draft): Regional scholarship managed by DSU Toscana for students at the universities of Florence, Pisa and Siena. Non-EU students whose family lives or has income abroad submit documents translated into Italian and legalised.
-- **howToApply** (fr, draft): Candidature en ligne via la procédure de DSU Toscana. Les étudiants dont la famille est à l'étranger impriment le reçu de la demande et l'envoient avec les documents requis par l'appel avant la date limite.
-- **howToApply** (en, draft): Apply online through the DSU Toscana procedure. Students whose family is abroad print the application receipt and send it, with the documents the call requires, by the deadline.
-- **provider site**: www.dsu.toscana.it. Confirm: this is the provider's own site.
-- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
-- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
-- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.
-- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.
-- **eligibility**: "Studenti provenienti da Paesi extra UE Tutta la documentazione sotto riportata deve essere tradotta in lingua italiana e legalizzata dalle Autorità diplomatiche italiane del paese d’origine" — https://www.dsu.toscana.it/studenti-stranieri
-- **eligibility**: "Gli studenti con famiglia che vive all'estero oppure ha redditi o patrimoni all'estero" — https://www.dsu.toscana.it/studenti-stranieri
-- **level**: "per gli studenti iscritti o che intendano iscriversi ai corsi di laurea triennale, magistrale e magistrale a ciclo unico" — https://www.dsu.toscana.it/borsa-di-studio
-- **howToApply**: "Per partecipare al concorso è necessario compilare la domanda attraverso l'apposita procedura on line" — https://www.dsu.toscana.it/borsa-di-studio
-- **howToApply**: "spedire la ricevuta, insieme ai documenti richiesti dall'art. 8 e una copia del documento d'identità valido" — https://www.dsu.toscana.it/studenti-stranieri
-- **page**: https://www.dsu.toscana.it/studenti-stranieri
+- **teachingLanguages**: `["en"]` (official; source page-2)
+  - "The Course is taught in English and allows Italian, EU, and non-EU students to grow in a stimulating international context." — https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+  - "Nuovo Corso di Laurea in inglese: Civil and Environmental Engineering" — https://www.dicea.unina.it/7587-2/
+- **applicationChannel**: `it-universitaly` (official; source page-2)
+  - "After the pre-admission letter is possibly issued and received by the non-EU candidate student, he/she must register on the UniversItaly Portal and upload there all the documents and the pre-admission letter." — https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+  - "The portal is the only gateway for applying for a visa to study in Italy." — https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+- **documents**: `[{"slug":"passport","name":{"fr":{"text":"Passeport","status":"draft"},"en":{"text":"Passport","status":"draft"}},"translationRequired":null},{"slug":"high-school-diploma","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"High School degree Certificate","status":"draft"}},"translationRequired":null},{"slug":"declaration-of-value","name":{"fr":{"text":"Déclaration de valeur (DOV)","status":"draft"},"en":{"text":"Declaration of Value (DOV)","status":"draft"}},"translationRequired":null},{"slug":"english-language-certificate","name":{"fr":{"text":"Certificat de compétence en anglais","status":"draft"},"en":{"text":"Language certificate (English proficiency – at least level B2)","status":"draft"}},"translationRequired":null},{"slug":"curriculum-vitae","name":{"fr":{"text":"Curriculum Vitae","status":"draft"},"en":{"text":"Curriculum Vitae","status":"draft"}},"translationRequired":null},{"slug":"motivation-letter","name":{"fr":{"text":"Lettre de motivation (déclaration d'intention)","status":"draft"},"en":{"text":"Motivation letter (Statement of Purpose)","status":"draft"}},"translationRequired":null},{"slug":"letter-of-recommendation","name":{"fr":{"text":"Lettre(s) de recommandation","status":"draft"},"en":{"text":"Letter/s of recommendation","status":"draft"}},"translationRequired":null},{"slug":"sponsorship-or-accommodation-statement","name":{"fr":{"text":"Attestation de parrainage par un tiers ou de disponibilité d'hébergement privé","status":"draft"},"en":{"text":"Statement by a third party of sponsorship or private accommodation availability","status":"draft"}},"translationRequired":null},{"slug":"financial-guarantee-statement","name":{"fr":{"text":"Attestation de garantie financière","status":"draft"},"en":{"text":"Financial guarantee statement(s)","status":"draft"}},"translationRequired":null}]` (official; source page-2)
+  - "Documents needed for applying to the selection for pre-admission are: • Passport; • High School degree Certificate (prospective students should have obtained the High School Diploma after at least 12 years of pre-university education); • DOV (Declaration of Value) by embassies or consulates or through CIMEA – Academic Equivalence Mobility Information Center • Language certificate (proficiency in the English Language – at least level B2); • Curriculum Vitae • Motivation letter (Statement of Purpose); • Letter/s of recommendation (optional, but useful for a positive assessment); • Statement by a third party of sponsorship or private accommodation availability • Financial guarantee statement(s), for 6.080,00 euro/year for three years" — https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+- **requirement req-1**: `{"kind":"prior_study_years_min","years":12}`
+  - "Checking of background requisites (basically, the high school diploma must have required at least 12 years of pre-university education + certified English level B2 )" — https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Test d'admission sélectif obligatoire (CISIA English TOLC-I), à passer à distance après inscription sur le site CISIA. Un minimum de 20% du score maximal est exigé.","status":"draft"},"en":{"text":"Compulsory selective admission test (CISIA English TOLC-I), to be taken remotely after registering on the CISIA website. A minimum threshold of 20% of the maximum score is required.","status":"draft"}}}`
+  - "Personal preparation is ascertained by means of a compulsory selective test. The compulsory selective test, required for admission to the Degree Program, is entrusted to the CISIA Consortium (English TOLC-I). Given the possible participation of non-EU students living abroad (visa applicants), the test is conducted remotely after registering on the CISIA website." — https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+  - "For the purposes of enrolment, the candidate must reach the minimum threshold of 20% of the maximum score for the test." — https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Les candidats qui obtiennent moins de 50% à la section Mathématiques du test TOLC-I reçoivent une obligation formative additionnelle (OFA) : acquérir au moins 9 CFU en MAT/05.","status":"draft"},"en":{"text":"Candidates who score less than 50% in the Mathematics section of the TOLC-I test receive an Additional Formative Obligation (OFA): to acquire at least 9 CFU in the MAT/05 subject area.","status":"draft"}}}`
+  - "Admitted candidates who did not score more than 50% of the marks available for the Mathematics section of the test will be assigned an Additional Formative Obligation (OFA) that requires them to acquire at least 9 University Credits (CFU) in the MAT/05 subject area before being able to sit any other examinations." — https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"Procédure de pré-admission obligatoire pour les étudiants non-UE nécessitant un visa : sélection de mi-février à mi-juin via la page d'admission ou par e-mail, puis lettre de pré-admission.","status":"draft"},"en":{"text":"Compulsory pre-admission procedure for non-EU students requiring a visa: selection from mid-February to mid-June via the intake webpage or by email, then a pre-admission letter.","status":"draft"}}}`
+  - "Non-EU students who require a visa must follow a pre-admission phase, culminating in receiving a pre-admission letter (or oKer letter)." — https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+- **requirement req-5**: `{"kind":"manual_check","note":{"fr":{"text":"Le candidat doit fournir une garantie financière de 6.080,00 €/an pendant trois ans et souscrire une assurance maladie/santé pour le visa d'études.","status":"draft"},"en":{"text":"The candidate must provide a financial guarantee of €6,080.00/year for three years and take out health insurance for the study visa.","status":"draft"}}}`
+  - "Financial guarantee statement(s), for 6.080,00 euro/year for three years" — https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
 
-## scholarships/it-dsu-unipd  _(batch b26-a3c973)_
+> Preparer's caveats: Aucune frais de scolarité propre au programme n'est indiquée pour les étudiants non-UE : la page du programme donne seulement la taxe régionale (€140/an) et le timbre fiscal (€16), ce qui n'est pas un tuition. Les frais mentionnés dans la guida étudiant (contributo/ISEEU) s'appliquent à tous les programmes et pas spécifiquement à celui-ci. La page principal du programme (dicea.unina.it/7587-2) est nouvelle et renvoyait à la page de pré-inscription (pre-enrollment-procedure.pdf). [curated: durationYears dropped, its quotes did not state the duration]
 
-**Borsa di studio regionale (Università di Padova)**
+## programs/it-roma-tor-vergata-roma-business-administration-economics-l18  _(batch b27-2752af)_
 
-- **destinations**: `IT`
-- **eligibleNationalities**: (any international applicant)
-- **fields**: ALL FIELDS
-- **institutions**: `it-padova-padova`
-- **summary** (fr, draft): Bourse régionale pour le droit aux études, gérée directement par l'Université de Padoue pour ses étudiants. Les étudiants internationaux dont la famille vit à l'étranger obtiennent un ISEE équivalent (ISEE parificato) auprès du CAF conventionné.
-- **summary** (en, draft): Regional right-to-study scholarship managed directly by the University of Padua for its own students. International students whose families live abroad obtain an equivalent ISEE (ISEE parificato) from the CAF affiliated with the University.
-- **howToApply** (fr, draft): Remplir la demande d'avantages (RdA) sur Uniweb et demander l'ISEE ou l'ISEE parificato. Les étudiants internationaux demandent l'ISEE parificato uniquement au CAF conventionné avec l'Université.
-- **howToApply** (en, draft): Fill in the Application for Benefits (RdA) in Uniweb and request the ISEE or ISEE parificato. International students request the ISEE parificato only from the CAF affiliated with the University.
-- **provider site**: www.unipd.it. Confirm: this is the provider's own site.
-- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
-- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
-- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.
-- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.
-- **support**: `{"amount":null,"covers":["tuition","housing"]}` (official; source page-2)
-  - "Part of the study scholarship is provided in services (food and accommodation)" — https://wwwassets.unipd.it/sites/default/files/2026-07/1.Bando%20Borse%20Studio%202026-27_ENG_0.pdf
-  - "are entitled to a total or partial exemption as provided for in the Call for student fees and exemptions for the 2026/27 academic year" — https://wwwassets.unipd.it/sites/default/files/2026-07/1.Bando%20Borse%20Studio%202026-27_ENG_0.pdf
-- **eligibility**: "studentesse e studenti internazionali residenti all'estero, con nucleo familiare residente all'estero" — https://www.unipd.it/borse-studio-alloggi
-- **eligibility**: "For students with non-EU citizenship enrolled in the first year of all degree programmes" — https://wwwassets.unipd.it/sites/default/files/2026-07/1.Bando%20Borse%20Studio%202026-27_ENG_0.pdf
-- **level**: "7 semestri per le/gli iscritte/i ai corsi di laurea a partire dall'anno di prima immatricolazione" — https://wwwassets.unipd.it/sites/default/files/2026-07/Bando%20Borse%20Studio%202026-27.pdf
-- **howToApply**: "compilare e confermare la Richiesta di agevolazioni (RdA) su Uniweb" — https://www.unipd.it/borse-studio-alloggi
-- **howToApply**: "Issuance of the ISEE Parificato certificate must be requested exclusively from the CAF affiliated with the University" — https://wwwassets.unipd.it/sites/default/files/2026-07/1.Bando%20Borse%20Studio%202026-27_ENG_0.pdf
-- **page**: https://www.unipd.it/borse-studio-alloggi
+**Business Administration & Economics**, Università degli studi di Roma Tor Vergata
+
+- **durationYears**: `3` (official; source programme)
+  - "Duration 3 years" — https://economia.uniroma2.it/ba/business-administration-economics/
+  - "Duration: 3 years" — https://web.uniroma2.it/en/contenuto/business_administration___economics-29905
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "Language English (International course)" — https://economia.uniroma2.it/ba/business-administration-economics/
+  - "The course is entirely taught in English." — https://web.uniroma2.it/en/contenuto/business_administration___economics-29905
+- **applicationChannel**: `it-universitaly` (official; source page-2)
+  - "You must submit the pre-enrolment application on the Universitaly platform (www.universitaly.it) and then contact the Italian embassy in your country, which will issue you with the entry visa to enter Italy for study purposes and fall within the places reserved for non-EU citizens." — https://www-2023.studenti.uniroma2.it/en/preiscrizione-e-visto-dingresso/
+  - "The pre-enrollment application on Universitaly is mandatory for all non-EU applicants not residing in Italy (including those holding a residence permit for other EU countries)." — https://web.uniroma2.it/en/percorso/admissions
+- **documents**: `[{"slug":"passport","name":{"fr":{"text":"Passeport","status":"draft"},"en":{"text":"Passport","status":"draft"}},"translationRequired":null},{"slug":"high-school-diploma","name":{"fr":{"text":"Diplôme d'études secondaires","status":"draft"},"en":{"text":"High-school diploma","status":"draft"}},"translationRequired":null},{"slug":"photo","name":{"fr":{"text":"Photo","status":"draft"},"en":{"text":"Photo","status":"draft"}},"translationRequired":null}]` (official; source page-3)
+  - "Mandatory documents to be uploaded during pre-enrollment procedures on Universitaly: Passport Photo Admission letter (if provided) High-school diploma (for enrollment in Bachelor's Degree programmes) / Bachelor's Degree + Transcript of exams (for enrollment in Master's Degree programmes)" — https://web.uniroma2.it/en/percorso/admissions
+- **requirement req-1**: `{"kind":"prior_study_years_min","years":12}`
+  - "The qualification must be obtained at the end of a school period equal to at least 12 years of schooling and allow access at the universities of the country where the qualification was obtained" — https://web.uniroma2.it/en/percorso/admissions
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Accès limité avec examen d'entrée ; vérifier les modalités et les épreuves d'admission auprès du programme.","status":"draft"},"en":{"text":"Limited access with entrance exam; check admission procedures and tests with the programme.","status":"draft"}}}`
+  - "Access type: Limited access with entrance exam" — https://web.uniroma2.it/en/contenuto/business_administration___economics-29905
+- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifier auprès de l'université les documents exigés pour légalisation, traduction et CIMEA selon le pays du diplôme.","status":"draft"},"en":{"text":"Check with the university the documents required for legalization, translation and CIMEA depending on the country of the diploma.","status":"draft"}}}`
+  - "Tor Vergata University of Rome requires specific documentation according to the country where the qualification was obtained and the educational system to which the qualification belongs:" — https://web.uniroma2.it/en/percorso/admissions
+
+> Preparer's caveats: Tuition left out: the pages give no single EUR amount for a full-time Bachelor student from outside the EU living abroad; the fee pages are ISEE-band simulators and international-student fee pages that state no amount. Intakes left out: no application deadline for non-EU applicants with a year is stated on the supplied pages for this programme. Documents quote is from the admissions page and refers to non-EU applicants requiring a visa. Morocco is not a signatory to the Lisbon Convention, which affects which qualification-recognition documents apply (CIMEA statements), but the pages do not name those as applicant-submitted documents in a quotable single-amount way; flag for human review.
+
+## programs/it-torino-politecnico-torino-electronic-and-communications-engineerin-l8  _(batch b27-2752af)_
+
+**Electronic and Communications Engineering (Ingegneria elettronica e delle comunicazioni)**, Politecnico di Torino
+
+- **durationYears**: `3` (official; source page-2)
+  - "The programme lasts 3 years and provides a multidisciplinary education in the ITC field" — https://www.polito.it/en/education/bachelor-s-degree-programmes/electronic-and-communications-engineering/programme-details
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "all courses are given in English, the official language of ICT" — https://www.polito.it/en/education/bachelor-s-degree-programmes/electronic-and-communications-engineering
+- **applicationChannel**: `it-universitaly` (official; source page-3)
+  - "Se sei uno studente internazionale residente all’estero e richiedente visto, devi inviare la domanda di pre-iscrizione per ottenere il visto per studio e immatricolarti al Politecnico di Torino esclusivamente tramite il portale UNIVERSITALY." — https://www.polito.it/didattica/iscriversi-studiare-laurearsi/iscrizione/corsi-di-laurea/studenti-con-titolo-estero
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Le certificat de langue doit être téléchargé sur Apply@polito dans les délais; un test d'admission (TIL) ou une certification SAT est requis.","status":"draft"},"en":{"text":"Language certificate must be uploaded to Apply@polito by the deadline; an admission test (TIL) or SAT certification is required.","status":"draft"}}}`
+  - "La certificazione deve essere presentata al momento della candidatura su Apply@polito." — https://didattica.polito.it/guida/2026/it/lingua_inglese_triennale_cla?cds=471&sdu=81
+  - "superamento del TEST di AMMISSIONE (TIL) oppure possesso della certificazione internazionale SAT (NON VLIDO per Architettura)." — https://www.polito.it/didattica/iscriversi-studiare-laurearsi/iscrizione/corsi-di-laurea/studenti-con-titolo-estero
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Pour l'inscription, fournir le visa d'études type D et le code fiscal; les services CIMEA peuvent être nécessaires.","status":"draft"},"en":{"text":"For enrollment, provide a type D study visa and tax code; CIMEA services may be required.","status":"draft"}}}`
+  - "Visto per studio “Immatricolazione Università” tipo D “nazionale” per cittadini Non-UE non residenti in Italia (vedi paragrafo sulla Pre-iscrizione)" — https://www.polito.it/didattica/iscriversi-studiare-laurearsi/iscrizione/corsi-di-laurea/studenti-con-titolo-estero
+  - "Codice fiscale rilasciato dall’Agenzia delle Entrate o, per i non residenti in Italia, dall’Ambasciata o Consolato competente" — https://www.polito.it/didattica/iscriversi-studiare-laurearsi/iscrizione/corsi-di-laurea/studenti-con-titolo-estero
+
+> Preparer's caveats: Le montant des frais de scolarité pour les étudiants non-UE n'est pas indiqué comme un montant unique en EUR dans les pages fournies; il dépend du pays de provenance et de l'ISEE (voir la Guida alla contribuzione, art. 5), donc non inclus. Les dates d'admission (intakes) ne sont pas fournies pour ce programme spécifique dans les pages.
 

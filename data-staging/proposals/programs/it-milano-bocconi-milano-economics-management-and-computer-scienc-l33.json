@@ -1,6 +1,27 @@
 {
   "slug": "it-milano-bocconi-milano-economics-management-and-computer-scienc-l33",
-  "programmePage": null,
-  "facts": {},
-  "notes": "The supplied pages do not include the programme's own page for Economics, Management and Computer Science, nor any admission page describing how a non-EU applicant with a foreign diploma applies (no Universitaly mention, no application channel). Tuition was left out: the only figure for Bachelor students is 17,000 euro per year, but the quote (\"Per gli studenti di 1° anno di corso iscritti ad un corso di laurea triennale o corso di laurea magistrale in Giurisprudenza nell’ a.a. 2026-2027 è previsto un investimento economico pari a 17.000 euro all’anno.\") is on an enrolled-students fees page without saying it is the fee for a non-EU student living abroad, so per the task rules it is not stated for this applicant. Duration, teaching languages, intakes, documents and requirements are not stated for this programme on any supplied page (the Master programs regulations page concerns Master Universitari, not this Bachelor)."
+  "programmePage": "https://www.unibocconi.it/en/programs/bachelor-science/economics-management-and-computer-science",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://apply.unibocconi.it/en_US/courses/course/18-bemacs-bsc-economics-management-and-computer-science",
+          "quote": "Nominal duration 3 years (180 ECTS)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unibocconi.it/en/programs/bachelor-science/economics-management-and-computer-science",
+          "quote": "The program is offered entirely in English."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition left out: the only figures found are the institution-wide annual amount for first-year Bachelor of Science students (17,000 EUR/year on https://www.unibocconi.it/it/studenti-iscritti/tasse-e-contributi-universitari) and Master of Science amounts; no quote states one tuition amount specifically for a non-EU applicant with a foreign diploma living abroad for this programme. Application channel left out: no supplied page names Universitaly or the university's own application portal for this programme; the apply.unibocconi.it page names the DreamApply platform but gives no deadlines for the International category and does not state the route in the terms required."
 }

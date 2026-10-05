@@ -15,41 +15,93 @@ summary:
   ar:
     text: Economics and Science for Environmental Sustainability, Università degli studi di Milano-Bicocca (Milano). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
     status: draft
-officialUrl: null
+officialUrl: https://en.unimib.it/undergraduate/economics-science-environmental-sustainability
 durationYears:
-  value: null
-  source: mur
-  info_kind: TODO_read_source
+  value: 3
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: mur
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Admission limitée avec examen d'entrée : test CISIA English TOLC-E (ou CEnT-S). Consultez la 'Call for Application' pour les modalités."
+          status: draft
+        en:
+          text: "Limited admission with entry examination: CISIA English TOLC-E (or CEnT-S) test. See the Call for Application for details."
+          status: draft
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Diplôme final de l'enseignement secondaire accompagné d'une traduction officielle en italien ou en anglais ; plus relevé de notes de la dernière année.
+          status: draft
+        en:
+          text: Final secondary school diploma accompanied by an official translation into Italian or English; plus last-year transcript.
+          status: draft
+    - id: req-5
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats non-UE ayant besoin d'un visa doivent téléverser la pré-inscription Universitaly ; l'inscription se fait via le portail de l'université.
+          status: draft
+        en:
+          text: Non-EU visa-requiring applicants must upload the Universitaly pre-enrolment receipt; application is made through the university portal.
+          status: draft
 scholarships: []
 sources:
-  mur:
-    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+  programme:
+    url: https://en.unimib.it/undergraduate/economics-science-environmental-sustainability
+    last_verified_at: null
+  page-2:
+    url: https://apply.unimib.it/en_GB/courses/course/110-economics-and-science-environmental-sustainability
+    last_verified_at: null
+  page-3:
+    url: https://www.unimib.it/internazionalizzazione/informazioni-studenti-internazionali/studenti-italiani-titolo-estero/studenti-comunitari-equiparati-e-stranieri-gia-residenti-italia
     last_verified_at: null
 _review:
   kind: programs
@@ -60,5 +112,47 @@ _review:
   field: business-economics
   confidence: high
   officialUrl: ""
-  todo: "MUR lists: degree class L-33 Scienze economiche, language Inglese, mode Convenzionale, access locale, town Milano; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants"
+  todo: "MUR lists: degree class L-33 Scienze economiche, language Inglese, mode Convenzionale, access locale, town Milano; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: mur:01509:l33:economics-and-science-for-environmental-sustainability@milano
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://en.unimib.it/undergraduate/economics-science-environmental-sustainability
+      quote: L-33 R 3 years Milan limited with entry requirements examination English
+    - fact: durationYears
+      url: https://apply.unimib.it/en_GB/courses/course/110-economics-and-science-environmental-sustainability
+      quote: Nominal duration 3 years (180 ECTS)
+    - fact: teachingLanguages
+      url: https://en.unimib.it/undergraduate/economics-science-environmental-sustainability
+      quote: L-33 R 3 years Milan limited with entry requirements examination English
+    - fact: teachingLanguages
+      url: https://apply.unimib.it/en_GB/courses/course/110-economics-and-science-environmental-sustainability
+      quote: Study language English
+    - fact: teachingLanguages
+      url: https://en.unimib.it/study/bachelors-and-masters-degrees/economics-and-statistics-bachelors-degree-programmes
+      quote: "Economics and Science for Environmental Sustainability Type: Bachelor's Degree Access: limited with entry requirements examination Language: English"
+    - fact: requirements.req-1
+      url: https://apply.unimib.it/en_GB/courses/course/110-economics-and-science-environmental-sustainability
+      quote: "English: B2 level knowledge is required."
+    - fact: requirements.req-2
+      url: https://www.unimib.it/internazionalizzazione/informazioni-studenti-internazionali/studenti-italiani-titolo-estero/studenti-comunitari-equiparati-e-stranieri-gia-residenti-italia
+      quote: a) Diploma finale di scuola secondaria superiore, conseguito con almeno 12 anni di scolarità, accompagnato dalla traduzione ufficiale in italiano o in inglese;
+    - fact: requirements.req-3
+      url: https://en.unimib.it/undergraduate/economics-science-environmental-sustainability
+      quote: Admission and enrolment Cisia English TOLC-E ADMISSION TEST Read the Call for Application
+    - fact: requirements.req-3
+      url: https://apply.unimib.it/en_GB/courses/course/110-economics-and-science-environmental-sustainability
+      quote: "CEnT–S: CISIA English Test – Sciences"
+    - fact: requirements.req-4
+      url: https://www.unimib.it/internazionalizzazione/informazioni-studenti-internazionali/studenti-italiani-titolo-estero/studenti-comunitari-equiparati-e-stranieri-gia-residenti-italia
+      quote: b) Pagella scolastica delle materie dell’ultimo anno del percorso scolastico (transcript) accompagnato da traduzione ufficiale in italiano o in inglese;
+    - fact: requirements.req-4
+      url: https://apply.unimib.it/en_GB/courses/course/110-economics-and-science-environmental-sustainability
+      quote: "The entry qualification documents are accepted in the following languages: English / Italian."
+    - fact: requirements.req-5
+      url: https://www.unimib.it/internazionalizzazione/informazioni-studenti-internazionali/studenti-italiani-titolo-estero/studenti-comunitari-equiparati-e-stranieri-gia-residenti-italia
+      quote: d) Per i candidati extra-Ue richiedenti visto, la ricevuta di pre-enrolment sul Portale UNIVERSITALY, ove già disponibile;
+  notes: "Le frais de scolarité ne sont pas indiqués : les pages donnent seulement 'The balance fee amount is based on the chosen course and the student’s country of income. See the fees and funding page for details.' (montant dépendant du pays de revenu, pas un montant unique en EUR pour un étudiant hors UE) et la page 'Fees and funding' ne donne qu'un guide sans montant ; tuition laissé de côté. Le programme indique que l'approbation est 'not yet complete' et que les informations sont provisoires (activation en 2025-2026 sous réserve). Le délai de candidature n'est pas chiffré : la session 'Fall semester 2025/26' est indiquée comme 'Application period has ended'."
+  rejected:
+    - "requirement language_proficiency: the quote does not mention the language en"

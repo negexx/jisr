@@ -15,41 +15,72 @@ summary:
   ar:
     text: Electronic and Communications Engineering (Ingegneria elettronica e delle comunicazioni), Politecnico di Torino (Torino). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
     status: draft
-officialUrl: null
+officialUrl: https://www.polito.it/en/education/bachelor-s-degree-programmes/electronic-and-communications-engineering
 durationYears:
-  value: null
-  source: mur
-  info_kind: TODO_read_source
+  value: 3
+  source: page-2
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: mur
-  info_kind: TODO_read_source
+  value: it-universitaly
+  source: page-3
+  info_kind: official
 documents:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: mur
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le certificat de langue doit être téléchargé sur Apply@polito dans les délais; un test d'admission (TIL) ou une certification SAT est requis.
+          status: draft
+        en:
+          text: Language certificate must be uploaded to Apply@polito by the deadline; an admission test (TIL) or SAT certification is required.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Pour l'inscription, fournir le visa d'études type D et le code fiscal; les services CIMEA peuvent être nécessaires.
+          status: draft
+        en:
+          text: For enrollment, provide a type D study visa and tax code; CIMEA services may be required.
+          status: draft
 scholarships: []
 sources:
-  mur:
-    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+  programme:
+    url: https://www.polito.it/en/education/bachelor-s-degree-programmes/electronic-and-communications-engineering
+    last_verified_at: null
+  page-2:
+    url: https://www.polito.it/en/education/bachelor-s-degree-programmes/electronic-and-communications-engineering/programme-details
+    last_verified_at: null
+  page-3:
+    url: https://www.polito.it/didattica/iscriversi-studiare-laurearsi/iscrizione/corsi-di-laurea/studenti-con-titolo-estero
+    last_verified_at: null
+  page-4:
+    url: https://didattica.polito.it/guida/2026/it/lingua_inglese_triennale_cla?cds=471&sdu=81
     last_verified_at: null
 _review:
   kind: programs
@@ -60,5 +91,30 @@ _review:
   field: engineering
   confidence: high
   officialUrl: ""
-  todo: "MUR lists: degree class L-8 Ingegneria dell'informazione, language Inglese, mode Convenzionale, access locale, town Torino; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants"
+  todo: "MUR lists: degree class L-8 Ingegneria dell'informazione, language Inglese, mode Convenzionale, access locale, town Torino; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: mur:00102:l8:electronic-and-communications-engineering-ingegneria-elettro@torino
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://www.polito.it/en/education/bachelor-s-degree-programmes/electronic-and-communications-engineering/programme-details
+      quote: The programme lasts 3 years and provides a multidisciplinary education in the ITC field
+    - fact: teachingLanguages
+      url: https://www.polito.it/en/education/bachelor-s-degree-programmes/electronic-and-communications-engineering
+      quote: all courses are given in English, the official language of ICT
+    - fact: applicationChannel
+      url: https://www.polito.it/didattica/iscriversi-studiare-laurearsi/iscrizione/corsi-di-laurea/studenti-con-titolo-estero
+      quote: Se sei uno studente internazionale residente all’estero e richiedente visto, devi inviare la domanda di pre-iscrizione per ottenere il visto per studio e immatricolarti al Politecnico di Torino esclusivamente tramite il portale UNIVERSITALY.
+    - fact: requirements.req-1
+      url: https://didattica.polito.it/guida/2026/it/lingua_inglese_triennale_cla?cds=471&sdu=81
+      quote: La certificazione deve essere presentata al momento della candidatura su Apply@polito.
+    - fact: requirements.req-1
+      url: https://www.polito.it/didattica/iscriversi-studiare-laurearsi/iscrizione/corsi-di-laurea/studenti-con-titolo-estero
+      quote: superamento del TEST di AMMISSIONE (TIL) oppure possesso della certificazione internazionale SAT (NON VLIDO per Architettura).
+    - fact: requirements.req-2
+      url: https://www.polito.it/didattica/iscriversi-studiare-laurearsi/iscrizione/corsi-di-laurea/studenti-con-titolo-estero
+      quote: Visto per studio “Immatricolazione Università” tipo D “nazionale” per cittadini Non-UE non residenti in Italia (vedi paragrafo sulla Pre-iscrizione)
+    - fact: requirements.req-2
+      url: https://www.polito.it/didattica/iscriversi-studiare-laurearsi/iscrizione/corsi-di-laurea/studenti-con-titolo-estero
+      quote: Codice fiscale rilasciato dall’Agenzia delle Entrate o, per i non residenti in Italia, dall’Ambasciata o Consolato competente
+  notes: Le montant des frais de scolarité pour les étudiants non-UE n'est pas indiqué comme un montant unique en EUR dans les pages fournies; il dépend du pays de provenance et de l'ISEE (voir la Guida alla contribuzione, art. 5), donc non inclus. Les dates d'admission (intakes) ne sont pas fournies pour ce programme spécifique dans les pages.

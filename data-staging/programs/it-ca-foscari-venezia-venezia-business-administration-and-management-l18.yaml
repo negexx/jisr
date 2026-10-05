@@ -15,41 +15,74 @@ summary:
   ar:
     text: Business Administration and Management, Università Ca' Foscari Venezia (Venezia). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
     status: draft
-officialUrl: null
+officialUrl: https://www.unive.it/web/en/12483/home
 durationYears:
-  value: null
-  source: mur
-  info_kind: TODO_read_source
+  value: 3
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: mur
-  info_kind: TODO_read_source
+  value: it-universitaly
+  source: page-2
+  info_kind: official
 documents:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: mur
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le niveau et les exigences du certificat de langue anglaise et/ou italienne sont précisés sur la page web du cours spécifique ; vérifiez-les.
+          status: draft
+        en:
+          text: The level and requirements of the English and/or Italian language certificate are specified on the specific course web page; verify them.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les diplômes et certificats d'examens doivent être accompagnés d'une traduction professionnelle en italien ou en anglais si nécessaire.
+          status: draft
+        en:
+          text: Diplomas and exam certificates must be accompanied by a professional translation into Italian or English if necessary.
+          status: draft
 scholarships: []
 sources:
-  mur:
-    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+  programme:
+    url: https://www.unive.it/web/en/12483/home
+    last_verified_at: null
+  page-2:
+    url: https://www.unive.it/pag/40975/
+    last_verified_at: null
+  page-3:
+    url: https://www.unive.it/pag/41325/
     last_verified_at: null
 _review:
   kind: programs
@@ -60,5 +93,27 @@ _review:
   field: business-economics
   confidence: high
   officialUrl: ""
-  todo: "MUR lists: degree class L-18 Scienze dell'economia e della gestione aziendale, language Inglese, mode Convenzionale, access locale, town Venezia; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants"
+  todo: "MUR lists: degree class L-18 Scienze dell'economia e della gestione aziendale, language Inglese, mode Convenzionale, access locale, town Venezia; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: mur:02701:l18:business-administration-and-management@venezia
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://www.unive.it/web/en/12483/home
+      quote: "Duration: 3 years ECTS/CFU: 180 credits"
+    - fact: teachingLanguages
+      url: https://www.unive.it/web/en/12483/home
+      quote: "Venue: Venice Language: English"
+    - fact: applicationChannel
+      url: https://www.unive.it/pag/40975/
+      quote: iniziare la cosiddetta procedura di preiscrizione e richiesta di visto, attraverso il portale Universitaly del Ministero Italiano dell'Università e della Ricerca (MUR)
+    - fact: requirements.req-1
+      url: https://www.unive.it/pag/41325/
+      quote: Coloro che presentano domanda per corsi di laurea devono aver ottenuto un diploma di scuola secondaria dopo aver completato almeno 12 anni di scolarità.
+    - fact: requirements.req-2
+      url: https://www.unive.it/pag/40975/
+      quote: "Certificato di lingua inglese E/O certificato di lingua italiana: il livello e i requisiti sono specificati nella pagina web del corso specifico su unive.it"
+    - fact: requirements.req-3
+      url: https://www.unive.it/pag/40975/
+      quote: (sia in lingua originale che tradotti ufficialmente in italiano o in inglese se necessario)
+  notes: "Le montant des frais de scolarité pour les étudiants internationaux n'est pas indiqué pour ce programme : la page ne donne qu'une exonération (tuition fee waiver) et une taxe régionale de 189 €, et non un montant unique de frais de scolarité pour un étudiant hors UE. Aucune échéance d'admission datée et propre aux candidats non-UE n'est fournie pour ce programme ; les périodes d'admission 2026/2027 sont renvoyées au portail apply.unive.it sans date précise."

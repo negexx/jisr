@@ -15,41 +15,174 @@ summary:
   ar:
     text: Civil and environmental engineering, Università degli studi di Napoli Federico II (Napoli). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
     status: draft
-officialUrl: null
+officialUrl: https://www.dicea.unina.it/7587-2/
 durationYears:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: mur
-  info_kind: TODO_read_source
+  source: page-2
+  info_kind: official
 tuition:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: mur
-  info_kind: TODO_read_source
+  value: it-universitaly
+  source: page-2
+  info_kind: official
 documents:
-  value: null
-  source: mur
-  info_kind: TODO_read_source
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+    - slug: high-school-diploma
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: High School degree Certificate
+          status: draft
+      translationRequired: null
+    - slug: declaration-of-value
+      name:
+        fr:
+          text: Déclaration de valeur (DOV)
+          status: draft
+        en:
+          text: Declaration of Value (DOV)
+          status: draft
+      translationRequired: null
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Certificat de compétence en anglais
+          status: draft
+        en:
+          text: Language certificate (English proficiency – at least level B2)
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum Vitae
+          status: draft
+        en:
+          text: Curriculum Vitae
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation (déclaration d'intention)
+          status: draft
+        en:
+          text: Motivation letter (Statement of Purpose)
+          status: draft
+      translationRequired: null
+    - slug: letter-of-recommendation
+      name:
+        fr:
+          text: Lettre(s) de recommandation
+          status: draft
+        en:
+          text: Letter/s of recommendation
+          status: draft
+      translationRequired: null
+    - slug: sponsorship-or-accommodation-statement
+      name:
+        fr:
+          text: Attestation de parrainage par un tiers ou de disponibilité d'hébergement privé
+          status: draft
+        en:
+          text: Statement by a third party of sponsorship or private accommodation availability
+          status: draft
+      translationRequired: null
+    - slug: financial-guarantee-statement
+      name:
+        fr:
+          text: Attestation de garantie financière
+          status: draft
+        en:
+          text: Financial guarantee statement(s)
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
-  source: mur
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Test d'admission sélectif obligatoire (CISIA English TOLC-I), à passer à distance après inscription sur le site CISIA. Un minimum de 20% du score maximal est exigé.
+          status: draft
+        en:
+          text: Compulsory selective admission test (CISIA English TOLC-I), to be taken remotely after registering on the CISIA website. A minimum threshold of 20% of the maximum score is required.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Les candidats qui obtiennent moins de 50% à la section Mathématiques du test TOLC-I reçoivent une obligation formative additionnelle (OFA) : acquérir au moins 9 CFU en MAT/05."
+          status: draft
+        en:
+          text: "Candidates who score less than 50% in the Mathematics section of the TOLC-I test receive an Additional Formative Obligation (OFA): to acquire at least 9 CFU in the MAT/05 subject area."
+          status: draft
+    - id: req-4
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Procédure de pré-admission obligatoire pour les étudiants non-UE nécessitant un visa : sélection de mi-février à mi-juin via la page d'admission ou par e-mail, puis lettre de pré-admission."
+          status: draft
+        en:
+          text: "Compulsory pre-admission procedure for non-EU students requiring a visa: selection from mid-February to mid-June via the intake webpage or by email, then a pre-admission letter."
+          status: draft
+    - id: req-5
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le candidat doit fournir une garantie financière de 6.080,00 €/an pendant trois ans et souscrire une assurance maladie/santé pour le visa d'études.
+          status: draft
+        en:
+          text: The candidate must provide a financial guarantee of €6,080.00/year for three years and take out health insurance for the study visa.
+          status: draft
 scholarships: []
 sources:
-  mur:
-    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+  programme:
+    url: https://www.dicea.unina.it/7587-2/
+    last_verified_at: null
+  page-2:
+    url: https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
     last_verified_at: null
 _review:
   kind: programs
@@ -60,5 +193,42 @@ _review:
   field: engineering
   confidence: high
   officialUrl: ""
-  todo: "MUR lists: degree class L-7 Ingegneria civile e ambientale, language Inglese, mode Convenzionale, access accesso libero, town Napoli; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so)"
+  todo: "MUR lists: degree class L-7 Ingegneria civile e ambientale, language Inglese, mode Convenzionale, access accesso libero, town Napoli; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: mur:06301:l7:civil-and-environmental-engineering@napoli
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: teachingLanguages
+      url: https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+      quote: The Course is taught in English and allows Italian, EU, and non-EU students to grow in a stimulating international context.
+    - fact: teachingLanguages
+      url: https://www.dicea.unina.it/7587-2/
+      quote: "Nuovo Corso di Laurea in inglese: Civil and Environmental Engineering"
+    - fact: applicationChannel
+      url: https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+      quote: After the pre-admission letter is possibly issued and received by the non-EU candidate student, he/she must register on the UniversItaly Portal and upload there all the documents and the pre-admission letter.
+    - fact: applicationChannel
+      url: https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+      quote: The portal is the only gateway for applying for a visa to study in Italy.
+    - fact: documents
+      url: https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+      quote: "Documents needed for applying to the selection for pre-admission are: • Passport; • High School degree Certificate (prospective students should have obtained the High School Diploma after at least 12 years of pre-university education); • DOV (Declaration of Value) by embassies or consulates or through CIMEA – Academic Equivalence Mobility Information Center • Language certificate (proficiency in the English Language – at least level B2); • Curriculum Vitae • Motivation letter (Statement of Purpose); • Letter/s of recommendation (optional, but useful for a positive assessment); • Statement by a third party of sponsorship or private accommodation availability • Financial guarantee statement(s), for 6.080,00 euro/year for three years"
+    - fact: requirements.req-1
+      url: https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+      quote: Checking of background requisites (basically, the high school diploma must have required at least 12 years of pre-university education + certified English level B2 )
+    - fact: requirements.req-2
+      url: https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+      quote: Personal preparation is ascertained by means of a compulsory selective test. The compulsory selective test, required for admission to the Degree Program, is entrusted to the CISIA Consortium (English TOLC-I). Given the possible participation of non-EU students living abroad (visa applicants), the test is conducted remotely after registering on the CISIA website.
+    - fact: requirements.req-2
+      url: https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+      quote: For the purposes of enrolment, the candidate must reach the minimum threshold of 20% of the maximum score for the test.
+    - fact: requirements.req-3
+      url: https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+      quote: Admitted candidates who did not score more than 50% of the marks available for the Mathematics section of the test will be assigned an Additional Formative Obligation (OFA) that requires them to acquire at least 9 University Credits (CFU) in the MAT/05 subject area before being able to sit any other examinations.
+    - fact: requirements.req-4
+      url: https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+      quote: Non-EU students who require a visa must follow a pre-admission phase, culminating in receiving a pre-admission letter (or oKer letter).
+    - fact: requirements.req-5
+      url: https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+      quote: Financial guarantee statement(s), for 6.080,00 euro/year for three years
+  notes: "Aucune frais de scolarité propre au programme n'est indiquée pour les étudiants non-UE : la page du programme donne seulement la taxe régionale (€140/an) et le timbre fiscal (€16), ce qui n'est pas un tuition. Les frais mentionnés dans la guida étudiant (contributo/ISEEU) s'appliquent à tous les programmes et pas spécifiquement à celui-ci. La page principal du programme (dicea.unina.it/7587-2) est nouvelle et renvoyait à la page de pré-inscription (pre-enrollment-procedure.pdf). [curated: durationYears dropped, its quotes did not state the duration]"

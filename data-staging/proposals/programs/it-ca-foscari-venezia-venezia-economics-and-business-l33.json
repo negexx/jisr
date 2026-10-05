@@ -1,0 +1,30 @@
+{
+  "slug": "it-ca-foscari-venezia-venezia-economics-and-business-l33",
+  "programmePage": null,
+  "facts": {
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.unive.it/pag/40975/",
+          "quote": "iniziare la cosiddetta procedura di preiscrizione e richiesta di visto, attraverso il portale Universitaly del Ministero Italiano dell'Università e della Ricerca (MUR);"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition not stated: pages give only ISEE-band-based fees, regional tax/stamp duty (€189), or an application fee (€30); no single yearly tuition amount for a full-time non-EU Bachelor student living abroad. No programme-specific page supplied. No intakes: admission round deadlines are given without years or are not identified as for non-EU applicants.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.unive.it/pag/41325/",
+            "quote": "Coloro che presentano domanda per corsi di laurea devono aver ottenuto un diploma di scuola secondaria dopo aver completato almeno 12 anni di scolarità."
+          }
+        ]
+      }
+    ]
+  }
+}
