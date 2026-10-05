@@ -1,0 +1,78 @@
+slug: it-udine-udine-management-business-analytics-l18
+institution: it-udine-udine
+country: IT
+city: udine
+field: business-economics
+level: bachelor
+name: Management & Business Analytics
+summary:
+  fr:
+    text: Management & Business Analytics, Università degli studi di Udine (Udine). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Management & Business Analytics, Università degli studi di Udine (Udine). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Management & Business Analytics, Università degli studi di Udine (Udine). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.uniud.it/en/uniud-international/International_Students/degree-english
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier les conditions d'admission et les modalités de candidature pour ce Bachelor dans le Manifeste des études de l'Université de Udine.
+          status: draft
+        en:
+          text: Check the admission requirements and application procedures for this Bachelor in the University of Udine's Manifesto degli Studi.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les étudiants non-UE résidant à l'étranger doivent présenter une pré-inscription auprès de l'ambassade ou du consulat d'Italie de leur pays de résidence.
+          status: draft
+        en:
+          text: Non-EU students residing abroad must submit a pre-enrolment application at the Italian embassy or consulate in their country of residence.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.uniud.it/en/uniud-international/International_Students/degree-english
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://dmif.uniud.it/it/didattica/servizi-per-gli-studenti/orientarsi/riconoscimento-di-titolo-di-studio-estero
+    last_verified_at: 2026-10-05

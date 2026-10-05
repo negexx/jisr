@@ -291,6 +291,11 @@ const WORDS: Record<string, { fees: string; admission: string; language: string 
     admission: "Bewerbung internationale Studierende application requirements admission",
     language: "de",
   },
+  IT: {
+    fees: "tasse e contributi studenti internazionali tuition fees",
+    admission: "ammissione preiscrizione studenti internazionali admission requirements",
+    language: "it",
+  },
   NL: {
     fees: "collegegeld niet-EU studenten tuition fees",
     admission: "toelating aanmelden internationale studenten admission requirements",

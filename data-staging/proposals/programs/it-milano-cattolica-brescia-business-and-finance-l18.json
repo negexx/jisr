@@ -1,0 +1,74 @@
+{
+  "slug": "it-milano-cattolica-brescia-business-and-finance-l18",
+  "programmePage": "https://international.unicatt.it/ucscinternational-undergraduate-programs-business-and-finance",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://international.unicatt.it/ucscinternational-undergraduate-programs-business-and-finance",
+          "quote": "Programme duration: 3 years"
+        },
+        {
+          "url": "https://international.unicatt.it/ucscinternational-undergraduate-programs-business-and-finance",
+          "quote": "The Business and Finance programme is a 3-year English-taught bachelor’s degree"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://international.unicatt.it/ucscinternational-undergraduate-programs-business-and-finance",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-university-direct",
+      "evidence": [
+        {
+          "url": "https://international.unicatt.it/ucscinternational-undergraduate-programs-business-and-finance",
+          "quote": "Access the online application portal"
+        }
+      ]
+    }
+  },
+  "notes": "The programme page gives no tuition figure for this programme. The only EUR amount found (EUR 18,150.00) is in a Medicine and Surgery – Bolzano page, for a different programme. Application deadlines differ by programme: the Business and Finance page names only \"September 2026\" as next intake and says applications for 2026/2027 are closed, with the next period opening in Fall 2026 for 2027/2028 — no dated deadline for this programme. The dated deadlines found (4 November 2026 / 17 February 2027) belong to the Economics and Management programme timeline page, not to Business and Finance, so no intake fact is given. The programme page directs to the university's own online application portal (\"Access the online application portal\"), so the channel is recorded as it-university-direct; no page for this programme mentions Universitaly.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si vous devez passer le test d'admission Cattolica (section Entry requirements > Mathematics requirements). Les candidatures ne sont acceptées qui si elles sont complètes.",
+          "en": "Check whether you must take the Cattolica Admission Test (see Entry requirements > Mathematics requirements). Applications are accepted only if they are complete."
+        },
+        "evidence": [
+          {
+            "url": "https://international.unicatt.it/ucscinternational-admission-and-tuition-application-timeline-5420",
+            "quote": "Please refer to the Entry requirements > Mathematics requirements section to check if you must take the Cattolica Admission Test."
+          },
+          {
+            "url": "https://international.unicatt.it/ucscinternational-admission-and-tuition-application-timeline-5420",
+            "quote": "Your application will be accepted only if it is complete."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Places limitées et forte concurrence : certaines candidatures peuvent être placées sur liste d'attente.",
+          "en": "Limited spots and high competition: some applications may be placed on a waiting list."
+        },
+        "evidence": [
+          {
+            "url": "https://international.unicatt.it/ucscinternational-admission-and-tuition-application-timeline-5420",
+            "quote": "Because there are limited spots and high competition, some applications may be placed on a waiting list."
+          }
+        ]
+      }
+    ]
+  }
+}

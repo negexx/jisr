@@ -879,7 +879,8 @@ describe("eligibility: more exclusions, and nationalities by country name", () =
       "Students from all countries except Morocco may apply as international students",
     );
     expect(result.ok).toBe(false);
-    expect(reasonsOf(result)).toMatch(/MA/);
+    // the quote is now dropped as an exclusion, before the nationality check
+    expect(reasonsOf(result)).toMatch(/MA|exclusion/);
   });
 
   it("accepts a quote that names Morocco", async () => {

@@ -1,0 +1,74 @@
+{
+  "slug": "it-torino-politecnico-torino-electronic-and-communications-engineerin-l8",
+  "programmePage": "https://www.polito.it/en/education/bachelor-s-degree-programmes/electronic-and-communications-engineering",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.polito.it/en/education/bachelor-s-degree-programmes/electronic-and-communications-engineering/programme-details",
+          "quote": "The programme lasts 3 years and provides a multidisciplinary education in the ITC field"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.polito.it/en/education/bachelor-s-degree-programmes/electronic-and-communications-engineering",
+          "quote": "all courses are given in English, the official language of ICT"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.polito.it/didattica/iscriversi-studiare-laurearsi/iscrizione/corsi-di-laurea/studenti-con-titolo-estero",
+          "quote": "Se sei uno studente internazionale residente all’estero e richiedente visto, devi inviare la domanda di pre-iscrizione per ottenere il visto per studio e immatricolarti al Politecnico di Torino esclusivamente tramite il portale UNIVERSITALY."
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des frais de scolarité pour les étudiants non-UE n'est pas indiqué comme un montant unique en EUR dans les pages fournies; il dépend du pays de provenance et de l'ISEE (voir la Guida alla contribuzione, art. 5), donc non inclus. Les dates d'admission (intakes) ne sont pas fournies pour ce programme spécifique dans les pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le certificat de langue doit être téléchargé sur Apply@polito dans les délais; un test d'admission (TIL) ou une certification SAT est requis.",
+          "en": "Language certificate must be uploaded to Apply@polito by the deadline; an admission test (TIL) or SAT certification is required."
+        },
+        "evidence": [
+          {
+            "url": "https://didattica.polito.it/guida/2026/it/lingua_inglese_triennale_cla?cds=471&sdu=81",
+            "quote": "La certificazione deve essere presentata al momento della candidatura su Apply@polito."
+          },
+          {
+            "url": "https://www.polito.it/didattica/iscriversi-studiare-laurearsi/iscrizione/corsi-di-laurea/studenti-con-titolo-estero",
+            "quote": "superamento del TEST di AMMISSIONE (TIL) oppure possesso della certificazione internazionale SAT (NON VLIDO per Architettura)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Pour l'inscription, fournir le visa d'études type D et le code fiscal; les services CIMEA peuvent être nécessaires.",
+          "en": "For enrollment, provide a type D study visa and tax code; CIMEA services may be required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.polito.it/didattica/iscriversi-studiare-laurearsi/iscrizione/corsi-di-laurea/studenti-con-titolo-estero",
+            "quote": "Visto per studio “Immatricolazione Università” tipo D “nazionale” per cittadini Non-UE non residenti in Italia (vedi paragrafo sulla Pre-iscrizione)"
+          },
+          {
+            "url": "https://www.polito.it/didattica/iscriversi-studiare-laurearsi/iscrizione/corsi-di-laurea/studenti-con-titolo-estero",
+            "quote": "Codice fiscale rilasciato dall’Agenzia delle Entrate o, per i non residenti in Italia, dall’Ambasciata o Consolato competente"
+          }
+        ]
+      }
+    ]
+  }
+}

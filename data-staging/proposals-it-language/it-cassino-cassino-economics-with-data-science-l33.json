@@ -1,0 +1,18 @@
+{
+  "slug": "it-cassino-cassino-economics-with-data-science-l33",
+  "programmePage": "https://www.eds.unicas.it/",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv",
+          "quote": "2025;Cassino;Economica, Giuridica e Sociale;Economico;Laurea;L-33;Scienze economiche;Economics with data science;Frosinone;CASSINO;accesso libero;Convenzionale;Inglese"
+        }
+      ]
+    }
+  },
+  "notes": "Teaching language from the MUR offer file (Italian ministry, open data, 2025/26 academic year): the course is listed as \"Inglese\"."
+}

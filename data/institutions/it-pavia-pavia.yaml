@@ -1,0 +1,14 @@
+slug: it-pavia-pavia
+name: Università degli studi di Pavia
+country: IT
+city:
+  slug: pavia
+  name: Pavia
+type: public
+website: https://apply.unipv.eu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://apply.unipv.eu/
+    last_verified_at: 2026-10-05

@@ -1,0 +1,114 @@
+{
+  "slug": "it-cassino-cassino-economics-with-data-science-l33",
+  "programmePage": "https://www.eds.unicas.it/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.eds.unicas.it/",
+          "quote": "Duration: 3 years Level: Bachelor"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://eds.unicas.it/admission/enrollment",
+          "quote": "fill in the \"pre-enrolment application\" at UniversItaly (the official web portal of the Italian Ministry of University and Research for international students)"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "high-school-transcript",
+          "name": {
+            "fr": "Relevé de notes du lycée",
+            "en": "High school transcript"
+          },
+          "quotedAs": "high school transcript",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum vitae",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "curriculum vitae",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivation-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivation letter"
+          },
+          "quotedAs": "motivation letter",
+          "translationRequired": null
+        },
+        {
+          "slug": "certificate-of-proficiency-in-english",
+          "name": {
+            "fr": "Certificat de compétence en anglais",
+            "en": "Certificate of proficiency in English"
+          },
+          "quotedAs": "certificate of proficiency in English",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-or-identity-card",
+          "name": {
+            "fr": "Passeport ou carte d'identité en cours de validité",
+            "en": "Current (valid) passport or identity card"
+          },
+          "quotedAs": "current (valid) passport or identity card",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://eds.unicas.it/admission/enrollment",
+          "quote": "The following documents must be provided: high school transcript; curriculum vitae; motivation letter; certificate of proficiency in English; current (valid) passport or identity card."
+        }
+      ]
+    }
+  },
+  "notes": "Aucun frais de scolarité n'est indiqué pour ce programme (les pages ne donnent qu'une taxe administrative de 15 € pour la pré-admission). Les pages ne précisent pas si le programme est enseigné en anglais ni la date limite de candidature.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Note minimale de 70% au lycée, avec une note de mathématiques d'au moins 70%. Un diplôme de fin d'études secondaires obtenu depuis plus de 5 ans n'est pas accepté.",
+          "en": "Overall high school grade point average minimum 70%, with a math grade of at least 70%. A high school diploma older than 5 years is not accepted."
+        },
+        "evidence": [
+          {
+            "url": "https://www.eds.unicas.it/admission/admission-criteria",
+            "quote": "overall high school grade point average (minimum requirement: 70%) with an emphasis on math, the grade of which must not be less than 70%. A high school diploma or a bachelor older than 5 years will not be considered"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'inscription à l'année universitaire 2026/2027 est limitée aux étudiants nés entre 2001 et 2008; il faut avoir 18 ans au plus tard le 31 août 2026.",
+          "en": "Enrollment in the 2026/2027 academic program is limited to students born between 2001 and 2008; applicants must be at least 18 years old by August 31st, 2026."
+        },
+        "evidence": [
+          {
+            "url": "https://www.eds.unicas.it/admission/admission-criteria",
+            "quote": "enrollment in the 2026/2027 academic program is limited to students born between 2001 and 2008"
+          },
+          {
+            "url": "https://www.eds.unicas.it/admission/admission-criteria",
+            "quote": "students should be at least that age when joining our program (by August 31st, 2026)"
+          }
+        ]
+      }
+    ]
+  }
+}

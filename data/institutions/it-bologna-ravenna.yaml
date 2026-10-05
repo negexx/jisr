@@ -1,0 +1,14 @@
+slug: it-bologna-ravenna
+name: Università degli studi di Bologna
+country: IT
+city:
+  slug: ravenna
+  name: Ravenna
+type: public
+website: https://www.unibo.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unibo.it/
+    last_verified_at: 2026-10-05

@@ -1,0 +1,69 @@
+slug: it-milano-milano-economics-behavior-data-and-policy-l33
+institution: it-milano-milano
+country: IT
+city: milano
+field: business-economics
+level: bachelor
+name: "Economics: Behavior, Data and Policy"
+summary:
+  fr:
+    text: "Economics: Behavior, Data and Policy, Università degli studi di Milano (Milano). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR)."
+    status: draft
+  en:
+    text: "Economics: Behavior, Data and Policy, Università degli studi di Milano (Milano). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses."
+    status: draft
+  ar:
+    text: "Economics: Behavior, Data and Policy, Università degli studi di Milano (Milano). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR)."
+    status: draft
+officialUrl: https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Le nombre de places est limité : 100 + 15 réservées aux candidats non-UE résidant à l'étranger. Un test d'admission CEnT-S en anglais (sections Mathématiques et Raisonnement) est requis."
+          status: draft
+        en:
+          text: "Places are limited: 100 + 15 reserved for non-EU candidates residing abroad. An admission test CEnT-S in English (Mathematics and Reasoning sections) is required."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy
+    last_verified_at: 2026-10-05

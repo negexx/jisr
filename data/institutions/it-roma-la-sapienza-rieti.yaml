@@ -1,0 +1,14 @@
+slug: it-roma-la-sapienza-rieti
+name: Università degli studi di Roma La Sapienza
+country: IT
+city:
+  slug: rieti
+  name: Rieti
+type: public
+website: https://www.uniroma1.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.uniroma1.it/
+    last_verified_at: 2026-10-05

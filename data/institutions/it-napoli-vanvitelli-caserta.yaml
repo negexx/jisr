@@ -1,0 +1,14 @@
+slug: it-napoli-vanvitelli-caserta
+name: Università degli studi della Campania "Luigi Vanvitelli"
+country: IT
+city:
+  slug: caserta
+  name: Caserta
+type: public
+website: https://www.unicampania.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unicampania.it/
+    last_verified_at: 2026-10-05

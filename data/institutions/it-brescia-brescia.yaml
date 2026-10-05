@@ -1,0 +1,14 @@
+slug: it-brescia-brescia
+name: Università degli studi di Brescia
+country: IT
+city:
+  slug: brescia
+  name: Brescia
+type: public
+website: https://www.unibs.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unibs.it/
+    last_verified_at: 2026-10-05

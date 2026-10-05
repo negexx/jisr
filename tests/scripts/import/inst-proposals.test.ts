@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  alternateHomes,
   pickQuote,
   quoteFor,
   quoteNames,
@@ -28,12 +29,44 @@ describe("websiteFrom", () => {
         "https://tempus.tpf.hu/studyfinder/index/show/116",
         "https://studyinhungary.hu/institution/university-of-debrecen-60.html",
         "https://stipendiumhungaricum.hu/apply/",
+        "https://www.universitaly.it/en/studenti-stranieri",
+        "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/FAQ.pdf",
+        "https://www.mur.gov.it/it",
       ]),
     ).toBeNull();
   });
 
+  it("prefers the staged candidate website when it is on the winning domain", () => {
+    const urls = [
+      "https://corsidilaurea.uniroma1.it/it/course/33502",
+      "https://corsidilaurea.uniroma1.it/it/course/33549",
+      "https://www.uniroma1.it/it/pagina/contributi-e-agevolazioni",
+    ];
+    expect(websiteFrom(urls)).toBe("https://corsidilaurea.uniroma1.it/");
+    expect(websiteFrom(urls, "https://www.uniroma1.it/")).toBe("https://www.uniroma1.it/");
+    // a candidate on another domain is not used
+    expect(websiteFrom(urls, "https://www.other.it/")).toBe("https://corsidilaurea.uniroma1.it/");
+    // an insecure or missing candidate is not used
+    expect(websiteFrom(urls, "http://www.uniroma1.it/")).toBe("https://corsidilaurea.uniroma1.it/");
+    expect(websiteFrom(urls, null)).toBe("https://corsidilaurea.uniroma1.it/");
+  });
+
   it("is null without any page", () => {
     expect(websiteFrom([])).toBeNull();
+  });
+});
+
+describe("alternateHomes", () => {
+  it("offers the main www home page when the website is a sub-site", () => {
+    expect(alternateHomes("https://en.unito.it/")).toEqual(["https://www.unito.it/"]);
+    expect(alternateHomes("https://apply.unipv.eu/")).toEqual(["https://www.unipv.eu/"]);
+  });
+
+  it("offers nothing for a www or bare-domain home page, or for a two-part registrable domain", () => {
+    expect(alternateHomes("https://www.unibo.it/")).toEqual([]);
+    expect(alternateHomes("https://unibo.it/")).toEqual([]);
+    expect(alternateHomes("https://www.example.ac.uk/")).toEqual([]);
+    expect(alternateHomes("https://study.example.ac.uk/")).toEqual(["https://www.example.ac.uk/"]);
   });
 });
 

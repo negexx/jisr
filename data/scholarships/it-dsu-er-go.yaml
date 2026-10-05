@@ -1,0 +1,67 @@
+slug: it-dsu-er-go
+name: Borsa di studio ER.GO (Emilia-Romagna)
+provider: ER.GO - Azienda Regionale per il Diritto agli Studi Superiori
+destinations:
+  - IT
+eligibleNationalities: []
+fields: []
+institutions:
+  - it-bologna-bologna
+  - it-bologna-forli
+  - it-bologna-ravenna
+  - it-bologna-rimini
+level: bachelor
+summary:
+  fr:
+    text: Bourse régionale gérée par ER.GO pour les étudiants des universités d'Émilie-Romagne. Les étudiants internationaux de pays hors UE ayant des revenus à l'étranger fournissent des documents de leur pays pour calculer un équivalent de l'ISEE.
+    status: draft
+  en:
+    text: Regional scholarship managed by ER.GO for students at universities in Emilia-Romagna. International students from non-EU countries with income abroad submit home-country documents, used to calculate an equivalent of the ISEE.
+    status: draft
+support:
+  value:
+    amount: null
+    covers:
+      - tuition
+  source: page-1
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-3
+  info_kind: official
+  rules: []
+documents:
+  value:
+    - slug: foreign-income-documents
+      name:
+        fr:
+          text: Documentation sur les revenus à l'étranger
+          status: draft
+        en:
+          text: Foreign income documentation
+          status: draft
+      translationRequired: true
+  source: page-2
+  info_kind: official
+howToApply:
+  fr:
+    text: Candidature en ligne sur le site d'ER.GO, chaque année. Les documents de revenus étrangers, traduits et légalisés, sont à téléverser dans le Dossier Utente avant les dates limites de l'appel.
+    status: draft
+  en:
+    text: Apply online through the ER.GO website every academic year. Foreign income documents, translated and legalised, are uploaded in the Dossier Utente by the deadlines set in the call.
+    status: draft
+officialUrl: https://www.er-go.it/international-students/benefits/focus-on-scholarship
+sources:
+  page-1:
+    url: https://www.er-go.it/international-students/benefits/focus-on-scholarship
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.er-go.it/international-students/application/how-to-apply
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://www.er-go.it/cosa-fare-per/bandi-di-concorso/leggi-il-bando/sezione-i-norme-generali/@@display-file/file/sezione-i-norme-generali.pdf
+    last_verified_at: 2026-10-05

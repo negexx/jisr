@@ -386,6 +386,23 @@ describe("discoverBySearch", () => {
     expect(log.filter((q) => q.includes("admission"))).toHaveLength(1);
   });
 
+  it("asks the institution-level questions in Italian and English for Italy", async () => {
+    const log: string[] = [];
+    const languages: (string | undefined)[] = [];
+    const search: SearchProvider = {
+      name: "fake",
+      search: async (query, options) => {
+        log.push(query);
+        languages.push(options?.language);
+        return [];
+      },
+    };
+    await discoverBySearch({ ...input, country: "IT", search });
+    expect(log.some((q) => q.includes("tasse") && q.includes("tuition fees"))).toBe(true);
+    expect(log.some((q) => q.includes("preiscrizione") && q.includes("admission"))).toBe(true);
+    expect(languages.every((l) => l === "it")).toBe(true);
+  });
+
   it("returns no programme page when no hit's page names the programme", async () => {
     const found = await discoverBySearch({
       ...input,

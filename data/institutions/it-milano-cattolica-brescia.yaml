@@ -1,0 +1,14 @@
+slug: it-milano-cattolica-brescia
+name: Università Cattolica del "Sacro Cuore"
+country: IT
+city:
+  slug: brescia
+  name: Brescia
+type: private
+website: https://international.unicatt.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://international.unicatt.it/
+    last_verified_at: 2026-10-05

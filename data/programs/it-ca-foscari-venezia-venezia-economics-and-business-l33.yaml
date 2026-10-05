@@ -1,0 +1,100 @@
+slug: it-ca-foscari-venezia-venezia-economics-and-business-l33
+institution: it-ca-foscari-venezia-venezia
+country: IT
+city: venezia
+field: business-economics
+level: bachelor
+name: Economics and Business
+summary:
+  fr:
+    text: Economics and Business, Università Ca' Foscari Venezia (Venezia). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics and Business, Università Ca' Foscari Venezia (Venezia). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Economics and Business, Università Ca' Foscari Venezia (Venezia). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unive.it/degree/etr9
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2026-09-11
+      applicationOpens: null
+      applicationDeadline: null
+  source: page-2
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Admission limitée : test d'entrée écrit en ligne (TOLC-E ou SAT ou CEnT-S) portant sur les mathématiques et le raisonnement. Les candidats non-UE doivent avoir les résultats au moment de la soumission."
+          status: draft
+        en:
+          text: "Limited-admission programme: online written entry test (TOLC-E or SAT or CEnT-S) on mathematics and reasoning. Non-EU visa applicants must already hold official results at the moment of submission."
+          status: draft
+    - id: req-4
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Mathématiques : note minimale de 6/13 à la section mathématiques du TOLC-E, sinon obligation de formation supplémentaire (OFA). L'OFA doit être satisfaite avant les examens."
+          status: draft
+        en:
+          text: "Mathematics: minimum score of 6 out of 13 in the TOLC-E mathematics section, otherwise an Additional Learning Requirement (OFA) is assigned. The OFA must be fulfilled before sitting exams."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.unive.it/degree/etr9
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://apply.unive.it/courses/course/270-ba-economics-and-business
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://www.unive.it/pag/40813/
+    last_verified_at: 2026-10-05
+  page-4:
+    url: https://www.unive.it/web/en/12613/admission-and-enrolment
+    last_verified_at: 2026-10-05

@@ -1,0 +1,14 @@
+slug: it-milano-milano
+name: Università degli studi di Milano
+country: IT
+city:
+  slug: milano
+  name: Milano
+type: public
+website: https://www.unimi.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unimi.it/
+    last_verified_at: 2026-10-05

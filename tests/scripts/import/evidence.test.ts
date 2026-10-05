@@ -85,6 +85,27 @@ describe("checkLanguages", () => {
     expect(checkLanguages(["en"], "Language of instruction: English").ok).toBe(true);
     expect(checkLanguages(["hu"], "Language of instruction: Hungarian").ok).toBe(true);
     expect(checkLanguages(["hu"], "Language of instruction: English").ok).toBe(false);
+    expect(checkLanguages(["it"], "Language of instruction: Italian").ok).toBe(true);
+    expect(checkLanguages(["it"], "Lingua di erogazione: italiano").ok).toBe(true);
+    expect(checkLanguages(["it"], "Language of instruction: English").ok).toBe(false);
+    expect(checkLanguages(["it"], "The programme is taught in Italian").ok).toBe(true);
+    expect(checkLanguages(["it"], "Corso erogato in lingua italiana").ok).toBe(true);
+    expect(checkLanguages(["it"], "Cours dispensés en italien").ok).toBe(true);
+    expect(checkLanguages(["it"], "Unterrichtssprache: Italienisch").ok).toBe(true);
+    // "Italian" in the sense of nationality or place is not the teaching language
+    for (const quote of [
+      "Taught in English; open to Italian and international students",
+      "Taught in English at one of the best Italian universities",
+      "Tuition fees for Italian citizens and EU students",
+      "Italian language courses are offered to all students",
+      "Le diplôme italien est reconnu",
+      "Das italienische Studiensystem",
+    ])
+      expect(checkLanguages(["it"], quote).ok).toBe(false);
+    expect(
+      checkLanguages(["en", "it"], "Taught in English; open to Italian and international students")
+        .ok,
+    ).toBe(false);
     expect(checkLanguages(["nl"], "Taal Nederlands").ok).toBe(true);
     expect(checkLanguages(["en", "de"], "Taught in English and German").ok).toBe(true);
     expect(checkLanguages(["en", "de"], "Taught in English").ok).toBe(false);
@@ -386,6 +407,36 @@ describe("checkChannel", () => {
         .ok,
     ).toBe(true);
     expect(checkChannel("hu-stipendium-hungaricum", "Apply through the university").ok).toBe(false);
+    for (const quote of [
+      "Non-EU students residing abroad must submit the pre-enrolment application on the Universitaly portal",
+      "Pre-enrolment on Universitaly is mandatory for non-EU applicants",
+      "La domanda di preiscrizione va presentata sul portale UNIVERSITALY",
+    ])
+      expect(checkChannel("it-universitaly", quote).ok).toBe(true);
+    expect(checkChannel("it-universitaly", "Apply through the university").ok).toBe(false);
+    for (const quote of [
+      "Apply online on the university's application portal",
+      "Fill in the application form on the University of Bologna website",
+      "Applications are submitted through the university's own application platform",
+    ])
+      expect(checkChannel("it-university-direct", quote).ok).toBe(true);
+    for (const quote of [
+      "Pre-enrolment on Universitaly is mandatory for non-EU applicants",
+      "For information write to admissions@unibo.it",
+      "Italian applicants apply through the national system",
+      "EU students and non-EU students legally residing in Italy apply online through the university's application portal",
+      "Italian and EU citizens apply via the online application system",
+      "Italian nationals apply through the university's application portal",
+      "Candidates already living in Italy use the online application system",
+      "EEA applicants apply online on the application portal",
+    ])
+      expect(checkChannel("it-university-direct", quote).ok).toBe(false);
+    expect(
+      checkChannel(
+        "it-university-direct",
+        "Non-EU students residing abroad apply online on the university's application portal",
+      ).ok,
+    ).toBe(true);
     expect(checkChannel("unknown-channel", "anything at all here").ok).toBe(false);
   });
 });

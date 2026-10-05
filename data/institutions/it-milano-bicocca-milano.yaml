@@ -1,0 +1,14 @@
+slug: it-milano-bicocca-milano
+name: Università degli studi di Milano-Bicocca
+country: IT
+city:
+  slug: milano
+  name: Milano
+type: public
+website: https://www.unimib.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unimib.it/
+    last_verified_at: 2026-10-05

@@ -1,0 +1,14 @@
+slug: it-roma-luiss-roma
+name: Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma
+country: IT
+city:
+  slug: roma
+  name: Roma
+type: private
+website: https://www.luiss.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.luiss.it/
+    last_verified_at: 2026-10-05

@@ -1,0 +1,14 @@
+slug: it-siena-siena
+name: Università degli studi di Siena
+country: IT
+city:
+  slug: siena
+  name: Siena
+type: public
+website: https://admission.unisi.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://admission.unisi.it/
+    last_verified_at: 2026-10-05

@@ -1,0 +1,44 @@
+{
+  "slug": "it-roma-luiss-roma-business-administration-l18",
+  "programmePage": "https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration",
+          "quote": "Credits 180 ECTS Duration 3 Years Language English Year 2027/2028"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration",
+          "quote": "Credits 180 ECTS Duration 3 Years Language English Year 2027/2028"
+        }
+      ]
+    }
+  },
+  "notes": "Channel non précisé pour cette formation : aucune page ne nomme Universitaly ni un portail de candidature propre pour ce Bachelor. Paiement : aucune page ne donne de frais de scolarité pour un étudiant hors UE ; les pages « Ammissione con certificazioni » (extra-UE) indiquent seulement un « contributo unico » de 15 000 € mais sans préciser qu'il s'applique aux étudiants étrangers hors UE, donc non retenu ; le seul montant pour un étudiant non-UE est une réduction de 70 % des frais institutionnels dans le programme Double Degree avec Tilburg (Master), hors sujet.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les conditions d'admission (annonce d'admission), les documents requis et les dates limites seront publiés en octobre 2026. Consultez le site Luiss pour la procédure correspondant à votre profil.",
+          "en": "Admission requirements, required documents and application deadlines will be published in the admission announcements in October 2026. Check the Luiss admissions section for the procedure matching your profile."
+        },
+        "evidence": [
+          {
+            "url": "https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration",
+            "quote": "The admission announcements, which include eligibility requirements, selection procedures, required documents, and application deadlines, will be published in October 2026."
+          }
+        ]
+      }
+    ]
+  }
+}

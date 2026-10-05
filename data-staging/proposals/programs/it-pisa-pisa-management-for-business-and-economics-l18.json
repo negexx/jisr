@@ -1,0 +1,79 @@
+{
+  "slug": "it-pisa-pisa-management-for-business-and-economics-l18",
+  "programmePage": "https://www.unipi.it/en/education/courses/bachelor-and-single-cycle-master-degree/management-for-business-and-economics-mber-l-en/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.unipi.it/en/education/courses/bachelor-and-single-cycle-master-degree/management-for-business-and-economics-mber-l-en/",
+          "quote": "Duration: 3 years"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unipi.it/en/education/courses/bachelor-and-single-cycle-master-degree/management-for-business-and-economics-mber-l-en/",
+          "quote": "The course is delivered entirely in English and involves the participation of international lecturers."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.unipi.it/en/education/courses/bachelor-and-single-cycle-master-degree/management-for-business-and-economics-mber-l-en/",
+          "quote": "Non-EU citizens residing abroad applying for a student VISA who wish to be included in the reserved final ranking must have submitted the pre-enrolment application on the Universitaly portal by the selection deadline stated in this call."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition left out: the pages give only ISEE/income-band tables and the maximum annual amount for regular students (e.g. \"Il contributo onnicomprensivo annuale massimo per le studentesse e gli studenti regolari è di € 2.900\"), plus country-of-origin forfait coefficients for international students, and a first instalment made of regional tax (€ 140) and stamp duty (€ 16); no single tuition amount for an international Bachelor student is quoted. Intake dates for non-EU applicants are not quotable with day, month and year: the only dated deadlines on the programme page are \"deadline 5th of July 2026\" and \"from 1st of June 2026 until the 30th of August 2026\", but the page presents them under \"Admission selection for EU and equated non EU citizens\" / \"EU and EU-equated citizens\", not for non-EU visa applicants, so they are omitted. Document lists are on the Universitaly pre-enrolment page, but they are given for \"laurea triennale o laurea magistrale a ciclo unico in italiano\" / master's degrees in Italian or English, not specifically for this English-taught Bachelor, so documents are omitted.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.unipi.it/en/education/courses/bachelor-and-single-cycle-master-degree/management-for-business-and-economics-mber-l-en/",
+            "quote": "Proficient knowledge of English at least at level B2, according to the Common European Framework of Reference for Languages, is also required"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est à nombre limité : il faut passer un test de sélection (CEnT, TOLC-E avec section anglaise, SAT, GMAT ou ACT) avec un score minimum d'éligibilité de 10. Vérifiez l'appel à candidatures annuel.",
+          "en": "Admission is locally capped: you must pass a selection test (CEnT, TOLC-E with English section, SAT, GMAT or ACT) with a minimum eligibility score of 10. Check the annual call for applications."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unipi.it/en/education/courses/bachelor-and-single-cycle-master-degree/management-for-business-and-economics-mber-l-en/",
+            "quote": "To be included in the ranking list, candidates must have taken one among these tests and achieved a minimum eligibility score of 10"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La sélection pour les non-UE résidant à l'étranger et demandant un visa est soumise à une échéance spécifique indiquée dans l'appel à candidatures ; consultez le bando d'admission.",
+          "en": "Selection for non-EU citizens residing abroad and applying for a VISA follows a specific deadline stated in the admission call; consult the bando di ammissione."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unipi.it/en/education/courses/bachelor-and-single-cycle-master-degree/management-for-business-and-economics-mber-l-en/",
+            "quote": "Selection for non-EU citizens residing abroad applying for a student VISA is now open."
+          }
+        ]
+      }
+    ]
+  }
+}

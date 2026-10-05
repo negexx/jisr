@@ -1,0 +1,33 @@
+{
+  "slug": "it-milano-bocconi-milano-international-economics-and-management-l18",
+  "programmePage": "https://www.unibocconi.it/en/programs/bachelor-science/international-economics-and-management",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://apply.unibocconi.it/en_US/courses/course/44-biem-bsc-international-economics-and-management",
+          "quote": "Nominal duration 3 years (180 ECTS)"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune loi d'admission détaillée pour le BIEM n'est donnée dans les pages fournies ; la page apply.unibocconi.it ne contient aucun délai daté. Le montant de 17 000 EUR/an est présenté comme un montant unique pour les étudiants de 1re année d'un bachelor, sans distinction UE/non-UE ; il est donc repris comme frais de scolarité, mais il convient de vérifier auprès de l'université s'il s'applique aux étudiants non-UE résidant à l'étranger. Aucune date de début de semestre, d'ouverture ou de clôture des candidatures (avec année) n'apparaît dans les pages. Aucun document à fournir n'est nommé. Aucun niveau de langue ni voie de candidature n'est mentionné.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier sur la page d'admission du programme les conditions exactes pour les candidats internationaux (diplôme étranger, sélection, tests).",
+          "en": "Check the programme's admission page for the exact conditions for international applicants (foreign diploma, selection, tests)."
+        },
+        "evidence": [
+          {
+            "url": "https://apply.unibocconi.it/en_US/courses/course/44-biem-bsc-international-economics-and-management",
+            "quote": "you are considered an International applicant if you are attending/have attended: - a secondary school outside Italy"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+slug: it-marche-ancona-digital-economics-and-business-l18
+institution: it-marche-ancona
+country: IT
+city: ancona
+field: business-economics
+level: bachelor
+name: Digital Economics and Business
+summary:
+  fr:
+    text: Digital Economics and Business, Università Politecnica delle Marche - Ancona (Ancona). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Digital Economics and Business, Università Politecnica delle Marche - Ancona (Ancona). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Digital Economics and Business, Università Politecnica delle Marche - Ancona (Ancona). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.econ.univpm.it/deb-studyplan
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-1
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier la mendicité du diplôme étranger et la procédure de pré-inscription sur Universitaly, ainsi que les tests de vérification des connaissances de la Faculté d'Économie.
+          status: draft
+        en:
+          text: Check the eligibility of the foreign diploma and the pre-enrolment procedure on Universitaly, as well as the Faculty of Economics knowledge verification tests.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.econ.univpm.it/deb-studyplan
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.univpm.it/Entra/Ingegneria/Cittadini_non_comunitari_residenti_all_estero_-_Segreteria_studenti_Economia
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://www.univpm.it/Entra/Front_Office_-_Immatricolazioni_Iscrizioni_C_L_triennali
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
+    last_verified_at: 2026-10-05

@@ -1,0 +1,22 @@
+slug: it-university-direct
+name: University application
+country: IT
+kind: direct
+url: https://www.universitaly.it/en/studenti-stranieri
+accountRequired: null
+summary:
+  fr:
+    text: "Chaque université publie sur son site sa procédure et ses dates de préinscription (sauf pour les formations à places limitées au niveau national) : suivez ce que l'université décrit pour cette formation (plateforme, dates, pièces). Pour le visa, la préinscription sur Universitaly reste obligatoire."
+    status: draft
+  en:
+    text: "Each university publishes its pre-enrolment procedure and dates on its website (except for courses with nationally limited places): follow what the university describes for this programme (platform, dates, documents). For the visa, pre-enrolment on Universitaly is still required."
+    status: draft
+  ar:
+    text: "تنشر كل جامعة إجراءات التسجيل المسبق ومواعيده على موقعها (باستثناء الشعب ذات المقاعد المحدودة وطنيًا): اتبعوا ما تشرحه الجامعة لهذه الشعبة (المنصة والمواعيد والوثائق). وبالنسبة للتأشيرة يظل التسجيل المسبق في Universitaly إلزاميًا."
+    status: draft
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf
+    last_verified_at: 2026-10-05

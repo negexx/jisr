@@ -34,6 +34,10 @@ const CHANNEL_TEXT: Record<string, string> = {
   "hu-university-direct": "Applications are made on the website of the chosen university.",
   "hu-stipendium-hungaricum":
     "Applications are made for the Stipendium Hungaricum scholarship programme.",
+  "it-universitaly":
+    "A non-EU applicant living abroad makes the pre-enrolment application on the Universitaly portal.",
+  "it-university-direct":
+    "Applications are made on the university's own application portal or form.",
 };
 
 type Intake = {
