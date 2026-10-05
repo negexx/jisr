@@ -197,6 +197,37 @@ describe("discoverTopicPages", () => {
     expect(search.languages).toEqual(["fr", "fr", "fr", "fr"]);
   });
 
+  it("asks four Italian queries for Italy, in Italian and English, with the search language it", async () => {
+    const search = provider(() => []);
+    await discoverTopicPages({ country: "IT", website: "https://www.uni-example.it/", search });
+    expect(search.queries).toHaveLength(4);
+    expect(search.queries.every((q) => q.startsWith("site:uni-example.it "))).toBe(true);
+    expect(search.queries.some((q) => q.includes("tasse universitarie"))).toBe(true);
+    expect(search.queries.some((q) => q.includes("lingua di erogazione"))).toBe(true);
+    expect(search.queries.some((q) => q.includes("scadenza preiscrizione"))).toBe(true);
+    expect(search.queries.some((q) => q.includes("documenti richiesti"))).toBe(true);
+    expect(search.languages).toEqual(["it", "it", "it", "it"]);
+  });
+
+  it("scores Italian fee, language, deadline and document pages", () => {
+    const score = (url: string, text: string, topic: Topic) => scoreTopicLink({ url, text }, topic);
+    expect(
+      score("https://www.unibo.it/it/didattica/tasse-e-contributi", "Tasse e contributi", "fees"),
+    ).toBeGreaterThanOrEqual(0.4);
+    expect(
+      score("https://www.unibo.it/en/lingua", "Lingua di erogazione del corso", "language"),
+    ).toBeGreaterThanOrEqual(0.4);
+    expect(
+      score("https://www.unibo.it/en/scadenze", "Scadenze e preiscrizione", "deadline"),
+    ).toBeGreaterThanOrEqual(0.4);
+    expect(
+      score("https://www.unibo.it/en/documenti", "Documenti richiesti", "documents"),
+    ).toBeGreaterThanOrEqual(0.4);
+    expect(score("https://www.unibo.it/it/ricerca", "Ricerca scientifica", "fees")).toBeLessThan(
+      0.4,
+    );
+  });
+
   it("asks only the requested topics", async () => {
     const search = provider(() => []);
     await discoverTopicPages({

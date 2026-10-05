@@ -35,7 +35,10 @@ const NOT_AN_INSTITUTION = [
   "mur.gov.it",
 ];
 
-export function websiteFrom(urls: readonly string[]): string | null {
+export function websiteFrom(
+  urls: readonly string[],
+  preferred: string | null = null,
+): string | null {
   const counts = new Map<string, { n: number; first: string }>();
   for (const url of urls) {
     let domain: string;
@@ -50,7 +53,18 @@ export function websiteFrom(urls: readonly string[]): string | null {
     else seen.n++;
   }
   const best = [...counts.values()].sort((a, b) => b.n - a.n)[0];
-  return best === undefined ? null : `${new URL(best.first).origin}/`;
+  if (best === undefined) return null;
+  // the staged candidate (https only) wins when it is on the same registrable domain: a programme
+  // page often sits on a course-catalogue sub-site that is not the university's home page
+  if (preferred?.startsWith("https://")) {
+    try {
+      if (registrable(preferred) === registrable(best.first))
+        return `${new URL(preferred).origin}/`;
+    } catch {
+      // not a URL: ignored
+    }
+  }
+  return `${new URL(best.first).origin}/`;
 }
 
 const TYPE_WORD = /hogeschool|universit|hochschule|college|school|institut|ecole|école/i;
@@ -160,7 +174,8 @@ async function main(argv: readonly string[]): Promise<void> {
   let written = 0;
   for (const slug of [...wanted].sort()) {
     const staged = await readYaml(stageFile("institutions", slug));
-    const website = websiteFrom(urls.get(slug) ?? []);
+    const candidate = typeof staged?.website === "string" ? staged.website : null;
+    const website = websiteFrom(urls.get(slug) ?? [], candidate);
     if (staged === null || website === null) {
       skipped.push(
         `${slug}: ${staged === null ? "no staged record" : "no institution page known"}`,

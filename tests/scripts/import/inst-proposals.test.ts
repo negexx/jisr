@@ -35,6 +35,21 @@ describe("websiteFrom", () => {
     ).toBeNull();
   });
 
+  it("prefers the staged candidate website when it is on the winning domain", () => {
+    const urls = [
+      "https://corsidilaurea.uniroma1.it/it/course/33502",
+      "https://corsidilaurea.uniroma1.it/it/course/33549",
+      "https://www.uniroma1.it/it/pagina/contributi-e-agevolazioni",
+    ];
+    expect(websiteFrom(urls)).toBe("https://corsidilaurea.uniroma1.it/");
+    expect(websiteFrom(urls, "https://www.uniroma1.it/")).toBe("https://www.uniroma1.it/");
+    // a candidate on another domain is not used
+    expect(websiteFrom(urls, "https://www.other.it/")).toBe("https://corsidilaurea.uniroma1.it/");
+    // an insecure or missing candidate is not used
+    expect(websiteFrom(urls, "http://www.uniroma1.it/")).toBe("https://corsidilaurea.uniroma1.it/");
+    expect(websiteFrom(urls, null)).toBe("https://corsidilaurea.uniroma1.it/");
+  });
+
   it("is null without any page", () => {
     expect(websiteFrom([])).toBeNull();
   });
