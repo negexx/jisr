@@ -216,6 +216,10 @@ describe("checkTuition", () => {
       false,
     );
     expect(checkTuition(100000, "Fee 1000 per year", 2026).ok).toBe(true);
+    expect(checkTuition(30000, "Amateur 3000", 2026, "EUR").ok).toBe(false);
+    expect(checkTuition(69000000, "690.000,- Ft per semester", 2026, "HUF").ok).toBe(true);
+    expect(checkTuition(300000, "Tuition 3.000,- EUR per semester", 2026, "EUR").ok).toBe(true);
+    expect(checkTuition(300000, "Tuition 3000,-€", 2026, "EUR").ok).toBe(true);
   });
 
   it("knows which study year is the current one", () => {

@@ -354,10 +354,18 @@ const CURRENCY_TOKENS: Record<string, string> = {
   GBP: String.raw`GBP\b|£|pounds?\b`,
 };
 const AFTER = Object.fromEntries(
-  Object.entries(CURRENCY_TOKENS).map(([c, t]) => [c, new RegExp(`^\\s{0,2}(?:${t})`, "i")]),
+  // "3.000,- EUR": the Dutch and German ",-" may stand between the amount and its currency
+  Object.entries(CURRENCY_TOKENS).map(([c, t]) => [
+    c,
+    new RegExp(`^(?:,\\s?[-–])?\\s{0,2}(?:${t})`, "i"),
+  ]),
 );
 const BEFORE = Object.fromEntries(
-  Object.entries(CURRENCY_TOKENS).map(([c, t]) => [c, new RegExp(`(?:${t})\\s{0,2}$`, "i")]),
+  // a word that merely ends in a currency ("Amateur") is not a mark: a boundary or a symbol first
+  Object.entries(CURRENCY_TOKENS).map(([c, t]) => [
+    c,
+    new RegExp(`(?:^|[^a-z])(?:${t})\\s{0,2}$`, "i"),
+  ]),
 );
 
 // The currency written beside one occurrence of the amount: the one right after it ("3,000 EUR",
