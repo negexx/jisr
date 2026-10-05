@@ -51,6 +51,23 @@ describe("checkRouteDates", () => {
     expect(checkRouteDates(parseVisaDeadlines(PAGE), note)).toEqual({ ok: true, problems: [] });
   });
 
+  it("fails when the page states only one of the two deadlines", () => {
+    const one = parseVisaDeadlines(PAGE).slice(0, 1);
+    const result = checkRouteDates(one, note);
+    expect(result.ok).toBe(false);
+    expect(result.problems.join(" ")).toMatch(/two/i);
+  });
+
+  it("reports a date in the note that the page no longer states", () => {
+    const stale = {
+      ...note,
+      en: `${note.en} Also by 15 December 2026.`,
+    };
+    const result = checkRouteDates(parseVisaDeadlines(PAGE), stale);
+    expect(result.ok).toBe(false);
+    expect(result.problems.join(" ")).toMatch(/15 December 2026/);
+  });
+
   it("reports a date that the page changed and a page with no deadline", () => {
     const moved = parseVisaDeadlines(PAGE.replace("30 novembre 2026", "15 novembre 2026"));
     const result = checkRouteDates(moved, note);

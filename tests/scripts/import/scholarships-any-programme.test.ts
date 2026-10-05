@@ -14,7 +14,7 @@ import {
 const HOME = "https://grants.example/any";
 const pages: Record<string, string> = {
   [HOME]:
-    "First- and higher-semester students of all nationalities can apply directly to their university. Students from every country may apply. Grundsätzlich ist jedes Studium an einer staatlichen oder staatlich anerkannten Hochschule förderungsfähig. Every course of study at a state university is eligible for funding. Also zum Beispiel auch ein Zweit- oder Ergänzungsstudium, ein Masterstudiengang oder ein duales Studium. Master programmes are eligible for funding. Studierende aller Nationalitäten und aller Fachrichtungen können sich bewerben. Students of all nationalities are not eligible for this grant. It pays 300 euros per month. Apply at your university.",
+    "First- and higher-semester students of all nationalities can apply directly to their university. Students from every country may apply. Grundsätzlich ist jedes Studium an einer staatlichen oder staatlich anerkannten Hochschule förderungsfähig. Every course of study at a state university is eligible for funding. Also zum Beispiel auch ein Zweit- oder Ergänzungsstudium, ein Masterstudiengang oder ein duales Studium. Master programmes are eligible for funding. Studierende aller Nationalitäten und aller Fachrichtungen können sich bewerben. Students of all nationalities are not eligible for this grant. It pays 300 euros per month. Apply at your university. Open to students of all nationalities except Moroccan citizens. Nicht jedes Studium ist förderungsfähig. Not every course of study is eligible for funding. Every course of study is eligible only after the first degree.",
 };
 const getText = async (url: string) => {
   const text = pages[url];
@@ -66,6 +66,15 @@ describe("all nationalities", () => {
     expect(mentionsInternationalApplicants(quote)).toBe(true);
   });
 
+  it.each([
+    "not open to students of any nationality other than German",
+    "open to students of all nationalities except Chinese citizens",
+    "Studierende aller Nationalitäten außer deutschen",
+    "studenti di tutte le nazionalità tranne quella italiana",
+  ])("is not open to international applicants when it excludes some (%s)", (quote) => {
+    expect(mentionsInternationalApplicants(quote)).toBe(false);
+  });
+
   it("does not take a mere mention of nationality for it", () => {
     expect(mentionsInternationalApplicants("Please state your nationality in the form")).toBe(
       false,
@@ -74,6 +83,15 @@ describe("all nationalities", () => {
 
   it("makes an eligibility quote count", async () => {
     expect((await run()).ok).toBe(true);
+  });
+
+  it("drops 'all nationalities except Moroccan citizens' as an exclusion", async () => {
+    const result = await run({
+      evidence: evidence({
+        eligibility: [q("open to students of all nationalities except Moroccan citizens")],
+      }),
+    });
+    expect(result.ok).toBe(false);
   });
 
   it("still drops an exclusion", async () => {
@@ -91,6 +109,15 @@ describe("every programme is eligible", () => {
     "Grundsätzlich ist jedes Studium an einer staatlichen oder staatlich anerkannten Hochschule förderungsfähig",
   ])("counts as covering the first degree (%s)", async (quote) => {
     expect((await run({ evidence: evidence({ level: [q(quote)] }) })).ok).toBe(true);
+  });
+
+  it.each([
+    "Nicht jedes Studium ist förderungsfähig",
+    "Not every course of study is eligible for funding",
+    "Every course of study is eligible only after the first degree",
+  ])("does not count a negation or a later stage (%s)", async (quote) => {
+    const result = await run({ evidence: evidence({ level: [q(quote)] }) });
+    expect(result.ok).toBe(false);
   });
 
   it.each([

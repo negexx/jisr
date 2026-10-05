@@ -90,6 +90,25 @@ export function checkRouteDates(
   const problems: string[] = [];
   if (deadlines.length === 0) {
     problems.push("no visa deadline could be parsed from the page: the wording changed");
+  } else if (deadlines.length !== 2) {
+    problems.push(
+      `the page states ${deadlines.length} visa deadline(s) but two were expected (this year and next): the wording changed`,
+    );
+  }
+  // the other way round: a full date written in a note must be one the page states
+  for (const locale of ["en", "fr"] as const) {
+    const names = MONTHS.map((m) => m[locale]).join("|");
+    const dated = new RegExp(`(?<!\\d)(\\d{1,2})\\s+(${names})\\s+(\\d{4})`, "gi");
+    for (const m of note[locale].matchAll(dated)) {
+      const [whole, day, month, year] = m;
+      if (whole === undefined || day === undefined || month === undefined || year === undefined)
+        continue;
+      const index = MONTHS.findIndex((x) => x[locale].toLowerCase() === month.toLowerCase());
+      const iso = `${year}-${String(index + 1).padStart(2, "0")}-${day.padStart(2, "0")}`;
+      if (!deadlines.some((d) => d.date === iso)) {
+        problems.push(`the ${locale} route note states ${whole}, which the page does not state`);
+      }
+    }
   }
   for (const d of deadlines) {
     for (const locale of ["en", "fr"] as const) {

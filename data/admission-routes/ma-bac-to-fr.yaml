@@ -4,21 +4,7 @@ credentialType: ma-bac
 destination: FR
 level: bachelor
 outcome: direct
-conditions:
-  - id: crous-grant-needs-residence
-    kind: manual_check
-    source: crous
-    info_kind: guidance
-    note:
-      fr:
-        text: "La bourse sur critères sociaux (Crous) n'est en général pas accessible à un étudiant qui arrive avec un visa d'études : pour une autre nationalité, il faut un titre de séjour valide, être domicilié en France depuis au moins 2 ans et justifier d'un foyer fiscal de rattachement en France depuis au moins 2 ans."
-        status: draft
-      en:
-        text: "The need-based grant (Crous) is generally not open to a student who arrives on a study visa: for another nationality, a valid residence permit, at least 2 years' domicile in France and a tax household in France for at least 2 years are required."
-        status: draft
-      ar:
-        text: "المنحة على أساس المعايير الاجتماعية (Crous) غير متاحة عمومًا لطالب يصل بتأشيرة دراسة: بالنسبة لجنسية أخرى يُشترط سند إقامة ساري، والإقامة في فرنسا منذ سنتين على الأقل، وأسرة جبائية مرتبطة بها في فرنسا منذ سنتين على الأقل."
-        status: draft
+conditions: []
 note:
   fr:
     text: "Avec le baccalauréat marocain, vous candidatez en première année de Licence ou de BUT sur la plateforme Études en France de Campus France Maroc (et non sur Parcoursup). Chaque formation fixe ses propres conditions."
@@ -36,6 +22,3 @@ sources:
   main:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
     last_verified_at: 2026-10-01
-  crous:
-    url: https://www.etudiant.gouv.fr/fr/bourses-sur-criteres-sociaux-pour-qui-2980
-    last_verified_at: 2026-10-05

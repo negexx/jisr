@@ -97,7 +97,7 @@ export type ScholarshipVerified =
 // A scheme that lists bachelor AND master as the levels it covers ("bachelor's or master's") is open
 // to bachelor students too: Jisr only shows it on bachelor programmes (a both-levels quote).
 const GRADUATE_LEVEL =
-  /\bmaster|postgraduate|(?<!under)\bgraduate (?:students|studies|programmes?|programs?)|\bph\.?d\b|doctora|\bpromotion\b|laurea magistrale|lauree magistrali|dottorat|post[- ]laurea|specializzazione/i;
+  /\bmaster|postgraduate|(?<!under)\bgraduate (?:students|studies|programmes?|programs?)|\bph\.?d\b|doctora|\bpromotion\b|laurea magistrale|lauree magistrali|dottorat|post-?\s?laurea|specializzazione|specialistic|secondo (?:livello|ciclo)/i;
 const BACHELOR_PREREQUISITE: readonly RegExp[] = [
   /\b(?:hold|holds|holding|holders?|completed|graduates?)\s+(?:of\s+)?(?:an?\s+|the\s+|their\s+)?(?:bachelor|licence|undergraduate degree)/i,
   /\bbachelor['’]?s?(?: degree)?\s+(?:holders?|required|is required)/i,
@@ -113,6 +113,7 @@ const BACHELOR_PREREQUISITE: readonly RegExp[] = [
   /\bin possesso (?:della|del|di)\s+(?:diploma di\s+)?laurea/i,
   /\blaureat[oiae]\b/i,
   /\bdopo la laurea/i,
+  /\b(?:conseguito|conseguimento (?:del|della))\s+(?:il\s+|la\s+)?(?:diploma di\s+)?laurea/i,
 ];
 // "bachelor's or master's", "bachelor and master programmes", "Bachelor- und Masterstudiengänge",
 // "bachelor- of masteropleiding", "licence ou en master", "Bachelor- oder Masterstudierende",
@@ -163,18 +164,21 @@ const UNDERGRADUATE: readonly RegExp[] = [
   /\bbachelor-?studi(?:um|engang|e)\b|\bbachelorstudent/i,
   // a scheme open to every programme ("jedes Studium ist förderungsfähig", "every course of study
   // is eligible") covers the first degree; a quote that also names master is mixed and rejected
-  /\bjedes studium\b[^.]{0,80}f[öo]rder(?:ungs)?f[äa]hig/i,
-  /\bevery (?:course of study|degree programme|study programme)\b[^.]{0,80}\beligible\b/i,
+  /(?<!\bnicht\s)\bjedes studium\b[^.]{0,80}f[öo]rder(?:ungs)?f[äa]hig/i,
+  /(?<!\bnot\s)\bevery (?:course of study|degree programme|study programme)\b[^.]{0,80}\beligible\b/i,
   // Italian: "corsi di laurea" (not "laurea magistrale"), "laurea triennale", "primo livello"
-  /\bcors[oi]\s+di\s+laurea(?!\s+magistrale)/i,
+  /\bcors[oi]\s+di\s+laurea(?!\s+(?:magistrale|specialistica|di secondo))/i,
   /\blaurea triennale|\blauree triennali|\bprimo livello|\bprimo ciclo/i,
 ];
+// "eligible only after the first degree" is a later stage, whatever else the quote says
+const LATER_STAGE = /\bonly after\b|\bnach dem ersten\b|\berst nach\b|\bsolo dopo\b/i;
 const isUndergraduate = (quote: string): boolean =>
-  UNDERGRADUATE.some((pattern) => pattern.test(quote)) || namesBothLevels(quote);
+  !LATER_STAGE.test(quote) &&
+  (UNDERGRADUATE.some((pattern) => pattern.test(quote)) || namesBothLevels(quote));
 
 // --- eligibility ----------------------------------------------------------------------------------
 const EXCLUSION =
-  /not eligible|ineligible|cannot apply|can ?not apply|are excluded|not entitled|\binstead\b|reserved for|must not be (?:from|a national|nationals|citizens?)|should (?:see|refer|consult)|only (?:eu|eea|german|dutch|french) (?:citizens|nationals|students)|exclusively for (?:german|eu\b|eea|dutch|french|national|citizens)|nur f[üu]r (?:deutsche|eu\b)|r[ée]serv[ée]e?s? aux|only (?:for|open to)\s+(?:german|eu\b|eea|dutch|french|national)|nicht\s+(?:berechtigt|bewerben)|k[öo]nnen sich nicht bewerben|ne sont pas|ne peuvent pas|uitgesloten|niet in aanmerking|non possono|non sono ammess|non hanno diritto|\besclus[oiae]\b|riservat[oiae]\s+(?:ai|agli|alle|a)\s|solo per (?:i |gli )?(?:student|cittadin)/i;
+  /not eligible|ineligible|cannot apply|can ?not apply|are excluded|not entitled|\binstead\b|reserved for|must not be (?:from|a national|nationals|citizens?)|should (?:see|refer|consult)|only (?:eu|eea|german|dutch|french) (?:citizens|nationals|students)|exclusively for (?:german|eu\b|eea|dutch|french|national|citizens)|nur f[üu]r (?:deutsche|eu\b)|r[ée]serv[ée]e?s? aux|only (?:for|open to)\s+(?:german|eu\b|eea|dutch|french|national)|nicht\s+(?:berechtigt|bewerben)|k[öo]nnen sich nicht bewerben|ne sont pas|ne peuvent pas|uitgesloten|niet in aanmerking|not open to|(?:except|excluding|other than|tranne|eccetto|sauf|au(?:ß|ss)er|behalve)[^.;]{0,60}(?:morocc|maroc|marokk)|non possono|non pu[oò]\s|non (?:sono|è|e['’]) idone|non (?:vengono|viene) ammess|non benefici|non spett|esclusivamente (?:a|ai|agli|alle|per) (?:i |gli )?(?:student[ei] |cittadin[ie] )?italian|non sono ammess|non hanno diritto|\besclus[oiae]\b|riservat[oiae]\s+(?:ai|agli|alle|a)\s|solo per (?:i |gli )?(?:student|cittadin)/i;
 
 // "Foreign Office / Affairs" is a ministry, not a foreign applicant. Local to this verifier: the
 // shared rule stays as it is.

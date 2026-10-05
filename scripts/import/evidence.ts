@@ -127,12 +127,13 @@ const INTERNATIONAL_WORDS: readonly RegExp[] = [
   /(?:from|obtained|studied|completed)\s+abroad/i,
   // Italian: "studenti stranieri", "extra UE", "non comunitari", "studenti internazionali"; a
   // foreign language ("lingue straniere") and an office name are not applicants
-  /(?<!lingu[ae]\s)\bstranier[oiae]\b/i,
+  /(?<!lingu[ae]\s+)(?<!ufficio (?:per )?(?:gli )?studenti\s+)\bstranier[oiae]\b/i,
   /\bextra[- ]?(?:ue\b|comunitar)/i,
   /\bnon[- ]?(?:ue\b|comunitar)/i,
   /\bstudent[ei]\s+internazional[ei]\b/i,
   // open to every nationality (a scheme with no nationality condition includes a Moroccan applicant)
-  /\ball nationalit(?:y|ies)\b|\bany nationality\b|\bregardless of (?:their |your )?nationality\b|\baller nationalit[äa]ten\b|\btutte le nazionalit[àa]/i,
+  // (not when the same clause then excludes some: "except Moroccan citizens", "other than German")
+  /(?:\ball nationalit(?:y|ies)\b|\bany nationality\b|\baller nationalit[äa]ten\b|\btutte le nazionalit[àa])(?![^.;]{0,40}\b(?:other than|except|excluding|but|tranne|eccetto|au(?:ß|ss)er|sauf)\b)|\bregardless of (?:their |your )?nationality\b/i,
   /(?:aus dem|im) ausland\b|ausl[aä]nd(?:isch|er)/i,
   /[ée]trang[eè]r/i,
   // DAAD register: "The following is valid for applicants from: all countries" includes applicants
