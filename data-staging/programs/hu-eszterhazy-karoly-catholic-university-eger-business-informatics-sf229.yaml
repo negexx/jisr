@@ -1,0 +1,64 @@
+slug: hu-eszterhazy-karoly-catholic-university-eger-business-informatics-sf229
+institution: hu-eszterhazy-karoly-catholic-university-eger
+country: HU
+city: eger
+field: computer-science
+level: bachelor
+name: Business Informatics
+summary:
+  fr:
+    text: Business Informatics, Eszterházy Károly Catholic University (Eger). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Informatics, Eszterházy Károly Catholic University (Eger). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Informatics, Eszterházy Károly Catholic University (Eger). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/229
+durationYears:
+  value: 3.5
+  source: studyfinder
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: studyfinder
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: studyfinder
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: studyfinder
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: studyfinder
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: studyfinder
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: studyfinder
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  studyfinder:
+    url: https://tempus.tpf.hu/studyfinder/index/show/229
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-eszterhazy-karoly-catholic-university-eger-business-informatics-sf229
+  name: Business Informatics
+  institution: Eszterházy Károly Catholic University
+  city: Eger
+  field: computer-science
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/229
+  todo: "Study Finder lists: branch Computer Science and Information Technology, language English, duration 7 semesters, location Eger, scholarship programmes: Stipendium Hungaricum, state scholarship; no contact website listed: find the programme's own page on the institution's site; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder"
+  sourceId: studyfinder:229
