@@ -11,13 +11,13 @@ conditions:
     info_kind: official
     note:
       fr:
-        text: "Pour une licence (3 ans), Study in Hungary demande un diplôme de fin d'études secondaires traduit en hongrois ou en anglais, avec le relevé de cours et de notes ; certaines formations exigent aussi un examen d'entrée. Rien n'indique comment un baccalauréat marocain est évalué : demandez-le à l'université."
+        text: "Pour une licence, Study in Hungary demande un diplôme de fin d'études secondaires traduit en hongrois ou en anglais, avec le relevé de cours et de notes ; certaines formations exigent aussi un examen d'entrée. Rien n'indique comment un baccalauréat marocain est évalué : demandez-le à l'université."
         status: draft
       en:
-        text: "For a Bachelor's degree (3 years) Study in Hungary asks for a high school diploma translated into Hungarian or English with the transcript of courses and grades; some courses also require an entrance exam. Nothing says how a Moroccan baccalauréat is assessed: ask the university."
+        text: "For a Bachelor's degree Study in Hungary asks for a high school diploma translated into Hungarian or English with the transcript of courses and grades; some courses also require an entrance exam. Nothing says how a Moroccan baccalauréat is assessed: ask the university."
         status: draft
       ar:
-        text: "لشهادة الإجازة (3 سنوات) تشترط Study in Hungary دبلوم الثانوية مترجمًا إلى المجرية أو الإنجليزية مع كشف المواد والنقط؛ وتشترط بعض التكوينات امتحان ولوج. ولا يوضح المصدر كيف تُقيَّم الباكالوريا المغربية: اسألوا الجامعة."
+        text: "لشهادة الإجازة تشترط Study in Hungary دبلوم الثانوية مترجمًا إلى المجرية أو الإنجليزية مع كشف المواد والعلامات؛ وتشترط بعض التكوينات امتحان ولوج. ولا يوضح المصدر كيف تُقيَّم الباكالوريا المغربية: اسألوا الجامعة."
         status: draft
   - id: dates-vary-by-institution
     kind: manual_check

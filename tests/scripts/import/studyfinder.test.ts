@@ -107,6 +107,13 @@ describe("parseSfDetail", () => {
     expect(d.diasporaAvailable).toBe(false);
   });
 
+  it("keeps an http-only contact website apart so the reviewer is told, never as evidence", () => {
+    const d = parseSfDetail(detailHtml({ contact: "http://old.example/x" }), 1);
+    expect(d.contactWebsite).toBeNull();
+    expect(d.contactWebsiteInsecure).toBe("http://old.example/x");
+    expect(parseSfDetail(detailHtml(), 1).contactWebsiteInsecure).toBeNull();
+  });
+
   it("leaves a missing or non-https contact website null", () => {
     expect(
       parseSfDetail(detailHtml({ contact: "http://old.example/x" }), 1).contactWebsite,
@@ -122,6 +129,16 @@ describe("fieldOfBranch, semestersToYears, languageCodesOf", () => {
     expect(fieldOfBranch("Economic Science")).toBe("business-economics");
     expect(fieldOfBranch("Social Science")).toBeNull();
     expect(fieldOfBranch(null)).toBeNull();
+  });
+
+  it("reads the Study Finder's own misspelling of semesters, and refuses an implausible length", () => {
+    expect(semestersToYears("8 semsters")).toBe(4);
+    expect(semestersToYears("7 semsters semesters")).toBe(3.5);
+    expect(semestersToYears("1 semster")).toBeNull();
+    expect(semestersToYears("20 semesters")).toBeNull();
+    expect(parseSfDetail(detailHtml({ duration: "8 semsters semesters" }), 1).duration).toBe(
+      "8 semesters",
+    );
   });
 
   it("turns semesters into years and refuses anything else", () => {
@@ -152,6 +169,7 @@ const detail = (id: number, over: Partial<SfDetail> = {}): SfDetail => ({
   duration: "7 semesters",
   location: "Debrecen",
   contactWebsite: "https://www.edu.unideb.hu/p/business-informatics-bsc",
+  contactWebsiteInsecure: null,
   studyInHungaryLink: null,
   shAvailable: true,
   diasporaAvailable: false,
@@ -173,10 +191,10 @@ describe("buildHungaryRecords", () => {
 
   it("stages Bachelor programmes of the three branches only, slugs ending in the Study Finder id", () => {
     expect(programmes.map((p) => p.id)).toEqual([
-      "hu-university-of-debrecen-business-informatics-sf116",
-      "hu-university-of-debrecen-mechanical-engineering-sf117",
+      "hu-university-of-debrecen-debrecen-business-informatics-sf116",
+      "hu-university-of-debrecen-debrecen-mechanical-engineering-sf117",
       "hu-university-of-debrecen-nyiregyhaza-business-informatics-sf118",
-      "hu-university-of-debrecen-applied-marketing-engine-sf121",
+      "hu-university-of-debrecen-debrecen-applied-marketing-engine-sf121",
     ]);
   });
 
@@ -208,12 +226,31 @@ describe("buildHungaryRecords", () => {
 
   it("stages one institution per name, a campus unit for another city, type and website null", () => {
     expect(institutions.map((i) => i.id)).toEqual([
-      "hu-university-of-debrecen",
+      "hu-university-of-debrecen-debrecen",
       "hu-university-of-debrecen-nyiregyhaza",
     ]);
     expect(institutions[0]?.data).toMatchObject({ country: "HU", type: null, website: null });
     const campusProgramme = programmes.find((p) => p.id.endsWith("sf118"));
     expect(campusProgramme?.data.institution).toBe("hu-university-of-debrecen-nyiregyhaza");
+  });
+
+  it("tells the reviewer about an http-only contact website", () => {
+    const [p] = buildHungaryRecords([
+      detail(130, { contactWebsite: null, contactWebsiteInsecure: "http://old.example/x" }),
+    ]).filter((r) => r.collection === "programs");
+    expect(p?.review.todo).toContain("listed only as http");
+    expect(p?.review.todo).toContain("http://old.example/x");
+    expect(p?.review.todo).not.toContain("no contact website listed");
+  });
+
+  it("stops when two institution names would get the same slug", () => {
+    const long = "The Very Long Name Of A Hungarian University Of Applied Sciences In Budapest";
+    expect(() =>
+      buildHungaryRecords([
+        detail(140, { institution: `${long} One`, location: "Budapest" }),
+        detail(141, { institution: `${long} Two`, location: "Budapest" }),
+      ]),
+    ).toThrow(/same slug/);
   });
 
   it("notes scholarship availability and the programme's own page for the reviewer", () => {

@@ -34,15 +34,25 @@ export const studyFinderPage = (id: number): string => `${SHOW}/${id}`;
 const text = (html: string): string =>
   collapseSpaces(decodeEntities(html.replace(/<[^>]*>/g, " ")));
 
-// "7 semesters semesters" (the site repeats the unit) -> "7 semesters"
+// The site repeats the unit and sometimes misspells it: "7 semesters semesters", "8 semsters
+// semesters" -> "7 semesters", "8 semesters".
+const SEMESTER_WORD = String.raw`sem[a-z]*sters?`;
 const cleanDuration = (raw: string | null): string | null => {
-  const t = raw === null ? "" : collapseSpaces(raw).replace(/\b(semesters?)\s+\1\b/i, "$1");
+  const t =
+    raw === null
+      ? ""
+      : collapseSpaces(raw).replace(
+          new RegExp(String.raw`^(\d+)\s*${SEMESTER_WORD}(?:\s+${SEMESTER_WORD})?$`, "i"),
+          "$1 semesters",
+        );
   return t === "" ? null : t;
 };
 
+// A Bachelor is 4 to 12 semesters: anything else ("1 semster") is not a length we can trust.
 export function semestersToYears(duration: string | null): number | null {
-  const m = /^(\d+)\s*semesters?\b/i.exec(duration ?? "");
-  return m?.[1] === undefined ? null : Number(m[1]) / 2;
+  const m = new RegExp(String.raw`^(\d+)\s*${SEMESTER_WORD}\b`, "i").exec(duration ?? "");
+  const n = m?.[1] === undefined ? null : Number(m[1]);
+  return n !== null && n >= 4 && n <= 12 ? n / 2 : null;
 }
 
 const LANGUAGE_CODES: Record<string, string> = { english: "en", hungarian: "hu" };
@@ -103,6 +113,8 @@ export type SfDetail = {
   duration: string | null;
   location: string | null;
   contactWebsite: string | null;
+  // listed with http only: never evidence, but the reviewer is told
+  contactWebsiteInsecure: string | null;
   studyInHungaryLink: string | null;
   shAvailable: boolean;
   diasporaAvailable: boolean;
@@ -142,6 +154,7 @@ export function parseSfDetail(html: string, id: number): SfDetail {
     duration: cleanDuration(rowText(html, "Duration of the course / programme:")),
     location: rowText(html, "Location/city of the course:"),
     contactWebsite: contact?.startsWith("https://") ? contact : null,
+    contactWebsiteInsecure: contact?.startsWith("http://") ? contact : null,
     studyInHungaryLink: rowLink(html, "Study in Hungary link:"),
     shAvailable:
       /<label>\s*The programme is available in the Stipendium Hungaricum Scholarship Programme/i.test(
@@ -159,7 +172,7 @@ const firstCity = (location: string | null): string =>
 
 export function buildHungaryRecords(details: readonly SfDetail[]): StagedRecord[] {
   const institutions = new Map<string, StagedRecord>();
-  const homeCity = new Map<string, string>();
+  const unitName = new Map<string, string>();
   const programmes: StagedRecord[] = [];
 
   for (const d of [...details].sort((a, b) => a.id - b.id)) {
@@ -167,9 +180,15 @@ export function buildHungaryRecords(details: readonly SfDetail[]): StagedRecord[
     const city = firstCity(d.location);
     if (d.level !== "Bachelor" || field === null || d.institution === "" || city === "") continue;
 
-    const baseSlug = `hu-${slugify(d.institution, 40)}`;
-    if (!homeCity.has(baseSlug)) homeCity.set(baseSlug, city);
-    const instSlug = homeCity.get(baseSlug) === city ? baseSlug : `${baseSlug}-${slugify(city)}`;
+    // Always the city too: an institution is one unit per city, and no slug depends on which
+    // programme the Study Finder lists first (a later import must not rename a promoted slug).
+    const instSlug = `hu-${slugify(d.institution, 40)}-${slugify(city)}`;
+    const named = unitName.get(instSlug);
+    if (named !== undefined && named !== d.institution)
+      throw new Error(
+        `Study Finder: "${named}" and "${d.institution}" would get the same slug ${instSlug}`,
+      );
+    unitName.set(instSlug, d.institution);
     if (!institutions.has(instSlug)) {
       institutions.set(
         instSlug,
@@ -199,9 +218,11 @@ export function buildHungaryRecords(details: readonly SfDetail[]): StagedRecord[
     ].filter((s): s is string => s !== null);
     const todo = [
       `Study Finder lists: branch ${d.branch}, language ${d.language ?? "n/a"}, duration ${d.duration ?? "n/a"}, location ${d.location ?? "n/a"}, scholarship programmes: ${scholarships.join(", ") || "none listed"}`,
-      d.contactWebsite === null
-        ? "no contact website listed: find the programme's own page on the institution's site"
-        : `the programme's own page (Study Finder contact website): ${d.contactWebsite}`,
+      d.contactWebsite !== null
+        ? `the programme's own page (Study Finder contact website): ${d.contactWebsite}`
+        : d.contactWebsiteInsecure !== null
+          ? `contact website listed only as http: ${d.contactWebsiteInsecure} (not used as evidence): find the programme's own page over https`
+          : "no contact website listed: find the programme's own page on the institution's site",
       "the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder",
       ...(confidence === "low"
         ? [
