@@ -1,0 +1,82 @@
+{
+  "slug": "de-fachhochschule-aachen-hrk2-global-business-and-econ-daad4849",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+          "quote": "The following is valid for applicants from: all countries until 15 July"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+          "quote": "Applicants with a foreign university entrance qualification other than the \"Deutsche Hochschulzugangsberechtigung\" apply via www.uni-assist.de."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+          "quote": "Applicants with a foreign university entrance qualification other than the \"Deutsche Hochschulzugangsberechtigung\" apply via www.uni-assist.de."
+        }
+      ]
+    }
+  },
+  "notes": "Le DAAD indique une only deadline générale (15 juillet) sans préciser qu'elle vaut pour les candidats non-UE; elle est donc enregistrée comme recurringDeadline. La voie d'admission indiquée est uni-assist (pas de VPD mentionnée). Le montant des frais de scolarité est nul (\"Tuition fees per semester None\"); le Semesterbeitrag d'environ 360 EUR par semestre n'est pas des frais de scolarité et n'est pas repris ici.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["toefl", "ielts"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 72 Reading: 18 Listening: 17 Speaking: 20 Writing: 17 UNIcert® English: UNIcert® II telc English: telc English B2-C1 University PTE Academic: 59 Cambridge English Qualifications: B2 First Cambridge English Qualifications Business (BEC) : B2 Business Vantage IELTS Academic: 5.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que votre diplôme étranger est reconnu comme équivalent à l'Abitur (Hochschulzugangsberechtigung) : une 'Statement of Comparability' peut être exigée via anabin.",
+          "en": "Check that your foreign qualification is recognised as equivalent to the German university entrance qualification; a 'Statement of Comparability' via anabin may be required."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4849/",
+            "quote": "Foreign applicants need a \"Statement of Comparability\" for foreign higher education qualifications."
+          }
+        ]
+      }
+    ]
+  }
+}

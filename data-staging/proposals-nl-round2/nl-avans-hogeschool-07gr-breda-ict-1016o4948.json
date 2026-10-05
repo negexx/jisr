@@ -1,0 +1,59 @@
+{
+  "slug": "nl-avans-hogeschool-07gr-breda-ict-1016o4948",
+  "programmePage": "https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["nl"],
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd",
+          "quote": "Taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1030800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+          "quote": "Non-EEA nationality (institutional tuition fee) €10,308,-"
+        },
+        {
+          "url": "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+          "quote": "Instellingscollegegeld € 10.308 € 10.308 € 10.308"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+          "quote": "You fill in your digital authorisation during your application in the online Studielink environment."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the programme page itself gives no fee. The €10,308 is stated as the institutional fee for non-EEA nationality at Avans (bachelor's and master's degree students, 2026-2027) and is quoted; it may be checked whether it applies to this programme. Application deadline: the tuition-fees page says non-EEA students must apply by May 1st, but the quote does not state day, month and year for a specific intake, so no intake deadline is given as a fact. No document list found on the pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission pour l'ICT bachelor (hbo-opleiding). Le site indique seulement les profils havo/vwo et mbo-niveau 4 admis.",
+          "en": "Check admission requirements for the ICT bachelor (hbo-opleiding). The site only lists admitted havo/vwo profiles and mbo-niveau 4."
+        },
+        "evidence": [
+          {
+            "url": "https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd",
+            "quote": "Toelatingseisen ICT bachelor"
+          }
+        ]
+      }
+    ]
+  }
+}

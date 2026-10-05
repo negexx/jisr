@@ -42,6 +42,8 @@ export const ScholarshipRecordSchema = z.strictObject({
   destinations: z.array(CountryCodeSchema).min(1),
   eligibleNationalities: z.array(CountryCodeSchema),
   fields: z.array(SlugSchema),
+  // Absent or empty: no restriction. Otherwise the scholarship applies only to these institutions' programmes.
+  institutions: z.array(SlugSchema).optional(),
   level: z.literal("bachelor"),
   summary: LocalizedTextSchema,
   support: volatileFact(ScholarshipSupportSchema),

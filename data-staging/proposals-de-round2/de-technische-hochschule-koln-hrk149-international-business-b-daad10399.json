@@ -1,0 +1,59 @@
+{
+  "slug": "de-technische-hochschule-koln-hrk149-international-business-b-daad10399",
+  "programmePage": "https://www.th-koeln.de/en/academics/international-business-bachelor_5826.php",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10399/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.th-koeln.de/en/academics/international-business-bachelor--how-to-apply_5823.php",
+          "quote": "You are required to apply through uni-assist."
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des frais de scolarité est indiqué comme 'None' sur la page du programme. Le DAAD indique 'Early April – 15 June' pour les candidats internationaux, mais le TH Köln précise des dates pour 2026 : 'Application period: Early April - June 15, 2026'. Ces dates ne sont pas incluses car le délai (15 juin 2026) est trop proche pour les candidats visant 2026/2027 et incertain pour les années suivantes. Aucune date de début d'intake n'est fournie. Les documents requis ne sont pas listés explicitement (la page renvoie à des informations externes).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme de fin d'études secondaires équivalent au 'Abitur' ou à la 'Fachhochschulreife' est requis ; vérifier l'équivalence de votre Baccalauréat marocain.",
+          "en": "A secondary school diploma equivalent to the 'Abitur' or 'Fachhochschulreife' is required; check the equivalence of your Moroccan Baccalauréat."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-koeln.de/en/academics/international-business-bachelor--how-to-apply_5823.php",
+            "quote": "Secondary school diploma \"Fachhochschulreife\" (academic and practical part) or \"Abitur\" or an equivalent (international) degree or Applicants who do not hold one of the degrees mentioned above can apply as vocationally qualified individuals:"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est restreinte : places limitées, critères de sélection non détaillés, vérifiez auprès de l'université.",
+          "en": "Admission is restricted: limited places, selection criteria not detailed, check with the university."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-koeln.de/en/academics/international-business-bachelor_5826.php",
+            "quote": "Restricted admission Yes"
+          }
+        ]
+      }
+    ]
+  }
+}

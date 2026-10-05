@@ -41,6 +41,7 @@ Trust is the product: every important fact carries an **official source URL** an
 | Build | `pnpm build` |
 | Validate data + staleness report | `pnpm data:check` |
 | Build data snapshots | `pnpm data:build` |
+| French BUT calendar proposals / verify a scholarship proposal (`data/README.md`) | `pnpm data:fr-calendar [--dry-run]` / `pnpm data:scholarship verify <file> [--dry-run]` |
 | E2E (builds the fixture, starts `next start` on :3100) | `pnpm test:e2e` |
 | Fixture build / dev server on the synthetic e2e data | `pnpm build:e2e` / `pnpm dev:fixture` |
 | First-load JS per route (gzip) + Zod marker scan, after a build | `pnpm perf:js` |
@@ -89,6 +90,7 @@ Deeper notes: `.claude/docs/architecture.md` (data access boundary, no-Zod rule,
 - Every fact in `data/` has `source_url`, `info_kind` (`official | estimate | guidance`) and `last_verified_at`; the build fails without them.
 - Staleness (ADR 0004; constants in `src/data-schema/staleness.ts`): volatile facts (deadlines, fees, scholarship amounts) are aging at 120 days, stale at 270; stable facts (requirements, routes, cost estimates, descriptions) aging 270, stale 545. Stale data never yields ✅ or ❌, only ⚠️.
 - Short text is a `LocalizedText` map (`fr` required, `en`/`ar` optional, per-locale `draft|reviewed` status); long-form guides are MDX in `content/<locale>/`.
+- A scholarship may name `institutions` (absent/empty = no restriction). Matching: nationality, explicit program link, then destination, fields, institutions, in `src/domain/scholarships.ts`; the static program page (`src/lib/snapshot/server.ts`) shares its `appliesToProgram` predicate. Scholarships are Bachelor-level, verified-only (`data:scholarship`) and always 100% audited (never waivable).
 - Match status: ✅ only if every published requirement was evaluated and passed; ❌ only for a definite published-requirement failure; missing/ambiguous data → ⚠️.
 - All user-facing strings go through next-intl in all three locales; Tailwind logical utilities (`ms-`, `pe-`, `text-start`) — never `ml-`/`pr-`/`left-`.
 - Dates: ISO 8601 in code/data, DD/MM/YYYY in UI. Currency: EUR primary, MAD secondary display.

@@ -1,0 +1,50 @@
+{
+  "slug": "fr-i-u-t-de-nancy-brabois-universite-de-lor-0541205s-but-genie-electrique-et-informat-6298",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6298&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6298&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "The quoted tuition fee of 178 euros per year is a general parcoursup fee for public institutions. The page notes 'Sauf indication contraire les sommes indiquées sont en euros' and mentions a differentiated fee for non-EU students of 2,902 euros elsewhere, but the specific page only lists 178 euros, which may not apply to non-EU applicants; verify with the institution. The teaching language is French, as indicated by the required B2 French level. No application dates for international applicants are given on the programme page.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6298&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Candidats étrangers non titulaires d'un bac français/européen et non ressortissants UE/EEE : candidater via Campus France Études en France, pas Parcoursup.",
+          "en": "Foreign applicants without a French/European bac and non-EU/EEA: apply via Campus France Études en France, not Parcoursup."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6298&typeBac=0&originePc=0",
+            "quote": "non titulaire ou ne préparant pas un baccalauréat français ou un baccalauréat européen"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6298&typeBac=0&originePc=0",
+            "quote": "vous ne devez pas vous inscrire sur Parcoursup"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "de-technische-hochschule-deggendorf-hrk284-electromobility-autonomo-daad9073",
+  "programmePage": "https://www.th-deg.de/emi-b-en",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 50000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9073/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries Switzerland United Kingdom 500 EUR"
+        },
+        {
+          "url": "https://www.th-deg.de/en/students/documents/application-and-service-fees",
+          "quote": "€500 DIT service fee per semester for enrolled students (the academic year consists of two semesters)"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9073/",
+          "quote": "Submit application via Please check this website."
+        },
+        {
+          "url": "https://www.th-deg.de/en/apply",
+          "quote": "choose what you aim to study and apply directly to DIT via our own online application portal, Primuss."
+        }
+      ]
+    }
+  },
+  "notes": "Deadline for this programme without a stated year (15 October – 1 December) is recorded as recurringDeadline; the general DIT summer-semester deadline table gives \"15 Oct - 28 Feb\" for this programme, but no year is stated. Tuition: the DAAD listing quotes '500 EUR' per semester for non-EU applicants and the DIT fees page quotes a '€500 DIT service fee per semester' for non-EU/EEA third-country students; recorded as 50000 EUR minor per semester. An additional €60 one-time application fee and a student union fee apply. The programme page states 'No tuition fees, only student union fee', which conflicts with the DAAD and fees pages; the human auditor should verify. Application channel: the programme page's \"APPLY ONLINE\" link and the general DIT page describe application via the university's own Primuss portal, so de-university-direct is used; no uni-assist/VPD sentence was found for this programme. Documents list comes from the international-applicant section of the general DIT application page; the exact programme-specific list is generated in Primuss.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'admission écrit (option en ligne) doit être réussi ; il comporte des questions de mathématiques (et de physique selon le DAAD).",
+          "en": "A written admission test (online option available) must be passed; it consists of Mathematics (and Physics according to DAAD) questions."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-deg.de/emi-b-en",
+            "quote": "A successfully completed admission test (online option available). The test consists of questions from Mathematics."
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9073/",
+            "quote": "Applicants must successfully complete a written assessment test (online option available). The test consists of tasks in mathematics and physics."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez votre aptitude à candidater avec un diplôme marocain via la base de données DAAD ou Anabin ; un an d'études ou un Studienkolleg peut être exigé.",
+          "en": "Check your eligibility to apply with a Moroccan certificate via the DAAD database or Anabin; one year of study or a Studienkolleg may be required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.th-deg.de/en/apply",
+            "quote": "To find out whether your school-leaving certificate meets the requirements for the degree programs at our university, please use the DAAD Database on admission requirements."
+          },
+          {
+            "url": "https://www.th-deg.de/en/apply",
+            "quote": "If your qualification does not provide you with application eligibility for our university, you have these options: One year of study at an internationally recognized university in your country"
+          }
+        ]
+      }
+    ]
+  }
+}

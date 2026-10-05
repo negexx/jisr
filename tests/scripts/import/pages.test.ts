@@ -6,8 +6,10 @@ import { describe, expect, it } from "vitest";
 
 import {
   addTopicPagesFor,
+  checkTopicFlags,
   daadRegisterUrl,
   dryRunSummary,
+  memoizeFetch,
   mergePages,
   syncSkippedListing,
 } from "../../../scripts/import/pages";
@@ -72,6 +74,35 @@ describe("dryRunSummary", () => {
     expect(dryRunSummary({ ...base, useSearch: false, useTopics: true })).toBe(
       "dry run: at most 12 topic queries (cap 300); no query sent, nothing written",
     );
+  });
+});
+
+describe("dryRunSummary with a topic subset", () => {
+  it("counts institutions times the chosen topics", () => {
+    expect(
+      dryRunSummary({
+        useSearch: false,
+        useTopics: true,
+        searched: 0,
+        institutions: 0,
+        topicInstitutions: 5,
+        topicCount: 1,
+        cap: "300",
+      }),
+    ).toBe("dry run: at most 5 topic queries (cap 300); no query sent, nothing written");
+  });
+});
+
+describe("checkTopicFlags", () => {
+  it("rejects --topic-list without --topics", () => {
+    expect(() => checkTopicFlags(["--slugs", "x", "--topic-list", "fees"])).toThrow(
+      "--topic-list needs --topics",
+    );
+  });
+
+  it("accepts --topic-list with --topics, and neither flag", () => {
+    expect(() => checkTopicFlags(["--topics", "--topic-list", "fees"])).not.toThrow();
+    expect(() => checkTopicFlags(["--slugs", "x"])).not.toThrow();
   });
 });
 
@@ -148,5 +179,31 @@ describe("syncSkippedListing", () => {
   it("is fine with no listing to remove", async () => {
     const file = path.join(await mkdtemp(path.join(tmpdir(), "pages-")), "none.skipped.txt");
     expect(await syncSkippedListing(file, [])).toBeNull();
+  });
+});
+
+describe("memoizeFetch", () => {
+  it("fetches a url once for concurrent and later callers", async () => {
+    const calls: string[] = [];
+    const fetch = memoizeFetch(async (url) => {
+      calls.push(url);
+      return `<html>${url}</html>`;
+    });
+    const [a, b] = await Promise.all([fetch("https://a.example/x"), fetch("https://a.example/x")]);
+    expect(a).toBe(b);
+    await fetch("https://a.example/x");
+    await fetch("https://a.example/y");
+    expect(calls).toEqual(["https://a.example/x", "https://a.example/y"]);
+  });
+
+  it("forgets a failed fetch so the next caller can retry", async () => {
+    let attempts = 0;
+    const fetch = memoizeFetch(async () => {
+      attempts++;
+      if (attempts === 1) throw new Error("down");
+      return "ok";
+    });
+    await expect(fetch("https://a.example/x")).rejects.toThrow("down");
+    await expect(fetch("https://a.example/x")).resolves.toBe("ok");
   });
 });

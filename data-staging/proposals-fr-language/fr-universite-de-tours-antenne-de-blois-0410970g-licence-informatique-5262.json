@@ -1,0 +1,97 @@
+{
+  "slug": "fr-universite-de-tours-antenne-de-blois-0410970g-licence-informatique-5262",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5262&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5262&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+          "quote": "Les étudiants qui postulent en 1ère année de licence à l'université (L1) ne seront pas dispensés de la certification de français."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the page's « 178 euros » Parcoursup figure cannot be used (regulation 3: the fee said for EU/français students, the differentiated rate for extra-communautaire applicants is 2 902 €/year); the differentiated rate is quoted from maroc.campusfrance.org. Pay attention: some establishments exonerate foreign students (see quote). No intake dates were found in the pages for a non-EU/foreign-diploma applicant with a year, so intakes are omitted; the ADIUT Maroc dates (1 October to 15 November 2026) concern the 1st year of BUT, not this Licence. English is a subject (Langue vivante 1) but the programme is taught in French, so only fr is listed as teaching language. Program duration inferred from the outcome statistics quote (licence validated in 3 or 4 years); the licence is a 3-year degree and the 4-year figure refers to an adapted track.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["tcf", "delf-dalf"],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5262&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Les étudiants qui postulent en 1ère année de licence à l'université (L1) ne seront pas dispensés de la certification de français."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Candidats non ressortissants de l'UE avec un diplôme étranger : candidature via Études en France/DAP, pas via Parcoursup. Vérifier la procédure applicable.",
+          "en": "Non-EU applicants with a foreign diploma: apply via Études en France/DAP, not Parcoursup. Check which procedure applies."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5262&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les attendus sont ceux du baccalauréat général avec spécialité mathématique réussie ; la spécialité NSI est appréciée mais pas exigée.",
+          "en": "Expected profile is the general baccalaureate with a successfully completed mathematics speciality; NSI speciality is appreciated, not required."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5262&typeBac=0&originePc=0",
+            "quote": "Les attendus sont ceux du baccalauréat général avec spécialité mathématique réussie. La spécialité NSI est appréciée mais n’est pas un attendu."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Candidats sans les attendus (maths faibles ou bac non général) : parcours adapté ; les plus éloignés suivent la licence en 4 ans.",
+          "en": "Applicants without the expected profile (weak maths or non-general bac): adapted pathway; the furthest behind follow the licence in 4 years."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5262&typeBac=0&originePc=0",
+            "quote": "Les personnes n'ayant pas les attendus (maths faibles ou bac non général) suivront un parcours adapté (OUI_SI). Les personnes les plus éloignées des attendus (manques flagrants en mathématiques) suivront la licence en 4 ans (L1 en 2 ans)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Candidats avec d'excellents résultats (mention TB) en mathématiques et NSI : possibilité de faire la licence en 2 ans.",
+          "en": "Applicants with excellent results (mention TB) in mathematics and NSI: possibility to complete the licence in 2 years."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5262&typeBac=0&originePc=0",
+            "quote": "Les étudiants les plus brillants pourront se voir proposer de réaliser la licence en 2 ans."
+          }
+        ]
+      }
+    ]
+  }
+}

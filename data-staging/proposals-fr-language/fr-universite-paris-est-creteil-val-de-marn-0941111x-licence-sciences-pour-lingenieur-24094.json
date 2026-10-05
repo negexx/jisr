@@ -1,0 +1,59 @@
+{
+  "slug": "fr-universite-paris-est-creteil-val-de-marn-0941111x-licence-sciences-pour-lingenieur-24094",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24094&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24094&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune page ne donne de dates de début ou d'échéances propres à cette formation pour les candidats internationaux : la seule échéance datée (1er octobre au 15 novembre 2026) concerne le programme ADIUT Maroc en 1ère année de BUT, pas cette licence. La page Campus France 'Études en France' indique que les candidats non européens avec un Bac marocain ou un diplôme étranger hors UE doivent postuler via Études en France, mais la plateforme exacte n'est pas mentionnée ici pour cette licence. Les frais de scolarité indiqués sur la fiche Parcoursup (178 €/an) sont présentés comme le tarif 'Par année' sans mention explicite des étudiants extra-communautaires ; Campus France indique 2 902 €/an en Licence pour les étudiants extra-communautaires, mais il s'agit d'une règle générale sur les frais de scolarité en France, non spécifique à cette formation (la page Campus France sur les droits différenciés ne cite pas cette licence). Par ailleurs, aucune page ne précise si cette licence exige réellement des certifications de français (TCF/DELF/DALF) ou une traduction de documents pour les candidats internationaux. Admissions parallèles : l'apprentissage est possible au-delà de la première année, mais concerne une 3e année de Licence SPI, à vérifier selon l'année d'entrée.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24094&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est très sélective (3016 vœux confirmés en 2026, 78 places). Les résultats scolaires comptent pour 60 %, la motivation (lettre de motivation) pour 15 %, les méthodes de travail et le savoir-être pour 10 % chacun, l'engagement pour 5 %.",
+          "en": "Admission is highly selective (3016 confirmed applications in 2026, 78 places). School results count for 60%, motivation (motivation letter) for 15%, working methods and soft skills for 10% each, engagement for 5%."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24094&typeBac=0&originePc=0",
+            "quote": "78 places en 2026 3016 vœux confirmés en 2026"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien avec Campus France est obligatoire pour les candidats non européens titulaires d'un Bac marocain ou d'un diplôme étranger hors UE, dans le cadre de la procédure Études en France.",
+          "en": "An interview with Campus France is mandatory for non-European applicants holding a Moroccan Baccalauréat or a non-EU foreign diploma, as part of the Études en France procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces",
+            "quote": "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France de votre pays de résidence."
+          }
+        ]
+      }
+    ]
+  }
+}

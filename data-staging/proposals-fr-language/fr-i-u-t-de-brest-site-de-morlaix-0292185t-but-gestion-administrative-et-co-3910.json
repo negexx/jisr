@@ -1,0 +1,46 @@
+{
+  "slug": "fr-i-u-t-de-brest-site-de-morlaix-0292185t-but-gestion-administrative-et-co-3910",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3910&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3910&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La page Campus France Maroc des certifications indique que la certification TCF/DELF/DALF est obligatoire pour la procédure Études en France, sauf dispense pour les formations 100% en anglais (hors L1). La page des frais indique 178 €/an en Licence pour les étudiants non-extracommunautaires (ce montant concerne les étudiants français/UE/EEE/Suisse), mais l'établissement peut exempter les étudiants étrangers des droits différenciés; vérifier sur le site de l'IUT. Les documents spécifiques à fournir ne sont pas listés sur la fiche programme. applicationChannel omis comme demandé.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3910&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez auprès de l'établissement les documents à fournir pour un candidat international via Études en France.",
+          "en": "Check with the institution which documents an international applicant must submit through Études en France."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3910&typeBac=0&originePc=0",
+            "quote": "Bien travailler les 4 points étudiés : Les notes de première et terminale (premier et deuxième trimestre), Les appréciations des enseignants , Le savoir-être : Une participation active dans le cadre des cours au lycée, implication dans la vie de l'établissement ou dans des engagements extrascolaire (sport, associatif, emploi saisonnier), La motivation : Pourquoi la formation vous intéresse-t-elle ? comment s'inscrit elle dans votre projet ? avez-vous une bonne connaissance de la formation (matières enseignées, débouchés…)"
+          }
+        ]
+      }
+    ]
+  }
+}

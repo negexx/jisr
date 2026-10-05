@@ -1,0 +1,46 @@
+{
+  "slug": "fr-universite-paris-cite-0755976n-licence-informatique-47254",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47254&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47254&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Only three pages are usable for this programme's own characteristics (the Parcoursup fiche). The Campus France Morocco pages do not describe this programme. Tuition: the only fee stated in the pages that applies to a non-EU (extra-communautaire) student in a Licence is 2902 EUR/year (droits d'inscription différenciés, MESRE public institutions); it is a national differentiated-fee figure, not stated on the programme page, and the pages also say some institutions exempt foreign students, so the auditor should verify with Université Paris Cité. The Parcoursup fiche's 178 EUR/year is the EU/non-differentiated rate and was not used. Documents: no page names a document list for this programme, so no documents fact is given; the Campus France page states a French certificate is generally required for the Etudes en France application except for programmes taught 100% in English, which does not apply here, but that is a general procedure rule, not stated for this programme by its own page. Intakes: the fiche gives only Parcoursup calendar dates for the general French procedure; no international applicant deadline with day, month and year is stated, so no intakes fact is given.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les conditions d'accès pour les candidats titulaires d'un bac étranger : le dossier doit être déposé via Études en France / Campus France, pas via Parcoursup.",
+          "en": "Check admission conditions for holders of a foreign baccalaureate: the application must be submitted via Études en France / Campus France, not Parcoursup."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47254&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La lettre de motivation (projet de formation motivé) et l'adéquation du parcours sont évaluées par la commission d'examen des vœux.",
+          "en": "The motivation letter (projet de formation motivé) and the fit of the applicant's background are assessed by the admissions commission."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47254&typeBac=0&originePc=0",
+            "quote": "Projet de formation motivé et cohérence avec les autres éléments : avis de la fiche avenir, commentaires des professeurs sur les bulletins, choix antérieurs scolaires (filières, spécialités, options) ou extra-scolaires (stages, clubs, concours de programmation, réalisations personnelles...)"
+          }
+        ]
+      }
+    ]
+  }
+}

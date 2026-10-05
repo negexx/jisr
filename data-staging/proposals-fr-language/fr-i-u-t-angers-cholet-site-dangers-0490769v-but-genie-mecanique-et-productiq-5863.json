@@ -1,0 +1,81 @@
+{
+  "slug": "fr-i-u-t-angers-cholet-site-dangers-0490769v-but-genie-mecanique-et-productiq-5863",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5863&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5863&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La page \"Le coût des études, les bourses\" ne concerne pas ce programme précis : les 2 902 €/an sont les droits différenciés pour la Licence, avec exonérations possibles ; à vérifier auprès de l'IUT. Les pages maroc.campusfrance.org donnent des règles générales pour les candidats marocains, pas pour ce programme ; la dispense de certification de français pour les formations 100 % en anglais ne s'applique pas, le BUT GMP étant 1ère année de licence et en français.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": null,
+        "certificateRequired": true,
+        "acceptedTests": ["tcf", "delf-dalf"],
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5863&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": ["mathematics"],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5863&typeBac=0&originePc=0",
+            "quote": "Mathématiques\nNotes de 1ère et terminale\nNotes du bac pour les candidats bacheliers.\nEssentiel 4 sur 4"
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": ["physics-chemistry"],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5863&typeBac=0&originePc=0",
+            "quote": "Physique Chimie\nNotes de 1ère et terminale.\nNotes du bac pour les candidats bacheliers\nEssentiel 4 sur 4"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Dossier examiné par une commission : résultats scolaires 50 %, méthodes de travail 20 %, savoir-être 10 %, motivation 20 %.",
+          "en": "Application reviewed by a commission: academic results 50%, working methods 20%, behaviour 10%, motivation 20%."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5863&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 50 % Méthodes de travail 20 % Savoir-être 10 % Motivation 20 %"
+          }
+        ]
+      }
+    ]
+  }
+}

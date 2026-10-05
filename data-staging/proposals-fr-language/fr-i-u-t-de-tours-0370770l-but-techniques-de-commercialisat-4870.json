@@ -1,0 +1,50 @@
+{
+  "slug": "fr-i-u-t-de-tours-0370770l-but-techniques-de-commercialisat-4870",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4870&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4870&typeBac=0&originePc=0",
+          "quote": "challenges de négociation en français et en langue étrangère"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4870&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Candidat marocain non titulaire d'un bac français/européen : la candidature se fait via Études en France / Campus France (applicationChannel non extrait pour ce programme). Les frais indiqués (178 euros) sont ceux d'un étudiant français/UE ; les étudiants extra-communautaires en Licence sont soumis à des droits différenciés de 2 902 €/an, mais cette page ne le mentionne pas pour ce programme. Aucune date de candidature ni liste de documents n'est fournie pour ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4870&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidatures sont examinées sur les résultats scolaires, les méthodes de travail, le savoir-être, la motivation et l'engagement. Aucun seuil de notes n'est précisé.",
+          "en": "Applications are reviewed on academic results, work methods, soft skills, motivation and engagement. No grade threshold is stated."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4870&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 25 % Méthodes de travail 25 % Savoir-être 15 % Motivation 20 % Engagement et activités 15 %"
+          }
+        ]
+      }
+    ]
+  }
+}

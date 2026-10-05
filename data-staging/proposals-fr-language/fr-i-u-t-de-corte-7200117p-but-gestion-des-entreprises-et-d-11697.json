@@ -1,0 +1,46 @@
+{
+  "slug": "fr-i-u-t-de-corte-7200117p-but-gestion-des-entreprises-et-d-11697",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11697&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11697&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 € par année est le tarif affiché sur Parcoursup pour cette formation ; il ne s'agit pas du tarif « droits différenciés » pour les étudiants extra-communautaires. Une page Campus France indique des droits différenciés de 2 902 € pour une année en cycle de Licence, mais elle concerne les établissements publics en général et ne précise pas ce BUT ; à vérifier avec l'établissement. Le programme ADIUT Maroc, spécifique aux candidatures marocaines en BUT, mentionne une candidature sur la plateforme Études en France du 1er octobre 2026 au 15 novembre 2026, mais ne dit pas explicitement que cette date concerne ce BUT de Corte ; date donc non retenue pour ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11697&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un TCF totalisant un score de 400 pts ou un DELF B2 ou un DALF est également demandé pour la procédure Campus France ; vérifiez le niveau exigé par la formation.",
+          "en": "A TCF with 400 points or a DELF B2 or DALF is also required for the Campus France procedure; check the level required by the programme."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Un TCF totalisant un score de 400 pts ou un DELF B2 ou un DALF est recommandé pour suivre correctement des études en France et aussi pour effectuer les démarches de la vie quotidienne."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "nl-avans-hogeschool-07gr-s-hertogenbosch-ict-1016o4948",
+  "programmePage": "https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["nl"],
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd",
+          "quote": "Duur 4 jaar, voltijd bachelor Taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1030800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+          "quote": "Non-EEA nationality (institutional tuition fee) €10,308,-"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 1
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+          "quote": "Students with a non-EEA nationality are required to apply by May 1st and to pay their tuition fees in full prior to the start of the academic year."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+          "quote": "Meld je aan voor de opleiding via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "The programme page is in Dutch and describes this specific ICT bachelor (taught in Dutch, 4 years). The tuition figure (EUR 10,308 for non-EEA students, 2026-2027) and the May 1 application deadline come from Avans' central tuition-fees page and are stated for bachelor's/master's students generally, not for this programme alone; they are the only non-EU figures found and are used here, but should be confirmed. No document list for international applicants is given on the supplied pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un baccalauréat marocain n'est pas listé dans les diplômes admis. Contactez Student Support / l'instroomcoördinator pour vérifier votre admissibilité.",
+          "en": "A Moroccan Baccalauréat is not listed among the admitted diplomas. Contact Student Support / the instroomcoördinator to check your eligibility."
+        },
+        "evidence": [
+          {
+            "url": "https://www.avans.nl/studeren/opleidingen/bachelor/ict-voltijd",
+            "quote": "Neem contact op met Student Support en vraag naar de instroomcoördinator."
+          }
+        ]
+      }
+    ]
+  }
+}

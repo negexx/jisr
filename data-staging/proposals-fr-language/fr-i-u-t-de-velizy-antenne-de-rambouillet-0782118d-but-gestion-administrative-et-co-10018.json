@@ -1,0 +1,59 @@
+{
+  "slug": "fr-i-u-t-de-velizy-antenne-de-rambouillet-0782118d-but-gestion-administrative-et-co-10018",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10018&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10018&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La page programme est une fiche Parcoursup : elle décrit surtout la candidature des titulaires du bac français/européen. Pour un candidat marocain (diplôme étranger), la candidature passe par Études en France / Campus France, non extrait ici (applicationChannel non demandé). Les frais indiqués (178 euros par an) sont ceux de Parcoursup (établissement public) ; les droits différenciés pour étudiants extracommunautaires ne sont pas mentionnés sur la fiche programme. Les dates d'entretien (1-3 juin 2026) concernent la procédure Parcoursup et ne sont pas retenues comme échéances pour un candidat international.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10018&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien de motivation collectif est prévu pour la sélection (épreuves orales).",
+          "en": "A group motivation interview is part of the selection (oral exams)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10018&typeBac=0&originePc=0",
+            "quote": "Un entretien de motivation sera réalisé en vue de la sélection."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La sélection évalue aussi les résultats scolaires (40 %), les méthodes de travail (20 %) et le savoir-être (25 %).",
+          "en": "Selection also assesses academic results (40%), work methods (20%) and soft skills (25%)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10018&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 40 % Méthodes de travail 20 % Savoir-être 25 % Motivation 10 % Engagement et activités 5 %"
+          }
+        ]
+      }
+    ]
+  }
+}

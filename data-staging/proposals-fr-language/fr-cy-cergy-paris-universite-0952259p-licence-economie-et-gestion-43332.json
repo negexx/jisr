@@ -1,0 +1,67 @@
+{
+  "slug": "fr-cy-cergy-paris-universite-0952259p-licence-economie-et-gestion-43332",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43332&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43332&typeBac=0&originePc=0",
+          "quote": "Ce cursus est conçu comme un double diplôme sur 3 ans porté par l’Institut d’économie et gestion et CY école de design. Il se déroule en français."
+        }
+      ]
+    }
+  },
+  "notes": "Les frais indiqués sur la fiche Parcoursup (Licence : 178€ + DU : 3 822€ pour 2025/2026) sont des tarifs annuels affichés sur la fiche, sans mention qu'ils concernent spécifiquement un étudiant extra-communautaire ; ils ne sont donc pas retenus comme frais pour un étudiant marocain. Les droits différenciés éventuels (2 902 €/an en Licence) figurent sur une page Campus France générale à toutes les licences, non spécifique à ce programme. Les langues indiquées (Anglais B2, pas de LV2) sont des langues vivantes du cursus, pas la langue d'enseignement. Aucune date de candidature propre à ce programme pour un candidat à diplôme étranger non-EU n'est fournie par les pages (le calendrier Parcoursup mentionné concerne les titulaires du bac français/européen). Aucune liste de pièces justificatives spécifique n'est fournie.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43332&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La formation est sélective ; l'admission comprend un entretien (épreuves orales) obligatoire. Les candidats doivent démontrer une double appétence pour l'économie-gestion et le design.",
+          "en": "The programme is selective; admission includes a compulsory interview (oral exams). Applicants must demonstrate a dual interest in economics-management and design."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43332&typeBac=0&originePc=0",
+            "quote": "Épreuves orales Convocation : A l'issue de l'étude de dossier, les candidats recevables seront convoqués à un entretien à un rendez-vous d'admission.."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43332&typeBac=0&originePc=0",
+            "quote": "La présence au rendez-vous est obligatoire pour prétendre à l'admission."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43332&typeBac=0&originePc=0",
+            "quote": "Les candidats doivent démontrer leur double appétence pour l’économie et la gestion et pour l’innovation par le design."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Pratique artistique conseillée : il est conseillé de l'illustrer par un dossier, un portfolio ou un site web (non obligatoire).",
+          "en": "Artistic practice is advised: it is recommended to illustrate it with a portfolio, a file or a website (not compulsory)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43332&typeBac=0&originePc=0",
+            "quote": "Si le candidat a une pratique artistique, il est conseillé de l'illustrer par un dossier, un portfolio, un site web."
+          }
+        ]
+      }
+    ]
+  }
+}

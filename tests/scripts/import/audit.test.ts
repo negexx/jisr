@@ -391,3 +391,203 @@ describe("sampleSheet of an enriched record", () => {
     expect(sheet).toContain("(no evidence recorded)");
   });
 });
+
+describe("sampleSheet of a scholarship", () => {
+  it("shows the support, the deadline and the quotes behind eligibility, level and how to apply", () => {
+    const sheet = sampleSheet([
+      {
+        key: "scholarships/aurora",
+        row: {
+          key: "scholarships/aurora",
+          batch: "b1",
+          inSample: true,
+          audited: "",
+          outcome: "",
+          notes: "",
+        },
+        record: {
+          name: "Aurora",
+          support: {
+            value: { amount: { min: 1, max: 2 } },
+            source: "page-1",
+            info_kind: "official",
+          },
+          deadline: { value: "2027-03-15", source: "page-1", info_kind: "official" },
+          _review: {
+            evidence: [
+              { fact: "eligibility", url: "https://g.example/r", quote: "open to non-EU students" },
+              { fact: "level", url: "https://g.example/r", quote: "first-year undergraduate" },
+              { fact: "howToApply", url: "https://g.example/a", quote: "apply online" },
+              { fact: "deadline", url: "https://g.example/r", quote: "close on 15 March 2027" },
+            ],
+          },
+        },
+      },
+    ]);
+    expect(sheet).toContain("**support**");
+    expect(sheet).toContain("**deadline**: `2027-03-15`");
+    expect(sheet).toContain('"close on 15 March 2027" — https://g.example/r');
+    expect(sheet).toContain('**eligibility**: "open to non-EU students" — https://g.example/r');
+    expect(sheet).toContain('**level**: "first-year undergraduate" — https://g.example/r');
+    expect(sheet).toContain('**howToApply**: "apply online" — https://g.example/a');
+  });
+});
+
+describe("scholarships are always sampled", () => {
+  it("puts every scholarship in the sample whatever the batch size", () => {
+    const keys = [
+      ...Array.from({ length: 200 }, (_, i) => `programs/p${i}`),
+      "scholarships/aurora",
+      "scholarships/boreal",
+      "scholarships/cirrus",
+    ];
+    const rows = drawBatch({ preparedKeys: keys, existing: [], seed: "s9", batchIndex: 1 });
+    const sampled = new Set(rows.filter((r) => r.inSample).map((r) => r.key));
+    for (const key of keys.filter((k) => k.startsWith("scholarships/")))
+      expect(sampled.has(key)).toBe(true);
+    // programmes still follow the normal draw, which may use a place a scholarship took
+    const programmes = rows.filter((r) => r.inSample && r.key.startsWith("programs/")).length;
+    expect(programmes).toBeGreaterThan(0);
+    expect(programmes).toBeLessThanOrEqual(sampleSize(keys.length));
+  });
+
+  it("never lets a scholarship be waived: a waived scholarship stays to read", () => {
+    const row = (key: string, outcome: string): AuditRow => ({
+      key,
+      batch: "b1-ab",
+      inSample: true,
+      audited: "y",
+      outcome,
+      notes: "",
+    });
+    const only = batchStatuses([row("scholarships/aurora", "waived")])[0];
+    expect(only).toMatchObject({ waived: 0, confirmed: 0, pending: 1, pass: false });
+    const mixed = batchStatuses([
+      row("scholarships/aurora", "waived"),
+      row("programs/p0", "waived"),
+    ])[0];
+    expect(mixed).toMatchObject({ waived: 1, pending: 1, pass: false });
+    const read = batchStatuses([row("scholarships/aurora", "ok"), row("programs/p0", "waived")])[0];
+    expect(read).toMatchObject({ confirmed: 1, waived: 1, pending: 0, pass: true });
+  });
+});
+
+describe("sampleSheet of a scholarship record", () => {
+  const row = {
+    key: "scholarships/aurora",
+    batch: "b1",
+    inSample: true,
+    audited: "",
+    outcome: "",
+    notes: "",
+  };
+  const lt = (fr: string, en?: string) => ({
+    fr: { text: fr, status: "draft" },
+    ...(en === undefined ? {} : { en: { text: en, status: "draft" } }),
+  });
+  const record = {
+    name: "Aurora",
+    destinations: ["DE", "NL"],
+    eligibleNationalities: ["MA"],
+    fields: [],
+    summary: lt("Une bourse.", "A grant."),
+    howToApply: lt("Candidature en ligne.", "Apply online."),
+    _review: { evidence: [] },
+  };
+
+  it("shows who it is for, where, which fields and institutions, and the prose", () => {
+    const sheet = sampleSheet([{ key: row.key, row, record }]);
+    expect(sheet).toContain("**destinations**: `DE, NL`");
+    expect(sheet).toContain("**eligibleNationalities**: `MA`");
+    expect(sheet).toContain("**fields**: ALL FIELDS");
+    expect(sheet).toContain("**institutions**: ALL INSTITUTIONS of the destination");
+    expect(sheet).toContain("Une bourse.");
+    expect(sheet).toContain("A grant.");
+    expect(sheet).toContain("Candidature en ligne.");
+    expect(sheet).toContain("Apply online.");
+  });
+
+  it("lists the fields and institutions when they are restricted", () => {
+    const sheet = sampleSheet([
+      {
+        key: row.key,
+        row,
+        record: { ...record, fields: ["computer-science"], institutions: ["tu-berlin"] },
+      },
+    ]);
+    expect(sheet).toContain("**fields**: `computer-science`");
+    expect(sheet).toContain("**institutions**: `tu-berlin`");
+  });
+
+  it("does not add the scholarship lines to a programme", () => {
+    const sheet = sampleSheet([
+      { key: "programs/p", row: { ...row, key: "programs/p" }, record: { name: "P" } },
+    ]);
+    expect(sheet).not.toContain("ALL FIELDS");
+  });
+});
+
+describe("sampleSheet of a scholarship: what the reader must confirm", () => {
+  const row = {
+    key: "scholarships/aurora",
+    batch: "b1",
+    inSample: true,
+    audited: "",
+    outcome: "",
+    notes: "",
+  };
+  const record = {
+    name: "Aurora",
+    officialUrl: "https://grants.example/aurora",
+    destinations: ["DE"],
+    eligibleNationalities: ["MA"],
+    fields: [],
+    _review: {
+      evidence: [
+        {
+          fact: "nationality:MA",
+          url: "https://grants.example/r",
+          quote: "including Morocco, may apply",
+        },
+      ],
+      rejected: [
+        "eligibility: a quote on https://blog.example/x is not from an official site: dropped",
+        'eligibility: the quote "not entitled to this grant" states an exclusion: dropped',
+      ],
+    },
+  };
+
+  it("prints a confirmation line for each claim and the provider's host", () => {
+    const sheet = sampleSheet([{ key: row.key, row, record }]);
+    expect(sheet).toContain(
+      "Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.",
+    );
+    expect(sheet).toContain(
+      "Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.",
+    );
+    expect(sheet).toContain(
+      "Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.",
+    );
+    expect(sheet).toContain(
+      "Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.",
+    );
+    expect(sheet).toContain("grants.example");
+    expect(sheet).toContain("Confirm: this is the provider's own site.");
+  });
+
+  it("shows the quote that named each country and every dropped item", () => {
+    const sheet = sampleSheet([{ key: row.key, row, record }]);
+    expect(sheet).toContain(
+      '**eligibleNationalities MA** named by: "including Morocco, may apply"',
+    );
+    expect(sheet).toContain("a quote on https://blog.example/x is not from an official site");
+    expect(sheet).toContain("not entitled to this grant");
+  });
+
+  it("does not add the prompts to a programme", () => {
+    const sheet = sampleSheet([
+      { key: "programs/p", row: { ...row, key: "programs/p" }, record: { name: "P" } },
+    ]);
+    expect(sheet).not.toContain("Confirm:");
+  });
+});

@@ -1,0 +1,50 @@
+{
+  "slug": "de-srh-university-of-applied-sciences-heide-hrk122-electrical-engineering-b-daad9707",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9707/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 510000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9707/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 5,100 EUR"
+        }
+      ]
+    }
+  },
+  "notes": "The DAAD page states a semester fee of 5,100 EUR for non-EU applicants; the programme's own German page (BWL) states 690/650 EUR per month, but that is for a different programme and is not used here. No application channel (uni-assist or direct) is stated for international applicants in the supplied pages, so applicationChannel is omitted.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9707/",
+            "quote": "English language skills B2 required, proof via placement test/interview"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier que le diplôme marocain (Baccalauréat) est reconnu comme qualification d'entrée à l'université.",
+          "en": "Check that the Moroccan Baccalauréat is recognised as a university entrance qualification."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9707/",
+            "quote": "Academic admission requirements University entrance qualification"
+          }
+        ]
+      }
+    ]
+  }
+}

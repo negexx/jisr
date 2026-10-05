@@ -1,0 +1,33 @@
+{
+  "slug": "nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046",
+  "programmePage": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+  "facts": {
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+          "quote": "Meld je dan zo snel mogelijk aan via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Aucun frais de scolarité pour les étudiants non-UE n'est indiqué : la page programme et la page studiekosten ne mentionnent que le collegegeld légal néerlandais (€ 2.694,-, 2026-2027), réservé aux étudiants qui remplissent les critères de nationalité. La date limite du 1 mai n'est pas confirmée comme étant celle des candidats non-UE/diplôme étranger ; mentionnée uniquement dans 'Praktische informatie' sans indication de public. Les langues d'enseignement ne sont pas explicitement indiquées pour ce programme (page néerlandaise, probablement enseigné en néerlandais) ; 'Engels' apparaît seulement comme langue à maîtriser en guise de préparation.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme étranger : admissible si équivalent à un diplôme havo, vwo ou mbo-4 (niveau 4). Vérifier l'équivalence de ton Baccalauréat marocain et les exigences linguistiques néerlandaises.",
+          "en": "Foreign diploma: admissible if equivalent to a havo, vwo or mbo-4 diploma. Have your Moroccan Baccalauréat equivalence and Dutch language requirements checked."
+        },
+        "evidence": [
+          {
+            "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+            "quote": "Ik heb een buitenlands diploma. Je bent toelaatbaar met een diploma dat gelijkwaardig is aan een havo-, vwo- of mbo-4 diploma. Daarnaast moet je voldoen aan de taaleisen. Bekijk de taaleisen"
+          }
+        ]
+      }
+    ]
+  }
+}

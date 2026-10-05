@@ -1,0 +1,25 @@
+{
+  "slug": "de-hochschule-fulda-university-of-applied-s-hrk92-industrial-engineering-l-daad9640",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9640/",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9640/",
+          "quote": "The following is valid for applicants from: all countries For the winter semester: until 15 July"
+        }
+      ]
+    }
+  }
+}

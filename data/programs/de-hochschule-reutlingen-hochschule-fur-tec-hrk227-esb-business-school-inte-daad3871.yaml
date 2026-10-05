@@ -30,9 +30,21 @@ tuition:
   source: daad
   info_kind: guidance
 intakes:
-  value: null
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 11
+        day: 15
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 5
+        day: 15
   source: daad
-  info_kind: guidance
+  info_kind: official
 applicationChannel:
   value: null
   source: daad

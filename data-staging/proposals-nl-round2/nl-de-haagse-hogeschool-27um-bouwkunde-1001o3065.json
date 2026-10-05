@@ -1,0 +1,59 @@
+{
+  "slug": "nl-de-haagse-hogeschool-27um-bouwkunde-1001o3065",
+  "programmePage": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/bouwkunde",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["nl"],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/bouwkunde",
+          "quote": "Locatie Den Haag - hoofdvestiging Taal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "All evidence for tuition came only from the institution-wide collegegeld page, and none of it states the fee specifically for this Bouwkunde programme nor for a non-EU/foreign-diploma student; institution-wide figures that may not apply were therefore left out. The 1 May / 1 May 2026 application deadline quotes are general and do not say they are for non-EU or foreign-qualification applicants, so no intake was recorded. Subject/grade admission rules (havo/vwo profiles, 21+ toelatingsonderzoek) are not applicable to a Moroccan Baccalauréat applicant and were left out. The tuition and deadline facts should be verified on the programme's own page or with the Centrale Studenten Inschrijving.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/bouwkunde",
+            "quote": "Met een buitenlands of internationaal diploma kun je toegelaten worden, mits dit diploma toelating biedt tot hbo en je een bewijs hebt van voldoende beheersing van de Nederlandse taal."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme étranger est jugé équivalent à un diplôme néerlandais donnant accès au hbo ; c'est la Centrale Studenten Inschrijving qui décide.",
+          "en": "Check whether your foreign diploma is assessed as equivalent to a Dutch diploma granting access to hbo; the Centrale Studenten Inschrijving decides."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "De Centrale Studenten Inschrijving bepaalt of jouw buitenlandse diploma ten minste gelijkwaardig is aan dat van een (toelatinggevend) Nederlands diploma."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez la condition de maîtrise du néerlandais pour les diplômes étrangers : les preuves linguistiques demandées sont précisées ailleurs.",
+          "en": "Check the Dutch language requirement for foreign diplomas: the required proof is specified elsewhere."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "Je moet óók bewijzen dat je de taal van de opleiding voldoende beheerst."
+          }
+        ]
+      }
+    ]
+  }
+}

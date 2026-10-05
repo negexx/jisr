@@ -1,0 +1,63 @@
+{
+  "slug": "fr-i-u-t-de-mulhouse-0680169p-but-science-et-genie-des-materia-8135",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8135&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8135&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Frais de scolarité indiqués sur la fiche Parcoursup : 178 euros par année ; mais ce tarif ne concerne a priori que les étudiants non extra-communautaires. Pour un étudiant marocain (extra-communautaire), la page Campus France Maroc indique des droits différenciés de 2 902 euros/an en Licence, montant non propre à ce BUT : je ne l'ai donc pas retenu comme frais de ce programme. Aucune date de candidature Études en France spécifique à ce BUT n'est donnée ; la page ADIUT Maroc mentionne « Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine) » pour la candidature ADIUT, donnée non retenue ici car elle concerne une procédure spécifique non confirmée pour ce programme précis. Vérifier la date limite Campus France Maroc (généralement janvier-mars selon l'appel à candidatures).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8135&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "BUT sélectif avec épreuves orales/entretien (avril-mai 2026) : vérifiez la convocation et préparez votre motivation, elle compte pour 10 % des critères.",
+          "en": "Selective BUT with oral exams/interview (April-May 2026): check the convocation and prepare your motivation, which counts for 10% of the criteria."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8135&typeBac=0&originePc=0",
+            "quote": "Votre motivation et la cohérence de votre projet comptent pour 10%"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Admission sur examen du dossier : résultats scolaires, méthodes de travail et savoir-être comptent chacun pour 30 %. Aucune note minimale n'est publiée.",
+          "en": "Admission is based on file review: academic results, working methods and soft skills each count for 30%. No minimum grade is published."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8135&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 30%"
+          }
+        ]
+      }
+    ]
+  }
+}

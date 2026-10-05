@@ -1,0 +1,25 @@
+{
+  "slug": "de-hochschule-fur-angewandte-wissenschaften-hrk287-environmental-engineerin-daad9933",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9933/",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9933/",
+          "quote": "The following is valid for applicants from: all countries For the winter semester: 15 April - 15 July"
+        }
+      ]
+    }
+  }
+}

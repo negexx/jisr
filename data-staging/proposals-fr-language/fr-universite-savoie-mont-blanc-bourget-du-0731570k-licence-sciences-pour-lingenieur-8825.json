@@ -1,0 +1,33 @@
+{
+  "slug": "fr-universite-savoie-mont-blanc-bourget-du-0731570k-licence-sciences-pour-lingenieur-8825",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8825&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8825&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 €/an sur la fiche Parcoursup est présenté comme le tarif général de la formation, sans mention d'un tarif différencié pour les étudiants extra-communautaires ; la page Campus France Maroc indique un droit d'inscription différencié de 2 902 euros pour une année en cycle de Licence pour les étudiants extra communautaires, mais elle est générale et non propre à ce programme. Les critères d'analyse des candidatures (résultats scolaires 55 %, etc.) sont des indications qualitatives, pas des seuils. Le programme dure 6 semestres mais la 3e année est une spécialisation avec deux parcours (ESET, TRI) ; la filière est générale et non sélective, l'admission se fait via une commission d'examen des vœux.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8825&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      }
+    ]
+  }
+}

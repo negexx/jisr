@@ -1,0 +1,50 @@
+{
+  "slug": "de-hochschule-heilbronn-technik-wirtschaft-hrk125-artificial-intelligence-daad10364",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10364/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10364/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        }
+      ]
+    }
+  },
+  "notes": "La préparation (2 premiers semestres) est enseignée en anglais; les semestres 3 à 7 en allemand. La page DAAD indique que les frais pour les ressortissants de pays non-UE sont de 1 500 EUR par semestre (montantMinor 150000, période semester); la page FH indique aussi 1 500 EUR par semester. Le programme est zulassungsfrei (direct enrolment): la candidature se fait via eCampus/uni-assist. Les dates exactes d'ouverture des inscriptions ne sont pas précisées dans les pages; le '28. September 2026' du DAAD est une date limite d'inscription pour le semestre d'hiver. Les documents demandés exacts (liste) ne sont pas détaillés dans les pages fournies; la reconnaissance du diplôme est un préalable. Pour la candidature avec diplôme étranger, la reconnaissance des diplômes étrangers est requise (Studienkolleg Konstanz / Uni-Assist).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["ielts"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10364/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les diplômes étrangers doivent d'abord être reconnus par le Studienkolleg Konstanz ou Uni-Assist; sans cette reconnaissance, la candidature sera rejetée. Vérifiez sur le site Web.",
+          "en": "Foreign school-leaving certificates must first be recognized by Studienkolleg Konstanz or Uni-Assist; without recognition, the application will not be considered. Check on the website."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-heilbronn.de/de/bewerbung-bachelor",
+            "quote": "Ohne die Zeugnisanerkennung wird Ihre Bewerbung leider ausgeschlossen."
+          }
+        ]
+      }
+    ]
+  }
+}

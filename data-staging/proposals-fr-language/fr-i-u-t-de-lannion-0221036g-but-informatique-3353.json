@@ -1,0 +1,50 @@
+{
+  "slug": "fr-i-u-t-de-lannion-0221036g-but-informatique-3353",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3353&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3353&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition fact (178 EUR/year) is quoted from the programme's own Parcoursup page; it does not state a separate non-EU rate, so it may not apply to a non-EU applicant with a foreign diploma (who normally pays differentiated fees). The B2 French level is stated as required only on the Parcoursup page; the Campus France page treats the French certification as compulsory (with possible exemptions). No intakes with day, month and year could be quoted for this programme, so intakes were left out.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3353&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les résultats scolaires (60 %), la motivation (30 %) et le savoir-être (10 %) sont évalués ; les notes en maths, matières scientifiques, français et anglais sont « très important ».",
+          "en": "Academic results (60%), motivation (30%) and soft skills (10%) are assessed; grades in maths, science subjects, French and English are 'very important'."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3353&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 60 % Savoir-être 10 % Motivation 30 %"
+          }
+        ]
+      }
+    ]
+  }
+}

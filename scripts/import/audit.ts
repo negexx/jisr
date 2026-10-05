@@ -24,6 +24,13 @@ export type AuditRow = {
   notes: string;
 };
 
+// Scholarships are shown to students as facts about money and eligibility, and there are few of
+// them: every one is read by a human, whatever the size of its batch.
+const ALWAYS_SAMPLED = /^scholarships\//;
+// ... and none of them can be waived: the owner can pass a programme preview unread, never money
+// and eligibility facts.
+export const isAlwaysSampled = (key: string): boolean => ALWAYS_SAMPLED.test(key);
+
 export function sampleSize(batchSize: number): number {
   return Math.min(batchSize, Math.max(SAMPLE_MINIMUM, Math.ceil(batchSize * SAMPLE_FRACTION)));
 }
@@ -52,7 +59,7 @@ export function drawBatch(input: {
   return fresh.map((key) => ({
     key,
     batch,
-    inSample: sample.has(key),
+    inSample: sample.has(key) || ALWAYS_SAMPLED.test(key),
     audited: "",
     outcome: "",
     notes: "",
@@ -76,7 +83,10 @@ export function batchStatuses(rows: readonly AuditRow[]): BatchStatus[] {
     const mine = rows.filter((r) => r.batch === batch);
     const sample = mine.filter((r) => r.inSample);
     const confirmed = sample.filter((r) => r.audited === "y" && r.outcome === "ok").length;
-    const waived = sample.filter((r) => r.audited === "y" && r.outcome === "waived").length;
+    // a waived scholarship counts as still to read
+    const waived = sample.filter(
+      (r) => r.audited === "y" && r.outcome === "waived" && !ALWAYS_SAMPLED.test(r.key),
+    ).length;
     const wrong = sample.filter((r) => r.outcome === "wrong").length;
     return {
       batch,
@@ -137,6 +147,8 @@ const asObject = (v: unknown): Loose =>
   typeof v === "object" && v !== null && !Array.isArray(v) ? (v as Loose) : {};
 const show = (v: unknown): string => (typeof v === "string" ? v : JSON.stringify(v));
 
+const PROSE_CLAIMS: readonly string[] = ["eligibility", "level", "howToApply"];
+
 // One readable page per sampled record: what is claimed, the exact quote and page behind it, and
 // the preparer's own caveats, so the reader checks the quotes instead of reading raw YAML.
 export function sampleSheet(
@@ -156,6 +168,44 @@ export function sampleSheet(
     const name = show(r.name ?? review.name ?? "");
     if (name !== "")
       out.push(`**${name}**${review.institution ? `, ${show(review.institution)}` : ""}`, "");
+    if (key.startsWith("scholarships/")) {
+      const list = (v: unknown, whenEmpty: string): string =>
+        Array.isArray(v) && v.length > 0 ? `\`${v.map(show).join(", ")}\`` : whenEmpty;
+      out.push(
+        `- **destinations**: ${list(r.destinations, "(none)")}`,
+        `- **eligibleNationalities**: ${list(r.eligibleNationalities, "(any international applicant)")}`,
+        `- **fields**: ${list(r.fields, "ALL FIELDS")}`,
+        `- **institutions**: ${list(r.institutions, "ALL INSTITUTIONS of the destination")}`,
+      );
+      for (const prose of ["summary", "howToApply"]) {
+        const text = asObject(r[prose]);
+        for (const locale of ["fr", "en", "ar"]) {
+          const entry = asObject(text[locale]);
+          if (typeof entry.text === "string")
+            out.push(`- **${prose}** (${locale}, ${show(entry.status)}): ${entry.text}`);
+        }
+      }
+    }
+    if (key.startsWith("scholarships/")) {
+      let host = "(no official URL)";
+      try {
+        host = new URL(show(r.officialUrl)).host;
+      } catch {
+        // an unreadable URL is shown as missing
+      }
+      out.push(
+        `- **provider site**: ${host}. Confirm: this is the provider's own site.`,
+        "- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.",
+        "- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.",
+        "- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.",
+        "- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.",
+      );
+      for (const e of evidence.filter((x) => show(x.fact).startsWith("nationality:"))) {
+        out.push(
+          `- **eligibleNationalities ${show(e.fact).slice("nationality:".length)}** named by: "${show(e.quote)}" — ${show(e.url)}`,
+        );
+      }
+    }
     for (const fact of [
       "durationYears",
       "teachingLanguages",
@@ -165,6 +215,8 @@ export function sampleSheet(
       "documents",
       "type",
       "website",
+      "support",
+      "deadline",
     ]) {
       const field = r[fact];
       const wrapped = "value" in asObject(field);
@@ -195,6 +247,10 @@ export function sampleSheet(
       for (const e of evidence.filter((x) => x.fact === `requirements.${show(id)}`)) {
         out.push(`  - "${show(e.quote)}" — ${show(e.url)}`);
       }
+    }
+    // a scholarship's claims that are not a fact block: who it is for, the level, how to apply
+    for (const e of evidence.filter((x) => PROSE_CLAIMS.includes(show(x.fact)))) {
+      out.push(`- **${show(e.fact)}**: "${show(e.quote)}" — ${show(e.url)}`);
     }
     for (const e of evidence.filter((x) => x.fact === undefined)) {
       out.push(`- evidence: "${show(e.quote)}" — ${show(e.url)}`);

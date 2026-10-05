@@ -1,0 +1,54 @@
+{
+  "slug": "de-hochschule-albstadt-sigmaringen-hrk4-albstadt-mechanical-engineering-daad9993",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9993/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9993/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        },
+        {
+          "url": "https://www.hs-albsig.de/studieninfos/im-studium/studentische-abteilung/semesterbeitrag-und-studiengebuehren/",
+          "quote": "Diese betragen 1.500 ,- Euro pro Semester und sind zusätzlich zum Semesterbeitrag zu entrichten."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: DAAD and the university's fee page give EUR 1,500 per semester for non-EU/non-EEA students (additional to the semester fee); the tuition amount is per semester, not per year. Intakes: deadlines 15 January / 15 July are stated on the programme page without a year and without saying they are specifically for international applicants; they are given here as recurring deadlines. ApplicationChannel: the pages do not state uni-assist or the university's own portal for international applicants (DAAD says only 'Please check this website'), so no applicationChannel fact is included. Documents: no document list for this programme's international applicants is quotable from the supplied pages, so no documents fact is included.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats étrangers doivent faire reconnaître leurs diplômes par le Studienkolleg Konstanz (procédure de reconnaissance des certificats).",
+          "en": "Foreign applicants must have their certificates recognised by Studienkolleg Konstanz (certificate recognition procedure)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9993/",
+            "quote": "Have your home certificates transferred to the German grading system by Studienkolleg Konstanz"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez sur le site de candidature de l'université la procédure exacte (portail propre à l'université) et les documents à fournir.",
+          "en": "Check the university's application website for the exact procedure (university's own portal) and required documents."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9993/",
+            "quote": "Submit application via Please check this website."
+          }
+        ]
+      }
+    ]
+  }
+}

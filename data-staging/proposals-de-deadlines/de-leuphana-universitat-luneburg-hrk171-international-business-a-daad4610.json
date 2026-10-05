@@ -1,0 +1,25 @@
+{
+  "slug": "de-leuphana-universitat-luneburg-hrk171-international-business-a-daad4610",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4610/",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4610/",
+          "quote": "The following is valid for applicants from: all countries For the winter semester: until 15 July"
+        }
+      ]
+    }
+  }
+}

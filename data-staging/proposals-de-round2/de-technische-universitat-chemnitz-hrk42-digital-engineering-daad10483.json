@@ -1,0 +1,102 @@
+{
+  "slug": "de-technische-universitat-chemnitz-hrk42-digital-engineering-daad10483",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10483/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10483/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10483/",
+          "quote": "Submit application via Please apply via uni-assist."
+        },
+        {
+          "url": "https://www.tu-chemnitz.de/studierendenservice/studserv/bewerbung/bew_bamala.php.en",
+          "quote": "The following applicants have to apply via uni-assist1: International applicants without German high school diploma"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: DAAD states 'Tuition fees per semester None' for this programme, so amountMinor 0 is stated for the non-EU applicant as well; the general TU Chemnitz fee page lists only long-term study, second degree, distance-learning and guest-student fees (500 EUR long-term, 350 EUR second degree, 40 EUR guest), which do not apply to a first-time bachelor applicant. General semester contribution approx. 340.50 EUR is not a tuition fee and was therefore not listed under tuition. Language rules: DAAD gives German A1 and English B2; the DAAD German A1 certificate list names telc, ÖSD and Goethe but no CEFR-aligned tests usable in acceptedTests, hence acceptedTests []. The English test list in the quote continues beyond what is copied; only IELTS and TOEFL iBT are named in the quoted sentences. Deadlines: both pages give a winter deadline of 15 July without a year, hence recurringDeadline; no summer intake was confirmed for this programme. documents fact omitted: the document list appears on the university application page for international applicants generally (uni-assist route), but its wording ('proof of high school diploma certificate', etc.) needed for quotedAs could not be matched to a single unambiguous document name without risk of misquoting, so no document list is stated; see the manual_check note on documents. The 2026/2027 dates in news items on the pages were not used as programme intakes.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10483/",
+            "quote": "German language skills A1 required, please provide an official language certificate, e.g.: telc Deutsch: telc Deutsch A1 ÖSD Zertifikat: A1 Goethe-Zertifikat: Goethe-Zertifikat A1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre bac marocain est reconnu comme équivalent à l'Abitur allemand ; sinon, un Studienkolleg et la Feststellungsprüfung (FSP) sont exigés à Leipzig, avec un certificat d'allemand B2 pour l'admission au Studienkolleg.",
+          "en": "Check whether your Moroccan Baccalaureate is recognised as equivalent to the German Abitur; if not, a Studienkolleg and the Feststellungsprüfung (FSP) are required (in Leipzig), with a German B2 certificate for Studienkolleg admission."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10483/",
+            "quote": "If your foreign high school diploma is not equivalent to the German high school diploma, you must complete a preparatory course for university studies (\"Studienkolleg\") in Germany before beginning your studies, culminating in an assessment test (\"Feststellungsprüfung – FSP\")."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le niveau d'allemand A2 est fortement recommandé en plus du A1 exigé ; il ne s'agit pas d'une condition d'admission.",
+          "en": "German at A2 level is strongly recommended in addition to the required A1; it is not an admission condition."
+        },
+        "evidence": [
+          {
+            "url": "https://www.tu-chemnitz.de/studierendenservice/studserv/bewerbung/bew_bamala.php.en",
+            "quote": "In addition, German language skills at A2 level (CEFR) are strongly recommended."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La date limite étendue au 31 août (hiver) ou 28 février (été) ne s'applique qu'aux candidats de l'UE/EEE et Suisse ; elle ne vaut PAS pour vous et ne s'applique pas si un Studienkolleg ou un cours d'allemand est requis.",
+          "en": "The extended deadline of 31 August (winter) or 28 February (summer) applies only to EU/EEA and Swiss applicants; it does NOT apply to you and does not apply if a Studienkolleg or German course is required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.tu-chemnitz.de/studierendenservice/studserv/bewerbung/bew_bamala.php.en",
+            "quote": "For international applicants from EU/EWR countries and Switzerland applying to non-restricted degree programmes, the application deadline is extended to 31 August for the winter term and 28 February for the summer term."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Outre le diplôme de fin d'études secondaires, préparez la preuve de réussite de l'examen d'entrée à l'université et, le cas échéant, les relevés de notes et diplômes d'études supérieures antérieures, en original et traduction.",
+          "en": "Besides the high school diploma, prepare proof of the successfully completed university entrance examination and, if applicable, transcripts and degrees from previous university studies, in original and translation."
+        },
+        "evidence": [
+          {
+            "url": "https://www.tu-chemnitz.de/studierendenservice/studserv/bewerbung/bew_bamala.php.en",
+            "quote": "For application via uni-assist or EduApplication Portal, the following documents have to be submitted: proof of high school diploma certificate including transcripts in original language, with proof of translation in German or English language proof of successfully completed university entrance examination (not for all countries, please find more information on the website of uni-assist) all other proofs of successfully completed university studies at the home country (duration of studies, transcripts, acquired degrees), besides their translations in German or English language."
+          }
+        ]
+      }
+    ]
+  }
+}

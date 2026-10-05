@@ -1,0 +1,74 @@
+{
+  "slug": "fr-universite-de-rennes-epe-0353074b-licence-economie-et-gestion-4723",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4723&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["en"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4723&typeBac=0&originePc=0",
+          "quote": "Cette formation propose les principaux enseignements d'économie en anglais en de la L1 à la L3 ."
+        }
+      ]
+    }
+  },
+  "notes": "Aucun document spécifique à cette formation n'est listé et aucune date limite pour les candidats internationaux n'apparaît : le programme n'a pas sa propre page sur les sites consultés, la fiche Parcoursup en tient lieu. Les frais de 2 902 €/an (droits différenciés pour étudiant extra-communautaire, cycle Licence) proviennent de la page générale Campus France Maroc et non de la fiche du programme ; certains établissements exonèrent ces droits différenciés, à vérifier. La fiche Parcoursup indique 178 €/an, tarif pour les étudiants français/UE, non applicable à ce profil. Les dates « 2026 » de la fiche concernent la session locale et ne sont pas des échéances pour un candidat non-EU. La certification de français (TCF/DELF B2/DALF) est obligatoire pour la procédure Études en France (sauf dispense), mais elle n'est pas nommée par la fiche du programme : voir la page sur les certifications de français. applicationChannel non renseigné conformément à la consigne.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4723&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": ["mathematics", "economics"],
+        "mode": "any",
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4723&typeBac=0&originePc=0",
+            "quote": "Les candidats doivent conserver l'apprentissage des mathématiques en terminale, la spécialité mathématiques est fortement recommendée, l'apprentissage des sciences économiques et sociales n'est pas un pré-requis."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Formation sélective : examen du dossier par une commission (résultats scolaires 80%, méthodes de travail 10%, savoir-être 5%, motivation 5%). Bonne maîtrise de l'anglais attendue.",
+          "en": "Selective programme: application reviewed by a panel (academic results 80%, work methods 10%, soft skills 5%, motivation 5%). Good command of English expected."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4723&typeBac=0&originePc=0",
+            "quote": "La Section internationale de la licence economie et gestion , à accès sélectif, est proposée dès la première année aux lycéens ayant un bon niveau général et une bonne maîtrise de l'anglais."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4723&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 80 % Méthodes de travail 10 % Savoir-être 5 % Motivation 5 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Aucune date limite de candidature n'est indiquée pour les candidats internationaux sur ces pages. Renseignez-vous sur la procédure Études en France / Campus France Maroc.",
+          "en": "No application deadline is given for international applicants on these pages. Check the Études en France / Campus France Maroc procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4723&typeBac=0&originePc=0",
+            "quote": "et que vous résidez dans un des pays disposant d'un espace Campus France à procédure Etudes en France : vous ne devez pas vous inscrire sur Parcoursup."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -27,9 +27,12 @@ teachingLanguages:
   source: daad
   info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 50000
+    currency: EUR
+    period: semester
+  source: page-3
+  info_kind: official
 intakes:
   value:
     - startDate: null
@@ -79,3 +82,6 @@ sources:
   page-2:
     url: https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/application-admission-and-enrolment-for-a-degree-programme/application-for-a-degree-programme-step-by-step-explained
     last_verified_at: 2026-10-02
+  page-3:
+    url: https://www.th-rosenheim.de/en/studies-and-further-education/before-your-studies/what-are-the-costs-of-studying-at-th-rosenheim-tuition-fees-and-student-union-fees
+    last_verified_at: 2026-10-04

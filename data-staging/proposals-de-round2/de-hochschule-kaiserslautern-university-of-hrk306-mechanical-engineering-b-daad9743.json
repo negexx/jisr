@@ -1,0 +1,76 @@
+{
+  "slug": "de-hochschule-kaiserslautern-university-of-hrk306-mechanical-engineering-b-daad9743",
+  "programmePage": "https://www.hs-kl.de/en/angewandte-ingenieurwissenschaften/international/me-bachelor-international",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-kl.de/en/international/from-abroad/costs",
+          "quote": "You do not have to pay any tuition fees in Rheinland-Pfalz."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9743/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.hs-kl.de/en/studying/application/apply-from-abroad",
+          "quote": "Applications with foreign academic qualifications must be submitted via the uni-assist platform."
+        }
+      ]
+    }
+  },
+  "notes": "Le bachelor dure 7 semestres (3,5 ans) selon la page du programme ; la page DAAD indique une durée de 7 semestres. Les frais de scolarité sont nuls en Rhénanie-Palatinat d'après la page \"Costs\" et confirmés par \"Tuition fees per semester None\". La contribution semestrielle (Sozialbeitrag) d'environ 250 à 300 EUR n'est pas des frais de scolarité. Les dates limites publiées (31 août / 28-29 février) sont des dates générales sans année et sans mention spécifique aux candidats non-UE dans les citations ; elles n'ont donc pas été reprises comme \"intakes\". La page des deadlines indique qu'il n'existe pas de date limite spéciale pour les candidats étrangers, mais sans date précise. Le niveau d'anglais B2 et les tests acceptés sont ceux listés pour le Bachelor Mechanical Engineering dans la page \"Apply from Abroad\" ; la page du programme confirme le B2. Le certificat de langue est exigé selon la page DAAD : \"please provide an official language certificate\".",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme marocain (Baccalauréat) est reconnu directement en Allemagne : consultez la base de données DAAD sur les conditions d'admission.",
+          "en": "Check whether your Moroccan Baccalauréat is directly recognised in Germany: see the DAAD admissions database."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-kl.de/en/studying/application/apply-from-abroad",
+            "quote": "Here you can check whether your school or university qualification is directly recognised for a degree course in Germany"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une première candidature via uni-assist coûte 75 euros ; chaque candidature ultérieure 30 euros. Prévoyez ces frais.",
+          "en": "The first application via uni-assist costs 75 euros; each subsequent application 30 euros. Budget for these fees."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-kl.de/en/studying/application/apply-from-abroad",
+            "quote": "The fee for the first application via uni-assist is 75 Euros. Each subsequent application costs 30 Euros."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le Bachelor Mechanical Engineering est en anglais (B2) ; l'allemand n'est pas exigé mais des bases sont recommandées.",
+          "en": "The Mechanical Engineering Bachelor is taught in English (B2); German is not required but a basic knowledge is recommended."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-kl.de/en/angewandte-ingenieurwissenschaften/international/me-bachelor-international",
+            "quote": "There are no minimum language requirements. However, a basic knowledge of German is recommended."
+          }
+        ]
+      }
+    ]
+  }
+}

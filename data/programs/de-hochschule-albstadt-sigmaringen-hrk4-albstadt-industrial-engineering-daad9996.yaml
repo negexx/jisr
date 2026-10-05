@@ -34,17 +34,68 @@ tuition:
   source: daad
   info_kind: official
 intakes:
-  value: null
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 7
+        day: 15
   source: daad
-  info_kind: guidance
+  info_kind: official
 applicationChannel:
   value: null
   source: daad
   info_kind: guidance
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires (copie certifiée)
+          status: draft
+        en:
+          text: high-school leaving certificate (certified copy)
+          status: draft
+      translationRequired: true
+    - slug: cv
+      name:
+        fr:
+          text: CV (daté et signé)
+          status: draft
+        en:
+          text: CV (signed and dated)
+          status: draft
+      translationRequired: null
+    - slug: passport-photograph
+      name:
+        fr:
+          text: Copie de la photo d'identité (passeport)
+          status: draft
+        en:
+          text: Copy of passport photograph
+          status: draft
+      translationRequired: null
+    - slug: orientation-test-documentation
+      name:
+        fr:
+          text: Documentation de l'Orientierungstest
+          status: draft
+        en:
+          text: Documentation of Orientierungstest
+          status: draft
+      translationRequired: null
+    - slug: studienkolleg-certificate
+      name:
+        fr:
+          text: Certificat du Studienkolleg (Institut for International Students, Konstanz)
+          status: draft
+        en:
+          text: Certificate from Institute for International Students
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -55,3 +106,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9996/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hs-albsig-international.de//application
+    last_verified_at: 2026-10-04

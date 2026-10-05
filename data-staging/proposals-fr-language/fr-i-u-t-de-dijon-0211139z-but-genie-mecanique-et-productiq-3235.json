@@ -1,0 +1,71 @@
+{
+  "slug": "fr-i-u-t-de-dijon-0211139z-but-genie-mecanique-et-productiq-3235",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3235&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3235&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3235&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : Anglais"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 2 902 € (droits d'inscription différenciés, niveau Licence) provient de la page générale Campus France Maroc sur le coût des études : il concerne le premier cycle/BUT au niveau Licence pour un étudiant extra-communautaire, mais il faudrait confirmer auprès de l'établissement. La page Parcoursup affiche 178 €/an, tarif des étudiants français/UE : non retenu. Aucune deadline datée pour les non-EU n'est donnée sur la page du programme ; la page ADIUT Maroc mentionne « Le calendrier 2026-2027 sera disponible prochainement. » Aucune liste de documents n'est fournie pour ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3235&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Candidature via Études en France pour les titulaires d'un Bac marocain; le BUT GMP est aussi accessible via le programme ADIUT Maroc (candidature du 1er octobre 2026 au 15 novembre 2026).",
+          "en": "Application via Études en France for holders of a Moroccan Bac; the GMP BUT is also accessible via the ADIUT Maroc programme (application from 1 October 2026 to 15 November 2026)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+            "quote": "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France."
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+            "quote": "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les attendus: bonnes notes en matières scientifiques et spécialités maths/physique/sciences de l'ingénieur, projet de formation motivé; le dossier reste sélectif.",
+          "en": "Check the expectations: good grades in scientific subjects and specialisations in maths/physics/engineering sciences, a motivated 'projet de formation'; admission remains selective."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3235&typeBac=0&originePc=0",
+            "quote": "Notes dans les matières scientifiques (enseignements spécialisés) Notes de première et de terminale Essentiel 4 sur 4"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3235&typeBac=0&originePc=0",
+            "quote": "Veillez à personnaliser et à motiver votre «projet de formation» et à soigner la qualité de votre argumentaire."
+          }
+        ]
+      }
+    ]
+  }
+}

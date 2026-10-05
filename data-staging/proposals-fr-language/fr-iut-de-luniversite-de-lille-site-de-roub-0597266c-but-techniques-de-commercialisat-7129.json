@@ -1,0 +1,63 @@
+{
+  "slug": "fr-iut-de-luniversite-de-lille-site-de-roub-0597266c-but-techniques-de-commercialisat-7129",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7129&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7129&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+        }
+      ]
+    }
+  },
+  "notes": "Le tarif des « Frais de scolarité » indiqué sur la fiche Parcoursup (178 euros par année, « Par année 178 euros. ») ne concerne pas un étudiant non-EU titulaire d'un diplôme étranger : il est laissé de côté. La page du site Campus France Maroc sur les droits différenciés s'applique de façon générale et non spécifiquement à ce BUT ; le montant pour ce programme doit être vérifié auprès de l'établissement. Aucun document obligatoire pour ce programme n'est nommé dans les pages fournies, donc le fait n'est pas extrait. Les dates de candidature de la page Campus France Maroc sur les BUT (1er octobre 2026 au 15 novembre 2026) sont présentées comme étant le calendrier de candidature sur la plateforme Études en France pour un titulaire de bac marocain, mais cette page décrit une procédure générale aux BUT en France via ADIUT Maroc et le résultat n'est pas utilisé comme date de candidature propre à cette formation.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7129&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le BUT Techniques de commercialisation est une formation sélective : l'admission est décidée après examen du dossier (résultats scolaires, fiche avenir, projet de formation motivé, activités). Vérifiez les attendus et le calendrier auprès de l'établissement.",
+          "en": "Techniques de commercialisation (BUT) is a selective programme: admission is decided after review of the application (school results, fiche avenir, motivated project, activities). Check the entry requirements and calendar with the institution."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7129&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7129&typeBac=0&originePc=0",
+            "quote": "Ce sont les enseignants de la formation qui analysent votre candidature dans le cadre d’une commission d'examen des vœux"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un projet de formation motivé doit montrer la motivation, la connaissance de la formation et son lien avec le projet personnel/professionnel du candidat.",
+          "en": "A motivated training project must show motivation, knowledge of the programme and its link with the applicant's personal/professional project."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7129&typeBac=0&originePc=0",
+            "quote": "Il est en outre recommandé aux candidats de s'approprier pleinement le projet de formation motivé."
+          }
+        ]
+      }
+    ]
+  }
+}

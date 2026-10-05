@@ -27,9 +27,12 @@ teachingLanguages:
   source: daad
   info_kind: guidance
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
 intakes:
   value: null
   source: daad
@@ -55,3 +58,6 @@ sources:
   page-1:
     url: https://www.tu-ilmenau.de/studium/vor-dem-studium/studienangebot/bachelorstudiengaenge/biomedizinische-technik-b-sc
     last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.tu-ilmenau.de/studium/vor-dem-studium/studienangebot/bewerbung
+    last_verified_at: 2026-10-04

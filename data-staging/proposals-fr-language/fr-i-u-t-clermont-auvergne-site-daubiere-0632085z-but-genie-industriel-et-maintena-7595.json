@@ -1,0 +1,80 @@
+{
+  "slug": "fr-i-u-t-clermont-auvergne-site-daubiere-0632085z-but-genie-industriel-et-maintena-7595",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7595&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7595&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Les pages Campus France Maroc disent que le titulaire d'un Bac marocain doit candidater via Études en France, mais la page Parcoursup de ce BUT indique elle-même que les candidats étrangers non titulaires d'un bac français/européen, non ressortissants UE/EEE et résidant dans un pays à espace Campus France ne doivent pas s'inscrire sur Parcoursup et doivent passer par Campus France. Aucun channel n'est donc extrait, comme demandé. Le montant de 178 €/an est le tarif affiché sur la fiche (« Par année 178 euros. ») ; il n'est pas indiqué s'il s'agit d'un tarif pour étudiants extracommunautaires ou d'un tarif général, et la page Campus France indique un autre montant (2 902 € pour une année de Licence) : à vérifier par l'auditeur. Aucune date d'ouverture ou de clôture de candidature pour le public international n'est fournie ; les dates citées (épreuves, réponses) concernent la procédure Parcoursup.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7595&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'admission (motivation, connaissance de la formation, adéquation du projet) est organisé pour tous les candidats : prenez rendez-vous sur Parcoursup entre le 8 et le 17 avril 2026.",
+          "en": "An admission test (motivation, knowledge of the programme, fit with the professional project) is organised for all candidates: book your slot on Parcoursup between 8 and 17 April 2026."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7595&typeBac=0&originePc=0",
+            "quote": "Tous les candidats seront invités à prendre rendez-vous pour un test d'admission via la plateforme parcoursup."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7595&typeBac=0&originePc=0",
+            "quote": "vous devrez vous reconnecter sur Parcoursup entre le mercredi 08 avril 2026 et le vendredi 17 avril 2026 afin de prendre rendez-vous"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est sélective et repose sur une grille : résultats scolaires 50 %, méthodes de travail 13 %, savoir-être 5 %, motivation et cohérence du projet 30 %, engagements 2 %.",
+          "en": "Admission is selective and based on a grid: academic results 50%, working methods 13%, soft skills 5%, motivation and project coherence 30%, engagement 2%."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7595&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 50 % Méthodes de travail 13 % Savoir-être 5 % Motivation 30 % Engagement et activités 2 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des éléments qualitatifs (lettre de motivation, activités et centres d'intérêt, fiche avenir) sont pris en compte ; les mathématiques, la physique-chimie et les sciences technologiques sont évaluées de façon essentielle.",
+          "en": "Qualitative elements (cover letter, activities and interests, fiche avenir) are taken into account; mathematics, physics-chemistry and technological sciences are rated as essential."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7595&typeBac=0&originePc=0",
+            "quote": "Notes en mathématiques, physique-chimie, sciences de l’ingénieur ou enseignement technologique et niveau en anglais. Résultats des épreuves de français, ou leurs équivalents Bulletins de 1ère et Terminale et tout autre bulletin transmis par le candidat Essentiel 4 sur 4"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7595&typeBac=0&originePc=0",
+            "quote": "Adéquation du parcours d’études et cohérence du projet Scolarité - Lettre de motivation - Activités et centres d’intérêt - Test d'admission Essentiel 4 sur 4"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,403 @@
+{
+  "shared": {
+    "FR": [
+      "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+      "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+      "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces",
+      "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut"
+    ]
+  },
+  "programmes": {
+    "nl-breda-university-of-applied-sciences-21ui-applied-data-science-art-1001o8756": [
+      "https://www.buas.nl/opleidingen/bachelor-logistics-engineering/toelatingsvoorwaarden",
+      "https://www.buas.nl/opleidingen/master-urban-tourism-and-mobility/aanmeldprocedure"
+    ],
+    "nl-christelijke-hogeschool-ede-25ba-bedrijfskunde-1001o2793": [
+      "https://che.nl/opleidingen/bedrijfskunde-ondernemen-hrm/bachelor/bedrijfskunde",
+      "https://che.nl/info-opleidingen/aanmelden-opleiding",
+      "https://che.nl/opleidingen/bedrijfskunde-ondernemen-hrm/bachelor/human-resource-management",
+      "https://che.nl/opleidingen/bedrijfskunde-ondernemen-hrm/",
+      "https://che.nl/studeren-in-ede/financien-ondersteuning/",
+      "https://che.nl/studeren-in-ede/financien-ondersteuning/studiekosten/"
+    ],
+    "nl-christelijke-hogeschool-ede-25ba-ict-1001o2670": [
+      "https://che.nl/opleidingen/ict/bachelor/ict",
+      "https://che.nl/info-opleidingen/aanmelden-opleiding",
+      "https://che.nl/opleidingen/bedrijfskunde-ondernemen-hrm/bachelor/human-resource-management",
+      "https://che.nl/opleidingen/ict/",
+      "https://che.nl/studeren-in-ede/financien-ondersteuning/",
+      "https://che.nl/studeren-in-ede/financien-ondersteuning/studiekosten/"
+    ],
+    "nl-christelijke-hogeschool-windesheim-01vu-accountancy-1001o3525": [
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/accountancy",
+      "https://www.windesheim.nl/opleidingen/studiekosten",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/lerarenopleiding-basisonderwijs-pabo-zwolle",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/international-business",
+      "https://www.windesheim.nl/opleidingen/deeltijd/cursus/motiverend-coachen",
+      "https://www.windesheim.nl/getmedia/eec791c7-b1fa-46ce-be54-109f7ba721aa/Besluit-2025-043-Instellingsdeel-OER-Ad-en-Bachelor-Eigen-Leerroute-2026-2027.pdf",
+      "https://www.windesheim.nl/opleidingen/toelating",
+      "https://www.windesheim.nl/opleidingen/aanmelden"
+    ],
+    "nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046": [
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+      "https://www.windesheim.nl/opleidingen/studiekosten",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/lerarenopleiding-basisonderwijs-pabo-zwolle",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/international-business",
+      "https://www.windesheim.nl/opleidingen/deeltijd/cursus/motiverend-coachen",
+      "https://www.windesheim.nl/getmedia/eec791c7-b1fa-46ce-be54-109f7ba721aa/Besluit-2025-043-Instellingsdeel-OER-Ad-en-Bachelor-Eigen-Leerroute-2026-2027.pdf",
+      "https://www.windesheim.nl/opleidingen/toelating",
+      "https://www.windesheim.nl/opleidingen/aanmelden"
+    ],
+    "nl-christelijke-hogeschool-windesheim-01vu-ict-1001o2665": [
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle",
+      "https://www.windesheim.nl/opleidingen/studiekosten",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/lerarenopleiding-basisonderwijs-pabo-zwolle",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/international-business",
+      "https://www.windesheim.nl/opleidingen/deeltijd/cursus/motiverend-coachen",
+      "https://www.windesheim.nl/getmedia/eec791c7-b1fa-46ce-be54-109f7ba721aa/Besluit-2025-043-Instellingsdeel-OER-Ad-en-Bachelor-Eigen-Leerroute-2026-2027.pdf",
+      "https://www.windesheim.nl/opleidingen/toelating",
+      "https://www.windesheim.nl/opleidingen/aanmelden"
+    ],
+    "nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046": [
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/bouwkunde-zwolle",
+      "https://www.windesheim.nl/opleidingen/studiekosten",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/lerarenopleiding-basisonderwijs-pabo-zwolle",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/international-business",
+      "https://www.windesheim.nl/opleidingen/deeltijd/cursus/motiverend-coachen",
+      "https://www.windesheim.nl/getmedia/eec791c7-b1fa-46ce-be54-109f7ba721aa/Besluit-2025-043-Instellingsdeel-OER-Ad-en-Bachelor-Eigen-Leerroute-2026-2027.pdf",
+      "https://www.windesheim.nl/opleidingen/toelating",
+      "https://www.windesheim.nl/opleidingen/aanmelden"
+    ],
+    "nl-christelijke-hogeschool-windesheim-01vu-almere-ict-1001o2665": [
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle",
+      "https://www.windesheim.nl/opleidingen/studiekosten",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/lerarenopleiding-basisonderwijs-pabo-zwolle",
+      "https://www.windesheim.nl/opleidingen/voltijd/bachelor/international-business",
+      "https://www.windesheim.nl/opleidingen/deeltijd/cursus/motiverend-coachen",
+      "https://www.windesheim.nl/getmedia/eec791c7-b1fa-46ce-be54-109f7ba721aa/Besluit-2025-043-Instellingsdeel-OER-Ad-en-Bachelor-Eigen-Leerroute-2026-2027.pdf",
+      "https://www.windesheim.nl/opleidingen/toelating",
+      "https://www.windesheim.nl/opleidingen/aanmelden"
+    ],
+    "nl-de-haagse-hogeschool-27um-accountancy-1001o3550": [
+      "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/accountancy-voltijd",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld",
+      "https://www.dehaagsehogeschool.nl/media/inzicht-het-welzijn-en-de-uitdagingen-van-oekraiense-jongeren-den-haag-lees-hier-het-onderzoeksrapport-van-juni-2026",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+      "https://www.dehaagsehogeschool.nl/media/oer-elektrotechniek",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat"
+    ],
+    "nl-de-haagse-hogeschool-27um-applied-data-science-art-1001o8742": [
+      "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld",
+      "https://www.dehaagsehogeschool.nl/media/inzicht-het-welzijn-en-de-uitdagingen-van-oekraiense-jongeren-den-haag-lees-hier-het-onderzoeksrapport-van-juni-2026",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+      "https://www.dehaagsehogeschool.nl/media/oer-elektrotechniek",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat"
+    ],
+    "nl-de-haagse-hogeschool-27um-bouwkunde-1001o3065": [
+      "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/bouwkunde",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld",
+      "https://www.dehaagsehogeschool.nl/media/inzicht-het-welzijn-en-de-uitdagingen-van-oekraiense-jongeren-den-haag-lees-hier-het-onderzoeksrapport-van-juni-2026",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+      "https://www.dehaagsehogeschool.nl/media/oer-elektrotechniek",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat"
+    ],
+    "nl-de-haagse-hogeschool-27um-delft-elektrotechniek-1001o3093": [
+      "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/elektrotechniek-voltijd",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld",
+      "https://www.dehaagsehogeschool.nl/media/inzicht-het-welzijn-en-de-uitdagingen-van-oekraiense-jongeren-den-haag-lees-hier-het-onderzoeksrapport-van-juni-2026",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+      "https://www.dehaagsehogeschool.nl/media/oer-elektrotechniek",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat"
+    ],
+    "nl-de-haagse-hogeschool-27um-delft-ict-1001o2675": [
+      "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/ict",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld",
+      "https://www.dehaagsehogeschool.nl/media/inzicht-het-welzijn-en-de-uitdagingen-van-oekraiense-jongeren-den-haag-lees-hier-het-onderzoeksrapport-van-juni-2026",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+      "https://www.dehaagsehogeschool.nl/media/oer-elektrotechniek",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat"
+    ],
+    "nl-de-haagse-hogeschool-27um-zoetermeer-applied-data-science-art-1001o8742": [
+      "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/collegegeld",
+      "https://www.dehaagsehogeschool.nl/media/inzicht-het-welzijn-en-de-uitdagingen-van-oekraiense-jongeren-den-haag-lees-hier-het-onderzoeksrapport-van-juni-2026",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/contact-en-veelgestelde-vragen-faqs",
+      "https://www.dehaagsehogeschool.nl/media/oer-elektrotechniek",
+      "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat"
+    ],
+    "nl-erasmus-universiteit-rotterdam-21pe-bedrijfskunde-1001o5712": [
+      "https://www.eur.nl/bachelor/bedrijfskunde",
+      "https://www.eur.nl/onderwijs/praktische-zaken/inschrijving/collegegeld/collegegeldtarieven-2026-2027",
+      "https://www.eur.nl/onderwijs/praktische-zaken/inschrijving/collegegeld/collegegeldtarieven-2025-2026",
+      "https://www.eur.nl/en/euc/application-admissions/admission-requirements",
+      "https://www.eur.nl/en/node/24226/toelating",
+      "https://www.eur.nl/en/education/practical-matters/registration/tuition-fee/tuition-fee-2026-2027",
+      "https://www.eur.nl/onderwijs/praktische-zaken/inschrijving/collegegeld/toelichting-tarieven",
+      "https://repub.eur.nl/pub/39943/Metis_188504.pdf",
+      "https://repub.eur.nl/pub/123845/1686-2600-1-SM.pdf",
+      "https://www.eur.nl/master/arts-culture-and-society/inschrijven"
+    ],
+    "nl-fontys-hogeschool-30gb-accountancy-1001o3555": [
+      "https://www.fontys.nl/Opleidingen/Accountancy-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83",
+      "https://www.fontys.nl/Opleidingen/Accountancy-bachelor-deeltijd.htm",
+      "https://www.fontys.nl/Opleidingen/Accounting-Essentials-for-Business-Professionals-cursus.htm",
+      "https://www.fontys.nl/Opleidingen/Accountancy-bachelor-deeltijd/Toelating-aanmelden.htm",
+      "https://www.fontys.nl/Aanmelden-voor-een-evenement.htm?itemcode=472e7261-0647-4a24-974b-3596bd9716eb_D40B55E9-89E9-4FFF-B6D2-DF1B5FC47ED9"
+    ],
+    "nl-fontys-hogeschool-30gb-elektrotechniek-1001o3098": [
+      "https://www.fontys.nl/Opleidingen/Elektrotechniek-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83",
+      "https://www.fontys.nl/Opleidingen/Accounting-Essentials-for-Business-Professionals-cursus.htm",
+      "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm"
+    ],
+    "nl-fontys-hogeschool-30gb-ict-1001o2677": [
+      "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83",
+      "https://www.fontys.nl/Opleidingen/Accelerate-IT-AI-For-Society-cursus.htm",
+      "https://www.fontys.nl/en/Study-at-Fontys/Practical-information/Finance.htm",
+      "https://www.fontys.nl/Opleidingen/Accounting-Essentials-for-Business-Professionals-cursus.htm",
+      "https://www.fontys.nl/Aanmelden-voor-een-evenement.htm?itemcode=7ba8ee82-86fc-49e5-b234-778e7768bf66_5BB3EE35-FF38-4BE3-B859-C1C1C75C4644",
+      "https://www.fontys.nl/Aanmelden-voor-een-evenement.htm?itemcode=d3353570-6317-4696-b508-33e3d94c0f0d_4EDF3DB6-C428-40D3-9EFF-748E9966275C"
+    ],
+    "nl-fontys-hogeschool-30gb-tilburg-commerciele-economie-1001o3452": [
+      "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83",
+      "https://www.fontys.nl/Opleidingen/Ad-Finance-ad-voltijd.htm",
+      "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd/Toelating-aanmelden.htm",
+      "https://www.fontys.nl/Aanmelden-voor-een-evenement.htm?itemcode=fe46f0af-864f-495f-879b-0dc6f662a3c0_6B686F24-2523-4E18-B9DB-831774662CD0"
+    ],
+    "nl-fontys-hogeschool-30gb-tilburg-ict-1001o2677": [
+      "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83",
+      "https://www.fontys.nl/Opleidingen/Accelerate-IT-AI-For-Society-cursus.htm",
+      "https://www.fontys.nl/en/Study-at-Fontys/Practical-information/Finance.htm",
+      "https://www.fontys.nl/Opleidingen/Accounting-Essentials-for-Business-Professionals-cursus.htm",
+      "https://www.fontys.nl/Aanmelden-voor-een-evenement.htm?itemcode=7ba8ee82-86fc-49e5-b234-778e7768bf66_5BB3EE35-FF38-4BE3-B859-C1C1C75C4644",
+      "https://www.fontys.nl/Aanmelden-voor-een-evenement.htm?itemcode=d3353570-6317-4696-b508-33e3d94c0f0d_4EDF3DB6-C428-40D3-9EFF-748E9966275C"
+    ],
+    "nl-fontys-hogeschool-30gb-tilburg-technische-bedrijfskunde-1001o3682": [
+      "https://www.fontys.nl/Opleidingen/Technische-Bedrijfskunde-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83",
+      "https://www.fontys.nl/Opleidingen/Bedrijfskunde-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Opleidingen/Accounting-Essentials-for-Business-Professionals-cursus.htm",
+      "https://www.fontys.nl/Opleidingen/Bedrijfskunde-bachelor-deeltijd/Toelating-aanmelden.htm",
+      "https://www.fontys.nl/Aanmelden-voor-een-evenement.htm?itemcode=3d52b55e-7621-4764-9101-4e089152811f_2698421E-C5DA-4AA1-8DB3-B32A31162074"
+    ],
+    "nl-fontys-hogeschool-30gb-venlo-commerciele-economie-1001o3452": [
+      "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83",
+      "https://www.fontys.nl/Opleidingen/Ad-Finance-ad-voltijd.htm",
+      "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd/Toelating-aanmelden.htm",
+      "https://www.fontys.nl/Aanmelden-voor-een-evenement.htm?itemcode=fe46f0af-864f-495f-879b-0dc6f662a3c0_6B686F24-2523-4E18-B9DB-831774662CD0"
+    ],
+    "nl-fontys-hogeschool-30gb-venlo-industrieel-product-ontw-1001o3309": [
+      "https://www.fontys.nl/Opleidingen/Industrieel-Product-Ontwerpen-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83",
+      "https://www.fontys.nl/Opleidingen/Accounting-Essentials-for-Business-Professionals-cursus.htm",
+      "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm"
+    ],
+    "nl-fontys-hogeschool-30gb-venlo-informatica-1001o3903": [
+      "https://www.fontys.nl/Opleidingen/Informatica-bachelor-voltijd.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+      "https://bron.fontys.nl/studiefinanciering-hoe-doen-de-buren-dat/",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+      "https://www.fontys.nl/Studeren/Praktische-informatie/Toelating/21-toelatingsonderzoek.htm",
+      "https://bron.fontys.nl/op-komst-lessen-nederlandse-taal-voor-alle-studenten/",
+      "https://oer.fontys.nl/documents/d899c393-f34e-4e19-a7e9-2337a5a1df83",
+      "https://www.fontys.nl/Opleidingen/Accounting-Essentials-for-Business-Professionals-cursus.htm",
+      "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm"
+    ],
+    "nl-hogeschool-inholland-27pz-accountancy-1001o3549": [
+      "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-inholland-27pz-alkmaar-technische-informatica-1001o3859": [
+      "https://www.inholland.nl/opleidingen/technische-informatica-voltijd/de-opleiding/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-inholland-27pz-delft-luchtvaarttechnologie-1001o3164": [
+      "https://www.inholland.nl/opleidingen/luchtvaarttechnologie-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064": [
+      "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-inholland-27pz-haarlem-business-studies-1001o2990": [
+      "https://www.inholland.nl/opleidingen/business-studies-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209": [
+      "https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/",
+      "https://www.inholland.nl/inschrijven/collegegeld/",
+      "https://www.inholland.nl/studeren-bij/studiekosten/",
+      "https://www.inholland.nl/inhollandcom/degree-programmes/tourism-management-eng-full-time/entry-requirements/",
+      "https://www.inholland.nl/opleidingen/creative-business-en-fulltime/entry-requirements/",
+      "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+      "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf"
+    ],
+    "nl-hogeschool-leiden-21ri-commerciele-economie-1001o3422": [
+      "https://www.hsleiden.nl/opleiding/commerciele-economie",
+      "https://www.hsleiden.nl/studeren/inschrijven/kosten",
+      "https://www.hsleiden.nl/master/digital-forensics-parttime/requirements-and-enrollment",
+      "https://www.hsleiden.nl/studeren/inschrijven/toelating",
+      "https://www.hsleiden.nl/studeren/inschrijven/studenten-uit-het-buitenland",
+      "https://www.hsleiden.nl/opleiding/management-in-de-zorg-associate-degree/toelating-en-inschrijving"
+    ],
+    "nl-hogeschool-rotterdam-22oj-accountancy-1001o3536": [
+      "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/accountancy/voltijd/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/collegegeld-en-betalen/",
+      "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bedrijfskunde/deeltijd/studiekosten/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/studievisum/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/",
+      "https://www.hogeschoolrotterdam.nl/globalassets/documenten/hogeschool/publicaties/hogeschoolgidsen/hogeschoolgids-bacheloropleidingen-ivg-2020-2021.pdf",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/toelatingsvoorwaarden/"
+    ],
+    "nl-hogeschool-rotterdam-22oj-applied-data-science-art-1001o8776": [
+      "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/applied-data-science--artificial-intelligence/voltijd/open-dag-ba-data-science-vt/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/collegegeld-en-betalen/",
+      "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bedrijfskunde/deeltijd/studiekosten/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/studievisum/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/",
+      "https://www.hogeschoolrotterdam.nl/globalassets/documenten/hogeschool/publicaties/hogeschoolgidsen/hogeschoolgids-bacheloropleidingen-ivg-2020-2021.pdf",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/toelatingsvoorwaarden/"
+    ],
+    "nl-hogeschool-rotterdam-22oj-bouwkunde-1001o3055": [
+      "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bouwkunde/voltijd/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/collegegeld-en-betalen/",
+      "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/bedrijfskunde/deeltijd/studiekosten/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/studievisum/",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/",
+      "https://www.hogeschoolrotterdam.nl/globalassets/documenten/hogeschool/publicaties/hogeschoolgidsen/hogeschoolgids-bacheloropleidingen-ivg-2020-2021.pdf",
+      "https://www.hogeschoolrotterdam.nl/voorlichting/toelatingsvoorwaarden/"
+    ],
+    "nl-hogeschool-utrecht-25dw-accountancy-1001o3544": [
+      "https://www.hu.nl/voltijd-opleidingen/accountancy",
+      "https://www.hu.nl/collegegeld-en-betalen",
+      "https://www.hu.nl/collegegeldmeter",
+      "https://www.hu.nl/-/media/hu/documenten/onderzoek/onderzoekers/webversie-openbare-les-jantien-smit.pdf",
+      "https://www.hu.nl/-/media/hu/documenten/onderzoek/projecten/2024_folder_meertaligeklassenassistenten.pdf",
+      "https://www.hu.nl/aanmelden",
+      "https://www.hu.nl/aanmelden-bachelor-ad-en-duaal-deeltijd",
+      "https://studiegids.hu.nl/d3ae4975-c72e-4270-9af1-bdb446092f47",
+      "https://studiegids.hu.nl/9a9aa948-792f-4fd6-8340-31ce6d7673b9"
+    ],
+    "nl-hogeschool-utrecht-25dw-chemische-technologie-1001o3152": [
+      "https://www.hu.nl/voltijd-opleidingen/chemische-technologie",
+      "https://www.hu.nl/collegegeld-en-betalen",
+      "https://www.hu.nl/collegegeldmeter",
+      "https://www.hu.nl/-/media/hu/documenten/onderzoek/onderzoekers/webversie-openbare-les-jantien-smit.pdf",
+      "https://www.hu.nl/-/media/hu/documenten/onderzoek/projecten/2024_folder_meertaligeklassenassistenten.pdf",
+      "https://www.hu.nl/aanmelden",
+      "https://www.hu.nl/aanmelden-bachelor-ad-en-duaal-deeltijd",
+      "https://studiegids.hu.nl/d3ae4975-c72e-4270-9af1-bdb446092f47",
+      "https://studiegids.hu.nl/9a9aa948-792f-4fd6-8340-31ce6d7673b9"
+    ],
+    "nl-hogeschool-utrecht-25dw-ict-1001o2672": [
+      "https://www.hu.nl/voltijd-opleidingen/hbo-ict",
+      "https://www.hu.nl/collegegeld-en-betalen",
+      "https://www.hu.nl/collegegeldmeter",
+      "https://www.hu.nl/-/media/hu/documenten/onderzoek/onderzoekers/webversie-openbare-les-jantien-smit.pdf",
+      "https://www.hu.nl/-/media/hu/documenten/onderzoek/projecten/2024_folder_meertaligeklassenassistenten.pdf",
+      "https://www.hu.nl/aanmelden",
+      "https://www.hu.nl/aanmelden-bachelor-ad-en-duaal-deeltijd",
+      "https://studiegids.hu.nl/d3ae4975-c72e-4270-9af1-bdb446092f47",
+      "https://studiegids.hu.nl/9a9aa948-792f-4fd6-8340-31ce6d7673b9"
+    ],
+    "nl-hogeschool-van-amsterdam-28dn-biomedische-technologie-1001o5075": [
+      "https://www.hva.nl/opleidingen/biomedische-technologie",
+      "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/collegegeld/collegegeldtarieven",
+      "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/21-toelatingsonderzoek",
+      "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/toelatingseisen",
+      "https://research.hva.nl/files/17281039/Peter_Huub_Ron_NL_Spiegel.pdf",
+      "https://research.hva.nl/en/publications/samenhang-in-vreemdetalencurricula-een-verkenning-van-onderwijs-e/",
+      "https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/diplomawaardering/documentatie-vooropleiding-niet-afgerond"
+    ],
+    "nl-hogeschool-van-arnhem-en-nijmegen-25kb-ict-1001o2674": [
+      "https://www.han.nl/opleidingen/hbo/ict/voltijd/",
+      "https://www.han.nl/studeren/onderwijs/collegegeld/",
+      "https://www.han.nl/opleidingen/associate-degree/elektrotechniek/deeltijd/praktische-info/Inschrijvingsreglement-2025-2026-AEA-DEFINITIEF-VERSIE2.pdf",
+      "https://www.han.nl/opleidingen/associate-degree/bedrijfskunde-sustainable-international-business/voltijd/praktische-info/Voltijd-Ad-Bedrijfskunde-Inschrijvingsreglement-2024-2025.pdf",
+      "https://libguides.bibliotheek.han.nl/az/databases",
+      "https://www.han.nl/opleidingen/hbo/chemie/voltijd/praktische-info/OER-H9-OWEs-Chemie-2021-2022.pdf",
+      "https://www.han.nl/opleidingen/hbo/medische-hulpverlening/voltijd/praktische-info/Inschrijfreglement-2023-2024-BMH.pdf",
+      "https://www.han.nl/opleidingen/hbo/sportkunde/voltijd/praktische-info/Inschrijvingsreglement-Sportkunde-2023-2024.pdf",
+      "https://www.han.nl/opleidingen/master/circular-economy/voltijd/praktische-info/",
+      "https://www.han.nl/studeren/scholing-voor-werkenden/kosten/studiekosten/",
+      "https://www.han.nl/studeren/scholing-voor-werkenden/kosten/"
+    ]
+  }
+}

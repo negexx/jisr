@@ -1,0 +1,16 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209",
+  "programmePage": "https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["nl"],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/werktuigbouwkunde-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar taal Nederlands"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee: the supplied pages give only institution-wide fees (instellingscollegegeld voltijd € 10.360 for 2026-2027, and visa-related tuition of € 2.695 in the Suriname visa PDF), but no page states the tuition fee for a non-EU student of this specific programme, so no tuition fact is given. The visa PDF concerns students from Suriname only, so its deadline of 1 May and the € 2.695 tuition are not stated for a Moroccan applicant; no intake fact is given. No entry requirements specific to this programme could be quoted from the supplied pages (the entry-requirement pages concern other programmes)."
+}

@@ -1,0 +1,84 @@
+{
+  "slug": "de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach-sustainable-business-and-daad4705",
+  "programmePage": "https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-technology-beng",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4705/",
+          "quote": "Tuition fees per semester None"
+        },
+        {
+          "url": "https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-technology-beng",
+          "quote": "Fees: None (only semester fees)"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: both programme pages state there are no tuition fees for this degree programme ('Tuition fees per semester None'; 'Fees: None (only semester fees)'). The semester contribution (approx. 380 EUR per semester on the DAAD page, 394.80 EUR for winter semester 2026/27 on the Semester Fee page) is not a tuition fee. Deadline: the applications page gives '15 May for non-EU and non-EEA applicants' and the programme page 'Application deadline: 15 May (non EU and non EEA applicants)'; no year is attached to this date, so it is given as a recurringDeadline. The '01 September' application opening and the 'WINTER SEMESTER 2027/28' header are for all applicants (all lines of the same sentence); the opening is given as 2026-09-01 by taking 01 September from the winter semester 2027/28 cycle, so the human auditor should verify the cycle. Application channel: the DAAD page says the university does not cooperate with uni-assist, so for this programme foreign-diploma applicants apply directly (university's own route); note that a different programme (International Business) at the main campus requires uni-assist, and the Application Portal page mentions 'Uni-Assist Application' for German higher education entrance qualification holders. Teaching language: modules are taught in English with integrated German/foreign-language modules, so only 'en' is listed. A 'Fact Sheet' and 'Application Form' PDFs are offered as downloads but no explicit document list for international applicants of this programme is given on the pages, so no documents fact is stated; the DAAD page says English B2 must be proven with an official language certificate.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["ielts", "toefl"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4705/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: Cambridge English Qualifications: B2 First TOEFL iBT (before 2026): 72 TOEIC: 785 Reading: 385 Listening: 400 Speaking: 160 Writing: 150 IELTS Academic: 5.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Votre diplôme de fin d'études secondaires (bac marocain) doit être reconnu comme équivalent au diplôme d'accès à l'université allemand (Hochschulzugangsberechtigung). Vérifiez sur ANABIN / la base du DAAD si un Studienkolleg est nécessaire. L'évaluation se fait par l'université.",
+          "en": "Your school-leaving certificate (Moroccan Bac) must be recognised as equivalent to the German higher education entrance qualification. Check ANABIN / the DAAD database whether a Studienkolleg is required. The evaluation is done by the university."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4705/",
+            "quote": "You can find out whether your higher education entrance qualification (UEQ) from your home country qualifies you to study directly in Germany or whether you will first have to attend a preparatory course (\"Studienkolleg\")"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4705/",
+            "quote": "If you have a foreign university entrance qualification, it must be evaluated by our university as part of the application process."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Il n'y a pas de numerus clausus (pas de restriction d'admission), mais l'université examine votre qualification d'accès.",
+          "en": "There is no numerus clausus (no admission restriction), but the university reviews your entrance qualification."
+        },
+        "evidence": [
+          {
+            "url": "https://www.umwelt-campus.de/en/study/study-programmes-continuing-education/bachelor/sustainable-business-and-technology-beng",
+            "quote": "Admission restriction (N. C.): no"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'allemand n'est pas exigé à l'admission (cours d'allemand intégrés). Aucun niveau minimum d'allemand requis.",
+          "en": "German is not required for admission (integrated German courses). No minimum German level required."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4705/",
+            "quote": "German language skills No minimum language level required"
+          }
+        ]
+      }
+    ]
+  }
+}

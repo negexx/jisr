@@ -27,21 +27,39 @@ teachingLanguages:
   source: daad
   info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 80000
+    currency: EUR
+    period: semester
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
-  value: null
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 7
+        day: 15
   source: daad
-  info_kind: guidance
+  info_kind: official
 applicationChannel:
   value: null
   source: daad
   info_kind: guidance
 documents:
-  value: null
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: school-leaving certificate
+          status: draft
+      translationRequired: null
   source: daad
-  info_kind: guidance
+  info_kind: official
 requirements:
   coverage: partial
   source: daad

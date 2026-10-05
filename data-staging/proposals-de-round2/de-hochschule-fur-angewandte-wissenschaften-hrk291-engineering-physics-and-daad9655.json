@@ -1,0 +1,67 @@
+{
+  "slug": "de-hochschule-fur-angewandte-wissenschaften-hrk291-engineering-physics-and-daad9655",
+  "programmePage": "https://sci.hm.edu/studierende/studiengaenge/bachelor/engineering_physics_and_datascience/index.en.html",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 50000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://hm.edu/studium_1/bewerbung/faq_gebuehren_non_eu_auslaender.de.html",
+          "quote": "Die Höhe der Studiengebühren beläuft sich auf 500,00 Euro pro Semester für einen Bachelorstudiengang und 700,00 Euro pro Semester für einen Masterstudiengang."
+        },
+        {
+          "url": "https://mediapool.hm.edu/media/dachmarke/dm_lokal/hauptabteilung2/bereichimma_1/pdfsinfoszurbewerbung/01_Hochschulgebuehrensatzung.pdf",
+          "quote": "Die Studiengebühren betragen 500,00 Euro pro Semester für das Studium in einem Bachelorstudiengang und 700,00 Euro pro Semester für das Studium in einem Masterstudiengang."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/",
+          "quote": "Please apply via uni-assist."
+        }
+      ]
+    }
+  },
+  "notes": "The EUR 500 per semester is a general university-wide fee for foreign students (not specific to this programme); the DAAD page states for this programme: \"Tuition fees per semester None\" and \"Student union fee: 97 EUR\" and that tuition fees for non-EU students (approx. 500 EUR per semester) \"are being discussed and might apply soon\". No document list (e.g. school-leaving certificate) is named on the supplied pages. The recurring deadline (15 July) is stated for applicants from all countries, not specifically non-EU/foreign-diploma applicants. Language certificates: DAAD names TOEFL Essentials and IELTS Academic; German A2 mentioned on the programme page (no test named).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["toefl", "ielts"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL Essentials: 6 Reading: 6 Listening: 6 Speaking: 6 Writing: 6 IELTS Academic: 6"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La condition préalable est une qualification d'entrée à l'université reconnue en Bavière.",
+          "en": "The prerequisite is a university entrance qualification recognised in Bavaria."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9655/",
+            "quote": "The prerequisite is a university entrance qualification recognised in Bavaria."
+          },
+          {
+            "url": "https://sci.hm.edu/studierende/studiengaenge/bachelor/engineering_physics_and_datascience/index.en.html",
+            "quote": "The prerequisite is a university entrance qualification recognized in Bavaria."
+          }
+        ]
+      }
+    ]
+  }
+}

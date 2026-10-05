@@ -1,0 +1,25 @@
+{
+  "slug": "de-hochschule-kaiserslautern-university-of-hrk306-mechanical-engineering-b-daad9743",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9743/",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 8,
+            "day": 31
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9743/",
+          "quote": "The following is valid for applicants from: all countries For the winter semester: 15 April - 31 August"
+        }
+      ]
+    }
+  }
+}

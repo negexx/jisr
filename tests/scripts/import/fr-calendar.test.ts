@@ -1,0 +1,351 @@
+import { mkdir, mkdtemp, readdir, readFile, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import path from "node:path";
+
+import { describe, expect, it } from "vitest";
+
+import { type National, PAGES } from "../../../scripts/import/enrich-fr";
+import { mentionsInternationalApplicants } from "../../../scripts/import/evidence";
+import {
+  buildCalendarProposals,
+  programmeKind,
+  readCalendarProgrammes,
+  staleProposalFiles,
+  writeCalendarProposals,
+} from "../../../scripts/import/fr-calendar";
+import { ProposalSchema, verifyProposal } from "../../../scripts/import/proposals";
+
+const SENTENCE = "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine).";
+const LICENCE_SENTENCE = "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)";
+const LICENCE_AUDIENCE = "DAP blanche : 1ère année de Licence à l'Université (L1)";
+const LICENCE_PAGE = `Le calendrier de la procédure de candidature ${LICENCE_SENTENCE} pour toutes les formations connectées : ${LICENCE_AUDIENCE} ou 1ère année PASS/L.AS ; DAP jaune : ENSA.`;
+const LICENCE_URL = PAGES.calendarLicence;
+const APPLY_BUT_QUOTE =
+  "Bac marocain ou Bac international marocain ou diplôme européen, quelque soit votre lieu de résidence, vous devrez formuler vos vœux sur la plateforme Études en France.";
+const APPLY_LICENCE_QUOTE =
+  "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain : vous devrez formuler vos vœux sur la plateforme Études en France";
+
+const nothing: National = {
+  licenceDuration: null,
+  butDuration: null,
+  tuition: null,
+  exemption: null,
+  certification: null,
+  applyLicence: null,
+  applyBut: null,
+  butCalendar: null,
+  licenceCalendar: null,
+  licenceCalendarAudience: null,
+};
+const butOnly: National = { ...nothing, butCalendar: { url: PAGES.applyBut, quote: SENTENCE } };
+const withApply: National = {
+  ...butOnly,
+  applyBut: { url: PAGES.applyBut, quote: APPLY_BUT_QUOTE },
+  applyLicence: { url: PAGES.applyLicence, quote: APPLY_LICENCE_QUOTE },
+};
+const licenceNational: National = {
+  ...withApply,
+  licenceCalendar: { url: LICENCE_URL, quote: LICENCE_SENTENCE },
+  licenceCalendarAudience: { url: LICENCE_URL, quote: LICENCE_AUDIENCE },
+};
+const slugs = [
+  { slug: "fr-iut-a-but-informatique", kind: "but", publicInstitution: true },
+  { slug: "fr-iut-b-but-gea", kind: "but", publicInstitution: true },
+  { slug: "fr-univ-a-licence-informatique", kind: "licence", publicInstitution: true },
+  { slug: "fr-ecole-diplome-maison", kind: "other", publicInstitution: true },
+] as const;
+
+describe("buildCalendarProposals", () => {
+  it("gives every BUT programme the intake-only proposal and every Licence none while its calendar is null", () => {
+    const proposals = buildCalendarProposals({ slugs, national: butOnly });
+    expect(proposals.map((p) => p.slug)).toEqual(["fr-iut-a-but-informatique", "fr-iut-b-but-gea"]);
+    expect(proposals[0]).toEqual({
+      slug: "fr-iut-a-but-informatique",
+      programmePage: null,
+      facts: {
+        intakes: {
+          value: [
+            { startDate: null, applicationOpens: "2026-10-01", applicationDeadline: "2026-11-15" },
+          ],
+          evidence: [{ url: PAGES.applyBut, quote: SENTENCE }],
+        },
+      },
+    });
+  });
+
+  it("adds the page that says who the application is for as a second quote", () => {
+    const [first] = buildCalendarProposals({ slugs, national: withApply });
+    expect(first?.facts.intakes?.evidence).toEqual([
+      { url: PAGES.applyBut, quote: SENTENCE },
+      { url: PAGES.applyBut, quote: APPLY_BUT_QUOTE },
+    ]);
+  });
+
+  it("gives the Licence programmes their own calendar when there is one, and never a non-Licence record", () => {
+    const proposals = buildCalendarProposals({ slugs, national: licenceNational });
+    expect(proposals.map((p) => p.slug)).toEqual([
+      "fr-iut-a-but-informatique",
+      "fr-iut-b-but-gea",
+      "fr-univ-a-licence-informatique",
+    ]);
+    expect(proposals[2]?.facts.intakes).toEqual({
+      value: [
+        { startDate: null, applicationOpens: "2026-10-01", applicationDeadline: "2026-11-15" },
+      ],
+      evidence: [
+        { url: LICENCE_URL, quote: LICENCE_SENTENCE },
+        { url: LICENCE_URL, quote: LICENCE_AUDIENCE },
+      ],
+    });
+  });
+
+  it("gives no proposal, of either kind, to a programme of a non-public institution", () => {
+    const mixed = [
+      { slug: "fr-iut-a-but-informatique", kind: "but", publicInstitution: true },
+      { slug: "fr-prive-but-gea", kind: "but", publicInstitution: false },
+      { slug: "fr-univ-a-licence-informatique", kind: "licence", publicInstitution: true },
+      { slug: "fr-catho-licence-droit", kind: "licence", publicInstitution: false },
+    ] as const;
+    expect(
+      buildCalendarProposals({ slugs: mixed, national: licenceNational }).map((p) => p.slug),
+    ).toEqual(["fr-iut-a-but-informatique", "fr-univ-a-licence-informatique"]);
+  });
+
+  it("gives no Licence proposal when the page does not say who the calendar is for", () => {
+    const national: National = { ...licenceNational, licenceCalendarAudience: null };
+    expect(buildCalendarProposals({ slugs, national }).map((p) => p.slug)).toEqual([
+      "fr-iut-a-but-informatique",
+      "fr-iut-b-but-gea",
+    ]);
+  });
+
+  it("produces nothing when no calendar was read", () => {
+    expect(buildCalendarProposals({ slugs, national: nothing })).toEqual([]);
+    expect(
+      buildCalendarProposals({
+        slugs,
+        national: {
+          ...withApply,
+          butCalendar: null,
+          licenceCalendar: null,
+          licenceCalendarAudience: null,
+        },
+      }),
+    ).toEqual([]);
+  });
+
+  it("produces nothing for a kind whose sentence cannot be parsed", () => {
+    const national: National = {
+      ...nothing,
+      butCalendar: {
+        url: PAGES.applyBut,
+        quote: "Du 31 février 2026 au 1er mars 2026 (heure marocaine).",
+      },
+    };
+    expect(buildCalendarProposals({ slugs, national })).toEqual([]);
+  });
+
+  it("makes proposals that parse and whose quote says who the deadline is for", () => {
+    for (const national of [butOnly, withApply])
+      for (const p of buildCalendarProposals({ slugs, national })) {
+        expect(() => ProposalSchema.parse(p)).not.toThrow();
+        const quote = p.facts.intakes?.evidence[0]?.quote ?? "";
+        expect(mentionsInternationalApplicants(quote)).toBe(true);
+      }
+  });
+});
+
+describe("programmeKind", () => {
+  it("tells BUT, Licence (also double) and anything else apart by the name", () => {
+    expect(programmeKind({ slug: "fr-x", name: "BUT - Informatique" })).toBe("but");
+    expect(programmeKind({ slug: "fr-x-but-y", name: "Informatique" })).toBe("but");
+    expect(programmeKind({ slug: "fr-x", name: "Licence - Informatique" })).toBe("licence");
+    expect(programmeKind({ slug: "fr-x", name: "Double licence - Droit et Gestion" })).toBe(
+      "licence",
+    );
+    expect(programmeKind({ slug: "fr-x", name: "Licence professionnelle - Informatique" })).toBe(
+      "other",
+    );
+    expect(programmeKind({ slug: "fr-x", name: "Licence Professionnelle - Réseaux" })).toBe(
+      "other",
+    );
+    expect(programmeKind({ slug: "fr-x", name: "Master - Informatique" })).toBe("other");
+    expect(programmeKind({ slug: "fr-x", name: "Diplôme d'ingénieur" })).toBe("other");
+  });
+});
+
+describe("verifyProposal on a calendar proposal", () => {
+  const name = "BUT - Informatique";
+  const first = (national: National) => {
+    const [proposal] = buildCalendarProposals({ slugs, national });
+    if (proposal === undefined) throw new Error("no proposal");
+    return proposal;
+  };
+  const pageWith =
+    (...parts: string[]) =>
+    async () =>
+      `Calendrier de candidature. ${parts.join(" ")} Ensuite, patientez.`;
+
+  it("accepts it against a page that carries the sentence, with or without the apply quote", async () => {
+    for (const national of [butOnly, withApply]) {
+      const verified = await verifyProposal(
+        first(national),
+        name,
+        pageWith(SENTENCE, APPLY_BUT_QUOTE),
+      );
+      expect(verified.rejected).toEqual([]);
+      expect(verified.facts.intakes?.value).toEqual([
+        { startDate: null, applicationOpens: "2026-10-01", applicationDeadline: "2026-11-15" },
+      ]);
+    }
+  });
+
+  it("keeps who the deadline is for in the audit trail, not only the time-zone word", async () => {
+    const noZone: National = {
+      ...withApply,
+      butCalendar: {
+        url: PAGES.applyBut,
+        quote: "Du 1er octobre 2026 au 15 novembre 2026 à 23h59.",
+      },
+    };
+    const page = pageWith("Du 1er octobre 2026 au 15 novembre 2026 à 23h59.", APPLY_BUT_QUOTE);
+    const verified = await verifyProposal(first(noZone), name, page);
+    expect(verified.rejected).toEqual([]);
+    expect(verified.facts.intakes?.evidence).toHaveLength(2);
+    const alone = await verifyProposal(first({ ...noZone, applyBut: null }), name, page);
+    expect(alone.facts.intakes).toBeUndefined();
+  });
+
+  it("accepts a Licence proposal against the calendar page, rejects it on another page, and drops the L1 quote when it is missing", async () => {
+    const proposal = buildCalendarProposals({ slugs, national: licenceNational }).find(
+      (p) => p.slug === "fr-univ-a-licence-informatique",
+    );
+    if (proposal === undefined) throw new Error("no proposal");
+    const ok = await verifyProposal(proposal, "Licence - Informatique", async () => LICENCE_PAGE);
+    expect(ok.rejected).toEqual([]);
+    expect(ok.facts.intakes?.value).toEqual([
+      { startDate: null, applicationOpens: "2026-10-01", applicationDeadline: "2026-11-15" },
+    ]);
+    expect(ok.facts.intakes?.evidence).toHaveLength(2);
+    const without = await verifyProposal(
+      proposal,
+      "Licence - Informatique",
+      async () => `Le calendrier ${LICENCE_SENTENCE} pour toutes les formations connectées.`,
+    );
+    // verifyProposal keeps the quotes it finds: the audit trail then lacks who the window is for
+    expect(without.facts.intakes?.evidence).toEqual([
+      { url: LICENCE_URL, quote: LICENCE_SENTENCE },
+    ]);
+    const neither = await verifyProposal(proposal, "Licence - Informatique", async () => "Autre.");
+    expect(neither.facts.intakes).toBeUndefined();
+    expect(neither.rejected).toEqual([
+      { fact: "intakes", reason: "no quote was found verbatim on the cited page(s)" },
+    ]);
+  });
+
+  it("rejects it when the page lacks the sentence", async () => {
+    for (const national of [butOnly, withApply]) {
+      const verified = await verifyProposal(first(national), name, async () => "Une autre page.");
+      expect(verified.facts.intakes).toBeUndefined();
+      expect(verified.rejected).toEqual([
+        { fact: "intakes", reason: "no quote was found verbatim on the cited page(s)" },
+      ]);
+    }
+  });
+});
+
+describe("staleProposalFiles", () => {
+  it("lists json files the run did not produce, and nothing for a missing directory", async () => {
+    const dir = await mkdtemp(path.join(tmpdir(), "fr-calendar-stale-"));
+    try {
+      const proposals = buildCalendarProposals({ slugs, national: butOnly });
+      expect(await staleProposalFiles(path.join(dir, "missing"), proposals)).toEqual([]);
+      await writeFile(path.join(dir, "fr-iut-a-but-informatique.json"), "{}");
+      await writeFile(path.join(dir, "fr-old-programme.json"), "{}");
+      await writeFile(path.join(dir, "notes.txt"), "x");
+      expect(await staleProposalFiles(dir, proposals)).toEqual(["fr-old-programme.json"]);
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
+  });
+});
+
+describe("writeCalendarProposals", () => {
+  it("writes one json file per proposal, and nothing on a dry run", async () => {
+    const dir = await mkdtemp(path.join(tmpdir(), "fr-calendar-"));
+    try {
+      const proposals = buildCalendarProposals({ slugs, national: butOnly });
+      const out = path.join(dir, "proposals-fr-calendar");
+      await writeCalendarProposals(proposals, out, true);
+      await expect(readdir(out)).rejects.toThrow();
+      await writeCalendarProposals(proposals, out, false);
+      expect((await readdir(out)).sort()).toEqual([
+        "fr-iut-a-but-informatique.json",
+        "fr-iut-b-but-gea.json",
+      ]);
+      const back = JSON.parse(await readFile(path.join(out, "fr-iut-b-but-gea.json"), "utf8"));
+      expect(ProposalSchema.parse(back).slug).toBe("fr-iut-b-but-gea");
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
+  });
+});
+
+describe("readCalendarProgrammes", () => {
+  it("marks a programme public only when its institution record says type public", async () => {
+    const dir = await mkdtemp(path.join(tmpdir(), "fr-calendar-data-"));
+    try {
+      await mkdir(path.join(dir, "programs"));
+      await mkdir(path.join(dir, "institutions"));
+      const program = (slug: string, name: string, institution: string) =>
+        writeFile(
+          path.join(dir, "programs", `${slug}.yaml`),
+          `slug: ${slug}
+name: ${name}
+institution: ${institution}
+`,
+        );
+      const institution = (slug: string, name: string, type: string) =>
+        writeFile(
+          path.join(dir, "institutions", `${slug}.yaml`),
+          `slug: ${slug}
+name: ${name}
+type: ${type}
+`,
+        );
+      await program("fr-pub-licence-info", "Licence - Informatique", "fr-pub");
+      await program("fr-priv-licence-droit", "Licence - Droit", "fr-priv");
+      await program("fr-ghost-but-gea", "BUT - GEA", "fr-ghost");
+      await program("de-x-licence", "Licence - X", "fr-pub");
+      await institution("fr-pub", "Université Publique", "public");
+      await institution("fr-priv", "Institut Catholique", "private");
+      const found = await readCalendarProgrammes(dir);
+      expect(found).toEqual([
+        { slug: "fr-ghost-but-gea", kind: "but", publicInstitution: false, institutionName: null },
+        {
+          slug: "fr-priv-licence-droit",
+          kind: "licence",
+          publicInstitution: false,
+          institutionName: "Institut Catholique",
+        },
+        {
+          slug: "fr-pub-licence-info",
+          kind: "licence",
+          publicInstitution: true,
+          institutionName: "Université Publique",
+        },
+      ]);
+      const national: National = {
+        ...nothing,
+        butCalendar: { url: PAGES.applyBut, quote: SENTENCE },
+        licenceCalendar: { url: LICENCE_URL, quote: LICENCE_SENTENCE },
+        licenceCalendarAudience: { url: LICENCE_URL, quote: LICENCE_AUDIENCE },
+      };
+      expect(buildCalendarProposals({ slugs: found, national }).map((p) => p.slug)).toEqual([
+        "fr-pub-licence-info",
+      ]);
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
+  });
+});

@@ -1,0 +1,46 @@
+{
+  "slug": "fr-universite-lyon-2-campus-porte-des-alpes-0692198p-licence-informatique-35455",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35455&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35455&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Domaine informatique, niveau licence, délivré par Université Lyon 2. les langues d'enseignement listées supposent que la langue d'enseignement est le français. La fiche Parcoursup donne un tarif « Par année 178 euros », mais il s'agit du tarif national des droits d'inscription en licence et ne précise pas le cas des étudiants extra-communautaires : il n'est donc pas retenu comme frais pour ce programme. Aucune date de candidature (début, ouverture, échéance) mentionnant une année et visant les candidats non-UE n'est présente dans les pages fournies.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35455&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Candidats non ressortissants de l'UE titulaires d'un diplôme équivalent au bac français : la candidature ne passe pas par Parcoursup mais par la procédure Études en France.",
+          "en": "Non-EU applicants holding a qualification equivalent to the French baccalaureate do not apply via Parcoursup but through the Études en France procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35455&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      }
+    ]
+  }
+}

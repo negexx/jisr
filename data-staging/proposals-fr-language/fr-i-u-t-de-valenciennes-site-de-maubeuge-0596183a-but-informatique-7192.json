@@ -1,0 +1,63 @@
+{
+  "slug": "fr-i-u-t-de-valenciennes-site-de-maubeuge-0596183a-but-informatique-7192",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7192&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7192&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune date de candidature internationale propre à ce BUT n'est publiée sur la page programme : les dates trouvées (1er octobre au 15 novembre 2026) figurent sur une page Campus France Maroc consacrée au programme ADIUT Maroc (IUT) et sont donc signalées comme manual_check. Les frais indiqués (« Par année 178 euros ») sont les droits d'inscription pour cette formation ; la page mentionne aussi des droits différenciés de 2 902 € pour une année de Licence pour un étudiant extra-communautaire, mais il s'agit d'une règle générale pour les établissements publics français, non d'un montant confirmé pour ce BUT. La page programme décrit une candidature via Parcoursup, qui concerne les titulaires d'un bac français ou européen : un candidat marocain titulaire du Bac marocain doit passer par Études en France / Campus France (non extrait ici). Aucune liste de documents, aucun délai de candidature international et aucun niveau de langue autre que le B2 de français indiqué sur la fiche Parcoursup ne figurent dans les pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7192&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sélection sur dossier : grille d'analyse (résultats scolaires 22 %, méthodes de travail 22 %, savoir-être 22 %, motivation 22 %, engagement 12 %) et épreuve orale (entretien individuel) du 09/04/2026 au 20/05/2026. Lettre de motivation et projet de formation à soigner.",
+          "en": "Selection on file: analysis grid (academic results 22%, working methods 22%, soft skills 22%, motivation 22%, engagement 12%) and an oral exam (individual interview) from 2026-04-09 to 2026-05-20. Motivation letter and study project must be carefully prepared."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7192&typeBac=0&originePc=0",
+            "quote": "La lettre de motivation doit être soignée."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7192&typeBac=0&originePc=0",
+            "quote": "Les épreuves orales ou l'entretien auront lieu : Du jeudi 09 avril 2026 au mercredi 20 mai 2026"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les dates d'inscription sur la plateforme (1er octobre 2026 au 15 novembre 2026) concernent le programme ADIUT Maroc des IUT, pas forcément ce BUT : vérifier auprès de l'IUT (seciutinfo@uphf.fr) et de Campus France Maroc.",
+          "en": "The application dates on the platform (1 October 2026 to 15 November 2026) relate to the ADIUT Maroc IUT programme, not necessarily to this BUT: check with the IUT (seciutinfo@uphf.fr) and Campus France Maroc."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+            "quote": "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)."
+          }
+        ]
+      }
+    ]
+  }
+}

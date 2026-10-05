@@ -1,0 +1,50 @@
+{
+  "slug": "fr-universite-de-caen-normandie-0141408e-licence-electronique-energie-electri-19211",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19211&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19211&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: The Parcoursup page shows 178 EUR/year for EU students, while the Campus France Morocco page states 2 902 EUR/year for non-EU students in a Licence. Combined evidence supports 2 902 EUR/year for a Moroccan applicant. Duration 3 years inferred from 'troisième année' in the quote. The programme is taught in French (LV1 Anglais is only a language course). The 2026 application dates and the school-leaving certificate document could not be quoted due to absence of year for the deadline and no explicit document list on the programme page. Application channel not included as per task instruction.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19211&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats titulaires d'un bac étranger équivalent au bac français ne passent pas par Parcoursup ; ils doivent vérifier la procédure DAP/Campus France.",
+          "en": "Applicants holding a foreign diploma equivalent to the French bac do not go through Parcoursup; they must check the DAP/Campus France procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19211&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces",
+            "quote": "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France de votre pays de résidence."
+          }
+        ]
+      }
+    ]
+  }
+}

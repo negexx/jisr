@@ -1,0 +1,33 @@
+{
+  "slug": "fr-i-u-t-de-brest-0290334f-but-gestion-des-entreprises-et-d-3841",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3841&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3841&typeBac=0&originePc=0",
+          "quote": "Langue vivante 2 : Espagnol - Allemand - Français langue étrangère"
+        }
+      ]
+    }
+  },
+  "notes": "applicationChannel volontairement omis : un candidat titulaire d'un bac marocain doit candidater via Études en France / Campus France (voir https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut). Les frais de scolarité de 178 €/an sont ceux de la fiche Parcoursup, présentés en général pour cette formation. ATTENTION : la fiche Parcoursup et le texte Campus France destiné au Maroc décrivent des procédures et des publics différents. Pour un étudiant marocain non-EU, les frais d'inscription différenciés (2902 €/an en Licence) mentionnés sur la page Campus France ne sont PAS spécifiques à ce BUT. La date limite du 15/11/2026 concerne le programme ADIUT Maroc pour la 1ère année de BUT, pas nécessairement tous les candidats internationaux. Le B2 en français est un niveau requis à l'inscription, sans test spécifique mentionné dans cette fiche. Les critères de sélection (70% résultats scolaires, 10% méthodes, 10% savoir-être, 5% motivation, 5% engagement) doivent être vérifiés manuellement.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3841&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      }
+    ]
+  }
+}

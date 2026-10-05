@@ -1,0 +1,25 @@
+{
+  "slug": "de-technische-universitat-chemnitz-hrk42-foundations-in-data-scie-daad10526",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10526/",
+          "quote": "The following is valid for applicants from: all countries For the winter semester: until 15 July"
+        }
+      ]
+    }
+  }
+}

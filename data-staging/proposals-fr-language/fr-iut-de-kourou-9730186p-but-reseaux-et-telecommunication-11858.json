@@ -1,0 +1,46 @@
+{
+  "slug": "fr-iut-de-kourou-9730186p-but-reseaux-et-telecommunication-11858",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11858&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11858&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 euros par an est un tarif général des établissements publics d'enseignement supérieur figurant sur la fiche Parcoursup ; il correspond aux droits d'inscription de niveau Licence, que le programme soit suivi via Parcoursup ou via Études en France. Les frais de scolarité mentionnés sur la fiche Parcoursup ne distinguent pas les étudiants extracommunautaires ; les droits différenciés éventuellement applicables (2 902 euros pour une année en cycle de Licence, selon la page Campus France Maroc) ne sont pas confirmés pour ce programme précis. La fiche Parcoursup liste une lettre de motivation mais uniquement pour les candidats hors bassin de recrutement classique. Le passage par Études en France / Campus France pour les candidats étrangers non titulaires d'un bac français ou européen est prévu pour la candidature ; les dates d'épreuves de 2026 sont données sur la fiche Parcoursup et concernent les candidats inscrits sur Parcoursup.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11858&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des épreuves écrites (QCM de mathématiques et français) et des épreuves orales (tests de maths, dictée, entretien de motivation) sont organisées. Vérifiez les dates et les modalités auprès de la formation.",
+          "en": "Written tests (maths and French MCQ) and oral tests (maths, dictation, motivation interview) are organised. Check dates and procedures with the programme."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11858&typeBac=0&originePc=0",
+            "quote": "Les épreuves écrites auront lieu : Du lundi 20 avril 2026 au samedi 25 avril 2026"
+          }
+        ]
+      }
+    ]
+  }
+}

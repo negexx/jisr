@@ -1,0 +1,99 @@
+{
+  "slug": "de-hochschule-reutlingen-hochschule-fur-tec-hrk227-esb-business-school-inte-daad3871",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3871/",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 11,
+            "day": 15
+          }
+        },
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3871/",
+          "quote": "The following is valid for applicants from: non-EU countries For the summer semester: until 15 November"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3871/",
+          "quote": "The following is valid for applicants from: non-EU countries For the winter semester: until 15 May"
+        }
+      ]
+    }
+  },
+  "notes": "La page du programme (DAAD) ne donne pas de liste de documents; la page de candidature de l'université mentionne des copies numériques des documents (p. ex. Hochschulzugangsberechtigung) mais pas de liste exploitable. Les frais de scolarité pour non-EU (1 500 €/semestre) figurent uniquement sur la page générale de financement de l'université et concernent tous les programmes de l'établissement: ils ne sont pas inclus comme fait du programme. applicationChannel: les pages décrivent une candidature via le portail en ligne de l'université (de-university-direct); aucune mention d'uni-assist ni de VPD n'apparaît sur les pages fournies.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["toefl", "ielts"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3871/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 72"
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3871/",
+            "quote": "IELTS Academic: 5.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier que le diplôme marocain (Baccalauréat) est reconnu comme équivalent à l'Abitur/Hochschulzugangsberechtigung allemand.",
+          "en": "Check that the Moroccan Baccalauréat is recognised as equivalent to the German university entrance qualification (Hochschulzugangsberechtigung)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3871/",
+            "quote": "Academic admission requirements include a German university entrance qualification or a foreign university entrance qualification equivalent to the German university entrance qualification."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une très bonne maîtrise de l'anglais est exigée: vérifier le niveau et les certificats acceptés.",
+          "en": "A very good command of English is required: verify the level and accepted certificates."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3871/",
+            "quote": "A very good command of English is also required (see below)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les frais de scolarité par semestre sont indiqués comme « Varied » sur la page du programme: vérifier le montant exact pour les non-UE.",
+          "en": "Tuition fees per semester are listed as \"Varied\" on the programme page: check the exact amount for non-EU students."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3871/",
+            "quote": "Tuition fees per semester Varied"
+          }
+        ]
+      }
+    ]
+  }
+}

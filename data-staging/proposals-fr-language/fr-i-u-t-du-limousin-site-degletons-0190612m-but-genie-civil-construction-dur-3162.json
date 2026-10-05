@@ -1,0 +1,88 @@
+{
+  "slug": "fr-i-u-t-du-limousin-site-degletons-0190612m-but-genie-civil-construction-dur-3162",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3162&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3162&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Applicant profile: Moroccan Baccalauréat, non-EU, applying from outside France. The programme page's own 'Frais de scolarité' states 'Par année 178 euros', which is the standard French/EU national rate stated on a Parcoursup form for this programme; the Campus France Morocco page states non-EU students at public institutions owe differentiated fees (2 902 euros per year in Licence), but these are general institution-level figures and not stated for this programme, so no tuition amount is given here. The ADIUT Maroc 2026 application window quoted on the Campus France page (1 October 2026 to 15 November 2026) concerns BUT applications generally via that programme and the page's calendar for 2026-2027 was not yet available, so no deadline is stated. Application channel deliberately omitted per task instructions (Etudes en France / Campus France). The B2 requirement and the French certification requirement are stated in soft/recommended wording or as general Campus France procedure rules, so they are captured as manual_check.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Niveau de français B2 exigé (TCF 400 pts, DELF B2 ou DALF) et certification de français obligatoire dans la procédure Études en France, sauf dispense pour les formations 100% en anglais (hors L1).",
+          "en": "French level B2 required (TCF 400 pts, DELF B2 or DALF) and French certification is mandatory in the Études en France procedure, unless exempt for 100% English-taught programmes (except first-year licence)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3162&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Un TCF totalisant un score de 400 pts ou un DELF B2 ou un DALF est recommandé pour suivre correctement des études en France et aussi pour effectuer les démarches de la vie quotidienne."
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des connaissances suffisantes en anglais sont attendues pour progresser pendant la formation (LV1 anglais, pas de LV2).",
+          "en": "Sufficient knowledge of English is expected to progress during the programme (LV1 English, no LV2)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3162&typeBac=0&originePc=0",
+            "quote": "Langue vivante 1 : Anglais Langue vivante 2 : Pas de LV2"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3162&typeBac=0&originePc=0",
+            "quote": "Avoir une connaissance suffisante de l’anglais permettant de progresser pendant la formation : échanger à l’oral, lire et comprendre un texte, répondre aux questions écrites et orales,"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les résultats scolaires comptent pour 60% (matières scientifiques « Essentiel », anglais et épreuves scientifiques du Bac « Important »). Aucun seuil chiffré n'est fixé.",
+          "en": "Academic results count for 60% (scientific subjects 'Essential', English and Bac scientific exams 'Important'). No numeric threshold is set."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3162&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 60 % Méthodes de travail 10 % Savoir-être 10 % Motivation 20 %"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3162&typeBac=0&originePc=0",
+            "quote": "Résultats dans les matières scientifiques Bulletins Essentiel 4 sur 4"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Modalités de candidature spécifiques : le programme ADIUT Maroc encadre les candidatures des bacheliers marocains via la plateforme Études en France (évaluation ADIUT).",
+          "en": "Specific application arrangements: the ADIUT Maroc programme handles applications from Moroccan Bac holders via the Études en France platform (ADIUT assessment)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+            "quote": "Le programme ADIUT Maroc L'ADIUT Maroc (Association des Directeurs des Instituts Universitaires de Technologie) est un programme spécifique au Maroc créé par les directeurs des IUT français dans le but de faciliter, unifier et harmoniser les candidatures aux BUT en France via la plateforme Études en France."
+          }
+        ]
+      }
+    ]
+  }
+}

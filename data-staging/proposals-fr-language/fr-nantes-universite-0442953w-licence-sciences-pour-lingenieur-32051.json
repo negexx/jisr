@@ -1,0 +1,85 @@
+{
+  "slug": "fr-nantes-universite-0442953w-licence-sciences-pour-lingenieur-32051",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=32051&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=32051&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the page states 178 EUR/year and shows this under \"Frais de scolarité\" without a heading for extra-community students; the same page does not mention differentiated fees, so this amount may not apply to a Moroccan non-EU applicant. No duration, intakes or application channel were quoted for this programme (the application channel is set separately). The deadline 15 November 2026 found in the page https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut does not apply (BUT programme).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=32051&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les notes de première, de terminale et du Bac dans les spécialités scientifiques sont très importantes : critère Essentiel 4 sur 4.",
+          "en": "The grades obtained in Première, Terminale and the Bac in scientific specialisms are very important: criterion Essential 4 out of 4."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=32051&typeBac=0&originePc=0",
+            "quote": "Les notes de première, de terminale et de Bac dans les spécialités scientifiques (Mathématiques et Physique-Chimie ou Sciences de l'Ingénieur) Très important 3 sur 4"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les notes en français et en anglais sont importantes : critère Important 2 sur 4.",
+          "en": "Grades in French and English are important: criterion Important 2 out of 4."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=32051&typeBac=0&originePc=0",
+            "quote": "les notes en français et en anglais Important 2 sur 4"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les moyennes en mathématiques sont examinées : un parcours renforcé en mathématiques peut être proposé en cas de notes trop basses.",
+          "en": "Mathematical grades are assessed: a strengthened mathematics pathway may be offered if grades are too low."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=32051&typeBac=0&originePc=0",
+            "quote": "En cas de notes trop basses en mathématiques, un Parcours Accompagné renforcé en mathématiques sera proposé au cours de la L1."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Possible TREMPLIN : si les spécialités scientifiques ne sont pas conservées, une remise à niveau d'un an peut être proposée à la place de la L1.",
+          "en": "Possible TREMPLIN: if the scientific specialisms are not kept, a one-year refresher course may be offered instead of L1."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=32051&typeBac=0&originePc=0",
+            "quote": "un parcours accompagné TREMPLIN consistant en une remise à niveau scientifique d'1 an pourra être proposé en lieu et place de la L1 SPI"
+          }
+        ]
+      }
+    ]
+  }
+}

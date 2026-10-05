@@ -1,0 +1,46 @@
+{
+  "slug": "fr-i-u-t-de-mantes-en-yvelines-0782117c-but-genie-industriel-et-maintena-10011",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10011&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10011&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Procédure pour les candidats étrangers non titulaires d'un bac français ou européen, non ressortissants de l'UE/EEE, résidant dans un pays disposant d'un espace Campus France : candidature via Études en France, pas Parcoursup. Citations : \"vous ne devez pas vous inscrire sur Parcoursup. Vous devez faire vos démarches sur le site de Campus France de votre pays de résidence\" (fiche Parcoursup). Les frais de scolarité indiqués sur la fiche (178 euros par an) concernent a priori les droits différenciés applicables aux étudiants extra-communautaires (licence) mais cette fiche ne mentionne pas explicitement le statut non-EU ; à vérifier. La langue d'enseignement est le français, mais les pages ne l'indiquent pas explicitement.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10011&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des épreuves orales (entretien de motivation) sont organisées pour la sélection : du 14 avril au 29 mai 2026. Vérifiez les modalités pour les candidats internationaux.",
+          "en": "Oral examinations (motivation interview) are part of the selection: from 14 April to 29 May 2026. Check the procedures for international applicants."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10011&typeBac=0&originePc=0",
+            "quote": "Les épreuves orales ou l'entretien auront lieu : Du mardi 14 avril 2026 au vendredi 29 mai 2026"
+          }
+        ]
+      }
+    ]
+  }
+}

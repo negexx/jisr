@@ -1,0 +1,50 @@
+{
+  "slug": "fr-universite-de-montpellier-0342490x-licence-informatique-31257",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=31257&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=31257&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 € par an est présenté sans indication de nationalité ; il ne correspond pas aux droits différenciés pour les étudiants extra-communautaires, et le texte Campus France précise que ces établissements peuvent pratiquer des tarifs différents, il est donc à vérifier pour le profil marocain. Le niveau de français B2 est indiqué comme requis par la formation, mais les pages ne précisent pas de niveau minimal de certification pour ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=31257&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La commission recommande d'avoir conservé les mathématiques en terminale (spécialité ou option Maths Complémentaires) : vérifiez que votre dossier présente un profil scientifique suffisant.",
+          "en": "The commission recommends having kept mathematics in the final year (speciality or Maths Complémentaires option): check that your file shows a sufficient scientific profile."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=31257&typeBac=0&originePc=0",
+            "quote": "Il est rappelé qu'il est recommandé d'avoir suivi les spécialités Mathématiques et NSI en première et d'avoir conservé des mathématiques en terminale (en spécialité ou gr&acirc;ce à l'option Maths Complémentaires)."
+          }
+        ]
+      }
+    ]
+  }
+}

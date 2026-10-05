@@ -1,0 +1,126 @@
+{
+  "slug": "de-frankfurt-school-of-finance-management-hrk83-bachelors-in-business-ad-daad9678",
+  "programmePage": "https://www.frankfurt-school.de/de/study/bachelor/bachelor-in-business-administration",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 860000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.frankfurt-school.de/de/study/bachelor/bachelor-in-business-administration",
+          "quote": "Studiengebühr 8.600 €/Semester"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "Ein anerkanntes Schulabschlusszeugnis",
+          "translationRequired": null
+        },
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "Deinen Lebenslauf (CV)",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-copy",
+          "name": {
+            "fr": "Copie du passeport ou de la carte d'identité",
+            "en": "Copy of passport or identity card"
+          },
+          "quotedAs": "Eine Kopie Deines Reisepasses oder Personalausweises",
+          "translationRequired": null
+        },
+        {
+          "slug": "letter-of-motivation",
+          "name": {
+            "fr": "Lettre de motivation (optionnelle)",
+            "en": "Letter of motivation (optional)"
+          },
+          "quotedAs": "Ein optionales Motivationsschreiben (max. 500 Wörter)",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.frankfurt-school.de/de/study/bachelor/bachelor-in-business-administration",
+          "quote": "Bitte lade folgende Unterlagen hoch: Ein anerkanntes Schulabschlusszeugnis (z. B. Abitur, IB Diploma, US High School Diploma, A-Levels, European Baccalaureate usw.)"
+        },
+        {
+          "url": "https://www.frankfurt-school.de/de/study/bachelor/bachelor-in-business-administration",
+          "quote": "Ein optionales Motivationsschreiben (max. 500 Wörter) Deinen Lebenslauf (CV) Eine Kopie Deines Reisepasses oder Personalausweises"
+        }
+      ]
+    }
+  },
+  "notes": "The DAAD fee of 8,200 EUR per semester is listed \"for applicants from: all countries\" but the programme's own page gives 8.600 €/Semester; the own-page fee is used. For deadlines, the DAAD page only mentions \"the end of June\", which is a general deadline for all applicants, not specifically the international/non-EU one; therefore it is used with the own-page quote \"Bewerbungsfrist 30. Juni 2027\" from the programme's own page. For a Moroccan applicant, the regular track (7 semesters, 3.5 years) is used; the CompactTrack is a separate study model in cooperation with companies. Tuition excludes the 100 EUR application fee, 600 EUR enrolment fee, and semester contribution (15 EUR student council + approx. 230 EUR semester ticket).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9678/",
+            "quote": "English language skills B2 required, proof via placement test/interview"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'anglais (B2), un test de maths, des tests cognitifs et un entretien font partie de l'Online Assessment Centre obligatoire.",
+          "en": "An English test (B2), a maths test, cognitive tests and an interview are part of the mandatory Online Assessment Centre."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9678/",
+            "quote": "Successfully complete our Online Assessment Centre, which consists of: Maths test Cognitive tests English test Interview"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme de fin d'études secondaires reconnu (Bac marocain ou équivalent) est requis ; les deux derniers bulletins suffisent pour postuler.",
+          "en": "A recognised secondary school diploma (Moroccan Bac or equivalent) is required; the last two school reports suffice to apply."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9678/",
+            "quote": "A completed secondary school diploma (e.g. German Abitur, Fachhochschulreife, IB, EB, or equivalent)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Bac international : vérifier l'équivalence dans la base de données Anabin.",
+          "en": "International school-leaving certificate: check equivalence in the Anabin database."
+        },
+        "evidence": [
+          {
+            "url": "https://www.frankfurt-school.de/de/study/bachelor/bachelor-in-business-administration",
+            "quote": "Internationale Schulabschlüsse: Bewerberinnen und Bewerber mit einem internationalen Schulabschluss finden weitere Informationen in der Anabin-Datenbank."
+          }
+        ]
+      }
+    ]
+  }
+}

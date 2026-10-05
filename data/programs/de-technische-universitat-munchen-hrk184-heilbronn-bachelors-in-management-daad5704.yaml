@@ -26,20 +26,47 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-1
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 7
+        day: 15
+  source: page-4
   info_kind: official
 applicationChannel:
   value: de-uni-assist-vpd
   source: page-4
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+    - slug: letter-of-motivation
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Letter of motivation
+          status: draft
+      translationRequired: null
+  source: page-2
   info_kind: official
 requirements:
   coverage: partial
@@ -107,3 +134,6 @@ sources:
   page-5:
     url: https://www.tum.de/en/studies/fees
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.mgt.tum.de/programs/undergraduate-programs/bachelor-management-data-science/?utm_source=profile&utm_medium=paid&utm_campaign=campaign_hn_000218_DAAD_in_bmds_&utm_content=banner_with_cta&utm_term=video
+    last_verified_at: 2026-10-04

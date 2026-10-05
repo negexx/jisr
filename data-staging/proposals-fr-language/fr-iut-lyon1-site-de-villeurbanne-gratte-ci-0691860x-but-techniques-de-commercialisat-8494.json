@@ -1,0 +1,92 @@
+{
+  "slug": "fr-iut-lyon1-site-de-villeurbanne-gratte-ci-0691860x-but-techniques-de-commercialisat-8494",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8494&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8494&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+          "quote": "Les étudiants qui candidatent à des formations 100% en anglais, autre que la 1ère année de licence à l'université (L1), sont dispensés de la certification de français sauf si l'établissement l'exige."
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des frais de scolarité indiqué sur la fiche (178 euros par an) concerne les étudiants français et communautaires ; les droits différenciés pour les étudiants extra-communautaires (2 902 euros pour une année en cycle de Licence) ne sont pas propres à ce programme et sont donc laissés de côté. Les dates des épreuves orales (avril-mai 2026) et la date de candidature ADIUT (1er octobre - 15 novembre 2026) figurent sur les pages mais ne concernent pas la candidature des titulaires d'un Bac marocain via Études en France / Campus France : aucune date de candidature propre à cette voie n'est donnée, donc 'intakes' est omis. Les langues vivantes (anglais, espagnol, italien, allemand, chinois) sont des matières enseignées, pas la langue d'enseignement du programme. Les bacs étrangers hors UE peuvent être admis (0 % des admis 2025).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8494&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Vous pouvez passer un TCF TP (tout public), un DELF B2 ou un DALF C1/C2 pour toutes les candidatures."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La sélection repose sur un examen du dossier (notes, méthode de travail, savoir-être, motivation, engagements) : résultats scolaires 20 %, méthodes de travail 20 %, savoir-être 30 %, motivation 20 %, engagement 10 %.",
+          "en": "Selection is based on a review of the application (grades, work methods, soft skills, motivation, engagement): academic results 20%, work methods 20%, soft skills 30%, motivation 20%, engagement 10%."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8494&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 20 % Méthodes de travail 20 % Savoir-être 30 % Motivation 20 % Engagement et activités 10 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien oral individuel en visioconférence peut être exigé (pour les dossiers nécessitant un complément d'informations). Épreuves du 27 avril au 15 mai 2026 ; convocation entre le 20 et le 30 avril 2026.",
+          "en": "An individual online interview may be required (for applications needing further information). Interviews from 27 April to 15 May 2026; invitation between 20 and 30 April 2026."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8494&typeBac=0&originePc=0",
+            "quote": "Entretien oral individuel en distanciel (visioconférence), consistant à vérifier l'adéquation entre la formation visée et le projet professionnel ainsi que les compétences acquises, pour les dossiers nécessitant un complément d'informations."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8494&typeBac=0&originePc=0",
+            "quote": "Du lundi 27 avril 2026 au vendredi 15 mai 2026"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les attendus nationaux portent notamment sur la maîtrise du français, une connaissance suffisante de l'anglais et d'une seconde langue vivante, la culture générale et des compétences techniques et scientifiques.",
+          "en": "National expectations include proficiency in French, sufficient knowledge of English and a second modern language, general knowledge, and technical and scientific skills."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8494&typeBac=0&originePc=0",
+            "quote": "Avoir une maitrise du français permettant de communiquer de façon adaptée à l’écrit et à l’oral, notamment en public, de comprendre un énoncé, de l’analyser et de rédiger une solution"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8494&typeBac=0&originePc=0",
+            "quote": "Avoir une connaissance suffisante de l’anglais et d’une seconde langue vivante permettant de progresser pendant la formation : échanger à l’oral, lire et comprendre un texte, répondre aux questions écrites et orales"
+          }
+        ]
+      }
+    ]
+  }
+}

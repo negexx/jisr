@@ -1,0 +1,99 @@
+{
+  "slug": "de-hochschule-fresenius-heidelberg-staatlic-hrk440-international-business-b-daad11098",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11098/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 612000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11098/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 6,120 EUR"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "CV",
+          "translationRequired": null
+        },
+        {
+          "slug": "secondary-school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary school leaving certificate"
+          },
+          "quotedAs": "secondary school leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-fresenius.com/application-process/?crmid=aBbTjOcDaAaAaAaA",
+          "quote": "please upload at least your CV and your secondary school leaving certificate (application for bachelor studies) or your bachelor transcript of records (application for master studies) to the application portal"
+        }
+      ]
+    }
+  },
+  "notes": "La page du programme (DAAD) indique « This programme has no deadline listed » : aucun délai de candidature n'est donc extrait. Aucune page ne mentionne uni-assist ni la plateforme Studielink pour ce programme ; le canal de candidature n'est donc pas extrait (les pages décrivent un portail de candidature propre à l'université, mais avec un formulaire d'upload de documents, sans nommer de plateforme). La durée (6 semestres = 3 ans), les frais de scolarité non-UE (6 120 EUR par semestre) et la langue d'enseignement (anglais) proviennent de la fiche DAAD. Les documents (CV et diplôme de fin d'études secondaires) proviennent de la page « Application process » et ne concernent pas exclusivement ce programme : à vérifier.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["ielts", "toefl"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11098/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6 TOEFL iBT (before 2026): 70"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que vous remplissez les conditions d'accès: qualification d'entrée à l'université (par ex. diplôme de fin d'études secondaires) et, si vous n'êtes pas anglophone natif, un certificat d'anglais niveau B2.",
+          "en": "Check that you meet the admission requirements: a university entrance qualification (e.g. school-leaving degree) and, if you are not a native English speaker, an English certificate at B2 level."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11098/",
+            "quote": "To be admitted to this study programme, you need a university entrance qualification, for example, a general university entrance qualification or an international school-leaving degree."
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11098/",
+            "quote": "English language skills: You are either a native speaker of English or can provide proof of language skills equivalent to level B2."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien d'admission d'environ 15 minutes est prévu après l'examen de votre dossier; il ne s'agit pas d'un test de connaissances, mais d'un échange sur votre motivation.",
+          "en": "An admission interview of about 15 minutes is scheduled after your documents are reviewed; it is not a knowledge test, but a conversation about your motivation."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-fresenius.com/application-process/?crmid=aBbTjOcDaAaAaAaA",
+            "quote": "If you fulfil the admission requirements, your personal study advisor will invite you to an admission interview."
+          },
+          {
+            "url": "https://www.hs-fresenius.com/application-process/?crmid=aBbTjOcDaAaAaAaA",
+            "quote": "The interview is scheduled for 15 minutes."
+          }
+        ]
+      }
+    ]
+  }
+}

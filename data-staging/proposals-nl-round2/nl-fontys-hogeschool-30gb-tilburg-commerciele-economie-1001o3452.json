@@ -1,0 +1,68 @@
+{
+  "slug": "nl-fontys-hogeschool-30gb-tilburg-commerciele-economie-1001o3452",
+  "programmePage": "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["nl"],
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+          "quote": "Opleidingsduur 4 jaar Taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+          "quote": "Meld je uiterlijk 1 mei aan via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "The programme page states the deadline '1 mei 2027' only as a general application deadline without naming international/non-EU applicants; it is included as a dated deadline but should be verified for foreign-diploma applicants. No tuition amount for non-EEA students is given on the supplied pages (only that instellingscollegegeld applies and varies per programme via the collegegeldmeter), so tuition is omitted. No document list for this programme appears on the supplied pages. The quote 'Als je een Nederlandstalige opleiding wilt gaan volgen, maak je een Adaptieve Capaciteiten Test (ACT algemene intelligentie) en een Nederlandse taaltoets.' concerns the 21+ toelatingsonderzoek (applicants without havo/vwo/mbo-4), not the standard admission route; it is included as the only stated Dutch language condition, with no CEFR level named.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La date limite du 1 mai 2027 n'est indiquée que de façon générale sur la page de la formation ; vérifiez si elle vaut aussi pour les candidats avec diplôme étranger (non-UE).",
+          "en": "The 1 May 2027 deadline is given only generally on the programme page; check whether it also applies to applicants with a foreign (non-EU) qualification."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Opleidingen/Commerciele-Economie-bachelor-voltijd.htm",
+            "quote": "1 mei 2027 Meld je uiterlijk 1 mei aan via Studielink."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les frais de scolarité (instellingscollegegeld) des étudiants hors EER varient par formation et ne sont pas chiffrés sur ces pages : utilisez le 'collegegeldmeter'.",
+          "en": "Tuition (instellingscollegegeld) for non-EEA students varies per programme and is not quantified on these pages: use the 'collegegeldmeter'."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+            "quote": "Dat is bijvoorbeeld het geval bij een tweede bachelor- of masteropleiding of als je uit een land komt dat geen onderdeel is van de Europese Economische Ruimte (EER)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Hors EER, la demande d'inscription se fait via la procédure 'aanmelden internationaal' ; vérifiez les documents et étapes requis.",
+          "en": "From outside the EEA, apply via the 'aanmelden internationaal' procedure; check the required documents and steps."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+            "quote": "Heb je je vooropleiding buiten Nederland gehaald? Ga naar aanmelden internationaal."
+          }
+        ]
+      }
+    ]
+  }
+}

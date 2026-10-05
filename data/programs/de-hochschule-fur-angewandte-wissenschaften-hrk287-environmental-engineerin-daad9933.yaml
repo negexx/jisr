@@ -33,13 +33,19 @@ tuition:
   source: daad
   info_kind: official
 intakes:
-  value: null
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 7
+        day: 15
   source: daad
-  info_kind: guidance
+  info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist-vpd
+  source: page-2
+  info_kind: official
 documents:
   value: null
   source: daad
@@ -57,3 +63,6 @@ sources:
   page-1:
     url: https://www.hof-university.com/studying-at-hof-university/our-degree-programs/environmental-engineering-beng.html
     last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.hof-university.com/studying-at-hof-university/application-and-admission.html
+    last_verified_at: 2026-10-04

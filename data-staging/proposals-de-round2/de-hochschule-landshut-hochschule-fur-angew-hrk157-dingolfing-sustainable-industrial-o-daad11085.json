@@ -1,0 +1,78 @@
+{
+  "slug": "de-hochschule-landshut-hochschule-fur-angew-hrk157-dingolfing-sustainable-industrial-o-daad11085",
+  "programmePage": "https://www.haw-landshut.de/en/faculties/electrical-industrial-engineering/study/bachelor-degree-programmes/sustainable-industrial-operations-and-business",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11085/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "school-leaving certificate"
+          },
+          "quotedAs": "Hochschulabschlusszeugnis",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "Lebenslauf",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.haw-landshut.de/internationales/incoming/international-program-students",
+          "quote": "Lebenslauf (Fach-)Abiturzeugnis bzw. Hochschulabschlusszeugnis (Bachelor bzw. Master)"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: The DAAD page states \"Tuition fees per semester None\", but the university's German-language Studiengebühren page mentions a Studierendenwerksbeitrag of 82,-€ per semester for enrolled students. This 82,-€ appears to be the semester contribution, not tuition. The DAAD page states a student union fee of 125.62 EUR, which conflicts with the university page's 82,-€ and is likely outdated. Intake deadlines: No dated deadlines for this specific programme were found; the application periods given on the DAAD page lack a year (15 April - 15 July for winter semester, 15 November - 15 January for summer semester) and there is no evidence that these dates apply specifically to non-EU applicants with foreign diplomas. Application process: The university's international applicant page says foreign applicants must first have their certificates assessed by Uni-Assist and then send the result to the university. The application itself is made through the university's applicant portal (PRIMUSS), but the Uni-Assist pre-check is mandatory.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.haw-landshut.de/en/application/bachelor-application/international-applicants",
+            "quote": "No knowledge of German is required at the start of the programme, but an English B2 language level is required."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez auprès de l'université si votre baccalauréat marocain est reconnu comme qualification d'entrée à l'université.",
+          "en": "Check with the university whether your Moroccan Baccalauréat is recognized as a higher education entrance qualification."
+        },
+        "evidence": [
+          {
+            "url": "https://www.haw-landshut.de/en/faculties/electrical-industrial-engineering/study/bachelor-degree-programmes/sustainable-industrial-operations-and-business",
+            "quote": "Formal admission requirements: University of Applied Sciences entrance qualification, subject-specific or general higher education entrance qualification."
+          }
+        ]
+      }
+    ]
+  }
+}

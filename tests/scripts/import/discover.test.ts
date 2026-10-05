@@ -15,6 +15,17 @@ import {
 } from "../../../scripts/import/search";
 
 describe("extractLinks", () => {
+  it("drops a PDF by default and keeps it with pdf: true, other files always dropped", () => {
+    const html =
+      '<a href="/fees.pdf">Fees</a><a href="/photo.jpg">Photo</a><a href="/page">Page</a>';
+    const base = "https://www.uni.example/";
+    expect(extractLinks(html, base).map((l) => l.url)).toEqual(["https://www.uni.example/page"]);
+    expect(extractLinks(html, base, { pdf: true }).map((l) => l.url)).toEqual([
+      "https://www.uni.example/fees.pdf",
+      "https://www.uni.example/page",
+    ]);
+  });
+
   it("decodes HTML entities in an href", () => {
     const links = extractLinks(
       '<a href="/prog?id=3&amp;lang=en&#38;x=1">Programme</a>',

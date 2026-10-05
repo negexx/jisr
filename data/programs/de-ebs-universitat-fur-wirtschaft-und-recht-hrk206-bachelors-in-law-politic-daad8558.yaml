@@ -26,9 +26,12 @@ teachingLanguages:
   source: daad
   info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 908000
+    currency: EUR
+    period: semester
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
   value: null
   source: daad
@@ -38,9 +41,27 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
+  value:
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae sous forme tabulaire
+          status: draft
+        en:
+          text: Curriculum vitae in tabular form
+          status: draft
+      translationRequired: null
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
   source: daad
-  info_kind: guidance
+  info_kind: official
 requirements:
   coverage: partial
   source: daad

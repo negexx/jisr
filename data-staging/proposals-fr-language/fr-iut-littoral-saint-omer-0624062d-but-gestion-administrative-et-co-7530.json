@@ -1,0 +1,46 @@
+{
+  "slug": "fr-iut-littoral-saint-omer-0624062d-but-gestion-administrative-et-co-7530",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7530&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7530&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 euros par an est le tarif indiqué sur la fiche Parcoursup pour cette formation. Ce montant concerne les étudiants non boursiers et correspond aux droits d'inscription nationaux (non différenciés) ; il n'est pas explicitement présenté comme le tarif des étudiants extra-communautaires. Vérifier le montant réel applicable aux candidats marocains (droits différenciés de 2 902 euros pour une licence), car la page Campus France indique que certains établissements en exonèrent. Le niveau de français C1 est indiqué sur la fiche Parcoursup comme requis pour s'inscrire à la formation ; la certification de français (TCF, DELF B2, DALF) est obligatoire pour candidater via Études en France, sauf dispense. Aucune date limite de candidature pour les candidats internationaux n'est fournie avec une année pour cette formation ; des dates d'entretien 2026 figurent sur la fiche Parcoursup mais concernent la procédure Parcoursup (bacs français/européens), pas la procédure Études en France. L'applicationChannel n'est pas renseigné : un candidat marocain titulaire du Bac marocain doit postuler via Études en France / Campus France, comme indiqué séparément.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7530&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien de sélection peut être organisé (épreuves orales) : du 27 au 30 avril 2026. Consultez l'établissement pour les modalités exactes.",
+          "en": "A selection interview may be organised (oral examinations): from 27 to 30 April 2026. Check with the institution for the exact arrangements."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7530&typeBac=0&originePc=0",
+            "quote": "Les étudiants dont le dossier est sélectionné par la commission, les étudiants sont invités à se présenter à un entretien dans l'établissement ou à distance."
+          }
+        ]
+      }
+    ]
+  }
+}

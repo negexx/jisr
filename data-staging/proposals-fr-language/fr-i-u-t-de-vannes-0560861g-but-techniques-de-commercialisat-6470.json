@@ -1,0 +1,59 @@
+{
+  "slug": "fr-i-u-t-de-vannes-0560861g-but-techniques-de-commercialisat-6470",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6470&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6470&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 € par année correspond aux droits d'inscription applicables dans cette formation selon la fiche Parcoursup ; les pages maroc.campusfrance.org mentionnent des droits différenciés pour les étudiants extra-communautaires (2 902 € pour une année en cycle de Licence), mais ce texte est général et ne porte pas spécifiquement sur ce BUT : à vérifier. Le niveau de français B2 est indiqué comme un niveau requis, sans précision sur la certification à fournir.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6470&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidatures sont analysées selon la grille : résultats scolaires 25%, méthodes de travail 25%, savoir-être 25%, motivation 15%, engagement 10%.",
+          "en": "Applications are assessed using this grid: academic results 25%, work methods 25%, behavioural skills 25%, motivation 15%, engagement 10%."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6470&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 25 % Méthodes de travail 25 % Savoir-être 25 % Motivation 15 % Engagement et activités 10 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le BUT Techniques de commercialisation est une formation sélective : il faut vérifier les attendus et les critères d'admission auprès de l'établissement.",
+          "en": "The BUT in Techniques de commercialisation is a selective programme: check the entry requirements and admission criteria with the institution."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6470&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          }
+        ]
+      }
+    ]
+  }
+}

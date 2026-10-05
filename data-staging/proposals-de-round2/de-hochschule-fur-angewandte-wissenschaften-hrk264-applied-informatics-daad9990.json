@@ -1,0 +1,74 @@
+{
+  "slug": "de-hochschule-fur-angewandte-wissenschaften-hrk264-applied-informatics-daad9990",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9990/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9990/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.hswt.de/en/study/before-the-study/application",
+          "quote": "Submit the required documents to the HSWT application portal and include BIN and BAN."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "CV",
+          "translationRequired": null
+        },
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "higher education entrance qualification",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hswt.de/en/study/before-the-study/application",
+          "quote": "In general, in addition to your CV, you will need these documents for admission to a Bachelor's programme at the HSWT, which you must submit online with your application: The higher education entrance qualification"
+        }
+      ]
+    }
+  },
+  "notes": "The application deadlines stated for Applied Informatics (28 April to 27 July 2026) are for the winter semester 2026/2027 and do not explicitly say they apply to international applicants; therefore they are given as a manual check. The programme page states that applications can be submitted from late April/early May, with exact deadline on the university website. The DAAD page lists tuition as none, so amountMinor 0. The university application page for international applicants mentions the possible need for a VPD or APS certificate, but this is covered elsewhere.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les dates de candidature et de dépôt des documents sur le site de l'université ; la date limite pour Applied Informatics peut être le 27 juillet 2026.",
+          "en": "Check application and document submission dates on the university website; the deadline for Applied Informatics may be 27 July 2026."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hswt.de/en/study/before-the-study/application",
+            "quote": "28 April 2026 - 27 July 2026 Application period for the winter semester 2026/2027 Bachelor Applied Informatics"
+          }
+        ]
+      }
+    ]
+  }
+}

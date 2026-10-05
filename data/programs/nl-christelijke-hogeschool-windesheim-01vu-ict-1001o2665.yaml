@@ -29,7 +29,10 @@ tuition:
   source: programme
   info_kind: official
 intakes:
-  value: null
+  value:
+    - startDate: 2027-09-06
+      applicationOpens: null
+      applicationDeadline: null
   source: programme
   info_kind: official
 applicationChannel:
@@ -37,8 +40,26 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+    - slug: grade-list
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Grade list
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -72,3 +93,6 @@ sources:
   programme:
     url: https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.windesheim.nl/opleidingen/toelating
+    last_verified_at: 2026-10-04

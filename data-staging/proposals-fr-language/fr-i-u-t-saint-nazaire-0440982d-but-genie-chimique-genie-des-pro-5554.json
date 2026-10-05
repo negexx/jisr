@@ -1,0 +1,33 @@
+{
+  "slug": "fr-i-u-t-saint-nazaire-0440982d-but-genie-chimique-genie-des-pro-5554",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5554&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5554&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Les frais de scolarité indiqués (178 €/an) s'appliquent aux étudiants français et à certains étudiants exonérés ; pour un étudiant marocain non-résident, ce montant n'est pas confirmé. Parcoursup mentionne que les étudiants marocains doivent candidater via Études en France / Campus France, donc le canal de candidature n'est pas Parcoursup. Les dates de candidature ne sont pas fournies dans les pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5554&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      }
+    ]
+  }
+}

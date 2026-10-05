@@ -1,0 +1,72 @@
+{
+  "slug": "fr-i-u-t-la-rochelle-0170145r-but-reseaux-et-telecommunication-3054",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3054&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3054&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Frais de scolarité : la fiche Parcoursup indique 178 euros par an, mais ce montant concerne les étudiants français, européens et exonérés ; en tant qu'étudiant marocain non-UE, les droits différenciés (2 902 euros/an en Licence) s'appliquent selon la page Campus France, sous réserve d'exonération par l'établissement. ",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3054&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La candidature est examinée par les enseignants de la formation : résultats scolaires 50%, méthodes de travail 15%, savoir-être 10%, motivation 20%, engagement 5%.",
+          "en": "Applications are examined by the programme's teachers: academic results 50%, working methods 15%, soft skills 10%, motivation 20%, engagement 5%."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3054&typeBac=0&originePc=0",
+            "quote": "Les formations analysent les candidatures en avril-mai 2026 à partir des critères qu’elles ont définis et de leur niveau d’importance."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La lettre de motivation est un élément déterminant : elle doit être personnalisée et vérifier vos motivations et votre intérêt pour la formation R&T.",
+          "en": "The cover letter is a determining factor: it must be personalised and show your motivation and interest in the R&T programme."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3054&typeBac=0&originePc=0",
+            "quote": "La lettre de motivation est un élément déterminant permettant de classer des candidats de niveau identique."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des entretiens oraux (téléphone ou visioconférence, 10 à 15 minutes) peuvent être demandés par les examinateurs. Ils ne sont pas systématiques.",
+          "en": "Oral interviews (phone or video conference, 10 to 15 minutes) may be requested by the examiners. They are not systematic."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3054&typeBac=0&originePc=0",
+            "quote": "Des entretiens oraux peuvent être demandés par les examinateurs des dossiers."
+          }
+        ]
+      }
+    ]
+  }
+}

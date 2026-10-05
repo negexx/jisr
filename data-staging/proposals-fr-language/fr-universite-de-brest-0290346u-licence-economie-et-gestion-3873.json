@@ -1,0 +1,72 @@
+{
+  "slug": "fr-universite-de-brest-0290346u-licence-economie-et-gestion-3873",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3873&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3873&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+        }
+      ]
+    }
+  },
+  "notes": "Les droits d'inscription de 178 € sont ceux indiqués sur la fiche Parcoursup (public). Les pages Campus France Maroc indiquent 2 902 € pour une année de Licence pour un étudiant extracommunautaire, sauf exonération ; ce montant ne figure pas sur la fiche du programme elle-même et dépend de l'exonération accordée par l'établissement.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3873&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Candidats non ressortissants de l'UE titulaires d'un diplôme équivalent au bac français : candidature via la procédure DAP, pas Parcoursup.",
+          "en": "Non-EU applicants with a qualification equivalent to the French baccalaureate: apply via the DAP procedure, not Parcoursup."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3873&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Séries de bac et spécialités attendues (SES, HGGSP, mathématiques, DGEC) : le dossier est évalué selon une grille (résultats 75 %, méthodes 10 %, savoir-être 10 %, motivation 5 %).",
+          "en": "Expected baccalaureate series and specialisations (SES, HGGSP, mathematics, DGEC): application assessed against a grid (academic results 75%, working methods 10%, soft skills 10%, motivation 5%)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3873&typeBac=0&originePc=0",
+            "quote": "La série générale, et au sein de celle-ci, les spécialités mathématiques, SES, HGGSP et DGEC, sont celles qui sont les plus adaptées au parcours Management de la licence Economie-Gestion."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les attendus nationaux mentionnent des compétences en mathématiques/statistiques, expression écrite, culture générale et langue anglaise : à vérifier dans le dossier.",
+          "en": "National expectations mention skills in mathematics/statistics, written expression, general culture and English: to be checked in the application."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3873&typeBac=0&originePc=0",
+            "quote": "Disposer des compétences mathématiques et statistiques indispensables à l’économie et à la gestion"
+          }
+        ]
+      }
+    ]
+  }
+}

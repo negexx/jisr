@@ -1,0 +1,25 @@
+{
+  "slug": "nl-fontys-hogeschool-30gb-tilburg-technische-bedrijfskunde-1001o3682",
+  "programmePage": "https://www.fontys.nl/Opleidingen/Technische-Bedrijfskunde-bachelor-voltijd.htm",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["nl"],
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Technische-Bedrijfskunde-bachelor-voltijd.htm",
+          "quote": "Technische Bedrijfskunde 4 jaar Bachelor Voltijd Start februari en september Nederlands Eindhoven Tilburg"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Technische-Bedrijfskunde-bachelor-voltijd.htm",
+          "quote": "Meld je uiterlijk 1 mei aan via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "The programme page gives tuition costs only via the collegegeldmeter ('Bereken je collegegeld eenvoudig met de collegegeldmeter') and the general page says the institutional fee for non-EEA students is set by the Board and varies per programme, so no tuition amount is stated for this programme. No document list is given. Deadlines on the programme page ('1 mei 2027', '1 februari') are given without saying they are for non-EU/international applicants, so they are left out."
+}

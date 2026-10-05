@@ -127,6 +127,9 @@ const INTERNATIONAL_WORDS: readonly RegExp[] = [
   /(?:from|obtained|studied|completed)\s+abroad/i,
   /(?:aus dem|im) ausland\b|ausl[aä]nd(?:isch|er)/i,
   /[ée]trang[eè]r/i,
+  // DAAD register: "The following is valid for applicants from: all countries" includes applicants
+  // from outside the EU
+  /applicants from:\s*all countries/i,
   // a deadline for Moroccan applicants only (Campus France: "heure marocaine")
   /marocain(?:e|s|es)?\b|moroccan|marokkaan|marokkanisch|aus marokko|uit marokko|\bmaroc\b/i,
 ];
@@ -251,20 +254,103 @@ function amountPattern(amount: number): RegExp {
   const digits = String(Math.round(amount));
   const grouped =
     digits.length > 3 ? `${digits.slice(0, -3)}[.,\\s\\u00a0\\u202f']?${digits.slice(-3)}` : digits;
-  return new RegExp(`(?<![\\d.,])${grouped}(?:[.,]00)?(?![\\d])`);
+  // not followed by a decimal tail: 5,000.50 is not 5,000
+  return new RegExp(`(?<![\\d.,])${grouped}(?:[.,]00)?(?![\\d])(?![.,]\\d)`, "g");
 }
+
+// Does the quote state this amount (in major units) as a whole number, not as part of a larger one?
+export const amountInQuote = (amountMajor: number, quote: string): boolean =>
+  amountMatches(amountMajor, quote).length > 0;
+
+// Where the quote states the amount: [start, end) of each occurrence.
+export const amountMatches = (
+  amountMajor: number,
+  quote: string,
+): { start: number; end: number }[] =>
+  [...quote.matchAll(amountPattern(amountMajor))].map((m) => ({
+    start: m.index ?? 0,
+    end: (m.index ?? 0) + m[0].length,
+  }));
 
 const NO_FEE =
   /no tuition|tuition[- ]free|free of charge|no fees|gratuit|keine studiengeb|studiengebührenfrei|geen collegegeld|zonder collegegeld|tuition fees?(?: per (?:semester|year|term))?[: ]+none\b(?!\s+for\b)/i;
 
-export function checkTuition(amountMinor: number, quote: string): FactCheck {
+// The year the current study year started: from August on it is this calendar year, before that last
+// year (a Dutch or German study year begins in September or October).
+export function currentStudyYear(now: Date = new Date()): number {
+  return now.getUTCMonth() >= 7 ? now.getUTCFullYear() : now.getUTCFullYear() - 1;
+}
+
+// "2026-2027", "2026/27", "2026-27": a study year written in a fee quote. The second part must be
+// the next year, so a date ("2025-11-03") and a span ("2024-2027") are not study years.
+const STUDY_YEAR = /(?<!\d)(20\d\d)\s*[-/–]\s*((?:20)?\d\d)(?![\d]|\s*[-/–]\s*\d)/g;
+// "since the winter semester 2017/18": a start of something, not the year the amount is for
+const SINCE_LABEL = /\b(?:seit|since|sinds)\s+(?:dem\s+|het\s+)?(?:\w+\s+)?$/i;
+// something that reads as an amount of money: a euro sign or a number with a thousands group
+const AMOUNT_LIKE = /€\s*\d|\d{1,3}[.,]\d{3}/;
+
+type StudyYearLabel = { start: number; at: number; end: number };
+
+function studyYearLabels(q: string): StudyYearLabel[] {
+  const labels: StudyYearLabel[] = [];
+  for (const m of q.matchAll(STUDY_YEAR)) {
+    const start = Number(m[1]);
+    const second = Number(m[2]);
+    const next = start + 1;
+    if (second !== next && second !== next % 100) continue;
+    const at = m.index ?? 0;
+    if (SINCE_LABEL.test(q.slice(Math.max(0, at - 30), at))) continue;
+    labels.push({ start, at, end: at + m[0].length });
+  }
+  return labels;
+}
+
+// Why the amount cannot be tied to a study year of `minStudyYear` or later, or null when it can (or
+// when the quote names no study year at all: a programme page, left to the checker). Each occurrence
+// of the amount takes the closest study year written BEFORE it, else the first one after it. Years
+// that stand side by side as column headers ("2025-2026 2026-2027 ... € 10.164 € 10.528") say
+// nothing about which column an amount is in: that is ambiguous unless every one of them is current.
+function staleStudyYear(amountMajor: number, quote: string, minStudyYear: number): string | null {
+  const q = normalizeForMatch(quote);
+  const labels = studyYearLabels(q);
+  if (labels.length === 0) return null;
+  for (const amount of q.matchAll(amountPattern(amountMajor))) {
+    const from = amount.index ?? 0;
+    const before = labels.filter((label) => label.end <= from);
+    let run: StudyYearLabel[];
+    if (before.length > 0) {
+      run = [];
+      for (let i = before.length - 1; i >= 0; i--) {
+        const label = before[i];
+        if (label === undefined) break;
+        const following = run[0];
+        if (following !== undefined && AMOUNT_LIKE.test(q.slice(label.end, following.at))) break;
+        run.unshift(label);
+      }
+    } else {
+      const after = labels.find((label) => label.at >= from + amount[0].length);
+      run = after === undefined ? [] : [after];
+    }
+    const oldest = Math.min(...run.map((label) => label.start));
+    if (run.length > 0 && oldest < minStudyYear)
+      return run.length > 1
+        ? `the amount cannot be tied to one of the study years ${run.map((l) => l.start).join(", ")}`
+        : `the amount sits next to the study year ${oldest}, before ${minStudyYear}`;
+  }
+  return null;
+}
+
+// `minStudyYear` is the year the study year the amount must be for starts in (currentStudyYear());
+// it is an argument so a verification is reproducible.
+export function checkTuition(amountMinor: number, quote: string, minStudyYear: number): FactCheck {
   if (amountMinor === 0)
     return NO_FEE.test(quote)
       ? ok
       : fail("a zero fee needs a quote saying there are no tuition fees");
-  return amountPattern(amountMinor / 100).test(quote)
-    ? ok
-    : fail(`the amount ${amountMinor / 100} does not appear in the quote`);
+  if (!amountInQuote(amountMinor / 100, quote))
+    return fail(`the amount ${amountMinor / 100} does not appear in the quote`);
+  const stale = staleStudyYear(amountMinor / 100, quote, minStudyYear);
+  return stale === null ? ok : fail(stale);
 }
 
 // The day written right next to the month: "15 July", "15. Juli", "July 15", "15.07.", "15/07". A
@@ -277,6 +363,31 @@ function dayBesideMonth(month: number, day: number, q: string): boolean {
     new RegExp(`(?<!\\d)0?${day}\\s*[./-]\\s*0?${month}(?!\\d)`).test(q)
   );
 }
+
+// Where a quote states a date ("15 March", "March 15", "15.03.", "2027-03-15"): [start, end) in the
+// quote as normalizeForMatch writes it, in order.
+export function dateSpans(quote: string): { start: number; end: number }[] {
+  const q = normalizeForMatch(quote);
+  const names = MONTHS.flat().join("|");
+  const patterns = [
+    new RegExp(`(?<!\\d)\\d{1,2}(?:st|nd|rd|th|er|\\.)?\\s*(?:of\\s+)?(?:${names})\\b`, "g"),
+    new RegExp(`\\b(?:${names})\\.?\\s*\\d{1,2}(?:st|nd|rd|th)?(?!\\d)`, "g"),
+    /(?<!\d)\d{1,2}\s*[./-]\s*\d{1,2}\s*[./-]\s*\d{2,4}(?!\d)/g,
+    /(?<!\d)\d{4}-\d{2}-\d{2}(?!\d)/g,
+  ];
+  return patterns
+    .flatMap((pattern) =>
+      [...q.matchAll(pattern)].map((m) => ({
+        start: m.index ?? 0,
+        end: (m.index ?? 0) + m[0].length,
+      })),
+    )
+    .sort((a, b) => a.start - b.start);
+}
+
+// How many dates a quote states: more than one means the quote is about several groups or steps,
+// and one of its dates must not be taken for another's.
+export const countDates = (quote: string): number => dateSpans(quote).length;
 
 export function checkDeadline(isoDate: string, quote: string): FactCheck {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoDate);

@@ -1,0 +1,50 @@
+{
+  "slug": "fr-i-u-t-du-limousin-site-de-limoges-0870125n-but-informatique-10686",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10686&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10686&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucun frais de scolarité n'est indiqué pour les étudiants non-UE : la seule somme citée est 178 euros par année (tarif national), sans mention que ce tarif s'applique aux étudiants extra-communautaires ; le montant des droits différenciés n'apparaît pas sur ces pages. La page Campus France Maroc indique que les titulaires d'un Bac marocain doivent candidater via Études en France (https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces ; https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut), ce qui est traité séparément. Aucune date de candidature pour ce programme ne figure sur ces pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10686&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Examen des candidatures sur dossier : résultats scolaires 60 %, méthodes de travail 15 %, savoir-être 15 %, motivation 10 %. Un travail régulier en Mathématiques, Français, Anglais et NSI est conseillé.",
+          "en": "Application review based on the file: academic results 60%, work methods 15%, soft skills 15%, motivation 10%. Consistent work in Mathematics, French, English and NSI is advised."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10686&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 60 % Méthodes de travail 15 % Savoir-être 15 % Motivation 10 %"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10686&typeBac=0&originePc=0",
+            "quote": "Il est conseillé aux candidats de fournir un travail régulier dans toutes les disciplines, particulièrement en Mathématiques, Français, Anglais et NSI pour ceux qui suivent cette spécialité."
+          }
+        ]
+      }
+    ]
+  }
+}

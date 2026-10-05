@@ -1,0 +1,75 @@
+{
+  "slug": "nl-christelijke-hogeschool-windesheim-01vu-ict-1001o2665",
+  "programmePage": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": "2027-09-06",
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle",
+          "quote": "Startmoment 6 september 2027: aanmelden het liefst vóór 1 mei (uiterlijk 31 augustus) via Studielink."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle",
+          "quote": "Aanmelden via Studielink(opent in nieuw tabblad)"
+        }
+      ]
+    }
+  },
+  "notes": "The ICT programme's own page gives the € 2.694,- collegegeld for 2026-2027 but does not say this amount applies to non-EU/foreign-diploma students (the studiekosten page explains EU/nationality criteria and a possibly higher instellingscollegegeld), so the non-EU tuition is not explicitly stated for this programme. No explicit deadline for non-EU applicants is given: the page only says 'aanmelden het liefst vóór 1 mei (uiterlijk 31 augustus)' without saying it is for international/non-EU applicants, so no applicationDeadline is recorded. Teaching language is not stated on this page (the programme is offered in Dutch; the page does not say so explicitly), so teachingLanguages is omitted.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Si vous avez un diplôme étranger, vous devez aussi satisfaire aux exigences linguistiques ('taaleisen') ; consultez la page des taaleisen de Windesheim pour le niveau et les certificats acceptés.",
+          "en": "With a foreign diploma you must also meet the language requirements ('taaleisen'); check Windesheim's taaleisen page for the level and accepted certificates."
+        },
+        "evidence": [
+          {
+            "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle",
+            "quote": "Daarnaast moet je voldoen aan de taaleisen."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Bonne maîtrise des mathématiques, du néerlandais et de l'anglais au niveau de l'examen final havo est importante pour réussir ; il est conseillé de renforcer ces matières avant le début.",
+          "en": "Good knowledge of mathematics, Dutch and English at havo final-exam level is important for success; strengthening these subjects before the start is advised."
+        },
+        "evidence": [
+          {
+            "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle",
+            "quote": "Een goede start en voldoende kennis van de vakken wiskunde, Nederlands en Engels is dan belangrijk."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est possible avec un diplôme étranger jugé équivalent à un havo, vwo ou mbo-4 ; l'évaluation de l'équivalence doit être vérifiée par l'établissement.",
+          "en": "Admission is possible with a foreign diploma considered equivalent to havo, vwo or mbo-4; the equivalence assessment must be checked by the institution."
+        },
+        "evidence": [
+          {
+            "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle",
+            "quote": "Ik heb een buitenlands diploma. Je bent toelaatbaar met een diploma dat gelijkwaardig is aan een havo-, vwo- of mbo-4 diploma."
+          }
+        ]
+      }
+    ]
+  }
+}

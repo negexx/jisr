@@ -1,0 +1,46 @@
+{
+  "slug": "fr-universite-de-bretagne-sud-site-de-vanne-0561739l-licence-economie-et-gestion-6508",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6508&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6508&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Les frais de scolarité affichés sur la fiche Parcoursup (« 178 euros par année ») concernent les étudiants français et de l'UE/EEE et ne sont donc pas retenus comme frais pour un candidat marocain. Les droits différenciés éventuels (2 902 € pour une année de Licence) figurent sur une page Campus France générale au Maroc, non propre à ce programme, et ne sont pas non plus retenus ici. Aucune date de candidature n'est donnée sur la fiche pour ce programme. La voie de candidature (Études en France / Campus France) est traitée séparément et n'est pas reportée dans 'applicationChannel'. Les listes de documents et les attendus proviennent de la grille d'analyse Parcoursup, établie pour des candidats passant par cette plateforme ; à vérifier pour un candidat à diplôme étranger.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6508&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidatures sont examinées sur dossier : résultats scolaires (70 %), méthodes de travail (25 %), motivation (5 %). Aucun concours ni entretien n'est mentionné.",
+          "en": "Applications are assessed on file: academic results (70%), work methods (25%), motivation (5%). No entrance exam or interview is mentioned."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6508&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 70 % Méthodes de travail 25 % Motivation 5 %"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "fr-i-u-t-de-roanne-0422048y-but-reseaux-et-telecommunication-5374",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5374&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5374&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the page shows \"Par année 178 euros.\" for this BUT, which is the standard French public licence fee; for a non-EU student with a foreign diploma the differentiated fee (droits différenciés, 2902 EUR/year for Licence) may apply depending on exemptions, so the amount above is only what this programme page states.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5374&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sélection sur dossier : résultats scolaires, méthodes de travail, savoir-être, motivation et engagement. Consultez la grille d'analyse des candidatures de la formation.",
+          "en": "Selection based on application file: academic results, working methods, soft skills, motivation and engagement. Check the programme's application assessment grid."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5374&typeBac=0&originePc=0",
+            "quote": "Cette grille permet d'indiquer le niveau d'importance accordé par la formation à chaque critère d'analyse."
+          }
+        ]
+      }
+    ]
+  }
+}

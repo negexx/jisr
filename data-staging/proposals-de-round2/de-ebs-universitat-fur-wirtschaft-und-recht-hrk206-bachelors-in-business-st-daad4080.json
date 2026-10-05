@@ -1,0 +1,71 @@
+{
+  "slug": "de-ebs-universitat-fur-wirtschaft-und-recht-hrk206-bachelors-in-business-st-daad4080",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 908000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/",
+          "quote": "Tuition fees per semester The following tuition fees apply for applicants from: all countries 9,080 EUR"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des frais de scolarité de 908 000 EUR (9 080 EUR par semestre) est indiqué dans la page DAAD pour « applicants from: all countries » ; il provient de la page DAAD, pas directement de la page EBS spécifique au programme. Il ne s'agit pas des frais pour la spécialisation Finance & FinTech mais des frais généraux du programme. Aucune date limite pour les candidats internationaux avec année n'est fournie : la page DAAD indique seulement des dates recommandées sans année (30 June, 30 November) et pour les internationaux (30 May, 15 October) sans année, donc aucune date limite ne peut être inscrite. Le canal de candidature est direct via le portail de candidature de l'université ; aucune page ne mentionne uni-assist ni VPD.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["toefl", "ielts"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (since 2026): 4 Reading: 4 Listening: 4 Speaking: 4 Writing: 4 IELTS Academic: 5.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez le site du programme pour une éventuelle exemption de test de langue.",
+          "en": "Check the programme website for possible language requirement exemptions."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/",
+            "quote": "Language requirements exemptions Please find details on the course website."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Préparez-vous au test de connaissances (30 min), au test de personnalité (20 min) et à l'entretien individuel de sélection (30 min).",
+          "en": "Prepare for the knowledge test (30 min), personality test (20 min) and personal selection interview (30 min)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/",
+            "quote": "This part of the selection procedure takes about 30 minutes."
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/",
+            "quote": "This test takes about 20 minutes."
+          },
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4080/",
+            "quote": "we conduct a 30-minute individual interview"
+          }
+        ]
+      }
+    ]
+  }
+}

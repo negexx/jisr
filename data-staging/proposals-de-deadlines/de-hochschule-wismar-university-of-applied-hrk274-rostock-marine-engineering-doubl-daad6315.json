@@ -1,0 +1,25 @@
+{
+  "slug": "de-hochschule-wismar-university-of-applied-hrk274-rostock-marine-engineering-doubl-daad6315",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6315/",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6315/",
+          "quote": "The following is valid for applicants from: all countries For the winter semester: until 15 July"
+        }
+      ]
+    }
+  }
+}

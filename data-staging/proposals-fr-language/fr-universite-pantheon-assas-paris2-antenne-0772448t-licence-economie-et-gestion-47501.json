@@ -1,0 +1,46 @@
+{
+  "slug": "fr-universite-pantheon-assas-paris2-antenne-0772448t-licence-economie-et-gestion-47501",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47501&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47501&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La page est une fiche Parcoursup : les dates de candidature et le canal de candidature qu'elle mentionne visent les titulaires d'un bac français ou européen (Parcoursup), pas le candidat marocain, qui passe par Études en France / Campus France (canal non extrait, comme demandé). Frais de scolarité : la fiche n'affiche que « 178 euros » par année (tarif national, vraisemblablement étudiants UE) et « Des frais spécifiques de 211€ s'ajoutent aux frais d'inscription de Licence. » ; aucun montant spécifique aux étudiants extra-communautaires n'est donné pour cette formation. La page Campus France « Le coût des études » indique par ailleurs des droits différenciés (2 902 € pour une année en cycle de Licence) mais il s'agit d'une règle générale, pas d'un montant propre à ce programme : à vérifier auprès de l'établissement, notamment l'exonération possible. La langue d'enseignement n'est pas explicitement déclarée ; la seule indication est le niveau de français requis (B2).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47501&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Formation sélective et exigeante : compétences mathématiques et statistiques indispensables, spécialité mathématiques conseillée. Les résultats scolaires comptent pour 93 % de la grille d'analyse.",
+          "en": "Selective, demanding programme: mathematical and statistical skills required, mathematics specialisation advised. School results count for 93% of the assessment grid."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47501&typeBac=0&originePc=0",
+            "quote": "Disposer des compétences mathématiques et statistiques indispensables à l’économie et à la gestion"
+          }
+        ]
+      }
+    ]
+  }
+}

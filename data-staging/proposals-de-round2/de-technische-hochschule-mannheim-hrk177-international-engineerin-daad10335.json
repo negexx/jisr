@@ -1,0 +1,96 @@
+{
+  "slug": "de-technische-hochschule-mannheim-hrk177-international-engineerin-daad10335",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10335/",
+  "facts": {
+    "documents": {
+      "value": [
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "CV",
+          "translationRequired": null
+        },
+        {
+          "slug": "english-language-certificate",
+          "name": {
+            "fr": "Preuve de compétences en anglais",
+            "en": "Proof of sufficient English language skills"
+          },
+          "quotedAs": "proof of sufficient English language skills",
+          "translationRequired": null
+        },
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Certificats scolaires/universitaires authentifiés",
+            "en": "Authenticated copies of school/university certificates"
+          },
+          "quotedAs": "authenticated copies of school/university certificates",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivational-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivational letter"
+          },
+          "quotedAs": "motivational letter",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10335/",
+          "quote": "Required application documents: CV proof of sufficient English language skills (details below) authenticated copies of school/university certificates / transcripts / \"Studienkolleg\" type T if available motivational letter"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition is 1,500 EUR per semester for non-EU students (both sources agree); period 'semester'. Intake deadline is recurring: 15 November (no year stated); application portal opens 15 October. No uni-assist/VPD mentioned on the pages: application is direct via campus.hs-mannheim.de. English test OTE minimum 130 is named but not listed in acceptedTests ISO mapping.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["ielts", "toefl"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10335/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6.5 TOEFL iBT (before 2026): 88"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un très bon diplôme de fin d'études secondaires est attendu, le nombre de places étant limité.",
+          "en": "A very good school-leaving certificate is expected, as the number of places is limited."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inb.hs-mannheim.de/international-engineering-bachelor-inb/apply.html",
+            "quote": "applicants should have a very good school-leaving certificate or university transcript"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme marocain permet un accès direct ou si des tests supplémentaires sont nécessaires.",
+          "en": "Check whether your Moroccan diploma allows direct access or whether additional tests are required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inb.hs-mannheim.de/international-engineering-bachelor-inb/apply.html",
+            "quote": "Check whether your school qualifications can lead to direct access to our INB program or whether you would need additional academic experience or additional tests to be eligible to apply with us."
+          }
+        ]
+      }
+    ]
+  }
+}

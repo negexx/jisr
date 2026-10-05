@@ -1,0 +1,89 @@
+{
+  "slug": "fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l-but-genie-industriel-et-maintena-48517",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48517&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48517&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48517&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : Anglais"
+        }
+      ]
+    }
+  },
+  "notes": "Cette page est une fiche Parcoursup relevant de la procédure française. La formation exige la nationalité française, ce qui rend le programme inaccessible à un candidat marocain titulaire du Bac marocain ; l'auditeur humain doit le signaler. Le montant « gratuit » ne concerne que des élèves sous statut militaire (rémunérés, internat gratuit) et non un étudiant international classique. La durée du BUT (bac+3) n'est pas confirmée par une citation explicite sur cette page.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48517&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La nationalité française est obligatoire pour s'inscrire dans cette formation ; un candidat marocain n'est donc pas éligible. Vérifier auprès de l'IUT et du CIRFA.",
+          "en": "French nationality is required to enroll in this programme, so a Moroccan applicant is not eligible. Check with the IUT and the CIRFA."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48517&typeBac=0&originePc=0",
+            "quote": "La nationalité française est obligatoire pour s'inscrire dans cette formation."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sélection faite par l'IUT, l'EAMEA et le recrutement de la Marine : prendre rendez-vous au CIRFA, aptitudes et enquête de sûreté à passer.",
+          "en": "Selection is made by the IUT, EAMEA and Navy recruitment: book an appointment with a CIRFA, pass aptitude tests and a security clearance."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48517&typeBac=0&originePc=0",
+            "quote": "La sélection des candidats est faite par l’IUT, l' EAMEA et le service du recrutement de la Marine."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Contrat de 9 ans dans la Marine à l'issue de la formation, statut militaire et engagement à signer.",
+          "en": "A 9-year contract with the Navy after the programme, military status and enrolment commitment."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48517&typeBac=0&originePc=0",
+            "quote": "La formation est gratuite mais impose de réaliser un contrat initial de 9 ans dans la Marine à l'issue de la formation."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Être titulaire ou en préparation d'un baccalauréat français ou d'un titre admis en équivalence.",
+          "en": "Hold or be preparing a French baccalauréat or a recognized equivalent qualification."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48517&typeBac=0&originePc=0",
+            "quote": "Les candidats, titulaires ou en préparation d'un baccalauréat français ou d'un titre admis en équivalence, sont autorisés à s'inscrire."
+          }
+        ]
+      }
+    ]
+  }
+}

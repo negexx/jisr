@@ -1,0 +1,33 @@
+{
+  "slug": "de-hochschule-bielefeld-university-of-appli-hrk28-gutersloh-beng-industrial-engineer-daad9711",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9711/",
+  "facts": {
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hsbi.de/en/international-office/international-applicants/applying-for-work-integrated-programmes",
+          "quote": "Applicants with certificates issued abroad must apply for a VPD certificate from uni-assist via the HSBI application portal before applying."
+        }
+      ]
+    }
+  },
+  "notes": "Cette fiche concerne uniquement le programme « Industrial Engineering (work-integrated) » (BEng Industrial Engineering with Work-Integrated Option) à Gütersloh, programme en alternance (work-integrated) : un contrat de coopération signé avec une entreprise est requis pour l'admission, d'où la présence de la « cooperation agreement » dans la liste des documents. Les documents listés sont ceux indiqués pour les programmes work-integrated en général ; l'étudiant doit confirmer la liste exacte sur la page de la filière. Les frais de scolarité par semestre sont indiqués comme « None » (« Tuition fees per semester None »), mais il s'agit d'une mention générale pour cette page DAAD ; aucune quote spécifique au tarif pour étudiant hors UE n'est fournie, donc le champ tuition est omis.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez votre admissibilité avec vos certificats marocains dans la base de données anabin / DAAD. Le diplôme du Baccalauréat marocain peut ne pas être reconnu directement comme Hochschulzugangsberechtigung; une Studienkolleg ou un test (TestAS/ITB) peut être requis.",
+          "en": "Check your eligibility with your Moroccan certificates in the anabin / DAAD database. The Moroccan Baccalauréat may not be recognised directly as a university entrance qualification; a Studienkolleg or test (TestAS/ITB) may be required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hsbi.de/en/international-office/international-applicants/applying-for-work-integrated-programmes",
+            "quote": "Please check DAAD’s admissions database to see whether your foreign certificates entitle you to study your desired subject at a German university."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "fr-i-u-t-devreux-0271666p-but-gestion-des-entreprises-et-d-3720",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3720&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3720&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "devoirs/notes d'audit : (1) Les frais '178 euros' et le niveau B2 sont indiqués sur la fiche Parcoursup, qui vise les candidats français/UE ; pour un étudiant marocain (extra-communautaire) les droits différenciés de 2 902 €/an en Licence s'appliquent selon une autre page, mais ce texte ne concerne pas nommément ce programme : à vérifier. (2) Aucune date de rentrée ou d'ouverture de candidature propre à ce programme n'est donnée pour l'année à venir. (3) La France est pays 'Études en France'; applicationChannel non extrait (consigne de la tâche). (4) Les pages glottopol/didacfran (PDF) ne concernent pas ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3720&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les notes en mathématiques, histoire-géographie, anglais (niveau B1 minimum), économie et la moyenne générale sont prises en compte dans l'analyse des candidatures (grille publiée).",
+          "en": "Marks in mathematics, history-geography, English (B1 minimum), economics and the general average are considered when reviewing applications (published grid)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3720&typeBac=0&originePc=0",
+            "quote": "Notes en mathématiques Résultats de tous les trimestres disponibles Essentiel 4 sur 4"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3720&typeBac=0&originePc=0",
+            "quote": "Notes en anglais - Niveau B1 minimum Notes en anglais - Niveau B1 minimum Essentiel 4 sur 4"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La formation est sélective : un entretien de motivation fait partie des épreuves de sélection ; préparez un projet de formation détaillé.",
+          "en": "The programme is selective: a motivation interview is part of the selection tests; prepare a detailed study project."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3720&typeBac=0&originePc=0",
+            "quote": "L'épreuve est constituée d'un entretien de motivation."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3720&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          }
+        ]
+      }
+    ]
+  }
+}

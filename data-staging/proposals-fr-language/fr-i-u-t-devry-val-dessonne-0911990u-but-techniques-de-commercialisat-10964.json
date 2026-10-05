@@ -1,0 +1,45 @@
+{
+  "slug": "fr-i-u-t-devry-val-dessonne-0911990u-but-techniques-de-commercialisat-10964",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10964&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10964&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s’inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10964&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s’inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sélection sur dossier : la commission examine résultats scolaires (40 %), savoir-être (30 %), motivation et cohérence du projet (15 %), méthodes de travail (10 %), engagements (5 %).",
+          "en": "Selection on file: the committee weighs academic results (40%), behaviour (30%), motivation and project coherence (15%), work methods (10%), engagement (5%)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10964&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 40 % Méthodes de travail 10 % Savoir-être 30 % Motivation 15 % Engagement et activités 5 %"
+          }
+        ]
+      }
+    ]
+  }
+}

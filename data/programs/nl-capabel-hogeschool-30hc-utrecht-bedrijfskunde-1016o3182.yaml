@@ -21,8 +21,9 @@ durationYears:
   source: programme
   info_kind: official
 teachingLanguages:
-  value: null
-  source: programme
+  value:
+    - nl
+  source: page-1
   info_kind: official
 tuition:
   value:
@@ -40,7 +41,16 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
+  value:
+    - slug: diploma-and-grade-list
+      name:
+        fr:
+          text: Copie du diplôme pertinent et du relevé de notes correspondant
+          status: draft
+        en:
+          text: Copy of relevant diploma and accompanying grade list
+          status: draft
+      translationRequired: null
   source: programme
   info_kind: official
 requirements:
@@ -67,3 +77,6 @@ sources:
   programme:
     url: https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.capabel.nl/opleidingen/zorg-welzijn/hbo-bachelor-verpleegkundige
+    last_verified_at: 2026-10-04

@@ -1,0 +1,76 @@
+{
+  "slug": "fr-institut-universitaire-de-technologie-de-0511026n-but-gestion-des-entreprises-et-d-6094",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6094&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6094&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La fiche Parcoursup ne donne pas de frais de scolarité propres aux étudiants non-UE : les 178 €/an sont les droits d'inscription nationaux en licence (les « droits différenciés » de 2 902 €/an pour les extra-communautaires ne sont pas confirmés sur la page de ce programme). Aucune date de candidature internationale n'est indiquée sur les pages fournies : la campagne ADIUT Maroc 2026 (1er oct. 2026 – 15 nov. 2026) concerne la 1ère année de BUT en général, pas ce programme nommé. La fiche mentionne « Sportif de haut niveau », « Artiste confirmé » et « Autres publics » : ce ne sont pas des documents à fournir.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6094&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un niveau B2 en français est exigé pour s'inscrire ; vérifiez auprès de l'IUT la certification acceptée.",
+          "en": "A B2 level in French is required for enrolment; check with the IUT which certificate is accepted."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6094&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les résultats scolaires comptent pour 80 % de l'analyse des candidatures, notamment lettres, langues, mathématiques et spécialités.",
+          "en": "School results count for 80% of the application review, in particular French, languages, mathematics and specialities."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6094&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 80%"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La candidature est sélective : 135 places en 2026 et une grille d'analyse (résultats, méthodes, savoir-être, motivation, engagement).",
+          "en": "Admission is selective: 135 places in 2026 and a scoring grid (results, methods, soft skills, motivation, engagement)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6094&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6094&typeBac=0&originePc=0",
+            "quote": "135 places en 2026"
+          }
+        ]
+      }
+    ]
+  }
+}

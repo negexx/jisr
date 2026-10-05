@@ -22,10 +22,10 @@ durationYears:
   info_kind: official
 teachingLanguages:
   value:
-    - de
     - en
-  source: daad
-  info_kind: guidance
+    - de
+  source: page-1
+  info_kind: official
 tuition:
   value:
     amountMinor: 150000
@@ -42,9 +42,18 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -58,3 +67,6 @@ sources:
   page-1:
     url: https://www.hs-heilbronn.de/en/ese
     last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.hs-heilbronn.de/en/bachelor-application
+    last_verified_at: 2026-10-04

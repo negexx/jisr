@@ -1,0 +1,50 @@
+{
+  "slug": "fr-i-u-t-de-rennes-0350697t-but-genie-mecanique-et-productiq-4663",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4663&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4663&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : Anglais Langue vivante 2 : Pas de LV2 Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the Parcoursup fiche states \"Par année 178 euros. Par année pour les étudiants boursiers Pas de frais pour les boursiers.\", but there is no fee quoted for a non-EU / foreign-diploma applicant; 178 EUR is the EU/EEA rate and the differentiated 2 902 EUR rate on the Campus France Maroc page applies to Licence studies in French public higher education generally, so no programme-specific tuition for this applicant could be quoted. Intake: the deadline \"Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine).\" is on a Maroc Campus France page about 1st-year BUT applications, including for Moroccan Bac holders who must use Études en France. The task says not to output applicationChannel because a foreign-diploma applicant applies through Études en France / Campus France, which is set separately.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4663&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est sélective : la commission d'examen des vœux évalue les résultats scolaires (68 %), les méthodes de travail (17 %), le savoir-être (3 %) et la motivation (12 %). Vérifiez les attendus et les modalités propres aux candidats internationaux.",
+          "en": "Admission is selective: the commission assesses academic results (68%), work methods (17%), soft skills (3%) and motivation (12%). Check the specific expectations and procedures for international applicants."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4663&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 68 % Méthodes de travail 17 % Savoir-être 3 % Motivation 12 %"
+          }
+        ]
+      }
+    ]
+  }
+}

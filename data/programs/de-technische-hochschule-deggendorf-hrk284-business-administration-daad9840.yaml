@@ -42,9 +42,36 @@ applicationChannel:
   source: daad
   info_kind: official
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: university-entrance-qualification
+      name:
+        fr:
+          text: Qualification d'entrée à l'université
+          status: draft
+        en:
+          text: University entrance qualification
+          status: draft
+      translationRequired: null
+    - slug: identity-card-copy
+      name:
+        fr:
+          text: Copie de la carte d'identité
+          status: draft
+        en:
+          text: Copy of identity card
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae
+          status: draft
+        en:
+          text: Curriculum vitae
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -55,3 +82,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9840/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.th-deg.de/en/apply
+    last_verified_at: 2026-10-04

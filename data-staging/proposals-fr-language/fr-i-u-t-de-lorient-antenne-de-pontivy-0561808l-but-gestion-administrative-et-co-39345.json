@@ -1,0 +1,50 @@
+{
+  "slug": "fr-i-u-t-de-lorient-antenne-de-pontivy-0561808l-but-gestion-administrative-et-co-39345",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39345&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39345&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucun frais de scolarité pour ce programme n'a été relevé : la fiche Parcoursup ne mentionne que \"Par année 178 euros\" et \"Pas de frais pour les boursiers\", montants qui concernent les étudiants français/UE et ne sont pas confirmés pour un étudiant non-UE titulaire d'un Bac marocain. Le programme ne relève pas de Parcoursup pour ce profil : la page Campus France Maroc précise que les titulaires d'un Bac marocain doivent candidater sur la plateforme Études en France. Le diplôme est décrit comme une licence professionnelle conférant un niveau bac+3 (source : page Campus France Maroc sur le BUT).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39345&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission en BUT GACO est sélective : les résultats scolaires (45 %), les méthodes de travail, le savoir-être et la motivation (projet de formation motivé) sont évalués par un jury. Préparez un dossier solide.",
+          "en": "Admission to BUT GACO is selective: academic results (45%), work methods, soft skills and motivation (motivated study project) are assessed by a jury. Prepare a strong application."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39345&typeBac=0&originePc=0",
+            "quote": "Les formations analysent les candidatures en avril-mai 2026 à partir des critères qu’elles ont définis et de leur niveau d’importance."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39345&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 45%"
+          }
+        ]
+      }
+    ]
+  }
+}

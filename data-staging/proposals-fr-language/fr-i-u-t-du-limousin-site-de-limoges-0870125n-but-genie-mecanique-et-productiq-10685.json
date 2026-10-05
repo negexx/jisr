@@ -1,0 +1,54 @@
+{
+  "slug": "fr-i-u-t-du-limousin-site-de-limoges-0870125n-but-genie-mecanique-et-productiq-10685",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10685&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10685&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : anglais"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10685&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 euros par an figure sur la fiche Parcoursup, qui décrit les droits d'inscription pour cette formation; la page Campus France Maroc indique 2 902 euros par an pour les étudiants extra-communautaires en Licence, mais elle ne nomme pas ce programme: le montant exact pour cet étudiant reste à confirmer auprès de l'établissement. Aucune date limite de candidature pour ce programme n'est donnée sur ces pages (la date du 1er octobre au 15 novembre 2026 concerne le programme ADIUT Maroc pour le BUT en général, pas ce programme précis). Aucune liste de documents n'est fournie pour ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10685&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier la grille d'analyse des candidatures (résultats scolaires 50%, méthodes de travail 15%, savoir-être 15%, motivation 20%) et les épreuves orales (présentations collectives par visio-conférence).",
+          "en": "Check the application review grid (academic results 50%, work methods 15%, soft skills 15%, motivation 20%) and the oral assessments (group presentations by videoconference)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10685&typeBac=0&originePc=0",
+            "quote": "Épreuves orales Deux présentations collectives par visio-conférence seront proposées entre le 4 mai 2026 et le 13 mai 2026 à partir de 18h."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10685&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 50 % Méthodes de travail 15 % Savoir-être 15 % Motivation 20 %"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "de-fh-munster-university-of-applied-science-hrk192-international-business-m-daad3910",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3910/",
+  "facts": {
+    "documents": {
+      "value": [
+        {
+          "slug": "official-language-certificate",
+          "name": {
+            "fr": "Certificat de langue officiel",
+            "en": "Official language certificate"
+          },
+          "quotedAs": "official language certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3910/",
+          "quote": "German language skills C1 required, please provide an official language certificate"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the page states only \"Tuition fees per semester None\" and \"Semester contribution Approx. 300 EUR per semester\", but the quote does not say whether this applies to non-EU/foreign-diploma applicants, so no tuition fact was recorded. Application channel: the pages do not mention uni-assist or a university application portal for this programme (the DAAD page only says \"Submit application via Please check this website.\"), so applicationChannel was left out.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3910/",
+            "quote": "English language skills B2 required, proof via placement test/interview"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Pour les étudiants commençant à Münster : un examen d'entrée doit être réussi (évaluation du parcours éducatif).",
+          "en": "For students starting in Münster: a course entrance exam must be passed (assessment of particular educational background)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3910/",
+            "quote": "For EBP students starting in Münster: A course entrance exam must be passed (assessment of particular educational background)."
+          }
+        ]
+      }
+    ]
+  }
+}

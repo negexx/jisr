@@ -1,0 +1,37 @@
+{
+  "slug": "fr-universite-jean-monnet-saint-etienne-0421095m-licence-economie-35609",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35609&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35609&typeBac=0&originePc=0",
+          "quote": "Certains enseignements sont dispensés en anglais en deuxième et troisième année"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35609&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Cette fiche Parcoursup décrit la formation et ses attendus. Pour un candidat de nationalité marocaine titulaire d'un Bac marocain, la candidature passe par Études en France / Campus France, non par Parcoursup (voir les pages Campus France Maroc). Aucune date limite de candidature ni aucun droit d'inscription pour étudiant non-UE n'est indiqué sur cette fiche pour ce programme. Les frais de scolarité de 178 euros par année mentionnés sur la fiche concernent les étudiants relevant de Parcoursup, donc pas un étudiant marocain titulaire d'un Bac marocain. Le master n'est pas concerné.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35609&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      }
+    ]
+  }
+}

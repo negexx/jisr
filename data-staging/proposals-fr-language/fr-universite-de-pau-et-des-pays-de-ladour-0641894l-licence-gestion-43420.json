@@ -1,0 +1,63 @@
+{
+  "slug": "fr-universite-de-pau-et-des-pays-de-ladour-0641894l-licence-gestion-43420",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43420&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr", "en"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43420&typeBac=0&originePc=0",
+          "quote": "La formation sera dispensée en Français avec une proportion croissante des cours en Anglais en L2 puis en L3 (semestre à l’étranger ERASMUS en L2)"
+        }
+      ]
+    }
+  },
+  "notes": "The programme page does not list specific documents for international applicants; the CV mentioned on the Campus France cost page is not clearly required for this programme. Tuition of 178 EUR/year appears in the Parcoursup fiche, but Campus France states differentiated tuition of 2902 EUR/year for non-EU students in Licence; the applicable amount may be 2902 EUR unless the institution grants an exemption. Teaching languages are French and English (growing share in English). The requirement for English B1 is stated as minimum, B2 recommended. A .docx file with the required documents was missing.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43420&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non ressortissants de l'UE titulaires d'un diplôme étranger ne passent pas par Parcoursup mais par la procédure Études en France / Campus France.",
+          "en": "Non-EU applicants with a foreign diploma do not apply via Parcoursup but through the Études en France / Campus France procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43420&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La certification de français (TCF, DELF B2, DALF) est obligatoire pour la procédure Études en France, sauf dispense.",
+          "en": "French certification (TCF, DELF B2, DALF) is mandatory for the Études en France procedure, unless exempted."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France"
+          }
+        ]
+      }
+    ]
+  }
+}

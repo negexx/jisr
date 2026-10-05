@@ -1,0 +1,46 @@
+{
+  "slug": "fr-universite-de-lorraine-institut-superieu-0572874p-licence-sciences-pour-lingenieur-43201",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43201&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr", "de"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43201&typeBac=0&originePc=0",
+          "quote": "Les enseignements sont dispensés dans les deux langues, français et allemand, quelquefois également en anglais."
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 euros par an est présenté sur la fiche Parcoursup sans distinction de nationalité. Compte tenu du profil de l'étudiant marocain (diplôme étranger, hors UE), ce montant peut ne pas correspondre aux droits d'inscription différenciés (2 902 euros/an en Licence pour les étudiants extracommunautaires selon Campus France). L'applicationChannel n'est pas inclus : la page indique que les candidats étrangers non titulaires d'un bac français ou européen et non ressortissants de l'UE doivent passer par Campus France / Études en France. Les documents demandés ne sont pas listés sur ces pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43201&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'insCRIRE à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test de langue allemande est organisé en avril/mai (écrit et/ou oral). Vérifiez les dates et les conditions de dispense auprès de l'ISFATES.",
+          "en": "A German language test is organised in April/May (written and/or oral). Check dates and exemption conditions with ISFATES."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43201&typeBac=0&originePc=0",
+            "quote": "Un test de langue allemande est réalisé en avril/mai."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "fr-iut-de-sceaux-ecole-universitaire-de-pre-0921245d-but-gestion-des-entreprises-et-d-11112",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11112&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11112&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 euros par année figurant sur la fiche Parcoursup est présenté sous « Frais de scolarité » mais ne correspond pas aux droits différenciés que doit acquitter un étudiant marocain non ressortissant de l'UE (2 902 euros pour une année en cycle de Licence selon la page Campus France Maroc « Le coût des études, les bourses »). À vérifier auprès de l'établissement. La page Campus France Maroc indique par ailleurs que les titulaires d'un Bac marocain doivent candidater via la plateforme Études en France, et non sur Parcoursup. La mention B2 en français vaut pour l'inscription ; la page Campus France Maroc précise que la certification de français est obligatoire sauf dispense, notamment pour les formations 100 % en anglais hors L1, mais la fiche du programme ne le dit pas.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11112&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La formation est sélective : l'admission dépend de l'examen du dossier (résultats scolaires 45 %, méthodes de travail 35 %, savoir-être 10 %, motivation 8 %, engagement 2 %). Vérifiez les modalités auprès de l'établissement.",
+          "en": "The programme is selective: admission depends on a review of the application (academic results 45%, work methods 35%, behaviour 10%, motivation 8%, engagement 2%). Check the details with the institution."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11112&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11112&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 45 % Méthodes de travail 35 % Savoir-être 10 % Motivation 8 % Engagement et activités 2 %"
+          }
+        ]
+      }
+    ]
+  }
+}

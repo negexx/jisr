@@ -1,0 +1,67 @@
+{
+  "slug": "fr-i-u-t-de-toulouse-0311086m-but-informatique-4098",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4098&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4098&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : Anglais"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4098&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: 178 euros is the rate shown on the Parcoursup page; Campus France Maroc states that extra-community (Moroccan) students registering for the first time in a Licence in a public institution pay differentiated droits d'inscription of 2 902 euros par an (\"2 902 euros pour une année en cycle de Licence\"), unless the establishment exempts them. Both figures were found; the 178 EUR quoto apply to French/EU students. Application channel: pages say a Moroccan Bac holder with a foreign diploma must apply via Études en France (Campus France), not Parcoursup, so no applicationChannel is given. Durée: 6 semestres / 180 ECTS = 3 ans.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4098&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les critères d'admission propres à l'établissement : les notes en Première et Terminale dans les matières scientifiques et la motivation comptent fortement (grille d'analyse des candidatures).",
+          "en": "Check the institution's own admission criteria: grades in Première and Terminale in scientific subjects and motivation weigh heavily (application analysis grid)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4098&typeBac=0&originePc=0",
+            "quote": "Compte tenu du taux de pression dans la formation, la cohérence du cursus antérieur et les résultats scolaires obtenus en classes de Première et de Terminale sont déterminants pour l'admission des candidats."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La formation est sélective : des compétences en mathématiques et en logique sont attendues, ainsi qu'une bonne maîtrise du français et des bases en anglais. Vérifier le dossier attendu.",
+          "en": "The programme is selective: skills in mathematics and logic are expected, as well as good French and basic English. Check the expected application file."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4098&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          }
+        ]
+      }
+    ]
+  }
+}

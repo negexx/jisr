@@ -1,0 +1,46 @@
+{
+  "slug": "fr-i-u-t-de-schiltigheim-site-de-selestat-0673149j-but-gestion-des-entreprises-et-d-36307",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=36307&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=36307&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Pages studied are Campus France Maroc general pages and the Parcoursup page for the BUT GEA programme. The Parcoursup page is the programme's own page but concerns French/EU applicants; the tuition fee (178 EUR/year, and free for scholarship holders) and deadlines on it are not stated for the non-EU / foreign-diploma applicant, so tuition and intake deadlines are left out. The applicant mentioned as a student with a Moroccan Bac applies via Études en France / Campus France (applicationChannel and its deadline not stated here). The documents list is taken only from the Campus France 1ère année BUT page, which names no other required documents beyond the diploma.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=36307&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien avec le jury est prévu pour apprécier la motivation et l'adéquation du projet à la formation.",
+          "en": "An interview with the jury is held to assess motivation and how the project fits the programme."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=36307&typeBac=0&originePc=0",
+            "quote": "Un entretien avec le jury, permettant d'apprécier la motivation du candidat ainsi que l'adéquation de son projet à la formation complète le processus de recrutement"
+          }
+        ]
+      }
+    ]
+  }
+}

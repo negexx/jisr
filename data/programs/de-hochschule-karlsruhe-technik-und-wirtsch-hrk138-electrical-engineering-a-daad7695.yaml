@@ -33,17 +33,59 @@ tuition:
   source: page-1
   info_kind: official
 intakes:
-  value: null
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 9
+        day: 15
   source: daad
-  info_kind: guidance
+  info_kind: official
 applicationChannel:
   value: null
   source: daad
   info_kind: guidance
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School completion certificate
+          status: draft
+      translationRequired: null
+    - slug: ask-certificate
+      name:
+        fr:
+          text: Certificat ASK
+          status: draft
+        en:
+          text: ASK certificate
+          status: draft
+      translationRequired: null
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Certificat de langue anglaise
+          status: draft
+        en:
+          text: English language certificate
+          status: draft
+      translationRequired: null
+    - slug: german-language-certificate-a1
+      name:
+        fr:
+          text: Certificat de langue allemande (niveau A1)
+          status: draft
+        en:
+          text: German language certificate (Level A1)
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
 requirements:
   coverage: partial
   source: daad

@@ -1,0 +1,46 @@
+{
+  "slug": "fr-universite-pantheon-assas-paris2-antenne-0772448t-licence-economie-et-gestion-47502",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47502&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47502&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La fiche Parcoursup fournie ne donne aucun frais de scolarité pour les étudiants extra-communautaires : les montants indiqués (178 euros, frais spécifiques de 1 216 euros) concernent les droits de licence français sur Parcoursup, donc les candidats passant par Parcoursup, pas la voie Études en France / Campus France d'un bachelier marocain. Aucune durée, langue d'enseignement ou date de candidature spécifique aux candidats non-EU n'est donnée sur cette fiche. Les informations générales de Campus France Maroc indiquent des droits différenciés (2 902 euros pour une année en cycle de Licence) pour un étudiant extra communautaire, mais il s'agit d'une page générale sur le coût des études en France, pas d'une page de ce programme, donc ce montant n'est pas repris ici. Le champ applicationChannel est volontairement omis (procédure Études en France / Campus France pour un bachelier marocain).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47502&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier le niveau de français B2 requis pour s'inscrire (aucun test précis n'est mentionné).",
+          "en": "Check the B2 French level required to enrol (no specific test is named)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47502&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      }
+    ]
+  }
+}

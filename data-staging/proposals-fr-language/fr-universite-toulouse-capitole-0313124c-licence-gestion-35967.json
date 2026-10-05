@@ -1,0 +1,63 @@
+{
+  "slug": "fr-universite-toulouse-capitole-0313124c-licence-gestion-35967",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35967&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["en"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35967&typeBac=0&originePc=0",
+          "quote": "Si le diplôme est entièrement enseigné en anglais, les étudiants doivent aussi poursuivre un apprentissage de l'espagnol ou de l'allemand."
+        }
+      ]
+    }
+  },
+  "notes": "Page parcoursup, mais les critères (langues, matières, entretien, niveau de français A2) sont ceux de la formation elle-même. Le montant « Par année 178€ » correspond aux droits d'inscription des étudiants français/UE ; pour un étudiant marocain non-UE, les droits différenciés (2902 € en Licence, source Campus France Maroc) peuvent s'appliquer, sauf exonération par l'établissement : à vérifier. ApplicationChannel non extrait (Etudes en France / Campus France, réglé à part). Les seuils de notes et les modalités d'admission restent à vérifier manuellement.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "A2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35967&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : A2"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35967&typeBac=0&originePc=0",
+            "quote": "Le niveau B2 selon le CECRL est requis, car l'ensemble des cours est dispensé en anglais et mobilité internationale est obligatoire."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sélection sur dossier : notes d'anglais et de mathématiques (critères essentiels), méthodes de travail, savoir-être et motivation. Entretien oral en ligne de 10 à 15 minutes pour les dossiers présélectionnés (du 4 au 14 mai 2026).",
+          "en": "Selection on file: English and mathematics marks (essential criteria), working methods, soft skills and motivation. Online oral interview of 10 to 15 minutes for shortlisted applicants (4 to 14 May 2026)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35967&typeBac=0&originePc=0",
+            "quote": "Pour les candidats présélectionnés, entretien individuel avec un ou plusieurs enseignants de la Licence, en ligne."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35967&typeBac=0&originePc=0",
+            "quote": "Les épreuves orales ou l'entretien auront lieu : Du lundi 04 mai 2026 au jeudi 14 mai 2026"
+          }
+        ]
+      }
+    ]
+  }
+}

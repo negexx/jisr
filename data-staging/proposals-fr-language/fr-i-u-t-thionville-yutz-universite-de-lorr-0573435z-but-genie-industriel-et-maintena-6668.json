@@ -1,0 +1,63 @@
+{
+  "slug": "fr-i-u-t-thionville-yutz-universite-de-lorr-0573435z-but-genie-industriel-et-maintena-6668",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6668&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6668&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le tarif '178 euros par année' affiché sur la fiche Parcoursup concerne les étudiants français et communautaires (pas les étudiants extra-communautaires). Les pages maroc.campusfrance.org indiquent des droits différenciés de 2 902 €/an en Licence, mais ce sont des pages générales et non la page de ce programme, donc le montant n'est pas retenu comme tuition de ce programme (à vérifier auprès de l'établissement). L'échéance de candidature 1er octobre – 15 novembre 2026 est celle du programme ADIUT Maroc via Études en France, mentionnée sur la page BUT de Campus France Maroc.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6668&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les étudiants candidatant à des formations 100% en anglais (hors L1) sont dispensés de la certification de français, sauf si l'établissement l'exige ; vérifiez les prérequis de la formation.",
+          "en": "Students applying to 100% English-taught programmes (other than first-year licence) are exempt from the French certification unless the institution requires it; check the programme prerequisites."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Les étudiants qui candidatent à des formations 100% en anglais, autre que la 1ère année de licence à l'université (L1), sont dispensés de la certification de français sauf si l'établissement l'exige."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Il est recommandé de passer un test de positionnement avant de vous inscrire à une certification de français.",
+          "en": "It is recommended to take a placement test before registering for a French certification."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Il est recommandé de passer un test de positionnement avant de vous inscrire à une certification de français."
+          }
+        ]
+      }
+    ]
+  }
+}

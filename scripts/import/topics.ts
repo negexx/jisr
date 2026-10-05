@@ -1,4 +1,4 @@
-import { registrable, sameSite } from "./discover";
+import { extractLinks, OTHER_FILE, registrable, sameSite } from "./discover";
 import { normalizeForMatch } from "./evidence";
 import type { QueryBudget, SearchHit, SearchProvider } from "./search";
 
@@ -18,28 +18,50 @@ const WORDS: Record<string, Record<Topic, string>> = {
     documents:
       "Bewerbungsunterlagen erforderliche Unterlagen international applicants required documents",
   },
+  FR: {
+    fees: "droits d'inscription étudiants internationaux",
+    language: "langue d'enseignement enseigné en",
+    deadline: "date limite de candidature étudiants internationaux",
+    documents: "pièces justificatives dossier de candidature étudiants internationaux",
+  },
   NL: {
-    fees: "collegegeld niet-EER studenten tuition fees non-EEA",
+    fees: "instellingscollegegeld collegegeld niet-EER studenten tuition fees non-EEA",
     language: "voertaal taal van het onderwijs language of instruction",
-    deadline: "aanmelddeadline aanmelden deadline application",
+    deadline: "aanmelddeadline niet-EER 1 april aanmelden deadline application",
     documents: "benodigde documenten toelating international students required documents",
   },
 };
 
-const LANGUAGE: Record<string, string> = { DE: "de", NL: "nl" };
+const LANGUAGE: Record<string, string> = { DE: "de", FR: "fr", NL: "nl" };
 
 const PATTERN: Record<Topic, RegExp> = {
-  fees: /tuition|\bfees?\b|\bcosts?\b|gebu(?:e)?hr|studienbeitr|semesterbeitr|collegegeld|kosten/,
+  fees: /tuition|\bfees?\b|\bcosts?\b|gebu(?:e)?hr|studienbeitr|semesterbeitr|collegegeld|\btarie(?:f|ven)\b|kosten|droits?[ _-]d[ '_-]?inscription|frais[ _-]de[ _-]scolarit|droits[ _-]de[ _-]scolarit/,
   language:
-    /language of instruction|teaching language|instruction|unterrichtssprache|studiensprache|\bsprache|voertaal|\btaal\b|language/,
-  deadline: /deadline|frist|termine?\b|aanmeld|application period|dates/,
-  documents: /documents?|unterlagen|nachweis|documenten|required|checklist|erforderlich|benodigde/,
+    /language of instruction|teaching language|instruction|unterrichtssprache|studiensprache|\bsprache|voertaal|\btaal\b|language|langue[ _-]d[ '_-]?enseignement|enseigne[ _-]en\b|langue[ _-]de[ _-]la[ _-]formation/,
+  deadline:
+    /deadline|frist|termine?\b|aanmeld|application period|dates|date[ _-]limite|calendrier|candidat(?:ure|er)/,
+  documents:
+    /documents?|unterlagen|nachweis|documenten|required|checklist|erforderlich|benodigde|pieces|justificatifs|dossier[ _-]de[ _-]candidature/,
 };
 
 const NEWSISH = /\/(news|blog|events?|actualit|presse|press|agenda|nieuws|aktuell|veranstaltung)/;
-// PDFs are wanted here (fee schedules); every other file type is not a page to read
-const OTHER_FILE = /\.(jpe?g|png|gif|svg|webp|zip|docx?|xlsx?|pptx?|mp[34]|ics)(\?|$)/i;
 const DATED_POST = /\/(19|20)\d{2}\/(0[1-9]|1[0-2])(\/|$)/;
+
+// Every topic, or the comma-separated subset of a `--topic-list` flag.
+export function parseTopicList(value: string | undefined): Topic[] {
+  if (value === undefined) return [...TOPICS];
+  const topics = value
+    .split(",")
+    .map((name) => name.trim())
+    .filter((name) => name !== "")
+    .map((name) => {
+      const topic = TOPICS.find((t) => t === name);
+      if (topic === undefined) throw new Error(`unknown topic ${name}`);
+      return topic;
+    });
+  if (topics.length === 0) throw new Error("--topic-list names no topic");
+  return topics;
+}
 
 const fold = (text: string): string =>
   normalizeForMatch(text)
@@ -60,6 +82,104 @@ export function scoreTopicLink(link: { url: string; text: string }, topic: Topic
   );
 }
 
+// A study year is two consecutive years: 2026-2027, 2026 - 2027, 2026/2027 or 2026/27 and 2026-27.
+// Candidates overlap (the lookahead), so the "2045/2024" of "/media/2045/2024-2025.pdf" is tried and
+// refused without hiding the real pair after it.
+const YEAR_PAIR = /(?<!\d)(?=(20\d\d)(?:\s*[-/]\s*|\s+)(20\d\d)(?!\d))/g;
+const YEAR_SHORT = /(?<!\d)(20\d\d)[-/](\d\d)(?!\d)/g;
+const YEAR_LABELLED = /(?:studiejaar|academic year)[\s_-]*(20\d\d)(?!\d)/g;
+const YEAR_BARE = /(?<!\d)(20\d\d)(?!\d)/g;
+const STUDY_WORDS = /studiejaar|academic year/;
+
+// The start years of every study-year form in the text. The link filter and the year ranking both
+// read this, so they cannot drift apart.
+function studyYears(text: string): number[] {
+  const pairs = [...text.matchAll(YEAR_PAIR)]
+    .filter((m) => Number(m[2]) === Number(m[1]) + 1)
+    .map((m) => Number(m[1]));
+  const shorts = [...text.matchAll(YEAR_SHORT)]
+    .filter((m) => Number(m[2]) === (Number(m[1]) + 1) % 100)
+    .map((m) => Number(m[1]));
+  const labelled = [...text.matchAll(YEAR_LABELLED)].map((m) => Number(m[1]));
+  return [...pairs, ...shorts, ...labelled];
+}
+const hasStudyYear = (text: string): boolean =>
+  STUDY_WORDS.test(text) || studyYears(text).length > 0;
+const FEE_TOOL = /collegegeldmeter|tarieven|tariff|fee calculator/;
+const MAX_FEE_PAGES_FETCHED = 3;
+
+// The study year a link names, as its highest start year: 2026-2027, 2026 - 2027 and 2026/27 are
+// 2026. A study-year form counts in the text or the path; a bare year only in the link text, since a
+// path is full of ids and media folders (/media/2045/, /page/120251) that are not years.
+function startYear(text: string, path: string): number | null {
+  const both = `${text} ${path}`;
+  const study = studyYears(both);
+  const years = study.length > 0 ? study : [...text.matchAll(YEAR_BARE)].map((m) => Number(m[1]));
+  return years.length === 0 ? null : Math.max(...years);
+}
+
+type FeeCandidate = { url: string; score: number; year: number | null };
+
+// A fee page often links the rate sheet of the current study year, a fee calculator or a PDF
+// schedule that no search answers. HTML only, same site, https, one level deep; a page that cannot be
+// fetched is skipped and nothing here throws. Only the newest study year found survives, and the
+// newest year sorts first, so a past year's sheet never outranks the current one.
+export async function followFeeLinks(
+  feePages: readonly string[],
+  input: {
+    website: string;
+    fetchHtml: (url: string) => Promise<string>;
+    limit?: number;
+  },
+): Promise<string[]> {
+  const known = new Set(feePages);
+  const found = new Map<string, FeeCandidate>();
+  const pages = feePages
+    .filter((url) => !/\.pdf(\?|#|$)/i.test(url))
+    .slice(0, MAX_FEE_PAGES_FETCHED);
+  for (const page of pages) {
+    let links: { url: string; text: string }[];
+    try {
+      links = extractLinks(await input.fetchHtml(page), page, { pdf: true });
+    } catch {
+      continue;
+    }
+    for (const link of links) {
+      try {
+        if (known.has(link.url) || found.has(link.url)) continue;
+        if (!link.url.startsWith("https://") || !sameSite(link.url, input.website)) continue;
+        const pathname = new URL(link.url).pathname;
+        let path = pathname;
+        try {
+          path = decodeURIComponent(pathname);
+        } catch {
+          // keep the raw path
+        }
+        if (DATED_POST.test(pathname) || NEWSISH.test(fold(path))) continue;
+        const score = scoreTopicLink(link, "fees");
+        if (score < 0.4) continue;
+        const haystack = fold(`${link.text} ${path}`);
+        const studyYear = hasStudyYear(haystack);
+        if (!studyYear && !FEE_TOOL.test(haystack)) continue;
+        found.set(link.url, {
+          url: link.url,
+          score: score + (studyYear ? 0.2 : 0),
+          year: startYear(fold(link.text), fold(path)),
+        });
+      } catch {
+        // an unparseable link is not a candidate
+      }
+    }
+  }
+  // only the newest study year found on any of the pages survives; undated links stay
+  const newest = Math.max(-Infinity, ...[...found.values()].map((c) => c.year ?? -Infinity));
+  return [...found.values()]
+    .filter((c) => c.year === null || c.year >= newest)
+    .sort((a, b) => (b.year ?? -Infinity) - (a.year ?? -Infinity) || b.score - a.score)
+    .slice(0, input.limit ?? 2)
+    .map((c) => c.url);
+}
+
 export type TopicInput = {
   country: string;
   website: string;
@@ -68,6 +188,10 @@ export type TopicInput = {
   memo?: Map<string, Promise<SearchHit[]>>;
   // hits kept per topic
   perTopic?: number;
+  // the topics to search, default all four
+  topics?: readonly Topic[];
+  // fetches an HTML page; when given, the fee pages found are followed one level deeper
+  fetchHtml?: (url: string) => Promise<string>;
 };
 
 export async function discoverTopicPages(input: TopicInput): Promise<Record<Topic, string[]>> {
@@ -90,7 +214,7 @@ export async function discoverTopicPages(input: TopicInput): Promise<Record<Topi
     pending.catch(() => memo.delete(query));
     return pending;
   };
-  for (const topic of TOPICS) {
+  for (const topic of input.topics ?? TOPICS) {
     const hits = await ask(`${scope} ${words[topic]}`);
     out[topic] = hits
       .filter((h) => h.url.startsWith("https://") && sameSite(h.url, input.website))
@@ -110,6 +234,14 @@ export async function discoverTopicPages(input: TopicInput): Promise<Record<Topi
       .sort((a, b) => b.score - a.score)
       .slice(0, input.perTopic ?? 2)
       .map((c) => c.url);
+    if (topic === "fees" && input.fetchHtml !== undefined && out.fees.length > 0)
+      out.fees = [
+        ...out.fees,
+        ...(await followFeeLinks(out.fees, {
+          website: input.website,
+          fetchHtml: input.fetchHtml,
+        })),
+      ];
   }
   return out;
 }

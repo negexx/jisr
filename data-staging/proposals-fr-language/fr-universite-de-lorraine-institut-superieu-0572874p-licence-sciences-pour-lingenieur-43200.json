@@ -1,0 +1,63 @@
+{
+  "slug": "fr-universite-de-lorraine-institut-superieu-0572874p-licence-sciences-pour-lingenieur-43200",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43200&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr", "de"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43200&typeBac=0&originePc=0",
+          "quote": "Les enseignements sont dispensés dans les deux langues, français et allemand, quelquefois également en anglais."
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 €/an figure sur la fiche Parcoursup (frais de scolarité) ; pour un étudiant marocain non-EU, la page Campus France indique des droits différenciés en Licence (2902 €/an) et précise que certains établissements en exonèrent les étudiants étrangers : le montant exact applicable à ce programme doit être vérifié auprès de l'établissement. Les dates de candidature (Études en France / ADIUT Maroc) ne sont pas propres à ce programme et n'ont donc pas été incluses.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43200&typeBac=0&originePc=0",
+            "quote": "Niveau minimum demandé en allemand : B1"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43200&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'allemand B1/B2 est organisé en présentiel (ou à distance selon l'éloignement) ; les candidats avec un niveau certifié B2 (Goethe-institut ou équivalent) en sont dispensés.",
+          "en": "A German test at B1/B2 level is held on site (or remotely if far away); candidates with a certified B2 level (Goethe-institut or equivalent) are exempt."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43200&typeBac=0&originePc=0",
+            "quote": "Un test d'évaluation des connaissances en allemand est organisé en présentiel."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43200&typeBac=0&originePc=0",
+            "quote": "les candidats pouvant justifier d'un niveau certifié B2 ou supérieur en allemand (certifications du type Goethe-institut ou équivalent), sont dispensés de ce test."
+          }
+        ]
+      }
+    ]
+  }
+}

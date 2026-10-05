@@ -1,0 +1,134 @@
+{
+  "slug": "de-hochschule-pforzheim-gestaltung-technik-hrk219-bachelors-in-business-ad-daad9800",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9800/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9800/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,500 EUR"
+        },
+        {
+          "url": "https://businesspf.hs-pforzheim.de/en/studies/application",
+          "quote": "Tuition fees for international students outside EU: 1.500 € per semester"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 31
+          }
+        },
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 11,
+            "day": 30
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://businesspf.hs-pforzheim.de/en/studies/application",
+          "quote": "For non-EU applicants with non-EU university entrance qualification (high school degree) the deadlines are: 31st of May for the Winter Semester (Starting beginning of October) 30th of November for the Summer Semester (Starting middle of March)"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://businesspf.hs-pforzheim.de/en/studies/application",
+          "quote": "Via the University Application Portal: Submit your documents directly to the International Office of Pforzheim University through the university's application portal."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "university entrance qualification",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://businesspf.hs-pforzheim.de/en/studies/application",
+          "quote": "You need a university entrance qualification to apply, your transcript need to be recognised. Official translations with Apostille are required for the recognition process."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: The fee is for non-EU applicants according to the DAAD page, but the programme's own page says '1,500 EUR per semester' for applicants from non-EU countries. The general university page states 'Tuition fees for international students outside EU: 1.500 € per semester' and 'Non-EU applicants have a tuition fee of €1,500 per semester.' However, the page also mentions exemptions (e.g., graduates from Deutsche Auslandsschulen). The tuition fact uses the programme-specific quote from the DAAD page which says 'The following tuition fees apply for applicants from: non-EU countries 1,500 EUR' — but the period is not stated in the quote; the university page confirms 'per semester'. Application channel: The programme requires recognition of documents via the university application portal or Studienkolleg Konstanz, but the application itself is submitted via the university portal. No uni-assist is mentioned. Evidence: 'Submit your documents directly to the International Office of Pforzheim University through the university's application portal.' Therefore, applicationChannel is de-university-direct. Deadlines: The university page gives recurring deadlines for non-EU applicants: 31 May for winter semester and 30 November for summer semester. No year is given, so recurring deadlines are used. The DAAD page gives 15 January and 15 July for all countries, but those do not specifically apply to non-EU applicants; the non-EU deadlines are different and more specific. Duration: 7 semesters = 3.5 years. Teaching languages: English and French or Spanish. The programme is taught in English and French or Spanish; German is not a teaching language but B1 level required by end of studies. Language proficiency: English B2 required with certificate (e.g. IELTS 5.5). French or Spanish B1 required for International Business programme (as stated in the FAQs). Documents: The quote mentions 'university entrance qualification' and 'transcript' but does not name specific documents. The page also mentions 'Proof of university entrance qualification' and 'Proof of first degree' for Master's, but for Bachelor's it only says 'official EU university entrance qualification' and 'university entrance qualification'. The document list provided is inferred from the quote about recognition; the quotedAs is 'university entrance qualification'. Translation required: yes, as per quote about official translations with Apostille. However, this may not apply to all applicants, but it is required for recognition. The document list may be incomplete; other documents like CV, motivation letter, etc. are mentioned for Master's but not for Bachelor's. The page mentions 'Curriculum vitae in a table format' and 'Proof of university entrance qualification' under Master's required documents, but those are not explicitly for Bachelor's. Therefore, only school-leaving certificate is included. Subject_taken: The admissions score includes specific weightings for English and Mathematics grades, but the requirement is that these subjects are taken. The quote for English is provided. For Mathematics, a quote '30% of the individual Math grade' could be used, but I only used English to avoid duplicate. The rule is for subject_taken, which should be a requirement; the weighting implies that the subject grade is considered, so it is a requirement to have taken these subjects. However, it might be a manual_check. But I followed the instructions: if the quote states a condition of admission, use the rule. The quote about weightings indicates that English and Math grades are used, so they must have been taken. Prior_study_years_min: The quote does not explicitly state 12 years; it says 'non-EU university entrance qualification (high school degree)'. This implies completion of secondary school, which in Morocco is 12 years. But the quote does not state a number of years, so this rule may not be supported. I included it with the quote about high school degree, but that does not state 12 years. This is likely incorrect. I should remove it or find a better quote. The page does not state 12 years explicitly. Therefore, I should remove the prior_study_years_min rule. The other rules are fine. I will remove it from the final output.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["ielts"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9800/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 5.5"
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": ["english"],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://businesspf.hs-pforzheim.de/en/studies/application",
+            "quote": "20% of the English grade"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les notes du diplôme (moyenne, mathématiques, anglais) sont utilisées pour le classement avec des pondérations spécifiques.",
+          "en": "Grades from the diploma (average, mathematics, English) are used for ranking with specific weightings."
+        },
+        "evidence": [
+          {
+            "url": "https://businesspf.hs-pforzheim.de/en/studies/application",
+            "quote": "The admissions score is calculated as based on 50% of the GPA grade (score) 30% of the individual Math grade 20% of the English grade"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien est requis pour les candidats non-UE; veuillez planifier avant le 15 juillet.",
+          "en": "An interview is required for non-EU applicants; schedule before 15 July."
+        },
+        "evidence": [
+          {
+            "url": "https://businesspf.hs-pforzheim.de/en/studies/application",
+            "quote": "The interview will be scheduled by the study programme. The interview will be held before the 15th of July."
+          }
+        ]
+      }
+    ]
+  }
+}

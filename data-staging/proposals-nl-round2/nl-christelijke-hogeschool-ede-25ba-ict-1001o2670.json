@@ -1,0 +1,65 @@
+{
+  "slug": "nl-christelijke-hogeschool-ede-25ba-ict-1001o2670",
+  "programmePage": "https://che.nl/opleidingen/ict/bachelor/ict",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 1
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://che.nl/info-opleidingen/aanmelden-opleiding",
+          "quote": "Als je een nationaliteit hebt van een land buiten de EU en je je wilt aanmelden voor een opleiding aan de CHE, is het de bedoeling dat je je uiterlijk 1 mei aanmeldt!"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://che.nl/info-opleidingen/aanmelden-opleiding",
+          "quote": "Wil jij je aanmelden voor een bachelor, associate degree of master (voltijd, deeltijd of duaal), meld je dan aan via Studielink (www.studielink.nl) en log in met je DigiD."
+        }
+      ]
+    }
+  },
+  "notes": "No tuition amount for this programme is quoted on the supplied pages: the ICT page only links to a general collegegeld page, and the aanmelden page gives no fee, so tuition is omitted. Intake start month is stated as September but without a year, so startDate is null; the 1 May deadline for non-EU applicants is stated without a year, hence recurringDeadline. The Dutch language (Nt2 B2 / CNaVT B2-C1) requirement quoted from the ICT programme page refers to applicants without a Dutch-language diploma, which matches this applicant.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Votre diplôme non néerlandais sera évalué par Nuffic ; envoyez un scan de vos diplômes, relevés de notes et passeport à stuza.aanmelden@che.nl après votre demande via Studielink.",
+          "en": "Your non-Dutch diploma will be assessed by Nuffic; send a scan of your diplomas, transcripts and passport to stuza.aanmelden@che.nl after applying via Studielink."
+        },
+        "evidence": [
+          {
+            "url": "https://che.nl/info-opleidingen/aanmelden-opleiding",
+            "quote": "Nadat je je verzoek tot inschrijving hebt ingediend via Studielink, verzoeken wij je om een scan van je diploma(‘s), cijferlijst(en) en je paspoort te mailen naar stuza.aanmelden@che.nl."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La page du programme n'indique pas de frais de scolarité pour ce programme ; consultez la page Studiekosten de la CHE pour votre situation (hors UE).",
+          "en": "The programme page does not state a tuition fee for this programme; check the CHE Studiekosten page for your situation (non-EU)."
+        },
+        "evidence": [
+          {
+            "url": "https://che.nl/opleidingen/ict/bachelor/ict",
+            "quote": "Lees hier welk soort collegegeld voor jou geldt en hoeveel je moet betalen."
+          }
+        ]
+      }
+    ]
+  }
+}

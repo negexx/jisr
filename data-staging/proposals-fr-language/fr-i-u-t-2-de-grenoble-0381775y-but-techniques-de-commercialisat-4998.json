@@ -1,0 +1,59 @@
+{
+  "slug": "fr-i-u-t-2-de-grenoble-0381775y-but-techniques-de-commercialisat-4998",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4998&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4998&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: page gives 178 EUR/year (likely the French/EU rate); differentiated fees for non-EU students (2902 EUR/year) are mentioned on a general Campus France Morocco page but not stated for this programme, hence omitted. Intake dates for international applicants not stated on the programme page; Campus France Morocco indicates a 2026-2027 calendar for ADIUT Maroc but not for this specific programme. Application channel omitted as instructed: foreign-diploma applicants apply via Études en France / Campus France.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["tcf", "delf-dalf"],
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez le niveau de français requis (B2) et les certifications acceptées (TCF, DELF B2, DALF) sur la fiche du BUT Techniques de commercialisation.",
+          "en": "Check the required French level (B2) and accepted certificates (TCF, DELF B2, DALF) on the BUT Techniques de commercialisation page."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4998&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les modalités de candidature pour les titulaires d'un Bac marocain : la procédure Études en France est obligatoire.",
+          "en": "Check the application procedures for Moroccan Bac holders: the Études en France procedure is mandatory."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+            "quote": "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "fr-iut-damiens-0801265r-but-gestion-des-entreprises-et-d-10178",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10178&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10178&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant 'Frais de scolarité : Par année 178 euros' sur la fiche Parcoursup est le tarif des étudiants français/UE et n'est pas le tarif différencié des étudiants extra-communautaires : aucun frais propre à ce programme pour un étudiant marocain n'est indiqué, il est donc laissé de côté. Aucune date de candidature avec année n'est donnée sur la fiche pour ce programme (le '180 places en 2026' n'est pas un intake). Le 'Projet de formation motivé' est un document demandé dans le cadre Parcoursup (procédure française) ; à confirmer pour la procédure Études en France. Le niveau B2 de français est présenté comme le 'niveau requis' sur la fiche, mais la page Campus France précise qu'un TCF 400 points ou un DELF B2 est 'recommandé', d'où un manual_check pour la certification.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10178&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Candidats étrangers non titulaires d'un bac français/européen, non UE/EEE, résidant dans un pays Campus France : ne pas s'inscrire sur Parcoursup, candidater via Études en France (www.maroc.campusfrance.org).",
+          "en": "Foreign applicants without a French/European baccalaureate, non-EU/EEA, residing in a Campus France country: do not register on Parcoursup, apply via Etudes en France (www.maroc.campusfrance.org)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10178&typeBac=0&originePc=0",
+            "quote": "vous ne devez pas vous inscrire sur Parcoursup. Vous devez faire vos démarches sur le site de Campus France de votre pays de résidence : www.nom_du_pays.campusfrance.org (exemple : www.maroc.campusfrance.org)."
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      }
+    ]
+  }
+}

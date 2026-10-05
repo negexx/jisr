@@ -58,6 +58,48 @@ describe("scholarshipsForProgram", () => {
       ["xx-test-sch-a"],
     ],
     ["linked slug absent from input dropped", [], ["xx-test-sch-z"], []],
+    [
+      "institutions list containing the programme's institution matches",
+      [S("xx-test-sch-a", { institutions: ["xx-test-inst"] })],
+      [],
+      ["xx-test-sch-a"],
+    ],
+    [
+      "institutions list without the programme's institution excludes",
+      [S("xx-test-sch-a", { institutions: ["xx-test-inst-other"] })],
+      [],
+      [],
+    ],
+    [
+      "institutions list excluding the programme still yields to the explicit link",
+      [S("xx-test-sch-a", { institutions: ["xx-test-inst-other"] })],
+      ["xx-test-sch-a"],
+      ["xx-test-sch-a"],
+    ],
+    [
+      "empty institutions list means no restriction",
+      [S("xx-test-sch-a", { institutions: [] })],
+      [],
+      ["xx-test-sch-a"],
+    ],
+    [
+      "institutions list does not bypass the destination rule",
+      [S("xx-test-sch-a", { destinations: ["XC"], institutions: ["xx-test-inst"] })],
+      [],
+      [],
+    ],
+    [
+      "institutions list does not bypass the fields rule",
+      [S("xx-test-sch-a", { fields: ["xx-test-field-other"], institutions: ["xx-test-inst"] })],
+      [],
+      [],
+    ],
+    [
+      "institutions list does not bypass the nationality filter",
+      [S("xx-test-sch-a", { eligibleNationalities: ["XC"], institutions: ["xx-test-inst"] })],
+      ["xx-test-sch-a"],
+      [],
+    ],
   ] as const)("%s", (_n, list, linked, expected) =>
     expect(
       scholarshipsForProgram(profile(), program({ scholarships: [...linked] }), [...list]).map(

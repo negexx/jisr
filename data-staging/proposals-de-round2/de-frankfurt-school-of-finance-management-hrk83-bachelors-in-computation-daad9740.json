@@ -1,0 +1,82 @@
+{
+  "slug": "de-frankfurt-school-of-finance-management-hrk83-bachelors-in-computation-daad9740",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9740/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 820000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9740/",
+          "quote": "The following tuition fees apply for applicants from: all countries 8,200 EUR"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary School Diploma"
+          },
+          "quotedAs": "Secondary School Diploma",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9740/",
+          "quote": "Successful completion of a Secondary School Diploma (e.g. German Abitur, Fachhochschulreife, IB, EB or equivalent)"
+        }
+      ]
+    }
+  },
+  "notes": "The DAAD page is the only supplied page that describes this programme (Bachelor's in Computational Business Analytics). The second Frankfurt School page describes a different programme (Bachelor in Artificial Intelligence & Data Engineering) and quotes no other fee for non-EU students than the general institution-wide figure. No document list for this programme is given beyond the secondary school diploma; the AIDE page lists other documents but they are not for this programme. The university's own application portal/uni-assist channel is not stated on the supplied pages, so applicationChannel is left out.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9740/",
+            "quote": "English language skills B2 required, proof via placement test/interview"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Réussir l'Online Assessment Centre (test de maths, test cognitif, test d'anglais et entretien) est obligatoire.",
+          "en": "Successful completion of the Online Assessment Centre (maths test, cognitive test, English test and interview) is required."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9740/",
+            "quote": "Successful completion of our Online Assessment Centre, consisting of: Maths test Cognitive test English test Interview"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Frais: 100 EUR de frais de candidature et 400 EUR de frais d'inscription (premier semestre).",
+          "en": "Costs: EUR 100 application fee and EUR 400 enrolment fee (only for the first semester)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9740/",
+            "quote": "100 EUR application fee 400 EUR enrolment fee (only for the first semester)"
+          }
+        ]
+      }
+    ]
+  }
+}

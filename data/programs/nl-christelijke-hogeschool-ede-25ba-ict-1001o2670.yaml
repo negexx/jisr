@@ -39,12 +39,39 @@ intakes:
   source: page-2
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: nl-studielink
+  source: page-2
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: diploma
+      name:
+        fr:
+          text: Diplôme
+          status: draft
+        en:
+          text: Diploma
+          status: draft
+      translationRequired: null
+    - slug: grade-list
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Grade list
+          status: draft
+      translationRequired: null
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+  source: page-2
   info_kind: official
 requirements:
   coverage: partial

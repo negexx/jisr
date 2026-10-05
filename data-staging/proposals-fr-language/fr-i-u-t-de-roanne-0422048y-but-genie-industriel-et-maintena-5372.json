@@ -1,0 +1,50 @@
+{
+  "slug": "fr-i-u-t-de-roanne-0422048y-but-genie-industriel-et-maintena-5372",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5372&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5372&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : Anglais"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5372&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : C2"
+        }
+      ]
+    }
+  },
+  "notes": "The programme page is a Parcoursup fiche, but for a Moroccan applicant with a Moroccan Baccalauréat the application goes through Études en France / Campus France (see https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut), not Parcoursup. The tuition fee on the fiche (178 EUR/year) is a general figure; the Campus France Morocco page states differentiated tuition of 2 902 EUR/year for a Licence for a non-EU student, unless the institution exempts the student.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5372&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez le niveau de français requis (C2) et les conditions de candidature sur le site de l'établissement ou de Campus France.",
+          "en": "Check the required French level (C2) and application conditions on the institution or Campus France website."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5372&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C2"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "fr-i-u-t-de-valence-0260998u-but-informatique-3646",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3646&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3646&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "The 178 EUR/year figure is the Parcoursup fiche's general \"Frais de scolarité\" for this formation (the differentiated non-EU fee of 2902 EUR/year at Licence level is described on the Campus France Maroc page only as an institution-wide rule, not for this programme, and some establishments may exempt); verify the applicable rate with the IUT. The Campus France pages in the set describe the Etudes en France / Campus France procedure and French-certification requirement, not this specific programme. The Parcoursup fiche's \"candidat de nationalité étrangère\" section confirms such applicants must not register on Parcoursup but use Campus France; a foreign application deadline channel is set separately, so no intake dates are given here.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3646&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission se fait sur examen du dossier (notes, appréciations, motivation) ; les résultats scolaires comptent pour 50%. Consultez les attendus et vérifiez les critères de la formation.",
+          "en": "Admission is by dossier review (grades, comments, motivation); academic results count for 50%. Check the stated expectations and criteria of the programme."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3646&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 50%"
+          }
+        ]
+      }
+    ]
+  }
+}

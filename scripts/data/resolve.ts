@@ -361,6 +361,7 @@ function resolveScholarship(record: ScholarshipRecord): Resolved<Scholarship> {
     destinations: [...record.destinations],
     eligibleNationalities: [...record.eligibleNationalities],
     fields: [...record.fields],
+    ...(record.institutions === undefined ? {} : { institutions: [...record.institutions] }),
     level: record.level,
     summary: text(scope, "summary", record.summary),
     support: fact(scope, "support", record.support, copied),

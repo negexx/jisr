@@ -1,0 +1,46 @@
+{
+  "slug": "fr-i-u-t-du-limousin-site-de-limoges-0870125n-but-gestion-des-entreprises-et-d-10689",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10689&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10689&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "The 178 EUR/year tuition figure is the Parcoursup fiche's general 'Frais de scolarité Par année 178 euros', which corresponds to the reduced national rate; the Campus France page states that non-EU students (Moroccan) must pay differentiated tuition (2 902 euros pour une année en cycle de Licence), but that page is about the French public higher-education system in general, not this specific programme, so it was not used as a programme fact. The documents fact is derived from the Campus France Morocco procedure page describing the foreign-diploma applicant's route (Études en France); no other document list for this programme was supplied. applicationChannel omitted per task instructions (foreign-diploma applicants apply via Etudes en France / Campus France).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10689&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La certification de français (TCF, DELF B2, DALF) est obligatoire pour la procédure Études en France, sauf dispense. Vérifiez votre cas de dispense.",
+          "en": "A French certificate (TCF, DELF B2, DALF) is mandatory for the Études en France procedure, unless exempt. Check your exemption case."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      }
+    ]
+  }
+}

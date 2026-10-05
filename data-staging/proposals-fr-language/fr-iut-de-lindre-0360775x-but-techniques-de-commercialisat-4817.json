@@ -1,0 +1,50 @@
+{
+  "slug": "fr-iut-de-lindre-0360775x-but-techniques-de-commercialisat-4817",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4817&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4817&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le programme est un BUT contrôlé par l'Etat. La page Parcoursup n'indique pas de montant de droits différenciés ni de dispense pour les étudiants extra-communautaires ; le montant de 178 euros par année est celui affiché pour cette formation. Aucune date de candidature avec année n'est donnée pour les candidats internationaux dans les pages fournies.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4817&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Critères de sélection : résultats scolaires 60 %, savoir-être 20 %, méthodes de travail 10 %, motivation 5 %, engagement 5 % (BUT contrôlé par l'Etat).",
+          "en": "Selection criteria: academic results 60%, behaviour 20%, work methods 10%, motivation 5%, engagement 5% (BUT controlled by the State)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4817&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 60 % Méthodes de travail 10 % Savoir-être 20 % Motivation 5 % Engagement et activités 5 %"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4817&typeBac=0&originePc=0",
+            "quote": "BUT contrôlé par l'Etat"
+          }
+        ]
+      }
+    ]
+  }
+}

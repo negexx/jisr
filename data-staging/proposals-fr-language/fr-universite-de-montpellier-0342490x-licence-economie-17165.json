@@ -1,0 +1,67 @@
+{
+  "slug": "fr-universite-de-montpellier-0342490x-licence-economie-17165",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17165&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17165&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucun frais de scolarité n'est mentionné dans la fiche Parcoursup de ce programme. Le montant indiqué (2902 EUR) est le montant général des droits d'inscription différenciés pour une année en cycle de Licence en France, publié par Campus France Maroc pour les étudiants marocains. Le programme peut prévoir des exonérations. L'applicationChannel n'est pas inclus : pour ce programme, un candidat marocain titulaire du Bac marocain doit passer par Études en France / Campus France, ce qui est défini séparément. Le document listé n'est pas une demande explicite du programme mais une exigence de la procédure de candidature Campus France, confirmée par la page 'Les certifications de français (TCF, DELF B2, DALF) exigées à la soumission du dossier de candidature'.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17165&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Capacités d'accueil limitées et sélection sur dossier : l'admission en licence Economie est soumise à l'examen des résultats scolaires, notamment en mathématiques, économie et expression écrite. Consultez le site de l'université.",
+          "en": "Limited places and selection based on application file: admission to the Economics bachelor depends on review of academic results, especially in mathematics, economics and written expression. Check the university's website."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17165&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 70%"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17165&typeBac=0&originePc=0",
+            "quote": "Le Bachelor Universitaire de Technologie est une licence professionnelle"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non ressortissants de l'U.E. titulaires d'un diplôme équivalent au baccalauréat français ne passent pas par Parcoursup mais par la procédure DAP ; vérifiez votre cas auprès de Campus France Maroc.",
+          "en": "Non-EU candidates holding a diploma equivalent to the French baccalaureate do not go through Parcoursup but through the DAP procedure; check your situation with Campus France Maroc."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=17165&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -26,8 +26,11 @@ teachingLanguages:
   source: page-3
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
+  source: page-2
   info_kind: official
 intakes:
   value: null
@@ -38,8 +41,35 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+    - slug: transcript-of-records
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Transcript of records
+          status: draft
+      translationRequired: null
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -73,3 +103,6 @@ sources:
   page-3:
     url: https://ibl.w.thm.de/?utm_source=ip.daad.de&amp;utm_medium=ip&amp;utm_campaign=ip2026-2027&amp;campaign=DAAD
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.thm.de/site/international/incoming-wege-an-die-thm/master-bewerbung/uni-assist-bewerbungsverfahren-master.html
+    last_verified_at: 2026-10-04

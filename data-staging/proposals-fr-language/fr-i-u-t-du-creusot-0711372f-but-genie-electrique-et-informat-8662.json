@@ -1,0 +1,58 @@
+{
+  "slug": "fr-i-u-t-du-creusot-0711372f-but-genie-electrique-et-informat-8662",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8662&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8662&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des droits différenciés (2 902 €) vient de la page Campus France Maroc sur le coût des études ; c'est un tarif national, non spécifique à ce BUT, et certains établissements exonèrent les étudiants étrangers. La page Parcoursup ne donne que « 178 euros par année », tarif réservé aux étudiants français/UE : ne pas l'utiliser. La même page indique un niveau de français B2 (pour s'inscrire) mais ne liste pas les tests acceptés : les tests TCF et DELF B2 viennent des règles nationales Campus France pour la procédure Études en France. Cette page Parcoursup décrit un candidat français/UE ; un candidat marocain titulaire du Bac marocain doit candidater via Études en France (www.maroc.campusfrance.org), pas via Parcoursup.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8662&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Vous pouvez passer un TCF TP (tout public), un DELF B2 ou un DALF C1/C2 pour toutes les candidatures."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La sélection se fait sur dossier via Études en France (Campus France Maroc) : la commission analyse les résultats scolaires (35 %), les méthodes de travail (25 %), le savoir-être (25 %), la motivation (10 %) et l'engagement (5 %). Un entretien peut être demandé.",
+          "en": "Selection is based on a file reviewed via Études en France (Campus France Morocco): the jury weighs academic results (35%), work methods (25%), behaviour (25%), motivation (10%) and engagement (5%). An interview may be requested."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8662&typeBac=0&originePc=0",
+            "quote": "Les entretiens ne sont pas systématiques, mais le responsable de la formation peut quelquefois être amené à contacter les candidats par téléphone ou par mail afin de préciser un point du dossier de candidature."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8662&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 35 % Méthodes de travail 25 % Savoir-être 25 % Motivation 10 % Engagement et activités 5 %"
+          }
+        ]
+      }
+    ]
+  }
+}

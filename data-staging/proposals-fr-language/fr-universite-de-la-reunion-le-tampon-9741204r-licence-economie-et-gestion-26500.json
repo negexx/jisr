@@ -1,0 +1,63 @@
+{
+  "slug": "fr-universite-de-la-reunion-le-tampon-9741204r-licence-economie-et-gestion-26500",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=26500&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=26500&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Les pages fournies sont, pour la plupart, des pages générales de Campus France Maroc (frais de scolarité, certification de français, procédure de candidature) et non la page propre au programme ; la fiche Parcoursup décrit la formation mais indique explicitement que les candidats non ressortissants de l'UE titulaires d'un diplôme équivalent au baccalauréat français ne passent pas par Parcoursup, mais par la procédure DAP. Le montant des droits différenciés (2 902 euros par an en Licence) est un montant national pour les étudiants extracommunautaires en établissement public, non un tarif propre à cette formation ; il est retenu ici comme frais applicables à un étudiant marocain non-UE. Les documents à fournir et les dates de candidature ne sont pas précisés pour ce programme dans les pages fournies. Aucun document listé dans les pages (la check-list des documents n'apparaît pas).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": ["delf-dalf", "tcf"],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=26500&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Vous pouvez passer un TCF TP (tout public), un DELF B2 ou un DALF C1/C2 pour toutes les candidatures."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le choix de l'option mathématiques en Première et Terminale est souhaitable ; la formation est destinée aux bacheliers généraux de bon niveau.",
+          "en": "Choosing the mathematics option in the final two years of high school is desirable; the programme is intended for general-stream school leavers with good grades."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=26500&typeBac=0&originePc=0",
+            "quote": "Le choix de l'option mathématique en 1ère et en Terminale est souhaitable."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est examinée par un jury sur dossier : résultats scolaires (48 %), méthodes de travail (32 %), motivation (20 %).",
+          "en": "Admission is reviewed by a panel based on the application: academic results (48%), working methods (32%), motivation (20%)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=26500&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 48 % Méthodes de travail 32 % Motivation 20 %"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "fr-iut-lyon1-site-de-villeurbanne-doua-0690274y-but-gestion-des-entreprises-et-d-8279",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8279&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8279&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "La formation est enregistrée sur Parcoursup, mais les candidats étrangers non titulaires d'un bac français/européen résidant dans un pays à procédure Études en France (Maroc) passent par Campus France / Études en France, pas par Parcoursup. Les frais indiqués (178 euros par année) correspondent aux droits d'inscription d'un étudiant non extra-communautaire : le montant des droits différenciés (2 902 euros/an pour une licence) pour un étudiant marocain n'est pas indiqué sur la fiche de ce programme. Aucune date limite de candidature propre à ce programme n'est donnée pour les candidats internationaux.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8279&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Candidature via Etudes en France / Campus France (pays à procédure Etudes en France) : ne pas s'inscrire sur Parcoursup.",
+          "en": "Application via Etudes en France / Campus France (countries with the Etudes en France procedure): do not register on Parcoursup."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8279&typeBac=0&originePc=0",
+            "quote": "vous ne devez pas vous inscrire sur Parcoursup"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+            "quote": "vous devrez formuler vos vœux sur la plateforme Études en France"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sélection sur dossier : épreuve orale possible (entretien) pour certains dossiers, à prendre en compte.",
+          "en": "Selection based on the application file: an oral interview may be required for some files; take this into account."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8279&typeBac=0&originePc=0",
+            "quote": "Entretien oral pour les dossiers nécessitant un complément d'informations."
+          }
+        ]
+      }
+    ]
+  }
+}

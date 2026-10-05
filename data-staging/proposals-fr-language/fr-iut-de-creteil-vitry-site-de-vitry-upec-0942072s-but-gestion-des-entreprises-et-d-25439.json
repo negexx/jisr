@@ -1,0 +1,46 @@
+{
+  "slug": "fr-iut-de-creteil-vitry-site-de-vitry-upec-0942072s-but-gestion-des-entreprises-et-d-25439",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=25439&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=25439&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Frais de scolarité : le seul montant figurant sur la fiche (178 euros) concerne les étudiants français et communautaires ; les droits différenciés pour les étudiants extra-communautaires (2 902 euros/an en Licence) figurent sur une page générale Campus France, pas sur la fiche de ce programme, donc le tarif exact pour un étudiant marocain reste à vérifier. Les documents listés sur la fiche correspondent à la procédure Parcoursup ; pour un titulaire de bac marocain la candidature passe par Études en France, non inclus ici.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=25439&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier le niveau académique minimal et les critères d'examen du dossier (résultats scolaires 60 %, savoir-être 20 %, méthodes de travail 9 %, motivation 9 %).",
+          "en": "Check the minimal academic level and the file review criteria (school results 60%, behaviour 20%, work methods 9%, motivation 9%)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=25439&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 60 % Méthodes de travail 9 % Savoir-être 20 % Motivation 9 % Engagement et activités 2 %"
+          }
+        ]
+      }
+    ]
+  }
+}

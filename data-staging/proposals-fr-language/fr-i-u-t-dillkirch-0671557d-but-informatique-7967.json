@@ -1,0 +1,58 @@
+{
+  "slug": "fr-i-u-t-dillkirch-0671557d-but-informatique-7967",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7967&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7967&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7967&typeBac=0&originePc=0",
+          "quote": "Ces épreuves sont des QCM portant sur la pensée algorithmique, la logique, les mathématiques et la compréhension de texte."
+        }
+      ]
+    }
+  },
+  "notes": "Aucun frais de scolarité pour les étudiants extracommunautaires n'est indiqué pour ce programme. La fiche Parcoursup mentionne 178 euros par année et la gratuité pour les boursiers, mais ces montants concernent les étudiants français ou communautaires et une inscription via Parcoursup ; les droits différenciés (2 902 euros pour une année de Licence) figurent uniquement sur une page générale de Campus France Maroc et sont donc laissés de côté. Le niveau B2 est un niveau de français « requis pour s'inscrire à la formation » indiqué sur la fiche Parcoursup, qui s'adresse aux candidats français ; pour la procédure Campus France, la certification de français (TCF, DELF B2, DALF) est obligatoire à la soumission du dossier, sauf dispense, et un TCF de 400 points ou un DELF B2 est « recommandé » (et non exigé). La candidature d'un étudiant de nationalité marocaine titulaire d'un Bac marocain passe par la plateforme Études en France de Campus France et non par Parcoursup, comme indiqué sur les pages maroc.campusfrance.org ; la date limite du 15 novembre 2026 concerne cette procédure. Les listes de documents des pages maroc.campusfrance.org sont générales (certification de français, etc.) et ne sont pas reprises ici.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7967&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des épreuves écrites (QCM : pensée algorithmique, logique, mathématiques, compréhension de texte) sont organisées du 25 avril au 17 mai 2026. Si vous êtes sélectionné, prenez rendez-vous du 13 au 18 avril 2026.",
+          "en": "Written tests (multiple-choice: algorithmic thinking, logic, mathematics, text comprehension) are held from 25 April to 17 May 2026. If selected, you must book your slot between 13 and 18 April 2026."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7967&typeBac=0&originePc=0",
+            "quote": "Les épreuves sont des QCM portant sur la pensée algorithmique, la logique, les mathématiques et la compréhension de texte."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7967&typeBac=0&originePc=0",
+            "quote": "Les épreuves écrites auront lieu : Du samedi 25 avril 2026 au dimanche 17 mai 2026"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7967&typeBac=0&originePc=0",
+            "quote": "Si vous êtes sélectionné pour ces épreuves, vous devrez vous reconnecter sur Parcoursup entre le lundi 13 avril 2026 et le samedi 18 avril 2026 afin de prendre rendez-vous."
+          }
+        ]
+      }
+    ]
+  }
+}

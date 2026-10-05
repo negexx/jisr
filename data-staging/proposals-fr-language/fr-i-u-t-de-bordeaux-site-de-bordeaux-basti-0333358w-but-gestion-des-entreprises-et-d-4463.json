@@ -1,0 +1,50 @@
+{
+  "slug": "fr-i-u-t-de-bordeaux-site-de-bordeaux-basti-0333358w-but-gestion-des-entreprises-et-d-4463",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4463&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4463&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune donnée de durée, de frais de scolarité pour étudiants hors UE, de dates de candidature ni de liste de documents propres à ce BUT n'a été trouvée dans les pages fournies. La page Parcoursup ne mentionne que 178 euros par année, tarif applicable aux étudiants français et communautaires (l'exonération éventuelle des droits différenciés doit être vérifiée auprès de l'établissement), donc aucun frais hors UE n'est extrait. La candidature des titulaires d'un Bac marocain passe par Études en France / Campus France ; les mentions de Parcoursup sur la page concernent les titulaires du Bac français ou européen (voir https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut : « Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France »).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4463&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidatures sont examinées par une commission selon une grille : résultats scolaires 25 %, méthodes de travail 20 %, savoir-être 25 %, motivation 25 %, engagement 5 %. Vérifiez les attendus nationaux (maîtrise du français, deux langues vivantes dont l'anglais, techniques quantitatives).",
+          "en": "Applications are reviewed by a commission using a grid: academic results 25%, working methods 20%, soft skills 25%, motivation 25%, engagement 5%. Check the national expectations (French proficiency, two living languages including English, quantitative techniques)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4463&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 25 % Méthodes de travail 20 % Savoir-être 25 % Motivation 25 % Engagement et activités 5 %"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4463&typeBac=0&originePc=0",
+            "quote": "Avoir une connaissance suffisante dans deux langues vivantes dont l’anglais permettant de progresser pendant la formation"
+          }
+        ]
+      }
+    ]
+  }
+}

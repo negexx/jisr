@@ -8,6 +8,7 @@ import { checkVerified } from "./checker";
 import { enrichProposal, type National, readNational } from "./enrich-fr";
 import {
   CHANNEL_SLUGS,
+  currentStudyYear,
   decodeEntities,
   LANGUAGE_CODES,
   pageText,
@@ -74,7 +75,7 @@ Every key under "facts" is optional: include only the facts you can quote.
 FACT DETAILS
 - durationYears: number of years of the programme. A semester count or an ECTS count in the quote is fine: semesters / 2 (6 semesters = 3, 7 semesters = 3.5, 8 semesters = 4) and ECTS / 60 (180 ECTS = 3, 210 ECTS = 3.5, 240 ECTS = 4). The value can be a half year: never round it to a whole number.
 - teachingLanguages: ISO codes from ${LANGUAGE_CODES.join(", ")}: the language(s) the programme is TAUGHT in. An elective, an optional module or a higher-semester option in another language does not add a language; list a language only if the programme (or a whole track of it) is taught in it.
-- tuition: the tuition fee a student from OUTSIDE the EU/EEA pays, in minor units (EUR 14,650 = 1465000), period "year" or "semester". If the quote says there are no tuition fees for this student, amountMinor is 0 and the quote must say so; never write 0 just because you found no fee. A fee that is only for EU students, or only a general institution-wide figure that may not apply, is not stated for this programme: leave it out and say why in notes.
+- tuition: the tuition fee a student from OUTSIDE the EU/EEA pays, in minor units (EUR 14,650 = 1465000), period "year" or "semester". If the quote says there are no tuition fees for this student, amountMinor is 0 and the quote must say so; never write 0 just because you found no fee. A fee that is only for EU students, or only a general institution-wide figure that may not apply, is not stated for this programme: leave it out and say why in notes (unless the TASK block below allows an institution-wide fee page for this country).
 - intakes: dates as ISO YYYY-MM-DD. Write a start or opening date, or a dated deadline, only if the quote states day, month and YEAR; an application deadline without a year goes in recurringDeadline (below), never an inferred year. null for a date the pages do not give. Never output an intake whose dates and recurringDeadline are all null: leave the fact out. applicationDeadline is the deadline of the NON-EU / international applicant: include a quote that says the date is for international, non-EU or foreign-qualification applicants (for example "for non-EU applicants", "with a qualification from abroad"). If the page only gives a general deadline without saying who it is for, leave the deadline out. If the quote states day and month for the application deadline but NO year (for example "15 July", "1 mei"), write it as "recurringDeadline": {"month": 7, "day": 15} with applicationDeadline null: never invent or infer a year. If the quote states a year, never use recurringDeadline. Both forms need the international/non-EU quote described above.
 - applicationChannel: exactly one of ${CHANNEL_SLUGS.join(", ")}; the quote must name the platform or route. How to choose is explained per country in the TASK at the end.
 - documents: the documents an international applicant must submit, one list item per document that the quotes name (never a document the pages do not name). slug: lowercase English kebab-case ("school-leaving-certificate"). name.fr (required) and name.en: the document's name. quotedAs (required): the document's name EXACTLY as written in the quote, in the page's own language ("Lebenslauf", "Reisepass", "school-leaving certificate"); a document whose quotedAs is not in a quote is discarded. translationRequired: true only if a quote says that document must be translated or officially translated; otherwise null (never false). Leave the fact out if the pages give no document list.
@@ -93,8 +94,13 @@ export type Page = { url: string; text: string };
 const COUNTRY_NOTES: Record<string, string> = {
   FR: 'Do not output applicationChannel for this programme: a foreign-diploma applicant applies through Etudes en France / Campus France, which is set separately. Pages that say "apply on Parcoursup" describe French and European Bac holders.',
   DE: "applicationChannel for a foreign-diploma applicant: de-uni-assist-vpd if the pages say foreign applicants must first have their documents reviewed by uni-assist (the VPD, Vorpruefungsdokumentation, preliminary review); de-uni-assist if they apply through uni-assist; de-university-direct if they apply directly in the university's own application portal. Choose the one the pages state for international applicants, and quote that sentence.",
-  NL: "applicationChannel is nl-studielink if the pages say to apply through Studielink.",
+  NL: 'applicationChannel is nl-studielink if the pages say to apply through Studielink. Tuition: a fee stated on this programme\'s own page always wins over an institution-wide figure. An institution-wide fee page of the institution MAY otherwise be used for this bachelor programme when its quote states ONE non-EU amount (instellingscollegegeld / institutional fee; never the wettelijk collegegeld, which is the EU/EEA rate, and never an instellingscollegegeld the page says is for EEA students, for example for a second degree) for bachelor programmes or for all programmes, in the same sentence or table row as the study year {STUDY_YEAR} or a later one and as voltijd/full-time or all modes: then it applies to this programme, so propose it (amount for the year, period "year"). Give two quotes: one that says who pays the instellingscollegegeld (students from outside the EU/EEA, or who do not meet the conditions for the statutory fee) and one with the amount and the study year; an amount row alone cannot be checked. If the page lists exceptions ("m.u.v.", "behalve", "except", a separate line for particular programmes), use the general amount only if this programme is not among them. If the page gives several amounts by programme group, faculty, mode or year and the quote does not tie one of them to a bachelor full-time programme, or gives only a range ("varies per programme", "from ... to ..."), leave tuition out and say why in notes.',
 };
+
+// The note for a country; {STUDY_YEAR} becomes the study year running now ("2026-2027").
+function noteFor(country: string, studyYear: number): string {
+  return (COUNTRY_NOTES[country] ?? "").replace("{STUDY_YEAR}", `${studyYear}-${studyYear + 1}`);
+}
 
 export type ProgrammeMeta = {
   slug: string;
@@ -113,7 +119,12 @@ function block(page: Page): string {
 }
 
 export function buildPrompt(
-  input: ProgrammeMeta & { shared: readonly Page[]; own: readonly Page[] },
+  input: ProgrammeMeta & {
+    shared: readonly Page[];
+    own: readonly Page[];
+    // the study year the prompt names (default: the current one); a test or a rerun can fix it
+    studyYear?: number;
+  },
 ): { system: string; user: string } {
   const sharedUrls = new Set(input.shared.map((p) => p.url));
   const own = input.own.filter((p) => !sharedUrls.has(p.url));
@@ -121,7 +132,7 @@ export function buildPrompt(
     COUNTRY_NOTES[input.country] === undefined
       ? ""
       : `
-${COUNTRY_NOTES[input.country]}`
+${noteFor(input.country, input.studyYear ?? currentStudyYear())}`
   }`;
   return {
     system: INSTRUCTION,

@@ -1,0 +1,59 @@
+{
+  "slug": "nl-fontys-hogeschool-30gb-tilburg-ict-1001o2677",
+  "programmePage": "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["nl"],
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+          "quote": "ICT 4 jaar Bachelor Voltijd Start februari en september Nederlands Eindhoven Tilburg"
+        }
+      ]
+    }
+  },
+  "notes": "De pagina's geven geen collegegeldbedrag voor het ICT-programma. De collegegeldpagina zegt alleen dat niet-EER-studenten instellingscollegegeld betalen waarvan de hoogte per opleiding varieert; er wordt geen bedrag voor dit programma genoemd. Er zijn geen aanmeldingsdeadlines met dag, maand en jaar genoemd die specifiek voor niet-EU/internationale aanvragers gelden. 'Aanmelden via Studielink' wordt op de pagina Aanmelden en inschrijven gezegd voor Bachelor, Master en Associate Degree in het algemeen. De documentenlijst voor internationale aanvragers wordt niet op deze pagina's gegeven.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme marocain (Baccalauréat) est accepté comme diplôme d'accès équivalent à havo, vwo ou mbo niveau 4.",
+          "en": "Check whether your Moroccan Baccalauréat is accepted as an equivalent entry qualification to havo, vwo or mbo level 4."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+            "quote": "Met een havo-, vwo-, of mbo-diploma (niveau 4) ben je direct toelaatbaar."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Si vous n'avez pas le diplôme requis, contactez l'école : une admission alternative peut être possible dans certains cas.",
+          "en": "If you do not have the required diploma, contact the school: admission may still be possible in some cases."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+            "quote": "Heb je niet de juiste vooropleiding? Geen paniek! In sommige gevallen kun je alsnog worden toegelaten."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme obtenu à l'étranger : voir la page 'Aanmelden internationaal' pour la procédure d'admission et les documents à fournir.",
+          "en": "Foreign diploma: see the 'Aanmelden internationaal' page for the admission procedure and the documents to submit."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+            "quote": "Heb je je vooropleiding buiten Nederland gehaald? Ga naar aanmelden internationaal."
+          }
+        ]
+      }
+    ]
+  }
+}

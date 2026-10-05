@@ -42,9 +42,54 @@ applicationChannel:
   source: daad
   info_kind: guidance
 documents:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    - slug: university-entrance-qualification
+      name:
+        fr:
+          text: Diplôme d'accès à l'université (copie)
+          status: draft
+        en:
+          text: University entrance qualification (copy)
+          status: draft
+      translationRequired: null
+    - slug: recognition-of-certificates
+      name:
+        fr:
+          text: Reconnaissance des certificats du Centre pour étudiants internationaux de Constance ou VPD d'uni-assist
+          status: draft
+        en:
+          text: Recognition of certificates from the Center for International Students, Konstanz or VPD by uni-assist
+          status: draft
+      translationRequired: null
+    - slug: proof-of-language-skills
+      name:
+        fr:
+          text: Preuve de compétences linguistiques
+          status: draft
+        en:
+          text: Proof of language skills
+          status: draft
+      translationRequired: null
+    - slug: complete-cv
+      name:
+        fr:
+          text: CV complet, chronologique
+          status: draft
+        en:
+          text: Complete CV, chronological
+          status: draft
+      translationRequired: null
+    - slug: proof-of-study-orientation-test
+      name:
+        fr:
+          text: Preuve du test d'orientation aux études
+          status: draft
+        en:
+          text: Proof of study orientation test
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
   source: daad
@@ -58,3 +103,6 @@ sources:
   page-1:
     url: https://www.hs-heilbronn.de/en/mechatronics-and-robotics
     last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.hs-heilbronn.de/en/checklist-for-bachelor-applicants-2f2f62a1ac1a86e6
+    last_verified_at: 2026-10-04

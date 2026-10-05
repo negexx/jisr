@@ -27,12 +27,21 @@ teachingLanguages:
   source: page-1
   info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 0
+    currency: EUR
+    period: year
   source: daad
-  info_kind: guidance
+  info_kind: official
 intakes:
-  value: null
-  source: page-2
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 8
+        day: 1
+  source: daad
   info_kind: official
 applicationChannel:
   value: de-uni-assist

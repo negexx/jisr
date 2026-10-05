@@ -1,0 +1,85 @@
+{
+  "slug": "fr-i-u-t-de-ville-davray-0920956p-but-genie-mecanique-et-productiq-11059",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11059&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11059&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Candidats étrangers non titulaires d'un bac français ou européen résidant dans un pays Campus France (comme le Maroc) : candidature via la plateforme Études en France et non Parcoursup. Les frais de scolarité indiqués (178 €/an) ne concernent pas ces candidats ; les droits différenciés de 2 902 €/an en Licence s'appliquent, sous réserve d'exonération par l'établissement. Les dates (20 avril - 11 mai 2026) proviennent d'une page Parcoursup et peuvent ne pas s'appliquer à la procédure Études en France. Le niveau B2 de français est indiqué comme requis pour l'inscription, mais aucune certification spécifique n'est nommée dans la fiche.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11059&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11059&typeBac=0&originePc=0",
+            "quote": "Avoir une connaissance suffisante de l’anglais permettant de progresser pendant la formation"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les résultats scolaires comptent pour 61 % de l'analyse du dossier ; les notes de mathématiques sont jugées essentielles. Vérifiez les exigences précises auprès de la formation.",
+          "en": "School results account for 61% of the file review; mathematics grades are rated essential. Check the exact requirements with the programme."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11059&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 61%"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La lettre de motivation doit être personnelle (sans IA), argumentée et cohérente avec la formation ; elle compte pour 13 % de l'analyse.",
+          "en": "The cover letter must be personal (no AI), argued and consistent with the programme; it accounts for 13% of the review."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11059&typeBac=0&originePc=0",
+            "quote": "Lettre de motivation PARCOURSUP personnelle (sans IA), argumentée et cohérente vis à vis de la formation."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats avec un profil atypique peuvent être convoqués à une épreuve orale (entretien) entre le 20 avril et le 11 mai 2026.",
+          "en": "Applicants with an atypical profile may be invited to an oral exam (interview) between 20 April and 11 May 2026."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11059&typeBac=0&originePc=0",
+            "quote": "Les épreuves orales ou l'entretien auront lieu : Du lundi 20 avril 2026 au lundi 11 mai 2026"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "slug": "nl-fontys-hogeschool-30gb-ict-1001o2677",
+  "programmePage": "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["nl"],
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+          "quote": "Bachelor Voltijd Start februari en september Nederlands Eindhoven Tilburg"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition fee applicable to a non-EEA student (institutional fee) is not quantified for this programme; the collegegeld page only states that a fee applies to students from outside the EEA. The programme page shows 'Nederlands' as the language of instruction, but the same page contains the English words 'More about this programme Check admission requirements', so a check of the language of instruction (and of the international admission page) is advisable. No intakes were included: no start date, opening date or international application deadline is stated with day, month and year in the texts. The bachelor admission deadline page is not included in the supplied texts. An OER document page was supplied but contains no text.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission et le tarif (instellingscollegegeld) applicables aux étudiants hors EEE; consultez la page d'admission et la collegegeldmeter.",
+          "en": "Check the admission requirements and the tuition fee (instellingscollegegeld) applicable to non-EEA students; see the admission page and the collegegeldmeter."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+            "quote": "Met een havo-, vwo-, of mbo-diploma (niveau 4) ben je direct toelaatbaar."
+          },
+          {
+            "url": "https://www.fontys.nl/Studeren/Praktische-informatie/Collegegeld.htm",
+            "quote": "Dat is bijvoorbeeld het geval bij een tweede bachelor- of masteropleiding of als je uit een land komt dat geen onderdeel is van de Europese Economische Ruimte (EER)."
+          }
+        ]
+      }
+    ]
+  }
+}

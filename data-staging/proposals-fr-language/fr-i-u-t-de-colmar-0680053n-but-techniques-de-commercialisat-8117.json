@@ -1,0 +1,98 @@
+{
+  "slug": "fr-i-u-t-de-colmar-0680053n-but-techniques-de-commercialisat-8117",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8117&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8117&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune information sur les frais de scolarité pour les étudiants internationaux n'est fournie; la page mentionne uniquement 178 euros par an pour les étudiants en général, qui ne s'applique pas spécifiquement à ce programme pour les non-EU. Les langues d'enseignement ne sont pas explicitement listées, mais le français est requis au niveau B2, ce qui indique que l'enseignement est en français. Les documents requis sont mentionnés dans la section 'Conseils aux candidats' comme 'envoyer le CV du candidat', mais il n'est pas clair s'il s'agit d'une exigence formelle pour les candidats internationaux.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8117&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8117&typeBac=0&originePc=0",
+            "quote": "Avoir une connaissance suffisante de l’anglais et d’une seconde langue vivante permettant de progresser pendant la formation"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats internationaux doivent utiliser la plateforme Études en France de Campus France et suivre la procédure ADIUT Maroc, avec des dates de candidature spécifiques.",
+          "en": "International applicants must use the Campus France Études en France platform and follow the ADIUT Maroc procedure, with specific application dates."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+            "quote": "Bac marocain ou Bac international marocain ou diplôme européen de fin d'études secondaires*, quelque soit votre lieu de résidence et l'année du diplôme, vous devrez formuler vos vœux sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La candidature se fait selon le calendrier ADIUT Maroc : du 1er octobre au 15 novembre 2026 (date limite à 23h59 heure marocaine).",
+          "en": "Application follows the ADIUT Maroc calendar: from 1 October to 15 November 2026 (deadline at 23:59 Moroccan time)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+            "quote": "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien de motivation peut être organisé pour les candidats.",
+          "en": "A motivation interview may be organised for applicants."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8117&typeBac=0&originePc=0",
+            "quote": "un entretien de motivation pourra éventuellement être organisé si nécessaire"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La lettre de motivation doit être personnalisée et adressée au chef de département.",
+          "en": "The cover letter must be personalised and addressed to the department head."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=8117&typeBac=0&originePc=0",
+            "quote": "indiquer le nom du chef de département en tant que destinataire"
+          }
+        ]
+      }
+    ]
+  }
+}

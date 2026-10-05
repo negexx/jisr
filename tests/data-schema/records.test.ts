@@ -500,6 +500,20 @@ describe("record schemas", () => {
     expect(COLLECTIONS.scholarships.schema.safeParse(record).success).toBe(true);
   });
 
+  it("accepts a scholarship with an institutions list, an empty one, or none", () => {
+    const { schema } = COLLECTIONS.scholarships;
+    expect(schema.safeParse(scholarship({ institutions: ["xx-test-inst"] })).success).toBe(true);
+    expect(schema.safeParse(scholarship({ institutions: [] })).success).toBe(true);
+    expect(schema.safeParse(scholarship()).success).toBe(true);
+  });
+
+  it("rejects a scholarship institution that is not a slug", () => {
+    const { schema } = COLLECTIONS.scholarships;
+    const result = schema.safeParse(scholarship({ institutions: ["Not A Slug"] }));
+    expect(result.success).toBe(false);
+    expect(result.error?.issues.map((i) => i.path.join("."))).toContain("institutions.0");
+  });
+
   it("keeps cost profile line keys equal to LIVING_COST_CATEGORIES", () => {
     const lineKeys = Object.keys(CostProfileRecordSchema.shape.lines.shape);
     expect([...lineKeys].sort()).toEqual([...LIVING_COST_CATEGORIES].sort());

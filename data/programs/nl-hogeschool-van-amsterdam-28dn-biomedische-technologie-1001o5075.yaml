@@ -25,8 +25,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 1064800
+    currency: EUR
+    period: year
+  source: page-1
   info_kind: official
 intakes:
   value: null
@@ -64,3 +67,6 @@ sources:
   page-2:
     url: https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/21-toelatingsonderzoek
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hva.nl/studeren/studiekeuze/keuze-gemaakt/collegegeld/collegegeldtarieven
+    last_verified_at: 2026-10-04

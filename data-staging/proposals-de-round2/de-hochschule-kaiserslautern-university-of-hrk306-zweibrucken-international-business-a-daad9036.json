@@ -1,0 +1,33 @@
+{
+  "slug": "de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken-international-business-a-daad9036",
+  "programmePage": "https://hs-kl.de/betriebswirtschaft/studiengaenge/bachelor/international-business-administration",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-kl.de/en/international/from-abroad/costs",
+          "quote": "You do not have to pay any tuition fees in Rheinland-Pfalz."
+        },
+        {
+          "url": "https://hs-kl.de/international/aus-dem-ausland/kosten",
+          "quote": "Sie zahlen im Bundesland Rheinland-Pfalz keine Studiengebühren."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.hs-kl.de/en/studying/application/apply-from-abroad",
+          "quote": "Applications with foreign academic qualifications must be submitted via the uni-assist platform."
+        }
+      ]
+    }
+  },
+  "notes": "Les frais de scolarité indiqués par le programme (DAAD) sont « None » et la page des coûts indique qu'il n'y a pas de frais en Rhénanie-Palatinat ; le Sozialbeitrag (139 EUR par semestre) n'est pas des frais de scolarité et n'a pas été inclus. Les dates limites d'inscription (31 août / 28-29 février) sont générales et non spécifiques aux candidats internationaux, elles n'ont donc pas été reportées dans les faits. La candidature pour les diplômes étrangers passe par uni-assist (pas de mention de VPD). Le programme est enseigné en allemand avec de l'anglais ; la page anglaise donne deux informations contradictoires sur l'anglais (B2 CEFR avec plusieurs tests, mais aussi « No minimum language level required »), l'anglais est donc listé comme condition avec acceptedTests mais sans certificateRequired ferme."
+}

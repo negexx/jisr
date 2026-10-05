@@ -1,0 +1,106 @@
+{
+  "slug": "nl-christelijke-hogeschool-ede-25ba-bedrijfskunde-1001o2793",
+  "programmePage": "https://che.nl/opleidingen/bedrijfskunde-ondernemen-hrm/bachelor/bedrijfskunde",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 1
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://che.nl/opleidingen/bedrijfskunde-ondernemen-hrm/bachelor/bedrijfskunde",
+          "quote": "Meld je aan voor 1 mei"
+        },
+        {
+          "url": "https://che.nl/info-opleidingen/aanmelden-opleiding",
+          "quote": "Als je een nationaliteit hebt van een land buiten de EU en je je wilt aanmelden voor een opleiding aan de CHE, is het de bedoeling dat je je uiterlijk 1 mei aanmeldt!"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://che.nl/info-opleidingen/aanmelden-opleiding",
+          "quote": "Wil jij je aanmelden voor een bachelor, associate degree of master (voltijd, deeltijd of duaal), meld je dan aan via Studielink (www.studielink.nl) en log in met je DigiD."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "diploma",
+          "name": {
+            "fr": "Diplôme",
+            "en": "Diploma"
+          },
+          "quotedAs": "diploma",
+          "translationRequired": null
+        },
+        {
+          "slug": "grade-list",
+          "name": {
+            "fr": "Relevé de notes",
+            "en": "Grade list"
+          },
+          "quotedAs": "cijferlijst",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Passeport",
+            "en": "Passport"
+          },
+          "quotedAs": "paspoort",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://che.nl/info-opleidingen/aanmelden-opleiding",
+          "quote": "Nadat je je verzoek tot inschrijving hebt ingediend via Studielink, verzoeken wij je om een scan van je diploma(‘s), cijferlijst(en) en je paspoort te mailen naar stuza.aanmelden@che.nl."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the pages give no tuition fee for this programme for a non-EU applicant; the institution-wide 'collegegeld' page is only referenced, so no tuition fact is stated. The 'Meld je aan voor 1 mei' deadline appears on the programme page without saying it is specifically for non-EU applicants; the application page does state explicitly that non-EU applicants must apply by 1 May, so this deadline is carried as the international applicant deadline (no year given). Document names: the quote gives 'diploma(‘s)', 'cijferlijst(en)' and 'paspoort'; translation is not mentioned in any quote, so translationRequired is null.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://che.nl/opleidingen/bedrijfskunde-ondernemen-hrm/bachelor/bedrijfskunde",
+            "quote": "Beschik je niet over een diploma van een Nederlandstalige opleiding (havo, vwo, mbo4, hbo of universiteit)? Dan ben je alleen toelaatbaar met een diploma Nt2 (programma B2) of CNaVT (programma B2 of C1)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme marocain (Baccalauréat) est jugé équivalent à un diplôme néerlandais (havo, vwo ou mbo niveau 4) ; il sera évalué par Nuffic.",
+          "en": "Check whether your Moroccan diploma (Baccalauréat) is considered equivalent to a Dutch diploma (havo, vwo or mbo level 4); it will be assessed by Nuffic."
+        },
+        "evidence": [
+          {
+            "url": "https://che.nl/info-opleidingen/aanmelden-opleiding",
+            "quote": "Om vast te kunnen stellen of jouw diploma gelijkwaardig is aan een havo-, vwo- of mbo4-diploma, hebben we meer informatie nodig."
+          }
+        ]
+      }
+    ]
+  }
+}

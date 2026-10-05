@@ -1,0 +1,130 @@
+{
+  "slug": "de-technische-hochschule-mittelhessen-thm-hrk97-international-business-a-daad11140",
+  "programmePage": "https://ibl.w.thm.de/admission-and-application/",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11140/",
+          "quote": "Tuition fees per semester None"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11140/",
+          "quote": "As a public university, THM does not charge tuition fees."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "Schulabschlusszeugnis",
+          "translationRequired": null
+        },
+        {
+          "slug": "transcript-of-records",
+          "name": {
+            "fr": "Relevé de notes",
+            "en": "Transcript of records"
+          },
+          "quotedAs": "Notenübersicht(en) Ihres Schulabschlusses",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Passeport",
+            "en": "Passport"
+          },
+          "quotedAs": "Reisepass/Aufenthaltsnachweis",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.thm.de/site/international/incoming-wege-an-die-thm/master-bewerbung/uni-assist-bewerbungsverfahren-master.html",
+          "quote": "Für eine Bewerbung müssen Sie die folgenden Dokumente digital bei uni-assist hochladen: Schulabschlusszeugnis (z.B. A-Levels, High School Diploma, Baccalaureat, Gaocao etc.) Notenübersicht(en) Ihres Schulabschlusses (des Abiturs, der Abschlussprüfung, des letzten Schuljahrs) Studiennachweis (Hochschulaufnahmeprüfung, Immatrikulationsbescheinigung, Notenübersicht(en), Abschlusszeugnis, Diplom) - mit Angabe der Fachrichtung/des Studiengangs und den belegten Kursen (falls vorhanden) Nachweis der Deutschkenntnisse Reisepass/Aufenthaltsnachweis (eine Kopie)"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition : les pages consultées (DAAD et THM) indiquent qu'il n'y a pas de frais de scolarité pour ce programme public ; la contribution semestrielle (~350 EUR) n'est pas des frais de scolarité. Aucun document n'est indiqué comme nécessitant une traduction pour ce programme ; la page THM mentionne seulement que des traductions peuvent être nécessaires en général (deuxième page). Les exigences d'admission spécifiques non allemandes (TestAS, essai, entretien) sont des conditions d'admission de ce programme. Application : la page bachelor de la THM indique que les candidats internationaux envoient leur candidature à uni-assist qui procède à une pré-vérification (VPD) avant transmission à la THM ; la page du programme mentionne « Application submitted on Uni-Assist portal » et des délais pour les candidats non allemands : 1er octobre au 15 décembre 2026 (semestre d'été 2027).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://ibl.w.thm.de/admission-and-application/",
+            "quote": "Specific admission requirements for applicants with a non-German university entrance qualification: English language certificate C1 (details here)"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "A1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://ibl.w.thm.de/admission-and-application/",
+            "quote": "German language certificate A1 (details here)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats avec un diplôme étranger doivent fournir un TestAS : version papier au moins 95 points et version numérique au moins 75 points, dans le module de base et le module de spécialité économie.",
+          "en": "Applicants with a non-German university entrance qualification must provide TestAS results: paper-based test at least 95 points and digital test at least 75 points, in the core module and the subject module economics."
+        },
+        "evidence": [
+          {
+            "url": "https://ibl.w.thm.de/admission-and-application/",
+            "quote": "TestAS results: paper-based test at least 95 points and digital test at least 75 points, in the core module and the subject module economics (details here)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un essai en anglais illustrant la motivation pour étudier l'International Business & Leadership (max. 3000 caractères) est requis.",
+          "en": "An essay written in English illustrating the motivation for studying International Business & Leadership (max. 3000 characters) is required."
+        },
+        "evidence": [
+          {
+            "url": "https://ibl.w.thm.de/admission-and-application/",
+            "quote": "An essay written in English illustrating the motivation for studying International Business & Leadership (max. 3000 characters)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Après examen des documents, un entretien peut être organisé. L'université vous informera de la décision au plus tard le 15 février 2027.",
+          "en": "After reviewing your documents, an interview may take place. The university will inform you of the decision by February 15th, 2027 at the latest."
+        },
+        "evidence": [
+          {
+            "url": "https://ibl.w.thm.de/admission-and-application/",
+            "quote": "We will inform you by February 15th, 2027 about the result of the interview."
+          }
+        ]
+      }
+    ]
+  }
+}

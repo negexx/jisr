@@ -1,0 +1,79 @@
+{
+  "slug": "nl-scholarship",
+  "name": "NL Scholarship",
+  "provider": "Nuffic (Study in NL), with the Dutch Ministry of Education, Culture and Science and participating institutions",
+  "destinations": ["NL"],
+  "institutions": [
+    "nl-breda-university-of-applied-sciences-21ui",
+    "nl-fontys-hogeschool-30gb",
+    "nl-fontys-hogeschool-30gb-tilburg",
+    "nl-fontys-hogeschool-30gb-venlo",
+    "nl-de-haagse-hogeschool-27um",
+    "nl-de-haagse-hogeschool-27um-delft",
+    "nl-de-haagse-hogeschool-27um-zoetermeer",
+    "nl-hogeschool-van-arnhem-en-nijmegen-25kb",
+    "nl-hogeschool-utrecht-25dw",
+    "nl-hogeschool-rotterdam-22oj",
+    "nl-hogeschool-van-amsterdam-28dn"
+  ],
+  "eligibleNationalities": [],
+  "fields": [],
+  "summary": {
+    "fr": "Bourse de 5 000 EUR pour les étudiants hors Espace économique européen qui commencent une licence (ou un master) aux Pays-Bas ; versée la première année, ce n'est pas une bourse couvrant tous les frais de scolarité. Seuls certains établissements participent, et à l'intérieur d'un établissement seules certaines filières ou écoles : vérifiez que votre programme y figure.",
+    "en": "A EUR 5,000 scholarship for students from outside the European Economic Area who start a bachelor’s (or master’s) in the Netherlands; paid in the first year, not a full-tuition scholarship. Only some institutions take part, and within an institution only some programmes or schools: check that your programme is on the institution's list."
+  },
+  "howToApply": {
+    "fr": "Candidatez directement auprès de l'établissement : il fixe les filières participantes, ses conditions et ses dates limites (voir son site, rubrique NL Scholarship).",
+    "en": "Apply through the institution: it sets the participating programmes, its requirements and its deadlines (see its NL Scholarship page)."
+  },
+  "officialUrl": "https://www.studyinholland.nl/finances/nl-scholarship",
+  "support": {
+    "amount": {
+      "min": 5000,
+      "max": 5000,
+      "currency": "EUR",
+      "per": "once"
+    },
+    "covers": []
+  },
+  "deadline": null,
+  "documents": null,
+  "evidence": {
+    "eligibility": [
+      {
+        "url": "https://www.studyinholland.nl/finances/nl-scholarship",
+        "quote": "is meant for international students from outside the European Economic Area (EEA) who want to do their bachelor’s or master’s in the Netherlands"
+      }
+    ],
+    "level": [
+      {
+        "url": "https://www.studyinholland.nl/finances/nl-scholarship",
+        "quote": "is meant for international students from outside the European Economic Area (EEA) who want to do their bachelor’s or master’s in the Netherlands"
+      },
+      {
+        "url": "https://www.studyinholland.nl/finances/nl-scholarship",
+        "quote": "You are applying for a full-time bachelor’s or master’s programme at one of the participating Dutch higher education institutions"
+      }
+    ],
+    "support": [
+      {
+        "url": "https://www.studyinholland.nl/finances/nl-scholarship",
+        "quote": "The scholarship amounts to € 5,000. You will receive this in the first year of your studies."
+      }
+    ],
+    "howToApply": [
+      {
+        "url": "https://www.studyinholland.nl/finances/nl-scholarship",
+        "quote": "You meet the specific requirements of the institution of your choice. You can find these on the website of the institution."
+      },
+      {
+        "url": "https://www.studyinholland.nl/finances/nl-scholarship",
+        "quote": "Please check the website of the institution you want to apply to for the specific deadline(s)."
+      },
+      {
+        "url": "https://www.studyinholland.nl/finances/nl-scholarship",
+        "quote": "You can find the specific closing dates and the fields of study for this academic year on the website of the institution you want to apply to."
+      }
+    ]
+  }
+}

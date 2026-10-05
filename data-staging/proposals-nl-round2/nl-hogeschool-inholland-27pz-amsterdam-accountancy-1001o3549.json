@@ -1,0 +1,59 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-amsterdam-accountancy-1001o3549",
+  "programmePage": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["nl"],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/accountancy-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar, Amsterdam en Rotterdam taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1036000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Voldoe je niet aan de voorwaarden voor het wettelijk collegegeld dan betaal je het instellingscollegegeld."
+        },
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Instellingscollegegeld Voltijd en duaal: € 10.360"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+          "quote": "Via Studielink kun je je aanmelden voor een opleiding bij Hogeschool Inholland."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the EUR 10,360 instellingscollegegeld (voltijd, 2026-2027) is the institution-wide rate that applies to students who do not qualify for the statutory fee (non-EU/EEA nationals); the page does not state a fee specific to this Accountancy programme. Apply via Studielink, but note it normally requires DigiD, which is only available to those registered in a Dutch municipality: 'Om in te loggen bij Studielink heb je een DigiD nodig. Je kunt alleen een DigiD aanvragen als je officieel staat ingeschreven bij een Nederlandse gemeente.' The documents list comes from the general In- en uitschrijfregels; the Dutch B2 language requirement quote is from Inholland's Creative Business (Dutch-taught) entry-requirements page, not from the Accountancy page, so the human auditor should verify it for Accountancy. No intakes could be extracted: the available deadlines in the pages are for study year 2025-2026 (a different year than this programme page mentions) and are not stated for international/non-EU applicants in the sense required.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Votre diplôme étranger sera évalué (validé) par la CSA pour vérifier qu'il équivaut à un diplôme néerlandais (havo, vwo ou mbo-4).",
+          "en": "Your foreign diploma will be evaluated (validated) by the CSA to check that it is equivalent to a Dutch diploma (havo, vwo or mbo-4)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+            "quote": "Heb je een diploma buiten Nederland behaald dan moet onder meer worden beoordeeld of dit gelijkwaardig is aan een Nederlands havo-, vwo- of mbo-diploma niveau 4."
+          }
+        ]
+      }
+    ]
+  }
+}

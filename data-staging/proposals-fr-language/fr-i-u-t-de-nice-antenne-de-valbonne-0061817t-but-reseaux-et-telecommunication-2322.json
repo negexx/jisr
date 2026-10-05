@@ -1,0 +1,59 @@
+{
+  "slug": "fr-i-u-t-de-nice-antenne-de-valbonne-0061817t-but-reseaux-et-telecommunication-2322",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2322&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2322&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucun frais de scolarité spécifique aux étudiants extra-communautaires n'est indiqué pour ce BUT : la fiche ne mentionne que 178 euros par an, tarif général (étudiants français/UE). Le canal de candidature n'est pas inclus (Etudes en France / Campus France pour les diplômes étrangers). Aucune date de candidature n'est fournie dans les pages pour ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2322&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une lettre de motivation personnelle est conseillée (usage d'IA à proscrire). Consultez les attendus et la grille d'analyse des candidatures.",
+          "en": "A personal motivation letter is advised (use of AI is discouraged). See the stated expectations and the application analysis grid."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2322&typeBac=0&originePc=0",
+            "quote": "Nous conseillons à tous les candidats de rédiger une lettre de motivation personnelle."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien peut être proposé (non obligatoire) : du 5 au 13 mai 2026, prise de rendez-vous sur Parcoursup les 29-30 avril 2026.",
+          "en": "An interview may be offered (not compulsory): 5 to 13 May 2026, appointment booking on Parcoursup on 29-30 April 2026."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2322&typeBac=0&originePc=0",
+            "quote": "Les épreuves orales ou l'entretien auront lieu : Du mardi 05 mai 2026 au mercredi 13 mai 2026"
+          }
+        ]
+      }
+    ]
+  }
+}

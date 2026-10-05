@@ -1,0 +1,78 @@
+{
+  "slug": "fr-universite-cote-dazur-0062205p-licence-economie-et-gestion-15111",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=15111&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=15111&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+        }
+      ]
+    }
+  },
+  "notes": "The page https://dossierappel.parcoursup.fr/... is a Parcoursup sheet. Parcoursup is for French and European Bac holders; a Moroccan Bac holder must apply via Études en France / Campus France. To avoid contradicting the task, the applicationChannel fact was omitted. The tuition fact (2,902 EUR/year) is the differentiated tuition fee for non-EU students in a Licence cycle, taken from a general Campus France page, not from the programme's own page. The requirement 'subject_taken' uses 'any' mode because the quote lists multiple subjects the student must have taken at least one of.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=15111&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": ["mathematics", "history-geography", "philosophy", "economics"],
+        "mode": "any",
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=15111&typeBac=0&originePc=0",
+            "quote": "Parmi les spécialités choisies en 1ère/Terminale, l’élève devra avoir suivi au moins : Histoire, Géographie, Géopolitique et Sciences-Politiques, Sciences Économiques et sociales, Mathématiques, Humanités, Littérature et Philosophie."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Formation sélective : 80 places en 2026 ; l'admission dépend d'un examen du dossier (notes, motivation, projet de formation). Vérifiez les attendus et le calendrier de candidature.",
+          "en": "Selective programme: 80 places in 2026; admission depends on a review of your file (grades, motivation, study plan). Check the requirements and application calendar."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=15111&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=15111&typeBac=0&originePc=0",
+            "quote": "80 places en 2026"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le montant des droits d'inscription différenciés à payer est de 2 902 € pour une année en cycle de Licence. Certains établissements exonèrent les étudiants étrangers.",
+          "en": "The differentiated tuition fee to pay is €2,902 for one year in a Licence cycle. Some institutions exempt foreign students."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+            "quote": "Certains établissements exonèrent les étudiants étrangers du paiement des frais d'inscription différenciés."
+          }
+        ]
+      }
+    ]
+  }
+}

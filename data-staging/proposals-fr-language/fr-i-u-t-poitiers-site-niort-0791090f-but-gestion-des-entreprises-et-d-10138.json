@@ -1,0 +1,59 @@
+{
+  "slug": "fr-i-u-t-poitiers-site-niort-0791090f-but-gestion-des-entreprises-et-d-10138",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10138&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10138&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Aucun frais de scolarité spécifique au programme n'est indiqué pour les étudiants internationaux extracommunautaires : la fiche Parcoursup montre uniquement 178 euros par année (tarif national, et gratuité pour les boursiers). Les conditions pour candidater sur Parcoursup renvoient à la procédure Études en France/Campus France pour ce profil. Le document « Lettre de motivation » est retenu d'après la grille d'analyse ; vérifier si un CV ou d'autres pièces sont demandés dans le dossier Études en France.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10138&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La lettre de motivation est évaluée pour la motivation et la cohérence du projet de formation (critères d'analyse des candidatures).",
+          "en": "A cover letter is assessed for motivation and consistency of the study plan (application analysis criteria)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10138&typeBac=0&originePc=0",
+            "quote": "Motivation pour la formation Lettre de motivation Important 2 sur 4"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Avoir une maîtrise du français permettant de communiquer à l'écrit et à l'oral de façon adaptée est un attendu national.",
+          "en": "Having command of French adequate for written and oral communication is a national expected prerequisite."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10138&typeBac=0&originePc=0",
+            "quote": "* Avoir une maitrise du français permettant de communiquer à l’écrit et à l’oral de façon adaptée"
+          }
+        ]
+      }
+    ]
+  }
+}

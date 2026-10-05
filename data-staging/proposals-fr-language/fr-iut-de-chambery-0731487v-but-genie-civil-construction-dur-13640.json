@@ -1,0 +1,72 @@
+{
+  "slug": "fr-iut-de-chambery-0731487v-but-genie-civil-construction-dur-13640",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13640&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13640&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Le montant \"178 euros par année\" affiché sur la fiche Parcoursup correspond aux droits d'inscription des étudiants français/UE ; il ne s'applique pas au candidat marocain (droits différenciés). La page Campus France Maroc \"Le coût des études\" indique des droits différenciés de 2 902 €/an en Licence pour un étudiant extra-communautaire, mais il s'agit d'une information générale sur les établissements publics français, non propre à ce programme : frais à vérifier auprès de l'IUT. teachingLanguages : la fiche indique l'anglais comme Langue vivante 1, mais la langue d'enseignement n'est pas explicitement indiquée ; le français est retenu ici (niveau de français requis B2). Aucune date d'ouverture/limite de candidature propre à ce programme (les dates 1er octobre – 15 novembre 2026 concernent le programme ADIUT Maroc pour les BUT, pas spécifiquement ce programme).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13640&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Candidats étrangers non titulaires d'un bac français/européen : candidature via Campus France / Etudes en France du pays de résidence, pas sur Parcoursup.",
+          "en": "Non-EU applicants without a French/European bac must apply via Campus France / Etudes en France in their country of residence, not on Parcoursup."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13640&typeBac=0&originePc=0",
+            "quote": "vous ne devez pas vous inscrire sur Parcoursup. Vous devez faire vos démarches sur le site de Campus France de votre pays de résidence"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sélection : résultats scolaires (66%), méthodes de travail (10%), savoir-être (10%), motivation (10%), engagement (4%). Lettre de motivation personnalisée. Éventuel entretien.",
+          "en": "Selection: academic results (66%), work methods (10%), soft skills (10%), motivation (10%), engagement (4%). Personalised motivation letter. Possible interview."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13640&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 66 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Il est conseillé de privilégier les spécialités et options scientifiques (Math, Physique, SI…).",
+          "en": "Applicants are advised to favour scientific specialities and options (Maths, Physics, Engineering Sciences…)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13640&typeBac=0&originePc=0",
+            "quote": "Il est conseillé au candidat de privilégier les spécialités et options scientifiques (Math, Physique, SI…)"
+          }
+        ]
+      }
+    ]
+  }
+}

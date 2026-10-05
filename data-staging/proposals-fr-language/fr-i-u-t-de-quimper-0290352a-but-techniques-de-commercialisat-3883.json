@@ -1,0 +1,46 @@
+{
+  "slug": "fr-i-u-t-de-quimper-0290352a-but-techniques-de-commercialisat-3883",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3883&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3883&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : Anglais Langue vivante 2 : Allemand, Espagnol, Italien, FLE Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Les 178 euros de frais de scolarité sont les droits d'inscription en Licence mentionnés sur cette fiche (tarif national). Un étudiant extra-communautaire titulaire d'un Bac marocain relève des droits différenciés (2 902 €/an) selon la page maroc.campusfrance, mais cette fiche Parcoursup n'indique pas le montant pour ce profil ; à vérifier auprès de l'établissement. L'apprenti est possible au-delà de la 1ère année ; modalités à vérifier.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3883&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le comité d'examen évalue vos résultats scolaires (40%), vos méthodes de travail (15%), votre savoir-être (20%), votre motivation (20%) et vos engagements (5%). Préparez une lettre de motivation personnalisée.",
+          "en": "The admissions committee evaluates your academic results (40%), working methods (15%), soft skills (20%), motivation (20%) and commitments (5%). Prepare a personalised motivation letter."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3883&typeBac=0&originePc=0",
+            "quote": "Le projet de formation motivé doit être personnalisé et argumenté. La lettre de motivation doit montrer une bonne connaissance de la formation et de l'IUT."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "slug": "fr-iut-aix-marseille-site-de-marseille-chat-0134385w-but-genie-civil-construction-dur-30795",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30795&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30795&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30795&typeBac=0&originePc=0",
+          "quote": "D'autres matières générales complémentaires sont enseignées telles que l'expression-communication, l'anglais, les mathématiques,..."
+        }
+      ]
+    }
+  },
+  "notes": "Frais de scolarité indiqués sur la fiche Parcoursup : 178 euros par an (et pas de frais pour les boursiers). Ce montant correspond aux droits d'inscription applicables aux étudiants français/UE ; il ne s'applique pas aux étudiants extra-communautaires comme les titulaires d'un Bac marocain (voir la page Campus France Maroc sur les droits différenciés, non liée à ce programme précis). Aucun montant de frais de scolarité spécifique pour les étudiants non-UE n'est indiqué pour ce BUT : la tuition est laissée hors facts. La fiche Parcoursup s'adresse aux candidats qui s'inscrivent sur Parcoursup ; les candidats étrangers non-UE avec Bac marocain doivent passer par Études en France / Campus France (applicationChannel traité séparément, non inclus ici).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30795&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La commission d'examen des vœux analyse les candidatures selon une grille : résultats scolaires 50 %, savoir-être 30 %, méthodes de travail 10 %, motivation 10 %. Consultez cette grille pour évaluer votre profil.",
+          "en": "The admissions commission reviews applications using a grid: academic results 50%, behaviour 30%, working methods 10%, motivation 10%. Check this grid to assess your profile."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30795&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 50 % Méthodes de travail 10 % Savoir-être 30 % Motivation 10 % Au total 100 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La lettre de motivation et le projet professionnel sont examinés par la commission d'examen des vœux. Soignez votre argumentaire, notamment axé sur votre projet professionnel.",
+          "en": "The cover letter and professional project are reviewed by the admissions commission. Prepare your statement carefully, especially around your professional project."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30795&typeBac=0&originePc=0",
+            "quote": "La commission des vœux porte un regard attentif à la motivation du candidat vis à vis de la formation et à l’argumentaire développé dans la lettre de motivation, notamment les développements axés sur le projet professionnel du candidat."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le domaine du génie civil est pluridisciplinaire : il est fortement conseillé de présenter de bons résultats dans toutes les matières, y compris les langues.",
+          "en": "Civil engineering is multidisciplinary: it is strongly advised to show good results in all subjects, including languages."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30795&typeBac=0&originePc=0",
+            "quote": "Le domaine du Génie Civil est très pluridisciplinaire. Il est ainsi fortement conseillé aux candidats de présenter de bons résultats dans toutes les matières, y compris les langues."
+          }
+        ]
+      }
+    ]
+  }
+}

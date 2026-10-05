@@ -1,0 +1,46 @@
+slug: han-nl-scholarship
+name: HAN NL Scholarship
+provider: HAN University of Applied Sciences
+destinations:
+  - NL
+eligibleNationalities: []
+fields: []
+institutions:
+  - nl-hogeschool-van-arnhem-en-nijmegen-25kb
+level: bachelor
+summary:
+  fr:
+    text: "Bourse HAN pour les étudiants de licence hors UE/EEE : jusqu'à 12 500 EUR au total (2 500 EUR par semestre la première année, puis 2 500 EUR par an si vous obtenez les crédits requis)."
+    status: draft
+  en:
+    text: "HAN scholarship for bachelor students from outside the EU/EEA: up to EUR 12,500 in total (EUR 2,500 per semester in the first year, then EUR 2,500 per year if you earn the required credits)."
+    status: draft
+support:
+  value: null
+  source: page-1
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-1
+  info_kind: official
+  rules: []
+documents:
+  value: null
+  source: page-1
+  info_kind: official
+howToApply:
+  fr:
+    text: Voir la page des bourses de HAN pour les conditions et la procédure.
+    status: draft
+  en:
+    text: See HAN's scholarships page for the conditions and procedure.
+    status: draft
+officialUrl: https://www.han.nl/international/en/study-and-living/scholarships/
+sources:
+  page-1:
+    url: https://www.han.nl/international/en/study-and-living/scholarships/
+    last_verified_at: 2026-10-04

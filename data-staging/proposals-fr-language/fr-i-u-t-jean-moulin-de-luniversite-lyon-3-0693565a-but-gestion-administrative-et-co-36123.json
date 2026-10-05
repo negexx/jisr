@@ -1,0 +1,59 @@
+{
+  "slug": "fr-i-u-t-jean-moulin-de-luniversite-lyon-3-0693565a-but-gestion-administrative-et-co-36123",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=36123&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=36123&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    }
+  },
+  "notes": "Les frais de scolarité (178 euros par année) ne sont pas repris dans le JSON car ils concernent uniquement les étudiants français ou européens ; la page indique un tarif spécifique pour les étudiants non-européens (2902 euros pour une année en cycle de Licence) mais il s'agit d'une page générale de Campus France Maroc qui ne concerne pas ce programme spécifique. Aucune date limite de candidature pour les étudiants non-européens n'est indiquée sur la page du programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=36123&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Épreuves écrites (français, anglais, raisonnement logique, calculs de base, culture générale, connaissance du diplôme) : du lundi 27 avril 2026 au jeudi 30 avril 2026. Vérifier la convocation.",
+          "en": "Written tests (French, English, logical reasoning, basic calculations, general knowledge, knowledge of the programme): from Monday 27 April 2026 to Thursday 30 April 2026. Check your invitation."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=36123&typeBac=0&originePc=0",
+            "quote": "Les épreuves écrites auront lieu : Du lundi 27 avril 2026 au jeudi 30 avril 2026"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Candidature sélective : résultats scolaires, méthodes de travail et savoir-être comptent pour 20% chacun, motivation 40%. Une lettre de motivation est demandée.",
+          "en": "Selective admission: academic results, work methods and soft skills each count for 20%, motivation 40%. A motivation letter is required."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=36123&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 20 % Méthodes de travail 20 % Savoir-être 20 % Motivation 40 %"
+          }
+        ]
+      }
+    ]
+  }
+}

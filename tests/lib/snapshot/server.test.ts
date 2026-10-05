@@ -1,13 +1,15 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import type { Manifest } from "@/data-schema/snapshot";
+import { type Manifest, shardNames } from "@/data-schema/snapshot";
+import { scholarshipsForProgram } from "@/domain/scholarships";
 import { SnapshotError } from "@/lib/snapshot/errors";
 import { loadProgramPageData, programStaticParams, readBuildSnapshot } from "@/lib/snapshot/server";
 
-import { E2E_SCHOLARSHIP_SLUGS, E2E_SLUGS } from "../../fixtures/e2e/profiles";
+import { E2E_PROFILE, E2E_SCHOLARSHIP_SLUGS, E2E_SLUGS } from "../../fixtures/e2e/profiles";
 import {
   buildSnapshot,
+  buildVariant,
   copySnapshot,
   E2E_DATA_DIR,
   EMPTY_DATA_DIR,
@@ -83,6 +85,86 @@ describe("loadProgramPageData", () => {
       text: "Complete matching test programme",
       note: "none",
     });
+  });
+
+  it("honours a scholarship's institutions list, as domain scholarshipsForProgram does", async () => {
+    const restrict = (institution: string) =>
+      buildVariant([
+        {
+          file: "scholarships/xx-test-schol-open.yaml",
+          from: "eligibleNationalities: []",
+          to: `eligibleNationalities: []\ninstitutions: [${institution}]`,
+        },
+      ]);
+    const slugsFor = async (dir: string) =>
+      (await loadProgramPageData(E2E_SLUGS.ok, "en", dir))?.scholarships.map((s) => s.slug);
+
+    expect(await slugsFor(restrict("xx-test-inst-pub-c"))).not.toContain(
+      E2E_SCHOLARSHIP_SLUGS.open,
+    );
+    expect(await slugsFor(restrict("xx-test-inst-pub-b"))).toContain(E2E_SCHOLARSHIP_SLUGS.open);
+  }, 180_000);
+
+  // The static page and the client's personal box share one predicate (appliesToProgram): for a
+  // student whose nationality passes, both list the same scholarships in the same order.
+  describe("parity with domain scholarshipsForProgram", () => {
+    const parity = async (dir: string) => {
+      const snapshot = await readBuildSnapshot(dir);
+      let compared = 0;
+      for (const slug of Object.values(E2E_SLUGS)) {
+        const data = await loadProgramPageData(slug, "en", dir);
+        if (data === null) continue;
+        const name = shardNames.scholarships(data.program.country);
+        const shard =
+          snapshot.manifest.shards[name] === undefined ? null : await snapshot.shard(name);
+        const all = shard?.kind === "scholarships" ? shard.scholarships : [];
+        for (const nationality of ["XA", "XZ", "XQ"]) {
+          const passes = (s: { eligibleNationalities: readonly string[] }) =>
+            s.eligibleNationalities.length === 0 || s.eligibleNationalities.includes(nationality);
+          const domain = scholarshipsForProgram({ ...E2E_PROFILE, nationality }, data.program, all);
+          expect(data.scholarships.filter(passes).map((s) => s.slug)).toEqual(
+            domain.map((s) => s.slug),
+          );
+          compared += 1;
+        }
+      }
+      expect(compared).toBeGreaterThan(0);
+    };
+
+    it("agrees for explicit links, open scholarships and a field-restricted one", async () => {
+      await parity(base);
+      const data = await loadProgramPageData(E2E_SLUGS.ok, "en", base);
+      // linked (xa, xz) and fields-matched (open, xa) cases are all present in this programme
+      expect(data?.scholarships.map((s) => s.slug)).toEqual(
+        Object.values(E2E_SCHOLARSHIP_SLUGS).sort(),
+      );
+    });
+
+    it("agrees when fields exclude the programme", async () => {
+      await parity(
+        buildVariant([
+          {
+            file: "scholarships/xx-test-schol-open.yaml",
+            from: "fields: []",
+            to: "fields: [xx-test-field-eng]",
+          },
+        ]),
+      );
+    }, 180_000);
+
+    it("agrees when institutions exclude or include the programme's institution", async () => {
+      for (const institution of ["xx-test-inst-pub-b", "xx-test-inst-pub-c"])
+        await parity(
+          buildVariant([
+            {
+              file: "scholarships/xx-test-schol-open.yaml",
+              from: "eligibleNationalities: []",
+              to: `eligibleNationalities: []
+institutions: [${institution}]`,
+            },
+          ]),
+        );
+    }, 240_000);
   });
 
   it("looks up text in the requested locale", async () => {

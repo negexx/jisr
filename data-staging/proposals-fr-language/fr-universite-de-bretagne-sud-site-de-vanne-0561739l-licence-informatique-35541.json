@@ -1,0 +1,54 @@
+{
+  "slug": "fr-universite-de-bretagne-sud-site-de-vanne-0561739l-licence-informatique-35541",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35541&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35541&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35541&typeBac=0&originePc=0",
+          "quote": "Langue vivante 1 : Anglais Langue vivante 2 : Optionnelle : Allemand ou Espagnol"
+        }
+      ]
+    }
+  },
+  "notes": "Page Parcoursup: elle décrit la procédure pour les titulaires du bac français/européen. Pour un candidat marocain (diplôme étranger hors UE), la candidature passe par Études en France / Campus France, non par Parcoursup (voir les pages Campus France Maroc fournies). Le montant de 178 euros par an est le tarif affiché sur la fiche Parcoursup ; les pages Campus France indiquent un droit différencié de 2 902 euros par an en Licence pour un étudiant extra-communautaire, mais sans le lier explicitement à ce programme. Aucune durée (années/ECTS) ni date de candidature internationale ne figure sur la page du programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35541&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est décidée par une commission qui examine surtout vos notes : mathématiques (essentiel), physique-chimie/NSI/sciences de l'ingénieur (important). Aucun prérequis en informatique n'est exigé.",
+          "en": "Admission is decided by a commission that mainly examines your grades: mathematics (essential), physics-chemistry/computer science/engineering sciences (important). No prior computer-science requirement."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35541&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 75%"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=35541&typeBac=0&originePc=0",
+            "quote": "Mention Informatique : Voir la fiche Onisep"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "de-universitat-duisburg-essen-hrk71-duisburg-structural-engineering-daad6153",
+  "programmePage": "https://www.uni-due.de/iw/en/study/b-se.php",
+  "facts": {
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 6,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6153/",
+          "quote": "The following is valid for applicants from: all countries For the winter semester: 1 May - 15 June"
+        },
+        {
+          "url": "https://www.uni-due.de/international/international-admissions-en.php",
+          "quote": "Winter semester For courses with admission restrictions (NC): 01 May - 15 June"
+        },
+        {
+          "url": "https://www.uni-due.de/studierendensekretariat/bewerbungsfristen.php",
+          "quote": "International: 01.05. - 15.06."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.uni-due.de/international/international-admissions-en.php",
+          "quote": "Applications for bachelor's programs (including Medicine) are to be submitted through the uni-assist application portal."
+        },
+        {
+          "url": "https://www.uni-due.de/iw/en/study/b-se.php",
+          "quote": "Prospective students from non-EU countries submit their application to uni-assist (see application deadline)."
+        },
+        {
+          "url": "https://www.uni-due.de/ise/admission.php",
+          "quote": "Applicants who would like to apply for a Bachelor course as a part of the study program International Studies in Engineering (ISE) must first use the application portal of uni-assist."
+        }
+      ]
+    }
+  },
+  "notes": "The programme page is the UDE ISE B.Sc. Structural Engineering page. Tuition is zero because the university states it charges no tuition fees. The application deadline 15 June is recurring (year not stated in the pages). The application channel is uni-assist for bachelor applicants; the pages do not mention a VPD (preliminary review) for this programme. No document list for the application is given in the supplied texts; enrolment-attachments list is not an application-document list.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "de",
+        "minCefr": "B1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6153/",
+            "quote": "German language skills B1 required, please provide an official language certificate, e.g.: Goethe-Zertifikat: Goethe-Zertifikat B1"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": ["toefl", "ielts"],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6153/",
+            "quote": "TOEFL iBT (since 2026): 4 Reading: 4 Listening: 4 Speaking: 4 Writing: 4 IELTS Academic: 5.5 Cambridge English Qualifications: B2 First"
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": ["mathematics"],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://www.uni-due.de/ise/admission.php",
+            "quote": "Applicants must prove that they have studied mathematics in the last 3 years of the previous education entitling them to direct university access and have graduated with a grade of 2.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme d'accès à l'université (Abitur ou équivalent) est requis. Vérifiez si votre baccalauréat marocain est reconnu comme équivalent.",
+          "en": "A university entrance qualification (Abitur or equivalent) is required. Check whether your Moroccan Baccalauréat is recognised as equivalent."
+        },
+        "evidence": [
+          {
+            "url": "https://www.uni-due.de/iw/en/study/b-se.php",
+            "quote": "general higher education entrance qualification (Abitur)"
+          }
+        ]
+      }
+    ]
+  }
+}

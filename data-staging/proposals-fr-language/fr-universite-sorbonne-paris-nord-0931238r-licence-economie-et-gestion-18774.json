@@ -1,0 +1,46 @@
+{
+  "slug": "fr-universite-sorbonne-paris-nord-0931238r-licence-economie-et-gestion-18774",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=18774&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": ["fr"],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=18774&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : C2"
+        }
+      ]
+    }
+  },
+  "notes": "Programme page is a Parcoursup fiche for the Double licence Economie et gestion / Géographie et aménagement at Université Sorbonne Paris Nord. The statement about applying on Parcoursup on this page applies to French or European baccalaureate holders; a Moroccan applicant with a foreign diploma must apply via Etudes en France / Campus France (see https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces), so applicationChannel and any Parcoursup calendar dates are not captured here. Tuition of 178 EUR/year is the headline amount on this fiche; Campus France states differentiated tuition fees that may apply to non-EU students (2 902 EUR for a Licence year) unless exemption. The private-school fee range (6 000 to 18 000 EUR/year) is a general figure, not this programme's fee.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=18774&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sélection sur dossier : résultats scolaires, méthodes de travail, savoir-être, motivation et engagements. Soignez la lettre de motivation.",
+          "en": "Selection is based on your file: academic results, working methods, soft skills, motivation and engagement. Take care over your motivation letter."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=18774&typeBac=0&originePc=0",
+            "quote": "Il est indispensable que celle-ci explique la motivation de chaque candidat.e à rejoindre une double licence économie-geographie (intérêt pour chaque discipline et sur leur complementarité)."
+          }
+        ]
+      }
+    ]
+  }
+}
