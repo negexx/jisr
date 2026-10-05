@@ -35,6 +35,7 @@ export type ProgramFactsSource = {
   institution: Institution | null;
   costProfiles: readonly CostProfile[];
   scholarships: readonly Scholarship[];
+  routeGuidance: readonly { route: string; id: string; fact: FactMeta }[];
   applicationChannel: ApplicationChannel | null;
 };
 
@@ -96,6 +97,13 @@ export function pageFacts(data: ProgramFactsSource, now: IsoDate): PageFact[] {
   for (const scholarship of data.scholarships) {
     add("scholarships", `scholarships/${scholarship.slug}#support`, scholarship.support);
     add("scholarships", `scholarships/${scholarship.slug}#deadline`, scholarship.deadline);
+  }
+  for (const guidance of data.routeGuidance) {
+    add(
+      "scholarships",
+      `admission-routes/${guidance.route}#guidance.${guidance.id}`,
+      guidance.fact,
+    );
   }
   return facts;
 }

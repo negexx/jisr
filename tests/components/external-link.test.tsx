@@ -2,11 +2,23 @@
 import { cleanup, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 
-import { ExternalLink } from "@/components/external-link";
+import { ExternalLink, sourceHostname } from "@/components/external-link";
 
 import { catalogs, expectNoPhysicalDirection, LOCALES, renderWithMessages } from "./trust-helpers";
 
 afterEach(cleanup);
+
+describe("sourceHostname", () => {
+  it("shows an internationalised hostname in Unicode, not as punycode", () => {
+    expect(sourceHostname("https://www.xn--bafg-7qa.de/bafoeg/de/x.html")).toBe("www.bafög.de");
+    expect(sourceHostname("https://xn--mnchen-3ya.de/")).toBe("münchen.de");
+  });
+
+  it("leaves ASCII hostnames alone and still refuses a non-https link", () => {
+    expect(sourceHostname("https://www.campusfrance.org/fr")).toBe("www.campusfrance.org");
+    expect(sourceHostname("http://www.example.org/")).toBeNull();
+  });
+});
 
 describe("ExternalLink", () => {
   it("renders a new-tab anchor with rel noopener noreferrer for an https url", () => {

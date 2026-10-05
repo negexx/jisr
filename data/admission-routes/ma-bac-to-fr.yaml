@@ -15,6 +15,20 @@ note:
   ar:
     text: "بالباكالوريا المغربية، تتقدّمون إلى السنة الأولى من الإجازة أو BUT عبر منصة Études en France التابعة لكامبوس فرانس المغرب (وليس عبر Parcoursup). وكل تكوين يحدد شروطه الخاصة."
     status: draft
+guidance:
+  - id: crous-grant-needs-residence
+    source: crous
+    info_kind: guidance
+    note:
+      fr:
+        text: "La bourse sur critères sociaux (Crous) n'est en général pas accessible à un étudiant qui arrive avec un visa d'études. Hors nationalité française, UE/EEE ou suisse, elle demande un titre de séjour valide, 2 ans de domicile en France et 2 ans de foyer fiscal de rattachement en France (statuts de réfugié et de protection exceptés)."
+        status: draft
+      en:
+        text: "The need-based grant (Crous) is generally not open to a student who arrives on a study visa. Unless you are a French, EU/EEA or Swiss national, it requires a valid residence permit, 2 years' domicile in France and a tax household in France for 2 years (refugee and protection statuses excepted)."
+        status: draft
+      ar:
+        text: "المنحة على أساس المعايير الاجتماعية (Crous) غير متاحة عمومًا لطالب يصل بتأشيرة دراسة. وإذا لم تكن فرنسي الجنسية أو من دولة في الاتحاد الأوروبي أو المنطقة الاقتصادية الأوروبية أو سويسريًا، فهي تشترط سند إقامة ساريًا، والإقامة في فرنسا منذ سنتين، وأسرة جبائية مرتبطة بها في فرنسا منذ سنتين (باستثناء وضع اللاجئ والحماية)."
+        status: draft
 applicationChannels: [fr-campus-france]
 source: main
 info_kind: official
@@ -22,3 +36,6 @@ sources:
   main:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
     last_verified_at: 2026-10-01
+  crous:
+    url: https://www.etudiant.gouv.fr/fr/bourses-sur-criteres-sociaux-pour-qui-2980
+    last_verified_at: 2026-10-05

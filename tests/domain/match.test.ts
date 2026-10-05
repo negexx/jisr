@@ -388,3 +388,29 @@ describe("invariants over a matrix", () => {
     expect(seen.not_satisfied).toBeGreaterThan(0);
   });
 });
+
+describe("route guidance never affects the match", () => {
+  const guidance = [
+    {
+      id: "xx-test-aid",
+      note: "admission-routes/xx-test-route#guidance.xx-test-aid.note",
+      fact: staleMeta({ info_kind: "guidance" }),
+    },
+  ];
+
+  it.each([
+    "direct",
+    "check",
+    "foundation",
+    "not_eligible",
+  ] as const)("gives the same status and reasons for a %s route with and without guidance", (outcome) => {
+    const without = run([route({ outcome })], withRules(passRule));
+    const withGuidance = run([route({ outcome, guidance })], withRules(passRule));
+    expect(withGuidance).toEqual(without);
+  });
+
+  it("still reaches a tick on a direct route whose guidance is stale", () => {
+    const result = run([route({ guidance })], withRules(passRule));
+    expect(result.status).toBe("satisfied");
+  });
+});

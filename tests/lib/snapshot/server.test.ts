@@ -87,6 +87,117 @@ describe("loadProgramPageData", () => {
     });
   });
 
+  describe("route guidance", () => {
+    const withGuidance = () =>
+      buildVariant([
+        {
+          file: "admission-routes/xx-test-route-xa-xb.yaml",
+          from: "applicationChannels: [xx-test-channel-portal, xx-test-channel-direct]",
+          to: [
+            "guidance:",
+            "  - id: xx-test-aid",
+            "    source: aid",
+            "    info_kind: guidance",
+            "    note:",
+            "      fr: { text: Aide test, status: draft }",
+            "      en: { text: Test aid, status: draft }",
+            "applicationChannels: [xx-test-channel-portal, xx-test-channel-direct]",
+          ].join("\n"),
+        },
+        {
+          file: "admission-routes/xx-test-route-xa-xb.yaml",
+          from: "sources:\n",
+          to: "sources:\n  aid:\n    url: https://example.org/aid\n    last_verified_at: 2026-09-02\n",
+        },
+      ]);
+
+    it("lists the guidance of every route into the programme's country, with its text and fact", async () => {
+      const dir = await withGuidance();
+      const data = await loadProgramPageData(E2E_SLUGS.ok, "en", dir);
+      expect(data?.routeGuidance).toHaveLength(1);
+      const [item] = data?.routeGuidance ?? [];
+      expect(item).toMatchObject({
+        origin: "XA",
+        id: "xx-test-aid",
+        fact: { info_kind: "guidance", source_url: "https://example.org/aid", class: "stable" },
+      });
+      expect(data?.text(item?.note ?? "")?.text).toBe("Test aid");
+      const french = await loadProgramPageData(E2E_SLUGS.ok, "fr", dir);
+      expect(french?.text(item?.note ?? "")?.text).toBe("Aide test");
+    }, 180_000);
+
+    it("merges the guidance of several origins, ordered by origin then id, each with its own text", async () => {
+      const second = [
+        "slug: xx-test-route-xz-xb",
+        "origin: XZ",
+        "credentialType: xx-test-cred",
+        "destination: XB",
+        "level: bachelor",
+        "outcome: check",
+        "conditions: []",
+        "guidance:",
+        "  - id: xx-test-aid-z",
+        "    source: aid",
+        "    info_kind: guidance",
+        "    note:",
+        "      fr: { text: Aide Z, status: draft }",
+        "      en: { text: Aid Z, status: draft }",
+        "applicationChannels: [xx-test-channel-portal]",
+        "source: aid",
+        "info_kind: official",
+        "sources:",
+        "  aid:",
+        "    url: https://example.org/aid-z",
+        "    last_verified_at: 2026-09-03",
+        "",
+      ].join("\n");
+      const dir = buildVariant(
+        [
+          {
+            file: "admission-routes/xx-test-route-xa-xb.yaml",
+            from: "applicationChannels: [xx-test-channel-portal, xx-test-channel-direct]",
+            to: [
+              "guidance:",
+              "  - id: xx-test-aid",
+              "    source: aid",
+              "    info_kind: guidance",
+              "    note:",
+              "      fr: { text: Aide test, status: draft }",
+              "      en: { text: Test aid, status: draft }",
+              "applicationChannels: [xx-test-channel-portal, xx-test-channel-direct]",
+            ].join("\n"),
+          },
+          {
+            file: "admission-routes/xx-test-route-xa-xb.yaml",
+            from: "sources:\n",
+            to: "sources:\n  aid:\n    url: https://example.org/aid\n    last_verified_at: 2026-09-02\n",
+          },
+        ],
+        [{ file: "admission-routes/xx-test-route-xz-xb.yaml", content: second }],
+      );
+      const data = await loadProgramPageData(E2E_SLUGS.ok, "en", dir);
+      expect(data?.routeGuidance.map((g) => `${g.origin}/${g.id}`)).toEqual([
+        "XA/xx-test-aid",
+        "XZ/xx-test-aid-z",
+      ]);
+      expect(data?.routeGuidance.map((g) => data.text(g.note)?.text)).toEqual([
+        "Test aid",
+        "Aid Z",
+      ]);
+    }, 180_000);
+
+    it("has no guidance when no route into the country carries any", async () => {
+      expect((await loadProgramPageData(E2E_SLUGS.ok, "en", base))?.routeGuidance).toEqual([]);
+    });
+
+    it("ignores guidance of routes into another country", async () => {
+      const dir = await withGuidance();
+      const data = await loadProgramPageData(E2E_SLUGS.foundation, "en", dir);
+      expect(data?.program.country).not.toBe("XB");
+      expect(data?.routeGuidance).toEqual([]);
+    }, 180_000);
+  });
+
   it("honours a scholarship's institutions list, as domain scholarshipsForProgram does", async () => {
     const restrict = (institution: string) =>
       buildVariant([

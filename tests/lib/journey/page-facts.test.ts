@@ -114,12 +114,41 @@ describe("pageFacts", () => {
     );
   });
 
+  it("lists the guidance of the routes into the country under the scholarships section", async () => {
+    const data = await pageData(E2E_SLUGS.ok);
+    const note = {
+      route: "xx-test-route-xa-xb",
+      origin: "XA",
+      id: "xx-test-aid",
+      note: "admission-routes/xx-test-route-xa-xb#guidance.xx-test-aid.note",
+      fact: {
+        source_url: "https://example.org/aid",
+        info_kind: "guidance" as const,
+        last_verified_at: "2026-09-02",
+        class: "stable" as const,
+      },
+    };
+    const facts = pageFacts({ ...data, routeGuidance: [note] }, E2E_NOW).filter((f) =>
+      f.label.includes("#guidance."),
+    );
+    expect(facts).toEqual([
+      {
+        section: "scholarships",
+        label: "admission-routes/xx-test-route-xa-xb#guidance.xx-test-aid",
+        meta: note.fact,
+      },
+    ]);
+  });
+
   it("carries metadata only, never values, and excludes personal route facts", async () => {
     for (const slug of Object.values(E2E_SLUGS)) {
       const facts = pageFacts(await pageData(slug), E2E_NOW);
       for (const fact of facts) {
         expect(fact.meta).not.toHaveProperty("value");
-        expect(fact.label.startsWith("admission-routes/")).toBe(false);
+        // Route guidance is the one route fact on the page: it does not depend on the student.
+        expect(
+          fact.label.startsWith("admission-routes/") && !fact.label.includes("#guidance."),
+        ).toBe(false);
       }
       const pairs = facts.map((f) => `${f.section} ${f.label}`);
       expect(new Set(pairs).size).toBe(pairs.length);
@@ -142,6 +171,7 @@ describe("pageFacts", () => {
       applicationChannel: null,
       costProfiles: [],
       scholarships: [],
+      routeGuidance: [],
     };
     const facts = pageFacts(bare, E2E_NOW);
     expect(facts.some((f) => f.label.startsWith("institutions/"))).toBe(false);

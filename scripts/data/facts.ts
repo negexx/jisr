@@ -55,6 +55,7 @@ export function factUses(
       return [
         stable(file, "", t.record.source),
         ...t.record.conditions.map((c) => stable(file, `conditions.${c.id}`, c.source)),
+        ...t.record.guidance.map((g) => stable(file, `guidance.${g.id}`, g.source)),
       ];
     case "programs": {
       const p = t.record;
@@ -118,6 +119,7 @@ export function localizedTexts(
       return [
         ...(t.record.note === undefined ? [] : [t.record.note]),
         ...ruleNotes(t.record.conditions),
+        ...t.record.guidance.map((g) => g.note),
       ];
     case "programs": {
       const p = t.record;

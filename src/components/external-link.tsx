@@ -3,13 +3,14 @@ import { ExternalLink as ExternalLinkIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
+import { unicodeHostname } from "@/lib/punycode";
 import { cn } from "@/lib/utils";
 
 export function sourceHostname(href: string): string | null {
   if (!href.startsWith("https://")) return null;
   try {
     const url = new URL(href);
-    return url.protocol === "https:" && url.hostname !== "" ? url.hostname : null;
+    return url.protocol === "https:" && url.hostname !== "" ? unicodeHostname(url.hostname) : null;
   } catch {
     return null;
   }

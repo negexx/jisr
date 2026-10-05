@@ -730,7 +730,12 @@
       },
       "deadline": "Scholarship deadline: {date}",
       "deadlineUnknown": "Scholarship deadline: not published, to be checked",
-      "link": "Scholarship website"
+      "link": "Scholarship website",
+      "aid": {
+        "heading": "Good to know about the country's student aid",
+        "intro": "General notes about national student aid, not admission requirements.",
+        "origin": "For students from {country}"
+      }
     },
     "links": {
       "program": "Program page",

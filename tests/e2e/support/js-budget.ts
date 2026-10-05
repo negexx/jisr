@@ -34,6 +34,12 @@ export type JsBudget = { initial: number; untilIdle: number };
 // deadlines added about 0.1 KB after reusing an icon and collapsing the icon elements), but merged they
 // measure matches 192.1 initial and program 238.1 until idle on Linux CI and locally. New rows:
 // matches initial 193 (was 192), program until idle 239 (was 238). Nothing else moved.
+// 2026-10-05 (route funding guidance, PR #14): the program page grew 0.5 KB (183.6 -> 184.1 initial,
+// 238.6 -> 239.0 until idle on the fixture build, same on Linux CI) because sourceHostname now decodes
+// punycode (src/lib/punycode.ts, about 0.5 KB gzip) so the BAföG source badge reads www.bafög.de instead of
+// www.xn--bafg-7qa.de (the ASCII alias does not resolve); SourceBadge is shared, so the decoder is in the
+// client chunk. The guidance block itself is server-rendered and adds nothing. Raised by 1 KB with that
+// reason: program initial 184 -> 185, until idle 239 -> 240. Nothing else moved.
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/fr": { initial: 170, untilIdle: 216 },
   "/ar": { initial: 170, untilIdle: 216 },
@@ -45,6 +51,6 @@ export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/ar/plan": { initial: 189, untilIdle: 244 },
   "/fr/compare": { initial: 190, untilIdle: 253 },
   "/ar/compare": { initial: 190, untilIdle: 253 },
-  "/fr/programs/xx-test-prog-ok": { initial: 184, untilIdle: 239 },
-  "/ar/programs/xx-test-prog-ok": { initial: 184, untilIdle: 239 },
+  "/fr/programs/xx-test-prog-ok": { initial: 185, untilIdle: 240 },
+  "/ar/programs/xx-test-prog-ok": { initial: 185, untilIdle: 240 },
 };
