@@ -1,0 +1,65 @@
+slug: it-dsu-adisurc-campania
+name: Borsa di studio ADiSURC Campania
+provider: ADiSURC - Azienda per il Diritto allo Studio Universitario della Regione Campania
+destinations:
+  - IT
+eligibleNationalities: []
+fields: []
+institutions:
+  - it-napoli-federico-ii-napoli
+  - it-napoli-vanvitelli-caserta
+level: bachelor
+summary:
+  fr:
+    text: Bourse régionale gérée par ADiSURC pour les étudiants des universités de Campanie. Les étudiants étrangers dont la famille réside à l'étranger sont évalués par un ISEE parificato (ISEEUP) établi auprès d'un CAF.
+    status: draft
+  en:
+    text: Regional scholarship managed by ADiSURC for students at universities in Campania. Foreign students whose households live abroad are assessed through an equivalent ISEE (ISEEUP, ISEE parificato) prepared at a CAF.
+    status: draft
+support:
+  value:
+    amount: null
+    covers:
+      - housing
+  source: page-2
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-2
+  info_kind: official
+  rules: []
+documents:
+  value:
+    - slug: foreign-income-assets-documents
+      name:
+        fr:
+          text: Documents des autorités du pays d'origine sur les revenus et le patrimoine (traduits par les autorités diplomatiques italiennes)
+          status: draft
+        en:
+          text: Documents from the home-country authorities on income and assets (translated by the Italian diplomatic authorities)
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+howToApply:
+  fr:
+    text: Demande uniquement en ligne sur le site d'ADiSURC, zone réservée aux étudiants ; les étudiants de nationalité étrangère y accèdent avec les identifiants obtenus lors de l'accréditation. Fournir l'ISEEUP, puis, sur demande, les documents traduits.
+    status: draft
+  en:
+    text: Apply online only on the ADiSURC website, in the students' reserved area; students of foreign nationality log in with credentials obtained at accreditation. Send the ISEEUP and, if requested, translated documents.
+    status: draft
+officialUrl: https://www.adisurcampania.it/notizie/approvazione-bando-di-concorso-20262027
+sources:
+  page-1:
+    url: https://www.adisurcampania.it/notizie/approvazione-bando-di-concorso-20262027
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.adisurcampania.it/sites/default/files/2026-07/Bando%20di%20Concorso%20a.a.%202026.27_ENG.pdf
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://www.adisurcampania.it/sites/default/files/2026-07/Bando%20di%20Concorso%20a.a.%202026.27.pdf
+    last_verified_at: 2026-10-05

@@ -52,28 +52,7 @@ officialUrl: https://www.adisu.umbria.it/concorso-borsa-di-studio/bando/2026-202
 sources:
   page-1:
     url: https://www.adisu.umbria.it/concorso-borsa-di-studio/bando/2026-2027/bando-di-concorso-lassegnazione-di-borse-di-studio-e-altri
-    last_verified_at: null
+    last_verified_at: 2026-10-05
   page-2:
     url: https://www.adisu.umbria.it/sites/default/files/2026-07/Bando_borse_di_studio_Adisu_2026_2027_1.pdf
-    last_verified_at: null
-_review:
-  kind: scholarships
-  slug: it-dsu-adisu-umbria
-  name: Borsa di studio ADiSU (Umbria)
-  preparedBy: assistant
-  preparedAt: 2026-10-05
-  officialUrl: https://www.adisu.umbria.it/concorso-borsa-di-studio/bando/2026-2027/bando-di-concorso-lassegnazione-di-borse-di-studio-e-altri
-  evidence:
-    - fact: eligibility
-      url: https://www.adisu.umbria.it/sites/default/files/2026-07/Bando_borse_di_studio_Adisu_2026_2027_1.pdf
-      quote: Gli studenti stranieri devono integrare l’istanza di borsa di studio presentando la documentazione attestante i redditi e i patrimoni prodotti e posseduti all’estero
-    - fact: level
-      url: https://www.adisu.umbria.it/sites/default/files/2026-07/Bando_borse_di_studio_Adisu_2026_2027_1.pdf
-      quote: "CORSI DI STUDIO: 1) corsi di laurea;"
-    - fact: howToApply
-      url: https://www.adisu.umbria.it/concorso-borsa-di-studio/bando/2026-2027/bando-di-concorso-lassegnazione-di-borse-di-studio-e-altri
-      quote: È possibile presentare domanda per i benefici a concorso e per i servizi a pagamento esclusivamente tramite le apposite istanze digitali disponibili sul portale dell’Agenzia all’indirizzo www.adisu.umbria.it nella sezione Area studenti
-    - fact: documents
-      url: https://www.adisu.umbria.it/sites/default/files/2026-07/Bando_borse_di_studio_Adisu_2026_2027_1.pdf
-      quote: Gli studenti stranieri devono integrare l’istanza di borsa di studio presentando la documentazione attestante i redditi e i patrimoni prodotti e posseduti all’estero
-  todo: "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+    last_verified_at: 2026-10-05

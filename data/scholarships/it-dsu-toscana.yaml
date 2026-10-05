@@ -45,28 +45,4 @@ officialUrl: https://www.dsu.toscana.it/studenti-stranieri
 sources:
   page-1:
     url: https://www.dsu.toscana.it/studenti-stranieri
-    last_verified_at: null
-_review:
-  kind: scholarships
-  slug: it-dsu-toscana
-  name: Borsa di studio DSU Toscana
-  preparedBy: assistant
-  preparedAt: 2026-10-05
-  officialUrl: https://www.dsu.toscana.it/studenti-stranieri
-  evidence:
-    - fact: eligibility
-      url: https://www.dsu.toscana.it/studenti-stranieri
-      quote: Studenti provenienti da Paesi extra UE Tutta la documentazione sotto riportata deve essere tradotta in lingua italiana e legalizzata dalle Autorità diplomatiche italiane del paese d’origine
-    - fact: eligibility
-      url: https://www.dsu.toscana.it/studenti-stranieri
-      quote: Gli studenti con famiglia che vive all'estero oppure ha redditi o patrimoni all'estero
-    - fact: level
-      url: https://www.dsu.toscana.it/borsa-di-studio
-      quote: per gli studenti iscritti o che intendano iscriversi ai corsi di laurea triennale, magistrale e magistrale a ciclo unico
-    - fact: howToApply
-      url: https://www.dsu.toscana.it/borsa-di-studio
-      quote: Per partecipare al concorso è necessario compilare la domanda attraverso l'apposita procedura on line
-    - fact: howToApply
-      url: https://www.dsu.toscana.it/studenti-stranieri
-      quote: spedire la ricevuta, insieme ai documenti richiesti dall'art. 8 e una copia del documento d'identità valido
-  todo: "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+    last_verified_at: 2026-10-05

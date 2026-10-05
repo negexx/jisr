@@ -43,25 +43,4 @@ officialUrl: https://erdis.it/servizi/servizio-dettaglio/3161252
 sources:
   page-1:
     url: https://erdis.it/servizi/servizio-dettaglio/3161252
-    last_verified_at: null
-_review:
-  kind: scholarships
-  slug: it-dsu-erdis-marche
-  name: Borsa di studio ERDIS Marche
-  preparedBy: assistant
-  preparedAt: 2026-10-05
-  officialUrl: https://erdis.it/servizi/servizio-dettaglio/3161252
-  evidence:
-    - fact: eligibility
-      url: https://erdis.it/servizi/servizio-dettaglio/3161252
-      quote: gli studenti italiani e stranieri in possesso dei requisiti di merito ed economici
-    - fact: level
-      url: https://erdis.it/servizi/servizio-dettaglio/3161252
-      quote: ai corsi di laurea di primo
-    - fact: howToApply
-      url: https://erdis.it/servizi/servizio-dettaglio/3161252
-      quote: Le domande di partecipazione al concorso dovranno essere compilate unicamente on line
-    - fact: howToApply
-      url: https://erdis.it/servizi/servizio-dettaglio/3161252
-      quote: la procedura di accesso alla domanda medesima sarà indicata sul portale di ERDIS
-  todo: "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+    last_verified_at: 2026-10-05
