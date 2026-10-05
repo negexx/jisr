@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans. Steps use checkbox (`- [ ]`) syntax. UI work: invoke `impeccable:impeccable`; verify in a browser in fr and ar.
 
-**Status:** planned, not started. Decision of 2026-10-05 (owner delegated the choice): do not build it inside the Italy work. Reason: it needs a schema field, the snapshot, one UI block and three locales, and `.claude/docs/decisions/0008` says the client JS headroom on the program page is tiny, which can only be checked with `pnpm test:e2e` / `build:e2e` (they overwrite `.next`; the owner's dev server is on :3000). Do it as its own PR.
+**Status:** BUILT 2026-10-05 in draft PR #14 (branch `feat/route-funding-guidance`; as-built notes in that branch's `docs/superpowers/plans/2026-10-05-route-funding-guidance-as-built.md`), waiting for the owner to approve the note wording. Original status: planned, not started. Decision of 2026-10-05 (owner delegated the choice): do not build it inside the Italy work. Reason: it needs a schema field, the snapshot, one UI block and three locales, and `.claude/docs/decisions/0008` says the client JS headroom on the program page is tiny, which can only be checked with `pnpm test:e2e` / `build:e2e` (they overwrite `.next`; the owner's dev server is on :3000). Do it as its own PR.
 
 **Goal:** tell a student, on the programme page of France and Germany, that the national need-based grants (Crous bourse sur critères sociaux; BAföG) are generally not available to someone who arrives on a study visa alone, with an official source and a verified date, without touching match status.
 
