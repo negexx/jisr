@@ -1,0 +1,16 @@
+hu-budapest-metropolitan-university-budapest-business-administration-sf472
+hu-budapest-metropolitan-university-budapest-finance-and-accounting-sf475
+hu-eotvos-jozsef-college-baja-business-administration-sf215
+hu-eotvos-jozsef-college-baja-business-administration-sf216
+hu-hungarian-university-of-agriculture-and-godollo-mechanical-engineering-sf988
+hu-john-von-neumann-university-kecskemet-business-administration-sf508
+hu-university-of-debrecen-debrecen-business-administration-sf115
+hu-university-of-debrecen-debrecen-business-informatics-sf116
+hu-university-of-debrecen-debrecen-commerce-and-marketing-sf124
+hu-university-of-debrecen-debrecen-computer-science-enginee-sf128
+hu-university-of-debrecen-debrecen-electrical-engineering-sf146
+hu-university-of-debrecen-debrecen-mechanical-engineering-sf164
+hu-university-of-debrecen-debrecen-mechatronics-engineering-sf166
+hu-university-of-miskolc-miskolc-mechanical-engineering-sf462
+hu-university-of-szeged-szeged-business-administration-sf1132
+hu-university-of-szeged-szeged-tourism-and-catering-sf1134
