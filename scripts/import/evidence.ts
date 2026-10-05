@@ -131,6 +131,8 @@ const INTERNATIONAL_WORDS: readonly RegExp[] = [
   /\bextra[- ]?(?:ue\b|comunitar)/i,
   /\bnon[- ]?(?:ue\b|comunitar)/i,
   /\bstudent[ei]\s+internazional[ei]\b/i,
+  // open to every nationality (a scheme with no nationality condition includes a Moroccan applicant)
+  /\ball nationalit(?:y|ies)\b|\bany nationality\b|\bregardless of (?:their |your )?nationality\b|\baller nationalit[äa]ten\b|\btutte le nazionalit[àa]/i,
   /(?:aus dem|im) ausland\b|ausl[aä]nd(?:isch|er)/i,
   /[ée]trang[eè]r/i,
   // DAAD register: "The following is valid for applicants from: all countries" includes applicants

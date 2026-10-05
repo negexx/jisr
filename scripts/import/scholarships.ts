@@ -161,6 +161,10 @@ const UNDERGRADUATE: readonly RegExp[] = [
   /\b(?:for|towards?|pursuing|enrolled in|start(?:ing)?|begin(?:ning)?|entering)\s+(?:an?\s+|the\s+|their\s+)?(?:first[- ]year\s+)?bachelor/i,
   /pour la licence|[ée]tudiants? en licence|premier cycle|cursus de licence/i,
   /\bbachelor-?studi(?:um|engang|e)\b|\bbachelorstudent/i,
+  // a scheme open to every programme ("jedes Studium ist förderungsfähig", "every course of study
+  // is eligible") covers the first degree; a quote that also names master is mixed and rejected
+  /\bjedes studium\b[^.]{0,80}f[öo]rder(?:ungs)?f[äa]hig/i,
+  /\bevery (?:course of study|degree programme|study programme)\b[^.]{0,80}\beligible\b/i,
   // Italian: "corsi di laurea" (not "laurea magistrale"), "laurea triennale", "primo livello"
   /\bcors[oi]\s+di\s+laurea(?!\s+magistrale)/i,
   /\blaurea triennale|\blauree triennali|\bprimo livello|\bprimo ciclo/i,
