@@ -15,41 +15,82 @@ summary:
   ar:
     text: Digital Management, Università Ca' Foscari Venezia (Roncade). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
     status: draft
-officialUrl: null
+officialUrl: https://apply.unive.it/courses/course/593-ba-digital-management
 durationYears:
-  value: null
-  source: mur
-  info_kind: TODO_read_source
+  value: 3
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: mur
-  info_kind: TODO_read_source
+  value: it-universitaly
+  source: page-2
+  info_kind: official
 documents:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: mur
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Programme à admission limitée : un test d'entrée écrit en ligne (mathématiques et raisonnement) est obligatoire. Les candidats non-UE ayant besoin d'un visa doivent déjà avoir les résultats officiels d'un test d'entrée reconnu au moment de la soumission."
+          status: draft
+        en:
+          text: Limited-admission programme requiring an online written entry test (mathematics and reasoning). Non-EU applicants requiring a visa must already have their official results of one of the accepted entry tests at the moment of submission.
+          status: draft
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Âge minimum : les candidats mineurs ne peuvent postuler que s'ils auront 18 ans au 31 décembre 2026."
+          status: draft
+        en:
+          text: "Minimum age: underage applicants may only apply if they will turn 18 years old by 31 December 2026."
+          status: draft
 scholarships: []
 sources:
-  mur:
-    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+  programme:
+    url: https://apply.unive.it/courses/course/593-ba-digital-management
+    last_verified_at: null
+  page-2:
+    url: https://www.unive.it/pag/40813/
+    last_verified_at: null
+  page-3:
+    url: https://www.unive.it/pag/41327/
     last_verified_at: null
 _review:
   kind: programs
@@ -60,5 +101,33 @@ _review:
   field: business-economics
   confidence: high
   officialUrl: ""
-  todo: "MUR lists: degree class L-18 Scienze dell'economia e della gestione aziendale, language Inglese, mode Convenzionale, access locale, town Roncade; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants"
+  todo: "MUR lists: degree class L-18 Scienze dell'economia e della gestione aziendale, language Inglese, mode Convenzionale, access locale, town Roncade; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: mur:02701:l18:digital-management@roncade
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://apply.unive.it/courses/course/593-ba-digital-management
+      quote: Nominal duration 3 years (180 ECTS)
+    - fact: teachingLanguages
+      url: https://apply.unive.it/courses/course/593-ba-digital-management
+      quote: The Digital Management programme is entirely taught in English
+    - fact: applicationChannel
+      url: https://www.unive.it/pag/40813/
+      quote: Non-EU candidates who receive the letter of eligibility for enrolment in a bachelor’s or master’s degree program must complete the pre-enrolment procedure by logging in to the Universitaly portal and filling in the application online.
+    - fact: requirements.req-1
+      url: https://apply.unive.it/courses/course/593-ba-digital-management
+      quote: A minimum B2-level knowledge of English is required. Please make sure you upload one of the certifications we recognise as proof of your English language level.
+    - fact: requirements.req-2
+      url: https://www.unive.it/pag/41327/
+      quote: Applicants to bachelor's degree programmes must have completed at least 12 years of schooling and obtained a secondary school leaving qualification.
+    - fact: requirements.req-3
+      url: https://apply.unive.it/courses/course/593-ba-digital-management
+      quote: This is a limited-admission programme that requires you to take an online written entry test that evaluates your knowledge of mathematics and reasoning.
+    - fact: requirements.req-3
+      url: https://apply.unive.it/courses/course/593-ba-digital-management
+      quote: Non-European applicants requiring a visa must take one of the recognized tests. These applicants must already have their official results of one of the accepted entry tests AT THE MOMENT OF SUBMISSION.
+    - fact: requirements.req-4
+      url: https://www.unive.it/pag/41327/
+      quote: Underage applicants are allowed to submit an application only if they will turn 18 years old by 31 December 2026.
+  notes: "Tuition: the programme page (apply.unive.it 593) states \"Tuition fee €8,934 per year\"; the programme's own tuition page for a.y. 2026/2027 states a maximum contribution of 8,726.00 EUR per academic year \"without any distinction between Italian/EU students and non-EU students\" (the 8,934 figure corresponds to no year shown on that page; the 8,606 EUR figure is for a.y. 2025/2026). The applied figure is therefore the 2026/2027 maximum contribution. Intakes: pages give \"Studies commence 11 Sept 2026\" and \"Enrolment procedures generally begin in mid-July\" / Universitaly pre-enrolment by 30 September 2026, but no dated non-EU application deadline was stated with a year, so no intake was output. Documents: the non-EU enrolment page (unive.it/pag/40976) lists bachelor's documents (Italian visa, Higher Secondary School final Diploma and transcript of records, Statement of Comparability/Declaration of Value/ARDI, language certificate) but these are quotes from a university-wide page and its lists mix optional/\"highly recommended\" items, so the documents fact was left out; likewise the apply.unive.it page's translation statement (\"If your documents are not in English or Italian, please upload the original documentation or a verified copy of it AS WELL AS a professional translation in English or Italian.\") is not tied to a named document list for this programme. | Owner-delegate decision 2026-10-05: tuition proposal REMOVED before verification. The only quote is a maximum contribution (a ceiling that depends on ISEE), not a fee a non-EU student living abroad is known to pay; Italian tuition stays unknown, as for every other Italian programme."

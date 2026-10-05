@@ -2,120 +2,97 @@
 
 For each record: open the link, confirm the quote is there and that it supports the value (right programme, right applicant group, right year). Then set `audited = y` and `outcome = ok` (or `wrong` + a note) in `AUDIT.csv`.
 
-## programs/it-bologna-bologna-economics-politics-and-social-sciences-l33  _(batch b29-025e5b)_
+## programs/it-ca-foscari-venezia-roncade-digital-management-l18  _(batch b30-5e81fb)_
 
-**Economics, Politics and Social Sciences**
+**Digital Management**, Università Ca' Foscari Venezia
 
-- **teachingLanguages**: `["en"]` (official; source page-1)
-  - "2025;Bologna;Economica, Giuridica e Sociale;Economico;Laurea;L-33;Scienze economiche;Economics, Politics and Social Sciences;Bologna;BOLOGNA;locale;Convenzionale;Inglese" — https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
-- **requirement req-1**: `{"kind":"prior_study_years_min","years":12}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez que votre baccalauréat marocain (12 ans de scolarité) est reconnu idoine et permet l'accès à un cursus analogue en Italie; contactez l'International Desk en cas de doute.","status":"draft"},"en":{"text":"Check that your Moroccan Baccalauréat (12 years of schooling) is recognised as suitable and grants access to an analogous programme in Italy; contact the International Desk if in doubt.","status":"draft"}}}`
-- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Préparez le diplôme original traduit avec confirmation d'authenticité et la documentation sur la valeur du titre; faites la préinscription et demandez un visa d'études.","status":"draft"},"en":{"text":"Prepare the original diploma translated with confirmation of authenticity and the documentation on the value of the qualification; submit the pre-enrolment application and apply for a study visa.","status":"draft"}}}`
-
-> Preparer's caveats: Teaching language from the MUR offer file (Italian ministry, open data, 2025/26 academic year): the course is listed as "Inglese".
-
-## programs/it-bologna-rimini-economics-of-tourism-and-cities-l33  _(batch b29-025e5b)_
-
-**Economics of Tourism and Cities**
-
-- **teachingLanguages**: `["en"]` (official; source page-1)
-  - "2025;Bologna;Economica, Giuridica e Sociale;Economico;Laurea;L-33;Scienze economiche;Economics of Tourism and Cities;Rimini;RIMINI;locale;Convenzionale;Inglese" — https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
-
-> Preparer's caveats: Teaching language from the MUR offer file (Italian ministry, open data, 2025/26 academic year): the course is listed as "Inglese".
-
-## programs/it-brescia-brescia-business-and-economics-l18  _(batch b29-025e5b)_
-
-**Business and Economics**
-
-- **teachingLanguages**: `["en"]` (official; source page-1)
-  - "2025;Brescia;Economica, Giuridica e Sociale;Economico;Laurea;L-18;Scienze dell'economia e della gestione aziendale;Business and Economics;Brescia;BRESCIA;accesso libero;Convenzionale;Inglese" — https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
-- **documents**: `[{"slug":"declaration-of-value","name":{"fr":{"text":"Déclaration de valeur","status":"draft"},"en":{"text":"Declaration of value","status":"draft"}},"translationRequired":null},{"slug":"foreign-qualification","name":{"fr":{"text":"Diplôme étranger","status":"draft"},"en":{"text":"Foreign qualification","status":"draft"}},"translationRequired":null},{"slug":"certificate-of-comparability","name":{"fr":{"text":"Certificat de comparabilité","status":"draft"},"en":{"text":"Certificate of comparability","status":"draft"}},"translationRequired":null}]` (official; source programme) (unchanged: already in data/)
+- **durationYears**: `3` (official; source programme)
+  - "Nominal duration 3 years (180 ECTS)" — https://apply.unive.it/courses/course/593-ba-digital-management
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "The Digital Management programme is entirely taught in English" — https://apply.unive.it/courses/course/593-ba-digital-management
+- **applicationChannel**: `it-universitaly` (official; source page-2)
+  - "Non-EU candidates who receive the letter of eligibility for enrolment in a bachelor’s or master’s degree program must complete the pre-enrolment procedure by logging in to the Universitaly portal and filling in the application online." — https://www.unive.it/pag/40813/
 - **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B2","certificateRequired":null,"acceptedTests":[]}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez les conditions d'admission et les éventuelles exigences supplémentaires (OFA) pour les étudiants titulaires d'un diplôme étranger.","status":"draft"},"en":{"text":"Check the admission conditions and any additional educational requirements (OFAs) for students with a foreign diploma.","status":"draft"}}}`
+  - "A minimum B2-level knowledge of English is required. Please make sure you upload one of the certifications we recognise as proof of your English language level." — https://apply.unive.it/courses/course/593-ba-digital-management
+- **requirement req-2**: `{"kind":"prior_study_years_min","years":12}`
+  - "Applicants to bachelor's degree programmes must have completed at least 12 years of schooling and obtained a secondary school leaving qualification." — https://www.unive.it/pag/41327/
+- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Programme à admission limitée : un test d'entrée écrit en ligne (mathématiques et raisonnement) est obligatoire. Les candidats non-UE ayant besoin d'un visa doivent déjà avoir les résultats officiels d'un test d'entrée reconnu au moment de la soumission.","status":"draft"},"en":{"text":"Limited-admission programme requiring an online written entry test (mathematics and reasoning). Non-EU applicants requiring a visa must already have their official results of one of the accepted entry tests at the moment of submission.","status":"draft"}}}`
+  - "This is a limited-admission programme that requires you to take an online written entry test that evaluates your knowledge of mathematics and reasoning." — https://apply.unive.it/courses/course/593-ba-digital-management
+  - "Non-European applicants requiring a visa must take one of the recognized tests. These applicants must already have their official results of one of the accepted entry tests AT THE MOMENT OF SUBMISSION." — https://apply.unive.it/courses/course/593-ba-digital-management
+- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"Âge minimum : les candidats mineurs ne peuvent postuler que s'ils auront 18 ans au 31 décembre 2026.","status":"draft"},"en":{"text":"Minimum age: underage applicants may only apply if they will turn 18 years old by 31 December 2026.","status":"draft"}}}`
+  - "Underage applicants are allowed to submit an application only if they will turn 18 years old by 31 December 2026." — https://www.unive.it/pag/41327/
 
-> Preparer's caveats: Teaching language from the MUR offer file (Italian ministry, open data, 2025/26 academic year): the course is listed as "Inglese".
+> Preparer's caveats: Tuition: the programme page (apply.unive.it 593) states "Tuition fee €8,934 per year"; the programme's own tuition page for a.y. 2026/2027 states a maximum contribution of 8,726.00 EUR per academic year "without any distinction between Italian/EU students and non-EU students" (the 8,934 figure corresponds to no year shown on that page; the 8,606 EUR figure is for a.y. 2025/2026). The applied figure is therefore the 2026/2027 maximum contribution. Intakes: pages give "Studies commence 11 Sept 2026" and "Enrolment procedures generally begin in mid-July" / Universitaly pre-enrolment by 30 September 2026, but no dated non-EU application deadline was stated with a year, so no intake was output. Documents: the non-EU enrolment page (unive.it/pag/40976) lists bachelor's documents (Italian visa, Higher Secondary School final Diploma and transcript of records, Statement of Comparability/Declaration of Value/ARDI, language certificate) but these are quotes from a university-wide page and its lists mix optional/"highly recommended" items, so the documents fact was left out; likewise the apply.unive.it page's translation statement ("If your documents are not in English or Italian, please upload the original documentation or a verified copy of it AS WELL AS a professional translation in English or Italian.") is not tied to a named document list for this programme. | Owner-delegate decision 2026-10-05: tuition proposal REMOVED before verification. The only quote is a maximum contribution (a ceiling that depends on ISEE), not a fee a non-EU student living abroad is known to pay; Italian tuition stays unknown, as for every other Italian programme.
 
-## programs/it-cassino-cassino-economics-with-data-science-l33  _(batch b29-025e5b)_
+## programs/it-ca-foscari-venezia-venezia-economics-and-business-l33  _(batch b30-5e81fb)_
 
-**Economics with data science**
+**Economics and Business**, Università Ca' Foscari Venezia
 
-- **durationYears**: `3` (official; source programme) (unchanged: already in data/)
-- **teachingLanguages**: `["en"]` (official; source page-1)
-  - "2025;Cassino;Economica, Giuridica e Sociale;Economico;Laurea;L-33;Scienze economiche;Economics with data science;Frosinone;CASSINO;accesso libero;Convenzionale;Inglese" — https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
-- **applicationChannel**: `it-universitaly` (official; source page-2) (unchanged: already in data/)
-- **documents**: `[{"slug":"high-school-transcript","name":{"fr":{"text":"Relevé de notes du lycée","status":"draft"},"en":{"text":"High school transcript","status":"draft"}},"translationRequired":null},{"slug":"curriculum-vitae","name":{"fr":{"text":"Curriculum vitae","status":"draft"},"en":{"text":"Curriculum vitae","status":"draft"}},"translationRequired":null},{"slug":"motivation-letter","name":{"fr":{"text":"Lettre de motivation","status":"draft"},"en":{"text":"Motivation letter","status":"draft"}},"translationRequired":null},{"slug":"certificate-of-proficiency-in-english","name":{"fr":{"text":"Certificat de compétence en anglais","status":"draft"},"en":{"text":"Certificate of proficiency in English","status":"draft"}},"translationRequired":null},{"slug":"passport-or-identity-card","name":{"fr":{"text":"Passeport ou carte d'identité en cours de validité","status":"draft"},"en":{"text":"Current (valid) passport or identity card","status":"draft"}},"translationRequired":null}]` (official; source page-2) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Note minimale de 70% au lycée, avec une note de mathématiques d'au moins 70%. Un diplôme de fin d'études secondaires obtenu depuis plus de 5 ans n'est pas accepté.","status":"draft"},"en":{"text":"Overall high school grade point average minimum 70%, with a math grade of at least 70%. A high school diploma older than 5 years is not accepted.","status":"draft"}}}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"L'inscription à l'année universitaire 2026/2027 est limitée aux étudiants nés entre 2001 et 2008; il faut avoir 18 ans au plus tard le 31 août 2026.","status":"draft"},"en":{"text":"Enrollment in the 2026/2027 academic program is limited to students born between 2001 and 2008; applicants must be at least 18 years old by August 31st, 2026.","status":"draft"}}}`
+- **durationYears**: `3` (official; source programme)
+  - "Duration: 3 years" — https://www.unive.it/degree/etr9
+  - "Nominal duration 3 years (180 ECTS)" — https://apply.unive.it/courses/course/270-ba-economics-and-business
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "Language: English" — https://www.unive.it/degree/etr9
+  - "Study language English" — https://apply.unive.it/courses/course/270-ba-economics-and-business
+- **intakes**: `[{"startDate":"2026-09-11","applicationOpens":null,"applicationDeadline":null}]` (official; source page-2)
+  - "Studies commence 11 Sept 2026" — https://apply.unive.it/courses/course/270-ba-economics-and-business
+- **applicationChannel**: `it-universitaly` (official; source page-3)
+  - "The pre-enrolment procedure was digitized with the launch of the Universitaly portal." — https://www.unive.it/pag/40813/
+  - "Non-EU candidates who receive the letter of eligibility for enrolment in a bachelor’s or master’s degree program must complete the pre-enrolment procedure by logging in to the Universitaly portal and filling in the application online." — https://www.unive.it/pag/40813/
+- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B2","certificateRequired":null,"acceptedTests":[]}`
+  - "A minimum B2-level knowledge of English is mandatory for enrolment." — https://apply.unive.it/courses/course/270-ba-economics-and-business
+  - "A minimum B2-level knowledge of English is mandatory for enrolment." — https://www.unive.it/web/en/12613/admission-and-enrolment
+- **requirement req-2**: `{"kind":"prior_study_years_min","years":12}`
+  - "Students must have attended school for at least 12 years in order to be eligible to enrol in a bachelor’s degree offered by an Italian university." — https://apply.unive.it/courses/course/270-ba-economics-and-business
+  - "Applicants to bachelor's degree programmes must have completed at least 12 years of schooling and obtained a secondary school leaving qualification." — https://www.unive.it/pag/41327/
+- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Admission limitée : test d'entrée écrit en ligne (TOLC-E ou SAT ou CEnT-S) portant sur les mathématiques et le raisonnement. Les candidats non-UE doivent avoir les résultats au moment de la soumission.","status":"draft"},"en":{"text":"Limited-admission programme: online written entry test (TOLC-E or SAT or CEnT-S) on mathematics and reasoning. Non-EU visa applicants must already hold official results at the moment of submission.","status":"draft"}}}`
+  - "This is a limited-admission programme that requires you to take an online written entry test that evaluates your knowledge of mathematics and reasoning." — https://apply.unive.it/courses/course/270-ba-economics-and-business
+  - "Non-European applicants requiring a visa must take one of the recognized tests. These applicants must already have their official results of one of the accepted entry tests AT THE MOMENT OF SUBMISSION." — https://apply.unive.it/courses/course/270-ba-economics-and-business
+- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"Mathématiques : note minimale de 6/13 à la section mathématiques du TOLC-E, sinon obligation de formation supplémentaire (OFA). L'OFA doit être satisfaite avant les examens.","status":"draft"},"en":{"text":"Mathematics: minimum score of 6 out of 13 in the TOLC-E mathematics section, otherwise an Additional Learning Requirement (OFA) is assigned. The OFA must be fulfilled before sitting exams.","status":"draft"}}}`
+  - "candidates who do not achieve a minimum score of 6 out of 13 in the mathematics section will be assigned an Additional Learning Requirement – ALR (Obbligo Formativo Aggiuntivo – OFA)" — https://www.unive.it/web/en/12613/admission-and-enrolment
+  - "If you do not fulfill the OFA by September 30th, 2027, you will not be allowed to take any exams included in your study plan until its fulfillment." — https://www.unive.it/web/en/12613/admission-and-enrolment
 
-> Preparer's caveats: Teaching language from the MUR offer file (Italian ministry, open data, 2025/26 academic year): the course is listed as "Inglese".
+> Preparer's caveats: Tuition left out: the only fee quoted on the programme page ("Tuition fee €2,385 per year") is not labelled as the amount for a non-EU student living abroad, and the university's fee pages use ISEE-based bands. The application deadline for non-EU applicants is not given as a quotable date for this programme; the pages only quote TOLC-E test and enrolment dates (e.g. 28 August 2026, 18 December 2026) which are not the programme application deadline for international applicants. The English B2 requirement: the pages say a minimum B2-level knowledge of English is mandatory for enrolment but the recognised certifications are not named in the quoted pages, so acceptedTests is empty.
 
-## programs/it-marche-ancona-digital-economics-and-business-l18  _(batch b29-025e5b)_
+## programs/it-napoli-vanvitelli-caserta-data-analytics-l41  _(batch b30-5e81fb)_
 
-**Digital Economics and Business**
+**Data Analytics**, Università degli studi della Campania "Luigi Vanvitelli"
 
-- **teachingLanguages**: `["en"]` (official; source page-1)
-  - "2025;Marche;Economica, Giuridica e Sociale;Economico;Laurea;L-18;Scienze dell'economia e della gestione aziendale;DIGITAL ECONOMICS AND BUSINESS;Ancona;ANCONA;accesso libero;Convenzionale;Inglese" — https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
-- **applicationChannel**: `it-universitaly` (official; source page-2) (unchanged: already in data/)
-- **documents**: `[{"slug":"school-leaving-certificate","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"School-leaving certificate","status":"draft"}},"translationRequired":null}]` (official; source page-3) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"prior_study_years_min","years":12}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifier la mendicité du diplôme étranger et la procédure de pré-inscription sur Universitaly, ainsi que les tests de vérification des connaissances de la Faculté d'Économie.","status":"draft"},"en":{"text":"Check the eligibility of the foreign diploma and the pre-enrolment procedure on Universitaly, as well as the Faculty of Economics knowledge verification tests.","status":"draft"}}}`
+- **durationYears**: `3` (official; source programme)
+  - "Duration: 3 years" — https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "Language of Instruction: English" — https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
+- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B1","certificateRequired":null,"acceptedTests":[]}`
+  - "Have an English language certification at least at B1 level" — https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"La sélection se fait par le test CISIA CEnT-S (seules les sections Mathématiques et Raisonnement sont prises en compte). Score minimum : 11 points au total dont 6 en Mathématiques. Un test d'anglais peut être exigé.","status":"draft"},"en":{"text":"Selection is by the CISIA CEnT-S test (only the Mathematics and Reasoning sections count). Minimum score: 11 points total, with at least 6 in Mathematics. An English interview may be required.","status":"draft"}}}`
+  - "have obtained a minimum overall score of 11 points overall by adding the scores of the "Mathematics" and "Reasoning on texts and data" sections" — https://unicampania.it/RPP/RGCSS/Concorso_DISTABIF_2026_2027/Data_Analytics/Bando_Data_Analytics_non_UE_26_27_EN.pdf
 
-> Preparer's caveats: Teaching language from the MUR offer file (Italian ministry, open data, 2025/26 academic year): the course is listed as "Inglese".
+> Preparer's caveats: Tuition non inclus : les frais varient selon le barème ISEE et les montants mentionnés (202 € ou 500 €) sont des contributions en l'absence d'ISEE, pas le tarif annuel complet. Les dates limites ne sont pas incluses car l'appel concerne l'année académique 2026/2027, ce qui ne correspond pas à la définition d'un intake récurrent ou daté pour l'auditeur.
 
-## programs/it-milano-bocconi-milano-international-economics-and-finance-l33  _(batch b29-025e5b)_
+## programs/it-siena-siena-biotech-engineering-for-health-l8  _(batch b30-5e81fb)_
 
-**International Economics and Finance**
+**Biotech Engineering For Health**, Università degli studi di Siena
 
-- **teachingLanguages**: `["en"]` (official; source page-1)
-  - "2025;Milano Bocconi;Economica, Giuridica e Sociale;Economico;Laurea;L-33;Scienze economiche;International Economics and Finance;Milano;MILANO;locale;Convenzionale;Inglese" — https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
+- **durationYears**: `3` (official; source page-2)
+  - "Duration in years: 3" — https://biotech-engineering.unisi.it/en
+  - "Nominal duration 3 years (180 ECTS)" — https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "Delivered entirely in English, the program stands out for its innovative and international perspective" — https://biotech-engineering.unisi.it/en/course/program-overview
+  - "Study language English" — https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
+- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B2","certificateRequired":null,"acceptedTests":[]}`
+  - "Proficiency in English at B2 level (CEFR) is also required." — https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Un test d'entrée (CEnT-S) est requis pour accéder au programme; vérifiez les modalités et les éventuels entretiens pour les candidats non-UE.","status":"draft"},"en":{"text":"An entrance test (CEnT-S) is required for admission; check the details and possible interviews for non-EU candidates.","status":"draft"}}}`
+  - "A basic knowledge of mathematics, physics, and sciences will be assessed through an entrance test." — https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
+  - "To participate in the selection process, candidates must take the CEnT-S online test, which is organized by CISIA." — https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
+- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Programme à accès restreint (80 places); la sélection se fait sur classement après le test et l'entretien éventuel.","status":"draft"},"en":{"text":"Restricted-access programme (80 places); selection is based on ranking after the test and possible interview.","status":"draft"}}}`
+  - "The Bachelor’s Degree in Biotech Engineering for Health is a restricted-access program with a limited number of 80 places." — https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
+- **requirement req-4**: `{"kind":"manual_check","note":{"fr":{"text":"Des lacunes éventuelles en mathématiques, physique et sciences identifiées lors du test doivent être comblées par des obligations de formation supplémentaires (OFA) durant la première année.","status":"draft"},"en":{"text":"Any gaps in mathematics, physics and sciences identified by the test must be addressed through additional learning requirements (OFA) within the first year.","status":"draft"}}}`
+  - "Any gaps identified must be addressed through additional learning requirements (OFA) to be completed within the first year." — https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
+- **requirement req-5**: `{"kind":"manual_check","note":{"fr":{"text":"Les documents d'admission doivent être en anglais ou en italien; sinon une traduction officielle et une certification d'authenticité sont requises.","status":"draft"},"en":{"text":"Admission documents must be in English or Italian; otherwise an official translation and certification of authenticity are required.","status":"draft"}}}`
+  - "The entry qualification documents are accepted in the following languages: English / Italian." — https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
+  - "If this is not available, an official translation will be required, along with certification of the authenticity of the original documents." — https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
+- **requirement req-6**: `{"kind":"manual_check","note":{"fr":{"text":"Les frais de scolarité dépendent du pays d'origine et du cours; utilisez le calculateur de frais pour connaître le montant pour votre cas.","status":"draft"},"en":{"text":"Tuition fees depend on the country of origin and the course; use the fees calculator to determine the amount for your case.","status":"draft"}}}`
+  - "The amount for each international student is based on his/her country of origin and the course chosen." — https://apply.unisi.it/contents/content/8-tuition-fees-and-costs
 
-> Preparer's caveats: Teaching language from the MUR offer file (Italian ministry, open data, 2025/26 academic year): the course is listed as "Inglese".
-
-## programs/it-milano-bocconi-milano-international-economics-and-management-l18  _(batch b29-025e5b)_
-
-**International Economics and Management**
-
-- **durationYears**: `3` (official; source page-2) (unchanged: already in data/)
-- **teachingLanguages**: `["en"]` (official; source page-1)
-  - "2025;Milano Bocconi;Economica, Giuridica e Sociale;Economico;Laurea;L-18;Scienze dell'economia e della gestione aziendale;International Economics and Management;Milano;MILANO;locale;Convenzionale;Inglese" — https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
-- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifier sur la page d'admission du programme les conditions exactes pour les candidats internationaux (diplôme étranger, sélection, tests).","status":"draft"},"en":{"text":"Check the programme's admission page for the exact conditions for international applicants (foreign diploma, selection, tests).","status":"draft"}}}`
-
-> Preparer's caveats: Teaching language from the MUR offer file (Italian ministry, open data, 2025/26 academic year): the course is listed as "Inglese".
-
-## programs/it-roma-la-sapienza-roma-applied-computer-science-and-artificial-l31  _(batch b29-025e5b)_
-
-**Applied Computer Science and Artificial Intelligence**
-
-- **teachingLanguages**: `["en"]` (official; source page-1)
-  - "2025;Roma La Sapienza;STEM;Informatica e Tecnologie ICT;Laurea;L-31;Scienze e tecnologie informatiche;Applied Computer Science and Artificial Intelligence;Roma;ROMA;locale;Convenzionale;Inglese" — https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
-- **applicationChannel**: `it-universitaly` (official; source page-2) (unchanged: already in data/)
-- **documents**: `[{"slug":"passport","name":{"fr":{"text":"Passeport en cours de validité","status":"draft"},"en":{"text":"Valid passport","status":"draft"}},"translationRequired":null},{"slug":"study-visa","name":{"fr":{"text":"Visa d'études","status":"draft"},"en":{"text":"Study Visa","status":"draft"}},"translationRequired":null},{"slug":"high-school-diploma","name":{"fr":{"text":"Diplôme de fin d'études secondaires","status":"draft"},"en":{"text":"High School Diploma","status":"draft"}},"translationRequired":true}]` (official; source page-2) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"prior_study_years_min","years":12}`
-
-> Preparer's caveats: Teaching language from the MUR offer file (Italian ministry, open data, 2025/26 academic year): the course is listed as "Inglese".
-
-## programs/it-roma-tor-vergata-roma-engineering-sciences-l9  _(batch b29-025e5b)_
-
-**Engineering Sciences**
-
-- **durationYears**: `3` (official; source programme) (unchanged: already in data/)
-- **teachingLanguages**: `["en"]` (official; source page-1)
-  - "2025;Roma Tor Vergata;STEM;Ingegneria industriale e dell'informazione;Laurea;L-9;Ingegneria industriale;Engineering Sciences;Roma;ROMA;accesso libero;Convenzionale;Inglese" — https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
-- **applicationChannel**: `it-universitaly` (official; source page-2) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"prior_study_years_min","years":12}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Une preuve de connaissances obligatoire est prévue pour l'admission ; elle ne bloque pas l'inscription.","status":"draft"},"en":{"text":"A compulsory knowledge assessment test is required for admission; it does not prevent enrollment.","status":"draft"}}}`
-- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Préinscription obligatoire sur Universitaly avant le 31 juillet pour les candidats non-UE résidant à l'étranger.","status":"draft"},"en":{"text":"Mandatory pre-enrollment on Universitaly by July 31 for non-EU applicants living abroad.","status":"draft"}}}`
-
-> Preparer's caveats: Teaching language from the MUR offer file (Italian ministry, open data, 2025/26 academic year): the course is listed as "Inglese".
-
-## programs/it-siena-siena-economics-and-management-l18  _(batch b29-025e5b)_
-
-**Economics and Management**
-
-- **teachingLanguages**: `["en"]` (official; source page-1)
-  - "2025;Siena;Economica, Giuridica e Sociale;Economico;Laurea;L-18;Scienze dell'economia e della gestione aziendale;Economics and Management;Siena;SIENA;locale;Convenzionale;Inglese" — https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
-- **applicationChannel**: `it-universitaly` (official; source page-2) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Un test d'accès obligatoire mais non sélectif est prévu; il sert à vérifier la préparation de base et peut entraîner des obligations formatives supplémentaires à remplir durant la première année.","status":"draft"},"en":{"text":"A compulsory but non-selective entrance test is required; it verifies basic preparation and may lead to additional formative obligations to be fulfilled in the first year.","status":"draft"}}}`
-
-> Preparer's caveats: Teaching language from the MUR offer file (Italian ministry, open data, 2025/26 academic year): the course is listed as "Inglese".
+> Preparer's caveats: Tuition not stated as one amount for a non-EU full-time Bachelor student living abroad: the pages only give a fees calculator/ISEE-based reduction, so tuition is left out. No intakes stated for non-EU applicants; main apply page only says 'Application period has ended' for academic year 2026/27. Documents list not extracted because the apply page refers to external links without naming documents in a quotable list.
 

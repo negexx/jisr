@@ -1,44 +1,90 @@
 {
   "slug": "it-ca-foscari-venezia-roncade-digital-management-l18",
-  "programmePage": null,
+  "programmePage": "https://apply.unive.it/courses/course/593-ba-digital-management",
   "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://apply.unive.it/courses/course/593-ba-digital-management",
+          "quote": "Nominal duration 3 years (180 ECTS)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://apply.unive.it/courses/course/593-ba-digital-management",
+          "quote": "The Digital Management programme is entirely taught in English"
+        }
+      ]
+    },
     "applicationChannel": {
       "value": "it-universitaly",
       "evidence": [
         {
-          "url": "https://www.unive.it/pag/40975/",
-          "quote": "con questa lettera, iniziare la cosiddetta procedura di preiscrizione e richiesta di visto, attraverso il portale Universitaly del Ministero Italiano dell'Università e della Ricerca (MUR)"
+          "url": "https://www.unive.it/pag/40813/",
+          "quote": "Non-EU candidates who receive the letter of eligibility for enrolment in a bachelor’s or master’s degree program must complete the pre-enrolment procedure by logging in to the Universitaly portal and filling in the application online."
         }
       ]
     }
   },
-  "notes": "Aucun frais de scolarité spécifique pour les étudiants non-UE n'a été trouvé dans les pages fournies. La page mentionne une exonération pour certains étudiants internationaux, mais pas de montant unique pour tous. Les documents listés sont pour les étudiants non-européens demandant un visa.",
+  "notes": "Tuition: the programme page (apply.unive.it 593) states \"Tuition fee €8,934 per year\"; the programme's own tuition page for a.y. 2026/2027 states a maximum contribution of 8,726.00 EUR per academic year \"without any distinction between Italian/EU students and non-EU students\" (the 8,934 figure corresponds to no year shown on that page; the 8,606 EUR figure is for a.y. 2025/2026). The applied figure is therefore the 2026/2027 maximum contribution. Intakes: pages give \"Studies commence 11 Sept 2026\" and \"Enrolment procedures generally begin in mid-July\" / Universitaly pre-enrolment by 30 September 2026, but no dated non-EU application deadline was stated with a year, so no intake was output. Documents: the non-EU enrolment page (unive.it/pag/40976) lists bachelor's documents (Italian visa, Higher Secondary School final Diploma and transcript of records, Statement of Comparability/Declaration of Value/ARDI, language certificate) but these are quotes from a university-wide page and its lists mix optional/\"highly recommended\" items, so the documents fact was left out; likewise the apply.unive.it page's translation statement (\"If your documents are not in English or Italian, please upload the original documentation or a verified copy of it AS WELL AS a professional translation in English or Italian.\") is not tied to a named document list for this programme. | Owner-delegate decision 2026-10-05: tuition proposal REMOVED before verification. The only quote is a maximum contribution (a ceiling that depends on ISEE), not a fee a non-EU student living abroad is known to pay; Italian tuition stays unknown, as for every other Italian programme.",
   "requirements": {
     "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://apply.unive.it/courses/course/593-ba-digital-management",
+            "quote": "A minimum B2-level knowledge of English is required. Please make sure you upload one of the certifications we recognise as proof of your English language level."
+          }
+        ]
+      },
       {
         "kind": "prior_study_years_min",
         "years": 12,
         "evidence": [
           {
-            "url": "https://www.unive.it/pag/41325/",
-            "quote": "Coloro che presentano domanda per corsi di laurea devono aver ottenuto un diploma di scuola secondaria dopo aver completato almeno 12 anni di scolarità."
+            "url": "https://www.unive.it/pag/41327/",
+            "quote": "Applicants to bachelor's degree programmes must have completed at least 12 years of schooling and obtained a secondary school leaving qualification."
           }
         ]
       },
       {
         "kind": "manual_check",
         "note": {
-          "fr": "Documents requis pour l'admission : diplôme, relevé de notes et certificats de langue. Vérifiez les détails sur le portail apply.unive.it.",
-          "en": "Required documents for admission: diploma, transcript, and language certificates. Check details on the apply.unive.it portal."
+          "fr": "Programme à admission limitée : un test d'entrée écrit en ligne (mathématiques et raisonnement) est obligatoire. Les candidats non-UE ayant besoin d'un visa doivent déjà avoir les résultats officiels d'un test d'entrée reconnu au moment de la soumission.",
+          "en": "Limited-admission programme requiring an online written entry test (mathematics and reasoning). Non-EU applicants requiring a visa must already have their official results of one of the accepted entry tests at the moment of submission."
         },
         "evidence": [
           {
-            "url": "https://www.unive.it/pag/40975/",
-            "quote": "Diploma finale di scuola secondaria superiore e certificato attestante gli esami superati (sia in lingua originale che tradotti ufficialmente in italiano o in inglese se necessario)"
+            "url": "https://apply.unive.it/courses/course/593-ba-digital-management",
+            "quote": "This is a limited-admission programme that requires you to take an online written entry test that evaluates your knowledge of mathematics and reasoning."
           },
           {
-            "url": "https://www.unive.it/pag/40975/",
-            "quote": "Certificato di lingua inglese E/O certificato di lingua italiana: il livello e i requisiti sono specificati nella pagina web del corso specifico su unive.it"
+            "url": "https://apply.unive.it/courses/course/593-ba-digital-management",
+            "quote": "Non-European applicants requiring a visa must take one of the recognized tests. These applicants must already have their official results of one of the accepted entry tests AT THE MOMENT OF SUBMISSION."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Âge minimum : les candidats mineurs ne peuvent postuler que s'ils auront 18 ans au 31 décembre 2026.",
+          "en": "Minimum age: underage applicants may only apply if they will turn 18 years old by 31 December 2026."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unive.it/pag/41327/",
+            "quote": "Underage applicants are allowed to submit an application only if they will turn 18 years old by 31 December 2026."
           }
         ]
       }

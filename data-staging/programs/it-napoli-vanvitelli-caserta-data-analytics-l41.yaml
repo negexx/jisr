@@ -17,11 +17,12 @@ summary:
     status: draft
 officialUrl: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
 durationYears:
-  value: null
+  value: 3
   source: programme
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - en
   source: programme
   info_kind: official
 tuition:
@@ -33,8 +34,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: it-universitaly
-  source: page-2
+  value: null
+  source: programme
   info_kind: official
 documents:
   value: null
@@ -48,24 +49,21 @@ requirements:
     - id: req-1
       source: programme
       info_kind: official
-      kind: manual_check
-      note:
-        fr:
-          text: Les candidats non-UE résidant à l'étranger doivent passer le test CISIA CEnT-S (en anglais) uniquement pour les sections Mathematics et Reasoning ; le résultat détermine le classement.
-          status: draft
-        en:
-          text: Non-EU applicants residing abroad must take the CISIA CEnT-S test (in English) only for the Mathematics and Reasoning sections; the score determines the ranking.
-          status: draft
+      kind: language_proficiency
+      language: en
+      minCefr: B1
+      certificateRequired: null
+      acceptedTests: []
     - id: req-2
-      source: programme
+      source: page-2
       info_kind: official
       kind: manual_check
       note:
         fr:
-          text: Le seuil minimum est de 11 points au total dans les sections Mathematics et Reasoning, avec au moins 6 points en Mathematics ; les places pour les non-résidents dans l'UE sont de 100 (appel d'été).
+          text: "La sélection se fait par le test CISIA CEnT-S (seules les sections Mathématiques et Raisonnement sont prises en compte). Score minimum : 11 points au total dont 6 en Mathématiques. Un test d'anglais peut être exigé."
           status: draft
         en:
-          text: The minimum threshold is a combined score of at least 11 points in the Mathematics and Reasoning sections, with at least 6 points in Mathematics; there are 100 places for students residing in non-EU countries (summer call).
+          text: "Selection is by the CISIA CEnT-S test (only the Mathematics and Reasoning sections count). Minimum score: 11 points total, with at least 6 in Mathematics. An English interview may be required."
           status: draft
 scholarships: []
 sources:
@@ -73,7 +71,7 @@ sources:
     url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
     last_verified_at: null
   page-2:
-    url: https://www.economia.unicampania.it/international/11-international/4643-studenti-stranieri
+    url: https://unicampania.it/RPP/RGCSS/Concorso_DISTABIF_2026_2027/Data_Analytics/Bando_Data_Analytics_non_UE_26_27_EN.pdf
     last_verified_at: null
 _review:
   kind: programs
@@ -89,19 +87,16 @@ _review:
   preparedBy: assistant
   preparedAt: 2026-10-05
   evidence:
-    - fact: applicationChannel
-      url: https://www.economia.unicampania.it/international/11-international/4643-studenti-stranieri
-      quote: i candidati stranieri e/o richiedenti visto e residenti all'estero devono compilare e presentare la domanda di preiscrizione ai corsi di studio universitari esclusivamente in modalità telematica, accedendo al portale UNIVERSITALY (https://www.universitaly.it)
+    - fact: durationYears
+      url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
+      quote: "Duration: 3 years"
+    - fact: teachingLanguages
+      url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
+      quote: "Language of Instruction: English"
     - fact: requirements.req-1
       url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
-      quote: Take the CISIA CEnT-S test (English test for Science subjects)
-    - fact: requirements.req-1
-      url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
-      quote: Only the Mathematics and Reasoning sections (30 questions total) count toward your ranking
+      quote: Have an English language certification at least at B1 level
     - fact: requirements.req-2
-      url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
-      quote: Applicants must achieve a combined score of at least 11 points, with a sub-minimum of at least 6 points specifically in the Mathematics section.
-    - fact: requirements.req-2
-      url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
-      quote: 100 places for students residing in non-EU countries (summer call)
-  notes: "Tuition left out: no page states a single EUR amount for a full-time Bachelor student from outside the EU living abroad for the current academic year; the pages only mention generic fee reductions for international students. Application deadline: the page gives 21 September 2026 for non-EU residents, but this deadline comes from the programme page and is labeled 'for non EU residents'. The application channel quote comes from the Economics department page about foreign-student pre-enrolment at the same university (UNIVERSITALY); the Data Analytics pages themselves do not name the application portal."
+      url: https://unicampania.it/RPP/RGCSS/Concorso_DISTABIF_2026_2027/Data_Analytics/Bando_Data_Analytics_non_UE_26_27_EN.pdf
+      quote: have obtained a minimum overall score of 11 points overall by adding the scores of the "Mathematics" and "Reasoning on texts and data" sections
+  notes: "Tuition non inclus : les frais varient selon le barème ISEE et les montants mentionnés (202 € ou 500 €) sont des contributions en l'absence d'ISEE, pas le tarif annuel complet. Les dates limites ne sont pas incluses car l'appel concerne l'année académique 2026/2027, ce qui ne correspond pas à la définition d'un intake récurrent ou daté pour l'auditeur."
