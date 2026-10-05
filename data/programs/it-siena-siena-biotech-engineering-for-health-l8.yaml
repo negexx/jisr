@@ -113,64 +113,13 @@ scholarships: []
 sources:
   programme:
     url: https://biotech-engineering.unisi.it/en/course/program-overview
-    last_verified_at: null
+    last_verified_at: 2026-10-05
   page-2:
     url: https://biotech-engineering.unisi.it/en
-    last_verified_at: null
+    last_verified_at: 2026-10-05
   page-3:
     url: https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
-    last_verified_at: null
+    last_verified_at: 2026-10-05
   page-4:
     url: https://apply.unisi.it/contents/content/8-tuition-fees-and-costs
-    last_verified_at: null
-_review:
-  kind: programs
-  slug: it-siena-siena-biotech-engineering-for-health-l8
-  name: Biotech Engineering For Health
-  institution: Università degli studi di Siena
-  city: Siena
-  field: engineering
-  confidence: low
-  officialUrl: ""
-  todo: "MUR lists: degree class L-8 Ingegneria dell'informazione (also listed under L-2), language Inglese, mode Convenzionale, access locale, town Siena; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; the degree class(es) and the course name point to different fields or to a field outside the three: check the content; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
-  sourceId: mur:05201:l8:biotech-engineering-for-health@siena
-  preparedBy: assistant
-  preparedAt: 2026-10-05
-  evidence:
-    - fact: durationYears
-      url: https://biotech-engineering.unisi.it/en
-      quote: "Duration in years: 3"
-    - fact: durationYears
-      url: https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
-      quote: Nominal duration 3 years (180 ECTS)
-    - fact: teachingLanguages
-      url: https://biotech-engineering.unisi.it/en/course/program-overview
-      quote: Delivered entirely in English, the program stands out for its innovative and international perspective
-    - fact: teachingLanguages
-      url: https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
-      quote: Study language English
-    - fact: requirements.req-1
-      url: https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
-      quote: Proficiency in English at B2 level (CEFR) is also required.
-    - fact: requirements.req-2
-      url: https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
-      quote: A basic knowledge of mathematics, physics, and sciences will be assessed through an entrance test.
-    - fact: requirements.req-2
-      url: https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
-      quote: To participate in the selection process, candidates must take the CEnT-S online test, which is organized by CISIA.
-    - fact: requirements.req-3
-      url: https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
-      quote: The Bachelor’s Degree in Biotech Engineering for Health is a restricted-access program with a limited number of 80 places.
-    - fact: requirements.req-4
-      url: https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
-      quote: Any gaps identified must be addressed through additional learning requirements (OFA) to be completed within the first year.
-    - fact: requirements.req-5
-      url: https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
-      quote: "The entry qualification documents are accepted in the following languages: English / Italian."
-    - fact: requirements.req-5
-      url: https://apply.unisi.it/courses/course/145-b-biotech-engineering-health
-      quote: If this is not available, an official translation will be required, along with certification of the authenticity of the original documents.
-    - fact: requirements.req-6
-      url: https://apply.unisi.it/contents/content/8-tuition-fees-and-costs
-      quote: The amount for each international student is based on his/her country of origin and the course chosen.
-  notes: "Tuition not stated as one amount for a non-EU full-time Bachelor student living abroad: the pages only give a fees calculator/ISEE-based reduction, so tuition is left out. No intakes stated for non-EU applicants; main apply page only says 'Application period has ended' for academic year 2026/27. Documents list not extracted because the apply page refers to external links without naming documents in a quotable list."
+    last_verified_at: 2026-10-05

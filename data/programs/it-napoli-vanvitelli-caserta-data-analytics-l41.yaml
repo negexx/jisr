@@ -69,34 +69,7 @@ scholarships: []
 sources:
   programme:
     url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
-    last_verified_at: null
+    last_verified_at: 2026-10-05
   page-2:
     url: https://unicampania.it/RPP/RGCSS/Concorso_DISTABIF_2026_2027/Data_Analytics/Bando_Data_Analytics_non_UE_26_27_EN.pdf
-    last_verified_at: null
-_review:
-  kind: programs
-  slug: it-napoli-vanvitelli-caserta-data-analytics-l41
-  name: Data Analytics
-  institution: Università degli studi della Campania "Luigi Vanvitelli"
-  city: Caserta
-  field: business-economics
-  confidence: low
-  officialUrl: ""
-  todo: "MUR lists: degree class L-41 Statistica, language Inglese, mode Convenzionale, access locale, town Caserta; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; the degree class(es) and the course name point to different fields or to a field outside the three: check the content; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
-  sourceId: mur:06306:l41:data-analytics@caserta
-  preparedBy: assistant
-  preparedAt: 2026-10-05
-  evidence:
-    - fact: durationYears
-      url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
-      quote: "Duration: 3 years"
-    - fact: teachingLanguages
-      url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
-      quote: "Language of Instruction: English"
-    - fact: requirements.req-1
-      url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
-      quote: Have an English language certification at least at B1 level
-    - fact: requirements.req-2
-      url: https://unicampania.it/RPP/RGCSS/Concorso_DISTABIF_2026_2027/Data_Analytics/Bando_Data_Analytics_non_UE_26_27_EN.pdf
-      quote: have obtained a minimum overall score of 11 points overall by adding the scores of the "Mathematics" and "Reasoning on texts and data" sections
-  notes: "Tuition non inclus : les frais varient selon le barème ISEE et les montants mentionnés (202 € ou 500 €) sont des contributions en l'absence d'ISEE, pas le tarif annuel complet. Les dates limites ne sont pas incluses car l'appel concerne l'année académique 2026/2027, ce qui ne correspond pas à la définition d'un intake récurrent ou daté pour l'auditeur."
+    last_verified_at: 2026-10-05
