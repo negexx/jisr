@@ -59,6 +59,9 @@ _review:
     - fact: eligibility
       url: https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html
       quote: First- and higher-semester students of all nationalities can apply directly to their university.
+    - fact: eligibility
+      url: https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html
+      quote: supports talented and high-achieving students at public and state-recognised universities in Germany
     - fact: level
       url: https://www.deutschlandstipendium.de/deutschlandstipendium/de/studierende/haeufig-gestellte-fragen/haeufig-gestellte-fragen.html
       quote: Grundsätzlich ist jedes Studium an einer staatlichen oder staatlich anerkannten Hochschule förderungsfähig.
@@ -71,4 +74,10 @@ _review:
     - fact: support
       url: https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html
       quote: 300 euros per month for international top-class talent
+    - fact: support
+      url: https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html
+      quote: sponsor young talent with a pledge of 150 euros per month
+    - fact: support
+      url: https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html
+      quote: The Federal Government matches this amount with another 150 euros
   todo: "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"

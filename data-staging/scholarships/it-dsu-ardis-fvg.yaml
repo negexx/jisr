@@ -1,0 +1,73 @@
+slug: it-dsu-ardis-fvg
+name: Borsa di studio ARDIS (Friuli Venezia Giulia)
+provider: ARDIS - Agenzia regionale per il diritto allo studio del Friuli Venezia Giulia
+destinations:
+  - IT
+eligibleNationalities: []
+fields: []
+institutions:
+  - it-udine-udine
+level: bachelor
+summary:
+  fr:
+    text: Bourse régionale gérée par ARDIS pour les étudiants des universités du Frioul-Vénétie julienne. Les étudiants non européens dont la famille vit à l'étranger obtiennent un ISEE universitaire équivalent (ISEE parificato) auprès d'un CAF conventionné.
+    status: draft
+  en:
+    text: Regional scholarship managed by ARDIS for students at universities in Friuli Venezia Giulia. Non-EU students whose families live abroad obtain an equivalent university ISEE (ISEE parificato) from a CAF under agreement (CAF convenzionato).
+    status: draft
+support:
+  value: null
+  source: page-1
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-1
+  info_kind: official
+  rules: []
+documents:
+  value: null
+  source: page-1
+  info_kind: official
+howToApply:
+  fr:
+    text: Demande en ligne sur le site d'ARDIS, chaque année. Les étudiants non européens ne résidant pas en Italie avec seulement un document d'identité étranger s'identifient selon une procédure distincte prévue par l'appel.
+    status: draft
+  en:
+    text: Apply online through the ARDIS website every academic year. Non-EU students not resident in Italy who hold only a foreign identity document identify themselves through a separate procedure set out in the call.
+    status: draft
+officialUrl: https://www.ardis.fvg.it/upload/schede/1784105330.pdf
+sources:
+  page-1:
+    url: https://www.ardis.fvg.it/upload/schede/1784105330.pdf
+    last_verified_at: null
+_review:
+  kind: scholarships
+  slug: it-dsu-ardis-fvg
+  name: Borsa di studio ARDIS (Friuli Venezia Giulia)
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  officialUrl: https://www.ardis.fvg.it/upload/schede/1784105330.pdf
+  evidence:
+    - fact: eligibility
+      url: https://www.ardis.fvg.it/upload/schede/1784105330.pdf
+      quote: 6% delle borse di studio disponibili agli studenti non comunitari
+    - fact: eligibility
+      url: https://www.ardis.fvg.it/upload/schede/1784105330.pdf
+      quote: Gli studenti non comunitari possono essere considerati fuori sede indipendentemente dalla sede della loro residenza in Italia
+    - fact: level
+      url: https://www.ardis.fvg.it/upload/schede/1784105330.pdf
+      quote: Laurea triennale Triennio superiore di I livello del Conservatorio/Accademia I benefici vengono attribuiti per sette semestri
+    - fact: howToApply
+      url: https://www.ardis.fvg.it/upload/schede/1784105330.pdf
+      quote: Gli studenti che intendono chiedere i benefici devono compilare la domanda online, che sarà resa disponibile sul sito www.ardis.fvg.it
+    - fact: howToApply
+      url: https://www.ardis.fvg.it/upload/schede/1784105330.pdf
+      quote: comunitari e non comunitari, non residenti in Italia, il cui nucleo familiare risiede all’estero devono rivolgersi esclusivamente ai CAF convenzionati per il rilascio dell’ISEE universitario parificato
+    - fact: howToApply
+      url: https://www.ardis.fvg.it/upload/schede/1784105330.pdf
+      quote: Gli studenti non comunitari, in possesso esclusivamente di un documento di identità rilasciato dalle autorità del proprio Paese, e non residenti in Italia
+  todo: "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"

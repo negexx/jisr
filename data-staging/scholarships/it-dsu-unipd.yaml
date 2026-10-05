@@ -1,0 +1,83 @@
+slug: it-dsu-unipd
+name: Borsa di studio regionale (Università di Padova)
+provider: Università degli Studi di Padova (borse di studio regionali, DSU)
+destinations:
+  - IT
+eligibleNationalities: []
+fields: []
+institutions:
+  - it-padova-padova
+level: bachelor
+summary:
+  fr:
+    text: Bourse régionale pour le droit aux études, gérée directement par l'Université de Padoue pour ses étudiants. Les étudiants internationaux dont la famille vit à l'étranger obtiennent un ISEE équivalent (ISEE parificato) auprès du CAF conventionné.
+    status: draft
+  en:
+    text: Regional right-to-study scholarship managed directly by the University of Padua for its own students. International students whose families live abroad obtain an equivalent ISEE (ISEE parificato) from the CAF affiliated with the University.
+    status: draft
+support:
+  value:
+    amount: null
+    covers:
+      - tuition
+      - housing
+  source: page-2
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-1
+  info_kind: official
+  rules: []
+documents:
+  value: null
+  source: page-1
+  info_kind: official
+howToApply:
+  fr:
+    text: Remplir la demande d'avantages (RdA) sur Uniweb et demander l'ISEE ou l'ISEE parificato. Les étudiants internationaux demandent l'ISEE parificato uniquement au CAF conventionné avec l'Université.
+    status: draft
+  en:
+    text: Fill in the Application for Benefits (RdA) in Uniweb and request the ISEE or ISEE parificato. International students request the ISEE parificato only from the CAF affiliated with the University.
+    status: draft
+officialUrl: https://www.unipd.it/borse-studio-alloggi
+sources:
+  page-1:
+    url: https://www.unipd.it/borse-studio-alloggi
+    last_verified_at: null
+  page-2:
+    url: https://wwwassets.unipd.it/sites/default/files/2026-07/1.Bando%20Borse%20Studio%202026-27_ENG_0.pdf
+    last_verified_at: null
+_review:
+  kind: scholarships
+  slug: it-dsu-unipd
+  name: Borsa di studio regionale (Università di Padova)
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  officialUrl: https://www.unipd.it/borse-studio-alloggi
+  evidence:
+    - fact: eligibility
+      url: https://www.unipd.it/borse-studio-alloggi
+      quote: studentesse e studenti internazionali residenti all'estero, con nucleo familiare residente all'estero
+    - fact: eligibility
+      url: https://wwwassets.unipd.it/sites/default/files/2026-07/1.Bando%20Borse%20Studio%202026-27_ENG_0.pdf
+      quote: For students with non-EU citizenship enrolled in the first year of all degree programmes
+    - fact: level
+      url: https://wwwassets.unipd.it/sites/default/files/2026-07/Bando%20Borse%20Studio%202026-27.pdf
+      quote: 7 semestri per le/gli iscritte/i ai corsi di laurea a partire dall'anno di prima immatricolazione
+    - fact: howToApply
+      url: https://www.unipd.it/borse-studio-alloggi
+      quote: compilare e confermare la Richiesta di agevolazioni (RdA) su Uniweb
+    - fact: howToApply
+      url: https://wwwassets.unipd.it/sites/default/files/2026-07/1.Bando%20Borse%20Studio%202026-27_ENG_0.pdf
+      quote: Issuance of the ISEE Parificato certificate must be requested exclusively from the CAF affiliated with the University
+    - fact: support
+      url: https://wwwassets.unipd.it/sites/default/files/2026-07/1.Bando%20Borse%20Studio%202026-27_ENG_0.pdf
+      quote: Part of the study scholarship is provided in services (food and accommodation)
+    - fact: support
+      url: https://wwwassets.unipd.it/sites/default/files/2026-07/1.Bando%20Borse%20Studio%202026-27_ENG_0.pdf
+      quote: are entitled to a total or partial exemption as provided for in the Call for student fees and exemptions for the 2026/27 academic year
+  todo: "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"

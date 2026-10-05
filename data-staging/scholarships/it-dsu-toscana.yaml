@@ -57,6 +57,9 @@ _review:
     - fact: eligibility
       url: https://www.dsu.toscana.it/studenti-stranieri
       quote: Studenti provenienti da Paesi extra UE Tutta la documentazione sotto riportata deve essere tradotta in lingua italiana e legalizzata dalle Autorità diplomatiche italiane del paese d’origine
+    - fact: eligibility
+      url: https://www.dsu.toscana.it/studenti-stranieri
+      quote: Gli studenti con famiglia che vive all'estero oppure ha redditi o patrimoni all'estero
     - fact: level
       url: https://www.dsu.toscana.it/borsa-di-studio
       quote: per gli studenti iscritti o che intendano iscriversi ai corsi di laurea triennale, magistrale e magistrale a ciclo unico

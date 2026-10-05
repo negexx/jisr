@@ -11,10 +11,10 @@ institutions:
 level: bachelor
 summary:
   fr:
-    text: Bourse régionale gérée par EDISU Piemonte pour les étudiants inscrits dans les universités du Piémont, y compris les étudiants internationaux non-UE, qui préparent un ISEE parificato à partir de documents consulaires.
+    text: Bourse régionale gérée par EDISU Piemonte pour les étudiants inscrits dans les universités du Piémont, y compris les étudiants internationaux non-UE, qui joignent une documentation consulaire traduite en italien.
     status: draft
   en:
-    text: Regional scholarship managed by EDISU Piemonte for students enrolled at Piedmont universities, including international non-EU students, who have an ISEE parificato calculated from consular documents.
+    text: Regional scholarship managed by EDISU Piemonte for students enrolled at Piedmont universities, including international non-EU students, who attach consular documentation translated into Italian.
     status: draft
 support:
   value:

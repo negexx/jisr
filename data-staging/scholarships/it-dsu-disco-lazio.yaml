@@ -21,11 +21,8 @@ summary:
     text: Regional scholarship managed by Lazio DiSCo for students at universities in Lazio, including international students whose families live abroad, assessed through an ISEEUP (ISEE parificato).
     status: draft
 support:
-  value:
-    amount: null
-    covers:
-      - housing
-  source: page-2
+  value: null
+  source: page-1
   info_kind: official
 deadline:
   value: null
@@ -93,9 +90,6 @@ _review:
     - fact: howToApply
       url: https://laziodisco.it/bando-diritto-allo-studio-2026-2027/faq-studenti-internazionali/
       quote: L’ISEEUP è l’Indicatore della Situazione Economica Equivalente Parificato. Sostituisce l’ISEE per il diritto allo studio se il tuo nucelo familiare risiede o ha redditi in un paese diverso dall’Italia.
-    - fact: support
-      url: https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-ENG-26-27.pdf
-      quote: Accommodation places at DiSCo’s university Residences, under Annex G
     - fact: documents
       url: https://laziodisco.it/bando-diritto-allo-studio-2026-2027/faq-studenti-internazionali/
       quote: Devi presentare la documentazione rilasciata dalle autorità diplomatiche o consolari italiane nel tuo Paese d’origine, che deve essere obbligatoriamente tradotta in italiano e legalizzata/apostillata.

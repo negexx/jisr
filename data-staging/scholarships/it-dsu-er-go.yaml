@@ -85,6 +85,12 @@ _review:
     - fact: howToApply
       url: https://www.er-go.it/international-students/application/how-to-apply
       quote: Remember to upload the original documents, with the translation and legalization, in your Dossier Utente, in the section Corrispondenza e Protocollo > Invia Documentazione > Documentazione redditi esteri
+    - fact: howToApply
+      url: https://www.er-go.it/international-students/benefits/focus-on-scholarship
+      quote: which will be used to calculate your equivalent for the ISEE
+    - fact: howToApply
+      url: https://www.er-go.it/international-students/benefits/focus-on-scholarship
+      quote: Every academic year you must submit the application
     - fact: support
       url: https://www.er-go.it/international-students/benefits/focus-on-scholarship
       quote: If you are eligible for the scholarship, you are entitled to the total tuition fee exemption

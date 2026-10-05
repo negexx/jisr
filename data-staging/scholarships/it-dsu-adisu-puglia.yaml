@@ -1,0 +1,79 @@
+slug: it-dsu-adisu-puglia
+name: Borsa di studio ADISU Puglia
+provider: ADISU Puglia - Agenzia per il Diritto allo Studio Universitario della Regione Puglia
+destinations:
+  - IT
+eligibleNationalities: []
+fields: []
+institutions:
+  - it-bari-politecnico-bari
+level: bachelor
+summary:
+  fr:
+    text: Bourse régionale gérée par ADISU Puglia pour les étudiants des universités des Pouilles. L'appel est ouvert aux étudiants italiens et étrangers ; ceux dont la famille a des revenus à l'étranger fournissent des documents de leur pays.
+    status: draft
+  en:
+    text: Regional scholarship managed by ADISU Puglia for students at universities in Puglia. The call is open to Italian and foreign students; those whose families have income abroad submit documents from their home country.
+    status: draft
+support:
+  value:
+    amount: null
+    covers:
+      - tuition
+  source: page-2
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-2
+  info_kind: official
+  rules: []
+documents:
+  value: null
+  source: page-1
+  info_kind: official
+howToApply:
+  fr:
+    text: Demande uniquement en ligne via le Portail Étudiants d'ADISU Puglia. Les documents sur les revenus à l'étranger, traduits en italien et légalisés ou apostillés, sont téléversés dans la section dédiée du portail.
+    status: draft
+  en:
+    text: Apply online only through the ADISU Puglia Student Portal. Documents on income abroad, translated into Italian and legalised or apostilled, are uploaded in the dedicated section of the portal.
+    status: draft
+officialUrl: https://www.adisupuglia.it/pagina106703_borse-di-studio.html
+sources:
+  page-1:
+    url: https://www.adisupuglia.it/pagina106703_borse-di-studio.html
+    last_verified_at: null
+  page-2:
+    url: https://adisupuglia.it/output_allegato.php?id=1444596
+    last_verified_at: null
+_review:
+  kind: scholarships
+  slug: it-dsu-adisu-puglia
+  name: Borsa di studio ADISU Puglia
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  officialUrl: https://www.adisupuglia.it/pagina106703_borse-di-studio.html
+  evidence:
+    - fact: eligibility
+      url: https://adisupuglia.it/output_allegato.php?id=1444596
+      quote: Italian and foreign students who meet the economic and merit requirements
+    - fact: level
+      url: https://adisupuglia.it/output_allegato.php?id=1444063
+      quote: studenti iscritti ai corsi di laurea
+    - fact: howToApply
+      url: https://www.adisupuglia.it/pagina106703_borse-di-studio.html
+      quote: Le domande di partecipazione dovranno essere presentate esclusivamente online attraverso il Portale Studenti ADISU Puglia
+    - fact: howToApply
+      url: https://adisupuglia.it/output_allegato.php?id=1444596
+      quote: Students are required to upload the documentation as indicated above through the student portal, in the appropriate section on foreign incomes
+    - fact: howToApply
+      url: https://adisupuglia.it/output_allegato.php?id=1444596
+      quote: The documentation must be translated into Italian, legalized, or apostilled, in accordance with current regulations
+    - fact: support
+      url: https://adisupuglia.it/output_allegato.php?id=1444596
+      quote: Eligible students who are not awarded a scholarship and scholarship holders are entitled to exemption from or reimbursement of university fees for the current academic year
+  todo: "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
