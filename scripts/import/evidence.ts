@@ -218,7 +218,8 @@ const NUMBER_WORDS: Record<number, readonly string[]> = {
 };
 
 const LANGUAGE_WORDS: Record<string, RegExp> = {
-  en: /english|anglais|englisch|engels|\bangla/i,
+  // ";Inglese" is the language column of the MUR offer file ("...;Convenzionale;Inglese")
+  en: /english|anglais|englisch|engels|\bangla|;\s*inglese\b/i,
   fr: /french|français|francais|französisch|franzosisch|frans/i,
   de: /german|allemand|deutsch|duits/i,
   ar: /arabic|arabe|arabisch/i,

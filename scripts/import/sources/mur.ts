@@ -15,8 +15,8 @@ import { CONTACTS_URL, matchContact, parseContacts, siteOrigin } from "./mur-con
 // the programme and institution pages afterwards.
 const DATASET = "https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2";
 const FILES = `${DATASET}/resource`;
-const OFFER_URL = `${FILES}/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv`;
-const ATENEI_URL = `${FILES}/820aefe6-0662-4656-84ec-d8859a2a3b7e/download/01_atenei.csv`;
+export const OFFER_URL = `${FILES}/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv`;
+export const ATENEI_URL = `${FILES}/820aefe6-0662-4656-84ec-d8859a2a3b7e/download/01_atenei.csv`;
 
 const OFFER_COLUMNS = [
   "ANNO",
@@ -25,6 +25,7 @@ const OFFER_COLUMNS = [
   "Classe",
   "NomeClasse",
   "Corso",
+  "SedeCorso_Provincia",
   "SedeCorso_Comune",
   "ACCESSO",
   "DIDATTICA",
@@ -46,6 +47,7 @@ export type MurCourse = {
   classCode: string;
   className: string;
   name: string;
+  province: string;
   city: string;
   access: string;
   mode: string;
@@ -80,6 +82,7 @@ export function parseMurOffer(csv: string): MurCourse[] {
     classCode: collapseSpaces(r.Classe ?? ""),
     className: collapseSpaces(r.NomeClasse ?? ""),
     name: collapseSpaces(r.Corso ?? ""),
+    province: collapseSpaces(r.SedeCorso_Provincia ?? ""),
     city: collapseSpaces(r.SedeCorso_Comune ?? ""),
     access: collapseSpaces(r.ACCESSO ?? ""),
     mode: collapseSpaces(r.DIDATTICA ?? ""),
