@@ -24,7 +24,7 @@
 
 | Our line (per month) | Rows | Rule |
 |---|---|---|
-| `housing` | `3 Bedroom Apartment Outside of City Centre`, `1 Bedroom Apartment Outside of City Centre` | min = a third of the 3-bedroom average (a room in a shared flat), max = the 1-bedroom average; if min > max they swap; either row missing: no line |
+| `housing` | `1 Bedroom Apartment Outside of City Centre` | owner decision 2026-10-05: a student most likely needs one bedroom; min and max = the row's low and high; a row with no range gives no line (never a single value) |
 | `food` | `Meal at an Inexpensive Restaurant` and the grocery rows | a fixed monthly basket, listed in the basis: milk 8 L, bread 8 loaves (500 g), rice 2 kg, eggs 24, chicken 3 kg, apples 3 kg, bananas 3 kg, tomatoes 3 kg, potatoes 4 kg, onions 2 kg, lettuce 4, 8 inexpensive-restaurant meals; min uses each row's low price, max each row's high price; any basket row missing: no line |
 | `transport` | `Monthly Public Transport Pass (Regular Price)` | min and max = the row's range; a student pass may be cheaper |
 
@@ -50,7 +50,7 @@ The basket and the housing rule are our modelling choices, disclosed in the `bas
 - Produces `type NumbeoPage = { lastUpdate: string | null; contributors: number | null; rows: NumbeoRow[] }`. `parseNumbeoPage(html: string): NumbeoPage` reads the `data_wide_table`, strips tags, decodes entities, and reads `1,396.87` and `1,100.00-2,000.00` (US thousands separator); a missing number is `null`; `lastUpdate` is the ISO date of `Last update: 3 October 2026`. The currency is not guessed from the page: the CLI knows which currency it asked for.
 - Produces `costLinesFrom(page: NumbeoPage): { lines: Partial<Record<"housing" | "food" | "transport", { min: number; max: number }>>; used: Record<string, NumbeoRow[]>; missing: string[] }`, with min and max in major units rounded to whole units (the CLI converts to minor units).
 
-- [ ] **Step 1: failing tests** (inline HTML in the shape of the real page, invented round numbers): values and ranges parse; the thousands separator; a row without a range gives low and high `null`; sections that are not used are ignored; housing is the 3-bedroom average divided by 3 up to the 1-bedroom average, and swaps when reversed; food sums quantity times low and high price and needs every basket row; transport takes the pass range; a missing row removes only its line and is listed in `missing`; `used` carries the exact rows behind each line (for the audit sheet).
+- [ ] **Step 1: failing tests** (inline HTML in the shape of the real page, invented round numbers): values and ranges parse; the thousands separator; a row without a range gives low and high `null`; sections that are not used are ignored; housing takes the 1-bedroom-outside-the-centre range, and a row without a range gives no housing line; food sums quantity times low and high price and needs every basket row; transport takes the pass range; a missing row removes only its line and is listed in `missing`; `used` carries the exact rows behind each line (for the audit sheet).
 - [ ] **Step 2: run and see them fail** (`pnpm exec vitest run tests/scripts/import/numbeo.test.ts`).
 - [ ] **Step 3: implement** the parser (regex on `<tr>` and `<td>`, no new dependency) and the mapping.
 - [ ] **Step 4: run and see them pass; `pnpm typecheck && pnpm lint`; commit** `feat: parse Numbeo cost pages into housing, food and transport lines`.
@@ -98,7 +98,7 @@ The basket and the housing rule are our modelling choices, disclosed in the `bas
 
 ## Open decisions for the owner (defaults in this plan)
 
-1. Housing is a third of a 3-bedroom outside the centre up to a 1-bedroom outside the centre (averages).
+1. Housing is the range of a 1-bedroom apartment outside the city centre (owner decision 2026-10-05: a student most likely needs one bedroom).
 2. The food basket as listed.
 3. Hungary in HUF, not converted.
 4. The country profile from Numbeo's country page is the fallback for cities Numbeo lacks.
