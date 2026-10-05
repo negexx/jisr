@@ -1,0 +1,177 @@
+slug: it-roma-tor-vergata-roma-business-administration-economics-l18
+institution: it-roma-tor-vergata-roma
+country: IT
+city: roma
+field: business-economics
+level: bachelor
+name: Business Administration & Economics
+summary:
+  fr:
+    text: Business Administration & Economics, Università degli studi di Roma Tor Vergata (Roma). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Business Administration & Economics, Università degli studi di Roma Tor Vergata (Roma). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Business Administration & Economics, Università degli studi di Roma Tor Vergata (Roma). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://economia.uniroma2.it/economia/186-1942/firmato-laccordo-per-il-dual-degree-tra-il-bachelor-degree-in-business-administration-and-economics-e-la-national-research-university-higher-school-of-economics-st-petersburg-
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+    - slug: photo
+      name:
+        fr:
+          text: Photo
+          status: draft
+        en:
+          text: Photo
+          status: draft
+      translationRequired: null
+    - slug: high-school-diploma
+      name:
+        fr:
+          text: Diplôme d'études secondaires
+          status: draft
+        en:
+          text: High-school diploma
+          status: draft
+      translationRequired: null
+    - slug: school-report-cards
+      name:
+        fr:
+          text: Bulletins scolaires du secondaire
+          status: draft
+        en:
+          text: High-school report cards
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez le bando/avviso du programme pour les éventuelles procédures d'admission et les échéances applicables aux étudiants internationaux.
+          status: draft
+        en:
+          text: Check the programme's bando/avviso for any admission procedures and deadlines applicable to international students.
+          status: draft
+    - id: req-3
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un test d'admission ou une évaluation peut être exigé : consultez le bando du cours pour les procédures et les échéances."
+          status: draft
+        en:
+          text: "An admission test or assessment may be required: check the programme's bando for procedures and deadlines."
+          status: draft
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: La préinscription sur Universitaly doit être faite avant le 31 juillet (sauf programmes avec test d'entrée, où elle précède le test).
+          status: draft
+        en:
+          text: Universitaly pre-enrolment must be submitted by 31 July (except for programmes with an entrance exam, where it precedes the test).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://economia.uniroma2.it/economia/186-1942/firmato-laccordo-per-il-dual-degree-tra-il-bachelor-degree-in-business-administration-and-economics-e-la-national-research-university-higher-school-of-economics-st-petersburg-
+    last_verified_at: null
+  page-2:
+    url: https://www-2023.studenti.uniroma2.it/en/preiscrizione-e-visto-dingresso/
+    last_verified_at: null
+  page-3:
+    url: https://web.uniroma2.it/en/percorso/admissions
+    last_verified_at: null
+  page-4:
+    url: https://web.uniroma2.it/contenuto/come_iscriversi_con_titolo_estero
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-roma-tor-vergata-roma-business-administration-economics-l18
+  name: Business Administration & Economics
+  institution: Università degli studi di Roma Tor Vergata
+  city: Roma
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "MUR lists: degree class L-18 Scienze dell'economia e della gestione aziendale (also listed under L-33), language Inglese, mode Convenzionale, access locale, town Roma; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur:05802:l18:business-administration-economics@roma
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: applicationChannel
+      url: https://www-2023.studenti.uniroma2.it/en/preiscrizione-e-visto-dingresso/
+      quote: If you are a non-EU citizen residing abroad, you must submit a pre-enrolment application to request an entry visa for study purposes in order to enter Italy.
+    - fact: applicationChannel
+      url: https://www-2023.studenti.uniroma2.it/en/preiscrizione-e-visto-dingresso/
+      quote: You must submit the pre-enrolment application on the Universitaly platform (www.universitaly.it)
+    - fact: documents
+      url: https://web.uniroma2.it/en/percorso/admissions
+      quote: "Mandatory documents to be uploaded during pre-enrollment procedures on Universitaly: Passport Photo Admission letter (if provided) High-school diploma (for enrollment in Bachelor's Degree programmes) / Bachelor's Degree + Transcript of exams (for enrollment in Master's Degree programmes)"
+    - fact: documents
+      url: https://web.uniroma2.it/en/percorso/admissions
+      quote: Final high-school diploma in original. High-school report cards.
+    - fact: documents
+      url: https://web.uniroma2.it/en/percorso/admissions
+      quote: Translations must always be made in compliance with the rules established by the Ministry of Foreign Affairs and International Cooperation (MAECI)
+    - fact: requirements.req-1
+      url: https://web.uniroma2.it/en/percorso/admissions
+      quote: The qualification must be obtained at the end of a school period equal to at least 12 years of schooling
+    - fact: requirements.req-2
+      url: https://web.uniroma2.it/contenuto/come_iscriversi_con_titolo_estero
+      quote: Per i corsi di studio erogati in lingua italiana, i candidati in possesso di un titolo di studio estero devono seguire le modalità indicate nel bando o nell'avviso di ammissione del corso di studi prescelto.
+    - fact: requirements.req-3
+      url: https://web.uniroma2.it/contenuto/come_iscriversi_con_titolo_estero
+      quote: Per i corsi di studio dove è prevista l'iscrizione al test di ammissione o valutazione puoi consultare tutte le informazioni sulle procedure e le scadenze sui relativi bandi o avvisi
+    - fact: requirements.req-4
+      url: https://web.uniroma2.it/en/percorso/admissions
+      quote: The deadline to submit UniversItaly pre-enrollment is July 31 except for programs that require entrance exam, in that case the pre-enrollment must be submitted before the test.
+  notes: "Tuition left out: the pages only give an ISEE-band table and a fee simulator, not one amount for a full-time non-EU applicant living abroad (https://www-2023.studenti.uniroma2.it/it_it/simulatore-calcolo-tasse-e-contributi/ and the 2021/22 thesis-mobility band's ISEE table). The programme's own page (economia.uniroma2.it) is a 2018 Dual Degree news item and states no duration, language, tuition, intake or document list for this Bachelor. No language proficiency rule for an entrance requirement was found; only a general admission-language statement (Italian B2) tied to Italian-taught degrees. Deadline rule for Universitaly (July 31) is stated for the general non-EU pre-enrolment route; the pre-enrolment route is a visa step, not an application to this programme."

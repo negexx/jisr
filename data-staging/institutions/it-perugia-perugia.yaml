@@ -1,0 +1,30 @@
+slug: it-perugia-perugia
+name: Università degli studi di Perugia
+country: IT
+city:
+  slug: perugia
+  name: Perugia
+type: public
+website: https://www.unipg.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unipg.it/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: it-perugia-perugia
+  name: Università degli studi di Perugia
+  institution: ""
+  city: Perugia
+  field: ""
+  confidence: ""
+  officialUrl: https://www.unipg.it/
+  todo: "university 05401 in the MUR list (state, region UMBRIA): the list gives no website. Candidate from the international students portal contacts table: https://www.unipg.it/ (not confirmed). Check the university's home page names it (an English page that does), that it is a recognised Italian university, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur-institution:05401@perugia
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - url: https://www.unipg.it/
+      quote: Home - Università degli Studi di Perugia EN EN Chi sei?> Studente futuro

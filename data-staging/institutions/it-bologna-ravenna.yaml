@@ -1,0 +1,30 @@
+slug: it-bologna-ravenna
+name: Università degli studi di Bologna
+country: IT
+city:
+  slug: ravenna
+  name: Ravenna
+type: public
+website: https://www.unibo.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unibo.it/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: it-bologna-ravenna
+  name: Università degli studi di Bologna
+  institution: ""
+  city: Ravenna
+  field: ""
+  confidence: ""
+  officialUrl: https://www.unibo.it/
+  todo: "university 03701 in the MUR list (state, region EMILIA ROMAGNA): the list gives no website. Candidate from the international students portal contacts table: https://www.unibo.it/ (not confirmed). Check the university's home page names it (an English page that does), that it is a recognised Italian university, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur-institution:03701@ravenna
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - url: https://www.unibo.it/
+      quote: Università di Bologna vai al contenuto della pagina vai al menu di

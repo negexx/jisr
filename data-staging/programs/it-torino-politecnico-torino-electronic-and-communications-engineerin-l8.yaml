@@ -1,0 +1,64 @@
+slug: it-torino-politecnico-torino-electronic-and-communications-engineerin-l8
+institution: it-torino-politecnico-torino
+country: IT
+city: torino
+field: engineering
+level: bachelor
+name: Electronic and Communications Engineering (Ingegneria elettronica e delle comunicazioni)
+summary:
+  fr:
+    text: Electronic and Communications Engineering (Ingegneria elettronica e delle comunicazioni), Politecnico di Torino (Torino). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Electronic and Communications Engineering (Ingegneria elettronica e delle comunicazioni), Politecnico di Torino (Torino). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Electronic and Communications Engineering (Ingegneria elettronica e delle comunicazioni), Politecnico di Torino (Torino). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: mur
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: mur
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: mur
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: mur
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: mur
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: mur
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: mur
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  mur:
+    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-torino-politecnico-torino-electronic-and-communications-engineerin-l8
+  name: Electronic and Communications Engineering (Ingegneria elettronica e delle comunicazioni)
+  institution: Politecnico di Torino
+  city: Torino
+  field: engineering
+  confidence: high
+  officialUrl: ""
+  todo: "MUR lists: degree class L-8 Ingegneria dell'informazione, language Inglese, mode Convenzionale, access locale, town Torino; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants"
+  sourceId: mur:00102:l8:electronic-and-communications-engineering-ingegneria-elettro@torino

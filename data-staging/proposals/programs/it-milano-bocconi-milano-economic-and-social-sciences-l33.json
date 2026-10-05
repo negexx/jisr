@@ -1,0 +1,18 @@
+{
+  "slug": "it-milano-bocconi-milano-economic-and-social-sciences-l33",
+  "programmePage": null,
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unibocconi.it/en/programs/bachelor-science/economics",
+          "quote": "The program is offered entirely in English."
+        }
+      ]
+    }
+  },
+  "notes": "The supplied pages do not contain this programme's own page: the only bachelor page is for the BSc in Economics (https://www.unibocconi.it/en/programs/bachelor-science/economics), so durationYears and teachingLanguages are taken from that page as the closest Bocconi BSc reference. No page states an application deadline, application channel (no mention of Universitaly or of a Bocconi application form for this programme), or document list for international applicants. Tuition is left out: the only figures found are for the BSc/giurisprudenza generally ('un investimento economico pari a 17.000 euro all’anno', a.a. 2026-2027, https://www.unibocconi.it/it/studenti-iscritti/tasse-e-contributi-universitari), which is an institution-wide bachelor fee not stated for international/non-EU students of this programme; the 100% Full tuition waivers pages are for Italian resident students only ('candidati italiani immatricolati'). The MSc fee page (18.550 euro) is for Master of Science and does not apply."
+}

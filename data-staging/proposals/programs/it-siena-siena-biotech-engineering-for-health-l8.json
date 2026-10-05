@@ -1,0 +1,39 @@
+{
+  "slug": "it-siena-siena-biotech-engineering-for-health-l8",
+  "programmePage": "https://biotech-engineering.unisi.it/en/course/program-overview",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://biotech-engineering.unisi.it/en/course/program-overview",
+          "quote": "Delivered entirely in English"
+        },
+        {
+          "url": "https://www.unisi.it/ugov/degreecourse/652072",
+          "quote": "Lingua Inglese"
+        }
+      ]
+    }
+  },
+  "notes": "La page d'accueil du programme (biotech-engineering.unisi.it) ne donne ni frais de scolarité, ni dates de candidature, ni liste de documents, ni conditions d'admission pour ce Bachelor. Les règles sur la langue italienne proviennent d'une page d'actualité de 2013 (preiscrizioni 2013-2014) et ne concernent pas spécifiquement ce programme; l'exonération pour les cursus en anglais figure sur cette même page. Le bandeau « Manifesto titoli esteri » décrit la procédure Universitaly pour les étudiants non-UE demandant un visa et mentionne une liste de documents (« Mandatory Documents for Enrollment ») non fournie ici.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez auprès de l'Admission Office si un test d'italien est exigé pour ce cursus dispensé en anglais.",
+          "en": "Check with the Admission Office whether an Italian test is required for this English-taught programme."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unisi.it/unisilife/notizie/aperte-preiscrizioni-studenti-internazionali",
+            "quote": "2 settembre 2013: prova di conoscenza della lingua italiana"
+          }
+        ]
+      }
+    ]
+  }
+}

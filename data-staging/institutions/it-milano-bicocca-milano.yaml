@@ -1,0 +1,30 @@
+slug: it-milano-bicocca-milano
+name: Università degli studi di Milano-Bicocca
+country: IT
+city:
+  slug: milano
+  name: Milano
+type: public
+website: https://www.unimib.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unimib.it/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: it-milano-bicocca-milano
+  name: Università degli studi di Milano-Bicocca
+  institution: ""
+  city: Milano
+  field: ""
+  confidence: ""
+  officialUrl: https://www.unimib.it/
+  todo: "university 01509 in the MUR list (state, region LOMBARDIA): the list gives no website. Candidate from the international students portal contacts table: https://www.unimib.it/ (not confirmed). Check the university's home page names it (an English page that does), that it is a recognised Italian university, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur-institution:01509@milano
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - url: https://www.unimib.it/
+      quote: Università degli Studi di Milano-Bicocca Salta al contenuto principale

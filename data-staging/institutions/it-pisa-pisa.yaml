@@ -1,0 +1,30 @@
+slug: it-pisa-pisa
+name: Università di Pisa
+country: IT
+city:
+  slug: pisa
+  name: Pisa
+type: public
+website: https://www.unipi.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unipi.it/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: it-pisa-pisa
+  name: Università di Pisa
+  institution: ""
+  city: Pisa
+  field: ""
+  confidence: ""
+  officialUrl: https://www.unipi.it/
+  todo: "university 05001 in the MUR list (state, region TOSCANA): the list gives no website. Candidate from the international students portal contacts table: https://www.unipi.it/ (not confirmed). Check the university's home page names it (an English page that does), that it is a recognised Italian university, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur-institution:05001@pisa
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - url: https://old.unipi.it/index.php/lista-comunicati-stampa/itemlist/user/85-loradelgatto?start=310
+      quote: del sito dell'Università di Pisa. I contenuti che trovi in queste pagine sono in

@@ -1,0 +1,64 @@
+slug: it-ca-foscari-venezia-venezia-business-administration-and-management-l18
+institution: it-ca-foscari-venezia-venezia
+country: IT
+city: venezia
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, Università Ca' Foscari Venezia (Venezia). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Business Administration and Management, Università Ca' Foscari Venezia (Venezia). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Business Administration and Management, Università Ca' Foscari Venezia (Venezia). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: null
+durationYears:
+  value: null
+  source: mur
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: mur
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: mur
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: mur
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: mur
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: mur
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: mur
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  mur:
+    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-ca-foscari-venezia-venezia-business-administration-and-management-l18
+  name: Business Administration and Management
+  institution: Università Ca' Foscari Venezia
+  city: Venezia
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "MUR lists: degree class L-18 Scienze dell'economia e della gestione aziendale, language Inglese, mode Convenzionale, access locale, town Venezia; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants"
+  sourceId: mur:02701:l18:business-administration-and-management@venezia

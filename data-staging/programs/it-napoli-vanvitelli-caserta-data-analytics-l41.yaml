@@ -1,0 +1,107 @@
+slug: it-napoli-vanvitelli-caserta-data-analytics-l41
+institution: it-napoli-vanvitelli-caserta
+country: IT
+city: caserta
+field: business-economics
+level: bachelor
+name: Data Analytics
+summary:
+  fr:
+    text: Data Analytics, Università degli studi della Campania "Luigi Vanvitelli" (Caserta). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Data Analytics, Università degli studi della Campania "Luigi Vanvitelli" (Caserta). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Data Analytics, Università degli studi della Campania "Luigi Vanvitelli" (Caserta). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats non-UE résidant à l'étranger doivent passer le test CISIA CEnT-S (en anglais) uniquement pour les sections Mathematics et Reasoning ; le résultat détermine le classement.
+          status: draft
+        en:
+          text: Non-EU applicants residing abroad must take the CISIA CEnT-S test (in English) only for the Mathematics and Reasoning sections; the score determines the ranking.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le seuil minimum est de 11 points au total dans les sections Mathematics et Reasoning, avec au moins 6 points en Mathematics ; les places pour les non-résidents dans l'UE sont de 100 (appel d'été).
+          status: draft
+        en:
+          text: The minimum threshold is a combined score of at least 11 points in the Mathematics and Reasoning sections, with at least 6 points in Mathematics; there are 100 places for students residing in non-EU countries (summer call).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
+    last_verified_at: null
+  page-2:
+    url: https://www.economia.unicampania.it/international/11-international/4643-studenti-stranieri
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-napoli-vanvitelli-caserta-data-analytics-l41
+  name: Data Analytics
+  institution: Università degli studi della Campania "Luigi Vanvitelli"
+  city: Caserta
+  field: business-economics
+  confidence: low
+  officialUrl: ""
+  todo: "MUR lists: degree class L-41 Statistica, language Inglese, mode Convenzionale, access locale, town Caserta; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; the degree class(es) and the course name point to different fields or to a field outside the three: check the content; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur:06306:l41:data-analytics@caserta
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: applicationChannel
+      url: https://www.economia.unicampania.it/international/11-international/4643-studenti-stranieri
+      quote: i candidati stranieri e/o richiedenti visto e residenti all'estero devono compilare e presentare la domanda di preiscrizione ai corsi di studio universitari esclusivamente in modalità telematica, accedendo al portale UNIVERSITALY (https://www.universitaly.it)
+    - fact: requirements.req-1
+      url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
+      quote: Take the CISIA CEnT-S test (English test for Science subjects)
+    - fact: requirements.req-1
+      url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
+      quote: Only the Mathematics and Reasoning sections (30 questions total) count toward your ranking
+    - fact: requirements.req-2
+      url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
+      quote: Applicants must achieve a combined score of at least 11 points, with a sub-minimum of at least 6 points specifically in the Mathematics section.
+    - fact: requirements.req-2
+      url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
+      quote: 100 places for students residing in non-EU countries (summer call)
+  notes: "Tuition left out: no page states a single EUR amount for a full-time Bachelor student from outside the EU living abroad for the current academic year; the pages only mention generic fee reductions for international students. Application deadline: the page gives 21 September 2026 for non-EU residents, but this deadline comes from the programme page and is labeled 'for non EU residents'. The application channel quote comes from the Economics department page about foreign-student pre-enrolment at the same university (UNIVERSITALY); the Data Analytics pages themselves do not name the application portal."

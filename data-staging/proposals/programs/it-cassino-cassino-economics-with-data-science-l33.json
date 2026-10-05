@@ -1,0 +1,65 @@
+{
+  "slug": "it-cassino-cassino-economics-with-data-science-l33",
+  "programmePage": null,
+  "facts": {
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/",
+          "quote": "2.1 APPLY IN UNIVERSITALY Register (click on \"Credenziali personale” and \"Registrati\") and then apply!"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "declaration-of-value",
+          "name": {
+            "fr": "Déclaration de valeur (DOV)",
+            "en": "Declaration of Value (DOV)"
+          },
+          "quotedAs": "Declaration of Value",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Passeport",
+            "en": "Passport"
+          },
+          "quotedAs": "passport",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/",
+          "quote": "The University of Cassino requires DOV (Declaration of Value) to enroll, check with the Embassy directly if they require it to apply for the visa."
+        },
+        {
+          "url": "https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/",
+          "quote": "International extra-UE students have to show to the Service the following documents in original: passport with the visa for study and the arrival stamp in Italy"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune durée, langue d'enseignement, frais de scolarité ni dates d'admission spécifiques au programme n'ont été trouvés dans les pages fournies. Le programme est listé comme 'Economics with Data Science L-33' dans les pages, mais aucune information détaillée sur le programme lui-même n'est fournie. Le canal de candidature est Universitaly pour la pré-inscription, comme indiqué pour les étudiants internationaux. Les documents listés sont ceux mentionnés pour les étudiants extra-UE lors de l'inscription, mais ils peuvent ne pas être exhaustifs pour la phase de candidature.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats étrangers doivent soumettre une demande de pré-admission via le portail GOMP entre février et juin ; vérifiez la date limite précise fixée par le programme.",
+          "en": "International applicants must submit a pre-admission application via the GOMP portal between February and June; check the precise deadline set by the programme."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/",
+            "quote": "It's usually possible between February and June, check the precise deadline fixed by each Degree Programme for this year"
+          }
+        ]
+      }
+    ]
+  }
+}

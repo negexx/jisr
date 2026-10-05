@@ -1,0 +1,46 @@
+{
+  "slug": "it-bologna-bologna-economics-politics-and-social-sciences-l33",
+  "programmePage": "https://corsi.unibo.it/1cycle/EconomicsPoliticsSocialSciences/preparing-the-study-plan",
+  "facts": {},
+  "notes": "Tuition left out: no page for this programme states one tuition amount for a full-time Bachelor student from outside the EU living abroad; the ISEE-band tuition page supplied concerns only Scuole di specializzazione dell'Area Medica, and no other supplied page gives a single programme fee. Teaching languages: no quote states the languages of instruction of this programme (the wording 'Only courses taught or training activities conducted in English are permitted' refers to electives from other programmes, not to the programme itself). Intakes: the study-plan periods (1st October to 7th November 2026; 12th January to 19th February 2027) are study-plan submission windows, not admission deadlines, so no intake is given. Documents: the list of documents for international applicants appears on the general university page (titolo di studio, traduzione, documentazione sul valore), but it is a general Bachelor page rather than this programme's own document list, so it is not output as a 'documents' fact. Language proficiency: none stated for this programme; the B2 English requirement belongs to the Master's programme International Management.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero",
+            "quote": "Il titolo deve: essere conseguito al termine di un periodo scolastico pari ad almeno 12 anni;"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que votre baccalauréat marocain (12 ans de scolarité) est reconnu idoine et permet l'accès à un cursus analogue en Italie; contactez l'International Desk en cas de doute.",
+          "en": "Check that your Moroccan Baccalauréat (12 years of schooling) is recognised as suitable and grants access to an analogous programme in Italy; contact the International Desk if in doubt."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero",
+            "quote": "consentire l’accesso ad un corso analogo a quello a cui vuoi iscriverti in Italia, presso le Università del Paese dove è stato conseguito"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Préparez le diplôme original traduit avec confirmation d'authenticité et la documentation sur la valeur du titre; faites la préinscription et demandez un visa d'études.",
+          "en": "Prepare the original diploma translated with confirmation of authenticity and the documentation on the value of the qualification; submit the pre-enrolment application and apply for a study visa."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero",
+            "quote": "Per l’immatricolazione dovrai presentare: il tuo titolo originale di studi secondari, tradotto e con conferma dell’autenticità"
+          }
+        ]
+      }
+    ]
+  }
+}

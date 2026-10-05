@@ -1,0 +1,54 @@
+{
+  "slug": "it-napoli-vanvitelli-caserta-data-analytics-l41",
+  "programmePage": "https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics",
+  "facts": {
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.economia.unicampania.it/international/11-international/4643-studenti-stranieri",
+          "quote": "i candidati stranieri e/o richiedenti visto e residenti all'estero devono compilare e presentare la domanda di preiscrizione ai corsi di studio universitari esclusivamente in modalità telematica, accedendo al portale UNIVERSITALY (https://www.universitaly.it)"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition left out: no page states a single EUR amount for a full-time Bachelor student from outside the EU living abroad for the current academic year; the pages only mention generic fee reductions for international students. Application deadline: the page gives 21 September 2026 for non-EU residents, but this deadline comes from the programme page and is labeled 'for non EU residents'. The application channel quote comes from the Economics department page about foreign-student pre-enrolment at the same university (UNIVERSITALY); the Data Analytics pages themselves do not name the application portal.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non-UE résidant à l'étranger doivent passer le test CISIA CEnT-S (en anglais) uniquement pour les sections Mathematics et Reasoning ; le résultat détermine le classement.",
+          "en": "Non-EU applicants residing abroad must take the CISIA CEnT-S test (in English) only for the Mathematics and Reasoning sections; the score determines the ranking."
+        },
+        "evidence": [
+          {
+            "url": "https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics",
+            "quote": "Take the CISIA CEnT-S test (English test for Science subjects)"
+          },
+          {
+            "url": "https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics",
+            "quote": "Only the Mathematics and Reasoning sections (30 questions total) count toward your ranking"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le seuil minimum est de 11 points au total dans les sections Mathematics et Reasoning, avec au moins 6 points en Mathematics ; les places pour les non-résidents dans l'UE sont de 100 (appel d'été).",
+          "en": "The minimum threshold is a combined score of at least 11 points in the Mathematics and Reasoning sections, with at least 6 points in Mathematics; there are 100 places for students residing in non-EU countries (summer call)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics",
+            "quote": "Applicants must achieve a combined score of at least 11 points, with a sub-minimum of at least 6 points specifically in the Mathematics section."
+          },
+          {
+            "url": "https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics",
+            "quote": "100 places for students residing in non-EU countries (summer call)"
+          }
+        ]
+      }
+    ]
+  }
+}

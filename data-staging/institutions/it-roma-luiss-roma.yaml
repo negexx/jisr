@@ -1,0 +1,30 @@
+slug: it-roma-luiss-roma
+name: Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma
+country: IT
+city:
+  slug: roma
+  name: Roma
+type: private
+website: https://www.luiss.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.luiss.it/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: it-roma-luiss-roma
+  name: Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma
+  institution: ""
+  city: Roma
+  field: ""
+  confidence: ""
+  officialUrl: https://www.luiss.it/
+  todo: "university 05805 in the MUR list (non-state, region LAZIO): the list gives no website. Candidate from the international students portal contacts table: https://www.luiss.it/ (not confirmed). Check the university's home page names it (an English page that does), that it is a recognised Italian university, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur-institution:05805@roma
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - url: https://www.luiss.it/
+      quote: Luiss — Libera Università Internazionale degli Studi Sociali Skip

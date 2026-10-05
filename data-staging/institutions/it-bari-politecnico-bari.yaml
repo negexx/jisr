@@ -1,0 +1,30 @@
+slug: it-bari-politecnico-bari
+name: Politecnico di Bari
+country: IT
+city:
+  slug: bari
+  name: Bari
+type: public
+website: https://www.poliba.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.poliba.it/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: it-bari-politecnico-bari
+  name: Politecnico di Bari
+  institution: ""
+  city: Bari
+  field: ""
+  confidence: ""
+  officialUrl: https://www.poliba.it/
+  todo: "university 07202 in the MUR list (state, region PUGLIA): the list gives no website. Candidate from the international students portal contacts table: https://www.poliba.it/ (not confirmed). Check the university's home page names it (an English page that does), that it is a recognised Italian university, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur-institution:07202@bari
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - url: https://www.poliba.it/
+      quote: "#poliba #Uniba Il Politecnico di Bari e l’Università “Aldo Moro” in visita al CERN, il"

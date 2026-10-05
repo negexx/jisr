@@ -1,0 +1,112 @@
+slug: it-roma-tor-vergata-roma-engineering-sciences-l9
+institution: it-roma-tor-vergata-roma
+country: IT
+city: roma
+field: engineering
+level: bachelor
+name: Engineering Sciences
+summary:
+  fr:
+    text: Engineering Sciences, Università degli studi di Roma Tor Vergata (Roma). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Engineering Sciences, Università degli studi di Roma Tor Vergata (Roma). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Engineering Sciences, Università degli studi di Roma Tor Vergata (Roma). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://web.uniroma2.it/en/percorso/academics/sezione/bachelor_degree
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si votre diplôme de fin d'études secondaires est reconnu admissible selon la loi italienne et obtenu après au moins 12 ans de scolarité.
+          status: draft
+        en:
+          text: Check whether your secondary school diploma is recognised as eligible under Italian law and obtained after at least 12 years of schooling.
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Préparez pour l'immatriculation le diplôme original et les bulletins scolaires du secondaire; pour les pays signataires de la Convention de Lisbonne, fournissez l'Attestato ARDI ou la Dichiarazione di Valore.
+          status: draft
+        en:
+          text: Prepare for enrolment the original secondary school diploma and school report cards; for Lisbon Convention signatory countries, provide the ARDI Statement of Correspondence or the Declaration of Value.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://web.uniroma2.it/en/percorso/academics/sezione/bachelor_degree
+    last_verified_at: null
+  page-2:
+    url: https://web.uniroma2.it/en/percorso/admissions
+    last_verified_at: null
+  page-3:
+    url: https://www-2023.studenti.uniroma2.it/it_it/documenti-richiesti-per-liscrizione-con-titolo-estero/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-roma-tor-vergata-roma-engineering-sciences-l9
+  name: Engineering Sciences
+  institution: Università degli studi di Roma Tor Vergata
+  city: Roma
+  field: engineering
+  confidence: high
+  officialUrl: ""
+  todo: "MUR lists: degree class L-9 Ingegneria industriale, language Inglese, mode Convenzionale, access accesso libero, town Roma; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur:05802:l9:engineering-sciences@roma
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: applicationChannel
+      url: https://web.uniroma2.it/en/percorso/admissions
+      quote: The pre-enrollment application on Universitaly is mandatory for all non-EU applicants not residing in Italy (including those holding a residence permit for other EU countries).
+    - fact: requirements.req-1
+      url: https://web.uniroma2.it/en/percorso/admissions
+      quote: The qualification must be obtained at the end of a school period equal to at least 12 years of schooling and allow access at the universities of the country where the qualification was obtained (or of the country of reference of the educational system) to a course similar to the one in which the student wants to enroll in Italy.
+    - fact: requirements.req-2
+      url: https://www-2023.studenti.uniroma2.it/it_it/documenti-richiesti-per-liscrizione-con-titolo-estero/
+      quote: Requisito minimo per l’accesso ai corsi triennali o ai corsi a ciclo unico è il possesso di un diploma finale di scuola secondaria riconosciuto idoneo secondo la legge italiana e le norme stabilite dal Ministero italiano dell’Università e della Ricerca.
+    - fact: requirements.req-3
+      url: https://www-2023.studenti.uniroma2.it/it_it/documenti-richiesti-per-liscrizione-con-titolo-estero/
+      quote: Titolo scolastico finale in originale Pagelle scolastiche relative alla scuola secondaria di secondo grado Per la verifica dell’idoneità del titolo, gli studenti in possesso di titoli emessi da paesi firmatari della Convenzione di Lisbona possono presentare l’Attestato di Corrispondenza ARDI scaricabile gratuitamente dalla banca dati ARDI (verificare l’elenco dei Paesi e dei titoli direttamente nella banca dati ARDI) o la Dichiarazione di Valore rilasciata dall’Ambasciata Italiana presente sul territorio del paese a cui fa riferimento l’ordinamento della qualifica.
+  notes: The pages do not state a duration, teaching language, tuition, or intake deadlines for the Engineering Sciences bachelor's degree. Tuition was omitted because the pages give no single EUR amount for a full-time Bachelor student from outside the EU living abroad; the only fees mentioned are the regional tax and stamp duty (first instalment of EUR 156.00) and ISEE-based bands, and the international-student tuition page is only linked. The document list is taken from the university-wide admissions page for non-EU applicants requiring a pre-enrolment on Universitaly; it does not mention translation requirements for those documents. No language proficiency requirement is stated for this programme.

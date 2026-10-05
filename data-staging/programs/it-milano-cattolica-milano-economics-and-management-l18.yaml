@@ -1,0 +1,97 @@
+slug: it-milano-cattolica-milano-economics-and-management-l18
+institution: it-milano-cattolica-milano
+country: IT
+city: milano
+field: business-economics
+level: bachelor
+name: Economics and management
+summary:
+  fr:
+    text: Economics and management, Università Cattolica del "Sacro Cuore" (Milano). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics and management, Università Cattolica del "Sacro Cuore" (Milano). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Economics and management, Università Cattolica del "Sacro Cuore" (Milano). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://international.unicatt.it/ucscinternational-undergraduate-programs-economics-and-management
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: 2026-11-04
+      applicationDeadline: null
+  source: page-2
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez auprès de l'Université si le test d'admission Cattolica en mathématiques s'applique à votre cas et le calendrier correspondant.
+          status: draft
+        en:
+          text: Check with the University whether the Cattolica Admission Test applies to your case and the specific timeline.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://international.unicatt.it/ucscinternational-undergraduate-programs-economics-and-management
+    last_verified_at: null
+  page-2:
+    url: https://international.unicatt.it/ucscinternational-admission-and-tuition-application-timeline-5420
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-milano-cattolica-milano-economics-and-management-l18
+  name: Economics and management
+  institution: Università Cattolica del "Sacro Cuore"
+  city: Milano
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "MUR lists: degree class L-18 Scienze dell'economia e della gestione aziendale, language Inglese, mode Convenzionale, access locale, town Milano; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur:01504:l18:economics-and-management@milano
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://international.unicatt.it/ucscinternational-undergraduate-programs-economics-and-management
+      quote: "Programme duration: 3 years"
+    - fact: teachingLanguages
+      url: https://international.unicatt.it/ucscinternational-undergraduate-programs-economics-and-management
+      quote: "Language of instruction: English"
+    - fact: intakes
+      url: https://international.unicatt.it/ucscinternational-admission-and-tuition-application-timeline-5420
+      quote: Application process opens on 4 November 2026
+    - fact: requirements.req-1
+      url: https://international.unicatt.it/ucscinternational-admission-and-tuition-application-timeline-5420
+      quote: Please refer to the Entry requirements > Mathematics requirements section to check if you must take the Cattolica Admission Test.
+  notes: Seul le trimestre / l'ouverture des candidatures (4 novembre 2026) est daté pour ce programme ; la date limite de candidature du 17 février 2027 n'est pas présentée comme propre aux candidats internationaux et est donc omise. Aucun frais de scolarité pour ce programme n'est indiqué pour un étudiant non-UE résidant à l'étranger ; la page des frais et bourses (Tuition fees and scholarships) n'est pas fournie. Les informations sur les documents et la pré-inscription sur Universitaly proviennent de pages de Master (Laurea Magistrale), non de la licence en Economics and Management.

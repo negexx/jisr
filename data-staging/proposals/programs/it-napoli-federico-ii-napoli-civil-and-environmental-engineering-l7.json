@@ -1,0 +1,23 @@
+{
+  "slug": "it-napoli-federico-ii-napoli-civil-and-environmental-engineering-l7",
+  "programmePage": null,
+  "facts": {},
+  "notes": "Aucune page relative au programme \"Civil and environmental engineering\" (durée, langue d'enseignement, frais de scolarité, dates) n'a été fournie. La page du programme est donc null et aucune durée, langue d'enseignement ni date de candidature n'a pu être extraite. Les frais de scolarité sont laissés de côté : la page d'admission indique seulement des montants forfaitaires par citoyenneté (200 € pour les étudiants européens et 140 € de taxe régionale pour les non-européens), qui ne constituent pas des frais de scolarité pour un étudiant non-UE résidant à l'étranger pour ce programme, et les guides d'inscription décrivent une contribution par tranche ISEE. Le canal de candidature (it-universitaly) est cohérent avec le règlement d'admission, mais aucune phrase du texte fourni ne nomme explicitement le programme \"Civil and environmental engineering\" ; voir la citation de la procédure de pré-inscription sur Universitaly. La seule liste de documents disponible concerne la phase d'inscription (enrolment) des étudiants non-UE et pourrait ne pas correspondre aux documents de candidature propres à ce programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez auprès du secrétariat du cours et des annexes du site du programme si un test d'admission est prévu et quels documents complémentaires sont exigés.",
+          "en": "Check with the programme secretariat and the programme website annexes whether an admission test is required and which additional documents are needed."
+        },
+        "evidence": [
+          {
+            "url": "https://www.international.unina.it/education/admission-regulation/",
+            "quote": "Important: always check the instructions on the degree programme’s website."
+          }
+        ]
+      }
+    ]
+  }
+}

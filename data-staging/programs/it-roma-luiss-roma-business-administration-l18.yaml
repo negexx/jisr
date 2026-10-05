@@ -1,0 +1,88 @@
+slug: it-roma-luiss-roma-business-administration-l18
+institution: it-roma-luiss-roma
+country: IT
+city: roma
+field: business-economics
+level: bachelor
+name: Business Administration
+summary:
+  fr:
+    text: Business Administration, Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma (Roma). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Business Administration, Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma (Roma). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Business Administration, Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma (Roma). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les conditions d'admission (annonce d'admission), les documents requis et les dates limites seront publiés en octobre 2026. Consultez le site Luiss pour la procédure correspondant à votre profil.
+          status: draft
+        en:
+          text: Admission requirements, required documents and application deadlines will be published in the admission announcements in October 2026. Check the Luiss admissions section for the procedure matching your profile.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-roma-luiss-roma-business-administration-l18
+  name: Business Administration
+  institution: Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma
+  city: Roma
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "MUR lists: degree class L-18 Scienze dell'economia e della gestione aziendale, language Inglese, mode Convenzionale, access accesso libero, town Roma; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur:05805:l18:business-administration@roma
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration
+      quote: Credits 180 ECTS Duration 3 Years Language English Year 2027/2028
+    - fact: teachingLanguages
+      url: https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration
+      quote: Credits 180 ECTS Duration 3 Years Language English Year 2027/2028
+    - fact: requirements.req-1
+      url: https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration
+      quote: The admission announcements, which include eligibility requirements, selection procedures, required documents, and application deadlines, will be published in October 2026.
+  notes: "Channel non précisé pour cette formation : aucune page ne nomme Universitaly ni un portail de candidature propre pour ce Bachelor. Paiement : aucune page ne donne de frais de scolarité pour un étudiant hors UE ; les pages « Ammissione con certificazioni » (extra-UE) indiquent seulement un « contributo unico » de 15 000 € mais sans préciser qu'il s'applique aux étudiants étrangers hors UE, donc non retenu ; le seul montant pour un étudiant non-UE est une réduction de 70 % des frais institutionnels dans le programme Double Degree avec Tilburg (Master), hors sujet."

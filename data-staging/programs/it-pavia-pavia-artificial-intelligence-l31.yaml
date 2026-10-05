@@ -1,0 +1,110 @@
+slug: it-pavia-pavia-artificial-intelligence-l31
+institution: it-pavia-pavia
+country: IT
+city: pavia
+field: computer-science
+level: bachelor
+name: Artificial intelligence
+summary:
+  fr:
+    text: Artificial intelligence, Università degli studi di Pavia (Pavia). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Artificial intelligence, Università degli studi di Pavia (Pavia). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Artificial intelligence, Università degli studi di Pavia (Pavia). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: 2026-04-28
+      applicationDeadline: 2026-05-18
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Test d'entrée SAT requis ; score minimum 979/1600.
+          status: draft
+        en:
+          text: SAT entry test required; minimum score 979/1600.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-pavia-pavia-artificial-intelligence-l31
+  name: Artificial intelligence
+  institution: Università degli studi di Pavia
+  city: Pavia
+  field: computer-science
+  confidence: high
+  officialUrl: ""
+  todo: "MUR lists: degree class L-31 Scienze e tecnologie informatiche, language Inglese, mode Convenzionale, access locale, town Pavia; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur:01801:l31:artificial-intelligence@pavia
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: teachingLanguages
+      url: https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy
+      quote: Study language English
+    - fact: intakes
+      url: https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy
+      quote: Application period for non-EU students residing outside Italy for the academic year 2026-2027 will take place between April 28 and May 18.
+    - fact: requirements.req-1
+      url: https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy
+      quote: Language requirements English Students must have a knowledge of the English language corresponding to at least B2 level of the Common European Framework (CEF).
+    - fact: requirements.req-2
+      url: https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy
+      quote: High-school diploma awarded after at least 12 years of documented education
+    - fact: requirements.req-3
+      url: https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy
+      quote: SAT Entry test, non-EU students residing outside Italy who want to compete for a spot must take a SAT general culture test. The minimum score to compete for a spot is ≥ 979/1600.
+  notes: "Tuition: page states 'Students may be eligible to apply for a flat rate or to tuition fees calculated according to their family income' (income-based, no single amount) — no tuition fact extracted. Application channel: page describes uploading documents 'in the application form' but does not name the Universitaly portal for this programme; closest identifiable route is the university's own application form (apply.unipv.eu). Duration: no explicit duration stated for this programme on its own page (only generic 'Undergraduate'); 3 years is the standard Italian Laurea triennale value but was not quoted on this page — excluded."

@@ -1,0 +1,33 @@
+{
+  "slug": "it-torino-politecnico-torino-electronic-and-communications-engineerin-l8",
+  "programmePage": null,
+  "facts": {
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.polito.it/didattica/iscriversi-studiare-laurearsi/iscrizione/corsi-di-laurea/studenti-con-titolo-estero",
+          "quote": "Se sei uno studente internazionale residente all’estero e richiedente visto, devi inviare la domanda di pre-iscrizione per ottenere il visto per studio e immatricolarti al Politecnico di Torino esclusivamente tramite il portale UNIVERSITALY."
+        }
+      ]
+    }
+  },
+  "notes": "The pages do not name the Bachelor programme 'Electronic and Communications Engineering'; document lists and deadlines found on the pages are for Bachelor programmes in general or for Master's programmes, so no documents and no intakes are included. No tuition amount is stated for a full-time Bachelor student from outside the EU living abroad: the contribution guide gives only ISEE/income bands and country-based amounts (Allegato B, not shown), so tuition is left out.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le Politecnico peut exiger un test d'admission (TIL) ou une certification internationale comme le SAT. Vérifier les exigences du Bando di selezione.",
+          "en": "Politecnico may require an admission test (TIL) or an international certification such as SAT. Check the requirements in the Bando di selezione."
+        },
+        "evidence": [
+          {
+            "url": "https://www.polito.it/didattica/iscriversi-studiare-laurearsi/iscrizione/corsi-di-laurea/studenti-con-titolo-estero",
+            "quote": "superamento del TEST di AMMISSIONE (TIL) oppure possesso della certificazione internazionale SAT (NON VLIDO per Architettura)."
+          }
+        ]
+      }
+    ]
+  }
+}

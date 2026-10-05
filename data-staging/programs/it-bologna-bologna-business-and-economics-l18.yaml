@@ -1,0 +1,102 @@
+slug: it-bologna-bologna-business-and-economics-l18
+institution: it-bologna-bologna
+country: IT
+city: bologna
+field: business-economics
+level: bachelor
+name: Business and Economics
+summary:
+  fr:
+    text: Business and Economics, Università degli studi di Bologna (Bologna). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Business and Economics, Università degli studi di Bologna (Bologna). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Business and Economics, Università degli studi di Bologna (Bologna). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/8965
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Accès restreint : examen d'entrée, 240 places. Vérifiez le bando d'admission pour les modalités de candidature et la date limite."
+          status: draft
+        en:
+          text: "Restricted access: entrance exam, 240 places available. Check the admission call (bando) for how to apply and the deadline."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/8965
+    last_verified_at: null
+  page-2:
+    url: https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-bologna-bologna-business-and-economics-l18
+  name: Business and Economics
+  institution: Università degli studi di Bologna
+  city: Bologna
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "MUR lists: degree class L-18 Scienze dell'economia e della gestione aziendale, language Inglese, mode Convenzionale, access locale, town Bologna; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur:03701:l18:business-and-economics@bologna
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/8965
+      quote: Duration 3 years
+    - fact: teachingLanguages
+      url: https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/8965
+      quote: Language English
+    - fact: teachingLanguages
+      url: https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/8965
+      quote: Delivered entirely in English
+    - fact: requirements.req-1
+      url: https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero
+      quote: "Il titolo deve: essere conseguito al termine di un periodo scolastico pari ad almeno 12 anni;"
+    - fact: requirements.req-2
+      url: https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/8965
+      quote: Type of access Restricted access - entrance exam (240 places available)
+  notes: "Tuition left out: no page states ONE EUR amount as the tuition of this specific programme for a full-time non-EU international student living abroad. The only fee page supplied concerns \"scuole di specializzazione dell'Area Medica\" (medical specialisation schools, a different programme) and gives ISEE-banded ranges, which the task excludes."

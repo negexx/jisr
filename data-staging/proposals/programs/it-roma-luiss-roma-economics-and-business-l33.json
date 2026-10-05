@@ -1,0 +1,27 @@
+{
+  "slug": "it-roma-luiss-roma-economics-and-business-l33",
+  "programmePage": null,
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration",
+          "quote": "Credits 180 ECTS Duration 3 Years Language English Year 2027/2028"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration",
+          "quote": "Duration 3 Years Language English Year 2027/2028"
+        }
+      ]
+    }
+  },
+  "notes": "No page in the provided texts is the programme's own page for Economics and Business; the page https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/business-administration is about the Bachelor's Degree in Business Administration, not Economics and Business, so its facts (duration, language) cannot be attributed to this programme. No page describes the programme itself. For tuition: the non-EU page https://www.luiss.it/it/orientamento-e-ammissioni/procedure-di-ammissione/ammissione-lauree-triennali-e-ciclo-unico-giurisprudenza/studenti-extra-ue-schengen/ammissione-diretta-con-certificazioni-ai-corsi-di-laurea-triennale-e-magistrale-studenti-extra-ue gives the 'contributo unico' of €15,000 for the first year, but the page is about the admission procedure with certifications for all Bachelor's and single-cycle programmes, not this specific programme, and the amount is stated as a single contribution for the first year, not necessarily a full-time Bachelor student from outside the EU living abroad; it is not programme-specific. The page https://www.luiss.it/it/orientamento-e-ammissioni/procedure-di-ammissione/ammissione-lauree-triennali-e-ciclo-unico-giurisprudenza/studenti-ue-schengen/ammissione-con-test-ai-corsi-di-laurea-triennale-e-magistrale-studenti-ue gives the same €15,000 for EU/Schengen test admission, also not programme-specific. applicationChannel: neither page mentions Universitaly nor a university application portal for this programme specifically; the non-EU page says the application must be submitted online through a dedicated platform, but does not name it, and no quote names Universitaly or the university's own portal. Documents: the non-EU page lists required documents (identity document/passport, documentation for verification of the qualification, school report cards, certification), but these are for the admission procedure with certifications, not specifically for this programme; without a programme-specific page, no document list can be attributed. Intakes: the non-EU page gives a deadline of 10 February 2027 for the first selection session, but it is for the admission procedure with certifications for extra-UE/Schengen students, not for this specific programme, and the page does not state it is for this programme. Therefore no facts are extracted for this programme from the provided pages."
+}

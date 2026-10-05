@@ -1,0 +1,63 @@
+{
+  "slug": "it-torino-torino-business-management-l18",
+  "programmePage": "https://en.unito.it/studying-unito/programs/degree-programs/business-management",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://en.unito.it/studying-unito/programs/degree-programs/business-management",
+          "quote": "Language English Duration 3 years"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://en.unito.it/studying-unito/programs/degree-programs/business-management",
+          "quote": "Language English Duration 3 years"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.unito.it/internazionalita/arrivare-unito-dallestero/ammissione-studenti-internazionali/procedure-0",
+          "quote": "Se sei studente non-UE richiedente visto devi inviare la domanda di pre-iscrizione per il rilascio del visto per l'a.a. 2026-2027 tramite la piattaforma Universitaly entro il 15 luglio 2026."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the Regolamento Tasse page gives only ISEE-band tables and formulas and a general contributo onnicomprensivo unico range, not one amount for a non-EU applicant living abroad for Business & Management; the only figure that names the course (art. 6.1.2) is for services on request, not the general tuition. So tuition is left out.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le concours d'admission exige de passer le SAT Suite ; une note au SAT est requise pour l'admission (cours à nombre programmé).",
+          "en": "Admission requires taking the SAT Suite; a SAT score is required (programme has capped number)."
+        },
+        "evidence": [
+          {
+            "url": "https://en.unito.it/studying-unito/programs/degree-programs/business-management",
+            "quote": "To enrol in the Business & Management degree programme, you must take the SAT."
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.unito.it/internazionalita/arrivare-unito-dallestero/ammissione-studenti-internazionali/documentazione",
+            "quote": "Titolo di scuola secondaria superiore ottenuto dopo almeno 12 anni di scolarità"
+          }
+        ]
+      }
+    ]
+  }
+}

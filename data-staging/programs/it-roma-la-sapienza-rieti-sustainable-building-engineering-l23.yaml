@@ -1,0 +1,113 @@
+slug: it-roma-la-sapienza-rieti-sustainable-building-engineering-l23
+institution: it-roma-la-sapienza-rieti
+country: IT
+city: rieti
+field: engineering
+level: bachelor
+name: Sustainable Building Engineering
+summary:
+  fr:
+    text: Sustainable Building Engineering, Università degli studi di Roma La Sapienza (Rieti). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Sustainable Building Engineering, Università degli studi di Roma La Sapienza (Rieti). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Sustainable Building Engineering, Università degli studi di Roma La Sapienza (Rieti). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://corsidilaurea.uniroma1.it/en/course/33482
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier les conditions d'admission spécifiques à ce programme (test d'entrée, notes minimales) sur la page du programme.
+          status: draft
+        en:
+          text: Check the specific admission requirements for this programme (entrance test, minimum grades) on the programme page.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://corsidilaurea.uniroma1.it/en/course/33482
+    last_verified_at: null
+  page-2:
+    url: https://www.uniroma1.it/en/pagina/international-student-office
+    last_verified_at: null
+  page-3:
+    url: https://www.uniroma1.it/it/pagina/international-admissions-2026-2027
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-roma-la-sapienza-rieti-sustainable-building-engineering-l23
+  name: Sustainable Building Engineering
+  institution: Università degli studi di Roma La Sapienza
+  city: Rieti
+  field: engineering
+  confidence: high
+  officialUrl: ""
+  todo: "MUR lists: degree class L-23 Scienze e tecniche dell'edilizia, language Inglese, mode Convenzionale, access accesso libero, town Rieti; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur:05801:l23:sustainable-building-engineering@rieti
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: teachingLanguages
+      url: https://corsidilaurea.uniroma1.it/en/course/33482
+      quote: LanguageEnglish
+    - fact: applicationChannel
+      url: https://www.uniroma1.it/en/pagina/international-student-office
+      quote: Online pre-enrolment on the Universitaly portal is mandatory for all non-EU students residing abroad
+    - fact: requirements.req-1
+      url: https://www.uniroma1.it/it/pagina/international-admissions-2026-2027
+      quote: Additionally, all students must have at least an upper-intermediate knowledge of English OR Italian (B2 level)
+    - fact: requirements.req-2
+      url: https://www.uniroma1.it/en/pagina/international-student-office
+      quote: Must be obtained after at least 12 years of schooling and grant access to first-level university degrees in the country of issuance
+    - fact: requirements.req-3
+      url: https://corsidilaurea.uniroma1.it/en/course/33482
+      quote: Entrance test to verify knowledge
+  notes: "Tuition left out: the pages state ranges or bands (€ 300-1500/year according to country of residence; ISEE/foreign-income bands), not one amount for a non-EU student living abroad. No application deadline for this programme is quoted with a year and clearly for non-EU applicants; the general non-EU pre-selection deadline (May 15, 2026) is not programme-specific. No application-opening date is stated."

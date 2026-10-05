@@ -1,0 +1,74 @@
+slug: it-roma-biomedico-roma-biomedical-engineering-l8
+institution: it-roma-biomedico-roma
+country: IT
+city: roma
+field: engineering
+level: bachelor
+name: Biomedical Engineering
+summary:
+  fr:
+    text: Biomedical Engineering, Università Campus Bio-Medico di Roma (Roma). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Biomedical Engineering, Università Campus Bio-Medico di Roma (Roma). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Biomedical Engineering, Università Campus Bio-Medico di Roma (Roma). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unicampus.it/en/courses/training-offer/bachelor-s-degree/departmental-faculty-of-engineering/degree-course-in-biomedical-engineering-l-8/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.unicampus.it/en/courses/training-offer/bachelor-s-degree/departmental-faculty-of-engineering/degree-course-in-biomedical-engineering-l-8/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-roma-biomedico-roma-biomedical-engineering-l8
+  name: Biomedical Engineering
+  institution: Università Campus Bio-Medico di Roma
+  city: Roma
+  field: engineering
+  confidence: high
+  officialUrl: ""
+  todo: "MUR lists: degree class L-8 Ingegneria dell'informazione, language Inglese, mode Convenzionale, access accesso libero, town Roma; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur:05808:l8:biomedical-engineering@roma
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://www.unicampus.it/en/courses/training-offer/bachelor-s-degree/departmental-faculty-of-engineering/degree-course-in-biomedical-engineering-l-8/
+      quote: Duration 3 years
+    - fact: teachingLanguages
+      url: https://www.unicampus.it/en/courses/training-offer/bachelor-s-degree/departmental-faculty-of-engineering/degree-course-in-biomedical-engineering-l-8/
+      quote: The Biomedical Engineering Degree Course (class L 8) is offered entirely in English
+  notes: "Tuition left out: the only fee figure on the pages is for Medicine and Surgery (18,000 euros per academic year) and Foundation Year (6,000 euros), not for this Biomedical Engineering programme, and no non-EU/international fee for this programme is stated. No intakes stated (deadlines/dates are blank or not quoted). No application channel stated for non-EU applicants on these pages. No document list stated."

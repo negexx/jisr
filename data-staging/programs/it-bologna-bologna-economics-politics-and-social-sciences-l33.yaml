@@ -1,0 +1,106 @@
+slug: it-bologna-bologna-economics-politics-and-social-sciences-l33
+institution: it-bologna-bologna
+country: IT
+city: bologna
+field: business-economics
+level: bachelor
+name: Economics, Politics and Social Sciences
+summary:
+  fr:
+    text: Economics, Politics and Social Sciences, Università degli studi di Bologna (Bologna). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics, Politics and Social Sciences, Università degli studi di Bologna (Bologna). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Economics, Politics and Social Sciences, Università degli studi di Bologna (Bologna). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://corsi.unibo.it/1cycle/EconomicsPoliticsSocialSciences/preparing-the-study-plan
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez que votre baccalauréat marocain (12 ans de scolarité) est reconnu idoine et permet l'accès à un cursus analogue en Italie; contactez l'International Desk en cas de doute.
+          status: draft
+        en:
+          text: Check that your Moroccan Baccalauréat (12 years of schooling) is recognised as suitable and grants access to an analogous programme in Italy; contact the International Desk if in doubt.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Préparez le diplôme original traduit avec confirmation d'authenticité et la documentation sur la valeur du titre; faites la préinscription et demandez un visa d'études.
+          status: draft
+        en:
+          text: Prepare the original diploma translated with confirmation of authenticity and the documentation on the value of the qualification; submit the pre-enrolment application and apply for a study visa.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://corsi.unibo.it/1cycle/EconomicsPoliticsSocialSciences/preparing-the-study-plan
+    last_verified_at: null
+  page-2:
+    url: https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-bologna-bologna-economics-politics-and-social-sciences-l33
+  name: Economics, Politics and Social Sciences
+  institution: Università degli studi di Bologna
+  city: Bologna
+  field: business-economics
+  confidence: low
+  officialUrl: ""
+  todo: "MUR lists: degree class L-33 Scienze economiche (also listed under L-36), language Inglese, mode Convenzionale, access locale, town Bologna; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; the degree class(es) and the course name point to different fields or to a field outside the three: check the content; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur:03701:l33:economics-politics-and-social-sciences@bologna
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: requirements.req-1
+      url: https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero
+      quote: "Il titolo deve: essere conseguito al termine di un periodo scolastico pari ad almeno 12 anni;"
+    - fact: requirements.req-2
+      url: https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero
+      quote: consentire l’accesso ad un corso analogo a quello a cui vuoi iscriverti in Italia, presso le Università del Paese dove è stato conseguito
+    - fact: requirements.req-3
+      url: https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero
+      quote: "Per l’immatricolazione dovrai presentare: il tuo titolo originale di studi secondari, tradotto e con conferma dell’autenticità"
+  notes: "Tuition left out: no page for this programme states one tuition amount for a full-time Bachelor student from outside the EU living abroad; the ISEE-band tuition page supplied concerns only Scuole di specializzazione dell'Area Medica, and no other supplied page gives a single programme fee. Teaching languages: no quote states the languages of instruction of this programme (the wording 'Only courses taught or training activities conducted in English are permitted' refers to electives from other programmes, not to the programme itself). Intakes: the study-plan periods (1st October to 7th November 2026; 12th January to 19th February 2027) are study-plan submission windows, not admission deadlines, so no intake is given. Documents: the list of documents for international applicants appears on the general university page (titolo di studio, traduzione, documentazione sul valore), but it is a general Bachelor page rather than this programme's own document list, so it is not output as a 'documents' fact. Language proficiency: none stated for this programme; the B2 English requirement belongs to the Master's programme International Management."

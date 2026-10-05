@@ -1,0 +1,45 @@
+{
+  "slug": "it-milano-bicocca-milano-economics-and-science-for-environmental-l33",
+  "programmePage": null,
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://en.unimib.it/study/bachelors-and-masters-degrees/economics-and-statistics-bachelors-degree-programmes",
+          "quote": "Economics and Science for Environmental Sustainability Type: Bachelor's Degree Access: limited with entry requirements examination Language: English"
+        }
+      ]
+    }
+  },
+  "notes": "PAGE INVENTORY\n- https://en.unimib.it/study/bachelors-and-masters-degrees/economics-and-statistics-bachelors-degree-programmes — a category listing of several bachelor's degrees; it is the only supplied page that names \"Economics and Science for Environmental Sustainability\". It is not the programme's own page (no detail, no fees, no deadlines, no application channel), so programmePage = null.\n- The other supplied pages are unrelated (institutional fees page, a PhD e-learning course page, a medicine internship e-learning course page, Erasmus pages, an e-learning search results page, international-admissions pages, equipollenza page). They contain no programme-specific facts for this bachelor's degree.\n\nFACTS THAT COULD NOT BE EXTRACTED (no admissible quote)\n- durationYears: no quote states 3 years / 6 semesters / 180 ECTS for this programme.\n- tuition: no quote states ONE tuition amount in EUR for a non-EU student living abroad (or for international students in general) for this bachelor's degree for the current academic year. The only fees page is institutional (\"Fees and funding\" / \"Contribution Guide for DEGREE COURSES - a.y. 2026/2027\") and states no amount; Italian fees are ISEE-band based. Tuition left out on purpose.\n- intakes: no quote states an application start/opening date or a dated deadline (day + month + year) and none states a recurring deadline (day + month) for this programme. The only dated statement found is for equipollenza appointments (\"A partire dal 1° aprile fino al 28 maggio 2026\"), which is not an application deadline for this programme, so it was not used. Intakes left out.\n- applicationChannel: the international-admissions page says applications for bachelor's and master's degrees from holders of foreign qualifications go through the apply.unimib.it portal (\"da oggi è possibile candidarsi ai corsi di Laurea e Laurea Magistrale UNIMIB tramite il portale apply.unimib.it\"), but this is a general statement, not tied to this programme, and it does not name Universitaly for the application itself; the Universitaly mention on that page is only for the pre-enrolment receipt (\"PER I CANDIDATI EXTRA-UE RICHIEDENTI VISTO: la ricevuta di pre-enrolment sul Portale UNIVERSITALY\"), which is a visa step, not the application channel. Given the task's definition, no applicationChannel value could be produced with a quote that satisfies it for this programme, so the fact is left out; a human should verify the channel on the programme's own page.\n- requirements language_proficiency (english): acceptedTests lists only the tests named in the quotes ('ielts', 'toefl'); the institution's page names many more English certificates (Cambridge FCE/CAE/CPE, TOEIC, PTE, Trinity ISE, LanguageCert, Oxford Test of English, etc.) which were not included to keep the list strictly to quoted names. Note the same page requires a B2 English certificate for non-EU visa-requesting candidates of English-taught programmes; the 5.5 IELTS quote is the numeric threshold given.\n- documents: the international-admissions page lists many documents (secondary-school diploma, transcript, pre-enrolment receipt on UNIVERSITALY, B2 language certificate, CIMEA certificates, etc.), but these are stated for all bachelor's/master's applicants, not for this programme specifically; per the rules they were not listed as programme documents in the JSON. The language and prior-study-year rules above do explicitly apply to \"corsi di laurea di primo livello (3 anni)\" and are the closest admissible evidence for an international applicant.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.unimib.it/internazionalizzazione/informazioni-studenti-internazionali/studenti-italiani-titolo-estero/studenti-comunitari-equiparati-e-stranieri-gia-residenti-italia",
+            "quote": "Diploma finale di scuola secondaria superiore, conseguito con almeno 12 anni di scolarità, accompagnato dalla traduzione ufficiale in italiano o in inglese;"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission spécifiques (accesso limitato con esame di ammissione) sur la page du programme.",
+          "en": "Check the specific admission conditions (limited access with entry requirements examination) on the programme page."
+        },
+        "evidence": [
+          {
+            "url": "https://en.unimib.it/study/bachelors-and-masters-degrees/economics-and-statistics-bachelors-degree-programmes",
+            "quote": "Economics and Science for Environmental Sustainability Type: Bachelor's Degree Access: limited with entry requirements examination Language: English"
+          }
+        ]
+      }
+    ]
+  }
+}

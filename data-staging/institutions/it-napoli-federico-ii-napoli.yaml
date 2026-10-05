@@ -1,0 +1,30 @@
+slug: it-napoli-federico-ii-napoli
+name: Università degli studi di Napoli Federico II
+country: IT
+city:
+  slug: napoli
+  name: Napoli
+type: public
+website: https://www.unina.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unina.it/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: it-napoli-federico-ii-napoli
+  name: Università degli studi di Napoli Federico II
+  institution: ""
+  city: Napoli
+  field: ""
+  confidence: ""
+  officialUrl: https://www.unina.it/
+  todo: "university 06301 in the MUR list (state, region CAMPANIA): the list gives no website. Candidate from the international students portal contacts table: https://www.unina.it/ (not confirmed). Check the university's home page names it (an English page that does), that it is a recognised Italian university, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur-institution:06301@napoli
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - url: https://www.unina.it/
+      quote: dell’Università Federico II Leggi pause play Il tuo browser non supporta

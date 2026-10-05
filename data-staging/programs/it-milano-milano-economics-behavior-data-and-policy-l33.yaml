@@ -1,0 +1,96 @@
+slug: it-milano-milano-economics-behavior-data-and-policy-l33
+institution: it-milano-milano
+country: IT
+city: milano
+field: business-economics
+level: bachelor
+name: "Economics: Behavior, Data and Policy"
+summary:
+  fr:
+    text: "Economics: Behavior, Data and Policy, Università degli studi di Milano (Milano). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR)."
+    status: draft
+  en:
+    text: "Economics: Behavior, Data and Policy, Università degli studi di Milano (Milano). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses."
+    status: draft
+  ar:
+    text: "Economics: Behavior, Data and Policy, Università degli studi di Milano (Milano). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR)."
+    status: draft
+officialUrl: https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Le nombre de places est limité : 100 + 15 réservées aux candidats non-UE résidant à l'étranger. Un test d'admission CEnT-S en anglais (sections Mathématiques et Raisonnement) est requis."
+          status: draft
+        en:
+          text: "Places are limited: 100 + 15 reserved for non-EU candidates residing abroad. An admission test CEnT-S in English (Mathematics and Reasoning sections) is required."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-milano-milano-economics-behavior-data-and-policy-l33
+  name: "Economics: Behavior, Data and Policy"
+  institution: Università degli studi di Milano
+  city: Milano
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "MUR lists: degree class L-33 Scienze economiche, language Inglese, mode Convenzionale, access locale, town Milano; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur:01501:l33:economics-behavior-data-and-policy@milano
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy
+      quote: "The Bachelor's Degree Programme in Economics: Behavior, Data and Policy is a three-year programme, entirely taught in English"
+    - fact: teachingLanguages
+      url: https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy
+      quote: "The Bachelor's Degree Programme in Economics: Behavior, Data and Policy is a three-year programme, entirely taught in English, that aims to provide a basic but solid knowledge of economic theory"
+    - fact: requirements.req-1
+      url: https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy
+      quote: prospective students must hold an upper secondary school diploma or equivalent qualification obtained abroad after at least 12 years of schooling
+    - fact: requirements.req-2
+      url: https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy
+      quote: "the maximum number of students who can enroll in the Bachelor's Degree programme in Economics: Behavior, Data and Policy is set at 100, plus 15 places reserved for international non-EU candidates residing abroad"
+  notes: "Tuition: no annual tuition amount for a non-EU student living abroad is stated for this programme; the programme page gives only a general description of two instalments, and the international fees page says the second instalment varies by country group without giving an amount, so tuition is omitted. Intakes: the programme page gives an admission application window 12/03/2026–06/07/2026, but this is a general deadline that the page does not say is for non-EU or foreign-qualification applicants, and the only non-EU-specific deadline (30 April 2026) is for master's degree applicants, not for this Bachelor, so intakes are omitted. Documents: the programme page names no document list for applicants; the university's international enrolment page lists documents for Bachelor applicants (high school diploma etc.), but those lists are institution-wide and are in the 'Lauree triennali e magistrali a ciclo unico' section rather than being stated for this programme, so documents are omitted here."

@@ -1,0 +1,25 @@
+slug: it-ca-foscari-venezia-roncade
+name: Università Ca' Foscari Venezia
+country: IT
+city:
+  slug: roncade
+  name: Roncade
+type: public
+website: null
+source: mur
+info_kind: TODO_read_source
+sources:
+  mur:
+    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: it-ca-foscari-venezia-roncade
+  name: Università Ca' Foscari Venezia
+  institution: ""
+  city: Roncade
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: "university 02701 in the MUR list (state, region VENETO): the list gives no website. No candidate was found. Check the university's home page names it (an English page that does), that it is a recognised Italian university, add its page as the source, then info_kind: official"
+  sourceId: mur-institution:02701@roncade

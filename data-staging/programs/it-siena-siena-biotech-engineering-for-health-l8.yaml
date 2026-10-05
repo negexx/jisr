@@ -1,0 +1,88 @@
+slug: it-siena-siena-biotech-engineering-for-health-l8
+institution: it-siena-siena
+country: IT
+city: siena
+field: engineering
+level: bachelor
+name: Biotech Engineering For Health
+summary:
+  fr:
+    text: Biotech Engineering For Health, Università degli studi di Siena (Siena). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Biotech Engineering For Health, Università degli studi di Siena (Siena). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Biotech Engineering For Health, Università degli studi di Siena (Siena). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://biotech-engineering.unisi.it/en/course/program-overview
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez auprès de l'Admission Office si un test d'italien est exigé pour ce cursus dispensé en anglais.
+          status: draft
+        en:
+          text: Check with the Admission Office whether an Italian test is required for this English-taught programme.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://biotech-engineering.unisi.it/en/course/program-overview
+    last_verified_at: null
+  page-2:
+    url: https://www.unisi.it/unisilife/notizie/aperte-preiscrizioni-studenti-internazionali
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-siena-siena-biotech-engineering-for-health-l8
+  name: Biotech Engineering For Health
+  institution: Università degli studi di Siena
+  city: Siena
+  field: engineering
+  confidence: low
+  officialUrl: ""
+  todo: "MUR lists: degree class L-8 Ingegneria dell'informazione (also listed under L-2), language Inglese, mode Convenzionale, access locale, town Siena; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; the degree class(es) and the course name point to different fields or to a field outside the three: check the content; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur:05201:l8:biotech-engineering-for-health@siena
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: teachingLanguages
+      url: https://biotech-engineering.unisi.it/en/course/program-overview
+      quote: Delivered entirely in English
+    - fact: requirements.req-1
+      url: https://www.unisi.it/unisilife/notizie/aperte-preiscrizioni-studenti-internazionali
+      quote: "2 settembre 2013: prova di conoscenza della lingua italiana"
+  notes: La page d'accueil du programme (biotech-engineering.unisi.it) ne donne ni frais de scolarité, ni dates de candidature, ni liste de documents, ni conditions d'admission pour ce Bachelor. Les règles sur la langue italienne proviennent d'une page d'actualité de 2013 (preiscrizioni 2013-2014) et ne concernent pas spécifiquement ce programme; l'exonération pour les cursus en anglais figure sur cette même page. Le bandeau « Manifesto titoli esteri » décrit la procédure Universitaly pour les étudiants non-UE demandant un visa et mentionne une liste de documents (« Mandatory Documents for Enrollment ») non fournie ici.

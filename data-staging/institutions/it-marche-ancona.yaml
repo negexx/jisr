@@ -1,0 +1,30 @@
+slug: it-marche-ancona
+name: Università Politecnica delle Marche - Ancona
+country: IT
+city:
+  slug: ancona
+  name: Ancona
+type: public
+website: https://www.international.univpm.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.international.univpm.it/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: it-marche-ancona
+  name: Università Politecnica delle Marche - Ancona
+  institution: ""
+  city: Ancona
+  field: ""
+  confidence: ""
+  officialUrl: https://www.international.univpm.it/
+  todo: "university 04201 in the MUR list (state, region MARCHE): the list gives no website. Candidate from the international students portal contacts table: https://www.international.univpm.it/ (not confirmed). Check the university's home page names it (an English page that does), that it is a recognised Italian university, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur-institution:04201@ancona
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - url: https://www.international.univpm.it/
+      quote: scams. &times; Università Politecnica delle Marche Piazza Roma, 22, 60121 Ancona

@@ -1,0 +1,82 @@
+slug: it-bologna-bologna-economics-and-finance-l33
+institution: it-bologna-bologna
+country: IT
+city: bologna
+field: business-economics
+level: bachelor
+name: Economics and Finance
+summary:
+  fr:
+    text: Economics and Finance, Università degli studi di Bologna (Bologna). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics and Finance, Università degli studi di Bologna (Bologna). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Economics and Finance, Università degli studi di Bologna (Bologna). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://corsi.unibo.it/1cycle/EconomicsFinance/preparing-the-study-plan
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+scholarships: []
+sources:
+  programme:
+    url: https://corsi.unibo.it/1cycle/EconomicsFinance/preparing-the-study-plan
+    last_verified_at: null
+  page-2:
+    url: https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-bologna-bologna-economics-and-finance-l33
+  name: Economics and Finance
+  institution: Università degli studi di Bologna
+  city: Bologna
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "MUR lists: degree class L-33 Scienze economiche, language Inglese, mode Convenzionale, access locale, town Bologna; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur:03701:l33:economics-and-finance@bologna
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: teachingLanguages
+      url: https://corsi.unibo.it/1cycle/EconomicsFinance/preparing-the-study-plan
+      quote: No English exams are included in the list, as CLEF is taught in such language.
+    - fact: requirements.req-1
+      url: https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero
+      quote: essere conseguito al termine di un periodo scolastico pari ad almeno 12 anni
+  notes: "La page du programme (preparing-the-study-plan) confirme seulement que CLEF est enseigné en anglais; aucune durée, frais de scolarité, dates d'admission ou liste de documents propre à ce programme n'y figure. Les frais de scolarité ne sont pas indiqués : la page d'ateneo dédiée aux titres étrangers ne donne aucun montant, et les pages trouvées sur les frais concernent les scuole di specializzazione dell'Area Medica, qui ne sont pas ce programme. Aucune échéance d'admission spécifique à Economics and Finance avec l'année n'a été trouvée. La préinscription sur Universitaly est mentionnée par la page d'ateneo pour les non-UE résidant à l'étranger avec un titre étranger, mais cette page ne concerne pas explicitement ce programme de licence."

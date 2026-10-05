@@ -1,0 +1,30 @@
+slug: it-udine-udine
+name: Università degli studi di Udine
+country: IT
+city:
+  slug: udine
+  name: Udine
+type: public
+website: https://www.uniud.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.uniud.it/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: it-udine-udine
+  name: Università degli studi di Udine
+  institution: ""
+  city: Udine
+  field: ""
+  confidence: ""
+  officialUrl: https://www.uniud.it/
+  todo: "university 03001 in the MUR list (state, region FRIULI VENEZIA GIULIA): the list gives no website. Candidate from the international students portal contacts table: https://www.uniud.it/ (not confirmed). Check the university's home page names it (an English page that does), that it is a recognised Italian university, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur-institution:03001@udine
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - url: https://www.uniud.it/
+      quote: UNIUD - Università degli Studi di Udine Passa al contenuto principale

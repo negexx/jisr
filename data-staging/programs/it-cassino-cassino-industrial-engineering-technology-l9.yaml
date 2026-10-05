@@ -1,0 +1,97 @@
+slug: it-cassino-cassino-industrial-engineering-technology-l9
+institution: it-cassino-cassino
+country: IT
+city: cassino
+field: engineering
+level: bachelor
+name: Industrial Engineering Technology
+summary:
+  fr:
+    text: Industrial Engineering Technology, Università degli Studi di Cassino e del Lazio Meridionale (Cassino). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Industrial Engineering Technology, Università degli Studi di Cassino e del Lazio Meridionale (Cassino). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Industrial Engineering Technology, Università degli Studi di Cassino e del Lazio Meridionale (Cassino). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unicas.it/international-unicas/international-bachelor-master-and-phd-programs-enrollment-26-27-now-open/bachelors-degree-programs/industrial-engineering-technology/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+    - slug: declaration-of-value
+      name:
+        fr:
+          text: Déclaration de valeur (DOV)
+          status: draft
+        en:
+          text: Declaration of Value (DOV)
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.unicas.it/international-unicas/international-bachelor-master-and-phd-programs-enrollment-26-27-now-open/bachelors-degree-programs/industrial-engineering-technology/
+    last_verified_at: null
+  page-2:
+    url: https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-cassino-cassino-industrial-engineering-technology-l9
+  name: Industrial Engineering Technology
+  institution: Università degli Studi di Cassino e del Lazio Meridionale
+  city: Cassino
+  field: engineering
+  confidence: high
+  officialUrl: ""
+  todo: "MUR lists: degree class L-9 Ingegneria industriale, language Inglese, mode Blended/Modalità Mista, access accesso libero, town Cassino; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur:06001:l9:industrial-engineering-technology@cassino
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: applicationChannel
+      url: https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/
+      quote: 2.1 APPLY IN UNIVERSITALY
+    - fact: documents
+      url: https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/
+      quote: passport with the visa for study and the arrival stamp in Italy (or a valid permit to stay); the Declaration of Value
+    - fact: documents
+      url: https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/
+      quote: The University of Cassino requires DOV (Declaration of Value) to enroll
+  notes: "Tuition fee not stated for non-EU applicants: page says only that at the International Students Administrative Office students can \"have information in regards to the tuition fees\" without giving an amount. Application deadline: page says \"It's usually possible between February and June, check the precise deadline fixed by each Degree Programme for this year\" without day/month/year for non-EU applicants, so not stated as a dated deadline. Admission requirements (specific for Industrial Engineering Technology) not stated on the supplied pages."

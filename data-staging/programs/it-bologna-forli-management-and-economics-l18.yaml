@@ -1,0 +1,103 @@
+slug: it-bologna-forli-management-and-economics-l18
+institution: it-bologna-forli
+country: IT
+city: forli
+field: business-economics
+level: bachelor
+name: Management and Economics
+summary:
+  fr:
+    text: Management and Economics, Università degli studi di Bologna (Forlì). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Management and Economics, Università degli studi di Bologna (Forlì). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Management and Economics, Università degli studi di Bologna (Forlì). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/5892
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez le nombre de places disponibles et la procédure d'admission (concours) pour ce programme.
+          status: draft
+        en:
+          text: Check the number of available places and the admission procedure (entrance exam) for this programme.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/5892
+    last_verified_at: null
+  page-2:
+    url: https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-bologna-forli-management-and-economics-l18
+  name: Management and Economics
+  institution: Università degli studi di Bologna
+  city: Forlì
+  field: business-economics
+  confidence: high
+  officialUrl: ""
+  todo: "MUR lists: degree class L-18 Scienze dell'economia e della gestione aziendale, language Inglese, mode Convenzionale, access locale, town Forlì; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); locale access: limited places, an admission test or ranking applies: read how it works for non-EU applicants; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur:03701:l18:management-and-economics@forli
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/5892
+      quote: Duration 3 years
+    - fact: teachingLanguages
+      url: https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/5892
+      quote: Language English
+    - fact: documents
+      url: https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero
+      quote: il tuo titolo originale di studi secondari, tradotto e con conferma dell’autenticità
+    - fact: requirements.req-1
+      url: https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/5892
+      quote: Type of access Restricted access - entrance exam (65 places available)
+  notes: The tuition fee for this programme is not stated for non-EU students. The pages mention a €50 application fee for the Master's programme International Management, not for this Bachelor's programme. The programme page mentions 'Restricted access - entrance exam (65 places available)' but the page about enrolling with a foreign qualification says 'Per la maggior parte dei corsi di studio la verifica delle conoscenze è fatta attraverso test, ad esempio il TOLC' (general information). The specific language requirements for this programme are not stated (the page about enrolling with a foreign qualification mentions a general requirement for Italian, but not for this English-taught programme). The documents required are from the general page for enrolling with a foreign qualification, not from the programme page.

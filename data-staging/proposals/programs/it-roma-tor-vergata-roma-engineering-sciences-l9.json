@@ -1,0 +1,56 @@
+{
+  "slug": "it-roma-tor-vergata-roma-engineering-sciences-l9",
+  "programmePage": "https://web.uniroma2.it/en/percorso/academics/sezione/bachelor_degree",
+  "facts": {
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://web.uniroma2.it/en/percorso/admissions",
+          "quote": "The pre-enrollment application on Universitaly is mandatory for all non-EU applicants not residing in Italy (including those holding a residence permit for other EU countries)."
+        }
+      ]
+    }
+  },
+  "notes": "The pages do not state a duration, teaching language, tuition, or intake deadlines for the Engineering Sciences bachelor's degree. Tuition was omitted because the pages give no single EUR amount for a full-time Bachelor student from outside the EU living abroad; the only fees mentioned are the regional tax and stamp duty (first instalment of EUR 156.00) and ISEE-based bands, and the international-student tuition page is only linked. The document list is taken from the university-wide admissions page for non-EU applicants requiring a pre-enrolment on Universitaly; it does not mention translation requirements for those documents. No language proficiency requirement is stated for this programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://web.uniroma2.it/en/percorso/admissions",
+            "quote": "The qualification must be obtained at the end of a school period equal to at least 12 years of schooling and allow access at the universities of the country where the qualification was obtained (or of the country of reference of the educational system) to a course similar to the one in which the student wants to enroll in Italy."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme de fin d'études secondaires est reconnu admissible selon la loi italienne et obtenu après au moins 12 ans de scolarité.",
+          "en": "Check whether your secondary school diploma is recognised as eligible under Italian law and obtained after at least 12 years of schooling."
+        },
+        "evidence": [
+          {
+            "url": "https://www-2023.studenti.uniroma2.it/it_it/documenti-richiesti-per-liscrizione-con-titolo-estero/",
+            "quote": "Requisito minimo per l’accesso ai corsi triennali o ai corsi a ciclo unico è il possesso di un diploma finale di scuola secondaria riconosciuto idoneo secondo la legge italiana e le norme stabilite dal Ministero italiano dell’Università e della Ricerca."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Préparez pour l'immatriculation le diplôme original et les bulletins scolaires du secondaire; pour les pays signataires de la Convention de Lisbonne, fournissez l'Attestato ARDI ou la Dichiarazione di Valore.",
+          "en": "Prepare for enrolment the original secondary school diploma and school report cards; for Lisbon Convention signatory countries, provide the ARDI Statement of Correspondence or the Declaration of Value."
+        },
+        "evidence": [
+          {
+            "url": "https://www-2023.studenti.uniroma2.it/it_it/documenti-richiesti-per-liscrizione-con-titolo-estero/",
+            "quote": "Titolo scolastico finale in originale Pagelle scolastiche relative alla scuola secondaria di secondo grado Per la verifica dell’idoneità del titolo, gli studenti in possesso di titoli emessi da paesi firmatari della Convenzione di Lisbona possono presentare l’Attestato di Corrispondenza ARDI scaricabile gratuitamente dalla banca dati ARDI (verificare l’elenco dei Paesi e dei titoli direttamente nella banca dati ARDI) o la Dichiarazione di Valore rilasciata dall’Ambasciata Italiana presente sul territorio del paese a cui fa riferimento l’ordinamento della qualifica."
+          }
+        ]
+      }
+    ]
+  }
+}

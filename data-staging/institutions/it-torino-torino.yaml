@@ -1,0 +1,30 @@
+slug: it-torino-torino
+name: Università degli studi di Torino
+country: IT
+city:
+  slug: torino
+  name: Torino
+type: public
+website: https://www.unito.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unito.it/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: it-torino-torino
+  name: Università degli studi di Torino
+  institution: ""
+  city: Torino
+  field: ""
+  confidence: ""
+  officialUrl: https://en.unito.it/
+  todo: "university 00101 in the MUR list (state, region PIEMONTE): the list gives no website. Candidate from the international students portal contacts table: https://en.unito.it/ (not confirmed; it is a sub-site such as admissions or international: use the university's main home page as the website). Check the university's home page names it (an English page that does), that it is a recognised Italian university, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur-institution:00101@torino
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - url: https://www.unito.it/
+      quote: L'Università di Torino Salta al contenuto principale Form di ricerca

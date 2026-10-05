@@ -1,0 +1,30 @@
+slug: it-firenze-firenze
+name: Università degli studi di Firenze
+country: IT
+city:
+  slug: firenze
+  name: Firenze
+type: public
+website: https://www.unifi.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unifi.it/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: it-firenze-firenze
+  name: Università degli studi di Firenze
+  institution: ""
+  city: Firenze
+  field: ""
+  confidence: ""
+  officialUrl: https://www.unifi.it/
+  todo: "university 04801 in the MUR list (state, region TOSCANA): the list gives no website. Candidate from the international students portal contacts table: https://www.unifi.it/ (not confirmed). Check the university's home page names it (an English page that does), that it is a recognised Italian university, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: mur-institution:04801@firenze
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - url: https://www.unifi.it/
+      quote: Università di Firenze Salta al contenuto principale Form di ricerca
