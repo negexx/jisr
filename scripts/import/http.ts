@@ -48,8 +48,17 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function cachePath(url: string): string {
-  return path.join(CACHE_DIR, `${createHash("sha1").update(url).digest("hex")}.txt`);
+export function cachePath(url: string, cacheDir = CACHE_DIR): string {
+  return path.join(cacheDir, `${createHash("sha1").update(url).digest("hex")}.txt`);
+}
+
+// True when `fetchText` would answer from the cache (no request). A refresh always requests.
+export function isCached(
+  url: string,
+  options: { refresh?: boolean; cacheDir?: string } = {},
+): boolean {
+  const refresh = options.refresh === true || process.env.JISR_IMPORT_REFRESH === "1";
+  return !refresh && existsSync(cachePath(url, options.cacheDir));
 }
 
 function retryDelayMs(response: Response | null, attempt: number, base: number): number {

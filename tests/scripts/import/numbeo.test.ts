@@ -143,6 +143,14 @@ describe("parseNumbeoPage", () => {
     expect(parsed.contributors).toBe(1246);
   });
 
+  it("reads the footer wording of a country page too", () => {
+    const footer =
+      "<div>This country had 9220 entries in the past 12 months by 981 different contributors. <br/>Last update: 5 October 2026</div>";
+    const parsed = parseNumbeoPage(page([], footer));
+    expect(parsed.lastUpdate).toBe("2026-10-05");
+    expect(parsed.contributors).toBe(981);
+  });
+
   it("zero-pads the day of the last update", () => {
     const parsed = parseNumbeoPage(page([], "Last update: 7 January 2027"));
     expect(parsed.lastUpdate).toBe("2027-01-07");
