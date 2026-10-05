@@ -21,6 +21,7 @@ import {
   numbeoCityUrl,
   numbeoCountryUrl,
   numbeoFetch,
+  pageRefusal,
   runCosts,
 } from "../../../scripts/import/costs";
 import { cachePath, isCached } from "../../../scripts/import/http";
@@ -120,21 +121,24 @@ beforeEach(async () => {
 afterEach(() => rmSync(root, { recursive: true, force: true }));
 
 describe("urls", () => {
-  it("builds city urls with dashes for spaces and percent-encoded accents", () => {
-    expect(numbeoCityUrl("Paris", "EUR")).toBe(
-      "https://www.numbeo.com/cost-of-living/in/Paris?displayCurrency=EUR",
+  it("builds city urls in the Name-Country form, dashes for spaces and percent-encoded accents", () => {
+    expect(numbeoCityUrl("Paris", "France", "EUR")).toBe(
+      "https://www.numbeo.com/cost-of-living/in/Paris-France?displayCurrency=EUR",
     );
-    expect(numbeoCityUrl("Saint-Martin-d'Hères", "EUR")).toBe(
-      "https://www.numbeo.com/cost-of-living/in/Saint-Martin-d'H%C3%A8res?displayCurrency=EUR",
+    expect(numbeoCityUrl("Agen", "France", "EUR")).toBe(
+      "https://www.numbeo.com/cost-of-living/in/Agen-France?displayCurrency=EUR",
     );
-    expect(numbeoCityUrl("'s-Gravenhage", "EUR")).toBe(
-      "https://www.numbeo.com/cost-of-living/in/'s-Gravenhage?displayCurrency=EUR",
+    expect(numbeoCityUrl("Saint-Martin-d'Hères", "France", "EUR")).toBe(
+      "https://www.numbeo.com/cost-of-living/in/Saint-Martin-d'H%C3%A8res-France?displayCurrency=EUR",
     );
-    expect(numbeoCityUrl("Le Havre", "EUR")).toBe(
-      "https://www.numbeo.com/cost-of-living/in/Le-Havre?displayCurrency=EUR",
+    expect(numbeoCityUrl("'s-Gravenhage", "Netherlands", "EUR")).toBe(
+      "https://www.numbeo.com/cost-of-living/in/'s-Gravenhage-Netherlands?displayCurrency=EUR",
     );
-    expect(numbeoCityUrl("Budapest", "HUF")).toBe(
-      "https://www.numbeo.com/cost-of-living/in/Budapest?displayCurrency=HUF",
+    expect(numbeoCityUrl("Le Havre", "France", "EUR")).toBe(
+      "https://www.numbeo.com/cost-of-living/in/Le-Havre-France?displayCurrency=EUR",
+    );
+    expect(numbeoCityUrl("Budapest", "Hungary", "HUF")).toBe(
+      "https://www.numbeo.com/cost-of-living/in/Budapest-Hungary?displayCurrency=HUF",
     );
   });
 
@@ -188,7 +192,7 @@ describe("loadCities", () => {
 
 describe("buildProfile", () => {
   const page = parseNumbeoPage(numbeoHtml());
-  const url = numbeoCityUrl("Paris", "EUR");
+  const url = numbeoCityUrl("Paris", "France", "EUR");
   const build = (overrides: Partial<Parameters<typeof buildProfile>[0]> = {}) =>
     buildProfile({
       slug: "fr-paris-numbeo",
@@ -415,9 +419,9 @@ function options(f: Fixture, extra: Partial<Parameters<typeof runCosts>[0]> = {}
 }
 
 const franceUrl = numbeoCountryUrl("France", "EUR");
-const parisUrl = numbeoCityUrl("Paris", "EUR");
+const parisUrl = numbeoCityUrl("Paris", "France", "EUR");
 const hungaryUrl = numbeoCountryUrl("Hungary", "HUF");
-const budapestUrl = numbeoCityUrl("Budapest", "HUF");
+const budapestUrl = numbeoCityUrl("Budapest", "Hungary", "HUF");
 
 describe("runCosts", () => {
   it("stages one profile per city and one per country", async () => {
@@ -473,7 +477,7 @@ describe("runCosts", () => {
     const f = fixture();
     f.pages.set(franceUrl, franceHtml());
     f.pages.set(parisUrl, numbeoHtml());
-    const failing = numbeoCityUrl(gre, "EUR");
+    const failing = numbeoCityUrl(gre, "France", "EUR");
     const outcome = await runCosts(
       options(f, {
         countries: ["FR"],
@@ -514,7 +518,7 @@ describe("runCosts", () => {
     const f = fixture();
     f.pages.set(franceUrl, franceHtml());
     f.pages.set(parisUrl, numbeoHtml());
-    f.pages.set(numbeoCityUrl(gre, "EUR"), greHtml());
+    f.pages.set(numbeoCityUrl(gre, "France", "EUR"), greHtml());
     f.cached.add(parisUrl);
     await runCosts(options(f, { countries: ["FR"], delayMs: 2500 }));
     expect(f.requested).toHaveLength(3);
@@ -526,7 +530,7 @@ describe("runCosts", () => {
     const f = fixture();
     f.pages.set(franceUrl, franceHtml());
     f.pages.set(parisUrl, numbeoHtml({ place: "Paris, France" }));
-    f.pages.set(numbeoCityUrl(gre, "EUR"), numbeoHtml({ place: "Saint Martin d’Heres" }));
+    f.pages.set(numbeoCityUrl(gre, "France", "EUR"), numbeoHtml({ place: "Saint Martin d’Heres" }));
     const outcome = await runCosts(options(f, { countries: ["FR"] }));
     expect(await listStaged(stagingDir)).toEqual([
       "cost-profiles/fr-numbeo",
@@ -540,12 +544,55 @@ describe("runCosts", () => {
     const f = fixture();
     f.pages.set(franceUrl, franceHtml());
     f.pages.set(parisUrl, numbeoHtml({ place: "Lyon" }));
-    f.pages.set(numbeoCityUrl(gre, "EUR"), greHtml());
+    f.pages.set(numbeoCityUrl(gre, "France", "EUR"), greHtml());
     const outcome = await runCosts(options(f, { countries: ["FR"] }));
     expect(await listStaged(stagingDir)).not.toContain("cost-profiles/fr-paris-numbeo");
     const text = outcome.lines.join("\n");
     expect(text).toContain("no profile fr-paris-numbeo: page is for Lyon, expected Paris");
     expect(text).toContain("falls back to fr-numbeo");
+  });
+
+  it("requests every city page in the Name-Country form", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, franceHtml());
+    await runCosts(options(f, { countries: ["FR"] }));
+    const cityRequests = f.requested.filter((url) => url.includes("/cost-of-living/in/"));
+    expect(cityRequests).toEqual([
+      "https://www.numbeo.com/cost-of-living/in/Paris-France?displayCurrency=EUR",
+      "https://www.numbeo.com/cost-of-living/in/Saint-Martin-d'H%C3%A8res-France?displayCurrency=EUR",
+    ]);
+  });
+
+  it("accepts the Name-Country heading Numbeo shows for a Name-Country url", () => {
+    const page = parseNumbeoPage(numbeoHtml({ place: "Agen, France" }));
+    expect(
+      pageRefusal(page, {
+        label: "Agen",
+        names: ["Agen", "Agen, France"],
+        currency: "EUR",
+      }),
+    ).toBeNull();
+  });
+
+  it("counts a 'Cannot find city id' page as not listed, never as a profile", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, franceHtml());
+    // Numbeo answers 200 with a table-less apology; even a page that also carried rows must not stage
+    const apology = numbeoHtml({ place: null }).replace(
+      "<head></head>",
+      "<head><h1>Cannot find city id for Paris. Did you mean: Paris, France</h1></head>",
+    );
+    f.pages.set(parisUrl, apology);
+    f.pages.set(numbeoCityUrl(gre, "France", "EUR"), greHtml());
+    const outcome = await runCosts(options(f, { countries: ["FR"] }));
+    expect(await listStaged(stagingDir)).not.toContain("cost-profiles/fr-paris-numbeo");
+    const text = outcome.lines.join("\n");
+    expect(text).toContain(
+      "no profile fr-paris-numbeo: not listed by Numbeo; falls back to fr-numbeo",
+    );
+    expect(text).not.toContain("page names no place");
+    expect(text).not.toContain("re-run to retry");
+    expect(outcome.ok).toBe(true);
   });
 
   it("refuses a country page for another country", async () => {
@@ -610,7 +657,7 @@ describe("runCosts", () => {
     const f = fixture();
     f.pages.set(franceUrl, franceHtml());
     f.pages.set(parisUrl, numbeoHtml());
-    f.pages.set(numbeoCityUrl(gre, "EUR"), greHtml());
+    f.pages.set(numbeoCityUrl(gre, "France", "EUR"), greHtml());
     f.cached.add(franceUrl);
     f.cached.add(parisUrl);
     const outcome = await runCosts(options(f, { countries: ["FR"], maxRequests: 1 }));
@@ -635,14 +682,14 @@ describe("runCosts", () => {
     const f = fixture();
     f.pages.set(franceUrl, franceHtml());
     f.pages.set(parisUrl, numbeoHtml());
-    f.pages.set(numbeoCityUrl(gre, "EUR"), greHtml());
+    f.pages.set(numbeoCityUrl(gre, "France", "EUR"), greHtml());
     const stagedFile = stageFile("cost-profiles", "fr-paris-numbeo", stagingDir);
     await writeYaml(stagedFile, "edited by a reviewer\n");
     await writeYaml(path.join(dataDir, "cost-profiles", "fr-numbeo.yaml"), "already promoted\n");
     const outcome = await runCosts(options(f, { countries: ["FR"] }));
     expect(readFileSync(stagedFile, "utf8")).toBe("edited by a reviewer\n");
     expect(existsSync(stageFile("cost-profiles", "fr-numbeo", stagingDir))).toBe(false);
-    expect(f.requested).toEqual([numbeoCityUrl("Saint-Martin-d'Hères", "EUR")]);
+    expect(f.requested).toEqual([numbeoCityUrl(gre, "France", "EUR")]);
     const text = outcome.lines.join("\n");
     expect(text).toContain("skipped fr-paris-numbeo: already staged");
     expect(text).toContain("skipped fr-numbeo: already in data");

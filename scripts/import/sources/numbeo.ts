@@ -193,6 +193,13 @@ function placeOf(html: string): string | null {
   return null;
 }
 
+// Numbeo answers 200 with this heading for a city it cannot resolve from the URL.
+export function isCityNotFound(html: string): boolean {
+  return [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)].some((heading) =>
+    /^Cannot find city id/i.test(cellText(heading[1] ?? "")),
+  );
+}
+
 function currencySymbolOf(tableHtml: string): string | null {
   const cell = tableHtml.match(/class="first_currency"[^>]*>([\s\S]*?)<\/span>/i);
   if (cell === null) return null;

@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   costLinesFrom,
   FOOD_BASKET,
+  isCityNotFound,
   NUMBEO_ROWS,
   NUMBEO_USER_AGENT,
   type NumbeoPage,
@@ -192,6 +193,15 @@ describe("parseNumbeoPage", () => {
   it("has no place when there is no h1 of that wording", () => {
     expect(parseNumbeoPage("<html><body><p>Not found</p></body></html>").place).toBeNull();
     expect(parseNumbeoPage("<h1>Something else</h1>").place).toBeNull();
+  });
+
+  it("recognises Numbeo's 'Cannot find city id' page by its h1 and no other page", () => {
+    expect(
+      isCityNotFound("<h1> Cannot find city id for Agen </h1><p>similar: Agen, France</p>"),
+    ).toBe(true);
+    expect(isCityNotFound("<h1>cannot find city id for X</h1>")).toBe(true);
+    expect(isCityNotFound("<h1>Cost of Living in Agen, France</h1>")).toBe(false);
+    expect(isCityNotFound("<p>Cannot find city id for Agen</p>")).toBe(false);
   });
 
   it("reads the currency symbol of the first average cell, prefix or suffix", () => {

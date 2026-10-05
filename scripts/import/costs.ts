@@ -12,6 +12,7 @@ import {
   type CostLineKey,
   costLinesFrom,
   FOOD_BASKET,
+  isCityNotFound,
   NUMBEO_USER_AGENT,
   type NumbeoPage,
   type NumbeoRow,
@@ -38,8 +39,10 @@ const currencyOf = (country: string): string => (country === "HU" ? "HUF" : "EUR
 
 const NUMBEO_HOST = "https://www.numbeo.com";
 
-export function numbeoCityUrl(name: string, currency: string): string {
-  const slug = encodeURIComponent(name.trim().replace(/\s+/g, "-"));
+// Only a few big cities resolve bare ("/in/Paris"); every other one answers 200 "Cannot find city id",
+// so the page is always asked for as "<City>-<Country>".
+export function numbeoCityUrl(name: string, countryName: string, currency: string): string {
+  const slug = encodeURIComponent(`${name.trim()} ${countryName.trim()}`.replace(/\s+/g, "-"));
   return `${NUMBEO_HOST}/cost-of-living/in/${slug}?displayCurrency=${currency}`;
 }
 
@@ -364,7 +367,11 @@ function targetsFor(countries: readonly string[], cities: readonly CityRow[]): T
       slug: `${row.country.toLowerCase()}-${row.citySlug}-numbeo`,
       country: row.country,
       city: row.citySlug,
-      url: numbeoCityUrl(row.name, currencyOf(row.country)),
+      url: numbeoCityUrl(
+        row.name,
+        COUNTRY_NAMES[row.country] ?? row.country,
+        currencyOf(row.country),
+      ),
       currency: currencyOf(row.country),
       label: row.name,
       names: [row.name, `${row.name}, ${COUNTRY_NAMES[row.country] ?? row.country}`],
@@ -439,6 +446,10 @@ export async function runCosts(options: RunOptions): Promise<RunOutcome> {
         failed++;
         lines.push(`failed ${target.slug}: ${message} (re-run to retry)${fallback}`);
       }
+      continue;
+    }
+    if (isCityNotFound(body)) {
+      lines.push(`no profile ${target.slug}: not listed by Numbeo${fallback}`);
       continue;
     }
     const page = parseNumbeoPage(body);
