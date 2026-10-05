@@ -64,7 +64,9 @@ describe("checkDuration", () => {
     expect(checkDuration(3, "The degree takes three years").ok).toBe(true);
     expect(checkDuration(3, "Duration: 6 semesters").ok).toBe(true);
     // the Study Finder misspells the unit
-    expect(checkDuration(4, "Duration of the course / programme: 8 semsters semesters").ok).toBe(true);
+    expect(checkDuration(4, "Duration of the course / programme: 8 semsters semesters").ok).toBe(
+      true,
+    );
     expect(checkDuration(3.5, "7 semsters").ok).toBe(true);
     expect(checkDuration(3.5, "8 semsters").ok).toBe(false);
     expect(checkDuration(3, "180 ECTS credits").ok).toBe(true);
