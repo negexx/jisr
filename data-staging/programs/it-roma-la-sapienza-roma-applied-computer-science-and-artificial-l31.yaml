@@ -1,0 +1,106 @@
+slug: it-roma-la-sapienza-roma-applied-computer-science-and-artificial-l31
+institution: it-roma-la-sapienza-roma
+country: IT
+city: roma
+field: computer-science
+level: bachelor
+name: Applied Computer Science and Artificial Intelligence
+summary:
+  fr:
+    text: Applied Computer Science and Artificial Intelligence, Università degli studi di Roma La Sapienza (Roma). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Applied Computer Science and Artificial Intelligence, Università degli studi di Roma La Sapienza (Roma). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Applied Computer Science and Artificial Intelligence, Università degli studi di Roma La Sapienza (Roma). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://corsidilaurea.uniroma1.it/it/course/33502
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-1
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport en cours de validité
+          status: draft
+        en:
+          text: Valid passport
+          status: draft
+      translationRequired: null
+    - slug: study-visa
+      name:
+        fr:
+          text: Visa d'études
+          status: draft
+        en:
+          text: Study Visa
+          status: draft
+      translationRequired: null
+    - slug: high-school-diploma
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: High School Diploma
+          status: draft
+      translationRequired: true
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+scholarships: []
+sources:
+  programme:
+    url: https://corsidilaurea.uniroma1.it/it/course/33502
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.uniroma1.it/en/pagina/international-student-office
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-roma-la-sapienza-roma-applied-computer-science-and-artificial-l31
+  name: Applied Computer Science and Artificial Intelligence
+  sourceId: mur:05801:l31:applied-computer-science-and-artificial-intelligence@roma
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: teachingLanguages
+      url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
+      quote: 2025;Roma La Sapienza;STEM;Informatica e Tecnologie ICT;Laurea;L-31;Scienze e tecnologie informatiche;Applied Computer Science and Artificial Intelligence;Roma;ROMA;locale;Convenzionale;Inglese
+  notes: 'Teaching language from the MUR offer file (Italian ministry, open data, 2025/26 academic year): the course is listed as "Inglese".'
