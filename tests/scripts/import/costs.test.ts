@@ -26,10 +26,11 @@ import {
   pageRefusal,
   runCosts,
 } from "../../../scripts/import/costs";
-import { cachePath, isCached } from "../../../scripts/import/http";
+import { cachePath, HttpStatusError, isCached } from "../../../scripts/import/http";
 import { promoteApproved, stampVerified } from "../../../scripts/import/promote";
 import {
   FOOD_BASKET,
+  isNumbeoCostPage,
   NUMBEO_USER_AGENT,
   parseNumbeoPage,
 } from "../../../scripts/import/sources/numbeo";
@@ -669,6 +670,110 @@ describe("runCosts", () => {
     expect(await listStaged(stagingDir)).toEqual(["cost-profiles/fr-numbeo"]);
   });
 
+  it("stops on the numeric status of the error, whatever the message says", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, franceHtml());
+    const outcome = await runCosts(
+      options(f, {
+        countries: ["FR"],
+        fetch: async (url: string) => {
+          f.requested.push(url);
+          if (f.requested.length === 2) throw new HttpStatusError("blocked by the host", 403);
+          return franceHtml();
+        },
+      }),
+    );
+    expect(f.requested).toHaveLength(2);
+    expect(outcome.ok).toBe(false);
+    expect(outcome.lines.join("\n")).toContain("Numbeo answered HTTP 403");
+  });
+
+  it("stops after 3 failures in a row that are not 404s, and a success or a 404 resets the count", async () => {
+    const f = fixture();
+    const failing = new Set([
+      numbeoCityUrl("Paris", "France", "EUR"),
+      numbeoCityUrl(gre, "France", "EUR"),
+      numbeoCountryUrl("Hungary", "HUF"),
+    ]);
+    const outcome = await runCosts(
+      options(f, {
+        countries: ["FR", "HU"],
+        fetch: async (url: string) => {
+          f.requested.push(url);
+          // France ok, Hungary 503 (1), Paris timeout (2), Saint-Martin 503 (3): stop
+          if (url === numbeoCountryUrl("Hungary", "HUF"))
+            throw new Error(`GET ${url} failed: HTTP 503`);
+          if (failing.has(url)) throw new Error(`GET ${url} failed: network timeout`);
+          if (url === franceUrl) return franceHtml();
+          throw new Error(`GET ${url} failed: HTTP 404`);
+        },
+      }),
+    );
+    expect(f.requested).toEqual([
+      franceUrl,
+      numbeoCountryUrl("Hungary", "HUF"),
+      parisUrl,
+      numbeoCityUrl(gre, "France", "EUR"),
+    ]);
+    expect(outcome.ok).toBe(false);
+    const text = outcome.lines.join("\n");
+    expect(text).toContain("Numbeo failed 3 times in a row");
+    expect(text).toContain(
+      "stopping. Staged profiles and cached pages are kept; wait before re-running.",
+    );
+    expect(text).toContain("not fetched hu-budapest-numbeo: run stopped");
+  });
+
+  it("does not count 404s or successes as failures in a row", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, franceHtml());
+    f.pages.set(parisUrl, numbeoHtml());
+    const outcome = await runCosts(
+      options(f, {
+        countries: ["FR"],
+        fetch: async (url: string) => {
+          f.requested.push(url);
+          if (url === franceUrl) throw new Error(`GET ${url} failed: HTTP 503`);
+          if (url === parisUrl) throw new Error(`GET ${url} failed: HTTP 503`);
+          // Saint-Martin: 404 on both forms, which is not a failure
+          throw new Error(`GET ${url} failed: HTTP 404`);
+        },
+      }),
+    );
+    expect(outcome.lines.join("\n")).not.toContain("in a row");
+    expect(f.requested).toHaveLength(4);
+  });
+
+  it("tries the cached form of a city first, and asks for nothing when it is enough", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, franceHtml());
+    const bareParis = numbeoBareCityUrl("Paris", "EUR");
+    f.pages.set(bareParis, numbeoHtml());
+    f.cached.add(bareParis);
+    f.pages.set(numbeoCityUrl(gre, "France", "EUR"), greHtml());
+    const outcome = await runCosts(options(f, { countries: ["FR"] }));
+    expect(f.requested).toEqual([franceUrl, bareParis, numbeoCityUrl(gre, "France", "EUR")]);
+    expect(outcome.requests).toBe(2);
+    const paris = parse(
+      readFileSync(stageFile("cost-profiles", "fr-paris-numbeo", stagingDir), "utf8"),
+    );
+    expect(paris.sources.numbeo.url).toBe(bareParis);
+  });
+
+  it("checks a cached bare page against the breadcrumb guard", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, franceHtml());
+    const bareParis = numbeoBareCityUrl("Paris", "EUR");
+    f.pages.set(bareParis, numbeoHtml({ country: "Germany" }));
+    f.cached.add(bareParis);
+    f.pages.set(numbeoCityUrl(gre, "France", "EUR"), greHtml());
+    const outcome = await runCosts(options(f, { countries: ["FR"] }));
+    expect(await listStaged(stagingDir)).not.toContain("cost-profiles/fr-paris-numbeo");
+    expect(outcome.lines.join("\n")).toContain(
+      "no profile fr-paris-numbeo: page is in Germany, expected France",
+    );
+  });
+
   it("waits eight seconds between requests by default, and never less than two", () => {
     expect(DEFAULT_DELAY_MS).toBe(8000);
   });
@@ -876,6 +981,41 @@ describe("numbeoFetch", () => {
       numbeoFetch("https://www.numbeo.com/cost-of-living/in/Zzz-one-attempt-test"),
     ).rejects.toThrow(/HTTP 503/);
     expect(stub).toHaveBeenCalledTimes(1);
+  });
+
+  it("puts the numeric HTTP status on the error, message unchanged", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => new Response("slow down", { status: 429 })),
+    );
+    const error = await numbeoFetch(
+      "https://www.numbeo.com/cost-of-living/in/Zzz-status-test",
+    ).catch((caught: unknown) => caught);
+    expect(error).toBeInstanceOf(HttpStatusError);
+    expect(error instanceof HttpStatusError ? error.status : null).toBe(429);
+    expect(error instanceof Error ? error.message : "").toBe(
+      "GET https://www.numbeo.com/cost-of-living/in/Zzz-status-test failed: HTTP 429",
+    );
+  });
+
+  it("fails, and does not cache, an HTTP 200 body that is not a Numbeo cost page", async () => {
+    const url = "https://www.numbeo.com/cost-of-living/in/Zzz-challenge-test";
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(
+        async () =>
+          new Response("<html><body>Please slow down. Checking your browser</body></html>"),
+      ),
+    );
+    await expect(numbeoFetch(url)).rejects.toThrow(/not a Numbeo cost page/);
+    expect(isCached(url)).toBe(false);
+  });
+
+  it("accepts a cost page and the 'Cannot find city id' page, nothing else", () => {
+    expect(isNumbeoCostPage("<h1> Cost of Living in Paris</h1>")).toBe(true);
+    expect(isNumbeoCostPage("<h1>Cannot find city id for Agen</h1>")).toBe(true);
+    expect(isNumbeoCostPage("<html>Too many requests</html>")).toBe(false);
+    expect(isNumbeoCostPage("")).toBe(false);
   });
 
   it("sends the Numbeo user agent", async () => {

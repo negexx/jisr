@@ -215,6 +215,12 @@ function countryNameOf(html: string): string | null {
   return null;
 }
 
+// A real answer is either a cost page or the "Cannot find city id" page; an HTTP 200 slow-down or
+// challenge page is neither, and must not be cached.
+export function isNumbeoCostPage(html: string): boolean {
+  return /Cost of Living in|Cannot find city id/i.test(html);
+}
+
 // Numbeo answers 200 with this heading for a city it cannot resolve from the URL.
 export function isCityNotFound(html: string): boolean {
   return [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)].some((heading) =>

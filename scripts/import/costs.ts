@@ -7,12 +7,13 @@ import { parse } from "yaml";
 import { CostProfileRecordSchema } from "@/data-schema/records/cost-profile";
 import { minorUnitDigits } from "@/lib/format";
 
-import { fetchText, isCached } from "./http";
+import { fetchText, HttpStatusError, isCached } from "./http";
 import {
   type CostLineKey,
   costLinesFrom,
   FOOD_BASKET,
   isCityNotFound,
+  isNumbeoCostPage,
   NUMBEO_USER_AGENT,
   type NumbeoPage,
   type NumbeoRow,
@@ -402,9 +403,14 @@ function targetsFor(countries: readonly string[], cities: readonly CityRow[]): T
 }
 
 const httpStatusOf = (error: unknown): number | null => {
+  if (error instanceof HttpStatusError) return error.status;
+  // an injected fetch (or an older error) that only has the message
   const match = error instanceof Error ? error.message.match(/HTTP (\d{3})\b/) : null;
   return match === null ? null : Number(match[1]);
 };
+
+// Failures in a row (network, timeout, 5xx, a page that is not Numbeo's) after which the run stops.
+const MAX_CONSECUTIVE_FAILURES = 3;
 
 // 429 "slow down" and 403 "blocked": every further request would only make it worse.
 const isStopStatus = (status: number | null): boolean => status === 429 || status === 403;
@@ -455,7 +461,8 @@ export async function runCosts(options: RunOptions): Promise<RunOutcome> {
 
   let requests = 0;
   let failed = 0;
-  let stoppedBy: number | null = null;
+  let stopped = false;
+  let failuresInARow = 0;
 
   type Got =
     | { kind: "body"; body: string }
@@ -482,19 +489,30 @@ export async function runCosts(options: RunOptions): Promise<RunOutcome> {
   }
 
   for (const target of pending) {
-    if (stoppedBy !== null) {
+    if (stopped) {
       lines.push(`not fetched ${target.slug}: run stopped`);
       continue;
     }
     const fallback =
       target.city === null ? "" : `; falls back to ${target.country.toLowerCase()}-numbeo`;
-    const forms = target.bareUrl === undefined ? [target.url] : [target.url, target.bareUrl];
+    // A form already in the cache costs no request: look at it first.
+    const cachedBareFirst =
+      target.bareUrl !== undefined &&
+      options.isCached(target.bareUrl) &&
+      !options.isCached(target.url);
+    const forms =
+      target.bareUrl === undefined
+        ? [target.url]
+        : cachedBareFirst
+          ? [target.bareUrl, target.url]
+          : [target.url, target.bareUrl];
     let found: { url: string; body: string } | null = null;
     let handled = false;
     for (const url of forms) {
       const got = await get(url);
+      if (got.kind === "body" || got.kind === "missing") failuresInARow = 0;
       if (got.kind === "stop") {
-        stoppedBy = got.status;
+        stopped = true;
         lines.push(
           `Numbeo answered HTTP ${got.status} (asked us to slow down or blocked us); stopping. Staged profiles and cached pages are kept; wait before re-running.`,
           `not fetched ${target.slug}: run stopped`,
@@ -509,7 +527,14 @@ export async function runCosts(options: RunOptions): Promise<RunOutcome> {
       }
       if (got.kind === "failed") {
         failed++;
+        failuresInARow++;
         lines.push(`failed ${target.slug}: ${got.message} (re-run to retry)${fallback}`);
+        if (failuresInARow >= MAX_CONSECUTIVE_FAILURES) {
+          stopped = true;
+          lines.push(
+            `Numbeo failed ${failuresInARow} times in a row (${got.message}); stopping. Staged profiles and cached pages are kept; wait before re-running.`,
+          );
+        }
         handled = true;
         break;
       }
@@ -576,7 +601,7 @@ export async function runCosts(options: RunOptions): Promise<RunOutcome> {
   lines.push(
     `staged ${staged.length} profile(s) with ${requests} request(s)${failed === 0 ? "" : `, ${failed} failed (re-run to retry)`}`,
   );
-  return { ok: failed === 0 && stoppedBy === null, lines, requests, staged };
+  return { ok: failed === 0 && !stopped, lines, requests, staged };
 }
 
 // One attempt: fetchText retries 429, 5xx and network errors, so any retry would be a request the
@@ -586,6 +611,9 @@ export function numbeoFetch(url: string): Promise<string> {
     headers: { "user-agent": NUMBEO_USER_AGENT },
     accept: "text/html",
     attempts: 1,
+    validate: (body) => {
+      if (!isNumbeoCostPage(body)) throw new Error("not a Numbeo cost page");
+    },
   });
 }
 
