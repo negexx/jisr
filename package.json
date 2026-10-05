@@ -27,6 +27,7 @@
     "data:fr-calendar": "tsx scripts/import/fr-calendar.ts",
     "data:fr-language": "tsx scripts/import/fr-language.ts",
     "data:daad-deadlines": "tsx scripts/import/daad-deadlines.ts",
+    "data:it-calendar": "tsx scripts/import/it-calendar.ts",
     "data:uniassist": "tsx scripts/import/sources/uniassist.ts",
     "data:shortlist": "tsx scripts/import/shortlist.ts",
     "data:evidence": "tsx scripts/import/evidence-cli.ts",
