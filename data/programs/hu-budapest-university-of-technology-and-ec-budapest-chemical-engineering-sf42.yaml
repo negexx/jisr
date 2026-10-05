@@ -57,7 +57,8 @@ requirements:
         en:
           text: A written entrance examination is required (online). Check the details and the minimum result (50%).
           status: draft
-scholarships: []
+scholarships:
+  - stipendium-hungaricum
 sources:
   programme:
     url: https://tempus.tpf.hu/studyfinder/index/show/42

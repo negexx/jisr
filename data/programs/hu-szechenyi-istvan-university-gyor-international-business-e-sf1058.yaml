@@ -89,7 +89,8 @@ requirements:
         en:
           text: Stipendium Hungaricum scholarship funding is available for this programme; consult the scholarship call if you wish to apply that way.
           status: draft
-scholarships: []
+scholarships:
+  - stipendium-hungaricum
 sources:
   programme:
     url: https://tempus.tpf.hu/studyfinder/index/show/1058

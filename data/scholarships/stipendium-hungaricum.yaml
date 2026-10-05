@@ -65,34 +65,7 @@ officialUrl: https://stipendiumhungaricum.hu/apply/
 sources:
   page-1:
     url: https://stipendiumhungaricum.hu/apply/
-    last_verified_at: null
+    last_verified_at: 2026-10-05
   page-2:
     url: https://stipendiumhungaricum.hu/about/
-    last_verified_at: null
-_review:
-  kind: scholarships
-  slug: stipendium-hungaricum
-  name: Stipendium Hungaricum
-  preparedBy: assistant
-  preparedAt: 2026-10-05
-  officialUrl: https://stipendiumhungaricum.hu/apply/
-  evidence:
-    - fact: eligibility
-      url: https://stipendiumhungaricum.hu/partners/
-      quote: "Morocco Full degree bachelor studies: in the fields of Agricultural Sciences, Arts and Humanities, Social Sciences, Computer Science and Information Technology, Legal Science, Economic Science, Engineering Science"
-    - fact: eligibility
-      url: https://stipendiumhungaricum.hu/about/
-      quote: to attract top international students from all around the world
-    - fact: nationality:MA
-      url: https://stipendiumhungaricum.hu/partners/
-      quote: "Morocco Full degree bachelor studies: in the fields of Agricultural Sciences, Arts and Humanities, Social Sciences, Computer Science and Information Technology, Legal Science, Economic Science, Engineering Science"
-    - fact: level
-      url: https://stipendiumhungaricum.hu/partners/
-      quote: "Morocco Full degree bachelor studies: in the fields of Agricultural Sciences"
-    - fact: howToApply
-      url: https://stipendiumhungaricum.hu/apply/
-      quote: Click here to open the online application interface.
-    - fact: howToApply
-      url: https://stipendiumhungaricum.hu/apply/
-      quote: Applications shall also be submitted to the responsible authority of the sending partner.
-  todo: "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+    last_verified_at: 2026-10-05

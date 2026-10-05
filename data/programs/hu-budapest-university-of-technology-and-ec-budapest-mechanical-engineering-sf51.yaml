@@ -57,7 +57,8 @@ requirements:
         en:
           text: An online admission test (mathematics and physics) is required with a minimum of 40% in each subject and 50% overall.
           status: draft
-scholarships: []
+scholarships:
+  - stipendium-hungaricum
 sources:
   programme:
     url: https://tempus.tpf.hu/studyfinder/index/show/51

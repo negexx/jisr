@@ -68,7 +68,8 @@ requirements:
         en:
           text: Application fee of 150 EUR for the admission procedure of fee-paying foreign students.
           status: draft
-scholarships: []
+scholarships:
+  - stipendium-hungaricum
 sources:
   programme:
     url: https://tempus.tpf.hu/studyfinder/index/show/79

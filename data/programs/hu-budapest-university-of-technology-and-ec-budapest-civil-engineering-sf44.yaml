@@ -57,7 +57,8 @@ requirements:
         en:
           text: A written online admission test (mathematics, physics) is required; admission also depends on the quality of the certificate, motivation letter, etc.
           status: draft
-scholarships: []
+scholarships:
+  - stipendium-hungaricum
 sources:
   programme:
     url: https://tempus.tpf.hu/studyfinder/index/show/44

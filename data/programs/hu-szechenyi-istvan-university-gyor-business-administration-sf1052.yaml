@@ -103,7 +103,8 @@ requirements:
         en:
           text: A written entrance examination held online is required.
           status: draft
-scholarships: []
+scholarships:
+  - stipendium-hungaricum
 sources:
   programme:
     url: https://tempus.tpf.hu/studyfinder/index/show/1052

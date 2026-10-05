@@ -68,7 +68,8 @@ requirements:
         en:
           text: "Check the grade requirement: overall result of minimum 70% in secondary school studies."
           status: draft
-scholarships: []
+scholarships:
+  - stipendium-hungaricum
 sources:
   programme:
     url: https://tempus.tpf.hu/studyfinder/index/show/41

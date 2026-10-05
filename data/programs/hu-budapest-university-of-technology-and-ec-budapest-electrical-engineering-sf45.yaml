@@ -133,7 +133,8 @@ requirements:
         en:
           text: "Application deadlines: fall semester 1 April – 15 May; spring semester 15 October – 15 November (year not stated)."
           status: draft
-scholarships: []
+scholarships:
+  - stipendium-hungaricum
 sources:
   programme:
     url: https://tempus.tpf.hu/studyfinder/index/show/45

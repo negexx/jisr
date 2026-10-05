@@ -68,7 +68,8 @@ requirements:
         en:
           text: "Admission includes an entrance examination: yes, oral type, online."
           status: draft
-scholarships: []
+scholarships:
+  - stipendium-hungaricum
 sources:
   programme:
     url: https://tempus.tpf.hu/studyfinder/index/show/77

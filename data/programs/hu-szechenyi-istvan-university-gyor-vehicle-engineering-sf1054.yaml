@@ -103,7 +103,8 @@ requirements:
         en:
           text: A written entrance examination (language test and professional admission test) is required; borderline applicants may be invited to an interview.
           status: draft
-scholarships: []
+scholarships:
+  - stipendium-hungaricum
 sources:
   programme:
     url: https://tempus.tpf.hu/studyfinder/index/show/1054

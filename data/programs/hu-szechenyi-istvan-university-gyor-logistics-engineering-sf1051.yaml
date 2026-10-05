@@ -114,7 +114,8 @@ requirements:
         en:
           text: "The admission committee evaluates the following: prior education/experience, language competence, secondary school leaving certificate and its class, recommendations, motivation."
           status: draft
-scholarships: []
+scholarships:
+  - stipendium-hungaricum
 sources:
   programme:
     url: https://tempus.tpf.hu/studyfinder/index/show/1051
