@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { IsoDate } from "@/data-schema/dates";
 import type { AppLocale } from "@/i18n/routing";
@@ -97,6 +97,44 @@ describe("minorUnitDigits", () => {
   it.each(["", "EU", "EURO", "E1R", "€€€"])("throws on malformed code %j", (currency) => {
     expect(() => minorUnitDigits(currency)).toThrow(RangeError);
   });
+
+  it("stores HUF as whole forints", () => {
+    expect(minorUnitDigits("HUF")).toBe(0);
+  });
+});
+
+describe("money scale does not depend on the ICU build", () => {
+  const RealNumberFormat = Intl.NumberFormat;
+
+  // Older CLDR (ISO 4217 as published) gives HUF two minor-unit digits when none are requested;
+  // this runtime gives none.
+  class OldIcuNumberFormat extends RealNumberFormat {
+    constructor(locales?: string | string[], options?: Intl.NumberFormatOptions) {
+      super(
+        locales,
+        options?.currency === "HUF" && options.minimumFractionDigits === undefined
+          ? { ...options, minimumFractionDigits: 2, maximumFractionDigits: 2 }
+          : options,
+      );
+    }
+  }
+
+  beforeEach(() => {
+    vi.stubGlobal("Intl", Object.create(Intl, { NumberFormat: { value: OldIcuNumberFormat } }));
+  });
+  afterEach(() => vi.unstubAllGlobals());
+
+  it("keeps HUF at 0 digits when the runtime says 2", () => {
+    expect(minorUnitDigits("HUF")).toBe(0);
+  });
+
+  // A decimal separator followed by exactly two digits and no more: a fraction, not a thousands group.
+  const DECIMAL_PLACES = /[.,]\d{2}(?!\d)/;
+
+  it.each(LOCALES)("shows 150000 HUF without decimals in %s", (locale) => {
+    expect(formatMoney(150000, "HUF", locale)).not.toMatch(DECIMAL_PLACES);
+    expect(formatMoneyRange(100000, 150000, "HUF", locale)).not.toMatch(DECIMAL_PLACES);
+  });
 });
 
 describe("formatMoney", () => {
@@ -130,6 +168,20 @@ describe("formatMoney", () => {
     ["ar", "12,50 XTS"],
   ] as const)("shows the testing code XTS as text in %s", (locale, expected) => {
     expect(visible(formatMoney(1250, "XTS", locale))).toBe(expected);
+  });
+
+  it("shows 150000 HUF as whole forints with no decimals", () => {
+    expect(visible(formatMoney(150000, "HUF", "fr"))).toBe("150 000 HUF");
+    expect(visible(formatMoney(150000, "HUF", "en"))).toBe("HUF 150,000");
+  });
+
+  it("leaves EUR output unchanged", () => {
+    expect(visible(formatMoney(80000, "EUR", "en"))).toBe("€800.00");
+    expect(visible(formatMoney(80000, "EUR", "fr"))).toBe("800,00 €");
+  });
+
+  it("still formats a well-formed currency that is not in the table", () => {
+    expect(visible(formatMoney(1250, "ZZZ", "en"))).toBe("ZZZ 12.50");
   });
 
   it.each(LOCALES)("keeps Latin digits in %s", (locale) => {

@@ -50,13 +50,20 @@ const countryFooter =
 // `place` is the name in the h1 (a city page by default Paris); `symbol` the currency shown in the
 // average cells. Pass `place: null` for a page without the heading.
 function numbeoHtml(
-  options: { footer?: string; skip?: string[]; place?: string | null; symbol?: string } = {},
+  options: {
+    footer?: string;
+    skip?: string[];
+    place?: string | null;
+    symbol?: string;
+    housing?: [avg: string, low: string, high: string];
+  } = {},
 ): string {
   const skip = options.skip ?? [];
   const symbol = options.symbol ?? "&#8364;";
   const place = options.place === undefined ? "Paris" : options.place;
+  const [housingAvg, housingLow, housingHigh] = options.housing ?? ["640.50", "450.00", "1,065.00"];
   const rows = [
-    row(HOUSING, "640.50", "450.00", "1,065.00", symbol),
+    row(HOUSING, housingAvg, housingLow, housingHigh, symbol),
     row(TRANSPORT, "50.00", "30.00", "86.40", symbol),
     ...FOOD_BASKET.map((item) => row(item.name, "1.50", "1.00", "2.00", symbol)),
   ].filter((html) => !skip.some((name) => html.includes(`<td>${name} </td>`)));
@@ -326,6 +333,22 @@ describe("buildProfile", () => {
 
   it("keeps the currency it was asked for", () => {
     expect(build({ currency: "HUF" })?.lines.housing?.value?.currency).toBe("HUF");
+  });
+
+  it("stages forints as whole forints and euros in hundredths", () => {
+    const forints = build({
+      currency: "HUF",
+      page: parseNumbeoPage(
+        numbeoHtml({ symbol: "Ft", housing: ["150,000", "120,000", "150,000"] }),
+      ),
+    });
+    expect(forints?.lines.housing?.value).toEqual({
+      min: 120000,
+      max: 150000,
+      currency: "HUF",
+      per: "month",
+    });
+    expect(build()?.lines.housing?.value.min).toBe(45000);
   });
 
   it("omits a line whose rows are missing and returns null when nothing can be built", () => {
