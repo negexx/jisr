@@ -1,0 +1,81 @@
+slug: it-bari-politecnico-bari-management-engineering-for-innovation-l9
+institution: it-bari-politecnico-bari
+country: IT
+city: bari
+field: engineering
+level: bachelor
+name: Management Engineering for Innovation
+summary:
+  fr:
+    text: Management Engineering for Innovation, Politecnico di Bari (Bari). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Management Engineering for Innovation, Politecnico di Bari (Bari). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Management Engineering for Innovation, Politecnico di Bari (Bari). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://orientami.poliba.it/bachelor-degree-in-management-engineering-for-innovation-polytechnic-university-of-bari/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: L'admission est soumise à la réussite du CEnT (CISIA English Test) ou du TOLC-I (CISIA Online Test for Engineering).
+          status: draft
+        en:
+          text: Admission is subject to passing the CEnT (CISIA English Test) or the TOLC-I (CISIA Online Test for Engineering).
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le diplôme de fin d'études secondaires avec le vote final doit être présenté; l'authenticité et l'adéquation sont évaluées par le Politecnico.
+          status: draft
+        en:
+          text: The school-leaving certificate with the final grade must be submitted; authenticity and adequacy are assessed by the Politecnico.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://orientami.poliba.it/bachelor-degree-in-management-engineering-for-innovation-polytechnic-university-of-bari/
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.poliba.it/en/ammissioni-corsi-di-laurea-di-1deg-livello
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://orientami.poliba.it/studenti-stranieri-poliba-politecnico-di-bari/
+    last_verified_at: 2026-10-05

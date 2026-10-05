@@ -1,0 +1,14 @@
+slug: it-pisa-pisa
+name: Università di Pisa
+country: IT
+city:
+  slug: pisa
+  name: Pisa
+type: public
+website: https://www.unipi.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unipi.it/
+    last_verified_at: 2026-10-05

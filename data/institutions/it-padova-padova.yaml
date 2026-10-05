@@ -1,0 +1,14 @@
+slug: it-padova-padova
+name: Università degli studi di Padova
+country: IT
+city:
+  slug: padova
+  name: Padova
+type: public
+website: https://www.unipd.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unipd.it/
+    last_verified_at: 2026-10-05

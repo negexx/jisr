@@ -1,0 +1,108 @@
+slug: it-perugia-perugia-engineering-management-l8
+institution: it-perugia-perugia
+country: IT
+city: perugia
+field: engineering
+level: bachelor
+name: Engineering management
+summary:
+  fr:
+    text: Engineering management, Università degli studi di Perugia (Perugia). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Engineering management, Università degli studi di Perugia (Perugia). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Engineering management, Università degli studi di Perugia (Perugia). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://ing.unipg.it/en/courses/engineering-management/first-cycle-degree-course
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme d'études secondaires et un relevé de notes sont exigés pour l'admission.
+          status: draft
+        en:
+          text: A secondary school diploma and transcripts are required for admission.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un test d'admission obligatoire (TOLC-I ou équivalent) est requis.
+          status: draft
+        en:
+          text: A valid admission test (TOLC-I or equivalent) is required.
+          status: draft
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un visa étudiant valide est requis selon le pays d'origine.
+          status: draft
+        en:
+          text: A valid student visa is required depending on country of origin.
+          status: draft
+    - id: req-5
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Pour le cours Engineering management, les étudiants demandant un visa doivent obligatoirement passer le test CEnT-S de CISIA.
+          status: draft
+        en:
+          text: For the Engineering management course, students applying for a visa must mandatorily pass the CISIA CEnT-S test.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://ing.unipg.it/en/courses/engineering-management/first-cycle-degree-course
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unipg.it/internazionale/studenti-incoming-e-internazionali/studenti-internazionali/documentazione-titoli-di-studio
+    last_verified_at: 2026-10-05

@@ -1,0 +1,75 @@
+slug: it-torino-torino-business-management-l18
+institution: it-torino-torino
+country: IT
+city: torino
+field: business-economics
+level: bachelor
+name: Business & Management
+summary:
+  fr:
+    text: Business & Management, Università degli studi di Torino (Torino). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Business & Management, Università degli studi di Torino (Torino). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Business & Management, Università degli studi di Torino (Torino). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://en.unito.it/studying-unito/programs/degree-programs/business-management
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le concours d'admission exige de passer le SAT Suite ; une note au SAT est requise pour l'admission (cours à nombre programmé).
+          status: draft
+        en:
+          text: Admission requires taking the SAT Suite; a SAT score is required (programme has capped number).
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+scholarships: []
+sources:
+  programme:
+    url: https://en.unito.it/studying-unito/programs/degree-programs/business-management
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unito.it/internazionalita/arrivare-unito-dallestero/ammissione-studenti-internazionali/procedure-0
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://www.unito.it/internazionalita/arrivare-unito-dallestero/ammissione-studenti-internazionali/documentazione
+    last_verified_at: 2026-10-05

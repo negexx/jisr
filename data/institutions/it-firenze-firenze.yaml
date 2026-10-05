@@ -1,0 +1,14 @@
+slug: it-firenze-firenze
+name: Università degli studi di Firenze
+country: IT
+city:
+  slug: firenze
+  name: Firenze
+type: public
+website: https://www.unifi.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unifi.it/
+    last_verified_at: 2026-10-05

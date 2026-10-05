@@ -1,0 +1,98 @@
+slug: it-brescia-brescia-business-and-economics-l18
+institution: it-brescia-brescia
+country: IT
+city: brescia
+field: business-economics
+level: bachelor
+name: Business and Economics
+summary:
+  fr:
+    text: Business and Economics, Università degli studi di Brescia (Brescia). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Business and Economics, Università degli studi di Brescia (Brescia). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Business and Economics, Università degli studi di Brescia (Brescia). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unibs.it/en/education/enrolling/matriculating/bachelors-degree-courses/business-and-economics
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: declaration-of-value
+      name:
+        fr:
+          text: Déclaration de valeur
+          status: draft
+        en:
+          text: Declaration of value
+          status: draft
+      translationRequired: null
+    - slug: foreign-qualification
+      name:
+        fr:
+          text: Diplôme étranger
+          status: draft
+        en:
+          text: Foreign qualification
+          status: draft
+      translationRequired: null
+    - slug: certificate-of-comparability
+      name:
+        fr:
+          text: Certificat de comparabilité
+          status: draft
+        en:
+          text: Certificate of comparability
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les conditions d'admission et les éventuelles exigences supplémentaires (OFA) pour les étudiants titulaires d'un diplôme étranger.
+          status: draft
+        en:
+          text: Check the admission conditions and any additional educational requirements (OFAs) for students with a foreign diploma.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.unibs.it/en/education/enrolling/matriculating/bachelors-degree-courses/business-and-economics
+    last_verified_at: 2026-10-05
