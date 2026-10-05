@@ -216,6 +216,7 @@ const LANGUAGE_WORDS: Record<string, RegExp> = {
   es: /spanish|espagnol|spanisch|spaans/i,
   nl: /dutch|n[eé]erlandais|nederlands|niederl[aä]ndisch/i,
   hu: /hungarian|hongrois|ungarisch|hongaars|magyar/i,
+  it: /italian|italien|italienisch|italiaans|italiano/i,
 };
 
 function numberRegex(n: number): string {
@@ -487,11 +488,16 @@ const CHANNEL_WORDS: Record<string, RegExp> = {
   // "available in the Stipendium Hungaricum programme" is a listing, not how to apply
   "hu-stipendium-hungaricum":
     /appl(?:y|ies|ication|ications)[^.]{0,60}stipendium hungaricum|stipendium hungaricum[^.]{0,40}(?:application|call|applicants?)/i,
+  // Universitaly is the MUR portal where a non-EU applicant living abroad pre-enrols
+  "it-universitaly": /universitaly/i,
+  "it-university-direct":
+    /online application (?:form|system|portal|platform|site)|application (?:portal|platform|system)|apply online|application form[^.]{0,60}(?:university|ateneo)|apply (?:directly )?(?:online )?(?:on|at|to|through|via) the (?:website of the |own )?(?:university|ateneo)|(?:university|ateneo)'?s? (?:own )?(?:application|admission) (?:portal|platform|form|system)/i,
 };
 
 // A quote that names another channel is not evidence for this one, whatever else it says.
 const CHANNEL_EXCLUDES: Record<string, RegExp> = {
   "hu-university-direct": /stipendium hungaricum|felvi/i,
+  "it-university-direct": /universitaly/i,
 };
 
 export function checkChannel(slug: string, quote: string): FactCheck {

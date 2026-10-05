@@ -1,0 +1,22 @@
+slug: it-university-direct
+name: University application
+country: IT
+kind: direct
+url: https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf
+accountRequired: null
+summary:
+  fr:
+    text: "Chaque université fixe ses propres dates de préinscription et les publie sur son site : suivez la procédure de candidature décrite par l'université pour cette formation (plateforme, dates, pièces)."
+    status: draft
+  en:
+    text: "Each university sets its own pre-enrolment dates and publishes them on its website: follow the application procedure the university describes for this programme (platform, dates, documents)."
+    status: draft
+  ar:
+    text: "تحدد كل جامعة مواعيد التسجيل المسبق الخاصة بها وتنشرها على موقعها: اتبعوا إجراءات التقديم التي تشرحها الجامعة لهذه الشعبة (المنصة والمواعيد والوثائق)."
+    status: draft
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf
+    last_verified_at: 2026-10-05

@@ -323,6 +323,14 @@ describe("applicant context", () => {
     expect(user).toMatch(/HUF/);
   });
 
+  it("explains the Italian channels and the fee audience in the task, after the pages", () => {
+    const { user } = buildPrompt({ ...meta, country: "IT", shared: [], own: [] });
+    expect(user).toMatch(/it-universitaly/);
+    expect(user).toMatch(/it-university-direct/);
+    expect(user).toMatch(/ISEE/);
+    expect(user).toMatch(/EUR/);
+  });
+
   it("leaves the French application channel to code", () => {
     const { user } = buildPrompt({ ...meta, country: "FR", shared: [], own: [] });
     expect(user).toMatch(/Do not output applicationChannel/);

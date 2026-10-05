@@ -30,6 +30,9 @@ const NOT_AN_INSTITUTION = [
   "tpf.hu",
   "studyinhungary.hu",
   "stipendiumhungaricum.hu",
+  "universitaly.it",
+  "cineca.it",
+  "mur.gov.it",
 ];
 
 export function websiteFrom(urls: readonly string[]): string | null {

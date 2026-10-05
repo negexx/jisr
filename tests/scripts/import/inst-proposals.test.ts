@@ -28,6 +28,9 @@ describe("websiteFrom", () => {
         "https://tempus.tpf.hu/studyfinder/index/show/116",
         "https://studyinhungary.hu/institution/university-of-debrecen-60.html",
         "https://stipendiumhungaricum.hu/apply/",
+        "https://www.universitaly.it/en/studenti-stranieri",
+        "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/FAQ.pdf",
+        "https://www.mur.gov.it/it",
       ]),
     ).toBeNull();
   });

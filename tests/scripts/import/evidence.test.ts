@@ -85,6 +85,9 @@ describe("checkLanguages", () => {
     expect(checkLanguages(["en"], "Language of instruction: English").ok).toBe(true);
     expect(checkLanguages(["hu"], "Language of instruction: Hungarian").ok).toBe(true);
     expect(checkLanguages(["hu"], "Language of instruction: English").ok).toBe(false);
+    expect(checkLanguages(["it"], "Language of instruction: Italian").ok).toBe(true);
+    expect(checkLanguages(["it"], "Lingua di erogazione: italiano").ok).toBe(true);
+    expect(checkLanguages(["it"], "Language of instruction: English").ok).toBe(false);
     expect(checkLanguages(["nl"], "Taal Nederlands").ok).toBe(true);
     expect(checkLanguages(["en", "de"], "Taught in English and German").ok).toBe(true);
     expect(checkLanguages(["en", "de"], "Taught in English").ok).toBe(false);
@@ -386,6 +389,25 @@ describe("checkChannel", () => {
         .ok,
     ).toBe(true);
     expect(checkChannel("hu-stipendium-hungaricum", "Apply through the university").ok).toBe(false);
+    for (const quote of [
+      "Non-EU students residing abroad must submit the pre-enrolment application on the Universitaly portal",
+      "Pre-enrolment on Universitaly is mandatory for non-EU applicants",
+      "La domanda di preiscrizione va presentata sul portale UNIVERSITALY",
+    ])
+      expect(checkChannel("it-universitaly", quote).ok).toBe(true);
+    expect(checkChannel("it-universitaly", "Apply through the university").ok).toBe(false);
+    for (const quote of [
+      "Apply online on the university's application portal",
+      "Fill in the application form on the University of Bologna website",
+      "Applications are submitted through the university's own application platform",
+    ])
+      expect(checkChannel("it-university-direct", quote).ok).toBe(true);
+    for (const quote of [
+      "Pre-enrolment on Universitaly is mandatory for non-EU applicants",
+      "For information write to admissions@unibo.it",
+      "Italian applicants apply through the national system",
+    ])
+      expect(checkChannel("it-university-direct", quote).ok).toBe(false);
     expect(checkChannel("unknown-channel", "anything at all here").ok).toBe(false);
   });
 });
