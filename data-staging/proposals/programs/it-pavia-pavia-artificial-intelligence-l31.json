@@ -1,0 +1,74 @@
+{
+  "slug": "it-pavia-pavia-artificial-intelligence-l31",
+  "programmePage": "https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy",
+          "quote": "Study language English"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": "2026-04-28",
+          "applicationDeadline": "2026-05-18",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy",
+          "quote": "Application period for non-EU students residing outside Italy for the academic year 2026-2027 will take place between April 28 and May 18."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: page states 'Students may be eligible to apply for a flat rate or to tuition fees calculated according to their family income' (income-based, no single amount) — no tuition fact extracted. Application channel: page describes uploading documents 'in the application form' but does not name the Universitaly portal for this programme; closest identifiable route is the university's own application form (apply.unipv.eu). Duration: no explicit duration stated for this programme on its own page (only generic 'Undergraduate'); 3 years is the standard Italian Laurea triennale value but was not quoted on this page — excluded.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy",
+            "quote": "Language requirements English Students must have a knowledge of the English language corresponding to at least B2 level of the Common European Framework (CEF)."
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy",
+            "quote": "High-school diploma awarded after at least 12 years of documented education"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Test d'entrée SAT requis ; score minimum 979/1600.",
+          "en": "SAT entry test required; minimum score 979/1600."
+        },
+        "evidence": [
+          {
+            "url": "https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy",
+            "quote": "SAT Entry test, non-EU students residing outside Italy who want to compete for a spot must take a SAT general culture test. The minimum score to compete for a spot is ≥ 979/1600."
+          }
+        ]
+      }
+    ]
+  }
+}

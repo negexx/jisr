@@ -1,0 +1,49 @@
+slug: it-dsu-unibs
+name: Borsa di studio regionale DSU (Università di Brescia)
+provider: Università degli Studi di Brescia (borse di studio regionali, DSU)
+destinations:
+  - IT
+eligibleNationalities: []
+fields: []
+institutions:
+  - it-brescia-brescia
+level: bachelor
+summary:
+  fr:
+    text: Bourse pour le droit aux études de l'Université de Brescia, pour ses étudiants. Les étudiants non résidents en Italie ou avec des revenus à l'étranger s'adressent à un CAAF conventionné avec l'Université.
+    status: draft
+  en:
+    text: Right-to-study scholarship of the University of Brescia for its students. Students not resident in Italy or with income abroad go to a CAAF under agreement with the University.
+    status: draft
+support:
+  value: null
+  source: page-1
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-2
+  info_kind: official
+  rules: []
+documents:
+  value: null
+  source: page-1
+  info_kind: official
+howToApply:
+  fr:
+    text: Demande en ligne sur le site de l'Université, à confirmer avant la date limite de l'appel. Les étudiants avec des revenus hors d'Italie s'adressent à un CAAF conventionné, avec des documents du pays des revenus traduits en italien.
+    status: draft
+  en:
+    text: Apply online through the University website and confirm before the call's deadline. Students with income outside Italy go to an affiliated CAAF, using documents from the country of income translated into Italian.
+    status: draft
+officialUrl: https://www.unibs.it/it/Bando-borse-di-studio-DSU-e-servizi%20AA%202026-2027
+sources:
+  page-1:
+    url: https://www.unibs.it/it/Bando-borse-di-studio-DSU-e-servizi%20AA%202026-2027
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unibs.it/sites/default/files/2026-07/Bando%20servizi%20DSU%2026-27%20prot..pdf
+    last_verified_at: 2026-10-05

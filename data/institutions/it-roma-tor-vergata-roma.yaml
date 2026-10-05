@@ -1,0 +1,14 @@
+slug: it-roma-tor-vergata-roma
+name: Università degli studi di Roma Tor Vergata
+country: IT
+city:
+  slug: roma
+  name: Roma
+type: public
+website: https://web.uniroma2.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://web.uniroma2.it/
+    last_verified_at: 2026-10-05

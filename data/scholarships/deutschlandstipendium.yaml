@@ -1,0 +1,50 @@
+slug: deutschlandstipendium
+name: Deutschlandstipendium
+provider: Deutschlandstipendium (Bundesministerium für Forschung, Technologie und Raumfahrt, with the universities and private sponsors)
+destinations:
+  - DE
+eligibleNationalities: []
+fields: []
+level: bachelor
+summary:
+  fr:
+    text: Bourse au mérite de 300 € par mois (150 € de l'État fédéral, 150 € de parrains privés), attribuée par les universités qui participent au programme. Les étudiants de toutes nationalités peuvent candidater ; vérifiez que votre université y participe.
+    status: draft
+  en:
+    text: Merit scholarship of EUR 300 a month (EUR 150 from the federal government, EUR 150 from private sponsors), awarded by the universities that take part. Students of all nationalities can apply; check that your university takes part.
+    status: draft
+support:
+  value:
+    amount:
+      min: 30000
+      max: 30000
+      currency: EUR
+      per: month
+    covers: []
+  source: page-1
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-1
+  info_kind: official
+  rules: []
+documents:
+  value: null
+  source: page-1
+  info_kind: official
+howToApply:
+  fr:
+    text: "Candidatez directement auprès de votre université, selon ses critères, ses pièces et ses dates : chaque université attribue le Deutschlandstipendium."
+    status: draft
+  en:
+    text: "Apply directly to your university, following its criteria, documents and dates: each university awards the Deutschlandstipendium."
+    status: draft
+officialUrl: https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html
+sources:
+  page-1:
+    url: https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html
+    last_verified_at: 2026-10-05

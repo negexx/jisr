@@ -1,0 +1,133 @@
+{
+  "slug": "it-ca-foscari-venezia-venezia-economics-and-business-l33",
+  "programmePage": "https://www.unive.it/degree/etr9",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.unive.it/degree/etr9",
+          "quote": "Duration: 3 years"
+        },
+        {
+          "url": "https://apply.unive.it/courses/course/270-ba-economics-and-business",
+          "quote": "Nominal duration 3 years (180 ECTS)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unive.it/degree/etr9",
+          "quote": "Language: English"
+        },
+        {
+          "url": "https://apply.unive.it/courses/course/270-ba-economics-and-business",
+          "quote": "Study language English"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": "2026-09-11",
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://apply.unive.it/courses/course/270-ba-economics-and-business",
+          "quote": "Studies commence 11 Sept 2026"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.unive.it/pag/40813/",
+          "quote": "The pre-enrolment procedure was digitized with the launch of the Universitaly portal."
+        },
+        {
+          "url": "https://www.unive.it/pag/40813/",
+          "quote": "Non-EU candidates who receive the letter of eligibility for enrolment in a bachelor’s or master’s degree program must complete the pre-enrolment procedure by logging in to the Universitaly portal and filling in the application online."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition left out: the only fee quoted on the programme page (\"Tuition fee €2,385 per year\") is not labelled as the amount for a non-EU student living abroad, and the university's fee pages use ISEE-based bands. The application deadline for non-EU applicants is not given as a quotable date for this programme; the pages only quote TOLC-E test and enrolment dates (e.g. 28 August 2026, 18 December 2026) which are not the programme application deadline for international applicants. The English B2 requirement: the pages say a minimum B2-level knowledge of English is mandatory for enrolment but the recognised certifications are not named in the quoted pages, so acceptedTests is empty.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://apply.unive.it/courses/course/270-ba-economics-and-business",
+            "quote": "A minimum B2-level knowledge of English is mandatory for enrolment."
+          },
+          {
+            "url": "https://www.unive.it/web/en/12613/admission-and-enrolment",
+            "quote": "A minimum B2-level knowledge of English is mandatory for enrolment."
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://apply.unive.it/courses/course/270-ba-economics-and-business",
+            "quote": "Students must have attended school for at least 12 years in order to be eligible to enrol in a bachelor’s degree offered by an Italian university."
+          },
+          {
+            "url": "https://www.unive.it/pag/41327/",
+            "quote": "Applicants to bachelor's degree programmes must have completed at least 12 years of schooling and obtained a secondary school leaving qualification."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Admission limitée : test d'entrée écrit en ligne (TOLC-E ou SAT ou CEnT-S) portant sur les mathématiques et le raisonnement. Les candidats non-UE doivent avoir les résultats au moment de la soumission.",
+          "en": "Limited-admission programme: online written entry test (TOLC-E or SAT or CEnT-S) on mathematics and reasoning. Non-EU visa applicants must already hold official results at the moment of submission."
+        },
+        "evidence": [
+          {
+            "url": "https://apply.unive.it/courses/course/270-ba-economics-and-business",
+            "quote": "This is a limited-admission programme that requires you to take an online written entry test that evaluates your knowledge of mathematics and reasoning."
+          },
+          {
+            "url": "https://apply.unive.it/courses/course/270-ba-economics-and-business",
+            "quote": "Non-European applicants requiring a visa must take one of the recognized tests. These applicants must already have their official results of one of the accepted entry tests AT THE MOMENT OF SUBMISSION."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Mathématiques : note minimale de 6/13 à la section mathématiques du TOLC-E, sinon obligation de formation supplémentaire (OFA). L'OFA doit être satisfaite avant les examens.",
+          "en": "Mathematics: minimum score of 6 out of 13 in the TOLC-E mathematics section, otherwise an Additional Learning Requirement (OFA) is assigned. The OFA must be fulfilled before sitting exams."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unive.it/web/en/12613/admission-and-enrolment",
+            "quote": "candidates who do not achieve a minimum score of 6 out of 13 in the mathematics section will be assigned an Additional Learning Requirement – ALR (Obbligo Formativo Aggiuntivo – OFA)"
+          },
+          {
+            "url": "https://www.unive.it/web/en/12613/admission-and-enrolment",
+            "quote": "If you do not fulfill the OFA by September 30th, 2027, you will not be allowed to take any exams included in your study plan until its fulfillment."
+          }
+        ]
+      }
+    ]
+  }
+}

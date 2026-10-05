@@ -1,0 +1,126 @@
+{
+  "slug": "it-milano-bicocca-milano-economics-and-science-for-environmental-l33",
+  "programmePage": "https://en.unimib.it/undergraduate/economics-science-environmental-sustainability",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://en.unimib.it/undergraduate/economics-science-environmental-sustainability",
+          "quote": "L-33 R 3 years Milan limited with entry requirements examination English"
+        },
+        {
+          "url": "https://apply.unimib.it/en_GB/courses/course/110-economics-and-science-environmental-sustainability",
+          "quote": "Nominal duration 3 years (180 ECTS)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://en.unimib.it/undergraduate/economics-science-environmental-sustainability",
+          "quote": "L-33 R 3 years Milan limited with entry requirements examination English"
+        },
+        {
+          "url": "https://apply.unimib.it/en_GB/courses/course/110-economics-and-science-environmental-sustainability",
+          "quote": "Study language English"
+        },
+        {
+          "url": "https://en.unimib.it/study/bachelors-and-masters-degrees/economics-and-statistics-bachelors-degree-programmes",
+          "quote": "Economics and Science for Environmental Sustainability Type: Bachelor's Degree Access: limited with entry requirements examination Language: English"
+        }
+      ]
+    }
+  },
+  "notes": "Le frais de scolarité ne sont pas indiqués : les pages donnent seulement 'The balance fee amount is based on the chosen course and the student’s country of income. See the fees and funding page for details.' (montant dépendant du pays de revenu, pas un montant unique en EUR pour un étudiant hors UE) et la page 'Fees and funding' ne donne qu'un guide sans montant ; tuition laissé de côté. Le programme indique que l'approbation est 'not yet complete' et que les informations sont provisoires (activation en 2025-2026 sous réserve). Le délai de candidature n'est pas chiffré : la session 'Fall semester 2025/26' est indiquée comme 'Application period has ended'.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://apply.unimib.it/en_GB/courses/course/110-economics-and-science-environmental-sustainability",
+            "quote": "English: B2 level knowledge is required."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.unimib.it/internazionalizzazione/informazioni-studenti-internazionali/studenti-italiani-titolo-estero/studenti-comunitari-equiparati-e-stranieri-gia-residenti-italia",
+            "quote": "PER I CORSI EROGATI IN INGLESE: e) Per i candidati extra-UE richiedenti visto, certificato di Livello B2 di conoscenza della lingua inglese."
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.unimib.it/internazionalizzazione/informazioni-studenti-internazionali/studenti-italiani-titolo-estero/studenti-comunitari-equiparati-e-stranieri-gia-residenti-italia",
+            "quote": "a) Diploma finale di scuola secondaria superiore, conseguito con almeno 12 anni di scolarità, accompagnato dalla traduzione ufficiale in italiano o in inglese;"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Admission limitée avec examen d'entrée : test CISIA English TOLC-E (ou CEnT-S). Consultez la 'Call for Application' pour les modalités.",
+          "en": "Limited admission with entry examination: CISIA English TOLC-E (or CEnT-S) test. See the Call for Application for details."
+        },
+        "evidence": [
+          {
+            "url": "https://en.unimib.it/undergraduate/economics-science-environmental-sustainability",
+            "quote": "Admission and enrolment Cisia English TOLC-E ADMISSION TEST Read the Call for Application"
+          },
+          {
+            "url": "https://apply.unimib.it/en_GB/courses/course/110-economics-and-science-environmental-sustainability",
+            "quote": "CEnT–S: CISIA English Test – Sciences"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme final de l'enseignement secondaire accompagné d'une traduction officielle en italien ou en anglais ; plus relevé de notes de la dernière année.",
+          "en": "Final secondary school diploma accompanied by an official translation into Italian or English; plus last-year transcript."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unimib.it/internazionalizzazione/informazioni-studenti-internazionali/studenti-italiani-titolo-estero/studenti-comunitari-equiparati-e-stranieri-gia-residenti-italia",
+            "quote": "b) Pagella scolastica delle materie dell’ultimo anno del percorso scolastico (transcript) accompagnato da traduzione ufficiale in italiano o in inglese;"
+          },
+          {
+            "url": "https://apply.unimib.it/en_GB/courses/course/110-economics-and-science-environmental-sustainability",
+            "quote": "The entry qualification documents are accepted in the following languages: English / Italian."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non-UE ayant besoin d'un visa doivent téléverser la pré-inscription Universitaly ; l'inscription se fait via le portail de l'université.",
+          "en": "Non-EU visa-requiring applicants must upload the Universitaly pre-enrolment receipt; application is made through the university portal."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unimib.it/internazionalizzazione/informazioni-studenti-internazionali/studenti-italiani-titolo-estero/studenti-comunitari-equiparati-e-stranieri-gia-residenti-italia",
+            "quote": "d) Per i candidati extra-Ue richiedenti visto, la ricevuta di pre-enrolment sul Portale UNIVERSITALY, ove già disponibile;"
+          }
+        ]
+      }
+    ]
+  }
+}

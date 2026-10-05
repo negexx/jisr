@@ -1,0 +1,66 @@
+{
+  "slug": "it-bari-politecnico-bari-management-engineering-for-innovation-l9",
+  "programmePage": "https://orientami.poliba.it/bachelor-degree-in-management-engineering-for-innovation-polytechnic-university-of-bari/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://orientami.poliba.it/bachelor-degree-in-management-engineering-for-innovation-polytechnic-university-of-bari/",
+          "quote": "Duration The expected duration for completing the course is 3 years."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://orientami.poliba.it/bachelor-degree-in-management-engineering-for-innovation-polytechnic-university-of-bari/",
+          "quote": "Language Lectures, seminars, and laboratory sessions are taught in English."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.poliba.it/en/ammissioni-corsi-di-laurea-di-1deg-livello",
+          "quote": "If you are a non-EU candidate who requires a VISA FOR STUDY PURPOSESyou must follow the application procedures established by the Ministry of University and Research for entry, residence, and enrolment in higher education institutions for students requiring visas for higher education courses in Italy, (link to the dedicated page) by sending the pre-enrollment request through Universitaly (www.universitaly.it)."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition is left out: the pages give no single EUR amount for a full-time Bachelor student from outside the EU living abroad; the fee rules are ISEE-band based (e.g. \"Il contributo omnicomprensivo annuale massimo in assenza di attestazione ISEE ... non potrà, in nessun caso, superare € 2.257,60\"), which is a band-based maximum, not a stated tuition for this applicant. Note also that the page https://orientami.poliba.it/studenti-stranieri-poliba-politecnico-di-bari/ applies to the whole institution's Bachelor (triennale) admission, and that the specific non-EU-quota places for [LT35] Ingegneria Gestionale per l'Innovazione are given on the 'Admissions - First-Level Degree Courses' page (e.g. 0 non-EU residents abroad in the Second Standard Session table, 2 in the First Standard Session table).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est soumise à la réussite du CEnT (CISIA English Test) ou du TOLC-I (CISIA Online Test for Engineering).",
+          "en": "Admission is subject to passing the CEnT (CISIA English Test) or the TOLC-I (CISIA Online Test for Engineering)."
+        },
+        "evidence": [
+          {
+            "url": "https://orientami.poliba.it/bachelor-degree-in-management-engineering-for-innovation-polytechnic-university-of-bari/",
+            "quote": "Admission Admission is subject to passing the CEnT (CISIA English Test) or the TOLC-I (CISIA Online Test for Engineering)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le diplôme de fin d'études secondaires avec le vote final doit être présenté; l'authenticité et l'adéquation sont évaluées par le Politecnico.",
+          "en": "The school-leaving certificate with the final grade must be submitted; authenticity and adequacy are assessed by the Politecnico."
+        },
+        "evidence": [
+          {
+            "url": "https://orientami.poliba.it/studenti-stranieri-poliba-politecnico-di-bari/",
+            "quote": "L’immatricolazione si intende regolarizzata previa valutazione del Politecnico di Bari, dopo: · la verifica dell’autenticità della documentazione prodotta e della sussistenza di tutti gli elementi e requisiti utili al fine dell’immatricolazione"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "slug": "it-marche-ancona-digital-economics-and-business-l18",
+  "programmePage": "https://www.econ.univpm.it/deb-studyplan",
+  "facts": {
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.univpm.it/Entra/Ingegneria/Cittadini_non_comunitari_residenti_all_estero_-_Segreteria_studenti_Economia",
+          "quote": "La Domanda di Preiscrizione va presentata tramite il portale Universitaly https://www.universitaly.it/ con le seguenti modalità: Registrazione sul portale UNIVERSITALY"
+        },
+        {
+          "url": "https://www.international.univpm.it/international-admissions/",
+          "quote": "PRE-ENROLMENT: If positively assessed, NON-EU students requiring VISA must submit a PRE-ENROLMENT application on the Universitaly.it portal to obtain a VISA for study-enrolment purpose."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "titolo finale di scuola superiore",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.univpm.it/Entra/Front_Office_-_Immatricolazioni_Iscrizioni_C_L_triennali",
+          "quote": "titolo finale di scuola superiore in originale o certificato sostitutivo conseguito dopo almeno 12 anni di scolarità tradotto e legalizzato dalla Rappresentanza DIplomatica Italiana del Paese dove è stato conseguito il diploma"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee is not stated: the pages only mention a first instalment of 156 euros for Medicine and Surgery, and no yearly tuition amount for non-EU international Bachelor students in this programme. Teaching languages and intakes not stated for this programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.univpm.it/Entra/Front_Office_-_Immatricolazioni_Iscrizioni_C_L_triennali",
+            "quote": "conseguito dopo almeno 12 anni di scolarità"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier la mendicité du diplôme étranger et la procédure de pré-inscription sur Universitaly, ainsi que les tests de vérification des connaissances de la Faculté d'Économie.",
+          "en": "Check the eligibility of the foreign diploma and the pre-enrolment procedure on Universitaly, as well as the Faculty of Economics knowledge verification tests."
+        },
+        "evidence": [
+          {
+            "url": "https://www.univpm.it/Entra/Ingegneria/Cittadini_non_comunitari_residenti_all_estero_-_Segreteria_studenti_Economia",
+            "quote": "L'Ateneo valuta l'idoneità per l'immatricolazione e risponde al candidato positivamente o negativamente"
+          }
+        ]
+      }
+    ]
+  }
+}

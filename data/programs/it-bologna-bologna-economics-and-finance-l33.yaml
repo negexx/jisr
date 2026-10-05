@@ -1,0 +1,61 @@
+slug: it-bologna-bologna-economics-and-finance-l33
+institution: it-bologna-bologna
+country: IT
+city: bologna
+field: business-economics
+level: bachelor
+name: Economics and Finance
+summary:
+  fr:
+    text: Economics and Finance, Università degli studi di Bologna (Bologna). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics and Finance, Università degli studi di Bologna (Bologna). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Economics and Finance, Università degli studi di Bologna (Bologna). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://corsi.unibo.it/1cycle/EconomicsFinance/preparing-the-study-plan
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+scholarships: []
+sources:
+  programme:
+    url: https://corsi.unibo.it/1cycle/EconomicsFinance/preparing-the-study-plan
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero
+    last_verified_at: 2026-10-05

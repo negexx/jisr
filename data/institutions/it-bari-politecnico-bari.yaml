@@ -1,0 +1,14 @@
+slug: it-bari-politecnico-bari
+name: Politecnico di Bari
+country: IT
+city:
+  slug: bari
+  name: Bari
+type: public
+website: https://www.poliba.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.poliba.it/
+    last_verified_at: 2026-10-05

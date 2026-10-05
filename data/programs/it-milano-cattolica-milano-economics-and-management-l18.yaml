@@ -1,0 +1,70 @@
+slug: it-milano-cattolica-milano-economics-and-management-l18
+institution: it-milano-cattolica-milano
+country: IT
+city: milano
+field: business-economics
+level: bachelor
+name: Economics and management
+summary:
+  fr:
+    text: Economics and management, Università Cattolica del "Sacro Cuore" (Milano). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics and management, Università Cattolica del "Sacro Cuore" (Milano). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Economics and management, Università Cattolica del "Sacro Cuore" (Milano). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://international.unicatt.it/ucscinternational-undergraduate-programs-economics-and-management
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: 2026-11-04
+      applicationDeadline: null
+  source: page-2
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez auprès de l'Université si le test d'admission Cattolica en mathématiques s'applique à votre cas et le calendrier correspondant.
+          status: draft
+        en:
+          text: Check with the University whether the Cattolica Admission Test applies to your case and the specific timeline.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://international.unicatt.it/ucscinternational-undergraduate-programs-economics-and-management
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://international.unicatt.it/ucscinternational-admission-and-tuition-application-timeline-5420
+    last_verified_at: 2026-10-05

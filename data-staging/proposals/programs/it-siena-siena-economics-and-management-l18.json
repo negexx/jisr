@@ -1,0 +1,33 @@
+{
+  "slug": "it-siena-siena-economics-and-management-l18",
+  "programmePage": "https://www.unisi.it/ugov/degree/18135",
+  "facts": {
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.unisi.it/sites/default/files/allegatiparagrafo/Manifesto%20titoli%20esteri_5.pdf",
+          "quote": "Dopo aver ricevuto la Lettera di Idoneità all’Immatricolazione (Letter of Eligibility for Enrollment), devono pre-iscriversi entro le scadenze stabilite dal Ministero e dall’Università di Siena attraverso la piattaforma Universitaly."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition is left out: the pages do not state a single EUR amount for a full-time Bachelor student from outside the EU living abroad for the current academic year; the programme page only points to a general university page (www.unisi.it/tasse) and the Master's-level manifest refers to a regulation by ISEE band. No intakes are included because the only dated deadlines on the pages refer to the 2013-2014 pre-enrolment for non-EU students or to the 2008-2009 Engineering faculty, not to this programme, and no undated recurring international deadline is given for it.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'accès obligatoire mais non sélectif est prévu; il sert à vérifier la préparation de base et peut entraîner des obligations formatives supplémentaires à remplir durant la première année.",
+          "en": "A compulsory but non-selective entrance test is required; it verifies basic preparation and may lead to additional formative obligations to be fulfilled in the first year."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unisi.it/sites/default/files/allegatiparagrafo/Manifesto%20titoli%20esteri_5.pdf",
+            "quote": "devono partecipare a un test di accesso obbligatorio ma non preclusivo per l’immatricolazione. Tale test è volto a verificare la preparazione di base e a conoscere gli eventuali obblighi formativi aggiuntivi da colmare entro il primo anno di corso."
+          }
+        ]
+      }
+    ]
+  }
+}

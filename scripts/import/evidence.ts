@@ -125,6 +125,15 @@ const INTERNATIONAL_WORDS: readonly RegExp[] = [
   /internationa(?:l|ux)(?!\s+(?:business|management|economics|engineering|relations|studies|office|programmes?|programs?|classroom|school|student office)\b)/i,
   /foreign(?!\s+languages?)/i,
   /(?:from|obtained|studied|completed)\s+abroad/i,
+  // Italian: "studenti stranieri", "extra UE", "non comunitari", "studenti internazionali"; a
+  // foreign language ("lingue straniere") and an office name are not applicants
+  /(?<!lingu[ae]\s+)(?<!ufficio (?:per )?(?:gli )?studenti\s+)\bstranier[oiae]\b/i,
+  /\bextra[- ]?(?:ue\b|comunitar)/i,
+  /\bnon[- ]?(?:ue\b|comunitar)/i,
+  /\bstudent[ei]\s+internazional[ei]\b/i,
+  // open to every nationality (a scheme with no nationality condition includes a Moroccan applicant)
+  // (not when the same clause then excludes some: "except Moroccan citizens", "other than German")
+  /(?:\ball nationalit(?:y|ies)\b|\bany nationality\b|\baller nationalit[äa]ten\b|\btutte le nazionalit[àa])(?![^.;]{0,40}\b(?:other than|except|excluding|but|tranne|eccetto|au(?:ß|ss)er|sauf)\b)|\bregardless of (?:their |your )?nationality\b/i,
   /(?:aus dem|im) ausland\b|ausl[aä]nd(?:isch|er)/i,
   /[ée]trang[eè]r/i,
   // DAAD register: "The following is valid for applicants from: all countries" includes applicants
@@ -216,6 +225,9 @@ const LANGUAGE_WORDS: Record<string, RegExp> = {
   es: /spanish|espagnol|spanisch|spaans/i,
   nl: /dutch|n[eé]erlandais|nederlands|niederl[aä]ndisch/i,
   hu: /hungarian|hongrois|ungarisch|hongaars|magyar/i,
+  // "Italian" as the language the course is taught in, not as a nationality ("Italian students") or
+  // a place ("Italian universities") or a language course
+  it: /(?:taught|delivered|offered|held|given|conducted|provided|instruction|lessons|classes|lectures|courses?|programme|program|degree)\s+(?:entirely |fully |mainly |partly |also )?in\s+italian\b(?!\s+(?:universit|cit|institution|school|student))|\blanguage(?: of instruction| of teaching)?\s*:?\s*italian\b|\blingua(?: di erogazione| del corso| di insegnamento)?\s*:?\s*italian[oa]?\b|in lingua italiana|italian[- ]taught|(?:enseign|dispens|donn|dispos)[ée]e?s?\s+en\s+italien\b|\blangue(?: d'enseignement)?\s*:?\s*(?:en\s+)?italien\b|in italienischer sprache|\b(?:unterrichts|studien)?sprache\s*:?\s*italienisch|\b(?:voertaal|taal)\s*:?\s*(?:het\s+)?italiaans/i,
 };
 
 function numberRegex(n: number): string {
@@ -242,11 +254,19 @@ export function checkDuration(years: number, quote: string): FactCheck {
     : fail(`the quote does not state ${years} years, ${years * 2} semesters or ${years * 60} ECTS`);
 }
 
+// A whole row of the MUR offer file (ANNO;Ateneo;Area;GruppoDisciplinare;TipoCorso;Classe;NomeClasse;
+// Corso;Provincia;Comune;ACCESSO;DIDATTICA;LINGUA) whose language column is exactly "Inglese": the
+// ministry's statement that the course is taught in English. Nothing looser: not a fragment, not
+// "Italiano; Inglese", not a mixed "Inglese - Italiano".
+const MUR_ENGLISH_ROW = /^\d{4}(?:;[^;]+){11};Inglese$/;
+
 export function checkLanguages(codes: readonly string[], quote: string): FactCheck {
   for (const code of codes) {
     const pattern = LANGUAGE_WORDS[code];
     if (pattern === undefined) return fail(`unknown language code ${code}`);
-    if (!pattern.test(quote)) return fail(`the quote does not mention the language ${code}`);
+    const murEnglish = code === "en" && MUR_ENGLISH_ROW.test(quote.trim());
+    if (!pattern.test(quote) && !murEnglish)
+      return fail(`the quote does not mention the language ${code}`);
   }
   return ok;
 }
@@ -487,11 +507,19 @@ const CHANNEL_WORDS: Record<string, RegExp> = {
   // "available in the Stipendium Hungaricum programme" is a listing, not how to apply
   "hu-stipendium-hungaricum":
     /appl(?:y|ies|ication|ications)[^.]{0,60}stipendium hungaricum|stipendium hungaricum[^.]{0,40}(?:application|call|applicants?)/i,
+  // Universitaly is the MUR portal where a non-EU applicant living abroad pre-enrols
+  "it-universitaly": /universitaly/i,
+  "it-university-direct":
+    /online application (?:form|system|portal|platform|site)|application (?:portal|platform|system)|apply online|application form[^.]{0,60}(?:university|ateneo)|apply (?:directly )?(?:online )?(?:on|at|to|through|via) the (?:website of the |own )?(?:university|ateneo)|(?:university|ateneo)'?s? (?:own )?(?:application|admission) (?:portal|platform|form|system)/i,
 };
 
 // A quote that names another channel is not evidence for this one, whatever else it says.
 const CHANNEL_EXCLUDES: Record<string, RegExp> = {
   "hu-university-direct": /stipendium hungaricum|felvi/i,
+  // Universitaly is the other channel; a quote about EU, Italian or Italy-resident applicants is
+  // not about a Moroccan applicant living abroad ("non-EU" is fine)
+  "it-university-direct":
+    /universitaly|(?<!non[- ])\bEU\b|italian (?:citizens|students|applicants)|(?:legally )?resid(?:ing|ent)s? in italy|\bEEA\b|italian (?:nationals|residents)|(?:living|already) in italy|cittadini italiani|comunitari/i,
 };
 
 export function checkChannel(slug: string, quote: string): FactCheck {

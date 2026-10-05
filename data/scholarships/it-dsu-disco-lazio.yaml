@@ -1,0 +1,63 @@
+slug: it-dsu-disco-lazio
+name: Borsa di studio DiSCo Lazio
+provider: Lazio DiSCo - Ente regionale per il diritto allo studio e la promozione della conoscenza
+destinations:
+  - IT
+eligibleNationalities: []
+fields: []
+institutions:
+  - it-cassino-cassino
+  - it-roma-biomedico-roma
+  - it-roma-la-sapienza-rieti
+  - it-roma-la-sapienza-roma
+  - it-roma-luiss-roma
+  - it-roma-tor-vergata-roma
+level: bachelor
+summary:
+  fr:
+    text: Bourse régionale gérée par Lazio DiSCo pour les étudiants des universités du Latium, y compris les étudiants internationaux dont la famille vit à l'étranger, évalués par un ISEEUP (ISEE parificato).
+    status: draft
+  en:
+    text: Regional scholarship managed by Lazio DiSCo for students at universities in Lazio, including international students whose families live abroad, assessed through an ISEEUP (ISEE parificato).
+    status: draft
+support:
+  value: null
+  source: page-1
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-2
+  info_kind: official
+  rules: []
+documents:
+  value:
+    - slug: consular-income-documents
+      name:
+        fr:
+          text: Documents des autorités diplomatiques ou consulaires italiennes (famille, revenus, patrimoine)
+          status: draft
+        en:
+          text: Documents issued by Italian diplomatic or consular authorities (household, income, assets)
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
+howToApply:
+  fr:
+    text: Demande uniquement en ligne depuis l'espace personnel sur laziodisco.it ; les étudiants dont la famille est à l'étranger fournissent des documents consulaires traduits en italien et légalisés.
+    status: draft
+  en:
+    text: Apply only through the online form in your personal account at laziodisco.it; students whose families are abroad provide consular documents translated into Italian and legalised.
+    status: draft
+officialUrl: https://laziodisco.it/bando-diritto-allo-studio-2026-2027/faq-studenti-internazionali/
+sources:
+  page-1:
+    url: https://laziodisco.it/bando-diritto-allo-studio-2026-2027/faq-studenti-internazionali/
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-ENG-26-27.pdf
+    last_verified_at: 2026-10-05

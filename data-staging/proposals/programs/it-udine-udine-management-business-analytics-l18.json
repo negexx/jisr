@@ -1,0 +1,48 @@
+{
+  "slug": "it-udine-udine-management-business-analytics-l18",
+  "programmePage": "https://www.uniud.it/en/uniud-international/International_Students/degree-english",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uniud.it/en/uniud-international/International_Students/degree-english",
+          "quote": "The University of Udine offers one Bachelor and five Master Degree courses that are entirely taught in English."
+        }
+      ]
+    }
+  },
+  "notes": "Aucune durée, aucun frais de scolarité, aucune date limite de candidature et aucun document n'a pu être extrait : les pages fournies ne mentionnent pas ces éléments pour ce Bachelor. Les frais de scolarité du site DMIF (16,00 à 1.940,00 euros) sont une fourchette par tranche ISEE pour 2019/2020 et ne constituent donc pas un montant unique pour un étudiant non-UE ; le document de l'Avviso Aggiuntivo 2026/27 ne donne qu'une fourchette (0,00 à 2000,00 euros de contributo omnicomprensivo, plus imposta di bollo et tassa regionale). La pré-inscription via l'ambassade/consulat (preiscrizione) est mentionnée, mais la page ne nomme pas le portail Universitaly : la voie de candidature n'a donc pas été déterminée. La page sur le diplôme étranger cite le Manifesto degli Studi pour les délais et les épreuves d'admission ; elle décrit surtout les procédures de licence et de master du DMIF, à vérifier pour ce Bachelor précis.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les conditions d'admission et les modalités de candidature pour ce Bachelor dans le Manifeste des études de l'Université de Udine.",
+          "en": "Check the admission requirements and application procedures for this Bachelor in the University of Udine's Manifesto degli Studi."
+        },
+        "evidence": [
+          {
+            "url": "https://dmif.uniud.it/it/didattica/servizi-per-gli-studenti/orientarsi/riconoscimento-di-titolo-di-studio-estero",
+            "quote": "Tutte le informazioni riguardanti i termini, le scadenze e le prove di ammissione/immatricolazione sono riportate sul Manifesto degli Studi, pubblicato ogni anno nel mese di giugno"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les étudiants non-UE résidant à l'étranger doivent présenter une pré-inscription auprès de l'ambassade ou du consulat d'Italie de leur pays de résidence.",
+          "en": "Non-EU students residing abroad must submit a pre-enrolment application at the Italian embassy or consulate in their country of residence."
+        },
+        "evidence": [
+          {
+            "url": "https://dmif.uniud.it/it/didattica/servizi-per-gli-studenti/orientarsi/riconoscimento-di-titolo-di-studio-estero",
+            "quote": "Per studenti non UE residenti all’estero è necessario presentare domanda di presso l’Ambasciata o Consolato d’Italia del Paese di residenza."
+          }
+        ]
+      }
+    ]
+  }
+}

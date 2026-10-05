@@ -1,0 +1,63 @@
+{
+  "slug": "it-bologna-forli-management-and-economics-l18",
+  "programmePage": "https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/5892",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/5892",
+          "quote": "Duration 3 years"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/5892",
+          "quote": "Language English"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "titolo originale di studi secondari",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero",
+          "quote": "il tuo titolo originale di studi secondari, tradotto e con conferma dell’autenticità"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition fee for this programme is not stated for non-EU students. The pages mention a €50 application fee for the Master's programme International Management, not for this Bachelor's programme. The programme page mentions 'Restricted access - entrance exam (65 places available)' but the page about enrolling with a foreign qualification says 'Per la maggior parte dei corsi di studio la verifica delle conoscenze è fatta attraverso test, ad esempio il TOLC' (general information). The specific language requirements for this programme are not stated (the page about enrolling with a foreign qualification mentions a general requirement for Italian, but not for this English-taught programme). The documents required are from the general page for enrolling with a foreign qualification, not from the programme page.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez le nombre de places disponibles et la procédure d'admission (concours) pour ce programme.",
+          "en": "Check the number of available places and the admission procedure (entrance exam) for this programme."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/5892",
+            "quote": "Type of access Restricted access - entrance exam (65 places available)"
+          }
+        ]
+      }
+    ]
+  }
+}

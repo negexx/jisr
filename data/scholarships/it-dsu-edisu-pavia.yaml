@@ -1,0 +1,53 @@
+slug: it-dsu-edisu-pavia
+name: Borsa di studio EDiSU Pavia (Università di Pavia)
+provider: EDiSU Pavia - Ente per il Diritto allo Studio Universitario
+destinations:
+  - IT
+eligibleNationalities: []
+fields: []
+institutions:
+  - it-pavia-pavia
+level: bachelor
+summary:
+  fr:
+    text: Bourse pour le droit aux études gérée par EDiSU Pavia pour les étudiants de l'Université de Pavie. Pour les étudiants étrangers dont la famille vit à l'étranger, la situation économique est calculée par un ISEE équivalent (ISEE parificato) à partir de documents du pays des revenus.
+    status: draft
+  en:
+    text: Right-to-study scholarship managed by EDiSU Pavia for students of the University of Pavia. For foreign students whose family lives abroad, the financial status is determined by an equivalent ISEE (ISEE parificato) based on documents from the country of income.
+    status: draft
+support:
+  value:
+    amount: null
+    covers:
+      - tuition
+      - housing
+  source: page-2
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-2
+  info_kind: official
+  rules: []
+documents:
+  value: null
+  source: page-1
+  info_kind: official
+howToApply:
+  fr:
+    text: Demande uniquement en ligne dans les « Services en ligne aux étudiants » d'EDiSU. Les étudiants avec des revenus à l'étranger joignent les documents en PDF puis remettent les originaux à EDiSU.
+    status: draft
+  en:
+    text: Apply only online in EDiSU's Student Online Services. Students with income abroad attach the documents as PDF files and submit the originals to EDiSU.
+    status: draft
+officialUrl: https://www.edisu.pv.it/en/services/call-for-ordinary-scholarship/
+sources:
+  page-1:
+    url: https://www.edisu.pv.it/en/services/call-for-ordinary-scholarship/
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.edisu.pv.it/en/download/4769/
+    last_verified_at: 2026-10-05

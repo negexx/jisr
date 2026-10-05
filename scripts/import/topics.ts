@@ -24,6 +24,12 @@ const WORDS: Record<string, Record<Topic, string>> = {
     deadline: "date limite de candidature étudiants internationaux",
     documents: "pièces justificatives dossier de candidature étudiants internationaux",
   },
+  IT: {
+    fees: "tasse universitarie contributi studenti internazionali non UE tuition fees",
+    language: "lingua di erogazione lingua inglese language of instruction",
+    deadline: "scadenza preiscrizione studenti internazionali non UE application deadline",
+    documents: "documenti richiesti studenti internazionali titolo estero required documents",
+  },
   NL: {
     fees: "instellingscollegegeld collegegeld niet-EER studenten tuition fees non-EEA",
     language: "voertaal taal van het onderwijs language of instruction",
@@ -32,16 +38,16 @@ const WORDS: Record<string, Record<Topic, string>> = {
   },
 };
 
-const LANGUAGE: Record<string, string> = { DE: "de", FR: "fr", NL: "nl" };
+const LANGUAGE: Record<string, string> = { DE: "de", FR: "fr", IT: "it", NL: "nl" };
 
 const PATTERN: Record<Topic, RegExp> = {
-  fees: /tuition|\bfees?\b|\bcosts?\b|gebu(?:e)?hr|studienbeitr|semesterbeitr|collegegeld|\btarie(?:f|ven)\b|kosten|droits?[ _-]d[ '_-]?inscription|frais[ _-]de[ _-]scolarit|droits[ _-]de[ _-]scolarit/,
+  fees: /tuition|\bfees?\b|\bcosts?\b|gebu(?:e)?hr|studienbeitr|semesterbeitr|collegegeld|\btarie(?:f|ven)\b|kosten|droits?[ _-]d[ '_-]?inscription|frais[ _-]de[ _-]scolarit|droits[ _-]de[ _-]scolarit|\btasse\b|contribut[io]|\bretta\b|\bcosti\b/,
   language:
-    /language of instruction|teaching language|instruction|unterrichtssprache|studiensprache|\bsprache|voertaal|\btaal\b|language|langue[ _-]d[ '_-]?enseignement|enseigne[ _-]en\b|langue[ _-]de[ _-]la[ _-]formation/,
+    /language of instruction|teaching language|instruction|unterrichtssprache|studiensprache|\bsprache|voertaal|\btaal\b|language|langue[ _-]d[ '_-]?enseignement|enseigne[ _-]en\b|langue[ _-]de[ _-]la[ _-]formation|\blingua\b|erogazione/,
   deadline:
-    /deadline|frist|termine?\b|aanmeld|application period|dates|date[ _-]limite|calendrier|candidat(?:ure|er)/,
+    /deadline|frist|termine?\b|aanmeld|application period|dates|date[ _-]limite|calendrier|candidat(?:ure|er)|scadenz[ae]|preiscrizion[ei]|calendario/,
   documents:
-    /documents?|unterlagen|nachweis|documenten|required|checklist|erforderlich|benodigde|pieces|justificatifs|dossier[ _-]de[ _-]candidature/,
+    /documents?|unterlagen|nachweis|documenten|required|checklist|erforderlich|benodigde|pieces|justificatifs|dossier[ _-]de[ _-]candidature|documenti|titolo[ _-]estero|allegati/,
 };
 
 const NEWSISH = /\/(news|blog|events?|actualit|presse|press|agenda|nieuws|aktuell|veranstaltung)/;

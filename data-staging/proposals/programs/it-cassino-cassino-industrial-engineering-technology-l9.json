@@ -1,0 +1,48 @@
+{
+  "slug": "it-cassino-cassino-industrial-engineering-technology-l9",
+  "programmePage": "https://www.unicas.it/international-unicas/international-bachelor-master-and-phd-programs-enrollment-26-27-now-open/bachelors-degree-programs/industrial-engineering-technology/",
+  "facts": {
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/",
+          "quote": "2.1 APPLY IN UNIVERSITALY"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Passeport",
+            "en": "Passport"
+          },
+          "quotedAs": "passport",
+          "translationRequired": null
+        },
+        {
+          "slug": "declaration-of-value",
+          "name": {
+            "fr": "Déclaration de valeur (DOV)",
+            "en": "Declaration of Value (DOV)"
+          },
+          "quotedAs": "Declaration of Value",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/",
+          "quote": "passport with the visa for study and the arrival stamp in Italy (or a valid permit to stay); the Declaration of Value"
+        },
+        {
+          "url": "https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/",
+          "quote": "The University of Cassino requires DOV (Declaration of Value) to enroll"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee not stated for non-EU applicants: page says only that at the International Students Administrative Office students can \"have information in regards to the tuition fees\" without giving an amount. Application deadline: page says \"It's usually possible between February and June, check the precise deadline fixed by each Degree Programme for this year\" without day/month/year for non-EU applicants, so not stated as a dated deadline. Admission requirements (specific for Industrial Engineering Technology) not stated on the supplied pages."
+}

@@ -1,0 +1,14 @@
+slug: it-perugia-perugia
+name: Università degli studi di Perugia
+country: IT
+city:
+  slug: perugia
+  name: Perugia
+type: public
+website: https://www.unipg.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unipg.it/
+    last_verified_at: 2026-10-05

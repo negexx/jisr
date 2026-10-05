@@ -1,0 +1,22 @@
+slug: it-universitaly
+name: Universitaly pre-enrolment
+country: IT
+kind: national_portal
+url: https://www.universitaly.it/en/studenti-stranieri
+accountRequired: null
+summary:
+  fr:
+    text: "Les étudiants hors UE qui résident à l'étranger font leur demande de préinscription sur le portail officiel Universitaly ; l'université la valide, puis vous demandez le visa d'études au consulat d'Italie."
+    status: draft
+  en:
+    text: "Non-EU students living abroad make their pre-enrolment application on the official Universitaly portal; the university validates it, then you apply for the study visa at the Italian consulate."
+    status: draft
+  ar:
+    text: "يقدّم الطلبة من خارج الاتحاد الأوروبي المقيمون في الخارج طلب التسجيل المسبق على البوابة الرسمية Universitaly؛ تصادق عليه الجامعة ثم تطلبون تأشيرة الدراسة لدى القنصلية الإيطالية."
+    status: draft
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.universitaly.it/en/studenti-stranieri
+    last_verified_at: 2026-10-05

@@ -1,0 +1,89 @@
+slug: it-roma-tor-vergata-roma-engineering-sciences-l9
+institution: it-roma-tor-vergata-roma
+country: IT
+city: roma
+field: engineering
+level: bachelor
+name: Engineering Sciences
+summary:
+  fr:
+    text: Engineering Sciences, Università degli studi di Roma Tor Vergata (Roma). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Engineering Sciences, Università degli studi di Roma Tor Vergata (Roma). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Engineering Sciences, Università degli studi di Roma Tor Vergata (Roma). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://web.uniroma2.it/contenuto/engineering-sciences-aa-2026-2027
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-1
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Une preuve de connaissances obligatoire est prévue pour l'admission ; elle ne bloque pas l'inscription.
+          status: draft
+        en:
+          text: A compulsory knowledge assessment test is required for admission; it does not prevent enrollment.
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Préinscription obligatoire sur Universitaly avant le 31 juillet pour les candidats non-UE résidant à l'étranger.
+          status: draft
+        en:
+          text: Mandatory pre-enrollment on Universitaly by July 31 for non-EU applicants living abroad.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://web.uniroma2.it/contenuto/engineering-sciences-aa-2026-2027
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www-2023.studenti.uniroma2.it/en/preiscrizione-e-visto-dingresso/
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://web.uniroma2.it/en/percorso/admissions
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
+    last_verified_at: 2026-10-05

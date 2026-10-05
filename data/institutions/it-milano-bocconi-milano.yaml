@@ -1,0 +1,14 @@
+slug: it-milano-bocconi-milano
+name: Università commerciale Luigi Bocconi di Milano
+country: IT
+city:
+  slug: milano
+  name: Milano
+type: private
+website: https://www.unibocconi.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unibocconi.it/
+    last_verified_at: 2026-10-05

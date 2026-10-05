@@ -1,0 +1,27 @@
+{
+  "slug": "it-milano-bocconi-milano-economics-management-and-computer-scienc-l33",
+  "programmePage": "https://www.unibocconi.it/en/programs/bachelor-science/economics-management-and-computer-science",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://apply.unibocconi.it/en_US/courses/course/18-bemacs-bsc-economics-management-and-computer-science",
+          "quote": "Nominal duration 3 years (180 ECTS)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unibocconi.it/en/programs/bachelor-science/economics-management-and-computer-science",
+          "quote": "The program is offered entirely in English."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition left out: the only figures found are the institution-wide annual amount for first-year Bachelor of Science students (17,000 EUR/year on https://www.unibocconi.it/it/studenti-iscritti/tasse-e-contributi-universitari) and Master of Science amounts; no quote states one tuition amount specifically for a non-EU applicant with a foreign diploma living abroad for this programme. Application channel left out: no supplied page names Universitaly or the university's own application portal for this programme; the apply.unibocconi.it page names the DreamApply platform but gives no deadlines for the International category and does not state the route in the terms required."
+}

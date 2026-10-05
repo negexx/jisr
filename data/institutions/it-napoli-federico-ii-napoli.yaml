@@ -1,0 +1,14 @@
+slug: it-napoli-federico-ii-napoli
+name: Università degli studi di Napoli Federico II
+country: IT
+city:
+  slug: napoli
+  name: Napoli
+type: public
+website: https://www.unina.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unina.it/
+    last_verified_at: 2026-10-05

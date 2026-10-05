@@ -1,0 +1,73 @@
+slug: it-padova-padova-information-engineering-l8
+institution: it-padova-padova
+country: IT
+city: padova
+field: engineering
+level: bachelor
+name: Information Engineering
+summary:
+  fr:
+    text: Information Engineering, Università degli studi di Padova (Padova). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Information Engineering, Università degli studi di Padova (Padova). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Information Engineering, Università degli studi di Padova (Padova). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://apply.unipd.it/courses/course/182-information-engineering
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-10-01
+      applicationOpens: 2027-01-07
+      applicationDeadline: 2027-03-07
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: secondary-school-diploma
+      name:
+        fr:
+          text: Diplôme d'études secondaires
+          status: draft
+        en:
+          text: Secondary Studies diploma
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+scholarships: []
+sources:
+  programme:
+    url: https://apply.unipd.it/courses/course/182-information-engineering
+    last_verified_at: 2026-10-05

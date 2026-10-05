@@ -1,0 +1,14 @@
+slug: it-marche-ancona
+name: Università Politecnica delle Marche - Ancona
+country: IT
+city:
+  slug: ancona
+  name: Ancona
+type: public
+website: https://www.international.univpm.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.international.univpm.it/
+    last_verified_at: 2026-10-05

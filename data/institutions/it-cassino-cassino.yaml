@@ -1,0 +1,14 @@
+slug: it-cassino-cassino
+name: Università degli Studi di Cassino e del Lazio Meridionale
+country: IT
+city:
+  slug: cassino
+  name: Cassino
+type: public
+website: https://www.unicas.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unicas.it/
+    last_verified_at: 2026-10-05

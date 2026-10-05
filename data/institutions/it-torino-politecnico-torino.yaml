@@ -1,0 +1,14 @@
+slug: it-torino-politecnico-torino
+name: Politecnico di Torino
+country: IT
+city:
+  slug: torino
+  name: Torino
+type: public
+website: https://www.polito.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.polito.it/
+    last_verified_at: 2026-10-05

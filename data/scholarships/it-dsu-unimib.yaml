@@ -1,0 +1,49 @@
+slug: it-dsu-unimib
+name: Borsa di studio regionale (Università di Milano-Bicocca)
+provider: Università degli Studi di Milano-Bicocca (benefici del diritto allo studio)
+destinations:
+  - IT
+eligibleNationalities: []
+fields: []
+institutions:
+  - it-milano-bicocca-milano
+level: bachelor
+summary:
+  fr:
+    text: Bourse du droit aux études de l'Université de Milan-Bicocca pour ses étudiants. Le concours est ouvert aux étudiants de pays hors UE ; ceux qui résident à l'étranger peuvent téléverser leurs documents pour l'ISEE.
+    status: draft
+  en:
+    text: Right-to-study scholarship of the University of Milano-Bicocca for its students. The contest is open to students from non-EU countries; students resident abroad can upload their documents for the ISEE.
+    status: draft
+support:
+  value: null
+  source: page-1
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-2
+  info_kind: official
+  rules: []
+documents:
+  value: null
+  source: page-1
+  info_kind: official
+howToApply:
+  fr:
+    text: Candidature en ligne sur le portail du droit aux études de l'Université ; les étudiants résidant à l'étranger peuvent téléverser leurs documents pour l'ISEE. Pour accéder à la bourse en première année, une note minimale au diplôme de fin d'études secondaires est exigée.
+    status: draft
+  en:
+    text: Apply online on the University's right-to-study portal; students resident abroad can upload their ISEE documents. To access the scholarship in the first year, a minimum high-school final grade is required.
+    status: draft
+officialUrl: https://www.unimib.it/studiare/servizi-studenti-e-laureati/diritto-allo-studio-contribuzione-studentesca-150-ore
+sources:
+  page-1:
+    url: https://www.unimib.it/studiare/servizi-studenti-e-laureati/diritto-allo-studio-contribuzione-studentesca-150-ore
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
+    last_verified_at: 2026-10-05

@@ -1,0 +1,80 @@
+slug: it-pavia-pavia-artificial-intelligence-l31
+institution: it-pavia-pavia
+country: IT
+city: pavia
+field: computer-science
+level: bachelor
+name: Artificial intelligence
+summary:
+  fr:
+    text: Artificial intelligence, Università degli studi di Pavia (Pavia). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Artificial intelligence, Università degli studi di Pavia (Pavia). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Artificial intelligence, Università degli studi di Pavia (Pavia). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: 2026-04-28
+      applicationDeadline: 2026-05-18
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Test d'entrée SAT requis ; score minimum 979/1600.
+          status: draft
+        en:
+          text: SAT entry test required; minimum score 979/1600.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy
+    last_verified_at: 2026-10-05

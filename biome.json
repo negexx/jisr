@@ -11,6 +11,7 @@
       "!data-staging/proposals",
       "!data-staging/proposals-read",
       "!data-staging/proposals-enrich",
+      "!data-staging/proposals-it-language",
       "!data-staging/bakeoff",
       "!.claude",
       "!.impeccable",

@@ -1,0 +1,67 @@
+{
+  "slug": "it-roma-la-sapienza-rieti-sustainable-building-engineering-l23",
+  "programmePage": "https://corsidilaurea.uniroma1.it/en/course/33482",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://corsidilaurea.uniroma1.it/en/course/33482",
+          "quote": "LanguageEnglish"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.uniroma1.it/en/pagina/international-student-office",
+          "quote": "Online pre-enrolment on the Universitaly portal is mandatory for all non-EU students residing abroad"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition left out: the pages state ranges or bands (€ 300-1500/year according to country of residence; ISEE/foreign-income bands), not one amount for a non-EU student living abroad. No application deadline for this programme is quoted with a year and clearly for non-EU applicants; the general non-EU pre-selection deadline (May 15, 2026) is not programme-specific. No application-opening date is stated.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.uniroma1.it/it/pagina/international-admissions-2026-2027",
+            "quote": "Additionally, all students must have at least an upper-intermediate knowledge of English OR Italian (B2 level)"
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.uniroma1.it/en/pagina/international-student-office",
+            "quote": "Must be obtained after at least 12 years of schooling and grant access to first-level university degrees in the country of issuance"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les conditions d'admission spécifiques à ce programme (test d'entrée, notes minimales) sur la page du programme.",
+          "en": "Check the specific admission requirements for this programme (entrance test, minimum grades) on the programme page."
+        },
+        "evidence": [
+          {
+            "url": "https://corsidilaurea.uniroma1.it/en/course/33482",
+            "quote": "Entrance test to verify knowledge"
+          }
+        ]
+      }
+    ]
+  }
+}

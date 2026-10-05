@@ -1,0 +1,48 @@
+slug: it-dsu-toscana
+name: Borsa di studio DSU Toscana
+provider: DSU Toscana - Azienda Regionale per il Diritto allo Studio Universitario
+destinations:
+  - IT
+eligibleNationalities: []
+fields: []
+institutions:
+  - it-firenze-firenze
+  - it-pisa-pisa
+  - it-siena-siena
+level: bachelor
+summary:
+  fr:
+    text: Bourse régionale gérée par DSU Toscana pour les étudiants des universités de Florence, Pise et Sienne. Les étudiants hors UE dont la famille vit ou a des revenus à l'étranger fournissent des documents traduits en italien et légalisés.
+    status: draft
+  en:
+    text: Regional scholarship managed by DSU Toscana for students at the universities of Florence, Pisa and Siena. Non-EU students whose family lives or has income abroad submit documents translated into Italian and legalised.
+    status: draft
+support:
+  value: null
+  source: page-1
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-1
+  info_kind: official
+  rules: []
+documents:
+  value: null
+  source: page-1
+  info_kind: official
+howToApply:
+  fr:
+    text: Candidature en ligne via la procédure de DSU Toscana. Les étudiants dont la famille est à l'étranger impriment le reçu de la demande et l'envoient avec les documents requis par l'appel avant la date limite.
+    status: draft
+  en:
+    text: Apply online through the DSU Toscana procedure. Students whose family is abroad print the application receipt and send it, with the documents the call requires, by the deadline.
+    status: draft
+officialUrl: https://www.dsu.toscana.it/studenti-stranieri
+sources:
+  page-1:
+    url: https://www.dsu.toscana.it/studenti-stranieri
+    last_verified_at: 2026-10-05

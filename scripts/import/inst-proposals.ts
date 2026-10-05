@@ -5,7 +5,13 @@ import path from "node:path";
 import { parse } from "yaml";
 
 import { registrable, sameSite } from "./discover";
-import { distinctiveTokens, pageText, quoteNames, wholeWord } from "./evidence";
+import {
+  distinctiveTokens,
+  pageText,
+  programmeNameMatches,
+  quoteNames,
+  wholeWord,
+} from "./evidence";
 
 export { quoteNames };
 
@@ -30,9 +36,15 @@ const NOT_AN_INSTITUTION = [
   "tpf.hu",
   "studyinhungary.hu",
   "stipendiumhungaricum.hu",
+  "universitaly.it",
+  "cineca.it",
+  "mur.gov.it",
 ];
 
-export function websiteFrom(urls: readonly string[]): string | null {
+export function websiteFrom(
+  urls: readonly string[],
+  preferred: string | null = null,
+): string | null {
   const counts = new Map<string, { n: number; first: string }>();
   for (const url of urls) {
     let domain: string;
@@ -47,7 +59,26 @@ export function websiteFrom(urls: readonly string[]): string | null {
     else seen.n++;
   }
   const best = [...counts.values()].sort((a, b) => b.n - a.n)[0];
-  return best === undefined ? null : `${new URL(best.first).origin}/`;
+  if (best === undefined) return null;
+  // the staged candidate (https only) wins when it is on the same registrable domain: a programme
+  // page often sits on a course-catalogue sub-site that is not the university's home page
+  if (preferred?.startsWith("https://")) {
+    try {
+      if (registrable(preferred) === registrable(best.first))
+        return `${new URL(preferred).origin}/`;
+    } catch {
+      // not a URL: ignored
+    }
+  }
+  return `${new URL(best.first).origin}/`;
+}
+
+// A candidate that is a sub-site (en., apply., admission.) may not print the institution's name:
+// the main www home page of the same domain is the one to try next.
+export function alternateHomes(website: string): string[] {
+  const host = new URL(website).hostname;
+  const main = `www.${registrable(website)}`;
+  return host === main || host === registrable(website) ? [] : [`https://${main}/`];
 }
 
 const TYPE_WORD = /hogeschool|universit|hochschule|college|school|institut|ecole|école/i;
@@ -157,41 +188,60 @@ async function main(argv: readonly string[]): Promise<void> {
   let written = 0;
   for (const slug of [...wanted].sort()) {
     const staged = await readYaml(stageFile("institutions", slug));
-    const website = websiteFrom(urls.get(slug) ?? []);
+    const candidate = typeof staged?.website === "string" ? staged.website : null;
+    const website = websiteFrom(urls.get(slug) ?? [], candidate);
     if (staged === null || website === null) {
       skipped.push(
         `${slug}: ${staged === null ? "no staged record" : "no institution page known"}`,
       );
       continue;
     }
-    // the home page, then up to four of the institution's own programme pages
-    const candidates = [
-      website,
-      ...[...new Set(urls.get(slug) ?? [])]
-        .filter((u) => u !== website && sameSite(u, website))
-        .slice(0, 4),
-    ];
-    const pages: { url: string; text: string }[] = [];
-    for (const url of candidates) {
-      try {
-        pages.push({ url, text: await pageText(url) });
-      } catch {
-        // an unreachable page just offers no quote
+    // the home page (then, for a sub-site, the main one), with up to four of the institution's own
+    // programme pages
+    let proposal: { website: string; url: string; quote: string } | null = null;
+    let failure = `${website} could not be fetched`;
+    for (const home of [website, ...alternateHomes(website)]) {
+      const candidates = [
+        home,
+        ...[...new Set(urls.get(slug) ?? [])]
+          .filter((u) => u !== home && sameSite(u, home))
+          .slice(0, 4),
+      ];
+      const pages: { url: string; text: string }[] = [];
+      for (const url of candidates) {
+        try {
+          pages.push({ url, text: await pageText(url) });
+        } catch {
+          // an unreachable page just offers no quote
+        }
       }
+      if (pages.length === 0 || pages[0]?.url !== home) {
+        failure = `${home} could not be fetched`;
+        continue;
+      }
+      // the same test the verifier applies to the home page, so a proposal that cannot verify is
+      // not written
+      if (!programmeNameMatches(String(staged.name ?? ""), pages[0]?.text ?? "")) {
+        failure = `${home} does not name "${String(staged.name)}"`;
+        continue;
+      }
+      const picked = pickQuote(String(staged.name ?? ""), pages);
+      if (picked === null) {
+        failure = `${home} does not name "${String(staged.name)}"`;
+        continue;
+      }
+      proposal = { website: home, url: picked.url, quote: picked.quote };
+      break;
     }
-    if (pages.length === 0 || pages[0]?.url !== website) {
-      skipped.push(`${slug}: ${website} could not be fetched`);
-      continue;
-    }
-    const picked = pickQuote(String(staged.name ?? ""), pages);
-    if (picked === null) {
-      skipped.push(`${slug}: ${website} does not name "${String(staged.name)}"`);
+    if (proposal === null) {
+      skipped.push(`${slug}: ${failure}`);
       continue;
     }
     if (!dryRun)
       await writeFile(
         path.join(outDir, `${slug}.json`),
-        `${JSON.stringify({ slug, website, evidence: [{ url: picked.url, quote: picked.quote }] }, null, 2)}\n`,
+        `${JSON.stringify({ slug, website: proposal.website, evidence: [{ url: proposal.url, quote: proposal.quote }] }, null, 2)}
+`,
       );
     written++;
   }

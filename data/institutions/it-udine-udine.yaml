@@ -1,0 +1,14 @@
+slug: it-udine-udine
+name: Università degli studi di Udine
+country: IT
+city:
+  slug: udine
+  name: Udine
+type: public
+website: https://www.uniud.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.uniud.it/
+    last_verified_at: 2026-10-05

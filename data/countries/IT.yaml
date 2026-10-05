@@ -1,0 +1,6 @@
+code: IT
+name:
+  fr: { text: Italie, status: reviewed }
+  en: { text: Italy, status: reviewed }
+  ar: { text: إيطاليا, status: draft }
+currency: EUR

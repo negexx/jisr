@@ -1,0 +1,46 @@
+slug: it-dsu-erdis-marche
+name: Borsa di studio ERDIS Marche
+provider: ERDIS Marche - Ente Regionale per il diritto allo studio
+destinations:
+  - IT
+eligibleNationalities: []
+fields: []
+institutions:
+  - it-marche-ancona
+level: bachelor
+summary:
+  fr:
+    text: Bourse régionale gérée par ERDIS Marche pour les étudiants des universités des Marches. L'appel est ouvert aux étudiants italiens et étrangers qui remplissent les conditions de mérite et de ressources prévues.
+    status: draft
+  en:
+    text: Regional scholarship managed by ERDIS Marche for students at universities in the Marche region. The call is open to Italian and foreign students who meet the merit and economic requirements it sets.
+    status: draft
+support:
+  value: null
+  source: page-1
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-1
+  info_kind: official
+  rules: []
+documents:
+  value: null
+  source: page-1
+  info_kind: official
+howToApply:
+  fr:
+    text: La demande se fait uniquement en ligne ; l'accès à la demande est indiqué sur le portail d'ERDIS.
+    status: draft
+  en:
+    text: Apply online only; access to the application is indicated on the ERDIS portal.
+    status: draft
+officialUrl: https://erdis.it/servizi/servizio-dettaglio/3161252
+sources:
+  page-1:
+    url: https://erdis.it/servizi/servizio-dettaglio/3161252
+    last_verified_at: 2026-10-05
