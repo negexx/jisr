@@ -125,6 +125,12 @@ const INTERNATIONAL_WORDS: readonly RegExp[] = [
   /internationa(?:l|ux)(?!\s+(?:business|management|economics|engineering|relations|studies|office|programmes?|programs?|classroom|school|student office)\b)/i,
   /foreign(?!\s+languages?)/i,
   /(?:from|obtained|studied|completed)\s+abroad/i,
+  // Italian: "studenti stranieri", "extra UE", "non comunitari", "studenti internazionali"; a
+  // foreign language ("lingue straniere") and an office name are not applicants
+  /(?<!lingu[ae]\s)\bstranier[oiae]\b/i,
+  /\bextra[- ]?(?:ue\b|comunitar)/i,
+  /\bnon[- ]?(?:ue\b|comunitar)/i,
+  /\bstudent[ei]\s+internazional[ei]\b/i,
   /(?:aus dem|im) ausland\b|ausl[aä]nd(?:isch|er)/i,
   /[ée]trang[eè]r/i,
   // DAAD register: "The following is valid for applicants from: all countries" includes applicants

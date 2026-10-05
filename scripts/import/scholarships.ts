@@ -97,7 +97,7 @@ export type ScholarshipVerified =
 // A scheme that lists bachelor AND master as the levels it covers ("bachelor's or master's") is open
 // to bachelor students too: Jisr only shows it on bachelor programmes (a both-levels quote).
 const GRADUATE_LEVEL =
-  /\bmaster|postgraduate|(?<!under)\bgraduate (?:students|studies|programmes?|programs?)|\bph\.?d\b|doctora|\bpromotion\b/i;
+  /\bmaster|postgraduate|(?<!under)\bgraduate (?:students|studies|programmes?|programs?)|\bph\.?d\b|doctora|\bpromotion\b|laurea magistrale|lauree magistrali|dottorat|post[- ]laurea|specializzazione/i;
 const BACHELOR_PREREQUISITE: readonly RegExp[] = [
   /\b(?:hold|holds|holding|holders?|completed|graduates?)\s+(?:of\s+)?(?:an?\s+|the\s+|their\s+)?(?:bachelor|licence|undergraduate degree)/i,
   /\bbachelor['’]?s?(?: degree)?\s+(?:holders?|required|is required)/i,
@@ -109,6 +109,10 @@ const BACHELOR_PREREQUISITE: readonly RegExp[] = [
   /\b(?:after|finished|obtained|earned|completed)\s+(?:their\s+|a\s+|an\s+)?bachelor/i,
   // "a bachelor's or master's degree is required": a prerequisite even when both are named
   /\bmaster['’]?s?(?:\s+degree)?\s+(?:holders?|required|is required|is needed|needed)\b/i,
+  // Italian: "in possesso della laurea", "laureati", "dopo la laurea"
+  /\bin possesso (?:della|del|di)\s+(?:diploma di\s+)?laurea/i,
+  /\blaureat[oiae]\b/i,
+  /\bdopo la laurea/i,
 ];
 // "bachelor's or master's", "bachelor and master programmes", "Bachelor- und Masterstudiengänge",
 // "bachelor- of masteropleiding", "licence ou en master", "Bachelor- oder Masterstudierende",
@@ -120,16 +124,24 @@ const BOTH_LEVELS = new RegExp(
   String.raw`\b(?:bachelor|licence)['’]?s?-?(?:\s+(?:degrees?|students?|programmes?|programs?|courses?|studies))?\s*(?:\/|,|\b(?:or|and|und|oder|of|ou|et|en)\b)\s*(?:en\s+)?master(?:['’]s)?(?:-?${STUDY_SUFFIX}\b|\s+${STUDY_SUFFIX}\b)?`,
   "gi",
 );
+// Italian: "corsi di laurea e di laurea magistrale", "laurea, laurea magistrale e laurea magistrale a
+// ciclo unico": the levels a call covers, a list of first-level and second-level courses.
+const BOTH_LEVELS_IT =
+  /(?:corsi?\s+di\s+)?laure[ae](?:\s+triennal[ei])?\s*(?:,|\be\b|\bed\b|\bo\b|\/)\s*(?:di\s+)?laurea\s+magistrale(?:\s+a\s+ciclo\s+unico)?(?:\s*(?:,|\be\b|\bed\b|\bo\b)\s*(?:di\s+)?laurea\s+magistrale(?:\s+a\s+ciclo\s+unico)?)*/gi;
 // Degree-possession wording: a scheme for people who hold, finished or are about to use a degree is
 // for what comes after the bachelor, whatever levels it names. Word-boundary stems on purpose
 // ("participating", "education", "undergraduate" must not trip).
 const FINISHED_DEGREE =
-  /\bdegrees?\b|\bgraduat|\balumn[ia]\b|\bdipl[ôo]m|\bhold(?:s|ers?|ing)?\b|\bcomplet|\bfinish|\bearn|\bobtain|\bpossess|\bprior\b|\bprevious|\balready\b|\brequir|\brecipient|\btitulaire|\bobtenu|\bpostdoc|absolvent|abschluss|abgeschlossen|afgestudeerd/i;
+  /\bdegrees?\b|\bgraduat|\balumn[ia]\b|\bdipl[ôo]m|\bhold(?:s|ers?|ing)?\b|\bcomplet|\bfinish|\bearn|\bobtain|\bpossess|\bprior\b|\bprevious|\balready\b|\brequir|\brecipient|\btitulaire|\bobtenu|\bpostdoc|absolvent|abschluss|abgeschlossen|afgestudeerd|\blaureat|\bpossesso|\bconseguit/i;
 
 // Any graduate wording at all, a both-levels phrase included.
 const mentionsGraduate = (quote: string): boolean =>
   GRADUATE_LEVEL.test(quote) || BACHELOR_PREREQUISITE.some((pattern) => pattern.test(quote));
-const namesBothLevels = (quote: string): boolean => new RegExp(BOTH_LEVELS.source, "i").test(quote);
+const namesBothLevels = (quote: string): boolean =>
+  new RegExp(BOTH_LEVELS.source, "i").test(quote) ||
+  new RegExp(BOTH_LEVELS_IT.source, "i").test(quote);
+const withoutBothLevels = (quote: string): string =>
+  quote.replace(BOTH_LEVELS, " ").replace(BOTH_LEVELS_IT, " ");
 
 // A graduate level or a prerequisite that the quote does not explain away as "bachelor's or
 // master's": no prerequisite wording anywhere, and nothing left that is master or doctoral once the
@@ -138,7 +150,7 @@ function isGraduateLevel(quote: string): boolean {
   if (BACHELOR_PREREQUISITE.some((pattern) => pattern.test(quote))) return true;
   if (!GRADUATE_LEVEL.test(quote)) return false;
   if (!namesBothLevels(quote)) return true;
-  const rest = quote.replace(BOTH_LEVELS, " ");
+  const rest = withoutBothLevels(quote);
   return GRADUATE_LEVEL.test(rest) || FINISHED_DEGREE.test(rest);
 }
 
@@ -149,13 +161,16 @@ const UNDERGRADUATE: readonly RegExp[] = [
   /\b(?:for|towards?|pursuing|enrolled in|start(?:ing)?|begin(?:ning)?|entering)\s+(?:an?\s+|the\s+|their\s+)?(?:first[- ]year\s+)?bachelor/i,
   /pour la licence|[ée]tudiants? en licence|premier cycle|cursus de licence/i,
   /\bbachelor-?studi(?:um|engang|e)\b|\bbachelorstudent/i,
+  // Italian: "corsi di laurea" (not "laurea magistrale"), "laurea triennale", "primo livello"
+  /\bcors[oi]\s+di\s+laurea(?!\s+magistrale)/i,
+  /\blaurea triennale|\blauree triennali|\bprimo livello|\bprimo ciclo/i,
 ];
 const isUndergraduate = (quote: string): boolean =>
   UNDERGRADUATE.some((pattern) => pattern.test(quote)) || namesBothLevels(quote);
 
 // --- eligibility ----------------------------------------------------------------------------------
 const EXCLUSION =
-  /not eligible|ineligible|cannot apply|can ?not apply|are excluded|not entitled|\binstead\b|reserved for|must not be (?:from|a national|nationals|citizens?)|should (?:see|refer|consult)|only (?:eu|eea|german|dutch|french) (?:citizens|nationals|students)|exclusively for (?:german|eu\b|eea|dutch|french|national|citizens)|nur f[üu]r (?:deutsche|eu\b)|r[ée]serv[ée]e?s? aux|only (?:for|open to)\s+(?:german|eu\b|eea|dutch|french|national)|nicht\s+(?:berechtigt|bewerben)|k[öo]nnen sich nicht bewerben|ne sont pas|ne peuvent pas|uitgesloten|niet in aanmerking/i;
+  /not eligible|ineligible|cannot apply|can ?not apply|are excluded|not entitled|\binstead\b|reserved for|must not be (?:from|a national|nationals|citizens?)|should (?:see|refer|consult)|only (?:eu|eea|german|dutch|french) (?:citizens|nationals|students)|exclusively for (?:german|eu\b|eea|dutch|french|national|citizens)|nur f[üu]r (?:deutsche|eu\b)|r[ée]serv[ée]e?s? aux|only (?:for|open to)\s+(?:german|eu\b|eea|dutch|french|national)|nicht\s+(?:berechtigt|bewerben)|k[öo]nnen sich nicht bewerben|ne sont pas|ne peuvent pas|uitgesloten|niet in aanmerking|non possono|non sono ammess|non hanno diritto|\besclus[oiae]\b|riservat[oiae]\s+(?:ai|agli|alle|a)\s|solo per (?:i |gli )?(?:student|cittadin)/i;
 
 // "Foreign Office / Affairs" is a ministry, not a foreign applicant. Local to this verifier: the
 // shared rule stays as it is.
@@ -165,14 +180,14 @@ const namesInternational = (quote: string): boolean =>
 
 // How a page names a nationality: the country or its region. Small and general; extend per code.
 // A bare continent ("Africa" is in "South Africa") or "MENA" is not enough.
-const NORTH_AFRICA = "north africa|afrique du nord|nordafrika";
+const NORTH_AFRICA = "north africa|afrique du nord|nordafrika|nord africa";
 const NATIONALITY_NAMES: Record<string, RegExp> = {
   MA: new RegExp(`morocc|maroc|marokk|${NORTH_AFRICA}`, "i"),
   DZ: new RegExp(`alg[eé]ri|${NORTH_AFRICA}`, "i"),
   TN: new RegExp(`tunisi|tunesi|${NORTH_AFRICA}`, "i"),
 };
 // "all countries except Morocco": the name is there, but as an exclusion.
-const EXCEPT_WORDS = "except|excluding|other than|sauf|außer|ausser|behalve";
+const EXCEPT_WORDS = "except|excluding|other than|sauf|außer|ausser|behalve|tranne|eccetto";
 function namesNationality(code: string, quote: string): boolean {
   const names = NATIONALITY_NAMES[code];
   if (names === undefined || !names.test(quote)) return false;
