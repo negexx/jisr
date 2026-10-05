@@ -19,6 +19,20 @@ conditions:
       ar:
         text: "بعد سنة دراسية واحدة على الأقل ناجحة في جامعة مغربية معترف بها، يمكن القبول المباشر في تخصص مرتبط (تقرير DAAD لسنة 2021): استفسروا لدى الجامعة وuni-assist."
         status: draft
+  - id: bafoeg-needs-residence-prospect
+    kind: manual_check
+    source: bafoeg
+    info_kind: guidance
+    note:
+      fr:
+        text: "Le BAföG (aide fédérale aux études) est ouvert aux étrangers qui ont une perspective de séjour durable et sont intégrés (par exemple droit de séjour permanent ou permis d'établissement) : un visa d'études seul n'est pas dans cette liste, l'aide n'est donc en général pas accessible à l'arrivée. Renseignez-vous auprès du Studierendenwerk."
+        status: draft
+      en:
+        text: "BAföG (federal student aid) is open to foreigners with a lasting prospect of staying who are socially integrated (for example permanent residence or a settlement permit): a study visa alone is not on that list, so the aid is generally not available on arrival. Ask the Studierendenwerk."
+        status: draft
+      ar:
+        text: "يُمنح BAföG (المساعدة الفيدرالية للدراسة) للأجانب الذين لديهم أفق إقامة دائمة ومندمجون اجتماعيًا (مثل حق الإقامة الدائمة أو رخصة الاستقرار): والتأشيرة الدراسية وحدها ليست ضمن هذه القائمة، فالمساعدة غير متاحة عمومًا عند الوصول. اسألوا Studierendenwerk."
+        status: draft
 note:
   fr:
     text: "Le baccalauréat seul ne permet pas d'étudier directement en Allemagne : il donne accès au Studienkolleg (année préparatoire) et à l'examen d'aptitude (Feststellungsprüfung). Une année d'études universitaires réussie au Maroc peut ouvrir l'accès direct à une filière apparentée."
@@ -39,3 +53,6 @@ sources:
   daad:
     url: https://www.daad.de/app/bsa/pdf/long/152/current/
     last_verified_at: 2026-10-01
+  bafoeg:
+    url: https://www.xn--bafg-7qa.de/bafoeg/de/das-bafoeg-alle-infos-auf-einen-blick/_documents/bafoeg-auch-ohne-deutschen-pass.html
+    last_verified_at: 2026-10-05

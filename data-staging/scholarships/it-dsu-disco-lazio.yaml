@@ -1,0 +1,102 @@
+slug: it-dsu-disco-lazio
+name: Borsa di studio DiSCo Lazio
+provider: Lazio DiSCo - Ente regionale per il diritto allo studio e la promozione della conoscenza
+destinations:
+  - IT
+eligibleNationalities: []
+fields: []
+institutions:
+  - it-cassino-cassino
+  - it-roma-biomedico-roma
+  - it-roma-la-sapienza-rieti
+  - it-roma-la-sapienza-roma
+  - it-roma-luiss-roma
+  - it-roma-tor-vergata-roma
+level: bachelor
+summary:
+  fr:
+    text: Bourse régionale gérée par Lazio DiSCo pour les étudiants des universités du Latium, y compris les étudiants internationaux dont la famille vit à l'étranger, évalués par un ISEEUP (ISEE parificato).
+    status: draft
+  en:
+    text: Regional scholarship managed by Lazio DiSCo for students at universities in Lazio, including international students whose families live abroad, assessed through an ISEEUP (ISEE parificato).
+    status: draft
+support:
+  value:
+    amount: null
+    covers:
+      - housing
+  source: page-2
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-2
+  info_kind: official
+  rules: []
+documents:
+  value:
+    - slug: consular-income-documents
+      name:
+        fr:
+          text: Documents des autorités diplomatiques ou consulaires italiennes (famille, revenus, patrimoine)
+          status: draft
+        en:
+          text: Documents issued by Italian diplomatic or consular authorities (household, income, assets)
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
+howToApply:
+  fr:
+    text: Demande uniquement en ligne depuis l'espace personnel sur laziodisco.it ; les étudiants dont la famille est à l'étranger fournissent des documents consulaires traduits en italien et légalisés.
+    status: draft
+  en:
+    text: Apply only through the online form in your personal account at laziodisco.it; students whose families are abroad provide consular documents translated into Italian and legalised.
+    status: draft
+officialUrl: https://laziodisco.it/bando-diritto-allo-studio-2026-2027/faq-studenti-internazionali/
+sources:
+  page-1:
+    url: https://laziodisco.it/bando-diritto-allo-studio-2026-2027/faq-studenti-internazionali/
+    last_verified_at: null
+  page-2:
+    url: https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-ENG-26-27.pdf
+    last_verified_at: null
+_review:
+  kind: scholarships
+  slug: it-dsu-disco-lazio
+  name: Borsa di studio DiSCo Lazio
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  officialUrl: https://laziodisco.it/bando-diritto-allo-studio-2026-2027/faq-studenti-internazionali/
+  evidence:
+    - fact: eligibility
+      url: https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-ENG-26-27.pdf
+      quote: The economic situation of international students (with families not residing in Italy), and of Italian students residing abroad is defined through the Equalized Indicator of the Equivalent Economic Situation abroad
+    - fact: eligibility
+      url: https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-ENG-26-27.pdf
+      quote: to ensure balanced access to the scholarship by both EU and non-EU students
+    - fact: level
+      url: https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-26-27-con-EC.pdf
+      quote: matricole dei corsi di laurea di primo livello
+    - fact: howToApply
+      url: https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-ENG-26-27.pdf
+      quote: applications must be filed exclusively through the online form accessible from the student’s personal account at www.laziodisco.it
+    - fact: howToApply
+      url: https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-ENG-26-27.pdf
+      quote: International students with exclusively an identity document issued by foreign authorities (Passport)
+    - fact: howToApply
+      url: https://laziodisco.it/bando-diritto-allo-studio-2026-2027/faq-studenti-internazionali/
+      quote: Devi presentare la documentazione rilasciata dalle autorità diplomatiche o consolari italiane nel tuo Paese d’origine, che deve essere obbligatoriamente tradotta in italiano e legalizzata/apostillata.
+    - fact: howToApply
+      url: https://laziodisco.it/bando-diritto-allo-studio-2026-2027/faq-studenti-internazionali/
+      quote: L’ISEEUP è l’Indicatore della Situazione Economica Equivalente Parificato. Sostituisce l’ISEE per il diritto allo studio se il tuo nucelo familiare risiede o ha redditi in un paese diverso dall’Italia.
+    - fact: support
+      url: https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-ENG-26-27.pdf
+      quote: Accommodation places at DiSCo’s university Residences, under Annex G
+    - fact: documents
+      url: https://laziodisco.it/bando-diritto-allo-studio-2026-2027/faq-studenti-internazionali/
+      quote: Devi presentare la documentazione rilasciata dalle autorità diplomatiche o consolari italiane nel tuo Paese d’origine, che deve essere obbligatoriamente tradotta in italiano e legalizzata/apostillata.
+  todo: "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"

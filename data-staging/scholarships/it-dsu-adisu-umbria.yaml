@@ -1,0 +1,79 @@
+slug: it-dsu-adisu-umbria
+name: Borsa di studio ADiSU (Umbria)
+provider: A.Di.S.U. - Agenzia per il Diritto allo Studio Universitario dell'Umbria
+destinations:
+  - IT
+eligibleNationalities: []
+fields: []
+institutions:
+  - it-perugia-perugia
+level: bachelor
+summary:
+  fr:
+    text: Bourse régionale d'aide aux études gérée par l'ADiSU pour les étudiants inscrits dans les universités de l'Ombrie. Les étudiants étrangers complètent la demande avec les documents sur les revenus et les biens à l'étranger.
+    status: draft
+  en:
+    text: Regional right-to-study grant managed by ADiSU for students enrolled at universities in Umbria. Foreign students complete the application with documents on income and assets held abroad.
+    status: draft
+support:
+  value: null
+  source: page-1
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-2
+  info_kind: official
+  rules: []
+documents:
+  value:
+    - slug: foreign-income-and-assets-documents
+      name:
+        fr:
+          text: Documents sur les revenus et les biens à l'étranger
+          status: draft
+        en:
+          text: Documents on income and assets held abroad
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+howToApply:
+  fr:
+    text: Déposer la demande en ligne sur le portail de l'ADiSU (Area studenti). Les étudiants étrangers joignent aussi les documents sur les revenus et les biens à l'étranger.
+    status: draft
+  en:
+    text: Apply online through the ADiSU student portal (Area studenti). Foreign students also upload the documents on income and assets held abroad.
+    status: draft
+officialUrl: https://www.adisu.umbria.it/concorso-borsa-di-studio/bando/2026-2027/bando-di-concorso-lassegnazione-di-borse-di-studio-e-altri
+sources:
+  page-1:
+    url: https://www.adisu.umbria.it/concorso-borsa-di-studio/bando/2026-2027/bando-di-concorso-lassegnazione-di-borse-di-studio-e-altri
+    last_verified_at: null
+  page-2:
+    url: https://www.adisu.umbria.it/sites/default/files/2026-07/Bando_borse_di_studio_Adisu_2026_2027_1.pdf
+    last_verified_at: null
+_review:
+  kind: scholarships
+  slug: it-dsu-adisu-umbria
+  name: Borsa di studio ADiSU (Umbria)
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  officialUrl: https://www.adisu.umbria.it/concorso-borsa-di-studio/bando/2026-2027/bando-di-concorso-lassegnazione-di-borse-di-studio-e-altri
+  evidence:
+    - fact: eligibility
+      url: https://www.adisu.umbria.it/sites/default/files/2026-07/Bando_borse_di_studio_Adisu_2026_2027_1.pdf
+      quote: Gli studenti stranieri devono integrare l’istanza di borsa di studio presentando la documentazione attestante i redditi e i patrimoni prodotti e posseduti all’estero
+    - fact: level
+      url: https://www.adisu.umbria.it/sites/default/files/2026-07/Bando_borse_di_studio_Adisu_2026_2027_1.pdf
+      quote: "CORSI DI STUDIO: 1) corsi di laurea;"
+    - fact: howToApply
+      url: https://www.adisu.umbria.it/concorso-borsa-di-studio/bando/2026-2027/bando-di-concorso-lassegnazione-di-borse-di-studio-e-altri
+      quote: È possibile presentare domanda per i benefici a concorso e per i servizi a pagamento esclusivamente tramite le apposite istanze digitali disponibili sul portale dell’Agenzia all’indirizzo www.adisu.umbria.it nella sezione Area studenti
+    - fact: documents
+      url: https://www.adisu.umbria.it/sites/default/files/2026-07/Bando_borse_di_studio_Adisu_2026_2027_1.pdf
+      quote: Gli studenti stranieri devono integrare l’istanza di borsa di studio presentando la documentazione attestante i redditi e i patrimoni prodotti e posseduti all’estero
+  todo: "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
