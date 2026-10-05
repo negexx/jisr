@@ -1,0 +1,53 @@
+slug: it-roma-luiss-roma-economics-and-business-l33
+institution: it-roma-luiss-roma
+country: IT
+city: roma
+field: business-economics
+level: bachelor
+name: Economics and Business
+summary:
+  fr:
+    text: Economics and Business, Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma (Roma). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics and Business, Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma (Roma). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Economics and Business, Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma (Roma). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/economics-and-business
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.luiss.it/en/courses-and-masters-programmes/undergraduate-school/economics-and-business
+    last_verified_at: 2026-10-05

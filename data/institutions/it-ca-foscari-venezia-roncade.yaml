@@ -1,0 +1,14 @@
+slug: it-ca-foscari-venezia-roncade
+name: Università Ca' Foscari Venezia
+country: IT
+city:
+  slug: roncade
+  name: Roncade
+type: public
+website: https://www.unive.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unive.it/
+    last_verified_at: 2026-10-05

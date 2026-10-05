@@ -1,0 +1,49 @@
+slug: it-dsu-unimi
+name: Borsa di studio regionale (Università degli Studi di Milano)
+provider: Università degli Studi di Milano (borse di studio regionali, diritto allo studio)
+destinations:
+  - IT
+eligibleNationalities: []
+fields: []
+institutions:
+  - it-milano-milano
+level: bachelor
+summary:
+  fr:
+    text: Bourse régionale pour le droit aux études de l'Université de Milan, pour ses étudiants en licence. Les étudiants étrangers dont la famille vit à l'étranger fournissent des documents spécifiques pour le calcul d'un ISEE équivalent.
+    status: draft
+  en:
+    text: Regional right-to-study scholarship of the University of Milan for its bachelor's students. Foreign students with a family unit abroad provide specific documentation for the calculation of an equated ISEE.
+    status: draft
+support:
+  value: null
+  source: page-1
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-2
+  info_kind: official
+  rules: []
+documents:
+  value: null
+  source: page-1
+  info_kind: official
+howToApply:
+  fr:
+    text: Candidature en ligne sur le portail du droit aux études de l'Université de Milan.
+    status: draft
+  en:
+    text: Apply online through the University of Milan's right-to-study portal.
+    status: draft
+officialUrl: https://www.unimi.it/it/studiare/borse-premi-mense-e-alloggi/borse-di-studio-regionali
+sources:
+  page-1:
+    url: https://www.unimi.it/it/studiare/borse-premi-mense-e-alloggi/borse-di-studio-regionali
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unimi.it/sites/default/files/2026-07/Summary%20of%20the%20Call%20for%20Applications%20A.Y.%202026-27.pdf
+    last_verified_at: 2026-10-05

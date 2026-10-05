@@ -1,0 +1,14 @@
+slug: it-casamassima-lum-g-degennaro-casamassima
+name: Libera Università Mediterranea "Giuseppe Degennaro"
+country: IT
+city:
+  slug: casamassima
+  name: Casamassima
+type: private
+website: https://lum.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://lum.it/
+    last_verified_at: 2026-10-05

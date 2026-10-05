@@ -1,0 +1,86 @@
+slug: it-ca-foscari-venezia-venezia-business-administration-and-management-l18
+institution: it-ca-foscari-venezia-venezia
+country: IT
+city: venezia
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, Università Ca' Foscari Venezia (Venezia). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Business Administration and Management, Università Ca' Foscari Venezia (Venezia). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Business Administration and Management, Università Ca' Foscari Venezia (Venezia). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unive.it/web/en/12483/home
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le niveau et les exigences du certificat de langue anglaise et/ou italienne sont précisés sur la page web du cours spécifique ; vérifiez-les.
+          status: draft
+        en:
+          text: The level and requirements of the English and/or Italian language certificate are specified on the specific course web page; verify them.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les diplômes et certificats d'examens doivent être accompagnés d'une traduction professionnelle en italien ou en anglais si nécessaire.
+          status: draft
+        en:
+          text: Diplomas and exam certificates must be accompanied by a professional translation into Italian or English if necessary.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.unive.it/web/en/12483/home
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unive.it/pag/40975/
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://www.unive.it/pag/41325/
+    last_verified_at: 2026-10-05

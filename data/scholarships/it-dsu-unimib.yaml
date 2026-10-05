@@ -43,32 +43,7 @@ officialUrl: https://www.unimib.it/studiare/servizi-studenti-e-laureati/diritto-
 sources:
   page-1:
     url: https://www.unimib.it/studiare/servizi-studenti-e-laureati/diritto-allo-studio-contribuzione-studentesca-150-ore
-    last_verified_at: null
+    last_verified_at: 2026-10-05
   page-2:
     url: https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
-    last_verified_at: null
-_review:
-  kind: scholarships
-  slug: it-dsu-unimib
-  name: Borsa di studio regionale (Università di Milano-Bicocca)
-  preparedBy: assistant
-  notes: "The level quote is cut: the same sentence also names single-cycle master's degree, and a minimum high-school final grade applies to first-year applicants (see howToApply)."
-  preparedAt: 2026-10-05
-  officialUrl: https://www.unimib.it/studiare/servizi-studenti-e-laureati/diritto-allo-studio-contribuzione-studentesca-150-ore
-  evidence:
-    - fact: eligibility
-      url: https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
-      quote: students with citizenship of non-UE countries referred to in D.P.R. of August 31st 1999
-    - fact: level
-      url: https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
-      quote: To access the scholarship in the first year of Bachelor’s degree
-    - fact: howToApply
-      url: https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
-      quote: It is necessary to fill in the online application on the website https://unimib-ol.dirittoallostudio.it/
-    - fact: howToApply
-      url: https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
-      quote: Possible upload of the ISEE documents for students who are resident abroad
-    - fact: howToApply
-      url: https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
-      quote: a minimum value of the high school final grade is required
-  todo: "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+    last_verified_at: 2026-10-05

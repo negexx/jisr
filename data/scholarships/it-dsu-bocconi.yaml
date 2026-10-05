@@ -1,0 +1,61 @@
+slug: it-dsu-bocconi
+name: Borsa di studio ISU Bocconi (diritto allo studio, Lombardia)
+provider: Università Commerciale Luigi Bocconi - ISU Bocconi (borsa di studio regionale, diritto allo studio)
+destinations:
+  - IT
+eligibleNationalities: []
+fields: []
+institutions:
+  - it-milano-bocconi-milano
+level: bachelor
+summary:
+  fr:
+    text: Bourse régionale pour le droit aux études, gérée par l'Université Bocconi pour ses propres étudiants. Les étudiants non-UE dont la famille vit à l'étranger passent par un ISEEU parificato délivré par le CAF partenaire de Bocconi.
+    status: draft
+  en:
+    text: Regional right-to-study scholarship managed by Bocconi University for its own students. Non-EU students whose family lives abroad use an ISEEU parificato certificate issued by the CAF partnered with Bocconi.
+    status: draft
+support:
+  value:
+    amount: null
+    covers:
+      - living
+  source: page-2
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-2
+  info_kind: official
+  rules: []
+documents:
+  value:
+    - slug: iseeu-parificato-certificate
+      name:
+        fr:
+          text: Certificat ISEEU parificato (famille résidant à l'étranger)
+          status: draft
+        en:
+          text: ISEEU parificato certificate (family household resident abroad)
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+howToApply:
+  fr:
+    text: Obtenir l'ISEEU parificato auprès du CAF partenaire de Bocconi, puis déposer la demande en ligne via le lien publié sur la page de l'université pendant la période de candidature, avec les documents justificatifs.
+    status: draft
+  en:
+    text: Get the ISEEU parificato from the CAF partnered with Bocconi, then submit the online application through the link published on the university page during the application period, uploading the supporting documents.
+    status: draft
+officialUrl: https://www.unibocconi.it/en/current-students/funding/isu-bocconi-scholarship-first-year-students-ay-2026-27
+sources:
+  page-1:
+    url: https://www.unibocconi.it/en/current-students/funding/isu-bocconi-scholarship-first-year-students-ay-2026-27
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unibocconi.it/sites/default/files/media/attachments/a.y.%202026-2027_%20FINAL%20ISU%20Bocconi%20Scholarships%20Application%20Requirement%20and%20Regulations_0.pdf
+    last_verified_at: 2026-10-05
