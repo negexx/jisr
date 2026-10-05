@@ -86,7 +86,7 @@ Deeper notes: `.claude/docs/architecture.md` (data access boundary, no-Zod rule,
 - `src/domain` imports nothing from React, Next, `src/db`, `src/lib`, `fs` or the network (Biome `noRestrictedImports` override); time is passed in as an argument.
 - Zod-validate every Server Action, route handler, form input and data file; re-check the session inside each action.
 - Migrations only via drizzle-kit; never `drizzle-kit push` against a shared database.
-- Money = integer minor units + ISO currency code; estimates are `{min, max}` ranges, never a single promised number.
+- Money = integer minor units + ISO currency code; estimates are `{min, max}` ranges, never a single promised number. Digits are pinned per currency in `src/lib/format.ts` (HUF is whole forints). Living-cost profiles come from Numbeo (`pnpm data:costs`, crowdsourced `estimate`s; permission and credit in `data/README.md`).
 - Every fact in `data/` has `source_url`, `info_kind` (`official | estimate | guidance`) and `last_verified_at`; the build fails without them.
 - Staleness (ADR 0004; constants in `src/data-schema/staleness.ts`): volatile facts (deadlines, fees, scholarship amounts) are aging at 120 days, stale at 270; stable facts (requirements, routes, cost estimates, descriptions) aging 270, stale 545. Stale data never yields ✅ or ❌, only ⚠️.
 - Short text is a `LocalizedText` map (`fr` required, `en`/`ar` optional, per-locale `draft|reviewed` status); long-form guides are MDX in `content/<locale>/`.
