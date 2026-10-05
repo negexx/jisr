@@ -275,6 +275,13 @@ describe("buildItalyRecords", () => {
     expect(inst?.data.website).toBe("https://www.unibo.it/");
     expect(inst?.data.info_kind).toBe("TODO_read_source");
     expect(inst?.review.todo).toMatch(/Candidate .* https:\/\/www\.unibo\.it\/ \(not confirmed\)/);
+    const sub = buildItalyRecords(
+      parseMurOffer(offer(row())),
+      atenei,
+      new Map([["03701", "https://apply.unibo.it/"]]),
+    ).records;
+    expect(institutions(sub)[0]?.review.todo).toMatch(/sub-site/);
+    expect(inst?.review.todo).not.toMatch(/sub-site/);
     const [none] = institutions(build(row()).records);
     expect(none?.data.website).toBeNull();
     expect(none?.review.todo).toMatch(/No candidate was found/);

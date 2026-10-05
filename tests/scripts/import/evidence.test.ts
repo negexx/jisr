@@ -90,12 +90,16 @@ describe("checkLanguages", () => {
     expect(checkLanguages(["it"], "Language of instruction: English").ok).toBe(false);
     expect(checkLanguages(["it"], "The programme is taught in Italian").ok).toBe(true);
     expect(checkLanguages(["it"], "Corso erogato in lingua italiana").ok).toBe(true);
+    expect(checkLanguages(["it"], "Cours dispensés en italien").ok).toBe(true);
+    expect(checkLanguages(["it"], "Unterrichtssprache: Italienisch").ok).toBe(true);
     // "Italian" in the sense of nationality or place is not the teaching language
     for (const quote of [
       "Taught in English; open to Italian and international students",
       "Taught in English at one of the best Italian universities",
       "Tuition fees for Italian citizens and EU students",
       "Italian language courses are offered to all students",
+      "Le diplôme italien est reconnu",
+      "Das italienische Studiensystem",
     ])
       expect(checkLanguages(["it"], quote).ok).toBe(false);
     expect(
@@ -422,6 +426,9 @@ describe("checkChannel", () => {
       "Italian applicants apply through the national system",
       "EU students and non-EU students legally residing in Italy apply online through the university's application portal",
       "Italian and EU citizens apply via the online application system",
+      "Italian nationals apply through the university's application portal",
+      "Candidates already living in Italy use the online application system",
+      "EEA applicants apply online on the application portal",
     ])
       expect(checkChannel("it-university-direct", quote).ok).toBe(false);
     expect(

@@ -141,6 +141,13 @@ function tidyName(name: string): string {
     .join(" ");
 }
 
+// "https://apply.unipv.eu/" is an admissions portal, not the home page: a host that is neither the
+// bare domain nor www.
+const isSubSite = (url: string): boolean => {
+  const labels = new URL(url).hostname.split(".");
+  return labels.length > 2 && labels[0] !== "www";
+};
+
 const DISTANCE_MODES = new Set(["Teledidattica", "Prevalentemente a distanza"]);
 
 export type ItalyReport = {
@@ -245,7 +252,7 @@ export function buildItalyRecords(
           source: "mur",
           sourceUrl: DATASET,
           sourceId: `mur-institution:${ateneo.code}@${slugify(city)}`,
-          todo: `university ${ateneo.code} in the MUR list (${ateneo.statale ? "state" : "non-state"}, region ${ateneo.region}): the list gives no website. ${candidate === null ? "No candidate was found" : `Candidate from the international students portal contacts table: ${candidate} (not confirmed)`}. Check the university's home page names it (an English page that does), that it is a recognised Italian university, add its page as the source, then info_kind: official`,
+          todo: `university ${ateneo.code} in the MUR list (${ateneo.statale ? "state" : "non-state"}, region ${ateneo.region}): the list gives no website. ${candidate === null ? "No candidate was found" : `Candidate from the international students portal contacts table: ${candidate} (not confirmed${isSubSite(candidate) ? "; it is a sub-site such as admissions or international: use the university's main home page as the website" : ""})`}. Check the university's home page names it (an English page that does), that it is a recognised Italian university, add its page as the source, then info_kind: official`,
         }),
       );
     }

@@ -218,7 +218,7 @@ const LANGUAGE_WORDS: Record<string, RegExp> = {
   hu: /hungarian|hongrois|ungarisch|hongaars|magyar/i,
   // "Italian" as the language the course is taught in, not as a nationality ("Italian students") or
   // a place ("Italian universities") or a language course
-  it: /(?:taught|delivered|offered|held|given|conducted|provided|instruction|lessons|classes|lectures|courses?|programme|program|degree)\s+(?:entirely |fully |mainly |partly |also )?in\s+italian\b(?!\s+(?:universit|cit|institution|school|student))|\blanguage(?: of instruction| of teaching)?\s*:?\s*italian\b|\blingua(?: di erogazione| del corso| di insegnamento)?\s*:?\s*italian[oa]?\b|in lingua italiana|italian[- ]taught|\bitalien\b|\bitalienisch|\bitaliaans/i,
+  it: /(?:taught|delivered|offered|held|given|conducted|provided|instruction|lessons|classes|lectures|courses?|programme|program|degree)\s+(?:entirely |fully |mainly |partly |also )?in\s+italian\b(?!\s+(?:universit|cit|institution|school|student))|\blanguage(?: of instruction| of teaching)?\s*:?\s*italian\b|\blingua(?: di erogazione| del corso| di insegnamento)?\s*:?\s*italian[oa]?\b|in lingua italiana|italian[- ]taught|(?:enseign|dispens|donn|dispos)[ée]e?s?\s+en\s+italien\b|\blangue(?: d'enseignement)?\s*:?\s*(?:en\s+)?italien\b|in italienischer sprache|\b(?:unterrichts|studien)?sprache\s*:?\s*italienisch|\b(?:voertaal|taal)\s*:?\s*(?:het\s+)?italiaans/i,
 };
 
 function numberRegex(n: number): string {
@@ -502,7 +502,7 @@ const CHANNEL_EXCLUDES: Record<string, RegExp> = {
   // Universitaly is the other channel; a quote about EU, Italian or Italy-resident applicants is
   // not about a Moroccan applicant living abroad ("non-EU" is fine)
   "it-university-direct":
-    /universitaly|(?<!non[- ])\bEU\b|italian (?:citizens|students|applicants)|(?:legally )?resid(?:ing|ent)s? in italy|comunitari/i,
+    /universitaly|(?<!non[- ])\bEU\b|italian (?:citizens|students|applicants)|(?:legally )?resid(?:ing|ent)s? in italy|\bEEA\b|italian (?:nationals|residents)|(?:living|already) in italy|cittadini italiani|comunitari/i,
 };
 
 export function checkChannel(slug: string, quote: string): FactCheck {
