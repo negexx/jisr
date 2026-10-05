@@ -5,6 +5,8 @@ import path from "node:path";
 
 import { parse } from "yaml";
 
+import { minorUnitDigits } from "@/lib/format";
+
 import { parseCsv, STAGING_DIR, stageFile } from "./staging";
 
 // Records prepared by the assistant are verified by code (quotes re-checked against the pages), but
@@ -149,6 +151,20 @@ const show = (v: unknown): string => (typeof v === "string" ? v : JSON.stringify
 
 const PROSE_CLAIMS: readonly string[] = ["eligibility", "level", "howToApply"];
 
+// Staged money is integer minor units; the owner compares against Numbeo's figures in major units.
+function majorRange(value: Loose): string {
+  const { min, max, currency, per } = value;
+  if (typeof min !== "number" || typeof max !== "number" || typeof currency !== "string")
+    return show(value);
+  const digits = minorUnitDigits(currency);
+  const numbers = new Intl.NumberFormat("en", {
+    minimumFractionDigits: digits,
+    maximumFractionDigits: digits,
+  });
+  const major = (minor: number) => numbers.format(minor / 10 ** digits);
+  return `${major(min)} to ${major(max)} ${currency} per ${show(per)}`;
+}
+
 // One readable page per sampled record: what is claimed, the exact quote and page behind it, and
 // the preparer's own caveats, so the reader checks the quotes instead of reading raw YAML.
 export function sampleSheet(
@@ -205,6 +221,26 @@ export function sampleSheet(
           `- **eligibleNationalities ${show(e.fact).slice("nationality:".length)}** named by: "${show(e.quote)}" — ${show(e.url)}`,
         );
       }
+    }
+    if (key.startsWith("cost-profiles/")) {
+      for (const [lineName, rawLine] of Object.entries(asObject(r.lines))) {
+        const costLine = asObject(rawLine);
+        const value = asObject(costLine.value);
+        out.push(
+          `- **${lineName}**: \`${majorRange(value)}\` (${show(costLine.info_kind)}; source ${show(costLine.source)})`,
+        );
+        // one line per Numbeo row: the food basket quote joins its rows with "; "
+        for (const e of evidence.filter((x) => x.fact === `lines.${lineName}`)) {
+          for (const part of show(e.quote).split("; ")) out.push(`  - "${part}" — ${show(e.url)}`);
+        }
+        const basis = asObject(asObject(costLine.basis).en);
+        if (typeof basis.text === "string") out.push(`  - formula: ${basis.text}`);
+      }
+      const numbeoUrl = asObject(asObject(r.sources).numbeo).url;
+      if (numbeoUrl !== undefined) out.push(`- **page**: ${show(numbeoUrl)}`);
+      out.push(
+        "- **page check**: Confirm: this is the city's page (right city, right currency, right date).",
+      );
     }
     for (const fact of [
       "durationYears",
