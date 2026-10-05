@@ -34,10 +34,10 @@ documents:
   info_kind: official
 howToApply:
   fr:
-    text: Candidature en ligne sur le portail du droit aux études de l'Université ; les étudiants résidant à l'étranger peuvent téléverser leurs documents pour l'ISEE.
+    text: Candidature en ligne sur le portail du droit aux études de l'Université ; les étudiants résidant à l'étranger peuvent téléverser leurs documents pour l'ISEE. Pour accéder à la bourse en première année, une note minimale au diplôme de fin d'études secondaires est exigée.
     status: draft
   en:
-    text: Apply online on the University's right-to-study portal; students resident abroad can upload their ISEE documents.
+    text: Apply online on the University's right-to-study portal; students resident abroad can upload their ISEE documents. To access the scholarship in the first year, a minimum high-school final grade is required.
     status: draft
 officialUrl: https://www.unimib.it/studiare/servizi-studenti-e-laureati/diritto-allo-studio-contribuzione-studentesca-150-ore
 sources:
@@ -52,6 +52,7 @@ _review:
   slug: it-dsu-unimib
   name: Borsa di studio regionale (Università di Milano-Bicocca)
   preparedBy: assistant
+  notes: "The level quote is cut: the same sentence also names single-cycle master's degree, and a minimum high-school final grade applies to first-year applicants (see howToApply)."
   preparedAt: 2026-10-05
   officialUrl: https://www.unimib.it/studiare/servizi-studenti-e-laureati/diritto-allo-studio-contribuzione-studentesca-150-ore
   evidence:
@@ -66,8 +67,8 @@ _review:
       quote: It is necessary to fill in the online application on the website https://unimib-ol.dirittoallostudio.it/
     - fact: howToApply
       url: https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
-      quote: International students who are not yet in possession of an Italian fiscal code
+      quote: Possible upload of the ISEE documents for students who are resident abroad
     - fact: howToApply
       url: https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
-      quote: Possible upload of the ISEE documents for students who are resident abroad
+      quote: a minimum value of the high school final grade is required
   todo: "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"

@@ -14,7 +14,7 @@ import {
 const HOME = "https://grants.example/any";
 const pages: Record<string, string> = {
   [HOME]:
-    "First- and higher-semester students of all nationalities can apply directly to their university. Students from every country may apply. Grundsätzlich ist jedes Studium an einer staatlichen oder staatlich anerkannten Hochschule förderungsfähig. Every course of study at a state university is eligible for funding. Also zum Beispiel auch ein Zweit- oder Ergänzungsstudium, ein Masterstudiengang oder ein duales Studium. Master programmes are eligible for funding. Studierende aller Nationalitäten und aller Fachrichtungen können sich bewerben. Students of all nationalities are not eligible for this grant. It pays 300 euros per month. Apply at your university. enrolling full-time in bachelor's degree courses. To access the scholarship in the first year of Bachelor’s degree. Students enrolled in bachelor's degree courses. Applicants must hold a Bachelor's degree. Open to holders of Bachelor's degree. For those who finished a Bachelor's degree. Enrolling in bachelor's degree courses and master's degree courses. After a Bachelor's degree. Open to students of all nationalities except Moroccan citizens. Nicht jedes Studium ist förderungsfähig. Not every course of study is eligible for funding. Every course of study is eligible only after the first degree.",
+    "First- and higher-semester students of all nationalities can apply directly to their university. Students from every country may apply. Grundsätzlich ist jedes Studium an einer staatlichen oder staatlich anerkannten Hochschule förderungsfähig. Every course of study at a state university is eligible for funding. Also zum Beispiel auch ein Zweit- oder Ergänzungsstudium, ein Masterstudiengang oder ein duales Studium. Master programmes are eligible for funding. Studierende aller Nationalitäten und aller Fachrichtungen können sich bewerben. Students of all nationalities are not eligible for this grant. It pays 300 euros per month. Apply at your university. enrolling full-time in bachelor's degree courses. To access the scholarship in the first year of Bachelor’s degree. Students enrolled in bachelor's degree courses. Applicants must hold a Bachelor's degree. Open to holders of Bachelor's degree. For those who finished a Bachelor's degree. Enrolling in bachelor's degree courses and master's degree courses. After a Bachelor's degree. In possession of the bachelor's degree. Students in possession of the title of bachelor's degree. Upon completion of the bachelor's degree. At the end of the bachelor's degree. Recent graduates in bachelor's degree. Graduated in bachelor's degree. Students who graduated in the bachelor's degree. Graduating in bachelor's degree by 31 July. Students who achieved the title of bachelor's degree. A diploma of bachelor's degree. The final year of bachelor's degree. Students in the last year of bachelor's degree. Copy of bachelor's degree. Transcript of bachelor's degree. Students already holding a degree enrolled in bachelor's degree courses. Students holding a degree. Open to students of all nationalities except Moroccan citizens. Nicht jedes Studium ist förderungsfähig. Not every course of study is eligible for funding. Every course of study is eligible only after the first degree.",
 };
 const getText = async (url: string) => {
   const text = pages[url];
@@ -120,6 +120,22 @@ describe("in bachelor's degree courses", () => {
     "for those who finished a Bachelor's degree",
     "enrolling in bachelor's degree courses and master's degree courses",
     "after a Bachelor's degree",
+    "in possession of the bachelor's degree",
+    "students in possession of the title of bachelor's degree",
+    "upon completion of the bachelor's degree",
+    "at the end of the bachelor's degree",
+    "recent graduates in bachelor's degree",
+    "graduated in bachelor's degree",
+    "students who graduated in the bachelor's degree",
+    "graduating in bachelor's degree by 31 July",
+    "students who achieved the title of bachelor's degree",
+    "a diploma of bachelor's degree",
+    "the final year of bachelor's degree",
+    "students in the last year of bachelor's degree",
+    "copy of bachelor's degree",
+    "transcript of bachelor's degree",
+    "students already holding a degree enrolled in bachelor's degree courses",
+    "students holding a degree",
   ])("does not count when it is a prerequisite or mixed (%s)", async (quote) => {
     expect((await level(quote)).ok).toBe(false);
   });

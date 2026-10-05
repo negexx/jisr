@@ -109,6 +109,12 @@ const BACHELOR_PREREQUISITE: readonly RegExp[] = [
   /\b(?:after|finished|obtained|earned|completed)\s+(?:their\s+|a\s+|an\s+)?bachelor/i,
   // "a bachelor's or master's degree is required": a prerequisite even when both are named
   /\bmaster['’]?s?(?:\s+degree)?\s+(?:holders?|required|is required|is needed|needed)\b/i,
+  // possessing, completing or graduating in a bachelor's degree ("in possession of the title of
+  // bachelor's degree", "upon completion of", "graduated in", "the final year of")
+  /\b(?:in\s+possession\s+of|possess(?:ing|es)?|completion\s+of|graduat\w*\s+(?:in|from)|title\s+of|diploma\s+of|(?:final|last)\s+year\s+of|end\s+of|achieved)\s+(?:an?\s+|the\s+)?(?:title\s+of\s+)?bachelor/i,
+  /\bgraduat\w*\s+in\s+(?:an?\s+|the\s+)?bachelor/i,
+  // "holding a degree" (with no level named) is a degree holder too
+  /\bhold(?:s|ing|ers?)?\s+(?:an?\s+)?(?:\w+\s+)?degree\b/i,
   // Italian: "in possesso della laurea", "laureati", "dopo la laurea"
   /\bin possesso (?:della|del|di)\s+(?:diploma di\s+)?laurea/i,
   /\blaureat[oiae]\b/i,
@@ -162,9 +168,10 @@ const UNDERGRADUATE: readonly RegExp[] = [
   /\b(?:for|towards?|pursuing|enrolled in|start(?:ing)?|begin(?:ning)?|entering)\s+(?:an?\s+|the\s+|their\s+)?(?:first[- ]year\s+)?bachelor/i,
   /pour la licence|[ée]tudiants? en licence|premier cycle|cursus de licence/i,
   /\bbachelor-?studi(?:um|engang|e)\b|\bbachelorstudent/i,
-  // "in the first year of Bachelor's degree", "enrolling full-time in bachelor's degree courses":
-  // being IN a bachelor's degree (a prerequisite such as "hold a bachelor's degree" is caught first)
-  /\b(?:in|of)\s+(?:the\s+)?(?:first[- ]year\s+(?:of\s+)?)?bachelor['’]?s?\s+degree\b/i,
+  // "enrolling full-time in bachelor's degree courses": enrolment in the courses, not the title
+  /\b(?:enrol(?:l)?(?:ing|ed|s)?|enrol(?:l)?ment|registered|registering)\s+(?:full[- ]time\s+)?in\s+(?:an?\s+|the\s+)?bachelor['’]?s?\s+degree\s+(?:courses?|programmes?|programs?)\b/i,
+  // "in the first year of Bachelor's degree": the first year only, never a later stage or a title
+  /\bin\s+the\s+first[- ]year\s+of\s+(?:an?\s+|the\s+)?bachelor['’]?s?\s+degree\b/i,
   // a scheme open to every programme ("jedes Studium ist förderungsfähig", "every course of study
   // is eligible") covers the first degree; a quote that also names master is mixed and rejected
   /(?<!\bnicht\s)\bjedes studium\b[^.]{0,80}f[öo]rder(?:ungs)?f[äa]hig/i,

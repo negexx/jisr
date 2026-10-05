@@ -10,10 +10,10 @@ institutions:
 level: bachelor
 summary:
   fr:
-    text: Bourse pour le droit aux études gérée directement par l'Université de Brescia pour ses étudiants. Les étudiants étrangers dont les revenus sont à l'étranger demandent un ISEE équivalent (ISEE parificato) à un CAAF conventionné avec l'Université.
+    text: Bourse pour le droit aux études de l'Université de Brescia, pour ses étudiants. Les étudiants non résidents en Italie ou avec des revenus à l'étranger s'adressent à un CAAF conventionné avec l'Université.
     status: draft
   en:
-    text: Right-to-study scholarship managed directly by the University of Brescia for its own students. Foreign students with income abroad request an equivalent ISEE (ISEE parificato) from a CAAF affiliated with the University.
+    text: Right-to-study scholarship of the University of Brescia for its students. Students not resident in Italy or with income abroad go to a CAAF under agreement with the University.
     status: draft
 support:
   value: null
@@ -34,10 +34,10 @@ documents:
   info_kind: official
 howToApply:
   fr:
-    text: Demande en ligne sur le site de l'Université (Domanda servizi online), à confirmer avant la date limite de l'appel. Les étudiants hors d'Italie demandent l'ISEE parificato à un CAAF conventionné, avec des documents du pays des revenus traduits en italien.
+    text: Demande en ligne sur le site de l'Université, à confirmer avant la date limite de l'appel. Les étudiants avec des revenus hors d'Italie s'adressent à un CAAF conventionné, avec des documents du pays des revenus traduits en italien.
     status: draft
   en:
-    text: Apply online through the University website (Domanda servizi online) and confirm before the call's deadline. Students with income outside Italy request the ISEE parificato from an affiliated CAAF, using documents from the country of income translated into Italian.
+    text: Apply online through the University website and confirm before the call's deadline. Students with income outside Italy go to an affiliated CAAF, using documents from the country of income translated into Italian.
     status: draft
 officialUrl: https://www.unibs.it/it/Bando-borse-di-studio-DSU-e-servizi%20AA%202026-2027
 sources:
@@ -52,6 +52,7 @@ _review:
   slug: it-dsu-unibs
   name: Borsa di studio regionale DSU (Università di Brescia)
   preparedBy: assistant
+  notes: "The level quote is cut before 'e Corsi di Laurea Magistrale a Ciclo Unico': the call covers first-year triennale and single-cycle students."
   preparedAt: 2026-10-05
   officialUrl: https://www.unibs.it/it/Bando-borse-di-studio-DSU-e-servizi%20AA%202026-2027
   evidence:

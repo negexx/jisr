@@ -198,8 +198,8 @@ For each record: open the link, confirm the quote is there and that it supports 
 - **institutions**: `it-pavia-pavia`
 - **summary** (fr, draft): Bourse pour le droit aux études gérée par EDiSU Pavia pour les étudiants de l'Université de Pavie. Pour les étudiants étrangers dont la famille vit à l'étranger, la situation économique est calculée par un ISEE équivalent (ISEE parificato) à partir de documents du pays des revenus.
 - **summary** (en, draft): Right-to-study scholarship managed by EDiSU Pavia for students of the University of Pavia. For foreign students whose family lives abroad, the financial status is determined by an equivalent ISEE (ISEE parificato) based on documents from the country of income.
-- **howToApply** (fr, draft): Demande uniquement en ligne dans les « Services en ligne aux étudiants » d'EDiSU. Les étudiants avec des revenus à l'étranger joignent les documents en PDF puis remettent les originaux à EDiSU avant la date limite de l'appel.
-- **howToApply** (en, draft): Apply only online in EDiSU's Student Online Services. Students with income abroad attach the documents as PDF files and submit the originals to EDiSU by the call's deadline.
+- **howToApply** (fr, draft): Demande uniquement en ligne dans les « Services en ligne aux étudiants » d'EDiSU. Les étudiants avec des revenus à l'étranger joignent les documents en PDF puis remettent les originaux à EDiSU.
+- **howToApply** (en, draft): Apply only online in EDiSU's Student Online Services. Students with income abroad attach the documents as PDF files and submit the originals to EDiSU.
 - **provider site**: www.edisu.pv.it. Confirm: this is the provider's own site.
 - **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
 - **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
@@ -225,10 +225,10 @@ For each record: open the link, confirm the quote is there and that it supports 
 - **eligibleNationalities**: (any international applicant)
 - **fields**: ALL FIELDS
 - **institutions**: `it-brescia-brescia`
-- **summary** (fr, draft): Bourse pour le droit aux études gérée directement par l'Université de Brescia pour ses étudiants. Les étudiants étrangers dont les revenus sont à l'étranger demandent un ISEE équivalent (ISEE parificato) à un CAAF conventionné avec l'Université.
-- **summary** (en, draft): Right-to-study scholarship managed directly by the University of Brescia for its own students. Foreign students with income abroad request an equivalent ISEE (ISEE parificato) from a CAAF affiliated with the University.
-- **howToApply** (fr, draft): Demande en ligne sur le site de l'Université (Domanda servizi online), à confirmer avant la date limite de l'appel. Les étudiants hors d'Italie demandent l'ISEE parificato à un CAAF conventionné, avec des documents du pays des revenus traduits en italien.
-- **howToApply** (en, draft): Apply online through the University website (Domanda servizi online) and confirm before the call's deadline. Students with income outside Italy request the ISEE parificato from an affiliated CAAF, using documents from the country of income translated into Italian.
+- **summary** (fr, draft): Bourse pour le droit aux études de l'Université de Brescia, pour ses étudiants. Les étudiants non résidents en Italie ou avec des revenus à l'étranger s'adressent à un CAAF conventionné avec l'Université.
+- **summary** (en, draft): Right-to-study scholarship of the University of Brescia for its students. Students not resident in Italy or with income abroad go to a CAAF under agreement with the University.
+- **howToApply** (fr, draft): Demande en ligne sur le site de l'Université, à confirmer avant la date limite de l'appel. Les étudiants avec des revenus hors d'Italie s'adressent à un CAAF conventionné, avec des documents du pays des revenus traduits en italien.
+- **howToApply** (en, draft): Apply online through the University website and confirm before the call's deadline. Students with income outside Italy go to an affiliated CAAF, using documents from the country of income translated into Italian.
 - **provider site**: www.unibs.it. Confirm: this is the provider's own site.
 - **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
 - **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
@@ -242,6 +242,8 @@ For each record: open the link, confirm the quote is there and that it supports 
 - **howToApply**: "per i soggetti non residenti in Italia e/o con redditi e patrimoni in paesi diversi dall’Italia è necessario rivolgersi ad uno dei CAAF Convenzionati con l’Università degli Studi di Brescia" — https://www.unibs.it/sites/default/files/2026-07/Bando%20servizi%20DSU%2026-27%20prot..pdf
 - **howToApply**: "deve essere certificata con apposita documentazione rilasciata dalle competenti autorità del Paese in cui i redditi sono stati prodotti e deve essere tradotta in lingua italiana" — https://www.unibs.it/sites/default/files/2026-07/Bando%20servizi%20DSU%2026-27%20prot..pdf
 - **page**: https://www.unibs.it/it/Bando-borse-di-studio-DSU-e-servizi%20AA%202026-2027
+
+> Preparer's caveats: The level quote is cut before 'e Corsi di Laurea Magistrale a Ciclo Unico': the call covers first-year triennale and single-cycle students.
 
 ## scholarships/it-dsu-unimi  _(batch b28-beaa17)_
 
@@ -268,6 +270,8 @@ For each record: open the link, confirm the quote is there and that it supports 
 - **howToApply**: "specific documentation is required for the calculation of the equated ISEE" — https://www.unimi.it/sites/default/files/2026-07/Summary%20of%20the%20Call%20for%20Applications%20A.Y.%202026-27.pdf
 - **page**: https://www.unimi.it/it/studiare/borse-premi-mense-e-alloggi/borse-di-studio-regionali
 
+> Preparer's caveats: The level quote is cut: the same sentence on the page also lists single-cycle master's, master's, specialisation schools and PhD courses (the call covers all levels, bachelor included).
+
 ## scholarships/it-dsu-unimib  _(batch b28-beaa17)_
 
 **Borsa di studio regionale (Università di Milano-Bicocca)**
@@ -278,8 +282,8 @@ For each record: open the link, confirm the quote is there and that it supports 
 - **institutions**: `it-milano-bicocca-milano`
 - **summary** (fr, draft): Bourse du droit aux études de l'Université de Milan-Bicocca pour ses étudiants. Le concours est ouvert aux étudiants de pays hors UE ; ceux qui résident à l'étranger peuvent téléverser leurs documents pour l'ISEE.
 - **summary** (en, draft): Right-to-study scholarship of the University of Milano-Bicocca for its students. The contest is open to students from non-EU countries; students resident abroad can upload their documents for the ISEE.
-- **howToApply** (fr, draft): Candidature en ligne sur le portail du droit aux études de l'Université ; les étudiants résidant à l'étranger peuvent téléverser leurs documents pour l'ISEE.
-- **howToApply** (en, draft): Apply online on the University's right-to-study portal; students resident abroad can upload their ISEE documents.
+- **howToApply** (fr, draft): Candidature en ligne sur le portail du droit aux études de l'Université ; les étudiants résidant à l'étranger peuvent téléverser leurs documents pour l'ISEE. Pour accéder à la bourse en première année, une note minimale au diplôme de fin d'études secondaires est exigée.
+- **howToApply** (en, draft): Apply online on the University's right-to-study portal; students resident abroad can upload their ISEE documents. To access the scholarship in the first year, a minimum high-school final grade is required.
 - **provider site**: www.unimib.it. Confirm: this is the provider's own site.
 - **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
 - **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
@@ -288,7 +292,9 @@ For each record: open the link, confirm the quote is there and that it supports 
 - **eligibility**: "students with citizenship of non-UE countries referred to in D.P.R. of August 31st 1999" — https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
 - **level**: "To access the scholarship in the first year of Bachelor’s degree" — https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
 - **howToApply**: "It is necessary to fill in the online application on the website https://unimib-ol.dirittoallostudio.it/" — https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
-- **howToApply**: "International students who are not yet in possession of an Italian fiscal code" — https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
 - **howToApply**: "Possible upload of the ISEE documents for students who are resident abroad" — https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
+- **howToApply**: "a minimum value of the high school final grade is required" — https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
 - **page**: https://www.unimib.it/studiare/servizi-studenti-e-laureati/diritto-allo-studio-contribuzione-studentesca-150-ore
+
+> Preparer's caveats: The level quote is cut: the same sentence also names single-cycle master's degree, and a minimum high-school final grade applies to first-year applicants (see howToApply).
 
