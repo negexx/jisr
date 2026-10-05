@@ -255,6 +255,9 @@ export function buildProfile(input: {
   if (evidence.length === 0) return null;
   const notes = [
     `Numbeo page last update ${page.lastUpdate ?? "not stated"}; ${page.contributors ?? "unknown number of"} contributors; prices read in ${currency}.`,
+    page.lowContributorWarning
+      ? "Numbeo flags some data as estimated (low number of contributors)."
+      : "",
     missing.length === 0
       ? ""
       : `Not built (row missing, repeated or without a range): ${missing.join("; ")}.`,

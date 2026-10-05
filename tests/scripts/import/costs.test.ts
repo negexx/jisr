@@ -379,6 +379,33 @@ describe("buildProfile", () => {
     expect(build({ page: parseNumbeoPage("<html><body>nothing</body></html>") })).toBeNull();
   });
 
+  it("carries the low-contributor warning into the review notes, and not otherwise", () => {
+    const flagged = build({ page: { ...page, contributors: 7, lowContributorWarning: true } });
+    expect(flagged?._review.notes).toContain(
+      "Numbeo flags some data as estimated (low number of contributors)",
+    );
+    expect(build()?._review.notes).not.toContain("low number of contributors");
+  });
+
+  it("shows the review notes, warning included, in the audit sheet", () => {
+    const flagged = build({ page: { ...page, contributors: 7, lowContributorWarning: true } });
+    const sheet = sampleSheet([
+      {
+        key: "cost-profiles/fr-paris-numbeo",
+        row: {
+          key: "cost-profiles/fr-paris-numbeo",
+          batch: "b1",
+          inSample: true,
+          audited: "",
+          outcome: "",
+          notes: "",
+        },
+        record: flagged,
+      },
+    ]);
+    expect(sheet).toContain("Numbeo flags some data as estimated (low number of contributors)");
+  });
+
   it("uses the read date when the page states none", () => {
     const undated = build({ page: { ...page, lastUpdate: null, contributors: null } });
     expect(undated?.lines.housing?.basis?.en.text).toContain("read on 2026-10-05");

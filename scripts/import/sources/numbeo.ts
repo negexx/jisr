@@ -117,6 +117,8 @@ export type NumbeoRow = {
 export type NumbeoPage = {
   lastUpdate: string | null;
   contributors: number | null;
+  // The footer says "Some data are estimated due to a low number of contributors".
+  lowContributorWarning: boolean;
   // The h1 text after "Cost of Living in " ("Paris", "France", "Lyon, France"), as the page states it.
   place: string | null;
   // The text around the number in the first average cell ("€", "Ft"): the currency Numbeo showed.
@@ -181,9 +183,14 @@ function lastUpdateOf(html: string): string | null {
 }
 
 function contributorsOf(html: string): number | null {
-  const match = html.match(/by\s+([\d,]+)\s+different contributors/);
+  // "... entries in the past 12 months by 246 different contributors" (large pages) and
+  // "This city had 7 different contributors in the past 18 months" (small cities).
+  const match = html.match(/([\d,]+)\s+different contributors/);
   return match === null ? null : numberIn(match[1] ?? "");
 }
+
+const lowContributorWarningIn = (html: string): boolean =>
+  /estimated due to a low number of contributors/i.test(html);
 
 function placeOf(html: string): string | null {
   for (const heading of html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)) {
@@ -217,6 +224,7 @@ export function parseNumbeoPage(html: string): NumbeoPage {
   return {
     lastUpdate: lastUpdateOf(html),
     contributors: contributorsOf(html),
+    lowContributorWarning: lowContributorWarningIn(html),
     place: placeOf(html),
     currencySymbol: currencySymbolOf(table?.[1] ?? ""),
     rows,

@@ -42,6 +42,7 @@ const numbeoRow = (name: string, avg: number | null, low: number | null, high: n
 const pageOf = (rows: NumbeoRow[]): NumbeoPage => ({
   lastUpdate: null,
   contributors: null,
+  lowContributorWarning: false,
   place: null,
   currencySymbol: null,
   rows,
@@ -165,6 +166,20 @@ describe("parseNumbeoPage", () => {
     const parsed = parseNumbeoPage(page([], footer));
     expect(parsed.lastUpdate).toBe("2026-10-05");
     expect(parsed.contributors).toBe(981);
+  });
+
+  it("reads the contributors count of a small-city footer that has no 'entries ... by' wording", () => {
+    const footer =
+      "<div>This city had 7 different contributors in the past 18 months.  Some data are estimated due to a low number of contributors. If you are living here, please update our data . Last update: 18 April 2025</div>";
+    const parsed = parseNumbeoPage(page([], footer));
+    expect(parsed.contributors).toBe(7);
+    expect(parsed.lastUpdate).toBe("2025-04-18");
+    expect(parsed.lowContributorWarning).toBe(true);
+  });
+
+  it("has no low-contributor warning on a normal footer or no footer", () => {
+    expect(parseNumbeoPage(page([], FOOTER)).lowContributorWarning).toBe(false);
+    expect(parseNumbeoPage(page([])).lowContributorWarning).toBe(false);
   });
 
   it("zero-pads the day of the last update", () => {
