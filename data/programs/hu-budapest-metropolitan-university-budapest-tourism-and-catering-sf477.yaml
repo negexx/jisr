@@ -1,0 +1,112 @@
+slug: hu-budapest-metropolitan-university-budapest-tourism-and-catering-sf477
+institution: hu-budapest-metropolitan-university-budapest
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Tourism and Catering
+summary:
+  fr:
+    text: Tourism and Catering, Budapest Metropolitan University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Tourism and Catering, Budapest Metropolitan University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Tourism and Catering, Budapest Metropolitan University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.metubudapest.hu/programs/tourism-and-catering-bsc
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 350000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: High school / secondary education certificate
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'admission en ligne est obligatoire pour tous les candidats.
+          status: draft
+        en:
+          text: All applicants have to participate in an online admission interview.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un test de mathématiques en ligne fait partie de l'entretien d'admission (30 minutes, 10 questions à choix multiples).
+          status: draft
+        en:
+          text: Applicants are required to write an online mathematics test as part of the online admission interview.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Moyenne générale du secondaire supérieure à 50 % chaque année et à l'examen final.
+          status: draft
+        en:
+          text: "Completed secondary school studies GPA: above 50% - annually and in the final exam."
+          status: draft
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Pour les programmes BSc : note de mathématiques du secondaire supérieure à 60 %."
+          status: draft
+        en:
+          text: "For BSc programs: high school math grade above 60%."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.metubudapest.hu/programs/tourism-and-catering-bsc
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/477
+    last_verified_at: 2026-10-05

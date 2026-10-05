@@ -1,0 +1,14 @@
+slug: hu-eotvos-lorand-university-szombathely
+name: Eötvös Loránd University
+country: HU
+city:
+  slug: szombathely
+  name: Szombathely
+type: null
+website: https://www.elte.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.elte.hu/
+    last_verified_at: 2026-10-05

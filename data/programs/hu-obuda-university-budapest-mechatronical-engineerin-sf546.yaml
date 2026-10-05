@@ -1,0 +1,96 @@
+slug: hu-obuda-university-budapest-mechatronical-engineerin-sf546
+institution: hu-obuda-university-budapest
+country: HU
+city: budapest
+field: engineering
+level: bachelor
+name: Mechatronical Engineering
+summary:
+  fr:
+    text: Mechatronical Engineering, Obuda University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Mechatronical Engineering, Obuda University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Mechatronical Engineering, Obuda University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/546
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: high-school-documents
+      name:
+        fr:
+          text: Documents du secondaire
+          status: draft
+        en:
+          text: High school documents
+          status: draft
+      translationRequired: true
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un examen d'entrée est requis : épreuve écrite de mathématiques et de physique et entretien oral en anglais."
+          status: draft
+        en:
+          text: "An entrance examination is required: written Mathematics and Physics examination and an online English oral interview."
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les résultats scolaires sont évalués ; vérifiez les critères d'admission supplémentaires sur le site de l'université.
+          status: draft
+        en:
+          text: Academic results are evaluated; check additional admission criteria on the university website.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/546
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://uni-obuda.hu/application-deadlines/
+    last_verified_at: 2026-10-05

@@ -1,0 +1,73 @@
+slug: hu-university-of-miskolc-miskolc-materials-engineering-sf466
+institution: hu-university-of-miskolc-miskolc
+country: HU
+city: miskolc
+field: engineering
+level: bachelor
+name: Materials Engineering
+summary:
+  fr:
+    text: Materials Engineering, University of Miskolc (Miskolc). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Materials Engineering, University of Miskolc (Miskolc). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Materials Engineering, University of Miskolc (Miskolc). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/466
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: High School diploma
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'admission par Skype (15 minutes, examen oral) est requis ; vérifiez les modalités auprès de l'université.
+          status: draft
+        en:
+          text: An admission Skype interview (15-minute oral entrance examination) is required; check the details with the university.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/466
+    last_verified_at: 2026-10-05

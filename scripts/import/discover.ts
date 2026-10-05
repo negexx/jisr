@@ -224,6 +224,9 @@ export type RegisterInput = {
   name: string;
   fetchHtml?: (url: string) => Promise<string>;
   maxFetches?: number;
+  // Reads the programme page out of the register page when its link has no "course website" text
+  // (the Study Finder prints the URL as a "Contact website" row).
+  programmeLink?: (html: string) => string | null;
 };
 
 export async function discoverFromRegister(input: RegisterInput): Promise<Discovered> {
@@ -249,7 +252,8 @@ export async function discoverFromRegister(input: RegisterInput): Promise<Discov
   const external = extractLinks(page, input.registerUrl).filter(
     (l) => !sameSite(l.url, input.registerUrl),
   );
-  const programme = external.find((l) => COURSE_SITE.test(l.text))?.url ?? null;
+  const programme =
+    input.programmeLink?.(page) ?? external.find((l) => COURSE_SITE.test(l.text))?.url ?? null;
   // the institution's own links: same site as the programme page, else the most common site among the rest
   const anchor = programme ?? external[0]?.url ?? null;
   const pool = new Map<string, Link>();

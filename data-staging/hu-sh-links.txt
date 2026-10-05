@@ -1,0 +1,15 @@
+hu-budapest-university-of-technology-and-ec-budapest-chemical-engineering-sf42
+hu-budapest-university-of-technology-and-ec-budapest-civil-engineering-sf44
+hu-budapest-university-of-technology-and-ec-budapest-computer-science-enginee-sf41
+hu-budapest-university-of-technology-and-ec-budapest-electrical-engineering-sf45
+hu-budapest-university-of-technology-and-ec-budapest-engineering-management-sf79
+hu-budapest-university-of-technology-and-ec-budapest-mechanical-engineering-sf51
+hu-budapest-university-of-technology-and-ec-budapest-physicist-engineering-sf69
+hu-budapest-university-of-technology-and-ec-budapest-professional-pilot-sf77
+hu-szechenyi-istvan-university-gyor-business-administration-sf1052
+hu-szechenyi-istvan-university-gyor-business-informatics-sf1063
+hu-szechenyi-istvan-university-gyor-civil-engineering-sf1053
+hu-szechenyi-istvan-university-gyor-international-business-e-sf1058
+hu-szechenyi-istvan-university-gyor-logistics-engineering-sf1051
+hu-szechenyi-istvan-university-gyor-tourism-and-catering-sf1059
+hu-szechenyi-istvan-university-gyor-vehicle-engineering-sf1054

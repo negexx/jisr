@@ -1,0 +1,72 @@
+{
+  "slug": "hu-international-business-school-budapest-bachelor-of-science-in-b-sf363",
+  "programmePage": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-diplomacy-and-international-relations/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/363",
+          "quote": "Duration of the course / programme: 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/363",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.ibs-b.hu/en/how-to-apply/",
+          "quote": "You can apply only online by completing our online application form and uploading your documents."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary school leaving certificate"
+          },
+          "quotedAs": "Secondary school leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-diplomacy-and-international-relations/",
+          "quote": "• Secondary school leaving certificate AND • IELTS 6.0 or equivalent*"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition fee table on the fees page is institution-wide and lists Bachelor's degree programmes (University of Buckingham) and Bachelor's degree programmes (Dublin Business School) at EUR 4,000 per semester, but the quotes do not tie this amount specifically to the named programme, so no tuition was recorded. The application deadline quote gives a year (30 September 2026) but does not state it is for non-EU/international applicants, so it was recorded as a recurring deadline (month/day) rather than a dated applicationDeadline.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier l'équivalence du Baccalauréat marocain (certificat de fin d'études secondaires) et le niveau d'anglais requis (IELTS 6.0 ou équivalent).",
+          "en": "Check the equivalence of the Moroccan Baccalaureate (secondary school leaving certificate) and the required English level (IELTS 6.0 or equivalent)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-diplomacy-and-international-relations/",
+            "quote": "• Secondary school leaving certificate AND • IELTS 6.0 or equivalent*"
+          }
+        ]
+      }
+    ]
+  }
+}

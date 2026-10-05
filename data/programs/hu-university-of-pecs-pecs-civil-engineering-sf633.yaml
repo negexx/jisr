@@ -1,0 +1,145 @@
+slug: hu-university-of-pecs-pecs-civil-engineering-sf633
+institution: hu-university-of-pecs-pecs
+country: HU
+city: pecs
+field: engineering
+level: bachelor
+name: Civil Engineering
+summary:
+  fr:
+    text: Civil Engineering, University of Pécs (Pécs). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Civil Engineering, University of Pécs (Pécs). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Civil Engineering, University of Pécs (Pécs). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://english.mik.pte.hu/civil-engineering-bsc
+durationYears:
+  value: 4
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-3
+  info_kind: official
+documents:
+  value:
+    - slug: passport-sized-photo
+      name:
+        fr:
+          text: Photo format passeport
+          status: draft
+        en:
+          text: Passport sized photo
+          status: draft
+      translationRequired: null
+    - slug: passport-copy
+      name:
+        fr:
+          text: Copie de la page photo du passeport
+          status: draft
+        en:
+          text: Copy of the photo-page(s) of your passport
+          status: draft
+      translationRequired: null
+    - slug: high-school-diploma
+      name:
+        fr:
+          text: Diplôme d'études secondaires
+          status: draft
+        en:
+          text: High School Diploma
+          status: draft
+      translationRequired: null
+    - slug: transcript-of-records
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Transcript of Records
+          status: draft
+      translationRequired: null
+    - slug: medical-certificate
+      name:
+        fr:
+          text: Certificat médical
+          status: draft
+        en:
+          text: Medical Certificate
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum Vitae en anglais
+          status: draft
+        en:
+          text: Curriculum Vitae in English
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation Letter
+          status: draft
+      translationRequired: null
+    - slug: portfolio
+      name:
+        fr:
+          text: Portfolio
+          status: draft
+        en:
+          text: Portfolio
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien en ligne (oral) est requis dans le cadre de la procédure d'admission; préparez-vous à cet entretien.
+          status: draft
+        en:
+          text: An online interview (oral) is required as part of the admission process; prepare for this interview.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://english.mik.pte.hu/civil-engineering-bsc
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://apply.pte.hu/en_GB/courses/course/324-civil-engineer-bsc?search=85829
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://english.mik.pte.hu/application-step-by-step-1
+    last_verified_at: 2026-10-05
+  page-4:
+    url: https://tempus.tpf.hu/studyfinder/index/show/633
+    last_verified_at: 2026-10-05

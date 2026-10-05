@@ -1,0 +1,6 @@
+code: HU
+name:
+  fr: { text: Hongrie, status: reviewed }
+  en: { text: Hungary, status: reviewed }
+  ar: { text: المجر, status: draft }
+currency: HUF

@@ -1,0 +1,80 @@
+{
+  "slug": "hu-university-of-dunaujvaros-dunaujvaros-materials-engineering-sf208",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/208",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/208",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/208",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "High School Leaving Certificate"
+          },
+          "quotedAs": "High School Leaving Certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/208",
+          "quote": "Requirements High School Leaving Certificate"
+        }
+      ]
+    }
+  },
+  "notes": "No tuition fee is stated anywhere on the supplied page for self-financed non-EU/EEA applicants (the page only mentions the Stipendium Hungaricum and Diaspora scholarships, which is not a tuition of 0), so tuition and intakes/applicationChannel are not included: the page gives no application platform, start date or deadline.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien d'admission (examen oral) en ligne est requis.",
+          "en": "An online entrance examination (oral interview) is required."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/208",
+            "quote": "Entrance examination: Yes"
+          },
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/208",
+            "quote": "Place of examination: Online"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le processus d'admission comprend deux étapes : vérification des documents puis un entretien Skype.",
+          "en": "The admission process has two steps: document check and a Skype interview."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/208",
+            "quote": "The entrance eximination proces consists of two steps: first our admission officers will check the submitted documents to examine the eligibility of the applicants. The second step is a Skype interview, that gives a chance for the Admission Committee to check the aims and motivation for choosing this field of study."
+          }
+        ]
+      }
+    ]
+  }
+}

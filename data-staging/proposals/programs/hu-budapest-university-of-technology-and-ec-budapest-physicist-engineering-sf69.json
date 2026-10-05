@@ -1,0 +1,44 @@
+{
+  "slug": "hu-budapest-university-of-technology-and-ec-budapest-physicist-engineering-sf69",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/69",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/69",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/69",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    }
+  },
+  "notes": "La page ne donne pas de frais de scolarité pour ce programme ; le financement via la bourse Stipendium Hungaricum n'indique pas des frais de 0. Aucune information sur la date limite de candidature ni sur la plateforme de candidature (auto-financé) n'est fournie sur cette page. La page mentionne un 'Secondary school leaving certificate' comme condition d'admission, mais elle ne précise pas si une traduction officielle est requise.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'admission en mathématiques et physique est obligatoire ; vérifiez les modalités d'inscription et de paiement sur www.bme.hu.",
+          "en": "An admission test in Mathematics and Physics is mandatory; check application and payment details at www.bme.hu."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/69",
+            "quote": "electronic e-admission tests (via internet): Mathematics, Physics (the tests are in English) with larger emphasis on Mathematics"
+          }
+        ]
+      }
+    ]
+  }
+}

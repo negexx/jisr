@@ -1,0 +1,70 @@
+slug: hu-university-of-debrecen-debrecen-commerce-and-marketing-sf124
+institution: hu-university-of-debrecen-debrecen
+country: HU
+city: debrecen
+field: business-economics
+level: bachelor
+name: Commerce and Marketing
+summary:
+  fr:
+    text: Commerce and Marketing, University of Debrecen (Debrecen). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Commerce and Marketing, University of Debrecen (Debrecen). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Commerce and Marketing, University of Debrecen (Debrecen). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.edu.unideb.hu/p/commerce-and-marketing-bsc
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 700000
+    currency: USD
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le certificat de fin d'études secondaires doit être en anglais ou traduit.
+          status: draft
+        en:
+          text: The school-leaving certificate must be in English or translated.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.edu.unideb.hu/p/commerce-and-marketing-bsc
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.edu.unideb.hu/p/application-and-admission
+    last_verified_at: 2026-10-05

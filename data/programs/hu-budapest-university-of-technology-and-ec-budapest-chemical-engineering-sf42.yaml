@@ -1,0 +1,65 @@
+slug: hu-budapest-university-of-technology-and-ec-budapest-chemical-engineering-sf42
+institution: hu-budapest-university-of-technology-and-ec-budapest
+country: HU
+city: budapest
+field: engineering
+level: bachelor
+name: Chemical Engineering
+summary:
+  fr:
+    text: Chemical Engineering, Budapest University of Technology and Economics (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Chemical Engineering, Budapest University of Technology and Economics (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Chemical Engineering, Budapest University of Technology and Economics (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/42
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'admission écrit est requis (en ligne). Vérifiez les modalités et le résultat minimum (50 %).
+          status: draft
+        en:
+          text: A written entrance examination is required (online). Check the details and the minimum result (50%).
+          status: draft
+scholarships:
+  - stipendium-hungaricum
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/42
+    last_verified_at: 2026-10-05

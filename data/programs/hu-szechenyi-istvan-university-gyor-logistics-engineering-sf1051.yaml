@@ -1,0 +1,122 @@
+slug: hu-szechenyi-istvan-university-gyor-logistics-engineering-sf1051
+institution: hu-szechenyi-istvan-university-gyor
+country: HU
+city: gyor
+field: engineering
+level: bachelor
+name: Logistics Engineering
+summary:
+  fr:
+    text: Logistics Engineering, Széchenyi István University (Győr). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Logistics Engineering, Széchenyi István University (Győr). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Logistics Engineering, Széchenyi István University (Győr). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/1051
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: secondary-school-graduation-results
+      name:
+        fr:
+          text: Relevé des résultats de fin d'études secondaires
+          status: draft
+        en:
+          text: Copy of secondary/high school graduation results
+          status: draft
+      translationRequired: null
+    - slug: record-of-courses-studied
+      name:
+        fr:
+          text: Relevé des cours suivis
+          status: draft
+        en:
+          text: Record of courses studied
+          status: draft
+      translationRequired: null
+    - slug: english-cv
+      name:
+        fr:
+          text: CV en anglais
+          status: draft
+        en:
+          text: English CV
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation letter
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: L'admission comprend un test de langue écrit et un test professionnel écrit sur le background du candidat. Les candidats limites peuvent être invités à un entretien. La date exacte sera annoncée par le secrétariat du programme.
+          status: draft
+        en:
+          text: Admission includes a written language test and a written professional admission test on the applicant's background. Borderline applicants may be invited to an interview. The exact date will be announced by the programme secretary.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Le comité d'admission évalue ces critères : formation/expérience antérieure, compétence linguistique, diplôme de fin d'études secondaires et sa mention, recommandations, motivation."
+          status: draft
+        en:
+          text: "The admission committee evaluates the following: prior education/experience, language competence, secondary school leaving certificate and its class, recommendations, motivation."
+          status: draft
+scholarships:
+  - stipendium-hungaricum
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/1051
+    last_verified_at: 2026-10-05

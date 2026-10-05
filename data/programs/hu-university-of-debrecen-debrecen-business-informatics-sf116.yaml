@@ -1,0 +1,97 @@
+slug: hu-university-of-debrecen-debrecen-business-informatics-sf116
+institution: hu-university-of-debrecen-debrecen
+country: HU
+city: debrecen
+field: computer-science
+level: bachelor
+name: Business Informatics
+summary:
+  fr:
+    text: Business Informatics, University of Debrecen (Debrecen). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Informatics, University of Debrecen (Debrecen). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Informatics, University of Debrecen (Debrecen). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.edu.unideb.hu/p/business-informatics-bsc
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 700000
+    currency: USD
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-2
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat d'études (diplôme de fin d'études secondaires)
+          status: draft
+        en:
+          text: Certificate of education (school leaving qualification)
+          status: draft
+      translationRequired: true
+    - slug: cv
+      name:
+        fr:
+          text: CV court
+          status: draft
+        en:
+          text: Short Resume/CV
+          status: draft
+      translationRequired: null
+    - slug: medical-certificate
+      name:
+        fr:
+          text: Certificat médical
+          status: draft
+        en:
+          text: Medical Certificate
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un certificat d'études secondaires et un examen d'entrée écrit et oral en mathématiques sont requis. Vérifiez les conditions exactes de l'examen d'entrée.
+          status: draft
+        en:
+          text: A high school certificate and a written and oral entrance exam in Mathematics are required. Check the exact entrance exam conditions.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.edu.unideb.hu/p/business-informatics-bsc
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.edu.unideb.hu/p/application-and-admission
+    last_verified_at: 2026-10-05

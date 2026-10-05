@@ -1,0 +1,83 @@
+slug: hu-gal-ferenc-university-bekescsaba-business-administration-sf352
+institution: hu-gal-ferenc-university-bekescsaba
+country: HU
+city: bekescsaba
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, Gál Ferenc University (Békéscsaba). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Management, Gál Ferenc University (Békéscsaba). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Management, Gál Ferenc University (Békéscsaba). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/352
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifier manuellement : certificat de fin d'études secondaires (matriculation) requis, avec examen de niveau avancé dans une matière ou certificat/diplôme d'études supérieures, ou examen d'entrée professionnel."
+          status: draft
+        en:
+          text: "Manual check: secondary school matriculation certificate required, with an advanced level exam in a subject or a vocational/higher education certificate, or a professional entrance exam."
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée est requis (en ligne); vérifier les modalités et les matières de sélection.
+          status: draft
+        en:
+          text: An entrance examination is required (online); check the details and selection subjects.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/352
+    last_verified_at: 2026-10-05

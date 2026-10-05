@@ -15,6 +15,7 @@ import {
   type SearchHit,
   withCache,
 } from "./search";
+import { parseSfDetail, studyFinderPage } from "./sources/studyfinder";
 import { DATA_DIR, STAGING_DIR, stageFile } from "./staging";
 import { discoverTopicPages, mergeTopicPages, parseTopicList, TOPICS, type Topic } from "./topics";
 
@@ -29,6 +30,12 @@ import { discoverTopicPages, mergeTopicPages, parseTopicList, TOPICS, type Topic
 // Usage: data:pages --slugs <file> [--out <file>] [--concurrency 4] [--search] [--topics] [--topic-list <a,b>] [--max-queries 300] [--dry-run]
 const DAAD_DETAIL =
   "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail";
+
+// The Study Finder programme page of a Hungarian slug ("...-sf116").
+export function studyFinderRegisterUrl(slug: string): string | null {
+  const id = /-sf([0-9]+)$/.exec(slug)?.[1];
+  return id === undefined ? null : studyFinderPage(Number(id));
+}
 
 export function daadRegisterUrl(slug: string): string | null {
   const id = /daad([0-9]+)$/.exec(slug)?.[1];
@@ -192,9 +199,16 @@ async function main(argv: readonly string[]): Promise<void> {
       const stat = stats[country] ?? { n: 0, programme: 0, fees: 0, admission: 0 };
       stats[country] = stat;
       stat.n++;
-      const register = daadRegisterUrl(slug);
+      const studyFinder = studyFinderRegisterUrl(slug);
+      const register = daadRegisterUrl(slug) ?? studyFinder;
       if (register !== null) {
-        const found = await discoverFromRegister({ registerUrl: register, name: meta.name });
+        const found = await discoverFromRegister({
+          registerUrl: register,
+          name: meta.name,
+          ...(studyFinder === null
+            ? {}
+            : { programmeLink: (html: string) => parseSfDetail(html, 0).contactWebsite }),
+        });
         if (found.programme !== null) stat.programme++;
         if (found.fees.length > 0) stat.fees++;
         if (found.admission.length > 0) stat.admission++;

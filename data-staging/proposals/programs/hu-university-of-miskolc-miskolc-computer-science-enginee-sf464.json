@@ -1,0 +1,76 @@
+{
+  "slug": "hu-university-of-miskolc-miskolc-computer-science-enginee-sf464",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/464",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/464",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/464",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary school leaving certificate"
+          },
+          "quotedAs": "Secondary school leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/464",
+          "quote": "Requirements Secondary school leaving certificate, secondary school level knowledge of mathematics"
+        }
+      ]
+    }
+  },
+  "notes": "The page gives no tuition fee, no application deadline/intake and no statement that the self-financed applicant applies via a university application form or via Stipendium Hungaricum, so tuition, intakes and applicationChannel are omitted. The page lists an English B2 minimum for both oral and written proficiency; the quote used is the oral one. The programme is listed as available in the Stipendium Hungaricum and Diaspora Scholarship programmes, but the page does not describe the application route.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "mathematics"
+        ],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/464",
+            "quote": "Secondary school leaving certificate, secondary school level knowledge of mathematics"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien d'admission oral en ligne de 15 minutes par Skype fait partie du processus de sélection; une lettre de motivation est également demandée.",
+          "en": "A 15-minute oral admission interview on Skype is part of the selection process; a motivational letter is also requested."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/464",
+            "quote": "In the second part of the entrance examination a 15-minute-long skype-interview takes place with two opponens who decide together on the final score and the admission of the applicants."
+          }
+        ]
+      }
+    ]
+  }
+}

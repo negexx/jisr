@@ -1,0 +1,74 @@
+{
+  "slug": "hu-eotvos-lorand-university-budapest-finance-and-accounting-sf284",
+  "programmePage": "https://www.elte.hu/en/finance-and-accounting",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/finance-and-accounting",
+          "quote": "Duration 7 semesters (3.5 years)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/finance-and-accounting",
+          "quote": "Language of instruction English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 360000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/finance-and-accounting",
+          "quote": "Tuition fee/semester 2700 EUR 3600 EUR"
+        }
+      ]
+    }
+  },
+  "notes": "Le programme dure 3,5 ans (7 semestres, 210 crédits). Les frais de dossier (155 EUR) ne sont pas des frais de scolarité. Aucune date de début (1 September 2026) ni de date limite internationale (3 May 2026) n'a été retenue: les pages ne précisent pas qu'elles concernent les candidats non-UE/étrangers. Le canal de candidature n'a pas été retenu: les pages ne nomment pas de plateforme pour ce programme (procédure en ligne générale seulement).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des examens d'entrée sont organisés (entretien Skype et questionnaire) : vérifiez la procédure.",
+          "en": "Entrance exams are held (Skype interview and questionnaire): check the procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/284",
+            "quote": "Entrance examination: Yes"
+          },
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/284",
+            "quote": "Skype interview with applicant, questionnaire"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les diplômes de type O-level, GCSE, IGCSE, GCE AS ou BTEC seuls ne suffisent pas : il faut au moins deux GCE A-level ou équivalent.",
+          "en": "O-level, GCSE, IGCSE, GCE AS or BTEC exams alone do not qualify: at least two GCE A-levels or equivalent are needed."
+        },
+        "evidence": [
+          {
+            "url": "https://www.elte.hu/en/finance-and-accounting",
+            "quote": "Please note that O-level, GCSE, IGCSE, GCE AS, or BTEC exams alone do not qualify prospective students to study at the Faculty of Economics."
+          }
+        ]
+      }
+    ]
+  }
+}

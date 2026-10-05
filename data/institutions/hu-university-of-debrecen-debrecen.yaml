@@ -1,0 +1,14 @@
+slug: hu-university-of-debrecen-debrecen
+name: University of Debrecen
+country: HU
+city:
+  slug: debrecen
+  name: Debrecen
+type: null
+website: https://www.edu.unideb.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.edu.unideb.hu/
+    last_verified_at: 2026-10-05

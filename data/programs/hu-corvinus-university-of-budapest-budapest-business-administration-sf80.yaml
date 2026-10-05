@@ -1,0 +1,90 @@
+slug: hu-corvinus-university-of-budapest-budapest-business-administration-sf80
+institution: hu-corvinus-university-of-budapest-budapest
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, Corvinus University of Budapest (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Management, Corvinus University of Budapest (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Management, Corvinus University of Budapest (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/80
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 700000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: subject_taken
+      subjects:
+        - mathematics
+      mode: all
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier les conditions d'admission spécifiques et les examens d'entrée pour ce programme.
+          status: draft
+        en:
+          text: Check the specific admission conditions and entrance exams for this programme.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/80
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+    last_verified_at: 2026-10-05

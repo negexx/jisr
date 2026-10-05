@@ -1,0 +1,105 @@
+slug: hu-hungarian-university-of-agriculture-and-gyongyos-tourism-and-catering-sf994
+institution: hu-hungarian-university-of-agriculture-and-gyongyos
+country: HU
+city: gyongyos
+field: business-economics
+level: bachelor
+name: Tourism and Catering
+summary:
+  fr:
+    text: Tourism and Catering, Hungarian University of Agriculture and Life Sciences (Gyöngyös). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Tourism and Catering, Hungarian University of Agriculture and Life Sciences (Gyöngyös). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Tourism and Catering, Hungarian University of Agriculture and Life Sciences (Gyöngyös). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://ed.uni-mate.hu/en/bsc-in-tourism-and-catering
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: High School leaving certificate
+          status: draft
+      translationRequired: null
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: motivation letter
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien en ligne de 20 à 30 minutes est obligatoire ; l'admission repose sur les résultats antérieurs (20 pts), le CV et la lettre de motivation (20 pts) et l'entretien (60 pts).
+          status: draft
+        en:
+          text: A 20-30 minute online interview is required; admission is based on previous results (20 pts), CV and motivation letter (20 pts) and the interview (60 pts).
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Score minimum d'admission : 60 points. Les candidats obtenant moins de 5 points dans une section sont rejetés."
+          status: draft
+        en:
+          text: "Minimum admission score: 60 points. Applicants scoring less than 5 points in any section are rejected."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://ed.uni-mate.hu/en/bsc-in-tourism-and-catering
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/994
+    last_verified_at: 2026-10-05

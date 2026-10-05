@@ -1,0 +1,14 @@
+slug: hu-eotvos-jozsef-college-baja
+name: Eötvös József College
+country: HU
+city:
+  slug: baja
+  name: Baja
+type: null
+website: https://ejf.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://ejf.hu/
+    last_verified_at: 2026-10-05

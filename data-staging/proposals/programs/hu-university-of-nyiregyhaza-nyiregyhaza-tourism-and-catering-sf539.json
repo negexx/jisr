@@ -1,0 +1,85 @@
+{
+  "slug": "hu-university-of-nyiregyhaza-nyiregyhaza-tourism-and-catering-sf539",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/539",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/539",
+          "quote": "Duration of the course / programme: 8 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/539",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    }
+  },
+  "notes": "Duration on the programme page is 8 semesters = 4 years; the university-wide tuition fee page lists the same programme as \"Tourism and Catering BSc 8\" semesters. Tuition shown is the fee / semester for non-EU applicants (2450 EUR); the same row also gives 1800 EUR for EU/EEA applicants, which does not apply. The application portal page (applicationform.nye.hu) still states \"The application period for the September 2026 intake is open until 30 June 2026.\" but this deadline is not stated to be for non-EU/international applicants specifically and refers to the 2026 intake, so no intake fact was extracted; the university pages say the next application period for the September 2027 intake opens in December 2026, but no day is given and no deadline date for international applicants is stated.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/539",
+            "quote": "English language skills at upper intermediate level or higher (at level CEFR B2 or IELTS 5.5) – Having a language certificate is not a compulsory requirement."
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "mathematics"
+        ],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/539",
+            "quote": "Good results in Mathematics."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Entretien oral en ligne (Microsoft Teams) sur les compétences en anglais, l'orientation professionnelle et la motivation ; réussite si au moins 60 points sur 100.",
+          "en": "Online oral interview (Microsoft Teams) on English skills, professional orientation and motivation; pass if at least 60 out of 100 points."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/539",
+            "quote": "Entrance examination: Yes Entrance type: Oral"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Frais de dossier de 100 EUR non remboursables à payer ; l'examen d'entrée n'a lieu qu'après réception de cette somme.",
+          "en": "Non-refundable 100 EUR application fee to pay; the entrance exam only takes place after this amount is received."
+        },
+        "evidence": [
+          {
+            "url": "https://english.nye.hu/en/node/30",
+            "quote": "Proof of application fee payment slip (100 EUR, non-refundable)"
+          }
+        ]
+      }
+    ]
+  }
+}

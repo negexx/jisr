@@ -215,6 +215,7 @@ const LANGUAGE_WORDS: Record<string, RegExp> = {
   ar: /arabic|arabe|arabisch/i,
   es: /spanish|espagnol|spanisch|spaans/i,
   nl: /dutch|n[eé]erlandais|nederlands|niederl[aä]ndisch/i,
+  hu: /hungarian|hongrois|ungarisch|hongaars|magyar/i,
 };
 
 function numberRegex(n: number): string {
@@ -229,7 +230,7 @@ const fail = (reason: string): FactCheck => ({ ok: false, reason });
 export function checkDuration(years: number, quote: string): FactCheck {
   const q = normalizeForMatch(quote);
   const yearUnits = "(?:year|years|an|ans|jahr|jahre|jahren|jaar|jaren|annee|années)";
-  const semesterUnits = "(?:semesters?|semestres?|semester)";
+  const semesterUnits = "(?:semesters?|semestres?|semester|semsters?)";
   const patterns: RegExp[] = [];
   if (Number.isInteger(years))
     patterns.push(new RegExp(`\\b${numberRegex(years)}[ -]?${yearUnits}\\b`, "i"));
@@ -252,8 +253,11 @@ export function checkLanguages(codes: readonly string[], quote: string): FactChe
 
 function amountPattern(amount: number): RegExp {
   const digits = String(Math.round(amount));
-  const grouped =
-    digits.length > 3 ? `${digits.slice(0, -3)}[.,\\s\\u00a0\\u202f']?${digits.slice(-3)}` : digits;
+  // thousands groups, each optionally separated: 7000, 7 000, 7,000, 1 980 000, 1.980.000
+  const groups: string[] = [];
+  for (let end = digits.length; end > 0; end -= 3)
+    groups.unshift(digits.slice(Math.max(0, end - 3), end));
+  const grouped = groups.join("[.,\\s\\u00a0\\u202f']?");
   // not followed by a decimal tail: 5,000.50 is not 5,000
   return new RegExp(`(?<![\\d.,])${grouped}(?:[.,]00)?(?![\\d])(?![.,]\\d)`, "g");
 }
@@ -342,13 +346,69 @@ function staleStudyYear(amountMajor: number, quote: string, minStudyYear: number
 
 // `minStudyYear` is the year the study year the amount must be for starts in (currentStudyYear());
 // it is an argument so a verification is reproducible.
-export function checkTuition(amountMinor: number, quote: string, minStudyYear: number): FactCheck {
+// How a quote writes the currencies the fee pages use. A currency not listed here is not checked.
+const CURRENCY_TOKENS: Record<string, string> = {
+  EUR: String.raw`EUR\b|euros?\b|€`,
+  USD: String.raw`US\$|USD\b|\$|dollars?\b`,
+  HUF: String.raw`HUF\b|Ft\b|forint`,
+  GBP: String.raw`GBP\b|£|pounds?\b`,
+};
+const AFTER = Object.fromEntries(
+  // "3.000,- EUR": the Dutch and German ",-" may stand between the amount and its currency
+  Object.entries(CURRENCY_TOKENS).map(([c, t]) => [
+    c,
+    new RegExp(`^(?:,\\s?[-–])?\\s{0,2}(?:${t})`, "i"),
+  ]),
+);
+const BEFORE = Object.fromEntries(
+  // a word that merely ends in a currency ("Amateur") is not a mark: a boundary or a symbol first
+  Object.entries(CURRENCY_TOKENS).map(([c, t]) => [
+    c,
+    new RegExp(`(?:^|[^a-z])(?:${t})\\s{0,2}$`, "i"),
+  ]),
+);
+
+// The currency written beside one occurrence of the amount: the one right after it ("3,000 EUR",
+// "7 000 €") wins, else the one right before it ("EUR 3,000", "US$3,400"). A word that merely
+// contains a currency ("non-European") is not a currency mark.
+function currencyBesideAmount(before: string, after: string): string | null {
+  for (const [code, re] of Object.entries(AFTER)) if (re.test(after)) return code;
+  for (const [code, re] of Object.entries(BEFORE)) if (re.test(before)) return code;
+  return null;
+}
+
+function amountHasCurrency(amountMajor: number, quote: string, currency: string): boolean {
+  const q = normalizeForMatch(quote);
+  for (const m of q.matchAll(amountPattern(amountMajor))) {
+    const start = m.index ?? 0;
+    const end = start + m[0].length;
+    const found = currencyBesideAmount(
+      q.slice(Math.max(0, start - 14), start),
+      q.slice(end, end + 14),
+    );
+    if (found === currency) return true;
+  }
+  return false;
+}
+
+export function checkTuition(
+  amountMinor: number,
+  quote: string,
+  minStudyYear: number,
+  currency?: string,
+): FactCheck {
   if (amountMinor === 0)
     return NO_FEE.test(quote)
       ? ok
       : fail("a zero fee needs a quote saying there are no tuition fees");
   if (!amountInQuote(amountMinor / 100, quote))
     return fail(`the amount ${amountMinor / 100} does not appear in the quote`);
+  if (
+    currency !== undefined &&
+    CURRENCY_TOKENS[currency] !== undefined &&
+    !amountHasCurrency(amountMinor / 100, quote, currency)
+  )
+    return fail(`the quote does not write the amount in the currency ${currency}`);
   const stale = staleStudyYear(amountMinor / 100, quote, minStudyYear);
   return stale === null ? ok : fail(stale);
 }
@@ -422,11 +482,23 @@ const CHANNEL_WORDS: Record<string, RegExp> = {
   "de-university-direct":
     /application portal|apply directly|directly (to|at) the (higher education institution|university)|application via the university/i,
   "de-uni-assist": /uni-assist|uniassist/i,
+  "hu-university-direct":
+    /online application (?:form|system|portal|platform|site)|application (?:portal|platform|system)|apply online|register (?:and complete the |on the )online application|application form[^.]{0,60}(?:university|institution)|apply (?:directly )?(?:online )?(?:on|at|to|through) the (?:website of the |own )?(?:chosen |selected )?(?:university|institution)|university'?s? (?:own )?(?:application|admission)/i,
+  // "available in the Stipendium Hungaricum programme" is a listing, not how to apply
+  "hu-stipendium-hungaricum":
+    /appl(?:y|ies|ication|ications)[^.]{0,60}stipendium hungaricum|stipendium hungaricum[^.]{0,40}(?:application|call|applicants?)/i,
+};
+
+// A quote that names another channel is not evidence for this one, whatever else it says.
+const CHANNEL_EXCLUDES: Record<string, RegExp> = {
+  "hu-university-direct": /stipendium hungaricum|felvi/i,
 };
 
 export function checkChannel(slug: string, quote: string): FactCheck {
   const pattern = CHANNEL_WORDS[slug];
   if (pattern === undefined) return fail(`channel ${slug} cannot be verified automatically`);
+  if (CHANNEL_EXCLUDES[slug]?.test(quote) === true)
+    return fail(`the quote describes another channel than ${slug}`);
   return pattern.test(quote) ? ok : fail(`the quote does not name the channel ${slug}`);
 }
 

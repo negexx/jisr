@@ -1,0 +1,14 @@
+slug: hu-john-von-neumann-university-kecskemet
+name: John von Neumann University
+country: HU
+city:
+  slug: kecskemet
+  name: Kecskemét
+type: null
+website: https://nje.hu/en
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://nje.hu/en
+    last_verified_at: 2026-10-05

@@ -1,0 +1,81 @@
+slug: hu-hungarian-university-of-agriculture-and-godollo-business-administration-sf960
+institution: hu-hungarian-university-of-agriculture-and-godollo
+country: HU
+city: godollo
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, Hungarian University of Agriculture and Life Sciences (Gödöllő). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Management, Hungarian University of Agriculture and Life Sciences (Gödöllő). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Management, Hungarian University of Agriculture and Life Sciences (Gödöllő). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://ed.uni-mate.hu/en/bsc-in-business-administration-and-management
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 230000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien oral en ligne (Skype) évalue la motivation, le parcours et les compétences linguistiques. Préparez-vous à cet examen d'entrée.
+          status: draft
+        en:
+          text: An online oral (Skype) entrance interview assesses motivation, professional background and language skills. Prepare for this entrance examination.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://ed.uni-mate.hu/en/bsc-in-business-administration-and-management
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://ed.uni-mate.hu/en/tuition-fee
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://tempus.tpf.hu/studyfinder/index/show/960
+    last_verified_at: 2026-10-05

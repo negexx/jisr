@@ -27,6 +27,9 @@ const NOT_AN_INSTITUTION = [
   "duo.nl",
   "study-in-germany.de",
   "studiekeuze123.nl",
+  "tpf.hu",
+  "studyinhungary.hu",
+  "stipendiumhungaricum.hu",
 ];
 
 export function websiteFrom(urls: readonly string[]): string | null {

@@ -1,0 +1,14 @@
+slug: hu-budapest-metropolitan-university-budapest
+name: Budapest Metropolitan University
+country: HU
+city:
+  slug: budapest
+  name: Budapest
+type: null
+website: https://www.metubudapest.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.metubudapest.hu/
+    last_verified_at: 2026-10-05

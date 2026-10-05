@@ -63,6 +63,12 @@ describe("checkDuration", () => {
   it("accepts years, semesters or ECTS that match the value", () => {
     expect(checkDuration(3, "The degree takes three years").ok).toBe(true);
     expect(checkDuration(3, "Duration: 6 semesters").ok).toBe(true);
+    // the Study Finder misspells the unit
+    expect(checkDuration(4, "Duration of the course / programme: 8 semsters semesters").ok).toBe(
+      true,
+    );
+    expect(checkDuration(3.5, "7 semsters").ok).toBe(true);
+    expect(checkDuration(3.5, "8 semsters").ok).toBe(false);
     expect(checkDuration(3, "180 ECTS credits").ok).toBe(true);
     expect(checkDuration(3.5, "7 semesters of study").ok).toBe(true);
     expect(checkDuration(3, "Durée : 3 ans").ok).toBe(true);
@@ -77,6 +83,8 @@ describe("checkDuration", () => {
 describe("checkLanguages", () => {
   it("requires each language to be named in the quote", () => {
     expect(checkLanguages(["en"], "Language of instruction: English").ok).toBe(true);
+    expect(checkLanguages(["hu"], "Language of instruction: Hungarian").ok).toBe(true);
+    expect(checkLanguages(["hu"], "Language of instruction: English").ok).toBe(false);
     expect(checkLanguages(["nl"], "Taal Nederlands").ok).toBe(true);
     expect(checkLanguages(["en", "de"], "Taught in English and German").ok).toBe(true);
     expect(checkLanguages(["en", "de"], "Taught in English").ok).toBe(false);
@@ -174,6 +182,50 @@ describe("checkTuition", () => {
       expect(checkTuition(1016400, quote, 2026).ok).toBe(false);
     const split = "2025-2026 (in eur) 2026-2027 (in eur) instellingscollegegeld 10.164 10.528";
     expect(checkTuition(1016400, split, 2026).ok).toBe(false);
+  });
+
+  it("needs the quote to state the currency of the proposed amount", () => {
+    expect(checkTuition(320000, "BSc Engineering Management 3200 2250", 2026, "EUR").ok).toBe(
+      false,
+    );
+    expect(checkTuition(400000, "Bachelor degree programmes 4,000 6", 2026, "EUR").ok).toBe(false);
+    expect(checkTuition(320000, "Tuition fee/semester 3,200 EUR", 2026, "EUR").ok).toBe(true);
+    expect(checkTuition(300000, "Tuition: 3 000 € per semester", 2026, "EUR").ok).toBe(true);
+    expect(checkTuition(300000, "Fee: 3000 Euro", 2026, "EUR").ok).toBe(true);
+    expect(checkTuition(750000, "7,500 USD/year", 2026, "USD").ok).toBe(true);
+    expect(checkTuition(750000, "Fee: US$7,500 per year", 2026, "USD").ok).toBe(true);
+    expect(checkTuition(69000000, "690,000 Ft", 2026, "HUF").ok).toBe(true);
+    expect(checkTuition(750000, "7,500 EUR/year", 2026, "USD").ok).toBe(false);
+    expect(checkTuition(100000, "Fee 1000 per year", 2026, "CHF").ok).toBe(true);
+    // the currency must stand beside the amount, and the one after the amount wins
+    expect(
+      checkTuition(
+        69000000,
+        "Tuition fee for non-European students: 690,000 per semester",
+        2026,
+        "HUF",
+      ).ok,
+    ).toBe(false);
+    expect(checkTuition(30000, "non-European students: 3,000 per semester", 2026, "EUR").ok).toBe(
+      false,
+    );
+    expect(checkTuition(300000, "690,000 HUF 3,000 EUR", 2026, "EUR").ok).toBe(true);
+    expect(checkTuition(300000, "690,000 HUF 3,000 EUR", 2026, "HUF").ok).toBe(false);
+    expect(checkTuition(69000000, "690,000 HUF 3,000 EUR", 2026, "HUF").ok).toBe(true);
+    expect(checkTuition(700000, "1 980 000 Ft 7 000 €", 2026, "EUR").ok).toBe(true);
+    expect(checkTuition(198000000, "1 980 000 Ft 7 000 €", 2026, "HUF").ok).toBe(true);
+    expect(checkTuition(1036000, "Instellingscollegegeld € 10.360", 2026, "EUR").ok).toBe(true);
+    expect(checkTuition(340000, "Fee: US$3,400 per semester", 2026, "USD").ok).toBe(true);
+    expect(checkTuition(340000, "Fee: 3,400 dollars per semester", 2026, "USD").ok).toBe(true);
+    expect(checkTuition(250000, "Tuition fee EUR 2,500 / year", 2026, "EUR").ok).toBe(true);
+    expect(checkTuition(150000, "Tuition: 1,500.00* Eurasian programme", 2026, "EUR").ok).toBe(
+      false,
+    );
+    expect(checkTuition(100000, "Fee 1000 per year", 2026).ok).toBe(true);
+    expect(checkTuition(30000, "Amateur 3000", 2026, "EUR").ok).toBe(false);
+    expect(checkTuition(69000000, "690.000,- Ft per semester", 2026, "HUF").ok).toBe(true);
+    expect(checkTuition(300000, "Tuition 3.000,- EUR per semester", 2026, "EUR").ok).toBe(true);
+    expect(checkTuition(300000, "Tuition 3000,-€", 2026, "EUR").ok).toBe(true);
   });
 
   it("knows which study year is the current one", () => {
@@ -291,6 +343,49 @@ describe("checkChannel", () => {
         "upload the recognition results to the Pforzheim University application portal",
       ).ok,
     ).toBe(true);
+    expect(
+      checkChannel(
+        "hu-university-direct",
+        "Fill in the online application form of the programme on the website of the chosen university",
+      ).ok,
+    ).toBe(true);
+    expect(checkChannel("hu-university-direct", "Apply on the Study Finder").ok).toBe(false);
+    for (const quote of [
+      "You can apply only online by completing our online application form and uploading your documents.",
+      "Register on the online application site of the University of Pécs",
+      "submitted during the application procedure by all applicants through our online application platform",
+      "John von Neumann University - Apply Online.",
+    ])
+      expect(checkChannel("hu-university-direct", quote).ok).toBe(true);
+    for (const quote of [
+      "Applications must be submitted through the Stipendium Hungaricum application system.",
+      "Hungarian applicants apply through the Felvi application system.",
+      "The programme is available in the Stipendium Hungaricum Scholarship Programme",
+    ])
+      expect(checkChannel("hu-university-direct", quote).ok).toBe(false);
+    for (const quote of [
+      "Apply for the Stipendium Hungaricum scholarship on the online platform",
+      "Stipendium Hungaricum application call 2026/2027",
+      "Applications are made through the Stipendium Hungaricum programme",
+    ])
+      expect(checkChannel("hu-stipendium-hungaricum", quote).ok).toBe(true);
+    expect(
+      checkChannel(
+        "hu-stipendium-hungaricum",
+        "The programme is available in the Stipendium Hungaricum Scholarship Programme",
+      ).ok,
+    ).toBe(false);
+    for (const quote of [
+      "The electronic question can be submitted to the following e-mail address: admission@metropolitan.hu",
+      "Admission procedure in general and general requirements: refer to admission regulations at www.bme.hu.",
+      "Study in Hungary link: https://en.uni-miskolc.hu/mechanical-engineering",
+    ])
+      expect(checkChannel("hu-university-direct", quote).ok).toBe(false);
+    expect(
+      checkChannel("hu-stipendium-hungaricum", "Apply for the Stipendium Hungaricum scholarship")
+        .ok,
+    ).toBe(true);
+    expect(checkChannel("hu-stipendium-hungaricum", "Apply through the university").ok).toBe(false);
     expect(checkChannel("unknown-channel", "anything at all here").ok).toBe(false);
   });
 });

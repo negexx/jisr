@@ -1,0 +1,87 @@
+slug: hu-university-of-pecs-pecs-architectural-engineerin-sf629
+institution: hu-university-of-pecs-pecs
+country: HU
+city: pecs
+field: engineering
+level: bachelor
+name: Architectural Engineering
+summary:
+  fr:
+    text: Architectural Engineering, University of Pécs (Pécs). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Architectural Engineering, University of Pécs (Pécs). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Architectural Engineering, University of Pécs (Pécs). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://english.mik.pte.hu/architectural-engineering-bsc
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 400000
+    currency: USD
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: L'admission se fait par un entretien oral en ligne et un examen d'entrée ; le portfolio et la lettre de motivation sont évalués par le comité d'admission.
+          status: draft
+        en:
+          text: Admission involves an online oral interview and an entrance examination; the portfolio and motivation letter are assessed by the admission committee.
+          status: draft
+    - id: req-2
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le diplôme d'études secondaires peut être accepté en anglais ; des traductions officielles accompagnées de copies vérifiées peuvent être exigées.
+          status: draft
+        en:
+          text: The high school diploma can be accepted in English; official translations accompanied by verified copies may be required.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://english.mik.pte.hu/architectural-engineering-bsc
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://english.mik.pte.hu/application-step-by-step-1
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://tempus.tpf.hu/studyfinder/index/show/629
+    last_verified_at: 2026-10-05
+  page-4:
+    url: https://apply.pte.hu/en_GB/courses/course/445-architecture-bsc?search=113391
+    last_verified_at: 2026-10-05

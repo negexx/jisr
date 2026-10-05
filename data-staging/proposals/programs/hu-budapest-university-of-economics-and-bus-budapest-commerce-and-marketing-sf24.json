@@ -1,0 +1,126 @@
+{
+  "slug": "hu-budapest-university-of-economics-and-bus-budapest-commerce-and-marketing-sf24",
+  "programmePage": null,
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://uni-bge.hu/en/commerce-and-marketing-bsc",
+          "quote": "Commerce and Marketing BSc 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://uni-bge.hu/en/commerce-and-marketing-bsc",
+          "quote": "The programme is taught at our city centre campus and is also offered full-time in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 300000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://uni-bge.hu/en/tuition-fee",
+          "quote": "Commerce and Marketing 7 semesters 690,000 HUF 3,000 EUR"
+        },
+        {
+          "url": "https://uni-bge.hu/en/commerce-and-marketing-bsc",
+          "quote": "Commerce and Marketing BSc 7 semesters 690,000 HUF 3000 EUR"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "secondary-school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary school leaving certificate"
+          },
+          "quotedAs": "Secondary school leaving certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "transcript-of-secondary-school-studies",
+          "name": {
+            "fr": "Relevé de notes des études secondaires",
+            "en": "Transcript of secondary school studies"
+          },
+          "quotedAs": "Transcript of secondary school studies",
+          "translationRequired": true
+        },
+        {
+          "slug": "motivation-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivation letter"
+          },
+          "quotedAs": "motivation letter",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/24",
+          "quote": "1. Secondary school leaving certificate 2. B2 English language knowledge, proved by internationally accepted language examination system (e.g.: IELTS, TOEFL, WAEC, etc.) 3. Transcript of secondary school studies"
+        },
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/24",
+          "quote": "A motivation letter must be added to your application."
+        },
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/24",
+          "quote": "If this is not the case, you will need official translations along with verified copies of the original."
+        }
+      ]
+    }
+  },
+  "notes": "Application channel: the pages do not state how a self-financed foreign applicant applies (apply online on the university website / application form or via the Stipendium Hungaricum scholarship call), so applicationChannel and intakes were left out. The fee shown is per semester (non-EU), 3,000 EUR, equivalent on the same page to 690,000 HUF; per year that is 6,000 EUR.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/24",
+            "quote": "Minimum level of language proficiency (oral): B2 Minimum level of language proficiency (written): B2 Place of examination: Online"
+          },
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/24",
+            "quote": "2. B2 English language knowledge, proved by internationally accepted language examination system (e.g.: IELTS, TOEFL, WAEC, etc.)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien oral en ligne est obligatoire. Préparez une lettre de motivation; vos résultats scolaires et vos compétences linguistiques seront évalués.",
+          "en": "An online oral entrance interview is required. Prepare a motivation letter; your academic results and language skills will be assessed."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/24",
+            "quote": "The entrance examination consists of two components: an assessment of previous academic achievements, language proficiency, and motivation letter, followed by an online interview evaluating professional knowledge, language skills, and intercultural competence."
+          }
+        ]
+      }
+    ]
+  }
+}

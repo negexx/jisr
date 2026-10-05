@@ -7,6 +7,7 @@ import { importGermany } from "./sources/germany";
 import { importInstitutions } from "./sources/institutions";
 import { importFrance } from "./sources/parcoursup";
 import { importNetherlands } from "./sources/rio";
+import { importHungary } from "./sources/studyfinder";
 import type { StagedRecord } from "./staging";
 import {
   dedupeRecords,
@@ -27,6 +28,7 @@ const SOURCES: Record<string, () => Promise<StagedRecord[]>> = {
   netherlands: importNetherlands,
   germany: importGermany,
   daad: importDaad,
+  hungary: importHungary,
 };
 
 async function main(argv: readonly string[]): Promise<void> {

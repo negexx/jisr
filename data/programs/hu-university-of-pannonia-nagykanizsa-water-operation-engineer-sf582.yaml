@@ -1,0 +1,80 @@
+slug: hu-university-of-pannonia-nagykanizsa-water-operation-engineer-sf582
+institution: hu-university-of-pannonia-nagykanizsa
+country: HU
+city: nagykanizsa
+field: engineering
+level: bachelor
+name: Water Operation Engineering
+summary:
+  fr:
+    text: Water Operation Engineering, University of Pannonia (Nagykanizsa). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Water Operation Engineering, University of Pannonia (Nagykanizsa). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Water Operation Engineering, University of Pannonia (Nagykanizsa). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://pen.uni-pannon.hu/en/water-operation-engineering/
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 175000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un entretien oral en ligne est requis : évaluation du diplôme d'études secondaires, de l'anglais parlé et de l'intérêt pour l'eau."
+          status: draft
+        en:
+          text: "An online oral entrance examination is required: evaluation of the secondary school leaving certificate, spoken English fluency and interest in water."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://pen.uni-pannon.hu/en/water-operation-engineering/
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/582
+    last_verified_at: 2026-10-05

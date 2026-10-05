@@ -1,0 +1,52 @@
+{
+  "slug": "hu-university-of-miskolc-miskolc-mechanical-engineering-sf462",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/462",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/462",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    }
+  },
+  "notes": "Les pages ne donnent ni frais de scolarité pour un étudiant auto-financé hors UE/EEE, ni dates de candidature, ni liste de documents, ni plateforme de candidature. Le programme est disponible dans le cadre de la bourse Stipendium Hungaricum, mais cela ne constitue pas un canal de candidature auto-financée et ne signifie pas des frais de 0 pour le programme. Durée : le programme indique 7 semestres = 3.5 ans, mais aucune formulation ne l'exprime directement en années ; la durée n'a donc pas été extraite.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme d'études secondaires exigé, avec connaissances au niveau secondaire en mathématiques et en physique. Vérifier ces prérequis dans votre dossier.",
+          "en": "Secondary school leaving certificate required, with secondary school level knowledge of mathematics and physics. Check these prerequisites in your dossier."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/462",
+            "quote": "Secondary school leaving certificate, secondary school level knowledge of mathematics and physics"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée est requis : lettre de motivation et entretien Skype de 15 minutes. Préparez ces éléments.",
+          "en": "An entrance examination is required: motivation letter and a 15-minute Skype interview. Prepare these elements."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/462",
+            "quote": "Entrance examination: Yes"
+          },
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/462",
+            "quote": "After checking out the documentation handed in, we are asking for complementary information about the professional and motivational background in letter. In the second part of the entrance examination a 15-minute-long skype-interview takes place with two opponens who decide together on the final score and the admission of the applicants."
+          }
+        ]
+      }
+    ]
+  }
+}

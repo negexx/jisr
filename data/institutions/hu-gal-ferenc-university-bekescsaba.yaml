@@ -1,0 +1,14 @@
+slug: hu-gal-ferenc-university-bekescsaba
+name: Gál Ferenc University
+country: HU
+city:
+  slug: bekescsaba
+  name: Békéscsaba
+type: null
+website: https://gfe.hu/en/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://gfe.hu/en/
+    last_verified_at: 2026-10-05

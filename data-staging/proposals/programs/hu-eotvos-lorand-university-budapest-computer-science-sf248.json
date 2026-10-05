@@ -1,0 +1,92 @@
+{
+  "slug": "hu-eotvos-lorand-university-budapest-computer-science-sf248",
+  "programmePage": "https://www.elte.hu/en/computer-science-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/computer-science-bsc",
+          "quote": "Duration 6 semesters (3 years)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/computer-science-bsc",
+          "quote": "Language of instruction English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 320000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/computer-science-bsc",
+          "quote": "Tuition fee/semester 3,200 EUR 3,200 EUR"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/computer-science-bsc",
+          "quote": "The application starts on the online application system. Students need to register in the system, fill in the online application form, upload the required documents and follow the instructions during the application process."
+        }
+      ]
+    }
+  },
+  "notes": "Le montant des frais de scolarité (3 200 EUR) est indiqué à la fois pour les étudiants UE/EEE et non-UE/EEE. L'ELTE précise que les candidats non-UE/EEE doivent soumettre leur candidature via le système de candidature en ligne de l'université (candidature directe), et non via Stipendium Hungaricum pour l'admission autofinancée.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "mathematics"
+        ],
+        "mode": "any",
+        "evidence": [
+          {
+            "url": "https://www.elte.hu/en/computer-science-bsc",
+            "quote": "Applicants are required to have sufficiently good grades in their secondary school finishing documents, especially from Mathematics."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Bonnes notes exigées dans le diplôme de fin d'études secondaires, surtout en mathématiques ; le niveau exact est apprécié par le jury.",
+          "en": "Good grades required in the secondary school finishing documents, especially from Mathematics; the exact level is assessed by the admission board."
+        },
+        "evidence": [
+          {
+            "url": "https://www.elte.hu/en/computer-science-bsc",
+            "quote": "Applicants are required to have sufficiently good grades in their secondary school finishing documents, especially from Mathematics."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Examen d'entrée (écrit et oral) en ligne / à la faculté ; test écrit puis entretien en anglais.",
+          "en": "Entrance examination (written and oral), online or at the Faculty; a written test followed by an interview in English."
+        },
+        "evidence": [
+          {
+            "url": "https://www.elte.hu/en/computer-science-bsc",
+            "quote": "Type of entrance examination: both written and oral Place of entrance examination: online / at the Faculty"
+          }
+        ]
+      }
+    ]
+  }
+}

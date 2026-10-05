@@ -1,0 +1,76 @@
+slug: hu-budapest-university-of-technology-and-ec-budapest-professional-pilot-sf77
+institution: hu-budapest-university-of-technology-and-ec-budapest
+country: HU
+city: budapest
+field: engineering
+level: bachelor
+name: Professional Pilot
+summary:
+  fr:
+    text: Professional Pilot, Budapest University of Technology and Economics (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Professional Pilot, Budapest University of Technology and Economics (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Professional Pilot, Budapest University of Technology and Economics (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/77
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme d'études secondaires (baccalauréat) valide est exigé pour le BSc.
+          status: draft
+        en:
+          text: An eligible high school degree is required for the BSc.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "L'admission comprend un examen d'entrée: oui, type oral, en ligne."
+          status: draft
+        en:
+          text: "Admission includes an entrance examination: yes, oral type, online."
+          status: draft
+scholarships:
+  - stipendium-hungaricum
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/77
+    last_verified_at: 2026-10-05

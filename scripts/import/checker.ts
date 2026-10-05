@@ -31,6 +31,9 @@ const CHANNEL_TEXT: Record<string, string> = {
   "de-uni-assist": "Applications are made through uni-assist.",
   "de-university-direct":
     "Applications are made directly in the university's own application portal.",
+  "hu-university-direct": "Applications are made on the website of the chosen university.",
+  "hu-stipendium-hungaricum":
+    "Applications are made for the Stipendium Hungaricum scholarship programme.",
 };
 
 type Intake = {

@@ -1,0 +1,82 @@
+{
+  "slug": "hu-international-business-school-budapest-bachelor-of-science-in-b-sf362",
+  "programmePage": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-arts/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/362",
+          "quote": "Duration of the course / programme: 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/362",
+          "quote": "Language of instruction: English"
+        },
+        {
+          "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-arts/",
+          "quote": "Language of tuition English English"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary school leaving certificate"
+          },
+          "quotedAs": "Secondary school leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/362",
+          "quote": "Requirements secondary school leaving certificate"
+        },
+        {
+          "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-arts/",
+          "quote": "Admission criteria • Secondary school leaving certificate AND • IELTS 6.0 or equivalent*"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the fees page shows 4,000 EUR per semester under 'Bachelor's degree programmes - The University of Buckingham'; the programme page states the degree is awarded by The University of Buckingham and IBS, so this fee is used as the programme fee. The 1,200 EUR one-time registration fee for non-EU citizens is an additional fee, not tuition. Application deadline: the fees page gives 30 September 2026 for Bachelor's programmes, but the quote does not specify it is for non-EU/international applicants, so no intake/deadline fact is stated.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/362",
+            "quote": "Minimum level of language proficiency (oral): B2"
+          },
+          {
+            "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-arts/",
+            "quote": "IELTS 6.0 or equivalent*"
+          },
+          {
+            "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-arts/",
+            "quote": "i.e.: TOEFL 72, GCSE English, Duolingo 105 etc."
+          }
+        ]
+      }
+    ]
+  }
+}

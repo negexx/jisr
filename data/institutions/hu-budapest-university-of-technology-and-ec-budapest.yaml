@@ -1,0 +1,14 @@
+slug: hu-budapest-university-of-technology-and-ec-budapest
+name: Budapest University of Technology and Economics
+country: HU
+city:
+  slug: budapest
+  name: Budapest
+type: null
+website: https://www.bme.hu/en
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.bme.hu/en
+    last_verified_at: 2026-10-05

@@ -1,0 +1,14 @@
+slug: hu-university-of-sopron-sopron
+name: University of Sopron
+country: HU
+city:
+  slug: sopron
+  name: Sopron
+type: null
+website: https://international.uni-sopron.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://international.uni-sopron.hu/
+    last_verified_at: 2026-10-05

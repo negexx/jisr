@@ -1,0 +1,22 @@
+slug: hu-university-direct
+name: University application form
+country: HU
+kind: direct
+url: https://studyinhungary.hu/study-in-hungary/menu/studying-in-hungary/application-timeline.html
+accountRequired: null
+summary:
+  fr:
+    text: "Candidature en ligne sur le site de l'université choisie : chaque établissement fixe ses dates, ses pièces et sa procédure."
+    status: draft
+  en:
+    text: "Apply online on the website of the university you choose: each institution sets its own dates, documents and procedure."
+    status: draft
+  ar:
+    text: "التقدّم عبر الإنترنت على موقع الجامعة المختارة: لكل مؤسسة مواعيدها ووثائقها وإجراءاتها الخاصة."
+    status: draft
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://studyinhungary.hu/study-in-hungary/menu/studying-in-hungary/application-timeline.html
+    last_verified_at: 2026-10-04

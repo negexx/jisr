@@ -1,0 +1,144 @@
+slug: hu-budapest-university-of-technology-and-ec-budapest-electrical-engineering-sf45
+institution: hu-budapest-university-of-technology-and-ec-budapest
+country: HU
+city: budapest
+field: engineering
+level: bachelor
+name: Electrical Engineering
+summary:
+  fr:
+    text: Electrical Engineering, Budapest University of Technology and Economics (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Electrical Engineering, Budapest University of Technology and Economics (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Electrical Engineering, Budapest University of Technology and Economics (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/45
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: application-form
+      name:
+        fr:
+          text: Formulaire de candidature
+          status: draft
+        en:
+          text: Application form
+          status: draft
+      translationRequired: null
+    - slug: school-reports
+      name:
+        fr:
+          text: Bulletins scolaires du secondaire
+          status: draft
+        en:
+          text: Secondary high school reports
+          status: draft
+      translationRequired: null
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary high school diploma
+          status: draft
+      translationRequired: null
+    - slug: transcripts-diplomas
+      name:
+        fr:
+          text: Relevés de notes et diplômes
+          status: draft
+        en:
+          text: Transcripts and degrees/diplomas
+          status: draft
+      translationRequired: null
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Attestation de compétence en anglais
+          status: draft
+        en:
+          text: Proof of English language proficiency
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum vitae
+          status: draft
+        en:
+          text: Curriculum vitae
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le test de positionnement en mathématiques, physique et anglais est obligatoire pour entrer en licence (BSc) à BME VIK.
+          status: draft
+        en:
+          text: The placement test in mathematics, physics and English is mandatory to enter a BSc degree program at BME VIK.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le diplôme d'études secondaires doit être obtenu avec un résultat global d'au moins 70 %.
+          status: draft
+        en:
+          text: The secondary school diploma must be completed with an overall result of at least 70%.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Dates limites de candidature : semestre d'automne du 1er avril au 15 mai ; semestre de printemps du 15 octobre au 15 novembre (année non précisée)."
+          status: draft
+        en:
+          text: "Application deadlines: fall semester 1 April – 15 May; spring semester 15 October – 15 November (year not stated)."
+          status: draft
+scholarships:
+  - stipendium-hungaricum
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/45
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.vik.bme.hu/en/education/admission/
+    last_verified_at: 2026-10-05

@@ -1,0 +1,155 @@
+programs/hu-budapest-metropolitan-university-business-administration-sf472: accepted teachingLanguages, tuition; page ok
+programs/hu-budapest-metropolitan-university-commerce-and-marketing-sf473: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-budapest-metropolitan-university-finance-and-accounting-sf475: accepted teachingLanguages, tuition, documents; page ok
+programs/hu-budapest-metropolitan-university-tourism-and-catering-sf477: accepted durationYears, teachingLanguages, tuition, documents; page ok
+programs/hu-budapest-university-of-economics-and-bus-business-administration-sf25: accepted durationYears, teachingLanguages, tuition, documents; page ok
+programs/hu-budapest-university-of-economics-and-bus-commerce-and-marketing-sf24: accepted durationYears, teachingLanguages, tuition, documents; page NOT verified; still to read: durationYears, teachingLanguages, tuition, intakes, applicationChannel, documents
+programs/hu-budapest-university-of-economics-and-bus-finance-and-accounting-sf19: accepted durationYears, teachingLanguages, tuition, documents; page ok
+programs/hu-budapest-university-of-economics-and-bus-international-business-e-sf20: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-budapest-university-of-economics-and-bus-tourism-and-catering-sf17: accepted durationYears, teachingLanguages, tuition, documents; page ok
+programs/hu-budapest-university-of-technology-and-ec-chemical-engineering-sf42: accepted durationYears, teachingLanguages, applicationChannel; page ok
+programs/hu-budapest-university-of-technology-and-ec-civil-engineering-sf44: accepted durationYears, teachingLanguages; page ok
+programs/hu-budapest-university-of-technology-and-ec-computer-science-enginee-sf41: accepted durationYears, teachingLanguages; page ok
+programs/hu-budapest-university-of-technology-and-ec-electrical-engineering-sf45: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-budapest-university-of-technology-and-ec-engineering-management-sf79: accepted durationYears, teachingLanguages, tuition, applicationChannel; page ok
+programs/hu-budapest-university-of-technology-and-ec-logistics-engineering-sf76: accepted durationYears, teachingLanguages; page ok
+programs/hu-budapest-university-of-technology-and-ec-mechanical-engineering-sf51: accepted durationYears, teachingLanguages; page ok
+programs/hu-budapest-university-of-technology-and-ec-physicist-engineering-sf69: accepted durationYears, teachingLanguages; page ok
+programs/hu-budapest-university-of-technology-and-ec-professional-pilot-sf77: accepted durationYears, teachingLanguages; page ok
+programs/hu-budapest-university-of-technology-and-ec-transportation-engineeri-sf75: accepted durationYears, teachingLanguages; page ok
+programs/hu-budapest-university-of-technology-and-ec-vehicle-engineering-sf74: accepted durationYears, teachingLanguages; page ok
+programs/hu-corvinus-university-of-budapest-applied-economics-sf83: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-corvinus-university-of-budapest-business-administration-sf80: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-corvinus-university-of-budapest-data-science-in-business-sf85: accepted durationYears, teachingLanguages, tuition, documents; page ok
+programs/hu-corvinus-university-of-budapest-international-business-e-sf81: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-dennis-gabor-university-business-informatics-sf347: accepted durationYears, teachingLanguages; page ok
+programs/hu-dennis-gabor-university-computer-science-enginee-sf348: accepted durationYears, teachingLanguages; page ok
+programs/hu-dennis-gabor-university-engineering-management-sf349: accepted durationYears, teachingLanguages; page ok
+programs/hu-eotvos-jozsef-college-business-administration-sf215: accepted teachingLanguages, documents; page ok
+programs/hu-eotvos-jozsef-college-business-administration-sf216: accepted teachingLanguages, documents; page ok
+programs/hu-eotvos-lorand-university-applied-economics-sf343: accepted durationYears, teachingLanguages; page ok
+programs/hu-eotvos-lorand-university-computer-science-sf248: accepted durationYears, teachingLanguages, tuition, applicationChannel; page ok
+programs/hu-eotvos-lorand-university-finance-and-accounting-sf284: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-eotvos-lorand-university-international-business-e-sf301: accepted durationYears, teachingLanguages, tuition, documents; page ok
+programs/hu-eotvos-lorand-university-szombathely-mechanical-engineering-sf310: accepted durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok
+programs/hu-eszterhazy-karoly-catholic-university-business-administration-sf223: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-eszterhazy-karoly-catholic-university-business-informatics-sf229: accepted durationYears, teachingLanguages; page ok
+programs/hu-eszterhazy-karoly-catholic-university-computer-science-sf220: accepted durationYears, teachingLanguages; page ok
+programs/hu-gal-ferenc-university-business-administration-sf352: accepted durationYears, teachingLanguages; page ok
+programs/hu-hungarian-university-of-agriculture-and-budapest-biochemical-engineering-sf999: accepted durationYears, teachingLanguages, tuition, documents; page ok
+programs/hu-hungarian-university-of-agriculture-and-business-administration-sf960: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-hungarian-university-of-agriculture-and-environmental-engineerin-sf976: accepted durationYears, teachingLanguages, tuition, documents; page ok
+programs/hu-hungarian-university-of-agriculture-and-gyongyos-tourism-and-catering-sf994: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-hungarian-university-of-agriculture-and-mechanical-engineering-sf988: accepted teachingLanguages, tuition, documents; page ok
+programs/hu-international-business-school-bachelor-of-arts-in-mark-sf369: accepted durationYears, teachingLanguages, applicationChannel; page NOT verified; still to read: durationYears, teachingLanguages, tuition, intakes, applicationChannel, documents
+programs/hu-international-business-school-bachelor-of-science-in-b-sf359: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-international-business-school-bachelor-of-science-in-b-sf360: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-international-business-school-bachelor-of-science-in-b-sf361: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-international-business-school-bachelor-of-science-in-b-sf362: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-international-business-school-bachelor-of-science-in-b-sf363: accepted durationYears, teachingLanguages, applicationChannel, documents; page ok
+programs/hu-international-business-school-bachelor-of-science-in-b-sf364: accepted teachingLanguages, documents; page ok
+programs/hu-international-business-school-bachelor-of-science-in-b-sf366: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-international-business-school-bachelor-of-science-in-b-sf368: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-international-business-school-bachelor-of-science-in-c-sf365: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-international-business-school-bachelor-of-science-in-i-sf367: accepted durationYears, teachingLanguages; page ok
+programs/hu-john-von-neumann-university-business-administration-sf508: accepted teachingLanguages, tuition, applicationChannel; page ok
+programs/hu-john-von-neumann-university-computer-science-enginee-sf504: accepted durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok
+programs/hu-john-von-neumann-university-international-business-e-sf510: accepted durationYears, teachingLanguages, tuition, documents; page ok
+programs/hu-john-von-neumann-university-mechnical-engineering-sf513: accepted durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok
+programs/hu-john-von-neumann-university-tourism-and-catering-sf509: accepted durationYears, teachingLanguages, applicationChannel; page ok
+programs/hu-john-von-neumann-university-vehicle-engineering-sf505: accepted durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok
+programs/hu-obuda-university-business-administration-sf562: accepted durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok
+programs/hu-obuda-university-commerce-and-marketing-sf563: accepted durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok
+programs/hu-obuda-university-computer-science-enginee-sf554: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-obuda-university-electrical-engineering-sf560: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-obuda-university-engineering-management-sf564: accepted durationYears, teachingLanguages, tuition, applicationChannel; page ok
+programs/hu-obuda-university-environmental-engineerin-sf567: accepted durationYears, teachingLanguages, tuition, applicationChannel, documents; page ok
+programs/hu-obuda-university-industrial-design-engine-sf568: accepted durationYears, teachingLanguages; page ok
+programs/hu-obuda-university-mechatronical-engineerin-sf546: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-szechenyi-istvan-university-business-administration-sf1052: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-szechenyi-istvan-university-business-informatics-sf1063: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-szechenyi-istvan-university-civil-engineering-sf1053: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-szechenyi-istvan-university-electrical-engineering-sf1061: accepted durationYears, teachingLanguages; page ok
+programs/hu-szechenyi-istvan-university-international-business-e-sf1058: accepted durationYears, teachingLanguages; page ok
+programs/hu-szechenyi-istvan-university-logistics-engineering-sf1051: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-szechenyi-istvan-university-mechanical-engineering-sf1060: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-szechenyi-istvan-university-tourism-and-catering-sf1059: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-szechenyi-istvan-university-vehicle-engineering-sf1054: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-university-of-debrecen-biochemical-engineering-sf112: accepted durationYears, teachingLanguages, tuition, applicationChannel; page ok
+programs/hu-university-of-debrecen-business-administration-sf115: accepted teachingLanguages, tuition, applicationChannel, documents; page ok
+programs/hu-university-of-debrecen-business-informatics-sf116: accepted teachingLanguages, tuition, applicationChannel, documents; page ok
+programs/hu-university-of-debrecen-chemical-engineering-sf117: accepted durationYears, teachingLanguages; page ok
+programs/hu-university-of-debrecen-civil-engineering-sf121: accepted durationYears, teachingLanguages, applicationChannel, documents; page ok
+programs/hu-university-of-debrecen-commerce-and-marketing-sf124: accepted teachingLanguages, tuition, applicationChannel; page ok
+programs/hu-university-of-debrecen-computer-science-enginee-sf128: accepted teachingLanguages, tuition, applicationChannel, documents; page ok
+programs/hu-university-of-debrecen-computer-science-sf126: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-university-of-debrecen-electrical-engineering-sf146: accepted teachingLanguages, applicationChannel, documents; page ok
+programs/hu-university-of-debrecen-engineering-management-sf199: accepted durationYears, teachingLanguages; page ok
+programs/hu-university-of-debrecen-environmental-engineerin-sf200: accepted durationYears, teachingLanguages, applicationChannel; page ok
+programs/hu-university-of-debrecen-mechanical-engineering-sf164: accepted teachingLanguages, tuition, applicationChannel; page ok
+programs/hu-university-of-debrecen-mechatronics-engineering-sf166: accepted teachingLanguages, tuition; page ok
+programs/hu-university-of-debrecen-vehicle-engineering-sf181: accepted durationYears, teachingLanguages, tuition, applicationChannel; page ok
+programs/hu-university-of-dunaujvaros-business-administration-sf209: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-university-of-dunaujvaros-computer-science-enginee-sf211: accepted durationYears, teachingLanguages; page ok
+programs/hu-university-of-dunaujvaros-materials-engineering-sf208: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-university-of-dunaujvaros-mechanical-engineering-sf212: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-university-of-miskolc-business-administration-sf461: accepted durationYears, teachingLanguages, applicationChannel, documents; page ok
+programs/hu-university-of-miskolc-computer-science-enginee-sf464: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-university-of-miskolc-logistics-engineering-sf463: accepted durationYears, teachingLanguages; page ok
+programs/hu-university-of-miskolc-materials-engineering-sf466: accepted durationYears, teachingLanguages, documents; page ok
+programs/hu-university-of-miskolc-mechanical-engineering-sf462: accepted teachingLanguages; page ok
+programs/hu-university-of-nyiregyhaza-business-administration-sf537: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-university-of-nyiregyhaza-computer-science-enginee-sf538: accepted durationYears, teachingLanguages, tuition, applicationChannel; page ok
+programs/hu-university-of-nyiregyhaza-computer-science-sf536: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-university-of-nyiregyhaza-mechanical-engineering-sf529: accepted durationYears, teachingLanguages, tuition, applicationChannel; page ok
+programs/hu-university-of-nyiregyhaza-professional-pilot-sf531: accepted durationYears, teachingLanguages, tuition, documents; page ok
+programs/hu-university-of-nyiregyhaza-tourism-and-catering-sf539: accepted durationYears, teachingLanguages; page ok
+programs/hu-university-of-nyiregyhaza-vehicle-engineering-sf545: accepted durationYears, teachingLanguages; page ok
+programs/hu-university-of-pannonia-sustainable-and-circular-sf594: accepted durationYears, teachingLanguages, tuition, documents; page ok
+programs/hu-university-of-pannonia-veszprem-business-administration-sf587: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-university-of-pannonia-veszprem-computer-science-sf599: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-university-of-pannonia-veszprem-data-science-in-business-sf598: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-university-of-pannonia-veszprem-international-business-e-sf584: accepted teachingLanguages, tuition; page ok
+programs/hu-university-of-pannonia-veszprem-tourism-and-catering-sf588: accepted teachingLanguages, tuition, documents; page ok
+programs/hu-university-of-pannonia-water-operation-engineer-sf582: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-university-of-pecs-architectural-engineerin-sf629: accepted durationYears, teachingLanguages, tuition, applicationChannel; page ok
+programs/hu-university-of-pecs-business-administration-sf687: accepted durationYears, tuition; page ok
+programs/hu-university-of-pecs-civil-engineering-sf633: accepted durationYears, teachingLanguages, applicationChannel, documents; page ok
+programs/hu-university-of-pecs-computer-science-enginee-sf634: accepted durationYears, teachingLanguages, tuition, applicationChannel; page ok
+programs/hu-university-of-pecs-computer-science-sf643: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-university-of-pecs-mechanical-engineering-sf726: accepted durationYears, teachingLanguages, tuition; page ok
+programs/hu-university-of-public-service-civil-engineering-sf521: accepted durationYears, teachingLanguages; page ok
+programs/hu-university-of-public-service-environmental-engineerin-sf522: accepted durationYears, teachingLanguages; page ok
+programs/hu-university-of-public-service-water-operation-engineer-sf523: accepted durationYears, teachingLanguages; page ok
+programs/hu-university-of-sopron-business-administration-sf1043: accepted durationYears, teachingLanguages; page ok
+programs/hu-university-of-sopron-international-business-e-sf1042: accepted durationYears, teachingLanguages; page ok
+programs/hu-university-of-sopron-timber-industry-engineer-sf1039: accepted durationYears, teachingLanguages, tuition, applicationChannel; page ok
+programs/hu-university-of-szeged-business-administration-sf1132: accepted teachingLanguages; page ok
+programs/hu-university-of-szeged-computer-science-sf1204: accepted durationYears, teachingLanguages, tuition, documents; page ok
+programs/hu-university-of-szeged-tourism-and-catering-sf1134: accepted teachingLanguages; page ok
+institutions/hu-budapest-metropolitan-university: verified
+institutions/hu-budapest-university-of-economics-and-bus: verified
+institutions/hu-budapest-university-of-technology-and-ec: verified
+institutions/hu-corvinus-university-of-budapest: verified
+institutions/hu-dennis-gabor-university: verified
+institutions/hu-eotvos-jozsef-college: verified
+institutions/hu-eotvos-lorand-university-szombathely: verified
+institutions/hu-eotvos-lorand-university: verified
+institutions/hu-gal-ferenc-university: verified
+institutions/hu-hungarian-university-of-agriculture-and-budapest: verified
+institutions/hu-hungarian-university-of-agriculture-and-gyongyos: verified
+institutions/hu-hungarian-university-of-agriculture-and: verified
+institutions/hu-john-von-neumann-university: verified
+institutions/hu-obuda-university: verified
+institutions/hu-szechenyi-istvan-university: verified
+institutions/hu-university-of-debrecen: verified
+institutions/hu-university-of-dunaujvaros: verified
+institutions/hu-university-of-miskolc: verified
+institutions/hu-university-of-nyiregyhaza: verified
+institutions/hu-university-of-pannonia-veszprem: NOT verified: the website does not mention the institution's name
+institutions/hu-university-of-pannonia: NOT verified: the website does not mention the institution's name
+institutions/hu-university-of-pecs: verified
+institutions/hu-university-of-public-service: verified
+institutions/hu-university-of-sopron: verified
+institutions/hu-university-of-szeged: verified
+would apply 0 proposal(s); 4 stay blocked

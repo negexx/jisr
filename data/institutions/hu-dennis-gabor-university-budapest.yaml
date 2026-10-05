@@ -1,0 +1,14 @@
+slug: hu-dennis-gabor-university-budapest
+name: Dennis Gabor University
+country: HU
+city:
+  slug: budapest
+  name: Budapest
+type: null
+website: https://gde.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://gde.hu/
+    last_verified_at: 2026-10-05

@@ -1,0 +1,76 @@
+slug: hu-budapest-university-of-technology-and-ec-budapest-computer-science-enginee-sf41
+institution: hu-budapest-university-of-technology-and-ec-budapest
+country: HU
+city: budapest
+field: computer-science
+level: bachelor
+name: Computer Science Engineering
+summary:
+  fr:
+    text: Computer Science Engineering, Budapest University of Technology and Economics (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Computer Science Engineering, Budapest University of Technology and Economics (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Computer Science Engineering, Budapest University of Technology and Economics (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/41
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le dossier doit inclure un certificat de fin d'études secondaires et un relevé de notes; les candidats encore scolarisés doivent également fournir une attestation de la date de fin d'études prévue.
+          status: draft
+        en:
+          text: The application must include a secondary school certificate and transcript; applicants still at school must also provide a certificate of the expected graduation date.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifier l'exigence de moyenne : résultat global minimum de 70 % aux études secondaires."
+          status: draft
+        en:
+          text: "Check the grade requirement: overall result of minimum 70% in secondary school studies."
+          status: draft
+scholarships:
+  - stipendium-hungaricum
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/41
+    last_verified_at: 2026-10-05

@@ -1,0 +1,67 @@
+{
+  "slug": "hu-international-business-school-budapest-bachelor-of-science-in-c-sf365",
+  "programmePage": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-corporate-finance/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-corporate-finance/",
+          "quote": "Duration of programme 6 semesters 6 semesters"
+        },
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/365",
+          "quote": "Duration of the course / programme: 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/365",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary school leaving certificate"
+          },
+          "quotedAs": "Secondary school leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-corporate-finance/",
+          "quote": "Secondary school leaving certificate AND"
+        }
+      ]
+    }
+  },
+  "notes": "La page des frais donne 4 000 par semestre pour « Bachelor's degree programmes - The University of Buckingham », la structure à laquelle appartient ce BSc. Le lien « Fees and Deadlines » de la page du programme renvoie à une page de frais qui distingue les frais par semestre pour l'Université de Buckingham et mentionne des frais supplémentaires (frais d'inscription uniques pour les non-UE, frais de candidature, etc.). Les dates de début ne sont données que comme « February and September » sans jour ni année dans l'URL du programme ; les deadlines de candidature sur la page des frais concernent des programmes ou des citoyens hongrois et ne précisent pas qu'elles s'appliquent aux candidats non-UE, donc elles ne sont pas incluses. L'inscription se fait via le formulaire en ligne d'IBS / DreamApply (canal « hu-university-direct »).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Justificatif de niveau d'anglais exigé : IELTS 6.0 ou équivalent (par ex. TOEFL 72, GCSE English, Duolingo 105). Vérifiez les documents acceptés.",
+          "en": "English proof required: IELTS 6.0 or equivalent (e.g. TOEFL 72, GCSE English, Duolingo 105). Check which documents are accepted."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-corporate-finance/",
+            "quote": "IELTS 6.0 or equivalent*"
+          }
+        ]
+      }
+    ]
+  }
+}

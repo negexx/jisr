@@ -1,0 +1,48 @@
+{
+  "slug": "hu-budapest-university-of-technology-and-ec-budapest-transportation-engineeri-sf75",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/75",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/75",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/75",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    }
+  },
+  "notes": "No tuition figure for self-financed non-EU/EEA students appears on the supplied page: the page only states \"State Scholarships Not available\" for this programme and gives no fee. So no tuition fact is included and the fee must be checked with the university. No application deadline, application channel/platform, or document list is stated on the page. The page is the Studyfinder entry for the programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme d'études secondaires (high school degree) exigé; test d'admission et entretien oral requis. Vérifiez les détails sur la page e-admission du BME.",
+          "en": "Eligible high school degree required; admission tests and an oral entrance examination are required. Check details on the BME e-admission page."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/75",
+            "quote": "general minimum requirements are an eligible high school degree"
+          },
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/75",
+            "quote": "Entrance examination: Yes"
+          }
+        ]
+      }
+    ]
+  }
+}

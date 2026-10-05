@@ -1,0 +1,75 @@
+slug: hu-university-of-miskolc-miskolc-mechanical-engineering-sf462
+institution: hu-university-of-miskolc-miskolc
+country: HU
+city: miskolc
+field: engineering
+level: bachelor
+name: Mechanical Engineering
+summary:
+  fr:
+    text: Mechanical Engineering, University of Miskolc (Miskolc). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Mechanical Engineering, University of Miskolc (Miskolc). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Mechanical Engineering, University of Miskolc (Miskolc). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/462
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Diplôme d'études secondaires exigé, avec connaissances au niveau secondaire en mathématiques et en physique. Vérifier ces prérequis dans votre dossier.
+          status: draft
+        en:
+          text: Secondary school leaving certificate required, with secondary school level knowledge of mathematics and physics. Check these prerequisites in your dossier.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un examen d'entrée est requis : lettre de motivation et entretien Skype de 15 minutes. Préparez ces éléments."
+          status: draft
+        en:
+          text: "An entrance examination is required: motivation letter and a 15-minute Skype interview. Prepare these elements."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/462
+    last_verified_at: 2026-10-05

@@ -1,0 +1,92 @@
+slug: hu-university-of-pecs-pecs-mechanical-engineering-sf726
+institution: hu-university-of-pecs-pecs
+country: HU
+city: pecs
+field: engineering
+level: bachelor
+name: Mechanical Engineering
+summary:
+  fr:
+    text: Mechanical Engineering, University of Pécs (Pécs). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Mechanical Engineering, University of Pécs (Pécs). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Mechanical Engineering, University of Pécs (Pécs). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://english.mik.pte.hu/mechanical-engineering
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 340000
+    currency: USD
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un examen d'entrée oral en ligne est requis. Consultez le processus de sélection : https://english.mik.pte.hu/selection-process"
+          status: draft
+        en:
+          text: "An online oral entrance examination is required. See the selection process: https://english.mik.pte.hu/selection-process"
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme de fin d'études secondaires (High School Certificate) est requis.
+          status: draft
+        en:
+          text: A High School Certificate is required.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des frais de candidature de 150 USD (non remboursables) s'appliquent.
+          status: draft
+        en:
+          text: An application fee of 150 USD (non-refundable) applies.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://english.mik.pte.hu/mechanical-engineering
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/726
+    last_verified_at: 2026-10-05

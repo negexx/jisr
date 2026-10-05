@@ -1,0 +1,79 @@
+{
+  "slug": "hu-obuda-university-budapest-engineering-management-sf564",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/564",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/564",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/564",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 270000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://uni-obuda.hu/tuition-fees/",
+          "quote": "Engineering Management Projectmanagement 2,000 EUR 2,700 EUR"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://uni-obuda.hu/application-deadlines/",
+          "quote": "the Matriculation / School Leaving Certificate has to be uploaded into the University’s online application system by the 1st of August the year of application"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee of 2,700 EUR per semester is the Non-EEA rate for Engineering Management as listed in the university's tuition fees table (specialisation: Projectmanagement). Durée 7 semestres = 3,5 ans. The application deadline '31th May, 2026' on how-to-apply is a general university deadline; no page states this deadline is specifically for non-EU applicants, so applicationDeadline is omitted. Requirement evidence quote combines two adjacent lines. Translation evidence: 'with verified English translations' from programme page and 'certified English translation' from application-deadlines page.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée est requis : épreuve écrite de mathématiques et entretien oral d'anglais en ligne. Préparez-vous à ces évaluations.",
+          "en": "An entrance examination is required: written mathematics examination and online English oral interview. Prepare for these assessments."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/564",
+            "quote": "Entrance examination: Yes Entrance type: both Minimum level of language proficiency (oral): IELTS 5.0"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vous devez avoir au moins 18 ans au début des études (fin septembre 2026). Vérifiez cette condition avant de postuler.",
+          "en": "You must be at least 18 years old by the start of the study period (end of September 2026). Check this condition before applying."
+        },
+        "evidence": [
+          {
+            "url": "https://uni-obuda.hu/application-deadlines/",
+            "quote": "Applicants must be at least 18 years old by the start of the study period in the Fall semester of Year 1 at the University"
+          }
+        ]
+      }
+    ]
+  }
+}
