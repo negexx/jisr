@@ -20,10 +20,12 @@ import {
 } from "./sources/numbeo";
 import { DATA_DIR, STAGING_DIR, stageFile, toYaml } from "./staging";
 
-// Usage: data:costs [--dry-run] [--countries FR,DE,...] [--max-requests 400] [--delay-ms 2000]
+// Usage: data:costs [--dry-run] [--countries FR,DE,...] [--max-requests 400] [--delay-ms 8000]
 // Stages one Numbeo cost profile per programme city and one per country (the fallback for cities
 // Numbeo does not list). Crowdsourced numbers: every line is an `estimate`, never `official`.
 const MIN_DELAY_MS = 2000;
+// Numbeo answered HTTP 429 from about the 15th page at 2 s: the default stays well clear of that.
+export const DEFAULT_DELAY_MS = 8000;
 const COLLECTION = "cost-profiles";
 
 export const COUNTRY_NAMES: Record<string, string> = {
@@ -39,10 +41,15 @@ const currencyOf = (country: string): string => (country === "HU" ? "HUF" : "EUR
 
 const NUMBEO_HOST = "https://www.numbeo.com";
 
-// Only a few big cities resolve bare ("/in/Paris"); every other one answers 200 "Cannot find city id",
-// so the page is always asked for as "<City>-<Country>".
+// Numbeo serves some cities only as "<City>-<Country>" and others only bare ("/in/Dresden"); the other
+// form answers 200 "Cannot find city id". The Name-Country form is asked for first, the bare one second.
 export function numbeoCityUrl(name: string, countryName: string, currency: string): string {
   const slug = encodeURIComponent(`${name.trim()} ${countryName.trim()}`.replace(/\s+/g, "-"));
+  return `${NUMBEO_HOST}/cost-of-living/in/${slug}?displayCurrency=${currency}`;
+}
+
+export function numbeoBareCityUrl(name: string, currency: string): string {
+  const slug = encodeURIComponent(name.trim().replace(/\s+/g, "-"));
   return `${NUMBEO_HOST}/cost-of-living/in/${slug}?displayCurrency=${currency}`;
 }
 
@@ -77,12 +84,18 @@ const normalisedName = (text: string): string =>
 // support: the page must say it is the place and the currency we asked for, or nothing is staged.
 export function pageRefusal(
   page: NumbeoPage,
-  expected: { label: string; names: readonly string[]; currency: string },
+  expected: { label: string; names: readonly string[]; currency: string; country?: string },
 ): string | null {
   if (page.place === null) return `page names no place, expected ${expected.label}`;
   const place = normalisedName(page.place);
   if (!expected.names.some((name) => normalisedName(name) === place))
     return `page is for ${page.place}, expected ${expected.label}`;
+  // City pages only: the same city name exists in several countries, and a bare URL can be any of them.
+  if (expected.country !== undefined) {
+    if (page.countryName === null) return `page names no country, expected ${expected.country}`;
+    if (normalisedName(page.countryName) !== normalisedName(expected.country))
+      return `page is in ${page.countryName}, expected ${expected.country}`;
+  }
   const symbols = ACCEPTED_CURRENCY_SYMBOLS[expected.currency] ?? [];
   const accepted = symbols.join(" or ");
   if (page.currencySymbol === null) return `currency symbol not found, expected ${accepted}`;
@@ -345,7 +358,11 @@ type Target = {
   country: string;
   city: string | null;
   url: string;
+  // The bare city URL, asked for when the first one answers "Cannot find city id" (cities only).
+  bareUrl?: string;
   currency: string;
+  // The country the breadcrumb must name (cities only).
+  countryName?: string;
   // The place the page must be about: shown in the refusal, and the names that match it.
   label: string;
   names: string[];
@@ -375,15 +392,22 @@ function targetsFor(countries: readonly string[], cities: readonly CityRow[]): T
         COUNTRY_NAMES[row.country] ?? row.country,
         currencyOf(row.country),
       ),
+      bareUrl: numbeoBareCityUrl(row.name, currencyOf(row.country)),
       currency: currencyOf(row.country),
+      countryName: COUNTRY_NAMES[row.country] ?? row.country,
       label: row.name,
       names: [row.name, `${row.name}, ${COUNTRY_NAMES[row.country] ?? row.country}`],
     }));
   return [...countryTargets, ...cityTargets];
 }
 
-const isNotListed = (error: unknown): boolean =>
-  error instanceof Error && /HTTP 404\b/.test(error.message);
+const httpStatusOf = (error: unknown): number | null => {
+  const match = error instanceof Error ? error.message.match(/HTTP (\d{3})\b/) : null;
+  return match === null ? null : Number(match[1]);
+};
+
+// 429 "slow down" and 403 "blocked": every further request would only make it worse.
+const isStopStatus = (status: number | null): boolean => status === 429 || status === 403;
 
 // Fetches sequentially (one request at a time, `delayMs` apart), stages what parses, never
 // overwrites a staged file or a slug already in data/.
@@ -417,6 +441,10 @@ export async function runCosts(options: RunOptions): Promise<RunOutcome> {
     lines.push(
       `${planned} requests planned (${cached} already cached), about ${minutes} minutes at the ${options.delayMs} ms delay, one attempt each, no retries`,
     );
+    if (pending.some((target) => target.bareUrl !== undefined))
+      lines.push(
+        "up to 2 requests per city (the bare URL form is tried when the Name-Country page is not found), most cities 1",
+      );
     if (uncached > planned)
       lines.push(
         `--max-requests ${options.maxRequests} would leave ${uncached - planned} unfetched`,
@@ -427,36 +455,84 @@ export async function runCosts(options: RunOptions): Promise<RunOutcome> {
 
   let requests = 0;
   let failed = 0;
-  for (const target of pending) {
-    const fallback =
-      target.city === null ? "" : `; falls back to ${target.country.toLowerCase()}-numbeo`;
-    if (!options.isCached(target.url)) {
-      if (requests >= options.maxRequests) {
-        lines.push(`not fetched ${target.slug}: --max-requests ${options.maxRequests} reached`);
-        continue;
-      }
+  let stoppedBy: number | null = null;
+
+  type Got =
+    | { kind: "body"; body: string }
+    | { kind: "missing" }
+    | { kind: "failed"; message: string }
+    | { kind: "capped" }
+    | { kind: "stop"; status: number };
+
+  // One page, counted against the cap and spaced by the delay unless it is already cached.
+  async function get(url: string): Promise<Got> {
+    if (!options.isCached(url)) {
+      if (requests >= options.maxRequests) return { kind: "capped" };
       if (requests > 0) await options.sleep(options.delayMs);
       requests++;
     }
-    let body: string;
     try {
-      body = await options.fetch(target.url);
+      return { kind: "body", body: await options.fetch(url) };
     } catch (error) {
-      const message = error instanceof Error ? error.message : String(error);
-      if (isNotListed(error)) {
-        lines.push(`no profile ${target.slug}: not listed on Numbeo (${message})${fallback}`);
-      } else {
-        failed++;
-        lines.push(`failed ${target.slug}: ${message} (re-run to retry)${fallback}`);
+      const status = httpStatusOf(error);
+      if (status !== null && isStopStatus(status)) return { kind: "stop", status };
+      if (status === 404) return { kind: "missing" };
+      return { kind: "failed", message: error instanceof Error ? error.message : String(error) };
+    }
+  }
+
+  for (const target of pending) {
+    if (stoppedBy !== null) {
+      lines.push(`not fetched ${target.slug}: run stopped`);
+      continue;
+    }
+    const fallback =
+      target.city === null ? "" : `; falls back to ${target.country.toLowerCase()}-numbeo`;
+    const forms = target.bareUrl === undefined ? [target.url] : [target.url, target.bareUrl];
+    let found: { url: string; body: string } | null = null;
+    let handled = false;
+    for (const url of forms) {
+      const got = await get(url);
+      if (got.kind === "stop") {
+        stoppedBy = got.status;
+        lines.push(
+          `Numbeo answered HTTP ${got.status} (asked us to slow down or blocked us); stopping. Staged profiles and cached pages are kept; wait before re-running.`,
+          `not fetched ${target.slug}: run stopped`,
+        );
+        handled = true;
+        break;
       }
+      if (got.kind === "capped") {
+        lines.push(`not fetched ${target.slug}: --max-requests ${options.maxRequests} reached`);
+        handled = true;
+        break;
+      }
+      if (got.kind === "failed") {
+        failed++;
+        lines.push(`failed ${target.slug}: ${got.message} (re-run to retry)${fallback}`);
+        handled = true;
+        break;
+      }
+      if (got.kind === "body" && !isCityNotFound(got.body)) {
+        found = { url, body: got.body };
+        break;
+      }
+    }
+    if (handled) continue;
+    if (found === null) {
+      lines.push(
+        `no profile ${target.slug}: not listed by Numbeo${forms.length > 1 ? " (tried both URL forms)" : ""}${fallback}`,
+      );
       continue;
     }
-    if (isCityNotFound(body)) {
-      lines.push(`no profile ${target.slug}: not listed by Numbeo${fallback}`);
-      continue;
-    }
+    const { url: pageUrl, body } = found;
     const page = parseNumbeoPage(body);
-    const refusal = pageRefusal(page, target);
+    const refusal = pageRefusal(page, {
+      label: target.label,
+      names: target.names,
+      currency: target.currency,
+      ...(target.countryName === undefined ? {} : { country: target.countryName }),
+    });
     if (refusal !== null) {
       lines.push(`no profile ${target.slug}: ${refusal}${fallback}`);
       continue;
@@ -465,7 +541,7 @@ export async function runCosts(options: RunOptions): Promise<RunOutcome> {
       slug: target.slug,
       country: target.country,
       city: target.city,
-      url: target.url,
+      url: pageUrl,
       page,
       currency: target.currency,
       preparedAt: options.now(),
@@ -479,7 +555,7 @@ export async function runCosts(options: RunOptions): Promise<RunOutcome> {
     const { _review, ...record } = profile;
     const check = CostProfileRecordSchema.safeParse({
       ...record,
-      sources: { numbeo: { url: target.url, last_verified_at: options.now() } },
+      sources: { numbeo: { url: pageUrl, last_verified_at: options.now() } },
     });
     if (!check.success) {
       const issue = check.error.issues[0];
@@ -500,7 +576,7 @@ export async function runCosts(options: RunOptions): Promise<RunOutcome> {
   lines.push(
     `staged ${staged.length} profile(s) with ${requests} request(s)${failed === 0 ? "" : `, ${failed} failed (re-run to retry)`}`,
   );
-  return { ok: failed === 0, lines, requests, staged };
+  return { ok: failed === 0 && stoppedBy === null, lines, requests, staged };
 }
 
 // One attempt: fetchText retries 429, 5xx and network errors, so any retry would be a request the
@@ -531,7 +607,7 @@ async function main(argv: readonly string[]): Promise<void> {
     dryRun: argv.includes("--dry-run"),
     ...(countries === undefined ? {} : { countries }),
     maxRequests: numberFlag(argv, "--max-requests", 400),
-    delayMs: numberFlag(argv, "--delay-ms", MIN_DELAY_MS),
+    delayMs: numberFlag(argv, "--delay-ms", DEFAULT_DELAY_MS),
     dataDir: DATA_DIR,
     stagingDir: STAGING_DIR,
     now: () => new Date().toISOString().slice(0, 10),

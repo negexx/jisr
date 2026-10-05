@@ -119,6 +119,8 @@ export type NumbeoPage = {
   contributors: number | null;
   // The footer says "Some data are estimated due to a low number of contributors".
   lowContributorWarning: boolean;
+  // The country in the breadcrumb of the page ("Germany" on a Berlin page).
+  countryName: string | null;
   // The h1 text after "Cost of Living in " ("Paris", "France", "Lyon, France"), as the page states it.
   place: string | null;
   // The text around the number in the first average cell ("€", "Ft"): the currency Numbeo showed.
@@ -200,6 +202,19 @@ function placeOf(html: string): string | null {
   return null;
 }
 
+// The country link of the breadcrumb ("Cost of Living > Germany > Berlin"); the sidebar links to other
+// country pages have no breadcrumb_link class.
+function countryNameOf(html: string): string | null {
+  for (const anchor of html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)) {
+    const attributes = anchor[1] ?? "";
+    if (!attributes.includes("breadcrumb_link")) continue;
+    if (!/href="[^"]*cost-of-living\/country_result\.jsp\?country=/.test(attributes)) continue;
+    const name = cellText(anchor[2] ?? "");
+    if (name !== "") return name;
+  }
+  return null;
+}
+
 // Numbeo answers 200 with this heading for a city it cannot resolve from the URL.
 export function isCityNotFound(html: string): boolean {
   return [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)].some((heading) =>
@@ -225,6 +240,7 @@ export function parseNumbeoPage(html: string): NumbeoPage {
     lastUpdate: lastUpdateOf(html),
     contributors: contributorsOf(html),
     lowContributorWarning: lowContributorWarningIn(html),
+    countryName: countryNameOf(html),
     place: placeOf(html),
     currencySymbol: currencySymbolOf(table?.[1] ?? ""),
     rows,

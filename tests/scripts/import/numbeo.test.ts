@@ -43,6 +43,7 @@ const pageOf = (rows: NumbeoRow[]): NumbeoPage => ({
   lastUpdate: null,
   contributors: null,
   lowContributorWarning: false,
+  countryName: null,
   place: null,
   currencySymbol: null,
   rows,
@@ -203,6 +204,18 @@ describe("parseNumbeoPage", () => {
   it("decodes entities in the place and keeps a ', Country' suffix", () => {
     const html = `<h1>Cost of Living in Saint-Martin-d&#39;H&egrave;res, France</h1>`;
     expect(parseNumbeoPage(html).place).toBe("Saint-Martin-d'Hères, France");
+  });
+
+  it("reads the country from the breadcrumb link, not from the sidebar links", () => {
+    const html = `<nav class="breadcrumb"><a href="https://www.numbeo.com/cost-of-living/" itemprop="item" class="breadcrumb_link"><span itemprop="name">Cost of Living</span></a> <a href="https://www.numbeo.com/cost-of-living/country_result.jsp?country=Germany"  itemprop="item"  class="breadcrumb_link"><span itemprop="name">Germany</span></a> <a href="https://www.numbeo.com/cost-of-living/in/Berlin"  itemprop="item"  class="breadcrumb_link">
+<span itemprop="name">Berlin</span></a></nav><a href="https://www.numbeo.com/cost-of-living/country_result.jsp?country=France" class="empFont">Average in France</a>`;
+    expect(parseNumbeoPage(html).countryName).toBe("Germany");
+    expect(
+      parseNumbeoPage(
+        `<a href="https://www.numbeo.com/cost-of-living/country_result.jsp?country=France" class="empFont">Average in France</a>`,
+      ).countryName,
+    ).toBeNull();
+    expect(parseNumbeoPage("<html></html>").countryName).toBeNull();
   });
 
   it("has no place when there is no h1 of that wording", () => {

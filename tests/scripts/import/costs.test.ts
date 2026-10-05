@@ -16,8 +16,10 @@ import {
 } from "../../../scripts/import/audit";
 import {
   buildProfile,
+  DEFAULT_DELAY_MS,
   isAllowedByRobots,
   loadCities,
+  numbeoBareCityUrl,
   numbeoCityUrl,
   numbeoCountryUrl,
   numbeoFetch,
@@ -56,6 +58,8 @@ function numbeoHtml(
     skip?: string[];
     place?: string | null;
     symbol?: string;
+    // the country in the breadcrumb (default France); null for a page without one
+    country?: string | null;
     housing?: [avg: string, low: string, high: string];
   } = {},
 ): string {
@@ -68,16 +72,22 @@ function numbeoHtml(
     row(TRANSPORT, "50.00", "30.00", "86.40", symbol),
     ...FOOD_BASKET.map((item) => row(item.name, "1.50", "1.00", "2.00", symbol)),
   ].filter((html) => !skip.some((name) => html.includes(`<td>${name} </td>`)));
+  const country = options.country === undefined ? "France" : options.country;
+  const breadcrumb =
+    country === null
+      ? ""
+      : `<nav class="breadcrumb"><a href="https://www.numbeo.com/cost-of-living/" itemprop="item" class="breadcrumb_link"><span itemprop="name">Cost of Living</span></a> <a href="https://www.numbeo.com/cost-of-living/country_result.jsp?country=${country}"  itemprop="item"  class="breadcrumb_link"><span itemprop="name">${country}</span></a></nav><a href="https://www.numbeo.com/cost-of-living/country_result.jsp?country=Germany" class="empFont">Average in Germany</a>`;
   const heading =
     place === null
       ? ""
       : `<title>Cost of Living in ${place}. Oct 2026. Prices in ${place}</title><h1> Cost of Living in ${place}</h1>`;
-  return `<html><head>${heading}</head><body><table class="data_wide_table new_data_table">${rows.join("\n")}</table>${options.footer ?? cityFooter}</body></html>`;
+  return `<html><head>${heading}</head><body>${breadcrumb}<table class="data_wide_table new_data_table">${rows.join("\n")}</table>${options.footer ?? cityFooter}</body></html>`;
 }
 
 const franceHtml = () => numbeoHtml({ footer: countryFooter, place: "France" });
-const hungaryHtml = () => numbeoHtml({ footer: countryFooter, place: "Hungary", symbol: "Ft" });
-const budapestHtml = () => numbeoHtml({ place: "Budapest", symbol: "Ft" });
+const hungaryHtml = () =>
+  numbeoHtml({ footer: countryFooter, place: "Hungary", symbol: "Ft", country: "Hungary" });
+const budapestHtml = () => numbeoHtml({ place: "Budapest", symbol: "Ft", country: "Hungary" });
 const gre = "Saint-Martin-d'Hères";
 const greHtml = () => numbeoHtml({ place: gre });
 
@@ -494,8 +504,9 @@ describe("runCosts", () => {
     expect(await listStaged(stagingDir)).toEqual(["cost-profiles/fr-numbeo"]);
     const text = outcome.lines.join("\n");
     expect(text).toContain("no profile fr-paris-numbeo");
-    expect(text).toContain("no profile fr-saint-martin-d-heres-numbeo: not listed on Numbeo");
-    expect(text).toContain("HTTP 404");
+    expect(text).toContain(
+      "no profile fr-saint-martin-d-heres-numbeo: not listed by Numbeo (tried both URL forms)",
+    );
     expect(text).toContain("falls back to fr-numbeo");
     expect(text).not.toContain("re-run to retry");
   });
@@ -583,10 +594,12 @@ describe("runCosts", () => {
     const f = fixture();
     f.pages.set(franceUrl, franceHtml());
     await runCosts(options(f, { countries: ["FR"] }));
-    const cityRequests = f.requested.filter((url) => url.includes("/cost-of-living/in/"));
-    expect(cityRequests).toEqual([
+    // neither city has a page here, so each is also asked for bare, second
+    expect(f.requested.filter((url) => url.includes("/cost-of-living/in/"))).toEqual([
       "https://www.numbeo.com/cost-of-living/in/Paris-France?displayCurrency=EUR",
+      "https://www.numbeo.com/cost-of-living/in/Paris?displayCurrency=EUR",
       "https://www.numbeo.com/cost-of-living/in/Saint-Martin-d'H%C3%A8res-France?displayCurrency=EUR",
+      "https://www.numbeo.com/cost-of-living/in/Saint-Martin-d'H%C3%A8res?displayCurrency=EUR",
     ]);
   });
 
@@ -610,16 +623,134 @@ describe("runCosts", () => {
       "<head><h1>Cannot find city id for Paris. Did you mean: Paris, France</h1></head>",
     );
     f.pages.set(parisUrl, apology);
+    f.pages.set(numbeoBareCityUrl("Paris", "EUR"), apology);
     f.pages.set(numbeoCityUrl(gre, "France", "EUR"), greHtml());
     const outcome = await runCosts(options(f, { countries: ["FR"] }));
     expect(await listStaged(stagingDir)).not.toContain("cost-profiles/fr-paris-numbeo");
     const text = outcome.lines.join("\n");
     expect(text).toContain(
-      "no profile fr-paris-numbeo: not listed by Numbeo; falls back to fr-numbeo",
+      "no profile fr-paris-numbeo: not listed by Numbeo (tried both URL forms); falls back to fr-numbeo",
     );
     expect(text).not.toContain("page names no place");
     expect(text).not.toContain("re-run to retry");
     expect(outcome.ok).toBe(true);
+  });
+
+  it.each([
+    429, 403,
+  ])("stops at the first HTTP %i: no further request, the rest is not fetched, not failed", async (code) => {
+    const f = fixture();
+    f.pages.set(franceUrl, franceHtml());
+    f.pages.set(parisUrl, numbeoHtml());
+    const outcome = await runCosts(
+      options(f, {
+        countries: ["FR", "HU"],
+        fetch: async (url: string) => {
+          f.requested.push(url);
+          if (f.requested.length === 3) throw new Error(`GET ${url} failed: HTTP ${code}`);
+          const body = f.pages.get(url);
+          if (body === undefined) throw new Error(`GET ${url} failed: HTTP 404`);
+          return body;
+        },
+      }),
+    );
+    expect(f.requested).toHaveLength(3);
+    expect(outcome.ok).toBe(false);
+    const text = outcome.lines.join("\n");
+    expect(text).toContain(
+      `Numbeo answered HTTP ${code} (asked us to slow down or blocked us); stopping. Staged profiles and cached pages are kept; wait before re-running.`,
+    );
+    // countries are requested first: France, Hungary, then Paris answers the HTTP error
+    expect(text).toContain("not fetched fr-paris-numbeo: run stopped");
+    expect(text).toContain("not fetched fr-saint-martin-d-heres-numbeo: run stopped");
+    expect(text).toContain("not fetched hu-budapest-numbeo: run stopped");
+    expect(text).not.toMatch(/^failed /m);
+    expect(text).not.toContain("re-run to retry");
+    expect(await listStaged(stagingDir)).toEqual(["cost-profiles/fr-numbeo"]);
+  });
+
+  it("waits eight seconds between requests by default, and never less than two", () => {
+    expect(DEFAULT_DELAY_MS).toBe(8000);
+  });
+
+  it("asks for the bare city page when the Name-Country page is 'Cannot find city id'", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, franceHtml());
+    f.pages.set(
+      parisUrl,
+      "<html><head><h1>Cannot find city id for Paris</h1></head><body></body></html>",
+    );
+    const bareParis = numbeoBareCityUrl("Paris", "EUR");
+    f.pages.set(bareParis, numbeoHtml());
+    f.pages.set(numbeoCityUrl(gre, "France", "EUR"), greHtml());
+    const outcome = await runCosts(options(f, { countries: ["FR"], delayMs: 3000 }));
+    expect(bareParis).toBe("https://www.numbeo.com/cost-of-living/in/Paris?displayCurrency=EUR");
+    expect(f.requested).toEqual([
+      franceUrl,
+      parisUrl,
+      bareParis,
+      numbeoCityUrl(gre, "France", "EUR"),
+    ]);
+    // every request but the first is preceded by the delay, the bare retry included
+    expect(f.sleeps).toEqual([3000, 3000, 3000]);
+    expect(outcome.requests).toBe(4);
+    const paris = parse(
+      readFileSync(stageFile("cost-profiles", "fr-paris-numbeo", stagingDir), "utf8"),
+    );
+    expect(paris.sources.numbeo.url).toBe(bareParis);
+  });
+
+  it("is 'not listed' only when both URL forms are not found, and counts both requests", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, franceHtml());
+    const notFound = "<html><head><h1>Cannot find city id for Paris</h1></head></html>";
+    f.pages.set(parisUrl, notFound);
+    f.pages.set(numbeoBareCityUrl("Paris", "EUR"), notFound);
+    f.pages.set(numbeoCityUrl(gre, "France", "EUR"), greHtml());
+    const outcome = await runCosts(options(f, { countries: ["FR"] }));
+    expect(await listStaged(stagingDir)).not.toContain("cost-profiles/fr-paris-numbeo");
+    const text = outcome.lines.join("\n");
+    expect(text).toContain(
+      "no profile fr-paris-numbeo: not listed by Numbeo (tried both URL forms); falls back to fr-numbeo",
+    );
+    expect(text).not.toContain("page names no place");
+    expect(outcome.requests).toBe(4);
+    expect(outcome.ok).toBe(true);
+  });
+
+  it("counts the bare retry against --max-requests", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, franceHtml());
+    f.pages.set(parisUrl, "<h1>Cannot find city id for Paris</h1>");
+    f.pages.set(numbeoBareCityUrl("Paris", "EUR"), numbeoHtml());
+    const outcome = await runCosts(options(f, { countries: ["FR"], maxRequests: 2 }));
+    expect(f.requested).toEqual([franceUrl, parisUrl]);
+    expect(outcome.requests).toBe(2);
+    expect(outcome.lines.join("\n")).toContain(
+      "not fetched fr-paris-numbeo: --max-requests 2 reached",
+    );
+  });
+
+  it("refuses a city page whose breadcrumb country is another country or missing", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, franceHtml());
+    f.pages.set(parisUrl, numbeoHtml({ country: "Germany" }));
+    f.pages.set(numbeoCityUrl(gre, "France", "EUR"), numbeoHtml({ place: gre, country: null }));
+    const outcome = await runCosts(options(f, { countries: ["FR"] }));
+    expect(await listStaged(stagingDir)).toEqual(["cost-profiles/fr-numbeo"]);
+    const text = outcome.lines.join("\n");
+    expect(text).toContain("no profile fr-paris-numbeo: page is in Germany, expected France");
+    expect(text).toContain(
+      "no profile fr-saint-martin-d-heres-numbeo: page names no country, expected France",
+    );
+    expect(text).toContain("falls back to fr-numbeo");
+  });
+
+  it("does not check the breadcrumb of a country page", async () => {
+    const f = fixture();
+    f.pages.set(franceUrl, numbeoHtml({ footer: countryFooter, place: "France", country: null }));
+    await runCosts(options(f, { countries: ["FR"], maxRequests: 1 }));
+    expect(await listStaged(stagingDir)).toEqual(["cost-profiles/fr-numbeo"]);
   });
 
   it("refuses a country page for another country", async () => {
@@ -645,7 +776,7 @@ describe("runCosts", () => {
   it("refuses a Hungarian page that shows euros, and accepts the one that shows forints", async () => {
     const f = fixture();
     f.pages.set(hungaryUrl, hungaryHtml());
-    f.pages.set(budapestUrl, numbeoHtml({ place: "Budapest" }));
+    f.pages.set(budapestUrl, numbeoHtml({ place: "Budapest", country: "Hungary" }));
     const outcome = await runCosts(options(f, { countries: ["HU"] }));
     expect(await listStaged(stagingDir)).toEqual(["cost-profiles/hu-numbeo"]);
     expect(outcome.lines.join("\n")).toContain(
@@ -703,6 +834,9 @@ describe("runCosts", () => {
       "2 requests planned (1 already cached), about 1 minutes at the 2000 ms delay",
     );
     expect(outcome.lines.join("\n")).toContain("one attempt each, no retries");
+    expect(outcome.lines.join("\n")).toContain(
+      "up to 2 requests per city (the bare URL form is tried when the Name-Country page is not found), most cities 1",
+    );
   });
 
   it("never overwrites a staged file or a slug already in data, and does not request them", async () => {
