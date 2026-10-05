@@ -14,7 +14,7 @@ import {
 const HOME = "https://grants.example/any";
 const pages: Record<string, string> = {
   [HOME]:
-    "First- and higher-semester students of all nationalities can apply directly to their university. Students from every country may apply. Grundsätzlich ist jedes Studium an einer staatlichen oder staatlich anerkannten Hochschule förderungsfähig. Every course of study at a state university is eligible for funding. Also zum Beispiel auch ein Zweit- oder Ergänzungsstudium, ein Masterstudiengang oder ein duales Studium. Master programmes are eligible for funding. Studierende aller Nationalitäten und aller Fachrichtungen können sich bewerben. Students of all nationalities are not eligible for this grant. It pays 300 euros per month. Apply at your university. Open to students of all nationalities except Moroccan citizens. Nicht jedes Studium ist förderungsfähig. Not every course of study is eligible for funding. Every course of study is eligible only after the first degree.",
+    "First- and higher-semester students of all nationalities can apply directly to their university. Students from every country may apply. Grundsätzlich ist jedes Studium an einer staatlichen oder staatlich anerkannten Hochschule förderungsfähig. Every course of study at a state university is eligible for funding. Also zum Beispiel auch ein Zweit- oder Ergänzungsstudium, ein Masterstudiengang oder ein duales Studium. Master programmes are eligible for funding. Studierende aller Nationalitäten und aller Fachrichtungen können sich bewerben. Students of all nationalities are not eligible for this grant. It pays 300 euros per month. Apply at your university. enrolling full-time in bachelor's degree courses. To access the scholarship in the first year of Bachelor’s degree. Students enrolled in bachelor's degree courses. Applicants must hold a Bachelor's degree. Open to holders of Bachelor's degree. For those who finished a Bachelor's degree. Enrolling in bachelor's degree courses and master's degree courses. After a Bachelor's degree. Open to students of all nationalities except Moroccan citizens. Nicht jedes Studium ist förderungsfähig. Not every course of study is eligible for funding. Every course of study is eligible only after the first degree.",
 };
 const getText = async (url: string) => {
   const text = pages[url];
@@ -100,6 +100,28 @@ describe("all nationalities", () => {
     });
     expect(result.ok).toBe(false);
     expect(reasonsOf(result)).toMatch(/exclusion/);
+  });
+});
+
+describe("in bachelor's degree courses", () => {
+  const level = (quote: string) => run({ evidence: evidence({ level: [q(quote)] }) });
+
+  it.each([
+    "enrolling full-time in bachelor's degree courses",
+    "To access the scholarship in the first year of Bachelor’s degree",
+    "Students enrolled in bachelor's degree courses",
+  ])("counts as the first degree (%s)", async (quote) => {
+    expect((await level(quote)).ok).toBe(true);
+  });
+
+  it.each([
+    "Applicants must hold a Bachelor's degree",
+    "open to holders of Bachelor's degree",
+    "for those who finished a Bachelor's degree",
+    "enrolling in bachelor's degree courses and master's degree courses",
+    "after a Bachelor's degree",
+  ])("does not count when it is a prerequisite or mixed (%s)", async (quote) => {
+    expect((await level(quote)).ok).toBe(false);
   });
 });
 

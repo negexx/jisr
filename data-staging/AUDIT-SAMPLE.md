@@ -158,3 +158,137 @@ For each record: open the link, confirm the quote is there and that it supports 
 
 > Preparer's caveats: Le montant des frais de scolarité pour les étudiants non-UE n'est pas indiqué comme un montant unique en EUR dans les pages fournies; il dépend du pays de provenance et de l'ISEE (voir la Guida alla contribuzione, art. 5), donc non inclus. Les dates d'admission (intakes) ne sont pas fournies pour ce programme spécifique dans les pages.
 
+## scholarships/it-dsu-bocconi  _(batch b28-beaa17)_
+
+**Borsa di studio ISU Bocconi (diritto allo studio, Lombardia)**
+
+- **destinations**: `IT`
+- **eligibleNationalities**: (any international applicant)
+- **fields**: ALL FIELDS
+- **institutions**: `it-milano-bocconi-milano`
+- **summary** (fr, draft): Bourse régionale pour le droit aux études, gérée par l'Université Bocconi pour ses propres étudiants. Les étudiants non-UE dont la famille vit à l'étranger passent par un ISEEU parificato délivré par le CAF partenaire de Bocconi.
+- **summary** (en, draft): Regional right-to-study scholarship managed by Bocconi University for its own students. Non-EU students whose family lives abroad use an ISEEU parificato certificate issued by the CAF partnered with Bocconi.
+- **howToApply** (fr, draft): Obtenir l'ISEEU parificato auprès du CAF partenaire de Bocconi, puis déposer la demande en ligne via le lien publié sur la page de l'université pendant la période de candidature, avec les documents justificatifs.
+- **howToApply** (en, draft): Get the ISEEU parificato from the CAF partnered with Bocconi, then submit the online application through the link published on the university page during the application period, uploading the supporting documents.
+- **provider site**: www.unibocconi.it. Confirm: this is the provider's own site.
+- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
+- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
+- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.
+- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.
+- **documents**: `[{"slug":"iseeu-parificato-certificate","name":{"fr":{"text":"Certificat ISEEU parificato (famille résidant à l'étranger)","status":"draft"},"en":{"text":"ISEEU parificato certificate (family household resident abroad)","status":"draft"}},"translationRequired":null}]` (official; source page-2)
+  - "ISEEU parificato Certificate issued in 2026 by the CAF partnered with Bocconi University" — https://www.unibocconi.it/sites/default/files/media/attachments/a.y.%202026-2027_%20FINAL%20ISU%20Bocconi%20Scholarships%20Application%20Requirement%20and%20Regulations_0.pdf
+- **support**: `{"amount":null,"covers":["living"]}` (official; source page-2)
+  - "Cash stipend of variable amount (Art. 13) defined annually by Lombardy Region" — https://www.unibocconi.it/sites/default/files/media/attachments/a.y.%202026-2027_%20FINAL%20ISU%20Bocconi%20Scholarships%20Application%20Requirement%20and%20Regulations_0.pdf
+- **eligibility**: "Italian students, EU-students and non-EU students from Italian DPR n. 394 of 31 August 1999, enacting Italian D.Lgs. n. 286 of 25 July 1998, may apply" — https://www.unibocconi.it/sites/default/files/media/attachments/a.y.%202026-2027_%20FINAL%20ISU%20Bocconi%20Scholarships%20Application%20Requirement%20and%20Regulations_0.pdf
+- **eligibility**: "International students with official registered address abroad, or international students with official registered address in Italy but not considered independent and whose family household has official registered address abroad" — https://www.unibocconi.it/sites/default/files/media/attachments/a.y.%202026-2027_%20FINAL%20ISU%20Bocconi%20Scholarships%20Application%20Requirement%20and%20Regulations_0.pdf
+- **level**: "for students enrolled in a Bachelor of Science program: for a maximum period of seven semesters starting from the absolute first year of enrollment" — https://www.unibocconi.it/sites/default/files/media/attachments/a.y.%202026-2027_%20FINAL%20ISU%20Bocconi%20Scholarships%20Application%20Requirement%20and%20Regulations_0.pdf
+- **howToApply**: "Access the online application through the link that will be available on this webpage during the application period." — https://www.unibocconi.it/en/current-students/funding/isu-bocconi-scholarship-deadlines-and-procedures-ay-2026-27
+- **howToApply**: "Upload in the online application the necessary documentation related to declared requirements and status" — https://www.unibocconi.it/en/current-students/funding/isu-bocconi-scholarship-deadlines-and-procedures-ay-2026-27
+- **howToApply**: "ISEEU parificato Certificate issued in 2026 by the CAF partnered with Bocconi University" — https://www.unibocconi.it/sites/default/files/media/attachments/a.y.%202026-2027_%20FINAL%20ISU%20Bocconi%20Scholarships%20Application%20Requirement%20and%20Regulations_0.pdf
+- **howToApply**: "This document can only be issued by the CAF partnered with Bocconi University." — https://www.unibocconi.it/en/current-students/funding/economic-requirements-isu-bocconi-ay-2026-27
+- **page**: https://www.unibocconi.it/en/current-students/funding/isu-bocconi-scholarship-first-year-students-ay-2026-27
+
+## scholarships/it-dsu-edisu-pavia  _(batch b28-beaa17)_
+
+**Borsa di studio EDiSU Pavia (Università di Pavia)**
+
+- **destinations**: `IT`
+- **eligibleNationalities**: (any international applicant)
+- **fields**: ALL FIELDS
+- **institutions**: `it-pavia-pavia`
+- **summary** (fr, draft): Bourse pour le droit aux études gérée par EDiSU Pavia pour les étudiants de l'Université de Pavie. Pour les étudiants étrangers dont la famille vit à l'étranger, la situation économique est calculée par un ISEE équivalent (ISEE parificato) à partir de documents du pays des revenus.
+- **summary** (en, draft): Right-to-study scholarship managed by EDiSU Pavia for students of the University of Pavia. For foreign students whose family lives abroad, the financial status is determined by an equivalent ISEE (ISEE parificato) based on documents from the country of income.
+- **howToApply** (fr, draft): Demande uniquement en ligne dans les « Services en ligne aux étudiants » d'EDiSU. Les étudiants avec des revenus à l'étranger joignent les documents en PDF puis remettent les originaux à EDiSU avant la date limite de l'appel.
+- **howToApply** (en, draft): Apply only online in EDiSU's Student Online Services. Students with income abroad attach the documents as PDF files and submit the originals to EDiSU by the call's deadline.
+- **provider site**: www.edisu.pv.it. Confirm: this is the provider's own site.
+- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
+- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
+- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.
+- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.
+- **support**: `{"amount":null,"covers":["tuition","housing"]}` (official; source page-2)
+  - "full monetary fee, exemption of all university fees" — https://www.edisu.pv.it/en/download/4769/
+  - "for students classified as off-site, accommodation in an EDiSU college for the academic year 2026/2027" — https://www.edisu.pv.it/en/download/4769/
+- **eligibility**: "The competition is open to Italian students, EU students and foreign students, as defined by Presidential Decree no. 394" — https://www.edisu.pv.it/en/download/4769/
+- **eligibility**: "the financial status of foreign students whose family unit resides abroad or of Italian students residing abroad is determined by the Equivalent Economic Situation Indicator abroad statement" — https://www.edisu.pv.it/en/download/4769/
+- **level**: "for students enrolled in bachelor’s degree courses, for a period of seven semesters" — https://www.edisu.pv.it/en/download/4769/
+- **howToApply**: "The application for admission to the competition must be submitted ONLY ONLINE in the section “STUDENT’S ONLINE SERVICES“" — https://www.edisu.pv.it/en/services/call-for-ordinary-scholarship/
+- **howToApply**: "must attach in electronic file format (pdf) copies of all of the documents listed in article 4.2.2 in the “Upload documents” - “foreign documentation” section" — https://www.edisu.pv.it/en/download/4769/
+- **howToApply**: "Original hard copies of the same documents (listed in article 4.2.2) must be submitted to EDiSU" — https://www.edisu.pv.it/en/download/4769/
+- **howToApply**: "The abovementioned documents must be issued by competent Authorities in the country in which the income was made" — https://www.edisu.pv.it/en/download/4769/
+- **page**: https://www.edisu.pv.it/en/services/call-for-ordinary-scholarship/
+
+## scholarships/it-dsu-unibs  _(batch b28-beaa17)_
+
+**Borsa di studio regionale DSU (Università di Brescia)**
+
+- **destinations**: `IT`
+- **eligibleNationalities**: (any international applicant)
+- **fields**: ALL FIELDS
+- **institutions**: `it-brescia-brescia`
+- **summary** (fr, draft): Bourse pour le droit aux études gérée directement par l'Université de Brescia pour ses étudiants. Les étudiants étrangers dont les revenus sont à l'étranger demandent un ISEE équivalent (ISEE parificato) à un CAAF conventionné avec l'Université.
+- **summary** (en, draft): Right-to-study scholarship managed directly by the University of Brescia for its own students. Foreign students with income abroad request an equivalent ISEE (ISEE parificato) from a CAAF affiliated with the University.
+- **howToApply** (fr, draft): Demande en ligne sur le site de l'Université (Domanda servizi online), à confirmer avant la date limite de l'appel. Les étudiants hors d'Italie demandent l'ISEE parificato à un CAAF conventionné, avec des documents du pays des revenus traduits en italien.
+- **howToApply** (en, draft): Apply online through the University website (Domanda servizi online) and confirm before the call's deadline. Students with income outside Italy request the ISEE parificato from an affiliated CAAF, using documents from the country of income translated into Italian.
+- **provider site**: www.unibs.it. Confirm: this is the provider's own site.
+- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
+- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
+- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.
+- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.
+- **eligibility**: "Possono partecipare al concorso gli studenti italiani, gli studenti degli Stati appartenenti all’Unione Europea, gli studenti stranieri di cui al D.P.R. 31 agosto 1999, n. 394" — https://www.unibs.it/sites/default/files/2026-07/Bando%20servizi%20DSU%2026-27%20prot..pdf
+- **eligibility**: "La condizione economica e patrimoniale per gli studenti stranieri non appartenenti all’Unione Europea è valutata secondo le modalità prescritte" — https://www.unibs.it/sites/default/files/2026-07/Bando%20servizi%20DSU%2026-27%20prot..pdf
+- **level**: "Studenti iscritti al primo anno dei: - Corsi di Laurea Triennale" — https://www.unibs.it/sites/default/files/2026-07/Bando%20servizi%20DSU%2026-27%20prot..pdf
+- **howToApply**: "La domanda online dei Servizi va presentata esclusivamente tramite procedura online" — https://www.unibs.it/it/Bando-borse-di-studio-DSU-e-servizi%20AA%202026-2027
+- **howToApply**: "seguire le modalità ivi specificate e confermare entro la scadenza riportata nel presente bando" — https://www.unibs.it/sites/default/files/2026-07/Bando%20servizi%20DSU%2026-27%20prot..pdf
+- **howToApply**: "per i soggetti non residenti in Italia e/o con redditi e patrimoni in paesi diversi dall’Italia è necessario rivolgersi ad uno dei CAAF Convenzionati con l’Università degli Studi di Brescia" — https://www.unibs.it/sites/default/files/2026-07/Bando%20servizi%20DSU%2026-27%20prot..pdf
+- **howToApply**: "deve essere certificata con apposita documentazione rilasciata dalle competenti autorità del Paese in cui i redditi sono stati prodotti e deve essere tradotta in lingua italiana" — https://www.unibs.it/sites/default/files/2026-07/Bando%20servizi%20DSU%2026-27%20prot..pdf
+- **page**: https://www.unibs.it/it/Bando-borse-di-studio-DSU-e-servizi%20AA%202026-2027
+
+## scholarships/it-dsu-unimi  _(batch b28-beaa17)_
+
+**Borsa di studio regionale (Università degli Studi di Milano)**
+
+- **destinations**: `IT`
+- **eligibleNationalities**: (any international applicant)
+- **fields**: ALL FIELDS
+- **institutions**: `it-milano-milano`
+- **summary** (fr, draft): Bourse régionale pour le droit aux études de l'Université de Milan, pour ses étudiants en licence. Les étudiants étrangers dont la famille vit à l'étranger fournissent des documents spécifiques pour le calcul d'un ISEE équivalent.
+- **summary** (en, draft): Regional right-to-study scholarship of the University of Milan for its bachelor's students. Foreign students with a family unit abroad provide specific documentation for the calculation of an equated ISEE.
+- **howToApply** (fr, draft): Candidature en ligne sur le portail du droit aux études de l'Université de Milan.
+- **howToApply** (en, draft): Apply online through the University of Milan's right-to-study portal.
+- **provider site**: www.unimi.it. Confirm: this is the provider's own site.
+- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
+- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
+- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.
+- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.
+- **eligibility**: "Italian and foreign students who are enrolling full-time" — https://www.unimi.it/sites/default/files/2026-07/Summary%20of%20the%20Call%20for%20Applications%20A.Y.%202026-27.pdf
+- **eligibility**: "Foreign students with a family unit abroad who do not fall under Annex 1" — https://www.unimi.it/sites/default/files/2026-07/Summary%20of%20the%20Call%20for%20Applications%20A.Y.%202026-27.pdf
+- **level**: "enrolling full-time in bachelor's degree courses" — https://www.unimi.it/sites/default/files/2026-07/Summary%20of%20the%20Call%20for%20Applications%20A.Y.%202026-27.pdf
+- **howToApply**: "The application must be submitted online by accessing https://studente.unimi.it/dirittoallostudio/" — https://www.unimi.it/sites/default/files/2026-07/Summary%20of%20the%20Call%20for%20Applications%20A.Y.%202026-27.pdf
+- **howToApply**: "Gli studenti devono accedere allo Sportello online" — https://www.unimi.it/it/studiare/borse-premi-mense-e-alloggi/borse-di-studio-regionali
+- **howToApply**: "specific documentation is required for the calculation of the equated ISEE" — https://www.unimi.it/sites/default/files/2026-07/Summary%20of%20the%20Call%20for%20Applications%20A.Y.%202026-27.pdf
+- **page**: https://www.unimi.it/it/studiare/borse-premi-mense-e-alloggi/borse-di-studio-regionali
+
+## scholarships/it-dsu-unimib  _(batch b28-beaa17)_
+
+**Borsa di studio regionale (Università di Milano-Bicocca)**
+
+- **destinations**: `IT`
+- **eligibleNationalities**: (any international applicant)
+- **fields**: ALL FIELDS
+- **institutions**: `it-milano-bicocca-milano`
+- **summary** (fr, draft): Bourse du droit aux études de l'Université de Milan-Bicocca pour ses étudiants. Le concours est ouvert aux étudiants de pays hors UE ; ceux qui résident à l'étranger peuvent téléverser leurs documents pour l'ISEE.
+- **summary** (en, draft): Right-to-study scholarship of the University of Milano-Bicocca for its students. The contest is open to students from non-EU countries; students resident abroad can upload their documents for the ISEE.
+- **howToApply** (fr, draft): Candidature en ligne sur le portail du droit aux études de l'Université ; les étudiants résidant à l'étranger peuvent téléverser leurs documents pour l'ISEE.
+- **howToApply** (en, draft): Apply online on the University's right-to-study portal; students resident abroad can upload their ISEE documents.
+- **provider site**: www.unimib.it. Confirm: this is the provider's own site.
+- **deadline check**: Confirm: this is the application deadline (not opening or results), for international/non-EU applicants, and this year's round.
+- **eligibility check**: Confirm: no exclusion (not entitled, only EU, apply ... instead) and Moroccan applicants are covered.
+- **support check**: Confirm: amount for Bachelor students, fixed not a ceiling, right period and currency.
+- **level check**: Confirm: the scholarship itself is for starting or doing a Bachelor, not for finishing one and moving on to a Master. If the quote lists both Bachelor and Master, confirm the scheme is open to Bachelor students and not only to Bachelor graduates.
+- **eligibility**: "students with citizenship of non-UE countries referred to in D.P.R. of August 31st 1999" — https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
+- **level**: "To access the scholarship in the first year of Bachelor’s degree" — https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
+- **howToApply**: "It is necessary to fill in the online application on the website https://unimib-ol.dirittoallostudio.it/" — https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
+- **howToApply**: "International students who are not yet in possession of an Italian fiscal code" — https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
+- **howToApply**: "Possible upload of the ISEE documents for students who are resident abroad" — https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
+- **page**: https://www.unimib.it/studiare/servizi-studenti-e-laureati/diritto-allo-studio-contribuzione-studentesca-150-ore
+

@@ -1,0 +1,73 @@
+slug: it-dsu-unimib
+name: Borsa di studio regionale (Università di Milano-Bicocca)
+provider: Università degli Studi di Milano-Bicocca (benefici del diritto allo studio)
+destinations:
+  - IT
+eligibleNationalities: []
+fields: []
+institutions:
+  - it-milano-bicocca-milano
+level: bachelor
+summary:
+  fr:
+    text: Bourse du droit aux études de l'Université de Milan-Bicocca pour ses étudiants. Le concours est ouvert aux étudiants de pays hors UE ; ceux qui résident à l'étranger peuvent téléverser leurs documents pour l'ISEE.
+    status: draft
+  en:
+    text: Right-to-study scholarship of the University of Milano-Bicocca for its students. The contest is open to students from non-EU countries; students resident abroad can upload their documents for the ISEE.
+    status: draft
+support:
+  value: null
+  source: page-1
+  info_kind: official
+deadline:
+  value: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: page-2
+  info_kind: official
+  rules: []
+documents:
+  value: null
+  source: page-1
+  info_kind: official
+howToApply:
+  fr:
+    text: Candidature en ligne sur le portail du droit aux études de l'Université ; les étudiants résidant à l'étranger peuvent téléverser leurs documents pour l'ISEE.
+    status: draft
+  en:
+    text: Apply online on the University's right-to-study portal; students resident abroad can upload their ISEE documents.
+    status: draft
+officialUrl: https://www.unimib.it/studiare/servizi-studenti-e-laureati/diritto-allo-studio-contribuzione-studentesca-150-ore
+sources:
+  page-1:
+    url: https://www.unimib.it/studiare/servizi-studenti-e-laureati/diritto-allo-studio-contribuzione-studentesca-150-ore
+    last_verified_at: null
+  page-2:
+    url: https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
+    last_verified_at: null
+_review:
+  kind: scholarships
+  slug: it-dsu-unimib
+  name: Borsa di studio regionale (Università di Milano-Bicocca)
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  officialUrl: https://www.unimib.it/studiare/servizi-studenti-e-laureati/diritto-allo-studio-contribuzione-studentesca-150-ore
+  evidence:
+    - fact: eligibility
+      url: https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
+      quote: students with citizenship of non-UE countries referred to in D.P.R. of August 31st 1999
+    - fact: level
+      url: https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
+      quote: To access the scholarship in the first year of Bachelor’s degree
+    - fact: howToApply
+      url: https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
+      quote: It is necessary to fill in the online application on the website https://unimib-ol.dirittoallostudio.it/
+    - fact: howToApply
+      url: https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
+      quote: International students who are not yet in possession of an Italian fiscal code
+    - fact: howToApply
+      url: https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20eng.pdf
+      quote: Possible upload of the ISEE documents for students who are resident abroad
+  todo: "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
