@@ -218,8 +218,7 @@ const NUMBER_WORDS: Record<number, readonly string[]> = {
 };
 
 const LANGUAGE_WORDS: Record<string, RegExp> = {
-  // ";Inglese" is the language column of the MUR offer file ("...;Convenzionale;Inglese")
-  en: /english|anglais|englisch|engels|\bangla|;\s*inglese\b/i,
+  en: /english|anglais|englisch|engels|\bangla/i,
   fr: /french|français|francais|französisch|franzosisch|frans/i,
   de: /german|allemand|deutsch|duits/i,
   ar: /arabic|arabe|arabisch/i,
@@ -255,11 +254,19 @@ export function checkDuration(years: number, quote: string): FactCheck {
     : fail(`the quote does not state ${years} years, ${years * 2} semesters or ${years * 60} ECTS`);
 }
 
+// A whole row of the MUR offer file (ANNO;Ateneo;Area;GruppoDisciplinare;TipoCorso;Classe;NomeClasse;
+// Corso;Provincia;Comune;ACCESSO;DIDATTICA;LINGUA) whose language column is exactly "Inglese": the
+// ministry's statement that the course is taught in English. Nothing looser: not a fragment, not
+// "Italiano; Inglese", not a mixed "Inglese - Italiano".
+const MUR_ENGLISH_ROW = /^\d{4}(?:;[^;]+){11};Inglese$/;
+
 export function checkLanguages(codes: readonly string[], quote: string): FactCheck {
   for (const code of codes) {
     const pattern = LANGUAGE_WORDS[code];
     if (pattern === undefined) return fail(`unknown language code ${code}`);
-    if (!pattern.test(quote)) return fail(`the quote does not mention the language ${code}`);
+    const murEnglish = code === "en" && MUR_ENGLISH_ROW.test(quote.trim());
+    if (!pattern.test(quote) && !murEnglish)
+      return fail(`the quote does not mention the language ${code}`);
   }
   return ok;
 }

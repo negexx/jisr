@@ -6,9 +6,9 @@
 
 **Goal:** tell a student, on the programme page of France and Germany, that the national need-based grants (Crous bourse sur critères sociaux; BAföG) are generally not available to someone who arrives on a study visa alone, with an official source and a verified date, without touching match status.
 
-**Why not `route.conditions`:** every condition is evaluated (`src/domain/match.ts`); a `manual_check` returns `unknown`, which turns the whole match into "check" and can never reach a tick, and for the `foundation` route (Germany) conditions are never shown. Funding is not an admission requirement.
+**Why not `route.conditions`:** every condition is evaluated (`src/domain/match.ts`); a `manual_check` returns `unknown`, which turns the whole match into "check" and can never reach a tick, and for the `foundation` and `not_eligible` routes (Germany is `foundation`) `matchProgram` returns before the conditions are evaluated (`src/domain/match.ts`), so nothing derived from them is shown. Funding is not an admission requirement.
 
-**Architecture:** an optional `guidance` array on `AdmissionRouteRecordSchema` (`src/data-schema/records/admission-route.ts`): items `{ id, source, info_kind: "guidance", note: LocalizedText }`, validated and provenance-checked like conditions but never evaluated, never read by `src/domain`. The snapshot carries it with the route; the programme page renders it in the "Bourses" section under the heading "À savoir sur les aides du pays" (and en/ar), each note with its `SourceBadge` (guidance wording never says "official").
+**Architecture:** an optional `guidance` array on `AdmissionRouteRecordSchema` (`src/data-schema/records/admission-route.ts`): items `{ id, source, info_kind: z.literal("guidance"), note: LocalizedText }` (the literal, so nothing can label it official), validated and provenance-checked like conditions (unique ids, the source key must exist) but never evaluated, never read by `src/domain`. Staleness: a stable fact (aging 270 days, stale 545; `src/data-schema/staleness.ts`), reported by `data:check` like the other route facts; the source watcher (ADR 0004) should hash both source urls. Snapshot: the optional field changes the snapshot shape, so decide the version bump per the reference-data rule (change the format only with a version bump) before building. The snapshot carries it with the route; the programme page renders it in the "Bourses" section under the heading "À savoir sur les aides du pays" (and en/ar), each note with its `SourceBadge` (guidance wording never says "official").
 
 ## Verified source material (re-check before use; read 2026-10-05)
 
@@ -21,7 +21,7 @@
 - Modify `src/data-schema/records/admission-route.ts` (field + unique ids), `src/data-schema/snapshot.ts` and the snapshot builder (`scripts/data/build.ts`, `src/data-schema/resolved.ts`) so the field reaches the client as a type-only shape; no Zod in client code (`tests/lib/client-imports.test.ts`).
 - Modify the programme page view model (`src/lib/journey/page-facts.ts` or the closest existing file) and the Bourses section component under `src/components/program/`.
 - Modify `messages/{en,fr,ar}.json` (heading, one line explaining that this is guidance about national aid, not a requirement).
-- Create `tests/data-schema/admission-route-guidance.test.ts` (accepts the field, refuses a duplicate id, refuses `info_kind: official` without a quote-backed source if the rule applies), a domain test that a `direct` route with guidance can still reach the tick (match status unchanged), a component test (renders in fr and ar, nothing when absent).
+- Create `tests/data-schema/admission-route-guidance.test.ts` (accepts the field, refuses a duplicate id, refuses any `info_kind` other than `guidance`), a domain test that a `direct` route with guidance can still reach the tick (match status unchanged), a component test (renders in fr and ar, nothing when absent).
 - Data: add the two guidance items to `data/admission-routes/ma-bac-to-fr.yaml` and `ma-bac-to-de.yaml` with sources `crous` and `bafoeg` (verified-on date = the day a human read the page), owner approval in the PR.
 
 ## Steps

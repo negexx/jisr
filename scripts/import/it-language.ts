@@ -1,8 +1,9 @@
-import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import { parse } from "yaml";
 
+import { currentStudyYear } from "./evidence";
 import { fetchText } from "./http";
 import type { Proposal } from "./proposals";
 import {
@@ -20,15 +21,23 @@ import { slugify } from "./text";
 // the language of each course in its LINGUA column. The Italian programmes we list are the ones it
 // marks "Inglese", yet some have no verified teaching language because their own page never says
 // it. This reads the ministry's row by code, with no model and no search credits, for the Italian
-// programmes in data/ that hold no language, and proposes English with the row as the quote: the
-// verifier re-fetches the file and checks the row is on it. Enrichment only fills a missing value,
-// never replaces one. The offer file is for the latest academic year it names: the page says so.
-// Usage: data:it-language [--dry-run]; then `data:evidence restage --enrich data-staging/proposals-it-language
-// --slugs <file>`, `verify --enrich`, `data:audit`, `data:promote --replace-revisions`.
+// programmes in data/ that hold no language, and proposes English with the WHOLE row as the quote
+// (year, university, class, course ... language): the verifier re-fetches the file and checks the
+// row is on it, and the audit sees which year and which university it came from. Enrichment only
+// fills a missing value, never replaces one. A file older than the previous academic year is not
+// used. Usage: data:it-language [--dry-run]; then `data:evidence restage --enrich
+// data-staging/proposals-it-language --slugs <file>`, `verify --enrich`, `data:audit`,
+// `data:promote --replace-revisions`.
 export function murLanguageQuote(course: MurCourse): string | null {
   if (course.language !== "Inglese") return null;
-  // the contiguous stretch of the CSV row, from the course name to the language column
   const quote = [
+    String(course.year),
+    course.ateneo,
+    course.area,
+    course.group,
+    course.type,
+    course.classCode,
+    course.className,
     course.name,
     course.province,
     course.city,
@@ -51,13 +60,35 @@ export type LanguageProgramme = {
 
 export type LanguageSkip = { slug: string; reason: string };
 
+// "...-l18" -> "L-18"; the class the importer put in the slug (the first in-scope class of the course)
+function classOfSlug(slug: string): string | null {
+  const m = /-l(\d+)$/.exec(slug);
+  return m?.[1] === undefined ? null : `L-${m[1]}`;
+}
+
 export function buildLanguageProposals(input: {
   programmes: readonly LanguageProgramme[];
   courses: readonly MurCourse[];
   atenei: readonly Ateneo[];
   offerUrl: string;
+  // the study year now (the year it started): the file must name this one or the one before
+  studyYear?: number;
 }): { proposals: Proposal[]; skipped: LanguageSkip[] } {
   const latest = input.courses.reduce((max, c) => Math.max(max, c.year), 0);
+  const studyYear = input.studyYear ?? currentStudyYear();
+  const proposals: Proposal[] = [];
+  const skipped: LanguageSkip[] = [];
+  const waiting = input.programmes.filter((p) => !p.hasLanguage);
+  if (latest < studyYear - 1) {
+    for (const p of waiting) {
+      skipped.push({
+        slug: p.slug,
+        reason: `the MUR file is older than the previous academic year (latest ${latest}/${String(latest + 1).slice(2)})`,
+      });
+    }
+    return { proposals, skipped };
+  }
+
   const byShort = new Map(input.atenei.map((a) => [a.shortName, a]));
   // institution unit + course name (lower case) -> the MUR rows of the latest year
   const rows = new Map<string, MurCourse[]>();
@@ -69,17 +100,24 @@ export function buildLanguageProposals(input: {
     rows.set(key, [...(rows.get(key) ?? []), c]);
   }
 
-  const proposals: Proposal[] = [];
-  const skipped: LanguageSkip[] = [];
-  for (const p of input.programmes) {
-    if (p.hasLanguage) continue;
-    const found = rows.get(`${p.institution}|${p.name.toLowerCase()}`) ?? [];
+  for (const p of waiting) {
+    const sameName = rows.get(`${p.institution}|${p.name.toLowerCase()}`) ?? [];
+    const wanted = classOfSlug(p.slug);
+    // the course of the programme's own degree class; without a class in the slug, any
+    const found = wanted === null ? sameName : sameName.filter((c) => c.classCode === wanted);
     const english = found.find((c) => c.language === "Inglese");
     if (english === undefined) {
       skipped.push({
         slug: p.slug,
         reason:
           found.length === 0 ? "no MUR row for this course" : "not listed as English by the MUR",
+      });
+      continue;
+    }
+    if (found.some((c) => c.language !== "Inglese")) {
+      skipped.push({
+        slug: p.slug,
+        reason: "the MUR rows for this course disagree on the language",
       });
       continue;
     }
@@ -130,8 +168,19 @@ async function promotedProgrammes(): Promise<LanguageProgramme[]> {
 
 async function main(argv: readonly string[]): Promise<void> {
   const dryRun = argv.includes("--dry-run");
-  const offer = await fetchText(OFFER_URL, { accept: "text/csv", encoding: "windows-1252" });
-  const atenei = await fetchText(ATENEI_URL, { accept: "text/csv" });
+  const offer = await fetchText(OFFER_URL, {
+    accept: "text/csv",
+    encoding: "windows-1252",
+    validate: (body) => {
+      if (!body.startsWith("ANNO;Ateneo")) throw new Error("MUR: the offer file looks wrong");
+    },
+  });
+  const atenei = await fetchText(ATENEI_URL, {
+    accept: "text/csv",
+    validate: (body) => {
+      if (!body.includes("COD_Ateneo")) throw new Error("MUR: the university list looks wrong");
+    },
+  });
   const programmes = await promotedProgrammes();
   const { proposals, skipped } = buildLanguageProposals({
     programmes,
@@ -147,6 +196,8 @@ async function main(argv: readonly string[]): Promise<void> {
     console.log("dry run: nothing written");
     return;
   }
+  // a run replaces the folder: an older run's proposals must not linger
+  await rm(OUT_DIR, { recursive: true, force: true });
   await mkdir(OUT_DIR, { recursive: true });
   for (const p of proposals) {
     await writeFile(path.join(OUT_DIR, `${p.slug}.json`), `${JSON.stringify(p, null, 2)}\n`);

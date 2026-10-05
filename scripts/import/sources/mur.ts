@@ -21,6 +21,8 @@ export const ATENEI_URL = `${FILES}/820aefe6-0662-4656-84ec-d8859a2a3b7e/downloa
 const OFFER_COLUMNS = [
   "ANNO",
   "Ateneo",
+  "Area",
+  "GruppoDisciplinare",
   "TipoCorso",
   "Classe",
   "NomeClasse",
@@ -43,6 +45,8 @@ const ATENEI_COLUMNS = [
 export type MurCourse = {
   year: number;
   ateneo: string;
+  area: string;
+  group: string;
   type: string;
   classCode: string;
   className: string;
@@ -78,6 +82,8 @@ export function parseMurOffer(csv: string): MurCourse[] {
   return rows.map((r) => ({
     year: Number(r.ANNO),
     ateneo: collapseSpaces(r.Ateneo ?? ""),
+    area: collapseSpaces(r.Area ?? ""),
+    group: collapseSpaces(r.GruppoDisciplinare ?? ""),
     type: collapseSpaces(r.TipoCorso ?? ""),
     classCode: collapseSpaces(r.Classe ?? ""),
     className: collapseSpaces(r.NomeClasse ?? ""),
