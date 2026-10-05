@@ -1,0 +1,102 @@
+slug: hu-obuda-university-budapest-business-administration-sf562
+institution: hu-obuda-university-budapest
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, Obuda University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Management, Obuda University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Management, Obuda University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/562
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 290000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-3
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School Leaving Certificate
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un examen d'entrée est requis : épreuve écrite de mathématiques et entretien oral en anglais en ligne sur les motivations du candidat."
+          status: draft
+        en:
+          text: "An entrance examination is required: written mathematics test and online oral English interview about the applicant's motivations."
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Documents à téléverser dans le système de candidature en ligne : diplôme de fin d'études secondaires en original ou copie certifiée, en anglais ou avec traduction anglaise certifiée."
+          status: draft
+        en:
+          text: "Documents to upload in the online application system: original or certified copy of the school leaving certificate, in English or with a certified English translation."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/562
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://uni-obuda.hu/tuition-fees/
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://uni-obuda.hu/application-deadlines/
+    last_verified_at: 2026-10-05

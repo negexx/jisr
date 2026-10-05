@@ -1,0 +1,14 @@
+slug: hu-university-of-public-service-baja
+name: University of Public Service
+country: HU
+city:
+  slug: baja
+  name: Baja
+type: null
+website: https://en.uni-nke.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://en.uni-nke.hu/
+    last_verified_at: 2026-10-05

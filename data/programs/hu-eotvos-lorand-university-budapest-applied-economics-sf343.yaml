@@ -1,0 +1,64 @@
+slug: hu-eotvos-lorand-university-budapest-applied-economics-sf343
+institution: hu-eotvos-lorand-university-budapest
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Applied Economics
+summary:
+  fr:
+    text: Applied Economics, Eötvös Loránd University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Applied Economics, Eötvös Loránd University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Applied Economics, Eötvös Loránd University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/343
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un examen d'entrée oral en ligne est requis (Entrance examination: Yes, type oral, lieu: Online). Vérifiez les modalités auprès de l'université."
+          status: draft
+        en:
+          text: "An oral entrance examination is required (Entrance examination: Yes, oral type, place: Online). Check the details with the university."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/343
+    last_verified_at: 2026-10-05

@@ -1,0 +1,14 @@
+slug: hu-budapest-university-of-economics-and-bus-budapest
+name: Budapest University of Economics and Business
+country: HU
+city:
+  slug: budapest
+  name: Budapest
+type: null
+website: https://uni-bge.hu/en/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://uni-bge.hu/en/
+    last_verified_at: 2026-10-05

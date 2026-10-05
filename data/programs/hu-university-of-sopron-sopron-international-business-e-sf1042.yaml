@@ -1,0 +1,74 @@
+slug: hu-university-of-sopron-sopron-international-business-e-sf1042
+institution: hu-university-of-sopron-sopron
+country: HU
+city: sopron
+field: business-economics
+level: bachelor
+name: International Business Economics
+summary:
+  fr:
+    text: International Business Economics, University of Sopron (Sopron). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: International Business Economics, University of Sopron (Sopron). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: International Business Economics, University of Sopron (Sopron). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/1042
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'admission en ligne (oral) est obligatoire ; il évalue la langue, la motivation et la présentation. Vérifiez les modalités auprès du coordinateur.
+          status: draft
+        en:
+          text: An online oral entrance interview is required; it assesses language, motivation and presentation. Check the details with the coordinator.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/1042
+    last_verified_at: 2026-10-05

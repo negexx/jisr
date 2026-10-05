@@ -1,0 +1,67 @@
+slug: hu-university-of-debrecen-debrecen-environmental-engineerin-sf200
+institution: hu-university-of-debrecen-debrecen
+country: HU
+city: debrecen
+field: engineering
+level: bachelor
+name: Environmental Engineering
+summary:
+  fr:
+    text: Environmental Engineering, University of Debrecen (Debrecen). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Environmental Engineering, University of Debrecen (Debrecen). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Environmental Engineering, University of Debrecen (Debrecen). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/200
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Les candidats doivent réussir des examens d'entrée écrits et oraux en mathématiques et en physique ou chimie. Résultats : 75 % et plus = admission ; 60-75 % = programme préparatoire."
+          status: draft
+        en:
+          text: "Applicants must pass written and oral entrance exams in mathematics and physics or chemistry. Results: 75%+ admission; 60-75% preparatory programme."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/200
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.edu.unideb.hu/p/application-and-admission
+    last_verified_at: 2026-10-05

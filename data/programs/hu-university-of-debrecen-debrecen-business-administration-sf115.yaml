@@ -1,0 +1,117 @@
+slug: hu-university-of-debrecen-debrecen-business-administration-sf115
+institution: hu-university-of-debrecen-debrecen
+country: HU
+city: debrecen
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, University of Debrecen (Debrecen). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Management, University of Debrecen (Debrecen). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Management, University of Debrecen (Debrecen). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.edu.unideb.hu/p/business-administration-and-management-bsc
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 700000
+    currency: USD
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: true
+    - slug: transcripts
+      name:
+        fr:
+          text: Relevés de notes
+          status: draft
+        en:
+          text: Transcripts
+          status: draft
+      translationRequired: null
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des examens d'entrée en mathématiques (test écrit et entretien oral) font partie de l'admission; vérifiez les modalités.
+          status: draft
+        en:
+          text: Entrance exams in Mathematics (written test and oral interview) are part of admission; check the details.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.edu.unideb.hu/p/business-administration-and-management-bsc
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.edu.unideb.hu/p/application-and-admission
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://tempus.tpf.hu/studyfinder/index/show/115
+    last_verified_at: 2026-10-05

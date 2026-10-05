@@ -1,0 +1,67 @@
+slug: hu-university-of-public-service-baja-environmental-engineerin-sf522
+institution: hu-university-of-public-service-baja
+country: HU
+city: baja
+field: engineering
+level: bachelor
+name: Environmental Engineering
+summary:
+  fr:
+    text: Environmental Engineering, University of Public Service (Baja). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Environmental Engineering, University of Public Service (Baja). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Environmental Engineering, University of Public Service (Baja). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-environmental-engineering
+durationYears:
+  value: 3.5
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un examen d'entrée oral (en ligne, via MS Teams) est obligatoire pour ce programme : préparez-vous à un entretien oral."
+          status: draft
+        en:
+          text: "An oral entrance examination (online, via MS Teams) is required for this programme: prepare for an oral interview."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-environmental-engineering
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/522
+    last_verified_at: 2026-10-05

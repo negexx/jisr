@@ -1,0 +1,70 @@
+slug: hu-budapest-metropolitan-university-budapest-business-administration-sf472
+institution: hu-budapest-metropolitan-university-budapest
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Business Administration and Managemenet
+summary:
+  fr:
+    text: Business Administration and Managemenet, Budapest Metropolitan University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Managemenet, Budapest Metropolitan University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Managemenet, Budapest Metropolitan University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.metubudapest.hu/programs/business-administration-and-management-bsc
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 350000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'admission en ligne et un test de mathématiques en ligne font partie de la procédure de sélection.
+          status: draft
+        en:
+          text: An online admission interview and an online mathematics test are part of the selection process.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.metubudapest.hu/programs/business-administration-and-management-bsc
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/472
+    last_verified_at: 2026-10-05

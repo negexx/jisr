@@ -1,0 +1,128 @@
+slug: hu-john-von-neumann-university-kecskemet-computer-science-enginee-sf504
+institution: hu-john-von-neumann-university-kecskemet
+country: HU
+city: kecskemet
+field: computer-science
+level: bachelor
+name: Computer Science Engineering
+summary:
+  fr:
+    text: Computer Science Engineering, John von Neumann University (Kecskemét). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Computer Science Engineering, John von Neumann University (Kecskemét). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Computer Science Engineering, John von Neumann University (Kecskemét). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/504
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 300000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-3
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary school certificate
+          status: draft
+      translationRequired: true
+    - slug: secondary-school-transcript
+      name:
+        fr:
+          text: Relevé de notes du secondaire
+          status: draft
+        en:
+          text: Secondary school transcript
+          status: draft
+      translationRequired: true
+    - slug: cv-and-motivation-letter
+      name:
+        fr:
+          text: CV et lettre de motivation
+          status: draft
+        en:
+          text: CV and motivation letter
+          status: draft
+      translationRequired: null
+    - slug: passport
+      name:
+        fr:
+          text: Passeport valide
+          status: draft
+        en:
+          text: Valid passport
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien en ligne et parfois un test (souvent de mathématiques au niveau lycée) font partie de la sélection.
+          status: draft
+        en:
+          text: An online interview and sometimes a test (often high-school-level mathematics) are part of the selection.
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des frais de dossier de 200 EUR sont à payer lors de l'acceptation conditionnelle.
+          status: draft
+        en:
+          text: An application fee of EUR 200 is payable at conditional acceptance.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/504
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://nje.hu/en/education/application-guideline
+    last_verified_at: 2026-10-05

@@ -1,0 +1,137 @@
+slug: hu-university-of-debrecen-debrecen-electrical-engineering-sf146
+institution: hu-university-of-debrecen-debrecen
+country: HU
+city: debrecen
+field: engineering
+level: bachelor
+name: Electrical Engineering
+summary:
+  fr:
+    text: Electrical Engineering, University of Debrecen (Debrecen). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Electrical Engineering, University of Debrecen (Debrecen). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Electrical Engineering, University of Debrecen (Debrecen). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.edu.unideb.hu/p/electrical-engineering-bsc
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-2
+  info_kind: official
+documents:
+  value:
+    - slug: application-form
+      name:
+        fr:
+          text: Formulaire de candidature
+          status: draft
+        en:
+          text: Application form
+          status: draft
+      translationRequired: null
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat d'études
+          status: draft
+        en:
+          text: certificate of education
+          status: draft
+      translationRequired: true
+    - slug: transcripts
+      name:
+        fr:
+          text: Relevés de notes
+          status: draft
+        en:
+          text: transcripts
+          status: draft
+      translationRequired: null
+    - slug: citizenship-certificate
+      name:
+        fr:
+          text: Certificat de citoyenneté
+          status: draft
+        en:
+          text: Certificate of citizenship
+          status: draft
+      translationRequired: null
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: medical-certificate
+      name:
+        fr:
+          text: Certificat médical
+          status: draft
+        en:
+          text: Medical Certificate
+          status: draft
+      translationRequired: null
+    - slug: bank-receipt
+      name:
+        fr:
+          text: Reçu bancaire
+          status: draft
+        en:
+          text: Bank receipt
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des examens d'entrée en mathématiques et en physique (écrit et oral) sont requis. Préparez-vous en conséquence.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.edu.unideb.hu/p/electrical-engineering-bsc
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.edu.unideb.hu/p/application-and-admission
+    last_verified_at: 2026-10-05

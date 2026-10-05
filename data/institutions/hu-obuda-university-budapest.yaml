@@ -1,0 +1,14 @@
+slug: hu-obuda-university-budapest
+name: Obuda University
+country: HU
+city:
+  slug: budapest
+  name: Budapest
+type: null
+website: https://uni-obuda.hu/en/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://uni-obuda.hu/en/
+    last_verified_at: 2026-10-05

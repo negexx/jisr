@@ -1,0 +1,98 @@
+slug: hu-budapest-university-of-economics-and-bus-budapest-business-administration-sf25
+institution: hu-budapest-university-of-economics-and-bus-budapest
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, Budapest University of Economics and Business (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Management, Budapest University of Economics and Business (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Management, Budapest University of Economics and Business (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://uni-bge.hu/en/business-administration-and-management-bsc
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 300000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: transcript-of-secondary-school-studies
+      name:
+        fr:
+          text: Relevé de notes de l'enseignement secondaire
+          status: draft
+        en:
+          text: Transcript of secondary school studies
+          status: draft
+      translationRequired: null
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary school leaving certificate
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un examen d'entrée est requis : évaluation du dossier, de la motivation et entretien oral en ligne. Vérifiez les modalités auprès de l'université."
+          status: draft
+        en:
+          text: "An entrance examination is required: assessment of academic achievements, motivation letter and online oral interview. Check the details with the university."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://uni-bge.hu/en/business-administration-and-management-bsc
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/25
+    last_verified_at: 2026-10-05

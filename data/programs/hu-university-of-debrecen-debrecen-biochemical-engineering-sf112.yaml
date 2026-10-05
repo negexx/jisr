@@ -1,0 +1,91 @@
+slug: hu-university-of-debrecen-debrecen-biochemical-engineering-sf112
+institution: hu-university-of-debrecen-debrecen
+country: HU
+city: debrecen
+field: engineering
+level: bachelor
+name: Biochemical Engineering
+summary:
+  fr:
+    text: Biochemical Engineering, University of Debrecen (Debrecen). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Biochemical Engineering, University of Debrecen (Debrecen). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Biochemical Engineering, University of Debrecen (Debrecen). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.edu.unideb.hu/p/biochemical-engineering-bsc
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 700000
+    currency: USD
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un certificat d'études secondaires (diplôme) est requis. Vérifiez les conditions exactes.
+          status: draft
+        en:
+          text: A high school certificate (diploma) is required. Check the exact conditions.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée en mathématiques et en chimie ou biologie est requis. Vérifiez les modalités.
+          status: draft
+        en:
+          text: An entrance exam in Mathematics and either Chemistry or Biology is required. Check the details.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.edu.unideb.hu/p/biochemical-engineering-bsc
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/112
+    last_verified_at: 2026-10-05

@@ -1,0 +1,14 @@
+slug: hu-hungarian-university-of-agriculture-and-godollo
+name: Hungarian University of Agriculture and Life Sciences
+country: HU
+city:
+  slug: godollo
+  name: Gödöllő
+type: null
+website: https://ed.uni-mate.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://ed.uni-mate.hu/
+    last_verified_at: 2026-10-05

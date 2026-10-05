@@ -1,0 +1,135 @@
+slug: hu-eotvos-jozsef-college-baja-business-administration-sf215
+institution: hu-eotvos-jozsef-college-baja
+country: HU
+city: baja
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, Eötvös József College (Baja). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Management, Eötvös József College (Baja). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Management, Eötvös József College (Baja). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://ejf.hu/en/business-and-management-ba
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Certificat de langue anglaise ou résultat d'examen international
+          status: draft
+        en:
+          text: English language certificate or international language exam result
+          status: draft
+      translationRequired: null
+    - slug: application-form
+      name:
+        fr:
+          text: Formulaire de candidature complété
+          status: draft
+        en:
+          text: Completed application form
+          status: draft
+      translationRequired: null
+    - slug: passport
+      name:
+        fr:
+          text: Passeport valable au moins 5 ans
+          status: draft
+        en:
+          text: Passport with at least 5 years validity
+          status: draft
+      translationRequired: null
+    - slug: medical-certificate
+      name:
+        fr:
+          text: Certificat médical
+          status: draft
+        en:
+          text: Medical certificate
+          status: draft
+      translationRequired: null
+    - slug: police-clearance-certificate
+      name:
+        fr:
+          text: Certificat de bonne conduite
+          status: draft
+        en:
+          text: Police clearance certificate
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Tous les candidats doivent participer à un processus d'admission en ligne : un test de mathématiques avec au moins 50 %, puis un entretien en ligne. Le score minimum d'admission est de 60 points ; en dessous, la candidature est rejetée."
+          status: draft
+        en:
+          text: "All applicants must take part in an online admission process: a Mathematics test requiring at least 50%, then an online interview. Minimum admission score is 60 points; below 60 points the application is rejected."
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Allocation mensuelle de 43 700 HUF pour les boursiers Stipendium Hungaricum ; le montant ne couvre pas l'intégralité des frais de vie.
+          status: draft
+        en:
+          text: Monthly maintenance allowance of 43,700 HUF for Stipendium Hungaricum scholarship holders; the amount does not cover the full cost of living.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://ejf.hu/en/business-and-management-ba
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/215
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://ejf.hu/en/admission
+    last_verified_at: 2026-10-05

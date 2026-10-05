@@ -1,0 +1,14 @@
+slug: hu-university-of-szeged-szeged
+name: University of Szeged
+country: HU
+city:
+  slug: szeged
+  name: Szeged
+type: null
+website: https://www.u-szeged.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.u-szeged.hu/
+    last_verified_at: 2026-10-05

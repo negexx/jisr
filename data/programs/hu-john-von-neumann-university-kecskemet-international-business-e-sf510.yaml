@@ -1,0 +1,126 @@
+slug: hu-john-von-neumann-university-kecskemet-international-business-e-sf510
+institution: hu-john-von-neumann-university-kecskemet
+country: HU
+city: kecskemet
+field: business-economics
+level: bachelor
+name: International Business Economics
+summary:
+  fr:
+    text: International Business Economics, John von Neumann University (Kecskemét). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: International Business Economics, John von Neumann University (Kecskemét). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: International Business Economics, John von Neumann University (Kecskemét). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/510
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 300000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary school certificate
+          status: draft
+      translationRequired: true
+    - slug: school-transcript
+      name:
+        fr:
+          text: Relevé de notes du secondaire
+          status: draft
+        en:
+          text: Secondary school transcript
+          status: draft
+      translationRequired: true
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation letter
+          status: draft
+      translationRequired: null
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien oral en ligne devant le comité d'admission fait partie de la procédure ; préparez-le.
+          status: draft
+        en:
+          text: An online oral entrance examination led by the admission committee is part of the process; prepare for it.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/510
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://nje.hu/en/education/application-guideline
+    last_verified_at: 2026-10-05

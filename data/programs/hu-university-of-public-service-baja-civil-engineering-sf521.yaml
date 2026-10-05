@@ -1,0 +1,78 @@
+slug: hu-university-of-public-service-baja-civil-engineering-sf521
+institution: hu-university-of-public-service-baja
+country: HU
+city: baja
+field: engineering
+level: bachelor
+name: Civil Engineering
+summary:
+  fr:
+    text: Civil Engineering, University of Public Service (Baja). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Civil Engineering, University of Public Service (Baja). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Civil Engineering, University of Public Service (Baja). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-civil-engineering
+durationYears:
+  value: 4
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée oral (en ligne, via MS Teams) est requis pour ce programme.
+          status: draft
+        en:
+          text: An oral entrance examination (online, via MS Teams) is required for this programme.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les conditions d'admission précisent 'GCE' ; vérifiez l'équivalence de votre Baccalauréat marocain.
+          status: draft
+        en:
+          text: The admission requirements state 'GCE'; check the equivalence of your Moroccan Baccalauréat.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-civil-engineering
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/521
+    last_verified_at: 2026-10-05

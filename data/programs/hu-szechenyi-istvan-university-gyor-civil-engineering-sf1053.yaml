@@ -1,0 +1,119 @@
+slug: hu-szechenyi-istvan-university-gyor-civil-engineering-sf1053
+institution: hu-szechenyi-istvan-university-gyor
+country: HU
+city: gyor
+field: engineering
+level: bachelor
+name: Civil Engineering
+summary:
+  fr:
+    text: Civil Engineering, Széchenyi István University (Győr). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Civil Engineering, Széchenyi István University (Győr). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Civil Engineering, Széchenyi István University (Győr). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/1053
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: secondary-school-graduation-results
+      name:
+        fr:
+          text: Copie des résultats de fin d'études secondaires
+          status: draft
+        en:
+          text: Copy of secondary/high school graduation results
+          status: draft
+      translationRequired: null
+    - slug: record-of-courses-studied
+      name:
+        fr:
+          text: Relevé des cours suivis
+          status: draft
+        en:
+          text: Record of courses studied
+          status: draft
+      translationRequired: null
+    - slug: english-cv
+      name:
+        fr:
+          text: CV en anglais
+          status: draft
+        en:
+          text: English CV
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation letter
+          status: draft
+      translationRequired: null
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Certificat de compétence en anglais
+          status: draft
+        en:
+          text: English-language proficiency certificate
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée écrit est obligatoire (test de langue et test professionnel écrits, en ligne). Les candidats dont le test est limite peuvent être convoqués à un entretien.
+          status: draft
+        en:
+          text: A written entrance examination is required (written language test and written professional admission test, online). Only borderline applicants may be invited to an interview.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/1053
+    last_verified_at: 2026-10-05

@@ -1,0 +1,84 @@
+slug: hu-obuda-university-budapest-engineering-management-sf564
+institution: hu-obuda-university-budapest
+country: HU
+city: budapest
+field: engineering
+level: bachelor
+name: Engineering Management
+summary:
+  fr:
+    text: Engineering Management, Obuda University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Engineering Management, Obuda University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Engineering Management, Obuda University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/564
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 270000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un examen d'entrée est requis : épreuve écrite de mathématiques et entretien oral d'anglais en ligne. Préparez-vous à ces évaluations."
+          status: draft
+        en:
+          text: "An entrance examination is required: written mathematics examination and online English oral interview. Prepare for these assessments."
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vous devez avoir au moins 18 ans au début des études (fin septembre 2026). Vérifiez cette condition avant de postuler.
+          status: draft
+        en:
+          text: You must be at least 18 years old by the start of the study period (end of September 2026). Check this condition before applying.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/564
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://uni-obuda.hu/tuition-fees/
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://uni-obuda.hu/application-deadlines/
+    last_verified_at: 2026-10-05

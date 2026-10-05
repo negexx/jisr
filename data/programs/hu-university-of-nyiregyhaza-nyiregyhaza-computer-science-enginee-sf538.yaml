@@ -1,0 +1,125 @@
+slug: hu-university-of-nyiregyhaza-nyiregyhaza-computer-science-enginee-sf538
+institution: hu-university-of-nyiregyhaza-nyiregyhaza
+country: HU
+city: nyiregyhaza
+field: computer-science
+level: bachelor
+name: Computer Science Engineering
+summary:
+  fr:
+    text: Computer Science Engineering, University of Nyíregyháza (Nyíregyháza). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Computer Science Engineering, University of Nyíregyháza (Nyíregyháza). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Computer Science Engineering, University of Nyíregyháza (Nyíregyháza). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/538
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 245000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests:
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: subject_taken
+      subjects:
+        - mathematics
+      mode: all
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des bons résultats en mathématiques sont attendus ; le niveau sera évalué lors de l'entretien en ligne.
+          status: draft
+        en:
+          text: Good results in Mathematics are expected; the level will be assessed during the online interview.
+          status: draft
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Examen d'entrée : entretien oral en ligne. Réussite si au moins 60 points sur 100."
+          status: draft
+        en:
+          text: "Entrance examination: online oral interview. Successful if the applicant gets at least 60 out of 100 points."
+          status: draft
+    - id: req-5
+      source: page-4
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Frais de candidature de 100 EUR non remboursables, à payer avant l'entretien.
+          status: draft
+        en:
+          text: Non-refundable application fee of 100 EUR, payable before the interview.
+          status: draft
+    - id: req-6
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats de certains pays ne peuvent plus postuler (liste mise à jour).
+          status: draft
+        en:
+          text: Applicants from certain countries can no longer apply (list updated).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/538
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://english.nye.hu/en/node/319
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://applicationform.nye.hu/
+    last_verified_at: 2026-10-05
+  page-4:
+    url: https://english.nye.hu/en/node/30
+    last_verified_at: 2026-10-05

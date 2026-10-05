@@ -1,0 +1,78 @@
+slug: hu-university-of-pecs-pecs-computer-science-sf643
+institution: hu-university-of-pecs-pecs
+country: HU
+city: pecs
+field: computer-science
+level: bachelor
+name: Computer Science
+summary:
+  fr:
+    text: Computer Science, University of Pécs (Pécs). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Computer Science, University of Pécs (Pécs). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Computer Science, University of Pécs (Pécs). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.ttk.pte.hu/en/admission/english-degree-programs/bsc-study-programs/computer-science-bsc/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 500000
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un examen d'entrée est requis : test écrit de mathématiques (en ligne, Moodle) puis entretien oral (Teams). Vérifiez les modalités et les dates."
+          status: draft
+        en:
+          text: "An entrance exam is required: a written Mathematics test (online, Moodle) followed by an oral interview (Teams). Check the details and dates."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.ttk.pte.hu/en/admission/english-degree-programs/bsc-study-programs/computer-science-bsc/
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/643
+    last_verified_at: 2026-10-05

@@ -1,0 +1,109 @@
+slug: hu-john-von-neumann-university-kecskemet-vehicle-engineering-sf505
+institution: hu-john-von-neumann-university-kecskemet
+country: HU
+city: kecskemet
+field: engineering
+level: bachelor
+name: Vehicle Engineering
+summary:
+  fr:
+    text: Vehicle Engineering, John von Neumann University (Kecskemét). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Vehicle Engineering, John von Neumann University (Kecskemét). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Vehicle Engineering, John von Neumann University (Kecskemét). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/505
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 300000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-3
+  info_kind: official
+documents:
+  value:
+    - slug: transcript-of-records
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Transcript of Records
+          status: draft
+      translationRequired: true
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Certificat de connaissance de l'anglais
+          status: draft
+        en:
+          text: Certificate of English language knowledge
+          status: draft
+      translationRequired: null
+    - slug: passport
+      name:
+        fr:
+          text: Copie du passeport
+          status: draft
+        en:
+          text: Copy of the valid passport
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Letter of motivation
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien oral en ligne (examen d'entrée) fait partie de l'admission ; préparez-vous à parler de votre motivation et de votre niveau d'anglais.
+          status: draft
+        en:
+          text: An online oral entrance examination is part of admission; prepare to discuss your motivation and your English language skills.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/505
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://nje.hu/en/education/application-guideline
+    last_verified_at: 2026-10-05

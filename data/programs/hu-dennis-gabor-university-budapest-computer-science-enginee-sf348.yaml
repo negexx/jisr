@@ -1,0 +1,75 @@
+slug: hu-dennis-gabor-university-budapest-computer-science-enginee-sf348
+institution: hu-dennis-gabor-university-budapest
+country: HU
+city: budapest
+field: computer-science
+level: bachelor
+name: Computer Science Engineering
+summary:
+  fr:
+    text: Computer Science Engineering, Dennis Gabor University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Computer Science Engineering, Dennis Gabor University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Computer Science Engineering, Dennis Gabor University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/348
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un entretien oral (en ligne ou en personne) fait partie du processus d'admission : préparez-vous à un examen d'entrée."
+          status: draft
+        en:
+          text: "An oral interview (online or in person) is part of the admission process: prepare for an entrance examination."
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Diplôme de fin d'études secondaires (baccalauréat ou équivalent) exigé, avec une maîtrise de base de l'anglais.
+          status: draft
+        en:
+          text: High school graduation (baccalaureate or equivalent) is required, with a basic command of English.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/348
+    last_verified_at: 2026-10-05

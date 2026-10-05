@@ -1,0 +1,101 @@
+slug: hu-eotvos-lorand-university-budapest-international-business-e-sf301
+institution: hu-eotvos-lorand-university-budapest
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: International Business Economics
+summary:
+  fr:
+    text: International Business Economics, Eötvös Loránd University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: International Business Economics, Eötvös Loránd University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: International Business Economics, Eötvös Loránd University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.elte.hu/en/international-business-economics
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 360000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: secondary-school-diploma
+      name:
+        fr:
+          text: Diplôme d'études secondaires
+          status: draft
+        en:
+          text: secondary or high school diploma
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Admission possible avec un diplôme d'études secondaires donnant accès à l'université ; les examens O-level, GCSE, IGCSE, GCE AS ou BTEC seuls ne suffisent pas.
+          status: draft
+        en:
+          text: Admission possible with a secondary/high school diploma allowing direct access to higher education; O-level, GCSE, IGCSE, GCE AS or BTEC exams alone do not qualify.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un examen d'entrée est obligatoire : entretien Skype et questionnaire."
+          status: draft
+        en:
+          text: "An entrance examination is required: Skype interview and questionnaire."
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un niveau B2 (oral et écrit) en anglais est exigé ; l'admission est décidée par le comité d'admission.
+          status: draft
+        en:
+          text: Language proficiency B2 (oral and written) in English is required; admission is decided by the Admission Board.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.elte.hu/en/international-business-economics
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/301
+    last_verified_at: 2026-10-05

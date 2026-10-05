@@ -1,0 +1,14 @@
+slug: hu-szechenyi-istvan-university-gyor
+name: Széchenyi István University
+country: HU
+city:
+  slug: gyor
+  name: Győr
+type: null
+website: https://admissions.sze.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://admissions.sze.hu/
+    last_verified_at: 2026-10-05

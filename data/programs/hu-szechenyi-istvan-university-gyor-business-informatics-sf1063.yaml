@@ -1,0 +1,100 @@
+slug: hu-szechenyi-istvan-university-gyor-business-informatics-sf1063
+institution: hu-szechenyi-istvan-university-gyor
+country: HU
+city: gyor
+field: computer-science
+level: bachelor
+name: Business Informatics
+summary:
+  fr:
+    text: Business Informatics, Széchenyi István University (Győr). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Informatics, Széchenyi István University (Győr). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Informatics, Széchenyi István University (Győr). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/1063
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: secondary-school-graduation-results
+      name:
+        fr:
+          text: Relevé de notes de fin d'études secondaires
+          status: draft
+        en:
+          text: Copy of secondary/high school graduation results
+          status: draft
+      translationRequired: null
+    - slug: record-of-courses-studied
+      name:
+        fr:
+          text: Relevé des cours suivis
+          status: draft
+        en:
+          text: Record of courses studied
+          status: draft
+      translationRequired: null
+    - slug: english-cv
+      name:
+        fr:
+          text: CV en anglais
+          status: draft
+        en:
+          text: English CV
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation letter
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée écrit (test de langue et test professionnel) est requis ; seuls les candidats limites sont convoqués à un entretien.
+          status: draft
+        en:
+          text: A written entrance examination (language test and professional admission test) is required; only borderline applicants are invited to an interview.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/1063
+    last_verified_at: 2026-10-05

@@ -1,0 +1,14 @@
+slug: hu-university-of-pecs-pecs
+name: University of Pécs
+country: HU
+city:
+  slug: pecs
+  name: Pécs
+type: null
+website: https://english.mik.pte.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://english.mik.pte.hu/
+    last_verified_at: 2026-10-05

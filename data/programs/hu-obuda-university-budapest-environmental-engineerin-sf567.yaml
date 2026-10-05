@@ -1,0 +1,91 @@
+slug: hu-obuda-university-budapest-environmental-engineerin-sf567
+institution: hu-obuda-university-budapest
+country: HU
+city: budapest
+field: engineering
+level: bachelor
+name: Environmental Engineering
+summary:
+  fr:
+    text: Environmental Engineering, Obuda University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Environmental Engineering, Obuda University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Environmental Engineering, Obuda University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/567
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 290000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-3
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: School Leaving Certificate
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'anglais en ligne sur la motivation du candidat est obligatoire.
+          status: draft
+        en:
+          text: An online English interview focusing on the applicant's motivations is required.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/567
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://uni-obuda.hu/tuition-fees/
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://uni-obuda.hu/application-deadlines/
+    last_verified_at: 2026-10-05

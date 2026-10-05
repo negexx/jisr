@@ -1,0 +1,113 @@
+slug: hu-obuda-university-budapest-commerce-and-marketing-sf563
+institution: hu-obuda-university-budapest
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Commerce and Marketing
+summary:
+  fr:
+    text: Commerce and Marketing, Obuda University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Commerce and Marketing, Obuda University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Commerce and Marketing, Obuda University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/563
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 290000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-3
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des documents de fin d'études secondaires vérifiés (originaux ou copies certifiées, en anglais ou avec traduction anglaise certifiée) doivent être téléversés.
+          status: draft
+        en:
+          text: Verified high school documents (originals or certified copies, in English or with a certified English translation) must be uploaded.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un examen d'entrée est requis : épreuve écrite de mathématiques et entretien oral en anglais en ligne."
+          status: draft
+        en:
+          text: "An entrance examination is required: a written mathematics exam and an online oral English interview."
+          status: draft
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le candidat doit avoir au moins 18 ans au début de la période d'études du semestre d'automne de la 1re année.
+          status: draft
+        en:
+          text: The applicant must be at least 18 years old by the start of the study period in the Fall semester of Year 1.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/563
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://uni-obuda.hu/tuition-fees/
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://uni-obuda.hu/application-deadlines/
+    last_verified_at: 2026-10-05

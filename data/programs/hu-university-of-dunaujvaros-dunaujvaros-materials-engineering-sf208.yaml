@@ -1,0 +1,84 @@
+slug: hu-university-of-dunaujvaros-dunaujvaros-materials-engineering-sf208
+institution: hu-university-of-dunaujvaros-dunaujvaros
+country: HU
+city: dunaujvaros
+field: engineering
+level: bachelor
+name: Materials Engineering
+summary:
+  fr:
+    text: Materials Engineering, University of Dunaújváros (Dunaújváros). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Materials Engineering, University of Dunaújváros (Dunaújváros). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Materials Engineering, University of Dunaújváros (Dunaújváros). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/208
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: High School Leaving Certificate
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'admission (examen oral) en ligne est requis.
+          status: draft
+        en:
+          text: An online entrance examination (oral interview) is required.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Le processus d'admission comprend deux étapes : vérification des documents puis un entretien Skype."
+          status: draft
+        en:
+          text: "The admission process has two steps: document check and a Skype interview."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/208
+    last_verified_at: 2026-10-05

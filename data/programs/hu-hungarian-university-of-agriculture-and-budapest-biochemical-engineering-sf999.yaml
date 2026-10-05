@@ -1,0 +1,117 @@
+slug: hu-hungarian-university-of-agriculture-and-budapest-biochemical-engineering-sf999
+institution: hu-hungarian-university-of-agriculture-and-budapest
+country: HU
+city: budapest
+field: engineering
+level: bachelor
+name: Biochemical Engineering
+summary:
+  fr:
+    text: Biochemical Engineering, Hungarian University of Agriculture and Life Sciences (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Biochemical Engineering, Hungarian University of Agriculture and Life Sciences (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Biochemical Engineering, Hungarian University of Agriculture and Life Sciences (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://foodscience.uni-mate.hu/en/bsc-in-biochemical-engineering
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 210000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: High school graduation certificate
+          status: draft
+      translationRequired: null
+    - slug: proof-of-english-knowledge
+      name:
+        fr:
+          text: Preuve de connaissance de l'anglais
+          status: draft
+        en:
+          text: Proof of English knowledge
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation letter
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum Vitae
+          status: draft
+        en:
+          text: Curriculum Vitae
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un test en ligne est demandé dans le cadre des conditions d'admission.
+          status: draft
+        en:
+          text: An online test is required as part of the admission conditions.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien oral en ligne peut être demandé.
+          status: draft
+        en:
+          text: An online oral interview may be required.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://foodscience.uni-mate.hu/en/bsc-in-biochemical-engineering
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/999
+    last_verified_at: 2026-10-05

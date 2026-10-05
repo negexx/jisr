@@ -1,0 +1,94 @@
+slug: hu-university-of-pecs-pecs-business-administration-sf687
+institution: hu-university-of-pecs-pecs
+country: HU
+city: pecs
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, University of Pécs (Pécs). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Management, University of Pécs (Pécs). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Management, University of Pécs (Pécs). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://ktk.pte.hu/en/education/bachelor-programmes/bsc-business-administration-and-management
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 275000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Examen d'entrée : test de mathématiques en ligne (0-20 points) ; l'échec au test (moins de 50%) entraîne le rejet de la candidature."
+          status: draft
+        en:
+          text: "Entrance exam: online Mathematics test (0-20 points); not attending or scoring below 50% means the application must be rejected."
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien oral en ligne (Skype) est organisé après le test de mathématiques ; il fait partie de la procédure d'admission.
+          status: draft
+        en:
+          text: An online oral (Skype) entrance examination is organized after the mathematics test; it is part of the admission process.
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Critère d'éligibilité : score total d'au moins 60 points (sans points supplémentaires) selon le système d'évaluation sur 100 points."
+          status: draft
+        en:
+          text: "Eligibility criterion: a total score of at least 60 (without extra points) in the 100-point evaluation system."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://ktk.pte.hu/en/education/bachelor-programmes/bsc-business-administration-and-management
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://ktk.pte.hu/en/felvetelizok/felveteli/application-guide
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://tempus.tpf.hu/studyfinder/index/show/687
+    last_verified_at: 2026-10-05
