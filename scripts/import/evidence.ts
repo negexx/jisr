@@ -216,7 +216,9 @@ const LANGUAGE_WORDS: Record<string, RegExp> = {
   es: /spanish|espagnol|spanisch|spaans/i,
   nl: /dutch|n[eé]erlandais|nederlands|niederl[aä]ndisch/i,
   hu: /hungarian|hongrois|ungarisch|hongaars|magyar/i,
-  it: /italian|italien|italienisch|italiaans|italiano/i,
+  // "Italian" as the language the course is taught in, not as a nationality ("Italian students") or
+  // a place ("Italian universities") or a language course
+  it: /(?:taught|delivered|offered|held|given|conducted|provided|instruction|lessons|classes|lectures|courses?|programme|program|degree)\s+(?:entirely |fully |mainly |partly |also )?in\s+italian\b(?!\s+(?:universit|cit|institution|school|student))|\blanguage(?: of instruction| of teaching)?\s*:?\s*italian\b|\blingua(?: di erogazione| del corso| di insegnamento)?\s*:?\s*italian[oa]?\b|in lingua italiana|italian[- ]taught|\bitalien\b|\bitalienisch|\bitaliaans/i,
 };
 
 function numberRegex(n: number): string {
@@ -497,7 +499,10 @@ const CHANNEL_WORDS: Record<string, RegExp> = {
 // A quote that names another channel is not evidence for this one, whatever else it says.
 const CHANNEL_EXCLUDES: Record<string, RegExp> = {
   "hu-university-direct": /stipendium hungaricum|felvi/i,
-  "it-university-direct": /universitaly/i,
+  // Universitaly is the other channel; a quote about EU, Italian or Italy-resident applicants is
+  // not about a Moroccan applicant living abroad ("non-EU" is fine)
+  "it-university-direct":
+    /universitaly|(?<!non[- ])\bEU\b|italian (?:citizens|students|applicants)|(?:legally )?resid(?:ing|ent)s? in italy|comunitari/i,
 };
 
 export function checkChannel(slug: string, quote: string): FactCheck {

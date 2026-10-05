@@ -17,7 +17,7 @@ conditions:
         text: "A foreign title gives access to a Bachelor's degree if it comes from at least 12 years of schooling and gives access to a similar course in the country that issued it; for non-EU titles, passing the last two years is a key element. Each university assesses the title: nothing says how the Moroccan baccalauréat is judged, ask the university."
         status: draft
       ar:
-        text: "يتيح الشهادة الأجنبية الولوج إلى الإجازة إذا صدرت بعد 12 سنة دراسية على الأقل وكانت تفتح الولوج إلى تكوين مماثل في بلد إصدارها؛ وبالنسبة لشهادات خارج الاتحاد الأوروبي فإن النجاح في السنتين الأخيرتين عنصر أساسي. وتقيّم كل جامعة الشهادة: لا يوضح المصدر كيف تُقيَّم الباكالوريا المغربية، اسألوا الجامعة."
+        text: "تتيح الشهادة الأجنبية الولوج إلى الإجازة إذا صدرت بعد 12 سنة دراسية على الأقل وكانت تفتح الولوج إلى تكوين مماثل في بلد إصدارها؛ وبالنسبة لشهادات خارج الاتحاد الأوروبي فإن النجاح في السنتين الأخيرتين عنصر أساسي. وتقيّم كل جامعة الشهادة: لا يوضح المصدر كيف تُقيَّم الباكالوريا المغربية، اسألوا الجامعة."
         status: draft
   - id: universitaly-preenrolment-and-visa
     kind: manual_check
@@ -25,13 +25,13 @@ conditions:
     info_kind: official
     note:
       fr:
-        text: "La préinscription se fait uniquement sur le portail Universitaly ; l'université la valide dans la limite de ses places pour les étudiants internationaux, et seuls les dossiers validés peuvent demander le visa. Demande de visa : au plus tard le 30 novembre 2026 pour 2026/2027 et le 31 octobre 2027 pour 2027/2028 ; l'université peut fixer une date plus proche, pour chaque formation."
+        text: "Préinscription uniquement sur Universitaly ; l'université valide dans la limite de ses places pour étudiants internationaux (+ 20 %), et seuls les dossiers validés peuvent demander le visa. Visa : au plus tard le 30 novembre 2026 (2026/2027) et le 31 octobre 2027 (2027/2028) ; l'université peut fixer une date plus proche pour chaque formation."
         status: draft
       en:
-        text: "Pre-enrolment is made only on the Universitaly portal; the university validates it within its places for international students, and only validated applications can apply for the visa. Visa application: by 30 November 2026 for 2026/2027 and by 31 October 2027 for 2027/2028; the university may set an earlier date for each programme."
+        text: "Pre-enrolment is made only on the Universitaly portal; the university validates it within a cap set from its places for international students (those places plus 20%), and only validated applications can apply for the visa. Visa application: by 30 November 2026 for 2026/2027 and by 31 October 2027 for 2027/2028; the university may set an earlier date for each programme."
         status: draft
       ar:
-        text: "يتم التسجيل المسبق حصريًا عبر بوابة Universitaly؛ وتصادق عليه الجامعة في حدود مقاعدها المخصصة للطلبة الدوليين، ولا يمكن طلب التأشيرة إلا بعد المصادقة. طلب التأشيرة: في أجل أقصاه 30 نونبر 2026 للموسم 2026/2027 و31 أكتوبر 2027 للموسم 2027/2028؛ ويمكن للجامعة تحديد تاريخ أسبق لكل شعبة."
+        text: "يتم التسجيل المسبق حصريًا عبر بوابة Universitaly؛ وتصادق عليه الجامعة في حدود سقف يحدَّد انطلاقًا من مقاعدها المخصصة للطلبة الدوليين (زائد 20%)، ولا يمكن طلب التأشيرة إلا بعد المصادقة. طلب التأشيرة: في أجل أقصاه 30 نونبر 2026 للموسم 2026/2027 و31 أكتوبر 2027 للموسم 2027/2028؛ ويمكن للجامعة تحديد تاريخ أسبق لكل شعبة."
         status: draft
   - id: language-proof
     kind: manual_check
@@ -39,13 +39,13 @@ conditions:
     info_kind: official
     note:
       fr:
-        text: "Pour une formation en italien, l'université organise un test d'italien d'au moins B2 avant la demande de visa (sauf dispense avec un certificat B2) ; pour une formation dans une autre langue, il faut un certificat adéquat de la langue d'enseignement."
+        text: "Pour une formation en italien, l'université organise un test d'italien d'au moins B2 avant la demande de visa (sauf dispense, par exemple avec un certificat B2) ; pour une formation dans une autre langue, il faut un certificat adéquat de la langue d'enseignement."
         status: draft
       en:
-        text: "For a course taught in Italian, the university runs an Italian test of at least B2 before the visa application (unless exempt with a B2 certificate); for a course taught in another language, a suitable certificate of the language of instruction is needed."
+        text: "For a course taught in Italian, the university runs an Italian test of at least B2 before the visa application (unless exempt, for example with a B2 certificate); for a course taught in another language, a suitable certificate of the language of instruction is needed."
         status: draft
       ar:
-        text: "بالنسبة لتكوين بالإيطالية تنظم الجامعة اختبارًا في الإيطالية بمستوى B2 على الأقل قبل طلب التأشيرة (إلا مع الإعفاء بشهادة B2)؛ وبالنسبة لتكوين بلغة أخرى يلزم تقديم شهادة مناسبة في لغة التدريس."
+        text: "بالنسبة لتكوين بالإيطالية تنظم الجامعة اختبارًا في الإيطالية بمستوى B2 على الأقل قبل طلب التأشيرة (إلا في حالة الإعفاء، مثلًا بشهادة B2)؛ وبالنسبة لتكوين بلغة أخرى يلزم تقديم شهادة مناسبة في لغة التدريس."
         status: draft
 note:
   fr:

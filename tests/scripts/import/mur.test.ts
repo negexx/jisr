@@ -252,6 +252,42 @@ describe("buildItalyRecords", () => {
     expect(free?.review.todo).not.toMatch(/limited places/i);
   });
 
+  it("keeps a class outside the three fields in the notes and makes the record low confidence", () => {
+    const { records, report } = build(
+      row({ name: "Economics, Politics and Social Sciences", cls: "L-33" }),
+      row({ name: "Economics, Politics and Social Sciences", cls: "L-36" }),
+    );
+    const progs = programmes(records);
+    expect(progs).toHaveLength(1);
+    expect(progs[0]?.id).toMatch(/-l33$/);
+    expect(progs[0]?.review.confidence).toBe("low");
+    expect(progs[0]?.review.todo).toMatch(/also listed under L-36/);
+    expect(report.notInScope).toBe(0);
+  });
+
+  it("names a website candidate on the institution, never as a confirmed fact", () => {
+    const withSite = buildItalyRecords(
+      parseMurOffer(offer(row())),
+      atenei,
+      new Map([["03701", "https://www.unibo.it/"]]),
+    ).records;
+    const [inst] = institutions(withSite);
+    expect(inst?.data.website).toBe("https://www.unibo.it/");
+    expect(inst?.data.info_kind).toBe("TODO_read_source");
+    expect(inst?.review.todo).toMatch(/Candidate .* https:\/\/www\.unibo\.it\/ \(not confirmed\)/);
+    const [none] = institutions(build(row()).records);
+    expect(none?.data.website).toBeNull();
+    expect(none?.review.todo).toMatch(/No candidate was found/);
+  });
+
+  it("does not shorten two long course names to the same slug", () => {
+    const { records } = build(
+      row({ name: "International Economics and Management", cls: "L-18" }),
+      row({ name: "International Economics and Finance", cls: "L-18" }),
+    );
+    expect(new Set(programmes(records).map((r) => r.id)).size).toBe(2);
+  });
+
   it("makes an all-capitals course name readable", () => {
     const [prog] = programmes(build(row({ name: "DIGITAL ECONOMICS AND BUSINESS" })).records);
     expect(prog?.data.name).toBe("Digital Economics and Business");
