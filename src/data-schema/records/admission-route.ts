@@ -1,9 +1,19 @@
 import { z } from "zod";
 
 import { LocalizedTextSchema } from "../localized-text";
-import { CountryCodeSchema, SlugSchema } from "../primitives";
+import { CountryCodeSchema, SlugSchema, SourceKeySchema } from "../primitives";
 import { RecordProvenanceShape, SourcesSchema } from "../provenance";
 import { RuleSchema } from "../rules";
+
+// Advice about the destination country's own student aid (for example a national need-based grant).
+// It is never an admission requirement: nothing evaluates it and match status never reads it, which
+// is why it is not a route condition. `info_kind` can only say "guidance", so it never reads as official.
+export const RouteGuidanceSchema = z.strictObject({
+  id: SlugSchema,
+  source: SourceKeySchema,
+  info_kind: z.literal("guidance"),
+  note: LocalizedTextSchema,
+});
 
 export const AdmissionRouteRecordSchema = z.strictObject({
   slug: SlugSchema,
@@ -19,6 +29,12 @@ export const AdmissionRouteRecordSchema = z.strictObject({
     })
     .default([]),
   note: LocalizedTextSchema.optional(),
+  guidance: z
+    .array(RouteGuidanceSchema)
+    .refine((items) => new Set(items.map((g) => g.id)).size === items.length, {
+      message: "guidance ids must be unique",
+    })
+    .default([]),
   applicationChannels: z.array(SlugSchema),
   ...RecordProvenanceShape,
   sources: SourcesSchema,

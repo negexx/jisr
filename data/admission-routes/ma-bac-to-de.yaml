@@ -29,6 +29,20 @@ note:
   ar:
     text: "الباكالوريا وحدها لا تتيح الدراسة مباشرة في ألمانيا: فهي تؤهّل لدخول Studienkolleg (سنة تحضيرية) وامتحان الأهلية (Feststellungsprüfung). وقد تتيح سنة دراسية جامعية ناجحة في المغرب القبول المباشر في تخصص مرتبط."
     status: draft
+guidance:
+  - id: bafoeg-needs-residence-prospect
+    source: bafoeg
+    info_kind: guidance
+    note:
+      fr:
+        text: "Le BAföG (aide fédérale aux études) est ouvert aux étrangers qui ont une perspective de séjour durable en Allemagne et sont intégrés (par exemple droit de séjour permanent, permis d'établissement ou statut de protection). La source ne cite pas le visa d'études : l'aide n'est donc en général pas accessible à l'arrivée. Renseignez-vous auprès du Studierendenwerk."
+        status: draft
+      en:
+        text: "BAföG (federal student aid) is open to foreigners with a lasting prospect of staying in Germany who are socially integrated (for example permanent residence, a settlement permit or a protection status). The source does not mention a study visa, so the aid is generally not available on arrival. Ask the Studierendenwerk."
+        status: draft
+      ar:
+        text: "يُمنح BAföG (المساعدة الفيدرالية للدراسة) للأجانب الذين لديهم أفق إقامة دائمة في ألمانيا ومندمجون اجتماعيًا (مثل حق الإقامة الدائمة أو رخصة الاستقرار أو وضع الحماية). ولا يذكر المصدر التأشيرة الدراسية، فالمساعدة غير متاحة عمومًا عند الوصول. اسألوا Studierendenwerk."
+        status: draft
 applicationChannels: [de-uni-assist, de-uni-assist-vpd, de-university-direct]
 source: main
 info_kind: official
@@ -39,3 +53,6 @@ sources:
   daad:
     url: https://www.daad.de/app/bsa/pdf/long/152/current/
     last_verified_at: 2026-10-01
+  bafoeg:
+    url: https://www.xn--bafg-7qa.de/bafoeg/de/das-bafoeg-alle-infos-auf-einen-blick/_documents/bafoeg-auch-ohne-deutschen-pass.html
+    last_verified_at: 2026-10-05

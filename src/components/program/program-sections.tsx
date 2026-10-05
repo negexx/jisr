@@ -518,6 +518,51 @@ function ScholarshipItem({
   );
 }
 
+// Notes about the country's own student aid, from the routes into it. Guidance only: never styled
+// as official, never part of the match. The origin is named only when several origins contribute.
+function RouteGuidanceBlock({ data }: { data: ProgramPageData }) {
+  const t = useTranslations("program.scholarships.aid");
+  const groups = new Map<string, ProgramPageData["routeGuidance"]>();
+  for (const note of data.routeGuidance) {
+    groups.set(note.origin, [...(groups.get(note.origin) ?? []), note]);
+  }
+  if (groups.size === 0) return null;
+  const countryName = (code: string) => {
+    const country = data.core.countries.find((c) => c.code === code);
+    return (country === undefined ? undefined : data.text(country.name)?.text) ?? code;
+  };
+
+  return (
+    <div data-testid="route-guidance" className="flex flex-col gap-2">
+      <h3 className="text-lg font-semibold">{t("heading")}</h3>
+      <p className="max-w-prose text-base text-muted-foreground">{t("intro")}</p>
+      {[...groups].map(([origin, notes]) => (
+        <div key={origin} className="flex flex-col gap-1">
+          {groups.size > 1 ? (
+            <p data-testid="route-guidance-origin" className="text-sm font-medium">
+              {t("origin", { country: countryName(origin) })}
+            </p>
+          ) : null}
+          <ul className="divide-y divide-border border-y border-border">
+            {notes.map((note) => (
+              <li
+                key={`${note.route}-${note.id}`}
+                data-testid="route-guidance-note"
+                className="flex flex-col gap-1.5 py-4"
+              >
+                <p className="max-w-prose text-base">
+                  <LocalizedDataText value={data.text(note.note)} />
+                </p>
+                <SourceBadge meta={note.fact} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export function ScholarshipsSection({ data }: { data: ProgramPageData }) {
   const t = useTranslations("program.scholarships");
   return (
@@ -534,6 +579,7 @@ export function ScholarshipsSection({ data }: { data: ProgramPageData }) {
           </ul>
         </>
       )}
+      <RouteGuidanceBlock data={data} />
     </Section>
   );
 }

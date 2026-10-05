@@ -730,7 +730,12 @@
       },
       "deadline": "Date limite de la bourse : {date}",
       "deadlineUnknown": "Date limite de la bourse : non publiée, à vérifier",
-      "link": "Site de la bourse"
+      "link": "Site de la bourse",
+      "aid": {
+        "heading": "À savoir sur les aides du pays",
+        "intro": "Notes générales sur les aides nationales aux étudiants, pas des conditions d'admission.",
+        "origin": "Pour les étudiants venant de {country}"
+      }
     },
     "links": {
       "program": "Page de la formation",

@@ -106,6 +106,7 @@ export function bannerFactsOf(bundle: SnapshotBundle, slug: string): FactMeta[] 
       institution,
       costProfiles: bundle.costProfiles.flatMap((s) => s.profiles),
       scholarships: bundle.scholarships.flatMap((s) => s.scholarships),
+      routeGuidance: [],
       applicationChannel: channel,
     },
     "2000-01-01",

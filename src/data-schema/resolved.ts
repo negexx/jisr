@@ -86,6 +86,8 @@ export type ApplicationChannel = {
   summary: TextKey;
   fact: FactMeta;
 };
+// Guidance about the destination's own student aid: shown, never evaluated (see RouteGuidanceSchema).
+export type RouteGuidance = { id: Slug; note: TextKey; fact: FactMeta };
 export type AdmissionRoute = {
   slug: Slug;
   origin: CountryCode;
@@ -95,6 +97,8 @@ export type AdmissionRoute = {
   outcome: RouteOutcome;
   conditions: ResolvedRule[];
   note: TextKey | null;
+  // Present only when the route has guidance, so a route without it keeps its snapshot bytes.
+  guidance?: RouteGuidance[];
   applicationChannels: Slug[];
   fact: FactMeta;
 };

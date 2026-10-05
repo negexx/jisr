@@ -4,12 +4,15 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
+import type { CountryCode, Slug } from "@/data-schema/primitives";
 import type {
   ApplicationChannel,
   CostProfile,
+  FactMeta,
   Institution,
   Program,
   Scholarship,
+  TextKey,
 } from "@/data-schema/resolved";
 import {
   type CoreShard,
@@ -17,6 +20,7 @@ import {
   type InstitutionsShard,
   type Manifest,
   type ProgramsShard,
+  type RoutesShard,
   type ScholarshipsShard,
   type Shard,
   shardNames,
@@ -110,6 +114,33 @@ async function optionalShard<T extends Shard>(
   return listed(snapshot, name) ? ((await snapshot.shard(name)) as T) : undefined;
 }
 
+const ROUTES_SHARD = /^routes\.[A-Z]{2}$/;
+
+async function routeGuidanceFor(
+  snapshot: BuildSnapshot,
+  destination: CountryCode,
+): Promise<{ notes: RouteGuidanceNote[]; shardNames: string[] }> {
+  const names = Object.keys(snapshot.manifest.shards)
+    .filter((name) => ROUTES_SHARD.test(name))
+    .sort();
+  const notes: RouteGuidanceNote[] = [];
+  const used: string[] = [];
+  for (const name of names) {
+    const shard = (await snapshot.shard(name)) as RoutesShard;
+    const found = shard.routes
+      .filter((route) => route.destination === destination)
+      .flatMap((route) =>
+        (route.guidance ?? []).map((g) => ({ route: route.slug, origin: route.origin, ...g })),
+      );
+    if (found.length > 0) used.push(name);
+    notes.push(...found);
+  }
+  notes.sort((a, b) =>
+    a.origin !== b.origin ? (a.origin < b.origin ? -1 : 1) : a.id < b.id ? -1 : a.id > b.id ? 1 : 0,
+  );
+  return { notes, shardNames: used };
+}
+
 async function programShards(snapshot: BuildSnapshot): Promise<ProgramsShard[]> {
   return Promise.all(
     programShardsIn(snapshot.manifest).map(
@@ -128,8 +159,19 @@ export async function programStaticParams(
   return [...slugs].sort().map((slug) => ({ slug }));
 }
 
+// Advice about the destination country's own student aid, from a route into that country. Shown on
+// the page, never evaluated: match status does not read it.
+export type RouteGuidanceNote = {
+  route: Slug;
+  origin: CountryCode;
+  id: Slug;
+  note: TextKey;
+  fact: FactMeta;
+};
+
 // Everything the program page can render at build time: nothing here depends on the clock or on
-// the student (routes, budget fit and the nationality filter are client concerns).
+// the student (route matching, budget fit and the nationality filter are client concerns; route
+// guidance is general advice, shown to every student alike).
 export type ProgramPageData = {
   snapshotVersion: string;
   program: Program;
@@ -138,6 +180,8 @@ export type ProgramPageData = {
   costProfiles: CostProfile[];
   // Linked and destination scholarships; no nationality filter.
   scholarships: Scholarship[];
+  // Guidance of every route into the program's country (one origin today), ordered by origin, id.
+  routeGuidance: RouteGuidanceNote[];
   // Reference data for describing rules, channels and names in general terms.
   core: CoreShard;
   applicationChannel: ApplicationChannel | null;
@@ -170,7 +214,9 @@ export async function loadProgramPageData(
     optionalShard<ScholarshipsShard>(snapshot, shardNames.scholarships(program.country)),
   ]);
 
+  const guidance = await routeGuidanceFor(snapshot, program.country);
   const structural = [
+    ...guidance.shardNames,
     shardNames.core(),
     found.name,
     shardNames.institutions(program.country),
@@ -198,6 +244,7 @@ export async function loadProgramPageData(
     scholarships: (scholarships?.scholarships ?? [])
       .filter((s) => appliesToProgram(s, program))
       .sort((a, b) => (a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0)),
+    routeGuidance: guidance.notes,
     core,
     applicationChannel: core.applicationChannels.find((c) => c.slug === channelSlug) ?? null,
     text: createTextLookup(textShards, locale),

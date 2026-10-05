@@ -41,9 +41,13 @@ export function buildSnapshot(dataDir: string): string {
 export type Edit = { file: string; from: string; to: string };
 
 // A copy of the e2e fixture with text edits, so a rebuild yields a different snapshotVersion.
-export function buildVariant(edits: readonly Edit[]): string {
+export function buildVariant(
+  edits: readonly Edit[],
+  addFiles: readonly { file: string; content: string }[] = [],
+): string {
   const dataDir = tempDir("jisr-data-");
   cpSync(E2E_DATA_DIR, dataDir, { recursive: true });
+  for (const added of addFiles) writeFileSync(path.join(dataDir, added.file), added.content);
   for (const edit of edits) {
     const file = path.join(dataDir, edit.file);
     const source = readFileSync(file, "utf8");

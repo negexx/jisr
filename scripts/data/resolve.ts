@@ -296,6 +296,15 @@ function resolveRoute(record: AdmissionRouteRecord): Resolved<AdmissionRoute> {
     outcome: record.outcome,
     conditions: record.conditions.map((c) => rule(scope, "conditions", c)),
     note: optionalText(scope, "note", record.note),
+    ...(record.guidance.length === 0
+      ? {}
+      : {
+          guidance: record.guidance.map((g) => ({
+            id: g.id,
+            note: text(scope, `guidance.${g.id}.note`, g.note),
+            fact: recordFact(scope, g.source, g.info_kind),
+          })),
+        }),
     applicationChannels: [...record.applicationChannels],
     fact: recordFact(scope, record.source, record.info_kind),
   });
