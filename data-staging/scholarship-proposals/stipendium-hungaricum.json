@@ -1,0 +1,69 @@
+{
+  "slug": "stipendium-hungaricum",
+  "name": "Stipendium Hungaricum",
+  "provider": "Tempus Public Foundation (Hungarian government)",
+  "destinations": ["HU"],
+  "institutions": [
+    "hu-budapest-university-of-economics-and-bus-budapest",
+    "hu-corvinus-university-of-budapest-budapest",
+    "hu-eotvos-lorand-university-budapest",
+    "hu-eotvos-lorand-university-szombathely",
+    "hu-hungarian-university-of-agriculture-and-budapest",
+    "hu-hungarian-university-of-agriculture-and-godollo",
+    "hu-hungarian-university-of-agriculture-and-gyongyos",
+    "hu-john-von-neumann-university-kecskemet",
+    "hu-obuda-university-budapest",
+    "hu-university-of-debrecen-debrecen",
+    "hu-university-of-dunaujvaros-dunaujvaros",
+    "hu-university-of-miskolc-miskolc",
+    "hu-university-of-nyiregyhaza-nyiregyhaza",
+    "hu-university-of-pecs-pecs",
+    "hu-university-of-public-service-baja",
+    "hu-university-of-sopron-sopron",
+    "hu-university-of-szeged-szeged",
+    "hu-university-of-pannonia-nagykanizsa",
+    "hu-university-of-pannonia-veszprem"
+  ],
+  "eligibleNationalities": ["MA"],
+  "fields": ["computer-science", "engineering", "business-economics"],
+  "summary": {
+    "fr": "Bourse du gouvernement hongrois pour les études de licence complètes : frais de scolarité pris en charge, allocation mensuelle et contribution au logement (montants sur la page officielle). Le Maroc est pays partenaire pour la licence en informatique, ingénierie et économie ; la candidature se fait sur la plateforme du programme et auprès de l'autorité marocaine responsable.",
+    "en": "Hungarian government scholarship for full-degree Bachelor studies: tuition covered, a monthly stipend and an accommodation contribution (amounts on the official page). Morocco is a sending partner for Bachelor studies in computer science, engineering and economics; you apply on the programme platform and to the responsible Moroccan authority."
+  },
+  "howToApply": {
+    "fr": "Candidature en ligne sur la plateforme Stipendium Hungaricum, et auprès de l'autorité marocaine responsable (dates et pièces propres au partenaire) : voir la page de l'appel de l'année.",
+    "en": "Apply online on the Stipendium Hungaricum platform and to the responsible Moroccan authority (dates and documents set by the sending partner): see the page of the year's call."
+  },
+  "officialUrl": "https://stipendiumhungaricum.hu/apply/",
+  "support": null,
+  "deadline": null,
+  "documents": null,
+  "evidence": {
+    "eligibility": [
+      {
+        "url": "https://stipendiumhungaricum.hu/partners/",
+        "quote": "Morocco Full degree bachelor studies: in the fields of Agricultural Sciences, Arts and Humanities, Social Sciences, Computer Science and Information Technology, Legal Science, Economic Science, Engineering Science"
+      },
+      {
+        "url": "https://stipendiumhungaricum.hu/about/",
+        "quote": "to attract top international students from all around the world"
+      }
+    ],
+    "level": [
+      {
+        "url": "https://stipendiumhungaricum.hu/partners/",
+        "quote": "Morocco Full degree bachelor studies: in the fields of Agricultural Sciences"
+      }
+    ],
+    "howToApply": [
+      {
+        "url": "https://stipendiumhungaricum.hu/apply/",
+        "quote": "Click here to open the online application interface."
+      },
+      {
+        "url": "https://stipendiumhungaricum.hu/apply/",
+        "quote": "Applications shall also be submitted to the responsible authority of the sending partner."
+      }
+    ]
+  }
+}

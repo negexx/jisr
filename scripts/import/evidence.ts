@@ -230,7 +230,7 @@ const fail = (reason: string): FactCheck => ({ ok: false, reason });
 export function checkDuration(years: number, quote: string): FactCheck {
   const q = normalizeForMatch(quote);
   const yearUnits = "(?:year|years|an|ans|jahr|jahre|jahren|jaar|jaren|annee|années)";
-  const semesterUnits = "(?:semesters?|semestres?|semester)";
+  const semesterUnits = "(?:semesters?|semestres?|semester|semsters?)";
   const patterns: RegExp[] = [];
   if (Number.isInteger(years))
     patterns.push(new RegExp(`\\b${numberRegex(years)}[ -]?${yearUnits}\\b`, "i"));
