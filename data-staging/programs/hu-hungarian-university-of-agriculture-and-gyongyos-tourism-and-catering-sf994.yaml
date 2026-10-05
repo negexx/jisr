@@ -115,7 +115,7 @@ _review:
   todo: "Study Finder lists: branch Economic Science, language English, duration 8 semesters, location Gyöngyös, scholarship programmes: Stipendium Hungaricum; the programme's own page (Study Finder contact website): https://ed.uni-mate.hu/en/bsc-in-tourism-and-catering; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: studyfinder:994
   preparedBy: assistant
-  preparedAt: 2026-10-04
+  preparedAt: 2026-10-05
   evidence:
     - fact: durationYears
       url: https://ed.uni-mate.hu/en/bsc-in-tourism-and-catering

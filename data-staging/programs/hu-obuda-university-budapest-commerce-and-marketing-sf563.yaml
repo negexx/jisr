@@ -1,0 +1,164 @@
+slug: hu-obuda-university-budapest-commerce-and-marketing-sf563
+institution: hu-obuda-university-budapest
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Commerce and Marketing
+summary:
+  fr:
+    text: Commerce and Marketing, Obuda University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Commerce and Marketing, Obuda University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Commerce and Marketing, Obuda University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/563
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 290000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-3
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des documents de fin d'études secondaires vérifiés (originaux ou copies certifiées, en anglais ou avec traduction anglaise certifiée) doivent être téléversés.
+          status: draft
+        en:
+          text: Verified high school documents (originals or certified copies, in English or with a certified English translation) must be uploaded.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un examen d'entrée est requis : épreuve écrite de mathématiques et entretien oral en anglais en ligne."
+          status: draft
+        en:
+          text: "An entrance examination is required: a written mathematics exam and an online oral English interview."
+          status: draft
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le candidat doit avoir au moins 18 ans au début de la période d'études du semestre d'automne de la 1re année.
+          status: draft
+        en:
+          text: The applicant must be at least 18 years old by the start of the study period in the Fall semester of Year 1.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/563
+    last_verified_at: null
+  page-2:
+    url: https://uni-obuda.hu/tuition-fees/
+    last_verified_at: null
+  page-3:
+    url: https://uni-obuda.hu/application-deadlines/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-obuda-university-budapest-commerce-and-marketing-sf563
+  name: Commerce and Marketing
+  institution: Obuda University
+  city: Budapest
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/563
+  todo: "Study Finder lists: branch Economic Science, language English, duration 7 semesters, location Budapest, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://uni-obuda.hu/admission/; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:563
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/563
+      quote: "Duration of the course / programme: 7 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/563
+      quote: "Language of instruction: English"
+    - fact: tuition
+      url: https://uni-obuda.hu/tuition-fees/
+      quote: Commerce and Marketing Digital Manager 2,000 EUR 2,900 EUR Projectmanagement – B2B marketing
+    - fact: applicationChannel
+      url: https://uni-obuda.hu/application-deadlines/
+      quote: uploaded into the University’s online application system by the 1st of August the year of application
+    - fact: documents
+      url: https://uni-obuda.hu/application-deadlines/
+      quote: the Matriculation / School Leaving Certificate has to be uploaded into the University’s online application system
+    - fact: documents
+      url: https://uni-obuda.hu/application-deadlines/
+      quote: only original or certified documents (original, or as certified copies, in English or in the original language with a certified English translation)
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/563
+      quote: and English language certificate of level IELTS 5.0 at least
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/563
+      quote: "Minimum level of language proficiency (written): IELTS 5.0"
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/563
+      quote: All required high school documents uploaded (with verified English translations)
+    - fact: requirements.req-3
+      url: https://tempus.tpf.hu/studyfinder/index/show/563
+      quote: "Entrance examination: Yes"
+    - fact: requirements.req-3
+      url: https://tempus.tpf.hu/studyfinder/index/show/563
+      quote: "Written: Mathematics examination Oral: Online English interview focusing on the applicant’s motivations"
+    - fact: requirements.req-4
+      url: https://uni-obuda.hu/application-deadlines/
+      quote: Applicants must be at least 18 years old by the start of the study period in the Fall semester of Year 1
+  notes: The tuition fee quote is from the institution-wide fee table on https://uni-obuda.hu/tuition-fees/, where the Commerce and Marketing row lists 2,900 EUR per semester under the Non-EEA column; the programme page (tempus.tpf.hu) states no fee. The application channel is stated on https://uni-obuda.hu/application-deadlines/ as the University's online application system. The programme page's Stipendium Hungaricum offer is a scholarship, not a self-financed route.

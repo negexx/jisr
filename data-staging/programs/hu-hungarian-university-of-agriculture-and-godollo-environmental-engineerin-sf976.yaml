@@ -1,0 +1,132 @@
+slug: hu-hungarian-university-of-agriculture-and-godollo-environmental-engineerin-sf976
+institution: hu-hungarian-university-of-agriculture-and-godollo
+country: HU
+city: godollo
+field: engineering
+level: bachelor
+name: Environmental Engineering
+summary:
+  fr:
+    text: Environmental Engineering, Hungarian University of Agriculture and Life Sciences (Gödöllő). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Environmental Engineering, Hungarian University of Agriculture and Life Sciences (Gödöllő). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Environmental Engineering, Hungarian University of Agriculture and Life Sciences (Gödöllő). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://ed.uni-mate.hu/en/bsc-in-environmental-engineering
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+    - hu
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 220000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: high-school-diploma
+      name:
+        fr:
+          text: Diplôme d'études secondaires
+          status: draft
+        en:
+          text: High School Diploma
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien oral (en ligne, MS Teams) peut être exigé ; l'admission dépend de l'évaluation du dossier, des compétences professionnelles et de la motivation.
+          status: draft
+        en:
+          text: An oral entrance examination (online, MS Teams) may be required; admission depends on assessment of documents, professional competence and motivation.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://ed.uni-mate.hu/en/bsc-in-environmental-engineering
+    last_verified_at: null
+  page-2:
+    url: https://ed.uni-mate.hu/en/tuition-fee
+    last_verified_at: null
+  page-3:
+    url: https://tempus.tpf.hu/studyfinder/index/show/976
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-hungarian-university-of-agriculture-and-godollo-environmental-engineerin-sf976
+  name: Environmental Engineering
+  institution: Hungarian University of Agriculture and Life Sciences
+  city: Gödöllő
+  field: engineering
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/976
+  todo: "Study Finder lists: branch Engineering Science, language English, duration 7 semesters, location Gödöllő, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://ed.uni-mate.hu/en/bsc-in-environmental-engineering; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:976
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://ed.uni-mate.hu/en/bsc-in-environmental-engineering
+      quote: "Length of program: 7 semesters"
+    - fact: teachingLanguages
+      url: https://ed.uni-mate.hu/en/bsc-in-environmental-engineering
+      quote: "Language of conduction: Hungarian or English"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/976
+      quote: "Language of instruction: English"
+    - fact: tuition
+      url: https://ed.uni-mate.hu/en/tuition-fee
+      quote: BSc in Environmental Engineering Gödöllő full-time training BA/BSc English 2200 Euro 2200 Euro 2200 Euro 2200 Euro 2200 Euro 2200 Euro 2200 Euro
+    - fact: documents
+      url: https://tempus.tpf.hu/studyfinder/index/show/976
+      quote: High School Diploma, min. B2 level of English
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/976
+      quote: High School Diploma, min. B2 level of English
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/976
+      quote: "Assessment of the uploaded documents, language skills (language certificate is necessary: TOEFL, IELTS etc.), professional competence and motivation by programme leaders."
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/976
+      quote: "Entrance examination: Yes Entrance type: Oral"
+  notes: "Score tables on the tuition-fee page show the BSc in Environmental Engineering fee as 2200 Euro per semester, reaching 2500 Euro in later semesters; the latest listed figure (2200 Euro) was used. Application channel could not be stated: no supplied page names a platform or route (e.g. online application on the university website or the Stipendium Hungaricum scholarship call) for a self-financed foreign applicant to this programme. No application deadline for non-EU/international applicants is stated on the supplied pages. The Stipendium Hungaricum scholarship is mentioned as available but no scholarship-application channel sentence is provided."

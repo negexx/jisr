@@ -1,0 +1,154 @@
+slug: hu-budapest-metropolitan-university-budapest-tourism-and-catering-sf477
+institution: hu-budapest-metropolitan-university-budapest
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Tourism and Catering
+summary:
+  fr:
+    text: Tourism and Catering, Budapest Metropolitan University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Tourism and Catering, Budapest Metropolitan University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Tourism and Catering, Budapest Metropolitan University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.metubudapest.hu/programs/tourism-and-catering-bsc
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 350000
+    currency: EUR
+    period: semester
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: High school / secondary education certificate
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'admission en ligne est obligatoire pour tous les candidats.
+          status: draft
+        en:
+          text: All applicants have to participate in an online admission interview.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un test de mathématiques en ligne fait partie de l'entretien d'admission (30 minutes, 10 questions à choix multiples).
+          status: draft
+        en:
+          text: Applicants are required to write an online mathematics test as part of the online admission interview.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Moyenne générale du secondaire supérieure à 50 % chaque année et à l'examen final.
+          status: draft
+        en:
+          text: "Completed secondary school studies GPA: above 50% - annually and in the final exam."
+          status: draft
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Pour les programmes BSc : note de mathématiques du secondaire supérieure à 60 %."
+          status: draft
+        en:
+          text: "For BSc programs: high school math grade above 60%."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.metubudapest.hu/programs/tourism-and-catering-bsc
+    last_verified_at: null
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/477
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-budapest-metropolitan-university-budapest-tourism-and-catering-sf477
+  name: Tourism and Catering
+  institution: Budapest Metropolitan University
+  city: Budapest
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/477
+  todo: "Study Finder lists: branch Economic Science, language English, duration 8 semesters, location Budapest, scholarship programmes: none listed; the programme's own page (Study Finder contact website): https://www.metubudapest.hu/programs/tourism-and-catering-bsc; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:477
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://www.metubudapest.hu/programs/tourism-and-catering-bsc
+      quote: Course duration 8 semester
+    - fact: teachingLanguages
+      url: https://www.metubudapest.hu/programs/tourism-and-catering-bsc
+      quote: Course language English
+    - fact: tuition
+      url: https://www.metubudapest.hu/programs/tourism-and-catering-bsc
+      quote: 3500 EUR/semester for non-EU students
+    - fact: documents
+      url: https://tempus.tpf.hu/studyfinder/index/show/477
+      quote: High school / secondary education (or higher)
+    - fact: documents
+      url: https://tempus.tpf.hu/studyfinder/index/show/477
+      quote: If the transcript received from your school is not in English/Hungarian, you must have it translated into English
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/477
+      quote: "Entrance examination: All applicants have to participate in an online admission interview."
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/477
+      quote: Applicants are required to write an online mathematics test as part of the online admission interview.
+    - fact: requirements.req-3
+      url: https://www.metubudapest.hu/programs/tourism-and-catering-bsc
+      quote: "Completed secondary school studies GPA: above 50% - annually and in the final exam"
+    - fact: requirements.req-4
+      url: https://www.metubudapest.hu/programs/tourism-and-catering-bsc
+      quote: "For BSc programs: high school math grade above 60%"
+  notes: "Tuition: the page states 3500 EUR/semester for non-EU students but does not say whether this applies to the whole programme; the quoted fee is per semester, so a full year is 7000 EUR. The Studyfinder page lists the duration as 8 semesters, so durationYears = 4. Documents: the pages name 'High school / secondary education (or higher)' and a transcript that must be translated if not in English/Hungarian; the document list is limited to what is quoted. No dated application deadline or application channel platform (Studyfinder/Dream Apply) is stated on the supplied pages."

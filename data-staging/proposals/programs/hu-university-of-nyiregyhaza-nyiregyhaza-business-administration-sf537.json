@@ -1,0 +1,100 @@
+{
+  "slug": "hu-university-of-nyiregyhaza-nyiregyhaza-business-administration-sf537",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/537",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/537",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/537",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 245000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://english.nye.hu/en/node/319",
+          "quote": "Business Administration and Management BSc 7 2450 EUR *** 1800 EUR ***"
+        },
+        {
+          "url": "https://english.nye.hu/en/node/319",
+          "quote": "Tuition fee / semester * for non-EU applicants **"
+        }
+      ]
+    }
+  },
+  "notes": "Deadlines: no page states an application deadline with day, month and year for non-EU applicants for this programme; applicationform.nye.hu mentions the September 2026 intake open until 30 June 2026 but does not say it is for non-EU/foreign-qualification applicants and is not the 2027 intake, so no deadline fact was written. The homepage states only that the application period opens in December 2026 for the September 2027 intake, which is an opening period, and the quote gives no deadline with year, so it could not be written under \"intakes\" (a recurringDeadline needs month+day, which is not given). Tuition: the fee table is institution-wide but lists this programme by name (Business Administration and Management BSc, 7 semesters, 2450 EUR per semester for non-EU applicants), so it was used. The same fee table states that applicants must pay the first two semesters' tuition fee in advance. For Moroccans, note the general restriction list on applicationform.nye.hu excludes Afghanistan, Algeria, Bangladesh, Nepal, Saudi Arabia, Syria and Yemen, not Morocco, so no restriction applies. Entrance exam platform: Microsoft Teams (online). Contact: admission@nye.hu.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "De bons résultats en mathématiques sont attendus (aucun seuil chiffré n'est indiqué).",
+          "en": "Good results in Mathematics are expected (no numeric threshold is stated)."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/537",
+            "quote": "Good results in Mathematics."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée oral en ligne est obligatoire ; il faut au moins 60 points sur 100 pour réussir.",
+          "en": "An online oral entrance examination is required; at least 60 out of 100 points are needed to pass."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/537",
+            "quote": "The entrance exam is successful, if the applicant have at least 60 points."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Diplôme d'études secondaires (ou supérieur) requis ; les certificats doivent être attestés officiellement avec traduction en anglais.",
+          "en": "High school / secondary education (or higher) is required; certificates must be officially attested with English translation."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/537",
+            "quote": "High school / secondary education (or higher)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Frais de dossier de 100 EUR non remboursables ; l'examen d'entrée n'a lieu qu'après réception de cette somme.",
+          "en": "A non-refundable 100 EUR application fee applies; the entrance exam is only possible after this amount arrives."
+        },
+        "evidence": [
+          {
+            "url": "https://english.nye.hu/en/node/30",
+            "quote": "Proof of application fee payment slip (100 EUR, non-refundable)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "hu-budapest-university-of-economics-and-bus-budapest-international-business-e-sf20",
+  "programmePage": "https://uni-bge.hu/en/international-business-economics-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://uni-bge.hu/en/international-business-economics-bsc",
+          "quote": "International Business Economics Bsc 8 semesters 690,000 HUF 3000 EUR"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://uni-bge.hu/en/international-business-economics-bsc",
+          "quote": "The programme is taught at our city centre campus and is also offered full-time in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 300000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://uni-bge.hu/en/international-business-economics-bsc",
+          "quote": "Tuition fee for non-EU students per semester International Business Economics Bsc 8 semesters 690,000 HUF 3000 EUR"
+        },
+        {
+          "url": "https://uni-bge.hu/en/tuition-fee",
+          "quote": "International Business Economics 8 semesters 690,000 HUF 3,000 EUR"
+        }
+      ]
+    }
+  },
+  "notes": "Le corps de la page d'admission (uni-bge.hu/en/how-to-apply et /en/admission) est vide, donc aucune date limite ni plateforme de candidature n'a pu être citée. Aucun frais de dossier ni date de candidature n'est mentionné. Le montant de 3 000 EUR est par semestre (non-EU), pas par an.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/20",
+            "quote": "2. B2 English language knowledge, proved by internationally accepted language examination system (e.g.: IELTS, TOEFL, WAEC, etc.)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien oral en ligne (examen d'entrée) est requis, avec évaluation des résultats scolaires, de la motivation et des compétences interculturelles.",
+          "en": "An online oral entrance examination is required, assessing academic achievements, motivation letter and intercultural competence."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/20",
+            "quote": "The entrance examination consists of two components: an assessment of previous academic achievements, language proficiency, and motivation letter, followed by an online interview evaluating professional knowledge, language skills, and intercultural competence."
+          }
+        ]
+      }
+    ]
+  }
+}

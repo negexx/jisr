@@ -1,0 +1,129 @@
+slug: hu-obuda-university-budapest-electrical-engineering-sf560
+institution: hu-obuda-university-budapest
+country: HU
+city: budapest
+field: engineering
+level: bachelor
+name: Electrical Engineering
+summary:
+  fr:
+    text: Electrical Engineering, Obuda University (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Electrical Engineering, Obuda University (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Electrical Engineering, Obuda University (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/560
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 300000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: null
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien oral en anglais sur vos motivations fait partie de l'examen d'entrée (admission avec examen d'entrée).
+          status: draft
+        en:
+          text: An oral online English interview focusing on your motivations is part of the entrance examination (admission with entrance exam).
+          status: draft
+    - id: req-3
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vous devez avoir au moins 18 ans au début des études (fin septembre 2026).
+          status: draft
+        en:
+          text: You must be at least 18 years old by the start of the study period (end of September 2026).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/560
+    last_verified_at: null
+  page-2:
+    url: https://uni-obuda.hu/tuition-fees/
+    last_verified_at: null
+  page-3:
+    url: https://uni-obuda.hu/application-deadlines/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-obuda-university-budapest-electrical-engineering-sf560
+  name: Electrical Engineering
+  institution: Obuda University
+  city: Budapest
+  field: engineering
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/560
+  todo: "Study Finder lists: branch Engineering Science, language English, duration 7 semesters, location Budapest, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://uni-obuda.hu/admission/; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:560
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/560
+      quote: "Duration of the course / programme: 7 semesters semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/560
+      quote: "Language of instruction: English"
+    - fact: tuition
+      url: https://uni-obuda.hu/tuition-fees/
+      quote: Electrical Engineering Communication engineering 2,000 EUR 3,000 EUR
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/560
+      quote: and English language certificate of level IELTS 5.0 at least
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/560
+      quote: "Minimum level of language proficiency (oral): IELTS 5.0"
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/560
+      quote: "Oral: Online English interview focusing on the applicant’s motivations"
+    - fact: requirements.req-3
+      url: https://uni-obuda.hu/application-deadlines/
+      quote: Applicants must be at least 18 years old by the start of the study period in the Fall semester of Year 1 at the University, i.e., by the end of September 2026.
+  notes: "Le tarif de 3 000 EUR/semestre est la colonne \"Non-EEA\" du tableau des frais de scolarité (Electrical Engineering), donc le tarif pour un étudiant hors UE/EEE. Aucune date de candidature 2027 pour ce programme n'a été trouvée : la page \"HOW TO APPLY\" indique \"Fall Semester Application deadline: 31th May, 2026\" mais ne précise pas qu'il s'agit de candidats non-UE/étrangers, la date a donc été omise. La page d'admission générale mentionne une candidature en ligne sans nommer de plateforme, applicationChannel a donc été omis. La page Studyfinder ne liste pas les documents à fournir (pas de fait documents)."

@@ -1,0 +1,113 @@
+slug: hu-budapest-university-of-technology-and-ec-budapest-engineering-management-sf79
+institution: hu-budapest-university-of-technology-and-ec-budapest
+country: HU
+city: budapest
+field: engineering
+level: bachelor
+name: Engineering Management
+summary:
+  fr:
+    text: Engineering Management, Budapest University of Technology and Economics (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Engineering Management, Budapest University of Technology and Economics (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Engineering Management, Budapest University of Technology and Economics (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/79
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: hu-university-direct
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Admission sur dossier (qualité du diplôme et du relevé de notes, lettre de motivation, activités extrascolaires), test d'admission électronique et entretien en ligne ; critères minimaux à vérifier.
+          status: draft
+        en:
+          text: Selection based on documents (quality of secondary school certificate/transcript, motivation letter, extracurricular activities), electronic admission test (via internet) and online interview; minimum criteria to check.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Frais de dossier de 150 EUR pour la procédure d'admission des étudiants étrangers payants.
+          status: draft
+        en:
+          text: Application fee of 150 EUR for the admission procedure of fee-paying foreign students.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/79
+    last_verified_at: null
+  page-2:
+    url: https://www.gtk.bme.hu/en/for-applicants/admission-process/
+    last_verified_at: null
+  page-3:
+    url: https://www.gtk.bme.hu/en/for-applicants/fee-structure/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-budapest-university-of-technology-and-ec-budapest-engineering-management-sf79
+  name: Engineering Management
+  institution: Budapest University of Technology and Economics
+  city: Budapest
+  field: engineering
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/79
+  todo: "Study Finder lists: branch Engineering Science, language English, duration 7 semesters, location Budapest, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://www.gtk.bme.hu/en/; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:79
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/79
+      quote: "Duration of the course / programme: 7 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/79
+      quote: "Language of instruction: English"
+    - fact: applicationChannel
+      url: https://www.gtk.bme.hu/en/for-applicants/admission-process/
+      quote: If you want to study at Budapest University of Technology and Economics (BME) you have to fill our online application form.
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/79
+      quote: "Minimum criteria: secondary school certificate, successful admission test,"
+    - fact: requirements.req-2
+      url: https://www.gtk.bme.hu/en/for-applicants/fee-structure/
+      quote: As one of the first steps of application procedure, you are requested to pay the application fee (150 EUR).
+  notes: La page des frais donne deux montants par semestre pour BSc Engineering Management (3200 EUR pour non-EU, 2250 EUR pour EU) ainsi qu'une ligne "Engineering Management 3500 2750" sous MSc ; le tarif retenu est celui des non-EU (3200 EUR/semestre). La période d'application de la page https://www.gtk.bme.hu/en/for-applicants/master-programmes/master-in-finance/ ("1 April – 15 May") ne concerne que les MSc, elle n'est donc pas incluse pour ce Bachelor. L'anglais B2 est aussi accepté avec un Medium of Instruction Certificate ou un test de langue BME (MSc page), mais la citation utilisée ne figure que sur la page Studyfinder. Aucune date d'ouverture/deadline annuelle pour ce Bachelor n'est donnée avec année.
+  rejected:
+    - "tuition: the quote does not write the amount in the currency EUR"

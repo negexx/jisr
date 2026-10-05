@@ -1,0 +1,25 @@
+slug: hu-eszterhazy-karoly-catholic-university-eger
+name: Eszterházy Károly Catholic University
+country: HU
+city:
+  slug: eger
+  name: Eger
+type: null
+website: null
+source: studyfinder
+info_kind: TODO_read_source
+sources:
+  studyfinder:
+    url: https://tempus.tpf.hu/studyfinder/index/show/220
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: hu-eszterhazy-karoly-catholic-university-eger
+  name: Eszterházy Károly Catholic University
+  institution: ""
+  city: Eger
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: 'institution named "Eszterházy Károly Catholic University" in the Study Finder: the register does not say whether it is public or private nor its website. Find its official site (Study in Hungary profile: http://studyinhungary.hu/institution/eszterhazy-karoly-university-67.html), check it is a recognised Hungarian higher education institution, set the type, add its page as the source, then info_kind: official'
+  sourceId: studyfinder-institution:eszterhazy-karoly-catholic-university@eger

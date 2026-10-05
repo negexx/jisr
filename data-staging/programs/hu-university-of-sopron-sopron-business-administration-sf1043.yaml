@@ -1,0 +1,133 @@
+slug: hu-university-of-sopron-sopron-business-administration-sf1043
+institution: hu-university-of-sopron-sopron
+country: HU
+city: sopron
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, University of Sopron (Sopron). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Management, University of Sopron (Sopron). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Management, University of Sopron (Sopron). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/1043
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un entretien en ligne fait partie de l'admission : vérifiez le contenu, la date et la procédure auprès du coordinateur."
+          status: draft
+        en:
+          text: "An online interview is part of admission: check content, date and procedure with the coordinator."
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Diplôme d'études secondaires (high school diploma) exigé : vérifiez la reconnaissance de votre baccalauréat marocain."
+          status: draft
+        en:
+          text: "High school diploma required: check recognition of your Moroccan Baccalauréat."
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Attestation de compétence linguistique en anglais si vos études antérieures étaient en anglais : vérifiez si elle s'applique à vous."
+          status: draft
+        en:
+          text: "Attestation of Language Proficiency in English if your former studies were in English: check whether it applies to you."
+          status: draft
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Tous les documents de candidature requis sont vérifiés par le coordinateur de la faculté : demandez la liste exacte."
+          status: draft
+        en:
+          text: "All required application documents are checked by the faculty's coordinator: ask for the exact list."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/1043
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-sopron-sopron-business-administration-sf1043
+  name: Business Administration and Management
+  institution: University of Sopron
+  city: Sopron
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/1043
+  todo: "Study Finder lists: branch Economic Science, language English, duration 8 semesters, location Sopron, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://lkk.uni-sopron.hu/en_GB/start; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:1043
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/1043
+      quote: "Duration of the course / programme: 8 semesters"
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/1043
+      quote: The 4-year academic programme begins with core subjects
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/1043
+      quote: "Language of instruction: English"
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/1043
+      quote: The entrance exam happens in the frame of an online-interview with the participation of the AC.
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/1043
+      quote: High school diploma, TOEFL or IELTS language exam
+    - fact: requirements.req-3
+      url: https://tempus.tpf.hu/studyfinder/index/show/1043
+      quote: Attestation of Language Proficiency in case of English language former studies
+    - fact: requirements.req-4
+      url: https://tempus.tpf.hu/studyfinder/index/show/1043
+      quote: All the required application documents will be proved by the faculty
+  notes: "Tuition for a self-financed non-EU student is not stated on the supplied pages; no fee quote for this programme was found. Application channel cannot be stated: the pages do not say to apply online on the university's own website/application form (the supplied admissions page contains no such sentence) nor that the applicant applies for the Stipendium Hungaricum scholarship. Entry requires a high school diploma but no minimum study-year count is stated, so prior_study_years_min is omitted. The entrance interview is evaluated on a 100-point scale but no grade threshold is quoted."

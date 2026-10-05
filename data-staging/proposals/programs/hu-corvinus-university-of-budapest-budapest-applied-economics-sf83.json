@@ -1,0 +1,85 @@
+{
+  "slug": "hu-corvinus-university-of-budapest-budapest-applied-economics-sf83",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/83",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/83",
+          "quote": "Duration of the course / programme: 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/83",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 700000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en",
+          "quote": "Applied Economics 1 980 000 Ft 7 000 €"
+        },
+        {
+          "url": "https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en",
+          "quote": "Corvinus offers affordable tuition fees for self-funded degree seeking international students"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition figure (EUR 7,000/year) is quoted from the Corvinus Fees and Costs page, which lists 'non-EEA applicants (EUR/year)'; the Studyfinder page does not state a fee. No application deadline for non-EU applicants is given with a day, month and year on the supplied pages, so the 'intakes' fact is omitted; the application-information page gives general 2027/28 opening (October 2026) and a 1 August document submission date, but these are not stated as the non-EU application deadline. The mathematics requirement is a manual check because the pages give many accepted qualifications and a points threshold set by the Dean.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+            "quote": "Corvinus accepts the following proof of English language proficiency (minimum equivalent B2 level)"
+          },
+          {
+            "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+            "quote": "IELTS language certificate, minimum score: 6.0"
+          },
+          {
+            "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+            "quote": "TOEFL language certificate, minimum score: 65"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée écrit de mathématiques en ligne est obligatoire ; vous pouvez aussi présenter une qualification acceptée (AP, SAT, ACT, IB, A-level, etc.).",
+          "en": "An online written mathematics entrance exam is required; you can also present an accepted qualification (AP, SAT, ACT, IB, A-level, etc.)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en",
+            "quote": "If you do not or will not have any of these qualifications by the time of enrolment, you can take the Corvinus mathematics entrance exam instead."
+          }
+        ]
+      }
+    ]
+  }
+}

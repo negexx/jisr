@@ -1,0 +1,132 @@
+slug: hu-corvinus-university-of-budapest-budapest-business-administration-sf80
+institution: hu-corvinus-university-of-budapest-budapest
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, Corvinus University of Budapest (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Management, Corvinus University of Budapest (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Management, Corvinus University of Budapest (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/80
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 700000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: subject_taken
+      subjects:
+        - mathematics
+      mode: all
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier les conditions d'admission spécifiques et les examens d'entrée pour ce programme.
+          status: draft
+        en:
+          text: Check the specific admission conditions and entrance exams for this programme.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/80
+    last_verified_at: null
+  page-2:
+    url: https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en
+    last_verified_at: null
+  page-3:
+    url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-corvinus-university-of-budapest-budapest-business-administration-sf80
+  name: Business Administration and Management
+  institution: Corvinus University of Budapest
+  city: Budapest
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/80
+  todo: "Study Finder lists: branch Economic Science, language English, duration 7 semesters, location Budapest, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://www.uni-corvinus.hu/main-page/hello-corvinus/how-to-apply/?lang=en; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:80
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/80
+      quote: "Duration of the course / programme: 7 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/80
+      quote: "Language of instruction: English"
+    - fact: tuition
+      url: https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en
+      quote: Business and Management 1 980 000 Ft 7 000 €
+    - fact: tuition
+      url: https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en
+      quote: For applicants from non-EEA countries, prices are provided in euros, while for applicants from EEA countries, payment obligations are indicated in Hungarian forints
+    - fact: requirements.req-1
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: Corvinus accepts the following proof of English language proficiency (minimum equivalent B2 level) submitted no later than 1 August
+    - fact: requirements.req-1
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: "IELTS language certificate, minimum score: 6.0"
+    - fact: requirements.req-1
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: "TOEFL language certificate, minimum score: 65"
+    - fact: requirements.req-2
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: "If you are an applicant for one of the following, you will be required to meet the Mathematics requirements: BSc Applied Economics BSc Business Informatics BSc Business and Management BSc Data Science in Business BSc International Business BA Philosophy, Politics & Economy (PPE)."
+    - fact: requirements.req-3
+      url: https://tempus.tpf.hu/studyfinder/index/show/80
+      quote: "Entrance examination: Yes"
+  notes: Les règles d'admission sont générales pour les programmes de licence; vérifier si elles s'appliquent spécifiquement à ce programme. Le canal de candidature est DreamApply pour les auto-financés, mais la page Studyfinder mentionne la disponibilité pour la bourse Stipendium Hungaricum, qui est une voie distincte.

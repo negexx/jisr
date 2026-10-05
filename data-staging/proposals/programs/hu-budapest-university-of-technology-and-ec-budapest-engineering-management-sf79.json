@@ -1,0 +1,79 @@
+{
+  "slug": "hu-budapest-university-of-technology-and-ec-budapest-engineering-management-sf79",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/79",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/79",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/79",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 320000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.gtk.bme.hu/en/for-applicants/fee-structure/",
+          "quote": "BSc Engineering Management 3200 2250"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.gtk.bme.hu/en/for-applicants/admission-process/",
+          "quote": "If you want to study at Budapest University of Technology and Economics (BME) you have to fill our online application form."
+        }
+      ]
+    }
+  },
+  "notes": "La page des frais donne deux montants par semestre pour BSc Engineering Management (3200 EUR pour non-EU, 2250 EUR pour EU) ainsi qu'une ligne \"Engineering Management 3500 2750\" sous MSc ; le tarif retenu est celui des non-EU (3200 EUR/semestre). La période d'application de la page https://www.gtk.bme.hu/en/for-applicants/master-programmes/master-in-finance/ (\"1 April – 15 May\") ne concerne que les MSc, elle n'est donc pas incluse pour ce Bachelor. L'anglais B2 est aussi accepté avec un Medium of Instruction Certificate ou un test de langue BME (MSc page), mais la citation utilisée ne figure que sur la page Studyfinder. Aucune date d'ouverture/deadline annuelle pour ce Bachelor n'est donnée avec année.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Admission sur dossier (qualité du diplôme et du relevé de notes, lettre de motivation, activités extrascolaires), test d'admission électronique et entretien en ligne ; critères minimaux à vérifier.",
+          "en": "Selection based on documents (quality of secondary school certificate/transcript, motivation letter, extracurricular activities), electronic admission test (via internet) and online interview; minimum criteria to check."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/79",
+            "quote": "Minimum criteria: secondary school certificate, successful admission test,"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Frais de dossier de 150 EUR pour la procédure d'admission des étudiants étrangers payants.",
+          "en": "Application fee of 150 EUR for the admission procedure of fee-paying foreign students."
+        },
+        "evidence": [
+          {
+            "url": "https://www.gtk.bme.hu/en/for-applicants/fee-structure/",
+            "quote": "As one of the first steps of application procedure, you are requested to pay the application fee (150 EUR)."
+          }
+        ]
+      }
+    ]
+  }
+}

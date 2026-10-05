@@ -1,0 +1,164 @@
+slug: hu-university-of-debrecen-debrecen-computer-science-sf126
+institution: hu-university-of-debrecen-debrecen
+country: HU
+city: debrecen
+field: computer-science
+level: bachelor
+name: Computer Science
+summary:
+  fr:
+    text: Computer Science, University of Debrecen (Debrecen). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Computer Science, University of Debrecen (Debrecen). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Computer Science, University of Debrecen (Debrecen). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.edu.unideb.hu/p/computer-science-bsc
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: application-form
+      name:
+        fr:
+          text: Formulaire de candidature
+          status: draft
+        en:
+          text: Application form
+          status: draft
+      translationRequired: null
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: true
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un certificat de fin d'études secondaires et un examen d'entrée écrit et oral en mathématiques (résultat ≥ 75 %) sont exigés. Entre 60 et 75 %, admission possible en année préparatoire.
+          status: draft
+        en:
+          text: A high school certificate and a written and oral entrance exam in Mathematics (result ≥ 75%) are required. Between 60% and 75%, admission to a preparatory (foundation year) programme is possible.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.edu.unideb.hu/p/computer-science-bsc
+    last_verified_at: null
+  page-2:
+    url: https://www.edu.unideb.hu/p/application-and-admission
+    last_verified_at: null
+  page-3:
+    url: https://tempus.tpf.hu/studyfinder/index/show/126
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-debrecen-debrecen-computer-science-sf126
+  name: Computer Science
+  institution: University of Debrecen
+  city: Debrecen
+  field: computer-science
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/126
+  todo: "Study Finder lists: branch Computer Science and Information Technology, language English, duration 6 semesters, location Debrecen, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://www.edu.unideb.hu/p/computer-science-bsc; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:126
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://www.edu.unideb.hu/p/computer-science-bsc
+      quote: This is a 3-year program consisting of 6 academic semesters.
+    - fact: teachingLanguages
+      url: https://www.edu.unideb.hu/p/computer-science-bsc
+      quote: All courses are taught in English; therefore, a B2 level English proficiency is required.
+    - fact: documents
+      url: https://www.edu.unideb.hu/p/application-and-admission
+      quote: Valid, filled-in application form (to be filled online here);
+    - fact: documents
+      url: https://www.edu.unideb.hu/p/application-and-admission
+      quote: certificate of education (school leaving qualification such as high school diploma, document of graduation or any equivalent; university degree certificate or any equivalent; all in English / translated)
+    - fact: documents
+      url: https://www.edu.unideb.hu/p/application-and-admission
+      quote: Certificate or proof of citizenship and/or permanent residence (e.g. passport)
+    - fact: documents
+      url: https://www.edu.unideb.hu/p/application-and-admission
+      quote: Short Resume/CV (personal details, educational background, work experience, language skills, additional skills)
+    - fact: requirements.req-1
+      url: https://www.edu.unideb.hu/p/computer-science-bsc
+      quote: All courses are taught in English; therefore, a B2 level English proficiency is required.
+    - fact: requirements.req-1
+      url: https://www.edu.unideb.hu/p/computer-science-bsc
+      quote: "For your information, this is equivalent to: a TOEFL test with a minimum score of 513 (Paper-Based). an IELTS test with a minimum score of 5.5."
+    - fact: requirements.req-1
+      url: https://www.edu.unideb.hu/p/computer-science-bsc
+      quote: Please note, that you are not strictly required to have a language exam certificate, your language skills will be assessed during the entrance interview.
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/126
+      quote: high school certificate; entrance examination in mathematics (written and oral)
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/126
+      quote: Results about 75% and over mean admission to the selected programme, results between 60%-75% -admission to a preparatory (foundation year) programme.
+  notes: The programme is only offered for the September intake (single-intake). The application deadline of 15 June is stated without a year, so it is recorded as a recurring deadline. The tuition fee is quoted in USD on the programme page (7,000 USD/year); no EUR or HUF amount for this programme is given on the supplied pages.

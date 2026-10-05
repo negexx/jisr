@@ -1,0 +1,44 @@
+{
+  "slug": "hu-eotvos-lorand-university-budapest-applied-economics-sf343",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/343",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/343",
+          "quote": "Duration of the course / programme: 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/343",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    }
+  },
+  "notes": "Aucune page fournie ne décrit de frais de scolarité pour les étudiants auto-financés hors UE/EEE : la rubrique tuition est donc omise. Aucune date limite de candidature (avec ou sans année) n'est donnée pour les candidats internationaux. Le mode de candidature (auto-financé) n'est pas indiqué sur cette page ; elle mentionne uniquement la disponibilité via le programme de bourse Stipendium Hungaricum, sans dire que le candidat postule à cette bourse.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée oral en ligne est requis (Entrance examination: Yes, type oral, lieu: Online). Vérifiez les modalités auprès de l'université.",
+          "en": "An oral entrance examination is required (Entrance examination: Yes, oral type, place: Online). Check the details with the university."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/343",
+            "quote": "Entrance examination: Yes Entrance type: Oral"
+          }
+        ]
+      }
+    ]
+  }
+}

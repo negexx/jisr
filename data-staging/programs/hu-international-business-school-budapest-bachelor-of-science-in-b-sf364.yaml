@@ -1,0 +1,123 @@
+slug: hu-international-business-school-budapest-bachelor-of-science-in-b-sf364
+institution: hu-international-business-school-budapest
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Bachelor of Science in Business Management
+summary:
+  fr:
+    text: Bachelor of Science in Business Management, International Business School (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Bachelor of Science in Business Management, International Business School (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Bachelor of Science in Business Management, International Business School (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary school leaving certificate
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Aucun examen d'entrée pour ce programme.
+          status: draft
+        en:
+          text: No entrance examination for this programme.
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Frais supplémentaires pour les non-UE : frais d'inscription uniques de 1200 €, frais de dossier de 200 €, frais de service visa de 1000 €."
+          status: draft
+        en:
+          text: "Additional non-EU fees: one-time registration fee EUR 1200, application fee EUR 200, visa service fee EUR 1000."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management/
+    last_verified_at: null
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/364
+    last_verified_at: null
+  page-3:
+    url: https://www.ibs-b.hu/en/how-to-apply/fees/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-international-business-school-budapest-bachelor-of-science-in-b-sf364
+  name: Bachelor of Science in Business Management
+  institution: International Business School
+  city: Budapest
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/364
+  todo: "Study Finder lists: branch Economic Science, language English, duration 6 semesters, location Budapest, scholarship programmes: none listed; the programme's own page (Study Finder contact website): https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management/; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:364
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/364
+      quote: "Language of instruction: English"
+    - fact: documents
+      url: https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management/
+      quote: • Secondary school leaving certificate AND
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/364
+      quote: "Entrance examination: No"
+    - fact: requirements.req-2
+      url: https://www.ibs-b.hu/en/how-to-apply/fees/
+      quote: One-time registration fee for non-EU citizens (except PhD students) 1200
+    - fact: requirements.req-2
+      url: https://www.ibs-b.hu/en/how-to-apply/fees/
+      quote: Application fee (non-refundable) 200
+    - fact: requirements.req-2
+      url: https://www.ibs-b.hu/en/how-to-apply/fees/
+      quote: Visa service fee 1000
+  notes: "Tuition: The pages do not state a fee specifically for a self-financed student from outside the EU/EEA for this programme. The Fees page gives a general fee of EUR 4,000 per semester for Bachelor's degree programmes – The University of Buckingham (6 paid semesters), but it is an institution-wide figure and not stated for this programme, so tuition is left out. Application deadline: the page shows '30 September 2026*' under the September 2026 column for Bachelor's programmes, but that is a general deadline not marked for international or non-EU applicants, so it is left out. The page states 'Hungarian citizens for the BSc programmes with the Dublin Business School, De Montfort University, or B.H.M.S. options must apply only on FELVI.HU until 6 August 2026 (PÓTFELVÉTELI) for the September 2026 intake.' — that is for Hungarian citizens only."

@@ -127,7 +127,7 @@ _review:
   todo: "Study Finder lists: branch Engineering Science, language English, duration 7 semesters, location Budapest, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://foodscience.uni-mate.hu/en/bsc-in-biochemical-engineering; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: studyfinder:999
   preparedBy: assistant
-  preparedAt: 2026-10-04
+  preparedAt: 2026-10-05
   evidence:
     - fact: durationYears
       url: https://foodscience.uni-mate.hu/en/bsc-in-biochemical-engineering

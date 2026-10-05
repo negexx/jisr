@@ -1,0 +1,90 @@
+slug: hu-budapest-university-of-technology-and-ec-budapest-chemical-engineering-sf42
+institution: hu-budapest-university-of-technology-and-ec-budapest
+country: HU
+city: budapest
+field: engineering
+level: bachelor
+name: Chemical Engineering
+summary:
+  fr:
+    text: Chemical Engineering, Budapest University of Technology and Economics (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Chemical Engineering, Budapest University of Technology and Economics (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Chemical Engineering, Budapest University of Technology and Economics (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/42
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'admission écrit est requis (en ligne). Vérifiez les modalités et le résultat minimum (50 %).
+          status: draft
+        en:
+          text: A written entrance examination is required (online). Check the details and the minimum result (50%).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/42
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-budapest-university-of-technology-and-ec-budapest-chemical-engineering-sf42
+  name: Chemical Engineering
+  institution: Budapest University of Technology and Economics
+  city: Budapest
+  field: engineering
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/42
+  todo: "Study Finder lists: branch Engineering Science, language English, duration 7 semesters, location Budapest, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; contact website listed only as http: http://www.ch.bme.hu/en (not used as evidence): find the programme's own page over https; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:42
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/42
+      quote: "Duration of the course / programme: 7 semesters semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/42
+      quote: "Language of instruction: English"
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/42
+      quote: "Minimum requirement: min 50% admission result"
+  notes: The page is a StudyFinder aggregator entry, not the university's own admission page. No tuition fee or application deadline for a self-financed non-EU/EEA applicant is stated; the only scholarship named is Stipendium Hungaricum. The English-taught programme is the one described, but the page also mentions a Stipendium Hungaricum scholarship route.
+  rejected:
+    - "applicationChannel: the quote does not name the channel hu-stipendium-hungaricum"

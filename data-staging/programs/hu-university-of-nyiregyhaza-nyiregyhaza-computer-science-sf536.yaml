@@ -1,0 +1,137 @@
+slug: hu-university-of-nyiregyhaza-nyiregyhaza-computer-science-sf536
+institution: hu-university-of-nyiregyhaza-nyiregyhaza
+country: HU
+city: nyiregyhaza
+field: computer-science
+level: bachelor
+name: Computer Science
+summary:
+  fr:
+    text: Computer Science, University of Nyíregyháza (Nyíregyháza). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Computer Science, University of Nyíregyháza (Nyíregyháza). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Computer Science, University of Nyíregyháza (Nyíregyháza). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/536
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 245000
+    currency: EUR
+    period: semester
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien oral en ligne (Microsoft Teams) est obligatoire pour vérifier l'anglais, l'orientation professionnelle et la motivation. L'examen est réussi avec au moins 60 points sur 100. Sans le paiement de 100 EUR de frais de dossier, aucun examen n'est possible.
+          status: draft
+        en:
+          text: An online oral interview (Microsoft Teams) is mandatory to check English skills, professional orientation and motivation. The exam is passed with at least 60 of 100 points. Without paying the 100 EUR application fee, no entrance exam is possible.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: De bons résultats en mathématiques sont attendus (High school / secondary education (or higher). Good results in Mathematics.), sans seuil chiffré précisé.
+          status: draft
+        en:
+          text: Good results in mathematics are expected (High school / secondary education (or higher). Good results in Mathematics.), with no precise numerical threshold stated.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Le niveau d'anglais évalué à l'oral et à l'écrit est B2 minimum. Le certificat de langue n'est pas obligatoire : les compétences sont évaluées lors de l'entretien en ligne."
+          status: draft
+        en:
+          text: "The English level assessed for oral and written is minimum B2. A language certificate is not compulsory: skills are assessed during the online interview."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/536
+    last_verified_at: null
+  page-2:
+    url: https://english.nye.hu/en/node/319
+    last_verified_at: null
+  page-3:
+    url: https://english.nye.hu/en/node/30
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-nyiregyhaza-nyiregyhaza-computer-science-sf536
+  name: Computer Science
+  institution: University of Nyíregyháza
+  city: Nyíregyháza
+  field: computer-science
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/536
+  todo: "Study Finder lists: branch Computer Science and Information Technology, language English, duration 6 semesters, location Nyíregyháza, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://english.nye.hu/; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:536
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/536
+      quote: "Duration of the course / programme: 6 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/536
+      quote: "Language of instruction: English"
+    - fact: tuition
+      url: https://english.nye.hu/en/node/319
+      quote: Computer Science BSc 6 2450 EUR *** 1800 EUR ***
+    - fact: requirements.req-1
+      url: https://english.nye.hu/en/node/30
+      quote: "Entrance exam: Short oral interview via internet (platform: Microsoft Teams) to check the English skills, professional orientation and motivation)"
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/536
+      quote: The entrance exam is successful, if the applicant have at least 60 points.
+    - fact: requirements.req-1
+      url: https://english.nye.hu/en/node/30
+      quote: Without the arrival of the 100 EUR application fee no entrance exam is possible.
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/536
+      quote: High school / secondary education (or higher). Good results in Mathematics.
+    - fact: requirements.req-3
+      url: https://tempus.tpf.hu/studyfinder/index/show/536
+      quote: "Minimum level of language proficiency (oral): B2 Minimum level of language proficiency (written): B2"
+    - fact: requirements.req-3
+      url: https://tempus.tpf.hu/studyfinder/index/show/536
+      quote: English language skills at upper intermediate level or higher (at level CEFR B2 or IELTS 5.5) – Having a language certificate is not a compulsory requirement.
+  notes: Le tarif indiqué (2450 EUR par semestre pour les candidats non-UE) figure dans le tableau intitulé «Tuition fee / semester * for non-EU applicants **» de la page générale des frais de scolarité 2027/2028 de l'université ; le tableau couvre aussi la ligne «Computer Science BSc». La date limite du 30 juin 2026 (page du formulaire de candidature) concerne l'admission de septembre 2026 et n'est pas reprise car elle vise l'intake 2026, non 2027. Les documents listés proviennent de la procédure pour candidats payants, qui s'applique aux candidats étrangers. Aucune date limite de candidature pour 2027 n'est chiffrée au jour près dans les pages ; seule l'ouverture en décembre 2026 est mentionnée.

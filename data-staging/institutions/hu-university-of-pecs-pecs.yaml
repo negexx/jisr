@@ -1,0 +1,30 @@
+slug: hu-university-of-pecs-pecs
+name: University of Pécs
+country: HU
+city:
+  slug: pecs
+  name: Pécs
+type: null
+website: https://english.mik.pte.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://english.mik.pte.hu/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: hu-university-of-pecs-pecs
+  name: University of Pécs
+  institution: ""
+  city: Pécs
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: 'institution named "University of Pécs" in the Study Finder: the register does not say whether it is public or private nor its website. Find its official site (Study in Hungary profile: http://studyinhungary.hu/institution/university-of-pecs-3.html), check it is a recognised Hungarian higher education institution, set the type, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw'
+  sourceId: studyfinder-institution:university-of-pecs@pecs
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - url: https://english.mik.pte.hu/
+      quote: University of Pécs - Faculty of Engineering and Information Technology The web

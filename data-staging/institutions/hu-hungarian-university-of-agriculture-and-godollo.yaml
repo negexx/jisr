@@ -1,0 +1,30 @@
+slug: hu-hungarian-university-of-agriculture-and-godollo
+name: Hungarian University of Agriculture and Life Sciences
+country: HU
+city:
+  slug: godollo
+  name: Gödöllő
+type: null
+website: https://ed.uni-mate.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://ed.uni-mate.hu/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: hu-hungarian-university-of-agriculture-and-godollo
+  name: Hungarian University of Agriculture and Life Sciences
+  institution: ""
+  city: Gödöllő
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: 'institution named "Hungarian University of Agriculture and Life Sciences" in the Study Finder: the register does not say whether it is public or private nor its website. Find its official site (Study in Hungary profile: http://studyinhungary.hu/institution/szent-istvan-university-98.html), check it is a recognised Hungarian higher education institution, set the type, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw'
+  sourceId: studyfinder-institution:hungarian-university-of-agriculture-and-life-sciences@godollo
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - url: https://ed.uni-mate.hu/
+      quote: to Main Content Hungarian University of Agriculture and Life Sciences Directorate of

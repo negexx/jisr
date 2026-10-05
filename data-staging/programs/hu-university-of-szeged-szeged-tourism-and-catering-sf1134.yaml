@@ -1,0 +1,99 @@
+slug: hu-university-of-szeged-szeged-tourism-and-catering-sf1134
+institution: hu-university-of-szeged-szeged
+country: HU
+city: szeged
+field: business-economics
+level: bachelor
+name: Tourism and Catering
+summary:
+  fr:
+    text: Tourism and Catering, University of Szeged (Szeged). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Tourism and Catering, University of Szeged (Szeged). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Tourism and Catering, University of Szeged (Szeged). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/1134
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Diplôme d'études secondaires (high school diploma) exigé ; vérifier le niveau d'anglais B2 (intermédiaire) et l'examen d'entrée écrit et oral en ligne.
+          status: draft
+        en:
+          text: High school diploma required; check English proficiency at B2 (intermediate) and the online written and oral entrance examination.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un score SAT valide en mathématiques au-dessus d'un certain niveau permet d'être admis sans passer l'examen d'entrée.
+          status: draft
+        en:
+          text: A valid SAT score in Mathematics above a certain level allows admission without taking the entrance exam.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/1134
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-szeged-szeged-tourism-and-catering-sf1134
+  name: Tourism and Catering
+  institution: University of Szeged
+  city: Szeged
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/1134
+  todo: "Study Finder lists: branch Economic Science, language English, duration 8 semesters, location Szeged, scholarship programmes: Stipendium Hungaricum, state scholarship; the programme's own page (Study Finder contact website): https://u-szeged.hu/english/study-programmes/performance-ba; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:1134
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/1134
+      quote: "Language of instruction: English"
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/1134
+      quote: "Certificate of completion of secondary education, Application requirements: High school diploma, a demonstrated proficiency in English (Intermediate, B2, or equivalent) and an online written and oral entrance examination test."
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/1134
+      quote: Candidates with a valid SAT-score in Mathematics above a certain level are admitted without taking the entrance exam.
+  notes: "Le portail tempus.tpf.hu/studyfinder décrit le programme Tourism and Catering (8 semesters). La page u-szeged.hu/english/study-programmes/performance-ba concerne le programme Performance (BA), pas Tourism and Catering : aucune donnée n'en a été reprise. La page apply.u-szeged.hu ne donne pas de frais de scolarité ni de documents spécifiques à ce programme ; les frais indiqués sur la page Performance (2500 EUR/semestre) ne s'appliquent pas ici. Aucune information sur les frais, les dates limites de candidature ou les documents propres à Tourism and Catering n'apparaît dans les pages fournies."

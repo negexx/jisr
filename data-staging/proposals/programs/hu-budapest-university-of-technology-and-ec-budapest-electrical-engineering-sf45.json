@@ -1,0 +1,167 @@
+{
+  "slug": "hu-budapest-university-of-technology-and-ec-budapest-electrical-engineering-sf45",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/45",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/45",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/45",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "application-form",
+          "name": {
+            "fr": "Formulaire de candidature",
+            "en": "Application form"
+          },
+          "quotedAs": "application form",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-copy",
+          "name": {
+            "fr": "Copie du passeport",
+            "en": "Passport copy"
+          },
+          "quotedAs": "passport copy",
+          "translationRequired": null
+        },
+        {
+          "slug": "school-reports",
+          "name": {
+            "fr": "Bulletins scolaires du secondaire",
+            "en": "Secondary high school reports"
+          },
+          "quotedAs": "secondary high school reports relevant to your application",
+          "translationRequired": true
+        },
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary high school diploma"
+          },
+          "quotedAs": "general certificate of education - G.C.E. or any equivalent secondary high school diploma",
+          "translationRequired": true
+        },
+        {
+          "slug": "transcripts-diplomas",
+          "name": {
+            "fr": "Relevés de notes et diplômes",
+            "en": "Transcripts and degrees/diplomas"
+          },
+          "quotedAs": "official transcripts, degrees/diplomas of any higher education already completed",
+          "translationRequired": true
+        },
+        {
+          "slug": "english-language-certificate",
+          "name": {
+            "fr": "Attestation de compétence en anglais",
+            "en": "Proof of English language proficiency"
+          },
+          "quotedAs": "Proof of English language proficiency: TOEFL iBT score of 4.0",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum vitae",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "curriculum vitae (autobiography/résumé)",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "application form"
+        },
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "passport copy"
+        },
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "secondary high school reports relevant to your application, with special reference to mathematics, physics and English language"
+        },
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "general certificate of education - G.C.E. or any equivalent secondary high school diploma"
+        },
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "official transcripts, degrees/diplomas of any higher education already completed"
+        },
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "Proof of English language proficiency: TOEFL iBT score of 4.0"
+        },
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "curriculum vitae (autobiography/résumé)"
+        }
+      ]
+    }
+  },
+  "notes": "Page texts give no tuition fee for this programme, so no tuition fact is included. The applicationChannel quote from the VIK admission page is general (\"All applications must be submitted on-line\") and does not name a platform; treated as direct university application (hu-university-direct), but the Stipendium Hungaricum route is also mentioned for scholarship applicants (\"For Stipendium Hungaricum Applicants\"). Language proficiency appears as B2/IELTS 5.0/TOEFL iBT 72 on the Studyfinder page; the VIK page adds older TOEFL thresholds (iBT 4.0, PBT 550) and states IELTS 5.0 is recommended for BSc but required for MSc/PhD, so certificate requirements should be verified manually. Duration: 7 semesters (210 credits) = 3.5 years.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le test de positionnement en mathématiques, physique et anglais est obligatoire pour entrer en licence (BSc) à BME VIK.",
+          "en": "The placement test in mathematics, physics and English is mandatory to enter a BSc degree program at BME VIK."
+        },
+        "evidence": [
+          {
+            "url": "https://www.vik.bme.hu/en/education/admission/",
+            "quote": "The placement test is mandatory for all applicants who wish to enter into a BSc degree program at BME VIK."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le diplôme d'études secondaires doit être obtenu avec un résultat global d'au moins 70 %.",
+          "en": "The secondary school diploma must be completed with an overall result of at least 70%."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/45",
+            "quote": "Completed SECONDARY-school studies with an overall result of min. 70%."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Dates limites de candidature : semestre d'automne du 1er avril au 15 mai ; semestre de printemps du 15 octobre au 15 novembre (année non précisée).",
+          "en": "Application deadlines: fall semester 1 April – 15 May; spring semester 15 October – 15 November (year not stated)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.vik.bme.hu/en/education/admission/",
+            "quote": "Application period in the fall semester: 1st April – 15th May"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,114 @@
+slug: hu-university-of-miskolc-miskolc-business-administration-sf461
+institution: hu-university-of-miskolc-miskolc
+country: HU
+city: miskolc
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, University of Miskolc (Miskolc). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Management, University of Miskolc (Miskolc). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Management, University of Miskolc (Miskolc). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/461
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary school leaving certificate
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation letter
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée en ligne (intelligence générale et mathématiques) est requis, suivi d'un entretien Skype de 15 minutes ; vérifiez les modalités exactes auprès de l'université.
+          status: draft
+        en:
+          text: A successful online entry exam (general intelligence and math skills) is required, followed by a 15-minute Skype interview; check the exact procedure with the university.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/461
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-miskolc-miskolc-business-administration-sf461
+  name: Business Administration and Management
+  institution: University of Miskolc
+  city: Miskolc
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/461
+  todo: "Study Finder lists: branch Economic Science, language English, duration 7 semesters, location Miskolc, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://en.uni-miskolc.hu/business-administration-and-management-bsc; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:461
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/461
+      quote: "Duration of the course / programme: 7 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/461
+      quote: "Language of instruction: English"
+    - fact: documents
+      url: https://tempus.tpf.hu/studyfinder/index/show/461
+      quote: Requirements Secondary school leaving certificate, motivation letter, successful online entry exam
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/461
+      quote: successful online entry exam (general intelligence and math skills)
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/461
+      quote: In the second part of the entrance examination a 15-minute-long skype-interview takes place with two opponens
+  notes: Les pages ne donnent pas de frais de scolarité pour ce programme ; le programme est disponible dans le cadre de la bourse Stipendium Hungaricum, qui n'est pas un tarif de 0 pour le programme. La page mentionne 'État Scholarships Available' mais ne précise pas le montant des frais pour un étudiant auto-financé. La candidature via 'hu-stipendium-hungaricum' est retenue car la page indique la disponibilité du programme dans le programme de bourse Stipendium Hungaricum ; aucune instruction explicite d'utiliser le site de l'université pour une candidature auto-financée n'est donnée sur cette page.
+  rejected:
+    - "applicationChannel: the quote does not name the channel hu-stipendium-hungaricum"

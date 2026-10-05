@@ -1,0 +1,54 @@
+{
+  "slug": "hu-international-business-school-budapest-bachelor-of-science-in-b-sf368",
+  "programmePage": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-ai-and-data-analytics/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/368",
+          "quote": "Duration of the course / programme: 6 semesters"
+        },
+        {
+          "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-ai-and-data-analytics/",
+          "quote": "Duration of programme 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/368",
+          "quote": "Language of instruction: English"
+        },
+        {
+          "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-ai-and-data-analytics/",
+          "quote": "Language of tuition English"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary school leaving certificate"
+          },
+          "quotedAs": "Secondary school leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-ai-and-data-analytics/",
+          "quote": "• Secondary school leaving certificate AND"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the fees page lists a per-semester fee of EUR 4,000 under 'Bachelor's degree programmes - The University of Buckingham', which applies to this double-degree programme; the programme page itself only links to the fees page. Intakes: 'February and September' intake starts are stated, but no dated application deadline for international applicants is given (the fees page deadline table gives 30 September 2026 for Bachelor's programmes without saying it applies to international applicants), so no dated deadline is included. Application channel: the pages say to apply online via the IBS application form/DreamApply, i.e. directly to the university, not through Stipendium Hungaricum (the Studyfinder page shows 'State Scholarships: Not available')."
+}

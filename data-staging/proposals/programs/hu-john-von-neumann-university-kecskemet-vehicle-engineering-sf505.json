@@ -1,0 +1,145 @@
+{
+  "slug": "hu-john-von-neumann-university-kecskemet-vehicle-engineering-sf505",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/505",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/505",
+          "quote": "Duration of the course / programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/505",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 300000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy",
+          "quote": "Vehicle Engineering BSc EUR 3,000 7"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://nje.hu/en/education/application-guideline",
+          "quote": "Register and complete the online application form on our application portal: John von Neumann University - Apply Online."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Certificat de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "Certificate of high/secondary school leaving examination",
+          "translationRequired": true
+        },
+        {
+          "slug": "transcript-of-records",
+          "name": {
+            "fr": "Relevé de notes",
+            "en": "Transcript of Records"
+          },
+          "quotedAs": "Transcript of Records",
+          "translationRequired": true
+        },
+        {
+          "slug": "english-language-certificate",
+          "name": {
+            "fr": "Certificat de connaissance de l'anglais",
+            "en": "Certificate of English language knowledge"
+          },
+          "quotedAs": "Certificate of English language knowledge",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Copie du passeport",
+            "en": "Copy of the valid passport"
+          },
+          "quotedAs": "Copy of the valid passport",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivation-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Letter of motivation"
+          },
+          "quotedAs": "Letter of motivation",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/505",
+          "quote": "A complete application consists of the following documents:"
+        },
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/505",
+          "quote": "- Copy / copies of high/secondary school leaving examination or university degree / degrees AND its translation (in English),"
+        },
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/505",
+          "quote": "- Transcript of Records and its translations in English"
+        },
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/505",
+          "quote": "- Certificate of English language knowledge."
+        },
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/505",
+          "quote": "- Copy of the valid passport (with the place and date of expiration),"
+        },
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/505",
+          "quote": "- Letter of motivation in English (Presentation of previous studies and courses."
+        }
+      ]
+    }
+  },
+  "notes": "The tuition fee EUR 3,000 per semester is listed under 'Programmes & Fees 2024/25' on the university's international tuition page and applies to Vehicle Engineering BSc (7 semesters); it is the fee for self-financed (fee-paying) international students. A separate deadline page states 'The deadline for the application for the first year of the course is 30 July at the latest.' but that sentence is attached to the 'NEW PROGRAMME! MECHANICAL ENGINEERING BSc' note and does not name the non-EU applicant, so no intake/deadline fact was extracted. The requirement of a high/secondary school leaving examination is quoted as 'Successful completion of an ISCED level 3 or 4 programme', which in Morocco normally means 12 years of prior study; the page does not state a year count literally, so prior_study_years_min=12 is an interpretation the auditor should verify.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien oral en ligne (examen d'entrée) fait partie de l'admission ; préparez-vous à parler de votre motivation et de votre niveau d'anglais.",
+          "en": "An online oral entrance examination is part of admission; prepare to discuss your motivation and your English language skills."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/505",
+            "quote": "Entrance examination: Yes Entrance type: Oral"
+          },
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/505",
+            "quote": "Place of examination: Online"
+          }
+        ]
+      }
+    ]
+  }
+}

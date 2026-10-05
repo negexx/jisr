@@ -1,0 +1,134 @@
+slug: hu-corvinus-university-of-budapest-budapest-international-business-e-sf81
+institution: hu-corvinus-university-of-budapest-budapest
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: International Business Economics
+summary:
+  fr:
+    text: International Business Economics, Corvinus University of Budapest (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: International Business Economics, Corvinus University of Budapest (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: International Business Economics, Corvinus University of Budapest (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/81
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: true
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - ielts
+        - toefl
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée écrit (mathématiques) et un entretien oral en ligne peuvent être requis ; vérifiez les dates et les modalités sur le site d'admission.
+          status: draft
+        en:
+          text: A written entrance exam (mathematics) and an online oral interview may be required; check the dates and procedures on the admissions website.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/81
+    last_verified_at: null
+  page-2:
+    url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-corvinus-university-of-budapest-budapest-international-business-e-sf81
+  name: International Business Economics
+  institution: Corvinus University of Budapest
+  city: Budapest
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/81
+  todo: "Study Finder lists: branch Economic Science, language English, duration 8 semesters, location Budapest, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://www.uni-corvinus.hu/main-page/hello-corvinus/how-to-apply/?lang=en; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:81
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/81
+      quote: "Duration of the course / programme: 8 semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/81
+      quote: "Language of instruction: English"
+    - fact: documents
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: "Proof of secondary education: original and translated transcripts and final certificate."
+    - fact: documents
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: Valid passport or national ID (EU applicants)
+    - fact: requirements.req-1
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: English language proficiency Corvinus accepts the following proof of English language proficiency (minimum equivalent B2 level) submitted no later than 1 August
+    - fact: requirements.req-1
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: "IELTS language certificate, minimum score: 6.0"
+    - fact: requirements.req-1
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: "TOEFL language certificate, minimum score: 65"
+    - fact: requirements.req-2
+      url: https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en
+      quote: We organise online, written mathematics entrance exams at no extra cost.
+  notes: Application fee of €100 is mentioned (not required as a document). Tuition is stated in EUR per year for non-EEA applicants. The application channel is direct to Corvinus University via their online platform; Stipendium Hungaricum is a separate scholarship route, not the self-financed route. English language test list is partial (only IELTS and TOEFL quoted); other tests exist. Mathematics requirement applies to BSc International Business; additional entrance exam or qualifications may be needed.

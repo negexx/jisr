@@ -1,0 +1,114 @@
+slug: hu-university-of-public-service-baja-water-operation-engineer-sf523
+institution: hu-university-of-public-service-baja
+country: HU
+city: baja
+field: engineering
+level: bachelor
+name: Water Operation Engineering
+summary:
+  fr:
+    text: Water Operation Engineering, University of Public Service (Baja). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Water Operation Engineering, University of Public Service (Baja). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Water Operation Engineering, University of Public Service (Baja). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/523
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée oral est requis; il se déroule en ligne sur MS Teams. Vérifiez les modalités auprès de l'université.
+          status: draft
+        en:
+          text: An oral entrance examination is required; it takes place online on MS Teams. Check the details with the university.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats qui souhaitent une bourse doivent postuler via les sites officiels des bourses (Stipendium Hungaricum, etc.) et vérifier les dates limites et conditions d'éligibilité.
+          status: draft
+        en:
+          text: Applicants interested in a scholarship must apply through the official scholarship websites (Stipendium Hungaricum, etc.) and check the application deadlines and eligibility requirements there.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/523
+    last_verified_at: null
+  page-2:
+    url: https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-water-operation-engineering
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-public-service-baja-water-operation-engineer-sf523
+  name: Water Operation Engineering
+  institution: University of Public Service
+  city: Baja
+  field: engineering
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/523
+  todo: "Study Finder lists: branch Engineering Science, language English, duration 6 semesters, location Baja, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-water-operation-engineering; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:523
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/523
+      quote: "Duration of the course / programme: 6 semesters"
+    - fact: durationYears
+      url: https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-water-operation-engineering
+      quote: The aim of the 6 semester is to train water operation engineers
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/523
+      quote: "Language of instruction: English"
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/523
+      quote: "Entrance examination: Yes Entrance type: Oral"
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/523
+      quote: "Place of examination: Online"
+    - fact: requirements.req-2
+      url: https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-water-operation-engineering
+      quote: "Applicants interested in scholarship opportunities are kindly requested to apply through the official scholarship websites: Stipendium Hungaricum Scholarship Programme, Hungarian Diaspora Scholarship, and Scholarship Programme for Christian Young People."
+    - fact: requirements.req-2
+      url: https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-water-operation-engineering
+      quote: Please also check the application deadlines and eligibility requirements on the respective scholarship websites.
+  notes: "The application channel for a self-financed foreign applicant is not stated on the supplied pages: no online application form or platform for self-financed admission is named, so applicationChannel was left out. The pages mention only scholarship routes (Stipendium Hungaricum, Hungarian Diaspora Scholarship, Scholarship Programme for Christian Young People), which is not self-financed admission. No tuition fee for non-EU/EEA self-financed students is stated for this programme on the supplied pages (the site's Tuition fees page was not supplied), so tuition was left out. No application deadline for international/non-EU applicants is given. No document list for international applicants is given."

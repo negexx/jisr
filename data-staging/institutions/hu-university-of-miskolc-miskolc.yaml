@@ -1,0 +1,30 @@
+slug: hu-university-of-miskolc-miskolc
+name: University of Miskolc
+country: HU
+city:
+  slug: miskolc
+  name: Miskolc
+type: null
+website: https://www.uni-miskolc.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.uni-miskolc.hu/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: hu-university-of-miskolc-miskolc
+  name: University of Miskolc
+  institution: ""
+  city: Miskolc
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: 'institution named "University of Miskolc" in the Study Finder: the register does not say whether it is public or private nor its website. Find its official site (Study in Hungary profile: https://en.uni-miskolc.hu/business-administration-and-management-bsc), check it is a recognised Hungarian higher education institution, set the type, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw'
+  sourceId: studyfinder-institution:university-of-miskolc@miskolc
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - url: https://www.uni-miskolc.hu/en/
+      quote: University of Miskolc | The Campus of knowledge and community University

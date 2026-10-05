@@ -1,0 +1,105 @@
+slug: hu-budapest-university-of-technology-and-ec-budapest-computer-science-enginee-sf41
+institution: hu-budapest-university-of-technology-and-ec-budapest
+country: HU
+city: budapest
+field: computer-science
+level: bachelor
+name: Computer Science Engineering
+summary:
+  fr:
+    text: Computer Science Engineering, Budapest University of Technology and Economics (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Computer Science Engineering, Budapest University of Technology and Economics (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Computer Science Engineering, Budapest University of Technology and Economics (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/41
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le dossier doit inclure un certificat de fin d'études secondaires et un relevé de notes; les candidats encore scolarisés doivent également fournir une attestation de la date de fin d'études prévue.
+          status: draft
+        en:
+          text: The application must include a secondary school certificate and transcript; applicants still at school must also provide a certificate of the expected graduation date.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Vérifier l'exigence de moyenne : résultat global minimum de 70 % aux études secondaires."
+          status: draft
+        en:
+          text: "Check the grade requirement: overall result of minimum 70% in secondary school studies."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/41
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-budapest-university-of-technology-and-ec-budapest-computer-science-enginee-sf41
+  name: Computer Science Engineering
+  institution: Budapest University of Technology and Economics
+  city: Budapest
+  field: computer-science
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/41
+  todo: "Study Finder lists: branch Computer Science and Information Technology, language English, duration 7 semesters, location Budapest, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://www.vik.bme.hu/en/education/programs/; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:41
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/41
+      quote: "Duration of the course / programme: 7 semesters semesters"
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/41
+      quote: "Language of instruction: English"
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/41
+      quote: This should be proven by a leaving CERTIFICATE (high-school diploma) AND the TRANSCRIPT of all corresponding records.
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/41
+      quote: Applicants still at school should upload, IN ADDITION to the transcript, an official certificate of the EXPECTED date of graduation.
+    - fact: requirements.req-2
+      url: https://tempus.tpf.hu/studyfinder/index/show/41
+      quote: Completed SECONDARY-school studies with an overall result of min. 70%.
+  notes: "Tuition non extrait : les pages fournies ne donnent aucun frais de scolarité pour ce programme précis destiné à un étudiant autofinancé hors UE/EEE. Les frais spécifiques mentionnés sur la page d'admission (frais de dossier, etc.) ne sont pas listés comme frais de scolarité annuels/semestriels et ne concernent pas le programme. Aucune date de candidature avec année n'est donnée pour les non-UE : les périodes du 1er avril au 15 mai et du 15 octobre au 15 novembre sont générales et sans année, donc non extraites. La voie de candidature n'a pas été extraite par manque de citation explicite pour ce programme ; la page d'admission indique des documents à soumettre en ligne mais ne précise pas la plateforme exacte."

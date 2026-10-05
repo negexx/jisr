@@ -1,0 +1,76 @@
+{
+  "slug": "hu-international-business-school-budapest-bachelor-of-science-in-b-sf361",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/361",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/361",
+          "quote": "Duration of the course / programme: 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/361",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary school leaving certificate"
+          },
+          "quotedAs": "Secondary school leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-tourism/",
+          "quote": "Secondary school leaving certificate AND"
+        }
+      ]
+    }
+  },
+  "notes": "Les frais de scolarité de 4 000 EUR par semestre sont tirés de la page des frais de l'établissement pour les programmes de licence ; le libellé « Bachelor's degree programmes - The University of Buckingham » peut ne pas s'appliquer exclusivement à ce programme. La date limite de candidature n'est pas fournie pour les candidats internationaux ; la page des frais indique une date limite générale (30 septembre 2026) pour les programmes de licence, sans préciser qu'elle concerne les candidats non-UE. La date de début « September 2026 » indique une année mais pas un jour précis ; le jour a été fixé au 1er septembre par convention.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le niveau minimum de compétence linguistique (oral et écrit) est B2. Vérifiez les certificats acceptés et les équivalences.",
+          "en": "Minimum level of language proficiency (oral and written) is B2. Check accepted certificates and equivalences."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/361",
+            "quote": "Minimum level of language proficiency (oral): B2 Minimum level of language proficiency (written): B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission se fait sur dossier (secondary school leaving certificate) ; aucun examen d'entrée n'est requis.",
+          "en": "Admission is based on documents (secondary school leaving certificate); no entrance examination is required."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/361",
+            "quote": "Entrance examination: No"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "hu-international-business-school-budapest-bachelor-of-science-in-b-sf359",
+  "programmePage": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-marketing/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-marketing/",
+          "quote": "Duration of programme 6 semesters 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-marketing/",
+          "quote": "Language of tuition English English"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary school leaving certificate"
+          },
+          "quotedAs": "Secondary school leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-business-management-with-marketing/",
+          "quote": "• Secondary school leaving certificate AND • IELTS 6.0 or equivalent*"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: only the general 'Bachelor's degree programmes - The University of Buckingham' fee of 4,000 EUR per semester is stated; the page does not explicitly say it applies to this programme or to non-EU/EEA students, so the human auditor should confirm. Intake: the 30 September 2026 deadline is for the September intake and the page does not explicitly state it applies to non-EU applicants. Documents: only the secondary school leaving certificate is named; other documents may be required but are not named. There is no language proficiency requirement for French, only English (IELTS 6.0 or TOEFL 72 equivalent).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez auprès de l'école les documents exacts à fournir et les modalités de candidature.",
+          "en": "Check with the school the exact documents to submit and the application procedure."
+        },
+        "evidence": [
+          {
+            "url": "https://www.ibs-b.hu/en/how-to-apply/",
+            "quote": "Requirements for application vary according to programme."
+          }
+        ]
+      }
+    ]
+  }
+}

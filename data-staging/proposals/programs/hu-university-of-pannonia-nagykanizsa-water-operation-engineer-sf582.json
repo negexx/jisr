@@ -1,0 +1,85 @@
+{
+  "slug": "hu-university-of-pannonia-nagykanizsa-water-operation-engineer-sf582",
+  "programmePage": "https://pen.uni-pannon.hu/en/water-operation-engineering/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/582",
+          "quote": "Duration of the course / programme: 6 semesters semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/582",
+          "quote": "Language of instruction: English"
+        },
+        {
+          "url": "https://pen.uni-pannon.hu/en/water-operation-engineering/",
+          "quote": "Study Formats: Full-time program in English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 175000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://pen.uni-pannon.hu/en/water-operation-engineering/",
+          "quote": "Tuition Fee: (For programs starting in September 2026) for EU students: 1,500 EUR/semester for non-EU students: 1,750 EUR/semester"
+        }
+      ]
+    }
+  },
+  "notes": "Deadlines: the pages give only undated application periods (\"Self-funded application Autumn semester application period 1st February - 30th April\") without a year and without saying they are for non-EU applicants, so no intake was output. Application channel: the how-to-apply page lists a separate \"Self-funded programmes\" link but its sentence does not name an online application platform or route, so the only quotable channel sentence is the Stipendium Hungaricum one; a self-financed applicant should verify the self-funded route. Documents: the pages name \"secondary school leaving certificate\" only as part of the entrance examination evaluation, not as a document list, so no documents fact was output.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/582",
+            "quote": "Minimum level of language proficiency (oral): B2 Minimum level of language proficiency (written): B2"
+          },
+          {
+            "url": "https://pen.uni-pannon.hu/en/water-operation-engineering/",
+            "quote": "Language requirements: English proficiency at CEFR level B2 or above, demonstrated by Cambridge B2 First (FCE) or C1 Advanced (CAE), IELTS 5.5 or above, TOEFL iBT 4 or above."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien oral en ligne est requis : évaluation du diplôme d'études secondaires, de l'anglais parlé et de l'intérêt pour l'eau.",
+          "en": "An online oral entrance examination is required: evaluation of the secondary school leaving certificate, spoken English fluency and interest in water."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/582",
+            "quote": "Entrance examination: Yes Entrance type: Oral"
+          },
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/582",
+            "quote": "Evaluation of secondary school leaving certificate, through on-line meeting for ensuring the fluency in spoken English, and the interest in solving problems of water supply and water treatment"
+          }
+        ]
+      }
+    ]
+  }
+}

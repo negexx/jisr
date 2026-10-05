@@ -1,0 +1,47 @@
+{
+  "slug": "hu-budapest-university-of-technology-and-ec-budapest-civil-engineering-sf44",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/44",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/44",
+          "quote": "The BSc engineering program in English leads to a BSc degree in four years."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/44",
+          "quote": "Language of instruction: English Duration of the course / programme: 8 semesters"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'admission écrit en ligne (mathématiques, physique) est requis ; l'admission dépend aussi de la qualité du diplôme, de la lettre de motivation, etc.",
+          "en": "A written online admission test (mathematics, physics) is required; admission also depends on the quality of the certificate, motivation letter, etc."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/44",
+            "quote": "Entrance examination: Yes Entrance type: Written"
+          },
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/44",
+            "quote": "electronic e-admission test (via internet): Mathematics, Physics (the test is in English)"
+          }
+        ]
+      }
+    ]
+  }
+}

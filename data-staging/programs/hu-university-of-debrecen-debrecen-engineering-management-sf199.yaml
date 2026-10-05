@@ -1,0 +1,90 @@
+slug: hu-university-of-debrecen-debrecen-engineering-management-sf199
+institution: hu-university-of-debrecen-debrecen
+country: HU
+city: debrecen
+field: engineering
+level: bachelor
+name: Engineering Management
+summary:
+  fr:
+    text: Engineering Management, University of Debrecen (Debrecen). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Engineering Management, University of Debrecen (Debrecen). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Engineering Management, University of Debrecen (Debrecen). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/199
+durationYears:
+  value: 3.5
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un examen d'entrée en mathématiques et en physique (écrit et oral) est requis.
+          status: draft
+        en:
+          text: An entrance exam in mathematics and physics (written and oral) is required.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/199
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-university-of-debrecen-debrecen-engineering-management-sf199
+  name: Engineering Management
+  institution: University of Debrecen
+  city: Debrecen
+  field: engineering
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/199
+  todo: "Study Finder lists: branch Engineering Science, language English, duration 7 semesters, location Debrecen, scholarship programmes: Stipendium Hungaricum, Diaspora Scholarship, state scholarship; the programme's own page (Study Finder contact website): https://www.edu.unideb.hu/p/mechatronics-engineering-bsc; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:199
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://tempus.tpf.hu/studyfinder/index/show/199
+      quote: "Duration of the course / programme: 7 semesters semesters"
+    - fact: durationYears
+      url: https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee
+      quote: Engineering Management*
+    - fact: teachingLanguages
+      url: https://tempus.tpf.hu/studyfinder/index/show/199
+      quote: "Language of instruction: English"
+    - fact: requirements.req-1
+      url: https://tempus.tpf.hu/studyfinder/index/show/199
+      quote: high school certificate; entrance examination in physics and mathematics (written and oral)

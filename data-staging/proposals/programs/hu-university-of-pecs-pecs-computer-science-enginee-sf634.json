@@ -1,0 +1,91 @@
+{
+  "slug": "hu-university-of-pecs-pecs-computer-science-enginee-sf634",
+  "programmePage": "https://english.mik.pte.hu/computer-science-engineering-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://english.mik.pte.hu/computer-science-engineering-bsc",
+          "quote": "The Bachelor of Computer Science Engineering focuses on design and technology within a 7-semester undergraduate training."
+        },
+        {
+          "url": "https://apply.pte.hu/en_GB/courses/course/321-computer-science-engineering-bsc?search=85884",
+          "quote": "Nominal duration 7 semesters (3.5 years)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://english.mik.pte.hu/computer-science-engineering-bsc",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 340000,
+        "currency": "USD",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://english.mik.pte.hu/computer-science-engineering-bsc",
+          "quote": "Tuition Fee for the program: 3.400 USD/semester"
+        },
+        {
+          "url": "https://apply.pte.hu/en_GB/courses/course/321-computer-science-engineering-bsc?search=85884",
+          "quote": "Tuition fee US$3,400 per semester"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://english.mik.pte.hu/application-step-by-step-1",
+          "quote": "Register on the online application site of the University of Pécs"
+        },
+        {
+          "url": "https://english.mik.pte.hu/computer-science-engineering-bsc",
+          "quote": "APPLY NOW Application step-by-step"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the pages give only USD figures (US$3,400 per semester on the programme page and on the PTE apply page); no EUR or HUF self-financed fee for a non-EU/EEA student is stated. Application fee of US$150 is also stated but is not a tuition fee. The apply.pte.hu page shows an application deadline of 15 Jun 2027 for the 2027/28 intake, while the English programme page mentions 30 May 2027 for Computer Science Engineering BSc; the apply.pte.hu dates are used in 'intakes'.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien en ligne est requis : l'oral et l'écrit au niveau B2 minimum. Consultez https://english.mik.pte.hu/selection-process",
+          "en": "An online interview is required: minimum B2 level in oral and written. See https://english.mik.pte.hu/selection-process"
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/634",
+            "quote": "Entrance examination: Yes Entrance type: Oral"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une lettre de motivation doit être ajoutée à votre candidature.",
+          "en": "A motivation letter must be added to your application."
+        },
+        "evidence": [
+          {
+            "url": "https://apply.pte.hu/en_GB/courses/course/321-computer-science-engineering-bsc?search=85884",
+            "quote": "A motivation letter must be added to your application."
+          }
+        ]
+      }
+    ]
+  }
+}

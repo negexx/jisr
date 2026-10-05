@@ -1,0 +1,47 @@
+{
+  "slug": "hu-university-of-debrecen-debrecen-engineering-management-sf199",
+  "programmePage": "https://tempus.tpf.hu/studyfinder/index/show/199",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/199",
+          "quote": "Duration of the course / programme: 7 semesters semesters"
+        },
+        {
+          "url": "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+          "quote": "Engineering Management*"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://tempus.tpf.hu/studyfinder/index/show/199",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée en mathématiques et en physique (écrit et oral) est requis.",
+          "en": "An entrance exam in mathematics and physics (written and oral) is required."
+        },
+        "evidence": [
+          {
+            "url": "https://tempus.tpf.hu/studyfinder/index/show/199",
+            "quote": "high school certificate; entrance examination in physics and mathematics (written and oral)"
+          }
+        ]
+      }
+    ]
+  }
+}

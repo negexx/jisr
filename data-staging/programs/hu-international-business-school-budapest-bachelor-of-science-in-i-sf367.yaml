@@ -1,0 +1,74 @@
+slug: hu-international-business-school-budapest-bachelor-of-science-in-i-sf367
+institution: hu-international-business-school-budapest
+country: HU
+city: budapest
+field: business-economics
+level: bachelor
+name: Bachelor of Science in International Business Economics
+summary:
+  fr:
+    text: Bachelor of Science in International Business Economics, International Business School (Budapest). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Bachelor of Science in International Business Economics, International Business School (Budapest). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Bachelor of Science in International Business Economics, International Business School (Budapest). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-international-business-economics/
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-international-business-economics/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: hu-international-business-school-budapest-bachelor-of-science-in-i-sf367
+  name: Bachelor of Science in International Business Economics
+  institution: International Business School
+  city: Budapest
+  field: business-economics
+  confidence: high
+  officialUrl: https://tempus.tpf.hu/studyfinder/index/show/367
+  todo: "Study Finder lists: branch Economic Science, language English, duration 8 semesters, location Budapest, scholarship programmes: none listed; the programme's own page (Study Finder contact website): https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-international-business-economics/; the Study Finder page is the register entry: confirm the values on the programme's own site, then set info_kind. Tuition, deadlines and documents are not in the Study Finder; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  sourceId: studyfinder:367
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - fact: durationYears
+      url: https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-international-business-economics/
+      quote: Duration of programme 8 semesters
+    - fact: teachingLanguages
+      url: https://www.ibs-b.hu/en/programmes/bachelors-programmes/bsc-in-international-business-economics/
+      quote: Language of tuition English
+  notes: The tuition quote is an institution-wide fee table from IBS's fees page; it lists only 'Bachelor's degree programmes - Dublin Business School' at EUR 4,000/semester, while this programme offers Dublin Business School, De Montfort University or B.H.M.S. options, so the exact fee for the chosen option may differ and needs checking. The application deadline quote 'Bachelor's programmes 30 September 2026*' is not marked as specific to international applicants, but the same page's footnote marks 6 August 2026 for Hungarian citizens, implying 30 September 2026 is the general/international deadline. The language proficiency rules also include a soft B2 requirement for Hungarian citizens, which is not written as a hard requirement for international applicants (excluded per instructions). The documents list only the English certificate, because secondary school leaving certificate is stated as an admission criterion rather than a named required document.

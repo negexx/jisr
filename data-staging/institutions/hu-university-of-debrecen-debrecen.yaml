@@ -1,0 +1,30 @@
+slug: hu-university-of-debrecen-debrecen
+name: University of Debrecen
+country: HU
+city:
+  slug: debrecen
+  name: Debrecen
+type: null
+website: https://www.edu.unideb.hu/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.edu.unideb.hu/
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: hu-university-of-debrecen-debrecen
+  name: University of Debrecen
+  institution: ""
+  city: Debrecen
+  field: ""
+  confidence: ""
+  officialUrl: ""
+  todo: 'institution named "University of Debrecen" in the Study Finder: the register does not say whether it is public or private nor its website. Find its official site (Study in Hungary profile: http://studyinhungary.hu/institution/university-of-debrecen-60.html), check it is a recognised Hungarian higher education institution, set the type, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw'
+  sourceId: studyfinder-institution:university-of-debrecen@debrecen
+  preparedBy: assistant
+  preparedAt: 2026-10-05
+  evidence:
+    - url: https://www.edu.unideb.hu/
+      quote: University of Debrecen Skip to main content Videos SAS login Contact Us Unideb.hu
