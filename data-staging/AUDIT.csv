@@ -1116,8 +1116,8 @@ programs/hu-university-of-sopron-sopron-business-administration-sf1043,b22-bb78c
 programs/hu-university-of-sopron-sopron-international-business-e-sf1042,b22-bb78c6,,,,
 programs/hu-university-of-sopron-sopron-timber-industry-engineer-sf1039,b22-bb78c6,,,,
 programs/hu-university-of-szeged-szeged-computer-science-sf1204,b22-bb78c6,,,,
-institutions/hu-university-of-pannonia-nagykanizsa,b23-68fc76,y,,,
-institutions/hu-university-of-pannonia-veszprem,b23-68fc76,y,,,
+institutions/hu-university-of-pannonia-nagykanizsa,b23-68fc76,y,y,ok,owner read the sample 2026-10-05: all correct
+institutions/hu-university-of-pannonia-veszprem,b23-68fc76,y,y,ok,owner read the sample 2026-10-05: all correct
 programs/hu-budapest-metropolitan-university-budapest-business-administration-sf472,b22-bb78c6,,,,
 programs/hu-budapest-metropolitan-university-budapest-finance-and-accounting-sf475,b22-bb78c6,,,,
 programs/hu-eotvos-jozsef-college-baja-business-administration-sf215,b22-bb78c6,y,y,ok,owner read the sample 2026-10-05: all correct
@@ -1134,3 +1134,4 @@ programs/hu-university-of-debrecen-debrecen-mechatronics-engineering-sf166,b22-b
 programs/hu-university-of-miskolc-miskolc-mechanical-engineering-sf462,b22-bb78c6,,,,
 programs/hu-university-of-szeged-szeged-business-administration-sf1132,b22-bb78c6,,,,
 programs/hu-university-of-szeged-szeged-tourism-and-catering-sf1134,b22-bb78c6,,,,
+scholarships/stipendium-hungaricum,b24-644370,y,,,

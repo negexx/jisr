@@ -1,0 +1,80 @@
+slug: hu-university-of-pannonia-veszprem-international-business-e-sf584
+institution: hu-university-of-pannonia-veszprem
+country: HU
+city: veszprem
+field: business-economics
+level: bachelor
+name: International Business Economics
+summary:
+  fr:
+    text: International Business Economics, University of Pannonia (Veszprém). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: International Business Economics, University of Pannonia (Veszprém). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: International Business Economics, University of Pannonia (Veszprém). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 400000
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Entretien d'admission professionnel (oral, en ligne) organisé par le comité d'admission, avec un score minimum de 56 points sur 100.
+          status: draft
+        en:
+          text: Professional admission interview (oral, online) organised by the Admission Committee, with a minimum score of 56 points out of 100.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/584
+    last_verified_at: 2026-10-05

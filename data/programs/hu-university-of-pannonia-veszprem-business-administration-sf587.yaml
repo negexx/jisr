@@ -1,0 +1,80 @@
+slug: hu-university-of-pannonia-veszprem-business-administration-sf587
+institution: hu-university-of-pannonia-veszprem
+country: HU
+city: veszprem
+field: business-economics
+level: bachelor
+name: Business Administration and Management
+summary:
+  fr:
+    text: Business Administration and Management, University of Pannonia (Veszprém). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Business Administration and Management, University of Pannonia (Veszprém). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Business Administration and Management, University of Pannonia (Veszprém). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://www.gtk.uni-pannon.hu/ba-in-business-administration-and-management/
+durationYears:
+  value: 3.5
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 400000
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: true
+      acceptedTests:
+        - toefl
+        - ielts
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un entretien d'admission (examen d'entrée oral) en ligne via MS Teams est requis; il évalue les connaissances, les compétences linguistiques et la motivation. Score minimum de 56 points sur 100.
+          status: draft
+        en:
+          text: An online entrance examination (oral interview) via MS Teams is required; it assesses background knowledge, language skills and motivation. Minimum score of 56 points out of 100.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.gtk.uni-pannon.hu/ba-in-business-administration-and-management/
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://tempus.tpf.hu/studyfinder/index/show/587
+    last_verified_at: 2026-10-05

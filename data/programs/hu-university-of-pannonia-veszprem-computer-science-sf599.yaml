@@ -1,0 +1,70 @@
+slug: hu-university-of-pannonia-veszprem-computer-science-sf599
+institution: hu-university-of-pannonia-veszprem
+country: HU
+city: veszprem
+field: computer-science
+level: bachelor
+name: Computer Science
+summary:
+  fr:
+    text: Computer Science, University of Pannonia (Veszprém). Programme recensé dans le Study Finder de Study in Hungary (Tempus Public Foundation).
+    status: draft
+  en:
+    text: Computer Science, University of Pannonia (Veszprém). Programme listed in the Study in Hungary Study Finder (Tempus Public Foundation).
+    status: draft
+  ar:
+    text: Computer Science, University of Pannonia (Veszprém). برنامج مدرج في Study Finder التابع لـ Study in Hungary (مؤسسة Tempus العامة).
+    status: draft
+officialUrl: https://tempus.tpf.hu/studyfinder/index/show/599
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 380000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Un examen d'entrée (écrit et oral, en ligne) est requis : vérifiez la procédure et préparez-vous à l'entretien sur vos connaissances en informatique, mathématiques et anglais."
+          status: draft
+        en:
+          text: "An entrance exam (written and oral, online) is required: check the procedure and prepare for an interview about your IT, math and English knowledge."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://tempus.tpf.hu/studyfinder/index/show/599
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://mik.uni-pannon.hu/en/for-admissions/application-procedure
+    last_verified_at: 2026-10-05
