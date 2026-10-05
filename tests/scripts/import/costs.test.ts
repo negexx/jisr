@@ -293,7 +293,7 @@ describe("buildProfile", () => {
     expect(food?.fr.text).not.toMatch(/\bresto\b/);
   });
 
-  it("says a country profile is a wide national figure used where a city has no page", () => {
+  it("says a country profile is a national figure used where a city has no usable figure", () => {
     const profile = buildProfile({
       slug: "fr-numbeo",
       country: "FR",
@@ -307,9 +307,26 @@ describe("buildProfile", () => {
     expect(profile?.lines.housing?.basis?.en.text).toContain("2026-10-05");
     expect(profile?.lines.housing?.basis?.en.text).toContain("981");
     expect(profile?.lines.housing?.basis?.en.text).toContain(
-      "country-level figure with a wide range; used where the city has no Numbeo page",
+      "country-level figure; used where the city has no usable Numbeo figure",
     );
     expect(profile?.lines.food?.basis?.fr.text).toContain("chiffre national");
+    expect(profile?.lines.food?.basis?.fr.text).toContain(
+      "repli si la ville n'a pas de chiffre exploitable",
+    );
+  });
+
+  it("keeps every basis, in every locale and line, within 400 characters at a five-digit contributors count", () => {
+    for (const city of [null, "paris"]) {
+      const profile = build({
+        city,
+        page: { ...parseNumbeoPage(numbeoHtml({ footer: countryFooter })), contributors: 99999 },
+      });
+      for (const line of Object.values(profile?.lines ?? {})) {
+        for (const locale of ["fr", "en", "ar"] as const) {
+          expect(line.basis[locale].text.length).toBeLessThanOrEqual(400);
+        }
+      }
+    }
   });
 
   it("keeps every basis within the schema text limit and validates once stamped", () => {
@@ -475,6 +492,7 @@ describe("runCosts", () => {
     expect(text).toContain("HTTP 503 (re-run to retry)");
     expect(text).not.toContain("not listed");
     expect(text).toContain("1 failed (re-run to retry)");
+    expect(outcome.ok).toBe(false);
     expect(f.requested.filter((url) => url === failing)).toHaveLength(1);
     expect(outcome.requests).toBe(3);
     expect(await listStaged(stagingDir)).toEqual([
@@ -690,6 +708,14 @@ describe("staged cost profiles through audit and promote", () => {
       })),
     );
     expect(sheet).toContain(key);
+    expect(sheet).toContain("- **housing**:");
+    expect(sheet).toMatch(/^ {2}- "1 Bedroom Apartment Outside of City Centre: average/m);
+    for (const item of FOOD_BASKET) {
+      expect(sheet).toContain(`  - "${item.name} x ${item.quantity}: low`);
+    }
+    expect(sheet).toContain(
+      "Confirm: this is the city's page (right city, right currency, right date).",
+    );
 
     const audit = parseAudit(auditCsv(rows.map((r) => ({ ...r, audited: "y", outcome: "ok" }))));
     const result = await promoteApproved({

@@ -153,7 +153,7 @@ const BASIS_PARTS: Record<
         "Monthly public transport pass, regular price: Numbeo's range; a student pass may cost less.",
     },
     rounding: "Rounded outwards.",
-    country: "country-level figure with a wide range; used where the city has no Numbeo page",
+    country: "country-level figure; used where the city has no usable Numbeo figure",
   },
   fr: {
     head: (c) =>
@@ -168,7 +168,7 @@ const BASIS_PARTS: Record<
         "Abonnement mensuel de transport public, tarif normal : fourchette de Numbeo ; un abonnement étudiant peut coûter moins.",
     },
     rounding: "Arrondi vers l'extérieur.",
-    country: "chiffre national à large fourchette ; repli si la ville n'a pas de page",
+    country: "chiffre national ; repli si la ville n'a pas de chiffre exploitable",
   },
   ar: {
     head: (c) =>
@@ -182,7 +182,7 @@ const BASIS_PARTS: Record<
         "اشتراك النقل العام الشهري بالسعر العادي: نطاق Numbeo؛ قد يكون اشتراك الطلبة أرخص.",
     },
     rounding: "تقريب نحو الخارج.",
-    country: "رقم على مستوى البلد بنطاق واسع بين مدن Numbeo، يُستخدم حين لا تتوفر صفحة للمدينة",
+    country: "رقم على مستوى البلد، يُستخدم حين لا يتوفر للمدينة رقم قابل للاستخدام في Numbeo",
   },
 };
 
@@ -486,7 +486,7 @@ export async function runCosts(options: RunOptions): Promise<RunOutcome> {
   lines.push(
     `staged ${staged.length} profile(s) with ${requests} request(s)${failed === 0 ? "" : `, ${failed} failed (re-run to retry)`}`,
   );
-  return { ok: true, lines, requests, staged };
+  return { ok: failed === 0, lines, requests, staged };
 }
 
 // One attempt: fetchText retries 429, 5xx and network errors, so any retry would be a request the
