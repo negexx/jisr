@@ -20,6 +20,12 @@ describe("isOfficialHost: immigration, health and tax pages of the destination c
     "https://www.gov.it/x",
     "https://www.kormany.gov.hu/x",
     "https://gov.hu/x",
+    "https://www.rijksoverheid.nl/onderwerpen/studiefinanciering",
+    "https://rijksoverheid.nl/x",
+    "https://duo.nl/particulier/studiefinanciering.jsp",
+    "https://www.duo.nl/x",
+    "https://www.service-public.fr/particuliers/vosdroits/F2881",
+    "https://service-public.fr/x",
   ])("accepts %s", (url) => {
     expect(isOfficialHost(url)).toBe(true);
   });
@@ -43,6 +49,13 @@ describe("isOfficialHost: immigration, health and tax pages of the destination c
     "https://gov.it.evil.com/x",
     "https://evilgov.hu/x",
     "https://gov.hu.evil.com/x",
+    "https://myrijksoverheid.nl/x",
+    "https://rijksoverheid.nl.evil.com/x",
+    "https://evil-duo.nl/x",
+    "https://duo.nl.evil.com/x",
+    "https://notservice-public.fr/x",
+    "https://service-public.fr.evil.com/x",
+    "https://evil.com/?u=service-public.fr",
     "not a url",
   ])("refuses %s", (url) => {
     expect(isOfficialHost(url)).toBe(false);

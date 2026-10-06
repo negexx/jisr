@@ -28,7 +28,7 @@ import { DATA_DIR, STAGING_DIR, stageFile, toYaml } from "./staging";
 // verbatim quote. The code re-fetches every cited page and keeps a line only if the quote is really
 // there, its numbers and currency are in the quote and, for an estimate, it is not out of date. A line
 // that fails is dropped alone and reported; the rest is staged for the 100% audit.
-// Usage: data:costs-official verify <proposal.json> [--dry-run] [--delay-ms 4000]
+// Usage: data:costs-official verify <proposal.json> [--dry-run] [--delay-ms 4000] [--use-cache]
 const COLLECTION = "cost-profiles";
 const MIN_DELAY_MS = 2000;
 export const DEFAULT_DELAY_MS = 4000;
@@ -36,6 +36,13 @@ export const DEFAULT_DELAY_MS = 4000;
 export const MIN_ESTIMATE_YEAR = 2023;
 
 const Text = z.string().trim().min(1).max(400);
+
+// An amount with more decimals than the currency has minor units (EUR 7.505) cannot be stored.
+const fitsMinorUnits = (value: number, currency: string): boolean => {
+  const scaled = value * 10 ** minorUnitDigits(currency);
+  return Math.abs(scaled - Math.round(scaled)) < 1e-6;
+};
+
 const LineProposalSchema = z
   .strictObject({
     // Major units (EUR 300 = 300, EUR 7.50 = 7.5); the code converts to minor units.
@@ -45,11 +52,24 @@ const LineProposalSchema = z
     per: z.enum(["month", "year", "once"]),
     info_kind: z.enum(["official", "estimate"]),
     basis: z.strictObject({ fr: Text, en: Text.optional(), ar: Text.optional() }).optional(),
-    evidence: z.strictObject({ url: HttpsUrlSchema, quote: z.string().min(1) }),
+    // `dateQuote`: for an estimate whose own quote states no year, a second verbatim quote from the
+    // same page that does ("Updated 12 March 2025").
+    evidence: z.strictObject({
+      url: HttpsUrlSchema,
+      quote: z.string().min(1),
+      dateQuote: z.string().min(1).optional(),
+    }),
   })
   .superRefine((line, ctx) => {
     if (line.min > line.max)
       ctx.addIssue({ code: "custom", path: ["min"], message: "min must be <= max" });
+    for (const key of ["min", "max"] as const)
+      if (!fitsMinorUnits(line[key], line.currency))
+        ctx.addIssue({
+          code: "custom",
+          path: [key],
+          message: `${line[key]} has more decimals than ${line.currency} has minor units`,
+        });
     if (line.info_kind === "estimate" && line.basis === undefined)
       ctx.addIssue({
         code: "custom",
@@ -58,27 +78,38 @@ const LineProposalSchema = z
       });
   });
 
-export const OfficialCostProposalSchema = z.strictObject({
-  slug: SlugSchema,
-  country: CountryCodeSchema,
-  city: SlugSchema.nullable(),
-  lines: z
-    .strictObject({
-      housing: LineProposalSchema.optional(),
-      food: LineProposalSchema.optional(),
-      transport: LineProposalSchema.optional(),
-      insurance: LineProposalSchema.optional(),
-      application_visa: LineProposalSchema.optional(),
-      setup: LineProposalSchema.optional(),
-    })
-    .refine((lines) => Object.keys(lines).length > 0, { message: "at least one line" }),
-});
+export const OfficialCostProposalSchema = z
+  .strictObject({
+    slug: SlugSchema,
+    country: CountryCodeSchema,
+    city: SlugSchema.nullable(),
+    lines: z
+      .strictObject({
+        housing: LineProposalSchema.optional(),
+        food: LineProposalSchema.optional(),
+        transport: LineProposalSchema.optional(),
+        insurance: LineProposalSchema.optional(),
+        application_visa: LineProposalSchema.optional(),
+        setup: LineProposalSchema.optional(),
+      })
+      .refine((lines) => Object.keys(lines).length > 0, { message: "at least one line" }),
+  })
+  .superRefine((proposal, ctx) => {
+    const cc = proposal.country.toLowerCase();
+    const expected = proposal.city === null ? `${cc}-official` : `${cc}-${proposal.city}-official`;
+    if (proposal.slug !== expected)
+      ctx.addIssue({
+        code: "custom",
+        path: ["slug"],
+        message: `the slug must be ${expected} (<cc>-official, or <cc>-<city>-official for a city profile)`,
+      });
+  });
 export type OfficialCostProposal = z.infer<typeof OfficialCostProposalSchema>;
 type LineProposal = z.infer<typeof LineProposalSchema>;
 
 // --- pages -----------------------------------------------------------------------------------------
 type Page =
-  | { kind: "text"; text: string }
+  | { kind: "text"; text: string; fromCache: boolean }
   | { kind: "failed"; message: string }
   | { kind: "stop"; status: number };
 
@@ -87,37 +118,46 @@ export type PageDeps = {
   sleep?: (ms: number) => Promise<void>;
   isCached?: (url: string) => boolean;
   delayMs?: number;
+  // Read a page already on disk instead of requesting it again. Off by default: last_verified_at is
+  // stamped on promotion and must not date a months-old cached page.
+  useCache?: boolean;
 };
 
 // One attempt (fetchText would retry 429 and 5xx, requests nobody counts) with the project
 // User-Agent, and an empty body is never cached.
-const livePageText: GetText = (url) =>
-  pageText(url, {
-    fetchHtml: (target, options) =>
-      fetchText(target, {
-        ...options,
-        attempts: 1,
-        validate: (body) => {
-          options?.validate?.(body);
-          if (body.trim() === "") throw new Error("empty page");
-        },
-      }),
-  });
+export function livePageText(options: { refresh: boolean; fetchHtml?: typeof fetchText }): GetText {
+  const request = options.fetchHtml ?? fetchText;
+  return (url) =>
+    pageText(url, {
+      fetchHtml: (target, fetchOptions) =>
+        request(target, {
+          ...fetchOptions,
+          refresh: options.refresh,
+          attempts: 1,
+          validate: (body) => {
+            fetchOptions?.validate?.(body);
+            if (body.trim() === "") throw new Error("empty page");
+          },
+        }),
+    });
+}
 
-// One request at a time, `delayMs` apart (a page already on disk costs no request), and one fetch per
-// url per run, a failure included.
+// One request at a time, `delayMs` apart (a page read from the cache costs no request), and one fetch
+// per url per run, a failure included.
 function pageReader(deps: PageDeps): (url: string) => Promise<Page> {
-  const getText = deps.getText ?? livePageText;
+  const useCache = deps.useCache === true;
+  const getText = deps.getText ?? livePageText({ refresh: !useCache });
   const sleep =
     deps.sleep ?? ((ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms)));
-  const cached = deps.isCached ?? ((url: string) => isCached(url));
+  const onDisk = deps.isCached ?? ((url: string) => isCached(url));
   const delayMs = deps.delayMs ?? DEFAULT_DELAY_MS;
   const seen = new Map<string, Page>();
   let requests = 0;
   return async (url) => {
     const known = seen.get(url);
     if (known !== undefined) return known;
-    if (!cached(url)) {
+    const fromCache = useCache && onDisk(url);
+    if (!fromCache) {
       if (requests > 0) await sleep(delayMs);
       requests++;
     }
@@ -127,7 +167,7 @@ function pageReader(deps: PageDeps): (url: string) => Promise<Page> {
       page =
         text.trim() === ""
           ? { kind: "failed", message: "the page is empty" }
-          : { kind: "text", text };
+          : { kind: "text", text, fromCache };
     } catch (error) {
       const status = httpStatusOf(error);
       page =
@@ -145,14 +185,25 @@ const SEPARATOR = String.raw`[.,'\s  ]`;
 
 // Where a quote (as normalizeForMatch writes it) states this amount in major units: thousands
 // groups optionally separated (1200, 1 200, 1,200, 1.200), a decimal comma or point, and never as
-// part of a larger number (40 is not in 400, 500 is not in 1 500 or 500,50).
-function numberMatches(value: number, quote: string): { start: number; end: number }[] {
-  const [whole = "0", cents = ""] = value.toFixed(2).split(".");
+// part of a larger number (40 is not in 400, 500 is not in 1 500 or 500,50). The decimals stop at the
+// currency's minor digits, so a separator followed by three digits is a thousands group, never a
+// decimal: 1.2 is not in "1.200" and 1.05 is not in "1,050".
+export function numberMatches(
+  value: number,
+  quote: string,
+  digits = 2,
+): { start: number; end: number }[] {
+  const [whole = "0", cents = ""] = value.toFixed(digits).split(".");
   const groups: string[] = [];
   for (let end = whole.length; end > 0; end -= 3)
     groups.unshift(whole.slice(Math.max(0, end - 3), end));
   const fraction = cents.replace(/0+$/, "");
-  const decimals = fraction === "" ? "(?:[.,]0{1,2})?" : `[.,]${fraction}0*`;
+  let decimals = "";
+  if (digits > 0)
+    decimals =
+      fraction === ""
+        ? `(?:[.,]0{1,${digits}})?`
+        : `[.,]${fraction}0{0,${digits - fraction.length}}`;
   const pattern = new RegExp(
     String.raw`(?<!\d)(?<!\d${SEPARATOR})${groups.join(`${SEPARATOR}?`)}${decimals}(?!\d)(?![.,]\d)(?!${SEPARATOR}\d{3}(?!\d))`,
     "g",
@@ -166,8 +217,10 @@ function numberMatches(value: number, quote: string): { start: number; end: numb
 const MONEY_AFTER = /^\s?(?:[€$£]|(?:eur|euros?|usd|gbp|huf|ft)\b)/;
 const MONEY_BEFORE = /(?:[€$£]|\b(?:eur|usd|gbp|huf))\s?$/;
 
-// The years a text states, leaving out an amount that merely looks like one ("2 050 EUR", "€ 2050").
-function yearsIn(text: string): number[] {
+// The years a text states, leaving out an amount that merely looks like one ("2040 EUR", "EUR 2025").
+// The text is normalised first (lower case), so an upper-case currency code is still a currency.
+export function yearsIn(raw: string): number[] {
+  const text = normalizeForMatch(raw);
   const years: number[] = [];
   for (const m of text.matchAll(/(?<!\d)((?:19|20)\d{2})(?!\d)(?![.,]\d)/g)) {
     const start = m.index ?? 0;
@@ -182,36 +235,110 @@ function yearsIn(text: string): number[] {
   return years;
 }
 
-// Why the figure is not out of date, or the reason it is. An `official` line is a rate in force.
-function ageProblem(quote: string, pageContent: string): string | null {
-  const stated = yearsIn(quote);
-  if (stated.length > 0) {
-    const newest = Math.max(...stated);
-    return newest >= MIN_ESTIMATE_YEAR
-      ? null
-      : `the quote states ${newest}, before ${MIN_ESTIMATE_YEAR}`;
-  }
-  const onPage = yearsIn(normalizeForMatch(pageContent));
-  return onPage.some((year) => year >= MIN_ESTIMATE_YEAR)
-    ? null
-    : `the quote and the page state no year of ${MIN_ESTIMATE_YEAR} or later (an estimate needs one)`;
+type Period = LineProposal["per"];
+const periodWords = (alternatives: string[]): RegExp =>
+  new RegExp(`(?<!\\p{L})(?:${alternatives.join("|")})(?!\\p{L})`, "u");
+// How a quote names the period of an amount (English, French, German, Italian, Hungarian, Dutch).
+const PERIOD_WORDS: Record<Period, RegExp> = {
+  month: periodWords([
+    "months?",
+    "monthly",
+    "mensuel\\p{L}*",
+    "mois",
+    "monat\\p{L}*",
+    "mese",
+    "mensil\\p{L}*",
+    "havi",
+    "maand\\p{L}*",
+  ]),
+  year: periodWords([
+    "years?",
+    "yearly",
+    "annual\\p{L}*",
+    "annuel\\p{L}*",
+    "par an",
+    "jahr\\p{L}*",
+    "j[äa]hrlich",
+    "anno",
+    "annuo",
+    "jaar",
+    "jaarlijks",
+    "évi",
+  ]),
+  once: periodWords([
+    "one-off",
+    "one[- ]time",
+    "once",
+    "uniques?",
+    "une seule fois",
+    "einmalig\\p{L}*",
+    "una tantum",
+    "eenmalig\\p{L}*",
+  ]),
+};
+
+const periodsIn = (quote: string): Period[] => {
+  const text = normalizeForMatch(quote);
+  return (Object.keys(PERIOD_WORDS) as Period[]).filter((p) => PERIOD_WORDS[p].test(text));
+};
+
+// An estimate needs a year of MIN_ESTIMATE_YEAR or later in its quote or in a date quote from the same
+// page; a year elsewhere on the page (a footer, a menu) says nothing about this figure. The newest
+// year of the two wins.
+function ageOf(line: LineProposal, pageContent: string): { year: number } | { problem: string } {
+  const { url, quote, dateQuote } = line.evidence;
+  if (dateQuote !== undefined && !quoteInText(dateQuote, pageContent))
+    return {
+      problem: `the date quote is not on the page ${url} (verbatim, 15 characters at least)`,
+    };
+  const years = [...yearsIn(quote), ...(dateQuote === undefined ? [] : yearsIn(dateQuote))];
+  if (years.length === 0)
+    return {
+      problem: `the quote and the date quote state no year (an estimate needs a year of ${MIN_ESTIMATE_YEAR} or later in its quote or in a date quote from the same page)`,
+    };
+  const year = Math.max(...years);
+  return year >= MIN_ESTIMATE_YEAR
+    ? { year }
+    : { problem: `the newest year in the quote is ${year}, before ${MIN_ESTIMATE_YEAR}` };
 }
 
-// The reason a line cannot be kept, or null. The page is already fetched.
-function lineProblem(line: LineProposal, pageContent: string): string | null {
+type LineCheck =
+  | { ok: false; problem: string }
+  | { ok: true; year: number | null; periodStated: boolean };
+
+// Whether a line can be kept. The page is already fetched.
+function checkLine(line: LineProposal, pageContent: string): LineCheck {
   const { url, quote } = line.evidence;
   if (!quoteInText(quote, pageContent))
-    return `the quote is not on the page ${url} (verbatim, 15 characters at least)`;
+    return {
+      ok: false,
+      problem: `the quote is not on the page ${url} (verbatim, 15 characters at least)`,
+    };
   const text = normalizeForMatch(quote);
+  const digits = minorUnitDigits(line.currency);
   const matches = [];
   for (const value of new Set([line.min, line.max])) {
-    const found = numberMatches(value, text);
-    if (found.length === 0) return `the number ${value} is not in the quote`;
+    const found = numberMatches(value, text, digits);
+    if (found.length === 0)
+      return { ok: false, problem: `the number ${value} is not in the quote` };
     matches.push(...found);
   }
   if (!matches.some((m) => currencyNextTo(line.currency, text, m.start, m.end)))
-    return `the currency ${line.currency} is not written next to ${line.min} or ${line.max} in the quote`;
-  return line.info_kind === "estimate" ? ageProblem(quote, pageContent) : null;
+    return {
+      ok: false,
+      problem: `the currency ${line.currency} is not written next to ${line.min} or ${line.max} in the quote`,
+    };
+  const periods = periodsIn(quote);
+  if (periods.length > 0 && !periods.includes(line.per))
+    return {
+      ok: false,
+      problem: `the quote states the period ${periods.join(" and ")} but the line says per ${line.per}`,
+    };
+  if (line.info_kind === "official")
+    return { ok: true, year: null, periodStated: periods.length > 0 };
+  const age = ageOf(line, pageContent);
+  if ("problem" in age) return { ok: false, problem: age.problem };
+  return { ok: true, year: age.year, periodStated: periods.length > 0 };
 }
 
 // --- profile ---------------------------------------------------------------------------------------
@@ -288,8 +415,14 @@ async function verifyProposal(
   today: string,
 ): Promise<Verified> {
   const readPage = pageReader(deps);
-  const report: string[] = [];
+  const report: string[] =
+    deps.useCache === true
+      ? [
+          "--use-cache: a page already on disk is read from the cache, so its last_verified_at stamp may date a past reading",
+        ]
+      : [];
   const dropped: string[] = [];
+  const notes: string[] = [];
   const lines: Partial<Record<LivingCostCategory, StagedLine>> = {};
   const evidence: Evidence[] = [];
   const { keyFor, sources } = sourceKeyer();
@@ -317,16 +450,36 @@ async function verifyProposal(
       drop(`the page could not be fetched (${page.message})`);
       continue;
     }
-    const problem = lineProblem(line, page.text);
-    if (problem !== null) {
-      drop(problem);
+    const check = checkLine(line, page.text);
+    if (!check.ok) {
+      drop(check.problem);
       continue;
     }
     lines[name] = stagedLine(line, keyFor(url));
     evidence.push({ fact: `lines.${name}`, url, quote });
+    if (line.evidence.dateQuote !== undefined)
+      evidence.push({ fact: `lines.${name}.date`, url, quote: line.evidence.dateQuote });
+    const age =
+      check.year === null
+        ? "no age check (official)"
+        : `year ${check.year} (newest year in quote wins)`;
     report.push(
-      `kept ${name}: ${line.min}-${line.max} ${line.currency} per ${line.per} (${line.info_kind}) "${quote}" (${url})`,
+      `kept ${name}: ${line.min}-${line.max} ${line.currency} per ${line.per} (${line.info_kind}) "${quote}" (${url}); ${page.fromCache ? "page from cache" : "page fetched now"}; ${age}`,
     );
+    if (check.year === null) {
+      notes.push(
+        `lines.${name}: official line, no age check was done (a rate in force is assumed)`,
+      );
+      report.push(`note ${name}: official line, no age check was done`);
+    }
+    if (!check.periodStated) {
+      notes.push(
+        `lines.${name}: period not stated in quote (per ${line.per} comes from the proposal)`,
+      );
+      report.push(
+        `note ${name}: period not stated in quote (per ${line.per} comes from the proposal)`,
+      );
+    }
   }
   if (evidence.length === 0)
     return {
@@ -349,10 +502,12 @@ async function verifyProposal(
     preparedAt: today,
     sourceId: `official:${proposal.slug}`,
     evidence,
-    notes:
+    notes: [
       dropped.length === 0
         ? "Every proposed line kept."
         : `Dropped by the verifier: ${dropped.join("; ")}.`,
+      ...notes,
+    ].join(" "),
   };
   return { kind: "kept", lines: report, record, review };
 }
@@ -438,11 +593,11 @@ async function main(argv: readonly string[]): Promise<void> {
   const [command, file] = argv;
   if (command !== "verify" || file === undefined || file.startsWith("--"))
     throw new Error(
-      "usage: data:costs-official verify <proposal.json> [--dry-run] [--delay-ms 4000]",
+      "usage: data:costs-official verify <proposal.json> [--dry-run] [--delay-ms 4000] [--use-cache]",
     );
   const outcome = await runVerify(
     { file, dryRun: argv.includes("--dry-run") },
-    { delayMs: delayFlag(argv) },
+    { delayMs: delayFlag(argv), useCache: argv.includes("--use-cache") },
   );
   for (const line of outcome.lines) console.log(line);
   if (!outcome.ok) process.exitCode = 1;

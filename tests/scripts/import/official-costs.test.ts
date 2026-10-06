@@ -10,9 +10,12 @@ import { CostProfileRecordSchema } from "@/data-schema/records/cost-profile";
 
 import { HttpStatusError } from "../../../scripts/import/http";
 import {
+  livePageText,
+  numberMatches,
   OfficialCostProposalSchema,
   runVerify,
   type VerifyDeps,
+  yearsIn,
 } from "../../../scripts/import/official-costs";
 import { stampVerified } from "../../../scripts/import/promote";
 import { listStaged, stageFile } from "../../../scripts/import/staging";
@@ -22,6 +25,8 @@ const FEES_PAGE = "https://www.service-public.gouv.fr/fees";
 const OLD_PAGE = "https://www.campusfrance.org/en/archive";
 const UNDATED_PAGE = "https://www.campusfrance.org/en/undated";
 const BLOG_PAGE = "https://blog.example.com/cost-of-living";
+const DECIMAL_PAGE = "https://www.service-public.gouv.fr/decimals";
+const DATE_QUOTE = "Campus France, updated in 2025.";
 
 const pages: Record<string, string> = {
   [COST_PAGE]:
@@ -31,6 +36,8 @@ const pages: Record<string, string> = {
   [OLD_PAGE]: "Study in Hungary 2019: housing costs 400 EUR per month.",
   [UNDATED_PAGE]: "Housing costs 400 EUR per month in a Crous residence.",
   [BLOG_PAGE]: "Food: about 300 EUR per month.",
+  [DECIMAL_PAGE]:
+    "Fee A is 1.200 EUR per year. Fee B is 1,050 EUR per year. Fee C is 1,20 EUR per month. Fee D is 1.20 EUR per month.",
 };
 
 const basis = {
@@ -47,7 +54,7 @@ const food = (overrides: Line = {}): Line => ({
   per: "month",
   info_kind: "estimate",
   basis,
-  evidence: { url: COST_PAGE, quote: "Food: about 300 EUR per month." },
+  evidence: { url: COST_PAGE, quote: "Food: about 300 EUR per month.", dateQuote: DATE_QUOTE },
   ...overrides,
 });
 const housing = (overrides: Line = {}): Line => ({
@@ -60,6 +67,7 @@ const housing = (overrides: Line = {}): Line => ({
   evidence: {
     url: COST_PAGE,
     quote: "Housing in a Crous residence costs between 400 EUR and 500 EUR per month.",
+    dateQuote: DATE_QUOTE,
   },
   ...overrides,
 });
@@ -149,7 +157,10 @@ describe("a kept line", () => {
       preparedBy: "assistant",
       preparedAt: "2026-10-06",
       sourceId: "official:fr-official",
-      evidence: [{ fact: "lines.food", url: COST_PAGE, quote: "Food: about 300 EUR per month." }],
+      evidence: [
+        { fact: "lines.food", url: COST_PAGE, quote: "Food: about 300 EUR per month." },
+        { fact: "lines.food.date", url: COST_PAGE, quote: DATE_QUOTE },
+      ],
     });
   });
 
@@ -187,7 +198,11 @@ describe("a kept line", () => {
         transport: food({
           min: 7.5,
           max: 7.5,
-          evidence: { url: COST_PAGE, quote: "Local transport: 7,50 EUR per month." },
+          evidence: {
+            url: COST_PAGE,
+            quote: "Local transport: 7,50 EUR per month.",
+            dateQuote: DATE_QUOTE,
+          },
         }),
       }),
     );
@@ -318,9 +333,78 @@ describe("a line that fails a check is dropped alone, with its reason", () => {
     expect(Object.keys((await staged()).lines as object)).toEqual(["food", "insurance"]);
   });
 
-  it("an estimate takes its year from the page when the quote has none", async () => {
-    await run(proposalOf({ food: food() }));
+  it("an estimate takes its year from a date quote on the same page", async () => {
+    const outcome = await run(proposalOf({ food: food() }));
     expect(Object.keys((await staged()).lines as object)).toEqual(["food"]);
+    expect(outcome.lines.join("\n")).toMatch(/2025.*newest year in quote wins/);
+  });
+
+  it("an estimate with a year somewhere on the page but no date quote", async () => {
+    const outcome = await run(
+      proposalOf({
+        food: food({ evidence: { url: COST_PAGE, quote: "Food: about 300 EUR per month." } }),
+      }),
+    );
+    expect(outcome.ok).toBe(false);
+    expect(outcome.lines.join("\n")).toMatch(/food.*no year/i);
+  });
+
+  it("an estimate whose date quote is not on the page", async () => {
+    const outcome = await run(
+      proposalOf({
+        food: food({
+          evidence: {
+            url: COST_PAGE,
+            quote: "Food: about 300 EUR per month.",
+            dateQuote: "Updated in 2026 by the ministry.",
+          },
+        }),
+      }),
+    );
+    expect(outcome.ok).toBe(false);
+    expect(outcome.lines.join("\n")).toMatch(/food.*date quote is not on the page/i);
+  });
+
+  it("an estimate whose date quote states only an old year", async () => {
+    const outcome = await run(
+      proposalOf({
+        food: food({
+          evidence: {
+            url: OLD_PAGE,
+            quote: "housing costs 400 EUR per month.",
+            dateQuote: "Study in Hungary 2019",
+          },
+          min: 400,
+          max: 400,
+        }),
+      }),
+    );
+    expect(outcome.ok).toBe(false);
+    expect(outcome.lines.join("\n")).toMatch(/food.*2019/);
+  });
+
+  it("an official line is kept without a year and the report says no age check was done", async () => {
+    const outcome = await run(proposalOf({ insurance: insurance() }));
+    expect(outcome.lines.join("\n")).toMatch(/insurance.*no age check/i);
+    expect((await staged())._review).toMatchObject({
+      notes: expect.stringMatching(/no age check/i),
+    });
+  });
+
+  it("does not take the age of an upper-case currency amount for a year", async () => {
+    const quote = "Housing in a Crous residence costs 2040 EUR per month.";
+    const outcome = await run(
+      proposalOf({
+        housing: housing({
+          min: 2040,
+          max: 2040,
+          evidence: { url: COST_PAGE, quote },
+        }),
+      }),
+      { getText: async () => quote },
+    );
+    expect(outcome.ok).toBe(false);
+    expect(outcome.lines.join("\n")).toMatch(/housing.*no year/i);
   });
 
   it("a page that is not found (404), a server error and a network error", async () => {
@@ -406,6 +490,7 @@ describe("politeness", () => {
     const sleeps: number[] = [];
     await run(twoPages(), {
       delayMs: 2500,
+      useCache: true,
       isCached: (url) => url === FEES_PAGE,
       sleep: async (ms) => {
         sleeps.push(ms);
@@ -473,9 +558,216 @@ describe("the proposal", () => {
     expect(OfficialCostProposalSchema.safeParse(proposalOf({ food: food() })).success).toBe(true);
   });
 
+  it("rejects amounts with more decimals than the currency has minor units", () => {
+    const parseWith = (overrides: Line) =>
+      OfficialCostProposalSchema.safeParse(proposalOf({ food: food(overrides) })).success;
+    expect(parseWith({ min: 7.505, max: 7.505 })).toBe(false);
+    expect(parseWith({ min: 7.5, max: 7.5 })).toBe(true);
+    expect(parseWith({ min: 150.5, max: 150.5, currency: "HUF" })).toBe(false);
+  });
+
+  it("enforces the slug convention", () => {
+    const parseWith = (extra: Line) =>
+      OfficialCostProposalSchema.safeParse(proposalOf({ food: food() }, extra)).success;
+    expect(parseWith({})).toBe(true);
+    expect(parseWith({ slug: "de-official" })).toBe(false);
+    expect(parseWith({ slug: "fr-paris-official" })).toBe(false);
+    expect(parseWith({ slug: "fr-paris-official", city: "paris" })).toBe(true);
+    expect(parseWith({ slug: "fr-paris-official", city: "lyon" })).toBe(false);
+    expect(parseWith({ slug: "fr-official", city: "paris" })).toBe(false);
+    expect(parseWith({ slug: "fr-numbeo" })).toBe(false);
+  });
+
   it("is reported as invalid, not thrown, when the file is not a proposal", async () => {
     const outcome = await run({ slug: "x" });
     expect(outcome.ok).toBe(false);
     expect(outcome.lines.join("\n")).toMatch(/invalid proposal/);
+  });
+});
+
+describe("numberMatches", () => {
+  const found = (value: number, quote: string, digits = 2): boolean =>
+    numberMatches(value, quote, digits).length > 0;
+
+  it.each([
+    [350, "35", false],
+    [35, "350", false],
+    [35, "35", true],
+    [350, "350", true],
+    [1050, "1,050", true],
+    [105, "1,050", false],
+    [1130, "1.130", true],
+    [1130, "1,130", true],
+    [1.13, "1.130", false],
+    [1.13, "1,13", true],
+    [2050, "2 050", true],
+    [50, "2 050", false],
+    [1200000, "1 200 000", true],
+    [1200, "1 200 000", false],
+    [200, "1 200 000", false],
+    [500, "500,50", false],
+    [500, "500,00", true],
+    [500, "500", true],
+  ])("%s in %j: %s", (value, quote, expected) => {
+    expect(found(value, quote)).toBe(expected);
+  });
+
+  it("never reads a separator followed by three digits as a decimal", () => {
+    expect(found(1.2, "1.200 EUR")).toBe(false);
+    expect(found(1.05, "1,050 EUR")).toBe(false);
+    expect(found(1.2, "1,20 EUR")).toBe(true);
+    expect(found(1.2, "1.20 EUR")).toBe(true);
+    expect(found(1.2, "1.2 EUR")).toBe(true);
+  });
+
+  it("takes no decimals for a currency without minor units", () => {
+    expect(found(150000, "150,000 HUF", 0)).toBe(true);
+    expect(found(150000, "150,000.00 HUF", 0)).toBe(false);
+  });
+});
+
+describe("yearsIn", () => {
+  it.each([
+    ["Updated in 2025", [2025]],
+    ["Study in Hungary 2019: 400 EUR", [2019]],
+    ["costs 2 050 EUR per year", []],
+    ["costs 2040 EUR per year", []],
+    ["costs EUR 2025 per year", []],
+    ["costs 2040 euros", []],
+    ["costs 2000 EUR", []],
+    ["costs 2.050 EUR", []],
+    ["in 2024, 300 EUR; in 2026, 310 EUR", [2024, 2026]],
+    ["academic year 2025-2026", [2025, 2026]],
+  ])("%j", (text, expected) => {
+    expect(yearsIn(text)).toEqual(expected);
+  });
+});
+
+describe("a decimal figure next to a thousands separator", () => {
+  const fee = (min: number, quote: string): Line =>
+    insurance({
+      min,
+      max: min,
+      per: quote.includes("month") ? "month" : "year",
+      evidence: { url: DECIMAL_PAGE, quote },
+    });
+
+  it("is dropped when the quote has the figure with a thousands separator", async () => {
+    for (const [min, quote] of [
+      [1.2, "Fee A is 1.200 EUR per year."],
+      [1.05, "Fee B is 1,050 EUR per year."],
+    ] as const) {
+      const outcome = await run(proposalOf({ insurance: fee(min, quote) }));
+      expect(outcome.ok).toBe(false);
+      expect(outcome.lines.join("\n")).toMatch(/not in the quote/);
+    }
+  });
+
+  it("is kept when the quote has the same decimal figure", async () => {
+    for (const quote of ["Fee C is 1,20 EUR per month.", "Fee D is 1.20 EUR per month."]) {
+      await rm(stagingDir, { recursive: true, force: true });
+      const outcome = await run(proposalOf({ insurance: fee(1.2, quote) }));
+      expect(outcome.ok).toBe(true);
+    }
+  });
+});
+
+describe("the period", () => {
+  it("drops a line whose quote states another period", async () => {
+    const outcome = await run(proposalOf({ food: food(), insurance: insurance({ per: "month" }) }));
+    expect(Object.keys((await staged()).lines as object)).toEqual(["food"]);
+    expect(outcome.lines.join("\n")).toMatch(/insurance.*year.*month/i);
+  });
+
+  it("keeps a line whose quote states no period, and says so in the report and the notes", async () => {
+    const outcome = await run(
+      proposalOf({
+        setup: insurance({
+          min: 150000,
+          max: 150000,
+          currency: "HUF",
+          per: "once",
+          evidence: { url: FEES_PAGE, quote: "A set-up deposit of 150,000 HUF applies." },
+        }),
+      }),
+    );
+    expect(outcome.ok).toBe(true);
+    expect(outcome.lines.join("\n")).toMatch(/setup.*period not stated in quote/);
+    expect((await staged())._review).toMatchObject({
+      notes: expect.stringMatching(/lines\.setup.*period not stated in quote/),
+    });
+  });
+
+  it.each([
+    ["Miete: 400 EUR pro Monat.", "month", true],
+    ["Loyer : 400 EUR par mois.", "month", true],
+    ["Affitto: 400 EUR al mese.", "month", true],
+    ["Havi lakbér: 400 EUR.", "month", true],
+    ["Huur: 400 EUR per maand.", "month", true],
+    ["Contribution : 105 EUR par an.", "year", true],
+    ["Beitrag: 105 EUR pro Jahr.", "year", true],
+    ["Quota: 105 EUR all'anno.", "year", true],
+    ["Bijdrage: 105 EUR per jaar.", "year", true],
+    ["Díj: 105 EUR évi.", "year", true],
+    ["Frais : 105 EUR, paiement unique.", "once", true],
+    ["Gebühr: 105 EUR einmalig.", "once", true],
+    ["Tassa: 105 EUR una tantum.", "once", true],
+    ["Fee: 105 EUR, a one-off payment.", "once", true],
+    ["Fee: 105 EUR per year.", "once", false],
+    ["Fee: 105 EUR once.", "year", false],
+    ["Miete: 400 EUR pro Monat.", "year", false],
+  ])("%j as %s: kept %s", async (quote, per, kept) => {
+    const value = quote.includes("400") ? 400 : 105;
+    const outcome = await run(
+      proposalOf({
+        insurance: insurance({
+          min: value,
+          max: value,
+          per,
+          evidence: { url: DECIMAL_PAGE, quote },
+        }),
+      }),
+      { getText: async () => `${quote} Padding so the page is longer than the quote.` },
+    );
+    expect(outcome.ok).toBe(kept);
+  });
+});
+
+describe("the cache", () => {
+  it("is not used by default: a page already on disk is requested again, with the delay", async () => {
+    const sleeps: number[] = [];
+    const outcome = await run(proposalOf({ housing: housing(), insurance: insurance() }), {
+      isCached: () => true,
+      sleep: async (ms) => {
+        sleeps.push(ms);
+      },
+    });
+    expect(sleeps).toEqual([4000]);
+    expect(outcome.lines.join("\n")).toMatch(/housing.*page fetched now/);
+    expect(outcome.lines.join("\n")).not.toMatch(/--use-cache/);
+  });
+
+  it("is used with useCache, and the report says so for the run and for each line", async () => {
+    const outcome = await run(proposalOf({ housing: housing() }), {
+      useCache: true,
+      isCached: () => true,
+    });
+    const report = outcome.lines.join("\n");
+    expect(report).toMatch(/--use-cache/);
+    expect(report).toMatch(/housing.*page from cache/);
+  });
+
+  it("makes the live page reader refresh and try once", async () => {
+    const calls: Record<string, unknown>[] = [];
+    const url = "https://www.campusfrance.org/en/refresh-check";
+    const fetchHtml = async (target: string, options?: Record<string, unknown>) => {
+      calls.push({ target, ...options });
+      return "<p>Food: about 300 EUR per month.</p>";
+    };
+    const text = await livePageText({ refresh: true, fetchHtml })(url);
+    expect(text).toBe("Food: about 300 EUR per month.");
+    expect(calls[0]).toMatchObject({ target: url, refresh: true, attempts: 1 });
+    await livePageText({ refresh: false, fetchHtml })(`${url}-2`);
+    expect(calls[1]).toMatchObject({ refresh: false, attempts: 1 });
   });
 });

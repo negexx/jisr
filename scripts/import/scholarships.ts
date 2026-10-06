@@ -226,6 +226,9 @@ const ALLOWED_DOMAINS = new Set([
   "esteri.it",
   "universitaly.it",
   "xn--bafg-7qa.de", // bafög.de
+  "rijksoverheid.nl",
+  "duo.nl",
+  "service-public.fr", // the French administration's portal (a government site)
 ]);
 const GOVERNMENT_SUFFIXES = [
   "gouv.fr",
