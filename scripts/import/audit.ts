@@ -239,6 +239,9 @@ export function sampleSheet(
           const parts = official ? [show(e.quote)] : show(e.quote).split("; ");
           for (const part of parts) out.push(`  - "${part}" — ${show(e.url)}`);
         }
+        // The quote that dates an estimate (its own quote states no year): read it with the figure.
+        for (const e of evidence.filter((x) => x.fact === `lines.${lineName}.date`))
+          out.push(`  - date: "${show(e.quote)}" — ${show(e.url)}`);
         const basis = asObject(asObject(costLine.basis).en);
         if (typeof basis.text === "string") out.push(`  - formula: ${basis.text}`);
       }

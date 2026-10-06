@@ -18,10 +18,12 @@ import {
 import { minorUnitDigits } from "@/lib/format";
 
 import { httpStatusOf, isStopStatus, type StagedBasis, type StagedCostProfile } from "./costs";
-import { normalizeForMatch, pageText, quoteInText } from "./evidence";
+import { pageText } from "./evidence";
 import { fetchText, isCached } from "./http";
+import { checkLine } from "./official-costs-checks";
+import { isPdfCached, type PdfDeps } from "./pdf";
 import type { GetText } from "./proposals";
-import { currencyNextTo, isOfficialHost } from "./scholarships";
+import { isOfficialHost } from "./scholarships";
 import { DATA_DIR, STAGING_DIR, stageFile, toYaml } from "./staging";
 
 // Official cost profiles: the assistant proposes, from official pages, a figure per cost line with a
@@ -32,8 +34,7 @@ import { DATA_DIR, STAGING_DIR, stageFile, toYaml } from "./staging";
 const COLLECTION = "cost-profiles";
 const MIN_DELAY_MS = 2000;
 export const DEFAULT_DELAY_MS = 4000;
-// An estimate older than this is not used (a legal rate in force is `official` and has no age limit).
-export const MIN_ESTIMATE_YEAR = 2023;
+export { MIN_ESTIMATE_YEAR, numberMatches, yearsIn } from "./official-costs-checks";
 
 const Text = z.string().trim().min(1).max(400);
 
@@ -125,10 +126,16 @@ export type PageDeps = {
 
 // One attempt (fetchText would retry 429 and 5xx, requests nobody counts) with the project
 // User-Agent, and an empty body is never cached.
-export function livePageText(options: { refresh: boolean; fetchHtml?: typeof fetchText }): GetText {
+export function livePageText(options: {
+  refresh: boolean;
+  fetchHtml?: typeof fetchText;
+  pdfDeps?: PdfDeps;
+}): GetText {
   const request = options.fetchHtml ?? fetchText;
   return (url) =>
     pageText(url, {
+      // a PDF has its own text cache: refreshing skips it too
+      pdfDeps: { ...options.pdfDeps, refresh: options.refresh },
       fetchHtml: (target, fetchOptions) =>
         request(target, {
           ...fetchOptions,
@@ -149,7 +156,8 @@ function pageReader(deps: PageDeps): (url: string) => Promise<Page> {
   const getText = deps.getText ?? livePageText({ refresh: !useCache });
   const sleep =
     deps.sleep ?? ((ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms)));
-  const onDisk = deps.isCached ?? ((url: string) => isCached(url));
+  // what a cache read would serve: the page text or, for a PDF, its extracted text
+  const onDisk = deps.isCached ?? ((url: string) => isCached(url) || isPdfCached(url));
   const delayMs = deps.delayMs ?? DEFAULT_DELAY_MS;
   const seen = new Map<string, Page>();
   let requests = 0;
@@ -178,167 +186,6 @@ function pageReader(deps: PageDeps): (url: string) => Promise<Page> {
     seen.set(url, page);
     return page;
   };
-}
-
-// --- checks ----------------------------------------------------------------------------------------
-const SEPARATOR = String.raw`[.,'\s  ]`;
-
-// Where a quote (as normalizeForMatch writes it) states this amount in major units: thousands
-// groups optionally separated (1200, 1 200, 1,200, 1.200), a decimal comma or point, and never as
-// part of a larger number (40 is not in 400, 500 is not in 1 500 or 500,50). The decimals stop at the
-// currency's minor digits, so a separator followed by three digits is a thousands group, never a
-// decimal: 1.2 is not in "1.200" and 1.05 is not in "1,050".
-export function numberMatches(
-  value: number,
-  quote: string,
-  digits = 2,
-): { start: number; end: number }[] {
-  const [whole = "0", cents = ""] = value.toFixed(digits).split(".");
-  const groups: string[] = [];
-  for (let end = whole.length; end > 0; end -= 3)
-    groups.unshift(whole.slice(Math.max(0, end - 3), end));
-  const fraction = cents.replace(/0+$/, "");
-  let decimals = "";
-  if (digits > 0)
-    decimals =
-      fraction === ""
-        ? `(?:[.,]0{1,${digits}})?`
-        : `[.,]${fraction}0{0,${digits - fraction.length}}`;
-  const pattern = new RegExp(
-    String.raw`(?<!\d)(?<!\d${SEPARATOR})${groups.join(`${SEPARATOR}?`)}${decimals}(?!\d)(?![.,]\d)(?!${SEPARATOR}\d{3}(?!\d))`,
-    "g",
-  );
-  return [...quote.matchAll(pattern)].map((m) => ({
-    start: m.index ?? 0,
-    end: (m.index ?? 0) + m[0].length,
-  }));
-}
-
-const MONEY_AFTER = /^\s?(?:[€$£]|(?:eur|euros?|usd|gbp|huf|ft)\b)/;
-const MONEY_BEFORE = /(?:[€$£]|\b(?:eur|usd|gbp|huf))\s?$/;
-
-// The years a text states, leaving out an amount that merely looks like one ("2040 EUR", "EUR 2025").
-// The text is normalised first (lower case), so an upper-case currency code is still a currency.
-export function yearsIn(raw: string): number[] {
-  const text = normalizeForMatch(raw);
-  const years: number[] = [];
-  for (const m of text.matchAll(/(?<!\d)((?:19|20)\d{2})(?!\d)(?![.,]\d)/g)) {
-    const start = m.index ?? 0;
-    const end = start + m[0].length;
-    if (
-      MONEY_AFTER.test(text.slice(end, end + 8)) ||
-      MONEY_BEFORE.test(text.slice(Math.max(0, start - 8), start))
-    )
-      continue;
-    years.push(Number(m[1]));
-  }
-  return years;
-}
-
-type Period = LineProposal["per"];
-const periodWords = (alternatives: string[]): RegExp =>
-  new RegExp(`(?<!\\p{L})(?:${alternatives.join("|")})(?!\\p{L})`, "u");
-// How a quote names the period of an amount (English, French, German, Italian, Hungarian, Dutch).
-const PERIOD_WORDS: Record<Period, RegExp> = {
-  month: periodWords([
-    "months?",
-    "monthly",
-    "mensuel\\p{L}*",
-    "mois",
-    "monat\\p{L}*",
-    "mese",
-    "mensil\\p{L}*",
-    "havi",
-    "maand\\p{L}*",
-  ]),
-  year: periodWords([
-    "years?",
-    "yearly",
-    "annual\\p{L}*",
-    "annuel\\p{L}*",
-    "par an",
-    "jahr\\p{L}*",
-    "j[äa]hrlich",
-    "anno",
-    "annuo",
-    "jaar",
-    "jaarlijks",
-    "évi",
-  ]),
-  once: periodWords([
-    "one-off",
-    "one[- ]time",
-    "once",
-    "uniques?",
-    "une seule fois",
-    "einmalig\\p{L}*",
-    "una tantum",
-    "eenmalig\\p{L}*",
-  ]),
-};
-
-const periodsIn = (quote: string): Period[] => {
-  const text = normalizeForMatch(quote);
-  return (Object.keys(PERIOD_WORDS) as Period[]).filter((p) => PERIOD_WORDS[p].test(text));
-};
-
-// An estimate needs a year of MIN_ESTIMATE_YEAR or later in its quote or in a date quote from the same
-// page; a year elsewhere on the page (a footer, a menu) says nothing about this figure. The newest
-// year of the two wins.
-function ageOf(line: LineProposal, pageContent: string): { year: number } | { problem: string } {
-  const { url, quote, dateQuote } = line.evidence;
-  if (dateQuote !== undefined && !quoteInText(dateQuote, pageContent))
-    return {
-      problem: `the date quote is not on the page ${url} (verbatim, 15 characters at least)`,
-    };
-  const years = [...yearsIn(quote), ...(dateQuote === undefined ? [] : yearsIn(dateQuote))];
-  if (years.length === 0)
-    return {
-      problem: `the quote and the date quote state no year (an estimate needs a year of ${MIN_ESTIMATE_YEAR} or later in its quote or in a date quote from the same page)`,
-    };
-  const year = Math.max(...years);
-  return year >= MIN_ESTIMATE_YEAR
-    ? { year }
-    : { problem: `the newest year in the quote is ${year}, before ${MIN_ESTIMATE_YEAR}` };
-}
-
-type LineCheck =
-  | { ok: false; problem: string }
-  | { ok: true; year: number | null; periodStated: boolean };
-
-// Whether a line can be kept. The page is already fetched.
-function checkLine(line: LineProposal, pageContent: string): LineCheck {
-  const { url, quote } = line.evidence;
-  if (!quoteInText(quote, pageContent))
-    return {
-      ok: false,
-      problem: `the quote is not on the page ${url} (verbatim, 15 characters at least)`,
-    };
-  const text = normalizeForMatch(quote);
-  const digits = minorUnitDigits(line.currency);
-  const matches = [];
-  for (const value of new Set([line.min, line.max])) {
-    const found = numberMatches(value, text, digits);
-    if (found.length === 0)
-      return { ok: false, problem: `the number ${value} is not in the quote` };
-    matches.push(...found);
-  }
-  if (!matches.some((m) => currencyNextTo(line.currency, text, m.start, m.end)))
-    return {
-      ok: false,
-      problem: `the currency ${line.currency} is not written next to ${line.min} or ${line.max} in the quote`,
-    };
-  const periods = periodsIn(quote);
-  if (periods.length > 0 && !periods.includes(line.per))
-    return {
-      ok: false,
-      problem: `the quote states the period ${periods.join(" and ")} but the line says per ${line.per}`,
-    };
-  if (line.info_kind === "official")
-    return { ok: true, year: null, periodStated: periods.length > 0 };
-  const age = ageOf(line, pageContent);
-  if ("problem" in age) return { ok: false, problem: age.problem };
-  return { ok: true, year: age.year, periodStated: periods.length > 0 };
 }
 
 // --- profile ---------------------------------------------------------------------------------------
@@ -457,28 +304,25 @@ async function verifyProposal(
     }
     lines[name] = stagedLine(line, keyFor(url));
     evidence.push({ fact: `lines.${name}`, url, quote });
-    if (line.evidence.dateQuote !== undefined)
+    // the date quote is evidence only when the quote itself has no year and it dated the figure
+    if (check.age?.from === "date quote" && line.evidence.dateQuote !== undefined)
       evidence.push({ fact: `lines.${name}.date`, url, quote: line.evidence.dateQuote });
     const age =
-      check.year === null
+      check.age === null
         ? "no age check (official)"
-        : `year ${check.year} (newest year in quote wins)`;
+        : `years: oldest ${check.age.oldest}, newest ${check.age.newest} (from ${check.age.from})`;
     report.push(
       `kept ${name}: ${line.min}-${line.max} ${line.currency} per ${line.per} (${line.info_kind}) "${quote}" (${url}); ${page.fromCache ? "page from cache" : "page fetched now"}; ${age}`,
     );
-    if (check.year === null) {
-      notes.push(
-        `lines.${name}: official line, no age check was done (a rate in force is assumed)`,
-      );
-      report.push(`note ${name}: official line, no age check was done`);
-    }
-    if (!check.periodStated) {
-      notes.push(
-        `lines.${name}: period not stated in quote (per ${line.per} comes from the proposal)`,
-      );
-      report.push(
-        `note ${name}: period not stated in quote (per ${line.per} comes from the proposal)`,
-      );
+    const lineNotes = [
+      ...(check.age === null
+        ? ["official line, no age check was done (a rate in force is assumed)"]
+        : []),
+      ...check.notes,
+    ];
+    for (const note of lineNotes) {
+      notes.push(`lines.${name}: ${note}`);
+      report.push(`note ${name}: ${note}`);
     }
   }
   if (evidence.length === 0)

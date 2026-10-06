@@ -217,6 +217,26 @@ describe("sampleSheet for an official cost profile", () => {
     expect(sheet).toContain(`  - "${estimateQuote}" — ${sourceUrl}`);
   });
 
+  it("prints the date quote under its line as date: and keeps it out of the other lines", () => {
+    const dateQuote = "Page updated 12 March 2025";
+    const withDate = {
+      ...official,
+      _review: {
+        ...official._review,
+        evidence: [
+          ...official._review.evidence,
+          { fact: "lines.food.date", url: sourceUrl, quote: dateQuote },
+        ],
+      },
+    };
+    const sheet = sampleSheet([{ key: officialRow.key, record: withDate, row: officialRow }]);
+    expect(sheet).toContain(`  - date: "${dateQuote}" — ${sourceUrl}`);
+    const lines = sheet.split("\n");
+    const food = lines.findIndex((l) => l.startsWith("- **food**"));
+    expect(lines.slice(food + 1, food + 4).join("\n")).toContain(`date: "${dateQuote}"`);
+    expect(sheet).not.toContain(`  - "${dateQuote}"`);
+  });
+
   it("links the first source's page whatever its key is", () => {
     expect(officialSheet()).toContain(`- **page**: ${quoteUrl}`);
   });

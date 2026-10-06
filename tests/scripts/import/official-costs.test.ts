@@ -19,6 +19,7 @@ import {
 } from "../../../scripts/import/official-costs";
 import { stampVerified } from "../../../scripts/import/promote";
 import { listStaged, stageFile } from "../../../scripts/import/staging";
+import { makePdf } from "./pdf-fixture";
 
 const COST_PAGE = "https://www.campusfrance.org/en/cost-of-living";
 const FEES_PAGE = "https://www.service-public.gouv.fr/fees";
@@ -336,7 +337,45 @@ describe("a line that fails a check is dropped alone, with its reason", () => {
   it("an estimate takes its year from a date quote on the same page", async () => {
     const outcome = await run(proposalOf({ food: food() }));
     expect(Object.keys((await staged()).lines as object)).toEqual(["food"]);
-    expect(outcome.lines.join("\n")).toMatch(/2025.*newest year in quote wins/);
+    expect(outcome.lines.join("\n")).toMatch(
+      /food.*years: oldest 2025, newest 2025 \(from date quote\)/,
+    );
+  });
+
+  it("an estimate whose quote states a year is judged on the quote alone, never rescued by a date quote", async () => {
+    const quote = "Sozialerhebung 2016: 867 EUR per month";
+    const outcome = await run(
+      proposalOf({
+        housing: housing({
+          min: 867,
+          max: 867,
+          evidence: { url: COST_PAGE, quote, dateQuote: "Page updated 12 March 2025" },
+        }),
+      }),
+      { getText: async () => `${quote}. Page updated 12 March 2025.` },
+    );
+    expect(outcome.ok).toBe(false);
+    expect(outcome.lines.join("\n")).toMatch(/housing.*oldest year in the quote is 2016/);
+  });
+
+  it("uses the oldest year of the quote for the 2023 rule and prints both ends", async () => {
+    const run2 = (quote: string) =>
+      run(
+        proposalOf({
+          housing: housing({
+            min: 300,
+            max: 310,
+            evidence: { url: COST_PAGE, quote },
+          }),
+        }),
+        { getText: async () => quote },
+      );
+    const kept = await run2("In 2024, 300 EUR per month; in 2026, 310 EUR per month.");
+    expect(kept.lines.join("\n")).toMatch(/years: oldest 2024, newest 2026 \(from quote\)/);
+    await rm(stagingDir, { recursive: true, force: true });
+    const dropped = await run2("In 2016, 300 EUR per month; in 2025, 310 EUR per month.");
+    expect(dropped.ok).toBe(false);
+    expect(dropped.lines.join("\n")).toMatch(/oldest year in the quote is 2016/);
   });
 
   it("an estimate with a year somewhere on the page but no date quote", async () => {
@@ -709,6 +748,16 @@ describe("the period", () => {
     ["Quota: 105 EUR all'anno.", "year", true],
     ["Bijdrage: 105 EUR per jaar.", "year", true],
     ["Díj: 105 EUR évi.", "year", true],
+    ["Díj: 105 EUR évente.", "year", true],
+    ["Havonta 400 EUR lakbér.", "month", true],
+    ["Cotisation : 105 EUR/an pour tous.", "year", true],
+    ["Frais annuels : 105 EUR pour tous.", "year", true],
+    ["Droits d'inscription : 105 EUR par année.", "year", true],
+    ["Affitto medio: 400 EUR per 10 mesi.", "month", true],
+    ["Fee: 105 EUR per annum.", "year", true],
+    ["Frais : 105 EUR, versement unique.", "once", true],
+    ["Tarif unique : 105 EUR pour tous.", "once", true],
+    ["Tarif unique : 105 EUR par an.", "once", false],
     ["Frais : 105 EUR, paiement unique.", "once", true],
     ["Gebühr: 105 EUR einmalig.", "once", true],
     ["Tassa: 105 EUR una tantum.", "once", true],
@@ -769,5 +818,115 @@ describe("the cache", () => {
     expect(calls[0]).toMatchObject({ target: url, refresh: true, attempts: 1 });
     await livePageText({ refresh: false, fetchHtml })(`${url}-2`);
     expect(calls[1]).toMatchObject({ refresh: false, attempts: 1 });
+  });
+
+  it("makes the live reader skip the cached PDF text when it refreshes", async () => {
+    const cacheDir = await mkdtemp(path.join(tmpdir(), "official-pdf-"));
+    const url = "https://www.campusfrance.org/en/fees.pdf";
+    let version = "Fee: 100 EUR per year";
+    let requests = 0;
+    const fetchFn = (async () => {
+      requests++;
+      return new Response(makePdf(version), { status: 200 });
+    }) as typeof fetch;
+    const pdfDeps = { fetchFn, cacheDir };
+    expect(await livePageText({ refresh: false, pdfDeps })(url)).toContain("100 EUR");
+    version = "Fee: 120 EUR per year";
+    expect(await livePageText({ refresh: false, pdfDeps })(url)).toContain("100 EUR");
+    expect(requests).toBe(1);
+    expect(await livePageText({ refresh: true, pdfDeps })(url)).toContain("120 EUR");
+    expect(requests).toBe(2);
+    await rm(cacheDir, { recursive: true, force: true });
+  });
+});
+
+describe("several periods in one quote", () => {
+  const quote = "The fee is 105 EUR per year, payable at the start of the month.";
+  const fee = (per: string): Line => insurance({ per, evidence: { url: DECIMAL_PAGE, quote } });
+
+  it("drops the line when the period nearest the amount contradicts per", async () => {
+    const outcome = await run(proposalOf({ insurance: fee("month") }), {
+      getText: async () => quote,
+    });
+    expect(outcome.ok).toBe(false);
+    expect(outcome.lines.join("\n")).toMatch(/insurance.*nearest the amount says year.*per month/);
+  });
+
+  it("keeps it when the nearest period agrees, with a note to check the period", async () => {
+    const outcome = await run(proposalOf({ insurance: fee("year") }), {
+      getText: async () => quote,
+    });
+    expect(outcome.ok).toBe(true);
+    const note = /several periods stated \(month, year\): check that per year is the amount's own/;
+    expect(outcome.lines.join("\n")).toMatch(note);
+    expect((await staged())._review).toMatchObject({ notes: expect.stringMatching(note) });
+  });
+
+  it("reads the word before the amount when none follows it", async () => {
+    const text = "Monthly rent: 400 EUR, the deposit is due once at signing.";
+    const outcome = await run(
+      proposalOf({
+        housing: housing({
+          min: 400,
+          max: 400,
+          evidence: { url: DECIMAL_PAGE, quote: text, dateQuote: undefined },
+          info_kind: "official",
+        }),
+      }),
+      { getText: async () => text },
+    );
+    expect(outcome.ok).toBe(true);
+  });
+});
+
+describe("a period word inside a duration phrase", () => {
+  const questura =
+    "40,00 euro per i permessi di soggiorno di durata superiore a tre mesi e inferiore o pari a un anno";
+
+  it("is ignored: the Questura fee proposed as once is kept, with a note", async () => {
+    const outcome = await run(
+      proposalOf({
+        application_visa: insurance({
+          min: 40,
+          max: 40,
+          per: "once",
+          evidence: { url: FEES_PAGE, quote: questura },
+        }),
+      }),
+      { getText: async () => questura },
+    );
+    expect(outcome.ok).toBe(true);
+    const note = /period not stated in quote/;
+    expect(outcome.lines.join("\n")).toMatch(note);
+    expect((await staged())._review).toMatchObject({ notes: expect.stringMatching(note) });
+  });
+
+  it("does not hide another period word of the quote", async () => {
+    const quote = "The fee is 105 EUR per year, valid for one month.";
+    const outcome = await run(
+      proposalOf({
+        insurance: insurance({ per: "month", evidence: { url: FEES_PAGE, quote } }),
+      }),
+      { getText: async () => quote },
+    );
+    expect(outcome.ok).toBe(false);
+    expect(outcome.lines.join("\n")).toMatch(/insurance.*year.*per month/);
+  });
+
+  it("leaves the period before the phrase in place", async () => {
+    const quote = "Rent is 400 EUR per month for a stay of one year.";
+    const outcome = await run(
+      proposalOf({
+        insurance: insurance({
+          min: 400,
+          max: 400,
+          per: "month",
+          evidence: { url: FEES_PAGE, quote },
+        }),
+      }),
+      { getText: async () => quote },
+    );
+    expect(outcome.ok).toBe(true);
+    expect(outcome.lines.join("\n")).not.toMatch(/period not stated/);
   });
 });
