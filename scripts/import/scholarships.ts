@@ -213,8 +213,28 @@ function namesNationality(code: string, quote: string): boolean {
 }
 
 // --- official sources -----------------------------------------------------------------------------
-const ALLOWED_DOMAINS = new Set(["daad.de", "nuffic.nl", "studyinholland.nl", "campusfrance.org"]);
-const GOVERNMENT_SUFFIXES = ["gouv.fr", "bund.de", "overheid.nl", "government.nl"];
+const ALLOWED_DOMAINS = new Set([
+  "daad.de",
+  "nuffic.nl",
+  "studyinholland.nl",
+  "campusfrance.org",
+  "ind.nl",
+  "studyinnl.org",
+  "ameli.fr",
+  "belastingdienst.nl",
+  "poliziadistato.it",
+  "esteri.it",
+  "universitaly.it",
+  "xn--bafg-7qa.de", // bafög.de
+]);
+const GOVERNMENT_SUFFIXES = [
+  "gouv.fr",
+  "bund.de",
+  "overheid.nl",
+  "government.nl",
+  "gov.it",
+  "gov.hu",
+];
 
 // A quote counts only when it is on the provider's own site, a national study-abroad portal or a
 // government site; a blog or an aggregator holding the same sentence is not an official source.
@@ -308,6 +328,7 @@ const CURRENCY_WORDS: Record<string, RegExp> = {
   GBP: /£|\bgbp\b|\bpounds?\b/i,
   CHF: /\bchf\b|\bswiss francs?\b|\bfrancs? suisses?\b/i,
   MAD: /\bmad\b|\bdh\b|\bdirhams?\b/i,
+  HUF: /\bhuf\b|\bft\b/i,
 };
 export function currencyNextTo(
   currency: string,
