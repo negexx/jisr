@@ -28,7 +28,10 @@ export type AuditRow = {
 
 // Scholarships are shown to students as facts about money and eligibility, and there are few of
 // them: every one is read by a human, whatever the size of its batch.
-const ALWAYS_SAMPLED = /^scholarships\//;
+// Official cost profiles (country and city) are figures a model quoted from government pages, so
+// they get the same treatment; the parked Numbeo ones keep the normal 10% sample.
+const OFFICIAL_COST_PROFILE = /^cost-profiles\/[^/]+-official$/;
+const ALWAYS_SAMPLED = new RegExp(`^scholarships/|${OFFICIAL_COST_PROFILE.source}`);
 // ... and none of them can be waived: the owner can pass a programme preview unread, never money
 // and eligibility facts.
 export const isAlwaysSampled = (key: string): boolean => ALWAYS_SAMPLED.test(key);
@@ -223,23 +226,29 @@ export function sampleSheet(
       }
     }
     if (key.startsWith("cost-profiles/")) {
+      const official = OFFICIAL_COST_PROFILE.test(key);
       for (const [lineName, rawLine] of Object.entries(asObject(r.lines))) {
         const costLine = asObject(rawLine);
         const value = asObject(costLine.value);
         out.push(
           `- **${lineName}**: \`${majorRange(value)}\` (${show(costLine.info_kind)}; source ${show(costLine.source)})`,
         );
-        // one line per Numbeo row: the food basket quote joins its rows with "; "
         for (const e of evidence.filter((x) => x.fact === `lines.${lineName}`)) {
-          for (const part of show(e.quote).split("; ")) out.push(`  - "${part}" — ${show(e.url)}`);
+          // Numbeo's food basket joins its rows with "; ": one line per row. An official quote is
+          // printed whole, so the owner reads it as the page words it.
+          const parts = official ? [show(e.quote)] : show(e.quote).split("; ");
+          for (const part of parts) out.push(`  - "${part}" — ${show(e.url)}`);
         }
         const basis = asObject(asObject(costLine.basis).en);
         if (typeof basis.text === "string") out.push(`  - formula: ${basis.text}`);
       }
-      const numbeoUrl = asObject(asObject(r.sources).numbeo).url;
-      if (numbeoUrl !== undefined) out.push(`- **page**: ${show(numbeoUrl)}`);
+      const [firstSource] = Object.values(asObject(r.sources));
+      const pageUrl = asObject(firstSource).url;
+      if (pageUrl !== undefined) out.push(`- **page**: ${show(pageUrl)}`);
       out.push(
-        "- **page check**: Confirm: this is the city's page (right city, right currency, right date).",
+        official
+          ? "- **page check**: Confirm: the quote is on the official page and the number matches"
+          : "- **page check**: Confirm: this is the city's page (right city, right currency, right date).",
       );
     }
     for (const fact of [
