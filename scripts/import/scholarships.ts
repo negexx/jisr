@@ -219,7 +219,12 @@ const GOVERNMENT_SUFFIXES = ["gouv.fr", "bund.de", "overheid.nl", "government.nl
 // A quote counts only when it is on the provider's own site, a national study-abroad portal or a
 // government site; a blog or an aggregator holding the same sentence is not an official source.
 export function isOfficialSource(url: string, officialUrl: string): boolean {
-  if (sameSite(url, officialUrl)) return true;
+  return sameSite(url, officialUrl) || isOfficialHost(url);
+}
+
+// The allow-list alone (no provider site to compare with): a national study-abroad portal or a
+// government site.
+export function isOfficialHost(url: string): boolean {
   let labels: string[];
   try {
     labels = new URL(url).hostname.toLowerCase().split(".");
@@ -304,7 +309,12 @@ const CURRENCY_WORDS: Record<string, RegExp> = {
   CHF: /\bchf\b|\bswiss francs?\b|\bfrancs? suisses?\b/i,
   MAD: /\bmad\b|\bdh\b|\bdirhams?\b/i,
 };
-function currencyNextTo(currency: string, quote: string, start: number, end: number): boolean {
+export function currencyNextTo(
+  currency: string,
+  quote: string,
+  start: number,
+  end: number,
+): boolean {
   const source = (CURRENCY_WORDS[currency] ?? new RegExp(`\\b${currency}\\b`, "i")).source;
   const before = quote.slice(Math.max(0, start - 12), start);
   const after = quote.slice(end, end + 12);

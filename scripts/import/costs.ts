@@ -402,7 +402,7 @@ function targetsFor(countries: readonly string[], cities: readonly CityRow[]): T
   return [...countryTargets, ...cityTargets];
 }
 
-const httpStatusOf = (error: unknown): number | null => {
+export const httpStatusOf = (error: unknown): number | null => {
   if (error instanceof HttpStatusError) return error.status;
   // an injected fetch (or an older error) that only has the message
   const match = error instanceof Error ? error.message.match(/HTTP (\d{3})\b/) : null;
@@ -413,7 +413,7 @@ const httpStatusOf = (error: unknown): number | null => {
 const MAX_CONSECUTIVE_FAILURES = 3;
 
 // 429 "slow down" and 403 "blocked": every further request would only make it worse.
-const isStopStatus = (status: number | null): boolean => status === 429 || status === 403;
+export const isStopStatus = (status: number | null): boolean => status === 429 || status === 403;
 
 // Fetches sequentially (one request at a time, `delayMs` apart), stages what parses, never
 // overwrites a staged file or a slug already in data/.
@@ -647,7 +647,8 @@ async function main(argv: readonly string[]): Promise<void> {
   if (!outcome.ok) process.exitCode = 1;
 }
 
-if (process.argv[1]?.endsWith("costs.ts") === true) {
+// The file name, not a suffix: official-costs.ts imports this module and ends in "costs.ts" too.
+if (path.basename(process.argv[1] ?? "") === "costs.ts") {
   main(process.argv.slice(2)).catch((error: unknown) => {
     console.error(error instanceof Error ? error.message : error);
     process.exit(1);
