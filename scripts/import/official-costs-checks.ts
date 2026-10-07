@@ -7,7 +7,7 @@ import { currencyNextTo } from "./scholarships";
 // its currency, for its period, with a date. No I/O: the caller has fetched the page.
 
 // An estimate older than this is not used (a legal rate in force is `official` and has no age limit).
-export const MIN_ESTIMATE_YEAR = 2023;
+export const MIN_ESTIMATE_YEAR = 2026;
 
 export type Period = "month" | "year" | "once";
 export type LineInput = {

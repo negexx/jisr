@@ -27,11 +27,11 @@ const OLD_PAGE = "https://www.campusfrance.org/en/archive";
 const UNDATED_PAGE = "https://www.campusfrance.org/en/undated";
 const BLOG_PAGE = "https://blog.example.com/cost-of-living";
 const DECIMAL_PAGE = "https://www.service-public.gouv.fr/decimals";
-const DATE_QUOTE = "Campus France, updated in 2025.";
+const DATE_QUOTE = "Campus France, updated in 2026.";
 
 const pages: Record<string, string> = {
   [COST_PAGE]:
-    "Campus France, updated in 2025. Food: about 300 EUR per month. Housing in a Crous residence costs between 400 EUR and 500 EUR per month. Local transport: 7,50 EUR per month.",
+    "Campus France, updated in 2026. Food: about 300 EUR per month. Housing in a Crous residence costs between 400 EUR and 500 EUR per month. Local transport: 7,50 EUR per month.",
   [FEES_PAGE]:
     "The CVEC student contribution is 105 EUR per year. The student visa costs 1.200 EUR once. A set-up deposit of 150,000 HUF applies.",
   [OLD_PAGE]: "Study in Hungary 2019: housing costs 400 EUR per month.",
@@ -42,9 +42,9 @@ const pages: Record<string, string> = {
 };
 
 const basis = {
-  fr: "Campus France 2025 : environ 300 EUR par mois pour la nourriture.",
-  en: "Campus France 2025: about 300 EUR a month for food.",
-  ar: "كامبوس فرانس 2025: حوالي 300 يورو شهريا للطعام.",
+  fr: "Campus France 2026 : environ 300 EUR par mois pour la nourriture.",
+  en: "Campus France 2026: about 300 EUR a month for food.",
+  ar: "كامبوس فرانس 2026: حوالي 300 يورو شهريا للطعام.",
 };
 
 type Line = Record<string, unknown>;
@@ -293,7 +293,7 @@ describe("a line that fails a check is dropped alone, with its reason", () => {
   it("the currency missing next to the number", () =>
     dropsHousing(housing({ currency: "USD" }), /housing.*USD/i));
 
-  it("an estimate older than 2023", async () => {
+  it("an estimate older than 2026", async () => {
     const outcome = await run(
       proposalOf({
         food: food(),
@@ -309,6 +309,24 @@ describe("a line that fails a check is dropped alone, with its reason", () => {
     );
     expect(Object.keys((await staged()).lines as object)).toEqual(["food"]);
     expect(outcome.lines.join("\n")).toMatch(/housing.*2019/);
+  });
+
+  it("an estimate dated 2025 is dropped with a message naming 2026, one dated 2026 is kept", async () => {
+    const estimate = (quote: string) =>
+      run(
+        proposalOf({
+          housing: housing({ min: 400, max: 400, evidence: { url: COST_PAGE, quote } }),
+        }),
+        { getText: async () => quote },
+      );
+    const dropped = await estimate("Updated in 2025: housing costs 400 EUR per month.");
+    expect(dropped.ok).toBe(false);
+    expect(dropped.lines.join("\n")).toMatch(
+      /housing.*oldest year in the quote is 2025, before 2026/,
+    );
+    const kept = await estimate("Updated in 2026: housing costs 400 EUR per month.");
+    expect(kept.ok).toBe(true);
+    expect(Object.keys((await staged()).lines as object)).toEqual(["housing"]);
   });
 
   it("an estimate whose quote and page state no year", async () => {
@@ -338,7 +356,7 @@ describe("a line that fails a check is dropped alone, with its reason", () => {
     const outcome = await run(proposalOf({ food: food() }));
     expect(Object.keys((await staged()).lines as object)).toEqual(["food"]);
     expect(outcome.lines.join("\n")).toMatch(
-      /food.*years: oldest 2025, newest 2025 \(from date quote\)/,
+      /food.*years: oldest 2026, newest 2026 \(from date quote\)/,
     );
   });
 
@@ -349,16 +367,16 @@ describe("a line that fails a check is dropped alone, with its reason", () => {
         housing: housing({
           min: 867,
           max: 867,
-          evidence: { url: COST_PAGE, quote, dateQuote: "Page updated 12 March 2025" },
+          evidence: { url: COST_PAGE, quote, dateQuote: "Page updated 12 March 2026" },
         }),
       }),
-      { getText: async () => `${quote}. Page updated 12 March 2025.` },
+      { getText: async () => `${quote}. Page updated 12 March 2026.` },
     );
     expect(outcome.ok).toBe(false);
     expect(outcome.lines.join("\n")).toMatch(/housing.*oldest year in the quote is 2016/);
   });
 
-  it("uses the oldest year of the quote for the 2023 rule and prints both ends", async () => {
+  it("uses the oldest year of the quote for the 2026 rule and prints both ends", async () => {
     const run2 = (quote: string) =>
       run(
         proposalOf({
@@ -370,12 +388,12 @@ describe("a line that fails a check is dropped alone, with its reason", () => {
         }),
         { getText: async () => quote },
       );
-    const kept = await run2("In 2024, 300 EUR per month; in 2026, 310 EUR per month.");
-    expect(kept.lines.join("\n")).toMatch(/years: oldest 2024, newest 2026 \(from quote\)/);
+    const kept = await run2("In 2026, 300 EUR per month; in 2027, 310 EUR per month.");
+    expect(kept.lines.join("\n")).toMatch(/years: oldest 2026, newest 2027 \(from quote\)/);
     await rm(stagingDir, { recursive: true, force: true });
-    const dropped = await run2("In 2016, 300 EUR per month; in 2025, 310 EUR per month.");
+    const dropped = await run2("In 2024, 300 EUR per month; in 2026, 310 EUR per month.");
     expect(dropped.ok).toBe(false);
-    expect(dropped.lines.join("\n")).toMatch(/oldest year in the quote is 2016/);
+    expect(dropped.lines.join("\n")).toMatch(/oldest year in the quote is 2024/);
   });
 
   it("an estimate with a year somewhere on the page but no date quote", async () => {
