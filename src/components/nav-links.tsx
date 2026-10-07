@@ -24,8 +24,8 @@ export function NavLinks({ label, items }: { label: string; items: readonly NavI
   const count = useSavedCount();
   return (
     <nav aria-label={label}>
-      {/* The links carry 8px of inline padding on phone (12px from md); pull the list back so their text lines up with the wordmark. Four items plus the badge do not fit one row in 343px in French and English, so the list wraps to a second row rather than scroll sideways. */}
-      <ul className="-ms-2 flex flex-wrap gap-x-2 md:ms-0">
+      {/* The links carry 8px of inline padding on phone (12px from md); pull the list back so their text lines up with the wordmark. Below lg the nav has its own row under the logo and the list wraps to a second row rather than scroll sideways when four items plus the badge do not fit (French and English at 343px). From lg the nav sits in-line beside the logo, which already supplies the gap. */}
+      <ul className="-ms-2 flex flex-wrap gap-x-2 md:-ms-3 lg:ms-0">
         {items.map(({ href, label: itemLabel, savedCount, prefetch: noPrefetch }) => {
           const current = isCurrent(pathname, href);
           return (

@@ -1,5 +1,6 @@
 // @vitest-environment jsdom
 import { cleanup, screen, within } from "@testing-library/react";
+import type { ComponentProps } from "react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { NavLinks } from "@/components/nav-links";
@@ -9,10 +10,18 @@ import { renderIntl, shellProps } from "./intl";
 
 const navigation = vi.hoisted(() => ({ pathname: "/" }));
 
-vi.mock("@/i18n/navigation", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("@/i18n/navigation")>()),
-  usePathname: () => navigation.pathname,
-}));
+// The wrapped Link keeps the locale-prefixed href and exposes `prefetch={false}` in the DOM.
+vi.mock("@/i18n/navigation", async (importOriginal) => {
+  const original = await importOriginal<typeof import("@/i18n/navigation")>();
+  const { createElement } = await import("react");
+  const OriginalLink = original.Link;
+  const Link = (props: ComponentProps<typeof OriginalLink>) =>
+    createElement(OriginalLink, {
+      ...props,
+      "data-prefetch": props.prefetch === false ? "false" : undefined,
+    } as ComponentProps<typeof OriginalLink>);
+  return { ...original, Link, usePathname: () => navigation.pathname };
+});
 
 beforeEach(() => window.localStorage.clear());
 afterEach(() => {
@@ -49,6 +58,32 @@ describe("NavLinks", () => {
     const link = screen.getByRole("link", { name: "Bourses" });
     expect(link.getAttribute("href")).toBe("/fr/scholarships");
     expect(link.getAttribute("aria-current")).toBe("page");
+  });
+
+  it("never prefetches the Scholarships page", () => {
+    renderIntl(<NavLinks {...shellProps("fr").nav} />, "fr");
+    expect(screen.getByRole("link", { name: "Bourses" }).getAttribute("data-prefetch")).toBe(
+      "false",
+    );
+    cleanup();
+    seedSaved(2);
+    renderIntl(<NavLinks {...shellProps("fr").nav} />, "fr");
+    expect(screen.getByRole("link", { name: "Bourses" }).getAttribute("data-prefetch")).toBe(
+      "false",
+    );
+  });
+
+  it("prefetches the plan only once a program is saved", () => {
+    renderIntl(<NavLinks {...shellProps("en").nav} />, "en");
+    expect(screen.getByRole("link", { name: "My plan" }).getAttribute("data-prefetch")).toBe(
+      "false",
+    );
+    cleanup();
+    seedSaved(2);
+    renderIntl(<NavLinks {...shellProps("en").nav} />, "en");
+    expect(
+      screen.getByRole("link", { name: "My plan 2 saved" }).getAttribute("data-prefetch"),
+    ).toBeNull();
   });
 
   it("keeps a nested page marked as current", () => {
