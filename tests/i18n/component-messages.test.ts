@@ -9,6 +9,7 @@ import { LOCALES, namespaceMessages, placeholderNames } from "./trust-wording";
 
 const NAMESPACES = ["costBreakdown", "reasonList", "matchCard"] as const;
 const CATALOGS = { fr, en, ar };
+const NUMBEO_NOTE_KEY = "costBreakdown.numbeoNote";
 const OFFICIAL_WORD = { en: /official/i, fr: /officiel/i, ar: /رسمي/u };
 // "ar-EG" prints Arabic-Indic digits under every CLDR: it stands in for the worst browser.
 const WORST_ARABIC_LOCALE = "ar-EG" as string as "ar";
@@ -44,7 +45,11 @@ describe.each(LOCALES)("component messages (%s)", (locale) => {
   });
 
   it("never words an estimate, a cost or a card label as official", () => {
-    for (const [key, value] of messages) expect(value, key).not.toMatch(OFFICIAL_WORD[locale]);
+    for (const [key, value] of messages) {
+      // The Numbeo note says the site is NOT official; tests/i18n/numbeo-messages.test.ts pins that negation.
+      if (key === NUMBEO_NOTE_KEY) continue;
+      expect(value, key).not.toMatch(OFFICIAL_WORD[locale]);
+    }
   });
 
   it("has no ICU number formatting (#, number, date, time)", () => {

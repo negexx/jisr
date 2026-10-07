@@ -200,6 +200,7 @@ export function MatchCard({
             budgetProvided={budgetProvided}
             monthsLabel={monthsLabel}
             variant="compact"
+            numbeoPlace={model}
           />
         </Fact>
       </dl>

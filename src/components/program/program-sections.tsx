@@ -265,6 +265,11 @@ export function CostsSection({ cost, data }: { cost: CostEstimate; data: Program
         }
         textOf={data.text}
         caption={t("caption")}
+        numbeoPlace={{
+          country: data.program.country,
+          citySlug: data.program.city,
+          cityName: data.institution?.city.name ?? data.program.city,
+        }}
       />
     </Section>
   );

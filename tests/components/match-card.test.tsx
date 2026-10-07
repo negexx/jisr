@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { cleanup, screen, within } from "@testing-library/react";
+import { act, cleanup, screen, within } from "@testing-library/react";
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 
 import { MatchCard } from "@/components/match-card";
@@ -511,5 +511,61 @@ describe("MatchCard: density and layout", () => {
     const { container } = renderCard(model, "ar");
     const bdis = [...container.querySelectorAll("header p > bdi")].map((bdi) => bdi.textContent);
     expect(bdis).toEqual([model.institutionName, model.cityName]);
+  });
+});
+
+describe("MatchCard: Numbeo link", () => {
+  function withoutHousing(
+    model: MatchCardModel,
+    overrides: Partial<MatchCardModel>,
+  ): MatchCardModel {
+    return {
+      ...model,
+      ...overrides,
+      cost: {
+        ...model.cost,
+        lines: model.cost.lines.map((line) =>
+          line.category === "housing"
+            ? {
+                ...line,
+                status: "missing" as const,
+                firstYear: null,
+                per: null,
+                scope: null,
+                fact: null,
+              }
+            : line,
+        ),
+      },
+    };
+  }
+
+  it("links a verified city page inside the cost lines when a living line is missing", async () => {
+    const base = journey.card("fr", E2E_SLUGS.ok);
+    const model = withoutHousing(base, { country: "DE", citySlug: "aachen", cityName: "Aachen" });
+    const { container, findByTestId } = renderCard(model, "fr");
+    await findByTestId("numbeo-link");
+    const anchor = container.querySelector<HTMLAnchorElement>('a[href*="numbeo.com"]');
+    expect(anchor?.getAttribute("href")).toBe("https://www.numbeo.com/cost-of-living/in/Aachen");
+    expect(anchor?.closest("details")).not.toBeNull();
+  });
+
+  it("links the country page for a city that is not verified", async () => {
+    const base = journey.card("en", E2E_SLUGS.ok);
+    const model = withoutHousing(base, { country: "FR", citySlug: "xx-unverified" });
+    const { container, findByTestId } = renderCard(model, "en");
+    await findByTestId("numbeo-link");
+    expect(container.querySelector("a[href*='numbeo.com']")?.getAttribute("href")).toBe(
+      "https://www.numbeo.com/cost-of-living/country_result.jsp?country=France",
+    );
+  });
+
+  it("shows no link for the synthetic test country", async () => {
+    const base = journey.card("en", E2E_SLUGS.ok);
+    const { container } = renderCard(withoutHousing(base, { country: "XX" }), "en");
+    await act(async () => {
+      await Promise.resolve();
+    });
+    expect(container.querySelector("a[href*='numbeo.com']")).toBeNull();
   });
 });

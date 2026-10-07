@@ -1,18 +1,24 @@
 // Shared, no "use client": needs the namespaces costBreakdown, domain.cost and domain.budgetFit plus SourceBadge's. The caller passes `monthsLabel` already formatted (Latin digits): numbers are never formatted inside a message.
 import { CircleAlert, CircleHelp } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { useId } from "react";
+import { lazy, Suspense, useId } from "react";
 
 import type { CostCategory, CostEstimate, CostLine } from "@/domain/types";
 import { formatMoneyRange } from "@/lib/format";
 import type { DataText } from "@/lib/snapshot/text";
 import { DISCLOSURE_SUMMARY_CLASS, DisclosureChevron } from "./disclosure-chevron";
+import type { NumbeoPlace } from "./numbeo-link";
 import { SourceBadge } from "./source-badge";
 
 type Variant = "compact" | "full";
 
 const CATEGORIES_WITH_NOTE: readonly CostCategory[] = ["housing", "food"];
 const COUNTED_PERS = ["month", "semester", "year"] as const;
+// The city list behind the link is a lazy chunk: only a card or page with a missing living line pays for it.
+const NumbeoLink = lazy(() =>
+  import("./numbeo-link").then((module) => ({ default: module.NumbeoLink })),
+);
+const LIVING_CATEGORIES: readonly CostCategory[] = ["housing", "food", "transport"];
 
 function isCountedPer(per: CostLine["per"]): per is (typeof COUNTED_PERS)[number] {
   return per !== null && (COUNTED_PERS as readonly string[]).includes(per);
@@ -141,6 +147,7 @@ export function CostBreakdown({
   textOf,
   variant = "full",
   caption,
+  numbeoPlace,
 }: {
   cost: CostEstimate;
   budgetProvided: boolean;
@@ -148,6 +155,8 @@ export function CostBreakdown({
   textOf?: (key: string) => DataText | undefined;
   variant?: Variant;
   caption?: string;
+  // Offered only when a living-cost line (housing, food, transport) has no figure.
+  numbeoPlace?: NumbeoPlace | null;
 }) {
   const tCost = useTranslations("domain.cost");
   const tFit = useTranslations("domain.budgetFit");
@@ -155,6 +164,15 @@ export function CostBreakdown({
   const noteId = `${useId()}-months-note`;
   const compact = variant === "compact";
   const hasTotal = cost.totals.length > 0;
+  const livingLineMissing = cost.lines.some(
+    (line) => line.status === "missing" && LIVING_CATEGORIES.includes(line.category),
+  );
+  const numbeo =
+    numbeoPlace !== null && numbeoPlace !== undefined && livingLineMissing ? (
+      <Suspense fallback={null}>
+        <NumbeoLink place={numbeoPlace} />
+      </Suspense>
+    ) : null;
 
   const lines = (
     <ul className="divide-y divide-border">
@@ -197,12 +215,14 @@ export function CostBreakdown({
               <span className="text-base underline underline-offset-4">{t("seeLines")}</span>
             </summary>
             {lines}
+            {numbeo}
           </details>
         </>
       ) : (
         <>
           {lines}
           {hasTotal ? <TotalRows cost={cost} /> : null}
+          {numbeo}
           <p id={noteId} className="text-sm text-muted-foreground">
             {tCost("tenMonthNote", { months: monthsLabel })}
           </p>
