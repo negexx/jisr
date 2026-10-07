@@ -929,4 +929,64 @@ describe("a period word inside a duration phrase", () => {
     expect(outcome.ok).toBe(true);
     expect(outcome.lines.join("\n")).not.toMatch(/period not stated/);
   });
+
+  it("quotes the ignored phrase in the note, so the auditor sees what was skipped", async () => {
+    const quote =
+      "40,00 euro per i permessi di soggiorno di durata superiore a tre mesi e inferiore o pari a un anno";
+    await run(
+      proposalOf({
+        application_visa: insurance({
+          min: 40,
+          max: 40,
+          per: "once",
+          evidence: { url: FEES_PAGE, quote },
+        }),
+      }),
+      { getText: async () => quote },
+    );
+    expect((await staged())._review).toMatchObject({
+      notes: expect.stringContaining("ignored duration phrase: 'di durata superiore a tre mesi"),
+    });
+    expect((await staged())._review).toMatchObject({
+      notes: expect.stringContaining("inferiore o pari a un anno'"),
+    });
+  });
+});
+
+describe("a duration cue never swallows the amount's own period", () => {
+  const withQuote = (value: number, quote: string, per: string, currency = "EUR") =>
+    run(
+      proposalOf({
+        insurance: insurance({
+          min: value,
+          max: value,
+          per,
+          currency,
+          evidence: { url: FEES_PAGE, quote },
+        }),
+      }),
+      { getText: async () => quote },
+    );
+
+  it.each([
+    ["Health insurance for students costs 120 EUR a month.", 120, "year"],
+    ["You should budget for about 850 EUR a month.", 850, "year"],
+    ["Student housing costs 4,800 EUR for a year.", 4800, "month"],
+    ["The permit is valid for a year at 120 EUR a month.", 120, "year"],
+  ])("drops %j (amount %s, proposed per %s)", async (quote, value, per) => {
+    const outcome = await withQuote(value, quote, per);
+    expect(outcome.ok).toBe(false);
+    expect(outcome.lines.join("\n")).toMatch(/insurance/);
+  });
+
+  it.each([
+    ["Rent is about 400 EUR per month in a shared flat.", 400, "month"],
+    ["The CVEC contribution is 105 EUR per year for all students.", 105, "year"],
+    ["Groceries cost about 300 EUR per month in the Netherlands.", 300, "month"],
+    ["Il faut payer 100 € pour le dossier de demande.", 100, "once"],
+    ["The permit is valid for a year at 120 EUR a month.", 120, "month"],
+  ])("keeps %j (amount %s, proposed per %s)", async (quote, value, per) => {
+    const outcome = await withQuote(value, quote, per);
+    expect(outcome.ok).toBe(true);
+  });
 });

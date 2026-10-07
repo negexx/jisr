@@ -157,19 +157,35 @@ const PERIODS = Object.keys(PERIOD_WORDS) as Period[];
 
 // "di durata superiore a tre mesi e inferiore o pari a un anno", "valid for one month", "for a stay of
 // one year": how long something lasts, not what the amount is paid per. Blanked out (same length, so
-// positions still line up) before the period words are read.
+// positions still line up) before the period words are read. The cues are explicit duration words:
+// a bare "for" / "pour" is not one ("costs 120 EUR for a year" is the amount's own period).
 const DURATION =
-  /(?<!\p{L})(?:di durata|durata|durée|duration|lasting|valid for|for|pour)(?!\p{L})[^.;:]{0,80}(?<!\p{L})(?:an?|un|une|one)\s+(?:years?|anno|ans?|months?|mese|mois)(?!\p{L})/gu;
+  /(?<!\p{L})(?:di durata|durata|durée|duration|lasting|valid for|for a stay of|pour un séjour de)(?!\p{L})[^.;:]{0,80}(?<!\p{L})(?:an?|un|une|one)\s+(?:years?|anno|ans?|months?|mese|mois)(?!\p{L})/gu;
+// A phrase this close after an amount ("120 EUR valid for one year") describes that amount.
+const MAX_GAP_AFTER_AMOUNT = 12;
 
-type PeriodReading = { text: string; periods: Period[]; durationIgnored: boolean };
+type PeriodReading = { text: string; periods: Period[]; ignoredDurations: string[] };
 
-function readPeriods(quote: string): PeriodReading {
+// A duration phrase is blanked only if it holds no amount and does not directly follow one: an
+// amount's own period must never be read as a duration.
+function readPeriods(quote: string, amounts: Span[]): PeriodReading {
   const normalised = normalizeForMatch(quote);
-  const text = normalised.replace(DURATION, (m) => " ".repeat(m.length));
+  const ignoredDurations: string[] = [];
+  const text = normalised.replace(DURATION, (phrase: string, offset: number) => {
+    const end = offset + phrase.length;
+    const about = amounts.some(
+      (a) =>
+        (a.start < end && a.end > offset) ||
+        (offset >= a.end && offset - a.end <= MAX_GAP_AFTER_AMOUNT),
+    );
+    if (about) return phrase;
+    ignoredDurations.push(phrase.trim());
+    return " ".repeat(phrase.length);
+  });
   return {
     text,
     periods: PERIODS.filter((p) => PERIOD_WORDS[p].test(text)),
-    durationIgnored: text !== normalised,
+    ignoredDurations,
   };
 }
 
@@ -234,7 +250,8 @@ export function checkLine(line: LineInput, pageContent: string): LineCheck {
     };
 
   const notes: string[] = [];
-  const reading = readPeriods(quote);
+  const reading = readPeriods(quote, amounts);
+  const ignored = reading.ignoredDurations.map((phrase) => `ignored duration phrase: '${phrase}'`);
   if (reading.periods.length > 0 && !reading.periods.includes(line.per))
     return {
       ok: false,
@@ -242,8 +259,9 @@ export function checkLine(line: LineInput, pageContent: string): LineCheck {
     };
   if (reading.periods.length === 0)
     notes.push(
-      `period not stated in quote (per ${line.per} comes from the proposal${reading.durationIgnored ? "; a period word inside a duration phrase was ignored" : ""})`,
+      `period not stated in quote (per ${line.per} comes from the proposal${ignored.length > 0 ? `; ${ignored.join("; ")}` : ""})`,
     );
+  else notes.push(...ignored);
   if (reading.periods.length > 1) {
     const next = periodsNextTo(reading.text, amounts);
     if (next.length > 0 && !next.includes(line.per))
