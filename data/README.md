@@ -28,7 +28,7 @@ Every record other than the vocabulary collections (`countries`, `fields`, `subj
 
 ## Tuition
 
-A program has a single `tuition` figure, by convention the fee that applies to the Release 1 audience: students from outside the EU/EEA (for example Moroccan students). It must be an official published fee (`info_kind: official`); when the university does not publish one, leave the value `null` and the app shows it as to-be-checked. An estimate is never accepted here, because it would be turned into a single-number range.
+A program has a `tuition` figure (one fee or an official range, ADR 0010), by convention the fee that applies to the Release 1 audience: students from outside the EU/EEA (for example Moroccan students). It must be an official published fee (`info_kind: official`); when the university does not publish one, leave the value `null` and the app shows it as to-be-checked. An estimate is never accepted here, because it would be turned into a single-number range. A range needs one quote that states both the lowest and the highest fee; `basis: income_based` only when the quote says the fee depends on income (for example the ISEE). Never an estimate.
 
 ## Intakes and deadlines
 
@@ -42,7 +42,7 @@ pnpm data:check --strict     # additionally fail when any fact is stale
 pnpm data:build              # publish immutable JSON snapshots (runs after data:check)
 ```
 
-`data:check` fails on invalid or provenance-less records, dangling references, unknown keys, future dates, a non-null program `tuition` that is not `official`, and `complete` coverage with no rules. Aging and stale facts are reported, and only fail the run under `--strict`. It also warns (without failing) about unused sources, `complete` coverage with a `manual_check` rule, a `complete` program that has teaching languages but no `language_proficiency` rule, a `language_proficiency` rule that requires a certificate but lists no `acceptedTests`, and a cost profile whose `city` matches no institution city.
+`data:check` fails on invalid or provenance-less records, dangling references, unknown keys, future dates, a non-null program `tuition` that is not `official`, an invalid tuition range (maximum below the minimum, a basis without a maximum), and `complete` coverage with no rules. Aging and stale facts are reported, and only fail the run under `--strict`. It also warns (without failing) about unused sources, `complete` coverage with a `manual_check` rule, a `complete` program that has teaching languages but no `language_proficiency` rule, a `language_proficiency` rule that requires a certificate but lists no `acceptedTests`, and a cost profile whose `city` matches no institution city.
 
 ## Importing candidates (`data-staging/`)
 
