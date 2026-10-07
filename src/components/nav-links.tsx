@@ -6,7 +6,13 @@ import { cn } from "@/lib/utils";
 
 // `savedCount.template` is the item's message with a `{count}` placeholder, filled in here with
 // the number of saved programs (read from this device after mount, so the static HTML has no badge).
-export type NavItem = { href: string; label: string; savedCount?: { template: string } };
+export type NavItem = {
+  href: string;
+  label: string;
+  savedCount?: { template: string };
+  // false: never prefetch this page's code (the link sits on every page; the page is not the likely next step)
+  prefetch?: false;
+};
 
 function isCurrent(pathname: string, href: string): boolean {
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -18,9 +24,9 @@ export function NavLinks({ label, items }: { label: string; items: readonly NavI
   const count = useSavedCount();
   return (
     <nav aria-label={label}>
-      {/* The links carry 8px of inline padding on phone (12px from md, to fit the French labels plus the badge in 343px); pull the list back so their text lines up with the wordmark. */}
-      <ul className="-ms-2 flex gap-2 md:ms-0">
-        {items.map(({ href, label: itemLabel, savedCount }) => {
+      {/* The links carry 8px of inline padding on phone (12px from md); pull the list back so their text lines up with the wordmark. Four items plus the badge do not fit one row in 343px in French and English, so the list wraps to a second row rather than scroll sideways. */}
+      <ul className="-ms-2 flex flex-wrap gap-x-2 md:ms-0">
+        {items.map(({ href, label: itemLabel, savedCount, prefetch: noPrefetch }) => {
           const current = isCurrent(pathname, href);
           return (
             <li key={href}>
@@ -28,7 +34,11 @@ export function NavLinks({ label, items }: { label: string; items: readonly NavI
                 href={href}
                 // The plan only has something to show once a program is saved, so until then its
                 // page code (the biggest of the three) is not prefetched on every other page.
-                prefetch={savedCount !== undefined && count === 0 ? false : undefined}
+                prefetch={
+                  noPrefetch === false || (savedCount !== undefined && count === 0)
+                    ? false
+                    : undefined
+                }
                 aria-current={current ? "page" : undefined}
                 className={cn(
                   "inline-flex min-h-12 items-center whitespace-nowrap border-b-2 px-2 text-base font-medium transition-colors md:px-3",

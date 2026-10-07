@@ -27,6 +27,7 @@ export async function SiteHeader({ locale }: { locale: AppLocale }) {
             items={[
               { href: "/profile", label: tNav("profile") },
               { href: "/matches", label: tNav("matches") },
+              { href: "/scholarships", label: tNav("scholarships"), prefetch: false },
               {
                 href: "/plan",
                 label: tNav("plan"),

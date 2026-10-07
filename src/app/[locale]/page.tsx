@@ -45,6 +45,16 @@ export default async function HomePage({ params }: Props) {
             <HomeMatchesLink label={t("matchesCta")} />
           </div>
           <p className="text-sm text-muted-foreground sm:col-span-2">{t("ctaNote")}</p>
+          <p className="sm:col-span-2">
+            <Link
+              href="/scholarships"
+              prefetch={false}
+              className="inline-flex min-h-11 items-center gap-1 text-base font-medium text-primary underline underline-offset-4"
+            >
+              {t("scholarshipsCta")}
+              <ArrowRight aria-hidden className="size-4 rtl:rotate-180" />
+            </Link>
+          </p>
         </div>
       </section>
       <section aria-labelledby="questions" className="flex flex-col gap-4 text-start">

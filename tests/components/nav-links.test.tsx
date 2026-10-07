@@ -43,6 +43,14 @@ describe("NavLinks", () => {
     expect(matches.getAttribute("href")).toBe("/fr/matches");
   });
 
+  it("renders the Scholarships item and marks it current", () => {
+    navigation.pathname = "/scholarships";
+    renderIntl(<NavLinks {...shellProps("fr").nav} />, "fr");
+    const link = screen.getByRole("link", { name: "Bourses" });
+    expect(link.getAttribute("href")).toBe("/fr/scholarships");
+    expect(link.getAttribute("aria-current")).toBe("page");
+  });
+
   it("keeps a nested page marked as current", () => {
     navigation.pathname = "/profile/review";
     renderIntl(<NavLinks {...shellProps("en").nav} />, "en");
@@ -97,17 +105,21 @@ describe("NavLinks", () => {
     seedSaved(2);
     renderIntl(<NavLinks {...shellProps(locale).nav} />, locale);
     const links = screen.getAllByRole("link");
-    expect(links).toHaveLength(3);
+    expect(links).toHaveLength(4);
     for (const link of links) {
       expect(link.className).toContain("whitespace-nowrap");
       expect(link.className).toContain("min-h-12");
-      // 8px on phone (the three French labels plus the badge must fit in 343px), 12px from md.
+      // 8px on phone, 12px from md.
       expect(link.className).toContain("px-2");
       expect(link.className).toContain("md:px-3");
     }
+    // Four French or English labels plus the badge do not fit one row in 343px (measured on the dev
+    // server): the list wraps to a second row instead of scrolling the page sideways.
+    const list = links[0]?.closest("ul");
+    expect(list?.className).toContain("flex-wrap");
     // The list is pulled back by the phone padding so the first label lines up with the wordmark.
-    expect(links[0]?.closest("ul")?.className).toContain("-ms-2");
-    const badge = links[2]?.querySelector('[aria-hidden="true"]');
+    expect(list?.className).toContain("-ms-2");
+    const badge = links[3]?.querySelector('[aria-hidden="true"]');
     expect(badge?.className).toContain("ms-1.5");
     expect(badge?.className).toContain("px-1.5");
   });
