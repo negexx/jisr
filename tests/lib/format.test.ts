@@ -135,6 +135,12 @@ describe("money scale does not depend on the ICU build", () => {
     expect(formatMoney(150000, "HUF", locale)).not.toMatch(DECIMAL_PLACES);
     expect(formatMoneyRange(100000, 150000, "HUF", locale)).not.toMatch(DECIMAL_PLACES);
   });
+
+  it.each(LOCALES)("keeps the EUR scale and whole-amount rule in %s", (locale) => {
+    expect(visible(formatMoney(410000, "EUR", locale))).not.toMatch(DECIMAL_PLACES);
+    expect(visible(formatMoney(3780, "EUR", locale))).toMatch(/37[.,]80/);
+    expect(visible(formatMoneyRange(25000, 30000, "EUR", locale))).not.toMatch(DECIMAL_PLACES);
+  });
 });
 
 describe("formatMoney", () => {
@@ -147,9 +153,9 @@ describe("formatMoney", () => {
   });
 
   it.each([
-    ["fr", "0,00 €"],
-    ["en", "€0.00"],
-    ["ar", "0,00 €"],
+    ["fr", "0 €"],
+    ["en", "€0"],
+    ["ar", "0 €"],
   ] as const)("formats zero in %s", (locale, expected) => {
     expect(visible(formatMoney(0, "EUR", locale))).toBe(expected);
   });
@@ -175,9 +181,38 @@ describe("formatMoney", () => {
     expect(visible(formatMoney(150000, "HUF", "en"))).toBe("HUF 150,000");
   });
 
-  it("leaves EUR output unchanged", () => {
-    expect(visible(formatMoney(80000, "EUR", "en"))).toBe("€800.00");
-    expect(visible(formatMoney(80000, "EUR", "fr"))).toBe("800,00 €");
+  it.each([
+    ["fr", "4 100 €"],
+    ["en", "€4,100"],
+    ["ar", "4.100 €"],
+  ] as const)("shows a whole EUR amount without cents in %s", (locale, expected) => {
+    expect(visible(formatMoney(410000, "EUR", locale))).toBe(expected);
+  });
+
+  it.each([
+    ["fr", "374,40 €"],
+    ["en", "€374.40"],
+    ["ar", "374,40 €"],
+  ] as const)("keeps cents when the amount has them in %s", (locale, expected) => {
+    expect(visible(formatMoney(37440, "EUR", locale))).toBe(expected);
+  });
+
+  it.each([
+    ["fr", "37,80 €"],
+    ["en", "€37.80"],
+    ["ar", "37,80 €"],
+  ] as const)("pads a single fraction digit to two in %s", (locale, expected) => {
+    expect(visible(formatMoney(3780, "EUR", locale))).toBe(expected);
+  });
+
+  it("keeps cents of one cent", () => {
+    expect(visible(formatMoney(1, "EUR", "en"))).toBe("€0.01");
+  });
+
+  it("shows HUF unchanged as whole forints", () => {
+    expect(visible(formatMoney(15000000, "HUF", "fr"))).toBe("15 000 000 HUF");
+    expect(visible(formatMoney(15000000, "HUF", "en"))).toBe("HUF 15,000,000");
+    expect(visible(formatMoney(15000000, "HUF", "ar"))).toBe("15.000.000 HUF");
   });
 
   it("still formats a well-formed currency that is not in the table", () => {
@@ -204,11 +239,33 @@ describe("formatMoney", () => {
 
 describe("formatMoneyRange", () => {
   it.each([
-    ["fr", "10,00–20,00 €"],
-    ["en", "€10.00 – €20.00"],
-    ["ar", "10,00–20,00 €"],
-  ] as const)("formats a range of EUR minor units in %s", (locale, expected) => {
-    expect(visible(formatMoneyRange(1000, 2000, "EUR", locale))).toBe(expected);
+    ["fr", "250–300 €"],
+    ["en", "€250 – €300"],
+    ["ar", "250–300 €"],
+  ] as const)("formats a whole range of EUR without cents in %s", (locale, expected) => {
+    expect(visible(formatMoneyRange(25000, 30000, "EUR", locale))).toBe(expected);
+  });
+
+  it.each([
+    ["fr", "37,80–40,00 €"],
+    ["en", "€37.80 – €40.00"],
+    ["ar", "37,80–40,00 €"],
+  ] as const)("gives both ends cents when either has them (low end) in %s", (locale, expected) => {
+    expect(visible(formatMoneyRange(3780, 4000, "EUR", locale))).toBe(expected);
+  });
+
+  it.each([
+    ["fr", "40,00–42,50 €"],
+    ["en", "€40.00 – €42.50"],
+    ["ar", "40,00–42,50 €"],
+  ] as const)("gives both ends cents when either has them (high end) in %s", (locale, expected) => {
+    expect(visible(formatMoneyRange(4000, 4250, "EUR", locale))).toBe(expected);
+  });
+
+  it("keeps HUF ranges as whole forints", () => {
+    expect(visible(formatMoneyRange(15000000, 20000000, "HUF", "fr"))).toBe(
+      "15 000 000–20 000 000 HUF",
+    );
   });
 
   it.each([
@@ -225,6 +282,10 @@ describe("formatMoneyRange", () => {
     const equal = formatMoneyRange(1000, 1000, "EUR", locale);
     expect(equal).toBe(formatMoney(1000, "EUR", locale));
     expect(equal).not.toMatch(/[~≃]/);
+  });
+
+  it("drops cents from an equal whole pair", () => {
+    expect(visible(formatMoneyRange(1000, 1000, "EUR", "en"))).toBe("€10");
   });
 
   it.each(LOCALES)("keeps Latin digits in %s", (locale) => {
@@ -344,8 +405,8 @@ describe("direction marks", () => {
       ["EUR", "JPY", "XTS"].map((currency) => [locale, currency] as const),
     ),
   )("formatMoneyRange puts the minimum before the maximum in %s for %s", (locale, currency) => {
-    const digits = formatMoneyRange(810000, 1270000, currency, locale).replace(/[^0-9]/g, "");
-    expect(digits).toBe("8100001270000");
+    const digits = formatMoneyRange(810001, 1270001, currency, locale).replace(/[^0-9]/g, "");
+    expect(digits).toBe("8100011270001");
   });
 
   it.each(LOCALES)("formatGrade returns no bidi marks in %s", (locale) => {

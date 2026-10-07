@@ -60,20 +60,32 @@ function assertMinorAmount(minor: number): void {
   }
 }
 
-function currencyFormat(currency: string, locale: AppLocale): Intl.NumberFormat {
+// Whole major units print without trailing zero cents ("4 100 €"); any cents print at the full scale
+// ("37,80 €", never "37,8"). Both bounds stay pinned to `digits` so the ICU build cannot change the scale.
+function currencyFormat(
+  currency: string,
+  locale: AppLocale,
+  withCents: boolean,
+): Intl.NumberFormat {
   const digits = minorUnitDigits(currency);
   return new Intl.NumberFormat(intlLocale(locale), {
     style: "currency",
     currency,
-    minimumFractionDigits: digits,
+    minimumFractionDigits: withCents ? digits : 0,
     maximumFractionDigits: digits,
   });
+}
+
+function hasCents(minor: number, currency: string): boolean {
+  return minor % 10 ** minorUnitDigits(currency) !== 0;
 }
 
 export function formatMoney(minor: number, currency: string, locale: AppLocale): string {
   assertMinorAmount(minor);
   return withoutDirectionMarks(
-    currencyFormat(currency, locale).format(minor / 10 ** minorUnitDigits(currency)),
+    currencyFormat(currency, locale, hasCents(minor, currency)).format(
+      minor / 10 ** minorUnitDigits(currency),
+    ),
   );
 }
 
@@ -91,8 +103,10 @@ export function formatMoneyRange(
   // ICU collapses equal ends to "~€10.00"; a plain amount reads better than an approximation sign.
   if (minMinor === maxMinor) return formatMoney(minMinor, currency, locale);
   const divisor = 10 ** minorUnitDigits(currency);
+  // Both ends share one scale, so "37,80–40,00 €" reads consistently instead of "37,80–40 €".
+  const withCents = hasCents(minMinor, currency) || hasCents(maxMinor, currency);
   return withoutDirectionMarks(
-    currencyFormat(currency, locale).formatRange(minMinor / divisor, maxMinor / divisor),
+    currencyFormat(currency, locale, withCents).formatRange(minMinor / divisor, maxMinor / divisor),
   );
 }
 
