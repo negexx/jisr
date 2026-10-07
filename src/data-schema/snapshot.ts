@@ -19,7 +19,8 @@ import type {
   TextKey,
 } from "./resolved";
 
-export const SNAPSHOT_FORMAT_VERSION = 1;
+// 2 since the official fee range (tuition.maxAmountMinor, tuition.basis); see ADR 0010.
+export const SNAPSHOT_FORMAT_VERSION = 2;
 export const SHARD_GZIP_BUDGET_BYTES = 300 * 1024; // build fails above this
 export const shardNames = {
   core: () => "core",
@@ -83,7 +84,8 @@ export const ManifestShardSchema = z.strictObject({
   gzipBytes: z.number().int().positive(),
 });
 export const ManifestSchema = z.strictObject({
-  formatVersion: z.literal(1),
+  // 2 since the official fee range (tuition.maxAmountMinor, tuition.basis); see ADR 0010.
+  formatVersion: z.literal(2),
   snapshotVersion: z.string().regex(/^[0-9a-f]{12}$/),
   generatedAt: z.string(), // ISO 8601 datetime; excluded from all hashes
   locales: z.array(LocaleSchema).min(1), // always ["fr","en","ar"]

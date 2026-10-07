@@ -373,7 +373,7 @@ describe("integrity", () => {
 
   it("rejects an invalid manifest as a format error", async () => {
     const server = createFakeServer(base);
-    server.serve(MANIFEST_URL, JSON.stringify({ ...baseManifest, formatVersion: 2 }));
+    server.serve(MANIFEST_URL, JSON.stringify({ ...baseManifest, formatVersion: 3 }));
     const error = await snapshotError(clientFor(server).load(matchesPlan, "fr"));
     expect(error.kind).toBe("format");
   });

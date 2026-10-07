@@ -34,7 +34,7 @@ describe("parseManifest", () => {
   });
 
   it("rejects an unknown formatVersion as a format error", () => {
-    expect(formatError(() => parseManifest({ ...manifest, formatVersion: 2 })).kind).toBe("format");
+    expect(formatError(() => parseManifest({ ...manifest, formatVersion: 3 })).kind).toBe("format");
   });
 
   it("rejects a shard file outside the s/<name>.<hash>.json pattern", () => {
