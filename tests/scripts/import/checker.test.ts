@@ -29,6 +29,30 @@ describe("claimText", () => {
     expect(claimText("applicationChannel", "de-uni-assist-vpd")).toMatch(/uni-assist/i);
   });
 
+  it("states a fee range with both ends, and the income basis when there is one", () => {
+    expect(
+      claimText("tuition", {
+        amountMinor: 15600,
+        maxAmountMinor: 260000,
+        currency: "EUR",
+        period: "year",
+        basis: "income_based",
+      }),
+    ).toBe(
+      "The tuition fee for a student from outside the EU/EEA ranges from 156 EUR to 2600 EUR per year, depending on household income.",
+    );
+    expect(
+      claimText("tuition", {
+        amountMinor: 15600,
+        maxAmountMinor: 260000,
+        currency: "EUR",
+        period: "year",
+      }),
+    ).toBe(
+      "The tuition fee for a student from outside the EU/EEA ranges from 156 EUR to 2600 EUR per year.",
+    );
+  });
+
   it("lists the dates of an intake with what each one is", () => {
     const text = claimText("intakes", [
       { startDate: "2027-09-01", applicationOpens: null, applicationDeadline: "2027-05-01" },

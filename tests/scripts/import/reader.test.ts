@@ -650,6 +650,11 @@ describe("keepChecked", () => {
 });
 
 describe("tuition wording in the instruction", () => {
+  it("allows a range only when the page states both a lowest and a highest fee", () => {
+    expect(INSTRUCTION).toContain("maxAmountMinor");
+    expect(INSTRUCTION).toMatch(/if the page states BOTH a lowest and a highest fee/);
+    expect(INSTRUCTION).toMatch(/never write null for them/);
+  });
   it("shows EUR in hundredths and HUF as whole forints", () => {
     expect(INSTRUCTION).toMatch(/EUR 14,650 = 1465000/);
     expect(INSTRUCTION).toMatch(/HUF has no minor unit: HUF 1,500,000 = 1500000/);

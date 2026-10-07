@@ -398,18 +398,58 @@ function currencyBesideAmount(before: string, after: string): string | null {
   return null;
 }
 
-function amountHasCurrency(amountMajor: number, quote: string, currency: string): boolean {
+// Every currency written beside an occurrence of the amount.
+function amountCurrencies(amountMajor: number, quote: string): Set<string> {
   const q = normalizeForMatch(quote);
+  const found = new Set<string>();
   for (const m of q.matchAll(amountPattern(amountMajor))) {
     const start = m.index ?? 0;
     const end = start + m[0].length;
-    const found = currencyBesideAmount(
+    const beside = currencyBesideAmount(
       q.slice(Math.max(0, start - 14), start),
       q.slice(end, end + 14),
     );
-    if (found === currency) return true;
+    if (beside !== null) found.add(beside);
   }
-  return false;
+  return found;
+}
+
+// "income_based" needs the quote to say the fee depends on income (the Italian ISEE indicator, or
+// the plain word in the languages the sources use); without it a range is just a range.
+export const INCOME_WORDS = /\b(?:isee|reddito|income|revenu|revenus|einkommen|inkomen)\b/i;
+
+// The lowest edge of a range may be 0 ("from 0 to 2,600"): the quote then has to name the free tier.
+const FREE_TIER = /\b(?:0|zero|free|no fee|esente|gratuit)\b/i;
+
+// One fee amount against the quote. `lenientCurrency` is for an edge of a range: Italian pages write
+// "da 156 a 2.600 euro", so the lowest edge may have no currency mark beside it (another currency
+// beside it still fails); the range as a whole must show the currency beside at least one edge.
+function checkFeeAmount(
+  amountMinor: number,
+  quote: string,
+  minStudyYear: number,
+  currency: string | undefined,
+  lenientCurrency: boolean,
+): { check: FactCheck; currencySeen: boolean } {
+  const result = (check: FactCheck, currencySeen = false) => ({ check, currencySeen });
+  if (amountMinor === 0)
+    return result(
+      NO_FEE.test(quote) ? ok : fail("a zero fee needs a quote saying there are no tuition fees"),
+    );
+  // Without a currency the amount is read as euros (hundredths), the only currency tuition came in
+  // before the currency was passed.
+  const amountMajor = fromMinor(amountMinor, currency ?? "EUR");
+  if (!amountInQuote(amountMajor, quote))
+    return result(fail(`the amount ${amountMajor} does not appear in the quote`));
+  let currencySeen = false;
+  if (currency !== undefined && CURRENCY_TOKENS[currency] !== undefined) {
+    const beside = amountCurrencies(amountMajor, quote);
+    currencySeen = beside.has(currency);
+    if (!currencySeen && !(lenientCurrency && beside.size === 0))
+      return result(fail(`the quote does not write the amount in the currency ${currency}`));
+  }
+  const stale = staleStudyYear(amountMajor, quote, minStudyYear);
+  return result(stale === null ? ok : fail(stale), currencySeen);
 }
 
 export function checkTuition(
@@ -417,24 +457,28 @@ export function checkTuition(
   quote: string,
   minStudyYear: number,
   currency?: string,
+  maxAmountMinor?: number,
+  basis?: "income_based",
 ): FactCheck {
-  if (amountMinor === 0)
-    return NO_FEE.test(quote)
-      ? ok
-      : fail("a zero fee needs a quote saying there are no tuition fees");
-  // Without a currency the amount is read as euros (hundredths), the only currency tuition came in
-  // before the currency was passed.
-  const amountMajor = fromMinor(amountMinor, currency ?? "EUR");
-  if (!amountInQuote(amountMajor, quote))
-    return fail(`the amount ${amountMajor} does not appear in the quote`);
-  if (
-    currency !== undefined &&
-    CURRENCY_TOKENS[currency] !== undefined &&
-    !amountHasCurrency(amountMajor, quote, currency)
-  )
-    return fail(`the quote does not write the amount in the currency ${currency}`);
-  const stale = staleStudyYear(amountMajor, quote, minStudyYear);
-  return stale === null ? ok : fail(stale);
+  if (maxAmountMinor === undefined)
+    return checkFeeAmount(amountMinor, quote, minStudyYear, currency, false).check;
+  if (maxAmountMinor < amountMinor) return fail("the highest fee is below the lowest");
+  if (basis === "income_based" && !INCOME_WORDS.test(normalizeForMatch(quote)))
+    return fail("income_based needs a quote that mentions income (ISEE, reddito, income...)");
+  let currencySeen = false;
+  for (const edge of [amountMinor, maxAmountMinor]) {
+    if (edge === 0) {
+      if (!NO_FEE.test(quote) && !FREE_TIER.test(quote))
+        return fail("a zero edge of a range needs a quote naming the free or zero-fee tier");
+      continue;
+    }
+    const checked = checkFeeAmount(edge, quote, minStudyYear, currency, true);
+    if (!checked.check.ok) return checked.check;
+    currencySeen = currencySeen || checked.currencySeen;
+  }
+  if (currency !== undefined && CURRENCY_TOKENS[currency] !== undefined && !currencySeen)
+    return fail(`the quote does not write either fee in the currency ${currency}`);
+  return ok;
 }
 
 // The day written right next to the month: "15 July", "15. Juli", "July 15", "15.07.", "15/07". A
