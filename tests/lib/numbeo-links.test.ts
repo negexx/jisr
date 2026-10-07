@@ -37,6 +37,14 @@ describe("numbeoLinkFor", () => {
     expect(numbeoLinkFor("", "")).toBeNull();
   });
 
+  it("never reads an inherited property of the tables as a country or a city", () => {
+    expect(numbeoLinkFor("constructor", "berlin")).toBeNull();
+    expect(numbeoLinkFor("toString", "x")).toBeNull();
+    expect(numbeoLinkFor("__proto__", "x")).toBeNull();
+    expect(numbeoLinkFor("DE", "x")?.kind).toBe("country");
+    expect(numbeoLinkFor("DE", "constructor")?.kind).toBe("country");
+  });
+
   it("only builds https urls on numbeo.com", () => {
     for (const [country, slug] of [
       ["DE", "duisburg"],

@@ -514,7 +514,7 @@
     "seeLines": "عرض كل بند من بنود التكلفة",
     "numbeoCity": "عرض الأسعار في <place>{city}</place> على Numbeo (موقع خارجي)",
     "numbeoCountry": "عرض أسعار البلد على Numbeo (<place>{country}</place>، موقع خارجي)",
-    "numbeoNote": "Numbeo موقع تعاوني غير رسمي."
+    "numbeoNote": "Numbeo موقع قائم على مساهمات المستخدمين وغير رسمي."
   },
   "reasonList": {
     "sources": "المصادر",

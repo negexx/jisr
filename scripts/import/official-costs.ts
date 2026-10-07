@@ -53,8 +53,8 @@ const LineProposalSchema = z
     per: z.enum(["month", "year", "once"]),
     info_kind: z.enum(["official", "estimate"]),
     basis: z.strictObject({ fr: Text, en: Text.optional(), ar: Text.optional() }).optional(),
-    // `dateQuote`: for an estimate whose own quote states no year, a second verbatim quote from the
-    // same page that does ("Updated 12 March 2025").
+    // `dateQuote`: for a line (estimate or official) whose own quote states no year, a second verbatim
+    // quote from the same page that does ("Updated 12 March 2026"). It dates the page, not the figure.
     evidence: z.strictObject({
       url: HttpsUrlSchema,
       quote: z.string().min(1),
@@ -305,22 +305,13 @@ async function verifyProposal(
     lines[name] = stagedLine(line, keyFor(url));
     evidence.push({ fact: `lines.${name}`, url, quote });
     // the date quote is evidence only when the quote itself has no year and it dated the figure
-    if (check.age?.from === "date quote" && line.evidence.dateQuote !== undefined)
+    if (check.age.from === "date quote" && line.evidence.dateQuote !== undefined)
       evidence.push({ fact: `lines.${name}.date`, url, quote: line.evidence.dateQuote });
-    const age =
-      check.age === null
-        ? "no age check (official)"
-        : `years: oldest ${check.age.oldest}, newest ${check.age.newest} (from ${check.age.from})`;
+    const age = `years: oldest ${check.age.oldest}, newest ${check.age.newest} (from ${check.age.from})`;
     report.push(
       `kept ${name}: ${line.min}-${line.max} ${line.currency} per ${line.per} (${line.info_kind}) "${quote}" (${url}); ${page.fromCache ? "page from cache" : "page fetched now"}; ${age}`,
     );
-    const lineNotes = [
-      ...(check.age === null
-        ? ["official line, no age check was done (a rate in force is assumed)"]
-        : []),
-      ...check.notes,
-    ];
-    for (const note of lineNotes) {
+    for (const note of check.notes) {
       notes.push(`lines.${name}: ${note}`);
       report.push(`note ${name}: ${note}`);
     }

@@ -1,4 +1,4 @@
-// Zod-free: reachable from client code (the match card). A link only: no Numbeo figure is stored or shown.
+// Zod-free. Used only by the server-only NumbeoLink on the programme page. A link only: no Numbeo figure is stored or shown.
 import type { AppLocale } from "@/i18n/routing";
 import { intlLocale } from "@/lib/format";
 
@@ -16,6 +16,10 @@ const COUNTRY_BASE = "https://www.numbeo.com/cost-of-living/country_result.jsp?c
 
 // Numbeo names its pages "Name-Country" for most cities and the bare name for a few, and an unknown
 // name returns "Cannot find city id": only a page seen to exist is listed, so no city url is ever built.
+// Each of the 23 pages below was fetched in the 2026-10-05 runs and its cached page shows
+// `<h1> Cost of Living in <City>` plus the breadcrumb country: Paris from the sample page; Budapest,
+// Ancona, Bari, Bologna, Alkmaar, Almere and Amsterdam from the first sample run; the DE, FR and HU
+// ones from the parked profiles in data-staging/parked-numbeo/.
 const NUMBEO_CITY_PAGES: Readonly<Record<string, string>> = {
   "DE/aachen": "Aachen",
   "DE/aalen": "Aalen-Germany",
@@ -51,9 +55,14 @@ const NUMBEO_COUNTRY_NAMES: Readonly<Record<string, string>> = {
 };
 
 export function numbeoLinkFor(country: string, citySlug: string): NumbeoLink | null {
-  const countryName = NUMBEO_COUNTRY_NAMES[country];
+  const countryName = Object.hasOwn(NUMBEO_COUNTRY_NAMES, country)
+    ? NUMBEO_COUNTRY_NAMES[country]
+    : undefined;
   if (countryName === undefined) return null;
-  const cityPage = NUMBEO_CITY_PAGES[`${country}/${citySlug}`];
+  const cityKey = `${country}/${citySlug}`;
+  const cityPage = Object.hasOwn(NUMBEO_CITY_PAGES, cityKey)
+    ? NUMBEO_CITY_PAGES[cityKey]
+    : undefined;
   if (cityPage !== undefined) return { url: `${CITY_BASE}${cityPage}`, kind: "city" };
   return { url: `${COUNTRY_BASE}${countryName}`, kind: "country" };
 }

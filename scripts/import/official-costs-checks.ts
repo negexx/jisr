@@ -6,7 +6,7 @@ import { currencyNextTo } from "./scholarships";
 // The pure checks of `data:costs-official verify`: does a quote really state the proposed figure, in
 // its currency, for its period, with a date. No I/O: the caller has fetched the page.
 
-// An estimate older than this is not used (a legal rate in force is `official` and has no age limit).
+// A line (estimate or official) with no year of this or later is not used: owner decision 2026-10-07.
 export const MIN_ESTIMATE_YEAR = 2026;
 
 export type Period = "month" | "year" | "once";
@@ -75,10 +75,11 @@ export function yearsIn(raw: string): number[] {
 
 type Age = { oldest: number; newest: number; from: "quote" | "date quote" };
 
-// An estimate needs a year of MIN_ESTIMATE_YEAR or later. A year in the quote decides alone (its
-// oldest year: a table of 2016 and 2025 figures is not a 2025 figure, and a date quote cannot rescue
-// it); only a quote without any year may take its date from `dateQuote`, a second verbatim quote of
-// the same page. A year elsewhere on the page (a footer, a menu) says nothing about this figure.
+// A line, estimate or official, needs a year of MIN_ESTIMATE_YEAR or later. A year in the quote decides
+// alone (its oldest year: a table of 2016 and 2025 figures is not a 2025 figure, and a date quote
+// cannot rescue it); only a quote without any year may take its date from `dateQuote`, a second
+// verbatim quote of the same page. A year elsewhere on the page (a footer, a menu) says nothing about
+// this figure. A `dateQuote` dates the page, not the figure: the 100% audit must still read the figure.
 function ageOf(line: LineInput, pageContent: string): Age | { problem: string } {
   const { url, quote, dateQuote } = line.evidence;
   const inQuote = yearsIn(quote);
@@ -93,7 +94,7 @@ function ageOf(line: LineInput, pageContent: string): Age | { problem: string } 
   if (inQuote.length > 0) return judge(inQuote, "quote");
   if (dateQuote === undefined)
     return {
-      problem: `the quote states no year (an estimate needs a year of ${MIN_ESTIMATE_YEAR} or later in its quote, or in a date quote from the same page)`,
+      problem: `the quote states no year (a line needs a year of ${MIN_ESTIMATE_YEAR} or later in its quote, or in a date quote from the same page)`,
     };
   if (!quoteInText(dateQuote, pageContent))
     return {
@@ -223,8 +224,8 @@ function periodsNextTo(text: string, amounts: Span[]): Period[] {
 // --- one line ----------------------------------------------------------------------------------------
 export type LineCheck =
   | { ok: false; problem: string }
-  // `age` is null for an `official` line (a rate in force: no age check); `notes` are for the auditor.
-  | { ok: true; age: Age | null; notes: string[] };
+  // `notes` are for the auditor.
+  | { ok: true; age: Age; notes: string[] };
 
 // Whether a line can be kept. The page is already fetched.
 export function checkLine(line: LineInput, pageContent: string): LineCheck {
@@ -274,8 +275,11 @@ export function checkLine(line: LineInput, pageContent: string): LineCheck {
     );
   }
 
-  if (line.info_kind === "official") return { ok: true, age: null, notes };
   const age = ageOf(line, pageContent);
   if ("problem" in age) return { ok: false, problem: age.problem };
+  if (age.from === "date quote")
+    notes.push(
+      "the date quote dates the page, not the figure: the audit must read the figure on the page itself",
+    );
   return { ok: true, age, notes };
 }

@@ -10,6 +10,8 @@ import { LOCALES } from "./trust-wording";
 const CATALOGS = { fr, en, ar };
 const KEYS = ["numbeoCity", "numbeoCountry", "numbeoNote"] as const;
 const NOT_OFFICIAL = { en: /not an official/i, fr: /non officiel/i, ar: /غير رسمي/u };
+// French puts a no-break space (U+00A0 or U+202F) before : ? ! ; so anything else before one is wrong.
+const FRENCH_PUNCTUATION_WITHOUT_NO_BREAK_SPACE = /[^\u00A0\u202F][:?!;]/;
 
 describe.each(LOCALES)("Numbeo link messages (%s)", (locale) => {
   const messages = CATALOGS[locale].costBreakdown as Record<string, string>;
@@ -51,7 +53,20 @@ describe("Numbeo link messages: language rules", () => {
     }
     for (const key of KEYS) {
       const value = (fr.costBreakdown as Record<string, string>)[key] ?? "";
-      expect(value, key).not.toMatch(/[^ ][:?!;]/);
+      expect(value, key).not.toMatch(FRENCH_PUNCTUATION_WITHOUT_NO_BREAK_SPACE);
     }
+  });
+
+  it("accepts a no-break space before French punctuation and rejects an ordinary one", () => {
+    const wrong = FRENCH_PUNCTUATION_WITHOUT_NO_BREAK_SPACE;
+    expect(wrong.test("Attention\u00A0: oui")).toBe(false);
+    expect(wrong.test("Attention\u202F; oui")).toBe(false);
+    expect(wrong.test("Attention : oui")).toBe(true);
+    expect(wrong.test("Attention: oui")).toBe(true);
+  });
+
+  it("calls Numbeo user-contributed, not collaborative, in Arabic", () => {
+    expect(ar.costBreakdown.numbeoNote).toContain("قائم على مساهمات المستخدمين");
+    expect(ar.costBreakdown.numbeoNote).not.toContain("تعاوني");
   });
 });

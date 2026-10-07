@@ -28,17 +28,18 @@ const UNDATED_PAGE = "https://www.campusfrance.org/en/undated";
 const BLOG_PAGE = "https://blog.example.com/cost-of-living";
 const DECIMAL_PAGE = "https://www.service-public.gouv.fr/decimals";
 const DATE_QUOTE = "Campus France, updated in 2026.";
+const PAGE_DATE = "Page updated in 2026 by the ministry.";
+const HOUSING_PAGE = "https://www.campusfrance.org/en/housing";
 
 const pages: Record<string, string> = {
   [COST_PAGE]:
     "Campus France, updated in 2026. Food: about 300 EUR per month. Housing in a Crous residence costs between 400 EUR and 500 EUR per month. Local transport: 7,50 EUR per month.",
-  [FEES_PAGE]:
-    "The CVEC student contribution is 105 EUR per year. The student visa costs 1.200 EUR once. A set-up deposit of 150,000 HUF applies.",
+  [FEES_PAGE]: `The CVEC student contribution is 105 EUR per year. The student visa costs 1.200 EUR once. A set-up deposit of 150,000 HUF applies. ${PAGE_DATE}`,
   [OLD_PAGE]: "Study in Hungary 2019: housing costs 400 EUR per month.",
   [UNDATED_PAGE]: "Housing costs 400 EUR per month in a Crous residence.",
   [BLOG_PAGE]: "Food: about 300 EUR per month.",
-  [DECIMAL_PAGE]:
-    "Fee A is 1.200 EUR per year. Fee B is 1,050 EUR per year. Fee C is 1,20 EUR per month. Fee D is 1.20 EUR per month.",
+  [HOUSING_PAGE]: `Housing costs 400 EUR per month in a Crous residence. ${PAGE_DATE}`,
+  [DECIMAL_PAGE]: `Fee A is 1.200 EUR per year. Fee B is 1,050 EUR per year. Fee C is 1,20 EUR per month. Fee D is 1.20 EUR per month. ${PAGE_DATE}`,
 };
 
 const basis = {
@@ -78,9 +79,14 @@ const insurance = (overrides: Line = {}): Line => ({
   currency: "EUR",
   per: "year",
   info_kind: "official",
-  evidence: { url: FEES_PAGE, quote: "The CVEC student contribution is 105 EUR per year." },
+  evidence: {
+    url: FEES_PAGE,
+    quote: "The CVEC student contribution is 105 EUR per year.",
+    dateQuote: PAGE_DATE,
+  },
   ...overrides,
 });
+const pageWith = (quote: string): string => `${quote} ${PAGE_DATE}`;
 
 const proposalOf = (lines: Record<string, Line>, extra: Line = {}): Line => ({
   slug: "fr-official",
@@ -194,7 +200,11 @@ describe("a kept line", () => {
           min: 1200,
           max: 1200,
           per: "once",
-          evidence: { url: FEES_PAGE, quote: "The student visa costs 1.200 EUR once." },
+          evidence: {
+            url: FEES_PAGE,
+            quote: "The student visa costs 1.200 EUR once.",
+            dateQuote: PAGE_DATE,
+          },
         }),
         transport: food({
           min: 7.5,
@@ -221,7 +231,11 @@ describe("a kept line", () => {
           max: 150000,
           currency: "HUF",
           per: "once",
-          evidence: { url: FEES_PAGE, quote: "A set-up deposit of 150,000 HUF applies." },
+          evidence: {
+            url: FEES_PAGE,
+            quote: "A set-up deposit of 150,000 HUF applies.",
+            dateQuote: PAGE_DATE,
+          },
         }),
       }),
     );
@@ -235,8 +249,9 @@ describe("a kept line", () => {
         food: food(),
         housing: housing({
           evidence: {
-            url: UNDATED_PAGE,
+            url: HOUSING_PAGE,
             quote: "Housing costs 400 EUR per month in a Crous residence.",
+            dateQuote: PAGE_DATE,
           },
           min: 400,
           max: 400,
@@ -249,7 +264,7 @@ describe("a kept line", () => {
     expect(lines.housing?.source).toBe("campusfrance-org");
     expect(lines.food?.source).toBe("campusfrance-org-2");
     expect(record.sources).toEqual({
-      "campusfrance-org": { url: UNDATED_PAGE, last_verified_at: null },
+      "campusfrance-org": { url: HOUSING_PAGE, last_verified_at: null },
       "campusfrance-org-2": { url: COST_PAGE, last_verified_at: null },
     });
   });
@@ -347,9 +362,34 @@ describe("a line that fails a check is dropped alone, with its reason", () => {
     expect(outcome.lines.join("\n")).toMatch(/housing.*no year/i);
   });
 
-  it("an official line needs no year", async () => {
-    await run(proposalOf({ food: food(), insurance: insurance() }));
-    expect(Object.keys((await staged()).lines as object)).toEqual(["food", "insurance"]);
+  it("an official line with no year in its quote or date quote is dropped", async () => {
+    const { dateQuote: _none, ...evidence } = insurance().evidence as Record<string, string>;
+    const outcome = await run(proposalOf({ food: food(), insurance: insurance({ evidence }) }));
+    expect(Object.keys((await staged()).lines as object)).toEqual(["food"]);
+    expect(outcome.lines.join("\n")).toMatch(/insurance.*no year/i);
+  });
+
+  it("an official line is kept with a 2026 year in its quote or in a date quote", async () => {
+    const quote = "Updated in 2026: the CVEC student contribution is 105 EUR per year.";
+    const inQuote = await run(
+      proposalOf({ insurance: insurance({ evidence: { url: FEES_PAGE, quote } }) }),
+      { getText: async () => quote },
+    );
+    expect(inQuote.ok).toBe(true);
+    await rm(stagingDir, { recursive: true, force: true });
+    const inDateQuote = await run(proposalOf({ insurance: insurance() }));
+    expect(inDateQuote.ok).toBe(true);
+    expect(Object.keys((await staged()).lines as object)).toEqual(["insurance"]);
+  });
+
+  it("an official line dated before 2026 is dropped", async () => {
+    const quote = "In 2024 the CVEC student contribution is 105 EUR per year.";
+    const outcome = await run(
+      proposalOf({ insurance: insurance({ evidence: { url: FEES_PAGE, quote } }) }),
+      { getText: async () => quote },
+    );
+    expect(outcome.ok).toBe(false);
+    expect(outcome.lines.join("\n")).toMatch(/insurance.*oldest year in the quote is 2024/);
   });
 
   it("an estimate takes its year from a date quote on the same page", async () => {
@@ -440,12 +480,12 @@ describe("a line that fails a check is dropped alone, with its reason", () => {
     expect(outcome.lines.join("\n")).toMatch(/food.*2019/);
   });
 
-  it("an official line is kept without a year and the report says no age check was done", async () => {
+  it("a date quote dates the page, not the figure: the report and the notes tell the auditor", async () => {
     const outcome = await run(proposalOf({ insurance: insurance() }));
-    expect(outcome.lines.join("\n")).toMatch(/insurance.*no age check/i);
-    expect((await staged())._review).toMatchObject({
-      notes: expect.stringMatching(/no age check/i),
-    });
+    expect(outcome.lines.join("\n")).toMatch(/insurance.*years: oldest 2026.*\(from date quote\)/);
+    const note = /date quote dates the page, not the figure/i;
+    expect(outcome.lines.join("\n")).toMatch(note);
+    expect((await staged())._review).toMatchObject({ notes: expect.stringMatching(note) });
   });
 
   it("does not take the age of an upper-case currency amount for a year", async () => {
@@ -706,7 +746,7 @@ describe("a decimal figure next to a thousands separator", () => {
       min,
       max: min,
       per: quote.includes("month") ? "month" : "year",
-      evidence: { url: DECIMAL_PAGE, quote },
+      evidence: { url: DECIMAL_PAGE, quote, dateQuote: PAGE_DATE },
     });
 
   it("is dropped when the quote has the figure with a thousands separator", async () => {
@@ -744,7 +784,11 @@ describe("the period", () => {
           max: 150000,
           currency: "HUF",
           per: "once",
-          evidence: { url: FEES_PAGE, quote: "A set-up deposit of 150,000 HUF applies." },
+          evidence: {
+            url: FEES_PAGE,
+            quote: "A set-up deposit of 150,000 HUF applies.",
+            dateQuote: PAGE_DATE,
+          },
         }),
       }),
     );
@@ -791,10 +835,10 @@ describe("the period", () => {
           min: value,
           max: value,
           per,
-          evidence: { url: DECIMAL_PAGE, quote },
+          evidence: { url: DECIMAL_PAGE, quote, dateQuote: PAGE_DATE },
         }),
       }),
-      { getText: async () => `${quote} Padding so the page is longer than the quote.` },
+      { getText: async () => pageWith(`${quote} Padding so the page is longer than the quote.`) },
     );
     expect(outcome.ok).toBe(kept);
   });
@@ -860,11 +904,12 @@ describe("the cache", () => {
 
 describe("several periods in one quote", () => {
   const quote = "The fee is 105 EUR per year, payable at the start of the month.";
-  const fee = (per: string): Line => insurance({ per, evidence: { url: DECIMAL_PAGE, quote } });
+  const fee = (per: string): Line =>
+    insurance({ per, evidence: { url: DECIMAL_PAGE, quote, dateQuote: PAGE_DATE } });
 
   it("drops the line when the period nearest the amount contradicts per", async () => {
     const outcome = await run(proposalOf({ insurance: fee("month") }), {
-      getText: async () => quote,
+      getText: async () => pageWith(quote),
     });
     expect(outcome.ok).toBe(false);
     expect(outcome.lines.join("\n")).toMatch(/insurance.*nearest the amount says year.*per month/);
@@ -872,7 +917,7 @@ describe("several periods in one quote", () => {
 
   it("keeps it when the nearest period agrees, with a note to check the period", async () => {
     const outcome = await run(proposalOf({ insurance: fee("year") }), {
-      getText: async () => quote,
+      getText: async () => pageWith(quote),
     });
     expect(outcome.ok).toBe(true);
     const note = /several periods stated \(month, year\): check that per year is the amount's own/;
@@ -887,11 +932,11 @@ describe("several periods in one quote", () => {
         housing: housing({
           min: 400,
           max: 400,
-          evidence: { url: DECIMAL_PAGE, quote: text, dateQuote: undefined },
+          evidence: { url: DECIMAL_PAGE, quote: text, dateQuote: PAGE_DATE },
           info_kind: "official",
         }),
       }),
-      { getText: async () => text },
+      { getText: async () => pageWith(text) },
     );
     expect(outcome.ok).toBe(true);
   });
@@ -908,10 +953,10 @@ describe("a period word inside a duration phrase", () => {
           min: 40,
           max: 40,
           per: "once",
-          evidence: { url: FEES_PAGE, quote: questura },
+          evidence: { url: FEES_PAGE, quote: questura, dateQuote: PAGE_DATE },
         }),
       }),
-      { getText: async () => questura },
+      { getText: async () => pageWith(questura) },
     );
     expect(outcome.ok).toBe(true);
     const note = /period not stated in quote/;
@@ -923,9 +968,12 @@ describe("a period word inside a duration phrase", () => {
     const quote = "The fee is 105 EUR per year, valid for one month.";
     const outcome = await run(
       proposalOf({
-        insurance: insurance({ per: "month", evidence: { url: FEES_PAGE, quote } }),
+        insurance: insurance({
+          per: "month",
+          evidence: { url: FEES_PAGE, quote, dateQuote: PAGE_DATE },
+        }),
       }),
-      { getText: async () => quote },
+      { getText: async () => pageWith(quote) },
     );
     expect(outcome.ok).toBe(false);
     expect(outcome.lines.join("\n")).toMatch(/insurance.*year.*per month/);
@@ -939,10 +987,10 @@ describe("a period word inside a duration phrase", () => {
           min: 400,
           max: 400,
           per: "month",
-          evidence: { url: FEES_PAGE, quote },
+          evidence: { url: FEES_PAGE, quote, dateQuote: PAGE_DATE },
         }),
       }),
-      { getText: async () => quote },
+      { getText: async () => pageWith(quote) },
     );
     expect(outcome.ok).toBe(true);
     expect(outcome.lines.join("\n")).not.toMatch(/period not stated/);
@@ -957,10 +1005,10 @@ describe("a period word inside a duration phrase", () => {
           min: 40,
           max: 40,
           per: "once",
-          evidence: { url: FEES_PAGE, quote },
+          evidence: { url: FEES_PAGE, quote, dateQuote: PAGE_DATE },
         }),
       }),
-      { getText: async () => quote },
+      { getText: async () => pageWith(quote) },
     );
     expect((await staged())._review).toMatchObject({
       notes: expect.stringContaining("ignored duration phrase: 'di durata superiore a tre mesi"),
@@ -980,10 +1028,10 @@ describe("a duration cue never swallows the amount's own period", () => {
           max: value,
           per,
           currency,
-          evidence: { url: FEES_PAGE, quote },
+          evidence: { url: FEES_PAGE, quote, dateQuote: PAGE_DATE },
         }),
       }),
-      { getText: async () => quote },
+      { getText: async () => pageWith(quote) },
     );
 
   it.each([
