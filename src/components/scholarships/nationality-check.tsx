@@ -25,14 +25,14 @@ export function NationalityCheck({
   const { state } = useProfile();
 
   if (state.status === "unhydrated") {
-    return <p data-testid="nationality-check" data-state="placeholder" className="min-h-11" />;
+    return <p data-testid="nationality-check" data-state="placeholder" className="min-h-12" />;
   }
   if (state.status !== "ok") {
     return (
       <p
         data-testid="nationality-check"
         data-state="none"
-        className="flex min-h-11 items-center gap-2 text-base"
+        className="flex min-h-12 items-center gap-2 text-base"
       >
         <CircleHelp aria-hidden="true" className="size-4 shrink-0" />
         <Link

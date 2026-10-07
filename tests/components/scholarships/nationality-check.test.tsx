@@ -64,5 +64,6 @@ describe("NationalityCheck", () => {
     window.localStorage.setItem("jisr.profile", "{not json");
     renderIntl(<NationalityCheck eligible={["MA"]} labels={labels} />);
     expect(await screen.findByRole("link", { name: labels.noProfile })).toBeTruthy();
+    expect(screen.getByTestId("nationality-check").getAttribute("data-state")).toBe("none");
   });
 });
