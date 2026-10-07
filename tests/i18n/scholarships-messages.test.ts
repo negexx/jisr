@@ -27,6 +27,17 @@ describe.each(LOCALES)("scholarships page messages (%s)", (locale) => {
     }
   });
 
+  it("follows the ICU contract in the plural messages: n selects, count is the displayed string", () => {
+    expect(distinct(messages.get("scholarshipsPage.sectionCount") ?? "")).toEqual(["count"]);
+    expect(distinct(messages.get("scholarshipsPage.programmes.country") ?? "")).toEqual([
+      "count",
+      "country",
+    ]);
+    for (const key of ["sectionCount", "programmes.country"]) {
+      expect(messages.get(`scholarshipsPage.${key}`), key).toMatch(/^\{n, plural,/);
+    }
+  });
+
   it("never promises eligibility, admission or a guarantee", () => {
     for (const [key, value] of messages) {
       for (const pattern of FORBIDDEN[locale])

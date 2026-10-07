@@ -966,7 +966,7 @@
     "jump": {
       "label": "البلدان"
     },
-    "sectionCount": "{count, plural, one {منحة واحدة} two {منحتان} few {{n} منح} many {{n} منحة} other {{n} منحة}}",
+    "sectionCount": "{n, plural, one {منحة واحدة} two {منحتان} few {{count} منح} many {{count} منحة} other {{count} منحة}}",
     "empty": "لا توجد منحة مدرجة حاليا.",
     "amount": {
       "unknown": "المبلغ: غير منشور في المصادر التي قرأناها، يجب التحقق منه"
@@ -994,7 +994,7 @@
     },
     "programmes": {
       "summary": "البرامج المعنية",
-      "country": "{count, plural, one {تنطبق على برنامج واحد في {country}.} two {تنطبق على برنامجين في {country}.} few {تنطبق على {n} برامج في {country}.} many {تنطبق على {n} برنامجا في {country}.} other {تنطبق على {n} برنامج في {country}.}} الشروط والمؤسسات المشاركة في الصفحة الرسمية.",
+      "country": "{n, plural, one {برنامج واحد في {country}، في المؤسسات المشاركة.} two {برنامجان في {country}، في المؤسسات المشاركة.} few {{count} برامج في {country}، في المؤسسات المشاركة.} many {{count} برنامجا في {country}، في المؤسسات المشاركة.} other {{count} برنامج في {country}، في المؤسسات المشاركة.}} توضح الصفحة الرسمية المؤسسات المشاركة وشروطها.",
       "matchesLink": "عرض نتائجي",
       "without": "لا يوجد برنامج مدرج حاليا لـ: {institutions}",
       "none": "لا يوجد برنامج مدرج لهذه المنحة بعد."

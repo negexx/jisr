@@ -27,8 +27,8 @@ export function ScholarshipProgrammes({
           <>
             <p className="max-w-prose text-base">
               {t("country", {
-                count: scope.count,
-                n: formatNumber(scope.count, locale) ?? String(scope.count),
+                n: scope.count,
+                count: formatNumber(scope.count, locale) ?? String(scope.count),
                 country: countryName,
               })}
             </p>

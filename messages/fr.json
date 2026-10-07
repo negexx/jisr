@@ -966,7 +966,7 @@
     "jump": {
       "label": "Pays"
     },
-    "sectionCount": "{count, plural, one {{n} bourse} other {{n} bourses}}",
+    "sectionCount": "{n, plural, one {{count} bourse} other {{count} bourses}}",
     "empty": "Aucune bourse n'est répertoriée pour le moment.",
     "amount": {
       "unknown": "Montant : non publié dans les sources que nous avons lues, à vérifier"
@@ -994,7 +994,7 @@
     },
     "programmes": {
       "summary": "Programmes concernés",
-      "country": "{count, plural, one {Concerne {n} programme en {country}.} other {Concerne {n} programmes en {country}.}} Les conditions et les établissements participants figurent sur la page officielle.",
+      "country": "{n, plural, one {{count} programme en {country}, dans les établissements participants.} other {{count} programmes en {country}, dans les établissements participants.}} La page officielle indique quels établissements participent et à quelles conditions.",
       "matchesLink": "Voir mes résultats",
       "without": "Aucun programme n'est listé pour le moment pour : {institutions}",
       "none": "Aucun programme n'est encore listé pour cette bourse."

@@ -966,7 +966,7 @@
     "jump": {
       "label": "Countries"
     },
-    "sectionCount": "{count, plural, one {{n} scholarship} other {{n} scholarships}}",
+    "sectionCount": "{n, plural, one {{count} scholarship} other {{count} scholarships}}",
     "empty": "No scholarship is listed yet.",
     "amount": {
       "unknown": "Amount: not published in the sources we read, to check"
@@ -994,7 +994,7 @@
     },
     "programmes": {
       "summary": "Programmes it applies to",
-      "country": "{count, plural, one {Applies to {n} programme in {country}.} other {Applies to {n} programmes in {country}.}} Conditions and participating institutions are on the official page.",
+      "country": "{n, plural, one {{count} programme in {country}, at the institutions that take part.} other {{count} programmes in {country}, at the institutions that take part.}} The official page says which institutions take part and on what conditions.",
       "matchesLink": "See my matches",
       "without": "No programme is listed yet for: {institutions}",
       "none": "No programme is listed yet for this scholarship."

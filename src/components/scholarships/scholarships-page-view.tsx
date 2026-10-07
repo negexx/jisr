@@ -15,7 +15,7 @@ export function ScholarshipsPageView({ data }: { data: ScholarshipsPageData }) {
     return (country === undefined ? undefined : data.text(country.name)?.text) ?? code;
   };
   const countLabel = (count: number) =>
-    t("sectionCount", { count, n: formatNumber(count, locale) ?? String(count) });
+    t("sectionCount", { n: count, count: formatNumber(count, locale) ?? String(count) });
 
   return (
     <div className="flex flex-col gap-8">

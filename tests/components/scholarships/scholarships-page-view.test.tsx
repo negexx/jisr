@@ -329,8 +329,8 @@ describe("ScholarshipsPageView: programmes", () => {
     const block = inCard(doc, "scholarship-programmes");
     expect(textOf(block)).toContain(
       translate("scholarshipsPage.programmes.country", {
-        count: 3,
-        n: "3",
+        n: 3,
+        count: "3",
         country: "countries/xb#name",
       }),
     );
@@ -481,10 +481,10 @@ describe("ScholarshipsPageView: page structure", () => {
     const sections = [...doc.querySelectorAll('[data-testid="scholarship-section"]')];
     expect(sections.map((s) => s.id)).toEqual(["country-XA", "country-XB"]);
     expect(textOf(jump)).toContain(
-      translate("scholarshipsPage.sectionCount", { count: 2, n: "2" }),
+      translate("scholarshipsPage.sectionCount", { n: 2, count: "2" }),
     );
     expect(textOf(sections[0]?.querySelector("h2") ?? null)).toContain(
-      translate("scholarshipsPage.sectionCount", { count: 1, n: "1" }),
+      translate("scholarshipsPage.sectionCount", { n: 1, count: "1" }),
     );
     expect(sections[1]?.querySelectorAll('[data-testid="scholarship-card"]')).toHaveLength(2);
     expect(doc.querySelectorAll("h1")).toHaveLength(1);
