@@ -4,6 +4,7 @@ import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 
 import { MatchCard } from "@/components/match-card";
 import type { AppLocale } from "@/i18n/routing";
+import { formatTuition } from "@/lib/format";
 import type { MatchCardModel } from "@/lib/journey/matches-view";
 import { formatNumber } from "@/lib/journey/reasons";
 
@@ -180,6 +181,33 @@ describe("MatchCard: facts", () => {
     expect(amount?.textContent).not.toContain(catalogs[locale].domain.cost.per[tuition.period]);
     expect(detail.querySelector('[data-slot="source-badge"]')).not.toBeNull();
     expect(detail.textContent).not.toContain(catalogs[locale].domain.cost.missingLine);
+  });
+
+  const RANGE = {
+    amountMinor: 120000,
+    maxAmountMinor: 300000,
+    currency: "XTS",
+    period: "year" as const,
+    basis: "income_based" as const,
+  };
+
+  it.each(
+    LOCALES,
+  )("shows an official fee range with its income note and one badge (%s)", (locale) => {
+    const model = journey.card(locale, E2E_SLUGS.ok);
+    const ranged: MatchCardModel = { ...model, tuition: { ...model.tuition, value: RANGE } };
+    const { container } = renderCard(ranged, locale);
+    const detail = fact(container, catalogs[locale].domain.cost.category.tuition);
+    expect(detail.querySelector("bdi")?.textContent).toBe(formatTuition(RANGE, locale));
+    expect(detail.textContent).toContain(catalogs[locale].domain.cost.per.year);
+    expect(detail.textContent).toContain(catalogs[locale].domain.cost.incomeBased);
+    expect(detail.querySelectorAll('[data-slot="source-badge"]')).toHaveLength(1);
+  });
+
+  it.each(LOCALES)("shows no income note for a flat fee (%s)", (locale) => {
+    const { container } = renderCard(journey.card(locale, E2E_SLUGS.ok), locale);
+    const detail = fact(container, catalogs[locale].domain.cost.category.tuition);
+    expect(detail.querySelector('[data-testid="tuition-basis"]')).toBeNull();
   });
 
   it.each(

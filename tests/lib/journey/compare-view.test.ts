@@ -25,8 +25,20 @@ let bundle: SnapshotBundle;
 let sameTuitionBundle: SnapshotBundle;
 // The stale programme with its main source aged: its intake and languages are stale too.
 let staleIntakeBundle: SnapshotBundle;
+// The private programme on the range 120000-300000 (income based), the OK programme a flat 120000.
+let rangeBundle: SnapshotBundle;
+// Both programmes on the same income-based range.
+let twinRangeBundle: SnapshotBundle;
+// The same bounds, with the income basis on one programme only.
+let basisOnlyBundle: SnapshotBundle;
 
 beforeAll(async () => {
+  const RANGE_WITH_BASIS =
+    "{ amountMinor: 120000, maxAmountMinor: 300000, currency: XTS, period: year, basis: income_based }";
+  const RANGE_NO_BASIS =
+    "{ amountMinor: 120000, maxAmountMinor: 300000, currency: XTS, period: year }";
+  const OK_FEE = "{ amountMinor: 120000, currency: XTS, period: year }";
+  const PRIVATE_FEE = "{ amountMinor: 450000, currency: XTS, period: year }";
   bundle = await loadMatchesBundle(buildSnapshot(E2E_DATA_DIR), E2E_PROFILE, "fr");
   sameTuitionBundle = await loadMatchesBundle(
     buildVariant([
@@ -35,6 +47,29 @@ beforeAll(async () => {
         from: "amountMinor: 450000",
         to: "amountMinor: 120000",
       },
+    ]),
+    E2E_PROFILE,
+    "fr",
+  );
+  rangeBundle = await loadMatchesBundle(
+    buildVariant([
+      { file: "programs/xx-test-prog-private.yaml", from: PRIVATE_FEE, to: RANGE_WITH_BASIS },
+    ]),
+    E2E_PROFILE,
+    "fr",
+  );
+  twinRangeBundle = await loadMatchesBundle(
+    buildVariant([
+      { file: "programs/xx-test-prog-ok.yaml", from: OK_FEE, to: RANGE_WITH_BASIS },
+      { file: "programs/xx-test-prog-private.yaml", from: PRIVATE_FEE, to: RANGE_WITH_BASIS },
+    ]),
+    E2E_PROFILE,
+    "fr",
+  );
+  basisOnlyBundle = await loadMatchesBundle(
+    buildVariant([
+      { file: "programs/xx-test-prog-ok.yaml", from: OK_FEE, to: RANGE_NO_BASIS },
+      { file: "programs/xx-test-prog-private.yaml", from: PRIVATE_FEE, to: RANGE_WITH_BASIS },
     ]),
     E2E_PROFILE,
     "fr",
@@ -244,6 +279,20 @@ describe("buildCompareView", () => {
     expect(result.differs.result).toBe(false);
     // One uses the portal, the other a direct application.
     expect(result.differs.application).toBe(true);
+  });
+
+  it("treats a range as different from a flat fee with the same minimum", () => {
+    // ok is flat 120000; private is now the range 120000-300000
+    const result = view([E2E_SLUGS.ok, E2E_SLUGS.private], rangeBundle);
+    expect(result.differs.tuition).toBe(true);
+  });
+
+  it("treats two identical ranges as the same", () => {
+    expect(view([E2E_SLUGS.ok, E2E_SLUGS.private], twinRangeBundle).differs.tuition).toBe(false);
+  });
+
+  it("treats the same bounds with and without an income basis as different", () => {
+    expect(view([E2E_SLUGS.ok, E2E_SLUGS.private], basisOnlyBundle).differs.tuition).toBe(true);
   });
 
   it("marks the cost row as different when two programs have different totals", () => {

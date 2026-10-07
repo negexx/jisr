@@ -285,6 +285,32 @@ describe("CostBreakdown estimate wording", () => {
     expect(tuition?.querySelector('[data-kind="official"]')).not.toBeNull();
     expect(tuition?.querySelector('[data-kind="estimate"]')).toBeNull();
   });
+
+  it.each(
+    LOCALES,
+  )("says an income-based tuition range depends on household income (%s)", (locale) => {
+    const estimate: CostEstimate = {
+      ...COMPLETE,
+      lines: COMPLETE.lines.map((line) =>
+        line.category === "tuition"
+          ? okLine("tuition", {
+              firstYear: { min: 120_000, max: 300_000, currency: "EUR" },
+              per: "year",
+              scope: "program",
+              incomeBased: true,
+              fact: ref({
+                info_kind: "official",
+                path: "tuition",
+                record: "programs/xx-test-prog",
+              }),
+            })
+          : line,
+      ),
+    };
+    const { container } = renderCost(estimate, locale);
+    expect(rows(container)[0]?.textContent).toContain(catalogs[locale].domain.cost.incomeBased);
+    expect(rows(container)[1]?.textContent).not.toContain(catalogs[locale].domain.cost.incomeBased);
+  });
 });
 
 describe("CostBreakdown total", () => {

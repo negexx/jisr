@@ -72,7 +72,9 @@ const SIGNATURES: Record<CompareRowId, Signature> = {
   result: (p) => (p.group === "check" ? null : p.group),
   tuition: (p) => {
     const { value } = p.tuition;
-    return value === null ? null : `${value.amountMinor}|${value.currency}|${value.period}`;
+    return value === null
+      ? null
+      : `${value.amountMinor}|${value.maxAmountMinor ?? value.amountMinor}|${value.currency}|${value.period}|${value.basis ?? "-"}`;
   },
   cost: (p) => {
     if (p.cost.totals.length === 0) return null;

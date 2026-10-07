@@ -12,8 +12,9 @@ import { MatchStatusBadge } from "@/components/match-status-badge";
 import { displayNumber } from "@/components/matches/display-number";
 import { ReasonList } from "@/components/reason-list";
 import { SourceBadge } from "@/components/source-badge";
+import { TuitionBasisNote } from "@/components/tuition-basis-note";
 import { Link } from "@/i18n/navigation";
-import { formatMoney } from "@/lib/format";
+import { formatTuition } from "@/lib/format";
 import type { CompareRowId } from "@/lib/journey/compare-rows";
 import type { CompareProgram } from "@/lib/journey/compare-view";
 import { formatList, languageName } from "@/lib/journey/reasons";
@@ -73,10 +74,11 @@ function TuitionCell({ program }: CellProps) {
     <div className="flex flex-col gap-1.5">
       <p className="flex flex-wrap items-baseline gap-x-2">
         <span className="text-base font-medium tabular-nums">
-          <bdi dir="ltr">{formatMoney(tuition.amountMinor, tuition.currency, locale)}</bdi>
+          <bdi dir="ltr">{formatTuition(tuition, locale)}</bdi>
         </span>
         <small className="text-sm text-muted-foreground">{tCost(`per.${tuition.period}`)}</small>
       </p>
+      <TuitionBasisNote tuition={tuition} />
       <SourceBadge meta={program.tuition} variant="compact" />
     </div>
   );

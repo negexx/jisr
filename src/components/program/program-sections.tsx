@@ -10,11 +10,12 @@ import { ExternalLink, sourceHostname } from "@/components/external-link";
 import { LocalizedDataText } from "@/components/localized-data-text";
 import { NumbeoLink } from "@/components/numbeo-link";
 import { SourceBadge } from "@/components/source-badge";
+import { TuitionBasisNote } from "@/components/tuition-basis-note";
 import type { IsoDate } from "@/data-schema/dates";
 import type { FactMeta, Scholarship } from "@/data-schema/resolved";
 import type { CostEstimate } from "@/domain/types";
 import type { AppLocale } from "@/i18n/routing";
-import { formatDate, formatMoney, formatMoneyRange, formatMonthDay } from "@/lib/format";
+import { formatDate, formatMoneyRange, formatMonthDay, formatTuition } from "@/lib/format";
 import { formatList, formatNumber, languageName, type Params } from "@/lib/journey/reasons";
 import { describeCoverage, describeRule } from "@/lib/journey/requirements";
 import type { ProgramPageData } from "@/lib/snapshot/server";
@@ -240,12 +241,13 @@ export function TuitionSection({ data }: { data: ProgramPageData }) {
         <>
           <p data-testid="tuition-amount" className="flex flex-wrap items-baseline gap-x-2">
             <span className="text-lg font-semibold tabular-nums">
-              <bdi dir="ltr">{formatMoney(tuition.amountMinor, tuition.currency, locale)}</bdi>
+              <bdi dir="ltr">{formatTuition(tuition, locale)}</bdi>
             </span>{" "}
             <span className="text-base text-muted-foreground">
               {tDomain(`domain.cost.per.${tuition.period}`)}
             </span>
           </p>
+          <TuitionBasisNote tuition={tuition} />
           <SourceBadge meta={data.program.tuition} variant="full" />
         </>
       )}
