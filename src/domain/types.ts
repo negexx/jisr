@@ -69,6 +69,8 @@ export type CostLine = {
   per: "month" | "year" | "semester" | "once" | null;
   scope: "program" | "city" | "country" | null;
   fact: FactRef | null;
+  // Set only on a tuition line whose official fee is a range that depends on household income.
+  incomeBased?: true;
 };
 export type BudgetFit = "within" | "straddles" | "above" | "unknown";
 export type CostEstimate = {

@@ -241,3 +241,51 @@ describe("budgetFit (totals 765000..1119000 XTS, 10-month academic year)", () =>
   ] as const)("%j → %s", (budget, fit) =>
     expect(est({ budget: budget === null ? null : { ...budget } }).budgetFit).toBe(fit));
 });
+
+describe("estimateCost tuition range", () => {
+  const ranged = (extra: object = {}) =>
+    program({
+      tuition: fact(
+        { amountMinor: 100000, maxAmountMinor: 300000, currency: "XTS", period: "year", ...extra },
+        { class: "volatile" },
+      ),
+    });
+
+  it("uses the stated lowest and highest fee as the tuition line and widens the total", () => {
+    const r = est({ p: ranged() });
+    expect(r.lines[0]).toMatchObject({
+      category: "tuition",
+      status: "ok",
+      firstYear: { min: 100000, max: 300000, currency: "XTS" },
+      per: "year",
+    });
+    // flat 100000 gave 765000-1119000; the highest fee adds 200000 to the maximum only
+    expect(r.totals).toEqual([{ min: 765000, max: 1319000, currency: "XTS" }]);
+    expect(r.lines[0]?.incomeBased).toBeUndefined();
+  });
+
+  it("flags an income-based range on the line", () => {
+    const r = est({ p: ranged({ basis: "income_based" }) });
+    expect(r.lines[0]?.incomeBased).toBe(true);
+  });
+
+  it("doubles both ends of a semester range", () => {
+    const r = est({ p: ranged({ period: "semester" }) });
+    expect(r.lines[0]?.firstYear).toEqual({ min: 200000, max: 600000, currency: "XTS" });
+  });
+
+  it("leaves a flat fee exactly as before (equal ends, no flag)", () => {
+    const r = est();
+    expect(r.lines[0]).toMatchObject({ firstYear: { min: 100000, max: 100000 } });
+    expect(r.lines[0]?.incomeBased).toBeUndefined();
+  });
+
+  it("compares a budget against the widened total like any other range", () => {
+    // monthly budget 120000 * 10 = 1200000: between the total's minimum (765000) and maximum (1319000)
+    const r = est({
+      p: ranged(),
+      budget: { amountMinor: 120000, currency: "XTS", period: "month" },
+    });
+    expect(r.budgetFit).toBe("straddles");
+  });
+});
