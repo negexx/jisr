@@ -21,6 +21,7 @@ import {
   quoteInText,
   wholeWord,
 } from "./evidence";
+import { toMinor } from "./money";
 import { DocumentProposalSchema, type GetText } from "./proposals";
 import { DATA_DIR, STAGING_DIR, stageFile, toYaml } from "./staging";
 
@@ -632,8 +633,8 @@ export async function verifyScholarship(
       } else {
         support = {
           amount: {
-            min: amount.min * 100,
-            max: amount.max * 100,
+            min: toMinor(amount.min, amount.currency),
+            max: toMinor(amount.max, amount.currency),
             currency: amount.currency,
             per: amount.per,
           },

@@ -7,6 +7,7 @@ import {
   complete,
   type ModelSpec,
 } from "./llm";
+import { fromMinor } from "./money";
 import type { AcceptedFact, AcceptedRule, FactName, GetText, Verified } from "./proposals";
 
 // The second model. The reader proposes, the code checks that the quote is on the page and agrees
@@ -72,7 +73,7 @@ export function claimText(name: FactName, value: unknown): string {
       const t = value as { amountMinor: number; currency: string; period: string };
       return t.amountMinor === 0
         ? "There is no tuition fee for a student from outside the EU/EEA."
-        : `The tuition fee for a student from outside the EU/EEA is ${t.amountMinor / 100} ${t.currency} per ${t.period}.`;
+        : `The tuition fee for a student from outside the EU/EEA is ${fromMinor(t.amountMinor, t.currency)} ${t.currency} per ${t.period}.`;
     }
     case "intakes": {
       const parts = (value as Intake[]).flatMap((i) => [

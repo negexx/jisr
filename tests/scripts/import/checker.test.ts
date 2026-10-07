@@ -20,6 +20,9 @@ describe("claimText", () => {
     expect(claimText("tuition", { amountMinor: 1465000, currency: "EUR", period: "year" })).toBe(
       "The tuition fee for a student from outside the EU/EEA is 14650 EUR per year.",
     );
+    expect(
+      claimText("tuition", { amountMinor: 1500000, currency: "HUF", period: "semester" }),
+    ).toBe("The tuition fee for a student from outside the EU/EEA is 1500000 HUF per semester.");
     expect(claimText("tuition", { amountMinor: 0, currency: "EUR", period: "year" })).toBe(
       "There is no tuition fee for a student from outside the EU/EEA.",
     );
