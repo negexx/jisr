@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 import { CountryCodeSchema, CurrencySchema, MinorAmountSchema, SlugSchema } from "../primitives";
-import { SourcesSchema, stableFact } from "../provenance";
+import { SourcesSchema, stableFact, volatileFact } from "../provenance";
 
 export const LIVING_COST_CATEGORIES = [
   "housing",
@@ -21,6 +21,7 @@ export const CostAmountSchema = z
   })
   .refine((a) => a.min <= a.max, { message: "min must be <= max" });
 
+// Rent, food and transport are stable estimates; fees (insurance, visa, setup) change yearly and age on the volatile clock (owner decision 2026-10-07).
 export const CostProfileRecordSchema = z.strictObject({
   slug: SlugSchema,
   country: CountryCodeSchema,
@@ -29,9 +30,9 @@ export const CostProfileRecordSchema = z.strictObject({
     housing: stableFact(CostAmountSchema).optional(),
     food: stableFact(CostAmountSchema).optional(),
     transport: stableFact(CostAmountSchema).optional(),
-    insurance: stableFact(CostAmountSchema).optional(),
-    application_visa: stableFact(CostAmountSchema).optional(),
-    setup: stableFact(CostAmountSchema).optional(),
+    insurance: volatileFact(CostAmountSchema).optional(),
+    application_visa: volatileFact(CostAmountSchema).optional(),
+    setup: volatileFact(CostAmountSchema).optional(),
   }),
   sources: SourcesSchema,
 });

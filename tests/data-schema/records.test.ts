@@ -534,9 +534,31 @@ describe("record outputs", () => {
     expect(parsed.documents.class).toBe("stable");
   });
 
-  it("adds the stable class to cost lines", () => {
-    const parsed = COLLECTIONS["cost-profiles"].schema.parse(costProfile());
+  it("ages rent, food and transport lines on the stable clock", () => {
+    const parsed = COLLECTIONS["cost-profiles"].schema.parse(
+      costProfile({ lines: { housing: F(COST), food: F(COST), transport: F(COST) } }),
+    );
     expect(parsed.lines.housing?.class).toBe("stable");
+    expect(parsed.lines.food?.class).toBe("stable");
+    expect(parsed.lines.transport?.class).toBe("stable");
+  });
+
+  it("ages fee lines (insurance, visa, setup) on the volatile clock", () => {
+    const parsed = COLLECTIONS["cost-profiles"].schema.parse(
+      costProfile({
+        lines: { insurance: F(COST), application_visa: F(COST), setup: F(COST) },
+      }),
+    );
+    expect(parsed.lines.insurance?.class).toBe("volatile");
+    expect(parsed.lines.application_visa?.class).toBe("volatile");
+    expect(parsed.lines.setup?.class).toBe("volatile");
+  });
+
+  it("still rejects a fee line that is an estimate without a basis", () => {
+    const result = COLLECTIONS["cost-profiles"].schema.safeParse(
+      costProfile({ lines: { application_visa: { ...F(COST), info_kind: "estimate" } } }),
+    );
+    expect(result.success).toBe(false);
   });
 
   it("adds the staleness class to scholarship facts", () => {

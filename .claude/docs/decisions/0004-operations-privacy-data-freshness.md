@@ -28,8 +28,8 @@ Thresholds are constants in `src/data-schema/staleness.ts` and take `now` as an 
 
 | Class | Examples | Aging (label) | Stale (warning) |
 |---|---|---|---|
-| Volatile | deadlines, intake dates, tuition/fees, scholarship amounts and deadlines | 120 days | 270 days |
-| Stable | admission requirements, routes, program descriptions, cost estimates | 270 days | 545 days |
+| Volatile | deadlines, intake dates, tuition/fees, cost-profile fee lines (insurance, visa, setup), scholarship amounts and deadlines | 120 days | 270 days |
+| Stable | admission requirements, routes, program descriptions, rent/food/transport cost estimates | 270 days | 545 days |
 
 - Aging: the verified-on date is shown emphasised. Stale: a "may be outdated — check the official page" banner.
 - **Stale data never produces ✅ or ❌**: any result depending on a stale fact is ⚠️ with the reason "source not re-verified recently".
