@@ -40,6 +40,7 @@ export type JsBudget = { initial: number; untilIdle: number };
 // www.xn--bafg-7qa.de (the ASCII alias does not resolve); SourceBadge is shared, so the decoder is in the
 // client chunk. The guidance block itself is server-rendered and adds nothing. Raised by 1 KB with that
 // reason: program initial 184 -> 185, until idle 239 -> 240. Nothing else moved.
+// 2026-10-07 (scholarships page): new page, 170.2 KB initial, 221.4 KB until idle (fixture build); ratchet is measured rounded up plus 3 KB. The header's fourth item added 0.0 to 0.1 KB to the other rows, all inside their existing values.
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/fr": { initial: 170, untilIdle: 216 },
   "/ar": { initial: 170, untilIdle: 216 },
@@ -51,6 +52,8 @@ export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/ar/plan": { initial: 189, untilIdle: 244 },
   "/fr/compare": { initial: 190, untilIdle: 253 },
   "/ar/compare": { initial: 190, untilIdle: 253 },
+  "/fr/scholarships": { initial: 174, untilIdle: 225 },
+  "/ar/scholarships": { initial: 174, untilIdle: 225 },
   "/fr/programs/xx-test-prog-ok": { initial: 185, untilIdle: 240 },
   "/ar/programs/xx-test-prog-ok": { initial: 185, untilIdle: 240 },
 };
