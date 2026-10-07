@@ -156,37 +156,49 @@ describe("checkTuition", () => {
     it("leaves the single-fee behaviour unchanged", () => {
       expect(checkTuition(150000, "Tuition: €1,500 per semester", 2026, "EUR").ok).toBe(true);
     });
-    it("accepts a zero minimum only when the quote names a free tier", () => {
-      expect(
-        checkTuition(
-          0,
-          "Fees range from EUR 0 to EUR 2,600 a year depending on income.",
-          2026,
-          "EUR",
-          260000,
-          "income_based",
-        ).ok,
-      ).toBe(true);
-      expect(
-        checkTuition(
-          0,
-          "Students on low income are esente; the highest fee is EUR 2,600 a year (reddito).",
-          2026,
-          "EUR",
-          260000,
-          "income_based",
-        ).ok,
-      ).toBe(true);
-      expect(
-        checkTuition(
-          0,
-          "The highest fee is EUR 2,600 a year, depending on income.",
-          2026,
-          "EUR",
-          260000,
-          "income_based",
-        ).ok,
-      ).toBe(false);
+    // [min, max, quote, accepted]: a bare number is a range edge only inside "x to <currency> y".
+    const cases: [number, number, string, boolean][] = [
+      [15600, 260000, "Le tasse vanno da 156 a 2.600 euro in base al reddito (ISEE).", true],
+      [15600, 260000, "Fees from EUR 156 to EUR 2,600 a year, depending on income.", true],
+      [15600, 260000, "Fees from 156 to EUR 2,600 a year, depending on income.", true],
+      [15600, 260000, "Fees from EUR 156 to 2,600 a year, depending on income.", true],
+      [15600, 260000, "Tasse annuali 156-2.600 € in base al reddito.", true],
+      [15600, 260000, "Studiengebühren 156 bis 2.600 EUR je nach Einkommen.", true],
+      [0, 260000, "Fees range from 0 to 2,600 EUR a year depending on income.", true],
+      [0, 260000, "Fees range from EUR 0 to EUR 2,600 a year depending on income.", true],
+      [0, 260000, "Tasse da €0 - €2,600 all'anno in base al reddito.", true],
+      [0, 260000, "Fees are free up to EUR 2,600 a year depending on income.", true],
+      [0, 260000, "Fees run from free to EUR 2,600 a year depending on income.", true],
+      // a bare edge that is a year, a count or a percentage
+      [202600, 260000, "In 2026 the fee is up to 2,600 euro, depending on income.", false],
+      [15000, 260000, "The programme has 150 places; the fee is EUR 2,600 a year (income).", false],
+      [1000, 260000, "A 10% discount applies; fee EUR 2,600 per year, based on income.", false],
+      // a zero minimum with no free tier tied to the maximum
+      [
+        0,
+        260000,
+        "No tuition fees for EU students; non-EU students pay EUR 2,600 a year (income).",
+        false,
+      ],
+      [0, 260000, "Call our toll-free line. Fees are up to EUR 2,600 a year (income).", false],
+      [0, 260000, "Students on low income are esente; the highest fee is EUR 2,600 a year.", false],
+      [0, 260000, "Fee level 3.0 applies; the highest fee is EUR 2,600 a year (income).", false],
+      // the currency
+      [15600, 260000, "Fees from USD 156 to EUR 2,600 a year, depending on income.", false],
+      [15600, 260000, "Fees from 156 to 2,600 a year, depending on income.", false],
+      [
+        15600,
+        260000,
+        "Fee of 156 applies to some; EUR 2,600 to others, depending on income.",
+        false,
+      ],
+    ];
+    it.each(cases)("range %s..%s in %j is accepted: %s", (min, max, quote, accepted) => {
+      expect(checkTuition(min, quote, 2026, "EUR", max, "income_based").ok).toBe(accepted);
+    });
+    it("reads equal ends as one flat fee", () => {
+      expect(checkTuition(0, "No tuition fees for non-EU students.", 2026, "EUR", 0).ok).toBe(true);
+      expect(checkTuition(0, "Fees are EUR 2,600 a year.", 2026, "EUR", 0).ok).toBe(false);
     });
     it("matches income words in the languages the sources use", () => {
       expect(INCOME_WORDS.test("Einkommen")).toBe(true);
