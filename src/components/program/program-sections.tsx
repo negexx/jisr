@@ -8,6 +8,7 @@ import type { ReactNode } from "react";
 import { CostBreakdown } from "@/components/cost-breakdown";
 import { ExternalLink, sourceHostname } from "@/components/external-link";
 import { LocalizedDataText } from "@/components/localized-data-text";
+import { NumbeoLink } from "@/components/numbeo-link";
 import { SourceBadge } from "@/components/source-badge";
 import type { IsoDate } from "@/data-schema/dates";
 import type { FactMeta, Scholarship } from "@/data-schema/resolved";
@@ -265,6 +266,14 @@ export function CostsSection({ cost, data }: { cost: CostEstimate; data: Program
         }
         textOf={data.text}
         caption={t("caption")}
+      />
+      <NumbeoLink
+        cost={cost}
+        place={{
+          country: data.program.country,
+          citySlug: data.program.city,
+          cityName: data.institution?.city.name ?? data.program.city,
+        }}
       />
     </Section>
   );

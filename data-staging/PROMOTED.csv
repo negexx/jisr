@@ -3996,3 +3996,9 @@ programs,mur:02701:l18:digital-management@roncade,it-ca-foscari-venezia-roncade-
 programs,mur:02701:l33:economics-and-business@venezia,it-ca-foscari-venezia-venezia-economics-and-business-l33,2026-10-05,human,b30-5e81fb
 programs,mur:06306:l41:data-analytics@caserta,it-napoli-vanvitelli-caserta-data-analytics-l41,2026-10-05,human,b30-5e81fb
 programs,mur:05201:l8:biotech-engineering-for-health@siena,it-siena-siena-biotech-engineering-for-health-l8,2026-10-05,human,b30-5e81fb
+cost-profiles,official:de-official,de-official,2026-10-07,human,b31-d48078
+cost-profiles,official:fr-official,fr-official,2026-10-07,human,b31-d48078
+cost-profiles,official:fr-paris-official,fr-paris-official,2026-10-07,human,b31-d48078
+cost-profiles,official:hu-official,hu-official,2026-10-07,human,b31-d48078
+cost-profiles,official:it-official,it-official,2026-10-07,human,b31-d48078
+cost-profiles,official:nl-official,nl-official,2026-10-07,human,b31-d48078

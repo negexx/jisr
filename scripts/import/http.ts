@@ -10,6 +10,17 @@ const MAX_ATTEMPTS = 4;
 
 // A response that arrived but is unusable (wrong shape, truncated): fail at once, do not retry.
 class ValidationError extends Error {}
+
+// A final HTTP error status, so callers can tell "slow down" (429) and "blocked" (403) from the rest.
+export class HttpStatusError extends Error {
+  constructor(
+    message: string,
+    readonly status: number,
+  ) {
+    super(message);
+    this.name = "HttpStatusError";
+  }
+}
 const TIMEOUT_MS = 90_000;
 
 export type FetchOptions = {
@@ -48,8 +59,17 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function cachePath(url: string): string {
-  return path.join(CACHE_DIR, `${createHash("sha1").update(url).digest("hex")}.txt`);
+export function cachePath(url: string, cacheDir = CACHE_DIR): string {
+  return path.join(cacheDir, `${createHash("sha1").update(url).digest("hex")}.txt`);
+}
+
+// True when `fetchText` would answer from the cache (no request). A refresh always requests.
+export function isCached(
+  url: string,
+  options: { refresh?: boolean; cacheDir?: string } = {},
+): boolean {
+  const refresh = options.refresh === true || process.env.JISR_IMPORT_REFRESH === "1";
+  return !refresh && existsSync(cachePath(url, options.cacheDir));
 }
 
 function retryDelayMs(response: Response | null, attempt: number, base: number): number {
@@ -74,6 +94,7 @@ export async function fetchText(url: string, options: FetchOptions = {}): Promis
   }
 
   let lastError = "unknown error";
+  let lastStatus: number | null = null;
   const maxAttempts = options.attempts ?? MAX_ATTEMPTS;
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     let response: Response | null = null;
@@ -99,16 +120,19 @@ export async function fetchText(url: string, options: FetchOptions = {}): Promis
         return body;
       }
       lastError = `HTTP ${response.status}`;
+      lastStatus = response.status;
       if (response.status !== 429 && response.status < 500) break;
     } catch (error) {
       if (error instanceof ValidationError) throw error;
       lastError = error instanceof Error ? error.message : String(error);
+      lastStatus = null;
     }
     if (attempt < maxAttempts) {
       await sleep(retryDelayMs(response, attempt, options.retryDelayMs ?? 2000));
     }
   }
-  throw new Error(`GET ${url} failed: ${lastError}`);
+  const message = `GET ${url} failed: ${lastError}`;
+  throw lastStatus === null ? new Error(message) : new HttpStatusError(message, lastStatus);
 }
 
 export async function fetchJson(url: string, options: FetchOptions = {}): Promise<unknown> {

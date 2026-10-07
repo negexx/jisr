@@ -513,3 +513,30 @@ describe("MatchCard: density and layout", () => {
     expect(bdis).toEqual([model.institutionName, model.cityName]);
   });
 });
+
+describe("MatchCard: no Numbeo link", () => {
+  it.each(LOCALES)("never links to Numbeo, even when a living line is missing (%s)", (locale) => {
+    const base = journey.card(locale, E2E_SLUGS.ok);
+    const model: MatchCardModel = {
+      ...base,
+      cost: {
+        ...base.cost,
+        lines: base.cost.lines.map((line) =>
+          line.category === "housing"
+            ? {
+                ...line,
+                status: "missing" as const,
+                firstYear: null,
+                per: null,
+                scope: null,
+                fact: null,
+              }
+            : line,
+        ),
+      },
+    };
+    const { container } = renderCard(model, locale);
+    expect(container.querySelector("a[href*='numbeo.com']")).toBeNull();
+    expect(container.querySelector('[data-testid="numbeo-link"]')).toBeNull();
+  });
+});

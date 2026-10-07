@@ -1,0 +1,90 @@
+{
+  "slug": "nl-official",
+  "country": "NL",
+  "city": null,
+  "lines": {
+    "housing": {
+      "min": 561,
+      "max": 561,
+      "currency": "EUR",
+      "per": "month",
+      "info_kind": "estimate",
+      "basis": {
+        "fr": "Study in NL (Nuffic), d'après Nibud 2024 : loyer mensuel moyen d'un étudiant aux Pays-Bas, 561 €. Moyenne nationale ; chiffre unique.",
+        "en": "Study in NL (Nuffic), from Nibud 2024: average monthly rent of a student in the Netherlands, 561 EUR. A national average; a single figure.",
+        "ar": "Study in NL (Nuffic)، استنادا إلى Nibud 2024: متوسط الإيجار الشهري لطالب في هولندا 561 يورو. متوسط وطني؛ رقم واحد."
+      },
+      "evidence": {
+        "url": "https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands",
+        "quote": "monthly cost overview to take into account when planning to study in the Netherlands: Rent: € 561",
+        "dateQuote": "(source: Nibud, 2024)"
+      }
+    },
+    "food": {
+      "min": 244,
+      "max": 244,
+      "currency": "EUR",
+      "per": "month",
+      "info_kind": "estimate",
+      "basis": {
+        "fr": "Study in NL (Nuffic), d'après Nibud 2024 : dépense mensuelle moyenne de courses alimentaires d'un étudiant aux Pays-Bas, 244 €. Moyenne nationale ; chiffre unique.",
+        "en": "Study in NL (Nuffic), from Nibud 2024: average monthly grocery spending of a student in the Netherlands, 244 EUR. A national average; a single figure.",
+        "ar": "Study in NL (Nuffic)، استنادا إلى Nibud 2024: متوسط الإنفاق الشهري على البقالة لطالب في هولندا 244 يورو. متوسط وطني؛ رقم واحد."
+      },
+      "evidence": {
+        "url": "https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands",
+        "quote": "Groceries: € 244",
+        "dateQuote": "(source: Nibud, 2024)"
+      }
+    },
+    "transport": {
+      "min": 67,
+      "max": 67,
+      "currency": "EUR",
+      "per": "month",
+      "info_kind": "estimate",
+      "basis": {
+        "fr": "Study in NL (Nuffic), d'après Nibud 2024 : dépense mensuelle moyenne de transport d'un étudiant aux Pays-Bas, 67 €. Moyenne nationale ; chiffre unique.",
+        "en": "Study in NL (Nuffic), from Nibud 2024: average monthly transport spending of a student in the Netherlands, 67 EUR. A national average; a single figure.",
+        "ar": "Study in NL (Nuffic)، استنادا إلى Nibud 2024: متوسط الإنفاق الشهري على النقل لطالب في هولندا 67 يورو. متوسط وطني؛ رقم واحد."
+      },
+      "evidence": {
+        "url": "https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands",
+        "quote": "Transportation: € 67",
+        "dateQuote": "(source: Nibud, 2024)"
+      }
+    },
+    "insurance": {
+      "min": 133,
+      "max": 133,
+      "currency": "EUR",
+      "per": "month",
+      "info_kind": "estimate",
+      "basis": {
+        "fr": "Study in NL (Nuffic), d'après Nibud 2024 : assurance maladie néerlandaise de base, 133 € par mois, indiquée pour un étudiant qui travaille aux Pays-Bas. Chiffre unique.",
+        "en": "Study in NL (Nuffic), from Nibud 2024: basic Dutch health insurance, 133 EUR a month, listed for a student who works in the Netherlands. A single figure.",
+        "ar": "Study in NL (Nuffic)، استنادا إلى Nibud 2024: التأمين الصحي الهولندي الأساسي 133 يورو شهريا، مذكور لطالب يعمل في هولندا. رقم واحد."
+      },
+      "evidence": {
+        "url": "https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands",
+        "quote": "Basic Dutch health insurance (when working in NL): € 133 (source: Nibud, 2024)"
+      }
+    },
+    "application_visa": {
+      "min": 254,
+      "max": 254,
+      "currency": "EUR",
+      "per": "once",
+      "info_kind": "official",
+      "basis": {
+        "fr": "IND (service d'immigration néerlandais) : frais d'une première demande de titre de séjour pour études (tous niveaux d'études).",
+        "en": "IND (Dutch immigration service): fee for a first application for a residence permit for study (all education levels).",
+        "ar": "IND (دائرة الهجرة الهولندية): رسوم أول طلب إقامة للدراسة (جميع المستويات الدراسية)."
+      },
+      "evidence": {
+        "url": "https://ind.nl/en/fees-costs-of-an-application",
+        "quote": "Study (all education levels) First application or change in purpose of stay € 254,00"
+      }
+    }
+  }
+}

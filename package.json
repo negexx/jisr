@@ -41,6 +41,8 @@
     "data:checkeval": "tsx scripts/import/checker-eval.ts",
     "data:audit": "tsx scripts/import/audit.ts",
     "data:scholarship": "tsx scripts/import/scholarships.ts",
+    "data:costs": "tsx scripts/import/costs.ts",
+    "data:costs-official": "tsx scripts/import/official-costs.ts",
     "format": "biome format --write .",
     "perf:js": "tsx scripts/perf/first-load-js.ts",
     "db:generate": "node scripts/not-configured.mjs db:generate",

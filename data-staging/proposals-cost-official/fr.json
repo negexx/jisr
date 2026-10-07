@@ -1,0 +1,91 @@
+{
+  "slug": "fr-official",
+  "country": "FR",
+  "city": null,
+  "lines": {
+    "housing": {
+      "min": 350,
+      "max": 350,
+      "currency": "EUR",
+      "per": "month",
+      "info_kind": "estimate",
+      "basis": {
+        "fr": "Campus France (page mise à jour le 26 juin 2026) : loyer mensuel moyen d'une résidence Crous hors Paris, 350 € (chiffre unique publié, pas une fourchette). Un studio privé coûte au moins 400 € hors Paris.",
+        "en": "Campus France (page updated 26 June 2026): average monthly rent of a Crous residence outside Paris, 350 EUR (a single published figure, not a range). A private studio costs at least 400 EUR outside Paris.",
+        "ar": "Campus France (صفحة محدّثة في 26 يونيو 2026): متوسط الإيجار الشهري في إقامة Crous خارج باريس 350 يورو (رقم واحد منشور وليس نطاقا). استوديو خاص يكلف 400 يورو على الأقل خارج باريس."
+      },
+      "evidence": {
+        "url": "https://www.campusfrance.org/en/student-housing-france",
+        "quote": "the monthly rent is low (€450 in Paris; €350 on average elsewhere in France)",
+        "dateQuote": "Updated on 26 June 2026"
+      }
+    },
+    "food": {
+      "min": 300,
+      "max": 300,
+      "currency": "EUR",
+      "per": "month",
+      "info_kind": "estimate",
+      "basis": {
+        "fr": "Campus France (page mise à jour le 7 juillet 2026) : les Français consacrent en moyenne environ 300 € par mois à l'alimentation ; le chiffre varie selon la ville et les habitudes (chiffre unique, pas une fourchette).",
+        "en": "Campus France (page updated 7 July 2026): the French spend on average about 300 EUR a month on food; it varies by city and habits (a single figure, not a range).",
+        "ar": "Campus France (صفحة محدّثة في 7 يوليو 2026): ينفق الفرنسيون في المتوسط نحو 300 يورو شهريا على الغذاء؛ يختلف حسب المدينة والعادات (رقم واحد وليس نطاقا)."
+      },
+      "evidence": {
+        "url": "https://www.campusfrance.org/en/preparing-budget-student-France",
+        "quote": "the French dedicate about 300€/month to food expenses",
+        "dateQuote": "Updated on 07 July 2026"
+      }
+    },
+    "transport": {
+      "min": 250,
+      "max": 300,
+      "currency": "EUR",
+      "per": "year",
+      "info_kind": "estimate",
+      "basis": {
+        "fr": "Campus France (page mise à jour le 7 juillet 2026) : abonnement annuel de transport public au tarif étudiant hors Paris, entre 250 et 300 €.",
+        "en": "Campus France (page updated 7 July 2026): annual public-transport subscription at the student rate outside Paris, between 250 and 300 EUR.",
+        "ar": "Campus France (صفحة محدّثة في 7 يوليو 2026): اشتراك سنوي في النقل العام بسعر الطلبة خارج باريس، بين 250 و300 يورو."
+      },
+      "evidence": {
+        "url": "https://www.campusfrance.org/en/preparing-budget-student-France",
+        "quote": "an annual transit subscription outside of Paris at the student rate: between 250 and 300 Euros",
+        "dateQuote": "Updated on 07 July 2026"
+      }
+    },
+    "application_visa": {
+      "min": 100,
+      "max": 100,
+      "currency": "EUR",
+      "per": "once",
+      "info_kind": "official",
+      "basis": {
+        "fr": "Service-Public : taxe à payer lors de la validation du VLS-TS « étudiant » après l'arrivée en France. Elle s'ajoute aux droits de visa, qui ne sont pas inclus ici.",
+        "en": "Service-Public: tax paid when validating the student VLS-TS visa after arriving in France. It comes on top of the visa fee, which is not included here.",
+        "ar": "Service-Public: رسم يُدفع عند تفعيل تأشيرة VLS-TS للطلبة بعد الوصول إلى فرنسا. يُضاف إلى رسوم التأشيرة غير المشمولة هنا."
+      },
+      "evidence": {
+        "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2231",
+        "quote": "Il faut payer 100 €",
+        "dateQuote": "Vérifié le 01 août 2026"
+      }
+    },
+    "setup": {
+      "min": 105,
+      "max": 105,
+      "currency": "EUR",
+      "per": "year",
+      "info_kind": "official",
+      "basis": {
+        "fr": "CVEC (Contribution de vie étudiante et de campus), site officiel du Crous et du ministère : 105 € pour l'année universitaire 2026-2027, à payer avant l'inscription (contribution annuelle).",
+        "en": "CVEC (student life and campus contribution), official Crous and ministry site: 105 EUR for the 2026-2027 academic year, paid before enrolment (an annual contribution).",
+        "ar": "CVEC (مساهمة الحياة الطلابية والحرم الجامعي)، الموقع الرسمي: 105 يورو للسنة الجامعية 2026-2027، تُدفع قبل التسجيل (مساهمة سنوية)."
+      },
+      "evidence": {
+        "url": "https://cvec.etudiant.gouv.fr/",
+        "quote": "L'acquittement est actuellement possible pour l'année universitaire 2026-2027. Elle est de 105 € euros."
+      }
+    }
+  }
+}

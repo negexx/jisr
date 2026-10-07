@@ -26,8 +26,21 @@ export function formatDate(iso: IsoDate, _locale: AppLocale): string {
   return `${day}/${month}/${year}`;
 }
 
-// Intl throws a RangeError for malformed codes and defaults to 2 digits for unknown well-formed ones.
+// Stored money scale for the currencies the data uses, fixed here because Intl's answer depends on the
+// ICU/CLDR build: Node 24 and Chrome 152 give HUF 0 digits, ISO 4217 and older CLDR give 2, so a
+// different browser would show forint amounts 100x wrong. HUF is stored as whole forints (no fillér).
+const KNOWN_MINOR_UNIT_DIGITS: Readonly<Record<string, number>> = {
+  EUR: 2,
+  MAD: 2,
+  USD: 2,
+  HUF: 0,
+};
+
+// Currencies outside the table fall back to Intl, which throws a RangeError for malformed codes and
+// defaults to 2 digits for unknown well-formed ones.
 export function minorUnitDigits(currency: string): number {
+  const known = KNOWN_MINOR_UNIT_DIGITS[currency];
+  if (known !== undefined) return known;
   // Safe: with style "currency", resolvedOptions always reports maximumFractionDigits; only the TS lib types it optional.
   return new Intl.NumberFormat("en", { style: "currency", currency }).resolvedOptions()
     .maximumFractionDigits as number;
@@ -48,7 +61,13 @@ function assertMinorAmount(minor: number): void {
 }
 
 function currencyFormat(currency: string, locale: AppLocale): Intl.NumberFormat {
-  return new Intl.NumberFormat(intlLocale(locale), { style: "currency", currency });
+  const digits = minorUnitDigits(currency);
+  return new Intl.NumberFormat(intlLocale(locale), {
+    style: "currency",
+    currency,
+    minimumFractionDigits: digits,
+    maximumFractionDigits: digits,
+  });
 }
 
 export function formatMoney(minor: number, currency: string, locale: AppLocale): string {

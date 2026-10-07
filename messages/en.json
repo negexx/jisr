@@ -511,7 +511,10 @@
     "counted": "Counted {per}",
     "seeNote": "See note",
     "total": "Total for the first year",
-    "seeLines": "See each cost line"
+    "seeLines": "See each cost line",
+    "numbeoCity": "See <place>{city}</place> prices on Numbeo (external site)",
+    "numbeoCountry": "See country-wide prices on Numbeo (<place>{country}</place>, external site)",
+    "numbeoNote": "Numbeo is a crowdsourced site, not an official one."
   },
   "reasonList": {
     "sources": "Sources",

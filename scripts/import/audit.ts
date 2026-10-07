@@ -5,6 +5,8 @@ import path from "node:path";
 
 import { parse } from "yaml";
 
+import { minorUnitDigits } from "@/lib/format";
+
 import { parseCsv, STAGING_DIR, stageFile } from "./staging";
 
 // Records prepared by the assistant are verified by code (quotes re-checked against the pages), but
@@ -26,7 +28,10 @@ export type AuditRow = {
 
 // Scholarships are shown to students as facts about money and eligibility, and there are few of
 // them: every one is read by a human, whatever the size of its batch.
-const ALWAYS_SAMPLED = /^scholarships\//;
+// Official cost profiles (country and city) are figures a model quoted from government pages, so
+// they get the same treatment; the parked Numbeo ones keep the normal 10% sample.
+const OFFICIAL_COST_PROFILE = /^cost-profiles\/[^/]+-official$/;
+const ALWAYS_SAMPLED = new RegExp(`^scholarships/|${OFFICIAL_COST_PROFILE.source}`);
 // ... and none of them can be waived: the owner can pass a programme preview unread, never money
 // and eligibility facts.
 export const isAlwaysSampled = (key: string): boolean => ALWAYS_SAMPLED.test(key);
@@ -149,6 +154,20 @@ const show = (v: unknown): string => (typeof v === "string" ? v : JSON.stringify
 
 const PROSE_CLAIMS: readonly string[] = ["eligibility", "level", "howToApply"];
 
+// Staged money is integer minor units; the owner compares against Numbeo's figures in major units.
+function majorRange(value: Loose): string {
+  const { min, max, currency, per } = value;
+  if (typeof min !== "number" || typeof max !== "number" || typeof currency !== "string")
+    return show(value);
+  const digits = minorUnitDigits(currency);
+  const numbers = new Intl.NumberFormat("en", {
+    minimumFractionDigits: digits,
+    maximumFractionDigits: digits,
+  });
+  const major = (minor: number) => numbers.format(minor / 10 ** digits);
+  return `${major(min)} to ${major(max)} ${currency} per ${show(per)}`;
+}
+
 // One readable page per sampled record: what is claimed, the exact quote and page behind it, and
 // the preparer's own caveats, so the reader checks the quotes instead of reading raw YAML.
 export function sampleSheet(
@@ -205,6 +224,35 @@ export function sampleSheet(
           `- **eligibleNationalities ${show(e.fact).slice("nationality:".length)}** named by: "${show(e.quote)}" — ${show(e.url)}`,
         );
       }
+    }
+    if (key.startsWith("cost-profiles/")) {
+      const official = OFFICIAL_COST_PROFILE.test(key);
+      for (const [lineName, rawLine] of Object.entries(asObject(r.lines))) {
+        const costLine = asObject(rawLine);
+        const value = asObject(costLine.value);
+        out.push(
+          `- **${lineName}**: \`${majorRange(value)}\` (${show(costLine.info_kind)}; source ${show(costLine.source)})`,
+        );
+        for (const e of evidence.filter((x) => x.fact === `lines.${lineName}`)) {
+          // Numbeo's food basket joins its rows with "; ": one line per row. An official quote is
+          // printed whole, so the owner reads it as the page words it.
+          const parts = official ? [show(e.quote)] : show(e.quote).split("; ");
+          for (const part of parts) out.push(`  - "${part}" — ${show(e.url)}`);
+        }
+        // The quote that dates an estimate (its own quote states no year): read it with the figure.
+        for (const e of evidence.filter((x) => x.fact === `lines.${lineName}.date`))
+          out.push(`  - date: "${show(e.quote)}" — ${show(e.url)}`);
+        const basis = asObject(asObject(costLine.basis).en);
+        if (typeof basis.text === "string") out.push(`  - formula: ${basis.text}`);
+      }
+      const [firstSource] = Object.values(asObject(r.sources));
+      const pageUrl = asObject(firstSource).url;
+      if (pageUrl !== undefined) out.push(`- **page**: ${show(pageUrl)}`);
+      out.push(
+        official
+          ? "- **page check**: Confirm: the quote is on the official page and the number matches"
+          : "- **page check**: Confirm: this is the city's page (right city, right currency, right date).",
+      );
     }
     for (const fact of [
       "durationYears",

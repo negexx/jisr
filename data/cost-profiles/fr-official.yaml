@@ -1,0 +1,107 @@
+slug: fr-official
+country: FR
+city: null
+lines:
+  housing:
+    value:
+      min: 35000
+      max: 35000
+      currency: EUR
+      per: month
+    source: campusfrance-org
+    info_kind: estimate
+    basis:
+      fr:
+        text: "Campus France (page mise à jour le 26 juin 2026) : loyer mensuel moyen d'une résidence Crous hors Paris, 350 € (chiffre unique publié, pas une fourchette). Un studio privé coûte au moins 400 € hors Paris."
+        status: draft
+      en:
+        text: "Campus France (page updated 26 June 2026): average monthly rent of a Crous residence outside Paris, 350 EUR (a single published figure, not a range). A private studio costs at least 400 EUR outside Paris."
+        status: draft
+      ar:
+        text: "Campus France (صفحة محدّثة في 26 يونيو 2026): متوسط الإيجار الشهري في إقامة Crous خارج باريس 350 يورو (رقم واحد منشور وليس نطاقا). استوديو خاص يكلف 400 يورو على الأقل خارج باريس."
+        status: draft
+  food:
+    value:
+      min: 30000
+      max: 30000
+      currency: EUR
+      per: month
+    source: campusfrance-org-2
+    info_kind: estimate
+    basis:
+      fr:
+        text: "Campus France (page mise à jour le 7 juillet 2026) : les Français consacrent en moyenne environ 300 € par mois à l'alimentation ; le chiffre varie selon la ville et les habitudes (chiffre unique, pas une fourchette)."
+        status: draft
+      en:
+        text: "Campus France (page updated 7 July 2026): the French spend on average about 300 EUR a month on food; it varies by city and habits (a single figure, not a range)."
+        status: draft
+      ar:
+        text: "Campus France (صفحة محدّثة في 7 يوليو 2026): ينفق الفرنسيون في المتوسط نحو 300 يورو شهريا على الغذاء؛ يختلف حسب المدينة والعادات (رقم واحد وليس نطاقا)."
+        status: draft
+  transport:
+    value:
+      min: 25000
+      max: 30000
+      currency: EUR
+      per: year
+    source: campusfrance-org-2
+    info_kind: estimate
+    basis:
+      fr:
+        text: "Campus France (page mise à jour le 7 juillet 2026) : abonnement annuel de transport public au tarif étudiant hors Paris, entre 250 et 300 €."
+        status: draft
+      en:
+        text: "Campus France (page updated 7 July 2026): annual public-transport subscription at the student rate outside Paris, between 250 and 300 EUR."
+        status: draft
+      ar:
+        text: "Campus France (صفحة محدّثة في 7 يوليو 2026): اشتراك سنوي في النقل العام بسعر الطلبة خارج باريس، بين 250 و300 يورو."
+        status: draft
+  application_visa:
+    value:
+      min: 10000
+      max: 10000
+      currency: EUR
+      per: once
+    source: service-public-gouv-fr
+    info_kind: official
+    basis:
+      fr:
+        text: "Service-Public : taxe à payer lors de la validation du VLS-TS « étudiant » après l'arrivée en France. Elle s'ajoute aux droits de visa, qui ne sont pas inclus ici."
+        status: draft
+      en:
+        text: "Service-Public: tax paid when validating the student VLS-TS visa after arriving in France. It comes on top of the visa fee, which is not included here."
+        status: draft
+      ar:
+        text: "Service-Public: رسم يُدفع عند تفعيل تأشيرة VLS-TS للطلبة بعد الوصول إلى فرنسا. يُضاف إلى رسوم التأشيرة غير المشمولة هنا."
+        status: draft
+  setup:
+    value:
+      min: 10500
+      max: 10500
+      currency: EUR
+      per: year
+    source: cvec-etudiant-gouv-fr
+    info_kind: official
+    basis:
+      fr:
+        text: "CVEC (Contribution de vie étudiante et de campus), site officiel du Crous et du ministère : 105 € pour l'année universitaire 2026-2027, à payer avant l'inscription (contribution annuelle)."
+        status: draft
+      en:
+        text: "CVEC (student life and campus contribution), official Crous and ministry site: 105 EUR for the 2026-2027 academic year, paid before enrolment (an annual contribution)."
+        status: draft
+      ar:
+        text: "CVEC (مساهمة الحياة الطلابية والحرم الجامعي)، الموقع الرسمي: 105 يورو للسنة الجامعية 2026-2027، تُدفع قبل التسجيل (مساهمة سنوية)."
+        status: draft
+sources:
+  campusfrance-org:
+    url: https://www.campusfrance.org/en/student-housing-france
+    last_verified_at: 2026-10-07
+  campusfrance-org-2:
+    url: https://www.campusfrance.org/en/preparing-budget-student-France
+    last_verified_at: 2026-10-07
+  service-public-gouv-fr:
+    url: https://www.service-public.gouv.fr/particuliers/vosdroits/F2231
+    last_verified_at: 2026-10-07
+  cvec-etudiant-gouv-fr:
+    url: https://cvec.etudiant.gouv.fr/
+    last_verified_at: 2026-10-07

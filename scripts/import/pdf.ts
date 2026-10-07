@@ -33,16 +33,21 @@ export async function pdfBytesToText(bytes: Uint8Array): Promise<string> {
   }
 }
 
-export type PdfDeps = { fetchFn?: typeof fetch; cacheDir?: string };
+// `refresh`: ignore the cached text and ask again (the cache is still rewritten).
+export type PdfDeps = { fetchFn?: typeof fetch; cacheDir?: string; refresh?: boolean };
 
 const pdfCacheFile = (url: string, deps: PdfDeps): string =>
   path.join(deps.cacheDir ?? CACHE_DIR, `${createHash("sha1").update(url).digest("hex")}.pdf.txt`);
 
+// True when `cachedPdfText` would answer from the cache.
+export function isPdfCached(url: string, deps: PdfDeps = {}): boolean {
+  const refresh = deps.refresh === true || process.env.JISR_IMPORT_REFRESH === "1";
+  return !refresh && existsSync(pdfCacheFile(url, deps));
+}
+
 // The extracted text of a PDF already fetched for this url, or null.
 export async function cachedPdfText(url: string, deps: PdfDeps = {}): Promise<string | null> {
-  const file = pdfCacheFile(url, deps);
-  if (process.env.JISR_IMPORT_REFRESH === "1" || !existsSync(file)) return null;
-  return readFile(file, "utf8");
+  return isPdfCached(url, deps) ? readFile(pdfCacheFile(url, deps), "utf8") : null;
 }
 
 // One polite GET per url (cached as text next to the HTML cache, `.pdf.txt`); no retries: a PDF

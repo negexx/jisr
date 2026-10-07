@@ -4,7 +4,14 @@ import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
-import { isPdfUrl, MAX_PDF_BYTES, pdfBytesToText, pdfText } from "../../../scripts/import/pdf";
+import {
+  cachedPdfText,
+  isPdfCached,
+  isPdfUrl,
+  MAX_PDF_BYTES,
+  pdfBytesToText,
+  pdfText,
+} from "../../../scripts/import/pdf";
 import { makePdf } from "./pdf-fixture";
 
 const pdfResponse = (
@@ -41,6 +48,26 @@ describe("pdfText", () => {
     expect(await pdfText(url, { fetchFn, cacheDir })).toContain("15 July 2026");
     expect(await pdfText(url, { fetchFn, cacheDir })).toContain("15 July 2026");
     expect(calls).toBe(1);
+  });
+
+  it("with refresh, asks again instead of serving the cached text, and refreshes the cache", async () => {
+    const cacheDir = await mkdtemp(path.join(tmpdir(), "pdf-"));
+    let version = "Fee: EUR 100 per year";
+    let calls = 0;
+    const fetchFn = (async () => {
+      calls++;
+      return pdfResponse(makePdf(version));
+    }) as typeof fetch;
+    const url = "https://uni.example/fees.pdf";
+    expect(isPdfCached(url, { cacheDir })).toBe(false);
+    expect(await pdfText(url, { fetchFn, cacheDir })).toContain("EUR 100");
+    expect(isPdfCached(url, { cacheDir })).toBe(true);
+    version = "Fee: EUR 120 per year";
+    expect(await pdfText(url, { fetchFn, cacheDir, refresh: true })).toContain("EUR 120");
+    expect(calls).toBe(2);
+    expect(await cachedPdfText(url, { cacheDir, refresh: true })).toBeNull();
+    expect(await cachedPdfText(url, { cacheDir })).toContain("EUR 120");
+    expect(isPdfCached(url, { cacheDir, refresh: true })).toBe(false);
   });
 
   it("refuses a body that is not a PDF", async () => {
