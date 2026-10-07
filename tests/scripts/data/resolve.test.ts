@@ -5,6 +5,8 @@ import { resolveCatalog, textKey } from "@scripts/data/resolve";
 import type { Catalog } from "@scripts/data/validate";
 import { validateData } from "@scripts/data/validate";
 import { describe, expect, it } from "vitest";
+import { addDays } from "@/data-schema/dates";
+import { estimateCost } from "@/domain/costs";
 
 const FIXTURES = "tests/fixtures/data";
 const NOW = "2026-09-29";
@@ -83,6 +85,7 @@ describe("resolveCatalog on valid-minimal", () => {
     const profile = only(resolved.costProfiles).value;
     expect(profile.lines.housing?.basis).toBe("cost-profiles/xx-test-costs-xb#lines.housing.basis");
     expect(profile.lines.housing?.class).toBe("stable");
+    expect(profile.lines.application_visa?.class).toBe("volatile");
     expect(profile.lines.application_visa).not.toHaveProperty("basis");
     expect(profile.lines).not.toHaveProperty("food");
     expect(only(resolved.costProfiles).texts.size).toBe(1);
@@ -231,5 +234,22 @@ describe("resolveCatalog edge cases", () => {
   it("resolves an empty catalog to empty arrays", () => {
     const resolved = resolveCatalog(catalogOf("empty"));
     expect(Object.values(resolved).every((items) => items.length === 0)).toBe(true);
+  });
+});
+
+describe("cost line freshness on resolved data", () => {
+  it("ages a visa fee line while a housing line of the same age is still fresh", () => {
+    const resolved = resolveCatalog(catalogOf("valid-minimal"));
+    const now = addDays("2026-09-01", 130);
+    const estimate = estimateCost({
+      program: only(resolved.programs).value,
+      costProfiles: resolved.costProfiles.map((r) => r.value),
+      budget: null,
+      now,
+    });
+    const freshnessOf = (category: string) =>
+      estimate.lines.find((l) => l.category === category)?.fact?.freshness;
+    expect(freshnessOf("application_visa")).toBe("aging");
+    expect(freshnessOf("housing")).toBe("fresh");
   });
 });

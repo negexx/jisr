@@ -273,7 +273,7 @@ Shipped (batch b31, read by the owner; every figure is the page's own, annual li
 
 Left out, and why: the Italian SSN contribution of 700 EUR (the salute.gov.it page is bot-blocked, so the quote cannot be verified), Italian and Hungarian housing and food (the figures are from 2019 or Budapest-only, so older than 2026 or not national), Italian per-city residence rents (garbled PDF) and the Budapest transport pass (eligibility changed on 15 June 2026). A gap stays unknown, never filled in.
 
-Follow-ups: the `*100` / `/100` minor-unit assumption in `scripts/import/scholarships.ts`, `evidence.ts`, `checker.ts` and the reader prompt (`reader.ts`) must use `minorUnitDigits` before the first HUF tuition or Hungarian scholarship is staged (no HUF amount exists in data except this cost line, written by `official-costs.ts`, which already uses it). Cost-profile lines age on the stable clock although fees change yearly (owner decision pending).
+Follow-ups: the `*100` / `/100` minor-unit assumption in `scripts/import/scholarships.ts`, `evidence.ts`, `checker.ts` and the reader prompt (`reader.ts`) must use `minorUnitDigits` before the first HUF tuition or Hungarian scholarship is staged (no HUF amount exists in data except this cost line, written by `official-costs.ts`, which already uses it). Cost-profile fee lines (insurance, application_visa, setup) age on the volatile clock (owner decision 2026-10-07); housing, food and transport stay stable.
 
 ### 2026-only rule and Numbeo links
 
