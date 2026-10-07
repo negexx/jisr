@@ -303,6 +303,53 @@ const INVALID: [string, CollectionName, () => Obj, Expect][] = [
     E("tuition.value.period"),
   ],
   [
+    "program tuition max below min",
+    "programs",
+    () =>
+      program({
+        tuition: F({ amountMinor: 2000, maxAmountMinor: 1000, currency: CURRENCY, period: "year" }),
+      }),
+    E("tuition.value.maxAmountMinor"),
+  ],
+  [
+    "program tuition basis without a maximum",
+    "programs",
+    () =>
+      program({
+        tuition: F({
+          amountMinor: 1000,
+          currency: CURRENCY,
+          period: "year",
+          basis: "income_based",
+        }),
+      }),
+    E("tuition.value.basis"),
+  ],
+  [
+    "program tuition unknown basis",
+    "programs",
+    () =>
+      program({
+        tuition: F({
+          amountMinor: 1000,
+          maxAmountMinor: 2000,
+          currency: CURRENCY,
+          period: "year",
+          basis: "per_credit",
+        }),
+      }),
+    E("tuition.value.basis"),
+  ],
+  [
+    "program tuition negative maximum",
+    "programs",
+    () =>
+      program({
+        tuition: F({ amountMinor: 1000, maxAmountMinor: -1, currency: CURRENCY, period: "year" }),
+      }),
+    E("tuition.value.maxAmountMinor"),
+  ],
+  [
     "program missing tuition",
     "programs",
     () => omit(program(), "tuition"),
@@ -498,6 +545,28 @@ describe("record schemas", () => {
       }),
     });
     expect(COLLECTIONS.scholarships.schema.safeParse(record).success).toBe(true);
+  });
+
+  it("accepts an official tuition range, with or without a basis, and a flat fee unchanged", () => {
+    const { schema } = COLLECTIONS.programs;
+    const flat = { amountMinor: 1000, currency: CURRENCY, period: "year" };
+    expect(schema.safeParse(program({ tuition: F(flat) })).success).toBe(true);
+    expect(
+      schema.safeParse(program({ tuition: F({ ...flat, maxAmountMinor: 3000 }) })).success,
+    ).toBe(true);
+    expect(
+      schema.safeParse(
+        program({ tuition: F({ ...flat, maxAmountMinor: 3000, basis: "income_based" }) }),
+      ).success,
+    ).toBe(true);
+    // equal bounds and a zero minimum are legal ranges
+    expect(
+      schema.safeParse(program({ tuition: F({ ...flat, maxAmountMinor: 1000 }) })).success,
+    ).toBe(true);
+    expect(
+      schema.safeParse(program({ tuition: F({ ...flat, amountMinor: 0, maxAmountMinor: 200000 }) }))
+        .success,
+    ).toBe(true);
   });
 
   it("accepts a scholarship with an institutions list, an empty one, or none", () => {
