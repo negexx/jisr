@@ -1,0 +1,26 @@
+slug: hu-official
+country: HU
+city: null
+lines:
+  insurance:
+    value:
+      min: 12300
+      max: 12300
+      currency: HUF
+      per: month
+    source: nav-gov-hu
+    info_kind: estimate
+    basis:
+      fr:
+        text: "NAV (administration fiscale hongroise) : montant mensuel légal de la contribution aux services de santé (egészségügyi szolgáltatási járulék) en 2026, 12 300 HUF. Son application à un étudiant donné dépend de sa situation d'assurance."
+        status: draft
+      en:
+        text: "NAV (Hungarian tax authority): statutory monthly health-service contribution (egészségügyi szolgáltatási járulék) in 2026, 12,300 HUF. Whether it applies to a given student depends on their insurance situation."
+        status: draft
+      ar:
+        text: "NAV (مصلحة الضرائب المجرية): المبلغ الشهري القانوني لمساهمة الخدمات الصحية (egészségügyi szolgáltatási járulék) في 2026 هو 12300 فورنت. وانطباقها على طالب بعينه يتوقف على وضعه التأميني."
+        status: draft
+sources:
+  nav-gov-hu:
+    url: https://nav.gov.hu/ado/jarulek/Fizetendo_jarulekok_2026._januar_1-jetol
+    last_verified_at: 2026-10-07

@@ -1,0 +1,26 @@
+slug: it-official
+country: IT
+city: null
+lines:
+  application_visa:
+    value:
+      min: 4000
+      max: 4000
+      currency: EUR
+      per: once
+    source: questure-poliziadistato-it
+    info_kind: official
+    basis:
+      fr:
+        text: "Questura (Police d'État, notice du 13/06/2017) : contribution pour un titre de séjour électronique de plus de trois mois et d'un an au plus. Les autres frais (carte, timbre fiscal) ne figurent pas sur cette page et ne sont pas inclus ; à revérifier sur le site de la Questura. Contribution due pour chaque titre délivré (valable jusqu'à un an)."
+        status: draft
+      en:
+        text: "Questura (State Police, notice of 13/06/2017): contribution for an electronic residence permit of more than three months and up to one year. Other fees (card, revenue stamp) are not on this page and not included; check the amount again on the Questura site. Due for each permit issued (valid up to one year)."
+        status: draft
+      ar:
+        text: "Questura (الشرطة الحكومية، إشعار بتاريخ 13/06/2017): مساهمة لتصريح إقامة إلكتروني لأكثر من ثلاثة أشهر وحتى سنة. الرسوم الأخرى (البطاقة والطابع المالي) غير واردة في هذه الصفحة وغير مشمولة؛ يُعاد التحقق من المبلغ في موقع Questura. مستحقة عن كل تصريح يصدر (صالح حتى سنة)."
+        status: draft
+sources:
+  questure-poliziadistato-it:
+    url: https://questure.poliziadistato.it/it/Campobasso/articolo/1326593f9bac0db04322800233
+    last_verified_at: 2026-10-07

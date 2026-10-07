@@ -1,0 +1,47 @@
+slug: fr-paris-official
+country: FR
+city: paris
+lines:
+  housing:
+    value:
+      min: 45000
+      max: 45000
+      currency: EUR
+      per: month
+    source: campusfrance-org
+    info_kind: estimate
+    basis:
+      fr:
+        text: "Campus France (page mise à jour le 26 juin 2026) : loyer mensuel d'une résidence Crous à Paris, 450 € (chiffre unique publié, pas une fourchette). Un studio privé coûte au moins 800 € à Paris."
+        status: draft
+      en:
+        text: "Campus France (page updated 26 June 2026): monthly rent of a Crous residence in Paris, 450 EUR (a single published figure, not a range). A private studio costs at least 800 EUR in Paris."
+        status: draft
+      ar:
+        text: "Campus France (صفحة محدّثة في 26 يونيو 2026): الإيجار الشهري في إقامة Crous بباريس 450 يورو (رقم واحد منشور وليس نطاقا). استوديو خاص يكلف 800 يورو على الأقل في باريس."
+        status: draft
+  transport:
+    value:
+      min: 37440
+      max: 37440
+      currency: EUR
+      per: year
+    source: campusfrance-org-2
+    info_kind: estimate
+    basis:
+      fr:
+        text: "Campus France (page mise à jour le 7 juillet 2026) : abonnement annuel de transport public à Paris au tarif étudiant, 374,40 € (chiffre unique)."
+        status: draft
+      en:
+        text: "Campus France (page updated 7 July 2026): annual public-transport subscription in Paris at the student rate, 374.40 EUR (a single figure)."
+        status: draft
+      ar:
+        text: "Campus France (صفحة محدّثة في 7 يوليو 2026): اشتراك سنوي في النقل العام بباريس بسعر الطلبة 374.40 يورو (رقم واحد)."
+        status: draft
+sources:
+  campusfrance-org:
+    url: https://www.campusfrance.org/en/student-housing-france
+    last_verified_at: 2026-10-07
+  campusfrance-org-2:
+    url: https://www.campusfrance.org/en/preparing-budget-student-France
+    last_verified_at: 2026-10-07

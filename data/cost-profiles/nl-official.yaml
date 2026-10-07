@@ -1,0 +1,101 @@
+slug: nl-official
+country: NL
+city: null
+lines:
+  housing:
+    value:
+      min: 56100
+      max: 56100
+      currency: EUR
+      per: month
+    source: studyinnl-org
+    info_kind: estimate
+    basis:
+      fr:
+        text: "Study in NL (Nuffic), d'après Nibud 2024 : loyer mensuel moyen d'un étudiant aux Pays-Bas, 561 €. Moyenne nationale ; chiffre unique."
+        status: draft
+      en:
+        text: "Study in NL (Nuffic), from Nibud 2024: average monthly rent of a student in the Netherlands, 561 EUR. A national average; a single figure."
+        status: draft
+      ar:
+        text: "Study in NL (Nuffic)، استنادا إلى Nibud 2024: متوسط الإيجار الشهري لطالب في هولندا 561 يورو. متوسط وطني؛ رقم واحد."
+        status: draft
+  food:
+    value:
+      min: 24400
+      max: 24400
+      currency: EUR
+      per: month
+    source: studyinnl-org
+    info_kind: estimate
+    basis:
+      fr:
+        text: "Study in NL (Nuffic), d'après Nibud 2024 : dépense mensuelle moyenne de courses alimentaires d'un étudiant aux Pays-Bas, 244 €. Moyenne nationale ; chiffre unique."
+        status: draft
+      en:
+        text: "Study in NL (Nuffic), from Nibud 2024: average monthly grocery spending of a student in the Netherlands, 244 EUR. A national average; a single figure."
+        status: draft
+      ar:
+        text: "Study in NL (Nuffic)، استنادا إلى Nibud 2024: متوسط الإنفاق الشهري على البقالة لطالب في هولندا 244 يورو. متوسط وطني؛ رقم واحد."
+        status: draft
+  transport:
+    value:
+      min: 6700
+      max: 6700
+      currency: EUR
+      per: month
+    source: studyinnl-org
+    info_kind: estimate
+    basis:
+      fr:
+        text: "Study in NL (Nuffic), d'après Nibud 2024 : dépense mensuelle moyenne de transport d'un étudiant aux Pays-Bas, 67 €. Moyenne nationale ; chiffre unique."
+        status: draft
+      en:
+        text: "Study in NL (Nuffic), from Nibud 2024: average monthly transport spending of a student in the Netherlands, 67 EUR. A national average; a single figure."
+        status: draft
+      ar:
+        text: "Study in NL (Nuffic)، استنادا إلى Nibud 2024: متوسط الإنفاق الشهري على النقل لطالب في هولندا 67 يورو. متوسط وطني؛ رقم واحد."
+        status: draft
+  insurance:
+    value:
+      min: 13300
+      max: 13300
+      currency: EUR
+      per: month
+    source: studyinnl-org
+    info_kind: estimate
+    basis:
+      fr:
+        text: "Study in NL (Nuffic), d'après Nibud 2024 : assurance maladie néerlandaise de base, 133 € par mois, indiquée pour un étudiant qui travaille aux Pays-Bas. Chiffre unique."
+        status: draft
+      en:
+        text: "Study in NL (Nuffic), from Nibud 2024: basic Dutch health insurance, 133 EUR a month, listed for a student who works in the Netherlands. A single figure."
+        status: draft
+      ar:
+        text: "Study in NL (Nuffic)، استنادا إلى Nibud 2024: التأمين الصحي الهولندي الأساسي 133 يورو شهريا، مذكور لطالب يعمل في هولندا. رقم واحد."
+        status: draft
+  application_visa:
+    value:
+      min: 25400
+      max: 25400
+      currency: EUR
+      per: once
+    source: ind-nl
+    info_kind: official
+    basis:
+      fr:
+        text: "IND (service d'immigration néerlandais) : frais d'une première demande de titre de séjour pour études (tous niveaux d'études)."
+        status: draft
+      en:
+        text: "IND (Dutch immigration service): fee for a first application for a residence permit for study (all education levels)."
+        status: draft
+      ar:
+        text: "IND (دائرة الهجرة الهولندية): رسوم أول طلب إقامة للدراسة (جميع المستويات الدراسية)."
+        status: draft
+sources:
+  studyinnl-org:
+    url: https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands
+    last_verified_at: 2026-10-07
+  ind-nl:
+    url: https://ind.nl/en/fees-costs-of-an-application
+    last_verified_at: 2026-10-07
