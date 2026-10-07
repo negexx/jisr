@@ -114,6 +114,15 @@ describe("checkLanguages", () => {
 });
 
 describe("checkTuition", () => {
+  it("reads the amount in the currency's own minor units: forints are whole", () => {
+    const quote = "Tuition fee: 1 500 000 HUF per semester";
+    expect(checkTuition(1500000, quote, 2026, "HUF").ok).toBe(true);
+    expect(checkTuition(150000000, quote, 2026, "HUF").ok).toBe(false);
+  });
+  it("keeps hundredths when the currency is EUR or not given", () => {
+    expect(checkTuition(150000, "Tuition: €1,500 per semester", 2026, "EUR").ok).toBe(true);
+    expect(checkTuition(1500, "Tuition: €1,500 per semester", 2026, "EUR").ok).toBe(false);
+  });
   it("finds the amount in several number formats", () => {
     expect(checkTuition(150000, "Tuition: €1,500 per semester", 2026).ok).toBe(true);
     expect(checkTuition(150000, "Studiengebühr 1.500 Euro", 2026).ok).toBe(true);
@@ -215,13 +224,13 @@ describe("checkTuition", () => {
     expect(checkTuition(300000, "Fee: 3000 Euro", 2026, "EUR").ok).toBe(true);
     expect(checkTuition(750000, "7,500 USD/year", 2026, "USD").ok).toBe(true);
     expect(checkTuition(750000, "Fee: US$7,500 per year", 2026, "USD").ok).toBe(true);
-    expect(checkTuition(69000000, "690,000 Ft", 2026, "HUF").ok).toBe(true);
+    expect(checkTuition(690000, "690,000 Ft", 2026, "HUF").ok).toBe(true);
     expect(checkTuition(750000, "7,500 EUR/year", 2026, "USD").ok).toBe(false);
     expect(checkTuition(100000, "Fee 1000 per year", 2026, "CHF").ok).toBe(true);
     // the currency must stand beside the amount, and the one after the amount wins
     expect(
       checkTuition(
-        69000000,
+        690000,
         "Tuition fee for non-European students: 690,000 per semester",
         2026,
         "HUF",
@@ -231,10 +240,10 @@ describe("checkTuition", () => {
       false,
     );
     expect(checkTuition(300000, "690,000 HUF 3,000 EUR", 2026, "EUR").ok).toBe(true);
-    expect(checkTuition(300000, "690,000 HUF 3,000 EUR", 2026, "HUF").ok).toBe(false);
-    expect(checkTuition(69000000, "690,000 HUF 3,000 EUR", 2026, "HUF").ok).toBe(true);
+    expect(checkTuition(3000, "690,000 HUF 3,000 EUR", 2026, "HUF").ok).toBe(false);
+    expect(checkTuition(690000, "690,000 HUF 3,000 EUR", 2026, "HUF").ok).toBe(true);
     expect(checkTuition(700000, "1 980 000 Ft 7 000 €", 2026, "EUR").ok).toBe(true);
-    expect(checkTuition(198000000, "1 980 000 Ft 7 000 €", 2026, "HUF").ok).toBe(true);
+    expect(checkTuition(1980000, "1 980 000 Ft 7 000 €", 2026, "HUF").ok).toBe(true);
     expect(checkTuition(1036000, "Instellingscollegegeld € 10.360", 2026, "EUR").ok).toBe(true);
     expect(checkTuition(340000, "Fee: US$3,400 per semester", 2026, "USD").ok).toBe(true);
     expect(checkTuition(340000, "Fee: 3,400 dollars per semester", 2026, "USD").ok).toBe(true);
@@ -244,7 +253,7 @@ describe("checkTuition", () => {
     );
     expect(checkTuition(100000, "Fee 1000 per year", 2026).ok).toBe(true);
     expect(checkTuition(30000, "Amateur 3000", 2026, "EUR").ok).toBe(false);
-    expect(checkTuition(69000000, "690.000,- Ft per semester", 2026, "HUF").ok).toBe(true);
+    expect(checkTuition(690000, "690.000,- Ft per semester", 2026, "HUF").ok).toBe(true);
     expect(checkTuition(300000, "Tuition 3.000,- EUR per semester", 2026, "EUR").ok).toBe(true);
     expect(checkTuition(300000, "Tuition 3000,-€", 2026, "EUR").ok).toBe(true);
   });

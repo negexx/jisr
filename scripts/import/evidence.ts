@@ -1,4 +1,5 @@
 import { fetchText } from "./http";
+import { fromMinor } from "./money";
 import { cachedPdfText, isPdfUrl, type PdfDeps, pdfText } from "./pdf";
 
 // --- page text ---------------------------------------------------------------------------------
@@ -421,15 +422,18 @@ export function checkTuition(
     return NO_FEE.test(quote)
       ? ok
       : fail("a zero fee needs a quote saying there are no tuition fees");
-  if (!amountInQuote(amountMinor / 100, quote))
-    return fail(`the amount ${amountMinor / 100} does not appear in the quote`);
+  // Without a currency the amount is read as euros (hundredths), the only currency tuition came in
+  // before the currency was passed.
+  const amountMajor = fromMinor(amountMinor, currency ?? "EUR");
+  if (!amountInQuote(amountMajor, quote))
+    return fail(`the amount ${amountMajor} does not appear in the quote`);
   if (
     currency !== undefined &&
     CURRENCY_TOKENS[currency] !== undefined &&
-    !amountHasCurrency(amountMinor / 100, quote, currency)
+    !amountHasCurrency(amountMajor, quote, currency)
   )
     return fail(`the quote does not write the amount in the currency ${currency}`);
-  const stale = staleStudyYear(amountMinor / 100, quote, minStudyYear);
+  const stale = staleStudyYear(amountMajor, quote, minStudyYear);
   return stale === null ? ok : fail(stale);
 }
 

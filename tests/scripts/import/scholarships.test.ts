@@ -282,6 +282,48 @@ describe("verifyScholarship", () => {
     expect(result.ok && at(result.record, "support.value")).toBeNull();
   });
 
+  it("stores a forint amount as whole forints and a euro amount in hundredths", async () => {
+    const hungary = "https://grants.example/hungary";
+    const hufText = async (url: string) =>
+      url === HOME
+        ? "The Hungarian Scholarship supports talented students from outside the EU who start a bachelor degree in Hungary."
+        : url === hungary
+          ? "Applicants from non-EU countries, including Morocco, holding a school-leaving certificate may apply. The scholarship is open to first-year undergraduate students. It pays HUF 43,700 per month towards living costs. Apply online through the Aurora portal and upload a CV."
+          : getText(url);
+    const result = await verifyScholarship(
+      proposal({
+        destinations: ["HU"],
+        support: {
+          amount: { min: 43700, max: 43700, currency: "HUF", per: "month" },
+          covers: [],
+        },
+        documents: null,
+        deadline: null,
+        evidence: {
+          eligibility: [{ url: hungary, quote: ELIGIBILITY.quote }],
+          level: [{ url: hungary, quote: LEVEL.quote }],
+          support: [{ url: hungary, quote: "It pays HUF 43,700 per month towards living costs" }],
+          howToApply: [
+            {
+              url: hungary,
+              quote: "Apply online through the Aurora portal and upload a CV",
+            },
+          ],
+        },
+      }),
+      hufText,
+    );
+    if (!result.ok) throw new Error(`expected ok: ${JSON.stringify(result)}`);
+    expect(at(result.record, "support.value.amount")).toMatchObject({
+      min: 43700,
+      max: 43700,
+      currency: "HUF",
+    });
+    const euro = await verifyScholarship(proposal(), getText);
+    if (!euro.ok) throw new Error("expected ok");
+    expect(at(euro.record, "support.value.amount.min")).toBe(500000);
+  });
+
   it("keeps only the covered items the quote names", async () => {
     const result = await verifyScholarship(
       proposal({

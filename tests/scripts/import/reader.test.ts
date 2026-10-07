@@ -649,6 +649,13 @@ describe("keepChecked", () => {
   });
 });
 
+describe("tuition wording in the instruction", () => {
+  it("shows EUR in hundredths and HUF as whole forints", () => {
+    expect(INSTRUCTION).toMatch(/EUR 14,650 = 1465000/);
+    expect(INSTRUCTION).toMatch(/HUF has no minor unit: HUF 1,500,000 = 1500000/);
+  });
+});
+
 describe("duration wording in the instruction", () => {
   it("shows half years, so 7 semesters is not rounded to 3 or 4 years", () => {
     expect(INSTRUCTION).toMatch(/7 semesters = 3\.5/);

@@ -7,6 +7,7 @@ import { isValidIsoDate } from "@/data-schema/dates";
 import { COLLECTIONS } from "@/data-schema/records/collections";
 
 import { pageText } from "./evidence";
+import { toMinor } from "./money";
 import { stampVerified } from "./promote";
 import { applyVerified, type GetText, ProposalSchema, verifyProposal } from "./proposals";
 import { appendLedger, DATA_DIR, type LedgerRow, parseCsv, STAGING_DIR, toYaml } from "./staging";
@@ -268,7 +269,7 @@ export function buildProposal(input: {
         ? {}
         : {
             tuition: {
-              value: { amountMinor: euros * 100, currency: "EUR", period: "year" },
+              value: { amountMinor: toMinor(euros, "EUR"), currency: "EUR", period: "year" },
               evidence: [tuition],
             },
           }),
