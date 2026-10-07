@@ -21,7 +21,7 @@ Decided by the assistant (flagged to the owner): stale data reuses `SourceBadge`
 ## Data facts this design rests on (checked 2026-10-07)
 
 - 19 scholarships in `data/scholarships`: Deutschlandstipendium (DE), HAN and The Hague UAS (NL), Stipendium Hungaricum (HU), 15 Italian DSU/regional ones (IT).
-- All 19 have `deadline.value: null`. Only 2 have an amount (Deutschlandstipendium EUR 300 per month; The Hague UAS EUR 5,000 once). Eight have a non-empty `covers`; eleven have neither amount nor covers. All `last_verified_at` are 2026-10-04 or 2026-10-05, so none is aging yet (volatile aging at 120 days).
+- All 19 have `deadline.value: null`. Only 2 have an amount (Deutschlandstipendium EUR 300 per month; The Hague UAS EUR 5,000 once). Seven have a non-empty `covers` and no amount; ten have no support data at all. All `last_verified_at` are 2026-10-04 or 2026-10-05, so none is aging yet (volatile aging at 120 days).
 - Only Stipendium Hungaricum restricts nationality (`MA`). 18 of 19 name `institutions`; Deutschlandstipendium is the only whole-country record (147 German programmes).
 - These gaps are reported to the owner, never filled by code or by hand (scholarships are verified-only through `data:scholarship verify`, staging, audit, `data:promote`).
 
