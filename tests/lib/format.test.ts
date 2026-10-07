@@ -8,6 +8,7 @@ import {
   formatMoney,
   formatMoneyRange,
   formatMonthDay,
+  formatTuition,
   intlLocale,
   minorUnitDigits,
   parseLocaleDecimal,
@@ -411,5 +412,25 @@ describe("direction marks", () => {
 
   it.each(LOCALES)("formatGrade returns no bidi marks in %s", (locale) => {
     expect(formatGrade(14.5, { min: 0, max: 20 }, locale)).not.toMatch(BIDI_MARKS);
+  });
+});
+
+describe("formatTuition", () => {
+  const flat = { amountMinor: 120000, currency: "EUR", period: "year" as const };
+
+  it("prints a flat fee as one amount, like formatMoney", () => {
+    expect(formatTuition(flat, "en")).toBe(formatMoney(120000, "EUR", "en"));
+  });
+  it("prints a range as a range through formatMoneyRange, in every locale", () => {
+    for (const locale of LOCALES) {
+      expect(formatTuition({ ...flat, amountMinor: 50000, maxAmountMinor: 300000 }, locale)).toBe(
+        formatMoneyRange(50000, 300000, "EUR", locale),
+      );
+    }
+  });
+  it("keeps Latin digits in Arabic", () => {
+    const shown = formatTuition({ ...flat, amountMinor: 50000, maxAmountMinor: 300000 }, "ar");
+    expect(shown).toMatch(/\d/);
+    expect(shown).not.toMatch(/[٠-٩۰-۹]/u);
   });
 });
