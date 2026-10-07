@@ -25,17 +25,24 @@ for (const { locale } of E2E_LOCALES) {
 
     test("shows no horizontal scroll and a reachable header at phone width", async ({ page }) => {
       await page.setViewportSize({ width: 343, height: 800 });
+      const nav = page.getByRole("navigation", { name: t("nav.label") });
       for (const path of ["", "/profile", "/matches", "/scholarships", "/plan"]) {
         await page.goto(`/${locale}${path}`);
+        // Measure after the client leaves have rendered: the server placeholders are narrower than the final text.
+        await expect(nav.getByRole("link", { name: t("nav.scholarships") })).toBeVisible();
+        await page.waitForLoadState("networkidle");
+        if (path === "/scholarships") {
+          await expect(
+            cardOf(page, E2E_SCHOLARSHIP_SLUGS.xaOnly).getByTestId("nationality-check"),
+          ).not.toHaveAttribute("data-state", "placeholder");
+        }
         const overflow = await page.evaluate(
           () => document.documentElement.scrollWidth - window.innerWidth,
         );
         expect(overflow, `${path} overflows`).toBeLessThanOrEqual(0);
       }
       await page.goto(`/${locale}/scholarships`);
-      const link = page
-        .getByRole("navigation", { name: t("nav.label") })
-        .getByRole("link", { name: t("nav.scholarships") });
+      const link = nav.getByRole("link", { name: t("nav.scholarships") });
       const box = await link.boundingBox();
       expect(box?.height ?? 0).toBeGreaterThanOrEqual(44);
       expect((box?.x ?? -1) + (box?.width ?? 0)).toBeLessThanOrEqual(343);
@@ -74,18 +81,22 @@ for (const { locale } of E2E_LOCALES) {
       await expect(card.locator('[data-slot="source-badge"]').first()).toBeVisible();
     });
 
-    test("opening the programmes block lists links to programme pages", async ({ page }) => {
+    test("a whole-country scholarship shows the count and the My matches link when its programmes block opens", async ({
+      page,
+    }) => {
       await page.goto(`/${locale}/scholarships`);
       const block = cardOf(page, E2E_SCHOLARSHIP_SLUGS.open).getByTestId("scholarship-programmes");
       await block.locator("summary").click();
-      await expect(
-        block.getByRole("link", { name: t("scholarshipsPage.programmes.matchesLink") }),
-      ).toHaveAttribute("href", `/${locale}/matches`);
+      const link = block.getByRole("link", { name: t("scholarshipsPage.programmes.matchesLink") });
+      await expect(link).toBeVisible();
+      await expect(link).toHaveAttribute("href", `/${locale}/matches`);
     });
 
     test("the card anchor scrolls to the card", async ({ page }) => {
       await page.goto(`/${locale}/scholarships#scholarship-${E2E_SCHOLARSHIP_SLUGS.xzOnly}`);
       await expect(cardOf(page, E2E_SCHOLARSHIP_SLUGS.xzOnly)).toBeInViewport();
+      // Without the scroll the card could already sit in the first screen on a desktop viewport.
+      await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
     });
   });
 }

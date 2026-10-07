@@ -40,8 +40,8 @@ export default async function HomePage({ params }: Props) {
             </Link>
           </Button>
           {/* Reserved slot: it holds the button's height, so a saved profile shifts nothing. On a
-              phone the note reads straight after the primary button, then the scholarships link,
-              and the slot comes last (order-last), so it stays ahead of the link in the DOM. */}
+              phone the order is the primary button, the note, this slot, then the scholarships
+              link: the slot and the link are both order-last, and DOM order breaks the tie. */}
           <div className="order-last sm:order-none">
             <HomeMatchesLink label={t("matchesCta")} />
           </div>

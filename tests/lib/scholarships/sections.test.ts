@@ -5,11 +5,11 @@ import { buildSections, type DestinationInput } from "@/lib/scholarships/section
 
 import { meta, program, scholarship } from "../../fixtures/domain/builders";
 
-const inst = (slug: string, name: string, country = "XB"): Institution => ({
+const inst = (slug: string, name: string, country = "XB", city = "XX City"): Institution => ({
   slug,
   name,
   country,
-  city: { slug: "xx-test-city", name: "XX City" },
+  city: { slug: "xx-test-city", name: city },
   type: "public",
   website: null,
   fact: meta(),
@@ -90,6 +90,8 @@ describe("buildSections", () => {
     ]);
     const scope = section?.entries[0]?.scope;
     expect(scope?.kind === "institutions" && scope.groups.map((g) => g.slug)).toEqual(["i2"]);
+    // i1 is named but its own programme list is empty: it is reported, i2 is only a group
+    expect(scope?.kind === "institutions" && scope.without).toEqual(["One"]);
   });
 
   it("names a group by null when its institution is unknown", () => {
@@ -97,6 +99,54 @@ describe("buildSections", () => {
     const [section] = buildSections([input({ scholarships: [s], programs: [progIn("p1", "i1")] })]);
     const scope = section?.entries[0]?.scope;
     expect(scope?.kind === "institutions" && scope.groups[0]?.name).toBeNull();
+    expect(scope?.kind === "institutions" && scope.groups[0]?.city).toBeNull();
+  });
+
+  it("carries the institution's city name into each group", () => {
+    const s = scholarship({ slug: "xx-test-sch-r", institutions: ["i1"] });
+    const [section] = buildSections([
+      input({
+        scholarships: [s],
+        institutions: [inst("i1", "Alpha University", "XB", "Alphaville")],
+        programs: [progIn("p1", "i1")],
+      }),
+    ]);
+    const scope = section?.entries[0]?.scope;
+    expect(scope?.kind === "institutions" && scope.groups[0]?.city).toBe("Alphaville");
+  });
+
+  it("keeps campuses that share one institution name as distinct groups with distinct cities", () => {
+    const s = scholarship({ slug: "xx-test-sch-r", institutions: ["i-rim", "i-bol"] });
+    const [section] = buildSections([
+      input({
+        scholarships: [s],
+        institutions: [
+          inst("i-rim", "Same University", "XB", "Rimini"),
+          inst("i-bol", "Same University", "XB", "Bologna"),
+        ],
+        programs: [progIn("p-rim", "i-rim"), progIn("p-bol", "i-bol")],
+      }),
+    ]);
+    const scope = section?.entries[0]?.scope;
+    expect(
+      scope?.kind === "institutions" && scope.groups.map((g) => [g.slug, g.name, g.city]),
+    ).toEqual([
+      ["i-bol", "Same University", "Bologna"],
+      ["i-rim", "Same University", "Rimini"],
+    ]);
+  });
+
+  it("sorts groups whose institution is unknown after the named ones", () => {
+    const s = scholarship({ slug: "xx-test-sch-r", institutions: ["i0", "i1"] });
+    const [section] = buildSections([
+      input({
+        scholarships: [s],
+        institutions: [inst("i1", "Zulu University")],
+        programs: [progIn("p0", "i0"), progIn("p1", "i1")],
+      }),
+    ]);
+    const scope = section?.entries[0]?.scope;
+    expect(scope?.kind === "institutions" && scope.groups.map((g) => g.slug)).toEqual(["i1", "i0"]);
   });
 
   it("orders sections by country code and entries by slug", () => {

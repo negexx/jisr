@@ -10,6 +10,7 @@ import { formatList } from "@/lib/journey/reasons";
 import type { CountrySection, ProgramScope, ScholarshipEntry } from "@/lib/scholarships/sections";
 import type { ScholarshipsPageData } from "@/lib/snapshot/server";
 import type { DataText } from "@/lib/snapshot/text";
+import ar from "../../../messages/ar.json";
 import messages from "../../../messages/fr.json";
 import { fact, requirements, rule, scholarship } from "../../fixtures/domain/builders";
 
@@ -32,6 +33,16 @@ const translate = createTranslator({ locale: "fr", messages }) as unknown as (
   key: string,
   params?: Record<string, string | number>,
 ) => string;
+
+// The catalogue's own "Name, City" template (rich tags stripped): the expected text comes from the
+// message, not from a literal comma, so ar keeps its Arabic comma.
+function institutionCity(locale: "fr" | "ar", institution: string, city: string): string {
+  const catalogue = locale === "fr" ? messages : ar;
+  return catalogue.program.header.institutionCity
+    .replace(/<\/?place>/g, "")
+    .replace("{institution}", institution)
+    .replace("{city}", city);
+}
 
 const NO_PROGRAMMES: ProgramScope = { kind: "institutions", groups: [], without: [] };
 
@@ -59,9 +70,13 @@ function render(entries: ScholarshipEntry[], missingText: readonly string[] = []
   return renderData(dataOf([{ country: "XB", entries }], missingText));
 }
 
-function renderData(data: ScholarshipsPageData) {
+function renderData(data: ScholarshipsPageData, locale: "fr" | "ar" = "fr") {
   const html = renderToString(
-    <NextIntlClientProvider locale="fr" messages={messages} timeZone="UTC">
+    <NextIntlClientProvider
+      locale={locale}
+      messages={locale === "fr" ? messages : ar}
+      timeZone="UTC"
+    >
       <ScholarshipsPageView data={data} />
     </NextIntlClientProvider>,
   );
@@ -235,6 +250,7 @@ describe("ScholarshipsPageView: programmes", () => {
             {
               slug: "xx-test-inst-a",
               name: "Institut A",
+              city: "Ville A",
               programs: [
                 { slug: "xx-test-prog-1", name: "Programme 1" },
                 { slug: "xx-test-prog-2", name: "Programme 2" },
@@ -243,6 +259,7 @@ describe("ScholarshipsPageView: programmes", () => {
             {
               slug: "xx-test-inst-b",
               name: null,
+              city: null,
               programs: [{ slug: "xx-test-prog-3", name: "Programme 3" }],
             },
           ],
@@ -259,9 +276,52 @@ describe("ScholarshipsPageView: programmes", () => {
     ]);
     expect(links.map(textOf)).toEqual(["Programme 1", "Programme 2", "Programme 3"]);
     const text = textOf(block);
-    expect(text).toContain("Institut A");
+    expect(text).toContain(institutionCity("fr", "Institut A", "Ville A"));
     expect(text).toContain(messages.program.overview.institutionUnknown);
     expect(text).not.toContain("xx-test-inst-b");
+  });
+
+  it.each([
+    "fr",
+    "ar",
+  ] as const)("heads campuses of one university with 'Name, City' so the groups differ (%s)", (locale) => {
+    const group = (slug: string, city: string | null) => ({
+      slug,
+      name: "Université Commune",
+      city,
+      programs: [{ slug: `${slug}-prog`, name: `Programme ${slug}` }],
+    });
+    const doc = renderData(
+      dataOf([
+        {
+          country: "XB",
+          entries: [
+            entry(
+              { institutions: ["xx-test-inst-a", "xx-test-inst-b", "xx-test-inst-c"] },
+              {
+                kind: "institutions",
+                groups: [
+                  group("xx-test-inst-a", "Bologne"),
+                  group("xx-test-inst-b", "Rimini"),
+                  group("xx-test-inst-c", null),
+                ],
+                without: [],
+              },
+            ),
+          ],
+        },
+      ]),
+      locale,
+    );
+    const headings = [
+      ...inCard(doc, "scholarship-programmes").querySelectorAll("div > p.font-medium"),
+    ].map(textOf);
+    expect(headings).toEqual([
+      institutionCity(locale, "Université Commune", "Bologne"),
+      institutionCity(locale, "Université Commune", "Rimini"),
+      "Université Commune",
+    ]);
+    expect(new Set(headings.slice(0, 2)).size).toBe(2);
   });
 
   it("shows the count and one link to My matches for a whole-country scholarship, no programme list", () => {
@@ -361,7 +421,7 @@ describe("ScholarshipsPageView: details and badges", () => {
     expect(documents.querySelector(BADGE)).toBeNull();
   });
 
-  it("badges published documents, rules and how-to-apply text", () => {
+  it("badges published rules and documents, while how-to-apply text carries no badge of its own", () => {
     const doc = render([
       entry({
         requirements: requirements({
@@ -374,13 +434,15 @@ describe("ScholarshipsPageView: details and badges", () => {
       }),
     ]);
     const rules = detailsSection(doc, "scholarshipsPage.details.requirements");
-    expect(textOf(rules)).toContain(messages.domain.coverage.partial);
+    expect(textOf(rules)).toContain(messages.scholarshipsPage.requirements.partial);
+    expect(textOf(rules)).not.toContain(messages.domain.coverage.partial);
     expect(rules.querySelectorAll(`li ${BADGE}`)).toHaveLength(1);
     const documents = detailsSection(doc, "scholarshipsPage.details.documents");
     expect(textOf(documents)).toContain("documents/xx-test-doc#name");
     expect(documents.querySelectorAll(BADGE)).toHaveLength(1);
     const howTo = detailsSection(doc, "scholarshipsPage.details.howToApply");
     expect(textOf(howTo)).toContain("scholarships/xx-test-sch-a#howToApply");
+    expect(howTo.querySelector(BADGE)).toBeNull();
   });
 
   it("links to the official page over https with a safe rel", () => {

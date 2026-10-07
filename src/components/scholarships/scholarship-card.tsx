@@ -10,7 +10,7 @@ import { sameSource } from "@/components/program/program-sections";
 import { SourceBadge } from "@/components/source-badge";
 import { formatDate, formatMoneyRange } from "@/lib/format";
 import { formatList, type Params } from "@/lib/journey/reasons";
-import { describeCoverage, describeRule } from "@/lib/journey/requirements";
+import { describeRule } from "@/lib/journey/requirements";
 import type { ScholarshipEntry } from "@/lib/scholarships/sections";
 import type { ScholarshipsPageData } from "@/lib/snapshot/server";
 
@@ -163,7 +163,7 @@ export function ScholarshipCard({
               <>
                 {requirements.coverage === "partial" ? (
                   <p className="max-w-prose text-base text-muted-foreground">
-                    {tDomain(describeCoverage(requirements).key)}
+                    {t("requirements.partial")}
                   </p>
                 ) : null}
                 <ul className="divide-y divide-border border-y border-border">

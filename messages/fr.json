@@ -982,6 +982,7 @@
       "howToApply": "Comment candidater"
     },
     "requirements": {
+      "partial": "Nous n'avons pas publié toutes les conditions de cette bourse. Vérifiez la page officielle.",
       "none": "Aucune condition n'est publiée dans les sources que nous avons lues, à vérifier."
     },
     "documents": {

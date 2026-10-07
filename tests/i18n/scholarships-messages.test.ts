@@ -58,6 +58,7 @@ describe.each(LOCALES)("scholarships page messages (%s)", (locale) => {
   });
 
   it("never marks a missing value as a figure: the unknown lines say it is to be checked", () => {
+    const toCheck = { en: /to check/, fr: /à vérifier/, ar: /التحقق/ };
     for (const key of [
       "amount.unknown",
       "deadline.unknown",
@@ -66,7 +67,7 @@ describe.each(LOCALES)("scholarships page messages (%s)", (locale) => {
       "documents.missing",
       "howToApply.missing",
     ]) {
-      expect(messages.get(`scholarshipsPage.${key}`), key).toBeTruthy();
+      expect(messages.get(`scholarshipsPage.${key}`), key).toMatch(toCheck[locale]);
     }
   });
 });
@@ -74,7 +75,7 @@ describe.each(LOCALES)("scholarships page messages (%s)", (locale) => {
 describe("scholarships page messages: language rules", () => {
   it("puts a no-break space before : ? ! ; in French", () => {
     for (const [key, value] of namespaceMessages("fr", ["scholarshipsPage"])) {
-      expect(value, key).not.toMatch(/[^ ][:?!;]/u);
+      expect(value, key).not.toMatch(/[^\u00a0][:?!;]/u);
       expect(value, key).not.toMatch(/ [:?!;]/u);
     }
   });

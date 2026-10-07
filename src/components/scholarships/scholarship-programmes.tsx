@@ -15,7 +15,7 @@ export function ScholarshipProgrammes({
 }) {
   const locale = useLocale();
   const t = useTranslations("scholarshipsPage.programmes");
-  const tProgram = useTranslations("program.overview");
+  const tProgram = useTranslations("program");
 
   return (
     <details data-testid="scholarship-programmes" className="group border-t border-border py-1">
@@ -48,7 +48,17 @@ export function ScholarshipProgrammes({
             {scope.groups.map((group) => (
               <div key={group.slug} className="flex flex-col gap-1">
                 <p className="text-base font-medium">
-                  {group.name === null ? tProgram("institutionUnknown") : <bdi>{group.name}</bdi>}
+                  {group.name === null ? (
+                    tProgram("overview.institutionUnknown")
+                  ) : group.city === null ? (
+                    <bdi>{group.name}</bdi>
+                  ) : (
+                    tProgram.rich("header.institutionCity", {
+                      institution: group.name,
+                      city: group.city,
+                      place: (chunks) => <bdi className="inline-block max-w-full">{chunks}</bdi>,
+                    })
+                  )}
                 </p>
                 <ul className="flex flex-col">
                   {group.programs.map((program) => (

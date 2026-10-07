@@ -13,8 +13,14 @@ export type DestinationInput = {
 };
 
 export type ProgramLink = { slug: Slug; name: string };
-// `name` is null when the institution is not in the institutions shard: a slug is never shown as a name.
-export type InstitutionGroup = { slug: Slug; name: string | null; programs: ProgramLink[] };
+// `name` and `city` are null when the institution is not in the institutions shard: a slug is never shown
+// as a name. Campuses of one university share a name, so the city is what tells their groups apart.
+export type InstitutionGroup = {
+  slug: Slug;
+  name: string | null;
+  city: string | null;
+  programs: ProgramLink[];
+};
 export type ProgramScope =
   | { kind: "country"; count: number }
   | { kind: "institutions"; groups: InstitutionGroup[]; without: string[] };
@@ -34,30 +40,36 @@ type Accumulator = {
 function scopeOf(
   scholarship: Scholarship,
   programs: readonly Program[],
-  names: ReadonlyMap<Slug, string>,
+  institutions: ReadonlyMap<Slug, Institution>,
 ): ProgramScope {
   const restricted = scholarship.institutions ?? [];
   if (restricted.length === 0) return { kind: "country", count: programs.length };
 
   const byInstitution = new Map<Slug, ProgramLink[]>();
   for (const p of programs) {
-    byInstitution.set(p.institution, [
-      ...(byInstitution.get(p.institution) ?? []),
-      { slug: p.slug, name: p.name },
-    ]);
+    const links = byInstitution.get(p.institution) ?? [];
+    links.push({ slug: p.slug, name: p.name });
+    byInstitution.set(p.institution, links);
   }
   const groups: InstitutionGroup[] = [...byInstitution].map(([slug, links]) => ({
     slug,
-    name: names.get(slug) ?? null,
-    programs: [...links].sort((a, b) => compare(a.name, b.name) || compare(a.slug, b.slug)),
+    name: institutions.get(slug)?.name ?? null,
+    city: institutions.get(slug)?.city.name ?? null,
+    programs: links.sort((a, b) => compare(a.name, b.name) || compare(a.slug, b.slug)),
   }));
-  groups.sort((a, b) => compare(a.name ?? "", b.name ?? "") || compare(a.slug, b.slug));
+  groups.sort(
+    (a, b) =>
+      Number(a.name === null) - Number(b.name === null) ||
+      compare(a.name ?? "", b.name ?? "") ||
+      compare(a.city ?? "", b.city ?? "") ||
+      compare(a.slug, b.slug),
+  );
 
   const without = restricted
     .filter((slug) => !byInstitution.has(slug))
     .flatMap((slug) => {
-      const name = names.get(slug);
-      return name === undefined ? [] : [name];
+      const institution = institutions.get(slug);
+      return institution === undefined ? [] : [institution.name];
     })
     .sort(compare);
   return { kind: "institutions", groups, without };
@@ -65,11 +77,11 @@ function scopeOf(
 
 export function buildSections(inputs: readonly DestinationInput[]): CountrySection[] {
   const ordered = [...inputs].sort((a, b) => compare(a.country, b.country));
-  const names = new Map<Slug, string>();
+  const institutions = new Map<Slug, Institution>();
   const bySlug = new Map<Slug, Accumulator>();
 
   for (const input of ordered) {
-    for (const institution of input.institutions) names.set(institution.slug, institution.name);
+    for (const institution of input.institutions) institutions.set(institution.slug, institution);
     for (const scholarship of input.scholarships) {
       let acc = bySlug.get(scholarship.slug);
       if (acc === undefined) {
@@ -84,11 +96,12 @@ export function buildSections(inputs: readonly DestinationInput[]): CountrySecti
 
   const sections = new Map<CountryCode, ScholarshipEntry[]>();
   for (const acc of bySlug.values()) {
-    const entry: ScholarshipEntry = {
+    const entries = sections.get(acc.country) ?? [];
+    entries.push({
       scholarship: acc.scholarship,
-      scope: scopeOf(acc.scholarship, [...acc.programs.values()], names),
-    };
-    sections.set(acc.country, [...(sections.get(acc.country) ?? []), entry]);
+      scope: scopeOf(acc.scholarship, [...acc.programs.values()], institutions),
+    });
+    sections.set(acc.country, entries);
   }
   return [...sections]
     .sort(([a], [b]) => compare(a, b))
