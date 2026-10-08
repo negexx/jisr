@@ -190,6 +190,30 @@ describe("renderReport", () => {
     expect(text).toContain("it-x-y-l18");
     expect(text).toContain("## Counts");
     expect(text).toContain("2713");
+    expect(text).toContain("of these blended (mixed delivery): 0");
+    expect(text).not.toContain(", blended");
+  });
+  it("flags blended candidates in their line and counts them", () => {
+    const blended = classify(
+      course({
+        id: 13,
+        nomeStruttura: "Università di Trento",
+        nomeCorsoEn: "Computer Science",
+        classe: { codice: "L-31" },
+        modalitaErogazione: { codice: "B" },
+      }),
+    );
+    const cmp = compare([blended], []);
+    expect(cmp.blended).toBe(1);
+    const text = renderReport(cmp, {
+      fetchedAt: "2026-10-08T10:00:00.000Z",
+      cacheDir: "x",
+      englishTotal: 241,
+      mixedTotal: 0,
+      italianTotal: 2713,
+    });
+    expect(text).toContain(" years, blended)");
+    expect(text).toContain("of these blended (mixed delivery): 1");
   });
 });
 

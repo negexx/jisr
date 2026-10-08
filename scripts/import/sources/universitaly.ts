@@ -66,6 +66,8 @@ export type Candidate = {
   durationYears: number | null;
   url: string | null;
   academicYear: string;
+  // C = conventional, B = the portal's "modalità mista" (blended), still taught in person.
+  delivery: "conventional" | "blended";
 };
 
 // The portal pads class codes ("L-34  "); the interclass is a second class of the same course.
@@ -99,9 +101,10 @@ export function classify(course: PortalCourse): Classified {
     confidence: match.confidence,
   };
   if (course.lingua === "mu") return { ...scoped, status: "mixed-language" };
+  // Same rule as the MUR importer: only distance courses (Teledidattica, T/P) are excluded.
   const inPerson =
     course.modalitaDidattica.descrizione === "In presenza" &&
-    course.modalitaErogazione.codice === "C";
+    (course.modalitaErogazione.codice === "C" || course.modalitaErogazione.codice === "B");
   return { ...scoped, status: inPerson ? "candidate" : "not-in-person" };
 }
 
@@ -129,5 +132,6 @@ export function toCandidate(classified: Classified): Candidate {
         ? null
         : course.url.trim(),
     academicYear: course.anno.descrizione,
+    delivery: course.modalitaErogazione.codice === "B" ? "blended" : "conventional",
   };
 }

@@ -80,6 +80,7 @@ export type Comparison = {
   academicYear: string;
   tally: Record<Status, number>;
   candidates: number;
+  blended: number;
   matched: { ours: string; portalId: number }[];
   possible: { ours: string; candidate: Candidate; why: string }[];
   newProgrammes: Candidate[];
@@ -279,6 +280,7 @@ export function compare(classifiedInput: Classified[], ours: OurProgramme[]): Co
     academicYear,
     tally,
     candidates: candidates.length,
+    blended: candidates.filter((c) => c.delivery === "blended").length,
     matched,
     possible,
     newProgrammes,

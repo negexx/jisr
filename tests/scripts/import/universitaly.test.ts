@@ -96,7 +96,20 @@ describe("classify", () => {
     expect(classify(course({ modalitaDidattica: { descrizione: "Teledidattica" } })).status).toBe(
       "not-in-person",
     );
-    expect(classify(course({ modalitaErogazione: { codice: "B" } })).status).toBe("not-in-person");
+    for (const codice of ["T", "P"]) {
+      expect(classify(course({ modalitaErogazione: { codice } })).status).toBe("not-in-person");
+    }
+  });
+  it("keeps blended delivery (B, in presenza) as a candidate, like the MUR importer", () => {
+    expect(classify(course({ modalitaErogazione: { codice: "B" } })).status).toBe("candidate");
+    expect(
+      classify(
+        course({
+          modalitaErogazione: { codice: "B" },
+          modalitaDidattica: { descrizione: "Teledidattica" },
+        }),
+      ).status,
+    ).toBe("not-in-person");
   });
   it("counts a mixed-language course as mixed-language even when it is also distance learning", () => {
     expect(
@@ -120,7 +133,12 @@ describe("toCandidate", () => {
       durationYears: 3,
       url: "https://www.uniba.test/it/corsi/computer-science",
       academicYear: "2026/2027",
+      delivery: "conventional",
     });
+  });
+  it("marks blended delivery", () => {
+    const cand = toCandidate(classify(course({ modalitaErogazione: { codice: "B" } })));
+    expect(cand.delivery).toBe("blended");
   });
   it("trims the url and turns a blank or missing url into null", () => {
     expect(toCandidate(classify(course({ url: "  https://www.uniba.test/c  " }))).url).toBe(

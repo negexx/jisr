@@ -11,7 +11,7 @@ export type ReportMeta = {
 };
 
 const line = (c: Candidate): string =>
-  `- ${c.name} (${c.classCode}, ${c.field}${c.confidence === "low" ? ", low confidence" : ""}, ${c.durationYears ?? "?"} years) ${c.url ?? "no portal link"} [portal id ${c.portalId}]`;
+  `- ${c.name} (${c.classCode}, ${c.field}${c.confidence === "low" ? ", low confidence" : ""}, ${c.durationYears ?? "?"} years${c.delivery === "blended" ? ", blended" : ""}) ${c.url ?? "no portal link"} [portal id ${c.portalId}]`;
 
 export function renderReport(cmp: Comparison, meta: ReportMeta): string {
   const out: string[] = [];
@@ -28,8 +28,9 @@ export function renderReport(cmp: Comparison, meta: ReportMeta): string {
     `- Italian search (Triennale, includes mixed): ${meta.italianTotal} courses (counted only)`,
   );
   for (const [status, n] of Object.entries(cmp.tally)) out.push(`- ${status}: ${n}`);
+  out.push(`- of these blended (mixed delivery): ${cmp.blended}`);
   out.push(
-    `- candidates (English, in person, in scope): ${cmp.candidates}; matched to our programmes: ${cmp.matched.length}; possible matches: ${cmp.possible.length}; new at a university we have: ${cmp.newProgrammes.length}; at new universities: ${cmp.newUniversities.reduce((n, u) => n + u.programmes.length, 0)}`,
+    `- candidates (English, in person: conventional or blended, in scope): ${cmp.candidates}; matched to our programmes: ${cmp.matched.length}; possible matches: ${cmp.possible.length}; new at a university we have: ${cmp.newProgrammes.length}; at new universities: ${cmp.newUniversities.reduce((n, u) => n + u.programmes.length, 0)}`,
     "",
   );
   out.push("## New universities", "");
