@@ -14,6 +14,8 @@ const INDEXABLE: SiteEnv = {
 
 const NOT_INDEXABLE: SiteEnv = { ...INDEXABLE, siteUrl: null, indexable: false };
 
+const PREVIEW: SiteEnv = { ...INDEXABLE, indexable: false };
+
 describe("localizedUrl", () => {
   it("prefixes the locale and appends the path", () => {
     expect(localizedUrl(SITE, "ar", "/profile")).toBe("https://x.test/ar/profile");
@@ -52,6 +54,10 @@ describe("buildRobots", () => {
 describe("buildSitemap", () => {
   it("is empty when the build is not indexable", () => {
     expect(buildSitemap(NOT_INDEXABLE, ["a", "b"])).toEqual([]);
+  });
+
+  it("is empty on a preview, which has a site url but is not indexable", () => {
+    expect(buildSitemap(PREVIEW, ["a", "b"])).toEqual([]);
   });
 
   const sitemap = buildSitemap(INDEXABLE, ["a", "b"]);
@@ -129,6 +135,10 @@ describe("pageMetadata", () => {
       title: "T",
       description: "D",
     });
+  });
+
+  it("returns only title and description on a preview, which has a site url but is not indexable", () => {
+    expect(pageMetadata({ ...args, env: PREVIEW })).toEqual({ title: "T", description: "D" });
   });
 
   it("marks a personal shell noindex and drops the alternates", () => {

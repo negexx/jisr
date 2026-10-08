@@ -6,7 +6,9 @@ import type { SiteEnv } from "./site-env";
 
 // Locale-relative paths that belong in the sitemap; "" is the home page. /matches, /plan and /compare
 // are static shells around a personal client island: thin content, so they are noindex (ADR 0011).
-export const INDEXABLE_PATHS: readonly string[] = ["", "/profile", "/scholarships"];
+export type LocalePath = "" | `/${string}`;
+
+export const INDEXABLE_PATHS: readonly LocalePath[] = ["", "/profile", "/scholarships"];
 
 const SITE_NAME = "Jisr";
 
@@ -16,13 +18,13 @@ const OPEN_GRAPH_LOCALE: Record<AppLocale, string> = {
   ar: "ar_MA",
 };
 
-export function localizedUrl(siteUrl: string, locale: AppLocale, path: string): string {
+export function localizedUrl(siteUrl: string, locale: AppLocale, path: LocalePath): string {
   return `${siteUrl}/${locale}${path}`;
 }
 
 type Languages = Record<AppLocale | "x-default", string>;
 
-function languageUrls(siteUrl: string, path: string): Languages {
+function languageUrls(siteUrl: string, path: LocalePath): Languages {
   return {
     fr: localizedUrl(siteUrl, "fr", path),
     en: localizedUrl(siteUrl, "en", path),
@@ -41,7 +43,10 @@ export function buildRobots(env: SiteEnv): MetadataRoute.Robots {
 export function buildSitemap(env: SiteEnv, programSlugs: readonly string[]): MetadataRoute.Sitemap {
   const { siteUrl } = env;
   if (!env.indexable || siteUrl === null) return [];
-  const paths = [...INDEXABLE_PATHS, ...programSlugs.map((slug) => `/programs/${slug}`)];
+  const paths: LocalePath[] = [
+    ...INDEXABLE_PATHS,
+    ...programSlugs.map((slug): LocalePath => `/programs/${slug}`),
+  ];
   return paths.flatMap((path) => {
     const languages = languageUrls(siteUrl, path);
     return routing.locales.map((locale) => ({
@@ -54,7 +59,7 @@ export function buildSitemap(env: SiteEnv, programSlugs: readonly string[]): Met
 type PageMetadataArgs = {
   env: SiteEnv;
   locale: AppLocale;
-  path: string;
+  path: LocalePath;
   title: string;
   description: string;
   index?: boolean;
