@@ -1,11 +1,12 @@
-import { mkdtemp, readFile, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import {
   fetchPages,
+  httpGet,
   PortalStopError,
   parsePages,
   readCache,
@@ -163,6 +164,62 @@ describe("parsePages", () => {
     const parsed = parsePages("IT", pages);
     expect(parsed.totalResults).toBe(2713);
   });
+  it("stops when the Italian total is implausible", async () => {
+    const portal = fakePortal(40);
+    const pages = await fetchPages("IT", {
+      get: portal.get,
+      sleep: noSleep,
+      delayMs: 0,
+      maxPages: 60,
+      firstOnly: true,
+    });
+    expect(() => parsePages("IT", pages)).toThrow(/implausible/);
+  });
+  it("stops when a page is dropped even though the ids are unique", async () => {
+    const portal = fakePortal(120);
+    const pages = await fetchPages("EN", {
+      get: portal.get,
+      sleep: noSleep,
+      delayMs: 0,
+      maxPages: 60,
+    });
+    const withoutPage2 = pages.filter((p) => p.page !== 2);
+    expect(() => parsePages("EN", withoutPage2)).toThrow(/collected/);
+  });
+  it("accepts an English-search course taught in mixed languages", async () => {
+    const portal = fakePortal(120, (id) => (id === 3 ? { lingua: "mu" } : {}));
+    const pages = await fetchPages("EN", {
+      get: portal.get,
+      sleep: noSleep,
+      delayMs: 0,
+      maxPages: 60,
+    });
+    const parsed = parsePages("EN", pages);
+    expect(parsed.courses.filter((c) => c.lingua === "mu")).toHaveLength(1);
+  });
+});
+
+describe("httpGet", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+  it("stops on a 403 and names the status", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => new Response("no", { status: 403 })),
+    );
+    await expect(httpGet("https://example.test/x")).rejects.toThrow(PortalStopError);
+    await expect(httpGet("https://example.test/x")).rejects.toThrow(/403/);
+  });
+  it("sends the User-Agent header and returns the body on a 200", async () => {
+    const stub = vi.fn(
+      async (_url: string, _init?: RequestInit) => new Response("{}", { status: 200 }),
+    );
+    vi.stubGlobal("fetch", stub);
+    await expect(httpGet("https://example.test/x")).resolves.toBe("{}");
+    const headers = new Headers(stub.mock.calls[0]?.[1]?.headers);
+    expect(headers.get("user-agent")).toMatch(/\S+/);
+  });
 });
 
 describe("cache", () => {
@@ -190,5 +247,73 @@ describe("cache", () => {
     expect(back.pages.map((p) => p.sha256)).toEqual(pages.map((p) => p.sha256));
     await writeFile(path.join(dir, "EN-page-002.json"), "tampered");
     await expect(readCache(dir)).rejects.toThrow(/sha256/);
+  });
+  it("removes the stale manifest and stale page files before writing a refresh", async () => {
+    const dir = await mkdtemp(path.join(tmpdir(), "uni-cache-"));
+    const portal = fakePortal(30);
+    const pages = await fetchPages("EN", {
+      get: portal.get,
+      sleep: noSleep,
+      delayMs: 0,
+      maxPages: 60,
+    });
+    await writeCache(dir, pages, "2026-10-08T10:00:00.000Z");
+    await writeFile(path.join(dir, "EN-page-009.json"), "stale");
+    await writeFile(path.join(dir, "notes.txt"), "keep");
+    await writeCache(dir, pages.slice(0, 2), "2026-10-09T10:00:00.000Z");
+    expect((await readdir(dir)).sort()).toEqual([
+      "EN-page-001.json",
+      "EN-page-002.json",
+      "manifest.json",
+      "notes.txt",
+    ]);
+    expect((await readCache(dir)).pages).toHaveLength(2);
+  });
+  it("leaves no manifest when a refresh fails half way", async () => {
+    const dir = await mkdtemp(path.join(tmpdir(), "uni-cache-"));
+    const portal = fakePortal(30);
+    const pages = await fetchPages("EN", {
+      get: portal.get,
+      sleep: noSleep,
+      delayMs: 0,
+      maxPages: 60,
+    });
+    await writeCache(dir, pages, "2026-10-08T10:00:00.000Z");
+    // A directory where the second page file must go makes the second write fail.
+    await rm(path.join(dir, "EN-page-002.json"));
+    await mkdir(path.join(dir, "EN-page-002.json"));
+    await expect(writeCache(dir, pages, "2026-10-09T10:00:00.000Z")).rejects.toThrow();
+    await expect(readCache(dir)).rejects.toThrow(PortalStopError);
+    await expect(readCache(dir)).rejects.toThrow(/manifest/);
+  });
+  it("stops with a clear message on a missing, malformed or incomplete cache", async () => {
+    const dir = await mkdtemp(path.join(tmpdir(), "uni-cache-"));
+    await expect(readCache(dir)).rejects.toThrow(/no manifest/);
+    await writeFile(path.join(dir, "manifest.json"), "{not json");
+    await expect(readCache(dir)).rejects.toThrow(PortalStopError);
+    await writeFile(path.join(dir, "manifest.json"), JSON.stringify({ fetchedAt: "x", pages: [] }));
+    await expect(readCache(dir)).rejects.toThrow(/manifest/);
+    const bad = {
+      fetchedAt: "2026-10-08T10:00:00.000Z",
+      userAgent: "ua",
+      pages: [
+        {
+          file: "../../etc/passwd",
+          language: "EN",
+          page: 1,
+          url: "u",
+          sha256: "a".repeat(64),
+          bytes: 1,
+        },
+      ],
+    };
+    await writeFile(path.join(dir, "manifest.json"), JSON.stringify(bad));
+    await expect(readCache(dir)).rejects.toThrow(PortalStopError);
+    const missing = {
+      ...bad,
+      pages: [{ ...bad.pages[0], file: "EN-page-001.json" }],
+    };
+    await writeFile(path.join(dir, "manifest.json"), JSON.stringify(missing));
+    await expect(readCache(dir)).rejects.toThrow(/EN-page-001\.json/);
   });
 });
