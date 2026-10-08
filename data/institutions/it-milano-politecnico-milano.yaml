@@ -1,0 +1,14 @@
+slug: it-milano-politecnico-milano
+name: Politecnico di Milano
+country: IT
+city:
+  slug: milano
+  name: Milano
+type: public
+website: https://www.polimi.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.polimi.it/
+    last_verified_at: 2026-10-08

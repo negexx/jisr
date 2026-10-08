@@ -1,0 +1,74 @@
+{
+  "slug": "it-cassino-cassino-computer-engineering-l8",
+  "programmePage": "https://www.unicas.it/computer-engineering/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.unicas.it/computer-engineering/",
+          "quote": "Duration: 3 years"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/",
+          "quote": "2.1 APPLY IN UNIVERSITALY"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "secondary-school-diploma",
+          "name": {
+            "fr": "Diplôme d'études secondaires",
+            "en": "Secondary school diploma"
+          },
+          "quotedAs": "A secondary school diploma (or equivalent qualification obtained abroad and recognized under Italian regulations)",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unicas.it/computer-engineering/",
+          "quote": "A secondary school diploma (or equivalent qualification obtained abroad and recognized under Italian regulations);"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition not included: the pages do not state a specific tuition fee amount for non-EU international students for this programme; the Computer Engineering page only says \"Tuition fees vary according to student status and income level.\" without giving amounts.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.unicas.it/computer-engineering/",
+            "quote": "English language proficiency at B2 level (CEFR)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission et les documents requis pour les étudiants internationaux sur la page dédiée.",
+          "en": "Check admission requirements and required documents for international students on the dedicated page."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/",
+            "quote": "Choose your Programme and verify the entry requirements"
+          }
+        ]
+      }
+    ]
+  }
+}

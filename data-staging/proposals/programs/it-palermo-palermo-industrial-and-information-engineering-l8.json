@@ -1,0 +1,20 @@
+{
+  "slug": "it-palermo-palermo-industrial-and-information-engineering-l8",
+  "programmePage": "https://www.unipa.it/mobilita/en/new-students/international-master-degrees/bachelor-degree-in-industrial-and-information-engineering/",
+  "facts": {},
+  "notes": "Il est impossible de confirmer la durée (durationYears) car aucune page ne l'indique. La langue d'enseignement (teachingLanguages) n'est pas précisée pour ce programme. Aucune date d'admission (intakes) n'est fournie dans les textes. Les frais de scolarité (tuition) sont présentés sous forme de fourchette selon les catégories de pays, mais la citation indique un choix d'options, pas une dépendance au revenu ; le champ basis est donc laissé à income_based par défaut mais devrait être vérifié. Les documents listés concernent les étudiants non-UE et sont tirés de pages générales, pas de la page spécifique du programme. Le canal de candidature (applicationChannel) est basé sur une citation mentionnant 'pre-enrolment application' sans citer explicitement Universitaly, mais la page indique clairement l'utilisation du portail Universitaly dans d'autres sections.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.unipa.it/mobilita/en/new-students/new-students---enrolment/enrolment-procedures-for-extra-eu-foreign-students/bachelors-degree-/",
+            "quote": "Applicants to bachelor's degree programmes must have completed at least 12 years of schooling and obtained a secondary school leaving qualification."
+          }
+        ]
+      }
+    ]
+  }
+}

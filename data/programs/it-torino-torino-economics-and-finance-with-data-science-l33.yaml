@@ -34,12 +34,21 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: it-universitaly
+  source: page-2
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport en cours de validité
+          status: draft
+        en:
+          text: Valid passport
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -76,3 +85,6 @@ sources:
   page-2:
     url: https://www.unito.it/internazionalita/arrivare-unito-dallestero/ammissione-studenti-internazionali/procedure-0
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unito.it/internazionalita/arrivare-unito-dallestero/ammissione-studenti-internazionali/documentazione
+    last_verified_at: 2026-10-08

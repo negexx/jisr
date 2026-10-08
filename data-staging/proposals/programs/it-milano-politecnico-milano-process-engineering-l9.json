@@ -1,0 +1,57 @@
+{
+  "slug": "it-milano-politecnico-milano-process-engineering-l9",
+  "programmePage": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/process-engineering",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/process-engineering",
+          "quote": "The BSc in Process Engineering is organised over three years, divided into semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/process-engineering",
+          "quote": "Entirely taught in English and located in Cremona, the programme connects academic excellence with real-world relevance"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition for non-EU international students is not stated as a single amount for this programme; the available information gives ISEE-based bands and exceeds the scope allowed. Application channel not found: the pages do not mention Universitaly pre-enrolment or a direct university application portal for this programme. Dates given (e.g., 10 settembre 2026, 31 ottobre 2026) are deadlines for document submission after admission, not application deadlines, and are not programme-specific intakes.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'admission est requis pour les programmes d'ingénierie ; vérifiez les modalités et les dates sur le site du Politecnico.",
+          "en": "An admission test is required for engineering programmes; check the procedures and dates on the Politecnico website."
+        },
+        "evidence": [
+          {
+            "url": "https://www.polimi.it/futuri-studenti/test-e-ammissione/laurea/ingegneria/quando-immatricolarsi",
+            "quote": "Sostieni un test e sei iscritto al penultimo anno"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des bourses d'études sont disponibles pour les étudiants internationaux, avec des conditions et des dates limites spécifiques.",
+          "en": "Scholarships are available for international students, with specific conditions and deadlines."
+        },
+        "evidence": [
+          {
+            "url": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/process-engineering",
+            "quote": "Scholarships of 5,000€ per year for international students."
+          }
+        ]
+      }
+    ]
+  }
+}

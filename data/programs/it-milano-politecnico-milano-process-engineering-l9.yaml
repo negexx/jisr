@@ -1,0 +1,78 @@
+slug: it-milano-politecnico-milano-process-engineering-l9
+institution: it-milano-politecnico-milano
+country: IT
+city: milano
+field: engineering
+level: bachelor
+name: Process Engineering
+summary:
+  fr:
+    text: Process Engineering, Politecnico di Milano (Milano). Programme recensé sur Universitaly, le portail de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Process Engineering, Politecnico di Milano (Milano). Programme listed on Universitaly, the Italian Ministry of University and Research (MUR) portal of the degree offer.
+    status: draft
+  ar:
+    text: Process Engineering, Politecnico di Milano (Milano). برنامج مدرج على بوابة Universitaly لعرض التكوين التابعة لوزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.polimi.it/en/education/laurea-programmes/programme-detail/process-engineering
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un test d'admission est requis pour les programmes d'ingénierie ; vérifiez les modalités et les dates sur le site du Politecnico.
+          status: draft
+        en:
+          text: An admission test is required for engineering programmes; check the procedures and dates on the Politecnico website.
+          status: draft
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Des bourses d'études sont disponibles pour les étudiants internationaux, avec des conditions et des dates limites spécifiques.
+          status: draft
+        en:
+          text: Scholarships are available for international students, with specific conditions and deadlines.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.polimi.it/en/education/laurea-programmes/programme-detail/process-engineering
+    last_verified_at: 2026-10-08
+  page-2:
+    url: https://www.polimi.it/futuri-studenti/test-e-ammissione/laurea/ingegneria/quando-immatricolarsi
+    last_verified_at: 2026-10-08

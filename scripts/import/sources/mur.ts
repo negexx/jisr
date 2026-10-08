@@ -13,7 +13,7 @@ import { CONTACTS_URL, matchContact, parseContacts, siteOrigin } from "./mur-con
 // town and region. The offer file has no programme page and no university website, and its latest
 // academic year can be the one that is running, not the next one: everything else is read from
 // the programme and institution pages afterwards.
-const DATASET = "https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2";
+export const DATASET = "https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2";
 const FILES = `${DATASET}/resource`;
 export const OFFER_URL = `${FILES}/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv`;
 export const ATENEI_URL = `${FILES}/820aefe6-0662-4656-84ec-d8859a2a3b7e/download/01_atenei.csv`;
@@ -136,13 +136,13 @@ export function fieldOfClass(classCode: string, name: string): FieldMatch | null
 // --- records -----------------------------------------------------------------------------------
 const SMALL_WORDS = new Set(["and", "of", "for", "with", "in", "the", "e", "di", "per", "ed"]);
 
-const titleCase = (input: string): string =>
+export const titleCase = (input: string): string =>
   input
     .toLowerCase()
     .replace(/(^|[\s\-'’(])(\p{L})/gu, (_m, sep: string, ch: string) => sep + ch.toUpperCase());
 
 // "DIGITAL ECONOMICS AND BUSINESS" -> "Digital Economics and Business"; mixed case is kept as is.
-function tidyName(name: string): string {
+export function tidyName(name: string): string {
   if (name !== name.toUpperCase() || name === name.toLowerCase()) return name;
   return titleCase(name)
     .split(" ")
@@ -152,7 +152,7 @@ function tidyName(name: string): string {
 
 // "https://apply.unipv.eu/" is an admissions portal, not the home page: a host that is neither the
 // bare domain nor www.
-const isSubSite = (url: string): boolean => {
+export const isSubSite = (url: string): boolean => {
   const labels = new URL(url).hostname.split(".");
   return labels.length > 2 && labels[0] !== "www";
 };
@@ -170,7 +170,7 @@ export type ItalyReport = {
 };
 
 const academicYear = (year: number): string => `${year}/${String(year + 1).slice(2)}`;
-const classSlug = (classCode: string): string => slugify(classCode.replace("-", ""), 8);
+export const classSlug = (classCode: string): string => slugify(classCode.replace("-", ""), 8);
 
 export function buildItalyRecords(
   courses: readonly MurCourse[],
@@ -335,7 +335,7 @@ export function buildItalyRecords(
 // --- fetching ----------------------------------------------------------------------------------
 // A website candidate per university from the international students portal's contacts table; an
 // http one is kept only if its https form answers. A university with no usable match has none.
-async function websiteCandidates(atenei: readonly Ateneo[]): Promise<Map<string, string>> {
+export async function websiteCandidates(atenei: readonly Ateneo[]): Promise<Map<string, string>> {
   const contacts = parseContacts(
     await fetchText(CONTACTS_URL, {
       accept: "text/html",

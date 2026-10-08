@@ -30,12 +30,15 @@ tuition:
   source: programme
   info_kind: official
 intakes:
-  value: null
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-07-06
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: it-universitaly
+  source: page-1
   info_kind: official
 documents:
   value: null
@@ -67,3 +70,6 @@ sources:
   programme:
     url: https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unimi.it/it/internazionale/venire-studiare-dallestero/iscriversi-un-corso/iscrizioni-internazionali-corsi-di-laurea
+    last_verified_at: 2026-10-08

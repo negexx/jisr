@@ -2,123 +2,165 @@
 
 For each record: open the link, confirm the quote is there and that it supports the value (right programme, right applicant group, right year). Then set `audited = y` and `outcome = ok` (or `wrong` + a note) in `AUDIT.csv`.
 
-## cost-profiles/de-official  _(batch b31-d48078)_
+## institutions/it-messina-messina  _(batch b31-8853a0)_
 
-**Official cost profile de-official**
+**Università degli studi di Messina**
 
-- **housing**: `410.00 to 410.00 EUR per month` (estimate; source daad-de)
-  - "Rent (including utility costs): EUR 410" — https://www.daad.de/en/studying-in-germany/living-in-germany/finances/
-  - date: "According to the latest social survey from 2023, students have expenses totalling an average of 876 euros per month." — https://www.daad.de/en/studying-in-germany/living-in-germany/finances/
-  - formula: DAAD, from the 2023 social survey: average monthly rent (utilities included) of a student in Germany, 410 EUR. An average over all students, not only international ones; a single figure.
-- **food**: `198.00 to 198.00 EUR per month` (estimate; source daad-de)
-  - "Food: EUR 198 Health insurance" — https://www.daad.de/en/studying-in-germany/living-in-germany/finances/
-  - date: "According to the latest social survey from 2023, students have expenses totalling an average of 876 euros per month." — https://www.daad.de/en/studying-in-germany/living-in-germany/finances/
-  - formula: DAAD, from the 2023 social survey: average monthly food spending of a student in Germany, 198 EUR. An average over all students; a single figure.
-- **transport**: `89.00 to 89.00 EUR per month` (estimate; source daad-de)
-  - "Transportation costs (car/public transport): EUR 89" — https://www.daad.de/en/studying-in-germany/living-in-germany/finances/
-  - date: "According to the latest social survey from 2023, students have expenses totalling an average of 876 euros per month." — https://www.daad.de/en/studying-in-germany/living-in-germany/finances/
-  - formula: DAAD, from the 2023 social survey: average monthly transport spending (car or public transport) of a student in Germany, 89 EUR. An average over all students; a single figure.
-- **insurance**: `100.00 to 100.00 EUR per month` (estimate; source daad-de)
-  - "Health insurance, doctor's fees, medications: EUR 100" — https://www.daad.de/en/studying-in-germany/living-in-germany/finances/
-  - date: "According to the latest social survey from 2023, students have expenses totalling an average of 876 euros per month." — https://www.daad.de/en/studying-in-germany/living-in-germany/finances/
-  - formula: DAAD, from the 2023 social survey: average monthly spending of a student in Germany on health insurance, doctor's fees and medications, 100 EUR. An average over all students; a single figure.
-- **page**: https://www.daad.de/en/studying-in-germany/living-in-germany/finances/
-- **page check**: Confirm: the quote is on the official page and the number matches
+- **type**: `public`
+- **website**: `https://international.unime.it/`
+- evidence: "Home page | Università degli Studi di Messina Skip to main content Università" — https://international.unime.it/
+- **page**: https://international.unime.it/
 
-> Preparer's caveats: Every proposed line kept. lines.housing: period not stated in quote (per month comes from the proposal) lines.food: period not stated in quote (per month comes from the proposal) lines.transport: period not stated in quote (per month comes from the proposal) lines.insurance: period not stated in quote (per month comes from the proposal)
+## institutions/it-milano-politecnico-milano  _(batch b31-8853a0)_
 
-## cost-profiles/fr-official  _(batch b31-d48078)_
+**Politecnico di Milano**
 
-**Official cost profile fr-official**
+- **type**: `public`
+- **website**: `https://www.polimi.it/`
+- evidence: "Architectures at Politecnico di Milano University projects International relations Calls" — https://www.polimi.it/en/education/laurea-programmes/programme-detail/engineering-science
+- **page**: https://www.polimi.it/
 
-- **housing**: `350.00 to 350.00 EUR per month` (estimate; source campusfrance-org)
-  - "the monthly rent is low (€450 in Paris; €350 on average elsewhere in France)" — https://www.campusfrance.org/en/student-housing-france
-  - date: "Updated on 26 June 2026" — https://www.campusfrance.org/en/student-housing-france
-  - formula: Campus France (page updated 26 June 2026): average monthly rent of a Crous residence outside Paris, 350 EUR (a single published figure, not a range). A private studio costs at least 400 EUR outside Paris.
-- **food**: `300.00 to 300.00 EUR per month` (estimate; source campusfrance-org-2)
-  - "the French dedicate about 300€/month to food expenses" — https://www.campusfrance.org/en/preparing-budget-student-France
-  - date: "Updated on 07 July 2026" — https://www.campusfrance.org/en/preparing-budget-student-France
-  - formula: Campus France (page updated 7 July 2026): the French spend on average about 300 EUR a month on food; it varies by city and habits (a single figure, not a range).
-- **transport**: `250.00 to 300.00 EUR per year` (estimate; source campusfrance-org-2)
-  - "an annual transit subscription outside of Paris at the student rate: between 250 and 300 Euros" — https://www.campusfrance.org/en/preparing-budget-student-France
-  - date: "Updated on 07 July 2026" — https://www.campusfrance.org/en/preparing-budget-student-France
-  - formula: Campus France (page updated 7 July 2026): annual public-transport subscription at the student rate outside Paris, between 250 and 300 EUR.
-- **application_visa**: `100.00 to 100.00 EUR per once` (official; source service-public-gouv-fr)
-  - "Il faut payer 100 €" — https://www.service-public.gouv.fr/particuliers/vosdroits/F2231
-  - formula: Service-Public: tax paid when validating the student VLS-TS visa after arriving in France. It comes on top of the visa fee, which is not included here.
-- **setup**: `105.00 to 105.00 EUR per year` (official; source cvec-etudiant-gouv-fr)
-  - "L'acquittement est actuellement possible pour l'année universitaire 2026-2027. Elle est de 105 € euros." — https://cvec.etudiant.gouv.fr/
-  - formula: CVEC (student life and campus contribution), official Crous and ministry site: 105 EUR for the 2026-2027 academic year, paid before enrolment (an annual contribution).
-- **page**: https://www.campusfrance.org/en/student-housing-france
-- **page check**: Confirm: the quote is on the official page and the number matches
+## institutions/it-palermo-palermo  _(batch b31-8853a0)_
 
-> Preparer's caveats: Every proposed line kept. lines.application_visa: official line, no age check was done (a rate in force is assumed) lines.application_visa: period not stated in quote (per once comes from the proposal) lines.setup: official line, no age check was done (a rate in force is assumed)
+**Università degli studi di Palermo**
 
-## cost-profiles/fr-paris-official  _(batch b31-d48078)_
+- **type**: `public`
+- **website**: `https://www.unipa.it/`
+- evidence: "Università degli Studi di Palermo Salta al contenuto principale Passa" — https://www.unipa.it/
+- **page**: https://www.unipa.it/
 
-**Official cost profile fr-paris-official**
+## institutions/it-teramo-teramo  _(batch b31-8853a0)_
 
-- **housing**: `450.00 to 450.00 EUR per month` (estimate; source campusfrance-org)
-  - "the monthly rent is low (€450 in Paris; €350 on average elsewhere in France)" — https://www.campusfrance.org/en/student-housing-france
-  - date: "Updated on 26 June 2026" — https://www.campusfrance.org/en/student-housing-france
-  - formula: Campus France (page updated 26 June 2026): monthly rent of a Crous residence in Paris, 450 EUR (a single published figure, not a range). A private studio costs at least 800 EUR in Paris.
-- **transport**: `374.40 to 374.40 EUR per year` (estimate; source campusfrance-org-2)
-  - "an annual transit subscription in Paris at the student rate: 374,4 Euros" — https://www.campusfrance.org/en/preparing-budget-student-France
-  - date: "Updated on 07 July 2026" — https://www.campusfrance.org/en/preparing-budget-student-France
-  - formula: Campus France (page updated 7 July 2026): annual public-transport subscription in Paris at the student rate, 374.40 EUR (a single figure).
-- **page**: https://www.campusfrance.org/en/student-housing-france
-- **page check**: Confirm: the quote is on the official page and the number matches
+**Università degli studi di Teramo**
 
-> Preparer's caveats: Every proposed line kept.
+- **type**: `public`
+- **website**: `https://www.unite.it/`
+- evidence: "Performance 2017 Università degli Studi di Teramo Pag. 1 UNIVERSITA' DEGLI STUDI DI" — https://www.unite.it/UniTE/Engine/RAServeFile.php/f/operazionetrasparenza/RELAZIONE_PERFORMANCE_2017_21_06_2018.pdf
+- **page**: https://www.unite.it/
 
-## cost-profiles/hu-official  _(batch b31-d48078)_
+## programs/it-casamassima-lum-g-degennaro-casamassima-economia-ed-organizzazione-aziendale-l18  _(batch b31-8853a0)_
 
-**Official cost profile hu-official**
+**Economia ed organizzazione aziendale**, Libera Università Mediterranea "Giuseppe Degennaro"
 
-- **insurance**: `12,300 to 12,300 HUF per month` (estimate; source nav-gov-hu)
-  - "Az egészségügyi szolgáltatási járulék összege havi napi 2026. január 1-jétől 12 300 Ft 410 Ft" — https://nav.gov.hu/ado/jarulek/Fizetendo_jarulekok_2026._januar_1-jetol
-  - formula: NAV (Hungarian tax authority): statutory monthly health-service contribution (egészségügyi szolgáltatási járulék) in 2026, 12,300 HUF. Whether it applies to a given student depends on their insurance situation.
-- **page**: https://nav.gov.hu/ado/jarulek/Fizetendo_jarulekok_2026._januar_1-jetol
-- **page check**: Confirm: the quote is on the official page and the number matches
+- **durationYears**: `3` (official; source programme)
+  - "The Bachelor’s degree programme in Business Economics and Organization (BEO, degree class L18) is taught entirely in English" — https://www.lum.it/laurea-in-business-economics-and-organization/
+  - "The three-year degree programme includes a combination of technical know-how, management skills and leadership qualities" — https://www.lum.it/laurea-in-business-economics-and-organization/
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "The Bachelor’s degree programme in Business Economics and Organization (BEO, degree class L18) is taught entirely in English" — https://www.lum.it/laurea-in-business-economics-and-organization/
+- **page**: https://www.lum.it/laurea-in-business-economics-and-organization/
 
-> Preparer's caveats: Every proposed line kept.
+> Preparer's caveats: The supplied page is the programme page for the Laurea in Business Economics and Organization (L18-R), which corresponds to the task's "Economia ed organizzazione aziendale". No tuition fee for non-EU/international students is stated on the page; no intake dates, no application channel (no mention of Universitaly or a university application portal/form for this programme) and no document list are given, so those facts are omitted. No language, subject, prior-study or other admission requirements are stated on the page.
 
-## cost-profiles/it-official  _(batch b31-d48078)_
+## programs/it-cassino-cassino-computer-engineering-l8  _(batch b31-8853a0)_
 
-**Official cost profile it-official**
+**Computer Engineering**, Università degli Studi di Cassino e del Lazio Meridionale
 
-- **application_visa**: `40.00 to 40.00 EUR per once` (official; source questure-poliziadistato-it)
-  - "40,00 euro per i permessi di soggiorno di durata superiore a tre mesi e inferiore o pari a un anno" — https://questure.poliziadistato.it/it/Campobasso/articolo/1326593f9bac0db04322800233
-  - formula: Questura (State Police, notice of 13/06/2017): contribution for an electronic residence permit of more than three months and up to one year. Other fees (card, revenue stamp) are not on this page and not included; check the amount again on the Questura site. Due for each permit issued (valid up to one year).
-- **page**: https://questure.poliziadistato.it/it/Campobasso/articolo/1326593f9bac0db04322800233
-- **page check**: Confirm: the quote is on the official page and the number matches
+- **durationYears**: `3` (official; source programme)
+  - "Duration: 3 years" — https://www.unicas.it/computer-engineering/
+- **applicationChannel**: `it-universitaly` (official; source page-2)
+  - "2.1 APPLY IN UNIVERSITALY" — https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/
+- **documents**: `[{"slug":"secondary-school-diploma","name":{"fr":{"text":"Diplôme d'études secondaires","status":"draft"},"en":{"text":"Secondary school diploma","status":"draft"}},"translationRequired":null}]` (official; source programme)
+  - "A secondary school diploma (or equivalent qualification obtained abroad and recognized under Italian regulations);" — https://www.unicas.it/computer-engineering/
+- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B2","certificateRequired":null,"acceptedTests":[]}`
+  - "English language proficiency at B2 level (CEFR)." — https://www.unicas.it/computer-engineering/
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez les conditions d'admission et les documents requis pour les étudiants internationaux sur la page dédiée.","status":"draft"},"en":{"text":"Check admission requirements and required documents for international students on the dedicated page.","status":"draft"}}}`
+  - "Choose your Programme and verify the entry requirements" — https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/
+- **page**: https://www.unicas.it/computer-engineering
 
-> Preparer's caveats: Every proposed line kept. lines.application_visa: official line, no age check was done (a rate in force is assumed) lines.application_visa: period not stated in quote (per once comes from the proposal; ignored duration phrase: 'di durata superiore a tre mesi e inferiore o pari a un anno')
+> Preparer's caveats: Tuition not included: the pages do not state a specific tuition fee amount for non-EU international students for this programme; the Computer Engineering page only says "Tuition fees vary according to student status and income level." without giving amounts.
 
-## cost-profiles/nl-official  _(batch b31-d48078)_
+## programs/it-messina-messina-heritage-innovation-engineering-l23  _(batch b31-8853a0)_
 
-**Official cost profile nl-official**
+**Heritage Innovation Engineering**, Università degli studi di Messina
 
-- **housing**: `561.00 to 561.00 EUR per month` (estimate; source studyinnl-org)
-  - "monthly cost overview to take into account when planning to study in the Netherlands: Rent: € 561" — https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands
-  - date: "(source: Nibud, 2024)" — https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands
-  - formula: Study in NL (Nuffic), from Nibud 2024: average monthly rent of a student in the Netherlands, 561 EUR. A national average; a single figure.
-- **food**: `244.00 to 244.00 EUR per month` (estimate; source studyinnl-org)
-  - "Groceries: € 244" — https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands
-  - date: "(source: Nibud, 2024)" — https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands
-  - formula: Study in NL (Nuffic), from Nibud 2024: average monthly grocery spending of a student in the Netherlands, 244 EUR. A national average; a single figure.
-- **transport**: `67.00 to 67.00 EUR per month` (estimate; source studyinnl-org)
-  - "Transportation: € 67" — https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands
-  - date: "(source: Nibud, 2024)" — https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands
-  - formula: Study in NL (Nuffic), from Nibud 2024: average monthly transport spending of a student in the Netherlands, 67 EUR. A national average; a single figure.
-- **insurance**: `133.00 to 133.00 EUR per month` (estimate; source studyinnl-org)
-  - "Basic Dutch health insurance (when working in NL): € 133 (source: Nibud, 2024)" — https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands
-  - formula: Study in NL (Nuffic), from Nibud 2024: basic Dutch health insurance, 133 EUR a month, listed for a student who works in the Netherlands. A single figure.
-- **application_visa**: `254.00 to 254.00 EUR per once` (official; source ind-nl)
-  - "Study (all education levels) First application or change in purpose of stay € 254,00" — https://ind.nl/en/fees-costs-of-an-application
-  - formula: IND (Dutch immigration service): fee for a first application for a residence permit for study (all education levels).
-- **page**: https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands
-- **page check**: Confirm: the quote is on the official page and the number matches
+- **applicationChannel**: `it-universitaly` (official; source page-2)
+  - "In the admission letter, visa applicants will find all the instructions to register at the Universitaly portal and go forward with the visa procedure." — https://international.unime.it/study-us/application-and-admission
+  - "For the academic year 2026/2027, the application deadline on Universitaly is 15 September 2026." — https://international.unime.it/study-us/application-and-admission
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez les critères d'entrée par pays (UniME Entry Criteria by Country) pour confirmer que votre Baccalauréat marocain permet l'accès à ce Bachelor.","status":"draft"},"en":{"text":"Check the UniME Entry Criteria by Country to confirm that your Moroccan Baccalauréat qualifies for entry to this Bachelor.","status":"draft"}}}`
+  - "Document UniME Entry Criteria by Country" — https://international.unime.it/study-us/application-and-admission
+- **page**: https://unime.coursecatalogue.cineca.it/corsi/2026/10885?annoOrdinamento=2026
 
-> Preparer's caveats: Every proposed line kept. lines.food: period not stated in quote (per month comes from the proposal) lines.transport: period not stated in quote (per month comes from the proposal) lines.insurance: period not stated in quote (per month comes from the proposal) lines.application_visa: official line, no age check was done (a rate in force is assumed) lines.application_visa: period not stated in quote (per once comes from the proposal)
+> Preparer's caveats: Tuition left out: the pages supply no amount in EUR for a non-EU student living abroad for this programme; the only money mentioned is a non-refundable application fee (€40.00 for 2027/2028 and €30.00 for 2026/2027), which is not tuition. Documents left out: no document list is given for this specific Bachelor; the lists on the application pages are for Bachelor's/Single-Cycle/Master's degree programmes in general. Duration left out: the pages never state the number of years of the Heritage Innovation Engineering programme. Intake deadlines left out: no deadline is attributed specifically to this programme, and the general call deadlines are not shown as applying to Heritage Innovation Engineering.
+
+## programs/it-milano-milano-economics-behavior-data-and-policy-l33  _(batch b31-8853a0)_
+
+**Economics: Behavior, Data and Policy**
+
+- **durationYears**: `3` (official; source programme) (unchanged: already in data/)
+- **teachingLanguages**: `["en"]` (official; source programme) (unchanged: already in data/)
+- **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":"2026-07-06"}]` (official; source programme)
+  - "Places available: 100 + 15 reserved for non-EU citizens" — https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy
+  - "Application for admission: from 12/03/2026 to 06/07/2026" — https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy
+- **applicationChannel**: `it-universitaly` (official; source page-1)
+  - "Gli studenti non comunitari residenti all’estero sono invece tenuti a presentare domanda di preiscrizione su Universitaly." — https://www.unimi.it/it/internazionale/venire-studiare-dallestero/iscriversi-un-corso/iscrizioni-internazionali-corsi-di-laurea
+- **requirement req-1**: `{"kind":"prior_study_years_min","years":12}`
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Le nombre de places est limité : 100 + 15 réservées aux candidats non-UE résidant à l'étranger. Un test d'admission CEnT-S en anglais (sections Mathématiques et Raisonnement) est requis.","status":"draft"},"en":{"text":"Places are limited: 100 + 15 reserved for non-EU candidates residing abroad. An admission test CEnT-S in English (Mathematics and Reasoning sections) is required.","status":"draft"}}}`
+
+> Preparer's caveats: Tuition fees for non-EU students living abroad are not stated as a single annual amount for this programme; UNIMI computes the second instalment based on the country of citizenship group for students with family income and assets abroad, so no amount could be quoted. Deadline 2026-07-06 is the programme's general admission application window (programme page); the separate non-EU pre-enrolment on Universitaly is to be sent by 31 July 2026 per the international admissions page. The B2 English requirement is described as a condition to sit exams (OFA), not as an admission requirement. Documents listed include items also required for enrolment. Some documents are optional ('eventuali').
+
+## programs/it-milano-politecnico-milano-engineering-science-l9  _(batch b31-8853a0)_
+
+**Engineering Science**, Politecnico di Milano
+
+- **durationYears**: `3` (official; source programme)
+  - "Level Bachelor of Science Duration 3 Years Language English" — https://www.polimi.it/en/education/laurea-programmes/programme-detail/engineering-science
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "Level Bachelor of Science Duration 3 Years Language English" — https://www.polimi.it/en/education/laurea-programmes/programme-detail/engineering-science
+- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Le Politecnico exige que le diplôme de fin d'études secondaires soit accompagné d'une traduction officielle si le document n'est pas en italien, anglais, français ou espagnol.","status":"draft"},"en":{"text":"Politecnico requires the school-leaving certificate to be accompanied by an official translation if the document is not in Italian, English, French or Spanish.","status":"draft"}}}`
+  - "Entrambi i documenti dovranno essere accompagnati da traduzione ufficiale se non disponibili in inglese, francese o spagnolo." — https://www.polimi.it/futuri-studenti/test-e-ammissione/laurea/documenti-necessari-per-completare-limmatricolazione
+- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Le diplôme final de fin d'études secondaires doit être téléchargé via les Services en ligne au plus tard le 10 septembre 2026.","status":"draft"},"en":{"text":"The final school-leaving certificate must be uploaded via the Online Services by 10 September 2026 at the latest.","status":"draft"}}}`
+  - "La scadenza per caricare il titolo di studio è il 10 settembre 2026." — https://www.polimi.it/futuri-studenti/test-e-ammissione/laurea/documenti-necessari-per-completare-limmatricolazione
+- **requirement req-3**: `{"kind":"manual_check","note":{"fr":{"text":"Une déclaration de valeur, un supplément au certificat, une attestation de comparabilité CIMEA ou une attestation de correspondance CIMEA doit être téléchargée avant le 31 octobre 2026.","status":"draft"},"en":{"text":"A Declaration of Value, Certificate Supplement, CIMEA Statement of Comparability or CIMEA Statement of Correspondence must be uploaded by 31 October 2026.","status":"draft"}}}`
+  - "La scadenza per caricare la Dichiarazione di Valore, oppure il Certificate Supplement, oppure l’Attestato di Comparabilità, oppure l’Attestato di Corrispondenza, è il 31 ottobre 2026." — https://www.polimi.it/futuri-studenti/test-e-ammissione/laurea/documenti-necessari-per-completare-limmatricolazione
+
+> Preparer's caveats: Tuition: not stated for this programme for a non-EU applicant. The fee pages show ISEE-based bands, regional tax and stamp duty, but no single amount or a lowest-highest range that the pages state applies to a full-time Bachelor student from outside the EU. Deadline for uploading the E-Apostille (31 October 2026) is a document-verification deadline, not an application deadline; no application opening or closing date for this programme is stated on the supplied pages.
+
+## programs/it-napoli-federico-ii-napoli-electrical-engineering-and-information-t-l8  _(batch b31-8853a0)_
+
+**Electrical Engineering and Information Technology**, Università degli studi di Napoli Federico II
+
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "Candidate students should provide evidence of English language proficiency at B2 or higher (CEFR level)." — https://eeit.dieti.unina.it/
+- **applicationChannel**: `it-universitaly` (official; source page-2)
+  - "The pre-enrolment application is made exclusively through the Universitaly portal (visit https://www.universitaly.it/studenti-stranieri)." — https://www.international.unina.it/education/admission-regulation/
+- **documents**: `[{"slug":"passport","name":{"fr":{"text":"Passeport","status":"draft"},"en":{"text":"Passport","status":"draft"}},"translationRequired":null}]` (official; source page-2)
+  - "Documents required for enrolment Copy of passport Application form 1 passport photo Tax code Residence permit (proof of having applied for it) Declaration of value issued by the Italian Embassy in the country where the degree was obtained or certificate of validity issued by ENIC-NARIC centres." — https://www.international.unina.it/education/admission-regulation/
+
+> Preparer's caveats: Tuition is not stated for this programme. The only amounts on the pages are institution-wide income-based ISEE bands (e.g. 1.011,50 € + quota variabile, up to 2.384,00 € for those without ISEEU), and for non-EU students the guide only exempts extra-EU citizens from the university contribution while still paying the regional tax and stamp duty; no single tuition figure for a full-time Bachelor student from outside the EU living abroad is quoted, so tuition is omitted.
+
+## programs/it-padova-padova-economics-governance-and-decision-making-l33  _(batch b31-8853a0)_
+
+**Economics, governance and decision-making**, Università degli studi di Padova
+
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "The Economics, Governance and Decision-Making (EGDM) programme is made for you. Study in English" — https://www.economia.unipd.it/en/Bachelor%27s-degree-EGDM/bachelor%E2%80%99s-degree-economics-governance-and-decision-making
+- **page**: https://www.unipd.it/corsi-di-laurea/economics-governance-and-decision-making
+
+> Preparer's caveats: Tuition left out: the only supplied fee page (https://www.unipd.it/simulatore-calcolo-contributi) gives a general ISEE-band table for non-EU students and does not state one lowest and one highest fee for this programme's applicant, so no single amount or range can be quoted. No intake/deadline, application channel, document list or entry requirements stated for the EGDM Bachelor's programme in the supplied pages: the admission notices and international-student pages concern other (Master's) programmes.
+
+## programs/it-padova-padova-information-engineering-l8  _(batch b31-8853a0)_
+
+**Information Engineering**
+
+- **durationYears**: `3` (official; source programme) (unchanged: already in data/)
+- **teachingLanguages**: `["en"]` (official; source programme) (unchanged: already in data/)
+- **tuition**: `{"amountMinor":295000,"currency":"EUR","period":"year"}` (official; source programme)
+  - "Tuition fee €2,950 per year" — https://apply.unipd.it/courses/course/182-information-engineering
+- **intakes**: `[{"startDate":"2027-10-01","applicationOpens":"2027-01-07","applicationDeadline":"2027-03-07"}]` (official; source programme) (unchanged: already in data/)
+- **documents**: `[{"slug":"secondary-school-diploma","name":{"fr":{"text":"Diplôme d'études secondaires","status":"draft"},"en":{"text":"Secondary Studies diploma","status":"draft"}},"translationRequired":null}]` (official; source programme) (unchanged: already in data/)
+- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B2","certificateRequired":null,"acceptedTests":[]}`
+
+> Preparer's caveats: documents: kept the existing official value; the reader found [{"slug":"secondary-studies-diploma","name":{"fr":{"text":"Diplôme d'études secondaires","status":"draft"},"en":{"text":"Secondary Studies diploma","status":"draft"}},"translationRequired":null}] at https://apply.unipd.it/courses/course/182-information-engineering; The tuition fee of €2,950 per year is stated on the programme page but the page also says it can be significantly waived based on ISEE, so the amount may be lower for this applicant. The application channel could not be confirmed as it-universitaly because no page names the Universitaly portal for this programme; the programme page provides an 'Apply now!' link but does not explicitly name an application portal, so it-university-direct is used as the closest supported option. The deposit of €208 is an admission fee, not tuition, and is therefore not included in the tuition fact.
+
+## programs/it-teramo-teramo-business-management-l18  _(batch b31-8853a0)_
+
+**Business Management**, Università degli studi di Teramo
+
+- **durationYears**: `3` (official; source programme)
+  - "CFU: 180 Length: 3 Years" — https://www.unite.it/English/Programme_catalogue_university_Teramo/Business_Management_Taught_EN
+- **teachingLanguages**: `["en"]` (official; source programme)
+  - "Language: English" — https://www.unite.it/English/Programme_catalogue_university_Teramo/Business_Management_Taught_EN
+  - "The Bachelor's Degree in Business Management (L-18) is a First Cycle Degree entirely taught in English, with open access." — https://www.unite.it/English/Programme_catalogue_university_Teramo/Business_Management_Taught_EN
+
+> Preparer's caveats: Tuition omitted: the supplied pages contain no quote of a tuition amount in EUR for a full-time Bachelor student from outside the EU living abroad (or for international students in general) for this programme. The fee page is a general university page listing payment deadlines and an example instalment plan and does not state a tuition for this programme or this category of student. Application channel omitted: no supplied quote names Universitaly or the university's own application portal for this programme. Intakes omitted: no supplied quote states an application start or deadline for this programme or for non-EU applicants. Requirements omitted: no supplied quote states admission conditions for this programme.
 
