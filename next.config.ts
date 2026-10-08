@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
+import { readSiteEnv } from "./src/lib/site-env";
 import { SNAPSHOT_HEADER_RULES } from "./src/lib/snapshot-headers";
+
+// Validated at config load so a malformed deployment variable fails the build, not the first visitor.
+readSiteEnv();
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
