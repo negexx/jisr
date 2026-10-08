@@ -17,8 +17,8 @@ summary:
     status: draft
 officialUrl: https://www.unisi.it/ugov/degree/18135
 durationYears:
-  value: null
-  source: programme
+  value: 3
+  source: page-3
   info_kind: official
 teachingLanguages:
   value:
@@ -26,8 +26,11 @@ teachingLanguages:
   source: page-1
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 50000
+    currency: EUR
+    period: year
+  source: page-4
   info_kind: official
 intakes:
   value: null
@@ -68,3 +71,9 @@ sources:
   page-1:
     url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
     last_verified_at: 2026-10-05
+  page-3:
+    url: https://apply.unisi.it/courses/course/41-b-economics-and-management
+    last_verified_at: 2026-10-08
+  page-4:
+    url: https://www.unisi.it/sites/default/files/allegatiparagrafo/Regolamento_contribuzione_2026-2027.pdf
+    last_verified_at: 2026-10-08

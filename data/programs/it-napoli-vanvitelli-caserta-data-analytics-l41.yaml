@@ -34,12 +34,39 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: it-universitaly
+  source: page-1
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: identity-document
+      name:
+        fr:
+          text: Document d'identité en cours de validité
+          status: draft
+        en:
+          text: Valid identity document
+          status: draft
+      translationRequired: null
+    - slug: tax-code
+      name:
+        fr:
+          text: Code fiscal
+          status: draft
+        en:
+          text: Tax code
+          status: draft
+      translationRequired: null
+    - slug: passport-photo
+      name:
+        fr:
+          text: Photo format passeport
+          status: draft
+        en:
+          text: Passport-size photo
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -73,3 +100,6 @@ sources:
   page-2:
     url: https://unicampania.it/RPP/RGCSS/Concorso_DISTABIF_2026_2027/Data_Analytics/Bando_Data_Analytics_non_UE_26_27_EN.pdf
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unicampania.it/RPP/RGCSS/Concorso_DISTABIF_2026_2027/Data_Analytics/Re-emission_non-UE/Riapertura_Bando_non_UE.pdf
+    last_verified_at: 2026-10-08

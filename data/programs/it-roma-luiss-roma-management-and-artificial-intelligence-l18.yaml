@@ -26,20 +26,53 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 1500000
+    currency: EUR
+    period: year
   source: programme
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2027-02-10
+  source: page-1
   info_kind: official
 applicationChannel:
   value: null
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: identity-document-or-passport
+      name:
+        fr:
+          text: Document d'identité ou passeport en cours de validité
+          status: draft
+        en:
+          text: Valid identity document or passport
+          status: draft
+      translationRequired: null
+    - slug: educational-qualification-documentation
+      name:
+        fr:
+          text: Documentation requise pour vérifier le titre d'études
+          status: draft
+        en:
+          text: Documentation required to verify the educational qualification
+          status: draft
+      translationRequired: null
+    - slug: school-report-cards
+      name:
+        fr:
+          text: Bulletins scolaires
+          status: draft
+        en:
+          text: School report cards
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -65,3 +98,6 @@ sources:
   page-2:
     url: https://apply.luiss.it/en_GB/courses/course/16-bachelors-management-and-artificial-intelligence---english
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.luiss.it/en/orientation-and-admissions/admission-procedures/admission-to-bachelor's-degrees-and-the-single-cycle-law-degree/non-eu-schengen-students/direct-admission-to-bachelor's-and-master's-degrees-for-non-eu-students-with-certificates
+    last_verified_at: 2026-10-08

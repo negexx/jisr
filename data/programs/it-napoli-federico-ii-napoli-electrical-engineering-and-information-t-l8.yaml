@@ -30,8 +30,11 @@ tuition:
   source: programme
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-05-31
+  source: page-3
   info_kind: official
 applicationChannel:
   value: it-universitaly
@@ -62,4 +65,7 @@ sources:
     last_verified_at: 2026-10-08
   page-2:
     url: https://www.international.unina.it/education/admission-regulation/
+    last_verified_at: 2026-10-08
+  page-3:
+    url: https://eeit.dieti.unina.it/index.php/admission/admission-schedule
     last_verified_at: 2026-10-08

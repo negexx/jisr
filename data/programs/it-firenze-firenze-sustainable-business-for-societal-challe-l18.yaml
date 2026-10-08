@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 93900
+    currency: EUR
+    period: year
+  source: page-1
   info_kind: official
 intakes:
   value: null
@@ -70,3 +73,6 @@ sources:
   page-2:
     url: https://www.unifi.it/it/studia-con-noi/il-tuo-percorso/iscriviti-alluniversita/studenti-internazionali/studenti-non-unione
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unifi.it/sites/default/files/2026-06/manifesto_studi_26_27.pdf
+    last_verified_at: 2026-10-08

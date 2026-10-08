@@ -26,8 +26,11 @@ teachingLanguages:
   source: page-1
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 30000
+    currency: EUR
+    period: year
+  source: page-3
   info_kind: official
 intakes:
   value: null
@@ -89,3 +92,6 @@ sources:
   page-1:
     url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
     last_verified_at: 2026-10-05
+  page-3:
+    url: https://www.uniroma1.it/it/content/importi-ordinari-dei-contributi-di-iscrizione
+    last_verified_at: 2026-10-08

@@ -38,8 +38,44 @@ applicationChannel:
   source: page-2
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: high-school-diploma
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Higher Secondary School final Diploma
+          status: draft
+      translationRequired: true
+    - slug: transcript-of-records
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Transcript of records
+          status: draft
+      translationRequired: true
+    - slug: statement-of-comparability-cimea
+      name:
+        fr:
+          text: Attestation de comparabilité CIMEA
+          status: draft
+        en:
+          text: Statement of Comparability issued by CIMEA
+          status: draft
+      translationRequired: null
+    - slug: italian-study-visa
+      name:
+        fr:
+          text: Visa d'études italien
+          status: draft
+        en:
+          text: Italian visa for study
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -84,3 +120,6 @@ sources:
   page-3:
     url: https://www.unive.it/pag/41325/
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unive.it/pag/40976/
+    last_verified_at: 2026-10-08

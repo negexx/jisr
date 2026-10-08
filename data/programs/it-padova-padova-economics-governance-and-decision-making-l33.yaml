@@ -17,8 +17,8 @@ summary:
     status: draft
 officialUrl: https://www.economia.unipd.it/en/Bachelor%27s-degree-EGDM/bachelor%E2%80%99s-degree-economics-governance-and-decision-making
 durationYears:
-  value: null
-  source: programme
+  value: 3
+  source: page-1
   info_kind: official
 teachingLanguages:
   value:
@@ -26,8 +26,12 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 279000
+    maxAmountMinor: 299000
+    currency: EUR
+    period: year
+  source: page-2
   info_kind: official
 intakes:
   value: null
@@ -50,4 +54,10 @@ scholarships: []
 sources:
   programme:
     url: https://www.economia.unipd.it/en/Bachelor%27s-degree-EGDM/bachelor%E2%80%99s-degree-economics-governance-and-decision-making
+    last_verified_at: 2026-10-08
+  page-1:
+    url: https://apply.unipd.it/courses/course/258-economics-governance-and-decision-making
+    last_verified_at: 2026-10-08
+  page-2:
+    url: https://www.unipd.it/contribuzione-studentesca
     last_verified_at: 2026-10-08

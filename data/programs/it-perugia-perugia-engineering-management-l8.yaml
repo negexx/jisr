@@ -34,8 +34,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: it-universitaly
+  source: page-1
   info_kind: official
 documents:
   value: null
@@ -106,3 +106,6 @@ sources:
   page-2:
     url: https://www.unipg.it/internazionale/studenti-incoming-e-internazionali/studenti-internazionali/documentazione-titoli-di-studio
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unipg.it/en/international-students/students-wishing-to-enroll/how-to-apply
+    last_verified_at: 2026-10-08

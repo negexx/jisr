@@ -37,11 +37,38 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: it-universitaly
+  source: page-1
   info_kind: official
 documents:
-  value: null
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport valide ou carte d'identité
+          status: draft
+        en:
+          text: Valid passport or ID card
+          status: draft
+      translationRequired: null
+    - slug: secondary-school-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary School certificate
+          status: draft
+      translationRequired: null
+    - slug: sat-scoresheet
+      name:
+        fr:
+          text: Relevé de notes SAT
+          status: draft
+        en:
+          text: SAT scoresheet pdf file
+          status: draft
+      translationRequired: null
   source: programme
   info_kind: official
 requirements:
@@ -78,3 +105,6 @@ sources:
   programme:
     url: https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://en.unipv.it/en/education/bachelors-and-masters-degree-programs/after-admission/non-eu-prospective-students
+    last_verified_at: 2026-10-08
