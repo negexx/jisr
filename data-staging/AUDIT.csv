@@ -1201,7 +1201,6 @@ programs/it-bologna-ravenna-building-construction-engineering-l23,b31-395c84,y,y
 programs/it-bologna-rimini-economics-of-tourism-and-cities-l33,b31-395c84,y,y,ok,
 programs/it-ca-foscari-venezia-roncade-digital-management-l18,b31-395c84,y,y,ok,
 programs/it-ca-foscari-venezia-venezia-business-administration-and-management-l18,b31-395c84,,,,
-programs/it-cassino-cassino-industrial-engineering-technology-l9,b31-395c84,y,y,ok,
 programs/it-firenze-firenze-sustainable-business-for-societal-challe-l18,b31-395c84,y,y,ok,
 programs/it-marche-ancona-digital-economics-and-business-l18,b31-395c84,,,,
 programs/it-messina-messina-heritage-innovation-engineering-l23,b31-395c84,y,y,ok,
@@ -1240,3 +1239,6 @@ programs/it-udine-udine-management-business-analytics-l18,b31-395c84,,,,
 programs/it-perugia-perugia-engineering-management-l8,b32-114fb6,y,,,
 programs/it-roma-biomedico-roma-biomedical-engineering-l8,b32-114fb6,y,,,
 programs/it-torino-torino-business-management-l18,b32-114fb6,y,,,
+programs/it-cassino-cassino-computer-engineering-l8,b33-b02e28,y,y,ok,owner read the regulation PDF on 2026-10-08: Morocco is in group A (600 EUR)
+programs/it-cassino-cassino-economics-with-data-science-l33,b33-b02e28,y,y,ok,owner read the regulation PDF on 2026-10-08: Morocco is in group A (600 EUR)
+programs/it-cassino-cassino-industrial-engineering-technology-l9,b33-b02e28,y,y,ok,owner read the regulation PDF on 2026-10-08: Morocco is in group A (600 EUR)

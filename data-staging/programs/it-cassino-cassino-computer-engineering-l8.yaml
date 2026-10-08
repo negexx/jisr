@@ -1,0 +1,107 @@
+slug: it-cassino-cassino-computer-engineering-l8
+institution: it-cassino-cassino
+country: IT
+city: cassino
+field: engineering
+level: bachelor
+name: Computer Engineering
+summary:
+  fr:
+    text: Computer Engineering, Università degli Studi di Cassino e del Lazio Meridionale (Cassino). Programme recensé sur Universitaly, le portail de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Computer Engineering, Università degli Studi di Cassino e del Lazio Meridionale (Cassino). Programme listed on Universitaly, the Italian Ministry of University and Research (MUR) portal of the degree offer.
+    status: draft
+  ar:
+    text: Computer Engineering, Università degli Studi di Cassino e del Lazio Meridionale (Cassino). برنامج مدرج على بوابة Universitaly لعرض التكوين التابعة لوزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unicas.it/computer-engineering/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 60000
+    currency: EUR
+    period: year
+  source: page-1
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value:
+    - slug: secondary-school-diploma
+      name:
+        fr:
+          text: Diplôme d'études secondaires
+          status: draft
+        en:
+          text: Secondary school diploma
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les conditions d'admission et les documents requis pour les étudiants internationaux sur la page dédiée.
+          status: draft
+        en:
+          text: Check admission requirements and required documents for international students on the dedicated page.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.unicas.it/computer-engineering/
+    last_verified_at: 2026-10-08
+  page-2:
+    url: https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/
+    last_verified_at: 2026-10-08
+  page-1:
+    url: https://www.unicas.it/media/pesjjo4e/regolamento-tasse-e-contributi-2026-2027-dr-n-482-del-02072026.pdf
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-cassino-cassino-computer-engineering-l8
+  name: Computer Engineering
+  sourceId: universitaly:1625437
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: tuition
+      url: https://www.unicas.it/media/pesjjo4e/regolamento-tasse-e-contributi-2026-2027-dr-n-482-del-02072026.pdf
+      quote: Congo, Rep., A Paesi 600€ Cote d'Ivoire, Djibouti
+    - fact: tuition
+      url: https://www.unicas.it/media/pesjjo4e/regolamento-tasse-e-contributi-2026-2027-dr-n-482-del-02072026.pdf
+      quote: Mongolia, Morocco, Mozambique
+  notes: "OWNER CONFIRMED on 2026-10-08, reading the regulation PDF (DR 482/2026, art. 3.3): Morocco is in country group A (600 EUR per year, annual all-inclusive contribution by citizenship, any course of study); the extracted text of the table is garbled, so the quotes alone do not show the tie. Cassino 2026/27 tuition regulation (DR 482 of 02/07/2026), art. 3.3: annual all-inclusive contribution (Contributo omnicomprensivo annuale) by country group of citizenship, applies to any course of study. Group A = 600 EUR; Morocco is in the group A country list (PDF text layer merges the table: Morocco sits in the A block that ends at Zimbabwe, group B starts at Albania; audit visually). Regional tax 140 EUR and stamp 16 EUR are extra and not included. Programme not tied to a group because the fee does not depend on programme. Year 2026/27; 2027/28 not published."
