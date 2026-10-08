@@ -20,7 +20,7 @@ import {
 } from "./staging";
 
 // Stages the Universitaly candidates the owner names by portal id (see
-// docs/superpowers/plans/2026-10-08-italy-fill.md). No model and no search service: officialUrl
+// docs/superpowers/plans/2026-10-08-italy-fill-a-staging.md). No model and no search service: officialUrl
 // and the field come from the portal, every other fact stays TODO_read_source for the reader.
 // Never overwrites a staged file and never touches data/.
 const UNIVERSITALY_DIR = path.join(STAGING_DIR, "universitaly");
