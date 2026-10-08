@@ -4,7 +4,7 @@ import path from "node:path";
 import { parse } from "yaml";
 
 import { DATA_DIR } from "../staging";
-import { collapseSpaces, hostKey, nameKey } from "../text";
+import { hostKey, nameKey } from "../text";
 import {
   type Candidate,
   type Classified,
@@ -83,8 +83,11 @@ export type Comparison = {
   matched: { ours: string; portalId: number }[];
   possible: { ours: string; candidate: Candidate; why: string }[];
   newProgrammes: Candidate[];
-  newUniversities: { university: string; programmes: Candidate[] }[];
-  notListed: { ours: OurProgramme; portalStatus: Status | "absent" }[];
+  newUniversities: { university: string; programmes: Candidate[]; possiblyOurs: string[] }[];
+  notListed: {
+    ours: OurProgramme;
+    portalStatus: Status | "absent" | "university-not-matched";
+  }[];
   institutionsNotSeen: string[];
   mismatches: {
     slug: string;
@@ -107,6 +110,41 @@ function mostFrequent(values: string[]): string {
   const counts = new Map<string, number>();
   for (const v of values) counts.set(v, (counts.get(v) ?? 0) + 1);
   return [...counts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? "unknown";
+}
+
+const GENERIC_WORDS = new Set([
+  "universita",
+  "universitaria",
+  "degli",
+  "studi",
+  "di",
+  "del",
+  "della",
+  "delle",
+  "dei",
+  "dell",
+  "dello",
+  "e",
+  "and",
+  "la",
+  "il",
+  "lo",
+  "the",
+  "of",
+]);
+
+// The distinctive words of a university name, to point at near matches (never to decide a match).
+export function universityTokens(name: string): string[] {
+  return nameKey(name)
+    .split(" ")
+    .filter((t) => t.length >= 3 && !GENERIC_WORDS.has(t));
+}
+
+function overlaps(a: string[], b: string[]): boolean {
+  const setB = new Set(b);
+  const shared = new Set(a.filter((t) => setB.has(t))).size;
+  const smaller = Math.min(new Set(a).size, setB.size);
+  return shared >= 1 && smaller > 0 && shared / smaller >= 0.5;
 }
 
 export function compare(classified: Classified[], ours: OurProgramme[]): Comparison {
@@ -133,7 +171,17 @@ export function compare(classified: Classified[], ours: OurProgramme[]): Compari
     const sameClass = sameUniversity.filter(
       (o) => o.classCode !== null && cand.classCodes.includes(o.classCode),
     );
-    const exact = sameClass.find((o) => nameKey(o.name) === nameKey(cand.name));
+    const exacts = sameClass.filter((o) => nameKey(o.name) === nameKey(cand.name));
+    const exact = exacts.find((o) => !used.has(o.slug));
+    const firstExact = exacts[0];
+    if (exact === undefined && firstExact !== undefined) {
+      possible.push({
+        ours: firstExact.slug,
+        candidate: cand,
+        why: `duplicate of ${firstExact.slug} already matched (other campus?)`,
+      });
+      continue;
+    }
     if (exact !== undefined) {
       used.add(exact.slug);
       matched.push({ ours: exact.slug, portalId: cand.portalId });
@@ -164,7 +212,7 @@ export function compare(classified: Classified[], ours: OurProgramme[]): Compari
       }
       continue;
     }
-    const near = sameClass[0];
+    const near = sameClass.find((o) => !used.has(o.slug));
     if (near !== undefined) {
       used.add(near.slug);
       possible.push({
@@ -177,6 +225,11 @@ export function compare(classified: Classified[], ours: OurProgramme[]): Compari
     newProgrammes.push(cand);
   }
 
+  const portalUniversities = new Set(classified.map((c) => nameKey(c.course.nomeStruttura)));
+  const institutionsNotSeen = [...new Set(ours.map((o) => o.institutionName))]
+    .filter((name) => !portalUniversities.has(nameKey(name)))
+    .sort();
+
   const notListed: Comparison["notListed"] = ours
     .filter((o) => !used.has(o.slug))
     .map((o) => {
@@ -185,13 +238,10 @@ export function compare(classified: Classified[], ours: OurProgramme[]): Compari
           nameKey(c.course.nomeStruttura) === nameKey(o.institutionName) &&
           nameKey(courseName(c.course)) === nameKey(o.name),
       );
-      return { ours: o, portalStatus: seen?.status ?? "absent" };
+      if (seen !== undefined) return { ours: o, portalStatus: seen.status };
+      const universityUnmatched = institutionsNotSeen.includes(o.institutionName);
+      return { ours: o, portalStatus: universityUnmatched ? "university-not-matched" : "absent" };
     });
-
-  const portalUniversities = new Set(classified.map((c) => nameKey(c.course.nomeStruttura)));
-  const institutionsNotSeen = [...new Set(ours.map((o) => o.institutionName))]
-    .filter((name) => !portalUniversities.has(nameKey(name)))
-    .sort();
 
   return {
     academicYear,
@@ -203,6 +253,9 @@ export function compare(classified: Classified[], ours: OurProgramme[]): Compari
     newUniversities: [...newByUniversity.entries()].map(([university, programmes]) => ({
       university,
       programmes,
+      possiblyOurs: institutionsNotSeen.filter((name) =>
+        overlaps(universityTokens(university), universityTokens(name)),
+      ),
     })),
     notListed,
     institutionsNotSeen,
@@ -210,60 +263,4 @@ export function compare(classified: Classified[], ours: OurProgramme[]): Compari
   };
 }
 
-export type ReportMeta = {
-  fetchedAt: string;
-  cacheDir: string;
-  englishTotal: number;
-  mixedTotal: number;
-  italianTotal: number;
-};
-
-const line = (c: Candidate): string =>
-  `- ${c.name} (${c.classCode}, ${c.field}${c.confidence === "low" ? ", low confidence" : ""}, ${c.durationYears ?? "?"} years) ${c.url ?? "no portal link"} [portal id ${c.portalId}]`;
-
-export function renderReport(cmp: Comparison, meta: ReportMeta): string {
-  const out: string[] = [];
-  out.push("# Universitaly discovery report", "");
-  out.push(
-    `Academic year reported by the portal: ${cmp.academicYear}. Fetched ${meta.fetchedAt}. Raw responses: \`${meta.cacheDir}\` (sha256 in manifest.json). Nothing here is in data/ or in staging: this is a candidate list for the owner.`,
-    "",
-  );
-  out.push("## Counts", "");
-  out.push(
-    `- English search (Triennale, includes mixed): ${meta.englishTotal} courses; of these mixed Italian-English in an in-scope class: ${cmp.tally["mixed-language"]}; mixed in all classes (portal total for the mixed filter): ${meta.mixedTotal}`,
-  );
-  out.push(
-    `- Italian search (Triennale, includes mixed): ${meta.italianTotal} courses (counted only)`,
-  );
-  for (const [status, n] of Object.entries(cmp.tally)) out.push(`- ${status}: ${n}`);
-  out.push(
-    `- candidates (English, in person, in scope): ${cmp.candidates}; matched to our programmes: ${cmp.matched.length}; possible matches: ${cmp.possible.length}; new at a university we have: ${cmp.newProgrammes.length}; at new universities: ${cmp.newUniversities.reduce((n, u) => n + u.programmes.length, 0)}`,
-    "",
-  );
-  out.push("## New universities", "");
-  if (cmp.newUniversities.length === 0) out.push("None.");
-  for (const u of cmp.newUniversities) {
-    out.push(`### ${u.university}`);
-    for (const c of u.programmes) out.push(line(c));
-    out.push("");
-  }
-  out.push("## New programmes at universities we already have", "");
-  if (cmp.newProgrammes.length === 0) out.push("None.");
-  for (const c of cmp.newProgrammes) out.push(`${line(c)} at ${c.university}`);
-  out.push("", "## Possible matches (same university and class, different name)", "");
-  if (cmp.possible.length === 0) out.push("None.");
-  for (const p of cmp.possible) out.push(`- ${p.ours}: ${p.why} ${p.candidate.url ?? ""}`);
-  out.push("", "## Programmes we have that the portal does not list", "");
-  if (cmp.notListed.length === 0) out.push("None.");
-  for (const n of cmp.notListed)
-    out.push(`- ${n.ours.slug} (${n.ours.institutionName}): portal status ${n.portalStatus}`);
-  out.push("", "## Mismatches on matched programmes", "");
-  if (cmp.mismatches.length === 0) out.push("None.");
-  for (const m of cmp.mismatches)
-    out.push(`- ${m.slug}: ${m.field}, ours ${m.ours}, portal ${m.portal}`);
-  out.push("", "## Our universities no portal course name matches", "");
-  if (cmp.institutionsNotSeen.length === 0) out.push("None.");
-  for (const name of cmp.institutionsNotSeen) out.push(`- ${collapseSpaces(name)}`);
-  out.push("");
-  return out.join("\n");
-}
+export { type ReportMeta, renderReport } from "./universitaly-report";

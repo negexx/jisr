@@ -10,6 +10,7 @@ import {
   loadItalyData,
   type OurProgramme,
   renderReport,
+  universityTokens,
 } from "../../../scripts/import/sources/universitaly-compare";
 
 import { course } from "./universitaly-helpers";
@@ -104,6 +105,7 @@ describe("compare", () => {
       {
         university: "Università di Trento",
         programmes: [expect.objectContaining({ portalId: 12 })],
+        possiblyOurs: [],
       },
     ]);
   });
@@ -112,7 +114,18 @@ describe("compare", () => {
     const cmpMixed = compare([mixed], [ours()]);
     expect(cmpMixed.notListed).toEqual([{ ours: ours(), portalStatus: "mixed-language" }]);
     const cmpAbsent = compare([], [ours()]);
-    expect(cmpAbsent.notListed).toEqual([{ ours: ours(), portalStatus: "absent" }]);
+    // No portal university has this name at all: reported as university-not-matched, not "absent".
+    expect(cmpAbsent.notListed).toEqual([{ ours: ours(), portalStatus: "university-not-matched" }]);
+    // The university is on the portal but not this course (another class): plain "absent".
+    const other = poliba({
+      id: 99,
+      nomeCorsoEn: "Other",
+      nomeCorso: "Other",
+      classe: { codice: "L-8" },
+    });
+    expect(compare([classify(other)], [ours()]).notListed).toEqual([
+      { ours: ours(), portalStatus: "absent" },
+    ]);
     expect(cmpAbsent.institutionsNotSeen).toEqual(["Politecnico di Bari"]);
   });
   it("reports duration, language and url-host mismatches of matched programmes", () => {
@@ -177,5 +190,194 @@ describe("renderReport", () => {
     expect(text).toContain("it-x-y-l18");
     expect(text).toContain("## Counts");
     expect(text).toContain("2713");
+  });
+});
+
+const bocconiOurs = (over: Partial<OurProgramme> = {}): OurProgramme =>
+  ours({
+    slug: "it-milano-bocconi-economics-l33",
+    institutionSlug: "it-milano-bocconi",
+    institutionName: "Università commerciale Luigi Bocconi di Milano",
+    name: "Economics",
+    classCode: "L-33",
+    ...over,
+  });
+
+const bocconiPortal = (over = {}) =>
+  course({
+    id: 30,
+    nomeStruttura: "Università Commerciale Luigi Bocconi MILANO",
+    nomeCorso: "Economics",
+    nomeCorsoEn: "Economics",
+    classe: { codice: "L-33" },
+    ...over,
+  });
+
+describe("universityTokens", () => {
+  it("drops generic words and short tokens, keeps the distinctive ones", () => {
+    expect(universityTokens("Università commerciale Luigi Bocconi di Milano")).toEqual([
+      "commerciale",
+      "luigi",
+      "bocconi",
+      "milano",
+    ]);
+    expect(universityTokens("Università degli Studi di Trento")).toEqual(["trento"]);
+    expect(universityTokens("The University of Ab")).toEqual(["university"]);
+  });
+});
+
+describe("compare: near-match university names", () => {
+  it("keeps a differently spelled university as new but points at the one of ours it may be", () => {
+    const cmp = compare([classify(bocconiPortal()), classify(poliba())], [bocconiOurs(), ours()]);
+    expect(cmp.matched).toEqual([{ ours: ours().slug, portalId: 10 }]);
+    expect(cmp.newUniversities).toEqual([
+      {
+        university: "Università Commerciale Luigi Bocconi MILANO",
+        programmes: [expect.objectContaining({ portalId: 30 })],
+        possiblyOurs: ["Università commerciale Luigi Bocconi di Milano"],
+      },
+    ]);
+    expect(cmp.institutionsNotSeen).toEqual(["Università commerciale Luigi Bocconi di Milano"]);
+    expect(cmp.notListed).toEqual([
+      { ours: bocconiOurs(), portalStatus: "university-not-matched" },
+    ]);
+  });
+  it("gives an unrelated new university no near match", () => {
+    const trento = classify(
+      course({ id: 12, nomeStruttura: "Università di Trento", nomeCorsoEn: "Computer Science" }),
+    );
+    const cmp = compare([trento], [bocconiOurs()]);
+    expect(cmp.newUniversities).toEqual([
+      expect.objectContaining({ university: "Università di Trento", possiblyOurs: [] }),
+    ]);
+  });
+  it("uses the real portal status when the university spelling matches", () => {
+    const cmp = compare([classify(poliba({ lingua: "mu" }))], [ours()]);
+    expect(cmp.notListed).toEqual([{ ours: ours(), portalStatus: "mixed-language" }]);
+  });
+  it("renders the near match and the explanation", () => {
+    const cmp = compare([classify(bocconiPortal())], [bocconiOurs()]);
+    const text = renderReport(cmp, {
+      fetchedAt: "2026-10-08T10:00:00.000Z",
+      cacheDir: "d",
+      englishTotal: 1,
+      mixedTotal: 0,
+      italianTotal: 0,
+    });
+    expect(text).toContain(
+      "(possibly the same as one of ours: Università commerciale Luigi Bocconi di Milano)",
+    );
+    expect(text).toContain("university-not-matched");
+    expect(text).toContain("## Our universities whose name matches no portal university name");
+    expect(text).not.toContain("Our universities no portal course name matches");
+  });
+  it("trims the possible-match line when the portal has no link", () => {
+    const cmp = compare(
+      [classify(poliba({ nomeCorsoEn: "Management Engineering and Innovation", url: null }))],
+      [ours()],
+    );
+    const text = renderReport(cmp, {
+      fetchedAt: "x",
+      cacheDir: "d",
+      englishTotal: 1,
+      mixedTotal: 0,
+      italianTotal: 0,
+    });
+    for (const l of text.split(/\r?\n/)) expect(l).toBe(l.trimEnd());
+    expect(text).toContain("also hides a programme of ours");
+  });
+});
+
+describe("compare: several programmes of ours with the same name and class", () => {
+  const bologna = (slug: string): OurProgramme =>
+    ours({
+      slug,
+      institutionSlug: `${slug}-inst`,
+      institutionName: "Alma Mater Studiorum Università di Bologna",
+      name: "Economics",
+      classCode: "L-33",
+      officialUrl: null,
+    });
+  const bol = (id: number) =>
+    classify(
+      course({
+        id,
+        nomeStruttura: "ALMA MATER STUDIORUM - Università di BOLOGNA",
+        nomeCorso: "Economics",
+        nomeCorsoEn: "Economics",
+        classe: { codice: "L-33" },
+      }),
+    );
+  const sameUni = (o: OurProgramme) => ({
+    ...o,
+    institutionName: "ALMA MATER STUDIORUM - Università di BOLOGNA",
+  });
+
+  it("maps two identical portal courses to two different programmes of ours", () => {
+    const a = sameUni(bologna("it-bologna-a-economics-l33"));
+    const b = sameUni(bologna("it-bologna-b-economics-l33"));
+    const cmp = compare([bol(1), bol(2)], [a, b]);
+    expect(cmp.matched).toEqual([
+      { ours: a.slug, portalId: 1 },
+      { ours: b.slug, portalId: 2 },
+    ]);
+    expect(cmp.possible).toEqual([]);
+    expect(cmp.notListed).toEqual([]);
+  });
+  it("sends the second identical course to possible when only one programme of ours exists", () => {
+    const a = sameUni(bologna("it-bologna-a-economics-l33"));
+    const cmp = compare([bol(1), bol(2)], [a]);
+    expect(cmp.matched).toEqual([{ ours: a.slug, portalId: 1 }]);
+    expect(cmp.possible).toHaveLength(1);
+    expect(cmp.possible[0]?.why).toBe(`duplicate of ${a.slug} already matched (other campus?)`);
+    expect(cmp.newProgrammes).toEqual([]);
+  });
+  it("treats a different-name course as a new programme when every same-class programme is used", () => {
+    const a = sameUni(bologna("it-bologna-a-economics-l33"));
+    const other = classify(
+      course({
+        id: 3,
+        nomeStruttura: "ALMA MATER STUDIORUM - Università di BOLOGNA",
+        nomeCorso: "Business",
+        nomeCorsoEn: "Business",
+        classe: { codice: "L-18" },
+      }),
+    );
+    const sameClassOther = classify(
+      course({
+        id: 4,
+        nomeStruttura: "ALMA MATER STUDIORUM - Università di BOLOGNA",
+        nomeCorso: "Finance",
+        nomeCorsoEn: "Finance",
+        classe: { codice: "L-33" },
+      }),
+    );
+    const cmp = compare([bol(1), sameClassOther, other], [a]);
+    expect(cmp.matched).toEqual([{ ours: a.slug, portalId: 1 }]);
+    expect(cmp.possible).toEqual([]);
+    expect(cmp.newProgrammes.map((c) => c.portalId)).toEqual([4, 3]);
+  });
+});
+
+describe("loadItalyData with sparse files", () => {
+  it("loads a programme without duration, languages or url as null / [] / null", async () => {
+    const dir = await mkdtemp(path.join(tmpdir(), "uni-data-"));
+    await mkdir(path.join(dir, "programs"));
+    await mkdir(path.join(dir, "institutions"));
+    await writeFile(
+      path.join(dir, "programs", "it-a-b-sparse-l18.yaml"),
+      "slug: it-a-b-sparse-l18\ninstitution: it-a-b\nname: Sparse\n",
+    );
+    const [one] = await loadItalyData(dir);
+    expect(one).toEqual({
+      slug: "it-a-b-sparse-l18",
+      institutionSlug: "it-a-b",
+      institutionName: "it-a-b",
+      name: "Sparse",
+      classCode: "L-18",
+      officialUrl: null,
+      durationYears: null,
+      languages: [],
+    });
   });
 });
