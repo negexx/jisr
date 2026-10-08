@@ -96,6 +96,38 @@ describe("verifyProposal", () => {
     expect(v.rejected[0]?.reason).toMatch(/does not appear/);
   });
 
+  describe("a tuition with cents or a header-only currency", () => {
+    const CENTS = "https://uni.example/cents-fees";
+    const HEADER = "https://uni.example/header-fees";
+    const centsQuote =
+      "Biomedical Engineering €2.500,00 + €140,00 € 2.000,00 € 2.071,50 €6.571,50 + €140,00";
+    const headerQuote =
+      "Total (€) I installment (€) II installment (€) 1. VERY HIGH H.D. 1.000,00 + 16,00 Stamp fee 156,00 400,00 2. HIGH H.D. 800,00 + 16,00 Stamp fee 156,00 300,00 3. MEDIUM H.D. 600,00";
+    pages[CENTS] = `Fees ${centsQuote} per year.`;
+    pages[HEADER] = `FLAT TAX ${headerQuote} + 16,00 Stamp fee 156,00 200,00`;
+    const verify = (url: string, quote: string, amountMinor: number) =>
+      verifyProposal(
+        proposal({
+          tuition: {
+            value: { amountMinor, currency: "EUR", period: "year" },
+            evidence: [{ url, quote }],
+          },
+        }),
+        "Applied Computer Science",
+        getText,
+      );
+
+    it("accepts 6.571,50 as 657150 and refuses it as 657100", async () => {
+      expect((await verify(CENTS, centsQuote, 657150)).rejected).toEqual([]);
+      expect((await verify(CENTS, centsQuote, 657100)).facts.tuition).toBeUndefined();
+    });
+    it("accepts 600,00 under a (€) header and refuses an amount the quote does not hold", async () => {
+      expect((await verify(HEADER, headerQuote, 60000)).rejected).toEqual([]);
+      expect((await verify(HEADER, headerQuote, 80000)).rejected).toEqual([]);
+      expect((await verify(HEADER, headerQuote, 20000)).facts.tuition).toBeUndefined();
+    });
+  });
+
   describe("a tuition range", () => {
     const RANGE = "https://uni.example/range-fees";
     const value = {

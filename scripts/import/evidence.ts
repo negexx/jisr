@@ -273,14 +273,19 @@ export function checkLanguages(codes: readonly string[], quote: string): FactChe
 }
 
 function amountPattern(amount: number): RegExp {
-  const digits = String(Math.round(amount));
+  // an amount with non-zero cents ("6.571,50", "6,571.50"): the cents are exactly two digits, and
+  // a whole-number amount ("2.500,00" too) is matched as it always was
+  const [whole = "0", cents = "00"] = amount.toFixed(2).split(".");
+  const withCents = cents !== "00";
+  const digits = withCents ? whole : String(Math.round(amount));
   // thousands groups, each optionally separated: 7000, 7 000, 7,000, 1 980 000, 1.980.000
   const groups: string[] = [];
   for (let end = digits.length; end > 0; end -= 3)
     groups.unshift(digits.slice(Math.max(0, end - 3), end));
   const grouped = groups.join("[.,\\s\\u00a0\\u202f']?");
+  const tail = withCents ? `[.,]${cents}` : "(?:[.,]00)?";
   // not followed by a decimal tail: 5,000.50 is not 5,000
-  return new RegExp(`(?<![\\d.,])${grouped}(?:[.,]00)?(?![\\d])(?![.,]\\d)`, "g");
+  return new RegExp(`(?<![\\d.,])${grouped}${tail}(?![\\d])(?![.,]\\d)`, "g");
 }
 
 // Does the quote state this amount (in major units) as a whole number, not as part of a larger one?
@@ -455,6 +460,25 @@ function bareEdgeFollowsLabel(q: string, hit: { start: number }): boolean {
   return period !== null && !RATE_WORD_BEFORE.test(before.slice(0, period.index));
 }
 
+// A table can name its currency once in a column header ("Total (€) ... 600,00"). An amount with NO
+// currency beside it then counts as being in the proposal's currency only when (a) it is written with
+// an explicit two-digit decimal part and (b) the same quote carries a mark of that currency as a whole
+// token before it, within IMPLIED_CURRENCY_WINDOW characters. A bare integer, an amount with another
+// currency beside it, a mark after the amount or farther away stay refused.
+const IMPLIED_CURRENCY_WINDOW = 400;
+const EXPLICIT_CENTS = /[.,]\d\d$/;
+function currencyImpliedByHeader(
+  q: string,
+  hit: { start: number; end: number },
+  currency: string,
+): boolean {
+  const marks = CURRENCY_TOKENS[currency];
+  if (marks === undefined || currencyAt(q, hit) !== null) return false;
+  if (!EXPLICIT_CENTS.test(q.slice(hit.start, hit.end))) return false;
+  const window = q.slice(Math.max(0, hit.start - IMPLIED_CURRENCY_WINDOW), hit.start);
+  return new RegExp(`(?<![a-z])(?:${marks})`, "i").test(window);
+}
+
 // One fee amount (a flat fee, or the end of a range with the currency beside it) against the quote.
 function checkFeeAmount(
   amountMinor: number,
@@ -474,7 +498,10 @@ function checkFeeAmount(
   if (currency !== undefined && CURRENCY_TOKENS[currency] !== undefined) {
     const q = normalizeForMatch(quote);
     const beside = amountMatches(amountMajor, q).map((hit) => currencyAt(q, hit));
-    if (!beside.includes(currency))
+    const implied = amountMatches(amountMajor, q).some((hit) =>
+      currencyImpliedByHeader(q, hit, currency),
+    );
+    if (!beside.includes(currency) && !implied)
       return fail(`the quote does not write the amount in the currency ${currency}`);
   }
   const stale = staleStudyYear(amountMajor, quote, minStudyYear);
@@ -527,7 +554,10 @@ function checkTuitionRange(
       if (bc === null && bareEdgeIsYear(q, b)) continue;
       const gap = q.slice(a.end, b.start);
       if (gap.length > MAX_RANGE_GAP || !RANGE_GAP.test(stripCurrency(gap))) continue;
-      if (checkable && !stated(ac) && !stated(bc)) continue;
+      const headed =
+        currency !== undefined &&
+        (currencyImpliedByHeader(q, a, currency) || currencyImpliedByHeader(q, b, currency));
+      if (checkable && !stated(ac) && !stated(bc) && !headed) continue;
       constructed = true;
     }
     if (constructed) break;
