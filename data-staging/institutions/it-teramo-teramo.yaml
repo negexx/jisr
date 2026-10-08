@@ -1,0 +1,25 @@
+slug: it-teramo-teramo
+name: Università degli studi di Teramo
+country: IT
+city:
+  slug: teramo
+  name: Teramo
+type: public
+website: https://www.unite.it/
+source: mur
+info_kind: TODO_read_source
+sources:
+  mur:
+    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: it-teramo-teramo
+  name: Università degli studi di Teramo
+  institution: ""
+  city: Teramo
+  field: ""
+  confidence: ""
+  officialUrl: https://www.unite.it/
+  todo: "university 06701 in the MUR list (state, region ABRUZZO); found through the Universitaly discovery run. Candidate from the international students portal contacts table: https://www.unite.it/ (not confirmed). Check the university's home page names it, that it is a recognised Italian university, add its page as the source, then info_kind: official"
+  sourceId: mur-institution:06701@teramo

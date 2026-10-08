@@ -1,0 +1,64 @@
+slug: it-genova-genova-computer-engineering-l8
+institution: it-genova-genova
+country: IT
+city: genova
+field: engineering
+level: bachelor
+name: Computer Engineering
+summary:
+  fr:
+    text: Computer Engineering, Università degli studi di Genova (Genova). Programme recensé sur Universitaly, le portail de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Computer Engineering, Università degli studi di Genova (Genova). Programme listed on Universitaly, the Italian Ministry of University and Research (MUR) portal of the degree offer.
+    status: draft
+  ar:
+    text: Computer Engineering, Università degli studi di Genova (Genova). برنامج مدرج على بوابة Universitaly لعرض التكوين التابعة لوزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://corsi.unige.it/corsi/12133
+durationYears:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: universitaly
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: universitaly
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  universitaly:
+    url: https://www.universitaly.it/en/cerca-corsi
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-genova-genova-computer-engineering-l8
+  name: Computer Engineering
+  institution: Università degli studi di Genova
+  city: Genova
+  field: engineering
+  confidence: low
+  officialUrl: https://corsi.unige.it/corsi/12133
+  todo: "Universitaly (2026/2027, fetched 2026-10-08) lists: class L-8, 3 years, conventional delivery, English-taught; portal link https://corsi.unige.it/corsi/12133: read the programme page it leads to; the portal gives no campus town: the town is the university's MUR town (Genova); check the programme page for the real campus; duration, teaching language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel are read from the programme page; the degree class and the course name point to different fields: check the content"
+  sourceId: universitaly:1625723

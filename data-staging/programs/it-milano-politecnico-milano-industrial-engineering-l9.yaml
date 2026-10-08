@@ -1,0 +1,64 @@
+slug: it-milano-politecnico-milano-industrial-engineering-l9
+institution: it-milano-politecnico-milano
+country: IT
+city: milano
+field: engineering
+level: bachelor
+name: Industrial Engineering
+summary:
+  fr:
+    text: Industrial Engineering, Politecnico di Milano (Milano). Programme recensé sur Universitaly, le portail de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Industrial Engineering, Politecnico di Milano (Milano). Programme listed on Universitaly, the Italian Ministry of University and Research (MUR) portal of the degree offer.
+    status: draft
+  ar:
+    text: Industrial Engineering, Politecnico di Milano (Milano). برنامج مدرج على بوابة Universitaly لعرض التكوين التابعة لوزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.ingindinf.polimi.it/
+durationYears:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: universitaly
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: universitaly
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  universitaly:
+    url: https://www.universitaly.it/en/cerca-corsi
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-milano-politecnico-milano-industrial-engineering-l9
+  name: Industrial Engineering
+  institution: Politecnico di Milano
+  city: Milano
+  field: engineering
+  confidence: high
+  officialUrl: https://www.ingindinf.polimi.it/
+  todo: "Universitaly (2026/2027, fetched 2026-10-08) lists: class L-9, 3 years, conventional delivery, English-taught; portal link https://www.ingindinf.polimi.it/: read the programme page it leads to; the portal gives no campus town: the town is the university's MUR town (Milano); check the programme page for the real campus; duration, teaching language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel are read from the programme page"
+  sourceId: universitaly:1625569

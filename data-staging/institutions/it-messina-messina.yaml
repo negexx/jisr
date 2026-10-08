@@ -1,0 +1,25 @@
+slug: it-messina-messina
+name: Università degli studi di Messina
+country: IT
+city:
+  slug: messina
+  name: Messina
+type: public
+website: https://international.unime.it/
+source: mur
+info_kind: TODO_read_source
+sources:
+  mur:
+    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: it-messina-messina
+  name: Università degli studi di Messina
+  institution: ""
+  city: Messina
+  field: ""
+  confidence: ""
+  officialUrl: https://international.unime.it/
+  todo: "university 08301 in the MUR list (state, region SICILIA); found through the Universitaly discovery run. Candidate from the international students portal contacts table: https://international.unime.it/ (not confirmed; it is a sub-site: use the university's main home page). Check the university's home page names it, that it is a recognised Italian university, add its page as the source, then info_kind: official"
+  sourceId: mur-institution:08301@messina

@@ -1,0 +1,25 @@
+slug: it-genova-genova
+name: Università degli studi di Genova
+country: IT
+city:
+  slug: genova
+  name: Genova
+type: public
+website: https://unige.it/
+source: mur
+info_kind: TODO_read_source
+sources:
+  mur:
+    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: it-genova-genova
+  name: Università degli studi di Genova
+  institution: ""
+  city: Genova
+  field: ""
+  confidence: ""
+  officialUrl: https://unige.it/
+  todo: "university 01001 in the MUR list (state, region LIGURIA); found through the Universitaly discovery run. Candidate from the international students portal contacts table: https://unige.it/ (not confirmed). Check the university's home page names it, that it is a recognised Italian university, add its page as the source, then info_kind: official"
+  sourceId: mur-institution:01001@genova

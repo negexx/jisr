@@ -1,0 +1,64 @@
+slug: it-padova-padova-economics-governance-and-decision-making-l33
+institution: it-padova-padova
+country: IT
+city: padova
+field: business-economics
+level: bachelor
+name: Economics, governance and decision-making
+summary:
+  fr:
+    text: Economics, governance and decision-making, Università degli studi di Padova (Padova). Programme recensé sur Universitaly, le portail de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics, governance and decision-making, Università degli studi di Padova (Padova). Programme listed on Universitaly, the Italian Ministry of University and Research (MUR) portal of the degree offer.
+    status: draft
+  ar:
+    text: Economics, governance and decision-making, Università degli studi di Padova (Padova). برنامج مدرج على بوابة Universitaly لعرض التكوين التابعة لوزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unipd.it/corsi-di-laurea/economics-governance-and-decision-making
+durationYears:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: universitaly
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: universitaly
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  universitaly:
+    url: https://www.universitaly.it/en/cerca-corsi
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-padova-padova-economics-governance-and-decision-making-l33
+  name: Economics, governance and decision-making
+  institution: Università degli studi di Padova
+  city: Padova
+  field: business-economics
+  confidence: high
+  officialUrl: https://www.unipd.it/corsi-di-laurea/economics-governance-and-decision-making
+  todo: "Universitaly (2026/2027, fetched 2026-10-08) lists: class L-33, 3 years, blended (mixed) delivery, English-taught; portal link https://www.unipd.it/corsi-di-laurea/economics-governance-and-decision-making: read the programme page it leads to; the portal gives no campus town: the town is the university's MUR town (Padova); check the programme page for the real campus; duration, teaching language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel are read from the programme page; blended delivery: read the programme page for how much is online; a course that is mostly online is not offered in person and stays out"
+  sourceId: universitaly:1625480

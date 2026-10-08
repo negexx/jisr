@@ -1,0 +1,25 @@
+slug: it-palermo-palermo
+name: Università degli studi di Palermo
+country: IT
+city:
+  slug: palermo
+  name: Palermo
+type: public
+website: https://www.unipa.it/
+source: mur
+info_kind: TODO_read_source
+sources:
+  mur:
+    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+    last_verified_at: null
+_review:
+  kind: institutions
+  slug: it-palermo-palermo
+  name: Università degli studi di Palermo
+  institution: ""
+  city: Palermo
+  field: ""
+  confidence: ""
+  officialUrl: https://www.unipa.it/
+  todo: "university 08201 in the MUR list (state, region SICILIA); found through the Universitaly discovery run. Candidate from the international students portal contacts table: https://www.unipa.it/ (not confirmed). Check the university's home page names it, that it is a recognised Italian university, add its page as the source, then info_kind: official"
+  sourceId: mur-institution:08201@palermo

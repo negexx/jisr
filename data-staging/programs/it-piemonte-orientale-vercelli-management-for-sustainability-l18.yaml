@@ -1,0 +1,64 @@
+slug: it-piemonte-orientale-vercelli-management-for-sustainability-l18
+institution: it-piemonte-orientale-vercelli
+country: IT
+city: vercelli
+field: business-economics
+level: bachelor
+name: Management for Sustainability
+summary:
+  fr:
+    text: Management for Sustainability, Università degli studi del Piemonte orientale "Amedeo Avogadro" (Vercelli). Programme recensé sur Universitaly, le portail de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Management for Sustainability, Università degli studi del Piemonte orientale "Amedeo Avogadro" (Vercelli). Programme listed on Universitaly, the Italian Ministry of University and Research (MUR) portal of the degree offer.
+    status: draft
+  ar:
+    text: Management for Sustainability, Università degli studi del Piemonte orientale "Amedeo Avogadro" (Vercelli). برنامج مدرج على بوابة Universitaly لعرض التكوين التابعة لوزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://disste.uniupo.it/en/university-studies/course/management-sustainability-online-degree-program-ay-20262027
+durationYears:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+teachingLanguages:
+  value:
+    - en
+  source: universitaly
+  info_kind: TODO_read_source
+tuition:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+intakes:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+applicationChannel:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+documents:
+  value: null
+  source: universitaly
+  info_kind: TODO_read_source
+requirements:
+  coverage: partial
+  source: universitaly
+  info_kind: TODO_read_source
+  rules: []
+scholarships: []
+sources:
+  universitaly:
+    url: https://www.universitaly.it/en/cerca-corsi
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-piemonte-orientale-vercelli-management-for-sustainability-l18
+  name: Management for Sustainability
+  institution: Università degli studi del Piemonte orientale "Amedeo Avogadro"
+  city: Vercelli
+  field: business-economics
+  confidence: high
+  officialUrl: https://disste.uniupo.it/en/university-studies/course/management-sustainability-online-degree-program-ay-20262027
+  todo: "Universitaly (2026/2027, fetched 2026-10-08) lists: class L-18, 3 years, blended (mixed) delivery, English-taught; portal link https://disste.uniupo.it/en/university-studies/course/management-sustainability-online-degree-program-ay-20262027: read the programme page it leads to; the portal gives no campus town: the town is the university's MUR town (Vercelli); check the programme page for the real campus; duration, teaching language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel are read from the programme page; blended delivery: read the programme page for how much is online; a course that is mostly online is not offered in person and stays out"
+  sourceId: universitaly:1625456
