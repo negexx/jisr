@@ -15,41 +15,71 @@ summary:
   ar:
     text: Computer Engineering, Università degli Studi di Cassino e del Lazio Meridionale (Cassino). برنامج مدرج على بوابة Universitaly لعرض التكوين التابعة لوزارة الجامعات والبحث الإيطالية (MUR).
     status: draft
-officialUrl: https://www.unicas.it/computer-engineering
+officialUrl: https://www.unicas.it/computer-engineering/
 durationYears:
-  value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  value: 3
+  source: programme
+  info_kind: official
 teachingLanguages:
-  value:
-    - en
-  source: universitaly
-  info_kind: TODO_read_source
+  value: null
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  value: it-universitaly
+  source: page-2
+  info_kind: official
 documents:
-  value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  value:
+    - slug: secondary-school-diploma
+      name:
+        fr:
+          text: Diplôme d'études secondaires
+          status: draft
+        en:
+          text: Secondary school diploma
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: universitaly
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les conditions d'admission et les documents requis pour les étudiants internationaux sur la page dédiée.
+          status: draft
+        en:
+          text: Check admission requirements and required documents for international students on the dedicated page.
+          status: draft
 scholarships: []
 sources:
-  universitaly:
-    url: https://www.universitaly.it/en/cerca-corsi
+  programme:
+    url: https://www.unicas.it/computer-engineering/
+    last_verified_at: null
+  page-2:
+    url: https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/
     last_verified_at: null
 _review:
   kind: programs
@@ -60,5 +90,24 @@ _review:
   field: engineering
   confidence: low
   officialUrl: https://www.unicas.it/computer-engineering
-  todo: "Universitaly (2026/2027, fetched 2026-10-08) lists: class L-8, 3 years, conventional delivery, English-taught; portal link https://www.unicas.it/computer-engineering: read the programme page it leads to; the portal gives no campus town: the town is the university's MUR town (Cassino); check the programme page for the real campus; duration, teaching language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel are read from the programme page; the degree class and the course name point to different fields: check the content"
+  todo: "Universitaly (2026/2027, fetched 2026-10-08) lists: class L-8, 3 years, conventional delivery, English-taught; portal link https://www.unicas.it/computer-engineering: read the programme page it leads to; the portal gives no campus town: the town is the university's MUR town (Cassino); check the programme page for the real campus; duration, teaching language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel are read from the programme page; the degree class and the course name point to different fields: check the content; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: universitaly:1625437
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: durationYears
+      url: https://www.unicas.it/computer-engineering/
+      quote: "Duration: 3 years"
+    - fact: applicationChannel
+      url: https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/
+      quote: 2.1 APPLY IN UNIVERSITALY
+    - fact: documents
+      url: https://www.unicas.it/computer-engineering/
+      quote: A secondary school diploma (or equivalent qualification obtained abroad and recognized under Italian regulations);
+    - fact: requirements.req-1
+      url: https://www.unicas.it/computer-engineering/
+      quote: English language proficiency at B2 level (CEFR).
+    - fact: requirements.req-2
+      url: https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/
+      quote: Choose your Programme and verify the entry requirements
+  notes: 'Tuition not included: the pages do not state a specific tuition fee amount for non-EU international students for this programme; the Computer Engineering page only says "Tuition fees vary according to student status and income level." without giving amounts.'

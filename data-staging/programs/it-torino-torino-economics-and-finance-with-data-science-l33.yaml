@@ -1,0 +1,108 @@
+slug: it-torino-torino-economics-and-finance-with-data-science-l33
+institution: it-torino-torino
+country: IT
+city: torino
+field: business-economics
+level: bachelor
+name: Economics and Finance with Data Science
+summary:
+  fr:
+    text: Economics and Finance with Data Science, Università degli studi di Torino (Torino). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics and Finance with Data Science, Università degli studi di Torino (Torino). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Economics and Finance with Data Science, Università degli studi di Torino (Torino). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://en.unito.it/studying-unito/programs/degree-programs/economics-and-finance-data-science
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport en cours de validité
+          status: draft
+        en:
+          text: Valid passport
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un test d'évaluation en anglais (logique, compréhension verbale, mathématiques) est exigé ; en cas d'échec, des obligations formatives supplémentaires sont assignées.
+          status: draft
+        en:
+          text: An English-language assessment test (logic, verbal comprehension, mathematics) is required; if failed, additional educational obligations are assigned.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Pour les titulaires d'un diplôme étranger, la candidature se fait via Apply@UniTo ; consulter la liste des exonérations et les fenêtres de candidature.
+          status: draft
+        en:
+          text: For holders of a foreign qualification, the application is made via Apply@UniTo; check the exemption list and application windows.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://en.unito.it/studying-unito/programs/degree-programs/economics-and-finance-data-science
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unito.it/internazionalita/arrivare-unito-dallestero/ammissione-studenti-internazionali/procedure-0
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unito.it/internazionalita/arrivare-unito-dallestero/ammissione-studenti-internazionali/documentazione
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-torino-torino-economics-and-finance-with-data-science-l33
+  name: Economics and Finance with Data Science
+  sourceId: mur:00101:l33:economics-and-finance-with-data-science@torino
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: applicationChannel
+      url: https://www.unito.it/internazionalita/arrivare-unito-dallestero/ammissione-studenti-internazionali/procedure-0
+      quote: Se sei studente non-UE richiedente visto devi inviare la domanda di pre-iscrizione per il rilascio del visto per l'a.a. 2026-2027 tramite la piattaforma Universitaly entro il 15 luglio 2026.
+    - fact: documents
+      url: https://www.unito.it/internazionalita/arrivare-unito-dallestero/ammissione-studenti-internazionali/documentazione
+      quote: Studenti non-UE residenti all'estero Passaporto in corso di validità
+  notes: "Tuition left out: the Regolamento Tasse e Contributi page gives only a full table of ISEE bands without stating one lowest and one highest fee for a non-EU applicant. Documents: the page https://www.unito.it/internazionalita/arrivare-unito-dallestero/ammissione-studenti-internazionali/documentazione also requires a visa and a residence permit for non-EU students residing abroad, but these are not named among the 'Documenti richiesti per la candidatura' (application documents)."

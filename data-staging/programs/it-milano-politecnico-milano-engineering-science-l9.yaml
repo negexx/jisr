@@ -15,41 +15,77 @@ summary:
   ar:
     text: Engineering Science, Politecnico di Milano (Milano). برنامج مدرج على بوابة Universitaly لعرض التكوين التابعة لوزارة الجامعات والبحث الإيطالية (MUR).
     status: draft
-officialUrl: null
+officialUrl: https://www.polimi.it/en/education/laurea-programmes/programme-detail/engineering-science
 durationYears:
-  value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  value: 3
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: universitaly
-  info_kind: TODO_read_source
-  rules: []
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le Politecnico exige que le diplôme de fin d'études secondaires soit accompagné d'une traduction officielle si le document n'est pas en italien, anglais, français ou espagnol.
+          status: draft
+        en:
+          text: Politecnico requires the school-leaving certificate to be accompanied by an official translation if the document is not in Italian, English, French or Spanish.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le diplôme final de fin d'études secondaires doit être téléchargé via les Services en ligne au plus tard le 10 septembre 2026.
+          status: draft
+        en:
+          text: The final school-leaving certificate must be uploaded via the Online Services by 10 September 2026 at the latest.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Une déclaration de valeur, un supplément au certificat, une attestation de comparabilité CIMEA ou une attestation de correspondance CIMEA doit être téléchargée avant le 31 octobre 2026.
+          status: draft
+        en:
+          text: A Declaration of Value, Certificate Supplement, CIMEA Statement of Comparability or CIMEA Statement of Correspondence must be uploaded by 31 October 2026.
+          status: draft
 scholarships: []
 sources:
-  universitaly:
-    url: https://www.universitaly.it/en/cerca-corsi
+  programme:
+    url: https://www.polimi.it/en/education/laurea-programmes/programme-detail/engineering-science
+    last_verified_at: null
+  page-2:
+    url: https://www.polimi.it/futuri-studenti/test-e-ammissione/laurea/documenti-necessari-per-completare-limmatricolazione
     last_verified_at: null
 _review:
   kind: programs
@@ -60,5 +96,24 @@ _review:
   field: engineering
   confidence: high
   officialUrl: ""
-  todo: "Universitaly (2026/2027, fetched 2026-10-08) lists: class L-9, 3 years, conventional delivery, English-taught; no portal link: find the programme's own page (officialUrl is required); the portal gives no campus town: the town is the university's MUR town (Milano); check the programme page for the real campus; duration, teaching language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel are read from the programme page"
+  todo: "Universitaly (2026/2027, fetched 2026-10-08) lists: class L-9, 3 years, conventional delivery, English-taught; no portal link: find the programme's own page (officialUrl is required); the portal gives no campus town: the town is the university's MUR town (Milano); check the programme page for the real campus; duration, teaching language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel are read from the programme page; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: universitaly:1625451
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: durationYears
+      url: https://www.polimi.it/en/education/laurea-programmes/programme-detail/engineering-science
+      quote: Level Bachelor of Science Duration 3 Years Language English
+    - fact: teachingLanguages
+      url: https://www.polimi.it/en/education/laurea-programmes/programme-detail/engineering-science
+      quote: Level Bachelor of Science Duration 3 Years Language English
+    - fact: requirements.req-1
+      url: https://www.polimi.it/futuri-studenti/test-e-ammissione/laurea/documenti-necessari-per-completare-limmatricolazione
+      quote: Entrambi i documenti dovranno essere accompagnati da traduzione ufficiale se non disponibili in inglese, francese o spagnolo.
+    - fact: requirements.req-2
+      url: https://www.polimi.it/futuri-studenti/test-e-ammissione/laurea/documenti-necessari-per-completare-limmatricolazione
+      quote: La scadenza per caricare il titolo di studio è il 10 settembre 2026.
+    - fact: requirements.req-3
+      url: https://www.polimi.it/futuri-studenti/test-e-ammissione/laurea/documenti-necessari-per-completare-limmatricolazione
+      quote: La scadenza per caricare la Dichiarazione di Valore, oppure il Certificate Supplement, oppure l’Attestato di Comparabilità, oppure l’Attestato di Corrispondenza, è il 31 ottobre 2026.
+  notes: "Tuition: not stated for this programme for a non-EU applicant. The fee pages show ISEE-based bands, regional tax and stamp duty, but no single amount or a lowest-highest range that the pages state applies to a full-time Bachelor student from outside the EU. Deadline for uploading the E-Apostille (31 October 2026) is a document-verification deadline, not an application deadline; no application opening or closing date for this programme is stated on the supplied pages."

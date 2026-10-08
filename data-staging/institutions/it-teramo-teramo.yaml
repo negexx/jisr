@@ -6,11 +6,11 @@ city:
   name: Teramo
 type: public
 website: https://www.unite.it/
-source: mur
-info_kind: TODO_read_source
+source: page
+info_kind: official
 sources:
-  mur:
-    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+  page:
+    url: https://www.unite.it/
     last_verified_at: null
 _review:
   kind: institutions
@@ -21,5 +21,10 @@ _review:
   field: ""
   confidence: ""
   officialUrl: https://www.unite.it/
-  todo: "university 06701 in the MUR list (state, region ABRUZZO); found through the Universitaly discovery run. Candidate from the international students portal contacts table: https://www.unite.it/ (not confirmed). Check the university's home page names it, that it is a recognised Italian university, add its page as the source, then info_kind: official"
+  todo: "university 06701 in the MUR list (state, region ABRUZZO); found through the Universitaly discovery run. Candidate from the international students portal contacts table: https://www.unite.it/ (not confirmed). Check the university's home page names it, that it is a recognised Italian university, add its page as the source, then info_kind: official; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: mur-institution:06701@teramo
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - url: https://www.unite.it/UniTE/Engine/RAServeFile.php/f/operazionetrasparenza/RELAZIONE_PERFORMANCE_2017_21_06_2018.pdf
+      quote: Performance 2017 Università degli Studi di Teramo Pag. 1 UNIVERSITA' DEGLI STUDI DI

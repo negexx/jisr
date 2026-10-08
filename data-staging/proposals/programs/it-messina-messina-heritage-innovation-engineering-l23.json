@@ -1,0 +1,37 @@
+{
+  "slug": "it-messina-messina-heritage-innovation-engineering-l23",
+  "programmePage": "https://international.unime.it/study-us/english-taught-programmes",
+  "facts": {
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://international.unime.it/study-us/application-and-admission",
+          "quote": "In the admission letter, visa applicants will find all the instructions to register at the Universitaly portal and go forward with the visa procedure."
+        },
+        {
+          "url": "https://international.unime.it/study-us/application-and-admission",
+          "quote": "For the academic year 2026/2027, the application deadline on Universitaly is 15 September 2026."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition left out: the pages supply no amount in EUR for a non-EU student living abroad for this programme; the only money mentioned is a non-refundable application fee (€40.00 for 2027/2028 and €30.00 for 2026/2027), which is not tuition. Documents left out: no document list is given for this specific Bachelor; the lists on the application pages are for Bachelor's/Single-Cycle/Master's degree programmes in general. Duration left out: the pages never state the number of years of the Heritage Innovation Engineering programme. Intake deadlines left out: no deadline is attributed specifically to this programme, and the general call deadlines are not shown as applying to Heritage Innovation Engineering.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les critères d'entrée par pays (UniME Entry Criteria by Country) pour confirmer que votre Baccalauréat marocain permet l'accès à ce Bachelor.",
+          "en": "Check the UniME Entry Criteria by Country to confirm that your Moroccan Baccalauréat qualifies for entry to this Bachelor."
+        },
+        "evidence": [
+          {
+            "url": "https://international.unime.it/study-us/application-and-admission",
+            "quote": "Document UniME Entry Criteria by Country"
+          }
+        ]
+      }
+    ]
+  }
+}

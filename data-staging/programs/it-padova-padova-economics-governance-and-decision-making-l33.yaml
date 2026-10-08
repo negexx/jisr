@@ -15,41 +15,41 @@ summary:
   ar:
     text: Economics, governance and decision-making, Università degli studi di Padova (Padova). برنامج مدرج على بوابة Universitaly لعرض التكوين التابعة لوزارة الجامعات والبحث الإيطالية (MUR).
     status: draft
-officialUrl: https://www.unipd.it/corsi-di-laurea/economics-governance-and-decision-making
+officialUrl: https://www.economia.unipd.it/en/Bachelor%27s-degree-EGDM/bachelor%E2%80%99s-degree-economics-governance-and-decision-making
 durationYears:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
   rules: []
 scholarships: []
 sources:
-  universitaly:
-    url: https://www.universitaly.it/en/cerca-corsi
+  programme:
+    url: https://www.economia.unipd.it/en/Bachelor%27s-degree-EGDM/bachelor%E2%80%99s-degree-economics-governance-and-decision-making
     last_verified_at: null
 _review:
   kind: programs
@@ -60,5 +60,12 @@ _review:
   field: business-economics
   confidence: high
   officialUrl: https://www.unipd.it/corsi-di-laurea/economics-governance-and-decision-making
-  todo: "Universitaly (2026/2027, fetched 2026-10-08) lists: class L-33, 3 years, blended (mixed) delivery, English-taught; portal link https://www.unipd.it/corsi-di-laurea/economics-governance-and-decision-making: read the programme page it leads to; the portal gives no campus town: the town is the university's MUR town (Padova); check the programme page for the real campus; duration, teaching language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel are read from the programme page; blended delivery: read the programme page for how much is online; a course that is mostly online is not offered in person and stays out"
+  todo: "Universitaly (2026/2027, fetched 2026-10-08) lists: class L-33, 3 years, blended (mixed) delivery, English-taught; portal link https://www.unipd.it/corsi-di-laurea/economics-governance-and-decision-making: read the programme page it leads to; the portal gives no campus town: the town is the university's MUR town (Padova); check the programme page for the real campus; duration, teaching language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel are read from the programme page; blended delivery: read the programme page for how much is online; a course that is mostly online is not offered in person and stays out; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: universitaly:1625480
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: teachingLanguages
+      url: https://www.economia.unipd.it/en/Bachelor%27s-degree-EGDM/bachelor%E2%80%99s-degree-economics-governance-and-decision-making
+      quote: The Economics, Governance and Decision-Making (EGDM) programme is made for you. Study in English
+  notes: "Tuition left out: the only supplied fee page (https://www.unipd.it/simulatore-calcolo-contributi) gives a general ISEE-band table for non-EU students and does not state one lowest and one highest fee for this programme's applicant, so no single amount or range can be quoted. No intake/deadline, application channel, document list or entry requirements stated for the EGDM Bachelor's programme in the supplied pages: the admission notices and international-student pages concern other (Master's) programmes."

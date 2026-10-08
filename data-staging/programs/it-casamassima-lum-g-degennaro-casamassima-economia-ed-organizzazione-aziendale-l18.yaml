@@ -15,41 +15,41 @@ summary:
   ar:
     text: Economia ed organizzazione aziendale, Libera Università Mediterranea "Giuseppe Degennaro" (Casamassima). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
     status: draft
-officialUrl: null
+officialUrl: https://www.lum.it/laurea-in-business-economics-and-organization/
 durationYears:
-  value: null
-  source: mur
-  info_kind: TODO_read_source
+  value: 3
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: mur
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
   rules: []
 scholarships: []
 sources:
-  mur:
-    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2
+  programme:
+    url: https://www.lum.it/laurea-in-business-economics-and-organization/
     last_verified_at: null
 _review:
   kind: programs
@@ -59,6 +59,19 @@ _review:
   city: Casamassima
   field: business-economics
   confidence: high
-  officialUrl: ""
-  todo: "MUR lists: degree class L-18 Scienze dell'economia e della gestione aziendale, language Inglese, mode Blended/Modalità Mista, access accesso libero, town Casamassima; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so)"
+  officialUrl: https://www.lum.it/laurea-in-business-economics-and-organization/
+  todo: "MUR lists: degree class L-18 Scienze dell'economia e della gestione aziendale, language Inglese, mode Blended/Modalità Mista, access accesso libero, town Casamassima; offer of academic year 2025/26 (the next year's offer is not published: check it on the programme page); the MUR file has no programme page: find the programme's own page on the university's site (officialUrl is required), then duration, language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel (Universitaly pre-enrolment, plus the university's own portal where it says so); prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: mur:07203:l18:economia-ed-organizzazione-aziendale@casamassima
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: durationYears
+      url: https://www.lum.it/laurea-in-business-economics-and-organization/
+      quote: The Bachelor’s degree programme in Business Economics and Organization (BEO, degree class L18) is taught entirely in English
+    - fact: durationYears
+      url: https://www.lum.it/laurea-in-business-economics-and-organization/
+      quote: The three-year degree programme includes a combination of technical know-how, management skills and leadership qualities
+    - fact: teachingLanguages
+      url: https://www.lum.it/laurea-in-business-economics-and-organization/
+      quote: The Bachelor’s degree programme in Business Economics and Organization (BEO, degree class L18) is taught entirely in English
+  notes: The supplied page is the programme page for the Laurea in Business Economics and Organization (L18-R), which corresponds to the task's "Economia ed organizzazione aziendale". No tuition fee for non-EU/international students is stated on the page; no intake dates, no application channel (no mention of Universitaly or a university application portal/form for this programme) and no document list are given, so those facts are omitted. No language, subject, prior-study or other admission requirements are stated on the page.

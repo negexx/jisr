@@ -1,0 +1,46 @@
+{
+  "slug": "it-napoli-federico-ii-napoli-electrical-engineering-and-information-t-l8",
+  "programmePage": "https://eeit.dieti.unina.it/",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://eeit.dieti.unina.it/",
+          "quote": "Candidate students should provide evidence of English language proficiency at B2 or higher (CEFR level)."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.international.unina.it/education/admission-regulation/",
+          "quote": "The pre-enrolment application is made exclusively through the Universitaly portal (visit https://www.universitaly.it/studenti-stranieri)."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Passeport",
+            "en": "Passport"
+          },
+          "quotedAs": "Passport",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.international.unina.it/education/admission-regulation/",
+          "quote": "Documents required for enrolment Copy of passport Application form 1 passport photo Tax code Residence permit (proof of having applied for it) Declaration of value issued by the Italian Embassy in the country where the degree was obtained or certificate of validity issued by ENIC-NARIC centres."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition is not stated for this programme. The only amounts on the pages are institution-wide income-based ISEE bands (e.g. 1.011,50 € + quota variabile, up to 2.384,00 € for those without ISEEU), and for non-EU students the guide only exempts extra-EU citizens from the university contribution while still paying the regional tax and stamp duty; no single tuition figure for a full-time Bachelor student from outside the EU living abroad is quoted, so tuition is omitted."
+}

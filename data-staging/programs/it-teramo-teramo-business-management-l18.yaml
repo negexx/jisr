@@ -15,41 +15,41 @@ summary:
   ar:
     text: Business Management, Università degli studi di Teramo (Teramo). برنامج مدرج على بوابة Universitaly لعرض التكوين التابعة لوزارة الجامعات والبحث الإيطالية (MUR).
     status: draft
-officialUrl: null
+officialUrl: https://www.unite.it/English/Programme_catalogue_university_Teramo/Business_Management_Taught_EN
 durationYears:
-  value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  value: 3
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 documents:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 requirements:
   coverage: partial
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
   rules: []
 scholarships: []
 sources:
-  universitaly:
-    url: https://www.universitaly.it/en/cerca-corsi
+  programme:
+    url: https://www.unite.it/English/Programme_catalogue_university_Teramo/Business_Management_Taught_EN
     last_verified_at: null
 _review:
   kind: programs
@@ -60,5 +60,18 @@ _review:
   field: business-economics
   confidence: high
   officialUrl: ""
-  todo: "Universitaly (2026/2027, fetched 2026-10-08) lists: class L-18, 3 years, conventional delivery, English-taught; no portal link: find the programme's own page (officialUrl is required); the portal gives no campus town: the town is the university's MUR town (Teramo); check the programme page for the real campus; duration, teaching language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel are read from the programme page"
+  todo: "Universitaly (2026/2027, fetched 2026-10-08) lists: class L-18, 3 years, conventional delivery, English-taught; no portal link: find the programme's own page (officialUrl is required); the portal gives no campus town: the town is the university's MUR town (Teramo); check the programme page for the real campus; duration, teaching language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel are read from the programme page; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: universitaly:1626160
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: durationYears
+      url: https://www.unite.it/English/Programme_catalogue_university_Teramo/Business_Management_Taught_EN
+      quote: "CFU: 180 Length: 3 Years"
+    - fact: teachingLanguages
+      url: https://www.unite.it/English/Programme_catalogue_university_Teramo/Business_Management_Taught_EN
+      quote: "Language: English"
+    - fact: teachingLanguages
+      url: https://www.unite.it/English/Programme_catalogue_university_Teramo/Business_Management_Taught_EN
+      quote: The Bachelor's Degree in Business Management (L-18) is a First Cycle Degree entirely taught in English, with open access.
+  notes: "Tuition omitted: the supplied pages contain no quote of a tuition amount in EUR for a full-time Bachelor student from outside the EU living abroad (or for international students in general) for this programme. The fee page is a general university page listing payment deadlines and an example instalment plan and does not state a tuition for this programme or this category of student. Application channel omitted: no supplied quote names Universitaly or the university's own application portal for this programme. Intakes omitted: no supplied quote states an application start or deadline for this programme or for non-EU applicants. Requirements omitted: no supplied quote states admission conditions for this programme."

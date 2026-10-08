@@ -1,0 +1,120 @@
+slug: it-milano-bicocca-milano-economics-and-science-for-environmental-l33
+institution: it-milano-bicocca-milano
+country: IT
+city: milano
+field: business-economics
+level: bachelor
+name: Economics and Science for Environmental Sustainability
+summary:
+  fr:
+    text: Economics and Science for Environmental Sustainability, Università degli studi di Milano-Bicocca (Milano). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics and Science for Environmental Sustainability, Università degli studi di Milano-Bicocca (Milano). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Economics and Science for Environmental Sustainability, Università degli studi di Milano-Bicocca (Milano). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://en.unimib.it/undergraduate/economics-science-environmental-sustainability
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-3
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Admission limitée avec examen d'entrée : test CISIA English TOLC-E (ou CEnT-S). Consultez la 'Call for Application' pour les modalités."
+          status: draft
+        en:
+          text: "Limited admission with entry examination: CISIA English TOLC-E (or CEnT-S) test. See the Call for Application for details."
+          status: draft
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Diplôme final de l'enseignement secondaire accompagné d'une traduction officielle en italien ou en anglais ; plus relevé de notes de la dernière année.
+          status: draft
+        en:
+          text: Final secondary school diploma accompanied by an official translation into Italian or English; plus last-year transcript.
+          status: draft
+    - id: req-5
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats non-UE ayant besoin d'un visa doivent téléverser la pré-inscription Universitaly ; l'inscription se fait via le portail de l'université.
+          status: draft
+        en:
+          text: Non-EU visa-requiring applicants must upload the Universitaly pre-enrolment receipt; application is made through the university portal.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://en.unimib.it/undergraduate/economics-science-environmental-sustainability
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://apply.unimib.it/en_GB/courses/course/110-economics-and-science-environmental-sustainability
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://www.unimib.it/internazionalizzazione/informazioni-studenti-internazionali/studenti-italiani-titolo-estero/studenti-comunitari-equiparati-e-stranieri-gia-residenti-italia
+    last_verified_at: 2026-10-05
+_review:
+  kind: programs
+  slug: it-milano-bicocca-milano-economics-and-science-for-environmental-l33
+  name: Economics and Science for Environmental Sustainability
+  sourceId: mur:01509:l33:economics-and-science-for-environmental-sustainability@milano
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: applicationChannel
+      url: https://www.unimib.it/internazionalizzazione/informazioni-studenti-internazionali/studenti-italiani-titolo-estero/studenti-comunitari-equiparati-e-stranieri-gia-residenti-italia
+      quote: Per i candidati extra-Ue richiedenti visto, la ricevuta di pre-enrolment sul Portale UNIVERSITALY, ove già disponibile;
+  notes: "Tuition: no amount in EUR for non-EU students living abroad is stated on the pages, so tuition is left out. The Fees and funding page links only ISEE-based guides and does not state a fee for this programme. Admission: the programme is 'limited with entry requirements examination' per the programme list page, so an entrance exam applies (manual check)."

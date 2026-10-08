@@ -1,0 +1,33 @@
+{
+  "slug": "it-genova-genova-computer-engineering-l8",
+  "programmePage": null,
+  "facts": {
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://unige.it/iscrizione-studenti-non-eu-residenti-estero-con-titolo-studio-non-italiano",
+          "quote": "La sottomissione della domanda di richiesta di visto sul portale ministeriale esterno a Unige (Universitaly) è obbligatoria per tutti i corsi."
+        }
+      ]
+    }
+  },
+  "notes": "Computer Engineering at UniGe is a Bachelor programme taught in Italian, but no page dedicated to this programme's own site (corsi.unige.it) was supplied, so no programme page or programme-specific facts (duration, teaching language, tuition) could be quoted. Tuition is left out: the only fee page found states general ISEE-band contributions up to EUR 3,300 for 'oltre € 100.000 ovvero in assenza di ISEE-U', but no single amount is stated for a non-EU full-time Bachelor student living abroad. Documents for this Bachelor are not quoted from an international-student page; the document list found applies to Master's degrees. The B2 English requirement is quoted from the page on enrolling non-EU students resident abroad with a foreign qualification, and applies to Italian-taught courses only if an English-taught track is chosen.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifie les dates d'ouverture et de clôture de la pré-sélection UnigeApply (fall session), de la demande de visa sur Universitaly et de la pré-inscription, selon ton profil et l'année académique.",
+          "en": "Check the opening and closing dates of the UnigeApply pre-selection (fall session), the visa application on Universitaly and the pre-enrolment, according to your profile and academic year."
+        },
+        "evidence": [
+          {
+            "url": "https://unige.it/internazionale/iscrizioni-internazionali/scadenze",
+            "quote": "SOLO PER STUDENTI RICHIEDENTI VISTO (*) con titolo non-italiano PRE-SELEZIONE SU UNIGEAPPLY - fall session apertura: 26 novembre 2025 - chiusura: 20 marzo 2026 (chiusura anticipata per alcuni corsi)"
+          }
+        ]
+      }
+    ]
+  }
+}

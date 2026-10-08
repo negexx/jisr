@@ -15,41 +15,53 @@ summary:
   ar:
     text: Electrical Engineering and Information Technology, Università degli studi di Napoli Federico II (Napoli). برنامج مدرج على بوابة Universitaly لعرض التكوين التابعة لوزارة الجامعات والبحث الإيطالية (MUR).
     status: draft
-officialUrl: null
+officialUrl: https://eeit.dieti.unina.it/
 durationYears:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 teachingLanguages:
   value:
     - en
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 tuition:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 intakes:
   value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
 applicationChannel:
-  value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  value: it-universitaly
+  source: page-2
+  info_kind: official
 documents:
-  value: null
-  source: universitaly
-  info_kind: TODO_read_source
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
 requirements:
   coverage: partial
-  source: universitaly
-  info_kind: TODO_read_source
+  source: programme
+  info_kind: official
   rules: []
 scholarships: []
 sources:
-  universitaly:
-    url: https://www.universitaly.it/en/cerca-corsi
+  programme:
+    url: https://eeit.dieti.unina.it/
+    last_verified_at: null
+  page-2:
+    url: https://www.international.unina.it/education/admission-regulation/
     last_verified_at: null
 _review:
   kind: programs
@@ -60,5 +72,18 @@ _review:
   field: engineering
   confidence: high
   officialUrl: ""
-  todo: "Universitaly (2026/2027, fetched 2026-10-08) lists: class L-8, 3 years, conventional delivery, English-taught; no portal link: find the programme's own page (officialUrl is required); the portal gives no campus town: the town is the university's MUR town (Napoli); check the programme page for the real campus; duration, teaching language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel are read from the programme page"
+  todo: "Universitaly (2026/2027, fetched 2026-10-08) lists: class L-8, 3 years, conventional delivery, English-taught; no portal link: find the programme's own page (officialUrl is required); the portal gives no campus town: the town is the university's MUR town (Napoli); check the programme page for the real campus; duration, teaching language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel are read from the programme page; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
   sourceId: universitaly:1625562
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: teachingLanguages
+      url: https://eeit.dieti.unina.it/
+      quote: Candidate students should provide evidence of English language proficiency at B2 or higher (CEFR level).
+    - fact: applicationChannel
+      url: https://www.international.unina.it/education/admission-regulation/
+      quote: The pre-enrolment application is made exclusively through the Universitaly portal (visit https://www.universitaly.it/studenti-stranieri).
+    - fact: documents
+      url: https://www.international.unina.it/education/admission-regulation/
+      quote: Documents required for enrolment Copy of passport Application form 1 passport photo Tax code Residence permit (proof of having applied for it) Declaration of value issued by the Italian Embassy in the country where the degree was obtained or certificate of validity issued by ENIC-NARIC centres.
+  notes: Tuition is not stated for this programme. The only amounts on the pages are institution-wide income-based ISEE bands (e.g. 1.011,50 € + quota variabile, up to 2.384,00 € for those without ISEEU), and for non-EU students the guide only exempts extra-EU citizens from the university contribution while still paying the regional tax and stamp duty; no single tuition figure for a full-time Bachelor student from outside the EU living abroad is quoted, so tuition is omitted.

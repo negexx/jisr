@@ -1,23 +1,31 @@
 {
   "slug": "it-casamassima-lum-g-degennaro-casamassima-economia-ed-organizzazione-aziendale-l18",
-  "programmePage": null,
-  "facts": {},
-  "notes": "Tuition: the only figure for this programme is a total 'contributo unico' of 5.500,00€ split over three instalments (2.500,00€ + 1.500,00€ + 1.500,00€); the page does not state it is the fee for a non-EU/international student and does not give an annual fee for such a student, so the amount here is the sum of the year's instalments as shown. No Universitaly mention exists on the supplied pages, so applicationChannel is the university's own MYLUM online procedure; a human should confirm the pre-enrolment route for a Moroccan applicant. Documents: listed on a general 'how to enrol' page (Italian secondary diploma context), not on this programme's own page; 'domanda di immatricolazione in bollo da €16,00' is also listed but is a form, not a supporting document. The 31 October deadline appears with year 2024 for A.A. 2024-2025, so it is recorded as a recurring day/month deadline rather than a fixed date.",
-  "requirements": {
-    "rules": [
-      {
-        "kind": "manual_check",
-        "note": {
-          "fr": "Vérifiez si ce cursus est à accès libre ou à nombre programmé et s'il exige un test d'entrée; la page ne le précise pas pour ce programme.",
-          "en": "Check whether this programme has open access or a restricted number of places and whether an entrance test is required; the page does not state this for this programme."
+  "programmePage": "https://www.lum.it/laurea-in-business-economics-and-organization/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.lum.it/laurea-in-business-economics-and-organization/",
+          "quote": "The Bachelor’s degree programme in Business Economics and Organization (BEO, degree class L18) is taught entirely in English"
         },
-        "evidence": [
-          {
-            "url": "https://www.lum.it/come-iscriversi-all-universita/",
-            "quote": "Facoltà a numero aperto, con accesso libero e numero di posti disponibili a discrezione dei singoli Atenei;"
-          }
-        ]
-      }
-    ]
-  }
+        {
+          "url": "https://www.lum.it/laurea-in-business-economics-and-organization/",
+          "quote": "The three-year degree programme includes a combination of technical know-how, management skills and leadership qualities"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.lum.it/laurea-in-business-economics-and-organization/",
+          "quote": "The Bachelor’s degree programme in Business Economics and Organization (BEO, degree class L18) is taught entirely in English"
+        }
+      ]
+    }
+  },
+  "notes": "The supplied page is the programme page for the Laurea in Business Economics and Organization (L18-R), which corresponds to the task's \"Economia ed organizzazione aziendale\". No tuition fee for non-EU/international students is stated on the page; no intake dates, no application channel (no mention of Universitaly or a university application portal/form for this programme) and no document list are given, so those facts are omitted. No language, subject, prior-study or other admission requirements are stated on the page."
 }

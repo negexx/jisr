@@ -1,0 +1,91 @@
+slug: it-padova-padova-information-engineering-l8
+institution: it-padova-padova
+country: IT
+city: padova
+field: engineering
+level: bachelor
+name: Information Engineering
+summary:
+  fr:
+    text: Information Engineering, Università degli studi di Padova (Padova). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Information Engineering, Università degli studi di Padova (Padova). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Information Engineering, Università degli studi di Padova (Padova). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://apply.unipd.it/courses/course/182-information-engineering
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 295000
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: 2027-10-01
+      applicationOpens: 2027-01-07
+      applicationDeadline: 2027-03-07
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: secondary-school-diploma
+      name:
+        fr:
+          text: Diplôme d'études secondaires
+          status: draft
+        en:
+          text: Secondary Studies diploma
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+scholarships: []
+sources:
+  programme:
+    url: https://apply.unipd.it/courses/course/182-information-engineering
+    last_verified_at: 2026-10-05
+_review:
+  kind: programs
+  slug: it-padova-padova-information-engineering-l8
+  name: Information Engineering
+  sourceId: mur:02801:l8:information-engineering@padova
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: tuition
+      url: https://apply.unipd.it/courses/course/182-information-engineering
+      quote: Tuition fee €2,950 per year
+  notes: "documents: kept the existing official value; the reader found [{\"slug\":\"secondary-studies-diploma\",\"name\":{\"fr\":{\"text\":\"Diplôme d'études secondaires\",\"status\":\"draft\"},\"en\":{\"text\":\"Secondary Studies diploma\",\"status\":\"draft\"}},\"translationRequired\":null}] at https://apply.unipd.it/courses/course/182-information-engineering; The tuition fee of €2,950 per year is stated on the programme page but the page also says it can be significantly waived based on ISEE, so the amount may be lower for this applicant. The application channel could not be confirmed as it-universitaly because no page names the Universitaly portal for this programme; the programme page provides an 'Apply now!' link but does not explicitly name an application portal, so it-university-direct is used as the closest supported option. The deposit of €208 is an admission fee, not tuition, and is therefore not included in the tuition fact."
