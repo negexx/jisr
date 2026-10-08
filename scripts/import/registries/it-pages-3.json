@@ -1,8 +1,6 @@
 {
   "Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma": {
-    "institutionSlugs": [
-      "it-roma-luiss-roma"
-    ],
+    "institutionSlugs": ["it-roma-luiss-roma"],
     "universityPages": {
       "admissions": [
         {
@@ -71,10 +69,7 @@
     "notes": "2027/28 admission notice not yet published (announced for October 2026); the certification-route page already gives the first session window. Admission is by test/SAT-ACT-IB certification, same timeline for all non-EU/Schengen applicants (no abroad-specific deadline found). Fee is a single flat contribution (15,000 EUR on the programme pages; not income-based, no nationality discount found); the fee page is inconsistent on year (2026/27 vs 2027/28). Search snippets also showed older 12,000/12,600 EUR figures for 2025/26. No country-group rule applies. Documents page is a 2024/25 cycle page; Morocco entry confirmed (Baccalaureate + CIMEA comparability or Declaration of Value)."
   },
   "Università Ca' Foscari Venezia": {
-    "institutionSlugs": [
-      "it-ca-foscari-venezia-roncade",
-      "it-ca-foscari-venezia-venezia"
-    ],
+    "institutionSlugs": ["it-ca-foscari-venezia-roncade", "it-ca-foscari-venezia-venezia"],
     "universityPages": {
       "admissions": [
         {
@@ -171,9 +166,7 @@
     "notes": "Universitaly pre-enrolment for 2026/27 closed 30 Sept 2026 (page says later requests not considered); 2027/28 calls not published. A September 2025 search snippet said visa-requiring non-EU applicants could no longer apply for 2026/27 bachelor degrees, but unive.it/pag/40976 (updated 23/09/2026) still describes visa enrolment: conflict, confirm with the Welcome Unit. Fees: flat tax by country group; Morocco is not in the DM 166 low-development list, so the 'other non-EU' 1,300 EUR rate (2025/26 page; 2026/27 brochure shows same tiers, not independently read) applies; ISEE parificato generally does not reduce tuition for non-EU. The 2026/27 fee page itself was not found (only the 2025/26 page). Programme pages for Business Administration and Management and Economics and Business are for 2025/26 enrolment and the Economics campus ones name no deadlines. Digital Management is a separate restricted-access programme at Treviso/Roncade campus with an entry test."
   },
   "Università Politecnica delle Marche - Ancona": {
-    "institutionSlugs": [
-      "it-marche-ancona"
-    ],
+    "institutionSlugs": ["it-marche-ancona"],
     "universityPages": {
       "admissions": [
         {
@@ -268,9 +261,7 @@
     "notes": "Fee rule for Morocco: no flat country fee; fee depends on ISEE parificato (CAF CISL/UIL) with Economia maximum 2,035 EUR (2026 table); OECD citizens without ISEE parificato pay maximum; students from developing/ex-OECD countries who do not apply pay only 156 EUR. Whether Morocco counts as 'developing' is not stated on the page: confirm. The 'econ.univpm.it/en/iec/Admission/international' page is stale (2022) and was not listed. 2026/27 guidelines say DEB is 'restricted' (OFA preliminary test, not selective) and open to non-EU visa applicants; guidelines list Morocco among countries in a dedicated call; a Universitaly deadline of 30 Nov 2026 is given in the June 2026 guidelines (the Dec 2025 version said pending). The 2027/28 guidelines are not published yet. The econ.univpm.it/IEC English admission page I fetched was ignored (2022)."
   },
   "Università degli studi di Messina": {
-    "institutionSlugs": [
-      "it-messina-messina"
-    ],
+    "institutionSlugs": ["it-messina-messina"],
     "universityPages": {
       "admissions": [
         {
@@ -344,9 +335,7 @@
     "notes": "2027/28 calls are published (Early Bird 1-20 Dec 2026 only for applicants who already hold final documents and a DoV/CIMEA statement). Universitaly deadline for 2027/28 not given; 2026/27 was 15 Sept 2026. Fees: flat group fee, Morocco in Group B = 256 EUR/year per the fees page (verified from the PDF text that Morocco is in Group B); the group-based rule was introduced 2025/26 and a Senate resolution of 6 July 2026 (archivio.unime.it) says groups are updated per DM 176 of 24 Feb 2026, so the 2026/27 list PDF is the dated 2026-04 file. Programme language: an older engineering department page listed the course in Italian; the international site and info sheet say English-taught. A 2023 regulation PDF exists but the tuition rule appears to be the group-fee page. Whether the course has restricted access or a test is not stated on the pages checked."
   },
   "Università degli studi di Napoli Federico II": {
-    "institutionSlugs": [
-      "it-napoli-federico-ii-napoli"
-    ],
+    "institutionSlugs": ["it-napoli-federico-ii-napoli"],
     "universityPages": {
       "admissions": [
         {
@@ -441,9 +430,7 @@
     "notes": "No tuition by country group or income: non-EU students pay 156 EUR (regional tax + stamp) per year, so no country list is needed. Pre-admission for 2026/27 ran about Jan to 31 May 2026 and Universitaly pre-enrolment closed 15 June 2026; the 2027/28 schedule is not published. Pre-admission is run per programme (letter from course coordinator) with an entrance test (TOLC-I, CEnT-S or SAT) taken remotely. EEIT and civil-environmental sites give slightly different test details (TOLC-I vs CEnT-S, thresholds differ). The Civil and Environmental site civil-environmental.unina.it had an expired TLS certificate at fetch time. The old 2025 Universitaly brochure on unina.it redirects to old.unina.it and was not used."
   },
   "Università degli studi di Pavia": {
-    "institutionSlugs": [
-      "it-pavia-pavia"
-    ],
+    "institutionSlugs": ["it-pavia-pavia"],
     "universityPages": {
       "admissions": [
         {
@@ -512,9 +499,7 @@
     "notes": "Programme is restricted-access with a local SAT-based selection; the 2026/27 window (28 Apr-18 May 2026) is closed and 2027/28 not published yet; the 2027/28 window will probably be similar (April-May 2027), do not assume. Fee: non-EU students with a study visa get the flat rate by default; Morocco is in Bracket 1 of Annex 3 (2026/27 regulation, World Bank classification FY2025; bracket amounts per area are in the regulation Annex 2/3, not read in detail); flat rate range 390-4,550 EUR per year, with 156 EUR fixed enrolment tax. The student can opt out of the flat rate to the equivalent-ISEE calculation with foreign documents (legalised). A 200 EUR place-confirmation fee applies for international students in non-restricted programmes (2.6.2), AI is restricted so check. Quota for non-EU abroad is 45 seats plus 5 Marco Polo (EU-procedure page said 50: conflict). The apply.unipv.eu 'Application Calendar 2026/27' news link returned 404 and is not listed."
   },
   "Università degli studi di Siena": {
-    "institutionSlugs": [
-      "it-siena-siena"
-    ],
+    "institutionSlugs": ["it-siena-siena"],
     "universityPages": {
       "admissions": [
         {
@@ -636,9 +621,7 @@
     "notes": "2026/27 admissions are closed; 2027/28 opens in November 2026 (calendar not published). Visa-required non-EU applicants have reserved quotas: Economics and Management 150 places, applications 18 Mar-4 May 2026 (apply.unisi.it browse page shows 6 May: 2-day conflict); selection on documents only. Biotech Engineering for Health: 25 places for visa applicants in round NC1 (to 30 April 2026), a CEnT-S test and online interview, and for 2025/26 visa applicants were not admitted at all. Fees: no flat country fee; non-ISEE students pay the 9X band reduced by a country coefficient (below 1) and at least 500 EUR (2026/27 regulation); Morocco appears in Tab. C but the coefficient could not be read from the extracted text, so a human or the simulator must confirm. Admission application fee 40 EUR on admission.unisi.it pages versus 49.90 EUR on the Biotech apply page (conflict, per-programme fees). Documents: legalisation only after admission, translation into Italian/English. The old 'tuition fees and costs' apply.unisi.it page is dated 2022/23."
   },
   "Università di Pisa": {
-    "institutionSlugs": [
-      "it-pisa-pisa"
-    ],
+    "institutionSlugs": ["it-pisa-pisa"],
     "universityPages": {
       "admissions": [
         {

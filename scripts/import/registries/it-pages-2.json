@@ -1,8 +1,6 @@
 {
   "Libera Università Mediterranea \"Giuseppe Degennaro\"": {
-    "institutionSlugs": [
-      "it-casamassima-lum-g-degennaro-casamassima"
-    ],
+    "institutionSlugs": ["it-casamassima-lum-g-degennaro-casamassima"],
     "universityPages": {
       "admissions": [
         {
@@ -70,9 +68,7 @@
     "notes": "LUM has a single flat contribution for all students, no income brackets and no country groups; no separate non-EU tuition rule found, so a Moroccan applicant pays the same contribution (25/26 Manifesto: 7,500 EUR for the departments incl. Management, shown in Manifesto text). No dated bachelor application window found for non-EU abroad; 2027/28 Manifesto not published. The 2026/27 Manifesto PDF exists but was too large to fetch. Admissions page is stale (2022/23, 2023/24 circular). Foundation Year (5,000 EUR) exists for applicants with fewer than 12 years of schooling."
   },
   "Politecnico di Torino": {
-    "institutionSlugs": [
-      "it-torino-politecnico-torino"
-    ],
+    "institutionSlugs": ["it-torino-politecnico-torino"],
     "universityPages": {
       "admissions": [
         {
@@ -167,9 +163,7 @@
     "notes": "Newest published: A.Y. 2026/27 (no 2027/28 pages yet). Non-EU abroad pay a flat-range fee by country (Annex 2); the old regulation (students enrolled before 2025/26) lists Morocco at 921-2,601 EUR, but the regulation for first-time students from 2025/26 shows MAROCCO 761 in the annex text extracted from the PDF (the layout is garbled, so confirm min/max and amounts by reading the table). Fee reductions by ISEE parificato possible but fee cannot go below the country minimum. Regulation PDFs are Italian/English copies; the English translation has no legal value. Calls: one call for all Engineering programmes; admission via TIL test or SAT. Non-EU abroad sequence 2026/27: language certificate by 22 May, Universitaly pre-enrolment indicative 30 June, TIL ranking list closed 7 July."
   },
   "Università Campus Bio-Medico di Roma": {
-    "institutionSlugs": [
-      "it-roma-biomedico-roma"
-    ],
+    "institutionSlugs": ["it-roma-biomedico-roma"],
     "universityPages": {
       "admissions": [
         {
@@ -248,9 +242,7 @@
     "notes": "Newest call is 2026/27 (windows now closed); no general 2027/28 call yet, only a Summer School session. UCBM is a private university: tuition is one table (2026/27 first-year column shows 2,500+140 and a total 6,571.50+140 per the page, columns garbled) and no nationality-based rule or country list was found. First instalment in the 2026/27 call is 2,640 EUR (single contribution), second due by 12 April 2027. Scholarship: 50% for top non-EU candidates abroad in some years (2023/24). Search results showed one page tagged LM-21 (likely a labelling error)."
   },
   "Università commerciale Luigi Bocconi di Milano": {
-    "institutionSlugs": [
-      "it-milano-bocconi-milano"
-    ],
+    "institutionSlugs": ["it-milano-bocconi-milano"],
     "universityPages": {
       "admissions": [
         {
@@ -391,9 +383,7 @@
     "notes": "Bocconi has already published 2027/28 (admissions sessions, test, fees 17,700 EUR). The four BSc programme pages we hold were apparently renamed: Economic and Social Sciences -> Economics (likely), Economics Management and Computer Science -> Management and Computer Science, International Economics and Finance -> Finance, International Economics and Management -> Management; the pages do not say 'formerly', so the mapping is an inference from slugs and class codes in the admissions table, confirm before relying on it. A single tuition figure for all students (no country groups). ISU Bocconi need-based aid: the 2026-27 page said it applies to 'Only Bocconi and Italian applicants' (ambiguous for international applicants). No Morocco-specific rule found. Enrolment and results page still 2026/27."
   },
   "Università degli studi di Firenze": {
-    "institutionSlugs": [
-      "it-firenze-firenze"
-    ],
+    "institutionSlugs": ["it-firenze-firenze"],
     "universityPages": {
       "admissions": [
         {
@@ -483,9 +473,7 @@
     "notes": "Newest published is 2026/27 (page updated 30 Sept 2026); 2027/28 call not published. Fees: Florence charges by figurative ISEE for residents abroad, grouped by World Bank income class of the country of residence (annex 5 lists Morocco; the PDF text layout is garbled so the group is not unambiguous: Morocco is lower-middle income, likely REDDITO MEDIO-BASSO 36,500). Non-EU applicants abroad: Universitaly pre-enrolment plus programme selection test. The programme call PDF is on economia.unifi.it under upload/sub/Bando test/2026-27_-_BANDO_Susbus_def_1_fto.pdf (not fetched). Previous years' calls (24/25) had a 100 non-EU places split."
   },
   "Università degli studi di Palermo": {
-    "institutionSlugs": [
-      "it-palermo-palermo"
-    ],
+    "institutionSlugs": ["it-palermo-palermo"],
     "universityPages": {
       "admissions": [
         {
@@ -574,10 +562,7 @@
     "notes": "Newest published: 2026/27 (no 2027/28). Programme is open access, entirely in English. Fee rule for extra-EU residents abroad: fixed contribution by country list or ISEE parificato. Conflict: the procedure page quotes 206/256/356 EUR (old) while the tuition page quotes 211/267/378 EUR for 2026/27; both include 156 EUR regional tax and stamp. Morocco was in list B (April 2024 table) and B2b (2025/26 table per search); the 2026/27 table is an image PDF that needs OCR/manual reading. The procedure page's bachelor heading says 2025/2026 but its dates (to 20 Jul 2026) are 2026/27."
   },
   "Università degli studi di Roma La Sapienza": {
-    "institutionSlugs": [
-      "it-roma-la-sapienza-rieti",
-      "it-roma-la-sapienza-roma"
-    ],
+    "institutionSlugs": ["it-roma-la-sapienza-rieti", "it-roma-la-sapienza-roma"],
     "universityPages": {
       "admissions": [
         {
@@ -694,9 +679,7 @@
     "notes": "2026/27 pre-selection and Universitaly windows (15 May / 30 June 2026) are closed; no 2027/28 page yet (expect a similar cycle). Two calls found: the held URL corsidilaurea.../33482 call 2026/27 (verified readable, English, L-23) and ACSAI 2026/27 call 14824_en_1.pdf; a 2025/26 ACSAI call (14824_e_0.pdf) exists too, do not use. Search results said ACSAI 2026/27 has 180 places of which 60 non-EU (decree 946/2026), not confirmed from the PDF text. Sapienza fees for foreign income are fixed by band: Morocco is in Band A (300 EUR total plus 140 regional tax and 16 stamp); the fee page does not itself state its year (deadlines suggest 2025/26 or 2026/27). Pre-selection fee 30 EUR and 10 EUR requirements check fee."
   },
   "Università degli studi di Udine": {
-    "institutionSlugs": [
-      "it-udine-udine"
-    ],
+    "institutionSlugs": ["it-udine-udine"],
     "universityPages": {
       "admissions": [
         {
