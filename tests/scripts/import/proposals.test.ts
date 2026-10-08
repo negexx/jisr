@@ -4,6 +4,7 @@ import { z } from "zod";
 import {
   applyRecord,
   applyVerified,
+  enrichRecord,
   type Proposal,
   ProposalSchema,
   recordValue,
@@ -283,6 +284,102 @@ describe("verifyProposal", () => {
         2026,
       );
       expect(v.facts.tuition).toBeUndefined();
+    });
+  });
+
+  describe("droppedQuotes: an accepted fact that lost an evidence quote", () => {
+    const fees = {
+      url: FEES,
+      quote: "Tuition fees for non-EU students: €1,500 per semester",
+    };
+    const value = { amountMinor: 150000, currency: "EUR", period: "semester" } as const;
+    const missing = {
+      url: PAGE,
+      quote: `${"Morocco is in country group A of the annex. ".repeat(6)}this is not on the page`,
+    };
+
+    it("lists the dropped quote (cut to 120 characters) when one of two quotes is not on the page", async () => {
+      const v = await verifyProposal(
+        proposal({ tuition: { value, evidence: [fees, missing] } }),
+        "Applied Computer Science",
+        getText,
+      );
+      expect(v.rejected).toEqual([]);
+      expect(v.facts.tuition?.evidence).toEqual([fees]);
+      expect(v.droppedQuotes).toHaveLength(1);
+      expect(v.droppedQuotes?.[0]).toMatchObject({ fact: "tuition", url: PAGE });
+      expect(v.droppedQuotes?.[0]?.quote.length).toBeLessThanOrEqual(120);
+      expect(v.droppedQuotes?.[0]?.quote.startsWith("Morocco is in country group A")).toBe(true);
+    });
+
+    it("also lists a quote whose page could not be fetched", async () => {
+      const v = await verifyProposal(
+        proposal({
+          tuition: { value, evidence: [fees, { url: "https://uni.example/gone", quote: "x" }] },
+        }),
+        "Applied Computer Science",
+        getText,
+      );
+      expect(v.droppedQuotes).toEqual([
+        { fact: "tuition", url: "https://uni.example/gone", quote: "x" },
+      ]);
+    });
+
+    it("is not set when every quote is found", async () => {
+      const v = await verifyProposal(
+        proposal({ tuition: { value, evidence: [fees] } }),
+        "Applied Computer Science",
+        getText,
+      );
+      expect(v.rejected).toEqual([]);
+      expect(v.droppedQuotes).toBeUndefined();
+    });
+
+    it("is not set for a fact that was rejected altogether (rejected already says so)", async () => {
+      const v = await verifyProposal(
+        proposal({ tuition: { value, evidence: [missing] } }),
+        "Applied Computer Science",
+        getText,
+      );
+      expect(v.facts.tuition).toBeUndefined();
+      expect(v.droppedQuotes).toBeUndefined();
+    });
+
+    it("reaches the review block of applyVerified and of enrichRecord, and nothing is added without it", () => {
+      const dropped = [{ fact: "tuition", url: PAGE, quote: "Morocco is in group A" }];
+      const verified = {
+        programmePage: PAGE,
+        rejected: [],
+        facts: { tuition: { value, evidence: [fees] } },
+        droppedQuotes: dropped,
+      };
+      const staged = {
+        slug: "p",
+        officialUrl: null,
+        durationYears: { value: null, source: "daad", info_kind: READ_SOURCE },
+        teachingLanguages: { value: null, source: "daad", info_kind: READ_SOURCE },
+        tuition: { value: null, source: "daad", info_kind: READ_SOURCE },
+        intakes: { value: null, source: "daad", info_kind: READ_SOURCE },
+        applicationChannel: { value: null, source: "daad", info_kind: READ_SOURCE },
+        documents: { value: null, source: "daad", info_kind: READ_SOURCE },
+        requirements: { coverage: "partial", source: "daad", info_kind: READ_SOURCE, rules: [] },
+        sources: { daad: { url: "https://www2.daad.de/x", last_verified_at: null } },
+        _review: { todo: "read it" },
+      };
+      const line = `tuition: "Morocco is in group A" (${PAGE})`;
+      expect(applyVerified(staged, verified, "2026-10-08")._review).toMatchObject({
+        droppedQuotes: [line],
+      });
+      expect(enrichRecord(staged, verified, "2026-10-08").record._review).toMatchObject({
+        droppedQuotes: [line],
+      });
+      const { droppedQuotes: _gone, ...clean } = verified;
+      expect(applyVerified(staged, clean, "2026-10-08")._review).not.toHaveProperty(
+        "droppedQuotes",
+      );
+      expect(enrichRecord(staged, clean, "2026-10-08").record._review).not.toHaveProperty(
+        "droppedQuotes",
+      );
     });
   });
 

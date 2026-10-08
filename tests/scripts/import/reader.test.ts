@@ -356,10 +356,10 @@ describe("applicant context", () => {
         "it-universitaly if the pages say that such applicants make the pre-enrolment application (preiscrizione) on the Universitaly portal",
       );
     });
-    it("keeps the university-direct sentence of the channel text free of stray backslashes", () => {
-      expect(user).toContain("or form for this programme. Quote that sentence.");
-      expect(user).toContain("on the university's own application portal");
-      expect(user).not.toContain("\\");
+    it("keeps the applicationChannel sentence byte for byte", () => {
+      expect(user).toContain(
+        "applicationChannel for a non-EU applicant living abroad: it-universitaly if the pages say that such applicants make the pre-enrolment application (preiscrizione) on the Universitaly portal (the quote must name Universitaly); it-university-direct only if the pages say to apply on the university's own application portal or form for this programme. Quote that sentence. Italian universities use",
+      );
     });
     it("no longer says Italian tuition is usually set by ISEE band", () => {
       expect(user).not.toContain("usually by ISEE band");
@@ -376,7 +376,33 @@ describe("applicant context", () => {
       expect(user).toMatch(/fixed fee for non-EU students not resident in Italy/);
       expect(user).toMatch(/groups of degree programmes/);
       expect(user).toMatch(/degree class or department/);
-      expect(user).toMatch(/otherwise leave tuition out and say why in notes/);
+    });
+    it("needs a SECOND evidence quote tying this programme to its group, else no tuition", () => {
+      expect(user).toMatch(
+        /SECOND evidence quote that ties this programme, or its degree class or department, to that group; without such a quote leave tuition out and say why in notes/,
+      );
+    });
+    it("builds a per-area range only from ONE country group or ONE fee table, and rule 1 wins for programme groups", () => {
+      expect(user).toMatch(
+        /two values by degree area form a range only if ONE quote shows both values of ONE country group or ONE fee table that applies to this student/,
+      );
+      expect(user).toMatch(
+        /never build a range from figures for different groups of degree programmes, different country groups, or a reduced fee for particular countries/i,
+      );
+      expect(user).toMatch(/Rule \(1\) takes precedence over this for programme groups/);
+      expect(user).not.toMatch(
+        /and its two values by degree area as a range only if ONE quote shows both\./,
+      );
+    });
+    it("allows at most two evidence quotes for a tuition: the amount first, then the one tie quote", () => {
+      expect(user).toMatch(
+        /at most TWO evidence quotes for a tuition: first the quote with the amount, second the one tie quote/,
+      );
+    });
+    it("asks for the year in an application window quote, else recurringDeadline", () => {
+      expect(user).toMatch(
+        /the quote must state the year; otherwise use recurringDeadline as above/,
+      );
     });
     it("requires a second quote naming Morocco for a country-group or nationality-based fee", () => {
       expect(user).toMatch(/country-group fee or nationality-based reduced fee/i);
@@ -387,8 +413,12 @@ describe("applicant context", () => {
       expect(user).toMatch(/list or annex of the same academic year as the amount/);
     });
     it("takes an income range only from ONE quote and never a table of many bands", () => {
-      expect(user).toMatch(/Income-based fee: only a range from ONE quote/);
-      expect(user).toMatch(/a table of income bands with many rows is not a tuition/);
+      expect(user).toMatch(
+        /RANGE is allowed only when ONE quote states both a lowest and a highest fee/,
+      );
+      expect(user.match(/RANGE is allowed/g)).toHaveLength(1);
+      expect(user).not.toContain("Income-based fee: only a range from ONE quote");
+      expect(user).toMatch(/A table of income bands with many rows is not a tuition/);
     });
     it("says what tuition is: the university's own yearly contribution, per instalment when so given", () => {
       expect(user).toMatch(/contributo/);
