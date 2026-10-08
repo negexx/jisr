@@ -42,14 +42,28 @@ describe("readSiteEnv", () => {
     "https://jisr.vercel.app?x=1",
     "https://jisr.vercel.app#top",
     "https://user:pw@jisr.vercel.app",
+    "https://jisr.vercel.app@evil.com",
+    "https://jisr.vercel.app.",
+    "http://localhost.evil.com",
   ])("rejects site url %s", (value) => {
     expect(() => readSiteEnv({ NEXT_PUBLIC_SITE_URL: value })).toThrow(SiteEnvError);
   });
 
-  it("allows http only for localhost", () => {
-    expect(readSiteEnv({ NEXT_PUBLIC_SITE_URL: "http://localhost:3101" }).siteUrl).toBe(
-      "http://localhost:3101",
+  it("tells the owner the lowercase origin to write when the host is not normalised", () => {
+    expect(() => readSiteEnv({ NEXT_PUBLIC_SITE_URL: "https://JISR.vercel.app" })).toThrow(
+      /write it as https:\/\/jisr\.vercel\.app/,
     );
+    expect(() => readSiteEnv({ NEXT_PUBLIC_SITE_URL: "https://jisr.vercel.app:443" })).toThrow(
+      /write it as https:\/\/jisr\.vercel\.app$/,
+    );
+  });
+
+  it.each([
+    "http://localhost:3101",
+    "http://127.0.0.1:3101",
+    "http://[::1]:3101",
+  ])("allows http for the local host %s", (value) => {
+    expect(readSiteEnv({ NEXT_PUBLIC_SITE_URL: value }).siteUrl).toBe(value);
   });
 
   it.each([
@@ -63,6 +77,10 @@ describe("readSiteEnv", () => {
   it.each([
     "snapshots",
     "//cdn.example.com",
+    "/\\evil.com",
+    "/\t/evil.com",
+    "/\n/evil.com",
+    "/data",
     "http://cdn.example.com",
     "/snapshots/",
     "/s?x=1",
@@ -78,6 +96,20 @@ describe("readSiteEnv", () => {
   // padding that this module silently accepted would break every fetch in the browser.
   it.each([" /snapshots", "/snapshots ", "   "])("rejects padded snapshot base url %j", (value) => {
     expect(() => readSiteEnv({ NEXT_PUBLIC_SNAPSHOT_BASE_URL: value })).toThrow(SiteEnvError);
+  });
+
+  it("says /snapshots is the only relative value", () => {
+    expect(() => readSiteEnv({ NEXT_PUBLIC_SNAPSHOT_BASE_URL: "/data" })).toThrow(/\/snapshots/);
+  });
+
+  it("trims a padded goatcounter url", () => {
+    const url = "https://jisr.goatcounter.com/count";
+    expect(
+      readSiteEnv({
+        NEXT_PUBLIC_SITE_URL: "https://jisr.vercel.app",
+        NEXT_PUBLIC_GOATCOUNTER_URL: `  ${url}\n`,
+      }).goatCounterUrl,
+    ).toBe(url);
   });
 
   it("treats an empty snapshot base url as unset, like the client does", () => {

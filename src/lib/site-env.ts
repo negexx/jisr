@@ -40,10 +40,14 @@ function parseSiteUrl(raw: string | undefined): string | null {
   if (url.protocol !== "https:" && !(url.protocol === "http:" && local)) {
     return fail(SITE_URL, "must be https (http only for localhost)");
   }
-  if (url.username !== "" || url.password !== "" || url.origin !== raw) {
+  if (url.username !== "" || url.password !== "") {
+    return fail(SITE_URL, "must not contain credentials");
+  }
+  if (url.hostname.endsWith(".")) return fail(SITE_URL, "hostname must not end with a dot");
+  if (url.origin !== raw) {
     return fail(
       SITE_URL,
-      "must be a bare origin: no credentials, path, query, hash or trailing slash",
+      `must be a bare origin (no path, query, hash or trailing slash); write it as ${url.origin}`,
     );
   }
   return url.origin;
@@ -51,6 +55,9 @@ function parseSiteUrl(raw: string | undefined): string | null {
 
 // The browser (snapshotBaseUrl in src/lib/snapshot/use-snapshot.ts) uses the raw value untrimmed
 // and builds `${base}/manifest.json`, so padding or a trailing slash would break every fetch.
+// The only same-origin path is /snapshots: that is where the files, the proxy matcher exclusion and
+// the cache headers exist. Any other path-style value (including `/\host` and `/<TAB>/host`, which
+// browsers resolve to another origin) is rejected.
 function parseSnapshotBaseUrl(raw: string | undefined): string | null {
   if (raw === undefined || raw === "") return null;
   if (raw !== raw.trim()) return fail(SNAPSHOT_BASE_URL, "must not have surrounding whitespace");
@@ -59,11 +66,16 @@ function parseSnapshotBaseUrl(raw: string | undefined): string | null {
   }
   if (raw.endsWith("/")) return fail(SNAPSHOT_BASE_URL, "must not end with a slash");
   if (raw.startsWith("/")) {
-    if (raw.startsWith("//")) return fail(SNAPSHOT_BASE_URL, "must not be protocol-relative");
+    if (raw !== "/snapshots") {
+      return fail(
+        SNAPSHOT_BASE_URL,
+        "the only allowed relative value is /snapshots (otherwise use an https:// URL)",
+      );
+    }
     return raw;
   }
   const url = parseAbsolute(SNAPSHOT_BASE_URL, raw);
-  if (url.protocol !== "https:") return fail(SNAPSHOT_BASE_URL, "must be https or a /path");
+  if (url.protocol !== "https:") return fail(SNAPSHOT_BASE_URL, "must be /snapshots or https");
   if (url.username !== "" || url.password !== "") {
     return fail(SNAPSHOT_BASE_URL, "must not contain credentials");
   }
@@ -78,6 +90,8 @@ function parseGoatCounterUrl(raw: string | undefined): string | null {
   return raw;
 }
 
+// Build time and server components only: it reads process.env by name, which Next does not inline
+// into client bundles, so a call from client code would silently see "not indexable".
 export function readSiteEnv(env: RawEnv = process.env): SiteEnv {
   const siteUrl = parseSiteUrl(readTrimmed(env, SITE_URL));
   const snapshotBaseUrl = parseSnapshotBaseUrl(env[SNAPSHOT_BASE_URL]);
