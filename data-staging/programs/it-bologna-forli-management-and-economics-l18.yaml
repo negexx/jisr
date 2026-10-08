@@ -1,0 +1,106 @@
+slug: it-bologna-forli-management-and-economics-l18
+institution: it-bologna-forli
+country: IT
+city: forli
+field: business-economics
+level: bachelor
+name: Management and Economics
+summary:
+  fr:
+    text: Management and Economics, Università degli studi di Bologna (Forlì). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Management and Economics, Università degli studi di Bologna (Forlì). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Management and Economics, Università degli studi di Bologna (Forlì). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/5892
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 100000
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-1
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: School-leaving certificate
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez le nombre de places disponibles et la procédure d'admission (concours) pour ce programme.
+          status: draft
+        en:
+          text: Check the number of available places and the admission procedure (entrance exam) for this programme.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/5892
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://corsi.unibo.it/1cycle/Management/how-to-enrol
+    last_verified_at: null
+  page-3:
+    url: https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions/reduced-fixed-fee-for-citizens-of-particularly-poor-and-developing-countries-or-non-eu-non-oecd-countries
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-bologna-forli-management-and-economics-l18
+  name: Management and Economics
+  sourceId: mur:03701:l18:management-and-economics@forli
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: applicationChannel
+      url: https://corsi.unibo.it/1cycle/Management/how-to-enrol
+      quote: Pre-enrolment on Universitaly After you have passed the entrance exam, if you have not already done so, submit the pre-enrolment application online on Universitaly.
+    - fact: tuition
+      url: https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions/reduced-fixed-fee-for-citizens-of-particularly-poor-and-developing-countries-or-non-eu-non-oecd-countries
+      quote: Reduced fixed fee for nationals of non-OECD countries Requirements Enrolled on a first- or single-cycle degree programme Enrolled in second-cycle programmes If you are a freshman or have the minimum number of credits € 1,000 + €157.04 € 1,200 + €157.04
+    - fact: tuition
+      url: https://www.unibo.it/en/attachments/nonOECDcountries.pdf/@@download/file/non-OECD-countries.pdf
+      quote: Macedonia del Nord Malaysia Maldive Marocco Maurizio Moldova
+  notes: "Tuition: tuition at Unibo is a fixed first instalment of €157.04 (regional tax + stamp duty + insurance, not tuition) plus a variable contribution based on ISEE / foreign income. For a Moroccan citizen with household outside Italy, the reduced flat fee (non-OECD country list) applies: the quote gives €1,000/€1,200 for freshmen or with minimum credits and €1,200/€1,400 for those without; the FALLBACK range reported (€1,000–€1,200) is per the TASK since no quote ties this programme to a specific group. The 'Marocco' quote is on the official non-OECD country list (a.y. 2026/27). Without submitting exemption documents the amount is the maximum contribution set for the programme, not stated on these pages: the range reported here is the reduced fixed fee for non-OECD nationals. Intakes: only the first selection is open to non-EU citizens residing abroad; a second selection and an extraordinary intake exist but are reserved to EU or equivalent-status applicants. The 2026/27 academic year date is 10 February 2026 to 4 May 2026. This programme is 'CLAME' (Management and Economics) per the entrance exam page (CLABE is the other programme). The programme page says 'A.Y. 2024/2025' for the course structure but the admission page is for a.y. 2026/27; the annual registration fee figures are from the 2026/27 pages. The last instalment (€157.04) is called 'first instalment for registration' and is not tuition. Admission rules are stated as manual checks due to exam-based selection.; Reduced fixed fee (flat tax) of the University of Bologna for citizens of non-OECD countries, a.y. 2026/27 (the page says 'fixed amounts for the a.y. 2026/27'): first-cycle freshman EUR 1,000 per year (EUR 1,200 without the minimum credits, not applicable to a freshman). Morocco (Marocco) is on the 'Elenco Paesi NON OCSE' 2026 list and is NOT on the particularly-poor list (that list was checked, EUR 500 tier does not apply). Requirements: citizenship of a listed country and family income/assets only outside Italy (declaration only). The separate EUR 157.04 first instalment (regional tax EUR 140 + stamp EUR 16 + insurance EUR 1.04) is always due and is NOT included in the amount. The year (2026/27) is stated in the page intro, outside the quoted table, to keep the quote contiguous."

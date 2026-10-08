@@ -1,0 +1,143 @@
+slug: it-pavia-pavia-artificial-intelligence-l31
+institution: it-pavia-pavia
+country: IT
+city: pavia
+field: computer-science
+level: bachelor
+name: Artificial intelligence
+summary:
+  fr:
+    text: Artificial intelligence, Università degli studi di Pavia (Pavia). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Artificial intelligence, Università degli studi di Pavia (Pavia). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Artificial intelligence, Università degli studi di Pavia (Pavia). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 39000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: 2026-04-28
+      applicationDeadline: 2026-05-18
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-1
+  info_kind: official
+documents:
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport valide ou carte d'identité
+          status: draft
+        en:
+          text: Valid passport or ID card
+          status: draft
+      translationRequired: null
+    - slug: secondary-school-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary School certificate
+          status: draft
+      translationRequired: null
+    - slug: sat-scoresheet
+      name:
+        fr:
+          text: Relevé de notes SAT
+          status: draft
+        en:
+          text: SAT scoresheet pdf file
+          status: draft
+      translationRequired: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Test d'entrée SAT requis ; score minimum 979/1600.
+          status: draft
+        en:
+          text: SAT entry test required; minimum score 979/1600.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://en.unipv.it/en/education/bachelors-and-masters-degree-programs/after-admission/non-eu-prospective-students
+    last_verified_at: null
+  page-2:
+    url: https://en.unipv.it/sites/sten/files/2026-05/Fees'%20Regulation%20a.y.%202026-27.pdf
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-pavia-pavia-artificial-intelligence-l31
+  name: Artificial intelligence
+  sourceId: mur:01801:l31:artificial-intelligence@pavia
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: applicationChannel
+      url: https://en.unipv.it/en/education/bachelors-and-masters-degree-programs/after-admission/non-eu-prospective-students
+      quote: As established by the Italian Ministry of University and Research (MUR), the pre-enrollment application for a study visa must be submitted online through the portal Universitaly.
+    - fact: documents
+      url: https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy
+      quote: "Documents to be uploaded in the application form by the deadline of the application period: Valid passport or ID card. Secondary School certificate."
+    - fact: documents
+      url: https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy
+      quote: SAT scoresheet pdf file (to be uploaded in the application form within the deadline of the call).
+    - fact: tuition
+      url: https://en.unipv.it/sites/sten/files/2026-05/Fees'%20Regulation%20a.y.%202026-27.pdf
+      quote: "Uzbekistan Humanities Area* € 390 Science Area** € 390 * This Area includes study courses of the Fee Area 1 (See Annex 1) ** This Area includes study courses of the Fee Areas 2 and 3 (See Annex 1) The amount due is divided into four instalments: • 1st instalment €146 (payable upon enrolment for students enroling in the 2026-2027 academic year"
+    - fact: tuition
+      url: https://en.unipv.it/sites/sten/files/2026-05/Fees'%20Regulation%20a.y.%202026-27.pdf
+      quote: "Annex 3: Flat rate fee brackets (updated values based on World Bank classification fiscal year 2025) BRACKET 1 Afghanistan Congo, Rep. of Jordan Morocco."
+  notes: "Tuition left out: the pages for non-EU students with a household abroad give either a flat rate range from €390 to €4.550 per year (based on citizenship and area of study, without tying this programme to a bracket and without naming Morocco), or an income-based system with a table of ISEE bands where no single quote states one lowest and one highest fee for this student. No accepted quote ties Morocco to a country group. More application rounds may exist (non-EU students residing outside Italy follow the procedure described on the programme page).; Pavia Flat Rate regime for non-EU students (default when no financial documents are submitted), Annex 3 of the 2026-27 Fees' Regulation: Morocco is listed in BRACKET 1, whose amount is EUR 390 for both the Humanities and the Science area, so the programme's area does not change the figure. The student may opt out of the flat rate for an ISEE-based fee (not proposed). The university's non-EU page calls the flat rate 'the tuition fee'; I note (inference, not stated) that the 1st instalment of 146 looks like regional tax plus stamp duty, so part of the 390 may be regional tax; the regulation does not say so explicitly."

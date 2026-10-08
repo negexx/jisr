@@ -1,0 +1,102 @@
+slug: it-milano-cattolica-brescia-business-and-finance-l18
+institution: it-milano-cattolica-brescia
+country: IT
+city: brescia
+field: business-economics
+level: bachelor
+name: Business and finance
+summary:
+  fr:
+    text: Business and finance, Università Cattolica del "Sacro Cuore" (Brescia). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Business and finance, Università Cattolica del "Sacro Cuore" (Brescia). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Business and finance, Università Cattolica del "Sacro Cuore" (Brescia). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://international.unicatt.it/ucscinternational-undergraduate-programs-business-and-finance
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 880000
+    currency: EUR
+    period: year
+  source: page-1
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-university-direct
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez si vous devez passer le test d'admission Cattolica (section Entry requirements > Mathematics requirements). Les candidatures ne sont acceptées qui si elles sont complètes.
+          status: draft
+        en:
+          text: Check whether you must take the Cattolica Admission Test (see Entry requirements > Mathematics requirements). Applications are accepted only if they are complete.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Places limitées et forte concurrence : certaines candidatures peuvent être placées sur liste d'attente."
+          status: draft
+        en:
+          text: "Limited spots and high competition: some applications may be placed on a waiting list."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://international.unicatt.it/ucscinternational-undergraduate-programs-business-and-finance
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://international.unicatt.it/ucscinternational-admission-and-tuition-application-timeline-5420
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://international.unicatt.it/ucscinternational-Brochure%20Undergraduate_WEB.pdf
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-milano-cattolica-brescia-business-and-finance-l18
+  name: Business and finance
+  sourceId: mur:01504:l18:business-and-finance@brescia
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  notes: "applicationChannel: kept the existing official value; the reader found \"it-universitaly\" at https://international.unicatt.it/ucscinternational-9848.htm; These pages describe Università Cattolica's international application process; the programme's own pages (Overview and Admission and tuition) state that applications for AY 2026/2027 are closed and the next application period opens in Fall 2026 for AY 2027/2028, but no dated application window for non-EU applicants residing abroad is given, so no intake could be quoted. Tuition was left out: the only fee figures found on the supplied pages are for the 3-year Bachelor's Degree in International Relations and Global Affairs (a different programme) and are based on where family income is produced, with no Morocco country-group quote and no tie to Business and Finance. The application procedure page with a dated non-EU deadline (27 May 2025) is for the 2-year Graduate degree in Innovations in Biotechnology Applied to Regenerative Medicine, not for this Bachelor's programme. The Cattolica Admission Test page concerns the Bachelor of Economics and Management, so its test, fee (EUR 60) and score thresholds are not stated for this programme. No document list specific to this programme was found; the enrolment document list page refers to 2019 and is for the enrolment stage of unspecified undergraduate programmes.; Cattolica flat tuition for non-EU families, EUR 8,800 per year: the rate depends on where the family income is produced (not citizenship), so a Moroccan citizen with family income in Morocco pays the non-EU flat rate; one flat rate for all 3-year BSc degrees (brochure table row '3-year BSc degrees', NON-EU residents). Source year: Undergraduate brochure for AY 2026/27 (intakes Sept 2026) and the tuition page that lists the 2026/27 payment deadlines; the amount sentence itself carries no year label, and the page says fees are published each spring for the next academic year and may rise slightly by inflation after the first year. The UCSC International Scholarship (applied for during the application, awarded with the admission offer) would lower it to about EUR 5,900; not used as the tuition. The tuition page shown is under the International Relations programme path but is the shared 'Tuition fees and scholarships' tab (text refers to all Bachelor's)."
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: tuition
+      url: https://international.unicatt.it/ucscinternational-Brochure%20Undergraduate_WEB.pdf
+      quote: 3-year BSc degrees Italian residents (Fees vary according to the financial background) from € 3,800 to € 11,500* Financial aid and scholarship opportunities administered by EDUCatt. For details refer to > educatt.eu EU residents (excluding Italy) € 6,580** NON-EU residents € 8,800
+    - fact: tuition
+      url: https://international.unicatt.it/ucscinternational-admission-and-tuition-tuition-fees-and-scholarships-4480
+      quote: C. Family income produced in Non-EU countries If your family's income is produced outside the European Union and associated states, the tuition fee is a flat rate of € 8,800 per year.

@@ -1,0 +1,77 @@
+slug: it-milano-bocconi-milano-international-economics-and-finance-l33
+institution: it-milano-bocconi-milano
+country: IT
+city: milano
+field: business-economics
+level: bachelor
+name: International Economics and Finance
+summary:
+  fr:
+    text: International Economics and Finance, Università commerciale Luigi Bocconi di Milano (Milano). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: International Economics and Finance, Università commerciale Luigi Bocconi di Milano (Milano). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: International Economics and Finance, Università commerciale Luigi Bocconi di Milano (Milano). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unibocconi.it/en/programs/bachelor-science/international-economics-and-finance
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-1
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1770000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.unibocconi.it/en/programs/bachelor-science/international-economics-and-finance
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/fees
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-milano-bocconi-milano-international-economics-and-finance-l33
+  name: International Economics and Finance
+  sourceId: mur:01503:l33:international-economics-and-finance@milano
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: tuition
+      url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/fees
+      quote: For 2027-28 a.y., for students enrolled to their first year in a Bachelor of Science or Law programme, tuition and fees at Bocconi are set at € 17,700 per year.
+  notes: Bocconi single first-year amount for every BSc student (no nationality or country-group rule on the fees page), a.y. 2027-28. The amount is 'tuition and fees' (the page says the 1st instalment includes regional tax, stamp duties, administrative and registration fee), so it is all-inclusive, not the bare contribution. Partial waivers 20-80% exist (need/merit based) and are not applied. The held programme URL now shows the page titled 'Finance' (BSc, 3 yrs, English); the rename of International Economics and Finance to Finance is an inference, owner to confirm.

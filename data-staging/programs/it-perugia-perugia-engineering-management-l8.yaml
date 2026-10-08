@@ -1,0 +1,126 @@
+slug: it-perugia-perugia-engineering-management-l8
+institution: it-perugia-perugia
+country: IT
+city: perugia
+field: engineering
+level: bachelor
+name: Engineering management
+summary:
+  fr:
+    text: Engineering management, Università degli studi di Perugia (Perugia). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Engineering management, Università degli studi di Perugia (Perugia). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Engineering management, Università degli studi di Perugia (Perugia). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://ing.unipg.it/en/courses/engineering-management/first-cycle-degree-course
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-1
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un diplôme d'études secondaires et un relevé de notes sont exigés pour l'admission.
+          status: draft
+        en:
+          text: A secondary school diploma and transcripts are required for admission.
+          status: draft
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un test d'admission obligatoire (TOLC-I ou équivalent) est requis.
+          status: draft
+        en:
+          text: A valid admission test (TOLC-I or equivalent) is required.
+          status: draft
+    - id: req-4
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un visa étudiant valide est requis selon le pays d'origine.
+          status: draft
+        en:
+          text: A valid student visa is required depending on country of origin.
+          status: draft
+    - id: req-5
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Pour le cours Engineering management, les étudiants demandant un visa doivent obligatoirement passer le test CEnT-S de CISIA.
+          status: draft
+        en:
+          text: For the Engineering management course, students applying for a visa must mandatorily pass the CISIA CEnT-S test.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://ing.unipg.it/en/courses/engineering-management/first-cycle-degree-course
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unipg.it/internazionale/studenti-incoming-e-internazionali/studenti-internazionali/documentazione-titoli-di-studio
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unipg.it/en/international-students/students-wishing-to-enroll/how-to-apply
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-perugia-perugia-engineering-management-l8
+  name: Engineering management
+  sourceId: mur:05401:l8:engineering-management@perugia
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: applicationChannel
+      url: https://www.unipg.it/en/international-students/students-wishing-to-enroll/how-to-apply
+      quote: Once the positive evaluation outcome has been obtained in PICA, students may proceed with the online pre-enrollment on the UNIVERSITALY portal (https://www.universitaly.it).
+  notes: "Tuition: no figure could be stated. The only published amount is the fixed Flat Tax per country group (€400–€1,000 depending on bracket), which is for students whose family income/assets are abroad; although Morocco is listed in CLASSE 3: MEDIUM HUMAN DEVELOPMENT, that list is from an older academic year (fascia flat 23/24 amounts) whereas the current Flat Tax page is for A.Y. 2026/27, so no amount quote from the same academic year as the list can be tied to Morocco. The income-based option is only described without stating a lowest and highest fee for this student, and the general sentence 'Students may expect to pay a yearly tuition usually between 150 and 2200 Euros' depends on family income and merit and is not a stated fee for this programme. Deadlines: for the FREE ACCESS BACHELOR'S DEGREE IN ENGINEERING MANAGEMENT the PICA pre-enrolment period is open until 12:00 am on August 21, 2026; after that, enrolment proceeds on the Universitaly portal for the study visa. A second PICA procedure for non-EU students legally residing in Italy opens on July 1, 2026 and does not apply to this applicant. programmePage: the Italian page https://ing.unipg.it/didattica/corsi-di-studio/engineering-management/engineering-management-l8-l9 is the same programme's own page."

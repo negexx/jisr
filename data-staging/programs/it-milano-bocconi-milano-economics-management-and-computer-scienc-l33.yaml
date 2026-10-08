@@ -1,0 +1,122 @@
+slug: it-milano-bocconi-milano-economics-management-and-computer-scienc-l33
+institution: it-milano-bocconi-milano
+country: IT
+city: milano
+field: business-economics
+level: bachelor
+name: Economics, Management and Computer Science
+summary:
+  fr:
+    text: Economics, Management and Computer Science, Università commerciale Luigi Bocconi di Milano (Milano). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics, Management and Computer Science, Università commerciale Luigi Bocconi di Milano (Milano). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Economics, Management and Computer Science, Università commerciale Luigi Bocconi di Milano (Milano). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unibocconi.it/en/programs/bachelor-science/economics-management-and-computer-science
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1770000
+    currency: EUR
+    period: year
+  source: page-1
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: id-or-passport
+      name:
+        fr:
+          text: Carte d'identité ou passeport
+          status: draft
+        en:
+          text: ID or passport
+          status: draft
+      translationRequired: null
+    - slug: third-last-and-second-last-year-transcripts
+      name:
+        fr:
+          text: Relevés de notes de l'avant-dernière et de l'antépénultième année
+          status: draft
+        en:
+          text: 3rd-last and 2nd-last year transcripts
+          status: draft
+      translationRequired: null
+    - slug: test-score-report
+      name:
+        fr:
+          text: Rapport de score du test
+          status: draft
+        en:
+          text: Test score report
+          status: draft
+      translationRequired: null
+    - slug: secondary-school-diploma
+      name:
+        fr:
+          text: Diplôme d'études secondaires
+          status: draft
+        en:
+          text: Secondary school diploma
+          status: draft
+      translationRequired: null
+  source: page-3
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.unibocconi.it/en/programs/bachelor-science/economics-management-and-computer-science
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://apply.unibocconi.it/en_US/courses/course/18-bemacs-bsc-economics-management-and-computer-science
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/fees
+    last_verified_at: null
+  page-3:
+    url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admissions
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-milano-bocconi-milano-economics-management-and-computer-scienc-l33
+  name: Economics, Management and Computer Science
+  sourceId: mur:01503:l33:economics-management-and-computer-science@milano
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: tuition
+      url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/fees
+      quote: For 2027-28 a.y., for students enrolled to their first year in a Bachelor of Science or Law programme, tuition and fees at Bocconi are set at € 17,700 per year.
+    - fact: documents
+      url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admissions
+      quote: ID or passport (if you are extra-EU) Parents' ID or passport (if you are underaged). 3rd-last and 2nd-last year transcripts Test score report (at least one)
+    - fact: documents
+      url: https://www.unibocconi.it/en/programs/bachelor-science/application-and-admission/enrollment-1
+      quote: admitted students must provide a valid secondary school diploma (national or international) suitable for access to 1st cycle academic studies
+  notes: "La page officielle du programme (management-and-computer-science) ne correspond pas exactement au nom du programme indiqué dans la tâche (Economics, Management and Computer Science), mais il s'agit du même programme de licence en informatique de gestion à Bocconi. Les frais de scolarité sont donnés pour tous les programmes de licence (Bachelor of Science) de Bocconi : 17 700 € par an pour la première année, sans distinction de nationalité. Les échéances d'admission indiquées concernent les candidats internationaux ; il existe également une session Winter avec une date limite en janvier 2027. Aucune information sur les frais pour les étudiants non-UE résidant à l'étranger n'a été trouvée ; le montant indiqué s'applique à tous les étudiants de première année de licence. Les documents listés proviennent de la page des admissions générales et de la page des diplômes."

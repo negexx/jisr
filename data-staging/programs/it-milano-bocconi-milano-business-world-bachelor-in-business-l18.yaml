@@ -1,0 +1,146 @@
+slug: it-milano-bocconi-milano-business-world-bachelor-in-business-l18
+institution: it-milano-bocconi-milano
+country: IT
+city: milano
+field: business-economics
+level: bachelor
+name: Business (World Bachelor in Business)
+summary:
+  fr:
+    text: Business (World Bachelor in Business), Università commerciale Luigi Bocconi di Milano (Milano). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Business (World Bachelor in Business), Università commerciale Luigi Bocconi di Milano (Milano). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Business (World Bachelor in Business), Università commerciale Luigi Bocconi di Milano (Milano). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unibocconi.it/en/programs/bachelor-science/world-bachelor-business
+durationYears:
+  value: 4
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: 2026-08-01
+      applicationDeadline: 2026-11-01
+  source: page-1
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value:
+    - slug: secondary-school-transcripts
+      name:
+        fr:
+          text: Relevés de notes de l'enseignement secondaire
+          status: draft
+        en:
+          text: Secondary school transcripts
+          status: draft
+      translationRequired: null
+    - slug: english-language-proficiency-test
+      name:
+        fr:
+          text: Test de compétence en anglais
+          status: draft
+        en:
+          text: English language proficiency test
+          status: draft
+      translationRequired: null
+    - slug: activities-summary
+      name:
+        fr:
+          text: Résumé des activités
+          status: draft
+        en:
+          text: Activities summary
+          status: draft
+      translationRequired: null
+    - slug: personal-essays-and-wbb-writing-supplement
+      name:
+        fr:
+          text: Essais personnels et supplément de candidature WBB
+          status: draft
+        en:
+          text: Personal essays and WBB writing supplement
+          status: draft
+      translationRequired: null
+    - slug: counselor-or-teacher-recommendation-letters
+      name:
+        fr:
+          text: Lettres de recommandation du conseiller ou d'un enseignant
+          status: draft
+        en:
+          text: Counselor or teacher recommendation letters
+          status: draft
+      translationRequired: null
+    - slug: financial-statement
+      name:
+        fr:
+          text: Attestation financière
+          status: draft
+        en:
+          text: Financial statement
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.unibocconi.it/en/programs/bachelor-science/world-bachelor-business
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admission-world-bachelor-business
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-milano-bocconi-milano-business-world-bachelor-in-business-l18
+  name: Business (World Bachelor in Business)
+  sourceId: mur:01503:l18:business-world-bachelor-in-business@milano
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: intakes
+      url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admission-world-bachelor-business
+      quote: CommonApp application opens for ED and EA 1 August 2026
+    - fact: intakes
+      url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admission-world-bachelor-business
+      quote: CommonApp application deadline for ED and EA 1 November 2026
+    - fact: intakes
+      url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admission-world-bachelor-business
+      quote: the program aims to provide a cohort of 45-50 international students with a solid preparation in the field of business management
+    - fact: documents
+      url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admission-world-bachelor-business
+      quote: "Secondary school transcripts: from grade 9 to grade 12 or from grade 10 to grade 13 (depending on school system)."
+    - fact: documents
+      url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admission-world-bachelor-business
+      quote: English language proficiency test (please check here the English Proficiency Criteria)
+    - fact: documents
+      url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admission-world-bachelor-business
+      quote: Activities summary Personal essays and WBB writing supplement Counselor or teacher recommendation letters
+    - fact: documents
+      url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admission-world-bachelor-business
+      quote: Financial statement (check here further information on the documentation of financial support) to be uploaded on CommonApp within the deadline of November, 1st 2026.
+  notes: "Aucun tarif de scolarité publié pour ce programme : la page des frais indique « For 2027-28 a.y., for students enrolled to their first year in a Bachelor of Science or Law programme, tuition and fees at Bocconi are set at € 17,700 per year. » mais renvoie explicitement aux pages du WBB pour ce programme (« for the WBB (World Bachelor in Business) you can find more information here »), donc ce montant général n'est pas retenu pour le WBB. Aucune page ne donne de frais spécifiques au WBB ni de groupe par nationalité incluant le Maroc. Le canal de candidature est le portail Common Application de USC (aucune mention d'Universitaly). Les deux tours ED/EA partagent la même date limite (1er novembre 2026) ; d'autres tours existent selon le site USC."

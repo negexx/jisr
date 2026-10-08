@@ -1,0 +1,115 @@
+slug: it-ca-foscari-venezia-roncade-digital-management-l18
+institution: it-ca-foscari-venezia-roncade
+country: IT
+city: roncade
+field: business-economics
+level: bachelor
+name: Digital Management
+summary:
+  fr:
+    text: Digital Management, Università Ca' Foscari Venezia (Roncade). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Digital Management, Università Ca' Foscari Venezia (Roncade). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Digital Management, Università Ca' Foscari Venezia (Roncade). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://apply.unive.it/courses/course/593-ba-digital-management
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 893400
+    currency: EUR
+    period: year
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Programme à admission limitée : un test d'entrée écrit en ligne (mathématiques et raisonnement) est obligatoire. Les candidats non-UE ayant besoin d'un visa doivent déjà avoir les résultats officiels d'un test d'entrée reconnu au moment de la soumission."
+          status: draft
+        en:
+          text: Limited-admission programme requiring an online written entry test (mathematics and reasoning). Non-EU applicants requiring a visa must already have their official results of one of the accepted entry tests at the moment of submission.
+          status: draft
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Âge minimum : les candidats mineurs ne peuvent postuler que s'ils auront 18 ans au 31 décembre 2026."
+          status: draft
+        en:
+          text: "Minimum age: underage applicants may only apply if they will turn 18 years old by 31 December 2026."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://apply.unive.it/courses/course/593-ba-digital-management
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unive.it/pag/40813/
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://www.unive.it/pag/41327/
+    last_verified_at: 2026-10-05
+_review:
+  kind: programs
+  slug: it-ca-foscari-venezia-roncade-digital-management-l18
+  name: Digital Management
+  sourceId: mur:02701:l18:digital-management@roncade
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: tuition
+      url: https://apply.unive.it/courses/course/593-ba-digital-management
+      quote: Tuition fee €8,934 per year
+    - fact: tuition
+      url: https://www.unive.it/pag/fileadmin/user_upload/inglese/international/doc/degree-seeking/CaFoscari_EnglishDegreeProgrammes.pdf
+      quote: "**Exceptions are the programmes in Digital Management (8,934 euro), Hospitality Innovation and e-Tourism (7,123 euro) and Ancient Civilizations for the Contemporary World (4,350 euro)."
+  notes: "Tuition: the programme page gives €8,934 per year; the English programmes brochure confirms that Digital Management is an exception charged 8,934 euro (rather than the €1,300 flat tax for non-EU students from countries other than the OECD or developing countries). Evidence quotes are from the 2026/2027 brochure and the programme page; the university's non-EU flat-tax page is for a.y. 2025/2026. Timeline: applications for 2026/2027 opened on 17 December 2025 (https://www.unive.it/pag/12520: \"Ca’ Foscari will begin accepting applications on December 17, 2025.\"), but no source gives a closing application deadline for non-EU applicants; the 30 September 2026 date is the Universitaly pre-enrolment deadline (https://www.unive.it/pag/40813/). The programme page also lists 11 Sept 2026 as the study start date, which conflicts with the Universitaly deadline. No dated applicationDeadline is therefore included. Documents: attested under 2026/2027 requirements; \"translationRequired\" is set only for documents the pages explicitly say must have English or Italian official translations. The application channel for this non-EU applicant living abroad is the Universitaly pre-enrolment portal."

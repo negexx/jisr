@@ -1,0 +1,81 @@
+slug: it-padova-padova-economics-governance-and-decision-making-l33
+institution: it-padova-padova
+country: IT
+city: padova
+field: business-economics
+level: bachelor
+name: Economics, governance and decision-making
+summary:
+  fr:
+    text: Economics, governance and decision-making, Università degli studi di Padova (Padova). Programme recensé sur Universitaly, le portail de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics, governance and decision-making, Università degli studi di Padova (Padova). Programme listed on Universitaly, the Italian Ministry of University and Research (MUR) portal of the degree offer.
+    status: draft
+  ar:
+    text: Economics, governance and decision-making, Università degli studi di Padova (Padova). برنامج مدرج على بوابة Universitaly لعرض التكوين التابعة لوزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.economia.unipd.it/en/Bachelor%27s-degree-EGDM/bachelor%E2%80%99s-degree-economics-governance-and-decision-making
+durationYears:
+  value: 3
+  source: page-1
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 279000
+    maxAmountMinor: 299000
+    currency: EUR
+    period: year
+  source: page-2
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.economia.unipd.it/en/Bachelor%27s-degree-EGDM/bachelor%E2%80%99s-degree-economics-governance-and-decision-making
+    last_verified_at: 2026-10-08
+  page-1:
+    url: https://apply.unipd.it/courses/course/258-economics-governance-and-decision-making
+    last_verified_at: null
+  page-2:
+    url: https://www.unipd.it/contribuzione-studentesca
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-padova-padova-economics-governance-and-decision-making-l33
+  name: Economics, governance and decision-making
+  sourceId: universitaly:1625480
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: durationYears
+      url: https://apply.unipd.it/courses/course/258-economics-governance-and-decision-making
+      quote: Nominal duration 3 years (180 ECTS)
+    - fact: tuition
+      url: https://www.unipd.it/contribuzione-studentesca
+      quote: Gruppo di appartenenza del corso di studio - Gruppo A (Umanistico) Contributo onnicomprensivo per studenti con cittadinanza di Stati non appartenenti all'Unione europea e non residenti in Italia (A1) € 2790 Contributo onnicomprensivo per studenti provenienti da Paesi particolarmente poveri* (A2) € 930 Gruppo di appartenenza del corso di studio - Gruppo B (Scientifico + Scienze della Formazione Primaria) Contributo onnicomprensivo per studenti con cittadinanza di Stati non appartenenti all'Unione europea e non residenti in Italia (B1) € 2990
+  notes: "Tuition: the programme belongs to Gruppo A (Humanities), which includes the School of Economics and Political Science, so the fixed all-inclusive fee for non-EU citizens not resident in Italy is EUR 2,790/year (academic year 2026/27); this fee can be waived only in part (regional tax reduction via ISEE parificato) and the amount is not recalculated. This is a fixed fee, not an income-based range. Intakes: the non-EU call for AY 2027/28 runs 7 January 2027 – 7 March 2027; a second call for EU and EU-equated students (9 March – 9 April 2027) exists but does not apply to this applicant. applicationChannel: the university tells applicants to apply on apply.unipd.it; the pages do not state that non-EU applicants residing abroad must pre-enrol on Universitaly, so 'it-university-direct' was used.; Padova fixed non-recalculable contribution (contributo onnicomprensivo) for non-EU citizens with non-Italian household, enrolled from 2023/24, rules for 2026/27 (bando contribuzione 2026/27 Table 4 and unipd.it/contribuzione-studentesca): group A 2,790 EUR, group B 2,990 EUR. Group not tied to the programme by any quote, so the range of the two fixed figures is given. The programme belongs to the Department of Economics and Management (probably group A, Scuola di Economia e Scienze Politiche = 2,790), but no quote ties it to a group. The 'Paesi particolarmente poveri' reduced figure (930 / 996.66) is not used: Morocco is not in the DM 176/2026 list (MUR PDF), and the page cites DM 166/2025 instead (conflict between pages on which decree applies; neither list names Morocco as far as read). Regional tax and stamp (about 208 EUR) are extra and not included. CONFLICT: the programme factsheet on apply.unipd.it (intake 2027/28) shows 'Tuition fee EUR 2,950 per year' (waivable via ISEE) which matches neither 2,790 nor 2,990; 2027/28 rules were not found, so the 2026/27 rule is used."

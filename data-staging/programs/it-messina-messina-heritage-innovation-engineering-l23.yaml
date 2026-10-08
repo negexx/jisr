@@ -1,0 +1,103 @@
+slug: it-messina-messina-heritage-innovation-engineering-l23
+institution: it-messina-messina
+country: IT
+city: messina
+field: engineering
+level: bachelor
+name: Heritage Innovation Engineering
+summary:
+  fr:
+    text: Heritage Innovation Engineering, Università degli studi di Messina (Messina). Programme recensé sur Universitaly, le portail de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Heritage Innovation Engineering, Università degli studi di Messina (Messina). Programme listed on Universitaly, the Italian Ministry of University and Research (MUR) portal of the degree offer.
+    status: draft
+  ar:
+    text: Heritage Innovation Engineering, Università degli studi di Messina (Messina). برنامج مدرج على بوابة Universitaly لعرض التكوين التابعة لوزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://international.unime.it/study-us/english-taught-programmes
+durationYears:
+  value: 3
+  source: page-1
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-1
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 10000
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifiez les critères d'entrée par pays (UniME Entry Criteria by Country) pour confirmer que votre Baccalauréat marocain permet l'accès à ce Bachelor.
+          status: draft
+        en:
+          text: Check the UniME Entry Criteria by Country to confirm that your Moroccan Baccalauréat qualifies for entry to this Bachelor.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://international.unime.it/study-us/english-taught-programmes
+    last_verified_at: 2026-10-08
+  page-2:
+    url: https://international.unime.it/study-us/application-and-admission
+    last_verified_at: 2026-10-08
+  page-1:
+    url: https://heritage-innovation-engineering.cdl.unime.it/en
+    last_verified_at: null
+  page-3:
+    url: https://international.unime.it/study-us/fees-and-fundings
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-messina-messina-heritage-innovation-engineering-l23
+  name: Heritage Innovation Engineering
+  sourceId: universitaly:1625559
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: durationYears
+      url: https://heritage-innovation-engineering.cdl.unime.it/en
+      quote: Duration 3 years Credits 180
+    - fact: durationYears
+      url: https://international.unime.it/sites/sten/files/2026-02/BA_Heritage%20Innovation%20Engineering_2026.pdf
+      quote: Department Engineering Duration 3 Years
+    - fact: teachingLanguages
+      url: https://heritage-innovation-engineering.cdl.unime.it/en
+      quote: Access Free Language English
+    - fact: tuition
+      url: https://international.unime.it/study-us/fees-and-fundings
+      quote: Micronesia, Fed. Sts. - Morocco - Nicaragua - Nigeria - Pakistan - Papua New Guinea - Philippines - Samoa - Sri Lanka - Tajikistan - Tunisia - Uzbekistan - Vanuatu - Vietnam - West Bank and Gaza – Zimbabwe € 256,00 (€ 100,00 + regional tax)
+    - fact: tuition
+      url: https://international.unime.it/study-us/fees-and-fundings
+      quote: Effective from the 2025/2026 academic year, UniME annual tuition fees for international students are determined based on their country of origin category.
+  notes: "Two academic years of calls are given on the Application and Admission page; the intake shown is the first round (1st Call - 'Early Bird') for non-EU visa applicants of A.Y. 2027/2028, and further rounds exist (2nd: 2 Feb–19 Mar 2027; 3rd: 8 Apr–8 May 2027). Tuition: the pages state a yearly fee by country group, but no quote ties Morocco to the group names used by the programme itself (degree-class/department), so no group-specific figure for this programme could be quoted; the figure quoted is the 'fixed rate ... due during the enrolment process' of € 156.00 (Group A regional tax only) because no accepted quote ties the programme to a group, and the other accepted quote names the enroling country-group amount (€ 256,00 for the Morocco group). Application channel: the pages say non-EU students enrolling in degree programmes apply for the entry visa on the Universitaly portal, but no accepted quote explicitly states the pre-enrolment (preiscrizione) application on Universitaly for this programme, so applicationChannel was left out; the pre-evaluation application itself is made on the UniME Application Portal.; UniME fee by country group, Morocco named in Group B on the fees page itself (and in the UniME List of Countries PDF 2026-04). The page headline figure for Group B is EUR 256, which the page itself splits as EUR 100 + regional tax; tuition proper (university contribution) proposed as EUR 100 per the project rule that the regional tax is not tuition. The student pays 256 in total. Year: page says the country-group system applies effective from 2025/26 (no later change published); the list PDF is dated 2026-04. Owner may prefer 256 (page's own 'yearly tuition fee' label)."

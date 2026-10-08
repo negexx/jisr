@@ -1,0 +1,103 @@
+slug: it-bologna-bologna-economics-and-finance-l33
+institution: it-bologna-bologna
+country: IT
+city: bologna
+field: business-economics
+level: bachelor
+name: Economics and Finance
+summary:
+  fr:
+    text: Economics and Finance, Università degli studi di Bologna (Bologna). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics and Finance, Università degli studi di Bologna (Bologna). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Economics and Finance, Università degli studi di Bologna (Bologna). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://corsi.unibo.it/1cycle/EconomicsFinance/preparing-the-study-plan
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 100000
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: 2026-02-10
+      applicationDeadline: 2026-05-04
+  source: page-1
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-1
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+scholarships: []
+sources:
+  programme:
+    url: https://corsi.unibo.it/1cycle/EconomicsFinance/preparing-the-study-plan
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://corsi.unibo.it/1cycle/EconomicsFinance/how-to-enrol
+    last_verified_at: null
+  page-3:
+    url: https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions/reduced-fixed-fee-for-citizens-of-particularly-poor-and-developing-countries-or-non-eu-non-oecd-countries
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-bologna-bologna-economics-and-finance-l33
+  name: Economics and Finance
+  sourceId: mur:03701:l33:economics-and-finance@bologna
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: intakes
+      url: https://corsi.unibo.it/1cycle/EconomicsFinance/how-to-enrol
+      quote: "First selection (intake): from 10 February 2026 to 4 May 2026, 1:00 PM"
+    - fact: intakes
+      url: https://corsi.unibo.it/1cycle/EconomicsFinance/how-to-enrol
+      quote: Admission to the degree programme is limited to 130 places, 40 of which are reserved for NON-EU citizens resident abroad.
+    - fact: applicationChannel
+      url: https://corsi.unibo.it/1cycle/EconomicsFinance/how-to-enrol
+      quote: After you have passed the entrance exam, if you have not already done so, submit the pre-enrolment application online on Universitaly.
+    - fact: applicationChannel
+      url: https://corsi.unibo.it/1cycle/EconomicsFinance/how-to-enrol
+      quote: Admission to the degree programme is limited to 130 places, 40 of which are reserved for NON-EU citizens resident abroad.
+    - fact: tuition
+      url: https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions/reduced-fixed-fee-for-citizens-of-particularly-poor-and-developing-countries-or-non-eu-non-oecd-countries
+      quote: Reduced fixed fee for nationals of non-OECD countries Requirements Enrolled on a first- or single-cycle degree programme Enrolled in second-cycle programmes If you are a freshman or have the minimum number of credits € 1,000 + €157.04 € 1,200 + €157.04
+    - fact: tuition
+      url: https://www.unibo.it/en/attachments/nonOECDcountries.pdf/@@download/file/non-OECD-countries.pdf
+      quote: Macedonia del Nord Malaysia Maldive Marocco Maurizio Moldova
+  notes: "Tuition: no usable figure found. The programme page states that tuition fees are calculated according to the ISEE certificate with subsidies/exemptions, but no single amount (or lowest-and-highest pair in one quote) for a non-EU student with household abroad is given; the only concrete per-student figures are reduced fixed fees for particularly poor/developing or non-OECD country citizens, and the page's non-OECD list does not name Morocco, so those reduced fees are left out. Intakes: three rounds exist for 2026/27; the first (10 Feb 2026 - 4 May 2026) is used, with a second round from 5 May 2026 to 3 July 2026 and an extraordinary round from 3 September 2026 to 11 September 2026; the non-EU resident-abroad places (40) are in the first intake. There is also a separate matriculation window for non-EU students (upload documents by 21 July 2026 to obtain unconditional pre-enrolment validation without paying the first instalment). Doc translation: the page states qualification may need to be translated, legalised and authenticated ‘if required’, so translationRequired is set only for the qualification, as a conditional requirement.; Reduced fixed fee (flat tax) of the University of Bologna for citizens of non-OECD countries, a.y. 2026/27 (the page says 'fixed amounts for the a.y. 2026/27'): first-cycle freshman EUR 1,000 per year (EUR 1,200 without the minimum credits, not applicable to a freshman). Morocco (Marocco) is on the 'Elenco Paesi NON OCSE' 2026 list and is NOT on the particularly-poor list (that list was checked, EUR 500 tier does not apply). Requirements: citizenship of a listed country and family income/assets only outside Italy (declaration only). The separate EUR 157.04 first instalment (regional tax EUR 140 + stamp EUR 16 + insurance EUR 1.04) is always due and is NOT included in the amount. The year (2026/27) is stated in the page intro, outside the quoted table, to keep the quote contiguous."

@@ -1,0 +1,86 @@
+slug: it-bologna-rimini-economics-of-tourism-and-cities-l33
+institution: it-bologna-rimini
+country: IT
+city: rimini
+field: business-economics
+level: bachelor
+name: Economics of Tourism and Cities
+summary:
+  fr:
+    text: Economics of Tourism and Cities, Università degli studi di Bologna (Rimini). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics of Tourism and Cities, Università degli studi di Bologna (Rimini). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Economics of Tourism and Cities, Università degli studi di Bologna (Rimini). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://corsi.unibo.it/1cycle/clet/programme
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-1
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 100000
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://corsi.unibo.it/1cycle/clet/programme
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://corsi.unibo.it/1cycle/clet/how-to-enrol
+    last_verified_at: null
+  page-3:
+    url: https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions/reduced-fixed-fee-for-citizens-of-particularly-poor-and-developing-countries-or-non-eu-non-oecd-countries
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-bologna-rimini-economics-of-tourism-and-cities-l33
+  name: Economics of Tourism and Cities
+  sourceId: mur:03701:l33:economics-of-tourism-and-cities@rimini
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: applicationChannel
+      url: https://corsi.unibo.it/1cycle/clet/how-to-enrol
+      quote: Pre-enrolment on Universitaly After you have passed the entrance exam, if you have not already done so, submit the pre-enrolment application online on Universitaly.
+    - fact: tuition
+      url: https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions/reduced-fixed-fee-for-citizens-of-particularly-poor-and-developing-countries-or-non-eu-non-oecd-countries
+      quote: Reduced fixed fee for nationals of non-OECD countries Requirements Enrolled on a first- or single-cycle degree programme Enrolled in second-cycle programmes If you are a freshman or have the minimum number of credits € 1,000 + €157.04 € 1,200 + €157.04
+    - fact: tuition
+      url: https://www.unibo.it/en/attachments/nonOECDcountries.pdf/@@download/file/non-OECD-countries.pdf
+      quote: Macedonia del Nord Malaysia Maldive Marocco Maurizio Moldova
+  notes: "Tuition: no programme-specific fee quote exists. A reduced fixed fee (flat tax) applies to citizens of particularly poor and developing countries (a list that names Marocco) and of non-OECD countries; the figure used is the first / single-cycle figure from the 2026/27 reduced-fee page ('€500 + €157.04' for freshmen, to '€600 + €157.04' without the minimum credits), excluding the €157.04 first instalment (regional tax + stamp duty + insurance), which is not tuition. The programme itself is not tied to a group by any quote, so the group tie quote is not given. Programme duration, teaching language and application deadlines are not stated on the supplied pages: the dates in the how-to-enrol page (e.g. 26 May 2026) are enrolment deadlines after selection, not application deadlines for the 2026/27 call, and the call itself is not supplied. Additional learning requirements (OFA) and any further intakes/runners-up procedures are not selected here.; Reduced fixed fee (flat tax) of the University of Bologna for citizens of non-OECD countries, a.y. 2026/27 (the page says 'fixed amounts for the a.y. 2026/27'): first-cycle freshman EUR 1,000 per year (EUR 1,200 without the minimum credits, not applicable to a freshman). Morocco (Marocco) is on the 'Elenco Paesi NON OCSE' 2026 list and is NOT on the particularly-poor list (that list was checked, EUR 500 tier does not apply). Requirements: citizenship of a listed country and family income/assets only outside Italy (declaration only). The separate EUR 157.04 first instalment (regional tax EUR 140 + stamp EUR 16 + insurance EUR 1.04) is always due and is NOT included in the amount. The year (2026/27) is stated in the page intro, outside the quoted table, to keep the quote contiguous."

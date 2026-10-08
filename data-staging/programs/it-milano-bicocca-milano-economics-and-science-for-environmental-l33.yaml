@@ -1,0 +1,160 @@
+slug: it-milano-bicocca-milano-economics-and-science-for-environmental-l33
+institution: it-milano-bicocca-milano
+country: IT
+city: milano
+field: business-economics
+level: bachelor
+name: Economics and Science for Environmental Sustainability
+summary:
+  fr:
+    text: Economics and Science for Environmental Sustainability, Università degli studi di Milano-Bicocca (Milano). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics and Science for Environmental Sustainability, Università degli studi di Milano-Bicocca (Milano). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Economics and Science for Environmental Sustainability, Università degli studi di Milano-Bicocca (Milano). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://en.unimib.it/undergraduate/economics-science-environmental-sustainability
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 20000
+    maxAmountMinor: 30000
+    currency: EUR
+    period: year
+  source: page-5
+  info_kind: official
+intakes:
+  value:
+    - startDate: null
+      applicationOpens: 2026-02-18
+      applicationDeadline: 2026-03-31
+  source: page-1
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-3
+  info_kind: official
+documents:
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: High school diploma
+          status: draft
+      translationRequired: null
+  source: page-4
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B2
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-3
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Admission limitée avec examen d'entrée : test CISIA English TOLC-E (ou CEnT-S). Consultez la 'Call for Application' pour les modalités."
+          status: draft
+        en:
+          text: "Limited admission with entry examination: CISIA English TOLC-E (or CEnT-S) test. See the Call for Application for details."
+          status: draft
+    - id: req-4
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Diplôme final de l'enseignement secondaire accompagné d'une traduction officielle en italien ou en anglais ; plus relevé de notes de la dernière année.
+          status: draft
+        en:
+          text: Final secondary school diploma accompanied by an official translation into Italian or English; plus last-year transcript.
+          status: draft
+    - id: req-5
+      source: page-3
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Les candidats non-UE ayant besoin d'un visa doivent téléverser la pré-inscription Universitaly ; l'inscription se fait via le portail de l'université.
+          status: draft
+        en:
+          text: Non-EU visa-requiring applicants must upload the Universitaly pre-enrolment receipt; application is made through the university portal.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://en.unimib.it/undergraduate/economics-science-environmental-sustainability
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://apply.unimib.it/en_GB/courses/course/110-economics-and-science-environmental-sustainability
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://www.unimib.it/internazionalizzazione/informazioni-studenti-internazionali/studenti-italiani-titolo-estero/studenti-comunitari-equiparati-e-stranieri-gia-residenti-italia
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unimib.it/sites/default/files/2026-04/Bando%20LT%20Ecostat%20-%20VISA%20SEEKER%20_DEF_EN_comm.docx%20%282%29.pdf
+    last_verified_at: null
+  page-4:
+    url: https://apply.unimib.it/en_GB/news/new/13-bachelor-degree--required-documents
+    last_verified_at: null
+  page-5:
+    url: https://en.unimib.it/sites/sten/files/2026-06/Contribution%20Guide%2026_27.pdf
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-milano-bicocca-milano-economics-and-science-for-environmental-l33
+  name: Economics and Science for Environmental Sustainability
+  sourceId: mur:01509:l33:economics-and-science-for-environmental-sustainability@milano
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: intakes
+      url: https://www.unimib.it/sites/default/files/2026-04/Bando%20LT%20Ecostat%20-%20VISA%20SEEKER%20_DEF_EN_comm.docx%20%282%29.pdf
+      quote: "Deadlines: from 18 February 2026 to 31 March 2026"
+    - fact: intakes
+      url: https://www.unimib.it/sites/default/files/2026-04/Bando%20LT%20Ecostat%20-%20VISA%20SEEKER%20_DEF_EN_comm.docx%20%282%29.pdf
+      quote: Call for applications for non-EU students residing abroad
+    - fact: documents
+      url: https://apply.unimib.it/en_GB/news/new/13-bachelor-degree--required-documents
+      quote: High School diploma in the original language with legalization, if not previously submitted;
+    - fact: documents
+      url: https://apply.unimib.it/en_GB/news/new/13-bachelor-degree--required-documents
+      quote: "Translation of the degree diploma, if not already available in one of the following languages: Italian, English, French, Spanish, or German;"
+    - fact: tuition
+      url: https://en.unimib.it/sites/sten/files/2026-06/Contribution%20Guide%2026_27.pdf
+      quote: "Group of Countries* Area A courses* Area B courses * 1 2nd instalment: 200,00 € 2nd instalment: 300,00 €"
+    - fact: tuition
+      url: https://en.unimib.it/sites/sten/files/2026-06/Contribution%20Guide%2026_27.pdf
+      quote: "Appendix 4: List of the countries divided by group Group 1 Afghanistan Djibouti Madagascar Serbia Albania Dominica Malawi Seychelles Algeria Dominican Republic Malaysia Sierra Leone American Samoa Ecuador Maldives Solomon Islands Angola Egypt Mali Somalia Anguilla El Salvador Marshall Islands South Africa Antigua and Barbuda Equatorial Guinea Mauritania South Sudan Argentina Eritrea Mauritius Sri Lanka Armenia Eswatini Mexico St. Kitts and Nevis Azerbaijan Ethiopia Micronesia St. Lucia The Bahamas Fiji Moldova St. Vincent and the Grenadines Bangladesh French Polynesia Mongolia Sudan Barbados Gabon Montenegro Suriname Belarus The Gambia Montserrat Syria Belize Georgia Morocco"
+  notes: "Tuition left out: Milano-Bicocca uses an income-based (ISEE) system. The Contribution for International Students gives a fixed tuition fee per country group and course area, but no accepted quote ties Morocco to a country group (no Morocco/Marocco list found for 2026/27), and no accepted quote states one lowest and one highest fee for this student. Page apply.unimib.it/en_GB/contents/content/10-fees-and-funding merely refers to an external Country list and Course Areas, without figures. Application channel: the programme's own call for non-EU students residing abroad directs applicants to the university's apply.unimib.it platform (first round). Deadlines 18 Feb 2026 – 31 Mar 2026 are for non-EU candidates residing abroad (2026/27); later rounds exist for other categories. Note the separate deadline: TOLC test by 27 March 2026, results uploaded by 31 March 2026.; Milano-Bicocca Contribution Guide 2026/27, section 2 (international students: non-Italian citizen, foreign qualification, foreign residence): the 2nd and 3rd instalments are the balance of the Regional Tax plus a FIXED University Tuition Fee set by country group (Appendix 4) and course area A/B (Appendix 1). Morocco is in Group 1 (Appendix 4 heading 'Group 1', the Group 2 heading comes only after the list). Group 1 fixed tuition: Area A EUR 200 (one instalment, the 2nd), Area B EUR 300. The amount quote does not name this programme's area, so by the two-quote rule the range 200-300 is given (area NOT tied in the quotes). For the audit: Appendix 1 of the same guide lists 'Economics and science for environmental sustainability' under Area A, so the applicable figure is EUR 200. Not included: EUR 146 first instalment (stamp duty plus regional tax advance), EUR 150 deposit, and the Regional Tax balance (0, 30 or 60 by ISEE). Group 1 has no 3rd instalment. Year: Contribution Guide 2026/27 (title and deadlines 2026-2027)."

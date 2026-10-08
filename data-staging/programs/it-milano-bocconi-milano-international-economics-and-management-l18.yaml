@@ -1,0 +1,91 @@
+slug: it-milano-bocconi-milano-international-economics-and-management-l18
+institution: it-milano-bocconi-milano
+country: IT
+city: milano
+field: business-economics
+level: bachelor
+name: International Economics and Management
+summary:
+  fr:
+    text: International Economics and Management, Università commerciale Luigi Bocconi di Milano (Milano). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: International Economics and Management, Università commerciale Luigi Bocconi di Milano (Milano). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: International Economics and Management, Università commerciale Luigi Bocconi di Milano (Milano). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unibocconi.it/en/programs/bachelor-science/international-economics-and-management
+durationYears:
+  value: 3
+  source: page-2
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-1
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 1770000
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Vérifier sur la page d'admission du programme les conditions exactes pour les candidats internationaux (diplôme étranger, sélection, tests).
+          status: draft
+        en:
+          text: Check the programme's admission page for the exact conditions for international applicants (foreign diploma, selection, tests).
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.unibocconi.it/en/programs/bachelor-science/international-economics-and-management
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://apply.unibocconi.it/en_US/courses/course/44-biem-bsc-international-economics-and-management
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/fees
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-milano-bocconi-milano-international-economics-and-management-l18
+  name: International Economics and Management
+  sourceId: mur:01503:l18:international-economics-and-management@milano
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: tuition
+      url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/fees
+      quote: For 2027-28 a.y., for students enrolled to their first year in a Bachelor of Science or Law programme, tuition and fees at Bocconi are set at € 17,700 per year.
+  notes: "Le programme nommé dans la tâche (« International Economics and Management ») ne figure pas sous ce nom sur les pages fournies : la page produit de l'URL indiquée par la tâche affiche « <title>Management | Bocconi University</title> » et renvoie en réalité au BSc in Management (classe L-18, 180 CFU, enseigné en anglais, 3 ans). Tous les faits de ce JSON concernent donc ce programme de premier cycle de la classe L-18. Deux tours de candidature existent pour l'international (Early Session 2–29 septembre 2026 et Winter Session 25 novembre 2026 – 26 janvier 2027) ; seul le premier tour est saisi. Les dates d'ouverture/fermeture proviennent de la phrase « Early Session 2 - 29 September 2026 (3:00pm Italian time) » et de la phrase indiquant que les candidats internationaux peuvent réserver le test en ligne à partir du 13 juillet 2026. Pour les frais de scolarité : la page dit que pour 2027-28 les frais pour les étudiants de première année de Bachelor of Science ou Law sont fixés à 17 700 € par an, montant général non différencié par nationalité ; les pages fournies ne précisent pas de groupe tarifaire ni de dispense spéciale pour les étudiants non-UE résidant à l'étranger, donc ce montant est utilisé tel quel (avec la réserve qu'il s'agit d'un tarif annuel de référence). Aucune page ne mentionne Universitaly, la préinscription obligatoire pour les candidats résidant au Maroc, ni un formulaire de candidature propre à l'université pour ce programme ouvert aux candidats non-UE résidant à l'étranger ; je n'ai donc pas extrait la « applicationChannel ». Les documents requis listés proviennent de la page « Admissions » (ID/passport, documents des parents si mineur, relevés des deux dernières années, rapport de score du test). Aucun document n'exige une traduction d'après ces pages. »"

@@ -1,0 +1,123 @@
+slug: it-napoli-vanvitelli-caserta-data-analytics-l41
+institution: it-napoli-vanvitelli-caserta
+country: IT
+city: caserta
+field: business-economics
+level: bachelor
+name: Data Analytics
+summary:
+  fr:
+    text: Data Analytics, Università degli studi della Campania "Luigi Vanvitelli" (Caserta). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Data Analytics, Università degli studi della Campania "Luigi Vanvitelli" (Caserta). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Data Analytics, Università degli studi della Campania "Luigi Vanvitelli" (Caserta). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-1
+  info_kind: official
+documents:
+  value:
+    - slug: identity-document
+      name:
+        fr:
+          text: Document d'identité en cours de validité
+          status: draft
+        en:
+          text: Valid identity document
+          status: draft
+      translationRequired: null
+    - slug: tax-code
+      name:
+        fr:
+          text: Code fiscal
+          status: draft
+        en:
+          text: Tax code
+          status: draft
+      translationRequired: null
+    - slug: passport-photo
+      name:
+        fr:
+          text: Photo format passeport
+          status: draft
+        en:
+          text: Passport-size photo
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: language_proficiency
+      language: en
+      minCefr: B1
+      certificateRequired: null
+      acceptedTests: []
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "La sélection se fait par le test CISIA CEnT-S (seules les sections Mathématiques et Raisonnement sont prises en compte). Score minimum : 11 points au total dont 6 en Mathématiques. Un test d'anglais peut être exigé."
+          status: draft
+        en:
+          text: "Selection is by the CISIA CEnT-S test (only the Mathematics and Reasoning sections count). Minimum score: 11 points total, with at least 6 in Mathematics. An English interview may be required."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://unicampania.it/RPP/RGCSS/Concorso_DISTABIF_2026_2027/Data_Analytics/Bando_Data_Analytics_non_UE_26_27_EN.pdf
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unicampania.it/RPP/RGCSS/Concorso_DISTABIF_2026_2027/Data_Analytics/Re-emission_non-UE/Riapertura_Bando_non_UE.pdf
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-napoli-vanvitelli-caserta-data-analytics-l41
+  name: Data Analytics
+  sourceId: mur:06306:l41:data-analytics@caserta
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: applicationChannel
+      url: https://www.unicampania.it/RPP/RGCSS/Concorso_DISTABIF_2026_2027/Data_Analytics/Re-emission_non-UE/Riapertura_Bando_non_UE.pdf
+      quote: ISCRIZIONE NEGLI ELENCHI DELLE DOMANDE DI PRESCRIZIONE AI CORSI DI STUDIO IN DATA ANALYTICS DI QUESTO ATENEO, TRAMITE PORTALE UNIVERSITALY
+    - fact: documents
+      url: https://www.unicampania.it/RPP/RGCSS/Concorso_DISTABIF_2026_2027/Data_Analytics/Re-emission_non-UE/Riapertura_Bando_non_UE.pdf
+      quote: "È OBBLIGATORIO effettuare upload (caricamento in procedura) della seguente documentazione: • documento di identità in corso di validità (upload obbligatario e bloccante); • codice fiscale (upload obbligatorio e bloccante); • foto formato tessera"
+  notes: "Frais de scolarité : aucune quote ne relie ce programme (ou sa classe/département) à un groupe de frais pour un étudiant non-UE avec foyer au Maroc. La page Manifesto Tasse 2026/27 distingue des « Scientific Area 2 » mais elle liste des classes de diplôme dans l'en-tête sans montrer le libellé de la classe ; de plus il s'agit d'un tableau de tranches ISEE (nombreuses lignes), ce que la règle interdit comme tuition. Les pages ne nomment pas le Maroc dans une liste de pays, donc la règle du groupe-pays ne s'applique pas. Le bando mentionne pour le paiement (en l'absence d'ISEE) « € 202,00 per gli studenti stranieri che appartengono a paesi in via di sviluppo » mais aucune quote acceptée ne relie le Maroc à cette catégorie : laissé de côté. Les frais restent donc à vérifier manuellement. Plusieurs tours d'admission existent pour le même candidat non-UE (bando d'avril 2026 avec échéance du 3 juillet 2026, puis ré-émission avec échéance du 21 septembre 2026) : le premier tour indiqué ici est celui du bando ré-émis 2026/27. Langue d'enseignement : le programme est intégralement en anglais."

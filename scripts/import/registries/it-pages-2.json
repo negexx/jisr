@@ -1,0 +1,772 @@
+{
+  "Libera Università Mediterranea \"Giuseppe Degennaro\"": {
+    "institutionSlugs": [
+      "it-casamassima-lum-g-degennaro-casamassima"
+    ],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.lum.it/en/enrolment/",
+          "says": "Non-EU applicants abroad: Universitaly pre-enrolment, then LUM online application form, visa; Foundation Year (12-year rule). No bachelor dates.",
+          "year": null
+        },
+        {
+          "url": "https://www.lum.it/en/admissions/",
+          "says": "Pre-enrolment mandatory for non-EU abroad; invitation letter for visa; document list; only deadline given is old (visa by 30 Nov 2022).",
+          "year": "2022/23"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.lum.it/wp-content/uploads/2025/05/Manifesto-studenti-25-26-2.pdf",
+          "says": "Manifesto degli studi: single contribution table per course (no income brackets), instalment dates, rules for non-EU residents abroad via ministry circular.",
+          "year": "2025/26"
+        },
+        {
+          "url": "https://www.lum.it/wp-content/uploads/2025/06/REGOLAMENTO-ISCRIZIONE-E-CONTRIBUZIONE-2025.pdf",
+          "says": "Student contribution regulation: single contribution, no income brackets, amount set yearly in the Manifesto; annual update capped at 3%.",
+          "year": "2025/26"
+        },
+        {
+          "url": "http://www.lum.it/wp-content/uploads/2026/06/Manifesto-studenti-26-27-V2-4.pdf",
+          "says": "2026/27 Manifesto linked from the news page; file too large for the fetch tool, so its content was not checked.",
+          "year": "2026/27"
+        }
+      ],
+      "countryList": [],
+      "documents": [
+        {
+          "url": "https://www.lum.it/en/admissions/",
+          "says": "Non-EU abroad, bachelor: translated and legalised diploma, Declaration of Value or CIMEA statement, ID, Italian certificate if needed.",
+          "year": "2022/23"
+        }
+      ],
+      "language": [
+        {
+          "url": "https://www.lum.it/laurea-in-business-economics-and-organization/",
+          "says": "Programme page states English certificate at least B2 CEFR required; admission test mentioned.",
+          "year": null
+        }
+      ]
+    },
+    "programmes": {
+      "it-casamassima-lum-g-degennaro-casamassima-economia-ed-organizzazione-aziendale-l18": {
+        "programme": [
+          {
+            "url": "https://www.lum.it/laurea-in-business-economics-and-organization/",
+            "says": "Business Economics and Organization (L-18R), taught entirely in English; B2 English; admission test mentioned.",
+            "year": null
+          },
+          {
+            "url": "https://www.lum.it/wp-content/uploads/2025/06/All.-2-REG-CDS-L18R-ENGLISH-25-26.pdf",
+            "says": "Programme teaching regulation L-18 BEO (found via search, not fetched).",
+            "year": "2025/26"
+          }
+        ],
+        "admissions": [],
+        "other": []
+      }
+    },
+    "notes": "LUM has a single flat contribution for all students, no income brackets and no country groups; no separate non-EU tuition rule found, so a Moroccan applicant pays the same contribution (25/26 Manifesto: 7,500 EUR for the departments incl. Management, shown in Manifesto text). No dated bachelor application window found for non-EU abroad; 2027/28 Manifesto not published. The 2026/27 Manifesto PDF exists but was too large to fetch. Admissions page is stale (2022/23, 2023/24 circular). Foundation Year (5,000 EUR) exists for applicants with fewer than 12 years of schooling."
+  },
+  "Politecnico di Torino": {
+    "institutionSlugs": [
+      "it-torino-politecnico-torino"
+    ],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/bachelor-s-degree-programmes/applicants-with-a-non-italian-qualification",
+          "says": "Non-Italian qualification applicants: timeline for non-EU abroad (language certificate, TIL test, Universitaly pre-enrolment, enrolment), documents, B2 requirement.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/bachelor-s-degree-programmes/calls-for-application-regulations-and-ranking-lists/calls-regulations-26-27",
+          "says": "Index of calls for Bachelor admissions; one call covers all Engineering Area programmes.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.polito.it/sites/default/files/2025-12/Call%20for%20applications%20for%20admissions%20Engineering%20_%20LP%202026-27.pdf",
+          "says": "Call for admission to Engineering Area bachelors (decree 1412/2025); places in Annex A; refers to enrolment regulations for dates.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/bachelor-s-degree-programmes/admission-test",
+          "says": "TIL admission test page (linked from the non-Italian qualification page, not fetched separately).",
+          "year": "2026/27"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.polito.it/sites/default/files/2025-10/ENG_Regolamento%20contribuz_immatricolati_post%20CDA_from25-26.pdf",
+          "says": "Tuition regulation for students first enrolled from 2025/26; Annex 2 lists fees for non-EU students by country (Morocco listed).",
+          "year": "2025/26"
+        },
+        {
+          "url": "https://www.polito.it/sites/default/files/2026-07/Regolamento%20L%20imma%2025_26%20%2B%20LM_LS.pdf",
+          "says": "Italian 2026/27 tuition regulation (decree 701, 10 July 2026) for students enrolled from 2025/26; country annex lists Marocco.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.polito.it/en/education/services-and-life-at-politecnico/right-to-education-and-tuition-fees/tuition-fees",
+          "says": "Tuition fees hub: two regulations apply in 2026/27, newer one for bachelor entrants from 2025/26; link to simulator.",
+          "year": "2026/27"
+        }
+      ],
+      "countryList": [
+        {
+          "url": "https://www.polito.it/sites/default/files/2025-10/ENG_Regolamento%20contribuz_immatricolati_post%20CDA_from25-26.pdf",
+          "says": "Annex 2 (Fee amounts for non-EU students, Art. 3) is a per-country table including MAROCCO.",
+          "year": "2025/26"
+        },
+        {
+          "url": "https://www.polito.it/sites/default/files/2026-07/Regolamento%20L%20imma%2025_26%20%2B%20LM_LS.pdf",
+          "says": "Italian 2026/27 version, annex table of non-EU fees per country including Morocco.",
+          "year": "2026/27"
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/bachelor-s-degree-programmes/applicants-with-a-non-italian-qualification",
+          "says": "Documents for enrolment: passport, diploma, national exam certificate if applicable, language certificate, CIMEA/declaration of value recommended.",
+          "year": "2026/27"
+        }
+      ],
+      "language": [
+        {
+          "url": "https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/bachelor-s-degree-programmes/applicants-with-a-non-italian-qualification",
+          "says": "B2 minimum for English- and Italian-taught bachelors; certificate upload deadline for non-EU abroad.",
+          "year": "2026/27"
+        }
+      ]
+    },
+    "programmes": {
+      "it-torino-politecnico-torino-civil-and-environmental-engineering-l7": {
+        "programme": [
+          {
+            "url": "https://www.polito.it/en/education/bachelor-s-degree-programmes/civil-and-environmental-engineering",
+            "says": "Civil and Environmental Engineering bachelor, language English, capped places with mandatory admission test.",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [],
+        "other": []
+      },
+      "it-torino-politecnico-torino-electronic-and-communications-engineerin-l8": {
+        "programme": [
+          {
+            "url": "https://www.polito.it/en/education/bachelor-s-degree-programmes/electronic-and-communications-engineering",
+            "says": "Electronic and Communications Engineering bachelor, all courses in English.",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [],
+        "other": []
+      }
+    },
+    "notes": "Newest published: A.Y. 2026/27 (no 2027/28 pages yet). Non-EU abroad pay a flat-range fee by country (Annex 2); the old regulation (students enrolled before 2025/26) lists Morocco at 921-2,601 EUR, but the regulation for first-time students from 2025/26 shows MAROCCO 761 in the annex text extracted from the PDF (the layout is garbled, so confirm min/max and amounts by reading the table). Fee reductions by ISEE parificato possible but fee cannot go below the country minimum. Regulation PDFs are Italian/English copies; the English translation has no legal value. Calls: one call for all Engineering programmes; admission via TIL test or SAT. Non-EU abroad sequence 2026/27: language certificate by 22 May, Universitaly pre-enrolment indicative 30 June, TIL ranking list closed 7 July."
+  },
+  "Università Campus Bio-Medico di Roma": {
+    "institutionSlugs": [
+      "it-roma-biomedico-roma"
+    ],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.unicampus.it/2.0/wp-content/uploads/2026/01/ENG_BIOMEDICAL_ENGINEERING_2026-27_call_for_admission-1.pdf",
+          "says": "Call 2026/27: 60 places, 15 reserved for foreign students living abroad; visa/Universitaly, English B2, registration fee 50 EUR, enrolment steps, documents.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unicampus.it/en/courses/training-offer/bachelor-s-degree/departmental-faculty-of-engineering/degree-course-in-biomedical-engineering-l-8/undergraduate-admissions-in-biomedical-engineering-l-8/",
+          "says": "Index of admission notices by window for Biomedical Engineering 2026/27 and 2025/26; 2027/28 only a Summer School session.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unicampus.it/en/transfer-admissions/Biomedical-Engineering-Admissions-2026-2027-IV-Application-Window/",
+          "says": "Fourth 2026/27 window notice: 17 places, 1 reserved for non-EU residing abroad; registration deadline 10 Sept 2026 (from search, not fetched).",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unicampus.it/en/transfer-admissions/Bachelor%27s-Degree-in-Biomedical-Engineering--2027-2028-Summer-School-Session/",
+          "says": "2027/28 intake only for Summer School Engineering 2026 participants; not open to general non-EU applicants.",
+          "year": "2027/28"
+        },
+        {
+          "url": "https://www.unicampus.it/en/external-student-services/get-your-visa/",
+          "says": "Universitaly pre-enrolment (choose Campus Bio-Medico in Step B), type D study visa, residence permit within 8 days.",
+          "year": null
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.unicampus.it/en/degree-course-admissions/taxes-and-contributions/",
+          "says": "Tuition table by course incl. Biomedical Engineering bachelor, first-year fees; no mention of foreign students or country rules.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unicampus.it/en/external-student-services/tuition-fees-and-financial-aid/",
+          "says": "International-student fees page: only Medicine and Foundation Year figures; Lazio region aid; scholarships up to 50%. Looks outdated.",
+          "year": null
+        }
+      ],
+      "countryList": [],
+      "documents": [
+        {
+          "url": "https://www.unicampus.it/2.0/wp-content/uploads/2026/01/ENG_BIOMEDICAL_ENGINEERING_2026-27_call_for_admission-1.pdf",
+          "says": "Call sections on foreign qualifications: declaration of value or CIMEA comparability statement, self-declaration of diploma, enrolment documents.",
+          "year": "2026/27"
+        }
+      ],
+      "language": [
+        {
+          "url": "https://www.unicampus.it/2.0/wp-content/uploads/2026/01/ENG_BIOMEDICAL_ENGINEERING_2026-27_call_for_admission-1.pdf",
+          "says": "English at least B2 CEFR, certifications listed in Annex B of the call.",
+          "year": "2026/27"
+        }
+      ]
+    },
+    "programmes": {
+      "it-roma-biomedico-roma-biomedical-engineering-l8": {
+        "programme": [
+          {
+            "url": "https://www.unicampus.it/en/courses/training-offer/bachelor-s-degree/departmental-faculty-of-engineering/degree-course-in-biomedical-engineering-l-8/",
+            "says": "Biomedical Engineering (L-8), offered entirely in English; links to admissions, fees, international services.",
+            "year": null
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://www.unicampus.it/en/transfer-admissions/Biomedical-Engineering-Admissions-2026-2027-II-Enrollment-Window-with-Excellence-Pathway/",
+            "says": "Second 2026/27 enrolment window with Excellence Pathway and separate ranking for non-European students abroad (from search, not fetched).",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      }
+    },
+    "notes": "Newest call is 2026/27 (windows now closed); no general 2027/28 call yet, only a Summer School session. UCBM is a private university: tuition is one table (2026/27 first-year column shows 2,500+140 and a total 6,571.50+140 per the page, columns garbled) and no nationality-based rule or country list was found. First instalment in the 2026/27 call is 2,640 EUR (single contribution), second due by 12 April 2027. Scholarship: 50% for top non-EU candidates abroad in some years (2023/24). Search results showed one page tagged LM-21 (likely a labelling error)."
+  },
+  "Università commerciale Luigi Bocconi di Milano": {
+    "institutionSlugs": [
+      "it-milano-bocconi-milano"
+    ],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admissions",
+          "says": "Bachelor 2027/28: Early (2-29 Sep 2026) and Winter (25 Nov 2026-26 Jan 2027) sessions, tests, documents, 100 EUR application fee.",
+          "year": "2027/28"
+        },
+        {
+          "url": "https://www.unibocconi.it/en/programs/bachelor-science/application-and-admission/selection-process",
+          "says": "Online Bocconi Test (or SAT/ACT), minimum score 17, booking window for international applicants to 19 Jan 2027.",
+          "year": "2027/28"
+        },
+        {
+          "url": "https://www.unibocconi.it/en/programs/bachelor-science/application-and-admission/selection",
+          "says": "Applicant categories: international vs Italian by school attended; no reserved places mentioned.",
+          "year": "2027/28"
+        },
+        {
+          "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/results-and-enrollment",
+          "says": "Enrolment for non-EU: student visa and permit of stay, diploma upload by July, English B2 for English-taught programs; page still for a.y. 2026-27.",
+          "year": "2026/27"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/fees",
+          "says": "First-year BSc tuition and fees 17,700 EUR/year for 2027-28, waiver steps 20-80%, instalment dates; no nationality-based rule stated.",
+          "year": "2027/28"
+        },
+        {
+          "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/funding/isu-bocconi-scholarship-first-year-students-ay-2027-28",
+          "says": "ISU Bocconi need-based scholarship for first-year students 2027-28 (from search, not fetched).",
+          "year": "2027/28"
+        },
+        {
+          "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/funding/deadlines-and-procedure-ay-2027-28",
+          "says": "Funding deadlines and procedure 2027-28 (from search, not fetched).",
+          "year": "2027/28"
+        }
+      ],
+      "countryList": [],
+      "documents": [
+        {
+          "url": "https://www.unibocconi.it/en/programs/bachelor-science/application-and-admission/enrollment-1",
+          "says": "Secondary diploma rules: 12 years of schooling, national entrance test if any, CIMEA statement or Declaration of Value, upload by end of July.",
+          "year": null
+        }
+      ],
+      "language": [
+        {
+          "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/results-and-enrollment",
+          "says": "English: accepted external certificate or Bocconi English test, B2 or higher for English-taught programs.",
+          "year": "2026/27"
+        }
+      ]
+    },
+    "programmes": {
+      "it-milano-bocconi-milano-business-world-bachelor-in-business-l18": {
+        "programme": [
+          {
+            "url": "https://www.unibocconi.it/en/programs/bachelor-science/world-bachelor-business",
+            "says": "World Bachelor in Business, 4 years, English; specific application and dedicated fees.",
+            "year": null
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admission-world-bachelor-business",
+            "says": "WBB via Common App (USC as university, code 1485); ED/EA rounds, deadline 1 Nov 2026; SAT/ACT optional, essays, English test.",
+            "year": "2027/28"
+          }
+        ],
+        "other": [
+          {
+            "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/fees-and-funding-wbb",
+            "says": "WBB dedicated fees: year 1 USC USD 69,904, year 2 HKUST HKD 250,000, year 3 Bocconi EUR 25,000.",
+            "year": "2025/26"
+          }
+        ]
+      },
+      "it-milano-bocconi-milano-economic-and-social-sciences-l33": {
+        "programme": [
+          {
+            "url": "https://www.unibocconi.it/en/programs/bachelor-science/economics",
+            "says": "BSc Economics, entirely in English. Likely the current name of the old Economic and Social Sciences (L-33); the page does not state it.",
+            "year": "2027/28"
+          }
+        ],
+        "admissions": [],
+        "other": []
+      },
+      "it-milano-bocconi-milano-economics-management-and-computer-scienc-l33": {
+        "programme": [
+          {
+            "url": "https://www.unibocconi.it/en/programs/bachelor-science/management-and-computer-science",
+            "says": "BSc Management and Computer Science, entirely in English. The old URL slug economics-management-and-computer-science now resolves to a differently named page.",
+            "year": "2027/28"
+          }
+        ],
+        "admissions": [],
+        "other": []
+      },
+      "it-milano-bocconi-milano-international-economics-and-finance-l33": {
+        "programme": [
+          {
+            "url": "https://www.unibocconi.it/en/programs/bachelor-science/finance",
+            "says": "BSc Finance (L-33), in English; same content as old International Economics and Finance (BIEF) page now titled Finance.",
+            "year": "2027/28"
+          }
+        ],
+        "admissions": [],
+        "other": [
+          {
+            "url": "https://www.unibocconi.it/en/programs/bachelor-science/international-economics-and-finance",
+            "says": "Our held URL; now titled Finance, English-taught. Search indicates the old BIEF name still appears in 2026/27 guides.",
+            "year": "2027/28"
+          }
+        ]
+      },
+      "it-milano-bocconi-milano-international-economics-and-management-l18": {
+        "programme": [
+          {
+            "url": "https://www.unibocconi.it/en/programs/bachelor-science/management",
+            "says": "BSc Management (L-18), taught in English; the held URL international-economics-and-management now shows this page.",
+            "year": "2027/28"
+          }
+        ],
+        "admissions": [],
+        "other": [
+          {
+            "url": "https://www.unibocconi.it/en/programs/bachelor-science/international-economics-and-management",
+            "says": "Our held URL now shows 'Management' (English); never mentions the old name.",
+            "year": "2027/28"
+          }
+        ]
+      }
+    },
+    "notes": "Bocconi has already published 2027/28 (admissions sessions, test, fees 17,700 EUR). The four BSc programme pages we hold were apparently renamed: Economic and Social Sciences -> Economics (likely), Economics Management and Computer Science -> Management and Computer Science, International Economics and Finance -> Finance, International Economics and Management -> Management; the pages do not say 'formerly', so the mapping is an inference from slugs and class codes in the admissions table, confirm before relying on it. A single tuition figure for all students (no country groups). ISU Bocconi need-based aid: the 2026-27 page said it applies to 'Only Bocconi and Italian applicants' (ambiguous for international applicants). No Morocco-specific rule found. Enrolment and results page still 2026/27."
+  },
+  "Università degli studi di Firenze": {
+    "institutionSlugs": [
+      "it-firenze-firenze"
+    ],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.economia.unifi.it/vp-631-call-for-applications-sustainable-business-for-societal-challenges.html",
+          "says": "SUSBUS 2026/27 call page: 50 places for non-EU, first call only (deadline 11 May 2026, exam 26 May); links to the call PDF.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.susbus.unifi.it/vp-144-how-to-enroll.html",
+          "says": "SUSBUS how to enroll: restricted access, online test (TOLC-E replaced), English B2 requirement, non-EU single session in May.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unifi.it/sites/default/files/2026-06/manifesto_studi_26_27.pdf",
+          "says": "Manifesto 2026/27 section 4.4.3: non-EU bachelor steps (Universitaly pre-enrolment, documents), deadlines (open-access 31 Jul 2026; enrolment 1 Jul-6 Nov 2026).",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unifi.it/en/study-us/access-and-enrolment/calendar-and-key-deadlines",
+          "says": "General calendar 2026/27: enrolment 1 July-6 November 2026; recognition of foreign qualifications.",
+          "year": "2026/27"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.unifi.it/sites/default/files/2026-06/manifesto_studi_26_27.pdf",
+          "says": "Part III fees: residents abroad get a figurative ISEE by World Bank income group (75,500 / 52,500 / 36,500 / 25,500); section 14.2; country annex 5.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://sol.unifi.it/simulatore-tasse-26-27/",
+          "says": "Official fee simulator A.A. 2026/27 (from search, not fetched).",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unifi.it/en/study-us/your-learning-path/fees-isee-and-benefits/understanding-university-costs",
+          "says": "English page on university costs (from search, not fetched).",
+          "year": null
+        }
+      ],
+      "countryList": [
+        {
+          "url": "https://www.unifi.it/sites/default/files/2026-06/manifesto_studi_26_27.pdf",
+          "says": "Annex 5 Income classification by nation, year 2026: lists Morocco (table text garbled in PDF extraction; Morocco appears among the medio-basso entries).",
+          "year": "2026/27"
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://www.unifi.it/sites/default/files/2026-06/manifesto_studi_26_27.pdf",
+          "says": "Non-EU bachelor: secondary title after 12 years, passport with study visa, permit of stay; appendix on foreign qualifications.",
+          "year": "2026/27"
+        }
+      ],
+      "language": [
+        {
+          "url": "https://www.susbus.unifi.it/vp-144-how-to-enroll.html",
+          "says": "English at least B2 (IELTS 6, FCE, TOEFL iBT 72+, or Florence CLA certificate), proof at enrolment.",
+          "year": "2026/27"
+        }
+      ]
+    },
+    "programmes": {
+      "it-firenze-firenze-sustainable-business-for-societal-challe-l18": {
+        "programme": [
+          {
+            "url": "https://www.unifi.it/en/study-us/degree-programs/first-cycle-degree/sustainable-business-societal-challenges",
+            "says": "[B314] Sustainable Business for Societal Challenges, L-18-R, English, restricted access.",
+            "year": null
+          },
+          {
+            "url": "https://www.susbus.unifi.it/vp-144-how-to-enroll.html",
+            "says": "Programme website, enrolment page.",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://www.economia.unifi.it/vp-631-call-for-applications-sustainable-business-for-societal-challenges.html",
+            "says": "Programme call: 250 places in total, 50 non-EU; non-EU only in First Call; dates and call PDF link.",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      }
+    },
+    "notes": "Newest published is 2026/27 (page updated 30 Sept 2026); 2027/28 call not published. Fees: Florence charges by figurative ISEE for residents abroad, grouped by World Bank income class of the country of residence (annex 5 lists Morocco; the PDF text layout is garbled so the group is not unambiguous: Morocco is lower-middle income, likely REDDITO MEDIO-BASSO 36,500). Non-EU applicants abroad: Universitaly pre-enrolment plus programme selection test. The programme call PDF is on economia.unifi.it under upload/sub/Bando test/2026-27_-_BANDO_Susbus_def_1_fto.pdf (not fetched). Previous years' calls (24/25) had a 100 non-EU places split."
+  },
+  "Università degli studi di Palermo": {
+    "institutionSlugs": [
+      "it-palermo-palermo"
+    ],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.unipa.it/mobilita/new-students/new-students---enrolment/enrolment-procedures-for-extra-eu-foreign-students/",
+          "says": "Extra-EU enrolment: Universitaly + UniPa portal steps; bachelor application 15 Apr-20 Jul 2026; fee payment 1 Aug-30 Sep 2026.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unipa.it/mobilita/en/new-students/new-students---enrolment/",
+          "says": "International students enrolment hub (linked from programme page, not fetched).",
+          "year": null
+        },
+        {
+          "url": "https://www.unipa.it/mobilita/.content/documenti/Tutorial-universitaly---Bachelor.pdf",
+          "says": "Universitaly bachelor tutorial (linked from the extra-EU procedure page, not fetched).",
+          "year": null
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.unipa.it/mobilita/en/new-students/tuition-fees/",
+          "says": "Extra-EU abroad: option 1 fixed fee by country list (B2A 211 / B2B 267 / others 378 EUR incl. 156 regional tax); option 2 ISEE parificato.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unipa.it/mobilita/.content/documenti/Tabella_contribuzione_AA_2026-27.pdf",
+          "says": "Table B2 for foreign students 2026/27 (lists B2A/B2B); image-only PDF, text not extractable.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unipa.it/servizi/segreterie/.content/documenti/regolamenti_calendari/2026/contrib-stu-2026_27.pdf",
+          "says": "General student contribution table 2026/27 (CdA 2 Jul 2026), Italian bands.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unipa.it/servizi/segreterie/.content/documenti/regolamenti_calendari/2024/5398717-Regolamento-per-la-contribuzione-studentesca-2024-2025.pdf",
+          "says": "Contribution regulation (2024/25): ISEE parificato rule and Tabella B2 for study-visa applicants without documents.",
+          "year": "2024/25"
+        }
+      ],
+      "countryList": [
+        {
+          "url": "https://www.unipa.it/mobilita/.content/documenti/foreing-Table.pdf",
+          "says": "Table B2 with countries in list A (particularly poor) and list B (below world average income); Morocco is in list B. Older table (file dated April 2024, amounts 156/256/356).",
+          "year": null
+        },
+        {
+          "url": "https://www.unipa.it/mobilita/.content/documenti/Tabella_contribuzione_AA_2026-27.pdf",
+          "says": "2026/27 B2A/B2B country lists; image-only, so Morocco's list could not be read.",
+          "year": "2026/27"
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://www.unipa.it/mobilita/new-students/new-students---enrolment/enrolment-procedures-for-extra-eu-foreign-students/",
+          "says": "Bachelor documents: passport, photo, high-school diploma, proof of Italian B2 or UniPa test (for Italian-taught); also check English route.",
+          "year": "2026/27"
+        }
+      ],
+      "language": [
+        {
+          "url": "https://www.unipa.it/mobilita/en/new-students/admission-requirements/",
+          "says": "Language requirements page (linked from programme page, not fetched).",
+          "year": null
+        }
+      ]
+    },
+    "programmes": {
+      "it-palermo-palermo-industrial-and-information-engineering-l8": {
+        "programme": [
+          {
+            "url": "https://www.unipa.it/mobilita/en/new-students/international-master-degrees/bachelor-degree-in-industrial-and-information-engineering/",
+            "says": "Bachelor in Industrial and Information Engineering (L-8 and L-9, codes 2492/2493); links to manifesto PDFs.",
+            "year": null
+          },
+          {
+            "url": "https://www.unipa.it/servizi/internationalrelations/.content/documenti/L-Industrial-and-Information-Eng-L-8---manifesto.pdf",
+            "says": "Study plan A.A. 2026/27, L-8R, access free (accesso libero), delivered entirely in English.",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [],
+        "other": []
+      }
+    },
+    "notes": "Newest published: 2026/27 (no 2027/28). Programme is open access, entirely in English. Fee rule for extra-EU residents abroad: fixed contribution by country list or ISEE parificato. Conflict: the procedure page quotes 206/256/356 EUR (old) while the tuition page quotes 211/267/378 EUR for 2026/27; both include 156 EUR regional tax and stamp. Morocco was in list B (April 2024 table) and B2b (2025/26 table per search); the 2026/27 table is an image PDF that needs OCR/manual reading. The procedure page's bachelor heading says 2025/2026 but its dates (to 20 Jul 2026) are 2026/27."
+  },
+  "Università degli studi di Roma La Sapienza": {
+    "institutionSlugs": [
+      "it-roma-la-sapienza-rieti",
+      "it-roma-la-sapienza-roma"
+    ],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.uniroma1.it/en/node/256794",
+          "says": "International Admissions 2026-27: MoveIn pre-selection for non-EU abroad (22 Dec 2025-15 May 2026), Universitaly by 30 June 2026, 30 EUR per application.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.uniroma1.it/sites/default/files/field_file_allegati/academic_requirements_movein_2026-2027_web_20260608.pdf",
+          "says": "Pre-selection for international students AY 2026-27: deadlines, programmes in English with descriptions, entry and English requirements (B2).",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.uniroma1.it/en/pagina/restricted-access-degree-programmes-tolc-i-and-selections",
+          "says": "Restricted-access programmes page: links to the 2026/27 calls and ranking lists (EU and non-EU).",
+          "year": "2026/27"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.uniroma1.it/en/content/standard-registration-fee-amounts",
+          "says": "Foreign-income students pay fixed amounts by band A 300 / B 700 / C 1,500 EUR (art. 38 par. 2); Morocco listed in Band A.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.uniroma1.it/it/content/importi-ordinari-dei-contributi-di-iscrizione",
+          "says": "Italian version: Contributi fissi per redditi prodotti all'estero, fasce A/B/C; Marocco in Fascia A; section anchor 'Costi se dichiari redditi in paesi esteri'.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.uniroma1.it/en/pagina/tuition-fees-and-benefits",
+          "says": "Tuition fees and benefits overview for 2026/27, points to the foreign-income fixed amounts.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.uniroma1.it/sites/default/files/field_file_allegati/regolamento2026-2027.pdf",
+          "says": "Regulation for degree programmes and student contributions 2026-27 (from search, not fetched).",
+          "year": "2026/27"
+        }
+      ],
+      "countryList": [
+        {
+          "url": "https://www.uniroma1.it/en/content/standard-registration-fee-amounts",
+          "says": "Lists the countries per band (A, B, C); Morocco in Band A between Mali and Mauritania.",
+          "year": "2026/27"
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://www.uniroma1.it/sites/default/files/field_file_allegati/accepted_qualifications_by_country_4mag26.pdf",
+          "says": "Accepted qualifications by country; Morocco: Attestation du Baccalauréat for bachelor's; sworn translation and CIMEA/legalisation rules in other Sapienza documents.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.uniroma1.it/en/content/admission-requirements-bachelors-degrees-and-single-cycle-degrees",
+          "says": "Admission requirements for bachelor's: 12 years of schooling, foreign qualification documents (from search, not fetched).",
+          "year": null
+        }
+      ],
+      "language": [
+        {
+          "url": "https://www.uniroma1.it/sites/default/files/field_file_allegati/academic_requirements_movein_2026-2027_web_20260608.pdf",
+          "says": "Minimum English language requirements B2 with accepted certificates; programme-specific test scores.",
+          "year": "2026/27"
+        }
+      ]
+    },
+    "programmes": {
+      "it-roma-la-sapienza-rieti-sustainable-building-engineering-l23": {
+        "programme": [
+          {
+            "url": "https://corsidilaurea.uniroma1.it/en/course/33482",
+            "says": "Sustainable Building Engineering (Rieti campus), L-23, English, entrance test.",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://corsidilaurea.uniroma1.it/sites/default/files/offertaformativa/documenti_ufficiali/187/33482_e_0.pdf",
+            "says": "Call for applications 2026-27 for the English bachelor Sustainable Building Engineering (Rieti): pre-selection, student visa, CEnT-S/SAT test, enrolment fees.",
+            "year": "2026/27"
+          },
+          {
+            "url": "https://corsidilaurea.uniroma1.it/en/course/33482/apply",
+            "says": "Apply page pointing to the call PDF and academic calendar.",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      },
+      "it-roma-la-sapienza-roma-applied-computer-science-and-artificial-l31": {
+        "programme": [
+          {
+            "url": "https://corsidilaurea.uniroma1.it/it/course/33502",
+            "says": "Applied Computer Science and Artificial Intelligence (L-31), language English, admission test (code 14824).",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://www.uniroma1.it/sites/default/files/field_file_allegati/14824_en_1.pdf",
+            "says": "2026-27 call for ACSAI (listed as 14824_Call_ACSAI_I3S in English); content not readable by the fetch tool.",
+            "year": "2026/27"
+          },
+          {
+            "url": "https://www.uniroma1.it/sites/default/files/field_file_allegati/14824_ranking_extra_ue_2026_2027_0.pdf",
+            "says": "First selection non-EU ranking list 2026/27.",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      }
+    },
+    "notes": "2026/27 pre-selection and Universitaly windows (15 May / 30 June 2026) are closed; no 2027/28 page yet (expect a similar cycle). Two calls found: the held URL corsidilaurea.../33482 call 2026/27 (verified readable, English, L-23) and ACSAI 2026/27 call 14824_en_1.pdf; a 2025/26 ACSAI call (14824_e_0.pdf) exists too, do not use. Search results said ACSAI 2026/27 has 180 places of which 60 non-EU (decree 946/2026), not confirmed from the PDF text. Sapienza fees for foreign income are fixed by band: Morocco is in Band A (300 EUR total plus 140 regional tax and 16 stamp); the fee page does not itself state its year (deadlines suggest 2025/26 or 2026/27). Pre-selection fee 30 EUR and 10 EUR requirements check fee."
+  },
+  "Università degli studi di Udine": {
+    "institutionSlugs": [
+      "it-udine-udine"
+    ],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.uniud.it/it/international-area/studenti-internazionali/ammissione-non-ue/prima-arrivo/documentazione/avviso-extra-ue-26-27",
+          "says": "Avviso aggiuntivo 2026/27 for non-EU abroad: Elix-Forms pre-evaluation 1 Feb-31 May 2026 for the English MBA bachelor, 20 EUR fee, online interview, then Universitaly (by 30 Jun 2026).",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.uniud.it/en/uniud-international/International_Students/degree-english",
+          "says": "Degrees taught entirely in English incl. Management & Business Analytics; link to pre-evaluation application.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.uniud.it/it/didattica/segreteria-studenti/manifesti-degli-studi/main-pdf/economia",
+          "says": "Economia Manifesto 2026/27: Management & Business Analytics (L-18, Udine) 100 places, 30 reserved for non-EU residing abroad, English B2, CEnT-S test.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.uniud.it/en/uniud-international/International_Students/ammissione-non-ue/prima-arrivo-ue/iscrizioni-con-titolo-di-studio-estero",
+          "says": "Admission requirements for foreign qualifications (from search, not fetched).",
+          "year": "2025/26"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.uniud.it/it/didattica/area-servizi-studenti/servizi-studenti/diritto-allo-studio/tasse_merito/tasse-riduzioni-esoneri/allegati/avviso_aggiuntivo_2026-27/@@download/file/avviso_aggiuntivo_2026-27_IS-pub26.11.15.pdf",
+          "says": "Avviso aggiuntivo 2026/27 on fees: total 16-2,176 EUR, ISEE or ISEE parificato (CAF list via ARDiS), instalments 5 Oct 2026 / 31 Mar / 31 May 2027.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.uniud.it/it/didattica/area-servizi-studenti/servizi-studenti/diritto-allo-studio/tasse_merito/tasse-riduzioni-esoneri/info_generali",
+          "says": "General info page on 2026/27 fees: range, instalments, reduction deadlines, 'not entitled to reductions' row totals 2,076 EUR.",
+          "year": "2026/27"
+        }
+      ],
+      "countryList": [],
+      "documents": [
+        {
+          "url": "https://www.uniud.it/it/international-area/studenti-internazionali/ammissione-non-ue/prima-arrivo/documentazione/avviso-extra-ue-26-27",
+          "says": "Documents: foreign school diploma, B2 English certificate, CV, motivation letter; CIMEA attestation or declaration of value; residence permit at enrolment.",
+          "year": "2026/27"
+        }
+      ],
+      "language": [
+        {
+          "url": "https://www.uniud.it/it/didattica/segreteria-studenti/manifesti-degli-studi/main-pdf/economia",
+          "says": "English at least B2 CEFR required for Management & Business Analytics; CEnT-S test.",
+          "year": "2026/27"
+        }
+      ]
+    },
+    "programmes": {
+      "it-udine-udine-management-business-analytics-l18": {
+        "programme": [
+          {
+            "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea/management-business-analytics",
+            "says": "Management & Business Analytics, L-18, 180 credits, 3 years, Udine, taught in English, local admission.",
+            "year": null
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://goto.uniud.it/to/743",
+            "says": "Pre-evaluation application link for the English-taught degree (linked from the English degrees page; short link not fetched).",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      }
+    },
+    "notes": "Newest published: 2026/27 (pre-evaluation window 1 Feb-31 May 2026 closed; no 2027/28 notice yet). For Management & Business Analytics: 100 places, 30 reserved for non-EU residing abroad. The English pre-evaluation route (CV, motivation letter, B2, 20 EUR, online interview) runs before Universitaly. Fees are ISEE-based (university contribution 0-2,000 EUR); for non-EU families abroad the notice mentions ISEE parificato via CAF, no country-group table found, so there is no Morocco-specific rule. Fee amounts for foreign households should be confirmed with dirittoallostudio@uniud.it. The held officialUrl (degree-english) lists the course but is a general page."
+  }
+}

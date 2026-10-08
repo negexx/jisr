@@ -1,0 +1,77 @@
+slug: it-casamassima-lum-g-degennaro-casamassima-economia-ed-organizzazione-aziendale-l18
+institution: it-casamassima-lum-g-degennaro-casamassima
+country: IT
+city: casamassima
+field: business-economics
+level: bachelor
+name: Economia ed organizzazione aziendale
+summary:
+  fr:
+    text: Economia ed organizzazione aziendale, Libera Università Mediterranea "Giuseppe Degennaro" (Casamassima). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economia ed organizzazione aziendale, Libera Università Mediterranea "Giuseppe Degennaro" (Casamassima). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Economia ed organizzazione aziendale, Libera Università Mediterranea "Giuseppe Degennaro" (Casamassima). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.lum.it/laurea-in-business-economics-and-organization/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 750000
+    currency: EUR
+    period: year
+  source: page-1
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.lum.it/laurea-in-business-economics-and-organization/
+    last_verified_at: 2026-10-08
+  page-1:
+    url: https://www.lum.it/wp-content/uploads/2025/05/Manifesto-studenti-25-26-2.pdf
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-casamassima-lum-g-degennaro-casamassima-economia-ed-organizzazione-aziendale-l18
+  name: Economia ed organizzazione aziendale
+  sourceId: mur:07203:l18:economia-ed-organizzazione-aziendale@casamassima
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: tuition
+      url: https://www.lum.it/wp-content/uploads/2025/05/Manifesto-studenti-25-26-2.pdf
+      quote: Il contributo unico per tutti i Corsi di Laurea dei Dipartimenti di “Scienze Giuridiche e dell’Impresa”, “Management, Finanza e Tecnologie” ed “Ingegneria” è di €7.500/00 (Euro Settemilacinquecento/00) dovrà essere corrisposto in rata unica.
+    - fact: tuition
+      url: https://www.lum.it/wp-content/uploads/2025/05/Manifesto-studenti-25-26-2.pdf
+      quote: Per l’immatricolazione di cittadini non comunitari residenti all’estero, non comunitari regolarmente soggiornanti in Italia, comunitari ovunque residenti, italiani con titolo di studio conseguito all’estero si applicano le disposizioni emanate dal ministero dell’Università in accordo con il ministero affari esteri e dell’interno per l’accesso ai corsi di studi universitari
+  notes: Les frais de scolarité indiqués (7 500 EUR) proviennent de la section « Immatricolazione cittadini comunitari e non comunitari » du Manifesto degli Studi 2025/2026, qui couvre l'inscription des étudiants non-UE résidant à l'étranger ; c'est le seul montant disponible pour ce profil dans les pages fournies. Aucune page ne mentionne le portail Universitaly ni un portail de candidature propre à l'université pour ce programme, donc le canal de candidature n'a pas pu être déterminé. Aucune date limite de candidature ni date d'ouverture pour les candidats non-UE résidant à l'étranger n'est donnée avec année dans les pages fournies. Aucune règle d'admission (niveau de langue, matières, documents) n'est énoncée pour ce programme dans les pages fournies.

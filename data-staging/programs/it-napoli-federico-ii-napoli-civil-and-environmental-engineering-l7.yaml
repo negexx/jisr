@@ -1,0 +1,204 @@
+slug: it-napoli-federico-ii-napoli-civil-and-environmental-engineering-l7
+institution: it-napoli-federico-ii-napoli
+country: IT
+city: napoli
+field: engineering
+level: bachelor
+name: Civil and environmental engineering
+summary:
+  fr:
+    text: Civil and environmental engineering, Università degli studi di Napoli Federico II (Napoli). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Civil and environmental engineering, Università degli studi di Napoli Federico II (Napoli). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Civil and environmental engineering, Università degli studi di Napoli Federico II (Napoli). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.dicea.unina.it/7587-2/
+durationYears:
+  value: 3
+  source: page-1
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-2
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+    - slug: high-school-diploma
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: High School degree Certificate
+          status: draft
+      translationRequired: null
+    - slug: declaration-of-value
+      name:
+        fr:
+          text: Déclaration de valeur (DOV)
+          status: draft
+        en:
+          text: Declaration of Value (DOV)
+          status: draft
+      translationRequired: null
+    - slug: english-language-certificate
+      name:
+        fr:
+          text: Certificat de compétence en anglais
+          status: draft
+        en:
+          text: Language certificate (English proficiency – at least level B2)
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum Vitae
+          status: draft
+        en:
+          text: Curriculum Vitae
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation (déclaration d'intention)
+          status: draft
+        en:
+          text: Motivation letter (Statement of Purpose)
+          status: draft
+      translationRequired: null
+    - slug: letter-of-recommendation
+      name:
+        fr:
+          text: Lettre(s) de recommandation
+          status: draft
+        en:
+          text: Letter/s of recommendation
+          status: draft
+      translationRequired: null
+    - slug: sponsorship-or-accommodation-statement
+      name:
+        fr:
+          text: Attestation de parrainage par un tiers ou de disponibilité d'hébergement privé
+          status: draft
+        en:
+          text: Statement by a third party of sponsorship or private accommodation availability
+          status: draft
+      translationRequired: null
+    - slug: financial-guarantee-statement
+      name:
+        fr:
+          text: Attestation de garantie financière
+          status: draft
+        en:
+          text: Financial guarantee statement(s)
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Test d'admission sélectif obligatoire (CISIA English TOLC-I), à passer à distance après inscription sur le site CISIA. Un minimum de 20% du score maximal est exigé.
+          status: draft
+        en:
+          text: Compulsory selective admission test (CISIA English TOLC-I), to be taken remotely after registering on the CISIA website. A minimum threshold of 20% of the maximum score is required.
+          status: draft
+    - id: req-3
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Les candidats qui obtiennent moins de 50% à la section Mathématiques du test TOLC-I reçoivent une obligation formative additionnelle (OFA) : acquérir au moins 9 CFU en MAT/05."
+          status: draft
+        en:
+          text: "Candidates who score less than 50% in the Mathematics section of the TOLC-I test receive an Additional Formative Obligation (OFA): to acquire at least 9 CFU in the MAT/05 subject area."
+          status: draft
+    - id: req-4
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Procédure de pré-admission obligatoire pour les étudiants non-UE nécessitant un visa : sélection de mi-février à mi-juin via la page d'admission ou par e-mail, puis lettre de pré-admission."
+          status: draft
+        en:
+          text: "Compulsory pre-admission procedure for non-EU students requiring a visa: selection from mid-February to mid-June via the intake webpage or by email, then a pre-admission letter."
+          status: draft
+    - id: req-5
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le candidat doit fournir une garantie financière de 6.080,00 €/an pendant trois ans et souscrire une assurance maladie/santé pour le visa d'études.
+          status: draft
+        en:
+          text: The candidate must provide a financial guarantee of €6,080.00/year for three years and take out health insurance for the study visa.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.dicea.unina.it/7587-2/
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.orientamento.unina.it/corsidistudio/civil-and-environmental-engineering/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-napoli-federico-ii-napoli-civil-and-environmental-engineering-l7
+  name: Civil and environmental engineering
+  sourceId: mur:06301:l7:civil-and-environmental-engineering@napoli
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: durationYears
+      url: https://www.orientamento.unina.it/corsidistudio/civil-and-environmental-engineering/
+      quote: The legal duration of the Degree Program is 3 years.
+  notes: "Tuition left out: the only fee figures found (https://www.international.unina.it/non-eu-students-enrolment/) are the €140/year regional fee and €16 legal stamp, which the task says are separate from tuition and not to be used. No tuition fee for this programme or for a non-EU student with household abroad appears in the pages. Intakes left out: the only non-EU deadline found (15 June 2026) is a pre-enrolment application deadline to the University of Naples Federico II, not stated as tied to this specific programme; the 30 November 2026 visa deadline was excluded per instructions. Application channel: the Universitaly pre-enrolment route is the general non-EU procedure on the international pages."

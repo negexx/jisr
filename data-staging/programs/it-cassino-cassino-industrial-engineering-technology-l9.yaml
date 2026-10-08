@@ -1,0 +1,107 @@
+slug: it-cassino-cassino-industrial-engineering-technology-l9
+institution: it-cassino-cassino
+country: IT
+city: cassino
+field: engineering
+level: bachelor
+name: Industrial Engineering Technology
+summary:
+  fr:
+    text: Industrial Engineering Technology, Università degli Studi di Cassino e del Lazio Meridionale (Cassino). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Industrial Engineering Technology, Università degli Studi di Cassino e del Lazio Meridionale (Cassino). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Industrial Engineering Technology, Università degli Studi di Cassino e del Lazio Meridionale (Cassino). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unicas.it/international-unicas/international-bachelor-master-and-phd-programs-enrollment-26-27-now-open/bachelors-degree-programs/industrial-engineering-technology/
+durationYears:
+  value: 3
+  source: page-1
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: page-1
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 60000
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+    - slug: declaration-of-value
+      name:
+        fr:
+          text: Déclaration de valeur (DOV)
+          status: draft
+        en:
+          text: Declaration of Value (DOV)
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.unicas.it/international-unicas/international-bachelor-master-and-phd-programs-enrollment-26-27-now-open/bachelors-degree-programs/industrial-engineering-technology/
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.iet.unicas.it/
+    last_verified_at: null
+  page-3:
+    url: https://www.unicas.it/media/pesjjo4e/regolamento-tasse-e-contributi-2026-2027-dr-n-482-del-02072026.pdf
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-cassino-cassino-industrial-engineering-technology-l9
+  name: Industrial Engineering Technology
+  sourceId: mur:06001:l9:industrial-engineering-technology@cassino
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: durationYears
+      url: https://www.iet.unicas.it/
+      quote: "Language: English Duration: 3 years Level: Bachelor Delivery: Blended Total ECTS: 180"
+    - fact: teachingLanguages
+      url: https://www.iet.unicas.it/
+      quote: "Language: English Duration: 3 years Level: Bachelor Delivery: Blended Total ECTS: 180"
+    - fact: tuition
+      url: https://www.unicas.it/media/pesjjo4e/regolamento-tasse-e-contributi-2026-2027-dr-n-482-del-02072026.pdf
+      quote: Congo, Rep., A Paesi 600€ Cote d'Ivoire, Djibouti
+    - fact: tuition
+      url: https://www.unicas.it/media/pesjjo4e/regolamento-tasse-e-contributi-2026-2027-dr-n-482-del-02072026.pdf
+      quote: Mongolia, Morocco, Mozambique
+  notes: "documents: kept the existing official value; the reader found [{\"slug\":\"passport\",\"name\":{\"fr\":{\"text\":\"Passeport\",\"status\":\"draft\"},\"en\":{\"text\":\"Passport\",\"status\":\"draft\"}},\"translationRequired\":null},{\"slug\":\"declaration-of-value\",\"name\":{\"fr\":{\"text\":\"Déclaration de valeur\",\"status\":\"draft\"},\"en\":{\"text\":\"Declaration of Value\",\"status\":\"draft\"}},\"translationRequired\":null}] at https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/; Tuition: left out. The only amount quotes are the UNESCO country-group table of the 2026/27 regulation ('Studenti internazionali'), but that amount must be read against the list of the same academic year that names Morocco as belonging to the group; in the supplied 2026/27 regulation the country lists are corrupt and Morocco does not appear verbatim in the extracted text, so the Morocco tie could not be accepted. The institutional pages state only a 15 euro pre-admission administrative fee and a 400 euro merit scholarship, neither of which is tuition. Deadlines: the programme site gives a single deadline 30.06.2026 for applications to the 2026-2027 year, and the international page says pre-admissions are usually open between February and June; the date is taken as an international application deadline but the page does not explicitly say it is reserved for non-EU applicants residing abroad. The pre-admission application window (February-June) is not dated with years and is therefore not used. ApplicationChannel: the international pre-admission page says applicants without an Italian qualification create an account in the UNICAS GOMP portal, and the Economics programme page (another programme) describes the Universitaly pre-enrolment; for this programme the pages do not state a separate programme-level portal, so Universitaly is used as the pre-enrolment route. Documents: only the passport and the Declaration of Value are quoted in a document list for international (extra-UE) students at enrolment; the programme's own admission pages do not give a document list.; Cassino 2026/27 tuition regulation (DR 482 of 02/07/2026), art. 3.3: annual all-inclusive contribution (Contributo omnicomprensivo annuale) by country group of citizenship, applies to any course of study. Group A = 600 EUR; Morocco is in the group A country list (PDF text layer merges the table: Morocco sits in the A block that ends at Zimbabwe, group B starts at Albania; audit visually). Regional tax 140 EUR and stamp 16 EUR are extra and not included. Programme not tied to a group because the fee does not depend on programme. Year 2026/27; 2027/28 not published."

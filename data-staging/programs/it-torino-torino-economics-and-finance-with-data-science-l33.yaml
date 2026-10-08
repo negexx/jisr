@@ -1,0 +1,114 @@
+slug: it-torino-torino-economics-and-finance-with-data-science-l33
+institution: it-torino-torino
+country: IT
+city: torino
+field: business-economics
+level: bachelor
+name: Economics and Finance with Data Science
+summary:
+  fr:
+    text: Economics and Finance with Data Science, Università degli studi di Torino (Torino). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics and Finance with Data Science, Università degli studi di Torino (Torino). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Economics and Finance with Data Science, Università degli studi di Torino (Torino). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://en.unito.it/studying-unito/programs/degree-programs/economics-and-finance-data-science
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 50000
+    currency: EUR
+    period: year
+  source: page-3
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport en cours de validité
+          status: draft
+        en:
+          text: Valid passport
+          status: draft
+      translationRequired: null
+  source: page-1
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Un test d'évaluation en anglais (logique, compréhension verbale, mathématiques) est exigé ; en cas d'échec, des obligations formatives supplémentaires sont assignées.
+          status: draft
+        en:
+          text: An English-language assessment test (logic, verbal comprehension, mathematics) is required; if failed, additional educational obligations are assigned.
+          status: draft
+    - id: req-2
+      source: page-2
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Pour les titulaires d'un diplôme étranger, la candidature se fait via Apply@UniTo ; consulter la liste des exonérations et les fenêtres de candidature.
+          status: draft
+        en:
+          text: For holders of a foreign qualification, the application is made via Apply@UniTo; check the exemption list and application windows.
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://en.unito.it/studying-unito/programs/degree-programs/economics-and-finance-data-science
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unito.it/internazionalita/arrivare-unito-dallestero/ammissione-studenti-internazionali/procedure-0
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unito.it/internazionalita/arrivare-unito-dallestero/ammissione-studenti-internazionali/documentazione
+    last_verified_at: 2026-10-08
+  page-3:
+    url: https://www.unito.it/didattica/tasse/contribuzione-studenti-internazionali
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-torino-torino-economics-and-finance-with-data-science-l33
+  name: Economics and Finance with Data Science
+  sourceId: mur:00101:l33:economics-and-finance-with-data-science@torino
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: tuition
+      url: https://www.unito.it/didattica/tasse/contribuzione-studenti-internazionali
+      quote: Fascia PIL pro-capite PPA Importo per iscrizioni fino al 2° anno fuori corso Importo per iscrizioni dal 3° anno fuori corso PIL pro-capite PPA fino a Euro 26.000,00 Euro 500,00
+    - fact: tuition
+      url: https://www.unito.it/sites/default/files/2026-07/reg_tasse_2026_2027_dr_6194_2026.pdf
+      quote: Morocco 8.957,01 € 500,00 € 550,00 €
+  notes: "Torino 2026/27: students resident abroad pay a fixed single all-inclusive contribution (COU) by the PPP GDP per capita of the country of residence; Allegato A of the regulation DR 6194/2026 lists Morocco 8,957.01 -> 500 EUR (enrolments up to the 2nd year out of course; 550 from the 3rd). The 156 EUR first instalment (regional tax + stamp) is extra and not included. Morocco is not in the DM 176/2026 exempt (poorest countries) list per the registry notes, so the exemption does not apply (I did not re-read the decree). The regulation lists extra programme contributions only for Management dell'Informazione e della Comunicazione Aziendale, Business & Management and online degrees; none found for Economics and Finance with Data Science. The page and the regulation both say a.a. 2026-2027; 2027/28 not published."

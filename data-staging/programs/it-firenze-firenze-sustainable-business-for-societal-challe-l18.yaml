@@ -1,0 +1,96 @@
+slug: it-firenze-firenze-sustainable-business-for-societal-challe-l18
+institution: it-firenze-firenze
+country: IT
+city: firenze
+field: business-economics
+level: bachelor
+name: Sustainable Business for Societal Challenges
+summary:
+  fr:
+    text: Sustainable Business for Societal Challenges, Università degli studi di Firenze (Firenze). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Sustainable Business for Societal Challenges, Università degli studi di Firenze (Firenze). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Sustainable Business for Societal Challenges, Università degli studi di Firenze (Firenze). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unifi.it/en/study-us/degree-programs/first-cycle-degree/sustainable-business-societal-challenges
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 93900
+    currency: EUR
+    period: year
+  source: page-1
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+    - id: req-2
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: "Ce programme est à accès restreint : vérifiez le bando de sélection (concours/places limitées) et la procédure d'admission sur le site du programme."
+          status: draft
+        en:
+          text: "This programme has restricted access: check the selection call (limited places) and the admission procedure on the programme website."
+          status: draft
+scholarships: []
+sources:
+  programme:
+    url: https://www.unifi.it/en/study-us/degree-programs/first-cycle-degree/sustainable-business-societal-challenges
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unifi.it/it/studia-con-noi/il-tuo-percorso/iscriviti-alluniversita/studenti-internazionali/studenti-non-unione
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unifi.it/sites/default/files/2026-06/manifesto_studi_26_27.pdf
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-firenze-firenze-sustainable-business-for-societal-challe-l18
+  name: Sustainable Business for Societal Challenges
+  sourceId: mur:04801:l18:sustainable-business-for-societal-challenges@firenze
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: tuition
+      url: https://www.unifi.it/sites/default/files/2026-06/manifesto_studi_26_27.pdf
+      quote: Morocco REDDITO MEDIO- BASSO € 625,80 € 313,20 €939
+    - fact: tuition
+      url: https://www.unifi.it/sites/default/files/2026-06/manifesto_studi_26_27.pdf
+      quote: Se sei residente all’estero ottieni l’attribuzione automatica di un ISEE universitario figurativo, calcolato per gruppi di nazioni sulla base della classificazione annuale del reddito delle nazioni fatta dalla World Bank; per l’a.a. 2026/2027 si tiene conto della classificazione pubblicata nell’anno 2026
+  notes: "Università di Firenze a.y. 2026/27 Manifesto degli Studi: students resident abroad get an automatic figurative ISEE by World Bank income group of their country (sect. 14.2); Allegato 5 lists Morocco in REDDITO MEDIO-BASSO (figurative ISEE 36,500) with the first-year contribution I rata 625.80 + II rata 313.20 = total annual 939. Cross-check: Allegato 1 (first-year, full-time) row for ISEE 36,000.01-37,000 gives total 939.00. This is the contributo onnicomprensivo only; the stamp duty (16) and regional tax (140) are separate (sect. 13) and not included. The same table applies to all degree programmes (no programme-group tie needed)."
