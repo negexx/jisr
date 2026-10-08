@@ -7,6 +7,7 @@ import { type ReactNode, useEffect, useMemo, useState } from "react";
 import type { IsoDate } from "@/data-schema/dates";
 import type { Profile } from "@/data-schema/profile";
 import type { AppLocale } from "@/i18n/routing";
+import { track } from "@/lib/analytics";
 import { todayIso } from "@/lib/clock";
 import { buildMatchesView, MATCH_GROUPS, type MatchesView } from "@/lib/journey/matches-view";
 import { useProfile } from "@/lib/profile/use-profile";
@@ -86,6 +87,9 @@ function Results({ view, profile, locale }: { view: OkView; profile: Profile; lo
   const tPage = useTranslations("matches");
   const shown = MATCH_GROUPS.reduce((sum, group) => sum + view.counts[group], 0);
   const budgetProvided = profile.budget !== null;
+  useEffect(() => {
+    track("matches-viewed");
+  }, []);
   return (
     <>
       {shown === 0 ? (

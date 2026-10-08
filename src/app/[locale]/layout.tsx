@@ -4,6 +4,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { ReactNode } from "react";
 
+import { AnalyticsLoader } from "@/components/analytics-loader";
 import { DirectionProvider } from "@/components/direction-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -67,6 +68,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <SiteFooter locale={locale} />
           </DirectionProvider>
         </NextIntlClientProvider>
+        <AnalyticsLoader goatCounterUrl={readSiteEnv().goatCounterUrl} />
       </body>
     </html>
   );

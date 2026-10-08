@@ -8,6 +8,9 @@ import { EMPTY_SAVED, isSavedSlug, parseSaved, SAVED_KEY } from "@/lib/saved/sav
 
 import { createFakeStorage } from "../profile/fake-storage";
 
+const { track } = vi.hoisted(() => ({ track: vi.fn() }));
+vi.mock("@/lib/analytics", () => ({ track }));
+
 const make = () => {
   const storage = createFakeStorage();
   const store = createLocalJsonStore(() => storage, {
@@ -70,5 +73,23 @@ describe("toggleSaved", () => {
         "2026-10-02",
       ),
     ).toMatchObject({ ok: true, saved: false });
+  });
+});
+
+describe("toggleSaved analytics", () => {
+  it("counts program-saved when a program is added, never when one is removed or refused", () => {
+    track.mockClear();
+    const { store } = make();
+    toggleSaved(store, ref("xx-a"), "0123456789ab", "2026-10-02");
+    expect(track).toHaveBeenCalledTimes(1);
+    expect(track).toHaveBeenCalledWith("program-saved");
+    toggleSaved(store, ref("xx-a"), "0123456789ab", "2026-10-02");
+    toggleSaved(
+      store,
+      { slug: "Not A Slug", country: "FR", field: "x" },
+      "0123456789ab",
+      "2026-10-02",
+    );
+    expect(track).toHaveBeenCalledTimes(1);
   });
 });

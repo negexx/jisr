@@ -1,4 +1,5 @@
 import type { IsoDate } from "@/data-schema/dates";
+import { track } from "@/lib/analytics";
 import { MAX_SAVED_PROGRAMS } from "@/lib/constants";
 import type { LocalJsonStore } from "@/lib/local-store";
 import { forgetProgress } from "@/lib/plan/store";
@@ -16,7 +17,7 @@ function listOf(store: LocalJsonStore<SavedList>): SavedList {
   return state.status === "ready" ? state.value : EMPTY_SAVED;
 }
 
-// The single action point for saving: the analytics task hooks `program-saved` here.
+// The single action point for saving; `program-saved` is counted here, only when a program was added.
 // `onRemoved` lets the caller forget what depended on the saved program (the ticked steps); it
 // runs only when the removal was applied, so ticks are forgotten only if the program is gone.
 // A reference the parser rejects (bad slug or snapshotVersion) returns
@@ -40,11 +41,9 @@ export function toggleSaved(
   const result = store.update(
     (current) => addSaved(current, { ...ref, snapshotVersion, savedAt: today }) ?? current,
   );
-  return {
-    ok: true,
-    saved: isSavedSlug(listOf(store), ref.slug),
-    persisted: result.ok && result.persisted,
-  };
+  const saved = isSavedSlug(listOf(store), ref.slug);
+  if (saved) track("program-saved");
+  return { ok: true, saved, persisted: result.ok && result.persisted };
 }
 
 // Removing a program from the plan also forgets its ticked steps.
