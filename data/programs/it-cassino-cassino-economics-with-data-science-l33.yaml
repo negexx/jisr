@@ -26,8 +26,11 @@ teachingLanguages:
   source: page-1
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 60000
+    currency: EUR
+    period: year
+  source: page-4
   info_kind: official
 intakes:
   value: null
@@ -127,3 +130,6 @@ sources:
   page-1:
     url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
     last_verified_at: 2026-10-05
+  page-4:
+    url: https://www.unicas.it/media/pesjjo4e/regolamento-tasse-e-contributi-2026-2027-dr-n-482-del-02072026.pdf
+    last_verified_at: 2026-10-08

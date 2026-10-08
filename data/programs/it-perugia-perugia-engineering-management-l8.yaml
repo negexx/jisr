@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 60000
+    currency: EUR
+    period: year
+  source: page-3
   info_kind: official
 intakes:
   value: null
@@ -108,4 +111,7 @@ sources:
     last_verified_at: 2026-10-05
   page-1:
     url: https://www.unipg.it/en/international-students/students-wishing-to-enroll/how-to-apply
+    last_verified_at: 2026-10-08
+  page-3:
+    url: https://www.unipg.it/files/pagine/1996/flattax_amount-of-fees.pdf
     last_verified_at: 2026-10-08
