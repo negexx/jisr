@@ -517,10 +517,51 @@ describe("checkTuition amounts whose currency stands in a header", () => {
     const both = "Total (€) MEDIUM 400,00 - 600,00";
     expect(checkTuition(40000, both, 2026, "EUR", 60000).ok).toBe(true);
     expect(checkTuition(40000, "Total (€) MEDIUM 400,00 / 600,00", 2026, "EUR", 60000).ok).toBe(
-      true,
+      false,
     );
     expect(checkTuition(40000, "Total (€) MEDIUM 400 - 600", 2026, "EUR", 60000).ok).toBe(false);
     expect(checkTuition(40000, "Total 400,00 - 600,00", 2026, "EUR", 60000).ok).toBe(false);
+  });
+  it("never turns two unrelated cells under a header into a range", () => {
+    const quote = `${PERUGIA} ISEE`;
+    expect(checkTuition(60000, quote, 2026, "EUR").ok).toBe(true);
+    expect(checkTuition(15600, quote, 2026, "EUR", 40000).ok).toBe(false);
+    expect(checkTuition(15600, quote, 2026, "EUR", 100000).ok).toBe(false);
+    expect(checkTuition(1600, quote, 2026, "EUR", 100000).ok).toBe(false);
+    expect(checkTuition(8000, quote, 2026, "EUR", 13000, "income_based").ok).toBe(false);
+    expect(checkTuition(15600, "Total (€) room 156,00 - 600,00", 2026, "EUR", 60000).ok).toBe(
+      false,
+    );
+  });
+  it("accepts the two ends of a connector-less range only with a currency beside each", () => {
+    const quote = "Total (€) 156,00 EUR then 400,00 EUR";
+    expect(checkTuition(15600, quote, 2026, "EUR", 40000).ok).toBe(true);
+  });
+  it("refuses an amount written in a currency the checker does not know", () => {
+    expect(checkTuition(250000, "Fee € 2.500,00 (about 27.000,00 MAD)", 2026, "EUR").ok).toBe(true);
+    expect(checkTuition(2700000, "Fee € 2.500,00 (about 27.000,00 MAD)", 2026, "EUR").ok).toBe(
+      false,
+    );
+    for (const quote of [
+      "Total (€) MEDIUM 600,00 CHF",
+      "Total (€) MEDIUM CHF 600,00",
+      "Total (€) MEDIUM 600,00 dirhams",
+      "Total (€) MEDIUM 600,00 DHS",
+      "Total (€) MEDIUM kr 600,00",
+      "Total (€) MEDIUM 600,00 kr",
+      "Total (€) MEDIUM 600,00 zł",
+      "Total (€) MEDIUM £600,00",
+    ])
+      expect(checkTuition(60000, quote, 2026, "EUR").ok).toBe(false);
+    expect(checkTuition(60000, "Total (€) 600,00 EUR", 2026, "EUR").ok).toBe(true);
+  });
+  it("refuses a percentage, a date and a space-grouped number on the header path", () => {
+    expect(checkTuition(60000, "Total (€) discount 600,00%", 2026, "EUR").ok).toBe(false);
+    expect(checkTuition(60000, "Total (€) discount 600,00 %", 2026, "EUR").ok).toBe(false);
+    expect(checkTuition(1506, "Total (€) deadline 15.06.", 2026, "EUR").ok).toBe(false);
+    expect(checkTuition(1030, "Total (€) at 10.30: opening", 2026, "EUR").ok).toBe(false);
+    expect(checkTuition(160000, "Total (€) bracket 1 600,00", 2026, "EUR").ok).toBe(false);
+    expect(checkTuition(160000, "Total (€) bracket 1.600,00", 2026, "EUR").ok).toBe(true);
   });
 });
 

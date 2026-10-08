@@ -465,8 +465,22 @@ function bareEdgeFollowsLabel(q: string, hit: { start: number }): boolean {
 // an explicit two-digit decimal part and (b) the same quote carries a mark of that currency as a whole
 // token before it, within IMPLIED_CURRENCY_WINDOW characters. A bare integer, an amount with another
 // currency beside it, a mark after the amount or farther away stay refused.
+// Further refusals on this path: a currency the checker has no token for (MAD, CHF, kr, any other
+// three-letter code or symbol) right before or after the amount, a percentage, a date or time, and a
+// space-grouped number ("1 600,00" is a row number and a cell, not 1600).
 const IMPLIED_CURRENCY_WINDOW = 400;
 const EXPLICIT_CENTS = /[.,]\d\d$/;
+const OTHER_CURRENCY_WORDS = "dhs?|dirhams?|mad|chf|kr|ft|zł";
+const OTHER_CURRENCY_BEFORE = new RegExp(
+  String.raw`(?<![a-z])(?:${OTHER_CURRENCY_WORDS})\s{0,2}$|[£$¥]\s{0,2}$`,
+  "i",
+);
+const OTHER_CURRENCY_AFTER = new RegExp(
+  String.raw`^\s{0,2}(?:(?:${OTHER_CURRENCY_WORDS})(?![a-z])|[£$¥])`,
+  "i",
+);
+const CODE_BEFORE = /(?<![A-Za-z])[A-Z]{3}\s{0,2}$/;
+const CODE_AFTER = /^\s{0,2}[A-Z]{3}(?![A-Za-z])/;
 function currencyImpliedByHeader(
   q: string,
   hit: { start: number; end: number },
@@ -474,7 +488,15 @@ function currencyImpliedByHeader(
 ): boolean {
   const marks = CURRENCY_TOKENS[currency];
   if (marks === undefined || currencyAt(q, hit) !== null) return false;
-  if (!EXPLICIT_CENTS.test(q.slice(hit.start, hit.end))) return false;
+  const text = q.slice(hit.start, hit.end);
+  if (!EXPLICIT_CENTS.test(text) || /\s/.test(text)) return false;
+  const before = q.slice(Math.max(0, hit.start - 14), hit.start);
+  const after = q.slice(hit.end, hit.end + 14);
+  if (OTHER_CURRENCY_BEFORE.test(before) || OTHER_CURRENCY_AFTER.test(after)) return false;
+  if (CODE_BEFORE.test(before) || CODE_AFTER.test(after)) return false;
+  if (/^\s{0,2}%/.test(after) || /:\s?$/.test(before)) return false;
+  // "15.06." or "10.30:": a date or a time, not an amount (a short integer part, then a dot or colon)
+  if (text.replace(/\D/g, "").length - 2 < 3 && /^[.:]/.test(after)) return false;
   const window = q.slice(Math.max(0, hit.start - IMPLIED_CURRENCY_WINDOW), hit.start);
   return new RegExp(`(?<![a-z])(?:${marks})`, "i").test(window);
 }
@@ -485,6 +507,7 @@ function checkFeeAmount(
   quote: string,
   minStudyYear: number,
   currency: string | undefined,
+  allowHeaderCurrency = true,
 ): FactCheck {
   if (amountMinor === 0)
     return NO_FEE.test(quote)
@@ -498,9 +521,9 @@ function checkFeeAmount(
   if (currency !== undefined && CURRENCY_TOKENS[currency] !== undefined) {
     const q = normalizeForMatch(quote);
     const beside = amountMatches(amountMajor, q).map((hit) => currencyAt(q, hit));
-    const implied = amountMatches(amountMajor, q).some((hit) =>
-      currencyImpliedByHeader(q, hit, currency),
-    );
+    const implied =
+      allowHeaderCurrency &&
+      amountMatches(amountMajor, q).some((hit) => currencyImpliedByHeader(q, hit, currency));
     if (!beside.includes(currency) && !implied)
       return fail(`the quote does not write the amount in the currency ${currency}`);
   }
@@ -555,6 +578,7 @@ function checkTuitionRange(
       const gap = q.slice(a.end, b.start);
       if (gap.length > MAX_RANGE_GAP || !RANGE_GAP.test(stripCurrency(gap))) continue;
       const headed =
+        checkable &&
         currency !== undefined &&
         (currencyImpliedByHeader(q, a, currency) || currencyImpliedByHeader(q, b, currency));
       if (checkable && !stated(ac) && !stated(bc) && !headed) continue;
@@ -564,11 +588,12 @@ function checkTuitionRange(
   }
 
   if (!constructed) {
-    // no range construction: each end is a fee of its own and needs its currency beside it
+    // no range construction: each end is a fee of its own and needs its currency TOKEN beside it
+    // (a currency named only in a column header is not enough outside the construction)
     if (minMinor === 0) return fail("a zero minimum needs the quote to join it to the maximum");
     if (!checkable) return fail("the quote does not join the two fees as a range");
     for (const edge of [minMinor, maxMinor]) {
-      const checked = checkFeeAmount(edge, quote, minStudyYear, currency);
+      const checked = checkFeeAmount(edge, quote, minStudyYear, currency, false);
       if (!checked.ok) return checked;
     }
     return ok;
