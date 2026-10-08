@@ -3,10 +3,14 @@
 // after the page has loaded and the browser is idle, so it never competes with the journey.
 // `goatCounterUrl` is validated by readSiteEnv (https://<code>.goatcounter.com/count) and is null
 // unless this is a production build with the variable set; then nothing is rendered at all.
+// A visitor who sends Do Not Track or Global Privacy Control gets nothing: tracking stays off, so
+// track() is a no-op and queues nothing. A second run of the script is also a no-op.
 const COUNT_JS = "https://gc.zgo.at/count.js";
 
 function loaderScript(goatCounterUrl: string): string {
   return `(function(){
+if(window.__jisrAnalytics)return;
+if(navigator.doNotTrack==="1"||navigator.globalPrivacyControl)return;
 var url=${JSON.stringify(goatCounterUrl)};
 window.__jisrAnalytics=true;
 window.goatcounter={endpoint:url};
