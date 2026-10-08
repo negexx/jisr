@@ -161,6 +161,27 @@ describe("buildUniversitalyRecords", () => {
     expect(records.filter((r) => r.collection === "institutions")).toHaveLength(0);
     expect(records[0]?.data.institution).toBe("it-casamassima-lum-g-degennaro-casamassima");
   });
+  it("treats a new institution whose slug is one of ours as reused, even when the names differ", () => {
+    const { records, report } = build(
+      [cand()],
+      [{ slug: "it-genova-genova", name: "University of Genoa" }],
+    );
+    expect(records.filter((r) => r.collection === "institutions")).toEqual([]);
+    expect(records[0]?.data.institution).toBe("it-genova-genova");
+    expect(report.reusedInstitutions).toEqual(["it-genova-genova"]);
+  });
+  it("writes the fetch date, the low-confidence warning and the other classes in the review note", () => {
+    const { records } = build([
+      cand({ confidence: "low", classCode: "L-8", classCodes: ["L-8", "L-31"] }),
+    ]);
+    const todo = records.find((r) => r.collection === "programs")?.review.todo ?? "";
+    expect(todo).toContain("fetched 2026-10-08");
+    expect(todo).toContain("(also L-31)");
+    expect(todo).toContain("the degree class and the course name point to different fields");
+    const high = build([cand()]).records.find((r) => r.collection === "programs")?.review.todo;
+    expect(high).not.toContain("point to different fields");
+    expect(high).not.toContain("(also");
+  });
   it("refuses a candidate whose university is unknown, ambiguous or has several institutions of ours", () => {
     const unknown = build([cand({ portalId: 1, university: "Università di Trento" })]);
     expect(unknown.records).toEqual([]);

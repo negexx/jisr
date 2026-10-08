@@ -89,7 +89,10 @@ export function buildUniversitalyRecords(input: {
       if (!report.reusedInstitutions.includes(instSlug)) report.reusedInstitutions.push(instSlug);
     } else {
       instSlug = `it-${slugify(ateneo.shortName, 40)}-${slugify(city)}`;
-      if (!institutions.has(instSlug)) {
+      // The name did not match but the slug is one of ours: the same institution, never a second one.
+      if (input.ourInstitutions.some((i) => i.slug === instSlug)) {
+        if (!report.reusedInstitutions.includes(instSlug)) report.reusedInstitutions.push(instSlug);
+      } else if (!institutions.has(instSlug)) {
         const candidate = websites.get(ateneo.code) ?? null;
         institutions.set(
           instSlug,
