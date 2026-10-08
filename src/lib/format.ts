@@ -1,5 +1,6 @@
 import { type IsoDate, isValidIsoDate } from "@/data-schema/dates";
-import type { MonthDay } from "@/data-schema/records/program";
+import type { MonthDay, Tuition } from "@/data-schema/records/program";
+import { tuitionBounds } from "@/domain/tuition";
 import type { AppLocale } from "@/i18n/routing";
 
 // ar-MA with Latin digits: Modern Standard Arabic UI, Moroccan usage, product owner's choice of digits.
@@ -108,6 +109,12 @@ export function formatMoneyRange(
   return withoutDirectionMarks(
     currencyFormat(currency, locale, withCents).formatRange(minMinor / divisor, maxMinor / divisor),
   );
+}
+
+// A flat fee reads as one amount (formatMoneyRange collapses equal ends); a range as "X to Y".
+export function formatTuition(tuition: Tuition, locale: AppLocale): string {
+  const { min, max } = tuitionBounds(tuition);
+  return formatMoneyRange(min, max, tuition.currency, locale);
 }
 
 export function formatGrade(

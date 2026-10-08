@@ -46,7 +46,7 @@ describe("readBuildSnapshot", () => {
     const dir = copySnapshot(base);
     writeFileSync(
       path.join(dir, "manifest.json"),
-      JSON.stringify({ ...manifest, formatVersion: 2 }),
+      JSON.stringify({ ...manifest, formatVersion: 3 }),
     );
     await expect(readBuildSnapshot(dir)).rejects.toMatchObject({ kind: "format" });
   });

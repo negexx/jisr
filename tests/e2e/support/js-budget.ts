@@ -40,14 +40,20 @@ export type JsBudget = { initial: number; untilIdle: number };
 // www.xn--bafg-7qa.de (the ASCII alias does not resolve); SourceBadge is shared, so the decoder is in the
 // client chunk. The guidance block itself is server-rendered and adds nothing. Raised by 1 KB with that
 // reason: program initial 184 -> 185, until idle 239 -> 240. Nothing else moved.
+// 2026-10-08 (official fee range, ADR 0010): the profile and matches pages measure 216.27 KB until idle
+// (216.0 before) on the fixture build, because the tuition range code is client-reachable there:
+// tuitionBounds and the incomeBased flag in the cost domain, formatTuition in format.ts, TuitionBasisNote
+// in MatchCard and the longer compare-row signature (about 0.3 KB gzip together). Owner decision: raise by
+// 1 KB with that reason: profile, matches and the home page (it prefetches their chunks, so it reads
+// 215.1 to 216.27 depending on timing) until idle 216 -> 217. Nothing else moved.
 // 2026-10-07 (scholarships page): new page, 170.2 KB initial, 221.4 KB until idle (fixture build); ratchet is measured rounded up plus 3 KB. The header's fourth item added 0.0 to 0.1 KB to the other rows, all inside their existing values.
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
-  "/fr": { initial: 170, untilIdle: 216 },
-  "/ar": { initial: 170, untilIdle: 216 },
-  "/fr/profile": { initial: 187, untilIdle: 216 },
-  "/ar/profile": { initial: 187, untilIdle: 216 },
-  "/fr/matches": { initial: 193, untilIdle: 216 },
-  "/ar/matches": { initial: 193, untilIdle: 216 },
+  "/fr": { initial: 170, untilIdle: 217 },
+  "/ar": { initial: 170, untilIdle: 217 },
+  "/fr/profile": { initial: 187, untilIdle: 217 },
+  "/ar/profile": { initial: 187, untilIdle: 217 },
+  "/fr/matches": { initial: 193, untilIdle: 217 },
+  "/ar/matches": { initial: 193, untilIdle: 217 },
   "/fr/plan": { initial: 189, untilIdle: 244 },
   "/ar/plan": { initial: 189, untilIdle: 244 },
   "/fr/compare": { initial: 190, untilIdle: 253 },

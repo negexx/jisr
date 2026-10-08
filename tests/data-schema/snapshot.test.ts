@@ -32,7 +32,7 @@ const SHARD = {
   gzipBytes: 8,
 };
 const MANIFEST = {
-  formatVersion: 1,
+  formatVersion: 2,
   snapshotVersion: "0123456789ab",
   generatedAt: "2026-09-29T10:00:00.000Z",
   locales: ["fr", "en", "ar"],
@@ -42,7 +42,7 @@ const MANIFEST = {
 describe("ManifestSchema", () => {
   it.each([
     ["valid", MANIFEST, true],
-    ["formatVersion 2", { ...MANIFEST, formatVersion: 2 }, false],
+    ["formatVersion 3", { ...MANIFEST, formatVersion: 3 }, false],
     ["short snapshotVersion", { ...MANIFEST, snapshotVersion: "abc" }, false],
     ["no locales", { ...MANIFEST, locales: [] }, false],
     ["bad file name", { ...MANIFEST, shards: { core: { ...SHARD, file: "core.json" } } }, false],

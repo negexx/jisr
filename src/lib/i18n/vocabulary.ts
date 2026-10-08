@@ -227,7 +227,7 @@ export type MessageGroup = {
  *   domain.mismatch.<PreferenceMismatch>     why a program is hidden
  *   domain.cost.category|per|scope.<value>   labels
  *   domain.cost.tenMonthNote                 {months}
- *   domain.cost.missingLine | partialTotal | estimateTag
+ *   domain.cost.missingLine | partialTotal | estimateTag | incomeBased
  *   domain.budgetFit.<BudgetFit>             about the estimate, never the program
  *   domain.intake.<IntakeKind>               upcoming: {date}; recurring: {date} as DD/MM
  *   domain.infoKind.<InfoKind>.{label,meaning}
@@ -267,7 +267,7 @@ export const MESSAGE_GROUPS: readonly MessageGroup[] = [
   { path: "domain.cost.scope", values: COST_SCOPES },
   {
     path: "domain.cost",
-    values: ["tenMonthNote", "missingLine", "partialTotal", "estimateTag"],
+    values: ["tenMonthNote", "missingLine", "partialTotal", "estimateTag", "incomeBased"],
   },
   { path: "domain.budgetFit", values: BUDGET_FITS },
   { path: "domain.intake", values: INTAKE_KINDS },

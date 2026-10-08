@@ -202,6 +202,7 @@
       "tenMonthNote": "Les coûts mensuels sont comptés sur {months} mois d'études. Le logement se paie souvent 12 mois : vérifiez la période de loyer.",
       "missingLine": "Non publié dans les sources consultées, à vérifier",
       "partialTotal": "Total partiel : certains coûts ne sont pas inclus",
+      "incomeBased": "Dépend du revenu du foyer (ISEE)",
       "estimateTag": "Estimation"
     },
     "budgetFit": {

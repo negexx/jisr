@@ -5,6 +5,7 @@ import { afterEach, beforeAll, describe, expect, it } from "vitest";
 
 import { CompareGrid, DifferencesSwitch } from "@/components/compare/compare-grid";
 import type { AppLocale } from "@/i18n/routing";
+import { formatTuition } from "@/lib/format";
 import { COMPARE_ROWS, type CompareProgram, type CompareView } from "@/lib/journey/compare-view";
 import { expectNoPhysicalDirection, LOCALES } from "../trust-helpers";
 import { CompareProviders, catalogs, compareView, REFS, withFixtureClient } from "./helpers";
@@ -186,6 +187,29 @@ describe.each(LOCALES)("CompareGrid (%s)", (locale) => {
         );
       }
     }
+  });
+
+  it("shows an official fee range with its income note in the compare cell", () => {
+    const range = {
+      amountMinor: 120000,
+      maxAmountMinor: 300000,
+      currency: "XTS",
+      period: "year" as const,
+      basis: "income_based" as const,
+    };
+    const view = views[locale];
+    const ranged: CompareView = {
+      ...view,
+      programs: view.programs.map((p) =>
+        p.slug === REFS.ok.slug ? { ...p, tuition: { ...p.tuition, value: range } } : p,
+      ),
+    };
+    const { container } = renderGrid(locale, ranged);
+    const scope = cell(container, "tuition", REFS.ok.slug);
+    // The cell label is a <p><bdi>; the amount sits in the cell's wrapper <div>.
+    expect(scope.querySelector(":scope > div bdi")?.textContent).toBe(formatTuition(range, locale));
+    expect(scope.textContent).toContain(catalogs[locale].domain.cost.incomeBased);
+    expect(badges(scope)).toBe(1);
   });
 
   it("shows the cost as a ranged, tagged estimate with the ten-month note, never as best or cheapest", () => {

@@ -13,11 +13,31 @@ import {
 import { SourcesSchema, stableFact, volatileFact } from "../provenance";
 import { RequirementsSchema } from "../rules";
 
-export const TuitionSchema = z.strictObject({
-  amountMinor: MinorAmountSchema,
-  currency: CurrencySchema,
-  period: z.enum(["year", "semester"]),
-});
+export const TUITION_BASES = ["income_based"] as const;
+
+// One official published fee, or an official RANGE (`maxAmountMinor`) when the university states a
+// lowest and a highest fee. `basis: "income_based"` says the fee depends on the household's income
+// (in Italy the ISEE indicator); it is only legal with a range.
+export const TuitionSchema = z
+  .strictObject({
+    amountMinor: MinorAmountSchema,
+    maxAmountMinor: MinorAmountSchema.optional(),
+    currency: CurrencySchema,
+    period: z.enum(["year", "semester"]),
+    basis: z.enum(TUITION_BASES).optional(),
+  })
+  .superRefine((tuition, ctx) => {
+    if (tuition.maxAmountMinor !== undefined && tuition.maxAmountMinor < tuition.amountMinor) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["maxAmountMinor"],
+        message: "maxAmountMinor must be >= amountMinor",
+      });
+    }
+    if (tuition.basis !== undefined && tuition.maxAmountMinor === undefined) {
+      ctx.addIssue({ code: "custom", path: ["basis"], message: "basis needs maxAmountMinor" });
+    }
+  });
 const DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] as const;
 export const MonthDaySchema = z
   .strictObject({

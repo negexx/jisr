@@ -310,6 +310,50 @@ describe("sampleSheet", () => {
   });
 });
 
+describe("sampleSheet tuition range", () => {
+  it("prints a ranged tuition value with its maximum and basis", () => {
+    const sheet = sampleSheet([
+      {
+        key: "programs/p",
+        row: {
+          key: "programs/p",
+          batch: "b1",
+          inSample: true,
+          audited: "",
+          outcome: "",
+          notes: "",
+        },
+        record: {
+          name: "Ranged CS",
+          tuition: {
+            value: {
+              amountMinor: 15600,
+              maxAmountMinor: 260000,
+              currency: "EUR",
+              period: "year",
+              basis: "income_based",
+            },
+            source: "programme",
+            info_kind: "official",
+          },
+          _review: {
+            evidence: [
+              {
+                fact: "tuition",
+                url: "https://u.example/fees",
+                quote: "fees range from EUR 156 to EUR 2,600 (ISEE)",
+              },
+            ],
+          },
+        },
+      },
+    ]);
+    expect(sheet).toContain("**tuition**");
+    expect(sheet).toContain("maxAmountMinor");
+    expect(sheet).toContain("income_based");
+  });
+});
+
 describe("sampleSheet documents", () => {
   it("shows the documents with their quotes", () => {
     const sheet = sampleSheet([

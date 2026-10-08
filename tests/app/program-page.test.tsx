@@ -7,7 +7,7 @@ import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { PROGRAM_CLIENT_NAMESPACES } from "@/components/program/client-namespaces";
 import { ProgramPageView } from "@/components/program/program-page-view";
 import type { AppLocale } from "@/i18n/routing";
-import { formatMoney } from "@/lib/format";
+import { formatMoney, formatMoneyRange } from "@/lib/format";
 import { pickMessages } from "@/lib/i18n/client-messages";
 import { describeRule } from "@/lib/journey/requirements";
 import { loadProgramPageData, type ProgramPageData } from "@/lib/snapshot/server";
@@ -20,7 +20,12 @@ import {
 import { E2E_SCHOLARSHIP_SLUGS, E2E_SLUGS } from "../fixtures/e2e/profiles";
 
 // The page reads public/snapshots; here it reads the fixture snapshot built into a temp dir.
-const snapshot = vi.hoisted(() => ({ dir: "", locale: "fr", recurring: false }));
+const snapshot = vi.hoisted(() => ({
+  dir: "",
+  locale: "fr",
+  recurring: false,
+  tuitionRange: false,
+}));
 
 vi.mock("@/lib/snapshot/server", async (importOriginal) => {
   const actual = await importOriginal<typeof import("@/lib/snapshot/server")>();
@@ -29,7 +34,22 @@ vi.mock("@/lib/snapshot/server", async (importOriginal) => {
     programStaticParams: () => actual.programStaticParams(snapshot.dir),
     loadProgramPageData: async (slug: string, locale: AppLocale) => {
       const data = await actual.loadProgramPageData(slug, locale, snapshot.dir);
-      if (data === null || !snapshot.recurring) return data;
+      if (data === null) return data;
+      if (snapshot.tuitionRange) {
+        // Stands in for a program whose university publishes a fee range that depends on income.
+        const tuition = {
+          ...data.program.tuition,
+          value: {
+            amountMinor: 120000,
+            maxAmountMinor: 300000,
+            currency: "XTS",
+            period: "year" as const,
+            basis: "income_based" as const,
+          },
+        };
+        return { ...data, program: { ...data.program, tuition } };
+      }
+      if (!snapshot.recurring) return data;
       // Stands in for a program whose source states its deadline without a year.
       const intakes = {
         ...data.program.intakes,
@@ -288,6 +308,24 @@ describe.each(LOCALES)("program page server render (%s)", (locale) => {
     expect(textOf(stale.document.getElementById("tuition"))).toContain(
       message(locale, "domain.cost.missingLine"),
     );
+  });
+
+  it("shows an official fee range with its income note, badged once in full", async () => {
+    snapshot.tuitionRange = true;
+    try {
+      const ok = await renderPage(E2E_SLUGS.ok, locale);
+      expect(textOf(ok.document.querySelector('[data-testid="tuition-amount"]'))).toContain(
+        formatMoneyRange(120000, 300000, "XTS", locale),
+      );
+      expect(textOf(ok.document.getElementById("tuition"))).toContain(
+        message(locale, "domain.cost.incomeBased"),
+      );
+      const badges = ok.document.querySelectorAll('#tuition [data-slot="source-badge"]');
+      expect(badges).toHaveLength(1);
+      expect(badges[0]?.getAttribute("data-variant")).toBe("full");
+    } finally {
+      snapshot.tuitionRange = false;
+    }
   });
 
   it("badges a published fee in full, and an unpublished one not at all", async () => {

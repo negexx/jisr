@@ -70,10 +70,19 @@ export function claimText(name: FactName, value: unknown): string {
     case "teachingLanguages":
       return `The programme is taught in: ${(value as string[]).join(", ")}.`;
     case "tuition": {
-      const t = value as { amountMinor: number; currency: string; period: string };
-      return t.amountMinor === 0
-        ? "There is no tuition fee for a student from outside the EU/EEA."
-        : `The tuition fee for a student from outside the EU/EEA is ${fromMinor(t.amountMinor, t.currency)} ${t.currency} per ${t.period}.`;
+      const t = value as {
+        amountMinor: number;
+        maxAmountMinor?: number;
+        currency: string;
+        period: string;
+        basis?: string;
+      };
+      if (t.amountMinor === 0 && t.maxAmountMinor === undefined)
+        return "There is no tuition fee for a student from outside the EU/EEA.";
+      const audience = "The tuition fee for a student from outside the EU/EEA";
+      if (t.maxAmountMinor !== undefined)
+        return `${audience} ranges from ${fromMinor(t.amountMinor, t.currency)} ${t.currency} to ${fromMinor(t.maxAmountMinor, t.currency)} ${t.currency} per ${t.period}${t.basis === "income_based" ? ", depending on household income" : ""}.`;
+      return `${audience} is ${fromMinor(t.amountMinor, t.currency)} ${t.currency} per ${t.period}.`;
     }
     case "intakes": {
       const parts = (value as Intake[]).flatMap((i) => [

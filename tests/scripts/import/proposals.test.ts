@@ -95,6 +95,105 @@ describe("verifyProposal", () => {
     expect(v.rejected[0]?.reason).toMatch(/does not appear/);
   });
 
+  describe("a tuition range", () => {
+    const RANGE = "https://uni.example/range-fees";
+    const value = {
+      amountMinor: 15600,
+      maxAmountMinor: 260000,
+      currency: "EUR",
+      period: "year",
+      basis: "income_based",
+    } as const;
+    pages[RANGE] =
+      "Tuition fees range from EUR 156 to EUR 2,600 a year, depending on the ISEE of the family.";
+    pages[`${RANGE}-noincome`] = "Tuition fees range from EUR 156 to EUR 2,600 a year.";
+
+    it("accepts a range whose quote shows both numbers and the income basis, value untouched", async () => {
+      const v = await verifyProposal(
+        proposal({
+          tuition: {
+            value,
+            evidence: [
+              {
+                url: RANGE,
+                quote:
+                  "Tuition fees range from EUR 156 to EUR 2,600 a year, depending on the ISEE of the family",
+              },
+            ],
+          },
+        }),
+        "Applied Computer Science",
+        getText,
+      );
+      expect(v.rejected).toEqual([]);
+      expect(v.facts.tuition?.value).toEqual(value);
+      expect(Object.values(v.facts.tuition?.value ?? {})).not.toContain(null);
+    });
+
+    it("rejects income_based when the quote does not mention income, never downgrading it", async () => {
+      const v = await verifyProposal(
+        proposal({
+          tuition: {
+            value,
+            evidence: [
+              {
+                url: `${RANGE}-noincome`,
+                quote: "Tuition fees range from EUR 156 to EUR 2,600 a year",
+              },
+            ],
+          },
+        }),
+        "Applied Computer Science",
+        getText,
+      );
+      expect(v.facts.tuition).toBeUndefined();
+      expect(v.rejected[0]).toMatchObject({ fact: "tuition" });
+      expect(v.rejected[0]?.reason).toMatch(/income/);
+    });
+
+    it("keeps a plain range with no basis when the quote states both fees", async () => {
+      const { basis: _basis, ...plain } = value;
+      const v = await verifyProposal(
+        proposal({
+          tuition: {
+            value: plain,
+            evidence: [
+              {
+                url: `${RANGE}-noincome`,
+                quote: "Tuition fees range from EUR 156 to EUR 2,600 a year",
+              },
+            ],
+          },
+        }),
+        "Applied Computer Science",
+        getText,
+      );
+      expect(v.facts.tuition?.value).toEqual(plain);
+    });
+
+    it("rejects a null maximum and a basis without a maximum in the schema", () => {
+      const evidence = [{ url: RANGE, quote: "Tuition fees range from EUR 156" }];
+      const parse = (tuition: unknown) =>
+        ProposalSchema.safeParse({
+          slug: "p",
+          programmePage: null,
+          facts: { tuition: { value: tuition, evidence } },
+        }).success;
+      expect(parse({ amountMinor: 1, maxAmountMinor: null, currency: "EUR", period: "year" })).toBe(
+        false,
+      );
+      expect(
+        parse({ amountMinor: 1, currency: "EUR", period: "year", basis: "income_based" }),
+      ).toBe(false);
+      expect(parse({ amountMinor: 5, maxAmountMinor: 1, currency: "EUR", period: "year" })).toBe(
+        false,
+      );
+      expect(parse({ amountMinor: 1, maxAmountMinor: 5, currency: "EUR", period: "year" })).toBe(
+        true,
+      );
+    });
+  });
+
   it("rejects a tuition amount that its quote ties to a past study year, for the study year given", async () => {
     const OLD = "https://uni.example/old-fees";
     pages[OLD] = "Studiejaar 2025-2026 Instellingscollegegeld Voltijd: € 10.164 per jaar";

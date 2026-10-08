@@ -104,11 +104,20 @@ export const ProposalSchema = z.object({
     durationYears: fact(z.number().positive()).optional(),
     teachingLanguages: fact(z.array(z.string().regex(/^[a-z]{2}$/)).min(1)).optional(),
     tuition: fact(
-      z.object({
-        amountMinor: z.number().int().nonnegative(),
-        currency: z.string().regex(/^[A-Z]{3}$/),
-        period: z.enum(["year", "semester"]),
-      }),
+      z
+        .object({
+          amountMinor: z.number().int().nonnegative(),
+          maxAmountMinor: z.number().int().nonnegative().optional(),
+          currency: z.string().regex(/^[A-Z]{3}$/),
+          period: z.enum(["year", "semester"]),
+          basis: z.enum(["income_based"]).optional(),
+        })
+        .refine((t) => t.maxAmountMinor === undefined || t.maxAmountMinor >= t.amountMinor, {
+          message: "maxAmountMinor must be >= amountMinor",
+        })
+        .refine((t) => t.basis === undefined || t.maxAmountMinor !== undefined, {
+          message: "basis needs maxAmountMinor",
+        }),
     ).optional(),
     intakes: fact(
       z.array(
@@ -198,13 +207,22 @@ function checkValue(
       return checkDuration(value as number, quote);
     case "teachingLanguages":
       return checkLanguages(value as string[], quote);
-    case "tuition":
+    case "tuition": {
+      const t = value as {
+        amountMinor: number;
+        maxAmountMinor?: number;
+        currency?: string;
+        basis?: "income_based";
+      };
       return checkTuition(
-        (value as { amountMinor: number }).amountMinor,
+        t.amountMinor,
         quote,
         minStudyYear,
-        (value as { currency?: string }).currency,
+        t.currency,
+        t.maxAmountMinor,
+        t.basis,
       );
+    }
     case "applicationChannel":
       return checkChannel(value as string, quote);
     case "intakes": {

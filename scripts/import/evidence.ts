@@ -398,25 +398,69 @@ function currencyBesideAmount(before: string, after: string): string | null {
   return null;
 }
 
-function amountHasCurrency(amountMajor: number, quote: string, currency: string): boolean {
-  const q = normalizeForMatch(quote);
-  for (const m of q.matchAll(amountPattern(amountMajor))) {
-    const start = m.index ?? 0;
-    const end = start + m[0].length;
-    const found = currencyBesideAmount(
-      q.slice(Math.max(0, start - 14), start),
-      q.slice(end, end + 14),
-    );
-    if (found === currency) return true;
+// The currency written beside one occurrence of an amount (null when none is).
+function currencyAt(q: string, hit: { start: number; end: number }): string | null {
+  return currencyBesideAmount(
+    q.slice(Math.max(0, hit.start - 14), hit.start),
+    q.slice(hit.end, hit.end + 14),
+  );
+}
+
+// "income_based" needs the quote to say the fee depends on income (the Italian ISEE indicator, or
+// the plain word in the languages the sources use); without it a range is just a range.
+export const INCOME_WORDS = /\b(?:isee|reddito|income|revenu|revenus|einkommen|inkomen)\b/i;
+
+// How a quote joins the two ends of a range when one of them is written without its currency:
+// "156 to 2,600", "da 156 a 2.600", "156 à 2.600", "156-2,600", "156 bis 2.600", "156 tot 2.600".
+// Nothing looser ("and", "e", "en", "up to", "fino a"): a bare number next to those is too often
+// not a fee ("Room 156 en 2.600 euro").
+const BARE_CONNECTOR = "(?:-|to|a|à|bis|tot)";
+const RANGE_GAP = new RegExp(`^[\\s,.;:]*${BARE_CONNECTOR}[\\s,.;:]*$`, "i");
+// A free tier written as the lowest end, directly joined to the highest: "free to EUR 2,600",
+// "free up to EUR 2,600". This is the zero branch, a different construction with its own words.
+const FREE_CONNECTOR = String.raw`(?:-|\/|to|a|à|au|bis|tot|until|up to|fino a|fino ad|and|e|et|und|en)`;
+const FREE_TO_MAX = new RegExp(
+  `\\b(?:free|zero|gratis|gratuit[oe]?|esente|kostenlos)\\s*${FREE_CONNECTOR}\\s*$`,
+  "i",
+);
+const MAX_RANGE_GAP = 30;
+
+// A bare edge (no currency beside it) that is a year ("2026", written without a thousands
+// separator, 1990 to 2100) or a piece of a study-year label ("2026/27", "2026-2027", "a.a.
+// 2026/2027") is a date, not a fee.
+const YEAR_LIKE = /^(?:199\d|20\d\d|2100)$/;
+const STUDY_YEAR_LABEL = /(?<!\d)(?:19|20)\d\d\s*[-/]\s*(?:19|20)?\d\d(?!\d)/g;
+function bareEdgeIsYear(q: string, hit: { start: number; end: number }): boolean {
+  if (YEAR_LIKE.test(q.slice(hit.start, hit.end))) return true;
+  for (const label of q.matchAll(STUDY_YEAR_LABEL)) {
+    const at = label.index ?? 0;
+    if (hit.start >= at && hit.end <= at + label[0].length) return true;
   }
   return false;
 }
+// A bare lowest edge that follows a counting or labelling word ("Semester 6", "Level 12", "Room
+// 156") is a number of something, not a fee.
+const LABEL_BEFORE_EDGE =
+  /\b(?:rooms?|levels?|class(?:es)?|grades?|modules?|units?|steps?|phases?|pages?|no|nr|number|aula|fase|modulo|stufe|niveau|classe)\.?\s{0,2}#?$/;
+// A period word is a label ("Semester 6") unless a rate word stands before it ("per year 156",
+// "all'anno 156", "je Semester 156"): then it is the period of the fee, not a number of something.
+const PERIOD_BEFORE_EDGE =
+  /\b(?:semesters?|terms?|trimesters?|years?|weeks?|months?|anno|semestre|trimestre|mese|settimana|jahr)\.?\s{0,2}#?$/;
+const RATE_WORD_BEFORE =
+  /(?:^|[^a-z])(?:per|a|an|each|every|pro|par|je|al|all'|l'|ogni|chaque)\s*$/;
+function bareEdgeFollowsLabel(q: string, hit: { start: number }): boolean {
+  const before = q.slice(Math.max(0, hit.start - 30), hit.start);
+  if (LABEL_BEFORE_EDGE.test(before)) return true;
+  const period = PERIOD_BEFORE_EDGE.exec(before);
+  return period !== null && !RATE_WORD_BEFORE.test(before.slice(0, period.index));
+}
 
-export function checkTuition(
+// One fee amount (a flat fee, or the end of a range with the currency beside it) against the quote.
+function checkFeeAmount(
   amountMinor: number,
   quote: string,
   minStudyYear: number,
-  currency?: string,
+  currency: string | undefined,
 ): FactCheck {
   if (amountMinor === 0)
     return NO_FEE.test(quote)
@@ -427,14 +471,103 @@ export function checkTuition(
   const amountMajor = fromMinor(amountMinor, currency ?? "EUR");
   if (!amountInQuote(amountMajor, quote))
     return fail(`the amount ${amountMajor} does not appear in the quote`);
-  if (
-    currency !== undefined &&
-    CURRENCY_TOKENS[currency] !== undefined &&
-    !amountHasCurrency(amountMajor, quote, currency)
-  )
-    return fail(`the quote does not write the amount in the currency ${currency}`);
+  if (currency !== undefined && CURRENCY_TOKENS[currency] !== undefined) {
+    const q = normalizeForMatch(quote);
+    const beside = amountMatches(amountMajor, q).map((hit) => currencyAt(q, hit));
+    if (!beside.includes(currency))
+      return fail(`the quote does not write the amount in the currency ${currency}`);
+  }
   const stale = staleStudyYear(amountMajor, quote, minStudyYear);
   return stale === null ? ok : fail(stale);
+}
+
+// A range is two fees in ONE quote. An end may be written without its currency only inside the
+// range construction itself ("da 156 a 2.600 euro", "156-2,600 €", "from 156 to EUR 2,600", "free to
+// EUR 2,600"): the bare number sits next to a connector and the other end, and that other end
+// carries the stated currency. Anywhere else a bare number is just a number (a year, a count, a
+// percentage), so then each end needs its currency beside it, exactly like a flat fee.
+function checkTuitionRange(
+  minMinor: number,
+  maxMinor: number,
+  quote: string,
+  minStudyYear: number,
+  currency: string | undefined,
+): FactCheck {
+  const code = currency ?? "EUR";
+  const checkable = currency !== undefined && CURRENCY_TOKENS[currency] !== undefined;
+  const q = normalizeForMatch(quote);
+  const maxMajor = fromMinor(maxMinor, code);
+  const minMajor = fromMinor(minMinor, code);
+  const maxHits = amountMatches(maxMajor, q);
+  if (maxHits.length === 0) return fail(`the amount ${maxMajor} does not appear in the quote`);
+  const minHits = amountMatches(minMajor, q);
+  if (minMinor !== 0 && minHits.length === 0)
+    return fail(`the amount ${minMajor} does not appear in the quote`);
+
+  const tokens = checkable ? new RegExp(CURRENCY_TOKENS[code] ?? "", "gi") : null;
+  const stripCurrency = (text: string) => (tokens === null ? text : text.replace(tokens, " "));
+  const stated = (found: string | null) => found === currency;
+  const conflicting = (found: string | null) => checkable && found !== null && found !== currency;
+
+  let constructed = false;
+  for (const b of maxHits) {
+    const bc = currencyAt(q, b);
+    if (conflicting(bc)) continue;
+    if (
+      minMinor === 0 &&
+      FREE_TO_MAX.test(stripCurrency(q.slice(Math.max(0, b.start - 40), b.start)))
+    ) {
+      if (!checkable || stated(bc)) constructed = true;
+    }
+    for (const a of minHits) {
+      if (a.end > b.start) continue;
+      const ac = currencyAt(q, a);
+      if (conflicting(ac)) continue;
+      if (ac === null && (bareEdgeIsYear(q, a) || bareEdgeFollowsLabel(q, a))) continue;
+      if (bc === null && bareEdgeIsYear(q, b)) continue;
+      const gap = q.slice(a.end, b.start);
+      if (gap.length > MAX_RANGE_GAP || !RANGE_GAP.test(stripCurrency(gap))) continue;
+      if (checkable && !stated(ac) && !stated(bc)) continue;
+      constructed = true;
+    }
+    if (constructed) break;
+  }
+
+  if (!constructed) {
+    // no range construction: each end is a fee of its own and needs its currency beside it
+    if (minMinor === 0) return fail("a zero minimum needs the quote to join it to the maximum");
+    if (!checkable) return fail("the quote does not join the two fees as a range");
+    for (const edge of [minMinor, maxMinor]) {
+      const checked = checkFeeAmount(edge, quote, minStudyYear, currency);
+      if (!checked.ok) return checked;
+    }
+    return ok;
+  }
+  for (const edge of [minMinor, maxMinor]) {
+    if (edge === 0) continue;
+    const stale = staleStudyYear(fromMinor(edge, code), quote, minStudyYear);
+    if (stale !== null) return fail(stale);
+  }
+  return ok;
+}
+
+export function checkTuition(
+  amountMinor: number,
+  quote: string,
+  minStudyYear: number,
+  currency?: string,
+  maxAmountMinor?: number,
+  basis?: "income_based",
+): FactCheck {
+  if (maxAmountMinor === undefined)
+    return checkFeeAmount(amountMinor, quote, minStudyYear, currency);
+  if (maxAmountMinor < amountMinor) return fail("the highest fee is below the lowest");
+  if (basis === "income_based" && !INCOME_WORDS.test(normalizeForMatch(quote)))
+    return fail("income_based needs a quote that mentions income (ISEE, reddito, income...)");
+  // equal ends are one fee written twice in the schema, not a range to look for in the quote
+  if (maxAmountMinor === amountMinor)
+    return checkFeeAmount(amountMinor, quote, minStudyYear, currency);
+  return checkTuitionRange(amountMinor, maxAmountMinor, quote, minStudyYear, currency);
 }
 
 // The day written right next to the month: "15 July", "15. Juli", "July 15", "15.07.", "15/07". A

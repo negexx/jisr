@@ -202,6 +202,7 @@
       "tenMonthNote": "Monthly costs are counted for {months} months of study. Housing is often paid for 12 months, so check the rent period.",
       "missingLine": "Not in the sources we reviewed, to be checked",
       "partialTotal": "Partial total: some costs are not included",
+      "incomeBased": "Depends on household income (ISEE)",
       "estimateTag": "Estimate"
     },
     "budgetFit": {

@@ -331,6 +331,39 @@ describe("applicant context", () => {
     expect(user).toMatch(/EUR/);
   });
 
+  describe("the Italian tuition text and the range rule", () => {
+    const { user } = buildPrompt({ ...meta, country: "IT", shared: [], own: [] });
+    it("allows a range when ONE quote states both a lowest and a highest fee for the student", () => {
+      expect(user).toMatch(/RANGE/);
+      expect(user).toMatch(/ONE quote states both a lowest and a highest fee/);
+      expect(user).toContain("da 156 a 2.600 euro");
+      expect(user).toMatch(/"income_based" only if the quote itself says the fee depends on/);
+    });
+    it("still leaves out a band table, EU-only amounts, the regional tax, the stamp duty and an ISEE limit", () => {
+      expect(user).toMatch(/table of ISEE bands/);
+      expect(user).toMatch(/tassa regionale/);
+      expect(user).toMatch(/bollo/);
+      expect(user).toMatch(/THRESHOLD/);
+      expect(user).toContain("esonero per ISEE fino a 22.000 euro");
+      expect(user).toMatch(/Never convert a currency/);
+    });
+    it("no longer says a range is not the tuition", () => {
+      expect(user).not.toContain('a range ("from ... to ...")');
+      expect(user).not.toMatch(/range[^.]*is not the tuition/);
+    });
+    it("keeps the Italian application channel text", () => {
+      expect(user).toContain(
+        "it-universitaly if the pages say that such applicants make the pre-enrolment application (preiscrizione) on the Universitaly portal",
+      );
+    });
+    it("leaves the Dutch text as it was: there a range is a spread across programmes", () => {
+      const nl = buildPrompt({ ...meta, country: "NL", shared: [], own: [] }).user;
+      expect(nl).toContain(
+        'or gives only a range ("varies per programme", "from ... to ..."), leave tuition out and say why in notes.',
+      );
+    });
+  });
+
   it("leaves the French application channel to code", () => {
     const { user } = buildPrompt({ ...meta, country: "FR", shared: [], own: [] });
     expect(user).toMatch(/Do not output applicationChannel/);
@@ -650,6 +683,11 @@ describe("keepChecked", () => {
 });
 
 describe("tuition wording in the instruction", () => {
+  it("allows a range only when the page states both a lowest and a highest fee", () => {
+    expect(INSTRUCTION).toContain("maxAmountMinor");
+    expect(INSTRUCTION).toMatch(/if the page states BOTH a lowest and a highest fee/);
+    expect(INSTRUCTION).toMatch(/never write null for them/);
+  });
   it("shows EUR in hundredths and HUF as whole forints", () => {
     expect(INSTRUCTION).toMatch(/EUR 14,650 = 1465000/);
     expect(INSTRUCTION).toMatch(/HUF has no minor unit: HUF 1,500,000 = 1500000/);

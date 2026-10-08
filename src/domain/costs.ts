@@ -3,6 +3,7 @@ import type { Budget } from "@/data-schema/profile";
 import type { CostAmount, LivingCostCategory } from "@/data-schema/records/cost-profile";
 import type { CostProfile, Program, ResolvedFact } from "@/data-schema/resolved";
 import { toFactRef } from "./facts";
+import { tuitionBounds } from "./tuition";
 import type { BudgetFit, CostEstimate, CostLine } from "./types";
 
 export const ACADEMIC_YEAR_MONTHS = 10;
@@ -39,17 +40,15 @@ function tuitionLine(program: Program, now: IsoDate): CostLine {
     };
   }
   const k = tuition.period === "semester" ? 2 : 1;
+  const bounds = tuitionBounds(tuition);
   return {
     category: "tuition",
     status: "ok",
-    firstYear: {
-      min: tuition.amountMinor * k,
-      max: tuition.amountMinor * k,
-      currency: tuition.currency,
-    },
+    firstYear: { min: bounds.min * k, max: bounds.max * k, currency: tuition.currency },
     per: tuition.period,
     scope: "program",
     fact,
+    ...(tuition.basis === "income_based" ? { incomeBased: true as const } : {}),
   };
 }
 

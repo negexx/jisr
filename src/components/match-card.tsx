@@ -5,7 +5,7 @@ import { useId } from "react";
 
 import type { FactRef } from "@/domain/types";
 import { Link } from "@/i18n/navigation";
-import { formatMoney } from "@/lib/format";
+import { formatTuition } from "@/lib/format";
 import type { MatchCardModel } from "@/lib/journey/matches-view";
 import { formatList, languageName } from "@/lib/journey/reasons";
 import { cn } from "@/lib/utils";
@@ -17,6 +17,7 @@ import { MatchStatusBadge } from "./match-status-badge";
 import { ReasonList } from "./reason-list";
 import { SaveProgramButton } from "./save-program-button";
 import { SourceBadge } from "./source-badge";
+import { TuitionBasisNote } from "./tuition-basis-note";
 import { buttonVariants } from "./ui/button";
 import { useSaveCopy } from "./use-save-copy";
 
@@ -155,12 +156,13 @@ export function MatchCard({
             <>
               <p className="flex flex-wrap items-baseline gap-x-2">
                 <span className="text-base font-medium tabular-nums">
-                  <bdi dir="ltr">{formatMoney(tuition.amountMinor, tuition.currency, locale)}</bdi>
+                  <bdi dir="ltr">{formatTuition(tuition, locale)}</bdi>
                 </span>
                 <small className="text-sm text-muted-foreground">
                   {tCost(`per.${tuition.period}`)}
                 </small>
               </p>
+              <TuitionBasisNote tuition={tuition} />
               <SourceBadge meta={model.tuition} variant="compact" />
             </>
           )}

@@ -17,7 +17,7 @@ import { buildSnapshot, E2E_DATA_DIR, readManifest, removeTempDirs } from "./fix
 const SHA = "0123456789abcdef".repeat(4);
 const ENTRY = { file: "s/core.0123456789ab.json", sha256: SHA, bytes: 10, gzipBytes: 8 };
 const HAND_MADE: Record<string, unknown> = {
-  formatVersion: 1,
+  formatVersion: 2,
   snapshotVersion: "0123456789ab",
   generatedAt: "2026-09-30T10:00:00.000Z",
   locales: ["fr", "en", "ar"],
@@ -142,8 +142,8 @@ const INVALID: Array<[string, () => unknown]> = [
   ["number root", () => 1],
   ["array root", () => [HAND_MADE]],
   ["empty object", () => ({})],
-  ["formatVersion 2", () => edited((m) => (m.formatVersion = 2))],
-  ["formatVersion string", () => edited((m) => (m.formatVersion = "1"))],
+  ["formatVersion 3", () => edited((m) => (m.formatVersion = 3))],
+  ["formatVersion string", () => edited((m) => (m.formatVersion = "2"))],
   ["formatVersion missing", () => edited((m) => delete m.formatVersion)],
   ["unknown top-level key", () => edited((m) => (m.extra = 1))],
   [
@@ -207,6 +207,7 @@ describe("parseManifest against ManifestSchema", () => {
   it("shares its constants with the schema", () => {
     expect(LOCALES).toEqual(ORACLE_LOCALES);
     expect(SNAPSHOT_FORMAT_VERSION).toBe(ORACLE_FORMAT_VERSION);
+    expect(SNAPSHOT_FORMAT_VERSION).toBe(2);
   });
 
   it("builds the same shard names as the schema module", () => {

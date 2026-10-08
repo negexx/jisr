@@ -918,6 +918,31 @@ describe("validateData product decisions", () => {
       const result = validateData(mutateFile(base, PROG, tuitionWith(fields)), { now: NOW });
       expect(result.errors).toEqual([]);
     });
+    it("still errors on a non-official range and accepts an official one", () => {
+      const range = {
+        value: {
+          amountMinor: 100000,
+          maxAmountMinor: 300000,
+          currency: "XTS",
+          period: "year",
+          basis: "income_based",
+        },
+      };
+      const bad = validateData(
+        mutateFile(base, PROG, tuitionWith({ ...range, info_kind: "estimate", basis })),
+        { now: NOW },
+      );
+      expect(bad.errors).toContainEqual({
+        file: PROG,
+        path: "tuition.info_kind",
+        message: NOT_OFFICIAL,
+      });
+      const good = validateData(
+        mutateFile(base, PROG, tuitionWith({ ...range, info_kind: "official" })),
+        { now: NOW },
+      );
+      expect(good.errors).toEqual([]);
+    });
   });
 
   describe("complete coverage needs rules", () => {

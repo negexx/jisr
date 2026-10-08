@@ -76,6 +76,9 @@ function LineRow({
                 {t("counted", { per: tCost(`per.${line.per}`) })}
               </small>
             ) : null}
+            {line.incomeBased === true ? (
+              <small className="text-sm text-muted-foreground">{tCost("incomeBased")}</small>
+            ) : null}
             {line.scope === null ? null : (
               <small className="text-sm text-muted-foreground">
                 {tCost(`scope.${line.scope}`)}
