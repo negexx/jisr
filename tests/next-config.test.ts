@@ -20,6 +20,16 @@ describe("next.config snapshot cache headers", () => {
   });
 });
 
+describe("next.config security headers", () => {
+  it("adds the security headers on all routes next to the snapshot rules", async () => {
+    const rules = (await nextConfig.headers?.()) ?? [];
+    const allRoutes = rules.find((rule) => rule.source === "/:path*");
+    expect(allRoutes?.headers.find((h) => h.key === "X-Content-Type-Options")?.value).toBe(
+      "nosniff",
+    );
+  });
+});
+
 describe("next.config site environment", () => {
   // Importing the config runs readSiteEnv(), which throws on a malformed deployment variable.
   it("loads with the current environment", () => {

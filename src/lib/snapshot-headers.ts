@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-type HeaderRules = Awaited<ReturnType<NonNullable<NextConfig["headers"]>>>;
+export type HeaderRules = Awaited<ReturnType<NonNullable<NextConfig["headers"]>>>;
 
 // Shards are content-hashed (s/<name>.<hash>.json), so they never change under one URL; the manifest
 // is the only mutable pointer and must always be revalidated.
