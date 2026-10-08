@@ -437,7 +437,7 @@ export function DocumentsSection({ data }: { data: ProgramPageData }) {
   );
 }
 
-function sameSource(a: FactMeta, b: FactMeta): boolean {
+export function sameSource(a: FactMeta, b: FactMeta): boolean {
   return (
     a.source_url === b.source_url &&
     a.info_kind === b.info_kind &&

@@ -13,7 +13,7 @@ export async function SiteHeader({ locale }: { locale: AppLocale }) {
   const savedCountTemplate: unknown = tNav.raw("savedCount");
   return (
     <header className="border-b border-border">
-      <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-x-4 px-4 md:flex-nowrap md:px-6">
+      <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-x-4 px-4 md:px-6 lg:flex-nowrap">
         <Link href="/" className="flex min-h-12 items-center gap-2 text-lg font-semibold">
           <bdi>{t("siteName")}</bdi>
           <span lang="ar" className="font-normal text-muted-foreground">
@@ -21,12 +21,13 @@ export async function SiteHeader({ locale }: { locale: AppLocale }) {
           </span>
           <span className="sr-only">{t("homeLink")}</span>
         </Link>
-        <div className="order-3 w-full md:order-none md:me-auto md:ms-6 md:w-auto">
+        <div className="order-3 w-full lg:order-none lg:me-auto lg:ms-6 lg:w-auto">
           <NavLinks
             label={tNav("label")}
             items={[
               { href: "/profile", label: tNav("profile") },
               { href: "/matches", label: tNav("matches") },
+              { href: "/scholarships", label: tNav("scholarships"), prefetch: false },
               {
                 href: "/plan",
                 label: tNav("plan"),
