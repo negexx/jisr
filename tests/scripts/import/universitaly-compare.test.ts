@@ -401,9 +401,10 @@ describe("compare: exact matches win over near matches, whatever the portal orde
       classe: { codice: "L-33" },
     }),
   );
+  // Lower id than the exact-name course: sorting by id alone must not make the test pass.
   const renamedCourse = classify(
     course({
-      id: 31,
+      id: 29,
       nomeStruttura: BOCCONI,
       nomeCorso: "Economics and Finance",
       nomeCorsoEn: "Economics and Finance",
@@ -417,7 +418,7 @@ describe("compare: exact matches win over near matches, whatever the portal orde
     expect(first).toEqual(reversed);
     expect(first.matched).toEqual([{ ours: bocOurs.slug, portalId: 30 }]);
     expect(first.possible).toEqual([]);
-    expect(first.newProgrammes.map((c) => c.portalId)).toEqual([31]);
+    expect(first.newProgrammes.map((c) => c.portalId)).toEqual([29]);
     expect(first.notListed).toEqual([]);
   });
 
@@ -483,6 +484,14 @@ describe("compare: exact matches win over near matches, whatever the portal orde
       permute([2, 3, 1, 0, 4, 6, 5]),
     ];
     for (const order of orders) expect(compare(order, programmes)).toEqual(base);
+    // Two-pass outcome: exact names first (30 -> a, 32 -> b), the third identical course is the
+    // only duplicate, the renamed course (lowest id) is a new programme, not a near match of a.
+    expect(base.matched.map((m) => m.portalId).sort((x, y) => x - y)).toEqual([10, 30, 32]);
+    expect(base.possible.map((p) => [p.candidate.portalId, p.why])).toEqual([
+      [33, `duplicate of ${a.slug} already matched (other campus?)`],
+    ]);
+    expect(base.newProgrammes.map((c) => c.portalId)).toEqual([29, 34]);
+    expect(base.newUniversities.map((u) => u.university)).toEqual(["Università di Trento"]);
     // Every candidate ends in exactly one place.
     const placed =
       base.matched.length +
