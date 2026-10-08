@@ -1353,3 +1353,9 @@ Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
 - Limits (stop on auth, shape change, rate limit or block; plausibility check as the MUR importer does): `PortalStopError`, `parsePages`.
 - Placeholder scan: none; the one place that defers to reading neighbouring code is the expected host strings of the `url-host` test (`hostKey` behaviour), with the assertion stated.
 - Type consistency: `Classified`, `Candidate`, `Status` (Task 1) are used unchanged by Tasks 3 and 4; `FetchedPage`, `Getter`, `PortalStopError` (Task 2) by Task 4; `OurProgramme`, `Comparison`, `ReportMeta` (Task 3) by Task 4.
+
+## Amendments after the real run (2026-10-08)
+
+- **Blended delivery counts as in person.** The plan's Global Constraints and Task 1 code accept only `modalitaErogazione.codice` `C`. The real run showed code `B` ("Corso di studio in modalità mista", `modalitaDidattica` "In presenza", 17 courses of the 241, 6 in scope) and that 3 of our 45 promoted programmes are `B` on the portal; the earlier MUR importer (`DISTANCE_MODES` in `scripts/import/sources/mur.ts`) excluded only "Teledidattica" and "Prevalentemente a distanza". So `classify` accepts `C` and `B`, each candidate carries `delivery` (`conventional` | `blended`), and the report flags blended lines. `T` and `P` stay excluded. A blended course can be mostly online (Piemonte Orientale's URL says "online degree program"; LUM was excluded by the owner earlier for its blended mode): piece 3 must check the delivery mode on the programme page before staging.
+- **Cache hygiene and CLI strictness** added after review: the manifest is deleted before pages are written, validated with Zod on read, flags are strict, status must be 200 and redirects are errors, the Italian total has a floor of 500.
+- **Biome** excludes `data-staging/universitaly` (raw one-line JSON).
