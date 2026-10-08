@@ -526,7 +526,9 @@ export function applyVerified(staged: Staged, verified: Verified, today: string)
   next.requirements = { coverage: "partial", source: "programme", info_kind: "official", rules };
   next.sources = sources;
 
-  const review = asRecord(next._review);
+  // applyVerified rebuilds the record from this run, so a dropped-quote warning of an earlier run
+  // does not survive it
+  const { droppedQuotes: _earlier, ...review } = asRecord(next._review);
   next._review = {
     ...review,
     preparedBy: "assistant",

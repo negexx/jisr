@@ -374,6 +374,22 @@ describe("verifyProposal", () => {
         droppedQuotes: [line],
       });
       const { droppedQuotes: _gone, ...clean } = verified;
+      // a re-run that dropped nothing removes the stale warning of the earlier run
+      const first = applyVerified(staged, verified, "2026-10-08");
+      expect(applyVerified(first, clean, "2026-10-09")._review).not.toHaveProperty("droppedQuotes");
+      expect(
+        applyVerified(first, { ...clean, droppedQuotes: [] }, "2026-10-09")._review,
+      ).not.toHaveProperty("droppedQuotes");
+      // an enrichment only adds: earlier lines stay and a repeated line is kept once
+      const enriched = enrichRecord(staged, verified, "2026-10-08").record;
+      const more = {
+        ...verified,
+        facts: { durationYears: { value: 3, evidence: [fees] } },
+        droppedQuotes: [...dropped, { fact: "durationYears", url: PAGE, quote: "six" }],
+      };
+      expect(enrichRecord(enriched, more, "2026-10-09").record._review).toMatchObject({
+        droppedQuotes: [line, `durationYears: "six" (${PAGE})`],
+      });
       expect(applyVerified(staged, clean, "2026-10-08")._review).not.toHaveProperty(
         "droppedQuotes",
       );

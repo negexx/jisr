@@ -377,21 +377,39 @@ describe("applicant context", () => {
       expect(user).toMatch(/groups of degree programmes/);
       expect(user).toMatch(/degree class or department/);
     });
-    it("needs a SECOND evidence quote tying this programme to its group, else no tuition", () => {
+    it("prefers the figure of the group a tie quote names, with the tie quote as the SECOND evidence quote", () => {
       expect(user).toMatch(
-        /SECOND evidence quote that ties this programme, or its degree class or department, to that group; without such a quote leave tuition out and say why in notes/,
+        /PREFERRED: when an accepted quote ties this programme, or its degree class or department, to a group, use that group's figure and give the tie quote as the SECOND evidence quote/,
       );
     });
-    it("builds a per-area range only from ONE country group or ONE fee table, and rule 1 wins for programme groups", () => {
+    it("allows a fallback range of the group figures when no quote ties the programme, from ONE quote, with a note", () => {
       expect(user).toMatch(
-        /two values by degree area form a range only if ONE quote shows both values of ONE country group or ONE fee table that applies to this student/,
+        /FALLBACK, allowed: when no quote ties the programme to a group, give a RANGE from the lowest to the highest of the group figures that apply to this student \(non-EU, household abroad\), but only if ONE quote shows ALL those figures \(amountMinor = lowest, maxAmountMinor = highest\), and say in notes that the group was not tied/,
       );
       expect(user).toMatch(
-        /never build a range from figures for different groups of degree programmes, different country groups, or a reduced fee for particular countries/i,
+        /If ONE quote does not show them all, leave tuition out and say why in notes/,
       );
-      expect(user).toMatch(/Rule \(1\) takes precedence over this for programme groups/);
+    });
+    it("never mixes country groups, systems or reduced country fees, unless Morocco is tied to that reduced list", () => {
+      expect(user).toMatch(
+        /Never build a range from figures of different country groups, different systems, or reduced fees for particular countries/,
+      );
+      expect(user).toMatch(/unless Morocco is tied to that reduced list/);
+      expect(user).toMatch(/only range ends/);
+    });
+    it("says one consistent thing about ranges: no sentence forbids the fallback or ranks the rules the old way", () => {
+      expect(user).not.toMatch(/Rule \(1\) takes precedence over this/);
       expect(user).not.toMatch(
-        /and its two values by degree area as a range only if ONE quote shows both\./,
+        /never build a range from figures for different groups of degree programmes/i,
+      );
+      expect(user).not.toMatch(/without such a quote leave tuition out/);
+      expect(user).not.toMatch(
+        /form a range only if ONE quote shows both values of ONE country group/,
+      );
+    });
+    it("handles the case that needs a Morocco tie and a programme-group tie with two quotes and the fallback", () => {
+      expect(user).toMatch(
+        /needs both a Morocco tie \(country group\) and a programme-group tie: use at most TWO quotes, the amount quote and the Morocco tie quote, and apply the FALLBACK of rule \(1\) across the programme groups of the country group that names Morocco, unless the amount quote itself names this programme's group \(then give that single figure\)/,
       );
     });
     it("allows at most two evidence quotes for a tuition: the amount first, then the one tie quote", () => {
@@ -399,9 +417,9 @@ describe("applicant context", () => {
         /at most TWO evidence quotes for a tuition: first the quote with the amount, second the one tie quote/,
       );
     });
-    it("asks for the year in an application window quote, else recurringDeadline", () => {
+    it("asks for the year in an application window quote, else a recurringDeadline with the other dates null", () => {
       expect(user).toMatch(
-        /the quote must state the year; otherwise use recurringDeadline as above/,
+        /the quote must state the year; otherwise leave applicationOpens and startDate null and write the deadline as recurringDeadline as above/,
       );
     });
     it("requires a second quote naming Morocco for a country-group or nationality-based fee", () => {
