@@ -410,16 +410,50 @@ function currencyAt(q: string, hit: { start: number; end: number }): string | nu
 // the plain word in the languages the sources use); without it a range is just a range.
 export const INCOME_WORDS = /\b(?:isee|reddito|income|revenu|revenus|einkommen|inkomen)\b/i;
 
-// How a quote joins the two ends of a range: "156 to 2,600", "da 156 a 2.600", "156-2,600",
-// "156 bis 2.600", "156 tot 2.600", "between 156 and 2,600", "up to 2,600".
-const RANGE_CONNECTOR = String.raw`(?:-|\/|to|a|à|au|bis|tot|until|up to|fino a|fino ad|and|e|et|und|en)`;
-const RANGE_GAP = new RegExp(`^[\\s,.;:]*${RANGE_CONNECTOR}[\\s,.;:]*$`, "i");
-// A free tier written as the lowest end, directly joined to the highest: "free to EUR 2,600".
+// How a quote joins the two ends of a range when one of them is written without its currency:
+// "156 to 2,600", "da 156 a 2.600", "156 à 2.600", "156-2,600", "156 bis 2.600", "156 tot 2.600".
+// Nothing looser ("and", "e", "en", "up to", "fino a"): a bare number next to those is too often
+// not a fee ("Room 156 en 2.600 euro").
+const BARE_CONNECTOR = "(?:-|to|a|à|bis|tot)";
+const RANGE_GAP = new RegExp(`^[\\s,.;:]*${BARE_CONNECTOR}[\\s,.;:]*$`, "i");
+// A free tier written as the lowest end, directly joined to the highest: "free to EUR 2,600",
+// "free up to EUR 2,600". This is the zero branch, a different construction with its own words.
+const FREE_CONNECTOR = String.raw`(?:-|\/|to|a|à|au|bis|tot|until|up to|fino a|fino ad|and|e|et|und|en)`;
 const FREE_TO_MAX = new RegExp(
-  `\\b(?:free|zero|gratis|gratuit[oe]?|esente|kostenlos)\\s*${RANGE_CONNECTOR}\\s*$`,
+  `\\b(?:free|zero|gratis|gratuit[oe]?|esente|kostenlos)\\s*${FREE_CONNECTOR}\\s*$`,
   "i",
 );
 const MAX_RANGE_GAP = 30;
+
+// A bare edge (no currency beside it) that is a year ("2026", written without a thousands
+// separator, 1990 to 2100) or a piece of a study-year label ("2026/27", "2026-2027", "a.a.
+// 2026/2027") is a date, not a fee.
+const YEAR_LIKE = /^(?:199\d|20\d\d|2100)$/;
+const STUDY_YEAR_LABEL = /(?<!\d)(?:19|20)\d\d\s*[-/]\s*(?:19|20)?\d\d(?!\d)/g;
+function bareEdgeIsYear(q: string, hit: { start: number; end: number }): boolean {
+  if (YEAR_LIKE.test(q.slice(hit.start, hit.end))) return true;
+  for (const label of q.matchAll(STUDY_YEAR_LABEL)) {
+    const at = label.index ?? 0;
+    if (hit.start >= at && hit.end <= at + label[0].length) return true;
+  }
+  return false;
+}
+// A bare lowest edge that follows a counting or labelling word ("Semester 6", "Level 12", "Room
+// 156") is a number of something, not a fee.
+const LABEL_BEFORE_EDGE =
+  /\b(?:rooms?|levels?|class(?:es)?|grades?|modules?|units?|steps?|phases?|pages?|no|nr|number|aula|fase|modulo|stufe|niveau|classe)\.?\s{0,2}#?$/;
+// A period word is a label ("Semester 6") unless a rate word stands before it ("per year 156",
+// "all'anno 156", "je Semester 156"): then it is the period of the fee, not a number of something.
+const PERIOD_BEFORE_EDGE =
+  /\b(?:semesters?|terms?|trimesters?|years?|weeks?|months?|anno|semestre|trimestre|mese|settimana|jahr)\.?\s{0,2}#?$/;
+const RATE_WORD_BEFORE =
+  /(?:^|[^a-z])(?:per|a|an|each|every|pro|par|je|al|all'|l'|ogni|chaque)\s*$/;
+function bareEdgeFollowsLabel(q: string, hit: { start: number }): boolean {
+  const before = q.slice(Math.max(0, hit.start - 30), hit.start);
+  if (LABEL_BEFORE_EDGE.test(before)) return true;
+  const period = PERIOD_BEFORE_EDGE.exec(before);
+  return period !== null && !RATE_WORD_BEFORE.test(before.slice(0, period.index));
+}
 
 // One fee amount (a flat fee, or the end of a range with the currency beside it) against the quote.
 function checkFeeAmount(
@@ -459,7 +493,6 @@ function checkTuitionRange(
   minStudyYear: number,
   currency: string | undefined,
 ): FactCheck {
-  if (maxMinor === 0) return fail("a range that ends at zero is not a range");
   const code = currency ?? "EUR";
   const checkable = currency !== undefined && CURRENCY_TOKENS[currency] !== undefined;
   const q = normalizeForMatch(quote);
@@ -490,6 +523,8 @@ function checkTuitionRange(
       if (a.end > b.start) continue;
       const ac = currencyAt(q, a);
       if (conflicting(ac)) continue;
+      if (ac === null && (bareEdgeIsYear(q, a) || bareEdgeFollowsLabel(q, a))) continue;
+      if (bc === null && bareEdgeIsYear(q, b)) continue;
       const gap = q.slice(a.end, b.start);
       if (gap.length > MAX_RANGE_GAP || !RANGE_GAP.test(stripCurrency(gap))) continue;
       if (checkable && !stated(ac) && !stated(bc)) continue;
