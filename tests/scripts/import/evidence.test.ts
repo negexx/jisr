@@ -563,6 +563,44 @@ describe("checkTuition amounts whose currency stands in a header", () => {
     expect(checkTuition(160000, "Total (€) bracket 1 600,00", 2026, "EUR").ok).toBe(false);
     expect(checkTuition(160000, "Total (€) bracket 1.600,00", 2026, "EUR").ok).toBe(true);
   });
+  it("refuses currency codes beside the amount that no list had, and keeps ordinary words", () => {
+    for (const quote of [
+      "Total (€) MEDIUM 600,00 PLN",
+      "Total (€) MEDIUM PLN 600,00",
+      "Total (€) MEDIUM SEK 600,00",
+      "Total (€) MEDIUM 600,00 czk",
+      "Total (€) MEDIUM 600,00 Dirham",
+    ])
+      expect(checkTuition(60000, quote, 2026, "EUR").ok).toBe(false);
+    for (const quote of [
+      "Total (€) FEE 600,00",
+      "Total (€) VAT 600,00",
+      "Total (€) per 600,00",
+      "Total (€) 600,00 tot",
+    ])
+      expect(checkTuition(60000, quote, 2026, "EUR").ok).toBe(true);
+  });
+  it("refuses a range when either end has a foreign currency beside it", () => {
+    for (const quote of [
+      "Total (€) 400,00 - 600,00 CHF",
+      "Total (€) 400,00 - 600,00 PLN",
+      "Total (€) CHF 400,00 - 600,00",
+      "Total (€) (400,00 - 600,00 MAD)",
+    ])
+      expect(checkTuition(40000, quote, 2026, "EUR", 60000).ok).toBe(false);
+    expect(
+      checkTuition(250000, "Total (€) (2.500,00 - 6.500,00 MAD)", 2026, "EUR", 650000).ok,
+    ).toBe(false);
+    expect(checkTuition(40000, "Total (€) da 400,00 a 600,00", 2026, "EUR", 60000).ok).toBe(true);
+    expect(checkTuition(207150, "Total (€) 2.071,50 - 6.571,50", 2026, "EUR", 657150).ok).toBe(
+      true,
+    );
+  });
+  it("refuses a time written like an amount after a time word", () => {
+    for (const word of ["at", "from", "opens", "until", "ore", "dalle", "alle", "h", "hours"])
+      expect(checkTuition(1030, `Total (€) ${word} 10.30`, 2026, "EUR").ok).toBe(false);
+    expect(checkTuition(1030, "Total (€) fee 10.30", 2026, "EUR").ok).toBe(true);
+  });
 });
 
 describe("checkRecurringDeadline", () => {

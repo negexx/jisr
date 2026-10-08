@@ -465,22 +465,40 @@ function bareEdgeFollowsLabel(q: string, hit: { start: number }): boolean {
 // an explicit two-digit decimal part and (b) the same quote carries a mark of that currency as a whole
 // token before it, within IMPLIED_CURRENCY_WINDOW characters. A bare integer, an amount with another
 // currency beside it, a mark after the amount or farther away stay refused.
-// Further refusals on this path: a currency the checker has no token for (MAD, CHF, kr, any other
-// three-letter code or symbol) right before or after the amount, a percentage, a date or time, and a
-// space-grouped number ("1 600,00" is a row number and a cell, not 1600).
+// Further refusals on this path: a foreign currency beside the amount (see foreignMarkBeside), a
+// percentage, a date or time, and a space-grouped number ("1 600,00" is a row number and a cell,
+// not 1600).
 const IMPLIED_CURRENCY_WINDOW = 400;
 const EXPLICIT_CENTS = /[.,]\d\d$/;
-const OTHER_CURRENCY_WORDS = "dhs?|dirhams?|mad|chf|kr|ft|zł";
-const OTHER_CURRENCY_BEFORE = new RegExp(
-  String.raw`(?<![a-z])(?:${OTHER_CURRENCY_WORDS})\s{0,2}$|[£$¥]\s{0,2}$`,
-  "i",
+// Currencies the checker has no token for, as whole lowercase tokens (the quote is lowercased by
+// normalizeForMatch). Ordinary three-letter words ("fee", "vat", "per") are deliberately not here.
+// The currencies CURRENCY_TOKENS knows (eur, usd, huf, gbp) are caught by currencyAt instead.
+const FOREIGN_CURRENCY_WORDS = [
+  ...(
+    "pln sek nok dkk czk ron bgn try aed sar qar kwd cad aud nzd jpy cny inr tnd dzd egp " +
+    "mad chf rub uah brl mxn zar isk hrk rsd"
+  ).split(" "),
+  "dhs?",
+  "dirhams?",
+  "kr",
+  "zł",
+  "ft",
+].join("|");
+const FOREIGN_BEFORE = new RegExp(
+  `(?<![a-z])(?:${FOREIGN_CURRENCY_WORDS})\\s{0,2}$|[£$¥]\\s{0,2}$`,
 );
-const OTHER_CURRENCY_AFTER = new RegExp(
-  String.raw`^\s{0,2}(?:(?:${OTHER_CURRENCY_WORDS})(?![a-z])|[£$¥])`,
-  "i",
-);
-const CODE_BEFORE = /(?<![A-Za-z])[A-Z]{3}\s{0,2}$/;
-const CODE_AFTER = /^\s{0,2}[A-Z]{3}(?![A-Za-z])/;
+const FOREIGN_AFTER = new RegExp(`^\\s{0,2}(?:(?:${FOREIGN_CURRENCY_WORDS})(?![a-z])|[£$¥])`);
+// A currency other than the ones the checker reads, written right before or after the amount
+// (whitespace only between). False when a known currency stands there: currencyAt handles those.
+function foreignMarkBeside(q: string, hit: { start: number; end: number }): boolean {
+  if (currencyAt(q, hit) !== null) return false;
+  return (
+    FOREIGN_BEFORE.test(q.slice(Math.max(0, hit.start - 14), hit.start)) ||
+    FOREIGN_AFTER.test(q.slice(hit.end, hit.end + 14))
+  );
+}
+// "at 10.30", "ore 10.30", "10.30 h": a time of day written like an amount
+const TIME_WORD_BEFORE = /(?<![a-z])(?:at|from|opens?|until|ore|dalle|alle|h|hours)\s{0,2}$/;
 function currencyImpliedByHeader(
   q: string,
   hit: { start: number; end: number },
@@ -492,11 +510,13 @@ function currencyImpliedByHeader(
   if (!EXPLICIT_CENTS.test(text) || /\s/.test(text)) return false;
   const before = q.slice(Math.max(0, hit.start - 14), hit.start);
   const after = q.slice(hit.end, hit.end + 14);
-  if (OTHER_CURRENCY_BEFORE.test(before) || OTHER_CURRENCY_AFTER.test(after)) return false;
-  if (CODE_BEFORE.test(before) || CODE_AFTER.test(after)) return false;
+  if (foreignMarkBeside(q, hit)) return false;
+  // A colon right before the amount ("Tuition: 600,00", "at 10:30") refuses it: this path is
+  // fail-safe, and an amount that has no currency of its own must not also follow a bare label.
   if (/^\s{0,2}%/.test(after) || /:\s?$/.test(before)) return false;
   // "15.06." or "10.30:": a date or a time, not an amount (a short integer part, then a dot or colon)
   if (text.replace(/\D/g, "").length - 2 < 3 && /^[.:]/.test(after)) return false;
+  if (/^\d{1,2}[.:]\d\d$/.test(text) && TIME_WORD_BEFORE.test(before)) return false;
   const window = q.slice(Math.max(0, hit.start - IMPLIED_CURRENCY_WINDOW), hit.start);
   return new RegExp(`(?<![a-z])(?:${marks})`, "i").test(window);
 }
@@ -573,6 +593,8 @@ function checkTuitionRange(
       if (a.end > b.start) continue;
       const ac = currencyAt(q, a);
       if (conflicting(ac)) continue;
+      // a currency we do not read beside EITHER end: the range is not in the proposal's currency
+      if (checkable && (foreignMarkBeside(q, a) || foreignMarkBeside(q, b))) continue;
       if (ac === null && (bareEdgeIsYear(q, a) || bareEdgeFollowsLabel(q, a))) continue;
       if (bc === null && bareEdgeIsYear(q, b)) continue;
       const gap = q.slice(a.end, b.start);
