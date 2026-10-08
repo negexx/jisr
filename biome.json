@@ -13,6 +13,7 @@
       "!data-staging/proposals-enrich",
       "!data-staging/proposals-it-language",
       "!data-staging/bakeoff",
+      "!data-staging/universitaly",
       "!.claude",
       "!.impeccable",
       "!pnpm-lock.yaml"
