@@ -39,6 +39,12 @@ describe("classCodesOf and courseName", () => {
     ).toBe("Data Science");
     expect(courseName(course({ nomeCorsoEn: null, nomeCorso: "Informatica" }))).toBe("Informatica");
   });
+  it("falls back to the Italian name when the English name is blank", () => {
+    expect(courseName(course({ nomeCorsoEn: "   ", nomeCorso: " Scienza  dei dati " }))).toBe(
+      "Scienza dei dati",
+    );
+    expect(courseName(course({ nomeCorsoEn: "", nomeCorso: "Informatica" }))).toBe("Informatica");
+  });
 });
 
 describe("classify", () => {
@@ -92,6 +98,12 @@ describe("classify", () => {
     );
     expect(classify(course({ modalitaErogazione: { codice: "B" } })).status).toBe("not-in-person");
   });
+  it("counts a mixed-language course as mixed-language even when it is also distance learning", () => {
+    expect(
+      classify(course({ lingua: "mu", modalitaDidattica: { descrizione: "Teledidattica" } }))
+        .status,
+    ).toBe("mixed-language");
+  });
 });
 
 describe("toCandidate", () => {
@@ -109,6 +121,16 @@ describe("toCandidate", () => {
       url: "https://www.uniba.test/it/corsi/computer-science",
       academicYear: "2026/2027",
     });
+  });
+  it("trims the url and turns a blank or missing url into null", () => {
+    expect(toCandidate(classify(course({ url: "  https://www.uniba.test/c  " }))).url).toBe(
+      "https://www.uniba.test/c",
+    );
+    expect(toCandidate(classify(course({ url: "   " }))).url).toBeNull();
+    expect(toCandidate(classify(course({ url: null }))).url).toBeNull();
+  });
+  it("turns a missing duration into null", () => {
+    expect(toCandidate(classify(course({ durataAnni: null }))).durationYears).toBeNull();
   });
   it("refuses a course that is not a candidate", () => {
     expect(() => toCandidate(classify(course({ lingua: "IT" })))).toThrow(/not a candidate/);

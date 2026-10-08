@@ -76,7 +76,8 @@ export function classCodesOf(course: PortalCourse): string[] {
 }
 
 export function courseName(course: PortalCourse): string {
-  return collapseSpaces(course.nomeCorsoEn ?? course.nomeCorso);
+  const english = collapseSpaces(course.nomeCorsoEn ?? "");
+  return english === "" ? collapseSpaces(course.nomeCorso) : english;
 }
 
 // One course, one status. The order makes the counts meaningful: mixed-language and not-in-person
