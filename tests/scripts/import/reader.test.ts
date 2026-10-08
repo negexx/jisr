@@ -356,6 +356,84 @@ describe("applicant context", () => {
         "it-universitaly if the pages say that such applicants make the pre-enrolment application (preiscrizione) on the Universitaly portal",
       );
     });
+    it("keeps the university-direct sentence of the channel text free of stray backslashes", () => {
+      expect(user).toContain("or form for this programme. Quote that sentence.");
+      expect(user).toContain("on the university's own application portal");
+      expect(user).not.toContain("\\");
+    });
+    it("no longer says Italian tuition is usually set by ISEE band", () => {
+      expect(user).not.toContain("usually by ISEE band");
+      expect(user).not.toMatch(/Italian public universities set tuition themselves/);
+    });
+    it("reads the system that applies to a Moroccan living in Morocco, not EU, resident, Master's or PhD figures", () => {
+      expect(user).toMatch(/non-EU student whose household is outside Italy/);
+      expect(user).toMatch(/Moroccan citizen living in Morocco/);
+      expect(user).toMatch(/Master's/);
+      expect(user).toMatch(/PhD/);
+      expect(user).toMatch(/second-degree/);
+    });
+    it("uses the fixed fee for non-EU students not resident in Italy, by degree-programme group only with a quote naming the group", () => {
+      expect(user).toMatch(/fixed fee for non-EU students not resident in Italy/);
+      expect(user).toMatch(/groups of degree programmes/);
+      expect(user).toMatch(/degree class or department/);
+      expect(user).toMatch(/otherwise leave tuition out and say why in notes/);
+    });
+    it("requires a second quote naming Morocco for a country-group or nationality-based fee", () => {
+      expect(user).toMatch(/country-group fee or nationality-based reduced fee/i);
+      expect(user).toMatch(/ONLY if an accepted quote names Morocco \(Marocco, Maroc, Morocco\)/);
+      expect(user).toMatch(/SECOND evidence quote/);
+      expect(user).toMatch(/country list was not found/);
+      expect(user).toMatch(/Never assume the group/);
+      expect(user).toMatch(/list or annex of the same academic year as the amount/);
+    });
+    it("takes an income range only from ONE quote and never a table of many bands", () => {
+      expect(user).toMatch(/Income-based fee: only a range from ONE quote/);
+      expect(user).toMatch(/a table of income bands with many rows is not a tuition/);
+    });
+    it("says what tuition is: the university's own yearly contribution, per instalment when so given", () => {
+      expect(user).toMatch(/contributo/);
+      expect(user).toMatch(/contribuzione studentesca/);
+      expect(user).toMatch(/second instalment/);
+      expect(user).toMatch(/regional tax[^.]*stamp duty[^.]*separate fees, not tuition/);
+      expect(user).toContain('unless the page calls the single amount "all-inclusive"');
+    });
+    it("limits the amount to the current or the next academic year", () => {
+      expect(user).toMatch(/2026\/27, 2027\/28/);
+      expect(user).toMatch(/older academic year is not used/);
+    });
+    it("makes an application window for non-EU applicants abroad an international deadline", () => {
+      expect(user).toMatch(/non-EU applicants residing abroad/);
+      expect(user).toMatch(/Universitaly/);
+      expect(user).toMatch(/bando/);
+      expect(user).toMatch(/applicationOpens/);
+      expect(user).toMatch(/applicationDeadline/);
+      expect(user).toMatch(/reserved for EU students or non-EU students resident in Italy/);
+      expect(user).toMatch(/first round and say in notes that more rounds exist/);
+    });
+    it("does not take the national visa deadlines as application deadlines", () => {
+      expect(user).toContain("30 November");
+      expect(user).toContain("31 October");
+      expect(user).toMatch(/visa deadlines/);
+    });
+    it("leaves the other countries' text and the generic tuition bullet as they were", () => {
+      const of = (country: string) => buildPrompt({ ...meta, country, shared: [], own: [] });
+      expect(of("FR").user).toContain(
+        "a foreign-diploma applicant applies through Etudes en France / Campus France",
+      );
+      expect(of("DE").user).toContain("de-uni-assist-vpd if the pages say foreign applicants");
+      expect(of("HU").user).toContain(
+        "a scholarship that covers the fees (Stipendium Hungaricum, state scholarship) is not a tuition of 0 for the programme.",
+      );
+      expect(of("NL").user).toContain("applicationChannel is nl-studielink");
+      expect(of("NL").user).toContain("instellingscollegegeld");
+      expect(of("NL").user).not.toMatch(/Marocco/);
+      expect(of("HU").user).not.toMatch(/Marocco/);
+      const system = of("IT").system;
+      expect(system).toContain(
+        "- tuition: the tuition fee a student from OUTSIDE the EU/EEA pays, in minor units",
+      );
+      expect(system).toContain("A range needs ONE quote that shows both numbers");
+    });
     it("leaves the Dutch text as it was: there a range is a spread across programmes", () => {
       const nl = buildPrompt({ ...meta, country: "NL", shared: [], own: [] }).user;
       expect(nl).toContain(

@@ -194,6 +194,98 @@ describe("verifyProposal", () => {
     });
   });
 
+  describe("a tuition with a second quote that names the country", () => {
+    const AMOUNT = "https://uni.example/country-fees";
+    const LIST = "https://uni.example/country-list";
+    pages[AMOUNT] =
+      "Second instalment 2026/27 for students with a household abroad: Group A EUR 200 (area A), EUR 256 (area B).";
+    pages[LIST] = "Tabella A - Aree paesi esteri 2026/27. Gruppo A: MAROCCO, Tunisia, Egitto.";
+    const BOTH = "https://uni.example/country-fees-both";
+    const LOW = "https://uni.example/country-fees-low";
+    const HIGH = "https://uni.example/country-fees-high";
+    pages[BOTH] = "Second instalment: Group A EUR 200 (area A), EUR 256 (area B).";
+    pages[LOW] = "Group A EUR 200 (area A).";
+    pages[HIGH] = "Gruppo A: MAROCCO. Area B EUR 256.";
+    const amountQuote = {
+      url: AMOUNT,
+      quote: "Second instalment 2026/27 for students with a household abroad: Group A EUR 200",
+    };
+    const moroccoQuote = { url: LIST, quote: "Gruppo A: MAROCCO, Tunisia, Egitto" };
+    const single = { amountMinor: 20000, currency: "EUR", period: "year" } as const;
+
+    it("accepts it: the amount only has to be in one accepted quote, in either order", async () => {
+      for (const evidence of [
+        [amountQuote, moroccoQuote],
+        [moroccoQuote, amountQuote],
+      ]) {
+        const v = await verifyProposal(
+          proposal({ tuition: { value: single, evidence } }),
+          "Applied Computer Science",
+          getText,
+          2026,
+        );
+        expect(v.rejected).toEqual([]);
+        expect(v.facts.tuition?.value).toEqual(single);
+        expect(v.facts.tuition?.evidence).toEqual(evidence);
+      }
+    });
+
+    it("accepts a range whose two numbers are in ONE quote, next to a country quote without numbers", async () => {
+      const range = {
+        amountMinor: 20000,
+        maxAmountMinor: 25600,
+        currency: "EUR",
+        period: "year",
+      } as const;
+      const both = {
+        url: BOTH,
+        quote: "Group A EUR 200 (area A), EUR 256 (area B)",
+      };
+      const v = await verifyProposal(
+        proposal({ tuition: { value: range, evidence: [both, moroccoQuote] } }),
+        "Applied Computer Science",
+        getText,
+        2026,
+      );
+      expect(v.rejected).toEqual([]);
+      expect(v.facts.tuition?.value).toEqual(range);
+    });
+
+    it("still rejects it when no accepted quote has the amount", async () => {
+      const v = await verifyProposal(
+        proposal({
+          tuition: {
+            value: { amountMinor: 99900, currency: "EUR", period: "year" },
+            evidence: [moroccoQuote, amountQuote],
+          },
+        }),
+        "Applied Computer Science",
+        getText,
+        2026,
+      );
+      expect(v.facts.tuition).toBeUndefined();
+      expect(v.rejected[0]).toMatchObject({ fact: "tuition" });
+    });
+
+    it("does not let a range borrow its lowest and highest from two different quotes", async () => {
+      const v = await verifyProposal(
+        proposal({
+          tuition: {
+            value: { amountMinor: 20000, maxAmountMinor: 25600, currency: "EUR", period: "year" },
+            evidence: [
+              { url: LOW, quote: "Group A EUR 200 (area A)" },
+              { url: HIGH, quote: "Gruppo A: MAROCCO. Area B EUR 256" },
+            ],
+          },
+        }),
+        "Applied Computer Science",
+        getText,
+        2026,
+      );
+      expect(v.facts.tuition).toBeUndefined();
+    });
+  });
+
   it("rejects a tuition amount that its quote ties to a past study year, for the study year given", async () => {
     const OLD = "https://uni.example/old-fees";
     pages[OLD] = "Studiejaar 2025-2026 Instellingscollegegeld Voltijd: € 10.164 per jaar";
