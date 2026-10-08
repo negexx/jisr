@@ -1,0 +1,74 @@
+slug: it-roma-biomedico-roma-biomedical-engineering-l8
+institution: it-roma-biomedico-roma
+country: IT
+city: roma
+field: engineering
+level: bachelor
+name: Biomedical Engineering
+summary:
+  fr:
+    text: Biomedical Engineering, Università Campus Bio-Medico di Roma (Roma). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Biomedical Engineering, Università Campus Bio-Medico di Roma (Roma). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Biomedical Engineering, Università Campus Bio-Medico di Roma (Roma). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unicampus.it/en/courses/training-offer/bachelor-s-degree/departmental-faculty-of-engineering/degree-course-in-biomedical-engineering-l-8/
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 657150
+    currency: EUR
+    period: year
+  source: page-1
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.unicampus.it/en/courses/training-offer/bachelor-s-degree/departmental-faculty-of-engineering/degree-course-in-biomedical-engineering-l-8/
+    last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unicampus.it/en/degree-course-admissions/taxes-and-contributions/
+    last_verified_at: null
+_review:
+  kind: programs
+  slug: it-roma-biomedico-roma-biomedical-engineering-l8
+  name: Biomedical Engineering
+  sourceId: mur:05808:l8:biomedical-engineering@roma
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: tuition
+      url: https://www.unicampus.it/en/degree-course-admissions/taxes-and-contributions/
+      quote: First year University tuition fees for the academic year 2026/2027 BACHELOR'S DEGREE 1st installation at the enrollment 2nd installment due by 01/25/2027 3rd installment due by 04/12/2027 Total contribution+ regional tax Biomedical Engineering €2.500,00 + €140,00 € 2.000,00 € 2.071,50 €6.571,50 + €140,00
+  notes: "Campus Bio-Medico table 'First year University tuition fees 2026/2027', Bachelor's degree, Biomedical Engineering: total contribution EUR 6,571.50 (1st instalment 2,500 + 2nd 2,000 + 3rd 2,071.50), plus EUR 140 regional tax (excluded). One table for all students: no nationality rule or country list exists on the page or in the 2026/27 call; added at the owner's request after the owner checked the call PDF. Cents amount: needs the cents-aware verifier."

@@ -1,0 +1,105 @@
+slug: it-torino-torino-business-management-l18
+institution: it-torino-torino
+country: IT
+city: torino
+field: business-economics
+level: bachelor
+name: Business & Management
+summary:
+  fr:
+    text: Business & Management, Università degli studi di Torino (Torino). Programme recensé dans les données ouvertes de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Business & Management, Università degli studi di Torino (Torino). Programme listed in the Italian Ministry of University and Research (MUR) open data on degree courses.
+    status: draft
+  ar:
+    text: Business & Management, Università degli studi di Torino (Torino). برنامج مدرج في البيانات المفتوحة لعرض التكوين لدى وزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://en.unito.it/studying-unito/programs/degree-programs/business-management
+durationYears:
+  value: 3
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value:
+    amountMinor: 90000
+    currency: EUR
+    period: year
+  source: page-5
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: programme
+      info_kind: official
+      kind: manual_check
+      note:
+        fr:
+          text: Le concours d'admission exige de passer le SAT Suite ; une note au SAT est requise pour l'admission (cours à nombre programmé).
+          status: draft
+        en:
+          text: Admission requires taking the SAT Suite; a SAT score is required (programme has capped number).
+          status: draft
+    - id: req-2
+      source: page-3
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+scholarships: []
+sources:
+  programme:
+    url: https://en.unito.it/studying-unito/programs/degree-programs/business-management
+    last_verified_at: 2026-10-05
+  page-2:
+    url: https://www.unito.it/internazionalita/arrivare-unito-dallestero/ammissione-studenti-internazionali/procedure-0
+    last_verified_at: 2026-10-05
+  page-3:
+    url: https://www.unito.it/internazionalita/arrivare-unito-dallestero/ammissione-studenti-internazionali/documentazione
+    last_verified_at: 2026-10-05
+  page-4:
+    url: https://www.unito.it/didattica/tasse/contribuzione-studenti-internazionali
+    last_verified_at: 2026-10-08
+  page-5:
+    url: https://www.unito.it/sites/default/files/2026-07/reg_tasse_2026_2027_dr_6194_2026.pdf
+    last_verified_at: 2026-10-08
+_review:
+  kind: programs
+  slug: it-torino-torino-business-management-l18
+  name: Business & Management
+  sourceId: mur:00101:l18:business-management@torino
+  revises: true
+  enrich: true
+  todo: "enrichment of a record already in data/: new facts only; promote with --replace-revisions after the audit; HAND-ENTERED by the assistant at the owner's request: the tuition is the SUM of two quoted amounts (not verifiable by code), see notes"
+  preparedBy: assistant
+  preparedAt: 2026-10-08
+  evidence:
+    - fact: tuition
+      url: https://www.unito.it/sites/default/files/2026-07/reg_tasse_2026_2027_dr_6194_2026.pdf
+      quote: Morocco 8.957,01 € 500,00 € 550,00 €
+    - fact: tuition
+      url: https://www.unito.it/sites/default/files/2026-07/reg_tasse_2026_2027_dr_6194_2026.pdf
+      quote: 6.1.2. Corso di laurea in Business & Management e Corso di laurea magistrale in Business Administration Fasce ISEE Importo in euro ≤ 26.000,00 € 400,00 € 26.000,01 - 30.000,00 € 800,00
+    - fact: tuition
+      url: https://www.unito.it/didattica/tasse/contribuzione-studenti-internazionali
+      quote: In caso di pagamento del contributo onnicomprensivo unico (COU) sulla base del PIL pro-capite PPA, il valore del PIL pro-capite PPA sarà utilizzato anche per determinare i Contributi aggiuntivi dei corsi di studio.
+  notes: "Torino, Bachelor in Business & Management, 2026/27, student resident abroad (Morocco). SUM of two quoted amounts, entered by hand: (1) the single comprehensive contribution (COU) by PPP GDP per capita: Morocco 8,957.01 -> EUR 500 (Allegato A of DR 6194/2026); (2) the additional programme contribution of Business & Management (art. 6.1.2), ISEE band up to 26,000 = EUR 400, paid in two equal instalments, because the university page says the PPP value is also used to determine the additional contributions (INFERENCE: Morocco's PPP of 8,957 falls in the lowest band; the regulation text extract does not state the PPP-to-band table). Excludes the 156 first instalment (regional tax + stamp). Owner to confirm."
