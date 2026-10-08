@@ -31,6 +31,7 @@
     "data:it-language": "tsx scripts/import/it-language.ts",
     "data:it-discovery": "tsx scripts/import/it-discovery.ts",
     "data:it-stage": "tsx scripts/import/it-stage.ts",
+    "data:it-pages": "tsx scripts/import/it-pages.ts",
     "data:uniassist": "tsx scripts/import/sources/uniassist.ts",
     "data:shortlist": "tsx scripts/import/shortlist.ts",
     "data:evidence": "tsx scripts/import/evidence-cli.ts",
