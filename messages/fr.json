@@ -9,6 +9,7 @@
     "cta": "Créer mon profil",
     "ctaNote": "Vos réponses restent sur cet appareil.",
     "matchesCta": "Voir mes résultats",
+    "scholarshipsCta": "Voir les bourses",
     "questionsTitle": "Ce que Jisr vous aide à savoir",
     "questions": {
       "where": {
@@ -39,6 +40,7 @@
     "label": "Navigation principale",
     "profile": "Mon profil",
     "matches": "Mes résultats",
+    "scholarships": "Bourses",
     "plan": "Mon plan",
     "savedCount": "{count} enregistré(s)"
   },
@@ -953,6 +955,56 @@
         "no": "Traduction non requise",
         "unknown": "Traduction non précisée : vérifiez la page officielle"
       }
+    }
+  },
+  "scholarshipsPage": {
+    "meta": {
+      "title": "Bourses d'études pour la licence en Europe",
+      "description": "Les bourses répertoriées sur Jisr, avec montants, ce qu'elles couvrent, dates limites et sources officielles."
+    },
+    "title": "Bourses",
+    "intro": "Les bourses que nous avons répertoriées pour les études de licence, par pays. Chaque information indique sa source et la date de sa vérification. Quand les sources que nous avons lues ne publient pas une valeur, nous l'indiquons au lieu de deviner.",
+    "jump": {
+      "label": "Pays"
+    },
+    "sectionCount": "{n, plural, one {{count} bourse} other {{count} bourses}}",
+    "empty": "Aucune bourse n'est répertoriée pour le moment.",
+    "amount": {
+      "unknown": "Montant : non publié dans les sources que nous avons lues, à vérifier"
+    },
+    "deadline": {
+      "known": "Date limite : {date}",
+      "unknown": "Date limite : non publiée dans les sources que nous avons lues, à vérifier"
+    },
+    "details": {
+      "summary": "Conditions, pièces et démarche",
+      "requirements": "Conditions",
+      "documents": "Pièces demandées",
+      "howToApply": "Comment candidater"
+    },
+    "requirements": {
+      "partial": "Nous n'avons pas publié toutes les conditions de cette bourse. Vérifiez la page officielle.",
+      "none": "Aucune condition n'est publiée dans les sources que nous avons lues, à vérifier."
+    },
+    "documents": {
+      "none": "Aucune pièce n'est listée dans la source consultée, à vérifier.",
+      "missing": "La liste des pièces n'est pas publiée, à vérifier."
+    },
+    "howToApply": {
+      "missing": "La démarche n'est pas publiée, à vérifier."
+    },
+    "programmes": {
+      "summary": "Programmes concernés",
+      "country": "{n, plural, one {{count} programme en {country}, dans les établissements participants.} other {{count} programmes en {country}, dans les établissements participants.}} La page officielle indique quels établissements participent et à quelles conditions.",
+      "matchesLink": "Voir mes résultats",
+      "without": "Aucun programme n'est listé pour le moment pour : {institutions}",
+      "none": "Aucun programme n'est encore listé pour cette bourse."
+    },
+    "nationality": {
+      "open": "Ouverte à votre nationalité",
+      "closed": "Non ouverte à votre nationalité (réservée aux ressortissants de : {countries})",
+      "noProfile": "Créez votre profil pour vérifier votre nationalité",
+      "caveat": "D'après la règle de nationalité publiée seulement. Vérifiez les autres conditions sur la page officielle."
     }
   }
 }

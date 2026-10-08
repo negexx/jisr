@@ -28,6 +28,11 @@ import {
 } from "@/data-schema/snapshot";
 import { appliesToProgram } from "@/domain/scholarships";
 import type { AppLocale } from "@/i18n/routing";
+import {
+  buildSections,
+  type CountrySection,
+  type DestinationInput,
+} from "@/lib/scholarships/sections";
 
 import { SnapshotError } from "./errors";
 import { checkShardShape, parseManifest, programShardsIn } from "./manifest";
@@ -247,6 +252,72 @@ export async function loadProgramPageData(
     routeGuidance: guidance.notes,
     core,
     applicationChannel: core.applicationChannels.find((c) => c.slug === channelSlug) ?? null,
+    text: createTextLookup(textShards, locale),
+  };
+}
+
+const SCHOLARSHIPS_SHARD = /^scholarships\.([A-Z]{2})$/;
+
+// Everything the Scholarships page renders at build time: no clock, no student. The student's
+// nationality and the freshness of a fact are client concerns (NationalityCheck, SourceBadge).
+export type ScholarshipsPageData = {
+  snapshotVersion: string;
+  sections: CountrySection[];
+  core: CoreShard;
+  text: TextLookup;
+};
+
+export async function loadScholarshipsPageData(
+  locale: AppLocale,
+  dir: string = DEFAULT_DIR,
+): Promise<ScholarshipsPageData> {
+  const snapshot = await readBuildSnapshot(dir);
+  const core = await optionalShard<CoreShard>(snapshot, shardNames.core());
+  if (core === undefined) throw new SnapshotError("format", shardNames.core());
+
+  const countries = Object.keys(snapshot.manifest.shards)
+    .flatMap((name) => SCHOLARSHIPS_SHARD.exec(name)?.[1] ?? [])
+    .sort();
+  const programShardNames = programShardsIn(snapshot.manifest);
+
+  const inputs: DestinationInput[] = [];
+  const structural = [shardNames.core()];
+  for (const country of countries) {
+    const scholarships = await optionalShard<ScholarshipsShard>(
+      snapshot,
+      shardNames.scholarships(country),
+    );
+    const institutions = await optionalShard<InstitutionsShard>(
+      snapshot,
+      shardNames.institutions(country),
+    );
+    const programs = (
+      await Promise.all(
+        programShardNames
+          .filter((p) => p.destination === country)
+          .map(async ({ name }) => (await snapshot.shard(name)) as ProgramsShard),
+      )
+    ).flatMap((shard) => shard.programs);
+    inputs.push({
+      country,
+      scholarships: scholarships?.scholarships ?? [],
+      programs,
+      institutions: institutions?.institutions ?? [],
+    });
+    structural.push(shardNames.scholarships(country));
+  }
+
+  const textShards = await Promise.all(
+    structural
+      .map((name) => shardNames.text(locale, name))
+      .filter((name) => listed(snapshot, name))
+      .map(async (name) => (await snapshot.shard(name)) as TextShard),
+  );
+
+  return {
+    snapshotVersion: snapshot.manifest.snapshotVersion,
+    sections: buildSections(inputs),
+    core,
     text: createTextLookup(textShards, locale),
   };
 }

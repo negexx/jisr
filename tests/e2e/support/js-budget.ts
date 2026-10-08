@@ -46,6 +46,7 @@ export type JsBudget = { initial: number; untilIdle: number };
 // in MatchCard and the longer compare-row signature (about 0.3 KB gzip together). Owner decision: raise by
 // 1 KB with that reason: profile, matches and the home page (it prefetches their chunks, so it reads
 // 215.1 to 216.27 depending on timing) until idle 216 -> 217. Nothing else moved.
+// 2026-10-07 (scholarships page): new page, 170.2 KB initial, 221.4 KB until idle (fixture build); ratchet is measured rounded up plus 3 KB. The header's fourth item added 0.0 to 0.1 KB to the other rows, all inside their existing values.
 export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/fr": { initial: 170, untilIdle: 217 },
   "/ar": { initial: 170, untilIdle: 217 },
@@ -57,6 +58,8 @@ export const JS_BUDGET_KB: Record<string, JsBudget> = {
   "/ar/plan": { initial: 189, untilIdle: 244 },
   "/fr/compare": { initial: 190, untilIdle: 253 },
   "/ar/compare": { initial: 190, untilIdle: 253 },
+  "/fr/scholarships": { initial: 174, untilIdle: 225 },
+  "/ar/scholarships": { initial: 174, untilIdle: 225 },
   "/fr/programs/xx-test-prog-ok": { initial: 185, untilIdle: 240 },
   "/ar/programs/xx-test-prog-ok": { initial: 185, untilIdle: 240 },
 };

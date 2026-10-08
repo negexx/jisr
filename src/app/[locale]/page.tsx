@@ -40,11 +40,22 @@ export default async function HomePage({ params }: Props) {
             </Link>
           </Button>
           {/* Reserved slot: it holds the button's height, so a saved profile shifts nothing. On a
-              phone the note reads straight after the primary button and the slot follows it. */}
+              phone the order is the primary button, the note, this slot, then the scholarships
+              link: the slot and the link are both order-last, and DOM order breaks the tie. */}
           <div className="order-last sm:order-none">
             <HomeMatchesLink label={t("matchesCta")} />
           </div>
           <p className="text-sm text-muted-foreground sm:col-span-2">{t("ctaNote")}</p>
+          <p className="order-last sm:order-none sm:col-span-2">
+            <Link
+              href="/scholarships"
+              prefetch={false}
+              className="inline-flex min-h-11 items-center gap-1 text-base font-medium text-primary underline underline-offset-4"
+            >
+              {t("scholarshipsCta")}
+              <ArrowRight aria-hidden className="size-4 rtl:rotate-180" />
+            </Link>
+          </p>
         </div>
       </section>
       <section aria-labelledby="questions" className="flex flex-col gap-4 text-start">

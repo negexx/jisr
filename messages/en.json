@@ -9,6 +9,7 @@
     "cta": "Create my profile",
     "ctaNote": "Your answers stay on this device.",
     "matchesCta": "See my matches",
+    "scholarshipsCta": "Browse scholarships",
     "questionsTitle": "What Jisr helps you find out",
     "questions": {
       "where": {
@@ -39,6 +40,7 @@
     "label": "Main navigation",
     "profile": "My profile",
     "matches": "My matches",
+    "scholarships": "Scholarships",
     "plan": "My plan",
     "savedCount": "{count} saved"
   },
@@ -953,6 +955,56 @@
         "no": "No translation required",
         "unknown": "Translation not stated: check the official page"
       }
+    }
+  },
+  "scholarshipsPage": {
+    "meta": {
+      "title": "Scholarships for Bachelor's studies in Europe",
+      "description": "The scholarships listed on Jisr, with amounts, what they cover, deadlines and official sources."
+    },
+    "title": "Scholarships",
+    "intro": "Scholarships we have listed for Bachelor's students, by country. Each fact shows its source and the date it was checked. Where the sources we read do not publish a value, we say so instead of guessing.",
+    "jump": {
+      "label": "Countries"
+    },
+    "sectionCount": "{n, plural, one {{count} scholarship} other {{count} scholarships}}",
+    "empty": "No scholarship is listed yet.",
+    "amount": {
+      "unknown": "Amount: not published in the sources we read, to check"
+    },
+    "deadline": {
+      "known": "Deadline: {date}",
+      "unknown": "Deadline: not published in the sources we read, to check"
+    },
+    "details": {
+      "summary": "Requirements, documents and how to apply",
+      "requirements": "Requirements",
+      "documents": "Required documents",
+      "howToApply": "How to apply"
+    },
+    "requirements": {
+      "partial": "We have not published all the conditions of this scholarship. Check the official page.",
+      "none": "No requirement is published in the sources we read, to check."
+    },
+    "documents": {
+      "none": "No document is listed in the source we reviewed, to check.",
+      "missing": "The list of documents is not published, to check."
+    },
+    "howToApply": {
+      "missing": "How to apply is not published, to check."
+    },
+    "programmes": {
+      "summary": "Programmes it applies to",
+      "country": "{n, plural, one {{count} programme in {country}, at the institutions that take part.} other {{count} programmes in {country}, at the institutions that take part.}} The official page says which institutions take part and on what conditions.",
+      "matchesLink": "See my matches",
+      "without": "No programme is listed yet for: {institutions}",
+      "none": "No programme is listed yet for this scholarship."
+    },
+    "nationality": {
+      "open": "Open to your nationality",
+      "closed": "Not open to your nationality (for nationals of: {countries})",
+      "noProfile": "Create your profile to check your nationality",
+      "caveat": "Based on the published nationality rule only. Check the other conditions on the official page."
     }
   }
 }

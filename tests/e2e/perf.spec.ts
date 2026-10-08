@@ -89,6 +89,14 @@ const PAGES: readonly PageCase[] = [
       await expect(page.locator('[data-slot="compare-heads"]')).toBeVisible();
     },
   },
+  {
+    name: "scholarships",
+    route: (locale) => `/${locale}/scholarships`,
+    seeded: false,
+    ready: async (page) => {
+      await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    },
+  },
 ];
 
 type Script = {
