@@ -3,7 +3,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 
 import { afterEach, describe, expect, it, vi } from "vitest";
-
+import { USER_AGENT } from "../../../scripts/import/http";
 import {
   fetchPages,
   httpGet,
@@ -211,6 +211,16 @@ describe("httpGet", () => {
     await expect(httpGet("https://example.test/x")).rejects.toThrow(PortalStopError);
     await expect(httpGet("https://example.test/x")).rejects.toThrow(/403/);
   });
+  it("stops on any status other than 200 (204, 3xx)", async () => {
+    for (const status of [204, 302]) {
+      vi.stubGlobal(
+        "fetch",
+        vi.fn(async () => new Response(null, { status })),
+      );
+      await expect(httpGet("https://example.test/x")).rejects.toThrow(PortalStopError);
+      await expect(httpGet("https://example.test/x")).rejects.toThrow(String(status));
+    }
+  });
   it("sends the User-Agent header and returns the body on a 200", async () => {
     const stub = vi.fn(
       async (_url: string, _init?: RequestInit) => new Response("{}", { status: 200 }),
@@ -218,7 +228,8 @@ describe("httpGet", () => {
     vi.stubGlobal("fetch", stub);
     await expect(httpGet("https://example.test/x")).resolves.toBe("{}");
     const headers = new Headers(stub.mock.calls[0]?.[1]?.headers);
-    expect(headers.get("user-agent")).toMatch(/\S+/);
+    expect(headers.get("user-agent")).toBe(USER_AGENT);
+    expect(stub.mock.calls[0]?.[1]?.redirect).toBe("error");
   });
 });
 

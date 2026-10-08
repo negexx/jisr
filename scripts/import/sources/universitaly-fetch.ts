@@ -46,9 +46,10 @@ export type Getter = (url: string) => Promise<string>;
 export async function httpGet(url: string): Promise<string> {
   const response = await fetch(url, {
     headers: { "user-agent": USER_AGENT, accept: "application/json" },
+    redirect: "error",
     signal: AbortSignal.timeout(60_000),
   });
-  if (!response.ok) {
+  if (response.status !== 200) {
     throw new PortalStopError(
       `Universitaly answered HTTP ${response.status} for ${url}: stop and tell the owner (no retry, no workaround)`,
     );

@@ -22,7 +22,7 @@ export function renderReport(cmp: Comparison, meta: ReportMeta): string {
   );
   out.push("## Counts", "");
   out.push(
-    `- English search (Triennale, includes mixed): ${meta.englishTotal} courses; of these mixed Italian-English in an in-scope class: ${cmp.tally["mixed-language"]}; mixed in all classes (portal total for the mixed filter): ${meta.mixedTotal}`,
+    `- English search (Triennale, includes mixed): ${meta.englishTotal} courses; of these mixed Italian-English in an in-scope class: ${cmp.tally["mixed-language"]}; mixed Italian-English rows inside the English search (all classes): ${meta.mixedTotal}`,
   );
   out.push(
     `- Italian search (Triennale, includes mixed): ${meta.italianTotal} courses (counted only)`,

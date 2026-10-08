@@ -104,20 +104,36 @@ export function describeStop(error: unknown): string {
   return `STOPPED: ${error instanceof Error ? error.message : String(error)}`;
 }
 
-function argValue(args: string[], flag: string): string | null {
-  const index = args.indexOf(flag);
-  const value = index === -1 ? undefined : args[index + 1];
-  return value === undefined ? null : value;
+export type CliOptions = { out: string; fromCache: string | null; delayMs: number };
+
+const FLAGS = ["--out", "--from-cache", "--delay-ms"] as const;
+
+// A flag without a value, an unknown flag or a repeated flag throws: a typo must never turn
+// into a live fetch the owner did not ask for.
+export function parseArgs(args: string[]): CliOptions {
+  const values = new Map<string, string>();
+  for (let i = 0; i < args.length; i++) {
+    const flag = args[i] ?? "";
+    if (!FLAGS.some((f) => f === flag)) throw new Error(`unknown flag ${flag}`);
+    if (values.has(flag)) throw new Error(`${flag} given twice`);
+    const value = args[i + 1];
+    if (value === undefined || value.startsWith("--")) throw new Error(`${flag} needs a value`);
+    values.set(flag, value);
+    i++;
+  }
+  const delayMs = Number(values.get("--delay-ms") ?? "1500");
+  if (!Number.isFinite(delayMs) || delayMs < 0) throw new Error("--delay-ms must be a number >= 0");
+  return {
+    out: values.get("--out") ?? path.join("data-staging", "universitaly"),
+    fromCache: values.get("--from-cache") ?? null,
+    delayMs,
+  };
 }
 
 async function main(): Promise<void> {
-  const args = process.argv.slice(2);
-  const delay = Number(argValue(args, "--delay-ms") ?? "1500");
-  if (!Number.isFinite(delay) || delay < 0) throw new Error("--delay-ms must be a number >= 0");
+  const cli = parseArgs(process.argv.slice(2));
   const { runDir, report } = await runDiscovery({
-    out: argValue(args, "--out") ?? path.join("data-staging", "universitaly"),
-    fromCache: argValue(args, "--from-cache"),
-    delayMs: delay,
+    ...cli,
     get: httpGet,
     sleep: (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
     now: () => new Date(),

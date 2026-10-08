@@ -4,7 +4,7 @@ import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
-import { describeStop, runDiscovery } from "../../../scripts/import/it-discovery";
+import { describeStop, parseArgs, runDiscovery } from "../../../scripts/import/it-discovery";
 import { PortalStopError } from "../../../scripts/import/sources/universitaly-fetch";
 
 import { course, page } from "./universitaly-helpers";
@@ -179,5 +179,35 @@ describe("describeStop", () => {
     expect(describeStop(new PortalStopError("HTTP 403"))).toBe("STOPPED: HTTP 403");
     expect(describeStop(new TypeError("fetch failed"))).toBe("STOPPED: fetch failed");
     expect(describeStop("odd")).toBe("STOPPED: odd");
+  });
+});
+
+describe("parseArgs", () => {
+  it("has defaults and accepts a valid combination", () => {
+    expect(parseArgs([])).toEqual({
+      out: path.join("data-staging", "universitaly"),
+      fromCache: null,
+      delayMs: 1500,
+    });
+    expect(parseArgs(["--from-cache", "some/dir", "--delay-ms", "0", "--out", "o"])).toEqual({
+      out: "o",
+      fromCache: "some/dir",
+      delayMs: 0,
+    });
+  });
+  it("throws instead of falling back to a live fetch when a value is missing", () => {
+    expect(() => parseArgs(["--from-cache"])).toThrow(/--from-cache needs a value/);
+    expect(() => parseArgs(["--out", "--from-cache", "x"])).toThrow(/--out needs a value/);
+    expect(() => parseArgs(["--delay-ms"])).toThrow(/--delay-ms needs a value/);
+  });
+  it("throws on an unknown flag, a stray argument or a repeated flag", () => {
+    expect(() => parseArgs(["--refresh"])).toThrow(/unknown flag --refresh/);
+    expect(() => parseArgs(["--from-cahce", "x"])).toThrow(/unknown flag --from-cahce/);
+    expect(() => parseArgs(["stray"])).toThrow(/unknown flag stray/);
+    expect(() => parseArgs(["--out", "a", "--out", "b"])).toThrow(/--out given twice/);
+  });
+  it("rejects a bad delay", () => {
+    expect(() => parseArgs(["--delay-ms", "-1"])).toThrow(/--delay-ms/);
+    expect(() => parseArgs(["--delay-ms", "x"])).toThrow(/--delay-ms/);
   });
 });
