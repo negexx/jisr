@@ -10,8 +10,18 @@ export const UNIVERSITALY_SEARCH_PAGE = "https://www.universitaly.it/en/cerca-co
 
 export type OurInstitution = { slug: string; name: string };
 
+// What the builder resolved for every candidate, in candidate order: the MUR university, our
+// institution slug (reused or new) and the programme slug; null where the candidate was refused.
+export type ResolvedCandidate = {
+  portalId: number;
+  mur: string | null;
+  institutionSlug: string | null;
+  slug: string | null;
+};
+
 export type StageReport = {
   staged: string[];
+  resolved: ResolvedCandidate[];
   reusedInstitutions: string[];
   refused: { portalId: number; reason: string }[];
 };
@@ -52,7 +62,10 @@ export function buildUniversitalyRecords(input: {
   websites?: ReadonlyMap<string, string>;
   fetchedAt: string;
 }): { records: StagedRecord[]; report: StageReport } {
-  const report: StageReport = { staged: [], reusedInstitutions: [], refused: [] };
+  const report: StageReport = { staged: [], resolved: [], reusedInstitutions: [], refused: [] };
+  const unresolved = (portalId: number, mur: string | null): void => {
+    report.resolved.push({ portalId, mur, institutionSlug: null, slug: null });
+  };
   const institutions = new Map<string, StagedRecord>();
   const programmes = new Map<string, StagedRecord>();
   const websites = input.websites ?? new Map<string, string>();
@@ -60,6 +73,7 @@ export function buildUniversitalyRecords(input: {
   for (const c of input.candidates) {
     const ateneo = resolveAteneo(c.university, input.atenei);
     if (ateneo === null) {
+      unresolved(c.portalId, null);
       report.refused.push({
         portalId: c.portalId,
         reason: `no MUR university matches "${c.university}"`,
@@ -67,6 +81,7 @@ export function buildUniversitalyRecords(input: {
       continue;
     }
     if (ateneo === "ambiguous") {
+      unresolved(c.portalId, null);
       report.refused.push({
         portalId: c.portalId,
         reason: `"${c.university}" matches more than one MUR university`,
@@ -76,6 +91,7 @@ export function buildUniversitalyRecords(input: {
     const city = titleCase(ateneo.city);
     const mine = input.ourInstitutions.filter((i) => nameKey(i.name) === nameKey(ateneo.fullName));
     if (mine.length > 1) {
+      unresolved(c.portalId, ateneo.fullName);
       report.refused.push({
         portalId: c.portalId,
         reason: `${ateneo.fullName} has several institutions of ours (${mine.map((i) => i.slug).join(", ")}): campus unknown`,
@@ -172,6 +188,12 @@ export function buildUniversitalyRecords(input: {
       review,
     });
     report.staged.push(slug);
+    report.resolved.push({
+      portalId: c.portalId,
+      mur: ateneo.fullName,
+      institutionSlug: instSlug,
+      slug,
+    });
   }
   return {
     records: [

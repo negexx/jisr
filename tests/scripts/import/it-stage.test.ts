@@ -4,7 +4,13 @@ import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
-import { newestRun, parseArgs, renderSummary, runStage } from "../../../scripts/import/it-stage";
+import {
+  newestRun,
+  parseArgs,
+  renderSummary,
+  runStage,
+  type StageResult,
+} from "../../../scripts/import/it-stage";
 import type { Ateneo } from "../../../scripts/import/sources/mur";
 
 const atenei: Ateneo[] = [
@@ -105,6 +111,7 @@ describe("runStage", () => {
         portalId: 1625723,
         portal: "Università degli Studi di GENOVA",
         mur: "Università degli studi di Genova",
+        institutionSlug: "it-genova-genova",
       },
     ]);
   });
@@ -139,7 +146,12 @@ describe("runStage", () => {
     });
     expect(result.staged).toHaveLength(1);
     await expect(readFile(path.join(f.stagingDir, "REVIEW.csv"), "utf8")).rejects.toThrow();
-    await expect(readFile(path.join(f.stagingDir, "programs", "x.yaml"), "utf8")).rejects.toThrow();
+    await expect(
+      readFile(
+        path.join(f.stagingDir, "programs", "it-genova-genova-computer-engineering-l8.yaml"),
+        "utf8",
+      ),
+    ).rejects.toThrow();
   });
 
   it("stops on an id that is not a candidate, and reports a refused university", async () => {
@@ -167,7 +179,12 @@ describe("runStage", () => {
     expect(noAteneo.staged).toEqual([]);
     expect(noAteneo.refused).toHaveLength(1);
     expect(noAteneo.resolutions).toEqual([
-      { portalId: 1625723, portal: "Università degli Studi di GENOVA", mur: null },
+      {
+        portalId: 1625723,
+        portal: "Università degli Studi di GENOVA",
+        mur: null,
+        institutionSlug: null,
+      },
     ]);
   });
 
@@ -256,37 +273,180 @@ describe("newestRun", () => {
   });
 });
 
+const baseResult = (over: Partial<StageResult> = {}): StageResult => ({
+  staged: [],
+  refused: [],
+  written: 0,
+  skipped: 0,
+  inData: 0,
+  removedStale: [],
+  keptApprovedStale: [],
+  resolutions: [],
+  ...over,
+});
+
 describe("renderSummary", () => {
-  it("shows each resolution, the staged slugs, the refusals and the counts", () => {
+  it("shows each resolution, the staged slugs and the counts", () => {
     const text = renderSummary(
-      {
+      baseResult({
         staged: ["a-b"],
-        refused: [{ portalId: 9, reason: "no MUR university matches X" }],
         written: 2,
         skipped: 1,
-        inData: 0,
         resolutions: [
-          { portalId: 1, portal: "Univ GENOVA", mur: "Università degli studi di Genova" },
-          { portalId: 9, portal: "X", mur: null },
+          {
+            portalId: 1,
+            portal: "Univ GENOVA",
+            mur: "Università degli studi di Genova",
+            institutionSlug: "it-genova-genova",
+          },
         ],
-      },
+      }),
       { dryRun: false, reviewSheet: "data-staging/REVIEW.csv" },
     );
     expect(text).toContain("1: Univ GENOVA -> Università degli studi di Genova");
-    expect(text).toContain("9: X -> REFUSED");
+    expect(text).toContain("it-genova-genova");
     expect(text).toContain("a-b");
-    expect(text).toContain("no MUR university matches X");
     expect(text).toContain(
       "2 written, 1 kept (already staged, never overwritten), 0 already in data/",
     );
     expect(text).toContain("review sheet: data-staging/REVIEW.csv");
   });
-  it("says a dry run wrote nothing", () => {
+  it("after a refusal prints the refusals and no written counts or review sheet", () => {
     const text = renderSummary(
-      { staged: [], refused: [], written: 0, skipped: 0, inData: 0, resolutions: [] },
-      { dryRun: true, reviewSheet: "x" },
+      baseResult({
+        refused: [{ portalId: 9, reason: "no MUR university matches X" }],
+        resolutions: [{ portalId: 9, portal: "X", mur: null, institutionSlug: null }],
+      }),
+      { dryRun: false, reviewSheet: "data-staging/REVIEW.csv" },
     );
+    expect(text).toContain("9: X -> REFUSED");
+    expect(text).toContain("no MUR university matches X");
+    expect(text).toContain("nothing was written");
+    expect(text).not.toContain("written,");
+    expect(text).not.toContain("review sheet:");
+  });
+  it("prints superseded and approved-stale staged files", () => {
+    const text = renderSummary(
+      baseResult({
+        removedStale: ["programs/old-slug"],
+        keptApprovedStale: ["programs/approved-old"],
+      }),
+      { dryRun: false, reviewSheet: "x" },
+    );
+    expect(text).toContain("programs/old-slug");
+    expect(text).toContain("WARN programs/approved-old is approved");
+  });
+  it("says a dry run wrote nothing", () => {
+    const text = renderSummary(baseResult(), { dryRun: true, reviewSheet: "x" });
     expect(text).toContain("dry run");
     expect(text).not.toContain("review sheet:");
+  });
+});
+
+const putProgramme = async (dir: string, slug: string, institution: string) => {
+  await mkdir(path.join(dir, "programs"), { recursive: true });
+  await writeFile(
+    path.join(dir, "programs", `${slug}.yaml`),
+    `slug: ${slug}\ninstitution: ${institution}\nlevel: bachelor\n`,
+  );
+};
+
+const stageOne = async (f: Awaited<ReturnType<typeof fixture>>, dryRun = true) =>
+  runStage({
+    ids: [1625723],
+    runDir: f.runDir,
+    atenei,
+    websites: new Map(),
+    dataDir: f.dataDir,
+    stagingDir: f.stagingDir,
+    dryRun,
+  });
+
+describe("the duplicate guard", () => {
+  it("refuses a candidate whose institution and class match a programme already staged", async () => {
+    const f = await fixture();
+    await putProgramme(
+      f.stagingDir,
+      "it-genova-genova-ingegneria-informatica-l8",
+      "it-genova-genova",
+    );
+    const r = await stageOne(f, false);
+    expect(r.staged).toEqual([]);
+    expect(r.written).toBe(0);
+    expect(r.refused).toHaveLength(1);
+    expect(r.refused[0]?.reason).toContain(
+      "possible duplicate of it-genova-genova-ingegneria-informatica-l8",
+    );
+    expect(r.refused[0]?.reason).toContain("already staged");
+    await expect(readFile(path.join(f.stagingDir, "REVIEW.csv"), "utf8")).rejects.toThrow();
+  });
+  it("refuses it when the match is in data/", async () => {
+    const f = await fixture();
+    await putProgramme(f.dataDir, "it-genova-genova-ingegneria-informatica-l8", "it-genova-genova");
+    const r = await stageOne(f);
+    expect(r.refused[0]?.reason).toContain("in data/");
+  });
+  it("uses the slug of a reused institution, not the formula slug", async () => {
+    const f = await fixture();
+    await mkdir(path.join(f.dataDir, "institutions"), { recursive: true });
+    await writeFile(
+      path.join(f.dataDir, "institutions", "it-unige-genova.yaml"),
+      "slug: it-unige-genova\nname: Università degli studi di Genova\n",
+    );
+    await putProgramme(f.dataDir, "it-unige-genova-ingegneria-l8", "it-unige-genova");
+    const r = await stageOne(f);
+    expect(r.refused[0]?.reason).toContain("it-unige-genova-ingegneria-l8");
+    expect(r.resolutions[0]?.institutionSlug).toBe("it-unige-genova");
+  });
+  it("does not refuse another class at the same institution or another institution", async () => {
+    const f = await fixture();
+    await putProgramme(f.stagingDir, "it-genova-genova-informatica-l31", "it-genova-genova");
+    await putProgramme(f.dataDir, "it-padova-padova-ingegneria-l8", "it-padova-padova");
+    const r = await stageOne(f);
+    expect(r.refused).toEqual([]);
+    expect(r.staged).toEqual(["it-genova-genova-computer-engineering-l8"]);
+  });
+  it("does not refuse the candidate's own slug already staged by an earlier run", async () => {
+    const f = await fixture();
+    await putProgramme(
+      f.stagingDir,
+      "it-genova-genova-computer-engineering-l8",
+      "it-genova-genova",
+    );
+    const r = await stageOne(f);
+    expect(r.refused).toEqual([]);
+  });
+});
+
+describe("our institutions", () => {
+  it("reuses an institution in data/ that has no programme yet", async () => {
+    const f = await fixture();
+    await writeFile(
+      path.join(f.dataDir, "institutions", "it-unige-genova.yaml"),
+      "slug: it-unige-genova\nname: Università degli studi di Genova\n",
+    );
+    const r = await stageOne(f, false);
+    expect(r.written).toBe(1); // the programme only
+    const yaml = await readFile(
+      path.join(f.stagingDir, "programs", "it-unige-genova-computer-engineering-l8.yaml"),
+      "utf8",
+    );
+    expect(yaml).toContain("institution: it-unige-genova");
+  });
+});
+
+describe("candidates.json shape", () => {
+  it("rejects an unknown field and a non-http url", async () => {
+    for (const bad of [
+      { field: "medicine" },
+      { url: "ftp://x.example/y" },
+      { url: "javascript:1" },
+    ]) {
+      const f = await fixture({
+        newUniversities: [],
+        newProgrammes: [candidate(bad)],
+      });
+      await expect(stageOne(f)).rejects.toThrow(/candidates\.json/);
+    }
   });
 });

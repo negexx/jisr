@@ -1,14 +1,13 @@
 import { existsSync } from "node:fs";
-import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-import { z } from "zod";
-
 import { fetchText } from "./http";
+import { readCandidates } from "./it-stage-candidates";
+import { findDuplicate, readExistingProgrammes, readInstitutions } from "./it-stage-existing";
 import { ATENEI_URL, type Ateneo, parseAtenei, websiteCandidates } from "./sources/mur";
-import type { Candidate } from "./sources/universitaly";
 import { loadItalyData } from "./sources/universitaly-compare";
-import { buildUniversitalyRecords, resolveAteneo } from "./sources/universitaly-stage";
+import { buildUniversitalyRecords } from "./sources/universitaly-stage";
 import {
   DATA_DIR,
   mergeReviewSheet,
@@ -26,27 +25,12 @@ import {
 // Never overwrites a staged file and never touches data/.
 const UNIVERSITALY_DIR = path.join(STAGING_DIR, "universitaly");
 
-const CandidateSchema = z.object({
-  portalId: z.number().int().positive(),
-  university: z.string(),
-  name: z.string(),
-  classCode: z.string(),
-  classCodes: z.array(z.string()),
-  field: z.string(),
-  confidence: z.enum(["high", "low"]),
-  durationYears: z.number().nullable(),
-  url: z.string().nullable(),
-  academicYear: z.string(),
-  delivery: z.enum(["conventional", "blended"]),
-});
-
-const CandidatesFileSchema = z.object({
-  meta: z.object({ fetchedAt: z.string() }).optional(),
-  newUniversities: z.array(z.object({ programmes: z.array(CandidateSchema) })).default([]),
-  newProgrammes: z.array(CandidateSchema).default([]),
-});
-
-export type Resolution = { portalId: number; portal: string; mur: string | null };
+export type Resolution = {
+  portalId: number;
+  portal: string;
+  mur: string | null;
+  institutionSlug: string | null;
+};
 
 export type StageResult = {
   staged: string[];
@@ -54,6 +38,8 @@ export type StageResult = {
   written: number;
   skipped: number;
   inData: number;
+  removedStale: string[];
+  keptApprovedStale: string[];
   resolutions: Resolution[];
 };
 
@@ -66,22 +52,6 @@ export type StageOptions = {
   stagingDir?: string;
   dryRun: boolean;
 };
-
-async function readCandidates(
-  runDir: string,
-): Promise<{ byId: Map<number, Candidate>; fetchedAt: string }> {
-  const file = path.join(runDir, "candidates.json");
-  const parsed = CandidatesFileSchema.safeParse(JSON.parse(await readFile(file, "utf8")));
-  if (!parsed.success) throw new Error(`${file} does not have the expected shape`);
-  const all = [
-    ...parsed.data.newUniversities.flatMap((u) => u.programmes),
-    ...parsed.data.newProgrammes,
-  ];
-  return {
-    byId: new Map(all.map((c) => [c.portalId, c])),
-    fetchedAt: parsed.data.meta?.fetchedAt.slice(0, 10) ?? "an unrecorded date",
-  };
-}
 
 export async function runStage(options: StageOptions): Promise<StageResult> {
   const dataDir = options.dataDir ?? DATA_DIR;
@@ -96,18 +66,14 @@ export async function runStage(options: StageOptions): Promise<StageResult> {
     return c === undefined ? [] : [c];
   });
 
-  const ours = new Map<string, string>();
-  for (const p of await loadItalyData(dataDir)) ours.set(p.institutionSlug, p.institutionName);
-  const ourInstitutions = [...ours].map(([slug, name]) => ({ slug, name }));
-
-  const resolutions = candidates.map((c): Resolution => {
-    const ateneo = resolveAteneo(c.university, options.atenei);
-    return {
-      portalId: c.portalId,
-      portal: c.university,
-      mur: typeof ateneo === "object" && ateneo !== null ? ateneo.fullName : null,
-    };
-  });
+  const fromProgrammes = new Map<string, string>();
+  for (const p of await loadItalyData(dataDir)) {
+    fromProgrammes.set(p.institutionSlug, p.institutionName);
+  }
+  const ourInstitutions = await readInstitutions(
+    dataDir,
+    [...fromProgrammes].map(([slug, name]) => ({ slug, name })),
+  );
   const { records, report } = buildUniversitalyRecords({
     candidates,
     atenei: options.atenei,
@@ -115,16 +81,39 @@ export async function runStage(options: StageOptions): Promise<StageResult> {
     websites: options.websites,
     fetchedAt,
   });
+  const resolutions = report.resolved.map((r): Resolution => {
+    const portal = byId.get(r.portalId)?.university ?? "";
+    return { portalId: r.portalId, portal, mur: r.mur, institutionSlug: r.institutionSlug };
+  });
+  const refused = [...report.refused];
+  const existing = await readExistingProgrammes(dataDir, stagingDir);
+  for (const r of report.resolved) {
+    const c = byId.get(r.portalId);
+    if (c === undefined || r.institutionSlug === null || r.slug === null) continue;
+    const dup = findDuplicate(existing, {
+      institutionSlug: r.institutionSlug,
+      classCode: c.classCode,
+      slug: r.slug,
+    });
+    if (dup !== null) {
+      refused.push({
+        portalId: r.portalId,
+        reason: `possible duplicate of ${dup.slug} (${dup.where === "data/" ? "in data/" : "already staged"}): drop this id or decide with the owner`,
+      });
+    }
+  }
   const result: StageResult = {
     staged: report.staged,
-    refused: report.refused,
+    refused,
     written: 0,
     skipped: 0,
     inData: 0,
+    removedStale: [],
+    keptApprovedStale: [],
     resolutions,
   };
   // One refusal stops the whole run: the owner decides, then names the ids again.
-  if (report.refused.length > 0) return { ...result, staged: [] };
+  if (refused.length > 0) return { ...result, staged: [] };
   if (options.dryRun) return result;
 
   const state = await readReviewState(stagingDir);
@@ -143,7 +132,14 @@ export async function runStage(options: StageOptions): Promise<StageResult> {
   });
   await mkdir(stagingDir, { recursive: true });
   await writeFile(reviewFile(stagingDir), reviewCsv(rows, approved));
-  return { ...result, written: written.written, skipped: written.skipped, inData: written.inData };
+  return {
+    ...result,
+    written: written.written,
+    skipped: written.skipped,
+    inData: written.inData,
+    removedStale: written.removedStale,
+    keptApprovedStale: written.keptApprovedStale,
+  };
 }
 
 // The newest run directory (ISO day names sort by date) that holds a candidates.json.
@@ -197,27 +193,40 @@ export function renderSummary(
   result: StageResult,
   context: { dryRun: boolean; reviewSheet: string },
 ): string {
-  const lines = ["university resolved for each candidate (portal name -> MUR name):"];
+  const lines = [
+    "university resolved for each candidate (portal name -> MUR name [our institution]):",
+  ];
   for (const r of result.resolutions) {
-    lines.push(`  ${r.portalId}: ${r.portal} -> ${r.mur ?? "REFUSED"}`);
+    lines.push(
+      `  ${r.portalId}: ${r.portal} -> ${r.mur === null ? "REFUSED" : `${r.mur} [${r.institutionSlug ?? "unresolved"}]`}`,
+    );
+  }
+  if (result.refused.length > 0) {
+    lines.push(`REFUSED ${result.refused.length} (nothing was written):`);
+    for (const r of result.refused) lines.push(`  ${r.portalId}: ${r.reason}`);
+    return lines.join("\n");
   }
   lines.push(
     result.staged.length === 0
       ? "staged: none"
       : `staged ${result.staged.length}:\n${result.staged.map((s) => `  ${s}`).join("\n")}`,
   );
-  if (result.refused.length > 0) {
-    lines.push(`REFUSED ${result.refused.length} (nothing was written):`);
-    for (const r of result.refused) lines.push(`  ${r.portalId}: ${r.reason}`);
-  }
   if (context.dryRun) {
     lines.push("dry run: nothing was written");
-  } else {
-    lines.push(
-      `${result.written} written, ${result.skipped} kept (already staged, never overwritten), ${result.inData} already in data/`,
-    );
-    lines.push(`review sheet: ${context.reviewSheet}`);
+    return lines.join("\n");
   }
+  lines.push(
+    `${result.written} written, ${result.skipped} kept (already staged, never overwritten), ${result.inData} already in data/`,
+  );
+  if (result.removedStale.length > 0) {
+    lines.push(
+      `${result.removedStale.length} superseded staged file(s) removed (their record's slug changed): ${result.removedStale.join(", ")}`,
+    );
+  }
+  for (const key of result.keptApprovedStale) {
+    lines.push(`WARN ${key} is approved but its record now has another slug: check both files`);
+  }
+  lines.push(`review sheet: ${context.reviewSheet}`);
   return lines.join("\n");
 }
 
