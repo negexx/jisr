@@ -355,7 +355,7 @@ describe("compare: several programmes of ours with the same name and class", () 
     const cmp = compare([bol(1), sameClassOther, other], [a]);
     expect(cmp.matched).toEqual([{ ours: a.slug, portalId: 1 }]);
     expect(cmp.possible).toEqual([]);
-    expect(cmp.newProgrammes.map((c) => c.portalId)).toEqual([4, 3]);
+    expect(cmp.newProgrammes.map((c) => c.portalId)).toEqual([3, 4]);
   });
 });
 
@@ -379,5 +379,142 @@ describe("loadItalyData with sparse files", () => {
       durationYears: null,
       languages: [],
     });
+  });
+});
+
+describe("compare: exact matches win over near matches, whatever the portal order", () => {
+  const BOCCONI = "Università Commerciale Luigi Bocconi MILANO";
+  const bocOurs = ours({
+    slug: "it-milano-bocconi-economics-l33",
+    institutionSlug: "it-milano-bocconi",
+    institutionName: BOCCONI,
+    name: "Economics",
+    classCode: "L-33",
+    officialUrl: null,
+  });
+  const exactCourse = classify(
+    course({
+      id: 30,
+      nomeStruttura: BOCCONI,
+      nomeCorso: "Economics",
+      nomeCorsoEn: "Economics",
+      classe: { codice: "L-33" },
+    }),
+  );
+  const renamedCourse = classify(
+    course({
+      id: 31,
+      nomeStruttura: BOCCONI,
+      nomeCorso: "Economics and Finance",
+      nomeCorsoEn: "Economics and Finance",
+      classe: { codice: "L-33" },
+    }),
+  );
+
+  it("matches the exact-name course even when a different-name course comes first", () => {
+    const first = compare([renamedCourse, exactCourse], [bocOurs]);
+    const reversed = compare([exactCourse, renamedCourse], [bocOurs]);
+    expect(first).toEqual(reversed);
+    expect(first.matched).toEqual([{ ours: bocOurs.slug, portalId: 30 }]);
+    expect(first.possible).toEqual([]);
+    expect(first.newProgrammes.map((c) => c.portalId)).toEqual([31]);
+    expect(first.notListed).toEqual([]);
+  });
+
+  it("never changes the comparison when the candidate order changes", () => {
+    const a = ours({
+      slug: "it-bologna-a-economics-l33",
+      institutionSlug: "it-bologna-a",
+      institutionName: BOCCONI,
+      name: "Economics",
+      classCode: "L-33",
+    });
+    const b = ours({
+      slug: "it-bologna-b-economics-l33",
+      institutionSlug: "it-bologna-b",
+      institutionName: BOCCONI,
+      name: "Economics",
+      classCode: "L-33",
+    });
+    const dup = classify(
+      course({
+        id: 32,
+        nomeStruttura: BOCCONI,
+        nomeCorso: "Economics",
+        nomeCorsoEn: "Economics",
+        classe: { codice: "L-33" },
+      }),
+    );
+    const dup2 = classify(
+      course({
+        id: 33,
+        nomeStruttura: BOCCONI,
+        nomeCorso: "Economics",
+        nomeCorsoEn: "Economics",
+        classe: { codice: "L-33" },
+      }),
+    );
+    const other = classify(
+      course({
+        id: 34,
+        nomeStruttura: BOCCONI,
+        nomeCorso: "Data Science",
+        nomeCorsoEn: "Data Science",
+        classe: { codice: "L-31" },
+      }),
+    );
+    const trento = classify(
+      course({
+        id: 35,
+        nomeStruttura: "Università di Trento",
+        nomeCorsoEn: "Computer Science",
+        classe: { codice: "L-31" },
+      }),
+    );
+    const bari = classify(poliba());
+    const all = [renamedCourse, exactCourse, dup, dup2, other, trento, bari];
+    const programmes = [a, b, ours()];
+    const base = compare(all, programmes);
+    const permute = (indices: number[]) => indices.flatMap((i) => all.slice(i, i + 1));
+    const orders = [
+      [...all].reverse(),
+      permute([3, 0, 5, 1, 6, 2, 4]),
+      permute([6, 4, 2, 0, 1, 3, 5]),
+      permute([2, 3, 1, 0, 4, 6, 5]),
+    ];
+    for (const order of orders) expect(compare(order, programmes)).toEqual(base);
+    // Every candidate ends in exactly one place.
+    const placed =
+      base.matched.length +
+      base.possible.length +
+      base.newProgrammes.length +
+      base.newUniversities.reduce((n, u) => n + u.programmes.length, 0);
+    expect(placed).toBe(base.candidates);
+  });
+});
+
+describe("universityTokens: libera", () => {
+  it("drops the generic word libera so Bolzano is not Luiss", () => {
+    expect(universityTokens("Libera Università di Bolzano")).toEqual(["bolzano"]);
+    const luiss = ours({
+      slug: "it-roma-luiss-economics-l33",
+      institutionSlug: "it-roma-luiss",
+      institutionName:
+        "Luiss - Libera Università Internazionale degli Studi Sociali Guido Carli di Roma",
+      name: "Economics",
+      classCode: "L-33",
+    });
+    const bolzano = classify(
+      course({
+        id: 40,
+        nomeStruttura: "Libera Università di Bolzano",
+        nomeCorsoEn: "Economics",
+        classe: { codice: "L-33" },
+      }),
+    );
+    const cmp = compare([bolzano], [luiss]);
+    expect(cmp.newUniversities).toEqual([
+      expect.objectContaining({ university: "Libera Università di Bolzano", possiblyOurs: [] }),
+    ]);
   });
 });

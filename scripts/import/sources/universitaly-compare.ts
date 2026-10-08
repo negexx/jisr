@@ -109,7 +109,9 @@ const STATUSES: Status[] = [
 function mostFrequent(values: string[]): string {
   const counts = new Map<string, number>();
   for (const v of values) counts.set(v, (counts.get(v) ?? 0) + 1);
-  return [...counts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? "unknown";
+  return (
+    [...counts.entries()].sort((a, b) => b[1] - a[1] || (a[0] < b[0] ? -1 : 1))[0]?.[0] ?? "unknown"
+  );
 }
 
 const GENERIC_WORDS = new Set([
@@ -131,6 +133,7 @@ const GENERIC_WORDS = new Set([
   "lo",
   "the",
   "of",
+  "libera",
 ]);
 
 // The distinctive words of a university name, to point at near matches (never to decide a match).
@@ -147,11 +150,49 @@ function overlaps(a: string[], b: string[]): boolean {
   return shared >= 1 && smaller > 0 && shared / smaller >= 0.5;
 }
 
-export function compare(classified: Classified[], ours: OurProgramme[]): Comparison {
+function mismatchesFor(o: OurProgramme, cand: Candidate): Comparison["mismatches"] {
+  const out: Comparison["mismatches"] = [];
+  if (
+    o.durationYears !== null &&
+    cand.durationYears !== null &&
+    o.durationYears !== cand.durationYears
+  ) {
+    out.push({
+      slug: o.slug,
+      field: "duration",
+      ours: String(o.durationYears),
+      portal: String(cand.durationYears),
+    });
+  }
+  if (!o.languages.includes("en")) {
+    out.push({
+      slug: o.slug,
+      field: "language",
+      ours: o.languages.join(",") || "none",
+      portal: "en",
+    });
+  }
+  const ourHost = o.officialUrl === null ? null : hostKey(o.officialUrl);
+  const portalHost = cand.url === null ? null : hostKey(cand.url);
+  if (ourHost !== null && portalHost !== null && ourHost !== portalHost) {
+    out.push({ slug: o.slug, field: "url-host", ours: ourHost, portal: portalHost });
+  }
+  return out;
+}
+
+const byPortalId = (a: { portalId: number }, b: { portalId: number }): number =>
+  a.portalId - b.portalId;
+
+export function compare(classifiedInput: Classified[], ours: OurProgramme[]): Comparison {
+  // The result must not depend on the portal's course order.
+  const classified = [...classifiedInput].sort((a, b) => a.course.id - b.course.id);
   const tally = Object.fromEntries(STATUSES.map((s) => [s, 0])) as Record<Status, number>;
   for (const c of classified) tally[c.status]++;
   const academicYear = mostFrequent(classified.map((c) => c.course.anno.descrizione));
-  const candidates = classified.filter((c) => c.status === "candidate").map(toCandidate);
+  const candidates = classified
+    .filter((c) => c.status === "candidate")
+    .map(toCandidate)
+    .sort(byPortalId);
 
   const used = new Set<string>();
   const matched: Comparison["matched"] = [];
@@ -160,21 +201,26 @@ export function compare(classified: Classified[], ours: OurProgramme[]): Compari
   const newByUniversity = new Map<string, Candidate[]>();
   const mismatches: Comparison["mismatches"] = [];
 
-  for (const cand of candidates) {
-    const sameUniversity = ours.filter(
-      (o) => nameKey(o.institutionName) === nameKey(cand.university),
+  const sameClassOf = (cand: Candidate): OurProgramme[] =>
+    ours.filter(
+      (o) =>
+        nameKey(o.institutionName) === nameKey(cand.university) &&
+        o.classCode !== null &&
+        cand.classCodes.includes(o.classCode),
     );
-    if (sameUniversity.length === 0) {
-      newByUniversity.set(cand.university, [...(newByUniversity.get(cand.university) ?? []), cand]);
+
+  // Pass 1: exact (university, class, name) matches only, over all candidates, so a near match
+  // can never consume a programme an exact-name course needs.
+  const remaining: Candidate[] = [];
+  for (const cand of candidates) {
+    const exacts = sameClassOf(cand).filter((o) => nameKey(o.name) === nameKey(cand.name));
+    const firstExact = exacts[0];
+    if (firstExact === undefined) {
+      remaining.push(cand);
       continue;
     }
-    const sameClass = sameUniversity.filter(
-      (o) => o.classCode !== null && cand.classCodes.includes(o.classCode),
-    );
-    const exacts = sameClass.filter((o) => nameKey(o.name) === nameKey(cand.name));
-    const exact = exacts.find((o) => !used.has(o.slug));
-    const firstExact = exacts[0];
-    if (exact === undefined && firstExact !== undefined) {
+    const free = exacts.find((o) => !used.has(o.slug));
+    if (free === undefined) {
       possible.push({
         ours: firstExact.slug,
         candidate: cand,
@@ -182,48 +228,34 @@ export function compare(classified: Classified[], ours: OurProgramme[]): Compari
       });
       continue;
     }
-    if (exact !== undefined) {
-      used.add(exact.slug);
-      matched.push({ ours: exact.slug, portalId: cand.portalId });
-      if (
-        exact.durationYears !== null &&
-        cand.durationYears !== null &&
-        exact.durationYears !== cand.durationYears
-      ) {
-        mismatches.push({
-          slug: exact.slug,
-          field: "duration",
-          ours: String(exact.durationYears),
-          portal: String(cand.durationYears),
-        });
-      }
-      if (!exact.languages.includes("en")) {
-        mismatches.push({
-          slug: exact.slug,
-          field: "language",
-          ours: exact.languages.join(",") || "none",
-          portal: "en",
-        });
-      }
-      const ourHost = exact.officialUrl === null ? null : hostKey(exact.officialUrl);
-      const portalHost = cand.url === null ? null : hostKey(cand.url);
-      if (ourHost !== null && portalHost !== null && ourHost !== portalHost) {
-        mismatches.push({ slug: exact.slug, field: "url-host", ours: ourHost, portal: portalHost });
-      }
-      continue;
-    }
-    const near = sameClass.find((o) => !used.has(o.slug));
-    if (near !== undefined) {
-      used.add(near.slug);
-      possible.push({
-        ours: near.slug,
-        candidate: cand,
-        why: `same university and class ${near.classCode}, name differs ("${near.name}" / "${cand.name}")`,
-      });
-      continue;
-    }
-    newProgrammes.push(cand);
+    used.add(free.slug);
+    matched.push({ ours: free.slug, portalId: cand.portalId });
+    mismatches.push(...mismatchesFor(free, cand));
   }
+
+  // Pass 2: the rest are near matches (same university and class, other name), new programmes at a
+  // university we have, or programmes of a university we do not have under that name.
+  for (const cand of remaining) {
+    const knowsUniversity = ours.some(
+      (o) => nameKey(o.institutionName) === nameKey(cand.university),
+    );
+    if (!knowsUniversity) {
+      newByUniversity.set(cand.university, [...(newByUniversity.get(cand.university) ?? []), cand]);
+      continue;
+    }
+    const near = sameClassOf(cand).find((o) => !used.has(o.slug));
+    if (near === undefined) {
+      newProgrammes.push(cand);
+      continue;
+    }
+    used.add(near.slug);
+    possible.push({
+      ours: near.slug,
+      candidate: cand,
+      why: `same university and class ${near.classCode}, name differs ("${near.name}" / "${cand.name}")`,
+    });
+  }
+  possible.sort((a, b) => byPortalId(a.candidate, b.candidate));
 
   const portalUniversities = new Set(classified.map((c) => nameKey(c.course.nomeStruttura)));
   const institutionsNotSeen = [...new Set(ours.map((o) => o.institutionName))]
@@ -250,13 +282,15 @@ export function compare(classified: Classified[], ours: OurProgramme[]): Compari
     matched,
     possible,
     newProgrammes,
-    newUniversities: [...newByUniversity.entries()].map(([university, programmes]) => ({
-      university,
-      programmes,
-      possiblyOurs: institutionsNotSeen.filter((name) =>
-        overlaps(universityTokens(university), universityTokens(name)),
-      ),
-    })),
+    newUniversities: [...newByUniversity.entries()]
+      .sort(([x], [y]) => (x < y ? -1 : x > y ? 1 : 0))
+      .map(([university, programmes]) => ({
+        university,
+        programmes,
+        possiblyOurs: institutionsNotSeen.filter((name) =>
+          overlaps(universityTokens(university), universityTokens(name)),
+        ),
+      })),
     notListed,
     institutionsNotSeen,
     mismatches,
