@@ -1,0 +1,14 @@
+slug: it-palermo-palermo
+name: Università degli studi di Palermo
+country: IT
+city:
+  slug: palermo
+  name: Palermo
+type: public
+website: https://www.unipa.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unipa.it/
+    last_verified_at: 2026-10-08

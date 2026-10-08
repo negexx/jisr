@@ -1,0 +1,65 @@
+slug: it-napoli-federico-ii-napoli-electrical-engineering-and-information-t-l8
+institution: it-napoli-federico-ii-napoli
+country: IT
+city: napoli
+field: engineering
+level: bachelor
+name: Electrical Engineering and Information Technology
+summary:
+  fr:
+    text: Electrical Engineering and Information Technology, Università degli studi di Napoli Federico II (Napoli). Programme recensé sur Universitaly, le portail de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Electrical Engineering and Information Technology, Università degli studi di Napoli Federico II (Napoli). Programme listed on Universitaly, the Italian Ministry of University and Research (MUR) portal of the degree offer.
+    status: draft
+  ar:
+    text: Electrical Engineering and Information Technology, Università degli studi di Napoli Federico II (Napoli). برنامج مدرج على بوابة Universitaly لعرض التكوين التابعة لوزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://eeit.dieti.unina.it/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: it-universitaly
+  source: page-2
+  info_kind: official
+documents:
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+  source: page-2
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://eeit.dieti.unina.it/
+    last_verified_at: 2026-10-08
+  page-2:
+    url: https://www.international.unina.it/education/admission-regulation/
+    last_verified_at: 2026-10-08

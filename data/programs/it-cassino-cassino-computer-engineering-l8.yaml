@@ -77,37 +77,7 @@ scholarships: []
 sources:
   programme:
     url: https://www.unicas.it/computer-engineering/
-    last_verified_at: null
+    last_verified_at: 2026-10-08
   page-2:
     url: https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/
-    last_verified_at: null
-_review:
-  kind: programs
-  slug: it-cassino-cassino-computer-engineering-l8
-  name: Computer Engineering
-  institution: Università degli Studi di Cassino e del Lazio Meridionale
-  city: Cassino
-  field: engineering
-  confidence: low
-  officialUrl: https://www.unicas.it/computer-engineering
-  todo: "Universitaly (2026/2027, fetched 2026-10-08) lists: class L-8, 3 years, conventional delivery, English-taught; portal link https://www.unicas.it/computer-engineering: read the programme page it leads to; the portal gives no campus town: the town is the university's MUR town (Cassino); check the programme page for the real campus; duration, teaching language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel are read from the programme page; the degree class and the course name point to different fields: check the content; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
-  sourceId: universitaly:1625437
-  preparedBy: assistant
-  preparedAt: 2026-10-08
-  evidence:
-    - fact: durationYears
-      url: https://www.unicas.it/computer-engineering/
-      quote: "Duration: 3 years"
-    - fact: applicationChannel
-      url: https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/
-      quote: 2.1 APPLY IN UNIVERSITALY
-    - fact: documents
-      url: https://www.unicas.it/computer-engineering/
-      quote: A secondary school diploma (or equivalent qualification obtained abroad and recognized under Italian regulations);
-    - fact: requirements.req-1
-      url: https://www.unicas.it/computer-engineering/
-      quote: English language proficiency at B2 level (CEFR).
-    - fact: requirements.req-2
-      url: https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/
-      quote: Choose your Programme and verify the entry requirements
-  notes: 'Tuition not included: the pages do not state a specific tuition fee amount for non-EU international students for this programme; the Computer Engineering page only says "Tuition fees vary according to student status and income level." without giving amounts.'
+    last_verified_at: 2026-10-08

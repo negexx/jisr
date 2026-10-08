@@ -1,0 +1,60 @@
+slug: it-palermo-palermo-industrial-and-information-engineering-l8
+institution: it-palermo-palermo
+country: IT
+city: palermo
+field: engineering
+level: bachelor
+name: Industrial and Information Engineering
+summary:
+  fr:
+    text: Industrial and Information Engineering, Università degli studi di Palermo (Palermo). Programme recensé sur Universitaly, le portail de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Industrial and Information Engineering, Università degli studi di Palermo (Palermo). Programme listed on Universitaly, the Italian Ministry of University and Research (MUR) portal of the degree offer.
+    status: draft
+  ar:
+    text: Industrial and Information Engineering, Università degli studi di Palermo (Palermo). برنامج مدرج على بوابة Universitaly لعرض التكوين التابعة لوزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.unipa.it/mobilita/en/new-students/international-master-degrees/bachelor-degree-in-industrial-and-information-engineering/
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value: null
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules:
+    - id: req-1
+      source: page-2
+      info_kind: official
+      kind: prior_study_years_min
+      years: 12
+scholarships: []
+sources:
+  programme:
+    url: https://www.unipa.it/mobilita/en/new-students/international-master-degrees/bachelor-degree-in-industrial-and-information-engineering/
+    last_verified_at: 2026-10-08
+  page-2:
+    url: https://www.unipa.it/mobilita/en/new-students/new-students---enrolment/enrolment-procedures-for-extra-eu-foreign-students/bachelors-degree-/
+    last_verified_at: 2026-10-08

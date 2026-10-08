@@ -83,37 +83,7 @@ scholarships: []
 sources:
   programme:
     url: https://www.polimi.it/en/education/laurea-programmes/programme-detail/engineering-science
-    last_verified_at: null
+    last_verified_at: 2026-10-08
   page-2:
     url: https://www.polimi.it/futuri-studenti/test-e-ammissione/laurea/documenti-necessari-per-completare-limmatricolazione
-    last_verified_at: null
-_review:
-  kind: programs
-  slug: it-milano-politecnico-milano-engineering-science-l9
-  name: Engineering Science
-  institution: Politecnico di Milano
-  city: Milano
-  field: engineering
-  confidence: high
-  officialUrl: ""
-  todo: "Universitaly (2026/2027, fetched 2026-10-08) lists: class L-9, 3 years, conventional delivery, English-taught; no portal link: find the programme's own page (officialUrl is required); the portal gives no campus town: the town is the university's MUR town (Milano); check the programme page for the real campus; duration, teaching language, tuition for a non-EU student living abroad, intakes, documents, requirements and the application channel are read from the programme page; prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw"
-  sourceId: universitaly:1625451
-  preparedBy: assistant
-  preparedAt: 2026-10-08
-  evidence:
-    - fact: durationYears
-      url: https://www.polimi.it/en/education/laurea-programmes/programme-detail/engineering-science
-      quote: Level Bachelor of Science Duration 3 Years Language English
-    - fact: teachingLanguages
-      url: https://www.polimi.it/en/education/laurea-programmes/programme-detail/engineering-science
-      quote: Level Bachelor of Science Duration 3 Years Language English
-    - fact: requirements.req-1
-      url: https://www.polimi.it/futuri-studenti/test-e-ammissione/laurea/documenti-necessari-per-completare-limmatricolazione
-      quote: Entrambi i documenti dovranno essere accompagnati da traduzione ufficiale se non disponibili in inglese, francese o spagnolo.
-    - fact: requirements.req-2
-      url: https://www.polimi.it/futuri-studenti/test-e-ammissione/laurea/documenti-necessari-per-completare-limmatricolazione
-      quote: La scadenza per caricare il titolo di studio è il 10 settembre 2026.
-    - fact: requirements.req-3
-      url: https://www.polimi.it/futuri-studenti/test-e-ammissione/laurea/documenti-necessari-per-completare-limmatricolazione
-      quote: La scadenza per caricare la Dichiarazione di Valore, oppure il Certificate Supplement, oppure l’Attestato di Comparabilità, oppure l’Attestato di Corrispondenza, è il 31 ottobre 2026.
-  notes: "Tuition: not stated for this programme for a non-EU applicant. The fee pages show ISEE-based bands, regional tax and stamp duty, but no single amount or a lowest-highest range that the pages state applies to a full-time Bachelor student from outside the EU. Deadline for uploading the E-Apostille (31 October 2026) is a document-verification deadline, not an application deadline; no application opening or closing date for this programme is stated on the supplied pages."
+    last_verified_at: 2026-10-08

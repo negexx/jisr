@@ -1,0 +1,14 @@
+slug: it-messina-messina
+name: Università degli studi di Messina
+country: IT
+city:
+  slug: messina
+  name: Messina
+type: public
+website: https://international.unime.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://international.unime.it/
+    last_verified_at: 2026-10-08

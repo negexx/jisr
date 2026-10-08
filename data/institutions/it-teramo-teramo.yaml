@@ -1,0 +1,14 @@
+slug: it-teramo-teramo
+name: Università degli studi di Teramo
+country: IT
+city:
+  slug: teramo
+  name: Teramo
+type: public
+website: https://www.unite.it/
+source: page
+info_kind: official
+sources:
+  page:
+    url: https://www.unite.it/
+    last_verified_at: 2026-10-08

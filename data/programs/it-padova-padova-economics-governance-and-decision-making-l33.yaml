@@ -1,0 +1,53 @@
+slug: it-padova-padova-economics-governance-and-decision-making-l33
+institution: it-padova-padova
+country: IT
+city: padova
+field: business-economics
+level: bachelor
+name: Economics, governance and decision-making
+summary:
+  fr:
+    text: Economics, governance and decision-making, Università degli studi di Padova (Padova). Programme recensé sur Universitaly, le portail de l'offre de formation du ministère italien de l'Université et de la Recherche (MUR).
+    status: draft
+  en:
+    text: Economics, governance and decision-making, Università degli studi di Padova (Padova). Programme listed on Universitaly, the Italian Ministry of University and Research (MUR) portal of the degree offer.
+    status: draft
+  ar:
+    text: Economics, governance and decision-making, Università degli studi di Padova (Padova). برنامج مدرج على بوابة Universitaly لعرض التكوين التابعة لوزارة الجامعات والبحث الإيطالية (MUR).
+    status: draft
+officialUrl: https://www.economia.unipd.it/en/Bachelor%27s-degree-EGDM/bachelor%E2%80%99s-degree-economics-governance-and-decision-making
+durationYears:
+  value: null
+  source: programme
+  info_kind: official
+teachingLanguages:
+  value:
+    - en
+  source: programme
+  info_kind: official
+tuition:
+  value: null
+  source: programme
+  info_kind: official
+intakes:
+  value: null
+  source: programme
+  info_kind: official
+applicationChannel:
+  value: null
+  source: programme
+  info_kind: official
+documents:
+  value: null
+  source: programme
+  info_kind: official
+requirements:
+  coverage: partial
+  source: programme
+  info_kind: official
+  rules: []
+scholarships: []
+sources:
+  programme:
+    url: https://www.economia.unipd.it/en/Bachelor%27s-degree-EGDM/bachelor%E2%80%99s-degree-economics-governance-and-decision-making
+    last_verified_at: 2026-10-08
