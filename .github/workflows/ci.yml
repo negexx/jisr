@@ -109,3 +109,85 @@ jobs:
           path: test-results/
           retention-days: 7
           if-no-files-found: ignore
+
+  # Production deploy. Runs only on a push to main, only after verify and e2e passed. Vercel's own
+  # Git deployments of main are disabled in vercel.json (git.deploymentEnabled), so this is the only
+  # path to production. Vercel's Git integration still builds PR previews; they are protected by
+  # Deployment Protection (Vercel Authentication), which also applies to *.vercel.app deployment
+  # URLs, so the smoke step targets the public production domain from the repository variable
+  # SMOKE_URL, never the deployment URL printed by `vercel deploy`.
+  # Requires three repository secrets (never in code): VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID.
+  # Until they are added the job fails fast with a clear message and production is not updated.
+  # The token is passed through the step environment (VERCEL_TOKEN), not as a --token argument, and
+  # only to the steps that call the Vercel CLI.
+  deploy:
+    name: Deploy to Vercel (production)
+    needs: [verify, e2e]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency:
+      group: deploy-production
+      cancel-in-progress: false
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - name: Check deploy secrets are configured
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          for name in VERCEL_TOKEN VERCEL_ORG_ID VERCEL_PROJECT_ID; do
+            if [ -z "${!name}" ]; then
+              echo "::error::Repository secret $name is not set (see docs/ops/deploy.md)"
+              exit 1
+            fi
+          done
+
+      - name: Check out
+        uses: actions/checkout@v7
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      # Writes the Production-scoped variables (including NEXT_PUBLIC_SITE_URL) and project settings
+      # under .vercel/, which `vercel build --prod` reads.
+      - name: Pull Vercel production settings
+        run: vercel pull --yes --environment=production
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build
+        run: vercel build --prod
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      # stdout of `vercel deploy` is only the deployment URL. The assignment (not an echo around the
+      # substitution) keeps a failed deploy from being swallowed.
+      - name: Deploy prebuilt output
+        id: deploy
+        run: |
+          url="$(vercel deploy --prebuilt --prod)"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      # The smoke tool runs with tsx, so it needs the project dependencies.
+      - name: Install dependencies
+        if: ${{ vars.SMOKE_URL != '' }}
+        run: pnpm install --frozen-lockfile
+
+      - name: Smoke test the public site
+        if: ${{ vars.SMOKE_URL != '' }}
+        run: pnpm ops:smoke "$SMOKE_URL" --expect=indexable
+        env:
+          SMOKE_URL: ${{ vars.SMOKE_URL }}

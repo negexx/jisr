@@ -47,6 +47,7 @@
     "data:costs-official": "tsx scripts/import/official-costs.ts",
     "format": "biome format --write .",
     "perf:js": "tsx scripts/perf/first-load-js.ts",
+    "ops:smoke": "tsx scripts/ops/smoke.ts",
     "db:generate": "node scripts/not-configured.mjs db:generate",
     "db:migrate": "node scripts/not-configured.mjs db:migrate"
   },
