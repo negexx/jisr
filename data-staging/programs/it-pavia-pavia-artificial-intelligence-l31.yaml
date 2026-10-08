@@ -26,11 +26,8 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value:
-    amountMinor: 39000
-    currency: EUR
-    period: year
-  source: page-2
+  value: null
+  source: programme
   info_kind: official
 intakes:
   value:
@@ -134,10 +131,4 @@ _review:
     - fact: documents
       url: https://apply.unipv.eu/en_GB/courses/course/162-bachelors-degree-artificial-intelligence-procedure-non-eu-students-residing-outside-italy
       quote: SAT scoresheet pdf file (to be uploaded in the application form within the deadline of the call).
-    - fact: tuition
-      url: https://en.unipv.it/sites/sten/files/2026-05/Fees'%20Regulation%20a.y.%202026-27.pdf
-      quote: "Uzbekistan Humanities Area* € 390 Science Area** € 390 * This Area includes study courses of the Fee Area 1 (See Annex 1) ** This Area includes study courses of the Fee Areas 2 and 3 (See Annex 1) The amount due is divided into four instalments: • 1st instalment €146 (payable upon enrolment for students enroling in the 2026-2027 academic year"
-    - fact: tuition
-      url: https://en.unipv.it/sites/sten/files/2026-05/Fees'%20Regulation%20a.y.%202026-27.pdf
-      quote: "Annex 3: Flat rate fee brackets (updated values based on World Bank classification fiscal year 2025) BRACKET 1 Afghanistan Congo, Rep. of Jordan Morocco."
   notes: "Tuition left out: the pages for non-EU students with a household abroad give either a flat rate range from €390 to €4.550 per year (based on citizenship and area of study, without tying this programme to a bracket and without naming Morocco), or an income-based system with a table of ISEE bands where no single quote states one lowest and one highest fee for this student. No accepted quote ties Morocco to a country group. More application rounds may exist (non-EU students residing outside Italy follow the procedure described on the programme page).; Pavia Flat Rate regime for non-EU students (default when no financial documents are submitted), Annex 3 of the 2026-27 Fees' Regulation: Morocco is listed in BRACKET 1, whose amount is EUR 390 for both the Humanities and the Science area, so the programme's area does not change the figure. The student may opt out of the flat rate for an ISEE-based fee (not proposed). The university's non-EU page calls the flat rate 'the tuition fee'; I note (inference, not stated) that the 1st instalment of 146 looks like regional tax plus stamp duty, so part of the 390 may be regional tax; the regulation does not say so explicitly."

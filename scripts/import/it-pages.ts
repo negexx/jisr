@@ -7,9 +7,9 @@ import { duplicateTopLevelKeys } from "./json-duplicate-keys";
 import { DATA_DIR } from "./staging";
 
 // Builds the pages file for `data:read --pages` from the curated Italy page registry
-// (.superpowers/sdd/it-registry-N.json) instead of the automatic search of `data:pages`, which
+// (scripts/import/registries/it-pages-N.json) instead of the automatic search of `data:pages`, which
 // found wrong pages for Italy. No network, no model: it only orders, filters and caps the URLs
-// the research step listed. The registry shape is in .superpowers/sdd/research-brief.md.
+// the research step listed. Registry shape: university -> { institutionSlugs, universityPages, programmes, notes } (see the Zod schema below).
 const MIN_YEAR = 2026;
 const DEFAULT_CAP = 14;
 const THIN_BELOW = 3;

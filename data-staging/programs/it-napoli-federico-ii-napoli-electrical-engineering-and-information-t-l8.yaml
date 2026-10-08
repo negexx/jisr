@@ -26,11 +26,8 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value:
-    amountMinor: 14000
-    currency: EUR
-    period: year
-  source: page-1
+  value: null
+  source: programme
   info_kind: official
 intakes:
   value:
@@ -86,12 +83,6 @@ _review:
   preparedBy: assistant
   preparedAt: 2026-10-08
   evidence:
-    - fact: tuition
-      url: https://eeit.dieti.unina.it/index.php/admission/tuition-fees
-      quote: "The University of Naples Federico II encourages and supports international non-EU students with very affordable (almost null) tuition fees: €140/year regional tax (compulsory) + €16,00 legal stamp (compulsory)."
-    - fact: tuition
-      url: https://www.international.unina.it/education/admission-regulation/
-      quote: – Non-european students €140/year regional fee (compulsory) + €16.00 legal stamp (compulsory)
     - fact: intakes
       url: https://eeit.dieti.unina.it/index.php/admission/admission-schedule
       quote: "Non-EU students who require a study visa for Italy Selection for pre-admission: Expected start: January 2026. Expected closing date: 31 May 2026."
