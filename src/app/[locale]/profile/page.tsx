@@ -6,6 +6,8 @@ import { getMessages, getTranslations, setRequestLocale } from "next-intl/server
 import { ProfileForm } from "@/components/profile/profile-form";
 import { routing } from "@/i18n/routing";
 import { pickMessages } from "@/lib/i18n/client-messages";
+import { pageMetadata } from "@/lib/seo";
+import { readSiteEnv } from "@/lib/site-env";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -13,7 +15,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   const t = await getTranslations({ locale, namespace: "profile.meta" });
-  return { title: t("title"), description: t("description") };
+  return pageMetadata({
+    env: readSiteEnv(),
+    locale,
+    path: "/profile",
+    title: t("title"),
+    description: t("description"),
+  });
 }
 
 export default async function ProfilePage({ params }: Props) {

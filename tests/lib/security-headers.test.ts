@@ -40,6 +40,13 @@ describe("securityHeaderRules", () => {
     expect(csp).not.toContain("default-src");
   });
 
+  // A later rule wins on duplicate keys, so a Cache-Control here would silently override the snapshot
+  // cache rules in snapshot-headers.ts.
+  it.each([true, false])("never sets Cache-Control (indexable=%s)", (indexable) => {
+    const keys = Object.keys(headerMap(indexable)).map((key) => key.toLowerCase());
+    expect(keys).not.toContain("cache-control");
+  });
+
   it("does not set HSTS includeSubDomains or preload before the domain is chosen", () => {
     const hsts = headerMap(true)["Strict-Transport-Security"] ?? "";
     expect(hsts).not.toContain("includeSubDomains");

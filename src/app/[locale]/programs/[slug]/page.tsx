@@ -9,6 +9,8 @@ import { PROGRAM_CLIENT_NAMESPACES } from "@/components/program/client-namespace
 import { ProgramPageView } from "@/components/program/program-page-view";
 import { routing } from "@/i18n/routing";
 import { pickMessages } from "@/lib/i18n/client-messages";
+import { pageMetadata } from "@/lib/seo";
+import { readSiteEnv } from "@/lib/site-env";
 import { loadProgramPageData, programStaticParams } from "@/lib/snapshot/server";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -29,13 +31,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (data === null) notFound();
   const t = await getTranslations({ locale, namespace: "program.meta" });
   const program = data.program.name;
-  return {
+  return pageMetadata({
+    env: readSiteEnv(),
+    locale,
+    path: `/programs/${slug}`,
     title:
       data.institution === null
         ? t("titleWithoutInstitution", { program })
         : t("title", { program, institution: data.institution.name }),
     description: data.text(data.program.summary)?.text ?? t("description", { program }),
-  };
+  });
 }
 
 export default async function ProgramPage({ params }: Props) {

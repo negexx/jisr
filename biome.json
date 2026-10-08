@@ -47,6 +47,8 @@
         "src/app/**/loading.tsx",
         "src/app/**/template.tsx",
         "src/app/**/default.tsx",
+        "src/app/robots.ts",
+        "src/app/sitemap.ts",
         "src/i18n/request.ts",
         "next.config.ts",
         "vitest.config.ts",
