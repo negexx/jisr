@@ -213,6 +213,14 @@ describe("checkTuition", () => {
       // a bare minimum that is the number of a semester, a room or a level
       [600, 260000, "Semester 6 to EUR 2,600 a year, depending on income.", false],
       [1200, 260000, "Level 12 to EUR 2,600 a year, depending on income.", false],
+      [600, 260000, "Year 6 to EUR 2,600 a year, depending on income.", false],
+      // a period word after a rate word ("per year") is a rate, not a label
+      [15600, 260000, "Fees per year 156 - 2,600 euro, depending on income.", true],
+      [15600, 260000, "Contributo annuo per anno 156 - 2.600 euro in base al reddito.", true],
+      [15600, 260000, "Tasse all'anno 156 - 2.600 euro in base al reddito.", true],
+      [15600, 260000, "Studiengebühren je Semester 156 - 2.600 EUR je nach Einkommen.", true],
+      [15600, 260000, "Frais par an 156 - 2 600 euros selon les revenus.", true],
+      [15600, 260000, "Year 1 fees: 156 to EUR 2,600, depending on income.", true],
     ];
     it.each(cases)("range %s..%s in %j is accepted: %s", (min, max, quote, accepted) => {
       expect(checkTuition(min, quote, 2026, "EUR", max, "income_based").ok).toBe(accepted);

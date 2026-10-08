@@ -23,7 +23,7 @@ The cost estimate takes the range as the tuition line's `{min, max}`; the displa
 
 - Positive: Italy's tuition and first-year cost can be shown honestly; a flat fee reads exactly as before.
 - Negative: wider cost ranges where fees depend on income; "(ISEE)" wording is Italian and is reworded when another country needs the basis.
-- Negative: for a range the checker verifies the amounts, the currency and the income word by code, but not the period (year or semester), as for a flat fee: the period is in the claim text the checker model reads, and pages state periods in too many wordings for a safe code rule. A range quote could in principle join two unrelated fees; the checker model and the audit must catch that.
+- Negative: for a range the checker verifies the amounts, the currency and the income word by code, but not the period (per year or per semester), as for a flat fee: the period is in the claim text the checker model reads, and pages state periods in too many wordings for a safe code rule. A range quote could in principle join two unrelated fees; the checker model and the audit must catch that.
 - Neutral: an ISEE band table is not decided here (rejected: the product cannot use it without the student's ISEE).
 
 ## How to revisit

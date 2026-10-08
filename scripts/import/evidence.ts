@@ -441,9 +441,18 @@ function bareEdgeIsYear(q: string, hit: { start: number; end: number }): boolean
 // A bare lowest edge that follows a counting or labelling word ("Semester 6", "Level 12", "Room
 // 156") is a number of something, not a fee.
 const LABEL_BEFORE_EDGE =
-  /\b(?:semesters?|terms?|trimesters?|years?|rooms?|weeks?|months?|levels?|class(?:es)?|grades?|modules?|units?|steps?|phases?|pages?|no|nr|number|anno|semestre|trimestre|mese|settimana|aula|fase|modulo|jahr|stufe|niveau|classe)\.?\s{0,2}#?$/;
+  /\b(?:rooms?|levels?|class(?:es)?|grades?|modules?|units?|steps?|phases?|pages?|no|nr|number|aula|fase|modulo|stufe|niveau|classe)\.?\s{0,2}#?$/;
+// A period word is a label ("Semester 6") unless a rate word stands before it ("per year 156",
+// "all'anno 156", "je Semester 156"): then it is the period of the fee, not a number of something.
+const PERIOD_BEFORE_EDGE =
+  /\b(?:semesters?|terms?|trimesters?|years?|weeks?|months?|anno|semestre|trimestre|mese|settimana|jahr)\.?\s{0,2}#?$/;
+const RATE_WORD_BEFORE =
+  /(?:^|[^a-z])(?:per|a|an|each|every|pro|par|je|al|all'|l'|ogni|chaque)\s*$/;
 function bareEdgeFollowsLabel(q: string, hit: { start: number }): boolean {
-  return LABEL_BEFORE_EDGE.test(q.slice(Math.max(0, hit.start - 14), hit.start));
+  const before = q.slice(Math.max(0, hit.start - 30), hit.start);
+  if (LABEL_BEFORE_EDGE.test(before)) return true;
+  const period = PERIOD_BEFORE_EDGE.exec(before);
+  return period !== null && !RATE_WORD_BEFORE.test(before.slice(0, period.index));
 }
 
 // One fee amount (a flat fee, or the end of a range with the currency beside it) against the quote.
