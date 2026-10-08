@@ -116,49 +116,6 @@ For each record: open the link, confirm the quote is there and that it supports 
 
 > Preparer's caveats: Tuition: the programme page gives €8,934 per year; the English programmes brochure confirms that Digital Management is an exception charged 8,934 euro (rather than the €1,300 flat tax for non-EU students from countries other than the OECD or developing countries). Evidence quotes are from the 2026/2027 brochure and the programme page; the university's non-EU flat-tax page is for a.y. 2025/2026. Timeline: applications for 2026/2027 opened on 17 December 2025 (https://www.unive.it/pag/12520: "Ca’ Foscari will begin accepting applications on December 17, 2025."), but no source gives a closing application deadline for non-EU applicants; the 30 September 2026 date is the Universitaly pre-enrolment deadline (https://www.unive.it/pag/40813/). The programme page also lists 11 Sept 2026 as the study start date, which conflicts with the Universitaly deadline. No dated applicationDeadline is therefore included. Documents: attested under 2026/2027 requirements; "translationRequired" is set only for documents the pages explicitly say must have English or Italian official translations. The application channel for this non-EU applicant living abroad is the Universitaly pre-enrolment portal.
 
-## programs/it-casamassima-lum-g-degennaro-casamassima-economia-ed-organizzazione-aziendale-l18  _(batch b31-395c84)_
-
-**Economia ed organizzazione aziendale**
-
-- **durationYears**: `3` (official; source programme) (unchanged: already in data/)
-- **teachingLanguages**: `["en"]` (official; source programme) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":750000,"currency":"EUR","period":"year"}` (official; source page-1)
-  - "Il contributo unico per tutti i Corsi di Laurea dei Dipartimenti di “Scienze Giuridiche e dell’Impresa”, “Management, Finanza e Tecnologie” ed “Ingegneria” è di €7.500/00 (Euro Settemilacinquecento/00) dovrà essere corrisposto in rata unica." — https://www.lum.it/wp-content/uploads/2025/05/Manifesto-studenti-25-26-2.pdf
-  - "Per l’immatricolazione di cittadini non comunitari residenti all’estero, non comunitari regolarmente soggiornanti in Italia, comunitari ovunque residenti, italiani con titolo di studio conseguito all’estero si applicano le disposizioni emanate dal ministero dell’Università in accordo con il ministero affari esteri e dell’interno per l’accesso ai corsi di studi universitari" — https://www.lum.it/wp-content/uploads/2025/05/Manifesto-studenti-25-26-2.pdf
-
-> Preparer's caveats: Les frais de scolarité indiqués (7 500 EUR) proviennent de la section « Immatricolazione cittadini comunitari e non comunitari » du Manifesto degli Studi 2025/2026, qui couvre l'inscription des étudiants non-UE résidant à l'étranger ; c'est le seul montant disponible pour ce profil dans les pages fournies. Aucune page ne mentionne le portail Universitaly ni un portail de candidature propre à l'université pour ce programme, donc le canal de candidature n'a pas pu être déterminé. Aucune date limite de candidature ni date d'ouverture pour les candidats non-UE résidant à l'étranger n'est donnée avec année dans les pages fournies. Aucune règle d'admission (niveau de langue, matières, documents) n'est énoncée pour ce programme dans les pages fournies.
-
-## programs/it-cassino-cassino-computer-engineering-l8  _(batch b31-395c84)_
-
-**Computer Engineering**
-
-- **durationYears**: `3` (official; source programme) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":60000,"currency":"EUR","period":"year"}` (official; source page-1)
-  - "Congo, Rep., A Paesi 600€ Cote d'Ivoire, Djibouti" — https://www.unicas.it/media/pesjjo4e/regolamento-tasse-e-contributi-2026-2027-dr-n-482-del-02072026.pdf
-  - "Mongolia, Morocco, Mozambique" — https://www.unicas.it/media/pesjjo4e/regolamento-tasse-e-contributi-2026-2027-dr-n-482-del-02072026.pdf
-- **applicationChannel**: `it-universitaly` (official; source page-2) (unchanged: already in data/)
-- **documents**: `[{"slug":"secondary-school-diploma","name":{"fr":{"text":"Diplôme d'études secondaires","status":"draft"},"en":{"text":"Secondary school diploma","status":"draft"}},"translationRequired":null}]` (official; source programme) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"language_proficiency","language":"en","minCefr":"B2","certificateRequired":null,"acceptedTests":[]}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"Vérifiez les conditions d'admission et les documents requis pour les étudiants internationaux sur la page dédiée.","status":"draft"},"en":{"text":"Check admission requirements and required documents for international students on the dedicated page.","status":"draft"}}}`
-
-> Preparer's caveats: Cassino 2026/27 tuition regulation (DR 482 of 02/07/2026), art. 3.3: annual all-inclusive contribution (Contributo omnicomprensivo annuale) by country group of citizenship, applies to any course of study. Group A = 600 EUR; Morocco is in the group A country list (PDF text layer merges the table: Morocco sits in the A block that ends at Zimbabwe, group B starts at Albania; audit visually). Regional tax 140 EUR and stamp 16 EUR are extra and not included. Programme not tied to a group because the fee does not depend on programme. Year 2026/27; 2027/28 not published.
-
-## programs/it-cassino-cassino-economics-with-data-science-l33  _(batch b31-395c84)_
-
-**Economics with data science**
-
-- **durationYears**: `3` (official; source programme) (unchanged: already in data/)
-- **teachingLanguages**: `["en"]` (official; source page-1) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":60000,"currency":"EUR","period":"year"}` (official; source page-4)
-  - "Congo, Rep., A Paesi 600€ Cote d'Ivoire, Djibouti" — https://www.unicas.it/media/pesjjo4e/regolamento-tasse-e-contributi-2026-2027-dr-n-482-del-02072026.pdf
-  - "Mongolia, Morocco, Mozambique" — https://www.unicas.it/media/pesjjo4e/regolamento-tasse-e-contributi-2026-2027-dr-n-482-del-02072026.pdf
-- **applicationChannel**: `it-universitaly` (official; source page-2) (unchanged: already in data/)
-- **documents**: `[{"slug":"high-school-transcript","name":{"fr":{"text":"Relevé de notes du lycée","status":"draft"},"en":{"text":"High school transcript","status":"draft"}},"translationRequired":null},{"slug":"curriculum-vitae","name":{"fr":{"text":"Curriculum vitae","status":"draft"},"en":{"text":"Curriculum vitae","status":"draft"}},"translationRequired":null},{"slug":"motivation-letter","name":{"fr":{"text":"Lettre de motivation","status":"draft"},"en":{"text":"Motivation letter","status":"draft"}},"translationRequired":null},{"slug":"certificate-of-proficiency-in-english","name":{"fr":{"text":"Certificat de compétence en anglais","status":"draft"},"en":{"text":"Certificate of proficiency in English","status":"draft"}},"translationRequired":null},{"slug":"passport-or-identity-card","name":{"fr":{"text":"Passeport ou carte d'identité en cours de validité","status":"draft"},"en":{"text":"Current (valid) passport or identity card","status":"draft"}},"translationRequired":null}]` (official; source page-2) (unchanged: already in data/)
-- **requirement req-1**: `{"kind":"manual_check","note":{"fr":{"text":"Note minimale de 70% au lycée, avec une note de mathématiques d'au moins 70%. Un diplôme de fin d'études secondaires obtenu depuis plus de 5 ans n'est pas accepté.","status":"draft"},"en":{"text":"Overall high school grade point average minimum 70%, with a math grade of at least 70%. A high school diploma older than 5 years is not accepted.","status":"draft"}}}`
-- **requirement req-2**: `{"kind":"manual_check","note":{"fr":{"text":"L'inscription à l'année universitaire 2026/2027 est limitée aux étudiants nés entre 2001 et 2008; il faut avoir 18 ans au plus tard le 31 août 2026.","status":"draft"},"en":{"text":"Enrollment in the 2026/2027 academic program is limited to students born between 2001 and 2008; applicants must be at least 18 years old by August 31st, 2026.","status":"draft"}}}`
-
-> Preparer's caveats: Cassino 2026/27 tuition regulation (DR 482 of 02/07/2026), art. 3.3: annual all-inclusive contribution (Contributo omnicomprensivo annuale) by country group of citizenship, applies to any course of study. Group A = 600 EUR; Morocco is in the group A country list (PDF text layer merges the table: Morocco sits in the A block that ends at Zimbabwe, group B starts at Albania; audit visually). Regional tax 140 EUR and stamp 16 EUR are extra and not included. Programme not tied to a group because the fee does not depend on programme. Year 2026/27; 2027/28 not published.
-
 ## programs/it-cassino-cassino-industrial-engineering-technology-l9  _(batch b31-395c84)_
 
 **Industrial Engineering Technology**
@@ -167,9 +124,6 @@ For each record: open the link, confirm the quote is there and that it supports 
   - "Language: English Duration: 3 years Level: Bachelor Delivery: Blended Total ECTS: 180" — https://www.iet.unicas.it/
 - **teachingLanguages**: `["en"]` (official; source page-1)
   - "Language: English Duration: 3 years Level: Bachelor Delivery: Blended Total ECTS: 180" — https://www.iet.unicas.it/
-- **tuition**: `{"amountMinor":60000,"currency":"EUR","period":"year"}` (official; source page-3)
-  - "Congo, Rep., A Paesi 600€ Cote d'Ivoire, Djibouti" — https://www.unicas.it/media/pesjjo4e/regolamento-tasse-e-contributi-2026-2027-dr-n-482-del-02072026.pdf
-  - "Mongolia, Morocco, Mozambique" — https://www.unicas.it/media/pesjjo4e/regolamento-tasse-e-contributi-2026-2027-dr-n-482-del-02072026.pdf
 - **applicationChannel**: `it-universitaly` (official; source page-2) (unchanged: already in data/)
 - **documents**: `[{"slug":"passport","name":{"fr":{"text":"Passeport","status":"draft"},"en":{"text":"Passport","status":"draft"}},"translationRequired":null},{"slug":"declaration-of-value","name":{"fr":{"text":"Déclaration de valeur (DOV)","status":"draft"},"en":{"text":"Declaration of Value (DOV)","status":"draft"}},"translationRequired":null}]` (official; source page-2) (unchanged: already in data/)
 
@@ -359,9 +313,6 @@ For each record: open the link, confirm the quote is there and that it supports 
 **Electrical Engineering and Information Technology**
 
 - **teachingLanguages**: `["en"]` (official; source programme) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":14000,"currency":"EUR","period":"year"}` (official; source page-1)
-  - "The University of Naples Federico II encourages and supports international non-EU students with very affordable (almost null) tuition fees: €140/year regional tax (compulsory) + €16,00 legal stamp (compulsory)." — https://eeit.dieti.unina.it/index.php/admission/tuition-fees
-  - "– Non-european students €140/year regional fee (compulsory) + €16.00 legal stamp (compulsory)" — https://www.international.unina.it/education/admission-regulation/
 - **intakes**: `[{"startDate":null,"applicationOpens":null,"applicationDeadline":"2026-05-31"}]` (official; source page-3)
   - "Non-EU students who require a study visa for Italy Selection for pre-admission: Expected start: January 2026. Expected closing date: 31 May 2026." — https://eeit.dieti.unina.it/index.php/admission/admission-schedule
 - **applicationChannel**: `it-universitaly` (official; source page-2) (unchanged: already in data/)
@@ -386,9 +337,6 @@ For each record: open the link, confirm the quote is there and that it supports 
 **Artificial intelligence**
 
 - **teachingLanguages**: `["en"]` (official; source programme) (unchanged: already in data/)
-- **tuition**: `{"amountMinor":39000,"currency":"EUR","period":"year"}` (official; source page-2)
-  - "Uzbekistan Humanities Area* € 390 Science Area** € 390 * This Area includes study courses of the Fee Area 1 (See Annex 1) ** This Area includes study courses of the Fee Areas 2 and 3 (See Annex 1) The amount due is divided into four instalments: • 1st instalment €146 (payable upon enrolment for students enroling in the 2026-2027 academic year" — https://en.unipv.it/sites/sten/files/2026-05/Fees'%20Regulation%20a.y.%202026-27.pdf
-  - "Annex 3: Flat rate fee brackets (updated values based on World Bank classification fiscal year 2025) BRACKET 1 Afghanistan Congo, Rep. of Jordan Morocco." — https://en.unipv.it/sites/sten/files/2026-05/Fees'%20Regulation%20a.y.%202026-27.pdf
 - **intakes**: `[{"startDate":null,"applicationOpens":"2026-04-28","applicationDeadline":"2026-05-18"}]` (official; source programme) (unchanged: already in data/)
 - **applicationChannel**: `it-universitaly` (official; source page-1)
   - "As established by the Italian Ministry of University and Research (MUR), the pre-enrollment application for a study visa must be submitted online through the portal Universitaly." — https://en.unipv.it/en/education/bachelors-and-masters-degree-programs/after-admission/non-eu-prospective-students
