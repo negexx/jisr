@@ -43,6 +43,7 @@ Trust is the product: every important fact carries an **official source URL** an
 | Build data snapshots | `pnpm data:build` |
 | French BUT calendar proposals / verify a scholarship proposal (`data/README.md`) | `pnpm data:fr-calendar [--dry-run]` / `pnpm data:scholarship verify <file> [--dry-run]` |
 | Italy discovery from Universitaly: candidate list and comparison report (read-only; about 26 requests, cache under `data-staging/universitaly/`; `--from-cache <dir>` reruns offline) | `pnpm data:it-discovery` |
+| Stage chosen Universitaly candidates by portal id (no model, no search; nothing promoted; refuses an unresolvable university; `--dry-run`) | `pnpm data:it-stage --ids <ids> [--run <dir>] [--dry-run]` |
 | Verify an official cost-profile proposal (`data/README.md`) | `pnpm data:costs-official verify <file> [--dry-run\|--use-cache]` |
 | E2E (builds the fixture, starts `next start` on :3100) | `pnpm test:e2e` |
 | Fixture build / dev server on the synthetic e2e data | `pnpm build:e2e` / `pnpm dev:fixture` |
