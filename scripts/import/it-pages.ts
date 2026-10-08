@@ -3,6 +3,7 @@ import path from "node:path";
 
 import { z } from "zod";
 
+import { duplicateTopLevelKeys } from "./json-duplicate-keys";
 import { DATA_DIR } from "./staging";
 
 // Builds the pages file for `data:read --pages` from the curated Italy page registry
@@ -55,6 +56,8 @@ export type BuildOptions = {
   maxPerProgramme: number;
   programmeSlugs: ReadonlySet<string>;
   institutionSlugs: ReadonlySet<string>;
+  // names of the registry files, in the order of `registries`, for error messages
+  files?: readonly string[];
 };
 
 export type BuildResult = {
@@ -71,18 +74,27 @@ export type BuildResult = {
 };
 
 // Later files never override: a university appearing twice is an error, so is a programme slug.
-export function mergeRegistries(registries: readonly unknown[]): Registry {
+// `files` names each registry in the errors (default "registry #N").
+export function mergeRegistries(
+  registries: readonly unknown[],
+  files: readonly string[] = [],
+): Registry {
   const merged: Registry = {};
-  for (const raw of registries) {
+  const origin = new Map<string, string>();
+  for (const [index, raw] of registries.entries()) {
+    const file = files[index] ?? `registry #${index + 1}`;
     const parsed = registrySchema.safeParse(raw);
     if (!parsed.success) {
       const issue = parsed.error.issues[0];
       throw new Error(
-        `invalid registry at ${issue?.path.join(".") ?? "?"}: ${issue?.message ?? "bad shape"}`,
+        `invalid registry ${file} at ${issue?.path.join(".") ?? "?"}: ${issue?.message ?? "bad shape"}`,
       );
     }
     for (const [name, university] of Object.entries(parsed.data)) {
-      if (name in merged) throw new Error(`university "${name}" appears twice in the registries`);
+      const first = origin.get(name);
+      if (first !== undefined)
+        throw new Error(`university "${name}" appears twice (in ${first} and ${file})`);
+      origin.set(name, file);
       merged[name] = university;
     }
   }
@@ -94,13 +106,18 @@ function yearOf(year: string | null): number | null {
   return match === null ? null : Number(match[0]);
 }
 
-// Year-gated kinds: an older academic year than 2026/27 would be rejected by the study-year gate
-// (amounts) and can mislead deadlines. documents, language and programme pages are kept.
-const GATED = new Set(["fees", "admissions", "countryList"]);
+// Year-gated kinds: an admissions or programme "other" page of an older academic year than 2026/27
+// can mislead deadlines and requirements. fees and countryList pages are never dropped for year:
+// the registry labels the year a rule STARTED, not when it stops applying (a country list stays
+// current until replaced), and the pipeline's own study-year gate (checkTuition/staleStudyYear)
+// already rejects fee amounts tied to an older study year. documents, language and programme
+// pages are kept whatever their year.
+const GATED = new Set(["admissions", "other"]);
 
-type Candidate = { url: string; kind: string };
+type Candidate = { url: string; kind: string; year: string | null };
 
-// Fragment stripped; non-http(s) and unparseable URLs are dropped; older gated years are dropped.
+// URL normalised through the parsed form (spaces become %20) with the fragment removed;
+// non-http(s) and unparseable URLs are dropped; older gated years are dropped.
 function screen(
   list: readonly Page[],
   kind: string,
@@ -115,7 +132,8 @@ function screen(
     try {
       const parsed = new URL(page.url.trim());
       if (parsed.protocol !== "http:" && parsed.protocol !== "https:") throw new Error("scheme");
-      url = page.url.trim().replace(/#.*$/, "");
+      parsed.hash = "";
+      url = parsed.href;
     } catch {
       dropped.push({ ...base, reason: "invalid-url" });
       continue;
@@ -125,7 +143,7 @@ function screen(
       dropped.push({ ...base, reason: "year" });
       continue;
     }
-    kept.push({ url, kind });
+    kept.push({ url, kind, year: page.year });
   }
   return kept;
 }
@@ -168,7 +186,7 @@ function checkSlugs(registry: Registry, options: BuildOptions): void {
 }
 
 export function buildPages(registries: readonly unknown[], options: BuildOptions): BuildResult {
-  const registry = mergeRegistries(registries);
+  const registry = mergeRegistries(registries, options.files);
   checkSlugs(registry, options);
   const dropped: Dropped[] = [];
   const result: Record<string, string[]> = {};
@@ -195,7 +213,7 @@ export function buildPages(registries: readonly unknown[], options: BuildOptions
         dropped.push({
           url: c.url,
           kind: c.kind,
-          year: null,
+          year: c.year,
           university: name,
           reason: "cap",
           programme: slug,
@@ -284,12 +302,20 @@ async function slugsIn(dir: string): Promise<Set<string>> {
 
 export async function runItPages(options: CliOptions): Promise<string> {
   const registries: unknown[] = [];
-  for (const file of options.registry)
-    registries.push(JSON.parse(await readFile(file, "utf8")) as unknown);
+  for (const file of options.registry) {
+    const text = await readFile(file, "utf8");
+    const repeated = duplicateTopLevelKeys(text);
+    if (repeated.length > 0)
+      throw new Error(
+        `${file}: university "${repeated.join('", "')}" appears twice in the same file`,
+      );
+    registries.push(JSON.parse(text) as unknown);
+  }
   const result = buildPages(registries, {
     maxPerProgramme: options.maxPerProgramme,
     programmeSlugs: await slugsIn(path.join(options.dataDir, "programs")),
     institutionSlugs: await slugsIn(path.join(options.dataDir, "institutions")),
+    files: options.registry,
   });
   // Nothing is written before every check has passed.
   await writeFile(

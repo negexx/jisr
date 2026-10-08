@@ -8,8 +8,10 @@ import {
   buildPages,
   mergeRegistries,
   parseArgs,
+  renderDropped,
   runItPages,
 } from "../../../scripts/import/it-pages";
+import { duplicateTopLevelKeys } from "../../../scripts/import/json-duplicate-keys";
 
 const page = (url: string, year: string | null = null, says = "x") => ({ url, says, year });
 
@@ -57,14 +59,14 @@ describe("mergeRegistries", () => {
   });
 
   it("throws when a university name appears twice", () => {
-    expect(() => mergeRegistries([registry(), registry()])).toThrow(
-      /Università A.*twice|twice.*Università A/,
+    expect(() => mergeRegistries([registry(), registry()], ["a.json", "b.json"])).toThrow(
+      /Università A.*twice.*a.json.*b.json/,
     );
   });
 
   it("rejects a malformed shape with a path", () => {
     const bad = { "Uni X": { institutionSlugs: "it-x", programmes: {}, notes: "" } };
-    expect(() => mergeRegistries([bad])).toThrow(/Uni X/);
+    expect(() => mergeRegistries([bad], ["reg-9.json"])).toThrow(/reg-9.json.*Uni X/);
   });
 
   it("defaults missing page lists and ignores unknown keys", () => {
@@ -93,33 +95,48 @@ describe("buildPages", () => {
     ]);
   });
 
-  it("drops old-year fees, admissions and countryList pages but keeps documents, language and programme pages", () => {
+  it("never drops fees or countryList pages for year, only admissions and programme other pages", () => {
     const reg = registry();
-    const uni = reg["Università A"] as { universityPages: Record<string, unknown[]> };
-    uni.universityPages.fees = [
-      page("https://a.it/fees-old", "2025/26"),
-      page("https://a.it/fees-ok", "2026/27"),
-    ];
+    const uni = reg["Università A"] as {
+      universityPages: Record<string, unknown[]>;
+      programmes: Record<string, { other: unknown[]; admissions: unknown[] }>;
+    };
+    uni.universityPages.fees = [page("https://a.it/fees-old", "2025/26")];
     uni.universityPages.countryList = [page("https://a.it/c-old", "2024/25")];
+    uni.universityPages.admissions = [
+      page("https://a.it/adm-old", "2025/26"),
+      page("https://a.it/adm-new", "2026/27"),
+      page("https://a.it/adm-nul", null),
+    ];
+    const prog = uni.programmes["it-a-uni-cs"] as { other: unknown[]; admissions: unknown[] };
+    prog.other = [
+      page("https://a.it/other-old", "2025/26"),
+      page("https://a.it/other-new", "2026/27"),
+    ];
+    prog.admissions = [page("https://a.it/padm-old", "2025/26")];
     const out = build([reg]);
-    expect(out.pages["it-a-uni-cs"]).not.toContain("https://a.it/fees-old");
-    expect(out.pages["it-a-uni-cs"]).not.toContain("https://a.it/c-old");
-    expect(out.pages["it-a-uni-cs"]).toContain("https://a.it/fees-ok");
-    expect(out.pages["it-a-uni-cs"]).toContain("https://a.it/docs");
-    expect(out.pages["it-a-uni-cs"]).toContain("https://a.it/lang");
-    expect(out.pages["it-a-uni-cs"]).toContain("https://a.it/cs");
-    expect(out.dropped).toEqual(
+    const urls = out.pages["it-a-uni-cs"] ?? [];
+    expect(urls).toContain("https://a.it/fees-old");
+    expect(urls).toContain("https://a.it/c-old");
+    expect(urls).toContain("https://a.it/adm-new");
+    expect(urls).toContain("https://a.it/adm-nul");
+    expect(urls).toContain("https://a.it/other-new");
+    expect(urls).toContain("https://a.it/docs");
+    expect(urls).toContain("https://a.it/lang");
+    expect(urls).toContain("https://a.it/cs");
+    expect(urls).not.toContain("https://a.it/adm-old");
+    expect(urls).not.toContain("https://a.it/other-old");
+    expect(urls).not.toContain("https://a.it/padm-old");
+    expect(
+      out.dropped.filter((d) => d.reason === "year").map((d) => [d.url, d.kind, d.year]),
+    ).toEqual(
       expect.arrayContaining([
-        expect.objectContaining({
-          url: "https://a.it/fees-old",
-          kind: "fees",
-          year: "2025/26",
-          university: "Università A",
-          reason: "year",
-        }),
-        expect.objectContaining({ url: "https://a.it/c-old", kind: "countryList", reason: "year" }),
+        ["https://a.it/adm-old", "admissions", "2025/26"],
+        ["https://a.it/other-old", "other", "2025/26"],
+        ["https://a.it/padm-old", "admissions", "2025/26"],
       ]),
     );
+    expect(out.stats.droppedByReason.year).toBe(3);
   });
 
   it("records a university-level year drop once however many programmes it has", () => {
@@ -128,10 +145,10 @@ describe("buildPages", () => {
       universityPages: Record<string, unknown[]>;
       programmes: Record<string, unknown>;
     };
-    uni.universityPages.fees = [page("https://a.it/fees-old", "2025/26")];
+    uni.universityPages.admissions = [page("https://a.it/adm-old", "2025/26")];
     uni.programmes["it-a-uni-bm"] = { programme: [page("https://a.it/bm")] };
     const out = build([reg]);
-    expect(out.dropped.filter((d) => d.url === "https://a.it/fees-old")).toHaveLength(1);
+    expect(out.dropped.filter((d) => d.url === "https://a.it/adm-old")).toHaveLength(1);
     expect(out.stats.droppedByReason.year).toBe(1);
   });
 
@@ -308,12 +325,50 @@ describe("buildPages", () => {
       "https://www.poliba.it/en/lt35",
       "https://www.poliba.it/sites/default/files/bando_2026-27.pdf",
       "https://www.poliba.it/en/ammissioni",
+      "https://web.poliba.it/regolamento_25_26.pdf",
       "https://www.poliba.it/en/procedure-non-eu-students",
     ]);
     expect(out.pages["it-b-uni-x"]).toEqual([
       "https://www.unibs.it/en/x",
       "https://www.unibs.it/en/adm",
     ]);
+  });
+});
+
+describe("url normalisation", () => {
+  it("percent-encodes spaces so the same page dedupes and the URL is fetchable", () => {
+    const reg = registry();
+    const uni = reg["Università A"] as {
+      universityPages: Record<string, unknown[]>;
+      programmes: Record<string, { programme: unknown[] }>;
+    };
+    cs(uni).programme = [
+      page("https://a.it/files/Elenco Paesi Particolarmente Poveri 2026.pdf#page=2"),
+      page("https://a.it/files/Elenco%20Paesi%20Particolarmente%20Poveri%202026.pdf"),
+    ];
+    const urls = build([reg]).pages["it-a-uni-cs"] ?? [];
+    expect(urls.filter((u) => u.includes("Poveri"))).toEqual([
+      "https://a.it/files/Elenco%20Paesi%20Particolarmente%20Poveri%202026.pdf",
+    ]);
+  });
+});
+
+describe("cap rows", () => {
+  it("keep the year of the truncated page", () => {
+    const out = build([registry()], 3);
+    const row = out.dropped.find((d) => d.url === "https://a.it/adm");
+    expect(row).toMatchObject({ reason: "cap", year: "2026/27", programme: "it-a-uni-cs" });
+    expect(renderDropped(out.dropped)).toContain("https://a.it/adm	admissions	2026/27	");
+  });
+});
+
+describe("duplicateTopLevelKeys", () => {
+  it("finds a key repeated at the top level only", () => {
+    expect(duplicateTopLevelKeys('{"A": {"x": 1, "x": 2}, "B": {}, "A": {}, "C": ["A"]}')).toEqual([
+      "A",
+    ]);
+    expect(duplicateTopLevelKeys('{"A": {"x": 1, "x": 2}, "B": {"A": 1}}')).toEqual([]);
+    expect(duplicateTopLevelKeys('{"A\\"q": 1, "A\\"q": "v: {"}')).toEqual(['A"q']);
   });
 });
 
@@ -359,9 +414,9 @@ describe("runItPages", () => {
     const { dataDir, registryFile, out } = await setup();
     const reg = JSON.parse(await readFile(registryFile, "utf8")) as Record<
       string,
-      { universityPages: { fees: unknown[] } }
+      { universityPages: { admissions: unknown[] } }
     >;
-    reg["Università A"]?.universityPages.fees.push(page("https://a.it/old", "2025/26"));
+    reg["Università A"]?.universityPages.admissions.push(page("https://a.it/old", "2025/26"));
     await writeFile(registryFile, JSON.stringify(reg));
     const summary = await runItPages({
       registry: [registryFile],
@@ -379,6 +434,26 @@ describe("runItPages", () => {
     expect(dropped).toContain("https://a.it/old");
     expect(dropped).toContain("year");
     expect(summary).toContain("universities");
+  });
+
+  it("names the registry file in a schema error", async () => {
+    const { root, dataDir, out } = await setup();
+    const bad = path.join(root, "bad-shape.json");
+    await writeFile(bad, JSON.stringify({ "Uni X": { institutionSlugs: "it-x" } }));
+    await expect(
+      runItPages({ registry: [bad], out, maxPerProgramme: 14, dataDir }),
+    ).rejects.toThrow(/bad-shape.json/);
+  });
+
+  it("detects a university repeated inside one registry file", async () => {
+    const { root, dataDir, out } = await setup();
+    const dup = path.join(root, "dup.json");
+    const body = JSON.stringify({ institutionSlugs: ["it-a-uni"], programmes: {} });
+    await writeFile(dup, `{"Uni D": ${body}, "Uni E": ${body}, "Uni D": ${body}}`);
+    await expect(
+      runItPages({ registry: [dup], out, maxPerProgramme: 14, dataDir }),
+    ).rejects.toThrow(/dup.json.*Uni D.*twice/);
+    await expect(readFile(out, "utf8")).rejects.toThrow();
   });
 
   it("refuses an unknown slug without writing anything", async () => {
