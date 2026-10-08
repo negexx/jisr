@@ -55,20 +55,22 @@ export async function readExistingProgrammes(
   return out;
 }
 
-// A programme of the same institution and the same degree class is possibly the same course under
-// another name (the portal's English name against the register's Italian one). The candidate's own
-// slug already being staged is not a duplicate: that file is simply kept.
+// A programme of the same institution and the same degree class (any of the candidate's classes,
+// interclass partners included) is possibly the same course under another name (the portal's
+// English name against the register's Italian one). Programmes this run itself resolves to
+// (`ownSlugs`) are not duplicates: a re-run keeps its earlier output.
 export function findDuplicate(
   existing: readonly ExistingProgramme[],
-  candidate: { institutionSlug: string; classCode: string; slug: string },
+  candidate: { institutionSlug: string; classCodes: readonly string[] },
+  ownSlugs: ReadonlySet<string>,
 ): ExistingProgramme | null {
-  const suffix = `-${classSlug(candidate.classCode)}`;
+  const suffixes = candidate.classCodes.map((code) => `-${classSlug(code)}`);
   return (
     existing.find(
       (e) =>
         e.institution === candidate.institutionSlug &&
-        e.slug.endsWith(suffix) &&
-        e.slug !== candidate.slug,
+        !ownSlugs.has(e.slug) &&
+        suffixes.some((suffix) => e.slug.endsWith(suffix)),
     ) ?? null
   );
 }

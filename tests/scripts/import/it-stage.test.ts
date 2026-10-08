@@ -418,6 +418,93 @@ describe("the duplicate guard", () => {
   });
 });
 
+describe("the duplicate guard, idempotence and classes", () => {
+  const three = (over = {}) => [
+    candidate({
+      portalId: 11,
+      name: "Management A",
+      classCode: "L-9",
+      classCodes: ["L-9"],
+      field: "engineering",
+      ...over,
+    }),
+    candidate({
+      portalId: 12,
+      name: "Management B",
+      classCode: "L-9",
+      classCodes: ["L-9"],
+      field: "engineering",
+      ...over,
+    }),
+    candidate({
+      portalId: 13,
+      name: "Management C",
+      classCode: "L-9",
+      classCodes: ["L-9"],
+      field: "engineering",
+      ...over,
+    }),
+  ];
+  const run = (f: Awaited<ReturnType<typeof fixture>>, ids: number[], dryRun = false) =>
+    runStage({
+      ids,
+      runDir: f.runDir,
+      atenei,
+      websites: new Map(),
+      dataDir: f.dataDir,
+      stagingDir: f.stagingDir,
+      dryRun,
+    });
+
+  it("re-running the same batch of one institution and class is not refused by its own output", async () => {
+    const f = await fixture({ newUniversities: [], newProgrammes: three() });
+    const first = await run(f, [11, 12, 13]);
+    expect(first.refused).toEqual([]);
+    expect(first.written).toBe(4); // the institution and three programmes
+    const second = await run(f, [11, 12, 13]);
+    expect(second.refused).toEqual([]);
+    expect(second.written).toBe(0);
+    expect(second.skipped).toBe(4);
+  });
+  it("still refuses a different staged programme of the same institution and class", async () => {
+    const f = await fixture({ newUniversities: [], newProgrammes: three() });
+    await run(f, [11, 12, 13]);
+    await putProgramme(f.stagingDir, "it-genova-genova-gestione-l9", "it-genova-genova");
+    const again = await run(f, [11, 12, 13]);
+    expect(again.refused.map((r) => r.portalId)).toEqual([11, 12, 13]);
+    expect(again.refused[0]?.reason).toContain("it-genova-genova-gestione-l9");
+  });
+  it("matches any of the candidate's classes, not only the first", async () => {
+    const f = await fixture({
+      newUniversities: [],
+      newProgrammes: [candidate({ portalId: 21, classCode: "L-9", classCodes: ["L-9", "L-8"] })],
+    });
+    await putProgramme(f.dataDir, "it-genova-genova-ingegneria-l8", "it-genova-genova");
+    const hit = await run(f, [21], true);
+    expect(hit.refused[0]?.reason).toContain("it-genova-genova-ingegneria-l8");
+    const g = await fixture({
+      newUniversities: [],
+      newProgrammes: [candidate({ portalId: 21, classCode: "L-9", classCodes: ["L-9", "L-8"] })],
+    });
+    await putProgramme(g.dataDir, "it-genova-genova-fisica-l30", "it-genova-genova");
+    expect((await run(g, [21], true)).refused).toEqual([]);
+  });
+  it("compares the whole class suffix: l18 is not l8, l8 is not l18, l3 is not l33", async () => {
+    for (const [existing, code] of [
+      ["it-genova-genova-economia-l18", "L-8"],
+      ["it-genova-genova-ingegneria-l8", "L-18"],
+      ["it-genova-genova-lettere-l3", "L-33"],
+    ] as const) {
+      const f = await fixture({
+        newUniversities: [],
+        newProgrammes: [candidate({ portalId: 31, classCode: code, classCodes: [code] })],
+      });
+      await putProgramme(f.dataDir, existing, "it-genova-genova");
+      expect((await run(f, [31], true)).refused).toEqual([]);
+    }
+  });
+});
+
 describe("our institutions", () => {
   it("reuses an institution in data/ that has no programme yet", async () => {
     const f = await fixture();

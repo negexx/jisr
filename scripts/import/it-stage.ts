@@ -87,14 +87,15 @@ export async function runStage(options: StageOptions): Promise<StageResult> {
   });
   const refused = [...report.refused];
   const existing = await readExistingProgrammes(dataDir, stagingDir);
+  const ownSlugs = new Set(report.resolved.flatMap((r) => (r.slug === null ? [] : [r.slug])));
   for (const r of report.resolved) {
     const c = byId.get(r.portalId);
     if (c === undefined || r.institutionSlug === null || r.slug === null) continue;
-    const dup = findDuplicate(existing, {
-      institutionSlug: r.institutionSlug,
-      classCode: c.classCode,
-      slug: r.slug,
-    });
+    const dup = findDuplicate(
+      existing,
+      { institutionSlug: r.institutionSlug, classCodes: [c.classCode, ...c.classCodes] },
+      ownSlugs,
+    );
     if (dup !== null) {
       refused.push({
         portalId: r.portalId,
