@@ -7,6 +7,7 @@ import { z } from "zod";
 import { pageText } from "./evidence";
 import { type ProgrammeKind, programmeKind, staleProposalFiles } from "./fr-calendar";
 import { HttpStatusError } from "./http";
+import { type ForPerson, parseSheet, uniAssistEntries } from "./national-uniassist";
 import { DocumentProposalSchema, type Proposal, ProposalSchema, verifyProposal } from "./proposals";
 import { DATA_DIR, STAGING_DIR } from "./staging";
 
@@ -349,18 +350,37 @@ export async function writeNationalProposals(
   await writeFile(path.join(dir, "slugs.txt"), slugs.map((slug) => `${slug}\n`).join(""));
 }
 
-type Args = { registries: string[]; dry: boolean; out: string | null; dataDir: string };
+type Args = {
+  registries: string[];
+  dry: boolean;
+  out: string | null;
+  dataDir: string;
+  uniAssistSheet: string | null;
+};
+
+const OPTIONS_WITH_VALUE: ReadonlySet<string> = new Set([
+  "--out",
+  "--data-dir",
+  "--uniassist-sheet",
+]);
 
 function parseArgs(argv: readonly string[]): Args {
-  const args: Args = { registries: [], dry: false, out: null, dataDir: DATA_DIR };
+  const args: Args = {
+    registries: [],
+    dry: false,
+    out: null,
+    dataDir: DATA_DIR,
+    uniAssistSheet: null,
+  };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i] ?? "";
     if (arg === "--dry-run") args.dry = true;
-    else if (arg === "--out" || arg === "--data-dir") {
+    else if (OPTIONS_WITH_VALUE.has(arg)) {
       const value = argv[++i];
       if (value === undefined) throw new Error(`${arg} needs a value`);
       if (arg === "--out") args.out = value;
-      else args.dataDir = value;
+      else if (arg === "--data-dir") args.dataDir = value;
+      else args.uniAssistSheet = value;
     } else if (arg.startsWith("--")) throw new Error(`unknown option ${arg}`);
     else args.registries.push(arg);
   }
@@ -368,7 +388,10 @@ function parseArgs(argv: readonly string[]): Args {
   return args;
 }
 
-async function readEntries(files: readonly string[]): Promise<Entry[]> {
+async function readEntries(
+  files: readonly string[],
+  extra: readonly Entry[] = [],
+): Promise<Entry[]> {
   const entries: Entry[] = [];
   for (const file of files) {
     try {
@@ -377,6 +400,7 @@ async function readEntries(files: readonly string[]): Promise<Entry[]> {
       throw new Error(`${file}: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
+  entries.push(...extra);
   const ids = entries.map((e) => e.id);
   const repeated = ids.find((id, i) => ids.indexOf(id) !== i);
   if (repeated !== undefined) throw new Error(`entry id ${repeated} appears twice`);
@@ -419,9 +443,27 @@ function printNextCommands(out: string): void {
   console.log(`  pnpm data:evidence verify --enrich ${out} --slugs ${slugs}`);
 }
 
+// Rows of the uni-assist sheet that were not turned into an entry, grouped by reason; a short group
+// names its universities, a long one (every "processes" row) only counts them.
+function printForPerson(forPerson: readonly ForPerson[]): void {
+  const groups = new Map<string, string[]>();
+  for (const { name, reason } of forPerson)
+    groups.set(reason, [...(groups.get(reason) ?? []), name]);
+  console.log(`uni-assist sheet rows left for a person: ${forPerson.length}`);
+  for (const [reason, names] of groups)
+    console.log(`  ${reason} x${names.length}${names.length <= 12 ? `: ${names.join("; ")}` : ""}`);
+}
+
+async function sheetEntries(file: string | null): Promise<Entry[]> {
+  if (file === null) return [];
+  const { entries, forPerson } = uniAssistEntries(parseSheet(await readFile(file, "utf8")));
+  printForPerson(forPerson);
+  return entries;
+}
+
 async function main(argv: readonly string[]): Promise<void> {
   const args = parseArgs(argv);
-  const entries = await readEntries(args.registries);
+  const entries = await readEntries(args.registries, await sheetEntries(args.uniAssistSheet));
   const programmes = await readNationalProgrammes(args.dataDir);
   const { proposals, reports } = await buildNationalProposals({
     entries,
