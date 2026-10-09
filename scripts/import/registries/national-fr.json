@@ -1,0 +1,98 @@
+{
+  "entries": [
+    {
+      "id": "fr-documents-etudes-en-france",
+      "fact": "documents",
+      "infoKind": "official",
+      "selector": { "country": "FR", "institutionType": "public", "kinds": ["but", "licence"] },
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/la-procedure-de-candidature-sur-etudes-en-france-de-campus-france",
+          "quote": "La procédure de candidature en ligne de Campus France sur la plateforme Études en France s'adresse aux étudiants non européens*, résidents au Maroc ET issus de l'enseignement marocain (y compris le bac international)"
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Joindre une photo d’identité"
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Renseignez votre identité en joignant une pièce d’identité (carte nationale, passeport, carte de séjour ou récépissé"
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Tous les documents doivent être en français ou traduits en français auprès d’un traducteur assermenté. Ils n’ont pas besoin d’être légalisés car les originaux seront présentés à Campus France lors de l’entretien. Dans le cas où le document est traduit, il faut joindre aussi obligatoirement le document original. Un relevé de notes bilingue est accepté."
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Si vous avez déjà eu le Bac : 1 - Sélectionnez « Bac ou équivalent » et joindre le diplôme, le relevé de notes du national et du régional."
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Si vous êtes un futur bachelier : Vous devez renseigner une ligne par année : 1 - Sélectionnez la ligne « Une année de lycée » et joindre les relevés de notes du tronc commun"
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Sélectionnez une autre ligne « Bac ou équivalent » et joindre le certificat de scolarité de l’année en cours."
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
+          "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+        }
+      ],
+      "items": [
+        {
+          "slug": "passport-photo",
+          "name": { "fr": "Photo d’identité", "en": "Identity photo" },
+          "quotedAs": "photo d’identité",
+          "translationRequired": null
+        },
+        {
+          "slug": "identity-document",
+          "name": {
+            "fr": "Pièce d’identité (carte nationale, passeport, carte de séjour ou récépissé)",
+            "en": "Identity document (national ID card, passport, residence permit or receipt)"
+          },
+          "quotedAs": "pièce d’identité",
+          "translationRequired": null
+        },
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme du Bac (si vous avez déjà eu le Bac)",
+            "en": "Baccalaureate diploma (if you already hold the Bac)"
+          },
+          "quotedAs": "diplôme",
+          "translationRequired": null
+        },
+        {
+          "slug": "transcript-of-secondary-school-studies",
+          "name": {
+            "fr": "Relevés de notes (Bac national et régional, ou chaque année de lycée pour un futur bachelier)",
+            "en": "Grade transcripts (national and regional Bac, or each lycée year for a future Bac holder)"
+          },
+          "quotedAs": "relevé de notes",
+          "translationRequired": true
+        },
+        {
+          "slug": "school-enrolment-certificate",
+          "name": {
+            "fr": "Certificat de scolarité de l’année en cours (futur bachelier)",
+            "en": "School enrolment certificate for the current year (future Bac holder)"
+          },
+          "quotedAs": "certificat de scolarité",
+          "translationRequired": null
+        },
+        {
+          "slug": "french-language-certificate",
+          "name": {
+            "fr": "Certification de français (TCF, DELF B2 ou DALF), sauf cas de dispense",
+            "en": "French language certificate (TCF, DELF B2 or DALF), unless exempt"
+          },
+          "quotedAs": "certification de français",
+          "translationRequired": null
+        }
+      ],
+      "notes": "Platform dossier of Études en France (Campus France Maroc, non-EU applicants resident in Morocco); not per-institution extras (DAP blanche motivation letter, Campus France interview, CVEC). The page lists the Bac diploma and grade transcripts for applicants who already hold the Bac, and the lycée-year transcripts and the certificat de scolarité for future Bac holders; the CV is stated as not mandatory and is not listed. Translation is claimed only for the grade transcripts, the one document a quote names next to the translation rule."
+    }
+  ]
+}
