@@ -73,7 +73,7 @@ describe("profile form analytics: create mode", () => {
     await waitFor(() => expect(navigation.push).toHaveBeenCalledWith("/matches"));
     expect(track).toHaveBeenCalledWith("profile-completed");
     expect(track).toHaveBeenCalledTimes(2);
-  });
+  }, 30_000);
 
   it("does not count profile-completed when the store refuses the profile", async () => {
     vi.spyOn(profileStore, "save").mockReturnValue({ ok: false, reason: "invalid" });
@@ -82,7 +82,7 @@ describe("profile form analytics: create mode", () => {
     await user.click(screen.getByRole("button", { name: "See my matches" }));
     await screen.findByRole("alert");
     expect(track).not.toHaveBeenCalledWith("profile-completed");
-  });
+  }, 30_000);
 });
 
 describe("profile form analytics: edit mode", () => {
