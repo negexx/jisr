@@ -31,6 +31,11 @@ const EvidenceSchema = z.object({ url: Https, quote: z.string().min(1) });
 const Iso = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
 const fact = <T extends z.ZodType>(value: T) =>
   z.object({ value, evidence: z.array(EvidenceSchema).min(1) });
+const InfoKindRequest = z.enum(["official", "guidance"]);
+// Only documents and application channel may ask for guidance: a national page that says "normally
+// required" is advice, not an official requirement.
+const guidanceFact = <T extends z.ZodType>(value: T) =>
+  fact(value).extend({ infoKind: InfoKindRequest.optional() });
 
 const DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 const MonthDayProposalSchema = z
@@ -136,8 +141,8 @@ export const ProposalSchema = z.object({
           ),
       ),
     ).optional(),
-    applicationChannel: fact(z.string()).optional(),
-    documents: fact(
+    applicationChannel: guidanceFact(z.string()).optional(),
+    documents: guidanceFact(
       z
         .array(DocumentProposalSchema)
         .min(1)
@@ -152,7 +157,11 @@ export const ProposalSchema = z.object({
 export type Proposal = z.infer<typeof ProposalSchema>;
 
 export type FactName = keyof Proposal["facts"];
-export type AcceptedFact = { value: unknown; evidence: { url: string; quote: string }[] };
+export type AcceptedFact = {
+  value: unknown;
+  evidence: { url: string; quote: string }[];
+  infoKind?: z.infer<typeof InfoKindRequest>;
+};
 export type Verified = {
   programmePage: string | null;
   facts: Partial<Record<FactName, AcceptedFact>>;
@@ -371,7 +380,11 @@ export async function verifyProposal(
     }
     if (reason !== null) result.rejected.push({ fact: key, reason });
     else {
-      result.facts[key] = { value, evidence: accepted };
+      result.facts[key] = {
+        value,
+        evidence: accepted,
+        ...(entry.infoKind === undefined ? {} : { infoKind: entry.infoKind }),
+      };
       if (dropped.length > 0) result.droppedQuotes = [...(result.droppedQuotes ?? []), ...dropped];
     }
   }
@@ -490,7 +503,7 @@ export function applyVerified(staged: Staged, verified: Verified, today: string)
       next[field] = {
         value: recordValue(field, accepted.value),
         source: keyFor(first.url),
-        info_kind: "official",
+        info_kind: accepted.infoKind ?? "official",
       };
       for (const e of accepted.evidence)
         evidenceLog.push({ fact: field, url: e.url, quote: e.quote });
@@ -612,7 +625,7 @@ export function enrichRecord(
         );
       continue;
     }
-    next[field] = { value, source: keyFor(first.url), info_kind: "official" };
+    next[field] = { value, source: keyFor(first.url), info_kind: accepted.infoKind ?? "official" };
     written.push(field);
     for (const e of accepted.evidence)
       evidenceLog.push({ fact: field, url: e.url, quote: e.quote });

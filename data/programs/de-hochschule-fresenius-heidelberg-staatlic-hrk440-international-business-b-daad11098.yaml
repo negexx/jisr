@@ -37,9 +37,9 @@ intakes:
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-university-direct
+  source: page-2
+  info_kind: official
 documents:
   value:
     - slug: cv
@@ -75,3 +75,6 @@ sources:
   page-1:
     url: https://www.hs-fresenius.com/application-process/?crmid=aBbTjOcDaAaAaAaA
     last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.hs-fresenius.com/application-process/
+    last_verified_at: 2026-10-09

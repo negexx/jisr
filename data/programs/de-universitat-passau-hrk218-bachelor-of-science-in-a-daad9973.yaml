@@ -34,8 +34,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: de-uni-assist
+  source: page-3
   info_kind: official
 documents:
   value:
@@ -77,3 +77,6 @@ sources:
   page-1:
     url: https://www.uni-passau.de/einschreibung
     last_verified_at: 2026-10-02
+  page-3:
+    url: https://www.uni-passau.de/en/bsc-artificial-intelligence/faq
+    last_verified_at: 2026-10-09

@@ -1,0 +1,143 @@
+{
+  "entries": [
+    {
+      "id": "nl-channel-fontys",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "nl-studielink",
+      "selector": {
+        "country": "NL",
+        "institutions": ["nl-fontys-hogeschool-30gb", "nl-fontys-hogeschool-30gb-tilburg"]
+      },
+      "evidence": [
+        {
+          "url": "https://www.studyinnl.org/plan-your-stay/how-to-apply",
+          "quote": "Studielink is the official registration and application portal for programmes at Dutch higher education institutions."
+        },
+        {
+          "url": "https://www.fontys.nl/en/Study-at-Fontys/Practical-information/Application-and-enrolment.htm",
+          "quote": "Once you have found the right programme and checked the admission requirements, you can apply through Studielink."
+        },
+        {
+          "url": "https://www.fontys.nl/en/Study-at-Fontys/Practical-information/Application-and-enrolment.htm",
+          "quote": "If you are a non-EEA student, there are extra steps to complete your enrolment"
+        }
+      ],
+      "notes": "Fontys English page 'Application and enrolment': step 1 is to apply through Studielink; the same page has the non-EEA steps (visa and residence permit, payment), so it covers applicants from abroad."
+    },
+    {
+      "id": "nl-channel-inholland",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "nl-studielink",
+      "selector": {
+        "country": "NL",
+        "institutions": [
+          "nl-hogeschool-inholland-27pz",
+          "nl-hogeschool-inholland-27pz-alkmaar",
+          "nl-hogeschool-inholland-27pz-delft",
+          "nl-hogeschool-inholland-27pz-haarlem",
+          "nl-hogeschool-inholland-27pz-velsen-noord"
+        ]
+      },
+      "evidence": [
+        {
+          "url": "https://www.studyinnl.org/plan-your-stay/how-to-apply",
+          "quote": "Studielink is the official registration and application portal for programmes at Dutch higher education institutions."
+        },
+        {
+          "url": "https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/",
+          "quote": "Applicants, who possess internationally recognized diplomas and send them to us as soon as they have applied via Studielink, stand a greater chance to hear the result of their applications as early as possible."
+        }
+      ],
+      "notes": "Inholland FAQ for international applicants (inholland.nl/inhollandcom): applicants with internationally recognised diplomas have 'applied via Studielink'. The sentence says it in passing; the FAQ also has a 'I'm having problems with Studielink' entry that says to choose Inholland as the institution. The audit should open the page."
+    },
+    {
+      "id": "nl-channel-hogeschool-rotterdam",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "nl-studielink",
+      "selector": { "country": "NL", "institutions": ["nl-hogeschool-rotterdam-22oj"] },
+      "evidence": [
+        {
+          "url": "https://www.studyinnl.org/plan-your-stay/how-to-apply",
+          "quote": "Studielink is the official registration and application portal for programmes at Dutch higher education institutions."
+        },
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/studievisum/",
+          "quote": "Als je een studievisum nodig hebt, meld je je eerst aan via Studielink voor jouw opleiding."
+        },
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/aanmeldtraject/",
+          "quote": "Als je een buitenlands adres hebt kun jij je ook aanmelden via Studielink."
+        }
+      ],
+      "notes": "Hogeschool Rotterdam study-visa page (applicants who need a study visa apply via Studielink first, then use the school's application portal). The study-visa page says the visa procedure for its English-taught programmes differs; the Studielink step is stated for the programme enrolment."
+    },
+    {
+      "id": "nl-channel-han",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "nl-studielink",
+      "selector": {
+        "country": "NL",
+        "institutions": ["nl-hogeschool-van-arnhem-en-nijmegen-25kb"]
+      },
+      "evidence": [
+        {
+          "url": "https://www.studyinnl.org/plan-your-stay/how-to-apply",
+          "quote": "Studielink is the official registration and application portal for programmes at Dutch higher education institutions."
+        },
+        {
+          "url": "https://www.han.nl/studeren/voltijd/aanmelden/aanmelddeadline/",
+          "quote": "Woon je buiten de EER en kom je een voltijdstudie bij de HAN volgen? Dan moet je je eerder aanmelden omdat we een studievisum voor je moeten aanvragen."
+        },
+        {
+          "url": "https://www.han.nl/studeren/voltijd/aanmelden/aanmelddeadline/",
+          "quote": "Meld je uiterlijk 1 mei 2027 aan via Studielink als je bij de HAN wilt starten in september 2027."
+        }
+      ],
+      "notes": "HAN deadline page, section for full-time students from outside the EEA: they apply via Studielink."
+    },
+    {
+      "id": "nl-channel-hogeschool-utrecht",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "nl-studielink",
+      "selector": { "country": "NL", "institutions": ["nl-hogeschool-utrecht-25dw"] },
+      "evidence": [
+        {
+          "url": "https://www.studyinnl.org/plan-your-stay/how-to-apply",
+          "quote": "Studielink is the official registration and application portal for programmes at Dutch higher education institutions."
+        },
+        {
+          "url": "https://www.internationalhu.com/admissions-bachelor",
+          "quote": "If you do not, or not yet, live in the Netherlands, you enrol via Studielink"
+        }
+      ],
+      "notes": "International HU bachelor admissions page: applicants who do not live in the Netherlands enrol via Studielink after creating a username and password."
+    },
+    {
+      "id": "nl-channel-erasmus-rotterdam",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "nl-studielink",
+      "selector": { "country": "NL", "institutions": ["nl-erasmus-universiteit-rotterdam-21pe"] },
+      "evidence": [
+        {
+          "url": "https://www.studyinnl.org/plan-your-stay/how-to-apply",
+          "quote": "Studielink is the official registration and application portal for programmes at Dutch higher education institutions."
+        },
+        {
+          "url": "https://www.eur.nl/bachelor/bedrijfskunde/toelating",
+          "quote": "Als je je aanmeldt met een niet-Nederlands diploma moet je rekening houden met toelatingstoetsen."
+        },
+        {
+          "url": "https://www.eur.nl/bachelor/bedrijfskunde/toelating",
+          "quote": "Na registratie in Studielink ontvang je instructies om in te loggen bij het EUR Aanmeldportaal."
+        }
+      ],
+      "notes": "EUR Bedrijfskunde admission page, paragraph for applicants with a non-Dutch diploma (the Moroccan Bac is one): register in Studielink, then log in to the EUR application portal. The page is not specific to non-EU nationality, it is specific to a foreign diploma."
+    }
+  ]
+}

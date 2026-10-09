@@ -38,9 +38,9 @@ intakes:
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist-vpd
+  source: page-3
+  info_kind: official
 documents:
   value:
     - slug: school-leaving-certificate
@@ -70,3 +70,6 @@ sources:
   page-2:
     url: https://www.hs-heilbronn.de/en/bachelor-application
     last_verified_at: 2026-10-02
+  page-3:
+    url: https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/803/
+    last_verified_at: 2026-10-09

@@ -712,10 +712,13 @@ const CHANNEL_WORDS: Record<string, RegExp> = {
   "fr-parcoursup": /parcoursup/i,
   "fr-campus-france": /campus\s*france|[eé]tudes en france/i,
   "nl-studielink": /studielink/i,
-  "de-uni-assist-vpd": /\bVPD\b|Vorp[üu]fungsdokumentation|preliminary (review|evaluation)/i,
+  // "checked by uni-assist" and "preliminarily assessed by uni-assist" are not enough: universities
+  // that hand the whole application to uni-assist say the same
+  "de-uni-assist-vpd":
+    /\bVPD\b|Vorpr(?:ü|u|ue)fungsdokumentation|preliminary (review|evaluation)|evaluation result from uni[\s-]?assist/i,
   "de-university-direct":
     /application portal|apply directly|directly (to|at) the (higher education institution|university)|application via the university/i,
-  "de-uni-assist": /uni-assist|uniassist/i,
+  "de-uni-assist": /uni[\s-]?assist|uniassist/i,
   "hu-university-direct":
     /online application (?:form|system|portal|platform|site)|application (?:portal|platform|system)|apply online|register (?:and complete the |on the )online application|application form[^.]{0,60}(?:university|institution)|apply (?:directly )?(?:online )?(?:on|at|to|through) the (?:website of the |own )?(?:chosen |selected )?(?:university|institution)|university'?s? (?:own )?(?:application|admission)/i,
   // "available in the Stipendium Hungaricum programme" is a listing, not how to apply
@@ -730,6 +733,8 @@ const CHANNEL_WORDS: Record<string, RegExp> = {
 // A quote that names another channel is not evidence for this one, whatever else it says.
 const CHANNEL_EXCLUDES: Record<string, RegExp> = {
   "hu-university-direct": /stipendium hungaricum|felvi/i,
+  // a VPD is the other German channel: the university takes the application itself
+  "de-uni-assist": /\bVPD\b|Vorpr(?:ü|u|ue)fungsdokumentation/i,
   // Universitaly is the other channel; a quote about EU, Italian or Italy-resident applicants is
   // not about a Moroccan applicant living abroad ("non-EU" is fine)
   "it-university-direct":

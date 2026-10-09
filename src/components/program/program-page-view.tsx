@@ -25,6 +25,7 @@ import {
   CostsSection,
   DeadlineSection,
   DocumentsSection,
+  documentsTitleKey,
   durationParams,
   InstitutionCity,
   LinksSection,
@@ -34,6 +35,7 @@ import {
   RequirementsSection,
   ScholarshipsSection,
   SECTION_IDS,
+  type SectionTitleKey,
   TuitionSection,
   VerifiedSection,
 } from "./program-sections";
@@ -95,7 +97,7 @@ function ProgramHeader({ data }: { data: ProgramPageData }) {
   );
 }
 
-function JumpList() {
+function JumpList({ documentsKey }: { documentsKey: SectionTitleKey }) {
   const t = useTranslations("program");
   return (
     <details className="rounded-lg border border-border px-4 lg:hidden">
@@ -111,7 +113,7 @@ function JumpList() {
                 href={`#${id}`}
                 className="flex min-h-11 items-center text-base text-primary underline underline-offset-4"
               >
-                {t(`sections.${id}`)}
+                {t(`sections.${id === "documents" ? documentsKey : id}`)}
               </a>
             </li>
           ))}
@@ -227,7 +229,7 @@ export function ProgramPageView({
           check: t("banner.check"),
         }}
       />
-      <JumpList />
+      <JumpList documentsKey={documentsTitleKey(program.documents)} />
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_21rem] lg:items-start lg:gap-12">
         <aside
           aria-label={t("aside.label")}

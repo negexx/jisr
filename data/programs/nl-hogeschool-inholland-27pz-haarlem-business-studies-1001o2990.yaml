@@ -40,8 +40,8 @@ intakes:
   source: page-1
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: nl-studielink
+  source: page-3
   info_kind: official
 documents:
   value: null
@@ -96,3 +96,6 @@ sources:
   page-1:
     url: https://www.inholland.nl/inhollandcom/frequently-asked-questions/application-and-admission/
     last_verified_at: 2026-10-03
+  page-3:
+    url: https://www.studyinnl.org/plan-your-stay/how-to-apply
+    last_verified_at: 2026-10-09

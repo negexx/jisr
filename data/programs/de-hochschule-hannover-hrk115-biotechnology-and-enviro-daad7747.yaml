@@ -38,9 +38,9 @@ intakes:
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-2
+  info_kind: official
 documents:
   value:
     - slug: cv
@@ -76,3 +76,6 @@ sources:
   page-1:
     url: https://f2.hs-hannover.de/internationales/information-for-incomings-wege-an-die-fakultaet-ii/intotechnology/
     last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.hs-hannover.de/en/about-us/organisation/akademische-angelegenheiten/studieninteressierte/application/application-with-foreign-certificates-of-education
+    last_verified_at: 2026-10-09

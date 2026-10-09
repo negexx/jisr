@@ -251,6 +251,73 @@ describe("verifyAll", () => {
   });
 });
 
+describe("verifyAll page memo", () => {
+  async function threeRecords() {
+    const root = await mkdtemp(path.join(tmpdir(), "enrich-memo-"));
+    const stagingDir = path.join(root, "staging");
+    const dataDir = path.join(root, "data");
+    const enrichDir = path.join(root, "enrich");
+    await mkdir(path.join(dataDir, "programs"), { recursive: true });
+    await mkdir(enrichDir, { recursive: true });
+    for (const slug of ["de-a", "de-b", "de-c"]) {
+      await writeFile(
+        path.join(dataDir, "programs", `${slug}.yaml`),
+        stringify({ ...promotedRecord(), slug }),
+      );
+      await writeFile(
+        path.join(enrichDir, `${slug}.json`),
+        JSON.stringify({ ...tuitionProposal(null), slug }),
+      );
+    }
+    await restage(null, { enrichDir, stagingDir, dataDir });
+    return { stagingDir, enrichDir };
+  }
+
+  it("fetches a page cited by several proposals once", async () => {
+    const w = await threeRecords();
+    const calls: string[] = [];
+    const counting = async (url: string): Promise<string> => {
+      calls.push(url);
+      return getText(url);
+    };
+    const log = vi.spyOn(console, "log").mockImplementation(() => undefined);
+    try {
+      await verifyAll(false, null, {
+        enrichDir: w.enrichDir,
+        stagingDir: w.stagingDir,
+        getText: counting,
+      });
+    } finally {
+      log.mockRestore();
+    }
+    expect(calls.filter((url) => url === FEES_URL)).toHaveLength(1);
+  });
+
+  it("does not let one failed fetch poison a later request for the same page", async () => {
+    const w = await threeRecords();
+    let attempts = 0;
+    const flaky = async (url: string): Promise<string> => {
+      attempts++;
+      if (attempts === 1) throw new Error("temporary");
+      return getText(url);
+    };
+    const lines: string[] = [];
+    const log = vi.spyOn(console, "log").mockImplementation((line: unknown) => {
+      lines.push(String(line));
+    });
+    try {
+      await verifyAll(false, null, {
+        enrichDir: w.enrichDir,
+        stagingDir: w.stagingDir,
+        getText: flaky,
+      });
+    } finally {
+      log.mockRestore();
+    }
+    expect(lines.filter((line) => line.includes("enriched tuition"))).toHaveLength(2);
+  });
+});
+
 describe("verifyAll in plain mode", () => {
   async function plainRun(w: Workspace): Promise<string[]> {
     const lines: string[] = [];

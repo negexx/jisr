@@ -2,7 +2,7 @@
 import { createTranslator, NextIntlClientProvider } from "next-intl";
 import type { ReactElement } from "react";
 import { renderToString } from "react-dom/server";
-import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
+import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 
 import { PROGRAM_CLIENT_NAMESPACES } from "@/components/program/client-namespaces";
 import { ProgramPageView } from "@/components/program/program-page-view";
@@ -25,6 +25,7 @@ const snapshot = vi.hoisted(() => ({
   locale: "fr",
   recurring: false,
   tuitionRange: false,
+  documents: "published" as "published" | "guidance" | "guidanceUnpublished",
 }));
 
 vi.mock("@/lib/snapshot/server", async (importOriginal) => {
@@ -35,6 +36,15 @@ vi.mock("@/lib/snapshot/server", async (importOriginal) => {
     loadProgramPageData: async (slug: string, locale: AppLocale) => {
       const data = await actual.loadProgramPageData(slug, locale, snapshot.dir);
       if (data === null) return data;
+      if (snapshot.documents !== "published") {
+        // Stands in for a national list a ministry or an application service publishes as advice.
+        const documents = {
+          ...data.program.documents,
+          info_kind: "guidance" as const,
+          ...(snapshot.documents === "guidanceUnpublished" ? { value: null } : {}),
+        };
+        return { ...data, program: { ...data.program, documents } };
+      }
       if (snapshot.tuitionRange) {
         // Stands in for a program whose university publishes a fee range that depends on income.
         const tuition = {
@@ -342,6 +352,40 @@ describe.each(LOCALES)("program page server render (%s)", (locale) => {
     expect(tuition?.querySelector('[data-slot="source-badge"]')).toBeNull();
     expect(textOf(tuition)).not.toContain(message(locale, "domain.infoKind.official.meaning"));
     expect(textOf(tuition)).not.toContain(message(locale, "domain.infoKind.official.label"));
+  });
+
+  describe("documents heading by info kind", () => {
+    const headingOf = (doc: Document) => textOf(doc.getElementById("documents-heading"));
+    const jumpLinkOf = (doc: Document) =>
+      textOf(doc.querySelector("details nav a[href='#documents']"));
+
+    afterEach(() => {
+      snapshot.documents = "published";
+    });
+
+    it("keeps the required-documents heading in the section and the contents for an official list", async () => {
+      const { document } = await renderPage(E2E_SLUGS.ok, locale);
+      expect(headingOf(document)).toBe(message(locale, "program.sections.documents"));
+      expect(jumpLinkOf(document)).toBe(message(locale, "program.sections.documents"));
+    });
+
+    it("says the list is usually asked for when it is guidance, in the section and the contents", async () => {
+      snapshot.documents = "guidance";
+      const { document } = await renderPage(E2E_SLUGS.ok, locale);
+      const usual = message(locale, "program.sections.documentsGuidance");
+      expect(usual).not.toBe(message(locale, "program.sections.documents"));
+      expect(headingOf(document)).toBe(usual);
+      expect(jumpLinkOf(document)).toBe(usual);
+      expect(document.querySelectorAll('[data-testid="document"]')).toHaveLength(3);
+    });
+
+    it("keeps the old heading when no list is published, whatever the kind", async () => {
+      snapshot.documents = "guidanceUnpublished";
+      const { document } = await renderPage(E2E_SLUGS.ok, locale);
+      expect(headingOf(document)).toBe(message(locale, "program.sections.documents"));
+      expect(jumpLinkOf(document)).toBe(message(locale, "program.sections.documents"));
+      expect(document.querySelectorAll('[data-testid="document"]')).toHaveLength(0);
+    });
   });
 
   it("ships no precomputed freshness to any client leaf", async () => {

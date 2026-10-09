@@ -1,0 +1,100 @@
+{
+  "entries": [
+    {
+      "id": "de-documents-uni-assist-morocco",
+      "fact": "documents",
+      "infoKind": "guidance",
+      "selector": { "country": "DE", "channels": ["de-uni-assist", "de-uni-assist-vpd"] },
+      "evidence": [
+        {
+          "url": "https://www.uni-assist.de/en/tools/info-country-by-country/details-country/country/ma/",
+          "quote": "If you have a school leaving certificate from Morocco, you will need to submit the following documents: overview of your subjects and grades (\"Relevé de Notes\") of the Baccalauréat"
+        },
+        {
+          "url": "https://www.uni-assist.de/en/tools/info-country-by-country/details-country/country/ma/",
+          "quote": "If you hold a degree from a Moroccan university, you will need to submit the following documents: Degree certificate Complete transcript of records, including all courses and results"
+        },
+        {
+          "url": "https://www.uni-assist.de/en/tools/info-country-by-country/details-country/country/ma/",
+          "quote": "If you took the \"classes préparatoires\" you will need to submit your transcript of records of these classes."
+        },
+        {
+          "url": "https://www.uni-assist.de/en/tools/info-country-by-country/details-country/country/ma/",
+          "quote": "A Baccalauréat alone does not allow you to study directly in Germany. It qualifies you for the Studienkolleg (preparatory course) and the \"Feststellungsprüfung\" (university qualification exam)."
+        },
+        {
+          "url": "https://www.uni-assist.de/en/how-to-apply/assemble-your-documents/educational-certificates/",
+          "quote": "Your certificates must be official: official certificates are those bearing a signature and stamp from the issuing institution, a reference to their automatic issuance or a verification code."
+        },
+        {
+          "url": "https://www.uni-assist.de/en/how-to-apply/assemble-your-documents/educational-certificates/",
+          "quote": "Upload all certificates in their entirety in My assist: include the diploma certificate as well as the overview of subjects and grades."
+        },
+        {
+          "url": "https://www.uni-assist.de/en/how-to-apply/assemble-your-documents/educational-certificates/",
+          "quote": "School leaving certificate Submit the certificate that entitles you to start university studies in your home country."
+        },
+        {
+          "url": "https://www.uni-assist.de/en/how-to-apply/assemble-your-documents/educational-certificates/",
+          "quote": "Have you already studied at a university outside Germany? Please submit a complete overview of all subjects and grades (transcript), issued by your university."
+        },
+        {
+          "url": "https://www.uni-assist.de/en/how-to-apply/assemble-your-documents/translations/",
+          "quote": "Upload your education certificates in their original language, accompanied by a translation into German or English."
+        },
+        {
+          "url": "https://www.uni-assist.de/en/how-to-apply/assemble-your-documents/translations/",
+          "quote": "We accept translations of certificates from the following sources: persons or institutions authorised to make translations under oath or admissible in court, a department of the issuing school or university authorised to issue such translations."
+        }
+      ],
+      "items": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Certificat de fin d’études secondaires (diplôme du Baccalauréat)",
+            "en": "School leaving certificate (Baccalauréat certificate / diploma)"
+          },
+          "quotedAs": "diploma certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "transcript-of-secondary-school-studies",
+          "name": {
+            "fr": "Relevé de notes du Baccalauréat (« Relevé de Notes » : aperçu des matières et des notes)",
+            "en": "Baccalauréat grade transcript (\"Relevé de Notes\": overview of subjects and grades)"
+          },
+          "quotedAs": "Relevé de Notes",
+          "translationRequired": null
+        },
+        {
+          "slug": "degree-certificate",
+          "name": {
+            "fr": "Diplôme universitaire (seulement si vous avez un diplôme d’une université marocaine)",
+            "en": "Degree certificate (only if you hold a degree from a Moroccan university)"
+          },
+          "quotedAs": "Degree certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "university-transcript-of-records",
+          "name": {
+            "fr": "Relevé de notes universitaire complet, avec toutes les matières et notes, délivré par l’université (si vous avez déjà étudié dans une université)",
+            "en": "Complete university transcript of all subjects and grades, issued by your university (if you have studied at a university)"
+          },
+          "quotedAs": "complete overview of all subjects and grades",
+          "translationRequired": null
+        },
+        {
+          "slug": "preparatory-classes-transcript",
+          "name": {
+            "fr": "Relevé de notes des classes préparatoires (seulement si vous avez suivi des classes préparatoires)",
+            "en": "Transcript of records of the classes préparatoires (only if you took classes préparatoires)"
+          },
+          "quotedAs": "transcript of records of these classes",
+          "translationRequired": null
+        }
+      ],
+      "notes": "General uni-assist guidance for applicants with a Moroccan certificate, not a requirement of each university: the university may ask for more, and documents are checked per university. The Baccalauréat certificate and its grade transcript apply to a school leaver; the university transcript applies to anyone who has already studied at a university outside Germany (uni-assist: 'Have you already studied at a university outside Germany?'), the degree certificate only to those who have a degree from a Moroccan university, and the classes préparatoires transcript only to those who took classes préparatoires. The Morocco page says a Baccalauréat alone does not allow studying directly in Germany: it qualifies for the Studienkolleg (preparatory course) and the Feststellungsprüfung (university qualification exam). General uni-assist rules (educational-certificates and translations pages), not tied to one document by a quote, so no item carries a translation flag: certificates must be official, that is bearing a signature and stamp from the issuing institution, a reference to their automatic issuance or a verification code; upload them in the original language with a translation into German or English (not needed if the country also issues the certificate in German or English; exceptions are listed per country, and the Morocco page lists none); translations are accepted from persons or institutions authorised to make translations under oath or admissible in court, or from a department of the issuing school or university authorised to issue such translations, not from standard translation agencies. Attaches to programmes whose application channel is uni-assist or uni-assist VPD, so run it again after the German channel batch (national-de-channel) is promoted."
+    }
+  ]
+}

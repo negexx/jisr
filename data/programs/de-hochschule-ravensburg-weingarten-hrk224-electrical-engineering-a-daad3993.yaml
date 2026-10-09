@@ -44,9 +44,9 @@ intakes:
   source: page-1
   info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-university-direct
+  source: page-1
+  info_kind: official
 documents:
   value:
     - slug: university-entrance-qualification

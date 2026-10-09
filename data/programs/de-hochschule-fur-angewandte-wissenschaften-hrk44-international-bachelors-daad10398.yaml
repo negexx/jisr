@@ -38,9 +38,9 @@ intakes:
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist-vpd
+  source: page-2
+  info_kind: official
 documents:
   value:
     - slug: curriculum-vitae
@@ -67,3 +67,6 @@ sources:
   page-1:
     url: https://www.hs-coburg.de/en/electrical-engineering-for-sustainable-and-renewable-energy/
     last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/21/
+    last_verified_at: 2026-10-09

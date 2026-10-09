@@ -1,0 +1,331 @@
+{
+  "entries": [
+    {
+      "id": "de-channel-de-hochschule-fulda-university-of-applied-s-hrk92",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-uni-assist",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-hochschule-fulda-university-of-applied-s-hrk92"]
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-fulda.de/studium/wie-bewerbe-ich-mich/bewerbung-mit-internationalen-zeugnissen",
+          "quote": "Studienbewerber*innen, die eine ausländische Hochschulzugangsberechtigung (Attestat, Baccalauréat, Lise Diplomasi, International Baccalaureate, Swiadectwo ukonczenia etc.) und/oder einen ausländischen ersten Studienabschluss haben, bewerben sich - unabhängig von der Staatsangehörigkeit und Wohnort - über uni-assist"
+        }
+      ],
+      "notes": "Hochschule Fulda page for applicants with international certificates (it names the Baccalaureat); the uni-assist list marks Fulda as processes."
+    },
+    {
+      "id": "de-channel-de-universitat-passau-hrk218-bachelor-of-science-in-a-daad9973",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-uni-assist",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-universitat-passau-hrk218"],
+        "programmes": ["de-universitat-passau-hrk218-bachelor-of-science-in-a-daad9973"]
+      },
+      "evidence": [
+        {
+          "url": "https://www.uni-passau.de/en/bsc-artificial-intelligence/faq",
+          "quote": "You must apply via uni-assist, by 15 July."
+        }
+      ],
+      "notes": "B.Sc. Artificial Intelligence FAQ for international applicants. The page has three school-system tabs; the flattened text reads 'You will apply / enrol directly via the campus portal' (EEA schools), then 'You must apply via uni-assist, by 15 July.' twice (IB and any other country). The tab labels are not in the text, so the auditor should open the page."
+    },
+    {
+      "id": "de-channel-de-leuphana-universitat-luneburg-hrk171",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-uni-assist",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-leuphana-universitat-luneburg-hrk171"]
+      },
+      "evidence": [
+        {
+          "url": "https://www.leuphana.de/en/college/application/international-applications/online-application/applying-with-non-eu-eea-certificates.html",
+          "quote": "Once you have successfully registered and completed your profile, you can create an application for a bachelor's degree programme at the college on uni-assist."
+        }
+      ],
+      "notes": "Leuphana page 'Applying with non-EU/EEA certificates'."
+    },
+    {
+      "id": "de-channel-de-universitat-zu-koln-hrk147",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-uni-assist",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-universitat-zu-koln-hrk147"]
+      },
+      "evidence": [
+        {
+          "url": "https://uni-koeln.de/en/index.php?id=22242",
+          "quote": "Applications must be submitted online via uni-assist e.V."
+        }
+      ],
+      "notes": "University of Cologne page 'Application Procedure for Non-EU-Citizens' (Bachelor)."
+    },
+    {
+      "id": "de-channel-de-hochschule-hannover-hrk115",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-uni-assist",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-hochschule-hannover-hrk115"]
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-hannover.de/en/about-us/organisation/akademische-angelegenheiten/studieninteressierte/application/application-with-foreign-certificates-of-education",
+          "quote": "The Hannover University of Sciences and Arts(HsH – Hochschule Hannover) accepts online-only applications via uni assist using non-certified copies of certificates."
+        }
+      ],
+      "notes": "Hochschule Hannover page 'Application with Foreign Certificates of Education'. The quote writes 'uni assist' without the hyphen. It follows two sentences saying foreign qualifications must be examined and that uni-assist carries out that examination."
+    },
+    {
+      "id": "de-channel-de-hochschule-osnabruck-hrk214",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-uni-assist",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-hochschule-osnabruck-hrk214"]
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-osnabrueck.de/en/study/all-about-studying/application/application-with-foreign-documents/",
+          "quote": "The following apply using the uni-assist service: Foreign applicants who have obtained their secondary school diploma or their university degree in a foreign country"
+        }
+      ],
+      "notes": "Hochschule Osnabrueck page 'Application with foreign documents', Bachelor section."
+    },
+    {
+      "id": "de-channel-de-hochschule-fur-angewandte-wissenschaften-hrk287-computer-science-bsc-daad7216",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-uni-assist-vpd",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-hochschule-fur-angewandte-wissenschaften-hrk287"],
+        "programmes": [
+          "de-hochschule-fur-angewandte-wissenschaften-hrk287-computer-science-bsc-daad7216"
+        ]
+      },
+      "evidence": [
+        {
+          "url": "https://www.hof-university.com/studying-at-hof-university/our-degree-programs/computer-science-international-bsc.html",
+          "quote": "Prior to your application at Hof University, your educational certificates have to be evaluated by our partner uni-assist first. You need to get a so-called VPD which you can use in the appliation process at Hof University."
+        }
+      ],
+      "notes": "Hof University programme page (Computer Science, international Bachelor); the uni-assist list also marks Hof as vpd_only."
+    },
+    {
+      "id": "de-channel-de-friedrich-alexander-universitat-erlangen-hrk70-artificial-intelligence-daad9594",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-university-direct",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-friedrich-alexander-universitat-erlangen-hrk70"],
+        "programmes": [
+          "de-friedrich-alexander-universitat-erlangen-hrk70-artificial-intelligence-daad9594"
+        ]
+      },
+      "evidence": [
+        {
+          "url": "https://www.fau.eu/studying/international-students/application-and-enrollment-for-international-applicants/prospective-international-students-applying-for-undergraduate-programs/",
+          "quote": "Normally, you have to apply directly to FAU via the campo application portal for all undergraduate degree programs (Bachelor’s / State Examination programs)."
+        }
+      ],
+      "notes": "FAU page for international applicants to undergraduate programmes; it does not mention uni-assist. Scoped to the Artificial Intelligence programme only: the English-taught Business programmes (International Business Studies, International Economic Studies) also require the hochschulstart DoSV procedure according to the 'Exceptions' section of the same page."
+    },
+    {
+      "id": "de-channel-de-technische-hochschule-mannheim-hrk177-international-engineerin-daad10335",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-university-direct",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-technische-hochschule-mannheim-hrk177"],
+        "programmes": [
+          "de-technische-hochschule-mannheim-hrk177-international-engineerin-daad10335"
+        ]
+      },
+      "evidence": [
+        {
+          "url": "https://www.inb.hs-mannheim.de/international-engineering-bachelor-inb/apply.html",
+          "quote": "Our application portal will guide you through the process."
+        },
+        {
+          "url": "https://www.inb.hs-mannheim.de/international-engineering-bachelor-inb/apply.html",
+          "quote": "Apply online via campus.th-mannheim.de"
+        }
+      ],
+      "notes": "Application page of the International Engineering Bachelor (INB) of TH Mannheim."
+    },
+    {
+      "id": "de-channel-de-technische-hochschule-ulm-hrk260",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-university-direct",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-technische-hochschule-ulm-hrk260"]
+      },
+      "evidence": [
+        {
+          "url": "https://www.thu.de/en/studies/application-admission/application-for-international-students",
+          "quote": "Have you obtained your university entrance qualification abroad and would like to enrol for a Bachelor’s or Master’s degree at THU?"
+        },
+        {
+          "url": "https://www.thu.de/en/studies/application-admission/application-for-international-students",
+          "quote": "Do you feel well informed and would like to apply straight away? On the THU application portal, you can create your application online, select your chosen degree programme and upload documents."
+        }
+      ],
+      "notes": "THU page 'Application for international students'."
+    },
+    {
+      "id": "de-channel-de-hochschule-ravensburg-weingarten-hrk224-electrical-engineering-a-daad3993",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-university-direct",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-hochschule-ravensburg-weingarten-hrk224"],
+        "programmes": [
+          "de-hochschule-ravensburg-weingarten-hrk224-electrical-engineering-a-daad3993"
+        ]
+      },
+      "evidence": [
+        {
+          "url": "https://www.rwu.de/en/study/courses/electrical-engineering-and-information-technology-en",
+          "quote": "ONLINE APPLICATION: Kindly register with our RWU online application portal, available 01. September onwards, and submit your application online."
+        }
+      ],
+      "notes": "Programme page of Electrical Engineering and Information Technology (international Bachelor)."
+    },
+    {
+      "id": "de-channel-de-hochschule-ravensburg-weingarten-hrk224-mechanical-engineering-i-daad7827",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-university-direct",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-hochschule-ravensburg-weingarten-hrk224"],
+        "programmes": [
+          "de-hochschule-ravensburg-weingarten-hrk224-mechanical-engineering-i-daad7827"
+        ]
+      },
+      "evidence": [
+        {
+          "url": "https://www.rwu.de/en/study/courses/mechanical-engineering-international-project-engineering-international-variant",
+          "quote": "ONLINE APPLICATION: The RWU provides an online application tool for you to submit your initial submission, opening 1 December, 2026 and closing 15 January, 2027. Please visit our online application portal for further information"
+        }
+      ],
+      "notes": "Programme page of Mechanical Engineering / International Project Engineering (international variant)."
+    },
+    {
+      "id": "de-channel-de-hochschule-fresenius-heidelberg-staatlic-hrk440",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-university-direct",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-hochschule-fresenius-heidelberg-staatlic-hrk440"]
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-fresenius.com/application-process/",
+          "quote": "You have applied with a foreign university entrance qualification for a bachelor or master study program here at Fresenius University of Applied Sciences. In order for us to consider your application, please upload at least your CV and your secondary school leaving certificate (application for bachelor studies) or your bachelor transcript of records (application for master studies) to the application portal within the next 10 DAYS via https://www.hs-fresenius.com/application/file-upload/"
+        }
+      ],
+      "notes": "Fresenius page for applicants with a foreign university entrance qualification."
+    },
+    {
+      "id": "de-channel-de-bard-college-berlin-a-liberal-arts-unive-hrk437",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-university-direct",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-bard-college-berlin-a-liberal-arts-unive-hrk437"]
+      },
+      "evidence": [
+        {
+          "url": "https://berlin.bard.edu/admissions/how-to-apply/application-requirements/",
+          "quote": "Bard College Berlin accepts applications through the Common Application or our own application portal."
+        }
+      ],
+      "notes": "Bard College Berlin accepts the Common Application or its own application portal."
+    },
+    {
+      "id": "de-channel-de-hochschule-landshut-hochschule-fur-angew-hrk157-dingolfing",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-uni-assist-vpd",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-hochschule-landshut-hochschule-fur-angew-hrk157-dingolfing"]
+      },
+      "evidence": [
+        {
+          "url": "https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/28/",
+          "quote": "You are then required to submit your application with the VPD directly to the university."
+        },
+        {
+          "url": "https://www.haw-landshut.de/en/application/bachelor-application/international-applicants",
+          "quote": "All applicants who obtained their school-leaving certificate outside Germany (foreign students) need to have their certificates preliminarily assessed by Uni-Assist when applying to the University of Applied Sciences"
+        }
+      ],
+      "notes": "Dingolfing is a campus of Landshut University of Applied Sciences (same HRK id 157, same website haw-landshut.de); the uni-assist row 28 is Landshut UAS, vpd_only. The sheet matched only the Landshut institution record, not this campus record, so it is added here."
+    },
+    {
+      "id": "de-channel-de-hochschule-fur-angewandte-wissenschaften-hrk44",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-uni-assist-vpd",
+      "selector": {
+        "country": "DE",
+        "institutions": [
+          "de-hochschule-fur-angewandte-wissenschaften-hrk44",
+          "de-hochschule-fur-angewandte-wissenschaften-hrk44-kronach"
+        ]
+      },
+      "evidence": [
+        {
+          "url": "https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/21/",
+          "quote": "You are then required to submit your application with the VPD directly to the university."
+        }
+      ],
+      "notes": "Coburg University of Applied Sciences and Arts: uni-assist row 21 (vpd_only). Matched by name and city, not by website: the owner confirms the match at the audit. The sheet row is unmatched only because our record lists hs-coburg.de while uni-assist lists coburg-university.de. Covers the Kronach campus record too."
+    },
+    {
+      "id": "de-channel-de-hochschule-hamm-lippstadt-hrk399-lippstadt-electronic-engineering-daad4876",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-uni-assist-vpd",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-hochschule-hamm-lippstadt-hrk399-lippstadt"],
+        "programmes": [
+          "de-hochschule-hamm-lippstadt-hrk399-lippstadt-electronic-engineering-daad4876"
+        ]
+      },
+      "evidence": [
+        {
+          "url": "https://www.hshl.de/en/studying/online-registration/",
+          "quote": "Applicants with international educational certificates (e.g. Matura, O-and A-(S-)level, Baccalaureate) must also get their documents checked by uni-assist."
+        },
+        {
+          "url": "https://www.hshl.de/en/studying/online-registration/",
+          "quote": "You will receive the evaluation result from uni assist and need to upload it during your application in the online portal."
+        }
+      ],
+      "notes": "Hamm-Lippstadt University of Applied Sciences, Online registration and application page (Campus Lippstadt, Electronic Engineering (English), Bachelor). The documents are checked by uni-assist and the evaluation result is uploaded in the HSHL portal, which is a VPD-style flow; the page does not use the word VPD, so the second quote is what the verifier accepts ('evaluation result from uni assist'). Scoped to this programme: the other HSHL programmes are taught in German."
+    }
+  ]
+}

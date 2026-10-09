@@ -47,8 +47,53 @@ applicationChannel:
   source: daad
   info_kind: official
 documents:
-  value: null
-  source: daad
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d’études secondaires (diplôme du Baccalauréat)
+          status: draft
+        en:
+          text: School leaving certificate (Baccalauréat certificate / diploma)
+          status: draft
+      translationRequired: null
+    - slug: transcript-of-secondary-school-studies
+      name:
+        fr:
+          text: "Relevé de notes du Baccalauréat (« Relevé de Notes » : aperçu des matières et des notes)"
+          status: draft
+        en:
+          text: 'Baccalauréat grade transcript ("Relevé de Notes": overview of subjects and grades)'
+          status: draft
+      translationRequired: null
+    - slug: degree-certificate
+      name:
+        fr:
+          text: Diplôme universitaire (seulement si vous avez un diplôme d’une université marocaine)
+          status: draft
+        en:
+          text: Degree certificate (only if you hold a degree from a Moroccan university)
+          status: draft
+      translationRequired: null
+    - slug: university-transcript-of-records
+      name:
+        fr:
+          text: Relevé de notes universitaire complet, avec toutes les matières et notes, délivré par l’université (si vous avez déjà étudié dans une université)
+          status: draft
+        en:
+          text: Complete university transcript of all subjects and grades, issued by your university (if you have studied at a university)
+          status: draft
+      translationRequired: null
+    - slug: preparatory-classes-transcript
+      name:
+        fr:
+          text: Relevé de notes des classes préparatoires (seulement si vous avez suivi des classes préparatoires)
+          status: draft
+        en:
+          text: Transcript of records of the classes préparatoires (only if you took classes préparatoires)
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: guidance
 requirements:
   coverage: partial
@@ -60,3 +105,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11217/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.uni-assist.de/en/tools/info-country-by-country/details-country/country/ma/
+    last_verified_at: 2026-10-09

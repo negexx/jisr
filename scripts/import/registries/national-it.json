@@ -1,0 +1,81 @@
+{
+  "entries": [
+    {
+      "id": "it-documents-circolare",
+      "fact": "documents",
+      "infoKind": "guidance",
+      "selector": {
+        "country": "IT"
+      },
+      "evidence": [
+        {
+          "url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+          "quote": "La documentazione normalmente richiesta dalle Istituzioni della formazione superiore in riferimento al possesso delle qualifiche idonee per l’ingresso ad un corso di studi è la seguente:"
+        },
+        {
+          "url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+          "quote": "Per l’accesso ai corsi di primo ciclo: a) titolo finale degli studi secondari"
+        },
+        {
+          "url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+          "quote": "conseguito con almeno 12 anni di scolarità"
+        },
+        {
+          "url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+          "quote": "a discrezione della singola istituzione della formazione superiore, il titolo finale può essere corredato in alternativa da attestazione rilasciata dal centro ENIC-NARIC italiano (CIMEA) o da eventuale Dichiarazione di valore"
+        },
+        {
+          "url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+          "quote": "certificato attestante il superamento della prova di idoneità accademica eventualmente prevista per l’accesso all’Università del Paese di provenienza"
+        },
+        {
+          "url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+          "quote": "eventuali traduzioni in italiano dei documenti indicati ai punti a) e b)"
+        },
+        {
+          "url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+          "quote": "Le Istituzioni della formazione superiore sono autonome al fine della documentazione da richiedere ai candidati ai propri corsi"
+        }
+      ],
+      "items": [
+        {
+          "slug": "secondary-school-diploma",
+          "name": {
+            "fr": "Titre final des études secondaires obtenu avec au moins 12 ans de scolarité",
+            "en": "Final secondary school qualification obtained after at least 12 years of schooling"
+          },
+          "quotedAs": "12 anni di scolarità",
+          "translationRequired": null
+        },
+        {
+          "slug": "cimea-statement-or-declaration-of-value",
+          "name": {
+            "fr": "Attestation CIMEA ou déclaration de valeur, si l’établissement la demande",
+            "en": "CIMEA statement or Declaration of value, if the institution asks for it"
+          },
+          "quotedAs": "Dichiarazione di valore",
+          "translationRequired": null
+        },
+        {
+          "slug": "university-entrance-aptitude-certificate",
+          "name": {
+            "fr": "Certificat de réussite à l’épreuve d’aptitude académique d’accès à l’université du pays d’origine, s’il en existe une",
+            "en": "Certificate of passing the academic aptitude test for university entrance in the home country, where one exists"
+          },
+          "quotedAs": "prova di idoneità accademica",
+          "translationRequired": null
+        },
+        {
+          "slug": "italian-translation-of-documents",
+          "name": {
+            "fr": "Traductions en italien des documents ci-dessus, si l’établissement les demande",
+            "en": "Italian translations of the documents above, where the institution asks for them"
+          },
+          "quotedAs": "traduzioni in italiano",
+          "translationRequired": null
+        }
+      ],
+      "notes": "Ministry circular for international students 2026/27 and 2027/28, section 4: documents normally required; universities are autonomous and may ask for more; some require the CIMEA statement and others the Dichiarazione di valore (the circular says 'a discrezione della singola istituzione', at the discretion of the single institution). The circular also lists 'eventuale altra documentazione richiesta dall'ateneo' (any other documents the university asks for), which is not an item. The translation sentence says 'eventuali traduzioni' (possible translations) and does not name or require translation of a given document, so no item is flagged as requiring translation. First-cycle list only (not the second-cycle list)."
+    }
+  ]
+}
