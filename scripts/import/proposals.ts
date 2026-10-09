@@ -157,6 +157,10 @@ export type Verified = {
   programmePage: string | null;
   facts: Partial<Record<FactName, AcceptedFact>>;
   rejected: { fact: string; reason: string }[];
+  // Evidence quotes of an ACCEPTED fact that were not found on their page (or whose page could not
+  // be fetched): another quote carried the value, so the fact stands, but the auditor must see that
+  // a quote (a country or group tie, say) is missing. Absent when nothing was dropped.
+  droppedQuotes?: { fact: string; quote: string; url: string }[];
   requirements?: AcceptedRule[];
   // The preparer's own caveats (an indirect source, an older tariff): the auditor reads them.
   notes?: string;
@@ -166,6 +170,24 @@ const SOFT_WORDING =
   /recommend|\bshould\b|advis|suggest|empfohlen|empfehl|\bsollte|recommand|conseill|devrait|aanbevol|bij voorkeur|\bzou\b/i;
 const fail = (reason: string): FactCheck => ({ ok: false, reason });
 const ok: FactCheck = { ok: true };
+
+const DROPPED_QUOTE_CHARS = 120;
+
+// The _review line for each dropped quote of a fact that is applied to the record.
+function droppedLines(verified: Verified, applied: readonly string[]): string[] {
+  return (verified.droppedQuotes ?? [])
+    .filter((d) => applied.includes(d.fact))
+    .map((d) => `${d.fact}: "${d.quote}" (${d.url})`);
+}
+
+const droppedField = (lines: string[]): { droppedQuotes?: string[] } =>
+  lines.length === 0 ? {} : { droppedQuotes: lines };
+
+// An enrichment adds to what earlier runs recorded; a repeated line is kept once.
+function mergeDropped(earlier: unknown, lines: string[]): string[] {
+  const before = Array.isArray(earlier) ? earlier.filter((l) => typeof l === "string") : [];
+  return [...before, ...lines.filter((l) => !before.includes(l))];
+}
 
 const PREPARED_TEXT =
   "prepared by the assistant from the quoted pages (see evidence): included in the audit sample draw";
@@ -271,10 +293,16 @@ export async function verifyProposal(
 
   for (const [key, entry] of Object.entries(proposal.facts) as [FactName, AcceptedFact][]) {
     const accepted: { url: string; quote: string }[] = [];
+    const dropped: { fact: string; quote: string; url: string }[] = [];
     for (const evidence of entry.evidence) {
       const text = await safeText(evidence.url);
-      if (text === null) continue;
-      if (quoteInText(evidence.quote, text)) accepted.push(evidence);
+      if (text !== null && quoteInText(evidence.quote, text)) accepted.push(evidence);
+      else
+        dropped.push({
+          fact: key,
+          quote: evidence.quote.slice(0, DROPPED_QUOTE_CHARS),
+          url: evidence.url,
+        });
     }
     if (accepted.length === 0) {
       result.rejected.push({
@@ -342,7 +370,10 @@ export async function verifyProposal(
       if (named.length === 0) reason = "no document is named in an accepted quote";
     }
     if (reason !== null) result.rejected.push({ fact: key, reason });
-    else result.facts[key] = { value, evidence: accepted };
+    else {
+      result.facts[key] = { value, evidence: accepted };
+      if (dropped.length > 0) result.droppedQuotes = [...(result.droppedQuotes ?? []), ...dropped];
+    }
   }
 
   const accepted: AcceptedRule[] = [];
@@ -495,7 +526,9 @@ export function applyVerified(staged: Staged, verified: Verified, today: string)
   next.requirements = { coverage: "partial", source: "programme", info_kind: "official", rules };
   next.sources = sources;
 
-  const review = asRecord(next._review);
+  // applyVerified rebuilds the record from this run, so a dropped-quote warning of an earlier run
+  // does not survive it
+  const { droppedQuotes: _earlier, ...review } = asRecord(next._review);
   next._review = {
     ...review,
     preparedBy: "assistant",
@@ -505,6 +538,7 @@ export function applyVerified(staged: Staged, verified: Verified, today: string)
     ...(verified.rejected.length === 0
       ? {}
       : { rejected: verified.rejected.map((r) => `${r.fact}: ${r.reason}`) }),
+    ...droppedField(droppedLines(verified, Object.keys(verified.facts))),
     todo: PREPARED_NOTE.test(String(review.todo ?? ""))
       ? String(review.todo)
       : `${String(review.todo ?? "")}; ${PREPARED_TEXT}`.replace(/^; /, ""),
@@ -552,6 +586,7 @@ export function enrichRecord(
   const next: Staged = { ...staged };
   const evidenceLog: EvidenceEntry[] = [];
   const conflicts: string[] = [];
+  const written: string[] = [];
   let changed = false;
   for (const field of FACT_FIELDS) {
     const accepted = verified.facts[field];
@@ -578,6 +613,7 @@ export function enrichRecord(
       continue;
     }
     next[field] = { value, source: keyFor(first.url), info_kind: "official" };
+    written.push(field);
     for (const e of accepted.evidence)
       evidenceLog.push({ fact: field, url: e.url, quote: e.quote });
     changed = true;
@@ -619,6 +655,7 @@ export function enrichRecord(
     evidence,
     ...(notes === "" ? {} : { notes }),
     ...rejected,
+    ...droppedField(mergeDropped(review.droppedQuotes, droppedLines(verified, written))),
     todo: PREPARED_NOTE.test(String(review.todo ?? ""))
       ? String(review.todo)
       : `${String(review.todo ?? "")}; ${PREPARED_TEXT}`.replace(/^; /, ""),

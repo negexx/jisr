@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 657150
+    currency: EUR
+    period: year
+  source: page-1
   info_kind: official
 intakes:
   value: null
@@ -51,3 +54,6 @@ sources:
   programme:
     url: https://www.unicampus.it/en/courses/training-offer/bachelor-s-degree/departmental-faculty-of-engineering/degree-course-in-biomedical-engineering-l-8/
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unicampus.it/en/degree-course-admissions/taxes-and-contributions/
+    last_verified_at: 2026-10-08

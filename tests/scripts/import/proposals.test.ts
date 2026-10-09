@@ -4,6 +4,7 @@ import { z } from "zod";
 import {
   applyRecord,
   applyVerified,
+  enrichRecord,
   type Proposal,
   ProposalSchema,
   recordValue,
@@ -93,6 +94,38 @@ describe("verifyProposal", () => {
     );
     expect(v.facts.tuition).toBeUndefined();
     expect(v.rejected[0]?.reason).toMatch(/does not appear/);
+  });
+
+  describe("a tuition with cents or a header-only currency", () => {
+    const CENTS = "https://uni.example/cents-fees";
+    const HEADER = "https://uni.example/header-fees";
+    const centsQuote =
+      "Biomedical Engineering €2.500,00 + €140,00 € 2.000,00 € 2.071,50 €6.571,50 + €140,00";
+    const headerQuote =
+      "Total (€) I installment (€) II installment (€) 1. VERY HIGH H.D. 1.000,00 + 16,00 Stamp fee 156,00 400,00 2. HIGH H.D. 800,00 + 16,00 Stamp fee 156,00 300,00 3. MEDIUM H.D. 600,00";
+    pages[CENTS] = `Fees ${centsQuote} per year.`;
+    pages[HEADER] = `FLAT TAX ${headerQuote} + 16,00 Stamp fee 156,00 200,00`;
+    const verify = (url: string, quote: string, amountMinor: number) =>
+      verifyProposal(
+        proposal({
+          tuition: {
+            value: { amountMinor, currency: "EUR", period: "year" },
+            evidence: [{ url, quote }],
+          },
+        }),
+        "Applied Computer Science",
+        getText,
+      );
+
+    it("accepts 6.571,50 as 657150 and refuses it as 657100", async () => {
+      expect((await verify(CENTS, centsQuote, 657150)).rejected).toEqual([]);
+      expect((await verify(CENTS, centsQuote, 657100)).facts.tuition).toBeUndefined();
+    });
+    it("accepts 600,00 under a (€) header and refuses an amount the quote does not hold", async () => {
+      expect((await verify(HEADER, headerQuote, 60000)).rejected).toEqual([]);
+      expect((await verify(HEADER, headerQuote, 80000)).rejected).toEqual([]);
+      expect((await verify(HEADER, headerQuote, 20000)).facts.tuition).toBeUndefined();
+    });
   });
 
   describe("a tuition range", () => {
@@ -190,6 +223,210 @@ describe("verifyProposal", () => {
       );
       expect(parse({ amountMinor: 1, maxAmountMinor: 5, currency: "EUR", period: "year" })).toBe(
         true,
+      );
+    });
+  });
+
+  describe("a tuition with a second quote that names the country", () => {
+    const AMOUNT = "https://uni.example/country-fees";
+    const LIST = "https://uni.example/country-list";
+    pages[AMOUNT] =
+      "Second instalment 2026/27 for students with a household abroad: Group A EUR 200 (area A), EUR 256 (area B).";
+    pages[LIST] = "Tabella A - Aree paesi esteri 2026/27. Gruppo A: MAROCCO, Tunisia, Egitto.";
+    const BOTH = "https://uni.example/country-fees-both";
+    const LOW = "https://uni.example/country-fees-low";
+    const HIGH = "https://uni.example/country-fees-high";
+    pages[BOTH] = "Second instalment: Group A EUR 200 (area A), EUR 256 (area B).";
+    pages[LOW] = "Group A EUR 200 (area A).";
+    pages[HIGH] = "Gruppo A: MAROCCO. Area B EUR 256.";
+    const amountQuote = {
+      url: AMOUNT,
+      quote: "Second instalment 2026/27 for students with a household abroad: Group A EUR 200",
+    };
+    const moroccoQuote = { url: LIST, quote: "Gruppo A: MAROCCO, Tunisia, Egitto" };
+    const single = { amountMinor: 20000, currency: "EUR", period: "year" } as const;
+
+    it("accepts it: the amount only has to be in one accepted quote, in either order", async () => {
+      for (const evidence of [
+        [amountQuote, moroccoQuote],
+        [moroccoQuote, amountQuote],
+      ]) {
+        const v = await verifyProposal(
+          proposal({ tuition: { value: single, evidence } }),
+          "Applied Computer Science",
+          getText,
+          2026,
+        );
+        expect(v.rejected).toEqual([]);
+        expect(v.facts.tuition?.value).toEqual(single);
+        expect(v.facts.tuition?.evidence).toEqual(evidence);
+      }
+    });
+
+    it("accepts a range whose two numbers are in ONE quote, next to a country quote without numbers", async () => {
+      const range = {
+        amountMinor: 20000,
+        maxAmountMinor: 25600,
+        currency: "EUR",
+        period: "year",
+      } as const;
+      const both = {
+        url: BOTH,
+        quote: "Group A EUR 200 (area A), EUR 256 (area B)",
+      };
+      const v = await verifyProposal(
+        proposal({ tuition: { value: range, evidence: [both, moroccoQuote] } }),
+        "Applied Computer Science",
+        getText,
+        2026,
+      );
+      expect(v.rejected).toEqual([]);
+      expect(v.facts.tuition?.value).toEqual(range);
+    });
+
+    it("still rejects it when no accepted quote has the amount", async () => {
+      const v = await verifyProposal(
+        proposal({
+          tuition: {
+            value: { amountMinor: 99900, currency: "EUR", period: "year" },
+            evidence: [moroccoQuote, amountQuote],
+          },
+        }),
+        "Applied Computer Science",
+        getText,
+        2026,
+      );
+      expect(v.facts.tuition).toBeUndefined();
+      expect(v.rejected[0]).toMatchObject({ fact: "tuition" });
+    });
+
+    it("does not let a range borrow its lowest and highest from two different quotes", async () => {
+      const v = await verifyProposal(
+        proposal({
+          tuition: {
+            value: { amountMinor: 20000, maxAmountMinor: 25600, currency: "EUR", period: "year" },
+            evidence: [
+              { url: LOW, quote: "Group A EUR 200 (area A)" },
+              { url: HIGH, quote: "Gruppo A: MAROCCO. Area B EUR 256" },
+            ],
+          },
+        }),
+        "Applied Computer Science",
+        getText,
+        2026,
+      );
+      expect(v.facts.tuition).toBeUndefined();
+    });
+  });
+
+  describe("droppedQuotes: an accepted fact that lost an evidence quote", () => {
+    const fees = {
+      url: FEES,
+      quote: "Tuition fees for non-EU students: €1,500 per semester",
+    };
+    const value = { amountMinor: 150000, currency: "EUR", period: "semester" } as const;
+    const missing = {
+      url: PAGE,
+      quote: `${"Morocco is in country group A of the annex. ".repeat(6)}this is not on the page`,
+    };
+
+    it("lists the dropped quote (cut to 120 characters) when one of two quotes is not on the page", async () => {
+      const v = await verifyProposal(
+        proposal({ tuition: { value, evidence: [fees, missing] } }),
+        "Applied Computer Science",
+        getText,
+      );
+      expect(v.rejected).toEqual([]);
+      expect(v.facts.tuition?.evidence).toEqual([fees]);
+      expect(v.droppedQuotes).toHaveLength(1);
+      expect(v.droppedQuotes?.[0]).toMatchObject({ fact: "tuition", url: PAGE });
+      expect(v.droppedQuotes?.[0]?.quote.length).toBeLessThanOrEqual(120);
+      expect(v.droppedQuotes?.[0]?.quote.startsWith("Morocco is in country group A")).toBe(true);
+    });
+
+    it("also lists a quote whose page could not be fetched", async () => {
+      const v = await verifyProposal(
+        proposal({
+          tuition: { value, evidence: [fees, { url: "https://uni.example/gone", quote: "x" }] },
+        }),
+        "Applied Computer Science",
+        getText,
+      );
+      expect(v.droppedQuotes).toEqual([
+        { fact: "tuition", url: "https://uni.example/gone", quote: "x" },
+      ]);
+    });
+
+    it("is not set when every quote is found", async () => {
+      const v = await verifyProposal(
+        proposal({ tuition: { value, evidence: [fees] } }),
+        "Applied Computer Science",
+        getText,
+      );
+      expect(v.rejected).toEqual([]);
+      expect(v.droppedQuotes).toBeUndefined();
+    });
+
+    it("is not set for a fact that was rejected altogether (rejected already says so)", async () => {
+      const v = await verifyProposal(
+        proposal({ tuition: { value, evidence: [missing] } }),
+        "Applied Computer Science",
+        getText,
+      );
+      expect(v.facts.tuition).toBeUndefined();
+      expect(v.droppedQuotes).toBeUndefined();
+    });
+
+    it("reaches the review block of applyVerified and of enrichRecord, and nothing is added without it", () => {
+      const dropped = [{ fact: "tuition", url: PAGE, quote: "Morocco is in group A" }];
+      const verified = {
+        programmePage: PAGE,
+        rejected: [],
+        facts: { tuition: { value, evidence: [fees] } },
+        droppedQuotes: dropped,
+      };
+      const staged = {
+        slug: "p",
+        officialUrl: null,
+        durationYears: { value: null, source: "daad", info_kind: READ_SOURCE },
+        teachingLanguages: { value: null, source: "daad", info_kind: READ_SOURCE },
+        tuition: { value: null, source: "daad", info_kind: READ_SOURCE },
+        intakes: { value: null, source: "daad", info_kind: READ_SOURCE },
+        applicationChannel: { value: null, source: "daad", info_kind: READ_SOURCE },
+        documents: { value: null, source: "daad", info_kind: READ_SOURCE },
+        requirements: { coverage: "partial", source: "daad", info_kind: READ_SOURCE, rules: [] },
+        sources: { daad: { url: "https://www2.daad.de/x", last_verified_at: null } },
+        _review: { todo: "read it" },
+      };
+      const line = `tuition: "Morocco is in group A" (${PAGE})`;
+      expect(applyVerified(staged, verified, "2026-10-08")._review).toMatchObject({
+        droppedQuotes: [line],
+      });
+      expect(enrichRecord(staged, verified, "2026-10-08").record._review).toMatchObject({
+        droppedQuotes: [line],
+      });
+      const { droppedQuotes: _gone, ...clean } = verified;
+      // a re-run that dropped nothing removes the stale warning of the earlier run
+      const first = applyVerified(staged, verified, "2026-10-08");
+      expect(applyVerified(first, clean, "2026-10-09")._review).not.toHaveProperty("droppedQuotes");
+      expect(
+        applyVerified(first, { ...clean, droppedQuotes: [] }, "2026-10-09")._review,
+      ).not.toHaveProperty("droppedQuotes");
+      // an enrichment only adds: earlier lines stay and a repeated line is kept once
+      const enriched = enrichRecord(staged, verified, "2026-10-08").record;
+      const more = {
+        ...verified,
+        facts: { durationYears: { value: 3, evidence: [fees] } },
+        droppedQuotes: [...dropped, { fact: "durationYears", url: PAGE, quote: "six" }],
+      };
+      expect(enrichRecord(enriched, more, "2026-10-09").record._review).toMatchObject({
+        droppedQuotes: [line, `durationYears: "six" (${PAGE})`],
+      });
+      expect(applyVerified(staged, clean, "2026-10-08")._review).not.toHaveProperty(
+        "droppedQuotes",
+      );
+      expect(enrichRecord(staged, clean, "2026-10-08").record._review).not.toHaveProperty(
+        "droppedQuotes",
       );
     });
   });

@@ -307,6 +307,10 @@ export function sampleSheet(
     if (review.notes) out.push("", `> Preparer's caveats: ${show(review.notes)}`);
     if (Array.isArray(review.rejected) && review.rejected.length > 0)
       out.push(`> Not accepted by the verifier: ${review.rejected.map(show).join("; ")}`);
+    if (Array.isArray(review.droppedQuotes) && review.droppedQuotes.length > 0)
+      out.push(
+        `> Evidence quotes that could not be found on the page: ${review.droppedQuotes.map(show).join("; ")}`,
+      );
     out.push("");
   }
   return `${out.join("\n")}\n`;

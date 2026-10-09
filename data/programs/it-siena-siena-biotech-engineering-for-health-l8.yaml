@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 50000
+    currency: EUR
+    period: year
+  source: page-5
   info_kind: official
 intakes:
   value: null
@@ -38,8 +41,53 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: identification-document
+      name:
+        fr:
+          text: Document d'identité valide
+          status: draft
+        en:
+          text: Valid identification document
+          status: draft
+      translationRequired: null
+    - slug: curriculum-vitae
+      name:
+        fr:
+          text: Curriculum Vitae (CV)
+          status: draft
+        en:
+          text: Curriculum Vitae (CV)
+          status: draft
+      translationRequired: null
+    - slug: upper-secondary-school-diploma
+      name:
+        fr:
+          text: Diplôme d'études secondaires supérieures
+          status: draft
+        en:
+          text: Upper secondary school diploma
+          status: draft
+      translationRequired: null
+    - slug: english-language-certification
+      name:
+        fr:
+          text: Certification reconnue de langue anglaise
+          status: draft
+        en:
+          text: Recognized English language certification
+          status: draft
+      translationRequired: null
+    - slug: cisia-cent-s-test-certificate
+      name:
+        fr:
+          text: Attestation de passation du test CISIA CEnT-S
+          status: draft
+        en:
+          text: Documentation certifying that the CISIA CEnT-S test has been taken
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -123,3 +171,9 @@ sources:
   page-4:
     url: https://apply.unisi.it/contents/content/8-tuition-fees-and-costs
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://biotech-engineering.unisi.it/sites/cl92/files/mediaroot/2026_03_12_bando_biotech_engineering_for_health_traduzionecortesia.pdf
+    last_verified_at: 2026-10-08
+  page-5:
+    url: https://www.unisi.it/sites/default/files/allegatiparagrafo/Regolamento_contribuzione_2026-2027.pdf
+    last_verified_at: 2026-10-08

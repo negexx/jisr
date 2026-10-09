@@ -37,8 +37,35 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport valide
+          status: draft
+        en:
+          text: Valid passport
+          status: draft
+      translationRequired: null
+    - slug: id-photo
+      name:
+        fr:
+          text: Photo d'identité
+          status: draft
+        en:
+          text: ID photo
+          status: draft
+      translationRequired: null
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Copie du diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Copy of the high school diploma
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -57,4 +84,7 @@ sources:
     last_verified_at: 2026-10-08
   page-2:
     url: https://www.unipa.it/mobilita/en/new-students/new-students---enrolment/enrolment-procedures-for-extra-eu-foreign-students/bachelors-degree-/
+    last_verified_at: 2026-10-08
+  page-1:
+    url: https://www.unipa.it/mobilita/new-students/new-students---enrolment/enrolment-procedures-for-extra-eu-foreign-students/
     last_verified_at: 2026-10-08

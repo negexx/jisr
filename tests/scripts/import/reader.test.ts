@@ -356,6 +356,132 @@ describe("applicant context", () => {
         "it-universitaly if the pages say that such applicants make the pre-enrolment application (preiscrizione) on the Universitaly portal",
       );
     });
+    it("keeps the applicationChannel sentence byte for byte", () => {
+      expect(user).toContain(
+        "applicationChannel for a non-EU applicant living abroad: it-universitaly if the pages say that such applicants make the pre-enrolment application (preiscrizione) on the Universitaly portal (the quote must name Universitaly); it-university-direct only if the pages say to apply on the university's own application portal or form for this programme. Quote that sentence. Italian universities use",
+      );
+    });
+    it("no longer says Italian tuition is usually set by ISEE band", () => {
+      expect(user).not.toContain("usually by ISEE band");
+      expect(user).not.toMatch(/Italian public universities set tuition themselves/);
+    });
+    it("reads the system that applies to a Moroccan living in Morocco, not EU, resident, Master's or PhD figures", () => {
+      expect(user).toMatch(/non-EU student whose household is outside Italy/);
+      expect(user).toMatch(/Moroccan citizen living in Morocco/);
+      expect(user).toMatch(/Master's/);
+      expect(user).toMatch(/PhD/);
+      expect(user).toMatch(/second-degree/);
+    });
+    it("uses the fixed fee for non-EU students not resident in Italy, by degree-programme group only with a quote naming the group", () => {
+      expect(user).toMatch(/fixed fee for non-EU students not resident in Italy/);
+      expect(user).toMatch(/groups of degree programmes/);
+      expect(user).toMatch(/degree class or department/);
+    });
+    it("prefers the figure of the group a tie quote names, with the tie quote as the SECOND evidence quote", () => {
+      expect(user).toMatch(
+        /PREFERRED: when an accepted quote ties this programme, or its degree class or department, to a group, use that group's figure and give the tie quote as the SECOND evidence quote/,
+      );
+    });
+    it("allows a fallback range of the group figures when no quote ties the programme, from ONE quote, with a note", () => {
+      expect(user).toMatch(
+        /FALLBACK, allowed: when no quote ties the programme to a group, give a RANGE from the lowest to the highest of the group figures that apply to this student \(non-EU, household abroad\), but only if ONE quote shows ALL those figures \(amountMinor = lowest, maxAmountMinor = highest\), and say in notes that the group was not tied/,
+      );
+      expect(user).toMatch(
+        /If ONE quote does not show them all, leave tuition out and say why in notes/,
+      );
+    });
+    it("never mixes country groups, systems or reduced country fees, unless Morocco is tied to that reduced list", () => {
+      expect(user).toMatch(
+        /Never build a range from figures of different country groups, different systems, or reduced fees for particular countries/,
+      );
+      expect(user).toMatch(/unless Morocco is tied to that reduced list/);
+      expect(user).toMatch(/only range ends/);
+    });
+    it("says one consistent thing about ranges: no sentence forbids the fallback or ranks the rules the old way", () => {
+      expect(user).not.toMatch(/Rule \(1\) takes precedence over this/);
+      expect(user).not.toMatch(
+        /never build a range from figures for different groups of degree programmes/i,
+      );
+      expect(user).not.toMatch(/without such a quote leave tuition out/);
+      expect(user).not.toMatch(
+        /form a range only if ONE quote shows both values of ONE country group/,
+      );
+    });
+    it("handles the case that needs a Morocco tie and a programme-group tie with two quotes and the fallback", () => {
+      expect(user).toMatch(
+        /needs both a Morocco tie \(country group\) and a programme-group tie: use at most TWO quotes, the amount quote and the Morocco tie quote, and apply the FALLBACK of rule \(1\) across the programme groups of the country group that names Morocco, unless the amount quote itself names this programme's group \(then give that single figure\)/,
+      );
+    });
+    it("allows at most two evidence quotes for a tuition: the amount first, then the one tie quote", () => {
+      expect(user).toMatch(
+        /at most TWO evidence quotes for a tuition: first the quote with the amount, second the one tie quote/,
+      );
+    });
+    it("asks for the year in an application window quote, else a recurringDeadline with the other dates null", () => {
+      expect(user).toMatch(
+        /the quote must state the year; otherwise leave applicationOpens and startDate null and write the deadline as recurringDeadline as above/,
+      );
+    });
+    it("requires a second quote naming Morocco for a country-group or nationality-based fee", () => {
+      expect(user).toMatch(/country-group fee or nationality-based reduced fee/i);
+      expect(user).toMatch(/ONLY if an accepted quote names Morocco \(Marocco, Maroc, Morocco\)/);
+      expect(user).toMatch(/SECOND evidence quote/);
+      expect(user).toMatch(/country list was not found/);
+      expect(user).toMatch(/Never assume the group/);
+      expect(user).toMatch(/list or annex of the same academic year as the amount/);
+    });
+    it("takes an income range only from ONE quote and never a table of many bands", () => {
+      expect(user).toMatch(
+        /RANGE is allowed only when ONE quote states both a lowest and a highest fee/,
+      );
+      expect(user.match(/RANGE is allowed/g)).toHaveLength(1);
+      expect(user).not.toContain("Income-based fee: only a range from ONE quote");
+      expect(user).toMatch(/A table of income bands with many rows is not a tuition/);
+    });
+    it("says what tuition is: the university's own yearly contribution, per instalment when so given", () => {
+      expect(user).toMatch(/contributo/);
+      expect(user).toMatch(/contribuzione studentesca/);
+      expect(user).toMatch(/second instalment/);
+      expect(user).toMatch(/regional tax[^.]*stamp duty[^.]*separate fees, not tuition/);
+      expect(user).toContain('unless the page calls the single amount "all-inclusive"');
+    });
+    it("limits the amount to the current or the next academic year", () => {
+      expect(user).toMatch(/2026\/27, 2027\/28/);
+      expect(user).toMatch(/older academic year is not used/);
+    });
+    it("makes an application window for non-EU applicants abroad an international deadline", () => {
+      expect(user).toMatch(/non-EU applicants residing abroad/);
+      expect(user).toMatch(/Universitaly/);
+      expect(user).toMatch(/bando/);
+      expect(user).toMatch(/applicationOpens/);
+      expect(user).toMatch(/applicationDeadline/);
+      expect(user).toMatch(/reserved for EU students or non-EU students resident in Italy/);
+      expect(user).toMatch(/first round and say in notes that more rounds exist/);
+    });
+    it("does not take the national visa deadlines as application deadlines", () => {
+      expect(user).toContain("30 November");
+      expect(user).toContain("31 October");
+      expect(user).toMatch(/visa deadlines/);
+    });
+    it("leaves the other countries' text and the generic tuition bullet as they were", () => {
+      const of = (country: string) => buildPrompt({ ...meta, country, shared: [], own: [] });
+      expect(of("FR").user).toContain(
+        "a foreign-diploma applicant applies through Etudes en France / Campus France",
+      );
+      expect(of("DE").user).toContain("de-uni-assist-vpd if the pages say foreign applicants");
+      expect(of("HU").user).toContain(
+        "a scholarship that covers the fees (Stipendium Hungaricum, state scholarship) is not a tuition of 0 for the programme.",
+      );
+      expect(of("NL").user).toContain("applicationChannel is nl-studielink");
+      expect(of("NL").user).toContain("instellingscollegegeld");
+      expect(of("NL").user).not.toMatch(/Marocco/);
+      expect(of("HU").user).not.toMatch(/Marocco/);
+      const system = of("IT").system;
+      expect(system).toContain(
+        "- tuition: the tuition fee a student from OUTSIDE the EU/EEA pays, in minor units",
+      );
+      expect(system).toContain("A range needs ONE quote that shows both numbers");
+    });
     it("leaves the Dutch text as it was: there a range is a spread across programmes", () => {
       const nl = buildPrompt({ ...meta, country: "NL", shared: [], own: [] }).user;
       expect(nl).toContain(

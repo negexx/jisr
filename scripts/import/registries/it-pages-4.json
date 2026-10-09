@@ -1,0 +1,595 @@
+{
+  "Politecnico di Milano": {
+    "institutionSlugs": ["it-milano-politecnico-milano"],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/students-with-a-foreign-degree",
+          "says": "Foreign-qualification applicants to Laurea programmes: reserved places, student visa for non-EU abroad, admission test requirement.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/types-of-students",
+          "says": "Defines international students with reserved places (foreign candidates needing an entry visa).",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/how-to-apply-for-a-student-visa",
+          "says": "Universitaly pre-enrolment and visa steps for non-EU abroad; university cutoff 31 Aug 2026, government visa deadline 30 Nov 2026.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/engineering",
+          "says": "Engineering bachelor admission test (TOL, TOLC-I, CEnT-S, SAT) overview; scholarships for Process and Industrial Engineering.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.polimi.it/fileadmin/user_upload/futuri_studenti/Engineering_BSc_call_for_admission_2026-27__English_.pdf",
+          "says": "Call for admission to Engineering BSc 2026/27 (English translation, 21 pages); text not machine-readable, includes early test for 2027/28.",
+          "year": "2026/27"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.polimi.it/en/students/tuition-fees-scholarships-and-financial-aid/tuition-fees",
+          "says": "Laurea fee structure: first instalment 880.04 EUR, second instalment 0-3,003 EUR by ISEE; links to income-abroad page.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.polimi.it/en/prospective-students/how-much-does-it-cost/laurea-laurea-magistrale-and-single-cycle-programmes",
+          "says": "Fee amounts for Laurea programmes; ISEE-based reduction; explicit non-EU maximum rule only for Magistrale.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.polimi.it/en/current-students/tuition-fees-scholarships-and-financial-aid/student-contribution/students-with-income-and-assets-movable-and-immovable-declared-and-or-owned-abroad-or-in-italy-and-abroad",
+          "says": "Students with household income abroad must obtain ISEEU parificato via CAF; documents legalised and translated.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.polimi.it/fileadmin/user_upload/Il-Politecnico/statute-regulations/20250626_DR-Regolamento-contribuzione-studentesca_2025-2026-en.pdf",
+          "says": "Student contribution regulation (English information translation); rules for Laurea tuition and foreign-income students.",
+          "year": "2025/26"
+        }
+      ],
+      "countryList": [],
+      "documents": [
+        {
+          "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/necessary-documents-for-enrolment",
+          "says": "Foreign diploma, translation, declaration of value or CIMEA statement, authenticity proof (CIMEA verification or e-apostille); deadlines 10 Sep / 31 Oct 2026.",
+          "year": "2026/27"
+        }
+      ],
+      "language": [
+        {
+          "url": "https://www.polimi.it/en/students/language-requirements/students-of-an-english-language-laurea-study-programme",
+          "says": "English requirement for English-taught Laurea: accepted certificates and minimum scores (e.g. IELTS 5, TOEFL iBT 59).",
+          "year": "2026/27"
+        }
+      ]
+    },
+    "programmes": {
+      "it-milano-politecnico-milano-engineering-science-l9": {
+        "programme": [
+          {
+            "url": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/engineering-science",
+            "says": "Programme page: Engineering Science, BSc, language English; How to apply section links to admission pages.",
+            "year": null
+          }
+        ],
+        "admissions": [],
+        "other": []
+      },
+      "it-milano-politecnico-milano-industrial-engineering-l9": {
+        "programme": [
+          {
+            "url": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/industrial-engineering",
+            "says": "Programme page: Industrial Engineering, BSc, entirely in English, Piacenza campus; mentions scholarships.",
+            "year": null
+          }
+        ],
+        "admissions": [],
+        "other": []
+      },
+      "it-milano-politecnico-milano-process-engineering-l9": {
+        "programme": [
+          {
+            "url": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/process-engineering",
+            "says": "Programme page: Process Engineering, BSc, entirely in English, Cremona campus; mentions scholarships and admission test.",
+            "year": null
+          }
+        ],
+        "admissions": [],
+        "other": []
+      }
+    },
+    "notes": "2027/28 bachelor calendar not published; pages are 2026/27 (the 2026/27 engineering call also covered an early test for 2027/28). Reserved places for non-EU abroad exist; international students in the reserved quota take the entrance test. No country-group fee rule found for Laurea: tuition is ISEE-based, with ISEEU parificato for foreign household income; the explicit 'maximum amount' rule for non-EU applies to Magistrale only. No country list needed. Test registration page for reserved category did not give category-specific dates. English-taught Laurea: engineering schools (Piacenza/Cremona programmes taught in English). The regulation PDF is the 2025/26 English version; a 2026/27 version was not located."
+  },
+  "Università degli Studi di Cassino e del Lazio Meridionale": {
+    "institutionSlugs": ["it-cassino-cassino"],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/",
+          "says": "3-step process for English-taught bachelors: GOMP pre-admission (15 EUR), Universitaly visa application, enrollment; usually Feb-June.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://eds.unicas.it/admission/enrollment",
+          "says": "Pre-admission steps via GOMP, Universitaly, visa; 2026/27 closed, revisit January 2027; documents list.",
+          "year": "2026/27"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.unicas.it/segreteriastudenti/tasse-e-contributi/regolamento-tasse-e-contributi-aa-20262027/",
+          "says": "Page hosting 2026/27 tuition regulation (DR 482 of 02/07/2026) with ISEE tables.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unicas.it/media/pesjjo4e/regolamento-tasse-e-contributi-2026-2027-dr-n-482-del-02072026.pdf",
+          "says": "Regulation PDF: annual contribution by country-group of citizenship for foreign students (groups A 600, B 1000, C 1400 EUR); lists Morocco.",
+          "year": "2026/27"
+        }
+      ],
+      "countryList": [
+        {
+          "url": "https://www.unicas.it/media/pesjjo4e/regolamento-tasse-e-contributi-2026-2027-dr-n-482-del-02072026.pdf",
+          "says": "Country table in the regulation (about page 5) lists Morocco in the low/lower-income block (groups A/B, 600 or 1000 EUR); exact group needs human check.",
+          "year": "2026/27"
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://eds.unicas.it/admission/enrollment",
+          "says": "Pre-admission documents: transcript, CV, motivation letter, English certificate, passport; some countries need extra certificates.",
+          "year": "2026/27"
+        }
+      ],
+      "language": [
+        {
+          "url": "https://eds.unicas.it/admission/admission-criteria",
+          "says": "English B2 certificate, 70% high school average (math 70%), diploma not older than 5 years, age rules (Economics with Data Science).",
+          "year": "2026/27"
+        }
+      ]
+    },
+    "programmes": {
+      "it-cassino-cassino-computer-engineering-l8": {
+        "programme": [
+          {
+            "url": "https://www.unicas.it/computer-engineering/",
+            "says": "Computer Engineering (L-8), fully English-taught; admission requirements incl. B2 English and TOLC-I.",
+            "year": null
+          }
+        ],
+        "admissions": [],
+        "other": []
+      },
+      "it-cassino-cassino-economics-with-data-science-l33": {
+        "programme": [
+          {
+            "url": "https://www.eds.unicas.it/",
+            "says": "Programme site of Economics with Data Science; menu: admission, criteria, enrollment, scholarships, fees.",
+            "year": null
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://www.eds.unicas.it/admission/admission-criteria",
+            "says": "Admission criteria for 2026/27: 70% average, B2 English, age 2001-2008 births.",
+            "year": "2026/27"
+          }
+        ],
+        "other": [
+          {
+            "url": "https://eds.unicas.it/admission/fees",
+            "says": "Fees page only points to the university international-students enrollment page; no amounts.",
+            "year": null
+          }
+        ]
+      },
+      "it-cassino-cassino-industrial-engineering-technology-l9": {
+        "programme": [
+          {
+            "url": "https://www.unicas.it/international-unicas/international-bachelor-master-and-phd-programs-enrollment-26-27-now-open/bachelors-degree-programs/industrial-engineering-technology/",
+            "says": "University page for BSc Industrial Engineering Technology; links to course site and enrollment announcement.",
+            "year": "2026/27"
+          },
+          {
+            "url": "https://www.iet.unicas.it/",
+            "says": "Course site: English, 3 years 180 ECTS; applications 2026-27 deadline 30 June 2026; links to Apply, Admission Criteria, Entrance Test.",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://www.iet.unicas.it/admission-criteria",
+            "says": "Admission criteria: diploma, B2 English, CISIA entrance test, OFA rules.",
+            "year": null
+          }
+        ],
+        "other": []
+      }
+    },
+    "notes": "2026/27 pre-admission window already closed (course site deadline 30 June 2026; EDS says return January 2027); 2027/28 not published. Tuition rule: annual contribution by country group of citizenship (600/1000/1400 EUR) in the 2026/27 regulation PDF; Morocco appears in the low/medium-income country list but the PDF text extraction merges groups A and B, so the exact group (600 vs 1000) must be verified by the audit. The unicas.it international page at /didattica/international-students/ was referenced but not fetched. Several pages say pre-admissions are 'open' while others say closed: conflict in 2026/27 status."
+  },
+  "Università degli studi della Campania \"Luigi Vanvitelli\"": {
+    "institutionSlugs": ["it-napoli-vanvitelli-caserta"],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.unicampania.it/index.php/foreign-students",
+          "says": "International students hub: link to Universitaly procedure for international students, welcome desk, services.",
+          "year": null
+        },
+        {
+          "url": "https://www.unicampania.it/index.php/studenti/ammissioni-corsi-di-laurea/bandi-e-avvisi-a-a-2026-27",
+          "says": "Index of 2026/27 admission notices for restricted-access courses, including Data Analytics.",
+          "year": "2026/27"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.unicampania.it/RPP/RGCSS/Modulistica/University_Fees_Manifesto_26_27.pdf",
+          "says": "Fees manifesto (English): foreign students from developing countries 202 EUR, others 500 EUR all-inclusive fee; regional tax 130/151/173.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unicampania.it/index.php/studenti/procedure-amministrative/tasse-e-scadenze",
+          "says": "Tax and deadlines page listing the 2026/27 manifesto PDFs (Italian, English, decree).",
+          "year": "2026/27"
+        }
+      ],
+      "countryList": [],
+      "documents": [],
+      "language": []
+    },
+    "programmes": {
+      "it-napoli-vanvitelli-caserta-data-analytics-l41": {
+        "programme": [
+          {
+            "url": "https://www.matematicaefisica.unicampania.it/didattica/corsi-di-studio/data-analytics",
+            "says": "Data Analytics L-41, taught in English; CEnT-S test, B1 English; 100 places for non-EU residents abroad.",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://www.unicampania.it/index.php/studenti/ammissioni-corsi-di-laurea/11424-data-analytics",
+            "says": "Call page for Data Analytics 2026/27 with non-EU abroad call (deadline 3 July 2026, reopened to 21 Sep 2026) and EU call.",
+            "year": "2026/27"
+          },
+          {
+            "url": "https://www.unicampania.it/RPP/RGCSS/Concorso_DISTABIF_2026_2027/Data_Analytics/Bando_Data_Analytics_non_UE_26_27_EN.pdf",
+            "says": "English call: 100 places for non-EU residing abroad; Universitaly pre-enrolment, CEnT-S, B1 English or interview, enrolment documents.",
+            "year": "2026/27"
+          },
+          {
+            "url": "https://www.unicampania.it/RPP/RGCSS/Concorso_DISTABIF_2026_2027/Data_Analytics/Re-emission_non-UE/Riapertura_Bando_non_UE.pdf",
+            "says": "Reopened call for non-EU residing abroad (Italian), deadline 21 September 2026 per call page.",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      }
+    },
+    "notes": "2027/28 calls not published; 2026/27 call exists (original deadline 3 July 2026, reopened to 21 Sep 2026). Fee rule: Manifesto 2026/27 sets a 202 EUR all-inclusive contribution for foreign students from 'developing countries' (art. 13 c.5 DPCM 09/04/2001) and 500 EUR for others, unless a lower fee or exemption applies under L.232/2016; no country list found in the English manifesto text, so whether Morocco counts as developing country is unverified. The call's own documents list (diploma translation/DoV) was not confirmed; the English manifesto PDF was only machine-read via pdftotext."
+  },
+  "Università degli studi di Milano": {
+    "institutionSlugs": ["it-milano-milano"],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.unimi.it/en/international/coming-abroad/enrol-programme/international-enrolment-degree-programmes",
+          "says": "Non-EU residing abroad: Universitaly pre-application (one university, one programme), admission test, documents; deadlines for 2026/27.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://apply.unimi.it/news/new/8-universitaly---202627-pre-enrolment",
+          "says": "Universitaly pre-enrolment news: 2026/27 deadline 31 July 2026; procedures for 2026/27 and 2027/28 published.",
+          "year": "2026/27"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.unimi.it/en/study/bachelor-and-master-study/fees-and-how-pay-them/fees-2026/2027",
+          "says": "Students with household income abroad: no ISEE, fixed second instalment by country group A/B/C (A: 200 or 256 EUR).",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unimi.it/sites/default/files/regolamenti/Regolamento%20tasse%20e%20contributi%202026_2027_signed.pdf",
+          "says": "Regulation art. 6: fixed second instalment by country group; Annex 2 lists countries by group; regional tax 130/160/190.",
+          "year": "2026/27"
+        }
+      ],
+      "countryList": [
+        {
+          "url": "https://www.unimi.it/sites/default/files/regolamenti/Regolamento%20tasse%20e%20contributi%202026_2027_signed.pdf",
+          "says": "Annex 2 (country groups A, B, C); Morocco (MAROCCO) appears at the end of the Group A list in the extracted text.",
+          "year": "2026/27"
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://www.unimi.it/sites/default/files/2026-07/Documenti%20Universitaly%2026-27%20ENG.pdf",
+          "says": "Documents to upload on Universitaly for bachelor pre-enrolment: diploma legalised and translated, CIMEA or DoV, B2 certificate, ID.",
+          "year": "2026/27"
+        }
+      ],
+      "language": []
+    },
+    "programmes": {
+      "it-milano-milano-economics-behavior-data-and-policy-l33": {
+        "programme": [
+          {
+            "url": "https://www.unimi.it/en/education/bachelor/economics-behavior-data-and-policy",
+            "says": "Programme page: L-33 R, taught entirely in English, CEnT-S test, 100 places plus 15 reserved for non-EU abroad; B2 required.",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://apps.unimi.it/files/bandi/bando-2027-1-economics-behavior-data-and-policy-(classe-l-33-r).pdf?24-APR-26=",
+            "says": "Call for application a.y. 2026-27: application 12 March to 6 July 2026, 100 places plus 15 for non-EU visa applicants, CEnT-S.",
+            "year": "2026/27"
+          },
+          {
+            "url": "https://econ.cdl.unimi.it/en/enrolment",
+            "says": "Programme site application/enrolment page.",
+            "year": null
+          }
+        ],
+        "other": []
+      }
+    },
+    "notes": "2027/28 call not published; all pages are 2026/27 (application closed 6 July 2026, Universitaly pre-application by 31 July 2026). Fee rule: foreign household income means a fixed second instalment by country group; Morocco appears in Group A of Annex 2 in the pdftotext layout (column layout, so audit the group visually): 200 EUR (area A course) or 256 EUR (area B), plus regional tax 130 EUR and 16 EUR stamp (first instalment 146 EUR). The call PDF text lists the CEnT-S as admission test (replaces TOLC-E from 2026/27). B2 English certificate required for pre-enrolment. The econ.cdl.unimi.it enrolment URL came from search results and was not fetched separately."
+  },
+  "Università degli studi di Padova": {
+    "institutionSlugs": ["it-padova-padova"],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.unipd.it/en/ammissione-studenti-internazionali",
+          "says": "How to apply for international applicants to English-taught degrees via apply.unipd.it; first call for 2027/28 from 15 Sep to 15 Nov 2026 (most programmes).",
+          "year": "2027/28"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.unipd.it/contribuzione-studentesca",
+          "says": "Non-EU students with household outside Italy pay a fixed non-recalculable contribution: 2,790 (group A), 2,990 (group B); reduced to a third for poorest countries.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://wwwassets.unipd.it/sites/default/files/2026-07/1.Bando%20ContribuzioneEsoneri%202026-27.pdf",
+          "says": "Bando contribuzione 2026/27: Table 4 fixed contribution for non-EU students with non-Italian household (A 2,790; B 2,990; poor countries 930 / 996.66).",
+          "year": "2026/27"
+        }
+      ],
+      "countryList": [
+        {
+          "url": "https://www.mur.gov.it/sites/default/files/2026-03/Decreto%20Ministeriale%20n.%20176%20del%2024-2-2026.pdf",
+          "says": "MUR decree DM 176 of 24/02/2026: list of 'particularly poor' countries for 2026/27; Morocco not in the list (Mauritania then Mozambique).",
+          "year": "2026/27"
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://apply.unipd.it/news/new/13-documents-required-your-application",
+          "says": "Documents for application: transcript, school certificate, CV, motivation letter, language certificate; no legalisation needed at application.",
+          "year": null
+        },
+        {
+          "url": "https://www.unipd.it/en/requisiti-accesso-specifici-titoli-esteri",
+          "says": "Country-specific entry requirements for foreign qualifications (separate PDF 'Entry requirements per Country 27-28').",
+          "year": "2027/28"
+        }
+      ],
+      "language": []
+    },
+    "programmes": {
+      "it-padova-padova-economics-governance-and-decision-making-l33": {
+        "programme": [
+          {
+            "url": "https://apply.unipd.it/courses/course/258-economics-governance-and-decision-making",
+            "says": "Programme factsheet 2027/28: English, 30 places for non-EU abroad, application 7 Jan to 7 Mar 2027, CEnT-S, tuition 2,950, B2 English.",
+            "year": "2027/28"
+          },
+          {
+            "url": "https://www.unipd.it/en/corsi-di-laurea/economics-governance-and-decision-making",
+            "says": "University programme page: Economics, governance and decision-making (L-33), English, 3 years, Padua.",
+            "year": null
+          }
+        ],
+        "admissions": [],
+        "other": []
+      },
+      "it-padova-padova-information-engineering-l8": {
+        "programme": [
+          {
+            "url": "https://apply.unipd.it/courses/course/182-information-engineering",
+            "says": "Programme factsheet 2027/28: English, limited access, non-EU window 7 Jan to 7 Mar 2027, CEnT-S, tuition 2,950, B2 English.",
+            "year": "2027/28"
+          }
+        ],
+        "admissions": [],
+        "other": []
+      }
+    },
+    "notes": "Padova already publishes 2027/28: non-EU applicants abroad apply 7 Jan to 7 Mar 2027 (course factsheets), studies start 1 Oct 2027; the general page says the first call for 2027/28 opens 15 Sep 2026. Fee conflict: the course pages show 'EUR 2,950 per year, reducible by ISEE' while the 2026/27 bando sets a fixed non-recalculable contribution for non-EU students with a non-Italian household: 2,790 (group A: Economics, Political Science, Law, Humanities schools) or 2,990 (group B: Engineering, Sciences...) reduced to one third for 'poorest countries'. Morocco is not in the DM 176/2026 list (2026/27), so Morocco pays the full fixed amount. unipd.it contribuzione page cites 'DM 166/2025' for 2026/27, which is an older decree: conflict to flag. No Universitaly pre-enrolment page was found in the fetched unipd pages (non-EU abroad still need it); application fee 55 vs 60 EUR conflicts between pages; deposit 208 EUR. Economics, governance and decision-making has a separate department site (economia.unipd.it) not fetched."
+  },
+  "Università degli studi di Perugia": {
+    "institutionSlugs": ["it-perugia-perugia"],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.unipg.it/en/international-students/students-wishing-to-enroll/how-to-apply",
+          "says": "Non-EU abroad: PICA pre-evaluation first, then Universitaly pre-enrolment, visa; Engineering Management PICA deadline 21 Aug 2026; Italian test dates.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://ing.unipg.it/en/courses/admission-test",
+          "says": "Engineering admission tests TOLC-I or CEnT-S, mandatory for visa applicants; minimum scores and 2026 test dates.",
+          "year": "2026/27"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.unipg.it/en/international-students/becoming-a-unipg-student/tuition-fees-and-scholarships",
+          "says": "Flat tax in four brackets by UNDP human-development class for students whose family lives abroad; request 3 Aug to 20 Oct 2026; links to amounts and country list.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unipg.it/files/pagine/1996/flattax_amount-of-fees.pdf",
+          "says": "Flat tax amounts: very high 1,000, high 800, medium 600, low 400 EUR per year plus 16 EUR stamp; instalments.",
+          "year": "2026/27"
+        }
+      ],
+      "countryList": [
+        {
+          "url": "https://www.unipg.it/files/pagine/1996/elenco-paesi-fascia-flat_23_24.pdf",
+          "says": "Country list for the four flat-tax classes (file dated 2023/24); MAROCCO is in class 3 Medium Human Development.",
+          "year": "2023/24"
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://www.unipg.it/en/international-students/becoming-a-unipg-student/list-of-study-documents",
+          "says": "Documents for non-EU visa applicants: 12-year diploma, 2-year transcript, translation, CIMEA verification/comparability or DoV, English B1/B2 certificate.",
+          "year": "2026/27"
+        }
+      ],
+      "language": []
+    },
+    "programmes": {
+      "it-perugia-perugia-engineering-management-l8": {
+        "programme": [
+          {
+            "url": "https://ing.unipg.it/en/courses/engineering-management/first-cycle-degree-course",
+            "says": "Engineering Management first-cycle degree, lessons in English, TOLC-I or equivalent, B2 English, pre-enrolment for non-EU 2026/27.",
+            "year": "2026/27"
+          },
+          {
+            "url": "https://ing.unipg.it/didattica/corsi-di-studio/engineering-management/engineering-management-l8-l9",
+            "says": "Italian programme page: Engineering Management bachelor L-8/L-9, English, test thresholds (TOLC-I, SAT, ACT), B2 required for visa applicants.",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [],
+        "other": []
+      }
+    },
+    "notes": "2027/28 not published; all pages are 2026/27. Application channel for non-EU abroad: PICA pre-evaluation (Engineering Management bachelor and master: deadline 21 Aug 2026, PICA link https://pica.cineca.it/unipg/2026-visa-06/ per the how-to-apply page, not fetched), then Universitaly. Different pages give different PICA codes and deadlines (visa-02 / visa-03 / visa-04 / visa-06, 30 Sep / 6 Aug / 21 Aug); trust the how-to-apply page. The Pre-enrolment page on ing.unipg.it returned HTTP 400 so it is not listed. Fees: students with family abroad pay a flat tax per UNDP class; the country-class file is named 23_24, so confirm it is current; Morocco appears in class 3 (Medium HD), which by the amount table is 600 EUR per year (2025/26 amounts; the 2026/27 PDF shows the same table) plus the 16 EUR stamp duty and first instalment of 156 EUR. English requirement conflict: one page says B1 for visa applicants, the programme page and how-to-apply page say B2; MOI declaration not accepted. Tests: TOLC-I or CEnT-S mandatory for visa applicants."
+  },
+  "Università degli studi di Torino": {
+    "institutionSlugs": ["it-torino-torino"],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://en.unito.it/studying-unito/international-degree-seeking-students/application-international-students",
+          "says": "Apply@UniTo (60 EUR, up to two programmes), Universitaly pre-enrolment for non-EU abroad (general deadline 15 July 2026), calls for 2026/27.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://en.unito.it/studying-unito/international-degree-seeking-students/faqs/faqs-visa-and-pre-enrolment-universitaly",
+          "says": "FAQ: Universitaly pre-enrolment mandatory for non-EU residing abroad; select correct academic year.",
+          "year": null
+        },
+        {
+          "url": "https://apply.unito.it/en_GB/news/new/26-can-i-apply",
+          "says": "When can I apply: 2026/27 undergraduate call 19 Feb to 15 Apr 2026; later calls reserved for Italians, EU and non-EU residents in Italy.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://en.unito.it/studying-unito/enrolment-procedure/undergraduate-degrees-restricted-number-places/undergraduate",
+          "says": "Restricted-places undergraduate enrolment: SAT courses (Business & Management, Economics and Finance with Data Science) calendar and steps.",
+          "year": "2026/27"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.unito.it/didattica/tasse/contribuzione-studenti-internazionali",
+          "says": "Students resident abroad: fixed single contribution by PPP GDP per capita of residence country (500 to 1,500 EUR) plus 156 EUR first instalment; poorest-countries exemption; ISEE parificato no longer used.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unito.it/sites/default/files/2026-07/reg_tasse_2026_2027_dr_6194_2026.pdf",
+          "says": "Tuition regulation 2026/27 (DR 6194/2026) with Allegato A listing PPP GDP per capita by country.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unito.it/didattica/tasse/importi-e-scadenze-delle-rate",
+          "says": "Instalment amounts and dates 2026/27, incl. later dates for foreign-qualification first-year students.",
+          "year": "2026/27"
+        }
+      ],
+      "countryList": [
+        {
+          "url": "https://www.unito.it/sites/default/files/2026-07/reg_tasse_2026_2027_dr_6194_2026.pdf",
+          "says": "Allegato A (about page 52): countries with PPP GDP per capita and fee band; Morocco row present but table columns misaligned in text extraction.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.mur.gov.it/it/atti-e-normativa/decreto-ministeriale-n-176-del-24-2-2026",
+          "says": "MUR decree DM 176/2026: list of particularly poor countries 2026/27 (COU exemption); Morocco not in the list per the decree text.",
+          "year": "2026/27"
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://en.unito.it/studying-unito/international-degree-seeking-students/required-documents-international-students",
+          "says": "Required documents for foreign-qualification applicants: 12-year diploma, transcript if needed, entrance exam, CIMEA statement optional; legalisation/apostille rules.",
+          "year": "2026/27"
+        }
+      ],
+      "language": []
+    },
+    "programmes": {
+      "it-torino-torino-business-management-l18": {
+        "programme": [
+          {
+            "url": "https://en.unito.it/studying-unito/programs/degree-programs/business-management",
+            "says": "University programme page: Business & Management, English, SAT required, local programmed access.",
+            "year": "2026/27"
+          },
+          {
+            "url": "http://www.business-management.unito.it",
+            "says": "Course site with admission requirements, how to apply, tuition and international contacts.",
+            "year": null
+          }
+        ],
+        "admissions": [
+          {
+            "url": "http://www.business-management.unito.it/do/home.pl/View?doc=admission_requirements.html",
+            "says": "Admission requirements 2026/27: SAT ranking; 40 places for non-EU residing abroad (cat. 989); periods 1-19 June and 1 Jul-14 Sep 2026.",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      },
+      "it-torino-torino-economics-and-finance-with-data-science-l33": {
+        "programme": [
+          {
+            "url": "https://en.unito.it/studying-unito/programs/degree-programs/economics-and-finance-data-science",
+            "says": "University programme page: Economics and Finance with Data Science, English, entrance assessment.",
+            "year": "2026/27"
+          },
+          {
+            "url": "https://www.efds.unito.it/do/home.pl",
+            "says": "Course site for Economics, Finance and Data Science (a.y. 2026-27).",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://www.efds.unito.it/do/home.pl/View?doc=admission_requirements.html",
+            "says": "Admission requirements 2026/27: SAT Suite, 250 places incl. 50 for non-EU residing abroad (cat. 989); pre-enrolment windows June and July-Sept 2026.",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      }
+    },
+    "notes": "2027/28 not published; all pages are 2026/27 (Universitaly general deadline 15 July 2026; SAT-course pre-enrolment windows closed 14 Sep 2026). Both Torino programmes require the College Board SAT. Fees: for residents abroad the fee is a fixed COU by the PPP GDP per capita of the country of residence; amounts differ between the university page (500/600/700/800/1,000/1,500 EUR) and the 2025/26 international page (300-1,000); the 2026/27 page above is the newer. Morocco row exists in Allegato A but column alignment is broken in the text layer, so its band cannot be read reliably (page-level rule suggests the lowest band, 500 EUR, if PPP GDP is under 26,000); audit must read the PDF visually. Particularly-poor-country exemption (DM 176/2026): Morocco not listed in the decree text. English requirement for the English-taught courses not stated on the course admission pages. The en.unito.it 'application-non-eu-citizens-residing-abroad' and 'required-documents-non-european-students-residing' URLs returned 404 and are dropped (older pages)."
+  }
+}

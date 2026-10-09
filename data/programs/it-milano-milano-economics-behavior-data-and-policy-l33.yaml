@@ -26,8 +26,12 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 20000
+    maxAmountMinor: 25600
+    currency: EUR
+    period: year
+  source: page-2
   info_kind: official
 intakes:
   value:
@@ -72,4 +76,7 @@ sources:
     last_verified_at: 2026-10-05
   page-1:
     url: https://www.unimi.it/it/internazionale/venire-studiare-dallestero/iscriversi-un-corso/iscrizioni-internazionali-corsi-di-laurea
+    last_verified_at: 2026-10-08
+  page-2:
+    url: https://www.unimi.it/en/study/bachelor-and-master-study/fees-and-how-pay-them/fees-2026/2027
     last_verified_at: 2026-10-08

@@ -1,0 +1,642 @@
+{
+  "Politecnico di Bari": {
+    "institutionSlugs": ["it-bari-politecnico-bari"],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.poliba.it/sites/default/files/d.r._91-2026_bando_di_concorso_per_lammissione_ai_corsi_di_laurea_triennale_in_ingegneria_aa_2026-27.pdf",
+          "says": "Call (D.R. 91/2026) for first-year engineering bachelors 2026/27; lists LT35 Management Engineering for Innovation (English, 50 places), sessions, reserved quota for non-EU residing abroad.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.poliba.it/en/procedure-non-eu-students",
+          "says": "Procedure for non-EU students needing a study visa: Universitaly pre-enrolment plus Poliba admission procedure; general visa deadline 30 Nov 2026.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.poliba.it/en/ammissioni",
+          "says": "Admissions A.Y. 2026/27 index; mentions reserved quota for non-EU applicants residing abroad and Italian test dates for Italian-taught courses.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://web.poliba.it/it/didattica/test-ammissione-ingegneria-al-1%C2%B0-anno-aa-20262027",
+          "says": "Engineering first-year admission test A.A. 2026/27: TOLC-I session dates, Esse3 registration windows, immatriculation windows, list of courses and places.",
+          "year": "2026/27"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://web.poliba.it/sites/default/files/didattica/regolamento_contribuzione_studentesca_politecnico_di_bari_25_26.pdf",
+          "says": "Tuition regulation 2025/26 (newest published): section f) non-EU students; students with income abroad documented by consular declarations; low-HDI country category. 2026/27 version not yet linked.",
+          "year": "2025/26"
+        },
+        {
+          "url": "https://web.poliba.it/it/didattica/tasse",
+          "says": "Poliba tuition page listing the tuition regulations by year (newest 2025/26 at time of check).",
+          "year": "2025/26"
+        }
+      ],
+      "countryList": [],
+      "documents": [
+        {
+          "url": "https://www.poliba.it/en/general-overview",
+          "says": "General overview 2026/27: documents tables for non-EU applicants (passport, diploma, declaration of value/CIMEA, legalized translations in English for English-taught courses).",
+          "year": "2026/27"
+        }
+      ],
+      "language": [
+        {
+          "url": "https://orientami.poliba.it/wp-content/uploads/2026/02/CEnT_Guide.pdf",
+          "says": "CISIA English Test (CEnT) guide for Management Engineering for Innovation; CEnT accepted for admission.",
+          "year": "2026/27"
+        }
+      ]
+    },
+    "programmes": {
+      "it-bari-politecnico-bari-management-engineering-for-innovation-l9": {
+        "programme": [
+          {
+            "url": "https://orientami.poliba.it/bachelor-degree-in-management-engineering-for-innovation-polytechnic-university-of-bari/",
+            "says": "Programme page (Management Engineering for Innovation), taught in English; admission via CEnT or TOLC-I.",
+            "year": null
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://orientami.poliba.it/tolc-i-test-ammissione/",
+            "says": "TOLC-I engineering admission test page linked from the programme page (CEnT alternative for this course).",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      }
+    },
+    "notes": "2027/28 not published yet; all pages are 2026/27 (fee regulation 2025/26). For Moroccan applicant living abroad: Universitaly pre-enrolment mandatory for visa plus Esse3 admission; tuition regulation section f) treats non-resident foreigners with income abroad by consular income declarations (local currency); a separate reduced category exists for low human-development countries (DM 166/2025 list, not fetched; Morocco membership unverified). Fee amounts for foreign-income students are in appendix tables of the regulation PDF (not read). Quota for non-EU abroad in LT35 per web search: 3 seats in first standard session (table not directly verified)."
+  },
+  "Università Cattolica del \"Sacro Cuore\"": {
+    "institutionSlugs": ["it-milano-cattolica-brescia", "it-milano-cattolica-milano"],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://international.unicatt.it/ucscinternational-undergraduate-programmes-cattolica-admission-test-for-international-applicants",
+          "says": "Cattolica Admission Test guide for international applicants, Economics and Management: application rounds, test dates, EUR 60 fee.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://international.unicatt.it/ucscinternational-admission-and-tuition-application-timeline-9269",
+          "says": "Application timeline with non-EU rounds (Feb-May 2025 dates visible); year not stated, older.",
+          "year": "2025/26"
+        },
+        {
+          "url": "https://international.unicatt.it/ucscinternational-Brochure%20Undergraduate_WEB.pdf",
+          "says": "Undergraduate brochure AY 2026/27: English-taught degrees, application rounds, tuition 8,800 non-EU residents, scholarship.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://international.unicatt.it/ucscinternational-9848.htm",
+          "says": "Before your arrival: non-EU steps (admission letter, Universitaly pre-enrolment, visa); page dated to Summer Programme 2026.",
+          "year": null
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://international.unicatt.it/ucscinternational-admission-and-tuition-tuition-fees-and-scholarships-4480",
+          "says": "Tuition 2026/27 by country of family income: non-EU flat EUR 8,800, International Scholarship reduces to about 5,900; not citizenship-based.",
+          "year": "2026/27"
+        }
+      ],
+      "countryList": [],
+      "documents": [
+        {
+          "url": "https://international.unicatt.it/ucscinternational-admission-and-tuition-application-procedure-9270",
+          "says": "Application procedure and document list for international applicants (passport, diploma, transcripts, etc.); text shows 2025 deadlines.",
+          "year": "2025/26"
+        },
+        {
+          "url": "https://international.unicatt.it/ucscinternational-post-admission-ug---documents-for-enrollment",
+          "says": "Documents for enrolment incl. diploma with declaration of value for non-EU; dates in text are from 2019, outdated.",
+          "year": null
+        }
+      ],
+      "language": [
+        {
+          "url": "https://international.unicatt.it/ucscinternational-admission-and-tuition-entry-requirements",
+          "says": "Entry requirements: 12 years of education, English certificate required at application, maths-oriented admission review.",
+          "year": "2026/27"
+        }
+      ]
+    },
+    "programmes": {
+      "it-milano-cattolica-brescia-business-and-finance-l18": {
+        "programme": [
+          {
+            "url": "https://international.unicatt.it/ucscinternational-undergraduate-programs-business-and-finance",
+            "says": "Business and Finance, English-taught, Brescia campus; AY 2026/27 applications closed, next period opens Fall 2026 for 2027/28.",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://international.unicatt.it/ucscinternational-business-and-finance-admission-and-tuition",
+            "says": "Programme admission and tuition tab: international vs domestic procedure; closed for 2026/27.",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      },
+      "it-milano-cattolica-milano-economics-and-management-l18": {
+        "programme": [
+          {
+            "url": "https://international.unicatt.it/ucscinternational-undergraduate-programs-economics-and-management",
+            "says": "Economics and Management, English-taught, Milan campus; 2026/27 closed, next period Fall 2026 for 2027/28.",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://international.unicatt.it/ucscinternational-economics-and-management-admission-and-tuition",
+            "says": "Programme admission and tuition tab; closed for 2026/27.",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      }
+    },
+    "notes": "2027/28 applications open Fall 2026 (not yet published; test page covers 2026/27: sessions Nov 2025-Apr 2026, so 2027/28 likely Nov 2026 onward). Tuition depends on where family income is produced (non-EU income EUR 8,800 flat; scholarship about 5,900), not nationality and no country groups, so no Morocco list. Several procedure/timeline/documents pages show 2025 or even 2019 dates; use the brochure and tuition page for 2026/27. Non-EU abroad must also do Universitaly pre-enrolment after admission. Brochure PDF text was read locally via extraction to confirm 8,800 / 5,900."
+  },
+  "Università degli studi di Bologna": {
+    "institutionSlugs": [
+      "it-bologna-bologna",
+      "it-bologna-forli",
+      "it-bologna-ravenna",
+      "it-bologna-rimini"
+    ],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/enrolling-in-first-cycle-and-single-cycle-degree-programmes/enrolling-in-a-first-cycle-or-single-cycle-degree-programme-if-you-come-from-a-non-eu-country",
+          "says": "Non-EU enrolment procedure for first-cycle degrees: Universitaly pre-enrolment, unconditional validation, reserved contingent for non-EU residing abroad, documents.",
+          "year": "2026/27"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions",
+          "says": "Fees and exemptions 2026/27: partial exemption/flat fee for poor or non-OECD country citizens with family income only abroad; EUR 157.04 first instalment always due.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions/reduced-fixed-fee-for-citizens-of-particularly-poor-and-developing-countries-or-non-eu-non-oecd-countries",
+          "says": "Reduced flat fee amounts: non-OECD first cycle EUR 1,000/1,200 plus 157.04; poor/developing EUR 500/600 plus 157.04; conditions and country list links.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions/ISEE-and-other-documentation-for-tuition-fee-exemptions",
+          "says": "Foreign-income documentation route (alternative to ISEE) with ER.GO deadlines 30 Oct 2026 / 16 Nov 2026 and document requirements.",
+          "year": "2026/27"
+        }
+      ],
+      "countryList": [
+        {
+          "url": "https://www.unibo.it/en/attachments/nonOECDcountries.pdf/@@download/file/non-OECD-countries.pdf",
+          "says": "List 'Elenco Paesi NON OCSE' (2026): Marocco is listed (verified by text extraction).",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unibo.it/en/attachments/particularlypoorordevelopingcountries.pdf/@@download/file/Elenco Paesi Particolarmente Poveri 2026.pdf",
+          "says": "List of particularly poor countries (DM 176/2026): Morocco not found in the extracted text.",
+          "year": "2026/27"
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/enrolling-in-first-cycle-and-single-cycle-degree-programmes/enrolling-in-a-first-cycle-or-single-cycle-degree-programme-if-you-come-from-a-non-eu-country",
+          "says": "Same page: translation, legalisation, declaration of value of qualification, upload via Studenti Online.",
+          "year": "2026/27"
+        }
+      ],
+      "language": []
+    },
+    "programmes": {
+      "it-bologna-bologna-business-and-economics-l18": {
+        "programme": [
+          {
+            "url": "https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/8965",
+            "says": "Bachelor in Business and Economics, delivered entirely in English, restricted access (entrance exam); page is A.Y. 2024/25.",
+            "year": "2024/25"
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://corsi.unibo.it/1cycle/CLaBE/how-to-enrol",
+            "says": "2026/27 call: SAT General, windows 10 Feb-4 May, 5 May-3 Jul, 3-11 Sep 2026; 190 places, 32 reserved for non-EU abroad.",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      },
+      "it-bologna-bologna-economics-and-finance-l33": {
+        "programme": [
+          {
+            "url": "https://corsi.unibo.it/1cycle/EconomicsFinance/preparing-the-study-plan",
+            "says": "Bachelor in Economics and Finance (CLEF), taught in English.",
+            "year": null
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://corsi.unibo.it/1cycle/EconomicsFinance/how-to-enrol",
+            "says": "2026/27 call: SAT General, same windows; 130 places, 40 reserved for non-EU abroad in first intake.",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      },
+      "it-bologna-bologna-economics-politics-and-social-sciences-l33": {
+        "programme": [
+          {
+            "url": "https://corsi.unibo.it/1cycle/EconomicsPoliticsSocialSciences/preparing-the-study-plan",
+            "says": "Bachelor in Economics, Politics and Social Sciences (EPOS); teaching language not stated on the page, electives must be in English.",
+            "year": null
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://corsi.unibo.it/1cycle/EconomicsPoliticsSocialSciences/how-to-enrol",
+            "says": "2026/27 call: SAT General, minimum 1100; 125 places, 35 reserved for non-EU abroad.",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      },
+      "it-bologna-forli-management-and-economics-l18": {
+        "programme": [
+          {
+            "url": "https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/5892",
+            "says": "Bachelor in Management and Economics (Forli), English, restricted access; page A.Y. 2024/25.",
+            "year": "2024/25"
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://corsi.unibo.it/1cycle/Management/how-to-enrol",
+            "says": "2026/27: SAT, same windows; 75 positions, 20 for non-EU abroad in first intake only.",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      },
+      "it-bologna-ravenna-building-construction-engineering-l23": {
+        "programme": [
+          {
+            "url": "https://www.unibo.it/en/study/first-and-single-cycle-degree/programme/2024/5897",
+            "says": "Bachelor in Building Construction Engineering (Ravenna), delivered entirely in English; page A.Y. 2024/25 says open access TOLC-I EN.",
+            "year": "2024/25"
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://corsi.unibo.it/1cycle/Building/how-to-enrol",
+            "says": "2026/27 call: CEnT-S test replaces TOLC-I; 150 places non-EU abroad first selection, 40 second; ISEE deadline 30 Oct 2026.",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      },
+      "it-bologna-rimini-economics-of-tourism-and-cities-l33": {
+        "programme": [
+          {
+            "url": "https://corsi.unibo.it/1cycle/clet/programme",
+            "says": "Bachelor in Economics of Tourism and Cities (Rimini); language of teaching not stated on page.",
+            "year": null
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://corsi.unibo.it/1cycle/clet/how-to-enrol",
+            "says": "2026/27 call: SAT, score sent with code 6993; 120 places, 50 reserved for non-EU abroad, non-EU must apply in first intake (enrol by 26 May 2026).",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      }
+    },
+    "notes": "2027/28 calls not published yet; all 2026/27. Morocco is on the non-OECD list (flat fee EUR 1,000 first cycle with minimum credits, 1,200 otherwise, plus 157.04) but NOT on the particularly-poor list; applies only if family income and assets are only outside Italy, declaration only, no certificates. Programme pages at unibo.it/en/study/.../programme/2024/... are A.Y. 2024/25 (stale); 2026/27 info sits on corsi.unibo.it how-to-enrol pages. Pre-enrolment Universitaly: documents by 21 July 2026 then first instalment from 22 July 2026. Bologna call PDFs for first cycle (full dates) not located; windows come from programme pages marked 'Expired'."
+  },
+  "Università degli studi di Brescia": {
+    "institutionSlugs": ["it-brescia-brescia"],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.unibs.it/en/international/degree-seeking-students/admission/non-eu-candidates-living-abroad",
+          "says": "Steps and timeline for non-EU candidates living abroad: Universitaly study-visa request by 31 Aug 2026, online enrolment and first instalment Jul-Sep 2026; page updated 14/08/2026.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unibs.it/en/international/degree-seeking-students/admission/non-eu-candidates-living-abroad/non-eu-candidates-living-abroad-undegraduate-degrees-and-integrated-masters-degrees",
+          "says": "Undergraduate non-EU abroad: 12-year diploma, admission test mandatory, reserved places only if offered, Italian B2 for Italian-taught courses.",
+          "year": null
+        },
+        {
+          "url": "https://www.unibs.it/en/calls-admissions-undergraduate-and-graduate-degree-programmes",
+          "says": "Calls for admission 2026/27 index; no L-18 Business and Economics call or non-EU quota found on the page.",
+          "year": "2026/27"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.unibs.it/en/international/degree-seeking-students/tuition-fees",
+          "says": "Tuition for international students: non-EU with study visa placed in contribution bands by country of origin; lower-middle-income countries; ISEE parificato reduction; links to the PDFs below.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unibs.it/sites/default/files/2026-08/Tabella%20tasse%20Degree%20seeking%20ENG.pdf",
+          "says": "Table: non-EU students from lower-middle-income countries pay maximum EUR 1,000 incl. regional tax and stamp duty; other countries maximum equal to Italians.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unibs.it/en/fees-and-contributions-2026-2027",
+          "says": "General fees and contributions 2026/27: regional fee bands, EUR 160 for middle-income countries, 130 low-income, first instalment 146.",
+          "year": "2026/27"
+        }
+      ],
+      "countryList": [
+        {
+          "url": "https://www.unibs.it/sites/default/files/2026-05/Lower%20middle%20income%20aprile%202026.pdf",
+          "says": "World Bank lower-middle-income country list (April 2026) referenced by the fee table; PDF has no extractable country text (only a World Bank link), so Morocco not confirmed in the file.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unibs.it/sites/default/files/2026-05/Decreto%20Ministeriale%20n.%20176%20del%2024-2-2026.pdf",
+          "says": "DM 176 of 24/02/2026 on particularly poor countries (not read).",
+          "year": "2026/27"
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://www.unibs.it/en/international/degree-seeking-students/admission/non-eu-candidates-living-abroad/non-eu-candidates-living-abroad-undegraduate-degrees-and-integrated-masters-degrees",
+          "says": "Documents at enrolment: legalised diploma and transcript, declaration of value or CIMEA statements, study visa; translations in Italian or English.",
+          "year": null
+        }
+      ],
+      "language": []
+    },
+    "programmes": {
+      "it-brescia-brescia-business-and-economics-l18": {
+        "programme": [
+          {
+            "url": "https://corsi.unibs.it/it/business-economics",
+            "says": "Programme page: Bachelor in Business and Economics (L-18), language English, Brescia, cohort 26-27; B2 English required, CEnT-S maths test non-selective.",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://www.unibs.it/en/education/enrolling/matriculating/bachelors-degree-courses/business-and-economics",
+            "says": "Programme enrolment page: CEnT-S/English TOLC-E, enrolment open 13 July to 17 December 2026, foreign diploma holders book International Students Office appointment.",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      }
+    },
+    "notes": "The held officialUrl is a good admissions page too: enrolment 13 Jul-17 Dec 2026; 2027/28 not published yet. Business and Economics is test-based but non-selective (OFA if low maths score); no separate non-EU quota found. Non-EU abroad: Universitaly study-visa request by 31 Aug 2026 plus online enrolment. Fee rule: non-EU with a study visa pay a country-based maximum; lower-middle-income countries (World Bank list) EUR 1,000 maximum including regional tax and stamp duty, reducible via ISEE parificato; Morocco is World Bank lower-middle-income but the list PDF has no extractable text, so unverified in the file. The 2026/27 fee regulation DR 284/2026 exists at https://www.unibs.it/sites/default/files/2026-03/DR%20284-2026.pdf (from search, not opened)."
+  },
+  "Università degli studi di Milano-Bicocca": {
+    "institutionSlugs": ["it-milano-bicocca-milano"],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://apply.unimib.it/en_GB/news/new/39-apply-202627-admission-calls-and-deadlines",
+          "says": "Admission calls and deadlines 2026/27: rounds for non-EU abroad, Universitaly and diploma by 31 Jul 2026, arrival by 31 Jan 2027.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unimib.it/sites/default/files/2026-04/Bando%20LT%20Ecostat%20-%20VISA%20SEEKER%20_DEF_EN_comm.docx%20%282%29.pdf",
+          "says": "Call for Economics and Statistics bachelors for non-EU residing abroad (visa seekers): 18 Feb-31 Mar 2026, TOLC/CEnT-S, 20 places reserved for ESES.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unimib.it/node/25410",
+          "says": "Call page for Economics and Statistics bachelors 2026/27 (limited access) with links to the call PDFs.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://en.unimib.it/study/information-international-students/pre-enrolment-language-proficiency-and-enrolment",
+          "says": "Non-EU abroad steps: DreamApply, Universitaly pre-enrolment, language proof, visa; cites ministerial circular 2025/26.",
+          "year": "2025/26"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://apply.unimib.it/en_GB/contents/content/10-fees-and-funding",
+          "says": "Fees 2026/27: EUR 150 deposit, EUR 146 first instalment, fixed tuition by country group and course area.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://en.unimib.it/sites/sten/files/2026-06/Contribution%20Guide%2026_27.pdf",
+          "says": "Contribution Guide 2026/27: fixed tuition table by country group (1-3) and course area (A/B), Appendix 1 course areas, Appendix 4 countries by group.",
+          "year": "2026/27"
+        }
+      ],
+      "countryList": [
+        {
+          "url": "https://en.unimib.it/sites/sten/files/2026-06/Contribution%20Guide%2026_27.pdf",
+          "says": "Appendix 4 lists Morocco in Group 1 (verified in text); Economics and science for environmental sustainability is in Area A.",
+          "year": "2026/27"
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://apply.unimib.it/en_GB/news/new/13-bachelor-degree--required-documents",
+          "says": "Required documents for bachelor applicants and for enrolment (diploma with legalization, translation, Universitaly receipt, B2 Italian for visa); year not stated.",
+          "year": null
+        }
+      ],
+      "language": [
+        {
+          "url": "https://www.unimib.it/sites/default/files/2026-03/Certificazioni_INGLESE_nov2025_UNIMIB_0.pdf",
+          "says": "Accepted English language certifications list (B2 required for English-taught courses).",
+          "year": "2026/27"
+        }
+      ]
+    },
+    "programmes": {
+      "it-milano-bicocca-milano-economics-and-science-for-environmental-l33": {
+        "programme": [
+          {
+            "url": "https://en.unimib.it/undergraduate/economics-science-environmental-sustainability",
+            "says": "Programme page ESES (L-33), English, limited access via English TOLC-E / CEnT-S.",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://www.unimib.it/sites/default/files/2026-04/Bando%20LT%20Ecostat%20-%20VISA%20SEEKER%20_DEF_EN_comm.docx%20%282%29.pdf",
+            "says": "Visa-seeker call: ESES 20 reserved places, deadline 31 Mar 2026, test by 27 Mar 2026, B2 English.",
+            "year": "2026/27"
+          }
+        ],
+        "other": [
+          {
+            "url": "https://en.unimib.it/study/information-international-students/bicocca-international-scholarship",
+            "says": "Bicocca International Scholarship EUR 10,000 per year plus fee exemption for the top student of English-taught programmes (from search, not fetched; older dates).",
+            "year": null
+          }
+        ]
+      }
+    },
+    "notes": "Call PDF and Contribution Guide were read via local text extraction: ESES visa-seeker call is 18 Feb-31 Mar 2026 (20 reserved places); 2027/28 calls not published yet. Morocco is in country Group 1 (lowest group); ESES is Area A; Group 1/Area A fixed fee is split 2nd instalment 200 EUR plus regional-tax balance and a 3rd instalment (amount not captured), plus EUR 150 deposit and EUR 146 first instalment. The apply.unimib.it news page lists general rounds, not ESES specifically. The pre-enrolment page cites a 2025/26 circular but shows 2026 dates."
+  },
+  "Università degli studi di Roma Tor Vergata": {
+    "institutionSlugs": ["it-roma-tor-vergata-roma"],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://web.uniroma2.it/en/percorso/admissions",
+          "says": "Admissions page: non-EU applicants not resident in Italy must pre-enrol on Universitaly (deadline 31 July, before the test for entrance-exam courses); documents to upload.",
+          "year": null
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www-2023.studenti.uniroma2.it/wp-content/uploads/2026/07/Guida-dello-Studente-2026_2027v5.pdf",
+          "says": "Student Guide 2026/27 chapter 7: students with income abroad pay a fixed annual contribution; EUR 2,500 for listed English-taught courses incl. B.Sc. Business Administration and Economics, otherwise 500 (DM 176/2026 developing countries) or 1,000.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www-2023.studenti.uniroma2.it/en/simulatore-calcolo-tasse-e-contributi/",
+          "says": "University fee simulator (from search, not opened).",
+          "year": null
+        }
+      ],
+      "countryList": [
+        {
+          "url": "https://www-2023.studenti.uniroma2.it/wp-content/uploads/2026/07/Guida-dello-Studente-2026_2027v5.pdf",
+          "says": "Footnote 14 of chapter 7 lists the DM 176/2026 developing countries; Morocco is not in that list (verified in text).",
+          "year": "2026/27"
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://web.uniroma2.it/en/percorso/admissions",
+          "says": "Universitaly upload list: passport, photo, diploma, CIMEA verification and comparability statements, or ARDI statement.",
+          "year": null
+        },
+        {
+          "url": "https://www-2023.studenti.uniroma2.it/en/preiscrizione-e-visto-dingresso/",
+          "says": "Pre-enrolment and entry visa page (from search, not fetched).",
+          "year": null
+        }
+      ],
+      "language": []
+    },
+    "programmes": {
+      "it-roma-tor-vergata-roma-business-administration-economics-l18": {
+        "programme": [
+          {
+            "url": "https://economia.uniroma2.it/ba/business-administration-economics/",
+            "says": "Programme page: B.Sc. Business Administration and Economics, English-taught, 200 places, call 2026/27.",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://economia.uniroma2.it/public/ba/files/BANDO_BAE_2026-27/ENG_Call_for_Applications_Bando_CdL_BUSINESS_ADMINISTRATION_AND_ECONOMICS___a.a.2026-2027_PUBBLICATO.pdf",
+            "says": "English call 2026/27: 200 places, 10 reserved for non-EU abroad (first round only), CEnT-S, rounds, Art. 13 foreign qualifications.",
+            "year": "2026/27"
+          },
+          {
+            "url": "https://economia.uniroma2.it/ba/business-administration-economics/call-for-application/",
+            "says": "Call page with third round notices; third round only for EU and non-EU residents in Italy.",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      },
+      "it-roma-tor-vergata-roma-engineering-sciences-l9": {
+        "programme": [
+          {
+            "url": "https://web.uniroma2.it/contenuto/engineering-sciences-aa-2026-2027",
+            "says": "Programme page Engineering Sciences (L-9), English, open access with mandatory knowledge test.",
+            "year": "2026/27"
+          }
+        ],
+        "admissions": [
+          {
+            "url": "https://web.uniroma2.it/allegato/58795/contenuto/engineering-sciences-aa-2026-2027",
+            "says": "Avviso immatricolazioni 2026/27 (Italian PDF): visa seekers register 7 Apr-1 Jul 2026, test by 15 Jul, pre-enrolment by 14 Jul 2026, Art. 10 foreign qualifications.",
+            "year": "2026/27"
+          }
+        ],
+        "other": []
+      }
+    },
+    "notes": "2027/28 calls not published yet. PDFs were read via local text extraction. Fee rule for non-EU with income abroad (Guide 2026/27, ch. 7, section C): BAE pays EUR 2,500 per year fixed regardless of country (plus regional tax and stamp); Engineering Sciences falls under 'all other courses': EUR 500 if from DM 176/2026 developing countries (Morocco not on that list), else EUR 1,000. Engineering Sciences is open access; no reserved quota found in the avviso. BAE non-EU abroad may apply only in the FIRST selection round (CEnT-S by 19 Mar 2026; DELPHI 10 Jan-19 Mar 2026). Pre-enrolment fee EUR 156 (Engineering avviso)."
+  },
+  "Università degli studi di Teramo": {
+    "institutionSlugs": ["it-teramo-teramo"],
+    "universityPages": {
+      "admissions": [
+        {
+          "url": "https://www.unite.it/English/Studying_at_UniTe/How_to_apply",
+          "says": "How to apply for non-EU applicants abroad: application form, Welcome Service check, Universitaly pre-enrolment (to 30 Nov 2026), enrolment 1 Jul-5 Nov 2026.",
+          "year": "2026/27"
+        },
+        {
+          "url": "https://www.unite.it/English/Engine/RAServeFile.php/f/news/GUIDELINES_International_students_UNITE_AY_2025-2026.pdf",
+          "says": "Guidelines for international students enrolment A.Y. 2025-26 (PDF, text not read).",
+          "year": "2025/26"
+        }
+      ],
+      "fees": [
+        {
+          "url": "https://www.unite.it/English/Studying_at_UniTe/Tuition_fees",
+          "says": "Fixed fee for students with income abroad by World Bank group: A EUR 50, B EUR 300, C EUR 600 plus EUR 140 regional tax and EUR 16 stamp; Morocco in group B.",
+          "year": null
+        }
+      ],
+      "countryList": [
+        {
+          "url": "https://www.unite.it/English/Studying_at_UniTe/Tuition_fees",
+          "says": "Same page lists countries per group A/B/C; Morocco named in Group B (middle-income).",
+          "year": null
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://www.unite.it/English/Studying_at_UniTe/How_to_apply",
+          "says": "Mandatory documents: passport, diploma, transcript, English or MOI certificate; legalised/translated records.",
+          "year": "2026/27"
+        }
+      ],
+      "language": [
+        {
+          "url": "https://www.unite.it/English/Studying_at_UniTe/How_to_apply",
+          "says": "English B2 required by enrolment, accepted certificates list, MOI exemption.",
+          "year": "2026/27"
+        }
+      ]
+    },
+    "programmes": {
+      "it-teramo-teramo-business-management-l18": {
+        "programme": [
+          {
+            "url": "https://www.unite.it/English/Programme_catalogue_university_Teramo/Business_Management_Taught_EN",
+            "says": "Business Management taught in English, L-18, open access, 3 years 180 CFU.",
+            "year": "2025/26"
+          }
+        ],
+        "admissions": [],
+        "other": [
+          {
+            "url": "https://www.unite.it/English/Studying_at_UniTe/Entry_Visa_and_Arrival_in_Italy",
+            "says": "Entry visa and arrival information linked from the programme page (not fetched).",
+            "year": null
+          }
+        ]
+      }
+    },
+    "notes": "Open-access programme, so no admission test dates or quota. The programme catalogue page is 2025/26 but the How-to-apply deadlines (Universitaly April-30 Nov 2026, enrolment 1 Jul-5 Nov 2026) are 2026/27; 2027/28 not published. Tuition page prints no academic year but cites DM 176 of 24/02/2026, so it is the current rule. Morocco is Group B (EUR 300 in 4 x 75). Further fee info at https://www.unite.it/UniTE/Tasse (not fetched)."
+  }
+}

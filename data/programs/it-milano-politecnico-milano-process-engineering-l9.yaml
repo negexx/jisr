@@ -34,8 +34,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: it-universitaly
+  source: page-1
   info_kind: official
 documents:
   value: null
@@ -75,4 +75,7 @@ sources:
     last_verified_at: 2026-10-08
   page-2:
     url: https://www.polimi.it/futuri-studenti/test-e-ammissione/laurea/ingegneria/quando-immatricolarsi
+    last_verified_at: 2026-10-08
+  page-1:
+    url: https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/how-to-apply-for-a-student-visa
     last_verified_at: 2026-10-08

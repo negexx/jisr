@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 1770000
+    currency: EUR
+    period: year
+  source: page-1
   info_kind: official
 intakes:
   value: null
@@ -38,8 +41,44 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: id-or-passport
+      name:
+        fr:
+          text: Carte d'identité ou passeport
+          status: draft
+        en:
+          text: ID or passport
+          status: draft
+      translationRequired: null
+    - slug: third-last-and-second-last-year-transcripts
+      name:
+        fr:
+          text: Relevés de notes de l'avant-dernière et de l'antépénultième année
+          status: draft
+        en:
+          text: 3rd-last and 2nd-last year transcripts
+          status: draft
+      translationRequired: null
+    - slug: test-score-report
+      name:
+        fr:
+          text: Rapport de score du test
+          status: draft
+        en:
+          text: Test score report
+          status: draft
+      translationRequired: null
+    - slug: secondary-school-diploma
+      name:
+        fr:
+          text: Diplôme d'études secondaires
+          status: draft
+        en:
+          text: Secondary school diploma
+          status: draft
+      translationRequired: null
+  source: page-3
   info_kind: official
 requirements:
   coverage: partial
@@ -54,3 +93,9 @@ sources:
   page-2:
     url: https://apply.unibocconi.it/en_US/courses/course/18-bemacs-bsc-economics-management-and-computer-science
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/fees
+    last_verified_at: 2026-10-08
+  page-3:
+    url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admissions
+    last_verified_at: 2026-10-08

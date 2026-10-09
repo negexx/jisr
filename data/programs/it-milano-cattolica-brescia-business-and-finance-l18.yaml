@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 880000
+    currency: EUR
+    period: year
+  source: page-1
   info_kind: official
 intakes:
   value: null
@@ -76,3 +79,6 @@ sources:
   page-2:
     url: https://international.unicatt.it/ucscinternational-admission-and-tuition-application-timeline-5420
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://international.unicatt.it/ucscinternational-Brochure%20Undergraduate_WEB.pdf
+    last_verified_at: 2026-10-08

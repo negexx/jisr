@@ -17,7 +17,7 @@ summary:
     status: draft
 officialUrl: https://corsidilaurea.uniroma1.it/en/course/33482
 durationYears:
-  value: null
+  value: 3
   source: programme
   info_kind: official
 teachingLanguages:
@@ -26,12 +26,18 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 30000
+    currency: EUR
+    period: year
+  source: page-4
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-06-30
+  source: page-1
   info_kind: official
 applicationChannel:
   value: it-universitaly
@@ -90,3 +96,9 @@ sources:
   page-3:
     url: https://www.uniroma1.it/it/pagina/international-admissions-2026-2027
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://corsidilaurea.uniroma1.it/sites/default/files/offertaformativa/documenti_ufficiali/187/33482_e_0.pdf
+    last_verified_at: 2026-10-08
+  page-4:
+    url: https://www.uniroma1.it/it/content/importi-ordinari-dei-contributi-di-iscrizione
+    last_verified_at: 2026-10-08

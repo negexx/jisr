@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 58000
+    currency: EUR
+    period: year
+  source: page-1
   info_kind: official
 intakes:
   value: null
@@ -81,3 +84,6 @@ sources:
   programme:
     url: https://www.unipi.it/en/education/courses/bachelor-and-single-cycle-master-degree/management-for-business-and-economics-mber-l-en/
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unipi.it/en/education/registration/fees/tuition-fees-for-degree-courses/
+    last_verified_at: 2026-10-08

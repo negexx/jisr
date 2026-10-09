@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 50000
+    currency: EUR
+    period: year
+  source: page-3
   info_kind: official
 intakes:
   value: null
@@ -87,4 +90,7 @@ sources:
     last_verified_at: 2026-10-05
   page-1:
     url: https://www.unito.it/internazionalita/arrivare-unito-dallestero/ammissione-studenti-internazionali/documentazione
+    last_verified_at: 2026-10-08
+  page-3:
+    url: https://www.unito.it/didattica/tasse/contribuzione-studenti-internazionali
     last_verified_at: 2026-10-08

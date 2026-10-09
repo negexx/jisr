@@ -26,16 +26,22 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 100000
+    currency: EUR
+    period: year
+  source: page-3
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: 2026-02-10
+      applicationDeadline: 2026-05-04
+  source: page-1
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: it-universitaly
+  source: page-1
   info_kind: official
 documents:
   value: null
@@ -59,3 +65,9 @@ sources:
   page-2:
     url: https://www.unibo.it/it/studiare/iscrizioni-tasse-e-altre-procedure/lauree-e-lauree-magistrali/iscriversi-corso-laurea-o-laurea-magistrale-a-ciclo-unico-con-titolo-estero
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://corsi.unibo.it/1cycle/EconomicsFinance/how-to-enrol
+    last_verified_at: 2026-10-08
+  page-3:
+    url: https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions/reduced-fixed-fee-for-citizens-of-particularly-poor-and-developing-countries-or-non-eu-non-oecd-countries
+    last_verified_at: 2026-10-08

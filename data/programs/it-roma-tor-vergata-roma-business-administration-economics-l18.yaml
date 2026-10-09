@@ -26,12 +26,18 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 250000
+    currency: EUR
+    period: year
+  source: page-5
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: 2026-01-10
+      applicationDeadline: 2026-03-19
+  source: page-1
   info_kind: official
 applicationChannel:
   value: it-universitaly
@@ -114,3 +120,9 @@ sources:
   page-4:
     url: https://web.uniroma2.it/en/contenuto/business_administration___economics-29905
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://economia.uniroma2.it/public/ba/files/BANDO_BAE_2026-27/ENG_Call_for_Applications_Bando_CdL_BUSINESS_ADMINISTRATION_AND_ECONOMICS___a.a.2026-2027_PUBBLICATO.pdf
+    last_verified_at: 2026-10-08
+  page-5:
+    url: https://www-2023.studenti.uniroma2.it/wp-content/uploads/2026/07/Guida-dello-Studente-2026_2027v5.pdf
+    last_verified_at: 2026-10-08

@@ -307,6 +307,36 @@ describe("sampleSheet", () => {
     expect(sheet).toContain("tuition is last year's tariff");
     expect(sheet).toContain("intakes: the quote does not state the year 2027");
     expect(sheet).not.toContain("**tuition**");
+    expect(sheet).not.toContain("could not be found on the page");
+  });
+
+  it("warns when an accepted fact lost an evidence quote that was not on the page", () => {
+    const row = {
+      key: "programs/p",
+      batch: "b1",
+      inSample: true,
+      audited: "",
+      outcome: "",
+      notes: "",
+    };
+    const sheet = sampleSheet([
+      {
+        key: "programs/p",
+        row,
+        record: {
+          name: "Applied CS",
+          _review: {
+            droppedQuotes: [
+              'tuition: "Gruppo A: MAROCCO" (https://u.example/list)',
+              'tuition: "other" (https://u.example/o)',
+            ],
+          },
+        },
+      },
+    ]);
+    expect(sheet).toContain(
+      '> Evidence quotes that could not be found on the page: tuition: "Gruppo A: MAROCCO" (https://u.example/list); tuition: "other" (https://u.example/o)',
+    );
   });
 });
 

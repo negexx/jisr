@@ -26,12 +26,18 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 76100
+    currency: EUR
+    period: year
+  source: page-3
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-06-30
+  source: page-1
   info_kind: official
 applicationChannel:
   value: it-universitaly
@@ -115,3 +121,9 @@ sources:
   page-2:
     url: https://www.polito.it/didattica/iscriversi-studiare-laurearsi/iscrizione/corsi-di-laurea/studenti-con-titolo-estero
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/bachelor-s-degree-programmes/applicants-with-a-non-italian-qualification
+    last_verified_at: 2026-10-08
+  page-3:
+    url: https://www.polito.it/sites/default/files/2026-07/Regolamento%20L%20imma%2025_26%20%2B%20LM_LS.pdf
+    last_verified_at: 2026-10-08

@@ -17,8 +17,8 @@ summary:
     status: draft
 officialUrl: https://www.econ.univpm.it/deb-studyplan
 durationYears:
-  value: null
-  source: programme
+  value: 3
+  source: page-4
   info_kind: official
 teachingLanguages:
   value:
@@ -85,3 +85,6 @@ sources:
   page-1:
     url: https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/c0e63906-7190-4568-892b-0cf399f56071/download/03_offertaformativa-corsidilaurea_2010-2025.csv
     last_verified_at: 2026-10-05
+  page-4:
+    url: https://www.econ.univpm.it/deb-home
+    last_verified_at: 2026-10-08

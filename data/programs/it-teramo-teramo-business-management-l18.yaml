@@ -26,20 +26,60 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 30000
+    maxAmountMinor: 35000
+    currency: EUR
+    period: year
+  source: page-2
   info_kind: official
 intakes:
   value: null
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: it-universitaly
+  source: page-1
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: High school diploma
+          status: draft
+      translationRequired: null
+    - slug: transcript-of-records
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Transcript of records
+          status: draft
+      translationRequired: null
+    - slug: english-certificate
+      name:
+        fr:
+          text: Certificat d'anglais ou certificat MOI
+          status: draft
+        en:
+          text: English certificate or Medium of Instruction (MOI) certificate
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -50,4 +90,10 @@ scholarships: []
 sources:
   programme:
     url: https://www.unite.it/English/Programme_catalogue_university_Teramo/Business_Management_Taught_EN
+    last_verified_at: 2026-10-08
+  page-1:
+    url: https://www.unite.it/English/Studying_at_UniTe/How_to_apply
+    last_verified_at: 2026-10-08
+  page-2:
+    url: https://www.unite.it/UniTE/Engine/RAServeFile.php/f/regolamenti/DR_275_Regolamento_Contribuzione_2026-2027_signed_26062026.pdf
     last_verified_at: 2026-10-08

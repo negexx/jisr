@@ -17,8 +17,8 @@ summary:
     status: draft
 officialUrl: https://www.dicea.unina.it/7587-2/
 durationYears:
-  value: null
-  source: programme
+  value: 3
+  source: page-1
   info_kind: official
 teachingLanguages:
   value:
@@ -184,3 +184,6 @@ sources:
   page-2:
     url: https://www.dicea.unina.it/wp-content/uploads/2024/04/pre-enrollment-procedure.pdf
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.orientamento.unina.it/corsidistudio/civil-and-environmental-engineering/
+    last_verified_at: 2026-10-08

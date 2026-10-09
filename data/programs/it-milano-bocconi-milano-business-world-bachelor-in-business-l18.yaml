@@ -30,16 +30,73 @@ tuition:
   source: programme
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: 2026-08-01
+      applicationDeadline: 2026-11-01
+  source: page-1
   info_kind: official
 applicationChannel:
   value: null
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: secondary-school-transcripts
+      name:
+        fr:
+          text: Relevés de notes de l'enseignement secondaire
+          status: draft
+        en:
+          text: Secondary school transcripts
+          status: draft
+      translationRequired: null
+    - slug: english-language-proficiency-test
+      name:
+        fr:
+          text: Test de compétence en anglais
+          status: draft
+        en:
+          text: English language proficiency test
+          status: draft
+      translationRequired: null
+    - slug: activities-summary
+      name:
+        fr:
+          text: Résumé des activités
+          status: draft
+        en:
+          text: Activities summary
+          status: draft
+      translationRequired: null
+    - slug: personal-essays-and-wbb-writing-supplement
+      name:
+        fr:
+          text: Essais personnels et supplément de candidature WBB
+          status: draft
+        en:
+          text: Personal essays and WBB writing supplement
+          status: draft
+      translationRequired: null
+    - slug: counselor-or-teacher-recommendation-letters
+      name:
+        fr:
+          text: Lettres de recommandation du conseiller ou d'un enseignant
+          status: draft
+        en:
+          text: Counselor or teacher recommendation letters
+          status: draft
+      translationRequired: null
+    - slug: financial-statement
+      name:
+        fr:
+          text: Attestation financière
+          status: draft
+        en:
+          text: Financial statement
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -51,3 +108,6 @@ sources:
   programme:
     url: https://www.unibocconi.it/en/programs/bachelor-science/world-bachelor-business
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admission-world-bachelor-business
+    last_verified_at: 2026-10-08
