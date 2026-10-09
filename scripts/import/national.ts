@@ -6,7 +6,8 @@ import { z } from "zod";
 
 import { pageText } from "./evidence";
 import { type ProgrammeKind, programmeKind, staleProposalFiles } from "./fr-calendar";
-import { type Proposal, ProposalSchema, verifyProposal } from "./proposals";
+import { HttpStatusError } from "./http";
+import { DocumentProposalSchema, type Proposal, ProposalSchema, verifyProposal } from "./proposals";
 import { DATA_DIR, STAGING_DIR } from "./staging";
 
 // A national page (Campus France Maroc, uni-assist, Studielink, Universitaly) states the same fact
@@ -16,9 +17,9 @@ import { DATA_DIR, STAGING_DIR } from "./staging";
 // re-fetches and verifies every quote exactly as for any other fact. No model, no search.
 const Kebab = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const Https = z.string().refine((u) => u.startsWith("https://") && URL.canParse(u), "https url");
-const Evidence = z.object({ url: Https, quote: z.string().min(15) });
+const Evidence = z.strictObject({ url: Https, quote: z.string().min(15) });
 
-export const SelectorSchema = z.object({
+export const SelectorSchema = z.strictObject({
   country: z.enum(["FR", "DE", "NL", "IT", "HU"]),
   institutions: z.array(z.string()).min(1).optional(),
   institutionType: z.enum(["public", "private"]).optional(),
@@ -29,9 +30,9 @@ export const SelectorSchema = z.object({
   channels: z.array(z.string()).min(1).optional(),
 });
 
-const DocumentItem = z.object({
+const DocumentItem = z.strictObject({
   slug: z.string().regex(Kebab),
-  name: z.object({ fr: z.string().min(1), en: z.string().min(1).optional() }),
+  name: z.strictObject({ fr: z.string().min(1), en: z.string().min(1).optional() }),
   quotedAs: z.string().min(2).max(120),
   // never false: a national list cannot say a document needs no translation (data/README.md)
   translationRequired: z.literal(true).nullable(),
@@ -46,10 +47,14 @@ const Base = {
 };
 
 export const EntrySchema = z.discriminatedUnion("fact", [
-  z.object({ ...Base, fact: z.literal("documents"), items: z.array(DocumentItem).min(1) }),
-  z.object({ ...Base, fact: z.literal("applicationChannel"), channel: z.string().regex(Kebab) }),
+  z.strictObject({ ...Base, fact: z.literal("documents"), items: z.array(DocumentItem).min(1) }),
+  z.strictObject({
+    ...Base,
+    fact: z.literal("applicationChannel"),
+    channel: z.string().regex(Kebab),
+  }),
 ]);
-export const RegistrySchema = z.object({ entries: z.array(EntrySchema).min(1) });
+export const RegistrySchema = z.strictObject({ entries: z.array(EntrySchema).min(1) });
 
 export type Selector = z.infer<typeof SelectorSchema>;
 export type Entry = z.infer<typeof EntrySchema>;
@@ -120,7 +125,8 @@ function toNationalProgramme(record: Rec, types: Map<string, "public" | "private
     institutionType: types.get(institution) ?? null,
     kind: country === "FR" ? programmeKind(record) : null,
     channel: typeof channel === "string" ? channel : null,
-    holdsDocuments: Array.isArray(documents) && documents.length > 0,
+    // enrichRecord counts any non-null value as held, an empty list included
+    holdsDocuments: documents !== null && documents !== undefined,
   } satisfies NationalProgramme;
 }
 
@@ -144,6 +150,7 @@ export type EntryReport = {
   proposed: number;
   skipped: string[];
   rejected: string[];
+  warnings: string[];
 };
 
 const holdsFact = (p: NationalProgramme, fact: Entry["fact"]): boolean =>
@@ -159,9 +166,10 @@ function factsOf(entry: Entry): Proposal["facts"] {
     : { applicationChannel: { value: entry.channel, ...common } };
 }
 
+// Same separator as enrichRecord uses for the notes of a record.
 const joinNotes = (...notes: (string | undefined)[]): string | undefined => {
   const distinct = [...new Set(notes.filter((n): n is string => n !== undefined && n !== ""))];
-  return distinct.length === 0 ? undefined : distinct.join("\n");
+  return distinct.length === 0 ? undefined : distinct.join("; ");
 };
 
 function withEntry(existing: Proposal | undefined, slug: string, entry: Entry): Proposal {
@@ -174,18 +182,90 @@ function withEntry(existing: Proposal | undefined, slug: string, entry: Entry): 
   });
 }
 
+type GetText = (url: string) => Promise<string>;
+
+type RunState = {
+  claimed: Map<string, Proposal>;
+  // entry id that holds each (programme, fact) claim: the first entry wins
+  winners: Map<string, string>;
+  institutions: ReadonlySet<string>;
+  warnedInstitutions: Set<string>;
+  fetchOnce: GetText;
+};
+
+const claimKey = (slug: string, fact: Entry["fact"]): string => `${slug}|${fact}`;
+
+// Every page is fetched once per run, a failure included: a page that failed is not asked again.
+function memoText(getText: GetText): GetText {
+  const seen = new Map<string, Promise<string>>();
+  return (url) => {
+    const hit = seen.get(url);
+    if (hit !== undefined) return hit;
+    const pending = getText(url);
+    seen.set(url, pending);
+    return pending;
+  };
+}
+
+const BLOCKING_STATUSES: ReadonlySet<number> = new Set([403, 429]);
+
+// 403 and 429 stop the whole run: every further request would only make it worse.
+async function unreachablePages(entry: Entry, fetchOnce: GetText): Promise<string[]> {
+  const failed: string[] = [];
+  for (const url of new Set(entry.evidence.map((e) => e.url))) {
+    try {
+      await fetchOnce(url);
+    } catch (error) {
+      if (error instanceof HttpStatusError && BLOCKING_STATUSES.has(error.status))
+        throw new Error(
+          `stopped: HTTP ${error.status} from ${url}; the host is blocking or rate-limiting this run, do not retry until the owner decides`,
+        );
+      failed.push(`page could not be fetched: ${url}`);
+    }
+  }
+  return failed;
+}
+
+// Items the verifier drops (named in no accepted quote) and translation claims it downgrades.
+function documentWarnings(entry: Entry, verifiedValue: unknown): string[] {
+  if (entry.fact !== "documents") return [];
+  const kept = new Map(
+    z
+      .array(DocumentProposalSchema)
+      .parse(verifiedValue)
+      .map((d) => [d.slug, d]),
+  );
+  const warnings: string[] = [];
+  for (const item of entry.items) {
+    const after = kept.get(item.slug);
+    if (after === undefined)
+      warnings.push(
+        `document item "${item.slug}" is named in no accepted quote; the verifier will drop it`,
+      );
+    else if (item.translationRequired === true && after.translationRequired !== true)
+      warnings.push(
+        `document item "${item.slug}": translationRequired true becomes null (no quote ties a translation to it)`,
+      );
+  }
+  return warnings;
+}
+
+function unknownInstitutions(entry: Entry, state: RunState): string[] {
+  const fresh = [...new Set(entry.selector.institutions ?? [])].filter(
+    (slug) => !state.institutions.has(slug) && !state.warnedInstitutions.has(slug),
+  );
+  for (const slug of fresh) state.warnedInstitutions.add(slug);
+  return fresh.map((slug) => `selector institution ${slug} matches no programme`);
+}
+
 // Which of an entry's selected programmes can take its fact now.
-function takers(
-  entry: Entry,
-  selected: readonly NationalProgramme[],
-  claimed: Map<string, Proposal>,
-) {
+function takers(entry: Entry, selected: readonly NationalProgramme[], state: RunState) {
   const skipped: string[] = [];
   const open: NationalProgramme[] = [];
   for (const p of selected) {
+    const winner = state.winners.get(claimKey(p.slug, entry.fact));
     if (holdsFact(p, entry.fact)) skipped.push(`already holds ${entry.fact}`);
-    else if (claimed.get(p.slug)?.facts[entry.fact] !== undefined)
-      skipped.push(`${entry.fact} already claimed by an earlier entry`);
+    else if (winner !== undefined) skipped.push(`${entry.fact} already claimed by entry ${winner}`);
     else open.push(p);
   }
   return { skipped, open };
@@ -194,32 +274,44 @@ function takers(
 async function buildEntry(
   entry: Entry,
   programmes: readonly NationalProgramme[],
-  claimed: Map<string, Proposal>,
-  getText: (url: string) => Promise<string>,
+  state: RunState,
 ): Promise<EntryReport> {
   const selected = programmes.filter((p) => selects(p, entry.selector));
-  const { skipped, open } = takers(entry, selected, claimed);
+  const { skipped, open } = takers(entry, selected, state);
   const report: EntryReport = {
     id: entry.id,
     selected: selected.length,
     proposed: 0,
     skipped,
     rejected: [],
+    warnings: unknownInstitutions(entry, state),
   };
   const [first] = open;
   if (first === undefined) return report;
+
+  report.rejected = await unreachablePages(entry, state.fetchOnce);
+  if (report.rejected.length > 0) return report;
 
   // National evidence is identical for every programme: one verification stands for all of them.
   const verified = await verifyProposal(
     withEntry(undefined, first.slug, entry),
     first.name,
-    getText,
+    state.fetchOnce,
   );
-  if (verified.facts[entry.fact] === undefined) {
-    report.rejected = verified.rejected.map((r) => r.reason);
+  const accepted = verified.facts[entry.fact];
+  // A fact accepted on one quote would carry its unfound quotes into every proposal: refuse it.
+  const dropped = (verified.droppedQuotes ?? []).map(
+    (d) => `quote not found on its page: "${d.quote}" (${d.url})`,
+  );
+  if (accepted === undefined || dropped.length > 0) {
+    report.rejected = accepted === undefined ? verified.rejected.map((r) => r.reason) : dropped;
     return report;
   }
-  for (const p of open) claimed.set(p.slug, withEntry(claimed.get(p.slug), p.slug, entry));
+  report.warnings.push(...documentWarnings(entry, accepted.value));
+  for (const p of open) {
+    state.claimed.set(p.slug, withEntry(state.claimed.get(p.slug), p.slug, entry));
+    state.winners.set(claimKey(p.slug, entry.fact), entry.id);
+  }
   report.proposed = open.length;
   return report;
 }
@@ -227,13 +319,18 @@ async function buildEntry(
 export async function buildNationalProposals(input: {
   entries: readonly Entry[];
   programmes: readonly NationalProgramme[];
-  getText: (url: string) => Promise<string>;
+  getText: GetText;
 }): Promise<{ proposals: Proposal[]; reports: EntryReport[] }> {
-  const claimed = new Map<string, Proposal>();
+  const state: RunState = {
+    claimed: new Map(),
+    winners: new Map(),
+    institutions: new Set(input.programmes.map((p) => p.institution)),
+    warnedInstitutions: new Set(),
+    fetchOnce: memoText(input.getText),
+  };
   const reports: EntryReport[] = [];
-  for (const entry of input.entries)
-    reports.push(await buildEntry(entry, input.programmes, claimed, input.getText));
-  return { proposals: [...claimed.values()], reports };
+  for (const entry of input.entries) reports.push(await buildEntry(entry, input.programmes, state));
+  return { proposals: [...state.claimed.values()], reports };
 }
 
 export async function writeNationalProposals(
@@ -241,7 +338,7 @@ export async function writeNationalProposals(
   dir: string,
   dry: boolean,
 ): Promise<void> {
-  if (dry) return;
+  if (dry || proposals.length === 0) return;
   await mkdir(dir, { recursive: true });
   for (const proposal of proposals)
     await writeFile(
@@ -295,10 +392,31 @@ function groupCounts(reasons: readonly string[]): string {
     .join("; ");
 }
 
+const detail = (reasons: readonly string[]): string =>
+  reasons.length === 0 ? "" : ` (${groupCounts(reasons)})`;
+
 function printReport(r: EntryReport): void {
   console.log(
-    `${r.id}: selected ${r.selected}, proposed ${r.proposed}, skipped ${r.skipped.length}${r.skipped.length > 0 ? ` (${groupCounts(r.skipped)})` : ""}, rejected ${r.rejected.length}${r.rejected.length > 0 ? ` (${groupCounts(r.rejected)})` : ""}`,
+    `${r.id}: selected ${r.selected}, proposed ${r.proposed}, skipped ${r.skipped.length}${detail(r.skipped)}, rejected ${r.rejected.length}${detail(r.rejected)}`,
   );
+  for (const warning of r.warnings) console.log(`  warning: ${warning}`);
+}
+
+const sum = (reports: readonly EntryReport[], count: (r: EntryReport) => number): number =>
+  reports.reduce((total, r) => total + count(r), 0);
+
+function printTotals(reports: readonly EntryReport[]): void {
+  console.log(
+    `total: selected ${sum(reports, (r) => r.selected)}, proposed ${sum(reports, (r) => r.proposed)}, skipped ${sum(reports, (r) => r.skipped.length)}, rejected ${sum(reports, (r) => r.rejected.length)}, warnings ${sum(reports, (r) => r.warnings.length)}`,
+  );
+}
+
+function printNextCommands(out: string): void {
+  const slugs = path.join(out, "slugs.txt");
+  console.log("next:");
+  console.log(`  pnpm data:evidence restage --enrich ${out} --slugs ${slugs}`);
+  console.log(`  pnpm data:evidence verify --enrich ${out} --slugs ${slugs} --dry-run`);
+  console.log(`  pnpm data:evidence verify --enrich ${out} --slugs ${slugs}`);
 }
 
 async function main(argv: readonly string[]): Promise<void> {
@@ -317,15 +435,14 @@ async function main(argv: readonly string[]): Promise<void> {
   await writeNationalProposals(proposals, out, args.dry);
 
   for (const report of reports) printReport(report);
+  printTotals(reports);
   console.log(`${args.dry ? "would write" : "wrote"} ${proposals.length} proposals to ${out}`);
   const stale = await staleProposalFiles(out, proposals);
   if (stale.length > 0)
     console.warn(
       `warning: ${stale.length} proposal file(s) in ${out} were not produced by this run (kept, not deleted): ${stale.slice(0, 5).join(", ")}${stale.length > 5 ? ", ..." : ""}`,
     );
-  console.log("next:");
-  console.log(`  pnpm data:evidence restage --enrich ${out} --slugs ${out}/slugs.txt`);
-  console.log(`  pnpm data:evidence verify --enrich ${out} --dry-run`);
+  if (proposals.length > 0) printNextCommands(out);
 }
 
 if (process.argv[1]?.endsWith("national.ts") === true) {

@@ -4,6 +4,7 @@ import path from "node:path";
 
 import { afterEach, describe, expect, it } from "vitest";
 import { staleProposalFiles } from "../../../scripts/import/fr-calendar";
+import { HttpStatusError } from "../../../scripts/import/http";
 import {
   buildNationalProposals,
   type Entry,
@@ -114,6 +115,30 @@ describe("parseRegistry", () => {
     const { channel: _channel, ...noChannel } = channelEntry();
     expect(() => parseRegistry({ entries: [noChannel] })).toThrow();
   });
+
+  it("rejects a misspelt selector key instead of dropping it", () => {
+    for (const key of ["institutionTyp", "institution", "kind", "channel"]) {
+      const bad = channelEntry({ selector: { country: "NL", [key]: ["x"] } });
+      expect(() => parseRegistry({ entries: [bad] }), key).toThrow();
+    }
+  });
+
+  it("rejects a misspelt entry, evidence, item or item-name key", () => {
+    expect(() => parseRegistry({ entries: [channelEntry({ note: "x" })] })).toThrow();
+    expect(() => parseRegistry({ entries: [channelEntry({ items: [] })] })).toThrow();
+    expect(() => parseRegistry({ entries: [{ ...channelEntry(), entries: 1 }] })).toThrow();
+    const evidence = [{ url: PAGE_URL, quote: CHANNEL_QUOTE, page: 1 }];
+    expect(() => parseRegistry({ entries: [channelEntry({ evidence })] })).toThrow();
+    const [item] = documentsEntry().items;
+    const badItem = documentsEntry({ items: [{ ...item, quoted_as: "passport" }] });
+    expect(() => parseRegistry({ entries: [badItem] })).toThrow();
+    const badName = documentsEntry({ items: [{ ...item, name: { fr: "Passeport", de: "Pass" } }] });
+    expect(() => parseRegistry({ entries: [badName] })).toThrow();
+  });
+
+  it("rejects an unknown top-level key of the registry", () => {
+    expect(() => parseRegistry({ entries: [channelEntry()], version: 1 })).toThrow();
+  });
 });
 
 describe("selects", () => {
@@ -201,6 +226,12 @@ describe("readNationalProgrammes", () => {
       "Programme C",
       "applicationChannel:\n  value: null\n  source: programme\n  info_kind: official\ndocuments:\n  value: []\n  source: programme\n  info_kind: official\n",
     );
+    await prog(
+      "nl-d",
+      "nl-unknown",
+      "Programme D",
+      "documents:\n  value: null\n  source: programme\n  info_kind: official\n",
+    );
     const found = await readNationalProgrammes(root);
     const bySlug = new Map(found.map((p) => [p.slug, p]));
     expect(bySlug.get("fr-a-but-info")).toEqual({
@@ -223,8 +254,9 @@ describe("readNationalProgrammes", () => {
       institutionType: null,
       kind: null,
       channel: null,
-      holdsDocuments: false,
+      holdsDocuments: true,
     });
+    expect(bySlug.get("nl-d")).toMatchObject({ holdsDocuments: false });
   });
 });
 
@@ -245,7 +277,7 @@ describe("buildNationalProposals", () => {
     });
     for (const proposal of proposals) expect(() => ProposalSchema.parse(proposal)).not.toThrow();
     expect(reports).toEqual([
-      { id: "nl-channel", selected: 2, proposed: 2, skipped: [], rejected: [] },
+      { id: "nl-channel", selected: 2, proposed: 2, skipped: [], rejected: [], warnings: [] },
     ]);
   });
 
@@ -275,7 +307,7 @@ describe("buildNationalProposals", () => {
       getText,
     });
     expect(proposals).toEqual([]);
-    expect(reports[0]?.rejected).toHaveLength(1);
+    expect(reports[0]?.rejected).toEqual(["page could not be fetched: https://gone.example/x"]);
   });
 
   it("skips and counts programmes that already hold the fact", async () => {
@@ -348,7 +380,7 @@ describe("buildNationalProposals", () => {
       programmes: [programme()],
       getText,
     });
-    expect(proposals[0]?.notes).toBe("General guidance.\nChannel note.");
+    expect(proposals[0]?.notes).toBe("General guidance.; Channel note.");
   });
 
   it("keeps the first claim when two entries claim the same fact", async () => {
@@ -362,10 +394,52 @@ describe("buildNationalProposals", () => {
     expect(proposals).toHaveLength(1);
     expect(reports[0]).toMatchObject({ id: "first", proposed: 1, skipped: [] });
     expect(reports[1]).toMatchObject({ id: "second", selected: 1, proposed: 0 });
-    expect(reports[1]?.skipped).toHaveLength(1);
+    expect(reports[1]?.skipped).toEqual(["applicationChannel already claimed by entry first"]);
   });
 
-  it("keeps a document item the quote does not name, but rejects the entry when no item is named", async () => {
+  it("keeps the first claim when the second entry has different evidence", async () => {
+    const otherQuote = "Dutch institutions enrol every applicant through Studielink.";
+    pages["https://info.studielink.nl/en/"] = `Welcome. ${otherQuote} Bye.`;
+    const first = channelEntry({ id: "first" });
+    const second = channelEntry({
+      id: "second",
+      evidence: [{ url: "https://info.studielink.nl/en/", quote: otherQuote }],
+    });
+    const { proposals, reports } = await buildNationalProposals({
+      entries: [parseEntry(first), parseEntry(second)],
+      programmes: [programme()],
+      getText,
+    });
+    expect(proposals[0]?.facts.applicationChannel?.evidence).toEqual([
+      { url: PAGE_URL, quote: CHANNEL_QUOTE },
+    ]);
+    expect(reports[1]).toMatchObject({ proposed: 0, rejected: [] });
+    expect(reports[1]?.skipped).toEqual(["applicationChannel already claimed by entry first"]);
+  });
+
+  it("rejects the entry when one real quote is joined by an invented one", async () => {
+    const invented = "This sentence was invented and is not on the page.";
+    const entry = parseEntry(
+      channelEntry({
+        evidence: [
+          { url: PAGE_URL, quote: CHANNEL_QUOTE },
+          { url: PAGE_URL, quote: invented },
+        ],
+      }),
+    );
+    const { proposals, reports } = await buildNationalProposals({
+      entries: [entry],
+      programmes: [programme()],
+      getText,
+    });
+    expect(proposals).toEqual([]);
+    expect(reports[0]?.proposed).toBe(0);
+    expect(reports[0]?.rejected).toEqual([
+      `quote not found on its page: "${invented}" (${PAGE_URL})`,
+    ]);
+  });
+
+  it("reports a document item no quote names, and keeps it while another item survives", async () => {
     const [item] = documentsEntry().items;
     const mixed = parseEntry(
       documentsEntry({
@@ -386,6 +460,9 @@ describe("buildNationalProposals", () => {
       getText,
     });
     expect(kept.proposals[0]?.facts.documents?.value).toHaveLength(2);
+    expect(kept.reports[0]?.warnings).toEqual([
+      'document item "photo" is named in no accepted quote; the verifier will drop it',
+    ]);
 
     const none = parseEntry(
       documentsEntry({
@@ -406,6 +483,91 @@ describe("buildNationalProposals", () => {
     });
     expect(rejected.proposals).toEqual([]);
     expect(rejected.reports[0]?.rejected).toEqual(["no document is named in an accepted quote"]);
+  });
+
+  it("reports a translationRequired true that no quote supports", async () => {
+    const [item] = documentsEntry().items;
+    const entry = parseEntry(documentsEntry({ items: [{ ...item, translationRequired: true }] }));
+    const { proposals, reports } = await buildNationalProposals({
+      entries: [entry],
+      programmes: [programme()],
+      getText,
+    });
+    expect(proposals).toHaveLength(1);
+    expect(reports[0]?.warnings).toEqual([
+      'document item "passport": translationRequired true becomes null (no quote ties a translation to it)',
+    ]);
+  });
+
+  it("fetches a page cited by several entries once", async () => {
+    const calls: string[] = [];
+    const counting = async (url: string) => {
+      calls.push(url);
+      return getText(url);
+    };
+    await buildNationalProposals({
+      entries: [
+        parseEntry(channelEntry({ id: "one" })),
+        parseEntry(
+          documentsEntry({
+            id: "two",
+            items: [
+              {
+                slug: "studielink-account",
+                name: { fr: "Compte Studielink" },
+                quotedAs: "Studielink",
+                translationRequired: null,
+              },
+            ],
+            evidence: [{ url: PAGE_URL, quote: CHANNEL_QUOTE }],
+          }),
+        ),
+      ],
+      programmes: [programme()],
+      getText: counting,
+    });
+    expect(calls).toEqual([PAGE_URL]);
+  });
+
+  it("stops the whole run on an HTTP 429 or 403", async () => {
+    for (const status of [429, 403]) {
+      const blocked = async (url: string): Promise<string> => {
+        throw new HttpStatusError(`HTTP ${status} for ${url}`, status);
+      };
+      await expect(
+        buildNationalProposals({
+          entries: [parseEntry(channelEntry())],
+          programmes: [programme()],
+          getText: blocked,
+        }),
+      ).rejects.toThrow(new RegExp(`HTTP ${status}.*${PAGE_URL}`));
+    }
+  });
+
+  it("treats another HTTP error as a page that could not be fetched", async () => {
+    const gone = async (url: string): Promise<string> => {
+      throw new HttpStatusError(`HTTP 404 for ${url}`, 404);
+    };
+    const { reports } = await buildNationalProposals({
+      entries: [parseEntry(channelEntry())],
+      programmes: [programme()],
+      getText: gone,
+    });
+    expect(reports[0]?.rejected).toEqual([`page could not be fetched: ${PAGE_URL}`]);
+  });
+
+  it("warns once about a selector institution that no programme has", async () => {
+    const entries = [
+      parseEntry(channelEntry({ id: "one", selector: { country: "NL", institutions: ["nope"] } })),
+      parseEntry(channelEntry({ id: "two", selector: { country: "NL", institutions: ["nope"] } })),
+    ];
+    const { reports } = await buildNationalProposals({
+      entries,
+      programmes: [programme()],
+      getText,
+    });
+    expect(reports[0]?.warnings).toEqual(["selector institution nope matches no programme"]);
+    expect(reports[1]?.warnings).toEqual([]);
   });
 
   it("verifies an entry once whatever the number of programmes", async () => {
@@ -453,6 +615,13 @@ describe("writeNationalProposals", () => {
     root = await mkdtemp(path.join(tmpdir(), "national-out-"));
     const dir = path.join(root, "out");
     await writeNationalProposals(await twoProposals(), dir, true);
+    await expect(readdir(dir)).rejects.toThrow();
+  });
+
+  it("writes nothing, not even slugs.txt, when there are no proposals", async () => {
+    root = await mkdtemp(path.join(tmpdir(), "national-out-"));
+    const dir = path.join(root, "out");
+    await writeNationalProposals([], dir, false);
     await expect(readdir(dir)).rejects.toThrow();
   });
 
