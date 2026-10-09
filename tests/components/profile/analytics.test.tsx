@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { cleanup, screen, waitFor } from "@testing-library/react";
+import { act, cleanup, screen, waitFor } from "@testing-library/react";
 import type userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
@@ -33,6 +33,9 @@ type User = ReturnType<typeof userEvent.setup>;
 
 const fixtureClient = withFixtureClient();
 
+// track() runs from a passive effect: let pending effects run before asserting that it was not called.
+const flushEffects = () => act(async () => {});
+
 async function stepHeading(name: string): Promise<HTMLElement> {
   return screen.findByRole("heading", { level: 2, name });
 }
@@ -61,8 +64,8 @@ describe("profile form analytics: create mode", () => {
   it("counts profile-started once when the empty form opens", async () => {
     renderProfileForm("en", clientFor(coreShard()));
     await stepHeading("Your Bac");
+    await waitFor(() => expect(track).toHaveBeenCalledWith("profile-started"));
     expect(track).toHaveBeenCalledTimes(1);
-    expect(track).toHaveBeenCalledWith("profile-started");
   });
 
   it("counts profile-completed only after the profile is saved", async () => {
@@ -71,7 +74,8 @@ describe("profile form analytics: create mode", () => {
     expect(track).not.toHaveBeenCalledWith("profile-completed");
     await user.click(screen.getByRole("button", { name: "See my matches" }));
     await waitFor(() => expect(navigation.push).toHaveBeenCalledWith("/matches"));
-    expect(track).toHaveBeenCalledWith("profile-completed");
+    await waitFor(() => expect(track).toHaveBeenCalledWith("profile-completed"));
+    expect(track).toHaveBeenCalledWith("profile-started");
     expect(track).toHaveBeenCalledTimes(2);
   }, 30_000);
 
@@ -81,6 +85,7 @@ describe("profile form analytics: create mode", () => {
     await completeFixtureForm(user);
     await user.click(screen.getByRole("button", { name: "See my matches" }));
     await screen.findByRole("alert");
+    await flushEffects();
     expect(track).not.toHaveBeenCalledWith("profile-completed");
   }, 30_000);
 });
@@ -91,6 +96,7 @@ describe("profile form analytics: edit mode", () => {
     renderProfileForm("en", clientFor(coreShard()));
     await screen.findByRole("heading", { level: 1, name: "Edit your profile" });
     await stepHeading("Your Bac");
+    await flushEffects();
     expect(track).not.toHaveBeenCalled();
   });
 
@@ -108,6 +114,7 @@ describe("profile form analytics: edit mode", () => {
     await stepHeading("Review");
     await user.click(screen.getByRole("button", { name: "Save changes" }));
     await waitFor(() => expect(navigation.push).toHaveBeenCalledWith("/matches"));
+    await flushEffects();
     expect(track).not.toHaveBeenCalled();
   }, 30_000);
 });

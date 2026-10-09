@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { cleanup, screen } from "@testing-library/react";
+import { act, cleanup, screen, waitFor } from "@testing-library/react";
 import { renderToString } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -27,6 +27,9 @@ vi.mock("@/lib/analytics", () => ({ track }));
 
 const fixture = withFixtureClient();
 
+// track() runs from a passive effect: let pending effects run before asserting that it was not called.
+const flushEffects = () => act(async () => {});
+
 beforeEach(() => {
   vi.useFakeTimers({ toFake: ["Date"] });
   vi.setSystemTime(new Date(`${E2E_NOW}T10:00:00Z`));
@@ -49,14 +52,15 @@ describe("My plan analytics", () => {
     renderPlan("en", fixture.client());
     const { programs } = await planEntries(fixture.client(), "en", [PROGRAMS.ok]);
     await screen.findByRole("heading", { level: 2, name: requireProgram(programs).name });
+    await waitFor(() => expect(track).toHaveBeenCalledWith("plan-opened"));
     expect(track).toHaveBeenCalledTimes(1);
-    expect(track).toHaveBeenCalledWith("plan-opened");
   });
 
   it("does not count it when nothing is saved", async () => {
     seedProfile();
     renderPlan("en", fixture.client());
     await screen.findByRole("heading", { level: 2, name: catalogs.en.plan.empty.title });
+    await flushEffects();
     expect(track).not.toHaveBeenCalled();
   });
 
