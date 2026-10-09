@@ -30,7 +30,7 @@ What a pause looks like: the site answers `503` with the code `DEPLOYMENT_PAUSED
 
 ## 3. The 60% rule: what to do
 
-The first move for traffic caps is to take the snapshot shards (the data files the browser downloads, many per visit) off Vercel's CDN, as ADR 0004 decided. This lowers CDN Requests and Fast Data Transfer because the shards a journey downloads are part of its requests (section 6 will give the measured share). It does **not** move the HTML pages, JavaScript or CSS, which stay on Vercel. If the cap that is near is Function Invocations, Active CPU or Fast Origin Transfer, moving shards does not help: look at section 4 instead.
+The first move for traffic caps is to take the snapshot shards (the data files the browser downloads, many per visit) off Vercel's CDN, as ADR 0004 decided. This lowers CDN Requests and Fast Data Transfer because the shards a journey downloads are part of its requests: in the local measurement of section 6 they were 53 of the 100 requests (the biggest share) but only 33% of the bytes, so moving them cuts the request cap pressure by about half and the data-transfer pressure by about a third, not more. It does **not** move the HTML pages, JavaScript or CSS, which stay on Vercel. If the cap that is near is Function Invocations, Active CPU or Fast Origin Transfer, moving shards does not help: look at section 4 instead.
 
 The site reads the snapshot base URL from `NEXT_PUBLIC_SNAPSHOT_BASE_URL` (validated by `src/lib/site-env.ts`: an `https://` URL with no trailing slash, query or hash). The browser then requests `<base>/manifest.json` and `<base>/s/<shard file>`, exactly the layout of `public/snapshots`.
 
@@ -78,7 +78,31 @@ Non-commercial rule (Vercel fair-use guidelines, https://vercel.com/docs/limits/
 
 ## 6. Estimate: visits per month at each cap
 
-<!-- TASK8 -->
+**This is an estimate from a local `next start`, not from Vercel.** Measured 2026-10-09 on the default real-data build (1,126 programmes, snapshot `6c740a0cd15b`, 97 shards) served by `next start -p 3101`, with a throwaway Playwright script (Chromium, fresh browser context per cold case, Chrome DevTools network events). A request counts when it went to the server; responses served from the browser's HTTP cache are not counted (they cost the CDN nothing). Size is the encoded (compressed) bytes on the wire, headers excluded. Vercel's CDN may add requests (for example for the platform's own paths) or coalesce them, and may compress differently from Next's server, so treat the figures as an order of magnitude.
+
+| Case | Requests | Transferred | `/_next/static/*` (JS, CSS, fonts) | HTML and RSC | `/snapshots/*` shards |
+|---|---|---|---|---|---|
+| (a) Cold load of `/fr` alone | 27 | 459.8 KB | 19 req, 431.1 KB | 8 req, 28.6 KB | 0 |
+| (b) Cold load of one programme page | 30 | 497.7 KB | 22 req, 452.8 KB | 8 req, 45.0 KB | 0 (the page is pre-rendered) |
+| (c) Full journey: home, profile opened, matches (prepared profile, full page load), programme (client navigation), Save, plan (client navigation) | 100 | 860.0 KB | 28 req, 490.5 KB | 19 req, 84.0 KB | 53 req, 285.6 KB |
+| Returning visitor, `/fr` again (browser cache warm) | 8 | 22.4 KB | 0 (cached) | 8 req, 22.4 KB | 0 |
+| Returning visitor, `/fr/matches` again | 9 | 23.0 KB | 0 (cached) | 8 req, 22.4 KB | 1 req, 0.6 KB (the manifest, `no-cache`; shards are cached) |
+
+Shares of the full journey (c): `/_next/static/*` 28% of requests and 57% of bytes; HTML and RSC 19% and 10%; shards 53% and 33%. Step by step: home 27 requests, 459.8 KB; profile page opened 3 requests (three shards), 11.1 KB; matches 59 requests, 309.4 KB (50 shards, 274.5 KB; 21 further responses came from the browser cache); programme page by client navigation 4 requests, 40.6 KB; Save 6 requests, 31.9 KB; plan 1 request, 7.3 KB. The matches page loads about 50 of the 97 shards (the data shards for all countries and fields plus the French text shards; the exact list was not recorded) and the count did not change when the profile's destinations were `[]` or `["FR"]`. The prepared profile was a Moroccan Bac, track Sciences Mathematiques A, grade 15/20, three fields, no destination filter; the journey clicked the first programme card.
+
+Formulas (1 GB taken as 10^9 bytes, 1 KB as 1,024 bytes):
+
+- Visits per month at the request cap = 1,000,000 / requests per visit.
+- Visits per month at the transfer cap = 100 x 10^9 / (KB per visit x 1,024).
+- Take the smaller of the two: that cap binds first. The 60% mark (section 1) is the same formula with 600,000 requests or 60 GB.
+
+| Visitor type | At 1,000,000 CDN requests | At 100 GB Fast Data Transfer | Binding cap | 60% mark (requests / transfer) |
+|---|---|---|---|---|
+| (a) cold `/fr` only | 37,037 visits | 212,388 visits | CDN Requests | 22,222 / 127,433 |
+| (c) full journey, cold | 10,000 visits | 113,553 visits | CDN Requests | 6,000 / 68,132 |
+| Returning `/fr` (warm cache) | 125,000 visits | about 4.36 million visits | CDN Requests | 75,000 / about 2.6 million |
+
+Reading: the request cap binds well before the transfer cap for every case (about 5.7x sooner for (a), about 11x for (c)), which agrees with section 1. A month with 10,000 full-journey visitors who all arrive with an empty cache reaches the cap; real traffic mixes bouncing visitors (case a), journeys and returning visitors, so the real number of visits lies between the rows. Returning visitors are cheap because `/_next/static/*` and the shards are immutable; `public/snapshots/manifest.json` and the HTML are revalidated. This also means that a data release or a code deploy, which changes the hashes, makes every returning visitor load the changed files once. Not measured: the real mix of visitors, crawler traffic (every programme page is in the sitemap, 3,378 programme URLs, and each crawler fetch is at least one CDN request) and the Vercel CDN's own counting.
 
 ## 7. Log
 
