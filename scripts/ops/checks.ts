@@ -7,9 +7,10 @@ export type CheckResult = { name: string; ok: boolean; reason: string | null };
 export const SMOKE_LOCALES = ["fr", "en", "ar"] as const;
 export type SmokeLocale = (typeof SMOKE_LOCALES)[number];
 
-// The sitemap lists (3 paths + every programme) x 3 locales, about 3,400 URLs today. A floor far
-// below that still catches an empty or truncated sitemap.
-export const MIN_INDEXABLE_SITEMAP_URLS = 3000;
+// The smallest sitemap that proves programmes are listed: 3 locale-relative paths x 3 locales is 9
+// URLs, so an indexable sitemap must have more than that. Size beyond this is structural (see
+// checkSitemap) or an explicit --min-urls.
+export const SITEMAP_URL_FLOOR = 9;
 
 function pass(name: string): CheckResult {
   return { name, ok: true, reason: null };
@@ -31,7 +32,8 @@ function isRedirectStatus(status: number): boolean {
   return status === 307 || status === 308;
 }
 
-// `location` may be absolute or relative; only its path is inspected.
+// `location` may be absolute or relative. It must resolve to the origin under test: a redirect to
+// another host is a failure, not a success.
 export function checkLocaleRedirect(
   name: string,
   status: number,
@@ -43,7 +45,9 @@ export function checkLocaleRedirect(
   if (location === null) return fail(name, "no Location header");
   let pathname: string;
   try {
-    pathname = new URL(location, baseUrl).pathname;
+    const target = new URL(location, baseUrl);
+    if (target.origin !== new URL(baseUrl).origin) return fail(name, "Location leaves the origin");
+    pathname = target.pathname;
   } catch {
     return fail(name, "Location is not a URL");
   }
@@ -120,16 +124,19 @@ export function checkHeaders(headers: Headers, expectIndexable: boolean): CheckR
 
 export function checkCacheControl(
   name: string,
+  status: number,
   headers: Headers,
   mustInclude: "no-cache" | "immutable",
 ): CheckResult {
+  if (status !== 200) return fail(name, `expected 200, got ${status}`);
   const value = headers.get("cache-control");
   if (value === null) return fail(name, "missing");
   return verdict(name, value.toLowerCase().includes(mustInclude) ? null : `not ${mustInclude}`);
 }
 
-export function checkRobots(body: string, expectIndexable: boolean): CheckResult {
+export function checkRobots(status: number, body: string, expectIndexable: boolean): CheckResult {
   const name = "robots.txt";
+  if (status !== 200) return fail(name, `expected 200, got ${status}`);
   const disallowsAll = /^disallow:\s*\/\s*$/im.test(body);
   const allowsAll = /^allow:\s*\/\s*$/im.test(body);
   const sitemapLine = /^sitemap:\s*\S+\/sitemap\.xml\s*$/im.test(body);
@@ -147,14 +154,55 @@ export function sitemapUrlCount(xml: string): number {
 }
 
 const PERSONAL_SHELL_PATH = /<loc>[^<]*\/(?:matches|plan|compare)(?:\/[^<]*)?<\/loc>/;
+const PROGRAMME_PATH = /^\/(fr|en|ar)\/programs\/([^/]+)$/;
 
-export function checkSitemap(xml: string, expectIndexable: boolean): CheckResult {
+function programmeSlugsByLocale(xml: string): Record<SmokeLocale, Set<string>> {
+  const slugs: Record<SmokeLocale, Set<string>> = { fr: new Set(), en: new Set(), ar: new Set() };
+  for (const match of xml.matchAll(/<loc>([^<]*)<\/loc>/g)) {
+    let pathname: string;
+    try {
+      pathname = new URL(match[1] ?? "").pathname;
+    } catch {
+      continue;
+    }
+    const parts = PROGRAMME_PATH.exec(pathname);
+    const locale = SMOKE_LOCALES.find((candidate) => candidate === parts?.[1]);
+    const slug = parts?.[2];
+    if (locale !== undefined && slug !== undefined) slugs[locale].add(slug);
+  }
+  return slugs;
+}
+
+// The sitemap is checked by shape, not by an absolute size, so growing the data never breaks it:
+// more than 9 URLs, a multiple of 3, every locale lists programmes, and every programme has its
+// fr, en and ar twin. `minUrls` (--min-urls) adds an absolute floor when the caller knows one.
+export function checkSitemap(
+  status: number,
+  xml: string,
+  expectIndexable: boolean,
+  minUrls = 0,
+): CheckResult {
   const name = "sitemap.xml";
+  if (status !== 200) return fail(name, `expected 200, got ${status}`);
   const count = sitemapUrlCount(xml);
   if (!expectIndexable) return verdict(name, count === 0 ? null : "has URLs on a noindex site");
-  if (count <= MIN_INDEXABLE_SITEMAP_URLS) return fail(name, `only ${count} URLs`);
+  if (count <= SITEMAP_URL_FLOOR) return fail(name, `only ${count} URLs`);
+  if (count < minUrls) return fail(name, `${count} URLs, fewer than --min-urls ${minUrls}`);
+  if (count % SMOKE_LOCALES.length !== 0) return fail(name, `${count} URLs, not a multiple of 3`);
   if (!xml.includes('hreflang="x-default"')) return fail(name, "no x-default alternate");
   if (PERSONAL_SHELL_PATH.test(xml)) return fail(name, "lists a personal-shell page");
+  const slugs = programmeSlugsByLocale(xml);
+  if (SMOKE_LOCALES.some((locale) => slugs[locale].size === 0)) {
+    return fail(name, "a locale lists no programme page");
+  }
+  for (const slug of slugs.fr) {
+    if (!slugs.en.has(slug) || !slugs.ar.has(slug)) {
+      return fail(name, "a programme is missing an en or ar twin");
+    }
+  }
+  if (slugs.en.size !== slugs.fr.size || slugs.ar.size !== slugs.fr.size) {
+    return fail(name, "en or ar lists a programme fr does not");
+  }
   return pass(name);
 }
 

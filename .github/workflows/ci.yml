@@ -117,13 +117,16 @@ jobs:
   # URLs, so the smoke step targets the public production domain from the repository variable
   # SMOKE_URL, never the deployment URL printed by `vercel deploy`.
   # Requires three repository secrets (never in code): VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID.
-  # Until they are added the job fails fast with a clear message and production is not updated.
+  # The job is gated on the repository variable DEPLOY_ENABLED: the owner sets it to "true" after
+  # adding the three secrets (docs/ops/deploy.md). Until then the job is skipped (grey, not red).
+  # Once enabled, the secret pre-check below fails fast on purpose if a secret is missing, and
+  # production is not updated.
   # The token is passed through the step environment (VERCEL_TOKEN), not as a --token argument, and
-  # only to the steps that call the Vercel CLI.
+  # only to the steps that need it (the pre-check, `vercel pull` and `vercel deploy`).
   deploy:
     name: Deploy to Vercel (production)
     needs: [verify, e2e]
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.DEPLOY_ENABLED == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     concurrency:
@@ -146,6 +149,8 @@ jobs:
 
       - name: Check out
         uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v6
@@ -166,20 +171,25 @@ jobs:
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
+      # No VERCEL_TOKEN here on purpose (least privilege): the build runs the install command and
+      # `pnpm build`, whose child processes would inherit it, and everything it needs was written by
+      # `vercel pull`. If this step ever fails with an auth error, give it VERCEL_TOKEN again and
+      # record that in ADR 0011.
       - name: Build
         run: vercel build --prod
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
       # stdout of `vercel deploy` is only the deployment URL. The assignment (not an echo around the
       # substitution) keeps a failed deploy from being swallowed.
       - name: Deploy prebuilt output
-        id: deploy
         run: |
           url="$(vercel deploy --prebuilt --prod)"
-          echo "url=$url" >> "$GITHUB_OUTPUT"
+          echo "Deployed: $url" >> "$GITHUB_STEP_SUMMARY"
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Note that the smoke test is skipped
+        if: ${{ vars.SMOKE_URL == '' }}
+        run: echo "::notice::SMOKE_URL is not set; skipping the post-deploy smoke test"
 
       # The smoke tool runs with tsx, so it needs the project dependencies.
       - name: Install dependencies

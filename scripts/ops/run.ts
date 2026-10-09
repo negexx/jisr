@@ -137,10 +137,12 @@ async function programmePage(
   return [page === null ? unreachable(name) : checkStatus(name, page.response.status, 200)];
 }
 
+export type SmokeOptions = { fetcher?: Fetcher; minUrls?: number };
+
 export async function runSmoke(
   baseUrl: string,
   expectIndexable: boolean,
-  fetcher: Fetcher = fetch,
+  { fetcher = fetch, minUrls }: SmokeOptions = {},
 ): Promise<CheckResult[]> {
   const results: CheckResult[] = [];
 
@@ -172,7 +174,12 @@ export async function runSmoke(
   results.push(
     manifestFetch === null
       ? unreachable("manifest is revalidated")
-      : checkCacheControl("manifest is revalidated", manifestFetch.response.headers, "no-cache"),
+      : checkCacheControl(
+          "manifest is revalidated",
+          manifestFetch.response.status,
+          manifestFetch.response.headers,
+          "no-cache",
+        ),
   );
   const { coreShard } = manifestFiles(manifest);
   if (coreShard === null) {
@@ -182,16 +189,25 @@ export async function runSmoke(
     results.push(
       shard === null
         ? unreachable("shard is immutable")
-        : checkCacheControl("shard is immutable", shard.response.headers, "immutable"),
+        : checkCacheControl(
+            "shard is immutable",
+            shard.response.status,
+            shard.response.headers,
+            "immutable",
+          ),
     );
   }
 
   const robots = await get(fetcher, baseUrl, "/robots.txt");
   results.push(
-    robots === null ? unreachable("robots.txt") : checkRobots(robots.body, expectIndexable),
+    robots === null
+      ? unreachable("robots.txt")
+      : checkRobots(robots.response.status, robots.body, expectIndexable),
   );
   results.push(
-    sitemap === null ? unreachable("sitemap.xml") : checkSitemap(sitemap.body, expectIndexable),
+    sitemap === null
+      ? unreachable("sitemap.xml")
+      : checkSitemap(sitemap.response.status, sitemap.body, expectIndexable, minUrls),
   );
 
   return results;

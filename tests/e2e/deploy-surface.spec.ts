@@ -1,7 +1,8 @@
 import { expect, test } from "@playwright/test";
 
 // The fixture build has no NEXT_PUBLIC_SITE_URL, so it behaves like a preview: not indexable.
-// Request-level checks only (no page rendering), so one project is enough.
+// Request-level checks only (no page rendering), so the phone project would repeat the desktop run.
+test.skip(({ isMobile }) => isMobile, "request-only checks run once, on the desktop project");
 
 test("robots.txt disallows everything on a build without a site url", async ({ request }) => {
   const response = await request.get("/robots.txt", { maxRedirects: 0 });

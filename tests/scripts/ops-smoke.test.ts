@@ -73,11 +73,17 @@ describe("checkHeaders", () => {
 });
 
 describe("checkCacheControl", () => {
-  it("matches the required directive", () => {
-    const immutable = new Headers({ "cache-control": "public, max-age=31536000, immutable" });
-    expect(checkCacheControl("c", immutable, "immutable").ok).toBe(true);
-    expect(checkCacheControl("c", immutable, "no-cache").ok).toBe(false);
-    expect(checkCacheControl("c", new Headers(), "no-cache").ok).toBe(false);
+  const immutable = new Headers({ "cache-control": "public, max-age=31536000, immutable" });
+
+  it("matches the required directive on a 200", () => {
+    expect(checkCacheControl("c", 200, immutable, "immutable").ok).toBe(true);
+    expect(checkCacheControl("c", 200, immutable, "no-cache").ok).toBe(false);
+    expect(checkCacheControl("c", 200, new Headers(), "no-cache").ok).toBe(false);
+  });
+
+  it("fails any other status even with the right header", () => {
+    expect(checkCacheControl("c", 404, immutable, "immutable").ok).toBe(false);
+    expect(checkCacheControl("c", 307, immutable, "immutable").ok).toBe(false);
   });
 });
 
@@ -86,54 +92,112 @@ describe("checkRobots", () => {
   const open = "User-Agent: *\nAllow: /\n\nSitemap: https://jisr.example/sitemap.xml\n";
 
   it("accepts the right shape for each mode", () => {
-    expect(checkRobots(closed, false).ok).toBe(true);
-    expect(checkRobots(open, true).ok).toBe(true);
+    expect(checkRobots(200, closed, false).ok).toBe(true);
+    expect(checkRobots(200, open, true).ok).toBe(true);
   });
 
   it("rejects the wrong shape for each mode", () => {
-    expect(checkRobots(open, false).ok).toBe(false);
-    expect(checkRobots(closed, true).ok).toBe(false);
-    expect(checkRobots("User-Agent: *\nAllow: /\n", true).ok).toBe(false);
-    expect(checkRobots("User-Agent: *\nDisallow: /admin\n", false).ok).toBe(false);
+    expect(checkRobots(200, open, false).ok).toBe(false);
+    expect(checkRobots(200, closed, true).ok).toBe(false);
+    expect(checkRobots(200, "User-Agent: *\nAllow: /\n", true).ok).toBe(false);
+    expect(checkRobots(200, "User-Agent: *\nDisallow: /admin\n", false).ok).toBe(false);
+  });
+
+  it("fails a non-200 response whatever the body says", () => {
+    expect(checkRobots(404, closed, false).ok).toBe(false);
+    expect(checkRobots(500, open, true).ok).toBe(false);
+    expect(checkRobots(307, closed, false).ok).toBe(false);
   });
 });
 
-function sitemap(urls: string[], extra = ""): string {
+const ORIGIN = "http://localhost:3101";
+const LOCALES = ["fr", "en", "ar"] as const;
+
+function sitemap(urls: string[]): string {
   const entries = urls
     .map(
       (url) =>
         `<url><loc>${url}</loc><xhtml:link rel="alternate" hreflang="x-default" href="${url}" /></url>`,
     )
     .join("");
-  return `<?xml version="1.0"?><urlset>${entries}${extra}</urlset>`;
+  return `<?xml version="1.0"?><urlset>${entries}</urlset>`;
 }
 
-function manyUrls(count: number): string[] {
-  return Array.from({ length: count }, (_, i) => `http://localhost:3101/fr/programs/p-${i}`);
+// The shape buildSitemap produces: 3 locale-relative paths plus one URL per programme, per locale.
+function siteUrls(slugs: string[]): string[] {
+  const paths = ["", "/profile", "/scholarships", ...slugs.map((slug) => `/programs/${slug}`)];
+  return paths.flatMap((path) => LOCALES.map((locale) => `${ORIGIN}/${locale}${path}`));
+}
+
+function slugs(count: number): string[] {
+  return Array.from({ length: count }, (_, i) => `p-${i}`);
 }
 
 describe("checkSitemap", () => {
   it("expects no URL on a noindex site", () => {
-    expect(checkSitemap(sitemap([]), false).ok).toBe(true);
-    expect(checkSitemap(sitemap(manyUrls(5)), false).ok).toBe(false);
+    expect(checkSitemap(200, sitemap([]), false).ok).toBe(true);
+    expect(checkSitemap(200, sitemap(siteUrls([])), false).ok).toBe(false);
   });
 
-  it("accepts a large sitemap with x-default and no personal shells", () => {
-    expect(checkSitemap(sitemap(manyUrls(3400)), true).ok).toBe(true);
+  it("accepts a well-formed sitemap of any size above the sanity floor", () => {
+    expect(checkSitemap(200, sitemap(siteUrls(slugs(1))), true).ok).toBe(true);
+    expect(checkSitemap(200, sitemap(siteUrls(slugs(1125))), true).ok).toBe(true);
   });
 
-  it("rejects an empty, short, hreflang-less or personal-shell sitemap", () => {
-    expect(checkSitemap(sitemap([]), true).ok).toBe(false);
-    expect(checkSitemap(sitemap(manyUrls(10)), true).ok).toBe(false);
-    expect(checkSitemap(sitemap(manyUrls(3400)).replaceAll("x-default", "fr"), true).ok).toBe(
-      false,
+  it("fails any status other than 200", () => {
+    expect(checkSitemap(404, sitemap(siteUrls(slugs(5))), true).ok).toBe(false);
+    expect(checkSitemap(500, sitemap([]), false).ok).toBe(false);
+    expect(checkSitemap(307, sitemap(siteUrls(slugs(5))), true).ok).toBe(false);
+  });
+
+  it("applies the floor as more than 9 URLs: the bare pages alone fail, one programme passes", () => {
+    expect(checkSitemap(200, sitemap(siteUrls([])), true).ok).toBe(false);
+    expect(checkSitemap(200, sitemap(siteUrls(slugs(1))), true).ok).toBe(true);
+    expect(checkSitemap(200, sitemap([]), true).ok).toBe(false);
+  });
+
+  it("requires a count that is a multiple of 3", () => {
+    const urls = siteUrls(slugs(4));
+    expect(checkSitemap(200, sitemap(urls.slice(0, -1)), true).ok).toBe(false);
+  });
+
+  it("requires every programme to exist in all three locales", () => {
+    const urls = siteUrls(slugs(4)).filter((url) => url !== `${ORIGIN}/ar/programs/p-2`);
+    // Keep the count a multiple of 3 so only the twin rule can fail.
+    const padded = [...urls, `${ORIGIN}/ar/programs/p-extra`];
+    expect(padded.length % 3).toBe(0);
+    expect(checkSitemap(200, sitemap(padded), true).ok).toBe(false);
+  });
+
+  it("requires at least one programme in every locale", () => {
+    const withoutArabic = siteUrls(slugs(3)).filter((url) => !url.includes("/ar/programs/"));
+    expect(withoutArabic.length % 3).toBe(0);
+    expect(checkSitemap(200, sitemap(withoutArabic), true).ok).toBe(false);
+  });
+
+  it("requires the x-default alternate", () => {
+    const xml = sitemap(siteUrls(slugs(3))).replaceAll("x-default", "fr");
+    expect(checkSitemap(200, xml, true).ok).toBe(false);
+  });
+
+  it("rejects personal-shell pages", () => {
+    for (const shell of ["matches", "plan", "compare"]) {
+      const urls = [...siteUrls(slugs(3)), ...LOCALES.map((l) => `${ORIGIN}/${l}/${shell}`)];
+      expect(checkSitemap(200, sitemap(urls), true).ok).toBe(false);
+    }
+  });
+
+  it("honours --min-urls on top of the structural floor", () => {
+    const xml = sitemap(siteUrls(slugs(3)));
+    expect(checkSitemap(200, xml, true, 18).ok).toBe(true);
+    expect(checkSitemap(200, xml, true, 19).ok).toBe(false);
+  });
+
+  it("accepts the sitemap origin differing from where it was fetched", () => {
+    const xml = sitemap(
+      siteUrls(slugs(2)).map((url) => url.replace(ORIGIN, "https://jisr.example")),
     );
-    expect(
-      checkSitemap(sitemap([...manyUrls(3400), "http://localhost:3101/fr/matches"]), true).ok,
-    ).toBe(false);
-    expect(
-      checkSitemap(sitemap([...manyUrls(3400), "http://localhost:3101/ar/compare"]), true).ok,
-    ).toBe(false);
+    expect(checkSitemap(200, xml, true).ok).toBe(true);
   });
 });
 
@@ -166,6 +230,13 @@ describe("checkLocaleRedirect", () => {
     expect(checkLocaleRedirect("r", 307, null, base, null).ok).toBe(false);
     expect(checkLocaleRedirect("r", 307, "/fr/profile", base, null).ok).toBe(false);
     expect(checkLocaleRedirect("r", 307, "/fr", base, "ar").ok).toBe(false);
+  });
+
+  it("rejects a redirect that leaves the origin being tested", () => {
+    expect(checkLocaleRedirect("r", 307, "https://evil.example/fr", base, null).ok).toBe(false);
+    expect(checkLocaleRedirect("r", 307, "http://localhost:3999/fr", base, null).ok).toBe(false);
+    expect(checkLocaleRedirect("r", 307, "https://localhost:3101/fr", base, null).ok).toBe(false);
+    expect(checkLocaleRedirect("r", 307, "//evil.example/fr", base, null).ok).toBe(false);
   });
 });
 
@@ -219,9 +290,9 @@ describe("manifest helpers", () => {
   });
 });
 
-type FakeSite = { indexable: boolean; omit?: string[] };
+type FakeSite = { indexable: boolean; omit?: string[]; homeLocation?: string };
 
-function fakeFetcher({ indexable, omit = [] }: FakeSite): Fetcher {
+function fakeFetcher({ indexable, omit = [], homeLocation }: FakeSite): Fetcher {
   const secure = Object.fromEntries(
     Object.entries(SECURITY_HEADERS).filter(([key]) => !omit.includes(key)),
   );
@@ -235,7 +306,7 @@ function fakeFetcher({ indexable, omit = [] }: FakeSite): Fetcher {
       },
     });
   const slug = "some-programme";
-  const urls = indexable ? [`http://localhost:3101/fr/programs/${slug}`, ...manyUrls(3400)] : [];
+  const urls = indexable ? siteUrls([slug, ...slugs(5)]) : [];
   const json = (value: unknown, cache: string) =>
     new Response(JSON.stringify(value), { headers: { "cache-control": cache } });
 
@@ -245,7 +316,7 @@ function fakeFetcher({ indexable, omit = [] }: FakeSite): Fetcher {
     if (pathname === "/") {
       return new Response(null, {
         status: 307,
-        headers: { location: accept === "ar" ? "/ar" : "/fr" },
+        headers: { location: homeLocation ?? (accept === "ar" ? "/ar" : "/fr") },
       });
     }
     if (pathname === "/fr" || pathname === "/fr/programs/some-programme") return page("fr", "ltr");
@@ -285,39 +356,53 @@ function fakeFetcher({ indexable, omit = [] }: FakeSite): Fetcher {
 
 describe("runSmoke against a fake site", () => {
   it("passes a correct noindex site", async () => {
-    const results = await runSmoke(
-      "http://localhost:3101",
-      false,
-      fakeFetcher({ indexable: false }),
-    );
+    const results = await runSmoke("http://localhost:3101", false, {
+      fetcher: fakeFetcher({ indexable: false }),
+    });
     expect(results.filter((r) => !r.ok)).toEqual([]);
     expect(results.length).toBeGreaterThan(15);
   });
 
   it("passes a correct indexable site, fetching the programme page from the sitemap path", async () => {
-    const results = await runSmoke("http://localhost:3101", true, fakeFetcher({ indexable: true }));
+    const results = await runSmoke("http://localhost:3101", true, {
+      fetcher: fakeFetcher({ indexable: true }),
+    });
     expect(results.filter((r) => !r.ok)).toEqual([]);
   });
 
   it("fails when the site is indexable but a noindex site was expected", async () => {
-    const results = await runSmoke(
-      "http://localhost:3101",
-      false,
-      fakeFetcher({ indexable: true }),
-    );
+    const results = await runSmoke("http://localhost:3101", false, {
+      fetcher: fakeFetcher({ indexable: true }),
+    });
     expect(results.filter((r) => !r.ok).map((r) => r.name)).toEqual(
       expect.arrayContaining(["header x-robots-tag", "robots.txt", "sitemap.xml"]),
     );
   });
 
   it("fails a site that lost HSTS", async () => {
-    const results = await runSmoke(
-      "http://localhost:3101",
-      false,
-      fakeFetcher({ indexable: false, omit: ["strict-transport-security"] }),
-    );
+    const results = await runSmoke("http://localhost:3101", false, {
+      fetcher: fakeFetcher({ indexable: false, omit: ["strict-transport-security"] }),
+    });
     expect(results.filter((r) => !r.ok).map((r) => r.name)).toEqual([
       "header strict-transport-security",
+    ]);
+  });
+
+  it("fails when the sitemap is below --min-urls", async () => {
+    const fetcher = fakeFetcher({ indexable: true });
+    const ok = await runSmoke("http://localhost:3101", true, { fetcher, minUrls: 18 });
+    expect(ok.filter((r) => !r.ok)).toEqual([]);
+    const tooFew = await runSmoke("http://localhost:3101", true, { fetcher, minUrls: 100000 });
+    expect(tooFew.filter((r) => !r.ok).map((r) => r.name)).toEqual(["sitemap.xml"]);
+  });
+
+  it("fails when / redirects to another origin", async () => {
+    const results = await runSmoke("http://localhost:3101", false, {
+      fetcher: fakeFetcher({ indexable: false, homeLocation: "https://evil.example/fr" }),
+    });
+    expect(results.filter((r) => !r.ok).map((r) => r.name)).toEqual([
+      "GET / redirects to a locale",
+      "GET / with Accept-Language ar redirects to /ar",
     ]);
   });
 
@@ -325,7 +410,7 @@ describe("runSmoke against a fake site", () => {
     const down: Fetcher = async () => {
       throw new Error("connect ECONNREFUSED secret-host.internal");
     };
-    const results = await runSmoke("http://localhost:3101", false, down);
+    const results = await runSmoke("http://localhost:3101", false, { fetcher: down });
     expect(results.every((r) => !r.ok)).toBe(true);
     expect(JSON.stringify(results)).not.toContain("secret-host");
   });

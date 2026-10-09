@@ -26,6 +26,16 @@ function stepNames(block: string): string[] {
   return [...block.matchAll(/^ {6}- name: (.+)$/gm)].map((match) => match[1] ?? "");
 }
 
+// A step starts at "      - name: <name>" and runs to the next step of the same job.
+function stepBlock(block: string, name: string): string {
+  const lines = block.split(/\r?\n/);
+  const start = lines.indexOf(`      - name: ${name}`);
+  if (start === -1) throw new Error(`step ${name} not found`);
+  const rest = lines.slice(start + 1);
+  const end = rest.findIndex((line) => /^ {6}- /.test(line));
+  return [lines[start], ...(end === -1 ? rest : rest.slice(0, end))].join("\n");
+}
+
 function codeLines(text: string): string[] {
   return text.split(/\r?\n/).filter((line) => !line.trim().startsWith("#"));
 }
@@ -40,10 +50,11 @@ describe("deploy job gating", () => {
     expect(names).toEqual(expect.arrayContaining(["verify", "e2e"]));
   });
 
-  it("runs only for a push to main", () => {
+  it("runs only for a push to main, and only once the owner enables it", () => {
     const condition = /^ {4}if:\s*(.+)$/m.exec(deploy)?.[1] ?? "";
     expect(condition).toContain("github.event_name == 'push'");
     expect(condition).toContain("github.ref == 'refs/heads/main'");
+    expect(condition).toContain("vars.DEPLOY_ENABLED == 'true'");
     expect(condition).not.toContain("||");
     expect(condition).not.toMatch(/always\(\)|failure\(\)|cancelled\(\)/);
   });
@@ -85,6 +96,41 @@ describe("workflow safety", () => {
       }
       expect(line).not.toContain("--token");
     }
+  });
+
+  it("keeps every secret reference inside the deploy job", () => {
+    const deploy = jobBlock("deploy");
+    expect(codeLines(deploy).filter((line) => line.includes("secrets.")).length).toBeGreaterThan(0);
+    const everythingElse = workflow.replace(deploy, "");
+    expect(codeLines(everythingElse).filter((line) => line.includes("secrets."))).toEqual([]);
+  });
+
+  it("gives the token to the pre-check, pull and deploy steps but not to the build", () => {
+    const deploy = jobBlock("deploy");
+    for (const name of [
+      "Check deploy secrets are configured",
+      "Pull Vercel production settings",
+      "Deploy prebuilt output",
+    ]) {
+      expect(stepBlock(deploy, name)).toMatch(/VERCEL_TOKEN: \$\{\{ secrets\.VERCEL_TOKEN \}\}/);
+    }
+    expect(stepBlock(deploy, "Build")).not.toMatch(/VERCEL_TOKEN|secrets\./);
+  });
+
+  it("does not leave git credentials on disk in the deploy job", () => {
+    expect(stepBlock(jobBlock("deploy"), "Check out")).toContain("persist-credentials: false");
+  });
+
+  it("reports the deployment URL in the step summary, not as an output", () => {
+    const deploy = jobBlock("deploy");
+    expect(stepBlock(deploy, "Deploy prebuilt output")).toContain("GITHUB_STEP_SUMMARY");
+    expect(deploy).not.toContain("GITHUB_OUTPUT");
+  });
+
+  it("says so when the smoke test is skipped", () => {
+    const step = stepBlock(jobBlock("deploy"), "Note that the smoke test is skipped");
+    expect(step).toContain("vars.SMOKE_URL == ''");
+    expect(step).toContain("::notice::SMOKE_URL is not set");
   });
 
   it("only hands the token to the steps that need it", () => {
