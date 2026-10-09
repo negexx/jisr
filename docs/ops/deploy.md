@@ -57,7 +57,7 @@ Merge the pull request that contains `vercel.json` and the deploy job into `main
 3. On the configure screen:
    - **Framework Preset**: Next.js.
    - **Root Directory**: `./`.
-   - Leave **Build Command**, **Output Directory** and **Install Command** empty or at their defaults. The values come from `vercel.json` (`pnpm build`, `pnpm install --frozen-lockfile`). pnpm is picked from `packageManager` in `package.json`.
+   - Leave **Build Command**, **Output Directory** and **Install Command** empty or at their defaults. The values come from `vercel.json` (`pnpm build`, `pnpm install --frozen-lockfile`). Vercel detects pnpm from `packageManager` in `package.json` and `pnpm-lock.yaml`; confirm the pnpm version in the first preview build log (listed as unverified in section 10).
    - Do not add environment variables here yet.
 4. Click **Deploy**. If Vercel offers to skip the first deployment, skip it. If it builds anyway, that is harmless: the result is a non-indexable site (sections 3.3 and 4). Vercel treats the first deployment of a new project as a production deployment.
 5. Open the project, then **Settings** (project settings, not account settings) and check each of these. Where a label differs from what is written here, look for the nearest wording and follow https://vercel.com/docs/projects/overview.
@@ -183,11 +183,12 @@ Indexing is decided only by `NEXT_PUBLIC_SITE_URL` (Production scope) and `VERCE
 
 ### GoatCounter (analytics), when you want it
 
+0. Before creating the site: the privacy notice in English, French and Arabic that names GoatCounter and the script origin `gc.zgo.at` must be live (pre-launch checklist item A4). Do not switch analytics on without it.
 1. Create a free account for a non-commercial site at https://www.goatcounter.com (choose the EU option if offered; the code is the part before `.goatcounter.com`).
 2. In Vercel set `NEXT_PUBLIC_GOATCOUNTER_URL` to `https://<code>.goatcounter.com/count` in the **Production** scope only, with Type **Config** (the value is public; do not choose Secret, which may not reach `vercel pull`, and an empty value silently disables analytics).
 3. Re-run the deploy (section 5).
 
-What it does: an inline script (no extra JavaScript bundle) that runs only in production, loads `https://gc.zgo.at/count.js` after the browser is idle (5 s at most, 2 s fallback), honours Do Not Track and Global Privacy Control, and counts one page view per full page load (moves between pages inside the app are not counted). Five count-only events carry the funnel: `profile-started` (once per full load of the profile page in create mode, so a returning student resuming a draft counts again), `profile-completed` (create mode only), `matches-viewed`, `program-saved` (on add), `plan-opened` (only when the saved list is not empty). `count.js` itself also sends the page title, referrer, screen width and the query string with each hit; the app has no query strings and no profile data in titles. `gc.zgo.at` is a third-party script origin and must be listed in the privacy notice.
+What it does: an inline script (no extra JavaScript bundle) that runs only in production, loads `https://gc.zgo.at/count.js` after the browser is idle (5 s at most, 2 s fallback), honours Do Not Track and Global Privacy Control, and counts one page view per full page load (moves between pages inside the app are not counted). Five count-only events carry the funnel; `track` keeps a module-level set, so **each of the five events is counted at most once per full page load, not once per action** (saving three programs without a reload counts `program-saved` once). `profile-started` fires once per full load of the profile page in create mode, so a returning student resuming a draft counts again; `profile-completed` (create mode only), `matches-viewed`, `program-saved` (on add) and `plan-opened` (only when the saved list is not empty) follow the same rule. `count.js` itself also sends the page title, referrer, screen width and the query string with each hit; the app has no query strings and no profile data in titles. `gc.zgo.at` is a third-party script origin and must be listed in the privacy notice.
 
 ## 5. Redeploying without a code change
 
@@ -289,7 +290,7 @@ What `pnpm ops:smoke` checks (read-only GET requests, exit code 1 if anything fa
 | `deploy` job is grey ("skipped") | `DEPLOY_ENABLED` is not `true`, or the event was a pull request. Expected before setup. |
 | `deploy` job is red: "Repository secret X is not set" | A secret is missing or misspelled. Add it (section 3.6). Production was not touched. |
 | `vercel pull` fails with 403 or "not authorized" | The token was created for another scope or expired. Create a new token for the team that owns the project and replace `VERCEL_TOKEN`. Check `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` against `.vercel/project.json`. |
-| Build step fails with an authentication error | See the note in section 2: give the Build step `VERCEL_TOKEN` and record it in an ADR. |
+| Build step fails with an authentication error | See the note in section 2: give the Build step `VERCEL_TOKEN` and record it in a new ADR. |
 | Build fails with `NEXT_PUBLIC_...: ...` | A variable has an invalid value (section 4). Fix it in the Production scope. |
 | Deploy step rejects or stalls on the upload, or reports a rate limit on uploads | The built output is large (about 1.5 GB, about 24,000 files) and Hobby allows 5,000 uploads per day. The workflow already uses `--archive=tgz`; if it still fails, see risk 1 in section 10. |
 | New deployments are green but the site shows the old version | The project is in a rolled-back state. Use **Undo Rollback** or `vercel promote` (section 7). |
@@ -306,14 +307,17 @@ These could not be tested without your Vercel account. Check them after the firs
    - Hobby has an API limit of **5,000 uploads per day** (https://vercel.com/docs/limits), and the output has about 24,000 files. The 15,000-file and 100 MB caps for CLI uploads are documented for source files; whether they also apply to `--prebuilt` output is **unverified**.
    - **First mitigation, already in `ci.yml`:** `vercel deploy --prebuilt --archive=tgz --prod`, which Vercel documents for deployments with thousands of files. It is documented with `--prebuilt` but has not been run in this repository, and it may make deploys slower (the per-file upload cache is lost). If the HTML embeds the snapshot version, every data deploy changes a large share of the files, so without the archive each data release would re-upload most of them; this is why the flag matters.
    - If it is still rejected or too slow, this is an owner decision for a follow-up, not something this branch solves. Generating only some programme pages with on-demand rendering is **not** possible, because the snapshot is not traced into functions (`public/` is not available to functions; architecture.md). The remaining options are to shrink the per-page payload, or to move programme pages to incremental static regeneration with the snapshot read from a CDN URL (which the `NEXT_PUBLIC_SNAPSHOT_BASE_URL` seam partly prepares).
-2. `vercel build --prod` works without `VERCEL_TOKEN` in the environment.
-3. `npm install --global vercel@latest` works on the GitHub runner as written.
-4. Vercel honours `fra1` for a `--prebuilt` deployment.
-5. Vercel's router honours the compiled proxy matcher the way `next start` does (the proxy runs only for `/` and locale-less paths), and `/FR` (uppercase) behaves as it does locally.
-6. Under Standard Protection the production domain (for example `jisr.vercel.app`) is public while generated deployment URLs need a Vercel login, as documented; confirm it in a private window.
-7. Function invocation counts match page views (no invocation per `/fr/...` view).
-8. The e2e job runs on a GitHub-hosted runner without the local SWC workaround (already noted in `ci.yml`).
-9. `vercel deploy --prebuilt --archive=tgz` is accepted by the CLI on the runner (documented by Vercel, not yet run here).
+2. `vercel deploy --prebuilt --archive=tgz` is accepted by the CLI on the runner and uploads the output within the limits (documented by Vercel, not yet run here).
+3. `vercel build --prod` works without `VERCEL_TOKEN` in the environment.
+4. `npm install --global vercel@latest` works on the GitHub runner as written.
+5. Vercel honours `fra1` for a `--prebuilt` deployment.
+6. Vercel's router honours the compiled proxy matcher the way `next start` does (the proxy runs only for `/` and locale-less paths), and `/FR` (uppercase) behaves as it does locally.
+7. Under Standard Protection the production domain (for example `jisr.vercel.app`) is public while generated deployment URLs need a Vercel login, as documented; confirm it in a private window.
+8. Function invocation counts match page views (no invocation per `/fr/...` view).
+9. The e2e job runs on a GitHub-hosted runner without the local SWC workaround (already noted in `ci.yml`), and it has **never run on Linux** (it was only run on Windows). Consequence: if e2e is red on the first push to `main`, **production is never deployed** until it is fixed, because the `deploy` job needs both `verify` and `e2e`. That is recoverable: fix the cause and push again; nothing is half-deployed.
+10. pnpm: Vercel detects pnpm from `packageManager` in `package.json` and `pnpm-lock.yaml`. Confirm the pnpm version in the build log of the first preview.
+11. **No Git-sourced production deployment.** After the first merge to `main` with the Vercel project connected, the Deployments list must show **no** Git-sourced Production deployment for that commit, only the one made by the CLI from GitHub Actions. That proves `git.deploymentEnabled.main: false` in `vercel.json` took effect. If a Git production deployment appears, the release gate is not holding: disable it in Settings, Git, and report it.
+12. **Previews on a private repository.** Vercel may block the Git-integration preview of a pull request if it cannot match the commit author to the Vercel account. Commits on this branch are authored as `Never <dagdaguihamza1@gmail.com>` (check with `git log -1 --format=%ae`). On the first pull request, check that a preview is built. If it is blocked, verify that email address on the GitHub account that is connected to Vercel, or set `git config user.email` to that account's verified address for later commits.
 
 ## 11. Repository visibility and branch protection
 

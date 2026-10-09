@@ -174,7 +174,7 @@ jobs:
       # No VERCEL_TOKEN here on purpose (least privilege): the build runs the install command and
       # `pnpm build`, whose child processes would inherit it, and everything it needs was written by
       # `vercel pull`. If this step ever fails with an auth error, give it VERCEL_TOKEN again and
-      # record that in ADR 0011.
+      # record it in a new ADR.
       - name: Build
         run: vercel build --prod
 
