@@ -36,16 +36,15 @@ Trust is the product: every important fact carries an **official source URL** an
 | Dev server | `pnpm dev` |
 | Typecheck | `pnpm typecheck` |
 | Test | `pnpm test` |
-| Lint (incl. domain import boundary) | `pnpm lint` |
-| Format | `pnpm format` |
+| Lint (incl. domain import boundary) / format | `pnpm lint` / `pnpm format` |
 | Build | `pnpm build` |
 | Validate data + staleness report | `pnpm data:check` |
 | Build data snapshots | `pnpm data:build` |
-| French BUT calendar proposals / verify a scholarship proposal (`data/README.md`) | `pnpm data:fr-calendar [--dry-run]` / `pnpm data:scholarship verify <file> [--dry-run]` |
+| French BUT calendar proposals / verify a scholarship proposal / verify an official cost-profile proposal (`data/README.md`) | `pnpm data:fr-calendar [--dry-run]` / `pnpm data:scholarship verify <file> [--dry-run]` / `pnpm data:costs-official verify <file> [--dry-run\|--use-cache]` |
+| National facts (documents, application channel) from a curated registry, one proposal per programme (`data/README.md`, "National facts") | `pnpm data:national <registry> [--dry-run]` |
 | Italy discovery from Universitaly: candidate list and comparison report (read-only; about 26 requests, cache under `data-staging/universitaly/`; `--from-cache <dir>` reruns offline) | `pnpm data:it-discovery` |
 | Stage chosen Universitaly candidates by portal id (no model, no search; nothing promoted; refuses an unresolvable university; `--dry-run`) | `pnpm data:it-stage --ids <ids> [--run <dir>] [--dry-run]` |
 | Build the reader pages file from the curated Italy page registry (no network, no model; drops admissions and programme-other pages of an older academic year; writes `.missing.txt` and `.dropped.txt`) | `pnpm data:it-pages --registry <file[,file...]> --out <pages.json> [--max-per-programme 14] [--data-dir data]` |
-| Verify an official cost-profile proposal (`data/README.md`) | `pnpm data:costs-official verify <file> [--dry-run\|--use-cache]` |
 | E2E (builds the fixture, starts `next start` on :3100) | `pnpm test:e2e` |
 | Fixture build / dev server on the synthetic e2e data | `pnpm build:e2e` / `pnpm dev:fixture` |
 | First-load JS per route (gzip) + Zod marker scan, after a build | `pnpm perf:js` |
