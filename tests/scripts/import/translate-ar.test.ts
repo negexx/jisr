@@ -494,12 +494,16 @@ describe("arguments", () => {
 });
 
 describe("export on the real data", () => {
-  it("finds a plausible number of missing nodes and writes only to the temp out dir", () => {
+  // The real data was fully translated on 2026-10-09 (the dictionary is applied), so how many nodes
+  // are still missing depends on the data of the day: new records bring new texts and
+  // `pnpm data:translate-ar export` lists them. The test therefore checks the exporter's internal
+  // consistency on whatever the data holds, and that it writes only to the temp out dir.
+  it("exports the texts still missing and writes only to the temp out dir", () => {
     const before = readdirSync("data").sort();
     const todo = buildTodo(scanDataDir("data"), []);
-    expect(todo.missingNodes).toBeGreaterThan(5000);
-    expect(todo.entries.length).toBeGreaterThan(100);
-    expect(todo.entries.length).toBeLessThan(todo.missingNodes);
+    const uses = todo.entries.reduce((sum, entry) => sum + entry.uses, 0);
+    expect(uses).toBe(todo.missingNodes);
+    expect(todo.entries.length).toBeLessThanOrEqual(todo.missingNodes);
     const out = path.join(dir, "real-out", "ar-todo.json");
     const { batches } = writeTodoFiles(todo.entries, out);
     expect(batches).toBe(Math.ceil(todo.entries.length / 120));
