@@ -52,6 +52,9 @@ documents:
         en:
           text: Copy of relevant diploma
           status: draft
+        ar:
+          text: نسخة من الشهادة المعنية
+          status: draft
       translationRequired: null
     - slug: id-copy
       name:
@@ -60,6 +63,9 @@ documents:
           status: draft
         en:
           text: Copy of ID
+          status: draft
+        ar:
+          text: نسخة من وثيقة الهوية
           status: draft
       translationRequired: null
   source: programme

@@ -73,6 +73,9 @@ requirements:
         en:
           text: Online oral interview (Microsoft Teams) on English skills, professional orientation and motivation; pass if at least 60 out of 100 points.
           status: draft
+        ar:
+          text: مقابلة شفوية عبر الإنترنت (Microsoft Teams) حول مهاراتك في الإنجليزية وتوجهك المهني ودافعيتك؛ يكون النجاح بالحصول على 60 نقطة من 100 على الأقل.
+          status: draft
     - id: req-4
       source: page-2
       info_kind: official
@@ -83,6 +86,9 @@ requirements:
           status: draft
         en:
           text: Non-refundable 100 EUR application fee to pay; the entrance exam only takes place after this amount is received.
+          status: draft
+        ar:
+          text: يجب دفع رسوم ملف قدرها 100 EUR غير قابلة للاسترداد؛ ولا يُجرى امتحان الدخول إلا بعد استلام هذا المبلغ.
           status: draft
 scholarships: []
 sources:

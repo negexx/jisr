@@ -56,6 +56,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: true
     - slug: vpd-certificate
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: VPD certificate from uni-assist
+          status: draft
+        ar:
+          text: إفادة التحقق المسبق (VPD) الصادرة عن خدمة uni-assist
           status: draft
       translationRequired: null
     - slug: language-certificate
@@ -74,6 +80,9 @@ documents:
         en:
           text: Recognised language certificate
           status: draft
+        ar:
+          text: شهادة لغة معترف بها
+          status: draft
       translationRequired: null
     - slug: cooperation-agreement
       name:
@@ -82,6 +91,9 @@ documents:
           status: draft
         en:
           text: Copy of the cooperation agreement
+          status: draft
+        ar:
+          text: اتفاقية التعاون (نسخة)
           status: draft
       translationRequired: null
   source: page-2
@@ -112,6 +124,9 @@ requirements:
         en:
           text: Check whether your foreign certificate (Moroccan Baccalauréat) is recognised as a university entrance qualification in Germany and whether a uni-assist VPD is required.
           status: draft
+        ar:
+          text: تحقق مما إذا كانت شهادتك الأجنبية (البكالوريا المغربية) معترفًا بها كمؤهل للدخول إلى الجامعة في ألمانيا وما إذا كانت VPD من uni-assist لازمة.
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -122,6 +137,9 @@ requirements:
           status: draft
         en:
           text: Check the specific admission requirements and, if applicable, the requirement of a cooperation agreement with a company for the work-integrated variant.
+          status: draft
+        ar:
+          text: تحقق من شروط القبول الخاصة، وعند الاقتضاء من اشتراط اتفاقية تعاون مع شركة بالنسبة للصيغة المدمجة بالشركة.
           status: draft
 scholarships: []
 sources:

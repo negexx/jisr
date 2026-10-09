@@ -50,6 +50,9 @@ documents:
         en:
           text: University entrance qualification
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: page-1
   info_kind: official
@@ -87,6 +90,9 @@ requirements:
         en:
           text: Your foreign diploma (Moroccan Baccalauréat) must be verified and assessed through uni-assist (preliminary review documentation – VPD); check the exact documents and deadlines on uni-assist.
           status: draft
+        ar:
+          text: يجب التحقق من شهادتك الأجنبية (البكالوريا المغربية) وتقييمها عبر خدمة uni-assist (Vorprüfungsdokumentation – VPD)؛ تحقق من الوثائق الدقيقة والموعد النهائي لدى هذه الخدمة.
+          status: draft
     - id: req-4
       source: page-3
       info_kind: official
@@ -97,6 +103,9 @@ requirements:
           status: draft
         en:
           text: Admission requires a university entrance qualification (HZB); have your Moroccan Baccalauréat checked to confirm it is recognised as an HZB.
+          status: draft
+        ar:
+          text: يتطلب القبول مؤهلًا لدخول الجامعة (HZB)؛ اطلب التحقق من أن بكالوريتك المغربية معترف بها على أنها HZB.
           status: draft
 scholarships: []
 sources:

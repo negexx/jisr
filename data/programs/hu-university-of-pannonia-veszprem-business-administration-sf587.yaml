@@ -70,6 +70,9 @@ requirements:
         en:
           text: An online entrance examination (oral interview) via MS Teams is required; it assesses background knowledge, language skills and motivation. Minimum score of 56 points out of 100.
           status: draft
+        ar:
+          text: تُشترط مقابلة قبول (امتحان دخول شفوي) عبر الإنترنت على MS Teams؛ وهي تقيّم المعارف والكفاءات اللغوية والدافع. الحد الأدنى للنتيجة 56 نقطة من 100.
+          status: draft
 scholarships: []
 sources:
   programme:

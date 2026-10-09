@@ -60,6 +60,9 @@ requirements:
         en:
           text: An online oral interview (Microsoft Teams) is mandatory to check English skills, professional orientation and motivation. The exam is passed with at least 60 of 100 points. Without paying the 100 EUR application fee, no entrance exam is possible.
           status: draft
+        ar:
+          text: مقابلة شفوية عبر الإنترنت (Microsoft Teams) إلزامية للتحقق من الإنجليزية والتوجه المهني والدافع. يُعتبر الامتحان ناجحًا بالحصول على 60 نقطة على الأقل من 100. ولا يمكن اجتياز أي امتحان دون أداء 100 EUR من رسوم الملف.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -71,6 +74,9 @@ requirements:
         en:
           text: Good results in mathematics are expected (High school / secondary education (or higher). Good results in Mathematics.), with no precise numerical threshold stated.
           status: draft
+        ar:
+          text: يُنتظر الحصول على نتائج جيدة في الرياضيات (الدراسة الثانوية أو ما فوقها، مع نتائج جيدة في الرياضيات)، دون تحديد عتبة رقمية.
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -81,6 +87,9 @@ requirements:
           status: draft
         en:
           text: "The English level assessed for oral and written is minimum B2. A language certificate is not compulsory: skills are assessed during the online interview."
+          status: draft
+        ar:
+          text: "مستوى الإنجليزية الذي يُقيَّم شفويًا وكتابيًا هو B2 على الأقل. شهادة اللغة غير إلزامية: تُقيَّم المهارات خلال المقابلة عبر الإنترنت."
           status: draft
 scholarships: []
 sources:

@@ -67,6 +67,9 @@ requirements:
         en:
           text: A written online entrance examination is required; admission follows the university's annual admission process. Check the details with the university.
           status: draft
+        ar:
+          text: يُشترط امتحان دخول كتابي عبر الإنترنت؛ ويتبع القبول الإجراء السنوي للجامعة. تحقق من التفاصيل لدى الجامعة.
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -78,6 +81,9 @@ requirements:
         en:
           text: Provide a copy of your secondary/high school graduation results, record of courses studied, an English CV and a motivation letter.
           status: draft
+        ar:
+          text: قدّم نسخة من نتائج نهاية دراستك الثانوية، وكشفًا بالمواد التي درستها، وسيرة ذاتية (CV) بالإنجليزية، ورسالة تحفيزية.
+          status: draft
     - id: req-4
       source: programme
       info_kind: official
@@ -88,6 +94,9 @@ requirements:
           status: draft
         en:
           text: Stipendium Hungaricum scholarship funding is available for this programme; consult the scholarship call if you wish to apply that way.
+          status: draft
+        ar:
+          text: التمويل بمنحة Stipendium Hungaricum ممكن لهذا البرنامج؛ راجع نداء المنحة إن أردت هذا المسار.
           status: draft
 scholarships:
   - stipendium-hungaricum

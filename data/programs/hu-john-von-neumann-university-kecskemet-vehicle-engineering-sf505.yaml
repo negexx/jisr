@@ -50,6 +50,9 @@ documents:
         en:
           text: Transcript of Records
           status: draft
+        ar:
+          text: كشف النقاط
+          status: draft
       translationRequired: true
     - slug: english-language-certificate
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: Certificate of English language knowledge
+          status: draft
+        ar:
+          text: شهادة في معرفة اللغة الإنجليزية
           status: draft
       translationRequired: null
     - slug: passport
@@ -68,6 +74,9 @@ documents:
         en:
           text: Copy of the valid passport
           status: draft
+        ar:
+          text: نسخة من جواز السفر
+          status: draft
       translationRequired: null
     - slug: motivation-letter
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Letter of motivation
+          status: draft
+        ar:
+          text: رسالة تحفيزية
           status: draft
       translationRequired: null
   source: programme
@@ -95,6 +107,9 @@ requirements:
           status: draft
         en:
           text: An online oral entrance examination is part of admission; prepare to discuss your motivation and your English language skills.
+          status: draft
+        ar:
+          text: تدخل مقابلة شفوية عبر الإنترنت (امتحان دخول) ضمن القبول؛ استعد للحديث عن دافعك ومستواك في الإنجليزية.
           status: draft
 scholarships: []
 sources:

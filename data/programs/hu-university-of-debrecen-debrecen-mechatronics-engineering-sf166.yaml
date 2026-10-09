@@ -70,6 +70,9 @@ requirements:
         en:
           text: An entrance exam in Mathematics and Physics is compulsory. Results of 75% and over mean admission; results between 60%-75% mean admission to a preparatory (foundation year) programme.
           status: draft
+        ar:
+          text: امتحان الدخول في الرياضيات والفيزياء إلزامي. تتيح النتائج التي تساوي 75% أو تفوقها القبول؛ وبين 60% و75% يكون القبول في برنامج تحضيري.
+          status: draft
     - id: req-3
       source: page-3
       info_kind: official
@@ -80,6 +83,9 @@ requirements:
           status: draft
         en:
           text: For non-medical applicants to foundation or undergraduate programs, the study gap cannot be longer than 4 years.
+          status: draft
+        ar:
+          text: في برامج مرحلة الإجازة غير الطبية، لا يمكن أن تتجاوز مدة الانقطاع عن الدراسة 4 سنوات.
           status: draft
 scholarships: []
 sources:

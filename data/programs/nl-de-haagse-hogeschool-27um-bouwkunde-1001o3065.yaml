@@ -57,6 +57,9 @@ requirements:
         en:
           text: "Check admission requirements with a foreign diploma (Moroccan Baccalauréat): the diploma must be at least equivalent to a Dutch diploma granting access to higher education. Contact Centrale Studenten Inschrijving."
           status: draft
+        ar:
+          text: "تحقق من شروط القبول بشهادة أجنبية (البكالوريا المغربية): يجب أن تكون الشهادة معادلة على الأقل لشهادة هولندية تتيح الدخول إلى التعليم العالي. تواصل مع Centrale Studenten Inschrijving."
+          status: draft
     - id: req-2
       source: page-3
       info_kind: official
@@ -68,6 +71,9 @@ requirements:
         en:
           text: "Check eligibility for the statutory tuition fee (wettelijk collegegeld) as a Moroccan student: you need EU/EEA nationality or a specific Dutch residence permit. Otherwise the institutional fee applies."
           status: draft
+        ar:
+          text: "تحقق من الحق في التعرفة القانونية (wettelijk collegegeld) كطالب مغربي: يلزم حمل جنسية بلد في الاتحاد الأوروبي أو المنطقة الاقتصادية الأوروبية (UE/EEE) أو تصريح إقامة هولندي محدد. وإلا طُبّقت تعرفة المؤسسة."
+          status: draft
     - id: req-3
       source: page-3
       info_kind: official
@@ -78,6 +84,9 @@ requirements:
           status: draft
         en:
           text: Tuition fees vary depending on your situation (statutory or institutional rate). Use the 'collegegeldmeter' to see which rate applies to you, but only Centrale Studenten Inschrijving can confirm.
+          status: draft
+        ar:
+          text: تختلف الرسوم الدراسية حسب وضعك (الرسوم القانونية أو رسوم المؤسسة). استعمل 'collegegeldmeter' لمعرفة الرسوم التي تنطبق عليك، لكن Centrale Studenten Inschrijving وحدها تستطيع التأكيد.
           status: draft
 scholarships: []
 sources:

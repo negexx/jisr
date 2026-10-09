@@ -50,6 +50,9 @@ documents:
         en:
           text: Statement of purpose
           status: draft
+        ar:
+          text: رسالة تحفيزية
+          status: draft
       translationRequired: null
     - slug: resume
       name:
@@ -59,6 +62,9 @@ documents:
         en:
           text: Resume
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: passport-copy
       name:
@@ -67,6 +73,9 @@ documents:
           status: draft
         en:
           text: Copy of passport
+          status: draft
+        ar:
+          text: نسخة من جواز السفر
           status: draft
       translationRequired: null
   source: page-1

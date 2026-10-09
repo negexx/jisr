@@ -59,6 +59,9 @@ requirements:
         en:
           text: Check equivalence of the Moroccan Baccalaureate with a Dutch havo, vwo or mbo-4 diploma, and check language requirements (level not specified on this page).
           status: draft
+        ar:
+          text: تحقق من معادلة شهادة البكالوريا المغربية لشهادة هولندية havo أو vwo أو mbo-4، وتحقق من شروط اللغة (لا تحدد هذه الصفحة المستوى).
+          status: draft
 scholarships: []
 sources:
   programme:

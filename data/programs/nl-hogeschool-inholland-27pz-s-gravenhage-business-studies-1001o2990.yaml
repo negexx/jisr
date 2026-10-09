@@ -56,6 +56,9 @@ documents:
         en:
           text: Copy of identity document
           status: draft
+        ar:
+          text: نسخة من وثيقة الهوية
+          status: draft
       translationRequired: null
     - slug: diploma
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: Diploma
+          status: draft
+        ar:
+          text: الدبلوم
           status: draft
       translationRequired: null
     - slug: transcript-of-records
@@ -74,6 +80,9 @@ documents:
         en:
           text: Transcript of records
           status: draft
+        ar:
+          text: كشف النقاط
+          status: draft
       translationRequired: null
     - slug: certified-translation
       name:
@@ -82,6 +91,9 @@ documents:
           status: draft
         en:
           text: Certified translation
+          status: draft
+        ar:
+          text: ترجمة معتمدة
           status: draft
       translationRequired: true
   source: page-4
@@ -101,6 +113,9 @@ requirements:
           status: draft
         en:
           text: Check whether your Moroccan Baccalauréat is recognised as equivalent to a Dutch HAVO, VWO or MBO-4 diploma; international diplomas are assessed individually.
+          status: draft
+        ar:
+          text: تحقق مما إذا كانت شهادتك المغربية (البكالوريا) معترفًا بها كمعادلة لشهادة هولندية HAVO أو VWO أو MBO-4؛ ويُقيَّم قبول الشهادات الدولية فرديًا.
           status: draft
 scholarships: []
 sources:

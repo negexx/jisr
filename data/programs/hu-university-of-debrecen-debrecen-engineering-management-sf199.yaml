@@ -57,6 +57,9 @@ requirements:
         en:
           text: An entrance exam in mathematics and physics (written and oral) is required.
           status: draft
+        ar:
+          text: يُشترط امتحان دخول في الرياضيات والفيزياء (كتابي وشفوي).
+          status: draft
 scholarships: []
 sources:
   programme:

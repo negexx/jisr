@@ -50,6 +50,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: page-3
   info_kind: official
@@ -78,6 +81,9 @@ requirements:
         en:
           text: Verified high school documents (originals or certified copies, in English or with a certified English translation) must be uploaded.
           status: draft
+        ar:
+          text: يجب رفع وثائق نهاية الدراسة الثانوية مصادقًا عليها (الأصول أو نسخ مطابقة للأصل، بالإنجليزية أو مع ترجمة إنجليزية معتمدة).
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -89,6 +95,9 @@ requirements:
         en:
           text: "An entrance examination is required: a written mathematics exam and an online oral English interview."
           status: draft
+        ar:
+          text: "يُشترط امتحان دخول: اختبار كتابي في الرياضيات ومقابلة شفوية بالإنجليزية عبر الإنترنت."
+          status: draft
     - id: req-4
       source: page-3
       info_kind: official
@@ -99,6 +108,9 @@ requirements:
           status: draft
         en:
           text: The applicant must be at least 18 years old by the start of the study period in the Fall semester of Year 1.
+          status: draft
+        ar:
+          text: يجب أن يبلغ المتقدم 18 سنة على الأقل عند بداية فترة الدراسة في فصل الخريف من السنة 1.
           status: draft
 scholarships: []
 sources:

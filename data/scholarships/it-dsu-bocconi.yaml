@@ -15,6 +15,9 @@ summary:
   en:
     text: Regional right-to-study scholarship managed by Bocconi University for its own students. Non-EU students whose family lives abroad use an ISEEU parificato certificate issued by the CAF partnered with Bocconi.
     status: draft
+  ar:
+    text: منحة جهوية للحق في الدراسة، تديرها جامعة Bocconi لطلبتها. ويقدّم الطلبة من خارج الاتحاد الأوروبي (UE) الذين تعيش أسرهم في الخارج شهادة ISEEU parificato التي يُصدرها مركز CAF الشريك لجامعة Bocconi.
+    status: draft
 support:
   value:
     amount: null
@@ -41,6 +44,9 @@ documents:
         en:
           text: ISEEU parificato certificate (family household resident abroad)
           status: draft
+        ar:
+          text: شهادة ISEEU المعادَلة (أسرة مقيمة في الخارج)
+          status: draft
       translationRequired: null
   source: page-2
   info_kind: official
@@ -50,6 +56,9 @@ howToApply:
     status: draft
   en:
     text: Get the ISEEU parificato from the CAF partnered with Bocconi, then submit the online application through the link published on the university page during the application period, uploading the supporting documents.
+    status: draft
+  ar:
+    text: احصل على ISEEU parificato من CAF الشريك لجامعة Bocconi، ثم قدّم الطلب عبر الإنترنت من خلال الرابط المنشور في صفحة الجامعة خلال فترة التقديم، مع الوثائق الداعمة.
     status: draft
 officialUrl: https://www.unibocconi.it/en/current-students/funding/isu-bocconi-scholarship-first-year-students-ay-2026-27
 sources:

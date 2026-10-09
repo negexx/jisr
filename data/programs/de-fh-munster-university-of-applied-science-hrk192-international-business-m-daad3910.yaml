@@ -57,6 +57,9 @@ documents:
         en:
           text: official language certificate
           status: draft
+        ar:
+          text: شهادة لغة رسمية
+          status: draft
       translationRequired: null
   source: programme
   info_kind: official
@@ -92,6 +95,9 @@ requirements:
           status: draft
         en:
           text: A course entrance exam must be passed for students starting in Münster (assessment of particular educational background).
+          status: draft
+        ar:
+          text: يجب اجتياز امتحان دخول للطلبة الذين يبدؤون دراستهم في Münster (تقييم المسار الدراسي).
           status: draft
 scholarships: []
 sources:

@@ -47,6 +47,9 @@ documents:
         en:
           text: Declaration of value
           status: draft
+        ar:
+          text: بيان القيمة
+          status: draft
       translationRequired: null
     - slug: foreign-qualification
       name:
@@ -56,6 +59,9 @@ documents:
         en:
           text: Foreign qualification
           status: draft
+        ar:
+          text: شهادة أجنبية
+          status: draft
       translationRequired: null
     - slug: certificate-of-comparability
       name:
@@ -64,6 +70,9 @@ documents:
           status: draft
         en:
           text: Certificate of comparability
+          status: draft
+        ar:
+          text: شهادة قابلية المقارنة
           status: draft
       translationRequired: null
   source: programme
@@ -91,6 +100,9 @@ requirements:
           status: draft
         en:
           text: Check the admission conditions and any additional educational requirements (OFAs) for students with a foreign diploma.
+          status: draft
+        ar:
+          text: تحقق من شروط القبول ومن أي متطلبات إضافية محتملة (OFA) للطلبة الحاملين لشهادة أجنبية.
           status: draft
 scholarships: []
 sources:

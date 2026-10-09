@@ -66,6 +66,9 @@ requirements:
         en:
           text: "Check the admission requirements: high school diploma recognized by Indonesia and Mecklenburg-West Pomerania (Germany), or Diploma-III with a GPA of 2.75 or better (on a four-point scale), or successful completion of professional training and at least three years of working practice, or successful admission examination."
           status: draft
+        ar:
+          text: "تحقق من شروط القبول: شهادة دراسة ثانوية معترف بها من إندونيسيا ومن ولاية مكلنبورغ-بوميرانيا الغربية (ألمانيا)، أو دبلوم-III بمعدل 2,75 أو أفضل (على سلم من أربع نقاط)، أو إتمام تكوين مهني وثلاث سنوات على الأقل من الممارسة المهنية، أو النجاح في امتحان قبول."
+          status: draft
 scholarships: []
 sources:
   programme:

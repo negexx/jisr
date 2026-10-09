@@ -53,6 +53,9 @@ documents:
         en:
           text: Identity photo
           status: draft
+        ar:
+          text: صورة شخصية
+          status: draft
       translationRequired: null
     - slug: identity-document
       name:
@@ -61,6 +64,9 @@ documents:
           status: draft
         en:
           text: Identity document (national ID card, passport, residence permit or receipt)
+          status: draft
+        ar:
+          text: وثيقة هوية (البطاقة الوطنية أو جواز السفر أو بطاقة الإقامة أو وصل إيداع طلب بطاقة الإقامة)
           status: draft
       translationRequired: null
     - slug: school-leaving-certificate
@@ -71,6 +77,9 @@ documents:
         en:
           text: Baccalaureate diploma (if you already hold the Bac)
           status: draft
+        ar:
+          text: شهادة البكالوريا (إذا كنت قد حصلت عليها بالفعل)
+          status: draft
       translationRequired: null
     - slug: transcript-of-secondary-school-studies
       name:
@@ -79,6 +88,9 @@ documents:
           status: draft
         en:
           text: Grade transcripts (national and regional if you hold the Bac; otherwise common core, then first year of the Bac and regional)
+          status: draft
+        ar:
+          text: كشوف النقاط (كشف الامتحان الوطني وكشف الامتحان الجهوي إذا كنت حاصلًا على البكالوريا؛ وإلا فكشف الجذع المشترك، ثم كشف السنة الأولى من البكالوريا وكشف الامتحان الجهوي)
           status: draft
       translationRequired: null
     - slug: school-enrolment-certificate
@@ -89,6 +101,9 @@ documents:
         en:
           text: School or programme enrolment certificate for the current year (if you are still at the lycée or in a programme)
           status: draft
+        ar:
+          text: شهادة مدرسية للسنة الحالية (إذا كنت لا تزال تدرس في الثانوية أو تتابع تكوينًا)
+          status: draft
       translationRequired: null
     - slug: french-language-certificate
       name:
@@ -97,6 +112,9 @@ documents:
           status: draft
         en:
           text: French language certificate (TCF, DELF B2 or DALF), unless exempt; a convocation to a session is accepted
+          status: draft
+        ar:
+          text: شهادة في اللغة الفرنسية (TCF أو DELF B2 أو DALF)، إلا في حالات الإعفاء؛ ويُقبل كذلك الاستدعاء لحضور دورة الامتحان
           status: draft
       translationRequired: null
   source: page-5

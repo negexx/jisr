@@ -50,6 +50,9 @@ documents:
         en:
           text: CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: school-leaving-certificate
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: school-leaving certificate
+          status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
           status: draft
       translationRequired: null
   source: page-2
@@ -88,6 +94,9 @@ requirements:
         en:
           text: A 15-minute admission interview is held; it is not a knowledge test but about motivation. Also check the additional admission requirements and the recognition of your foreign school-leaving certificate.
           status: draft
+        ar:
+          text: تُنظَّم مقابلة قبول مدتها 15 دقيقة؛ وهي لا تقيّم المعارف بل الدافع. تحقق أيضًا من شروط القبول الإضافية ومن الاعتراف بالشهادة الأجنبية.
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -98,6 +107,9 @@ requirements:
           status: draft
         en:
           text: Tuition fees may vary; check the programme website for an exact breakdown of costs.
+          status: draft
+        ar:
+          text: قد تتغير الرسوم الدراسية؛ راجع موقع البرنامج لمعرفة تفاصيل التكاليف بدقة.
           status: draft
 scholarships: []
 sources:

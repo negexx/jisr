@@ -57,6 +57,9 @@ requirements:
         en:
           text: Eligible high school degree required; admission tests and an oral entrance examination are required. Check details on the BME e-admission page.
           status: draft
+        ar:
+          text: تُشترط شهادة الدراسة الثانوية (high school degree)؛ ويُطلب اختبار قبول ومقابلة شفوية. تحقق من التفاصيل في صفحة e-admission الخاصة بـ BME.
+          status: draft
 scholarships: []
 sources:
   programme:

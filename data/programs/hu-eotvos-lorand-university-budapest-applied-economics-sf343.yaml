@@ -57,6 +57,9 @@ requirements:
         en:
           text: "An oral entrance examination is required (Entrance examination: Yes, oral type, place: Online). Check the details with the university."
           status: draft
+        ar:
+          text: "يُشترط امتحان دخول شفوي عبر الإنترنت (المعلومة المنشورة: امتحان الدخول نعم، النوع شفوي، المكان عبر الإنترنت). تحقق من التفاصيل لدى الجامعة."
+          status: draft
 scholarships: []
 sources:
   programme:

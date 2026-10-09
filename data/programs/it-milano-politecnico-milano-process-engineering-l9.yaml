@@ -47,6 +47,9 @@ documents:
         en:
           text: Final secondary school qualification obtained after at least 12 years of schooling
           status: draft
+        ar:
+          text: الشهادة النهائية للدراسة الثانوية المحصَّل عليها بعد 12 سنة دراسية على الأقل
+          status: draft
       translationRequired: null
     - slug: cimea-statement-or-declaration-of-value
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: CIMEA statement or Declaration of value, if the institution asks for it
+          status: draft
+        ar:
+          text: إفادة CIMEA أو بيان القيمة، إذا طلبته المؤسسة
           status: draft
       translationRequired: null
     - slug: university-entrance-aptitude-certificate
@@ -65,6 +71,9 @@ documents:
         en:
           text: Certificate of passing the academic aptitude test for university entrance in the home country, where one exists
           status: draft
+        ar:
+          text: شهادة النجاح في اختبار الكفاءة الأكاديمية للولوج إلى الجامعة في بلد المنشأ، إن وُجد هذا الاختبار
+          status: draft
       translationRequired: null
     - slug: italian-translation-of-documents
       name:
@@ -73,6 +82,9 @@ documents:
           status: draft
         en:
           text: Italian translations of the documents above, where the institution asks for them
+          status: draft
+        ar:
+          text: ترجمات الوثائق أعلاه إلى الإيطالية، إذا طلبتها المؤسسة
           status: draft
       translationRequired: null
   source: page-3
@@ -93,6 +105,9 @@ requirements:
         en:
           text: An admission test is required for engineering programmes; check the procedures and dates on the Politecnico website.
           status: draft
+        ar:
+          text: يُشترط اختبار قبول لبرامج الهندسة؛ تحقق من التفاصيل والتواريخ على موقع Politecnico.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -103,6 +118,9 @@ requirements:
           status: draft
         en:
           text: Scholarships are available for international students, with specific conditions and deadlines.
+          status: draft
+        ar:
+          text: تتوفر منح دراسية للطلبة الدوليين، بشروط ومواعيد نهائية خاصة.
           status: draft
 scholarships: []
 sources:

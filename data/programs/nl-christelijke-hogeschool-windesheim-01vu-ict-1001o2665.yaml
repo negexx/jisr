@@ -49,6 +49,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: grade-list
       name:
@@ -57,6 +60,9 @@ documents:
           status: draft
         en:
           text: Grade list
+          status: draft
+        ar:
+          text: كشف النقاط
           status: draft
       translationRequired: null
   source: page-1
@@ -77,6 +83,9 @@ requirements:
         en:
           text: Check that your Moroccan diploma (Baccalauréat) is considered equivalent to a Dutch havo, vwo or mbo-4 diploma; the page also states you must meet the language requirements (see the taaleisen page).
           status: draft
+        ar:
+          text: تحقق من أن شهادتك المغربية (البكالوريا) تُعتبر معادلة لشهادة هولندية havo أو vwo أو mbo-4؛ وتشير الصفحة أيضًا إلى ضرورة استيفاء شروط اللغة (انظر صفحة taaleisen).
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -87,6 +96,9 @@ requirements:
           status: draft
         en:
           text: 'No additional profile-subject requirements are mentioned for this programme: "Er gelden geen extra eisen voor profielvakken."'
+          status: draft
+        ar:
+          text: "لا يُذكر في المصدر الرسمي لهذه الشعبة أي شرط إضافي يخص المواد التي يجب أن تكون ضمن ملفك الدراسي، إذ يقول المصدر: «Er gelden geen extra eisen voor profielvakken.»"
           status: draft
 scholarships: []
 sources:

@@ -15,6 +15,9 @@ summary:
   en:
     text: Regional right-to-study scholarship managed directly by the University of Padua for its own students. International students whose families live abroad obtain an equivalent ISEE (ISEE parificato) from the CAF affiliated with the University.
     status: draft
+  ar:
+    text: منحة جهوية للحق في الدراسة، تديرها جامعة بادوفا مباشرة لطلبتها. ويحصل الطلبة الدوليون الذين تعيش أسرهم في الخارج على ISEE معادل (ISEE parificato) لدى CAF المتعاقد مع الجامعة.
+    status: draft
 support:
   value:
     amount: null
@@ -42,6 +45,9 @@ howToApply:
     status: draft
   en:
     text: Fill in the Application for Benefits (RdA) in Uniweb and request the ISEE or ISEE parificato. International students request the ISEE parificato only from the CAF affiliated with the University.
+    status: draft
+  ar:
+    text: املأ طلب الاستفادة (RdA) على Uniweb واطلب ISEE أو ISEE parificato. ويطلب الطلبة الدوليون ISEE parificato من CAF المرتبط باتفاقية مع الجامعة فقط.
     status: draft
 officialUrl: https://www.unipd.it/borse-studio-alloggi
 sources:

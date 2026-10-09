@@ -70,6 +70,9 @@ requirements:
         en:
           text: Professional admission interview (oral, online) organised by the Admission Committee, with a minimum score of 56 points out of 100.
           status: draft
+        ar:
+          text: مقابلة قبول مهنية (شفوية، عبر الإنترنت) تنظمها لجنة القبول، والحد الأدنى للنتيجة 56 نقطة من 100.
+          status: draft
 scholarships: []
 sources:
   programme:

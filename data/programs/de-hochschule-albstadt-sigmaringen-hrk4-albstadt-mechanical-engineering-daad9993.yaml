@@ -51,6 +51,9 @@ documents:
         en:
           text: Official German language certificate
           status: draft
+        ar:
+          text: شهادة رسمية في اللغة الألمانية
+          status: draft
       translationRequired: null
   source: daad
   info_kind: official

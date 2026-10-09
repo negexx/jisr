@@ -57,6 +57,9 @@ requirements:
         en:
           text: An online oral entrance examination is required. Admission is based on a 100-point evaluation (50 for motivation, professional knowledge and educational background, 50 for language proficiency). The entrance exam is successful with at least 60 points.
           status: draft
+        ar:
+          text: امتحان الدخول الشفوي عبر الإنترنت إلزامي. يستند القبول إلى تقييم من 100 نقطة (50 للدافع والمعارف المهنية والمسار الدراسي، و50 لإتقان الإنجليزية). ويُعتبر الامتحان ناجحًا بالحصول على 60 نقطة على الأقل.
+          status: draft
 scholarships: []
 sources:
   programme:

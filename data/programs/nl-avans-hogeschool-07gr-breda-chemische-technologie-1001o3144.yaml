@@ -60,6 +60,9 @@ requirements:
         en:
           text: Check specific admission requirements for non-Dutch diplomas (e.g., Moroccan Baccalaureate) with the institution.
           status: draft
+        ar:
+          text: تحقق لدى المؤسسة من شروط القبول الخاصة بالشهادات غير الهولندية (مثل البكالوريا المغربية).
+          status: draft
 scholarships: []
 sources:
   programme:

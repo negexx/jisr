@@ -56,6 +56,9 @@ documents:
         en:
           text: University entrance qualification
           status: draft
+        ar:
+          text: شهادة الولوج إلى الجامعة (شهادة نهاية الدراسة الثانوية)
+          status: draft
       translationRequired: null
     - slug: identity-card
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: Copy of identity card
+          status: draft
+        ar:
+          text: نسخة من بطاقة الهوية
           status: draft
       translationRequired: null
     - slug: curriculum-vitae
@@ -74,6 +80,9 @@ documents:
         en:
           text: Curriculum vitae
           status: draft
+        ar:
+          text: السيرة الذاتية
+          status: draft
       translationRequired: null
     - slug: proof-of-language-proficiency
       name:
@@ -83,6 +92,9 @@ documents:
         en:
           text: Proof of language proficiency
           status: draft
+        ar:
+          text: إثبات الكفاءة اللغوية
+          status: draft
       translationRequired: null
     - slug: proof-of-application-fee-payment
       name:
@@ -91,6 +103,9 @@ documents:
           status: draft
         en:
           text: Proof of payment of the application fee
+          status: draft
+        ar:
+          text: إثبات دفع رسوم التقديم
           status: draft
       translationRequired: null
   source: page-2
@@ -111,6 +126,9 @@ requirements:
         en:
           text: Check the university entrance qualification via the DAAD database and Anabin.
           status: draft
+        ar:
+          text: تحقق من مؤهل الدخول إلى الجامعة عبر قاعدة بيانات DAAD وAnabin.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -122,6 +140,9 @@ requirements:
         en:
           text: An online admission test covering mathematical and logical topics is necessary.
           status: draft
+        ar:
+          text: يلزم اختبار قبول عبر الإنترنت يشمل مواضيع في الرياضيات والمنطق.
+          status: draft
     - id: req-3
       source: page-3
       info_kind: official
@@ -132,6 +153,9 @@ requirements:
           status: draft
         en:
           text: Application and service fees apply to non-EU/EEA students.
+          status: draft
+        ar:
+          text: تُطبَّق رسوم التقديم والخدمة على الطلبة من خارج الاتحاد الأوروبي والمنطقة الاقتصادية الأوروبية (UE/EEE).
           status: draft
 scholarships: []
 sources:

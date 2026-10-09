@@ -57,6 +57,9 @@ requirements:
         en:
           text: "Check the admission requirements: a havo, vwo or mbo level 4 diploma is required, and additional requirements apply for certain havo/vwo profiles."
           status: draft
+        ar:
+          text: "تحقق من شروط القبول: تُطلب شهادة havo أو vwo أو mbo من المستوى 4، وتنطبق متطلبات إضافية على بعض مسارات havo/vwo."
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: Check whether your foreign diploma is recognised and which additional documents are required; consult the international admission procedure.
+          status: draft
+        ar:
+          text: تحقق مما إذا كانت شهادتك الأجنبية معترفًا بها وما هي الوثائق التكميلية المطلوبة؛ راجع إجراء القبول الدولي.
           status: draft
 scholarships: []
 sources:

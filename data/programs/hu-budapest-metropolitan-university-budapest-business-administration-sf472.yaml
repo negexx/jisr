@@ -60,6 +60,9 @@ requirements:
         en:
           text: An online admission interview and an online mathematics test are part of the selection process.
           status: draft
+        ar:
+          text: يدخل ضمن إجراء الانتقاء مقابلة قبول عبر الإنترنت واختبار في الرياضيات عبر الإنترنت.
+          status: draft
 scholarships: []
 sources:
   programme:

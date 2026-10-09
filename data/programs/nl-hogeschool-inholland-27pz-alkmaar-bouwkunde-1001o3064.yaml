@@ -66,6 +66,9 @@ requirements:
         en:
           text: "Check whether your Moroccan diploma (Baccalauréat) is accepted: international diplomas need to be evaluated individually by Inholland's Admissions department."
           status: draft
+        ar:
+          text: "تحقق مما إذا كانت شهادتك المغربية (البكالوريا) مقبولة: تُقيَّم الشهادات الدولية فرديًا من مصلحة القبول في Inholland."
+          status: draft
 scholarships: []
 sources:
   programme:

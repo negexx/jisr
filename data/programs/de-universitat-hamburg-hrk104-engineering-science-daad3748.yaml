@@ -70,6 +70,9 @@ requirements:
         en:
           text: Check whether the Abitur or an equivalent foreign qualification (e.g. the Moroccan Baccalauréat) is accepted as a university entrance qualification.
           status: draft
+        ar:
+          text: تحقق مما إذا كانت شهادة Abitur أو شهادة أجنبية معادلة (مثل البكالوريا المغربية) مقبولة كمؤهل للدخول إلى الجامعة.
+          status: draft
     - id: req-3
       source: page-3
       info_kind: official
@@ -80,6 +83,9 @@ requirements:
           status: draft
         en:
           text: "Applicants with a foreign qualification must upload additional documents: translated certificates, transcripts, possibly APS certificate and proof of German or English language skills."
+          status: draft
+        ar:
+          text: "تُطلب وثائق إضافية من المتقدمين الحاصلين على شهادة أجنبية: شهادات مترجمة، وكشوف نقاط، وربما شهادة APS وإثبات معرفة اللغة الألمانية أو الإنجليزية."
           status: draft
 scholarships: []
 sources:

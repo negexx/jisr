@@ -70,6 +70,9 @@ requirements:
         en:
           text: 'An admission test must be passed: "A successfully completed admission test". Check with the university for details and how to take this test.'
           status: draft
+        ar:
+          text: يجب اجتياز اختبار قبول بنجاح، وهو ما تنص عليه الجامعة بعبارة « A successfully completed admission test ». تحقق لدى الجامعة من تفاصيل هذا الاختبار وإجراءاته.
+          status: draft
     - id: req-3
       source: page-3
       info_kind: official
@@ -80,6 +83,9 @@ requirements:
           status: draft
         en:
           text: "Verify your eligibility with your Moroccan Baccalauréat via the DAAD database or Anabin: your diploma may require an additional year of study or a Studienkolleg."
+          status: draft
+        ar:
+          text: "تحقق من أهليتك بشهادة البكالوريا المغربية عبر قاعدة بيانات DAAD أو Anabin: قد تتطلب شهادتك سنة دراسية إضافية أو Studienkolleg."
           status: draft
 scholarships: []
 sources:

@@ -50,6 +50,9 @@ documents:
         en:
           text: Secondary school certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: true
     - slug: secondary-school-transcript
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: Secondary school transcript
+          status: draft
+        ar:
+          text: كشف نقاط الدراسة الثانوية
           status: draft
       translationRequired: true
     - slug: cv-and-motivation-letter
@@ -68,6 +74,9 @@ documents:
         en:
           text: CV and motivation letter
           status: draft
+        ar:
+          text: السيرة الذاتية (CV) ورسالة تحفيزية
+          status: draft
       translationRequired: null
     - slug: passport
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Valid passport
+          status: draft
+        ar:
+          text: جواز سفر صالح
           status: draft
       translationRequired: null
   source: page-3
@@ -104,6 +116,9 @@ requirements:
         en:
           text: An online interview and sometimes a test (often high-school-level mathematics) are part of the selection.
           status: draft
+        ar:
+          text: تدخل ضمن الانتقاء مقابلة عبر الإنترنت، وأحيانًا اختبار (غالبًا في الرياضيات بمستوى الثانوية).
+          status: draft
     - id: req-3
       source: page-3
       info_kind: official
@@ -114,6 +129,9 @@ requirements:
           status: draft
         en:
           text: An application fee of EUR 200 is payable at conditional acceptance.
+          status: draft
+        ar:
+          text: تُدفع رسوم ملف قدرها 200 EUR عند القبول المشروط.
           status: draft
 scholarships: []
 sources:

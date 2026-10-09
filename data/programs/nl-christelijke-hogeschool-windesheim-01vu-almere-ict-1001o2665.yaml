@@ -46,6 +46,9 @@ documents:
         en:
           text: Diploma
           status: draft
+        ar:
+          text: الدبلوم
+          status: draft
       translationRequired: null
   source: page-1
   info_kind: official
@@ -64,6 +67,9 @@ requirements:
           status: draft
         en:
           text: Check that the Moroccan Baccalauréat is recognised as equivalent to a havo/vwo/mbo-4 diploma and consult the language requirements on the taaleisen page.
+          status: draft
+        ar:
+          text: تحقق من أن شهادة البكالوريا المغربية معترف بها كمعادلة لشهادة havo/vwo/mbo-4، وراجع شروط اللغة في صفحة taaleisen.
           status: draft
 scholarships: []
 sources:

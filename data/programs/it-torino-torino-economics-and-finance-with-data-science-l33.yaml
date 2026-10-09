@@ -50,6 +50,9 @@ documents:
         en:
           text: Valid passport
           status: draft
+        ar:
+          text: جواز سفر ساري المفعول
+          status: draft
       translationRequired: null
   source: page-1
   info_kind: official
@@ -69,6 +72,9 @@ requirements:
         en:
           text: An English-language assessment test (logic, verbal comprehension, mathematics) is required; if failed, additional educational obligations are assigned.
           status: draft
+        ar:
+          text: يُطلب اختبار تقييم بالإنجليزية (المنطق والفهم اللفظي والرياضيات)؛ وفي حالة الإخفاق تُحدَّد التزامات تعليمية إضافية.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -79,6 +85,9 @@ requirements:
           status: draft
         en:
           text: For holders of a foreign qualification, the application is made via Apply@UniTo; check the exemption list and application windows.
+          status: draft
+        ar:
+          text: بالنسبة لحاملي شهادة أجنبية، يتم التقديم عبر Apply@UniTo؛ راجع قائمة الإعفاءات وفترات التقديم.
           status: draft
 scholarships: []
 sources:

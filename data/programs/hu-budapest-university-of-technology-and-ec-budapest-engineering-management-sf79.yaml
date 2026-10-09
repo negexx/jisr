@@ -57,6 +57,9 @@ requirements:
         en:
           text: Selection based on documents (quality of secondary school certificate/transcript, motivation letter, extracurricular activities), electronic admission test (via internet) and online interview; minimum criteria to check.
           status: draft
+        ar:
+          text: القبول على أساس الملف (جودة الشهادة وكشف النقاط، الرسالة التحفيزية، الأنشطة الموازية)، مع اختبار قبول إلكتروني ومقابلة عبر الإنترنت؛ والمعايير الدنيا يجب التحقق منها.
+          status: draft
     - id: req-2
       source: page-3
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: Application fee of 150 EUR for the admission procedure of fee-paying foreign students.
+          status: draft
+        ar:
+          text: رسوم ملف قدرها 150 EUR لإجراء القبول الخاص بالطلبة الأجانب الذين يدفعون الرسوم الدراسية.
           status: draft
 scholarships:
   - stipendium-hungaricum

@@ -57,6 +57,9 @@ requirements:
         en:
           text: "An oral entrance examination (online, via MS Teams) is required for this programme: prepare for an oral interview."
           status: draft
+        ar:
+          text: "امتحان الدخول الشفوي (عبر الإنترنت على MS Teams) إلزامي لهذا البرنامج: استعد لمقابلة شفوية."
+          status: draft
 scholarships: []
 sources:
   programme:

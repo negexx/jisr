@@ -47,6 +47,9 @@ documents:
         en:
           text: Secondary school leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: programme
   info_kind: official
@@ -72,6 +75,9 @@ requirements:
           status: draft
         en:
           text: A 15-minute oral admission interview on Skype is part of the selection process; a motivational letter is also requested.
+          status: draft
+        ar:
+          text: تدخل مقابلة قبول شفوية عبر الإنترنت مدتها 15 دقيقة على Skype ضمن إجراء الانتقاء؛ كما تُطلب رسالة تحفيزية.
           status: draft
 scholarships: []
 sources:

@@ -56,6 +56,9 @@ documents:
         en:
           text: Officially translated certificates
           status: draft
+        ar:
+          text: شهادات مترجمة ترجمة رسمية
+          status: draft
       translationRequired: true
     - slug: passport-id-card-copy
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: Copy of passport/ID card
+          status: draft
+        ar:
+          text: نسخة من جواز السفر / بطاقة الهوية
           status: draft
       translationRequired: null
     - slug: cv
@@ -74,6 +80,9 @@ documents:
         en:
           text: Current CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV) الحالية
+          status: draft
       translationRequired: null
     - slug: english-language-skills-proof
       name:
@@ -82,6 +91,9 @@ documents:
           status: draft
         en:
           text: Proof of English language skills
+          status: draft
+        ar:
+          text: إثبات المهارات في اللغة الإنجليزية
           status: draft
       translationRequired: null
   source: page-2

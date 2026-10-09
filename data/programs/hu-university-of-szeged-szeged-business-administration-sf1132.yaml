@@ -65,6 +65,9 @@ requirements:
         en:
           text: An online written and oral entrance examination is required. Candidates with a valid SAT-score in Mathematics above a certain level are admitted without taking the entrance exam.
           status: draft
+        ar:
+          text: يُشترط امتحان دخول كتابي وشفوي عبر الإنترنت. ويُقبل دون امتحان دخول المتقدمون الذين تفوق علامتهم في الرياضيات في اختبار SAT مستوى معينًا.
+          status: draft
 scholarships: []
 sources:
   programme:

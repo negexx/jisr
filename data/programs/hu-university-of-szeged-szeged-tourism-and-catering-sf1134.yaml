@@ -57,6 +57,9 @@ requirements:
         en:
           text: High school diploma required; check English proficiency at B2 (intermediate) and the online written and oral entrance examination.
           status: draft
+        ar:
+          text: تُشترط شهادة الدراسة الثانوية (high school diploma)؛ تحقق من مستوى الإنجليزية B2 (متوسط) ومن امتحان الدخول الكتابي والشفوي عبر الإنترنت.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: A valid SAT score in Mathematics above a certain level allows admission without taking the entrance exam.
+          status: draft
+        ar:
+          text: يتيح الحصول على علامة صالحة في الرياضيات في اختبار SAT تفوق مستوى معينًا القبول دون اجتياز امتحان الدخول.
           status: draft
 scholarships: []
 sources:

@@ -56,6 +56,9 @@ documents:
         en:
           text: Higher education entrance qualification
           status: draft
+        ar:
+          text: شهادة الولوج إلى التعليم العالي (البكالوريا)
+          status: draft
       translationRequired: null
     - slug: english-language-certificate
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: English language certificate
+          status: draft
+        ar:
+          text: شهادة الكفاءة في اللغة الإنجليزية
           status: draft
       translationRequired: null
   source: page-2
@@ -100,6 +106,9 @@ requirements:
           status: draft
         en:
           text: Check separately the C1 English certificate required by the end of the first semester.
+          status: draft
+        ar:
+          text: تحقق بشكل منفصل من شهادة مستوى الإنجليزية C1 الواجب تقديمها قبل نهاية الفصل الدراسي الأول.
           status: draft
 scholarships: []
 sources:

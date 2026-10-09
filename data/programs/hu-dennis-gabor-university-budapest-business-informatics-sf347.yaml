@@ -57,6 +57,9 @@ requirements:
         en:
           text: You need to contact the university to find out the application and enrolment procedure as a self-financed international student.
           status: draft
+        ar:
+          text: عليك الاتصال بالجامعة لمعرفة إجراءات التقديم والتسجيل بصفتك طالبًا أجنبيًا (يمول دراسته بنفسه).
+          status: draft
 scholarships: []
 sources:
   programme:

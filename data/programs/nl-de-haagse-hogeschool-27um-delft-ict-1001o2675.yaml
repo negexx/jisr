@@ -57,6 +57,9 @@ requirements:
         en:
           text: With a foreign or international diploma, you can be admitted if the diploma grants access to hbo and you prove sufficient command of Dutch; the diploma is assessed by the institution. Contact the Centrale Studenten Inschrijving.
           status: draft
+        ar:
+          text: بشهادة أجنبية أو دولية، يمكن قبولك إذا كانت هذه الشهادة تتيح الولوج إلى hbo وأثبتّ إتقانًا كافيًا للغة الهولندية؛ وتقيّم المؤسسة الشهادة. تواصل مع Centrale Studenten Inschrijving.
+          status: draft
     - id: req-2
       source: page-3
       info_kind: official
@@ -76,6 +79,9 @@ requirements:
         en:
           text: With a foreign diploma, you must first submit an application via Studielink and upload your documents in Osiris Aanmelding; the Centrale Studenten Inschrijving assesses your eligibility.
           status: draft
+        ar:
+          text: بشهادة أجنبية، عليك أولًا تقديم طلب تسجيل عبر منصة Studielink ورفع وثائقك في نظام Osiris Aanmelding؛ وتقوم الجهة المسماة Centrale Studenten Inschrijving بتقييم أهليتك.
+          status: draft
     - id: req-4
       source: page-2
       info_kind: official
@@ -86,6 +92,9 @@ requirements:
           status: draft
         en:
           text: The application deadline for holders of a foreign diploma is 15 January 2026 only for programmes with a February start; for ICT (September start), the deadline is 1 May 2026.
+          status: draft
+        ar:
+          text: الموعد النهائي للتقديم لحاملي الشهادات الأجنبية هو 15 يناير 2026 فقط للبرامج التي يكون القبول فيها في فبراير؛ أما بالنسبة إلى ICT (بداية الدراسة في سبتمبر) فالموعد النهائي هو 1 مايو 2026.
           status: draft
 scholarships: []
 sources:

@@ -50,6 +50,9 @@ documents:
         en:
           text: University entrance qualification
           status: draft
+        ar:
+          text: التأهيل للدخول إلى الجامعة
+          status: draft
       translationRequired: null
     - slug: curriculum-vitae
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: Curriculum vitae
+          status: draft
+        ar:
+          text: السيرة الذاتية
           status: draft
       translationRequired: null
     - slug: official-english-language-proficiency
@@ -68,6 +74,9 @@ documents:
         en:
           text: Official proof of English language proficiency
           status: draft
+        ar:
+          text: إثبات رسمي للكفاءة في اللغة الإنجليزية
+          status: draft
       translationRequired: null
     - slug: certificate-assessment
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Certificate assessment
+          status: draft
+        ar:
+          text: تقييم الشهادة
           status: draft
       translationRequired: null
   source: page-1

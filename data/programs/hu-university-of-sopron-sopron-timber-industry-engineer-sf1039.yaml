@@ -70,6 +70,9 @@ requirements:
         en:
           text: An oral online (Skype) admission interview is part of selection; missing documents are flagged and must be sent.
           status: draft
+        ar:
+          text: تدخل مقابلة قبول شفوية عبر الإنترنت (Skype) ضمن الانتقاء؛ ويتم الإشعار بالوثائق الناقصة ويجب إرسالها.
+          status: draft
     - id: req-3
       source: page-3
       info_kind: official
@@ -80,6 +83,9 @@ requirements:
           status: draft
         en:
           text: Documents must be in English or German; otherwise a certified translation must be attached.
+          status: draft
+        ar:
+          text: يجب أن تكون الوثائق بالإنجليزية أو الألمانية؛ وإلا فيجب إرفاق ترجمة معتمدة.
           status: draft
     - id: req-4
       source: page-3
@@ -92,6 +98,9 @@ requirements:
         en:
           text: The 150 USD non-refundable application fee must be paid before starting the online application form.
           status: draft
+        ar:
+          text: يجب دفع رسوم الملف البالغة 150 USD (غير قابلة للاسترداد) قبل البدء في ملء استمارة التقديم.
+          status: draft
     - id: req-5
       source: page-3
       info_kind: official
@@ -103,6 +112,9 @@ requirements:
         en:
           text: BSc programmes are not available for the February 2027 intake; the stated starting date is September (no year given).
           status: draft
+        ar:
+          text: برامج BSc غير متاحة للقبول في فبراير 2027؛ وتاريخ البداية المذكور هو سبتمبر (دون ذكر السنة).
+          status: draft
     - id: req-6
       source: page-3
       info_kind: official
@@ -113,6 +125,9 @@ requirements:
           status: draft
         en:
           text: No dated application deadline for this programme is given; check the admission calendar on the university website.
+          status: draft
+        ar:
+          text: لا يُذكر أي موعد نهائي مؤرَّخ للتقديم لهذا البرنامج؛ تحقق من جدول القبول في موقع الجامعة.
           status: draft
 scholarships: []
 sources:

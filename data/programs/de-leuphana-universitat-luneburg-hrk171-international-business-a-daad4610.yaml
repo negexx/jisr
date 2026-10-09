@@ -56,6 +56,9 @@ documents:
         en:
           text: University entrance qualification
           status: draft
+        ar:
+          text: Hochschulzugangsberechtigung (شهادة الدخول إلى الجامعة، وهي المؤهل الذي يتيح لحاملها الالتحاق بها)
+          status: draft
       translationRequired: null
   source: page-2
   info_kind: official

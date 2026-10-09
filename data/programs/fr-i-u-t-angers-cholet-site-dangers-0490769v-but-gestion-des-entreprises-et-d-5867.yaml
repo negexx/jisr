@@ -53,6 +53,9 @@ documents:
         en:
           text: Identity photo
           status: draft
+        ar:
+          text: صورة شخصية
+          status: draft
       translationRequired: null
     - slug: identity-document
       name:
@@ -61,6 +64,9 @@ documents:
           status: draft
         en:
           text: Identity document (national ID card, passport, residence permit or receipt)
+          status: draft
+        ar:
+          text: وثيقة هوية (البطاقة الوطنية أو جواز السفر أو بطاقة الإقامة أو وصل إيداع طلب بطاقة الإقامة)
           status: draft
       translationRequired: null
     - slug: school-leaving-certificate
@@ -71,6 +77,9 @@ documents:
         en:
           text: Baccalaureate diploma (if you already hold the Bac)
           status: draft
+        ar:
+          text: شهادة البكالوريا (إذا كنت قد حصلت عليها بالفعل)
+          status: draft
       translationRequired: null
     - slug: transcript-of-secondary-school-studies
       name:
@@ -79,6 +88,9 @@ documents:
           status: draft
         en:
           text: Grade transcripts (national and regional if you hold the Bac; otherwise common core, then first year of the Bac and regional)
+          status: draft
+        ar:
+          text: كشوف النقاط (كشف الامتحان الوطني وكشف الامتحان الجهوي إذا كنت حاصلًا على البكالوريا؛ وإلا فكشف الجذع المشترك، ثم كشف السنة الأولى من البكالوريا وكشف الامتحان الجهوي)
           status: draft
       translationRequired: null
     - slug: school-enrolment-certificate
@@ -89,6 +101,9 @@ documents:
         en:
           text: School or programme enrolment certificate for the current year (if you are still at the lycée or in a programme)
           status: draft
+        ar:
+          text: شهادة مدرسية للسنة الحالية (إذا كنت لا تزال تدرس في الثانوية أو تتابع تكوينًا)
+          status: draft
       translationRequired: null
     - slug: french-language-certificate
       name:
@@ -97,6 +112,9 @@ documents:
           status: draft
         en:
           text: French language certificate (TCF, DELF B2 or DALF), unless exempt; a convocation to a session is accepted
+          status: draft
+        ar:
+          text: شهادة في اللغة الفرنسية (TCF أو DELF B2 أو DALF)، إلا في حالات الإعفاء؛ ويُقبل كذلك الاستدعاء لحضور دورة الامتحان
           status: draft
       translationRequired: null
   source: page-1
@@ -149,6 +167,9 @@ requirements:
         en:
           text: Application via the Campus France Études en France platform (Moroccan Bac, Études en France procedure); check dates and conditions with your Campus France office.
           status: draft
+        ar:
+          text: "التقديم عبر منصة Études en France التابعة لـ Campus France (الملف: البكالوريا المغربية، إجراء Études en France)؛ تحقق من المواعيد والإجراءات في فضاء Campus France الخاص بك."
+          status: draft
     - id: req-5
       source: page-6
       info_kind: official
@@ -160,6 +181,9 @@ requirements:
         en:
           text: A French certificate (TCF, DELF B2 or DALF) is required when submitting the Campus France application, unless exempted.
           status: draft
+        ar:
+          text: تُطلب شهادة في الفرنسية (TCF أو DELF B2 أو DALF) عند إيداع ملف التقديم لدى Campus France، إلا في حالات الإعفاء.
+          status: draft
     - id: req-6
       source: programme
       info_kind: official
@@ -170,6 +194,9 @@ requirements:
           status: draft
         en:
           text: "Selective admission: applications are assessed on academic results (40%), work methods (5%), soft skills (30%), motivation (20%) and engagement (5%). Strong work in key subjects is required."
+          status: draft
+        ar:
+          text: "قبول انتقائي: تقوم دراسة الطلبات خصوصًا على النتائج الدراسية (40%) وطرق العمل (5%) والمهارات السلوكية (30%) والدافع (20%) والالتزام (5%). ويلزم عمل منتظم في المواد الأساسية."
           status: draft
 scholarships: []
 sources:

@@ -56,6 +56,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: identity-card-copy
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: Copy of identity card
+          status: draft
+        ar:
+          text: نسخة من بطاقة الهوية
           status: draft
       translationRequired: null
     - slug: curriculum-vitae
@@ -74,6 +80,9 @@ documents:
         en:
           text: Curriculum vitae
           status: draft
+        ar:
+          text: السيرة الذاتية
+          status: draft
       translationRequired: null
     - slug: proof-of-language-proficiency
       name:
@@ -83,6 +92,9 @@ documents:
         en:
           text: Proof of language proficiency
           status: draft
+        ar:
+          text: إثبات الكفاءة اللغوية
+          status: draft
       translationRequired: null
     - slug: academic-readiness-assessment-certificate
       name:
@@ -91,6 +103,9 @@ documents:
           status: draft
         en:
           text: Academic Readiness Assessment test result certificate
+          status: draft
+        ar:
+          text: شهادة تثبت نتيجتك في اختبار الجاهزية الأكاديمية، المسمى Academic Readiness Assessment
           status: draft
       translationRequired: null
   source: page-1

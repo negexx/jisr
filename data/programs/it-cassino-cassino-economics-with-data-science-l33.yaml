@@ -50,6 +50,9 @@ documents:
         en:
           text: High school transcript
           status: draft
+        ar:
+          text: كشف نقاط الثانوية
+          status: draft
       translationRequired: null
     - slug: curriculum-vitae
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: Curriculum vitae
+          status: draft
+        ar:
+          text: السيرة الذاتية
           status: draft
       translationRequired: null
     - slug: motivation-letter
@@ -68,6 +74,9 @@ documents:
         en:
           text: Motivation letter
           status: draft
+        ar:
+          text: رسالة تحفيزية
+          status: draft
       translationRequired: null
     - slug: certificate-of-proficiency-in-english
       name:
@@ -77,6 +86,9 @@ documents:
         en:
           text: Certificate of proficiency in English
           status: draft
+        ar:
+          text: شهادة الكفاءة في اللغة الإنجليزية
+          status: draft
       translationRequired: null
     - slug: passport-or-identity-card
       name:
@@ -85,6 +97,9 @@ documents:
           status: draft
         en:
           text: Current (valid) passport or identity card
+          status: draft
+        ar:
+          text: جواز سفر ساري المفعول أو بطاقة هوية سارية المفعول
           status: draft
       translationRequired: null
   source: page-2
@@ -105,6 +120,9 @@ requirements:
         en:
           text: Overall high school grade point average minimum 70%, with a math grade of at least 70%. A high school diploma older than 5 years is not accepted.
           status: draft
+        ar:
+          text: علامة دنيا قدرها 70% في الثانوية، مع علامة في الرياضيات لا تقل عن 70%. ولا تُقبل شهادة نهاية الدراسة الثانوية إذا مضى على الحصول عليها أكثر من 5 سنوات.
+          status: draft
     - id: req-2
       source: page-3
       info_kind: official
@@ -115,6 +133,9 @@ requirements:
           status: draft
         en:
           text: Enrollment in the 2026/2027 academic program is limited to students born between 2001 and 2008; applicants must be at least 18 years old by August 31st, 2026.
+          status: draft
+        ar:
+          text: التسجيل للسنة الجامعية 2026/2027 مقتصر على الطلبة المولودين بين 2001 و2008؛ ويجب أن تكون قد بلغت 18 سنة في 31 أغسطس 2026 على أبعد تقدير.
           status: draft
 scholarships: []
 sources:

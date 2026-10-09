@@ -57,6 +57,9 @@ documents:
         en:
           text: University entrance qualification (copy)
           status: draft
+        ar:
+          text: شهادة الولوج إلى الجامعة (نسخة)
+          status: draft
       translationRequired: null
     - slug: recognition-of-certificates
       name:
@@ -65,6 +68,9 @@ documents:
           status: draft
         en:
           text: Recognition of certificates from the Center for International Students, Konstanz or VPD by uni-assist
+          status: draft
+        ar:
+          text: الاعتراف بالشهادات (مركز الطلبة الدوليين في كونستانس أو VPD عبر uni-assist)
           status: draft
       translationRequired: null
     - slug: german-language-certificate
@@ -75,6 +81,9 @@ documents:
         en:
           text: Proof of German language skills (DSH-1)
           status: draft
+        ar:
+          text: إثبات المهارات في الألمانية (DSH-1)
+          status: draft
       translationRequired: null
     - slug: cv
       name:
@@ -84,6 +93,9 @@ documents:
         en:
           text: Complete CV, chronological
           status: draft
+        ar:
+          text: سيرة ذاتية (CV) كاملة ومرتبة زمنيًا
+          status: draft
       translationRequired: null
     - slug: study-orientation-test
       name:
@@ -92,6 +104,9 @@ documents:
           status: draft
         en:
           text: Proof of study orientation test online
+          status: draft
+        ar:
+          text: إثبات اختبار التوجيه الدراسي عبر الإنترنت
           status: draft
       translationRequired: null
   source: page-2

@@ -60,6 +60,9 @@ requirements:
         en:
           text: The school-leaving certificate must be in English or translated.
           status: draft
+        ar:
+          text: يجب أن تكون شهادة نهاية الدراسة الثانوية بالإنجليزية أو مترجمة.
+          status: draft
 scholarships: []
 sources:
   programme:

@@ -15,6 +15,9 @@ summary:
   en:
     text: Regional scholarship managed by ERDIS Marche for students at universities in the Marche region. The call is open to Italian and foreign students who meet the merit and economic requirements it sets.
     status: draft
+  ar:
+    text: منحة جهوية تديرها ERDIS Marche لطلبة جامعات ماركي. وإعلان المنحة مفتوح للطلبة الإيطاليين والأجانب الذين تتوفر فيهم شروط الاستحقاق والموارد المحددة.
+    status: draft
 support:
   value: null
   source: page-1
@@ -38,6 +41,9 @@ howToApply:
     status: draft
   en:
     text: Apply online only; access to the application is indicated on the ERDIS portal.
+    status: draft
+  ar:
+    text: يتم الطلب عبر الإنترنت فقط؛ ويُشار إلى طريقة الوصول إلى الطلب على بوابة ERDIS.
     status: draft
 officialUrl: https://erdis.it/servizi/servizio-dettaglio/3161252
 sources:

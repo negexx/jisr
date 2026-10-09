@@ -50,6 +50,9 @@ documents:
         en:
           text: School Leaving Certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: page-3
   info_kind: official
@@ -77,6 +80,9 @@ requirements:
           status: draft
         en:
           text: An online English interview focusing on the applicant's motivations is required.
+          status: draft
+        ar:
+          text: مقابلة عبر الإنترنت بالإنجليزية حول دوافع المتقدم إلزامية.
           status: draft
 scholarships: []
 sources:

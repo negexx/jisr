@@ -62,6 +62,9 @@ requirements:
         en:
           text: "Check admission requirements: an mbo, havo or vwo diploma is required."
           status: draft
+        ar:
+          text: "تحقق من شروط القبول: تُطلب شهادة mbo أو havo أو vwo."
+          status: draft
 scholarships: []
 sources:
   programme:

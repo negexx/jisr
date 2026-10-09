@@ -57,6 +57,9 @@ requirements:
         en:
           text: An online interview and an oral entrance examination are part of the selection; successful applicants receive a conditional acceptance letter.
           status: draft
+        ar:
+          text: تدخل ضمن الانتقاء مقابلة عبر الإنترنت وامتحان دخول شفوي؛ ويتلقى المتقدمون المقبولون رسالة قبول مشروط.
+          status: draft
 scholarships: []
 sources:
   programme:

@@ -56,6 +56,9 @@ documents:
         en:
           text: School completion certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: ask-certificate
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: ASK certificate
+          status: draft
+        ar:
+          text: شهادة ASK
           status: draft
       translationRequired: null
     - slug: english-language-certificate
@@ -74,6 +80,9 @@ documents:
         en:
           text: English language certificate
           status: draft
+        ar:
+          text: شهادة في اللغة الإنجليزية
+          status: draft
       translationRequired: null
     - slug: german-language-certificate-a1
       name:
@@ -82,6 +91,9 @@ documents:
           status: draft
         en:
           text: German language certificate (Level A1)
+          status: draft
+        ar:
+          text: شهادة في اللغة الألمانية (المستوى A1)
           status: draft
       translationRequired: null
   source: page-1

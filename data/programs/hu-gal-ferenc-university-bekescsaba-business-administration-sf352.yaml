@@ -57,6 +57,9 @@ requirements:
         en:
           text: "Manual check: secondary school matriculation certificate required, with an advanced level exam in a subject or a vocational/higher education certificate, or a professional entrance exam."
           status: draft
+        ar:
+          text: "تحقق يدويًا: تُطلب شهادة نهاية الدراسة الثانوية (matriculation) مع امتحان بمستوى متقدم في مادة واحدة، أو شهادة/دبلوم في التعليم العالي، أو امتحان دخول مهني."
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -75,6 +78,9 @@ requirements:
           status: draft
         en:
           text: An entrance examination is required (online); check the details and selection subjects.
+          status: draft
+        ar:
+          text: يُشترط امتحان دخول (عبر الإنترنت)؛ تحقق من التفاصيل ومن مواد الانتقاء.
           status: draft
 scholarships: []
 sources:

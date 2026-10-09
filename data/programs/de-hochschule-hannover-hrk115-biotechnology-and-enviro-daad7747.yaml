@@ -51,6 +51,9 @@ documents:
         en:
           text: CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: letter-of-motivation
       name:
@@ -59,6 +62,9 @@ documents:
           status: draft
         en:
           text: Letter of motivation
+          status: draft
+        ar:
+          text: رسالة تحفيزية
           status: draft
       translationRequired: null
   source: page-1

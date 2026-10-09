@@ -50,6 +50,9 @@ documents:
         en:
           text: High school / secondary education certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: page-2
   info_kind: official
@@ -69,6 +72,9 @@ requirements:
         en:
           text: All applicants have to participate in an online admission interview.
           status: draft
+        ar:
+          text: مقابلة القبول عبر الإنترنت إلزامية لجميع المتقدمين.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -79,6 +85,9 @@ requirements:
           status: draft
         en:
           text: Applicants are required to write an online mathematics test as part of the online admission interview.
+          status: draft
+        ar:
+          text: يدخل اختبار في الرياضيات عبر الإنترنت ضمن مقابلة القبول (30 دقيقة، 10 أسئلة اختيار من متعدد).
           status: draft
     - id: req-3
       source: programme
@@ -91,6 +100,9 @@ requirements:
         en:
           text: "Completed secondary school studies GPA: above 50% - annually and in the final exam."
           status: draft
+        ar:
+          text: معدل عام في الثانوي أعلى من 50% في كل سنة وفي الامتحان النهائي.
+          status: draft
     - id: req-4
       source: programme
       info_kind: official
@@ -101,6 +113,9 @@ requirements:
           status: draft
         en:
           text: "For BSc programs: high school math grade above 60%."
+          status: draft
+        ar:
+          text: "لبرامج BSc: علامة الرياضيات في الثانوي أعلى من 60%."
           status: draft
 scholarships: []
 sources:

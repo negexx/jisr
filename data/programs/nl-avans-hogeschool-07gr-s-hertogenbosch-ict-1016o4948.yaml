@@ -66,6 +66,9 @@ requirements:
         en:
           text: Payment of the full tuition fee must be made by bank transfer by 15 June for a September start. Check the details and the exact amount on the tuition fee page.
           status: draft
+        ar:
+          text: يجب دفع الرسوم الدراسية كاملة بتحويل بنكي قبل 15 يونيو للالتحاق في سبتمبر. تحقق من التفاصيل ومن المبلغ الدقيق في صفحة الرسوم الدراسية.
+          status: draft
 scholarships: []
 sources:
   programme:

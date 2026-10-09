@@ -50,6 +50,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: transcript-of-records
       name:
@@ -59,6 +62,9 @@ documents:
         en:
           text: Transcript of records
           status: draft
+        ar:
+          text: كشف النقاط
+          status: draft
       translationRequired: null
     - slug: passport
       name:
@@ -67,6 +73,9 @@ documents:
           status: draft
         en:
           text: Passport
+          status: draft
+        ar:
+          text: جواز السفر
           status: draft
       translationRequired: null
   source: page-1

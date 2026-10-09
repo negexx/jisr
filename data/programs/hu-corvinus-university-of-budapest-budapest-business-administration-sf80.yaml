@@ -77,6 +77,9 @@ requirements:
         en:
           text: Check the specific admission conditions and entrance exams for this programme.
           status: draft
+        ar:
+          text: تحقق من شروط القبول الخاصة وامتحانات الدخول لهذا البرنامج.
+          status: draft
 scholarships: []
 sources:
   programme:

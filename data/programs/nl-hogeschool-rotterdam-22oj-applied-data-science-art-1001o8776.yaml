@@ -62,6 +62,9 @@ requirements:
         en:
           text: Check whether your foreign diploma (Moroccan Baccalauréat) is comparable to the required Dutch diploma and whether you have sufficient command of Dutch; contact Team Admissions to have your eligibility assessed.
           status: draft
+        ar:
+          text: تحقق من أن شهادتك الأجنبية (البكالوريا المغربية) قابلة للمقارنة بالشهادة الهولندية المطلوبة ومن أنك تتقن الهولندية بما يكفي؛ تواصل مع Team Admissions لتقييم إمكانية قبولك.
+          status: draft
 scholarships: []
 sources:
   programme:

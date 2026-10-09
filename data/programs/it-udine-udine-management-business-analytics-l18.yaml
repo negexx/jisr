@@ -47,6 +47,9 @@ documents:
         en:
           text: Foreign final/provisional school-leaving certificate
           status: draft
+        ar:
+          text: شهادة دراسية أجنبية، نهائية أو مؤقتة
+          status: draft
       translationRequired: null
     - slug: english-language-certificate
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: English language certificate at level B2 or equivalent
+          status: draft
+        ar:
+          text: شهادة لغوية في اللغة الإنجليزية بالمستوى B2 أو ما يعادله
           status: draft
       translationRequired: null
     - slug: cv
@@ -65,6 +71,9 @@ documents:
         en:
           text: Curriculum vitae
           status: draft
+        ar:
+          text: السيرة الذاتية
+          status: draft
       translationRequired: null
     - slug: motivation-letter
       name:
@@ -73,6 +82,9 @@ documents:
           status: draft
         en:
           text: Motivation letter
+          status: draft
+        ar:
+          text: رسالة تحفيزية
           status: draft
       translationRequired: null
   source: page-3
@@ -93,6 +105,9 @@ requirements:
         en:
           text: Check the admission requirements and application procedures for this Bachelor in the University of Udine's Manifesto degli Studi.
           status: draft
+        ar:
+          text: تحقق من شروط القبول وإجراءات التقديم لهذه الإجازة في دليل الدراسات (Manifesto degli Studi) لجامعة Udine.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -103,6 +118,9 @@ requirements:
           status: draft
         en:
           text: Non-EU students residing abroad must submit a pre-enrolment application at the Italian embassy or consulate in their country of residence.
+          status: draft
+        ar:
+          text: على الطلبة من خارج الاتحاد الأوروبي (UE) المقيمين في الخارج تقديم طلب التسجيل المسبق لدى سفارة إيطاليا أو قنصليتها في بلد إقامتهم.
           status: draft
 scholarships: []
 sources:

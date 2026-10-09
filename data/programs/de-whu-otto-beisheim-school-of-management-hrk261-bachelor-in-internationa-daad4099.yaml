@@ -54,6 +54,9 @@ documents:
         en:
           text: CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: letter-of-motivation
       name:
@@ -63,6 +66,9 @@ documents:
         en:
           text: Letter of motivation
           status: draft
+        ar:
+          text: رسالة تحفيزية
+          status: draft
       translationRequired: null
     - slug: school-leaving-certificate
       name:
@@ -71,6 +77,9 @@ documents:
           status: draft
         en:
           text: Secondary school diploma
+          status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
           status: draft
       translationRequired: null
   source: page-3

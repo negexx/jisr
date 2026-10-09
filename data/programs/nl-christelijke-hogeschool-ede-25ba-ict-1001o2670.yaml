@@ -52,6 +52,9 @@ documents:
         en:
           text: Diploma
           status: draft
+        ar:
+          text: الدبلوم
+          status: draft
       translationRequired: null
     - slug: grade-list
       name:
@@ -61,6 +64,9 @@ documents:
         en:
           text: Grade list
           status: draft
+        ar:
+          text: كشف النقاط
+          status: draft
       translationRequired: null
     - slug: passport
       name:
@@ -69,6 +75,9 @@ documents:
           status: draft
         en:
           text: Passport
+          status: draft
+        ar:
+          text: جواز السفر
           status: draft
       translationRequired: null
   source: page-2
@@ -89,6 +98,9 @@ requirements:
         en:
           text: "Check the equivalence of your Moroccan Baccalaureate with Nuffic: send a scan of your diploma, transcripts and passport to stuza.aanmelden@che.nl after submitting your request via Studielink."
           status: draft
+        ar:
+          text: "تحقق من معادلة شهادة البكالوريا المغربية لدى Nuffic: أرسل نسخة ممسوحة من شهادتك وكشوف نقاطك وجواز سفرك إلى stuza.aanmelden@che.nl بعد تقديم طلبك عبر Studielink."
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -100,6 +112,9 @@ requirements:
         en:
           text: As a non-EU applicant, you need a visa and/or residence permit, applied for by CHE at the IND (Immigratie- en Naturalisatiedienst).
           status: draft
+        ar:
+          text: بصفتك متقدمًا من خارج الاتحاد الأوروبي (UE)، عليك طلب تأشيرة و/أو رخصة إقامة عن طريق CHE لدى IND (Immigratie- en Naturalisatiedienst).
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -110,6 +125,9 @@ requirements:
           status: draft
         en:
           text: "Non-EU applicants: the application deadline is 1 May."
+          status: draft
+        ar:
+          text: "المتقدمون من خارج الاتحاد الأوروبي (UE): الموعد النهائي للتسجيل هو 1 مايو."
           status: draft
 scholarships: []
 sources:

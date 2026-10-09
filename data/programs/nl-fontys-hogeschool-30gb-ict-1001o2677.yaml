@@ -57,6 +57,9 @@ requirements:
         en:
           text: "Check the full admission requirements for international students with a foreign diploma (page 'Aanmelden internationaal' / 'Toelating'): your Moroccan Baccalaureate must be assessed."
           status: draft
+        ar:
+          text: "تحقق من شروط القبول الكاملة للطلبة الدوليين الحاملين لشهادة أجنبية (صفحة «Aanmelden internationaal» / «Toelating»): يجب تقييم شهادة البكالوريا المغربية الخاصة بك."
+          status: draft
 scholarships: []
 sources:
   programme:

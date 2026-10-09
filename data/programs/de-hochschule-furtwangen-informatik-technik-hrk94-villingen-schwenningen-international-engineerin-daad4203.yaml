@@ -50,6 +50,9 @@ documents:
         en:
           text: Curriculum vitae in tabular form
           status: draft
+        ar:
+          text: سيرة ذاتية (CV) على شكل جدول
+          status: draft
       translationRequired: null
   source: page-2
   info_kind: official

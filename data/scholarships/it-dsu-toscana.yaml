@@ -17,6 +17,9 @@ summary:
   en:
     text: Regional scholarship managed by DSU Toscana for students at the universities of Florence, Pisa and Siena. Non-EU students whose family lives or has income abroad submit documents translated into Italian and legalised.
     status: draft
+  ar:
+    text: منحة جهوية تديرها DSU Toscana لطلبة جامعات فلورنسا وبيزا وسيينا. ويقدّم الطلبة من خارج الاتحاد الأوروبي (UE) الذين تعيش أسرهم أو لها دخل في الخارج وثائق مترجمة إلى الإيطالية ومصادقًا عليها.
+    status: draft
 support:
   value: null
   source: page-1
@@ -40,6 +43,9 @@ howToApply:
     status: draft
   en:
     text: Apply online through the DSU Toscana procedure. Students whose family is abroad print the application receipt and send it, with the documents the call requires, by the deadline.
+    status: draft
+  ar:
+    text: التقديم عبر الإنترنت من خلال إجراء DSU Toscana. يطبع الطلبة الذين تقيم أسرتهم في الخارج وصل الطلب ويرسلونه، مع الوثائق التي يطلبها إعلان المنحة، قبل الموعد النهائي.
     status: draft
 officialUrl: https://www.dsu.toscana.it/studenti-stranieri
 sources:

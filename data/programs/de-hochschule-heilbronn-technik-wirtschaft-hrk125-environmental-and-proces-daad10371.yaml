@@ -51,6 +51,9 @@ documents:
         en:
           text: University entrance qualification
           status: draft
+        ar:
+          text: شهادة الولوج إلى الجامعة
+          status: draft
       translationRequired: null
     - slug: recognition-of-certificates
       name:
@@ -59,6 +62,9 @@ documents:
           status: draft
         en:
           text: Recognition of certificates
+          status: draft
+        ar:
+          text: الاعتراف بالشهادات
           status: draft
       translationRequired: null
     - slug: language-skills-proof
@@ -69,6 +75,9 @@ documents:
         en:
           text: Proof of language skills
           status: draft
+        ar:
+          text: إثبات المهارات اللغوية
+          status: draft
       translationRequired: null
     - slug: cv
       name:
@@ -78,6 +87,9 @@ documents:
         en:
           text: Complete CV, chronological
           status: draft
+        ar:
+          text: سيرة ذاتية (CV) كاملة مرتبة زمنيًا
+          status: draft
       translationRequired: null
     - slug: study-orientation-test
       name:
@@ -86,6 +98,9 @@ documents:
           status: draft
         en:
           text: Proof of study orientation test
+          status: draft
+        ar:
+          text: إثبات اختبار التوجيه الدراسي
           status: draft
       translationRequired: null
   source: page-2

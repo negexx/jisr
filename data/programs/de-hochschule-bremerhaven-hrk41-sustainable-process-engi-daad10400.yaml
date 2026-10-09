@@ -63,6 +63,9 @@ documents:
         en:
           text: School leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: curriculum-vitae
       name:
@@ -72,6 +75,9 @@ documents:
         en:
           text: Personally signed curriculum vitae
           status: draft
+        ar:
+          text: سيرة ذاتية موقعة شخصيًا
+          status: draft
       translationRequired: null
     - slug: passport
       name:
@@ -80,6 +86,9 @@ documents:
           status: draft
         en:
           text: Passport
+          status: draft
+        ar:
+          text: جواز السفر
           status: draft
       translationRequired: null
   source: page-1

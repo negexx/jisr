@@ -51,6 +51,9 @@ documents:
         en:
           text: University entrance qualification
           status: draft
+        ar:
+          text: التأهيل للدخول إلى الجامعة
+          status: draft
       translationRequired: null
     - slug: identity-card-copy
       name:
@@ -60,6 +63,9 @@ documents:
         en:
           text: Copy of identity card
           status: draft
+        ar:
+          text: نسخة من بطاقة الهوية
+          status: draft
       translationRequired: null
     - slug: curriculum-vitae
       name:
@@ -68,6 +74,9 @@ documents:
           status: draft
         en:
           text: Curriculum vitae
+          status: draft
+        ar:
+          text: السيرة الذاتية
           status: draft
       translationRequired: null
   source: page-1

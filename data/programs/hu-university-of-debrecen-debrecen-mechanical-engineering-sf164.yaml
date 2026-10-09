@@ -70,6 +70,9 @@ requirements:
         en:
           text: Check the entrance exam dates and admission conditions (written and oral exams in Mathematics and Physics).
           status: draft
+        ar:
+          text: تحقق من تواريخ امتحان الدخول ومن شروط القبول (امتحانات كتابية وشفوية في الرياضيات والفيزياء).
+          status: draft
 scholarships: []
 sources:
   programme:

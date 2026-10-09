@@ -56,6 +56,9 @@ documents:
         en:
           text: School leaving certificate (Baccalauréat certificate / diploma)
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية (شهادة البكالوريا)
+          status: draft
       translationRequired: null
     - slug: transcript-of-secondary-school-studies
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: 'Baccalauréat grade transcript ("Relevé de Notes": overview of subjects and grades)'
+          status: draft
+        ar:
+          text: "كشف نقاط البكالوريا («Relevé de Notes»: لمحة عن المواد والعلامات)"
           status: draft
       translationRequired: null
     - slug: degree-certificate
@@ -74,6 +80,9 @@ documents:
         en:
           text: Degree certificate (only if you hold a degree from a Moroccan university)
           status: draft
+        ar:
+          text: شهادة جامعية (فقط إذا كانت لديك شهادة من جامعة مغربية)
+          status: draft
       translationRequired: null
     - slug: university-transcript-of-records
       name:
@@ -83,6 +92,9 @@ documents:
         en:
           text: Complete university transcript of all subjects and grades, issued by your university (if you have studied at a university)
           status: draft
+        ar:
+          text: كشف نقاط جامعي كامل يتضمن جميع المواد والعلامات، صادر عن الجامعة (إذا سبق لك أن درست في جامعة)
+          status: draft
       translationRequired: null
     - slug: preparatory-classes-transcript
       name:
@@ -91,6 +103,9 @@ documents:
           status: draft
         en:
           text: Transcript of records of the classes préparatoires (only if you took classes préparatoires)
+          status: draft
+        ar:
+          text: كشف نقاط الأقسام التحضيرية (فقط إذا درست في الأقسام التحضيرية)
           status: draft
       translationRequired: null
   source: page-3
@@ -111,6 +126,9 @@ requirements:
         en:
           text: A2 level in German must be proven by the end of the second semester at the latest; check the modalities and accepted certificate.
           status: draft
+        ar:
+          text: يجب إثبات مستوى A2 في الألمانية قبل نهاية الفصل الدراسي الثاني؛ تحقق من الإجراءات ومن الشهادة المقبولة.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -121,6 +139,9 @@ requirements:
           status: draft
         en:
           text: "Check whether the programme charges tuition fees for non-EU students: fees of approx. 500 EUR per semester for non-EU students are being discussed and might apply soon."
+          status: draft
+        ar:
+          text: "تحقق مما إذا كان البرنامج يفرض رسومًا دراسية على الطلبة من خارج الاتحاد الأوروبي (UE): تجري مناقشة رسوم تبلغ نحو 500 EUR في الفصل الدراسي لهؤلاء الطلبة، وقد تُطبَّق قريبًا."
           status: draft
 scholarships: []
 sources:

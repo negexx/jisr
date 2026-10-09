@@ -57,6 +57,9 @@ requirements:
         en:
           text: An eligible high school degree is required; check the exact criteria with the university.
           status: draft
+        ar:
+          text: تُشترط شهادة الدراسة الثانوية (high school degree)، ويجب أن تكون مقبولة؛ تحقق من المعايير الدقيقة لدى الجامعة.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: Admission tests are required; an oral entrance examination is held online.
+          status: draft
+        ar:
+          text: تُطلب اختبارات قبول (امتحان دخول)؛ وتُنظَّم مقابلة شفوية عبر الإنترنت.
           status: draft
 scholarships: []
 sources:

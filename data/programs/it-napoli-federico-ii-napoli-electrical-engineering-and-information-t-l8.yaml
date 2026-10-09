@@ -50,6 +50,9 @@ documents:
         en:
           text: Passport
           status: draft
+        ar:
+          text: جواز السفر
+          status: draft
       translationRequired: null
   source: page-2
   info_kind: official

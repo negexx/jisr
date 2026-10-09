@@ -57,6 +57,9 @@ requirements:
         en:
           text: "An oral interview (online or in person) is part of the admission process: prepare for an entrance examination."
           status: draft
+        ar:
+          text: "تدخل مقابلة شفوية (عبر الإنترنت أو حضوريًا) ضمن إجراء القبول: استعد لامتحان دخول."
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: High school graduation (baccalaureate or equivalent) is required, with a basic command of English.
+          status: draft
+        ar:
+          text: تُشترط شهادة نهاية الدراسة الثانوية (البكالوريا أو ما يعادلها)، مع إتقان أساسي للإنجليزية.
           status: draft
 scholarships: []
 sources:

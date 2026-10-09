@@ -57,6 +57,9 @@ requirements:
         en:
           text: An oral entrance examination (online, via MS Teams) is required for this programme.
           status: draft
+        ar:
+          text: يُشترط امتحان دخول شفوي (عبر الإنترنت على MS Teams) لهذا البرنامج.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: The admission requirements state 'GCE'; check the equivalence of your Moroccan Baccalauréat.
+          status: draft
+        ar:
+          text: تنص شروط القبول على «GCE»؛ تحقق من معادلة بكالوريتك المغربية.
           status: draft
 scholarships: []
 sources:

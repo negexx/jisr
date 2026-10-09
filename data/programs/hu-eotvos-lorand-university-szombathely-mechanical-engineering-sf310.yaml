@@ -50,6 +50,9 @@ documents:
         en:
           text: Online application form
           status: draft
+        ar:
+          text: استمارة التقديم عبر الإنترنت
+          status: draft
       translationRequired: null
     - slug: secondary-school-record
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: Record of the final two years in secondary school
+          status: draft
+        ar:
+          text: كشف السنتين الأخيرتين من الثانوي
           status: draft
       translationRequired: null
     - slug: secondary-school-certificate
@@ -68,6 +74,9 @@ documents:
         en:
           text: Secondary school certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: transcript-of-records
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Transcript of records
+          status: draft
+        ar:
+          text: كشف النقاط
           status: draft
       translationRequired: null
     - slug: proof-of-application-fee-transfer
@@ -86,6 +98,9 @@ documents:
         en:
           text: Proof of application fee transfer
           status: draft
+        ar:
+          text: إثبات تحويل رسوم التقديم
+          status: draft
       translationRequired: null
     - slug: cv
       name:
@@ -94,6 +109,9 @@ documents:
           status: draft
         en:
           text: CV
+          status: draft
+        ar:
+          text: السيرة الذاتية (CV)
           status: draft
       translationRequired: null
     - slug: motivation-letter
@@ -104,6 +122,9 @@ documents:
         en:
           text: Motivation letter
           status: draft
+        ar:
+          text: رسالة تحفيزية
+          status: draft
       translationRequired: null
     - slug: passport-copy
       name:
@@ -112,6 +133,9 @@ documents:
           status: draft
         en:
           text: Copy of the main pages of the passport
+          status: draft
+        ar:
+          text: نسخة من الصفحات الرئيسية لجواز السفر
           status: draft
       translationRequired: null
     - slug: passport-photo
@@ -122,6 +146,9 @@ documents:
         en:
           text: Passport photo
           status: draft
+        ar:
+          text: صورة شخصية
+          status: draft
       translationRequired: null
     - slug: medical-certificate
       name:
@@ -131,6 +158,9 @@ documents:
         en:
           text: Medical certificate
           status: draft
+        ar:
+          text: شهادة طبية
+          status: draft
       translationRequired: null
     - slug: language-certificate
       name:
@@ -139,6 +169,9 @@ documents:
           status: draft
         en:
           text: Language certificate
+          status: draft
+        ar:
+          text: شهادة في اللغة
           status: draft
       translationRequired: null
   source: programme
@@ -159,6 +192,9 @@ requirements:
         en:
           text: An online oral interview is required for all applicants.
           status: draft
+        ar:
+          text: مقابلة شفوية عبر الإنترنت إلزامية لجميع المتقدمين.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -169,6 +205,9 @@ requirements:
           status: draft
         en:
           text: Good grades in secondary school finishing exams are required, especially from Mathematics.
+          status: draft
+        ar:
+          text: تُطلب علامات جيدة في امتحانات نهاية الدراسة الثانوية، خاصة في الرياضيات.
           status: draft
     - id: req-3
       source: programme
@@ -181,6 +220,9 @@ requirements:
         en:
           text: The applicant must be 18 years old by August 31.
           status: draft
+        ar:
+          text: يجب أن يبلغ المتقدم 18 سنة في 31 أغسطس.
+          status: draft
     - id: req-4
       source: programme
       info_kind: official
@@ -191,6 +233,9 @@ requirements:
           status: draft
         en:
           text: The medical certificate must be issued and signed by a physician to prove the applicant does not have certain illnesses.
+          status: draft
+        ar:
+          text: يجب أن يوقّع الطبيب الشهادة الطبية، وأن تثبت خلوّك من بعض الأمراض.
           status: draft
 scholarships: []
 sources:

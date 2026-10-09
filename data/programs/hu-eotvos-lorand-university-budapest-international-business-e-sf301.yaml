@@ -50,6 +50,9 @@ documents:
         en:
           text: secondary or high school diploma
           status: draft
+        ar:
+          text: شهادة الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: programme
   info_kind: official
@@ -69,6 +72,9 @@ requirements:
         en:
           text: Admission possible with a secondary/high school diploma allowing direct access to higher education; O-level, GCSE, IGCSE, GCE AS or BTEC exams alone do not qualify.
           status: draft
+        ar:
+          text: القبول ممكن بشهادة دراسة ثانوية تتيح الولوج إلى الجامعة؛ ولا تكفي وحدها امتحانات O-level أو GCSE أو IGCSE أو GCE AS أو BTEC.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -80,6 +86,9 @@ requirements:
         en:
           text: "An entrance examination is required: Skype interview and questionnaire."
           status: draft
+        ar:
+          text: "امتحان الدخول إلزامي: مقابلة على Skype واستبيان."
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -90,6 +99,9 @@ requirements:
           status: draft
         en:
           text: Language proficiency B2 (oral and written) in English is required; admission is decided by the Admission Board.
+          status: draft
+        ar:
+          text: يُشترط مستوى B2 (شفويًا وكتابيًا) في الإنجليزية؛ وتقرر لجنة القبول من يُقبل.
           status: draft
 scholarships: []
 sources:

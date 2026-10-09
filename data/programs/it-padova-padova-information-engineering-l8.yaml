@@ -53,6 +53,9 @@ documents:
         en:
           text: Secondary Studies diploma
           status: draft
+        ar:
+          text: شهادة الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: programme
   info_kind: official

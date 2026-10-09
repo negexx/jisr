@@ -15,6 +15,9 @@ summary:
   en:
     text: Regional right-to-study grant managed by ADiSU for students enrolled at universities in Umbria. Foreign students complete the application with documents on income and assets held abroad.
     status: draft
+  ar:
+    text: منحة جهوية لدعم الدراسة تديرها ADiSU لفائدة الطلبة المسجلين في جامعات أومبريا. ويستكمل الطلبة الأجانب الطلب بوثائق عن الدخل والممتلكات في الخارج.
+    status: draft
 support:
   value: null
   source: page-1
@@ -38,6 +41,9 @@ documents:
         en:
           text: Documents on income and assets held abroad
           status: draft
+        ar:
+          text: وثائق عن الدخل والممتلكات في الخارج
+          status: draft
       translationRequired: null
   source: page-2
   info_kind: official
@@ -47,6 +53,9 @@ howToApply:
     status: draft
   en:
     text: Apply online through the ADiSU student portal (Area studenti). Foreign students also upload the documents on income and assets held abroad.
+    status: draft
+  ar:
+    text: قدّم الطلب عبر الإنترنت على بوابة ADiSU (Area studenti). ويرفق الطلبة الأجانب أيضًا الوثائق المتعلقة بالدخل والممتلكات في الخارج.
     status: draft
 officialUrl: https://www.adisu.umbria.it/concorso-borsa-di-studio/bando/2026-2027/bando-di-concorso-lassegnazione-di-borse-di-studio-e-altri
 sources:

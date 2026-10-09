@@ -57,6 +57,9 @@ requirements:
         en:
           text: "Admission is based on a high school certificate and entrance exams in Mathematics and Chemistry: check the format and the threshold (75% for admission, 60-75% for a foundation year)."
           status: draft
+        ar:
+          text: "يقوم القبول على شهادة نهاية الدراسة الثانوية وامتحانات دخول في الرياضيات والكيمياء: تحقق من الإجراءات ومن العتبة (75 % للقبول، و60-75 % لسنة تحضيرية)."
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: The application fee (150 USD) and entrance exam fee (350 USD) must be paid by bank transfer and are non-refundable.
+          status: draft
+        ar:
+          text: تُدفع رسوم التقديم (150 USD) ورسوم امتحان الدخول (350 USD) بتحويل بنكي، ولا تُسترد.
           status: draft
 scholarships: []
 sources:

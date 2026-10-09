@@ -17,6 +17,9 @@ summary:
   en:
     text: EUR 5,000 NL Scholarship for students from outside the EEA and Switzerland starting a bachelor’s at The Hague University of Applied Sciences; you need a conditional acceptance and an essay; dates change every year.
     status: draft
+  ar:
+    text: منحة قدرها 5 000 EUR (NL Scholarship) لطلبة من خارج المنطقة الاقتصادية الأوروبية وسويسرا الذين يبدؤون الإجازة في لاهاي؛ يلزم قبول مشروط للطلب ومقالة؛ وتتغير المواعيد كل سنة.
+    status: draft
 support:
   value:
     amount:
@@ -46,6 +49,9 @@ howToApply:
     status: draft
   en:
     text: Apply to your programme at THUAS, then submit the required essay before the deadline of the current round (see the scholarship page).
+    status: draft
+  ar:
+    text: قدّم طلبك إلى برنامجك في THUAS، ثم أرسل المقال المطلوب قبل الموعد النهائي للدورة الحالية (انظر صفحة المنحة).
     status: draft
 officialUrl: https://www.thuas.com/study-choice/applications-finances-and-moving-here/study-finance-scholarships
 sources:

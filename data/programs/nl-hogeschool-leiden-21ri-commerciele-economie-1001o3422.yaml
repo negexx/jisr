@@ -46,6 +46,9 @@ documents:
         en:
           text: Certified copy of diploma and grade list
           status: draft
+        ar:
+          text: نسخة مطابقة للأصل من الشهادة ومن كشف النقاط
+          status: draft
       translationRequired: null
   source: page-1
   info_kind: official
@@ -65,6 +68,9 @@ requirements:
         en:
           text: A foreign diploma (e.g. a Moroccan Baccalauréat) must be assessed by Hogeschool Leiden on the basis of a Nuffic diploma evaluation; the application deadlines for a foreign diploma are different and are described on the 'Studenten uit het buitenland' page.
           status: draft
+        ar:
+          text: يجب أن تقيّم Hogeschool Leiden الشهادة الأجنبية (مثل البكالوريا المغربية) استنادًا إلى تقييم شهادة من Nuffic؛ ومواعيد التسجيل للشهادة الأجنبية مختلفة وهي موضحة في صفحة 'Studenten uit het buitenland'.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -75,6 +81,9 @@ requirements:
           status: draft
         en:
           text: For admission without a havo/vwo/mbo 4 diploma (Toelatingsonderzoek 21+), the test for Commerciële Economie is due by 23 June 2026 (report to be submitted); the fee in 2025 is around € 342 and a positive result does not guarantee admission, as the examination committee decides.
+          status: draft
+        ar:
+          text: للقبول دون شهادة havo/vwo/mbo 4 (Toelatingsonderzoek 21+)، يُجرى اختبار Commerciële Economie في موعد أقصاه 23 يونيو 2026 (مع تقديم تقرير)؛ وتبلغ الرسوم في 2025 نحو € 342، ولا تضمن النتيجة القبول لأن لجنة الامتحان هي التي تقرر.
           status: draft
 scholarships: []
 sources:

@@ -60,6 +60,9 @@ requirements:
         en:
           text: "An entrance exam (written and oral, online) is required: check the procedure and prepare for an interview about your IT, math and English knowledge."
           status: draft
+        ar:
+          text: "يُشترط امتحان دخول (كتابي وشفوي، عبر الإنترنت): تحقق من الإجراء واستعد للمقابلة حول معارفك في المعلوميات والرياضيات والإنجليزية."
+          status: draft
 scholarships: []
 sources:
   programme:

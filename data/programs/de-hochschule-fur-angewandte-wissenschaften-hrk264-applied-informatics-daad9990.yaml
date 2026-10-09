@@ -50,6 +50,9 @@ documents:
         en:
           text: CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: school-leaving-certificate
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: School-leaving certificate
+          status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
           status: draft
       translationRequired: null
   source: page-1
@@ -87,6 +93,9 @@ requirements:
           status: draft
         en:
           text: Check the general admission requirements for a German university of applied sciences and the application deadline on the university's website. Apply via the portal indicated on the website.
+          status: draft
+        ar:
+          text: تحقق من شروط القبول العامة في جامعة ألمانية للعلوم التطبيقية ومن الموعد النهائي للتقديم في موقع الجامعة. ويتم التقديم عبر البوابة المذكورة في الموقع.
           status: draft
 scholarships: []
 sources:

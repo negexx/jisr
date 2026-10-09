@@ -59,6 +59,9 @@ requirements:
         en:
           text: Check the entry diploma requirements (havo, vwo, mlo or mbo Procestechniek level 4) and the possibility of a toelatingsonderzoek for applicants aged 21+, as your Moroccan Baccalauréat may need evaluation.
           status: draft
+        ar:
+          text: تحقق من شروط شهادة الدخول (havo أو vwo أو mlo أو mbo Procestechniek من المستوى 4) ومن إمكانية toelatingsonderzoek للمتقدمين البالغين 21 سنة فأكثر، لأن شهادة البكالوريا المغربية الخاصة بك قد تحتاج إلى تقييم.
+          status: draft
 scholarships: []
 sources:
   programme:

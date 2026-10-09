@@ -65,6 +65,9 @@ requirements:
         en:
           text: With a foreign diploma (e.g. the Moroccan Baccalauréat), submit an enrolment request via Studielink; the Centrale Studenten Inschrijving assesses whether your diploma is at least equivalent to a Dutch diploma that grants access to higher education.
           status: draft
+        ar:
+          text: بشهادة أجنبية (مثل البكالوريا المغربية)، قدّم طلب تسجيل عبر Studielink؛ وتقيّم Centrale Studenten Inschrijving ما إذا كانت شهادتك تعادل على الأقل شهادة هولندية تتيح الولوج إلى التعليم العالي.
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -75,6 +78,9 @@ requirements:
           status: draft
         en:
           text: The page states that foreign diploma holders must also prove sufficient command of the language of instruction, but the exact CEFR level is not given; it also determines the type of further documents/exams.
+          status: draft
+        ar:
+          text: تذكر الصفحة أن حاملي الشهادات الأجنبية عليهم أيضًا إثبات إتقان كافٍ للغة التدريس، لكن مستوى CEFR الدقيق غير محدد؛ وهو يحدد كذلك نوع الوثائق/الامتحانات الإضافية.
           status: draft
 scholarships: []
 sources:

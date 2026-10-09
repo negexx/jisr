@@ -50,6 +50,9 @@ documents:
         en:
           text: Higher education entrance qualification
           status: draft
+        ar:
+          text: شهادة الولوج إلى التعليم العالي
+          status: draft
       translationRequired: null
     - slug: german-language-certificate
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: German language certificate
+          status: draft
+        ar:
+          text: شهادة في اللغة الألمانية
           status: draft
       translationRequired: null
     - slug: letter-of-motivation
@@ -68,6 +74,9 @@ documents:
         en:
           text: Letter of motivation
           status: draft
+        ar:
+          text: رسالة تحفيزية
+          status: draft
       translationRequired: null
     - slug: resume
       name:
@@ -77,6 +86,9 @@ documents:
         en:
           text: Complete up-to-date resume
           status: draft
+        ar:
+          text: سيرة ذاتية (CV) محدّثة
+          status: draft
       translationRequired: null
     - slug: vpd-certificate
       name:
@@ -85,6 +97,9 @@ documents:
           status: draft
         en:
           text: VPD certificate from uni-assist
+          status: draft
+        ar:
+          text: إفادة المراجعة الأولية (VPD) الصادرة عن خدمة uni-assist
           status: draft
       translationRequired: null
   source: daad

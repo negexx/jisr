@@ -71,6 +71,9 @@ requirements:
         en:
           text: "Check the admission requirements: a havo, vwo or mbo-4 diploma is required; without it, if you are 21 or older, a toelatingsonderzoek (admission examination) is required. See the full admission requirements page."
           status: draft
+        ar:
+          text: "تحقق من شروط القبول: تُطلب شهادة havo أو vwo أو mbo-4؛ وبدون هذه الشهادة، وإن كان عمرك 21 سنة أو أكثر، يلزم toelatingsonderzoek (امتحان القبول). راجع الصفحة الكاملة لشروط القبول."
+          status: draft
 scholarships: []
 sources:
   programme:

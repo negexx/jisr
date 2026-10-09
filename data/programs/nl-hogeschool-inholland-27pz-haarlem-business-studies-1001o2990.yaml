@@ -63,6 +63,9 @@ requirements:
         en:
           text: Check whether the Moroccan diploma (Baccalauréat) is considered equivalent to a Dutch HAVO, VWO or MBO-4 diploma; send copies of your diploma and final transcript to the Student Administration for evaluation.
           status: draft
+        ar:
+          text: تحقق مما إذا كانت الشهادة المغربية (البكالوريا) تُعتبر معادلة لشهادة هولندية HAVO أو VWO أو MBO-4؛ وأرسل نسخًا من الشهادة ومن كشف النقاط إلى إدارة شؤون الطلبة للتقييم.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -74,6 +77,9 @@ requirements:
         en:
           text: Check the Dutch language requirements for this programme (the pages do not specify a level).
           status: draft
+        ar:
+          text: تحقق من شروط اللغة الهولندية لهذا البرنامج (لا تحدد الصفحة أي مستوى).
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -84,6 +90,9 @@ requirements:
           status: draft
         en:
           text: If you are 21 or older and do not meet the entry requirements, you can request an entrance exam.
+          status: draft
+        ar:
+          text: إذا كان عمرك 21 سنة أو أكثر ولا تستوفي شروط القبول، يمكنك أن تطلب اجتياز امتحان الدخول.
           status: draft
 scholarships: []
 sources:

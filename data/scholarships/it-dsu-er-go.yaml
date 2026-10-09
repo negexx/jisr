@@ -18,6 +18,9 @@ summary:
   en:
     text: Regional scholarship managed by ER.GO for students at universities in Emilia-Romagna. International students from non-EU countries with income abroad submit home-country documents, used to calculate an equivalent of the ISEE.
     status: draft
+  ar:
+    text: منحة جهوية تديرها ER.GO لطلبة جامعات إميليا-رومانيا. ويقدّم الطلبة الدوليون من بلدان خارج الاتحاد الأوروبي (UE) الذين لهم دخل في الخارج وثائق من بلدهم لحساب ما يعادل ISEE.
+    status: draft
 support:
   value:
     amount: null
@@ -44,6 +47,9 @@ documents:
         en:
           text: Foreign income documentation
           status: draft
+        ar:
+          text: وثائق الدخل في الخارج
+          status: draft
       translationRequired: true
   source: page-2
   info_kind: official
@@ -53,6 +59,9 @@ howToApply:
     status: draft
   en:
     text: Apply online through the ER.GO website every academic year. Foreign income documents, translated and legalised, are uploaded in the Dossier Utente by the deadlines set in the call.
+    status: draft
+  ar:
+    text: التقديم عبر الإنترنت على موقع ER.GO كل سنة. تُرفع وثائق الدخل الأجنبية، مترجمة ومصادَقًا عليها، في Dossier Utente قبل المواعيد النهائية للنداء.
     status: draft
 officialUrl: https://www.er-go.it/international-students/benefits/focus-on-scholarship
 sources:

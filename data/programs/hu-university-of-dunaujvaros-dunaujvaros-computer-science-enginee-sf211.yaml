@@ -57,6 +57,9 @@ requirements:
         en:
           text: "An entrance examination is required: online oral interview (Skype). Check the details with the university."
           status: draft
+        ar:
+          text: "يُشترط امتحان دخول: مقابلة شفوية عبر الإنترنت (Skype). تحقق من التفاصيل لدى الجامعة."
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: A High School Leaving Certificate is required. Check the exact documents to submit.
+          status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية (High School Leaving Certificate) مطلوبة. تحقق من الوثائق الدقيقة المطلوب تقديمها.
           status: draft
 scholarships: []
 sources:

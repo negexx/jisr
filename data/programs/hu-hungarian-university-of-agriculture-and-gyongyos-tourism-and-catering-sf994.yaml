@@ -47,6 +47,9 @@ documents:
         en:
           text: High School leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: cv
       name:
@@ -56,6 +59,9 @@ documents:
         en:
           text: CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: motivation-letter
       name:
@@ -64,6 +70,9 @@ documents:
           status: draft
         en:
           text: motivation letter
+          status: draft
+        ar:
+          text: رسالة تحفيزية
           status: draft
       translationRequired: null
   source: page-2
@@ -84,6 +93,9 @@ requirements:
         en:
           text: A 20-30 minute online interview is required; admission is based on previous results (20 pts), CV and motivation letter (20 pts) and the interview (60 pts).
           status: draft
+        ar:
+          text: مقابلة عبر الإنترنت مدتها 20 إلى 30 دقيقة إلزامية؛ ويعتمد القبول على النتائج السابقة (20 نقطة) والسيرة الذاتية (CV) والرسالة التحفيزية (20 نقطة) والمقابلة (60 نقطة).
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -94,6 +106,9 @@ requirements:
           status: draft
         en:
           text: "Minimum admission score: 60 points. Applicants scoring less than 5 points in any section are rejected."
+          status: draft
+        ar:
+          text: "الحد الأدنى للقبول: 60 نقطة. ويُرفض المتقدمون الذين يحصلون على أقل من 5 نقاط في أحد الأقسام."
           status: draft
 scholarships: []
 sources:

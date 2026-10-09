@@ -50,6 +50,9 @@ documents:
         en:
           text: University entrance qualification
           status: draft
+        ar:
+          text: شهادة الولوج إلى التعليم العالي
+          status: draft
       translationRequired: null
     - slug: certificate-assessment
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: Certificate assessment (APS, VPD or ZAB)
+          status: draft
+        ar:
+          text: تقييم الشهادة (APS أو VPD أو ZAB)
           status: draft
       translationRequired: null
     - slug: curriculum-vitae
@@ -68,6 +74,9 @@ documents:
         en:
           text: Curriculum vitae
           status: draft
+        ar:
+          text: السيرة الذاتية
+          status: draft
       translationRequired: null
     - slug: english-language-certificate
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Official proof of English language proficiency at level B2
+          status: draft
+        ar:
+          text: شهادة رسمية تثبت الكفاءة في الإنجليزية بالمستوى B2
           status: draft
       translationRequired: null
   source: programme
@@ -95,6 +107,9 @@ requirements:
           status: draft
         en:
           text: "Check additional admission requirements: university entrance qualification, APS certificate, VPD from uni-assist or ZAB evaluation, CV."
+          status: draft
+        ar:
+          text: "تحقق من متطلبات الدخول الإضافية: مؤهل الدخول إلى الجامعة، وشهادة APS، وVPD من uni-assist أو تقييم ZAB، والسيرة الذاتية (CV)."
           status: draft
 scholarships: []
 sources:

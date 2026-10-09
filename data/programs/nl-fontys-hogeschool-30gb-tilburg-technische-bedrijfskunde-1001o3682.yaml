@@ -57,6 +57,9 @@ requirements:
         en:
           text: "Check the specific admission requirements for foreign diploma holders: see the 'Toelating' (international admission) page, as the programme page only mentions havo/vwo/mbo level 4."
           status: draft
+        ar:
+          text: "تحقق من شروط القبول الخاصة بحاملي الشهادات الأجنبية: راجع صفحة «Toelating» (القبول الدولي) لأن صفحة البرنامج لا تذكر سوى havo وvwo وmbo من المستوى 4."
+          status: draft
     - id: req-2
       source: page-3
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: "Tuition for non-EEA students (instellingscollegegeld) is set by the Executive Board and varies per programme: use the collegegeldmeter for the exact amount."
+          status: draft
+        ar:
+          text: "يحدد College van Bestuur الرسوم الدراسية (instellingscollegegeld) للطلبة من خارج EEE (المنطقة الاقتصادية الأوروبية)، وتختلف من برنامج إلى آخر: استعمل collegegeldmeter لمعرفة المبلغ بدقة."
           status: draft
 scholarships: []
 sources:

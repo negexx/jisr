@@ -57,6 +57,9 @@ requirements:
         en:
           text: An oral entrance examination is required; it takes place online on MS Teams. Check the details with the university.
           status: draft
+        ar:
+          text: يُشترط امتحان دخول شفوي؛ وهو يُجرى عبر الإنترنت على MS Teams. تحقق من التفاصيل لدى الجامعة.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: Applicants interested in a scholarship must apply through the official scholarship websites (Stipendium Hungaricum, etc.) and check the application deadlines and eligibility requirements there.
+          status: draft
+        ar:
+          text: على المتقدمين الراغبين في منحة أن يقدموا طلباتهم عبر المواقع الرسمية للمنح (Stipendium Hungaricum، إلخ) وأن يتحققوا من المواعيد النهائية وشروط الأهلية.
           status: draft
 scholarships: []
 sources:

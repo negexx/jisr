@@ -70,6 +70,9 @@ requirements:
         en:
           text: An online oral entrance examination is required, assessing academic achievements, motivation letter and intercultural competence.
           status: draft
+        ar:
+          text: تُشترط مقابلة شفوية عبر الإنترنت (امتحان دخول)، مع تقييم النتائج الدراسية والدافع والكفاءات المتعلقة بالتواصل بين الثقافات.
+          status: draft
 scholarships: []
 sources:
   programme:

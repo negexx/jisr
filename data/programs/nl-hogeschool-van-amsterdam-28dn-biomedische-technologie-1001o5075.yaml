@@ -59,6 +59,9 @@ requirements:
         en:
           text: Check the programme page whether additional admission requirements or a specific profile apply to your Moroccan Baccalaureate diploma.
           status: draft
+        ar:
+          text: تحقق في صفحة البرنامج (opleiding) مما إذا كان قبول إضافي أو مسار محدد مطلوبًا لشهادة البكالوريا المغربية الخاصة بك.
+          status: draft
 scholarships: []
 sources:
   programme:

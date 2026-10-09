@@ -57,6 +57,9 @@ documents:
         en:
           text: CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: english-language-proof
       name:
@@ -65,6 +68,9 @@ documents:
           status: draft
         en:
           text: English language proof
+          status: draft
+        ar:
+          text: إثبات الكفاءة في اللغة الإنجليزية
           status: draft
       translationRequired: null
     - slug: school-leaving-certificates
@@ -75,6 +81,9 @@ documents:
         en:
           text: School leaving certificates
           status: draft
+        ar:
+          text: شهادات نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: letter-of-reference
       name:
@@ -84,6 +93,9 @@ documents:
         en:
           text: Letter of reference
           status: draft
+        ar:
+          text: رسالة توصية
+          status: draft
       translationRequired: null
     - slug: motivational-letter
       name:
@@ -92,6 +104,9 @@ documents:
           status: draft
         en:
           text: Motivational letter
+          status: draft
+        ar:
+          text: رسالة تحفيزية
           status: draft
       translationRequired: null
   source: page-1

@@ -56,6 +56,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: letter-of-motivation
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: Letter of motivation
+          status: draft
+        ar:
+          text: رسالة تحفيزية
           status: draft
       translationRequired: null
   source: page-2
@@ -84,6 +90,9 @@ requirements:
         en:
           text: "Check whether you need an APS certificate: it applies only to Chinese, Vietnamese or Indian school or university degrees; a Moroccan Baccalauréat is not covered, but confirm this."
           status: draft
+        ar:
+          text: "تحقق مما إذا كنت بحاجة إلى شهادة APS: يخص ذلك الشهادات الصينية أو الفيتنامية أو الهندية فقط؛ والبكالوريا المغربية غير معنية، لكن تأكد من ذلك."
+          status: draft
     - id: req-2
       source: page-4
       info_kind: official
@@ -94,6 +103,9 @@ requirements:
           status: draft
         en:
           text: "A two-stage aptitude assessment (grades plus possible interview) applies: interview dates and grade thresholds are not given here, check with the university."
+          status: draft
+        ar:
+          text: "يُطبَّق إجراء قبول من مرحلتين (العلامات + مقابلة محتملة): لا تُذكر هنا مواعيد المقابلة ولا عتبات العلامات، استفسر لدى الجامعة."
           status: draft
     - id: req-3
       source: page-2
@@ -106,6 +118,9 @@ requirements:
         en:
           text: English is the language of instruction but no minimum level is required; proficiency is assessed via test or interview.
           status: draft
+        ar:
+          text: الإنجليزية هي لغة التدريس، لكن لا يُشترط مستوى أدنى؛ ويتم التقييم عبر اختبار أو مقابلة.
+          status: draft
     - id: req-4
       source: page-5
       info_kind: official
@@ -116,6 +131,9 @@ requirements:
           status: draft
         en:
           text: Tuition fees apply to students from non-EEA countries (subject to waivers); check the amount and waiver options on TUM's fee page.
+          status: draft
+        ar:
+          text: يدفع الرسوم الدراسية طلبة الدول خارج المنطقة الاقتصادية الأوروبية (EEE)، باستثناء حالات الإعفاء؛ تحقق من المبلغ ومن إمكانيات الإعفاء في صفحة رسوم TUM.
           status: draft
 scholarships: []
 sources:

@@ -50,6 +50,9 @@ documents:
         en:
           text: Copy of relevant diploma and accompanying grade list
           status: draft
+        ar:
+          text: نسخة من الشهادة المعنية ومن كشف النقاط المرافق له
+          status: draft
       translationRequired: null
   source: programme
   info_kind: official

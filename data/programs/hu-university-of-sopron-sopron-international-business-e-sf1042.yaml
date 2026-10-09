@@ -67,6 +67,9 @@ requirements:
         en:
           text: An online oral entrance interview is required; it assesses language, motivation and presentation. Check the details with the coordinator.
           status: draft
+        ar:
+          text: مقابلة القبول عبر الإنترنت (شفوية) إلزامية؛ وهي تقيّم اللغة والدافع وطريقة تقديمك لنفسك. تحقق من التفاصيل لدى المنسّق.
+          status: draft
 scholarships: []
 sources:
   programme:

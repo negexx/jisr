@@ -65,6 +65,9 @@ requirements:
         en:
           text: "With a foreign or international diploma: the diploma must give access to Dutch higher education (hbo) and you must prove sufficient command of Dutch; your file is assessed by the Centrale Studenten Inschrijving. Register via Studielink and upload your documents."
           status: draft
+        ar:
+          text: "بشهادة أجنبية أو دولية: يجب أن تتيح الشهادة الولوج إلى التعليم العالي الهولندي (hbo) وأن تثبت إتقانًا كافيًا للغة الهولندية؛ ويقيّم ملفك Centrale Studenten Inschrijving. سجّل عبر Studielink وارفع وثائقك."
+          status: draft
 scholarships: []
 sources:
   programme:

@@ -59,6 +59,9 @@ requirements:
         en:
           text: "Entrance exam: online Mathematics test (0-20 points); not attending or scoring below 50% means the application must be rejected."
           status: draft
+        ar:
+          text: "امتحان الدخول: اختبار في الرياضيات عبر الإنترنت (0-20 نقطة)؛ الإخفاق في الاختبار (أقل من 50%) يؤدي إلى رفض الطلب."
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -70,6 +73,9 @@ requirements:
         en:
           text: An online oral (Skype) entrance examination is organized after the mathematics test; it is part of the admission process.
           status: draft
+        ar:
+          text: تُنظَّم مقابلة شفوية عبر الإنترنت (Skype) بعد اختبار الرياضيات؛ وهي جزء من إجراء القبول.
+          status: draft
     - id: req-3
       source: page-3
       info_kind: official
@@ -80,6 +86,9 @@ requirements:
           status: draft
         en:
           text: "Eligibility criterion: a total score of at least 60 (without extra points) in the 100-point evaluation system."
+          status: draft
+        ar:
+          text: "معيار الأهلية: مجموع نقاط لا يقل عن 60 نقطة (دون نقاط إضافية) وفق نظام التقييم من 100 نقطة."
           status: draft
 scholarships: []
 sources:

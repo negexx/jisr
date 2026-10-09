@@ -64,6 +64,9 @@ documents:
         en:
           text: Proof of university entrance qualification
           status: draft
+        ar:
+          text: وثيقة تثبت المؤهل الذي يتيح دخول التعليم العالي
+          status: draft
       translationRequired: null
   source: page-1
   info_kind: official

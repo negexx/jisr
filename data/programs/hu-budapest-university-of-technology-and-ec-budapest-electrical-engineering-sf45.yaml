@@ -47,6 +47,9 @@ documents:
         en:
           text: Application form
           status: draft
+        ar:
+          text: استمارة التقديم
+          status: draft
       translationRequired: null
     - slug: school-reports
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: Secondary high school reports
+          status: draft
+        ar:
+          text: كشوف النقاط المدرسية للمرحلة الثانوية
           status: draft
       translationRequired: null
     - slug: school-leaving-certificate
@@ -65,6 +71,9 @@ documents:
         en:
           text: Secondary high school diploma
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: transcripts-diplomas
       name:
@@ -73,6 +82,9 @@ documents:
           status: draft
         en:
           text: Transcripts and degrees/diplomas
+          status: draft
+        ar:
+          text: كشوف النقاط والشهادات
           status: draft
       translationRequired: null
     - slug: english-language-certificate
@@ -83,6 +95,9 @@ documents:
         en:
           text: Proof of English language proficiency
           status: draft
+        ar:
+          text: إفادة الكفاءة في اللغة الإنجليزية
+          status: draft
       translationRequired: null
     - slug: curriculum-vitae
       name:
@@ -91,6 +106,9 @@ documents:
           status: draft
         en:
           text: Curriculum vitae
+          status: draft
+        ar:
+          text: السيرة الذاتية
           status: draft
       translationRequired: null
   source: page-2
@@ -111,6 +129,9 @@ requirements:
         en:
           text: The placement test in mathematics, physics and English is mandatory to enter a BSc degree program at BME VIK.
           status: draft
+        ar:
+          text: اختبار تحديد المستوى في الرياضيات والفيزياء والإنجليزية إلزامي للالتحاق بالإجازة (BSc) في BME VIK.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -122,6 +143,9 @@ requirements:
         en:
           text: The secondary school diploma must be completed with an overall result of at least 70%.
           status: draft
+        ar:
+          text: يجب الحصول على شهادة الدراسة الثانوية بنتيجة إجمالية لا تقل عن 70 %.
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -132,6 +156,9 @@ requirements:
           status: draft
         en:
           text: "Application deadlines: fall semester 1 April – 15 May; spring semester 15 October – 15 November (year not stated)."
+          status: draft
+        ar:
+          text: "المواعيد النهائية للتقديم: الفصل الخريفي من 1 أبريل إلى 15 مايو؛ والفصل الربيعي من 15 أكتوبر إلى 15 نوفمبر (السنة غير محددة)."
           status: draft
 scholarships:
   - stipendium-hungaricum

@@ -70,6 +70,9 @@ requirements:
         en:
           text: "An online oral entrance examination is required: evaluation of the secondary school leaving certificate, spoken English fluency and interest in water."
           status: draft
+        ar:
+          text: "تُشترط مقابلة شفوية عبر الإنترنت: تقييم شهادة التعليم الثانوي والإنجليزية المنطوقة والاهتمام بالماء."
+          status: draft
 scholarships: []
 sources:
   programme:

@@ -57,6 +57,9 @@ requirements:
         en:
           text: A written online admission test (mathematics, physics) is required; admission also depends on the quality of the certificate, motivation letter, etc.
           status: draft
+        ar:
+          text: يُشترط اختبار قبول كتابي عبر الإنترنت (الرياضيات والفيزياء)؛ ويتوقف القبول أيضًا على جودة الشهادة والرسالة التحفيزية وغيرها.
+          status: draft
 scholarships:
   - stipendium-hungaricum
 sources:

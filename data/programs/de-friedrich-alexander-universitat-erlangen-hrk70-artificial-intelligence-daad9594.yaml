@@ -75,6 +75,9 @@ requirements:
         en:
           text: An online aptitude test (mathematics and problem solving, in English) is part of the selection procedure; at least 140 points are required.
           status: draft
+        ar:
+          text: يدخل ضمن إجراء الانتقاء اختبار قدرات عبر الإنترنت (الرياضيات وحل المشكلات، بالإنجليزية)؛ ويُشترط 140 نقطة على الأقل.
+          status: draft
 scholarships: []
 sources:
   programme:

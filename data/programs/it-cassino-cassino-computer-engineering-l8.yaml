@@ -49,6 +49,9 @@ documents:
         en:
           text: Secondary school diploma
           status: draft
+        ar:
+          text: شهادة الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: programme
   info_kind: official
@@ -75,6 +78,9 @@ requirements:
           status: draft
         en:
           text: Check admission requirements and required documents for international students on the dedicated page.
+          status: draft
+        ar:
+          text: تحقق من شروط القبول والوثائق المطلوبة للطلبة الدوليين في الصفحة المخصصة لذلك.
           status: draft
 scholarships: []
 sources:
