@@ -1313,6 +1313,24 @@ describe("infoKind guidance on documents and application channel", () => {
       expect(result.record.documents).toBe(existing);
     });
 
+    const existingGuidance = {
+      value: [{ slug: "passport", name: { fr: { text: "Passeport", status: "draft" } } }],
+      source: "page-1",
+      info_kind: "guidance",
+    };
+
+    it("keeps an existing guidance value when the new official fact has no verified programme page", () => {
+      const result = enrichRecord(staged(existingGuidance), verifiedWith(), "2026-10-09");
+      expect(result.record.documents).toBe(existingGuidance);
+    });
+
+    it("replaces an existing guidance value with an official fact once the programme page is verified", () => {
+      const verified = { ...verifiedWith(), programmePage: PAGE };
+      const result = enrichRecord(staged(existingGuidance), verified, "2026-10-09");
+      expect(result.record.documents).toMatchObject({ info_kind: "official" });
+      expect(result.record.documents).not.toBe(existingGuidance);
+    });
+
     it("applyVerified stamps the requested kind as well", () => {
       const verified = { ...verifiedWith("guidance"), programmePage: PAGE };
       const applied = applyVerified(staged(placeholder), verified, "2026-10-09");
