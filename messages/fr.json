@@ -665,6 +665,7 @@
       "deadline": "Date limite de candidature",
       "procedure": "Comment candidater",
       "documents": "Documents demandés",
+      "documentsGuidance": "Documents généralement demandés",
       "scholarships": "Bourses",
       "links": "Liens officiels",
       "verified": "Dernière vérification"
@@ -854,6 +855,7 @@
       "skippedHeading": "Probablement inutiles ({count})",
       "skippedLead": "Les données publiées laissent penser que ces étapes ne vous concernent pas. Vérifiez chacune sur la page officielle.",
       "documents": "Documents demandés par le programme",
+      "documentsGuidance": "Documents généralement demandés",
       "translation": {
         "yes": "Traduction requise",
         "no": "Traduction non requise",

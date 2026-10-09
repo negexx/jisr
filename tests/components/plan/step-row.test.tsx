@@ -185,6 +185,41 @@ describe.each(LOCALES)("StepRow (%s)", (locale) => {
     expect(items[2]?.textContent).toContain(t.plan.steps.translation.unknown);
   });
 
+  it("keeps the official heading for an official list and says 'usually asked for' for guidance", () => {
+    const official = renderRow(locale, "documents");
+    expect(entries[locale].documentsMeta.info_kind).toBe("official");
+    expect(within(official.row).getByText(t.plan.steps.documents)).toBeTruthy();
+    expect(within(official.row).queryByText(t.plan.steps.documentsGuidance)).toBeNull();
+    official.unmount();
+
+    const base = entries[locale];
+    const program: PlanProgram = {
+      ...base,
+      documentsMeta: { ...base.documentsMeta, info_kind: "guidance" },
+    };
+    const { row } = renderRow(locale, "documents", { program });
+    expect(t.plan.steps.documentsGuidance).not.toBe(t.plan.steps.documents);
+    expect(within(row).getByText(t.plan.steps.documentsGuidance)).toBeTruthy();
+    expect(within(row).queryByText(t.plan.steps.documents)).toBeNull();
+    const list = row.querySelector('[data-slot="documents"]');
+    const labelledBy = list?.getAttribute("aria-labelledby") ?? "";
+    expect(document.getElementById(labelledBy)?.textContent).toBe(t.plan.steps.documentsGuidance);
+    expect(list?.querySelectorAll(":scope > li")).toHaveLength(base.documents?.length ?? -1);
+  });
+
+  it("renders no documents heading when the list is not published, whatever the kind", () => {
+    const base = entries[locale];
+    const program: PlanProgram = {
+      ...base,
+      documents: null,
+      documentsMeta: { ...base.documentsMeta, info_kind: "guidance" },
+    };
+    const { row } = renderRow(locale, "documents", { program });
+    expect(within(row).queryByText(t.plan.steps.documentsGuidance)).toBeNull();
+    expect(within(row).queryByText(t.plan.steps.documents)).toBeNull();
+    expect(row.querySelector('[data-slot="documents"]')).toBeNull();
+  });
+
   it("links each scholarship to its anchor on the program page", () => {
     const { row } = renderRow(locale, "scholarships");
     const link = within(row).getByRole("link", { name: "XX Test Open Scholarship" });

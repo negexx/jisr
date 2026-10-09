@@ -70,13 +70,19 @@ function TranslationLine({ document }: { document: PlanDocument }) {
   return <span className="text-sm text-muted-foreground">{t(key)}</span>;
 }
 
-function Documents({ documents }: { documents: readonly PlanDocument[] }) {
+function Documents({
+  documents,
+  official,
+}: {
+  documents: readonly PlanDocument[];
+  official: boolean;
+}) {
   const t = useTranslations("plan.steps");
   const headingId = useId();
   return (
     <div className="flex flex-col gap-1.5">
       <p id={headingId} className="text-sm font-medium">
-        {t("documents")}
+        {t(official ? "documents" : "documentsGuidance")}
       </p>
       <ul data-slot="documents" aria-labelledby={headingId} className="flex flex-col gap-2">
         {documents.map((document) => (
@@ -189,7 +195,12 @@ export function StepRow({
           <p className="text-base text-muted-foreground">{t(`step.${step.id}.meaning`)}</p>
           <p className="text-sm text-muted-foreground">{t(`reason.${step.reason}`)}</p>
         </div>
-        {documents === null ? null : <Documents documents={documents} />}
+        {documents === null ? null : (
+          <Documents
+            documents={documents}
+            official={program.documentsMeta.info_kind === "official"}
+          />
+        )}
         {step.id === "application_account" || step.id === "submit" ? <Channel step={step} /> : null}
         {step.id === "submit" ? <DeadlineStatus intake={program.intake} /> : null}
         {step.id === "scholarships" ? <Scholarships program={program} step={step} /> : null}

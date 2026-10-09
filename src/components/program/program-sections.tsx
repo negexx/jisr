@@ -39,12 +39,31 @@ function useDomainText() {
   return useTranslations() as unknown as (key: string, params?: Params) => string;
 }
 
-export function Section({ id, children }: { id: SectionId; children: ReactNode }) {
+export type SectionTitleKey = SectionId | "documentsGuidance";
+
+// A published list that is not official (a ministry's or an application service's national list) is not "required" by this program.
+export function documentsTitleKey(
+  documents: ProgramPageData["program"]["documents"],
+): "documents" | "documentsGuidance" {
+  return documents.value !== null && documents.info_kind !== "official"
+    ? "documentsGuidance"
+    : "documents";
+}
+
+export function Section({
+  id,
+  titleKey = id,
+  children,
+}: {
+  id: SectionId;
+  titleKey?: SectionTitleKey;
+  children: ReactNode;
+}) {
   const t = useTranslations("program.sections");
   return (
     <section id={id} aria-labelledby={`${id}-heading`} className="flex scroll-mt-6 flex-col gap-4">
       <h2 id={`${id}-heading`} className="text-xl font-semibold">
-        {t(id)}
+        {t(titleKey)}
       </h2>
       {children}
     </section>
@@ -407,7 +426,7 @@ export function DocumentsSection({ data }: { data: ProgramPageData }) {
   const documents = data.program.documents.value;
 
   return (
-    <Section id="documents">
+    <Section id="documents" titleKey={documentsTitleKey(data.program.documents)}>
       {documents === null ? (
         <ToCheck>{t("missing")}</ToCheck>
       ) : documents.length === 0 ? (

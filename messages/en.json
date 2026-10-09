@@ -665,6 +665,7 @@
       "deadline": "Application deadline",
       "procedure": "How to apply",
       "documents": "Required documents",
+      "documentsGuidance": "Documents usually asked for",
       "scholarships": "Scholarships",
       "links": "Official links",
       "verified": "Last verified"
@@ -854,6 +855,7 @@
       "skippedHeading": "Probably not needed ({count})",
       "skippedLead": "The published data suggests these steps may not apply to you. Confirm each one on the official page.",
       "documents": "Documents the program asks for",
+      "documentsGuidance": "Documents usually asked for",
       "translation": {
         "yes": "Translation required",
         "no": "No translation required",
