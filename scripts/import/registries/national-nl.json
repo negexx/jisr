@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "id": "nl-channel-studielink",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "nl-studielink",
+      "selector": { "country": "NL" },
+      "evidence": [
+        {
+          "url": "https://www.studyinnl.org/plan-your-stay/how-to-apply",
+          "quote": "Studielink is the official registration and application portal for programmes at Dutch higher education institutions."
+        }
+      ],
+      "notes": "Study in NL (Nuffic), section 'Application via Studielink': 'For most programmes you first need to register via the Studielink tool.' The same page warns: 'you should first check with the institution of your choice whether you are required to register via Studielink. Some institutions use a different method to register students from abroad!' It names no institution, so no institution can be excluded from this evidence; the auditor should check the institution page of each programme. The Studielink site (info.studielink.nl/en) says students arrange their own application on Studielink but has no sentence about applicants from abroad, so it is not quoted."
+    }
+  ]
+}
