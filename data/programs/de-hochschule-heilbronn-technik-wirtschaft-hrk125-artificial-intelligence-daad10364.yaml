@@ -38,8 +38,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: de-uni-assist-vpd
+  source: page-1
   info_kind: official
 documents:
   value: null
@@ -72,3 +72,6 @@ sources:
   page-3:
     url: https://www.hs-heilbronn.de/en/bachelor-application
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/803/
+    last_verified_at: 2026-10-09

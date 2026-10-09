@@ -44,8 +44,62 @@ applicationChannel:
   source: page-4
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: passport-photo
+      name:
+        fr:
+          text: Photo d’identité
+          status: draft
+        en:
+          text: Identity photo
+          status: draft
+      translationRequired: null
+    - slug: identity-document
+      name:
+        fr:
+          text: Pièce d’identité (carte nationale, passeport, carte de séjour ou récépissé)
+          status: draft
+        en:
+          text: Identity document (national ID card, passport, residence permit or receipt)
+          status: draft
+      translationRequired: null
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme du Bac (si vous avez déjà eu le Bac)
+          status: draft
+        en:
+          text: Baccalaureate diploma (if you already hold the Bac)
+          status: draft
+      translationRequired: null
+    - slug: transcript-of-secondary-school-studies
+      name:
+        fr:
+          text: Relevés de notes (national et régional si vous avez le Bac ; sinon tronc commun, puis première année du Bac et régional)
+          status: draft
+        en:
+          text: Grade transcripts (national and regional if you hold the Bac; otherwise common core, then first year of the Bac and regional)
+          status: draft
+      translationRequired: null
+    - slug: school-enrolment-certificate
+      name:
+        fr:
+          text: Certificat de scolarité de l’année en cours (si vous êtes encore au lycée ou dans une formation)
+          status: draft
+        en:
+          text: School or programme enrolment certificate for the current year (if you are still at the lycée or in a programme)
+          status: draft
+      translationRequired: null
+    - slug: french-language-certificate
+      name:
+        fr:
+          text: Certification de français (TCF, DELF B2 ou DALF), sauf cas de dispense ; la convocation à une session est acceptée
+          status: draft
+        en:
+          text: French language certificate (TCF, DELF B2 or DALF), unless exempt; a convocation to a session is accepted
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -90,3 +144,6 @@ sources:
   page-4:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.maroc.campusfrance.org/la-procedure-de-candidature-sur-etudes-en-france-de-campus-france
+    last_verified_at: 2026-10-09

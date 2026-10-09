@@ -37,8 +37,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: de-uni-assist
+  source: page-1
   info_kind: official
 documents:
   value: null
@@ -80,3 +80,6 @@ sources:
   page-3:
     url: https://www.leuphana.de/en/college/application.html
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.leuphana.de/en/college/application/international-applications/online-application/applying-with-non-eu-eea-certificates.html
+    last_verified_at: 2026-10-09

@@ -38,9 +38,9 @@ intakes:
   source: daad
   info_kind: guidance
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist-vpd
+  source: page-2
+  info_kind: official
 documents:
   value: null
   source: daad
@@ -58,3 +58,6 @@ sources:
   page-1:
     url: https://www.hs-heilbronn.de/en/mechanical-engineering
     last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/803/
+    last_verified_at: 2026-10-09

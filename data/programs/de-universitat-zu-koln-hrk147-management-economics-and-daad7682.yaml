@@ -43,8 +43,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: de-uni-assist
+  source: page-1
   info_kind: official
 documents:
   value: null
@@ -81,3 +81,6 @@ sources:
   programme:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7682/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://uni-koeln.de/en/index.php?id=22242
+    last_verified_at: 2026-10-09

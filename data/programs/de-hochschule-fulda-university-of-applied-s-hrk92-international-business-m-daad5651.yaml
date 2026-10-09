@@ -37,8 +37,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: de-uni-assist
+  source: page-1
   info_kind: official
 documents:
   value: null
@@ -78,3 +78,6 @@ sources:
   page-2:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5651/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.hs-fulda.de/studium/wie-bewerbe-ich-mich/bewerbung-mit-internationalen-zeugnissen
+    last_verified_at: 2026-10-09

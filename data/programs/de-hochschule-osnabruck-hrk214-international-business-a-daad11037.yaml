@@ -50,9 +50,9 @@ intakes:
   source: daad
   info_kind: official
 applicationChannel:
-  value: null
-  source: daad
-  info_kind: guidance
+  value: de-uni-assist
+  source: page-2
+  info_kind: official
 documents:
   value: null
   source: daad
@@ -70,3 +70,6 @@ sources:
   page-1:
     url: https://www.hs-osnabrueck.de/studium/studienangebot/bachelor/internationale-betriebswirtschaft-und-management-ba/
     last_verified_at: 2026-10-02
+  page-2:
+    url: https://www.hs-osnabrueck.de/en/study/all-about-studying/application/application-with-foreign-documents/
+    last_verified_at: 2026-10-09
