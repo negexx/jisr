@@ -1,0 +1,41 @@
+# Pre-launch checklist (guest release)
+
+Last updated 2026-10-08. Status values: `Code done` (nothing left to do in the repository), `Owner action` (you must do it in a dashboard, a registrar or by writing content), `Blocked: decision` (waiting for a decision). Update the Status column as you go; do not delete rows.
+
+How to read "Evidence": a file or command that proves the state. Steps for each owner action are in `docs/ops/deploy.md`.
+
+## A. ADR 0004 "Before launch" items
+
+| # | Item | Status | Evidence | Who |
+|---|---|---|---|---|
+| A1 | Verify Vercel Hobby limits and fair-use wording; decide donation policy | Code done (verified 2026-10-08); policy decided: donations allowed, ads/affiliate/payments/paid work not | `docs/ops/limits-runbook.md` sections 1 and 5; https://vercel.com/docs/limits/fair-use-guidelines; ADR 0011 | Done; re-read the fair-use page before a donation link goes live |
+| A2 | Verify Sentry free-tier quota and EU region; measure SDK bundle impact | Blocked: decision. Deferred: Sentry client code would add JavaScript, and the `/fr/matches` initial row has about 0.1 KB left (192.9 of 193 KB on the fixture build) and the programme until-idle row about 0.1 KB (239.9 of 240). The next change to those routes needs an owner decision on the ratchet in `tests/e2e/support/js-budget.ts` | ADR 0011; `pnpm perf:js`; Playwright perf spec | Owner decides (raise the ratchet with a written reason, or keep Sentry out). When enabled: verify quota and `de.sentry.io`, `src/instrumentation-client.ts` must become a root of `tests/lib/client-imports.test.ts` |
+| A3 | CNDP declaration (Moroccan Law 09-08) | Not needed for the guest release (nothing stored server-side). Gate for accounts (phase 2) | ADR 0004 section 6 | Owner, before accounts |
+| A4 | Privacy notice and terms in en, fr and ar | Owner action | Footer already states that the host sees the pages you open and that profile data is never sent (`footer.privacyLogs` in `messages/*.json`). The notice must also name **Vercel** (hosting, Frankfurt `fra1`) and **GoatCounter** (cookieless analytics; a script loaded from `gc.zgo.at`; sends page title, referrer, screen width and the query string with each hit) as processors, and mention server logs | Owner / content |
+| A5 | `pnpm data:check --strict` on Release 1 data | Code done, result below | Command `pnpm data:check --strict`. Result: <!-- TASK8 --> | Owner reads the result |
+
+## B. Deployment items
+
+| # | Item | Status | Evidence | Who |
+|---|---|---|---|---|
+| B1 | Deployment config, headers, robots, sitemap, canonical, noindex of previews, GoatCounter loader, smoke tool | Code done | `vercel.json`, `src/lib/site-env.ts`, `src/lib/security-headers.ts`, `src/lib/seo.ts`, `src/components/analytics-loader.tsx`, `scripts/ops/`; ADR 0011 | Repository |
+| B2 | Lint, tests and e2e green on `main` | Owner action (after merge) | GitHub Actions run for the merge commit: jobs `verify` and `e2e` | Owner |
+| B3 | Vercel project created, Node.js 24.x set, Git settings checked, region Frankfurt | Owner action | `docs/ops/deploy.md` section 3.2 | Owner |
+| B4 | Deployment Protection: previews protected, **production domain public** | Owner action | Open the production domain in a private window; `docs/ops/deploy.md` section 3.2 | Owner |
+| B5 | `NEXT_PUBLIC_SITE_URL` set in the **Production scope only** | Owner action | Vercel Settings, Environment Variables; after the deploy `curl -s https://YOUR-DOMAIN/robots.txt` shows `Allow: /` and a `Sitemap:` line | Owner |
+| B6 | Secrets `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` added; token scoped to the team with an expiry of at most 1 year and a calendar reminder; then variable `DEPLOY_ENABLED=true` | Owner action | `docs/ops/deploy.md` sections 3.5 and 3.6 | Owner |
+| B7 | First production deploy green, then `pnpm ops:smoke https://YOUR-DOMAIN --expect=indexable` all PASS, then variable `SMOKE_URL` set | Owner action | `docs/ops/deploy.md` section 3.7 | Owner |
+| B8 | Output upload size and time acceptable (risk number 1: about 1.5 GB, about 24,000 files). If rejected or slow, a follow-up decision is needed (shrink the per-page payload, or move programme pages to ISR with the snapshot read from a CDN URL); this branch does not solve it | Owner action | Deploy job log; `docs/ops/deploy.md` section 10 | Owner, then decision |
+| B9 | Checks that only Vercel can answer: `fra1` honoured, `curl -sI https://YOUR-DOMAIN/FR` and `/fr/x`, function invocation counts after a day | Owner action | `docs/ops/deploy.md` sections 3.8 and 10 | Owner |
+| B10 | Custom domain decision; if bought: `NEXT_PUBLIC_SITE_URL` and `SMOKE_URL` updated, redeployed, smoke rerun | Blocked: decision | `docs/ops/deploy.md` section 6 (candidates re-checked at purchase) | Owner |
+| B11 | GoatCounter site created (free, non-commercial, EU) and `NEXT_PUBLIC_GOATCOUNTER_URL` set in the Production scope, redeployed | Owner action | `docs/ops/deploy.md` section 4; after redeploy the HTML of `/fr` contains `gc.zgo.at` | Owner |
+| B12 | Rollback rehearsed once (Instant Rollback to the previous deployment and back) | Owner action | `docs/ops/deploy.md` section 7 | Owner |
+| B13 | Monthly usage check scheduled (first Monday) and first row logged | Owner action | `docs/ops/limits-runbook.md` sections 2 and 7 | Owner |
+| B14 | Repository visibility decision revisited before any public launch (branch protection unavailable while private on Free) | Blocked: decision | `docs/ops/deploy.md` section 11 | Owner |
+
+## C. Content quality
+
+| # | Item | Status | Evidence | Who |
+|---|---|---|---|---|
+| C1 | Arabic copy reviewed by a native speaker (all `ar` copy is a machine draft until then) | Owner action | `pnpm data:check` prints a `translations:` line with coverage per locale for the data records | Owner / reviewer |
+| C2 | Stale-data warnings read: `pnpm data:check` lists aging and stale facts | Owner action | `pnpm data:check` output | Owner |
