@@ -686,6 +686,8 @@ describe("checkChannel German wording", () => {
       "Foreign certificates go through a preliminary examination first.",
       "The preliminarily examined documents are uploaded.",
       "We will issue you with a preliminary review documentation (VPD).",
+      "Die Vorprüfungsdokumentation wird von uni-assist ausgestellt.",
+      "Die Vorpruefungsdokumentation wird von uni-assist ausgestellt.",
     ])
       expect(checkChannel("de-uni-assist-vpd", quote).ok, quote).toBe(true);
   });
