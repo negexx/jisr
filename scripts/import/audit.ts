@@ -7,7 +7,7 @@ import { parse } from "yaml";
 
 import { minorUnitDigits } from "@/lib/format";
 
-import { parseCsv, STAGING_DIR, stageFile } from "./staging";
+import { DATA_DIR, parseCsv, STAGING_DIR, stageFile } from "./staging";
 
 type Loose = Record<string, unknown>;
 const asObject = (v: unknown): Loose =>
@@ -50,22 +50,37 @@ export function sampleSize(batchSize: number): number {
 // 12 whose every record has the same evidence log is sampled at 12.
 export const IDENTICAL_EVIDENCE_SAMPLE = 12;
 
-const evidenceKeys = (record: unknown): string[] => {
+const evidenceLog = (record: unknown): Loose[] => {
   const evidence = asObject(asObject(record)._review).evidence;
-  if (!Array.isArray(evidence)) return [];
-  const keys = evidence.map((e) => {
-    const entry = asObject(e);
-    return JSON.stringify([entry.fact, entry.url, entry.quote]);
+  return Array.isArray(evidence) ? evidence.map(asObject) : [];
+};
+
+// The evidence of a record plus, for each fact it names, the value and info_kind the record holds:
+// the same quotes cannot stand for two different values. The source key is left out on purpose
+// (it is numbered per record).
+const evidenceKeys = (record: unknown): string[] => {
+  const log = evidenceLog(record);
+  const quotes = log.map((entry) => JSON.stringify([entry.fact, entry.url, entry.quote]));
+  const facts = [...new Set(log.map((entry) => show(entry.fact)))].map((fact) => {
+    const field = asObject(record)[fact];
+    const wrapped = "value" in asObject(field);
+    return JSON.stringify([
+      fact,
+      wrapped ? asObject(field).value : field,
+      wrapped ? asObject(field).info_kind : undefined,
+    ]);
   });
-  return [...new Set(keys)].sort();
+  return [...new Set([...quotes, ...facts])].sort();
 };
 
 // True when there are at least two records and every one has a non-empty evidence log made of the
-// same set of fact/url/quote triples (order does not matter; info_kind is not looked at).
+// same set of fact/url/quote triples (order does not matter) and holds the same value and info_kind
+// for every fact the log names.
 export function isIdenticalEvidenceBatch(records: readonly unknown[]): boolean {
   if (records.length < 2) return false;
+  if (records.some((record) => evidenceLog(record).length === 0)) return false;
   const [first, ...rest] = records.map(evidenceKeys);
-  if (first === undefined || first.length === 0) return false;
+  if (first === undefined) return false;
   const reference = JSON.stringify(first);
   return rest.every((keys) => JSON.stringify(keys) === reference);
 }
@@ -231,7 +246,11 @@ export function sampleSheet(
   entries: readonly { key: string; record: unknown; row: AuditRow }[],
   identicalBatches: ReadonlyMap<
     string,
-    { size: number; evidence: readonly { fact: string; url: string; quote: string }[] }
+    {
+      size: number;
+      evidence: readonly { fact: string; url: string; quote: string }[];
+      composition?: string;
+    }
   > = new Map(),
 ): string {
   const out = [
@@ -247,6 +266,7 @@ export function sampleSheet(
     out.push(
       `## Batch ${batch}: identical national evidence: sample of ${IDENTICAL_EVIDENCE_SAMPLE} of ${shared.size}; the national page is read once`,
       "",
+      ...(shared.composition === undefined ? [] : [shared.composition, ""]),
       "Every record of this batch carries the evidence below. Read it once, then check that each sampled record below is a programme this evidence applies to.",
       "",
     );
@@ -447,8 +467,15 @@ async function main(argv: readonly string[]): Promise<void> {
     // an identical-evidence batch is recognised from every record of the batch still in staging
     const identicalBatches = new Map<
       string,
-      { size: number; evidence: { fact: string; url: string; quote: string }[] }
+      {
+        size: number;
+        evidence: { fact: string; url: string; quote: string }[];
+        composition: string;
+      }
     >();
+    // Loaded here, not at the top: fr-calendar reaches promote.ts, which imports this file.
+    const { batchComposition, readInstitutionTypes } = await import("./audit-composition");
+    const institutionTypes = await readInstitutionTypes(DATA_DIR);
     for (const batch of new Set(entries.map((e) => e.row.batch))) {
       const members = existing.filter((r) => r.batch === batch);
       const records = await Promise.all(members.map((r) => readStaged(r.key)));
@@ -459,7 +486,11 @@ async function main(argv: readonly string[]): Promise<void> {
         records.every((r) => r !== undefined) &&
         isIdenticalEvidenceBatch(records)
       )
-        identicalBatches.set(batch, { size: members.length, evidence: sharedEvidence(records) });
+        identicalBatches.set(batch, {
+          size: members.length,
+          evidence: sharedEvidence(records),
+          composition: batchComposition(records, institutionTypes),
+        });
     }
     const target = path.join(STAGING_DIR, "AUDIT-SAMPLE.md");
     await writeFile(target, sampleSheet(entries, identicalBatches));

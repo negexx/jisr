@@ -16,6 +16,7 @@ import {
   sampleSheet,
   sampleSize,
 } from "../../../scripts/import/audit";
+import { batchComposition } from "../../../scripts/import/audit-composition";
 import { promoteApproved } from "../../../scripts/import/promote";
 import { ledgerFile, parseCsv, stageFile, toYaml } from "../../../scripts/import/staging";
 
@@ -706,10 +707,75 @@ describe("isIdenticalEvidenceBatch", () => {
     expect(isIdenticalEvidenceBatch([withEvidence(channel), withEvidence()])).toBe(false);
     expect(isIdenticalEvidenceBatch([{ _review: {} }, { _review: {} }])).toBe(false);
   });
-  it("does not look at info_kind: official and guidance records share evidence", () => {
-    const official = { ...withEvidence(docs), documents: { info_kind: "official" } };
-    const guidance = { ...withEvidence(docs), documents: { info_kind: "guidance" } };
-    expect(isIdenticalEvidenceBatch([official, guidance])).toBe(true);
+  it("is false when the enriched value of a fact named in the evidence differs", () => {
+    const record = (value: unknown) => ({
+      ...withEvidence(docs),
+      documents: { value, info_kind: "official" },
+    });
+    expect(isIdenticalEvidenceBatch([record(["a"]), record(["a"])])).toBe(true);
+    expect(isIdenticalEvidenceBatch([record(["a"]), record(["b"])])).toBe(false);
+  });
+  it("is false when the info_kind of a fact named in the evidence differs", () => {
+    const official = { ...withEvidence(docs), documents: { value: ["a"], info_kind: "official" } };
+    const guidance = { ...withEvidence(docs), documents: { value: ["a"], info_kind: "guidance" } };
+    expect(isIdenticalEvidenceBatch([official, guidance])).toBe(false);
+  });
+  it("does not look at the source key, which differs from record to record", () => {
+    const record = (source: string) => ({
+      ...withEvidence(channel),
+      applicationChannel: { value: "de-uni-assist", source, info_kind: "official" },
+    });
+    expect(isIdenticalEvidenceBatch([record("page-1"), record("page-4")])).toBe(true);
+  });
+  it("only compares the facts the evidence names", () => {
+    const record = (tuition: number) => ({ ...withEvidence(docs), tuition: { value: tuition } });
+    expect(isIdenticalEvidenceBatch([record(1), record(2)])).toBe(true);
+  });
+});
+
+describe("batchComposition", () => {
+  const record = (
+    slug: string,
+    institution: string,
+    name: string,
+    channel: string | null,
+  ): Record<string, unknown> => ({
+    slug,
+    institution,
+    name,
+    ...(channel === null ? {} : { applicationChannel: { value: channel, source: "page-1" } }),
+  });
+  const types = new Map([
+    ["fr-a", "public"],
+    ["fr-b", "private"],
+    ["de-c", "public"],
+  ]);
+
+  it("counts country, institution type, French programme kind, channel and distinct institutions", () => {
+    const line = batchComposition(
+      [
+        record("fr-a-licence-informatique-1", "fr-a", "Licence - Informatique", "fr-campus-france"),
+        record("fr-a-licence-physique-2", "fr-a", "Licence - Physique", "fr-campus-france"),
+        record("fr-a-but-informatique-3", "fr-a", "BUT Informatique", "fr-campus-france"),
+        record("fr-b-licence-droit-4", "fr-b", "Licence - Droit", "fr-parcoursup"),
+        record("de-c-cs-5", "de-c", "Computer Science", null),
+        record("de-d-cs-6", "de-d", "Computer Science", "de-uni-assist"),
+      ],
+      types,
+    );
+    expect(line).toBe(
+      "Batch composition (6 records): country fr 4, de 2; institution type public 4, private 1, unknown 1; French programme kind licence 3, but 1; application channel fr-campus-france 3, de-uni-assist 1, fr-parcoursup 1, none 1; distinct institutions 4.",
+    );
+  });
+  it("leaves out the French programme kind when no record is French", () => {
+    const line = batchComposition([record("de-c-cs-5", "de-c", "Computer Science", null)], types);
+    expect(line).not.toContain("French programme kind");
+    expect(line).toContain("distinct institutions 1.");
+  });
+  it("tolerates records without a slug or institution", () => {
+    const line = batchComposition([{}, { slug: "it-x-1" }], types);
+    expect(line).toContain("country it 1, unknown 1");
+    expect(line).toContain("institution type unknown 2");
   });
 });
 
@@ -832,6 +898,24 @@ describe("audit sample of a batch with identical national evidence", () => {
     const top = sheet.slice(0, sheet.indexOf("## programs/a"));
     expect(top).toContain("Send the certified Baccalaureate.");
     expect(top).toContain("https://n.example/p");
+  });
+  it("prints the composition of the batch under the headline when it is given", () => {
+    const row: AuditRow = {
+      key: "programs/a",
+      batch: "b1-n1",
+      inSample: true,
+      audited: "",
+      outcome: "",
+      notes: "",
+    };
+    const composition = "Batch composition (300 records): country fr 300.";
+    const sheet = sampleSheet(
+      [{ key: "programs/a", row, record: { _review: { evidence } } }],
+      new Map([["b1-n1", { size: 300, evidence, composition }]]),
+    );
+    const top = sheet.slice(0, sheet.indexOf("## programs/a"));
+    expect(top).toContain(composition);
+    expect(top.indexOf(composition)).toBeLessThan(top.indexOf("Send the certified Baccalaureate."));
   });
   it("adds nothing to the sheet of an ordinary batch", () => {
     const sheet = sampleSheet([]);

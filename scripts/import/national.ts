@@ -98,7 +98,9 @@ async function readYaml(file: string): Promise<Rec | null> {
   return parse(await readFile(file, "utf8")) as Rec | null;
 }
 
-async function readInstitutionTypes(dataDir: string): Promise<Map<string, "public" | "private">> {
+export async function readInstitutionTypes(
+  dataDir: string,
+): Promise<Map<string, "public" | "private">> {
   const dir = path.join(dataDir, "institutions");
   const types = new Map<string, "public" | "private">();
   for (const file of await readdir(dir)) {
