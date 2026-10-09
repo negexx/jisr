@@ -117,6 +117,12 @@ describe("workflow safety", () => {
     expect(stepBlock(deploy, "Build")).not.toMatch(/VERCEL_TOKEN|secrets\./);
   });
 
+  it("uploads the prebuilt output as one archive (the output has about 24,000 files)", () => {
+    expect(stepBlock(jobBlock("deploy"), "Deploy prebuilt output")).toContain(
+      "vercel deploy --prebuilt --archive=tgz --prod",
+    );
+  });
+
   it("does not leave git credentials on disk in the deploy job", () => {
     expect(stepBlock(jobBlock("deploy"), "Check out")).toContain("persist-credentials: false");
   });

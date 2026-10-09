@@ -24,7 +24,7 @@ data or code change -> pull request
   -> Vercel builds a protected preview        (login required, not indexed)
   -> merge to main
   -> CI runs again on main: verify + e2e
-  -> deploy job: vercel pull -> vercel build --prod -> vercel deploy --prebuilt --prod
+  -> deploy job: vercel pull -> vercel build --prod -> vercel deploy --prebuilt --archive=tgz --prod
   -> optional smoke test of SMOKE_URL
   -> live
 ```
@@ -38,7 +38,8 @@ Details of the deploy job (`.github/workflows/ci.yml`, job `deploy`):
 - The workflow has `permissions: contents: read`, checks out with `persist-credentials: false`, and runs one deploy at a time (`concurrency: deploy-production`, never cancelled midway).
 - The token reaches `vercel pull` and `vercel deploy` as the step environment variable `VERCEL_TOKEN`, never as a `--token` argument. `vercel build` runs without the token on purpose (least privilege: the build runs the project's own install and build scripts). If the first deploy fails at the Build step with an authentication error, give that step `env: VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}` and record the change in a new ADR.
 - The Vercel CLI is installed with `npm install --global vercel@latest`. It is deliberately not pinned (project rule: latest stable packages). Trade-off: a compromised or broken release of the CLI would run in the deploy job with the token. Accepted for a free, non-commercial site; revisit by pinning if that changes.
-- The URL of the new deployment is written to the job's step summary. Smoke tests do not use that URL: Deployment Protection covers `*.vercel.app` deployment URLs, so the smoke step targets the public domain in `SMOKE_URL`.
+- The deploy step uses `vercel deploy --prebuilt --archive=tgz --prod`. `--archive=tgz` compresses the built output into one file before upload. Vercel documents it "to minimize the number of files uploaded and avoid hitting upload limits" (https://vercel.com/docs/cli/deploy): the Hobby API allows 5,000 uploads per day and this build output has about 24,000 files. Vercel documents the flag together with `--prebuilt`, but it has not been run in this repository, so it is unverified until the first real deployment (section 10). The trade-off Vercel names: archived uploads lose the per-file upload cache, so a deploy can be slower.
+- The URL of the new deployment is written to the job's step summary. Smoke tests do not use that URL: Deployment Protection covers generated deployment URLs (for example `jisr-abc123-team.vercel.app`), so the smoke step targets the public production domain in `SMOKE_URL`.
 - Vercel's own Git deployment of `main` is switched off in `vercel.json` (`git.deploymentEnabled.main: false`), so the Actions job is the only way to production. Pull request previews still come from Vercel's Git integration.
 
 ## 3. First-time setup (do these in order)
@@ -58,12 +59,12 @@ Merge the pull request that contains `vercel.json` and the deploy job into `main
    - **Root Directory**: `./`.
    - Leave **Build Command**, **Output Directory** and **Install Command** empty or at their defaults. The values come from `vercel.json` (`pnpm build`, `pnpm install --frozen-lockfile`). pnpm is picked from `packageManager` in `package.json`.
    - Do not add environment variables here yet.
-4. Click **Deploy**. If Vercel offers to skip the first deployment, skip it. If it builds anyway, that is harmless: the result is a non-indexable site (see section 6).
+4. Click **Deploy**. If Vercel offers to skip the first deployment, skip it. If it builds anyway, that is harmless: the result is a non-indexable site (sections 3.3 and 4). Vercel treats the first deployment of a new project as a production deployment.
 5. Open the project, then **Settings** (project settings, not account settings) and check each of these. Where a label differs from what is written here, look for the nearest wording and follow https://vercel.com/docs/projects/overview.
    - **General**, look for **Node.js Version**: set **24.x**. `package.json` requires `>=24`; CI uses 24.
    - **Functions**, look for **Function Region**: set **Frankfurt, Germany (West) - fra1** as a fallback. `vercel.json` already says `"regions": ["fra1"]`; check again after the first deploy (section 3.8). Static files are served from the CDN everywhere regardless; the region only decides where function invocations (the redirect from `/` and from locale-less paths) run.
    - **Git**: Production Branch is `main`. Look for **Ignored Build Step** and leave it empty.
-   - **Deployment Protection**: look for **Vercel Authentication** and make sure it is enabled with the standard setting (previews need a Vercel login, the production domain is public). Password Protection is a paid add-on ($20 a month per project): do not use it. Note that this protection applies to `*.vercel.app` deployment URLs. Before you announce the site, open the production domain in a private browser window without being logged in to Vercel, and check whether it loads. If it asks for a login, change the setting so that the production domain is public, and read https://vercel.com/docs/security/deployment-protection.
+   - **Deployment Protection**: enable **Vercel Authentication** and choose the scope named **Standard Protection**. Do not choose **All Deployments**: that puts a Vercel login on the production domain too. Under Standard Protection, previews and generated deployment URLs (for example `jisr-abc123-team.vercel.app`, including the one for each production deployment) need a Vercel login, while the auto-assigned production domain (`jisr.vercel.app`) and any custom production domain stay public. Password Protection is not available on Hobby (it is a Pro add-on). Before you announce the site, open the production domain in a private browser window without being logged in to Vercel and check that it loads. Source: https://vercel.com/docs/deployment-protection.
    - **Domains**: note the exact production domain Vercel shows (for example `https://jisr.vercel.app`; if the name was taken Vercel adds a suffix). You need it in the next step.
 
 ### 3.3 Set the Production environment variable
@@ -72,8 +73,9 @@ In **Settings** then **Environment Variables**:
 
 1. Name `NEXT_PUBLIC_SITE_URL`.
 2. Value: the production origin from the Domains screen, with `https://`, no path and no trailing slash, for example `https://jisr.vercel.app`.
-3. Environments: tick **Production only**. Untick Preview and Development. This matters: a preview that has this variable would present itself as indexable. The code also forces previews to stay non-indexable when Vercel says it is a preview, but do not rely on that alone.
-4. Save.
+3. Type: **Config**. The value is public (it ends up in the built pages), so do not choose **Secret**: a Secret is write-only after saving and may not reach `vercel pull`, and an empty or missing value makes the build silently non-indexable (a blank value is read as "unset"). See https://vercel.com/docs/environment-variables/sensitive-environment-variables.
+4. Environments: tick **Production only**. Untick Preview and Development. This matters: a preview that has this variable would present itself as indexable. The code also forces previews to stay non-indexable when Vercel says it is a preview, but do not rely on that alone.
+5. Save. After the first production deploy, check `curl -s https://YOUR-DOMAIN/robots.txt` shows `Allow: /`; if it shows `Disallow: /` the variable did not reach the build.
 
 Why this one variable controls indexing: with it unset the build tells search engines to stay away everywhere (robots disallow, `X-Robots-Tag: noindex, nofollow`, no canonical URLs, an empty sitemap). Setting it in Production turns on robots/sitemap/canonical for the production build only.
 
@@ -182,10 +184,10 @@ Indexing is decided only by `NEXT_PUBLIC_SITE_URL` (Production scope) and `VERCE
 ### GoatCounter (analytics), when you want it
 
 1. Create a free account for a non-commercial site at https://www.goatcounter.com (choose the EU option if offered; the code is the part before `.goatcounter.com`).
-2. In Vercel set `NEXT_PUBLIC_GOATCOUNTER_URL` to `https://<code>.goatcounter.com/count` in the **Production** scope.
+2. In Vercel set `NEXT_PUBLIC_GOATCOUNTER_URL` to `https://<code>.goatcounter.com/count` in the **Production** scope only, with Type **Config** (the value is public; do not choose Secret, which may not reach `vercel pull`, and an empty value silently disables analytics).
 3. Re-run the deploy (section 5).
 
-What it does: an inline script (no extra JavaScript bundle) that runs only in production, loads `https://gc.zgo.at/count.js` after the browser is idle (5 s at most, 2 s fallback), honours Do Not Track and Global Privacy Control, and counts one page view per full page load (moves between pages inside the app are not counted). Five count-only events carry the funnel: `profile-started` (once per full load of the profile page in create mode, so a returning student resuming a draft counts again), `profile-completed` (create mode only), `matches-viewed`, `program-saved` (on add), `plan-opened`. `count.js` itself also sends the page title, referrer, screen width and the query string with each hit; the app has no query strings and no profile data in titles. `gc.zgo.at` is a third-party script origin and must be listed in the privacy notice.
+What it does: an inline script (no extra JavaScript bundle) that runs only in production, loads `https://gc.zgo.at/count.js` after the browser is idle (5 s at most, 2 s fallback), honours Do Not Track and Global Privacy Control, and counts one page view per full page load (moves between pages inside the app are not counted). Five count-only events carry the funnel: `profile-started` (once per full load of the profile page in create mode, so a returning student resuming a draft counts again), `profile-completed` (create mode only), `matches-viewed`, `program-saved` (on add), `plan-opened` (only when the saved list is not empty). `count.js` itself also sends the page title, referrer, screen width and the query string with each hit; the app has no query strings and no profile data in titles. `gc.zgo.at` is a third-party script origin and must be listed in the privacy notice.
 
 ## 5. Redeploying without a code change
 
@@ -204,26 +206,37 @@ Prices below come from secondary sources, not from a registrar: `.fyi` about $3 
 
 When you have bought one:
 
-1. In Vercel: project **Settings**, **Domains**, **Add**. Add the apex (for example `jisr.fyi`) and also the `www` form. Make the apex the primary one and set `www` to redirect to it (look for **Redirect to** with a 308 status; https://vercel.com/docs/domains/working-with-domains).
+1. In Vercel: project **Settings**, **Domains**, **Add**. Add the apex (for example `jisr.fyi`) and also the `www` form. Vercel's own suggestion is the opposite of this project's choice (it recommends `www` as primary with the apex redirecting to it). Choose **redirect `www` to the apex** instead: on the `www` domain use **Edit**, then the **Redirect to** dropdown, and pick the apex (https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting). Canonical URLs in the pages are apex-based (`NEXT_PUBLIC_SITE_URL`), so the other way round would contradict them.
 2. Vercel then shows the DNS records to create at your registrar. **Copy the values Vercel shows you**; do not reuse values from this guide or from memory (the usual shape is an A record for the apex and a CNAME for `www`, but the exact targets are shown in the dashboard).
 3. Wait until Vercel marks the domain as valid; it issues the HTTPS certificate itself.
 4. Change `NEXT_PUBLIC_SITE_URL` in the Production scope to the new origin (for example `https://jisr.fyi`). Redeploy (section 5).
-5. Change the repository variable `SMOKE_URL` to the same origin and run `pnpm ops:smoke https://jisr.fyi --expect=indexable`.
-6. Revisit the HSTS decision (ADR 0011) only after every subdomain you use serves HTTPS.
+5. Once the new domain is live, in the same Domains list edit the old `jisr.vercel.app` entry and set **Redirect to** the new apex with a 308 (permanent) redirect. Otherwise the old address keeps serving the whole site, and search engines would index the same pages twice (canonical tags point to the new origin, but a real redirect is cleaner).
+6. Change the repository variable `SMOKE_URL` to the same origin and run `pnpm ops:smoke https://jisr.fyi --expect=indexable`. The smoke test does not follow redirects, so it must target the final origin.
+7. Revisit the HSTS decision (ADR 0011) only after every subdomain you use serves HTTPS.
 
 ## 7. Rollback
 
 If a deployment is bad:
 
-1. Vercel dashboard, your project, **Deployments**, choose the previous good production deployment, open the **...** menu and pick **Instant Rollback**. On Hobby, Vercel may offer only a limited set of earlier deployments; see https://vercel.com/docs/instant-rollback.
+Source for everything in this section: https://vercel.com/docs/instant-rollback (last updated by Vercel 2026-07-07).
+
+1. Vercel dashboard, your project, **Overview**: on the **Production Deployment** tile click **Instant Rollback**, pick the deployment and click **Confirm Rollback**. (The Deployments list also has an **Instant Rollback** entry in each row's **...** menu.) **On Hobby you can roll back only to the immediately previous deployment**; the CLI refuses earlier ones.
 2. Or with the CLI (after `vercel login` and `vercel link`):
 
 ```bash
 pnpm dlx vercel rollback
 ```
 
-   Without an argument it targets the previous production deployment (check `pnpm dlx vercel rollback --help` for the exact behaviour); you can also pass a deployment URL or id.
-3. A rollback does not change the repository. The next push to `main` deploys again, so revert the bad commit on a branch and merge that pull request as well. After a rollback Vercel may stop automatically pointing the production domain at new deployments; look for a notice on the project's Deployments page and follow it (see the page above).
+   You can pass a deployment URL or id; on Hobby only the immediately previous deployment is accepted.
+3. **A rollback switches off automatic assignment of the production domain.** Afterwards, new deployments from the Actions job do **not** go live until you undo the rollback. In the dashboard click **Undo Rollback** on the Production Deployment tile, pick the deployment to promote and confirm. Or with the CLI:
+
+```bash
+pnpm dlx vercel promote DEPLOYMENT-URL
+```
+
+   Replace `DEPLOYMENT-URL` with the deployment you want live (the newest good one, usually).
+4. **The trap while rolled back:** the `deploy` job and the optional `SMOKE_URL` smoke test can both go green while the public site still serves the old, rolled-back build, because the new deployment exists but the domain does not point at it. After every rollback, undo it (step 3) as soon as the fix is merged, and then open the site to confirm the new version is live.
+5. A rollback does not change the repository. The next push to `main` deploys again, so revert the bad commit on a branch and merge that pull request too. Rollback also keeps the old build's environment variables: changes made in the project settings after the rolled-back deployment are not applied until you undo it.
 
 Turning off auto-deploy is not needed: production deploys only through the Actions job, and setting `DEPLOY_ENABLED` to anything but `true` pauses it.
 
@@ -278,7 +291,8 @@ What `pnpm ops:smoke` checks (read-only GET requests, exit code 1 if anything fa
 | `vercel pull` fails with 403 or "not authorized" | The token was created for another scope or expired. Create a new token for the team that owns the project and replace `VERCEL_TOKEN`. Check `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` against `.vercel/project.json`. |
 | Build step fails with an authentication error | See the note in section 2: give the Build step `VERCEL_TOKEN` and record it in an ADR. |
 | Build fails with `NEXT_PUBLIC_...: ...` | A variable has an invalid value (section 4). Fix it in the Production scope. |
-| Deploy step rejects or stalls on the upload | The built output is large (about 1.5 GB, about 24,000 files). See "Unverified" below. |
+| Deploy step rejects or stalls on the upload, or reports a rate limit on uploads | The built output is large (about 1.5 GB, about 24,000 files) and Hobby allows 5,000 uploads per day. The workflow already uses `--archive=tgz`; if it still fails, see risk 1 in section 10. |
+| New deployments are green but the site shows the old version | The project is in a rolled-back state. Use **Undo Rollback** or `vercel promote` (section 7). |
 | A pull request preview asks for a Vercel login | Expected: previews are protected by Vercel Authentication. |
 | Production site returns `503 DEPLOYMENT_PAUSED` | A Hobby usage cap was reached. See `docs/ops/limits-runbook.md`. |
 | Smoke test fails on the sitemap with `NEXT_PUBLIC_SITE_URL` unset | The production build was not indexable: set the variable (section 3.3) and redeploy. |
@@ -287,14 +301,18 @@ What `pnpm ops:smoke` checks (read-only GET requests, exit code 1 if anything fa
 
 These could not be tested without your Vercel account. Check them after the first deploy and record the outcome in the pre-launch checklist.
 
-1. **Output upload size and time (highest risk).** The default build output `.next` is about 1.5 GB with about 24,000 files (3,398 HTML files; `.next/server/app` is 1.4 GB: each programme page is about 140 KB of HTML plus 78 KB of RSC data plus segment files). Whether `vercel deploy --prebuilt` accepts and uploads this, and how long it takes, is unknown. If it is rejected or slow, this is an owner decision for a follow-up, not something this branch solves. Generating only some programme pages with on-demand rendering is **not** possible, because the snapshot is not traced into functions (`public/` is not available to functions; architecture.md). The real options are to shrink the per-page payload, or to move programme pages to incremental static regeneration with the snapshot read from a CDN URL (which the `NEXT_PUBLIC_SNAPSHOT_BASE_URL` seam partly prepares).
+1. **Output upload size, file count and time (highest risk).** Measured 2026-10-08 on the branch before this guide: the default build output `.next` is about 1.5 GB with about 24,000 files (3,398 HTML files; `.next/server/app` is 1.4 GB: each programme page is about 140 KB of HTML plus 78 KB of RSC data plus segment files). <!-- TASK8 --> Task 8 replaces these figures with the measured build time, `.next` size and file count, and first-load JavaScript headroom.
+   - Hobby has an API limit of **5,000 uploads per day** (https://vercel.com/docs/limits), and the output has about 24,000 files. The 15,000-file and 100 MB caps for CLI uploads are documented for source files; whether they also apply to `--prebuilt` output is **unverified**.
+   - **First mitigation, already in `ci.yml`:** `vercel deploy --prebuilt --archive=tgz --prod`, which Vercel documents for deployments with thousands of files. It is documented with `--prebuilt` but has not been run in this repository, and it may make deploys slower (the per-file upload cache is lost). If the HTML embeds the snapshot version, every data deploy changes a large share of the files, so without the archive each data release would re-upload most of them; this is why the flag matters.
+   - If it is still rejected or too slow, this is an owner decision for a follow-up, not something this branch solves. Generating only some programme pages with on-demand rendering is **not** possible, because the snapshot is not traced into functions (`public/` is not available to functions; architecture.md). The remaining options are to shrink the per-page payload, or to move programme pages to incremental static regeneration with the snapshot read from a CDN URL (which the `NEXT_PUBLIC_SNAPSHOT_BASE_URL` seam partly prepares).
 2. `vercel build --prod` works without `VERCEL_TOKEN` in the environment.
 3. `npm install --global vercel@latest` works on the GitHub runner as written.
 4. Vercel honours `fra1` for a `--prebuilt` deployment.
 5. Vercel's router honours the compiled proxy matcher the way `next start` does (the proxy runs only for `/` and locale-less paths), and `/FR` (uppercase) behaves as it does locally.
-6. Deployment Protection leaves the production domain public (it is documented to protect `*.vercel.app` deployment URLs).
+6. Under Standard Protection the production domain (for example `jisr.vercel.app`) is public while generated deployment URLs need a Vercel login, as documented; confirm it in a private window.
 7. Function invocation counts match page views (no invocation per `/fr/...` view).
 8. The e2e job runs on a GitHub-hosted runner without the local SWC workaround (already noted in `ci.yml`).
+9. `vercel deploy --prebuilt --archive=tgz` is accepted by the CLI on the runner (documented by Vercel, not yet run here).
 
 ## 11. Repository visibility and branch protection
 
@@ -302,4 +320,4 @@ The repository is private on GitHub Free, where branch protection is not availab
 
 Residual risk, accepted and recorded in ADR 0011: a pull request from a branch of this same repository runs its own, possibly modified, `ci.yml`, and same-repository workflows receive repository secrets. GitHub Environments with branch restrictions are not available for private repositories on the Free plan. So write access to the repository equals deploy access, exactly as it already equals the ability to push to `main`. Mitigations: use a team-scoped Vercel token with an expiry of at most 1 year (calendar reminder); rotate it whenever you add a collaborator or make the repository public; do not add collaborators lightly.
 
-Making the repository public was considered and is **not recommended yet**: 5,784 tracked `data-staging/` files are unaudited and include fetched third-party page text; the project is closed-source by decision; there is no LICENSE file. A history scan found no secrets. The design works unchanged if the repository goes public later; then also add branch protection requiring the `verify` and `e2e` jobs, and do the audit first.
+Making the repository public was considered and is **not recommended yet**: 5,796 tracked (counted 2026-10-09) `data-staging/` files are unaudited and include fetched third-party page text; the project is closed-source by decision; there is no LICENSE file. A history scan found no secrets. The design works unchanged if the repository goes public later; then also add branch protection requiring the `verify` and `e2e` jobs, and do the audit first.

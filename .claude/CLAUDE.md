@@ -77,7 +77,7 @@ scripts/                 data/, e2e/ (fixture build), perf/ (first-load JS), ops
 
 Data flow: YAML → `data:check` → `data:build` → snapshots on the CDN → the browser runs `src/domain` on the snapshot → results. Guest profile, saved list and ticked steps live in localStorage (`jisr.profile`, `jisr.saved`, `jisr.plan`; Clear my data empties them all); accounts (phase 2) persist profile, saved programs, checklist progress and feedback in Postgres, referencing program slug + snapshot version. Eligibility is origin-agnostic: `(origin credential country, type) → (destination, level)` routes first, program rules second; Morocco/Bac is only the first origin.
 
-Resolved in ADR 0004: analytics, error reporting, staleness thresholds, translation storage, privacy/CNDP plan, Vercel limits. What remains is the ADR's "Before launch" checklist (verify Vercel/Sentry limits, CNDP declaration before accounts, privacy notice).
+Resolved in ADR 0004: analytics, error reporting, staleness thresholds, translation storage, privacy/CNDP plan, Vercel limits. What remains before launch is tracked in `docs/ops/prelaunch-checklist.md`.
 
 Deeper notes: `.claude/docs/architecture.md` (data access boundary, no-Zod rule, JS size). Decisions: `.claude/docs/decisions/` (0002 stack, 0003 scalable solo architecture, 0004 operations/privacy/freshness, 0005 domain semantics and data rules, 0006 static program pages and 404 routing, 0007 client JS budget, superseded by 0008: exceeding 150 KB is accepted, the ratchet in `tests/e2e/support/js-budget.ts` is the regression guard; 0009 recurring deadlines, 0010 official fee range, 0011 deployment: CI-gated Vercel deploy, safe-by-default indexing, headers, narrowed proxy, GoatCounter loader; refines ADR 0004 section 1 with the 2026-10-08 Hobby facts).
 
@@ -185,7 +185,7 @@ This repo is indexed in the `codebase-memory-mcp` knowledge graph as project `ji
 - Don't build what ADR 0003 lists as deliberately not built (admin app, worker/queue, search engine, B2B, payments, WhatsApp API, monorepo, student-facing AI, native apps) without a new ADR
 - Don't add countries/fields beyond Release 1 by writing code — add data; propose a plan first if the model can't express it
 - Don't set cookies, record IPs or send profile data to analytics or Sentry; Sentry stays scrubbed with tracing off
-- Don't accept ads, affiliate-first links, payments, paid hosting/editing or paid sponsorship (Vercel Hobby is non-commercial). Donations are allowed per Vercel's fair-use page (ADR 0011, verified 2026-10-08; supersedes ADR 0004's caution); re-read it before a donation link goes live
+- Don't accept ads, affiliate-first links, payments, paid hosting/editing or paid sponsorship (Vercel Hobby is non-commercial). Donations are allowed per Vercel's fair-use page (ADR 0011, verified 2026-10-08; refines ADR 0004's caution); re-read it before a donation link goes live
 - Don't launch accounts before the CNDP declaration and en/fr/ar privacy notice (ADR 0004)
 - Don't hand-edit generated Better Auth tables, applied migrations, or built snapshots
 - Don't log profile data (grades, nationality) or session tokens

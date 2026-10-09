@@ -180,9 +180,13 @@ jobs:
 
       # stdout of `vercel deploy` is only the deployment URL. The assignment (not an echo around the
       # substitution) keeps a failed deploy from being swallowed.
+      # --archive=tgz compresses the output into one file before upload. Vercel documents it for
+      # deployments with thousands of files, "to minimize the number of files uploaded and avoid
+      # hitting upload limits" (the Hobby API allows 5,000 uploads a day; this build output has about
+      # 24,000 files). Documented with --prebuilt but not yet run in this repository (docs/ops/deploy.md).
       - name: Deploy prebuilt output
         run: |
-          url="$(vercel deploy --prebuilt --prod)"
+          url="$(vercel deploy --prebuilt --archive=tgz --prod)"
           echo "Deployed: $url" >> "$GITHUB_STEP_SUMMARY"
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
