@@ -51,3 +51,5 @@ yarn-error.log*
 # Output of data:read and data:bakeoff runs (calls.jsonl, proposals): re-creatable, not data
 /data-staging/bakeoff/
 /data-staging/proposals-read/
+# Output of data:translate-ar export and review: re-creatable, not data
+/data-staging/translations/

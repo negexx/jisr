@@ -41,7 +41,7 @@ Trust is the product: every important fact carries an **official source URL** an
 | Validate data + staleness report | `pnpm data:check` |
 | Build data snapshots | `pnpm data:build` |
 | French BUT calendar proposals / verify a scholarship proposal / verify an official cost-profile proposal (`data/README.md`) | `pnpm data:fr-calendar [--dry-run]` / `pnpm data:scholarship verify <file> [--dry-run]` / `pnpm data:costs-official verify <file> [--dry-run\|--use-cache]` |
-| National facts (documents, application channel) from a curated registry, one proposal per programme (`data/README.md`, "National facts") | `pnpm data:national <registry> [--dry-run]` |
+| National facts (documents, application channel) from a curated registry, one proposal per programme (`data/README.md`, "National facts") / fill Arabic from a reviewed dictionary (`data/README.md`, "Arabic translations") | `pnpm data:national <registry> [--dry-run]` / `pnpm data:translate-ar export|merge|check|apply|review|mark-reviewed` |
 | Italy discovery from Universitaly: candidate list and comparison report (read-only; about 26 requests, cache under `data-staging/universitaly/`; `--from-cache <dir>` reruns offline) | `pnpm data:it-discovery` |
 | Stage chosen Universitaly candidates by portal id (no model, no search; nothing promoted; refuses an unresolvable university; `--dry-run`) | `pnpm data:it-stage --ids <ids> [--run <dir>] [--dry-run]` |
 | Build the reader pages file from the curated Italy page registry (no network, no model; drops admissions and programme-other pages of an older academic year; writes `.missing.txt` and `.dropped.txt`) | `pnpm data:it-pages --registry <file[,file...]> --out <pages.json> [--max-per-programme 14] [--data-dir data]` |
