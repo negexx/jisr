@@ -18,13 +18,14 @@
       "notes": "Hochschule Fulda page for applicants with international certificates (it names the Baccalaureat); the uni-assist list marks Fulda as processes."
     },
     {
-      "id": "de-channel-de-universitat-passau-hrk218",
+      "id": "de-channel-de-universitat-passau-hrk218-bachelor-of-science-in-a-daad9973",
       "fact": "applicationChannel",
       "infoKind": "official",
       "channel": "de-uni-assist",
       "selector": {
         "country": "DE",
-        "institutions": ["de-universitat-passau-hrk218"]
+        "institutions": ["de-universitat-passau-hrk218"],
+        "programmes": ["de-universitat-passau-hrk218-bachelor-of-science-in-a-daad9973"]
       },
       "evidence": [
         {
@@ -103,13 +104,16 @@
       "notes": "Hochschule Osnabrueck page 'Application with foreign documents', Bachelor section."
     },
     {
-      "id": "de-channel-de-hochschule-fur-angewandte-wissenschaften-hrk287",
+      "id": "de-channel-de-hochschule-fur-angewandte-wissenschaften-hrk287-computer-science-bsc-daad7216",
       "fact": "applicationChannel",
       "infoKind": "official",
       "channel": "de-uni-assist-vpd",
       "selector": {
         "country": "DE",
-        "institutions": ["de-hochschule-fur-angewandte-wissenschaften-hrk287"]
+        "institutions": ["de-hochschule-fur-angewandte-wissenschaften-hrk287"],
+        "programmes": [
+          "de-hochschule-fur-angewandte-wissenschaften-hrk287-computer-science-bsc-daad7216"
+        ]
       },
       "evidence": [
         {
@@ -120,34 +124,16 @@
       "notes": "Hof University programme page (Computer Science, international Bachelor); the uni-assist list also marks Hof as vpd_only."
     },
     {
-      "id": "de-channel-de-hochschule-hamm-lippstadt-hrk399-lippstadt",
+      "id": "de-channel-de-friedrich-alexander-universitat-erlangen-hrk70-artificial-intelligence-daad9594",
       "fact": "applicationChannel",
       "infoKind": "official",
       "channel": "de-university-direct",
       "selector": {
         "country": "DE",
-        "institutions": ["de-hochschule-hamm-lippstadt-hrk399-lippstadt"]
-      },
-      "evidence": [
-        {
-          "url": "https://www.hshl.de/en/studying/online-registration/",
-          "quote": "As a next step you can select your desired study program in the application portal under the menu item \"course\" and enter your data as well as upload your documents."
-        },
-        {
-          "url": "https://www.hshl.de/en/studying/online-registration/",
-          "quote": "Important: If you have an international university entrance qualification, you must also have your application documents checked by uni-assist."
-        }
-      ],
-      "notes": "HSHL applies in its own application portal; with an international entrance qualification the documents must also be checked by uni-assist first (the page does not use the word VPD). The uni-assist list marks HSHL as processes."
-    },
-    {
-      "id": "de-channel-de-friedrich-alexander-universitat-erlangen-hrk70",
-      "fact": "applicationChannel",
-      "infoKind": "official",
-      "channel": "de-university-direct",
-      "selector": {
-        "country": "DE",
-        "institutions": ["de-friedrich-alexander-universitat-erlangen-hrk70"]
+        "institutions": ["de-friedrich-alexander-universitat-erlangen-hrk70"],
+        "programmes": [
+          "de-friedrich-alexander-universitat-erlangen-hrk70-artificial-intelligence-daad9594"
+        ]
       },
       "evidence": [
         {
@@ -155,16 +141,19 @@
           "quote": "Normally, you have to apply directly to FAU via the campo application portal for all undergraduate degree programs (Bachelor’s / State Examination programs)."
         }
       ],
-      "notes": "FAU page for international applicants to undergraduate programmes; it does not mention uni-assist."
+      "notes": "FAU page for international applicants to undergraduate programmes; it does not mention uni-assist. Scoped to the Artificial Intelligence programme only: the English-taught Business programmes (International Business Studies, International Economic Studies) also require the hochschulstart DoSV procedure according to the 'Exceptions' section of the same page."
     },
     {
-      "id": "de-channel-de-technische-hochschule-mannheim-hrk177",
+      "id": "de-channel-de-technische-hochschule-mannheim-hrk177-international-engineerin-daad10335",
       "fact": "applicationChannel",
       "infoKind": "official",
       "channel": "de-university-direct",
       "selector": {
         "country": "DE",
-        "institutions": ["de-technische-hochschule-mannheim-hrk177"]
+        "institutions": ["de-technische-hochschule-mannheim-hrk177"],
+        "programmes": [
+          "de-technische-hochschule-mannheim-hrk177-international-engineerin-daad10335"
+        ]
       },
       "evidence": [
         {
@@ -200,21 +189,44 @@
       "notes": "THU page 'Application for international students'."
     },
     {
-      "id": "de-channel-de-hochschule-ravensburg-weingarten-hrk224",
+      "id": "de-channel-de-hochschule-ravensburg-weingarten-hrk224-electrical-engineering-a-daad3993",
       "fact": "applicationChannel",
       "infoKind": "official",
       "channel": "de-university-direct",
       "selector": {
         "country": "DE",
-        "institutions": ["de-hochschule-ravensburg-weingarten-hrk224"]
+        "institutions": ["de-hochschule-ravensburg-weingarten-hrk224"],
+        "programmes": [
+          "de-hochschule-ravensburg-weingarten-hrk224-electrical-engineering-a-daad3993"
+        ]
       },
       "evidence": [
         {
-          "url": "https://www.rwu.de/en/international/international-degree-seeking-students/study-offer-and-application",
-          "quote": "Depending on the degree program, applicants must first register at hochschulstart.de (German-speaking study programs) or can apply directly through our RWU Portal (English-speaking study programs)."
+          "url": "https://www.rwu.de/en/study/courses/electrical-engineering-and-information-technology-en",
+          "quote": "ONLINE APPLICATION: Kindly register with our RWU online application portal, available 01. September onwards, and submit your application online."
         }
       ],
-      "notes": "RWU page for international degree-seeking students: English-speaking programmes apply directly through the RWU portal, German-speaking ones via hochschulstart.de."
+      "notes": "Programme page of Electrical Engineering and Information Technology (international Bachelor)."
+    },
+    {
+      "id": "de-channel-de-hochschule-ravensburg-weingarten-hrk224-mechanical-engineering-i-daad7827",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-university-direct",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-hochschule-ravensburg-weingarten-hrk224"],
+        "programmes": [
+          "de-hochschule-ravensburg-weingarten-hrk224-mechanical-engineering-i-daad7827"
+        ]
+      },
+      "evidence": [
+        {
+          "url": "https://www.rwu.de/en/study/courses/mechanical-engineering-international-project-engineering-international-variant",
+          "quote": "ONLINE APPLICATION: The RWU provides an online application tool for you to submit your initial submission, opening 1 December, 2026 and closing 15 January, 2027. Please visit our online application portal for further information"
+        }
+      ],
+      "notes": "Programme page of Mechanical Engineering / International Project Engineering (international variant)."
     },
     {
       "id": "de-channel-de-hochschule-fresenius-heidelberg-staatlic-hrk440",
@@ -270,6 +282,26 @@
         }
       ],
       "notes": "Dingolfing is a campus of Landshut University of Applied Sciences (same HRK id 157, same website haw-landshut.de); the uni-assist row 28 is Landshut UAS, vpd_only. The sheet matched only the Landshut institution record, not this campus record, so it is added here."
+    },
+    {
+      "id": "de-channel-de-hochschule-fur-angewandte-wissenschaften-hrk44",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-uni-assist-vpd",
+      "selector": {
+        "country": "DE",
+        "institutions": [
+          "de-hochschule-fur-angewandte-wissenschaften-hrk44",
+          "de-hochschule-fur-angewandte-wissenschaften-hrk44-kronach"
+        ]
+      },
+      "evidence": [
+        {
+          "url": "https://www.uni-assist.de/en/tools/uni-assist-universities/detail/hochschule/21/",
+          "quote": "You are then required to submit your application with the VPD directly to the university."
+        }
+      ],
+      "notes": "Coburg University of Applied Sciences and Arts: uni-assist row 21 (vpd_only). Matched by name and city, not by website: the owner confirms the match at the audit. The sheet row is unmatched only because our record lists hs-coburg.de while uni-assist lists coburg-university.de. Covers the Kronach campus record too."
     }
   ]
 }
