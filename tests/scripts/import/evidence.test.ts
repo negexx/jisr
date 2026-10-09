@@ -682,14 +682,31 @@ describe("checkChannel German wording", () => {
     for (const quote of [
       "Upload the evaluation result from uni-assist in the portal.",
       "Upload the evaluation result from uni assist in the portal.",
-      "Foreign certificates go through a preliminary assessment first.",
-      "Foreign certificates go through a preliminary examination first.",
-      "The preliminarily examined documents are uploaded.",
       "We will issue you with a preliminary review documentation (VPD).",
       "Die Vorprüfungsdokumentation wird von uni-assist ausgestellt.",
       "Die Vorpruefungsdokumentation wird von uni-assist ausgestellt.",
     ])
       expect(checkChannel("de-uni-assist-vpd", quote).ok, quote).toBe(true);
+  });
+  it("no longer reads preliminary assessment or examination wording as a VPD", () => {
+    for (const quote of [
+      "Foreign certificates go through a preliminary assessment first.",
+      "Foreign certificates go through a preliminary examination first.",
+      "The preliminarily examined documents are uploaded.",
+      "Certificates must be preliminarily assessed by Uni-Assist when applying.",
+    ])
+      expect(checkChannel("de-uni-assist-vpd", quote).ok, quote).toBe(false);
+  });
+  it("does not let a VPD quote verify the full-processing uni-assist label", () => {
+    for (const quote of [
+      "You are then required to submit your application with the VPD directly to the university.",
+      "Die Vorprüfungsdokumentation wird von uni-assist ausgestellt.",
+      "Die Vorpruefungsdokumentation wird von uni-assist ausgestellt.",
+      "We will issue you with a preliminary review documentation (VPD) via uni-assist.",
+    ]) {
+      expect(checkChannel("de-uni-assist", quote).ok, quote).toBe(false);
+      expect(checkChannel("de-uni-assist-vpd", quote).ok, quote).toBe(true);
+    }
   });
   it("does not accept a bare 'checked by uni-assist' for the vpd label", () => {
     expect(checkChannel("de-uni-assist-vpd", "Documents must be checked by uni-assist.").ok).toBe(
