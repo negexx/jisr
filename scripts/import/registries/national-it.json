@@ -1,0 +1,103 @@
+{
+  "entries": [
+    {
+      "id": "it-channel-universitaly",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "it-universitaly",
+      "selector": {
+        "country": "IT",
+        "institutions": [
+          "it-brescia-brescia",
+          "it-casamassima-lum-g-degennaro-casamassima",
+          "it-firenze-firenze",
+          "it-palermo-palermo",
+          "it-roma-biomedico-roma",
+          "it-siena-siena"
+        ]
+      },
+      "evidence": [
+        {
+          "url": "https://www.universitaly.it/en/studenti-stranieri",
+          "quote": "La domanda di preiscrizione per il rilascio del visto per i candidati ai corsi di studio presso le Istituzioni della formazione superiore italiane dovrà essere presentata esclusivamente per il tramite del portale UNIVERSITALY"
+        },
+        {
+          "url": "https://www.universitaly.it/en/studenti-stranieri",
+          "quote": "PROCEDURES FOR ENTRY, RESIDENCY AND ENROLMENT OF INTERNATIONAL STUDENTS AND THE RESPECTIVE RECOGNITION OF QUALIFICATIONS FOR HIGHER EDUCATION COURSES IN ITALY"
+        }
+      ],
+      "notes": "Ministry procedures for international students 2026/27 and 2027/28 (MUR). The sentence is about the pre-enrolment application for the study visa, so it concerns non-EU applicants who need a visa (living abroad); the second quote is the title of the page that states the audience. It is a national rule: it says nothing about a university's own admission portal, which some universities also require in addition (Palermo: Portale Studenti UniPa plus Universitaly; Brescia: own registration portal plus the Universitaly visa step; Siena: apply.unisi.it plus Universitaly). The institution list is every Italian institution with programmes lacking a channel, minus the ones whose own pages show their own portal as the way to apply and never mention Universitaly (Bocconi, Padova, Udine, Luiss: left out on purpose, see the run report)."
+    },
+    {
+      "id": "it-documents-circolare",
+      "fact": "documents",
+      "infoKind": "guidance",
+      "selector": { "country": "IT" },
+      "evidence": [
+        {
+          "url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+          "quote": "La documentazione normalmente richiesta dalle Istituzioni della formazione superiore in riferimento al possesso delle qualifiche idonee per l’ingresso ad un corso di studi è la seguente:"
+        },
+        {
+          "url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+          "quote": "Per l’accesso ai corsi di primo ciclo: a) titolo finale degli studi secondari5 conseguito con almeno 12 anni di scolarità"
+        },
+        {
+          "url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+          "quote": "a discrezione della singola istituzione della formazione superiore, il titolo finale può essere corredato in alternativa da attestazione rilasciata dal centro ENIC-NARIC italiano (CIMEA) o da eventuale Dichiarazione di valore"
+        },
+        {
+          "url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+          "quote": "certificato attestante il superamento della prova di idoneità accademica eventualmente prevista per l’accesso all’Università del Paese di provenienza"
+        },
+        {
+          "url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+          "quote": "eventuali traduzioni in italiano dei documenti indicati ai punti a) e b)"
+        },
+        {
+          "url": "https://universitaly-private.cineca.it/uploads/universitaly-pubblico/Circolare_2026-2027_studenti_internazionali.pdf",
+          "quote": "Le Istituzioni della formazione superiore sono autonome al fine della documentazione da richiedere ai candidati ai propri corsi"
+        }
+      ],
+      "items": [
+        {
+          "slug": "secondary-school-diploma",
+          "name": {
+            "fr": "Titre final des études secondaires obtenu avec au moins 12 ans de scolarité",
+            "en": "Final secondary school qualification obtained after at least 12 years of schooling"
+          },
+          "quotedAs": "12 anni di scolarità",
+          "translationRequired": null
+        },
+        {
+          "slug": "cimea-statement-or-declaration-of-value",
+          "name": {
+            "fr": "Attestation CIMEA ou déclaration de valeur, selon l’établissement",
+            "en": "CIMEA statement or Declaration of value, depending on the institution"
+          },
+          "quotedAs": "Dichiarazione di valore",
+          "translationRequired": null
+        },
+        {
+          "slug": "university-entrance-aptitude-certificate",
+          "name": {
+            "fr": "Certificat de réussite à l’épreuve d’aptitude académique d’accès à l’université du pays d’origine, s’il en existe une",
+            "en": "Certificate of passing the academic aptitude test for university entrance in the home country, where one exists"
+          },
+          "quotedAs": "prova di idoneità accademica",
+          "translationRequired": null
+        },
+        {
+          "slug": "italian-translation-of-documents",
+          "name": {
+            "fr": "Traductions en italien des documents ci-dessus, si l’établissement les demande",
+            "en": "Italian translations of the documents above, where the institution asks for them"
+          },
+          "quotedAs": "traduzioni in italiano",
+          "translationRequired": null
+        }
+      ],
+      "notes": "Ministry circular for international students 2026/27 and 2027/28, section 4: documents normally required; universities are autonomous and may ask for more; some require the CIMEA statement and others the Dichiarazione di valore (the circular says at the discretion of the single institution). The circular also lists 'eventuale altra documentazione richiesta dall'ateneo' (any other documents the university asks for), which is not an item. The digit in 'secondari5' is a footnote mark of the PDF text. The translation sentence says 'eventuali traduzioni' (possible translations) and does not name or require translation of a given document, so no item is flagged as requiring translation. First-cycle list only (not the second-cycle list)."
+    }
+  ]
+}
