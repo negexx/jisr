@@ -220,6 +220,20 @@ async function loadStaged(
   return typeof parsed === "object" && parsed !== null ? (parsed as Staged) : null;
 }
 
+// A national page cited by hundreds of proposals is fetched and converted once per run. A failed
+// fetch is forgotten, so a later proposal retries it.
+function memoText(getText: GetText): GetText {
+  const seen = new Map<string, Promise<string>>();
+  return (url) => {
+    const hit = seen.get(url);
+    if (hit !== undefined) return hit;
+    const pending = getText(url);
+    seen.set(url, pending);
+    pending.catch(() => seen.delete(url));
+    return pending;
+  };
+}
+
 // `getText` is injectable so tests never touch the network.
 export async function verifyAll(
   dryRun: boolean,
@@ -228,7 +242,7 @@ export async function verifyAll(
 ): Promise<void> {
   const stagingDir = options.stagingDir ?? STAGING_DIR;
   const enrichDir = options.enrichDir ?? null;
-  const getText = options.getText ?? pageText;
+  const getText = memoText(options.getText ?? pageText);
   const root = proposalsDir(stagingDir);
   if (enrichDir === null && !existsSync(root)) {
     console.log("no proposals directory");

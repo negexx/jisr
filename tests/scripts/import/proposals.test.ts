@@ -1185,6 +1185,148 @@ describe("documents fact", () => {
   });
 });
 
+describe("infoKind guidance on documents and application channel", () => {
+  const page = "https://national.example/apply";
+  const pageText =
+    "Applicants normally submit a school-leaving certificate. Applications are handled by uni-assist for this university.";
+  const nationalText = async () => pageText;
+  const documentsValue = [
+    {
+      slug: "school-leaving-certificate",
+      name: { fr: "Diplôme", en: "School-leaving certificate" },
+      quotedAs: "school-leaving certificate",
+      translationRequired: null,
+    },
+  ];
+  const documentsQuote = "Applicants normally submit a school-leaving certificate";
+  const channelQuote = "Applications are handled by uni-assist for this university";
+  const withKind = (fact: "documents" | "applicationChannel", infoKind?: string) => ({
+    slug: "xx-prog",
+    programmePage: null,
+    facts:
+      fact === "documents"
+        ? {
+            documents: {
+              value: documentsValue,
+              evidence: [{ url: page, quote: documentsQuote }],
+              ...(infoKind === undefined ? {} : { infoKind }),
+            },
+          }
+        : {
+            applicationChannel: {
+              value: "de-uni-assist",
+              evidence: [{ url: page, quote: channelQuote }],
+              ...(infoKind === undefined ? {} : { infoKind }),
+            },
+          },
+  });
+
+  it("keeps guidance on a documents fact and on an application channel fact, and rejects any other kind", () => {
+    expect(ProposalSchema.parse(withKind("documents", "guidance")).facts.documents?.infoKind).toBe(
+      "guidance",
+    );
+    expect(
+      ProposalSchema.parse(withKind("applicationChannel", "guidance")).facts.applicationChannel
+        ?.infoKind,
+    ).toBe("guidance");
+    expect(ProposalSchema.safeParse(withKind("documents", "estimate")).success).toBe(false);
+    expect(ProposalSchema.safeParse(withKind("applicationChannel", "estimate")).success).toBe(
+      false,
+    );
+  });
+
+  it("strips an infoKind request from every other fact", () => {
+    const parsed = ProposalSchema.parse({
+      slug: "p",
+      programmePage: null,
+      facts: {
+        durationYears: {
+          value: 3,
+          evidence: [{ url: PAGE, quote: "six semesters" }],
+          infoKind: "guidance",
+        },
+      },
+    });
+    expect(parsed.facts.durationYears).not.toHaveProperty("infoKind");
+  });
+
+  it("carries the requested kind through verifyProposal, and none when none was asked", async () => {
+    const guidance = await verifyProposal(
+      ProposalSchema.parse(withKind("documents", "guidance")),
+      "Prog",
+      nationalText,
+    );
+    expect(guidance.facts.documents?.infoKind).toBe("guidance");
+    const channel = await verifyProposal(
+      ProposalSchema.parse(withKind("applicationChannel", "guidance")),
+      "Prog",
+      nationalText,
+    );
+    expect(channel.facts.applicationChannel?.infoKind).toBe("guidance");
+    const plain = await verifyProposal(
+      ProposalSchema.parse(withKind("documents")),
+      "Prog",
+      nationalText,
+    );
+    expect(plain.facts.documents).toBeDefined();
+    expect(plain.facts.documents?.infoKind).toBeUndefined();
+  });
+
+  describe("enrichRecord and applyVerified", () => {
+    const staged = (documents: unknown) => ({
+      slug: "p",
+      officialUrl: null,
+      documents,
+      applicationChannel: { value: null, source: "daad", info_kind: READ_SOURCE },
+      sources: { daad: { url: "https://www2.daad.de/x", last_verified_at: null } },
+      _review: { todo: "read it" },
+    });
+    const placeholder = { value: null, source: "daad", info_kind: READ_SOURCE };
+    const verifiedWith = (infoKind?: "guidance" | "official") => ({
+      programmePage: null,
+      rejected: [],
+      facts: {
+        documents: {
+          value: documentsValue,
+          evidence: [{ url: page, quote: documentsQuote }],
+          ...(infoKind === undefined ? {} : { infoKind }),
+        },
+      },
+    });
+
+    it("writes the requested kind on an empty fact, and official when none was requested", () => {
+      const guidance = enrichRecord(staged(placeholder), verifiedWith("guidance"), "2026-10-09");
+      expect(guidance.record.documents).toMatchObject({ info_kind: "guidance" });
+      const plain = enrichRecord(staged(placeholder), verifiedWith(), "2026-10-09");
+      expect(plain.record.documents).toMatchObject({ info_kind: "official" });
+      const explicit = enrichRecord(staged(placeholder), verifiedWith("official"), "2026-10-09");
+      expect(explicit.record.documents).toMatchObject({ info_kind: "official" });
+    });
+
+    it("keeps an existing official value even when the new fact is guidance", () => {
+      const existing = {
+        value: [{ slug: "passport", name: { fr: { text: "Passeport", status: "draft" } } }],
+        source: "programme",
+        info_kind: "official",
+      };
+      const result = enrichRecord(staged(existing), verifiedWith("guidance"), "2026-10-09");
+      expect(result.record.documents).toBe(existing);
+    });
+
+    it("applyVerified stamps the requested kind as well", () => {
+      const verified = { ...verifiedWith("guidance"), programmePage: PAGE };
+      const applied = applyVerified(staged(placeholder), verified, "2026-10-09");
+      expect(applied.documents).toMatchObject({ info_kind: "guidance" });
+      const plain = applyVerified(
+        staged(placeholder),
+        { ...verifiedWith(), programmePage: PAGE },
+        "2026-10-09",
+      );
+      expect(plain.documents).toMatchObject({ info_kind: "official" });
+    });
+  });
+});
+
 describe("intakes: the deadline must be stated for international applicants", () => {
   const page = "https://uni.example/apply";
   const make = (quote: string, text: string) => ({
