@@ -671,6 +671,43 @@ describe("checkDeadline", () => {
   });
 });
 
+describe("checkChannel German wording", () => {
+  it("accepts uni assist without a hyphen for the uni-assist label", () => {
+    expect(checkChannel("de-uni-assist", "Apply via uni assist before 15 July.").ok).toBe(true);
+    expect(checkChannel("de-uni-assist", "Apply via Uni-Assist before 15 July.").ok).toBe(true);
+    expect(checkChannel("de-uni-assist", "Apply via uniassist before 15 July.").ok).toBe(true);
+    expect(checkChannel("de-uni-assist", "Apply via the portal before 15 July.").ok).toBe(false);
+  });
+  it("accepts a VPD-style evaluation wording for the vpd label", () => {
+    for (const quote of [
+      "Upload the evaluation result from uni-assist in the portal.",
+      "Upload the evaluation result from uni assist in the portal.",
+      "Foreign certificates go through a preliminary assessment first.",
+      "Foreign certificates go through a preliminary examination first.",
+      "The preliminarily examined documents are uploaded.",
+      "We will issue you with a preliminary review documentation (VPD).",
+    ])
+      expect(checkChannel("de-uni-assist-vpd", quote).ok, quote).toBe(true);
+  });
+  it("does not accept a bare 'checked by uni-assist' for the vpd label", () => {
+    expect(checkChannel("de-uni-assist-vpd", "Documents must be checked by uni-assist.").ok).toBe(
+      false,
+    );
+    expect(checkChannel("de-uni-assist-vpd", "Apply on our website").ok).toBe(false);
+  });
+  it("leaves the direct label unchanged", () => {
+    expect(
+      checkChannel(
+        "de-university-direct",
+        "Documents checked by uni-assist, evaluation result from uni assist",
+      ).ok,
+    ).toBe(false);
+    expect(
+      checkChannel("de-university-direct", "Apply in our application portal until 15 July.").ok,
+    ).toBe(true);
+  });
+});
+
 describe("checkChannel", () => {
   it("only verifies channels it knows, by name", () => {
     expect(checkChannel("fr-parcoursup", "Candidatez sur Parcoursup avant le 1er avril").ok).toBe(
