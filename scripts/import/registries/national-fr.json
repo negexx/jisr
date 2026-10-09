@@ -7,10 +7,6 @@
       "selector": { "country": "FR", "institutionType": "public", "kinds": ["but", "licence"] },
       "evidence": [
         {
-          "url": "https://www.maroc.campusfrance.org/la-procedure-de-candidature-sur-etudes-en-france-de-campus-france",
-          "quote": "La procédure de candidature en ligne de Campus France sur la plateforme Études en France s'adresse aux étudiants non européens*, résidents au Maroc ET issus de l'enseignement marocain (y compris le bac international)"
-        },
-        {
           "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
           "quote": "Joindre une photo d’identité"
         },
@@ -53,6 +49,10 @@
         {
           "url": "https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles",
           "quote": "Les convocations aux sessions de TCF TP ou DELF B2/DALF sont acceptées."
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/la-procedure-de-candidature-sur-etudes-en-france-de-campus-france",
+          "quote": "La procédure de candidature en ligne de Campus France sur la plateforme Études en France s'adresse aux étudiants non européens*, résidents au Maroc ET issus de l'enseignement marocain (y compris le bac international)"
         }
       ],
       "items": [
