@@ -81,10 +81,10 @@
       "evidence": [
         {
           "url": "https://www.hs-hannover.de/en/about-us/organisation/akademische-angelegenheiten/studieninteressierte/application/application-with-foreign-certificates-of-education",
-          "quote": "If you received your educational qualifications in a foreign country, these must be examined for admission to higher education, regardless of your nationality. This formal examination has been carried out by “uni-assist”, an institution that is operated jointly by the universities and is the work and service center for international study applications, since 1 May 2004. The Hannover University of Sciences and Arts(HsH – Hochschule Hannover) accepts online-only applications via uni assist using non-certified copies of certificates."
+          "quote": "The Hannover University of Sciences and Arts(HsH – Hochschule Hannover) accepts online-only applications via uni assist using non-certified copies of certificates."
         }
       ],
-      "notes": "Hochschule Hannover page 'Application with Foreign Certificates of Education'. The last sentence of the quote writes 'uni assist' without the hyphen; the middle sentence names uni-assist."
+      "notes": "Hochschule Hannover page 'Application with Foreign Certificates of Education'. The quote writes 'uni assist' without the hyphen. It follows two sentences saying foreign qualifications must be examined and that uni-assist carries out that examination."
     },
     {
       "id": "de-channel-de-hochschule-osnabruck-hrk214",
@@ -302,6 +302,30 @@
         }
       ],
       "notes": "Coburg University of Applied Sciences and Arts: uni-assist row 21 (vpd_only). Matched by name and city, not by website: the owner confirms the match at the audit. The sheet row is unmatched only because our record lists hs-coburg.de while uni-assist lists coburg-university.de. Covers the Kronach campus record too."
+    },
+    {
+      "id": "de-channel-de-hochschule-hamm-lippstadt-hrk399-lippstadt-electronic-engineering-daad4876",
+      "fact": "applicationChannel",
+      "infoKind": "official",
+      "channel": "de-uni-assist-vpd",
+      "selector": {
+        "country": "DE",
+        "institutions": ["de-hochschule-hamm-lippstadt-hrk399-lippstadt"],
+        "programmes": [
+          "de-hochschule-hamm-lippstadt-hrk399-lippstadt-electronic-engineering-daad4876"
+        ]
+      },
+      "evidence": [
+        {
+          "url": "https://www.hshl.de/en/studying/online-registration/",
+          "quote": "Applicants with international educational certificates (e.g. Matura, O-and A-(S-)level, Baccalaureate) must also get their documents checked by uni-assist."
+        },
+        {
+          "url": "https://www.hshl.de/en/studying/online-registration/",
+          "quote": "You will receive the evaluation result from uni assist and need to upload it during your application in the online portal."
+        }
+      ],
+      "notes": "Hamm-Lippstadt University of Applied Sciences, Online registration and application page (Campus Lippstadt, Electronic Engineering (English), Bachelor). The documents are checked by uni-assist and the evaluation result is uploaded in the HSHL portal, which is a VPD-style flow; the page does not use the word VPD, so the second quote is what the verifier accepts ('evaluation result from uni assist'). Scoped to this programme: the other HSHL programmes are taught in German."
     }
   ]
 }
