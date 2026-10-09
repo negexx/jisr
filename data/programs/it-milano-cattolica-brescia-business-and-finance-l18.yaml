@@ -91,7 +91,7 @@ requirements:
       kind: manual_check
       note:
         fr:
-          text: Vérifiez si vous devez passer le test d'admission Cattolica (section Entry requirements > Mathematics requirements). Les candidatures ne sont acceptées qui si elles sont complètes.
+          text: Vérifiez si vous devez passer le test d'admission Cattolica (section Entry requirements > Mathematics requirements). Les candidatures ne sont acceptées que si elles sont complètes.
           status: draft
         en:
           text: Check whether you must take the Cattolica Admission Test (see Entry requirements > Mathematics requirements). Applications are accepted only if they are complete.

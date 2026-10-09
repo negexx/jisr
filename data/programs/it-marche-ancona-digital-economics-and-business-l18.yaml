@@ -66,7 +66,7 @@ requirements:
       kind: manual_check
       note:
         fr:
-          text: Vérifier la mendicité du diplôme étranger et la procédure de pré-inscription sur Universitaly, ainsi que les tests de vérification des connaissances de la Faculté d'Économie.
+          text: Vérifier l'éligibilité du diplôme étranger et la procédure de pré-inscription sur Universitaly, ainsi que les tests de vérification des connaissances de la Faculté d'Économie.
           status: draft
         en:
           text: Check the eligibility of the foreign diploma and the pre-enrolment procedure on Universitaly, as well as the Faculty of Economics knowledge verification tests.
