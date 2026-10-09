@@ -1,0 +1,16 @@
+# Guards a manual `vercel deploy` from a checkout against the CLI source-upload caps (100 MB and
+# 15,000 files). It has no effect on Git builds (Vercel clones the repository) or on
+# `vercel deploy --prebuilt` (which uploads .vercel/output, not the source).
+# The build needs data/, public/, scripts/, src/, messages/, content/, package.json and
+# pnpm-lock.yaml: never list them here (tests/vercel-config.test.ts enforces it).
+data-staging/
+docs/
+tests/
+.claude/
+.impeccable/
+.superpowers/
+test-results/
+playwright-report/
+node_modules/
+.next/
+.git/

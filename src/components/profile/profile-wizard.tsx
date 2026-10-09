@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import type { CoreShard } from "@/data-schema/snapshot";
 import { useRouter } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
+import { track } from "@/lib/analytics";
 import { type FormState, STEPS, type StepId } from "@/lib/profile/form/state";
 import {
   pathStep,
@@ -103,6 +104,11 @@ function WizardBody({ core, text, locale, onCleared }: WizardProps & { onCleared
     onCleared();
   }, [storeState, suspend, onCleared]);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: counted once when the form opens; `mode` is fixed for this mount
+  useEffect(() => {
+    if (mode === "create") track("profile-started");
+  }, []);
+
   // Started as the review opens, so the chunk is usually there when the student taps save.
   useEffect(() => {
     if (stepId === "review") loadBuilder().catch(() => undefined);
@@ -198,6 +204,7 @@ function WizardBody({ core, text, locale, onCleared }: WizardProps & { onCleared
       setSaveFailed(true);
       return;
     }
+    if (mode === "create") track("profile-completed");
     router.push("/matches");
   };
 

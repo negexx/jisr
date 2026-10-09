@@ -48,9 +48,10 @@ Trust is the product: every important fact carries an **official source URL** an
 | E2E (builds the fixture, starts `next start` on :3100) | `pnpm test:e2e` |
 | Fixture build / dev server on the synthetic e2e data | `pnpm build:e2e` / `pnpm dev:fixture` |
 | First-load JS per route (gzip) + Zod marker scan, after a build | `pnpm perf:js` |
+| Read-only deployment smoke test of a running site (`docs/ops/deploy.md`) | `pnpm ops:smoke <base-url> --expect=indexable\|noindex [--min-urls=N]` |
 | Generate / apply DB migration | `pnpm db:generate` / `pnpm db:migrate` |
 
-Scripts live in `package.json` (`typecheck` = `next typegen && tsc --noEmit`, `test` = `vitest run`, `lint` = `biome check .`, `format` = `biome format --write .`). Greenfield: if a script is missing, add it in the first setup task rather than substituting another command. `pnpm build` must run `data:check` and `data:build` first. `build:e2e` and `dev:fixture` overwrite `public/snapshots` and `.next` with the synthetic fixture: run `pnpm data:build` (or a real `pnpm build`) afterwards. CI (`.github/workflows/ci.yml`, GitHub Actions, Node 24, pnpm from `packageManager`) runs typecheck, lint, test, data:check, build and `perf:js` (Zod backstop) on every pull request and on pushes to `main`, plus an `e2e` job (unverified until its first run); a PR is not done until it is green.
+Scripts live in `package.json` (`typecheck` = `next typegen && tsc --noEmit`, `test` = `vitest run`, `lint` = `biome check .`, `format` = `biome format --write .`). Greenfield: if a script is missing, add it in the first setup task rather than substituting another command. `pnpm build` must run `data:check` and `data:build` first. `build:e2e` and `dev:fixture` overwrite `public/snapshots` and `.next` with the synthetic fixture: run `pnpm data:build` (or a real `pnpm build`) afterwards. CI (`.github/workflows/ci.yml`, GitHub Actions, Node 24, pnpm from `packageManager`) runs typecheck, lint, test, data:check, build and `perf:js` (Zod backstop) on every pull request and on pushes to `main`, plus an `e2e` job (unverified until its first run); a PR is not done until it is green. Deploy flow: PR preview (Vercel Git integration, protected, noindex) then merge to `main` then CI then the `deploy` job (`vercel pull`, `vercel build --prod`, `vercel deploy --prebuilt --archive=tgz --prod`; skipped until the repo variable `DEPLOY_ENABLED` is `true`); indexing is on only when `NEXT_PUBLIC_SITE_URL` is set in the Vercel Production scope (ADR 0011, `docs/ops/deploy.md`).
 
 ## Architecture at a glance
 
@@ -66,19 +67,19 @@ src/lib/format.ts clock.ts constants.ts guards.ts  Intl formatting, browser date
 src/app/[locale]/        pages: profile/ matches/ programs/[slug]/ plan/ compare/ (built, with Save on cards and program pages); scholarships/ (M4)
 src/app/global-not-found.tsx  the one trilingual 404 (ADR 0006)
 src/app/api/auth/[...all]/  Better Auth handler (phase 2)
-src/proxy.ts             next-intl locale routing
+src/proxy.ts             next-intl locale routing, runs only for `/` and locale-less paths; deployment surface (ADR 0011): `src/lib/{site-env,security-headers,seo,analytics}.ts`, `src/components/analytics-loader.tsx`, `src/app/{robots,sitemap}.ts`
 src/components/          ui/ (shadcn), shell, trust primitives (SourceBadge, MatchStatusBadge…), MatchCard/CostBreakdown/ReasonList, SaveProgramButton, profile/ matches/ program/ plan/ compare/
 src/lib/auth/  src/db/   Better Auth instances; Drizzle schema for user data only
 src/i18n/  messages/     next-intl config; en/fr/ar messages
 tests/                   Vitest specs mirror src/; tests/e2e/ Playwright; tests/fixtures/ synthetic data (xx-test-*)
-scripts/                 data/, e2e/ (fixture build), perf/ (first-load JS)
+scripts/                 data/, e2e/ (fixture build), perf/ (first-load JS), ops/ (smoke); `vercel.json`, `.vercelignore`, `docs/ops/` (runbooks)
 ```
 
 Data flow: YAML → `data:check` → `data:build` → snapshots on the CDN → the browser runs `src/domain` on the snapshot → results. Guest profile, saved list and ticked steps live in localStorage (`jisr.profile`, `jisr.saved`, `jisr.plan`; Clear my data empties them all); accounts (phase 2) persist profile, saved programs, checklist progress and feedback in Postgres, referencing program slug + snapshot version. Eligibility is origin-agnostic: `(origin credential country, type) → (destination, level)` routes first, program rules second; Morocco/Bac is only the first origin.
 
-Resolved in ADR 0004: analytics, error reporting, staleness thresholds, translation storage, privacy/CNDP plan, Vercel limits. What remains is the ADR's "Before launch" checklist (verify Vercel/Sentry limits, CNDP declaration before accounts, privacy notice).
+Resolved in ADR 0004: analytics, error reporting, staleness thresholds, translation storage, privacy/CNDP plan, Vercel limits. What remains before launch is tracked in `docs/ops/prelaunch-checklist.md`.
 
-Deeper notes: `.claude/docs/architecture.md` (data access boundary, no-Zod rule, JS size). Decisions: `.claude/docs/decisions/` (0002 stack, 0003 scalable solo architecture, 0004 operations/privacy/freshness, 0005 domain semantics and data rules, 0006 static program pages and 404 routing, 0007 client JS budget, superseded by 0008: exceeding 150 KB is accepted, the ratchet in `tests/e2e/support/js-budget.ts` is the regression guard; 0009 recurring deadlines, 0010 official fee range).
+Deeper notes: `.claude/docs/architecture.md` (data access boundary, no-Zod rule, JS size). Decisions: `.claude/docs/decisions/` (0002 stack, 0003 scalable solo architecture, 0004 operations/privacy/freshness, 0005 domain semantics and data rules, 0006 static program pages and 404 routing, 0007 client JS budget, superseded by 0008: exceeding 150 KB is accepted, the ratchet in `tests/e2e/support/js-budget.ts` is the regression guard; 0009 recurring deadlines, 0010 official fee range, 0011 deployment: CI-gated Vercel deploy, safe-by-default indexing, headers, narrowed proxy, GoatCounter loader; refines ADR 0004 section 1 with the 2026-10-08 Hobby facts).
 
 ## Conventions
 
@@ -184,7 +185,7 @@ This repo is indexed in the `codebase-memory-mcp` knowledge graph as project `ji
 - Don't build what ADR 0003 lists as deliberately not built (admin app, worker/queue, search engine, B2B, payments, WhatsApp API, monorepo, student-facing AI, native apps) without a new ADR
 - Don't add countries/fields beyond Release 1 by writing code — add data; propose a plan first if the model can't express it
 - Don't set cookies, record IPs or send profile data to analytics or Sentry; Sentry stays scrubbed with tracing off
-- Don't accept donations, sponsorship or ads before checking Vercel Hobby's non-commercial terms (ADR 0004)
+- Don't accept ads, affiliate-first links, payments, paid hosting/editing or paid sponsorship (Vercel Hobby is non-commercial). Donations are allowed per Vercel's fair-use page (ADR 0011, verified 2026-10-08; refines ADR 0004's caution); re-read it before a donation link goes live
 - Don't launch accounts before the CNDP declaration and en/fr/ar privacy notice (ADR 0004)
 - Don't hand-edit generated Better Auth tables, applied migrations, or built snapshots
 - Don't log profile data (grades, nationality) or session tokens

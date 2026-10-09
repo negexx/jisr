@@ -8,6 +8,8 @@ import { HomeMatchesLink } from "@/components/home-matches-link";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { pageMetadata } from "@/lib/seo";
+import { readSiteEnv } from "@/lib/site-env";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -17,7 +19,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   const t = await getTranslations({ locale, namespace: "metadata" });
-  return { title: t("title"), description: t("description") };
+  return pageMetadata({
+    env: readSiteEnv(),
+    locale,
+    path: "",
+    title: t("title"),
+    description: t("description"),
+  });
 }
 
 export default async function HomePage({ params }: Props) {

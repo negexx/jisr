@@ -7,6 +7,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { ScholarshipsPageView } from "@/components/scholarships/scholarships-page-view";
 import { routing } from "@/i18n/routing";
+import { pageMetadata } from "@/lib/seo";
+import { readSiteEnv } from "@/lib/site-env";
 import { loadScholarshipsPageData } from "@/lib/snapshot/server";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -15,7 +17,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   const t = await getTranslations({ locale, namespace: "scholarshipsPage.meta" });
-  return { title: t("title"), description: t("description") };
+  return pageMetadata({
+    env: readSiteEnv(),
+    locale,
+    path: "/scholarships",
+    title: t("title"),
+    description: t("description"),
+  });
 }
 
 // Static: generated from public/snapshots at build time. The nationality line and the freshness

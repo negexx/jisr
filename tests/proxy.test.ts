@@ -3,6 +3,8 @@ import { fileURLToPath } from "node:url";
 
 import { describe, expect, it } from "vitest";
 
+import { routing } from "@/i18n/routing";
+
 // Next reads `config.matcher` statically, so it must stay an inline literal in src/proxy.ts. Importing
 // that file here would pull in next-intl/middleware, so the literal is extracted from the source instead.
 function readProxyMatcher(): string {
@@ -14,16 +16,17 @@ function readProxyMatcher(): string {
   return parsed;
 }
 
-const matcher = new RegExp(`^${readProxyMatcher()}$`);
+const matcherSource = readProxyMatcher();
+const matcher = new RegExp(`^${matcherSource}$`);
 
 describe("proxy matcher", () => {
   it.each([
     "/",
-    "/fr",
-    "/ar",
-    "/en/x",
     "/programs",
-    "/fr/programs",
+    "/profile",
+    "/france",
+    "/arabic",
+    "/enx/y",
   ])("runs the proxy on %s", (path) => {
     expect(matcher.test(path)).toBe(true);
   });
@@ -35,7 +38,18 @@ describe("proxy matcher", () => {
     "/snapshots/manifest.json",
     "/favicon.ico",
     "/robots.txt",
+    "/fr",
+    "/en",
+    "/ar",
+    "/fr/matches",
+    "/ar/programs/some-slug",
+    "/en/scholarships",
   ])("skips the proxy on %s", (path) => {
     expect(matcher.test(path)).toBe(false);
+  });
+
+  it("lists exactly the routing locales in its skip alternation", () => {
+    const alternation = /\(\?:([a-z|]+)\)\(\?:\/\|\$\)/.exec(matcherSource)?.[1];
+    expect(alternation?.split("|")).toEqual([...routing.locales]);
   });
 });

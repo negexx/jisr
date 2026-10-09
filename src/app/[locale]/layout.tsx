@@ -1,13 +1,16 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { ReactNode } from "react";
 
+import { AnalyticsLoader } from "@/components/analytics-loader";
 import { DirectionProvider } from "@/components/direction-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { localeDirection } from "@/i18n/direction";
 import { routing } from "@/i18n/routing";
+import { readSiteEnv } from "@/lib/site-env";
 
 import { fontVariables } from "../fonts";
 
@@ -23,6 +26,13 @@ export const dynamicParams = false;
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
+}
+
+// Only the base for absolute URLs: a page's own openGraph/twitter replace (not merge with) the
+// parent's, so pageMetadata builds those per page. Unset when the build is not indexable.
+export function generateMetadata(): Metadata {
+  const { siteUrl } = readSiteEnv();
+  return siteUrl === null ? {} : { metadataBase: new URL(siteUrl) };
 }
 
 export default async function LocaleLayout({ children, params }: Props) {
@@ -58,6 +68,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <SiteFooter locale={locale} />
           </DirectionProvider>
         </NextIntlClientProvider>
+        <AnalyticsLoader goatCounterUrl={readSiteEnv().goatCounterUrl} />
       </body>
     </html>
   );

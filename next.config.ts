@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
+import { securityHeaderRules } from "./src/lib/security-headers";
+import { readSiteEnv } from "./src/lib/site-env";
 import { SNAPSHOT_HEADER_RULES } from "./src/lib/snapshot-headers";
+
+// Validated at config load so a malformed deployment variable fails the build, not the first visitor.
+const siteEnv = readSiteEnv();
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
@@ -15,7 +20,7 @@ const nextConfig: NextConfig = {
     globalNotFound: true,
   },
   async headers() {
-    return SNAPSHOT_HEADER_RULES;
+    return [...SNAPSHOT_HEADER_RULES, ...securityHeaderRules(siteEnv.indexable)];
   },
 };
 

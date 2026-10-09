@@ -5,6 +5,7 @@ import { type ReactNode, useEffect, useMemo, useRef, useState } from "react";
 
 import type { IsoDate } from "@/data-schema/dates";
 import type { AppLocale } from "@/i18n/routing";
+import { track } from "@/lib/analytics";
 import { todayIso } from "@/lib/clock";
 import type { PlanView } from "@/lib/journey/plan-view";
 import { usePlanProgress } from "@/lib/plan/use-plan-progress";
@@ -51,6 +52,10 @@ export function PlanClient({ locale, client }: { locale: AppLocale; client?: Sna
   const profile = profileState.status === "ok" ? profileState.profile : null;
   const items = saved.items;
   const wanted = profile !== null && saved.hydrated && items.length > 0;
+  const hasSaved = saved.hydrated && items.length > 0;
+  useEffect(() => {
+    if (hasSaved) track("plan-opened");
+  }, [hasSaved]);
 
   // The browser clock, read once after mount: the server render and the first client render hold
   // no date, so nothing clock-dependent can differ between them.

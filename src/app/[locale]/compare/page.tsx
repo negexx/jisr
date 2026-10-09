@@ -7,6 +7,8 @@ import { CompareClient } from "@/components/compare/compare-client";
 import { COMPARE_MESSAGE_NAMESPACES } from "@/components/compare/namespaces";
 import { routing } from "@/i18n/routing";
 import { pickMessages } from "@/lib/i18n/client-messages";
+import { pageMetadata } from "@/lib/seo";
+import { readSiteEnv } from "@/lib/site-env";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -14,7 +16,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   const t = await getTranslations({ locale, namespace: "compare.meta" });
-  return { title: t("title"), description: t("description") };
+  return pageMetadata({
+    env: readSiteEnv(),
+    locale,
+    path: "/compare",
+    title: t("title"),
+    description: t("description"),
+    index: false,
+  });
 }
 
 // Static: it holds the title and a neutral skeleton only. The saved list, the profile and the clock
