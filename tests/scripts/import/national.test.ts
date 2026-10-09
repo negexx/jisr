@@ -8,8 +8,13 @@ import { HttpStatusError } from "../../../scripts/import/http";
 import {
   buildNationalProposals,
   type Entry,
+  type EntryReport,
+  entriesFromSheet,
+  mergeEntries,
   type NationalProgramme,
+  parseArgs,
   parseRegistry,
+  quietSheetWarnings,
   readNationalProgrammes,
   type Selector,
   selects,
@@ -116,6 +121,13 @@ describe("parseRegistry", () => {
     expect(() => parseRegistry({ entries: [noChannel] })).toThrow();
   });
 
+  it("accepts a programme list in the selector and rejects an empty one", () => {
+    const ok = channelEntry({ selector: { country: "NL", programmes: ["nl-a"] } });
+    expect(parseRegistry({ entries: [ok] }).entries[0]?.selector.programmes).toEqual(["nl-a"]);
+    const empty = channelEntry({ selector: { country: "NL", programmes: [] } });
+    expect(() => parseRegistry({ entries: [empty] })).toThrow();
+  });
+
   it("rejects a misspelt selector key instead of dropping it", () => {
     for (const key of ["institutionTyp", "institution", "kind", "channel"]) {
       const bad = channelEntry({ selector: { country: "NL", [key]: ["x"] } });
@@ -155,6 +167,20 @@ describe("selects", () => {
   it("filters by institution list", () => {
     expect(selects(programme(), sel({ institutions: ["nl-inst", "other"] }))).toBe(true);
     expect(selects(programme(), sel({ institutions: ["other"] }))).toBe(false);
+  });
+
+  it("filters by programme slug, ANDed with the institution list", () => {
+    expect(selects(programme(), sel({ programmes: ["nl-a", "other"] }))).toBe(true);
+    expect(selects(programme(), sel({ programmes: ["other"] }))).toBe(false);
+    expect(selects(programme(), sel({ institutions: ["nl-inst"], programmes: ["nl-a"] }))).toBe(
+      true,
+    );
+    expect(selects(programme(), sel({ institutions: ["other"], programmes: ["nl-a"] }))).toBe(
+      false,
+    );
+    expect(selects(programme(), sel({ institutions: ["nl-inst"], programmes: ["other"] }))).toBe(
+      false,
+    );
   });
 
   it("filters by institution type and never matches an unknown type", () => {
@@ -570,6 +596,36 @@ describe("buildNationalProposals", () => {
     expect(reports[1]?.warnings).toEqual([]);
   });
 
+  it("proposes only for the programmes a selector names", async () => {
+    const { proposals, reports } = await buildNationalProposals({
+      entries: [
+        parseEntry(
+          channelEntry({
+            selector: { country: "NL", institutions: ["nl-inst"], programmes: ["nl-b"] },
+          }),
+        ),
+      ],
+      programmes: [programme({ slug: "nl-a" }), programme({ slug: "nl-b" })],
+      getText,
+    });
+    expect(proposals.map((p) => p.slug)).toEqual(["nl-b"]);
+    expect(reports[0]).toMatchObject({ selected: 1, proposed: 1 });
+  });
+
+  it("warns once about a selector programme slug that no programme has", async () => {
+    const entries = [
+      parseEntry(channelEntry({ id: "one", selector: { country: "NL", programmes: ["nope"] } })),
+      parseEntry(channelEntry({ id: "two", selector: { country: "NL", programmes: ["nope"] } })),
+    ];
+    const { reports } = await buildNationalProposals({
+      entries,
+      programmes: [programme()],
+      getText,
+    });
+    expect(reports[0]?.warnings).toEqual(["selector programme nope matches no programme"]);
+    expect(reports[1]?.warnings).toEqual([]);
+  });
+
   it("verifies an entry once whatever the number of programmes", async () => {
     const calls: string[] = [];
     const counting = async (url: string) => {
@@ -646,5 +702,83 @@ describe("writeNationalProposals", () => {
     await writeNationalProposals(proposals, dir, false);
     expect(await readdir(dir)).toContain("nl-old.json");
     expect(await staleProposalFiles(dir, proposals)).toEqual(["nl-old.json"]);
+  });
+});
+
+describe("parseArgs", () => {
+  it("reads the registries, the flags and the uni-assist sheet", () => {
+    expect(
+      parseArgs(["a.json", "--uniassist-sheet", "s.csv", "b.json", "--dry-run"]),
+    ).toMatchObject({ registries: ["a.json", "b.json"], uniAssistSheet: "s.csv", dry: true });
+  });
+
+  it("defaults to no sheet", () => {
+    expect(parseArgs(["a.json"]).uniAssistSheet).toBeNull();
+  });
+
+  it("refuses a flag without its value, an unknown flag and no registry", () => {
+    expect(() => parseArgs(["a.json", "--uniassist-sheet"])).toThrow(/needs a value/);
+    expect(() => parseArgs(["a.json", "--sheet", "s.csv"])).toThrow(/unknown option/);
+    expect(() => parseArgs(["--dry-run"])).toThrow(/at least one registry/);
+  });
+});
+
+describe("mergeEntries", () => {
+  it("keeps registry entries first and refuses an id used twice", () => {
+    const registry = [parseEntry(channelEntry({ id: "from-registry" }))];
+    const sheet = [parseEntry(channelEntry({ id: "from-sheet" }))];
+    expect(mergeEntries(registry, sheet).map((e) => e.id)).toEqual(["from-registry", "from-sheet"]);
+    const clash = [parseEntry(channelEntry({ id: "from-registry" }))];
+    expect(() => mergeEntries(registry, clash)).toThrow(/from-registry appears twice/);
+  });
+});
+
+describe("entriesFromSheet", () => {
+  const HEADER =
+    "uniAssistId,name,city,website,mode,matchMethod,matchedInstitutions,sameTownCandidates,detailUrl,note";
+  const NOTE =
+    "We will issue you with a preliminary review documentation (VPD). You are then required to submit your application with the VPD directly to the university.";
+  const sheet = (detailUrl: string) =>
+    `${HEADER}\n16,Ansbach,Ansbach,https://x.example,vpd_only,host,de-a,,${detailUrl},"${NOTE}"\n`;
+
+  it("returns schema-valid entries", () => {
+    const { entries } = entriesFromSheet(sheet("https://www.uni-assist.de/x/16/"));
+    expect(entries).toHaveLength(1);
+    expect(() => parseRegistry({ entries })).not.toThrow();
+  });
+
+  it("throws when a sheet entry does not pass the registry schema", () => {
+    expect(() => entriesFromSheet(sheet("https://"))).toThrow();
+  });
+
+  it("returns nothing for a sheet with no usable row", () => {
+    const text = `${HEADER}\n1,X,Y,,processes,host,de-a,,https://www.uni-assist.de/x/1/,\n`;
+    expect(entriesFromSheet(text).entries).toEqual([]);
+  });
+});
+
+describe("quietSheetWarnings", () => {
+  const report = (id: string, warnings: string[]): EntryReport => ({
+    id,
+    selected: 0,
+    proposed: 0,
+    skipped: [],
+    rejected: [],
+    warnings,
+  });
+
+  it("folds the no-programme warnings of sheet entries into a count and keeps the rest", () => {
+    const reports = [
+      report("sheet-1", ["selector institution a matches no programme"]),
+      report("sheet-2", ["selector institution b matches no programme", "document item x"]),
+      report("curated", ["selector institution c matches no programme"]),
+    ];
+    const quiet = quietSheetWarnings(reports, new Set(["sheet-1", "sheet-2"]));
+    expect(quiet.hidden).toBe(2);
+    expect(quiet.reports.map((r) => r.warnings)).toEqual([
+      [],
+      ["document item x"],
+      ["selector institution c matches no programme"],
+    ]);
   });
 });

@@ -23,6 +23,7 @@ const Evidence = z.strictObject({ url: Https, quote: z.string().min(15) });
 export const SelectorSchema = z.strictObject({
   country: z.enum(["FR", "DE", "NL", "IT", "HU"]),
   institutions: z.array(z.string()).min(1).optional(),
+  programmes: z.array(z.string()).min(1).optional(),
   institutionType: z.enum(["public", "private"]).optional(),
   kinds: z
     .array(z.enum(["but", "licence", "other"]))
@@ -84,6 +85,7 @@ export function selects(p: NationalProgramme, s: Selector): boolean {
   return (
     p.country === s.country &&
     within(s.institutions, p.institution) &&
+    within(s.programmes, p.slug) &&
     (s.institutionType === undefined || p.institutionType === s.institutionType) &&
     within(s.kinds, p.kind) &&
     within(s.channels, p.channel)
@@ -190,7 +192,8 @@ type RunState = {
   // entry id that holds each (programme, fact) claim: the first entry wins
   winners: Map<string, string>;
   institutions: ReadonlySet<string>;
-  warnedInstitutions: Set<string>;
+  programmeSlugs: ReadonlySet<string>;
+  warned: Set<string>;
   fetchOnce: GetText;
 };
 
@@ -251,12 +254,24 @@ function documentWarnings(entry: Entry, verifiedValue: unknown): string[] {
   return warnings;
 }
 
-function unknownInstitutions(entry: Entry, state: RunState): string[] {
-  const fresh = [...new Set(entry.selector.institutions ?? [])].filter(
-    (slug) => !state.institutions.has(slug) && !state.warnedInstitutions.has(slug),
-  );
-  for (const slug of fresh) state.warnedInstitutions.add(slug);
-  return fresh.map((slug) => `selector institution ${slug} matches no programme`);
+// A selector naming an institution or programme slug that no programme has is a typo or stale data;
+// each slug is reported once per run.
+function unknownSelectorSlugs(entry: Entry, state: RunState): string[] {
+  const named = [
+    ...[...new Set(entry.selector.institutions ?? [])].map((slug) => ({
+      kind: "institution",
+      slug,
+      known: state.institutions.has(slug),
+    })),
+    ...[...new Set(entry.selector.programmes ?? [])].map((slug) => ({
+      kind: "programme",
+      slug,
+      known: state.programmeSlugs.has(slug),
+    })),
+  ];
+  const fresh = named.filter((n) => !n.known && !state.warned.has(`${n.kind}|${n.slug}`));
+  for (const n of fresh) state.warned.add(`${n.kind}|${n.slug}`);
+  return fresh.map((n) => `selector ${n.kind} ${n.slug} matches no programme`);
 }
 
 // Which of an entry's selected programmes can take its fact now.
@@ -285,7 +300,7 @@ async function buildEntry(
     proposed: 0,
     skipped,
     rejected: [],
-    warnings: unknownInstitutions(entry, state),
+    warnings: unknownSelectorSlugs(entry, state),
   };
   const [first] = open;
   if (first === undefined) return report;
@@ -326,7 +341,8 @@ export async function buildNationalProposals(input: {
     claimed: new Map(),
     winners: new Map(),
     institutions: new Set(input.programmes.map((p) => p.institution)),
-    warnedInstitutions: new Set(),
+    programmeSlugs: new Set(input.programmes.map((p) => p.slug)),
+    warned: new Set(),
     fetchOnce: memoText(input.getText),
   };
   const reports: EntryReport[] = [];
@@ -350,7 +366,7 @@ export async function writeNationalProposals(
   await writeFile(path.join(dir, "slugs.txt"), slugs.map((slug) => `${slug}\n`).join(""));
 }
 
-type Args = {
+export type Args = {
   registries: string[];
   dry: boolean;
   out: string | null;
@@ -364,7 +380,7 @@ const OPTIONS_WITH_VALUE: ReadonlySet<string> = new Set([
   "--uniassist-sheet",
 ]);
 
-function parseArgs(argv: readonly string[]): Args {
+export function parseArgs(argv: readonly string[]): Args {
   const args: Args = {
     registries: [],
     dry: false,
@@ -388,10 +404,16 @@ function parseArgs(argv: readonly string[]): Args {
   return args;
 }
 
-async function readEntries(
-  files: readonly string[],
-  extra: readonly Entry[] = [],
-): Promise<Entry[]> {
+// Registry entries first, so a curated entry wins over a sheet entry for the same programme.
+export function mergeEntries(registry: readonly Entry[], sheet: readonly Entry[]): Entry[] {
+  const entries = [...registry, ...sheet];
+  const ids = entries.map((e) => e.id);
+  const repeated = ids.find((id, i) => ids.indexOf(id) !== i);
+  if (repeated !== undefined) throw new Error(`entry id ${repeated} appears twice`);
+  return entries;
+}
+
+async function readRegistryEntries(files: readonly string[]): Promise<Entry[]> {
   const entries: Entry[] = [];
   for (const file of files) {
     try {
@@ -400,10 +422,6 @@ async function readEntries(
       throw new Error(`${file}: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
-  entries.push(...extra);
-  const ids = entries.map((e) => e.id);
-  const repeated = ids.find((id, i) => ids.indexOf(id) !== i);
-  if (repeated !== undefined) throw new Error(`entry id ${repeated} appears twice`);
   return entries;
 }
 
@@ -454,16 +472,42 @@ function printForPerson(forPerson: readonly ForPerson[]): void {
     console.log(`  ${reason} x${names.length}${names.length <= 12 ? `: ${names.join("; ")}` : ""}`);
 }
 
+// Sheet entries go through the same schema as a registry file, so a sheet row can never produce
+// something a hand-written entry could not.
+export function entriesFromSheet(csv: string): { entries: Entry[]; forPerson: ForPerson[] } {
+  const { entries, forPerson } = uniAssistEntries(parseSheet(csv));
+  return { entries: entries.length === 0 ? [] : parseRegistry({ entries }).entries, forPerson };
+}
+
+const NO_PROGRAMME_WARNING = /^selector (institution|programme) .+ matches no programme$/;
+
+// The sheet names about sixty universities of which we list few: one count instead of one warning
+// per entry. Curated entries keep every warning.
+export function quietSheetWarnings(
+  reports: readonly EntryReport[],
+  sheetIds: ReadonlySet<string>,
+): { reports: EntryReport[]; hidden: number } {
+  let hidden = 0;
+  const quiet = reports.map((report) => {
+    if (!sheetIds.has(report.id)) return report;
+    const warnings = report.warnings.filter((w) => !NO_PROGRAMME_WARNING.test(w));
+    hidden += report.warnings.length - warnings.length;
+    return { ...report, warnings };
+  });
+  return { reports: quiet, hidden };
+}
+
 async function sheetEntries(file: string | null): Promise<Entry[]> {
   if (file === null) return [];
-  const { entries, forPerson } = uniAssistEntries(parseSheet(await readFile(file, "utf8")));
+  const { entries, forPerson } = entriesFromSheet(await readFile(file, "utf8"));
   printForPerson(forPerson);
   return entries;
 }
 
 async function main(argv: readonly string[]): Promise<void> {
   const args = parseArgs(argv);
-  const entries = await readEntries(args.registries, await sheetEntries(args.uniAssistSheet));
+  const fromSheet = await sheetEntries(args.uniAssistSheet);
+  const entries = mergeEntries(await readRegistryEntries(args.registries), fromSheet);
   const programmes = await readNationalProgrammes(args.dataDir);
   const { proposals, reports } = await buildNationalProposals({
     entries,
@@ -476,7 +520,12 @@ async function main(argv: readonly string[]): Promise<void> {
     path.join(STAGING_DIR, "proposals-national", path.basename(first).replace(/\.json$/, ""));
   await writeNationalProposals(proposals, out, args.dry);
 
-  for (const report of reports) printReport(report);
+  const quiet = quietSheetWarnings(reports, new Set(fromSheet.map((e) => e.id)));
+  for (const report of quiet.reports) printReport(report);
+  if (quiet.hidden > 0)
+    console.log(
+      `${quiet.hidden} sheet entries name an institution that none of our programmes use (warnings not repeated)`,
+    );
   printTotals(reports);
   console.log(`${args.dry ? "would write" : "wrote"} ${proposals.length} proposals to ${out}`);
   const stale = await staleProposalFiles(out, proposals);
