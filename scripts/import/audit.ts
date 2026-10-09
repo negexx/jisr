@@ -9,6 +9,11 @@ import { minorUnitDigits } from "@/lib/format";
 
 import { parseCsv, STAGING_DIR, stageFile } from "./staging";
 
+type Loose = Record<string, unknown>;
+const asObject = (v: unknown): Loose =>
+  typeof v === "object" && v !== null && !Array.isArray(v) ? (v as Loose) : {};
+const show = (v: unknown): string => (typeof v === "string" ? v : JSON.stringify(v));
+
 // Records prepared by the assistant are verified by code (quotes re-checked against the pages), but
 // no person read them one by one. The audit gate closes that gap statistically: a random sample of
 // each batch is read by a human, and the batch can only be promoted if every sampled record is
@@ -40,18 +45,69 @@ export function sampleSize(batchSize: number): number {
   return Math.min(batchSize, Math.max(SAMPLE_MINIMUM, Math.ceil(batchSize * SAMPLE_FRACTION)));
 }
 
+// Owner decision 2026-10-09: records enriched by data:national from one national page all carry the
+// same quotes, so reading 10% of them is the same page read again and again. A batch of more than
+// 12 whose every record has the same evidence log is sampled at 12.
+export const IDENTICAL_EVIDENCE_SAMPLE = 12;
+
+const evidenceKeys = (record: unknown): string[] => {
+  const evidence = asObject(asObject(record)._review).evidence;
+  if (!Array.isArray(evidence)) return [];
+  const keys = evidence.map((e) => {
+    const entry = asObject(e);
+    return JSON.stringify([entry.fact, entry.url, entry.quote]);
+  });
+  return [...new Set(keys)].sort();
+};
+
+// True when there are at least two records and every one has a non-empty evidence log made of the
+// same set of fact/url/quote triples (order does not matter; info_kind is not looked at).
+export function isIdenticalEvidenceBatch(records: readonly unknown[]): boolean {
+  if (records.length < 2) return false;
+  const [first, ...rest] = records.map(evidenceKeys);
+  if (first === undefined || first.length === 0) return false;
+  const reference = JSON.stringify(first);
+  return rest.every((keys) => JSON.stringify(keys) === reference);
+}
+
+// The shared triples of an identical-evidence batch, in a stable order.
+export function sharedEvidence(
+  records: readonly unknown[],
+): { fact: string; url: string; quote: string }[] {
+  const [first] = records;
+  const entries = Array.isArray(asObject(asObject(first)._review).evidence)
+    ? (asObject(asObject(first)._review).evidence as unknown[]).map(asObject)
+    : [];
+  const seen = new Set<string>();
+  const out: { fact: string; url: string; quote: string }[] = [];
+  for (const e of entries) {
+    const triple = { fact: show(e.fact), url: show(e.url), quote: show(e.quote) };
+    const id = JSON.stringify(triple);
+    if (seen.has(id)) continue;
+    seen.add(id);
+    out.push(triple);
+  }
+  return out;
+}
+
 // Deterministic for a given seed, unpredictable without it.
-export function drawSample(keys: readonly string[], seed: string): Set<string> {
+export function drawSample(
+  keys: readonly string[],
+  seed: string,
+  size = sampleSize(keys.length),
+): Set<string> {
   const ranked = [...keys].sort((a, b) => {
     const ha = createHash("sha1").update(`${seed}|${a}`).digest("hex");
     const hb = createHash("sha1").update(`${seed}|${b}`).digest("hex");
     return ha.localeCompare(hb);
   });
-  return new Set(ranked.slice(0, sampleSize(keys.length)));
+  return new Set(ranked.slice(0, size));
 }
 
 export function drawBatch(input: {
   preparedKeys: readonly string[];
+  // staged record per key; without it (or with a record missing) the ordinary 10% rule applies
+  records?: ReadonlyMap<string, unknown>;
   existing: readonly AuditRow[];
   seed: string;
   batchIndex: number;
@@ -59,7 +115,13 @@ export function drawBatch(input: {
   const known = new Set(input.existing.map((r) => r.key));
   const fresh = input.preparedKeys.filter((k) => !known.has(k)).sort();
   if (fresh.length === 0) return [];
-  const sample = drawSample(fresh, input.seed);
+  const freshRecords = fresh.map((k) => input.records?.get(k));
+  const identical =
+    fresh.length > IDENTICAL_EVIDENCE_SAMPLE &&
+    !fresh.some((k) => ALWAYS_SAMPLED.test(k)) &&
+    freshRecords.every((r) => r !== undefined) &&
+    isIdenticalEvidenceBatch(freshRecords);
+  const sample = drawSample(fresh, input.seed, identical ? IDENTICAL_EVIDENCE_SAMPLE : undefined);
   const batch = `b${input.batchIndex}-${input.seed}`;
   return fresh.map((key) => ({
     key,
@@ -147,11 +209,6 @@ export async function findPrepared(dir = STAGING_DIR): Promise<string[]> {
   return keys.sort();
 }
 
-type Loose = Record<string, unknown>;
-const asObject = (v: unknown): Loose =>
-  typeof v === "object" && v !== null && !Array.isArray(v) ? (v as Loose) : {};
-const show = (v: unknown): string => (typeof v === "string" ? v : JSON.stringify(v));
-
 const PROSE_CLAIMS: readonly string[] = ["eligibility", "level", "howToApply"];
 
 // Staged money is integer minor units; the owner compares against Numbeo's figures in major units.
@@ -172,6 +229,10 @@ function majorRange(value: Loose): string {
 // the preparer's own caveats, so the reader checks the quotes instead of reading raw YAML.
 export function sampleSheet(
   entries: readonly { key: string; record: unknown; row: AuditRow }[],
+  identicalBatches: ReadonlyMap<
+    string,
+    { size: number; evidence: readonly { fact: string; url: string; quote: string }[] }
+  > = new Map(),
 ): string {
   const out = [
     "# Audit sample",
@@ -179,6 +240,19 @@ export function sampleSheet(
     "For each record: open the link, confirm the quote is there and that it supports the value (right programme, right applicant group, right year). Then set `audited = y` and `outcome = ok` (or `wrong` + a note) in `AUDIT.csv`.",
     "",
   ];
+  const sheetBatches = [...new Set(entries.map((e) => e.row.batch))];
+  for (const batch of sheetBatches) {
+    const shared = identicalBatches.get(batch);
+    if (shared === undefined) continue;
+    out.push(
+      `## Batch ${batch}: identical national evidence: sample of ${IDENTICAL_EVIDENCE_SAMPLE} of ${shared.size}; the national page is read once`,
+      "",
+      "Every record of this batch carries the evidence below. Read it once, then check that each sampled record below is a programme this evidence applies to.",
+      "",
+    );
+    for (const e of shared.evidence) out.push(`- **${e.fact}**: "${e.quote}" — ${e.url}`);
+    out.push("");
+  }
   for (const { key, record, row } of entries) {
     const r = asObject(record);
     const review = asObject(r._review);
@@ -316,12 +390,25 @@ export function sampleSheet(
   return `${out.join("\n")}\n`;
 }
 
+async function readStaged(key: string): Promise<unknown> {
+  const [collection, id] = key.split("/");
+  if (collection === undefined || id === undefined) return undefined;
+  const file = stageFile(collection, id, STAGING_DIR);
+  return existsSync(file) ? parse(await readFile(file, "utf8")) : undefined;
+}
+
 async function main(argv: readonly string[]): Promise<void> {
   const [command] = argv;
   const existing = await readAudit();
   if (command === "draw") {
+    const preparedKeys = await findPrepared();
+    const known = new Set(existing.map((r) => r.key));
+    const records = new Map<string, unknown>();
+    for (const key of preparedKeys.filter((k) => !known.has(k)))
+      records.set(key, await readStaged(key));
     const rows = drawBatch({
-      preparedKeys: await findPrepared(),
+      preparedKeys,
+      records,
       existing,
       seed: randomBytes(3).toString("hex"),
       batchIndex: new Set(existing.map((r) => r.batch)).size + 1,
@@ -357,8 +444,25 @@ async function main(argv: readonly string[]): Promise<void> {
       if (!existsSync(file)) continue;
       entries.push({ key: row.key, record: parse(await readFile(file, "utf8")), row });
     }
+    // an identical-evidence batch is recognised from every record of the batch still in staging
+    const identicalBatches = new Map<
+      string,
+      { size: number; evidence: { fact: string; url: string; quote: string }[] }
+    >();
+    for (const batch of new Set(entries.map((e) => e.row.batch))) {
+      const members = existing.filter((r) => r.batch === batch);
+      const records = await Promise.all(members.map((r) => readStaged(r.key)));
+      const sampled = members.filter((r) => r.inSample).length;
+      if (
+        members.length > IDENTICAL_EVIDENCE_SAMPLE &&
+        sampled === IDENTICAL_EVIDENCE_SAMPLE &&
+        records.every((r) => r !== undefined) &&
+        isIdenticalEvidenceBatch(records)
+      )
+        identicalBatches.set(batch, { size: members.length, evidence: sharedEvidence(records) });
+    }
     const target = path.join(STAGING_DIR, "AUDIT-SAMPLE.md");
-    await writeFile(target, sampleSheet(entries));
+    await writeFile(target, sampleSheet(entries, identicalBatches));
     console.log(`wrote ${target}: ${entries.length} record(s) to read`);
     return;
   }

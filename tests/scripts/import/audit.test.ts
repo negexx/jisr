@@ -10,6 +10,8 @@ import {
   drawBatch,
   drawSample,
   findPrepared,
+  IDENTICAL_EVIDENCE_SAMPLE,
+  isIdenticalEvidenceBatch,
   parseAudit,
   sampleSheet,
   sampleSize,
@@ -663,5 +665,176 @@ describe("sampleSheet of a scholarship: what the reader must confirm", () => {
       { key: "programs/p", row: { ...row, key: "programs/p" }, record: { name: "P" } },
     ]);
     expect(sheet).not.toContain("Confirm:");
+  });
+});
+
+describe("isIdenticalEvidenceBatch", () => {
+  const triple = (fact: string, quote: string) => ({ fact, url: "https://n.example/p", quote });
+  const withEvidence = (...evidence: { fact: string; url: string; quote: string }[]) => ({
+    _review: { enrich: true, evidence },
+  });
+  const channel = triple("applicationChannel", "Apply through uni-assist.");
+  const docs = triple("documents", "Send the certified Baccalaureate.");
+
+  it("is true when every record carries the same fact, url and quote triples", () => {
+    expect(
+      isIdenticalEvidenceBatch([withEvidence(channel, docs), withEvidence(channel, docs)]),
+    ).toBe(true);
+  });
+  it("ignores the order of the evidence entries", () => {
+    expect(
+      isIdenticalEvidenceBatch([withEvidence(channel, docs), withEvidence(docs, channel)]),
+    ).toBe(true);
+  });
+  it("is false when one record has an extra or a different quote", () => {
+    const other = triple("documents", "A different sentence on another page.");
+    expect(
+      isIdenticalEvidenceBatch([
+        withEvidence(channel),
+        withEvidence(channel),
+        withEvidence(channel, docs),
+      ]),
+    ).toBe(false);
+    expect(isIdenticalEvidenceBatch([withEvidence(docs), withEvidence(other)])).toBe(false);
+  });
+  it("is false for no record or one record", () => {
+    expect(isIdenticalEvidenceBatch([])).toBe(false);
+    expect(isIdenticalEvidenceBatch([withEvidence(channel)])).toBe(false);
+  });
+  it("is false when a record has no evidence log", () => {
+    expect(isIdenticalEvidenceBatch([withEvidence(channel), {}])).toBe(false);
+    expect(isIdenticalEvidenceBatch([withEvidence(channel), withEvidence()])).toBe(false);
+    expect(isIdenticalEvidenceBatch([{ _review: {} }, { _review: {} }])).toBe(false);
+  });
+  it("does not look at info_kind: official and guidance records share evidence", () => {
+    const official = { ...withEvidence(docs), documents: { info_kind: "official" } };
+    const guidance = { ...withEvidence(docs), documents: { info_kind: "guidance" } };
+    expect(isIdenticalEvidenceBatch([official, guidance])).toBe(true);
+  });
+});
+
+describe("audit sample of a batch with identical national evidence", () => {
+  const evidence = [
+    { fact: "documents", url: "https://n.example/p", quote: "Send the certified Baccalaureate." },
+  ];
+  const recordsFor = (list: readonly string[], shared = evidence) =>
+    new Map(list.map((k) => [k, { _review: { enrich: true, evidence: shared } }]));
+  const sampled = (rows: readonly AuditRow[]) => rows.filter((r) => r.inSample).length;
+
+  it("reads 12 of a big identical batch instead of 10%", () => {
+    const list = keys(300);
+    const rows = drawBatch({
+      preparedKeys: list,
+      records: recordsFor(list),
+      existing: [],
+      seed: "n1",
+      batchIndex: 1,
+    });
+    expect(sampled(rows)).toBe(IDENTICAL_EVIDENCE_SAMPLE);
+    expect(IDENTICAL_EVIDENCE_SAMPLE).toBe(12);
+    expect(sampleSize(300)).toBe(30);
+  });
+  it("draws the same 12 as the ordinary draw would rank first for that seed", () => {
+    const list = keys(300);
+    const rows = drawBatch({
+      preparedKeys: list,
+      records: recordsFor(list),
+      existing: [],
+      seed: "n1",
+      batchIndex: 1,
+    });
+    const expected = drawSample(list.slice().sort(), "n1", 12);
+    expect(new Set(rows.filter((r) => r.inSample).map((r) => r.key))).toEqual(expected);
+  });
+  it("keeps the ordinary rule for a batch of 12 or fewer", () => {
+    const list = keys(12);
+    const rows = drawBatch({
+      preparedKeys: list,
+      records: recordsFor(list),
+      existing: [],
+      seed: "n2",
+      batchIndex: 1,
+    });
+    expect(sampled(rows)).toBe(sampleSize(12));
+    const thirteen = keys(13);
+    const more = drawBatch({
+      preparedKeys: thirteen,
+      records: recordsFor(thirteen),
+      existing: [],
+      seed: "n2",
+      batchIndex: 1,
+    });
+    expect(sampled(more)).toBe(12);
+  });
+  it("keeps the ordinary rule when one record has different evidence", () => {
+    const list = keys(300);
+    const records = recordsFor(list);
+    records.set("programs/p-7", {
+      _review: {
+        enrich: true,
+        evidence: evidence.map((e) => ({ ...e, quote: "Another sentence." })),
+      },
+    });
+    const rows = drawBatch({
+      preparedKeys: list,
+      records,
+      existing: [],
+      seed: "n3",
+      batchIndex: 1,
+    });
+    expect(sampled(rows)).toBe(sampleSize(300));
+  });
+  it("keeps the ordinary rule when a record is missing or no records are given", () => {
+    const list = keys(300);
+    const records = recordsFor(list);
+    records.delete("programs/p-1");
+    expect(
+      sampled(drawBatch({ preparedKeys: list, records, existing: [], seed: "n4", batchIndex: 1 })),
+    ).toBe(sampleSize(300));
+    expect(
+      sampled(drawBatch({ preparedKeys: list, existing: [], seed: "n4", batchIndex: 1 })),
+    ).toBe(sampleSize(300));
+  });
+  it("never shrinks the always-sampled records", () => {
+    const list = [...keys(300), "scholarships/aurora", "scholarships/boreal"];
+    const rows = drawBatch({
+      preparedKeys: list,
+      records: recordsFor(list),
+      existing: [],
+      seed: "n5",
+      batchIndex: 1,
+    });
+    expect(rows.find((r) => r.key === "scholarships/aurora")?.inSample).toBe(true);
+    expect(rows.find((r) => r.key === "scholarships/boreal")?.inSample).toBe(true);
+    const ordinary = drawBatch({ preparedKeys: list, existing: [], seed: "n5", batchIndex: 1 });
+    expect(rows.map((r) => r.inSample)).toEqual(ordinary.map((r) => r.inSample));
+  });
+  it("says so on the audit sheet and prints the shared evidence once", () => {
+    const row = (key: string): AuditRow => ({
+      key,
+      batch: "b1-n1",
+      inSample: true,
+      audited: "",
+      outcome: "",
+      notes: "",
+    });
+    const sheet = sampleSheet(
+      [
+        { key: "programs/a", row: row("programs/a"), record: { _review: { evidence } } },
+        { key: "programs/b", row: row("programs/b"), record: { _review: { evidence } } },
+      ],
+      new Map([["b1-n1", { size: 300, evidence }]]),
+    );
+    expect(sheet).toContain(
+      "identical national evidence: sample of 12 of 300; the national page is read once",
+    );
+    expect(sheet).toContain('"Send the certified Baccalaureate." — https://n.example/p');
+    const top = sheet.slice(0, sheet.indexOf("## programs/a"));
+    expect(top).toContain("Send the certified Baccalaureate.");
+    expect(top).toContain("https://n.example/p");
+  });
+  it("adds nothing to the sheet of an ordinary batch", () => {
+    const sheet = sampleSheet([]);
+    expect(sheet).not.toContain("identical national evidence");
   });
 });
