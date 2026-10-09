@@ -97,7 +97,7 @@ Answer the prompts: your account as scope, link to existing project, choose the 
 pnpm dlx vercel project inspect
 ```
 
-This prints the project details and confirms the link. The two ids are in `.vercel/project.json` as `orgId` and `projectId`. Open that file in an editor and copy the two values from there. They are identifiers, not passwords, but treat them like secrets and do not paste them into chat.
+This prints the project details and confirms the link. The two ids are in `.vercel/repo.json` (newer CLI versions; older ones write `.vercel/project.json`): `projects[0].orgId` is the value for `VERCEL_ORG_ID` and `projects[0].id` is the value for `VERCEL_PROJECT_ID`. Open that file in an editor and copy the two values from there. They are identifiers, not passwords.
 
 ### 3.5 Create a Vercel token for GitHub Actions
 
@@ -113,7 +113,7 @@ Order matters.
 1. In GitHub open `negexx/jisr`, then **Settings**, **Secrets and variables**, **Actions**, tab **Secrets**, **New repository secret**. Add three secrets, one at a time: `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`. Paste only into the form field.
 2. Then open the tab **Variables**, **New repository variable**: name `DEPLOY_ENABLED`, value `true`.
 
-Command line alternative (the value is typed at a hidden prompt, never put on the command line):
+Command line alternative (the value is typed at a hidden prompt, never put on the command line). On Windows the hidden prompt may ignore a paste and store an empty secret: prefer the web form, or check the step log of the first run for an empty `VERCEL_TOKEN:` line:
 
 ```bash
 gh secret set VERCEL_TOKEN --repo negexx/jisr
@@ -154,7 +154,7 @@ curl -sI https://YOUR-DOMAIN/FR
 curl -sI https://YOUR-DOMAIN/fr/x
 ```
 
-   Expected: `/fr/x` returns `404`; `/FR` should behave as it does locally (the same locale page or a redirect to the locale home, not an error page). Write down what you see.
+   Expected (observed on 2026-10-09): `/fr/x` returns `404` and `/FR` also returns `404` on Vercel (locally it redirects to `/fr`); see section 10. Write down what you see.
 3. In the dashboard look at the usage page after a day of use (section 1 of the limits runbook) and compare the function invocation count with the number of page views: page views on `/fr/...` paths must not each cost an invocation.
 4. If the production domain served a Vercel login page in step 3.7, fix Deployment Protection before sharing the link.
 
@@ -288,8 +288,8 @@ What `pnpm ops:smoke` checks (read-only GET requests, exit code 1 if anything fa
 | Symptom | Cause and fix |
 |---|---|
 | `deploy` job is grey ("skipped") | `DEPLOY_ENABLED` is not `true`, or the event was a pull request. Expected before setup. |
-| `deploy` job is red: "Repository secret X is not set" | A secret is missing or misspelled. Add it (section 3.6). Production was not touched. |
-| `vercel pull` fails with 403 or "not authorized" | The token was created for another scope or expired. Create a new token for the team that owns the project and replace `VERCEL_TOKEN`. Check `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` against `.vercel/project.json`. |
+| `deploy` job is red: "Repository secret X is not set" | A secret is missing, misspelled or stored **empty** (`gh secret set` on Windows can store an empty value; the step log then shows an empty `VERCEL_TOKEN:` line). Add it again in the GitHub web form (section 3.6), then use **Re-run failed jobs**. Production was not touched. |
+| `vercel pull` fails with 403 or "not authorized" | The token was created for another scope or expired. Create a new token for the team that owns the project and replace `VERCEL_TOKEN`. Check `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` against `.vercel/repo.json` (or `project.json`). |
 | Build step fails with an authentication error | See the note in section 2: give the Build step `VERCEL_TOKEN` and record it in a new ADR. |
 | Build fails with `NEXT_PUBLIC_...: ...` | A variable has an invalid value (section 4). Fix it in the Production scope. |
 | Deploy step rejects or stalls on the upload, or reports a rate limit on uploads | The built output is large (about 1.5 GB, about 24,000 files) and Hobby allows 5,000 uploads per day. The workflow already uses `--archive=tgz`; if it still fails, see risk 1 in section 10. |
@@ -298,23 +298,50 @@ What `pnpm ops:smoke` checks (read-only GET requests, exit code 1 if anything fa
 | Production site returns `503 DEPLOYMENT_PAUSED` | A Hobby usage cap was reached. See `docs/ops/limits-runbook.md`. |
 | Smoke test fails on the sitemap with `NEXT_PUBLIC_SITE_URL` unset | The production build was not indexable: set the variable (section 3.3) and redeploy. |
 
-## 10. Unverified until the first real deployment
+## 10. First-deployment results and what is still unverified
 
-These could not be tested without your Vercel account. Check them after the first deploy and record the outcome in the pre-launch checklist.
+### Results of the first real deployment (2026-10-09)
 
-1. **Output upload size, file count and time (highest risk).** Measured 2026-10-09 on a clean default `pnpm build` (no `NEXT_PUBLIC_*` variables; `.next` deleted first; 1,126 programmes, snapshot `6c740a0cd15b`, 97 shards, Windows machine with 11 build workers): wall-clock **1 min 23 s** for the whole `pnpm build` (`data:check` and `data:build` included; 43 s of it is "Generating static pages" for **3,401 prerendered pages**). Output: `.next` is **1,495,514,287 bytes (about 1.50 GB) in 24,205 files**, of which `.next/cache` is 73 MB in 16 files (not part of what `vercel build` turns into the deployment output; the size of `.vercel/output` itself was **not measured**, only `.next`, so the upload figures are the `.next` ones). `.next/server/app` is 1,396,094,838 bytes (about 1.40 GB) in 23,890 files, among them 3,398 HTML files and 16,988 `.rsc` files. Per programme and locale: about 154 KB of HTML, about 84 KB of RSC data (averages over the 1,126 `fr` pages) plus 4 segment files (about 155 to 195 KB together in the two programmes inspected); `.next/static` is 1.5 MB in 50 files. The first-load JavaScript headroom is in the checklist (A2): `/fr/matches` has 0.4 KB under its ratchet on the real build.
+The project was imported into Vercel as `jisr`; the platform gave it the address `https://jisr-phi.vercel.app` (the plain name was probably taken). Production deploys ran from GitHub Actions: run 37918972238 (merge of #24, rerun after the secrets were corrected) and run 37924113788 (merge of #23, the first data pull request through the flow). Both went green end to end.
+
+| Item | Result |
+|---|---|
+| Upload of the prebuilt output with `vercel deploy --prebuilt --archive=tgz --prod` | **Accepted.** Risk 1 below did not materialise on Hobby. `.vercel/output` itself was still not measured. |
+| Timings of the deploy job (run 37924113788) | Install CLI 23 s, `vercel pull` 2 s, `vercel build --prod` **2 min 48 s** on the 2-vCPU GitHub runner (includes `data:check`, `data:build`, `next build`), upload and deploy **2 min**, smoke test 5 s. The whole workflow (verify and e2e in parallel, then deploy) took about 18 minutes. |
+| `vercel build` without `VERCEL_TOKEN` | **Works.** The Build step runs without the token, as designed. |
+| `npm install --global vercel@latest` on the runner | **Works.** |
+| e2e job on a GitHub-hosted Linux runner | **Green** on the pull request run and on both runs on `main` (about 12 minutes). The Windows-only SWC workaround is not needed there. |
+| Smoke test `pnpm ops:smoke https://jisr-phi.vercel.app --expect=indexable` | **18 of 18 PASS**, also run by the deploy job itself once `SMOKE_URL` was set. |
+| Region | Responses carry `x-vercel-id: fra1::...`, so the edge that answered was Frankfurt (from the owner's location). The function region setting itself was not read here; check it in the dashboard (section 3.8). |
+| Live site | `robots.txt` allows crawling and names the sitemap; the sitemap lists 3,387 URLs; the snapshot manifest on the site was generated by the latest build. |
+| `/FR` (uppercase) | **Differs from local.** Locally the proxy redirects `/FR` to `/fr`. On Vercel it returns `404`, because the platform matches the proxy matcher case-insensitively, so the exclusion `(?:fr|en|ar)` also skips `/FR`, and the static router has no such page. `/`, `/fr` and `/fr/x` behave as expected (redirect to `/fr`, 200, 404). Harmless unless something links to an uppercase locale; no fix is planned (a case-insensitive redirect risks a loop). |
+
+Reported by the owner as checked in the dashboard, with no evidence recorded here: the remaining dashboard items of section 3.8 and the checklist (Deployment Protection scope, Node 24.x, no Git-sourced Production deployment for the merge commit, `SMOKE_URL`). Items 11, 12 and 8 below stay open until the evidence is written into the checklist.
+
+### Gotchas met during the first setup
+
+- **`gh secret set` on Windows can store an empty value.** The hidden prompt may ignore a paste; GitHub accepts the empty secret, so `gh secret list` shows the name but the job sees an empty value ("Repository secret VERCEL_TOKEN is not set"). Add the secrets in the GitHub web form instead, where the pasted text is visible, or check the job log: an empty `VERCEL_TOKEN:` line in the step environment means the value is empty.
+- **A rerun after fixing a secret uses the updated value**, but only a new run, or "Re-run failed jobs", picks it up; the earlier attempt keeps failing.
+- **The Vercel CLI now writes `.vercel/repo.json`**, not `.vercel/project.json`, when it links a Git repository. The ids are in it: `projects[0].id` is `VERCEL_PROJECT_ID` and `projects[0].orgId` is `VERCEL_ORG_ID`.
+- **Importing the project builds `main` once from Vercel's side** (the first deployment of a new project is a Production one). That row has a Git icon in the Deployments list and is not a gate failure; only a Git-sourced Production row for a *later* merge would be.
+
+### Still unverified, or unverified before 2026-10-09
+
+The items below were written before the first deployment. Those marked **verified** were answered on 2026-10-09; the rest are still open.
+
+1. **Output upload size, file count and time (highest risk; the upload was accepted on 2026-10-09, see the results above).** Measured 2026-10-09 on a clean default `pnpm build` (no `NEXT_PUBLIC_*` variables; `.next` deleted first; 1,126 programmes, snapshot `6c740a0cd15b`, 97 shards, Windows machine with 11 build workers): wall-clock **1 min 23 s** for the whole `pnpm build` (`data:check` and `data:build` included; 43 s of it is "Generating static pages" for **3,401 prerendered pages**). Output: `.next` is **1,495,514,287 bytes (about 1.50 GB) in 24,205 files**, of which `.next/cache` is 73 MB in 16 files (not part of what `vercel build` turns into the deployment output; the size of `.vercel/output` itself was **not measured**, only `.next`, so the upload figures are the `.next` ones). `.next/server/app` is 1,396,094,838 bytes (about 1.40 GB) in 23,890 files, among them 3,398 HTML files and 16,988 `.rsc` files. Per programme and locale: about 154 KB of HTML, about 84 KB of RSC data (averages over the 1,126 `fr` pages) plus 4 segment files (about 155 to 195 KB together in the two programmes inspected); `.next/static` is 1.5 MB in 50 files. The first-load JavaScript headroom is in the checklist (A2): `/fr/matches` has 0.4 KB under its ratchet on the real build.
    - Fit to the Hobby build limits, only as far as measured: the local clean build took 1 min 23 s against the 45-minute limit, but with 11 workers, while Vercel builds on 2 vCPUs and 8 GB, so the wall-clock there will be longer; by how much was not measured (Vercel's own build adds install and upload time too). Peak memory was **not measured** (no `/usr/bin/time -v` on Windows). A manual `vercel deploy` from a checkout would upload the 1,968 tracked files that `.vercelignore` leaves in, 5.45 MB, against the 15,000-file and 100 MB source caps (`public/snapshots` is git-ignored, so it is not part of that upload; the build regenerates it).
    - Hobby has an API limit of **5,000 uploads per day** (https://vercel.com/docs/limits), and the output has about 24,000 files. The 15,000-file and 100 MB caps for CLI uploads are documented for source files; whether they also apply to `--prebuilt` output is **unverified**.
    - **First mitigation, already in `ci.yml`:** `vercel deploy --prebuilt --archive=tgz --prod`, which Vercel documents for deployments with thousands of files. It is documented with `--prebuilt` but has not been run in this repository, and it may make deploys slower (the per-file upload cache is lost). If the HTML embeds the snapshot version, every data deploy changes a large share of the files, so without the archive each data release would re-upload most of them; this is why the flag matters.
    - If it is still rejected or too slow, this is an owner decision for a follow-up, not something this branch solves. Generating only some programme pages with on-demand rendering is **not** possible, because the snapshot is not traced into functions (`public/` is not available to functions; architecture.md). The remaining options are to shrink the per-page payload, or to move programme pages to incremental static regeneration with the snapshot read from a CDN URL (which the `NEXT_PUBLIC_SNAPSHOT_BASE_URL` seam partly prepares).
-2. `vercel deploy --prebuilt --archive=tgz` is accepted by the CLI on the runner and uploads the output within the limits (documented by Vercel, not yet run here).
-3. `vercel build --prod` works without `VERCEL_TOKEN` in the environment.
-4. `npm install --global vercel@latest` works on the GitHub runner as written.
-5. Vercel honours `fra1` for a `--prebuilt` deployment.
-6. Vercel's router honours the compiled proxy matcher the way `next start` does (the proxy runs only for `/` and locale-less paths), and `/FR` (uppercase) behaves as it does locally.
+2. **Verified 2026-10-09.** `vercel deploy --prebuilt --archive=tgz` is accepted by the CLI on the runner and uploads the output within the limits (about 2 minutes).
+3. **Verified 2026-10-09.** `vercel build --prod` works without `VERCEL_TOKEN` in the environment.
+4. **Verified 2026-10-09.** `npm install --global vercel@latest` works on the GitHub runner as written.
+5. Partly verified 2026-10-09: responses come from the `fra1` edge. Still read the function region in the dashboard (section 3.8); the project has one small proxy function only.
+6. Partly verified 2026-10-09: `/`, `/fr` and `/fr/x` behave as with `next start`. `/FR` returns 404 on Vercel instead of redirecting (see the results above). Whether `/fr/...` views cost no function invocation is item 8.
 7. Under Standard Protection the production domain (for example `jisr.vercel.app`) is public while generated deployment URLs need a Vercel login, as documented; confirm it in a private window.
 8. Function invocation counts match page views (no invocation per `/fr/...` view).
-9. The e2e job runs on a GitHub-hosted runner without the local SWC workaround (already noted in `ci.yml`), and it has **never run on Linux** (it was only run on Windows). Consequence: if e2e is red on the first push to `main`, **production is never deployed** until it is fixed, because the `deploy` job needs both `verify` and `e2e`. That is recoverable: fix the cause and push again; nothing is half-deployed.
+9. **Verified 2026-10-09.** The e2e job runs on a GitHub-hosted Linux runner without the local SWC workaround and is green (about 12 minutes). The deploy job still needs both `verify` and `e2e`: if e2e is red on a push to `main`, production is not deployed until it is fixed; nothing is half-deployed.
 10. pnpm: Vercel detects pnpm from `packageManager` in `package.json` and `pnpm-lock.yaml`. Confirm the pnpm version in the build log of the first preview.
 11. **No Git-sourced production deployment.** After the first merge to `main` with the Vercel project connected, the Deployments list must show **no** Git-sourced Production deployment for that commit, only the one made by the CLI from GitHub Actions. That proves `git.deploymentEnabled.main: false` in `vercel.json` took effect. If a Git production deployment appears, the release gate is not holding: disable it in Settings, Git, and report it.
 12. **Previews on a private repository.** Vercel may block the Git-integration preview of a pull request if it cannot match the commit author to the Vercel account. Commits on this branch are authored as `Never <dagdaguihamza1@gmail.com>` (check with `git log -1 --format=%ae`). On the first pull request, check that a preview is built. If it is blocked, verify that email address on the GitHub account that is connected to Vercel, or set `git config user.email` to that account's verified address for later commits.
