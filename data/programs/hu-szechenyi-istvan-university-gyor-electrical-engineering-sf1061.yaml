@@ -57,6 +57,9 @@ requirements:
         en:
           text: A written entrance examination (language test + professional test) is organised; an interview may be requested.
           status: draft
+        ar:
+          text: يُنظَّم امتحان قبول كتابي (اختبار لغوي + اختبار مهني)؛ وقد تُطلب مقابلة.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: "Submit the listed documents: secondary/high school graduation results, record of courses studied, English CV, motivation letter."
+          status: draft
+        ar:
+          text: "قدّم الوثائق المدرجة: نتائج شهادة نهاية الدراسة الثانوية، وكشفًا بالمواد التي درستها، وسيرة ذاتية (CV) بالإنجليزية، ورسالة تحفيزية."
           status: draft
 scholarships: []
 sources:

@@ -50,6 +50,9 @@ documents:
         en:
           text: High school diploma or equivalent
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: true
     - slug: cv
       name:
@@ -59,6 +62,9 @@ documents:
         en:
           text: Resume in table format / form
           status: draft
+        ar:
+          text: سيرة ذاتية (CV) على شكل جدول
+          status: draft
       translationRequired: null
     - slug: passport
       name:
@@ -67,6 +73,9 @@ documents:
           status: draft
         en:
           text: Copy of ID card / passport
+          status: draft
+        ar:
+          text: نسخة من بطاقة الهوية / جواز السفر
           status: draft
       translationRequired: null
   source: page-1

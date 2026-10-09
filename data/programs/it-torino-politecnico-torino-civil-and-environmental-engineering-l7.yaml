@@ -53,6 +53,9 @@ documents:
         en:
           text: Passport
           status: draft
+        ar:
+          text: جواز السفر
+          status: draft
       translationRequired: null
     - slug: secondary-school-diploma
       name:
@@ -61,6 +64,9 @@ documents:
           status: draft
         en:
           text: Secondary school diploma
+          status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
           status: draft
       translationRequired: null
     - slug: academic-eligibility-certificate
@@ -71,6 +77,9 @@ documents:
         en:
           text: Academic eligibility certificate
           status: draft
+        ar:
+          text: إفادة الأهلية الأكاديمية
+          status: draft
       translationRequired: null
     - slug: language-certificate
       name:
@@ -80,6 +89,9 @@ documents:
         en:
           text: Language certificate
           status: draft
+        ar:
+          text: شهادة في اللغة
+          status: draft
       translationRequired: null
     - slug: declaration-of-value
       name:
@@ -88,6 +100,9 @@ documents:
           status: draft
         en:
           text: Declaration of Value
+          status: draft
+        ar:
+          text: بيان القيمة
           status: draft
       translationRequired: null
   source: page-2
@@ -112,6 +127,9 @@ requirements:
           status: draft
         en:
           text: An admission test (TIL) is mandatory, or a SAT certificate. Check the bandi di selezione for procedures and thresholds.
+          status: draft
+        ar:
+          text: يُشترط اختبار القبول (test di ammissione) المسمى TIL، أو شهادة SAT. راجع إعلانات الانتقاء (bandi di selezione) لمعرفة إجراءات الاختبار وعتباته.
           status: draft
 scholarships: []
 sources:

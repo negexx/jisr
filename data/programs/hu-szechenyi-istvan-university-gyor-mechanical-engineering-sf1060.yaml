@@ -47,6 +47,9 @@ documents:
         en:
           text: Secondary/high school graduation results
           status: draft
+        ar:
+          text: نتائج نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: record-of-courses-studied
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: Record of courses studied
+          status: draft
+        ar:
+          text: كشف بالمواد التي درستموها
           status: draft
       translationRequired: null
     - slug: english-cv
@@ -65,6 +71,9 @@ documents:
         en:
           text: English CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV) بالإنجليزية
+          status: draft
       translationRequired: null
     - slug: motivation-letter
       name:
@@ -73,6 +82,9 @@ documents:
           status: draft
         en:
           text: Motivation letter
+          status: draft
+        ar:
+          text: رسالة تحفيزية
           status: draft
       translationRequired: null
   source: programme
@@ -103,6 +115,9 @@ requirements:
         en:
           text: Admission includes a written language test and a written professional test; an interview may be requested if the test is borderline.
           status: draft
+        ar:
+          text: يتضمن القبول اختبارًا لغويًا كتابيًا واختبارًا مهنيًا كتابيًا؛ وقد تُطلب مقابلة إذا كانت نتيجة الاختبار قريبة من عتبة النجاح.
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -113,6 +128,9 @@ requirements:
           status: draft
         en:
           text: "Candidates are ranked by the Admission Committee: prior education, language competence, recommendations and motivation are considered."
+          status: draft
+        ar:
+          text: "تصنّف لجنة القبول المتقدمين: تؤخذ في الاعتبار النتائج السابقة والكفاءة اللغوية والتوصيات والدافعية."
           status: draft
 scholarships: []
 sources:

@@ -60,6 +60,9 @@ requirements:
         en:
           text: Good results in Mathematics are expected (no numeric threshold is stated).
           status: draft
+        ar:
+          text: يُنتظر الحصول على نتائج جيدة في الرياضيات (لا تُذكر أي عتبة رقمية).
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -70,6 +73,9 @@ requirements:
           status: draft
         en:
           text: An online oral entrance examination is required; at least 60 out of 100 points are needed to pass.
+          status: draft
+        ar:
+          text: امتحان الدخول الشفوي عبر الإنترنت إلزامي؛ ويلزم الحصول على 60 نقطة على الأقل من 100 للنجاح.
           status: draft
     - id: req-3
       source: programme
@@ -82,6 +88,9 @@ requirements:
         en:
           text: High school / secondary education (or higher) is required; certificates must be officially attested with English translation.
           status: draft
+        ar:
+          text: تُشترط شهادة الدراسة الثانوية (أو أعلى)؛ ويجب أن تكون الشهادات موثّقة رسميًا مع ترجمة إلى الإنجليزية.
+          status: draft
     - id: req-4
       source: page-3
       info_kind: official
@@ -92,6 +101,9 @@ requirements:
           status: draft
         en:
           text: A non-refundable 100 EUR application fee applies; the entrance exam is only possible after this amount arrives.
+          status: draft
+        ar:
+          text: رسوم ملف قدرها 100 EUR غير قابلة للاسترداد؛ ولا يُجرى امتحان الدخول إلا بعد استلام هذا المبلغ.
           status: draft
 scholarships: []
 sources:

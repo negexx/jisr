@@ -56,6 +56,9 @@ documents:
         en:
           text: Proof of English language proficiency
           status: draft
+        ar:
+          text: إثبات الكفاءة في اللغة الإنجليزية
+          status: draft
       translationRequired: null
   source: page-3
   info_kind: official

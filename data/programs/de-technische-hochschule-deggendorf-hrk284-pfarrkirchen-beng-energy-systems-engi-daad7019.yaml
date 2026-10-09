@@ -50,6 +50,9 @@ documents:
         en:
           text: University entrance qualification
           status: draft
+        ar:
+          text: التأهيل للدخول إلى الجامعة
+          status: draft
       translationRequired: null
     - slug: identity-card-copy
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: Copy of your identity card
+          status: draft
+        ar:
+          text: نسخة من بطاقة الهوية
           status: draft
       translationRequired: null
     - slug: curriculum-vitae
@@ -68,6 +74,9 @@ documents:
         en:
           text: Curriculum vitae
           status: draft
+        ar:
+          text: السيرة الذاتية
+          status: draft
       translationRequired: null
     - slug: proof-of-language-proficiency
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Proof of language proficiency
+          status: draft
+        ar:
+          text: إثبات الكفاءة اللغوية
           status: draft
       translationRequired: null
   source: page-4
@@ -96,6 +108,9 @@ requirements:
         en:
           text: All applicants to this programme must take the Academic Readiness Assessment test and provide the resulting certificate along with the other application documents.
           status: draft
+        ar:
+          text: يجب على جميع المتقدمين لهذا البرنامج اجتياز اختبار Academic Readiness Assessment وتقديم الشهادة المحصَّل عليها مع باقي وثائق التقديم.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -106,6 +121,9 @@ requirements:
           status: draft
         en:
           text: Check your school-leaving certificate (Moroccan Baccalauréat) in the DAAD database or Anabin to see whether it gives you university entrance eligibility; otherwise one year of university study or a Studienkolleg may be required.
+          status: draft
+        ar:
+          text: تحقق من شهادة نهاية دراستك الثانوية (البكالوريا المغربية) في قاعدة بيانات DAAD أو في Anabin لمعرفة هل تتيح لك الدخول إلى الجامعة؛ وإلا فقد تلزم سنة من الدراسة الجامعية أو Studienkolleg.
           status: draft
 scholarships: []
 sources:

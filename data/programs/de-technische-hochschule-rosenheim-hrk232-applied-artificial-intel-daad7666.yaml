@@ -53,6 +53,9 @@ documents:
         en:
           text: University entrance qualification
           status: draft
+        ar:
+          text: شهادة التأهيل للدخول إلى الجامعة
+          status: draft
       translationRequired: null
     - slug: certificate-university-entrance-qualification
       name:
@@ -61,6 +64,9 @@ documents:
           status: draft
         en:
           text: Certificate for a university entrance qualification
+          status: draft
+        ar:
+          text: شهادة التأهيل للدخول إلى الجامعة
           status: draft
       translationRequired: null
   source: programme
@@ -99,6 +105,9 @@ requirements:
           status: draft
         en:
           text: "Check that you meet the admission requirements: university entrance qualification, grades and any interviews or exams."
+          status: draft
+        ar:
+          text: "تحقق من أنك تستوفي شروط الالتحاق: مؤهل الدخول إلى الجامعة، والعلامات، والمقابلات أو الامتحانات المحتملة."
           status: draft
 scholarships: []
 sources:

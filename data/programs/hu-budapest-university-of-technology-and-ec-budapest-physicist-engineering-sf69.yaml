@@ -57,6 +57,9 @@ requirements:
         en:
           text: An admission test in Mathematics and Physics is mandatory; check application and payment details at www.bme.hu.
           status: draft
+        ar:
+          text: اختبار القبول في الرياضيات والفيزياء إلزامي؛ تحقق من إجراءات التسجيل والأداء على www.bme.hu.
+          status: draft
 scholarships:
   - stipendium-hungaricum
 sources:

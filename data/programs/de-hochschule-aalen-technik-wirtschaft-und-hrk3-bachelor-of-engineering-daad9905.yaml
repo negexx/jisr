@@ -50,6 +50,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: english-language-certificate
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: English language certificate
+          status: draft
+        ar:
+          text: شهادة الكفاءة اللغوية في الإنجليزية
           status: draft
       translationRequired: null
     - slug: vpd-certificate
@@ -68,6 +74,9 @@ documents:
         en:
           text: VPD certificate from uni-assist
           status: draft
+        ar:
+          text: شهادة المراجعة الأولية (VPD) الصادرة عن خدمة uni-assist
+          status: draft
       translationRequired: null
     - slug: passport-photo
       name:
@@ -77,6 +86,9 @@ documents:
         en:
           text: Passport picture
           status: draft
+        ar:
+          text: صورة شخصية
+          status: draft
       translationRequired: null
     - slug: passport-copy
       name:
@@ -85,6 +97,9 @@ documents:
           status: draft
         en:
           text: Passport copy
+          status: draft
+        ar:
+          text: نسخة من جواز السفر
           status: draft
       translationRequired: null
   source: page-2

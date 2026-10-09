@@ -53,6 +53,9 @@ documents:
         en:
           text: School and, where applicable, university certificates
           status: draft
+        ar:
+          text: شهادات مدرسية، وعند الاقتضاء شهادات جامعية
+          status: draft
       translationRequired: true
     - slug: certified-translations
       name:
@@ -61,6 +64,9 @@ documents:
           status: draft
         en:
           text: Certified translations of your certificates
+          status: draft
+        ar:
+          text: ترجمات معتمدة لشهاداتك
           status: draft
       translationRequired: true
     - slug: proof-of-language-proficiency
@@ -71,6 +77,9 @@ documents:
         en:
           text: Proof of your language proficiency
           status: draft
+        ar:
+          text: إثبات الكفاءة اللغوية
+          status: draft
       translationRequired: null
     - slug: passport-copy
       name:
@@ -79,6 +88,9 @@ documents:
           status: draft
         en:
           text: A copy of your passport
+          status: draft
+        ar:
+          text: نسخة من جواز سفرك
           status: draft
       translationRequired: null
     - slug: cv
@@ -89,6 +101,9 @@ documents:
         en:
           text: CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: statement-of-purpose
       name:
@@ -97,6 +112,9 @@ documents:
           status: draft
         en:
           text: Statement of purpose
+          status: draft
+        ar:
+          text: رسالة تحفيزية
           status: draft
       translationRequired: null
   source: page-2

@@ -28,6 +28,7 @@
     "data:fr-language": "tsx scripts/import/fr-language.ts",
     "data:daad-deadlines": "tsx scripts/import/daad-deadlines.ts",
     "data:national": "tsx scripts/import/national.ts",
+    "data:translate-ar": "tsx scripts/import/translate-ar.ts",
     "data:it-calendar": "tsx scripts/import/it-calendar.ts",
     "data:it-language": "tsx scripts/import/it-language.ts",
     "data:it-discovery": "tsx scripts/import/it-discovery.ts",

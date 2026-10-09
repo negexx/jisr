@@ -50,6 +50,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: page-2
   info_kind: official
@@ -68,6 +71,9 @@ requirements:
           status: draft
         en:
           text: Check the number of available places and the admission procedure (entrance exam) for this programme.
+          status: draft
+        ar:
+          text: تحقق من عدد المقاعد المتاحة ومن إجراء القبول (مباراة) لهذا البرنامج.
           status: draft
 scholarships: []
 sources:

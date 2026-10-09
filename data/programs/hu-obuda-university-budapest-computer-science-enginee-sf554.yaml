@@ -69,6 +69,9 @@ requirements:
         en:
           text: An application fee of 150 EUR is required for every application and is non-refundable.
           status: draft
+        ar:
+          text: تُطلب رسوم ملف قدرها 150 EUR عن كل طلب، وهي غير قابلة للاسترداد.
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -79,6 +82,9 @@ requirements:
           status: draft
         en:
           text: "An entrance examination is required: written mathematics and physics/informatics exams, plus an online English oral interview."
+          status: draft
+        ar:
+          text: "يُشترط امتحان دخول: اختبارات كتابية في الرياضيات وفي الفيزياء/المعلوميات، إضافة إلى مقابلة شفوية بالإنجليزية عبر الإنترنت."
           status: draft
 scholarships: []
 sources:

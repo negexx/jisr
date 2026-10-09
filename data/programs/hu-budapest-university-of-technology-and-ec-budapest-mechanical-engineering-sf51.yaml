@@ -57,6 +57,9 @@ requirements:
         en:
           text: An online admission test (mathematics and physics) is required with a minimum of 40% in each subject and 50% overall.
           status: draft
+        ar:
+          text: يُشترط اختبار قبول عبر الإنترنت (الرياضيات والفيزياء) بحد أدنى 40% في كل مادة و50% في المجموع.
+          status: draft
 scholarships:
   - stipendium-hungaricum
 sources:

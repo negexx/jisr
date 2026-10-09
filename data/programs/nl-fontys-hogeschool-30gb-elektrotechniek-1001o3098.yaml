@@ -57,6 +57,9 @@ requirements:
         en:
           text: Check additional admission requirements for certain havo/vwo profiles and alternative admission cases (foreign diploma).
           status: draft
+        ar:
+          text: تحقق من شروط القبول الإضافية لبعض مسارات havo/vwo ومن حالات القبول البديل (شهادة أجنبية).
+          status: draft
 scholarships: []
 sources:
   programme:

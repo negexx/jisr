@@ -15,6 +15,9 @@ summary:
   en:
     text: "HAN scholarship for bachelor students from outside the EU/EEA: up to EUR 12,500 in total (EUR 2,500 per semester in the first year, then EUR 2,500 per year if you earn the required credits)."
     status: draft
+  ar:
+    text: "منحة HAN لطلبة الإجازة من خارج الاتحاد الأوروبي والمنطقة الاقتصادية الأوروبية (UE/EEE): حتى 12 500 EUR في المجموع (2 500 EUR لكل فصل دراسي في السنة الأولى، ثم 2 500 EUR في السنة إذا حصلت على الأرصدة الدراسية المطلوبة)."
+    status: draft
 support:
   value: null
   source: page-1
@@ -38,6 +41,9 @@ howToApply:
     status: draft
   en:
     text: See HAN's scholarships page for the conditions and procedure.
+    status: draft
+  ar:
+    text: انظر صفحة منح HAN لمعرفة الشروط والإجراء.
     status: draft
 officialUrl: https://www.han.nl/international/en/study-and-living/scholarships/
 sources:

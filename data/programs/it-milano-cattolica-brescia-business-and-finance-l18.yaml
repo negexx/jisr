@@ -50,6 +50,9 @@ documents:
         en:
           text: Final secondary school qualification obtained after at least 12 years of schooling
           status: draft
+        ar:
+          text: الشهادة النهائية للدراسة الثانوية المحصَّل عليها بعد 12 سنة دراسية على الأقل
+          status: draft
       translationRequired: null
     - slug: cimea-statement-or-declaration-of-value
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: CIMEA statement or Declaration of value, if the institution asks for it
+          status: draft
+        ar:
+          text: إفادة CIMEA أو بيان القيمة، إذا طلبته المؤسسة
           status: draft
       translationRequired: null
     - slug: university-entrance-aptitude-certificate
@@ -68,6 +74,9 @@ documents:
         en:
           text: Certificate of passing the academic aptitude test for university entrance in the home country, where one exists
           status: draft
+        ar:
+          text: شهادة النجاح في اختبار الكفاءة الأكاديمية للولوج إلى الجامعة في بلد المنشأ، إن وُجد هذا الاختبار
+          status: draft
       translationRequired: null
     - slug: italian-translation-of-documents
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Italian translations of the documents above, where the institution asks for them
+          status: draft
+        ar:
+          text: ترجمات الوثائق أعلاه إلى الإيطالية، إذا طلبتها المؤسسة
           status: draft
       translationRequired: null
   source: page-3
@@ -91,10 +103,13 @@ requirements:
       kind: manual_check
       note:
         fr:
-          text: Vérifiez si vous devez passer le test d'admission Cattolica (section Entry requirements > Mathematics requirements). Les candidatures ne sont acceptées qui si elles sont complètes.
+          text: Vérifiez si vous devez passer le test d'admission Cattolica (section Entry requirements > Mathematics requirements). Les candidatures ne sont acceptées que si elles sont complètes.
           status: draft
         en:
           text: Check whether you must take the Cattolica Admission Test (see Entry requirements > Mathematics requirements). Applications are accepted only if they are complete.
+          status: draft
+        ar:
+          text: تحقق مما إذا كان عليك اجتياز اختبار القبول Cattolica، وذلك في القسم الخاص بشروط الدخول ومتطلبات الرياضيات (Entry requirements > Mathematics requirements). لا تُقبل الطلبات إلا إذا كانت مكتملة.
           status: draft
     - id: req-2
       source: page-2
@@ -106,6 +121,9 @@ requirements:
           status: draft
         en:
           text: "Limited spots and high competition: some applications may be placed on a waiting list."
+          status: draft
+        ar:
+          text: "المقاعد محدودة والمنافسة قوية: قد توضع بعض الطلبات في قائمة الانتظار."
           status: draft
 scholarships: []
 sources:

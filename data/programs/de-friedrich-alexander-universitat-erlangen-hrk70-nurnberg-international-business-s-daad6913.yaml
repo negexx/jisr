@@ -66,6 +66,9 @@ requirements:
         en:
           text: Check the numerus clausus (NC) admission procedure and the exact documents to be submitted.
           status: draft
+        ar:
+          text: تحقق من إجراء القبول مع numerus clausus (NC) ومن الوثائق الدقيقة الواجب تقديمها.
+          status: draft
 scholarships: []
 sources:
   programme:

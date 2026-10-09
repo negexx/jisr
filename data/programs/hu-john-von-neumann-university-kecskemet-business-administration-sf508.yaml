@@ -60,6 +60,9 @@ requirements:
         en:
           text: You must pass an oral entrance examination (online) before the faculty admission committee.
           status: draft
+        ar:
+          text: عليك النجاح في امتحان دخول شفوي (عبر الإنترنت) أمام لجنة القبول في الكلية.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -70,6 +73,9 @@ requirements:
           status: draft
         en:
           text: "Study condition: successful completion of an ISCED level 3 or 4 programme (secondary school leaving certificate)."
+          status: draft
+        ar:
+          text: "شرط الدراسة: إتمام برنامج من المستوى 3 أو 4 حسب ISCED (شهادة نهاية الدراسة الثانوية)."
           status: draft
     - id: req-3
       source: page-3
@@ -82,6 +88,9 @@ requirements:
         en:
           text: Some programmes may include a test, often at high school-level mathematics; the interview covers your motivation and English skills.
           status: draft
+        ar:
+          text: قد تتضمن بعض البرامج اختبارًا، غالبًا في الرياضيات بمستوى الثانوية؛ وتتناول المقابلة دافعك ومستواك في الإنجليزية.
+          status: draft
     - id: req-4
       source: page-2
       info_kind: official
@@ -92,6 +101,9 @@ requirements:
           status: draft
         en:
           text: "Fees: application fee of EUR 200, non-refundable, to be paid together with the first year's fees; application fee paid by bank transfer."
+          status: draft
+        ar:
+          text: "الرسوم: رسوم ملف قدرها 200 EUR غير قابلة للاسترداد، تُدفع مع رسوم السنة الأولى؛ وتُدفع رسوم الملف بتحويل بنكي."
           status: draft
 scholarships: []
 sources:

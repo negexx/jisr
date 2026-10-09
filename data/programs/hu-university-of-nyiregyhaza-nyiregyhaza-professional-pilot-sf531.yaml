@@ -50,6 +50,9 @@ documents:
         en:
           text: Secondary school leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: true
     - slug: transcript-of-records
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: Transcript of Records
+          status: draft
+        ar:
+          text: كشف النقاط
           status: draft
       translationRequired: true
     - slug: passport-copy
@@ -68,6 +74,9 @@ documents:
         en:
           text: Copy of passport
           status: draft
+        ar:
+          text: نسخة من جواز السفر
+          status: draft
       translationRequired: null
     - slug: motivation-letter
       name:
@@ -77,6 +86,9 @@ documents:
         en:
           text: Motivation letter
           status: draft
+        ar:
+          text: رسالة تحفيزية
+          status: draft
       translationRequired: null
     - slug: general-medical-certificate
       name:
@@ -85,6 +97,9 @@ documents:
           status: draft
         en:
           text: General Medical Certificate
+          status: draft
+        ar:
+          text: شهادة طبية عامة
           status: draft
       translationRequired: null
   source: page-3
@@ -114,6 +129,9 @@ requirements:
         en:
           text: "Entrance exam required: online oral interview (Microsoft Teams) on English, motivation, cognitive abilities (maths/physics) and technical interest."
           status: draft
+        ar:
+          text: "امتحان دخول إلزامي: مقابلة شفوية عبر الإنترنت (Microsoft Teams) حول الإنجليزية والدافعية والقدرات الذهنية (الرياضيات/الفيزياء) والاهتمام بالجانب التقني."
+          status: draft
     - id: req-3
       source: page-3
       info_kind: official
@@ -125,6 +143,9 @@ requirements:
         en:
           text: Non-refundable application fee of 100 EUR; the entrance exam only takes place after this amount has arrived.
           status: draft
+        ar:
+          text: رسوم تقديم قدرها 100 EUR غير قابلة للاسترداد؛ ولا يُجرى امتحان الدخول إلا بعد استلام هذا المبلغ.
+          status: draft
     - id: req-4
       source: page-4
       info_kind: official
@@ -135,6 +156,9 @@ requirements:
           status: draft
         en:
           text: Moroccan nationals are not on the list of countries whose applications are no longer accepted (Afghanistan, Algeria, Bangladesh, Nepal, Saudi Arabia, Syria, Yemen).
+          status: draft
+        ar:
+          text: المواطنون المغاربة غير مدرجين في قائمة الدول التي لم تعد طلباتها مقبولة (أفغانستان والجزائر وبنغلاديش ونيبال والمملكة العربية السعودية وسوريا واليمن).
           status: draft
 scholarships: []
 sources:

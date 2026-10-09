@@ -70,6 +70,9 @@ requirements:
         en:
           text: Entrance exam results of 75% and over mean admission to the selected programme, results between 60%-75% mean admission to a preparatory (foundation year) programme. Check this condition.
           status: draft
+        ar:
+          text: يجب أن تكون نتيجة امتحان الدخول 75% فأكثر للقبول؛ ويُقبل المتقدمون الحاصلون على نتيجة بين 60% و75% في البرنامج التحضيري. تحقق من هذا الشرط.
+          status: draft
 scholarships: []
 sources:
   programme:

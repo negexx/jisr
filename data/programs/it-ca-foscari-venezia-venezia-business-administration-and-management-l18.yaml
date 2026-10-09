@@ -47,6 +47,9 @@ documents:
         en:
           text: Higher Secondary School final Diploma
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: true
     - slug: transcript-of-records
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: Transcript of records
+          status: draft
+        ar:
+          text: كشف النقاط
           status: draft
       translationRequired: true
     - slug: statement-of-comparability-cimea
@@ -65,6 +71,9 @@ documents:
         en:
           text: Statement of Comparability issued by CIMEA
           status: draft
+        ar:
+          text: إفادة المقارنة من CIMEA
+          status: draft
       translationRequired: null
     - slug: italian-study-visa
       name:
@@ -73,6 +82,9 @@ documents:
           status: draft
         en:
           text: Italian visa for study
+          status: draft
+        ar:
+          text: تأشيرة الدراسة الإيطالية
           status: draft
       translationRequired: null
   source: page-1
@@ -98,6 +110,9 @@ requirements:
         en:
           text: The level and requirements of the English and/or Italian language certificate are specified on the specific course web page; verify them.
           status: draft
+        ar:
+          text: مستوى شهادة اللغة الإنجليزية و/أو الإيطالية وشروطها مذكوران في صفحة الويب الخاصة بالدورة الدراسية المعنية؛ تحقق منهما.
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -108,6 +123,9 @@ requirements:
           status: draft
         en:
           text: Diplomas and exam certificates must be accompanied by a professional translation into Italian or English if necessary.
+          status: draft
+        ar:
+          text: يجب إرفاق الشهادات وإفادات نتائج الامتحانات بترجمة مهنية إلى الإيطالية أو الإنجليزية عند الحاجة.
           status: draft
 scholarships: []
 sources:

@@ -57,6 +57,9 @@ documents:
         en:
           text: University entrance qualification
           status: draft
+        ar:
+          text: شهادة التأهيل للدخول إلى الجامعة
+          status: draft
       translationRequired: null
     - slug: certificate-for-a-university-entrance-qualification
       name:
@@ -65,6 +68,9 @@ documents:
           status: draft
         en:
           text: Certificate for a university entrance qualification
+          status: draft
+        ar:
+          text: شهادة التأهيل للدخول إلى الجامعة
           status: draft
       translationRequired: null
   source: page-1

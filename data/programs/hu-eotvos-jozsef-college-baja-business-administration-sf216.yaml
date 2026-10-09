@@ -47,6 +47,9 @@ documents:
         en:
           text: Secondary school leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: english-language-certificate
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: English language certificate
+          status: draft
+        ar:
+          text: شهادة في اللغة الإنجليزية
           status: draft
       translationRequired: null
     - slug: application-form
@@ -65,6 +71,9 @@ documents:
         en:
           text: Completed application form
           status: draft
+        ar:
+          text: استمارة التقديم مملوءة
+          status: draft
       translationRequired: null
     - slug: passport
       name:
@@ -73,6 +82,9 @@ documents:
           status: draft
         en:
           text: Passport
+          status: draft
+        ar:
+          text: جواز السفر
           status: draft
       translationRequired: null
     - slug: medical-certificate
@@ -83,6 +95,9 @@ documents:
         en:
           text: Medical certificate
           status: draft
+        ar:
+          text: شهادة طبية
+          status: draft
       translationRequired: null
     - slug: police-clearance-certificate
       name:
@@ -91,6 +106,9 @@ documents:
           status: draft
         en:
           text: Police clearance certificate
+          status: draft
+        ar:
+          text: شهادة من الشرطة / السجل العدلي
           status: draft
       translationRequired: null
   source: page-2
@@ -111,6 +129,9 @@ requirements:
         en:
           text: "Admission: online Mathematics test (min. 50%) then an online interview (language and motivation). Admission threshold: 60 points."
           status: draft
+        ar:
+          text: "القبول: اختبار رياضيات عبر الإنترنت (50% كحد أدنى) ثم مقابلة عبر الإنترنت (اللغة والدافع). عتبة القبول: 60 نقطة."
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -121,6 +142,9 @@ requirements:
           status: draft
         en:
           text: Passport must be valid for at least 5 years. Documents may be submitted as clear scanned copies.
+          status: draft
+        ar:
+          text: "جواز السفر: يجب أن يكون ساري المفعول 5 سنوات على الأقل. ويمكن إرسال الوثائق في شكل نسخ ممسوحة ضوئيًا وواضحة."
           status: draft
 scholarships: []
 sources:

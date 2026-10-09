@@ -49,6 +49,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: page-3
   info_kind: official
@@ -68,6 +71,9 @@ requirements:
         en:
           text: "Check the admission requirements: a Dutch havo, vwo or mbo-4 diploma is required, or an admission assessment if you are 21 or older without such a diploma."
           status: draft
+        ar:
+          text: "تحقق من شروط القبول: تُطلب شهادة هولندية havo أو vwo أو mbo-4، أو امتحان قبول إن كان عمرك 21 سنة أو أكثر ولا تملك هذه الشهادة."
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -78,6 +84,9 @@ requirements:
           status: draft
         en:
           text: Check with the institution which tuition fee (instellingscollegegeld) applies to you as a non-EEA student with a foreign diploma, as the published fees vary by status.
+          status: draft
+        ar:
+          text: تحقق لدى المؤسسة من تعرفة الرسوم الدراسية (instellingscollegegeld) التي تنطبق عليك بصفتك طالبًا من خارج المنطقة الاقتصادية الأوروبية (EEE) بشهادة أجنبية، لأن الرسوم المنشورة تختلف حسب وضع الطالب.
           status: draft
 scholarships: []
 sources:

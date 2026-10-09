@@ -50,6 +50,9 @@ documents:
         en:
           text: Secondary school transcripts
           status: draft
+        ar:
+          text: كشوف نقاط التعليم الثانوي
+          status: draft
       translationRequired: null
     - slug: english-language-proficiency-test
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: English language proficiency test
+          status: draft
+        ar:
+          text: اختبار الكفاءة في اللغة الإنجليزية
           status: draft
       translationRequired: null
     - slug: activities-summary
@@ -68,6 +74,9 @@ documents:
         en:
           text: Activities summary
           status: draft
+        ar:
+          text: ملخص الأنشطة
+          status: draft
       translationRequired: null
     - slug: personal-essays-and-wbb-writing-supplement
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Personal essays and WBB writing supplement
+          status: draft
+        ar:
+          text: مقالات شخصية وملحق التقديم WBB
           status: draft
       translationRequired: null
     - slug: counselor-or-teacher-recommendation-letters
@@ -86,6 +98,9 @@ documents:
         en:
           text: Counselor or teacher recommendation letters
           status: draft
+        ar:
+          text: رسائل توصية من مستشار التوجيه أو من أحد الأساتذة
+          status: draft
       translationRequired: null
     - slug: financial-statement
       name:
@@ -94,6 +109,9 @@ documents:
           status: draft
         en:
           text: Financial statement
+          status: draft
+        ar:
+          text: إفادة مالية
           status: draft
       translationRequired: null
   source: page-1

@@ -15,6 +15,9 @@ summary:
   en:
     text: Regional scholarship managed by ARDIS for students at universities in Friuli Venezia Giulia. Non-EU students whose families live abroad obtain an equivalent university ISEE (ISEE parificato) from a CAF under agreement (CAF convenzionato).
     status: draft
+  ar:
+    text: منحة جهوية تديرها ARDIS لطلبة جامعات فريولي فينيتسيا جوليا. ويحصل الطلبة غير الأوروبيين الذين تعيش أسرهم في الخارج على ISEE جامعي معادل (ISEE parificato) لدى CAF متعاقد.
+    status: draft
 support:
   value: null
   source: page-1
@@ -38,6 +41,9 @@ howToApply:
     status: draft
   en:
     text: Apply online through the ARDIS website every academic year. Non-EU students not resident in Italy who hold only a foreign identity document identify themselves through a separate procedure set out in the call.
+    status: draft
+  ar:
+    text: الطلب عبر الإنترنت على موقع ARDIS كل سنة. أما الطلبة غير الأوروبيين غير المقيمين في إيطاليا والذين لا يملكون سوى وثيقة هوية أجنبية، فيتم التحقق من هويتهم وفق إجراء منفصل ينص عليه إعلان المنحة.
     status: draft
 officialUrl: https://www.ardis.fvg.it/upload/schede/1784105330.pdf
 sources:

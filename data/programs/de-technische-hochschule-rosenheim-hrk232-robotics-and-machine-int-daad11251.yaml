@@ -54,6 +54,9 @@ documents:
         en:
           text: school-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: university-entrance-qualification-certificate
       name:
@@ -62,6 +65,9 @@ documents:
           status: draft
         en:
           text: Certificate for a university entrance qualification
+          status: draft
+        ar:
+          text: شهادة التأهيل للدخول إلى الجامعة
           status: draft
       translationRequired: null
   source: page-1

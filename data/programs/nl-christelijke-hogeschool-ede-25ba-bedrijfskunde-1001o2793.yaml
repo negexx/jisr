@@ -52,6 +52,9 @@ documents:
         en:
           text: school-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: transcript-of-records
       name:
@@ -61,6 +64,9 @@ documents:
         en:
           text: Transcript of records
           status: draft
+        ar:
+          text: كشف النقاط
+          status: draft
       translationRequired: null
     - slug: passport
       name:
@@ -69,6 +75,9 @@ documents:
           status: draft
         en:
           text: Passport
+          status: draft
+        ar:
+          text: جواز السفر
           status: draft
       translationRequired: null
   source: page-2
@@ -89,6 +98,9 @@ requirements:
         en:
           text: Check whether your Moroccan diploma (Baccalauréat) is recognised as equivalent to a Dutch diploma (havo, vwo, mbo level 4); an evaluation by Nuffic may be required.
           status: draft
+        ar:
+          text: تحقق مما إذا كانت شهادتك المغربية (البكالوريا) معترفًا بها كمعادلة لشهادة هولندية (havo أو vwo أو mbo من المستوى 4)؛ وقد يلزم تقييم من Nuffic.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -100,6 +112,9 @@ requirements:
         en:
           text: If you do not have the required prior education but are 21 or older, you can take an admission examination organised by the institution (toelatingsonderzoek).
           status: draft
+        ar:
+          text: إذا لم تكن لديك الشهادة المطلوبة وكان عمرك 21 سنة أو أكثر، يمكنك اجتياز امتحان القبول الذي تنظمه المؤسسة (toelatingsonderzoek).
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -110,6 +125,9 @@ requirements:
           status: draft
         en:
           text: As a non-EU national, you must apply by 1 May and provide the required documents; a visa or residence permit may be required.
+          status: draft
+        ar:
+          text: بصفتك من مواطني بلد خارج الاتحاد الأوروبي (UE)، عليك طلب تسجيلك قبل 1 مايو وتقديم الوثائق المطلوبة؛ وقد تكون هناك حاجة إلى تأشيرة أو رخصة إقامة.
           status: draft
 scholarships: []
 sources:

@@ -60,6 +60,9 @@ requirements:
         en:
           text: Admission involves an online oral interview and an entrance examination; the portfolio and motivation letter are assessed by the admission committee.
           status: draft
+        ar:
+          text: يتم القبول عبر مقابلة شفوية عبر الإنترنت وامتحان دخول؛ وتقيّم لجنة القبول ملف الأعمال (portfolio) والرسالة التحفيزية.
+          status: draft
     - id: req-2
       source: page-4
       info_kind: official
@@ -70,6 +73,9 @@ requirements:
           status: draft
         en:
           text: The high school diploma can be accepted in English; official translations accompanied by verified copies may be required.
+          status: draft
+        ar:
+          text: يمكن قبول شهادة الدراسة الثانوية بالإنجليزية؛ وقد تُطلب ترجمات رسمية مرفقة بنسخ مصادق عليها.
           status: draft
 scholarships: []
 sources:

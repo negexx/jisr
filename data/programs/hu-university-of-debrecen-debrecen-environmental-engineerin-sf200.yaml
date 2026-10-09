@@ -57,6 +57,9 @@ requirements:
         en:
           text: "Applicants must pass written and oral entrance exams in mathematics and physics or chemistry. Results: 75%+ admission; 60-75% preparatory programme."
           status: draft
+        ar:
+          text: "على المتقدمين النجاح في امتحانات دخول كتابية وشفوية في الرياضيات وفي الفيزياء أو الكيمياء. النتائج: 75 % فأكثر = قبول؛ 60-75 % = برنامج تحضيري."
+          status: draft
 scholarships: []
 sources:
   programme:

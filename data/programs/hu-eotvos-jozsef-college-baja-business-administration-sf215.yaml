@@ -47,6 +47,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: english-language-certificate
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: English language certificate or international language exam result
+          status: draft
+        ar:
+          text: شهادة في اللغة الإنجليزية أو نتيجة امتحان دولي
           status: draft
       translationRequired: null
     - slug: application-form
@@ -65,6 +71,9 @@ documents:
         en:
           text: Completed application form
           status: draft
+        ar:
+          text: استمارة التقديم مملوءة
+          status: draft
       translationRequired: null
     - slug: passport
       name:
@@ -73,6 +82,9 @@ documents:
           status: draft
         en:
           text: Passport with at least 5 years validity
+          status: draft
+        ar:
+          text: جواز سفر صالح لمدة 5 سنوات على الأقل
           status: draft
       translationRequired: null
     - slug: medical-certificate
@@ -83,6 +95,9 @@ documents:
         en:
           text: Medical certificate
           status: draft
+        ar:
+          text: شهادة طبية
+          status: draft
       translationRequired: null
     - slug: police-clearance-certificate
       name:
@@ -91,6 +106,9 @@ documents:
           status: draft
         en:
           text: Police clearance certificate
+          status: draft
+        ar:
+          text: شهادة حسن السلوك
           status: draft
       translationRequired: null
   source: page-3
@@ -111,6 +129,9 @@ requirements:
         en:
           text: "All applicants must take part in an online admission process: a Mathematics test requiring at least 50%, then an online interview. Minimum admission score is 60 points; below 60 points the application is rejected."
           status: draft
+        ar:
+          text: "يجب على جميع المتقدمين المشاركة في مسار قبول عبر الإنترنت: اختبار في الرياضيات يشترط الحصول على 50% على الأقل، ثم مقابلة عبر الإنترنت. الحد الأدنى للقبول هو 60 نقطة؛ وما دون ذلك يُرفض الطلب."
+          status: draft
     - id: req-2
       source: page-3
       info_kind: official
@@ -121,6 +142,9 @@ requirements:
           status: draft
         en:
           text: Monthly maintenance allowance of 43,700 HUF for Stipendium Hungaricum scholarship holders; the amount does not cover the full cost of living.
+          status: draft
+        ar:
+          text: مخصص شهري قدره 43 700 HUF للحاصلين على منحة Stipendium Hungaricum؛ ولا يغطي هذا المبلغ كامل تكاليف المعيشة.
           status: draft
 scholarships: []
 sources:

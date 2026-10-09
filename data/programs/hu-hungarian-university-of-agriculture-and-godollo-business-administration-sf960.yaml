@@ -68,6 +68,9 @@ requirements:
         en:
           text: An online oral (Skype) entrance interview assesses motivation, professional background and language skills. Prepare for this entrance examination.
           status: draft
+        ar:
+          text: تقيّم مقابلة شفوية عبر الإنترنت (Skype) الدافع والمسار والكفاءات اللغوية. استعد لامتحان الدخول هذا.
+          status: draft
 scholarships: []
 sources:
   programme:

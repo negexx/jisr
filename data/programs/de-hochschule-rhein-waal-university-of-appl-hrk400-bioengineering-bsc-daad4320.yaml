@@ -50,6 +50,9 @@ documents:
         en:
           text: Proof of English language proficiency
           status: draft
+        ar:
+          text: شهادة الكفاءة في اللغة الإنجليزية
+          status: draft
       translationRequired: null
   source: page-1
   info_kind: official
@@ -78,6 +81,9 @@ requirements:
           status: draft
         en:
           text: Check the specific admission requirements for Morocco and uni-assist requirements.
+          status: draft
+        ar:
+          text: تحقق من شروط الالتحاق الخاصة بالمغرب ومن متطلبات uni-assist.
           status: draft
 scholarships: []
 sources:

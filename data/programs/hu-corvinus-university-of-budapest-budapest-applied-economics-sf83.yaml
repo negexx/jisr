@@ -70,6 +70,9 @@ requirements:
         en:
           text: An online written mathematics entrance exam is required; you can also present an accepted qualification (AP, SAT, ACT, IB, A-level, etc.).
           status: draft
+        ar:
+          text: امتحان الدخول الكتابي في الرياضيات عبر الإنترنت إلزامي؛ ويمكنك أيضًا تقديم مؤهل مقبول (AP أو SAT أو ACT أو IB أو A-level، إلخ).
+          status: draft
 scholarships: []
 sources:
   programme:

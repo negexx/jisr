@@ -53,6 +53,9 @@ documents:
         en:
           text: Passport
           status: draft
+        ar:
+          text: جواز السفر
+          status: draft
       translationRequired: null
     - slug: high-school-diploma
       name:
@@ -62,6 +65,9 @@ documents:
         en:
           text: High-school diploma
           status: draft
+        ar:
+          text: شهادة الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: photo
       name:
@@ -70,6 +76,9 @@ documents:
           status: draft
         en:
           text: Photo
+          status: draft
+        ar:
+          text: صورة
           status: draft
       translationRequired: null
   source: page-3
@@ -95,6 +104,9 @@ requirements:
         en:
           text: Limited access with entrance exam; check admission procedures and tests with the programme.
           status: draft
+        ar:
+          text: الولوج محدود مع امتحان دخول؛ تحقق من طرق القبول واختباراته لدى البرنامج.
+          status: draft
     - id: req-3
       source: page-3
       info_kind: official
@@ -105,6 +117,9 @@ requirements:
           status: draft
         en:
           text: Check with the university the documents required for legalization, translation and CIMEA depending on the country of the diploma.
+          status: draft
+        ar:
+          text: تحقق لدى الجامعة من الوثائق المطلوبة للتصديق والترجمة وCIMEA حسب بلد الشهادة.
           status: draft
 scholarships: []
 sources:

@@ -53,6 +53,9 @@ documents:
         en:
           text: Final secondary school qualification obtained after at least 12 years of schooling
           status: draft
+        ar:
+          text: الشهادة النهائية للدراسة الثانوية المحصَّل عليها بعد 12 سنة دراسية على الأقل
+          status: draft
       translationRequired: null
     - slug: cimea-statement-or-declaration-of-value
       name:
@@ -61,6 +64,9 @@ documents:
           status: draft
         en:
           text: CIMEA statement or Declaration of value, if the institution asks for it
+          status: draft
+        ar:
+          text: إفادة CIMEA أو بيان القيمة، إذا طلبته المؤسسة
           status: draft
       translationRequired: null
     - slug: university-entrance-aptitude-certificate
@@ -71,6 +77,9 @@ documents:
         en:
           text: Certificate of passing the academic aptitude test for university entrance in the home country, where one exists
           status: draft
+        ar:
+          text: شهادة النجاح في اختبار الكفاءة الأكاديمية للولوج إلى الجامعة في بلد المنشأ، إن وُجد هذا الاختبار
+          status: draft
       translationRequired: null
     - slug: italian-translation-of-documents
       name:
@@ -79,6 +88,9 @@ documents:
           status: draft
         en:
           text: Italian translations of the documents above, where the institution asks for them
+          status: draft
+        ar:
+          text: ترجمات الوثائق أعلاه إلى الإيطالية، إذا طلبتها المؤسسة
           status: draft
       translationRequired: null
   source: page-5
@@ -104,6 +116,9 @@ requirements:
         en:
           text: Check that your Moroccan Baccalauréat (12 years of schooling) is recognised as suitable and grants access to an analogous programme in Italy; contact the International Desk if in doubt.
           status: draft
+        ar:
+          text: تحقق من أن شهادة البكالوريا المغربية (12 سنة دراسة) معترف بها كشهادة مناسبة وتتيح الالتحاق ببرنامج مماثل في إيطاليا؛ تواصل مع International Desk عند الشك.
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -114,6 +129,9 @@ requirements:
           status: draft
         en:
           text: Prepare the original diploma translated with confirmation of authenticity and the documentation on the value of the qualification; submit the pre-enrolment application and apply for a study visa.
+          status: draft
+        ar:
+          text: حضّر الشهادة الأصلية مترجمة مع تصديق يثبت صحتها والوثائق الخاصة بقيمة الشهادة؛ ثم قم بالتسجيل المسبق واطلب تأشيرة الدراسة.
           status: draft
 scholarships: []
 sources:

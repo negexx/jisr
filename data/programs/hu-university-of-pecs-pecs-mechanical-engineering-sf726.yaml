@@ -60,6 +60,9 @@ requirements:
         en:
           text: "An online oral entrance examination is required. See the selection process: https://english.mik.pte.hu/selection-process"
           status: draft
+        ar:
+          text: "يُشترط امتحان دخول شفوي عبر الإنترنت. راجع إجراء الانتقاء: https://english.mik.pte.hu/selection-process"
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -71,6 +74,9 @@ requirements:
         en:
           text: A High School Certificate is required.
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية مطلوبة.
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -81,6 +87,9 @@ requirements:
           status: draft
         en:
           text: An application fee of 150 USD (non-refundable) applies.
+          status: draft
+        ar:
+          text: تُطبَّق رسوم تقديم قدرها 150 USD (غير قابلة للاسترداد).
           status: draft
 scholarships: []
 sources:

@@ -15,6 +15,9 @@ summary:
   en:
     text: Right-to-study scholarship of the University of Milano-Bicocca for its students. The contest is open to students from non-EU countries; students resident abroad can upload their documents for the ISEE.
     status: draft
+  ar:
+    text: منحة الحق في الدراسة من جامعة ميلانو-بيكوكا (Milano-Bicocca) لطلبتها. والمسابقة مفتوحة لطلبة بلدان من خارج الاتحاد الأوروبي (UE)؛ ويمكن لمن يقيمون في الخارج رفع وثائقهم الخاصة بـ ISEE.
+    status: draft
 support:
   value: null
   source: page-1
@@ -38,6 +41,9 @@ howToApply:
     status: draft
   en:
     text: Apply online on the University's right-to-study portal; students resident abroad can upload their ISEE documents. To access the scholarship in the first year, a minimum high-school final grade is required.
+    status: draft
+  ar:
+    text: التقديم عبر الإنترنت على بوابة الحق في الدراسة التابعة للجامعة؛ ويمكن للطلبة المقيمين في الخارج رفع وثائقهم الخاصة بـ ISEE. وللحصول على المنحة في السنة الأولى، تُشترط علامة دنيا في شهادة نهاية الدراسة الثانوية.
     status: draft
 officialUrl: https://www.unimib.it/studiare/servizi-studenti-e-laureati/diritto-allo-studio-contribuzione-studentesca-150-ore
 sources:

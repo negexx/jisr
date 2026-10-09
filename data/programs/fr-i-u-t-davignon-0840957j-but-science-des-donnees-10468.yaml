@@ -53,6 +53,9 @@ documents:
         en:
           text: Identity photo
           status: draft
+        ar:
+          text: صورة شخصية
+          status: draft
       translationRequired: null
     - slug: identity-document
       name:
@@ -61,6 +64,9 @@ documents:
           status: draft
         en:
           text: Identity document (national ID card, passport, residence permit or receipt)
+          status: draft
+        ar:
+          text: وثيقة هوية (البطاقة الوطنية أو جواز السفر أو بطاقة الإقامة أو وصل إيداع طلب بطاقة الإقامة)
           status: draft
       translationRequired: null
     - slug: school-leaving-certificate
@@ -71,6 +77,9 @@ documents:
         en:
           text: Baccalaureate diploma (if you already hold the Bac)
           status: draft
+        ar:
+          text: شهادة البكالوريا (إذا كنت قد حصلت عليها بالفعل)
+          status: draft
       translationRequired: null
     - slug: transcript-of-secondary-school-studies
       name:
@@ -79,6 +88,9 @@ documents:
           status: draft
         en:
           text: Grade transcripts (national and regional if you hold the Bac; otherwise common core, then first year of the Bac and regional)
+          status: draft
+        ar:
+          text: كشوف النقاط (كشف الامتحان الوطني وكشف الامتحان الجهوي إذا كنت حاصلًا على البكالوريا؛ وإلا فكشف الجذع المشترك، ثم كشف السنة الأولى من البكالوريا وكشف الامتحان الجهوي)
           status: draft
       translationRequired: null
     - slug: school-enrolment-certificate
@@ -89,6 +101,9 @@ documents:
         en:
           text: School or programme enrolment certificate for the current year (if you are still at the lycée or in a programme)
           status: draft
+        ar:
+          text: شهادة مدرسية للسنة الحالية (إذا كنت لا تزال تدرس في الثانوية أو تتابع تكوينًا)
+          status: draft
       translationRequired: null
     - slug: french-language-certificate
       name:
@@ -97,6 +112,9 @@ documents:
           status: draft
         en:
           text: French language certificate (TCF, DELF B2 or DALF), unless exempt; a convocation to a session is accepted
+          status: draft
+        ar:
+          text: شهادة في اللغة الفرنسية (TCF أو DELF B2 أو DALF)، إلا في حالات الإعفاء؛ ويُقبل كذلك الاستدعاء لحضور دورة الامتحان
           status: draft
       translationRequired: null
   source: page-1
@@ -151,6 +169,9 @@ requirements:
         en:
           text: "No specific diploma (e.g. the Moroccan Baccalauréat) is named on the pages: check that your secondary-school leaving certificate allows applying for the BUT via the Études en France procedure (Campus France Morocco platform)."
           status: draft
+        ar:
+          text: "لا تذكر الصفحات شهادة محددة (مثل البكالوريا المغربية): تحقق من أن شهادة نهاية دراستك الثانوية تتيح التقديم إلى BUT عبر إجراء Études en France (منصة Campus France Maroc)."
+          status: draft
     - id: req-5
       source: programme
       info_kind: official
@@ -161,6 +182,9 @@ requirements:
           status: draft
         en:
           text: "Selection is based on the application file: academic results, working methods, behaviour, motivation and the training project are assessed (grid of 30%, 30%, 25%, 12%, 3%). No grade threshold is published: check the criteria on the Parcoursup sheet and prepare a well-argued training project."
+          status: draft
+        ar:
+          text: "يتم الانتقاء بدراسة الملف: تُقيَّم النتائج الدراسية وأساليب العمل والكفاءات السلوكية والدافعية ومشروع التكوين (شبكة 30 %، 30 %، 25 %، 12 %، 3 %). لا تُنشر أي عتبة للعلامات: تحقق من المعايير في صفحة Parcoursup وأعدّ مشروع تكوين معللًا."
           status: draft
     - id: req-6
       source: page-4
@@ -173,6 +197,9 @@ requirements:
         en:
           text: Applications via Études en France are assessed by the ADIUT Maroc programme, with a 2026-2027 calendar to be published later.
           status: draft
+        ar:
+          text: تُقيَّم الطلبات المقدمة عبر Études en France من طرف برنامج ADIUT Maroc، على أن يُراجَع جدول 2026-2027 لاحقًا.
+          status: draft
     - id: req-7
       source: page-6
       info_kind: official
@@ -183,6 +210,9 @@ requirements:
           status: draft
         en:
           text: A Campus France interview may be part of the Études en France procedure.
+          status: draft
+        ar:
+          text: قد تُنظَّم مقابلة مع كامبوس فرانس (Campus France) ضمن إجراء التقديم الخاص بـ Études en France.
           status: draft
 scholarships: []
 sources:

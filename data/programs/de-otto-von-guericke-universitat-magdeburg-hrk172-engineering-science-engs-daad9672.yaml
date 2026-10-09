@@ -56,6 +56,9 @@ documents:
         en:
           text: Secondary school leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: true
   source: page-3
   info_kind: official
@@ -84,6 +87,9 @@ requirements:
           status: draft
         en:
           text: Check the language requirement exemptions and detailed admission requirements on the programme website.
+          status: draft
+        ar:
+          text: تحقق من الإعفاءات من شروط اللغة ومن شروط القبول المفصلة في موقع البرنامج.
           status: draft
 scholarships: []
 sources:

@@ -15,6 +15,9 @@ summary:
   en:
     text: Right-to-study scholarship of the University of Brescia for its students. Students not resident in Italy or with income abroad go to a CAAF under agreement with the University.
     status: draft
+  ar:
+    text: منحة الحق في الدراسة من جامعة بريشيا لطلبتها. ويتوجه الطلبة غير المقيمين في إيطاليا أو الذين لديهم دخل في الخارج إلى CAAF متعاقد مع الجامعة.
+    status: draft
 support:
   value: null
   source: page-1
@@ -38,6 +41,9 @@ howToApply:
     status: draft
   en:
     text: Apply online through the University website and confirm before the call's deadline. Students with income outside Italy go to an affiliated CAAF, using documents from the country of income translated into Italian.
+    status: draft
+  ar:
+    text: الطلب عبر الإنترنت على موقع الجامعة، مع تأكيده قبل الموعد النهائي المحدد في إعلان المنحة. ويتوجه الطلبة الذين لهم دخل خارج إيطاليا إلى CAAF معتمد، بوثائق من بلد الدخل مترجمة إلى الإيطالية.
     status: draft
 officialUrl: https://www.unibs.it/it/Bando-borse-di-studio-DSU-e-servizi%20AA%202026-2027
 sources:

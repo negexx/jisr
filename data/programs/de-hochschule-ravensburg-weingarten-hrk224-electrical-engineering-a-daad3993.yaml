@@ -57,6 +57,9 @@ documents:
         en:
           text: University Entrance Qualification
           status: draft
+        ar:
+          text: شهادة الولوج إلى التعليم العالي
+          status: draft
       translationRequired: null
     - slug: english-language-certificate
       name:
@@ -65,6 +68,9 @@ documents:
           status: draft
         en:
           text: English Language Certificate
+          status: draft
+        ar:
+          text: شهادة الكفاءة في اللغة الإنجليزية
           status: draft
       translationRequired: null
     - slug: curriculum-vitae
@@ -75,6 +81,9 @@ documents:
         en:
           text: Curriculum Vitae
           status: draft
+        ar:
+          text: السيرة الذاتية
+          status: draft
       translationRequired: null
     - slug: passport-copy
       name:
@@ -83,6 +92,9 @@ documents:
           status: draft
         en:
           text: Copy of your Passport
+          status: draft
+        ar:
+          text: نسخة من جواز السفر
           status: draft
       translationRequired: null
   source: page-1

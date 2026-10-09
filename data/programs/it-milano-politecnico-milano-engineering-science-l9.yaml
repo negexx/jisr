@@ -47,6 +47,9 @@ documents:
         en:
           text: Final secondary school qualification obtained after at least 12 years of schooling
           status: draft
+        ar:
+          text: الشهادة النهائية للدراسة الثانوية المحصَّل عليها بعد 12 سنة دراسية على الأقل
+          status: draft
       translationRequired: null
     - slug: cimea-statement-or-declaration-of-value
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: CIMEA statement or Declaration of value, if the institution asks for it
+          status: draft
+        ar:
+          text: إفادة CIMEA أو بيان القيمة، إذا طلبته المؤسسة
           status: draft
       translationRequired: null
     - slug: university-entrance-aptitude-certificate
@@ -65,6 +71,9 @@ documents:
         en:
           text: Certificate of passing the academic aptitude test for university entrance in the home country, where one exists
           status: draft
+        ar:
+          text: شهادة النجاح في اختبار الكفاءة الأكاديمية للولوج إلى الجامعة في بلد المنشأ، إن وُجد هذا الاختبار
+          status: draft
       translationRequired: null
     - slug: italian-translation-of-documents
       name:
@@ -73,6 +82,9 @@ documents:
           status: draft
         en:
           text: Italian translations of the documents above, where the institution asks for them
+          status: draft
+        ar:
+          text: ترجمات الوثائق أعلاه إلى الإيطالية، إذا طلبتها المؤسسة
           status: draft
       translationRequired: null
   source: page-3
@@ -93,6 +105,9 @@ requirements:
         en:
           text: Politecnico requires the school-leaving certificate to be accompanied by an official translation if the document is not in Italian, English, French or Spanish.
           status: draft
+        ar:
+          text: يشترط Politecnico أن تكون شهادة نهاية الدراسة الثانوية مرفقة بترجمة رسمية إذا لم تكن الوثيقة بالإيطالية أو الإنجليزية أو الفرنسية أو الإسبانية.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -104,6 +119,9 @@ requirements:
         en:
           text: The final school-leaving certificate must be uploaded via the Online Services by 10 September 2026 at the latest.
           status: draft
+        ar:
+          text: يجب رفع شهادة نهاية الدراسة الثانوية النهائية عبر الخدمات الإلكترونية (Services en ligne) في موعد أقصاه 10 سبتمبر 2026.
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -114,6 +132,9 @@ requirements:
           status: draft
         en:
           text: A Declaration of Value, Certificate Supplement, CIMEA Statement of Comparability or CIMEA Statement of Correspondence must be uploaded by 31 October 2026.
+          status: draft
+        ar:
+          text: يجب رفع بيان القيمة (Dichiarazione di valore) أو ملحق الشهادة أو إفادة المقارنة الصادرة عن CIMEA أو إفادة المطابقة الصادرة عن CIMEA، وذلك قبل 31 أكتوبر 2026.
           status: draft
 scholarships: []
 sources:

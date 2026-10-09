@@ -50,6 +50,9 @@ documents:
         en:
           text: Transcript
           status: draft
+        ar:
+          text: كشف النقاط
+          status: draft
       translationRequired: true
   source: page-2
   info_kind: official
@@ -68,6 +71,9 @@ requirements:
           status: draft
         en:
           text: Online mathematics test and admission interview are required.
+          status: draft
+        ar:
+          text: اختبار الرياضيات عبر الإنترنت ومقابلة القبول إلزاميان.
           status: draft
 scholarships: []
 sources:

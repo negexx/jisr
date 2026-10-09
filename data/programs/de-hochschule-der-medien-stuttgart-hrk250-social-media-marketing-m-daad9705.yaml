@@ -66,6 +66,9 @@ requirements:
         en:
           text: A mandatory entrance exam (application form, English proficiency test and online interview) must be passed before you may apply; it accounts for 70% of the ranking and the school leaving certificate for 30%.
           status: draft
+        ar:
+          text: يجب اجتياز امتحان دخول إلزامي (استمارة التقديم واختبار في الإنجليزية ومقابلة عبر الإنترنت) قبل إمكانية إيداع الطلب؛ ويساهم بنسبة 70% في الترتيب، وشهادة نهاية الدراسة الثانوية بنسبة 30%.
+          status: draft
     - id: req-2
       source: page-3
       info_kind: official
@@ -76,6 +79,9 @@ requirements:
           status: draft
         en:
           text: International applicants without a German higher education entrance qualification must have their certificate recognised by the Studienkolleg Konstanz (certificate of recognition to be submitted by 15 July).
+          status: draft
+        ar:
+          text: على المتقدمين الدوليين الذين لا يملكون شهادة ألمانية تتيح دخول التعليم العالي أن يحصلوا على اعتراف Studienkolleg Konstanz بشهادتهم (تُقدَّم شهادة الاعتراف قبل 15 يوليو).
           status: draft
     - id: req-3
       source: page-3
@@ -88,6 +94,9 @@ requirements:
         en:
           text: International applicants without a German higher education entrance qualification must apply for entrance exam (Round 1).
           status: draft
+        ar:
+          text: على المتقدمين الدوليين الذين لا يملكون شهادة ألمانية أن يجتازوا امتحان الدخول في الجولة 1 (Round 1).
+          status: draft
     - id: req-4
       source: page-3
       info_kind: official
@@ -98,6 +107,9 @@ requirements:
           status: draft
         en:
           text: You will need a visa and proof of sufficient funds (blocked account) to study in Germany.
+          status: draft
+        ar:
+          text: يجب الاستعداد لتأشيرة وإثبات للموارد المالية (حساب محجوز) من أجل الدراسة في ألمانيا.
           status: draft
 scholarships: []
 sources:

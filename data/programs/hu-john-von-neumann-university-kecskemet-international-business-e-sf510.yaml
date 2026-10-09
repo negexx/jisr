@@ -50,6 +50,9 @@ documents:
         en:
           text: Secondary school certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: true
     - slug: school-transcript
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: Secondary school transcript
+          status: draft
+        ar:
+          text: كشف نقاط الدراسة الثانوية
           status: draft
       translationRequired: true
     - slug: cv
@@ -68,6 +74,9 @@ documents:
         en:
           text: CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: motivation-letter
       name:
@@ -77,6 +86,9 @@ documents:
         en:
           text: Motivation letter
           status: draft
+        ar:
+          text: رسالة تحفيزية
+          status: draft
       translationRequired: null
     - slug: passport
       name:
@@ -85,6 +97,9 @@ documents:
           status: draft
         en:
           text: Passport
+          status: draft
+        ar:
+          text: جواز السفر
           status: draft
       translationRequired: null
   source: page-3
@@ -112,6 +127,9 @@ requirements:
           status: draft
         en:
           text: An online oral entrance examination led by the admission committee is part of the process; prepare for it.
+          status: draft
+        ar:
+          text: تدخل مقابلة شفوية عبر الإنترنت أمام لجنة القبول ضمن الإجراء؛ حضّر لها.
           status: draft
 scholarships: []
 sources:

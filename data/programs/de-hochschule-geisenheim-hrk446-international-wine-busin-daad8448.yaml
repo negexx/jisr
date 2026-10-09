@@ -56,6 +56,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: transcript-of-records
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: Proof of study achievements
+          status: draft
+        ar:
+          text: كشف النقاط والمواد
           status: draft
       translationRequired: null
     - slug: university-entrance-examination
@@ -74,6 +80,9 @@ documents:
         en:
           text: Proof of university entrance examination
           status: draft
+        ar:
+          text: إثبات امتحان الدخول إلى الجامعة
+          status: draft
       translationRequired: null
     - slug: passport-copy
       name:
@@ -83,6 +92,9 @@ documents:
         en:
           text: Copy of your passport
           status: draft
+        ar:
+          text: نسخة من جواز السفر
+          status: draft
       translationRequired: null
     - slug: curriculum-vitae
       name:
@@ -91,6 +103,9 @@ documents:
           status: draft
         en:
           text: Curriculum vitae
+          status: draft
+        ar:
+          text: السيرة الذاتية
           status: draft
       translationRequired: null
   source: page-3
@@ -111,6 +126,9 @@ requirements:
         en:
           text: Check that the English certificate (TOEFL min. 80, IELTS min. 5.5 or Cambridge FCE min. grade C) is accepted and attach the proof.
           status: draft
+        ar:
+          text: تحقق من قبول شهادة الإنجليزية (TOEFL بحد أدنى 80، أو IELTS بحد أدنى 5.5، أو Cambridge FCE بعلامة C على الأقل) وأرفق الإثبات.
+          status: draft
     - id: req-2
       source: page-3
       info_kind: official
@@ -122,6 +140,9 @@ requirements:
         en:
           text: Check whether your Moroccan Baccalaureate is recognized as a direct or indirect HZB (anabin or DAAD database) and provide the required documents.
           status: draft
+        ar:
+          text: تحقق مما إذا كانت شهادة البكالوريا المغربية معترفًا بها كـ HZB مباشر أو غير مباشر (anabin أو قاعدة بيانات DAAD) وقدّم الوثائق المطلوبة.
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -132,6 +153,9 @@ requirements:
           status: draft
         en:
           text: A 12-week pre-study internship must be completed and confirmed before enrolment; provide an official certificate.
+          status: draft
+        ar:
+          text: يجب إنجاز تدريب مسبق مدته 12 أسبوعًا وتأكيده قبل التسجيل؛ وقدّم شهادة رسمية.
           status: draft
 scholarships: []
 sources:

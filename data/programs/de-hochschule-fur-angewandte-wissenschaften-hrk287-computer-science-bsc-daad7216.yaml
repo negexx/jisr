@@ -57,6 +57,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: id-passport
       name:
@@ -66,6 +69,9 @@ documents:
         en:
           text: Copy of ID or passport
           status: draft
+        ar:
+          text: نسخة من بطاقة الهوية أو جواز السفر
+          status: draft
       translationRequired: null
     - slug: vpd
       name:
@@ -74,6 +80,9 @@ documents:
           status: draft
         en:
           text: Preliminary review document (VPD) from uni-assist
+          status: draft
+        ar:
+          text: وثيقة المراجعة الأولية (VPD) من uni-assist
           status: draft
       translationRequired: null
   source: page-3
@@ -101,6 +110,9 @@ requirements:
           status: draft
         en:
           text: Your university entrance certificate acquired abroad must first be assessed by uni-assist (VPD) before application; you are advised to send documents to uni-assist at least 4 weeks before the deadline.
+          status: draft
+        ar:
+          text: يجب أولًا أن تقيّم uni-assist شهادة الولوج إلى الجامعة التي حصلت عليها في الخارج (VPD) قبل التسجيل؛ يُنصح بإرسال الوثائق إلى uni-assist قبل 4 أسابيع على الأقل من الموعد النهائي.
           status: draft
 scholarships: []
 sources:

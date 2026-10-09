@@ -50,6 +50,9 @@ documents:
         en:
           text: School Leaving Certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: page-3
   info_kind: official
@@ -78,6 +81,9 @@ requirements:
         en:
           text: "An entrance examination is required: written mathematics test and online oral English interview about the applicant's motivations."
           status: draft
+        ar:
+          text: "يُشترط امتحان دخول: اختبار كتابي في الرياضيات ومقابلة شفوية بالإنجليزية عبر الإنترنت حول دوافع المتقدم."
+          status: draft
     - id: req-3
       source: page-3
       info_kind: official
@@ -88,6 +94,9 @@ requirements:
           status: draft
         en:
           text: "Documents to upload in the online application system: original or certified copy of the school leaving certificate, in English or with a certified English translation."
+          status: draft
+        ar:
+          text: "الوثائق المطلوب رفعها في نظام التقديم عبر الإنترنت: شهادة نهاية الدراسة الثانوية في نسخة أصلية أو نسخة مصادق عليها، بالإنجليزية أو مع ترجمة إنجليزية مصادق عليها."
           status: draft
 scholarships: []
 sources:

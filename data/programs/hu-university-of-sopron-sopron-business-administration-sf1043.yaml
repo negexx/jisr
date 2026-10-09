@@ -57,6 +57,9 @@ requirements:
         en:
           text: "An online interview is part of admission: check content, date and procedure with the coordinator."
           status: draft
+        ar:
+          text: "تدخل مقابلة عبر الإنترنت ضمن القبول: تحقق من محتواها وتاريخها وإجرائها لدى المنسّق."
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: "High school diploma required: check recognition of your Moroccan Baccalauréat."
+          status: draft
+        ar:
+          text: "تُشترط شهادة الدراسة الثانوية (high school diploma): تحقق من الاعتراف بالبكالوريا المغربية الخاصة بك."
           status: draft
     - id: req-3
       source: programme
@@ -79,6 +85,9 @@ requirements:
         en:
           text: "Attestation of Language Proficiency in English if your former studies were in English: check whether it applies to you."
           status: draft
+        ar:
+          text: "إفادة الكفاءة اللغوية في الإنجليزية إذا كانت دراستك السابقة بالإنجليزية: تحقق هل تنطبق عليك."
+          status: draft
     - id: req-4
       source: programme
       info_kind: official
@@ -89,6 +98,9 @@ requirements:
           status: draft
         en:
           text: "All required application documents are checked by the faculty's coordinator: ask for the exact list."
+          status: draft
+        ar:
+          text: "يراجع منسّق الكلية جميع وثائق التقديم المطلوبة: اطلب القائمة الدقيقة."
           status: draft
 scholarships: []
 sources:

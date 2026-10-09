@@ -56,6 +56,9 @@ documents:
         en:
           text: School leaving certificate (Baccalauréat certificate / diploma)
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية (شهادة البكالوريا)
+          status: draft
       translationRequired: null
     - slug: transcript-of-secondary-school-studies
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: 'Baccalauréat grade transcript ("Relevé de Notes": overview of subjects and grades)'
+          status: draft
+        ar:
+          text: "كشف نقاط البكالوريا («Relevé de Notes»: لمحة عن المواد والعلامات)"
           status: draft
       translationRequired: null
     - slug: degree-certificate
@@ -74,6 +80,9 @@ documents:
         en:
           text: Degree certificate (only if you hold a degree from a Moroccan university)
           status: draft
+        ar:
+          text: شهادة جامعية (فقط إذا كانت لديك شهادة من جامعة مغربية)
+          status: draft
       translationRequired: null
     - slug: university-transcript-of-records
       name:
@@ -83,6 +92,9 @@ documents:
         en:
           text: Complete university transcript of all subjects and grades, issued by your university (if you have studied at a university)
           status: draft
+        ar:
+          text: كشف نقاط جامعي كامل يتضمن جميع المواد والعلامات، صادر عن الجامعة (إذا سبق لك أن درست في جامعة)
+          status: draft
       translationRequired: null
     - slug: preparatory-classes-transcript
       name:
@@ -91,6 +103,9 @@ documents:
           status: draft
         en:
           text: Transcript of records of the classes préparatoires (only if you took classes préparatoires)
+          status: draft
+        ar:
+          text: كشف نقاط الأقسام التحضيرية (فقط إذا درست في الأقسام التحضيرية)
           status: draft
       translationRequired: null
   source: page-3
@@ -121,6 +136,9 @@ requirements:
         en:
           text: Check the recognition process for your Moroccan Baccalauréat by Studienkolleg Konstanz or uni-assist (possible delays).
           status: draft
+        ar:
+          text: تحقق من إجراءات اعتراف Studienkolleg Konstanz أو uni-assist بشهادة البكالوريا المغربية (قد يستغرق ذلك وقتًا).
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -132,6 +150,9 @@ requirements:
         en:
           text: Check if you must follow the direct enrolment procedure via eCampus and meet the stated deadlines (opening is typically mid-May and closing on July 15).
           status: draft
+        ar:
+          text: تحقق مما إذا كان عليك اتباع إجراء التسجيل المباشر عبر eCampus واحترام المواعيد النهائية المذكورة (يفتح التسجيل عادةً في منتصف مايو ويُغلق في 15 يوليو).
+          status: draft
     - id: req-4
       source: page-2
       info_kind: official
@@ -142,6 +163,9 @@ requirements:
           status: draft
         en:
           text: Check the requirement to have your diploma recognised first by Studienkolleg Konstanz or uni-assist before submitting your application.
+          status: draft
+        ar:
+          text: تحقق من وجوب حصول شهادتك أولًا على الاعتراف من Studienkolleg Konstanz أو uni-assist قبل تقديم طلبك إلى الجامعة.
           status: draft
 scholarships: []
 sources:

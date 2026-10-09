@@ -57,6 +57,9 @@ requirements:
         en:
           text: Secondary school leaving certificate required, with secondary school level knowledge of mathematics and physics. Check these prerequisites in your dossier.
           status: draft
+        ar:
+          text: تُشترط شهادة الدراسة الثانوية، مع معارف بمستوى الثانوية في الرياضيات والفيزياء. تحقق من هذه الشروط المسبقة في ملفك.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: "An entrance examination is required: motivation letter and a 15-minute Skype interview. Prepare these elements."
+          status: draft
+        ar:
+          text: "يُشترط امتحان دخول: رسالة تحفيزية ومقابلة على Skype مدتها 15 دقيقة. حضّر هذين العنصرين."
           status: draft
 scholarships: []
 sources:

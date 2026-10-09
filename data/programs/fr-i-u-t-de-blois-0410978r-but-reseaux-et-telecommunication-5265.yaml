@@ -53,6 +53,9 @@ documents:
         en:
           text: Identity photo
           status: draft
+        ar:
+          text: صورة شخصية
+          status: draft
       translationRequired: null
     - slug: identity-document
       name:
@@ -61,6 +64,9 @@ documents:
           status: draft
         en:
           text: Identity document (national ID card, passport, residence permit or receipt)
+          status: draft
+        ar:
+          text: وثيقة هوية (البطاقة الوطنية أو جواز السفر أو بطاقة الإقامة أو وصل إيداع طلب بطاقة الإقامة)
           status: draft
       translationRequired: null
     - slug: school-leaving-certificate
@@ -71,6 +77,9 @@ documents:
         en:
           text: Baccalaureate diploma (if you already hold the Bac)
           status: draft
+        ar:
+          text: شهادة البكالوريا (إذا كنت قد حصلت عليها بالفعل)
+          status: draft
       translationRequired: null
     - slug: transcript-of-secondary-school-studies
       name:
@@ -79,6 +88,9 @@ documents:
           status: draft
         en:
           text: Grade transcripts (national and regional if you hold the Bac; otherwise common core, then first year of the Bac and regional)
+          status: draft
+        ar:
+          text: كشوف النقاط (كشف الامتحان الوطني وكشف الامتحان الجهوي إذا كنت حاصلًا على البكالوريا؛ وإلا فكشف الجذع المشترك، ثم كشف السنة الأولى من البكالوريا وكشف الامتحان الجهوي)
           status: draft
       translationRequired: null
     - slug: school-enrolment-certificate
@@ -89,6 +101,9 @@ documents:
         en:
           text: School or programme enrolment certificate for the current year (if you are still at the lycée or in a programme)
           status: draft
+        ar:
+          text: شهادة مدرسية للسنة الحالية (إذا كنت لا تزال تدرس في الثانوية أو تتابع تكوينًا)
+          status: draft
       translationRequired: null
     - slug: french-language-certificate
       name:
@@ -97,6 +112,9 @@ documents:
           status: draft
         en:
           text: French language certificate (TCF, DELF B2 or DALF), unless exempt; a convocation to a session is accepted
+          status: draft
+        ar:
+          text: شهادة في اللغة الفرنسية (TCF أو DELF B2 أو DALF)، إلا في حالات الإعفاء؛ ويُقبل كذلك الاستدعاء لحضور دورة الامتحان
           status: draft
       translationRequired: null
   source: page-1
@@ -151,6 +169,9 @@ requirements:
         en:
           text: "Check the compulsory written test (visit of the premises and motivation questionnaire): candidates are summoned only by email on 20 April 2026, the tests take place on 29 April 2026."
           status: draft
+        ar:
+          text: "تحقق من الإلزام باجتياز اختبار كتابي (زيارة المقرات واستبيان التحفيز): لا يُستدعى المتقدمون إلا بالبريد الإلكتروني في 20 أبريل 2026، وتُجرى الاختبارات في 29 أبريل 2026."
+          status: draft
     - id: req-5
       source: programme
       info_kind: official
@@ -162,6 +183,9 @@ requirements:
         en:
           text: Holders of a general or STI2D baccalaureate are best suited; scientific foundations in physics and mathematics and basics in computer science are expected.
           status: draft
+        ar:
+          text: الحاصلون على البكالوريا العامة أو بكالوريا STI2D هم الأنسب؛ ويُنتظر وجود أسس علمية في الفيزياء والرياضيات وأسس في المعلوميات.
+          status: draft
     - id: req-6
       source: page-5
       info_kind: official
@@ -172,6 +196,9 @@ requirements:
           status: draft
         en:
           text: Check the exact amount of the differentiated tuition fees and the possibility of a partial exemption with the university (30% of enrolled non-EU students may benefit).
+          status: draft
+        ar:
+          text: تحقق لدى الجامعة من المبلغ الدقيق لرسوم التسجيل التفاضلية (droits différenciés) ومن إمكانية الإعفاء الجزئي (يمكن أن يستفيد منه 30% من الطلبة المسجلين من خارج الاتحاد الأوروبي).
           status: draft
 scholarships: []
 sources:

@@ -50,6 +50,9 @@ documents:
         en:
           text: Secondary School Diploma
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: daad
   info_kind: official

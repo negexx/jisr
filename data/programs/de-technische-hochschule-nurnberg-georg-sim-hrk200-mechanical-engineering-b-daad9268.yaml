@@ -50,6 +50,9 @@ documents:
         en:
           text: Motivation letter
           status: draft
+        ar:
+          text: رسالة تحفيزية
+          status: draft
       translationRequired: null
     - slug: curriculum-vitae
       name:
@@ -59,6 +62,9 @@ documents:
         en:
           text: Curriculum vitae
           status: draft
+        ar:
+          text: السيرة الذاتية
+          status: draft
       translationRequired: null
     - slug: scholastic-aptitude-test
       name:
@@ -67,6 +73,9 @@ documents:
           status: draft
         en:
           text: Scholastic aptitude test
+          status: draft
+        ar:
+          text: اختبار القدرات الدراسية
           status: draft
       translationRequired: null
   source: daad

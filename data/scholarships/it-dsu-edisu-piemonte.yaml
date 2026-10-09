@@ -16,6 +16,9 @@ summary:
   en:
     text: Regional scholarship managed by EDISU Piemonte for students enrolled at Piedmont universities, including international non-EU students, who attach consular documentation translated into Italian.
     status: draft
+  ar:
+    text: منحة جهوية تديرها EDISU Piemonte للطلبة المسجلين في جامعات بيدمونت، بمن فيهم الطلبة الدوليون من خارج الاتحاد الأوروبي (UE)، الذين يرفقون وثائق قنصلية مترجمة إلى الإيطالية.
+    status: draft
 support:
   value:
     amount: null
@@ -43,6 +46,9 @@ documents:
         en:
           text: Consular documentation (household composition, income and assets abroad)
           status: draft
+        ar:
+          text: وثائق قنصلية (تكوين الأسرة والدخل والممتلكات في الخارج)
+          status: draft
       translationRequired: true
   source: page-2
   info_kind: official
@@ -52,6 +58,9 @@ howToApply:
     status: draft
   en:
     text: Apply online on the EDISU Piemonte portal; non-EU students without residence in Italy first request a Temporary Access Code and send their consular documents, translated into Italian.
+    status: draft
+  ar:
+    text: الطلب عبر الإنترنت على بوابة EDISU Piemonte؛ ويطلب الطلبة من خارج الاتحاد الأوروبي (UE) غير المقيمين في إيطاليا أولًا رمز دخول مؤقتًا، ثم يرسلون وثائقهم القنصلية مترجمة إلى الإيطالية.
     status: draft
 officialUrl: https://www.edisu.piemonte.it/en/scholarships-and-grants/financial-benefits/scholarship-and-grants
 sources:

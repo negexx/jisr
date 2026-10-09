@@ -51,6 +51,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: cv
       name:
@@ -60,6 +63,9 @@ documents:
         en:
           text: CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: passport-copy
       name:
@@ -68,6 +74,9 @@ documents:
           status: draft
         en:
           text: Copy of passport or ID card
+          status: draft
+        ar:
+          text: نسخة من جواز السفر أو من بطاقة الهوية
           status: draft
       translationRequired: null
   source: page-1

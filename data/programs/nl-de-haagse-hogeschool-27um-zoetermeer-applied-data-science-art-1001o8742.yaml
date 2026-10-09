@@ -65,6 +65,9 @@ requirements:
         en:
           text: Check whether your Moroccan Baccalauréat is deemed equivalent to a Dutch diploma granting access to higher professional education, and check the 21+ Toelatingsonderzoek arrangements if your diploma is not accepted.
           status: draft
+        ar:
+          text: تحقق مما إذا كانت شهادة البكالوريا المغربية تُعتبر معادلة لشهادة هولندية تتيح الدخول إلى التعليم المهني العالي، وتحقق من ترتيبات 21+ Toelatingsonderzoek إذا لم تكن شهادتك مقبولة.
+          status: draft
 scholarships: []
 sources:
   programme:

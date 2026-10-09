@@ -20,6 +20,9 @@ summary:
   en:
     text: Regional scholarship managed by Lazio DiSCo for students at universities in Lazio, including international students whose families live abroad, assessed through an ISEEUP (ISEE parificato).
     status: draft
+  ar:
+    text: منحة جهوية تديرها Lazio DiSCo لطلبة جامعات لاتسيو، بمن فيهم الطلبة الدوليون الذين تعيش أسرهم في الخارج، ويُقيَّمون بواسطة ISEEUP (ISEE parificato).
+    status: draft
 support:
   value: null
   source: page-1
@@ -43,6 +46,9 @@ documents:
         en:
           text: Documents issued by Italian diplomatic or consular authorities (household, income, assets)
           status: draft
+        ar:
+          text: وثائق صادرة عن السلطات الدبلوماسية أو القنصلية الإيطالية (الأسرة والدخل والممتلكات)
+          status: draft
       translationRequired: null
   source: page-1
   info_kind: official
@@ -52,6 +58,9 @@ howToApply:
     status: draft
   en:
     text: Apply only through the online form in your personal account at laziodisco.it; students whose families are abroad provide consular documents translated into Italian and legalised.
+    status: draft
+  ar:
+    text: الطلب عبر الإنترنت فقط من الفضاء الشخصي على laziodisco.it؛ ويقدّم الطلبة الذين تقيم أسرتهم في الخارج وثائق قنصلية مترجمة إلى الإيطالية ومصادَقًا عليها.
     status: draft
 officialUrl: https://laziodisco.it/bando-diritto-allo-studio-2026-2027/faq-studenti-internazionali/
 sources:

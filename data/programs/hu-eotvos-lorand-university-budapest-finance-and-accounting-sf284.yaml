@@ -60,6 +60,9 @@ requirements:
         en:
           text: "Entrance exams are held (Skype interview and questionnaire): check the procedure."
           status: draft
+        ar:
+          text: "تُنظَّم امتحانات دخول (مقابلة عبر Skype واستبيان): تحقق من الإجراء."
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -70,6 +73,9 @@ requirements:
           status: draft
         en:
           text: "O-level, GCSE, IGCSE, GCE AS or BTEC exams alone do not qualify: at least two GCE A-levels or equivalent are needed."
+          status: draft
+        ar:
+          text: "لا تكفي وحدها شهادات من نوع O-level أو GCSE أو IGCSE أو GCE AS أو BTEC: يلزم ما لا يقل عن شهادتين GCE A-level أو ما يعادلهما."
           status: draft
 scholarships: []
 sources:

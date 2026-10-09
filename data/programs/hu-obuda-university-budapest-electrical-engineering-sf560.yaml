@@ -69,6 +69,9 @@ requirements:
         en:
           text: An oral online English interview focusing on your motivations is part of the entrance examination (admission with entrance exam).
           status: draft
+        ar:
+          text: تدخل ضمن امتحان الدخول مقابلة شفوية بالإنجليزية حول دوافعك (القبول بامتحان دخول).
+          status: draft
     - id: req-3
       source: page-3
       info_kind: official
@@ -79,6 +82,9 @@ requirements:
           status: draft
         en:
           text: You must be at least 18 years old by the start of the study period (end of September 2026).
+          status: draft
+        ar:
+          text: يجب أن يكون عمرك 18 سنة على الأقل عند بداية الدراسة (نهاية سبتمبر 2026).
           status: draft
 scholarships: []
 sources:

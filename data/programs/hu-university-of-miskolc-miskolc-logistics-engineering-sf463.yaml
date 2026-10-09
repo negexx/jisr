@@ -57,6 +57,9 @@ requirements:
         en:
           text: "An entrance examination is required: a 15-minute oral Skype interview, after submitting a motivation letter. Prepare in advance."
           status: draft
+        ar:
+          text: "يُشترط امتحان دخول: مقابلة شفوية مدتها 15 دقيقة على Skype، بعد إرسال رسالة تحفيزية. استعد مسبقًا."
+          status: draft
 scholarships: []
 sources:
   programme:

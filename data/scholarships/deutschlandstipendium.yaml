@@ -13,6 +13,9 @@ summary:
   en:
     text: Merit scholarship of EUR 300 a month (EUR 150 from the federal government, EUR 150 from private sponsors), awarded by the universities that take part. Students of all nationalities can apply; check that your university takes part.
     status: draft
+  ar:
+    text: منحة استحقاق قدرها 300 € شهريًا (150 € من الدولة الفيدرالية و150 € من رعاة خواص)، تمنحها الجامعات المشاركة في البرنامج. يمكن لطلبة جميع الجنسيات التقدم؛ تحقق من أن جامعتك مشاركة.
+    status: draft
 support:
   value:
     amount:
@@ -42,6 +45,9 @@ howToApply:
     status: draft
   en:
     text: "Apply directly to your university, following its criteria, documents and dates: each university awards the Deutschlandstipendium."
+    status: draft
+  ar:
+    text: "قدّم طلبك مباشرة إلى جامعتك وفق معاييرها ووثائقها ومواعيدها: فكل جامعة هي التي تمنح Deutschlandstipendium."
     status: draft
 officialUrl: https://www.deutschlandstipendium.de/deutschlandstipendium/de/services/english/the-deutschlandstipendium-best-of-both-worlds-for-students.html
 sources:

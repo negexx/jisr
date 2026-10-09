@@ -50,6 +50,9 @@ documents:
         en:
           text: Final secondary school qualification obtained after at least 12 years of schooling
           status: draft
+        ar:
+          text: الشهادة النهائية للدراسة الثانوية المحصَّل عليها بعد 12 سنة دراسية على الأقل
+          status: draft
       translationRequired: null
     - slug: cimea-statement-or-declaration-of-value
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: CIMEA statement or Declaration of value, if the institution asks for it
+          status: draft
+        ar:
+          text: إفادة CIMEA أو بيان القيمة، إذا طلبته المؤسسة
           status: draft
       translationRequired: null
     - slug: university-entrance-aptitude-certificate
@@ -68,6 +74,9 @@ documents:
         en:
           text: Certificate of passing the academic aptitude test for university entrance in the home country, where one exists
           status: draft
+        ar:
+          text: شهادة النجاح في اختبار الكفاءة الأكاديمية للولوج إلى الجامعة في بلد المنشأ، إن وُجد هذا الاختبار
+          status: draft
       translationRequired: null
     - slug: italian-translation-of-documents
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Italian translations of the documents above, where the institution asks for them
+          status: draft
+        ar:
+          text: ترجمات الوثائق أعلاه إلى الإيطالية، إذا طلبتها المؤسسة
           status: draft
       translationRequired: null
   source: page-1
@@ -109,6 +121,9 @@ requirements:
         en:
           text: Limited-admission programme requiring an online written entry test (mathematics and reasoning). Non-EU applicants requiring a visa must already have their official results of one of the accepted entry tests at the moment of submission.
           status: draft
+        ar:
+          text: "برنامج محدود القبول: اختبار دخول كتابي عبر الإنترنت (رياضيات واستدلال) إلزامي. ويجب أن تتوفر لدى المتقدمين من خارج الاتحاد الأوروبي (UE) الذين يحتاجون إلى تأشيرة النتائج الرسمية لأحد اختبارات الدخول المعترف بها وقت تقديم الطلب."
+          status: draft
     - id: req-4
       source: page-3
       info_kind: official
@@ -119,6 +134,9 @@ requirements:
           status: draft
         en:
           text: "Minimum age: underage applicants may only apply if they will turn 18 years old by 31 December 2026."
+          status: draft
+        ar:
+          text: "الحد الأدنى للسن: لا يجوز للمتقدمين القاصرين التقدم إلا إذا بلغوا 18 سنة بتاريخ 31 ديسمبر 2026."
           status: draft
 scholarships: []
 sources:

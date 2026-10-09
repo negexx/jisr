@@ -47,6 +47,9 @@ documents:
         en:
           text: Higher education entrance qualification
           status: draft
+        ar:
+          text: شهادة الولوج إلى التعليم العالي
+          status: draft
       translationRequired: null
   source: page-1
   info_kind: official
@@ -65,6 +68,9 @@ requirements:
           status: draft
         en:
           text: Non-EEA applicants must achieve the specified results in one of the aptitude tests (SAT, TestAS, ACT, JEE, CSAT).
+          status: draft
+        ar:
+          text: على المتقدمين من خارج المنطقة الاقتصادية الأوروبية (EEE) النجاح في أحد اختبارات الكفاءة (SAT وTestAS وACT وJEE وCSAT) بالنقاط المحددة.
           status: draft
 scholarships: []
 sources:

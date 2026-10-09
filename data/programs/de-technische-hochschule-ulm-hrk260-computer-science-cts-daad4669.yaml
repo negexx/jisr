@@ -70,6 +70,9 @@ requirements:
         en:
           text: Check your higher education entrance qualification (Fachhochschulreife, Abitur or equivalent) and contact Studienkolleg Konstanz to have your foreign school-leaving qualification recognised.
           status: draft
+        ar:
+          text: تحقق من مؤهلك للدخول إلى التعليم العالي (Fachhochschulreife أو Abitur أو ما يعادلهما) وتواصل مع Studienkolleg Konstanz للاعتراف بشهادتك الأجنبية.
+          status: draft
 scholarships: []
 sources:
   programme:

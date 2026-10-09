@@ -50,6 +50,9 @@ documents:
         en:
           text: Valid passport or national ID (EU applicants)
           status: draft
+        ar:
+          text: جواز سفر ساري المفعول أو بطاقة هوية وطنية، للمتقدمين من الاتحاد الأوروبي (UE)
+          status: draft
       translationRequired: null
     - slug: proof-of-secondary-education
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: "Proof of secondary education: original and translated transcripts and final certificate"
+          status: draft
+        ar:
+          text: "إثبات الدراسة الثانوية: كشوف النقاط والشهادة النهائية، بنسختها الأصلية ومترجمة"
           status: draft
       translationRequired: true
   source: page-3
@@ -95,6 +101,9 @@ requirements:
         en:
           text: High school diploma required; national curriculum, IB, Cambridge A-Levels, GED accepted. No overall GPA requirement. Contact the university to verify your Moroccan Bac equivalence.
           status: draft
+        ar:
+          text: تُشترط شهادة الدراسة الثانوية؛ تُقبل المناهج الوطنية ونظام IB وشهادات Cambridge A-Levels وشهادة GED. لا يُشترط معدل أدنى عام. اتصل بالجامعة للتحقق من معادلة البكالوريا المغربية الخاصة بك.
+          status: draft
     - id: req-4
       source: page-3
       info_kind: official
@@ -106,6 +115,9 @@ requirements:
         en:
           text: "Written mathematics entrance exam: required for Data Science in Business if you do not hold one of the listed qualifications (AP, SAT, A-level, Abitur, French Bac...). Online test, 26 questions, 60 minutes."
           status: draft
+        ar:
+          text: "امتحان دخول كتابي في الرياضيات: إلزامي لبرنامج Data Science in Business إن لم تكن حاصلًا على أحد المؤهلات المدرجة (AP وSAT وA-level وAbitur والبكالوريا الفرنسية...). اختبار عبر الإنترنت من 26 سؤالًا، ومدته 60 دقيقة."
+          status: draft
     - id: req-5
       source: page-2
       info_kind: official
@@ -116,6 +128,9 @@ requirements:
           status: draft
         en:
           text: "Paid application: 100 EUR application fee, non-refundable, required for self-funded applicants. Payable at the point of application."
+          status: draft
+        ar:
+          text: "امتحان دخول مدفوع: رسوم تقديم قدرها 100 EUR غير قابلة للاسترداد، مطلوبة من المتقدمين الذين يمولون دراستهم بأنفسهم. تُدفع عند التقديم."
           status: draft
 scholarships: []
 sources:

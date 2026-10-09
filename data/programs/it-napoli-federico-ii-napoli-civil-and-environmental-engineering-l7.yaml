@@ -47,6 +47,9 @@ documents:
         en:
           text: Passport
           status: draft
+        ar:
+          text: جواز السفر
+          status: draft
       translationRequired: null
     - slug: high-school-diploma
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: High School degree Certificate
+          status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
           status: draft
       translationRequired: null
     - slug: declaration-of-value
@@ -65,6 +71,9 @@ documents:
         en:
           text: Declaration of Value (DOV)
           status: draft
+        ar:
+          text: بيان القيمة (DOV)
+          status: draft
       translationRequired: null
     - slug: english-language-certificate
       name:
@@ -73,6 +82,9 @@ documents:
           status: draft
         en:
           text: Language certificate (English proficiency – at least level B2)
+          status: draft
+        ar:
+          text: شهادة الكفاءة في اللغة الإنجليزية
           status: draft
       translationRequired: null
     - slug: curriculum-vitae
@@ -83,6 +95,9 @@ documents:
         en:
           text: Curriculum Vitae
           status: draft
+        ar:
+          text: السيرة الذاتية
+          status: draft
       translationRequired: null
     - slug: motivation-letter
       name:
@@ -91,6 +106,9 @@ documents:
           status: draft
         en:
           text: Motivation letter (Statement of Purpose)
+          status: draft
+        ar:
+          text: رسالة تحفيزية (بيان النوايا)
           status: draft
       translationRequired: null
     - slug: letter-of-recommendation
@@ -101,6 +119,9 @@ documents:
         en:
           text: Letter/s of recommendation
           status: draft
+        ar:
+          text: رسالة (أو رسائل) توصية
+          status: draft
       translationRequired: null
     - slug: sponsorship-or-accommodation-statement
       name:
@@ -110,6 +131,9 @@ documents:
         en:
           text: Statement by a third party of sponsorship or private accommodation availability
           status: draft
+        ar:
+          text: إفادة تكفّل من شخص آخر أو إفادة بتوفر سكن خاص
+          status: draft
       translationRequired: null
     - slug: financial-guarantee-statement
       name:
@@ -118,6 +142,9 @@ documents:
           status: draft
         en:
           text: Financial guarantee statement(s)
+          status: draft
+        ar:
+          text: إفادة الضمان المالي
           status: draft
       translationRequired: null
   source: page-2
@@ -143,6 +170,9 @@ requirements:
         en:
           text: Compulsory selective admission test (CISIA English TOLC-I), to be taken remotely after registering on the CISIA website. A minimum threshold of 20% of the maximum score is required.
           status: draft
+        ar:
+          text: اختبار قبول انتقائي إلزامي (CISIA English TOLC-I)، يُجرى عن بُعد بعد التسجيل على موقع CISIA. ويُشترط حد أدنى قدره 20% من الحد الأقصى للنتيجة.
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -153,6 +183,9 @@ requirements:
           status: draft
         en:
           text: "Candidates who score less than 50% in the Mathematics section of the TOLC-I test receive an Additional Formative Obligation (OFA): to acquire at least 9 CFU in the MAT/05 subject area."
+          status: draft
+        ar:
+          text: "المتقدمون الذين يحصلون على أقل من 50% في قسم الرياضيات من اختبار TOLC-I يُفرض عليهم التزام تكويني إضافي (OFA): الحصول على 9 CFU على الأقل في MAT/05."
           status: draft
     - id: req-4
       source: page-2
@@ -165,6 +198,9 @@ requirements:
         en:
           text: "Compulsory pre-admission procedure for non-EU students requiring a visa: selection from mid-February to mid-June via the intake webpage or by email, then a pre-admission letter."
           status: draft
+        ar:
+          text: "إجراء القبول المسبق إلزامي للطلبة من خارج الاتحاد الأوروبي (UE) الذين يحتاجون إلى تأشيرة: الانتقاء من منتصف فبراير إلى منتصف يونيو عبر صفحة القبول أو بالبريد الإلكتروني، ثم رسالة القبول المسبق."
+          status: draft
     - id: req-5
       source: page-2
       info_kind: official
@@ -175,6 +211,9 @@ requirements:
           status: draft
         en:
           text: The candidate must provide a financial guarantee of €6,080.00/year for three years and take out health insurance for the study visa.
+          status: draft
+        ar:
+          text: يجب على المتقدم تقديم ضمان مالي قدره 6.080,00 €/سنة لمدة ثلاث سنوات، وإبرام تأمين صحي لتأشيرة الدراسة.
           status: draft
 scholarships: []
 sources:

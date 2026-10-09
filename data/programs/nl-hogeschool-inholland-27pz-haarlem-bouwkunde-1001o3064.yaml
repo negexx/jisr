@@ -60,6 +60,9 @@ requirements:
         en:
           text: Check with the institution whether you need to demonstrate Dutch proficiency and at what level.
           status: draft
+        ar:
+          text: تحقق لدى المؤسسة مما إذا كان عليك إثبات إتقانك الهولندية وبأي مستوى.
+          status: draft
 scholarships: []
 sources:
   programme:

@@ -54,6 +54,9 @@ documents:
         en:
           text: University entrance qualification
           status: draft
+        ar:
+          text: شهادة التأهيل للدخول إلى الجامعة
+          status: draft
       translationRequired: null
   source: page-2
   info_kind: official

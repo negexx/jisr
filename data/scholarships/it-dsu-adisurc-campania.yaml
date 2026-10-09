@@ -16,6 +16,9 @@ summary:
   en:
     text: Regional scholarship managed by ADiSURC for students at universities in Campania. Foreign students whose households live abroad are assessed through an equivalent ISEE (ISEEUP, ISEE parificato) prepared at a CAF.
     status: draft
+  ar:
+    text: منحة جهوية تديرها ADiSURC لطلبة جامعات كامبانيا. ويُقيَّم الطلبة الأجانب الذين تقيم أسرهم في الخارج بواسطة ISEE parificato (ISEEUP) يُعدّ لدى CAF.
+    status: draft
 support:
   value:
     amount: null
@@ -42,6 +45,9 @@ documents:
         en:
           text: Documents from the home-country authorities on income and assets (translated by the Italian diplomatic authorities)
           status: draft
+        ar:
+          text: وثائق صادرة عن سلطات بلد الأصل بشأن الدخل والممتلكات (تترجمها السلطات الدبلوماسية الإيطالية)
+          status: draft
       translationRequired: null
   source: page-3
   info_kind: official
@@ -51,6 +57,9 @@ howToApply:
     status: draft
   en:
     text: Apply online only on the ADiSURC website, in the students' reserved area; students of foreign nationality log in with credentials obtained at accreditation. Send the ISEEUP and, if requested, translated documents.
+    status: draft
+  ar:
+    text: الطلب عبر الإنترنت فقط على موقع ADiSURC، في الفضاء المخصص للطلبة؛ ويدخل إليه الطلبة من جنسية أجنبية بالمعرّفات التي حصلوا عليها عند الاعتماد. قدّم ISEEUP، ثم الوثائق المترجمة عند الطلب.
     status: draft
 officialUrl: https://www.adisurcampania.it/notizie/approvazione-bando-di-concorso-20262027
 sources:

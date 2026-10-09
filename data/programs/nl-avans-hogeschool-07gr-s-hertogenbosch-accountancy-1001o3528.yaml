@@ -60,6 +60,9 @@ requirements:
         en:
           text: Check whether your diploma (Moroccan Baccalauréat) is accepted for admission and whether additional conditions apply.
           status: draft
+        ar:
+          text: تحقق مما إذا كانت شهادتك (البكالوريا المغربية) مقبولة للقبول ومما إذا كانت تنطبق شروط إضافية.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -70,6 +73,9 @@ requirements:
           status: draft
         en:
           text: Non-EEA nationality students are required to apply by May 1st and to pay their tuition fees in full prior to the start of the academic year.
+          status: draft
+        ar:
+          text: على الطلبة الذين لا تنتمي جنسيتهم إلى EEE (المنطقة الاقتصادية الأوروبية) التقديم قبل 1 مايو ودفع الرسوم الدراسية قبل بداية السنة الجامعية.
           status: draft
 scholarships: []
 sources:

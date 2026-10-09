@@ -68,6 +68,9 @@ requirements:
         en:
           text: "An entrance exam is required: a written Mathematics test (online, Moodle) followed by an oral interview (Teams). Check the details and dates."
           status: draft
+        ar:
+          text: "يُشترط امتحان دخول: اختبار كتابي في الرياضيات (عبر الإنترنت، Moodle) ثم مقابلة شفوية (Teams). تحقق من التفاصيل والتواريخ."
+          status: draft
 scholarships: []
 sources:
   programme:

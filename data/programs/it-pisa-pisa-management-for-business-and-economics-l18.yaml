@@ -50,6 +50,9 @@ documents:
         en:
           text: Final secondary school qualification obtained after at least 12 years of schooling
           status: draft
+        ar:
+          text: الشهادة النهائية للدراسة الثانوية المحصَّل عليها بعد 12 سنة دراسية على الأقل
+          status: draft
       translationRequired: null
     - slug: cimea-statement-or-declaration-of-value
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: CIMEA statement or Declaration of value, if the institution asks for it
+          status: draft
+        ar:
+          text: إفادة CIMEA أو بيان القيمة، إذا طلبته المؤسسة
           status: draft
       translationRequired: null
     - slug: university-entrance-aptitude-certificate
@@ -68,6 +74,9 @@ documents:
         en:
           text: Certificate of passing the academic aptitude test for university entrance in the home country, where one exists
           status: draft
+        ar:
+          text: شهادة النجاح في اختبار الكفاءة الأكاديمية للولوج إلى الجامعة في بلد المنشأ، إن وُجد هذا الاختبار
+          status: draft
       translationRequired: null
     - slug: italian-translation-of-documents
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Italian translations of the documents above, where the institution asks for them
+          status: draft
+        ar:
+          text: ترجمات الوثائق أعلاه إلى الإيطالية، إذا طلبتها المؤسسة
           status: draft
       translationRequired: null
   source: page-2
@@ -104,6 +116,9 @@ requirements:
         en:
           text: "Admission is locally capped: you must pass a selection test (CEnT, TOLC-E with English section, SAT, GMAT or ACT) with a minimum eligibility score of 10. Check the annual call for applications."
           status: draft
+        ar:
+          text: "القبول بعدد مقاعد محدود: يجب اجتياز اختبار انتقاء (CEnT أو TOLC-E مع القسم الإنجليزي أو SAT أو GMAT أو ACT) بحد أدنى للأهلية قدره 10. راجع إعلان التقديم السنوي."
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -114,6 +129,9 @@ requirements:
           status: draft
         en:
           text: Selection for non-EU citizens residing abroad and applying for a VISA follows a specific deadline stated in the admission call; consult the bando di ammissione.
+          status: draft
+        ar:
+          text: يخضع انتقاء المتقدمين من خارج الاتحاد الأوروبي (UE) المقيمين في الخارج والذين يطلبون تأشيرة لموعد نهائي خاص مذكور في إعلان التقديم؛ راجع إعلان القبول (bando d'admission).
           status: draft
 scholarships: []
 sources:

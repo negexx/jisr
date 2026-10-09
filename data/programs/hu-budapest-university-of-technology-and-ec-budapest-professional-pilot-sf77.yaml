@@ -57,6 +57,9 @@ requirements:
         en:
           text: An eligible high school degree is required for the BSc.
           status: draft
+        ar:
+          text: تُشترط شهادة دراسة ثانوية (البكالوريا) صالحة لبرنامج BSc.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: "Admission includes an entrance examination: yes, oral type, online."
+          status: draft
+        ar:
+          text: "يتضمن القبول امتحان دخول: نعم، من النوع الشفوي، عبر الإنترنت."
           status: draft
 scholarships:
   - stipendium-hungaricum

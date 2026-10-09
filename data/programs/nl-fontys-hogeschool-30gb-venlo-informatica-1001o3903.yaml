@@ -57,6 +57,9 @@ requirements:
         en:
           text: Check admission requirements for foreign diplomas (page 'aanmelden internationaal').
           status: draft
+        ar:
+          text: تحقق من شروط القبول للشهادات الأجنبية (صفحة «aanmelden internationaal»).
+          status: draft
 scholarships: []
 sources:
   programme:

@@ -70,6 +70,9 @@ requirements:
         en:
           text: A high school certificate (diploma) is required. Check the exact conditions.
           status: draft
+        ar:
+          text: شهادة الدراسة الثانوية (الدبلوم) مطلوبة. تحقق من الشروط الدقيقة.
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -80,6 +83,9 @@ requirements:
           status: draft
         en:
           text: An entrance exam in Mathematics and either Chemistry or Biology is required. Check the details.
+          status: draft
+        ar:
+          text: يُشترط امتحان دخول في الرياضيات والكيمياء أو الأحياء. تحقق من التفاصيل.
           status: draft
 scholarships: []
 sources:

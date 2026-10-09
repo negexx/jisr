@@ -57,6 +57,9 @@ requirements:
         en:
           text: Your Moroccan diploma (Baccalauréat) is not a Dutch diploma (havo/vwo/mbo niveau 4), so contact Fontys to check your eligibility (e.g. 21+ toelatingsonderzoek, English certificate).
           status: draft
+        ar:
+          text: بما أن شهادتك المغربية (البكالوريا) ليست شهادة هولندية (havo/vwo/mbo المستوى 4)، اتصل بجامعة Fontys للتحقق من إمكانية قبولك (مثل 21+ toelatingsonderzoek، أو شهادة في الإنجليزية).
+          status: draft
 scholarships: []
 sources:
   programme:

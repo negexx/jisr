@@ -57,6 +57,9 @@ requirements:
         en:
           text: A written entrance examination is required (online). Check the details and the minimum result (50%).
           status: draft
+        ar:
+          text: يُشترط امتحان قبول كتابي (عبر الإنترنت). تحقق من التفاصيل ومن الحد الأدنى للنتيجة (50%).
+          status: draft
 scholarships:
   - stipendium-hungaricum
 sources:

@@ -50,6 +50,9 @@ documents:
         en:
           text: ID or passport
           status: draft
+        ar:
+          text: بطاقة الهوية أو جواز السفر
+          status: draft
       translationRequired: null
     - slug: third-last-and-second-last-year-transcripts
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: 3rd-last and 2nd-last year transcripts
+          status: draft
+        ar:
+          text: كشوف نقاط السنة ما قبل الأخيرة والسنة التي تسبقها
           status: draft
       translationRequired: null
     - slug: test-score-report
@@ -68,6 +74,9 @@ documents:
         en:
           text: Test score report
           status: draft
+        ar:
+          text: تقرير نتيجة الاختبار
+          status: draft
       translationRequired: null
     - slug: secondary-school-diploma
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Secondary school diploma
+          status: draft
+        ar:
+          text: شهادة الدراسة الثانوية
           status: draft
       translationRequired: null
   source: page-3

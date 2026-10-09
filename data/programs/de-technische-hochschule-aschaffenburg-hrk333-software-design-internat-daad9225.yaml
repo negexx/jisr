@@ -56,6 +56,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: cv
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: Tabular CV
+          status: draft
+        ar:
+          text: سيرة ذاتية (CV) على شكل جدول
           status: draft
       translationRequired: null
   source: page-2
@@ -101,6 +107,9 @@ requirements:
           status: draft
         en:
           text: "Check the application deadlines with the university: the DAAD page only says 'Winter semester' and links to the university website. A preliminary review of documents (VPD) by uni-assist and an application fee of 80 EUR for non-EU applicants are required."
+          status: draft
+        ar:
+          text: "تحقق لدى الجامعة من المواعيد النهائية للتقديم: صفحة DAAD تذكر فقط «Winter semester» وتحيل إلى موقع الجامعة. ويُشترط مراجعة أولية للوثائق (VPD) من uni-assist ورسوم تقديم قدرها 80 EUR للمتقدمين من خارج الاتحاد الأوروبي (EU)."
           status: draft
 scholarships: []
 sources:

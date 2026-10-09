@@ -47,6 +47,9 @@ documents:
         en:
           text: High school documents
           status: draft
+        ar:
+          text: وثائق التعليم الثانوي
+          status: draft
       translationRequired: true
   source: programme
   info_kind: official
@@ -75,6 +78,9 @@ requirements:
         en:
           text: "An entrance examination is required: written Mathematics and Physics examination and an online English oral interview."
           status: draft
+        ar:
+          text: "يُشترط امتحان دخول: اختبار كتابي في الرياضيات والفيزياء ومقابلة شفوية بالإنجليزية."
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -85,6 +91,9 @@ requirements:
           status: draft
         en:
           text: Academic results are evaluated; check additional admission criteria on the university website.
+          status: draft
+        ar:
+          text: يتم تقييم النتائج الدراسية؛ تحقق من معايير القبول الإضافية في موقع الجامعة.
           status: draft
 scholarships: []
 sources:

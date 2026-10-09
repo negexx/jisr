@@ -66,6 +66,9 @@ requirements:
         en:
           text: Admission is based on the final average grade of your university entrance qualification (numerus clausus); check selection thresholds with the university.
           status: draft
+        ar:
+          text: يستند القبول إلى المعدل النهائي لشهادة دخول الجامعة (numerus clausus، أي عدد محدود من المقاعد)؛ تحقق من عتبات الانتقاء لدى الجامعة.
+          status: draft
 scholarships: []
 sources:
   programme:

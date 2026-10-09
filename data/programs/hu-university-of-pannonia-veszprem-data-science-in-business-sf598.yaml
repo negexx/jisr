@@ -60,6 +60,9 @@ requirements:
         en:
           text: An online admission interview (MS Teams) is required; you must score at least 56 points out of 100.
           status: draft
+        ar:
+          text: تُشترط مقابلة قبول عبر الإنترنت (MS Teams)؛ ويجب الحصول على 56 نقطة على الأقل من 100.
+          status: draft
 scholarships: []
 sources:
   programme:

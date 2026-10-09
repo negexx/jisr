@@ -60,6 +60,9 @@ requirements:
         en:
           text: An online admission interview and an online mathematics test (30 minutes, 10 multiple-choice questions) are part of the selection process.
           status: draft
+        ar:
+          text: يدخل ضمن إجراء الانتقاء مقابلة قبول عبر الإنترنت واختبار في الرياضيات عبر الإنترنت (30 دقيقة، 10 أسئلة اختيار من متعدد (QCM)).
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -70,6 +73,9 @@ requirements:
           status: draft
         en:
           text: The GPA must be above 50% annually and in the final exam, and the high school math grade above 60%.
+          status: draft
+        ar:
+          text: يجب أن يتجاوز المعدل العام السنوي ومعدل الامتحان النهائي 50 %، وأن تتجاوز علامة الرياضيات في الثانوية 60 %.
           status: draft
     - id: req-3
       source: page-2
@@ -82,6 +88,9 @@ requirements:
         en:
           text: Application documents are accepted in English/Hungarian; if not, attach an English translation together with verified copies of the original.
           status: draft
+        ar:
+          text: يجب أن تكون وثائق التقديم بالإنجليزية أو المجرية؛ وإلا فأرفق ترجمة إنجليزية مع نسخ مصادق عليها من الأصل.
+          status: draft
     - id: req-4
       source: programme
       info_kind: official
@@ -92,6 +101,9 @@ requirements:
           status: draft
         en:
           text: The programme is Full-time, in Budapest; check the exact application steps on the university website.
+          status: draft
+        ar:
+          text: يُدرَّس البرنامج حضوريًا في بودابست (Full-time)؛ تحقق من إجراءات التقديم الدقيقة على موقع الجامعة.
           status: draft
 scholarships: []
 sources:

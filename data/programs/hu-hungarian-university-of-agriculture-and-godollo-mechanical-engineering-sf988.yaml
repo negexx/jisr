@@ -50,6 +50,9 @@ documents:
         en:
           text: Secondary school leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: page-2
   info_kind: official
@@ -77,6 +80,9 @@ requirements:
         en:
           text: "An online oral interview (MS Teams) is part of the selection: prepare your motivation, professional background and English skills. Also check the list of automatically accepted B2 English language exams."
           status: draft
+        ar:
+          text: "تدخل ضمن الانتقاء مقابلة شفوية عبر الإنترنت (MS Teams): حضّر دافعك ومسارك ومستواك في الإنجليزية. راجع أيضًا قائمة امتحانات الإنجليزية بمستوى B2 المقبولة تلقائيًا."
+          status: draft
     - id: req-3
       source: page-2
       info_kind: official
@@ -87,6 +93,9 @@ requirements:
           status: draft
         en:
           text: After the assessment of the secondary school leaving certificate and language certificate, selected candidates have an MS Teams interview on motivation, professional background and language skills.
+          status: draft
+        ar:
+          text: بعد تقييم الشهادة وشهادة اللغة، يجري المتقدمون المختارون مقابلة عبر MS Teams حول الدافع والمعارف المهنية والمهارات اللغوية.
           status: draft
 scholarships: []
 sources:

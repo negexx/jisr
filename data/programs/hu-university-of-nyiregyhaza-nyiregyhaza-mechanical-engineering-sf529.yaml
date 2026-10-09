@@ -69,6 +69,9 @@ requirements:
         en:
           text: Admission is based on an online oral interview (Microsoft Teams) evaluated out of 100 points; at least 60 points are required to pass the entrance exam.
           status: draft
+        ar:
+          text: يتم القبول عبر مقابلة شفوية عبر الإنترنت (Microsoft Teams) تُقيَّم من 100 نقطة؛ ويلزم الحصول على 60 نقطة على الأقل للنجاح في امتحان الدخول.
+          status: draft
     - id: req-3
       source: page-4
       info_kind: official
@@ -79,6 +82,9 @@ requirements:
           status: draft
         en:
           text: A non-refundable application fee of 100 EUR must be paid and received for the entrance exam to be possible.
+          status: draft
+        ar:
+          text: يجب دفع رسوم تقديم قدرها 100 EUR غير قابلة للاسترداد واستلامها حتى يكون امتحان الدخول ممكنًا.
           status: draft
 scholarships: []
 sources:

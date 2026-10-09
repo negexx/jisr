@@ -53,6 +53,9 @@ documents:
         en:
           text: Valid identity document or passport
           status: draft
+        ar:
+          text: وثيقة هوية أو جواز سفر ساري المفعول
+          status: draft
       translationRequired: null
     - slug: educational-qualification-documentation
       name:
@@ -62,6 +65,9 @@ documents:
         en:
           text: Documentation required to verify the educational qualification
           status: draft
+        ar:
+          text: الوثائق المطلوبة للتحقق من المؤهل الدراسي
+          status: draft
       translationRequired: null
     - slug: school-report-cards
       name:
@@ -70,6 +76,9 @@ documents:
           status: draft
         en:
           text: School report cards
+          status: draft
+        ar:
+          text: كشوف النقاط المدرسية
           status: draft
       translationRequired: null
   source: page-1
@@ -89,6 +98,9 @@ requirements:
           status: draft
         en:
           text: Admissions require certain scores of SAT/ACT/IB or to take a Luiss Admission Test. Check minimum scores and procedures.
+          status: draft
+        ar:
+          text: يتطلب القبول نقاطًا معينة في SAT/ACT/IB أو اجتياز اختبار القبول الخاص بـ Luiss. تحقق من الحد الأدنى للنقاط ومن الإجراءات.
           status: draft
 scholarships: []
 sources:

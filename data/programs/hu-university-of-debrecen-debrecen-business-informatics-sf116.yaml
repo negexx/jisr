@@ -50,6 +50,9 @@ documents:
         en:
           text: Certificate of education (school leaving qualification)
           status: draft
+        ar:
+          text: شهادة دراسية (شهادة نهاية الدراسة الثانوية)
+          status: draft
       translationRequired: true
     - slug: cv
       name:
@@ -59,6 +62,9 @@ documents:
         en:
           text: Short Resume/CV
           status: draft
+        ar:
+          text: سيرة ذاتية (CV) مختصرة
+          status: draft
       translationRequired: null
     - slug: medical-certificate
       name:
@@ -67,6 +73,9 @@ documents:
           status: draft
         en:
           text: Medical Certificate
+          status: draft
+        ar:
+          text: شهادة طبية
           status: draft
       translationRequired: null
   source: page-2
@@ -86,6 +95,9 @@ requirements:
           status: draft
         en:
           text: A high school certificate and a written and oral entrance exam in Mathematics are required. Check the exact entrance exam conditions.
+          status: draft
+        ar:
+          text: شهادة الدراسة الثانوية وامتحان دخول كتابي وشفوي في الرياضيات مطلوبان. تحقق من الشروط الدقيقة لامتحان الدخول.
           status: draft
 scholarships: []
 sources:

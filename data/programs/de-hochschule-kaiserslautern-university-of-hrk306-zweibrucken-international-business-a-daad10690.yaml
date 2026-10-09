@@ -56,6 +56,9 @@ documents:
         en:
           text: Proof of language proficiency
           status: draft
+        ar:
+          text: إثبات الكفاءة اللغوية
+          status: draft
       translationRequired: null
     - slug: passport-copy
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: Copy of passport
+          status: draft
+        ar:
+          text: نسخة من جواز السفر
           status: draft
       translationRequired: null
     - slug: cv
@@ -74,6 +80,9 @@ documents:
         en:
           text: CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: statement-of-purpose
       name:
@@ -82,6 +91,9 @@ documents:
           status: draft
         en:
           text: Statement of purpose
+          status: draft
+        ar:
+          text: رسالة تحفيزية
           status: draft
       translationRequired: null
   source: page-1
@@ -111,6 +123,9 @@ requirements:
           status: draft
         en:
           text: A high school diploma or equivalent is required; check whether your Moroccan Baccalauréat is accepted.
+          status: draft
+        ar:
+          text: شهادة الدراسة الثانوية (high school diploma) أو ما يعادلها مطلوبة؛ تحقق مما إذا كانت البكالوريا المغربية مقبولة.
           status: draft
 scholarships: []
 sources:

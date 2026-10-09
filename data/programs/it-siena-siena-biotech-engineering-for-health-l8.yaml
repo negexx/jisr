@@ -50,6 +50,9 @@ documents:
         en:
           text: Valid identification document
           status: draft
+        ar:
+          text: وثيقة هوية صالحة
+          status: draft
       translationRequired: null
     - slug: curriculum-vitae
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: Curriculum Vitae (CV)
+          status: draft
+        ar:
+          text: السيرة الذاتية (CV)
           status: draft
       translationRequired: null
     - slug: upper-secondary-school-diploma
@@ -68,6 +74,9 @@ documents:
         en:
           text: Upper secondary school diploma
           status: draft
+        ar:
+          text: شهادة التعليم الثانوي العالي
+          status: draft
       translationRequired: null
     - slug: english-language-certification
       name:
@@ -77,6 +86,9 @@ documents:
         en:
           text: Recognized English language certification
           status: draft
+        ar:
+          text: شهادة معترف بها في اللغة الإنجليزية
+          status: draft
       translationRequired: null
     - slug: cisia-cent-s-test-certificate
       name:
@@ -85,6 +97,9 @@ documents:
           status: draft
         en:
           text: Documentation certifying that the CISIA CEnT-S test has been taken
+          status: draft
+        ar:
+          text: إفادة اجتياز اختبار CISIA CEnT-S
           status: draft
       translationRequired: null
   source: page-1
@@ -113,6 +128,9 @@ requirements:
         en:
           text: An entrance test (CEnT-S) is required for admission; check the details and possible interviews for non-EU candidates.
           status: draft
+        ar:
+          text: يُشترط اختبار دخول (CEnT-S) للالتحاق بالبرنامج؛ تحقق من التفاصيل ومن المقابلات المحتملة للمتقدمين من خارج الاتحاد الأوروبي (UE).
+          status: draft
     - id: req-3
       source: page-3
       info_kind: official
@@ -123,6 +141,9 @@ requirements:
           status: draft
         en:
           text: Restricted-access programme (80 places); selection is based on ranking after the test and possible interview.
+          status: draft
+        ar:
+          text: برنامج محدود الالتحاق (80 مقعدًا)؛ يتم الانتقاء حسب الترتيب بعد الاختبار والمقابلة إن وُجدت.
           status: draft
     - id: req-4
       source: page-3
@@ -135,6 +156,9 @@ requirements:
         en:
           text: Any gaps in mathematics, physics and sciences identified by the test must be addressed through additional learning requirements (OFA) within the first year.
           status: draft
+        ar:
+          text: يجب سدّ النقص المحتمل في الرياضيات والفيزياء والعلوم، الذي يكشفه الاختبار، من خلال التزامات تكوينية إضافية (OFA) خلال السنة الأولى.
+          status: draft
     - id: req-5
       source: page-3
       info_kind: official
@@ -146,6 +170,9 @@ requirements:
         en:
           text: Admission documents must be in English or Italian; otherwise an official translation and certification of authenticity are required.
           status: draft
+        ar:
+          text: يجب أن تكون وثائق القبول بالإنجليزية أو الإيطالية؛ وإلا فيلزم تقديم ترجمة رسمية وتصديق يثبت صحتها.
+          status: draft
     - id: req-6
       source: page-4
       info_kind: official
@@ -156,6 +183,9 @@ requirements:
           status: draft
         en:
           text: Tuition fees depend on the country of origin and the course; use the fees calculator to determine the amount for your case.
+          status: draft
+        ar:
+          text: تختلف الرسوم الدراسية حسب بلد الأصل والبرنامج؛ استعمل حاسبة الرسوم لمعرفة المبلغ الخاص بحالتك.
           status: draft
 scholarships: []
 sources:

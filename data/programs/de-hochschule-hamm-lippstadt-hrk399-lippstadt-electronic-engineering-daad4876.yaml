@@ -50,6 +50,9 @@ documents:
         en:
           text: uni-assist evaluation result
           status: draft
+        ar:
+          text: نتيجة التقييم الذي أجرته uni-assist
+          status: draft
       translationRequired: null
     - slug: passport-photo
       name:
@@ -59,6 +62,9 @@ documents:
         en:
           text: Passport photo
           status: draft
+        ar:
+          text: صورة شخصية
+          status: draft
       translationRequired: null
     - slug: language-certificate
       name:
@@ -67,6 +73,9 @@ documents:
           status: draft
         en:
           text: Language certificate
+          status: draft
+        ar:
+          text: شهادة في اللغة
           status: draft
       translationRequired: null
   source: page-2

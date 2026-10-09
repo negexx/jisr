@@ -51,6 +51,9 @@ documents:
         en:
           text: High School Diploma
           status: draft
+        ar:
+          text: شهادة الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: page-3
   info_kind: official
@@ -79,6 +82,9 @@ requirements:
           status: draft
         en:
           text: An oral entrance examination (online, MS Teams) may be required; admission depends on assessment of documents, professional competence and motivation.
+          status: draft
+        ar:
+          text: قد تُطلب مقابلة شفوية (عبر الإنترنت، MS Teams)؛ ويتوقف القبول على تقييم الملف والكفاءات المهنية والدافع.
           status: draft
 scholarships: []
 sources:

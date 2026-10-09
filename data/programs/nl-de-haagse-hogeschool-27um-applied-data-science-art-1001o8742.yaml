@@ -57,6 +57,9 @@ requirements:
         en:
           text: Check that you have passed Mathematics A or B with a sufficient grade; this is an admission requirement.
           status: draft
+        ar:
+          text: تحقق من أنك نجحت في الرياضيات A أو B بعلامة كافية؛ وهذا شرط للقبول.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: If you have a foreign diploma, you must prove your proficiency in Dutch; see the Taaleisen Nederlands.
+          status: draft
+        ar:
+          text: إذا كانت لديك شهادة أجنبية، فيجب أن تثبت إتقانك للهولندية؛ راجع Taaleisen Nederlands.
           status: draft
 scholarships: []
 sources:

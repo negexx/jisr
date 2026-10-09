@@ -15,6 +15,9 @@ summary:
   en:
     text: Regional right-to-study scholarship of the University of Milan for its bachelor's students. Foreign students with a family unit abroad provide specific documentation for the calculation of an equated ISEE.
     status: draft
+  ar:
+    text: منحة جهوية للحق في الدراسة من جامعة ميلانو لطلبتها في الإجازة. ويقدّم الطلبة الأجانب الذين تعيش أسرهم في الخارج وثائق خاصة لحساب ISEE معادل.
+    status: draft
 support:
   value: null
   source: page-1
@@ -38,6 +41,9 @@ howToApply:
     status: draft
   en:
     text: Apply online through the University of Milan's right-to-study portal.
+    status: draft
+  ar:
+    text: التقديم عبر الإنترنت على بوابة الحق في الدراسة التابعة لجامعة ميلانو.
     status: draft
 officialUrl: https://www.unimi.it/it/studiare/borse-premi-mense-e-alloggi/borse-di-studio-regionali
 sources:

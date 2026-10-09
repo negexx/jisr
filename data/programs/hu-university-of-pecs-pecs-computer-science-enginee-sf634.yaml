@@ -60,6 +60,9 @@ requirements:
         en:
           text: "An online interview is required: minimum B2 level in oral and written. See https://english.mik.pte.hu/selection-process"
           status: draft
+        ar:
+          text: "تُشترط مقابلة عبر الإنترنت: شفوية وكتابية بمستوى B2 على الأقل. انظر https://english.mik.pte.hu/selection-process"
+          status: draft
     - id: req-2
       source: page-4
       info_kind: official
@@ -70,6 +73,9 @@ requirements:
           status: draft
         en:
           text: A motivation letter must be added to your application.
+          status: draft
+        ar:
+          text: يجب إضافة رسالة تحفيزية إلى طلبك.
           status: draft
 scholarships: []
 sources:

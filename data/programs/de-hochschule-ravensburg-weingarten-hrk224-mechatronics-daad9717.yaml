@@ -81,6 +81,9 @@ requirements:
         en:
           text: "Your diploma (Moroccan Baccalauréat) must be recognised: check ANABIN compliance; if it is not recognised, an aptitude test (TestAS, ITB, SAT or ACT) and a 30-minute oral test may be required."
           status: draft
+        ar:
+          text: "يجب الاعتراف بشهادتك (البكالوريا المغربية): تحقق من مطابقتها في ANABIN؛ وإن لم يُعترف بها فقد يُشترط اختبار قدرات (TestAS أو ITB أو SAT أو ACT) ومقابلة شفوية مدتها 30 دقيقة."
+          status: draft
     - id: req-4
       source: programme
       info_kind: official
@@ -91,6 +94,9 @@ requirements:
           status: draft
         en:
           text: "Documents must be submitted by post (or via the portal): signed form, certified copy of the entrance certificate, English certificate less than 2 years old, CV, passport copy; Medium of Instruction certificates are not accepted."
+          status: draft
+        ar:
+          text: "يجب إرسال الوثائق بالبريد (أو عبر البوابة): استمارة موقّعة، ونسخة مصادق عليها من شهادة الدخول، وشهادة في الإنجليزية صدرت منذ أقل من 2 سنة، والسيرة الذاتية (CV)، ونسخة من جواز السفر؛ ولا تُقبل شهادات لغة التدريس (Medium of Instruction)."
           status: draft
 scholarships: []
 sources:

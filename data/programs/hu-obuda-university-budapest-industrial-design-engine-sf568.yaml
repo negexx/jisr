@@ -66,6 +66,9 @@ requirements:
         en:
           text: "An entrance examination is required: a written mathematics exam and one chosen subject (biology, chemistry or informatics), plus an online oral English interview."
           status: draft
+        ar:
+          text: "يُشترط امتحان دخول: اختبار كتابي في الرياضيات ومادة اختيارية (الأحياء أو الكيمياء أو المعلوميات)، إضافة إلى مقابلة شفوية بالإنجليزية."
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -76,6 +79,9 @@ requirements:
           status: draft
         en:
           text: A portfolio of works (drawings, paintings) must be uploaded as a single file (.zip, .pdf, .jpg); single file uploads are not accepted.
+          status: draft
+        ar:
+          text: يجب رفع ملف أعمال (رسومات، لوحات) في ملف واحد (.zip أو .pdf أو .jpg)؛ ولا تُقبل الإرسالات المنفصلة.
           status: draft
 scholarships: []
 sources:

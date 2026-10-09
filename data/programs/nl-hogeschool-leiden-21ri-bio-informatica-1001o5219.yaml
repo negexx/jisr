@@ -49,6 +49,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: page-1
   info_kind: official
@@ -68,6 +71,9 @@ requirements:
         en:
           text: For a non-Dutch diploma, Hogeschool Leiden assesses your diploma based on a Nuffic credential evaluation; different application deadlines apply. Check the 'Studenten uit het buitenland' page.
           status: draft
+        ar:
+          text: إذا كانت شهادتك غير هولندية، تقيّم Hogeschool Leiden شهادتك استنادًا إلى تقييم Nuffic؛ وتنطبق مواعيد تسجيل مختلفة. راجع صفحة 'Studenten uit het buitenland'.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -79,6 +85,9 @@ requirements:
         en:
           text: The page states that havo, vwo or mbo level 4 diplomas give access, with profile requirements (N&G, N&T or E&M); check your eligibility with a Moroccan Baccalauréat.
           status: draft
+        ar:
+          text: تذكر الصفحة أن شهادات havo أو vwo أو mbo المستوى 4 تتيح الالتحاق، مع شروط خاصة بالمسلك (N&G أو N&T أو E&M)؛ تحقق من أهليتك بالبكالوريا المغربية.
+          status: draft
     - id: req-3
       source: page-3
       info_kind: official
@@ -89,6 +98,9 @@ requirements:
           status: draft
         en:
           text: Without an admissible diploma and aged 21 or over, you can apply for the Toelatingsonderzoek 21+; the deadline for Bio-informatica is 1 June 2026.
+          status: draft
+        ar:
+          text: إذا لم تكن لديك شهادة مقبولة وكان عمرك 21 سنة أو أكثر، يمكنك طلب Toelatingsonderzoek 21+؛ والموعد النهائي لبرنامج Bio-informatica هو 1 يونيو 2026.
           status: draft
 scholarships: []
 sources:

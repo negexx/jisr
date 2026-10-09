@@ -50,6 +50,9 @@ documents:
         en:
           text: Final secondary school qualification obtained after at least 12 years of schooling
           status: draft
+        ar:
+          text: الشهادة النهائية للدراسة الثانوية المحصَّل عليها بعد 12 سنة دراسية على الأقل
+          status: draft
       translationRequired: null
     - slug: cimea-statement-or-declaration-of-value
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: CIMEA statement or Declaration of value, if the institution asks for it
+          status: draft
+        ar:
+          text: إفادة CIMEA أو بيان القيمة، إذا طلبته المؤسسة
           status: draft
       translationRequired: null
     - slug: university-entrance-aptitude-certificate
@@ -68,6 +74,9 @@ documents:
         en:
           text: Certificate of passing the academic aptitude test for university entrance in the home country, where one exists
           status: draft
+        ar:
+          text: شهادة النجاح في اختبار الكفاءة الأكاديمية للولوج إلى الجامعة في بلد المنشأ، إن وُجد هذا الاختبار
+          status: draft
       translationRequired: null
     - slug: italian-translation-of-documents
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Italian translations of the documents above, where the institution asks for them
+          status: draft
+        ar:
+          text: ترجمات الوثائق أعلاه إلى الإيطالية، إذا طلبتها المؤسسة
           status: draft
       translationRequired: null
   source: page-5
@@ -95,6 +107,9 @@ requirements:
           status: draft
         en:
           text: A compulsory but non-selective entrance test is required; it verifies basic preparation and may lead to additional formative obligations to be fulfilled in the first year.
+          status: draft
+        ar:
+          text: يُنصّ على اختبار ولوج إلزامي لكنه غير انتقائي؛ وهو يخدم التحقق من الاستعداد الأساسي وقد يترتب عليه التزامات تعليمية إضافية يجب استيفاؤها خلال السنة الأولى.
           status: draft
 scholarships: []
 sources:

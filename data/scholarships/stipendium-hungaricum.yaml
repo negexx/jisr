@@ -37,6 +37,9 @@ summary:
   en:
     text: "Hungarian government scholarship for full-degree Bachelor studies: tuition covered, a monthly stipend and an accommodation contribution (amounts on the official page). Morocco is a sending partner for Bachelor studies in computer science, engineering and economics; you apply on the programme platform and to the responsible Moroccan authority."
     status: draft
+  ar:
+    text: "منحة الحكومة المجرية لدراسة الإجازة كاملة: تُغطى الرسوم الدراسية، مع مخصص شهري ومساهمة في السكن (المبالغ في الصفحة الرسمية). المغرب بلد شريك في الإجازة في المعلوميات والهندسة والاقتصاد؛ ويكون التقديم عبر منصة البرنامج ولدى السلطة المغربية المسؤولة."
+    status: draft
 support:
   value: null
   source: page-1
@@ -60,6 +63,9 @@ howToApply:
     status: draft
   en:
     text: "Apply online on the Stipendium Hungaricum platform and to the responsible Moroccan authority (dates and documents set by the sending partner): see the page of the year's call."
+    status: draft
+  ar:
+    text: "التقديم عبر الإنترنت على منصة Stipendium Hungaricum، ولدى السلطة المغربية المسؤولة (المواعيد والوثائق يحددها الشريك): راجع صفحة نداء السنة."
     status: draft
 officialUrl: https://stipendiumhungaricum.hu/apply/
 sources:

@@ -50,6 +50,9 @@ documents:
         en:
           text: CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: english-language-certificate
       name:
@@ -58,6 +61,9 @@ documents:
           status: draft
         en:
           text: Proof of sufficient English language skills
+          status: draft
+        ar:
+          text: إثبات مهارات كافية في الإنجليزية
           status: draft
       translationRequired: null
     - slug: school-leaving-certificate
@@ -68,6 +74,9 @@ documents:
         en:
           text: School/university certificates / transcripts
           status: draft
+        ar:
+          text: شهادات / كشوف نقاط مدرسية أو جامعية
+          status: draft
       translationRequired: null
     - slug: motivational-letter
       name:
@@ -76,6 +85,9 @@ documents:
           status: draft
         en:
           text: Motivational letter (maximum one A4 page)
+          status: draft
+        ar:
+          text: رسالة تحفيزية (صفحة A4 واحدة على الأكثر)
           status: draft
       translationRequired: null
   source: page-2
@@ -106,6 +118,9 @@ requirements:
         en:
           text: Check whether your school qualification (Moroccan Baccalauréat) allows direct access to this programme or whether additional academic experience or tests are required.
           status: draft
+        ar:
+          text: تحقق مما إذا كانت شهادتك (البكالوريا المغربية) تتيح الالتحاق المباشر بهذا البرنامج أم أن امتحانات أو اختبارات إضافية لازمة.
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -116,6 +131,9 @@ requirements:
           status: draft
         en:
           text: As the number of places is limited, applicants should have a very good school-leaving certificate; no precise grade threshold is stated.
+          status: draft
+        ar:
+          text: بما أن عدد المقاعد محدود، ينبغي أن تكون شهادة نهاية الدراسة الثانوية للمتقدمين جيدة جدًا؛ ولم تُذكر أي عتبة دقيقة للعلامات.
           status: draft
 scholarships: []
 sources:

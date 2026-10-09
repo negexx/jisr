@@ -56,6 +56,9 @@ documents:
         en:
           text: CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: school-leaving-certificate
       name:
@@ -64,6 +67,9 @@ documents:
           status: draft
         en:
           text: School-leaving certificate
+          status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
           status: draft
       translationRequired: null
   source: page-2

@@ -60,6 +60,9 @@ requirements:
         en:
           text: Check that your diploma (Moroccan Baccalauréat) is accepted; the pages only list havo, vwo, mbo-niveau 4, hbo-propedeuse and wo-propedeuse. Contact Student Support for the instroomcoördinator.
           status: draft
+        ar:
+          text: تحقق من أن شهادتك (البكالوريا المغربية) مقبولة؛ فالصفحات لا تذكر سوى havo وvwo وmbo-niveau 4 وhbo-propedeuse وwo-propedeuse. تواصل مع Student Support للوصول إلى منسق القبول.
+          status: draft
     - id: req-2
       source: page-2
       info_kind: official
@@ -70,6 +73,9 @@ requirements:
           status: draft
         en:
           text: Non-EEA applicants must apply by May 1st and pay tuition fees by June 15; check these dates and payment.
+          status: draft
+        ar:
+          text: على المتقدمين من خارج المنطقة الاقتصادية الأوروبية (EEA) التقديم قبل 1 مايو ودفع الرسوم الدراسية قبل 15 يونيو؛ تحقق من هذين التاريخين ومن الدفع.
           status: draft
 scholarships: []
 sources:

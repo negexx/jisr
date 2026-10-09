@@ -57,6 +57,9 @@ documents:
         en:
           text: CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: proof-of-english-language-skills
       name:
@@ -65,6 +68,9 @@ documents:
           status: draft
         en:
           text: Proof of English language skills
+          status: draft
+        ar:
+          text: إثبات المهارات في اللغة الإنجليزية
           status: draft
       translationRequired: null
     - slug: authenticated-copies-of-school-university-certificates
@@ -75,6 +81,9 @@ documents:
         en:
           text: Authenticated copies of school / university certificates
           status: draft
+        ar:
+          text: نسخ موثّقة من الشهادات الجامعية / المدرسية
+          status: draft
       translationRequired: null
     - slug: transcripts
       name:
@@ -83,6 +92,9 @@ documents:
           status: draft
         en:
           text: Transcripts
+          status: draft
+        ar:
+          text: كشوف النقاط
           status: draft
       translationRequired: null
     - slug: reference-letter
@@ -93,6 +105,9 @@ documents:
         en:
           text: Reference letter
           status: draft
+        ar:
+          text: رسالة توصية
+          status: draft
       translationRequired: null
     - slug: motivational-letter
       name:
@@ -101,6 +116,9 @@ documents:
           status: draft
         en:
           text: Motivational letter
+          status: draft
+        ar:
+          text: رسالة تحفيزية
           status: draft
       translationRequired: null
     - slug: english-language-proof
@@ -111,6 +129,9 @@ documents:
         en:
           text: English language proof
           status: draft
+        ar:
+          text: إثبات الكفاءة اللغوية في الإنجليزية
+          status: draft
       translationRequired: null
     - slug: letter-of-reference
       name:
@@ -119,6 +140,9 @@ documents:
           status: draft
         en:
           text: Letter of reference
+          status: draft
+        ar:
+          text: رسالة توصية
           status: draft
       translationRequired: null
   source: daad

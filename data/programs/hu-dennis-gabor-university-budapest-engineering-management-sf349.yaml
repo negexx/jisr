@@ -57,6 +57,9 @@ requirements:
         en:
           text: Check that you have a baccalaureate (or equivalent) and an English level B2 oral and written.
           status: draft
+        ar:
+          text: تحقق من أنك حاصل على البكالوريا (أو ما يعادلها) ومن مستوى B2 في الإنجليزية شفهيًا وكتابيًا.
+          status: draft
     - id: req-2
       source: programme
       info_kind: official
@@ -67,6 +70,9 @@ requirements:
           status: draft
         en:
           text: An oral interview online or in person is part of the selection; prepare for an interview.
+          status: draft
+        ar:
+          text: تدخل مقابلة شفوية عبر الإنترنت أو حضوريًا ضمن الانتقاء؛ استعد لمقابلة.
           status: draft
 scholarships: []
 sources:

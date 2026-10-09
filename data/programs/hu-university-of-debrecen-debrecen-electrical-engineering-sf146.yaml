@@ -47,6 +47,9 @@ documents:
         en:
           text: Application form
           status: draft
+        ar:
+          text: استمارة التقديم
+          status: draft
       translationRequired: null
     - slug: school-leaving-certificate
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: certificate of education
+          status: draft
+        ar:
+          text: شهادة دراسية
           status: draft
       translationRequired: true
     - slug: transcripts
@@ -65,6 +71,9 @@ documents:
         en:
           text: transcripts
           status: draft
+        ar:
+          text: كشوف النقاط
+          status: draft
       translationRequired: null
     - slug: citizenship-certificate
       name:
@@ -73,6 +82,9 @@ documents:
           status: draft
         en:
           text: Certificate of citizenship
+          status: draft
+        ar:
+          text: شهادة الجنسية
           status: draft
       translationRequired: null
     - slug: cv
@@ -83,6 +95,9 @@ documents:
         en:
           text: CV
           status: draft
+        ar:
+          text: السيرة الذاتية (CV)
+          status: draft
       translationRequired: null
     - slug: medical-certificate
       name:
@@ -92,6 +107,9 @@ documents:
         en:
           text: Medical Certificate
           status: draft
+        ar:
+          text: شهادة طبية
+          status: draft
       translationRequired: null
     - slug: bank-receipt
       name:
@@ -100,6 +118,9 @@ documents:
           status: draft
         en:
           text: Bank receipt
+          status: draft
+        ar:
+          text: إيصال بنكي
           status: draft
       translationRequired: null
   source: page-2
@@ -126,6 +147,9 @@ requirements:
       note:
         fr:
           text: Des examens d'entrée en mathématiques et en physique (écrit et oral) sont requis. Préparez-vous en conséquence.
+          status: draft
+        ar:
+          text: تُطلب امتحانات دخول في الرياضيات والفيزياء (كتابية وشفوية). استعد لذلك.
           status: draft
 scholarships: []
 sources:

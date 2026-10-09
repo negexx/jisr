@@ -66,6 +66,9 @@ requirements:
         en:
           text: Check the exact institutional tuition fee and payment details for non-EEA students on the Avans tuition fees page.
           status: draft
+        ar:
+          text: تحقق من الرسوم الدراسية الدقيقة للمؤسسة ومن طرق الأداء للطلبة من خارج المنطقة الاقتصادية الأوروبية (EEE) في صفحة الرسوم الدراسية الخاصة بـ Avans.
+          status: draft
 scholarships: []
 sources:
   programme:

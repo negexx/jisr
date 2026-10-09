@@ -47,6 +47,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
     - slug: transcripts
       name:
@@ -55,6 +58,9 @@ documents:
           status: draft
         en:
           text: Transcripts
+          status: draft
+        ar:
+          text: كشوف النقاط
           status: draft
       translationRequired: null
     - slug: passport
@@ -65,6 +71,9 @@ documents:
         en:
           text: Passport
           status: draft
+        ar:
+          text: جواز السفر
+          status: draft
       translationRequired: null
     - slug: cv
       name:
@@ -73,6 +82,9 @@ documents:
           status: draft
         en:
           text: CV
+          status: draft
+        ar:
+          text: السيرة الذاتية (CV)
           status: draft
       translationRequired: null
     - slug: medical-certificate
@@ -83,6 +95,9 @@ documents:
         en:
           text: Medical Certificate
           status: draft
+        ar:
+          text: شهادة طبية
+          status: draft
       translationRequired: null
     - slug: application-fee-receipt
       name:
@@ -91,6 +106,9 @@ documents:
           status: draft
         en:
           text: Bank receipt for application fee
+          status: draft
+        ar:
+          text: إيصال دفع رسوم التقديم
           status: draft
       translationRequired: null
   source: page-2

@@ -53,6 +53,9 @@ documents:
         en:
           text: School-leaving certificate
           status: draft
+        ar:
+          text: شهادة نهاية الدراسة الثانوية
+          status: draft
       translationRequired: null
   source: programme
   info_kind: official
@@ -82,6 +85,9 @@ requirements:
         en:
           text: Check the programme website whether additional B2 English tests (e.g. Cambridge, PTE, UNIcert) are accepted and whether you are exempt.
           status: draft
+        ar:
+          text: تحقق في موقع البرنامج مما إذا كان اختبار إنجليزية إضافي بمستوى B2 (مثل Cambridge أو PTE أو UNIcert) مقبولًا وما إذا كنت معفيًا.
+          status: draft
     - id: req-3
       source: programme
       info_kind: official
@@ -93,6 +99,9 @@ requirements:
         en:
           text: Admission eligibility (Hochschulzugangsberechtigung) is decided after reviewing your documents; you can check your qualifications on uni-assist before applying.
           status: draft
+        ar:
+          text: تُحدَّد أهلية القبول (Hochschulzugangsberechtigung) بعد دراسة ملفك؛ ويمكنك التحقق من مؤهلاتك على uni-assist قبل التقديم.
+          status: draft
     - id: req-4
       source: page-2
       info_kind: official
@@ -103,6 +112,9 @@ requirements:
           status: draft
         en:
           text: "See the programme's information page for applicants from third countries: an aptitude test form may be required."
+          status: draft
+        ar:
+          text: "راجع صفحة « معلومات للمترشحين من دول ثالثة » الخاصة بالبرنامج: قد يُطلب نموذج اختبار الكفاءة."
           status: draft
 scholarships: []
 sources:
