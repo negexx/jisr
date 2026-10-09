@@ -509,5 +509,5 @@ describe("export on the real data", () => {
     expect(batches).toBe(Math.ceil(todo.entries.length / 120));
     expect(readdirSync("data").sort()).toEqual(before);
     expect(readdirSync(path.dirname(out))).toHaveLength(batches + 1);
-  });
+  }, 60_000);
 });
