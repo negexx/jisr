@@ -17,13 +17,21 @@ export async function SiteFooter({ locale }: { locale: AppLocale }) {
           <p className="text-sm text-muted-foreground">{t("privacyLogs")}</p>
           <p className="text-sm text-muted-foreground">{t("sources")}</p>
           <p className="text-sm">
-            <Link href="/privacy" className="font-medium text-primary underline underline-offset-4">
+            <Link
+              href="/privacy"
+              prefetch={false}
+              className="font-medium text-primary underline underline-offset-4"
+            >
               {t("privacyLink")}
             </Link>
             <span aria-hidden="true" className="mx-2 text-muted-foreground">
               ·
             </span>
-            <Link href="/terms" className="font-medium text-primary underline underline-offset-4">
+            <Link
+              href="/terms"
+              prefetch={false}
+              className="font-medium text-primary underline underline-offset-4"
+            >
               {t("termsLink")}
             </Link>
           </p>
