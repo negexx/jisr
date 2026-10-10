@@ -1,0 +1,148 @@
+{
+  "slug": "de-hochschule-osnabruck-hrk214-international-economics-daad9923",
+  "programmePage": "https://www.hs-osnabrueck.de/en/study/study-offerings/bachelor/international-economics-and-sustainability-ba/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9923/",
+          "quote": "Programme duration 7 semesters"
+        },
+        {
+          "url": "https://www.hs-osnabrueck.de/en/study/study-offerings/bachelor/international-economics-and-sustainability-ba/",
+          "quote": "Standard period of study 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "de",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9923/",
+          "quote": "Courses are held in English (up to 65%) and German (min. 35%)."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9923/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 8,
+            "day": 1
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9923/",
+          "quote": "The following is valid for applicants from: non-EU countries For the winter semester: until 1 August"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9923/",
+          "quote": "Please apply via uni-assist."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "secondary-school-diploma",
+          "name": {
+            "fr": "Diplôme d'études secondaires ou diplôme universitaire reconnu pour l'admission",
+            "en": "Secondary school diploma or university degree recognised for admission"
+          },
+          "quotedAs": "Secondary school diploma or university degree recognised for admission",
+          "translationRequired": null
+        },
+        {
+          "slug": "german-language-certificate",
+          "name": {
+            "fr": "Certificat de langue allemande (C1)",
+            "en": "German language certificate (C1)"
+          },
+          "quotedAs": "proof of German language proficiency (details below)",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9923/",
+          "quote": "Secondary school diploma or university degree recognised for admission"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9923/",
+          "quote": "proof of German language proficiency (details below)"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.hs-osnabrueck.de/en/study/study-offerings/bachelor/international-economics-and-sustainability-ba/",
+            "quote": "Foreign languages In addition to business English, you can learn other languages or improve your previous knowledge, e.g. in French, Spanish, Chinese or Russian."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Justificatif officiel de compétences en allemand au niveau C1 requis, par ex. le certificat Goethe-Zertifikat C2 ou le TestDaF TDN 4. L'anglais n'exige pas de niveau minimum (évaluation via un test ou un entretien). Vérifiez les certificats acceptés.",
+          "en": "Official proof of German language skills at C1 level is required, e.g. the Goethe-Zertifikat C2 certificate or TestDaF TDN 4. English has no minimum level (proficiency assessment via test or interview). Verify the accepted certificates."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9923/",
+            "quote": "German language skills C1 required, please provide an official language certificate"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le diplôme d'études secondaires doit être reconnu pour l'admission. Vérifiez s'il vous permet l'accès aux études supérieures via la base de données anabin ou DAAD.",
+          "en": "The secondary school diploma must be recognised for admission. Check via the anabin or DAAD database whether it entitles you to university admission."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9923/",
+            "quote": "Find out if your degree entitles you for admission by using information provided by the German Academic Exchange Service or the anabin database of the Central Office for Foreign Education (Zentralstelle für ausländisches Bildungswesen)."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The application deadline (1 August) is stated in the DAAD entry under 'Application periods: The following is valid for applicants from: non-EU countries For the winter semester: until 1 August' and has no year, so it is a recurring deadline. The HS Osnabrueck application page gives a deadline of September 15, 2026 for International Economics and Sustainability (B.A.), but that list is introduced by 'The following application deadlines apply to applicants with German educational qualifications', so it is not used for the non-EU deadline. The DAAD entry lists tuition fees as 'None' but also a semester contribution of approx. 380 EUR; the current semester contribution is 443 EUR (winter semester 2026/2027) per the financing page, but that page is an institution-wide page and is not tied to this programme, so tuition is left at 0 per the programme page. The application channel is uni-assist per the DAAD entry ('Please apply via uni-assist.'); the VPD preliminary review is not mentioned for this programme. The documents list is limited to what the DAAD page names for this programme."
+}

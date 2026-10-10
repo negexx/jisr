@@ -1,0 +1,57 @@
+{
+  "slug": "it-cassino-cassino-industrial-engineering-technology-l9",
+  "programmePage": "https://www.iet.unicas.it/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.iet.unicas.it/",
+          "quote": "Language: English Duration: 3 years Level: Bachelor Delivery: Blended Total ECTS: 180"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.iet.unicas.it/",
+          "quote": "Language: English Duration: 3 years Level: Bachelor Delivery: Blended Total ECTS: 180"
+        }
+      ]
+    }
+  },
+  "notes": "For tuition: no quote ties this programme to a fee group and no quote names Morocco in a country-group list of the same academic year; no tuition figure is stated for this programme and student, so tuition is omitted. For the application deadline: the programme page states 30.06.2026 but does not specify that it is for non-EU/international applicants; per rules an undated or non-international deadline should be recurring, but the year is stated so it is given as a dated deadline; flag for auditor. Morocco is not named in an accepted quote, so no country-group tuition.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.iet.unicas.it/admission-criteria",
+            "quote": "Admission to the degree program also requires an adequate knowledge of the English language, verified by the presentation of a suitable B2 level certification (Intermediate Level, as defined by the Common European Framework of Reference for Languages) or by passing an appropriate test."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'entrée (CISIA) est requis pour vérifier les compétences de base et peut être passé en présentiel ou en ligne.",
+          "en": "An entrance test (CISIA) is required for assessing basic competencies, and can be taken in person or online."
+        },
+        "evidence": [
+          {
+            "url": "https://www.iet.unicas.it/admission-criteria",
+            "quote": "These required competencies are assessed through an entrance test, either in person or online, by CISIA on a national scale."
+          }
+        ]
+      }
+    ]
+  }
+}

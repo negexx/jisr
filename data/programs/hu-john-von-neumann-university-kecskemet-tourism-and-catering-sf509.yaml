@@ -26,8 +26,11 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
-  source: programme
+  value:
+    amountMinor: 300000
+    currency: EUR
+    period: semester
+  source: page-1
   info_kind: official
 intakes:
   value: null
@@ -38,8 +41,53 @@ applicationChannel:
   source: page-2
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat/diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary school certificate/diploma
+          status: draft
+      translationRequired: true
+    - slug: secondary-school-transcript
+      name:
+        fr:
+          text: Relevé de notes du secondaire
+          status: draft
+        en:
+          text: Secondary school transcript
+          status: draft
+      translationRequired: true
+    - slug: cv
+      name:
+        fr:
+          text: CV
+          status: draft
+        en:
+          text: CV
+          status: draft
+      translationRequired: null
+    - slug: motivation-letter
+      name:
+        fr:
+          text: Lettre de motivation
+          status: draft
+        en:
+          text: Motivation letter
+          status: draft
+      translationRequired: null
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+  source: page-2
   info_kind: official
 requirements:
   coverage: partial
@@ -68,3 +116,6 @@ sources:
   page-2:
     url: https://nje.hu/en/education/application-guideline
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy
+    last_verified_at: 2026-10-10

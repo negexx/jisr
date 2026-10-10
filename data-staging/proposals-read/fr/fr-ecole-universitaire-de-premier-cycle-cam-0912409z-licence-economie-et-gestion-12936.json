@@ -1,0 +1,43 @@
+{
+  "slug": "fr-ecole-universitaire-de-premier-cycle-cam-0912409z-licence-economie-et-gestion-12936",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12936&typeBac=0&originePc=0",
+  "facts": {},
+  "notes": "Le frais de scolarité de 178 euros + tarif DU 264 euros + frais complémentaires 360 euros affiché sur la fiche Parcoursup correspond aux droits d'inscription en Licence pour les étudiants français/UE et n'est pas le tarif différencié d'un étudiant marocain non-UE. La page Campus France indique pour les étudiants extra-communautaires des droits différenciés de 2 902 euros pour une année en cycle de Licence, mais il s'agit d'une règle générale pour les établissements publics français, non confirmée comme applicable à ce double diplôme. Le DU « Langues et Civilisations » peut avoir son propre tarif. Il est recommandé de vérifier directement auprès de l'établissement. Durée 3 ans déduite de la mention « 3ème année » de la licence. La langue chinoise est incluse comme langue d'enseignement (LV1), bien que la formation soit principalement en français.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "delf-dalf",
+          "tcf"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12936&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Formation sélective : l'admission dépend de l'examen du dossier par la commission (notes, méthodes de travail, savoir-être, motivation). Vérifiez les critères détaillés sur la fiche Parcoursup.",
+          "en": "Selective programme: admission depends on the committee's review of the application (grades, work methods, soft skills, motivation). Check the detailed criteria on the Parcoursup page."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12936&typeBac=0&originePc=0",
+            "quote": "Attention ! Ce parcours est sélectif : il est donc fortement recommandé d'émettre, parallèlement à ce choix, un vœu en Licence Economie et Gestion."
+          }
+        ]
+      }
+    ]
+  }
+}

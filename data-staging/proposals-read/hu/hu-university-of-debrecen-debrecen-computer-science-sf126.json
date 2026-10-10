@@ -1,0 +1,90 @@
+{
+  "slug": "hu-university-of-debrecen-debrecen-computer-science-sf126",
+  "programmePage": "https://www.edu.unideb.hu/p/computer-science-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/computer-science-bsc",
+          "quote": "This is a 3-year program consisting of 6 academic semesters."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/computer-science-bsc",
+          "quote": "All courses are taught in English; therefore, a B2 level English proficiency is required."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 700000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/computer-science-bsc",
+          "quote": "The tuition fee for this program is 7,000 USD/Year"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "The following documents need to be submitted during the application procedure by all applicants through our online application platform - that you can reach here:"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition fee of 7,000 USD/year is for this programme. The application deadline of 15th June is stated without a year and is listed as a recurring deadline; it is the deadline of the self-financed procedure. The programme page evidence only mentions English requirements; no French language requirement was found.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/computer-science-bsc",
+            "quote": "Applicants must have an English proficiency of at least B2 level as the program is fully taught in English."
+          },
+          {
+            "url": "https://www.edu.unideb.hu/p/computer-science-bsc",
+            "quote": "a TOEFL test with a minimum score of 513 (Paper-Based)."
+          },
+          {
+            "url": "https://www.edu.unideb.hu/p/computer-science-bsc",
+            "quote": "an IELTS test with a minimum score of 5.5."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien et un examen écrit d'admission en mathématiques sont obligatoires.",
+          "en": "A written and oral entrance exam in Mathematics is required for admission."
+        },
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/computer-science-bsc",
+            "quote": "Admission requires a high school certificate; and passing a written and oral entrance exam in Mathematics."
+          }
+        ]
+      }
+    ]
+  }
+}

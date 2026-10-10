@@ -41,8 +41,44 @@ applicationChannel:
   source: page-3
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Secondary School Certificate
+          status: draft
+      translationRequired: null
+    - slug: passport
+      name:
+        fr:
+          text: Passeport
+          status: draft
+        en:
+          text: Passport
+          status: draft
+      translationRequired: null
+    - slug: english-proficiency-certificate
+      name:
+        fr:
+          text: Justificatif de niveau d'anglais
+          status: draft
+        en:
+          text: Proof of English Proficiency
+          status: draft
+      translationRequired: null
+    - slug: application-fee-receipt
+      name:
+        fr:
+          text: Reçu du frais de dossier
+          status: draft
+        en:
+          text: Application Fee Receipt
+          status: draft
+      translationRequired: null
+  source: page-3
   info_kind: official
 requirements:
   coverage: partial

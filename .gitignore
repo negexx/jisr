@@ -26,6 +26,9 @@ test-results/
 # Agent harness scratch (run-continuation state)
 .omo/
 
+# Campaign lane worktrees (data-coverage campaign)
+.worktrees/
+
 # Next.js scaffold extras
 /build
 .pnp

@@ -1,0 +1,61 @@
+{
+  "slug": "fr-universite-de-rennes-epe-0353074b-licence-informatique-19304",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19304&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19304&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 65000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://formations.univ-rennes.fr/droits-dinscription-bourses-et-exonerations-pour-les-etudiantes-et-etudiants-internationaux",
+          "quote": "les droits d’inscription annuels pour les étudiantes et étudiants assujettis aux droits différenciés sont les suivants pour la rentrée 2026 : • Licence, BUT : 650 € par année universitaire"
+        }
+      ]
+    }
+  },
+  "notes": "The programme's own page is the Parcoursup fiche; it states \"178 euros\" tuition per year, which applies to non-differentiated-fee students only (French/EU/EEA etc.). For a Moroccan (non-EU) applicant with a foreign diploma, the applicable fee is the differentiated fee of 650 EUR per year according to the Université de Rennes international students page, which also states that from 2027-2028 it will rise to 2,902 EUR. Application channel is not extracted per task instructions: a foreign-diploma applicant applies via Etudes en France / DAP. The Parcoursup fiche's C1 French level is listed on the fiche itself (general for the formation); dossiers are screened on Parcoursup criteria but the international route is separate.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19304&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La candidature est examinée par une commission : résultats scolaires (60 %), savoir-être (20 %), méthodes de travail (10 %), motivation (5 %), engagement (5 %). Spécialités recommandées : Mathématiques et NSI, Mathématiques et Physique-Chimie, ou Mathématiques et Sciences de l'Ingénieur.",
+          "en": "Application is reviewed by a commission: academic results (60%), soft skills (20%), working methods (10%), motivation (5%), engagement (5%). Recommended specialisations: Mathematics and Computer Science, Mathematics and Physics-Chemistry, or Mathematics and Engineering Sciences."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19304&typeBac=0&originePc=0",
+            "quote": "• Spécialités Mathématiques et Numérique et Sciences Informatiques"
+          }
+        ]
+      }
+    ]
+  }
+}

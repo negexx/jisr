@@ -1,0 +1,95 @@
+{
+  "slug": "nl-de-haagse-hogeschool-27um-zoetermeer-applied-data-science-art-1001o8742",
+  "programmePage": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+          "quote": "Type Bachelor Variant voltijd Duration 4 jaar"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+          "quote": "Locatie Zoetermeer en Den Haag - hoofdvestiging Taal Nederlands"
+        },
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+          "quote": "Dat klopt voor het grootste deel. We spreken bij de opleiding Nederlands en de producten die je oplevert, schrijf je ook in het Nederlands."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.dehaagsehogeschool.nl/opleidingen/hbo-bachelor/applied-data-science-artificial-intelligence",
+          "quote": "Je aanmelden voor een opleiding doe je via Studielink."
+        },
+        {
+          "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+          "quote": "Schrijf je daarvoor in via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: De algemene instellingscollegegeld voor bachelor voltijd 2026-2027 is € 10.528. Uitzonderingen: joint degrees en voltijd Engelstalige masteropleidingen (€ 14.000); deze opleiding is een Nederlandstalige bachelor, dus niet onder de uitzonderingen. De pagina zegt niet expliciet dat niet-EU studenten het instellingscollegegeld betalen, maar stelt dat wie niet aan de voorwaarden voor wettelijk collegegeld voldoet het instellingscollegegeld betaalt. Taaleis: voor een opleiding in het Nederlands moet je de Nederlandse taal beheersen; de pagina noemt geen specifiek CEFR-niveau, maar wel NT2 programma II en CNaVT. Documenten: de pagina's noemen geen specifieke documenten voor niet-EU studenten, dus weglaten. Deadlines: de pagina's noemen geen concrete jaartallen voor aanmelding voor niet-EU studenten; daarom weggelaten.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "Je moet óók bewijzen dat je de taal van de opleiding voldoende beheerst."
+          },
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "Je toont aan dat je voldoet aan de taaleis Nederlands via een staatsexamen Nederlands als Tweede Taal, programma II met alle vier de onderdelen lezen, spreken, schrijven en luisteren."
+          },
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "De Haagse Hogeschool accepteert ook CNaVT-certificaten ‘Educatief startbekwaam’ en ‘Educatief professioneel’."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le diplôme marocain doit être jugé équivalent à un diplôme néerlandais donnant accès à la formation par la Centrale Studenten Inschrijving.",
+          "en": "The Moroccan diploma must be assessed by the Centrale Studenten Inschrijving as equivalent to a Dutch diploma granting access."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/toelatingseisen",
+            "quote": "De Centrale Studenten Inschrijving bepaalt of jouw buitenlandse diploma ten minste gelijkwaardig is aan dat van een (toelatinggevend) Nederlands diploma."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien de motivation ou un conseil d'orientation peut être demandé (studiekeuzecheck).",
+          "en": "A motivation interview or study choice advice may be requested (studiekeuzecheck)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.dehaagsehogeschool.nl/studiekeuze/alles-over-aanmelden-en-inschrijven/aanmelden-hoe-doe-je-dat",
+            "quote": "Aanmelders voor vrijwel alle voltijd bacheloropleidingen en de duale opleidingen Bestuurskunde/Overheidsmanagement, Integrale Veiligheidskunde en HBO-Rechten krijgen een uitnodiging voor een kennismakingsgesprek (Skype of telefonisch)."
+          }
+        ]
+      }
+    ]
+  }
+}

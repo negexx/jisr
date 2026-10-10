@@ -1,0 +1,69 @@
+{
+  "slug": "fr-universite-des-antilles-pole-guadeloupe-9710585j-licence-economie-et-gestion-39484",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39484&typeBac=0&originePc=0",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 17800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39484&typeBac=0&originePc=0",
+          "quote": "Par année 178 euros."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Relevé de notes du baccalauréat ou équivalent",
+            "en": "Baccalaureate transcript or equivalent"
+          },
+          "quotedAs": "Relevé de notes du baccalauréat OU équivalent",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.univ-antilles.fr/candidature-et-inscription",
+          "quote": "Pour une 1ère inscription à l’université : Relevé de notes du baccalauréat OU équivalent"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39484&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le montant des droits d'inscription varie selon la nationalité ; vérifiez les droits différenciés pour les étudiants extra-communautaires et les exonérations possibles.",
+          "en": "The tuition amount varies by nationality; check the differentiated fees for non-EU students and possible exemptions."
+        },
+        "evidence": [
+          {
+            "url": "https://www.univ-antilles.fr/candidature-et-inscription",
+            "quote": "Le montant des droits d’inscription est fixé par l’arrêté du 19 avril 2019 et varie selon les diplômes nationaux et la nationalité des étudiants."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition: the Parcoursup fiche gives only 178 EUR/year, i.e. the national rate for French/EU students; non-EU students normally pay differentiated fees (e.g. 2,902 EUR/year for a Licence), so 178 EUR may not apply to this applicant. Language proficiency: the Parcoursup fiche states \"C1\" required, but it also says the programme is taught with \"Langue vivante 1 : Anglais ou Espagnol\"; no teaching language is stated for the programme itself. Documents: the quoted list comes from the university's general \"Candidature et inscription\" page (\"Pièces justificatives\") and is not specific to this programme. ApplicationChannel intentionally omitted per task instructions."
+}

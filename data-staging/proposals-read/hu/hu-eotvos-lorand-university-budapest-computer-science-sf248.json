@@ -1,0 +1,70 @@
+{
+  "slug": "hu-eotvos-lorand-university-budapest-computer-science-sf248",
+  "programmePage": "https://www.elte.hu/en/computer-science-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/computer-science-bsc",
+          "quote": "Duration 6 semesters (3 years)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/computer-science-bsc",
+          "quote": "Language of instruction English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 320000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/computer-science-bsc",
+          "quote": "Tuition fee/semester 3,200 EUR 3,200 EUR"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the programme page states only 3,200 EUR per semester for both EU/EEA and non-EU/EEA students, so it is not explicitly a non-EU fee; number taken as stated (EUR 3,200). The application deadline of 30 April 2027 is a general September intake deadline, not explicitly labelled for non-EU applicants; kept because it is the programme's own page. Language certificate is listed as 'if available', so it is not mandatory.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un bon niveau en mathématiques dans le diplôme de fin d'études secondaires est exigé; vérifiez vos notes.",
+          "en": "Good grades in Mathematics in the secondary school finishing documents are required; check your grades."
+        },
+        "evidence": [
+          {
+            "url": "https://www.elte.hu/en/computer-science-bsc",
+            "quote": "Applicants are required to have sufficiently good grades in their secondary school finishing documents, especially from Mathematics."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée (test écrit en ligne et entretien en anglais) est organisé; préparez-vous aux mathématiques du secondaire.",
+          "en": "An entrance examination (online written test and English interview) is organised; prepare secondary-school mathematics."
+        },
+        "evidence": [
+          {
+            "url": "https://www.elte.hu/en/computer-science-bsc",
+            "quote": "Type of entrance examination: both written and oral"
+          }
+        ]
+      }
+    ]
+  }
+}

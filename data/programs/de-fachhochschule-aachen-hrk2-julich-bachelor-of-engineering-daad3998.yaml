@@ -17,9 +17,9 @@ summary:
     status: draft
 officialUrl: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3998/
 durationYears:
-  value: null
+  value: 3
   source: daad
-  info_kind: guidance
+  info_kind: official
 teachingLanguages:
   value:
     - de

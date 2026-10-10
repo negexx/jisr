@@ -1,0 +1,87 @@
+{
+  "slug": "de-hochschule-fur-technik-und-wirtschaft-dr-hrk54-bachelor-electrical-engi-daad4762",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+          "quote": "Teaching language German English"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+          "quote": "English (first to fourth semesters) and German (partially in the third semester and fourth semester, completely in the fifth to eighth semesters)"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+          "quote": "Tuition fees per semester None"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 6,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+          "quote": "Application periods International applicants: 15 June"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+          "quote": "Submit application via Please apply via uni-assist."
+        },
+        {
+          "url": "https://www.htw-dresden.de/en/university/faculties/electrical-engineering/studies/bachelor-electrical-engineering",
+          "quote": "Application International applicants must apply via uni assist."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "Secondary school leaving certificate",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4762/",
+          "quote": "Academic admission requirements Secondary school leaving certificate (verified copy of the original with a verified English or German translation of the original)"
+        }
+      ]
+    }
+  },
+  "notes": "The pages do not state a tuition fee for non-EU students; the only fee statement is 'Tuition fees per semester None' and a semester contribution of approx. 350 EUR (which is not tuition). The German-language deadline '15 June' for international applicants has no year, so it is recorded as a recurring deadline. The application deadline quote is for international applicants. The programme page's own URL is the DAAD page; the HTW Dresden page provides additional confirmation. A semester contribution of 364.03 EUR (part-time 137.23 EUR) is stated for re-registration, not as tuition."
+}

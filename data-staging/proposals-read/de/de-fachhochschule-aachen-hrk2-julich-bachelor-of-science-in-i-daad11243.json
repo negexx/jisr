@@ -1,0 +1,76 @@
+{
+  "slug": "de-fachhochschule-aachen-hrk2-julich-bachelor-of-science-in-i-daad11243",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11243/",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11243/",
+          "quote": "Teaching language German Languages The course of study is conducted in German."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11243/",
+          "quote": "Tuition fees per semester None Semester contribution Currently approx. 380.60 EUR per semester"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11243/",
+          "quote": "Deadlines: 15 July for international applicants (only through uni-assist)"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11243/",
+          "quote": "Submit application via Please apply via uni-assist."
+        }
+      ]
+    }
+  },
+  "notes": "The duration quote lists both 6 and 7 semesters; value 3 years is derived from the shorter 6-semester version. Tuition fact is that there are no tuition fees, but the semester contribution of approx. 380.60 EUR is separate. The application deadline quote gives no year, so it is recorded as a recurring deadline. The deadline is for international applicants and the application channel is uni-assist, not the VPD preliminary review route.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que votre diplôme étranger est équivalent à l'Abitur allemand (anabin). Sinon, vous pouvez vous qualifier via la 'Freshman Year' de l'université.",
+          "en": "Verify that your foreign diploma is equivalent to the German Abitur (anabin). Otherwise, you can qualify via the university's 'Freshman Year'."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11243/",
+            "quote": "German entrance qualification for universities of applied sciences or equivalent (http://anabin.kmk.org) Many international students do not fulfil these requirements, but they can qualify through the \"Freshman Year\" (https://www.fh-aachen.de/en/freshman)."
+          }
+        ]
+      }
+    ]
+  }
+}

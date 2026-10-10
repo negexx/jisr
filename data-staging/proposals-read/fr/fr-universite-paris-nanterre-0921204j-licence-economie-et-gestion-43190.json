@@ -1,0 +1,65 @@
+{
+  "slug": "fr-universite-paris-nanterre-0921204j-licence-economie-et-gestion-43190",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43190&typeBac=0&originePc=0",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 17800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43190&typeBac=0&originePc=0",
+          "quote": "Par année 178 euros."
+        },
+        {
+          "url": "https://university.parisnanterre.fr/international-student-studying-at-university-paris-nanterre/incoming-free-movers/application",
+          "quote": "International students will benefit from a partial exemption from tuition fees. They will only have to pay the registration fees applicable to French students."
+        }
+      ]
+    }
+  },
+  "notes": "Page d'inscription internationale (université) mentionne une exonération partielle des droits pour les étudiants internationaux: ils ne paient que les droits applicables aux étudiants français, soit environ 178 euros pour la Licence (l'équivalent exact pour ce programme est indiqué sur la fiche Parcoursup: 178 euros par année). La délibération de l'université confirme cette exonération partielle pour les étudiants internationaux ne relevant pas des catégories de l'article 6. Le programme exige un très bon niveau en espagnol (les hispanophones, non débutants); ne jamais avoir suivi un cours d'espagnol rend inéligible. Aucune date limite de candidature par année n'est indiquée pour ce programme: les dates du site international (DAP BLANC: 1 octobre 2026 / 15 décembre 2026) concernent une autre procédure et une autre page.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "delf-dalf",
+          "tcf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43190&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://university.parisnanterre.fr/international-student-studying-at-university-paris-nanterre/incoming-free-movers/application",
+            "quote": "For the undergraduate degree, you must provide proof of a B2 level: TCF or DELF"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sélectionne sur dossier : très bon niveau en espagnol et niveau élevé en mathématiques sont attendus (critères essentiels). Consultez les modalités sur la fiche de candidature.",
+          "en": "Selective admission based on the application file: a very good level in Spanish and a high level in mathematics are expected (essential criteria). Check the application details on the programme sheet."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43190&typeBac=0&originePc=0",
+            "quote": "Très bon niveau en espagnol"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43190&typeBac=0&originePc=0",
+            "quote": "Niveau élevé en mathématiques"
+          }
+        ]
+      }
+    ]
+  }
+}

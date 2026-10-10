@@ -1,0 +1,66 @@
+{
+  "slug": "fr-universite-paris-nanterre-0921204j-licence-economie-et-gestion-11072",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11072&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "fr",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11072&typeBac=0&originePc=0",
+          "quote": "Licence - Economie et gestion - Parcours Economie et gestion - cursus international franco-anglais"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Niveau de français B2 requis pour s'inscrire à la formation. Vérifiez auprès de l'établissement les justificatifs acceptés (TCF, DELF).",
+          "en": "French level B2 required to enrol in the programme. Check with the institution which certificates are accepted (TCF, DELF)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11072&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Très bon niveau en mathématiques et en anglais attendu ; les résultats scolaires comptent pour 95 % de l'analyse du dossier.",
+          "en": "Very good level in mathematics and English expected; academic results account for 95% of the application review."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11072&typeBac=0&originePc=0",
+            "quote": "Pour accéder au Cursus international franco-anglais de la mention Economie et Gestion, vous devez avoir un très bon niveau en mathématiques et en anglais."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11072&typeBac=0&originePc=0",
+            "quote": "Vos résultats scolaires ou obtenus dans l'enseignement supérieur comptent pour 95%"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Formation sélective : l'admission dépend d'un classement de la commission d'examen des vœux, pas d'un simple dépôt de dossier.",
+          "en": "Selective programme: admission depends on the ranking made by the application review committee, not merely on submitting an application."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11072&typeBac=0&originePc=0",
+            "quote": "Formation sélective"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Aucune durée, aucun frais de scolarité propre à ce cursus et aucune date limite d'admission destinée aux candidats non-UE titulaires d'un baccalauréat étranger ne figurent sur la page de ce programme. La mention « Par année 178 euros » sur la fiche Parcoursup est le tarif national de licence, pas les droits différenciés applicables aux étudiants extra-communautaires. L'applicationChannel n'est pas renseigné conformément à la consigne : un candidat titulaire d'un bac marocain résidant au Maroc relève de la procédure Études en France / Campus France, et non de Parcoursup."
+}

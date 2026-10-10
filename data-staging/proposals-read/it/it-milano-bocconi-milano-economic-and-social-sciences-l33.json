@@ -1,0 +1,147 @@
+{
+  "slug": "it-milano-bocconi-milano-economic-and-social-sciences-l33",
+  "programmePage": "https://www.unibocconi.it/en/programs/bachelor-science/economics",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unibocconi.it/en/programs/bachelor-science/economics",
+          "quote": "The program is offered entirely in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1770000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/fees",
+          "quote": "For 2027-28 a.y., for students enrolled to their first year in a Bachelor of Science or Law programme, tuition and fees at Bocconi are set at € 17,700 per year."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "id-or-passport",
+          "name": {
+            "fr": "Carte d'identité ou passeport",
+            "en": "ID or passport"
+          },
+          "quotedAs": "ID or passport",
+          "translationRequired": null
+        },
+        {
+          "slug": "third-last-and-second-last-year-transcripts",
+          "name": {
+            "fr": "Bulletins de notes de l'avant-dernière et de l'antépénultième année",
+            "en": "3rd-last and 2nd-last year transcripts"
+          },
+          "quotedAs": "3rd-last and 2nd-last year transcripts",
+          "translationRequired": null
+        },
+        {
+          "slug": "test-score-report",
+          "name": {
+            "fr": "Rapport de score du test",
+            "en": "Test score report"
+          },
+          "quotedAs": "Test score report",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admissions",
+          "quote": "ID or passport (if you are extra-EU) Parents' ID or passport (if you are underaged). 3rd-last and 2nd-last year transcripts Test score report (at least one)"
+        }
+      ]
+    }
+  },
+  "notes": "Supplied pages do not include a page for the 'Economic and Social Sciences' programme; the closest Bachelor's programme page (BSc in Economics, L-33) is used for duration and language. The tuition figure of EUR 17,700/year is stated on the Fees page for first-year Bachelor of Science or Law students at Bocconi; the pages do not distinguish a separate fee for non-EU students, and it is an institution-wide figure tied to this level of study, not to the programme's group. The application deadline used is the first round for international applicants (Early Session); a second Winter Session (25 November 2026 – 26 January 2027) also exists for international applicants. The pages do not mention any pre-enrolment on the Universitaly portal, so the university's own Apply2B portal is used as the application channel.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La sélection se fonde sur le score du test (55%) et la moyenne des deux avant-dernières années du lycée (45%); il faut passer le test Bocconi en ligne, le SAT ou l'ACT",
+          "en": "Selection is based on the test score (55%) and the third-last and second-last year GPA (45%); you must take the Bocconi online test, SAT or ACT"
+        },
+        "evidence": [
+          {
+            "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admissions",
+            "quote": "The evaluation of applicants is based solely on these two elements. Additional documents, such as recommendation letters, motivational letters, CVs, or résumés, will not be considered in the assessment process."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un score total inférieur à 17 au test Bocconi en ligne entraîne l'exclusion de la sélection",
+          "en": "A total score lower than 17 on the Bocconi online test leads to exclusion from the selection"
+        },
+        "evidence": [
+          {
+            "url": "https://www.unibocconi.it/en/programs/bachelor-science/application-and-admission/selection-process",
+            "quote": "Applicants who receive a total score (penalties included) lower than 17 will not be considered in the selection process."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Il faut avoir au moins 17 ans au 1er septembre 2027; les moins de 18 ans non résidents en Italie doivent nommer un tuteur légal",
+          "en": "You must be at least 17 as of 1 September 2027; applicants under 18 not resident in Italy must appoint a legal guardian"
+        },
+        "evidence": [
+          {
+            "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admissions",
+            "quote": "students who are not Italian citizens and are not residents in Italy, and who will be under the age of 17 as of 1 September 2027 (born after 1 September 2010), cannot be considered for admission"
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.unibocconi.it/en/programs/bachelor-science/application-and-admission/enrollment-1",
+            "quote": "The diploma must be awarded after at least 12 years of education (starting from the first year of primary school)"
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/results-and-enrollment",
+            "quote": "Bocconi English language proficiency test with level B2 or higher"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Il faut fournir un diplôme d'études secondaires valable pour l'accès aux études supérieures; pour les non-UE, un Statement of Comparability CIMEA ou une Declaration of Value peut être exigé",
+          "en": "You must provide a secondary school diploma valid for access to higher education; for non-EU applicants a CIMEA Statement of Comparability or Declaration of Value may be required"
+        },
+        "evidence": [
+          {
+            "url": "https://www.unibocconi.it/en/programs/bachelor-science/application-and-admission/enrollment-1",
+            "quote": "For non-EU citizens and when indicated in the admission portal, Statements of Comparability and Verification issued by CIMEA (the Italian NARIC Center) may be a compulsory requirement to complete the enrollment."
+          }
+        ]
+      }
+    ]
+  }
+}

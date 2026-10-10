@@ -41,8 +41,35 @@ applicationChannel:
   source: page-2
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: diploma
+      name:
+        fr:
+          text: Diplôme de fin d'études secondaires
+          status: draft
+        en:
+          text: Diploma
+          status: draft
+      translationRequired: null
+    - slug: transcript
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Transcript
+          status: draft
+      translationRequired: null
+    - slug: identity-document
+      name:
+        fr:
+          text: Pièce d'identité
+          status: draft
+        en:
+          text: Identity document
+          status: draft
+      translationRequired: null
+  source: page-3
   info_kind: official
 requirements:
   coverage: partial
@@ -74,3 +101,6 @@ sources:
   page-2:
     url: https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf
     last_verified_at: 2026-10-04
+  page-3:
+    url: https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf
+    last_verified_at: 2026-10-10

@@ -1,0 +1,53 @@
+{
+  "slug": "nl-fontys-hogeschool-30gb-elektrotechniek-1001o3098",
+  "programmePage": "https://www.fontys.nl/Opleidingen/Elektrotechniek-bachelor-voltijd.htm",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Elektrotechniek-bachelor-voltijd.htm",
+          "quote": "Opleidingsduur 4 jaar Taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Elektrotechniek-bachelor-voltijd.htm",
+          "quote": "Opleidingstype Bachelor Startdatum September Opleidingsvorm Voltijd Locatie(s) Eindhoven Opleidingsduur 4 jaar Taal Nederlands"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/Elektrotechniek-bachelor-voltijd.htm",
+          "quote": "Meld je uiterlijk 1 mei aan via Studielink."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission complètes : le diplôme néerlandais havo, vwo ou mbo niveau 4 est mentionné ; des exigences supplémentaires s'appliquent pour certains profils. Contactez l'école pour un diplôme marocain.",
+          "en": "Check full admission requirements: Dutch havo, vwo or mbo level 4 diploma is mentioned; extra requirements apply for some profiles. Contact the school for a Moroccan diploma."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Opleidingen/Elektrotechniek-bachelor-voltijd.htm",
+            "quote": "Met een havo-, vwo-, of mbo-diploma (niveau 4) word je toegelaten."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition left out: the programme page (https://www.fontys.nl/Opleidingen/Elektrotechniek-bachelor-voltijd.htm) only links a collegegeldmeter and gives no amount. The institution-wide pages (Collegegeld, Kosten en betaling) say instellingscollegegeld applies to students from outside the EEA but give no amount and no study-year row, so no quotable non-EU fee for 2026-2027 or later could be found. Intakes left out: the page states application deadlines only generally (1 mei 2027, 1 februari) without saying they are for non-EU or foreign-qualification applicants. Documents left out: no document list is given on these pages."
+}

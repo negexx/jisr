@@ -46,68 +46,35 @@ applicationChannel:
   info_kind: official
 documents:
   value:
-    - slug: school-leaving-certificate
+    - slug: university-entrance-qualification
       name:
         fr:
-          text: Certificat de fin d’études secondaires (diplôme du Baccalauréat)
+          text: Certificat de qualification d'entrée à l'université
           status: draft
         en:
-          text: School leaving certificate (Baccalauréat certificate / diploma)
-          status: draft
-        ar:
-          text: شهادة نهاية الدراسة الثانوية (شهادة البكالوريا)
+          text: University entrance qualification certificate
           status: draft
       translationRequired: null
-    - slug: transcript-of-secondary-school-studies
+    - slug: english-language-certificate
       name:
         fr:
-          text: "Relevé de notes du Baccalauréat (« Relevé de Notes » : aperçu des matières et des notes)"
+          text: Certificat de compétence en anglais
           status: draft
         en:
-          text: 'Baccalauréat grade transcript ("Relevé de Notes": overview of subjects and grades)'
-          status: draft
-        ar:
-          text: "كشف نقاط البكالوريا («Relevé de Notes»: لمحة عن المواد والعلامات)"
+          text: English language certificate
           status: draft
       translationRequired: null
-    - slug: degree-certificate
+    - slug: german-language-certificate
       name:
         fr:
-          text: Diplôme universitaire (seulement si vous avez un diplôme d’une université marocaine)
+          text: Certificat de compétence en allemand
           status: draft
         en:
-          text: Degree certificate (only if you hold a degree from a Moroccan university)
-          status: draft
-        ar:
-          text: شهادة جامعية (فقط إذا كانت لديك شهادة من جامعة مغربية)
+          text: German language certificate
           status: draft
       translationRequired: null
-    - slug: university-transcript-of-records
-      name:
-        fr:
-          text: Relevé de notes universitaire complet, avec toutes les matières et notes, délivré par l’université (si vous avez déjà étudié dans une université)
-          status: draft
-        en:
-          text: Complete university transcript of all subjects and grades, issued by your university (if you have studied at a university)
-          status: draft
-        ar:
-          text: كشف نقاط جامعي كامل يتضمن جميع المواد والعلامات، صادر عن الجامعة (إذا سبق لك أن درست في جامعة)
-          status: draft
-      translationRequired: null
-    - slug: preparatory-classes-transcript
-      name:
-        fr:
-          text: Relevé de notes des classes préparatoires (seulement si vous avez suivi des classes préparatoires)
-          status: draft
-        en:
-          text: Transcript of records of the classes préparatoires (only if you took classes préparatoires)
-          status: draft
-        ar:
-          text: كشف نقاط الأقسام التحضيرية (فقط إذا درست في الأقسام التحضيرية)
-          status: draft
-      translationRequired: null
-  source: page-4
-  info_kind: guidance
+  source: page-1
+  info_kind: official
 requirements:
   coverage: partial
   source: daad

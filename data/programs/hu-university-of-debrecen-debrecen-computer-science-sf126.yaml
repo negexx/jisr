@@ -26,7 +26,10 @@ teachingLanguages:
   source: programme
   info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 700000
+    currency: USD
+    period: year
   source: programme
   info_kind: official
 intakes:
@@ -34,8 +37,8 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: hu-university-direct
+  source: page-2
   info_kind: official
 documents:
   value:

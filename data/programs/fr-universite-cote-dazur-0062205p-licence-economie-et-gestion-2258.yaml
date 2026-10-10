@@ -21,8 +21,10 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
-  source: programme
+  value:
+    - fr
+    - en
+  source: page-6
   info_kind: official
 tuition:
   value:
@@ -167,3 +169,6 @@ sources:
   page-5:
     url: https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles
     last_verified_at: 2026-10-09
+  page-6:
+    url: https://univ-cotedazur.fr/formation/offre-de-formation/parcours-de-licence/licence-economie-et-gestion-parcours-generique
+    last_verified_at: 2026-10-10

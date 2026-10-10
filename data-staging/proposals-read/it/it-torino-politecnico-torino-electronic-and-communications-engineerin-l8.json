@@ -1,0 +1,83 @@
+{
+  "slug": "it-torino-politecnico-torino-electronic-and-communications-engineerin-l8",
+  "programmePage": "https://www.polito.it/en/education/bachelor-s-degree-programmes/electronic-and-communications-engineering",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.polito.it/en/education/bachelor-s-degree-programmes/electronic-and-communications-engineering",
+          "quote": "Language: English"
+        },
+        {
+          "url": "https://www.polito.it/en/education/bachelor-s-degree-programmes/electronic-and-communications-engineering",
+          "quote": "all courses are given in English, the official language of ICT"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/bachelor-s-degree-programmes/applicants-with-a-non-italian-qualification",
+          "quote": "you must submit the pre-enrollment application to obtain a study visa and enrol at Politecnico di Torino exclusively through the UNIVERSITALY portal"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: no figure was extracted. The fees stated on the pages are either for EU students (yearly comprehensive fee for EU citizens) or for non-EU students whose household has income and assets abroad, calculated by proportioning Tmax (€3,600.00) to the GDP at purchasing power parity of the student's country of citizenship; the amounts depend on the country of citizenship (Annex 2), but no supplied page quote names Morocco or lists the amount for Morocco, so no accepted quote ties Morocco to the relevant list/amount. The university reserves the right to evaluate the qualification, and further documents (also requested by the embassy) may be required: the document list above is the one stated for the application. Intakes: no application window with a stated year for the non-EU applicant was used; the TIL-I and pre-enrolment dates on the pages refer to academic year 2026/2027, but the programme page states Academic Year: 2026/2027 while its own course details are for a.y. 2026/27, and the deadlines found are for the admission test stages (TIL-I last session 22 May 2026 for non-EU applicants residing abroad and requiring visa; Universitaly pre-enrolment by 30 June 2026), which are not the programme application window as such.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/bachelor-s-degree-programmes/applicants-with-a-non-italian-qualification",
+            "quote": "English-taught programmes English Level B2 or above"
+          },
+          {
+            "url": "https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/bachelor-s-degree-programmes/applicants-with-a-non-italian-qualification",
+            "quote": "Language certificate required by the degree programme chosen by the applicant (see language requirements paragraph)"
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/bachelor-s-degree-programmes/applicants-with-a-non-italian-qualification",
+            "quote": "a secondary high school diploma (level 4 EQF) earned after at least 12 years of school attendance"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Admission sur classement : il faut réussir le test d'admission TIL-I (seuil minimum 30/100) ou présenter un score SAT (au moins 650 points par section). Le TIL-I est obligatoire et se passe en présentiel à Turin ; inscription sur Apply@polito et frais de 50 €.",
+          "en": "Admission by ranking: you must pass the TIL-I admission test (minimum threshold 30/100) or submit a SAT score (at least 650 points in each section). The TIL-I is compulsory and taken in person in Turin; register on Apply@polito and pay the € 50 fee."
+        },
+        "evidence": [
+          {
+            "url": "https://www.polito.it/sites/default/files/2025-12/Call%20for%20applications%20for%20admissions%20Engineering%20_%20LP%202026-27.pdf",
+            "quote": "the minimum thresholds for being included in the ranking lists are the following: o 30/100 for admission to the Bachelor’s degree programmes of the Engineering area"
+          },
+          {
+            "url": "https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/bachelor-s-degree-programmes/admission-test",
+            "quote": "The TIL test is compulsory for all Engineering Bachelor’s degree programmes."
+          },
+          {
+            "url": "https://www.polito.it/sites/default/files/2025-12/Call%20for%20applications%20for%20admissions%20Engineering%20_%20LP%202026-27.pdf",
+            "quote": "Applicants must have a minimum score of 650 points in each of the two test sections (art.12, par.1)."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "slug": "de-hochschule-fur-angewandte-wissenschaften-hrk312-applied-sustainable-engi-daad10455",
+  "programmePage": "https://www.hs-ansbach.de/en/bachelor/applied-sustainable-engineering",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.hs-ansbach.de/en/bachelor/applied-sustainable-engineering",
+          "quote": "Duration 8 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-ansbach.de/en/bachelor/applied-sustainable-engineering",
+          "quote": "Language of instruction 1.-3. semester English, afterwards German"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/",
+          "quote": "In the first three semesters, the basic modules will be taught in English."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 100000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-ansbach.de/en/bachelor/applied-sustainable-engineering",
+          "quote": "Tuition Fee for non-EU nationals: 1000 € per term"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/",
+          "quote": "The following tuition fees apply for applicants from: non-EU countries 1,000 EUR"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2026-11-30",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/",
+          "quote": "The following is valid for applicants from: all countries For the summer semester: 1 November 2026 - 30 November 2026"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hs-ansbach.de/en/bachelor/applied-sustainable-engineering",
+          "quote": "Additionally you must have the university entrance qualification or the eligibility for university admission for German universities. We use the Uni-Assist program (https://www.uni-assist.de/en/) to determine whether you qualify for admission."
+        },
+        {
+          "url": "https://www.hs-ansbach.de/en/info/for-prospective-students/applying-for-our-bachelors-and-masters-degree-programmes",
+          "quote": "If you have acquired a foreign higher education entrance qualification (e.g. certificates, diplomas), you must have it recognised. The assessment - Vorprüfungsdokumentation (VPD) - is carried out for us by uni-assist e.V."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.hs-ansbach.de/en/bachelor/applied-sustainable-engineering",
+            "quote": "As measured by the Common European Framework of Reference for Languages, you need level B2, as proven by – an IELTS (International English Language Testing System) score of 6.0 or better or – a TOEFL (Test of English as a Foreign Language) score of 84 points or better"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée académique est requis ; vérifiez les modalités auprès de l'université.",
+          "en": "An academic entrance exam is required; check the details with the university."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10455/",
+            "quote": "Equivalent of a German university entrance certificate, successful completion of an academic entrance exam"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats étrangers doivent faire évaluer leur diplôme par uni-assist (VPD) ; prévoyez 4 à 6 semaines.",
+          "en": "Foreign applicants must have their certificate assessed by uni-assist (VPD); allow 4-6 weeks."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-ansbach.de/en/info/for-prospective-students/applying-for-our-bachelors-and-masters-degree-programmes",
+            "quote": "Please note that uni-assist e.V. usually needs 4-6 weeks to process your documents - therefore, please submit your documents early."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The intake is shown exactly as the DAAD page states it under 'applicants from: all countries' (1-30 November 2026), which is the summer semester directly named for this Bachelor programme; no separate non-EU-only deadline is given. Tuition is per semester ('per term'). A semester contribution of 72 EUR (DAAD) / 82 EUR (university page) exists but is not tuition. The English B2 requirement applies to the phase taught in English; German is the later language of instruction."
+}

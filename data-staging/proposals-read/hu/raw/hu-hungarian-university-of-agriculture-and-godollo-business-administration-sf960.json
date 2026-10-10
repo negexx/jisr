@@ -1,0 +1,41 @@
+{
+  "slug": "hu-hungarian-university-of-agriculture-and-godollo-business-administration-sf960",
+  "programmePage": "https://ed.uni-mate.hu/en/bsc-in-business-administration-and-management",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://ed.uni-mate.hu/en/bsc-in-business-administration-and-management",
+          "quote": "Length of program: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "hu"
+      ],
+      "evidence": [
+        {
+          "url": "https://ed.uni-mate.hu/en/bsc-in-business-administration-and-management",
+          "quote": "Work schedule: full-time training (EN,HU), correspondence training (HU)"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 230000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://ed.uni-mate.hu/en/tuition-fee",
+          "quote": "BSc in Business Administration and Management Gödöllő full-time training BA/BSc English 2300 Euro 2300 Euro 2300 Euro 2300 Euro 2300 Euro 2300 Euro 2300 Euro"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition-fee table gives 2300 Euro per semester for the English-language BSc in Business Administration and Management at Gödöllő (the figure is repeated for each beginner semester from 2019/20/1 to 2022/23/1); the programme page states the length as 7 semesters, so the annual fee of 4600 Euro was not used. The pages do not state an application channel, an application deadline for non-EU applicants, a document list, or any language-proficiency / subject requirement for this programme, so those facts and requirements were left out."
+}

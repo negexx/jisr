@@ -1,0 +1,132 @@
+{
+  "slug": "fr-universite-grenoble-alpes-0383546y-licence-informatique-31939",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=31939&typeBac=0&originePc=0",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 17800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=31939&typeBac=0&originePc=0",
+          "quote": "Par année 178 euros."
+        },
+        {
+          "url": "https://etudiant.univ-grenoble-alpes.fr/en/daily/managing-your-budget/student-budget/university-registration-fees/",
+          "quote": "For other international students outside Europe, Differential fees are appliedThat being said, it is possible to apply for an exemption."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "identity-document",
+          "name": {
+            "fr": "Copie recto verso d'une carte d'identité ou du passeport",
+            "en": "Copy of identity card or passport"
+          },
+          "quotedAs": "Copie recto verso d'une carte d'identité ou du passeport",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum Vitae électronique",
+            "en": "Electronic curriculum vitae"
+          },
+          "quotedAs": "Curriculum Vitae électronique",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivation-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivation letter"
+          },
+          "quotedAs": "Lettre de motivation",
+          "translationRequired": null
+        },
+        {
+          "slug": "birth-certificate",
+          "name": {
+            "fr": "Extrait de naissance",
+            "en": "Birth certificate"
+          },
+          "quotedAs": "extrait de naissance",
+          "translationRequired": null
+        },
+        {
+          "slug": "transcripts",
+          "name": {
+            "fr": "Relevés de notes",
+            "en": "Transcripts of records"
+          },
+          "quotedAs": "Copie des relevés de notes obtenues depuis l'obtention du baccalauréat ou du titre admis en dispense",
+          "translationRequired": true
+        },
+        {
+          "slug": "degree-certificate",
+          "name": {
+            "fr": "Copie du diplôme ou attestation de réussite",
+            "en": "Copy of degree or certificate of completion"
+          },
+          "quotedAs": "Copie du diplôme ou attestation de réussite et relevés de notes de L2, BTS, DUT ou équivalent BAC+2",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://socle.univ-grenoble-alpes.fr/medias/fichier/liste-des-pieces-justificatives-lpro_1643788479551-pdf?ID_FICHE=1254696&INLINE=FALSE",
+          "quote": "Copie recto verso d'une carte d'identité ou du passeport ou récépissé de demande de titre de séjour ou de demande d'asile"
+        },
+        {
+          "url": "https://socle.univ-grenoble-alpes.fr/medias/fichier/liste-des-pieces-justificatives-lpro_1643788479551-pdf?ID_FICHE=1254696&INLINE=FALSE",
+          "quote": "Lettre de motivation (précisant votre projet d'études et éventuellement votre projet professionnel)"
+        },
+        {
+          "url": "https://socle.univ-grenoble-alpes.fr/medias/fichier/liste-des-pieces-justificatives-lpro_1643788479551-pdf?ID_FICHE=1254696&INLINE=FALSE",
+          "quote": "Curriculum Vitae électronique"
+        },
+        {
+          "url": "https://socle.univ-grenoble-alpes.fr/medias/fichier/liste-des-pieces-justificatives-lpro_1643788479551-pdf?ID_FICHE=1254696&INLINE=FALSE",
+          "quote": "Pour les étudiants étrangers : extrait de naissance"
+        },
+        {
+          "url": "https://socle.univ-grenoble-alpes.fr/medias/fichier/liste-des-pieces-justificatives-lpro_1643788479551-pdf?ID_FICHE=1254696&INLINE=FALSE",
+          "quote": "Copie des relevés de notes obtenues depuis l'obtention du baccalauréat ou du titre admis en dispense + relevé de notes provisoire pour l'année en cours"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "delf-dalf",
+          "tcf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=31939&typeBac=0&originePc=0",
+            "quote": "Pour les candidats étrangers, le niveau de français exigé (B2) est un minimum tant en expression qu'en compréhension."
+          },
+          {
+            "url": "https://etudier.univ-grenoble-alpes.fr/candidater-et-vous-inscrire/candidature/toutes-les-procedures/candidater-avec-une-demande-d-admission-prealable-dap-blanche-/candidater-a-une-formation-avec-une-demande-d-admission-prealable-dap-blanche--1615795.kjsp",
+            "quote": "Le test de connaissance du français (TCF) est obligatoire, sauf dans certains cas."
+          },
+          {
+            "url": "https://etudier.univ-grenoble-alpes.fr/candidater-et-vous-inscrire/candidature/toutes-les-procedures/candidater-avec-une-demande-d-admission-prealable-dap-blanche-/candidater-a-une-formation-avec-une-demande-d-admission-prealable-dap-blanche--1615795.kjsp",
+            "quote": "Titulaire d'un diplôme de français langue étrangère (DELF ou DALF), sous réserve que votre niveau (B2, C1, etc.) corresponde aux exigences de votre formation."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Le montant de 178 €/an figure sur la fiche Parcoursup de ce programme (licence) et, sur la page des frais d'inscription de l'UGA, dans le tableau 2026-2027 pour la catégorie 1 (Licence), mais avec la mention que ces tarifs s'appliquent aux étudiants français/UE et à certains étudiants hors Europe seulement ; pour les autres étudiants internationaux hors Europe, des droits différenciés s'appliquent (montant non indiqué sur ces pages, exonération possible). Le niveau de français B2 est présenté comme un minimum pour les candidats étrangers (formulation « exigé ») ; la page DAP blanche précise que le TCF est obligatoire sauf dispense. La liste des pièces justificatives provient d'un PDF de candidature eCandidat pour la Licence professionnelle Métier du Commerce International de l'UFR SoCLE : elle n'est pas propre à ce programme ; à vérifier. Aucune durée (années/semestres/ECTS) n'est mentionnée pour ce programme dans les pages fournies. La page Parcoursup décrit une procédure pour les titulaires du bac français ; les candidats non-UE titulaires d'un diplôme étranger passent par une autre procédure (Études en France / DAP blanche) : les échéances datées de ces pages ne concernent pas nécessairement ce programme et n'ont donc pas été reprises."
+}

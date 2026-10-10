@@ -1,0 +1,135 @@
+{
+  "slug": "it-udine-udine-management-business-analytics-l18",
+  "programmePage": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea/management-business-analytics",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea/management-business-analytics",
+          "quote": "Credits 180 Duration 3 years"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uniud.it/it/didattica/corsi/area-economico-giuridica/economia/laurea/management-business-analytics",
+          "quote": "Methods of teaching Conventional Language English Location Udine"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1600,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.uniud.it/it/didattica/area-servizi-studenti/servizi-studenti/diritto-allo-studio/tasse_merito/tasse-riduzioni-esoneri/info_generali",
+          "quote": "L'ammontare totale delle tasse può variare da un minimo di 16,00 ad un massimo di 2.176,00 euro."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.uniud.it/it/international-area/studenti-internazionali/ammissione-non-ue/prima-arrivo/documentazione/avviso-extra-ue-26-27",
+          "quote": "DEVE creare il proprio profilo digitale sul portale UNIVERSITALY cliccando sul seguente link https://www.universitaly.it/first-steps ed inserire la domanda digitale di PRE-ISCRIZIONE ad un corso di laurea dell’Università degli studi di Udine per l'anno accademico 2026/2027 entro e non oltre il 30 giugno 2026."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Titre scolaire final/provisoire étranger",
+            "en": "Final/provisional foreign school-leaving certificate"
+          },
+          "quotedAs": "Titolo scolastico finale/provvisorio estero",
+          "translationRequired": null
+        },
+        {
+          "slug": "english-language-certificate",
+          "name": {
+            "fr": "Certification linguistique de connaissance de la langue anglaise niveau B2 ou équivalent",
+            "en": "English language certificate at B2 level or equivalent"
+          },
+          "quotedAs": "Certificazione linguistica di conoscenza della lingua inglese livello B2 o equivalente",
+          "translationRequired": null
+        },
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "Curriculum vitae",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "Curriculum vitae",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivation-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivation letter"
+          },
+          "quotedAs": "Lettera di motivazione",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uniud.it/it/international-area/studenti-internazionali/ammissione-non-ue/prima-arrivo/documentazione/avviso-extra-ue-26-27",
+          "quote": "Titolo scolastico finale/provvisorio estero; - Certificazione linguistica di conoscenza della lingua inglese livello B2 o equivalente; - Curriculum vitae; - Lettera di motivazione."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.uniud.it/it/didattica/segreteria-studenti/manifesti-degli-studi/main-pdf/economia",
+            "quote": "Per essere ammessi al corso di Laurea in Management & Business Analytics è richiesto, inoltre, un livello di lingua inglese non inferiore al B2 del Quadro Comune Europeo di Riferimento."
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.uniud.it/it/international-area/studenti-internazionali/ammissione-non-ue/prima-arrivo/documentazione/avviso-extra-ue-26-27",
+            "quote": "titolo ottenuto in seguito ad un percorso complessivo di almeno 12 anni di scolarità;"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'admission (CEnT-S, remplaçant le TOLC-E) est obligatoire avant le 30 novembre 2026 ; un score insuffisant entraîne des obligations de formation supplémentaires (OFA).",
+          "en": "An admission test (CEnT-S, which replaced the TOLC-E) must be taken by 30 November 2026; a score below the minimum triggers additional learning requirements (OFA)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.uniud.it/it/didattica/segreteria-studenti/manifesti-degli-studi/main-pdf/economia",
+            "quote": "Si sottolinea che, per l’iscrizione al corso di Laurea in Management & Business Analytics, è necessario sostenere il test CEnT-S, che ha sostituito il test TOLC-E (English)."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition: no page gives a fixed fee for non-EU students, a country-group fee naming Morocco, or an income-based fee for this student for 2026/27; the only quantified figure is the general university range of the total annual tuition, so it was not included. The Avviso Aggiuntivo 2026/27 says the yearly 'contributo omnicomprensivo' for degree courses can vary from 0,00 to 2000,00 euro, and the istitutional page states 'L'ammontare totale delle tasse può variare da un minimo di 16,00 ad un massimo di 2.176,00 euro', but this includes the regional tax (tassa regionale per il diritto allo studio) and the stamp duty (imposta di bollo), which the task says are not tuition. Application: the pre-enrolment (preiscrizione) on Universitaly for non-EU applicants residing abroad closes on 30 June 2026; before that, a pre-evaluation application must be submitted on the Elix-Forms platform between 01/02/2026 and 31/05/2026. The admission for this programme is local and capped at 100 places, of which 30 are reserved for non-EU students residing abroad."
+}

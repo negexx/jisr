@@ -1,0 +1,161 @@
+{
+  "slug": "hu-university-of-sopron-sopron-timber-industry-engineer-sf1039",
+  "programmePage": "https://fmk.uni-sopron.hu/en_GB/timber-industry-engineering-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://fmk.uni-sopron.hu/en_GB/timber-industry-engineering-bsc",
+          "quote": "Duration of the programme: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://fmk.uni-sopron.hu/en_GB/timber-industry-engineering-bsc",
+          "quote": "at least CEFR B2 level (or equivalent TOEFL or IELTS Academic) proficiency in English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 300000,
+        "currency": "USD",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://fmk.uni-sopron.hu/en_GB/timber-industry-engineering-bsc",
+          "quote": "Tuition fee: 3 000 USD / semester"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://international.uni-sopron.hu/application-page",
+          "quote": "Select your level of study below to access the Online Application Form."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary School Certificate"
+          },
+          "quotedAs": "Secondary School Certificate",
+          "translationRequired": true
+        },
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Passeport",
+            "en": "Passport"
+          },
+          "quotedAs": "Valid Passport Copy",
+          "translationRequired": null
+        },
+        {
+          "slug": "english-proficiency-certificate",
+          "name": {
+            "fr": "Justificatif de niveau d'anglais",
+            "en": "Proof of English Proficiency"
+          },
+          "quotedAs": "Proof of English Proficiency",
+          "translationRequired": null
+        },
+        {
+          "slug": "application-fee-receipt",
+          "name": {
+            "fr": "Reçu du frais de dossier",
+            "en": "Application Fee Receipt"
+          },
+          "quotedAs": "Application Fee Receipt",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://international.uni-sopron.hu/application-page",
+          "quote": "Applicants to the University of Sopron's English-taught BA/BSc programs must provide the following documents: Secondary School Certificate (English/German copy) Valid Passport Copy Proof of English Proficiency: B2 level or higher (TOEFL, IELTS, Cambridge, Oxford). Native speakers or those with a \"Medium of Instruction\" certificate are exempt. Application Fee Receipt Optional: CV, Motivation Letter, or Letters of Recommendation."
+        },
+        {
+          "url": "https://international.uni-sopron.hu/application-page",
+          "quote": "Please ensure all documents are in English or German. If they are in another language, a certified translation must be attached."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://fmk.uni-sopron.hu/en_GB/timber-industry-engineering-bsc",
+            "quote": "Language requirements: at least CEFR B2 level (or equivalent TOEFL or IELTS Academic) proficiency in English."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://international.uni-sopron.hu/application-page",
+            "quote": "Proof of English Proficiency: B2 level or higher (TOEFL, IELTS, Cambridge, Oxford)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien d'admission avec la faculté peut être exigé après un test d'anglais.",
+          "en": "An admission interview with the faculty may be required after an English test."
+        },
+        "evidence": [
+          {
+            "url": "https://international.uni-sopron.hu/application-page",
+            "quote": "Faculty Interview: Upon successful completion of the test, the respective faculty will schedule your admission interview."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Prévoyez au moins 18 ans pour le début du semestre.",
+          "en": "Be at least 18 years old by the start of the semester."
+        },
+        "evidence": [
+          {
+            "url": "https://international.uni-sopron.hu/application-page",
+            "quote": "All applicants must be at least 18 years old by the start of the semester"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The programme page states the tuition as 3 000 USD / semester; the task said Hungarian pages state it in EUR or HUF, but the page quotes USD, so USD is used as stated. The 7-semester duration is not exactly 3.5 years; it is used as instructed. Intakes: only \"September\" is stated, with no year, so all date fields are null; the page https://international.uni-sopron.hu/application-page mentions a February 2027 intake but says \"BACHELOR'S (BSC) PROGRAMMES - Not available for the 2027 February intake.\" Documents: the list is from the general BA/BSc section which includes the BSc in Timber Industry Engineering; the translation requirement quote is at the page level (all documents, including the certificate)."
+}

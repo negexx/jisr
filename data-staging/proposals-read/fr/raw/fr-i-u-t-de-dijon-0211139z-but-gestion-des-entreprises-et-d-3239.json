@@ -1,0 +1,71 @@
+{
+  "slug": "fr-i-u-t-de-dijon-0211139z-but-gestion-des-entreprises-et-d-3239",
+  "programmePage": "https://formations.ube.fr/fr/offre-de-formation-2025-2026-2/but-BUT/but-gestion-des-entreprises-et-des-administrations-gea-LMGC21KR.html",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://formations.ube.fr/fr/offre-de-formation-2025-2026-2/but-BUT/but-gestion-des-entreprises-et-des-administrations-gea-LMGC21KR.html",
+          "quote": "Durée 3 ans"
+        },
+        {
+          "url": "https://formations.ube.fr/fr/offre-de-formation-2025-2026-2/but-BUT/but-gestion-des-entreprises-et-des-administrations-gea-LMGC21KR.html",
+          "quote": "Le bachelor universitaire de technologie Gestion des Entreprises et des Administrations (B.U.T GEA) est une formation de 3 ans"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3239&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://formations.ube.fr/fr/offre-de-formation-2025-2026-2/but-BUT/but-gestion-des-entreprises-et-des-administrations-gea-LMGC21KR.html",
+          "quote": "Langue(s) d'enseignement Français"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "doctoral-thesis",
+          "name": {
+            "fr": "Thèse de doctorat",
+            "en": "Doctoral thesis"
+          },
+          "quotedAs": "Thesis",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://formations.ube.fr/fr/offre-de-formation-2025-2026-2/but-BUT/but-gestion-des-entreprises-et-des-administrations-gea-LMGC21KR.html",
+          "quote": "Thesis 8 crédits20h"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3239&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The programme's own page (formations.ube.fr) lists teaching language as French; the Parcoursup page states a B2 French level required for enrolment. The evidence for durationYears also contains an unrelated quote from the Parcoursup page (French language level) which should be reviewed, and the 'doctoral-thesis' document is drawn from the course curriculum (Thesis 8 crédits20h) rather than from an explicit application document list. No tuition or intake dates could be evidenced for this programme."
+}

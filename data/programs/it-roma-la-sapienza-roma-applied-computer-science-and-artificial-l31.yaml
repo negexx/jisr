@@ -17,8 +17,8 @@ summary:
     status: draft
 officialUrl: https://corsidilaurea.uniroma1.it/it/course/33502
 durationYears:
-  value: null
-  source: programme
+  value: 3
+  source: page-4
   info_kind: official
 teachingLanguages:
   value:
@@ -33,8 +33,11 @@ tuition:
   source: page-3
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: 2025-12-22
+      applicationDeadline: 2026-05-15
+  source: page-5
   info_kind: official
 applicationChannel:
   value: it-universitaly
@@ -104,3 +107,9 @@ sources:
   page-3:
     url: https://www.uniroma1.it/it/content/importi-ordinari-dei-contributi-di-iscrizione
     last_verified_at: 2026-10-08
+  page-4:
+    url: https://www.uniroma1.it/sites/default/files/field_file_allegati/14824_en_1.pdf
+    last_verified_at: 2026-10-10
+  page-5:
+    url: https://www.uniroma1.it/en/node/256794
+    last_verified_at: 2026-10-10

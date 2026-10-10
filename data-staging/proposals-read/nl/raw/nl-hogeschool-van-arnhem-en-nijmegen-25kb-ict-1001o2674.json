@@ -1,0 +1,33 @@
+{
+  "slug": "nl-hogeschool-van-arnhem-en-nijmegen-25kb-ict-1001o2674",
+  "programmePage": "https://www.han.nl/opleidingen/hbo/ict/voltijd/",
+  "facts": {
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.han.nl/opleidingen/hbo/ict/voltijd/",
+          "quote": "Meld je voor 1 mei 2025 aan voor ICT!"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si votre diplôme (bac marocain) est reconnu comme équivalent au havo/vwo/mbo niveau 4 pour l'admission.",
+          "en": "Check whether your diploma (Moroccan Baccalauréat) is recognised as equivalent to havo/vwo/mbo level 4 for admission."
+        },
+        "evidence": [
+          {
+            "url": "https://www.han.nl/opleidingen/hbo/ict/voltijd/",
+            "quote": "Je kunt je aanmelden voor de ICT als je een mbo-, havo- of vwo-diploma hebt."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "No evidence found for duration, teaching language, tuition, intakes, or documents for this programme. The 2026-2027 institutional tuition table lists several amounts (Instellingstarief Laag/Hoog/Top) without tying one to this bachelor full-time programme, so tuition is omitted per instructions. The 1 May 2025 deadline is for all applicants, not specifically non-EU, so not included as intake."
+}

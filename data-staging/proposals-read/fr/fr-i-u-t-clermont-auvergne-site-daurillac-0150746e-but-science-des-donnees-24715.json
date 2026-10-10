@@ -1,0 +1,67 @@
+{
+  "slug": "fr-i-u-t-clermont-auvergne-site-daurillac-0150746e-but-science-des-donnees-24715",
+  "programmePage": "https://iut.uca.fr/formations/but-science-des-donnees-aurillac",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://iut.uca.fr/formations/but-science-des-donnees-aurillac",
+          "quote": "Les études se déroulent sur 3 ans à temps plein, découpés en 6 semestres organisés en Unités d'Enseignement (UE) qui comportent différents modules."
+        },
+        {
+          "url": "https://iut.uca.fr/formations/but-science-des-donnees-aurillac",
+          "quote": "Durée de la formation 3 ans Formation continue Diplômante Lieu(x) de la formation Aurillac Langues d'enseignement Français"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://iut.uca.fr/formations/but-science-des-donnees-aurillac",
+          "quote": "Langues d'enseignement Français"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the UCA pages (decree of April 19, 2019; UCA Board decisions of September 27, 2019, December 13, 2024) say non-EU students pay the same tuition fees as national and European students in 2025/2026: \"178 €\" for a Bachelor's Degree/BUT in the 2025-2026 table, and differentiated fees are postponed until 2026/2027 (one page says from 2027-2028: \"ces droits d'inscription s'élevaient pour 2026-2027 à 2902€ par an pour les licences\"). The BUT is explicitly named in the 178 € row. No programme-specific fee page for this BUT was supplied. Application channel deliberately omitted per task instructions (foreign-diploma applicants use Etudes en France / Campus France). No intake dates with a year were found for this programme; the ADIUT Maroc calendar (1er octobre 2026 au 15 novembre 2026, 23h59 heure marocaine) is for BUT 1ère année candidates via Études en France and concerns the BUT generally, not this programme's own page.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [
+          "tcf"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.uca.fr/en/mobilities/incoming-mobilities/student/studying-outside-of-an-exchange-program/how-to-apply-to-uca",
+            "quote": "Important: The minimum required level of French to enroll in a program at UCA is B2."
+          },
+          {
+            "url": "https://www.uca.fr/en/mobilities/incoming-mobilities/student/studying-outside-of-an-exchange-program/how-to-apply-to-uca",
+            "quote": "Unless exempted, candidates must take a paid language test (74 euros for the 2024 campaign), the TCF DAP (Test de Connaissance du Français for the DAP)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un jury examine le dossier : résultats scolaires et motivation. Un entretien téléphonique peut être organisé pour départager certains dossiers.",
+          "en": "A jury reviews the application: academic results and motivation. A telephone interview may be organized to decide between certain applications."
+        },
+        "evidence": [
+          {
+            "url": "https://iut.uca.fr/formations/but-science-des-donnees-aurillac",
+            "quote": "Les dossiers de candidatures sont examinés par un jury qui prend en compte les résultats scolaires et la motivation. Un entretien téléphonique est susceptible d'être organisé pour départager certains dossiers."
+          }
+        ]
+      }
+    ]
+  }
+}

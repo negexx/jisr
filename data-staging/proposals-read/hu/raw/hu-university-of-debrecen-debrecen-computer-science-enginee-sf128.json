@@ -1,0 +1,131 @@
+{
+  "slug": "hu-university-of-debrecen-debrecen-computer-science-enginee-sf128",
+  "programmePage": "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+          "quote": "This is a 3.5-year program consisting of 7 academic semesters."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+          "quote": "All courses are taught in English; therefore, a B2 level English proficiency is required."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 700000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+          "quote": "The tuition fee for this program is 7,000 USD/Year"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 6,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+          "quote": "The application deadline in the self-financed procedure is 15th June."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "The following documents need to be submitted during the application procedure by all applicants through our online application platform - that you can reach here:"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+            "quote": "a TOEFL test with a minimum score of 513 (Paper-Based)."
+          },
+          {
+            "url": "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+            "quote": "an IELTS test with a minimum score of 5.5."
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "mathematics",
+          "physics-chemistry"
+        ],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+            "quote": "passing a written and oral entrance exam in Mathematics and Physics."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Fournir un certificat de fin d'études secondaires et passer un examen d'entrée écrit et oral en mathématiques et en physique.",
+          "en": "High school certificate required and passing a written and oral entrance exam in Mathematics and Physics."
+        },
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+            "quote": "Admission requires a high school certificate; an English Placement Test with an Oral Entrance Exam and passing a written and oral entrance exam in Mathematics and Physics."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Payer des frais de candidature de 150 USD et des frais d'examen d'entrée de 350 USD.",
+          "en": "Pay application fee of 150 USD and entrance exam fee of 350 USD."
+        },
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+            "quote": "Application fee: 150 USD Entrance exam fee: 350 USD"
+          }
+        ]
+      }
+    ]
+  }
+}

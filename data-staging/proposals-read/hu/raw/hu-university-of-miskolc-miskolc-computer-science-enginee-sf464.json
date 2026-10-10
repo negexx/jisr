@@ -1,0 +1,81 @@
+{
+  "slug": "hu-university-of-miskolc-miskolc-computer-science-enginee-sf464",
+  "programmePage": "https://www.uni-miskolc.hu/programmes/computer-science-engineering-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.uni-miskolc.hu/programmes/computer-science-engineering-bsc",
+          "quote": "Duration: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uni-miskolc.hu/programmes/computer-science-engineering-bsc",
+          "quote": "Language of instruction: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 350000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.uni-miskolc.hu/programmes/computer-science-engineering-bsc",
+          "quote": "Tuition fee: 3500 EUR/year"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.uni-miskolc.hu/programmes/computer-science-engineering-bsc",
+          "quote": "Apply online: https://apply.uni-miskolc.hu"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.uni-miskolc.hu/programmes/computer-science-engineering-bsc",
+            "quote": "English language proficiency: minimum B2 level, certified by IELTS or TOEFL"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission spécifiques pour les titulaires d'un baccalauréat marocain.",
+          "en": "Check specific admission requirements for holders of a Moroccan Baccalauréat."
+        },
+        "evidence": [
+          {
+            "url": "https://www.uni-miskolc.hu/programmes/computer-science-engineering-bsc",
+            "quote": "For international applicants with a foreign secondary school certificate, individual assessment applies."
+          }
+        ]
+      }
+    ]
+  }
+}

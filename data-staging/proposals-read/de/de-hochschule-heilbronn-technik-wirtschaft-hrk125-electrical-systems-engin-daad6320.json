@@ -1,0 +1,74 @@
+{
+  "slug": "de-hochschule-heilbronn-technik-wirtschaft-hrk125-electrical-systems-engin-daad6320",
+  "programmePage": "https://www.hs-heilbronn.de/en/ese",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/ese",
+          "quote": "7 Semester : Standard period of study: 3.5 years"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-heilbronn.de/en/ese",
+          "quote": "Tuition fee : 1500 € Tuition fee : per semester. International students who are not citizens of an EU/EEA member state and do not have a German university entrance qualification"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6320/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 79 Reading: 18 Listening: 17 Speaking: 20 Writing: 17 IELTS Academic: 6"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le diplôme de fin d'études secondaires doit d'abord être reconnu par le Studienkolleg Konstanz ou par Uni-Assist. Sans cette reconnaissance, la candidature ne sera pas prise en compte.",
+          "en": "The school-leaving certificate must first be recognised by Studienkolleg Konstanz or by Uni-Assist. Without this recognition, the application will not be considered."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+            "quote": "Without certificate recognition, your application will unfortunately not be considered."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le programme a un accès libre (direct enrolment) : les candidatures se font via le portail eCampus de l'université. Vérifiez les dates d'ouverture et la procédure sur le site.",
+          "en": "The programme has direct enrolment: applications are submitted via the university's eCampus portal. Check the opening dates and the procedure on the website."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-heilbronn.de/en/bachelor-application",
+            "quote": "Applications are submitted via our eCampus."
+          }
+        ]
+      }
+    ]
+  }
+}

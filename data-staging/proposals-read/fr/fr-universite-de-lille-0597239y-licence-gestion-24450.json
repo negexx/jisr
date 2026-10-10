@@ -1,0 +1,44 @@
+{
+  "slug": "fr-universite-de-lille-0597239y-licence-gestion-24450",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24450&typeBac=0&originePc=0",
+  "facts": {},
+  "notes": "Le diplôme est un niveau bac+3 (admission en L1), mais aucune page ne donne le nombre de semestres/ECTS ou d'années de cette licence : durationYears n'est pas extrait. La date limite de candidature (20 avril – 19 mai 2026 pour les épreuves orales) concerne la procédure Parcoursup, pas les candidats étrangers non-UE titulaires d'un diplôme étranger, qui candidatent via Études en France : intakes n'est donc pas extrait. Aucune page ne liste les pièces à fournir pour les candidats internationaux (documents non extrait). Les frais de 178 €/an proviennent de la fiche programme Parcoursup ; les pages de l'Université de Lille indiquent pour les étudiants internationaux extracommunautaires en Licence le paiement des droits différenciés, montant non précisé ici.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Candidature sélective : dossier scolaire, lettre de motivation rédigée en anglais, puis entretien oral de 20 minutes (en anglais et dans la langue du 1er choix de mobilité).",
+          "en": "Selective admission: academic record, motivation letter written in English, then a 20-minute oral interview (in English and in the language of the first mobility choice)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24450&typeBac=0&originePc=0",
+            "quote": "Epreuve de 20 min, comprenant une présentation du/de la candidat.e en anglais (son parcours, sa motivation à intégrer la formation, connaissance de la licence MGI…) et des questions du jury, puis dans la langue correspondant au 1er choix de mobilité (anglais ou allemand ou espagnol ou italien) une présentation d'un fait d'actualité suivi de questions du jury."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24450&typeBac=0&originePc=0",
+            "quote": "Une lettre de motivation, rédigée en anglais, permettra d'évaluer l'aisance du candidat ainsi que ses capacités à suivre des cours dans cette langue."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Seulement 15 places ; la mobilité en 1ère année se fait dans une université partenaire, l'essentiel des cours étant dispensés par cette université d'accueil en anglais, allemand, espagnol ou italien.",
+          "en": "Only 15 places; first-year mobility takes place at a partner university, where most teaching is delivered in English, German, Spanish or Italian."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24450&typeBac=0&originePc=0",
+            "quote": "15 places sont offertes au total sur Parcoursup couvrant les 4 destinations."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=24450&typeBac=0&originePc=0",
+            "quote": "L'essentiel des enseignements en 1ère année est dispensé par l'université partenaire qui accueille l'étudiant"
+          }
+        ]
+      }
+    ]
+  }
+}

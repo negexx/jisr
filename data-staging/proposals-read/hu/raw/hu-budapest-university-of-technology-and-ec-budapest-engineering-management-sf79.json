@@ -1,0 +1,117 @@
+{
+  "slug": "hu-budapest-university-of-technology-and-ec-budapest-engineering-management-sf79",
+  "programmePage": "https://www.gtk.bme.hu/en/",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.gtk.bme.hu/en/",
+          "quote": "Language of instruction: English Deadline of application: 1st June READ more Master in Finance"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 320000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.gtk.bme.hu/en/for-applicants/fee-structure/",
+          "quote": "BSc Engineering Management 3200 2250"
+        },
+        {
+          "url": "https://www.gtk.bme.hu/en/for-applicants/fee-structure/",
+          "quote": "Tuition Fee For non-EU citizens EUR/semester For EU citizens EUR/semester"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.gtk.bme.hu/en/for-applicants/admission-process/",
+          "quote": "If you want to study at Budapest University of Technology and Economics (BME) you have to fill our online application form. E-admission: https://e-admission.bme.hu/"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "CV",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-copy",
+          "name": {
+            "fr": "Copie du passeport",
+            "en": "Copy of Passport"
+          },
+          "quotedAs": "Copy of Passport",
+          "translationRequired": null
+        },
+        {
+          "slug": "bsc-certificate",
+          "name": {
+            "fr": "Diplôme de BSc",
+            "en": "BSc certificate"
+          },
+          "quotedAs": "BSc certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "transcript-of-records",
+          "name": {
+            "fr": "Relevé de notes",
+            "en": "Transcript of Records"
+          },
+          "quotedAs": "Transcript of Records of the previous studies",
+          "translationRequired": null
+        },
+        {
+          "slug": "recommendation-letters",
+          "name": {
+            "fr": "Lettres de recommandation",
+            "en": "Recommendation Letters"
+          },
+          "quotedAs": "2 Recommendation Letters",
+          "translationRequired": null
+        },
+        {
+          "slug": "english-language-proficiency-proof",
+          "name": {
+            "fr": "Preuve de compétence en anglais",
+            "en": "Proof of English language proficiency"
+          },
+          "quotedAs": "Proof of English language proficiency (TOEFL; IELTS; PTE Academic; Cambridge)",
+          "translationRequired": null
+        },
+        {
+          "slug": "application-fee-receipt",
+          "name": {
+            "fr": "Reçu de paiement des frais de candidature",
+            "en": "Receipt of the application fee"
+          },
+          "quotedAs": "Receipt of the transfer of 150 euro for application fee",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.gtk.bme.hu/en/for-applicants/admission-process/",
+          "quote": "Documents you have to upload for the application in the E-admission portal (for MSc): 1) CV 2) Copy of Passport 3) BSc certificate 4) Transcript of Records of the previous studies 5) 2 Recommendation Letters 6) Proof of English language proficiency (TOEFL; IELTS; PTE Academic; Cambridge) 7) Receipt of the transfer of 150 euro for application fee"
+        }
+      ]
+    }
+  },
+  "notes": "Teaching language quote is from the programme card of the Master in Finance on the GTK homepage, which does not explicitly name Engineering Management (BSc). The tuition quote is from the institution-wide Fee Structure page where the row reads \"BSc Engineering Management 3200 2250\" with column headers \"Tuition Fee For non-EU citizens EUR/semester For EU citizens EUR/semester\"; the numbers are not labeled per cell, so 3200 EUR/semester is inferred as the non-EU figure (listed first, matching the non-EU column header order). Application deadline/period on the programme page (1 April – 15 May) has no year stated and is not marked for international applicants, so no intake fact was included. The documents list on the admission page is explicitly marked \"(for MSc)\", and the same page separately lists Ph.D. documents; no document list specific to the BSc is given, so the MSc list is included here only as an interpretation of the general admission requirements. No duration in the pages describes the BSc Engineering Management programme."
+}

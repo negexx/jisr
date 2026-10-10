@@ -33,8 +33,11 @@ tuition:
   source: page-5
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-04-30
+  source: page-6
   info_kind: official
 applicationChannel:
   value: null
@@ -207,3 +210,6 @@ sources:
   page-5:
     url: https://www.unisi.it/sites/default/files/allegatiparagrafo/Regolamento_contribuzione_2026-2027.pdf
     last_verified_at: 2026-10-08
+  page-6:
+    url: https://admission.unisi.it/?p=3003
+    last_verified_at: 2026-10-10

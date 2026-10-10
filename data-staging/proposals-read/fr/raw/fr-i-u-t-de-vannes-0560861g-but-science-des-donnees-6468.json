@@ -1,0 +1,108 @@
+{
+  "slug": "fr-i-u-t-de-vannes-0560861g-but-science-des-donnees-6468",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6468&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6468&typeBac=0&originePc=0",
+          "quote": "Le BUT Science des Données (anciennement STID – Statistique et Informatique Décisionnel) est un diplôme de grade licence (bac +3)"
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+          "quote": "Ce parcours confère un niveau bac+3 aux étudiants des IUT."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6468&typeBac=0&originePc=0",
+          "quote": "Les minutes de l'enseignement sont en français"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "tcf",
+          "delf-dalf"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "vous pouvez passer un TCF TP (tout public), un DELF B2 ou un DALF C1/C2 pour toutes les candidatures."
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "mathematics",
+          "computer-science"
+        ],
+        "mode": "any",
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6468&typeBac=0&originePc=0",
+            "quote": "Maîtriser les bases des mathématiques et/ou de l’informatique et/ou des sciences économiques et sociales"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le bagage en mathématiques doit être suffisant ; avoir conservé les mathématiques en première et terminale est apprécié.",
+          "en": "The mathematics background must be sufficient; having kept mathematics in the final two years of high school is appreciated."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6468&typeBac=0&originePc=0",
+            "quote": "Le bagage en mathématiques doit être suffisant pour suivre dans de bonnes conditions la formation."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le choix de l’option « mathématiques expertes » est valorisé.",
+          "en": "Choosing the “mathématiques expertes” option is valued."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6468&typeBac=0&originePc=0",
+            "quote": "Le choix de l’option « mathématiques expertes » est valorisé."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un intérêt pour les mathématiques et l'informatique est attendu, avec une capacité à appliquer les concepts de manière concrète.",
+          "en": "An interest in mathematics and computer science is expected, with the ability to apply concepts concretely."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6468&typeBac=0&originePc=0",
+            "quote": "Les étudiants avec un goût pour les mathématiques et l’informatique, mais désireux d’en avoir des applications concrètes."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Le programme est un BUT (Bachelor Universitaire de Technologie) de 3 ans, délivré par l'IUT de Vannes. Pour les étudiants extra-communautaires résidant au Maroc avec un bac marocain, la candidature ne se fait pas sur Parcoursup mais via Études en France (Campus France Maroc). Le tarif indiqué sur la page Parcoursup (178 euros par année) est pour les étudiants non-extra-communautaires ; les droits différenciés pour les extra-communautaires ne sont pas indiqués sur les pages fournies. Des droits différenciés seront appliqués à partir de la rentrée 2026, mais le montant n'est pas donné. Les langues d'enseignement sont le français ; l'anglais est une matière. La page de l'IUT indique que les étudiants marocains doivent candidater via ADIUT Maroc, mais la procédure principale reste Études en France."
+}

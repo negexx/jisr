@@ -21,8 +21,9 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
-  source: programme
+  value:
+    - fr
+  source: page-5
   info_kind: official
 tuition:
   value:
@@ -164,3 +165,6 @@ sources:
   page-1:
     url: https://www.maroc.campusfrance.org/2la-saisie-des-informations-personnelles
     last_verified_at: 2026-10-09
+  page-5:
+    url: https://formations.ube.fr/fr/offre-de-formation/but-BUT/but-informatique-info-LMGC21RY.html
+    last_verified_at: 2026-10-10

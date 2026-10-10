@@ -1,0 +1,66 @@
+{
+  "slug": "nl-hogeschool-rotterdam-22oj-applied-data-science-art-1001o8776",
+  "programmePage": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/applied-data-science--artificial-intelligence/voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/applied-data-science--artificial-intelligence/voltijd/",
+          "quote": "Duur en startmoment 4 jaar, september"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/applied-data-science--artificial-intelligence/voltijd/",
+          "quote": "Opleidingstype Voltijd Bachelor Taal Nederlands (literatuur veelal in Engels)"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/applied-data-science--artificial-intelligence/voltijd/",
+          "quote": "Geef jezelf de beste start – meld je uiterlijk op 1 mei aan via Studielink!"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.hogeschoolrotterdam.nl/voorlichting/toelatingsvoorwaarden/toelating-met-een-buitenlands-diploma/",
+            "quote": "Voor een Nederlandstalige hbo-opleiding moet je de Nederlandse taal op niveau B2 van het Europees Referentie Kader beheersen."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que votre diplôme marocain est jugé équivalent au havo/vwo/mbo niveau 4 néerlandais requis ; la décision est prise après examen du dossier.",
+          "en": "Check that your Moroccan diploma is accepted as equivalent to the required Dutch havo/vwo/mbo level 4; the decision is taken after review of your file."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hogeschoolrotterdam.nl/voorlichting/toelatingsvoorwaarden/toelating-met-een-buitenlands-diploma/",
+            "quote": "Dan moet je aantonen dat dat gelijkwaardig is aan het vereiste Nederlandse havo-, vwo- of mbo-niveau 4-diploma."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition: the programme's own page states no fee; the institution-wide page https://www.hogeschoolrotterdam.nl/voorlichting/inschrijving/collegegeld-en-betalen/ gives instellingscollegegeld for voltijd bachelor programmes of 10.684,- (2026-2027), but its quote for who pays it ('Studenten uit niet-EER landen betalen instellingscollegegeld') appears on the page of a different programme (Bedrijfskunde deeltijd), so no single page provides both the non-EU rule and the amount, and tuition was left out. Intake: 'meld je uiterlijk op 1 mei aan via Studielink' and the 1 May deadline are general, not stated for non-EU/international applicants, so no intake was recorded; the visa page's 'Non-EU Aanmelders: 1 april' is a visa-application document deadline, not the programme application deadline."
+}

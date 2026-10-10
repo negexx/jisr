@@ -1,13 +1,13 @@
 country,institution_slug,institution_name,programme_slug,programme_name,tuition,language,intakes,deadline,channel,documents,duration,rules,missing_count
 DE,de-baden-wuerttemberg-cooperative-state-uni-daad-mosbach,Baden-Wuerttemberg Cooperative State University,de-baden-wuerttemberg-cooperative-state-uni-daad-mosbach-new-study-computer-scien-daad10648,New Study Computer Science,1,1,0,0,0,1,1,1,3
-DE,de-bard-college-berlin-a-liberal-arts-unive-hrk437,"Bard College Berlin, A Liberal Arts University",de-bard-college-berlin-a-liberal-arts-unive-hrk437-ba-in-economics-politics-daad4537,"BA in Economics, Politics, and Social Thought",0,1,0,0,1,1,1,0,4
+DE,de-bard-college-berlin-a-liberal-arts-unive-hrk437,"Bard College Berlin, A Liberal Arts University",de-bard-college-berlin-a-liberal-arts-unive-hrk437-ba-in-economics-politics-daad4537,"BA in Economics, Politics, and Social Thought",1,1,0,0,1,1,1,0,3
 DE,de-carl-von-ossietzky-universitat-oldenburg-hrk209,Carl von Ossietzky Universität Oldenburg,de-carl-von-ossietzky-universitat-oldenburg-hrk209-bachelor-of-engineering-daad3772,Bachelor of Engineering in Engineering Physics,1,1,1,1,1,1,1,1,0
 DE,de-ebs-universitat-fur-wirtschaft-und-recht-hrk206,EBS Universität für Wirtschaft und Recht,de-ebs-universitat-fur-wirtschaft-und-recht-hrk206-bachelors-in-business-st-daad4080,Bachelor's in Business Studies (BSc),1,1,0,0,0,1,1,0,4
 DE,de-ebs-universitat-fur-wirtschaft-und-recht-hrk206,EBS Universität für Wirtschaft und Recht,de-ebs-universitat-fur-wirtschaft-und-recht-hrk206-bachelors-in-law-politic-daad8558,"Bachelor's in Law, Politics and Economics (BA)",1,1,0,0,0,1,1,0,4
 DE,de-fh-munster-university-of-applied-science-hrk192,FH Münster - University of Applied Sciences,de-fh-munster-university-of-applied-science-hrk192-international-business-m-daad3910,International Business & Management – Track: European Business Programme (EBP),1,1,1,1,0,1,1,1,1
 DE,de-fh-munster-university-of-applied-science-hrk192,FH Münster - University of Applied Sciences,de-fh-munster-university-of-applied-science-hrk192-international-business-m-daad3911,International Business & Management – Track: German-Latin American Studies of Business Administration (CALA),1,1,1,1,0,0,1,0,3
 DE,de-fachhochschule-aachen-hrk2,Fachhochschule Aachen,de-fachhochschule-aachen-hrk2-global-business-and-econ-daad4849,Global Business and Economics (Bachelor of Science),1,1,1,1,1,1,1,1,0
-DE,de-fachhochschule-aachen-hrk2-julich,Fachhochschule Aachen,de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad3998,Bachelor of Engineering in Electrical Engineering – Energy Technology,1,1,1,1,1,1,0,0,2
+DE,de-fachhochschule-aachen-hrk2-julich,Fachhochschule Aachen,de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad3998,Bachelor of Engineering in Electrical Engineering – Energy Technology,1,1,1,1,1,1,1,0,1
 DE,de-fachhochschule-aachen-hrk2-julich,Fachhochschule Aachen,de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad4009,Bachelor of Engineering in Mechanical Engineering – Energy Technology,1,1,1,1,1,1,0,0,2
 DE,de-fachhochschule-aachen-hrk2-julich,Fachhochschule Aachen,de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad4011,Bachelor of Engineering in Applied Physics,1,1,1,1,1,1,1,0,1
 DE,de-fachhochschule-aachen-hrk2-julich,Fachhochschule Aachen,de-fachhochschule-aachen-hrk2-julich-bachelor-of-science-in-i-daad11243,Bachelor of Science in Industrial Engineering — Sustainable Energy Systems,1,1,1,1,1,1,0,0,2
@@ -18,19 +18,19 @@ DE,de-friedrich-alexander-universitat-erlangen-hrk70,Friedrich-Alexander-Univers
 DE,de-friedrich-alexander-universitat-erlangen-hrk70-nurnberg,Friedrich-Alexander-Universität Erlangen-Nürnberg,de-friedrich-alexander-universitat-erlangen-hrk70-nurnberg-international-business-s-daad6913,International Business Studies (BSc),1,1,1,1,1,0,1,1,1
 DE,de-htw-berlin-university-of-applied-science-daad-berlin,HTW Berlin University of Applied Sciences,de-htw-berlin-university-of-applied-science-daad-berlin-cyber-security-and-busin-daad10356,Cyber Security and Business,1,1,1,1,1,1,1,1,0
 DE,de-hochschule-aalen-technik-wirtschaft-und-hrk3,"Hochschule Aalen - Technik, Wirtschaft und Gesundheit",de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad10638,Bachelor of Engineering in Sales Engineering,1,1,0,0,1,1,1,1,2
-DE,de-hochschule-aalen-technik-wirtschaft-und-hrk3,"Hochschule Aalen - Technik, Wirtschaft und Gesundheit",de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad9904,Bachelor of Engineering in Mechatronics & Robotics Engineering,1,1,0,0,1,1,1,0,3
+DE,de-hochschule-aalen-technik-wirtschaft-und-hrk3,"Hochschule Aalen - Technik, Wirtschaft und Gesundheit",de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad9904,Bachelor of Engineering in Mechatronics & Robotics Engineering,1,1,1,1,1,1,1,0,1
 DE,de-hochschule-aalen-technik-wirtschaft-und-hrk3,"Hochschule Aalen - Technik, Wirtschaft und Gesundheit",de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad9905,Bachelor of Engineering in Mechanical Engineering,1,1,0,0,1,1,1,0,3
 DE,de-hochschule-albstadt-sigmaringen-hrk4-albstadt,Hochschule Albstadt-Sigmaringen,de-hochschule-albstadt-sigmaringen-hrk4-albstadt-industrial-engineering-daad9996,Industrial Engineering,1,1,1,1,0,1,1,0,2
 DE,de-hochschule-albstadt-sigmaringen-hrk4-albstadt,Hochschule Albstadt-Sigmaringen,de-hochschule-albstadt-sigmaringen-hrk4-albstadt-mechanical-engineering-daad9993,Mechanical Engineering,1,1,0,0,0,1,1,0,4
 DE,de-hochschule-bielefeld-university-of-appli-hrk28-gutersloh,Hochschule Bielefeld - University of Applied Sciences and Arts (HSBI),de-hochschule-bielefeld-university-of-appli-hrk28-gutersloh-beng-industrial-engineer-daad9711,BEng Industrial Engineering with Work-Integrated Option,1,1,1,1,1,1,1,1,0
 DE,de-hochschule-bielefeld-university-of-appli-hrk28-gutersloh,Hochschule Bielefeld - University of Applied Sciences and Arts (HSBI),de-hochschule-bielefeld-university-of-appli-hrk28-gutersloh-beng-mechatronics-and-au-daad10585,BEng Mechatronics and Automation with Work-Integrated Option,1,1,1,1,1,1,1,0,1
-DE,de-hochschule-bonn-rhein-sieg-university-of-hrk294,"Hochschule Bonn-Rhein-Sieg, University of Applied Sciences",de-hochschule-bonn-rhein-sieg-university-of-hrk294-international-business-b-daad5225,International Business (BSc),0,1,0,0,1,1,1,1,3
+DE,de-hochschule-bonn-rhein-sieg-university-of-hrk294,"Hochschule Bonn-Rhein-Sieg, University of Applied Sciences",de-hochschule-bonn-rhein-sieg-university-of-hrk294-international-business-b-daad5225,International Business (BSc),0,1,1,1,1,1,1,1,1
 DE,de-hochschule-bremerhaven-hrk41,Hochschule Bremerhaven,de-hochschule-bremerhaven-hrk41-international-tourism-ma-daad7839,International Tourism Management (Cruise Business / Innovation),1,1,1,1,1,1,1,1,0
 DE,de-hochschule-bremerhaven-hrk41,Hochschule Bremerhaven,de-hochschule-bremerhaven-hrk41-sustainable-process-engi-daad10400,Sustainable Process Engineering,1,1,1,1,1,1,1,0,1
 DE,de-hochschule-fresenius-university-of-appli-daad-koln,Hochschule Fresenius - University of Applied Sciences,de-hochschule-fresenius-university-of-appli-daad-koln-computer-science-bsc-daad9952,Computer Science (BSc),1,1,0,0,1,1,1,1,2
 DE,de-hochschule-fresenius-heidelberg-staatlic-hrk440,Hochschule Fresenius Heidelberg – staatlich anerkannte Hochschule der Hochschule Fresenius für Internationales Management GmbH,de-hochschule-fresenius-heidelberg-staatlic-hrk440-international-business-b-daad11098,International Business (BA) with Specialisation in International Management,1,1,0,0,1,1,1,0,3
 DE,de-hochschule-fulda-university-of-applied-s-hrk92,Hochschule Fulda - University of Applied Sciences,de-hochschule-fulda-university-of-applied-s-hrk92-industrial-engineering-l-daad9640,Industrial Engineering Life Sciences,1,1,1,1,1,1,1,1,0
-DE,de-hochschule-fulda-university-of-applied-s-hrk92,Hochschule Fulda - University of Applied Sciences,de-hochschule-fulda-university-of-applied-s-hrk92-international-business-a-daad10425,International Business Administration,0,1,1,1,1,1,1,0,2
+DE,de-hochschule-fulda-university-of-applied-s-hrk92,Hochschule Fulda - University of Applied Sciences,de-hochschule-fulda-university-of-applied-s-hrk92-international-business-a-daad10425,International Business Administration,1,1,1,1,1,1,1,0,1
 DE,de-hochschule-fulda-university-of-applied-s-hrk92,Hochschule Fulda - University of Applied Sciences,de-hochschule-fulda-university-of-applied-s-hrk92-international-business-m-daad5651,International Business & Management,1,1,0,0,1,1,1,1,2
 DE,de-hochschule-furtwangen-informatik-technik-hrk94-villingen-schwenningen,"Hochschule Furtwangen - Informatik, Technik, Wirtschaft, Medien, Gesundheit",de-hochschule-furtwangen-informatik-technik-hrk94-villingen-schwenningen-international-engineerin-daad4203,International Engineering (IEB),1,1,0,0,0,1,1,0,4
 DE,de-hochschule-geisenheim-hrk446,Hochschule Geisenheim,de-hochschule-geisenheim-hrk446-international-wine-busin-daad8448,International Wine Business (Bachelor of Science),1,1,1,1,1,1,1,1,0
@@ -39,8 +39,8 @@ DE,de-hochschule-hannover-hrk115,Hochschule Hannover,de-hochschule-hannover-hrk1
 DE,de-hochschule-heilbronn-technik-wirtschaft-hrk125,"Hochschule Heilbronn, Technik, Wirtschaft, Informatik",de-hochschule-heilbronn-technik-wirtschaft-hrk125-artificial-intelligence-daad10364,Artificial Intelligence and Industrial Digitalisation,1,1,0,0,1,1,1,1,2
 DE,de-hochschule-heilbronn-technik-wirtschaft-hrk125,"Hochschule Heilbronn, Technik, Wirtschaft, Informatik",de-hochschule-heilbronn-technik-wirtschaft-hrk125-automotive-systems-engin-daad11004,Automotive Systems Engineering,1,1,0,0,1,1,1,0,3
 DE,de-hochschule-heilbronn-technik-wirtschaft-hrk125,"Hochschule Heilbronn, Technik, Wirtschaft, Informatik",de-hochschule-heilbronn-technik-wirtschaft-hrk125-electrical-systems-engin-daad6320,Electrical Systems Engineering,1,1,0,0,1,1,1,0,3
-DE,de-hochschule-heilbronn-technik-wirtschaft-hrk125,"Hochschule Heilbronn, Technik, Wirtschaft, Informatik",de-hochschule-heilbronn-technik-wirtschaft-hrk125-environmental-and-proces-daad10371,Environmental and Process Engineering,1,1,0,0,1,1,1,0,3
-DE,de-hochschule-heilbronn-technik-wirtschaft-hrk125,"Hochschule Heilbronn, Technik, Wirtschaft, Informatik",de-hochschule-heilbronn-technik-wirtschaft-hrk125-intelligent-mechatronic-daad10366,Intelligent Mechatronic Systems,1,1,0,0,1,1,1,1,2
+DE,de-hochschule-heilbronn-technik-wirtschaft-hrk125,"Hochschule Heilbronn, Technik, Wirtschaft, Informatik",de-hochschule-heilbronn-technik-wirtschaft-hrk125-environmental-and-proces-daad10371,Environmental and Process Engineering,1,1,1,1,1,1,1,0,1
+DE,de-hochschule-heilbronn-technik-wirtschaft-hrk125,"Hochschule Heilbronn, Technik, Wirtschaft, Informatik",de-hochschule-heilbronn-technik-wirtschaft-hrk125-intelligent-mechatronic-daad10366,Intelligent Mechatronic Systems,1,1,1,1,1,1,1,1,0
 DE,de-hochschule-heilbronn-technik-wirtschaft-hrk125,"Hochschule Heilbronn, Technik, Wirtschaft, Informatik",de-hochschule-heilbronn-technik-wirtschaft-hrk125-international-business-daad3930,International Business,1,1,0,0,1,1,1,1,2
 DE,de-hochschule-heilbronn-technik-wirtschaft-hrk125,"Hochschule Heilbronn, Technik, Wirtschaft, Informatik",de-hochschule-heilbronn-technik-wirtschaft-hrk125-international-business-i-daad9674,International Business – Intercultural Studies,1,1,1,1,1,1,1,0,1
 DE,de-hochschule-heilbronn-technik-wirtschaft-hrk125,"Hochschule Heilbronn, Technik, Wirtschaft, Informatik",de-hochschule-heilbronn-technik-wirtschaft-hrk125-mechanical-engineering-daad11005,Mechanical Engineering,1,1,0,0,1,1,1,0,3
@@ -52,7 +52,7 @@ DE,de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken,Hochschule Kais
 DE,de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken,Hochschule Kaiserslautern (University of Applied Sciences),de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken-international-business-a-daad9036,International Business Administration,1,1,0,0,1,1,1,0,3
 DE,de-hochschule-karlsruhe-technik-und-wirtsch-hrk138,Hochschule Karlsruhe - Technik und Wirtschaft,de-hochschule-karlsruhe-technik-und-wirtsch-hrk138-bsc-in-mechanical-engine-daad3918,BSc in Mechanical Engineering (International),1,1,1,1,1,1,1,1,0
 DE,de-hochschule-karlsruhe-technik-und-wirtsch-hrk138,Hochschule Karlsruhe - Technik und Wirtschaft,de-hochschule-karlsruhe-technik-und-wirtsch-hrk138-electrical-engineering-a-daad7695,Electrical Engineering and Information Technology,1,1,1,1,0,1,1,0,2
-DE,de-hochschule-koblenz-hrk305,Hochschule Koblenz,de-hochschule-koblenz-hrk305-marketing-and-internatio-daad11241,Marketing and International Business,0,1,1,1,1,1,1,1,1
+DE,de-hochschule-koblenz-hrk305,Hochschule Koblenz,de-hochschule-koblenz-hrk305-marketing-and-internatio-daad11241,Marketing and International Business,1,1,1,1,1,1,1,1,0
 DE,de-hochschule-landshut-hochschule-fur-angew-hrk157-dingolfing,Hochschule Landshut - Hochschule für angewandte Wissenschaften,de-hochschule-landshut-hochschule-fur-angew-hrk157-dingolfing-sustainable-industrial-o-daad11085,Sustainable Industrial Operations & Business (SIOB),1,1,1,1,1,1,1,0,1
 DE,de-hochschule-mainz-hrk310,Hochschule Mainz,de-hochschule-mainz-hrk310-bsc-in-international-bus-daad10402,BSc in International Business,1,1,1,1,1,1,1,0,1
 DE,de-hochschule-mainz-hrk310,Hochschule Mainz,de-hochschule-mainz-hrk310-international-civil-engi-daad7151,International Civil Engineering (ICE),1,1,1,1,1,1,1,0,1
@@ -64,24 +64,24 @@ DE,de-hochschule-pforzheim-gestaltung-technik-hrk219,"Hochschule Pforzheim - Ges
 DE,de-hochschule-pforzheim-gestaltung-technik-hrk219,"Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht",de-hochschule-pforzheim-gestaltung-technik-hrk219-bachelors-in-business-ad-daad9800,Bachelor's in Business Administration / International Business (BSc),1,1,1,1,1,1,1,0,1
 DE,de-hochschule-pforzheim-gestaltung-technik-hrk219,"Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht",de-hochschule-pforzheim-gestaltung-technik-hrk219-business-administration-daad4659,Business Administration / Digital Business Management (BSc),1,1,1,1,1,1,1,0,1
 DE,de-hochschule-ravensburg-weingarten-hrk224,Hochschule Ravensburg-Weingarten,de-hochschule-ravensburg-weingarten-hrk224-electrical-engineering-a-daad3993,Electrical Engineering and Information Technology,1,1,1,1,1,1,1,0,1
-DE,de-hochschule-ravensburg-weingarten-hrk224,Hochschule Ravensburg-Weingarten,de-hochschule-ravensburg-weingarten-hrk224-mechanical-engineering-i-daad7827,Mechanical Engineering / International Project Engineering,1,1,0,0,1,0,1,0,4
-DE,de-hochschule-ravensburg-weingarten-hrk224,Hochschule Ravensburg-Weingarten,de-hochschule-ravensburg-weingarten-hrk224-mechatronics-daad9717,Mechatronics,1,1,1,1,1,0,1,1,1
-DE,de-hochschule-reutlingen-hochschule-fur-tec-hrk227,"Hochschule Reutlingen, Hochschule für Technik- Wirtschaft-Informatik-Design",de-hochschule-reutlingen-hochschule-fur-tec-hrk227-esb-business-school-inte-daad3871,ESB Business School: International Business (Bachelor of Science),0,1,1,1,0,0,1,0,4
-DE,de-hochschule-rhein-waal-university-of-appl-hrk400,Hochschule Rhein-Waal - University of Applied Sciences,de-hochschule-rhein-waal-university-of-appl-hrk400-agribusiness-ba-daad4229,Agribusiness BA,1,1,0,0,1,1,1,1,2
-DE,de-hochschule-rhein-waal-university-of-appl-hrk400,Hochschule Rhein-Waal - University of Applied Sciences,de-hochschule-rhein-waal-university-of-appl-hrk400-bioengineering-bsc-daad4320,Bioengineering BSc,1,1,0,0,1,1,1,1,2
-DE,de-hochschule-rhein-waal-university-of-appl-hrk400,Hochschule Rhein-Waal - University of Applied Sciences,de-hochschule-rhein-waal-university-of-appl-hrk400-engineering-bsc-daad4220,"Engineering, BSc",0,1,1,1,1,1,1,0,2
+DE,de-hochschule-ravensburg-weingarten-hrk224,Hochschule Ravensburg-Weingarten,de-hochschule-ravensburg-weingarten-hrk224-mechanical-engineering-i-daad7827,Mechanical Engineering / International Project Engineering,1,1,1,1,1,0,1,0,2
+DE,de-hochschule-ravensburg-weingarten-hrk224,Hochschule Ravensburg-Weingarten,de-hochschule-ravensburg-weingarten-hrk224-mechatronics-daad9717,Mechatronics,1,1,1,1,1,1,1,1,0
+DE,de-hochschule-reutlingen-hochschule-fur-tec-hrk227,"Hochschule Reutlingen, Hochschule für Technik- Wirtschaft-Informatik-Design",de-hochschule-reutlingen-hochschule-fur-tec-hrk227-esb-business-school-inte-daad3871,ESB Business School: International Business (Bachelor of Science),1,1,1,1,0,0,1,0,3
+DE,de-hochschule-rhein-waal-university-of-appl-hrk400,Hochschule Rhein-Waal - University of Applied Sciences,de-hochschule-rhein-waal-university-of-appl-hrk400-agribusiness-ba-daad4229,Agribusiness BA,1,1,1,1,1,1,1,1,0
+DE,de-hochschule-rhein-waal-university-of-appl-hrk400,Hochschule Rhein-Waal - University of Applied Sciences,de-hochschule-rhein-waal-university-of-appl-hrk400-bioengineering-bsc-daad4320,Bioengineering BSc,1,1,1,1,1,1,1,1,0
+DE,de-hochschule-rhein-waal-university-of-appl-hrk400,Hochschule Rhein-Waal - University of Applied Sciences,de-hochschule-rhein-waal-university-of-appl-hrk400-engineering-bsc-daad4220,"Engineering, BSc",1,1,1,1,1,1,1,0,1
 DE,de-hochschule-rhein-waal-university-of-appl-hrk400,Hochschule Rhein-Waal - University of Applied Sciences,de-hochschule-rhein-waal-university-of-appl-hrk400-engineering-for-sustaina-daad4219,"Engineering for Sustainability, BSc",1,1,1,1,1,1,1,0,1
 DE,de-hochschule-rhein-waal-university-of-appl-hrk400,Hochschule Rhein-Waal - University of Applied Sciences,de-hochschule-rhein-waal-university-of-appl-hrk400-international-business-a-daad4210,"International Business and Management, BA",0,1,1,1,1,1,1,0,2
 DE,de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach,Hochschule Trier - Trier University of Applied Sciences,de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach-sustainable-business-and-daad4705,Sustainable Business and Technology,1,1,1,1,0,0,1,0,3
 DE,de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach,Hochschule Trier - Trier University of Applied Sciences,de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach-sustainable-business-and-daad9857,Sustainable Business and Law,1,1,1,1,0,0,1,0,3
-DE,de-hochschule-wismar-university-of-applied-hrk274-rostock,"Hochschule Wismar - University of Applied Sciences: Technology, Business and Design",de-hochschule-wismar-university-of-applied-hrk274-rostock-marine-engineering-doubl-daad6315,Marine Engineering (Double Degree),1,1,1,1,0,0,1,1,2
-DE,de-hochschule-der-medien-stuttgart-hrk250,Hochschule der Medien Stuttgart,de-hochschule-der-medien-stuttgart-hrk250-social-media-marketing-m-daad9705,Social Media Marketing & Management,1,1,1,1,1,0,1,1,1
+DE,de-hochschule-wismar-university-of-applied-hrk274-rostock,"Hochschule Wismar - University of Applied Sciences: Technology, Business and Design",de-hochschule-wismar-university-of-applied-hrk274-rostock-marine-engineering-doubl-daad6315,Marine Engineering (Double Degree),1,1,1,1,0,1,1,1,1
+DE,de-hochschule-der-medien-stuttgart-hrk250,Hochschule der Medien Stuttgart,de-hochschule-der-medien-stuttgart-hrk250-social-media-marketing-m-daad9705,Social Media Marketing & Management,1,1,1,1,1,1,1,1,0
 DE,de-hochschule-fur-technik-und-wirtschaft-dr-hrk54,Hochschule für Technik und Wirtschaft Dresden - University of Applied Sciences,de-hochschule-fur-technik-und-wirtschaft-dr-hrk54-bachelor-electrical-engi-daad4762,Bachelor Electrical Engineering/Elektrotechnik (BEng),1,1,1,1,1,1,1,0,1
-DE,de-hochschule-fur-angewandte-wissenschaften-hrk312,Hochschule für angewandte Wissenschaften Ansbach,de-hochschule-fur-angewandte-wissenschaften-hrk312-applied-sustainable-engi-daad10455,Applied Sustainable Engineering,1,1,0,0,1,1,1,1,2
-DE,de-hochschule-fur-angewandte-wissenschaften-hrk44,Hochschule für angewandte Wissenschaften Coburg,de-hochschule-fur-angewandte-wissenschaften-hrk44-engineering-physics-daad10481,Engineering Physics,1,1,0,0,1,1,1,1,2
-DE,de-hochschule-fur-angewandte-wissenschaften-hrk44,Hochschule für angewandte Wissenschaften Coburg,de-hochschule-fur-angewandte-wissenschaften-hrk44-international-bachelors-daad10381,International Bachelor’s in Automation and Robotics,1,1,0,0,1,1,1,0,3
+DE,de-hochschule-fur-angewandte-wissenschaften-hrk312,Hochschule für angewandte Wissenschaften Ansbach,de-hochschule-fur-angewandte-wissenschaften-hrk312-applied-sustainable-engi-daad10455,Applied Sustainable Engineering,1,1,1,1,1,1,1,1,0
+DE,de-hochschule-fur-angewandte-wissenschaften-hrk44,Hochschule für angewandte Wissenschaften Coburg,de-hochschule-fur-angewandte-wissenschaften-hrk44-engineering-physics-daad10481,Engineering Physics,1,1,1,1,1,1,1,1,0
+DE,de-hochschule-fur-angewandte-wissenschaften-hrk44,Hochschule für angewandte Wissenschaften Coburg,de-hochschule-fur-angewandte-wissenschaften-hrk44-international-bachelors-daad10381,International Bachelor’s in Automation and Robotics,1,1,1,1,1,1,1,0,1
 DE,de-hochschule-fur-angewandte-wissenschaften-hrk44,Hochschule für angewandte Wissenschaften Coburg,de-hochschule-fur-angewandte-wissenschaften-hrk44-international-bachelors-daad10398,International Bachelor’s in Electrical Engineering for Sustainable and Renewable Energy,1,1,0,0,1,1,1,0,3
-DE,de-hochschule-fur-angewandte-wissenschaften-hrk44,Hochschule für angewandte Wissenschaften Coburg,de-hochschule-fur-angewandte-wissenschaften-hrk44-mechanical-engineering-daad10350,Mechanical Engineering,1,1,0,0,1,1,1,0,3
+DE,de-hochschule-fur-angewandte-wissenschaften-hrk44,Hochschule für angewandte Wissenschaften Coburg,de-hochschule-fur-angewandte-wissenschaften-hrk44-mechanical-engineering-daad10350,Mechanical Engineering,1,1,1,1,1,1,1,0,1
 DE,de-hochschule-fur-angewandte-wissenschaften-hrk44-kronach,Hochschule für angewandte Wissenschaften Coburg,de-hochschule-fur-angewandte-wissenschaften-hrk44-kronach-digital-business-models-daad10485,Digital Business – Models and Technologies,1,1,0,0,1,1,1,0,3
 DE,de-hochschule-fur-angewandte-wissenschaften-hrk287,Hochschule für angewandte Wissenschaften Hof,de-hochschule-fur-angewandte-wissenschaften-hrk287-computer-science-bsc-daad7216,Computer Science (BSc),1,1,1,1,1,1,1,1,0
 DE,de-hochschule-fur-angewandte-wissenschaften-hrk287,Hochschule für angewandte Wissenschaften Hof,de-hochschule-fur-angewandte-wissenschaften-hrk287-engineering-science-beng-daad9934,Engineering Science (BEng),1,1,1,1,1,1,1,1,0
@@ -89,9 +89,9 @@ DE,de-hochschule-fur-angewandte-wissenschaften-hrk287,Hochschule für angewandte
 DE,de-hochschule-fur-angewandte-wissenschaften-hrk143,Hochschule für angewandte Wissenschaften Kempten,de-hochschule-fur-angewandte-wissenschaften-hrk143-international-engineerin-daad9922,International Engineering,1,1,0,0,1,1,1,1,2
 DE,de-hochschule-fur-angewandte-wissenschaften-hrk291,Hochschule für angewandte Wissenschaften München,de-hochschule-fur-angewandte-wissenschaften-hrk291-engineering-physics-and-daad9655,Engineering Physics and Data Science,1,1,1,1,1,1,1,1,0
 DE,de-hochschule-fur-angewandte-wissenschaften-hrk264,Hochschule für angewandte Wissenschaften Weihenstephan-Triesdorf,de-hochschule-fur-angewandte-wissenschaften-hrk264-applied-informatics-daad9990,Applied Informatics,1,1,0,0,1,1,1,1,2
-DE,de-jade-hochschule-wilhelmshaven-oldenburg-hrk406,Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth,de-jade-hochschule-wilhelmshaven-oldenburg-hrk406-international-business-s-daad7743,International Business Studies,1,1,0,0,1,1,1,1,2
+DE,de-jade-hochschule-wilhelmshaven-oldenburg-hrk406,Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth,de-jade-hochschule-wilhelmshaven-oldenburg-hrk406-international-business-s-daad7743,International Business Studies,1,1,1,1,1,1,1,1,0
 DE,de-kuhne-logistics-university-wissenschaftl-hrk429,Kühne Logistics University - Wissenschaftliche Hochschule für Logistik und Unternehmensführung,de-kuhne-logistics-university-wissenschaftl-hrk429-bachelor-of-science-busi-daad11249,Bachelor of Science Business Administration,1,1,1,1,0,1,1,0,2
-DE,de-leuphana-universitat-luneburg-hrk171,Leuphana Universität Lüneburg,de-leuphana-universitat-luneburg-hrk171-economics-bsc-daad9671,Economics (BSc),1,1,0,0,1,1,1,1,2
+DE,de-leuphana-universitat-luneburg-hrk171,Leuphana Universität Lüneburg,de-leuphana-universitat-luneburg-hrk171-economics-bsc-daad9671,Economics (BSc),1,1,1,1,1,1,1,1,0
 DE,de-leuphana-universitat-luneburg-hrk171,Leuphana Universität Lüneburg,de-leuphana-universitat-luneburg-hrk171-international-business-a-daad4610,International Business Administration & Entrepreneurship (BSc),1,1,1,1,1,1,1,0,1
 DE,de-otto-von-guericke-universitat-magdeburg-hrk172,Otto-von-Guericke-Universität Magdeburg,de-otto-von-guericke-universitat-magdeburg-hrk172-bilingual-bachelors-biba-daad9665,Bilingual Bachelor's (BiBa) in Computer Science,1,1,1,1,1,1,1,1,0
 DE,de-otto-von-guericke-universitat-magdeburg-hrk172,Otto-von-Guericke-Universität Magdeburg,de-otto-von-guericke-universitat-magdeburg-hrk172-engineering-science-engs-daad9672,Engineering Science (EngSci),1,1,1,1,1,1,1,1,0
@@ -99,15 +99,15 @@ DE,de-otto-von-guericke-universitat-magdeburg-hrk172,Otto-von-Guericke-Universit
 DE,de-srh-university-of-applied-sciences-heide-hrk122,SRH University of Applied Sciences Heidelberg,de-srh-university-of-applied-sciences-heide-hrk122-electrical-engineering-b-daad9707,Electrical Engineering (BEng),1,1,0,0,0,0,1,0,5
 DE,de-srh-university-of-applied-sciences-heide-hrk122,SRH University of Applied Sciences Heidelberg,de-srh-university-of-applied-sciences-heide-hrk122-mechanical-engineering-b-daad9651,Mechanical Engineering (BEng),1,1,0,0,0,0,1,0,5
 DE,de-technische-hochschule-aschaffenburg-hrk333,Technische Hochschule Aschaffenburg,de-technische-hochschule-aschaffenburg-hrk333-software-design-internat-daad9225,Software Design International,1,1,1,1,1,1,1,1,0
-DE,de-technische-hochschule-augsburg-hrk7,Technische Hochschule Augsburg,de-technische-hochschule-augsburg-hrk7-international-informatio-daad7126,International Information Systems BSc,1,1,0,0,1,1,1,1,2
+DE,de-technische-hochschule-augsburg-hrk7,Technische Hochschule Augsburg,de-technische-hochschule-augsburg-hrk7-international-informatio-daad7126,International Information Systems BSc,1,1,1,1,1,1,1,1,0
 DE,de-technische-hochschule-deggendorf-hrk284,Technische Hochschule Deggendorf,de-technische-hochschule-deggendorf-hrk284-bsc-artificial-intellige-daad7742,BSc Artificial Intelligence,1,1,1,1,1,1,1,1,0
 DE,de-technische-hochschule-deggendorf-hrk284,Technische Hochschule Deggendorf,de-technische-hochschule-deggendorf-hrk284-business-administration-daad9840,"Business Administration and Service Management, BA",1,1,0,0,1,1,1,0,3
 DE,de-technische-hochschule-deggendorf-hrk284,Technische Hochschule Deggendorf,de-technische-hochschule-deggendorf-hrk284-electrical-engineering-a-daad9837,Electrical Engineering and Information Technology — International,1,1,0,0,1,1,1,0,3
 DE,de-technische-hochschule-deggendorf-hrk284,Technische Hochschule Deggendorf,de-technische-hochschule-deggendorf-hrk284-electromobility-autonomo-daad9073,"Electromobility, Autonomous Driving and Mobile Robotics – International (BEng)",1,1,0,0,1,0,1,0,4
-DE,de-technische-hochschule-deggendorf-hrk284,Technische Hochschule Deggendorf,de-technische-hochschule-deggendorf-hrk284-electronics-engineering-daad9839,Electronics Engineering for Artificial Intelligence — International (BEng),1,1,0,0,1,0,1,0,4
+DE,de-technische-hochschule-deggendorf-hrk284,Technische Hochschule Deggendorf,de-technische-hochschule-deggendorf-hrk284-electronics-engineering-daad9839,Electronics Engineering for Artificial Intelligence — International (BEng),1,1,1,1,1,1,1,0,1
 DE,de-technische-hochschule-deggendorf-hrk284-pfarrkirchen,Technische Hochschule Deggendorf,de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-beng-energy-systems-engi-daad7019,BEng Energy Systems Engineering,1,1,0,0,1,1,1,1,2
 DE,de-technische-hochschule-deggendorf-hrk284-pfarrkirchen,Technische Hochschule Deggendorf,de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-beng-industrial-engineer-daad4668,BEng Industrial Engineering,1,1,1,1,1,1,1,0,1
-DE,de-technische-hochschule-deggendorf-hrk284-pfarrkirchen,Technische Hochschule Deggendorf,de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-bsc-health-informatics-daad4822,BSc Health Informatics,1,1,0,0,1,0,1,1,3
+DE,de-technische-hochschule-deggendorf-hrk284-pfarrkirchen,Technische Hochschule Deggendorf,de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-bsc-health-informatics-daad4822,BSc Health Informatics,1,1,0,0,1,1,1,1,2
 DE,de-technische-hochschule-ingolstadt-hrk288,Technische Hochschule Ingolstadt,de-technische-hochschule-ingolstadt-hrk288-autonomous-vehicle-engin-daad6920,Autonomous Vehicle Engineering,1,1,0,0,1,1,1,1,2
 DE,de-technische-hochschule-ingolstadt-hrk288,Technische Hochschule Ingolstadt,de-technische-hochschule-ingolstadt-hrk288-computer-science-and-art-daad7631,Computer Science and Artificial Intelligence,1,1,1,1,1,1,1,1,0
 DE,de-technische-hochschule-ingolstadt-hrk288,Technische Hochschule Ingolstadt,de-technische-hochschule-ingolstadt-hrk288-global-economics-and-bus-daad6921,Global Economics and Business Management,1,1,1,1,1,1,1,0,1
@@ -126,24 +126,24 @@ DE,de-technische-hochschule-rosenheim-hrk232,Technische Hochschule Rosenheim,de-
 DE,de-technische-hochschule-rosenheim-hrk232,Technische Hochschule Rosenheim,de-technische-hochschule-rosenheim-hrk232-materials-engineering-daad10338,Materials Engineering,1,1,1,1,1,1,1,0,1
 DE,de-technische-hochschule-rosenheim-hrk232,Technische Hochschule Rosenheim,de-technische-hochschule-rosenheim-hrk232-plastics-engineering-daad8373,Plastics Engineering,1,1,1,1,1,1,1,0,1
 DE,de-technische-hochschule-rosenheim-hrk232,Technische Hochschule Rosenheim,de-technische-hochschule-rosenheim-hrk232-robotics-and-machine-int-daad11251,Robotics and Machine Intelligence,1,1,1,1,1,1,1,0,1
-DE,de-technische-hochschule-rosenheim-hrk232-traunstein,Technische Hochschule Rosenheim,de-technische-hochschule-rosenheim-hrk232-traunstein-e-commerce-daad7974,E-Commerce,0,1,1,1,1,1,1,0,2
+DE,de-technische-hochschule-rosenheim-hrk232-traunstein,Technische Hochschule Rosenheim,de-technische-hochschule-rosenheim-hrk232-traunstein-e-commerce-daad7974,E-Commerce,1,1,1,1,1,1,1,0,1
 DE,de-technische-hochschule-ulm-hrk260,Technische Hochschule Ulm,de-technische-hochschule-ulm-hrk260-computer-science-cts-daad4669,Computer Science (CTS),1,1,0,0,1,0,1,1,3
 DE,de-technische-hochschule-ulm-hrk260,Technische Hochschule Ulm,de-technische-hochschule-ulm-hrk260-electrical-engineering-a-daad9157,Electrical Engineering and Information Technology,1,1,0,0,1,1,1,0,3
 DE,de-technische-hochschule-wildau-hrk272,Technische Hochschule Wildau,de-technische-hochschule-wildau-hrk272-european-business-manage-daad7665,European Business Management,1,1,1,1,1,1,1,0,1
-DE,de-technische-universitat-braunschweig-hrk35,Technische Universität Braunschweig,de-technische-universitat-braunschweig-hrk35-sustainable-engineering-daad7212,Sustainable Engineering of Products and Processes,1,1,1,1,0,0,1,0,3
+DE,de-technische-universitat-braunschweig-hrk35,Technische Universität Braunschweig,de-technische-universitat-braunschweig-hrk35-sustainable-engineering-daad7212,Sustainable Engineering of Products and Processes,1,1,1,1,0,1,1,0,2
 DE,de-technische-universitat-chemnitz-hrk42,Technische Universität Chemnitz,de-technische-universitat-chemnitz-hrk42-digital-engineering-daad10483,Digital Engineering,1,1,1,1,1,1,1,0,1
 DE,de-technische-universitat-chemnitz-hrk42,Technische Universität Chemnitz,de-technische-universitat-chemnitz-hrk42-foundations-in-data-scie-daad10526,Foundations in Data Science,1,1,1,1,1,1,1,1,0
 DE,de-technische-universitat-ilmenau-hrk130,Technische Universität Ilmenau,de-technische-universitat-ilmenau-hrk130-bachelor-of-science-in-b-daad4812,Bachelor of Science in Biomedical Engineering,1,1,0,0,1,1,1,0,3
 DE,de-technische-universitat-munchen-hrk184-garching-bei-munchen,Technische Universität München,de-technische-universitat-munchen-hrk184-garching-bei-munchen-aerospace-bsc-daad7256,Aerospace (BSc),1,1,0,0,1,1,1,1,2
 DE,de-technische-universitat-munchen-hrk184-heilbronn,Technische Universität München,de-technische-universitat-munchen-hrk184-heilbronn-bachelors-in-management-daad5704,Bachelor's in Management & Data Science (BSc),1,1,1,1,1,1,1,1,0
 DE,de-technische-universitat-munchen-hrk184-heilbronn,Technische Universität München,de-technische-universitat-munchen-hrk184-heilbronn-information-engineering-daad7698,Information Engineering,1,1,0,0,1,1,1,0,3
-DE,de-technische-universitat-munchen-hrk184-straubing,Technische Universität München,de-technische-universitat-munchen-hrk184-straubing-sustainable-engineering-daad11020,Sustainable Engineering for Materials and Processes,1,1,0,0,1,1,1,1,2
-DE,de-universitat-duisburg-essen-hrk71-duisburg,Universität Duisburg-Essen,de-universitat-duisburg-essen-hrk71-duisburg-electrical-electronic-an-daad6150,"Electrical, Electronic and Communications Engineering",0,1,1,1,1,1,1,0,2
+DE,de-technische-universitat-munchen-hrk184-straubing,Technische Universität München,de-technische-universitat-munchen-hrk184-straubing-sustainable-engineering-daad11020,Sustainable Engineering for Materials and Processes,1,1,1,1,1,1,1,1,0
+DE,de-universitat-duisburg-essen-hrk71-duisburg,Universität Duisburg-Essen,de-universitat-duisburg-essen-hrk71-duisburg-electrical-electronic-an-daad6150,"Electrical, Electronic and Communications Engineering",1,1,1,1,1,1,1,0,1
 DE,de-universitat-duisburg-essen-hrk71-duisburg,Universität Duisburg-Essen,de-universitat-duisburg-essen-hrk71-duisburg-mechanical-engineering-daad6151,Mechanical Engineering,0,1,1,1,1,1,1,0,2
-DE,de-universitat-duisburg-essen-hrk71-duisburg,Universität Duisburg-Essen,de-universitat-duisburg-essen-hrk71-duisburg-structural-engineering-daad6153,Structural Engineering,0,1,1,1,1,1,1,0,2
-DE,de-universitat-hamburg-hrk104,Universität Hamburg,de-universitat-hamburg-hrk104-engineering-science-daad3748,Engineering Science,1,1,0,0,1,0,1,1,3
+DE,de-universitat-duisburg-essen-hrk71-duisburg,Universität Duisburg-Essen,de-universitat-duisburg-essen-hrk71-duisburg-structural-engineering-daad6153,Structural Engineering,1,1,1,1,1,1,1,0,1
+DE,de-universitat-hamburg-hrk104,Universität Hamburg,de-universitat-hamburg-hrk104-engineering-science-daad3748,Engineering Science,1,1,1,1,1,0,1,1,1
 DE,de-universitat-passau-hrk218,Universität Passau,de-universitat-passau-hrk218-bachelor-of-arts-in-inte-daad3643,Bachelor of Arts in International Cultural and Business Studies,1,1,1,1,1,1,1,0,1
-DE,de-universitat-passau-hrk218,Universität Passau,de-universitat-passau-hrk218-bachelor-of-science-in-a-daad9973,Bachelor of Science in Artificial Intelligence,0,1,0,0,1,1,1,1,3
+DE,de-universitat-passau-hrk218,Universität Passau,de-universitat-passau-hrk218-bachelor-of-science-in-a-daad9973,Bachelor of Science in Artificial Intelligence,1,1,1,1,1,1,1,1,0
 DE,de-universitat-zu-koln-hrk147,Universität zu Köln,de-universitat-zu-koln-hrk147-management-economics-and-daad7682,"Management, Economics and Social Sciences - Bachelor of Science",1,1,1,1,1,1,1,1,0
 DE,de-whu-otto-beisheim-school-of-management-hrk261,WHU - Otto Beisheim School of Management,de-whu-otto-beisheim-school-of-management-hrk261-bachelor-in-internationa-daad4099,Bachelor in International Business Administration (BSc),1,1,1,0,1,1,1,0,2
 FR,fr-aix-marseille-universite-0134009m,Aix-Marseille Université,fr-aix-marseille-universite-0134009m-licence-informatique-48592,Licence - Informatique - Entièrement en distanciel,1,1,1,1,1,1,1,1,0
@@ -171,15 +171,15 @@ FR,fr-ecole-du-numerique-faculte-de-gestion-ec-0597250k,"Ecole Du Numérique - F
 FR,fr-ecole-universitaire-de-premier-cycle-cam-0912409z,Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay,fr-ecole-universitaire-de-premier-cycle-cam-0912409z-licence-economie-et-gestion-12934,Licence - Portail Economie et gestion,1,1,1,1,1,1,1,1,0
 FR,fr-ecole-universitaire-de-premier-cycle-cam-0912409z,Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay,fr-ecole-universitaire-de-premier-cycle-cam-0912409z-licence-economie-et-gestion-12935,Licence - Double diplôme - Licence Economie et gestion - Parcours Langues et Civilisations - option Anglais et Espagnol,1,0,1,1,1,1,1,1,1
 FR,fr-ecole-universitaire-de-premier-cycle-cam-0912409z,Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay,fr-ecole-universitaire-de-premier-cycle-cam-0912409z-licence-economie-et-gestion-12936,Licence - Double diplôme - Licence Economie et gestion - Parcours Langues et Civilisations - option Chinois et Anglais,1,0,1,1,1,1,1,1,1
-FR,fr-ecole-universitaire-de-premier-cycle-cam-0912409z,Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay,fr-ecole-universitaire-de-premier-cycle-cam-0912409z-licence-economie-et-gestion-16675,Licence - Double diplôme - Licence Economie et gestion - Parcours Langues et Civilisations - option Anglais et Allemand,1,0,1,1,1,1,1,1,1
+FR,fr-ecole-universitaire-de-premier-cycle-cam-0912409z,Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay,fr-ecole-universitaire-de-premier-cycle-cam-0912409z-licence-economie-et-gestion-16675,Licence - Double diplôme - Licence Economie et gestion - Parcours Langues et Civilisations - option Anglais et Allemand,1,1,1,1,1,1,1,1,0
 FR,fr-ecole-universitaire-de-premier-cycle-cam-0912409z,Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay,fr-ecole-universitaire-de-premier-cycle-cam-0912409z-licence-sciences-pour-lingenieur-14309,Licence - Portail Sciences pour l'ingénieur - Sciences et Technologies - Institut Villebon-Charpak,0,1,1,1,1,1,1,1,1
 FR,fr-eisine-charleville-mezieres-0081149f,EiSINe - Charleville-Mézières,fr-eisine-charleville-mezieres-0081149f-licence-sciences-pour-lingenieur-44611,Licence - Sciences pour l'ingénieur - Parcours Matériaux et Mécanique,1,1,1,1,1,1,1,1,0
 FR,fr-eisine-reims-0512181u,EiSINe - Reims,fr-eisine-reims-0512181u-licence-sciences-pour-lingenieur-44615,"Licence - Sciences pour l'ingénieur - Parcours Électronique, énergie électrique, automatique",1,1,1,1,1,1,1,1,0
-FR,fr-facultes-libres-de-louest-uco-angers-0492433d,Facultés libres de l'Ouest - UCO ANGERS,fr-facultes-libres-de-louest-uco-angers-0492433d-licence-economie-et-gestion-25385,Licence - Economie et gestion,0,1,0,0,1,0,1,1,4
+FR,fr-facultes-libres-de-louest-uco-angers-0492433d,Facultés libres de l'Ouest - UCO ANGERS,fr-facultes-libres-de-louest-uco-angers-0492433d-licence-economie-et-gestion-25385,Licence - Economie et gestion,1,1,0,0,1,0,1,1,3
 FR,fr-facultes-libres-de-louest-uco-bretagne-n-0221844k,Facultés libres de l'ouest - UCO - Bretagne Nord,fr-facultes-libres-de-louest-uco-bretagne-n-0221844k-licence-economie-et-gestion-17395,Licence - Economie et gestion - Parcours Administration Economique et Sociale,0,1,0,0,1,0,1,1,4
 FR,fr-facultes-libres-de-louest-uco-bretagne-n-0221844k,Facultés libres de l'ouest - UCO - Bretagne Nord,fr-facultes-libres-de-louest-uco-bretagne-n-0221844k-licence-economie-et-gestion-17399,Licence - Economie et gestion - Parcours Gestion commerce,0,1,0,0,1,0,1,1,4
-FR,fr-facultes-libres-de-louest-uco-nantes-0442777e,Facultés libres de l'ouest - UCO - Nantes,fr-facultes-libres-de-louest-uco-nantes-0442777e-licence-economie-et-gestion-20206,Licence - Economie et gestion,0,1,0,0,1,0,1,1,4
-FR,fr-facultes-libres-de-louest-uco-niort-0791199z,Facultés libres de l'ouest UCO - Niort,fr-facultes-libres-de-louest-uco-niort-0791199z-licence-economie-et-gestion-48143,Licence - Economie et gestion,0,1,0,0,1,0,1,1,4
+FR,fr-facultes-libres-de-louest-uco-nantes-0442777e,Facultés libres de l'ouest - UCO - Nantes,fr-facultes-libres-de-louest-uco-nantes-0442777e-licence-economie-et-gestion-20206,Licence - Economie et gestion,1,1,0,0,1,0,1,1,3
+FR,fr-facultes-libres-de-louest-uco-niort-0791199z,Facultés libres de l'ouest UCO - Niort,fr-facultes-libres-de-louest-uco-niort-0791199z-licence-economie-et-gestion-48143,Licence - Economie et gestion,1,1,0,0,1,0,1,1,3
 FR,fr-i-u-t-clermont-auvergne-site-daubiere-0632085z,I.U.T Clermont Auvergne - site d'Aubière,fr-i-u-t-clermont-auvergne-site-daubiere-0632085z-but-genie-industriel-et-maintena-7595,BUT - Génie industriel et maintenance,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-clermont-auvergne-site-daubiere-0632085z,I.U.T Clermont Auvergne - site d'Aubière,fr-i-u-t-clermont-auvergne-site-daubiere-0632085z-but-gestion-des-entreprises-et-d-7601,BUT - Gestion des entreprises et des administrations,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-clermont-auvergne-site-daubiere-0632085z,I.U.T Clermont Auvergne - site d'Aubière,fr-i-u-t-clermont-auvergne-site-daubiere-0632085z-but-informatique-7596,BUT - Informatique,1,1,1,1,1,1,1,1,0
@@ -195,7 +195,7 @@ FR,fr-i-u-t-clermont-auvergne-site-du-puy-0430951a,I.U.T Clermont Auvergne - sit
 FR,fr-i-u-t-de-rouen-site-pasteur-0763422g,I.U.T De Rouen - Site Pasteur,fr-i-u-t-de-rouen-site-pasteur-0763422g-but-techniques-de-commercialisat-9628,BUT - Techniques de commercialisation,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-rouen-site-delbeuf-0763214f,I.U.T De Rouen - Site d'Elbeuf,fr-i-u-t-de-rouen-site-delbeuf-0763214f-but-reseaux-et-telecommunication-9626,BUT - Réseaux et télécommunications,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-epinal-hubert-curien-universite-de-0881705a,I.U.T Epinal-Hubert Curien - Université de Lorraine,fr-i-u-t-epinal-hubert-curien-universite-de-0881705a-but-genie-industriel-et-maintena-10763,BUT - Génie industriel et maintenance,1,1,1,1,1,1,1,1,0
-FR,fr-i-u-t-epinal-hubert-curien-universite-de-0881705a,I.U.T Epinal-Hubert Curien - Université de Lorraine,fr-i-u-t-epinal-hubert-curien-universite-de-0881705a-but-techniques-de-commercialisat-10765,BUT - Techniques de commercialisation,1,0,1,1,1,1,1,1,1
+FR,fr-i-u-t-epinal-hubert-curien-universite-de-0881705a,I.U.T Epinal-Hubert Curien - Université de Lorraine,fr-i-u-t-epinal-hubert-curien-universite-de-0881705a-but-techniques-de-commercialisat-10765,BUT - Techniques de commercialisation,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-jean-moulin-de-luniversite-lyon-3-0693565a,I.U.T Jean Moulin de l'Université Lyon 3,fr-i-u-t-jean-moulin-de-luniversite-lyon-3-0693565a-but-gestion-administrative-et-co-36123,BUT - Gestion administrative et commerciale des organisations - MACAST (Gestion des activités culturelles et artistiques),1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-jean-moulin-de-luniversite-lyon-3-0693565a,I.U.T Jean Moulin de l'Université Lyon 3,fr-i-u-t-jean-moulin-de-luniversite-lyon-3-0693565a-but-gestion-administrative-et-co-8581,BUT - Gestion administrative et commerciale des organisations,1,0,1,1,1,1,1,1,1
 FR,fr-i-u-t-littoral-calais-0623218l,I.U.T LITTORAL (CALAIS),fr-i-u-t-littoral-calais-0623218l-but-genie-electrique-et-informat-7466,BUT - Génie électrique et informatique industrielle,1,1,1,1,1,1,1,1,0
@@ -249,7 +249,7 @@ FR,fr-i-u-t-de-beziers-0341884n,I.U.T de Béziers,fr-i-u-t-de-beziers-0341884n-b
 FR,fr-i-u-t-de-cergy-pontoise-site-de-neuville-0951750l,I.U.T de Cergy-Pontoise - Site de Neuville,fr-i-u-t-de-cergy-pontoise-site-de-neuville-0951750l-but-genie-civil-construction-dur-11618,BUT - Génie civil - Construction durable,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-cergy-pontoise-site-de-neuville-0951750l,I.U.T de Cergy-Pontoise - Site de Neuville,fr-i-u-t-de-cergy-pontoise-site-de-neuville-0951750l-but-genie-electrique-et-informat-11619,BUT - Génie électrique et informatique industrielle,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-cergy-pontoise-site-de-pontoise-0951979k,I.U.T de Cergy-Pontoise - Site de Pontoise,fr-i-u-t-de-cergy-pontoise-site-de-pontoise-0951979k-but-techniques-de-commercialisat-11659,BUT - Techniques de commercialisation,1,0,1,1,1,1,1,1,1
-FR,fr-i-u-t-de-cergy-pontoise-site-de-sarcelle-0951985s,I.U.T de Cergy-Pontoise - Site de Sarcelles,fr-i-u-t-de-cergy-pontoise-site-de-sarcelle-0951985s-but-genie-electrique-et-informat-11661,BUT - Génie électrique et informatique industrielle,1,0,1,1,1,1,1,1,1
+FR,fr-i-u-t-de-cergy-pontoise-site-de-sarcelle-0951985s,I.U.T de Cergy-Pontoise - Site de Sarcelles,fr-i-u-t-de-cergy-pontoise-site-de-sarcelle-0951985s-but-genie-electrique-et-informat-11661,BUT - Génie électrique et informatique industrielle,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-cergy-pontoise-site-de-sarcelle-0951985s,I.U.T de Cergy-Pontoise - Site de Sarcelles,fr-i-u-t-de-cergy-pontoise-site-de-sarcelle-0951985s-but-metiers-de-la-transition-et-39837,BUT - Métiers de la Transition et de l'Efficacité Énergétiques,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-cergy-pontoise-site-de-sarcelle-0951985s,I.U.T de Cergy-Pontoise - Site de Sarcelles,fr-i-u-t-de-cergy-pontoise-site-de-sarcelle-0951985s-but-techniques-de-commercialisat-11664,BUT - Techniques de commercialisation,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-cergy-pontoise-site-de-sarcelle-0951985s,I.U.T de Cergy-Pontoise - Site de Sarcelles,fr-i-u-t-de-cergy-pontoise-site-de-sarcelle-0951985s-but-techniques-de-commercialisat-25199,BUT - Techniques de commercialisation - ENEPS destiné aux bacs professionnels,1,1,1,1,1,1,1,1,0
@@ -262,8 +262,8 @@ FR,fr-i-u-t-de-corte-7200117p,I.U.T de Corte,fr-i-u-t-de-corte-7200117p-but-gest
 FR,fr-i-u-t-de-corte-7200117p,I.U.T de Corte,fr-i-u-t-de-corte-7200117p-but-techniques-de-commercialisat-11699,BUT - Techniques de commercialisation,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-dijon-0211139z,I.U.T de Dijon,fr-i-u-t-de-dijon-0211139z-but-genie-mecanique-et-productiq-3235,BUT - Génie mécanique et productique,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-dijon-0211139z,I.U.T de Dijon,fr-i-u-t-de-dijon-0211139z-but-gestion-administrative-et-co-3242,BUT - Gestion administrative et commerciale des organisations,1,1,1,1,1,1,1,1,0
-FR,fr-i-u-t-de-dijon-0211139z,I.U.T de Dijon,fr-i-u-t-de-dijon-0211139z-but-gestion-des-entreprises-et-d-3239,BUT - Gestion des entreprises et des administrations,1,0,1,1,1,1,1,1,1
-FR,fr-i-u-t-de-dijon-0211139z,I.U.T de Dijon,fr-i-u-t-de-dijon-0211139z-but-informatique-3236,BUT - Informatique,1,0,1,1,1,1,1,1,1
+FR,fr-i-u-t-de-dijon-0211139z,I.U.T de Dijon,fr-i-u-t-de-dijon-0211139z-but-gestion-des-entreprises-et-d-3239,BUT - Gestion des entreprises et des administrations,1,1,1,1,1,1,1,1,0
+FR,fr-i-u-t-de-dijon-0211139z,I.U.T de Dijon,fr-i-u-t-de-dijon-0211139z-but-informatique-3236,BUT - Informatique,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-dijon-antenne-dauxerre-0891222v,I.U.T de Dijon - Antenne d'Auxerre,fr-i-u-t-de-dijon-antenne-dauxerre-0891222v-but-genie-civil-construction-dur-16879,BUT - Génie civil - Construction durable,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-dijon-antenne-dauxerre-0891222v,I.U.T de Dijon - Antenne d'Auxerre,fr-i-u-t-de-dijon-antenne-dauxerre-0891222v-but-reseaux-et-telecommunication-10799,BUT - Réseaux et télécommunications,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-dijon-antenne-dauxerre-0891222v,I.U.T de Dijon - Antenne d'Auxerre,fr-i-u-t-de-dijon-antenne-dauxerre-0891222v-but-techniques-de-commercialisat-10801,BUT - Techniques de commercialisation,1,1,1,1,1,1,1,1,0
@@ -302,7 +302,7 @@ FR,fr-i-u-t-de-nimes-0300930y,I.U.T de Nîmes,fr-i-u-t-de-nimes-0300930y-but-gen
 FR,fr-i-u-t-de-nimes-0300930y,I.U.T de Nîmes,fr-i-u-t-de-nimes-0300930y-but-genie-electrique-et-informat-3985,BUT - Génie électrique et informatique industrielle,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-nimes-0300930y,I.U.T de Nîmes,fr-i-u-t-de-nimes-0300930y-but-genie-mecanique-et-productiq-3986,BUT - Génie mécanique et productique,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-nimes-0300930y,I.U.T de Nîmes,fr-i-u-t-de-nimes-0300930y-but-gestion-des-entreprises-et-d-3989,BUT - Gestion des entreprises et des administrations,1,1,1,1,1,1,1,1,0
-FR,fr-i-u-t-de-nimes-0300930y,I.U.T de Nîmes,fr-i-u-t-de-nimes-0300930y-but-science-et-genie-des-materia-3987,BUT - Science et génie des matériaux,1,0,1,1,1,1,1,1,1
+FR,fr-i-u-t-de-nimes-0300930y,I.U.T de Nîmes,fr-i-u-t-de-nimes-0300930y-but-science-et-genie-des-materia-3987,BUT - Science et génie des matériaux,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-perpignan-0660586d,I.U.T de Perpignan,fr-i-u-t-de-perpignan-0660586d-but-genie-industriel-et-maintena-7890,BUT - Génie industriel et maintenance,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-perpignan-0660586d,I.U.T de Perpignan,fr-i-u-t-de-perpignan-0660586d-but-gestion-des-entreprises-et-d-7893,BUT - Gestion des entreprises et des administrations,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-perpignan-site-de-carcassonne-0110982h,I.U.T de Perpignan (Site de Carcassonne),fr-i-u-t-de-perpignan-site-de-carcassonne-0110982h-but-science-des-donnees-2469,BUT - Science des données,1,1,1,1,1,1,1,1,0
@@ -325,7 +325,7 @@ FR,fr-i-u-t-de-rouen-0760170x,I.U.T de Rouen,fr-i-u-t-de-rouen-0760170x-but-geni
 FR,fr-i-u-t-de-rouen-0760170x,I.U.T de Rouen,fr-i-u-t-de-rouen-0760170x-but-metiers-de-la-transition-et-9624,BUT - Métiers de la Transition et de l'Efficacité Énergétiques,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-saint-die-universite-de-lorrain-0881679x,I.U.T de Saint Dié - Université de Lorraine,fr-i-u-t-de-saint-die-universite-de-lorrain-0881679x-but-genie-electrique-et-informat-10756,BUT - Génie électrique et informatique industrielle,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-saint-die-universite-de-lorrain-0881679x,I.U.T de Saint Dié - Université de Lorraine,fr-i-u-t-de-saint-die-universite-de-lorrain-0881679x-but-informatique-10757,BUT - Informatique,1,1,1,1,1,1,1,1,0
-FR,fr-i-u-t-de-saint-brieuc-0221848p,I.U.T de Saint-Brieuc,fr-i-u-t-de-saint-brieuc-0221848p-but-science-et-genie-des-materia-3383,BUT - Science et génie des matériaux,1,0,1,1,1,1,1,1,1
+FR,fr-i-u-t-de-saint-brieuc-0221848p,I.U.T de Saint-Brieuc,fr-i-u-t-de-saint-brieuc-0221848p-but-science-et-genie-des-materia-3383,BUT - Science et génie des matériaux,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-saint-brieuc-0221848p,I.U.T de Saint-Brieuc,fr-i-u-t-de-saint-brieuc-0221848p-but-techniques-de-commercialisat-3385,BUT - Techniques de commercialisation,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-saint-denis-antenne-de-la-plain-0932326y,I.U.T de Saint-Denis - Antenne de La Plaine - Université Paris 13,fr-i-u-t-de-saint-denis-antenne-de-la-plain-0932326y-but-science-et-genie-des-materia-11360,BUT - Science et génie des matériaux,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-saint-denis-universite-paris-13-0931002j,I.U.T de Saint-Denis - Université Paris 13,fr-i-u-t-de-saint-denis-universite-paris-13-0931002j-but-genie-industriel-et-maintena-11221,BUT - Génie industriel et maintenance,1,1,1,1,1,1,1,1,0
@@ -338,7 +338,7 @@ FR,fr-i-u-t-de-saint-etienne-0420957m,I.U.T de Saint-Etienne,fr-i-u-t-de-saint-e
 FR,fr-i-u-t-de-saint-etienne-0420957m,I.U.T de Saint-Etienne,fr-i-u-t-de-saint-etienne-0420957m-but-gestion-des-entreprises-et-d-5310,BUT - Gestion des entreprises et des administrations,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-saint-etienne-0420957m,I.U.T de Saint-Etienne,fr-i-u-t-de-saint-etienne-0420957m-but-techniques-de-commercialisat-5311,BUT - Techniques de commercialisation,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-saint-malo-0352379w,I.U.T de Saint-Malo,fr-i-u-t-de-saint-malo-0352379w-but-genie-industriel-et-maintena-4780,BUT - Génie industriel et maintenance,1,1,1,1,1,1,1,1,0
-FR,fr-i-u-t-de-saint-malo-0352379w,I.U.T de Saint-Malo,fr-i-u-t-de-saint-malo-0352379w-but-gestion-des-entreprises-et-d-4783,BUT - Gestion des entreprises et des administrations,1,0,1,1,1,1,1,1,1
+FR,fr-i-u-t-de-saint-malo-0352379w,I.U.T de Saint-Malo,fr-i-u-t-de-saint-malo-0352379w-but-gestion-des-entreprises-et-d-4783,BUT - Gestion des entreprises et des administrations,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-saint-malo-0352379w,I.U.T de Saint-Malo,fr-i-u-t-de-saint-malo-0352379w-but-reseaux-et-telecommunication-4781,BUT - Réseaux et télécommunications,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-senart-fontainebleau-site-senar-0772347h,I.U.T de Sénart/Fontainebleau - Site Sénart - UPEC,fr-i-u-t-de-senart-fontainebleau-site-senar-0772347h-but-genie-civil-construction-dur-25432,BUT - Génie civil - Construction durable,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-senart-fontainebleau-site-senar-0772347h,I.U.T de Sénart/Fontainebleau - Site Sénart - UPEC,fr-i-u-t-de-senart-fontainebleau-site-senar-0772347h-but-genie-electrique-et-informat-9893,BUT - Génie électrique et informatique industrielle,1,1,1,1,1,1,1,1,0
@@ -414,7 +414,7 @@ FR,fr-i-u-t-des-pays-de-ladour-antenne-de-mont-0400934y,I.U.T des Pays de l'Adou
 FR,fr-i-u-t-des-pays-de-ladour-antenne-de-mont-0400934y,I.U.T des Pays de l'Adour - Antenne de Mont De Marsan,fr-i-u-t-des-pays-de-ladour-antenne-de-mont-0400934y-but-science-et-genie-des-materia-5217,BUT - Science et génie des matériaux,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-du-creusot-0711372f,I.U.T du Creusot,fr-i-u-t-du-creusot-0711372f-but-genie-electrique-et-informat-8662,BUT - Génie électrique et informatique industrielle,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-du-creusot-0711372f,I.U.T du Creusot,fr-i-u-t-du-creusot-0711372f-but-genie-mecanique-et-productiq-8663,BUT - Génie mécanique et productique,1,1,1,1,1,1,1,1,0
-FR,fr-i-u-t-du-creusot-0711372f,I.U.T du Creusot,fr-i-u-t-du-creusot-0711372f-but-techniques-de-commercialisat-8665,BUT - Techniques de commercialisation,1,0,1,1,1,1,1,1,1
+FR,fr-i-u-t-du-creusot-0711372f,I.U.T du Creusot,fr-i-u-t-du-creusot-0711372f-but-techniques-de-commercialisat-8665,BUT - Techniques de commercialisation,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-du-havre-0761688x,I.U.T du Havre,fr-i-u-t-du-havre-0761688x-but-genie-civil-construction-dur-9651,BUT - Génie civil - Construction durable,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-du-havre-0761688x,I.U.T du Havre,fr-i-u-t-du-havre-0761688x-but-genie-electrique-et-informat-9652,BUT - Génie électrique et informatique industrielle,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-du-havre-0761688x,I.U.T du Havre,fr-i-u-t-du-havre-0761688x-but-genie-mecanique-et-productiq-9653,BUT - Génie mécanique et productique,1,1,1,1,1,1,1,1,0
@@ -543,10 +543,10 @@ FR,fr-i-u-t-de-valenciennes-0593052x,I.U.T. de Valenciennes,fr-i-u-t-de-valencie
 FR,fr-i-u-t-de-valenciennes-0593052x,I.U.T. de Valenciennes,fr-i-u-t-de-valenciennes-0593052x-but-genie-industriel-et-maintena-6957,BUT - Génie industriel et maintenance,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-valenciennes-0593052x,I.U.T. de Valenciennes,fr-i-u-t-de-valenciennes-0593052x-but-genie-mecanique-et-productiq-6958,BUT - Génie mécanique et productique,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-valenciennes-0593052x,I.U.T. de Valenciennes,fr-i-u-t-de-valenciennes-0593052x-but-gestion-des-entreprises-et-d-6962,BUT - Gestion des entreprises et des administrations,1,1,1,1,1,1,1,1,0
-FR,fr-i-u-t-de-valenciennes-0593052x,I.U.T. de Valenciennes,fr-i-u-t-de-valenciennes-0593052x-but-techniques-de-commercialisat-6963,BUT - Techniques de commercialisation,1,0,1,1,1,1,1,1,1
+FR,fr-i-u-t-de-valenciennes-0593052x,I.U.T. de Valenciennes,fr-i-u-t-de-valenciennes-0593052x-but-techniques-de-commercialisat-6963,BUT - Techniques de commercialisation,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-valenciennes-site-de-cambrai-0596244s,I.U.T. de Valenciennes - Site de Cambrai,fr-i-u-t-de-valenciennes-site-de-cambrai-0596244s-but-techniques-de-commercialisat-7199,BUT - Techniques de commercialisation,1,1,1,1,1,1,1,1,0
 FR,fr-i-u-t-de-valenciennes-site-de-maubeuge-0596183a,I.U.T. de Valenciennes - Site de Maubeuge,fr-i-u-t-de-valenciennes-site-de-maubeuge-0596183a-but-informatique-7192,BUT - Informatique,1,1,1,1,1,1,1,1,0
-FR,fr-ices-institut-catholique-de-vendee-0851415b,ICES - Institut Catholique de Vendée,fr-ices-institut-catholique-de-vendee-0851415b-licence-economie-et-gestion-19376,Licence - Economie et gestion,0,0,0,0,1,0,1,1,5
+FR,fr-ices-institut-catholique-de-vendee-0851415b,ICES - Institut Catholique de Vendée,fr-ices-institut-catholique-de-vendee-0851415b-licence-economie-et-gestion-19376,Licence - Economie et gestion,0,1,0,0,1,1,1,1,3
 FR,fr-icl-estice-0592608p,ICL - ESTICE,fr-icl-estice-0592608p-licence-economie-et-gestion-24397,Licence - Economie et gestion - Parcours Commerce international et langues,0,0,0,0,1,0,1,1,5
 FR,fr-icl-istc-0596011n,ICL - ISTC,fr-icl-istc-0596011n-licence-economie-et-gestion-24399,Licence - Economie et gestion - Parcours Communication,0,1,0,0,1,0,1,1,4
 FR,fr-institut-catholique-europeen-des-ameriqu-9720920t,INSTITUT CATHOLIQUE EUROPEEN DES AMERIQUES,fr-institut-catholique-europeen-des-ameriqu-9720920t-licence-informatique-35928,Licence - Informatique - Parcours Sciences du numérique,0,1,0,0,1,0,1,1,4
@@ -582,7 +582,7 @@ FR,fr-iut-grand-ouest-normandie-pole-de-caen-s-0142179t,IUT GRAND OUEST NORMANDI
 FR,fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l,IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Cherbourg-en-Cotentin,fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l-but-genie-electrique-et-informat-6039,BUT - Génie électrique et informatique industrielle,1,1,1,1,1,1,1,1,0
 FR,fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l,IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Cherbourg-en-Cotentin,fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l-but-genie-industriel-et-maintena-6040,BUT - Génie industriel et maintenance,1,1,1,1,1,1,1,1,0
 FR,fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l,IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Cherbourg-en-Cotentin,fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l-but-gestion-des-entreprises-et-d-6041,BUT - Gestion des entreprises et des administrations,1,1,1,1,1,1,1,1,0
-FR,fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l,IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Cherbourg-en-Cotentin,fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l-but-techniques-de-commercialisat-6042,BUT - Techniques de commercialisation,1,0,1,1,1,1,1,1,1
+FR,fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l,IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Cherbourg-en-Cotentin,fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l-but-techniques-de-commercialisat-6042,BUT - Techniques de commercialisation,1,1,1,1,1,1,1,1,0
 FR,fr-iut-grand-ouest-normandie-pole-de-cherbo-0501928z,IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Saint-Lô,fr-iut-grand-ouest-normandie-pole-de-cherbo-0501928z-but-metiers-de-la-transition-et-6051,BUT - Métiers de la Transition et de l'Efficacité Énergétiques,1,1,1,1,1,1,1,1,0
 FR,fr-iut-littoral-dunkerque-0594365z,IUT LITTORAL (DUNKERQUE),fr-iut-littoral-dunkerque-0594365z-but-metiers-de-la-transition-et-7107,BUT - Métiers de la Transition et de l'Efficacité Énergétiques,1,1,1,1,1,1,1,1,0
 FR,fr-iut-littoral-dunkerque-0594365z,IUT LITTORAL (DUNKERQUE),fr-iut-littoral-dunkerque-0594365z-but-techniques-de-commercialisat-7109,BUT - Techniques de commercialisation,1,1,1,1,1,1,1,1,0
@@ -611,7 +611,7 @@ FR,fr-iut-nord-franche-comte-site-de-belfort-0900231m,IUT Nord Franche-Comté - 
 FR,fr-iut-nord-franche-comte-site-de-montbelia-0251763f,IUT Nord Franche-Comté - Site de Montbéliard,fr-iut-nord-franche-comte-site-de-montbelia-0251763f-but-gestion-administrative-et-co-3588,BUT - Gestion administrative et commerciale des organisations,1,1,1,1,1,1,1,1,0
 FR,fr-iut-nord-franche-comte-site-de-montbelia-0251763f,IUT Nord Franche-Comté - Site de Montbéliard,fr-iut-nord-franche-comte-site-de-montbelia-0251763f-but-reseaux-et-telecommunication-3585,BUT - Réseaux et télécommunications,1,1,1,1,1,1,1,1,0
 FR,fr-iut-reims-chalons-charleville-site-de-ch-0081084k,IUT Reims-Châlons-Charleville site de Charleville,fr-iut-reims-chalons-charleville-site-de-ch-0081084k-but-gestion-administrative-et-co-2385,BUT - Gestion administrative et commerciale des organisations,1,1,1,1,1,1,1,1,0
-FR,fr-iut-reims-chalons-charleville-site-de-ch-0081084k,IUT Reims-Châlons-Charleville site de Charleville,fr-iut-reims-chalons-charleville-site-de-ch-0081084k-but-techniques-de-commercialisat-2386,BUT - Techniques de commercialisation,1,0,1,1,1,1,1,1,1
+FR,fr-iut-reims-chalons-charleville-site-de-ch-0081084k,IUT Reims-Châlons-Charleville site de Charleville,fr-iut-reims-chalons-charleville-site-de-ch-0081084k-but-techniques-de-commercialisat-2386,BUT - Techniques de commercialisation,1,1,1,1,1,1,1,1,0
 FR,fr-iut-damiens-0801265r,IUT d'Amiens,fr-iut-damiens-0801265r-but-genie-civil-construction-dur-10173,BUT - Génie civil - Construction durable,1,1,1,1,1,1,1,1,0
 FR,fr-iut-damiens-0801265r,IUT d'Amiens,fr-iut-damiens-0801265r-but-genie-mecanique-et-productiq-10174,BUT - Génie mécanique et productique,1,1,1,1,1,1,1,1,0
 FR,fr-iut-damiens-0801265r,IUT d'Amiens,fr-iut-damiens-0801265r-but-gestion-des-entreprises-et-d-10178,BUT - Gestion des entreprises et des administrations,1,1,1,1,1,1,1,1,0
@@ -635,7 +635,7 @@ FR,fr-iut-de-kourou-9730186p,IUT de Kourou,fr-iut-de-kourou-9730186p-but-genie-e
 FR,fr-iut-de-kourou-9730186p,IUT de Kourou,fr-iut-de-kourou-9730186p-but-reseaux-et-telecommunication-11858,BUT - Réseaux et télécommunications,1,1,1,1,1,1,1,1,0
 FR,fr-iut-de-kourou-campus-de-troubiran-a-caye-9730408f,IUT de Kourou - Campus de TROUBIRAN à Cayenne,fr-iut-de-kourou-campus-de-troubiran-a-caye-9730408f-but-techniques-de-commercialisat-11878,BUT - Techniques de commercialisation,1,1,1,1,1,1,1,1,0
 FR,fr-iut-de-moselle-est-site-de-forbach-unive-0573627h,IUT de Moselle Est - Site de Forbach - Université de Lorraine,fr-iut-de-moselle-est-site-de-forbach-unive-0573627h-but-science-et-genie-des-materia-22594,BUT - Science et génie des matériaux,1,1,1,1,1,1,1,1,0
-FR,fr-iut-de-moselle-est-site-de-sarreguemines-0573433x,IUT de Moselle Est - Site de Sarreguemines - Université de Lorraine,fr-iut-de-moselle-est-site-de-sarreguemines-0573433x-but-gestion-administrative-et-co-6666,BUT - Gestion administrative et commerciale des organisations,1,0,1,1,1,1,1,1,1
+FR,fr-iut-de-moselle-est-site-de-sarreguemines-0573433x,IUT de Moselle Est - Site de Sarreguemines - Université de Lorraine,fr-iut-de-moselle-est-site-de-sarreguemines-0573433x-but-gestion-administrative-et-co-6666,BUT - Gestion administrative et commerciale des organisations,1,1,1,1,1,1,1,1,0
 FR,fr-iut-de-nantes-antenne-de-chateaubriant-0442961e,IUT de Nantes - Antenne de Châteaubriant,fr-iut-de-nantes-antenne-de-chateaubriant-0442961e-but-gestion-administrative-et-co-35781,BUT - Gestion administrative et commerciale des organisations,1,1,1,1,1,1,1,1,0
 FR,fr-iut-de-paris-rives-de-seine-universite-p-0754247j,IUT de Paris - Rives de Seine - Université Paris Cité,fr-iut-de-paris-rives-de-seine-universite-p-0754247j-but-gestion-des-entreprises-et-d-9517,BUT - Gestion des entreprises et des administrations,1,1,1,1,1,1,1,1,0
 FR,fr-iut-de-paris-rives-de-seine-universite-p-0754247j,IUT de Paris - Rives de Seine - Université Paris Cité,fr-iut-de-paris-rives-de-seine-universite-p-0754247j-but-informatique-9515,BUT - Informatique,1,1,1,1,1,1,1,1,0
@@ -695,10 +695,10 @@ FR,fr-universite-angers-0490970n,Université Angers,fr-universite-angers-0490970
 FR,fr-universite-bourgogne-europe-ex-universit-0212296g,Université Bourgogne Europe (ex université de Bourgogne),fr-universite-bourgogne-europe-ex-universit-0212296g-licence-economie-3277,Licence - Economie,1,1,1,1,1,1,1,1,0
 FR,fr-universite-bourgogne-europe-ex-universit-0212296g,Université Bourgogne Europe (ex université de Bourgogne),fr-universite-bourgogne-europe-ex-universit-0212296g-licence-gestion-15088,Licence - Gestion,1,1,1,1,1,1,1,1,0
 FR,fr-universite-clermont-auvergne-0632084y,Université Clermont Auvergne,fr-universite-clermont-auvergne-0632084y-licence-economie-27507,Licence - Portail Economie - Economie ou Gestion parcours International,1,0,1,1,1,1,1,1,1
-FR,fr-universite-clermont-auvergne-0632084y,Université Clermont Auvergne,fr-universite-clermont-auvergne-0632084y-licence-economie-7621,Licence - Economie,1,0,1,1,1,1,1,1,1
+FR,fr-universite-clermont-auvergne-0632084y,Université Clermont Auvergne,fr-universite-clermont-auvergne-0632084y-licence-economie-7621,Licence - Economie,1,1,1,1,1,1,1,1,0
 FR,fr-universite-clermont-auvergne-0632084y,Université Clermont Auvergne,fr-universite-clermont-auvergne-0632084y-licence-gestion-13904,Licence - Gestion,1,0,1,1,1,1,1,1,1
 FR,fr-universite-cote-dazur-0062205p,Université Côte d'Azur,fr-universite-cote-dazur-0062205p-licence-economie-et-gestion-15111,Double licence - Economie et gestion / Sociologie -  Double licence Sociologie Economie,1,1,1,1,1,1,1,1,0
-FR,fr-universite-cote-dazur-0062205p,Université Côte d'Azur,fr-universite-cote-dazur-0062205p-licence-economie-et-gestion-2258,Licence - Portail Economie et gestion,1,0,1,1,1,1,1,1,1
+FR,fr-universite-cote-dazur-0062205p,Université Côte d'Azur,fr-universite-cote-dazur-0062205p-licence-economie-et-gestion-2258,Licence - Portail Economie et gestion,1,1,1,1,1,1,1,1,0
 FR,fr-universite-cote-dazur-0062205p,Université Côte d'Azur,fr-universite-cote-dazur-0062205p-licence-electronique-energie-electri-43147,"Licence - Electronique, énergie électrique, automatique",1,1,1,1,1,1,1,1,0
 FR,fr-universite-cote-dazur-0062205p,Université Côte d'Azur,fr-universite-cote-dazur-0062205p-licence-informatique-18405,Double licence - Informatique / Mathématiques - Double licence Mathématiques-Informatique,1,1,1,1,1,1,1,1,0
 FR,fr-universite-cote-dazur-0062205p,Université Côte d'Azur,fr-universite-cote-dazur-0062205p-licence-informatique-43148,Licence - Portail Informatique,1,1,1,1,1,1,1,1,0
@@ -722,8 +722,8 @@ FR,fr-universite-le-havre-normandie-0762762p,Université Le Havre Normandie,fr-u
 FR,fr-universite-le-havre-normandie-0762762p,Université Le Havre Normandie,fr-universite-le-havre-normandie-0762762p-licence-sciences-pour-lingenieur-39354,Licence - Sciences pour l'ingénieur,1,0,1,1,1,1,1,1,1
 FR,fr-universite-lumiere-lyon-2-0691775e,Université Lumière - Lyon 2,fr-universite-lumiere-lyon-2-0691775e-licence-economie-et-gestion-35341,Licence - Economie et gestion,1,0,1,1,1,1,1,1,1
 FR,fr-universite-lumiere-lyon-2-0691775e,Université Lumière - Lyon 2,fr-universite-lumiere-lyon-2-0691775e-licence-economie-et-gestion-35342,Licence - Economie et gestion,1,0,1,1,1,1,1,1,1
-FR,fr-universite-lumiere-lyon-2-0691775e,Université Lumière - Lyon 2,fr-universite-lumiere-lyon-2-0691775e-licence-economie-et-gestion-35343,Licence - Economie et gestion,1,0,1,1,1,1,1,1,1
-FR,fr-universite-lumiere-lyon-2-0691775e,Université Lumière - Lyon 2,fr-universite-lumiere-lyon-2-0691775e-licence-economie-et-gestion-35453,Licence - Economie et gestion,1,0,1,1,1,1,1,1,1
+FR,fr-universite-lumiere-lyon-2-0691775e,Université Lumière - Lyon 2,fr-universite-lumiere-lyon-2-0691775e-licence-economie-et-gestion-35343,Licence - Economie et gestion,1,1,1,1,1,1,1,1,0
+FR,fr-universite-lumiere-lyon-2-0691775e,Université Lumière - Lyon 2,fr-universite-lumiere-lyon-2-0691775e-licence-economie-et-gestion-35453,Licence - Economie et gestion,1,1,1,1,1,1,1,1,0
 FR,fr-universite-lumiere-lyon-2-0691775e,Université Lumière - Lyon 2,fr-universite-lumiere-lyon-2-0691775e-licence-economie-et-gestion-43543,Licence - Economie et gestion,1,0,1,1,1,1,1,1,1
 FR,fr-universite-lyon-2-campus-porte-des-alpes-0692198p,Université Lyon 2 - Campus Porte des Alpes,fr-universite-lyon-2-campus-porte-des-alpes-0692198p-licence-informatique-35359,Licence - Informatique,1,0,1,1,1,1,1,1,1
 FR,fr-universite-lyon-2-campus-porte-des-alpes-0692198p,Université Lyon 2 - Campus Porte des Alpes,fr-universite-lyon-2-campus-porte-des-alpes-0692198p-licence-informatique-35455,Licence - Informatique,1,1,1,1,1,1,1,1,0
@@ -777,10 +777,10 @@ FR,fr-universite-savoie-mont-blanc-bourget-du-0731570k,Université Savoie Mont B
 FR,fr-universite-sorbonne-paris-nord-0931238r,Université Sorbonne Paris Nord,fr-universite-sorbonne-paris-nord-0931238r-licence-economie-et-gestion-11244,Licence - Portail Economie et gestion,1,1,1,1,1,1,1,1,0
 FR,fr-universite-sorbonne-paris-nord-0931238r,Université Sorbonne Paris Nord,fr-universite-sorbonne-paris-nord-0931238r-licence-economie-et-gestion-18774,Double licence - Economie et gestion / Géographie et aménagement - Double licence Economie-Géographie,1,1,1,1,1,1,1,1,0
 FR,fr-universite-sorbonne-paris-nord-0931238r,Université Sorbonne Paris Nord,fr-universite-sorbonne-paris-nord-0931238r-licence-economie-et-gestion-20089,"Licence - Economie et gestion - Parcours Langues renforcées, anglais et coréen",1,0,1,1,1,1,1,1,1
-FR,fr-universite-sorbonne-paris-nord-0931238r,Université Sorbonne Paris Nord,fr-universite-sorbonne-paris-nord-0931238r-licence-informatique-11251,Licence - Informatique,1,0,1,1,1,1,1,1,1
+FR,fr-universite-sorbonne-paris-nord-0931238r,Université Sorbonne Paris Nord,fr-universite-sorbonne-paris-nord-0931238r-licence-informatique-11251,Licence - Informatique,1,1,1,1,1,1,1,1,0
 FR,fr-universite-sorbonne-paris-nord-0931238r,Université Sorbonne Paris Nord,fr-universite-sorbonne-paris-nord-0931238r-licence-informatique-22026,Double licence - Informatique / Mathématiques - Double Licence Informatique/Mathématiques,1,0,1,1,1,1,1,1,1
 FR,fr-universite-sorbonne-paris-nord-0931238r,Université Sorbonne Paris Nord,fr-universite-sorbonne-paris-nord-0931238r-licence-sciences-pour-lingenieur-15238,Licence - Sciences pour l'ingénieur,1,1,1,1,1,1,1,1,0
-FR,fr-universite-toulouse-capitole-0313124c,Université Toulouse Capitole,fr-universite-toulouse-capitole-0313124c-licence-gestion-35967,Licence - Double diplôme - Licence Gestion - BSc in Global Management,1,0,1,1,1,1,1,1,1
+FR,fr-universite-toulouse-capitole-0313124c,Université Toulouse Capitole,fr-universite-toulouse-capitole-0313124c-licence-gestion-35967,Licence - Double diplôme - Licence Gestion - BSc in Global Management,1,1,1,1,1,1,1,1,0
 FR,fr-universite-toulouse-capitole-0313124c,Université Toulouse Capitole,fr-universite-toulouse-capitole-0313124c-licence-gestion-39937,Double licence - Gestion / Mathématiques et informatique appliquées aux sciences humaines et sociales - Numérique et Management,1,0,1,1,1,1,1,1,1
 FR,fr-universite-toulouse-capitole-0313124c,Université Toulouse Capitole,fr-universite-toulouse-capitole-0313124c-licence-gestion-4140,Licence - Gestion,1,1,1,1,1,1,1,1,0
 FR,fr-universite-toulouse-iii-universite-toulo-0313218e,Université Toulouse III - Université Toulouse,fr-universite-toulouse-iii-universite-toulo-0313218e-licence-electronique-energie-electri-4184,"Licence - Portail Electronique, énergie électrique, automatique",1,1,1,1,1,1,1,1,0
@@ -803,7 +803,7 @@ FR,fr-universite-de-bordeaux-bordeaux-metropol-0333298f,Université de Bordeaux 
 FR,fr-universite-de-bordeaux-bordeaux-metropol-0333298f,Université de Bordeaux - Bordeaux Métropole,fr-universite-de-bordeaux-bordeaux-metropol-0333298f-licence-informatique-26338,Licence - Informatique - Parcours International,1,0,1,1,1,1,1,1,1
 FR,fr-universite-de-bordeaux-bordeaux-metropol-0333298f,Université de Bordeaux - Bordeaux Métropole,fr-universite-de-bordeaux-bordeaux-metropol-0333298f-licence-informatique-31074,Licence - Portail Sciences et technologies,1,1,1,1,1,1,1,1,0
 FR,fr-universite-de-bordeaux-bordeaux-metropol-0333298f,Université de Bordeaux - Bordeaux Métropole,fr-universite-de-bordeaux-bordeaux-metropol-0333298f-licence-sciences-pour-lingenieur-26342,Licence - Sciences pour l'ingénieur - Parcours International,1,0,1,1,1,1,1,1,1
-FR,fr-universite-de-bordeaux-bordeaux-metropol-0333298f,Université de Bordeaux - Bordeaux Métropole,fr-universite-de-bordeaux-bordeaux-metropol-0333298f-licence-sciences-pour-lingenieur-31075,Licence - Portail Sciences et technologies,1,0,1,1,1,1,1,1,1
+FR,fr-universite-de-bordeaux-bordeaux-metropol-0333298f,Université de Bordeaux - Bordeaux Métropole,fr-universite-de-bordeaux-bordeaux-metropol-0333298f-licence-sciences-pour-lingenieur-31075,Licence - Portail Sciences et technologies,1,1,1,1,1,1,1,1,0
 FR,fr-universite-de-brest-0290346u,Université de Brest,fr-universite-de-brest-0290346u-licence-economie-et-gestion-19318,Licence - Portail Economie et gestion - Economie Gestion parcours international,1,0,1,1,1,1,1,1,1
 FR,fr-universite-de-brest-0290346u,Université de Brest,fr-universite-de-brest-0290346u-licence-economie-et-gestion-3873,Licence - Portail Economie et management,1,1,1,1,1,1,1,1,0
 FR,fr-universite-de-brest-0290346u,Université de Brest,fr-universite-de-brest-0290346u-licence-informatique-35595,"Licence - Portail ISI - Informatique et Sciences pour l'ingénieur en Electronique, Signal, Télécommunications, Réseaux, Génie Mécanique, Image et Son",1,1,1,1,1,1,1,1,0
@@ -822,7 +822,7 @@ FR,fr-universite-de-guyane-9730429d,Université de Guyane,fr-universite-de-guyan
 FR,fr-universite-de-guyane-9730429d,Université de Guyane,fr-universite-de-guyane-9730429d-licence-sciences-pour-lingenieur-39853,Licence - Sciences pour l'ingénieur,1,1,1,1,1,1,1,1,0
 FR,fr-universite-de-la-reunion-saint-denis-9740478b,Université de La Réunion - Saint Denis,fr-universite-de-la-reunion-saint-denis-9740478b-licence-economie-et-gestion-26501,Licence - Portail Economie et gestion,1,1,1,1,1,1,1,1,0
 FR,fr-universite-de-la-reunion-saint-denis-9740478b,Université de La Réunion - Saint Denis,fr-universite-de-la-reunion-saint-denis-9740478b-licence-informatique-26386,Licence - Informatique,1,1,1,1,1,1,1,1,0
-FR,fr-universite-de-la-reunion-saint-denis-9740478b,Université de La Réunion - Saint Denis,fr-universite-de-la-reunion-saint-denis-9740478b-licence-sciences-pour-lingenieur-26391,Licence - Sciences pour l'ingénieur,1,0,1,1,1,1,1,1,1
+FR,fr-universite-de-la-reunion-saint-denis-9740478b,Université de La Réunion - Saint Denis,fr-universite-de-la-reunion-saint-denis-9740478b-licence-sciences-pour-lingenieur-26391,Licence - Sciences pour l'ingénieur,1,1,1,1,1,1,1,1,0
 FR,fr-universite-de-lille-0597239y,Université de Lille,fr-universite-de-lille-0597239y-licence-economie-et-gestion-15916,Licence - Economie et gestion - Parcours International studies in economics and management,1,0,1,1,1,1,1,1,1
 FR,fr-universite-de-lille-0597239y,Université de Lille,fr-universite-de-lille-0597239y-licence-economie-et-gestion-7043,Licence - Portail Economie et gestion - Economie et management,1,1,1,1,1,1,1,1,0
 FR,fr-universite-de-lille-0597239y,Université de Lille,fr-universite-de-lille-0597239y-licence-economie-et-gestion-7099,"Licence - Economie et gestion - Parcours Économie, statistique, modélisation",1,1,1,1,1,1,1,1,0
@@ -830,7 +830,7 @@ FR,fr-universite-de-lille-0597239y,Université de Lille,fr-universite-de-lille-0
 FR,fr-universite-de-lille-0597239y,Université de Lille,fr-universite-de-lille-0597239y-licence-gestion-24450,Licence - Gestion - Parcours Management et gestion à l'international,1,0,1,1,1,1,1,1,1
 FR,fr-universite-de-limoges-0870669e,Université de Limoges,fr-universite-de-limoges-0870669e-licence-economie-et-gestion-10716,Licence - Economie et gestion - Parcours Classique,1,1,1,1,1,1,1,1,0
 FR,fr-universite-de-limoges-0870669e,Université de Limoges,fr-universite-de-limoges-0870669e-licence-economie-et-gestion-20737,Licence - Economie et gestion - Parcours International,1,0,1,1,1,1,1,1,1
-FR,fr-universite-de-limoges-0870669e,Université de Limoges,fr-universite-de-limoges-0870669e-licence-genie-civil-20744,Licence - Génie civil - Parcours Sciences Exactes et Appliquées,1,0,1,1,1,1,1,1,1
+FR,fr-universite-de-limoges-0870669e,Université de Limoges,fr-universite-de-limoges-0870669e-licence-genie-civil-20744,Licence - Génie civil - Parcours Sciences Exactes et Appliquées,1,1,1,1,1,1,1,1,0
 FR,fr-universite-de-limoges-0870669e,Université de Limoges,fr-universite-de-limoges-0870669e-licence-informatique-20740,Licence - Informatique - Parcours Sciences Exactes et Appliquées,1,1,1,1,1,1,1,1,0
 FR,fr-universite-de-lorraine-faculte-de-droit-0572536x,"Université de Lorraine - Faculté de Droit, Economie et Administration - Site de Metz (57)",fr-universite-de-lorraine-faculte-de-droit-0572536x-licence-economie-35072,Licence - Economie,1,1,1,1,1,1,1,1,0
 FR,fr-universite-de-lorraine-faculte-de-droit-0572536x,"Université de Lorraine - Faculté de Droit, Economie et Administration - Site de Metz (57)",fr-universite-de-lorraine-faculte-de-droit-0572536x-licence-economie-43106,Double licence - Economie / Mathématiques - Mathématiques - Economie,1,1,1,1,1,1,1,1,0
@@ -901,123 +901,123 @@ FR,fr-ecole-deconomie-et-de-sciences-sociales-0311514c,École d'économie et de 
 FR,fr-ecole-deconomie-et-de-sciences-sociales-0311514c,École d'économie et de sciences sociales quantitatives - Toulouse School of Economics (TSE),fr-ecole-deconomie-et-de-sciences-sociales-0311514c-licence-economie-4137,Double licence - Economie / Droit - parcours double diplômant en Economie et en Droit,1,1,1,1,1,1,1,1,0
 FR,fr-ecole-deconomie-et-de-sciences-sociales-0311514c,École d'économie et de sciences sociales quantitatives - Toulouse School of Economics (TSE),fr-ecole-deconomie-et-de-sciences-sociales-0311514c-licence-economie-4138,Licence - Economie - Parcours Economie et Gestion,1,1,1,1,1,1,1,1,0
 FR,fr-ecole-deconomie-et-de-sciences-sociales-0311514c,École d'économie et de sciences sociales quantitatives - Toulouse School of Economics (TSE),fr-ecole-deconomie-et-de-sciences-sociales-0311514c-licence-economie-4139,Double licence - Economie / Mathématiques et informatique appliquées aux sciences humaines et sociales - parcours double diplômant en Economie et en Mathématiques et Informatique Appliquées aux SHS (MIASHS),1,0,1,1,1,1,1,1,1
-HU,hu-budapest-metropolitan-university-budapest,Budapest Metropolitan University,hu-budapest-metropolitan-university-budapest-business-administration-sf472,Business Administration and Managemenet,1,1,0,0,0,0,0,1,5
-HU,hu-budapest-metropolitan-university-budapest,Budapest Metropolitan University,hu-budapest-metropolitan-university-budapest-commerce-and-marketing-sf473,Commerce and Marketing,1,1,0,0,0,0,1,1,4
+HU,hu-budapest-metropolitan-university-budapest,Budapest Metropolitan University,hu-budapest-metropolitan-university-budapest-business-administration-sf472,Business Administration and Managemenet,1,1,0,0,0,1,0,1,4
+HU,hu-budapest-metropolitan-university-budapest,Budapest Metropolitan University,hu-budapest-metropolitan-university-budapest-commerce-and-marketing-sf473,Commerce and Marketing,1,1,0,0,0,1,1,1,3
 HU,hu-budapest-metropolitan-university-budapest,Budapest Metropolitan University,hu-budapest-metropolitan-university-budapest-finance-and-accounting-sf475,Finance and Accounting,1,1,0,0,0,1,0,1,4
 HU,hu-budapest-metropolitan-university-budapest,Budapest Metropolitan University,hu-budapest-metropolitan-university-budapest-tourism-and-catering-sf477,Tourism and Catering,1,1,0,0,0,1,1,1,3
 HU,hu-budapest-university-of-economics-and-bus-budapest,Budapest University of Economics and Business,hu-budapest-university-of-economics-and-bus-budapest-business-administration-sf25,Business Administration and Management,1,1,0,0,0,1,1,1,3
 HU,hu-budapest-university-of-economics-and-bus-budapest,Budapest University of Economics and Business,hu-budapest-university-of-economics-and-bus-budapest-finance-and-accounting-sf19,Finance and Accounting,1,1,0,0,0,1,1,1,3
-HU,hu-budapest-university-of-economics-and-bus-budapest,Budapest University of Economics and Business,hu-budapest-university-of-economics-and-bus-budapest-international-business-e-sf20,International Business Economics,1,1,0,0,0,0,1,1,4
+HU,hu-budapest-university-of-economics-and-bus-budapest,Budapest University of Economics and Business,hu-budapest-university-of-economics-and-bus-budapest-international-business-e-sf20,International Business Economics,1,1,0,0,0,1,1,1,3
 HU,hu-budapest-university-of-economics-and-bus-budapest,Budapest University of Economics and Business,hu-budapest-university-of-economics-and-bus-budapest-tourism-and-catering-sf17,Tourism and Catering,1,1,0,0,0,1,1,1,3
-HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-chemical-engineering-sf42,Chemical Engineering,0,1,0,0,0,0,1,1,5
-HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-civil-engineering-sf44,Civil Engineering,0,1,0,0,0,0,1,1,5
-HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-computer-science-enginee-sf41,Computer Science Engineering,0,1,0,0,0,0,1,1,5
+HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-chemical-engineering-sf42,Chemical Engineering,0,1,0,0,0,1,1,1,4
+HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-civil-engineering-sf44,Civil Engineering,0,1,0,0,0,1,1,1,4
+HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-computer-science-enginee-sf41,Computer Science Engineering,0,1,0,0,0,1,1,1,4
 HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-electrical-engineering-sf45,Electrical Engineering,0,1,0,0,0,1,1,1,4
-HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-engineering-management-sf79,Engineering Management,0,1,0,0,1,0,1,1,4
-HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-logistics-engineering-sf76,Logistics Engineering,0,1,0,0,0,0,1,1,5
-HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-mechanical-engineering-sf51,Mechanical Engineering,0,1,0,0,0,0,1,1,5
-HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-physicist-engineering-sf69,Physicist Engineering,0,1,0,0,0,0,1,1,5
-HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-professional-pilot-sf77,Professional Pilot,0,1,0,0,0,0,1,1,5
-HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-transportation-engineeri-sf75,Transportation Engineering,0,1,0,0,0,0,1,1,5
-HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-vehicle-engineering-sf74,Vehicle Engineering,0,1,0,0,0,0,1,1,5
-HU,hu-corvinus-university-of-budapest-budapest,Corvinus University of Budapest,hu-corvinus-university-of-budapest-budapest-applied-economics-sf83,Applied Economics,1,1,0,0,0,0,1,1,4
-HU,hu-corvinus-university-of-budapest-budapest,Corvinus University of Budapest,hu-corvinus-university-of-budapest-budapest-business-administration-sf80,Business Administration and Management,1,1,0,0,0,0,1,1,4
+HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-engineering-management-sf79,Engineering Management,0,1,0,0,1,1,1,1,3
+HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-logistics-engineering-sf76,Logistics Engineering,0,1,0,0,0,1,1,1,4
+HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-mechanical-engineering-sf51,Mechanical Engineering,0,1,0,0,0,1,1,1,4
+HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-physicist-engineering-sf69,Physicist Engineering,0,1,0,0,0,1,1,1,4
+HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-professional-pilot-sf77,Professional Pilot,0,1,0,0,0,1,1,1,4
+HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-transportation-engineeri-sf75,Transportation Engineering,0,1,0,0,0,1,1,1,4
+HU,hu-budapest-university-of-technology-and-ec-budapest,Budapest University of Technology and Economics,hu-budapest-university-of-technology-and-ec-budapest-vehicle-engineering-sf74,Vehicle Engineering,0,1,0,0,0,1,1,1,4
+HU,hu-corvinus-university-of-budapest-budapest,Corvinus University of Budapest,hu-corvinus-university-of-budapest-budapest-applied-economics-sf83,Applied Economics,1,1,0,0,0,1,1,1,3
+HU,hu-corvinus-university-of-budapest-budapest,Corvinus University of Budapest,hu-corvinus-university-of-budapest-budapest-business-administration-sf80,Business Administration and Management,1,1,0,0,0,1,1,1,3
 HU,hu-corvinus-university-of-budapest-budapest,Corvinus University of Budapest,hu-corvinus-university-of-budapest-budapest-data-science-in-business-sf85,Data Science in Business,1,1,0,0,0,1,1,1,3
 HU,hu-corvinus-university-of-budapest-budapest,Corvinus University of Budapest,hu-corvinus-university-of-budapest-budapest-international-business-e-sf81,International Business Economics,0,1,0,0,0,1,1,1,4
-HU,hu-dennis-gabor-university-budapest,Dennis Gabor University,hu-dennis-gabor-university-budapest-business-informatics-sf347,Business Informatics,0,1,0,0,0,0,1,1,5
-HU,hu-dennis-gabor-university-budapest,Dennis Gabor University,hu-dennis-gabor-university-budapest-computer-science-enginee-sf348,Computer Science Engineering,0,1,0,0,0,0,1,1,5
-HU,hu-dennis-gabor-university-budapest,Dennis Gabor University,hu-dennis-gabor-university-budapest-engineering-management-sf349,Engineering Management,0,1,0,0,0,0,1,1,5
+HU,hu-dennis-gabor-university-budapest,Dennis Gabor University,hu-dennis-gabor-university-budapest-business-informatics-sf347,Business Informatics,0,1,0,0,0,1,1,1,4
+HU,hu-dennis-gabor-university-budapest,Dennis Gabor University,hu-dennis-gabor-university-budapest-computer-science-enginee-sf348,Computer Science Engineering,0,1,0,0,0,1,1,1,4
+HU,hu-dennis-gabor-university-budapest,Dennis Gabor University,hu-dennis-gabor-university-budapest-engineering-management-sf349,Engineering Management,0,1,0,0,0,1,1,1,4
 HU,hu-eotvos-jozsef-college-baja,Eötvös József College,hu-eotvos-jozsef-college-baja-business-administration-sf215,Business Administration and Management,0,1,0,0,0,1,0,1,5
 HU,hu-eotvos-jozsef-college-baja,Eötvös József College,hu-eotvos-jozsef-college-baja-business-administration-sf216,Business Administration and Management,0,1,0,0,0,1,0,1,5
-HU,hu-eotvos-lorand-university-budapest,Eötvös Loránd University,hu-eotvos-lorand-university-budapest-applied-economics-sf343,Applied Economics,0,1,0,0,0,0,1,1,5
-HU,hu-eotvos-lorand-university-budapest,Eötvös Loránd University,hu-eotvos-lorand-university-budapest-computer-science-sf248,Computer Science,1,1,0,0,1,0,1,1,3
-HU,hu-eotvos-lorand-university-budapest,Eötvös Loránd University,hu-eotvos-lorand-university-budapest-finance-and-accounting-sf284,Finance and Accounting,1,1,0,0,0,0,1,1,4
+HU,hu-eotvos-lorand-university-budapest,Eötvös Loránd University,hu-eotvos-lorand-university-budapest-applied-economics-sf343,Applied Economics,0,1,0,0,0,1,1,1,4
+HU,hu-eotvos-lorand-university-budapest,Eötvös Loránd University,hu-eotvos-lorand-university-budapest-computer-science-sf248,Computer Science,1,1,0,0,1,1,1,1,2
+HU,hu-eotvos-lorand-university-budapest,Eötvös Loránd University,hu-eotvos-lorand-university-budapest-finance-and-accounting-sf284,Finance and Accounting,1,1,0,0,0,1,1,1,3
 HU,hu-eotvos-lorand-university-budapest,Eötvös Loránd University,hu-eotvos-lorand-university-budapest-international-business-e-sf301,International Business Economics,1,1,0,0,0,1,1,1,3
 HU,hu-eotvos-lorand-university-szombathely,Eötvös Loránd University,hu-eotvos-lorand-university-szombathely-mechanical-engineering-sf310,Mechanical Engineering,1,1,0,0,1,1,1,1,2
-HU,hu-gal-ferenc-university-bekescsaba,Gál Ferenc University,hu-gal-ferenc-university-bekescsaba-business-administration-sf352,Business Administration and Management,0,1,0,0,0,0,1,1,5
+HU,hu-gal-ferenc-university-bekescsaba,Gál Ferenc University,hu-gal-ferenc-university-bekescsaba-business-administration-sf352,Business Administration and Management,0,1,0,0,0,1,1,1,4
 HU,hu-hungarian-university-of-agriculture-and-budapest,Hungarian University of Agriculture and Life Sciences,hu-hungarian-university-of-agriculture-and-budapest-biochemical-engineering-sf999,Biochemical Engineering,1,1,0,0,0,1,1,1,3
-HU,hu-hungarian-university-of-agriculture-and-godollo,Hungarian University of Agriculture and Life Sciences,hu-hungarian-university-of-agriculture-and-godollo-business-administration-sf960,Business Administration and Management,1,1,0,0,0,0,1,1,4
+HU,hu-hungarian-university-of-agriculture-and-godollo,Hungarian University of Agriculture and Life Sciences,hu-hungarian-university-of-agriculture-and-godollo-business-administration-sf960,Business Administration and Management,1,1,0,0,0,1,1,1,3
 HU,hu-hungarian-university-of-agriculture-and-godollo,Hungarian University of Agriculture and Life Sciences,hu-hungarian-university-of-agriculture-and-godollo-environmental-engineerin-sf976,Environmental Engineering,1,1,0,0,0,1,1,1,3
-HU,hu-hungarian-university-of-agriculture-and-godollo,Hungarian University of Agriculture and Life Sciences,hu-hungarian-university-of-agriculture-and-godollo-mechanical-engineering-sf988,Mechanical Engineering,1,1,0,0,0,1,0,1,4
+HU,hu-hungarian-university-of-agriculture-and-godollo,Hungarian University of Agriculture and Life Sciences,hu-hungarian-university-of-agriculture-and-godollo-mechanical-engineering-sf988,Mechanical Engineering,1,1,0,0,0,1,1,1,3
 HU,hu-hungarian-university-of-agriculture-and-gyongyos,Hungarian University of Agriculture and Life Sciences,hu-hungarian-university-of-agriculture-and-gyongyos-tourism-and-catering-sf994,Tourism and Catering,0,1,0,0,0,1,1,1,4
-HU,hu-john-von-neumann-university-kecskemet,John von Neumann University,hu-john-von-neumann-university-kecskemet-business-administration-sf508,Business Administration and Management,1,1,0,0,1,0,0,1,4
+HU,hu-john-von-neumann-university-kecskemet,John von Neumann University,hu-john-von-neumann-university-kecskemet-business-administration-sf508,Business Administration and Management,1,1,0,0,1,1,0,1,3
 HU,hu-john-von-neumann-university-kecskemet,John von Neumann University,hu-john-von-neumann-university-kecskemet-computer-science-enginee-sf504,Computer Science Engineering,1,1,0,0,1,1,1,1,2
-HU,hu-john-von-neumann-university-kecskemet,John von Neumann University,hu-john-von-neumann-university-kecskemet-international-business-e-sf510,International Business Economics,1,1,0,0,0,1,1,1,3
+HU,hu-john-von-neumann-university-kecskemet,John von Neumann University,hu-john-von-neumann-university-kecskemet-international-business-e-sf510,International Business Economics,1,1,0,0,1,1,1,1,2
 HU,hu-john-von-neumann-university-kecskemet,John von Neumann University,hu-john-von-neumann-university-kecskemet-mechnical-engineering-sf513,Mechnical engineering,1,1,0,0,1,1,1,1,2
-HU,hu-john-von-neumann-university-kecskemet,John von Neumann University,hu-john-von-neumann-university-kecskemet-tourism-and-catering-sf509,Tourism and Catering,0,1,0,0,1,0,1,1,4
+HU,hu-john-von-neumann-university-kecskemet,John von Neumann University,hu-john-von-neumann-university-kecskemet-tourism-and-catering-sf509,Tourism and Catering,1,1,0,0,1,1,1,1,2
 HU,hu-john-von-neumann-university-kecskemet,John von Neumann University,hu-john-von-neumann-university-kecskemet-vehicle-engineering-sf505,Vehicle Engineering,1,1,0,0,1,1,1,1,2
 HU,hu-obuda-university-budapest,Obuda University,hu-obuda-university-budapest-business-administration-sf562,Business Administration and Management,1,1,0,0,1,1,1,1,2
 HU,hu-obuda-university-budapest,Obuda University,hu-obuda-university-budapest-commerce-and-marketing-sf563,Commerce and Marketing,1,1,0,0,1,1,1,1,2
-HU,hu-obuda-university-budapest,Obuda University,hu-obuda-university-budapest-computer-science-enginee-sf554,Computer Science Engineering,1,1,0,0,0,0,1,1,4
-HU,hu-obuda-university-budapest,Obuda University,hu-obuda-university-budapest-electrical-engineering-sf560,Electrical Engineering,1,1,0,0,0,0,1,1,4
-HU,hu-obuda-university-budapest,Obuda University,hu-obuda-university-budapest-engineering-management-sf564,Engineering Management,1,1,0,0,1,0,1,1,3
+HU,hu-obuda-university-budapest,Obuda University,hu-obuda-university-budapest-computer-science-enginee-sf554,Computer Science Engineering,1,1,0,0,1,1,1,1,2
+HU,hu-obuda-university-budapest,Obuda University,hu-obuda-university-budapest-electrical-engineering-sf560,Electrical Engineering,1,1,0,0,1,1,1,1,2
+HU,hu-obuda-university-budapest,Obuda University,hu-obuda-university-budapest-engineering-management-sf564,Engineering Management,1,1,0,0,1,1,1,1,2
 HU,hu-obuda-university-budapest,Obuda University,hu-obuda-university-budapest-environmental-engineerin-sf567,Environmental Engineering,1,1,0,0,1,1,1,1,2
-HU,hu-obuda-university-budapest,Obuda University,hu-obuda-university-budapest-industrial-design-engine-sf568,Industrial Design Engineering,0,1,0,0,0,0,1,1,5
-HU,hu-obuda-university-budapest,Obuda University,hu-obuda-university-budapest-mechatronical-engineerin-sf546,Mechatronical Engineering,0,1,0,0,0,1,1,1,4
+HU,hu-obuda-university-budapest,Obuda University,hu-obuda-university-budapest-industrial-design-engine-sf568,Industrial Design Engineering,0,1,0,0,1,1,1,1,3
+HU,hu-obuda-university-budapest,Obuda University,hu-obuda-university-budapest-mechatronical-engineerin-sf546,Mechatronical Engineering,0,1,0,0,1,1,1,1,3
 HU,hu-szechenyi-istvan-university-gyor,Széchenyi István University,hu-szechenyi-istvan-university-gyor-business-administration-sf1052,Business Administration and Management,0,1,0,0,0,1,1,1,4
 HU,hu-szechenyi-istvan-university-gyor,Széchenyi István University,hu-szechenyi-istvan-university-gyor-business-informatics-sf1063,Business Informatics,0,1,0,0,0,1,1,1,4
 HU,hu-szechenyi-istvan-university-gyor,Széchenyi István University,hu-szechenyi-istvan-university-gyor-civil-engineering-sf1053,Civil Engineering,0,1,0,0,0,1,1,1,4
-HU,hu-szechenyi-istvan-university-gyor,Széchenyi István University,hu-szechenyi-istvan-university-gyor-electrical-engineering-sf1061,Electrical Engineering,0,1,0,0,0,0,1,1,5
-HU,hu-szechenyi-istvan-university-gyor,Széchenyi István University,hu-szechenyi-istvan-university-gyor-international-business-e-sf1058,International Business Economics,0,1,0,0,0,0,1,1,5
+HU,hu-szechenyi-istvan-university-gyor,Széchenyi István University,hu-szechenyi-istvan-university-gyor-electrical-engineering-sf1061,Electrical Engineering,0,1,0,0,0,1,1,1,4
+HU,hu-szechenyi-istvan-university-gyor,Széchenyi István University,hu-szechenyi-istvan-university-gyor-international-business-e-sf1058,International Business Economics,0,1,0,0,0,1,1,1,4
 HU,hu-szechenyi-istvan-university-gyor,Széchenyi István University,hu-szechenyi-istvan-university-gyor-logistics-engineering-sf1051,Logistics Engineering,0,1,0,0,0,1,1,1,4
 HU,hu-szechenyi-istvan-university-gyor,Széchenyi István University,hu-szechenyi-istvan-university-gyor-mechanical-engineering-sf1060,Mechanical Engineering,0,1,0,0,0,1,1,1,4
 HU,hu-szechenyi-istvan-university-gyor,Széchenyi István University,hu-szechenyi-istvan-university-gyor-tourism-and-catering-sf1059,Tourism and Catering,0,1,0,0,0,1,1,1,4
 HU,hu-szechenyi-istvan-university-gyor,Széchenyi István University,hu-szechenyi-istvan-university-gyor-vehicle-engineering-sf1054,Vehicle Engineering,0,1,0,0,0,1,1,1,4
-HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-biochemical-engineering-sf112,Biochemical Engineering,1,1,0,0,1,0,1,1,3
+HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-biochemical-engineering-sf112,Biochemical Engineering,1,1,0,0,1,1,1,1,2
 HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-business-administration-sf115,Business Administration and Management,1,1,0,0,1,1,0,1,3
 HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-business-informatics-sf116,Business Informatics,1,1,0,0,1,1,0,1,3
-HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-chemical-engineering-sf117,Chemical Engineering,0,1,0,0,0,0,1,1,5
-HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-civil-engineering-sf121,Civil Engineering,0,1,0,0,1,1,1,0,4
-HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-commerce-and-marketing-sf124,Commerce and Marketing,1,1,0,0,1,0,0,1,4
+HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-chemical-engineering-sf117,Chemical Engineering,1,1,0,0,0,1,1,1,3
+HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-civil-engineering-sf121,Civil Engineering,1,1,0,0,1,1,1,0,3
+HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-commerce-and-marketing-sf124,Commerce and Marketing,1,1,0,0,1,1,0,1,3
 HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-computer-science-enginee-sf128,Computer Science Engineering,1,1,0,0,1,1,0,1,3
-HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-computer-science-sf126,Computer Science,0,1,0,0,0,1,1,1,4
-HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-electrical-engineering-sf146,Electrical Engineering,0,1,0,0,1,1,0,1,4
-HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-engineering-management-sf199,Engineering Management,0,1,0,0,0,0,1,1,5
-HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-environmental-engineerin-sf200,Environmental Engineering,0,1,0,0,1,0,1,1,4
-HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-mechanical-engineering-sf164,Mechanical Engineering,1,1,0,0,1,0,0,1,4
-HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-mechatronics-engineering-sf166,Mechatronics Engineering,1,1,0,0,0,0,0,1,5
-HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-vehicle-engineering-sf181,Vehicle Engineering,1,1,0,0,1,0,1,1,3
+HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-computer-science-sf126,Computer Science,1,1,0,0,1,1,1,1,2
+HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-electrical-engineering-sf146,Electrical Engineering,1,1,0,0,1,1,0,1,3
+HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-engineering-management-sf199,Engineering Management,0,1,0,0,1,1,1,1,3
+HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-environmental-engineerin-sf200,Environmental Engineering,0,1,0,0,1,1,1,1,3
+HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-mechanical-engineering-sf164,Mechanical Engineering,1,1,0,0,1,1,0,1,3
+HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-mechatronics-engineering-sf166,Mechatronics Engineering,1,1,0,0,1,1,0,1,3
+HU,hu-university-of-debrecen-debrecen,University of Debrecen,hu-university-of-debrecen-debrecen-vehicle-engineering-sf181,Vehicle Engineering,1,1,0,0,1,1,1,1,2
 HU,hu-university-of-dunaujvaros-dunaujvaros,University of Dunaújváros,hu-university-of-dunaujvaros-dunaujvaros-business-administration-sf209,Business Administration and Management,0,1,0,0,0,1,1,1,4
-HU,hu-university-of-dunaujvaros-dunaujvaros,University of Dunaújváros,hu-university-of-dunaujvaros-dunaujvaros-computer-science-enginee-sf211,Computer Science Engineering,0,1,0,0,0,0,1,1,5
+HU,hu-university-of-dunaujvaros-dunaujvaros,University of Dunaújváros,hu-university-of-dunaujvaros-dunaujvaros-computer-science-enginee-sf211,Computer Science Engineering,0,1,0,0,0,1,1,1,4
 HU,hu-university-of-dunaujvaros-dunaujvaros,University of Dunaújváros,hu-university-of-dunaujvaros-dunaujvaros-materials-engineering-sf208,Materials Engineering,0,1,0,0,0,1,1,1,4
 HU,hu-university-of-dunaujvaros-dunaujvaros,University of Dunaújváros,hu-university-of-dunaujvaros-dunaujvaros-mechanical-engineering-sf212,Mechanical Engineering,0,1,0,0,0,1,1,1,4
 HU,hu-university-of-miskolc-miskolc,University of Miskolc,hu-university-of-miskolc-miskolc-business-administration-sf461,Business Administration and Management,0,1,0,0,0,1,1,1,4
 HU,hu-university-of-miskolc-miskolc,University of Miskolc,hu-university-of-miskolc-miskolc-computer-science-enginee-sf464,Computer Science Engineering,0,1,0,0,0,1,1,1,4
-HU,hu-university-of-miskolc-miskolc,University of Miskolc,hu-university-of-miskolc-miskolc-logistics-engineering-sf463,Logistics Engineering,0,1,0,0,0,0,1,1,5
+HU,hu-university-of-miskolc-miskolc,University of Miskolc,hu-university-of-miskolc-miskolc-logistics-engineering-sf463,Logistics Engineering,0,1,0,0,0,1,1,1,4
 HU,hu-university-of-miskolc-miskolc,University of Miskolc,hu-university-of-miskolc-miskolc-materials-engineering-sf466,Materials Engineering,0,1,0,0,0,1,1,1,4
-HU,hu-university-of-miskolc-miskolc,University of Miskolc,hu-university-of-miskolc-miskolc-mechanical-engineering-sf462,Mechanical Engineering,0,1,0,0,0,0,0,1,6
-HU,hu-university-of-nyiregyhaza-nyiregyhaza,University of Nyíregyháza,hu-university-of-nyiregyhaza-nyiregyhaza-business-administration-sf537,Business Administration and Management,1,1,0,0,0,0,1,1,4
-HU,hu-university-of-nyiregyhaza-nyiregyhaza,University of Nyíregyháza,hu-university-of-nyiregyhaza-nyiregyhaza-computer-science-enginee-sf538,Computer Science Engineering,1,1,0,0,1,0,1,1,3
-HU,hu-university-of-nyiregyhaza-nyiregyhaza,University of Nyíregyháza,hu-university-of-nyiregyhaza-nyiregyhaza-computer-science-sf536,Computer Science,1,1,0,0,0,0,1,1,4
-HU,hu-university-of-nyiregyhaza-nyiregyhaza,University of Nyíregyháza,hu-university-of-nyiregyhaza-nyiregyhaza-mechanical-engineering-sf529,Mechanical Engineering,1,1,0,0,1,0,1,1,3
+HU,hu-university-of-miskolc-miskolc,University of Miskolc,hu-university-of-miskolc-miskolc-mechanical-engineering-sf462,Mechanical Engineering,0,1,0,0,0,1,0,1,5
+HU,hu-university-of-nyiregyhaza-nyiregyhaza,University of Nyíregyháza,hu-university-of-nyiregyhaza-nyiregyhaza-business-administration-sf537,Business Administration and Management,1,1,0,0,0,1,1,1,3
+HU,hu-university-of-nyiregyhaza-nyiregyhaza,University of Nyíregyháza,hu-university-of-nyiregyhaza-nyiregyhaza-computer-science-enginee-sf538,Computer Science Engineering,1,1,0,0,1,1,1,1,2
+HU,hu-university-of-nyiregyhaza-nyiregyhaza,University of Nyíregyháza,hu-university-of-nyiregyhaza-nyiregyhaza-computer-science-sf536,Computer Science,1,1,0,0,0,1,1,1,3
+HU,hu-university-of-nyiregyhaza-nyiregyhaza,University of Nyíregyháza,hu-university-of-nyiregyhaza-nyiregyhaza-mechanical-engineering-sf529,Mechanical Engineering,1,1,0,0,1,1,1,1,2
 HU,hu-university-of-nyiregyhaza-nyiregyhaza,University of Nyíregyháza,hu-university-of-nyiregyhaza-nyiregyhaza-professional-pilot-sf531,Professional Pilot,1,1,0,0,0,1,1,1,3
-HU,hu-university-of-nyiregyhaza-nyiregyhaza,University of Nyíregyháza,hu-university-of-nyiregyhaza-nyiregyhaza-tourism-and-catering-sf539,Tourism and Catering,0,1,0,0,0,0,1,1,5
-HU,hu-university-of-nyiregyhaza-nyiregyhaza,University of Nyíregyháza,hu-university-of-nyiregyhaza-nyiregyhaza-vehicle-engineering-sf545,Vehicle Engineering,0,1,0,0,0,0,1,1,5
+HU,hu-university-of-nyiregyhaza-nyiregyhaza,University of Nyíregyháza,hu-university-of-nyiregyhaza-nyiregyhaza-tourism-and-catering-sf539,Tourism and Catering,0,1,0,0,0,1,1,1,4
+HU,hu-university-of-nyiregyhaza-nyiregyhaza,University of Nyíregyháza,hu-university-of-nyiregyhaza-nyiregyhaza-vehicle-engineering-sf545,Vehicle Engineering,1,1,0,0,0,1,1,1,3
 HU,hu-university-of-pannonia-nagykanizsa,University of Pannonia,hu-university-of-pannonia-nagykanizsa-sustainable-and-circular-sf594,Sustainable and Circular Economy- Based Tourism,1,1,0,0,0,1,1,1,3
-HU,hu-university-of-pannonia-nagykanizsa,University of Pannonia,hu-university-of-pannonia-nagykanizsa-water-operation-engineer-sf582,Water Operation Engineering,1,1,0,0,0,0,1,1,4
-HU,hu-university-of-pannonia-veszprem,University of Pannonia,hu-university-of-pannonia-veszprem-business-administration-sf587,Business Administration and Management,1,1,0,0,0,0,1,1,4
-HU,hu-university-of-pannonia-veszprem,University of Pannonia,hu-university-of-pannonia-veszprem-computer-science-sf599,Computer Science,1,1,0,0,0,0,1,1,4
-HU,hu-university-of-pannonia-veszprem,University of Pannonia,hu-university-of-pannonia-veszprem-data-science-in-business-sf598,Data Science in Business,1,1,0,0,0,0,1,1,4
-HU,hu-university-of-pannonia-veszprem,University of Pannonia,hu-university-of-pannonia-veszprem-international-business-e-sf584,International Business Economics,1,1,0,0,0,0,0,1,5
+HU,hu-university-of-pannonia-nagykanizsa,University of Pannonia,hu-university-of-pannonia-nagykanizsa-water-operation-engineer-sf582,Water Operation Engineering,1,1,0,0,0,1,1,1,3
+HU,hu-university-of-pannonia-veszprem,University of Pannonia,hu-university-of-pannonia-veszprem-business-administration-sf587,Business Administration and Management,1,1,0,0,0,1,1,1,3
+HU,hu-university-of-pannonia-veszprem,University of Pannonia,hu-university-of-pannonia-veszprem-computer-science-sf599,Computer Science,1,1,0,0,0,1,1,1,3
+HU,hu-university-of-pannonia-veszprem,University of Pannonia,hu-university-of-pannonia-veszprem-data-science-in-business-sf598,Data Science in Business,1,1,0,0,0,1,1,1,3
+HU,hu-university-of-pannonia-veszprem,University of Pannonia,hu-university-of-pannonia-veszprem-international-business-e-sf584,International Business Economics,1,1,0,0,0,1,0,1,4
 HU,hu-university-of-pannonia-veszprem,University of Pannonia,hu-university-of-pannonia-veszprem-tourism-and-catering-sf588,Tourism and Catering,1,1,0,0,0,1,0,1,4
-HU,hu-university-of-public-service-baja,University of Public Service,hu-university-of-public-service-baja-civil-engineering-sf521,Civil Engineering,0,1,0,0,0,0,1,1,5
-HU,hu-university-of-public-service-baja,University of Public Service,hu-university-of-public-service-baja-environmental-engineerin-sf522,Environmental Engineering,0,1,0,0,0,0,1,1,5
-HU,hu-university-of-public-service-baja,University of Public Service,hu-university-of-public-service-baja-water-operation-engineer-sf523,Water Operation Engineering,0,1,0,0,0,0,1,1,5
-HU,hu-university-of-pecs-pecs,University of Pécs,hu-university-of-pecs-pecs-architectural-engineerin-sf629,Architectural Engineering,1,1,0,0,1,0,1,1,3
-HU,hu-university-of-pecs-pecs,University of Pécs,hu-university-of-pecs-pecs-business-administration-sf687,Business Administration and Management,1,0,0,0,0,0,1,1,5
-HU,hu-university-of-pecs-pecs,University of Pécs,hu-university-of-pecs-pecs-civil-engineering-sf633,Civil Engineering,0,1,0,0,1,1,1,1,3
-HU,hu-university-of-pecs-pecs,University of Pécs,hu-university-of-pecs-pecs-computer-science-enginee-sf634,Computer Science Engineering,1,1,0,0,1,0,1,1,3
-HU,hu-university-of-pecs-pecs,University of Pécs,hu-university-of-pecs-pecs-computer-science-sf643,Computer Science,1,1,0,0,0,0,1,1,4
-HU,hu-university-of-pecs-pecs,University of Pécs,hu-university-of-pecs-pecs-mechanical-engineering-sf726,Mechanical Engineering,1,1,0,0,0,0,1,1,4
-HU,hu-university-of-sopron-sopron,University of Sopron,hu-university-of-sopron-sopron-business-administration-sf1043,Business Administration and Management,0,1,0,0,0,0,1,1,5
-HU,hu-university-of-sopron-sopron,University of Sopron,hu-university-of-sopron-sopron-international-business-e-sf1042,International Business Economics,0,1,0,0,0,0,1,1,5
-HU,hu-university-of-sopron-sopron,University of Sopron,hu-university-of-sopron-sopron-timber-industry-engineer-sf1039,Timber Industry Engineering,1,1,0,0,1,0,1,1,3
-HU,hu-university-of-szeged-szeged,University of Szeged,hu-university-of-szeged-szeged-business-administration-sf1132,Business Administration and Management,0,1,0,0,0,0,0,1,6
+HU,hu-university-of-public-service-baja,University of Public Service,hu-university-of-public-service-baja-civil-engineering-sf521,Civil Engineering,0,1,0,0,0,1,1,1,4
+HU,hu-university-of-public-service-baja,University of Public Service,hu-university-of-public-service-baja-environmental-engineerin-sf522,Environmental Engineering,0,1,0,0,0,1,1,1,4
+HU,hu-university-of-public-service-baja,University of Public Service,hu-university-of-public-service-baja-water-operation-engineer-sf523,Water Operation Engineering,0,1,0,0,1,1,1,1,3
+HU,hu-university-of-pecs-pecs,University of Pécs,hu-university-of-pecs-pecs-architectural-engineerin-sf629,Architectural Engineering,1,1,0,0,1,1,1,1,2
+HU,hu-university-of-pecs-pecs,University of Pécs,hu-university-of-pecs-pecs-business-administration-sf687,Business Administration and Management,1,0,0,0,1,1,1,1,3
+HU,hu-university-of-pecs-pecs,University of Pécs,hu-university-of-pecs-pecs-civil-engineering-sf633,Civil Engineering,1,1,0,0,1,1,1,1,2
+HU,hu-university-of-pecs-pecs,University of Pécs,hu-university-of-pecs-pecs-computer-science-enginee-sf634,Computer Science Engineering,1,1,0,0,1,1,1,1,2
+HU,hu-university-of-pecs-pecs,University of Pécs,hu-university-of-pecs-pecs-computer-science-sf643,Computer Science,1,1,0,0,0,1,1,1,3
+HU,hu-university-of-pecs-pecs,University of Pécs,hu-university-of-pecs-pecs-mechanical-engineering-sf726,Mechanical Engineering,1,1,0,0,0,1,1,1,3
+HU,hu-university-of-sopron-sopron,University of Sopron,hu-university-of-sopron-sopron-business-administration-sf1043,Business Administration and Management,0,1,0,0,0,1,1,1,4
+HU,hu-university-of-sopron-sopron,University of Sopron,hu-university-of-sopron-sopron-international-business-e-sf1042,International Business Economics,0,1,0,0,0,1,1,1,4
+HU,hu-university-of-sopron-sopron,University of Sopron,hu-university-of-sopron-sopron-timber-industry-engineer-sf1039,Timber Industry Engineering,1,1,0,0,1,1,1,1,2
+HU,hu-university-of-szeged-szeged,University of Szeged,hu-university-of-szeged-szeged-business-administration-sf1132,Business Administration and Management,0,1,0,0,0,1,0,1,5
 HU,hu-university-of-szeged-szeged,University of Szeged,hu-university-of-szeged-szeged-computer-science-sf1204,Computer Science,1,1,0,0,0,1,1,1,3
-HU,hu-university-of-szeged-szeged,University of Szeged,hu-university-of-szeged-szeged-tourism-and-catering-sf1134,Tourism and Catering,0,1,0,0,0,0,0,1,6
+HU,hu-university-of-szeged-szeged,University of Szeged,hu-university-of-szeged-szeged-tourism-and-catering-sf1134,Tourism and Catering,0,1,0,0,0,1,0,1,5
 IT,it-casamassima-lum-g-degennaro-casamassima,"Libera Università Mediterranea ""Giuseppe Degennaro""",it-casamassima-lum-g-degennaro-casamassima-economia-ed-organizzazione-aziendale-l18,Economia ed organizzazione aziendale,0,1,0,0,0,1,1,0,5
 IT,it-roma-luiss-roma,Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma,it-roma-luiss-roma-business-administration-l18,Business Administration,1,1,0,0,0,1,1,1,3
-IT,it-roma-luiss-roma,Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma,it-roma-luiss-roma-economics-and-business-l33,Economics and Business,1,1,0,0,0,1,1,0,4
+IT,it-roma-luiss-roma,Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma,it-roma-luiss-roma-economics-and-business-l33,Economics and Business,1,1,1,1,0,1,1,0,2
 IT,it-roma-luiss-roma,Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma,it-roma-luiss-roma-management-and-artificial-intelligence-l18,Management and Artificial Intelligence,1,1,1,1,0,1,1,1,1
 IT,it-bari-politecnico-bari,Politecnico di Bari,it-bari-politecnico-bari-management-engineering-for-innovation-l9,Management Engineering for Innovation,0,1,0,0,1,1,1,1,3
 IT,it-milano-politecnico-milano,Politecnico di Milano,it-milano-politecnico-milano-engineering-science-l9,Engineering Science,0,1,0,0,1,1,1,1,3
@@ -1028,7 +1028,7 @@ IT,it-torino-politecnico-torino,Politecnico di Torino,it-torino-politecnico-tori
 IT,it-ca-foscari-venezia-roncade,Università Ca' Foscari Venezia,it-ca-foscari-venezia-roncade-digital-management-l18,Digital Management,1,1,0,0,1,1,1,1,2
 IT,it-ca-foscari-venezia-venezia,Università Ca' Foscari Venezia,it-ca-foscari-venezia-venezia-business-administration-and-management-l18,Business Administration and Management,0,1,0,0,1,1,1,1,3
 IT,it-ca-foscari-venezia-venezia,Università Ca' Foscari Venezia,it-ca-foscari-venezia-venezia-economics-and-business-l33,Economics and Business,0,1,1,0,1,1,1,1,2
-IT,it-roma-biomedico-roma,Università Campus Bio-Medico di Roma,it-roma-biomedico-roma-biomedical-engineering-l8,Biomedical Engineering,1,1,0,0,0,1,1,0,4
+IT,it-roma-biomedico-roma,Università Campus Bio-Medico di Roma,it-roma-biomedico-roma-biomedical-engineering-l8,Biomedical Engineering,1,1,0,0,1,1,1,0,3
 IT,it-milano-cattolica-brescia,"Università Cattolica del ""Sacro Cuore""",it-milano-cattolica-brescia-business-and-finance-l18,Business and finance,1,1,0,0,1,1,1,1,2
 IT,it-milano-cattolica-milano,"Università Cattolica del ""Sacro Cuore""",it-milano-cattolica-milano-economics-and-management-l18,Economics and management,1,1,1,0,1,1,1,1,1
 IT,it-marche-ancona,Università Politecnica delle Marche - Ancona,it-marche-ancona-digital-economics-and-business-l18,Digital Economics and Business,0,1,0,0,1,1,1,1,3
@@ -1037,7 +1037,7 @@ IT,it-milano-bocconi-milano,Università commerciale Luigi Bocconi di Milano,it-m
 IT,it-milano-bocconi-milano,Università commerciale Luigi Bocconi di Milano,it-milano-bocconi-milano-economics-management-and-computer-scienc-l33,"Economics, Management and Computer Science",1,1,0,0,0,1,1,0,4
 IT,it-milano-bocconi-milano,Università commerciale Luigi Bocconi di Milano,it-milano-bocconi-milano-international-economics-and-finance-l33,International Economics and Finance,1,1,0,0,0,1,0,0,5
 IT,it-milano-bocconi-milano,Università commerciale Luigi Bocconi di Milano,it-milano-bocconi-milano-international-economics-and-management-l18,International Economics and Management,1,1,0,0,0,1,1,1,3
-IT,it-cassino-cassino,Università degli Studi di Cassino e del Lazio Meridionale,it-cassino-cassino-computer-engineering-l8,Computer Engineering,1,0,0,0,1,1,1,1,3
+IT,it-cassino-cassino,Università degli Studi di Cassino e del Lazio Meridionale,it-cassino-cassino-computer-engineering-l8,Computer Engineering,1,1,0,0,1,1,1,1,2
 IT,it-cassino-cassino,Università degli Studi di Cassino e del Lazio Meridionale,it-cassino-cassino-economics-with-data-science-l33,Economics with data science,1,1,0,0,1,1,1,1,2
 IT,it-cassino-cassino,Università degli Studi di Cassino e del Lazio Meridionale,it-cassino-cassino-industrial-engineering-technology-l9,Industrial Engineering Technology,1,1,0,0,1,1,1,0,3
 IT,it-napoli-vanvitelli-caserta,"Università degli studi della Campania ""Luigi Vanvitelli""",it-napoli-vanvitelli-caserta-data-analytics-l41,Data Analytics,0,1,0,0,1,1,1,1,3
@@ -1048,7 +1048,7 @@ IT,it-bologna-forli,Università degli studi di Bologna,it-bologna-forli-manageme
 IT,it-bologna-ravenna,Università degli studi di Bologna,it-bologna-ravenna-building-construction-engineering-l23,Building Construction Engineering,1,1,0,0,1,1,1,1,2
 IT,it-bologna-rimini,Università degli studi di Bologna,it-bologna-rimini-economics-of-tourism-and-cities-l33,Economics of Tourism and Cities,1,1,0,0,1,1,0,0,4
 IT,it-brescia-brescia,Università degli studi di Brescia,it-brescia-brescia-business-and-economics-l18,Business and Economics,0,1,0,0,0,1,0,1,5
-IT,it-firenze-firenze,Università degli studi di Firenze,it-firenze-firenze-sustainable-business-for-societal-challe-l18,Sustainable Business for Societal Challenges,1,1,0,0,0,1,1,1,3
+IT,it-firenze-firenze,Università degli studi di Firenze,it-firenze-firenze-sustainable-business-for-societal-challe-l18,Sustainable Business for Societal Challenges,1,1,1,1,0,1,1,1,1
 IT,it-messina-messina,Università degli studi di Messina,it-messina-messina-heritage-innovation-engineering-l23,Heritage Innovation Engineering,1,1,0,0,1,1,1,1,2
 IT,it-milano-milano,Università degli studi di Milano,it-milano-milano-economics-behavior-data-and-policy-l33,"Economics: Behavior, Data and Policy",1,1,1,1,1,1,1,1,0
 IT,it-milano-bicocca-milano,Università degli studi di Milano-Bicocca,it-milano-bicocca-milano-economics-and-science-for-environmental-l33,Economics and Science for Environmental Sustainability,1,1,1,1,1,1,1,1,0
@@ -1060,16 +1060,16 @@ IT,it-palermo-palermo,Università degli studi di Palermo,it-palermo-palermo-indu
 IT,it-pavia-pavia,Università degli studi di Pavia,it-pavia-pavia-artificial-intelligence-l31,Artificial intelligence,0,1,1,1,1,1,0,1,2
 IT,it-perugia-perugia,Università degli studi di Perugia,it-perugia-perugia-engineering-management-l8,Engineering management,1,1,0,0,1,1,1,1,2
 IT,it-roma-la-sapienza-rieti,Università degli studi di Roma La Sapienza,it-roma-la-sapienza-rieti-sustainable-building-engineering-l23,Sustainable Building Engineering,1,1,1,1,1,1,1,1,0
-IT,it-roma-la-sapienza-roma,Università degli studi di Roma La Sapienza,it-roma-la-sapienza-roma-applied-computer-science-and-artificial-l31,Applied Computer Science and Artificial Intelligence,1,1,0,0,1,1,0,1,3
+IT,it-roma-la-sapienza-roma,Università degli studi di Roma La Sapienza,it-roma-la-sapienza-roma-applied-computer-science-and-artificial-l31,Applied Computer Science and Artificial Intelligence,1,1,1,1,1,1,1,1,0
 IT,it-roma-tor-vergata-roma,Università degli studi di Roma Tor Vergata,it-roma-tor-vergata-roma-business-administration-economics-l18,Business Administration & Economics,1,1,1,1,1,1,1,1,0
 IT,it-roma-tor-vergata-roma,Università degli studi di Roma Tor Vergata,it-roma-tor-vergata-roma-engineering-sciences-l9,Engineering Sciences,0,1,0,0,1,1,1,1,3
-IT,it-siena-siena,Università degli studi di Siena,it-siena-siena-biotech-engineering-for-health-l8,Biotech Engineering For Health,1,1,0,0,0,1,1,1,3
+IT,it-siena-siena,Università degli studi di Siena,it-siena-siena-biotech-engineering-for-health-l8,Biotech Engineering For Health,1,1,1,1,0,1,1,1,1
 IT,it-siena-siena,Università degli studi di Siena,it-siena-siena-economics-and-management-l18,Economics and Management,1,1,0,0,1,1,1,1,2
 IT,it-teramo-teramo,Università degli studi di Teramo,it-teramo-teramo-business-management-l18,Business Management,1,1,0,0,1,1,1,0,3
 IT,it-torino-torino,Università degli studi di Torino,it-torino-torino-business-management-l18,Business & Management,1,1,0,0,1,1,1,1,2
 IT,it-torino-torino,Università degli studi di Torino,it-torino-torino-economics-and-finance-with-data-science-l33,Economics and Finance with Data Science,1,1,0,0,1,1,1,1,2
-IT,it-udine-udine,Università degli studi di Udine,it-udine-udine-management-business-analytics-l18,Management & Business Analytics,0,1,0,0,0,1,1,1,4
-IT,it-pisa-pisa,Università di Pisa,it-pisa-pisa-management-for-business-and-economics-l18,Management for Business and Economics,1,1,0,0,1,1,1,1,2
+IT,it-udine-udine,Università degli studi di Udine,it-udine-udine-management-business-analytics-l18,Management & Business Analytics,0,1,0,0,1,1,1,1,3
+IT,it-pisa-pisa,Università di Pisa,it-pisa-pisa-management-for-business-and-economics-l18,Management for Business and Economics,1,1,1,1,1,1,1,1,0
 NL,nl-avans-hogeschool-07gr,Avans Hogeschool,nl-avans-hogeschool-07gr-bouwkunde-1001o3048,Bouwkunde,1,1,0,0,1,0,1,1,3
 NL,nl-avans-hogeschool-07gr-breda,Avans Hogeschool,nl-avans-hogeschool-07gr-breda-accountancy-1001o3528,Accountancy,1,1,1,1,1,0,1,0,2
 NL,nl-avans-hogeschool-07gr-breda,Avans Hogeschool,nl-avans-hogeschool-07gr-breda-chemische-technologie-1001o3144,Chemische Technologie,1,1,0,0,1,0,1,1,3
@@ -1079,7 +1079,7 @@ NL,nl-avans-hogeschool-07gr-s-hertogenbosch,Avans Hogeschool,nl-avans-hogeschool
 NL,nl-avans-hogeschool-07gr-s-hertogenbosch,Avans Hogeschool,nl-avans-hogeschool-07gr-s-hertogenbosch-ict-1016o4948,ICT,1,1,1,1,1,0,1,1,1
 NL,nl-breda-university-of-applied-sciences-21ui,Breda University of Applied Sciences,nl-breda-university-of-applied-sciences-21ui-applied-data-science-art-1001o8756,Applied Data Science & Artificial Intelligence,0,1,0,0,1,0,1,1,4
 NL,nl-capabel-hogeschool-30hc-rotterdam,Capabel Hogeschool,nl-capabel-hogeschool-30hc-rotterdam-ict-1001o8912,ICT,1,0,1,0,0,1,1,1,3
-NL,nl-capabel-hogeschool-30hc-utrecht,Capabel Hogeschool,nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182,Bedrijfskunde,1,1,0,0,0,1,1,1,3
+NL,nl-capabel-hogeschool-30hc-utrecht,Capabel Hogeschool,nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182,Bedrijfskunde,1,1,1,0,0,1,1,1,2
 NL,nl-christelijke-hogeschool-ede-25ba,Christelijke Hogeschool Ede,nl-christelijke-hogeschool-ede-25ba-bedrijfskunde-1001o2793,Bedrijfskunde,0,0,1,1,1,1,1,1,2
 NL,nl-christelijke-hogeschool-ede-25ba,Christelijke Hogeschool Ede,nl-christelijke-hogeschool-ede-25ba-ict-1001o2670,ICT,0,0,1,1,1,1,1,1,2
 NL,nl-christelijke-hogeschool-windesheim-01vu,Christelijke Hogeschool Windesheim,nl-christelijke-hogeschool-windesheim-01vu-accountancy-1001o3525,Accountancy,0,0,0,0,1,1,1,1,4
@@ -1088,7 +1088,7 @@ NL,nl-christelijke-hogeschool-windesheim-01vu,Christelijke Hogeschool Windesheim
 NL,nl-christelijke-hogeschool-windesheim-01vu-almere,Christelijke Hogeschool Windesheim,nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046,Bouwkunde,0,0,1,0,1,0,1,1,4
 NL,nl-christelijke-hogeschool-windesheim-01vu-almere,Christelijke Hogeschool Windesheim,nl-christelijke-hogeschool-windesheim-01vu-almere-ict-1001o2665,ICT,0,0,0,0,1,1,1,1,4
 NL,nl-de-haagse-hogeschool-27um,De Haagse Hogeschool,nl-de-haagse-hogeschool-27um-accountancy-1001o3550,Accountancy,0,1,0,0,1,0,1,1,4
-NL,nl-de-haagse-hogeschool-27um,De Haagse Hogeschool,nl-de-haagse-hogeschool-27um-applied-data-science-art-1001o8742,Applied Data Science & Artificial Intelligence,0,1,0,0,1,0,1,1,4
+NL,nl-de-haagse-hogeschool-27um,De Haagse Hogeschool,nl-de-haagse-hogeschool-27um-applied-data-science-art-1001o8742,Applied Data Science & Artificial Intelligence,1,1,0,0,1,0,1,1,3
 NL,nl-de-haagse-hogeschool-27um,De Haagse Hogeschool,nl-de-haagse-hogeschool-27um-bouwkunde-1001o3065,Bouwkunde,0,1,0,0,1,0,1,1,4
 NL,nl-de-haagse-hogeschool-27um-delft,De Haagse Hogeschool,nl-de-haagse-hogeschool-27um-delft-elektrotechniek-1001o3093,Elektrotechniek,0,1,0,0,1,0,1,1,4
 NL,nl-de-haagse-hogeschool-27um-delft,De Haagse Hogeschool,nl-de-haagse-hogeschool-27um-delft-ict-1001o2675,ICT,0,1,0,0,1,0,1,1,4
@@ -1099,17 +1099,17 @@ NL,nl-fontys-hogeschool-30gb,Fontys Hogeschool,nl-fontys-hogeschool-30gb-elektro
 NL,nl-fontys-hogeschool-30gb,Fontys Hogeschool,nl-fontys-hogeschool-30gb-ict-1001o2677,ICT,0,1,0,0,1,0,1,1,4
 NL,nl-fontys-hogeschool-30gb-tilburg,Fontys Hogeschool,nl-fontys-hogeschool-30gb-tilburg-commerciele-economie-1001o3452,Commerciële Economie,0,1,0,0,1,0,1,1,4
 NL,nl-fontys-hogeschool-30gb-tilburg,Fontys Hogeschool,nl-fontys-hogeschool-30gb-tilburg-ict-1001o2677,ICT,0,1,0,0,1,0,1,0,5
-NL,nl-fontys-hogeschool-30gb-tilburg,Fontys Hogeschool,nl-fontys-hogeschool-30gb-tilburg-technische-bedrijfskunde-1001o3682,Technische Bedrijfskunde,0,1,0,0,1,0,1,1,4
+NL,nl-fontys-hogeschool-30gb-tilburg,Fontys Hogeschool,nl-fontys-hogeschool-30gb-tilburg-technische-bedrijfskunde-1001o3682,Technische Bedrijfskunde,0,1,1,0,1,0,1,1,3
 NL,nl-fontys-hogeschool-30gb-venlo,Fontys Hogeschool,nl-fontys-hogeschool-30gb-venlo-commerciele-economie-1001o3452,Commerciële Economie,0,1,0,0,1,0,1,1,4
 NL,nl-fontys-hogeschool-30gb-venlo,Fontys Hogeschool,nl-fontys-hogeschool-30gb-venlo-industrieel-product-ontw-1001o3309,Industrieel Product Ontwerpen,0,1,0,0,1,0,1,0,5
 NL,nl-fontys-hogeschool-30gb-venlo,Fontys Hogeschool,nl-fontys-hogeschool-30gb-venlo-informatica-1001o3903,Informatica,0,1,0,0,1,0,1,1,4
 NL,nl-hogeschool-inholland-27pz,Hogeschool Inholland,nl-hogeschool-inholland-27pz-accountancy-1001o3549,Accountancy,0,1,0,0,1,0,1,0,5
-NL,nl-hogeschool-inholland-27pz-alkmaar,Hogeschool Inholland,nl-hogeschool-inholland-27pz-alkmaar-accountancy-1001o3549,Accountancy,1,1,0,0,1,0,1,0,4
+NL,nl-hogeschool-inholland-27pz-alkmaar,Hogeschool Inholland,nl-hogeschool-inholland-27pz-alkmaar-accountancy-1001o3549,Accountancy,1,1,0,0,1,1,1,0,3
 NL,nl-hogeschool-inholland-27pz-alkmaar,Hogeschool Inholland,nl-hogeschool-inholland-27pz-alkmaar-bouwkunde-1001o3064,Bouwkunde,1,1,1,1,1,0,1,1,1
 NL,nl-hogeschool-inholland-27pz-alkmaar,Hogeschool Inholland,nl-hogeschool-inholland-27pz-alkmaar-technische-informatica-1001o3859,Technische Informatica,1,0,1,1,1,0,0,0,4
 NL,nl-hogeschool-inholland-27pz-amsterdam,Hogeschool Inholland,nl-hogeschool-inholland-27pz-amsterdam-accountancy-1001o3549,Accountancy,1,1,0,0,1,0,1,0,4
 NL,nl-hogeschool-inholland-27pz-delft,Hogeschool Inholland,nl-hogeschool-inholland-27pz-delft-luchtvaarttechnologie-1001o3164,Luchtvaarttechnologie,1,1,0,0,1,0,1,0,4
-NL,nl-hogeschool-inholland-27pz-haarlem,Hogeschool Inholland,nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064,Bouwkunde,1,1,0,0,1,0,1,1,3
+NL,nl-hogeschool-inholland-27pz-haarlem,Hogeschool Inholland,nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064,Bouwkunde,1,1,0,0,1,1,1,1,2
 NL,nl-hogeschool-inholland-27pz-haarlem,Hogeschool Inholland,nl-hogeschool-inholland-27pz-haarlem-business-studies-1001o2990,Business Studies,0,1,1,1,1,0,1,1,2
 NL,nl-hogeschool-inholland-27pz-haarlem,Hogeschool Inholland,nl-hogeschool-inholland-27pz-haarlem-informatica-1001o3897,Informatica,1,1,0,0,1,0,1,0,4
 NL,nl-hogeschool-inholland-27pz-s-gravenhage,Hogeschool Inholland,nl-hogeschool-inholland-27pz-s-gravenhage-business-studies-1001o2990,Business Studies,1,1,1,1,1,1,1,1,0
@@ -1117,7 +1117,7 @@ NL,nl-hogeschool-inholland-27pz-velsen-noord,Hogeschool Inholland,nl-hogeschool-
 NL,nl-hogeschool-leiden-21ri,Hogeschool Leiden,nl-hogeschool-leiden-21ri-bio-informatica-1001o5219,Bio-informatica,1,0,0,0,1,1,0,1,4
 NL,nl-hogeschool-leiden-21ri,Hogeschool Leiden,nl-hogeschool-leiden-21ri-commerciele-economie-1001o3422,Commerciële Economie,0,0,0,0,1,1,1,1,4
 NL,nl-hogeschool-rotterdam-22oj,Hogeschool Rotterdam,nl-hogeschool-rotterdam-22oj-accountancy-1001o3536,Accountancy,0,1,0,0,1,0,1,0,5
-NL,nl-hogeschool-rotterdam-22oj,Hogeschool Rotterdam,nl-hogeschool-rotterdam-22oj-applied-data-science-art-1001o8776,Applied Data Science & Artificial Intelligence,0,0,1,1,1,0,0,1,4
+NL,nl-hogeschool-rotterdam-22oj,Hogeschool Rotterdam,nl-hogeschool-rotterdam-22oj-applied-data-science-art-1001o8776,Applied Data Science & Artificial Intelligence,0,1,1,1,1,0,1,1,2
 NL,nl-hogeschool-rotterdam-22oj,Hogeschool Rotterdam,nl-hogeschool-rotterdam-22oj-bouwkunde-1001o3055,Bouwkunde,0,1,1,1,1,0,1,1,2
 NL,nl-hogeschool-utrecht-25dw,Hogeschool Utrecht,nl-hogeschool-utrecht-25dw-accountancy-1001o3544,Accountancy,1,0,1,1,1,0,1,1,2
 NL,nl-hogeschool-utrecht-25dw,Hogeschool Utrecht,nl-hogeschool-utrecht-25dw-chemische-technologie-1001o3152,Chemische Technologie,1,0,0,0,1,0,1,1,4

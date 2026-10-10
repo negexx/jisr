@@ -1,0 +1,131 @@
+{
+  "slug": "de-hochschule-furtwangen-informatik-technik-hrk94-villingen-schwenningen-international-engineerin-daad4203",
+  "programmePage": "https://www.hs-furtwangen.de/en/programmes/international-engineering-bachelor/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.hs-furtwangen.de/en/programmes/international-engineering-bachelor/",
+          "quote": "Programme duration: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4203/",
+          "quote": "Teaching language English"
+        },
+        {
+          "url": "https://www.hs-furtwangen.de/en/programmes/international-engineering-bachelor/",
+          "quote": "Teaching language: English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4203/",
+          "quote": "non-EU countries 1,500 EUR"
+        },
+        {
+          "url": "https://www.hs-furtwangen.de/en/programmes/international-engineering-bachelor/",
+          "quote": "The Baden-Württemberg state government introduced tuition fees of €1500 / semester for non-EU students in Winter Semester 2017/18."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.hs-furtwangen.de/en/study/application",
+          "quote": "Then register and apply on MIO, Furtwangen University's online application portal: https://mio.hs-furtwangen.de/"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4203/",
+          "quote": "Applicants must submit all the required information stated within the online application process MIO – My University Portal – Furtwangen University."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "high-school-diploma",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "High school diploma"
+          },
+          "quotedAs": "high school diploma",
+          "translationRequired": null
+        },
+        {
+          "slug": "english-language-proficiency-certificate",
+          "name": {
+            "fr": "Certificat de compétence en anglais",
+            "en": "Certificate of English proficiency"
+          },
+          "quotedAs": "certificate of English proficiency",
+          "translationRequired": null
+        },
+        {
+          "slug": "aptitude-test",
+          "name": {
+            "fr": "Test d'aptitude",
+            "en": "Aptitude test"
+          },
+          "quotedAs": "aptitude test",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-furtwangen.de/en/studium/studiengaenge/international-business-management-bachelor/hfu-smart-admission",
+          "quote": "Just contact Daniel Krause at: Email application is started:daniel.krause(at)hs-furtwangen.de attaching the following required documents (if available): high school diploma certificate of English proficiency (TOEFL, IELTS, Cambridge or equivalent) aptitude test (ITB Technology, ITB Business Plus, SAT, ACT or TestAS)"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": null,
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4203/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (before 2026): 72 Reading: 18 Listening: 17 Speaking: 20 Writing: 17"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission et la procédure Smart Admission pour les candidats non-UE.",
+          "en": "Check admission requirements and Smart Admission procedure for non-EU applicants."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4203/",
+            "quote": "While most non-EU applicants are typically restricted from direct access to Bachelor’s studies, we offer a direct entry route to the International Engineering programme."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The application deadline of 15 July is general and not specifically stated for international/non-EU applicants, so it is omitted. The fee is stated per semester (€1,500) for non-EU students, matching the programme page and the general fee document; it is not a year figure."
+}

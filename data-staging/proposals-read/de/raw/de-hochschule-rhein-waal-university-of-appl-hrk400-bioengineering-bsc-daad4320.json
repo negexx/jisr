@@ -1,0 +1,120 @@
+{
+  "slug": "de-hochschule-rhein-waal-university-of-appl-hrk400-bioengineering-bsc-daad4320",
+  "programmePage": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+          "quote": "Programme duration 7 semesters"
+        },
+        {
+          "url": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc",
+          "quote": "Standard study duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+          "quote": "Teaching language English Languages Courses are held entirely in English."
+        },
+        {
+          "url": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc",
+          "quote": "Language of instruction English All courses and exams are offered in the language of instruction."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 0,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+          "quote": "Tuition fees per semester None"
+        },
+        {
+          "url": "https://www.hochschule-rhein-waal.de/en/studieren/all-about-university-life/costs-and-funding/living-costs-in-germany",
+          "quote": "Good to know: At Rhein-Waal University of Applied Sciences, you do not pay tuition fees, as it is a state university in North Rhine-Westphalia."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+          "quote": "The following is valid for applicants from: all countries For the winter semester: until 15 July"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+          "quote": "Submit application via Please apply via uni-assist."
+        },
+        {
+          "url": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc",
+          "quote": "Applying with a school-leaving qualification obtained outside of Germany First, register on hochschulstart.de. There, you will be given an applicant ID (BID) and an applicant authentication number (BAN). You can then use these details to apply via uni-assist."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/4320/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.:"
+          },
+          {
+            "url": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc",
+            "quote": "English language proficiency (Certificate of Level B2 according to the Common European Framework (CEF)), as the programme is taught entirely in English."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des restrictions d'admission (NC) s'appliquent à ce programme. Une sélection est effectuée selon les notes.",
+          "en": "This programme has admission restrictions (NC). Selection is based on grades."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hochschule-rhein-waal.de/en/faculties/life-sciences/degree-programmes/bioengineering-bsc",
+            "quote": "Admission restrictions: Please note that this degree programme is subject to admission restrictions (NC)."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "nl-christelijke-hogeschool-windesheim-01vu-almere-ict-1001o2665",
+  "programmePage": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle",
+          "quote": "Studieduur 4 jaar"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle",
+          "quote": "Meld je dan zo snel mogelijk aan via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "The programme page for ICT states collegegeld of € 2.694,- (2026-2027), which is the wettelijk collegegeld (EU/EEA rate) and not the institutional fee for non-EU students. No institutional fee for non-EU students was found on the supplied pages for this bachelor programme, so tuition is omitted. Intakes and documents are also omitted because the pages do not clearly give non-EU-specific deadlines or a document list for this programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un diplôme étranger équivalent au havo, vwo ou mbo-4 est requis ; vérifiez l'équivalence et les exigences linguistiques.",
+          "en": "A foreign diploma equivalent to havo, vwo or mbo-4 is required; check equivalence and language requirements."
+        },
+        "evidence": [
+          {
+            "url": "https://www.windesheim.nl/opleidingen/voltijd/bachelor/ict-zwolle",
+            "quote": "Je bent toelaatbaar met een diploma dat gelijkwaardig is aan een havo-, vwo- of mbo-4 diploma. Daarnaast moet je voldoen aan de taaleisen."
+          }
+        ]
+      }
+    ]
+  }
+}

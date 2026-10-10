@@ -26,9 +26,12 @@ teachingLanguages:
   source: daad
   info_kind: official
 tuition:
-  value: null
-  source: daad
-  info_kind: guidance
+  value:
+    amountMinor: 150000
+    currency: EUR
+    period: semester
+  source: page-1
+  info_kind: official
 intakes:
   value:
     - startDate: null
@@ -63,3 +66,6 @@ sources:
   daad:
     url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/3871/
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://www.reutlingen-university.de/studium/finanzierung
+    last_verified_at: 2026-10-10

@@ -1,0 +1,46 @@
+{
+  "slug": "fr-iut-nord-franche-comte-site-de-belfort-0900231m-but-techniques-de-commercialisat-10826",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10826&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10826&typeBac=0&originePc=0",
+          "quote": "La formation se déroule en 6 semestres."
+        }
+      ]
+    }
+  },
+  "notes": "Le montant de 178 euros par année est le tarif affiché au grand public sur la fiche Parcoursup ; il correspond vraisemblablement au droit d'inscription national pour les étudiants non extra-communautaires, mais la page ne le dit pas spécifiquement. Les étudiants extra-communautaires peuvent être soumis à des droits différenciés plus élevés selon l'établissement. Vérifiez le montant exact auprès de l'IUT. La langue d'enseignement principale est le français, avec possibilité de suivre la troisième année entièrement en anglais pour le parcours International business. L'anglais est requis comme compétence (langue vivante 1).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10826&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est sélective et repose sur une analyse du dossier (résultats scolaires, méthodes de travail, motivation, lettre de motivation, etc.). Vérifiez les critères sur la fiche Parcoursup de la formation.",
+          "en": "Admission is selective and based on a review of the application (academic results, work methods, motivation, cover letter, etc.). Check the criteria on the programme's Parcoursup page."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10826&typeBac=0&originePc=0",
+            "quote": "Les formations analysent les candidatures en avril-mai 2026 à partir des critères qu’elles ont définis et de leur niveau d’importance."
+          }
+        ]
+      }
+    ]
+  }
+}

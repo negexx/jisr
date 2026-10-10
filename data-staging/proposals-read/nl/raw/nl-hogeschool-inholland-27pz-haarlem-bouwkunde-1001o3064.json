@@ -1,0 +1,161 @@
+{
+  "slug": "nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064",
+  "programmePage": "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar en Haarlem taal Nederlands"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/opleidingen/bouwkunde-voltijd/",
+          "quote": "niveau Bachelor duur 4 jaar locatie Alkmaar en Haarlem taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1066500,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Voldoe je niet aan de voorwaarden voor het wettelijk collegegeld dan betaal je het instellingscollegegeld."
+        },
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Studiejaar 2027-2028 Start 1 september 2027"
+        },
+        {
+          "url": "https://www.inholland.nl/inschrijven/collegegeld/",
+          "quote": "Instellingscollegegeld* Voltijd en duaal: € 10.665"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 1
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+          "quote": "Studenten uit andere landen kunnen de voor hen geldende informatie vinden op onze website. Stap 1: Schrijf je in via Studielink en deel de benodigde documenten met de Centrale Studentenadministratie Deadline: 1 mei"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+          "quote": "Stap 1: Schrijf je in via Studielink en deel de benodigde documenten met de Centrale Studentenadministratie Deadline: 1 mei"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "diploma",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Diploma"
+          },
+          "quotedAs": "diploma",
+          "translationRequired": null
+        },
+        {
+          "slug": "transcript",
+          "name": {
+            "fr": "Relevé de notes",
+            "en": "Transcript"
+          },
+          "quotedAs": "cijferlijst",
+          "translationRequired": null
+        },
+        {
+          "slug": "identity-document",
+          "name": {
+            "fr": "Pièce d'identité",
+            "en": "Identity document"
+          },
+          "quotedAs": "identiteitsbewijs",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.inholland.nl/media/gk0dc3us/5-suriname-visa-sept-2026-leefgeld-nj.pdf",
+          "quote": "Stap 1: Schrijf je in via Studielink en deel de benodigde documenten met de Centrale Studentenadministratie"
+        },
+        {
+          "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+          "quote": "De CSA beoordeelt alleen diploma’s nadat je een aanmelding via Studielink hebt gedaan en je diploma, cijferlijst, en, indien nodig, een vertaling van een beëdigd vertaler, hebt geüpload in Selfservice."
+        },
+        {
+          "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+          "quote": "Als je persoonsgegevens nog niet zijn geverifieerd in Studielink dan moet je een kopie van je identiteitsbewijs uploaden via Selfservice."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+            "quote": "Je bent toelaatbaar tot een hbo-bacheloropleiding of associate degree opleiding als je een havo- of vwo-diploma of mbo-diploma niveau 4 op tijd hebt behaald."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/geyk1hwr/csa-gids-2022-2023-21042022.pdf",
+            "quote": "Indien het in paragraaf 1.1 onder e, f en g genoemde diploma in het buitenland is behaald, kan pas inschrijving voor een opleiding in de Nederlandse taal plaatsvinden nadat je hebt aangetoond dat je de Nederlandse taal beheerst op niveau B2 van het Gemeenschappelijk Europees Referentiekader (Common European Framework of Reference)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez que votre diplôme marocain est équivalent à un diplôme néerlandais havo, vwo ou mbo-4.",
+          "en": "Check that your Moroccan diploma is equivalent to a Dutch havo, vwo or mbo-4 diploma."
+        },
+        "evidence": [
+          {
+            "url": "https://www.inholland.nl/media/bksfqj3s/in-en-uitschrijfregels_202526052025.pdf",
+            "quote": "Heb je een diploma buiten Nederland behaald dan moet onder meer worden beoordeeld of dit gelijkwaardig is aan een Nederlands havo-, vwo- of mbo-diploma niveau 4."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Programme page states Dutch as the language of instruction and a 4-year duration. Tuition: the programme's own page gives no fee; the institution-wide collegegeld page gives one instellingscollegegeld amount for voltijd/duaal for study year 2027-2028 (€ 10.665) and states students who do not meet the statutory-fee conditions pay the institutional fee. Deadline: the Suriname visa page gives 1 May for Studielink registration but is aimed at Surinamese students; treated as a recurring deadline without a year."
+}

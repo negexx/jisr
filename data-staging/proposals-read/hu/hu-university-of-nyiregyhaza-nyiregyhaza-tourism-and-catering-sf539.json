@@ -1,0 +1,163 @@
+{
+  "slug": "hu-university-of-nyiregyhaza-nyiregyhaza-tourism-and-catering-sf539",
+  "programmePage": "https://english.nye.hu/en/node/319",
+  "facts": {
+    "documents": {
+      "value": [
+        {
+          "slug": "academic-certificates",
+          "name": {
+            "fr": "Certificats académiques (diplôme de fin d'études secondaires ou diplôme universitaire)",
+            "en": "Academic certificates (secondary school leaving certificate or university degree)"
+          },
+          "quotedAs": "Academic certificates (secondary school leaving certificate or university degree)",
+          "translationRequired": true
+        },
+        {
+          "slug": "transcript-of-records",
+          "name": {
+            "fr": "Relevé de notes",
+            "en": "Transcript of Records"
+          },
+          "quotedAs": "Transcript of Records",
+          "translationRequired": true
+        },
+        {
+          "slug": "passport-copy",
+          "name": {
+            "fr": "Copie du passeport",
+            "en": "Copy of passport"
+          },
+          "quotedAs": "Copy of passport",
+          "translationRequired": null
+        },
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "CV",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivation-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivation letter"
+          },
+          "quotedAs": "Motivation letter",
+          "translationRequired": null
+        },
+        {
+          "slug": "language-proficiency-proof",
+          "name": {
+            "fr": "Preuve de compétence linguistique",
+            "en": "Proof of language proficiency"
+          },
+          "quotedAs": "Proof of language proficiency",
+          "translationRequired": null
+        },
+        {
+          "slug": "general-medical-certificate",
+          "name": {
+            "fr": "Certificat médical général",
+            "en": "General Medical Certificate"
+          },
+          "quotedAs": "General Medical Certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "declaration-about-recruitment",
+          "name": {
+            "fr": "Déclaration de recrutement",
+            "en": "Declaration about recruitment"
+          },
+          "quotedAs": "Declaration about recruitment",
+          "translationRequired": null
+        },
+        {
+          "slug": "declaration-second-programme",
+          "name": {
+            "fr": "Déclaration concernant le deuxième programme d'études",
+            "en": "Declaration about your 2nd study programme"
+          },
+          "quotedAs": "Declaration about your 2nd study programme",
+          "translationRequired": null
+        },
+        {
+          "slug": "application-fee-payment-slip",
+          "name": {
+            "fr": "Justificatif de paiement des frais de candidature",
+            "en": "Proof of application fee payment slip"
+          },
+          "quotedAs": "Proof of application fee payment slip (100 EUR, non-refundable)",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://english.nye.hu/en/node/30",
+          "quote": "Academic certificates (secondary school leaving certificate or university degree) and Transcript of Records (these documents have to be officially attested with English translation)"
+        }
+      ]
+    }
+  },
+  "notes": "The tuition figure is the \"Tuition fee / semester * for non-EU applicants **\" of the Tourism and Catering BSc row, 2450 EUR per semester. Page footnotes add payment conditions: three semesters in advance for Bangladesh, Syria, Yemen applicants, and first two semesters payable in advance by the deadline in the Conditional Letter of Acceptance for applicants under *** (footnote applies to programmes marked ***; the Tourism and Catering row is marked ***). Both footnotes are exceptions with country- or programme-dependent conditions; a human should confirm which applies to a Moroccan applicant. The programme's own page was not supplied; the fee table page (node/319) and the application procedure page (node/30) were used.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Frais de candidature de 100 EUR non remboursables ; le montant total doit parvenir au compte de l'université.",
+          "en": "Application fee of 100 EUR non-refundable; the full amount must arrive at the University bank account."
+        },
+        "evidence": [
+          {
+            "url": "https://english.nye.hu/en/node/30",
+            "quote": "Proof of application fee payment slip (100 EUR, non-refundable)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien oral court via Microsoft Teams est organisé ; date envoyée par email après l'évaluation du dossier.",
+          "en": "A short oral interview via Microsoft Teams is held; the date is sent by email after the evaluation of your application documents."
+        },
+        "evidence": [
+          {
+            "url": "https://english.nye.hu/en/node/30",
+            "quote": "Entrance exam: Short oral interview via internet (platform: Microsoft Teams) to check the English skills, professional orientation and motivation)"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le certificat médical général doit être établi dans les 6 mois précédant la candidature.",
+          "en": "The General Medical Certificate must be issued within the previous 6 months."
+        },
+        "evidence": [
+          {
+            "url": "https://english.nye.hu/en/node/30",
+            "quote": "General Medical Certificate (Download form) – The certificate must be issued within the previous 6 months."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats de certains pays ne sont plus acceptés : Afghanistan, Algérie, Bangladesh, Népal, Arabie saoudite, Syrie et Yémen (28 avril 2026).",
+          "en": "Applicants from certain countries are no longer accepted: Afghanistan, Algeria, Bangladesh, Nepal, Saudi Arabia, Syria and Yemen (April 28, 2026)."
+        },
+        "evidence": [
+          {
+            "url": "https://applicationform.nye.hu/",
+            "quote": "the University of Nyíregyháza will no longer accept applications from the following countries as of today (April 28, 2026): Afghanistan, Algeria, Bangladesh, Nepal, Saudi Arabia, Syria and Yemen."
+          }
+        ]
+      }
+    ]
+  }
+}

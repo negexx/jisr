@@ -1,0 +1,70 @@
+{
+  "slug": "de-frankfurt-school-of-finance-management-hrk83-bachelors-in-computation-daad9740",
+  "programmePage": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9740/",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9740/",
+          "quote": "Programme duration 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9740/",
+          "quote": "The degree programme is taught entirely in English."
+        }
+      ]
+    }
+  },
+  "notes": "Evidence only exists for the degree programme named in the task (\"Bachelor's in Computational Business Analytics (BSc)\", DAAD page). The other supplied pages describe different programmes (Bachelor in Artificial Intelligence & Data Engineering, Master of Finance, MBAs, Bankfachwirt), so their fees, deadlines, language requirements and document lists are NOT used here. No tuition figure for this programme could be quoted: the only fee statement found (\"all countries 8,200 EUR\" on the DAAD page) belongs to the Computational Business Analytics page but is expressed as \"Tuition fees per semester\" and is immediately followed by \"Tuition fees may vary\", so a per-year amount cannot be stated without inventing one. No intake dates could be quoted either: the pages for this programme only give \"the application deadline is at the end of June\" (no day, no year) and \"Our application platform opens in September\" (no year), plus the FS AIDE page shows \"30 June 2027\" and \"1 September 2027\" but that page is for a different programme. No applicationChannel could be quoted for this programme: the DAAD page only says \"Submit application via Please check this website\", and the only application portal URL supplied (applybachelors.frankfurt-school.de/aide) belongs to the other bachelor programme. No documents fact could be quoted: the document list with \"A Recognised secondary school diploma\", \"A Curriculum Vitae (CV, résumé)\", \"A copy of your passport or ID card\" appears only on the Artificial Intelligence & Data Engineering page, not on the Computational Business Analytics page.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9740/",
+            "quote": "English language skills B2 required, proof via placement test/interview"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Admission conditionnelle à la réussite de notre Online Assessment Centre (test de maths, test cognitif, test d'anglais et entretien).",
+          "en": "Admission is conditional on passing our Online Assessment Centre (maths test, cognitive test, English test and interview)."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9740/",
+            "quote": "Successful completion of our Online Assessment Centre, consisting of: Maths test Cognitive test English test Interview"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission n'est ouverte qu'après obtention du diplôme de fin d'études secondaires (par ex. Abitur, IB, EB ou équivalent).",
+          "en": "Admission is only open once the secondary school diploma (e.g. Abitur, IB, EB or equivalent) has been obtained."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/9740/",
+            "quote": "Successful completion of a Secondary School Diploma (e.g. German Abitur, Fachhochschulreife, IB, EB or equivalent) – If you have yet to graduate, then you can apply by uploading your last two school reports."
+          }
+        ]
+      }
+    ]
+  }
+}

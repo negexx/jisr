@@ -1,0 +1,27 @@
+{
+  "slug": "hu-hungarian-university-of-agriculture-and-godollo-environmental-engineerin-sf976",
+  "programmePage": "https://ed.uni-mate.hu/en/bsc-in-environmental-engineering",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://ed.uni-mate.hu/en/bsc-in-environmental-engineering",
+          "quote": "Length of program: 7 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "hu",
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://ed.uni-mate.hu/en/bsc-in-environmental-engineering",
+          "quote": "Language of conduction: Hungarian or English"
+        }
+      ]
+    }
+  }
+}

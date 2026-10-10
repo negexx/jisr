@@ -21,7 +21,8 @@ durationYears:
   source: page-2
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - fr
   source: programme
   info_kind: official
 tuition:
@@ -37,8 +38,26 @@ applicationChannel:
   source: page-3
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: pre-inscription-form
+      name:
+        fr:
+          text: Dossier de pré-inscription
+          status: draft
+        en:
+          text: Pre-registration form
+          status: draft
+      translationRequired: null
+    - slug: validation-des-acquis-form
+      name:
+        fr:
+          text: Dossier de validation des acquis
+          status: draft
+        en:
+          text: Validation of prior learning form
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -66,3 +85,6 @@ sources:
   page-3:
     url: https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces
     last_verified_at: 2026-10-01
+  page-1:
+    url: https://ices.fr/candidater/
+    last_verified_at: 2026-10-10

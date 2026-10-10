@@ -1,0 +1,123 @@
+{
+  "slug": "de-kuhne-logistics-university-wissenschaftl-hrk429-bachelor-of-science-busi-daad11249",
+  "programmePage": "https://www.klu.org/programs/study-for-a-bachelor-in-business-administration-in-germany",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.klu.org/programs/study-for-a-bachelor-in-business-administration-in-germany",
+          "quote": "Study Period: 3 years / 6 Semester"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11249/",
+          "quote": "The courses are taught in English (100%)."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 790000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.klu.org/programs/study-for-a-bachelor-in-business-administration-in-germany",
+          "quote": "BSc in Business Administration Standard Track 180 3 years 6 semesters 1 September 7900.00 per semester"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": "2026-09-01",
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 31
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.klu.org/programs/study-for-a-bachelor-in-business-administration-in-germany",
+          "quote": "International (non-EU) applicants: March 31 (recommended), May 31 (final)"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "School-leaving certificate"
+          },
+          "quotedAs": "school leaving certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11249/",
+          "quote": "High school diploma or school leaving certificate qualifying you for admission to German universities"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11249/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: TOEFL iBT (since 2026): 4.5"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien avec l'équipe d'admission et les enseignants est requis.",
+          "en": "An interview with the admissions team and faculty is required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.klu.org/programs/study-for-a-bachelor-in-business-administration-in-germany",
+            "quote": "Interview - Meet our admissions team and faculty."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des exigences supplémentaires peuvent s'appliquer selon votre pays d'origine.",
+          "en": "Additional requirements may apply depending on your country of origin."
+        },
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11249/",
+            "quote": "Depending on your country of origin, there may be additional requirements — feel free to ask."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "tuition: the EUR 7,900 per semester is the standard-track fee; the intensive track costs 8,850 EUR per semester. The DAAD page states 'English language skills B2 required' but no quote explicitly names the B2 certificate as an English-language requirement; the DAAD page attributes the certificate to the English language skills. Any stated entry always includes a high school diploma and, depending on the country, additional requirements. The application deadline given by the DAAD page for non-EU applicants (31 March) has no year, so it is not used. No evidence found for applicationChannel (uni-assist or direct application). Some dates on the KLU page are for the 2026/2027 intake and are future dates; verify with the university."
+}

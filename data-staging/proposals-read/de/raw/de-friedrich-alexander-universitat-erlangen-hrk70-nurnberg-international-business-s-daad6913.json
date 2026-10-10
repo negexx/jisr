@@ -1,0 +1,168 @@
+{
+  "slug": "de-friedrich-alexander-universitat-erlangen-hrk70-nurnberg-international-business-s-daad6913",
+  "programmePage": "https://www.international-business-economics.wiso.rw.fau.eu/application/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6913/",
+          "quote": "The three-year programme provides you with all of the essential knowledge you need to understand and analyse the international business environment."
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6913/",
+          "quote": "Programme duration 6 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6913/",
+          "quote": "All compulsory courses are conducted in English."
+        },
+        {
+          "url": "https://www.international-business-economics.wiso.rw.fau.eu/application/",
+          "quote": "Teaching language: completely in English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 100000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.fau.de/studium/international-studierende/bewerbung-und-einschreibung-fuer-internationale/studiengebuehren-fuer-studierende-aus-nicht-eu-staaten/",
+          "quote": "International Business Studies Bachelor of Science Yes 1,000 euros"
+        },
+        {
+          "url": "https://www.international-business-economics.wiso.rw.fau.eu/application/",
+          "quote": "Tuition fee of 1000€ per semester for non-EU students"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 7,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.international-business-economics.wiso.rw.fau.eu/application/",
+          "quote": "Application deadline Winter semester: 15.07."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.international-business-economics.wiso.rw.fau.eu/application/",
+          "quote": "Please use the DoSV for registration and the Online Application Portal CAMPO to submit your application."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/6913/",
+            "quote": "English language skills B2 required, please provide an official language certificate, e.g.: IELTS Academic: 6"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission se fait via une procédure numerus clausus (NC) ; aucun seuil de note précis n'est indiqué pour ce programme.",
+          "en": "Admission is organised via a numerus clausus (NC) procedure; no specific grade threshold is stated for this programme."
+        },
+        "evidence": [
+          {
+            "url": "https://www.international-business-economics.wiso.rw.fau.eu/application/",
+            "quote": "Admission: With NC"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats internationaux doivent suivre une procédure d'admission et des délais spécifiques ; consultez la page dédiée de la FAU.",
+          "en": "International applicants have special admission requirements and application deadlines; check the dedicated FAU page."
+        },
+        "evidence": [
+          {
+            "url": "https://www.international-business-economics.wiso.rw.fau.eu/application/",
+            "quote": "Special admission requirements and application deadlines apply to international students interested in studying at FAU – here is an overview of all the important information."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des copies papier de plusieurs documents doivent être envoyées ; vérifiez lesquels et si une copie certifiée est exigée.",
+          "en": "Paper copies of several documents must be handed in; check which ones and whether a certified copy is required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.international-business-economics.wiso.rw.fau.eu/application/",
+            "quote": "Kindly note that applicants are required to hand in paper copies of several documents."
+          },
+          {
+            "url": "https://www.international-business-economics.wiso.rw.fau.eu/application/",
+            "quote": "Please inform yourself in a timely manner which documents are required and whether you need to provide a certified copy."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La candidature se fait dans le portail CAMPO de l'université, avec inscription via DoSV.",
+          "en": "The application is submitted in the university's CAMPO portal, with registration via DoSV."
+        },
+        "evidence": [
+          {
+            "url": "https://www.international-business-economics.wiso.rw.fau.eu/application/",
+            "quote": "Please use the DoSV for registration and the Online Application Portal CAMPO to submit your application."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des informations détaillées sur les exigences linguistiques et les certificats acceptés se trouvent dans la FAQ.",
+          "en": "Detailed information on language requirements and accepted certificates can be found in the FAQ."
+        },
+        "evidence": [
+          {
+            "url": "https://www.international-business-economics.wiso.rw.fau.eu/application/",
+            "quote": "More information is provided in the FAQ section."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Le programme commence au semestre d'hiver; la page d'inscription du programme indique également la possibilité de candidature en semestre d'hiver. Durée: la page d'inscription mentionne '6 semestres', ce qui correspond à 3 ans. Frais de dossier: 100 EUR par candidature pour les candidats non-UE (page des frais de candidature)."
+}

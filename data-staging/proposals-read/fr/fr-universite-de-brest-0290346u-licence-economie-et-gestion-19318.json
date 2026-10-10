@@ -1,0 +1,62 @@
+{
+  "slug": "fr-universite-de-brest-0290346u-licence-economie-et-gestion-19318",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19318&typeBac=0&originePc=0",
+  "facts": {},
+  "notes": "Cette fiche Parcoursup ne concerne pas le candidat marocain visé : les titulaires d'un bac marocain doivent candidater via Études en France / Campus France (voir les pages Campus France Maroc), donc la plateforme n'est pas indiquée ici. Les frais de 178 EUR/an sont ceux de Parcoursup pour les non-boursiers et ne distinguent pas les étudiants extra-communautaires (droits différenciés possibles, cf. page Campus France coût des études) ; le seul document nommé est la lettre de motivation. La durée n'est pas indiquée (licence, bac+3).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19318&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Formation sélective : le parcours international n'est accessible qu'aux bacheliers de la série générale (bac général). Vérifier l'adéquation de votre profil.",
+          "en": "Selective programme: the international track is open only to holders of the general baccalaureate series. Check whether your profile matches."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19318&typeBac=0&originePc=0",
+            "quote": "Le parcours international de la licence Economie-Gestion, sélectif, n'est accessible qu'aux bacheliers issus de la série générale."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Sélection sur dossier : résultats scolaires (75 %), méthodes de travail (10 %), savoir-être (10 %), motivation (5 %). Aucun seuil chiffré n'est donné.",
+          "en": "Selection on file: academic results (75%), working methods (10%), soft skills (10%), motivation (5%). No numeric threshold is given."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19318&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 75 % Méthodes de travail 10 % Savoir-être 10 % Motivation 5 %"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats doivent avoir suivi des enseignements en mathématiques et en anglais (compétences attendues en licence Economie-Gestion). À vérifier selon votre baccalauréat.",
+          "en": "Applicants should have taken mathematics and English courses (expected skills for the Economics and Management degree). To be checked against your baccalaureate."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=19318&typeBac=0&originePc=0",
+            "quote": "* Disposer de compétences en langue anglaise"
+          }
+        ]
+      }
+    ]
+  }
+}

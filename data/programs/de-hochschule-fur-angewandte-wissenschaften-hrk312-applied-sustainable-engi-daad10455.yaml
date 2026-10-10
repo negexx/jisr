@@ -34,8 +34,11 @@ tuition:
   source: programme
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: 2026-11-30
+  source: page-2
   info_kind: official
 applicationChannel:
   value: de-uni-assist-vpd

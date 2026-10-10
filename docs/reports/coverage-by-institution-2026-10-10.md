@@ -5,62 +5,62 @@
 | Institution | Slug | Programmes | tuition | language | intakes | deadline | channel | documents | duration | rules | All facts |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | Baden-Wuerttemberg Cooperative State University | de-baden-wuerttemberg-cooperative-state-uni-daad-mosbach | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 0 |
-| Bard College Berlin, A Liberal Arts University | de-bard-college-berlin-a-liberal-arts-unive-hrk437 | 1 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 0 | 0 |
+| Bard College Berlin, A Liberal Arts University | de-bard-college-berlin-a-liberal-arts-unive-hrk437 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 0 | 0 |
 | Carl von Ossietzky Universität Oldenburg | de-carl-von-ossietzky-universitat-oldenburg-hrk209 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | EBS Universität für Wirtschaft und Recht | de-ebs-universitat-fur-wirtschaft-und-recht-hrk206 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 2 | 0 | 0 |
 | FH Münster - University of Applied Sciences | de-fh-munster-university-of-applied-science-hrk192 | 2 | 2 | 2 | 2 | 2 | 0 | 1 | 2 | 1 | 0 |
 | Fachhochschule Aachen | de-fachhochschule-aachen-hrk2 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-| Fachhochschule Aachen | de-fachhochschule-aachen-hrk2-julich | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 1 | 0 | 0 |
+| Fachhochschule Aachen | de-fachhochschule-aachen-hrk2-julich | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 2 | 0 | 0 |
 | Frankfurt School of Finance & Management | de-frankfurt-school-of-finance-management-hrk83 | 3 | 2 | 3 | 1 | 0 | 1 | 3 | 3 | 0 | 0 |
 | Friedrich-Alexander-Universität Erlangen-Nürnberg | de-friedrich-alexander-universitat-erlangen-hrk70 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 0 |
 | Friedrich-Alexander-Universität Erlangen-Nürnberg | de-friedrich-alexander-universitat-erlangen-hrk70-nurnberg | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 0 |
 | HTW Berlin University of Applied Sciences | de-htw-berlin-university-of-applied-science-daad-berlin | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-| Hochschule Aalen - Technik, Wirtschaft und Gesundheit | de-hochschule-aalen-technik-wirtschaft-und-hrk3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 1 | 0 |
+| Hochschule Aalen - Technik, Wirtschaft und Gesundheit | de-hochschule-aalen-technik-wirtschaft-und-hrk3 | 3 | 3 | 3 | 1 | 1 | 3 | 3 | 3 | 1 | 0 |
 | Hochschule Albstadt-Sigmaringen | de-hochschule-albstadt-sigmaringen-hrk4-albstadt | 2 | 2 | 2 | 1 | 1 | 0 | 2 | 2 | 0 | 0 |
 | Hochschule Bielefeld - University of Applied Sciences and Arts (HSBI) | de-hochschule-bielefeld-university-of-appli-hrk28-gutersloh | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 1 |
-| Hochschule Bonn-Rhein-Sieg, University of Applied Sciences | de-hochschule-bonn-rhein-sieg-university-of-hrk294 | 1 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
+| Hochschule Bonn-Rhein-Sieg, University of Applied Sciences | de-hochschule-bonn-rhein-sieg-university-of-hrk294 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 |
 | Hochschule Bremerhaven | de-hochschule-bremerhaven-hrk41 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 1 |
 | Hochschule Fresenius - University of Applied Sciences | de-hochschule-fresenius-university-of-appli-daad-koln | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
 | Hochschule Fresenius Heidelberg – staatlich anerkannte Hochschule der Hochschule Fresenius für Internationales Management GmbH | de-hochschule-fresenius-heidelberg-staatlic-hrk440 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 0 | 0 |
-| Hochschule Fulda - University of Applied Sciences | de-hochschule-fulda-university-of-applied-s-hrk92 | 3 | 2 | 3 | 2 | 2 | 3 | 3 | 3 | 2 | 1 |
+| Hochschule Fulda - University of Applied Sciences | de-hochschule-fulda-university-of-applied-s-hrk92 | 3 | 3 | 3 | 2 | 2 | 3 | 3 | 3 | 2 | 1 |
 | Hochschule Furtwangen - Informatik, Technik, Wirtschaft, Medien, Gesundheit | de-hochschule-furtwangen-informatik-technik-hrk94-villingen-schwenningen | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 0 |
 | Hochschule Geisenheim | de-hochschule-geisenheim-hrk446 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | Hochschule Hamm-Lippstadt | de-hochschule-hamm-lippstadt-hrk399-lippstadt | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 0 | 0 |
 | Hochschule Hannover | de-hochschule-hannover-hrk115 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 0 | 0 |
-| Hochschule Heilbronn, Technik, Wirtschaft, Informatik | de-hochschule-heilbronn-technik-wirtschaft-hrk125 | 9 | 9 | 9 | 1 | 1 | 9 | 9 | 9 | 3 | 0 |
+| Hochschule Heilbronn, Technik, Wirtschaft, Informatik | de-hochschule-heilbronn-technik-wirtschaft-hrk125 | 9 | 9 | 9 | 3 | 3 | 9 | 9 | 9 | 3 | 1 |
 | Hochschule Heilbronn, Technik, Wirtschaft, Informatik | de-hochschule-heilbronn-technik-wirtschaft-hrk125-schwabisch-hall | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | Hochschule Kaiserslautern (University of Applied Sciences) | de-hochschule-kaiserslautern-university-of-hrk306 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 0 |
 | Hochschule Kaiserslautern (University of Applied Sciences) | de-hochschule-kaiserslautern-university-of-hrk306-pirmasens | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 0 |
 | Hochschule Kaiserslautern (University of Applied Sciences) | de-hochschule-kaiserslautern-university-of-hrk306-zweibrucken | 2 | 2 | 2 | 1 | 1 | 2 | 2 | 2 | 1 | 1 |
 | Hochschule Karlsruhe - Technik und Wirtschaft | de-hochschule-karlsruhe-technik-und-wirtsch-hrk138 | 2 | 2 | 2 | 2 | 2 | 1 | 2 | 2 | 1 | 1 |
-| Hochschule Koblenz | de-hochschule-koblenz-hrk305 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 |
+| Hochschule Koblenz | de-hochschule-koblenz-hrk305 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | Hochschule Landshut - Hochschule für angewandte Wissenschaften | de-hochschule-landshut-hochschule-fur-angew-hrk157-dingolfing | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 0 |
 | Hochschule Mainz | de-hochschule-mainz-hrk310 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 0 |
 | Hochschule Osnabrück | de-hochschule-osnabruck-hrk214 | 4 | 3 | 4 | 4 | 4 | 4 | 4 | 4 | 0 | 0 |
 | Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht | de-hochschule-pforzheim-gestaltung-technik-hrk219 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 1 | 1 |
-| Hochschule Ravensburg-Weingarten | de-hochschule-ravensburg-weingarten-hrk224 | 3 | 3 | 3 | 2 | 2 | 3 | 1 | 3 | 1 | 0 |
-| Hochschule Reutlingen, Hochschule für Technik- Wirtschaft-Informatik-Design | de-hochschule-reutlingen-hochschule-fur-tec-hrk227 | 1 | 0 | 1 | 1 | 1 | 0 | 0 | 1 | 0 | 0 |
-| Hochschule Rhein-Waal - University of Applied Sciences | de-hochschule-rhein-waal-university-of-appl-hrk400 | 5 | 3 | 5 | 3 | 3 | 5 | 5 | 5 | 2 | 0 |
+| Hochschule Ravensburg-Weingarten | de-hochschule-ravensburg-weingarten-hrk224 | 3 | 3 | 3 | 3 | 3 | 3 | 2 | 3 | 1 | 1 |
+| Hochschule Reutlingen, Hochschule für Technik- Wirtschaft-Informatik-Design | de-hochschule-reutlingen-hochschule-fur-tec-hrk227 | 1 | 1 | 1 | 1 | 1 | 0 | 0 | 1 | 0 | 0 |
+| Hochschule Rhein-Waal - University of Applied Sciences | de-hochschule-rhein-waal-university-of-appl-hrk400 | 5 | 4 | 5 | 5 | 5 | 5 | 5 | 5 | 2 | 2 |
 | Hochschule Trier - Trier University of Applied Sciences | de-hochschule-trier-trier-university-of-app-hrk308-hoppstadten-weiersbach | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
-| Hochschule Wismar - University of Applied Sciences: Technology, Business and Design | de-hochschule-wismar-university-of-applied-hrk274-rostock | 1 | 1 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 0 |
-| Hochschule der Medien Stuttgart | de-hochschule-der-medien-stuttgart-hrk250 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 0 |
+| Hochschule Wismar - University of Applied Sciences: Technology, Business and Design | de-hochschule-wismar-university-of-applied-hrk274-rostock | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 | 0 |
+| Hochschule der Medien Stuttgart | de-hochschule-der-medien-stuttgart-hrk250 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | Hochschule für Technik und Wirtschaft Dresden - University of Applied Sciences | de-hochschule-fur-technik-und-wirtschaft-dr-hrk54 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 0 |
-| Hochschule für angewandte Wissenschaften Ansbach | de-hochschule-fur-angewandte-wissenschaften-hrk312 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
-| Hochschule für angewandte Wissenschaften Coburg | de-hochschule-fur-angewandte-wissenschaften-hrk44 | 4 | 4 | 4 | 0 | 0 | 4 | 4 | 4 | 1 | 0 |
+| Hochschule für angewandte Wissenschaften Ansbach | de-hochschule-fur-angewandte-wissenschaften-hrk312 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| Hochschule für angewandte Wissenschaften Coburg | de-hochschule-fur-angewandte-wissenschaften-hrk44 | 4 | 4 | 4 | 3 | 3 | 4 | 4 | 4 | 1 | 1 |
 | Hochschule für angewandte Wissenschaften Coburg | de-hochschule-fur-angewandte-wissenschaften-hrk44-kronach | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 0 | 0 |
 | Hochschule für angewandte Wissenschaften Hof | de-hochschule-fur-angewandte-wissenschaften-hrk287 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 2 | 2 |
 | Hochschule für angewandte Wissenschaften Kempten | de-hochschule-fur-angewandte-wissenschaften-hrk143 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
 | Hochschule für angewandte Wissenschaften München | de-hochschule-fur-angewandte-wissenschaften-hrk291 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | Hochschule für angewandte Wissenschaften Weihenstephan-Triesdorf | de-hochschule-fur-angewandte-wissenschaften-hrk264 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
-| Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth | de-jade-hochschule-wilhelmshaven-oldenburg-hrk406 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
+| Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth | de-jade-hochschule-wilhelmshaven-oldenburg-hrk406 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | Kühne Logistics University - Wissenschaftliche Hochschule für Logistik und Unternehmensführung | de-kuhne-logistics-university-wissenschaftl-hrk429 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 0 | 0 |
-| Leuphana Universität Lüneburg | de-leuphana-universitat-luneburg-hrk171 | 2 | 2 | 2 | 1 | 1 | 2 | 2 | 2 | 1 | 0 |
+| Leuphana Universität Lüneburg | de-leuphana-universitat-luneburg-hrk171 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 1 |
 | Otto-von-Guericke-Universität Magdeburg | de-otto-von-guericke-universitat-magdeburg-hrk172 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | SRH University of Applied Sciences Heidelberg | de-srh-university-of-applied-sciences-heide-hrk122 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 | 0 |
 | Technische Hochschule Aschaffenburg | de-technische-hochschule-aschaffenburg-hrk333 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-| Technische Hochschule Augsburg | de-technische-hochschule-augsburg-hrk7 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
-| Technische Hochschule Deggendorf | de-technische-hochschule-deggendorf-hrk284 | 5 | 5 | 5 | 1 | 1 | 5 | 3 | 5 | 1 | 1 |
-| Technische Hochschule Deggendorf | de-technische-hochschule-deggendorf-hrk284-pfarrkirchen | 3 | 3 | 3 | 1 | 1 | 3 | 2 | 3 | 2 | 0 |
+| Technische Hochschule Augsburg | de-technische-hochschule-augsburg-hrk7 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| Technische Hochschule Deggendorf | de-technische-hochschule-deggendorf-hrk284 | 5 | 5 | 5 | 2 | 2 | 5 | 4 | 5 | 1 | 1 |
+| Technische Hochschule Deggendorf | de-technische-hochschule-deggendorf-hrk284-pfarrkirchen | 3 | 3 | 3 | 1 | 1 | 3 | 3 | 3 | 2 | 0 |
 | Technische Hochschule Ingolstadt | de-technische-hochschule-ingolstadt-hrk288 | 3 | 3 | 3 | 2 | 2 | 3 | 3 | 3 | 2 | 1 |
 | Technische Hochschule Ingolstadt | de-technische-hochschule-ingolstadt-hrk288-neuburg-an-der-donau | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 0 | 0 |
 | Technische Hochschule Köln | de-technische-hochschule-koln-hrk149 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 0 | 0 |
@@ -68,18 +68,18 @@
 | Technische Hochschule Mittelhessen - THM | de-technische-hochschule-mittelhessen-thm-hrk97 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
 | Technische Hochschule Nürnberg Georg Simon Ohm | de-technische-hochschule-nurnberg-georg-sim-hrk200 | 3 | 3 | 3 | 2 | 2 | 0 | 2 | 3 | 1 | 0 |
 | Technische Hochschule Rosenheim | de-technische-hochschule-rosenheim-hrk232 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 1 | 1 |
-| Technische Hochschule Rosenheim | de-technische-hochschule-rosenheim-hrk232-traunstein | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 0 |
+| Technische Hochschule Rosenheim | de-technische-hochschule-rosenheim-hrk232-traunstein | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 0 |
 | Technische Hochschule Ulm | de-technische-hochschule-ulm-hrk260 | 2 | 2 | 2 | 0 | 0 | 2 | 1 | 2 | 1 | 0 |
 | Technische Hochschule Wildau | de-technische-hochschule-wildau-hrk272 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 0 |
-| Technische Universität Braunschweig | de-technische-universitat-braunschweig-hrk35 | 1 | 1 | 1 | 1 | 1 | 0 | 0 | 1 | 0 | 0 |
+| Technische Universität Braunschweig | de-technische-universitat-braunschweig-hrk35 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 0 | 0 |
 | Technische Universität Chemnitz | de-technische-universitat-chemnitz-hrk42 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 1 |
 | Technische Universität Ilmenau | de-technische-universitat-ilmenau-hrk130 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 0 | 0 |
 | Technische Universität München | de-technische-universitat-munchen-hrk184-garching-bei-munchen | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
 | Technische Universität München | de-technische-universitat-munchen-hrk184-heilbronn | 2 | 2 | 2 | 1 | 1 | 2 | 2 | 2 | 1 | 1 |
-| Technische Universität München | de-technische-universitat-munchen-hrk184-straubing | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
-| Universität Duisburg-Essen | de-universitat-duisburg-essen-hrk71-duisburg | 3 | 0 | 3 | 3 | 3 | 3 | 3 | 3 | 0 | 0 |
-| Universität Hamburg | de-universitat-hamburg-hrk104 | 1 | 1 | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 |
-| Universität Passau | de-universitat-passau-hrk218 | 2 | 1 | 2 | 1 | 1 | 2 | 2 | 2 | 1 | 0 |
+| Technische Universität München | de-technische-universitat-munchen-hrk184-straubing | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| Universität Duisburg-Essen | de-universitat-duisburg-essen-hrk71-duisburg | 3 | 2 | 3 | 3 | 3 | 3 | 3 | 3 | 0 | 0 |
+| Universität Hamburg | de-universitat-hamburg-hrk104 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 0 |
+| Universität Passau | de-universitat-passau-hrk218 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 1 |
 | Universität zu Köln | de-universitat-zu-koln-hrk147 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | WHU - Otto Beisheim School of Management | de-whu-otto-beisheim-school-of-management-hrk261 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 | 0 | 0 |
 
@@ -102,13 +102,13 @@
 | ECM Ecole de commerce et management | fr-ecm-ecole-de-commerce-et-management-0251888s | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 1 | 0 |
 | ESIReims | fr-esireims-0511933z | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | Ecole Du Numérique - Faculté de Gestion, Economie - Sciences de l'Institut Catholique de LILLE | fr-ecole-du-numerique-faculte-de-gestion-ec-0597250k | 1 | 0 | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 |
-| Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay | fr-ecole-universitaire-de-premier-cycle-cam-0912409z | 5 | 4 | 2 | 5 | 5 | 5 | 5 | 5 | 5 | 1 |
+| Ecole Universitaire de premier cycle - Campus d'Orsay Université Paris-Saclay | fr-ecole-universitaire-de-premier-cycle-cam-0912409z | 5 | 4 | 3 | 5 | 5 | 5 | 5 | 5 | 5 | 2 |
 | EiSINe - Charleville-Mézières | fr-eisine-charleville-mezieres-0081149f | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | EiSINe - Reims | fr-eisine-reims-0512181u | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-| Facultés libres de l'Ouest - UCO ANGERS | fr-facultes-libres-de-louest-uco-angers-0492433d | 1 | 0 | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 |
+| Facultés libres de l'Ouest - UCO ANGERS | fr-facultes-libres-de-louest-uco-angers-0492433d | 1 | 1 | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 |
 | Facultés libres de l'ouest - UCO - Bretagne Nord | fr-facultes-libres-de-louest-uco-bretagne-n-0221844k | 2 | 0 | 2 | 0 | 0 | 2 | 0 | 2 | 2 | 0 |
-| Facultés libres de l'ouest - UCO - Nantes | fr-facultes-libres-de-louest-uco-nantes-0442777e | 1 | 0 | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 |
-| Facultés libres de l'ouest UCO - Niort | fr-facultes-libres-de-louest-uco-niort-0791199z | 1 | 0 | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 |
+| Facultés libres de l'ouest - UCO - Nantes | fr-facultes-libres-de-louest-uco-nantes-0442777e | 1 | 1 | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 |
+| Facultés libres de l'ouest UCO - Niort | fr-facultes-libres-de-louest-uco-niort-0791199z | 1 | 1 | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 |
 | I.U.T Clermont Auvergne - site d'Aubière | fr-i-u-t-clermont-auvergne-site-daubiere-0632085z | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 |
 | I.U.T Clermont Auvergne - site d'Aurillac | fr-i-u-t-clermont-auvergne-site-daurillac-0150746e | 2 | 1 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 |
 | I.U.T Clermont Auvergne - site de Montluçon | fr-i-u-t-clermont-auvergne-site-de-montluco-0031134s | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 |
@@ -116,7 +116,7 @@
 | I.U.T Clermont Auvergne - site du Puy | fr-i-u-t-clermont-auvergne-site-du-puy-0430951a | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | I.U.T De Rouen - Site Pasteur | fr-i-u-t-de-rouen-site-pasteur-0763422g | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | I.U.T De Rouen - Site d'Elbeuf | fr-i-u-t-de-rouen-site-delbeuf-0763214f | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-| I.U.T Epinal-Hubert Curien - Université de Lorraine | fr-i-u-t-epinal-hubert-curien-universite-de-0881705a | 2 | 2 | 1 | 2 | 2 | 2 | 2 | 2 | 2 | 1 |
+| I.U.T Epinal-Hubert Curien - Université de Lorraine | fr-i-u-t-epinal-hubert-curien-universite-de-0881705a | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | I.U.T Jean Moulin de l'Université Lyon 3 | fr-i-u-t-jean-moulin-de-luniversite-lyon-3-0693565a | 2 | 2 | 1 | 2 | 2 | 2 | 2 | 2 | 2 | 1 |
 | I.U.T LITTORAL (CALAIS) | fr-i-u-t-littoral-calais-0623218l | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 3 | 3 | 2 |
 | I.U.T LUMIERE Lyon 2 | fr-i-u-t-lumiere-lyon-2-0693521c | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
@@ -140,11 +140,11 @@
 | I.U.T de Béziers | fr-i-u-t-de-beziers-0341884n | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | I.U.T de Cergy-Pontoise - Site de Neuville | fr-i-u-t-de-cergy-pontoise-site-de-neuville-0951750l | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | I.U.T de Cergy-Pontoise - Site de Pontoise | fr-i-u-t-de-cergy-pontoise-site-de-pontoise-0951979k | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 0 |
-| I.U.T de Cergy-Pontoise - Site de Sarcelles | fr-i-u-t-de-cergy-pontoise-site-de-sarcelle-0951985s | 4 | 4 | 3 | 4 | 4 | 4 | 4 | 4 | 4 | 3 |
+| I.U.T de Cergy-Pontoise - Site de Sarcelles | fr-i-u-t-de-cergy-pontoise-site-de-sarcelle-0951985s | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 |
 | I.U.T de Chalon-Sur-Saône | fr-i-u-t-de-chalon-sur-saone-0711690b | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | I.U.T de Chartres | fr-i-u-t-de-chartres-0281056w | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | I.U.T de Corte | fr-i-u-t-de-corte-7200117p | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
-| I.U.T de Dijon | fr-i-u-t-de-dijon-0211139z | 4 | 4 | 2 | 4 | 4 | 4 | 4 | 4 | 4 | 2 |
+| I.U.T de Dijon | fr-i-u-t-de-dijon-0211139z | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 |
 | I.U.T de Dijon - Antenne d'Auxerre | fr-i-u-t-de-dijon-antenne-dauxerre-0891222v | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | I.U.T de Dijon - Antenne de Nevers | fr-i-u-t-de-dijon-antenne-de-nevers-0580779g | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | I.U.T de Figeac | fr-i-u-t-de-figeac-0460697h | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
@@ -158,7 +158,7 @@
 | I.U.T de Nancy-Brabois - Université de Lorraine | fr-i-u-t-de-nancy-brabois-universite-de-lor-0541205s | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 |
 | I.U.T de Nice - Antenne de Cannes | fr-i-u-t-de-nice-antenne-de-cannes-0061841u | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | I.U.T de Nice - Antenne de Valbonne | fr-i-u-t-de-nice-antenne-de-valbonne-0061817t | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
-| I.U.T de Nîmes | fr-i-u-t-de-nimes-0300930y | 5 | 5 | 4 | 5 | 5 | 5 | 5 | 5 | 5 | 4 |
+| I.U.T de Nîmes | fr-i-u-t-de-nimes-0300930y | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 |
 | I.U.T de Perpignan | fr-i-u-t-de-perpignan-0660586d | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | I.U.T de Perpignan (Site de Carcassonne) | fr-i-u-t-de-perpignan-site-de-carcassonne-0110982h | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | I.U.T de Perpignan (Site de Narbonne) | fr-i-u-t-de-perpignan-site-de-narbonne-0110983j | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
@@ -168,11 +168,11 @@
 | I.U.T de Rodez | fr-i-u-t-de-rodez-0120870f | 2 | 2 | 1 | 2 | 2 | 2 | 2 | 2 | 2 | 1 |
 | I.U.T de Rouen | fr-i-u-t-de-rouen-0760170x | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | I.U.T de Saint Dié - Université de Lorraine | fr-i-u-t-de-saint-die-universite-de-lorrain-0881679x | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
-| I.U.T de Saint-Brieuc | fr-i-u-t-de-saint-brieuc-0221848p | 2 | 2 | 1 | 2 | 2 | 2 | 2 | 2 | 2 | 1 |
+| I.U.T de Saint-Brieuc | fr-i-u-t-de-saint-brieuc-0221848p | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | I.U.T de Saint-Denis - Antenne de La Plaine - Université Paris 13 | fr-i-u-t-de-saint-denis-antenne-de-la-plain-0932326y | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | I.U.T de Saint-Denis - Université Paris 13 | fr-i-u-t-de-saint-denis-universite-paris-13-0931002j | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 |
 | I.U.T de Saint-Etienne | fr-i-u-t-de-saint-etienne-0420957m | 5 | 5 | 4 | 5 | 5 | 5 | 5 | 5 | 5 | 4 |
-| I.U.T de Saint-Malo | fr-i-u-t-de-saint-malo-0352379w | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 3 | 3 | 2 |
+| I.U.T de Saint-Malo | fr-i-u-t-de-saint-malo-0352379w | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | I.U.T de Sénart/Fontainebleau - Site Sénart - UPEC | fr-i-u-t-de-senart-fontainebleau-site-senar-0772347h | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 |
 | I.U.T de Tarbes | fr-i-u-t-de-tarbes-0650583f | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 |
 | I.U.T de Toulon | fr-i-u-t-de-toulon-0830165d | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 |
@@ -197,7 +197,7 @@
 | I.U.T de la Réunion | fr-i-u-t-de-la-reunion-9741180p | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 |
 | I.U.T des Pays de l'Adour | fr-i-u-t-des-pays-de-ladour-0641842e | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | I.U.T des Pays de l'Adour - Antenne de Mont De Marsan | fr-i-u-t-des-pays-de-ladour-antenne-de-mont-0400934y | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
-| I.U.T du Creusot | fr-i-u-t-du-creusot-0711372f | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 3 | 3 | 2 |
+| I.U.T du Creusot | fr-i-u-t-du-creusot-0711372f | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | I.U.T du Havre | fr-i-u-t-du-havre-0761688x | 6 | 6 | 5 | 6 | 6 | 6 | 6 | 6 | 6 | 5 |
 | I.U.T du Limousin - site d'Egletons | fr-i-u-t-du-limousin-site-degletons-0190612m | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | I.U.T du Limousin - site de Brive | fr-i-u-t-du-limousin-site-de-brive-0190855b | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
@@ -242,10 +242,10 @@
 | I.U.T. de Schiltigheim | fr-i-u-t-de-schiltigheim-0672462m | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | I.U.T. de Schiltigheim - Site de Sélestat | fr-i-u-t-de-schiltigheim-site-de-selestat-0673149j | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | I.U.T. de Sénart/Fontainebleau - site de Fontainebleau - UPEC | fr-i-u-t-de-senart-fontainebleau-site-de-fo-0772346g | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
-| I.U.T. de Valenciennes | fr-i-u-t-de-valenciennes-0593052x | 5 | 5 | 4 | 5 | 5 | 5 | 5 | 5 | 5 | 4 |
+| I.U.T. de Valenciennes | fr-i-u-t-de-valenciennes-0593052x | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 |
 | I.U.T. de Valenciennes - Site de Cambrai | fr-i-u-t-de-valenciennes-site-de-cambrai-0596244s | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | I.U.T. de Valenciennes - Site de Maubeuge | fr-i-u-t-de-valenciennes-site-de-maubeuge-0596183a | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-| ICES - Institut Catholique de Vendée | fr-ices-institut-catholique-de-vendee-0851415b | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 1 | 0 |
+| ICES - Institut Catholique de Vendée | fr-ices-institut-catholique-de-vendee-0851415b | 1 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
 | ICL - ESTICE | fr-icl-estice-0592608p | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 1 | 0 |
 | ICL - ISTC | fr-icl-istc-0596011n | 1 | 0 | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 |
 | INSTITUT CATHOLIQUE EUROPEEN DES AMERIQUES | fr-institut-catholique-europeen-des-ameriqu-9720920t | 1 | 0 | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 |
@@ -260,7 +260,7 @@
 | IUT GRAND OUEST NORMANDIE - Pôle de Caen - Site d'Ifs | fr-iut-grand-ouest-normandie-pole-de-caen-s-0142218k | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | IUT GRAND OUEST NORMANDIE - Pôle de Caen - Site de Caen | fr-iut-grand-ouest-normandie-pole-de-caen-s-0141234r | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | IUT GRAND OUEST NORMANDIE - Pôle de Caen - Site de Lisieux | fr-iut-grand-ouest-normandie-pole-de-caen-s-0142179t | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
-| IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Cherbourg-en-Cotentin | fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l | 4 | 4 | 3 | 4 | 4 | 4 | 4 | 4 | 4 | 3 |
+| IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Cherbourg-en-Cotentin | fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 |
 | IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Saint-Lô | fr-iut-grand-ouest-normandie-pole-de-cherbo-0501928z | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | IUT LITTORAL (DUNKERQUE) | fr-iut-littoral-dunkerque-0594365z | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | IUT LITTORAL (SAINT OMER) | fr-iut-littoral-saint-omer-0624062d | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
@@ -270,7 +270,7 @@
 | IUT Montpellier-Sète - site de Sète - Pôle Universitaire Michèle WEIL | fr-iut-montpellier-sete-site-de-sete-pole-u-0342503l | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | IUT Nord Franche-Comté - Site de Belfort | fr-iut-nord-franche-comte-site-de-belfort-0900231m | 5 | 5 | 3 | 5 | 5 | 5 | 5 | 5 | 5 | 3 |
 | IUT Nord Franche-Comté - Site de Montbéliard | fr-iut-nord-franche-comte-site-de-montbelia-0251763f | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
-| IUT Reims-Châlons-Charleville site de Charleville | fr-iut-reims-chalons-charleville-site-de-ch-0081084k | 2 | 2 | 1 | 2 | 2 | 2 | 2 | 2 | 2 | 1 |
+| IUT Reims-Châlons-Charleville site de Charleville | fr-iut-reims-chalons-charleville-site-de-ch-0081084k | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | IUT d'Amiens | fr-iut-damiens-0801265r | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 |
 | IUT de Bordeaux - Antenne de Polynésie Française | fr-iut-de-bordeaux-antenne-de-polynesie-fra-9840471p | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | IUT de CHAMBERY | fr-iut-de-chambery-0731487v | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 |
@@ -279,7 +279,7 @@
 | IUT de Kourou | fr-iut-de-kourou-9730186p | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | IUT de Kourou - Campus de TROUBIRAN à Cayenne | fr-iut-de-kourou-campus-de-troubiran-a-caye-9730408f | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | IUT de Moselle Est - Site de Forbach - Université de Lorraine | fr-iut-de-moselle-est-site-de-forbach-unive-0573627h | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-| IUT de Moselle Est - Site de Sarreguemines - Université de Lorraine | fr-iut-de-moselle-est-site-de-sarreguemines-0573433x | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 0 |
+| IUT de Moselle Est - Site de Sarreguemines - Université de Lorraine | fr-iut-de-moselle-est-site-de-sarreguemines-0573433x | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | IUT de Nantes - Antenne de Châteaubriant | fr-iut-de-nantes-antenne-de-chateaubriant-0442961e | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | IUT de Paris - Rives de Seine - Université Paris Cité | fr-iut-de-paris-rives-de-seine-universite-p-0754247j | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 |
 | IUT de Sceaux-Ecole universitaire de premier cycle-Université Paris-Saclay. | fr-iut-de-sceaux-ecole-universitaire-de-pre-0921245d | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
@@ -304,15 +304,15 @@
 | Universite Jean Monnet, Saint-Etienne | fr-universite-jean-monnet-saint-etienne-0421095m | 3 | 3 | 1 | 3 | 3 | 3 | 3 | 3 | 3 | 1 |
 | Université Angers | fr-universite-angers-0490970n | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | Université Bourgogne Europe (ex université de Bourgogne) | fr-universite-bourgogne-europe-ex-universit-0212296g | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
-| Université Clermont Auvergne | fr-universite-clermont-auvergne-0632084y | 3 | 3 | 0 | 3 | 3 | 3 | 3 | 3 | 3 | 0 |
-| Université Côte d'Azur | fr-universite-cote-dazur-0062205p | 5 | 5 | 4 | 5 | 5 | 5 | 5 | 5 | 5 | 4 |
+| Université Clermont Auvergne | fr-universite-clermont-auvergne-0632084y | 3 | 3 | 1 | 3 | 3 | 3 | 3 | 3 | 3 | 1 |
+| Université Côte d'Azur | fr-universite-cote-dazur-0062205p | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 |
 | Université Grenoble Alpes | fr-universite-grenoble-alpes-0383546y | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 |
 | Université Grenoble Alpes - Antenne de Valence | fr-universite-grenoble-alpes-antenne-de-val-0261372a | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 3 | 3 | 2 |
 | Université Gustave Eiffel | fr-universite-gustave-eiffel-0772894c | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | Université Jean Monnet - Campus de Roanne | fr-universite-jean-monnet-campus-de-roanne-0422152l | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | Université Jean Moulin Lyon 3 | fr-universite-jean-moulin-lyon-3-0692437z | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | Université Le Havre Normandie | fr-universite-le-havre-normandie-0762762p | 4 | 4 | 2 | 4 | 4 | 4 | 4 | 4 | 4 | 2 |
-| Université Lumière - Lyon 2 | fr-universite-lumiere-lyon-2-0691775e | 5 | 5 | 0 | 5 | 5 | 5 | 5 | 5 | 5 | 0 |
+| Université Lumière - Lyon 2 | fr-universite-lumiere-lyon-2-0691775e | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 | 2 |
 | Université Lyon 2 - Campus Porte des Alpes | fr-universite-lyon-2-campus-porte-des-alpes-0692198p | 2 | 2 | 1 | 2 | 2 | 2 | 2 | 2 | 2 | 1 |
 | Université Marie et Louis Pasteur - Université de Franche-Comté | fr-universite-marie-et-louis-pasteur-univer-0252044l | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | Université Marie et Louis Pasteur - Université de Franche-Comté (Belfort) | fr-universite-marie-et-louis-pasteur-univer-0900385e | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
@@ -327,15 +327,15 @@
 | Université Polytechnique Hauts-de-France | fr-universite-polytechnique-hauts-de-france-0597132g | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 |
 | Université Savoie Mont Blanc - Annecy-le-Vieux | fr-universite-savoie-mont-blanc-annecy-le-v-0741586x | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | Université Savoie Mont Blanc - Bourget-du-Lac | fr-universite-savoie-mont-blanc-bourget-du-0731570k | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
-| Université Sorbonne Paris Nord | fr-universite-sorbonne-paris-nord-0931238r | 6 | 6 | 3 | 6 | 6 | 6 | 6 | 6 | 6 | 3 |
-| Université Toulouse Capitole | fr-universite-toulouse-capitole-0313124c | 3 | 3 | 1 | 3 | 3 | 3 | 3 | 3 | 3 | 1 |
+| Université Sorbonne Paris Nord | fr-universite-sorbonne-paris-nord-0931238r | 6 | 6 | 4 | 6 | 6 | 6 | 6 | 6 | 6 | 4 |
+| Université Toulouse Capitole | fr-universite-toulouse-capitole-0313124c | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 3 | 3 | 2 |
 | Université Toulouse III - Université Toulouse | fr-universite-toulouse-iii-universite-toulo-0313218e | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 |
 | Université d'Amiens | fr-universite-damiens-0801344b | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | Université d'Artois - Site d'Arras | fr-universite-dartois-site-darras-0623957p | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | Université d'Artois - Site de Lens | fr-universite-dartois-site-de-lens-0623911p | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | Université d'Evry Val d'Essonne | fr-universite-devry-val-dessonne-0911975c | 2 | 2 | 1 | 2 | 2 | 2 | 2 | 2 | 2 | 1 |
 | Université d'Orléans | fr-universite-dorleans-0450855k | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 | 4 |
-| Université de Bordeaux - Bordeaux Métropole | fr-universite-de-bordeaux-bordeaux-metropol-0333298f | 6 | 6 | 2 | 6 | 6 | 6 | 6 | 6 | 6 | 2 |
+| Université de Bordeaux - Bordeaux Métropole | fr-universite-de-bordeaux-bordeaux-metropol-0333298f | 6 | 6 | 3 | 6 | 6 | 6 | 6 | 6 | 6 | 3 |
 | Université de Brest | fr-universite-de-brest-0290346u | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 3 | 3 | 2 |
 | Université de Bretagne Sud - Site de Lorient | fr-universite-de-bretagne-sud-site-de-lorie-0561718n | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | Université de Bretagne Sud - Site de Vannes | fr-universite-de-bretagne-sud-site-de-vanne-0561739l | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
@@ -343,9 +343,9 @@
 | Université de Cergy-Pontoise - CY SUP | fr-universite-de-cergy-pontoise-cy-sup-0952260r | 2 | 2 | 1 | 2 | 2 | 2 | 2 | 2 | 2 | 1 |
 | Université de Corte | fr-universite-de-corte-7200664j | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | Université de Guyane | fr-universite-de-guyane-9730429d | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
-| Université de La Réunion - Saint Denis | fr-universite-de-la-reunion-saint-denis-9740478b | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 3 | 3 | 2 |
+| Université de La Réunion - Saint Denis | fr-universite-de-la-reunion-saint-denis-9740478b | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | Université de Lille | fr-universite-de-lille-0597239y | 5 | 5 | 3 | 5 | 5 | 5 | 5 | 5 | 5 | 3 |
-| Université de Limoges | fr-universite-de-limoges-0870669e | 4 | 4 | 2 | 4 | 4 | 4 | 4 | 4 | 4 | 2 |
+| Université de Limoges | fr-universite-de-limoges-0870669e | 4 | 4 | 3 | 4 | 4 | 4 | 4 | 4 | 4 | 3 |
 | Université de Lorraine - Faculté de Droit, Economie et Administration - Site de Metz (57) | fr-universite-de-lorraine-faculte-de-droit-0572536x | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | Université de Lorraine - Faculté de Droit, Sciences Economiques et Gestion - Site de Nancy (54) | fr-universite-de-lorraine-faculte-de-droit-0541668v | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | Université de Lorraine - Faculté des Sciences et Technologies - site de Nancy (54) | fr-universite-de-lorraine-faculte-des-scien-0542485h | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
@@ -382,56 +382,56 @@
 
 | Institution | Slug | Programmes | tuition | language | intakes | deadline | channel | documents | duration | rules | All facts |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Budapest Metropolitan University | hu-budapest-metropolitan-university-budapest | 4 | 4 | 4 | 0 | 0 | 0 | 2 | 2 | 4 | 0 |
-| Budapest University of Economics and Business | hu-budapest-university-of-economics-and-bus-budapest | 4 | 4 | 4 | 0 | 0 | 0 | 3 | 4 | 4 | 0 |
-| Budapest University of Technology and Economics | hu-budapest-university-of-technology-and-ec-budapest | 11 | 0 | 11 | 0 | 0 | 1 | 1 | 11 | 11 | 0 |
-| Corvinus University of Budapest | hu-corvinus-university-of-budapest-budapest | 4 | 3 | 4 | 0 | 0 | 0 | 2 | 4 | 4 | 0 |
-| Dennis Gabor University | hu-dennis-gabor-university-budapest | 3 | 0 | 3 | 0 | 0 | 0 | 0 | 3 | 3 | 0 |
+| Budapest Metropolitan University | hu-budapest-metropolitan-university-budapest | 4 | 4 | 4 | 0 | 0 | 0 | 4 | 2 | 4 | 0 |
+| Budapest University of Economics and Business | hu-budapest-university-of-economics-and-bus-budapest | 4 | 4 | 4 | 0 | 0 | 0 | 4 | 4 | 4 | 0 |
+| Budapest University of Technology and Economics | hu-budapest-university-of-technology-and-ec-budapest | 11 | 0 | 11 | 0 | 0 | 1 | 11 | 11 | 11 | 0 |
+| Corvinus University of Budapest | hu-corvinus-university-of-budapest-budapest | 4 | 3 | 4 | 0 | 0 | 0 | 4 | 4 | 4 | 0 |
+| Dennis Gabor University | hu-dennis-gabor-university-budapest | 3 | 0 | 3 | 0 | 0 | 0 | 3 | 3 | 3 | 0 |
 | Eötvös József College | hu-eotvos-jozsef-college-baja | 2 | 0 | 2 | 0 | 0 | 0 | 2 | 0 | 2 | 0 |
-| Eötvös Loránd University | hu-eotvos-lorand-university-budapest | 4 | 3 | 4 | 0 | 0 | 1 | 1 | 4 | 4 | 0 |
+| Eötvös Loránd University | hu-eotvos-lorand-university-budapest | 4 | 3 | 4 | 0 | 0 | 1 | 4 | 4 | 4 | 0 |
 | Eötvös Loránd University | hu-eotvos-lorand-university-szombathely | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
-| Gál Ferenc University | hu-gal-ferenc-university-bekescsaba | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 |
+| Gál Ferenc University | hu-gal-ferenc-university-bekescsaba | 1 | 0 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 0 |
 | Hungarian University of Agriculture and Life Sciences | hu-hungarian-university-of-agriculture-and-budapest | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 0 |
-| Hungarian University of Agriculture and Life Sciences | hu-hungarian-university-of-agriculture-and-godollo | 3 | 3 | 3 | 0 | 0 | 0 | 2 | 2 | 3 | 0 |
+| Hungarian University of Agriculture and Life Sciences | hu-hungarian-university-of-agriculture-and-godollo | 3 | 3 | 3 | 0 | 0 | 0 | 3 | 3 | 3 | 0 |
 | Hungarian University of Agriculture and Life Sciences | hu-hungarian-university-of-agriculture-and-gyongyos | 1 | 0 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 0 |
-| John von Neumann University | hu-john-von-neumann-university-kecskemet | 6 | 5 | 6 | 0 | 0 | 5 | 4 | 5 | 6 | 0 |
-| Obuda University | hu-obuda-university-budapest | 8 | 6 | 8 | 0 | 0 | 4 | 4 | 8 | 8 | 0 |
-| Széchenyi István University | hu-szechenyi-istvan-university-gyor | 9 | 0 | 9 | 0 | 0 | 0 | 7 | 9 | 9 | 0 |
-| University of Debrecen | hu-university-of-debrecen-debrecen | 14 | 8 | 14 | 0 | 0 | 10 | 6 | 7 | 13 | 0 |
-| University of Dunaújváros | hu-university-of-dunaujvaros-dunaujvaros | 4 | 0 | 4 | 0 | 0 | 0 | 3 | 4 | 4 | 0 |
-| University of Miskolc | hu-university-of-miskolc-miskolc | 5 | 0 | 5 | 0 | 0 | 0 | 3 | 4 | 5 | 0 |
-| University of Nyíregyháza | hu-university-of-nyiregyhaza-nyiregyhaza | 7 | 5 | 7 | 0 | 0 | 2 | 1 | 7 | 7 | 0 |
-| University of Pannonia | hu-university-of-pannonia-nagykanizsa | 2 | 2 | 2 | 0 | 0 | 0 | 1 | 2 | 2 | 0 |
-| University of Pannonia | hu-university-of-pannonia-veszprem | 5 | 5 | 5 | 0 | 0 | 0 | 1 | 3 | 5 | 0 |
-| University of Public Service | hu-university-of-public-service-baja | 3 | 0 | 3 | 0 | 0 | 0 | 0 | 3 | 3 | 0 |
-| University of Pécs | hu-university-of-pecs-pecs | 6 | 5 | 5 | 0 | 0 | 3 | 1 | 6 | 6 | 0 |
-| University of Sopron | hu-university-of-sopron-sopron | 3 | 1 | 3 | 0 | 0 | 1 | 0 | 3 | 3 | 0 |
-| University of Szeged | hu-university-of-szeged-szeged | 3 | 1 | 3 | 0 | 0 | 0 | 1 | 1 | 3 | 0 |
+| John von Neumann University | hu-john-von-neumann-university-kecskemet | 6 | 6 | 6 | 0 | 0 | 6 | 6 | 5 | 6 | 0 |
+| Obuda University | hu-obuda-university-budapest | 8 | 6 | 8 | 0 | 0 | 8 | 8 | 8 | 8 | 0 |
+| Széchenyi István University | hu-szechenyi-istvan-university-gyor | 9 | 0 | 9 | 0 | 0 | 0 | 9 | 9 | 9 | 0 |
+| University of Debrecen | hu-university-of-debrecen-debrecen | 14 | 12 | 14 | 0 | 0 | 13 | 14 | 7 | 13 | 0 |
+| University of Dunaújváros | hu-university-of-dunaujvaros-dunaujvaros | 4 | 0 | 4 | 0 | 0 | 0 | 4 | 4 | 4 | 0 |
+| University of Miskolc | hu-university-of-miskolc-miskolc | 5 | 0 | 5 | 0 | 0 | 0 | 5 | 4 | 5 | 0 |
+| University of Nyíregyháza | hu-university-of-nyiregyhaza-nyiregyhaza | 7 | 6 | 7 | 0 | 0 | 2 | 7 | 7 | 7 | 0 |
+| University of Pannonia | hu-university-of-pannonia-nagykanizsa | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 2 | 2 | 0 |
+| University of Pannonia | hu-university-of-pannonia-veszprem | 5 | 5 | 5 | 0 | 0 | 0 | 5 | 3 | 5 | 0 |
+| University of Public Service | hu-university-of-public-service-baja | 3 | 0 | 3 | 0 | 0 | 1 | 3 | 3 | 3 | 0 |
+| University of Pécs | hu-university-of-pecs-pecs | 6 | 6 | 5 | 0 | 0 | 4 | 6 | 6 | 6 | 0 |
+| University of Sopron | hu-university-of-sopron-sopron | 3 | 1 | 3 | 0 | 0 | 1 | 3 | 3 | 3 | 0 |
+| University of Szeged | hu-university-of-szeged-szeged | 3 | 1 | 3 | 0 | 0 | 0 | 3 | 1 | 3 | 0 |
 
 ## IT
 
 | Institution | Slug | Programmes | tuition | language | intakes | deadline | channel | documents | duration | rules | All facts |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | Libera Università Mediterranea "Giuseppe Degennaro" | it-casamassima-lum-g-degennaro-casamassima | 1 | 0 | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 0 |
-| Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma | it-roma-luiss-roma | 3 | 3 | 3 | 1 | 1 | 0 | 3 | 3 | 2 | 0 |
+| Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma | it-roma-luiss-roma | 3 | 3 | 3 | 2 | 2 | 0 | 3 | 3 | 2 | 0 |
 | Politecnico di Bari | it-bari-politecnico-bari | 1 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
 | Politecnico di Milano | it-milano-politecnico-milano | 3 | 0 | 3 | 0 | 0 | 3 | 3 | 3 | 3 | 0 |
 | Politecnico di Torino | it-torino-politecnico-torino | 2 | 2 | 2 | 1 | 1 | 2 | 2 | 1 | 2 | 0 |
 | Università Ca' Foscari Venezia | it-ca-foscari-venezia-roncade | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
 | Università Ca' Foscari Venezia | it-ca-foscari-venezia-venezia | 2 | 0 | 2 | 1 | 0 | 2 | 2 | 2 | 2 | 0 |
-| Università Campus Bio-Medico di Roma | it-roma-biomedico-roma | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 0 |
+| Università Campus Bio-Medico di Roma | it-roma-biomedico-roma | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 0 | 0 |
 | Università Cattolica del "Sacro Cuore" | it-milano-cattolica-brescia | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
 | Università Cattolica del "Sacro Cuore" | it-milano-cattolica-milano | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 0 |
 | Università Politecnica delle Marche - Ancona | it-marche-ancona | 1 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
 | Università commerciale Luigi Bocconi di Milano | it-milano-bocconi-milano | 5 | 4 | 5 | 1 | 1 | 0 | 5 | 3 | 1 | 0 |
-| Università degli Studi di Cassino e del Lazio Meridionale | it-cassino-cassino | 3 | 3 | 2 | 0 | 0 | 3 | 3 | 3 | 2 | 0 |
+| Università degli Studi di Cassino e del Lazio Meridionale | it-cassino-cassino | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 2 | 0 |
 | Università degli studi della Campania "Luigi Vanvitelli" | it-napoli-vanvitelli-caserta | 1 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
 | Università degli studi di Bologna | it-bologna-bologna | 3 | 3 | 3 | 2 | 2 | 3 | 3 | 1 | 3 | 0 |
 | Università degli studi di Bologna | it-bologna-forli | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
 | Università degli studi di Bologna | it-bologna-ravenna | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
 | Università degli studi di Bologna | it-bologna-rimini | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 0 | 0 | 0 |
 | Università degli studi di Brescia | it-brescia-brescia | 1 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | 1 | 0 |
-| Università degli studi di Firenze | it-firenze-firenze | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 0 |
+| Università degli studi di Firenze | it-firenze-firenze | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 | 0 |
 | Università degli studi di Messina | it-messina-messina | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
 | Università degli studi di Milano | it-milano-milano | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | Università degli studi di Milano-Bicocca | it-milano-bicocca-milano | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
@@ -441,13 +441,13 @@
 | Università degli studi di Pavia | it-pavia-pavia | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 0 |
 | Università degli studi di Perugia | it-perugia-perugia | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
 | Università degli studi di Roma La Sapienza | it-roma-la-sapienza-rieti | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-| Università degli studi di Roma La Sapienza | it-roma-la-sapienza-roma | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 0 | 1 | 0 |
+| Università degli studi di Roma La Sapienza | it-roma-la-sapienza-roma | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | Università degli studi di Roma Tor Vergata | it-roma-tor-vergata-roma | 2 | 1 | 2 | 1 | 1 | 2 | 2 | 2 | 2 | 1 |
-| Università degli studi di Siena | it-siena-siena | 2 | 2 | 2 | 0 | 0 | 1 | 2 | 2 | 2 | 0 |
+| Università degli studi di Siena | it-siena-siena | 2 | 2 | 2 | 1 | 1 | 1 | 2 | 2 | 2 | 0 |
 | Università degli studi di Teramo | it-teramo-teramo | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 0 | 0 |
 | Università degli studi di Torino | it-torino-torino | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 2 | 2 | 0 |
-| Università degli studi di Udine | it-udine-udine | 1 | 0 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 0 |
-| Università di Pisa | it-pisa-pisa | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
+| Università degli studi di Udine | it-udine-udine | 1 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
+| Università di Pisa | it-pisa-pisa | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 
 ## NL
 
@@ -458,26 +458,26 @@
 | Avans Hogeschool | nl-avans-hogeschool-07gr-s-hertogenbosch | 3 | 3 | 3 | 2 | 2 | 3 | 0 | 3 | 3 | 0 |
 | Breda University of Applied Sciences | nl-breda-university-of-applied-sciences-21ui | 1 | 0 | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 |
 | Capabel Hogeschool | nl-capabel-hogeschool-30hc-rotterdam | 1 | 1 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 0 |
-| Capabel Hogeschool | nl-capabel-hogeschool-30hc-utrecht | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 0 |
+| Capabel Hogeschool | nl-capabel-hogeschool-30hc-utrecht | 1 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 0 |
 | Christelijke Hogeschool Ede | nl-christelijke-hogeschool-ede-25ba | 2 | 0 | 0 | 2 | 2 | 2 | 2 | 2 | 2 | 0 |
 | Christelijke Hogeschool Windesheim | nl-christelijke-hogeschool-windesheim-01vu | 3 | 0 | 0 | 1 | 0 | 3 | 3 | 3 | 3 | 0 |
 | Christelijke Hogeschool Windesheim | nl-christelijke-hogeschool-windesheim-01vu-almere | 2 | 0 | 0 | 1 | 0 | 2 | 1 | 2 | 2 | 0 |
-| De Haagse Hogeschool | nl-de-haagse-hogeschool-27um | 3 | 0 | 3 | 0 | 0 | 3 | 0 | 3 | 3 | 0 |
+| De Haagse Hogeschool | nl-de-haagse-hogeschool-27um | 3 | 1 | 3 | 0 | 0 | 3 | 0 | 3 | 3 | 0 |
 | De Haagse Hogeschool | nl-de-haagse-hogeschool-27um-delft | 2 | 0 | 2 | 0 | 0 | 2 | 0 | 2 | 2 | 0 |
 | De Haagse Hogeschool | nl-de-haagse-hogeschool-27um-zoetermeer | 1 | 0 | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 |
 | Erasmus Universiteit Rotterdam | nl-erasmus-universiteit-rotterdam-21pe | 1 | 0 | 1 | 0 | 0 | 1 | 0 | 1 | 0 | 0 |
 | Fontys Hogeschool | nl-fontys-hogeschool-30gb | 3 | 0 | 3 | 0 | 0 | 3 | 0 | 3 | 3 | 0 |
-| Fontys Hogeschool | nl-fontys-hogeschool-30gb-tilburg | 3 | 0 | 3 | 0 | 0 | 3 | 0 | 3 | 2 | 0 |
+| Fontys Hogeschool | nl-fontys-hogeschool-30gb-tilburg | 3 | 0 | 3 | 1 | 0 | 3 | 0 | 3 | 2 | 0 |
 | Fontys Hogeschool | nl-fontys-hogeschool-30gb-venlo | 3 | 0 | 3 | 0 | 0 | 3 | 0 | 3 | 2 | 0 |
 | Hogeschool Inholland | nl-hogeschool-inholland-27pz | 1 | 0 | 1 | 0 | 0 | 1 | 0 | 1 | 0 | 0 |
-| Hogeschool Inholland | nl-hogeschool-inholland-27pz-alkmaar | 3 | 3 | 2 | 2 | 2 | 3 | 0 | 2 | 1 | 0 |
+| Hogeschool Inholland | nl-hogeschool-inholland-27pz-alkmaar | 3 | 3 | 2 | 2 | 2 | 3 | 1 | 2 | 1 | 0 |
 | Hogeschool Inholland | nl-hogeschool-inholland-27pz-amsterdam | 1 | 1 | 1 | 0 | 0 | 1 | 0 | 1 | 0 | 0 |
 | Hogeschool Inholland | nl-hogeschool-inholland-27pz-delft | 1 | 1 | 1 | 0 | 0 | 1 | 0 | 1 | 0 | 0 |
-| Hogeschool Inholland | nl-hogeschool-inholland-27pz-haarlem | 3 | 2 | 3 | 1 | 1 | 3 | 0 | 3 | 2 | 0 |
+| Hogeschool Inholland | nl-hogeschool-inholland-27pz-haarlem | 3 | 2 | 3 | 1 | 1 | 3 | 1 | 3 | 2 | 0 |
 | Hogeschool Inholland | nl-hogeschool-inholland-27pz-s-gravenhage | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | Hogeschool Inholland | nl-hogeschool-inholland-27pz-velsen-noord | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 0 | 0 |
 | Hogeschool Leiden | nl-hogeschool-leiden-21ri | 2 | 1 | 0 | 0 | 0 | 2 | 2 | 1 | 2 | 0 |
-| Hogeschool Rotterdam | nl-hogeschool-rotterdam-22oj | 3 | 0 | 2 | 2 | 2 | 3 | 0 | 2 | 2 | 0 |
+| Hogeschool Rotterdam | nl-hogeschool-rotterdam-22oj | 3 | 0 | 3 | 2 | 2 | 3 | 0 | 3 | 2 | 0 |
 | Hogeschool Utrecht | nl-hogeschool-utrecht-25dw | 3 | 3 | 0 | 1 | 1 | 3 | 1 | 3 | 3 | 0 |
 | Hogeschool van Amsterdam | nl-hogeschool-van-amsterdam-28dn | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | 0 |
 | Hogeschool van Arnhem en Nijmegen | nl-hogeschool-van-arnhem-en-nijmegen-25kb | 1 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 1 | 0 |
@@ -490,7 +490,7 @@
 
 ## DE / Bard College Berlin, A Liberal Arts University (de-bard-college-berlin-a-liberal-arts-unive-hrk437)
 
-- de-bard-college-berlin-a-liberal-arts-unive-hrk437-ba-in-economics-politics-daad4537 (BA in Economics, Politics, and Social Thought): tuition, intakes, deadline, rules
+- de-bard-college-berlin-a-liberal-arts-unive-hrk437-ba-in-economics-politics-daad4537 (BA in Economics, Politics, and Social Thought): intakes, deadline, rules
 
 ## DE / EBS Universität für Wirtschaft und Recht (de-ebs-universitat-fur-wirtschaft-und-recht-hrk206)
 
@@ -504,7 +504,7 @@
 
 ## DE / Fachhochschule Aachen (de-fachhochschule-aachen-hrk2-julich)
 
-- de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad3998 (Bachelor of Engineering in Electrical Engineering – Energy Technology): duration, rules
+- de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad3998 (Bachelor of Engineering in Electrical Engineering – Energy Technology): rules
 - de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad4009 (Bachelor of Engineering in Mechanical Engineering – Energy Technology): duration, rules
 - de-fachhochschule-aachen-hrk2-julich-bachelor-of-engineering-daad4011 (Bachelor of Engineering in Applied Physics): rules
 - de-fachhochschule-aachen-hrk2-julich-bachelor-of-science-in-i-daad11243 (Bachelor of Science in Industrial Engineering — Sustainable Energy Systems): duration, rules
@@ -526,7 +526,7 @@
 ## DE / Hochschule Aalen - Technik, Wirtschaft und Gesundheit (de-hochschule-aalen-technik-wirtschaft-und-hrk3)
 
 - de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad10638 (Bachelor of Engineering in Sales Engineering): intakes, deadline
-- de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad9904 (Bachelor of Engineering in Mechatronics & Robotics Engineering): intakes, deadline, rules
+- de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad9904 (Bachelor of Engineering in Mechatronics & Robotics Engineering): rules
 - de-hochschule-aalen-technik-wirtschaft-und-hrk3-bachelor-of-engineering-daad9905 (Bachelor of Engineering in Mechanical Engineering): intakes, deadline, rules
 
 ## DE / Hochschule Albstadt-Sigmaringen (de-hochschule-albstadt-sigmaringen-hrk4-albstadt)
@@ -540,7 +540,7 @@
 
 ## DE / Hochschule Bonn-Rhein-Sieg, University of Applied Sciences (de-hochschule-bonn-rhein-sieg-university-of-hrk294)
 
-- de-hochschule-bonn-rhein-sieg-university-of-hrk294-international-business-b-daad5225 (International Business (BSc)): tuition, intakes, deadline
+- de-hochschule-bonn-rhein-sieg-university-of-hrk294-international-business-b-daad5225 (International Business (BSc)): tuition
 
 ## DE / Hochschule Bremerhaven (de-hochschule-bremerhaven-hrk41)
 
@@ -556,7 +556,7 @@
 
 ## DE / Hochschule Fulda - University of Applied Sciences (de-hochschule-fulda-university-of-applied-s-hrk92)
 
-- de-hochschule-fulda-university-of-applied-s-hrk92-international-business-a-daad10425 (International Business Administration): tuition, rules
+- de-hochschule-fulda-university-of-applied-s-hrk92-international-business-a-daad10425 (International Business Administration): rules
 - de-hochschule-fulda-university-of-applied-s-hrk92-international-business-m-daad5651 (International Business & Management): intakes, deadline
 
 ## DE / Hochschule Furtwangen - Informatik, Technik, Wirtschaft, Medien, Gesundheit (de-hochschule-furtwangen-informatik-technik-hrk94-villingen-schwenningen)
@@ -576,8 +576,7 @@
 - de-hochschule-heilbronn-technik-wirtschaft-hrk125-artificial-intelligence-daad10364 (Artificial Intelligence and Industrial Digitalisation): intakes, deadline
 - de-hochschule-heilbronn-technik-wirtschaft-hrk125-automotive-systems-engin-daad11004 (Automotive Systems Engineering): intakes, deadline, rules
 - de-hochschule-heilbronn-technik-wirtschaft-hrk125-electrical-systems-engin-daad6320 (Electrical Systems Engineering): intakes, deadline, rules
-- de-hochschule-heilbronn-technik-wirtschaft-hrk125-environmental-and-proces-daad10371 (Environmental and Process Engineering): intakes, deadline, rules
-- de-hochschule-heilbronn-technik-wirtschaft-hrk125-intelligent-mechatronic-daad10366 (Intelligent Mechatronic Systems): intakes, deadline
+- de-hochschule-heilbronn-technik-wirtschaft-hrk125-environmental-and-proces-daad10371 (Environmental and Process Engineering): rules
 - de-hochschule-heilbronn-technik-wirtschaft-hrk125-international-business-daad3930 (International Business): intakes, deadline
 - de-hochschule-heilbronn-technik-wirtschaft-hrk125-international-business-i-daad9674 (International Business – Intercultural Studies): rules
 - de-hochschule-heilbronn-technik-wirtschaft-hrk125-mechanical-engineering-daad11005 (Mechanical Engineering): intakes, deadline, rules
@@ -598,10 +597,6 @@
 ## DE / Hochschule Karlsruhe - Technik und Wirtschaft (de-hochschule-karlsruhe-technik-und-wirtsch-hrk138)
 
 - de-hochschule-karlsruhe-technik-und-wirtsch-hrk138-electrical-engineering-a-daad7695 (Electrical Engineering and Information Technology): channel, rules
-
-## DE / Hochschule Koblenz (de-hochschule-koblenz-hrk305)
-
-- de-hochschule-koblenz-hrk305-marketing-and-internatio-daad11241 (Marketing and International Business): tuition
 
 ## DE / Hochschule Landshut - Hochschule für angewandte Wissenschaften (de-hochschule-landshut-hochschule-fur-angew-hrk157-dingolfing)
 
@@ -627,18 +622,15 @@
 ## DE / Hochschule Ravensburg-Weingarten (de-hochschule-ravensburg-weingarten-hrk224)
 
 - de-hochschule-ravensburg-weingarten-hrk224-electrical-engineering-a-daad3993 (Electrical Engineering and Information Technology): rules
-- de-hochschule-ravensburg-weingarten-hrk224-mechanical-engineering-i-daad7827 (Mechanical Engineering / International Project Engineering): intakes, deadline, documents, rules
-- de-hochschule-ravensburg-weingarten-hrk224-mechatronics-daad9717 (Mechatronics): documents
+- de-hochschule-ravensburg-weingarten-hrk224-mechanical-engineering-i-daad7827 (Mechanical Engineering / International Project Engineering): documents, rules
 
 ## DE / Hochschule Reutlingen, Hochschule für Technik- Wirtschaft-Informatik-Design (de-hochschule-reutlingen-hochschule-fur-tec-hrk227)
 
-- de-hochschule-reutlingen-hochschule-fur-tec-hrk227-esb-business-school-inte-daad3871 (ESB Business School: International Business (Bachelor of Science)): tuition, channel, documents, rules
+- de-hochschule-reutlingen-hochschule-fur-tec-hrk227-esb-business-school-inte-daad3871 (ESB Business School: International Business (Bachelor of Science)): channel, documents, rules
 
 ## DE / Hochschule Rhein-Waal - University of Applied Sciences (de-hochschule-rhein-waal-university-of-appl-hrk400)
 
-- de-hochschule-rhein-waal-university-of-appl-hrk400-agribusiness-ba-daad4229 (Agribusiness BA): intakes, deadline
-- de-hochschule-rhein-waal-university-of-appl-hrk400-bioengineering-bsc-daad4320 (Bioengineering BSc): intakes, deadline
-- de-hochschule-rhein-waal-university-of-appl-hrk400-engineering-bsc-daad4220 (Engineering, BSc): tuition, rules
+- de-hochschule-rhein-waal-university-of-appl-hrk400-engineering-bsc-daad4220 (Engineering, BSc): rules
 - de-hochschule-rhein-waal-university-of-appl-hrk400-engineering-for-sustaina-daad4219 (Engineering for Sustainability, BSc): rules
 - de-hochschule-rhein-waal-university-of-appl-hrk400-international-business-a-daad4210 (International Business and Management, BA): tuition, rules
 
@@ -649,26 +641,17 @@
 
 ## DE / Hochschule Wismar - University of Applied Sciences: Technology, Business and Design (de-hochschule-wismar-university-of-applied-hrk274-rostock)
 
-- de-hochschule-wismar-university-of-applied-hrk274-rostock-marine-engineering-doubl-daad6315 (Marine Engineering (Double Degree)): channel, documents
-
-## DE / Hochschule der Medien Stuttgart (de-hochschule-der-medien-stuttgart-hrk250)
-
-- de-hochschule-der-medien-stuttgart-hrk250-social-media-marketing-m-daad9705 (Social Media Marketing & Management): documents
+- de-hochschule-wismar-university-of-applied-hrk274-rostock-marine-engineering-doubl-daad6315 (Marine Engineering (Double Degree)): channel
 
 ## DE / Hochschule für Technik und Wirtschaft Dresden - University of Applied Sciences (de-hochschule-fur-technik-und-wirtschaft-dr-hrk54)
 
 - de-hochschule-fur-technik-und-wirtschaft-dr-hrk54-bachelor-electrical-engi-daad4762 (Bachelor Electrical Engineering/Elektrotechnik (BEng)): rules
 
-## DE / Hochschule für angewandte Wissenschaften Ansbach (de-hochschule-fur-angewandte-wissenschaften-hrk312)
-
-- de-hochschule-fur-angewandte-wissenschaften-hrk312-applied-sustainable-engi-daad10455 (Applied Sustainable Engineering): intakes, deadline
-
 ## DE / Hochschule für angewandte Wissenschaften Coburg (de-hochschule-fur-angewandte-wissenschaften-hrk44)
 
-- de-hochschule-fur-angewandte-wissenschaften-hrk44-engineering-physics-daad10481 (Engineering Physics): intakes, deadline
-- de-hochschule-fur-angewandte-wissenschaften-hrk44-international-bachelors-daad10381 (International Bachelor’s in Automation and Robotics): intakes, deadline, rules
+- de-hochschule-fur-angewandte-wissenschaften-hrk44-international-bachelors-daad10381 (International Bachelor’s in Automation and Robotics): rules
 - de-hochschule-fur-angewandte-wissenschaften-hrk44-international-bachelors-daad10398 (International Bachelor’s in Electrical Engineering for Sustainable and Renewable Energy): intakes, deadline, rules
-- de-hochschule-fur-angewandte-wissenschaften-hrk44-mechanical-engineering-daad10350 (Mechanical Engineering): intakes, deadline, rules
+- de-hochschule-fur-angewandte-wissenschaften-hrk44-mechanical-engineering-daad10350 (Mechanical Engineering): rules
 
 ## DE / Hochschule für angewandte Wissenschaften Coburg (de-hochschule-fur-angewandte-wissenschaften-hrk44-kronach)
 
@@ -686,17 +669,12 @@
 
 - de-hochschule-fur-angewandte-wissenschaften-hrk264-applied-informatics-daad9990 (Applied Informatics): intakes, deadline
 
-## DE / Jade Hochschule - Wilhelmshaven/Oldenburg/Elsfleth (de-jade-hochschule-wilhelmshaven-oldenburg-hrk406)
-
-- de-jade-hochschule-wilhelmshaven-oldenburg-hrk406-international-business-s-daad7743 (International Business Studies): intakes, deadline
-
 ## DE / Kühne Logistics University - Wissenschaftliche Hochschule für Logistik und Unternehmensführung (de-kuhne-logistics-university-wissenschaftl-hrk429)
 
 - de-kuhne-logistics-university-wissenschaftl-hrk429-bachelor-of-science-busi-daad11249 (Bachelor of Science Business Administration): channel, rules
 
 ## DE / Leuphana Universität Lüneburg (de-leuphana-universitat-luneburg-hrk171)
 
-- de-leuphana-universitat-luneburg-hrk171-economics-bsc-daad9671 (Economics (BSc)): intakes, deadline
 - de-leuphana-universitat-luneburg-hrk171-international-business-a-daad4610 (International Business Administration & Entrepreneurship (BSc)): rules
 
 ## DE / SRH University of Applied Sciences Heidelberg (de-srh-university-of-applied-sciences-heide-hrk122)
@@ -704,22 +682,18 @@
 - de-srh-university-of-applied-sciences-heide-hrk122-electrical-engineering-b-daad9707 (Electrical Engineering (BEng)): intakes, deadline, channel, documents, rules
 - de-srh-university-of-applied-sciences-heide-hrk122-mechanical-engineering-b-daad9651 (Mechanical Engineering (BEng)): intakes, deadline, channel, documents, rules
 
-## DE / Technische Hochschule Augsburg (de-technische-hochschule-augsburg-hrk7)
-
-- de-technische-hochschule-augsburg-hrk7-international-informatio-daad7126 (International Information Systems BSc): intakes, deadline
-
 ## DE / Technische Hochschule Deggendorf (de-technische-hochschule-deggendorf-hrk284)
 
 - de-technische-hochschule-deggendorf-hrk284-business-administration-daad9840 (Business Administration and Service Management, BA): intakes, deadline, rules
 - de-technische-hochschule-deggendorf-hrk284-electrical-engineering-a-daad9837 (Electrical Engineering and Information Technology — International): intakes, deadline, rules
 - de-technische-hochschule-deggendorf-hrk284-electromobility-autonomo-daad9073 (Electromobility, Autonomous Driving and Mobile Robotics – International (BEng)): intakes, deadline, documents, rules
-- de-technische-hochschule-deggendorf-hrk284-electronics-engineering-daad9839 (Electronics Engineering for Artificial Intelligence — International (BEng)): intakes, deadline, documents, rules
+- de-technische-hochschule-deggendorf-hrk284-electronics-engineering-daad9839 (Electronics Engineering for Artificial Intelligence — International (BEng)): rules
 
 ## DE / Technische Hochschule Deggendorf (de-technische-hochschule-deggendorf-hrk284-pfarrkirchen)
 
 - de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-beng-energy-systems-engi-daad7019 (BEng Energy Systems Engineering): intakes, deadline
 - de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-beng-industrial-engineer-daad4668 (BEng Industrial Engineering): rules
-- de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-bsc-health-informatics-daad4822 (BSc Health Informatics): intakes, deadline, documents
+- de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-bsc-health-informatics-daad4822 (BSc Health Informatics): intakes, deadline
 
 ## DE / Technische Hochschule Ingolstadt (de-technische-hochschule-ingolstadt-hrk288)
 
@@ -760,7 +734,7 @@
 
 ## DE / Technische Hochschule Rosenheim (de-technische-hochschule-rosenheim-hrk232-traunstein)
 
-- de-technische-hochschule-rosenheim-hrk232-traunstein-e-commerce-daad7974 (E-Commerce): tuition, rules
+- de-technische-hochschule-rosenheim-hrk232-traunstein-e-commerce-daad7974 (E-Commerce): rules
 
 ## DE / Technische Hochschule Ulm (de-technische-hochschule-ulm-hrk260)
 
@@ -773,7 +747,7 @@
 
 ## DE / Technische Universität Braunschweig (de-technische-universitat-braunschweig-hrk35)
 
-- de-technische-universitat-braunschweig-hrk35-sustainable-engineering-daad7212 (Sustainable Engineering of Products and Processes): channel, documents, rules
+- de-technische-universitat-braunschweig-hrk35-sustainable-engineering-daad7212 (Sustainable Engineering of Products and Processes): channel, rules
 
 ## DE / Technische Universität Chemnitz (de-technische-universitat-chemnitz-hrk42)
 
@@ -791,24 +765,19 @@
 
 - de-technische-universitat-munchen-hrk184-heilbronn-information-engineering-daad7698 (Information Engineering): intakes, deadline, rules
 
-## DE / Technische Universität München (de-technische-universitat-munchen-hrk184-straubing)
-
-- de-technische-universitat-munchen-hrk184-straubing-sustainable-engineering-daad11020 (Sustainable Engineering for Materials and Processes): intakes, deadline
-
 ## DE / Universität Duisburg-Essen (de-universitat-duisburg-essen-hrk71-duisburg)
 
-- de-universitat-duisburg-essen-hrk71-duisburg-electrical-electronic-an-daad6150 (Electrical, Electronic and Communications Engineering): tuition, rules
+- de-universitat-duisburg-essen-hrk71-duisburg-electrical-electronic-an-daad6150 (Electrical, Electronic and Communications Engineering): rules
 - de-universitat-duisburg-essen-hrk71-duisburg-mechanical-engineering-daad6151 (Mechanical Engineering): tuition, rules
-- de-universitat-duisburg-essen-hrk71-duisburg-structural-engineering-daad6153 (Structural Engineering): tuition, rules
+- de-universitat-duisburg-essen-hrk71-duisburg-structural-engineering-daad6153 (Structural Engineering): rules
 
 ## DE / Universität Hamburg (de-universitat-hamburg-hrk104)
 
-- de-universitat-hamburg-hrk104-engineering-science-daad3748 (Engineering Science): intakes, deadline, documents
+- de-universitat-hamburg-hrk104-engineering-science-daad3748 (Engineering Science): documents
 
 ## DE / Universität Passau (de-universitat-passau-hrk218)
 
 - de-universitat-passau-hrk218-bachelor-of-arts-in-inte-daad3643 (Bachelor of Arts in International Cultural and Business Studies): rules
-- de-universitat-passau-hrk218-bachelor-of-science-in-a-daad9973 (Bachelor of Science in Artificial Intelligence): tuition, intakes, deadline
 
 ## DE / WHU - Otto Beisheim School of Management (de-whu-otto-beisheim-school-of-management-hrk261)
 
@@ -846,12 +815,11 @@
 
 - fr-ecole-universitaire-de-premier-cycle-cam-0912409z-licence-economie-et-gestion-12935 (Licence - Double diplôme - Licence Economie et gestion - Parcours Langues et Civilisations - option Anglais et Espagnol): language
 - fr-ecole-universitaire-de-premier-cycle-cam-0912409z-licence-economie-et-gestion-12936 (Licence - Double diplôme - Licence Economie et gestion - Parcours Langues et Civilisations - option Chinois et Anglais): language
-- fr-ecole-universitaire-de-premier-cycle-cam-0912409z-licence-economie-et-gestion-16675 (Licence - Double diplôme - Licence Economie et gestion - Parcours Langues et Civilisations - option Anglais et Allemand): language
 - fr-ecole-universitaire-de-premier-cycle-cam-0912409z-licence-sciences-pour-lingenieur-14309 (Licence - Portail Sciences pour l'ingénieur - Sciences et Technologies - Institut Villebon-Charpak): tuition
 
 ## FR / Facultés libres de l'Ouest - UCO ANGERS (fr-facultes-libres-de-louest-uco-angers-0492433d)
 
-- fr-facultes-libres-de-louest-uco-angers-0492433d-licence-economie-et-gestion-25385 (Licence - Economie et gestion): tuition, intakes, deadline, documents
+- fr-facultes-libres-de-louest-uco-angers-0492433d-licence-economie-et-gestion-25385 (Licence - Economie et gestion): intakes, deadline, documents
 
 ## FR / Facultés libres de l'ouest - UCO - Bretagne Nord (fr-facultes-libres-de-louest-uco-bretagne-n-0221844k)
 
@@ -860,19 +828,15 @@
 
 ## FR / Facultés libres de l'ouest - UCO - Nantes (fr-facultes-libres-de-louest-uco-nantes-0442777e)
 
-- fr-facultes-libres-de-louest-uco-nantes-0442777e-licence-economie-et-gestion-20206 (Licence - Economie et gestion): tuition, intakes, deadline, documents
+- fr-facultes-libres-de-louest-uco-nantes-0442777e-licence-economie-et-gestion-20206 (Licence - Economie et gestion): intakes, deadline, documents
 
 ## FR / Facultés libres de l'ouest UCO - Niort (fr-facultes-libres-de-louest-uco-niort-0791199z)
 
-- fr-facultes-libres-de-louest-uco-niort-0791199z-licence-economie-et-gestion-48143 (Licence - Economie et gestion): tuition, intakes, deadline, documents
+- fr-facultes-libres-de-louest-uco-niort-0791199z-licence-economie-et-gestion-48143 (Licence - Economie et gestion): intakes, deadline, documents
 
 ## FR / I.U.T Clermont Auvergne - site d'Aurillac (fr-i-u-t-clermont-auvergne-site-daurillac-0150746e)
 
 - fr-i-u-t-clermont-auvergne-site-daurillac-0150746e-but-science-des-donnees-24715 (BUT - Science des données): tuition
-
-## FR / I.U.T Epinal-Hubert Curien - Université de Lorraine (fr-i-u-t-epinal-hubert-curien-universite-de-0881705a)
-
-- fr-i-u-t-epinal-hubert-curien-universite-de-0881705a-but-techniques-de-commercialisat-10765 (BUT - Techniques de commercialisation): language
 
 ## FR / I.U.T Jean Moulin de l'Université Lyon 3 (fr-i-u-t-jean-moulin-de-luniversite-lyon-3-0693565a)
 
@@ -886,34 +850,13 @@
 
 - fr-i-u-t-de-cergy-pontoise-site-de-pontoise-0951979k-but-techniques-de-commercialisat-11659 (BUT - Techniques de commercialisation): language
 
-## FR / I.U.T de Cergy-Pontoise - Site de Sarcelles (fr-i-u-t-de-cergy-pontoise-site-de-sarcelle-0951985s)
-
-- fr-i-u-t-de-cergy-pontoise-site-de-sarcelle-0951985s-but-genie-electrique-et-informat-11661 (BUT - Génie électrique et informatique industrielle): language
-
-## FR / I.U.T de Dijon (fr-i-u-t-de-dijon-0211139z)
-
-- fr-i-u-t-de-dijon-0211139z-but-gestion-des-entreprises-et-d-3239 (BUT - Gestion des entreprises et des administrations): language
-- fr-i-u-t-de-dijon-0211139z-but-informatique-3236 (BUT - Informatique): language
-
-## FR / I.U.T de Nîmes (fr-i-u-t-de-nimes-0300930y)
-
-- fr-i-u-t-de-nimes-0300930y-but-science-et-genie-des-materia-3987 (BUT - Science et génie des matériaux): language
-
 ## FR / I.U.T de Rodez (fr-i-u-t-de-rodez-0120870f)
 
 - fr-i-u-t-de-rodez-0120870f-but-informatique-2495 (BUT - Informatique): language
 
-## FR / I.U.T de Saint-Brieuc (fr-i-u-t-de-saint-brieuc-0221848p)
-
-- fr-i-u-t-de-saint-brieuc-0221848p-but-science-et-genie-des-materia-3383 (BUT - Science et génie des matériaux): language
-
 ## FR / I.U.T de Saint-Etienne (fr-i-u-t-de-saint-etienne-0420957m)
 
 - fr-i-u-t-de-saint-etienne-0420957m-but-genie-mecanique-et-productiq-5307 (BUT - Génie mécanique et productique): language
-
-## FR / I.U.T de Saint-Malo (fr-i-u-t-de-saint-malo-0352379w)
-
-- fr-i-u-t-de-saint-malo-0352379w-but-gestion-des-entreprises-et-d-4783 (BUT - Gestion des entreprises et des administrations): language
 
 ## FR / I.U.T de Valence (fr-i-u-t-de-valence-0260998u)
 
@@ -922,10 +865,6 @@
 ## FR / I.U.T de Vannes (fr-i-u-t-de-vannes-0560861g)
 
 - fr-i-u-t-de-vannes-0560861g-but-science-des-donnees-6468 (BUT - Science des données): language
-
-## FR / I.U.T du Creusot (fr-i-u-t-du-creusot-0711372f)
-
-- fr-i-u-t-du-creusot-0711372f-but-techniques-de-commercialisat-8665 (BUT - Techniques de commercialisation): language
 
 ## FR / I.U.T du Havre (fr-i-u-t-du-havre-0761688x)
 
@@ -960,13 +899,9 @@
 
 - fr-i-u-t-de-haguenau-0672834s-but-genie-electrique-et-informat-18385 (BUT - Génie électrique et informatique industrielle - Parcours Franco-Suisse-Allemand (Triple Diplôme)): language
 
-## FR / I.U.T. de Valenciennes (fr-i-u-t-de-valenciennes-0593052x)
-
-- fr-i-u-t-de-valenciennes-0593052x-but-techniques-de-commercialisat-6963 (BUT - Techniques de commercialisation): language
-
 ## FR / ICES - Institut Catholique de Vendée (fr-ices-institut-catholique-de-vendee-0851415b)
 
-- fr-ices-institut-catholique-de-vendee-0851415b-licence-economie-et-gestion-19376 (Licence - Economie et gestion): tuition, language, intakes, deadline, documents
+- fr-ices-institut-catholique-de-vendee-0851415b-licence-economie-et-gestion-19376 (Licence - Economie et gestion): tuition, intakes, deadline
 
 ## FR / ICL - ESTICE (fr-icl-estice-0592608p)
 
@@ -980,22 +915,10 @@
 
 - fr-institut-catholique-europeen-des-ameriqu-9720920t-licence-informatique-35928 (Licence - Informatique - Parcours Sciences du numérique): tuition, intakes, deadline, documents
 
-## FR / IUT GRAND OUEST NORMANDIE - Pôle de Cherbourg - Site de Cherbourg-en-Cotentin (fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l)
-
-- fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l-but-techniques-de-commercialisat-6042 (BUT - Techniques de commercialisation): language
-
 ## FR / IUT Nord Franche-Comté - Site de Belfort (fr-iut-nord-franche-comte-site-de-belfort-0900231m)
 
 - fr-iut-nord-franche-comte-site-de-belfort-0900231m-but-informatique-10825 (BUT - Informatique): language
 - fr-iut-nord-franche-comte-site-de-belfort-0900231m-but-techniques-de-commercialisat-10826 (BUT - Techniques de commercialisation): language
-
-## FR / IUT Reims-Châlons-Charleville site de Charleville (fr-iut-reims-chalons-charleville-site-de-ch-0081084k)
-
-- fr-iut-reims-chalons-charleville-site-de-ch-0081084k-but-techniques-de-commercialisat-2386 (BUT - Techniques de commercialisation): language
-
-## FR / IUT de Moselle Est - Site de Sarreguemines - Université de Lorraine (fr-iut-de-moselle-est-site-de-sarreguemines-0573433x)
-
-- fr-iut-de-moselle-est-site-de-sarreguemines-0573433x-but-gestion-administrative-et-co-6666 (BUT - Gestion administrative et commerciale des organisations): language
 
 ## FR / IUT de l'Aisne - Site de Laon (fr-iut-de-laisne-site-de-laon-0021964z)
 
@@ -1037,12 +960,7 @@
 ## FR / Université Clermont Auvergne (fr-universite-clermont-auvergne-0632084y)
 
 - fr-universite-clermont-auvergne-0632084y-licence-economie-27507 (Licence - Portail Economie - Economie ou Gestion parcours International): language
-- fr-universite-clermont-auvergne-0632084y-licence-economie-7621 (Licence - Economie): language
 - fr-universite-clermont-auvergne-0632084y-licence-gestion-13904 (Licence - Gestion): language
-
-## FR / Université Côte d'Azur (fr-universite-cote-dazur-0062205p)
-
-- fr-universite-cote-dazur-0062205p-licence-economie-et-gestion-2258 (Licence - Portail Economie et gestion): language
 
 ## FR / Université Grenoble Alpes - Antenne de Valence (fr-universite-grenoble-alpes-antenne-de-val-0261372a)
 
@@ -1057,8 +975,6 @@
 
 - fr-universite-lumiere-lyon-2-0691775e-licence-economie-et-gestion-35341 (Licence - Economie et gestion): language
 - fr-universite-lumiere-lyon-2-0691775e-licence-economie-et-gestion-35342 (Licence - Economie et gestion): language
-- fr-universite-lumiere-lyon-2-0691775e-licence-economie-et-gestion-35343 (Licence - Economie et gestion): language
-- fr-universite-lumiere-lyon-2-0691775e-licence-economie-et-gestion-35453 (Licence - Economie et gestion): language
 - fr-universite-lumiere-lyon-2-0691775e-licence-economie-et-gestion-43543 (Licence - Economie et gestion): language
 
 ## FR / Université Lyon 2 - Campus Porte des Alpes (fr-universite-lyon-2-campus-porte-des-alpes-0692198p)
@@ -1087,12 +1003,10 @@
 ## FR / Université Sorbonne Paris Nord (fr-universite-sorbonne-paris-nord-0931238r)
 
 - fr-universite-sorbonne-paris-nord-0931238r-licence-economie-et-gestion-20089 (Licence - Economie et gestion - Parcours Langues renforcées, anglais et coréen): language
-- fr-universite-sorbonne-paris-nord-0931238r-licence-informatique-11251 (Licence - Informatique): language
 - fr-universite-sorbonne-paris-nord-0931238r-licence-informatique-22026 (Double licence - Informatique / Mathématiques - Double Licence Informatique/Mathématiques): language
 
 ## FR / Université Toulouse Capitole (fr-universite-toulouse-capitole-0313124c)
 
-- fr-universite-toulouse-capitole-0313124c-licence-gestion-35967 (Licence - Double diplôme - Licence Gestion - BSc in Global Management): language
 - fr-universite-toulouse-capitole-0313124c-licence-gestion-39937 (Double licence - Gestion / Mathématiques et informatique appliquées aux sciences humaines et sociales - Numérique et Management): language
 
 ## FR / Université d'Evry Val d'Essonne (fr-universite-devry-val-dessonne-0911975c)
@@ -1104,7 +1018,6 @@
 - fr-universite-de-bordeaux-bordeaux-metropol-0333298f-licence-economie-et-gestion-35369 (Licence - Economie et gestion - Parcours International Economics): language
 - fr-universite-de-bordeaux-bordeaux-metropol-0333298f-licence-informatique-26338 (Licence - Informatique - Parcours International): language
 - fr-universite-de-bordeaux-bordeaux-metropol-0333298f-licence-sciences-pour-lingenieur-26342 (Licence - Sciences pour l'ingénieur - Parcours International): language
-- fr-universite-de-bordeaux-bordeaux-metropol-0333298f-licence-sciences-pour-lingenieur-31075 (Licence - Portail Sciences et technologies): language
 
 ## FR / Université de Brest (fr-universite-de-brest-0290346u)
 
@@ -1114,10 +1027,6 @@
 
 - fr-universite-de-cergy-pontoise-cy-sup-0952260r-licence-economie-et-gestion-44432 (Double licence - Economie et gestion / Langues étrangères appliquées - Double licence Economie et gestion / LEA anglais espagnol ou anglais allemand (au choix) + DU Economics and Corporate English + Certification Ecotopia): language
 
-## FR / Université de La Réunion - Saint Denis (fr-universite-de-la-reunion-saint-denis-9740478b)
-
-- fr-universite-de-la-reunion-saint-denis-9740478b-licence-sciences-pour-lingenieur-26391 (Licence - Sciences pour l'ingénieur): language
-
 ## FR / Université de Lille (fr-universite-de-lille-0597239y)
 
 - fr-universite-de-lille-0597239y-licence-economie-et-gestion-15916 (Licence - Economie et gestion - Parcours International studies in economics and management): language
@@ -1126,7 +1035,6 @@
 ## FR / Université de Limoges (fr-universite-de-limoges-0870669e)
 
 - fr-universite-de-limoges-0870669e-licence-economie-et-gestion-20737 (Licence - Economie et gestion - Parcours International): language
-- fr-universite-de-limoges-0870669e-licence-genie-civil-20744 (Licence - Génie civil - Parcours Sciences Exactes et Appliquées): language
 
 ## FR / Université de Montpellier (fr-universite-de-montpellier-0342490x)
 
@@ -1152,8 +1060,8 @@
 
 ## HU / Budapest Metropolitan University (hu-budapest-metropolitan-university-budapest)
 
-- hu-budapest-metropolitan-university-budapest-business-administration-sf472 (Business Administration and Managemenet): intakes, deadline, channel, documents, duration
-- hu-budapest-metropolitan-university-budapest-commerce-and-marketing-sf473 (Commerce and Marketing): intakes, deadline, channel, documents
+- hu-budapest-metropolitan-university-budapest-business-administration-sf472 (Business Administration and Managemenet): intakes, deadline, channel, duration
+- hu-budapest-metropolitan-university-budapest-commerce-and-marketing-sf473 (Commerce and Marketing): intakes, deadline, channel
 - hu-budapest-metropolitan-university-budapest-finance-and-accounting-sf475 (Finance and Accounting): intakes, deadline, channel, duration
 - hu-budapest-metropolitan-university-budapest-tourism-and-catering-sf477 (Tourism and Catering): intakes, deadline, channel
 
@@ -1161,35 +1069,35 @@
 
 - hu-budapest-university-of-economics-and-bus-budapest-business-administration-sf25 (Business Administration and Management): intakes, deadline, channel
 - hu-budapest-university-of-economics-and-bus-budapest-finance-and-accounting-sf19 (Finance and Accounting): intakes, deadline, channel
-- hu-budapest-university-of-economics-and-bus-budapest-international-business-e-sf20 (International Business Economics): intakes, deadline, channel, documents
+- hu-budapest-university-of-economics-and-bus-budapest-international-business-e-sf20 (International Business Economics): intakes, deadline, channel
 - hu-budapest-university-of-economics-and-bus-budapest-tourism-and-catering-sf17 (Tourism and Catering): intakes, deadline, channel
 
 ## HU / Budapest University of Technology and Economics (hu-budapest-university-of-technology-and-ec-budapest)
 
-- hu-budapest-university-of-technology-and-ec-budapest-chemical-engineering-sf42 (Chemical Engineering): tuition, intakes, deadline, channel, documents
-- hu-budapest-university-of-technology-and-ec-budapest-civil-engineering-sf44 (Civil Engineering): tuition, intakes, deadline, channel, documents
-- hu-budapest-university-of-technology-and-ec-budapest-computer-science-enginee-sf41 (Computer Science Engineering): tuition, intakes, deadline, channel, documents
+- hu-budapest-university-of-technology-and-ec-budapest-chemical-engineering-sf42 (Chemical Engineering): tuition, intakes, deadline, channel
+- hu-budapest-university-of-technology-and-ec-budapest-civil-engineering-sf44 (Civil Engineering): tuition, intakes, deadline, channel
+- hu-budapest-university-of-technology-and-ec-budapest-computer-science-enginee-sf41 (Computer Science Engineering): tuition, intakes, deadline, channel
 - hu-budapest-university-of-technology-and-ec-budapest-electrical-engineering-sf45 (Electrical Engineering): tuition, intakes, deadline, channel
-- hu-budapest-university-of-technology-and-ec-budapest-engineering-management-sf79 (Engineering Management): tuition, intakes, deadline, documents
-- hu-budapest-university-of-technology-and-ec-budapest-logistics-engineering-sf76 (Logistics Engineering): tuition, intakes, deadline, channel, documents
-- hu-budapest-university-of-technology-and-ec-budapest-mechanical-engineering-sf51 (Mechanical Engineering): tuition, intakes, deadline, channel, documents
-- hu-budapest-university-of-technology-and-ec-budapest-physicist-engineering-sf69 (Physicist Engineering): tuition, intakes, deadline, channel, documents
-- hu-budapest-university-of-technology-and-ec-budapest-professional-pilot-sf77 (Professional Pilot): tuition, intakes, deadline, channel, documents
-- hu-budapest-university-of-technology-and-ec-budapest-transportation-engineeri-sf75 (Transportation Engineering): tuition, intakes, deadline, channel, documents
-- hu-budapest-university-of-technology-and-ec-budapest-vehicle-engineering-sf74 (Vehicle Engineering): tuition, intakes, deadline, channel, documents
+- hu-budapest-university-of-technology-and-ec-budapest-engineering-management-sf79 (Engineering Management): tuition, intakes, deadline
+- hu-budapest-university-of-technology-and-ec-budapest-logistics-engineering-sf76 (Logistics Engineering): tuition, intakes, deadline, channel
+- hu-budapest-university-of-technology-and-ec-budapest-mechanical-engineering-sf51 (Mechanical Engineering): tuition, intakes, deadline, channel
+- hu-budapest-university-of-technology-and-ec-budapest-physicist-engineering-sf69 (Physicist Engineering): tuition, intakes, deadline, channel
+- hu-budapest-university-of-technology-and-ec-budapest-professional-pilot-sf77 (Professional Pilot): tuition, intakes, deadline, channel
+- hu-budapest-university-of-technology-and-ec-budapest-transportation-engineeri-sf75 (Transportation Engineering): tuition, intakes, deadline, channel
+- hu-budapest-university-of-technology-and-ec-budapest-vehicle-engineering-sf74 (Vehicle Engineering): tuition, intakes, deadline, channel
 
 ## HU / Corvinus University of Budapest (hu-corvinus-university-of-budapest-budapest)
 
-- hu-corvinus-university-of-budapest-budapest-applied-economics-sf83 (Applied Economics): intakes, deadline, channel, documents
-- hu-corvinus-university-of-budapest-budapest-business-administration-sf80 (Business Administration and Management): intakes, deadline, channel, documents
+- hu-corvinus-university-of-budapest-budapest-applied-economics-sf83 (Applied Economics): intakes, deadline, channel
+- hu-corvinus-university-of-budapest-budapest-business-administration-sf80 (Business Administration and Management): intakes, deadline, channel
 - hu-corvinus-university-of-budapest-budapest-data-science-in-business-sf85 (Data Science in Business): intakes, deadline, channel
 - hu-corvinus-university-of-budapest-budapest-international-business-e-sf81 (International Business Economics): tuition, intakes, deadline, channel
 
 ## HU / Dennis Gabor University (hu-dennis-gabor-university-budapest)
 
-- hu-dennis-gabor-university-budapest-business-informatics-sf347 (Business Informatics): tuition, intakes, deadline, channel, documents
-- hu-dennis-gabor-university-budapest-computer-science-enginee-sf348 (Computer Science Engineering): tuition, intakes, deadline, channel, documents
-- hu-dennis-gabor-university-budapest-engineering-management-sf349 (Engineering Management): tuition, intakes, deadline, channel, documents
+- hu-dennis-gabor-university-budapest-business-informatics-sf347 (Business Informatics): tuition, intakes, deadline, channel
+- hu-dennis-gabor-university-budapest-computer-science-enginee-sf348 (Computer Science Engineering): tuition, intakes, deadline, channel
+- hu-dennis-gabor-university-budapest-engineering-management-sf349 (Engineering Management): tuition, intakes, deadline, channel
 
 ## HU / Eötvös József College (hu-eotvos-jozsef-college-baja)
 
@@ -1198,9 +1106,9 @@
 
 ## HU / Eötvös Loránd University (hu-eotvos-lorand-university-budapest)
 
-- hu-eotvos-lorand-university-budapest-applied-economics-sf343 (Applied Economics): tuition, intakes, deadline, channel, documents
-- hu-eotvos-lorand-university-budapest-computer-science-sf248 (Computer Science): intakes, deadline, documents
-- hu-eotvos-lorand-university-budapest-finance-and-accounting-sf284 (Finance and Accounting): intakes, deadline, channel, documents
+- hu-eotvos-lorand-university-budapest-applied-economics-sf343 (Applied Economics): tuition, intakes, deadline, channel
+- hu-eotvos-lorand-university-budapest-computer-science-sf248 (Computer Science): intakes, deadline
+- hu-eotvos-lorand-university-budapest-finance-and-accounting-sf284 (Finance and Accounting): intakes, deadline, channel
 - hu-eotvos-lorand-university-budapest-international-business-e-sf301 (International Business Economics): intakes, deadline, channel
 
 ## HU / Eötvös Loránd University (hu-eotvos-lorand-university-szombathely)
@@ -1209,7 +1117,7 @@
 
 ## HU / Gál Ferenc University (hu-gal-ferenc-university-bekescsaba)
 
-- hu-gal-ferenc-university-bekescsaba-business-administration-sf352 (Business Administration and Management): tuition, intakes, deadline, channel, documents
+- hu-gal-ferenc-university-bekescsaba-business-administration-sf352 (Business Administration and Management): tuition, intakes, deadline, channel
 
 ## HU / Hungarian University of Agriculture and Life Sciences (hu-hungarian-university-of-agriculture-and-budapest)
 
@@ -1217,9 +1125,9 @@
 
 ## HU / Hungarian University of Agriculture and Life Sciences (hu-hungarian-university-of-agriculture-and-godollo)
 
-- hu-hungarian-university-of-agriculture-and-godollo-business-administration-sf960 (Business Administration and Management): intakes, deadline, channel, documents
+- hu-hungarian-university-of-agriculture-and-godollo-business-administration-sf960 (Business Administration and Management): intakes, deadline, channel
 - hu-hungarian-university-of-agriculture-and-godollo-environmental-engineerin-sf976 (Environmental Engineering): intakes, deadline, channel
-- hu-hungarian-university-of-agriculture-and-godollo-mechanical-engineering-sf988 (Mechanical Engineering): intakes, deadline, channel, duration
+- hu-hungarian-university-of-agriculture-and-godollo-mechanical-engineering-sf988 (Mechanical Engineering): intakes, deadline, channel
 
 ## HU / Hungarian University of Agriculture and Life Sciences (hu-hungarian-university-of-agriculture-and-gyongyos)
 
@@ -1227,31 +1135,31 @@
 
 ## HU / John von Neumann University (hu-john-von-neumann-university-kecskemet)
 
-- hu-john-von-neumann-university-kecskemet-business-administration-sf508 (Business Administration and Management): intakes, deadline, documents, duration
+- hu-john-von-neumann-university-kecskemet-business-administration-sf508 (Business Administration and Management): intakes, deadline, duration
 - hu-john-von-neumann-university-kecskemet-computer-science-enginee-sf504 (Computer Science Engineering): intakes, deadline
-- hu-john-von-neumann-university-kecskemet-international-business-e-sf510 (International Business Economics): intakes, deadline, channel
+- hu-john-von-neumann-university-kecskemet-international-business-e-sf510 (International Business Economics): intakes, deadline
 - hu-john-von-neumann-university-kecskemet-mechnical-engineering-sf513 (Mechnical engineering): intakes, deadline
-- hu-john-von-neumann-university-kecskemet-tourism-and-catering-sf509 (Tourism and Catering): tuition, intakes, deadline, documents
+- hu-john-von-neumann-university-kecskemet-tourism-and-catering-sf509 (Tourism and Catering): intakes, deadline
 - hu-john-von-neumann-university-kecskemet-vehicle-engineering-sf505 (Vehicle Engineering): intakes, deadline
 
 ## HU / Obuda University (hu-obuda-university-budapest)
 
 - hu-obuda-university-budapest-business-administration-sf562 (Business Administration and Management): intakes, deadline
 - hu-obuda-university-budapest-commerce-and-marketing-sf563 (Commerce and Marketing): intakes, deadline
-- hu-obuda-university-budapest-computer-science-enginee-sf554 (Computer Science Engineering): intakes, deadline, channel, documents
-- hu-obuda-university-budapest-electrical-engineering-sf560 (Electrical Engineering): intakes, deadline, channel, documents
-- hu-obuda-university-budapest-engineering-management-sf564 (Engineering Management): intakes, deadline, documents
+- hu-obuda-university-budapest-computer-science-enginee-sf554 (Computer Science Engineering): intakes, deadline
+- hu-obuda-university-budapest-electrical-engineering-sf560 (Electrical Engineering): intakes, deadline
+- hu-obuda-university-budapest-engineering-management-sf564 (Engineering Management): intakes, deadline
 - hu-obuda-university-budapest-environmental-engineerin-sf567 (Environmental Engineering): intakes, deadline
-- hu-obuda-university-budapest-industrial-design-engine-sf568 (Industrial Design Engineering): tuition, intakes, deadline, channel, documents
-- hu-obuda-university-budapest-mechatronical-engineerin-sf546 (Mechatronical Engineering): tuition, intakes, deadline, channel
+- hu-obuda-university-budapest-industrial-design-engine-sf568 (Industrial Design Engineering): tuition, intakes, deadline
+- hu-obuda-university-budapest-mechatronical-engineerin-sf546 (Mechatronical Engineering): tuition, intakes, deadline
 
 ## HU / Széchenyi István University (hu-szechenyi-istvan-university-gyor)
 
 - hu-szechenyi-istvan-university-gyor-business-administration-sf1052 (Business Administration and Management): tuition, intakes, deadline, channel
 - hu-szechenyi-istvan-university-gyor-business-informatics-sf1063 (Business Informatics): tuition, intakes, deadline, channel
 - hu-szechenyi-istvan-university-gyor-civil-engineering-sf1053 (Civil Engineering): tuition, intakes, deadline, channel
-- hu-szechenyi-istvan-university-gyor-electrical-engineering-sf1061 (Electrical Engineering): tuition, intakes, deadline, channel, documents
-- hu-szechenyi-istvan-university-gyor-international-business-e-sf1058 (International Business Economics): tuition, intakes, deadline, channel, documents
+- hu-szechenyi-istvan-university-gyor-electrical-engineering-sf1061 (Electrical Engineering): tuition, intakes, deadline, channel
+- hu-szechenyi-istvan-university-gyor-international-business-e-sf1058 (International Business Economics): tuition, intakes, deadline, channel
 - hu-szechenyi-istvan-university-gyor-logistics-engineering-sf1051 (Logistics Engineering): tuition, intakes, deadline, channel
 - hu-szechenyi-istvan-university-gyor-mechanical-engineering-sf1060 (Mechanical Engineering): tuition, intakes, deadline, channel
 - hu-szechenyi-istvan-university-gyor-tourism-and-catering-sf1059 (Tourism and Catering): tuition, intakes, deadline, channel
@@ -1259,25 +1167,25 @@
 
 ## HU / University of Debrecen (hu-university-of-debrecen-debrecen)
 
-- hu-university-of-debrecen-debrecen-biochemical-engineering-sf112 (Biochemical Engineering): intakes, deadline, documents
+- hu-university-of-debrecen-debrecen-biochemical-engineering-sf112 (Biochemical Engineering): intakes, deadline
 - hu-university-of-debrecen-debrecen-business-administration-sf115 (Business Administration and Management): intakes, deadline, duration
 - hu-university-of-debrecen-debrecen-business-informatics-sf116 (Business Informatics): intakes, deadline, duration
-- hu-university-of-debrecen-debrecen-chemical-engineering-sf117 (Chemical Engineering): tuition, intakes, deadline, channel, documents
-- hu-university-of-debrecen-debrecen-civil-engineering-sf121 (Civil Engineering): tuition, intakes, deadline, rules
-- hu-university-of-debrecen-debrecen-commerce-and-marketing-sf124 (Commerce and Marketing): intakes, deadline, documents, duration
+- hu-university-of-debrecen-debrecen-chemical-engineering-sf117 (Chemical Engineering): intakes, deadline, channel
+- hu-university-of-debrecen-debrecen-civil-engineering-sf121 (Civil Engineering): intakes, deadline, rules
+- hu-university-of-debrecen-debrecen-commerce-and-marketing-sf124 (Commerce and Marketing): intakes, deadline, duration
 - hu-university-of-debrecen-debrecen-computer-science-enginee-sf128 (Computer Science Engineering): intakes, deadline, duration
-- hu-university-of-debrecen-debrecen-computer-science-sf126 (Computer Science): tuition, intakes, deadline, channel
-- hu-university-of-debrecen-debrecen-electrical-engineering-sf146 (Electrical Engineering): tuition, intakes, deadline, duration
-- hu-university-of-debrecen-debrecen-engineering-management-sf199 (Engineering Management): tuition, intakes, deadline, channel, documents
-- hu-university-of-debrecen-debrecen-environmental-engineerin-sf200 (Environmental Engineering): tuition, intakes, deadline, documents
-- hu-university-of-debrecen-debrecen-mechanical-engineering-sf164 (Mechanical Engineering): intakes, deadline, documents, duration
-- hu-university-of-debrecen-debrecen-mechatronics-engineering-sf166 (Mechatronics Engineering): intakes, deadline, channel, documents, duration
-- hu-university-of-debrecen-debrecen-vehicle-engineering-sf181 (Vehicle Engineering): intakes, deadline, documents
+- hu-university-of-debrecen-debrecen-computer-science-sf126 (Computer Science): intakes, deadline
+- hu-university-of-debrecen-debrecen-electrical-engineering-sf146 (Electrical Engineering): intakes, deadline, duration
+- hu-university-of-debrecen-debrecen-engineering-management-sf199 (Engineering Management): tuition, intakes, deadline
+- hu-university-of-debrecen-debrecen-environmental-engineerin-sf200 (Environmental Engineering): tuition, intakes, deadline
+- hu-university-of-debrecen-debrecen-mechanical-engineering-sf164 (Mechanical Engineering): intakes, deadline, duration
+- hu-university-of-debrecen-debrecen-mechatronics-engineering-sf166 (Mechatronics Engineering): intakes, deadline, duration
+- hu-university-of-debrecen-debrecen-vehicle-engineering-sf181 (Vehicle Engineering): intakes, deadline
 
 ## HU / University of Dunaújváros (hu-university-of-dunaujvaros-dunaujvaros)
 
 - hu-university-of-dunaujvaros-dunaujvaros-business-administration-sf209 (Business Administration and Management): tuition, intakes, deadline, channel
-- hu-university-of-dunaujvaros-dunaujvaros-computer-science-enginee-sf211 (Computer Science Engineering): tuition, intakes, deadline, channel, documents
+- hu-university-of-dunaujvaros-dunaujvaros-computer-science-enginee-sf211 (Computer Science Engineering): tuition, intakes, deadline, channel
 - hu-university-of-dunaujvaros-dunaujvaros-materials-engineering-sf208 (Materials Engineering): tuition, intakes, deadline, channel
 - hu-university-of-dunaujvaros-dunaujvaros-mechanical-engineering-sf212 (Mechanical Engineering): tuition, intakes, deadline, channel
 
@@ -1285,59 +1193,59 @@
 
 - hu-university-of-miskolc-miskolc-business-administration-sf461 (Business Administration and Management): tuition, intakes, deadline, channel
 - hu-university-of-miskolc-miskolc-computer-science-enginee-sf464 (Computer Science Engineering): tuition, intakes, deadline, channel
-- hu-university-of-miskolc-miskolc-logistics-engineering-sf463 (Logistics Engineering): tuition, intakes, deadline, channel, documents
+- hu-university-of-miskolc-miskolc-logistics-engineering-sf463 (Logistics Engineering): tuition, intakes, deadline, channel
 - hu-university-of-miskolc-miskolc-materials-engineering-sf466 (Materials Engineering): tuition, intakes, deadline, channel
-- hu-university-of-miskolc-miskolc-mechanical-engineering-sf462 (Mechanical Engineering): tuition, intakes, deadline, channel, documents, duration
+- hu-university-of-miskolc-miskolc-mechanical-engineering-sf462 (Mechanical Engineering): tuition, intakes, deadline, channel, duration
 
 ## HU / University of Nyíregyháza (hu-university-of-nyiregyhaza-nyiregyhaza)
 
-- hu-university-of-nyiregyhaza-nyiregyhaza-business-administration-sf537 (Business Administration and Management): intakes, deadline, channel, documents
-- hu-university-of-nyiregyhaza-nyiregyhaza-computer-science-enginee-sf538 (Computer Science Engineering): intakes, deadline, documents
-- hu-university-of-nyiregyhaza-nyiregyhaza-computer-science-sf536 (Computer Science): intakes, deadline, channel, documents
-- hu-university-of-nyiregyhaza-nyiregyhaza-mechanical-engineering-sf529 (Mechanical Engineering): intakes, deadline, documents
+- hu-university-of-nyiregyhaza-nyiregyhaza-business-administration-sf537 (Business Administration and Management): intakes, deadline, channel
+- hu-university-of-nyiregyhaza-nyiregyhaza-computer-science-enginee-sf538 (Computer Science Engineering): intakes, deadline
+- hu-university-of-nyiregyhaza-nyiregyhaza-computer-science-sf536 (Computer Science): intakes, deadline, channel
+- hu-university-of-nyiregyhaza-nyiregyhaza-mechanical-engineering-sf529 (Mechanical Engineering): intakes, deadline
 - hu-university-of-nyiregyhaza-nyiregyhaza-professional-pilot-sf531 (Professional Pilot): intakes, deadline, channel
-- hu-university-of-nyiregyhaza-nyiregyhaza-tourism-and-catering-sf539 (Tourism and Catering): tuition, intakes, deadline, channel, documents
-- hu-university-of-nyiregyhaza-nyiregyhaza-vehicle-engineering-sf545 (Vehicle Engineering): tuition, intakes, deadline, channel, documents
+- hu-university-of-nyiregyhaza-nyiregyhaza-tourism-and-catering-sf539 (Tourism and Catering): tuition, intakes, deadline, channel
+- hu-university-of-nyiregyhaza-nyiregyhaza-vehicle-engineering-sf545 (Vehicle Engineering): intakes, deadline, channel
 
 ## HU / University of Pannonia (hu-university-of-pannonia-nagykanizsa)
 
 - hu-university-of-pannonia-nagykanizsa-sustainable-and-circular-sf594 (Sustainable and Circular Economy- Based Tourism): intakes, deadline, channel
-- hu-university-of-pannonia-nagykanizsa-water-operation-engineer-sf582 (Water Operation Engineering): intakes, deadline, channel, documents
+- hu-university-of-pannonia-nagykanizsa-water-operation-engineer-sf582 (Water Operation Engineering): intakes, deadline, channel
 
 ## HU / University of Pannonia (hu-university-of-pannonia-veszprem)
 
-- hu-university-of-pannonia-veszprem-business-administration-sf587 (Business Administration and Management): intakes, deadline, channel, documents
-- hu-university-of-pannonia-veszprem-computer-science-sf599 (Computer Science): intakes, deadline, channel, documents
-- hu-university-of-pannonia-veszprem-data-science-in-business-sf598 (Data Science in Business): intakes, deadline, channel, documents
-- hu-university-of-pannonia-veszprem-international-business-e-sf584 (International Business Economics): intakes, deadline, channel, documents, duration
+- hu-university-of-pannonia-veszprem-business-administration-sf587 (Business Administration and Management): intakes, deadline, channel
+- hu-university-of-pannonia-veszprem-computer-science-sf599 (Computer Science): intakes, deadline, channel
+- hu-university-of-pannonia-veszprem-data-science-in-business-sf598 (Data Science in Business): intakes, deadline, channel
+- hu-university-of-pannonia-veszprem-international-business-e-sf584 (International Business Economics): intakes, deadline, channel, duration
 - hu-university-of-pannonia-veszprem-tourism-and-catering-sf588 (Tourism and Catering): intakes, deadline, channel, duration
 
 ## HU / University of Public Service (hu-university-of-public-service-baja)
 
-- hu-university-of-public-service-baja-civil-engineering-sf521 (Civil Engineering): tuition, intakes, deadline, channel, documents
-- hu-university-of-public-service-baja-environmental-engineerin-sf522 (Environmental Engineering): tuition, intakes, deadline, channel, documents
-- hu-university-of-public-service-baja-water-operation-engineer-sf523 (Water Operation Engineering): tuition, intakes, deadline, channel, documents
+- hu-university-of-public-service-baja-civil-engineering-sf521 (Civil Engineering): tuition, intakes, deadline, channel
+- hu-university-of-public-service-baja-environmental-engineerin-sf522 (Environmental Engineering): tuition, intakes, deadline, channel
+- hu-university-of-public-service-baja-water-operation-engineer-sf523 (Water Operation Engineering): tuition, intakes, deadline
 
 ## HU / University of Pécs (hu-university-of-pecs-pecs)
 
-- hu-university-of-pecs-pecs-architectural-engineerin-sf629 (Architectural Engineering): intakes, deadline, documents
-- hu-university-of-pecs-pecs-business-administration-sf687 (Business Administration and Management): language, intakes, deadline, channel, documents
-- hu-university-of-pecs-pecs-civil-engineering-sf633 (Civil Engineering): tuition, intakes, deadline
-- hu-university-of-pecs-pecs-computer-science-enginee-sf634 (Computer Science Engineering): intakes, deadline, documents
-- hu-university-of-pecs-pecs-computer-science-sf643 (Computer Science): intakes, deadline, channel, documents
-- hu-university-of-pecs-pecs-mechanical-engineering-sf726 (Mechanical Engineering): intakes, deadline, channel, documents
+- hu-university-of-pecs-pecs-architectural-engineerin-sf629 (Architectural Engineering): intakes, deadline
+- hu-university-of-pecs-pecs-business-administration-sf687 (Business Administration and Management): language, intakes, deadline
+- hu-university-of-pecs-pecs-civil-engineering-sf633 (Civil Engineering): intakes, deadline
+- hu-university-of-pecs-pecs-computer-science-enginee-sf634 (Computer Science Engineering): intakes, deadline
+- hu-university-of-pecs-pecs-computer-science-sf643 (Computer Science): intakes, deadline, channel
+- hu-university-of-pecs-pecs-mechanical-engineering-sf726 (Mechanical Engineering): intakes, deadline, channel
 
 ## HU / University of Sopron (hu-university-of-sopron-sopron)
 
-- hu-university-of-sopron-sopron-business-administration-sf1043 (Business Administration and Management): tuition, intakes, deadline, channel, documents
-- hu-university-of-sopron-sopron-international-business-e-sf1042 (International Business Economics): tuition, intakes, deadline, channel, documents
-- hu-university-of-sopron-sopron-timber-industry-engineer-sf1039 (Timber Industry Engineering): intakes, deadline, documents
+- hu-university-of-sopron-sopron-business-administration-sf1043 (Business Administration and Management): tuition, intakes, deadline, channel
+- hu-university-of-sopron-sopron-international-business-e-sf1042 (International Business Economics): tuition, intakes, deadline, channel
+- hu-university-of-sopron-sopron-timber-industry-engineer-sf1039 (Timber Industry Engineering): intakes, deadline
 
 ## HU / University of Szeged (hu-university-of-szeged-szeged)
 
-- hu-university-of-szeged-szeged-business-administration-sf1132 (Business Administration and Management): tuition, intakes, deadline, channel, documents, duration
+- hu-university-of-szeged-szeged-business-administration-sf1132 (Business Administration and Management): tuition, intakes, deadline, channel, duration
 - hu-university-of-szeged-szeged-computer-science-sf1204 (Computer Science): intakes, deadline, channel
-- hu-university-of-szeged-szeged-tourism-and-catering-sf1134 (Tourism and Catering): tuition, intakes, deadline, channel, documents, duration
+- hu-university-of-szeged-szeged-tourism-and-catering-sf1134 (Tourism and Catering): tuition, intakes, deadline, channel, duration
 
 ## IT / Libera Università Mediterranea "Giuseppe Degennaro" (it-casamassima-lum-g-degennaro-casamassima)
 
@@ -1346,7 +1254,7 @@
 ## IT / Luiss - Libera Università internazionale degli studi sociali Guido Carli di Roma (it-roma-luiss-roma)
 
 - it-roma-luiss-roma-business-administration-l18 (Business Administration): intakes, deadline, channel
-- it-roma-luiss-roma-economics-and-business-l33 (Economics and Business): intakes, deadline, channel, rules
+- it-roma-luiss-roma-economics-and-business-l33 (Economics and Business): channel, rules
 - it-roma-luiss-roma-management-and-artificial-intelligence-l18 (Management and Artificial Intelligence): channel
 
 ## IT / Politecnico di Bari (it-bari-politecnico-bari)
@@ -1375,7 +1283,7 @@
 
 ## IT / Università Campus Bio-Medico di Roma (it-roma-biomedico-roma)
 
-- it-roma-biomedico-roma-biomedical-engineering-l8 (Biomedical Engineering): intakes, deadline, channel, rules
+- it-roma-biomedico-roma-biomedical-engineering-l8 (Biomedical Engineering): intakes, deadline, rules
 
 ## IT / Università Cattolica del "Sacro Cuore" (it-milano-cattolica-brescia)
 
@@ -1399,7 +1307,7 @@
 
 ## IT / Università degli Studi di Cassino e del Lazio Meridionale (it-cassino-cassino)
 
-- it-cassino-cassino-computer-engineering-l8 (Computer Engineering): language, intakes, deadline
+- it-cassino-cassino-computer-engineering-l8 (Computer Engineering): intakes, deadline
 - it-cassino-cassino-economics-with-data-science-l33 (Economics with data science): intakes, deadline
 - it-cassino-cassino-industrial-engineering-technology-l9 (Industrial Engineering Technology): intakes, deadline, rules
 
@@ -1431,7 +1339,7 @@
 
 ## IT / Università degli studi di Firenze (it-firenze-firenze)
 
-- it-firenze-firenze-sustainable-business-for-societal-challe-l18 (Sustainable Business for Societal Challenges): intakes, deadline, channel
+- it-firenze-firenze-sustainable-business-for-societal-challe-l18 (Sustainable Business for Societal Challenges): channel
 
 ## IT / Università degli studi di Messina (it-messina-messina)
 
@@ -1459,17 +1367,13 @@
 
 - it-perugia-perugia-engineering-management-l8 (Engineering management): intakes, deadline
 
-## IT / Università degli studi di Roma La Sapienza (it-roma-la-sapienza-roma)
-
-- it-roma-la-sapienza-roma-applied-computer-science-and-artificial-l31 (Applied Computer Science and Artificial Intelligence): intakes, deadline, duration
-
 ## IT / Università degli studi di Roma Tor Vergata (it-roma-tor-vergata-roma)
 
 - it-roma-tor-vergata-roma-engineering-sciences-l9 (Engineering Sciences): tuition, intakes, deadline
 
 ## IT / Università degli studi di Siena (it-siena-siena)
 
-- it-siena-siena-biotech-engineering-for-health-l8 (Biotech Engineering For Health): intakes, deadline, channel
+- it-siena-siena-biotech-engineering-for-health-l8 (Biotech Engineering For Health): channel
 - it-siena-siena-economics-and-management-l18 (Economics and Management): intakes, deadline
 
 ## IT / Università degli studi di Teramo (it-teramo-teramo)
@@ -1483,11 +1387,7 @@
 
 ## IT / Università degli studi di Udine (it-udine-udine)
 
-- it-udine-udine-management-business-analytics-l18 (Management & Business Analytics): tuition, intakes, deadline, channel
-
-## IT / Università di Pisa (it-pisa-pisa)
-
-- it-pisa-pisa-management-for-business-and-economics-l18 (Management for Business and Economics): intakes, deadline
+- it-udine-udine-management-business-analytics-l18 (Management & Business Analytics): tuition, intakes, deadline
 
 ## NL / Avans Hogeschool (nl-avans-hogeschool-07gr)
 
@@ -1515,7 +1415,7 @@
 
 ## NL / Capabel Hogeschool (nl-capabel-hogeschool-30hc-utrecht)
 
-- nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182 (Bedrijfskunde): intakes, deadline, channel
+- nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182 (Bedrijfskunde): deadline, channel
 
 ## NL / Christelijke Hogeschool Ede (nl-christelijke-hogeschool-ede-25ba)
 
@@ -1536,7 +1436,7 @@
 ## NL / De Haagse Hogeschool (nl-de-haagse-hogeschool-27um)
 
 - nl-de-haagse-hogeschool-27um-accountancy-1001o3550 (Accountancy): tuition, intakes, deadline, documents
-- nl-de-haagse-hogeschool-27um-applied-data-science-art-1001o8742 (Applied Data Science & Artificial Intelligence): tuition, intakes, deadline, documents
+- nl-de-haagse-hogeschool-27um-applied-data-science-art-1001o8742 (Applied Data Science & Artificial Intelligence): intakes, deadline, documents
 - nl-de-haagse-hogeschool-27um-bouwkunde-1001o3065 (Bouwkunde): tuition, intakes, deadline, documents
 
 ## NL / De Haagse Hogeschool (nl-de-haagse-hogeschool-27um-delft)
@@ -1562,7 +1462,7 @@
 
 - nl-fontys-hogeschool-30gb-tilburg-commerciele-economie-1001o3452 (Commerciële Economie): tuition, intakes, deadline, documents
 - nl-fontys-hogeschool-30gb-tilburg-ict-1001o2677 (ICT): tuition, intakes, deadline, documents, rules
-- nl-fontys-hogeschool-30gb-tilburg-technische-bedrijfskunde-1001o3682 (Technische Bedrijfskunde): tuition, intakes, deadline, documents
+- nl-fontys-hogeschool-30gb-tilburg-technische-bedrijfskunde-1001o3682 (Technische Bedrijfskunde): tuition, deadline, documents
 
 ## NL / Fontys Hogeschool (nl-fontys-hogeschool-30gb-venlo)
 
@@ -1576,7 +1476,7 @@
 
 ## NL / Hogeschool Inholland (nl-hogeschool-inholland-27pz-alkmaar)
 
-- nl-hogeschool-inholland-27pz-alkmaar-accountancy-1001o3549 (Accountancy): intakes, deadline, documents, rules
+- nl-hogeschool-inholland-27pz-alkmaar-accountancy-1001o3549 (Accountancy): intakes, deadline, rules
 - nl-hogeschool-inholland-27pz-alkmaar-bouwkunde-1001o3064 (Bouwkunde): documents
 - nl-hogeschool-inholland-27pz-alkmaar-technische-informatica-1001o3859 (Technische Informatica): language, documents, duration, rules
 
@@ -1590,7 +1490,7 @@
 
 ## NL / Hogeschool Inholland (nl-hogeschool-inholland-27pz-haarlem)
 
-- nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064 (Bouwkunde): intakes, deadline, documents
+- nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064 (Bouwkunde): intakes, deadline
 - nl-hogeschool-inholland-27pz-haarlem-business-studies-1001o2990 (Business Studies): tuition, documents
 - nl-hogeschool-inholland-27pz-haarlem-informatica-1001o3897 (Informatica): intakes, deadline, documents, rules
 
@@ -1606,7 +1506,7 @@
 ## NL / Hogeschool Rotterdam (nl-hogeschool-rotterdam-22oj)
 
 - nl-hogeschool-rotterdam-22oj-accountancy-1001o3536 (Accountancy): tuition, intakes, deadline, documents, rules
-- nl-hogeschool-rotterdam-22oj-applied-data-science-art-1001o8776 (Applied Data Science & Artificial Intelligence): tuition, language, documents, duration
+- nl-hogeschool-rotterdam-22oj-applied-data-science-art-1001o8776 (Applied Data Science & Artificial Intelligence): tuition, documents
 - nl-hogeschool-rotterdam-22oj-bouwkunde-1001o3055 (Bouwkunde): tuition, documents
 
 ## NL / Hogeschool Utrecht (nl-hogeschool-utrecht-25dw)

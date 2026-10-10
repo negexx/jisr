@@ -1,0 +1,102 @@
+{
+  "slug": "it-roma-biomedico-roma-biomedical-engineering-l8",
+  "programmePage": "https://www.unicampus.it/en/courses/training-offer/bachelor-s-degree/departmental-faculty-of-engineering/degree-course-in-biomedical-engineering-l-8/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.unicampus.it/en/courses/training-offer/bachelor-s-degree/departmental-faculty-of-engineering/degree-course-in-biomedical-engineering-l-8/",
+          "quote": "Typology Degree course Duration 3 years Enrolment deadline Start date Frequency ECTS 180"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unicampus.it/en/courses/training-offer/bachelor-s-degree/departmental-faculty-of-engineering/degree-course-in-biomedical-engineering-l-8/",
+          "quote": "The Biomedical Engineering Degree Course (class L 8) is offered entirely in English"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.unicampus.it/en/external-student-services/get-your-visa/",
+          "quote": "Getting a visa is now much easier and faster, thanks to the Universitaly portal created by the Italian Ministry of University and Research in collaboration with the Ministry of Foreign Affairs."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fees for non-EU students residing abroad are not stated in any page; the table on https://www.unicampus.it/en/degree-course-admissions/taxes-and-contributions/ gives the general annual contribution for Biomedical Engineering (€6,571.50 total for 2026/27), but it does not differentiate non-EU students. The call for admission 2026/2027 has several rounds for non-EU applicants residing abroad; the latest round mentioned on the IV call page has a deadline of 10 September 2026 for non-EU applicants residing abroad, but the quote does not specify that this deadline is for non-EU students. No quote ties the programme to a tuition group for non-EU students. No document list for international applicants and no tuition fee for non-EU students could be extracted from the supplied pages. The language certificate requirement for English B2 refers to Annex B, which is not provided in the pages.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.unicampus.it/2.0/wp-content/uploads/2026/01/ENG_BIOMEDICAL_ENGINEERING_2026-27_call_for_admission-1.pdf",
+            "quote": "Admission to the Bachelor’s Degree Programme in Biomedical Engineering requires the knowledge of English, at least B2 level of CEFR attested by one of the language certifications listed in Annex B, which is part of this procedure."
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.unicampus.it/2.0/wp-content/uploads/2026/01/ENG_BIOMEDICAL_ENGINEERING_2026-27_call_for_admission-1.pdf",
+            "quote": "The only valid academic qualification is the one obtained after at least 12 years of schooling."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats titulaires d'un diplôme étranger doivent fournir une Déclaration de Valeur (Dichiarazione di Valore) de la représentation diplomatique italienne ou un certificat de comparabilité CIMEA.",
+          "en": "Applicants with a foreign qualification must provide a Declaration of Value (Dichiarazione di Valore) from the Italian diplomatic representation or a CIMEA comparability certificate."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unicampus.it/2.0/wp-content/uploads/2026/01/ENG_BIOMEDICAL_ENGINEERING_2026-27_call_for_admission-1.pdf",
+            "quote": "Candidates who have obtained an academic qualification from a foreign school system are required to provide a Declaration of Value (Dichiarazione di Valore) issued by the Italian diplomatic representations or, alternatively, a certificate issued by the Information Centre on Academic Mobility and Equivalence (CIMEA)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non-UE non résidents en Italie doivent demander un visa d'études de longue durée (type D) ; la préinscription sur le portail Universitaly est nécessaire.",
+          "en": "Non-EU citizens not resident in Italy must apply for a long-stay study visa (type D); pre-enrolment on the Universitaly portal is required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unicampus.it/2.0/wp-content/uploads/2026/01/ENG_BIOMEDICAL_ENGINEERING_2026-27_call_for_admission-1.pdf",
+            "quote": "b) NON – EU citizens not resident in Italy who need a long-stay visa. Each candidate must submit the visa application in accordance with the provisions published annually by the Ministry of Universities and Research on the following website www.studiare-in-italia.it/studentistranieri."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission se fait par ordre de soumission de la candidature en ligne après vérification des conditions, sans test (sauf pour le parcours d'excellence).",
+          "en": "Admission is based on the order of submission of the online application after verifying the requirements, without any test (except for the Excellence Pathway)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.unicampus.it/2.0/wp-content/uploads/2026/01/ENG_BIOMEDICAL_ENGINEERING_2026-27_call_for_admission-1.pdf",
+            "quote": "These places are allocated through the \"Sessione Summer School\" under RR.DD. April 16, 2025 n. 231 - until the number of available places is exhausted - in the order of submission of the application after verifying the candidate’s requirements (without any test)."
+          }
+        ]
+      }
+    ]
+  }
+}

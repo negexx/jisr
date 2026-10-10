@@ -1,0 +1,46 @@
+{
+  "slug": "hu-obuda-university-budapest-mechatronical-engineerin-sf546",
+  "programmePage": null,
+  "facts": {
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://uni-obuda.hu/application-deadlines/",
+          "quote": "the Matriculation / School Leaving Certificate has to be uploaded into the University’s online application system by the 1st of August the year of application"
+        }
+      ]
+    }
+  },
+  "notes": "La page des frais indique 2 900 EUR par semestre pour les étudiants non-EEE en Mechatronical Engineering, mais ce chiffre n'est pas présenté comme destiné spécifiquement aux étudiants étrangers avec diplôme étranger ; à vérifier. Le diplôme de fin d'études secondaires doit être téléversé au plus tard le 1er août de l'année de candidature. Une date limite générale (31 mai 2026) figure sur la page How to apply, mais elle n'est pas citée comme réservée aux candidats internationaux/non-UE. Le canal de candidature est déduit du système de candidature en ligne de l'université.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier l'âge minimum : avoir au moins 18 ans au début des études (fin septembre 2026).",
+          "en": "Check the minimum age: at least 18 years old by the start of the study period (end of September 2026)."
+        },
+        "evidence": [
+          {
+            "url": "https://uni-obuda.hu/application-deadlines/",
+            "quote": "Applicants must be at least 18 years old by the start of the study period in the Fall semester of Year 1 at the University"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier un bon niveau d'anglais et un fort intérêt pour les matières STEM, ainsi qu'un certificat de fin d'études secondaires.",
+          "en": "Check good command of English and strong interest in STEM fields, plus completion of secondary school."
+        },
+        "evidence": [
+          {
+            "url": "https://uni-obuda.hu/application-deadlines/",
+            "quote": "Obuda University seeks students who possess a strong background and interest in STEM fields, a good command of English, and a strong motivation to study at Obuda University."
+          }
+        ]
+      }
+    ]
+  }
+}

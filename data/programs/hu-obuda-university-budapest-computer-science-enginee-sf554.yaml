@@ -37,12 +37,21 @@ intakes:
   source: programme
   info_kind: official
 applicationChannel:
-  value: null
-  source: programme
+  value: hu-university-direct
+  source: page-1
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: school-leaving-certificate
+      name:
+        fr:
+          text: Certificat de fin d'études secondaires
+          status: draft
+        en:
+          text: School Leaving Certificate
+          status: draft
+      translationRequired: null
+  source: page-1
   info_kind: official
 requirements:
   coverage: partial
@@ -94,3 +103,6 @@ sources:
   page-2:
     url: https://uni-obuda.hu/tuition-fees/
     last_verified_at: 2026-10-05
+  page-1:
+    url: https://uni-obuda.hu/application-deadlines/
+    last_verified_at: 2026-10-10

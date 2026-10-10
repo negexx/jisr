@@ -1,0 +1,87 @@
+{
+  "slug": "nl-avans-hogeschool-07gr-s-hertogenbosch-bouwkunde-1001o3048",
+  "programmePage": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+          "quote": "Duur 4 jaar, voltijd bachelor"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+          "quote": "Taal Nederlands"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1030800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+          "quote": "Non-EEA nationality (institutional tuition fee) €10,308,-"
+        },
+        {
+          "url": "https://www.avans.nl/en/int/studying/practical-information/tuition-fees",
+          "quote": "The following tuition fees apply for the 2026-2027 academic year."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.avans.nl/studeren/praktische-zaken/studiekosten",
+          "quote": "Meld je aan voor de opleiding via Studielink."
+        }
+      ]
+    }
+  },
+  "notes": "Le délai de candidature pour les non-UE (1 mai) et le paiement des frais de scolarité avant le 15 juin sont mentionnés sur la page des frais de scolarité, mais la citation indique \"Students with a non-EEA nationality are required to apply by May 1st\" sans année explicite. L'admission via Studielink est mentionnée dans une citation générale pour les étudiants néerlandais; aucune page ne précise explicitement le canal pour les étudiants non-UE, mais Studielink est la plateforme générale d'inscription.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les diplômes requis (havo, vwo ou mbo niveau 4) et les profils acceptés pour cette formation.",
+          "en": "Check the required diplomas (havo, vwo or mbo level 4) and accepted profiles for this programme."
+        },
+        "evidence": [
+          {
+            "url": "https://www.avans.nl/studeren/praktische-zaken/aanmelden/toelating",
+            "quote": "Dat kan alleen als je een havo-, vwo- of mbo niveau 4-diploma hebt."
+          },
+          {
+            "url": "https://www.avans.nl/studeren/opleidingen/bachelor/bouwkunde-voltijd",
+            "quote": "Havo Natuur & Techniek Natuur & Gezondheid Economie & Maatschappij Cultuur & Maatschappij"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez si un visa ou permis de séjour est nécessaire pour les étudiants hors UE.",
+          "en": "Check if a visa or residence permit is required for non-EU students."
+        },
+        "evidence": [
+          {
+            "url": "https://www.avans.nl/studeren/praktische-zaken/aanmelden/toelating",
+            "quote": "Als je in Nederland gaat studeren voor langer dan 3 maanden en je hebt een nationaliteit van buiten de Europese Unie dan moet je een visum en/of verblijfsvergunning aanvragen."
+          }
+        ]
+      }
+    ]
+  }
+}

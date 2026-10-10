@@ -1,0 +1,41 @@
+{
+  "slug": "de-technische-hochschule-rosenheim-hrk232-robotics-and-machine-int-daad11251",
+  "programmePage": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/robotics-and-machine-intelligence",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11251/",
+          "quote": "Programme duration 8 semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en",
+        "de"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/robotics-and-machine-intelligence",
+          "quote": "Language German & English"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/11251/",
+          "quote": "German B1, B2 and Technical German prepare you for advanced German-taught modules, the internship semester and professional communication."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist",
+      "evidence": [
+        {
+          "url": "https://www.th-rosenheim.de/en/studies-and-further-education/courses-of-study/bachelors-degree-programmes/robotics-and-machine-intelligence",
+          "quote": "Apply only via uni-assist if you have obtained your higher education entrance qualification outside Germany"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: the general university-wide page states a fee of 500 EUR per enrolled semester for international students from non-EU countries (Studiengebühren für internationale Studierende aus Drittstaaten); this page does not explicitly mention this specific programme, but the tuition fact is included with a yearly value of 100000 minor units (500 EUR x 2 semesters). Admission: a general or subject-specific higher education entrance qualification is required; foreign applicants apply via uni-assist, but the pages do not mention a VPD (Vorprüfungsdokumentation), so the channel is de-uni-assist."
+}

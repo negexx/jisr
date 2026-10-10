@@ -26,7 +26,10 @@ teachingLanguages:
   source: page-2
   info_kind: official
 tuition:
-  value: null
+  value:
+    amountMinor: 340000
+    currency: USD
+    period: semester
   source: programme
   info_kind: official
 intakes:

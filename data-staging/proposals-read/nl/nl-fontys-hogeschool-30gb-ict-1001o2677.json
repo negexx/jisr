@@ -1,0 +1,44 @@
+{
+  "slug": "nl-fontys-hogeschool-30gb-ict-1001o2677",
+  "programmePage": "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+          "quote": "ICT 4 jaar Bachelor Voltijd Start februari en september Nederlands Eindhoven Tilburg"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "nl"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.fontys.nl/Opleidingen/ICT-bachelor-voltijd.htm",
+          "quote": "ICT 4 jaar Bachelor Voltijd Start februari en september Nederlands Eindhoven Tilburg"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition fee not stated: the programme's own page gives no fee; the institution-wide pages only state that instellingscollegegeld applies to students from outside the EER but give no amount, and refer to a collegegeldmeter for amounts.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission pour les diplômes étrangers (page 'Toelating').",
+          "en": "Check admission requirements for foreign diplomas (page 'Toelating')."
+        },
+        "evidence": [
+          {
+            "url": "https://www.fontys.nl/Studeren/Praktische-informatie/Aanmelden-en-inschrijven.htm",
+            "quote": "Heb je je vooropleiding buiten Nederland gehaald? Ga naar aanmelden internationaal."
+          }
+        ]
+      }
+    ]
+  }
+}

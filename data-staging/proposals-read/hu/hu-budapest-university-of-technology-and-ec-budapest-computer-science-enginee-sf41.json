@@ -1,0 +1,109 @@
+{
+  "slug": "hu-budapest-university-of-technology-and-ec-budapest-computer-science-enginee-sf41",
+  "programmePage": null,
+  "facts": {
+    "documents": {
+      "value": [
+        {
+          "slug": "application-form",
+          "name": {
+            "fr": "Formulaire de candidature",
+            "en": "Application form"
+          },
+          "quotedAs": "application form",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-copy",
+          "name": {
+            "fr": "Copie du passeport",
+            "en": "Passport copy"
+          },
+          "quotedAs": "passport copy",
+          "translationRequired": null
+        },
+        {
+          "slug": "secondary-school-reports",
+          "name": {
+            "fr": "Bulletins de l'enseignement secondaire",
+            "en": "Secondary high school reports"
+          },
+          "quotedAs": "secondary high school reports relevant to your application",
+          "translationRequired": true
+        },
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Secondary high school diploma"
+          },
+          "quotedAs": "general certificate of education - G.C.E. or any equivalent secondary high school diploma",
+          "translationRequired": true
+        },
+        {
+          "slug": "transcripts",
+          "name": {
+            "fr": "Relevés de notes officiels",
+            "en": "Official transcripts"
+          },
+          "quotedAs": "official transcripts, degrees/diplomas of any higher education already completed",
+          "translationRequired": true
+        },
+        {
+          "slug": "english-language-proficiency",
+          "name": {
+            "fr": "Preuve de compétence en langue anglaise",
+            "en": "Proof of English language proficiency"
+          },
+          "quotedAs": "Proof of English language proficiency",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum vitae",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "curriculum vitae (autobiography/résumé)",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "application form passport copy official document of previous studies: secondary high school reports relevant to your application, with special reference to mathematics, physics and English language."
+        },
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "Notarized English translation (for BSc application) general certificate of education - G.C.E. or any equivalent secondary high school diploma."
+        },
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "official transcripts, degrees/diplomas of any higher education already completed. Notarized English translation (for BSc and MSc application)"
+        },
+        {
+          "url": "https://www.vik.bme.hu/en/education/admission/",
+          "quote": "Proof of English language proficiency: TOEFL iBT score of 4.0, or PBT score 550 or Cambridge First Certificate \"B\" or IELTS score of 5.0 (recommended for BSc, required for MSc and PhD) or Pearson PTE min. 51 curriculum vitae (autobiography/résumé)"
+        }
+      ]
+    }
+  },
+  "notes": "The programme name \"Computer Science Engineering\" does not appear on the supplied pages; only \"BSc Computer Engineering [CE]\" and \"BSc Electrical Engineering [EE]\" are listed, and the admission page speaks of \"All BSc degree programs\". Facts are taken from the BSc-level admission information. No tuition fee for non-EU/EEA self-financed students is stated on these pages. English language proficiency tests are quoted as recommended (not required) for BSc level.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Test de placement obligatoire en mathématiques, physique et anglais (dernière semaine d'août). Un score suffisant est requis pour entrer directement en première année du BSc.",
+          "en": "Mandatory placement test in Mathematics, Physics and English (last week of August). A sufficient score is required to be directly accepted into the first year of the BSc."
+        },
+        "evidence": [
+          {
+            "url": "https://www.vik.bme.hu/en/education/admission/",
+            "quote": "The placement test is mandatory for all applicants who wish to enter into a BSc degree program at BME VIK."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "slug": "hu-university-of-pecs-pecs-architectural-engineerin-sf629",
+  "programmePage": "https://english.mik.pte.hu/architectural-engineering-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://apply.pte.hu/en_GB/courses/course/445-architecture-bsc?search=113391",
+          "quote": "Nominal duration 7 semesters (3,5 years)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://english.mik.pte.hu/architectural-engineering-bsc",
+          "quote": "Language of instruction: English, Hungarian"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 400000,
+        "currency": "USD",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://english.mik.pte.hu/architectural-engineering-bsc",
+          "quote": "Tuition Fee for the program: 4.000 USD/semester"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": "2027-09-01",
+          "applicationOpens": "2027-02-01",
+          "applicationDeadline": "2027-06-30",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://apply.pte.hu/en_GB/courses/course/445-architecture-bsc?search=113391",
+          "quote": "Application start 1 Feb 2027 Application deadline 30 Jun 2027, 23:59:59 Central European Time Studies commence 1 Sept 2027"
+        },
+        {
+          "url": "https://english.mik.pte.hu/application-step-by-step-1",
+          "quote": "Application period: starts: 1 February 2027 ends: 15 June 2027 (except Computer Scinence Engineering BSc, ends: 30 May 2027)"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://english.mik.pte.hu/application-step-by-step-1",
+          "quote": "Register on the online application site of the University of Pécs"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "passport-sized-photo",
+          "name": {
+            "fr": "Photo d'identité",
+            "en": "Passport sized photo"
+          },
+          "quotedAs": "Passport sized photo",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport",
+          "name": {
+            "fr": "Copie de la page photo du passeport",
+            "en": "Copy of the photo-page(s) of your passport"
+          },
+          "quotedAs": "Copy of the photo-page(s) of your passport",
+          "translationRequired": null
+        },
+        {
+          "slug": "high-school-diploma",
+          "name": {
+            "fr": "Diplôme du secondaire",
+            "en": "High School Diploma"
+          },
+          "quotedAs": "High School Diploma",
+          "translationRequired": null
+        },
+        {
+          "slug": "transcript-of-records",
+          "name": {
+            "fr": "Relevé de notes",
+            "en": "Transcript of Records"
+          },
+          "quotedAs": "Transcript of Records",
+          "translationRequired": null
+        },
+        {
+          "slug": "medical-certificate",
+          "name": {
+            "fr": "Certificat médical",
+            "en": "Medical Certificate"
+          },
+          "quotedAs": "Medical Certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "curriculum-vitae",
+          "name": {
+            "fr": "Curriculum Vitae en anglais",
+            "en": "Curriculum Vitae in English"
+          },
+          "quotedAs": "Curriculum Vitae in English",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivation-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivation Letter"
+          },
+          "quotedAs": "Motivation Letter",
+          "translationRequired": null
+        },
+        {
+          "slug": "portfolio",
+          "name": {
+            "fr": "Portfolio",
+            "en": "Portfolio"
+          },
+          "quotedAs": "Portfolio",
+          "translationRequired": null
+        },
+        {
+          "slug": "recommendation-letters",
+          "name": {
+            "fr": "Lettres de recommandation",
+            "en": "Recommendation letters"
+          },
+          "quotedAs": "Recommendation letters, more documentation etc. – optional submission",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://english.mik.pte.hu/application-step-by-step-1",
+          "quote": "Submit the following documents: - Passport sized photo - Copy of the photo-page(s) of your passport - High School Diploma - Transcript of Records - Medical Certificate - Curriculum Vitae in English - Motivation Letter - Portfolio - Recommendation letters, more documentation etc. – optional submission"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un entretien en ligne fait partie de la procédure d'admission; préparez-vous à un entretien après avoir payé les frais de dossier.",
+          "en": "An online interview is part of the admission procedure; be prepared for an interview after paying the application fee."
+        },
+        "evidence": [
+          {
+            "url": "https://english.mik.pte.hu/application-step-by-step-1",
+            "quote": "Call for an online interview"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un portfolio est demandé pour ce programme; sa nature et son contenu doivent être vérifiés sur la page des exigences de portfolio.",
+          "en": "A portfolio is required for this programme; its nature and content should be checked on the portfolio requirements page."
+        },
+        "evidence": [
+          {
+            "url": "https://english.mik.pte.hu/application-step-by-step-1",
+            "quote": "Portfolio requirements"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Teaching languages quote is from English-language programme page, which lists 'English, Hungarian' as languages of instruction; value in JSON lists only 'en' because the applicant is applying in the English-language track. Tuition quote is 'US$4,000 per semester' on the programme's English page; apply.pte.hu repeats 'US$4,000 per semester'. Application deadline on apply.pte.hu for 2027/28 is 30 Jun 2027; faculty page states 15 June 2027 (except CSE BSc). Both are shown as evidence; main intake uses the programme's apply.pte.hu deadline. Application fee is US$150 one-time (not included in the facts because it is not tuition). The application channel is university-direct via 'Register on the online application site of the University of Pécs' (https://english.mik.pte.hu/application-step-by-step-1); no Stipendium Hungaricum scholarship route is stated on the supplied pages for this programme. Translation requirement: 'If not, you’ll need official translations accompanied by verified copies of the original documents.' on apply.pte.hu applies to entry qualification documents generally, but no individual document is named with a translation requirement, so translationRequired is left null for all documents."
+}

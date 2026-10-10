@@ -21,7 +21,8 @@ durationYears:
   source: programme
   info_kind: official
 teachingLanguages:
-  value: null
+  value:
+    - en
   source: programme
   info_kind: official
 tuition:

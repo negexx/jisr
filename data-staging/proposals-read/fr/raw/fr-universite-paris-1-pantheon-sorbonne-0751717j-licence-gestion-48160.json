@@ -1,0 +1,76 @@
+{
+  "slug": "fr-universite-paris-1-pantheon-sorbonne-0751717j-licence-gestion-48160",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48160&typeBac=0&originePc=0",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.pantheonsorbonne.fr/inscription/frais-dinscription",
+          "quote": "Licence 1ère, 2ème et 3ème année : 2902 € (étudiants extracommunautaires)"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48160&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Formation sélective : examen du dossier scolaire (notes de mathématiques surtout), épreuves écrites du 30 avril au 6 mai 2026 et épreuves orales (motivation et culture générale) aux mêmes dates. Convocation entre le 20 et le 29 avril 2026.",
+          "en": "Selective programme: academic record review (especially mathematics grades), written tests 30 April–6 May 2026 and oral tests (motivation and general knowledge) on the same dates. Invitation sent between 20 and 29 April 2026."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48160&typeBac=0&originePc=0",
+            "quote": "Les épreuves écrites auront lieu : Du jeudi 30 avril 2026 au mercredi 06 mai 2026"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Spécialité mathématiques en terminale attendue (prérequis) ; la spécialité SES est conseillée mais non obligatoire. Le profil type est mathématiques + SES.",
+          "en": "Mathematics specialisation in final year is expected (prerequisite); the SES specialisation is advised but not obligatory. The typical profile is mathematics + SES."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=48160&typeBac=0&originePc=0",
+            "quote": "Les prérequis sont ceux de la spécialité de mathématiques de terminale."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des exonérations des droits d'inscription différenciés (2 902 €) existent selon la situation (ex. pays les moins avancés, bourse du gouvernement français). Le Maroc n'est pas concerné : vérifier le montant exact auprès de l'université.",
+          "en": "Exemptions from the differentiated tuition fee (EUR 2,902) exist depending on the situation (e.g. least developed countries, French government scholarship). Morocco is not covered: check the exact amount with the university."
+        },
+        "evidence": [
+          {
+            "url": "https://international.pantheonsorbonne.fr/droits-dinscription-differencies",
+            "quote": "En complément des cas prévus par le cadre national et en vertu de la politique d’établissement, le conseil d’administration de l’université Paris 1 Panthéon-Sorbonne a voté l’exonération des droits d’inscription différenciés pour les étudiants extra-communautaires dans les cas suivants"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Programme's own page is the Parcoursup fiche; the double-diploma (Licence Gestion + DU Collège du Management) is presented there. Duration (3 years) and teaching languages are not stated for this specific double diploma on the supplied pages (the 'Licence Economie' catalogue page with 180 ECTS / 3 ans concerns another programme), so they are omitted. Tuition: the university page states EUR 2,902/year for extracommunautaires in Licence 1ère, 2ème et 3ème année; the Parcoursup fiche itself only shows the 178 €/year rate for non-extracommunautaires (plus 510 € for the DU). Application channel omitted per task instructions, through Etudes en France/Campus France for an applicant with a Moroccan Baccalauréat. The Parcoursup 'épreuves écrites/orales' dates apply to candidates on Parcoursup, not necessarily to Etudes en France applicants. Document list: no document list is stated for this programme on the supplied pages."
+}

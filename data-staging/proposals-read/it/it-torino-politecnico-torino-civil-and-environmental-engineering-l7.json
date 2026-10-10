@@ -1,0 +1,57 @@
+{
+  "slug": "it-torino-politecnico-torino-civil-and-environmental-engineering-l7",
+  "programmePage": "https://www.polito.it/en/education/bachelor-s-degree-programmes/civil-and-environmental-engineering",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.polito.it/en/education/bachelor-s-degree-programmes/civil-and-environmental-engineering",
+          "quote": "Language: English"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/bachelor-s-degree-programmes/applicants-with-a-non-italian-qualification",
+          "quote": "If you are an international student living abroad and applying for a visa, you must submit the pre-enrollment application to obtain a study visa and enrol at Politecnico di Torino exclusively through the UNIVERSITALY portal."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition left out: the only figures found (Art. 3, Regolamento contribuzione 2026/2027) give a minimum of 600,00 € and a maximum of 3.600,00 € proportioned to the GDP at purchasing power parity of the student's country of citizenship; no quote names Morocco and no quote ties this programme to a fee group, so the fallback range was not used. Deadlines: only the 2026/27 call was used; the Call also lists later TIL-I sessions and a 30th June 2026 pre-enrolment deadline on Universitaly. Other rounds exist for EU applicants and for the 5th session.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/bachelor-s-degree-programmes/applicants-with-a-non-italian-qualification",
+            "quote": "English-taught programmes English Level B2 or above"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Test d'admission obligatoire (test TIL-I) : réussir le test d'admission ou fournir un score SAT. Le score minimum est de 30/100 ; un score d'au moins 60/100 garantit l'admission.",
+          "en": "Mandatory admission test (TIL-I test): pass the admission test or submit a SAT score. Minimum score is 30/100; a score of at least 60/100 guarantees admission."
+        },
+        "evidence": [
+          {
+            "url": "https://www.polito.it/sites/default/files/2025-12/Call%20for%20applications%20for%20admissions%20Engineering%20_%20LP%202026-27.pdf",
+            "quote": "Applicants must have a minimum score of 650 points in each of the two test sections (art.12, par.1)."
+          }
+        ]
+      }
+    ]
+  }
+}

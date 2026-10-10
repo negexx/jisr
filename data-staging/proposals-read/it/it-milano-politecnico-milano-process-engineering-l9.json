@@ -1,0 +1,106 @@
+{
+  "slug": "it-milano-politecnico-milano-process-engineering-l9",
+  "programmePage": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/process-engineering",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/process-engineering",
+          "quote": "The BSc in Process Engineering is organised over three years, divided into semesters"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/process-engineering",
+          "quote": "Entirely taught in English and located in Cremona, the programme connects academic excellence with real-world relevance"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/how-to-apply-for-a-student-visa",
+          "quote": "The process for applying for a new student visa is done through the Universitaly portal. Non-EU citizens living abroad who are accepted to our Bachelor degree programmes must create an account on Universitaly and submit their visa application."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires",
+            "en": "Final secondary school diploma"
+          },
+          "quotedAs": "Final secondary school diploma",
+          "translationRequired": true
+        },
+        {
+          "slug": "school-grades",
+          "name": {
+            "fr": "Relevés de notes des trois dernières années",
+            "en": "Grades from the last three years of school"
+          },
+          "quotedAs": "report cards from the last three years of secondary school",
+          "translationRequired": true
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/necessary-documents-for-enrolment",
+          "quote": "1. Final secondary school diploma, with the stamp and signature of the competent office Issued in the original language accompanied by an official translation if it is not available in English, French and Spanish."
+        },
+        {
+          "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/students-with-a-foreign-degree",
+          "quote": "report cards from the last three years of secondary school, stamped and signed by the competent authority/office;"
+        },
+        {
+          "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/necessary-documents-for-enrolment",
+          "quote": "Both documents must be accompanied by an official translation if they are not available in English, French or Spanish."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: no figure found that applies to a non-EU applicant with household outside Italy for this programme. The published amounts (e.g. first instalment €880.04, second instalment up to €3,003.00) are income/ISEE-based and the pages state the ISEEU parificato is 'not valid for applying for partial or total exemption' and note that non-EU reserved-category students in Master's programmes pay the maximum; no quote ties this Bachelor programme to a fixed non-EU fee or to a programme group, and no quote names Morocco in a country-group fee list. Application timing: the call for admission 2026/27 (Engineering BSc) gives a first-phase enrolment window (May 4, 2026 to June 11, 2026) and additional phases exist, but the page states this programme is excluded from the first 'early enrolment' phase, so no international applicationOpens/applicationDeadline is stated for this programme; more admission phases are described in the call. Documents list taken from the 'necessary documents' and 'students with a foreign degree' pages (translation required if not in English, French or Spanish).",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Test d'entrée obligatoire (TOL ou tests alternatifs TOLC-I, CEnT-S, SAT). Score minimum : 30/100.",
+          "en": "Entrance test required (TOL or alternative tests TOLC-I, CEnT-S, SAT). Minimum score: 30/100."
+        },
+        "evidence": [
+          {
+            "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/engineering",
+            "quote": "an entrance test;"
+          },
+          {
+            "url": "https://www.polimi.it/fileadmin/user_upload/futuri_studenti/Engineering_BSc_call_for_admission_2026-27__English_.pdf",
+            "quote": "The minimum TOL score for admission, rounded to the nearest whole number, must be equal to or greater than 30/100 (thirty) points."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier les exigences de diplôme et les années de scolarité (un certificat d'examen d'entrée à l'université peut être requis selon le pays).",
+          "en": "Check diploma and years of schooling requirements (national university entrance exam certificate may be required depending on country)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-programmes/students-with-a-foreign-degree",
+            "quote": "applicants must meet specific requirements. These may relate to the total number of years of schooling completed, the final diploma grade/score, or the successful passing an academic suitability test."
+          }
+        ]
+      }
+    ]
+  }
+}

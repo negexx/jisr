@@ -1,0 +1,101 @@
+{
+  "slug": "nl-hogeschool-utrecht-25dw-ict-1001o2672",
+  "programmePage": "https://www.hu.nl/voltijd-opleidingen/hbo-ict",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.hu.nl/voltijd-opleidingen/hbo-ict",
+          "quote": "Bachelor 4 jaar Heidelberglaan 15 Utrecht"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 1074700,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hu.nl/collegegeld-en-betalen",
+          "quote": "Het instellingscollegegeldtarief geldt alleen voor studenten die niet voldoen aan de voorwaarden voor het wettelijk collegegeld."
+        },
+        {
+          "url": "https://www.hu.nl/collegegeld-en-betalen",
+          "quote": "De tarieven voor instellingscollegegeld in 2026-2027 Bachelor, Associate degree & bekostigde master (voltijd, deeltijd & duaal) € 10.747"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2026-09-01",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hu.nl/-/media/hu/documenten/studiekeuze-voltijd/inschrijvingsregeling-hu-2026-2027.pdf",
+          "quote": "Als je je wilt inschrijven voor de voltijd variant van een bachelor of Ad-opleiding en je woont op het moment van je aanmelding in het buitenland, dan moet je je voor 1 september via Studielink, bij de hogeschool aanmelden."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "nl-studielink",
+      "evidence": [
+        {
+          "url": "https://www.hu.nl/voltijd-opleidingen/hbo-ict",
+          "quote": "Aanmelddeadline t/m 1 mei en 31 januari Startmoment September en februari"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez les conditions d'admission pour les étudiants internationaux sur le site international de la HU (diplôme étranger, équivalences).",
+          "en": "Check admission requirements for international students on the HU international website (foreign diploma, equivalences)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hu.nl/voltijd-opleidingen/international-business/admission",
+            "quote": "Admission requirements for international students Are you an international student and do you wish to apply for this programme? Please visit our international website to find the relevant admission requirements for you."
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "mathematics"
+        ],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://www.hu.nl/voltijd-opleidingen/international-business/admission",
+            "quote": "The IB curriculum requires acceptable numeracy skills as well as a good command of English."
+          }
+        ]
+      },
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": null,
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.hu.nl/voltijd-opleidingen/international-business/admission",
+            "quote": "A good command of the English language is crucially important to be able to complete this programme."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition: two quotes are given—one states who pays the instellingscollegegeld (students who do not meet the conditions for the statutory fee), one gives the amount for 2026-2027 for bachelor programmes (voltijd, deeltijd & duaal). The fact that the programme is 4 years was quoted from the programme page (it mentions 'Bachelor 4 jaar'). The application deadline is taken from the Inschrijvingsregeling HU, which says students living abroad must register before 1 September; this is an institution-wide rule for full-time bachelor programmes and applies to this programme. The programme page itself mentions 'Aanmelddeadline t/m 1 mei en 31 januari' but does not specify for whom, so the institution-wide rule for students abroad was used. No specific document list for this programme was found. The start moment September and February is on the programme page but no evidence was provided for the number of intakes, so it was omitted. No tuition fee specific to this programme was found."
+}

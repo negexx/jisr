@@ -1,0 +1,77 @@
+{
+  "slug": "fr-sorbonne-universite-0755890v-licence-electronique-energie-electri-47355",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47355&typeBac=0&originePc=0",
+  "facts": {
+    "tuition": {
+      "value": {
+        "amountMinor": 17800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47355&typeBac=0&originePc=0",
+          "quote": "Par année 178 euros."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "diplôme équivalent au baccalauréat français",
+            "en": "equivalent of the French baccalaureate"
+          },
+          "quotedAs": "diplôme équivalent au baccalauréat français",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47355&typeBac=0&originePc=0",
+          "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [
+          "tcf",
+          "tef",
+          "delf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47355&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.sorbonne-universite.fr/en/education/study-sorbonne-university/degree-seeking-students/international-application-and/campus",
+            "quote": "Please note that if you do not come from a francophone country, you need a certificate proving your successful completion of a French language test (for example TCF, TEF or DELF)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Accès sur dossier: spécialités Maths + Sciences de l'ingénieur ou Maths + Physique-Chimie conseillées; résultats scolaires 70% des critères.",
+          "en": "Selection on file: Maths + Engineering Sciences or Maths + Physics-Chemistry specialities advised; academic results count 70% of criteria."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=47355&typeBac=0&originePc=0",
+            "quote": "Le portail Sciences de l’ingénieur – Electronique Mécanique (L1-SIEM) de la Faculté des Sciences et Ingénierie accueille principalement les étudiants ayant suivi en Terminale les spécialités Mathématiques et Sciences de l’Ingénieur ou les spécialités Mathématiques et Physique-Chimie."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Aucune page fournie ne donne la durée, la langue d'enseignement ni les intakes propres à ce programme. Les frais de 178 €/an sont ceux publiés (tarif national; le droit différencié de 2 902 € pour les extracommunautaires n'est pas confirmé sur la page de ce programme). L'étudiant étranger hors UE avec bac marocain ne relève pas de Parcoursup (procédure Études en France/DAP), donc applicationChannel non extrait."
+}

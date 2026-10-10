@@ -1,0 +1,66 @@
+{
+  "slug": "de-technische-hochschule-deggendorf-hrk284-pfarrkirchen-beng-energy-systems-engi-daad7019",
+  "programmePage": "https://th-deg.de/ese-b-en",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://th-deg.de/ese-b-en",
+          "quote": "Duration 7 Semester"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://th-deg.de/ese-b-en",
+          "quote": "Taught in English"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.th-deg.de/en/apply",
+          "quote": "choose what you aim to study and apply directly to DIT via our own online application portal, Primuss"
+        }
+      ]
+    }
+  },
+  "notes": "Tuition: The DAAD page states '500 EUR' per semester for applicants from non-EU countries, Switzerland and the United Kingdom, but the programme's own page (th-deg.de/ese-b-en) states 'No tuition fees, only student union fee'. The institution-wide page confirms the €500 as a 'DIT service fee' charged to non-EU/EEA students, i.e. a service fee rather than tuition; no unambiguous programme tuition figure could be extracted, so tuition is omitted. The application deadline 15 July is given as a recurring day/month without a year and is listed in the general bachelor table (for all applicants, including those checking DAAD eligibility for foreign qualifications). The document list comes from the general international-applicant section of the application page, not from the programme page itself. The French and Spanish language tests named on the DAAD page (TOEIC, telc English B2, PTE Academic 59) confirm English proficiency only; no French-language requirement is stated for this programme.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un test d'aptitude académique (Academic Readiness Assessment / ARLA) doit être passé et le certificat fourni avec les autres documents.",
+          "en": "Applicants must take an Academic Readiness Assessment test (ARLA) and provide the certificate with the other documents."
+        },
+        "evidence": [
+          {
+            "url": "https://th-deg.de/ese-b-en",
+            "quote": "Applicants have to take an Academic Readiness Assessment test and provide the result certificate in supplement to the other documents required for application"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez votre aptitude à candidater avec le diplôme marocain via la DAAD ou Anabin : la qualification d'entrée à l'université allemande est exigée.",
+          "en": "Check your eligibility with the Moroccan diploma via DAAD or Anabin: the German university entrance qualification is required."
+        },
+        "evidence": [
+          {
+            "url": "https://th-deg.de/ese-b-en",
+            "quote": "Admission requirements General German university entrance qualification, or please check your eligibilty at the DAAD if you own an international qualification"
+          }
+        ]
+      }
+    ]
+  }
+}

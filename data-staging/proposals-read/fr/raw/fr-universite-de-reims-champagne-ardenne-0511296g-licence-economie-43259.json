@@ -1,0 +1,63 @@
+{
+  "slug": "fr-universite-de-reims-champagne-ardenne-0511296g-licence-economie-43259",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43259&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43259&typeBac=0&originePc=0",
+          "quote": "Taux de réussite en 3 ou 4 ans d’une licence est la part des bacheliers de la session 2020 qui se sont inscrits en première année"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43259&typeBac=0&originePc=0",
+          "quote": "Licence - Portail Economie - Economie - Gestion"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43259&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Cette licence est accessible aux titulaires d'un bac français, DAEU ou diplôme de niveau IV. Les candidats non ressortissants UE/EEE titulaires d'un diplôme équivalent au bac passent par la procédure DAP, pas par Parcoursup.",
+          "en": "This licence is open to holders of a French bac, DAEU or level IV diploma. Non-EU/EEA candidates with an equivalent bac diploma go through the DAP procedure, not Parcoursup."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43259&typeBac=0&originePc=0",
+            "quote": "Les candidats non ressortissants de l'U.E, de l'EEE, de la Confédération Suisse, de Monaco ou d'Andorre, titulaires ou en préparation d'un diplôme équivalent au baccalauréat français (U.E ou hors UE) ne passent pas par la plateforme Parcoursup, mais par la procédure DAP."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est décidée par une commission d'examen des vœux sur la base des résultats scolaires (80%), méthodes de travail (10%) et savoir-être (10%).",
+          "en": "Admission is decided by an admissions commission based on academic results (80%), work methods (10%) and soft skills (10%)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=43259&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 80 %"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The Parcoursup page states 'Par année 178 euros' under 'Frais de scolarité', but this is the standard French/EU rate and not the differentiated rate applied to non-EU students; no tuition figure specific to the Moroccan non-EU applicant is given on this page, so tuition is not stated. The minimum French level B2 is given as 'Niveau de français requis'; the requirement rule is included. No documents list, intakes (only '160 places en 2026'), or application channel is stated for the non-EU applicant, so those are omitted."
+}

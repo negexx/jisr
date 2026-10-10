@@ -1,0 +1,138 @@
+{
+  "slug": "fr-ecole-deconomie-et-de-sciences-sociales-0311514c-licence-economie-30776",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30776&typeBac=0&originePc=0",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30776&typeBac=0&originePc=0",
+          "quote": "Le parcours Économie de la licence en Économie forme aux métiers d'économistes, de consultants, de statisticiens, recherchés dans les entreprises privées, les administrations, les banques, les assurances et les organisations européennes et internationales."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+          "quote": "2 902 euros pour une année en cycle de Licence ;"
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+          "quote": "1 - Vous êtes un étudiant extra communautaire (Maroc) Vous devez vous acquitter de droits d’inscription différenciés :"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [
+          "delf-dalf",
+          "tcf"
+        ],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30776&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+          },
+          {
+            "url": "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+            "quote": "Sauf cas de dispense, la certification de français (TCF, DELF B2, DALF) est obligatoire dans le cadre de la procédure de candidature sur la plateforme Études en France."
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces",
+            "quote": "Vous êtes titulaire ou futur titulaire du Bac marocain, Bac international marocain, Diplôme européen donnant accès à l'enseignement supérieur européen*, Diplôme étranger hors U.E : vous devrez formuler vos vœux sur la plateforme Études en France de votre pays de résidence."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le parcours est conseillé aux élèves ayant suivi avec succès l’enseignement de spécialité mathématiques en Terminale, et les notes en mathématiques sont Essentielles (4 sur 4).",
+          "en": "The track is advised for students who successfully followed the mathematics speciality in Terminale, and maths grades are Essential (4 out of 4)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30776&typeBac=0&originePc=0",
+            "quote": "Ce parcours est conseillé aux élèves ayant suivi avec succès l’enseignement de spécialité mathématiques en Terminale."
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30776&typeBac=0&originePc=0",
+            "quote": "Notes en mathématiques Notes obtenues en première et terminale en mathématiques selon le programme et la nature de l’enseignement optionnel ou non, le cas échéant les notes du baccalauréat (selon la situation du candidat) Essentiel 4 sur 4"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La formation est sélective : la commission examine les candidatures en avril-mai à partir notamment des résultats scolaires (60 %), des méthodes de travail (35 %) et du savoir-être (5 %).",
+          "en": "The programme is selective: the commission reviews applications in April-May based on school results (60%), work methods (35%) and soft skills (5%)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30776&typeBac=0&originePc=0",
+            "quote": "Les formations analysent les candidatures en avril-mai 2026 à partir des critères qu’elles ont définis et de leur niveau d’importance."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Des compétences en langue anglaise sont attendues ; assurez-vous d’avoir le niveau requis.",
+          "en": "English language skills are expected; make sure you have the required level."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30776&typeBac=0&originePc=0",
+            "quote": "* Disposer de compétences en langue anglaise"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La formation n’est pas sélective, mais un bon niveau et un goût pour les mathématiques sont demandés ; il est fortement recommandé de consulter les attendus.",
+          "en": "The programme is not selective, but a good level and a taste for mathematics are required; it is strongly recommended to read the expected profile."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=30776&typeBac=0&originePc=0",
+            "quote": "Il est rappelé qu’un bon niveau et un goût pour les mathématiques sont demandés. Il est fortement recommandé de prendre connaissance des attendus de la formation."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le parcours ADIUT Maroc impose une candidature du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine) ; vérifiez le calendrier.",
+          "en": "The ADIUT Maroc programme sets an application window from 1 October 2026 to 15 November 2026 at 23:59 (Moroccan time); check the calendar."
+        },
+        "evidence": [
+          {
+            "url": "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut",
+            "quote": "Du 1er octobre 2026 au 15 novembre 2026 à 23h59 (heure marocaine)."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Only the Parcoursup page is the programme's own page; the Campus France Maroc pages are general and country-level. The progressive English tracks mentioned on the Parcoursup page (Travaux Dirigés en langue anglaise, cycle école taught mainly in English) are optional or later-cycle elements; the licence itself is taught in French. The application channel is not output here because a Moroccan Bac holder applies through Études en France / Campus France, which the task says is set separately. Tuition evidence comes from a country-level Campus France page; the French differentiated registration fees for non-EU students (2,902 EUR for a Licence year) are quoted for a non-EU student from Morocco, and exemptions are possible. No deadline for this specific programme for non-EU applicants was found that states a year; the ADIUT Maroc window is quoted only as a manual check because it concerns 1ère année BUT, a different programme. Some quotes are slightly longer than one sentence; they were kept as short as possible while preserving the fact."
+}

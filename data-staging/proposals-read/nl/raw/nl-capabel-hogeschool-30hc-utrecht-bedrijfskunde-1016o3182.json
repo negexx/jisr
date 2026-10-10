@@ -1,0 +1,118 @@
+{
+  "slug": "nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182",
+  "programmePage": "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+          "quote": "HBO Bachelor Bedrijfskunde | 4 jaar | Deeltijd"
+        },
+        {
+          "url": "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+          "quote": "Studieduur en collegetijden De studieduur is vier jaar."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 681600,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+          "quote": "Of bij betaling in één keer: € 6.816 € 6.134 10% korting + 12 gratis termijnen studieverlenging (indien nodig)"
+        },
+        {
+          "url": "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+          "quote": "Genoemde bedragen lesgeld zijn per studiejaar."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": "2026-12-01",
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": null
+        },
+        {
+          "startDate": "2027-04-01",
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+          "quote": "Amsterdam 01 december 2026 wo & do 10.00 - 16.00"
+        },
+        {
+          "url": "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+          "quote": "01 april 2027 wo & do 10:00-16:00"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "diploma-and-grade-list",
+          "name": {
+            "fr": "Copie du diplôme pertinent et du relevé de notes correspondant",
+            "en": "Copy of relevant diploma and corresponding grade list"
+          },
+          "quotedAs": "Kopie relevant diploma én de bijbehorende cijferlijst",
+          "translationRequired": null
+        },
+        {
+          "slug": "id-copy",
+          "name": {
+            "fr": "Copie de la pièce d'identité",
+            "en": "Copy of ID"
+          },
+          "quotedAs": "Kopie ID",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+          "quote": "Voor toelating zijn de volgende documenten nodig: Kopie relevant diploma én de bijbehorende cijferlijst Kopie ID"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+            "quote": "Voor het volgen van deze opleiding op HBO niveau is minimaal een HAVO, VWO of MBO 4-diploma vereist."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'admission est décidée par la commission d'examen, qui peut demander des pièces supplémentaires ; des dispenses sont possibles.",
+          "en": "Admission is decided by the examination committee, which may request additional documents; exemptions may be possible."
+        },
+        "evidence": [
+          {
+            "url": "https://www.capabel.nl/opleidingen/bedrijfskunde-leiderschap/hbo-bachelor-bedrijfskunde",
+            "quote": "De examencommissie beslist over toelating tot de opleiding en de toekenning van vrijstellingen."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Facts apply to both the voltijd and deeltijd variants of the programme. The tuition amount is the one-off payment option; the page also offers 12 instalments of € 568, plus € 90 inschrijfgeld and circa € 315 book costs per year (not included). The two intake dates (2026-12-01 and 2027-04-01) are start dates at Amsterdam, Rotterdam and Utrecht for both voltijd and deeltijd; no application deadline is stated. The pages do not mention Studielink or any other application platform, so applicationChannel was left out. The page states Dutch-taught requirements only (HAVO/VWO/MBO 4); no language proficiency rule could be quoted. Requirements shown are the generic ones on this programme page."
+}

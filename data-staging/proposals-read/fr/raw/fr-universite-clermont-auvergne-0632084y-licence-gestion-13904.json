@@ -1,0 +1,129 @@
+{
+  "slug": "fr-universite-clermont-auvergne-0632084y-licence-gestion-13904",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13904&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13904&typeBac=0&originePc=0",
+          "quote": "L'étudiant peut valider une double licence en 3e année (avec Économie par ex) selon ses choix de mineures."
+        },
+        {
+          "url": "https://www.uca.fr/formation/nos-formations/formations-en-alternance",
+          "quote": "L3 Gestion parcours CCA en alternance"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "fr"
+      ],
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13904&typeBac=0&originePc=0",
+          "quote": "Niveau de français requis pour s'inscrire à la formation : B2"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.uca.fr/international/mobilites-internationales-et-bourses/venir-a-l-uca/je-suis-etudiant/etudiants-extra-communautaires-droits-dinscription",
+          "quote": "ces droits d'inscription s'élevaient pour 2026-2027 à 2902€ par an pour les licences ou les diplômes nationaux délivré au cours d'études conduisant au grade de licence"
+        },
+        {
+          "url": "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+          "quote": "Le montant des droits d’inscription que vous avez à payer est de : 2 902 euros pour une année en cycle de Licence"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 12,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.uca.fr/international/mobilites-internationales-et-bourses/venir-a-l-uca/je-suis-etudiant/etudier-hors-programme-dechange/comment-candidater-a-luca/titulaire-dun-diplome-etranger",
+          "quote": "Les candidats étrangers n’étant pas titulaires du baccalauréat français et qui souhaitent s'inscrire en 1ère année de licence doivent constituer un dossier DAP plusieurs mois avant la rentrée universitaire (du 1er octobre au 15 décembre 2026 pour la campagne DAP 2026)."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [
+          "tcf-dap"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.uca.fr/international/mobilites-internationales-et-bourses/venir-a-l-uca/je-suis-etudiant/etudier-hors-programme-dechange/comment-candidater-a-luca/titulaire-dun-diplome-etranger",
+            "quote": "le niveau de français minimum requis pour intégrer une formation à l’UCA est le niveau B2"
+          },
+          {
+            "url": "https://www.uca.fr/international/mobilites-internationales-et-bourses/venir-a-l-uca/je-suis-etudiant/etudier-hors-programme-dechange/comment-candidater-a-luca/titulaire-dun-diplome-etranger",
+            "quote": "les candidats devront obligatoirement passer un test linguistique payant (75 euros pour la session 2027, sous réserve d'une modification par le Ministère), le TCF DAP"
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "francais",
+          "philosophy",
+          "english",
+          "mathematics",
+          "economics",
+          "history-geography"
+        ],
+        "mode": "any",
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13904&typeBac=0&originePc=0",
+            "quote": "Prioritairement les notes en français, philosophie, langues vivantes 1 et 2, mathématiques, SES et histoire-géographie lorsque ces enseignements sont suivis, ou leurs équivalents"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Les candidats non titulaires du bac français doivent constituer un dossier DAP blanc (Etudes en France, SCAC) : du 1er octobre au 15 décembre. La candidature est examinée par une commission qui regarde les résultats scolaires (50 %), la motivation (30 %), les méthodes de travail (13 %).",
+          "en": "Applicants without a French baccalaureate must submit a DAP file (Etudes en France, SCAC): 1 October to 15 December. A commission reviews school results (50%), motivation (30%) and work methods (13%)."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13904&typeBac=0&originePc=0",
+            "quote": "Résultats scolaires 50 %"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13904&typeBac=0&originePc=0",
+            "quote": "Motivation 30 %"
+          },
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13904&typeBac=0&originePc=0",
+            "quote": "Méthodes de travail 13 %"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Frais de scolarité : la fiche Parcoursup donne « Par année 178 euros. » — c'est le tarif national/UE, pas celui d'un étudiant extra-communautaire ; la page UCA « Etudiants extra-communautaires : droits d'inscription » indique que les droits différenciés s'appliqueront à partir de 2027-2028 et que pour 2026-2027 les droits s'élevaient à 2902 € par an pour la licence (repris par Campus France Maroc). Aucun montant définitif pour cette formation après 2027-2028 n'est donné dans les pages. Les langues : une partie des spécialités peut être enseignée en anglais (« une majorité d'enseignements de spécialité en anglais »), mais la formation est suivie en français (niveau B2 exigé). Effectif : « 250 places en 2026 » sur la fiche Parcoursup."
+}

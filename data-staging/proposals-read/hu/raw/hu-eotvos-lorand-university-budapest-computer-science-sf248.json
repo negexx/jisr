@@ -1,0 +1,212 @@
+{
+  "slug": "hu-eotvos-lorand-university-budapest-computer-science-sf248",
+  "programmePage": "https://www.elte.hu/en/computer-science-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/computer-science-bsc",
+          "quote": "Duration 6 semesters (3 years)"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/computer-science-bsc",
+          "quote": "Language of instruction English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 320000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/computer-science-bsc",
+          "quote": "Tuition fee/semester 3,200 EUR 3,200 EUR"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": "2027-09-01",
+          "applicationOpens": null,
+          "applicationDeadline": "2027-04-30",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/computer-science-bsc",
+          "quote": "Start program 1 September 2027"
+        },
+        {
+          "url": "https://www.elte.hu/en/computer-science-bsc",
+          "quote": "Deadline for applications – September intake 30 April 2027"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/computer-science-bsc",
+          "quote": "Applications are only accepted being submitted through the online application system."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "online-application-form",
+          "name": {
+            "fr": "Formulaire de candidature en ligne",
+            "en": "Online application form"
+          },
+          "quotedAs": "Online application form",
+          "translationRequired": null
+        },
+        {
+          "slug": "secondary-school-records",
+          "name": {
+            "fr": "Relevé des deux dernières années du secondaire",
+            "en": "Record of the final two years in secondary school"
+          },
+          "quotedAs": "Record of the final two years in secondary school",
+          "translationRequired": null
+        },
+        {
+          "slug": "secondary-school-certificate",
+          "name": {
+            "fr": "Certificat de fin d'études secondaires",
+            "en": "Secondary school certificate"
+          },
+          "quotedAs": "Secondary school certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "proof-of-application-fee-transfer",
+          "name": {
+            "fr": "Preuve de virement des frais de candidature",
+            "en": "Proof of application fee transfer"
+          },
+          "quotedAs": "Proof of application fee transfer",
+          "translationRequired": null
+        },
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "CV",
+            "en": "CV"
+          },
+          "quotedAs": "CV",
+          "translationRequired": null
+        },
+        {
+          "slug": "motivation-letter",
+          "name": {
+            "fr": "Lettre de motivation",
+            "en": "Motivation letter"
+          },
+          "quotedAs": "Motivation letter",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-copy",
+          "name": {
+            "fr": "Copie des pages principales du passeport",
+            "en": "Copy of the main pages of the passport"
+          },
+          "quotedAs": "Copy of the main pages of the passport",
+          "translationRequired": null
+        },
+        {
+          "slug": "passport-photo",
+          "name": {
+            "fr": "Photo d'identité",
+            "en": "Passport photo"
+          },
+          "quotedAs": "Passport photo",
+          "translationRequired": null
+        },
+        {
+          "slug": "medical-certificate",
+          "name": {
+            "fr": "Certificat médical",
+            "en": "Medical certificate"
+          },
+          "quotedAs": "Medical certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "language-certificate",
+          "name": {
+            "fr": "Certificat de langue",
+            "en": "Language certificate"
+          },
+          "quotedAs": "Language certificate",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.elte.hu/en/computer-science-bsc",
+          "quote": "Documents to submit with application Document Comment Online application form - Record of the final two years in secondary school - Secondary school certificate - Proof of application fee transfer CV - Motivation letter - Copy of the main pages of the passport needs to be valid Passport photo - Medical certificate - Language certificate if available"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.elte.hu/en/computer-science-bsc",
+            "quote": "Minimum level of language proficiency (oral) (A1-C2): B2 Minimum level of language proficiency (written) (A1-C2): B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un bon niveau en mathématiques dans le diplôme de fin d'études secondaires est exigé; vérifiez vos notes.",
+          "en": "Good grades in Mathematics in the secondary school finishing documents are required; check your grades."
+        },
+        "evidence": [
+          {
+            "url": "https://www.elte.hu/en/computer-science-bsc",
+            "quote": "Applicants are required to have sufficiently good grades in their secondary school finishing documents, especially from Mathematics."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée (test écrit en ligne et entretien en anglais) est organisé; préparez-vous aux mathématiques du secondaire.",
+          "en": "An entrance examination (online written test and English interview) is organised; prepare secondary-school mathematics."
+        },
+        "evidence": [
+          {
+            "url": "https://www.elte.hu/en/computer-science-bsc",
+            "quote": "Type of entrance examination: both written and oral"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition: the programme page states only 3,200 EUR per semester for both EU/EEA and non-EU/EEA students, so it is not explicitly a non-EU fee; number taken as stated (EUR 3,200). The application deadline of 30 April 2027 is a general September intake deadline, not explicitly labelled for non-EU applicants; kept because it is the programme's own page. Language certificate is listed as 'if available', so it is not mandatory."
+}

@@ -1,0 +1,573 @@
+{
+  "shared": {
+    "FR": [
+      "https://www.maroc.campusfrance.org/le-cout-des-etudes-les-bourses",
+      "https://www.maroc.campusfrance.org/les-certifications-en-francais-obligatoires-pour-campus-france",
+      "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-de-licence-a-l-universite-et-en-paces",
+      "https://www.maroc.campusfrance.org/candidature-en-1ere-annee-but-a-l-universite-iut"
+    ]
+  },
+  "programmes": {
+    "hu-budapest-metropolitan-university-budapest-commerce-and-marketing-sf473": [
+      "https://www.metubudapest.hu/programs/commerce-and-marketing-bsc",
+      "https://www.metubudapest.hu/en/gyik-es-oktatas-tudasbazis",
+      "https://www.metubudapest.hu/en/elerhetoseg"
+    ],
+    "hu-budapest-metropolitan-university-budapest-finance-and-accounting-sf475": [
+      "https://www.metubudapest.hu/programs/finance-and-accounting-bsc",
+      "https://www.metubudapest.hu/en/gyik-es-oktatas-tudasbazis",
+      "https://www.metubudapest.hu/en/elerhetoseg"
+    ],
+    "hu-budapest-metropolitan-university-budapest-tourism-and-catering-sf477": [
+      "https://www.metubudapest.hu/programs/tourism-and-catering-bsc",
+      "https://www.metubudapest.hu/en/gyik-es-oktatas-tudasbazis",
+      "https://www.metubudapest.hu/en/elerhetoseg"
+    ],
+    "hu-budapest-metropolitan-university-budapest-business-administration-sf472": [
+      "https://www.metubudapest.hu/programs/business-administration-and-management-bsc",
+      "https://www.metubudapest.hu/en/gyik-es-oktatas-tudasbazis",
+      "https://www.metubudapest.hu/en/elerhetoseg"
+    ],
+    "hu-budapest-university-of-economics-and-bus-budapest-finance-and-accounting-sf19": [
+      "https://uni-bge.hu/en/finance-and-accounting-bsc",
+      "https://uni-bge.hu/en/tuition-fee",
+      "https://uni-bge.hu/en/admission",
+      "https://uni-bge.hu/en/how-to-apply"
+    ],
+    "hu-budapest-university-of-economics-and-bus-budapest-international-business-e-sf20": [
+      "https://uni-bge.hu/en/international-business-economics-bsc",
+      "https://uni-bge.hu/en/tuition-fee",
+      "https://uni-bge.hu/en/admission",
+      "https://uni-bge.hu/en/how-to-apply"
+    ],
+    "hu-budapest-university-of-technology-and-ec-budapest-chemical-engineering-sf42": [],
+    "hu-budapest-university-of-economics-and-bus-budapest-tourism-and-catering-sf17": [
+      "https://uni-bge.hu/en/tourism-and-catering-bsc",
+      "https://uni-bge.hu/en/tuition-fee",
+      "https://uni-bge.hu/en/admission",
+      "https://uni-bge.hu/en/how-to-apply"
+    ],
+    "hu-budapest-university-of-technology-and-ec-budapest-civil-engineering-sf44": [],
+    "hu-budapest-university-of-economics-and-bus-budapest-business-administration-sf25": [
+      "https://uni-bge.hu/en/business-administration-and-management-bsc",
+      "https://uni-bge.hu/en/tuition-fee",
+      "https://uni-bge.hu/en/admission",
+      "https://uni-bge.hu/en/how-to-apply"
+    ],
+    "hu-budapest-university-of-technology-and-ec-budapest-logistics-engineering-sf76": [],
+    "hu-budapest-university-of-technology-and-ec-budapest-computer-science-enginee-sf41": [
+      "https://www.vik.bme.hu/en/education/programs/",
+      "https://www.vik.bme.hu/en/education/admission/"
+    ],
+    "hu-budapest-university-of-technology-and-ec-budapest-physicist-engineering-sf69": [],
+    "hu-budapest-university-of-technology-and-ec-budapest-electrical-engineering-sf45": [
+      "https://www.vik.bme.hu/en/education/programs/",
+      "https://www.vik.bme.hu/en/education/admission/"
+    ],
+    "hu-budapest-university-of-technology-and-ec-budapest-professional-pilot-sf77": [],
+    "hu-budapest-university-of-technology-and-ec-budapest-engineering-management-sf79": [
+      "https://www.gtk.bme.hu/en/",
+      "https://www.gtk.bme.hu/en/for-applicants/master-programmes/master-in-finance/",
+      "https://www.gtk.bme.hu/en/for-applicants/fee-structure/",
+      "https://www.gtk.bme.hu/en/for-applicants/admission-process/"
+    ],
+    "hu-budapest-university-of-technology-and-ec-budapest-transportation-engineeri-sf75": [],
+    "hu-budapest-university-of-technology-and-ec-budapest-vehicle-engineering-sf74": [],
+    "hu-corvinus-university-of-budapest-budapest-business-administration-sf80": [
+      "https://www.uni-corvinus.hu/main-page/hello-corvinus/how-to-apply/?lang=en",
+      "https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en",
+      "https://www.uni-corvinus.hu/post/landing-page/application/application-information/?lang=en",
+      "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en"
+    ],
+    "hu-corvinus-university-of-budapest-budapest-data-science-in-business-sf85": [
+      "https://www.uni-corvinus.hu/main-page/hello-corvinus/how-to-apply/?lang=en",
+      "https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en",
+      "https://www.uni-corvinus.hu/post/landing-page/application/application-information/?lang=en",
+      "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en"
+    ],
+    "hu-corvinus-university-of-budapest-budapest-applied-economics-sf83": [
+      "https://www.uni-corvinus.hu/main-page/hello-corvinus/how-to-apply/?lang=en",
+      "https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en",
+      "https://www.uni-corvinus.hu/post/landing-page/application/application-information/?lang=en",
+      "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en"
+    ],
+    "hu-corvinus-university-of-budapest-budapest-international-business-e-sf81": [
+      "https://www.uni-corvinus.hu/main-page/hello-corvinus/how-to-apply/?lang=en",
+      "https://www.uni-corvinus.hu/post/landing-page/application/fees-and-costs/?lang=en",
+      "https://www.uni-corvinus.hu/post/landing-page/application/application-information/?lang=en",
+      "https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en"
+    ],
+    "hu-dennis-gabor-university-budapest-business-informatics-sf347": ["https://gde.hu/"],
+    "hu-dennis-gabor-university-budapest-computer-science-enginee-sf348": ["https://gde.hu/"],
+    "hu-dennis-gabor-university-budapest-engineering-management-sf349": ["https://gde.hu/"],
+    "hu-eotvos-lorand-university-budapest-applied-economics-sf343": [],
+    "hu-eotvos-jozsef-college-baja-business-administration-sf215": [
+      "https://ejf.hu/en/business-and-management-ba",
+      "https://ejf.hu/node/185"
+    ],
+    "hu-eotvos-lorand-university-budapest-computer-science-sf248": [
+      "https://www.elte.hu/en/computer-science-bsc",
+      "https://www.elte.hu/en/student-finance",
+      "https://www.elte.hu/en/additional_financial_support_for_students_with_fewer_opportunities",
+      "https://www.elte.hu/en/calls-for-applications",
+      "https://www.elte.hu/en/how-to-apply"
+    ],
+    "hu-eotvos-lorand-university-budapest-international-business-e-sf301": [
+      "https://www.elte.hu/en/international-business-economics",
+      "https://www.elte.hu/en/student-finance",
+      "https://www.elte.hu/en/additional_financial_support_for_students_with_fewer_opportunities",
+      "https://www.elte.hu/en/calls-for-applications",
+      "https://www.elte.hu/en/how-to-apply"
+    ],
+    "hu-eotvos-lorand-university-budapest-finance-and-accounting-sf284": [
+      "https://www.elte.hu/en/finance-and-accounting",
+      "https://www.elte.hu/en/student-finance",
+      "https://www.elte.hu/en/additional_financial_support_for_students_with_fewer_opportunities",
+      "https://www.elte.hu/en/calls-for-applications",
+      "https://www.elte.hu/en/how-to-apply"
+    ],
+    "hu-gal-ferenc-university-bekescsaba-business-administration-sf352": [],
+    "hu-eotvos-lorand-university-szombathely-mechanical-engineering-sf310": [
+      "https://www.elte.hu/en/mechanical-engineering-bsc",
+      "https://www.elte.hu/en/student-finance",
+      "https://www.elte.hu/en/additional_financial_support_for_students_with_fewer_opportunities",
+      "https://www.elte.hu/en/calls-for-applications",
+      "https://www.elte.hu/en/how-to-apply"
+    ],
+    "hu-hungarian-university-of-agriculture-and-godollo-business-administration-sf960": [
+      "https://ed.uni-mate.hu/en/bsc-in-business-administration-and-management",
+      "https://ed.uni-mate.hu/en/tuition-fee",
+      "https://ed.uni-mate.hu/en/tuition-fee-discounts",
+      "https://ed.uni-mate.hu/en/deadlines",
+      "https://ed.uni-mate.hu/en/thesis-topic-application-form"
+    ],
+    "hu-hungarian-university-of-agriculture-and-budapest-biochemical-engineering-sf999": [
+      "https://foodscience.uni-mate.hu/en/bsc-in-biochemical-engineering"
+    ],
+    "hu-hungarian-university-of-agriculture-and-godollo-environmental-engineerin-sf976": [
+      "https://ed.uni-mate.hu/en/bsc-in-environmental-engineering",
+      "https://ed.uni-mate.hu/en/tuition-fee",
+      "https://ed.uni-mate.hu/en/tuition-fee-discounts",
+      "https://ed.uni-mate.hu/en/deadlines",
+      "https://ed.uni-mate.hu/en/thesis-topic-application-form"
+    ],
+    "hu-hungarian-university-of-agriculture-and-godollo-mechanical-engineering-sf988": [
+      "https://ed.uni-mate.hu/en/bsc-in-mechanical-engineering",
+      "https://ed.uni-mate.hu/en/tuition-fee",
+      "https://ed.uni-mate.hu/en/tuition-fee-discounts",
+      "https://ed.uni-mate.hu/en/deadlines",
+      "https://ed.uni-mate.hu/en/thesis-topic-application-form"
+    ],
+    "hu-hungarian-university-of-agriculture-and-gyongyos-tourism-and-catering-sf994": [
+      "https://ed.uni-mate.hu/en/bsc-in-tourism-and-catering",
+      "https://ed.uni-mate.hu/en/tuition-fee",
+      "https://ed.uni-mate.hu/en/tuition-fee-discounts",
+      "https://ed.uni-mate.hu/en/deadlines",
+      "https://ed.uni-mate.hu/en/thesis-topic-application-form"
+    ],
+    "hu-eotvos-jozsef-college-baja-business-administration-sf216": [
+      "https://ejf.hu/en/business-and-management-ba",
+      "https://ejf.hu/node/185"
+    ],
+    "hu-john-von-neumann-university-kecskemet-business-administration-sf508": [
+      "https://nje.hu/en/international-students/admission",
+      "https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy",
+      "https://nje.hu/en/education/application-guideline",
+      "https://nje.hu/en/practical-information/application-process"
+    ],
+    "hu-john-von-neumann-university-kecskemet-mechnical-engineering-sf513": [
+      "https://nje.hu/en/international-students/admission",
+      "https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy",
+      "https://nje.hu/en/education/application-guideline",
+      "https://nje.hu/en/practical-information/application-process"
+    ],
+    "hu-john-von-neumann-university-kecskemet-computer-science-enginee-sf504": [
+      "https://nje.hu/en/international-students/admission",
+      "https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy",
+      "https://nje.hu/en/education/application-guideline",
+      "https://nje.hu/en/practical-information/application-process"
+    ],
+    "hu-john-von-neumann-university-kecskemet-international-business-e-sf510": [
+      "https://nje.hu/en/international-students/admission",
+      "https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy",
+      "https://nje.hu/en/education/application-guideline",
+      "https://nje.hu/en/practical-information/application-process"
+    ],
+    "hu-john-von-neumann-university-kecskemet-tourism-and-catering-sf509": [
+      "https://nje.hu/en/international-students/admission",
+      "https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy",
+      "https://nje.hu/en/education/application-guideline",
+      "https://nje.hu/en/practical-information/application-process"
+    ],
+    "hu-john-von-neumann-university-kecskemet-vehicle-engineering-sf505": [
+      "https://nje.hu/en/international-students/admission",
+      "https://nje.hu/en/international-students/admission/tuition-fees-and-refund-policy",
+      "https://nje.hu/en/education/application-guideline",
+      "https://nje.hu/en/practical-information/application-process"
+    ],
+    "hu-obuda-university-budapest-business-administration-sf562": [
+      "https://uni-obuda.hu/admission/",
+      "https://uni-obuda.hu/tuition-fees/",
+      "https://uni-obuda.hu/application-deadlines/",
+      "https://uni-obuda.hu/how-to-apply/"
+    ],
+    "hu-obuda-university-budapest-commerce-and-marketing-sf563": [
+      "https://uni-obuda.hu/admission/",
+      "https://uni-obuda.hu/tuition-fees/",
+      "https://uni-obuda.hu/application-deadlines/",
+      "https://uni-obuda.hu/how-to-apply/"
+    ],
+    "hu-obuda-university-budapest-computer-science-enginee-sf554": [
+      "https://uni-obuda.hu/admission/",
+      "https://uni-obuda.hu/tuition-fees/",
+      "https://uni-obuda.hu/application-deadlines/",
+      "https://uni-obuda.hu/how-to-apply/"
+    ],
+    "hu-obuda-university-budapest-engineering-management-sf564": [
+      "https://uni-obuda.hu/admission/",
+      "https://uni-obuda.hu/tuition-fees/",
+      "https://uni-obuda.hu/application-deadlines/",
+      "https://uni-obuda.hu/how-to-apply/"
+    ],
+    "hu-obuda-university-budapest-electrical-engineering-sf560": [
+      "https://uni-obuda.hu/admission/",
+      "https://uni-obuda.hu/tuition-fees/",
+      "https://uni-obuda.hu/application-deadlines/",
+      "https://uni-obuda.hu/how-to-apply/"
+    ],
+    "hu-obuda-university-budapest-industrial-design-engine-sf568": [
+      "https://uni-obuda.hu/admission/",
+      "https://uni-obuda.hu/tuition-fees/",
+      "https://uni-obuda.hu/application-deadlines/",
+      "https://uni-obuda.hu/how-to-apply/"
+    ],
+    "hu-obuda-university-budapest-environmental-engineerin-sf567": [
+      "https://uni-obuda.hu/admission/",
+      "https://uni-obuda.hu/tuition-fees/",
+      "https://uni-obuda.hu/application-deadlines/",
+      "https://uni-obuda.hu/how-to-apply/"
+    ],
+    "hu-obuda-university-budapest-mechatronical-engineerin-sf546": [
+      "https://uni-obuda.hu/admission/",
+      "https://uni-obuda.hu/tuition-fees/",
+      "https://uni-obuda.hu/application-deadlines/",
+      "https://uni-obuda.hu/how-to-apply/"
+    ],
+    "hu-szechenyi-istvan-university-gyor-business-informatics-sf1063": [
+      "https://admissions.sze.hu/-study",
+      "https://admissions.sze.hu/application",
+      "https://admissions.sze.hu/admissions-news"
+    ],
+    "hu-szechenyi-istvan-university-gyor-electrical-engineering-sf1061": [
+      "https://admissions.sze.hu/-study",
+      "https://admissions.sze.hu/application",
+      "https://admissions.sze.hu/admissions-news"
+    ],
+    "hu-szechenyi-istvan-university-gyor-civil-engineering-sf1053": [
+      "https://admissions.sze.hu/-study",
+      "https://admissions.sze.hu/application",
+      "https://admissions.sze.hu/admissions-news"
+    ],
+    "hu-szechenyi-istvan-university-gyor-international-business-e-sf1058": [
+      "https://admissions.sze.hu/-study",
+      "https://admissions.sze.hu/application",
+      "https://admissions.sze.hu/admissions-news"
+    ],
+    "hu-szechenyi-istvan-university-gyor-logistics-engineering-sf1051": [
+      "https://admissions.sze.hu/-study",
+      "https://admissions.sze.hu/application",
+      "https://admissions.sze.hu/admissions-news"
+    ],
+    "hu-szechenyi-istvan-university-gyor-mechanical-engineering-sf1060": [
+      "https://admissions.sze.hu/-study",
+      "https://admissions.sze.hu/application",
+      "https://admissions.sze.hu/admissions-news"
+    ],
+    "hu-szechenyi-istvan-university-gyor-tourism-and-catering-sf1059": [
+      "https://admissions.sze.hu/-study",
+      "https://admissions.sze.hu/application",
+      "https://admissions.sze.hu/admissions-news"
+    ],
+    "hu-szechenyi-istvan-university-gyor-vehicle-engineering-sf1054": [
+      "https://admissions.sze.hu/-study",
+      "https://admissions.sze.hu/application",
+      "https://admissions.sze.hu/admissions-news"
+    ],
+    "hu-university-of-debrecen-debrecen-biochemical-engineering-sf112": [
+      "https://www.edu.unideb.hu/p/biochemical-engineering-bsc",
+      "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+      "https://www.edu.unideb.hu/p/tuition-fees",
+      "https://www.edu.unideb.hu/p/application-and-admission"
+    ],
+    "hu-university-of-debrecen-debrecen-business-informatics-sf116": [
+      "https://www.edu.unideb.hu/p/business-informatics-bsc",
+      "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+      "https://www.edu.unideb.hu/p/tuition-fees",
+      "https://www.edu.unideb.hu/p/application-and-admission"
+    ],
+    "hu-szechenyi-istvan-university-gyor-business-administration-sf1052": [
+      "https://admissions.sze.hu/-study",
+      "https://admissions.sze.hu/application",
+      "https://admissions.sze.hu/admissions-news"
+    ],
+    "hu-university-of-debrecen-debrecen-business-administration-sf115": [
+      "https://www.edu.unideb.hu/p/business-administration-and-management-bsc",
+      "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+      "https://www.edu.unideb.hu/p/tuition-fees",
+      "https://www.edu.unideb.hu/p/application-and-admission"
+    ],
+    "hu-university-of-debrecen-debrecen-chemical-engineering-sf117": [
+      "https://www.edu.unideb.hu/p/chemical-engineering-bsc",
+      "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+      "https://www.edu.unideb.hu/p/tuition-fees",
+      "https://www.edu.unideb.hu/p/application-and-admission"
+    ],
+    "hu-university-of-debrecen-debrecen-civil-engineering-sf121": [
+      "https://www.edu.unideb.hu/p/civil-engineering-bsc",
+      "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+      "https://www.edu.unideb.hu/p/tuition-fees",
+      "https://www.edu.unideb.hu/p/application-and-admission"
+    ],
+    "hu-university-of-debrecen-debrecen-commerce-and-marketing-sf124": [
+      "https://www.edu.unideb.hu/p/commerce-and-marketing-bsc",
+      "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+      "https://www.edu.unideb.hu/p/tuition-fees",
+      "https://www.edu.unideb.hu/p/application-and-admission"
+    ],
+    "hu-university-of-debrecen-debrecen-computer-science-enginee-sf128": [
+      "https://www.edu.unideb.hu/p/computer-science-engineering-bsc",
+      "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+      "https://www.edu.unideb.hu/p/tuition-fees",
+      "https://www.edu.unideb.hu/p/application-and-admission"
+    ],
+    "hu-university-of-debrecen-debrecen-electrical-engineering-sf146": [
+      "https://www.edu.unideb.hu/p/electrical-engineering-bsc",
+      "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+      "https://www.edu.unideb.hu/p/tuition-fees",
+      "https://www.edu.unideb.hu/p/application-and-admission"
+    ],
+    "hu-university-of-debrecen-debrecen-engineering-management-sf199": [
+      "https://www.edu.unideb.hu/p/mechatronics-engineering-bsc",
+      "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+      "https://www.edu.unideb.hu/p/tuition-fees",
+      "https://www.edu.unideb.hu/p/application-and-admission"
+    ],
+    "hu-university-of-debrecen-debrecen-environmental-engineerin-sf200": [
+      "https://www.edu.unideb.hu/p/mechatronics-engineering-bsc",
+      "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+      "https://www.edu.unideb.hu/p/tuition-fees",
+      "https://www.edu.unideb.hu/p/application-and-admission"
+    ],
+    "hu-university-of-debrecen-debrecen-mechanical-engineering-sf164": [
+      "https://www.edu.unideb.hu/p/mechanical-engineering-bsc",
+      "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+      "https://www.edu.unideb.hu/p/tuition-fees",
+      "https://www.edu.unideb.hu/p/application-and-admission"
+    ],
+    "hu-university-of-debrecen-debrecen-mechatronics-engineering-sf166": [
+      "https://www.edu.unideb.hu/p/mechatronics-engineering-bsc",
+      "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+      "https://www.edu.unideb.hu/p/tuition-fees",
+      "https://www.edu.unideb.hu/p/application-and-admission"
+    ],
+    "hu-university-of-debrecen-debrecen-computer-science-sf126": [
+      "https://www.edu.unideb.hu/p/computer-science-bsc",
+      "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+      "https://www.edu.unideb.hu/p/tuition-fees",
+      "https://www.edu.unideb.hu/p/application-and-admission"
+    ],
+    "hu-university-of-dunaujvaros-dunaujvaros-business-administration-sf209": [],
+    "hu-university-of-dunaujvaros-dunaujvaros-materials-engineering-sf208": [],
+    "hu-university-of-dunaujvaros-dunaujvaros-mechanical-engineering-sf212": [],
+    "hu-university-of-debrecen-debrecen-vehicle-engineering-sf181": [
+      "https://www.edu.unideb.hu/p/vehicle-engineering-bsc",
+      "https://www.edu.unideb.hu/p/tuition-fee-application-entrance-fee",
+      "https://www.edu.unideb.hu/p/tuition-fees",
+      "https://www.edu.unideb.hu/p/application-and-admission"
+    ],
+    "hu-university-of-dunaujvaros-dunaujvaros-computer-science-enginee-sf211": [],
+    "hu-university-of-miskolc-miskolc-business-administration-sf461": [
+      "https://en.uni-miskolc.hu/business-administration-and-management-bsc"
+    ],
+    "hu-university-of-miskolc-miskolc-logistics-engineering-sf463": [
+      "https://en.uni-miskolc.hu/logistics-engineering"
+    ],
+    "hu-university-of-miskolc-miskolc-computer-science-enginee-sf464": [
+      "https://en.uni-miskolc.hu/computer-science-engineering"
+    ],
+    "hu-university-of-miskolc-miskolc-materials-engineering-sf466": [
+      "https://en.uni-miskolc.hu/materials-engineering"
+    ],
+    "hu-university-of-miskolc-miskolc-mechanical-engineering-sf462": [
+      "https://en.uni-miskolc.hu/mechanical-engineering"
+    ],
+    "hu-university-of-nyiregyhaza-nyiregyhaza-business-administration-sf537": [
+      "https://english.nye.hu/",
+      "https://english.nye.hu/en/node/319",
+      "https://english.nye.hu/en/node/345",
+      "https://english.nye.hu/en/node/30",
+      "https://applicationform.nye.hu/"
+    ],
+    "hu-university-of-nyiregyhaza-nyiregyhaza-computer-science-enginee-sf538": [
+      "https://english.nye.hu/",
+      "https://english.nye.hu/en/node/319",
+      "https://english.nye.hu/en/node/345",
+      "https://english.nye.hu/en/node/30",
+      "https://applicationform.nye.hu/"
+    ],
+    "hu-university-of-nyiregyhaza-nyiregyhaza-computer-science-sf536": [
+      "https://english.nye.hu/",
+      "https://english.nye.hu/en/node/319",
+      "https://english.nye.hu/en/node/345",
+      "https://english.nye.hu/en/node/30",
+      "https://applicationform.nye.hu/"
+    ],
+    "hu-university-of-nyiregyhaza-nyiregyhaza-professional-pilot-sf531": [
+      "https://english.nye.hu/",
+      "https://english.nye.hu/en/node/319",
+      "https://english.nye.hu/en/node/345",
+      "https://english.nye.hu/en/node/30",
+      "https://applicationform.nye.hu/"
+    ],
+    "hu-university-of-nyiregyhaza-nyiregyhaza-mechanical-engineering-sf529": [
+      "https://english.nye.hu/",
+      "https://english.nye.hu/en/node/319",
+      "https://english.nye.hu/en/node/345",
+      "https://english.nye.hu/en/node/30",
+      "https://applicationform.nye.hu/"
+    ],
+    "hu-university-of-nyiregyhaza-nyiregyhaza-vehicle-engineering-sf545": [
+      "https://english.nye.hu/",
+      "https://english.nye.hu/en/node/319",
+      "https://english.nye.hu/en/node/345",
+      "https://english.nye.hu/en/node/30",
+      "https://applicationform.nye.hu/"
+    ],
+    "hu-university-of-nyiregyhaza-nyiregyhaza-tourism-and-catering-sf539": [
+      "https://english.nye.hu/",
+      "https://english.nye.hu/en/node/319",
+      "https://english.nye.hu/en/node/345",
+      "https://english.nye.hu/en/node/30",
+      "https://applicationform.nye.hu/"
+    ],
+    "hu-budapest-university-of-technology-and-ec-budapest-mechanical-engineering-sf51": [
+      "https://gpk.bme.hu/en/content/16"
+    ],
+    "hu-university-of-pannonia-veszprem-computer-science-sf599": [
+      "https://mik.uni-pannon.hu/en/for-admissions/application-procedure",
+      "https://mik.uni-pannon.hu/en/for-admissions",
+      "https://mik.uni-pannon.hu/en/research-development/doctoral-school/admission"
+    ],
+    "hu-university-of-pannonia-nagykanizsa-sustainable-and-circular-sf594": [
+      "https://pen.uni-pannon.hu/en/sustainable-and-circular-economy-based-tourism/",
+      "https://pen.uni-pannon.hu/en/how-to-apply/",
+      "https://international.uni-pannon.hu/admission/scholarship-and-funding"
+    ],
+    "hu-university-of-pannonia-nagykanizsa-water-operation-engineer-sf582": [
+      "https://pen.uni-pannon.hu/en/water-operation-engineering/",
+      "https://pen.uni-pannon.hu/en/how-to-apply/",
+      "https://international.uni-pannon.hu/admission/scholarship-and-funding"
+    ],
+    "hu-university-of-pannonia-veszprem-data-science-in-business-sf598": [
+      "https://www.gtk.uni-pannon.hu/en/bsc-in-data-science-in-business/",
+      "https://www.gtk.uni-pannon.hu/en/department-of-accounting-and-finance",
+      "https://www.gtk.uni-pannon.hu/en/admission/"
+    ],
+    "hu-university-of-pannonia-veszprem-business-administration-sf587": [
+      "https://www.gtk.uni-pannon.hu/ba-in-business-administration-and-management/",
+      "https://www.gtk.uni-pannon.hu/en/department-of-accounting-and-finance",
+      "https://www.gtk.uni-pannon.hu/en/admission/"
+    ],
+    "hu-university-of-pannonia-veszprem-international-business-e-sf584": [
+      "https://www.gtk.uni-pannon.hu/ba-in-international-business-economics/",
+      "https://www.gtk.uni-pannon.hu/en/department-of-accounting-and-finance",
+      "https://www.gtk.uni-pannon.hu/en/admission/"
+    ],
+    "hu-university-of-public-service-baja-civil-engineering-sf521": [
+      "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-civil-engineering",
+      "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/faculties/faculty-of-public-governance-and-international-studies/structure/departments/department-of-public-finance",
+      "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/faculties/faculty-of-military-science-and-officer-training/structure/department-of-supply-finance-and-military-transportation",
+      "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/faculties/faculty-of-public-governance-and-international-studies/naspaa/studies/application-for-kvma",
+      "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/faculties/faculty-of-public-governance-and-international-studies/naspaa/studies/kvma-e-learning-and-requirements"
+    ],
+    "hu-university-of-public-service-baja-environmental-engineerin-sf522": [
+      "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-environmental-engineering",
+      "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/faculties/faculty-of-public-governance-and-international-studies/structure/departments/department-of-public-finance",
+      "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/faculties/faculty-of-military-science-and-officer-training/structure/department-of-supply-finance-and-military-transportation",
+      "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/faculties/faculty-of-public-governance-and-international-studies/naspaa/studies/application-for-kvma",
+      "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/faculties/faculty-of-public-governance-and-international-studies/naspaa/studies/kvma-e-learning-and-requirements"
+    ],
+    "hu-university-of-public-service-baja-water-operation-engineer-sf523": [
+      "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/bsc-in-water-operation-engineering",
+      "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/faculties/faculty-of-public-governance-and-international-studies/structure/departments/department-of-public-finance",
+      "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/faculties/faculty-of-military-science-and-officer-training/structure/department-of-supply-finance-and-military-transportation",
+      "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/faculties/faculty-of-public-governance-and-international-studies/naspaa/studies/application-for-kvma",
+      "https://en.uni-nke.hu/faculties/faculty-of-water-sciences/degree-programs/faculties/faculty-of-public-governance-and-international-studies/naspaa/studies/kvma-e-learning-and-requirements"
+    ],
+    "hu-university-of-pannonia-veszprem-tourism-and-catering-sf588": [
+      "https://www.gtk.uni-pannon.hu/ba-in-tourism-and-catering/",
+      "https://www.gtk.uni-pannon.hu/en/department-of-accounting-and-finance",
+      "https://www.gtk.uni-pannon.hu/en/admission/"
+    ],
+    "hu-university-of-pecs-pecs-architectural-engineerin-sf629": [
+      "https://english.mik.pte.hu/architectural-engineering-bsc",
+      "https://english.mik.pte.hu/application-step-by-step-1",
+      "https://apply.pte.hu/en_GB/courses/course/445-architecture-bsc?search=113391"
+    ],
+    "hu-university-of-pecs-pecs-civil-engineering-sf633": [
+      "https://english.mik.pte.hu/civil-engineering-bsc",
+      "https://english.mik.pte.hu/application-step-by-step-1",
+      "https://apply.pte.hu/en_GB/courses/course/324-civil-engineer-bsc?search=85829"
+    ],
+    "hu-university-of-pecs-pecs-computer-science-enginee-sf634": [
+      "https://english.mik.pte.hu/computer-science-engineering-bsc",
+      "https://english.mik.pte.hu/application-step-by-step-1",
+      "https://apply.pte.hu/en_GB/courses/course/321-computer-science-engineering-bsc?search=85884"
+    ],
+    "hu-university-of-pecs-pecs-computer-science-sf643": [
+      "https://www.ttk.pte.hu/en/admission/english-degree-programs/bsc-study-programs/computer-science-bsc/",
+      "https://www.ttk.pte.hu/en/about-the-faculty/offices-and-other-units/finance-office/",
+      "https://www.ttk.pte.hu/en/admission",
+      "https://www.ttk.pte.hu/en/admission/"
+    ],
+    "hu-university-of-pecs-pecs-mechanical-engineering-sf726": [
+      "https://english.mik.pte.hu/mechanical-engineering"
+    ],
+    "hu-university-of-sopron-sopron-business-administration-sf1043": [
+      "https://lkk.uni-sopron.hu/en_GB/start",
+      "https://lkk.uni-sopron.hu/en_GB/admissions-1",
+      "https://lkk.uni-sopron.hu/admissions-1"
+    ],
+    "hu-university-of-sopron-sopron-international-business-e-sf1042": [
+      "https://lkk.uni-sopron.hu/en_GB/start",
+      "https://lkk.uni-sopron.hu/en_GB/admissions-1",
+      "https://lkk.uni-sopron.hu/admissions-1"
+    ],
+    "hu-university-of-sopron-sopron-timber-industry-engineer-sf1039": [
+      "https://fmk.uni-sopron.hu/en_GB/timber-industry-engineering-bsc",
+      "https://international.uni-sopron.hu/application-page",
+      "https://fmk.uni-sopron.hu/erasmus-application"
+    ],
+    "hu-university-of-szeged-szeged-computer-science-sf1204": [
+      "https://sci.u-szeged.hu/english/undergraduate-programs/computer-science-bsc",
+      "https://sci.u-szeged.hu/english/application-procedure/online-application",
+      "https://apply.u-szeged.hu/"
+    ],
+    "hu-university-of-szeged-szeged-business-administration-sf1132": [
+      "https://www.u-szeged.hu/english/study-programmes/business-administration-ba"
+    ],
+    "hu-university-of-pecs-pecs-business-administration-sf687": [
+      "https://ktk.pte.hu/en/education/bachelor-programmes/bsc-business-administration-and-management",
+      "https://ktk.pte.hu/en/karunkrol/intezetek/department-of-finance-and-accounting",
+      "https://ktk.pte.hu/en/hallgatok/ugyintezes/extra-fee-chart",
+      "https://ktk.pte.hu/en/felvetelizok/admission",
+      "https://ktk.pte.hu/en/felvetelizok/felveteli/application-guide"
+    ],
+    "hu-university-of-szeged-szeged-tourism-and-catering-sf1134": [
+      "https://u-szeged.hu/english/study-programmes/performance-ba",
+      "https://u-szeged.hu/english/admissions/tuition-fees",
+      "https://u-szeged.hu/english/admissions",
+      "https://apply.u-szeged.hu/"
+    ]
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "slug": "de-hochschule-fur-angewandte-wissenschaften-hrk44-engineering-physics-daad10481",
+  "programmePage": "https://www.hs-coburg.de/en/study/bachelor-degree-programs/bachelors-degree-programs-in-engineering-and-computer-science/engineering-physics/",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/study/bachelor-degree-programs/bachelors-degree-programs-in-engineering-and-computer-science/engineering-physics/",
+          "quote": "Standard period of study 8 semesters (incl. Industrial Internship and Bachelor Thesis), 240 ECTS"
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/study/bachelor-degree-programs/bachelors-degree-programs-in-engineering-and-computer-science/engineering-physics/",
+          "quote": "Language of instruction English"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 150000,
+        "currency": "EUR",
+        "period": "semester"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/study/bachelor-degree-programs/bachelors-degree-programs-in-engineering-and-computer-science/engineering-physics/",
+          "quote": "The fees for international students from non-EU countries amount to €1,500 per semester."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": "2026-09-30",
+          "recurringDeadline": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10481/",
+          "quote": "The following is valid for applicants from: all countries For the winter semester: until 30 September 2026"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "de-uni-assist-vpd",
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/study/registration-and-enrollment/international-applicants/",
+          "quote": "If you earned your degree abroad, you must have your transcripts evaluated and apply to us at the same time, within the deadlines."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Certificat de fin d'études secondaires",
+            "en": "school-leaving certificate"
+          },
+          "quotedAs": "school-leaving certificate",
+          "translationRequired": null
+        },
+        {
+          "slug": "cv",
+          "name": {
+            "fr": "Curriculum vitae",
+            "en": "Curriculum vitae"
+          },
+          "quotedAs": "Curriculum vitae",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hs-coburg.de/en/study/bachelor-degree-programs/bachelors-degree-programs-in-engineering-and-computer-science/engineering-physics/",
+          "quote": "University entrance qualification, entrance qualification for universities of applied sciences, vocational qualification or foreign educational certificate International applicants require a certificate assessment (APS certificate, VPD from uniassist or evaluation of the ZAB). You can find more information here Curriculum vitae"
+        },
+        {
+          "url": "https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/10481/",
+          "quote": "University entrance qualification, entrance qualification for universities of applied sciences, vocational qualification or foreign educational certificate International applicants require a certificate assessment (APS certificate, VDP from uni-assist or evaluation of the ZAB) Curriculum vitae"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "ielts",
+          "toefl"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.hs-coburg.de/en/study/registration-and-enrollment/international-applicants/",
+            "quote": "Before enrolling, you must provide proof of English proficiency at the B2 level in one of the following ways in order to be admitted to an english-taught degree program at Coburg University of Applied Sciences and Arts."
+          },
+          {
+            "url": "https://www.hs-coburg.de/en/study/bachelor-degree-programs/bachelors-degree-programs-in-engineering-and-computer-science/engineering-physics/",
+            "quote": "Official proof of English language proficiency at level B2"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifiez auprès du service des études si votre diplôme marocain dispense de l'APS/VPD ou nécessite une évaluation par uni-assist ou la ZAB.",
+          "en": "Check with student affairs whether your Moroccan diploma is exempt from APS/VPD or requires uni-assist or ZAB evaluation."
+        },
+        "evidence": [
+          {
+            "url": "https://www.hs-coburg.de/en/study/bachelor-degree-programs/bachelors-degree-programs-in-engineering-and-computer-science/engineering-physics/",
+            "quote": "International applicants require a certificate assessment (APS certificate, VPD from uniassist or evaluation of the ZAB)."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition fact comes from the programme page quoting the non-EU tuition fee for this programme; the tuition page for non-EU students also lists Engineering Physics among the degree programmes with fees. The application deadline 30 September 2026 is from the DAAD page and is stated for applicants from all countries; the university's own programme page gives the same date for the winter term registration. The application channel is marked as uni-assist VPD because the international applicants page says foreign-earned degrees must have transcripts evaluated via uni-assist; no sentence says applicant applies through uni-assist directly or via an own portal with an explicit statement. Health insurance, visa and accommodation are mentioned but not as admission documents. The pages do not give a programme-specific German language requirement for this programme (German courses are integrated but no level required)."
+}

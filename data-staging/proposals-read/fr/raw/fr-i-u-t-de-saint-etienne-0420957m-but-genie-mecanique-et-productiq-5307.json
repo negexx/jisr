@@ -1,0 +1,91 @@
+{
+  "slug": "fr-i-u-t-de-saint-etienne-0420957m-but-genie-mecanique-et-productiq-5307",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5307&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.iut.univ-st-etienne.fr/fr/etudier-a-l-iut-de-saint-etienne/nos-formations/les-b-u-t/b-u-t-genie-mecanique-et-productique.html",
+          "quote": "Niveau d'étude : BAC +3 Durée : 3 ans"
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 290200,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.univ-st-etienne.fr/fr/formation/inscriptions-admissions/modalites-d-inscriptions/droits-d-inscription-differencies-pour-les-etudiants-hors-union-europeenne.html",
+          "quote": "> 2902 euros pour une inscription en BUT, Licence, licence professionnelle"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "diplôme de fin d'études secondaires",
+            "en": "school-leaving certificate"
+          },
+          "quotedAs": "diplôme de fin d'études secondaires",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.univ-st-etienne.fr/fr/formation/inscriptions-admissions/preinscription/inscription-etudiants-etrangers.html",
+          "quote": "Pour accéder à l'enseignement supérieur en France, les étudiants étrangers (hors espace économique européen et confédéré suisse) doivent, s'ils ne sont pas en possession du baccalauréat français, avoir satisfait aux conditions qui permettent l'accès à l'enseignement supérieur dans le pays o&ugrave; a été obtenu le dipl&ocirc;me de fin d'études secondaires."
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://www.univ-st-etienne.fr/fr/formation/inscriptions-admissions/preinscription/inscription-etudiants-etrangers.html",
+            "quote": "Pour qu'un dossier soit recevable vous devez posséder le niveau B2 pour toutes les formations sauf celles listées en annexe o&ugrave; le niveau C1 est exigé."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Formation sélective : le dossier est examiné par une commission (notes scientifiques, méthodes de travail, savoir-être, motivation). Un entretien oral de motivation peut être demandé.",
+          "en": "Selective programme: applications are reviewed by a commission (science grades, work methods, soft skills, motivation). An oral motivation interview may be requested."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5307&typeBac=0&originePc=0",
+            "quote": "Entretien de motivation pour les candidats présentant des dossiers demandant des compléments d'informations"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Le B2 de français est exigé dans le cadre de la Demande d'Admission Préalable (D.A.P) en 1re année de licence pour les titulaires d'un diplôme étranger de fin d'études secondaires.",
+          "en": "French B2 is required within the “Demande d'Admission Préalable” (D.A.P) procedure for first-year bachelor applicants holding a foreign secondary school diploma."
+        },
+        "evidence": [
+          {
+            "url": "https://www.univ-st-etienne.fr/fr/formation/inscriptions-admissions/preinscription/inscription-etudiants-etrangers.html",
+            "quote": "Une demande d'admission préalable (D.A.P) est obligatoire pour les étrangers titulaires d'un dipl&ocirc;me étranger de fin d'études secondaires."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Programme page is the Parcoursup fiche. The French B2 rule comes from the university-wide foreign-student admission page (it says “pour toutes les formations”), so it is quoted as a manual_check, not tied to this programme alone. Tuition: 2902 EUR/year differentiated fee for extra-EU students entering BUT is stated on the UJM differentiated-fees page (institution-wide but the BUT amount is named); the Parcoursup fiche's 178 EUR is the French/EU rate, so it was not used. The IUT de Roanne 2902 EUR/page refers to another campus. No programme-specific teaching language, intakes or application channel extracted (the task excludes applicationChannel)."
+}

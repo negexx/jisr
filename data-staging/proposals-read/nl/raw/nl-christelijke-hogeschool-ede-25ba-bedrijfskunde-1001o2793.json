@@ -1,0 +1,52 @@
+{
+  "slug": "nl-christelijke-hogeschool-ede-25ba-bedrijfskunde-1001o2793",
+  "programmePage": "https://che.nl/opleidingen/bedrijfskunde-ondernemen-hrm/bachelor/bedrijfskunde",
+  "facts": {
+    "durationYears": {
+      "value": 4,
+      "evidence": [
+        {
+          "url": "https://che.nl/opleidingen/bedrijfskunde-ondernemen-hrm/bachelor/bedrijfskunde",
+          "quote": "Studieduur De opleiding Bedrijfskunde duurt 4 jaar."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 5,
+            "day": 1
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://che.nl/opleidingen/bedrijfskunde-ondernemen-hrm/bachelor/bedrijfskunde",
+          "quote": "Aanmelden Meld je aan voor 1 mei"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "nl",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://che.nl/opleidingen/bedrijfskunde-ondernemen-hrm/bachelor/bedrijfskunde",
+            "quote": "Dan ben je alleen toelaatbaar met een diploma Nt2 (programma B2) of CNaVT (programma B2 of C1)."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition fee: neither supplied page states a tuition fee for this programme or an institution-wide non-EU bachelor fee, so tuition is left out."
+}

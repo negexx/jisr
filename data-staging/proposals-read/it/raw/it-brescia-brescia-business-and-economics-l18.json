@@ -1,0 +1,121 @@
+{
+  "slug": "it-brescia-brescia-business-and-economics-l18",
+  "programmePage": "https://corsi.unibs.it/it/business-economics",
+  "facts": {
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://corsi.unibs.it/it/business-economics",
+          "quote": "Tipo di corso Laurea Tipo di accesso Free access course, Test CenT-S Modalità didattica In-person programme Lingua English"
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.unibs.it/en/international/degree-seeking-students/admission/non-eu-candidates-living-abroad",
+          "quote": "Apply for study visa via Universitaly portal Instructions and link By 31 August 2026"
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "Diplôme de fin d'études secondaires (diploma di scuola secondaria superiore)",
+            "en": "Upper secondary school Diploma"
+          },
+          "quotedAs": "The upper secondary school Diploma",
+          "translationRequired": true
+        },
+        {
+          "slug": "transcript-of-records",
+          "name": {
+            "fr": "Relevé de notes final (transcript of records)",
+            "en": "Final Transcript of records"
+          },
+          "quotedAs": "final Transcript of records",
+          "translationRequired": true
+        },
+        {
+          "slug": "declaration-of-value",
+          "name": {
+            "fr": "Déclaration de valeur (Dichiarazione di valore)",
+            "en": "Declaration of value"
+          },
+          "quotedAs": "The Declaration of value",
+          "translationRequired": null
+        },
+        {
+          "slug": "entry-study-visa-passport",
+          "name": {
+            "fr": "Passeport avec visa d'études pour « inscription universitaire »",
+            "en": "Passport with Entry study visa for \"university enrolment\""
+          },
+          "quotedAs": "passport with Entry study visa for \"university enrolment\"",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.unibs.it/en/international/degree-seeking-students/admission/non-eu-candidates-living-abroad/non-eu-candidates-living-abroad-undegraduate-degrees-and-integrated-masters-degrees",
+          "quote": "The upper secondary school Diploma and final Transcript of records in original language: both documents must be translated in Italian or English if they have been issued in other languages."
+        },
+        {
+          "url": "https://www.unibs.it/en/international/degree-seeking-students/admission/non-eu-candidates-living-abroad/non-eu-candidates-living-abroad-undegraduate-degrees-and-integrated-masters-degrees",
+          "quote": "The Declaration of value issued by the official Italian Representation operating in the country relevant to the attended education system."
+        },
+        {
+          "url": "https://www.unibs.it/en/international/degree-seeking-students/admission/non-eu-candidates-living-abroad/non-eu-candidates-living-abroad-undegraduate-degrees-and-integrated-masters-degrees",
+          "quote": "One of the following documents (alternatively): passport with Entry study visa for \"university enrolment\" issued by the official Italian Representation abroad"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://corsi.unibs.it/it/business-economics",
+            "quote": "Additionally, a B2 level proficiency in English according to the Common European Framework of Reference for Languages (CEFR) is required, demonstrated by possession of one of the certifications specified in the Study Program’s Academic Regulations."
+          }
+        ]
+      },
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.unibs.it/en/international/degree-seeking-students/admission/non-eu-candidates-living-abroad/non-eu-candidates-living-abroad-undegraduate-degrees-and-integrated-masters-degrees",
+            "quote": "The foreign qualification must have been achieved after at least 12 years of schooling"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Test d'admission CEnT-S (CISIA) obligatoire : vérifier les modalités et la note minimale requise en mathématiques sur la page d'admission.",
+          "en": "Mandatory CEnT-S (CISIA) admission test: check the procedures and the minimum mathematics score required on the admission page."
+        },
+        "evidence": [
+          {
+            "url": "https://corsi.unibs.it/it/business-economics",
+            "quote": "The possession of the required mathematics prerequisites for successful attendance of the degree program is assessed through a mandatory entrance test administered in English, the CEnT-S (CISIA English Test-Sciences), which can be taken at any university participating in the CISIA Consortium that offers it."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition laissé de côté : la page https://www.unibs.it/en/international/degree-seeking-students/tuition-fees indique « Non-EU citizens with study visa / study permit Holders of study visa / study permit are placed in one of the contribution bands shown in the enclosed table », et le tableau PDF (Tabella tasse Degree seeking ENG) donne « Maximum contribution equivalent to that required of Italian citizens » pour les étudiants non-UE sans bourse — un montant qui dépend de l'ISEE et non un tarif fixe pour ce programme. Aucune citation acceptée ne nomme le Maroc ni ne lie ce programme (classe L-18) à un groupe de contribution, donc aucun montant de tuition n'a pu être extrait selon les règles de la tâche. Parcoursup/autre : l'applicationChannel retenu est Universitaly pour le visa d'études/préinscription ; l'inscription en ligne se fait ensuite sur le portail UniBs (SPID) : « Registration , using SPID (digital identity system), on the UniBs portal ». La deadline du 31 août 2026 citée est celle du créneau du tableau de la page « Non-EU candidates living abroad » pour la demande de visa d'études et non une deadline d'admission, elle n'a donc pas été reprise comme intake."
+}

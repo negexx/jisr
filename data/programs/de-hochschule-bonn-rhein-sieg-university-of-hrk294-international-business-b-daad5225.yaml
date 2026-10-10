@@ -30,8 +30,14 @@ tuition:
   source: programme
   info_kind: official
 intakes:
-  value: null
-  source: programme
+  value:
+    - startDate: null
+      applicationOpens: null
+      applicationDeadline: null
+      recurringDeadline:
+        month: 7
+        day: 15
+  source: page-3
   info_kind: official
 applicationChannel:
   value: de-uni-assist
@@ -153,3 +159,6 @@ sources:
   page-1:
     url: https://www.uni-assist.de/en/tools/info-country-by-country/details-country/country/ma/
     last_verified_at: 2026-10-09
+  page-3:
+    url: https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/5225/
+    last_verified_at: 2026-10-10

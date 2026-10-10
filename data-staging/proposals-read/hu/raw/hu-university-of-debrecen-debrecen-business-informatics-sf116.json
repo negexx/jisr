@@ -1,0 +1,122 @@
+{
+  "slug": "hu-university-of-debrecen-debrecen-business-informatics-sf116",
+  "programmePage": "https://www.edu.unideb.hu/p/business-informatics-bsc",
+  "facts": {
+    "durationYears": {
+      "value": 3.5,
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/business-informatics-bsc",
+          "quote": "Duration of the program: This is a 3.5-year program consisting of 7 academic semesters."
+        }
+      ]
+    },
+    "teachingLanguages": {
+      "value": [
+        "en"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/business-informatics-bsc",
+          "quote": "Language requirements: All courses are taught in English; therefore, a B2 level English proficiency is required."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 700000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/business-informatics-bsc",
+          "quote": "Costs: The tuition fee for this program is 7,000 USD/Year"
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 6,
+            "day": 15
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/business-informatics-bsc",
+          "quote": "The application deadline in the self-financed procedure is 15th June."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "hu-university-direct",
+      "evidence": [
+        {
+          "url": "https://www.edu.unideb.hu/p/application-and-admission",
+          "quote": "The following documents need to be submitted during the application procedure by all applicants through our online application platform"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "en",
+        "minCefr": "B2",
+        "certificateRequired": true,
+        "acceptedTests": [
+          "toefl",
+          "ielts"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/business-informatics-bsc",
+            "quote": "a TOEFL test with a minimum score of 513 (Paper-Based)."
+          },
+          {
+            "url": "https://www.edu.unideb.hu/p/business-informatics-bsc",
+            "quote": "an IELTS test with a minimum score of 5.5."
+          },
+          {
+            "url": "https://www.edu.unideb.hu/p/business-informatics-bsc",
+            "quote": "The language proficiency of applicants must be proven with a standardized, at least intermediate (B2) level language certificate, obtained at a proctored exam."
+          }
+        ]
+      },
+      {
+        "kind": "subject_taken",
+        "subjects": [
+          "mathematics"
+        ],
+        "mode": "all",
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/business-informatics-bsc",
+            "quote": "Admission requires a high school certificate and passing a written and oral entrance exam in Mathematics."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un examen d'entrée écrit et oral en mathématiques est requis. Préparez-vous en conséquence.",
+          "en": "A written and oral entrance exam in Mathematics is required. Prepare accordingly."
+        },
+        "evidence": [
+          {
+            "url": "https://www.edu.unideb.hu/p/business-informatics-bsc",
+            "quote": "Admission requires a high school certificate and passing a written and oral entrance exam in Mathematics."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "The application and admission page states an application deadline of 15 May 2027 for the September 2027 intake for all programs, but it does not specify that this deadline is for non-EU/international applicants, so the deadline was left out. The programme's own page gives a self-financed application deadline of 15th June (recurring, no year). A single-intake September only is noted on the programme page. Tuition is quoted in USD; the pages do not state the fee in EUR or HUF."
+}

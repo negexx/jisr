@@ -1,0 +1,69 @@
+{
+  "slug": "it-napoli-federico-ii-napoli-civil-and-environmental-engineering-l7",
+  "programmePage": "https://www.orientamento.unina.it/corsidistudio/civil-and-environmental-engineering/",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://www.orientamento.unina.it/corsidistudio/civil-and-environmental-engineering/",
+          "quote": "The legal duration of the Degree Program is 3 years."
+        }
+      ]
+    },
+    "applicationChannel": {
+      "value": "it-universitaly",
+      "evidence": [
+        {
+          "url": "https://www.international.unina.it/education/admission-regulation/",
+          "quote": "The pre-enrolment application is made exclusively through the Universitaly portal (visit https://www.universitaly.it/studenti-stranieri)."
+        }
+      ]
+    }
+  },
+  "notes": "Tuition left out: the only fee figures on the pages (€140/year regional fee + €16.00 legal stamp for non-European students, €200/year tuition for European students) are the regional tax and the stamp duty, not the tuition fee, and no page gives a tuition figure for a non-EU applicant with a household abroad (Morocco). The application deadline for 2026/27 (15 June 2026) was not included because it is the general pre-enrolment deadline and no quote states it is for non-EU or foreign-qualification applicants; the national visa deadlines (30 November, 31 October) are visa deadlines, not application deadlines. The B2 English requirement is worded as \"should provide evidence\", so it is listed as a requirement rule but flagged as soft wording; admission is by the compulsory CISIA English TOLC-I test.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "prior_study_years_min",
+        "years": 12,
+        "evidence": [
+          {
+            "url": "https://www.orientamento.unina.it/corsidistudio/civil-and-environmental-engineering/",
+            "quote": "it is stated that the diploma has been obtained after at least 12 years of pre-university education"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Test d'admission sélectif obligatoire (English TOLC-I du CISIA), à passer à distance après inscription sur le site du CISIA ; le test est répétable. Score minimum de 20 % requis.",
+          "en": "Compulsory selective admission test (CISIA English TOLC-I), taken remotely after registering on the CISIA website; the test is repeatable. Minimum score of 20% required."
+        },
+        "evidence": [
+          {
+            "url": "https://www.orientamento.unina.it/corsidistudio/civil-and-environmental-engineering/",
+            "quote": "Personal preparation is ascertained by means of a compulsory selective test, required for admission to the Degree Program, that is entrusted to the CISIA Consortium (English TOLC-I)."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Vérifier si un diplôme marocain est admis et si une procédure de vérification auprès de CIMEA/ENIC-NARIC est exigée ; contacter le coordinateur du cursus (Prof. Francesca Pagliara).",
+          "en": "Check whether a Moroccan diploma is accepted and whether a CIMEA/ENIC-NARIC verification procedure is required; contact the programme coordinator (Prof. Francesca Pagliara)."
+        },
+        "evidence": [
+          {
+            "url": "https://www.international.unina.it/education/admission-regulation/",
+            "quote": "You have to produce any documentation that the University deems necessary for the evaluation of the foreign qualification:"
+          },
+          {
+            "url": "https://www.orientamento.unina.it/corsidistudio/civil-and-environmental-engineering/",
+            "quote": "Contact person for International Students: Prof. Francesca Pagliara (DICEA), phone no.: 081 7683932"
+          }
+        ]
+      }
+    ]
+  }
+}

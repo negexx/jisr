@@ -1,0 +1,49 @@
+{
+  "slug": "fr-universite-grenoble-alpes-antenne-de-val-0261372a-licence-economie-et-gestion-13933",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13933&typeBac=0&originePc=0",
+  "facts": {},
+  "notes": "Extraction is for a Moroccan applicant with a Moroccan Baccalauréat applying from outside France. The programme-specific page (Parcoursup fiche 13933) is for the Double licence Économie et gestion / Langues étrangères appliquées at Université Grenoble Alpes - Antenne de Valence. No start date is quoted on any page. The tuition figure of 178 €/year is the French/EU rate shown on the programme's own Parcoursup page and the UGA registration fees page; for non-EU applicants with a foreign diploma, the differential fees (2 902 €/year in Licence) apply unless exoneration is granted (pages say exoneration is possible, so it may be 0 € in some cases). The document list comes from a PDF on the UFR SoCLE site that is not clearly the list for this specific programme (it is labelled 'LICENCE PROFESSIONNELLE METIER DU COMMERCE INTERNATIONAL'), but it is the only document list supplied and is used as evidence; the auditor should verify it applies. The application deadline (15 December 2026) is from the DAP blanche page for non-EU applicants residing abroad; note that Morocco is a country covered by the Études en France procedure, so the correct channel is PEF rather than DAP, but the DAP blanche deadline is the only dated application deadline stated for non-EU applicants abroad. No applicationChannel is output as instructed.",
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": "C1",
+        "certificateRequired": null,
+        "acceptedTests": [],
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13933&typeBac=0&originePc=0",
+            "quote": "Niveau de français requis pour s'inscrire à la formation : C1"
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "La commission attribue une importance essentielle au niveau académique (90%). Vérifiez les notes et le projet de formation motivé.",
+          "en": "The commission places essential importance on academic level (90%). Check grades and the motivated study project."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13933&typeBac=0&originePc=0",
+            "quote": "La commission d'examen des voeux attribue une importance essentielle au critère du niveau académique."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Un très bon niveau en anglais et dans une deuxième langue étrangère est exigé. Vérifiez les attendus spécifiques.",
+          "en": "A very good level in English and in a second foreign language is required. Check specific expectations."
+        },
+        "evidence": [
+          {
+            "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=13933&typeBac=0&originePc=0",
+            "quote": "Un très bon niveau en anglais et dans une deuxième langue étrangère est exigé."
+          }
+        ]
+      }
+    ]
+  }
+}

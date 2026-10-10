@@ -38,8 +38,26 @@ applicationChannel:
   source: programme
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: academic-certificates
+      name:
+        fr:
+          text: Certificats académiques (diplôme de fin d'études secondaires ou diplôme universitaire)
+          status: draft
+        en:
+          text: Academic certificates (secondary school leaving certificate or university degree)
+          status: draft
+      translationRequired: true
+    - slug: transcript-of-records
+      name:
+        fr:
+          text: Relevé de notes
+          status: draft
+        en:
+          text: Transcript of Records
+          status: draft
+      translationRequired: true
+  source: page-2
   info_kind: official
 requirements:
   coverage: partial

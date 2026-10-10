@@ -1,0 +1,124 @@
+{
+  "slug": "fr-universite-de-la-polynesie-francaise-9840349g-licence-economie-et-gestion-12011",
+  "programmePage": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12011&typeBac=0&originePc=0",
+  "facts": {
+    "durationYears": {
+      "value": 3,
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12011&typeBac=0&originePc=0",
+          "quote": "Accès à 2 masters à l'UPF (ainsi qu'aux masters en métropole et à l'étranger) : - Master Management et Commerce International"
+        },
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12011&typeBac=0&originePc=0",
+          "quote": "Le taux de réussite en 3 ou 4 ans d’une licence est la part des bacheliers de la session 2020 qui se sont inscrits en première année à la rentrée 2020 et qui ont décroché leur licence en 3 ans ou en 4 ans."
+        }
+      ]
+    },
+    "tuition": {
+      "value": {
+        "amountMinor": 17800,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "evidence": [
+        {
+          "url": "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=12011&typeBac=0&originePc=0",
+          "quote": "Par année 178 euros."
+        }
+      ]
+    },
+    "intakes": {
+      "value": [
+        {
+          "startDate": null,
+          "applicationOpens": null,
+          "applicationDeadline": null,
+          "recurringDeadline": {
+            "month": 1,
+            "day": 31
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://international.upf.pf/en/individual-registration/",
+          "quote": "If you are a foreign student residing in your own country, you will need to download, complete and return the white application form."
+        },
+        {
+          "url": "https://international.upf.pf/en/individual-registration/",
+          "quote": "If your application to enroll in the Master’s program is rejected, you will not be admitted to the Bachelor’s program unless you have completed a Demande d’Admission Préalable (DAP) application between November 15th and January 31st prior to the start of the academic year."
+        }
+      ]
+    },
+    "documents": {
+      "value": [
+        {
+          "slug": "school-leaving-certificate",
+          "name": {
+            "fr": "diplôme de fin d'études secondaires",
+            "en": "high school diploma"
+          },
+          "quotedAs": "diplôme de fin d'études secondaires",
+          "translationRequired": null
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://international.upf.pf/en/individual-registration/",
+          "quote": "Your nationality The country in which you obtained your baccalaureate or high school diploma Your country of residence The year of training you wish to apply for"
+        },
+        {
+          "url": "https://www.upf.pf/fr/demandes-dinscription-titre-individuel-pour-les-etudiants-duniversites-non-partenaires-0",
+          "quote": "votre nationalité du pays d'obtention de votre baccalauréat ou diplôme de fin d'études secondaires de votre pays de résidence de l'année de formation à laquelle vous souhaitez candidater"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "rules": [
+      {
+        "kind": "language_proficiency",
+        "language": "fr",
+        "minCefr": null,
+        "certificateRequired": true,
+        "acceptedTests": [
+          "delf-dalf"
+        ],
+        "evidence": [
+          {
+            "url": "https://international.upf.pf/en/individual-registration/",
+            "quote": "A good knowledge of French is required; you will be tested in February. Holders of the “Diplôme approfondie de la langue française (DALF) are exempt from this test."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "Une demande d'admission préalable (DAP) est obligatoire pour les étrangers titulaires d'un diplôme étranger de fin d'études secondaires.",
+          "en": "A prior admission application (DAP) is compulsory for foreign nationals holding a foreign high school diploma."
+        },
+        "evidence": [
+          {
+            "url": "https://international.upf.pf/en/individual-registration/",
+            "quote": "If you are concerned by the DAP, application for prior admission (DAP) is compulsory for foreign nationals holding a foreign high school diploma."
+          }
+        ]
+      },
+      {
+        "kind": "manual_check",
+        "note": {
+          "fr": "L'UPF n'est pas connectée à Campus France : cochez « Autre » ou « Non connecté » et envoyez votre dossier directement au service de la scolarité de l'UPF.",
+          "en": "UPF is not connected to Campus France: tick 'Autre' or 'Non connecté' and send your application directly to the UPF Registrar's Office."
+        },
+        "evidence": [
+          {
+            "url": "https://international.upf.pf/en/individual-registration/",
+            "quote": "Please note: The University of French Polynesia is not connected to the Campus France website. When you register and select the university to which you wish to apply, you will need to tick “Autre” or “Non connecté”."
+          }
+        ]
+      }
+    ]
+  },
+  "notes": "Tuition: the Parcoursup fiche states 178 EUR per year, a fee shown for this programme; a differentiated non-EU fee page (Campus France Maroc) is general for France and does not name this programme. Duration: page gives licence in 3 or 4 years; value 3 taken as the nominal licence duration. Intake: only a recurring DAP deadline (15 November – 31 January) for foreign-diploma applicants is stated without a year."
+}
