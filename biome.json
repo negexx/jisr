@@ -16,6 +16,7 @@
       "!data-staging/universitaly",
       "!.claude",
       "!.impeccable",
+      "!stripe",
       "!pnpm-lock.yaml"
     ]
   },

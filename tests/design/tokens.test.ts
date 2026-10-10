@@ -118,8 +118,8 @@ describe("design tokens", () => {
     });
 
     // Pale tints cannot be as far apart as text colours (chroma this low caps the distance), so the
-    // plum estimate tint is held apart from the pink fail and destructive tints at the largest
-    // distance reachable while its text keeps 4.5:1: 0.054 today, asserted at 0.05.
+    // cream estimate tint is held apart from the pink fail and destructive tints at the largest
+    // distance reachable while its text keeps 4.5:1: 0.075 today, asserted at 0.05.
     it.each([
       ["kind-estimate-bg", "status-fail-bg"],
       ["kind-estimate-bg", "destructive-bg"],

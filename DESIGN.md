@@ -1,44 +1,50 @@
 ---
 name: Jisr
-description: A calm, plainly spoken bridge from a school-leaver's profile to real, honestly labelled study options in Europe.
+description: A confident, atmospheric bridge from a school-leaver's profile to real, honestly labelled study options in Europe. Navy ink on a cool near-white canvas, one electric-indigo accent, thin display type, and soft navy-tinted depth — trust carried by source badges, never by gloss.
 colors:
-  warm-paper: "oklch(0.985 0.006 90)"
-  card-cream: "oklch(0.995 0.003 90)"
-  sand-wash: "oklch(0.955 0.008 90)"
-  hairline-sand: "oklch(0.9 0.01 90)"
-  ink-slate: "oklch(0.22 0.02 215)"
-  quiet-slate: "oklch(0.45 0.02 215)"
-  control-slate: "oklch(0.62 0.02 215)"
-  deep-teal-ink: "oklch(0.4 0.075 205)"
-  teal-mist: "oklch(0.95 0.02 205)"
-  teal-ink-dark: "oklch(0.3 0.06 205)"
-  focus-teal: "oklch(0.55 0.1 205)"
-  error-brick: "oklch(0.45 0.16 25)"
-  error-blush: "oklch(0.95 0.025 25)"
-  match-green: "oklch(0.5 0.11 155)"
-  match-green-text: "oklch(0.4 0.09 155)"
-  match-green-wash: "oklch(0.96 0.03 155)"
-  match-green-edge: "oklch(0.58 0.11 155)"
-  check-amber: "oklch(0.52 0.11 70)"
-  check-amber-text: "oklch(0.42 0.09 70)"
-  check-amber-wash: "oklch(0.96 0.04 85)"
-  check-amber-edge: "oklch(0.6 0.12 75)"
-  unmet-red: "oklch(0.5 0.16 25)"
-  unmet-red-text: "oklch(0.43 0.15 25)"
-  unmet-red-wash: "oklch(0.955 0.03 25)"
-  unmet-red-edge: "oklch(0.58 0.15 25)"
-  official-teal: "oklch(0.36 0.075 205)"
-  estimate-plum: "oklch(0.42 0.06 310)"
-  estimate-plum-wash: "oklch(0.92 0.04 300)"
-  guidance-grey: "oklch(0.42 0.01 90)"
-  guidance-grey-wash: "oklch(0.95 0.005 90)"
+  navy-ink: "oklch(0.2591 0.0544 250.72)"
+  ink-secondary: "oklch(0.3405 0.0485 255.87)"
+  ink-muted: "oklch(0.4968 0.0408 260.28)"
+  indigo: "oklch(0.5211 0.2679 277.43)"
+  indigo-deep: "oklch(0.4621 0.23 276.92)"
+  indigo-press: "oklch(0.3614 0.1551 276.67)"
+  indigo-soft: "oklch(0.5836 0.2282 278.87)"
+  indigo-wash: "oklch(0.9684 0.016 289.93)"
+  navy-band: "oklch(0.2701 0.0962 276.24)"
+  canvas: "oklch(0.995 0.002 250)"
+  canvas-soft: "oklch(0.9807 0.0051 247.88)"
+  hairline: "oklch(0.9289 0.0097 252.81)"
+  control-slate: "oklch(0.5552 0.0435 259.24)"
+  official-teal: "oklch(0.5109 0.0861 186.39)"
+  official-wash: "oklch(0.942 0.034 189)"
+  estimate-ink: "oklch(0.4469 0.0845 75.89)"
+  estimate-cream: "oklch(0.925 0.075 88)"
+  guidance-ink: "oklch(0.4968 0.0408 260.28)"
+  guidance-wash: "oklch(0.9807 0.0051 247.88)"
+  match-green: "oklch(0.528 0.1208 155)"
+  match-green-ink: "oklch(0.475 0.115 155)"
+  match-green-wash: "oklch(0.9612 0.0173 159.12)"
+  check-amber: "oklch(0.5553 0.1455 49)"
+  check-amber-ink: "oklch(0.5553 0.1455 49)"
+  check-amber-wash: "oklch(0.9685 0.0203 74.66)"
+  fail-red: "oklch(0.5433 0.174 29.7)"
+  fail-red-ink: "oklch(0.5003 0.1821 29.51)"
+  fail-red-wash: "oklch(0.956 0.0187 25.6)"
+  error-red: "oklch(0.5433 0.174 29.7)"
+  error-blush: "oklch(0.956 0.0187 25.6)"
 typography:
+  display:
+    fontFamily: "Geist, system-ui, sans-serif"
+    fontSize: "3.5rem"
+    fontWeight: 300
+    lineHeight: 1.05
+    letterSpacing: "-0.03em"
   headline:
     fontFamily: "Geist, system-ui, sans-serif"
     fontSize: "1.75rem"
-    fontWeight: 700
+    fontWeight: 300
     lineHeight: 1.25
-    letterSpacing: "-0.025em"
+    letterSpacing: "-0.03em"
   title:
     fontFamily: "Geist, system-ui, sans-serif"
     fontSize: "1.4375rem"
@@ -64,261 +70,296 @@ rounded:
   md: "9.6px"
   lg: "12px"
   xl: "16.8px"
-  full: "9999px"
+  pill: "9999px"
 spacing:
   xs: "6px"
   sm: "8px"
   md: "16px"
   lg: "24px"
   xl: "32px"
+  section: "88px"
   tap: "48px"
+shadows:
+  sm: "0 1px 2px rgba(13, 37, 61, 0.08), 0 1px 1px rgba(13, 37, 61, 0.04)"
+  md: "0 12px 30px -12px rgba(13, 37, 61, 0.22), 0 2px 6px rgba(13, 37, 61, 0.06)"
+  lg: "0 30px 60px -24px rgba(28, 30, 84, 0.35), 0 6px 16px rgba(13, 37, 61, 0.08)"
 components:
   button-primary:
-    backgroundColor: "{colors.deep-teal-ink}"
-    textColor: "{colors.warm-paper}"
+    backgroundColor: "{colors.indigo}"
+    textColor: "{colors.canvas}"
     typography: "{typography.body}"
-    rounded: "{rounded.lg}"
-    padding: "0 20px"
+    rounded: "{rounded.pill}"
+    padding: "0 22px"
     height: "48px"
-  button-outline:
-    backgroundColor: "{colors.warm-paper}"
-    textColor: "{colors.ink-slate}"
-    rounded: "{rounded.lg}"
-    padding: "0 20px"
-    height: "48px"
-  button-outline-hover:
-    backgroundColor: "{colors.sand-wash}"
+  button-primary-hover:
+    backgroundColor: "{colors.indigo-deep}"
   button-secondary:
-    backgroundColor: "{colors.sand-wash}"
-    textColor: "{colors.ink-slate}"
-    rounded: "{rounded.lg}"
-    padding: "0 20px"
+    backgroundColor: "{colors.canvas}"
+    textColor: "{colors.navy-ink}"
+    borderColor: "{colors.hairline}"
+    rounded: "{rounded.pill}"
+    padding: "0 22px"
     height: "48px"
-  button-destructive:
-    backgroundColor: "{colors.error-blush}"
-    textColor: "{colors.error-brick}"
-    rounded: "{rounded.lg}"
-    height: "48px"
+  button-ghost:
+    backgroundColor: "transparent"
+    textColor: "{colors.indigo}"
+    rounded: "{rounded.pill}"
   text-field:
-    backgroundColor: "{colors.warm-paper}"
-    textColor: "{colors.ink-slate}"
+    backgroundColor: "{colors.canvas}"
+    textColor: "{colors.navy-ink}"
+    borderColor: "{colors.control-slate}"
     typography: "{typography.body}"
     rounded: "{rounded.lg}"
     padding: "0 12px"
     height: "48px"
   choice-row-selected:
-    backgroundColor: "{colors.teal-mist}"
-    textColor: "{colors.ink-slate}"
+    backgroundColor: "{colors.indigo-wash}"
+    textColor: "{colors.navy-ink}"
+    borderColor: "{colors.indigo}"
     rounded: "{rounded.lg}"
     padding: "8px 12px"
     height: "48px"
   source-badge-official:
     backgroundColor: "{colors.official-teal}"
-    textColor: "{colors.teal-mist}"
+    textColor: "{colors.canvas}"
     typography: "{typography.label}"
-    rounded: "{rounded.full}"
+    rounded: "{rounded.pill}"
     padding: "2px 10px"
   source-badge-estimate:
-    backgroundColor: "{colors.estimate-plum-wash}"
-    textColor: "{colors.estimate-plum}"
+    backgroundColor: "{colors.estimate-cream}"
+    textColor: "{colors.estimate-ink}"
+    borderColor: "{colors.estimate-ink}"
     typography: "{typography.label}"
-    rounded: "{rounded.full}"
+    rounded: "{rounded.pill}"
     padding: "2px 10px"
   source-badge-guidance:
-    backgroundColor: "{colors.guidance-grey-wash}"
-    textColor: "{colors.guidance-grey}"
+    backgroundColor: "{colors.guidance-wash}"
+    textColor: "{colors.guidance-ink}"
+    borderColor: "{colors.hairline}"
     typography: "{typography.label}"
-    rounded: "{rounded.full}"
+    rounded: "{rounded.pill}"
     padding: "2px 10px"
   match-status-ok:
     backgroundColor: "{colors.match-green-wash}"
-    textColor: "{colors.match-green-text}"
+    textColor: "{colors.match-green-ink}"
+    borderColor: "{colors.match-green}"
     typography: "{typography.body}"
     rounded: "{rounded.md}"
     padding: "6px 12px"
   match-status-check:
     backgroundColor: "{colors.check-amber-wash}"
-    textColor: "{colors.check-amber-text}"
+    textColor: "{colors.check-amber-ink}"
+    borderColor: "{colors.check-amber}"
     typography: "{typography.body}"
     rounded: "{rounded.md}"
     padding: "6px 12px"
   match-status-failed:
-    backgroundColor: "{colors.unmet-red-wash}"
-    textColor: "{colors.unmet-red-text}"
+    backgroundColor: "{colors.fail-red-wash}"
+    textColor: "{colors.fail-red-ink}"
+    borderColor: "{colors.fail-red}"
     typography: "{typography.body}"
     rounded: "{rounded.md}"
     padding: "6px 12px"
   match-card:
-    backgroundColor: "{colors.card-cream}"
-    textColor: "{colors.ink-slate}"
+    backgroundColor: "{colors.canvas}"
+    textColor: "{colors.navy-ink}"
+    borderColor: "{colors.hairline}"
     rounded: "{rounded.xl}"
     padding: "24px"
+    shadow: "{shadows.sm}"
+  feature-card:
+    backgroundColor: "{colors.canvas}"
+    textColor: "{colors.navy-ink}"
+    borderColor: "{colors.hairline}"
+    rounded: "{rounded.xl}"
+    padding: "24px"
+    shadow: "{shadows.sm}"
   profile-strip:
-    backgroundColor: "{colors.sand-wash}"
+    backgroundColor: "{colors.canvas-soft}"
+    textColor: "{colors.navy-ink}"
     rounded: "{rounded.xl}"
     padding: "16px"
+  dark-band:
+    backgroundColor: "{colors.navy-band}"
+    textColor: "{colors.canvas}"
+    rounded: "{rounded.xl}"
+    padding: "48px"
 ---
 
 # Design System: Jisr
 
 ## 1. Overview
 
-**Creative North Star: "The Plain Bridge"**
+**Creative North Star: "The Gradient Bridge"**
 
-Jisr means bridge. The interface is a calm, plainly spoken crossing from a school-leaver's profile to real, honestly labelled options. It is a product register: the student is deciding alone, on a mid-range phone, often on slow data, so every surface serves the task and none performs. Warmth lives in shape and rhythm (rounded controls, generous gaps between fields, a progress bar that also says its step in words), never in promotional copy or decoration.
+Jisr means bridge. The product is still a calm, plainly spoken crossing from a school-leaver's profile to real, honestly labelled options — but it now looks and feels like the craft is on purpose. The interface opens with an atmospheric indigo wash over a cool near-white canvas, sets its headline in thin Geist with tight tracking, and floats one near-white card of real product (the hero match demo) at the gradient's edge. Depth is soft and navy-tinted; motion is small and physical. The student decides alone on a mid-range phone, so every flourish stays cheap, legible and task-serving.
 
-The palette is Restrained: warm-tinted neutrals (hue 90) plus one deep teal-ink accent (hue 205). Status colour exists only for match status. Fact kinds (official, estimate, guidance) get three distinct treatments in shape and icon as well as colour, so an estimate can never pass for an official figure. Depth comes from tonal surfaces and hairline borders. Light theme only.
+**This world supersedes "The Plain Bridge."** The incumbent system (warm paper, hue-90 neutrals, deep teal ink, flat surfaces, a ban on shadows) is kept only as evidence and anti-reference. The trust semantics, product truth, copy voice, content, RTL discipline and privacy rules are unchanged; the *look* is replaced. Where a later component still reads warm-paper or teal-accented, it is un-migrated, not a deliberate exception.
 
-This system rejects what PRODUCT.md rejects: persuasion over trust, rounded-up certainty, and anything written for parents or counselors instead of the student. Visually that means no marketing gloss, no promise styling, no catalogue-of-universities look. Component philosophy: **calm, rounded, text-first**. Rounded controls (12px radius), 48px tap targets, status always icon plus words (never colour alone), tinted badges only where meaning needs them.
+The palette is navy ink on a cool near-white canvas with a single electric-indigo accent for anything that can be pressed, followed or is current. Teal is no longer the brand colour: it is reserved for the "official" fact-kind, a trust semantic. Match green, amber and red keep their meaning. Depth comes from one soft shadow scale, not from tone alone, and never from glassmorphism or gradient text. Light theme only.
 
 **Key Characteristics:**
-- Warm paper ground, deep teal ink for actions, links, current nav and focus only.
-- Flat at rest: no shadows anywhere; tonal surfaces and 1px borders carry structure.
-- Fixed type scale, 14 / 16 / 19 / 23 / 28 px, Geist for Latin and Noto Sans Arabic for Arabic.
-- Every fact wears its kind, verified date and source link.
-- RTL is native: logical properties only, mirrored directional icons, Latin names, URLs and numbers isolated in `bdi`, Latin digits in Arabic.
-- Motion is 150 ms colour and state changes only, and none under `prefers-reduced-motion`.
-- Layout: one column on phone, content width capped at 64rem (matches use a 15rem sticky side column from 1024px; the profile form uses a 40rem column with a 16rem aside); prose capped at `max-w-prose`.
+- Cool near-white canvas (`#ffffff` intent, authored imperceptibly off pure white), navy-ink text, hairline borders.
+- One accent: electric indigo. Primary buttons, links, the current nav underline, focus, selected-choice borders.
+- Teal reserved for the official fact-kind only. Estimates are dashed cream; guidance is grey.
+- Thin display type: Geist at weight 300 with `-0.03em` tracking on the display step; 400/500/600 for UI.
+- Soft, navy-tinted shadows (`shadow-sm`/`md`/`lg`) give cards and floating panels their lift.
+- Every fact wears its kind pill, verified date and official source link.
+- RTL is native: logical properties only, mirrored directional icons, Latin isolated in `<bdi>`, Latin digits in Arabic.
+- Motion is 150–220 ms colour and transform only, and none under `prefers-reduced-motion`.
 
 ## 2. Colors
 
-A restrained warm-neutral field with one deep teal-ink voice. OKLCH is the canonical format (it is what `src/app/globals.css` defines); the Stitch linter will warn about non-hex colours, and that warning is accepted. Values live only in the frontmatter.
+OKLCH is the canonical format (it is what `src/app/globals.css` defines); the hex values named here are the visual intent. The Stitch linter warns about non-hex colours and that warning is accepted. Tokens live in `:root`; Tailwind utilities are mapped in `@theme inline`.
 
-### Primary
-- **Deep Teal Ink** (`deep-teal-ink`): Primary buttons, links, the current nav item underline, filled progress segments, selected-choice border. Text on it is Warm Paper.
-- **Teal Mist** (`teal-mist`): Selected choice-row fill and the tint behind the Official badge text. **Teal Ink Dark** (`teal-ink-dark`) is its accent foreground.
-- **Focus Teal** (`focus-teal`): The 2px focus outline, 2px offset, on every focusable element.
+### Accent
+- **Indigo** (`--primary`, `#533afd`): The only accent. Primary buttons, links, the current-nav underline, focus ring, selected choice borders.
+- **Indigo Deep** (`#4434d4`): Hover and press-warmth for the primary; also `--accent-foreground` on the indigo wash.
+- **Indigo Press** (`#2e2b8c`): Pressed-state lift.
+- **Indigo Soft** (`#665efd`): Product-UI accents and chart highlights.
+- **Indigo Wash** (`--accent`, `--indigo-wash`, `#f4f3ff`): The pale fill behind selected rows and soft tags.
 
-### Neutral
-- **Warm Paper** (`warm-paper`): Page background, input fill, text on primary.
-- **Card Cream** (`card-cream`): Cards, popovers and dialogs, one half-step lighter than the page.
-- **Sand Wash** (`sand-wash`): Footer, profile strip, secondary and hover fills, current locale chip.
-- **Hairline Sand** (`hairline-sand`): The default 1px border and divider.
-- **Ink Slate** (`ink-slate`): Body text. A slightly cool slate, never black.
-- **Quiet Slate** (`quiet-slate`): Secondary text, hints, inactive nav.
-- **Control Slate** (`control-slate`): Input and outline-button borders; sized to meet 3:1 against the page.
+### Surface
+- **Canvas** (`--background`, `--card`, `--popover`): The page, cards and popovers. Authored as a near-white `oklch(0.995 0.002 250)`, never literal `#fff`.
+- **Canvas Soft** (`--secondary`, `--muted`, `--canvas-soft`, `#f6f9fc`): Feature bands, footer, input groups, hover fills, the locale track.
+- **Navy Band** (`--navy`, `#1c1e54`): The one full-bleed dark band and its gradient.
+- **Hairline** (`--border`, `#e3e8ee`): The default 1px border and divider.
+- **Control Slate** (`--input`, `#64748d`): Input and outline-button borders, sized to meet 3:1 against the canvas.
+
+### Text
+- **Navy Ink** (`--foreground`, `#0d253d`): Body text. Deep navy, never black.
+- **Ink Secondary** (`--secondary-foreground`, `#273951`): Lead paragraphs, nav links, secondary text on white.
+- **Ink Muted** (`--muted-foreground`, `#55637a`): Hints, captions, table labels, inactive nav.
 
 ### Status (match status only)
-- **Match Green** family (`match-green`, `-text`, `-wash`, `-edge`): "Published requirements appear met". Icon in the base, text in `-text`, wash fill, `-edge` border.
-- **Check Amber** family (`check-amber`, `-text`, `-wash`, `-edge`): "Something to check" and the foundation-year route. Also used for aging and stale freshness chips and the foundation explanation box.
-- **Unmet Red** family (`unmet-red`, `-text`, `-wash`, `-edge`): "Published requirements not met".
-- **Error Brick** and **Error Blush** (`error-brick`, `error-blush`): Form errors and the destructive button only. Never a match status.
+- **Match Green** (`--status-ok`, `-fg`, `-bg`, `-border`, `#1a7f4b`): "Published requirements appear met". Icon and border in the base, text in `-fg`, wash fill.
+- **Check Amber** (`--status-check`, `-fg`, `-bg`, `-border`, `#b45309`): "Something to check" and the foundation-year route. Also aging and stale freshness chips.
+- **Fail Red** (`--status-fail`, `-fg`, `-bg`, `-border`, `#c0392b`): "Published requirements not met".
+- **Error Red / Error Blush** (`--destructive`, `--destructive-bg`): Form errors and the destructive button only. Never a match status.
 
 ### Fact kinds
-- **Official Teal** (`official-teal`): Filled pill, light text, shield-check icon.
-- **Estimate Plum** (`estimate-plum`, `estimate-plum-wash`): Dashed 1px plum outline on a pale plum fill, calculator icon.
-- **Guidance Grey** (`guidance-grey`, `guidance-grey-wash`): Solid grey outline at 40% on a pale grey fill, info icon.
+- **Official Teal** (`--kind-official`, `#0f766e`): Filled pill, light text, shield-check icon. The teal is a trust semantic reserved for official facts.
+- **Estimate Cream** (`--kind-estimate`, `#6f4d13`; `--kind-estimate-bg`, `#fbeecb`): Dashed warm-cream outline on a cream fill, calculator icon. Tuned so it can never read as an official or a check colour.
+- **Guidance Grey** (`--kind-guidance`, `#55637a`; `--kind-guidance-bg`, `#f6f9fc`): Solid hairline outline on a soft fill, info icon.
 
 ### Named Rules
-**The One Voice Rule.** Deep Teal Ink is the only accent. It marks what can be pressed, followed or is current. It never decorates.
+**The One Voice Rule.** Electric indigo is the only accent. It marks what can be pressed, followed or is current. It never decorates.
 
 **The Words-Beside-Colour Rule.** Status never relies on colour alone. Every status colour ships with an icon and a sentence, and the three fact kinds also differ in fill, border style and icon.
 
-**The Status-Is-Status Rule.** Green, amber and red mean match status and nothing else. Do not borrow them for success toasts, tags or emphasis. Amber is also permitted for freshness warnings, because those are the same "check this" meaning.
-
-**The Never-Official Rule.** Estimate and guidance are never styled or worded as official: no teal fill, no shield, no "official" language, and stale wording that says "go to the official page" is shown only on official facts.
-
-**The Source-Always Rule.** No fact without its source badge: kind, verified date and source link travel with every important fact, in every component and on every page.
+**The Source-Always Rule.** No fact without its source badge: kind, verified date and official source link travel with every important fact, in every component and on every page.
 
 **The One Mapping Rule.** Match status becomes icon, colour and text in `MatchStatusBadge` only. No other component re-implements the mapping.
 
-**The No-Pure-Black Rule.** No `#000` or `#fff`. Every neutral carries warmth (hue 90) or slate (hue 215).
+**The Never-Official Rule.** Estimate and guidance are never styled or worded as official: no teal fill, no shield, no "official" language, and "go to the official page" wording appears only on official facts.
+
+**The Status-Is-Status Rule.** Green, amber and red mean match status and nothing else — never success toasts, tags or emphasis. Amber is also permitted for freshness warnings, because those share the same "check this" meaning.
+
+**The No-Pure-Black Rule.** No `#000` or `#fff`. The canvas is a cool near-white with a faint cool tint; ink is navy; every neutral stays cool.
 
 ## 3. Typography
 
-**Display Font:** none; there is no display face. Headings use the body face.
-**Body Font:** Geist (with `system-ui, sans-serif`). Arabic: Noto Sans Arabic, loaded lazily, applied on `:lang(ar)` and `html[lang="ar"]`.
-**Label/Mono Font:** Geist; a monospace stack is declared but unused.
+**Display Font:** none as a second face. Geist carries display and body; Noto Sans Arabic carries `ar`.
+**Body Font:** Geist (with `system-ui, sans-serif`).
+**Arabic:** Noto Sans Arabic, loaded lazily, applied on `:lang(ar)` and `html[lang="ar"]`.
 
-**Character:** One plain humanist-geometric sans at a fixed 1.2 ratio. Hierarchy comes from size and weight, never from a second face. Arabic reads about 1px larger (root 106.25%) with 1.75 leading.
+**Character:** One humanist-geometric sans, hierarchy from size, weight and tracking. The display tier is thin (300) with tight negative tracking — the world's typographic signature. Arabic reads about 1px larger (root 106.25%) with 1.75 leading. No second typeface, no new font file, no new font dependency.
 
 ### Hierarchy
-- **Headline** (700, 1.75rem / 28px, 1.25, tracking -0.025em, balanced wrap): Page title (h1).
+- **Display** (300, 3.5rem / 56px, 1.05, tracking `-0.03em`; `--text-display`): The hero headline. One per page.
+- **Headline** (300, 1.75rem / 28px, 1.25, tracking `-0.03em`): Section openers and page titles.
 - **Title** (600, 1.4375rem / 23px, 1.35): Section and empty-state headings.
-- **Subtitle** (600, 1.1875rem / 19px, 1.5): Card titles, group headings, wordmark, step error-summary heading.
-- **Body** (400 to 500, 1rem / 16px, 1.5): Everything readable; inputs never below 16px. Prose is capped at `max-w-prose`.
-- **Label** (500, 0.875rem / 14px, 1.5): Badges, source lines, hints, fact captions. Use `tabular-nums` for money.
+- **Subtitle** (600, 1.1875rem / 19px, 1.5): Card titles, group headings, wordmark.
+- **Body** (400 to 500, 1rem / 16px, 1.5): Everything readable; inputs never below 16px. Prose capped at `max-w-prose`.
+- **Label** (500, 0.875rem / 14px, 1.5): Badges, source lines, hints, fact captions. `tabular-nums` for money.
 
 ### Named Rules
-**The Fixed Scale Rule.** Only 14, 16, 19, 23 and 28 px. No fluid clamp, no in-between sizes. `text-xs` is for tiny labels inside dense controls only.
+**The Display-Is-Thin Rule.** The display and section openers render at weight 300 with `-0.03em` tracking. Bumping them to 400+ collapses the editorial air that makes the world feel expensive.
 
-**The Isolated Latin Rule.** Official names, URLs, hostnames, currency codes and amounts sit in `bdi` (amounts and URLs with `dir="ltr"`) so Arabic sentences never reorder them. Digits are always Latin.
+**The Fixed Scale Rule.** Only 14, 16, 19, 23, 28 and 56 px (plus `text-xs` for tiny labels inside dense controls). No fluid clamp, no in-between sizes.
 
-**The Arabic Leading Rule.** Under `lang="ar"` the root scales to 106.25% and line heights rise to 1.75 (1.6 and 1.5 for the two largest steps). Tap targets grow with the root; the target is 48px on phone (shipped: 44px for `sm`, 32 to 36px on desktop, tracked as a follow-up).
+**The Isolated Latin Rule.** Official names, URLs, hostnames, currency codes and amounts sit in `<bdi>` (amounts and URLs with `dir="ltr"`) so Arabic sentences never reorder them. Digits are always Latin.
+
+**The Arabic Leading Rule.** Under `lang="ar"` the root scales to 106.25% and line heights rise to 1.75 (1.6 and 1.5 for the two largest steps). Tap targets grow with the root; the target is 48px.
 
 ## 4. Elevation
 
-Flat by default. The shipped code contains no `box-shadow` or `shadow-*` utility. Structure comes from tonal surfaces (Warm Paper, Card Cream, Sand Wash) and 1px Hairline Sand borders. Two overlay exceptions exist, both in the clear-data dialog: a scrim and a hairline ring.
+Soft depth is allowed and expected: surfaces lift off the canvas with a navy-tinted shadow rather than with a heavy border. Three steps exist — `--shadow-sm`, `--shadow-md`, `--shadow-lg` — mapped to `shadow-sm`/`shadow-md`/`shadow-lg`. They are navy-tinted (`rgba(13, 37, 61, …)` / `rgba(28, 30, 84, …)`) so depth stays cool, never grey.
 
 ### Shadow Vocabulary
-- **Dialog scrim** (`background: Ink Slate at 30% opacity, full viewport`): Behind the modal only.
-- **Dialog ring** (`ring-1`, Ink Slate at 15%): A 1px ring around the dialog panel, in place of a shadow.
+- **`shadow-sm`** (`0 1px 2px rgba(13,37,61,.08), 0 1px 1px rgba(13,37,61,.04)`): At-rest cards, source pills, the current locale chip, the segmented control's selected segment.
+- **`shadow-md`** (`0 12px 30px -12px rgba(13,37,61,.22), 0 2px 6px rgba(13,37,61,.06)`): Card hover lift, dropdowns and popovers.
+- **`shadow-lg`** (`0 30px 60px -24px rgba(28,30,84,.35), 0 6px 16px rgba(13,37,61,.08)`): The one hero demo panel and modal overlays.
 
 ### Named Rules
-**The Flat-By-Default Rule.** Nothing casts a shadow. If a surface needs separation, change its tonal step or add a 1px border. The test: if a card looks like it floats, it is wrong.
+**The Soft-Depth Rule.** Lift with `shadow-sm` at rest and step up to `shadow-md` on hover; reserve `shadow-lg` for the single hero panel and modals. Never stack shadows on the same element, and never glow.
 
-**The Words-Not-Depth Rule.** Hierarchy and state are carried by text, icon and border, not by elevation or glow. The error focus ring (`ring-3` at 20% of Error Brick on invalid buttons) is the only glow.
+**The Hairline-Still-Works Rule.** A card at rest may pair `shadow-sm` with the 1px hairline, but the shadow is the lift: if a surface looks like it floats for no reason, remove the step, not the border.
 
-## 5. Components
+## 5. Shape and Spacing
+
+- **Radius**: inputs and cards share the 12px (`--radius`) family (`rounded-lg`, `rounded-xl` for cards); buttons and badges are fully rounded pills (`rounded-full`). `rounded-md` (9.6px) is for compact badges and alerts.
+- **Spacing**: an 8px base with the existing sub-tokens. Marketing/hero sections breathe at ~88px; product sections tighten to 32–48px; card padding is 24px (32px on feature cards from 768px).
+- **Tap targets**: 48px by default; `sm` is 44px on phone and 36px from 768px.
+- **Layout**: one column on phone; content capped at 64rem. Prose capped at `max-w-prose`.
+
+## 6. Components
 
 ### Buttons
-- **Shape:** Rounded (12px). 48px tall by default and in `lg`; `icon` is 48px square. `sm` is 44px on phone and 36px from 768px. `xs` (24px) exists in code and is not for primary journeys.
-- **Primary:** Deep Teal Ink fill, Warm Paper text, 16px medium, 20px side padding, 8px icon gap. Hover drops to 80% opacity.
-- **Outline / Secondary / Ghost:** Outline is Warm Paper with a Control Slate border; hover fills Sand Wash. Secondary is a Sand Wash fill. Ghost has no fill until hover.
-- **Destructive:** Error Blush fill, Error Brick text, 30% Error Brick border.
-- **Link:** Teal ink text, underlined with 4px offset, underline removed on hover.
-- **Hover / Focus / Active:** 150 ms colour transition. Focus is the global 2px Focus Teal outline at 2px offset. Active nudges 1px down. Disabled is 50% opacity.
+- **Shape:** Fully rounded pill. 48px tall by default and in `lg`; `icon` is 48px square. `sm` is 44px on phone and 36px from 768px.
+- **Primary:** Indigo fill, near-white text, 16px medium, 22px side padding, 9px icon gap, soft indigo-tinted shadow. Hover shifts to Indigo Deep and lifts 1px.
+- **Secondary / Outline:** Canvas fill with a Hairline border and `shadow-sm`; hover lifts to `shadow-md`.
+- **Ghost / Link:** No fill until hover; indigo text.
+- **Destructive:** Error Blush fill with a 30% Error Red border and Error Red text.
+- **Hover / Focus / Active:** 150–220 ms colour and transform transition (`cubic-bezier(.2,.8,.2,1)`). Focus is the global 2px indigo ring at 2px offset. Disabled is 50% opacity.
 
 ### Source Badge (signature)
-The trust surface. Every fact line carries: a kind pill (Official filled teal with shield-check; Estimate dashed plum with calculator; Guidance grey outline with info), the verified date ("Verified on DD/MM/YYYY") in Quiet Slate, a "Source" external link, and, when aging or stale, a freshness mark in Check Amber. The compact variant is one wrapping row; the full variant adds the meaning sentence and, for estimates, a "how we estimated" disclosure. Pills are fully rounded, 14px medium, 10px side padding.
+The trust surface. Every fact line carries: a kind pill (Official filled teal with shield-check; Estimate dashed cream with calculator; Guidance grey outline with info), the verified date ("Verified on DD/MM/YYYY") in Ink Muted, a "Source" external link, and, when aging or stale, a freshness mark in Check Amber. The compact variant is one wrapping row; the full variant adds the meaning sentence and, for estimates, a "how we estimated" disclosure. Pills are fully rounded, 14px medium, 10px side padding, `shadow-sm`.
 
 ### Match Status Badge
-The one place a match group becomes icon, colour and wording. Bordered, 9.6px radius, 16px text, wash fill, `-text` colour, 16px icon in the status base colour. Groups: appears met (circle-check, green), to check (triangle-alert, amber), foundation year (triangle-alert, amber, own wording), not met (circle-x, red).
+The one place a match group becomes icon, colour and wording. Bordered, 9.6px radius, 16px text, wash fill, `-fg` text colour, 16px icon in the status base colour. Groups: appears met (circle-check, green), to check (triangle-alert, amber), foundation year (triangle-alert, amber, own wording), not met (circle-x, red). Never colour alone.
 
 ### Cards / Containers
-- **Match card:** Card Cream, 1px Hairline Sand border, 16.8px radius, 16px padding (24px from 768px), flat. Text-first: title link in Deep Teal Ink (19px semibold), institution and city in Quiet Slate, status badge, then a captioned fact list (14px Quiet Slate captions, a source badge under each fact), reasons, and an outline "See details" button. The title is the primary link; the card is not clickable.
-- **Foundation box and notices:** 12px radius, 1px border. Foundation box uses the amber wash and edge with an info icon. Neutral notices use Sand Wash with a Hairline Sand border.
-- **Profile strip:** Sand Wash, 16.8px radius, no border; chips are fully rounded, 1px Hairline Sand, Warm Paper fill, 14px.
-- **Group sections:** Plain headings with counts; the not-met group and hidden-by-preferences are native disclosures with Deep Teal Ink underlined summaries (44px minimum, 32px from 768px).
-- **Empty state:** Centred on phone, start-aligned from 768px; a 40px outline icon, a 23px heading, Quiet Slate description, one action.
+- **Feature / match card:** Canvas fill, 1px Hairline border, 16.8px radius, `shadow-sm` at rest and `shadow-md` on hover. Text-first: title link in Indigo (19px semibold), institution and city in Ink Muted, status badge, then a captioned fact list with a source badge under each fact, reasons, and an outline "See details" button. The title is the primary link; the card is not clickable.
+- **Hero demo panel:** The single `shadow-lg` surface. A near-white card floating at the gradient's edge, containing the segmented controls and the live match card.
+- **Dark band:** Navy Band fill with an atmospheric indigo gradient, light text; carries the trust story and the fact-kind/status legend only.
+- **Profile strip / notices:** Canvas Soft fill, 16.8px radius; chips are pills with a Hairline border and Canvas fill.
 
 ### Inputs / Fields
-- **Style:** 48px tall, 12px radius, 1px Control Slate border, Warm Paper fill, 16px text, 12px side padding. Native selects and inputs.
-- **Structure:** 16px medium label with "(required)" or "(optional)" in Quiet Slate, hint above the control, error below. Tight inside a field (6px), generous between fields.
-- **Choice rows:** The whole 48px row is the target. Selected state is a Deep Teal Ink border and Teal Mist fill.
-- **Focus / Error:** Global Focus Teal outline. Invalid fields take a 2px Error Brick border and a message with an alert icon; an error summary (2px Error Brick border, Error Blush fill) lists links to each field.
-- **Step header:** A text label ("Step 2 of 4") above four rounded segments, filled Deep Teal Ink, unfilled Hairline Sand; segments run from the start edge and mirror in Arabic. The action bar is sticky at the bottom on phone, with a 1px top border on Warm Paper.
+- **Style:** 48px tall, 12px radius, 1px Control Slate border, Canvas fill, 16px text, 12px side padding.
+- **Structure:** 16px medium label with "(required)" or "(optional)" in Ink Muted, hint above the control, error below. Tight inside a field (6px), generous between fields.
+- **Choice rows:** The whole 48px row is the target. Selected state is an Indigo border and Indigo Wash fill.
+- **Focus / Error:** Global indigo focus ring. Invalid fields take an Error Red border and a message with an alert icon; an error summary (Error Red border, Error Blush fill) links to each field.
 
-### Navigation
-- **Header:** Hairline Sand bottom border, wordmark "Jisr" plus Arabic "جسر" in Quiet Slate, 19px semibold, 48px high. Nav links are 16px medium, 48px tall, with a 2px bottom border: Deep Teal Ink and teal text when current, Quiet Slate when not, Ink Slate on hover.
-- **Locale switcher:** Three small ghost buttons (Français, English, العربية), the current one a Sand Wash secondary fill with `aria-current`.
-- **Footer:** Sand Wash, top hairline, privacy line at 16px and sources line at 14px, with the "Clear my data" outline button opening a modal alert dialog (Card Cream, 16.8px radius, 150 ms fade and zoom).
-- **Skip link:** Hidden until focused, then a Deep Teal Ink button at the start corner.
+### Navigation / Shell
+- **Header:** Sticky, translucent (`bg-canvas/70` with `backdrop-blur`), 1px Hairline bottom border, 64px bar. Wordmark "Jisr" plus Arabic "جسر" in Ink Muted, 20px semibold.
+- **Nav links:** 15px medium; the current item draws a 2px indigo underline via a logical `inset-inline` pseudo-element; hover fills with Canvas Soft.
+- **Locale switcher:** A pill group on a Canvas Soft track; the current locale is a Canvas pill with `shadow-sm`.
+- **Footer:** Canvas Soft with a top hairline; the privacy line and the "Clear my data" outline button opening a modal alert dialog.
 
-## 6. Do's and Don'ts
+## 7. Do's and Don'ts
 
 ### Do:
-- **Do** give every important fact its kind badge, verified date (DD/MM/YYYY) and official source link: the Source-Always Rule. No fact without its source badge.
-- **Do** write status as icon plus words in Match Status Badge only: the One Mapping Rule. Match status maps to icon, colour and text in that one component and nowhere else.
-- **Do** keep estimate and guidance visibly different from official: dashed plum with calculator, grey outline with info, never the filled teal shield.
-- **Do** show missing, stale or ambiguous information as something to check, with a question-mark or alert icon and a sentence. Honest uncertainty is never rounded up to a yes or a no.
+- **Do** give every important fact its kind badge, verified date (DD/MM/YYYY) and official source link: the Source-Always Rule.
+- **Do** write status as icon plus words in `MatchStatusBadge` only: the One Mapping Rule.
+- **Do** keep estimate and guidance visibly different from official: dashed cream with calculator, grey outline with info, never the filled teal shield.
+- **Do** show missing, stale or ambiguous information as something to check, with an alert icon and a sentence. Honest uncertainty is never rounded up to a yes or a no.
+- **Do** keep teal for the official fact-kind only; indigo is the only accent.
+- **Do** set display headlines in thin Geist (300) with `-0.03em` tracking, and use soft navy-tinted shadows for lift.
 - **Do** show costs as ranges with the 10-month assumption, and tuition as an official fee or "to be checked".
 - **Do** write for a school-leaver: plain words, short steps, one clear next action, one primary button per screen.
-- **Do** keep controls 12px rounded and aim for 48px tall (target on phone; shipped 44px for `sm`, tracked as a follow-up); read Arabic at root 106.25% with 1.75 leading.
-- **Do** use logical utilities only (`ms-`, `pe-`, `text-start`, `border-s`) and `rtl:rotate-180` on directional icons.
-- **Do** keep transitions to 150 ms colour and state changes and let `prefers-reduced-motion` cut them to near zero.
-- **Do** keep pages light: phone and desktop equally first-class, on slow connections.
+- **Do** use logical utilities only (`ms-`, `pe-`, `text-start`, `border-s`) and mirror directional icons with `rtl:rotate-180`.
+- **Do** keep motion to 150–220 ms colour and transform, and let `prefers-reduced-motion` cut it to near zero.
 
 ### Don't:
 - **Don't** let estimates and guidance be styled as official. No teal fill, no shield, no official wording on anything that is not an official source.
 - **Don't** present trust as persuasion. No hype, no guarantees, never "eligible" or "admitted" as a promise, no percentages, no testimonials or usage statistics.
 - **Don't** round missing, stale or unofficial data up to a confirmed yes or no.
-- **Don't** design for parents or counselors: the student decides alone.
-- **Don't** make Jisr look like a university directory or catalogue: no logo grids, no identical icon-card grids, no hero-metric templates.
+- **Don't** use teal as a brand or decoration colour; it means "official" and nothing else.
+- **Don't** use `#000`, `#fff` or a cold/grey neutral; no dark mode until a deliberate token swap.
+- **Don't** add glassmorphism, gradient text, coloured side-stripe borders, or more than one gradient per page.
 - **Don't** convey status by colour alone, or use green, amber and red for anything but match status.
-- **Don't** add shadows, glassmorphism, gradient text or side-stripe borders thicker than 1px as a coloured accent.
-- **Don't** use `#000`, `#fff` or any cold neutral; no dark mode until a deliberate token swap.
 - **Don't** use `ml-`, `mr-`, `pl-`, `pr-`, `left-` or `right-`, and never let Latin names, URLs or numbers go un-isolated inside Arabic text.
 - **Don't** use a modal as a first thought, choreographed page-load motion, or em dashes in copy.
-- **Don't** add a new accent hue, a second typeface or a font size outside 14 / 16 / 19 / 23 / 28.
+- **Don't** add a new accent hue, a second typeface or a size outside the fixed scale.
 - **Don't** put any profile value in a URL, log or analytics event.
