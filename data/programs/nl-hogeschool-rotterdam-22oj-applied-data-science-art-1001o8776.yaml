@@ -17,12 +17,13 @@ summary:
     status: draft
 officialUrl: https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/applied-data-science--artificial-intelligence/voltijd/open-dag-ba-data-science-vt/
 durationYears:
-  value: null
-  source: programme
+  value: 4
+  source: page-4
   info_kind: official
 teachingLanguages:
-  value: null
-  source: programme
+  value:
+    - nl
+  source: page-4
   info_kind: official
 tuition:
   value: null
@@ -79,3 +80,6 @@ sources:
   page-3:
     url: https://www.studyinnl.org/plan-your-stay/how-to-apply
     last_verified_at: 2026-10-09
+  page-4:
+    url: https://www.hogeschoolrotterdam.nl/opleidingen/bachelor/applied-data-science--artificial-intelligence/voltijd/
+    last_verified_at: 2026-10-10

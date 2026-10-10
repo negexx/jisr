@@ -68,18 +68,9 @@ programs/de-hochschule-ravensburg-weingarten-hrk224-mechatronics-daad9717,b9-6ba
 programs/de-otto-von-guericke-universitat-magdeburg-hrk172-international-business-a-daad3811,b9-6ba627,y,y,ok,
 programs/de-technische-hochschule-aschaffenburg-hrk333-software-design-internat-daad9225,b9-6ba627,y,y,ok,
 programs/de-technische-hochschule-rosenheim-hrk232-plastics-engineering-daad8373,b9-6ba627,,,,
-programs/nl-avans-hogeschool-07gr-breda-accountancy-1001o3528,b9-6ba627,,,,
-programs/nl-avans-hogeschool-07gr-s-hertogenbosch-bouwkunde-1001o3048,b9-6ba627,,,,
 programs/nl-hogeschool-inholland-27pz-s-gravenhage-business-studies-1001o2990,b9-6ba627,,,,
 programs/fr-iut-grand-ouest-normandie-pole-de-cherbo-0501893l-but-genie-industriel-et-maintena-48517,b11-08e9d6,,,,
-programs/nl-hogeschool-inholland-27pz-alkmaar-accountancy-1001o3549,b8-3574bc,,,,
 programs/nl-hogeschool-leiden-21ri-bio-informatica-1001o5219,b10-968f8e,,,,
-programs/nl-avans-hogeschool-07gr-s-hertogenbosch-ict-1016o4948,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-capabel-hogeschool-30hc-rotterdam-ict-1001o8912,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-hogeschool-inholland-27pz-alkmaar-bouwkunde-1001o3064,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-hogeschool-inholland-27pz-amsterdam-accountancy-1001o3549,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-hogeschool-inholland-27pz-haarlem-informatica-1001o3897,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/nl-hogeschool-van-amsterdam-28dn-ict-1001o2676,b12-a7616a,,,,
 programs/de-baden-wuerttemberg-cooperative-state-uni-daad-mosbach-new-study-computer-scien-daad10648,b8-3574bc,,,,
 programs/de-frankfurt-school-of-finance-management-hrk83-bachelors-in-management-daad9700,b9-6ba627,,,,
@@ -164,25 +155,6 @@ programs/de-technische-universitat-munchen-hrk184-heilbronn-information-engineer
 programs/de-ebs-universitat-fur-wirtschaft-und-recht-hrk206-bachelors-in-law-politic-daad8558,b20-85b121,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/de-technische-hochschule-nurnberg-georg-sim-hrk200-mechanical-engineering-b-daad9268,b20-85b121,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/de-technische-hochschule-wildau-hrk272-european-business-manage-daad7665,b20-85b121,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-christelijke-hogeschool-ede-25ba-bedrijfskunde-1001o2793,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-christelijke-hogeschool-windesheim-01vu-almere-bouwkunde-1001o3046,b9-6ba627,,,,
-programs/nl-de-haagse-hogeschool-27um-delft-ict-1001o2675,b10-968f8e,y,y,ok,
-programs/nl-de-haagse-hogeschool-27um-zoetermeer-applied-data-science-art-1001o8742,b10-968f8e,,,,
-programs/nl-fontys-hogeschool-30gb-accountancy-1001o3555,b10-968f8e,,,,
-programs/nl-fontys-hogeschool-30gb-elektrotechniek-1001o3098,b10-968f8e,y,y,ok,
-programs/nl-fontys-hogeschool-30gb-tilburg-commerciele-economie-1001o3452,b10-968f8e,,,,
-programs/nl-fontys-hogeschool-30gb-venlo-commerciele-economie-1001o3452,b8-3574bc,,,,
-programs/nl-fontys-hogeschool-30gb-venlo-informatica-1001o3903,b12-a7616a,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-hogeschool-leiden-21ri-commerciele-economie-1001o3422,b10-968f8e,y,y,ok,
-programs/nl-hogeschool-rotterdam-22oj-bouwkunde-1001o3055,b9-6ba627,,,,
-programs/nl-christelijke-hogeschool-ede-25ba-ict-1001o2670,b21-9ec3b2,,,,
-programs/nl-christelijke-hogeschool-windesheim-01vu-accountancy-1001o3525,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-christelijke-hogeschool-windesheim-01vu-almere-ict-1001o2665,b21-9ec3b2,,,,
-programs/nl-christelijke-hogeschool-windesheim-01vu-bouwkunde-1001o3046,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-christelijke-hogeschool-windesheim-01vu-ict-1001o2665,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-hogeschool-utrecht-25dw-accountancy-1001o3544,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct
-programs/nl-hogeschool-utrecht-25dw-ict-1001o2672,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct
 programs/nl-hogeschool-van-amsterdam-28dn-biomedische-technologie-1001o5075,b21-9ec3b2,y,y,ok,owner read the sample 2026-10-04: all correct
 institutions/hu-budapest-metropolitan-university-budapest,b22-bb78c6,,,,
 institutions/hu-budapest-university-of-economics-and-bus-budapest,b22-bb78c6,,,,
@@ -1060,16 +1032,6 @@ programs/de-technische-hochschule-ingolstadt-hrk288-global-economics-and-bus-daa
 programs/de-technische-hochschule-mannheim-hrk177-international-engineerin-daad10335,b33-ce4628,,,,
 programs/de-technische-hochschule-ulm-hrk260-computer-science-cts-daad4669,b33-ce4628,y,y,ok,
 programs/de-universitat-passau-hrk218-bachelor-of-science-in-a-daad9973,b33-ce4628,,,,
-programs/nl-erasmus-universiteit-rotterdam-21pe-bedrijfskunde-1001o5712,b33-ce4628,,,,
-programs/nl-fontys-hogeschool-30gb-ict-1001o2677,b33-ce4628,,,,
-programs/nl-fontys-hogeschool-30gb-tilburg-ict-1001o2677,b33-ce4628,,,,
-programs/nl-hogeschool-inholland-27pz-accountancy-1001o3549,b33-ce4628,,,,
-programs/nl-hogeschool-inholland-27pz-alkmaar-technische-informatica-1001o3859,b33-ce4628,,,,
-programs/nl-hogeschool-inholland-27pz-delft-luchtvaarttechnologie-1001o3164,b33-ce4628,,,,
-programs/nl-hogeschool-inholland-27pz-haarlem-business-studies-1001o2990,b33-ce4628,y,y,ok,
-programs/nl-hogeschool-inholland-27pz-velsen-noord-werktuigbouwkunde-1001o3209,b33-ce4628,y,y,ok,
-programs/nl-hogeschool-rotterdam-22oj-applied-data-science-art-1001o8776,b33-ce4628,,,,
-programs/nl-hogeschool-utrecht-25dw-chemische-technologie-1001o3152,b33-ce4628,,,,
 programs/nl-hogeschool-van-arnhem-en-nijmegen-25kb-ict-1001o2674,b33-ce4628,,,,
 programs/de-carl-von-ossietzky-universitat-oldenburg-hrk209-bachelor-of-engineering-daad3772,b34-a5beb7,,,,
 programs/de-fachhochschule-aachen-hrk2-global-business-and-econ-daad4849,b34-a5beb7,y,y,ok,
@@ -1204,3 +1166,9 @@ programs/hu-university-of-sopron-sopron-international-business-e-sf1042,b35-c6c4
 programs/hu-university-of-sopron-sopron-timber-industry-engineer-sf1039,b35-c6c4ac,,,,
 programs/hu-university-of-szeged-szeged-business-administration-sf1132,b35-c6c4ac,,,,
 programs/hu-university-of-szeged-szeged-tourism-and-catering-sf1134,b35-c6c4ac,,,,
+programs/nl-capabel-hogeschool-30hc-utrecht-bedrijfskunde-1016o3182,b36-47d65e,y,y,waived,owner delegated the sample decision (agent-recorded); no human read
+programs/nl-de-haagse-hogeschool-27um-applied-data-science-art-1001o8742,b36-47d65e,y,y,waived,owner delegated the sample decision (agent-recorded); no human read
+programs/nl-fontys-hogeschool-30gb-tilburg-technische-bedrijfskunde-1001o3682,b36-47d65e,y,y,waived,owner delegated the sample decision (agent-recorded); no human read
+programs/nl-hogeschool-inholland-27pz-alkmaar-accountancy-1001o3549,b36-47d65e,y,y,waived,owner delegated the sample decision (agent-recorded); no human read
+programs/nl-hogeschool-inholland-27pz-haarlem-bouwkunde-1001o3064,b36-47d65e,y,y,waived,owner delegated the sample decision (agent-recorded); no human read
+programs/nl-hogeschool-rotterdam-22oj-applied-data-science-art-1001o8776,b36-47d65e,y,y,waived,owner delegated the sample decision (agent-recorded); no human read

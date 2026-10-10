@@ -41,8 +41,26 @@ applicationChannel:
   source: page-1
   info_kind: official
 documents:
-  value: null
-  source: programme
+  value:
+    - slug: final-transcript
+      name:
+        fr:
+          text: Relevé de notes final
+          status: draft
+        en:
+          text: final transcript
+          status: draft
+      translationRequired: null
+    - slug: identity-document
+      name:
+        fr:
+          text: Pièce d'identité
+          status: draft
+        en:
+          text: identity document
+          status: draft
+      translationRequired: null
+  source: page-3
   info_kind: official
 requirements:
   coverage: partial
@@ -60,3 +78,6 @@ sources:
   page-1:
     url: https://www.inholland.nl/inschrijven/inschrijven/
     last_verified_at: 2026-10-02
+  page-3:
+    url: https://www.inholland.nl/inhollandcom/degree-programmes/information-technology-eng-full-time/entry-requirements/
+    last_verified_at: 2026-10-10
